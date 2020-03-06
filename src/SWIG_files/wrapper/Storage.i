@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -83,10 +83,10 @@ enum Storage_OpenMode {
 /* end public enums declaration */
 
 /* templates */
-%template(Storage_PType) NCollection_IndexedDataMap <TCollection_AsciiString , Standard_Integer , TCollection_AsciiString>;
-%template(Storage_ArrayOfCallBack) NCollection_Array1 <opencascade::handle <Storage_CallBack>>;
+%template(Storage_PType) NCollection_IndexedDataMap<TCollection_AsciiString,Standard_Integer,TCollection_AsciiString>;
+%template(Storage_ArrayOfCallBack) NCollection_Array1<opencascade::handle<Storage_CallBack>>;
 
-%extend NCollection_Array1 <opencascade::handle <Storage_CallBack>> {
+%extend NCollection_Array1<opencascade::handle<Storage_CallBack>> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -119,11 +119,11 @@ enum Storage_OpenMode {
     __next__ = next
     }
 };
-%template(Storage_MapOfPers) NCollection_DataMap <TCollection_AsciiString , opencascade::handle <Storage_Root>, TCollection_AsciiString>;
-%template(Storage_MapOfCallBack) NCollection_DataMap <TCollection_AsciiString , opencascade::handle <Storage_TypedCallBack>, TCollection_AsciiString>;
-%template(Storage_ArrayOfSchema) NCollection_Array1 <opencascade::handle <Storage_Schema>>;
+%template(Storage_MapOfPers) NCollection_DataMap<TCollection_AsciiString,opencascade::handle<Storage_Root>,TCollection_AsciiString>;
+%template(Storage_MapOfCallBack) NCollection_DataMap<TCollection_AsciiString,opencascade::handle<Storage_TypedCallBack>,TCollection_AsciiString>;
+%template(Storage_ArrayOfSchema) NCollection_Array1<opencascade::handle<Storage_Schema>>;
 
-%extend NCollection_Array1 <opencascade::handle <Storage_Schema>> {
+%extend NCollection_Array1<opencascade::handle<Storage_Schema>> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -156,19 +156,19 @@ enum Storage_OpenMode {
     __next__ = next
     }
 };
-%template(Storage_SeqOfRoot) NCollection_Sequence <opencascade::handle <Storage_Root>>;
+%template(Storage_SeqOfRoot) NCollection_Sequence<opencascade::handle<Storage_Root>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_IndexedDataMap <TCollection_AsciiString , Standard_Integer , TCollection_AsciiString> Storage_PType;
-typedef NCollection_Array1 <opencascade::handle <Storage_CallBack>> Storage_ArrayOfCallBack;
-typedef NCollection_DataMap <TCollection_AsciiString , opencascade::handle <Storage_Root>, TCollection_AsciiString> Storage_MapOfPers;
-typedef NCollection_DataMap <TCollection_AsciiString , opencascade::handle <Storage_Root>, TCollection_AsciiString>::Iterator Storage_DataMapIteratorOfMapOfPers;
+typedef NCollection_IndexedDataMap<TCollection_AsciiString, Standard_Integer, TCollection_AsciiString> Storage_PType;
+typedef NCollection_Array1<opencascade::handle<Storage_CallBack>> Storage_ArrayOfCallBack;
+typedef NCollection_DataMap<TCollection_AsciiString, opencascade::handle<Storage_Root>, TCollection_AsciiString> Storage_MapOfPers;
+typedef NCollection_DataMap<TCollection_AsciiString, opencascade::handle<Storage_Root>, TCollection_AsciiString>::Iterator Storage_DataMapIteratorOfMapOfPers;
 typedef long Storage_Position;
-typedef NCollection_DataMap <TCollection_AsciiString , opencascade::handle <Storage_TypedCallBack>, TCollection_AsciiString> Storage_MapOfCallBack;
-typedef NCollection_DataMap <TCollection_AsciiString , opencascade::handle <Storage_TypedCallBack>, TCollection_AsciiString>::Iterator Storage_DataMapIteratorOfMapOfCallBack;
-typedef NCollection_Array1 <opencascade::handle <Storage_Schema>> Storage_ArrayOfSchema;
-typedef NCollection_Sequence <opencascade::handle <Storage_Root>> Storage_SeqOfRoot;
+typedef NCollection_DataMap<TCollection_AsciiString, opencascade::handle<Storage_TypedCallBack>, TCollection_AsciiString> Storage_MapOfCallBack;
+typedef NCollection_DataMap<TCollection_AsciiString, opencascade::handle<Storage_TypedCallBack>, TCollection_AsciiString>::Iterator Storage_DataMapIteratorOfMapOfCallBack;
+typedef NCollection_Array1<opencascade::handle<Storage_Schema>> Storage_ArrayOfSchema;
+typedef NCollection_Sequence<opencascade::handle<Storage_Root>> Storage_SeqOfRoot;
 /* end typedefs declaration */
 
 /* harray1 classes */

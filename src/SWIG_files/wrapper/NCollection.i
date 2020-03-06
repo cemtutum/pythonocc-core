@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -82,26 +82,26 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_ncollection.html"
 /* end public enums declaration */
 
 /* templates */
-%template(NCollection_Utf8String) NCollection_UtfString <Standard_Utf8Char>;
-%template(NCollection_Utf16String) NCollection_UtfString <Standard_Utf16Char>;
-%template(NCollection_Utf32String) NCollection_UtfString <Standard_Utf32Char>;
-%template(NCollection_UtfWideString) NCollection_UtfString <Standard_WideChar>;
-%template(NCollection_Utf8Iter) NCollection_UtfIterator <Standard_Utf8Char>;
-%template(NCollection_Utf16Iter) NCollection_UtfIterator <Standard_Utf16Char>;
-%template(NCollection_Utf32Iter) NCollection_UtfIterator <Standard_Utf32Char>;
-%template(NCollection_UtfWideIter) NCollection_UtfIterator <Standard_WideChar>;
+%template(NCollection_Utf8String) NCollection_UtfString<Standard_Utf8Char>;
+%template(NCollection_Utf16String) NCollection_UtfString<Standard_Utf16Char>;
+%template(NCollection_Utf32String) NCollection_UtfString<Standard_Utf32Char>;
+%template(NCollection_UtfWideString) NCollection_UtfString<Standard_WideChar>;
+%template(NCollection_Utf8Iter) NCollection_UtfIterator<Standard_Utf8Char>;
+%template(NCollection_Utf16Iter) NCollection_UtfIterator<Standard_Utf16Char>;
+%template(NCollection_Utf32Iter) NCollection_UtfIterator<Standard_Utf32Char>;
+%template(NCollection_UtfWideIter) NCollection_UtfIterator<Standard_WideChar>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_UtfString <Standard_Utf8Char> NCollection_Utf8String;
-typedef NCollection_UtfString <Standard_Utf16Char> NCollection_Utf16String;
-typedef NCollection_UtfString <Standard_Utf32Char> NCollection_Utf32String;
-typedef NCollection_UtfString <Standard_WideChar> NCollection_UtfWideString;
-typedef void ( * NCollection_DelMapNode ) ( NCollection_ListNode * , opencascade::handle <NCollection_BaseAllocator>& theAl );
-typedef NCollection_UtfIterator <Standard_Utf8Char> NCollection_Utf8Iter;
-typedef NCollection_UtfIterator <Standard_Utf16Char> NCollection_Utf16Iter;
-typedef NCollection_UtfIterator <Standard_Utf32Char> NCollection_Utf32Iter;
-typedef NCollection_UtfIterator <Standard_WideChar> NCollection_UtfWideIter;
+typedef NCollection_UtfString<Standard_Utf8Char> NCollection_Utf8String;
+typedef NCollection_UtfString<Standard_Utf16Char> NCollection_Utf16String;
+typedef NCollection_UtfString<Standard_Utf32Char> NCollection_Utf32String;
+typedef NCollection_UtfString<Standard_WideChar> NCollection_UtfWideString;
+typedef void ( * NCollection_DelMapNode ) ( NCollection_ListNode *, opencascade::handle<NCollection_BaseAllocator>& theAl );
+typedef NCollection_UtfIterator<Standard_Utf8Char> NCollection_Utf8Iter;
+typedef NCollection_UtfIterator<Standard_Utf16Char> NCollection_Utf16Iter;
+typedef NCollection_UtfIterator<Standard_Utf32Char> NCollection_Utf32Iter;
+typedef NCollection_UtfIterator<Standard_WideChar> NCollection_UtfWideIter;
 typedef size_t Standard_Size;
 typedef NCollection_Utf8String NCollection_String;
 /* end typedefs declaration */

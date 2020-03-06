@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -77,23 +77,29 @@ class XCAFApp_Application : public TDocStd_Application {
 	public:
 		/****************** GetApplication ******************/
 		%feature("compactdefaultargs") GetApplication;
-		%feature("autodoc", "* Initializes (for the first time) and returns the static object (XCAFApp_Application) This is the only valid method to get XCAFApp_Application object, and it should be called at least once before any actions with documents in order to init application
-	:rtype: opencascade::handle<XCAFApp_Application>") GetApplication;
-		static opencascade::handle<XCAFApp_Application> GetApplication ();
+		%feature("autodoc", "Initializes (for the first time) and returns the static object (xcafapp_application) this is the only valid method to get xcafapp_application object, and it should be called at least once before any actions with documents in order to init application.
+
+	:rtype: opencascade::handle<XCAFApp_Application>
+") GetApplication;
+		static opencascade::handle<XCAFApp_Application> GetApplication();
 
 		/****************** InitDocument ******************/
 		%feature("compactdefaultargs") InitDocument;
-		%feature("autodoc", "* Set XCAFDoc_DocumentTool attribute
+		%feature("autodoc", "Set xcafdoc_documenttool attribute.
+
 	:param aDoc:
 	:type aDoc: TDocStd_Document
-	:rtype: void") InitDocument;
-		virtual void InitDocument (const opencascade::handle<TDocStd_Document> & aDoc);
+	:rtype: None
+") InitDocument;
+		virtual void InitDocument(const opencascade::handle<TDocStd_Document> & aDoc);
 
 		/****************** ResourcesName ******************/
 		%feature("compactdefaultargs") ResourcesName;
-		%feature("autodoc", "* methods from TDocStd_Application ================================
-	:rtype: char *") ResourcesName;
-		virtual const char * ResourcesName ();
+		%feature("autodoc", "Methods from tdocstd_application ================================.
+
+	:rtype: char *
+") ResourcesName;
+		virtual const char * ResourcesName();
 
 };
 

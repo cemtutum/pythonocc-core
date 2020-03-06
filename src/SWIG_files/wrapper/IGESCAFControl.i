@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -99,19 +99,23 @@ class IGESCAFControl {
 	public:
 		/****************** DecodeColor ******************/
 		%feature("compactdefaultargs") DecodeColor;
-		%feature("autodoc", "* Provides a tool for writing IGES file Converts IGES color index to CASCADE color
+		%feature("autodoc", "Provides a tool for writing iges file converts iges color index to cascade color.
+
 	:param col:
 	:type col: int
-	:rtype: Quantity_Color") DecodeColor;
-		static Quantity_Color DecodeColor (const Standard_Integer col);
+	:rtype: Quantity_Color
+") DecodeColor;
+		static Quantity_Color DecodeColor(const Standard_Integer col);
 
 		/****************** EncodeColor ******************/
 		%feature("compactdefaultargs") EncodeColor;
-		%feature("autodoc", "* Tries to Convert CASCADE color to IGES color index If no corresponding color defined in IGES, returns 0
+		%feature("autodoc", "Tries to convert cascade color to iges color index if no corresponding color defined in iges, returns 0.
+
 	:param col:
 	:type col: Quantity_Color
-	:rtype: int") EncodeColor;
-		static Standard_Integer EncodeColor (const Quantity_Color & col);
+	:rtype: int
+") EncodeColor;
+		static Standard_Integer EncodeColor(const Quantity_Color & col);
 
 };
 
@@ -129,85 +133,103 @@ class IGESCAFControl_Reader : public IGESControl_Reader {
 	public:
 		/****************** GetColorMode ******************/
 		%feature("compactdefaultargs") GetColorMode;
-		%feature("autodoc", ":rtype: bool") GetColorMode;
-		Standard_Boolean GetColorMode ();
+		%feature("autodoc", "	:rtype: bool
+") GetColorMode;
+		Standard_Boolean GetColorMode();
 
 		/****************** GetLayerMode ******************/
 		%feature("compactdefaultargs") GetLayerMode;
-		%feature("autodoc", ":rtype: bool") GetLayerMode;
-		Standard_Boolean GetLayerMode ();
+		%feature("autodoc", "	:rtype: bool
+") GetLayerMode;
+		Standard_Boolean GetLayerMode();
 
 		/****************** GetNameMode ******************/
 		%feature("compactdefaultargs") GetNameMode;
-		%feature("autodoc", ":rtype: bool") GetNameMode;
-		Standard_Boolean GetNameMode ();
+		%feature("autodoc", "	:rtype: bool
+") GetNameMode;
+		Standard_Boolean GetNameMode();
 
 		/****************** IGESCAFControl_Reader ******************/
 		%feature("compactdefaultargs") IGESCAFControl_Reader;
-		%feature("autodoc", "* Creates a reader with an empty IGES model and sets ColorMode, LayerMode and NameMode to Standard_True.
-	:rtype: None") IGESCAFControl_Reader;
-		 IGESCAFControl_Reader ();
+		%feature("autodoc", "Creates a reader with an empty iges model and sets colormode, layermode and namemode to standard_true.
+
+	:rtype: None
+") IGESCAFControl_Reader;
+		 IGESCAFControl_Reader();
 
 		/****************** IGESCAFControl_Reader ******************/
 		%feature("compactdefaultargs") IGESCAFControl_Reader;
-		%feature("autodoc", "* Creates a reader tool and attaches it to an already existing Session Clears the session if it was not yet set for IGES
+		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for iges.
+
 	:param theWS:
 	:type theWS: XSControl_WorkSession
 	:param FromScratch: default value is Standard_True
 	:type FromScratch: bool
-	:rtype: None") IGESCAFControl_Reader;
-		 IGESCAFControl_Reader (const opencascade::handle<XSControl_WorkSession> & theWS,const Standard_Boolean FromScratch = Standard_True);
+	:rtype: None
+") IGESCAFControl_Reader;
+		 IGESCAFControl_Reader(const opencascade::handle<XSControl_WorkSession> & theWS, const Standard_Boolean FromScratch = Standard_True);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", ":param theFileName:
+		%feature("autodoc", "	:param theFileName:
 	:type theFileName: TCollection_AsciiString
 	:param theDoc:
 	:type theDoc: TDocStd_Document
-	:rtype: bool") Perform;
-		Standard_Boolean Perform (const TCollection_AsciiString & theFileName,opencascade::handle<TDocStd_Document> & theDoc);
+	:rtype: bool
+") Perform;
+		Standard_Boolean Perform(const TCollection_AsciiString & theFileName, opencascade::handle<TDocStd_Document> & theDoc);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "* Translate IGES file given by filename into the document Return True if succeeded, and False in case of fail
+		%feature("autodoc", "Translate iges file given by filename into the document return true if succeeded, and false in case of fail.
+
 	:param theFileName:
 	:type theFileName: char *
 	:param theDoc:
 	:type theDoc: TDocStd_Document
-	:rtype: bool") Perform;
-		Standard_Boolean Perform (const char * theFileName,opencascade::handle<TDocStd_Document> & theDoc);
+	:rtype: bool
+") Perform;
+		Standard_Boolean Perform(const char * theFileName, opencascade::handle<TDocStd_Document> & theDoc);
 
 		/****************** SetColorMode ******************/
 		%feature("compactdefaultargs") SetColorMode;
-		%feature("autodoc", "* Set ColorMode for indicate read Colors or not.
+		%feature("autodoc", "Set colormode for indicate read colors or not.
+
 	:param theMode:
 	:type theMode: bool
-	:rtype: None") SetColorMode;
-		void SetColorMode (const Standard_Boolean theMode);
+	:rtype: None
+") SetColorMode;
+		void SetColorMode(const Standard_Boolean theMode);
 
 		/****************** SetLayerMode ******************/
 		%feature("compactdefaultargs") SetLayerMode;
-		%feature("autodoc", "* Set LayerMode for indicate read Layers or not.
+		%feature("autodoc", "Set layermode for indicate read layers or not.
+
 	:param theMode:
 	:type theMode: bool
-	:rtype: None") SetLayerMode;
-		void SetLayerMode (const Standard_Boolean theMode);
+	:rtype: None
+") SetLayerMode;
+		void SetLayerMode(const Standard_Boolean theMode);
 
 		/****************** SetNameMode ******************/
 		%feature("compactdefaultargs") SetNameMode;
-		%feature("autodoc", "* Set NameMode for indicate read Name or not.
+		%feature("autodoc", "Set namemode for indicate read name or not.
+
 	:param theMode:
 	:type theMode: bool
-	:rtype: None") SetNameMode;
-		void SetNameMode (const Standard_Boolean theMode);
+	:rtype: None
+") SetNameMode;
+		void SetNameMode(const Standard_Boolean theMode);
 
 		/****************** Transfer ******************/
 		%feature("compactdefaultargs") Transfer;
-		%feature("autodoc", "* Translates currently loaded IGES file into the document Returns True if succeeded, and False in case of fail
+		%feature("autodoc", "Translates currently loaded iges file into the document returns true if succeeded, and false in case of fail.
+
 	:param theDoc:
 	:type theDoc: TDocStd_Document
-	:rtype: bool") Transfer;
-		Standard_Boolean Transfer (opencascade::handle<TDocStd_Document> & theDoc);
+	:rtype: bool
+") Transfer;
+		Standard_Boolean Transfer(opencascade::handle<TDocStd_Document> & theDoc);
 
 };
 
@@ -225,101 +247,123 @@ class IGESCAFControl_Writer : public IGESControl_Writer {
 	public:
 		/****************** GetColorMode ******************/
 		%feature("compactdefaultargs") GetColorMode;
-		%feature("autodoc", ":rtype: bool") GetColorMode;
-		Standard_Boolean GetColorMode ();
+		%feature("autodoc", "	:rtype: bool
+") GetColorMode;
+		Standard_Boolean GetColorMode();
 
 		/****************** GetLayerMode ******************/
 		%feature("compactdefaultargs") GetLayerMode;
-		%feature("autodoc", ":rtype: bool") GetLayerMode;
-		Standard_Boolean GetLayerMode ();
+		%feature("autodoc", "	:rtype: bool
+") GetLayerMode;
+		Standard_Boolean GetLayerMode();
 
 		/****************** GetNameMode ******************/
 		%feature("compactdefaultargs") GetNameMode;
-		%feature("autodoc", ":rtype: bool") GetNameMode;
-		Standard_Boolean GetNameMode ();
+		%feature("autodoc", "	:rtype: bool
+") GetNameMode;
+		Standard_Boolean GetNameMode();
 
 		/****************** IGESCAFControl_Writer ******************/
 		%feature("compactdefaultargs") IGESCAFControl_Writer;
-		%feature("autodoc", "* Creates a writer with an empty IGES model and sets ColorMode, LayerMode and NameMode to Standard_True.
-	:rtype: None") IGESCAFControl_Writer;
-		 IGESCAFControl_Writer ();
+		%feature("autodoc", "Creates a writer with an empty iges model and sets colormode, layermode and namemode to standard_true.
+
+	:rtype: None
+") IGESCAFControl_Writer;
+		 IGESCAFControl_Writer();
 
 		/****************** IGESCAFControl_Writer ******************/
 		%feature("compactdefaultargs") IGESCAFControl_Writer;
-		%feature("autodoc", "* Creates a reader tool and attaches it to an already existing Session Clears the session if it was not yet set for IGES
+		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for iges.
+
 	:param WS:
 	:type WS: XSControl_WorkSession
 	:param scratch: default value is Standard_True
 	:type scratch: bool
-	:rtype: None") IGESCAFControl_Writer;
-		 IGESCAFControl_Writer (const opencascade::handle<XSControl_WorkSession> & WS,const Standard_Boolean scratch = Standard_True);
+	:rtype: None
+") IGESCAFControl_Writer;
+		 IGESCAFControl_Writer(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", ":param doc:
+		%feature("autodoc", "	:param doc:
 	:type doc: TDocStd_Document
 	:param filename:
 	:type filename: TCollection_AsciiString
-	:rtype: bool") Perform;
-		Standard_Boolean Perform (const opencascade::handle<TDocStd_Document> & doc,const TCollection_AsciiString & filename);
+	:rtype: bool
+") Perform;
+		Standard_Boolean Perform(const opencascade::handle<TDocStd_Document> & doc, const TCollection_AsciiString & filename);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "* Transfers a document and writes it to a IGES file Returns True if translation is OK
+		%feature("autodoc", "Transfers a document and writes it to a iges file returns true if translation is ok.
+
 	:param doc:
 	:type doc: TDocStd_Document
 	:param filename:
 	:type filename: char *
-	:rtype: bool") Perform;
-		Standard_Boolean Perform (const opencascade::handle<TDocStd_Document> & doc,const char * filename);
+	:rtype: bool
+") Perform;
+		Standard_Boolean Perform(const opencascade::handle<TDocStd_Document> & doc, const char * filename);
 
 		/****************** SetColorMode ******************/
 		%feature("compactdefaultargs") SetColorMode;
-		%feature("autodoc", "* Set ColorMode for indicate write Colors or not.
+		%feature("autodoc", "Set colormode for indicate write colors or not.
+
 	:param colormode:
 	:type colormode: bool
-	:rtype: None") SetColorMode;
-		void SetColorMode (const Standard_Boolean colormode);
+	:rtype: None
+") SetColorMode;
+		void SetColorMode(const Standard_Boolean colormode);
 
 		/****************** SetLayerMode ******************/
 		%feature("compactdefaultargs") SetLayerMode;
-		%feature("autodoc", "* Set LayerMode for indicate write Layers or not.
+		%feature("autodoc", "Set layermode for indicate write layers or not.
+
 	:param layermode:
 	:type layermode: bool
-	:rtype: None") SetLayerMode;
-		void SetLayerMode (const Standard_Boolean layermode);
+	:rtype: None
+") SetLayerMode;
+		void SetLayerMode(const Standard_Boolean layermode);
 
 		/****************** SetNameMode ******************/
 		%feature("compactdefaultargs") SetNameMode;
-		%feature("autodoc", "* Set NameMode for indicate write Name or not.
+		%feature("autodoc", "Set namemode for indicate write name or not.
+
 	:param namemode:
 	:type namemode: bool
-	:rtype: None") SetNameMode;
-		void SetNameMode (const Standard_Boolean namemode);
+	:rtype: None
+") SetNameMode;
+		void SetNameMode(const Standard_Boolean namemode);
 
 		/****************** Transfer ******************/
 		%feature("compactdefaultargs") Transfer;
-		%feature("autodoc", "* Transfers a document to a IGES model Returns True if translation is OK
+		%feature("autodoc", "Transfers a document to a iges model returns true if translation is ok.
+
 	:param doc:
 	:type doc: TDocStd_Document
-	:rtype: bool") Transfer;
-		Standard_Boolean Transfer (const opencascade::handle<TDocStd_Document> & doc);
+	:rtype: bool
+") Transfer;
+		Standard_Boolean Transfer(const opencascade::handle<TDocStd_Document> & doc);
 
 		/****************** Transfer ******************/
 		%feature("compactdefaultargs") Transfer;
-		%feature("autodoc", "* Transfers labels to a IGES model Returns True if translation is OK
+		%feature("autodoc", "Transfers labels to a iges model returns true if translation is ok.
+
 	:param labels:
 	:type labels: TDF_LabelSequence
-	:rtype: bool") Transfer;
-		Standard_Boolean Transfer (const TDF_LabelSequence & labels);
+	:rtype: bool
+") Transfer;
+		Standard_Boolean Transfer(const TDF_LabelSequence & labels);
 
 		/****************** Transfer ******************/
 		%feature("compactdefaultargs") Transfer;
-		%feature("autodoc", "* Transfers label to a IGES model Returns True if translation is OK
+		%feature("autodoc", "Transfers label to a iges model returns true if translation is ok.
+
 	:param label:
 	:type label: TDF_Label
-	:rtype: bool") Transfer;
-		Standard_Boolean Transfer (const TDF_Label & label);
+	:rtype: bool
+") Transfer;
+		Standard_Boolean Transfer(const TDF_Label & label);
 
 };
 

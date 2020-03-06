@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -94,111 +94,135 @@ class TopAbs {
 	public:
 		/****************** Complement ******************/
 		%feature("compactdefaultargs") Complement;
-		%feature("autodoc", "* Reverses the interior/exterior status of each side of the object. So, to take the complement of an object means to reverse the interior/exterior status of its boundary, i.e. inside becomes outside. The method returns the complementary orientation, following the rules in the table below: FORWARD REVERSED REVERSED FORWARD INTERNAL EXTERNAL EXTERNAL INTERNAL //! Complement complements the material side. Inside becomes outside.
+		%feature("autodoc", "Reverses the interior/exterior status of each side of the object. so, to take the complement of an object means to reverse the interior/exterior status of its boundary, i.e. inside becomes outside. the method returns the complementary orientation, following the rules in the table below: forward reversed reversed forward internal external external internal //! complement complements the material side. inside becomes outside.
+
 	:param Or:
 	:type Or: TopAbs_Orientation
-	:rtype: TopAbs_Orientation") Complement;
-		static TopAbs_Orientation Complement (const TopAbs_Orientation Or);
+	:rtype: TopAbs_Orientation
+") Complement;
+		static TopAbs_Orientation Complement(const TopAbs_Orientation Or);
 
 		/****************** Compose ******************/
 		%feature("compactdefaultargs") Compose;
-		%feature("autodoc", "* Compose the Orientation <Or1> and <Or2>. This composition is not symmetric (if you switch <Or1> and <Or2> the result is different). It assumes that <Or1> is the Orientation of a Shape S1 containing a Shape S2 of Orientation Or2. The result is the cumulated orientation of S2 in S1. The composition law is : //! \ Or2 FORWARD REVERSED INTERNAL EXTERNAL Or1 ------------------------------------- FORWARD | FORWARD REVERSED INTERNAL EXTERNAL | REVERSED | REVERSED FORWARD INTERNAL EXTERNAL | INTERNAL | INTERNAL INTERNAL INTERNAL INTERNAL | EXTERNAL | EXTERNAL EXTERNAL EXTERNAL EXTERNAL Note: The top corner in the table is the most important for the purposes of Open CASCADE topology and shape sharing.
+		%feature("autodoc", "Compose the orientation <or1> and <or2>. this composition is not symmetric (if you switch <or1> and <or2> the result is different). it assumes that <or1> is the orientation of a shape s1 containing a shape s2 of orientation or2. the result is the cumulated orientation of s2 in s1. the composition law is : //! \ or2 forward reversed internal external or1 ------------------------------------- forward | forward reversed internal external | reversed | reversed forward internal external | internal | internal internal internal internal | external | external external external external note: the top corner in the table is the most important for the purposes of open cascade topology and shape sharing.
+
 	:param Or1:
 	:type Or1: TopAbs_Orientation
 	:param Or2:
 	:type Or2: TopAbs_Orientation
-	:rtype: TopAbs_Orientation") Compose;
-		static TopAbs_Orientation Compose (const TopAbs_Orientation Or1,const TopAbs_Orientation Or2);
+	:rtype: TopAbs_Orientation
+") Compose;
+		static TopAbs_Orientation Compose(const TopAbs_Orientation Or1, const TopAbs_Orientation Or2);
 
 		/****************** Print ******************/
 		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "* Prints the name of Shape type as a String on the Stream.
+		%feature("autodoc", "Prints the name of shape type as a string on the stream.
+
 	:param theShapeType:
 	:type theShapeType: TopAbs_ShapeEnum
 	:param theStream:
 	:type theStream: Standard_OStream
-	:rtype: Standard_OStream") Print;
-		static Standard_OStream & Print (const TopAbs_ShapeEnum theShapeType,Standard_OStream & theStream);
+	:rtype: Standard_OStream
+") Print;
+		static Standard_OStream & Print(const TopAbs_ShapeEnum theShapeType, Standard_OStream & theStream);
 
 		/****************** Print ******************/
 		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "* Prints the name of the Orientation as a String on the Stream.
+		%feature("autodoc", "Prints the name of the orientation as a string on the stream.
+
 	:param theOrientation:
 	:type theOrientation: TopAbs_Orientation
 	:param theStream:
 	:type theStream: Standard_OStream
-	:rtype: Standard_OStream") Print;
-		static Standard_OStream & Print (const TopAbs_Orientation theOrientation,Standard_OStream & theStream);
+	:rtype: Standard_OStream
+") Print;
+		static Standard_OStream & Print(const TopAbs_Orientation theOrientation, Standard_OStream & theStream);
 
 		/****************** Print ******************/
 		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "* Prints the name of the State <St> as a String on the Stream <S> and returns <S>.
+		%feature("autodoc", "Prints the name of the state <st> as a string on the stream <s> and returns <s>.
+
 	:param St:
 	:type St: TopAbs_State
 	:param S:
 	:type S: Standard_OStream
-	:rtype: Standard_OStream") Print;
-		static Standard_OStream & Print (const TopAbs_State St,Standard_OStream & S);
+	:rtype: Standard_OStream
+") Print;
+		static Standard_OStream & Print(const TopAbs_State St, Standard_OStream & S);
 
 		/****************** Reverse ******************/
 		%feature("compactdefaultargs") Reverse;
-		%feature("autodoc", "* xchanges the interior/exterior status of the two sides. This is what happens when the sense of direction is reversed. The following rules apply: //! FORWARD REVERSED REVERSED FORWARD INTERNAL INTERNAL EXTERNAL EXTERNAL //! Reverse exchange the material sides.
+		%feature("autodoc", "Xchanges the interior/exterior status of the two sides. this is what happens when the sense of direction is reversed. the following rules apply: //! forward reversed reversed forward internal internal external external //! reverse exchange the material sides.
+
 	:param Or:
 	:type Or: TopAbs_Orientation
-	:rtype: TopAbs_Orientation") Reverse;
-		static TopAbs_Orientation Reverse (const TopAbs_Orientation Or);
+	:rtype: TopAbs_Orientation
+") Reverse;
+		static TopAbs_Orientation Reverse(const TopAbs_Orientation Or);
 
 		/****************** ShapeOrientationFromString ******************/
 		%feature("compactdefaultargs") ShapeOrientationFromString;
-		%feature("autodoc", "* Returns the shape orientation from the given string identifier (using case-insensitive comparison). @param theOrientationString string identifier returns shape orientation or TopAbs_FORWARD if string identifier is invalid
+		%feature("autodoc", "Returns the shape orientation from the given string identifier (using case-insensitive comparison). @param theorientationstring string identifier returns shape orientation or topabs_forward if string identifier is invalid.
+
 	:param theOrientationString:
 	:type theOrientationString: char *
-	:rtype: TopAbs_Orientation") ShapeOrientationFromString;
-		static TopAbs_Orientation ShapeOrientationFromString (const char * theOrientationString);
+	:rtype: TopAbs_Orientation
+") ShapeOrientationFromString;
+		static TopAbs_Orientation ShapeOrientationFromString(const char * theOrientationString);
 
 		/****************** ShapeOrientationFromString ******************/
 		%feature("compactdefaultargs") ShapeOrientationFromString;
-		%feature("autodoc", "* Determines the shape orientation from the given string identifier (using case-insensitive comparison). @param theOrientationString string identifier @param theOrientation detected shape orientation returns True if string identifier is known
+		%feature("autodoc", "Determines the shape orientation from the given string identifier (using case-insensitive comparison). @param theorientationstring string identifier @param theorientation detected shape orientation returns true if string identifier is known.
+
 	:param theOrientationString:
 	:type theOrientationString: char *
 	:param theOrientation:
 	:type theOrientation: TopAbs_Orientation
-	:rtype: bool") ShapeOrientationFromString;
-		static Standard_Boolean ShapeOrientationFromString (const char * theOrientationString,TopAbs_Orientation & theOrientation);
+	:rtype: bool
+") ShapeOrientationFromString;
+		static Standard_Boolean ShapeOrientationFromString(const char * theOrientationString, TopAbs_Orientation & theOrientation);
 
 		/****************** ShapeOrientationToString ******************/
 		%feature("compactdefaultargs") ShapeOrientationToString;
-		%feature("autodoc", "* Returns the string name for a given shape orientation. @param theOrientation shape orientation returns string identifier from the list FORWARD, REVERSED, INTERNAL, EXTERNAL
+		%feature("autodoc", "Returns the string name for a given shape orientation. @param theorientation shape orientation returns string identifier from the list forward, reversed, internal, external.
+
 	:param theOrientation:
 	:type theOrientation: TopAbs_Orientation
-	:rtype: char *") ShapeOrientationToString;
-		static const char * ShapeOrientationToString (TopAbs_Orientation theOrientation);
+	:rtype: char *
+") ShapeOrientationToString;
+		static const char * ShapeOrientationToString(TopAbs_Orientation theOrientation);
 
 		/****************** ShapeTypeFromString ******************/
 		%feature("compactdefaultargs") ShapeTypeFromString;
-		%feature("autodoc", "* Returns the shape type from the given string identifier (using case-insensitive comparison). @param theTypeString string identifier returns shape type or TopAbs_SHAPE if string identifier is invalid
+		%feature("autodoc", "Returns the shape type from the given string identifier (using case-insensitive comparison). @param thetypestring string identifier returns shape type or topabs_shape if string identifier is invalid.
+
 	:param theTypeString:
 	:type theTypeString: char *
-	:rtype: TopAbs_ShapeEnum") ShapeTypeFromString;
-		static TopAbs_ShapeEnum ShapeTypeFromString (const char * theTypeString);
+	:rtype: TopAbs_ShapeEnum
+") ShapeTypeFromString;
+		static TopAbs_ShapeEnum ShapeTypeFromString(const char * theTypeString);
 
 		/****************** ShapeTypeFromString ******************/
 		%feature("compactdefaultargs") ShapeTypeFromString;
-		%feature("autodoc", "* Determines the shape type from the given string identifier (using case-insensitive comparison). @param theTypeString string identifier @param theType detected shape type returns True if string identifier is known
+		%feature("autodoc", "Determines the shape type from the given string identifier (using case-insensitive comparison). @param thetypestring string identifier @param thetype detected shape type returns true if string identifier is known.
+
 	:param theTypeString:
 	:type theTypeString: char *
 	:param theType:
 	:type theType: TopAbs_ShapeEnum
-	:rtype: bool") ShapeTypeFromString;
-		static Standard_Boolean ShapeTypeFromString (const char * theTypeString,TopAbs_ShapeEnum & theType);
+	:rtype: bool
+") ShapeTypeFromString;
+		static Standard_Boolean ShapeTypeFromString(const char * theTypeString, TopAbs_ShapeEnum & theType);
 
 		/****************** ShapeTypeToString ******************/
 		%feature("compactdefaultargs") ShapeTypeToString;
-		%feature("autodoc", "* Returns the string name for a given shape type. @param theType shape type returns string identifier from the list COMPOUND, COMPSOLID, SOLID, SHELL, FACE, WIRE, EDGE, VERTEX, SHAPE
+		%feature("autodoc", "Returns the string name for a given shape type. @param thetype shape type returns string identifier from the list compound, compsolid, solid, shell, face, wire, edge, vertex, shape.
+
 	:param theType:
 	:type theType: TopAbs_ShapeEnum
-	:rtype: char *") ShapeTypeToString;
-		static const char * ShapeTypeToString (TopAbs_ShapeEnum theType);
+	:rtype: char *
+") ShapeTypeToString;
+		static const char * ShapeTypeToString(TopAbs_ShapeEnum theType);
 
 };
 

@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -74,15 +74,15 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepmat2d.html"
 /* end handles declaration */
 
 /* templates */
-%template(BRepMAT2d_DataMapOfBasicEltShape) NCollection_DataMap <opencascade::handle <MAT_BasicElt>, TopoDS_Shape , TColStd_MapTransientHasher>;
-%template(BRepMAT2d_DataMapOfShapeSequenceOfBasicElt) NCollection_DataMap <TopoDS_Shape , MAT_SequenceOfBasicElt , TopTools_ShapeMapHasher>;
+%template(BRepMAT2d_DataMapOfBasicEltShape) NCollection_DataMap<opencascade::handle<MAT_BasicElt>,TopoDS_Shape,TColStd_MapTransientHasher>;
+%template(BRepMAT2d_DataMapOfShapeSequenceOfBasicElt) NCollection_DataMap<TopoDS_Shape,MAT_SequenceOfBasicElt,TopTools_ShapeMapHasher>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap <opencascade::handle <MAT_BasicElt>, TopoDS_Shape , TColStd_MapTransientHasher> BRepMAT2d_DataMapOfBasicEltShape;
-typedef NCollection_DataMap <opencascade::handle <MAT_BasicElt>, TopoDS_Shape , TColStd_MapTransientHasher>::Iterator BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape;
-typedef NCollection_DataMap <TopoDS_Shape , MAT_SequenceOfBasicElt , TopTools_ShapeMapHasher> BRepMAT2d_DataMapOfShapeSequenceOfBasicElt;
-typedef NCollection_DataMap <TopoDS_Shape , MAT_SequenceOfBasicElt , TopTools_ShapeMapHasher>::Iterator BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt;
+typedef NCollection_DataMap<opencascade::handle<MAT_BasicElt>, TopoDS_Shape, TColStd_MapTransientHasher> BRepMAT2d_DataMapOfBasicEltShape;
+typedef NCollection_DataMap<opencascade::handle<MAT_BasicElt>, TopoDS_Shape, TColStd_MapTransientHasher>::Iterator BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape;
+typedef NCollection_DataMap<TopoDS_Shape, MAT_SequenceOfBasicElt, TopTools_ShapeMapHasher> BRepMAT2d_DataMapOfShapeSequenceOfBasicElt;
+typedef NCollection_DataMap<TopoDS_Shape, MAT_SequenceOfBasicElt, TopTools_ShapeMapHasher>::Iterator BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt;
 /* end typedefs declaration */
 
 /*********************************
@@ -92,22 +92,26 @@ class BRepMAT2d_BisectingLocus {
 	public:
 		/****************** BRepMAT2d_BisectingLocus ******************/
 		%feature("compactdefaultargs") BRepMAT2d_BisectingLocus;
-		%feature("autodoc", ":rtype: None") BRepMAT2d_BisectingLocus;
-		 BRepMAT2d_BisectingLocus ();
+		%feature("autodoc", "	:rtype: None
+") BRepMAT2d_BisectingLocus;
+		 BRepMAT2d_BisectingLocus();
 
 		/****************** BasicElt ******************/
 		%feature("compactdefaultargs") BasicElt;
-		%feature("autodoc", "* Returns the BasicElts located at the position <Index> on the contour designed by <IndLine>. Remark: the BasicElts on a contour are sorted.
+		%feature("autodoc", "Returns the basicelts located at the position <index> on the contour designed by <indline>. remark: the basicelts on a contour are sorted.
+
 	:param IndLine:
 	:type IndLine: int
 	:param Index:
 	:type Index: int
-	:rtype: opencascade::handle<MAT_BasicElt>") BasicElt;
-		opencascade::handle<MAT_BasicElt> BasicElt (const Standard_Integer IndLine,const Standard_Integer Index);
+	:rtype: opencascade::handle<MAT_BasicElt>
+") BasicElt;
+		opencascade::handle<MAT_BasicElt> BasicElt(const Standard_Integer IndLine, const Standard_Integer Index);
 
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
-		%feature("autodoc", "* Computation of the Bisector_Locus in a set of Lines defined in <anExplo>. The bisecting locus are computed on the side <aSide> from the line <LineIndex> in <anExplo>.
+		%feature("autodoc", "Computation of the bisector_locus in a set of lines defined in <anexplo>. the bisecting locus are computed on the side <aside> from the line <lineindex> in <anexplo>.
+
 	:param anExplo:
 	:type anExplo: BRepMAT2d_Explorer
 	:param LineIndex: default value is 1
@@ -118,70 +122,87 @@ class BRepMAT2d_BisectingLocus {
 	:type aJoinType: GeomAbs_JoinType
 	:param IsOpenResult: default value is Standard_False
 	:type IsOpenResult: bool
-	:rtype: None") Compute;
-		void Compute (BRepMAT2d_Explorer & anExplo,const Standard_Integer LineIndex = 1,const MAT_Side aSide = MAT_Left,const GeomAbs_JoinType aJoinType = GeomAbs_Arc,const Standard_Boolean IsOpenResult = Standard_False);
+	:rtype: None
+") Compute;
+		void Compute(BRepMAT2d_Explorer & anExplo, const Standard_Integer LineIndex = 1, const MAT_Side aSide = MAT_Left, const GeomAbs_JoinType aJoinType = GeomAbs_Arc, const Standard_Boolean IsOpenResult = Standard_False);
 
 		/****************** GeomBis ******************/
 		%feature("compactdefaultargs") GeomBis;
-		%feature("autodoc", "* Returns the geometry of type <Bissec> linked to the arc <ARC>. <Reverse> is False when the FirstNode of <anArc> correspond to the first point of geometry.
+		%feature("autodoc", "Returns the geometry of type <bissec> linked to the arc <arc>. <reverse> is false when the firstnode of <anarc> correspond to the first point of geometry.
+
 	:param anArc:
 	:type anArc: MAT_Arc
 	:param Reverse:
 	:type Reverse: bool
-	:rtype: Bisector_Bisec") GeomBis;
-		Bisector_Bisec GeomBis (const opencascade::handle<MAT_Arc> & anArc,Standard_Boolean &OutValue);
+	:rtype: Bisector_Bisec
+") GeomBis;
+		Bisector_Bisec GeomBis(const opencascade::handle<MAT_Arc> & anArc, Standard_Boolean &OutValue);
 
 		/****************** GeomElt ******************/
 		%feature("compactdefaultargs") GeomElt;
-		%feature("autodoc", "* Returns the geometry linked to the <BasicElt>.
+		%feature("autodoc", "Returns the geometry linked to the <basicelt>.
+
 	:param aBasicElt:
 	:type aBasicElt: MAT_BasicElt
-	:rtype: opencascade::handle<Geom2d_Geometry>") GeomElt;
-		opencascade::handle<Geom2d_Geometry> GeomElt (const opencascade::handle<MAT_BasicElt> & aBasicElt);
+	:rtype: opencascade::handle<Geom2d_Geometry>
+") GeomElt;
+		opencascade::handle<Geom2d_Geometry> GeomElt(const opencascade::handle<MAT_BasicElt> & aBasicElt);
 
 		/****************** GeomElt ******************/
 		%feature("compactdefaultargs") GeomElt;
-		%feature("autodoc", "* Returns the geometry of type <gp> linked to the <Node>.
+		%feature("autodoc", "Returns the geometry of type <gp> linked to the <node>.
+
 	:param aNode:
 	:type aNode: MAT_Node
-	:rtype: gp_Pnt2d") GeomElt;
-		gp_Pnt2d GeomElt (const opencascade::handle<MAT_Node> & aNode);
+	:rtype: gp_Pnt2d
+") GeomElt;
+		gp_Pnt2d GeomElt(const opencascade::handle<MAT_Node> & aNode);
 
 		/****************** Graph ******************/
 		%feature("compactdefaultargs") Graph;
-		%feature("autodoc", "* Returns <theGraph> of <self>.
-	:rtype: opencascade::handle<MAT_Graph>") Graph;
-		opencascade::handle<MAT_Graph> Graph ();
+		%feature("autodoc", "Returns <thegraph> of <self>.
+
+	:rtype: opencascade::handle<MAT_Graph>
+") Graph;
+		opencascade::handle<MAT_Graph> Graph();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "* Returns True if Compute has succeeded.
-	:rtype: bool") IsDone;
-		Standard_Boolean IsDone ();
+		%feature("autodoc", "Returns true if compute has succeeded.
+
+	:rtype: bool
+") IsDone;
+		Standard_Boolean IsDone();
 
 		/****************** NumberOfContours ******************/
 		%feature("compactdefaultargs") NumberOfContours;
-		%feature("autodoc", "* Returns the number of contours.
-	:rtype: int") NumberOfContours;
-		Standard_Integer NumberOfContours ();
+		%feature("autodoc", "Returns the number of contours.
+
+	:rtype: int
+") NumberOfContours;
+		Standard_Integer NumberOfContours();
 
 		/****************** NumberOfElts ******************/
 		%feature("compactdefaultargs") NumberOfElts;
-		%feature("autodoc", "* Returns the number of BasicElts on the line <IndLine>.
+		%feature("autodoc", "Returns the number of basicelts on the line <indline>.
+
 	:param IndLine:
 	:type IndLine: int
-	:rtype: int") NumberOfElts;
-		Standard_Integer NumberOfElts (const Standard_Integer IndLine);
+	:rtype: int
+") NumberOfElts;
+		Standard_Integer NumberOfElts(const Standard_Integer IndLine);
 
 		/****************** NumberOfSections ******************/
 		%feature("compactdefaultargs") NumberOfSections;
-		%feature("autodoc", "* Returns the number of sections of a curve. this curve is the Indexth curve in the IndLineth contour given by anExplo.
+		%feature("autodoc", "Returns the number of sections of a curve. this curve is the indexth curve in the indlineth contour given by anexplo.
+
 	:param IndLine:
 	:type IndLine: int
 	:param Index:
 	:type Index: int
-	:rtype: int") NumberOfSections;
-		Standard_Integer NumberOfSections (const Standard_Integer IndLine,const Standard_Integer Index);
+	:rtype: int
+") NumberOfSections;
+		Standard_Integer NumberOfSections(const Standard_Integer IndLine, const Standard_Integer Index);
 
 };
 
@@ -199,100 +220,123 @@ class BRepMAT2d_Explorer {
 	public:
 		/****************** BRepMAT2d_Explorer ******************/
 		%feature("compactdefaultargs") BRepMAT2d_Explorer;
-		%feature("autodoc", ":rtype: None") BRepMAT2d_Explorer;
-		 BRepMAT2d_Explorer ();
+		%feature("autodoc", "	:rtype: None
+") BRepMAT2d_Explorer;
+		 BRepMAT2d_Explorer();
 
 		/****************** BRepMAT2d_Explorer ******************/
 		%feature("compactdefaultargs") BRepMAT2d_Explorer;
-		%feature("autodoc", ":param aFace:
+		%feature("autodoc", "	:param aFace:
 	:type aFace: TopoDS_Face
-	:rtype: None") BRepMAT2d_Explorer;
-		 BRepMAT2d_Explorer (const TopoDS_Face & aFace);
+	:rtype: None
+") BRepMAT2d_Explorer;
+		 BRepMAT2d_Explorer(const TopoDS_Face & aFace);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "* Clear the contents of <self>.
-	:rtype: None") Clear;
-		void Clear ();
+		%feature("autodoc", "Clear the contents of <self>.
+
+	:rtype: None
+") Clear;
+		void Clear();
 
 		/****************** Contour ******************/
 		%feature("compactdefaultargs") Contour;
-		%feature("autodoc", ":param IndexContour:
+		%feature("autodoc", "	:param IndexContour:
 	:type IndexContour: int
-	:rtype: TColGeom2d_SequenceOfCurve") Contour;
-		const TColGeom2d_SequenceOfCurve & Contour (const Standard_Integer IndexContour);
+	:rtype: TColGeom2d_SequenceOfCurve
+") Contour;
+		const TColGeom2d_SequenceOfCurve & Contour(const Standard_Integer IndexContour);
 
 		/****************** GetIsClosed ******************/
 		%feature("compactdefaultargs") GetIsClosed;
-		%feature("autodoc", ":rtype: TColStd_SequenceOfBoolean") GetIsClosed;
-		const TColStd_SequenceOfBoolean & GetIsClosed ();
+		%feature("autodoc", "	:rtype: TColStd_SequenceOfBoolean
+") GetIsClosed;
+		const TColStd_SequenceOfBoolean & GetIsClosed();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "* Initialisation of an Iterator on the curves of the Contour number <IndexContour>.
+		%feature("autodoc", "Initialisation of an iterator on the curves of the contour number <indexcontour>.
+
 	:param IndexContour:
 	:type IndexContour: int
-	:rtype: None") Init;
-		void Init (const Standard_Integer IndexContour);
+	:rtype: None
+") Init;
+		void Init(const Standard_Integer IndexContour);
 
 		/****************** IsModified ******************/
 		%feature("compactdefaultargs") IsModified;
-		%feature("autodoc", ":param aShape:
+		%feature("autodoc", "	:param aShape:
 	:type aShape: TopoDS_Shape
-	:rtype: bool") IsModified;
-		Standard_Boolean IsModified (const TopoDS_Shape & aShape);
+	:rtype: bool
+") IsModified;
+		Standard_Boolean IsModified(const TopoDS_Shape & aShape);
 
 		/****************** ModifiedShape ******************/
 		%feature("compactdefaultargs") ModifiedShape;
-		%feature("autodoc", "* If the shape is not modified, returns the shape itself.
+		%feature("autodoc", "If the shape is not modified, returns the shape itself.
+
 	:param aShape:
 	:type aShape: TopoDS_Shape
-	:rtype: TopoDS_Shape") ModifiedShape;
-		TopoDS_Shape ModifiedShape (const TopoDS_Shape & aShape);
+	:rtype: TopoDS_Shape
+") ModifiedShape;
+		TopoDS_Shape ModifiedShape(const TopoDS_Shape & aShape);
 
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
-		%feature("autodoc", "* Return False if there is no more curves on the Contour initialised by the method Init.
-	:rtype: bool") More;
-		Standard_Boolean More ();
+		%feature("autodoc", "Return false if there is no more curves on the contour initialised by the method init.
+
+	:rtype: bool
+") More;
+		Standard_Boolean More();
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
-		%feature("autodoc", "* Move to the next curve of the current Contour.
-	:rtype: None") Next;
-		void Next ();
+		%feature("autodoc", "Move to the next curve of the current contour.
+
+	:rtype: None
+") Next;
+		void Next();
 
 		/****************** NumberOfContours ******************/
 		%feature("compactdefaultargs") NumberOfContours;
-		%feature("autodoc", "* Returns the Number of contours.
-	:rtype: int") NumberOfContours;
-		Standard_Integer NumberOfContours ();
+		%feature("autodoc", "Returns the number of contours.
+
+	:rtype: int
+") NumberOfContours;
+		Standard_Integer NumberOfContours();
 
 		/****************** NumberOfCurves ******************/
 		%feature("compactdefaultargs") NumberOfCurves;
-		%feature("autodoc", "* Returns the Number of Curves in the Contour number <IndexContour>.
+		%feature("autodoc", "Returns the number of curves in the contour number <indexcontour>.
+
 	:param IndexContour:
 	:type IndexContour: int
-	:rtype: int") NumberOfCurves;
-		Standard_Integer NumberOfCurves (const Standard_Integer IndexContour);
+	:rtype: int
+") NumberOfCurves;
+		Standard_Integer NumberOfCurves(const Standard_Integer IndexContour);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", ":param aFace:
+		%feature("autodoc", "	:param aFace:
 	:type aFace: TopoDS_Face
-	:rtype: None") Perform;
-		void Perform (const TopoDS_Face & aFace);
+	:rtype: None
+") Perform;
+		void Perform(const TopoDS_Face & aFace);
 
 		/****************** Shape ******************/
 		%feature("compactdefaultargs") Shape;
-		%feature("autodoc", ":rtype: TopoDS_Shape") Shape;
-		TopoDS_Shape Shape ();
+		%feature("autodoc", "	:rtype: TopoDS_Shape
+") Shape;
+		TopoDS_Shape Shape();
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "* Returns the current curve on the current Contour.
-	:rtype: opencascade::handle<Geom2d_Curve>") Value;
-		opencascade::handle<Geom2d_Curve> Value ();
+		%feature("autodoc", "Returns the current curve on the current contour.
+
+	:rtype: opencascade::handle<Geom2d_Curve>
+") Value;
+		opencascade::handle<Geom2d_Curve> Value();
 
 };
 
@@ -310,62 +354,77 @@ class BRepMAT2d_LinkTopoBilo {
 	public:
 		/****************** BRepMAT2d_LinkTopoBilo ******************/
 		%feature("compactdefaultargs") BRepMAT2d_LinkTopoBilo;
-		%feature("autodoc", ":rtype: None") BRepMAT2d_LinkTopoBilo;
-		 BRepMAT2d_LinkTopoBilo ();
+		%feature("autodoc", "	:rtype: None
+") BRepMAT2d_LinkTopoBilo;
+		 BRepMAT2d_LinkTopoBilo();
 
 		/****************** BRepMAT2d_LinkTopoBilo ******************/
 		%feature("compactdefaultargs") BRepMAT2d_LinkTopoBilo;
-		%feature("autodoc", "* Constructs the links Between S and BiLo. //! raises if <S> is not a face.
+		%feature("autodoc", "Constructs the links between s and bilo. //! raises if <s> is not a face.
+
 	:param Explo:
 	:type Explo: BRepMAT2d_Explorer
 	:param BiLo:
 	:type BiLo: BRepMAT2d_BisectingLocus
-	:rtype: None") BRepMAT2d_LinkTopoBilo;
-		 BRepMAT2d_LinkTopoBilo (const BRepMAT2d_Explorer & Explo,const BRepMAT2d_BisectingLocus & BiLo);
+	:rtype: None
+") BRepMAT2d_LinkTopoBilo;
+		 BRepMAT2d_LinkTopoBilo(const BRepMAT2d_Explorer & Explo, const BRepMAT2d_BisectingLocus & BiLo);
 
 		/****************** GeneratingShape ******************/
 		%feature("compactdefaultargs") GeneratingShape;
-		%feature("autodoc", "* Returns the Shape linked to <aBE>.
+		%feature("autodoc", "Returns the shape linked to <abe>.
+
 	:param aBE:
 	:type aBE: MAT_BasicElt
-	:rtype: TopoDS_Shape") GeneratingShape;
-		TopoDS_Shape GeneratingShape (const opencascade::handle<MAT_BasicElt> & aBE);
+	:rtype: TopoDS_Shape
+") GeneratingShape;
+		TopoDS_Shape GeneratingShape(const opencascade::handle<MAT_BasicElt> & aBE);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "* Initialise the Iterator on <S> <S> is an edge or a vertex of the initial wire or face. raises if <S> is not an edge or a vertex.
+		%feature("autodoc", "Initialise the iterator on <s> <s> is an edge or a vertex of the initial wire or face. raises if <s> is not an edge or a vertex.
+
 	:param S:
 	:type S: TopoDS_Shape
-	:rtype: None") Init;
-		void Init (const TopoDS_Shape & S);
+	:rtype: None
+") Init;
+		void Init(const TopoDS_Shape & S);
 
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
-		%feature("autodoc", "* Returns True if there is a current BasicElt.
-	:rtype: bool") More;
-		Standard_Boolean More ();
+		%feature("autodoc", "Returns true if there is a current basicelt.
+
+	:rtype: bool
+") More;
+		Standard_Boolean More();
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
-		%feature("autodoc", "* Proceed to the next BasicElt.
-	:rtype: None") Next;
-		void Next ();
+		%feature("autodoc", "Proceed to the next basicelt.
+
+	:rtype: None
+") Next;
+		void Next();
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "* Constructs the links Between S and BiLo. //! raises if <S> is not a face or a wire.
+		%feature("autodoc", "Constructs the links between s and bilo. //! raises if <s> is not a face or a wire.
+
 	:param Explo:
 	:type Explo: BRepMAT2d_Explorer
 	:param BiLo:
 	:type BiLo: BRepMAT2d_BisectingLocus
-	:rtype: None") Perform;
-		void Perform (const BRepMAT2d_Explorer & Explo,const BRepMAT2d_BisectingLocus & BiLo);
+	:rtype: None
+") Perform;
+		void Perform(const BRepMAT2d_Explorer & Explo, const BRepMAT2d_BisectingLocus & BiLo);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "* Returns the current BasicElt.
-	:rtype: opencascade::handle<MAT_BasicElt>") Value;
-		opencascade::handle<MAT_BasicElt> Value ();
+		%feature("autodoc", "Returns the current basicelt.
+
+	:rtype: opencascade::handle<MAT_BasicElt>
+") Value;
+		opencascade::handle<MAT_BasicElt> Value();
 
 };
 

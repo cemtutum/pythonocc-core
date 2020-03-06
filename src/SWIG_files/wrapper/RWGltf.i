@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -161,9 +161,11 @@ class RWGltf_GltfAccessor {
 		Graphic3d_BndBox3d BndBox;
 		/****************** RWGltf_GltfAccessor ******************/
 		%feature("compactdefaultargs") RWGltf_GltfAccessor;
-		%feature("autodoc", "* //!< bounding box Empty constructor.
-	:rtype: None") RWGltf_GltfAccessor;
-		 RWGltf_GltfAccessor ();
+		%feature("autodoc", "Empty constructor.
+
+	:rtype: None
+") RWGltf_GltfAccessor;
+		 RWGltf_GltfAccessor();
 
 };
 
@@ -186,8 +188,9 @@ class RWGltf_GltfBufferView {
 		RWGltf_GltfBufferViewTarget Target;
 		/****************** RWGltf_GltfBufferView ******************/
 		%feature("compactdefaultargs") RWGltf_GltfBufferView;
-		%feature("autodoc", ":rtype: None") RWGltf_GltfBufferView;
-		 RWGltf_GltfBufferView ();
+		%feature("autodoc", "	:rtype: None
+") RWGltf_GltfBufferView;
+		 RWGltf_GltfBufferView();
 
 };
 
@@ -224,22 +227,24 @@ class RWGltf_GltfFace {
 *********************************/
 class RWGltf_GltfPrimArrayData {
 	public:
-		opencascade::handle<NCollection_Buffer> StreamData;
+		opencascade::handle<NCollection_Buffer > StreamData;
 		TCollection_AsciiString StreamUri;
 		int64_t StreamOffset;
 		RWGltf_GltfAccessor Accessor;
 		RWGltf_GltfArrayType Type;
 		/****************** RWGltf_GltfPrimArrayData ******************/
 		%feature("compactdefaultargs") RWGltf_GltfPrimArrayData;
-		%feature("autodoc", ":rtype: None") RWGltf_GltfPrimArrayData;
-		 RWGltf_GltfPrimArrayData ();
+		%feature("autodoc", "	:rtype: None
+") RWGltf_GltfPrimArrayData;
+		 RWGltf_GltfPrimArrayData();
 
 		/****************** RWGltf_GltfPrimArrayData ******************/
 		%feature("compactdefaultargs") RWGltf_GltfPrimArrayData;
-		%feature("autodoc", ":param theType:
+		%feature("autodoc", "	:param theType:
 	:type theType: RWGltf_GltfArrayType
-	:rtype: None") RWGltf_GltfPrimArrayData;
-		 RWGltf_GltfPrimArrayData (RWGltf_GltfArrayType theType);
+	:rtype: None
+") RWGltf_GltfPrimArrayData;
+		 RWGltf_GltfPrimArrayData(RWGltf_GltfArrayType theType);
 
 };
 
@@ -258,9 +263,9 @@ class RWGltf_GltfPrimArrayData {
 ******************************/
 class RWGltf_MaterialCommon : public Standard_Transient {
 	public:
-		opencascade::handle<Image_Texture> AmbientTexture;
-		opencascade::handle<Image_Texture> DiffuseTexture;
-		opencascade::handle<Image_Texture> SpecularTexture;
+		opencascade::handle<Image_Texture > AmbientTexture;
+		opencascade::handle<Image_Texture > DiffuseTexture;
+		opencascade::handle<Image_Texture > SpecularTexture;
 		TCollection_AsciiString Id;
 		TCollection_AsciiString Name;
 		Quantity_Color AmbientColor;
@@ -271,8 +276,9 @@ class RWGltf_MaterialCommon : public Standard_Transient {
 		Standard_ShortReal Transparency;
 		/****************** RWGltf_MaterialCommon ******************/
 		%feature("compactdefaultargs") RWGltf_MaterialCommon;
-		%feature("autodoc", ":rtype: None") RWGltf_MaterialCommon;
-		 RWGltf_MaterialCommon ();
+		%feature("autodoc", "	:rtype: None
+") RWGltf_MaterialCommon;
+		 RWGltf_MaterialCommon();
 
 };
 
@@ -290,11 +296,11 @@ class RWGltf_MaterialCommon : public Standard_Transient {
 *****************************************/
 class RWGltf_MaterialMetallicRoughness : public Standard_Transient {
 	public:
-		opencascade::handle<Image_Texture> BaseColorTexture;
-		opencascade::handle<Image_Texture> MetallicRoughnessTexture;
-		opencascade::handle<Image_Texture> EmissiveTexture;
-		opencascade::handle<Image_Texture> OcclusionTexture;
-		opencascade::handle<Image_Texture> NormalTexture;
+		opencascade::handle<Image_Texture > BaseColorTexture;
+		opencascade::handle<Image_Texture > MetallicRoughnessTexture;
+		opencascade::handle<Image_Texture > EmissiveTexture;
+		opencascade::handle<Image_Texture > OcclusionTexture;
+		opencascade::handle<Image_Texture > NormalTexture;
 		TCollection_AsciiString Id;
 		TCollection_AsciiString Name;
 		Quantity_ColorRGBA BaseColor;
@@ -303,9 +309,9 @@ class RWGltf_MaterialMetallicRoughness : public Standard_Transient {
 		Standard_ShortReal Roughness;
 		/****************** RWGltf_MaterialMetallicRoughness ******************/
 		%feature("compactdefaultargs") RWGltf_MaterialMetallicRoughness;
-		%feature("autodoc", "* //!< roughness (or scale factor to the texture) within range [0.0, 1.0]; 1.0 by default
-	:rtype: None") RWGltf_MaterialMetallicRoughness;
-		 RWGltf_MaterialMetallicRoughness ();
+		%feature("autodoc", "	:rtype: None
+") RWGltf_MaterialMetallicRoughness;
+		 RWGltf_MaterialMetallicRoughness();
 
 };
 

@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -73,63 +73,79 @@ class BRepProj_Projection {
 	public:
 		/****************** BRepProj_Projection ******************/
 		%feature("compactdefaultargs") BRepProj_Projection;
-		%feature("autodoc", "* Makes a Cylindrical projection of Wire om Shape
+		%feature("autodoc", "Makes a cylindrical projection of wire om shape.
+
 	:param Wire:
 	:type Wire: TopoDS_Shape
 	:param Shape:
 	:type Shape: TopoDS_Shape
 	:param D:
 	:type D: gp_Dir
-	:rtype: None") BRepProj_Projection;
-		 BRepProj_Projection (const TopoDS_Shape & Wire,const TopoDS_Shape & Shape,const gp_Dir & D);
+	:rtype: None
+") BRepProj_Projection;
+		 BRepProj_Projection(const TopoDS_Shape & Wire, const TopoDS_Shape & Shape, const gp_Dir & D);
 
 		/****************** BRepProj_Projection ******************/
 		%feature("compactdefaultargs") BRepProj_Projection;
-		%feature("autodoc", "* Makes a Conical projection of Wire om Shape
+		%feature("autodoc", "Makes a conical projection of wire om shape.
+
 	:param Wire:
 	:type Wire: TopoDS_Shape
 	:param Shape:
 	:type Shape: TopoDS_Shape
 	:param P:
 	:type P: gp_Pnt
-	:rtype: None") BRepProj_Projection;
-		 BRepProj_Projection (const TopoDS_Shape & Wire,const TopoDS_Shape & Shape,const gp_Pnt & P);
+	:rtype: None
+") BRepProj_Projection;
+		 BRepProj_Projection(const TopoDS_Shape & Wire, const TopoDS_Shape & Shape, const gp_Pnt & P);
 
 		/****************** Current ******************/
 		%feature("compactdefaultargs") Current;
-		%feature("autodoc", "* Returns the current result wire.
-	:rtype: TopoDS_Wire") Current;
-		TopoDS_Wire Current ();
+		%feature("autodoc", "Returns the current result wire.
+
+	:rtype: TopoDS_Wire
+") Current;
+		TopoDS_Wire Current();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "* Resets the iterator by resulting wires.
-	:rtype: None") Init;
-		void Init ();
+		%feature("autodoc", "Resets the iterator by resulting wires.
+
+	:rtype: None
+") Init;
+		void Init();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "* returns False if the section failed
-	:rtype: bool") IsDone;
-		Standard_Boolean IsDone ();
+		%feature("autodoc", "Returns false if the section failed.
+
+	:rtype: bool
+") IsDone;
+		Standard_Boolean IsDone();
 
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
-		%feature("autodoc", "* Returns True if there is a current result wire
-	:rtype: bool") More;
-		Standard_Boolean More ();
+		%feature("autodoc", "Returns true if there is a current result wire.
+
+	:rtype: bool
+") More;
+		Standard_Boolean More();
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
-		%feature("autodoc", "* Move to the next result wire.
-	:rtype: None") Next;
-		void Next ();
+		%feature("autodoc", "Move to the next result wire.
+
+	:rtype: None
+") Next;
+		void Next();
 
 		/****************** Shape ******************/
 		%feature("compactdefaultargs") Shape;
-		%feature("autodoc", "* Returns the complete result as compound of wires.
-	:rtype: TopoDS_Compound") Shape;
-		TopoDS_Compound Shape ();
+		%feature("autodoc", "Returns the complete result as compound of wires.
+
+	:rtype: TopoDS_Compound
+") Shape;
+		TopoDS_Compound Shape();
 
 };
 

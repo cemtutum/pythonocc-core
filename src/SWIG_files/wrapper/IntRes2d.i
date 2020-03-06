@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -76,13 +76,13 @@ enum IntRes2d_TypeTrans {
 /* end handles declaration */
 
 /* templates */
-%template(IntRes2d_SequenceOfIntersectionSegment) NCollection_Sequence <IntRes2d_IntersectionSegment>;
-%template(IntRes2d_SequenceOfIntersectionPoint) NCollection_Sequence <IntRes2d_IntersectionPoint>;
+%template(IntRes2d_SequenceOfIntersectionSegment) NCollection_Sequence<IntRes2d_IntersectionSegment>;
+%template(IntRes2d_SequenceOfIntersectionPoint) NCollection_Sequence<IntRes2d_IntersectionPoint>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence <IntRes2d_IntersectionSegment> IntRes2d_SequenceOfIntersectionSegment;
-typedef NCollection_Sequence <IntRes2d_IntersectionPoint> IntRes2d_SequenceOfIntersectionPoint;
+typedef NCollection_Sequence<IntRes2d_IntersectionSegment> IntRes2d_SequenceOfIntersectionSegment;
+typedef NCollection_Sequence<IntRes2d_IntersectionPoint> IntRes2d_SequenceOfIntersectionPoint;
 /* end typedefs declaration */
 
 /************************
@@ -92,53 +92,68 @@ class IntRes2d_Domain {
 	public:
 		/****************** EquivalentParameters ******************/
 		%feature("compactdefaultargs") EquivalentParameters;
-		%feature("autodoc", "* Returns Equivalent parameters if the domain is closed. Otherwise, the exception DomainError is raised.
+		%feature("autodoc", "Returns equivalent parameters if the domain is closed. otherwise, the exception domainerror is raised.
+
 	:param zero:
 	:type zero: float
 	:param zeroplusperiod:
 	:type zeroplusperiod: float
-	:rtype: None") EquivalentParameters;
-		void EquivalentParameters (Standard_Real &OutValue,Standard_Real &OutValue);
+	:rtype: None
+") EquivalentParameters;
+		void EquivalentParameters(Standard_Real &OutValue, Standard_Real &OutValue);
 
 		/****************** FirstParameter ******************/
 		%feature("compactdefaultargs") FirstParameter;
-		%feature("autodoc", "* Returns the parameter of the first point of the domain The exception DomainError is raised if HasFirstPoint returns False.
-	:rtype: float") FirstParameter;
-		Standard_Real FirstParameter ();
+		%feature("autodoc", "Returns the parameter of the first point of the domain the exception domainerror is raised if hasfirstpoint returns false.
+
+	:rtype: float
+") FirstParameter;
+		Standard_Real FirstParameter();
 
 		/****************** FirstPoint ******************/
 		%feature("compactdefaultargs") FirstPoint;
-		%feature("autodoc", "* Returns the first point of the domain. The exception DomainError is raised if HasFirstPoint returns False.
-	:rtype: gp_Pnt2d") FirstPoint;
-		const gp_Pnt2d  FirstPoint ();
+		%feature("autodoc", "Returns the first point of the domain. the exception domainerror is raised if hasfirstpoint returns false.
+
+	:rtype: gp_Pnt2d
+") FirstPoint;
+		const gp_Pnt2d FirstPoint();
 
 		/****************** FirstTolerance ******************/
 		%feature("compactdefaultargs") FirstTolerance;
-		%feature("autodoc", "* Returns the tolerance of the first (left) bound. The exception DomainError is raised if HasFirstPoint returns False.
-	:rtype: float") FirstTolerance;
-		Standard_Real FirstTolerance ();
+		%feature("autodoc", "Returns the tolerance of the first (left) bound. the exception domainerror is raised if hasfirstpoint returns false.
+
+	:rtype: float
+") FirstTolerance;
+		Standard_Real FirstTolerance();
 
 		/****************** HasFirstPoint ******************/
 		%feature("compactdefaultargs") HasFirstPoint;
-		%feature("autodoc", "* Returns True if the domain has a first point, i-e a point defining the lowest admitted parameter on the curve.
-	:rtype: bool") HasFirstPoint;
-		Standard_Boolean HasFirstPoint ();
+		%feature("autodoc", "Returns true if the domain has a first point, i-e a point defining the lowest admitted parameter on the curve.
+
+	:rtype: bool
+") HasFirstPoint;
+		Standard_Boolean HasFirstPoint();
 
 		/****************** HasLastPoint ******************/
 		%feature("compactdefaultargs") HasLastPoint;
-		%feature("autodoc", "* Returns True if the domain has a last point, i-e a point defining the highest admitted parameter on the curve.
-	:rtype: bool") HasLastPoint;
-		Standard_Boolean HasLastPoint ();
+		%feature("autodoc", "Returns true if the domain has a last point, i-e a point defining the highest admitted parameter on the curve.
+
+	:rtype: bool
+") HasLastPoint;
+		Standard_Boolean HasLastPoint();
 
 		/****************** IntRes2d_Domain ******************/
 		%feature("compactdefaultargs") IntRes2d_Domain;
-		%feature("autodoc", "* Creates an infinite Domain (HasFirstPoint = False and HasLastPoint = False).
-	:rtype: None") IntRes2d_Domain;
-		 IntRes2d_Domain ();
+		%feature("autodoc", "Creates an infinite domain (hasfirstpoint = false and haslastpoint = false).
+
+	:rtype: None
+") IntRes2d_Domain;
+		 IntRes2d_Domain();
 
 		/****************** IntRes2d_Domain ******************/
 		%feature("compactdefaultargs") IntRes2d_Domain;
-		%feature("autodoc", "* Creates a bounded Domain.
+		%feature("autodoc", "Creates a bounded domain.
+
 	:param Pnt1:
 	:type Pnt1: gp_Pnt2d
 	:param Par1:
@@ -151,12 +166,14 @@ class IntRes2d_Domain {
 	:type Par2: float
 	:param Tol2:
 	:type Tol2: float
-	:rtype: None") IntRes2d_Domain;
-		 IntRes2d_Domain (const gp_Pnt2d & Pnt1,const Standard_Real Par1,const Standard_Real Tol1,const gp_Pnt2d & Pnt2,const Standard_Real Par2,const Standard_Real Tol2);
+	:rtype: None
+") IntRes2d_Domain;
+		 IntRes2d_Domain(const gp_Pnt2d & Pnt1, const Standard_Real Par1, const Standard_Real Tol1, const gp_Pnt2d & Pnt2, const Standard_Real Par2, const Standard_Real Tol2);
 
 		/****************** IntRes2d_Domain ******************/
 		%feature("compactdefaultargs") IntRes2d_Domain;
-		%feature("autodoc", "* Creates a semi-infinite Domain. If First is set to True, the given point is the first point of the domain, otherwise it is the last point.
+		%feature("autodoc", "Creates a semi-infinite domain. if first is set to true, the given point is the first point of the domain, otherwise it is the last point.
+
 	:param Pnt:
 	:type Pnt: gp_Pnt2d
 	:param Par:
@@ -165,46 +182,58 @@ class IntRes2d_Domain {
 	:type Tol: float
 	:param First:
 	:type First: bool
-	:rtype: None") IntRes2d_Domain;
-		 IntRes2d_Domain (const gp_Pnt2d & Pnt,const Standard_Real Par,const Standard_Real Tol,const Standard_Boolean First);
+	:rtype: None
+") IntRes2d_Domain;
+		 IntRes2d_Domain(const gp_Pnt2d & Pnt, const Standard_Real Par, const Standard_Real Tol, const Standard_Boolean First);
 
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
-		%feature("autodoc", "* Returns True if the domain is closed.
-	:rtype: bool") IsClosed;
-		Standard_Boolean IsClosed ();
+		%feature("autodoc", "Returns true if the domain is closed.
+
+	:rtype: bool
+") IsClosed;
+		Standard_Boolean IsClosed();
 
 		/****************** LastParameter ******************/
 		%feature("compactdefaultargs") LastParameter;
-		%feature("autodoc", "* Returns the parameter of the last point of the domain. The exception DomainError is raised if HasLastPoint returns False.
-	:rtype: float") LastParameter;
-		Standard_Real LastParameter ();
+		%feature("autodoc", "Returns the parameter of the last point of the domain. the exception domainerror is raised if haslastpoint returns false.
+
+	:rtype: float
+") LastParameter;
+		Standard_Real LastParameter();
 
 		/****************** LastPoint ******************/
 		%feature("compactdefaultargs") LastPoint;
-		%feature("autodoc", "* Returns the last point of the domain. The exception DomainError is raised if HasLastPoint returns False.
-	:rtype: gp_Pnt2d") LastPoint;
-		const gp_Pnt2d  LastPoint ();
+		%feature("autodoc", "Returns the last point of the domain. the exception domainerror is raised if haslastpoint returns false.
+
+	:rtype: gp_Pnt2d
+") LastPoint;
+		const gp_Pnt2d LastPoint();
 
 		/****************** LastTolerance ******************/
 		%feature("compactdefaultargs") LastTolerance;
-		%feature("autodoc", "* Returns the tolerance of the last (right) bound. The exception DomainError is raised if HasLastPoint returns False.
-	:rtype: float") LastTolerance;
-		Standard_Real LastTolerance ();
+		%feature("autodoc", "Returns the tolerance of the last (right) bound. the exception domainerror is raised if haslastpoint returns false.
+
+	:rtype: float
+") LastTolerance;
+		Standard_Real LastTolerance();
 
 		/****************** SetEquivalentParameters ******************/
 		%feature("compactdefaultargs") SetEquivalentParameters;
-		%feature("autodoc", "* Defines a closed domain.
+		%feature("autodoc", "Defines a closed domain.
+
 	:param zero:
 	:type zero: float
 	:param period:
 	:type period: float
-	:rtype: None") SetEquivalentParameters;
-		void SetEquivalentParameters (const Standard_Real zero,const Standard_Real period);
+	:rtype: None
+") SetEquivalentParameters;
+		void SetEquivalentParameters(const Standard_Real zero, const Standard_Real period);
 
 		/****************** SetValues ******************/
 		%feature("compactdefaultargs") SetValues;
-		%feature("autodoc", "* Sets the values for a bounded domain.
+		%feature("autodoc", "Sets the values for a bounded domain.
+
 	:param Pnt1:
 	:type Pnt1: gp_Pnt2d
 	:param Par1:
@@ -217,18 +246,22 @@ class IntRes2d_Domain {
 	:type Par2: float
 	:param Tol2:
 	:type Tol2: float
-	:rtype: None") SetValues;
-		void SetValues (const gp_Pnt2d & Pnt1,const Standard_Real Par1,const Standard_Real Tol1,const gp_Pnt2d & Pnt2,const Standard_Real Par2,const Standard_Real Tol2);
+	:rtype: None
+") SetValues;
+		void SetValues(const gp_Pnt2d & Pnt1, const Standard_Real Par1, const Standard_Real Tol1, const gp_Pnt2d & Pnt2, const Standard_Real Par2, const Standard_Real Tol2);
 
 		/****************** SetValues ******************/
 		%feature("compactdefaultargs") SetValues;
-		%feature("autodoc", "* Sets the values for an infinite domain.
-	:rtype: None") SetValues;
-		void SetValues ();
+		%feature("autodoc", "Sets the values for an infinite domain.
+
+	:rtype: None
+") SetValues;
+		void SetValues();
 
 		/****************** SetValues ******************/
 		%feature("compactdefaultargs") SetValues;
-		%feature("autodoc", "* Sets the values for a semi-infinite domain.
+		%feature("autodoc", "Sets the values for a semi-infinite domain.
+
 	:param Pnt:
 	:type Pnt: gp_Pnt2d
 	:param Par:
@@ -237,8 +270,9 @@ class IntRes2d_Domain {
 	:type Tol: float
 	:param First:
 	:type First: bool
-	:rtype: None") SetValues;
-		void SetValues (const gp_Pnt2d & Pnt,const Standard_Real Par,const Standard_Real Tol,const Standard_Boolean First);
+	:rtype: None
+") SetValues;
+		void SetValues(const gp_Pnt2d & Pnt, const Standard_Real Par, const Standard_Real Tol, const Standard_Boolean First);
 
 };
 
@@ -258,50 +292,63 @@ class IntRes2d_Intersection {
 	public:
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "* returns True when the computation was successful.
-	:rtype: bool") IsDone;
-		Standard_Boolean IsDone ();
+		%feature("autodoc", "Returns true when the computation was successful.
+
+	:rtype: bool
+") IsDone;
+		Standard_Boolean IsDone();
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
-		%feature("autodoc", "* Returns True if there is no intersection between the given arguments. The exception NotDone is raised if IsDone returns False.
-	:rtype: bool") IsEmpty;
-		Standard_Boolean IsEmpty ();
+		%feature("autodoc", "Returns true if there is no intersection between the given arguments. the exception notdone is raised if isdone returns false.
+
+	:rtype: bool
+") IsEmpty;
+		Standard_Boolean IsEmpty();
 
 		/****************** NbPoints ******************/
 		%feature("compactdefaultargs") NbPoints;
-		%feature("autodoc", "* This function returns the number of intersection points between the 2 curves. The exception NotDone is raised if IsDone returns False.
-	:rtype: int") NbPoints;
-		Standard_Integer NbPoints ();
+		%feature("autodoc", "This function returns the number of intersection points between the 2 curves. the exception notdone is raised if isdone returns false.
+
+	:rtype: int
+") NbPoints;
+		Standard_Integer NbPoints();
 
 		/****************** NbSegments ******************/
 		%feature("compactdefaultargs") NbSegments;
-		%feature("autodoc", "* This function returns the number of intersection segments between the two curves. The exception NotDone is raised if IsDone returns False.
-	:rtype: int") NbSegments;
-		Standard_Integer NbSegments ();
+		%feature("autodoc", "This function returns the number of intersection segments between the two curves. the exception notdone is raised if isdone returns false.
+
+	:rtype: int
+") NbSegments;
+		Standard_Integer NbSegments();
 
 		/****************** Point ******************/
 		%feature("compactdefaultargs") Point;
-		%feature("autodoc", "* This function returns the intersection point of range N; The exception NotDone is raised if IsDone returns False. The exception OutOfRange is raised if (N <= 0) or (N > NbPoints).
+		%feature("autodoc", "This function returns the intersection point of range n; the exception notdone is raised if isdone returns false. the exception outofrange is raised if (n <= 0) or (n > nbpoints).
+
 	:param N:
 	:type N: int
-	:rtype: IntRes2d_IntersectionPoint") Point;
-		const IntRes2d_IntersectionPoint & Point (const Standard_Integer N);
+	:rtype: IntRes2d_IntersectionPoint
+") Point;
+		const IntRes2d_IntersectionPoint & Point(const Standard_Integer N);
 
 		/****************** Segment ******************/
 		%feature("compactdefaultargs") Segment;
-		%feature("autodoc", "* This function returns the intersection segment of range N; The exception NotDone is raised if IsDone returns False. The exception OutOfRange is raised if (N <= 0) or (N > NbPoints).
+		%feature("autodoc", "This function returns the intersection segment of range n; the exception notdone is raised if isdone returns false. the exception outofrange is raised if (n <= 0) or (n > nbpoints).
+
 	:param N:
 	:type N: int
-	:rtype: IntRes2d_IntersectionSegment") Segment;
-		const IntRes2d_IntersectionSegment & Segment (const Standard_Integer N);
+	:rtype: IntRes2d_IntersectionSegment
+") Segment;
+		const IntRes2d_IntersectionSegment & Segment(const Standard_Integer N);
 
 		/****************** SetReversedParameters ******************/
 		%feature("compactdefaultargs") SetReversedParameters;
-		%feature("autodoc", ":param Reverseflag:
+		%feature("autodoc", "	:param Reverseflag:
 	:type Reverseflag: bool
-	:rtype: None") SetReversedParameters;
-		void SetReversedParameters (const Standard_Boolean Reverseflag);
+	:rtype: None
+") SetReversedParameters;
+		void SetReversedParameters(const Standard_Boolean Reverseflag);
 
 };
 
@@ -319,13 +366,16 @@ class IntRes2d_IntersectionPoint {
 	public:
 		/****************** IntRes2d_IntersectionPoint ******************/
 		%feature("compactdefaultargs") IntRes2d_IntersectionPoint;
-		%feature("autodoc", "* Empty constructor.
-	:rtype: None") IntRes2d_IntersectionPoint;
-		 IntRes2d_IntersectionPoint ();
+		%feature("autodoc", "Empty constructor.
+
+	:rtype: None
+") IntRes2d_IntersectionPoint;
+		 IntRes2d_IntersectionPoint();
 
 		/****************** IntRes2d_IntersectionPoint ******************/
 		%feature("compactdefaultargs") IntRes2d_IntersectionPoint;
-		%feature("autodoc", "* Creates an IntersectionPoint. if ReversedFlag is False, the parameter Uc1(resp. Uc2) and the Transition Trans1 (resp. Trans2) refer to the first curve (resp. second curve) otherwise Uc1 and Trans1 (resp. Uc2 and Trans2) refer to the second curve (resp. the first curve).
+		%feature("autodoc", "Creates an intersectionpoint. if reversedflag is false, the parameter uc1(resp. uc2) and the transition trans1 (resp. trans2) refer to the first curve (resp. second curve) otherwise uc1 and trans1 (resp. uc2 and trans2) refer to the second curve (resp. the first curve).
+
 	:param P:
 	:type P: gp_Pnt2d
 	:param Uc1:
@@ -338,24 +388,30 @@ class IntRes2d_IntersectionPoint {
 	:type Trans2: IntRes2d_Transition
 	:param ReversedFlag:
 	:type ReversedFlag: bool
-	:rtype: None") IntRes2d_IntersectionPoint;
-		 IntRes2d_IntersectionPoint (const gp_Pnt2d & P,const Standard_Real Uc1,const Standard_Real Uc2,const IntRes2d_Transition & Trans1,const IntRes2d_Transition & Trans2,const Standard_Boolean ReversedFlag);
+	:rtype: None
+") IntRes2d_IntersectionPoint;
+		 IntRes2d_IntersectionPoint(const gp_Pnt2d & P, const Standard_Real Uc1, const Standard_Real Uc2, const IntRes2d_Transition & Trans1, const IntRes2d_Transition & Trans2, const Standard_Boolean ReversedFlag);
 
 		/****************** ParamOnFirst ******************/
 		%feature("compactdefaultargs") ParamOnFirst;
-		%feature("autodoc", "* Returns the parameter on the first curve.
-	:rtype: float") ParamOnFirst;
-		Standard_Real ParamOnFirst ();
+		%feature("autodoc", "Returns the parameter on the first curve.
+
+	:rtype: float
+") ParamOnFirst;
+		Standard_Real ParamOnFirst();
 
 		/****************** ParamOnSecond ******************/
 		%feature("compactdefaultargs") ParamOnSecond;
-		%feature("autodoc", "* Returns the parameter on the second curve.
-	:rtype: float") ParamOnSecond;
-		Standard_Real ParamOnSecond ();
+		%feature("autodoc", "Returns the parameter on the second curve.
+
+	:rtype: float
+") ParamOnSecond;
+		Standard_Real ParamOnSecond();
 
 		/****************** SetValues ******************/
 		%feature("compactdefaultargs") SetValues;
-		%feature("autodoc", "* Sets the values for an existing intersection point. The meaning of the parameters are the same as for the Create.
+		%feature("autodoc", "Sets the values for an existing intersection point. the meaning of the parameters are the same as for the create.
+
 	:param P:
 	:type P: gp_Pnt2d
 	:param Uc1:
@@ -368,26 +424,33 @@ class IntRes2d_IntersectionPoint {
 	:type Trans2: IntRes2d_Transition
 	:param ReversedFlag:
 	:type ReversedFlag: bool
-	:rtype: None") SetValues;
-		void SetValues (const gp_Pnt2d & P,const Standard_Real Uc1,const Standard_Real Uc2,const IntRes2d_Transition & Trans1,const IntRes2d_Transition & Trans2,const Standard_Boolean ReversedFlag);
+	:rtype: None
+") SetValues;
+		void SetValues(const gp_Pnt2d & P, const Standard_Real Uc1, const Standard_Real Uc2, const IntRes2d_Transition & Trans1, const IntRes2d_Transition & Trans2, const Standard_Boolean ReversedFlag);
 
 		/****************** TransitionOfFirst ******************/
 		%feature("compactdefaultargs") TransitionOfFirst;
-		%feature("autodoc", "* Returns the transition of the 1st curve compared to the 2nd one.
-	:rtype: IntRes2d_Transition") TransitionOfFirst;
-		const IntRes2d_Transition & TransitionOfFirst ();
+		%feature("autodoc", "Returns the transition of the 1st curve compared to the 2nd one.
+
+	:rtype: IntRes2d_Transition
+") TransitionOfFirst;
+		const IntRes2d_Transition & TransitionOfFirst();
 
 		/****************** TransitionOfSecond ******************/
 		%feature("compactdefaultargs") TransitionOfSecond;
-		%feature("autodoc", "* returns the transition of the 2nd curve compared to the 1st one.
-	:rtype: IntRes2d_Transition") TransitionOfSecond;
-		const IntRes2d_Transition & TransitionOfSecond ();
+		%feature("autodoc", "Returns the transition of the 2nd curve compared to the 1st one.
+
+	:rtype: IntRes2d_Transition
+") TransitionOfSecond;
+		const IntRes2d_Transition & TransitionOfSecond();
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "* Returns the value of the coordinates of the intersection point in the 2D space.
-	:rtype: gp_Pnt2d") Value;
-		const gp_Pnt2d  Value ();
+		%feature("autodoc", "Returns the value of the coordinates of the intersection point in the 2d space.
+
+	:rtype: gp_Pnt2d
+") Value;
+		const gp_Pnt2d Value();
 
 };
 
@@ -405,31 +468,39 @@ class IntRes2d_IntersectionSegment {
 	public:
 		/****************** FirstPoint ******************/
 		%feature("compactdefaultargs") FirstPoint;
-		%feature("autodoc", "* Returns the first point of the segment as an IntersectionPoint (with a transition). The exception DomainError is raised if HasFirstPoint returns False.
-	:rtype: IntRes2d_IntersectionPoint") FirstPoint;
-		const IntRes2d_IntersectionPoint & FirstPoint ();
+		%feature("autodoc", "Returns the first point of the segment as an intersectionpoint (with a transition). the exception domainerror is raised if hasfirstpoint returns false.
+
+	:rtype: IntRes2d_IntersectionPoint
+") FirstPoint;
+		const IntRes2d_IntersectionPoint & FirstPoint();
 
 		/****************** HasFirstPoint ******************/
 		%feature("compactdefaultargs") HasFirstPoint;
-		%feature("autodoc", "* Returns True if the segment is limited by a first point. This point defines the lowest parameter admitted on the first curve for the segment. If IsOpposite returns False, it defines the lowest parameter on the second curve, otherwise, it is the highest parameter on the second curve.
-	:rtype: bool") HasFirstPoint;
-		Standard_Boolean HasFirstPoint ();
+		%feature("autodoc", "Returns true if the segment is limited by a first point. this point defines the lowest parameter admitted on the first curve for the segment. if isopposite returns false, it defines the lowest parameter on the second curve, otherwise, it is the highest parameter on the second curve.
+
+	:rtype: bool
+") HasFirstPoint;
+		Standard_Boolean HasFirstPoint();
 
 		/****************** HasLastPoint ******************/
 		%feature("compactdefaultargs") HasLastPoint;
-		%feature("autodoc", "* Returns True if the segment is limited by a last point. This point defines the highest parameter admitted on the first curve for the segment. If IsOpposite returns False, it defines the highest parameter on the second curve, otherwise, it is the lowest parameter on the second curve.
-	:rtype: bool") HasLastPoint;
-		Standard_Boolean HasLastPoint ();
+		%feature("autodoc", "Returns true if the segment is limited by a last point. this point defines the highest parameter admitted on the first curve for the segment. if isopposite returns false, it defines the highest parameter on the second curve, otherwise, it is the lowest parameter on the second curve.
+
+	:rtype: bool
+") HasLastPoint;
+		Standard_Boolean HasLastPoint();
 
 		/****************** IntRes2d_IntersectionSegment ******************/
 		%feature("compactdefaultargs") IntRes2d_IntersectionSegment;
-		%feature("autodoc", "* Empty constructor.
-	:rtype: None") IntRes2d_IntersectionSegment;
-		 IntRes2d_IntersectionSegment ();
+		%feature("autodoc", "Empty constructor.
+
+	:rtype: None
+") IntRes2d_IntersectionSegment;
+		 IntRes2d_IntersectionSegment();
 
 		/****************** IntRes2d_IntersectionSegment ******************/
 		%feature("compactdefaultargs") IntRes2d_IntersectionSegment;
-		%feature("autodoc", ":param P1:
+		%feature("autodoc", "	:param P1:
 	:type P1: IntRes2d_IntersectionPoint
 	:param P2:
 	:type P2: IntRes2d_IntersectionPoint
@@ -437,12 +508,13 @@ class IntRes2d_IntersectionSegment {
 	:type Oppos: bool
 	:param ReverseFlag:
 	:type ReverseFlag: bool
-	:rtype: None") IntRes2d_IntersectionSegment;
-		 IntRes2d_IntersectionSegment (const IntRes2d_IntersectionPoint & P1,const IntRes2d_IntersectionPoint & P2,const Standard_Boolean Oppos,const Standard_Boolean ReverseFlag);
+	:rtype: None
+") IntRes2d_IntersectionSegment;
+		 IntRes2d_IntersectionSegment(const IntRes2d_IntersectionPoint & P1, const IntRes2d_IntersectionPoint & P2, const Standard_Boolean Oppos, const Standard_Boolean ReverseFlag);
 
 		/****************** IntRes2d_IntersectionSegment ******************/
 		%feature("compactdefaultargs") IntRes2d_IntersectionSegment;
-		%feature("autodoc", ":param P:
+		%feature("autodoc", "	:param P:
 	:type P: IntRes2d_IntersectionPoint
 	:param First:
 	:type First: bool
@@ -450,28 +522,35 @@ class IntRes2d_IntersectionSegment {
 	:type Oppos: bool
 	:param ReverseFlag:
 	:type ReverseFlag: bool
-	:rtype: None") IntRes2d_IntersectionSegment;
-		 IntRes2d_IntersectionSegment (const IntRes2d_IntersectionPoint & P,const Standard_Boolean First,const Standard_Boolean Oppos,const Standard_Boolean ReverseFlag);
+	:rtype: None
+") IntRes2d_IntersectionSegment;
+		 IntRes2d_IntersectionSegment(const IntRes2d_IntersectionPoint & P, const Standard_Boolean First, const Standard_Boolean Oppos, const Standard_Boolean ReverseFlag);
 
 		/****************** IntRes2d_IntersectionSegment ******************/
 		%feature("compactdefaultargs") IntRes2d_IntersectionSegment;
-		%feature("autodoc", "* Creates an infinite segment of intersection.
+		%feature("autodoc", "Creates an infinite segment of intersection.
+
 	:param Oppos:
 	:type Oppos: bool
-	:rtype: None") IntRes2d_IntersectionSegment;
-		 IntRes2d_IntersectionSegment (const Standard_Boolean Oppos);
+	:rtype: None
+") IntRes2d_IntersectionSegment;
+		 IntRes2d_IntersectionSegment(const Standard_Boolean Oppos);
 
 		/****************** IsOpposite ******************/
 		%feature("compactdefaultargs") IsOpposite;
-		%feature("autodoc", "* Returns False if the intersection segment has got the same orientation on both curves.
-	:rtype: bool") IsOpposite;
-		Standard_Boolean IsOpposite ();
+		%feature("autodoc", "Returns false if the intersection segment has got the same orientation on both curves.
+
+	:rtype: bool
+") IsOpposite;
+		Standard_Boolean IsOpposite();
 
 		/****************** LastPoint ******************/
 		%feature("compactdefaultargs") LastPoint;
-		%feature("autodoc", "* Returns the last point of the segment as an IntersectionPoint (with a transition). The exception DomainError is raised if HasLastExtremity returns False.
-	:rtype: IntRes2d_IntersectionPoint") LastPoint;
-		const IntRes2d_IntersectionPoint & LastPoint ();
+		%feature("autodoc", "Returns the last point of the segment as an intersectionpoint (with a transition). the exception domainerror is raised if haslastextremity returns false.
+
+	:rtype: IntRes2d_IntersectionPoint
+") LastPoint;
+		const IntRes2d_IntersectionPoint & LastPoint();
 
 };
 
@@ -489,25 +568,30 @@ class IntRes2d_Transition {
 	public:
 		/****************** IntRes2d_Transition ******************/
 		%feature("compactdefaultargs") IntRes2d_Transition;
-		%feature("autodoc", "* Empty constructor.
-	:rtype: None") IntRes2d_Transition;
-		 IntRes2d_Transition ();
+		%feature("autodoc", "Empty constructor.
+
+	:rtype: None
+") IntRes2d_Transition;
+		 IntRes2d_Transition();
 
 		/****************** IntRes2d_Transition ******************/
 		%feature("compactdefaultargs") IntRes2d_Transition;
-		%feature("autodoc", "* Creates an IN or OUT transition.
+		%feature("autodoc", "Creates an in or out transition.
+
 	:param Tangent:
 	:type Tangent: bool
 	:param Pos:
 	:type Pos: IntRes2d_Position
 	:param Type:
 	:type Type: IntRes2d_TypeTrans
-	:rtype: None") IntRes2d_Transition;
-		 IntRes2d_Transition (const Standard_Boolean Tangent,const IntRes2d_Position Pos,const IntRes2d_TypeTrans Type);
+	:rtype: None
+") IntRes2d_Transition;
+		 IntRes2d_Transition(const Standard_Boolean Tangent, const IntRes2d_Position Pos, const IntRes2d_TypeTrans Type);
 
 		/****************** IntRes2d_Transition ******************/
 		%feature("compactdefaultargs") IntRes2d_Transition;
-		%feature("autodoc", "* Creates a TOUCH transition.
+		%feature("autodoc", "Creates a touch transition.
+
 	:param Tangent:
 	:type Tangent: bool
 	:param Pos:
@@ -516,58 +600,72 @@ class IntRes2d_Transition {
 	:type Situ: IntRes2d_Situation
 	:param Oppos:
 	:type Oppos: bool
-	:rtype: None") IntRes2d_Transition;
-		 IntRes2d_Transition (const Standard_Boolean Tangent,const IntRes2d_Position Pos,const IntRes2d_Situation Situ,const Standard_Boolean Oppos);
+	:rtype: None
+") IntRes2d_Transition;
+		 IntRes2d_Transition(const Standard_Boolean Tangent, const IntRes2d_Position Pos, const IntRes2d_Situation Situ, const Standard_Boolean Oppos);
 
 		/****************** IntRes2d_Transition ******************/
 		%feature("compactdefaultargs") IntRes2d_Transition;
-		%feature("autodoc", "* Creates an UNDECIDED transition.
+		%feature("autodoc", "Creates an undecided transition.
+
 	:param Pos:
 	:type Pos: IntRes2d_Position
-	:rtype: None") IntRes2d_Transition;
-		 IntRes2d_Transition (const IntRes2d_Position Pos);
+	:rtype: None
+") IntRes2d_Transition;
+		 IntRes2d_Transition(const IntRes2d_Position Pos);
 
 		/****************** IsOpposite ******************/
 		%feature("compactdefaultargs") IsOpposite;
-		%feature("autodoc", "* returns a significant value if TransitionType returns TOUCH. In this case, the function returns true when the 2 curves locally define two different parts of the space. If TransitionType returns IN or OUT or UNDECIDED, the exception DomainError is raised.
-	:rtype: bool") IsOpposite;
-		Standard_Boolean IsOpposite ();
+		%feature("autodoc", "Returns a significant value if transitiontype returns touch. in this case, the function returns true when the 2 curves locally define two different parts of the space. if transitiontype returns in or out or undecided, the exception domainerror is raised.
+
+	:rtype: bool
+") IsOpposite;
+		Standard_Boolean IsOpposite();
 
 		/****************** IsTangent ******************/
 		%feature("compactdefaultargs") IsTangent;
-		%feature("autodoc", "* Returns True when the 2 curves are tangent at the intersection point. Theexception DomainError is raised if the type of transition is UNDECIDED.
-	:rtype: bool") IsTangent;
-		Standard_Boolean IsTangent ();
+		%feature("autodoc", "Returns true when the 2 curves are tangent at the intersection point. theexception domainerror is raised if the type of transition is undecided.
+
+	:rtype: bool
+") IsTangent;
+		Standard_Boolean IsTangent();
 
 		/****************** PositionOnCurve ******************/
 		%feature("compactdefaultargs") PositionOnCurve;
-		%feature("autodoc", "* Indicates if the intersection is at the beginning (IntRes2d_Head), at the end (IntRes2d_End), or in the middle (IntRes2d_Middle) of the curve.
-	:rtype: IntRes2d_Position") PositionOnCurve;
-		IntRes2d_Position PositionOnCurve ();
+		%feature("autodoc", "Indicates if the intersection is at the beginning (intres2d_head), at the end (intres2d_end), or in the middle (intres2d_middle) of the curve.
+
+	:rtype: IntRes2d_Position
+") PositionOnCurve;
+		IntRes2d_Position PositionOnCurve();
 
 		/****************** SetPosition ******************/
 		%feature("compactdefaultargs") SetPosition;
-		%feature("autodoc", "* Sets the value of the position.
+		%feature("autodoc", "Sets the value of the position.
+
 	:param Pos:
 	:type Pos: IntRes2d_Position
-	:rtype: None") SetPosition;
-		void SetPosition (const IntRes2d_Position Pos);
+	:rtype: None
+") SetPosition;
+		void SetPosition(const IntRes2d_Position Pos);
 
 		/****************** SetValue ******************/
 		%feature("compactdefaultargs") SetValue;
-		%feature("autodoc", "* Sets the values of an IN or OUT transition.
+		%feature("autodoc", "Sets the values of an in or out transition.
+
 	:param Tangent:
 	:type Tangent: bool
 	:param Pos:
 	:type Pos: IntRes2d_Position
 	:param Type:
 	:type Type: IntRes2d_TypeTrans
-	:rtype: None") SetValue;
-		void SetValue (const Standard_Boolean Tangent,const IntRes2d_Position Pos,const IntRes2d_TypeTrans Type);
+	:rtype: None
+") SetValue;
+		void SetValue(const Standard_Boolean Tangent, const IntRes2d_Position Pos, const IntRes2d_TypeTrans Type);
 
 		/****************** SetValue ******************/
 		%feature("compactdefaultargs") SetValue;
-		%feature("autodoc", "* Sets the values of a TOUCH transition.
+		%feature("autodoc", "Sets the values of a touch transition.
+
 	:param Tangent:
 	:type Tangent: bool
 	:param Pos:
@@ -576,28 +674,35 @@ class IntRes2d_Transition {
 	:type Situ: IntRes2d_Situation
 	:param Oppos:
 	:type Oppos: bool
-	:rtype: None") SetValue;
-		void SetValue (const Standard_Boolean Tangent,const IntRes2d_Position Pos,const IntRes2d_Situation Situ,const Standard_Boolean Oppos);
+	:rtype: None
+") SetValue;
+		void SetValue(const Standard_Boolean Tangent, const IntRes2d_Position Pos, const IntRes2d_Situation Situ, const Standard_Boolean Oppos);
 
 		/****************** SetValue ******************/
 		%feature("compactdefaultargs") SetValue;
-		%feature("autodoc", "* Sets the values of an UNDECIDED transition.
+		%feature("autodoc", "Sets the values of an undecided transition.
+
 	:param Pos:
 	:type Pos: IntRes2d_Position
-	:rtype: None") SetValue;
-		void SetValue (const IntRes2d_Position Pos);
+	:rtype: None
+") SetValue;
+		void SetValue(const IntRes2d_Position Pos);
 
 		/****************** Situation ******************/
 		%feature("compactdefaultargs") Situation;
-		%feature("autodoc", "* returns a significant value if TransitionType returns TOUCH. In this case, the function returns : INSIDE when the curve remains inside the other one, OUTSIDE when it remains outside the other one, UNKNOWN when the calculus, based on the second derivatives cannot give the result. If TransitionType returns IN or OUT or UNDECIDED, the exception DomainError is raised.
-	:rtype: IntRes2d_Situation") Situation;
-		IntRes2d_Situation Situation ();
+		%feature("autodoc", "Returns a significant value if transitiontype returns touch. in this case, the function returns : inside when the curve remains inside the other one, outside when it remains outside the other one, unknown when the calculus, based on the second derivatives cannot give the result. if transitiontype returns in or out or undecided, the exception domainerror is raised.
+
+	:rtype: IntRes2d_Situation
+") Situation;
+		IntRes2d_Situation Situation();
 
 		/****************** TransitionType ******************/
 		%feature("compactdefaultargs") TransitionType;
-		%feature("autodoc", "* Returns the type of transition at the intersection. It may be IN or OUT or TOUCH, or UNDECIDED if the two first derivatives are not enough to give the tangent to one of the two curves.
-	:rtype: IntRes2d_TypeTrans") TransitionType;
-		IntRes2d_TypeTrans TransitionType ();
+		%feature("autodoc", "Returns the type of transition at the intersection. it may be in or out or touch, or undecided if the two first derivatives are not enough to give the tangent to one of the two curves.
+
+	:rtype: IntRes2d_TypeTrans
+") TransitionType;
+		IntRes2d_TypeTrans TransitionType();
 
 };
 

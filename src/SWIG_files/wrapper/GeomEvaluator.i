@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -85,29 +85,34 @@ class GeomEvaluator_Curve : public Standard_Transient {
 	public:
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
-		%feature("autodoc", "* Value of 3D curve
+		%feature("autodoc", "Value of 3d curve.
+
 	:param theU:
 	:type theU: float
 	:param theValue:
 	:type theValue: gp_Pnt
-	:rtype: None") D0;
-		void D0 (const Standard_Real theU,gp_Pnt & theValue);
+	:rtype: None
+") D0;
+		virtual void D0(const Standard_Real theU, gp_Pnt & theValue);
 
 		/****************** D1 ******************/
 		%feature("compactdefaultargs") D1;
-		%feature("autodoc", "* Value and first derivatives of curve
+		%feature("autodoc", "Value and first derivatives of curve.
+
 	:param theU:
 	:type theU: float
 	:param theValue:
 	:type theValue: gp_Pnt
 	:param theD1:
 	:type theD1: gp_Vec
-	:rtype: None") D1;
-		void D1 (const Standard_Real theU,gp_Pnt & theValue,gp_Vec & theD1);
+	:rtype: None
+") D1;
+		virtual void D1(const Standard_Real theU, gp_Pnt & theValue, gp_Vec & theD1);
 
 		/****************** D2 ******************/
 		%feature("compactdefaultargs") D2;
-		%feature("autodoc", "* Value, first and second derivatives of curve
+		%feature("autodoc", "Value, first and second derivatives of curve.
+
 	:param theU:
 	:type theU: float
 	:param theValue:
@@ -116,12 +121,14 @@ class GeomEvaluator_Curve : public Standard_Transient {
 	:type theD1: gp_Vec
 	:param theD2:
 	:type theD2: gp_Vec
-	:rtype: None") D2;
-		void D2 (const Standard_Real theU,gp_Pnt & theValue,gp_Vec & theD1,gp_Vec & theD2);
+	:rtype: None
+") D2;
+		virtual void D2(const Standard_Real theU, gp_Pnt & theValue, gp_Vec & theD1, gp_Vec & theD2);
 
 		/****************** D3 ******************/
 		%feature("compactdefaultargs") D3;
-		%feature("autodoc", "* Value, first, second and third derivatives of curve
+		%feature("autodoc", "Value, first, second and third derivatives of curve.
+
 	:param theU:
 	:type theU: float
 	:param theValue:
@@ -132,18 +139,21 @@ class GeomEvaluator_Curve : public Standard_Transient {
 	:type theD2: gp_Vec
 	:param theD3:
 	:type theD3: gp_Vec
-	:rtype: None") D3;
-		void D3 (const Standard_Real theU,gp_Pnt & theValue,gp_Vec & theD1,gp_Vec & theD2,gp_Vec & theD3);
+	:rtype: None
+") D3;
+		virtual void D3(const Standard_Real theU, gp_Pnt & theValue, gp_Vec & theD1, gp_Vec & theD2, gp_Vec & theD3);
 
 		/****************** DN ******************/
 		%feature("compactdefaultargs") DN;
-		%feature("autodoc", "* Calculates N-th derivatives of curve, where N = theDerU. Raises if N < 1
+		%feature("autodoc", "Calculates n-th derivatives of curve, where n = thederu. raises if n < 1.
+
 	:param theU:
 	:type theU: float
 	:param theDerU:
 	:type theDerU: int
-	:rtype: gp_Vec") DN;
-		gp_Vec DN (const Standard_Real theU,const Standard_Integer theDerU);
+	:rtype: gp_Vec
+") DN;
+		virtual gp_Vec DN(const Standard_Real theU, const Standard_Integer theDerU);
 
 };
 
@@ -164,19 +174,22 @@ class GeomEvaluator_Surface : public Standard_Transient {
 	public:
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
-		%feature("autodoc", "* Value of surface
+		%feature("autodoc", "Value of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
 	:type theV: float
 	:param theValue:
 	:type theValue: gp_Pnt
-	:rtype: None") D0;
-		void D0 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue);
+	:rtype: None
+") D0;
+		virtual void D0(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue);
 
 		/****************** D1 ******************/
 		%feature("compactdefaultargs") D1;
-		%feature("autodoc", "* Value and first derivatives of surface
+		%feature("autodoc", "Value and first derivatives of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -187,12 +200,14 @@ class GeomEvaluator_Surface : public Standard_Transient {
 	:type theD1U: gp_Vec
 	:param theD1V:
 	:type theD1V: gp_Vec
-	:rtype: None") D1;
-		void D1 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue,gp_Vec & theD1U,gp_Vec & theD1V);
+	:rtype: None
+") D1;
+		virtual void D1(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V);
 
 		/****************** D2 ******************/
 		%feature("compactdefaultargs") D2;
-		%feature("autodoc", "* Value, first and second derivatives of surface
+		%feature("autodoc", "Value, first and second derivatives of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -209,12 +224,14 @@ class GeomEvaluator_Surface : public Standard_Transient {
 	:type theD2V: gp_Vec
 	:param theD2UV:
 	:type theD2UV: gp_Vec
-	:rtype: None") D2;
-		void D2 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue,gp_Vec & theD1U,gp_Vec & theD1V,gp_Vec & theD2U,gp_Vec & theD2V,gp_Vec & theD2UV);
+	:rtype: None
+") D2;
+		virtual void D2(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V, gp_Vec & theD2U, gp_Vec & theD2V, gp_Vec & theD2UV);
 
 		/****************** D3 ******************/
 		%feature("compactdefaultargs") D3;
-		%feature("autodoc", "* Value, first, second and third derivatives of surface
+		%feature("autodoc", "Value, first, second and third derivatives of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -239,12 +256,14 @@ class GeomEvaluator_Surface : public Standard_Transient {
 	:type theD3UUV: gp_Vec
 	:param theD3UVV:
 	:type theD3UVV: gp_Vec
-	:rtype: None") D3;
-		void D3 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue,gp_Vec & theD1U,gp_Vec & theD1V,gp_Vec & theD2U,gp_Vec & theD2V,gp_Vec & theD2UV,gp_Vec & theD3U,gp_Vec & theD3V,gp_Vec & theD3UUV,gp_Vec & theD3UVV);
+	:rtype: None
+") D3;
+		virtual void D3(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V, gp_Vec & theD2U, gp_Vec & theD2V, gp_Vec & theD2UV, gp_Vec & theD3U, gp_Vec & theD3V, gp_Vec & theD3UUV, gp_Vec & theD3UVV);
 
 		/****************** DN ******************/
 		%feature("compactdefaultargs") DN;
-		%feature("autodoc", "* Calculates N-th derivatives of surface, where N = theDerU + theDerV. //! Raises if N < 1 or theDerU < 0 or theDerV < 0
+		%feature("autodoc", "Calculates n-th derivatives of surface, where n = thederu + thederv. //! raises if n < 1 or thederu < 0 or thederv < 0.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -253,8 +272,9 @@ class GeomEvaluator_Surface : public Standard_Transient {
 	:type theDerU: int
 	:param theDerV:
 	:type theDerV: int
-	:rtype: gp_Vec") DN;
-		gp_Vec DN (const Standard_Real theU,const Standard_Real theV,const Standard_Integer theDerU,const Standard_Integer theDerV);
+	:rtype: gp_Vec
+") DN;
+		virtual gp_Vec DN(const Standard_Real theU, const Standard_Real theV, const Standard_Integer theDerU, const Standard_Integer theDerV);
 
 };
 
@@ -274,29 +294,34 @@ class GeomEvaluator_OffsetCurve : public GeomEvaluator_Curve {
 	public:
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
-		%feature("autodoc", "* Value of curve
+		%feature("autodoc", "Value of curve.
+
 	:param theU:
 	:type theU: float
 	:param theValue:
 	:type theValue: gp_Pnt
-	:rtype: None") D0;
-		void D0 (const Standard_Real theU,gp_Pnt & theValue);
+	:rtype: None
+") D0;
+		void D0(const Standard_Real theU, gp_Pnt & theValue);
 
 		/****************** D1 ******************/
 		%feature("compactdefaultargs") D1;
-		%feature("autodoc", "* Value and first derivatives of curve
+		%feature("autodoc", "Value and first derivatives of curve.
+
 	:param theU:
 	:type theU: float
 	:param theValue:
 	:type theValue: gp_Pnt
 	:param theD1:
 	:type theD1: gp_Vec
-	:rtype: None") D1;
-		void D1 (const Standard_Real theU,gp_Pnt & theValue,gp_Vec & theD1);
+	:rtype: None
+") D1;
+		void D1(const Standard_Real theU, gp_Pnt & theValue, gp_Vec & theD1);
 
 		/****************** D2 ******************/
 		%feature("compactdefaultargs") D2;
-		%feature("autodoc", "* Value, first and second derivatives of curve
+		%feature("autodoc", "Value, first and second derivatives of curve.
+
 	:param theU:
 	:type theU: float
 	:param theValue:
@@ -305,12 +330,14 @@ class GeomEvaluator_OffsetCurve : public GeomEvaluator_Curve {
 	:type theD1: gp_Vec
 	:param theD2:
 	:type theD2: gp_Vec
-	:rtype: None") D2;
-		void D2 (const Standard_Real theU,gp_Pnt & theValue,gp_Vec & theD1,gp_Vec & theD2);
+	:rtype: None
+") D2;
+		void D2(const Standard_Real theU, gp_Pnt & theValue, gp_Vec & theD1, gp_Vec & theD2);
 
 		/****************** D3 ******************/
 		%feature("compactdefaultargs") D3;
-		%feature("autodoc", "* Value, first, second and third derivatives of curve
+		%feature("autodoc", "Value, first, second and third derivatives of curve.
+
 	:param theU:
 	:type theU: float
 	:param theValue:
@@ -321,57 +348,67 @@ class GeomEvaluator_OffsetCurve : public GeomEvaluator_Curve {
 	:type theD2: gp_Vec
 	:param theD3:
 	:type theD3: gp_Vec
-	:rtype: None") D3;
-		void D3 (const Standard_Real theU,gp_Pnt & theValue,gp_Vec & theD1,gp_Vec & theD2,gp_Vec & theD3);
+	:rtype: None
+") D3;
+		void D3(const Standard_Real theU, gp_Pnt & theValue, gp_Vec & theD1, gp_Vec & theD2, gp_Vec & theD3);
 
 		/****************** DN ******************/
 		%feature("compactdefaultargs") DN;
-		%feature("autodoc", "* Calculates N-th derivatives of curve, where N = theDeriv. Raises if N < 1
+		%feature("autodoc", "Calculates n-th derivatives of curve, where n = thederiv. raises if n < 1.
+
 	:param theU:
 	:type theU: float
 	:param theDeriv:
 	:type theDeriv: int
-	:rtype: gp_Vec") DN;
-		gp_Vec DN (const Standard_Real theU,const Standard_Integer theDeriv);
+	:rtype: gp_Vec
+") DN;
+		gp_Vec DN(const Standard_Real theU, const Standard_Integer theDeriv);
 
 		/****************** GeomEvaluator_OffsetCurve ******************/
 		%feature("compactdefaultargs") GeomEvaluator_OffsetCurve;
-		%feature("autodoc", "* Initialize evaluator by curve
+		%feature("autodoc", "Initialize evaluator by curve.
+
 	:param theBase:
 	:type theBase: Geom_Curve
 	:param theOffset:
 	:type theOffset: float
 	:param theDirection:
 	:type theDirection: gp_Dir
-	:rtype: None") GeomEvaluator_OffsetCurve;
-		 GeomEvaluator_OffsetCurve (const opencascade::handle<Geom_Curve> & theBase,const Standard_Real theOffset,const gp_Dir & theDirection);
+	:rtype: None
+") GeomEvaluator_OffsetCurve;
+		 GeomEvaluator_OffsetCurve(const opencascade::handle<Geom_Curve> & theBase, const Standard_Real theOffset, const gp_Dir & theDirection);
 
 		/****************** GeomEvaluator_OffsetCurve ******************/
 		%feature("compactdefaultargs") GeomEvaluator_OffsetCurve;
-		%feature("autodoc", "* Initialize evaluator by curve adaptor
+		%feature("autodoc", "Initialize evaluator by curve adaptor.
+
 	:param theBase:
 	:type theBase: GeomAdaptor_HCurve
 	:param theOffset:
 	:type theOffset: float
 	:param theDirection:
 	:type theDirection: gp_Dir
-	:rtype: None") GeomEvaluator_OffsetCurve;
-		 GeomEvaluator_OffsetCurve (const opencascade::handle<GeomAdaptor_HCurve> & theBase,const Standard_Real theOffset,const gp_Dir & theDirection);
+	:rtype: None
+") GeomEvaluator_OffsetCurve;
+		 GeomEvaluator_OffsetCurve(const opencascade::handle<GeomAdaptor_HCurve> & theBase, const Standard_Real theOffset, const gp_Dir & theDirection);
 
 		/****************** SetOffsetDirection ******************/
 		%feature("compactdefaultargs") SetOffsetDirection;
-		%feature("autodoc", ":param theDirection:
+		%feature("autodoc", "	:param theDirection:
 	:type theDirection: gp_Dir
-	:rtype: None") SetOffsetDirection;
-		void SetOffsetDirection (const gp_Dir & theDirection);
+	:rtype: None
+") SetOffsetDirection;
+		void SetOffsetDirection(const gp_Dir & theDirection);
 
 		/****************** SetOffsetValue ******************/
 		%feature("compactdefaultargs") SetOffsetValue;
-		%feature("autodoc", "* Change the offset value
+		%feature("autodoc", "Change the offset value.
+
 	:param theOffset:
 	:type theOffset: float
-	:rtype: None") SetOffsetValue;
-		void SetOffsetValue (Standard_Real theOffset);
+	:rtype: None
+") SetOffsetValue;
+		void SetOffsetValue(Standard_Real theOffset);
 
 };
 
@@ -391,19 +428,22 @@ class GeomEvaluator_OffsetSurface : public GeomEvaluator_Surface {
 	public:
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
-		%feature("autodoc", "* Value of surface
+		%feature("autodoc", "Value of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
 	:type theV: float
 	:param theValue:
 	:type theValue: gp_Pnt
-	:rtype: None") D0;
-		void D0 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue);
+	:rtype: None
+") D0;
+		void D0(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue);
 
 		/****************** D1 ******************/
 		%feature("compactdefaultargs") D1;
-		%feature("autodoc", "* Value and first derivatives of surface
+		%feature("autodoc", "Value and first derivatives of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -414,12 +454,14 @@ class GeomEvaluator_OffsetSurface : public GeomEvaluator_Surface {
 	:type theD1U: gp_Vec
 	:param theD1V:
 	:type theD1V: gp_Vec
-	:rtype: None") D1;
-		void D1 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue,gp_Vec & theD1U,gp_Vec & theD1V);
+	:rtype: None
+") D1;
+		void D1(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V);
 
 		/****************** D2 ******************/
 		%feature("compactdefaultargs") D2;
-		%feature("autodoc", "* Value, first and second derivatives of surface
+		%feature("autodoc", "Value, first and second derivatives of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -436,12 +478,14 @@ class GeomEvaluator_OffsetSurface : public GeomEvaluator_Surface {
 	:type theD2V: gp_Vec
 	:param theD2UV:
 	:type theD2UV: gp_Vec
-	:rtype: None") D2;
-		void D2 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue,gp_Vec & theD1U,gp_Vec & theD1V,gp_Vec & theD2U,gp_Vec & theD2V,gp_Vec & theD2UV);
+	:rtype: None
+") D2;
+		void D2(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V, gp_Vec & theD2U, gp_Vec & theD2V, gp_Vec & theD2UV);
 
 		/****************** D3 ******************/
 		%feature("compactdefaultargs") D3;
-		%feature("autodoc", "* Value, first, second and third derivatives of surface
+		%feature("autodoc", "Value, first, second and third derivatives of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -466,12 +510,14 @@ class GeomEvaluator_OffsetSurface : public GeomEvaluator_Surface {
 	:type theD3UUV: gp_Vec
 	:param theD3UVV:
 	:type theD3UVV: gp_Vec
-	:rtype: None") D3;
-		void D3 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue,gp_Vec & theD1U,gp_Vec & theD1V,gp_Vec & theD2U,gp_Vec & theD2V,gp_Vec & theD2UV,gp_Vec & theD3U,gp_Vec & theD3V,gp_Vec & theD3UUV,gp_Vec & theD3UVV);
+	:rtype: None
+") D3;
+		void D3(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V, gp_Vec & theD2U, gp_Vec & theD2V, gp_Vec & theD2UV, gp_Vec & theD3U, gp_Vec & theD3V, gp_Vec & theD3UUV, gp_Vec & theD3UVV);
 
 		/****************** DN ******************/
 		%feature("compactdefaultargs") DN;
-		%feature("autodoc", "* Calculates N-th derivatives of surface, where N = theDerU + theDerV. //! Raises if N < 1 or theDerU < 0 or theDerV < 0
+		%feature("autodoc", "Calculates n-th derivatives of surface, where n = thederu + thederv. //! raises if n < 1 or thederu < 0 or thederv < 0.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -480,40 +526,47 @@ class GeomEvaluator_OffsetSurface : public GeomEvaluator_Surface {
 	:type theDerU: int
 	:param theDerV:
 	:type theDerV: int
-	:rtype: gp_Vec") DN;
-		gp_Vec DN (const Standard_Real theU,const Standard_Real theV,const Standard_Integer theDerU,const Standard_Integer theDerV);
+	:rtype: gp_Vec
+") DN;
+		gp_Vec DN(const Standard_Real theU, const Standard_Real theV, const Standard_Integer theDerU, const Standard_Integer theDerV);
 
 		/****************** GeomEvaluator_OffsetSurface ******************/
 		%feature("compactdefaultargs") GeomEvaluator_OffsetSurface;
-		%feature("autodoc", "* Initialize evaluator by surface
+		%feature("autodoc", "Initialize evaluator by surface.
+
 	:param theBase:
 	:type theBase: Geom_Surface
 	:param theOffset:
 	:type theOffset: float
 	:param theOscSurf: default value is opencascade::handle<Geom_OsculatingSurface>()
 	:type theOscSurf: Geom_OsculatingSurface
-	:rtype: None") GeomEvaluator_OffsetSurface;
-		 GeomEvaluator_OffsetSurface (const opencascade::handle<Geom_Surface> & theBase,const Standard_Real theOffset,const opencascade::handle<Geom_OsculatingSurface> & theOscSurf = opencascade::handle<Geom_OsculatingSurface>());
+	:rtype: None
+") GeomEvaluator_OffsetSurface;
+		 GeomEvaluator_OffsetSurface(const opencascade::handle<Geom_Surface> & theBase, const Standard_Real theOffset, const opencascade::handle<Geom_OsculatingSurface> & theOscSurf = opencascade::handle<Geom_OsculatingSurface>());
 
 		/****************** GeomEvaluator_OffsetSurface ******************/
 		%feature("compactdefaultargs") GeomEvaluator_OffsetSurface;
-		%feature("autodoc", "* Initialize evaluator by surface adaptor
+		%feature("autodoc", "Initialize evaluator by surface adaptor.
+
 	:param theBase:
 	:type theBase: GeomAdaptor_HSurface
 	:param theOffset:
 	:type theOffset: float
 	:param theOscSurf: default value is opencascade::handle<Geom_OsculatingSurface>()
 	:type theOscSurf: Geom_OsculatingSurface
-	:rtype: None") GeomEvaluator_OffsetSurface;
-		 GeomEvaluator_OffsetSurface (const opencascade::handle<GeomAdaptor_HSurface> & theBase,const Standard_Real theOffset,const opencascade::handle<Geom_OsculatingSurface> & theOscSurf = opencascade::handle<Geom_OsculatingSurface>());
+	:rtype: None
+") GeomEvaluator_OffsetSurface;
+		 GeomEvaluator_OffsetSurface(const opencascade::handle<GeomAdaptor_HSurface> & theBase, const Standard_Real theOffset, const opencascade::handle<Geom_OsculatingSurface> & theOscSurf = opencascade::handle<Geom_OsculatingSurface>());
 
 		/****************** SetOffsetValue ******************/
 		%feature("compactdefaultargs") SetOffsetValue;
-		%feature("autodoc", "* Change the offset value
+		%feature("autodoc", "Change the offset value.
+
 	:param theOffset:
 	:type theOffset: float
-	:rtype: None") SetOffsetValue;
-		void SetOffsetValue (Standard_Real theOffset);
+	:rtype: None
+") SetOffsetValue;
+		void SetOffsetValue(Standard_Real theOffset);
 
 };
 
@@ -533,19 +586,22 @@ class GeomEvaluator_SurfaceOfExtrusion : public GeomEvaluator_Surface {
 	public:
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
-		%feature("autodoc", "* Value of surface
+		%feature("autodoc", "Value of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
 	:type theV: float
 	:param theValue:
 	:type theValue: gp_Pnt
-	:rtype: None") D0;
-		void D0 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue);
+	:rtype: None
+") D0;
+		void D0(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue);
 
 		/****************** D1 ******************/
 		%feature("compactdefaultargs") D1;
-		%feature("autodoc", "* Value and first derivatives of surface
+		%feature("autodoc", "Value and first derivatives of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -556,12 +612,14 @@ class GeomEvaluator_SurfaceOfExtrusion : public GeomEvaluator_Surface {
 	:type theD1U: gp_Vec
 	:param theD1V:
 	:type theD1V: gp_Vec
-	:rtype: None") D1;
-		void D1 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue,gp_Vec & theD1U,gp_Vec & theD1V);
+	:rtype: None
+") D1;
+		void D1(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V);
 
 		/****************** D2 ******************/
 		%feature("compactdefaultargs") D2;
-		%feature("autodoc", "* Value, first and second derivatives of surface
+		%feature("autodoc", "Value, first and second derivatives of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -578,12 +636,14 @@ class GeomEvaluator_SurfaceOfExtrusion : public GeomEvaluator_Surface {
 	:type theD2V: gp_Vec
 	:param theD2UV:
 	:type theD2UV: gp_Vec
-	:rtype: None") D2;
-		void D2 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue,gp_Vec & theD1U,gp_Vec & theD1V,gp_Vec & theD2U,gp_Vec & theD2V,gp_Vec & theD2UV);
+	:rtype: None
+") D2;
+		void D2(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V, gp_Vec & theD2U, gp_Vec & theD2V, gp_Vec & theD2UV);
 
 		/****************** D3 ******************/
 		%feature("compactdefaultargs") D3;
-		%feature("autodoc", "* Value, first, second and third derivatives of surface
+		%feature("autodoc", "Value, first, second and third derivatives of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -608,12 +668,14 @@ class GeomEvaluator_SurfaceOfExtrusion : public GeomEvaluator_Surface {
 	:type theD3UUV: gp_Vec
 	:param theD3UVV:
 	:type theD3UVV: gp_Vec
-	:rtype: None") D3;
-		void D3 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue,gp_Vec & theD1U,gp_Vec & theD1V,gp_Vec & theD2U,gp_Vec & theD2V,gp_Vec & theD2UV,gp_Vec & theD3U,gp_Vec & theD3V,gp_Vec & theD3UUV,gp_Vec & theD3UVV);
+	:rtype: None
+") D3;
+		void D3(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V, gp_Vec & theD2U, gp_Vec & theD2V, gp_Vec & theD2UV, gp_Vec & theD3U, gp_Vec & theD3V, gp_Vec & theD3UUV, gp_Vec & theD3UVV);
 
 		/****************** DN ******************/
 		%feature("compactdefaultargs") DN;
-		%feature("autodoc", "* Calculates N-th derivatives of surface, where N = theDerU + theDerV. //! Raises if N < 1 or theDerU < 0 or theDerV < 0
+		%feature("autodoc", "Calculates n-th derivatives of surface, where n = thederu + thederv. //! raises if n < 1 or thederu < 0 or thederv < 0.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -622,36 +684,43 @@ class GeomEvaluator_SurfaceOfExtrusion : public GeomEvaluator_Surface {
 	:type theDerU: int
 	:param theDerV:
 	:type theDerV: int
-	:rtype: gp_Vec") DN;
-		gp_Vec DN (const Standard_Real theU,const Standard_Real theV,const Standard_Integer theDerU,const Standard_Integer theDerV);
+	:rtype: gp_Vec
+") DN;
+		gp_Vec DN(const Standard_Real theU, const Standard_Real theV, const Standard_Integer theDerU, const Standard_Integer theDerV);
 
 		/****************** GeomEvaluator_SurfaceOfExtrusion ******************/
 		%feature("compactdefaultargs") GeomEvaluator_SurfaceOfExtrusion;
-		%feature("autodoc", "* Initialize evaluator by surface
+		%feature("autodoc", "Initialize evaluator by surface.
+
 	:param theBase:
 	:type theBase: Geom_Curve
 	:param theExtrusionDir:
 	:type theExtrusionDir: gp_Dir
-	:rtype: None") GeomEvaluator_SurfaceOfExtrusion;
-		 GeomEvaluator_SurfaceOfExtrusion (const opencascade::handle<Geom_Curve> & theBase,const gp_Dir & theExtrusionDir);
+	:rtype: None
+") GeomEvaluator_SurfaceOfExtrusion;
+		 GeomEvaluator_SurfaceOfExtrusion(const opencascade::handle<Geom_Curve> & theBase, const gp_Dir & theExtrusionDir);
 
 		/****************** GeomEvaluator_SurfaceOfExtrusion ******************/
 		%feature("compactdefaultargs") GeomEvaluator_SurfaceOfExtrusion;
-		%feature("autodoc", "* Initialize evaluator by surface adaptor
+		%feature("autodoc", "Initialize evaluator by surface adaptor.
+
 	:param theBase:
 	:type theBase: Adaptor3d_HCurve
 	:param theExtrusionDir:
 	:type theExtrusionDir: gp_Dir
-	:rtype: None") GeomEvaluator_SurfaceOfExtrusion;
-		 GeomEvaluator_SurfaceOfExtrusion (const opencascade::handle<Adaptor3d_HCurve> & theBase,const gp_Dir & theExtrusionDir);
+	:rtype: None
+") GeomEvaluator_SurfaceOfExtrusion;
+		 GeomEvaluator_SurfaceOfExtrusion(const opencascade::handle<Adaptor3d_HCurve> & theBase, const gp_Dir & theExtrusionDir);
 
 		/****************** SetDirection ******************/
 		%feature("compactdefaultargs") SetDirection;
-		%feature("autodoc", "* /Changes the direction of extrusion
+		%feature("autodoc", "/changes the direction of extrusion.
+
 	:param theDirection:
 	:type theDirection: gp_Dir
-	:rtype: None") SetDirection;
-		void SetDirection (const gp_Dir & theDirection);
+	:rtype: None
+") SetDirection;
+		void SetDirection(const gp_Dir & theDirection);
 
 };
 
@@ -671,19 +740,22 @@ class GeomEvaluator_SurfaceOfRevolution : public GeomEvaluator_Surface {
 	public:
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
-		%feature("autodoc", "* Value of surface
+		%feature("autodoc", "Value of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
 	:type theV: float
 	:param theValue:
 	:type theValue: gp_Pnt
-	:rtype: None") D0;
-		void D0 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue);
+	:rtype: None
+") D0;
+		void D0(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue);
 
 		/****************** D1 ******************/
 		%feature("compactdefaultargs") D1;
-		%feature("autodoc", "* Value and first derivatives of surface
+		%feature("autodoc", "Value and first derivatives of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -694,12 +766,14 @@ class GeomEvaluator_SurfaceOfRevolution : public GeomEvaluator_Surface {
 	:type theD1U: gp_Vec
 	:param theD1V:
 	:type theD1V: gp_Vec
-	:rtype: None") D1;
-		void D1 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue,gp_Vec & theD1U,gp_Vec & theD1V);
+	:rtype: None
+") D1;
+		void D1(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V);
 
 		/****************** D2 ******************/
 		%feature("compactdefaultargs") D2;
-		%feature("autodoc", "* Value, first and second derivatives of surface
+		%feature("autodoc", "Value, first and second derivatives of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -716,12 +790,14 @@ class GeomEvaluator_SurfaceOfRevolution : public GeomEvaluator_Surface {
 	:type theD2V: gp_Vec
 	:param theD2UV:
 	:type theD2UV: gp_Vec
-	:rtype: None") D2;
-		void D2 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue,gp_Vec & theD1U,gp_Vec & theD1V,gp_Vec & theD2U,gp_Vec & theD2V,gp_Vec & theD2UV);
+	:rtype: None
+") D2;
+		void D2(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V, gp_Vec & theD2U, gp_Vec & theD2V, gp_Vec & theD2UV);
 
 		/****************** D3 ******************/
 		%feature("compactdefaultargs") D3;
-		%feature("autodoc", "* Value, first, second and third derivatives of surface
+		%feature("autodoc", "Value, first, second and third derivatives of surface.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -746,12 +822,14 @@ class GeomEvaluator_SurfaceOfRevolution : public GeomEvaluator_Surface {
 	:type theD3UUV: gp_Vec
 	:param theD3UVV:
 	:type theD3UVV: gp_Vec
-	:rtype: None") D3;
-		void D3 (const Standard_Real theU,const Standard_Real theV,gp_Pnt & theValue,gp_Vec & theD1U,gp_Vec & theD1V,gp_Vec & theD2U,gp_Vec & theD2V,gp_Vec & theD2UV,gp_Vec & theD3U,gp_Vec & theD3V,gp_Vec & theD3UUV,gp_Vec & theD3UVV);
+	:rtype: None
+") D3;
+		void D3(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V, gp_Vec & theD2U, gp_Vec & theD2V, gp_Vec & theD2UV, gp_Vec & theD3U, gp_Vec & theD3V, gp_Vec & theD3UUV, gp_Vec & theD3UVV);
 
 		/****************** DN ******************/
 		%feature("compactdefaultargs") DN;
-		%feature("autodoc", "* Calculates N-th derivatives of surface, where N = theDerU + theDerV. //! Raises if N < 1 or theDerU < 0 or theDerV < 0
+		%feature("autodoc", "Calculates n-th derivatives of surface, where n = thederu + thederv. //! raises if n < 1 or thederu < 0 or thederv < 0.
+
 	:param theU:
 	:type theU: float
 	:param theV:
@@ -760,56 +838,67 @@ class GeomEvaluator_SurfaceOfRevolution : public GeomEvaluator_Surface {
 	:type theDerU: int
 	:param theDerV:
 	:type theDerV: int
-	:rtype: gp_Vec") DN;
-		gp_Vec DN (const Standard_Real theU,const Standard_Real theV,const Standard_Integer theDerU,const Standard_Integer theDerV);
+	:rtype: gp_Vec
+") DN;
+		gp_Vec DN(const Standard_Real theU, const Standard_Real theV, const Standard_Integer theDerU, const Standard_Integer theDerV);
 
 		/****************** GeomEvaluator_SurfaceOfRevolution ******************/
 		%feature("compactdefaultargs") GeomEvaluator_SurfaceOfRevolution;
-		%feature("autodoc", "* Initialize evaluator by revolved curve, the axis of revolution and the location
+		%feature("autodoc", "Initialize evaluator by revolved curve, the axis of revolution and the location.
+
 	:param theBase:
 	:type theBase: Geom_Curve
 	:param theRevolDir:
 	:type theRevolDir: gp_Dir
 	:param theRevolLoc:
 	:type theRevolLoc: gp_Pnt
-	:rtype: None") GeomEvaluator_SurfaceOfRevolution;
-		 GeomEvaluator_SurfaceOfRevolution (const opencascade::handle<Geom_Curve> & theBase,const gp_Dir & theRevolDir,const gp_Pnt & theRevolLoc);
+	:rtype: None
+") GeomEvaluator_SurfaceOfRevolution;
+		 GeomEvaluator_SurfaceOfRevolution(const opencascade::handle<Geom_Curve> & theBase, const gp_Dir & theRevolDir, const gp_Pnt & theRevolLoc);
 
 		/****************** GeomEvaluator_SurfaceOfRevolution ******************/
 		%feature("compactdefaultargs") GeomEvaluator_SurfaceOfRevolution;
-		%feature("autodoc", "* Initialize evaluator by adaptor of the revolved curve, the axis of revolution and the location
+		%feature("autodoc", "Initialize evaluator by adaptor of the revolved curve, the axis of revolution and the location.
+
 	:param theBase:
 	:type theBase: Adaptor3d_HCurve
 	:param theRevolDir:
 	:type theRevolDir: gp_Dir
 	:param theRevolLoc:
 	:type theRevolLoc: gp_Pnt
-	:rtype: None") GeomEvaluator_SurfaceOfRevolution;
-		 GeomEvaluator_SurfaceOfRevolution (const opencascade::handle<Adaptor3d_HCurve> & theBase,const gp_Dir & theRevolDir,const gp_Pnt & theRevolLoc);
+	:rtype: None
+") GeomEvaluator_SurfaceOfRevolution;
+		 GeomEvaluator_SurfaceOfRevolution(const opencascade::handle<Adaptor3d_HCurve> & theBase, const gp_Dir & theRevolDir, const gp_Pnt & theRevolLoc);
 
 		/****************** SetAxis ******************/
 		%feature("compactdefaultargs") SetAxis;
-		%feature("autodoc", "* Change the axis of revolution
+		%feature("autodoc", "Change the axis of revolution.
+
 	:param theAxis:
 	:type theAxis: gp_Ax1
-	:rtype: None") SetAxis;
-		void SetAxis (const gp_Ax1 & theAxis);
+	:rtype: None
+") SetAxis;
+		void SetAxis(const gp_Ax1 & theAxis);
 
 		/****************** SetDirection ******************/
 		%feature("compactdefaultargs") SetDirection;
-		%feature("autodoc", "* Change direction of the axis of revolution
+		%feature("autodoc", "Change direction of the axis of revolution.
+
 	:param theDirection:
 	:type theDirection: gp_Dir
-	:rtype: None") SetDirection;
-		void SetDirection (const gp_Dir & theDirection);
+	:rtype: None
+") SetDirection;
+		void SetDirection(const gp_Dir & theDirection);
 
 		/****************** SetLocation ******************/
 		%feature("compactdefaultargs") SetLocation;
-		%feature("autodoc", "* Change location of the axis of revolution
+		%feature("autodoc", "Change location of the axis of revolution.
+
 	:param theLocation:
 	:type theLocation: gp_Pnt
-	:rtype: None") SetLocation;
-		void SetLocation (const gp_Pnt & theLocation);
+	:rtype: None
+") SetLocation;
+		void SetLocation(const gp_Pnt & theLocation);
 
 };
 

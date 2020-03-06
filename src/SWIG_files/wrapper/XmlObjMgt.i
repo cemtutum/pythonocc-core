@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -81,123 +81,143 @@ class XmlObjMgt {
 	public:
 		/****************** FindChildByName ******************/
 		%feature("compactdefaultargs") FindChildByName;
-		%feature("autodoc", ":param theSource:
+		%feature("autodoc", "	:param theSource:
 	:type theSource: XmlObjMgt_Element
 	:param theName:
 	:type theName: XmlObjMgt_DOMString
-	:rtype: XmlObjMgt_Element") FindChildByName;
-		static XmlObjMgt_Element FindChildByName (const XmlObjMgt_Element & theSource,const XmlObjMgt_DOMString & theName);
+	:rtype: XmlObjMgt_Element
+") FindChildByName;
+		static XmlObjMgt_Element FindChildByName(const XmlObjMgt_Element & theSource, const XmlObjMgt_DOMString & theName);
 
 		/****************** FindChildByRef ******************/
 		%feature("compactdefaultargs") FindChildByRef;
-		%feature("autodoc", ":param theSource:
+		%feature("autodoc", "	:param theSource:
 	:type theSource: XmlObjMgt_Element
 	:param theRefName:
 	:type theRefName: XmlObjMgt_DOMString
-	:rtype: XmlObjMgt_Element") FindChildByRef;
-		static XmlObjMgt_Element FindChildByRef (const XmlObjMgt_Element & theSource,const XmlObjMgt_DOMString & theRefName);
+	:rtype: XmlObjMgt_Element
+") FindChildByRef;
+		static XmlObjMgt_Element FindChildByRef(const XmlObjMgt_Element & theSource, const XmlObjMgt_DOMString & theRefName);
 
 		/****************** FindChildElement ******************/
 		%feature("compactdefaultargs") FindChildElement;
-		%feature("autodoc", ":param theSource:
+		%feature("autodoc", "	:param theSource:
 	:type theSource: XmlObjMgt_Element
 	:param theObjId:
 	:type theObjId: int
-	:rtype: XmlObjMgt_Element") FindChildElement;
-		static XmlObjMgt_Element FindChildElement (const XmlObjMgt_Element & theSource,const Standard_Integer theObjId);
+	:rtype: XmlObjMgt_Element
+") FindChildElement;
+		static XmlObjMgt_Element FindChildElement(const XmlObjMgt_Element & theSource, const Standard_Integer theObjId);
 
 		/****************** GetExtendedString ******************/
 		%feature("compactdefaultargs") GetExtendedString;
-		%feature("autodoc", "* Get attribute <theElement extstring='theString' ...>
+		%feature("autodoc", "Get attribute <theelement extstring='thestring' ...>.
+
 	:param theElement:
 	:type theElement: XmlObjMgt_Element
 	:param theString:
 	:type theString: TCollection_ExtendedString
-	:rtype: bool") GetExtendedString;
-		static Standard_Boolean GetExtendedString (const XmlObjMgt_Element & theElement,TCollection_ExtendedString & theString);
+	:rtype: bool
+") GetExtendedString;
+		static Standard_Boolean GetExtendedString(const XmlObjMgt_Element & theElement, TCollection_ExtendedString & theString);
 
 		/****************** GetInteger ******************/
 		%feature("compactdefaultargs") GetInteger;
-		%feature("autodoc", ":param theString:
+		%feature("autodoc", "	:param theString:
 	:type theString: char *
 	:param theValue:
 	:type theValue: int
-	:rtype: bool") GetInteger;
-		static Standard_Boolean GetInteger (const char * & theString,Standard_Integer &OutValue);
+	:rtype: bool
+") GetInteger;
+		static Standard_Boolean GetInteger(const char * & theString, Standard_Integer &OutValue);
 
 		/****************** GetReal ******************/
 		%feature("compactdefaultargs") GetReal;
-		%feature("autodoc", ":param theString:
+		%feature("autodoc", "	:param theString:
 	:type theString: char *
 	:param theValue:
 	:type theValue: float
-	:rtype: bool") GetReal;
-		static Standard_Boolean GetReal (const char * & theString,Standard_Real &OutValue);
+	:rtype: bool
+") GetReal;
+		static Standard_Boolean GetReal(const char * & theString, Standard_Real &OutValue);
 
 		/****************** GetReal ******************/
 		%feature("compactdefaultargs") GetReal;
-		%feature("autodoc", ":param theString:
+		%feature("autodoc", "	:param theString:
 	:type theString: XmlObjMgt_DOMString
 	:param theValue:
 	:type theValue: float
-	:rtype: bool") GetReal;
-		static Standard_Boolean GetReal (const XmlObjMgt_DOMString & theString,Standard_Real &OutValue);
+	:rtype: bool
+") GetReal;
+		static Standard_Boolean GetReal(const XmlObjMgt_DOMString & theString, Standard_Real &OutValue);
 
 		/****************** GetStringValue ******************/
 		%feature("compactdefaultargs") GetStringValue;
-		%feature("autodoc", "* Returns the first child text node
+		%feature("autodoc", "Returns the first child text node.
+
 	:param theElement:
 	:type theElement: XmlObjMgt_Element
-	:rtype: XmlObjMgt_DOMString") GetStringValue;
-		static XmlObjMgt_DOMString GetStringValue (const XmlObjMgt_Element & theElement);
+	:rtype: XmlObjMgt_DOMString
+") GetStringValue;
+		static XmlObjMgt_DOMString GetStringValue(const XmlObjMgt_Element & theElement);
 
 		/****************** GetTagEntryString ******************/
 		%feature("compactdefaultargs") GetTagEntryString;
-		%feature("autodoc", "* Convert XPath expression (DOMString) into TagEntry string returns False on Error
+		%feature("autodoc", "Convert xpath expression (domstring) into tagentry string returns false on error.
+
 	:param theTarget:
 	:type theTarget: XmlObjMgt_DOMString
 	:param theTagEntry:
 	:type theTagEntry: TCollection_AsciiString
-	:rtype: bool") GetTagEntryString;
-		static Standard_Boolean GetTagEntryString (const XmlObjMgt_DOMString & theTarget,TCollection_AsciiString & theTagEntry);
+	:rtype: bool
+") GetTagEntryString;
+		static Standard_Boolean GetTagEntryString(const XmlObjMgt_DOMString & theTarget, TCollection_AsciiString & theTagEntry);
 
 		/****************** IdString ******************/
 		%feature("compactdefaultargs") IdString;
-		%feature("autodoc", "* Define the name of XMLattribute 'ID' (to be used everywhere)
-	:rtype: XmlObjMgt_DOMString") IdString;
-		static const XmlObjMgt_DOMString & IdString ();
+		%feature("autodoc", "Define the name of xmlattribute 'id' (to be used everywhere).
+
+	:rtype: XmlObjMgt_DOMString
+") IdString;
+		static const XmlObjMgt_DOMString & IdString();
 
 		/****************** SetExtendedString ******************/
 		%feature("compactdefaultargs") SetExtendedString;
-		%feature("autodoc", "* Add attribute <theElement extstring='theString' ...>
+		%feature("autodoc", "Add attribute <theelement extstring='thestring' ...>.
+
 	:param theElement:
 	:type theElement: XmlObjMgt_Element
 	:param theString:
 	:type theString: TCollection_ExtendedString
-	:rtype: bool") SetExtendedString;
-		static Standard_Boolean SetExtendedString (XmlObjMgt_Element & theElement,const TCollection_ExtendedString & theString);
+	:rtype: bool
+") SetExtendedString;
+		static Standard_Boolean SetExtendedString(XmlObjMgt_Element & theElement, const TCollection_ExtendedString & theString);
 
 		/****************** SetStringValue ******************/
 		%feature("compactdefaultargs") SetStringValue;
-		%feature("autodoc", "* Add theData as the last child text node to theElement isClearText(True) avoids analysis of the string and replacement of characters like '<' and '&' during XML file storage. Do NEVER set isClearText unless you have a hell of a reason
+		%feature("autodoc", "Add thedata as the last child text node to theelement iscleartext(true) avoids analysis of the string and replacement of characters like '<' and '&' during xml file storage. do never set iscleartext unless you have a hell of a reason.
+
 	:param theElement:
 	:type theElement: XmlObjMgt_Element
 	:param theData:
 	:type theData: XmlObjMgt_DOMString
 	:param isClearText: default value is Standard_False
 	:type isClearText: bool
-	:rtype: void") SetStringValue;
-		static void SetStringValue (XmlObjMgt_Element & theElement,const XmlObjMgt_DOMString & theData,const Standard_Boolean isClearText = Standard_False);
+	:rtype: None
+") SetStringValue;
+		static void SetStringValue(XmlObjMgt_Element & theElement, const XmlObjMgt_DOMString & theData, const Standard_Boolean isClearText = Standard_False);
 
 		/****************** SetTagEntryString ******************/
 		%feature("compactdefaultargs") SetTagEntryString;
-		%feature("autodoc", "* Convert XPath expression (DOMString) into TagEntry string returns False on Error
+		%feature("autodoc", "Convert xpath expression (domstring) into tagentry string returns false on error.
+
 	:param theSource:
 	:type theSource: XmlObjMgt_DOMString
 	:param theTagEntry:
 	:type theTagEntry: TCollection_AsciiString
-	:rtype: void") SetTagEntryString;
-		static void SetTagEntryString (XmlObjMgt_DOMString & theSource,const TCollection_AsciiString & theTagEntry);
+	:rtype: None
+") SetTagEntryString;
+		static void SetTagEntryString(XmlObjMgt_DOMString & theSource, const TCollection_AsciiString & theTagEntry);
 
 };
 
@@ -215,75 +235,93 @@ class XmlObjMgt_Array1 {
 	public:
 		/****************** CreateArrayElement ******************/
 		%feature("compactdefaultargs") CreateArrayElement;
-		%feature("autodoc", "* Create DOM_Element representing the array, under 'theParent'
+		%feature("autodoc", "Create dom_element representing the array, under 'theparent'.
+
 	:param theParent:
 	:type theParent: XmlObjMgt_Element
 	:param theName:
 	:type theName: XmlObjMgt_DOMString
-	:rtype: None") CreateArrayElement;
-		void CreateArrayElement (XmlObjMgt_Element & theParent,const XmlObjMgt_DOMString & theName);
+	:rtype: None
+") CreateArrayElement;
+		void CreateArrayElement(XmlObjMgt_Element & theParent, const XmlObjMgt_DOMString & theName);
 
 		/****************** Element ******************/
 		%feature("compactdefaultargs") Element;
-		%feature("autodoc", "* Returns the DOM element of <self>.
-	:rtype: XmlObjMgt_Element") Element;
-		const XmlObjMgt_Element & Element ();
+		%feature("autodoc", "Returns the dom element of <self>.
+
+	:rtype: XmlObjMgt_Element
+") Element;
+		const XmlObjMgt_Element & Element();
 
 		/****************** Length ******************/
 		%feature("compactdefaultargs") Length;
-		%feature("autodoc", "* Returns the number of elements of <self>.
-	:rtype: int") Length;
-		Standard_Integer Length ();
+		%feature("autodoc", "Returns the number of elements of <self>.
+
+	:rtype: int
+") Length;
+		Standard_Integer Length();
 
 		/****************** Lower ******************/
 		%feature("compactdefaultargs") Lower;
-		%feature("autodoc", "* Returns the lower bound.
-	:rtype: int") Lower;
-		Standard_Integer Lower ();
+		%feature("autodoc", "Returns the lower bound.
+
+	:rtype: int
+") Lower;
+		Standard_Integer Lower();
 
 		/****************** SetValue ******************/
 		%feature("compactdefaultargs") SetValue;
-		%feature("autodoc", "* Set the <Index>th element of the array to <Value>.
+		%feature("autodoc", "Set the <index>th element of the array to <value>.
+
 	:param Index:
 	:type Index: int
 	:param Value:
 	:type Value: XmlObjMgt_Element
-	:rtype: None") SetValue;
-		void SetValue (const Standard_Integer Index,XmlObjMgt_Element & Value);
+	:rtype: None
+") SetValue;
+		void SetValue(const Standard_Integer Index, XmlObjMgt_Element & Value);
 
 		/****************** Upper ******************/
 		%feature("compactdefaultargs") Upper;
-		%feature("autodoc", "* Returns the upper bound.
-	:rtype: int") Upper;
-		Standard_Integer Upper ();
+		%feature("autodoc", "Returns the upper bound.
+
+	:rtype: int
+") Upper;
+		Standard_Integer Upper();
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "* Returns the value of <Index>th element of the array.
+		%feature("autodoc", "Returns the value of <index>th element of the array.
+
 	:param Index:
 	:type Index: int
-	:rtype: XmlObjMgt_Element") Value;
-		XmlObjMgt_Element Value (const Standard_Integer Index);
+	:rtype: XmlObjMgt_Element
+") Value;
+		XmlObjMgt_Element Value(const Standard_Integer Index);
 
 		/****************** XmlObjMgt_Array1 ******************/
 		%feature("compactdefaultargs") XmlObjMgt_Array1;
-		%feature("autodoc", "* Create an array of lower bound <Low> and upper bound <Up>. Range error is raised when <Up> is less than <Low>.
+		%feature("autodoc", "Create an array of lower bound <low> and upper bound <up>. range error is raised when <up> is less than <low>.
+
 	:param Low:
 	:type Low: int
 	:param Up:
 	:type Up: int
-	:rtype: None") XmlObjMgt_Array1;
-		 XmlObjMgt_Array1 (const Standard_Integer Low,const Standard_Integer Up);
+	:rtype: None
+") XmlObjMgt_Array1;
+		 XmlObjMgt_Array1(const Standard_Integer Low, const Standard_Integer Up);
 
 		/****************** XmlObjMgt_Array1 ******************/
 		%feature("compactdefaultargs") XmlObjMgt_Array1;
-		%feature("autodoc", "* for restoration from DOM_Element which is child of theParent: <theParent ...> <theName ...>
+		%feature("autodoc", "For restoration from dom_element which is child of theparent: <theparent ...> <thename ...>.
+
 	:param theParent:
 	:type theParent: XmlObjMgt_Element
 	:param theName:
 	:type theName: XmlObjMgt_DOMString
-	:rtype: None") XmlObjMgt_Array1;
-		 XmlObjMgt_Array1 (const XmlObjMgt_Element & theParent,const XmlObjMgt_DOMString & theName);
+	:rtype: None
+") XmlObjMgt_Array1;
+		 XmlObjMgt_Array1(const XmlObjMgt_Element & theParent, const XmlObjMgt_DOMString & theName);
 
 };
 
@@ -301,51 +339,57 @@ class XmlObjMgt_GP {
 	public:
 		/****************** Translate ******************/
 		%feature("compactdefaultargs") Translate;
-		%feature("autodoc", ":param aTrsf:
+		%feature("autodoc", "	:param aTrsf:
 	:type aTrsf: gp_Trsf
-	:rtype: XmlObjMgt_DOMString") Translate;
-		static XmlObjMgt_DOMString Translate (const gp_Trsf & aTrsf);
+	:rtype: XmlObjMgt_DOMString
+") Translate;
+		static XmlObjMgt_DOMString Translate(const gp_Trsf & aTrsf);
 
 		/****************** Translate ******************/
 		%feature("compactdefaultargs") Translate;
-		%feature("autodoc", ":param aMat:
+		%feature("autodoc", "	:param aMat:
 	:type aMat: gp_Mat
-	:rtype: XmlObjMgt_DOMString") Translate;
-		static XmlObjMgt_DOMString Translate (const gp_Mat & aMat);
+	:rtype: XmlObjMgt_DOMString
+") Translate;
+		static XmlObjMgt_DOMString Translate(const gp_Mat & aMat);
 
 		/****************** Translate ******************/
 		%feature("compactdefaultargs") Translate;
-		%feature("autodoc", ":param anXYZ:
+		%feature("autodoc", "	:param anXYZ:
 	:type anXYZ: gp_XYZ
-	:rtype: XmlObjMgt_DOMString") Translate;
-		static XmlObjMgt_DOMString Translate (const gp_XYZ & anXYZ);
+	:rtype: XmlObjMgt_DOMString
+") Translate;
+		static XmlObjMgt_DOMString Translate(const gp_XYZ & anXYZ);
 
 		/****************** Translate ******************/
 		%feature("compactdefaultargs") Translate;
-		%feature("autodoc", ":param aStr:
+		%feature("autodoc", "	:param aStr:
 	:type aStr: XmlObjMgt_DOMString
 	:param T:
 	:type T: gp_Trsf
-	:rtype: bool") Translate;
-		static Standard_Boolean Translate (const XmlObjMgt_DOMString & aStr,gp_Trsf & T);
+	:rtype: bool
+") Translate;
+		static Standard_Boolean Translate(const XmlObjMgt_DOMString & aStr, gp_Trsf & T);
 
 		/****************** Translate ******************/
 		%feature("compactdefaultargs") Translate;
-		%feature("autodoc", ":param aStr:
+		%feature("autodoc", "	:param aStr:
 	:type aStr: XmlObjMgt_DOMString
 	:param T:
 	:type T: gp_Mat
-	:rtype: bool") Translate;
-		static Standard_Boolean Translate (const XmlObjMgt_DOMString & aStr,gp_Mat & T);
+	:rtype: bool
+") Translate;
+		static Standard_Boolean Translate(const XmlObjMgt_DOMString & aStr, gp_Mat & T);
 
 		/****************** Translate ******************/
 		%feature("compactdefaultargs") Translate;
-		%feature("autodoc", ":param aStr:
+		%feature("autodoc", "	:param aStr:
 	:type aStr: XmlObjMgt_DOMString
 	:param T:
 	:type T: gp_XYZ
-	:rtype: bool") Translate;
-		static Standard_Boolean Translate (const XmlObjMgt_DOMString & aStr,gp_XYZ & T);
+	:rtype: bool
+") Translate;
+		static Standard_Boolean Translate(const XmlObjMgt_DOMString & aStr, gp_XYZ & T);
 
 };
 
@@ -363,73 +407,77 @@ class XmlObjMgt_Persistent {
 	public:
 		/****************** CreateElement ******************/
 		%feature("compactdefaultargs") CreateElement;
-		%feature("autodoc", "* myElement := <theType id='theID'/>
+		%feature("autodoc", "Myelement := <thetype id='theid'/>.
+
 	:param theParent:
 	:type theParent: XmlObjMgt_Element
 	:param theType:
 	:type theType: XmlObjMgt_DOMString
 	:param theID:
 	:type theID: int
-	:rtype: None") CreateElement;
-		void CreateElement (XmlObjMgt_Element & theParent,const XmlObjMgt_DOMString & theType,const Standard_Integer theID);
+	:rtype: None
+") CreateElement;
+		void CreateElement(XmlObjMgt_Element & theParent, const XmlObjMgt_DOMString & theType, const Standard_Integer theID);
 
 		/****************** Element ******************/
 		%feature("compactdefaultargs") Element;
-		%feature("autodoc", "* return myElement
-	:rtype: XmlObjMgt_Element") Element;
-		const XmlObjMgt_Element & Element ();
+		%feature("autodoc", "Return myelement.
+
+	:rtype: XmlObjMgt_Element
+") Element;
+		const XmlObjMgt_Element & Element();
 
 		/****************** Element ******************/
 		%feature("compactdefaultargs") Element;
-		%feature("autodoc", "* return myElement
-	:rtype: XmlObjMgt_Element") Element;
-		XmlObjMgt_Element & Element ();
+		%feature("autodoc", "Return myelement.
+
+	:rtype: XmlObjMgt_Element
+") Element;
+		XmlObjMgt_Element & Element();
 
 		/****************** Id ******************/
 		%feature("compactdefaultargs") Id;
-		%feature("autodoc", ":rtype: int") Id;
-		Standard_Integer Id ();
+		%feature("autodoc", "	:rtype: int
+") Id;
+		Standard_Integer Id();
 
 		/****************** SetId ******************/
 		%feature("compactdefaultargs") SetId;
-		%feature("autodoc", ":param theId:
+		%feature("autodoc", "	:param theId:
 	:type theId: int
-	:rtype: None") SetId;
-		void SetId (const Standard_Integer theId);
+	:rtype: None
+") SetId;
+		void SetId(const Standard_Integer theId);
 
 		/****************** XmlObjMgt_Persistent ******************/
 		%feature("compactdefaultargs") XmlObjMgt_Persistent;
-		%feature("autodoc", "* empty constructor
-	:rtype: None") XmlObjMgt_Persistent;
-		 XmlObjMgt_Persistent ();
+		%feature("autodoc", "Empty constructor.
+
+	:rtype: None
+") XmlObjMgt_Persistent;
+		 XmlObjMgt_Persistent();
 
 		/****************** XmlObjMgt_Persistent ******************/
 		%feature("compactdefaultargs") XmlObjMgt_Persistent;
-		%feature("autodoc", "* constructor
+		%feature("autodoc", "Constructor.
+
 	:param theElement:
 	:type theElement: XmlObjMgt_Element
-	:rtype: None") XmlObjMgt_Persistent;
-		 XmlObjMgt_Persistent (const XmlObjMgt_Element & theElement);
+	:rtype: None
+") XmlObjMgt_Persistent;
+		 XmlObjMgt_Persistent(const XmlObjMgt_Element & theElement);
 
 		/****************** XmlObjMgt_Persistent ******************/
 		%feature("compactdefaultargs") XmlObjMgt_Persistent;
-		%feature("autodoc", "* constructor from sub-element of Element referenced by theRef
+		%feature("autodoc", "Constructor from sub-element of element referenced by theref.
+
 	:param theElement:
 	:type theElement: XmlObjMgt_Element
 	:param theRef:
 	:type theRef: XmlObjMgt_DOMString
-	:rtype: None") XmlObjMgt_Persistent;
-		 XmlObjMgt_Persistent (const XmlObjMgt_Element & theElement,const XmlObjMgt_DOMString & theRef);
-
-		/****************** operator XmlObjMgt_Element& ******************/
-		%feature("compactdefaultargs") operator XmlObjMgt_Element&;
-		%feature("autodoc", ":rtype: inline") operator XmlObjMgt_Element&;
-		inline operator XmlObjMgt_Element& ();
-
-		/****************** operator constXmlObjMgt_Element& ******************/
-		%feature("compactdefaultargs") operator constXmlObjMgt_Element&;
-		%feature("autodoc", ":rtype: inline") operator constXmlObjMgt_Element&;
-		inline operator constXmlObjMgt_Element& ();
+	:rtype: None
+") XmlObjMgt_Persistent;
+		 XmlObjMgt_Persistent(const XmlObjMgt_Element & theElement, const XmlObjMgt_DOMString & theRef);
 
 };
 
@@ -447,24 +495,29 @@ class XmlObjMgt_RRelocationTable : public TColStd_DataMapOfIntegerTransient {
 	public:
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", ":param doReleaseMemory: default value is Standard_True
+		%feature("autodoc", "	:param doReleaseMemory: default value is Standard_True
 	:type doReleaseMemory: bool
-	:rtype: None") Clear;
-		void Clear (const Standard_Boolean doReleaseMemory = Standard_True);
+	:rtype: None
+") Clear;
+		void Clear(const Standard_Boolean doReleaseMemory = Standard_True);
 
 		/****************** GetHeaderData ******************/
 		%feature("compactdefaultargs") GetHeaderData;
-		%feature("autodoc", "* Returns a handle to the header data of the file that is begin read
-	:rtype: opencascade::handle<Storage_HeaderData>") GetHeaderData;
-		const opencascade::handle<Storage_HeaderData> & GetHeaderData ();
+		%feature("autodoc", "Returns a handle to the header data of the file that is begin read.
+
+	:rtype: opencascade::handle<Storage_HeaderData>
+") GetHeaderData;
+		const opencascade::handle<Storage_HeaderData> & GetHeaderData();
 
 		/****************** SetHeaderData ******************/
 		%feature("compactdefaultargs") SetHeaderData;
-		%feature("autodoc", "* Sets the storage header data. //! @param theHeaderData header data of the file that is begin read
+		%feature("autodoc", "Sets the storage header data. //! @param theheaderdata header data of the file that is begin read.
+
 	:param theHeaderData:
 	:type theHeaderData: Storage_HeaderData
-	:rtype: None") SetHeaderData;
-		void SetHeaderData (const opencascade::handle<Storage_HeaderData> & theHeaderData);
+	:rtype: None
+") SetHeaderData;
+		void SetHeaderData(const opencascade::handle<Storage_HeaderData> & theHeaderData);
 
 };
 
@@ -482,24 +535,29 @@ class XmlObjMgt_SRelocationTable : public TColStd_IndexedMapOfTransient {
 	public:
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", ":param doReleaseMemory: default value is Standard_True
+		%feature("autodoc", "	:param doReleaseMemory: default value is Standard_True
 	:type doReleaseMemory: bool
-	:rtype: None") Clear;
-		void Clear (const Standard_Boolean doReleaseMemory = Standard_True);
+	:rtype: None
+") Clear;
+		void Clear(const Standard_Boolean doReleaseMemory = Standard_True);
 
 		/****************** GetHeaderData ******************/
 		%feature("compactdefaultargs") GetHeaderData;
-		%feature("autodoc", "* Returns a handle to the header data of the file that is begin read
-	:rtype: opencascade::handle<Storage_HeaderData>") GetHeaderData;
-		const opencascade::handle<Storage_HeaderData> & GetHeaderData ();
+		%feature("autodoc", "Returns a handle to the header data of the file that is begin read.
+
+	:rtype: opencascade::handle<Storage_HeaderData>
+") GetHeaderData;
+		const opencascade::handle<Storage_HeaderData> & GetHeaderData();
 
 		/****************** SetHeaderData ******************/
 		%feature("compactdefaultargs") SetHeaderData;
-		%feature("autodoc", "* Sets the storage header data. //! @param theHeaderData header data of the file that is begin read
+		%feature("autodoc", "Sets the storage header data. //! @param theheaderdata header data of the file that is begin read.
+
 	:param theHeaderData:
 	:type theHeaderData: Storage_HeaderData
-	:rtype: None") SetHeaderData;
-		void SetHeaderData (const opencascade::handle<Storage_HeaderData> & theHeaderData);
+	:rtype: None
+") SetHeaderData;
+		void SetHeaderData(const opencascade::handle<Storage_HeaderData> & theHeaderData);
 
 };
 

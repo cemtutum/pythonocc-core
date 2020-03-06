@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -86,7 +86,7 @@ class XBRepMesh {
 	public:
 		/****************** Discret ******************/
 		%feature("compactdefaultargs") Discret;
-		%feature("autodoc", ":param theShape:
+		%feature("autodoc", "	:param theShape:
 	:type theShape: TopoDS_Shape
 	:param theDeflection:
 	:type theDeflection: float
@@ -94,8 +94,9 @@ class XBRepMesh {
 	:type theAngle: float
 	:param theAlgo:
 	:type theAlgo: BRepMesh_DiscretRoot *
-	:rtype: int") Discret;
-		static Standard_Integer Discret (const TopoDS_Shape & theShape,const Standard_Real theDeflection,const Standard_Real theAngle,BRepMesh_DiscretRoot * & theAlgo);
+	:rtype: int
+") Discret;
+		static Standard_Integer Discret(const TopoDS_Shape & theShape, const Standard_Real theDeflection, const Standard_Real theAngle, BRepMesh_DiscretRoot * & theAlgo);
 
 };
 

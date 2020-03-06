@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -75,9 +75,11 @@ class AppStd_Application : public TDocStd_Application {
 	public:
 		/****************** ResourcesName ******************/
 		%feature("compactdefaultargs") ResourcesName;
-		%feature("autodoc", "* returns the file name which contains application resources
-	:rtype: char *") ResourcesName;
-		const char * ResourcesName ();
+		%feature("autodoc", "Returns the file name which contains application resources.
+
+	:rtype: char *
+") ResourcesName;
+		const char * ResourcesName();
 
 };
 

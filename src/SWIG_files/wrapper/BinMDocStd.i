@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -79,13 +79,15 @@ class BinMDocStd {
 	public:
 		/****************** AddDrivers ******************/
 		%feature("compactdefaultargs") AddDrivers;
-		%feature("autodoc", "* Adds the attribute drivers to <theDriverTable>.
+		%feature("autodoc", "Adds the attribute drivers to <thedrivertable>.
+
 	:param theDriverTable:
 	:type theDriverTable: BinMDF_ADriverTable
 	:param aMsgDrv:
 	:type aMsgDrv: Message_Messenger
-	:rtype: void") AddDrivers;
-		static void AddDrivers (const opencascade::handle<BinMDF_ADriverTable> & theDriverTable,const opencascade::handle<Message_Messenger> & aMsgDrv);
+	:rtype: None
+") AddDrivers;
+		static void AddDrivers(const opencascade::handle<BinMDF_ADriverTable> & theDriverTable, const opencascade::handle<Message_Messenger> & aMsgDrv);
 
 };
 
@@ -103,37 +105,41 @@ class BinMDocStd_XLinkDriver : public BinMDF_ADriver {
 	public:
 		/****************** BinMDocStd_XLinkDriver ******************/
 		%feature("compactdefaultargs") BinMDocStd_XLinkDriver;
-		%feature("autodoc", ":param theMessageDriver:
+		%feature("autodoc", "	:param theMessageDriver:
 	:type theMessageDriver: Message_Messenger
-	:rtype: None") BinMDocStd_XLinkDriver;
-		 BinMDocStd_XLinkDriver (const opencascade::handle<Message_Messenger> & theMessageDriver);
+	:rtype: None
+") BinMDocStd_XLinkDriver;
+		 BinMDocStd_XLinkDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", ":rtype: opencascade::handle<TDF_Attribute>") NewEmpty;
-		virtual opencascade::handle<TDF_Attribute> NewEmpty ();
+		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+") NewEmpty;
+		virtual opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", ":param Source:
+		%feature("autodoc", "	:param Source:
 	:type Source: BinObjMgt_Persistent
 	:param Target:
 	:type Target: TDF_Attribute
 	:param RelocTable:
 	:type RelocTable: BinObjMgt_RRelocationTable
-	:rtype: bool") Paste;
-		virtual Standard_Boolean Paste (const BinObjMgt_Persistent & Source,const opencascade::handle<TDF_Attribute> & Target,BinObjMgt_RRelocationTable & RelocTable);
+	:rtype: bool
+") Paste;
+		virtual Standard_Boolean Paste(const BinObjMgt_Persistent & Source, const opencascade::handle<TDF_Attribute> & Target, BinObjMgt_RRelocationTable & RelocTable);
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", ":param Source:
+		%feature("autodoc", "	:param Source:
 	:type Source: TDF_Attribute
 	:param Target:
 	:type Target: BinObjMgt_Persistent
 	:param RelocTable:
 	:type RelocTable: BinObjMgt_SRelocationTable
-	:rtype: void") Paste;
-		virtual void Paste (const opencascade::handle<TDF_Attribute> & Source,BinObjMgt_Persistent & Target,BinObjMgt_SRelocationTable & RelocTable);
+	:rtype: None
+") Paste;
+		virtual void Paste(const opencascade::handle<TDF_Attribute> & Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable);
 
 };
 

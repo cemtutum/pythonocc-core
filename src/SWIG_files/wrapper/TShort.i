@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -59,11 +59,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_tshort.html"
 /* end handles declaration */
 
 /* templates */
-%template(TShort_SequenceOfShortReal) NCollection_Sequence <Standard_ShortReal>;
-%template(TShort_Array2OfShortReal) NCollection_Array2 <Standard_ShortReal>;
-%template(TShort_Array1OfShortReal) NCollection_Array1 <Standard_ShortReal>;
+%template(TShort_SequenceOfShortReal) NCollection_Sequence<Standard_ShortReal>;
+%template(TShort_Array2OfShortReal) NCollection_Array2<Standard_ShortReal>;
+%template(TShort_Array1OfShortReal) NCollection_Array1<Standard_ShortReal>;
 
-%extend NCollection_Array1 <Standard_ShortReal> {
+%extend NCollection_Array1<Standard_ShortReal> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -99,9 +99,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_tshort.html"
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence <Standard_ShortReal> TShort_SequenceOfShortReal;
-typedef NCollection_Array2 <Standard_ShortReal> TShort_Array2OfShortReal;
-typedef NCollection_Array1 <Standard_ShortReal> TShort_Array1OfShortReal;
+typedef NCollection_Sequence<Standard_ShortReal> TShort_SequenceOfShortReal;
+typedef NCollection_Array2<Standard_ShortReal> TShort_Array2OfShortReal;
+typedef NCollection_Array1<Standard_ShortReal> TShort_Array1OfShortReal;
 /* end typedefs declaration */
 
 /* harray1 classes */

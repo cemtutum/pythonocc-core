@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -92,23 +92,29 @@ class ShapeAlgo {
 	public:
 		/****************** AlgoContainer ******************/
 		%feature("compactdefaultargs") AlgoContainer;
-		%feature("autodoc", "* Returns default AlgoContainer
-	:rtype: opencascade::handle<ShapeAlgo_AlgoContainer>") AlgoContainer;
-		static opencascade::handle<ShapeAlgo_AlgoContainer> AlgoContainer ();
+		%feature("autodoc", "Returns default algocontainer.
+
+	:rtype: opencascade::handle<ShapeAlgo_AlgoContainer>
+") AlgoContainer;
+		static opencascade::handle<ShapeAlgo_AlgoContainer> AlgoContainer();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "* Provides initerface to the algorithms from Shape Healing. Creates and initializes default AlgoContainer.
-	:rtype: void") Init;
-		static void Init ();
+		%feature("autodoc", "Provides initerface to the algorithms from shape healing. creates and initializes default algocontainer.
+
+	:rtype: None
+") Init;
+		static void Init();
 
 		/****************** SetAlgoContainer ******************/
 		%feature("compactdefaultargs") SetAlgoContainer;
-		%feature("autodoc", "* Sets default AlgoContainer
+		%feature("autodoc", "Sets default algocontainer.
+
 	:param aContainer:
 	:type aContainer: ShapeAlgo_AlgoContainer
-	:rtype: void") SetAlgoContainer;
-		static void SetAlgoContainer (const opencascade::handle<ShapeAlgo_AlgoContainer> & aContainer);
+	:rtype: None
+") SetAlgoContainer;
+		static void SetAlgoContainer(const opencascade::handle<ShapeAlgo_AlgoContainer> & aContainer);
 
 };
 
@@ -129,21 +135,27 @@ class ShapeAlgo_ToolContainer : public Standard_Transient {
 	public:
 		/****************** EdgeProjAux ******************/
 		%feature("compactdefaultargs") EdgeProjAux;
-		%feature("autodoc", "* Returns ShapeFix_EdgeProjAux
-	:rtype: opencascade::handle<ShapeFix_EdgeProjAux>") EdgeProjAux;
-		virtual opencascade::handle<ShapeFix_EdgeProjAux> EdgeProjAux ();
+		%feature("autodoc", "Returns shapefix_edgeprojaux.
+
+	:rtype: opencascade::handle<ShapeFix_EdgeProjAux>
+") EdgeProjAux;
+		virtual opencascade::handle<ShapeFix_EdgeProjAux> EdgeProjAux();
 
 		/****************** FixShape ******************/
 		%feature("compactdefaultargs") FixShape;
-		%feature("autodoc", "* Returns ShapeFix_Shape
-	:rtype: opencascade::handle<ShapeFix_Shape>") FixShape;
-		virtual opencascade::handle<ShapeFix_Shape> FixShape ();
+		%feature("autodoc", "Returns shapefix_shape.
+
+	:rtype: opencascade::handle<ShapeFix_Shape>
+") FixShape;
+		virtual opencascade::handle<ShapeFix_Shape> FixShape();
 
 		/****************** ShapeAlgo_ToolContainer ******************/
 		%feature("compactdefaultargs") ShapeAlgo_ToolContainer;
-		%feature("autodoc", "* Empty constructor
-	:rtype: None") ShapeAlgo_ToolContainer;
-		 ShapeAlgo_ToolContainer ();
+		%feature("autodoc", "Empty constructor.
+
+	:rtype: None
+") ShapeAlgo_ToolContainer;
+		 ShapeAlgo_ToolContainer();
 
 };
 

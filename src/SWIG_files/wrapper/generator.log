@@ -2,13 +2,13 @@
 ############################
 Running pythonocc-generator.
 ############################
-git revision : 8b0e70d
+git revision : 2993441
 
-operating system : debian Linux 4.15.0-76-generic
+operating system : Linux 64bit 4.15.0-88-generic
 
 occt version targeted : 7.4.0
 
-date : 2020-02-11 16:22:43.579343
+date : 2020-03-10 08:02:17.769077
 ############################
 
 [INFO ]  Single process mode
@@ -83,12 +83,6 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  BOPDS_InterfZZ
 [INFO ]  BOPDS_IteratorSI
 [INFO ]  ## Processing module BOPTools
-[WARNI]  Class BOPTools_BoxSet has 3 ancestors and is skipped.
-[WARNI]  Class BOPTools_BoxSelector has 6 ancestors and is skipped.
-[WARNI]  Class BOPTools_PairSelector has 4 ancestors and is skipped.
-[WARNI]  Class BOPTools_BoxSet has 3 ancestors and is skipped.
-[WARNI]  Class BOPTools_BoxSelector has 6 ancestors and is skipped.
-[WARNI]  Class BOPTools_PairSelector has 4 ancestors and is skipped.
 [INFO ]  Wrap classes :
 [INFO ]  BOPTools_AlgoTools
 [INFO ]  BOPTools_AlgoTools2D
@@ -192,7 +186,6 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  BRepTools_Quilt
 [INFO ]  BRepTools_ReShape
 [INFO ]  Wrap nested class BRepTools_ReShape::TReplacement
-[WARNI]  Creating Get and Set methods for method ModeConsiderLocation
 [INFO ]  BRepTools_ShapeSet
 [INFO ]  BRepTools_Substitution
 [INFO ]  BRepTools_WireExplorer
@@ -282,8 +275,8 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  BinLDrivers_DocumentSection
 [INFO ]  BinLDrivers_DocumentStorageDriver
 [INFO ]  ## Processing module BinMDF
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <Standard_Type>, opencascade::handle <BinMDF_ADriver>, TColStd_MapTransientHasher>
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <Standard_Type>, opencascade::handle <BinMDF_ADriver>, TColStd_MapTransientHasher>::Iterator
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<Standard_Type>, opencascade::handle<BinMDF_ADriver>, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<Standard_Type>, opencascade::handle<BinMDF_ADriver>, TColStd_MapTransientHasher>::Iterator
 [INFO ]  Wrap classes :
 [INFO ]  BinMDF
 [INFO ]  BinMDF_ADriver
@@ -1470,8 +1463,6 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  AdvApp2Var_Patch
 [INFO ]  AdvApp2Var_SysBase
 [INFO ]  Wrap nested class AdvApp2Var_SysBase::mitem
-[INFO ]  Wrap nested class AdvApp2Var_SysBase::
-[INFO ]  Wrap nested class AdvApp2Var_SysBase::
 [INFO ]  ## Processing module AppCont
 [INFO ]  Wrap classes :
 [INFO ]  AppCont_Function
@@ -2006,10 +1997,10 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  AppStdL_Application
 [INFO ]  ## Processing module TDF
 [INFO ]  Found HARRAY1 definitionTDF_HAttributeArray1: TDF_AttributeArray1
-[WARNI]  This template type cannot be handled: NCollection_DoubleMap <opencascade::handle <TDF_Attribute>, opencascade::handle <TDF_Attribute>, TColStd_MapTransientHasher , TColStd_MapTransientHasher>
-[WARNI]  This template type cannot be handled: NCollection_DoubleMap <opencascade::handle <TDF_Attribute>, opencascade::handle <TDF_Attribute>, TColStd_MapTransientHasher , TColStd_MapTransientHasher>::Iterator
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <TDF_Attribute>, opencascade::handle <TDF_Attribute>, TColStd_MapTransientHasher>
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <TDF_Attribute>, opencascade::handle <TDF_Attribute>, TColStd_MapTransientHasher>::Iterator
+[WARNI]  This template type cannot be handled: NCollection_DoubleMap<opencascade::handle<TDF_Attribute>, opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_DoubleMap<opencascade::handle<TDF_Attribute>, opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher, TColStd_MapTransientHasher>::Iterator
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<TDF_Attribute>, opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<TDF_Attribute>, opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher>::Iterator
 [INFO ]  Wrap classes :
 [INFO ]  TDF
 [INFO ]  TDF_Attribute
@@ -2124,7 +2115,6 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  BSplSLib
 [INFO ]  BSplSLib_Cache
 [INFO ]  ## Processing module BVH
-[WARNI]  Template: Rangeskipped because name does'nt contain _.
 [INFO ]  ## Processing module Bnd
 [INFO ]  Found HARRAY1 definitionBnd_HArray1OfBox: Bnd_Array1OfBox
 [INFO ]  Found HARRAY1 definitionBnd_HArray1OfSphere: Bnd_Array1OfSphere
@@ -2376,6 +2366,7 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  Wrap nested class math_GlobOptMin::NCollection_CellFilter_Inspector
 [INFO ]  math_Householder
 [INFO ]  math_IntegerVector
+[WARNI]  Creating Get and Set methods for method Value
 [INFO ]  math_Jacobi
 [INFO ]  math_KronrodSingleIntegration
 [INFO ]  math_Matrix
@@ -2393,6 +2384,7 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  math_Uzawa
 [INFO ]  math_ValueAndWeight
 [INFO ]  math_Vector
+[WARNI]  Creating Get and Set methods for method Value
 [INFO ]  math_FunctionSetWithDerivatives
 [INFO ]  Class math_FunctionSetWithDerivatives is abstract, using %nodefaultctor directive.
 [INFO ]  math_FunctionWithDerivative
@@ -2453,7 +2445,7 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  BRepMeshData_PCurve
 [INFO ]  BRepMeshData_Wire
 [INFO ]  ## Processing module IMeshData
-[WARNI]  This template type cannot be handled: NCollection_Shared <NCollection_DataMap <IFacePtr , opencascade::handle <MapOfIEdgePtr>, WeakEqual <IMeshData_Face>>>
+[WARNI]  This template type cannot be handled: NCollection_Shared<NCollection_DataMap<IFacePtr, opencascade::handle<MapOfIEdgePtr>, WeakEqual<IMeshData_Face>>>
 [WARNI]  Template: IMeshData::IEdgeHandleskipped because name does'nt contain _.
 [WARNI]  Template: IMeshData::IWireHandleskipped because name does'nt contain _.
 [WARNI]  Template: IMeshData::IFaceHandleskipped because name does'nt contain _.
@@ -2532,6 +2524,7 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  Class IMeshTools_ModelAlgo is abstract, using %nodefaultctor directive.
 [INFO ]  IMeshTools_ModelBuilder
 [INFO ]  Class IMeshTools_ModelBuilder is abstract, using %nodefaultctor directive.
+[WARNI]  Constructor skipped for abstract class IMeshTools_ModelBuilder
 [INFO ]  IMeshTools_Parameters
 [INFO ]  IMeshTools_ShapeExplorer
 [INFO ]  IMeshTools_ShapeVisitor
@@ -2634,6 +2627,9 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  BRepPrimAPI_MakeHalfSpace
 [INFO ]  BRepPrimAPI_MakeOneAxis
 [INFO ]  Class BRepPrimAPI_MakeOneAxis is abstract, using %nodefaultctor directive.
+[WARNI]  Constructor skipped for abstract class BRepPrimAPI_MakeOneAxis
+[WARNI]  Constructor skipped for abstract class BRepPrimAPI_MakeOneAxis
+[WARNI]  Constructor skipped for abstract class BRepPrimAPI_MakeOneAxis
 [INFO ]  BRepPrimAPI_MakeSweep
 [INFO ]  Class BRepPrimAPI_MakeSweep is abstract, using %nodefaultctor directive.
 [INFO ]  BRepPrimAPI_MakeWedge
@@ -4581,7 +4577,7 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  Processing toolkit TKTObj ===
 [INFO ]  ## Processing module TObj
 [INFO ]  Found HSEQUENCE definitionTObj_HSequenceOfObject: TObj_SequenceOfObject
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <TObj_Object>, opencascade::handle <TObj_HSequenceOfObject>>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<TObj_Object>, opencascade::handle<TObj_HSequenceOfObject>>
 [INFO ]  Wrap classes :
 [INFO ]  TObj_Application
 [INFO ]  TObj_Assistant
@@ -4799,9 +4795,9 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  MAT2d_Tool2d
 [INFO ]  Processing toolkit TKV3d ===
 [INFO ]  ## Processing module AIS
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <AIS_InteractiveObject>, opencascade::handle <AIS_GlobalStatus>, TColStd_MapTransientHasher>
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <AIS_InteractiveObject>, opencascade::handle <AIS_GlobalStatus>, TColStd_MapTransientHasher>::Iterator
-[WARNI]  This template type cannot be handled: NCollection_IndexedDataMap <opencascade::handle <SelectMgr_EntityOwner>, opencascade::handle <Prs3d_Presentation>, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<AIS_InteractiveObject>, opencascade::handle<AIS_GlobalStatus>, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<AIS_InteractiveObject>, opencascade::handle<AIS_GlobalStatus>, TColStd_MapTransientHasher>::Iterator
+[WARNI]  This template type cannot be handled: NCollection_IndexedDataMap<opencascade::handle<SelectMgr_EntityOwner>, opencascade::handle<Prs3d_Presentation>, TColStd_MapTransientHasher>
 [INFO ]  Wrap classes :
 [INFO ]  AIS
 [INFO ]  AIS_Animation
@@ -4891,7 +4887,7 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  AIS_MinRadiusDimension
 [INFO ]  ## Processing module DsgPrs
 [INFO ]  ## Processing module Graphic3d
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <Graphic3d_Aspects>, opencascade::handle <Graphic3d_Aspects>>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<Graphic3d_Aspects>, opencascade::handle<Graphic3d_Aspects>>
 [INFO ]  Wrap classes :
 [INFO ]  Graphic3d_ArrayOfPrimitives
 [INFO ]  Graphic3d_Aspects
@@ -5050,8 +5046,8 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  Select3D_SensitiveCircle
 [INFO ]  Select3D_SensitiveCurve
 [INFO ]  ## Processing module SelectMgr
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <SelectMgr_SelectableObject>, opencascade::handle <SelectMgr_SensitiveEntitySet>>::Iterator
-[WARNI]  This template type cannot be handled: NCollection_Shared<NCollection_IndexedMap <opencascade::handle <SelectMgr_EntityOwner>>>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<SelectMgr_SelectableObject>, opencascade::handle<SelectMgr_SensitiveEntitySet>>::Iterator
+[WARNI]  This template type cannot be handled: NCollection_Shared<NCollection_IndexedMap<opencascade::handle<SelectMgr_EntityOwner>>>
 [INFO ]  Wrap classes :
 [INFO ]  SelectMgr_EntityOwner
 [INFO ]  SelectMgr_Filter
@@ -5094,7 +5090,7 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  StdPrs_WFShape
 [INFO ]  StdPrs_WFSurface
 [INFO ]  ## Processing module StdSelect
-[WARNI]  This template type cannot be handled: NCollection_IndexedDataMap <opencascade::handle <SelectMgr_EntityOwner>, opencascade::handle <StdSelect_Prs>, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_IndexedDataMap<opencascade::handle<SelectMgr_EntityOwner>, opencascade::handle<StdSelect_Prs>, TColStd_MapTransientHasher>
 [INFO ]  Wrap classes :
 [INFO ]  StdSelect
 [INFO ]  StdSelect_BRepOwner
@@ -5199,7 +5195,7 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  VrmlConverter_WFShape
 [INFO ]  VrmlConverter_IsoAspect
 [INFO ]  ## Processing module VrmlData
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <TopoDS_TShape>, opencascade::handle <VrmlData_Appearance>>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<TopoDS_TShape>, opencascade::handle<VrmlData_Appearance>>
 [INFO ]  Wrap classes :
 [INFO ]  VrmlData_Node
 [INFO ]  Class VrmlData_Node is abstract, using %nodefaultctor directive.
@@ -5233,7 +5229,7 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  Wrap classes :
 [INFO ]  XCAFApp_Application
 [INFO ]  ## Processing module XCAFDimTolObjects
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <XCAFDimTolObjects_GeomToleranceObject>, opencascade::handle <XCAFDimTolObjects_DatumObject>, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<XCAFDimTolObjects_GeomToleranceObject>, opencascade::handle<XCAFDimTolObjects_DatumObject>, TColStd_MapTransientHasher>
 [INFO ]  Wrap classes :
 [INFO ]  XCAFDimTolObjects_DatumObject
 [INFO ]  XCAFDimTolObjects_DimensionObject
@@ -5293,10 +5289,10 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  IGESCAFControl_Writer
 [INFO ]  Processing toolkit TKXDESTEP ===
 [INFO ]  ## Processing module STEPCAFControl
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <StepBasic_ProductDefinition>, opencascade::handle <STEPCAFControl_ExternFile>, TColStd_MapTransientHasher>
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <StepBasic_ProductDefinition>, opencascade::handle <STEPCAFControl_ExternFile>, TColStd_MapTransientHasher>::Iterator
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <StepShape_ShapeDefinitionRepresentation>, opencascade::handle <STEPCAFControl_ExternFile>, TColStd_MapTransientHasher>
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <StepShape_ShapeDefinitionRepresentation>, opencascade::handle <STEPCAFControl_ExternFile>, TColStd_MapTransientHasher>::Iterator
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<StepBasic_ProductDefinition>, opencascade::handle<STEPCAFControl_ExternFile>, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<StepBasic_ProductDefinition>, opencascade::handle<STEPCAFControl_ExternFile>, TColStd_MapTransientHasher>::Iterator
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<StepShape_ShapeDefinitionRepresentation>, opencascade::handle<STEPCAFControl_ExternFile>, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<StepShape_ShapeDefinitionRepresentation>, opencascade::handle<STEPCAFControl_ExternFile>, TColStd_MapTransientHasher>::Iterator
 [INFO ]  Wrap classes :
 [INFO ]  STEPCAFControl_ActorWrite
 [INFO ]  STEPCAFControl_Controller
@@ -5348,7 +5344,6 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  IFSelect_WorkLibrary
 [INFO ]  Class IFSelect_WorkLibrary is abstract, using %nodefaultctor directive.
 [INFO ]  IFSelect_WorkSession
-[WARNI]  Wrong type in class property : return
 [INFO ]  IFSelect_Act
 [INFO ]  IFSelect_BasicDumper
 [INFO ]  IFSelect_CheckCounter
@@ -5493,8 +5488,8 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  ## Processing module Transfer
 [INFO ]  Found HSEQUENCE definitionTransfer_HSequenceOfBinder: Transfer_SequenceOfBinder
 [INFO ]  Found HSEQUENCE definitionTransfer_HSequenceOfFinder: Transfer_SequenceOfFinder
-[WARNI]  This template type cannot be handled: NCollection_IndexedDataMap <opencascade::handle <Standard_Transient>, opencascade::handle <Transfer_Binder>, TColStd_MapTransientHasher>
-[WARNI]  This template type cannot be handled: NCollection_IndexedDataMap <opencascade::handle <Transfer_Finder>, opencascade::handle <Transfer_Binder>, Transfer_FindHasher>
+[WARNI]  This template type cannot be handled: NCollection_IndexedDataMap<opencascade::handle<Standard_Transient>, opencascade::handle<Transfer_Binder>, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_IndexedDataMap<opencascade::handle<Transfer_Finder>, opencascade::handle<Transfer_Binder>, Transfer_FindHasher>
 [INFO ]  Wrap classes :
 [INFO ]  Transfer_ActorOfProcessForFinder
 [INFO ]  Transfer_ActorOfProcessForTransient
@@ -5599,8 +5594,8 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  XmlLDrivers_DocumentStorageDriver
 [INFO ]  XmlLDrivers_NamespaceDef
 [INFO ]  ## Processing module XmlMDF
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <Standard_Type>, opencascade::handle <XmlMDF_ADriver>, TColStd_MapTransientHasher>
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <Standard_Type>, opencascade::handle <XmlMDF_ADriver>, TColStd_MapTransientHasher>::Iterator
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<Standard_Type>, opencascade::handle<XmlMDF_ADriver>, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<Standard_Type>, opencascade::handle<XmlMDF_ADriver>, TColStd_MapTransientHasher>::Iterator
 [INFO ]  Wrap classes :
 [INFO ]  XmlMDF
 [INFO ]  XmlMDF_ADriver
@@ -5729,7 +5724,6 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  Standard
 [INFO ]  Standard_ArrayStreamBuffer
 [INFO ]  Standard_Condition
-[WARNI]  Wrong type in class property : return
 [INFO ]  Standard_ErrorHandler
 [INFO ]  Wrap nested class Standard_ErrorHandler::Callback
 [INFO ]  Standard_GUID
@@ -5771,9 +5765,9 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  Found HARRAY2 definitionTColStd_HArray2OfCharacter: TColStd_Array2OfCharacter
 [INFO ]  Found HARRAY1 definitionTColStd_HArray1OfByte: TColStd_Array1OfByte
 [INFO ]  Found HSEQUENCE definitionTColStd_HSequenceOfReal: TColStd_SequenceOfReal
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <Standard_Transient>, opencascade::handle <Standard_Transient>, TColStd_MapTransientHasher>
-[WARNI]  This template type cannot be handled: NCollection_DataMap <opencascade::handle <Standard_Transient>, opencascade::handle <Standard_Transient>, TColStd_MapTransientHasher>::Iterator
-[WARNI]  This template type cannot be handled: NCollection_IndexedDataMap <opencascade::handle <Standard_Transient>, opencascade::handle <Standard_Transient>, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<Standard_Transient>, opencascade::handle<Standard_Transient>, TColStd_MapTransientHasher>
+[WARNI]  This template type cannot be handled: NCollection_DataMap<opencascade::handle<Standard_Transient>, opencascade::handle<Standard_Transient>, TColStd_MapTransientHasher>::Iterator
+[WARNI]  This template type cannot be handled: NCollection_IndexedDataMap<opencascade::handle<Standard_Transient>, opencascade::handle<Standard_Transient>, TColStd_MapTransientHasher>
 [INFO ]  Wrap classes :
 [INFO ]  TColStd_HPackedMapOfInteger
 [INFO ]  ## Processing module TCollection
@@ -5817,6 +5811,8 @@ date : 2020-02-11 16:22:43.579343
 [INFO ]  UnitsAPI
 [INFO ]  
 #################################################
-SWIG interface file generation completed in 31.27s
+SWIG interface file generation completed in 24.97s
 #################################################
 
+[INFO ]  Number of classes: 4426
+[INFO ]  Number of methods: 44101

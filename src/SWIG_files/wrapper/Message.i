@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -199,21 +199,21 @@ enum Message_StatusType {
 /* end public enums declaration */
 
 /* templates */
-%template(Message_ListOfMsg) NCollection_List <Message_Msg>;
+%template(Message_ListOfMsg) NCollection_List<Message_Msg>;
 %template(Message_ListIteratorOfListOfMsg) NCollection_TListIterator<Message_Msg>;
-%template(Message_SequenceOfPrinters) NCollection_Sequence <opencascade::handle <Message_Printer>>;
-%template(Message_SequenceOfProgressScale) NCollection_Sequence <Message_ProgressScale>;
-%template(Message_ListOfAlert) NCollection_List <opencascade::handle <Message_Alert>>;
+%template(Message_SequenceOfPrinters) NCollection_Sequence<opencascade::handle<Message_Printer>>;
+%template(Message_SequenceOfProgressScale) NCollection_Sequence<Message_ProgressScale>;
+%template(Message_ListOfAlert) NCollection_List<opencascade::handle<Message_Alert>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List <Message_Msg> Message_ListOfMsg;
-typedef NCollection_List <Message_Msg>::Iterator Message_ListIteratorOfListOfMsg;
-typedef NCollection_Sequence <opencascade::handle <Message_Printer>> Message_SequenceOfPrinters;
-typedef NCollection_Sequence <Message_ProgressScale> Message_SequenceOfProgressScale;
-typedef NCollection_Array1 <NCollection_Handle <Message_Msg>> Message_ArrayOfMsg;
-typedef NCollection_Handle <Message_ArrayOfMsg> Message_HArrayOfMsg;
-typedef NCollection_List <opencascade::handle <Message_Alert>> Message_ListOfAlert;
+typedef NCollection_List<Message_Msg> Message_ListOfMsg;
+typedef NCollection_List<Message_Msg>::Iterator Message_ListIteratorOfListOfMsg;
+typedef NCollection_Sequence<opencascade::handle<Message_Printer>> Message_SequenceOfPrinters;
+typedef NCollection_Sequence<Message_ProgressScale> Message_SequenceOfProgressScale;
+typedef NCollection_Array1<NCollection_Handle<Message_Msg>> Message_ArrayOfMsg;
+typedef NCollection_Handle<Message_ArrayOfMsg> Message_HArrayOfMsg;
+typedef NCollection_List<opencascade::handle<Message_Alert>> Message_ListOfAlert;
 /* end typedefs declaration */
 
 /* harray1 classes */

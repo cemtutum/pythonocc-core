@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -78,14 +78,17 @@ class SelectBasics {
 	public:
 		/****************** MaxOwnerPriority ******************/
 		%feature("compactdefaultargs") MaxOwnerPriority;
-		%feature("autodoc", "* Structure to provide all-in-one result of selection of sensitive for 'Matches' method of Select3D_SensitiveEntity.
-	:rtype: int") MaxOwnerPriority;
-		static Standard_Integer MaxOwnerPriority ();
+		%feature("autodoc", "Structure to provide all-in-one result of selection of sensitive for 'matches' method of select3d_sensitiveentity.
+
+	:rtype: int
+") MaxOwnerPriority;
+		static Standard_Integer MaxOwnerPriority();
 
 		/****************** MinOwnerPriority ******************/
 		%feature("compactdefaultargs") MinOwnerPriority;
-		%feature("autodoc", ":rtype: int") MinOwnerPriority;
-		static Standard_Integer MinOwnerPriority ();
+		%feature("autodoc", "	:rtype: int
+") MinOwnerPriority;
+		static Standard_Integer MinOwnerPriority();
 
 };
 
@@ -103,91 +106,115 @@ class SelectBasics_PickResult {
 	public:
 		/****************** Depth ******************/
 		%feature("compactdefaultargs") Depth;
-		%feature("autodoc", "* Return depth along picking ray.
-	:rtype: float") Depth;
-		Standard_Real Depth ();
+		%feature("autodoc", "Return depth along picking ray.
+
+	:rtype: float
+") Depth;
+		Standard_Real Depth();
 
 		/****************** DistToGeomCenter ******************/
 		%feature("compactdefaultargs") DistToGeomCenter;
-		%feature("autodoc", "* Return distance to geometry center (auxiliary value for comparing results).
-	:rtype: float") DistToGeomCenter;
-		Standard_Real DistToGeomCenter ();
+		%feature("autodoc", "Return distance to geometry center (auxiliary value for comparing results).
+
+	:rtype: float
+") DistToGeomCenter;
+		Standard_Real DistToGeomCenter();
 
 		/****************** HasPickedPoint ******************/
 		%feature("compactdefaultargs") HasPickedPoint;
-		%feature("autodoc", "* Return True if Picked Point lying on detected entity was set.
-	:rtype: bool") HasPickedPoint;
-		Standard_Boolean HasPickedPoint ();
+		%feature("autodoc", "Return true if picked point lying on detected entity was set.
+
+	:rtype: bool
+") HasPickedPoint;
+		Standard_Boolean HasPickedPoint();
 
 		/****************** Invalidate ******************/
 		%feature("compactdefaultargs") Invalidate;
-		%feature("autodoc", "* Reset depth value.
-	:rtype: None") Invalidate;
-		void Invalidate ();
+		%feature("autodoc", "Reset depth value.
+
+	:rtype: None
+") Invalidate;
+		void Invalidate();
 
 		/****************** IsValid ******************/
 		%feature("compactdefaultargs") IsValid;
-		%feature("autodoc", "* Return True if result was been defined.
-	:rtype: bool") IsValid;
-		Standard_Boolean IsValid ();
+		%feature("autodoc", "Return true if result was been defined.
+
+	:rtype: bool
+") IsValid;
+		Standard_Boolean IsValid();
 
 		/****************** Min ******************/
 		%feature("compactdefaultargs") Min;
-		%feature("autodoc", "* Return closest result between two Pick Results according to Depth value.
+		%feature("autodoc", "Return closest result between two pick results according to depth value.
+
 	:param thePickResult1:
 	:type thePickResult1: SelectBasics_PickResult
 	:param thePickResult2:
 	:type thePickResult2: SelectBasics_PickResult
-	:rtype: SelectBasics_PickResult") Min;
-		static const SelectBasics_PickResult & Min (const SelectBasics_PickResult & thePickResult1,const SelectBasics_PickResult & thePickResult2);
+	:rtype: SelectBasics_PickResult
+") Min;
+		static const SelectBasics_PickResult & Min(const SelectBasics_PickResult & thePickResult1, const SelectBasics_PickResult & thePickResult2);
 
 		/****************** PickedPoint ******************/
 		%feature("compactdefaultargs") PickedPoint;
-		%feature("autodoc", "* Return picked point lying on detected entity. WARNING! Point is defined in local coordinate system and should be translated into World System before usage!
-	:rtype: gp_Pnt") PickedPoint;
-		const gp_Pnt  PickedPoint ();
+		%feature("autodoc", "Return picked point lying on detected entity. warning! point is defined in local coordinate system and should be translated into world system before usage!.
+
+	:rtype: gp_Pnt
+") PickedPoint;
+		const gp_Pnt PickedPoint();
 
 		/****************** SelectBasics_PickResult ******************/
 		%feature("compactdefaultargs") SelectBasics_PickResult;
-		%feature("autodoc", "* Empty constructor defining an invalid result.
-	:rtype: None") SelectBasics_PickResult;
-		 SelectBasics_PickResult ();
+		%feature("autodoc", "Empty constructor defining an invalid result.
+
+	:rtype: None
+") SelectBasics_PickResult;
+		 SelectBasics_PickResult();
 
 		/****************** SelectBasics_PickResult ******************/
 		%feature("compactdefaultargs") SelectBasics_PickResult;
-		%feature("autodoc", "* Constructor with initialization.
+		%feature("autodoc", "Constructor with initialization.
+
 	:param theDepth:
 	:type theDepth: float
 	:param theDistToCenter:
 	:type theDistToCenter: float
 	:param theObjPickedPnt:
 	:type theObjPickedPnt: gp_Pnt
-	:rtype: None") SelectBasics_PickResult;
-		 SelectBasics_PickResult (Standard_Real theDepth,Standard_Real theDistToCenter,const gp_Pnt & theObjPickedPnt);
+	:rtype: None
+") SelectBasics_PickResult;
+		 SelectBasics_PickResult(Standard_Real theDepth, Standard_Real theDistToCenter, const gp_Pnt & theObjPickedPnt);
 
 		/****************** SetDepth ******************/
 		%feature("compactdefaultargs") SetDepth;
-		%feature("autodoc", "* Set depth along picking ray.
+		%feature("autodoc", "Set depth along picking ray.
+
 	:param theDepth:
 	:type theDepth: float
-	:rtype: None") SetDepth;
-		void SetDepth (Standard_Real theDepth);
+	:rtype: None
+") SetDepth;
+		void SetDepth(Standard_Real theDepth);
 
 		/****************** SetDistToGeomCenter ******************/
 		%feature("compactdefaultargs") SetDistToGeomCenter;
-		%feature("autodoc", "* Set distance to geometry center.
+		%feature("autodoc", "Set distance to geometry center.
+
 	:param theDistToCenter:
 	:type theDistToCenter: float
-	:rtype: None") SetDistToGeomCenter;
-		void SetDistToGeomCenter (Standard_Real theDistToCenter);
+	:rtype: None
+") SetDistToGeomCenter;
+		void SetDistToGeomCenter(Standard_Real theDistToCenter);
 
 		/****************** SetPickedPoint ******************/
 		%feature("compactdefaultargs") SetPickedPoint;
-		%feature("autodoc", "* Set picked point.
+		%feature("autodoc", "Set picked point.
+
 	:param theObjPickedPnt:
 	:type theObjPickedPnt: gp_Pnt
-	:rtype: None") SetPickedPoint;
-		void SetPickedPoint (const gp_Pnt & theObjPickedPnt);
+	:rtype: None
+") SetPickedPoint;
+		void SetPickedPoint(const gp_Pnt & theObjPickedPnt);
 
 };
 
@@ -216,136 +243,164 @@ enum SelectionType {
 
 		/****************** DetectedPoint ******************/
 		%feature("compactdefaultargs") DetectedPoint;
-		%feature("autodoc", ":param theDepth:
+		%feature("autodoc", "	:param theDepth:
 	:type theDepth: float
-	:rtype: gp_Pnt") DetectedPoint;
-		gp_Pnt DetectedPoint (const Standard_Real theDepth);
+	:rtype: gp_Pnt
+") DetectedPoint;
+		virtual gp_Pnt DetectedPoint(const Standard_Real theDepth);
 
 		/****************** DistToGeometryCenter ******************/
 		%feature("compactdefaultargs") DistToGeometryCenter;
-		%feature("autodoc", "* Calculates distance from 3d projection of user-defined selection point to the given point theCOG
+		%feature("autodoc", "Calculates distance from 3d projection of user-defined selection point to the given point thecog.
+
 	:param theCOG:
 	:type theCOG: gp_Pnt
-	:rtype: float") DistToGeometryCenter;
-		Standard_Real DistToGeometryCenter (const gp_Pnt & theCOG);
+	:rtype: float
+") DistToGeometryCenter;
+		virtual Standard_Real DistToGeometryCenter(const gp_Pnt & theCOG);
 
 		/****************** GetActiveSelectionType ******************/
 		%feature("compactdefaultargs") GetActiveSelectionType;
-		%feature("autodoc", ":rtype: int") GetActiveSelectionType;
-		Standard_Integer GetActiveSelectionType ();
+		%feature("autodoc", "	:rtype: int
+") GetActiveSelectionType;
+		virtual Standard_Integer GetActiveSelectionType();
 
 		/****************** GetFarPickedPnt ******************/
 		%feature("compactdefaultargs") GetFarPickedPnt;
-		%feature("autodoc", "* Valid only for point and rectangular selection. Returns projection of 2d mouse picked point or projection of center of 2d rectangle (for point and rectangular selection correspondingly) onto far view frustum plane
-	:rtype: gp_Pnt") GetFarPickedPnt;
-		gp_Pnt GetFarPickedPnt ();
+		%feature("autodoc", "Valid only for point and rectangular selection. returns projection of 2d mouse picked point or projection of center of 2d rectangle (for point and rectangular selection correspondingly) onto far view frustum plane.
+
+	:rtype: gp_Pnt
+") GetFarPickedPnt;
+		virtual gp_Pnt GetFarPickedPnt();
 
 		/****************** GetMousePosition ******************/
 		%feature("compactdefaultargs") GetMousePosition;
-		%feature("autodoc", "* Return mouse coordinates for Point selection mode.
-	:rtype: gp_Pnt2d") GetMousePosition;
-		gp_Pnt2d GetMousePosition ();
+		%feature("autodoc", "Return mouse coordinates for point selection mode.
+
+	:rtype: gp_Pnt2d
+") GetMousePosition;
+		virtual gp_Pnt2d GetMousePosition();
 
 		/****************** GetNearPickedPnt ******************/
 		%feature("compactdefaultargs") GetNearPickedPnt;
-		%feature("autodoc", "* Valid only for point and rectangular selection. Returns projection of 2d mouse picked point or projection of center of 2d rectangle (for point and rectangular selection correspondingly) onto near view frustum plane
-	:rtype: gp_Pnt") GetNearPickedPnt;
-		gp_Pnt GetNearPickedPnt ();
+		%feature("autodoc", "Valid only for point and rectangular selection. returns projection of 2d mouse picked point or projection of center of 2d rectangle (for point and rectangular selection correspondingly) onto near view frustum plane.
+
+	:rtype: gp_Pnt
+") GetNearPickedPnt;
+		virtual gp_Pnt GetNearPickedPnt();
 
 		/****************** GetPlanes ******************/
 		%feature("compactdefaultargs") GetPlanes;
-		%feature("autodoc", "* Stores plane equation coefficients (in the following form: Ax + By + Cz + D = 0) to the given vector
+		%feature("autodoc", "Stores plane equation coefficients (in the following form: ax + by + cz + d = 0) to the given vector.
+
 	:param thePlaneEquations:
 	:type thePlaneEquations: NCollection_Vector<NCollection_Vec4<float> >
-	:rtype: None") GetPlanes;
-		void GetPlanes (NCollection_Vector<NCollection_Vec4<Standard_Real> > & thePlaneEquations);
+	:rtype: None
+") GetPlanes;
+		virtual void GetPlanes(NCollection_Vector<NCollection_Vec4<Standard_Real> > & thePlaneEquations);
 
 		/****************** IsOverlapAllowed ******************/
 		%feature("compactdefaultargs") IsOverlapAllowed;
-		%feature("autodoc", ":rtype: bool") IsOverlapAllowed;
-		Standard_Boolean IsOverlapAllowed ();
+		%feature("autodoc", "	:rtype: bool
+") IsOverlapAllowed;
+		virtual Standard_Boolean IsOverlapAllowed();
 
 		/****************** Overlaps ******************/
 		%feature("compactdefaultargs") Overlaps;
-		%feature("autodoc", "* Returns true if selecting volume is overlapped by box theBox
+		%feature("autodoc", "Returns true if selecting volume is overlapped by box thebox.
+
 	:param theBoxMin:
 	:type theBoxMin: NCollection_Vec3<float>
 	:param theBoxMax:
 	:type theBoxMax: NCollection_Vec3<float>
 	:param thePickResult:
 	:type thePickResult: SelectBasics_PickResult
-	:rtype: bool") Overlaps;
-		Standard_Boolean Overlaps (const NCollection_Vec3<Standard_Real> & theBoxMin,const NCollection_Vec3<Standard_Real> & theBoxMax,SelectBasics_PickResult & thePickResult);
+	:rtype: bool
+") Overlaps;
+		virtual Standard_Boolean Overlaps(const NCollection_Vec3<Standard_Real> & theBoxMin, const NCollection_Vec3<Standard_Real> & theBoxMax, SelectBasics_PickResult & thePickResult);
 
 		/****************** Overlaps ******************/
 		%feature("compactdefaultargs") Overlaps;
-		%feature("autodoc", "* Returns true if selecting volume is overlapped by axis-aligned bounding box with minimum corner at point theMinPt and maximum at point theMaxPt
+		%feature("autodoc", "Returns true if selecting volume is overlapped by axis-aligned bounding box with minimum corner at point theminpt and maximum at point themaxpt.
+
 	:param theBoxMin:
 	:type theBoxMin: NCollection_Vec3<float>
 	:param theBoxMax:
 	:type theBoxMax: NCollection_Vec3<float>
 	:param theInside: default value is NULL
 	:type theInside: bool *
-	:rtype: bool") Overlaps;
-		Standard_Boolean Overlaps (const NCollection_Vec3<Standard_Real> & theBoxMin,const NCollection_Vec3<Standard_Real> & theBoxMax,Standard_Boolean * theInside = NULL);
+	:rtype: bool
+") Overlaps;
+		virtual Standard_Boolean Overlaps(const NCollection_Vec3<Standard_Real> & theBoxMin, const NCollection_Vec3<Standard_Real> & theBoxMax, Standard_Boolean * theInside = NULL);
 
 		/****************** Overlaps ******************/
 		%feature("compactdefaultargs") Overlaps;
-		%feature("autodoc", "* Returns true if selecting volume is overlapped by point thePnt
+		%feature("autodoc", "Returns true if selecting volume is overlapped by point thepnt.
+
 	:param thePnt:
 	:type thePnt: gp_Pnt
 	:param thePickResult:
 	:type thePickResult: SelectBasics_PickResult
-	:rtype: bool") Overlaps;
-		Standard_Boolean Overlaps (const gp_Pnt & thePnt,SelectBasics_PickResult & thePickResult);
+	:rtype: bool
+") Overlaps;
+		virtual Standard_Boolean Overlaps(const gp_Pnt & thePnt, SelectBasics_PickResult & thePickResult);
 
 		/****************** Overlaps ******************/
 		%feature("compactdefaultargs") Overlaps;
-		%feature("autodoc", "* Returns true if selecting volume is overlapped by point thePnt. Does not perform depth calculation, so this method is defined as helper function for inclusion test.
+		%feature("autodoc", "Returns true if selecting volume is overlapped by point thepnt. does not perform depth calculation, so this method is defined as helper function for inclusion test.
+
 	:param thePnt:
 	:type thePnt: gp_Pnt
-	:rtype: bool") Overlaps;
-		Standard_Boolean Overlaps (const gp_Pnt & thePnt);
+	:rtype: bool
+") Overlaps;
+		virtual Standard_Boolean Overlaps(const gp_Pnt & thePnt);
 
 		/****************** Overlaps ******************/
 		%feature("compactdefaultargs") Overlaps;
-		%feature("autodoc", "* Returns true if selecting volume is overlapped by planar convex polygon, which points are stored in theArrayOfPts, taking into account sensitivity type theSensType
+		%feature("autodoc", "Returns true if selecting volume is overlapped by planar convex polygon, which points are stored in thearrayofpts, taking into account sensitivity type thesenstype.
+
 	:param theArrayOfPts:
 	:type theArrayOfPts: TColgp_HArray1OfPnt
 	:param theSensType:
 	:type theSensType: int
 	:param thePickResult:
 	:type thePickResult: SelectBasics_PickResult
-	:rtype: bool") Overlaps;
-		Standard_Boolean Overlaps (const opencascade::handle<TColgp_HArray1OfPnt> & theArrayOfPts,Standard_Integer theSensType,SelectBasics_PickResult & thePickResult);
+	:rtype: bool
+") Overlaps;
+		virtual Standard_Boolean Overlaps(const opencascade::handle<TColgp_HArray1OfPnt> & theArrayOfPts, Standard_Integer theSensType, SelectBasics_PickResult & thePickResult);
 
 		/****************** Overlaps ******************/
 		%feature("compactdefaultargs") Overlaps;
-		%feature("autodoc", "* Returns true if selecting volume is overlapped by planar convex polygon, which points are stored in theArrayOfPts, taking into account sensitivity type theSensType
+		%feature("autodoc", "Returns true if selecting volume is overlapped by planar convex polygon, which points are stored in thearrayofpts, taking into account sensitivity type thesenstype.
+
 	:param theArrayOfPts:
 	:type theArrayOfPts: TColgp_Array1OfPnt
 	:param theSensType:
 	:type theSensType: int
 	:param thePickResult:
 	:type thePickResult: SelectBasics_PickResult
-	:rtype: bool") Overlaps;
-		Standard_Boolean Overlaps (const TColgp_Array1OfPnt & theArrayOfPts,Standard_Integer theSensType,SelectBasics_PickResult & thePickResult);
+	:rtype: bool
+") Overlaps;
+		virtual Standard_Boolean Overlaps(const TColgp_Array1OfPnt & theArrayOfPts, Standard_Integer theSensType, SelectBasics_PickResult & thePickResult);
 
 		/****************** Overlaps ******************/
 		%feature("compactdefaultargs") Overlaps;
-		%feature("autodoc", "* Returns true if selecting volume is overlapped by line segment with start point at thePt1 and end point at thePt2
+		%feature("autodoc", "Returns true if selecting volume is overlapped by line segment with start point at thept1 and end point at thept2.
+
 	:param thePt1:
 	:type thePt1: gp_Pnt
 	:param thePt2:
 	:type thePt2: gp_Pnt
 	:param thePickResult:
 	:type thePickResult: SelectBasics_PickResult
-	:rtype: bool") Overlaps;
-		Standard_Boolean Overlaps (const gp_Pnt & thePt1,const gp_Pnt & thePt2,SelectBasics_PickResult & thePickResult);
+	:rtype: bool
+") Overlaps;
+		virtual Standard_Boolean Overlaps(const gp_Pnt & thePt1, const gp_Pnt & thePt2, SelectBasics_PickResult & thePickResult);
 
 		/****************** Overlaps ******************/
 		%feature("compactdefaultargs") Overlaps;
-		%feature("autodoc", "* Returns true if selecting volume is overlapped by triangle with vertices thePt1, thePt2 and thePt3, taking into account sensitivity type theSensType
+		%feature("autodoc", "Returns true if selecting volume is overlapped by triangle with vertices thept1, thept2 and thept3, taking into account sensitivity type thesenstype.
+
 	:param thePt1:
 	:type thePt1: gp_Pnt
 	:param thePt2:
@@ -356,8 +411,9 @@ enum SelectionType {
 	:type theSensType: int
 	:param thePickResult:
 	:type thePickResult: SelectBasics_PickResult
-	:rtype: bool") Overlaps;
-		Standard_Boolean Overlaps (const gp_Pnt & thePt1,const gp_Pnt & thePt2,const gp_Pnt & thePt3,Standard_Integer theSensType,SelectBasics_PickResult & thePickResult);
+	:rtype: bool
+") Overlaps;
+		virtual Standard_Boolean Overlaps(const gp_Pnt & thePt1, const gp_Pnt & thePt2, const gp_Pnt & thePt3, Standard_Integer theSensType, SelectBasics_PickResult & thePickResult);
 
 };
 

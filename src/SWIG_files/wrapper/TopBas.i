@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -58,13 +58,13 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topbas.html"
 /* end handles declaration */
 
 /* templates */
-%template(TopBas_ListOfTestInterference) NCollection_List <TopBas_TestInterference>;
+%template(TopBas_ListOfTestInterference) NCollection_List<TopBas_TestInterference>;
 %template(TopBas_ListIteratorOfListOfTestInterference) NCollection_TListIterator<TopBas_TestInterference>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List <TopBas_TestInterference> TopBas_ListOfTestInterference;
-typedef NCollection_List <TopBas_TestInterference>::Iterator TopBas_ListIteratorOfListOfTestInterference;
+typedef NCollection_List<TopBas_TestInterference> TopBas_ListOfTestInterference;
+typedef NCollection_List<TopBas_TestInterference>::Iterator TopBas_ListIteratorOfListOfTestInterference;
 /* end typedefs declaration */
 
 /********************************
@@ -74,27 +74,31 @@ class TopBas_TestInterference {
 	public:
 		/****************** Boundary ******************/
 		%feature("compactdefaultargs") Boundary;
-		%feature("autodoc", ":param B:
+		%feature("autodoc", "	:param B:
 	:type B: int
-	:rtype: None") Boundary;
-		void Boundary (const Standard_Integer & B);
+	:rtype: None
+") Boundary;
+		void Boundary(const Standard_Integer & B);
 
 		/****************** Boundary ******************/
 		%feature("compactdefaultargs") Boundary;
-		%feature("autodoc", ":rtype: int") Boundary;
-		const Standard_Integer & Boundary ();
+		%feature("autodoc", "	:rtype: int
+") Boundary;
+		const Standard_Integer & Boundary();
 
 		/****************** BoundaryTransition ******************/
 		%feature("compactdefaultargs") BoundaryTransition;
-		%feature("autodoc", ":param BTr:
+		%feature("autodoc", "	:param BTr:
 	:type BTr: TopAbs_Orientation
-	:rtype: None") BoundaryTransition;
-		void BoundaryTransition (const TopAbs_Orientation BTr);
+	:rtype: None
+") BoundaryTransition;
+		void BoundaryTransition(const TopAbs_Orientation BTr);
 
 		/****************** BoundaryTransition ******************/
 		%feature("compactdefaultargs") BoundaryTransition;
-		%feature("autodoc", ":rtype: TopAbs_Orientation") BoundaryTransition;
-		TopAbs_Orientation BoundaryTransition ();
+		%feature("autodoc", "	:rtype: TopAbs_Orientation
+") BoundaryTransition;
+		TopAbs_Orientation BoundaryTransition();
 
 
         %feature("autodoc","1");
@@ -124,36 +128,41 @@ class TopBas_TestInterference {
         };
 		/****************** Intersection ******************/
 		%feature("compactdefaultargs") Intersection;
-		%feature("autodoc", ":param I:
+		%feature("autodoc", "	:param I:
 	:type I: float
-	:rtype: None") Intersection;
-		void Intersection (const Standard_Real & I);
+	:rtype: None
+") Intersection;
+		void Intersection(const Standard_Real & I);
 
 		/****************** Intersection ******************/
 		%feature("compactdefaultargs") Intersection;
-		%feature("autodoc", ":rtype: float") Intersection;
-		const Standard_Real & Intersection ();
+		%feature("autodoc", "	:rtype: float
+") Intersection;
+		const Standard_Real & Intersection();
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", ":param O:
+		%feature("autodoc", "	:param O:
 	:type O: TopAbs_Orientation
-	:rtype: None") Orientation;
-		void Orientation (const TopAbs_Orientation O);
+	:rtype: None
+") Orientation;
+		void Orientation(const TopAbs_Orientation O);
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", ":rtype: TopAbs_Orientation") Orientation;
-		TopAbs_Orientation Orientation ();
+		%feature("autodoc", "	:rtype: TopAbs_Orientation
+") Orientation;
+		TopAbs_Orientation Orientation();
 
 		/****************** TopBas_TestInterference ******************/
 		%feature("compactdefaultargs") TopBas_TestInterference;
-		%feature("autodoc", ":rtype: None") TopBas_TestInterference;
-		 TopBas_TestInterference ();
+		%feature("autodoc", "	:rtype: None
+") TopBas_TestInterference;
+		 TopBas_TestInterference();
 
 		/****************** TopBas_TestInterference ******************/
 		%feature("compactdefaultargs") TopBas_TestInterference;
-		%feature("autodoc", ":param Inters:
+		%feature("autodoc", "	:param Inters:
 	:type Inters: float
 	:param Bound:
 	:type Bound: int
@@ -163,20 +172,23 @@ class TopBas_TestInterference {
 	:type Trans: TopAbs_Orientation
 	:param BTrans:
 	:type BTrans: TopAbs_Orientation
-	:rtype: None") TopBas_TestInterference;
-		 TopBas_TestInterference (const Standard_Real & Inters,const Standard_Integer & Bound,const TopAbs_Orientation Orient,const TopAbs_Orientation Trans,const TopAbs_Orientation BTrans);
+	:rtype: None
+") TopBas_TestInterference;
+		 TopBas_TestInterference(const Standard_Real & Inters, const Standard_Integer & Bound, const TopAbs_Orientation Orient, const TopAbs_Orientation Trans, const TopAbs_Orientation BTrans);
 
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
-		%feature("autodoc", ":param Tr:
+		%feature("autodoc", "	:param Tr:
 	:type Tr: TopAbs_Orientation
-	:rtype: None") Transition;
-		void Transition (const TopAbs_Orientation Tr);
+	:rtype: None
+") Transition;
+		void Transition(const TopAbs_Orientation Tr);
 
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
-		%feature("autodoc", ":rtype: TopAbs_Orientation") Transition;
-		TopAbs_Orientation Transition ();
+		%feature("autodoc", "	:rtype: TopAbs_Orientation
+") Transition;
+		TopAbs_Orientation Transition();
 
 };
 

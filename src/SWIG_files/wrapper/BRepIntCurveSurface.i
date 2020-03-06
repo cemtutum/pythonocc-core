@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -85,111 +85,141 @@ class BRepIntCurveSurface_Inter {
 	public:
 		/****************** BRepIntCurveSurface_Inter ******************/
 		%feature("compactdefaultargs") BRepIntCurveSurface_Inter;
-		%feature("autodoc", "* Empty constructor;
-	:rtype: None") BRepIntCurveSurface_Inter;
-		 BRepIntCurveSurface_Inter ();
+		%feature("autodoc", "Empty constructor;.
+
+	:rtype: None
+") BRepIntCurveSurface_Inter;
+		 BRepIntCurveSurface_Inter();
 
 		/****************** Face ******************/
 		%feature("compactdefaultargs") Face;
-		%feature("autodoc", "* returns the current face.
-	:rtype: TopoDS_Face") Face;
-		const TopoDS_Face  Face ();
+		%feature("autodoc", "Returns the current face.
+
+	:rtype: TopoDS_Face
+") Face;
+		const TopoDS_Face Face();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "* Load the Shape, the curve and initialize the tolerance used for the classification.
+		%feature("autodoc", "Load the shape, the curve and initialize the tolerance used for the classification.
+
 	:param theShape:
 	:type theShape: TopoDS_Shape
 	:param theCurve:
 	:type theCurve: GeomAdaptor_Curve
 	:param theTol:
 	:type theTol: float
-	:rtype: None") Init;
-		void Init (const TopoDS_Shape & theShape,const GeomAdaptor_Curve & theCurve,const Standard_Real theTol);
+	:rtype: None
+") Init;
+		void Init(const TopoDS_Shape & theShape, const GeomAdaptor_Curve & theCurve, const Standard_Real theTol);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "* Load the Shape, the curve and initialize the tolerance used for the classification.
+		%feature("autodoc", "Load the shape, the curve and initialize the tolerance used for the classification.
+
 	:param theShape:
 	:type theShape: TopoDS_Shape
 	:param theLine:
 	:type theLine: gp_Lin
 	:param theTol:
 	:type theTol: float
-	:rtype: None") Init;
-		void Init (const TopoDS_Shape & theShape,const gp_Lin & theLine,const Standard_Real theTol);
+	:rtype: None
+") Init;
+		void Init(const TopoDS_Shape & theShape, const gp_Lin & theLine, const Standard_Real theTol);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "* Method to find intersections of specified curve with loaded shape.
+		%feature("autodoc", "Method to find intersections of specified curve with loaded shape.
+
 	:param theCurve:
 	:type theCurve: GeomAdaptor_Curve
-	:rtype: None") Init;
-		void Init (const GeomAdaptor_Curve & theCurve);
+	:rtype: None
+") Init;
+		void Init(const GeomAdaptor_Curve & theCurve);
 
 		/****************** Load ******************/
 		%feature("compactdefaultargs") Load;
-		%feature("autodoc", "* Load the Shape, and initialize the tolerance used for the classification.
+		%feature("autodoc", "Load the shape, and initialize the tolerance used for the classification.
+
 	:param theShape:
 	:type theShape: TopoDS_Shape
 	:param theTol:
 	:type theTol: float
-	:rtype: None") Load;
-		void Load (const TopoDS_Shape & theShape,const Standard_Real theTol);
+	:rtype: None
+") Load;
+		void Load(const TopoDS_Shape & theShape, const Standard_Real theTol);
 
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
-		%feature("autodoc", "* returns True if there is a current face.
-	:rtype: bool") More;
-		Standard_Boolean More ();
+		%feature("autodoc", "Returns true if there is a current face.
+
+	:rtype: bool
+") More;
+		Standard_Boolean More();
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
-		%feature("autodoc", "* Sets the next intersection point to check.
-	:rtype: None") Next;
-		void Next ();
+		%feature("autodoc", "Sets the next intersection point to check.
+
+	:rtype: None
+") Next;
+		void Next();
 
 		/****************** Pnt ******************/
 		%feature("compactdefaultargs") Pnt;
-		%feature("autodoc", "* returns the current geometric Point
-	:rtype: gp_Pnt") Pnt;
-		const gp_Pnt  Pnt ();
+		%feature("autodoc", "Returns the current geometric point.
+
+	:rtype: gp_Pnt
+") Pnt;
+		const gp_Pnt Pnt();
 
 		/****************** Point ******************/
 		%feature("compactdefaultargs") Point;
-		%feature("autodoc", "* returns the current Intersection point.
-	:rtype: IntCurveSurface_IntersectionPoint") Point;
-		IntCurveSurface_IntersectionPoint Point ();
+		%feature("autodoc", "Returns the current intersection point.
+
+	:rtype: IntCurveSurface_IntersectionPoint
+") Point;
+		IntCurveSurface_IntersectionPoint Point();
 
 		/****************** State ******************/
 		%feature("compactdefaultargs") State;
-		%feature("autodoc", "* returns the current state (IN or ON)
-	:rtype: TopAbs_State") State;
-		TopAbs_State State ();
+		%feature("autodoc", "Returns the current state (in or on).
+
+	:rtype: TopAbs_State
+") State;
+		TopAbs_State State();
 
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
-		%feature("autodoc", "* returns the transition of the line on the surface (IN or OUT or UNKNOWN)
-	:rtype: IntCurveSurface_TransitionOnCurve") Transition;
-		IntCurveSurface_TransitionOnCurve Transition ();
+		%feature("autodoc", "Returns the transition of the line on the surface (in or out or unknown).
+
+	:rtype: IntCurveSurface_TransitionOnCurve
+") Transition;
+		IntCurveSurface_TransitionOnCurve Transition();
 
 		/****************** U ******************/
 		%feature("compactdefaultargs") U;
-		%feature("autodoc", "* returns the U parameter of the current point on the current face.
-	:rtype: float") U;
-		Standard_Real U ();
+		%feature("autodoc", "Returns the u parameter of the current point on the current face.
+
+	:rtype: float
+") U;
+		Standard_Real U();
 
 		/****************** V ******************/
 		%feature("compactdefaultargs") V;
-		%feature("autodoc", "* returns the V parameter of the current point on the current face.
-	:rtype: float") V;
-		Standard_Real V ();
+		%feature("autodoc", "Returns the v parameter of the current point on the current face.
+
+	:rtype: float
+") V;
+		Standard_Real V();
 
 		/****************** W ******************/
 		%feature("compactdefaultargs") W;
-		%feature("autodoc", "* returns the parameter of the current point on the curve.
-	:rtype: float") W;
-		Standard_Real W ();
+		%feature("autodoc", "Returns the parameter of the current point on the curve.
+
+	:rtype: float
+") W;
+		Standard_Real W();
 
 };
 

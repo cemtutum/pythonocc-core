@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -72,97 +72,125 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 	public:
 		/****************** GetPlane ******************/
 		%feature("compactdefaultargs") GetPlane;
-		%feature("autodoc", "* Returns a right-handed coordinate system of the plane
-	:rtype: gp_Ax2") GetPlane;
-		const gp_Ax2  GetPlane ();
+		%feature("autodoc", "Returns a right-handed coordinate system of the plane.
+
+	:rtype: gp_Ax2
+") GetPlane;
+		const gp_Ax2 GetPlane();
 
 		/****************** GetPoint ******************/
 		%feature("compactdefaultargs") GetPoint;
-		%feature("autodoc", "* Returns the attachment point on the annotated object
-	:rtype: gp_Pnt") GetPoint;
-		const gp_Pnt  GetPoint ();
+		%feature("autodoc", "Returns the attachment point on the annotated object.
+
+	:rtype: gp_Pnt
+") GetPoint;
+		const gp_Pnt GetPoint();
 
 		/****************** GetPointText ******************/
 		%feature("compactdefaultargs") GetPointText;
-		%feature("autodoc", "* Returns the text position
-	:rtype: gp_Pnt") GetPointText;
-		const gp_Pnt  GetPointText ();
+		%feature("autodoc", "Returns the text position.
+
+	:rtype: gp_Pnt
+") GetPointText;
+		const gp_Pnt GetPointText();
 
 		/****************** GetPresentation ******************/
 		%feature("compactdefaultargs") GetPresentation;
-		%feature("autodoc", "* Returns a tesselated annotation if specified
-	:rtype: TopoDS_Shape") GetPresentation;
-		const TopoDS_Shape  GetPresentation ();
+		%feature("autodoc", "Returns a tesselated annotation if specified.
+
+	:rtype: TopoDS_Shape
+") GetPresentation;
+		const TopoDS_Shape GetPresentation();
 
 		/****************** HasPlane ******************/
 		%feature("compactdefaultargs") HasPlane;
-		%feature("autodoc", "* Returns True if plane is specified
-	:rtype: bool") HasPlane;
-		Standard_Boolean HasPlane ();
+		%feature("autodoc", "Returns true if plane is specified.
+
+	:rtype: bool
+") HasPlane;
+		Standard_Boolean HasPlane();
 
 		/****************** HasPoint ******************/
 		%feature("compactdefaultargs") HasPoint;
-		%feature("autodoc", "* Returns True if the attachment point on the annotated object is specified
-	:rtype: bool") HasPoint;
-		Standard_Boolean HasPoint ();
+		%feature("autodoc", "Returns true if the attachment point on the annotated object is specified.
+
+	:rtype: bool
+") HasPoint;
+		Standard_Boolean HasPoint();
 
 		/****************** HasPointText ******************/
 		%feature("compactdefaultargs") HasPointText;
-		%feature("autodoc", "* Returns True if the text position is specified
-	:rtype: bool") HasPointText;
-		Standard_Boolean HasPointText ();
+		%feature("autodoc", "Returns true if the text position is specified.
+
+	:rtype: bool
+") HasPointText;
+		Standard_Boolean HasPointText();
 
 		/****************** Reset ******************/
 		%feature("compactdefaultargs") Reset;
-		%feature("autodoc", "* Resets data to the state after calling the default constructor
-	:rtype: None") Reset;
-		void Reset ();
+		%feature("autodoc", "Resets data to the state after calling the default constructor.
+
+	:rtype: None
+") Reset;
+		void Reset();
 
 		/****************** SetPlane ******************/
 		%feature("compactdefaultargs") SetPlane;
-		%feature("autodoc", "* Sets a right-handed coordinate system of the plane
+		%feature("autodoc", "Sets a right-handed coordinate system of the plane.
+
 	:param thePlane:
 	:type thePlane: gp_Ax2
-	:rtype: None") SetPlane;
-		void SetPlane (const gp_Ax2 & thePlane);
+	:rtype: None
+") SetPlane;
+		void SetPlane(const gp_Ax2 & thePlane);
 
 		/****************** SetPoint ******************/
 		%feature("compactdefaultargs") SetPoint;
-		%feature("autodoc", "* Sets the anchor point on the annotated object
+		%feature("autodoc", "Sets the anchor point on the annotated object.
+
 	:param thePnt:
 	:type thePnt: gp_Pnt
-	:rtype: None") SetPoint;
-		void SetPoint (const gp_Pnt & thePnt);
+	:rtype: None
+") SetPoint;
+		void SetPoint(const gp_Pnt & thePnt);
 
 		/****************** SetPointText ******************/
 		%feature("compactdefaultargs") SetPointText;
-		%feature("autodoc", "* Sets the text position
+		%feature("autodoc", "Sets the text position.
+
 	:param thePnt:
 	:type thePnt: gp_Pnt
-	:rtype: None") SetPointText;
-		void SetPointText (const gp_Pnt & thePnt);
+	:rtype: None
+") SetPointText;
+		void SetPointText(const gp_Pnt & thePnt);
 
 		/****************** SetPresentation ******************/
 		%feature("compactdefaultargs") SetPresentation;
-		%feature("autodoc", "* Sets a tesselated annotation
+		%feature("autodoc", "Sets a tesselated annotation.
+
 	:param thePresentation:
 	:type thePresentation: TopoDS_Shape
-	:rtype: None") SetPresentation;
-		void SetPresentation (const TopoDS_Shape & thePresentation);
+	:rtype: None
+") SetPresentation;
+		void SetPresentation(const TopoDS_Shape & thePresentation);
 
 		/****************** XCAFNoteObjects_NoteObject ******************/
 		%feature("compactdefaultargs") XCAFNoteObjects_NoteObject;
-		%feature("autodoc", "* Empty object
-	:rtype: None") XCAFNoteObjects_NoteObject;
-		 XCAFNoteObjects_NoteObject ();
+		%feature("autodoc", "Empty object.
+
+	:rtype: None
+") XCAFNoteObjects_NoteObject;
+		 XCAFNoteObjects_NoteObject();
 
 		/****************** XCAFNoteObjects_NoteObject ******************/
 		%feature("compactdefaultargs") XCAFNoteObjects_NoteObject;
-		%feature("autodoc", "* Copy constructor.
+		%feature("autodoc", "Copy constructor.
+
 	:param theObj:
 	:type theObj: XCAFNoteObjects_NoteObject
-	:rtype: None") XCAFNoteObjects_NoteObject;
-		 XCAFNoteObjects_NoteObject (const opencascade::handle<XCAFNoteObjects_NoteObject> & theObj);
+	:rtype: None
+") XCAFNoteObjects_NoteObject;
+		 XCAFNoteObjects_NoteObject(const opencascade::handle<XCAFNoteObjects_NoteObject> & theObj);
 
 };
 

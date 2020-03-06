@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -63,13 +63,13 @@ enum Hatch_LineForm {
 /* end handles declaration */
 
 /* templates */
-%template(Hatch_SequenceOfLine) NCollection_Sequence <Hatch_Line>;
-%template(Hatch_SequenceOfParameter) NCollection_Sequence <Hatch_Parameter>;
+%template(Hatch_SequenceOfLine) NCollection_Sequence<Hatch_Line>;
+%template(Hatch_SequenceOfParameter) NCollection_Sequence<Hatch_Parameter>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence <Hatch_Line> Hatch_SequenceOfLine;
-typedef NCollection_Sequence <Hatch_Parameter> Hatch_SequenceOfParameter;
+typedef NCollection_Sequence<Hatch_Line> Hatch_SequenceOfLine;
+typedef NCollection_Sequence<Hatch_Parameter> Hatch_SequenceOfParameter;
 /* end typedefs declaration */
 
 /**********************
@@ -79,61 +79,74 @@ class Hatch_Hatcher {
 	public:
 		/****************** AddLine ******************/
 		%feature("compactdefaultargs") AddLine;
-		%feature("autodoc", "* Add a line <L> to be trimmed. <T> the type is only kept from information. It is not used in the computation.
+		%feature("autodoc", "Add a line <l> to be trimmed. <t> the type is only kept from information. it is not used in the computation.
+
 	:param L:
 	:type L: gp_Lin2d
 	:param T: default value is Hatch_ANYLINE
 	:type T: Hatch_LineForm
-	:rtype: None") AddLine;
-		void AddLine (const gp_Lin2d & L,const Hatch_LineForm T = Hatch_ANYLINE);
+	:rtype: None
+") AddLine;
+		void AddLine(const gp_Lin2d & L, const Hatch_LineForm T = Hatch_ANYLINE);
 
 		/****************** AddLine ******************/
 		%feature("compactdefaultargs") AddLine;
-		%feature("autodoc", "* Add an infinite line on direction <D> at distance <Dist> from the origin to be trimmed. <Dist> may be negative. //! If O is the origin of the 2D plane, and V the vector perpendicular to D (in the direct direction). //! A point P is on the line if : OP dot V = Dist The parameter of P on the line is OP dot D
+		%feature("autodoc", "Add an infinite line on direction <d> at distance <dist> from the origin to be trimmed. <dist> may be negative. //! if o is the origin of the 2d plane, and v the vector perpendicular to d (in the direct direction). //! a point p is on the line if : op dot v = dist the parameter of p on the line is op dot d.
+
 	:param D:
 	:type D: gp_Dir2d
 	:param Dist:
 	:type Dist: float
-	:rtype: None") AddLine;
-		void AddLine (const gp_Dir2d & D,const Standard_Real Dist);
+	:rtype: None
+") AddLine;
+		void AddLine(const gp_Dir2d & D, const Standard_Real Dist);
 
 		/****************** AddXLine ******************/
 		%feature("compactdefaultargs") AddXLine;
-		%feature("autodoc", "* Add an infinite line parallel to the Y-axis at abciss <X>.
+		%feature("autodoc", "Add an infinite line parallel to the y-axis at abciss <x>.
+
 	:param X:
 	:type X: float
-	:rtype: None") AddXLine;
-		void AddXLine (const Standard_Real X);
+	:rtype: None
+") AddXLine;
+		void AddXLine(const Standard_Real X);
 
 		/****************** AddYLine ******************/
 		%feature("compactdefaultargs") AddYLine;
-		%feature("autodoc", "* Add an infinite line parallel to the X-axis at ordinate <Y>.
+		%feature("autodoc", "Add an infinite line parallel to the x-axis at ordinate <y>.
+
 	:param Y:
 	:type Y: float
-	:rtype: None") AddYLine;
-		void AddYLine (const Standard_Real Y);
+	:rtype: None
+") AddYLine;
+		void AddYLine(const Standard_Real Y);
 
 		/****************** Coordinate ******************/
 		%feature("compactdefaultargs") Coordinate;
-		%feature("autodoc", "* Returns the X or Y coordinate of the line of index <I> if it is a X or a Y line.
+		%feature("autodoc", "Returns the x or y coordinate of the line of index <i> if it is a x or a y line.
+
 	:param I:
 	:type I: int
-	:rtype: float") Coordinate;
-		Standard_Real Coordinate (const Standard_Integer I);
+	:rtype: float
+") Coordinate;
+		Standard_Real Coordinate(const Standard_Integer I);
 
 		/****************** End ******************/
 		%feature("compactdefaultargs") End;
-		%feature("autodoc", "* Returns the last parameter of interval <J> on line <I>.
+		%feature("autodoc", "Returns the last parameter of interval <j> on line <i>.
+
 	:param I:
 	:type I: int
 	:param J:
 	:type J: int
-	:rtype: float") End;
-		Standard_Real End (const Standard_Integer I,const Standard_Integer J);
+	:rtype: float
+") End;
+		Standard_Real End(const Standard_Integer I, const Standard_Integer J);
 
 		/****************** EndIndex ******************/
 		%feature("compactdefaultargs") EndIndex;
-		%feature("autodoc", "* Returns the last Index and Par2 of interval <J> on line <I>.
+		%feature("autodoc", "Returns the last index and par2 of interval <j> on line <i>.
+
 	:param I:
 	:type I: int
 	:param J:
@@ -142,84 +155,104 @@ class Hatch_Hatcher {
 	:type Index: int
 	:param Par2:
 	:type Par2: float
-	:rtype: None") EndIndex;
-		void EndIndex (const Standard_Integer I,const Standard_Integer J,Standard_Integer &OutValue,Standard_Real &OutValue);
+	:rtype: None
+") EndIndex;
+		void EndIndex(const Standard_Integer I, const Standard_Integer J, Standard_Integer &OutValue, Standard_Real &OutValue);
 
 		/****************** Hatch_Hatcher ******************/
 		%feature("compactdefaultargs") Hatch_Hatcher;
-		%feature("autodoc", "* Returns a empty hatcher. <Tol> is the tolerance for intersections.
+		%feature("autodoc", "Returns a empty hatcher. <tol> is the tolerance for intersections.
+
 	:param Tol:
 	:type Tol: float
 	:param Oriented: default value is Standard_True
 	:type Oriented: bool
-	:rtype: None") Hatch_Hatcher;
-		 Hatch_Hatcher (const Standard_Real Tol,const Standard_Boolean Oriented = Standard_True);
+	:rtype: None
+") Hatch_Hatcher;
+		 Hatch_Hatcher(const Standard_Real Tol, const Standard_Boolean Oriented = Standard_True);
 
 		/****************** IsXLine ******************/
 		%feature("compactdefaultargs") IsXLine;
-		%feature("autodoc", "* Returns True if the line of index <I> has a constant X value.
+		%feature("autodoc", "Returns true if the line of index <i> has a constant x value.
+
 	:param I:
 	:type I: int
-	:rtype: bool") IsXLine;
-		Standard_Boolean IsXLine (const Standard_Integer I);
+	:rtype: bool
+") IsXLine;
+		Standard_Boolean IsXLine(const Standard_Integer I);
 
 		/****************** IsYLine ******************/
 		%feature("compactdefaultargs") IsYLine;
-		%feature("autodoc", "* Returns True if the line of index <I> has a constant Y value.
+		%feature("autodoc", "Returns true if the line of index <i> has a constant y value.
+
 	:param I:
 	:type I: int
-	:rtype: bool") IsYLine;
-		Standard_Boolean IsYLine (const Standard_Integer I);
+	:rtype: bool
+") IsYLine;
+		Standard_Boolean IsYLine(const Standard_Integer I);
 
 		/****************** Line ******************/
 		%feature("compactdefaultargs") Line;
-		%feature("autodoc", "* Returns the line of index <I>.
+		%feature("autodoc", "Returns the line of index <i>.
+
 	:param I:
 	:type I: int
-	:rtype: gp_Lin2d") Line;
-		const gp_Lin2d  Line (const Standard_Integer I);
+	:rtype: gp_Lin2d
+") Line;
+		const gp_Lin2d Line(const Standard_Integer I);
 
 		/****************** LineForm ******************/
 		%feature("compactdefaultargs") LineForm;
-		%feature("autodoc", "* Returns the type of the line of index <I>.
+		%feature("autodoc", "Returns the type of the line of index <i>.
+
 	:param I:
 	:type I: int
-	:rtype: Hatch_LineForm") LineForm;
-		Hatch_LineForm LineForm (const Standard_Integer I);
+	:rtype: Hatch_LineForm
+") LineForm;
+		Hatch_LineForm LineForm(const Standard_Integer I);
 
 		/****************** NbIntervals ******************/
 		%feature("compactdefaultargs") NbIntervals;
-		%feature("autodoc", "* Returns the total number of intervals on all the lines.
-	:rtype: int") NbIntervals;
-		Standard_Integer NbIntervals ();
+		%feature("autodoc", "Returns the total number of intervals on all the lines.
+
+	:rtype: int
+") NbIntervals;
+		Standard_Integer NbIntervals();
 
 		/****************** NbIntervals ******************/
 		%feature("compactdefaultargs") NbIntervals;
-		%feature("autodoc", "* Returns the number of intervals on line of index <I>.
+		%feature("autodoc", "Returns the number of intervals on line of index <i>.
+
 	:param I:
 	:type I: int
-	:rtype: int") NbIntervals;
-		Standard_Integer NbIntervals (const Standard_Integer I);
+	:rtype: int
+") NbIntervals;
+		Standard_Integer NbIntervals(const Standard_Integer I);
 
 		/****************** NbLines ******************/
 		%feature("compactdefaultargs") NbLines;
-		%feature("autodoc", "* Returns the number of lines.
-	:rtype: int") NbLines;
-		Standard_Integer NbLines ();
+		%feature("autodoc", "Returns the number of lines.
+
+	:rtype: int
+") NbLines;
+		Standard_Integer NbLines();
 
 		/****************** Start ******************/
 		%feature("compactdefaultargs") Start;
-		%feature("autodoc", "* Returns the first parameter of interval <J> on line <I>.
+		%feature("autodoc", "Returns the first parameter of interval <j> on line <i>.
+
 	:param I:
 	:type I: int
 	:param J:
 	:type J: int
-	:rtype: float") Start;
-		Standard_Real Start (const Standard_Integer I,const Standard_Integer J);
+	:rtype: float
+") Start;
+		Standard_Real Start(const Standard_Integer I, const Standard_Integer J);
 
 		/****************** StartIndex ******************/
 		%feature("compactdefaultargs") StartIndex;
-		%feature("autodoc", "* Returns the first Index and Par2 of interval <J> on line <I>.
+		%feature("autodoc", "Returns the first index and par2 of interval <j> on line <i>.
+
 	:param I:
 	:type I: int
 	:param J:
@@ -228,34 +261,40 @@ class Hatch_Hatcher {
 	:type Index: int
 	:param Par2:
 	:type Par2: float
-	:rtype: None") StartIndex;
-		void StartIndex (const Standard_Integer I,const Standard_Integer J,Standard_Integer &OutValue,Standard_Real &OutValue);
+	:rtype: None
+") StartIndex;
+		void StartIndex(const Standard_Integer I, const Standard_Integer J, Standard_Integer &OutValue, Standard_Real &OutValue);
 
 		/****************** Tolerance ******************/
 		%feature("compactdefaultargs") Tolerance;
-		%feature("autodoc", ":param Tol:
+		%feature("autodoc", "	:param Tol:
 	:type Tol: float
-	:rtype: None") Tolerance;
-		void Tolerance (const Standard_Real Tol);
+	:rtype: None
+") Tolerance;
+		void Tolerance(const Standard_Real Tol);
 
 		/****************** Tolerance ******************/
 		%feature("compactdefaultargs") Tolerance;
-		%feature("autodoc", ":rtype: float") Tolerance;
-		Standard_Real Tolerance ();
+		%feature("autodoc", "	:rtype: float
+") Tolerance;
+		Standard_Real Tolerance();
 
 		/****************** Trim ******************/
 		%feature("compactdefaultargs") Trim;
-		%feature("autodoc", "* Trims the lines at intersections with <L>.
+		%feature("autodoc", "Trims the lines at intersections with <l>.
+
 	:param L:
 	:type L: gp_Lin2d
 	:param Index: default value is 0
 	:type Index: int
-	:rtype: None") Trim;
-		void Trim (const gp_Lin2d & L,const Standard_Integer Index = 0);
+	:rtype: None
+") Trim;
+		void Trim(const gp_Lin2d & L, const Standard_Integer Index = 0);
 
 		/****************** Trim ******************/
 		%feature("compactdefaultargs") Trim;
-		%feature("autodoc", "* Trims the lines at intersections with <L> in the parameter range <Start>, <End>
+		%feature("autodoc", "Trims the lines at intersections with <l> in the parameter range <start>, <end>.
+
 	:param L:
 	:type L: gp_Lin2d
 	:param Start:
@@ -264,20 +303,23 @@ class Hatch_Hatcher {
 	:type End: float
 	:param Index: default value is 0
 	:type Index: int
-	:rtype: None") Trim;
-		void Trim (const gp_Lin2d & L,const Standard_Real Start,const Standard_Real End,const Standard_Integer Index = 0);
+	:rtype: None
+") Trim;
+		void Trim(const gp_Lin2d & L, const Standard_Real Start, const Standard_Real End, const Standard_Integer Index = 0);
 
 		/****************** Trim ******************/
 		%feature("compactdefaultargs") Trim;
-		%feature("autodoc", "* Trims the line at intersection with the oriented segment P1,P2.
+		%feature("autodoc", "Trims the line at intersection with the oriented segment p1,p2.
+
 	:param P1:
 	:type P1: gp_Pnt2d
 	:param P2:
 	:type P2: gp_Pnt2d
 	:param Index: default value is 0
 	:type Index: int
-	:rtype: None") Trim;
-		void Trim (const gp_Pnt2d & P1,const gp_Pnt2d & P2,const Standard_Integer Index = 0);
+	:rtype: None
+") Trim;
+		void Trim(const gp_Pnt2d & P1, const gp_Pnt2d & P2, const Standard_Integer Index = 0);
 
 };
 
@@ -295,7 +337,8 @@ class Hatch_Line {
 	public:
 		/****************** AddIntersection ******************/
 		%feature("compactdefaultargs") AddIntersection;
-		%feature("autodoc", "* Insert a new intersection in the sorted list.
+		%feature("autodoc", "Insert a new intersection in the sorted list.
+
 	:param Par1:
 	:type Par1: float
 	:param Start:
@@ -306,22 +349,25 @@ class Hatch_Line {
 	:type Par2: float
 	:param theToler:
 	:type theToler: float
-	:rtype: None") AddIntersection;
-		void AddIntersection (const Standard_Real Par1,const Standard_Boolean Start,const Standard_Integer Index,const Standard_Real Par2,const Standard_Real theToler);
+	:rtype: None
+") AddIntersection;
+		void AddIntersection(const Standard_Real Par1, const Standard_Boolean Start, const Standard_Integer Index, const Standard_Real Par2, const Standard_Real theToler);
 
 		/****************** Hatch_Line ******************/
 		%feature("compactdefaultargs") Hatch_Line;
-		%feature("autodoc", ":rtype: None") Hatch_Line;
-		 Hatch_Line ();
+		%feature("autodoc", "	:rtype: None
+") Hatch_Line;
+		 Hatch_Line();
 
 		/****************** Hatch_Line ******************/
 		%feature("compactdefaultargs") Hatch_Line;
-		%feature("autodoc", ":param L:
+		%feature("autodoc", "	:param L:
 	:type L: gp_Lin2d
 	:param T:
 	:type T: Hatch_LineForm
-	:rtype: None") Hatch_Line;
-		 Hatch_Line (const gp_Lin2d & L,const Hatch_LineForm T);
+	:rtype: None
+") Hatch_Line;
+		 Hatch_Line(const gp_Lin2d & L, const Hatch_LineForm T);
 
 };
 
@@ -339,12 +385,13 @@ class Hatch_Parameter {
 	public:
 		/****************** Hatch_Parameter ******************/
 		%feature("compactdefaultargs") Hatch_Parameter;
-		%feature("autodoc", ":rtype: None") Hatch_Parameter;
-		 Hatch_Parameter ();
+		%feature("autodoc", "	:rtype: None
+") Hatch_Parameter;
+		 Hatch_Parameter();
 
 		/****************** Hatch_Parameter ******************/
 		%feature("compactdefaultargs") Hatch_Parameter;
-		%feature("autodoc", ":param Par1:
+		%feature("autodoc", "	:param Par1:
 	:type Par1: float
 	:param Start:
 	:type Start: bool
@@ -352,8 +399,9 @@ class Hatch_Parameter {
 	:type Index: int
 	:param Par2: default value is 0
 	:type Par2: float
-	:rtype: None") Hatch_Parameter;
-		 Hatch_Parameter (const Standard_Real Par1,const Standard_Boolean Start,const Standard_Integer Index = 0,const Standard_Real Par2 = 0);
+	:rtype: None
+") Hatch_Parameter;
+		 Hatch_Parameter(const Standard_Real Par1, const Standard_Boolean Start, const Standard_Integer Index = 0, const Standard_Real Par2 = 0);
 
 };
 

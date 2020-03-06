@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -96,7 +96,8 @@ class RWObj_IShapeReceiver {
 	public:
 		/****************** BindNamedShape ******************/
 		%feature("compactdefaultargs") BindNamedShape;
-		%feature("autodoc", "* @param theShape shape to register @param theName shape name @param theMaterial shape material @param theIsRootShape indicates that this is a root object (free shape)
+		%feature("autodoc", "@param theshape shape to register @param thename shape name @param thematerial shape material @param theisrootshape indicates that this is a root object (free shape).
+
 	:param theShape:
 	:type theShape: TopoDS_Shape
 	:param theName:
@@ -105,8 +106,9 @@ class RWObj_IShapeReceiver {
 	:type theMaterial: RWObj_Material *
 	:param theIsRootShape:
 	:type theIsRootShape: bool
-	:rtype: None") BindNamedShape;
-		void BindNamedShape (const TopoDS_Shape & theShape,const TCollection_AsciiString & theName,const RWObj_Material * theMaterial,const Standard_Boolean theIsRootShape);
+	:rtype: None
+") BindNamedShape;
+		virtual void BindNamedShape(const TopoDS_Shape & theShape, const TCollection_AsciiString & theName, const RWObj_Material * theMaterial, const Standard_Boolean theIsRootShape);
 
 };
 
@@ -133,8 +135,9 @@ class RWObj_Material {
 		Standard_ShortReal Transparency;
 		/****************** RWObj_Material ******************/
 		%feature("compactdefaultargs") RWObj_Material;
-		%feature("autodoc", ":rtype: None") RWObj_Material;
-		 RWObj_Material ();
+		%feature("autodoc", "	:rtype: None
+") RWObj_Material;
+		 RWObj_Material();
 
 };
 

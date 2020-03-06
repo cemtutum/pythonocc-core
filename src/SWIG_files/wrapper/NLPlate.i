@@ -1,5 +1,5 @@
 /*
-Copyright 2008-2019 Thomas Paviot (tpaviot@gmail.com)
+Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
 This file is part of pythonOCC.
 pythonOCC is free software: you can redistribute it and/or modify
@@ -70,15 +70,15 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_nlplate.html"
 /* end handles declaration */
 
 /* templates */
-%template(NLPlate_StackOfPlate) NCollection_List <Plate_Plate>;
+%template(NLPlate_StackOfPlate) NCollection_List<Plate_Plate>;
 %template(NLPlate_ListIteratorOfStackOfPlate) NCollection_TListIterator<Plate_Plate>;
-%template(NLPlate_SequenceOfHGPPConstraint) NCollection_Sequence <opencascade::handle <NLPlate_HGPPConstraint>>;
+%template(NLPlate_SequenceOfHGPPConstraint) NCollection_Sequence<opencascade::handle<NLPlate_HGPPConstraint>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List <Plate_Plate> NLPlate_StackOfPlate;
-typedef NCollection_List <Plate_Plate>::Iterator NLPlate_ListIteratorOfStackOfPlate;
-typedef NCollection_Sequence <opencascade::handle <NLPlate_HGPPConstraint>> NLPlate_SequenceOfHGPPConstraint;
+typedef NCollection_List<Plate_Plate> NLPlate_StackOfPlate;
+typedef NCollection_List<Plate_Plate>::Iterator NLPlate_ListIteratorOfStackOfPlate;
+typedef NCollection_Sequence<opencascade::handle<NLPlate_HGPPConstraint>> NLPlate_SequenceOfHGPPConstraint;
 /* end typedefs declaration */
 
 /*******************************
@@ -89,136 +89,159 @@ class NLPlate_HGPPConstraint : public Standard_Transient {
 	public:
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
-		%feature("autodoc", ":rtype: int") ActiveOrder;
-		virtual Standard_Integer ActiveOrder ();
+		%feature("autodoc", "	:rtype: int
+") ActiveOrder;
+		virtual Standard_Integer ActiveOrder();
 
 		/****************** G0Criterion ******************/
 		%feature("compactdefaultargs") G0Criterion;
-		%feature("autodoc", ":rtype: float") G0Criterion;
-		virtual Standard_Real G0Criterion ();
+		%feature("autodoc", "	:rtype: float
+") G0Criterion;
+		virtual Standard_Real G0Criterion();
 
 		/****************** G0Target ******************/
 		%feature("compactdefaultargs") G0Target;
-		%feature("autodoc", ":rtype: gp_XYZ") G0Target;
-		virtual const gp_XYZ  G0Target ();
+		%feature("autodoc", "	:rtype: gp_XYZ
+") G0Target;
+		virtual const gp_XYZ G0Target();
 
 		/****************** G1Criterion ******************/
 		%feature("compactdefaultargs") G1Criterion;
-		%feature("autodoc", ":rtype: float") G1Criterion;
-		virtual Standard_Real G1Criterion ();
+		%feature("autodoc", "	:rtype: float
+") G1Criterion;
+		virtual Standard_Real G1Criterion();
 
 		/****************** G1Target ******************/
 		%feature("compactdefaultargs") G1Target;
-		%feature("autodoc", ":rtype: Plate_D1") G1Target;
-		virtual const Plate_D1 & G1Target ();
+		%feature("autodoc", "	:rtype: Plate_D1
+") G1Target;
+		virtual const Plate_D1 & G1Target();
 
 		/****************** G2Criterion ******************/
 		%feature("compactdefaultargs") G2Criterion;
-		%feature("autodoc", ":rtype: float") G2Criterion;
-		virtual Standard_Real G2Criterion ();
+		%feature("autodoc", "	:rtype: float
+") G2Criterion;
+		virtual Standard_Real G2Criterion();
 
 		/****************** G2Target ******************/
 		%feature("compactdefaultargs") G2Target;
-		%feature("autodoc", ":rtype: Plate_D2") G2Target;
-		virtual const Plate_D2 & G2Target ();
+		%feature("autodoc", "	:rtype: Plate_D2
+") G2Target;
+		virtual const Plate_D2 & G2Target();
 
 		/****************** G3Criterion ******************/
 		%feature("compactdefaultargs") G3Criterion;
-		%feature("autodoc", ":rtype: float") G3Criterion;
-		virtual Standard_Real G3Criterion ();
+		%feature("autodoc", "	:rtype: float
+") G3Criterion;
+		virtual Standard_Real G3Criterion();
 
 		/****************** G3Target ******************/
 		%feature("compactdefaultargs") G3Target;
-		%feature("autodoc", ":rtype: Plate_D3") G3Target;
-		virtual const Plate_D3 & G3Target ();
+		%feature("autodoc", "	:rtype: Plate_D3
+") G3Target;
+		virtual const Plate_D3 & G3Target();
 
 		/****************** IncrementalLoadAllowed ******************/
 		%feature("compactdefaultargs") IncrementalLoadAllowed;
-		%feature("autodoc", ":rtype: bool") IncrementalLoadAllowed;
-		virtual Standard_Boolean IncrementalLoadAllowed ();
+		%feature("autodoc", "	:rtype: bool
+") IncrementalLoadAllowed;
+		virtual Standard_Boolean IncrementalLoadAllowed();
 
 		/****************** IsG0 ******************/
 		%feature("compactdefaultargs") IsG0;
-		%feature("autodoc", ":rtype: bool") IsG0;
-		virtual Standard_Boolean IsG0 ();
+		%feature("autodoc", "	:rtype: bool
+") IsG0;
+		virtual Standard_Boolean IsG0();
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", ":rtype: int") Orientation;
-		virtual Standard_Integer Orientation ();
+		%feature("autodoc", "	:rtype: int
+") Orientation;
+		virtual Standard_Integer Orientation();
 
 		/****************** SetActiveOrder ******************/
 		%feature("compactdefaultargs") SetActiveOrder;
-		%feature("autodoc", ":param ActiveOrder:
+		%feature("autodoc", "	:param ActiveOrder:
 	:type ActiveOrder: int
-	:rtype: void") SetActiveOrder;
-		virtual void SetActiveOrder (const Standard_Integer ActiveOrder);
+	:rtype: None
+") SetActiveOrder;
+		virtual void SetActiveOrder(const Standard_Integer ActiveOrder);
 
 		/****************** SetG0Criterion ******************/
 		%feature("compactdefaultargs") SetG0Criterion;
-		%feature("autodoc", ":param TolDist:
+		%feature("autodoc", "	:param TolDist:
 	:type TolDist: float
-	:rtype: void") SetG0Criterion;
-		virtual void SetG0Criterion (const Standard_Real TolDist);
+	:rtype: None
+") SetG0Criterion;
+		virtual void SetG0Criterion(const Standard_Real TolDist);
 
 		/****************** SetG1Criterion ******************/
 		%feature("compactdefaultargs") SetG1Criterion;
-		%feature("autodoc", ":param TolAng:
+		%feature("autodoc", "	:param TolAng:
 	:type TolAng: float
-	:rtype: void") SetG1Criterion;
-		virtual void SetG1Criterion (const Standard_Real TolAng);
+	:rtype: None
+") SetG1Criterion;
+		virtual void SetG1Criterion(const Standard_Real TolAng);
 
 		/****************** SetG2Criterion ******************/
 		%feature("compactdefaultargs") SetG2Criterion;
-		%feature("autodoc", ":param TolCurv:
+		%feature("autodoc", "	:param TolCurv:
 	:type TolCurv: float
-	:rtype: void") SetG2Criterion;
-		virtual void SetG2Criterion (const Standard_Real TolCurv);
+	:rtype: None
+") SetG2Criterion;
+		virtual void SetG2Criterion(const Standard_Real TolCurv);
 
 		/****************** SetG3Criterion ******************/
 		%feature("compactdefaultargs") SetG3Criterion;
-		%feature("autodoc", ":param TolG3:
+		%feature("autodoc", "	:param TolG3:
 	:type TolG3: float
-	:rtype: void") SetG3Criterion;
-		virtual void SetG3Criterion (const Standard_Real TolG3);
+	:rtype: None
+") SetG3Criterion;
+		virtual void SetG3Criterion(const Standard_Real TolG3);
 
 		/****************** SetIncrementalLoadAllowed ******************/
 		%feature("compactdefaultargs") SetIncrementalLoadAllowed;
-		%feature("autodoc", ":param ILA:
+		%feature("autodoc", "	:param ILA:
 	:type ILA: bool
-	:rtype: void") SetIncrementalLoadAllowed;
-		virtual void SetIncrementalLoadAllowed (const Standard_Boolean ILA);
+	:rtype: None
+") SetIncrementalLoadAllowed;
+		virtual void SetIncrementalLoadAllowed(const Standard_Boolean ILA);
 
 		/****************** SetOrientation ******************/
 		%feature("compactdefaultargs") SetOrientation;
-		%feature("autodoc", ":param Orient: default value is 0
+		%feature("autodoc", "	:param Orient: default value is 0
 	:type Orient: int
-	:rtype: void") SetOrientation;
-		virtual void SetOrientation (const Standard_Integer Orient = 0);
+	:rtype: None
+") SetOrientation;
+		virtual void SetOrientation(const Standard_Integer Orient = 0);
 
 		/****************** SetUV ******************/
 		%feature("compactdefaultargs") SetUV;
-		%feature("autodoc", ":param UV:
+		%feature("autodoc", "	:param UV:
 	:type UV: gp_XY
-	:rtype: void") SetUV;
-		virtual void SetUV (const gp_XY & UV);
+	:rtype: None
+") SetUV;
+		virtual void SetUV(const gp_XY & UV);
 
 		/****************** SetUVFreeSliding ******************/
 		%feature("compactdefaultargs") SetUVFreeSliding;
-		%feature("autodoc", ":param UVFree:
+		%feature("autodoc", "	:param UVFree:
 	:type UVFree: bool
-	:rtype: void") SetUVFreeSliding;
-		virtual void SetUVFreeSliding (const Standard_Boolean UVFree);
+	:rtype: None
+") SetUVFreeSliding;
+		virtual void SetUVFreeSliding(const Standard_Boolean UVFree);
 
 		/****************** UV ******************/
 		%feature("compactdefaultargs") UV;
-		%feature("autodoc", ":rtype: gp_XY") UV;
-		virtual const gp_XY  UV ();
+		%feature("autodoc", "	:rtype: gp_XY
+") UV;
+		virtual const gp_XY UV();
 
 		/****************** UVFreeSliding ******************/
 		%feature("compactdefaultargs") UVFreeSliding;
-		%feature("autodoc", ":rtype: bool") UVFreeSliding;
-		virtual Standard_Boolean UVFreeSliding ();
+		%feature("autodoc", "	:rtype: bool
+") UVFreeSliding;
+		virtual Standard_Boolean UVFreeSliding();
 
 };
 
@@ -238,37 +261,41 @@ class NLPlate_NLPlate {
 	public:
 		/****************** ConstraintsSliding ******************/
 		%feature("compactdefaultargs") ConstraintsSliding;
-		%feature("autodoc", ":param NbIterations: default value is 3
+		%feature("autodoc", "	:param NbIterations: default value is 3
 	:type NbIterations: int
-	:rtype: None") ConstraintsSliding;
-		void ConstraintsSliding (const Standard_Integer NbIterations = 3);
+	:rtype: None
+") ConstraintsSliding;
+		void ConstraintsSliding(const Standard_Integer NbIterations = 3);
 
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
-		%feature("autodoc", ":rtype: int") Continuity;
-		Standard_Integer Continuity ();
+		%feature("autodoc", "	:rtype: int
+") Continuity;
+		Standard_Integer Continuity();
 
 		/****************** Evaluate ******************/
 		%feature("compactdefaultargs") Evaluate;
-		%feature("autodoc", ":param point2d:
+		%feature("autodoc", "	:param point2d:
 	:type point2d: gp_XY
-	:rtype: gp_XYZ") Evaluate;
-		gp_XYZ Evaluate (const gp_XY & point2d);
+	:rtype: gp_XYZ
+") Evaluate;
+		gp_XYZ Evaluate(const gp_XY & point2d);
 
 		/****************** EvaluateDerivative ******************/
 		%feature("compactdefaultargs") EvaluateDerivative;
-		%feature("autodoc", ":param point2d:
+		%feature("autodoc", "	:param point2d:
 	:type point2d: gp_XY
 	:param iu:
 	:type iu: int
 	:param iv:
 	:type iv: int
-	:rtype: gp_XYZ") EvaluateDerivative;
-		gp_XYZ EvaluateDerivative (const gp_XY & point2d,const Standard_Integer iu,const Standard_Integer iv);
+	:rtype: gp_XYZ
+") EvaluateDerivative;
+		gp_XYZ EvaluateDerivative(const gp_XY & point2d, const Standard_Integer iu, const Standard_Integer iv);
 
 		/****************** IncrementalSolve ******************/
 		%feature("compactdefaultargs") IncrementalSolve;
-		%feature("autodoc", ":param ord: default value is 2
+		%feature("autodoc", "	:param ord: default value is 2
 	:type ord: int
 	:param InitialConsraintOrder: default value is 1
 	:type InitialConsraintOrder: int
@@ -276,62 +303,73 @@ class NLPlate_NLPlate {
 	:type NbIncrements: int
 	:param UVSliding: default value is Standard_False
 	:type UVSliding: bool
-	:rtype: None") IncrementalSolve;
-		void IncrementalSolve (const Standard_Integer ord = 2,const Standard_Integer InitialConsraintOrder = 1,const Standard_Integer NbIncrements = 4,const Standard_Boolean UVSliding = Standard_False);
+	:rtype: None
+") IncrementalSolve;
+		void IncrementalSolve(const Standard_Integer ord = 2, const Standard_Integer InitialConsraintOrder = 1, const Standard_Integer NbIncrements = 4, const Standard_Boolean UVSliding = Standard_False);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "* reset the Plate in the initial state ( same as after Create((Surface))
-	:rtype: None") Init;
-		void Init ();
+		%feature("autodoc", "Reset the plate in the initial state ( same as after create((surface)).
+
+	:rtype: None
+") Init;
+		void Init();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "* returns True if all has been correctly done.
-	:rtype: bool") IsDone;
-		Standard_Boolean IsDone ();
+		%feature("autodoc", "Returns true if all has been correctly done.
+
+	:rtype: bool
+") IsDone;
+		Standard_Boolean IsDone();
 
 		/****************** Load ******************/
 		%feature("compactdefaultargs") Load;
-		%feature("autodoc", ":param GConst:
+		%feature("autodoc", "	:param GConst:
 	:type GConst: NLPlate_HGPPConstraint
-	:rtype: None") Load;
-		void Load (const opencascade::handle<NLPlate_HGPPConstraint> & GConst);
+	:rtype: None
+") Load;
+		void Load(const opencascade::handle<NLPlate_HGPPConstraint> & GConst);
 
 		/****************** MaxActiveConstraintOrder ******************/
 		%feature("compactdefaultargs") MaxActiveConstraintOrder;
-		%feature("autodoc", ":rtype: int") MaxActiveConstraintOrder;
-		Standard_Integer MaxActiveConstraintOrder ();
+		%feature("autodoc", "	:rtype: int
+") MaxActiveConstraintOrder;
+		Standard_Integer MaxActiveConstraintOrder();
 
 		/****************** NLPlate_NLPlate ******************/
 		%feature("compactdefaultargs") NLPlate_NLPlate;
-		%feature("autodoc", ":param InitialSurface:
+		%feature("autodoc", "	:param InitialSurface:
 	:type InitialSurface: Geom_Surface
-	:rtype: None") NLPlate_NLPlate;
-		 NLPlate_NLPlate (const opencascade::handle<Geom_Surface> & InitialSurface);
+	:rtype: None
+") NLPlate_NLPlate;
+		 NLPlate_NLPlate(const opencascade::handle<Geom_Surface> & InitialSurface);
 
 		/****************** Solve ******************/
 		%feature("compactdefaultargs") Solve;
-		%feature("autodoc", ":param ord: default value is 2
+		%feature("autodoc", "	:param ord: default value is 2
 	:type ord: int
 	:param InitialConsraintOrder: default value is 1
 	:type InitialConsraintOrder: int
-	:rtype: None") Solve;
-		void Solve (const Standard_Integer ord = 2,const Standard_Integer InitialConsraintOrder = 1);
+	:rtype: None
+") Solve;
+		void Solve(const Standard_Integer ord = 2, const Standard_Integer InitialConsraintOrder = 1);
 
 		/****************** Solve2 ******************/
 		%feature("compactdefaultargs") Solve2;
-		%feature("autodoc", ":param ord: default value is 2
+		%feature("autodoc", "	:param ord: default value is 2
 	:type ord: int
 	:param InitialConsraintOrder: default value is 1
 	:type InitialConsraintOrder: int
-	:rtype: None") Solve2;
-		void Solve2 (const Standard_Integer ord = 2,const Standard_Integer InitialConsraintOrder = 1);
+	:rtype: None
+") Solve2;
+		void Solve2(const Standard_Integer ord = 2, const Standard_Integer InitialConsraintOrder = 1);
 
 		/****************** destroy ******************/
 		%feature("compactdefaultargs") destroy;
-		%feature("autodoc", ":rtype: None") destroy;
-		void destroy ();
+		%feature("autodoc", "	:rtype: None
+") destroy;
+		void destroy();
 
 };
 
@@ -349,51 +387,59 @@ class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
 	public:
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
-		%feature("autodoc", ":rtype: int") ActiveOrder;
-		virtual Standard_Integer ActiveOrder ();
+		%feature("autodoc", "	:rtype: int
+") ActiveOrder;
+		virtual Standard_Integer ActiveOrder();
 
 		/****************** G0Target ******************/
 		%feature("compactdefaultargs") G0Target;
-		%feature("autodoc", ":rtype: gp_XYZ") G0Target;
-		virtual const gp_XYZ  G0Target ();
+		%feature("autodoc", "	:rtype: gp_XYZ
+") G0Target;
+		virtual const gp_XYZ G0Target();
 
 		/****************** IncrementalLoadAllowed ******************/
 		%feature("compactdefaultargs") IncrementalLoadAllowed;
-		%feature("autodoc", ":rtype: bool") IncrementalLoadAllowed;
-		virtual Standard_Boolean IncrementalLoadAllowed ();
+		%feature("autodoc", "	:rtype: bool
+") IncrementalLoadAllowed;
+		virtual Standard_Boolean IncrementalLoadAllowed();
 
 		/****************** IsG0 ******************/
 		%feature("compactdefaultargs") IsG0;
-		%feature("autodoc", ":rtype: bool") IsG0;
-		virtual Standard_Boolean IsG0 ();
+		%feature("autodoc", "	:rtype: bool
+") IsG0;
+		virtual Standard_Boolean IsG0();
 
 		/****************** NLPlate_HPG0Constraint ******************/
 		%feature("compactdefaultargs") NLPlate_HPG0Constraint;
-		%feature("autodoc", ":param UV:
+		%feature("autodoc", "	:param UV:
 	:type UV: gp_XY
 	:param Value:
 	:type Value: gp_XYZ
-	:rtype: None") NLPlate_HPG0Constraint;
-		 NLPlate_HPG0Constraint (const gp_XY & UV,const gp_XYZ & Value);
+	:rtype: None
+") NLPlate_HPG0Constraint;
+		 NLPlate_HPG0Constraint(const gp_XY & UV, const gp_XYZ & Value);
 
 		/****************** SetIncrementalLoadAllowed ******************/
 		%feature("compactdefaultargs") SetIncrementalLoadAllowed;
-		%feature("autodoc", ":param ILA:
+		%feature("autodoc", "	:param ILA:
 	:type ILA: bool
-	:rtype: void") SetIncrementalLoadAllowed;
-		virtual void SetIncrementalLoadAllowed (const Standard_Boolean ILA);
+	:rtype: None
+") SetIncrementalLoadAllowed;
+		virtual void SetIncrementalLoadAllowed(const Standard_Boolean ILA);
 
 		/****************** SetUVFreeSliding ******************/
 		%feature("compactdefaultargs") SetUVFreeSliding;
-		%feature("autodoc", ":param UVFree:
+		%feature("autodoc", "	:param UVFree:
 	:type UVFree: bool
-	:rtype: void") SetUVFreeSliding;
-		virtual void SetUVFreeSliding (const Standard_Boolean UVFree);
+	:rtype: None
+") SetUVFreeSliding;
+		virtual void SetUVFreeSliding(const Standard_Boolean UVFree);
 
 		/****************** UVFreeSliding ******************/
 		%feature("compactdefaultargs") UVFreeSliding;
-		%feature("autodoc", ":rtype: bool") UVFreeSliding;
-		virtual Standard_Boolean UVFreeSliding ();
+		%feature("autodoc", "	:rtype: bool
+") UVFreeSliding;
+		virtual Standard_Boolean UVFreeSliding();
 
 };
 
@@ -413,51 +459,59 @@ class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
 	public:
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
-		%feature("autodoc", ":rtype: int") ActiveOrder;
-		virtual Standard_Integer ActiveOrder ();
+		%feature("autodoc", "	:rtype: int
+") ActiveOrder;
+		virtual Standard_Integer ActiveOrder();
 
 		/****************** G1Target ******************/
 		%feature("compactdefaultargs") G1Target;
-		%feature("autodoc", ":rtype: Plate_D1") G1Target;
-		virtual const Plate_D1 & G1Target ();
+		%feature("autodoc", "	:rtype: Plate_D1
+") G1Target;
+		virtual const Plate_D1 & G1Target();
 
 		/****************** IncrementalLoadAllowed ******************/
 		%feature("compactdefaultargs") IncrementalLoadAllowed;
-		%feature("autodoc", ":rtype: bool") IncrementalLoadAllowed;
-		virtual Standard_Boolean IncrementalLoadAllowed ();
+		%feature("autodoc", "	:rtype: bool
+") IncrementalLoadAllowed;
+		virtual Standard_Boolean IncrementalLoadAllowed();
 
 		/****************** IsG0 ******************/
 		%feature("compactdefaultargs") IsG0;
-		%feature("autodoc", ":rtype: bool") IsG0;
-		virtual Standard_Boolean IsG0 ();
+		%feature("autodoc", "	:rtype: bool
+") IsG0;
+		virtual Standard_Boolean IsG0();
 
 		/****************** NLPlate_HPG1Constraint ******************/
 		%feature("compactdefaultargs") NLPlate_HPG1Constraint;
-		%feature("autodoc", ":param UV:
+		%feature("autodoc", "	:param UV:
 	:type UV: gp_XY
 	:param D1T:
 	:type D1T: Plate_D1
-	:rtype: None") NLPlate_HPG1Constraint;
-		 NLPlate_HPG1Constraint (const gp_XY & UV,const Plate_D1 & D1T);
+	:rtype: None
+") NLPlate_HPG1Constraint;
+		 NLPlate_HPG1Constraint(const gp_XY & UV, const Plate_D1 & D1T);
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", ":rtype: int") Orientation;
-		virtual Standard_Integer Orientation ();
+		%feature("autodoc", "	:rtype: int
+") Orientation;
+		virtual Standard_Integer Orientation();
 
 		/****************** SetIncrementalLoadAllowed ******************/
 		%feature("compactdefaultargs") SetIncrementalLoadAllowed;
-		%feature("autodoc", ":param ILA:
+		%feature("autodoc", "	:param ILA:
 	:type ILA: bool
-	:rtype: void") SetIncrementalLoadAllowed;
-		virtual void SetIncrementalLoadAllowed (const Standard_Boolean ILA);
+	:rtype: None
+") SetIncrementalLoadAllowed;
+		virtual void SetIncrementalLoadAllowed(const Standard_Boolean ILA);
 
 		/****************** SetOrientation ******************/
 		%feature("compactdefaultargs") SetOrientation;
-		%feature("autodoc", ":param Orient: default value is 0
+		%feature("autodoc", "	:param Orient: default value is 0
 	:type Orient: int
-	:rtype: void") SetOrientation;
-		virtual void SetOrientation (const Standard_Integer Orient = 0);
+	:rtype: None
+") SetOrientation;
+		virtual void SetOrientation(const Standard_Integer Orient = 0);
 
 };
 
@@ -477,36 +531,41 @@ class NLPlate_HPG0G1Constraint : public NLPlate_HPG0Constraint {
 	public:
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
-		%feature("autodoc", ":rtype: int") ActiveOrder;
-		virtual Standard_Integer ActiveOrder ();
+		%feature("autodoc", "	:rtype: int
+") ActiveOrder;
+		virtual Standard_Integer ActiveOrder();
 
 		/****************** G1Target ******************/
 		%feature("compactdefaultargs") G1Target;
-		%feature("autodoc", ":rtype: Plate_D1") G1Target;
-		virtual const Plate_D1 & G1Target ();
+		%feature("autodoc", "	:rtype: Plate_D1
+") G1Target;
+		virtual const Plate_D1 & G1Target();
 
 		/****************** NLPlate_HPG0G1Constraint ******************/
 		%feature("compactdefaultargs") NLPlate_HPG0G1Constraint;
-		%feature("autodoc", ":param UV:
+		%feature("autodoc", "	:param UV:
 	:type UV: gp_XY
 	:param Value:
 	:type Value: gp_XYZ
 	:param D1T:
 	:type D1T: Plate_D1
-	:rtype: None") NLPlate_HPG0G1Constraint;
-		 NLPlate_HPG0G1Constraint (const gp_XY & UV,const gp_XYZ & Value,const Plate_D1 & D1T);
+	:rtype: None
+") NLPlate_HPG0G1Constraint;
+		 NLPlate_HPG0G1Constraint(const gp_XY & UV, const gp_XYZ & Value, const Plate_D1 & D1T);
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", ":rtype: int") Orientation;
-		virtual Standard_Integer Orientation ();
+		%feature("autodoc", "	:rtype: int
+") Orientation;
+		virtual Standard_Integer Orientation();
 
 		/****************** SetOrientation ******************/
 		%feature("compactdefaultargs") SetOrientation;
-		%feature("autodoc", ":param Orient: default value is 0
+		%feature("autodoc", "	:param Orient: default value is 0
 	:type Orient: int
-	:rtype: void") SetOrientation;
-		virtual void SetOrientation (const Standard_Integer Orient = 0);
+	:rtype: None
+") SetOrientation;
+		virtual void SetOrientation(const Standard_Integer Orient = 0);
 
 };
 
@@ -526,24 +585,27 @@ class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
 	public:
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
-		%feature("autodoc", ":rtype: int") ActiveOrder;
-		virtual Standard_Integer ActiveOrder ();
+		%feature("autodoc", "	:rtype: int
+") ActiveOrder;
+		virtual Standard_Integer ActiveOrder();
 
 		/****************** G2Target ******************/
 		%feature("compactdefaultargs") G2Target;
-		%feature("autodoc", ":rtype: Plate_D2") G2Target;
-		virtual const Plate_D2 & G2Target ();
+		%feature("autodoc", "	:rtype: Plate_D2
+") G2Target;
+		virtual const Plate_D2 & G2Target();
 
 		/****************** NLPlate_HPG2Constraint ******************/
 		%feature("compactdefaultargs") NLPlate_HPG2Constraint;
-		%feature("autodoc", ":param UV:
+		%feature("autodoc", "	:param UV:
 	:type UV: gp_XY
 	:param D1T:
 	:type D1T: Plate_D1
 	:param D2T:
 	:type D2T: Plate_D2
-	:rtype: None") NLPlate_HPG2Constraint;
-		 NLPlate_HPG2Constraint (const gp_XY & UV,const Plate_D1 & D1T,const Plate_D2 & D2T);
+	:rtype: None
+") NLPlate_HPG2Constraint;
+		 NLPlate_HPG2Constraint(const gp_XY & UV, const Plate_D1 & D1T, const Plate_D2 & D2T);
 
 };
 
@@ -563,17 +625,19 @@ class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 	public:
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
-		%feature("autodoc", ":rtype: int") ActiveOrder;
-		virtual Standard_Integer ActiveOrder ();
+		%feature("autodoc", "	:rtype: int
+") ActiveOrder;
+		virtual Standard_Integer ActiveOrder();
 
 		/****************** G2Target ******************/
 		%feature("compactdefaultargs") G2Target;
-		%feature("autodoc", ":rtype: Plate_D2") G2Target;
-		virtual const Plate_D2 & G2Target ();
+		%feature("autodoc", "	:rtype: Plate_D2
+") G2Target;
+		virtual const Plate_D2 & G2Target();
 
 		/****************** NLPlate_HPG0G2Constraint ******************/
 		%feature("compactdefaultargs") NLPlate_HPG0G2Constraint;
-		%feature("autodoc", ":param UV:
+		%feature("autodoc", "	:param UV:
 	:type UV: gp_XY
 	:param Value:
 	:type Value: gp_XYZ
@@ -581,8 +645,9 @@ class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 	:type D1T: Plate_D1
 	:param D2T:
 	:type D2T: Plate_D2
-	:rtype: None") NLPlate_HPG0G2Constraint;
-		 NLPlate_HPG0G2Constraint (const gp_XY & UV,const gp_XYZ & Value,const Plate_D1 & D1T,const Plate_D2 & D2T);
+	:rtype: None
+") NLPlate_HPG0G2Constraint;
+		 NLPlate_HPG0G2Constraint(const gp_XY & UV, const gp_XYZ & Value, const Plate_D1 & D1T, const Plate_D2 & D2T);
 
 };
 
@@ -602,17 +667,19 @@ class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
 	public:
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
-		%feature("autodoc", ":rtype: int") ActiveOrder;
-		virtual Standard_Integer ActiveOrder ();
+		%feature("autodoc", "	:rtype: int
+") ActiveOrder;
+		virtual Standard_Integer ActiveOrder();
 
 		/****************** G3Target ******************/
 		%feature("compactdefaultargs") G3Target;
-		%feature("autodoc", ":rtype: Plate_D3") G3Target;
-		virtual const Plate_D3 & G3Target ();
+		%feature("autodoc", "	:rtype: Plate_D3
+") G3Target;
+		virtual const Plate_D3 & G3Target();
 
 		/****************** NLPlate_HPG3Constraint ******************/
 		%feature("compactdefaultargs") NLPlate_HPG3Constraint;
-		%feature("autodoc", ":param UV:
+		%feature("autodoc", "	:param UV:
 	:type UV: gp_XY
 	:param D1T:
 	:type D1T: Plate_D1
@@ -620,8 +687,9 @@ class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
 	:type D2T: Plate_D2
 	:param D3T:
 	:type D3T: Plate_D3
-	:rtype: None") NLPlate_HPG3Constraint;
-		 NLPlate_HPG3Constraint (const gp_XY & UV,const Plate_D1 & D1T,const Plate_D2 & D2T,const Plate_D3 & D3T);
+	:rtype: None
+") NLPlate_HPG3Constraint;
+		 NLPlate_HPG3Constraint(const gp_XY & UV, const Plate_D1 & D1T, const Plate_D2 & D2T, const Plate_D3 & D3T);
 
 };
 
@@ -641,17 +709,19 @@ class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
 	public:
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
-		%feature("autodoc", ":rtype: int") ActiveOrder;
-		virtual Standard_Integer ActiveOrder ();
+		%feature("autodoc", "	:rtype: int
+") ActiveOrder;
+		virtual Standard_Integer ActiveOrder();
 
 		/****************** G3Target ******************/
 		%feature("compactdefaultargs") G3Target;
-		%feature("autodoc", ":rtype: Plate_D3") G3Target;
-		virtual const Plate_D3 & G3Target ();
+		%feature("autodoc", "	:rtype: Plate_D3
+") G3Target;
+		virtual const Plate_D3 & G3Target();
 
 		/****************** NLPlate_HPG0G3Constraint ******************/
 		%feature("compactdefaultargs") NLPlate_HPG0G3Constraint;
-		%feature("autodoc", ":param UV:
+		%feature("autodoc", "	:param UV:
 	:type UV: gp_XY
 	:param Value:
 	:type Value: gp_XYZ
@@ -661,8 +731,9 @@ class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
 	:type D2T: Plate_D2
 	:param D3T:
 	:type D3T: Plate_D3
-	:rtype: None") NLPlate_HPG0G3Constraint;
-		 NLPlate_HPG0G3Constraint (const gp_XY & UV,const gp_XYZ & Value,const Plate_D1 & D1T,const Plate_D2 & D2T,const Plate_D3 & D3T);
+	:rtype: None
+") NLPlate_HPG0G3Constraint;
+		 NLPlate_HPG0G3Constraint(const gp_XY & UV, const gp_XYZ & Value, const Plate_D1 & D1T, const Plate_D2 & D2T, const Plate_D3 & D3T);
 
 };
 
