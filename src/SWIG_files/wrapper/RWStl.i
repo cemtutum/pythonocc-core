@@ -77,11 +77,15 @@ class RWStl {
 		%feature("compactdefaultargs") ReadAscii;
 		%feature("autodoc", "Read triangulation from an ascii stl file in case of error, returns null handle.
 
-	:param thePath:
-	:type thePath: OSD_Path
-	:param theProgInd: default value is opencascade::handle<Message_ProgressIndicator>()
-	:type theProgInd: Message_ProgressIndicator
-	:rtype: opencascade::handle<Poly_Triangulation>
+Parameters
+----------
+thePath: OSD_Path
+theProgInd: Message_ProgressIndicator,optional
+	default value is opencascade::handle<Message_ProgressIndicator>()
+
+Returns
+-------
+opencascade::handle<Poly_Triangulation>
 ") ReadAscii;
 		static opencascade::handle<Poly_Triangulation> ReadAscii(const OSD_Path & thePath, const opencascade::handle<Message_ProgressIndicator> & theProgInd = opencascade::handle<Message_ProgressIndicator>());
 
@@ -89,11 +93,15 @@ class RWStl {
 		%feature("compactdefaultargs") ReadBinary;
 		%feature("autodoc", "Read triangulation from a binary stl file in case of error, returns null handle.
 
-	:param thePath:
-	:type thePath: OSD_Path
-	:param theProgInd: default value is opencascade::handle<Message_ProgressIndicator>()
-	:type theProgInd: Message_ProgressIndicator
-	:rtype: opencascade::handle<Poly_Triangulation>
+Parameters
+----------
+thePath: OSD_Path
+theProgInd: Message_ProgressIndicator,optional
+	default value is opencascade::handle<Message_ProgressIndicator>()
+
+Returns
+-------
+opencascade::handle<Poly_Triangulation>
 ") ReadBinary;
 		static opencascade::handle<Poly_Triangulation> ReadBinary(const OSD_Path & thePath, const opencascade::handle<Message_ProgressIndicator> & theProgInd = opencascade::handle<Message_ProgressIndicator>());
 
@@ -101,11 +109,15 @@ class RWStl {
 		%feature("compactdefaultargs") ReadFile;
 		%feature("autodoc", "Read specified stl file and returns its content as triangulation. in case of error, returns null handle.
 
-	:param theFile:
-	:type theFile: OSD_Path
-	:param aProgInd: default value is opencascade::handle<Message_ProgressIndicator>()
-	:type aProgInd: Message_ProgressIndicator
-	:rtype: opencascade::handle<Poly_Triangulation>
+Parameters
+----------
+theFile: OSD_Path
+aProgInd: Message_ProgressIndicator,optional
+	default value is opencascade::handle<Message_ProgressIndicator>()
+
+Returns
+-------
+opencascade::handle<Poly_Triangulation>
 ") ReadFile;
 		static opencascade::handle<Poly_Triangulation> ReadFile(const OSD_Path & theFile, const opencascade::handle<Message_ProgressIndicator> & aProgInd = opencascade::handle<Message_ProgressIndicator>());
 
@@ -113,11 +125,15 @@ class RWStl {
 		%feature("compactdefaultargs") ReadFile;
 		%feature("autodoc", "Read specified stl file and returns its content as triangulation. in case of error, returns null handle.
 
-	:param theFile:
-	:type theFile: char *
-	:param aProgInd: default value is opencascade::handle<Message_ProgressIndicator>()
-	:type aProgInd: Message_ProgressIndicator
-	:rtype: opencascade::handle<Poly_Triangulation>
+Parameters
+----------
+theFile: char *
+aProgInd: Message_ProgressIndicator,optional
+	default value is opencascade::handle<Message_ProgressIndicator>()
+
+Returns
+-------
+opencascade::handle<Poly_Triangulation>
 ") ReadFile;
 		static opencascade::handle<Poly_Triangulation> ReadFile(const char * theFile, const opencascade::handle<Message_ProgressIndicator> & aProgInd = opencascade::handle<Message_ProgressIndicator>());
 
@@ -125,13 +141,16 @@ class RWStl {
 		%feature("compactdefaultargs") WriteAscii;
 		%feature("autodoc", "Write the meshing in a file following the ascii format of an stl file. returns false if the cannot be opened;.
 
-	:param theMesh:
-	:type theMesh: Poly_Triangulation
-	:param thePath:
-	:type thePath: OSD_Path
-	:param theProgInd: default value is opencascade::handle<Message_ProgressIndicator>()
-	:type theProgInd: Message_ProgressIndicator
-	:rtype: bool
+Parameters
+----------
+theMesh: Poly_Triangulation
+thePath: OSD_Path
+theProgInd: Message_ProgressIndicator,optional
+	default value is opencascade::handle<Message_ProgressIndicator>()
+
+Returns
+-------
+bool
 ") WriteAscii;
 		static Standard_Boolean WriteAscii(const opencascade::handle<Poly_Triangulation> & theMesh, const OSD_Path & thePath, const opencascade::handle<Message_ProgressIndicator> & theProgInd = opencascade::handle<Message_ProgressIndicator>());
 
@@ -139,13 +158,16 @@ class RWStl {
 		%feature("compactdefaultargs") WriteBinary;
 		%feature("autodoc", "Write triangulation to binary stl file. binary format of an stl file. returns false if the cannot be opened;.
 
-	:param theMesh:
-	:type theMesh: Poly_Triangulation
-	:param thePath:
-	:type thePath: OSD_Path
-	:param theProgInd: default value is opencascade::handle<Message_ProgressIndicator>()
-	:type theProgInd: Message_ProgressIndicator
-	:rtype: bool
+Parameters
+----------
+theMesh: Poly_Triangulation
+thePath: OSD_Path
+theProgInd: Message_ProgressIndicator,optional
+	default value is opencascade::handle<Message_ProgressIndicator>()
+
+Returns
+-------
+bool
 ") WriteBinary;
 		static Standard_Boolean WriteBinary(const opencascade::handle<Poly_Triangulation> & theMesh, const OSD_Path & thePath, const opencascade::handle<Message_ProgressIndicator> & theProgInd = opencascade::handle<Message_ProgressIndicator>());
 

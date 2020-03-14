@@ -131,17 +131,25 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") BRepAdaptor_CompCurve;
 		%feature("autodoc", "Creates an undefined curve with no wire loaded.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepAdaptor_CompCurve;
 		 BRepAdaptor_CompCurve();
 
 		/****************** BRepAdaptor_CompCurve ******************/
 		%feature("compactdefaultargs") BRepAdaptor_CompCurve;
-		%feature("autodoc", "	:param W:
-	:type W: TopoDS_Wire
-	:param KnotByCurvilinearAbcissa: default value is Standard_False
-	:type KnotByCurvilinearAbcissa: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+W: TopoDS_Wire
+KnotByCurvilinearAbcissa: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") BRepAdaptor_CompCurve;
 		 BRepAdaptor_CompCurve(const TopoDS_Wire & W, const Standard_Boolean KnotByCurvilinearAbcissa = Standard_False);
 
@@ -149,41 +157,57 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") BRepAdaptor_CompCurve;
 		%feature("autodoc", "Creates a curve to acces to the geometry of edge <w>.
 
-	:param W:
-	:type W: TopoDS_Wire
-	:param KnotByCurvilinearAbcissa:
-	:type KnotByCurvilinearAbcissa: bool
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+W: TopoDS_Wire
+KnotByCurvilinearAbcissa: bool
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+None
 ") BRepAdaptor_CompCurve;
 		 BRepAdaptor_CompCurve(const TopoDS_Wire & W, const Standard_Boolean KnotByCurvilinearAbcissa, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom_BSplineCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
 ") BSpline;
 		opencascade::handle<Geom_BSplineCurve> BSpline();
 
 		/****************** Bezier ******************/
 		%feature("compactdefaultargs") Bezier;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom_BezierCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BezierCurve>
 ") Bezier;
 		opencascade::handle<Geom_BezierCurve> Bezier();
 
 		/****************** Circle ******************/
 		%feature("compactdefaultargs") Circle;
-		%feature("autodoc", "	:rtype: gp_Circ
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Circ
 ") Circle;
 		gp_Circ Circle();
 
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
-		%feature("autodoc", "	:rtype: GeomAbs_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_Shape
 ") Continuity;
 		GeomAbs_Shape Continuity();
 
@@ -191,11 +215,14 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Computes the point of parameter u.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+
+Returns
+-------
+None
 ") D0;
 		void D0(const Standard_Real U, gp_Pnt & P);
 
@@ -203,13 +230,15 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Computes the point of parameter u on the curve with its first derivative. raised if the continuity of the current interval is not c1.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:param V:
-	:type V: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+V: gp_Vec
+
+Returns
+-------
+None
 ") D1;
 		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V);
 
@@ -217,15 +246,16 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "Returns the point p of parameter u, the first and second derivatives v1 and v2. raised if the continuity of the current interval is not c2.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:param V1:
-	:type V1: gp_Vec
-	:param V2:
-	:type V2: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+V1: gp_Vec
+V2: gp_Vec
+
+Returns
+-------
+None
 ") D2;
 		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
 
@@ -233,17 +263,17 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D3;
 		%feature("autodoc", "Returns the point p of parameter u, the first, the second and the third derivative. raised if the continuity of the current interval is not c3.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:param V1:
-	:type V1: gp_Vec
-	:param V2:
-	:type V2: gp_Vec
-	:param V3:
-	:type V3: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+V1: gp_Vec
+V2: gp_Vec
+V3: gp_Vec
+
+Returns
+-------
+None
 ") D3;
 		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
 
@@ -251,17 +281,24 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") DN;
 		%feature("autodoc", "The returned vector gives the value of the derivative for the order of derivation n. raised if the continuity of the current interval is not cn. raised if n < 1.
 
-	:param U:
-	:type U: float
-	:param N:
-	:type N: int
-	:rtype: gp_Vec
+Parameters
+----------
+U: float
+N: int
+
+Returns
+-------
+gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Integer N);
 
 		/****************** Degree ******************/
 		%feature("compactdefaultargs") Degree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Degree;
 		Standard_Integer Degree();
 
@@ -269,37 +306,55 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Returns an edge and one parameter on them corresponding to the parameter u.
 
-	:param U:
-	:type U: float
-	:param E:
-	:type E: TopoDS_Edge
-	:param UonE:
-	:type UonE: float
-	:rtype: None
+Parameters
+----------
+U: float
+E: TopoDS_Edge
+UonE: float
+
+Returns
+-------
+None
 ") Edge;
 		void Edge(const Standard_Real U, TopoDS_Edge & E, Standard_Real &OutValue);
 
 		/****************** Ellipse ******************/
 		%feature("compactdefaultargs") Ellipse;
-		%feature("autodoc", "	:rtype: gp_Elips
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Elips
 ") Ellipse;
 		gp_Elips Ellipse();
 
 		/****************** FirstParameter ******************/
 		%feature("compactdefaultargs") FirstParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstParameter;
 		Standard_Real FirstParameter();
 
 		/****************** GetType ******************/
 		%feature("compactdefaultargs") GetType;
-		%feature("autodoc", "	:rtype: GeomAbs_CurveType
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_CurveType
 ") GetType;
 		GeomAbs_CurveType GetType();
 
 		/****************** Hyperbola ******************/
 		%feature("compactdefaultargs") Hyperbola;
-		%feature("autodoc", "	:rtype: gp_Hypr
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Hypr
 ") Hyperbola;
 		gp_Hypr Hyperbola();
 
@@ -307,11 +362,14 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Sets the wire <w>.
 
-	:param W:
-	:type W: TopoDS_Wire
-	:param KnotByCurvilinearAbcissa:
-	:type KnotByCurvilinearAbcissa: bool
-	:rtype: None
+Parameters
+----------
+W: TopoDS_Wire
+KnotByCurvilinearAbcissa: bool
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const TopoDS_Wire & W, const Standard_Boolean KnotByCurvilinearAbcissa);
 
@@ -319,17 +377,17 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Sets wire <w> and trimmed parameter.
 
-	:param W:
-	:type W: TopoDS_Wire
-	:param KnotByCurvilinearAbcissa:
-	:type KnotByCurvilinearAbcissa: bool
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+W: TopoDS_Wire
+KnotByCurvilinearAbcissa: bool
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const TopoDS_Wire & W, const Standard_Boolean KnotByCurvilinearAbcissa, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
@@ -337,41 +395,64 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Stores in <t> the parameters bounding the intervals of continuity <s>. //! the array must provide enough room to accomodate for the parameters. i.e. t.length() > nbintervals().
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsClosed;
 		Standard_Boolean IsClosed();
 
 		/****************** IsPeriodic ******************/
 		%feature("compactdefaultargs") IsPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsPeriodic;
 		Standard_Boolean IsPeriodic();
 
 		/****************** IsRational ******************/
 		%feature("compactdefaultargs") IsRational;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsRational;
 		Standard_Boolean IsRational();
 
 		/****************** LastParameter ******************/
 		%feature("compactdefaultargs") LastParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastParameter;
 		Standard_Real LastParameter();
 
 		/****************** Line ******************/
 		%feature("compactdefaultargs") Line;
-		%feature("autodoc", "	:rtype: gp_Lin
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Lin
 ") Line;
 		gp_Lin Line();
 
@@ -379,33 +460,53 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals for continuity <s>. may be one if continuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
 		/****************** NbKnots ******************/
 		%feature("compactdefaultargs") NbKnots;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbKnots;
 		Standard_Integer NbKnots();
 
 		/****************** NbPoles ******************/
 		%feature("compactdefaultargs") NbPoles;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbPoles;
 		Standard_Integer NbPoles();
 
 		/****************** Parabola ******************/
 		%feature("compactdefaultargs") Parabola;
-		%feature("autodoc", "	:rtype: gp_Parab
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Parab
 ") Parabola;
 		gp_Parab Parabola();
 
 		/****************** Period ******************/
 		%feature("compactdefaultargs") Period;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Period;
 		Standard_Real Period();
 
@@ -413,9 +514,13 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Resolution;
 		%feature("autodoc", "Returns the parametric resolution.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") Resolution;
 		Standard_Real Resolution(const Standard_Real R3d);
 
@@ -423,13 +528,15 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Trim;
 		%feature("autodoc", "Returns a curve equivalent of <self> between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor3d_HCurve>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HCurve>
 ") Trim;
 		opencascade::handle<Adaptor3d_HCurve> Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
@@ -437,9 +544,13 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the point of parameter u on the curve.
 
-	:param U:
-	:type U: float
-	:rtype: gp_Pnt
+Parameters
+----------
+U: float
+
+Returns
+-------
+gp_Pnt
 ") Value;
 		gp_Pnt Value(const Standard_Real U);
 
@@ -447,7 +558,9 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Wire;
 		%feature("autodoc", "Returns the wire.
 
-	:rtype: TopoDS_Wire
+Returns
+-------
+TopoDS_Wire
 ") Wire;
 		const TopoDS_Wire Wire();
 
@@ -469,7 +582,9 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") BRepAdaptor_Curve;
 		%feature("autodoc", "Creates an undefined curve with no edge loaded.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepAdaptor_Curve;
 		 BRepAdaptor_Curve();
 
@@ -477,9 +592,13 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") BRepAdaptor_Curve;
 		%feature("autodoc", "Creates a curve to acces to the geometry of edge <e>.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") BRepAdaptor_Curve;
 		 BRepAdaptor_Curve(const TopoDS_Edge & E);
 
@@ -487,11 +606,14 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") BRepAdaptor_Curve;
 		%feature("autodoc", "Creates a curve to acces to the geometry of edge <e>. the geometry will be computed using the parametric curve of <e> on the face <f>. an error is raised if the edge does not have a pcurve on the face.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") BRepAdaptor_Curve;
 		 BRepAdaptor_Curve(const TopoDS_Edge & E, const TopoDS_Face & F);
 
@@ -499,7 +621,9 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "Warning : this will make a copy of the bspline curve since it applies to it mytsrf . be carefull when using this method.
 
-	:rtype: opencascade::handle<Geom_BSplineCurve>
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
 ") BSpline;
 		opencascade::handle<Geom_BSplineCurve> BSpline();
 
@@ -507,19 +631,29 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Bezier;
 		%feature("autodoc", "Warning : this will make a copy of the bezier curve since it applies to it mytsrf . be carefull when using this method.
 
-	:rtype: opencascade::handle<Geom_BezierCurve>
+Returns
+-------
+opencascade::handle<Geom_BezierCurve>
 ") Bezier;
 		opencascade::handle<Geom_BezierCurve> Bezier();
 
 		/****************** Circle ******************/
 		%feature("compactdefaultargs") Circle;
-		%feature("autodoc", "	:rtype: gp_Circ
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Circ
 ") Circle;
 		gp_Circ Circle();
 
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
-		%feature("autodoc", "	:rtype: GeomAbs_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_Shape
 ") Continuity;
 		GeomAbs_Shape Continuity();
 
@@ -527,7 +661,9 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Returns the curve of the edge.
 
-	:rtype: GeomAdaptor_Curve
+Returns
+-------
+GeomAdaptor_Curve
 ") Curve;
 		const GeomAdaptor_Curve & Curve();
 
@@ -535,7 +671,9 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") CurveOnSurface;
 		%feature("autodoc", "Returns the curveonsurface of the edge.
 
-	:rtype: Adaptor3d_CurveOnSurface
+Returns
+-------
+Adaptor3d_CurveOnSurface
 ") CurveOnSurface;
 		const Adaptor3d_CurveOnSurface & CurveOnSurface();
 
@@ -543,11 +681,14 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Computes the point of parameter u.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+
+Returns
+-------
+None
 ") D0;
 		void D0(const Standard_Real U, gp_Pnt & P);
 
@@ -555,13 +696,15 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Computes the point of parameter u on the curve with its first derivative. raised if the continuity of the current interval is not c1.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:param V:
-	:type V: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+V: gp_Vec
+
+Returns
+-------
+None
 ") D1;
 		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V);
 
@@ -569,15 +712,16 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "Returns the point p of parameter u, the first and second derivatives v1 and v2. raised if the continuity of the current interval is not c2.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:param V1:
-	:type V1: gp_Vec
-	:param V2:
-	:type V2: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+V1: gp_Vec
+V2: gp_Vec
+
+Returns
+-------
+None
 ") D2;
 		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
 
@@ -585,17 +729,17 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D3;
 		%feature("autodoc", "Returns the point p of parameter u, the first, the second and the third derivative. raised if the continuity of the current interval is not c3.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:param V1:
-	:type V1: gp_Vec
-	:param V2:
-	:type V2: gp_Vec
-	:param V3:
-	:type V3: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+V1: gp_Vec
+V2: gp_Vec
+V3: gp_Vec
+
+Returns
+-------
+None
 ") D3;
 		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
 
@@ -603,17 +747,24 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") DN;
 		%feature("autodoc", "The returned vector gives the value of the derivative for the order of derivation n. raised if the continuity of the current interval is not cn. raised if n < 1.
 
-	:param U:
-	:type U: float
-	:param N:
-	:type N: int
-	:rtype: gp_Vec
+Parameters
+----------
+U: float
+N: int
+
+Returns
+-------
+gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Integer N);
 
 		/****************** Degree ******************/
 		%feature("compactdefaultargs") Degree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Degree;
 		Standard_Integer Degree();
 
@@ -621,31 +772,49 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Returns the edge.
 
-	:rtype: TopoDS_Edge
+Returns
+-------
+TopoDS_Edge
 ") Edge;
 		const TopoDS_Edge Edge();
 
 		/****************** Ellipse ******************/
 		%feature("compactdefaultargs") Ellipse;
-		%feature("autodoc", "	:rtype: gp_Elips
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Elips
 ") Ellipse;
 		gp_Elips Ellipse();
 
 		/****************** FirstParameter ******************/
 		%feature("compactdefaultargs") FirstParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstParameter;
 		Standard_Real FirstParameter();
 
 		/****************** GetType ******************/
 		%feature("compactdefaultargs") GetType;
-		%feature("autodoc", "	:rtype: GeomAbs_CurveType
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_CurveType
 ") GetType;
 		GeomAbs_CurveType GetType();
 
 		/****************** Hyperbola ******************/
 		%feature("compactdefaultargs") Hyperbola;
-		%feature("autodoc", "	:rtype: gp_Hypr
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Hypr
 ") Hyperbola;
 		gp_Hypr Hyperbola();
 
@@ -653,9 +822,13 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Sets the curve <self> to acces to the geometry of edge <e>.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const TopoDS_Edge & E);
 
@@ -663,11 +836,14 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Sets the curve <self> to acces to the geometry of edge <e>. the geometry will be computed using the parametric curve of <e> on the face <f>. an error is raised if the edge does not have a pcurve on the face.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const TopoDS_Edge & E, const TopoDS_Face & F);
 
@@ -675,11 +851,14 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Stores in <t> the parameters bounding the intervals of continuity <s>. //! the array must provide enough room to accomodate for the parameters. i.e. t.length() > nbintervals().
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
@@ -687,13 +866,19 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Is3DCurve;
 		%feature("autodoc", "Returns true if the edge geometry is computed from a 3d curve.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Is3DCurve;
 		Standard_Boolean Is3DCurve();
 
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsClosed;
 		Standard_Boolean IsClosed();
 
@@ -701,31 +886,49 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") IsCurveOnSurface;
 		%feature("autodoc", "Returns true if the edge geometry is computed from a pcurve on a surface.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsCurveOnSurface;
 		Standard_Boolean IsCurveOnSurface();
 
 		/****************** IsPeriodic ******************/
 		%feature("compactdefaultargs") IsPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsPeriodic;
 		Standard_Boolean IsPeriodic();
 
 		/****************** IsRational ******************/
 		%feature("compactdefaultargs") IsRational;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsRational;
 		Standard_Boolean IsRational();
 
 		/****************** LastParameter ******************/
 		%feature("compactdefaultargs") LastParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastParameter;
 		Standard_Real LastParameter();
 
 		/****************** Line ******************/
 		%feature("compactdefaultargs") Line;
-		%feature("autodoc", "	:rtype: gp_Lin
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Lin
 ") Line;
 		gp_Lin Line();
 
@@ -733,39 +936,63 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals for continuity <s>. may be one if continuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
 		/****************** NbKnots ******************/
 		%feature("compactdefaultargs") NbKnots;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbKnots;
 		Standard_Integer NbKnots();
 
 		/****************** NbPoles ******************/
 		%feature("compactdefaultargs") NbPoles;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbPoles;
 		Standard_Integer NbPoles();
 
 		/****************** OffsetCurve ******************/
 		%feature("compactdefaultargs") OffsetCurve;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom_OffsetCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_OffsetCurve>
 ") OffsetCurve;
 		opencascade::handle<Geom_OffsetCurve> OffsetCurve();
 
 		/****************** Parabola ******************/
 		%feature("compactdefaultargs") Parabola;
-		%feature("autodoc", "	:rtype: gp_Parab
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Parab
 ") Parabola;
 		gp_Parab Parabola();
 
 		/****************** Period ******************/
 		%feature("compactdefaultargs") Period;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Period;
 		Standard_Real Period();
 
@@ -773,7 +1000,9 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Reset currently loaded curve (undone load()).
 
-	:rtype: None
+Returns
+-------
+None
 ") Reset;
 		void Reset();
 
@@ -781,9 +1010,13 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Resolution;
 		%feature("autodoc", "Returns the parametric resolution.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") Resolution;
 		Standard_Real Resolution(const Standard_Real R3d);
 
@@ -791,7 +1024,9 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Tolerance;
 		%feature("autodoc", "Returns the edge tolerance.
 
-	:rtype: float
+Returns
+-------
+float
 ") Tolerance;
 		Standard_Real Tolerance();
 
@@ -799,13 +1034,15 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Trim;
 		%feature("autodoc", "Returns a curve equivalent of <self> between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor3d_HCurve>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HCurve>
 ") Trim;
 		opencascade::handle<Adaptor3d_HCurve> Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
@@ -813,7 +1050,9 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Trsf;
 		%feature("autodoc", "Returns the coordinate system of the curve.
 
-	:rtype: gp_Trsf
+Returns
+-------
+gp_Trsf
 ") Trsf;
 		const gp_Trsf Trsf();
 
@@ -821,9 +1060,13 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the point of parameter u on the curve.
 
-	:param U:
-	:type U: float
-	:rtype: gp_Pnt
+Parameters
+----------
+U: float
+
+Returns
+-------
+gp_Pnt
 ") Value;
 		gp_Pnt Value(const Standard_Real U);
 
@@ -845,7 +1088,9 @@ class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 		%feature("compactdefaultargs") BRepAdaptor_Curve2d;
 		%feature("autodoc", "Creates an uninitialized curve2d.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepAdaptor_Curve2d;
 		 BRepAdaptor_Curve2d();
 
@@ -853,11 +1098,14 @@ class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 		%feature("compactdefaultargs") BRepAdaptor_Curve2d;
 		%feature("autodoc", "Creates with the pcurve of <e> on <f>.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") BRepAdaptor_Curve2d;
 		 BRepAdaptor_Curve2d(const TopoDS_Edge & E, const TopoDS_Face & F);
 
@@ -865,7 +1113,9 @@ class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Returns the edge.
 
-	:rtype: TopoDS_Edge
+Returns
+-------
+TopoDS_Edge
 ") Edge;
 		const TopoDS_Edge Edge();
 
@@ -873,7 +1123,9 @@ class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 		%feature("compactdefaultargs") Face;
 		%feature("autodoc", "Returns the face.
 
-	:rtype: TopoDS_Face
+Returns
+-------
+TopoDS_Face
 ") Face;
 		const TopoDS_Face Face();
 
@@ -881,11 +1133,14 @@ class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize with the pcurve of <e> on <f>.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const TopoDS_Edge & E, const TopoDS_Face & F);
 
@@ -907,7 +1162,9 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") BRepAdaptor_HCompCurve;
 		%feature("autodoc", "Creates an empty genhcurve.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepAdaptor_HCompCurve;
 		 BRepAdaptor_HCompCurve();
 
@@ -915,9 +1172,13 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") BRepAdaptor_HCompCurve;
 		%feature("autodoc", "Creates a genhcurve from a curve.
 
-	:param C:
-	:type C: BRepAdaptor_CompCurve
-	:rtype: None
+Parameters
+----------
+C: BRepAdaptor_CompCurve
+
+Returns
+-------
+None
 ") BRepAdaptor_HCompCurve;
 		 BRepAdaptor_HCompCurve(const BRepAdaptor_CompCurve & C);
 
@@ -925,7 +1186,9 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") ChangeCurve;
 		%feature("autodoc", "Returns the curve used to create the genhcurve.
 
-	:rtype: BRepAdaptor_CompCurve
+Returns
+-------
+BRepAdaptor_CompCurve
 ") ChangeCurve;
 		BRepAdaptor_CompCurve & ChangeCurve();
 
@@ -933,7 +1196,9 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Returns the curve used to create the genhcurve. this is redefined from hcurve, cannot be inline.
 
-	:rtype: Adaptor3d_Curve
+Returns
+-------
+Adaptor3d_Curve
 ") Curve;
 		const Adaptor3d_Curve & Curve();
 
@@ -941,7 +1206,9 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") GetCurve;
 		%feature("autodoc", "Returns the curve used to create the genhcurve. this is redefined from hcurve, cannot be inline.
 
-	:rtype: Adaptor3d_Curve
+Returns
+-------
+Adaptor3d_Curve
 ") GetCurve;
 		Adaptor3d_Curve & GetCurve();
 
@@ -949,9 +1216,13 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the field of the genhcurve.
 
-	:param C:
-	:type C: BRepAdaptor_CompCurve
-	:rtype: None
+Parameters
+----------
+C: BRepAdaptor_CompCurve
+
+Returns
+-------
+None
 ") Set;
 		void Set(const BRepAdaptor_CompCurve & C);
 
@@ -975,7 +1246,9 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") BRepAdaptor_HCurve;
 		%feature("autodoc", "Creates an empty genhcurve.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepAdaptor_HCurve;
 		 BRepAdaptor_HCurve();
 
@@ -983,9 +1256,13 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") BRepAdaptor_HCurve;
 		%feature("autodoc", "Creates a genhcurve from a curve.
 
-	:param C:
-	:type C: BRepAdaptor_Curve
-	:rtype: None
+Parameters
+----------
+C: BRepAdaptor_Curve
+
+Returns
+-------
+None
 ") BRepAdaptor_HCurve;
 		 BRepAdaptor_HCurve(const BRepAdaptor_Curve & C);
 
@@ -993,7 +1270,9 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") ChangeCurve;
 		%feature("autodoc", "Returns the curve used to create the genhcurve.
 
-	:rtype: BRepAdaptor_Curve
+Returns
+-------
+BRepAdaptor_Curve
 ") ChangeCurve;
 		BRepAdaptor_Curve & ChangeCurve();
 
@@ -1001,7 +1280,9 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Returns the curve used to create the genhcurve. this is redefined from hcurve, cannot be inline.
 
-	:rtype: Adaptor3d_Curve
+Returns
+-------
+Adaptor3d_Curve
 ") Curve;
 		const Adaptor3d_Curve & Curve();
 
@@ -1009,7 +1290,9 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") GetCurve;
 		%feature("autodoc", "Returns the curve used to create the genhcurve. this is redefined from hcurve, cannot be inline.
 
-	:rtype: Adaptor3d_Curve
+Returns
+-------
+Adaptor3d_Curve
 ") GetCurve;
 		Adaptor3d_Curve & GetCurve();
 
@@ -1017,9 +1300,13 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the field of the genhcurve.
 
-	:param C:
-	:type C: BRepAdaptor_Curve
-	:rtype: None
+Parameters
+----------
+C: BRepAdaptor_Curve
+
+Returns
+-------
+None
 ") Set;
 		void Set(const BRepAdaptor_Curve & C);
 
@@ -1043,7 +1330,9 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") BRepAdaptor_HCurve2d;
 		%feature("autodoc", "Creates an empty genhcurve2d.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepAdaptor_HCurve2d;
 		 BRepAdaptor_HCurve2d();
 
@@ -1051,9 +1340,13 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") BRepAdaptor_HCurve2d;
 		%feature("autodoc", "Creates a genhcurve2d from a curve.
 
-	:param C:
-	:type C: BRepAdaptor_Curve2d
-	:rtype: None
+Parameters
+----------
+C: BRepAdaptor_Curve2d
+
+Returns
+-------
+None
 ") BRepAdaptor_HCurve2d;
 		 BRepAdaptor_HCurve2d(const BRepAdaptor_Curve2d & C);
 
@@ -1061,7 +1354,9 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") ChangeCurve2d;
 		%feature("autodoc", "Returns the curve used to create the genhcurve.
 
-	:rtype: BRepAdaptor_Curve2d
+Returns
+-------
+BRepAdaptor_Curve2d
 ") ChangeCurve2d;
 		BRepAdaptor_Curve2d & ChangeCurve2d();
 
@@ -1069,7 +1364,9 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") Curve2d;
 		%feature("autodoc", "Returns the curve used to create the genhcurve2d. this is redefined from hcurve2d, cannot be inline.
 
-	:rtype: Adaptor2d_Curve2d
+Returns
+-------
+Adaptor2d_Curve2d
 ") Curve2d;
 		const Adaptor2d_Curve2d & Curve2d();
 
@@ -1077,9 +1374,13 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the field of the genhcurve2d.
 
-	:param C:
-	:type C: BRepAdaptor_Curve2d
-	:rtype: None
+Parameters
+----------
+C: BRepAdaptor_Curve2d
+
+Returns
+-------
+None
 ") Set;
 		void Set(const BRepAdaptor_Curve2d & C);
 
@@ -1103,7 +1404,9 @@ class BRepAdaptor_HSurface : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") BRepAdaptor_HSurface;
 		%feature("autodoc", "Creates an empty genhsurface.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepAdaptor_HSurface;
 		 BRepAdaptor_HSurface();
 
@@ -1111,9 +1414,13 @@ class BRepAdaptor_HSurface : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") BRepAdaptor_HSurface;
 		%feature("autodoc", "Creates a genhsurface from a surface.
 
-	:param S:
-	:type S: BRepAdaptor_Surface
-	:rtype: None
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+None
 ") BRepAdaptor_HSurface;
 		 BRepAdaptor_HSurface(const BRepAdaptor_Surface & S);
 
@@ -1121,7 +1428,9 @@ class BRepAdaptor_HSurface : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") ChangeSurface;
 		%feature("autodoc", "Returns the surface used to create the genhsurface.
 
-	:rtype: BRepAdaptor_Surface
+Returns
+-------
+BRepAdaptor_Surface
 ") ChangeSurface;
 		BRepAdaptor_Surface & ChangeSurface();
 
@@ -1129,9 +1438,13 @@ class BRepAdaptor_HSurface : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the field of the genhsurface.
 
-	:param S:
-	:type S: BRepAdaptor_Surface
-	:rtype: None
+Parameters
+----------
+S: BRepAdaptor_Surface
+
+Returns
+-------
+None
 ") Set;
 		void Set(const BRepAdaptor_Surface & S);
 
@@ -1139,7 +1452,9 @@ class BRepAdaptor_HSurface : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") Surface;
 		%feature("autodoc", "Returns a reference to the surface inside the hsurface. this is redefined from hsurface, cannot be inline.
 
-	:rtype: Adaptor3d_Surface
+Returns
+-------
+Adaptor3d_Surface
 ") Surface;
 		const Adaptor3d_Surface & Surface();
 
@@ -1161,7 +1476,11 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 	public:
 		/****************** AxeOfRevolution ******************/
 		%feature("compactdefaultargs") AxeOfRevolution;
-		%feature("autodoc", "	:rtype: gp_Ax1
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Ax1
 ") AxeOfRevolution;
 		gp_Ax1 AxeOfRevolution();
 
@@ -1169,7 +1488,9 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") BRepAdaptor_Surface;
 		%feature("autodoc", "Creates an undefined surface with no face loaded.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepAdaptor_Surface;
 		 BRepAdaptor_Surface();
 
@@ -1177,11 +1498,15 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") BRepAdaptor_Surface;
 		%feature("autodoc", "Creates a surface to access the geometry of <f>. if <restriction> is true the parameter range is the parameter range in the uv space of the restriction.
 
-	:param F:
-	:type F: TopoDS_Face
-	:param R: default value is Standard_True
-	:type R: bool
-	:rtype: None
+Parameters
+----------
+F: TopoDS_Face
+R: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") BRepAdaptor_Surface;
 		 BRepAdaptor_Surface(const TopoDS_Face & F, const Standard_Boolean R = Standard_True);
 
@@ -1189,7 +1514,9 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "Warning : this will make a copy of the bspline surface since it applies to it the mytsrf transformation be carefull when using this method.
 
-	:rtype: opencascade::handle<Geom_BSplineSurface>
+Returns
+-------
+opencascade::handle<Geom_BSplineSurface>
 ") BSpline;
 		opencascade::handle<Geom_BSplineSurface> BSpline();
 
@@ -1197,19 +1524,29 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") BasisCurve;
 		%feature("autodoc", "Only for surfaceofextrusion and surfaceofrevolution warning: this will make a copy of the underlying curve since it applies to it the transformation mytrsf. be carefull when using this method.
 
-	:rtype: opencascade::handle<Adaptor3d_HCurve>
+Returns
+-------
+opencascade::handle<Adaptor3d_HCurve>
 ") BasisCurve;
 		opencascade::handle<Adaptor3d_HCurve> BasisCurve();
 
 		/****************** BasisSurface ******************/
 		%feature("compactdefaultargs") BasisSurface;
-		%feature("autodoc", "	:rtype: opencascade::handle<Adaptor3d_HSurface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HSurface>
 ") BasisSurface;
 		opencascade::handle<Adaptor3d_HSurface> BasisSurface();
 
 		/****************** Bezier ******************/
 		%feature("compactdefaultargs") Bezier;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom_BezierSurface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BezierSurface>
 ") Bezier;
 		opencascade::handle<Geom_BezierSurface> Bezier();
 
@@ -1217,19 +1554,29 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") ChangeSurface;
 		%feature("autodoc", "Returns the surface.
 
-	:rtype: GeomAdaptor_Surface
+Returns
+-------
+GeomAdaptor_Surface
 ") ChangeSurface;
 		GeomAdaptor_Surface & ChangeSurface();
 
 		/****************** Cone ******************/
 		%feature("compactdefaultargs") Cone;
-		%feature("autodoc", "	:rtype: gp_Cone
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Cone
 ") Cone;
 		gp_Cone Cone();
 
 		/****************** Cylinder ******************/
 		%feature("compactdefaultargs") Cylinder;
-		%feature("autodoc", "	:rtype: gp_Cylinder
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Cylinder
 ") Cylinder;
 		gp_Cylinder Cylinder();
 
@@ -1237,13 +1584,15 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Computes the point of parameters u,v on the surface.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param P:
-	:type P: gp_Pnt
-	:rtype: None
+Parameters
+----------
+U: float
+V: float
+P: gp_Pnt
+
+Returns
+-------
+None
 ") D0;
 		void D0(const Standard_Real U, const Standard_Real V, gp_Pnt & P);
 
@@ -1251,17 +1600,17 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Computes the point and the first derivatives on the surface. raised if the continuity of the current intervals is not c1.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param P:
-	:type P: gp_Pnt
-	:param D1U:
-	:type D1U: gp_Vec
-	:param D1V:
-	:type D1V: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+V: float
+P: gp_Pnt
+D1U: gp_Vec
+D1V: gp_Vec
+
+Returns
+-------
+None
 ") D1;
 		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
 
@@ -1269,23 +1618,20 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "Computes the point, the first and second derivatives on the surface. raised if the continuity of the current intervals is not c2.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param P:
-	:type P: gp_Pnt
-	:param D1U:
-	:type D1U: gp_Vec
-	:param D1V:
-	:type D1V: gp_Vec
-	:param D2U:
-	:type D2U: gp_Vec
-	:param D2V:
-	:type D2V: gp_Vec
-	:param D2UV:
-	:type D2UV: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+V: float
+P: gp_Pnt
+D1U: gp_Vec
+D1V: gp_Vec
+D2U: gp_Vec
+D2V: gp_Vec
+D2UV: gp_Vec
+
+Returns
+-------
+None
 ") D2;
 		void D2(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV);
 
@@ -1293,31 +1639,24 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") D3;
 		%feature("autodoc", "Computes the point, the first, second and third derivatives on the surface. raised if the continuity of the current intervals is not c3.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param P:
-	:type P: gp_Pnt
-	:param D1U:
-	:type D1U: gp_Vec
-	:param D1V:
-	:type D1V: gp_Vec
-	:param D2U:
-	:type D2U: gp_Vec
-	:param D2V:
-	:type D2V: gp_Vec
-	:param D2UV:
-	:type D2UV: gp_Vec
-	:param D3U:
-	:type D3U: gp_Vec
-	:param D3V:
-	:type D3V: gp_Vec
-	:param D3UUV:
-	:type D3UUV: gp_Vec
-	:param D3UVV:
-	:type D3UVV: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+V: float
+P: gp_Pnt
+D1U: gp_Vec
+D1V: gp_Vec
+D2U: gp_Vec
+D2V: gp_Vec
+D2UV: gp_Vec
+D3U: gp_Vec
+D3V: gp_Vec
+D3UUV: gp_Vec
+D3UVV: gp_Vec
+
+Returns
+-------
+None
 ") D3;
 		void D3(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV);
 
@@ -1325,21 +1664,26 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") DN;
 		%feature("autodoc", "Computes the derivative of order nu in the direction u and nv in the direction v at the point p(u, v). raised if the current u interval is not not cnu and the current v interval is not cnv. raised if nu + nv < 1 or nu < 0 or nv < 0.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param Nu:
-	:type Nu: int
-	:param Nv:
-	:type Nv: int
-	:rtype: gp_Vec
+Parameters
+----------
+U: float
+V: float
+Nu: int
+Nv: int
+
+Returns
+-------
+gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
 
 		/****************** Direction ******************/
 		%feature("compactdefaultargs") Direction;
-		%feature("autodoc", "	:rtype: gp_Dir
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Dir
 ") Direction;
 		gp_Dir Direction();
 
@@ -1347,19 +1691,29 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") Face;
 		%feature("autodoc", "Returns the face.
 
-	:rtype: TopoDS_Face
+Returns
+-------
+TopoDS_Face
 ") Face;
 		const TopoDS_Face Face();
 
 		/****************** FirstUParameter ******************/
 		%feature("compactdefaultargs") FirstUParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstUParameter;
 		Standard_Real FirstUParameter();
 
 		/****************** FirstVParameter ******************/
 		%feature("compactdefaultargs") FirstVParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstVParameter;
 		Standard_Real FirstVParameter();
 
@@ -1367,7 +1721,9 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") GetType;
 		%feature("autodoc", "Returns the type of the surface : plane, cylinder, cone, sphere, torus, beziersurface, bsplinesurface, surfaceofrevolution, surfaceofextrusion, othersurface.
 
-	:rtype: GeomAbs_SurfaceType
+Returns
+-------
+GeomAbs_SurfaceType
 ") GetType;
 		GeomAbs_SurfaceType GetType();
 
@@ -1375,59 +1731,95 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Sets the surface to the geometry of <f>.
 
-	:param F:
-	:type F: TopoDS_Face
-	:param Restriction: default value is Standard_True
-	:type Restriction: bool
-	:rtype: None
+Parameters
+----------
+F: TopoDS_Face
+Restriction: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const TopoDS_Face & F, const Standard_Boolean Restriction = Standard_True);
 
 		/****************** IsUClosed ******************/
 		%feature("compactdefaultargs") IsUClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsUClosed;
 		Standard_Boolean IsUClosed();
 
 		/****************** IsUPeriodic ******************/
 		%feature("compactdefaultargs") IsUPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsUPeriodic;
 		Standard_Boolean IsUPeriodic();
 
 		/****************** IsURational ******************/
 		%feature("compactdefaultargs") IsURational;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsURational;
 		Standard_Boolean IsURational();
 
 		/****************** IsVClosed ******************/
 		%feature("compactdefaultargs") IsVClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsVClosed;
 		Standard_Boolean IsVClosed();
 
 		/****************** IsVPeriodic ******************/
 		%feature("compactdefaultargs") IsVPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsVPeriodic;
 		Standard_Boolean IsVPeriodic();
 
 		/****************** IsVRational ******************/
 		%feature("compactdefaultargs") IsVRational;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsVRational;
 		Standard_Boolean IsVRational();
 
 		/****************** LastUParameter ******************/
 		%feature("compactdefaultargs") LastUParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastUParameter;
 		Standard_Real LastUParameter();
 
 		/****************** LastVParameter ******************/
 		%feature("compactdefaultargs") LastVParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastVParameter;
 		Standard_Real LastVParameter();
 
@@ -1435,21 +1827,33 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") NbUIntervals;
 		%feature("autodoc", "If necessary, breaks the surface in u intervals of continuity <s>. and returns the number of intervals.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbUIntervals;
 		Standard_Integer NbUIntervals(const GeomAbs_Shape S);
 
 		/****************** NbUKnots ******************/
 		%feature("compactdefaultargs") NbUKnots;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbUKnots;
 		Standard_Integer NbUKnots();
 
 		/****************** NbUPoles ******************/
 		%feature("compactdefaultargs") NbUPoles;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbUPoles;
 		Standard_Integer NbUPoles();
 
@@ -1457,39 +1861,63 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") NbVIntervals;
 		%feature("autodoc", "If necessary, breaks the surface in v intervals of continuity <s>. and returns the number of intervals.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbVIntervals;
 		Standard_Integer NbVIntervals(const GeomAbs_Shape S);
 
 		/****************** NbVKnots ******************/
 		%feature("compactdefaultargs") NbVKnots;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbVKnots;
 		Standard_Integer NbVKnots();
 
 		/****************** NbVPoles ******************/
 		%feature("compactdefaultargs") NbVPoles;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbVPoles;
 		Standard_Integer NbVPoles();
 
 		/****************** OffsetValue ******************/
 		%feature("compactdefaultargs") OffsetValue;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") OffsetValue;
 		Standard_Real OffsetValue();
 
 		/****************** Plane ******************/
 		%feature("compactdefaultargs") Plane;
-		%feature("autodoc", "	:rtype: gp_Pln
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pln
 ") Plane;
 		gp_Pln Plane();
 
 		/****************** Sphere ******************/
 		%feature("compactdefaultargs") Sphere;
-		%feature("autodoc", "	:rtype: gp_Sphere
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Sphere
 ") Sphere;
 		gp_Sphere Sphere();
 
@@ -1497,7 +1925,9 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") Surface;
 		%feature("autodoc", "Returns the surface.
 
-	:rtype: GeomAdaptor_Surface
+Returns
+-------
+GeomAdaptor_Surface
 ") Surface;
 		const GeomAdaptor_Surface & Surface();
 
@@ -1505,13 +1935,19 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") Tolerance;
 		%feature("autodoc", "Returns the face tolerance.
 
-	:rtype: float
+Returns
+-------
+float
 ") Tolerance;
 		Standard_Real Tolerance();
 
 		/****************** Torus ******************/
 		%feature("compactdefaultargs") Torus;
-		%feature("autodoc", "	:rtype: gp_Torus
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Torus
 ") Torus;
 		gp_Torus Torus();
 
@@ -1519,19 +1955,29 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") Trsf;
 		%feature("autodoc", "Returns the surface coordinate system.
 
-	:rtype: gp_Trsf
+Returns
+-------
+gp_Trsf
 ") Trsf;
 		const gp_Trsf Trsf();
 
 		/****************** UContinuity ******************/
 		%feature("compactdefaultargs") UContinuity;
-		%feature("autodoc", "	:rtype: GeomAbs_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_Shape
 ") UContinuity;
 		GeomAbs_Shape UContinuity();
 
 		/****************** UDegree ******************/
 		%feature("compactdefaultargs") UDegree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") UDegree;
 		Standard_Integer UDegree();
 
@@ -1539,17 +1985,24 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") UIntervals;
 		%feature("autodoc", "Returns the intervals with the requested continuity in the u direction.
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") UIntervals;
 		void UIntervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 		/****************** UPeriod ******************/
 		%feature("compactdefaultargs") UPeriod;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") UPeriod;
 		Standard_Real UPeriod();
 
@@ -1557,9 +2010,13 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") UResolution;
 		%feature("autodoc", "Returns the parametric u resolution corresponding to the real space resolution <r3d>.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") UResolution;
 		Standard_Real UResolution(const Standard_Real R3d);
 
@@ -1567,25 +2024,35 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") UTrim;
 		%feature("autodoc", "Returns a surface trimmed in the u direction equivalent of <self> between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor3d_HSurface>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HSurface>
 ") UTrim;
 		opencascade::handle<Adaptor3d_HSurface> UTrim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
 		/****************** VContinuity ******************/
 		%feature("compactdefaultargs") VContinuity;
-		%feature("autodoc", "	:rtype: GeomAbs_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_Shape
 ") VContinuity;
 		GeomAbs_Shape VContinuity();
 
 		/****************** VDegree ******************/
 		%feature("compactdefaultargs") VDegree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") VDegree;
 		Standard_Integer VDegree();
 
@@ -1593,17 +2060,24 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") VIntervals;
 		%feature("autodoc", "Returns the intervals with the requested continuity in the v direction.
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") VIntervals;
 		void VIntervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 		/****************** VPeriod ******************/
 		%feature("compactdefaultargs") VPeriod;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") VPeriod;
 		Standard_Real VPeriod();
 
@@ -1611,9 +2085,13 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") VResolution;
 		%feature("autodoc", "Returns the parametric v resolution corresponding to the real space resolution <r3d>.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") VResolution;
 		Standard_Real VResolution(const Standard_Real R3d);
 
@@ -1621,13 +2099,15 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") VTrim;
 		%feature("autodoc", "Returns a surface trimmed in the v direction between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor3d_HSurface>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HSurface>
 ") VTrim;
 		opencascade::handle<Adaptor3d_HSurface> VTrim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
@@ -1635,11 +2115,14 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the point of parameters u,v on the surface.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:rtype: gp_Pnt
+Parameters
+----------
+U: float
+V: float
+
+Returns
+-------
+gp_Pnt
 ") Value;
 		gp_Pnt Value(const Standard_Real U, const Standard_Real V);
 

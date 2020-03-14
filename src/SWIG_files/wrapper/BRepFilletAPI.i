@@ -116,11 +116,14 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Abscissa;
 		%feature("autodoc", "Returns the abscissa of the vertex v on the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:param V:
-	:type V: TopoDS_Vertex
-	:rtype: float
+Parameters
+----------
+IC: int
+V: TopoDS_Vertex
+
+Returns
+-------
+float
 ") Abscissa;
 		virtual Standard_Real Abscissa(const Standard_Integer IC, const TopoDS_Vertex & V);
 
@@ -128,9 +131,13 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a contour in the builder (builds a contour of tangent edges).
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Add;
 		virtual void Add(const TopoDS_Edge & E);
 
@@ -138,9 +145,13 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Closed;
 		%feature("autodoc", "Returns true if the contour of index ic is closed.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") Closed;
 		virtual Standard_Boolean Closed(const Standard_Integer IC);
 
@@ -148,9 +159,13 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") ClosedAndTangent;
 		%feature("autodoc", "Returns true if the contour of index ic is closed an tangent.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") ClosedAndTangent;
 		virtual Standard_Boolean ClosedAndTangent(const Standard_Integer IC);
 
@@ -158,9 +173,13 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Contour;
 		%feature("autodoc", "Returns the index of the contour containing the edge e, returns 0 if e doesn't belong to any contour.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: int
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+int
 ") Contour;
 		virtual Standard_Integer Contour(const TopoDS_Edge & E);
 
@@ -168,11 +187,14 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Returns the edge j in the contour i.
 
-	:param I:
-	:type I: int
-	:param J:
-	:type J: int
-	:rtype: TopoDS_Edge
+Parameters
+----------
+I: int
+J: int
+
+Returns
+-------
+TopoDS_Edge
 ") Edge;
 		virtual const TopoDS_Edge Edge(const Standard_Integer I, const Standard_Integer J);
 
@@ -180,9 +202,13 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") FirstVertex;
 		%feature("autodoc", "Returns the first vertex of the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+IC: int
+
+Returns
+-------
+TopoDS_Vertex
 ") FirstVertex;
 		virtual TopoDS_Vertex FirstVertex(const Standard_Integer IC);
 
@@ -190,9 +216,13 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") LastVertex;
 		%feature("autodoc", "Returns the last vertex of the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+IC: int
+
+Returns
+-------
+TopoDS_Vertex
 ") LastVertex;
 		virtual TopoDS_Vertex LastVertex(const Standard_Integer IC);
 
@@ -200,9 +230,13 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Returns the length the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:rtype: float
+Parameters
+----------
+IC: int
+
+Returns
+-------
+float
 ") Length;
 		virtual Standard_Real Length(const Standard_Integer IC);
 
@@ -210,7 +244,9 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") NbContours;
 		%feature("autodoc", "Number of contours.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbContours;
 		virtual Standard_Integer NbContours();
 
@@ -218,17 +254,27 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") NbEdges;
 		%feature("autodoc", "Number of edges in the contour i.
 
-	:param I:
-	:type I: int
-	:rtype: int
+Parameters
+----------
+I: int
+
+Returns
+-------
+int
 ") NbEdges;
 		virtual Standard_Integer NbEdges(const Standard_Integer I);
 
 		/****************** NbSurf ******************/
 		%feature("compactdefaultargs") NbSurf;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+
+Returns
+-------
+int
 ") NbSurf;
 		virtual Standard_Integer NbSurf(const Standard_Integer IC);
 
@@ -236,11 +282,14 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") RelativeAbscissa;
 		%feature("autodoc", "Returns the relative abscissa([0.,1.]) of the vertex v on the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:param V:
-	:type V: TopoDS_Vertex
-	:rtype: float
+Parameters
+----------
+IC: int
+V: TopoDS_Vertex
+
+Returns
+-------
+float
 ") RelativeAbscissa;
 		virtual Standard_Real RelativeAbscissa(const Standard_Integer IC, const TopoDS_Vertex & V);
 
@@ -248,9 +297,13 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Remove the contour containing the edge e.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Remove;
 		virtual void Remove(const TopoDS_Edge & E);
 
@@ -258,7 +311,9 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Reset all the fields updated by build operation and leave the algorithm in the same state than before build call. it allows contours and radius modifications to build the result another time.
 
-	:rtype: None
+Returns
+-------
+None
 ") Reset;
 		virtual void Reset();
 
@@ -266,27 +321,42 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") ResetContour;
 		%feature("autodoc", "Reset the contour of index ic, there is nomore information in the contour.
 
-	:param IC:
-	:type IC: int
-	:rtype: None
+Parameters
+----------
+IC: int
+
+Returns
+-------
+None
 ") ResetContour;
 		virtual void ResetContour(const Standard_Integer IC);
 
 		/****************** Sect ******************/
 		%feature("compactdefaultargs") Sect;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:param IS:
-	:type IS: int
-	:rtype: opencascade::handle<ChFiDS_SecHArray1>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+IS: int
+
+Returns
+-------
+opencascade::handle<ChFiDS_SecHArray1>
 ") Sect;
 		virtual opencascade::handle<ChFiDS_SecHArray1> Sect(const Standard_Integer IC, const Standard_Integer IS);
 
 		/****************** Simulate ******************/
 		%feature("compactdefaultargs") Simulate;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+
+Returns
+-------
+None
 ") Simulate;
 		virtual void Simulate(const Standard_Integer IC);
 
@@ -308,15 +378,16 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") AddChamfer;
 		%feature("autodoc", "Adds a chamfer on the face modified by this algorithm between the two adjacent edges e1 and e2, where the extremities of the chamfer are on e1 and e2 at distances d1 and d2 respectively in cases where the edges are not rectilinear, distances are measured using the curvilinear abscissa of the edges and the angle is measured with respect to the tangent at the corresponding point. the angle ang is given in radians. this function returns the chamfer and builds the resulting face.
 
-	:param E1:
-	:type E1: TopoDS_Edge
-	:param E2:
-	:type E2: TopoDS_Edge
-	:param D1:
-	:type D1: float
-	:param D2:
-	:type D2: float
-	:rtype: TopoDS_Edge
+Parameters
+----------
+E1: TopoDS_Edge
+E2: TopoDS_Edge
+D1: float
+D2: float
+
+Returns
+-------
+TopoDS_Edge
 ") AddChamfer;
 		TopoDS_Edge AddChamfer(const TopoDS_Edge & E1, const TopoDS_Edge & E2, const Standard_Real D1, const Standard_Real D2);
 
@@ -324,15 +395,16 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") AddChamfer;
 		%feature("autodoc", "Adds a chamfer on the face modified by this algorithm between the two edges connected by the vertex v, where e is one of the two edges. the chamfer makes an angle ang with e and one of its extremities is on e at distance d from v. in cases where the edges are not rectilinear, distances are measured using the curvilinear abscissa of the edges and the angle is measured with respect to the tangent at the corresponding point. the angle ang is given in radians. this function returns the chamfer and builds the resulting face. warning the status of the construction, as given by the status function, can be one of the following: - chfi2d_isdone if the chamfer is built, - chfi2d_parameterserror if d1, d2, d or ang is less than or equal to zero, - chfi2d_connexionerror if: - the edge e, e1 or e2 does not belong to the initial face, or - the edges e1 and e2 are not adjacent, or - the vertex v is not one of the limit points of the edge e, - chfi2d_computationerror if the parameters of the chamfer are too large to build a chamfer between the two adjacent edges, - chfi2d_notauthorized if: - the edge e1, e2 or one of the two edges connected to v is a fillet or chamfer, or - a curve other than a straight line or an arc of a circle is used as e, e1 or e2. do not use the returned chamfer if the status of the construction is not chfi2d_isdone.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param V:
-	:type V: TopoDS_Vertex
-	:param D:
-	:type D: float
-	:param Ang:
-	:type Ang: float
-	:rtype: TopoDS_Edge
+Parameters
+----------
+E: TopoDS_Edge
+V: TopoDS_Vertex
+D: float
+Ang: float
+
+Returns
+-------
+TopoDS_Edge
 ") AddChamfer;
 		TopoDS_Edge AddChamfer(const TopoDS_Edge & E, const TopoDS_Vertex & V, const Standard_Real D, const Standard_Real Ang);
 
@@ -340,11 +412,14 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") AddFillet;
 		%feature("autodoc", "Adds a fillet of radius radius between the two edges adjacent to the vertex v on the face modified by this algorithm. the two edges do not need to be rectilinear. this function returns the fillet and builds the resulting face. warning the status of the construction, as given by the status function, can be one of the following: - chfi2d_isdone if the fillet is built, - chfi2d_connexionerror if v does not belong to the initial face, - chfi2d_computationerror if radius is too large to build a fillet between the two adjacent edges, - chfi2d_notauthorized - if one of the two edges connected to v is a fillet or chamfer, or - if a curve other than a straight line or an arc of a circle is used as e, e1 or e2. do not use the returned fillet if the status of the construction is not chfi2d_isdone. exceptions standard_negativevalue if radius is less than or equal to zero.
 
-	:param V:
-	:type V: TopoDS_Vertex
-	:param Radius:
-	:type Radius: float
-	:rtype: TopoDS_Edge
+Parameters
+----------
+V: TopoDS_Vertex
+Radius: float
+
+Returns
+-------
+TopoDS_Edge
 ") AddFillet;
 		TopoDS_Edge AddFillet(const TopoDS_Vertex & V, const Standard_Real Radius);
 
@@ -352,7 +427,9 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") BRepFilletAPI_MakeFillet2d;
 		%feature("autodoc", "Initializes an empty algorithm for computing fillets and chamfers. the face on which the fillets and chamfers are built is defined using the init function. the vertices on which fillets or chamfers are built are defined using the addfillet or addchamfer function. warning the status of the initialization, as given by the status function, can be one of the following: - chfi2d_ready if the initialization is correct, - chfi2d_notplanar if f is not planar, - chfi2d_noface if f is a null face.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepFilletAPI_MakeFillet2d;
 		 BRepFilletAPI_MakeFillet2d();
 
@@ -360,9 +437,13 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") BRepFilletAPI_MakeFillet2d;
 		%feature("autodoc", "Initializes an algorithm for computing fillets and chamfers on the face f. the vertices on which fillets or chamfers are built are defined using the addfillet or addchamfer function. warning the status of the initialization, as given by the status function, can be one of the following: - chfi2d_ready if the initialization is correct, - chfi2d_notplanar if f is not planar, - chfi2d_noface if f is a null face.
 
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") BRepFilletAPI_MakeFillet2d;
 		 BRepFilletAPI_MakeFillet2d(const TopoDS_Face & F);
 
@@ -370,9 +451,13 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") BasisEdge;
 		%feature("autodoc", "Returns the basis edge on the face modified by this algorithm from which the chamfered or filleted edge e is built. if e has not been modified, this function returns e. warning e is returned if it does not belong to the initial face.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: TopoDS_Edge
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+TopoDS_Edge
 ") BasisEdge;
 		const TopoDS_Edge BasisEdge(const TopoDS_Edge & E);
 
@@ -380,7 +465,9 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Update the result and set the done flag.
 
-	:rtype: None
+Returns
+-------
+None
 ") Build;
 		virtual void Build();
 
@@ -388,7 +475,9 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") ChamferEdges;
 		%feature("autodoc", "Returns the table of chamfers on the face modified by this algorithm.
 
-	:rtype: TopTools_SequenceOfShape
+Returns
+-------
+TopTools_SequenceOfShape
 ") ChamferEdges;
 		const TopTools_SequenceOfShape & ChamferEdges();
 
@@ -396,9 +485,13 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") DescendantEdge;
 		%feature("autodoc", "Returns the chamfered or filleted edge built from the edge e on the face modified by this algorithm. if e has not been modified, this function returns e. exceptions standard_nosuchobject if the edge e does not belong to the initial face.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: TopoDS_Edge
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+TopoDS_Edge
 ") DescendantEdge;
 		const TopoDS_Edge DescendantEdge(const TopoDS_Edge & E);
 
@@ -406,15 +499,23 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") FilletEdges;
 		%feature("autodoc", "Returns the table of fillets on the face modified by this algorithm.
 
-	:rtype: TopTools_SequenceOfShape
+Returns
+-------
+TopTools_SequenceOfShape
 ") FilletEdges;
 		const TopTools_SequenceOfShape & FilletEdges();
 
 		/****************** HasDescendant ******************/
 		%feature("compactdefaultargs") HasDescendant;
-		%feature("autodoc", "	:param E:
-	:type E: TopoDS_Edge
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+bool
 ") HasDescendant;
 		Standard_Boolean HasDescendant(const TopoDS_Edge & E);
 
@@ -422,9 +523,13 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initializes this algorithm for constructing fillets or chamfers with the face f. warning the status of the initialization, as given by the status function, can be one of the following: - chfi2d_ready if the initialization is correct, - chfi2d_notplanar if f is not planar, - chfi2d_noface if f is a null face.
 
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Face & F);
 
@@ -432,11 +537,14 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "This initialize method allow to init the builder from a face <refface> and another face <modface> which derive from <refface>. this is usefull to modify a fillet or a chamfer already created on <modface> .
 
-	:param RefFace:
-	:type RefFace: TopoDS_Face
-	:param ModFace:
-	:type ModFace: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+RefFace: TopoDS_Face
+ModFace: TopoDS_Face
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Face & RefFace, const TopoDS_Face & ModFace);
 
@@ -444,9 +552,13 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") IsModified;
 		%feature("autodoc", "Returns true if the edge e on the face modified by this algorithm is chamfered or filleted. warning returns false if e does not belong to the face modified by this algorithm.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: bool
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+bool
 ") IsModified;
 		Standard_Boolean IsModified(const TopoDS_Edge & E);
 
@@ -454,9 +566,13 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Modified;
 		%feature("autodoc", "Returns the list of shapes modified from the shape <s>.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") Modified;
 		virtual const TopTools_ListOfShape & Modified(const TopoDS_Shape & S);
 
@@ -464,17 +580,17 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") ModifyChamfer;
 		%feature("autodoc", "Modifies the chamfer chamfer on the face modified by this algorithm, where: e1 and e2 are the two adjacent edges on which chamfer is already built; the extremities of the new chamfer are on e1 and e2 at distances d1 and d2 respectively.
 
-	:param Chamfer:
-	:type Chamfer: TopoDS_Edge
-	:param E1:
-	:type E1: TopoDS_Edge
-	:param E2:
-	:type E2: TopoDS_Edge
-	:param D1:
-	:type D1: float
-	:param D2:
-	:type D2: float
-	:rtype: TopoDS_Edge
+Parameters
+----------
+Chamfer: TopoDS_Edge
+E1: TopoDS_Edge
+E2: TopoDS_Edge
+D1: float
+D2: float
+
+Returns
+-------
+TopoDS_Edge
 ") ModifyChamfer;
 		TopoDS_Edge ModifyChamfer(const TopoDS_Edge & Chamfer, const TopoDS_Edge & E1, const TopoDS_Edge & E2, const Standard_Real D1, const Standard_Real D2);
 
@@ -482,15 +598,16 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") ModifyChamfer;
 		%feature("autodoc", "Modifies the chamfer chamfer on the face modified by this algorithm, where: e is one of the two adjacent edges on which chamfer is already built; the new chamfer makes an angle ang with e and one of its extremities is on e at distance d from the vertex on which the chamfer is built. in cases where the edges are not rectilinear, the distances are measured using the curvilinear abscissa of the edges and the angle is measured with respect to the tangent at the corresponding point. the angle ang is given in radians. this function returns the new chamfer and modifies the existing face. warning the status of the construction, as given by the status function, can be one of the following: - chfi2d_isdone if the chamfer is built, - chfi2d_parameterserror if d1, d2, d or ang is less than or equal to zero, - chfi2d_connexionerror if: - the edge e, e1, e2 or chamfer does not belong to the existing face, or - the edges e1 and e2 are not adjacent, - chfi2d_computationerror if the parameters of the chamfer are too large to build a chamfer between the two adjacent edges, - chfi2d_notauthorized if e1 or e2 is a fillet or chamfer. do not use the returned chamfer if the status of the construction is not chfi2d_isdone.
 
-	:param Chamfer:
-	:type Chamfer: TopoDS_Edge
-	:param E:
-	:type E: TopoDS_Edge
-	:param D:
-	:type D: float
-	:param Ang:
-	:type Ang: float
-	:rtype: TopoDS_Edge
+Parameters
+----------
+Chamfer: TopoDS_Edge
+E: TopoDS_Edge
+D: float
+Ang: float
+
+Returns
+-------
+TopoDS_Edge
 ") ModifyChamfer;
 		TopoDS_Edge ModifyChamfer(const TopoDS_Edge & Chamfer, const TopoDS_Edge & E, const Standard_Real D, const Standard_Real Ang);
 
@@ -498,11 +615,14 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") ModifyFillet;
 		%feature("autodoc", "Assigns the radius radius to the fillet fillet already built on the face modified by this algorithm. this function returns the new fillet and modifies the existing face. warning the status of the construction, as given by the status function, can be one of the following: - chfi2d_isdone if the new fillet is built, - chfi2d_connexionerror if fillet does not belong to the existing face, - chfi2d_computationerror if radius is too large to build a fillet between the two adjacent edges. do not use the returned fillet if the status of the construction is not chfi2d_isdone. exceptions standard_negativevalue if radius is less than or equal to zero.
 
-	:param Fillet:
-	:type Fillet: TopoDS_Edge
-	:param Radius:
-	:type Radius: float
-	:rtype: TopoDS_Edge
+Parameters
+----------
+Fillet: TopoDS_Edge
+Radius: float
+
+Returns
+-------
+TopoDS_Edge
 ") ModifyFillet;
 		TopoDS_Edge ModifyFillet(const TopoDS_Edge & Fillet, const Standard_Real Radius);
 
@@ -510,7 +630,9 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") NbChamfer;
 		%feature("autodoc", "Returns the number of chamfers on the face modified by this algorithm.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbChamfer;
 		Standard_Integer NbChamfer();
 
@@ -518,7 +640,9 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") NbCurves;
 		%feature("autodoc", "Returns the number of new curves after the shape creation.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbCurves;
 		Standard_Integer NbCurves();
 
@@ -526,7 +650,9 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") NbFillet;
 		%feature("autodoc", "Returns the number of fillets on the face modified by this algorithm.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbFillet;
 		Standard_Integer NbFillet();
 
@@ -534,9 +660,13 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") NewEdges;
 		%feature("autodoc", "Return the edges created for curve i.
 
-	:param I:
-	:type I: int
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+I: int
+
+Returns
+-------
+TopTools_ListOfShape
 ") NewEdges;
 		const TopTools_ListOfShape & NewEdges(const Standard_Integer I);
 
@@ -544,9 +674,13 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") RemoveChamfer;
 		%feature("autodoc", "Removes the chamfer chamfer already built on the face modified by this algorithm. this function returns the vertex connecting the two adjacent edges of chamfer and modifies the existing face. warning - the returned vertex is only valid if the status function returns chfi2d_isdone. - a null vertex is returned if the edge chamfer does not belong to the initial face.
 
-	:param Chamfer:
-	:type Chamfer: TopoDS_Edge
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+Chamfer: TopoDS_Edge
+
+Returns
+-------
+TopoDS_Vertex
 ") RemoveChamfer;
 		TopoDS_Vertex RemoveChamfer(const TopoDS_Edge & Chamfer);
 
@@ -554,15 +688,23 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") RemoveFillet;
 		%feature("autodoc", "Removes the fillet fillet already built on the face modified by this algorithm. this function returns the vertex connecting the two adjacent edges of fillet and modifies the existing face. warning - the returned vertex is only valid if the status function returns chfi2d_isdone. - a null vertex is returned if the edge fillet does not belong to the initial face.
 
-	:param Fillet:
-	:type Fillet: TopoDS_Edge
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+Fillet: TopoDS_Edge
+
+Returns
+-------
+TopoDS_Vertex
 ") RemoveFillet;
 		TopoDS_Vertex RemoveFillet(const TopoDS_Edge & Fillet);
 
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
-		%feature("autodoc", "	:rtype: ChFi2d_ConstructionError
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+ChFi2d_ConstructionError
 ") Status;
 		ChFi2d_ConstructionError Status();
 
@@ -584,11 +726,14 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Abscissa;
 		%feature("autodoc", "Returns the curvilinear abscissa of the vertex v on the contour of index ic in the internal data structure of this algorithm. warning returns -1. if: - ic is outside the bounds of the table of contours, or - v is not on the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:param V:
-	:type V: TopoDS_Vertex
-	:rtype: float
+Parameters
+----------
+IC: int
+V: TopoDS_Vertex
+
+Returns
+-------
+float
 ") Abscissa;
 		Standard_Real Abscissa(const Standard_Integer IC, const TopoDS_Vertex & V);
 
@@ -596,9 +741,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds edge e to the table of edges used by this algorithm to build chamfers, where the parameters of the chamfer must be set after the.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Add;
 		void Add(const TopoDS_Edge & E);
 
@@ -606,11 +755,14 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds edge e to the table of edges used by this algorithm to build chamfers, where the parameters of the chamfer are given by the distance dis (symmetric chamfer). the add function results in a contour being built by propagation from the edge e (i.e. the contour contains at least this edge). this contour is composed of edges of the shape which are tangential to one another and which delimit two series of tangential faces, with one series of faces being located on either side of the contour. warning nothing is done if edge e or the face f does not belong to the initial shape.
 
-	:param Dis:
-	:type Dis: float
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+Dis: float
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Add;
 		void Add(const Standard_Real Dis, const TopoDS_Edge & E);
 
@@ -618,15 +770,16 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds edge e to the table of edges used by this algorithm to build chamfers, where the parameters of the chamfer are given by the two distances dis1 and dis2; the face f identifies the side where dis1 is measured. the add function results in a contour being built by propagation from the edge e (i.e. the contour contains at least this edge). this contour is composed of edges of the shape which are tangential to one another and which delimit two series of tangential faces, with one series of faces being located on either side of the contour. warning nothing is done if edge e or the face f does not belong to the initial shape.
 
-	:param Dis1:
-	:type Dis1: float
-	:param Dis2:
-	:type Dis2: float
-	:param E:
-	:type E: TopoDS_Edge
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+Dis1: float
+Dis2: float
+E: TopoDS_Edge
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") Add;
 		void Add(const Standard_Real Dis1, const Standard_Real Dis2, const TopoDS_Edge & E, const TopoDS_Face & F);
 
@@ -634,15 +787,16 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") AddDA;
 		%feature("autodoc", "Adds a fillet contour in the builder (builds a contour of tangent edges to <e> and sets the distance <dis1> and angle <angle> ( parameters of the chamfer ) ).
 
-	:param Dis:
-	:type Dis: float
-	:param Angle:
-	:type Angle: float
-	:param E:
-	:type E: TopoDS_Edge
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+Dis: float
+Angle: float
+E: TopoDS_Edge
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") AddDA;
 		void AddDA(const Standard_Real Dis, const Standard_Real Angle, const TopoDS_Edge & E, const TopoDS_Face & F);
 
@@ -650,9 +804,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") BRepFilletAPI_MakeChamfer;
 		%feature("autodoc", "Initializes an algorithm for computing chamfers on the shape s. the edges on which chamfers are built are defined using the add function.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
 ") BRepFilletAPI_MakeChamfer;
 		 BRepFilletAPI_MakeChamfer(const TopoDS_Shape & S);
 
@@ -660,7 +818,9 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Builds the chamfers on all the contours in the internal data structure of this algorithm and constructs the resulting shape. use the function isdone to verify that the chamfered shape is built. use the function shape to retrieve the chamfered shape. warning the construction of chamfers implements highly complex construction algorithms. consequently, there may be instances where the algorithm fails, for example if the data defining the parameters of the chamfer is not compatible with the geometry of the initial shape. there is no initial analysis of errors and these only become evident at the construction stage. additionally, in the current software release, the following cases are not handled: - the end point of the contour is the point of intersection of 4 or more edges of the shape, or - the intersection of the chamfer with a face which limits the contour is not fully contained in this face.
 
-	:rtype: None
+Returns
+-------
+None
 ") Build;
 		virtual void Build();
 
@@ -668,7 +828,9 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Builder;
 		%feature("autodoc", "Returns the internal filleting algorithm.
 
-	:rtype: opencascade::handle<TopOpeBRepBuild_HBuilder>
+Returns
+-------
+opencascade::handle<TopOpeBRepBuild_HBuilder>
 ") Builder;
 		opencascade::handle<TopOpeBRepBuild_HBuilder> Builder();
 
@@ -676,9 +838,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Closed;
 		%feature("autodoc", "Returns true if the contour of index ic in the internal data structure of this algorithm is closed. warning returns false if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") Closed;
 		Standard_Boolean Closed(const Standard_Integer IC);
 
@@ -686,9 +852,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") ClosedAndTangent;
 		%feature("autodoc", "Eturns true if the contour of index ic in the internal data structure of this algorithm is closed and tangential at the point of closure. warning returns false if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") ClosedAndTangent;
 		Standard_Boolean ClosedAndTangent(const Standard_Integer IC);
 
@@ -696,9 +866,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Contour;
 		%feature("autodoc", "Returns the index of the contour in the internal data structure of this algorithm, which contains the edge e of the shape. this function returns 0 if the edge e does not belong to any contour. warning this index can change if a contour is removed from the internal data structure of this algorithm using the function remove.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: int
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+int
 ") Contour;
 		Standard_Integer Contour(const TopoDS_Edge & E);
 
@@ -706,13 +880,15 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Dists;
 		%feature("autodoc", "Returns the distances dis1 and dis2 which give the parameters of the chamfer along the contour of index ic in the internal data structure of this algorithm. warning -1. is returned if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:param Dis1:
-	:type Dis1: float
-	:param Dis2:
-	:type Dis2: float
-	:rtype: None
+Parameters
+----------
+IC: int
+Dis1: float
+Dis2: float
+
+Returns
+-------
+None
 ") Dists;
 		void Dists(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -720,11 +896,14 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Returns the edge of index j in the contour of index i in the internal data structure of this algorithm. warning returns a null shape if: - i is outside the bounds of the table of contours, or - j is outside the bounds of the table of edges of the contour of index i.
 
-	:param I:
-	:type I: int
-	:param J:
-	:type J: int
-	:rtype: TopoDS_Edge
+Parameters
+----------
+I: int
+J: int
+
+Returns
+-------
+TopoDS_Edge
 ") Edge;
 		const TopoDS_Edge Edge(const Standard_Integer I, const Standard_Integer J);
 
@@ -732,9 +911,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") FirstVertex;
 		%feature("autodoc", "Returns the first vertex of the contour of index ic in the internal data structure of this algorithm. warning returns a null shape if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+IC: int
+
+Returns
+-------
+TopoDS_Vertex
 ") FirstVertex;
 		TopoDS_Vertex FirstVertex(const Standard_Integer IC);
 
@@ -742,19 +925,28 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Generated;
 		%feature("autodoc", "Returns the list of shapes generated from the shape <eorv>.
 
-	:param EorV:
-	:type EorV: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+EorV: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") Generated;
 		virtual const TopTools_ListOfShape & Generated(const TopoDS_Shape & EorV);
 
 		/****************** GetDist ******************/
 		%feature("compactdefaultargs") GetDist;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:param Dis:
-	:type Dis: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+Dis: float
+
+Returns
+-------
+None
 ") GetDist;
 		void GetDist(const Standard_Integer IC, Standard_Real &OutValue);
 
@@ -762,21 +954,29 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") GetDistAngle;
 		%feature("autodoc", "Gives the distances <dis> and <angle> of the fillet contour of index <ic> in the ds.
 
-	:param IC:
-	:type IC: int
-	:param Dis:
-	:type Dis: float
-	:param Angle:
-	:type Angle: float
-	:rtype: None
+Parameters
+----------
+IC: int
+Dis: float
+Angle: float
+
+Returns
+-------
+None
 ") GetDistAngle;
 		void GetDistAngle(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue);
 
 		/****************** IsDeleted ******************/
 		%feature("compactdefaultargs") IsDeleted;
-		%feature("autodoc", "	:param F:
-	:type F: TopoDS_Shape
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsDeleted;
 		virtual Standard_Boolean IsDeleted(const TopoDS_Shape & F);
 
@@ -784,9 +984,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") IsDistanceAngle;
 		%feature("autodoc", "Return true if chamfer is made with distance and angle false else.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") IsDistanceAngle;
 		Standard_Boolean IsDistanceAngle(const Standard_Integer IC);
 
@@ -794,9 +998,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") IsSymetric;
 		%feature("autodoc", "Return true if chamfer symetric false else.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") IsSymetric;
 		Standard_Boolean IsSymetric(const Standard_Integer IC);
 
@@ -804,9 +1012,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") IsTwoDistances;
 		%feature("autodoc", "Return true if chamfer is made with two distances false else.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") IsTwoDistances;
 		Standard_Boolean IsTwoDistances(const Standard_Integer IC);
 
@@ -814,9 +1026,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") LastVertex;
 		%feature("autodoc", "Returns the last vertex of the contour of index ic in the internal data structure of this algorithm. warning returns a null shape if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+IC: int
+
+Returns
+-------
+TopoDS_Vertex
 ") LastVertex;
 		TopoDS_Vertex LastVertex(const Standard_Integer IC);
 
@@ -824,9 +1040,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Returns the length of the contour of index ic in the internal data structure of this algorithm. warning returns -1. if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:rtype: float
+Parameters
+----------
+IC: int
+
+Returns
+-------
+float
 ") Length;
 		Standard_Real Length(const Standard_Integer IC);
 
@@ -834,9 +1054,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Modified;
 		%feature("autodoc", "Returns the list of shapes modified from the shape <f>.
 
-	:param F:
-	:type F: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+F: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") Modified;
 		virtual const TopTools_ListOfShape & Modified(const TopoDS_Shape & F);
 
@@ -844,7 +1068,9 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") NbContours;
 		%feature("autodoc", "Returns the number of contours generated using the add function in the internal data structure of this algorithm.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbContours;
 		Standard_Integer NbContours();
 
@@ -852,17 +1078,27 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") NbEdges;
 		%feature("autodoc", "Returns the number of edges in the contour of index i in the internal data structure of this algorithm. warning returns 0 if i is outside the bounds of the table of contours.
 
-	:param I:
-	:type I: int
-	:rtype: int
+Parameters
+----------
+I: int
+
+Returns
+-------
+int
 ") NbEdges;
 		Standard_Integer NbEdges(const Standard_Integer I);
 
 		/****************** NbSurf ******************/
 		%feature("compactdefaultargs") NbSurf;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+
+Returns
+-------
+int
 ") NbSurf;
 		Standard_Integer NbSurf(const Standard_Integer IC);
 
@@ -870,11 +1106,14 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") RelativeAbscissa;
 		%feature("autodoc", "Returns the relative curvilinear abscissa (i.e. between 0 and 1) of the vertex v on the contour of index ic in the internal data structure of this algorithm. warning returns -1. if: - ic is outside the bounds of the table of contours, or - v is not on the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:param V:
-	:type V: TopoDS_Vertex
-	:rtype: float
+Parameters
+----------
+IC: int
+V: TopoDS_Vertex
+
+Returns
+-------
+float
 ") RelativeAbscissa;
 		Standard_Real RelativeAbscissa(const Standard_Integer IC, const TopoDS_Vertex & V);
 
@@ -882,9 +1121,13 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Removes the contour in the internal data structure of this algorithm which contains the edge e of the shape. warning nothing is done if the edge e does not belong to the contour in the internal data structure of this algorithm.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Remove;
 		void Remove(const TopoDS_Edge & E);
 
@@ -892,7 +1135,9 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Reinitializes this algorithm, thus canceling the effects of the build function. this function allows modifications to be made to the contours and chamfer parameters in order to rebuild the shape.
 
-	:rtype: None
+Returns
+-------
+None
 ") Reset;
 		void Reset();
 
@@ -900,19 +1145,28 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") ResetContour;
 		%feature("autodoc", "Erases the chamfer parameters on the contour of index ic in the internal data structure of this algorithm. use the setdists function to reset this data. warning nothing is done if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:rtype: None
+Parameters
+----------
+IC: int
+
+Returns
+-------
+None
 ") ResetContour;
 		void ResetContour(const Standard_Integer IC);
 
 		/****************** Sect ******************/
 		%feature("compactdefaultargs") Sect;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:param IS:
-	:type IS: int
-	:rtype: opencascade::handle<ChFiDS_SecHArray1>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+IS: int
+
+Returns
+-------
+opencascade::handle<ChFiDS_SecHArray1>
 ") Sect;
 		opencascade::handle<ChFiDS_SecHArray1> Sect(const Standard_Integer IC, const Standard_Integer IS);
 
@@ -920,13 +1174,15 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") SetDist;
 		%feature("autodoc", "Sets the distances dis1 and dis2 which give the parameters of the chamfer along the contour of index ic generated using the add function in the internal data structure of this algorithm. the face f identifies the side where dis1 is measured. warning nothing is done if either the edge e or the face f does not belong to the initial shape.
 
-	:param Dis:
-	:type Dis: float
-	:param IC:
-	:type IC: int
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+Dis: float
+IC: int
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") SetDist;
 		void SetDist(const Standard_Real Dis, const Standard_Integer IC, const TopoDS_Face & F);
 
@@ -934,15 +1190,16 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") SetDistAngle;
 		%feature("autodoc", "Set the distance <dis> and <angle> of the fillet contour of index <ic> in the ds with <dis> on <f>. if the face <f> is not one of common faces of an edge of the contour <ic>.
 
-	:param Dis:
-	:type Dis: float
-	:param Angle:
-	:type Angle: float
-	:param IC:
-	:type IC: int
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+Dis: float
+Angle: float
+IC: int
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") SetDistAngle;
 		void SetDistAngle(const Standard_Real Dis, const Standard_Real Angle, const Standard_Integer IC, const TopoDS_Face & F);
 
@@ -950,15 +1207,16 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") SetDists;
 		%feature("autodoc", "Sets the distances dis1 and dis2 which give the parameters of the chamfer along the contour of index ic generated using the add function in the internal data structure of this algorithm. the face f identifies the side where dis1 is measured. warning nothing is done if either the edge e or the face f does not belong to the initial shape.
 
-	:param Dis1:
-	:type Dis1: float
-	:param Dis2:
-	:type Dis2: float
-	:param IC:
-	:type IC: int
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+Dis1: float
+Dis2: float
+IC: int
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") SetDists;
 		void SetDists(const Standard_Real Dis1, const Standard_Real Dis2, const Standard_Integer IC, const TopoDS_Face & F);
 
@@ -966,17 +1224,27 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") SetMode;
 		%feature("autodoc", "Sets the mode of chamfer.
 
-	:param theMode:
-	:type theMode: ChFiDS_ChamfMode
-	:rtype: None
+Parameters
+----------
+theMode: ChFiDS_ChamfMode
+
+Returns
+-------
+None
 ") SetMode;
 		void SetMode(const ChFiDS_ChamfMode theMode);
 
 		/****************** Simulate ******************/
 		%feature("compactdefaultargs") Simulate;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+
+Returns
+-------
+None
 ") Simulate;
 		void Simulate(const Standard_Integer IC);
 
@@ -998,11 +1266,14 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Abscissa;
 		%feature("autodoc", "Returns the curvilinear abscissa of the vertex v on the contour of index ic in the internal data structure of this algorithm. warning returns -1. if: - ic is outside the bounds of the table of contours, or - v is not on the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:param V:
-	:type V: TopoDS_Vertex
-	:rtype: float
+Parameters
+----------
+IC: int
+V: TopoDS_Vertex
+
+Returns
+-------
+float
 ") Abscissa;
 		Standard_Real Abscissa(const Standard_Integer IC, const TopoDS_Vertex & V);
 
@@ -1010,9 +1281,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a fillet contour in the builder (builds a contour of tangent edges). the radius must be set after.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Add;
 		void Add(const TopoDS_Edge & E);
 
@@ -1020,11 +1295,14 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a fillet description in the builder - builds a contour of tangent edges, - sets the radius.
 
-	:param Radius:
-	:type Radius: float
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+Radius: float
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Add;
 		void Add(const Standard_Real Radius, const TopoDS_Edge & E);
 
@@ -1032,13 +1310,15 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a fillet description in the builder - builds a contour of tangent edges, - sets a linear radius evolution law between the first and last vertex of the spine.
 
-	:param R1:
-	:type R1: float
-	:param R2:
-	:type R2: float
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+R1: float
+R2: float
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Add;
 		void Add(const Standard_Real R1, const Standard_Real R2, const TopoDS_Edge & E);
 
@@ -1046,11 +1326,14 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a fillet description in the builder - builds a contour of tangent edges, - sest the radius evolution law.
 
-	:param L:
-	:type L: Law_Function
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+L: Law_Function
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Add;
 		void Add(const opencascade::handle<Law_Function> & L, const TopoDS_Edge & E);
 
@@ -1058,11 +1341,14 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a fillet description in the builder - builds a contour of tangent edges, - sets the radius evolution law interpolating the values given in the array uandr : //! p2d.x() = relative parameter on the spine [0,1] p2d.y() = value of the radius.
 
-	:param UandR:
-	:type UandR: TColgp_Array1OfPnt2d
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+UandR: TColgp_Array1OfPnt2d
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Add;
 		void Add(const TColgp_Array1OfPnt2d & UandR, const TopoDS_Edge & E);
 
@@ -1070,11 +1356,15 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") BRepFilletAPI_MakeFillet;
 		%feature("autodoc", "Initializes the computation of the fillets. <fshape> sets the type of fillet surface. the default value is chfi3d_rational (classical nurbs representation of circles). chfi3d_quasiangular corresponds to a nurbs representation of circles which parameterisation matches the circle one. chfi3d_polynomial corresponds to a polynomial representation of circles.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param FShape: default value is ChFi3d_Rational
-	:type FShape: ChFi3d_FilletShape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+FShape: ChFi3d_FilletShape,optional
+	default value is ChFi3d_Rational
+
+Returns
+-------
+None
 ") BRepFilletAPI_MakeFillet;
 		 BRepFilletAPI_MakeFillet(const TopoDS_Shape & S, const ChFi3d_FilletShape FShape = ChFi3d_Rational);
 
@@ -1082,7 +1372,9 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") BadShape;
 		%feature("autodoc", "If (hasresult()) returns the partial result.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") BadShape;
 		TopoDS_Shape BadShape();
 
@@ -1090,7 +1382,9 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Builds the fillets on all the contours in the internal data structure of this algorithm and constructs the resulting shape. use the function isdone to verify that the filleted shape is built. use the function shape to retrieve the filleted shape. warning the construction of fillets implements highly complex construction algorithms. consequently, there may be instances where the algorithm fails, for example if the data defining the radius of the fillet is not compatible with the geometry of the initial shape. there is no initial analysis of errors and they only become evident at the construction stage. additionally, in the current software release, the following cases are not handled: - the end point of the contour is the point of intersection of 4 or more edges of the shape, or - the intersection of the fillet with a face which limits the contour is not fully contained in this face.
 
-	:rtype: None
+Returns
+-------
+None
 ") Build;
 		virtual void Build();
 
@@ -1098,7 +1392,9 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Builder;
 		%feature("autodoc", "Returns the internal topology building algorithm.
 
-	:rtype: opencascade::handle<TopOpeBRepBuild_HBuilder>
+Returns
+-------
+opencascade::handle<TopOpeBRepBuild_HBuilder>
 ") Builder;
 		opencascade::handle<TopOpeBRepBuild_HBuilder> Builder();
 
@@ -1106,9 +1402,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Closed;
 		%feature("autodoc", "Returns true if the contour of index ic in the internal data structure of this algorithm is closed. warning returns false if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") Closed;
 		Standard_Boolean Closed(const Standard_Integer IC);
 
@@ -1116,9 +1416,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") ClosedAndTangent;
 		%feature("autodoc", "Returns true if the contour of index ic in the internal data structure of this algorithm is closed and tangential at the point of closure. warning returns false if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") ClosedAndTangent;
 		Standard_Boolean ClosedAndTangent(const Standard_Integer IC);
 
@@ -1126,11 +1430,14 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") ComputedSurface;
 		%feature("autodoc", "Returns the surface number is concerning the contour ic.
 
-	:param IC:
-	:type IC: int
-	:param IS:
-	:type IS: int
-	:rtype: opencascade::handle<Geom_Surface>
+Parameters
+----------
+IC: int
+IS: int
+
+Returns
+-------
+opencascade::handle<Geom_Surface>
 ") ComputedSurface;
 		opencascade::handle<Geom_Surface> ComputedSurface(const Standard_Integer IC, const Standard_Integer IS);
 
@@ -1138,9 +1445,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Contour;
 		%feature("autodoc", "Returns the index of the contour in the internal data structure of this algorithm which contains the edge e of the shape. this function returns 0 if the edge e does not belong to any contour. warning this index can change if a contour is removed from the internal data structure of this algorithm using the function remove.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: int
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+int
 ") Contour;
 		Standard_Integer Contour(const TopoDS_Edge & E);
 
@@ -1148,11 +1459,14 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Returns the edge of index j in the contour of index i in the internal data structure of this algorithm. warning returns a null shape if: - i is outside the bounds of the table of contours, or - j is outside the bounds of the table of edges of the index i contour.
 
-	:param I:
-	:type I: int
-	:param J:
-	:type J: int
-	:rtype: TopoDS_Edge
+Parameters
+----------
+I: int
+J: int
+
+Returns
+-------
+TopoDS_Edge
 ") Edge;
 		const TopoDS_Edge Edge(const Standard_Integer I, const Standard_Integer J);
 
@@ -1160,9 +1474,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") FaultyContour;
 		%feature("autodoc", "For each i in [1.. nbfaultycontours] returns the index ic of the contour where the computation of the fillet failed. the method nbedges(ic) gives the number of edges in the contour ic the method edge(ic,ie) gives the edge number ie of the contour ic.
 
-	:param I:
-	:type I: int
-	:rtype: int
+Parameters
+----------
+I: int
+
+Returns
+-------
+int
 ") FaultyContour;
 		Standard_Integer FaultyContour(const Standard_Integer I);
 
@@ -1170,9 +1488,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") FaultyVertex;
 		%feature("autodoc", "Returns the vertex where the computation failed.
 
-	:param IV:
-	:type IV: int
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+IV: int
+
+Returns
+-------
+TopoDS_Vertex
 ") FaultyVertex;
 		TopoDS_Vertex FaultyVertex(const Standard_Integer IV);
 
@@ -1180,9 +1502,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") FirstVertex;
 		%feature("autodoc", "Returns the first vertex of the contour of index ic in the internal data structure of this algorithm. warning returns a null shape if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+IC: int
+
+Returns
+-------
+TopoDS_Vertex
 ") FirstVertex;
 		TopoDS_Vertex FirstVertex(const Standard_Integer IC);
 
@@ -1190,23 +1516,30 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Generated;
 		%feature("autodoc", "Returns the list of shapes generated from the shape <eorv>.
 
-	:param EorV:
-	:type EorV: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+EorV: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") Generated;
 		virtual const TopTools_ListOfShape & Generated(const TopoDS_Shape & EorV);
 
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:param F:
-	:type F: float
-	:param L:
-	:type L: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+E: TopoDS_Edge
+F: float
+L: float
+
+Returns
+-------
+bool
 ") GetBounds;
 		Standard_Boolean GetBounds(const Standard_Integer IC, const TopoDS_Edge & E, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1214,17 +1547,24 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") GetFilletShape;
 		%feature("autodoc", "Returns the type of fillet shape built by this algorithm.
 
-	:rtype: ChFi3d_FilletShape
+Returns
+-------
+ChFi3d_FilletShape
 ") GetFilletShape;
 		ChFi3d_FilletShape GetFilletShape();
 
 		/****************** GetLaw ******************/
 		%feature("compactdefaultargs") GetLaw;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: opencascade::handle<Law_Function>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+E: TopoDS_Edge
+
+Returns
+-------
+opencascade::handle<Law_Function>
 ") GetLaw;
 		opencascade::handle<Law_Function> GetLaw(const Standard_Integer IC, const TopoDS_Edge & E);
 
@@ -1232,7 +1572,9 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") HasResult;
 		%feature("autodoc", "Returns true if a part of the result has been computed if the filling in a corner failed a shape with a hole is returned.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasResult;
 		Standard_Boolean HasResult();
 
@@ -1240,9 +1582,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") IsConstant;
 		%feature("autodoc", "Returns true if the radius of the fillet along the contour of index ic in the internal data structure of this algorithm is constant, warning false is returned if ic is outside the bounds of the table of contours or if e does not belong to the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") IsConstant;
 		Standard_Boolean IsConstant(const Standard_Integer IC);
 
@@ -1250,19 +1596,28 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") IsConstant;
 		%feature("autodoc", "Returns true if the radius of the fillet along the edge e of the contour of index ic in the internal data structure of this algorithm is constant. warning false is returned if ic is outside the bounds of the table of contours or if e does not belong to the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: bool
+Parameters
+----------
+IC: int
+E: TopoDS_Edge
+
+Returns
+-------
+bool
 ") IsConstant;
 		Standard_Boolean IsConstant(const Standard_Integer IC, const TopoDS_Edge & E);
 
 		/****************** IsDeleted ******************/
 		%feature("compactdefaultargs") IsDeleted;
-		%feature("autodoc", "	:param F:
-	:type F: TopoDS_Shape
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsDeleted;
 		virtual Standard_Boolean IsDeleted(const TopoDS_Shape & F);
 
@@ -1270,9 +1625,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") LastVertex;
 		%feature("autodoc", "Returns the last vertex of the contour of index ic in the internal data structure of this algorithm. warning returns a null shape if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+IC: int
+
+Returns
+-------
+TopoDS_Vertex
 ") LastVertex;
 		TopoDS_Vertex LastVertex(const Standard_Integer IC);
 
@@ -1280,9 +1639,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Returns the length of the contour of index ic in the internal data structure of this algorithm. warning returns -1. if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:rtype: float
+Parameters
+----------
+IC: int
+
+Returns
+-------
+float
 ") Length;
 		Standard_Real Length(const Standard_Integer IC);
 
@@ -1290,9 +1653,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Modified;
 		%feature("autodoc", "Returns the list of shapes modified from the shape <f>.
 
-	:param F:
-	:type F: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+F: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") Modified;
 		virtual const TopTools_ListOfShape & Modified(const TopoDS_Shape & F);
 
@@ -1300,9 +1667,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") NbComputedSurfaces;
 		%feature("autodoc", "Returns the number of surfaces which have been computed on the contour ic.
 
-	:param IC:
-	:type IC: int
-	:rtype: int
+Parameters
+----------
+IC: int
+
+Returns
+-------
+int
 ") NbComputedSurfaces;
 		Standard_Integer NbComputedSurfaces(const Standard_Integer IC);
 
@@ -1310,7 +1681,9 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") NbContours;
 		%feature("autodoc", "Returns the number of contours generated using the add function in the internal data structure of this algorithm.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbContours;
 		Standard_Integer NbContours();
 
@@ -1318,9 +1691,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") NbEdges;
 		%feature("autodoc", "Returns the number of edges in the contour of index i in the internal data structure of this algorithm. warning returns 0 if i is outside the bounds of the table of contours.
 
-	:param I:
-	:type I: int
-	:rtype: int
+Parameters
+----------
+I: int
+
+Returns
+-------
+int
 ") NbEdges;
 		Standard_Integer NbEdges(const Standard_Integer I);
 
@@ -1328,7 +1705,9 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") NbFaultyContours;
 		%feature("autodoc", "Returns the number of contours where the computation of the fillet failed.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbFaultyContours;
 		Standard_Integer NbFaultyContours();
 
@@ -1336,15 +1715,23 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") NbFaultyVertices;
 		%feature("autodoc", "Returns the number of vertices where the computation failed.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbFaultyVertices;
 		Standard_Integer NbFaultyVertices();
 
 		/****************** NbSurf ******************/
 		%feature("compactdefaultargs") NbSurf;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+
+Returns
+-------
+int
 ") NbSurf;
 		Standard_Integer NbSurf(const Standard_Integer IC);
 
@@ -1352,7 +1739,9 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") NbSurfaces;
 		%feature("autodoc", "Returns the number of surfaces after the shape creation.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbSurfaces;
 		Standard_Integer NbSurfaces();
 
@@ -1360,9 +1749,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") NewFaces;
 		%feature("autodoc", "Return the faces created for surface <i>.
 
-	:param I:
-	:type I: int
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+I: int
+
+Returns
+-------
+TopTools_ListOfShape
 ") NewFaces;
 		const TopTools_ListOfShape & NewFaces(const Standard_Integer I);
 
@@ -1370,9 +1763,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Radius;
 		%feature("autodoc", "Returns the radius of the fillet along the contour of index ic in the internal data structure of this algorithm warning - use this function only if the radius is constant. - -1. is returned if ic is outside the bounds of the table of contours or if e does not belong to the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:rtype: float
+Parameters
+----------
+IC: int
+
+Returns
+-------
+float
 ") Radius;
 		Standard_Real Radius(const Standard_Integer IC);
 
@@ -1380,11 +1777,14 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Radius;
 		%feature("autodoc", "Returns the radius of the fillet along the edge e of the contour of index ic in the internal data structure of this algorithm. warning - use this function only if the radius is constant. - -1 is returned if ic is outside the bounds of the table of contours or if e does not belong to the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: float
+Parameters
+----------
+IC: int
+E: TopoDS_Edge
+
+Returns
+-------
+float
 ") Radius;
 		Standard_Real Radius(const Standard_Integer IC, const TopoDS_Edge & E);
 
@@ -1392,11 +1792,14 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") RelativeAbscissa;
 		%feature("autodoc", "Returns the relative curvilinear abscissa (i.e. between 0 and 1) of the vertex v on the contour of index ic in the internal data structure of this algorithm. warning returns -1. if: - ic is outside the bounds of the table of contours, or - v is not on the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:param V:
-	:type V: TopoDS_Vertex
-	:rtype: float
+Parameters
+----------
+IC: int
+V: TopoDS_Vertex
+
+Returns
+-------
+float
 ") RelativeAbscissa;
 		Standard_Real RelativeAbscissa(const Standard_Integer IC, const TopoDS_Vertex & V);
 
@@ -1404,9 +1807,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Removes the contour in the internal data structure of this algorithm which contains the edge e of the shape. warning nothing is done if the edge e does not belong to the contour in the internal data structure of this algorithm.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Remove;
 		void Remove(const TopoDS_Edge & E);
 
@@ -1414,7 +1821,9 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Reinitializes this algorithm, thus canceling the effects of the build function. this function allows modifications to be made to the contours and fillet parameters in order to rebuild the shape.
 
-	:rtype: None
+Returns
+-------
+None
 ") Reset;
 		void Reset();
 
@@ -1422,19 +1831,28 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") ResetContour;
 		%feature("autodoc", "Erases the radius information on the contour of index ic in the internal data structure of this algorithm. use the setradius function to reset this data. warning nothing is done if ic is outside the bounds of the table of contours.
 
-	:param IC:
-	:type IC: int
-	:rtype: None
+Parameters
+----------
+IC: int
+
+Returns
+-------
+None
 ") ResetContour;
 		void ResetContour(const Standard_Integer IC);
 
 		/****************** Sect ******************/
 		%feature("compactdefaultargs") Sect;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:param IS:
-	:type IS: int
-	:rtype: opencascade::handle<ChFiDS_SecHArray1>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+IS: int
+
+Returns
+-------
+opencascade::handle<ChFiDS_SecHArray1>
 ") Sect;
 		opencascade::handle<ChFiDS_SecHArray1> Sect(const Standard_Integer IC, const Standard_Integer IS);
 
@@ -1442,11 +1860,14 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") SetContinuity;
 		%feature("autodoc", "Changes the parameters of continiuity internalcontinuity to produce fillet'surfaces with an continuity ci (i=0,1 or 2). by defaultinternalcontinuity = geomabs_c1. angulartolerance is the g1 tolerance between fillet and support'faces.
 
-	:param InternalContinuity:
-	:type InternalContinuity: GeomAbs_Shape
-	:param AngularTolerance:
-	:type AngularTolerance: float
-	:rtype: None
+Parameters
+----------
+InternalContinuity: GeomAbs_Shape
+AngularTolerance: float
+
+Returns
+-------
+None
 ") SetContinuity;
 		void SetContinuity(const GeomAbs_Shape InternalContinuity, const Standard_Real AngularTolerance);
 
@@ -1454,39 +1875,48 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") SetFilletShape;
 		%feature("autodoc", "Assigns fshape as the type of fillet shape built by this algorithm.
 
-	:param FShape:
-	:type FShape: ChFi3d_FilletShape
-	:rtype: None
+Parameters
+----------
+FShape: ChFi3d_FilletShape
+
+Returns
+-------
+None
 ") SetFilletShape;
 		void SetFilletShape(const ChFi3d_FilletShape FShape);
 
 		/****************** SetLaw ******************/
 		%feature("compactdefaultargs") SetLaw;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:param L:
-	:type L: Law_Function
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+E: TopoDS_Edge
+L: Law_Function
+
+Returns
+-------
+None
 ") SetLaw;
 		void SetLaw(const Standard_Integer IC, const TopoDS_Edge & E, const opencascade::handle<Law_Function> & L);
 
 		/****************** SetParams ******************/
 		%feature("compactdefaultargs") SetParams;
-		%feature("autodoc", "	:param Tang:
-	:type Tang: float
-	:param Tesp:
-	:type Tesp: float
-	:param T2d:
-	:type T2d: float
-	:param TApp3d:
-	:type TApp3d: float
-	:param TolApp2d:
-	:type TolApp2d: float
-	:param Fleche:
-	:type Fleche: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tang: float
+Tesp: float
+T2d: float
+TApp3d: float
+TolApp2d: float
+Fleche: float
+
+Returns
+-------
+None
 ") SetParams;
 		void SetParams(const Standard_Real Tang, const Standard_Real Tesp, const Standard_Real T2d, const Standard_Real TApp3d, const Standard_Real TolApp2d, const Standard_Real Fleche);
 
@@ -1494,13 +1924,15 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") SetRadius;
 		%feature("autodoc", "Sets the parameters of the fillet along the contour of index ic generated using the add function in the internal data structure of this algorithm, where radius is the radius of the fillet.
 
-	:param Radius:
-	:type Radius: float
-	:param IC:
-	:type IC: int
-	:param IinC:
-	:type IinC: int
-	:rtype: None
+Parameters
+----------
+Radius: float
+IC: int
+IinC: int
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const Standard_Integer IinC);
 
@@ -1508,15 +1940,16 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") SetRadius;
 		%feature("autodoc", "Sets the parameters of the fillet along the contour of index ic generated using the add function in the internal data structure of this algorithm, where the radius of the fillet evolves according to a linear evolution law defined from r1 to r2, between the first and last vertices of the contour of index ic.
 
-	:param R1:
-	:type R1: float
-	:param R2:
-	:type R2: float
-	:param IC:
-	:type IC: int
-	:param IinC:
-	:type IinC: int
-	:rtype: None
+Parameters
+----------
+R1: float
+R2: float
+IC: int
+IinC: int
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const Standard_Real R1, const Standard_Real R2, const Standard_Integer IC, const Standard_Integer IinC);
 
@@ -1524,13 +1957,15 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") SetRadius;
 		%feature("autodoc", "Sets the parameters of the fillet along the contour of index ic generated using the add function in the internal data structure of this algorithm, where the radius of the fillet evolves according to the evolution law l, between the first and last vertices of the contour of index ic.
 
-	:param L:
-	:type L: Law_Function
-	:param IC:
-	:type IC: int
-	:param IinC:
-	:type IinC: int
-	:rtype: None
+Parameters
+----------
+L: Law_Function
+IC: int
+IinC: int
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const opencascade::handle<Law_Function> & L, const Standard_Integer IC, const Standard_Integer IinC);
 
@@ -1538,13 +1973,15 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") SetRadius;
 		%feature("autodoc", "Sets the parameters of the fillet along the contour of index ic generated using the add function in the internal data structure of this algorithm, where the radius of the fillet evolves according to the evolution law which interpolates the set of parameter and radius pairs given in the array uandr as follows: - the x coordinate of a point in uandr defines a relative parameter on the contour (i.e. a parameter between 0 and 1), - the y coordinate of a point in uandr gives the corresponding value of the radius, and the radius evolves between the first and last vertices of the contour of index ic.
 
-	:param UandR:
-	:type UandR: TColgp_Array1OfPnt2d
-	:param IC:
-	:type IC: int
-	:param IinC:
-	:type IinC: int
-	:rtype: None
+Parameters
+----------
+UandR: TColgp_Array1OfPnt2d
+IC: int
+IinC: int
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const TColgp_Array1OfPnt2d & UandR, const Standard_Integer IC, const Standard_Integer IinC);
 
@@ -1552,33 +1989,45 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") SetRadius;
 		%feature("autodoc", "Assigns radius as the radius of the fillet on the edge e.
 
-	:param Radius:
-	:type Radius: float
-	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+Radius: float
+IC: int
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Edge & E);
 
 		/****************** SetRadius ******************/
 		%feature("compactdefaultargs") SetRadius;
-		%feature("autodoc", "	:param Radius:
-	:type Radius: float
-	:param IC:
-	:type IC: int
-	:param V:
-	:type V: TopoDS_Vertex
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Radius: float
+IC: int
+V: TopoDS_Vertex
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Vertex & V);
 
 		/****************** Simulate ******************/
 		%feature("compactdefaultargs") Simulate;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+
+Returns
+-------
+None
 ") Simulate;
 		void Simulate(const Standard_Integer IC);
 
@@ -1586,9 +2035,13 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		%feature("compactdefaultargs") StripeStatus;
 		%feature("autodoc", "Returns the status concerning the contour ic in case of error chfids_ok : the computation is ok chfids_startsolfailure : the computation can't start, perhaps the the radius is too big chfids_twistedsurface : the computation failed because of a twisted surface chfids_walkingfailure : there is a problem in the walking chfids_error: other error different from above.
 
-	:param IC:
-	:type IC: int
-	:rtype: ChFiDS_ErrorStatus
+Parameters
+----------
+IC: int
+
+Returns
+-------
+ChFiDS_ErrorStatus
 ") StripeStatus;
 		ChFiDS_ErrorStatus StripeStatus(const Standard_Integer IC);
 

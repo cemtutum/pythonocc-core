@@ -76,13 +76,17 @@ class Hermit {
 		%feature("compactdefaultargs") Solution;
 		%feature("autodoc", "Returns the correct spline a(u) which will be multiplicated with bs later.
 
-	:param BS:
-	:type BS: Geom_BSplineCurve
-	:param TolPoles: default value is 0.000001
-	:type TolPoles: float
-	:param TolKnots: default value is 0.000001
-	:type TolKnots: float
-	:rtype: opencascade::handle<Geom2d_BSplineCurve>
+Parameters
+----------
+BS: Geom_BSplineCurve
+TolPoles: float,optional
+	default value is 0.000001
+TolKnots: float,optional
+	default value is 0.000001
+
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
 ") Solution;
 		static opencascade::handle<Geom2d_BSplineCurve> Solution(const opencascade::handle<Geom_BSplineCurve> & BS, const Standard_Real TolPoles = 0.000001, const Standard_Real TolKnots = 0.000001);
 
@@ -90,13 +94,17 @@ class Hermit {
 		%feature("compactdefaultargs") Solution;
 		%feature("autodoc", "Returns the correct spline a(u) which will be multiplicated with bs later.
 
-	:param BS:
-	:type BS: Geom2d_BSplineCurve
-	:param TolPoles: default value is 0.000001
-	:type TolPoles: float
-	:param TolKnots: default value is 0.000001
-	:type TolKnots: float
-	:rtype: opencascade::handle<Geom2d_BSplineCurve>
+Parameters
+----------
+BS: Geom2d_BSplineCurve
+TolPoles: float,optional
+	default value is 0.000001
+TolKnots: float,optional
+	default value is 0.000001
+
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
 ") Solution;
 		static opencascade::handle<Geom2d_BSplineCurve> Solution(const opencascade::handle<Geom2d_BSplineCurve> & BS, const Standard_Real TolPoles = 0.000001, const Standard_Real TolKnots = 0.000001);
 
@@ -104,17 +112,19 @@ class Hermit {
 		%feature("compactdefaultargs") Solutionbis;
 		%feature("autodoc", "Returns the knots to insert to a(u) to stay with a constant sign and in the tolerances.
 
-	:param BS:
-	:type BS: Geom_BSplineCurve
-	:param Knotmin:
-	:type Knotmin: float
-	:param Knotmax:
-	:type Knotmax: float
-	:param TolPoles: default value is 0.000001
-	:type TolPoles: float
-	:param TolKnots: default value is 0.000001
-	:type TolKnots: float
-	:rtype: None
+Parameters
+----------
+BS: Geom_BSplineCurve
+Knotmin: float
+Knotmax: float
+TolPoles: float,optional
+	default value is 0.000001
+TolKnots: float,optional
+	default value is 0.000001
+
+Returns
+-------
+None
 ") Solutionbis;
 		static void Solutionbis(const opencascade::handle<Geom_BSplineCurve> & BS, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real TolPoles = 0.000001, const Standard_Real TolKnots = 0.000001);
 

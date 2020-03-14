@@ -134,9 +134,13 @@ class TFunction_Driver : public Standard_Transient {
 		%feature("compactdefaultargs") Arguments;
 		%feature("autodoc", "The method fills-in the list by labels, where the arguments of the function are located.
 
-	:param args:
-	:type args: TDF_LabelList
-	:rtype: None
+Parameters
+----------
+args: TDF_LabelList
+
+Returns
+-------
+None
 ") Arguments;
 		virtual void Arguments(TDF_LabelList & args);
 
@@ -144,9 +148,13 @@ class TFunction_Driver : public Standard_Transient {
 		%feature("compactdefaultargs") Execute;
 		%feature("autodoc", "Executes the function in this function driver and puts the impacted labels in the logbook log. arguments & results of functions ================================.
 
-	:param log:
-	:type log: TFunction_Logbook
-	:rtype: int
+Parameters
+----------
+log: TFunction_Logbook
+
+Returns
+-------
+int
 ") Execute;
 		virtual Standard_Integer Execute(opencascade::handle<TFunction_Logbook> & log);
 
@@ -154,9 +162,13 @@ class TFunction_Driver : public Standard_Transient {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initializes the label l for this function prior to its execution.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: None
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TDF_Label & L);
 
@@ -164,7 +176,9 @@ class TFunction_Driver : public Standard_Transient {
 		%feature("compactdefaultargs") Label;
 		%feature("autodoc", "Returns the label of the driver for this function.
 
-	:rtype: TDF_Label
+Returns
+-------
+TDF_Label
 ") Label;
 		TDF_Label Label();
 
@@ -172,9 +186,13 @@ class TFunction_Driver : public Standard_Transient {
 		%feature("compactdefaultargs") MustExecute;
 		%feature("autodoc", "Analyzes the labels in the logbook log. returns true if attributes have been modified. if the function label itself has been modified, the function must be executed.
 
-	:param log:
-	:type log: TFunction_Logbook
-	:rtype: bool
+Parameters
+----------
+log: TFunction_Logbook
+
+Returns
+-------
+bool
 ") MustExecute;
 		virtual Standard_Boolean MustExecute(const opencascade::handle<TFunction_Logbook> & log);
 
@@ -182,9 +200,13 @@ class TFunction_Driver : public Standard_Transient {
 		%feature("compactdefaultargs") Results;
 		%feature("autodoc", "The method fills-in the list by labels, where the results of the function are located.
 
-	:param res:
-	:type res: TDF_LabelList
-	:rtype: None
+Parameters
+----------
+res: TDF_LabelList
+
+Returns
+-------
+None
 ") Results;
 		virtual void Results(TDF_LabelList & res);
 
@@ -192,9 +214,13 @@ class TFunction_Driver : public Standard_Transient {
 		%feature("compactdefaultargs") Validate;
 		%feature("autodoc", "Validates labels of a function in <log>. this function is the one initialized in this function driver. warning in regeneration mode, the solver must call this method even if the function is not executed. execution of function =====================.
 
-	:param log:
-	:type log: TFunction_Logbook
-	:rtype: None
+Parameters
+----------
+log: TFunction_Logbook
+
+Returns
+-------
+None
 ") Validate;
 		virtual void Validate(opencascade::handle<TFunction_Logbook> & log);
 
@@ -218,13 +244,16 @@ class TFunction_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") AddDriver;
 		%feature("autodoc", "Returns true if the driver has been added successfully to the driver table.
 
-	:param guid:
-	:type guid: Standard_GUID
-	:param driver:
-	:type driver: TFunction_Driver
-	:param thread: default value is 0
-	:type thread: int
-	:rtype: bool
+Parameters
+----------
+guid: Standard_GUID
+driver: TFunction_Driver
+thread: int,optional
+	default value is 0
+
+Returns
+-------
+bool
 ") AddDriver;
 		Standard_Boolean AddDriver(const Standard_GUID & guid, const opencascade::handle<TFunction_Driver> & driver, const Standard_Integer thread = 0);
 
@@ -232,7 +261,9 @@ class TFunction_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Removes all drivers. returns true if the driver has been removed successfully.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -248,13 +279,16 @@ class TFunction_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") FindDriver;
 		%feature("autodoc", "Returns true if the driver was found.
 
-	:param guid:
-	:type guid: Standard_GUID
-	:param driver:
-	:type driver: TFunction_Driver
-	:param thread: default value is 0
-	:type thread: int
-	:rtype: bool
+Parameters
+----------
+guid: Standard_GUID
+driver: TFunction_Driver
+thread: int,optional
+	default value is 0
+
+Returns
+-------
+bool
 ") FindDriver;
 		Standard_Boolean FindDriver(const Standard_GUID & guid, opencascade::handle<TFunction_Driver> & driver, const Standard_Integer thread = 0);
 
@@ -262,7 +296,9 @@ class TFunction_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "Returns the driver table. if a driver does not exist, creates it.
 
-	:rtype: opencascade::handle<TFunction_DriverTable>
+Returns
+-------
+opencascade::handle<TFunction_DriverTable>
 ") Get;
 		static opencascade::handle<TFunction_DriverTable> Get();
 
@@ -270,11 +306,15 @@ class TFunction_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") HasDriver;
 		%feature("autodoc", "Returns true if the driver exists in the driver table.
 
-	:param guid:
-	:type guid: Standard_GUID
-	:param thread: default value is 0
-	:type thread: int
-	:rtype: bool
+Parameters
+----------
+guid: Standard_GUID
+thread: int,optional
+	default value is 0
+
+Returns
+-------
+bool
 ") HasDriver;
 		Standard_Boolean HasDriver(const Standard_GUID & guid, const Standard_Integer thread = 0);
 
@@ -282,11 +322,15 @@ class TFunction_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveDriver;
 		%feature("autodoc", "Removes a driver with the given guid. returns true if the driver has been removed successfully.
 
-	:param guid:
-	:type guid: Standard_GUID
-	:param thread: default value is 0
-	:type thread: int
-	:rtype: bool
+Parameters
+----------
+guid: Standard_GUID
+thread: int,optional
+	default value is 0
+
+Returns
+-------
+bool
 ") RemoveDriver;
 		Standard_Boolean RemoveDriver(const Standard_GUID & guid, const Standard_Integer thread = 0);
 
@@ -294,7 +338,9 @@ class TFunction_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") TFunction_DriverTable;
 		%feature("autodoc", "Default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") TFunction_DriverTable;
 		 TFunction_DriverTable();
 
@@ -326,7 +372,9 @@ class TFunction_Function : public TDF_Attribute {
 		%feature("compactdefaultargs") Failed;
 		%feature("autodoc", "Returns true if the execution failed.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Failed;
 		Standard_Boolean Failed();
 
@@ -334,7 +382,9 @@ class TFunction_Function : public TDF_Attribute {
 		%feature("compactdefaultargs") GetDriverGUID;
 		%feature("autodoc", "Returns the guid for this function's driver.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetDriverGUID;
 		const Standard_GUID & GetDriverGUID();
 
@@ -342,7 +392,9 @@ class TFunction_Function : public TDF_Attribute {
 		%feature("compactdefaultargs") GetFailure;
 		%feature("autodoc", "Returns an index of failure if the execution of this function failed. if this integer value is 0, no failure has occurred. implementation of attribute methods: ===================================.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetFailure;
 		Standard_Integer GetFailure();
 
@@ -350,45 +402,72 @@ class TFunction_Function : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Returns the guid for functions. returns a function found on the label. instance methods: ================.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		virtual opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		virtual void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** References ******************/
 		%feature("compactdefaultargs") References;
-		%feature("autodoc", "	:param aDataSet:
-	:type aDataSet: TDF_DataSet
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aDataSet: TDF_DataSet
+
+Returns
+-------
+None
 ") References;
 		virtual void References(const opencascade::handle<TDF_DataSet> & aDataSet);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		virtual void Restore(const opencascade::handle<TDF_Attribute> & with);
 
@@ -396,9 +475,13 @@ class TFunction_Function : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Static methods: ============== finds or creates a function attribute on the label <l>. returns the function attribute.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: opencascade::handle<TFunction_Function>
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+opencascade::handle<TFunction_Function>
 ") Set;
 		static opencascade::handle<TFunction_Function> Set(const TDF_Label & L);
 
@@ -406,11 +489,14 @@ class TFunction_Function : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a function attribute on the label <l>. sets a driver id to the function. returns the function attribute.
 
-	:param L:
-	:type L: TDF_Label
-	:param DriverID:
-	:type DriverID: Standard_GUID
-	:rtype: opencascade::handle<TFunction_Function>
+Parameters
+----------
+L: TDF_Label
+DriverID: Standard_GUID
+
+Returns
+-------
+opencascade::handle<TFunction_Function>
 ") Set;
 		static opencascade::handle<TFunction_Function> Set(const TDF_Label & L, const Standard_GUID & DriverID);
 
@@ -418,9 +504,13 @@ class TFunction_Function : public TDF_Attribute {
 		%feature("compactdefaultargs") SetDriverGUID;
 		%feature("autodoc", "Sets the driver for this function as that indentified by the guid guid.
 
-	:param guid:
-	:type guid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+guid: Standard_GUID
+
+Returns
+-------
+None
 ") SetDriverGUID;
 		void SetDriverGUID(const Standard_GUID & guid);
 
@@ -428,15 +518,24 @@ class TFunction_Function : public TDF_Attribute {
 		%feature("compactdefaultargs") SetFailure;
 		%feature("autodoc", "Sets the failed index.
 
-	:param mode: default value is 0
-	:type mode: int
-	:rtype: None
+Parameters
+----------
+mode: int,optional
+	default value is 0
+
+Returns
+-------
+None
 ") SetFailure;
 		void SetFailure(const Standard_Integer mode = 0);
 
 		/****************** TFunction_Function ******************/
 		%feature("compactdefaultargs") TFunction_Function;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TFunction_Function;
 		 TFunction_Function();
 
@@ -460,9 +559,13 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") AddNext;
 		%feature("autodoc", "Defines a reference to the function as a next one.
 
-	:param funcID:
-	:type funcID: int
-	:rtype: bool
+Parameters
+----------
+funcID: int
+
+Returns
+-------
+bool
 ") AddNext;
 		Standard_Boolean AddNext(const Standard_Integer funcID);
 
@@ -470,9 +573,13 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") AddNext;
 		%feature("autodoc", "Defines a reference to the function as a next one.
 
-	:param func:
-	:type func: TDF_Label
-	:rtype: bool
+Parameters
+----------
+func: TDF_Label
+
+Returns
+-------
+bool
 ") AddNext;
 		Standard_Boolean AddNext(const TDF_Label & func);
 
@@ -480,9 +587,13 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") AddPrevious;
 		%feature("autodoc", "Defines a reference to the function as a previous one.
 
-	:param funcID:
-	:type funcID: int
-	:rtype: bool
+Parameters
+----------
+funcID: int
+
+Returns
+-------
+bool
 ") AddPrevious;
 		Standard_Boolean AddPrevious(const Standard_Integer funcID);
 
@@ -490,9 +601,13 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") AddPrevious;
 		%feature("autodoc", "Defines a reference to the function as a previous one.
 
-	:param func:
-	:type func: TDF_Label
-	:rtype: bool
+Parameters
+----------
+func: TDF_Label
+
+Returns
+-------
+bool
 ") AddPrevious;
 		Standard_Boolean AddPrevious(const TDF_Label & func);
 
@@ -508,7 +623,9 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Returns the guid for graphnode attribute. instant methods =============== constructor (empty).
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
@@ -516,7 +633,9 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") GetNext;
 		%feature("autodoc", "Returns a map of next functions.
 
-	:rtype: TColStd_MapOfInteger
+Returns
+-------
+TColStd_MapOfInteger
 ") GetNext;
 		const TColStd_MapOfInteger & GetNext();
 
@@ -524,7 +643,9 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") GetPrevious;
 		%feature("autodoc", "Returns a map of previous functions.
 
-	:rtype: TColStd_MapOfInteger
+Returns
+-------
+TColStd_MapOfInteger
 ") GetPrevious;
 		const TColStd_MapOfInteger & GetPrevious();
 
@@ -532,37 +653,58 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") GetStatus;
 		%feature("autodoc", "Returns the execution status of the function.
 
-	:rtype: TFunction_ExecutionStatus
+Returns
+-------
+TFunction_ExecutionStatus
 ") GetStatus;
 		TFunction_ExecutionStatus GetStatus();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		virtual opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		virtual void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** References ******************/
 		%feature("compactdefaultargs") References;
-		%feature("autodoc", "	:param aDataSet:
-	:type aDataSet: TDF_DataSet
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aDataSet: TDF_DataSet
+
+Returns
+-------
+None
 ") References;
 		virtual void References(const opencascade::handle<TDF_DataSet> & aDataSet);
 
@@ -570,7 +712,9 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") RemoveAllNext;
 		%feature("autodoc", "Clears a map of next functions.
 
-	:rtype: None
+Returns
+-------
+None
 ") RemoveAllNext;
 		void RemoveAllNext();
 
@@ -578,7 +722,9 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") RemoveAllPrevious;
 		%feature("autodoc", "Clears a map of previous functions.
 
-	:rtype: None
+Returns
+-------
+None
 ") RemoveAllPrevious;
 		void RemoveAllPrevious();
 
@@ -586,9 +732,13 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") RemoveNext;
 		%feature("autodoc", "Removes a reference to the function as a next one.
 
-	:param funcID:
-	:type funcID: int
-	:rtype: bool
+Parameters
+----------
+funcID: int
+
+Returns
+-------
+bool
 ") RemoveNext;
 		Standard_Boolean RemoveNext(const Standard_Integer funcID);
 
@@ -596,9 +746,13 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") RemoveNext;
 		%feature("autodoc", "Removes a reference to the function as a next one.
 
-	:param func:
-	:type func: TDF_Label
-	:rtype: bool
+Parameters
+----------
+func: TDF_Label
+
+Returns
+-------
+bool
 ") RemoveNext;
 		Standard_Boolean RemoveNext(const TDF_Label & func);
 
@@ -606,9 +760,13 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") RemovePrevious;
 		%feature("autodoc", "Removes a reference to the function as a previous one.
 
-	:param funcID:
-	:type funcID: int
-	:rtype: bool
+Parameters
+----------
+funcID: int
+
+Returns
+-------
+bool
 ") RemovePrevious;
 		Standard_Boolean RemovePrevious(const Standard_Integer funcID);
 
@@ -616,17 +774,27 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") RemovePrevious;
 		%feature("autodoc", "Removes a reference to the function as a previous one.
 
-	:param func:
-	:type func: TDF_Label
-	:rtype: bool
+Parameters
+----------
+func: TDF_Label
+
+Returns
+-------
+bool
 ") RemovePrevious;
 		Standard_Boolean RemovePrevious(const TDF_Label & func);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		virtual void Restore(const opencascade::handle<TDF_Attribute> & with);
 
@@ -634,9 +802,13 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Static methods ============== finds or creates a graph node attribute at the label <l>. returns the attribute.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: opencascade::handle<TFunction_GraphNode>
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+opencascade::handle<TFunction_GraphNode>
 ") Set;
 		static opencascade::handle<TFunction_GraphNode> Set(const TDF_Label & L);
 
@@ -644,15 +816,23 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("compactdefaultargs") SetStatus;
 		%feature("autodoc", "Defines an execution status for a function. implementation of attribute methods ===================================.
 
-	:param status:
-	:type status: TFunction_ExecutionStatus
-	:rtype: None
+Parameters
+----------
+status: TFunction_ExecutionStatus
+
+Returns
+-------
+None
 ") SetStatus;
 		void SetStatus(const TFunction_ExecutionStatus status);
 
 		/****************** TFunction_GraphNode ******************/
 		%feature("compactdefaultargs") TFunction_GraphNode;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TFunction_GraphNode;
 		 TFunction_GraphNode();
 
@@ -676,9 +856,13 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") Arguments;
 		%feature("autodoc", "The method fills-in the list by labels, where the arguments of the function are located.
 
-	:param args:
-	:type args: TDF_LabelList
-	:rtype: None
+Parameters
+----------
+args: TDF_LabelList
+
+Returns
+-------
+None
 ") Arguments;
 		void Arguments(TDF_LabelList & args);
 
@@ -686,9 +870,13 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") DeleteFunction;
 		%feature("autodoc", "Deletes a function attached to a label <l>. it deletes a tfunction_function attribute and a tfunction_graphnode. it deletes the functions from the scope of function of this document.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: bool
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+bool
 ") DeleteFunction;
 		static Standard_Boolean DeleteFunction(const TDF_Label & L);
 
@@ -696,7 +884,9 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") GetAllFunctions;
 		%feature("autodoc", "Returns the scope of all functions.
 
-	:rtype: TFunction_DoubleMapOfIntegerLabel
+Returns
+-------
+TFunction_DoubleMapOfIntegerLabel
 ") GetAllFunctions;
 		const TFunction_DoubleMapOfIntegerLabel & GetAllFunctions();
 
@@ -704,9 +894,14 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") GetDriver;
 		%feature("autodoc", "Returns a driver of the function.
 
-	:param thread: default value is 0
-	:type thread: int
-	:rtype: opencascade::handle<TFunction_Driver>
+Parameters
+----------
+thread: int,optional
+	default value is 0
+
+Returns
+-------
+opencascade::handle<TFunction_Driver>
 ") GetDriver;
 		opencascade::handle<TFunction_Driver> GetDriver(const Standard_Integer thread = 0);
 
@@ -714,7 +909,9 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") GetGraphNode;
 		%feature("autodoc", "Returns a graph node of the function.
 
-	:rtype: opencascade::handle<TFunction_GraphNode>
+Returns
+-------
+opencascade::handle<TFunction_GraphNode>
 ") GetGraphNode;
 		opencascade::handle<TFunction_GraphNode> GetGraphNode();
 
@@ -722,7 +919,9 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") GetLogbook;
 		%feature("autodoc", "Returns the logbook - keeper of modifications.
 
-	:rtype: opencascade::handle<TFunction_Logbook>
+Returns
+-------
+opencascade::handle<TFunction_Logbook>
 ") GetLogbook;
 		opencascade::handle<TFunction_Logbook> GetLogbook();
 
@@ -730,9 +929,13 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") GetNext;
 		%feature("autodoc", "Returns a list of next functions.
 
-	:param prev:
-	:type prev: TDF_LabelList
-	:rtype: None
+Parameters
+----------
+prev: TDF_LabelList
+
+Returns
+-------
+None
 ") GetNext;
 		void GetNext(TDF_LabelList & prev);
 
@@ -740,9 +943,13 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") GetPrevious;
 		%feature("autodoc", "Returns a list of previous functions.
 
-	:param prev:
-	:type prev: TDF_LabelList
-	:rtype: None
+Parameters
+----------
+prev: TDF_LabelList
+
+Returns
+-------
+None
 ") GetPrevious;
 		void GetPrevious(TDF_LabelList & prev);
 
@@ -750,7 +957,9 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") GetStatus;
 		%feature("autodoc", "Returns the execution status of the function.
 
-	:rtype: TFunction_ExecutionStatus
+Returns
+-------
+TFunction_ExecutionStatus
 ") GetStatus;
 		TFunction_ExecutionStatus GetStatus();
 
@@ -758,9 +967,13 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initializes the interface by the label of function.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: None
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TDF_Label & L);
 
@@ -768,7 +981,9 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") Label;
 		%feature("autodoc", "Returns a label of the function.
 
-	:rtype: TDF_Label
+Returns
+-------
+TDF_Label
 ") Label;
 		const TDF_Label & Label();
 
@@ -776,11 +991,14 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") NewFunction;
 		%feature("autodoc", "Sets a new function attached to a label <l> with <id>. it creates a new tfunction_function attribute initialized by the <id>, a new tfunction_graphnode with an empty list of dependencies and the status equal to tfunction_es_wrongdefinition. it registers the function in the scope of functions for this document.
 
-	:param L:
-	:type L: TDF_Label
-	:param ID:
-	:type ID: Standard_GUID
-	:rtype: bool
+Parameters
+----------
+L: TDF_Label
+ID: Standard_GUID
+
+Returns
+-------
+bool
 ") NewFunction;
 		static Standard_Boolean NewFunction(const TDF_Label & L, const Standard_GUID & ID);
 
@@ -788,9 +1006,13 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") Results;
 		%feature("autodoc", "The method fills-in the list by labels, where the results of the function are located.
 
-	:param res:
-	:type res: TDF_LabelList
-	:rtype: None
+Parameters
+----------
+res: TDF_LabelList
+
+Returns
+-------
+None
 ") Results;
 		void Results(TDF_LabelList & res);
 
@@ -798,15 +1020,23 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") SetStatus;
 		%feature("autodoc", "Defines an execution status for a function.
 
-	:param status:
-	:type status: TFunction_ExecutionStatus
-	:rtype: None
+Parameters
+----------
+status: TFunction_ExecutionStatus
+
+Returns
+-------
+None
 ") SetStatus;
 		void SetStatus(const TFunction_ExecutionStatus status);
 
 		/****************** TFunction_IFunction ******************/
 		%feature("compactdefaultargs") TFunction_IFunction;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TFunction_IFunction;
 		 TFunction_IFunction();
 
@@ -814,9 +1044,13 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") TFunction_IFunction;
 		%feature("autodoc", "A constructor. initializes the interface by the label of function.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: None
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+None
 ") TFunction_IFunction;
 		 TFunction_IFunction(const TDF_Label & L);
 
@@ -824,9 +1058,13 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") UpdateDependencies;
 		%feature("autodoc", "Updates dependencies for all functions of the scope. it returns false in case of an error. an empty constructor.
 
-	:param Access:
-	:type Access: TDF_Label
-	:rtype: bool
+Parameters
+----------
+Access: TDF_Label
+
+Returns
+-------
+bool
 ") UpdateDependencies;
 		static Standard_Boolean UpdateDependencies(const TDF_Label & Access);
 
@@ -834,7 +1072,9 @@ class TFunction_IFunction {
 		%feature("compactdefaultargs") UpdateDependencies;
 		%feature("autodoc", "Updates the dependencies of this function only.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") UpdateDependencies;
 		Standard_Boolean UpdateDependencies();
 
@@ -856,7 +1096,9 @@ class TFunction_Iterator {
 		%feature("compactdefaultargs") Current;
 		%feature("autodoc", "Returns the current list of functions. if the iterator uses the execution status, the returned list contains only the functions with 'not executed' status.
 
-	:rtype: TDF_LabelList
+Returns
+-------
+TDF_LabelList
 ") Current;
 		virtual const TDF_LabelList & Current();
 
@@ -872,7 +1114,9 @@ class TFunction_Iterator {
 		%feature("compactdefaultargs") GetMaxNbThreads;
 		%feature("autodoc", "Analyses the graph of dependencies and returns maximum number of threads may be used to calculate the model.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetMaxNbThreads;
 		virtual Standard_Integer GetMaxNbThreads();
 
@@ -880,9 +1124,13 @@ class TFunction_Iterator {
 		%feature("compactdefaultargs") GetStatus;
 		%feature("autodoc", "A help-function aimed to help the user to check the status of retrurned function. it calls tfunction_graphnode::getstatus() inside.
 
-	:param func:
-	:type func: TDF_Label
-	:rtype: TFunction_ExecutionStatus
+Parameters
+----------
+func: TDF_Label
+
+Returns
+-------
+TFunction_ExecutionStatus
 ") GetStatus;
 		TFunction_ExecutionStatus GetStatus(const TDF_Label & func);
 
@@ -890,7 +1138,9 @@ class TFunction_Iterator {
 		%feature("compactdefaultargs") GetUsageOfExecutionStatus;
 		%feature("autodoc", "Returns usage of execution status by the iterator.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") GetUsageOfExecutionStatus;
 		Standard_Boolean GetUsageOfExecutionStatus();
 
@@ -898,9 +1148,13 @@ class TFunction_Iterator {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initializes the iterator.
 
-	:param Access:
-	:type Access: TDF_Label
-	:rtype: None
+Parameters
+----------
+Access: TDF_Label
+
+Returns
+-------
+None
 ") Init;
 		virtual void Init(const TDF_Label & Access);
 
@@ -908,7 +1162,9 @@ class TFunction_Iterator {
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Returns false if the graph of functions is fully iterated.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") More;
 		virtual Standard_Boolean More();
 
@@ -916,7 +1172,9 @@ class TFunction_Iterator {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Switches the iterator to the next list of current functions.
 
-	:rtype: None
+Returns
+-------
+None
 ") Next;
 		virtual void Next();
 
@@ -924,11 +1182,14 @@ class TFunction_Iterator {
 		%feature("compactdefaultargs") SetStatus;
 		%feature("autodoc", "A help-function aimed to help the user to change the execution status of a function. it calls tfunction_graphnode::setstatus() inside.
 
-	:param func:
-	:type func: TDF_Label
-	:param status:
-	:type status: TFunction_ExecutionStatus
-	:rtype: None
+Parameters
+----------
+func: TDF_Label
+status: TFunction_ExecutionStatus
+
+Returns
+-------
+None
 ") SetStatus;
 		void SetStatus(const TDF_Label & func, const TFunction_ExecutionStatus status);
 
@@ -936,9 +1197,13 @@ class TFunction_Iterator {
 		%feature("compactdefaultargs") SetUsageOfExecutionStatus;
 		%feature("autodoc", "Defines the mode of iteration - usage or not of the execution status. if the iterator takes into account the execution status, the method ::current() returns only 'not executed' functions while their status is not changed. if the iterator ignores the execution status, the method ::current() returns the functions following their dependencies and ignoring the execution status.
 
-	:param usage:
-	:type usage: bool
-	:rtype: None
+Parameters
+----------
+usage: bool
+
+Returns
+-------
+None
 ") SetUsageOfExecutionStatus;
 		void SetUsageOfExecutionStatus(const Standard_Boolean usage);
 
@@ -946,7 +1211,9 @@ class TFunction_Iterator {
 		%feature("compactdefaultargs") TFunction_Iterator;
 		%feature("autodoc", "An empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") TFunction_Iterator;
 		 TFunction_Iterator();
 
@@ -954,9 +1221,13 @@ class TFunction_Iterator {
 		%feature("compactdefaultargs") TFunction_Iterator;
 		%feature("autodoc", "A constructor. initializes the iterator.
 
-	:param Access:
-	:type Access: TDF_Label
-	:rtype: None
+Parameters
+----------
+Access: TDF_Label
+
+Returns
+-------
+None
 ") TFunction_Iterator;
 		 TFunction_Iterator(const TDF_Label & Access);
 
@@ -978,7 +1249,9 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears this logbook to its default, empty state.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -986,9 +1259,13 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") Done;
 		%feature("autodoc", "Sets status of execution.
 
-	:param status:
-	:type status: bool
-	:rtype: None
+Parameters
+----------
+status: bool
+
+Returns
+-------
+None
 ") Done;
 		void Done(const Standard_Boolean status);
 
@@ -1004,7 +1281,9 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Returns the guid for logbook attribute.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
@@ -1012,7 +1291,9 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") GetImpacted;
 		%feature("autodoc", "Returns the map of impacted labels contained in this logbook.
 
-	:rtype: TDF_LabelMap
+Returns
+-------
+TDF_LabelMap
 ") GetImpacted;
 		const TDF_LabelMap & GetImpacted();
 
@@ -1020,7 +1301,9 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") GetTouched;
 		%feature("autodoc", "Returns the map of touched labels in this logbook. a touched label is the one modified by the end user.
 
-	:rtype: TDF_LabelMap
+Returns
+-------
+TDF_LabelMap
 ") GetTouched;
 		const TDF_LabelMap & GetTouched();
 
@@ -1028,15 +1311,23 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") GetValid;
 		%feature("autodoc", "Returns the map of valid labels in this logbook.
 
-	:rtype: TDF_LabelMap
+Returns
+-------
+TDF_LabelMap
 ") GetValid;
 		const TDF_LabelMap & GetValid();
 
 		/****************** GetValid ******************/
 		%feature("compactdefaultargs") GetValid;
-		%feature("autodoc", "	:param Ls:
-	:type Ls: TDF_LabelMap
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Ls: TDF_LabelMap
+
+Returns
+-------
+None
 ") GetValid;
 		void GetValid(TDF_LabelMap & Ls);
 
@@ -1044,7 +1335,9 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") ID;
 		%feature("autodoc", "Returns the id of the attribute.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -1052,13 +1345,19 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns status of execution.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
@@ -1066,11 +1365,15 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") IsModified;
 		%feature("autodoc", "Returns true if the label l is touched or impacted. this method is called by <tfunction_functiondriver::mustexecute>. if <withchildren> is set to true, the method checks all the sublabels of <l> too.
 
-	:param L:
-	:type L: TDF_Label
-	:param WithChildren: default value is Standard_False
-	:type WithChildren: bool
-	:rtype: bool
+Parameters
+----------
+L: TDF_Label
+WithChildren: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+bool
 ") IsModified;
 		Standard_Boolean IsModified(const TDF_Label & L, const Standard_Boolean WithChildren = Standard_False);
 
@@ -1078,7 +1381,9 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "Returns a new empty instance of the attribute.
 
-	:rtype: opencascade::handle<TDF_Attribute>
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		virtual opencascade::handle<TDF_Attribute> NewEmpty();
 
@@ -1086,11 +1391,14 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") Paste;
 		%feature("autodoc", "Pastes the attribute to another label.
 
-	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		virtual void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
@@ -1098,9 +1406,13 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") Restore;
 		%feature("autodoc", "Undos (and redos) the attribute.
 
-	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		virtual void Restore(const opencascade::handle<TDF_Attribute> & with);
 
@@ -1108,9 +1420,13 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a tfunction_logbook attribute at the root label accessed by <access>. returns the attribute.
 
-	:param Access:
-	:type Access: TDF_Label
-	:rtype: opencascade::handle<TFunction_Logbook>
+Parameters
+----------
+Access: TDF_Label
+
+Returns
+-------
+opencascade::handle<TFunction_Logbook>
 ") Set;
 		static opencascade::handle<TFunction_Logbook> Set(const TDF_Label & Access);
 
@@ -1118,11 +1434,15 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") SetImpacted;
 		%feature("autodoc", "Sets the label l as an impacted label in this logbook. this method is called by execution of the function driver.
 
-	:param L:
-	:type L: TDF_Label
-	:param WithChildren: default value is Standard_False
-	:type WithChildren: bool
-	:rtype: None
+Parameters
+----------
+L: TDF_Label
+WithChildren: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") SetImpacted;
 		void SetImpacted(const TDF_Label & L, const Standard_Boolean WithChildren = Standard_False);
 
@@ -1130,9 +1450,13 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") SetTouched;
 		%feature("autodoc", "Sets the label l as a touched label in this logbook. in other words, l is understood to have been modified by the end user.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: None
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+None
 ") SetTouched;
 		void SetTouched(const TDF_Label & L);
 
@@ -1140,19 +1464,29 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") SetValid;
 		%feature("autodoc", "Sets the label l as a valid label in this logbook.
 
-	:param L:
-	:type L: TDF_Label
-	:param WithChildren: default value is Standard_False
-	:type WithChildren: bool
-	:rtype: None
+Parameters
+----------
+L: TDF_Label
+WithChildren: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") SetValid;
 		void SetValid(const TDF_Label & L, const Standard_Boolean WithChildren = Standard_False);
 
 		/****************** SetValid ******************/
 		%feature("compactdefaultargs") SetValid;
-		%feature("autodoc", "	:param Ls:
-	:type Ls: TDF_LabelMap
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Ls: TDF_LabelMap
+
+Returns
+-------
+None
 ") SetValid;
 		void SetValid(const TDF_LabelMap & Ls);
 
@@ -1160,7 +1494,9 @@ class TFunction_Logbook : public TDF_Attribute {
 		%feature("compactdefaultargs") TFunction_Logbook;
 		%feature("autodoc", "Constructor (empty).
 
-	:rtype: None
+Returns
+-------
+None
 ") TFunction_Logbook;
 		 TFunction_Logbook();
 
@@ -1184,9 +1520,13 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") AddFunction;
 		%feature("autodoc", "Adds a function to the scope of functions.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: bool
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+bool
 ") AddFunction;
 		Standard_Boolean AddFunction(const TDF_Label & L);
 
@@ -1194,7 +1534,9 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") ChangeFunctions;
 		%feature("autodoc", "Returns the scope of functions for modification. warning: don't use this method if you are not sure what you do!.
 
-	:rtype: TFunction_DoubleMapOfIntegerLabel
+Returns
+-------
+TFunction_DoubleMapOfIntegerLabel
 ") ChangeFunctions;
 		TFunction_DoubleMapOfIntegerLabel & ChangeFunctions();
 
@@ -1208,7 +1550,11 @@ class TFunction_Scope : public TDF_Attribute {
         };
 		/****************** GetFreeID ******************/
 		%feature("compactdefaultargs") GetFreeID;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") GetFreeID;
 		Standard_Integer GetFreeID();
 
@@ -1216,9 +1562,13 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") GetFunction;
 		%feature("autodoc", "Returns an id of the function.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: int
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+int
 ") GetFunction;
 		Standard_Integer GetFunction(const TDF_Label & L);
 
@@ -1226,9 +1576,13 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") GetFunction;
 		%feature("autodoc", "Returns the label of the function with this id.
 
-	:param ID:
-	:type ID: int
-	:rtype: TDF_Label
+Parameters
+----------
+ID: int
+
+Returns
+-------
+TDF_Label
 ") GetFunction;
 		const TDF_Label & GetFunction(const Standard_Integer ID);
 
@@ -1236,7 +1590,9 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") GetFunctions;
 		%feature("autodoc", "Returns the scope of functions.
 
-	:rtype: TFunction_DoubleMapOfIntegerLabel
+Returns
+-------
+TFunction_DoubleMapOfIntegerLabel
 ") GetFunctions;
 		const TFunction_DoubleMapOfIntegerLabel & GetFunctions();
 
@@ -1244,7 +1600,9 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Returns the guid for scope attribute. instant methods =============== constructor (empty).
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
@@ -1252,7 +1610,9 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") GetLogbook;
 		%feature("autodoc", "Returns the logbook used in tfunction_driver methods. implementation of attribute methods ===================================.
 
-	:rtype: opencascade::handle<TFunction_Logbook>
+Returns
+-------
+opencascade::handle<TFunction_Logbook>
 ") GetLogbook;
 		opencascade::handle<TFunction_Logbook> GetLogbook();
 
@@ -1260,9 +1620,13 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") HasFunction;
 		%feature("autodoc", "Returns true if the function exists with such an id.
 
-	:param ID:
-	:type ID: int
-	:rtype: bool
+Parameters
+----------
+ID: int
+
+Returns
+-------
+bool
 ") HasFunction;
 		Standard_Boolean HasFunction(const Standard_Integer ID);
 
@@ -1270,31 +1634,48 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") HasFunction;
 		%feature("autodoc", "Returns true if the label contains a function of this scope.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: bool
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+bool
 ") HasFunction;
 		Standard_Boolean HasFunction(const TDF_Label & L);
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		virtual opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		virtual void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
@@ -1302,7 +1683,9 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") RemoveAllFunctions;
 		%feature("autodoc", "Removes all functions from the scope of functions.
 
-	:rtype: None
+Returns
+-------
+None
 ") RemoveAllFunctions;
 		void RemoveAllFunctions();
 
@@ -1310,9 +1693,13 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") RemoveFunction;
 		%feature("autodoc", "Removes a function from the scope of functions.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: bool
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+bool
 ") RemoveFunction;
 		Standard_Boolean RemoveFunction(const TDF_Label & L);
 
@@ -1320,17 +1707,27 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") RemoveFunction;
 		%feature("autodoc", "Removes a function from the scope of functions.
 
-	:param ID:
-	:type ID: int
-	:rtype: bool
+Parameters
+----------
+ID: int
+
+Returns
+-------
+bool
 ") RemoveFunction;
 		Standard_Boolean RemoveFunction(const Standard_Integer ID);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		virtual void Restore(const opencascade::handle<TDF_Attribute> & with);
 
@@ -1338,23 +1735,37 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Static methods ============== finds or creates a tfunction_scope attribute at the root label accessed by <access>. returns the attribute.
 
-	:param Access:
-	:type Access: TDF_Label
-	:rtype: opencascade::handle<TFunction_Scope>
+Parameters
+----------
+Access: TDF_Label
+
+Returns
+-------
+opencascade::handle<TFunction_Scope>
 ") Set;
 		static opencascade::handle<TFunction_Scope> Set(const TDF_Label & Access);
 
 		/****************** SetFreeID ******************/
 		%feature("compactdefaultargs") SetFreeID;
-		%feature("autodoc", "	:param ID:
-	:type ID: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ID: int
+
+Returns
+-------
+None
 ") SetFreeID;
 		void SetFreeID(const Standard_Integer ID);
 
 		/****************** TFunction_Scope ******************/
 		%feature("compactdefaultargs") TFunction_Scope;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TFunction_Scope;
 		 TFunction_Scope();
 

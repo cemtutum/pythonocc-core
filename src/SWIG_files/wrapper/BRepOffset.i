@@ -182,13 +182,15 @@ class BRepOffset {
 		%feature("compactdefaultargs") CollapseSingularities;
 		%feature("autodoc", "Preprocess surface to be offset (bspline, bezier, or revolution based on bspline or bezier curve), by collapsing each singular side to single point. //! this is to avoid possible flipping of normal at the singularity of the surface due to non-zero distance between the poles that logically should be in one point (singularity). the (parametric) side of the surface is considered to be singularity if face has degenerated edge whose vertex encompasses (by its tolerance) all points on that side, or if all poles defining that side fit into sphere with radius theprecision. //! returns either original surface or its modified copy (if some poles have been moved).
 
-	:param theSurface:
-	:type theSurface: Geom_Surface
-	:param theFace:
-	:type theFace: TopoDS_Face
-	:param thePrecision:
-	:type thePrecision: float
-	:rtype: opencascade::handle<Geom_Surface>
+Parameters
+----------
+theSurface: Geom_Surface
+theFace: TopoDS_Face
+thePrecision: float
+
+Returns
+-------
+opencascade::handle<Geom_Surface>
 ") CollapseSingularities;
 		static opencascade::handle<Geom_Surface> CollapseSingularities(const opencascade::handle<Geom_Surface> & theSurface, const TopoDS_Face & theFace, Standard_Real thePrecision);
 
@@ -196,15 +198,17 @@ class BRepOffset {
 		%feature("compactdefaultargs") Surface;
 		%feature("autodoc", "Returns the offset surface computed from the surface <surface> at an offsetdistance <offset>. //! if possible, this method returns the real type of the surface ( e.g. an offset of a plane is a plane). //! if no particular case is detected, the returned surface will have the type geom_offsetsurface. parameter allowc0 is then passed as last argument to constructor of geom_offsetsurface.
 
-	:param Surface:
-	:type Surface: Geom_Surface
-	:param Offset:
-	:type Offset: float
-	:param theStatus:
-	:type theStatus: BRepOffset_Status
-	:param allowC0: default value is Standard_False
-	:type allowC0: bool
-	:rtype: opencascade::handle<Geom_Surface>
+Parameters
+----------
+Surface: Geom_Surface
+Offset: float
+theStatus: BRepOffset_Status
+allowC0: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<Geom_Surface>
 ") Surface;
 		static opencascade::handle<Geom_Surface> Surface(const opencascade::handle<Geom_Surface> & Surface, const Standard_Real Offset, BRepOffset_Status & theStatus, Standard_Boolean allowC0 = Standard_False);
 
@@ -226,15 +230,16 @@ class BRepOffset_Analyse {
 		%feature("compactdefaultargs") AddFaces;
 		%feature("autodoc", "Add in <co> the faces of the shell containing <face> where all the connex edges are of type <side>.
 
-	:param Face:
-	:type Face: TopoDS_Face
-	:param Co:
-	:type Co: TopoDS_Compound
-	:param Map:
-	:type Map: TopTools_MapOfShape
-	:param Type:
-	:type Type: BRepOffset_Type
-	:rtype: None
+Parameters
+----------
+Face: TopoDS_Face
+Co: TopoDS_Compound
+Map: TopTools_MapOfShape
+Type: BRepOffset_Type
+
+Returns
+-------
+None
 ") AddFaces;
 		void AddFaces(const TopoDS_Face & Face, TopoDS_Compound & Co, TopTools_MapOfShape & Map, const BRepOffset_Type Type);
 
@@ -242,47 +247,66 @@ class BRepOffset_Analyse {
 		%feature("compactdefaultargs") AddFaces;
 		%feature("autodoc", "Add in <co> the faces of the shell containing <face> where all the connex edges are of type <side1> or <side2>.
 
-	:param Face:
-	:type Face: TopoDS_Face
-	:param Co:
-	:type Co: TopoDS_Compound
-	:param Map:
-	:type Map: TopTools_MapOfShape
-	:param Type1:
-	:type Type1: BRepOffset_Type
-	:param Type2:
-	:type Type2: BRepOffset_Type
-	:rtype: None
+Parameters
+----------
+Face: TopoDS_Face
+Co: TopoDS_Compound
+Map: TopTools_MapOfShape
+Type1: BRepOffset_Type
+Type2: BRepOffset_Type
+
+Returns
+-------
+None
 ") AddFaces;
 		void AddFaces(const TopoDS_Face & Face, TopoDS_Compound & Co, TopTools_MapOfShape & Map, const BRepOffset_Type Type1, const BRepOffset_Type Type2);
 
 		/****************** Ancestors ******************/
 		%feature("compactdefaultargs") Ancestors;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") Ancestors;
 		const TopTools_ListOfShape & Ancestors(const TopoDS_Shape & S);
 
 		/****************** BRepOffset_Analyse ******************/
 		%feature("compactdefaultargs") BRepOffset_Analyse;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") BRepOffset_Analyse;
 		 BRepOffset_Analyse();
 
 		/****************** BRepOffset_Analyse ******************/
 		%feature("compactdefaultargs") BRepOffset_Analyse;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:param Angle:
-	:type Angle: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+Angle: float
+
+Returns
+-------
+None
 ") BRepOffset_Analyse;
 		 BRepOffset_Analyse(const TopoDS_Shape & S, const Standard_Real Angle);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -290,13 +314,15 @@ class BRepOffset_Analyse {
 		%feature("compactdefaultargs") Edges;
 		%feature("autodoc", "Stores in <l> all the edges of type <t> on the vertex <v>.
 
-	:param V:
-	:type V: TopoDS_Vertex
-	:param T:
-	:type T: BRepOffset_Type
-	:param L:
-	:type L: TopTools_ListOfShape
-	:rtype: None
+Parameters
+----------
+V: TopoDS_Vertex
+T: BRepOffset_Type
+L: TopTools_ListOfShape
+
+Returns
+-------
+None
 ") Edges;
 		void Edges(const TopoDS_Vertex & V, const BRepOffset_Type T, TopTools_ListOfShape & L);
 
@@ -304,13 +330,15 @@ class BRepOffset_Analyse {
 		%feature("compactdefaultargs") Edges;
 		%feature("autodoc", "Stores in <l> all the edges of type <t> on the face <f>.
 
-	:param F:
-	:type F: TopoDS_Face
-	:param T:
-	:type T: BRepOffset_Type
-	:param L:
-	:type L: TopTools_ListOfShape
-	:rtype: None
+Parameters
+----------
+F: TopoDS_Face
+T: BRepOffset_Type
+L: TopTools_ListOfShape
+
+Returns
+-------
+None
 ") Edges;
 		void Edges(const TopoDS_Face & F, const BRepOffset_Type T, TopTools_ListOfShape & L);
 
@@ -318,11 +346,14 @@ class BRepOffset_Analyse {
 		%feature("compactdefaultargs") Explode;
 		%feature("autodoc", "Explode in compounds of faces where all the connex edges are of type <side>.
 
-	:param L:
-	:type L: TopTools_ListOfShape
-	:param Type:
-	:type Type: BRepOffset_Type
-	:rtype: None
+Parameters
+----------
+L: TopTools_ListOfShape
+Type: BRepOffset_Type
+
+Returns
+-------
+None
 ") Explode;
 		void Explode(TopTools_ListOfShape & L, const BRepOffset_Type Type);
 
@@ -330,37 +361,54 @@ class BRepOffset_Analyse {
 		%feature("compactdefaultargs") Explode;
 		%feature("autodoc", "Explode in compounds of faces where all the connex edges are of type <side1> or <side2>.
 
-	:param L:
-	:type L: TopTools_ListOfShape
-	:param Type1:
-	:type Type1: BRepOffset_Type
-	:param Type2:
-	:type Type2: BRepOffset_Type
-	:rtype: None
+Parameters
+----------
+L: TopTools_ListOfShape
+Type1: BRepOffset_Type
+Type2: BRepOffset_Type
+
+Returns
+-------
+None
 ") Explode;
 		void Explode(TopTools_ListOfShape & L, const BRepOffset_Type Type1, const BRepOffset_Type Type2);
 
 		/****************** HasAncestor ******************/
 		%feature("compactdefaultargs") HasAncestor;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+bool
 ") HasAncestor;
 		Standard_Boolean HasAncestor(const TopoDS_Shape & S);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:param Angle:
-	:type Angle: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+Angle: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const TopoDS_Shape & S, const Standard_Real Angle);
 
@@ -368,21 +416,29 @@ class BRepOffset_Analyse {
 		%feature("compactdefaultargs") TangentEdges;
 		%feature("autodoc", "Set in <edges> all the edges of <shape> which are tangent to <edge> at the vertex <vertex>.
 
-	:param Edge:
-	:type Edge: TopoDS_Edge
-	:param Vertex:
-	:type Vertex: TopoDS_Vertex
-	:param Edges:
-	:type Edges: TopTools_ListOfShape
-	:rtype: None
+Parameters
+----------
+Edge: TopoDS_Edge
+Vertex: TopoDS_Vertex
+Edges: TopTools_ListOfShape
+
+Returns
+-------
+None
 ") TangentEdges;
 		void TangentEdges(const TopoDS_Edge & Edge, const TopoDS_Vertex & Vertex, TopTools_ListOfShape & Edges);
 
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
-		%feature("autodoc", "	:param E:
-	:type E: TopoDS_Edge
-	:rtype: BRepOffset_ListOfInterval
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+BRepOffset_ListOfInterval
 ") Type;
 		const BRepOffset_ListOfInterval & Type(const TopoDS_Edge & E);
 
@@ -404,17 +460,17 @@ class BRepOffset_Inter2d {
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "Computes the intersections between the edges stored is asdes as descendants of <f> . intersections is computed between two edges if one of them is bound in newedges. when all faces of the shape are treated the intersection vertices have to be fused using the fusevertices method. thedmvv contains the vertices that should be fused.
 
-	:param AsDes:
-	:type AsDes: BRepAlgo_AsDes
-	:param F:
-	:type F: TopoDS_Face
-	:param NewEdges:
-	:type NewEdges: TopTools_IndexedMapOfShape
-	:param Tol:
-	:type Tol: float
-	:param theDMVV:
-	:type theDMVV: TopTools_IndexedDataMapOfShapeListOfShape
-	:rtype: None
+Parameters
+----------
+AsDes: BRepAlgo_AsDes
+F: TopoDS_Face
+NewEdges: TopTools_IndexedMapOfShape
+Tol: float
+theDMVV: TopTools_IndexedDataMapOfShapeListOfShape
+
+Returns
+-------
+None
 ") Compute;
 		static void Compute(const opencascade::handle<BRepAlgo_AsDes> & AsDes, const TopoDS_Face & F, const TopTools_IndexedMapOfShape & NewEdges, const Standard_Real Tol, TopTools_IndexedDataMapOfShapeListOfShape & theDMVV);
 
@@ -422,25 +478,21 @@ class BRepOffset_Inter2d {
 		%feature("compactdefaultargs") ConnexIntByInt;
 		%feature("autodoc", "Computes the intersection between the offset edges of the <fi>. all intersection vertices will be stored in asdes2d. when all faces of the shape are treated the intersection vertices have to be fused using the fusevertices method. thedmvv contains the vertices that should be fused.
 
-	:param FI:
-	:type FI: TopoDS_Face
-	:param OFI:
-	:type OFI: BRepOffset_Offset
-	:param MES:
-	:type MES: TopTools_DataMapOfShapeShape
-	:param Build:
-	:type Build: TopTools_DataMapOfShapeShape
-	:param AsDes2d:
-	:type AsDes2d: BRepAlgo_AsDes
-	:param Offset:
-	:type Offset: float
-	:param Tol:
-	:type Tol: float
-	:param FacesWithVerts:
-	:type FacesWithVerts: TopTools_IndexedMapOfShape
-	:param theDMVV:
-	:type theDMVV: TopTools_IndexedDataMapOfShapeListOfShape
-	:rtype: None
+Parameters
+----------
+FI: TopoDS_Face
+OFI: BRepOffset_Offset
+MES: TopTools_DataMapOfShapeShape
+Build: TopTools_DataMapOfShapeShape
+AsDes2d: BRepAlgo_AsDes
+Offset: float
+Tol: float
+FacesWithVerts: TopTools_IndexedMapOfShape
+theDMVV: TopTools_IndexedDataMapOfShapeListOfShape
+
+Returns
+-------
+None
 ") ConnexIntByInt;
 		static void ConnexIntByInt(const TopoDS_Face & FI, BRepOffset_Offset & OFI, TopTools_DataMapOfShapeShape & MES, const TopTools_DataMapOfShapeShape & Build, const opencascade::handle<BRepAlgo_AsDes> & AsDes2d, const Standard_Real Offset, const Standard_Real Tol, TopTools_IndexedMapOfShape & FacesWithVerts, TopTools_IndexedDataMapOfShapeListOfShape & theDMVV);
 
@@ -448,23 +500,20 @@ class BRepOffset_Inter2d {
 		%feature("compactdefaultargs") ConnexIntByIntInVert;
 		%feature("autodoc", "Computes the intersection between the offset edges generated from vertices and stored into asdes as descendants of the <fi>. all intersection vertices will be stored in asdes2d. when all faces of the shape are treated the intersection vertices have to be fused using the fusevertices method. thedmvv contains the vertices that should be fused.
 
-	:param FI:
-	:type FI: TopoDS_Face
-	:param OFI:
-	:type OFI: BRepOffset_Offset
-	:param MES:
-	:type MES: TopTools_DataMapOfShapeShape
-	:param Build:
-	:type Build: TopTools_DataMapOfShapeShape
-	:param AsDes:
-	:type AsDes: BRepAlgo_AsDes
-	:param AsDes2d:
-	:type AsDes2d: BRepAlgo_AsDes
-	:param Tol:
-	:type Tol: float
-	:param theDMVV:
-	:type theDMVV: TopTools_IndexedDataMapOfShapeListOfShape
-	:rtype: None
+Parameters
+----------
+FI: TopoDS_Face
+OFI: BRepOffset_Offset
+MES: TopTools_DataMapOfShapeShape
+Build: TopTools_DataMapOfShapeShape
+AsDes: BRepAlgo_AsDes
+AsDes2d: BRepAlgo_AsDes
+Tol: float
+theDMVV: TopTools_IndexedDataMapOfShapeListOfShape
+
+Returns
+-------
+None
 ") ConnexIntByIntInVert;
 		static void ConnexIntByIntInVert(const TopoDS_Face & FI, BRepOffset_Offset & OFI, TopTools_DataMapOfShapeShape & MES, const TopTools_DataMapOfShapeShape & Build, const opencascade::handle<BRepAlgo_AsDes> & AsDes, const opencascade::handle<BRepAlgo_AsDes> & AsDes2d, const Standard_Real Tol, TopTools_IndexedDataMapOfShapeListOfShape & theDMVV);
 
@@ -472,13 +521,15 @@ class BRepOffset_Inter2d {
 		%feature("compactdefaultargs") ExtentEdge;
 		%feature("autodoc", "Extents the edge.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param NE:
-	:type NE: TopoDS_Edge
-	:param theOffset:
-	:type theOffset: float
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+NE: TopoDS_Edge
+theOffset: float
+
+Returns
+-------
+None
 ") ExtentEdge;
 		static void ExtentEdge(const TopoDS_Edge & E, TopoDS_Edge & NE, const Standard_Real theOffset);
 
@@ -486,11 +537,14 @@ class BRepOffset_Inter2d {
 		%feature("compactdefaultargs") FuseVertices;
 		%feature("autodoc", "Fuses the chains of vertices in the thedmvv and updates asdes by replacing the old vertices with the new ones.
 
-	:param theDMVV:
-	:type theDMVV: TopTools_IndexedDataMapOfShapeListOfShape
-	:param theAsDes:
-	:type theAsDes: BRepAlgo_AsDes
-	:rtype: None
+Parameters
+----------
+theDMVV: TopTools_IndexedDataMapOfShapeListOfShape
+theAsDes: BRepAlgo_AsDes
+
+Returns
+-------
+None
 ") FuseVertices;
 		static void FuseVertices(const TopTools_IndexedDataMapOfShapeListOfShape & theDMVV, const opencascade::handle<BRepAlgo_AsDes> & theAsDes);
 
@@ -510,153 +564,200 @@ class BRepOffset_Inter3d {
 	public:
 		/****************** AddCommonEdges ******************/
 		%feature("compactdefaultargs") AddCommonEdges;
-		%feature("autodoc", "	:param SetOfFaces:
-	:type SetOfFaces: TopTools_ListOfShape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SetOfFaces: TopTools_ListOfShape
+
+Returns
+-------
+None
 ") AddCommonEdges;
 		void AddCommonEdges(const TopTools_ListOfShape & SetOfFaces);
 
 		/****************** AsDes ******************/
 		%feature("compactdefaultargs") AsDes;
-		%feature("autodoc", "	:rtype: opencascade::handle<BRepAlgo_AsDes>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<BRepAlgo_AsDes>
 ") AsDes;
 		opencascade::handle<BRepAlgo_AsDes> AsDes();
 
 		/****************** BRepOffset_Inter3d ******************/
 		%feature("compactdefaultargs") BRepOffset_Inter3d;
-		%feature("autodoc", "	:param AsDes:
-	:type AsDes: BRepAlgo_AsDes
-	:param Side:
-	:type Side: TopAbs_State
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+AsDes: BRepAlgo_AsDes
+Side: TopAbs_State
+Tol: float
+
+Returns
+-------
+None
 ") BRepOffset_Inter3d;
 		 BRepOffset_Inter3d(const opencascade::handle<BRepAlgo_AsDes> & AsDes, const TopAbs_State Side, const Standard_Real Tol);
 
 		/****************** CompletInt ******************/
 		%feature("compactdefaultargs") CompletInt;
-		%feature("autodoc", "	:param SetOfFaces:
-	:type SetOfFaces: TopTools_ListOfShape
-	:param InitOffsetFace:
-	:type InitOffsetFace: BRepAlgo_Image
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SetOfFaces: TopTools_ListOfShape
+InitOffsetFace: BRepAlgo_Image
+
+Returns
+-------
+None
 ") CompletInt;
 		void CompletInt(const TopTools_ListOfShape & SetOfFaces, const BRepAlgo_Image & InitOffsetFace);
 
 		/****************** ConnexIntByArc ******************/
 		%feature("compactdefaultargs") ConnexIntByArc;
-		%feature("autodoc", "	:param SetOfFaces:
-	:type SetOfFaces: TopTools_ListOfShape
-	:param ShapeInit:
-	:type ShapeInit: TopoDS_Shape
-	:param Analyse:
-	:type Analyse: BRepOffset_Analyse
-	:param InitOffsetFace:
-	:type InitOffsetFace: BRepAlgo_Image
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SetOfFaces: TopTools_ListOfShape
+ShapeInit: TopoDS_Shape
+Analyse: BRepOffset_Analyse
+InitOffsetFace: BRepAlgo_Image
+
+Returns
+-------
+None
 ") ConnexIntByArc;
 		void ConnexIntByArc(const TopTools_ListOfShape & SetOfFaces, const TopoDS_Shape & ShapeInit, const BRepOffset_Analyse & Analyse, const BRepAlgo_Image & InitOffsetFace);
 
 		/****************** ConnexIntByInt ******************/
 		%feature("compactdefaultargs") ConnexIntByInt;
-		%feature("autodoc", "	:param SI:
-	:type SI: TopoDS_Shape
-	:param MapSF:
-	:type MapSF: BRepOffset_DataMapOfShapeOffset
-	:param A:
-	:type A: BRepOffset_Analyse
-	:param MES:
-	:type MES: TopTools_DataMapOfShapeShape
-	:param Build:
-	:type Build: TopTools_DataMapOfShapeShape
-	:param Failed:
-	:type Failed: TopTools_ListOfShape
-	:param bIsPlanar: default value is Standard_False
-	:type bIsPlanar: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SI: TopoDS_Shape
+MapSF: BRepOffset_DataMapOfShapeOffset
+A: BRepOffset_Analyse
+MES: TopTools_DataMapOfShapeShape
+Build: TopTools_DataMapOfShapeShape
+Failed: TopTools_ListOfShape
+bIsPlanar: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") ConnexIntByInt;
 		void ConnexIntByInt(const TopoDS_Shape & SI, const BRepOffset_DataMapOfShapeOffset & MapSF, const BRepOffset_Analyse & A, TopTools_DataMapOfShapeShape & MES, TopTools_DataMapOfShapeShape & Build, TopTools_ListOfShape & Failed, const Standard_Boolean bIsPlanar = Standard_False);
 
 		/****************** ContextIntByArc ******************/
 		%feature("compactdefaultargs") ContextIntByArc;
-		%feature("autodoc", "	:param ContextFaces:
-	:type ContextFaces: TopTools_IndexedMapOfShape
-	:param ExtentContext:
-	:type ExtentContext: bool
-	:param Analyse:
-	:type Analyse: BRepOffset_Analyse
-	:param InitOffsetFace:
-	:type InitOffsetFace: BRepAlgo_Image
-	:param InitOffsetEdge:
-	:type InitOffsetEdge: BRepAlgo_Image
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ContextFaces: TopTools_IndexedMapOfShape
+ExtentContext: bool
+Analyse: BRepOffset_Analyse
+InitOffsetFace: BRepAlgo_Image
+InitOffsetEdge: BRepAlgo_Image
+
+Returns
+-------
+None
 ") ContextIntByArc;
 		void ContextIntByArc(const TopTools_IndexedMapOfShape & ContextFaces, const Standard_Boolean ExtentContext, const BRepOffset_Analyse & Analyse, const BRepAlgo_Image & InitOffsetFace, BRepAlgo_Image & InitOffsetEdge);
 
 		/****************** ContextIntByInt ******************/
 		%feature("compactdefaultargs") ContextIntByInt;
-		%feature("autodoc", "	:param ContextFaces:
-	:type ContextFaces: TopTools_IndexedMapOfShape
-	:param ExtentContext:
-	:type ExtentContext: bool
-	:param MapSF:
-	:type MapSF: BRepOffset_DataMapOfShapeOffset
-	:param A:
-	:type A: BRepOffset_Analyse
-	:param MES:
-	:type MES: TopTools_DataMapOfShapeShape
-	:param Build:
-	:type Build: TopTools_DataMapOfShapeShape
-	:param Failed:
-	:type Failed: TopTools_ListOfShape
-	:param bIsPlanar: default value is Standard_False
-	:type bIsPlanar: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ContextFaces: TopTools_IndexedMapOfShape
+ExtentContext: bool
+MapSF: BRepOffset_DataMapOfShapeOffset
+A: BRepOffset_Analyse
+MES: TopTools_DataMapOfShapeShape
+Build: TopTools_DataMapOfShapeShape
+Failed: TopTools_ListOfShape
+bIsPlanar: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") ContextIntByInt;
 		void ContextIntByInt(const TopTools_IndexedMapOfShape & ContextFaces, const Standard_Boolean ExtentContext, const BRepOffset_DataMapOfShapeOffset & MapSF, const BRepOffset_Analyse & A, TopTools_DataMapOfShapeShape & MES, TopTools_DataMapOfShapeShape & Build, TopTools_ListOfShape & Failed, const Standard_Boolean bIsPlanar = Standard_False);
 
 		/****************** FaceInter ******************/
 		%feature("compactdefaultargs") FaceInter;
-		%feature("autodoc", "	:param F1:
-	:type F1: TopoDS_Face
-	:param F2:
-	:type F2: TopoDS_Face
-	:param InitOffsetFace:
-	:type InitOffsetFace: BRepAlgo_Image
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F1: TopoDS_Face
+F2: TopoDS_Face
+InitOffsetFace: BRepAlgo_Image
+
+Returns
+-------
+None
 ") FaceInter;
 		void FaceInter(const TopoDS_Face & F1, const TopoDS_Face & F2, const BRepAlgo_Image & InitOffsetFace);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:param F1:
-	:type F1: TopoDS_Face
-	:param F2:
-	:type F2: TopoDS_Face
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F1: TopoDS_Face
+F2: TopoDS_Face
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone(const TopoDS_Face & F1, const TopoDS_Face & F2);
 
 		/****************** NewEdges ******************/
 		%feature("compactdefaultargs") NewEdges;
-		%feature("autodoc", "	:rtype: TopTools_IndexedMapOfShape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopTools_IndexedMapOfShape
 ") NewEdges;
 		TopTools_IndexedMapOfShape & NewEdges();
 
 		/****************** SetDone ******************/
 		%feature("compactdefaultargs") SetDone;
-		%feature("autodoc", "	:param F1:
-	:type F1: TopoDS_Face
-	:param F2:
-	:type F2: TopoDS_Face
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F1: TopoDS_Face
+F2: TopoDS_Face
+
+Returns
+-------
+None
 ") SetDone;
 		void SetDone(const TopoDS_Face & F1, const TopoDS_Face & F2);
 
 		/****************** TouchedFaces ******************/
 		%feature("compactdefaultargs") TouchedFaces;
-		%feature("autodoc", "	:rtype: TopTools_IndexedMapOfShape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopTools_IndexedMapOfShape
 ") TouchedFaces;
 		TopTools_IndexedMapOfShape & TouchedFaces();
 
@@ -676,61 +777,99 @@ class BRepOffset_Interval {
 	public:
 		/****************** BRepOffset_Interval ******************/
 		%feature("compactdefaultargs") BRepOffset_Interval;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") BRepOffset_Interval;
 		 BRepOffset_Interval();
 
 		/****************** BRepOffset_Interval ******************/
 		%feature("compactdefaultargs") BRepOffset_Interval;
-		%feature("autodoc", "	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Type:
-	:type Type: BRepOffset_Type
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+U1: float
+U2: float
+Type: BRepOffset_Type
+
+Returns
+-------
+None
 ") BRepOffset_Interval;
 		 BRepOffset_Interval(const Standard_Real U1, const Standard_Real U2, const BRepOffset_Type Type);
 
 		/****************** First ******************/
 		%feature("compactdefaultargs") First;
-		%feature("autodoc", "	:param U:
-	:type U: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+U: float
+
+Returns
+-------
+None
 ") First;
 		void First(const Standard_Real U);
 
 		/****************** First ******************/
 		%feature("compactdefaultargs") First;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") First;
 		Standard_Real First();
 
 		/****************** Last ******************/
 		%feature("compactdefaultargs") Last;
-		%feature("autodoc", "	:param U:
-	:type U: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+U: float
+
+Returns
+-------
+None
 ") Last;
 		void Last(const Standard_Real U);
 
 		/****************** Last ******************/
 		%feature("compactdefaultargs") Last;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Last;
 		Standard_Real Last();
 
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
-		%feature("autodoc", "	:param T:
-	:type T: BRepOffset_Type
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+T: BRepOffset_Type
+
+Returns
+-------
+None
 ") Type;
 		void Type(const BRepOffset_Type T);
 
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
-		%feature("autodoc", "	:rtype: BRepOffset_Type
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+BRepOffset_Type
 ") Type;
 		BRepOffset_Type Type();
 
@@ -750,47 +889,61 @@ class BRepOffset_MakeLoops {
 	public:
 		/****************** BRepOffset_MakeLoops ******************/
 		%feature("compactdefaultargs") BRepOffset_MakeLoops;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") BRepOffset_MakeLoops;
 		 BRepOffset_MakeLoops();
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
-		%feature("autodoc", "	:param LF:
-	:type LF: TopTools_ListOfShape
-	:param AsDes:
-	:type AsDes: BRepAlgo_AsDes
-	:param Image:
-	:type Image: BRepAlgo_Image
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+LF: TopTools_ListOfShape
+AsDes: BRepAlgo_AsDes
+Image: BRepAlgo_Image
+
+Returns
+-------
+None
 ") Build;
 		void Build(const TopTools_ListOfShape & LF, const opencascade::handle<BRepAlgo_AsDes> & AsDes, BRepAlgo_Image & Image);
 
 		/****************** BuildFaces ******************/
 		%feature("compactdefaultargs") BuildFaces;
-		%feature("autodoc", "	:param LF:
-	:type LF: TopTools_ListOfShape
-	:param AsDes:
-	:type AsDes: BRepAlgo_AsDes
-	:param Image:
-	:type Image: BRepAlgo_Image
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+LF: TopTools_ListOfShape
+AsDes: BRepAlgo_AsDes
+Image: BRepAlgo_Image
+
+Returns
+-------
+None
 ") BuildFaces;
 		void BuildFaces(const TopTools_ListOfShape & LF, const opencascade::handle<BRepAlgo_AsDes> & AsDes, BRepAlgo_Image & Image);
 
 		/****************** BuildOnContext ******************/
 		%feature("compactdefaultargs") BuildOnContext;
-		%feature("autodoc", "	:param LContext:
-	:type LContext: TopTools_ListOfShape
-	:param Analyse:
-	:type Analyse: BRepOffset_Analyse
-	:param AsDes:
-	:type AsDes: BRepAlgo_AsDes
-	:param Image:
-	:type Image: BRepAlgo_Image
-	:param InSide:
-	:type InSide: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+LContext: TopTools_ListOfShape
+Analyse: BRepOffset_Analyse
+AsDes: BRepAlgo_AsDes
+Image: BRepAlgo_Image
+InSide: bool
+
+Returns
+-------
+None
 ") BuildOnContext;
 		void BuildOnContext(const TopTools_ListOfShape & LContext, const BRepOffset_Analyse & Analyse, const opencascade::handle<BRepAlgo_AsDes> & AsDes, BRepAlgo_Image & Image, const Standard_Boolean InSide);
 
@@ -812,39 +965,51 @@ class BRepOffset_MakeOffset {
 		%feature("compactdefaultargs") AddFace;
 		%feature("autodoc", "Add closing faces, <f> has to be in the initial shape s.
 
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") AddFace;
 		void AddFace(const TopoDS_Face & F);
 
 		/****************** BRepOffset_MakeOffset ******************/
 		%feature("compactdefaultargs") BRepOffset_MakeOffset;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") BRepOffset_MakeOffset;
 		 BRepOffset_MakeOffset();
 
 		/****************** BRepOffset_MakeOffset ******************/
 		%feature("compactdefaultargs") BRepOffset_MakeOffset;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:param Offset:
-	:type Offset: float
-	:param Tol:
-	:type Tol: float
-	:param Mode: default value is BRepOffset_Skin
-	:type Mode: BRepOffset_Mode
-	:param Intersection: default value is Standard_False
-	:type Intersection: bool
-	:param SelfInter: default value is Standard_False
-	:type SelfInter: bool
-	:param Join: default value is GeomAbs_Arc
-	:type Join: GeomAbs_JoinType
-	:param Thickening: default value is Standard_False
-	:type Thickening: bool
-	:param RemoveIntEdges: default value is Standard_False
-	:type RemoveIntEdges: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+Offset: float
+Tol: float
+Mode: BRepOffset_Mode,optional
+	default value is BRepOffset_Skin
+Intersection: bool,optional
+	default value is Standard_False
+SelfInter: bool,optional
+	default value is Standard_False
+Join: GeomAbs_JoinType,optional
+	default value is GeomAbs_Arc
+Thickening: bool,optional
+	default value is Standard_False
+RemoveIntEdges: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") BRepOffset_MakeOffset;
 		 BRepOffset_MakeOffset(const TopoDS_Shape & S, const Standard_Real Offset, const Standard_Real Tol, const BRepOffset_Mode Mode = BRepOffset_Skin, const Standard_Boolean Intersection = Standard_False, const Standard_Boolean SelfInter = Standard_False, const GeomAbs_JoinType Join = GeomAbs_Arc, const Standard_Boolean Thickening = Standard_False, const Standard_Boolean RemoveIntEdges = Standard_False);
 
@@ -852,13 +1017,19 @@ class BRepOffset_MakeOffset {
 		%feature("compactdefaultargs") CheckInputData;
 		%feature("autodoc", "Makes pre analysis of possibility offset perform. use method error() to get more information. finds first error. list of checks: 1) check for existence object with non-null offset. 2) check for connectivity in offset shell. 3) check continuity of input surfaces. 4) check for normals existence on grid. returns true if possible make computations and false otherwise.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") CheckInputData;
 		Standard_Boolean CheckInputData();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -866,7 +1037,9 @@ class BRepOffset_MakeOffset {
 		%feature("compactdefaultargs") ClosingFaces;
 		%feature("autodoc", "Returns the list of closing faces stores by addface.
 
-	:rtype: TopTools_IndexedMapOfShape
+Returns
+-------
+TopTools_IndexedMapOfShape
 ") ClosingFaces;
 		const TopTools_IndexedMapOfShape & ClosingFaces();
 
@@ -874,7 +1047,9 @@ class BRepOffset_MakeOffset {
 		%feature("compactdefaultargs") Error;
 		%feature("autodoc", "Returns information about offset state.
 
-	:rtype: BRepOffset_Error
+Returns
+-------
+BRepOffset_Error
 ") Error;
 		BRepOffset_Error Error();
 
@@ -882,7 +1057,9 @@ class BRepOffset_MakeOffset {
 		%feature("compactdefaultargs") GetBadShape;
 		%feature("autodoc", "Return bad shape, which obtained in checkinputdata.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") GetBadShape;
 		const TopoDS_Shape GetBadShape();
 
@@ -890,49 +1067,67 @@ class BRepOffset_MakeOffset {
 		%feature("compactdefaultargs") GetJoinType;
 		%feature("autodoc", "Returns myjoin.
 
-	:rtype: GeomAbs_JoinType
+Returns
+-------
+GeomAbs_JoinType
 ") GetJoinType;
 		GeomAbs_JoinType GetJoinType();
 
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:param Offset:
-	:type Offset: float
-	:param Tol:
-	:type Tol: float
-	:param Mode: default value is BRepOffset_Skin
-	:type Mode: BRepOffset_Mode
-	:param Intersection: default value is Standard_False
-	:type Intersection: bool
-	:param SelfInter: default value is Standard_False
-	:type SelfInter: bool
-	:param Join: default value is GeomAbs_Arc
-	:type Join: GeomAbs_JoinType
-	:param Thickening: default value is Standard_False
-	:type Thickening: bool
-	:param RemoveIntEdges: default value is Standard_False
-	:type RemoveIntEdges: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+Offset: float
+Tol: float
+Mode: BRepOffset_Mode,optional
+	default value is BRepOffset_Skin
+Intersection: bool,optional
+	default value is Standard_False
+SelfInter: bool,optional
+	default value is Standard_False
+Join: GeomAbs_JoinType,optional
+	default value is GeomAbs_Arc
+Thickening: bool,optional
+	default value is Standard_False
+RemoveIntEdges: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const TopoDS_Shape & S, const Standard_Real Offset, const Standard_Real Tol, const BRepOffset_Mode Mode = BRepOffset_Skin, const Standard_Boolean Intersection = Standard_False, const Standard_Boolean SelfInter = Standard_False, const GeomAbs_JoinType Join = GeomAbs_Arc, const Standard_Boolean Thickening = Standard_False, const Standard_Boolean RemoveIntEdges = Standard_False);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
 		/****************** MakeOffsetShape ******************/
 		%feature("compactdefaultargs") MakeOffsetShape;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") MakeOffsetShape;
 		void MakeOffsetShape();
 
 		/****************** MakeThickSolid ******************/
 		%feature("compactdefaultargs") MakeThickSolid;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") MakeThickSolid;
 		void MakeThickSolid();
 
@@ -940,7 +1135,9 @@ class BRepOffset_MakeOffset {
 		%feature("compactdefaultargs") OffsetEdgesFromShapes;
 		%feature("autodoc", "Returns <image> containing links between initials shapes and offset edges.
 
-	:rtype: BRepAlgo_Image
+Returns
+-------
+BRepAlgo_Image
 ") OffsetEdgesFromShapes;
 		const BRepAlgo_Image & OffsetEdgesFromShapes();
 
@@ -948,7 +1145,9 @@ class BRepOffset_MakeOffset {
 		%feature("compactdefaultargs") OffsetFacesFromShapes;
 		%feature("autodoc", "Returns <image> containing links between initials shapes and offset faces.
 
-	:rtype: BRepAlgo_Image
+Returns
+-------
+BRepAlgo_Image
 ") OffsetFacesFromShapes;
 		const BRepAlgo_Image & OffsetFacesFromShapes();
 
@@ -956,17 +1155,24 @@ class BRepOffset_MakeOffset {
 		%feature("compactdefaultargs") SetOffsetOnFace;
 		%feature("autodoc", "Set the offset <off> on the face <f>.
 
-	:param F:
-	:type F: TopoDS_Face
-	:param Off:
-	:type Off: float
-	:rtype: None
+Parameters
+----------
+F: TopoDS_Face
+Off: float
+
+Returns
+-------
+None
 ") SetOffsetOnFace;
 		void SetOffsetOnFace(const TopoDS_Face & F, const Standard_Real Off);
 
 		/****************** Shape ******************/
 		%feature("compactdefaultargs") Shape;
-		%feature("autodoc", "	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
 
@@ -988,7 +1194,9 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") BRepOffset_MakeSimpleOffset;
 		%feature("autodoc", "Constructor. does nothing.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepOffset_MakeSimpleOffset;
 		 BRepOffset_MakeSimpleOffset();
 
@@ -996,11 +1204,14 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") BRepOffset_MakeSimpleOffset;
 		%feature("autodoc", "Constructor.
 
-	:param theInputShape:
-	:type theInputShape: TopoDS_Shape
-	:param theOffsetValue:
-	:type theOffsetValue: float
-	:rtype: None
+Parameters
+----------
+theInputShape: TopoDS_Shape
+theOffsetValue: float
+
+Returns
+-------
+None
 ") BRepOffset_MakeSimpleOffset;
 		 BRepOffset_MakeSimpleOffset(const TopoDS_Shape & theInputShape, const Standard_Real theOffsetValue);
 
@@ -1008,9 +1219,13 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") Generated;
 		%feature("autodoc", "Returnes result shape for the given one (if exists).
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") Generated;
 		const TopoDS_Shape Generated(const TopoDS_Shape & theShape);
 
@@ -1018,7 +1233,9 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") GetBuildSolidFlag;
 		%feature("autodoc", "Gets solid building flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") GetBuildSolidFlag;
 		Standard_Boolean GetBuildSolidFlag();
 
@@ -1026,7 +1243,9 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") GetError;
 		%feature("autodoc", "Gets error code.
 
-	:rtype: BRepOffsetSimple_Status
+Returns
+-------
+BRepOffsetSimple_Status
 ") GetError;
 		BRepOffsetSimple_Status GetError();
 
@@ -1034,7 +1253,9 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") GetErrorMessage;
 		%feature("autodoc", "Gets error message.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") GetErrorMessage;
 		TCollection_AsciiString GetErrorMessage();
 
@@ -1042,7 +1263,9 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") GetOffsetValue;
 		%feature("autodoc", "Gets offset value.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetOffsetValue;
 		Standard_Real GetOffsetValue();
 
@@ -1050,7 +1273,9 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") GetResultShape;
 		%feature("autodoc", "Returns result shape.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") GetResultShape;
 		const TopoDS_Shape GetResultShape();
 
@@ -1058,7 +1283,9 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") GetTolerance;
 		%feature("autodoc", "Gets tolerance (used for handling singularities).
 
-	:rtype: float
+Returns
+-------
+float
 ") GetTolerance;
 		Standard_Real GetTolerance();
 
@@ -1066,11 +1293,14 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialies shape for modifications.
 
-	:param theInputShape:
-	:type theInputShape: TopoDS_Shape
-	:param theOffsetValue:
-	:type theOffsetValue: float
-	:rtype: None
+Parameters
+----------
+theInputShape: TopoDS_Shape
+theOffsetValue: float
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const TopoDS_Shape & theInputShape, const Standard_Real theOffsetValue);
 
@@ -1078,7 +1308,9 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Gets done state.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -1086,9 +1318,13 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") Modified;
 		%feature("autodoc", "Returnes modified shape for the given one (if exists).
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") Modified;
 		const TopoDS_Shape Modified(const TopoDS_Shape & theShape);
 
@@ -1096,7 +1332,9 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Computes offset shape.
 
-	:rtype: None
+Returns
+-------
+None
 ") Perform;
 		void Perform();
 
@@ -1104,9 +1342,13 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") SetBuildSolidFlag;
 		%feature("autodoc", "Sets solid building flag.
 
-	:param theBuildFlag:
-	:type theBuildFlag: bool
-	:rtype: None
+Parameters
+----------
+theBuildFlag: bool
+
+Returns
+-------
+None
 ") SetBuildSolidFlag;
 		void SetBuildSolidFlag(const Standard_Boolean theBuildFlag);
 
@@ -1114,9 +1356,13 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") SetOffsetValue;
 		%feature("autodoc", "Sets offset value.
 
-	:param theOffsetValue:
-	:type theOffsetValue: float
-	:rtype: None
+Parameters
+----------
+theOffsetValue: float
+
+Returns
+-------
+None
 ") SetOffsetValue;
 		void SetOffsetValue(const Standard_Real theOffsetValue);
 
@@ -1124,9 +1370,13 @@ class BRepOffset_MakeSimpleOffset {
 		%feature("compactdefaultargs") SetTolerance;
 		%feature("autodoc", "Sets tolerance (used for handling singularities).
 
-	:param theValue:
-	:type theValue: float
-	:rtype: None
+Parameters
+----------
+theValue: float
+
+Returns
+-------
+None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real theValue);
 
@@ -1146,21 +1396,30 @@ class BRepOffset_Offset {
 	public:
 		/****************** BRepOffset_Offset ******************/
 		%feature("compactdefaultargs") BRepOffset_Offset;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") BRepOffset_Offset;
 		 BRepOffset_Offset();
 
 		/****************** BRepOffset_Offset ******************/
 		%feature("compactdefaultargs") BRepOffset_Offset;
-		%feature("autodoc", "	:param Face:
-	:type Face: TopoDS_Face
-	:param Offset:
-	:type Offset: float
-	:param OffsetOutside: default value is Standard_True
-	:type OffsetOutside: bool
-	:param JoinType: default value is GeomAbs_Arc
-	:type JoinType: GeomAbs_JoinType
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Face: TopoDS_Face
+Offset: float
+OffsetOutside: bool,optional
+	default value is Standard_True
+JoinType: GeomAbs_JoinType,optional
+	default value is GeomAbs_Arc
+
+Returns
+-------
+None
 ") BRepOffset_Offset;
 		 BRepOffset_Offset(const TopoDS_Face & Face, const Standard_Real Offset, const Standard_Boolean OffsetOutside = Standard_True, const GeomAbs_JoinType JoinType = GeomAbs_Arc);
 
@@ -1168,61 +1427,67 @@ class BRepOffset_Offset {
 		%feature("compactdefaultargs") BRepOffset_Offset;
 		%feature("autodoc", "This method will be called when you want to share the edges soon generated from an other face. e.g. when two faces are tangents the common edge will generate only one edge ( no pipe). //! the map will be fill as follow: //! created(e) = e' with: e = an edge of <face> e' = the image of e in the offseting of another face sharing e with a continuity at least g1.
 
-	:param Face:
-	:type Face: TopoDS_Face
-	:param Offset:
-	:type Offset: float
-	:param Created:
-	:type Created: TopTools_DataMapOfShapeShape
-	:param OffsetOutside: default value is Standard_True
-	:type OffsetOutside: bool
-	:param JoinType: default value is GeomAbs_Arc
-	:type JoinType: GeomAbs_JoinType
-	:rtype: None
+Parameters
+----------
+Face: TopoDS_Face
+Offset: float
+Created: TopTools_DataMapOfShapeShape
+OffsetOutside: bool,optional
+	default value is Standard_True
+JoinType: GeomAbs_JoinType,optional
+	default value is GeomAbs_Arc
+
+Returns
+-------
+None
 ") BRepOffset_Offset;
 		 BRepOffset_Offset(const TopoDS_Face & Face, const Standard_Real Offset, const TopTools_DataMapOfShapeShape & Created, const Standard_Boolean OffsetOutside = Standard_True, const GeomAbs_JoinType JoinType = GeomAbs_Arc);
 
 		/****************** BRepOffset_Offset ******************/
 		%feature("compactdefaultargs") BRepOffset_Offset;
-		%feature("autodoc", "	:param Path:
-	:type Path: TopoDS_Edge
-	:param Edge1:
-	:type Edge1: TopoDS_Edge
-	:param Edge2:
-	:type Edge2: TopoDS_Edge
-	:param Offset:
-	:type Offset: float
-	:param Polynomial: default value is Standard_False
-	:type Polynomial: bool
-	:param Tol: default value is 1.0e-4
-	:type Tol: float
-	:param Conti: default value is GeomAbs_C1
-	:type Conti: GeomAbs_Shape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Path: TopoDS_Edge
+Edge1: TopoDS_Edge
+Edge2: TopoDS_Edge
+Offset: float
+Polynomial: bool,optional
+	default value is Standard_False
+Tol: float,optional
+	default value is 1.0e-4
+Conti: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") BRepOffset_Offset;
 		 BRepOffset_Offset(const TopoDS_Edge & Path, const TopoDS_Edge & Edge1, const TopoDS_Edge & Edge2, const Standard_Real Offset, const Standard_Boolean Polynomial = Standard_False, const Standard_Real Tol = 1.0e-4, const GeomAbs_Shape Conti = GeomAbs_C1);
 
 		/****************** BRepOffset_Offset ******************/
 		%feature("compactdefaultargs") BRepOffset_Offset;
-		%feature("autodoc", "	:param Path:
-	:type Path: TopoDS_Edge
-	:param Edge1:
-	:type Edge1: TopoDS_Edge
-	:param Edge2:
-	:type Edge2: TopoDS_Edge
-	:param Offset:
-	:type Offset: float
-	:param FirstEdge:
-	:type FirstEdge: TopoDS_Edge
-	:param LastEdge:
-	:type LastEdge: TopoDS_Edge
-	:param Polynomial: default value is Standard_False
-	:type Polynomial: bool
-	:param Tol: default value is 1.0e-4
-	:type Tol: float
-	:param Conti: default value is GeomAbs_C1
-	:type Conti: GeomAbs_Shape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Path: TopoDS_Edge
+Edge1: TopoDS_Edge
+Edge2: TopoDS_Edge
+Offset: float
+FirstEdge: TopoDS_Edge
+LastEdge: TopoDS_Edge
+Polynomial: bool,optional
+	default value is Standard_False
+Tol: float,optional
+	default value is 1.0e-4
+Conti: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") BRepOffset_Offset;
 		 BRepOffset_Offset(const TopoDS_Edge & Path, const TopoDS_Edge & Edge1, const TopoDS_Edge & Edge2, const Standard_Real Offset, const TopoDS_Edge & FirstEdge, const TopoDS_Edge & LastEdge, const Standard_Boolean Polynomial = Standard_False, const Standard_Real Tol = 1.0e-4, const GeomAbs_Shape Conti = GeomAbs_C1);
 
@@ -1230,107 +1495,132 @@ class BRepOffset_Offset {
 		%feature("compactdefaultargs") BRepOffset_Offset;
 		%feature("autodoc", "Tol and conti are only used if polynomial is true (used to perfrom the approximation).
 
-	:param Vertex:
-	:type Vertex: TopoDS_Vertex
-	:param LEdge:
-	:type LEdge: TopTools_ListOfShape
-	:param Offset:
-	:type Offset: float
-	:param Polynomial: default value is Standard_False
-	:type Polynomial: bool
-	:param Tol: default value is 1.0e-4
-	:type Tol: float
-	:param Conti: default value is GeomAbs_C1
-	:type Conti: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+Vertex: TopoDS_Vertex
+LEdge: TopTools_ListOfShape
+Offset: float
+Polynomial: bool,optional
+	default value is Standard_False
+Tol: float,optional
+	default value is 1.0e-4
+Conti: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") BRepOffset_Offset;
 		 BRepOffset_Offset(const TopoDS_Vertex & Vertex, const TopTools_ListOfShape & LEdge, const Standard_Real Offset, const Standard_Boolean Polynomial = Standard_False, const Standard_Real Tol = 1.0e-4, const GeomAbs_Shape Conti = GeomAbs_C1);
 
 		/****************** Face ******************/
 		%feature("compactdefaultargs") Face;
-		%feature("autodoc", "	:rtype: TopoDS_Face
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDS_Face
 ") Face;
 		const TopoDS_Face Face();
 
 		/****************** Generated ******************/
 		%feature("compactdefaultargs") Generated;
-		%feature("autodoc", "	:param Shape:
-	:type Shape: TopoDS_Shape
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Shape: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") Generated;
 		TopoDS_Shape Generated(const TopoDS_Shape & Shape);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param Face:
-	:type Face: TopoDS_Face
-	:param Offset:
-	:type Offset: float
-	:param OffsetOutside: default value is Standard_True
-	:type OffsetOutside: bool
-	:param JoinType: default value is GeomAbs_Arc
-	:type JoinType: GeomAbs_JoinType
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Face: TopoDS_Face
+Offset: float
+OffsetOutside: bool,optional
+	default value is Standard_True
+JoinType: GeomAbs_JoinType,optional
+	default value is GeomAbs_Arc
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Face & Face, const Standard_Real Offset, const Standard_Boolean OffsetOutside = Standard_True, const GeomAbs_JoinType JoinType = GeomAbs_Arc);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param Face:
-	:type Face: TopoDS_Face
-	:param Offset:
-	:type Offset: float
-	:param Created:
-	:type Created: TopTools_DataMapOfShapeShape
-	:param OffsetOutside: default value is Standard_True
-	:type OffsetOutside: bool
-	:param JoinType: default value is GeomAbs_Arc
-	:type JoinType: GeomAbs_JoinType
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Face: TopoDS_Face
+Offset: float
+Created: TopTools_DataMapOfShapeShape
+OffsetOutside: bool,optional
+	default value is Standard_True
+JoinType: GeomAbs_JoinType,optional
+	default value is GeomAbs_Arc
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Face & Face, const Standard_Real Offset, const TopTools_DataMapOfShapeShape & Created, const Standard_Boolean OffsetOutside = Standard_True, const GeomAbs_JoinType JoinType = GeomAbs_Arc);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param Path:
-	:type Path: TopoDS_Edge
-	:param Edge1:
-	:type Edge1: TopoDS_Edge
-	:param Edge2:
-	:type Edge2: TopoDS_Edge
-	:param Offset:
-	:type Offset: float
-	:param Polynomial: default value is Standard_False
-	:type Polynomial: bool
-	:param Tol: default value is 1.0e-4
-	:type Tol: float
-	:param Conti: default value is GeomAbs_C1
-	:type Conti: GeomAbs_Shape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Path: TopoDS_Edge
+Edge1: TopoDS_Edge
+Edge2: TopoDS_Edge
+Offset: float
+Polynomial: bool,optional
+	default value is Standard_False
+Tol: float,optional
+	default value is 1.0e-4
+Conti: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Edge & Path, const TopoDS_Edge & Edge1, const TopoDS_Edge & Edge2, const Standard_Real Offset, const Standard_Boolean Polynomial = Standard_False, const Standard_Real Tol = 1.0e-4, const GeomAbs_Shape Conti = GeomAbs_C1);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param Path:
-	:type Path: TopoDS_Edge
-	:param Edge1:
-	:type Edge1: TopoDS_Edge
-	:param Edge2:
-	:type Edge2: TopoDS_Edge
-	:param Offset:
-	:type Offset: float
-	:param FirstEdge:
-	:type FirstEdge: TopoDS_Edge
-	:param LastEdge:
-	:type LastEdge: TopoDS_Edge
-	:param Polynomial: default value is Standard_False
-	:type Polynomial: bool
-	:param Tol: default value is 1.0e-4
-	:type Tol: float
-	:param Conti: default value is GeomAbs_C1
-	:type Conti: GeomAbs_Shape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Path: TopoDS_Edge
+Edge1: TopoDS_Edge
+Edge2: TopoDS_Edge
+Offset: float
+FirstEdge: TopoDS_Edge
+LastEdge: TopoDS_Edge
+Polynomial: bool,optional
+	default value is Standard_False
+Tol: float,optional
+	default value is 1.0e-4
+Conti: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Edge & Path, const TopoDS_Edge & Edge1, const TopoDS_Edge & Edge2, const Standard_Real Offset, const TopoDS_Edge & FirstEdge, const TopoDS_Edge & LastEdge, const Standard_Boolean Polynomial = Standard_False, const Standard_Real Tol = 1.0e-4, const GeomAbs_Shape Conti = GeomAbs_C1);
 
@@ -1338,19 +1628,21 @@ class BRepOffset_Offset {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Tol and conti are only used if polynomial is true (used to perfrom the approximation).
 
-	:param Vertex:
-	:type Vertex: TopoDS_Vertex
-	:param LEdge:
-	:type LEdge: TopTools_ListOfShape
-	:param Offset:
-	:type Offset: float
-	:param Polynomial: default value is Standard_False
-	:type Polynomial: bool
-	:param Tol: default value is 1.0e-4
-	:type Tol: float
-	:param Conti: default value is GeomAbs_C1
-	:type Conti: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+Vertex: TopoDS_Vertex
+LEdge: TopTools_ListOfShape
+Offset: float
+Polynomial: bool,optional
+	default value is Standard_False
+Tol: float,optional
+	default value is 1.0e-4
+Conti: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Vertex & Vertex, const TopTools_ListOfShape & LEdge, const Standard_Real Offset, const Standard_Boolean Polynomial = Standard_False, const Standard_Real Tol = 1.0e-4, const GeomAbs_Shape Conti = GeomAbs_C1);
 
@@ -1358,23 +1650,34 @@ class BRepOffset_Offset {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Only used in rolling ball. pipe on free boundary.
 
-	:param Edge:
-	:type Edge: TopoDS_Edge
-	:param Offset:
-	:type Offset: float
-	:rtype: None
+Parameters
+----------
+Edge: TopoDS_Edge
+Offset: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Edge & Edge, const Standard_Real Offset);
 
 		/****************** InitialShape ******************/
 		%feature("compactdefaultargs") InitialShape;
-		%feature("autodoc", "	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDS_Shape
 ") InitialShape;
 		const TopoDS_Shape InitialShape();
 
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
-		%feature("autodoc", "	:rtype: BRepOffset_Status
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+BRepOffset_Status
 ") Status;
 		BRepOffset_Status Status();
 
@@ -1399,13 +1702,15 @@ class BRepOffset_SimpleOffset : public BRepTools_Modification {
 		%feature("compactdefaultargs") BRepOffset_SimpleOffset;
 		%feature("autodoc", "Constructor. @param theinputshape shape to be offset @param theoffsetvalue offset distance (signed) @param thetolerance tolerance for handling singular points.
 
-	:param theInputShape:
-	:type theInputShape: TopoDS_Shape
-	:param theOffsetValue:
-	:type theOffsetValue: float
-	:param theTolerance:
-	:type theTolerance: float
-	:rtype: None
+Parameters
+----------
+theInputShape: TopoDS_Shape
+theOffsetValue: float
+theTolerance: float
+
+Returns
+-------
+None
 ") BRepOffset_SimpleOffset;
 		 BRepOffset_SimpleOffset(const TopoDS_Shape & theInputShape, const Standard_Real theOffsetValue, const Standard_Real theTolerance);
 
@@ -1413,19 +1718,18 @@ class BRepOffset_SimpleOffset : public BRepTools_Modification {
 		%feature("compactdefaultargs") Continuity;
 		%feature("autodoc", "Returns the continuity of <newe> between <newf1> and <newf2>. //! <newe> is the new edge created from <e>. <newf1> (resp. <newf2>) is the new face created from <f1> (resp. <f2>).
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param F1:
-	:type F1: TopoDS_Face
-	:param F2:
-	:type F2: TopoDS_Face
-	:param NewE:
-	:type NewE: TopoDS_Edge
-	:param NewF1:
-	:type NewF1: TopoDS_Face
-	:param NewF2:
-	:type NewF2: TopoDS_Face
-	:rtype: GeomAbs_Shape
+Parameters
+----------
+E: TopoDS_Edge
+F1: TopoDS_Face
+F2: TopoDS_Face
+NewE: TopoDS_Edge
+NewF1: TopoDS_Face
+NewF2: TopoDS_Face
+
+Returns
+-------
+GeomAbs_Shape
 ") Continuity;
 		GeomAbs_Shape Continuity(const TopoDS_Edge & E, const TopoDS_Face & F1, const TopoDS_Face & F2, const TopoDS_Edge & NewE, const TopoDS_Face & NewF1, const TopoDS_Face & NewF2);
 
@@ -1433,15 +1737,16 @@ class BRepOffset_SimpleOffset : public BRepTools_Modification {
 		%feature("compactdefaultargs") NewCurve;
 		%feature("autodoc", "Returns standard_true if the edge <e> has been modified. in this case, <c> is the new geometric support of the edge, <l> the new location, <tol> the new tolerance. otherwise, returns standard_false, and <c>, <l>, <tol> are not significant.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param C:
-	:type C: Geom_Curve
-	:param L:
-	:type L: TopLoc_Location
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+Parameters
+----------
+E: TopoDS_Edge
+C: Geom_Curve
+L: TopLoc_Location
+Tol: float
+
+Returns
+-------
+bool
 ") NewCurve;
 		Standard_Boolean NewCurve(const TopoDS_Edge & E, opencascade::handle<Geom_Curve> & C, TopLoc_Location & L, Standard_Real &OutValue);
 
@@ -1449,19 +1754,18 @@ class BRepOffset_SimpleOffset : public BRepTools_Modification {
 		%feature("compactdefaultargs") NewCurve2d;
 		%feature("autodoc", "Returns standard_true if the edge <e> has a new curve on surface on the face <f>.in this case, <c> is the new geometric support of the edge, <l> the new location, <tol> the new tolerance. otherwise, returns standard_false, and <c>, <l>, <tol> are not significant.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param F:
-	:type F: TopoDS_Face
-	:param NewE:
-	:type NewE: TopoDS_Edge
-	:param NewF:
-	:type NewF: TopoDS_Face
-	:param C:
-	:type C: Geom2d_Curve
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+Parameters
+----------
+E: TopoDS_Edge
+F: TopoDS_Face
+NewE: TopoDS_Edge
+NewF: TopoDS_Face
+C: Geom2d_Curve
+Tol: float
+
+Returns
+-------
+bool
 ") NewCurve2d;
 		Standard_Boolean NewCurve2d(const TopoDS_Edge & E, const TopoDS_Face & F, const TopoDS_Edge & NewE, const TopoDS_Face & NewF, opencascade::handle<Geom2d_Curve> & C, Standard_Real &OutValue);
 
@@ -1469,15 +1773,16 @@ class BRepOffset_SimpleOffset : public BRepTools_Modification {
 		%feature("compactdefaultargs") NewParameter;
 		%feature("autodoc", "Returns standard_true if the vertex <v> has a new parameter on the edge <e>. in this case, <p> is the parameter, <tol> the new tolerance. otherwise, returns standard_false, and <p>, <tol> are not significant.
 
-	:param V:
-	:type V: TopoDS_Vertex
-	:param E:
-	:type E: TopoDS_Edge
-	:param P:
-	:type P: float
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+Parameters
+----------
+V: TopoDS_Vertex
+E: TopoDS_Edge
+P: float
+Tol: float
+
+Returns
+-------
+bool
 ") NewParameter;
 		Standard_Boolean NewParameter(const TopoDS_Vertex & V, const TopoDS_Edge & E, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1485,13 +1790,15 @@ class BRepOffset_SimpleOffset : public BRepTools_Modification {
 		%feature("compactdefaultargs") NewPoint;
 		%feature("autodoc", "Returns standard_true if the vertex <v> has been modified. in this case, <p> is the new geometric support of the vertex, <tol> the new tolerance. otherwise, returns standard_false, and <p>, <tol> are not significant.
 
-	:param V:
-	:type V: TopoDS_Vertex
-	:param P:
-	:type P: gp_Pnt
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+Parameters
+----------
+V: TopoDS_Vertex
+P: gp_Pnt
+Tol: float
+
+Returns
+-------
+bool
 ") NewPoint;
 		Standard_Boolean NewPoint(const TopoDS_Vertex & V, gp_Pnt & P, Standard_Real &OutValue);
 
@@ -1499,19 +1806,18 @@ class BRepOffset_SimpleOffset : public BRepTools_Modification {
 		%feature("compactdefaultargs") NewSurface;
 		%feature("autodoc", "Returns standard_true if the face <f> has been modified. in this case, <s> is the new geometric support of the face, <l> the new location,<tol> the new tolerance.<revwires> has to be set to standard_true when the modification reverses the normal of the surface.(the wires have to be reversed). <revface> has to be set to standard_true if the orientation of the modified face changes in the shells which contain it. -- here, <revface> will return standard_true if the -- gp_trsf is negative.
 
-	:param F:
-	:type F: TopoDS_Face
-	:param S:
-	:type S: Geom_Surface
-	:param L:
-	:type L: TopLoc_Location
-	:param Tol:
-	:type Tol: float
-	:param RevWires:
-	:type RevWires: bool
-	:param RevFace:
-	:type RevFace: bool
-	:rtype: bool
+Parameters
+----------
+F: TopoDS_Face
+S: Geom_Surface
+L: TopLoc_Location
+Tol: float
+RevWires: bool
+RevFace: bool
+
+Returns
+-------
+bool
 ") NewSurface;
 		Standard_Boolean NewSurface(const TopoDS_Face & F, opencascade::handle<Geom_Surface> & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean &OutValue, Standard_Boolean &OutValue);
 
@@ -1535,31 +1841,34 @@ class BRepOffset_Tool {
 		%feature("compactdefaultargs") BuildNeighbour;
 		%feature("autodoc", "Via the wire explorer store in <nonv1> for an edge <e> of <w> his edge neighbour on the first vertex <v1> of <e>. store in nonv2 the neighbour of <e>on the last vertex <v2> of <e>.
 
-	:param W:
-	:type W: TopoDS_Wire
-	:param F:
-	:type F: TopoDS_Face
-	:param NOnV1:
-	:type NOnV1: TopTools_DataMapOfShapeShape
-	:param NOnV2:
-	:type NOnV2: TopTools_DataMapOfShapeShape
-	:rtype: None
+Parameters
+----------
+W: TopoDS_Wire
+F: TopoDS_Face
+NOnV1: TopTools_DataMapOfShapeShape
+NOnV2: TopTools_DataMapOfShapeShape
+
+Returns
+-------
+None
 ") BuildNeighbour;
 		static void BuildNeighbour(const TopoDS_Wire & W, const TopoDS_Face & F, TopTools_DataMapOfShapeShape & NOnV1, TopTools_DataMapOfShapeShape & NOnV2);
 
 		/****************** CheckBounds ******************/
 		%feature("compactdefaultargs") CheckBounds;
-		%feature("autodoc", "	:param F:
-	:type F: TopoDS_Face
-	:param Analyse:
-	:type Analyse: BRepOffset_Analyse
-	:param enlargeU:
-	:type enlargeU: bool
-	:param enlargeVfirst:
-	:type enlargeVfirst: bool
-	:param enlargeVlast:
-	:type enlargeVlast: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F: TopoDS_Face
+Analyse: BRepOffset_Analyse
+enlargeU: bool
+enlargeVfirst: bool
+enlargeVlast: bool
+
+Returns
+-------
+None
 ") CheckBounds;
 		static void CheckBounds(const TopoDS_Face & F, const BRepOffset_Analyse & Analyse, Standard_Boolean &OutValue, Standard_Boolean &OutValue, Standard_Boolean &OutValue);
 
@@ -1567,29 +1876,34 @@ class BRepOffset_Tool {
 		%feature("compactdefaultargs") CheckPlanesNormals;
 		%feature("autodoc", "Compares the normal directions of the planar faces and returns true if the directions are the same with the given precision.
 
-	:param theFace1:
-	:type theFace1: TopoDS_Face
-	:param theFace2:
-	:type theFace2: TopoDS_Face
-	:param theTolAng: default value is 1e-8
-	:type theTolAng: float
-	:rtype: bool
+Parameters
+----------
+theFace1: TopoDS_Face
+theFace2: TopoDS_Face
+theTolAng: float,optional
+	default value is 1e-8
+
+Returns
+-------
+bool
 ") CheckPlanesNormals;
 		static Standard_Boolean CheckPlanesNormals(const TopoDS_Face & theFace1, const TopoDS_Face & theFace2, const Standard_Real theTolAng = 1e-8);
 
 		/****************** CorrectOrientation ******************/
 		%feature("compactdefaultargs") CorrectOrientation;
-		%feature("autodoc", "	:param SI:
-	:type SI: TopoDS_Shape
-	:param NewEdges:
-	:type NewEdges: TopTools_IndexedMapOfShape
-	:param AsDes:
-	:type AsDes: BRepAlgo_AsDes
-	:param InitOffset:
-	:type InitOffset: BRepAlgo_Image
-	:param Offset:
-	:type Offset: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SI: TopoDS_Shape
+NewEdges: TopTools_IndexedMapOfShape
+AsDes: BRepAlgo_AsDes
+InitOffset: BRepAlgo_Image
+Offset: float
+
+Returns
+-------
+None
 ") CorrectOrientation;
 		static void CorrectOrientation(const TopoDS_Shape & SI, const TopTools_IndexedMapOfShape & NewEdges, opencascade::handle<BRepAlgo_AsDes> & AsDes, BRepAlgo_Image & InitOffset, const Standard_Real Offset);
 
@@ -1597,11 +1911,14 @@ class BRepOffset_Tool {
 		%feature("compactdefaultargs") Deboucle3D;
 		%feature("autodoc", "Remove the non valid part of an offsetshape 1 - remove all the free boundary and the faces connex to such edges. 2 - remove all the shapes not valid in the result (according to the side of offseting) in this verion only the first point is implemented.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param Boundary:
-	:type Boundary: TopTools_MapOfShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+S: TopoDS_Shape
+Boundary: TopTools_MapOfShape
+
+Returns
+-------
+TopoDS_Shape
 ") Deboucle3D;
 		static TopoDS_Shape Deboucle3D(const TopoDS_Shape & S, const TopTools_MapOfShape & Boundary);
 
@@ -1609,13 +1926,15 @@ class BRepOffset_Tool {
 		%feature("compactdefaultargs") EdgeVertices;
 		%feature("autodoc", "<v1> is the firstvertex ,<v2> is the last vertex of <edge> taking account the orientation of edge.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param V1:
-	:type V1: TopoDS_Vertex
-	:param V2:
-	:type V2: TopoDS_Vertex
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+V1: TopoDS_Vertex
+V2: TopoDS_Vertex
+
+Returns
+-------
+None
 ") EdgeVertices;
 		static void EdgeVertices(const TopoDS_Edge & E, TopoDS_Vertex & V1, TopoDS_Vertex & V2);
 
@@ -1623,49 +1942,52 @@ class BRepOffset_Tool {
 		%feature("compactdefaultargs") EnLargeFace;
 		%feature("autodoc", "Returns true if the surface of <nf> has changed. if <changegeom> is true , the surface can be changed . if <updatepcurve> is true, update the pcurves of the edges of <f> on the new surface if the surface has been changed. <enlargeu>, <enlargevfirst>, <enlargevlast> allow or forbid enlargement in u and v directions correspondingly. <theextensionmode> is a mode of extension of the surface of the face: if <theextensionmode> equals 1, potentially infinite surfaces are extended by maximum value, and limited surfaces are extended by 25%. if <theextensionmode> equals 2, potentially infinite surfaces are extended by 10*(correspondent size of face), and limited surfaces are extended by 100%. <thelenbeforeufirst>, <thelenafterulast>, <thelenbeforevfirst>, <thelenaftervlast> set the values of enlargement on correspondent directions. if some of them equals -1, the default value of enlargement is used.
 
-	:param F:
-	:type F: TopoDS_Face
-	:param NF:
-	:type NF: TopoDS_Face
-	:param ChangeGeom:
-	:type ChangeGeom: bool
-	:param UpDatePCurve: default value is Standard_False
-	:type UpDatePCurve: bool
-	:param enlargeU: default value is Standard_True
-	:type enlargeU: bool
-	:param enlargeVfirst: default value is Standard_True
-	:type enlargeVfirst: bool
-	:param enlargeVlast: default value is Standard_True
-	:type enlargeVlast: bool
-	:param theExtensionMode: default value is 1
-	:type theExtensionMode: int
-	:param theLenBeforeUfirst: default value is -1
-	:type theLenBeforeUfirst: float
-	:param theLenAfterUlast: default value is -1
-	:type theLenAfterUlast: float
-	:param theLenBeforeVfirst: default value is -1
-	:type theLenBeforeVfirst: float
-	:param theLenAfterVlast: default value is -1
-	:type theLenAfterVlast: float
-	:rtype: bool
+Parameters
+----------
+F: TopoDS_Face
+NF: TopoDS_Face
+ChangeGeom: bool
+UpDatePCurve: bool,optional
+	default value is Standard_False
+enlargeU: bool,optional
+	default value is Standard_True
+enlargeVfirst: bool,optional
+	default value is Standard_True
+enlargeVlast: bool,optional
+	default value is Standard_True
+theExtensionMode: int,optional
+	default value is 1
+theLenBeforeUfirst: float,optional
+	default value is -1
+theLenAfterUlast: float,optional
+	default value is -1
+theLenBeforeVfirst: float,optional
+	default value is -1
+theLenAfterVlast: float,optional
+	default value is -1
+
+Returns
+-------
+bool
 ") EnLargeFace;
 		static Standard_Boolean EnLargeFace(const TopoDS_Face & F, TopoDS_Face & NF, const Standard_Boolean ChangeGeom, const Standard_Boolean UpDatePCurve = Standard_False, const Standard_Boolean enlargeU = Standard_True, const Standard_Boolean enlargeVfirst = Standard_True, const Standard_Boolean enlargeVlast = Standard_True, const Standard_Integer theExtensionMode = 1, const Standard_Real theLenBeforeUfirst = -1, const Standard_Real theLenAfterUlast = -1, const Standard_Real theLenBeforeVfirst = -1, const Standard_Real theLenAfterVlast = -1);
 
 		/****************** ExtentFace ******************/
 		%feature("compactdefaultargs") ExtentFace;
-		%feature("autodoc", "	:param F:
-	:type F: TopoDS_Face
-	:param ConstShapes:
-	:type ConstShapes: TopTools_DataMapOfShapeShape
-	:param ToBuild:
-	:type ToBuild: TopTools_DataMapOfShapeShape
-	:param Side:
-	:type Side: TopAbs_State
-	:param TolConf:
-	:type TolConf: float
-	:param NF:
-	:type NF: TopoDS_Face
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F: TopoDS_Face
+ConstShapes: TopTools_DataMapOfShapeShape
+ToBuild: TopTools_DataMapOfShapeShape
+Side: TopAbs_State
+TolConf: float
+NF: TopoDS_Face
+
+Returns
+-------
+None
 ") ExtentFace;
 		static void ExtentFace(const TopoDS_Face & F, TopTools_DataMapOfShapeShape & ConstShapes, TopTools_DataMapOfShapeShape & ToBuild, const TopAbs_State Side, const Standard_Real TolConf, TopoDS_Face & NF);
 
@@ -1673,15 +1995,16 @@ class BRepOffset_Tool {
 		%feature("compactdefaultargs") FindCommonShapes;
 		%feature("autodoc", "Looks for the common vertices and edges between faces <thef1> and <thef2>. returns true if common shapes have been found. <thele> will contain the found common edges; <thelv> will contain the found common vertices.
 
-	:param theF1:
-	:type theF1: TopoDS_Face
-	:param theF2:
-	:type theF2: TopoDS_Face
-	:param theLE:
-	:type theLE: TopTools_ListOfShape
-	:param theLV:
-	:type theLV: TopTools_ListOfShape
-	:rtype: bool
+Parameters
+----------
+theF1: TopoDS_Face
+theF2: TopoDS_Face
+theLE: TopTools_ListOfShape
+theLV: TopTools_ListOfShape
+
+Returns
+-------
+bool
 ") FindCommonShapes;
 		static Standard_Boolean FindCommonShapes(const TopoDS_Face & theF1, const TopoDS_Face & theF2, TopTools_ListOfShape & theLE, TopTools_ListOfShape & theLV);
 
@@ -1689,39 +2012,48 @@ class BRepOffset_Tool {
 		%feature("compactdefaultargs") FindCommonShapes;
 		%feature("autodoc", "Looks for the common shapes of type <thetype> between shapes <thes1> and <thes2>. returns true if common shapes have been found. <thelsc> will contain the found common shapes.
 
-	:param theS1:
-	:type theS1: TopoDS_Shape
-	:param theS2:
-	:type theS2: TopoDS_Shape
-	:param theType:
-	:type theType: TopAbs_ShapeEnum
-	:param theLSC:
-	:type theLSC: TopTools_ListOfShape
-	:rtype: bool
+Parameters
+----------
+theS1: TopoDS_Shape
+theS2: TopoDS_Shape
+theType: TopAbs_ShapeEnum
+theLSC: TopTools_ListOfShape
+
+Returns
+-------
+bool
 ") FindCommonShapes;
 		static Standard_Boolean FindCommonShapes(const TopoDS_Shape & theS1, const TopoDS_Shape & theS2, const TopAbs_ShapeEnum theType, TopTools_ListOfShape & theLSC);
 
 		/****************** Gabarit ******************/
 		%feature("compactdefaultargs") Gabarit;
-		%feature("autodoc", "	:param aCurve:
-	:type aCurve: Geom_Curve
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aCurve: Geom_Curve
+
+Returns
+-------
+float
 ") Gabarit;
 		static Standard_Real Gabarit(const opencascade::handle<Geom_Curve> & aCurve);
 
 		/****************** Inter2d ******************/
 		%feature("compactdefaultargs") Inter2d;
-		%feature("autodoc", "	:param F:
-	:type F: TopoDS_Face
-	:param E1:
-	:type E1: TopoDS_Edge
-	:param E2:
-	:type E2: TopoDS_Edge
-	:param LV:
-	:type LV: TopTools_ListOfShape
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F: TopoDS_Face
+E1: TopoDS_Edge
+E2: TopoDS_Edge
+LV: TopTools_ListOfShape
+Tol: float
+
+Returns
+-------
+None
 ") Inter2d;
 		static void Inter2d(const TopoDS_Face & F, const TopoDS_Edge & E1, const TopoDS_Edge & E2, TopTools_ListOfShape & LV, const Standard_Real Tol);
 
@@ -1729,37 +2061,38 @@ class BRepOffset_Tool {
 		%feature("compactdefaultargs") Inter3D;
 		%feature("autodoc", "Computes the section betwwen <f1> and <f2> the edges solution are stored in <lint1> with the orientation on <f1>, the sames edges are stored in <lint2> with the orientation on <f2>.
 
-	:param F1:
-	:type F1: TopoDS_Face
-	:param F2:
-	:type F2: TopoDS_Face
-	:param LInt1:
-	:type LInt1: TopTools_ListOfShape
-	:param LInt2:
-	:type LInt2: TopTools_ListOfShape
-	:param Side:
-	:type Side: TopAbs_State
-	:param RefEdge:
-	:type RefEdge: TopoDS_Edge
-	:param IsRefEdgeDefined: default value is Standard_False
-	:type IsRefEdgeDefined: bool
-	:rtype: None
+Parameters
+----------
+F1: TopoDS_Face
+F2: TopoDS_Face
+LInt1: TopTools_ListOfShape
+LInt2: TopTools_ListOfShape
+Side: TopAbs_State
+RefEdge: TopoDS_Edge
+IsRefEdgeDefined: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Inter3D;
 		static void Inter3D(const TopoDS_Face & F1, const TopoDS_Face & F2, TopTools_ListOfShape & LInt1, TopTools_ListOfShape & LInt2, const TopAbs_State Side, const TopoDS_Edge & RefEdge, const Standard_Boolean IsRefEdgeDefined = Standard_False);
 
 		/****************** InterOrExtent ******************/
 		%feature("compactdefaultargs") InterOrExtent;
-		%feature("autodoc", "	:param F1:
-	:type F1: TopoDS_Face
-	:param F2:
-	:type F2: TopoDS_Face
-	:param LInt1:
-	:type LInt1: TopTools_ListOfShape
-	:param LInt2:
-	:type LInt2: TopTools_ListOfShape
-	:param Side:
-	:type Side: TopAbs_State
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F1: TopoDS_Face
+F2: TopoDS_Face
+LInt1: TopTools_ListOfShape
+LInt2: TopTools_ListOfShape
+Side: TopAbs_State
+
+Returns
+-------
+None
 ") InterOrExtent;
 		static void InterOrExtent(const TopoDS_Face & F1, const TopoDS_Face & F2, TopTools_ListOfShape & LInt1, TopTools_ListOfShape & LInt2, const TopAbs_State Side);
 
@@ -1767,11 +2100,14 @@ class BRepOffset_Tool {
 		%feature("compactdefaultargs") MapVertexEdges;
 		%feature("autodoc", "Store in mve for a vertex <v> in <s> the incident edges <e> in <s>. an edge is store only one time for a vertex.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param MVE:
-	:type MVE: TopTools_DataMapOfShapeListOfShape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+MVE: TopTools_DataMapOfShapeListOfShape
+
+Returns
+-------
+None
 ") MapVertexEdges;
 		static void MapVertexEdges(const TopoDS_Shape & S, TopTools_DataMapOfShapeListOfShape & MVE);
 
@@ -1779,11 +2115,14 @@ class BRepOffset_Tool {
 		%feature("compactdefaultargs") OriEdgeInFace;
 		%feature("autodoc", "Returns the cumul of the orientation of <edge> and thc containing wire in <face>.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: TopAbs_Orientation
+Parameters
+----------
+E: TopoDS_Edge
+F: TopoDS_Face
+
+Returns
+-------
+TopAbs_Orientation
 ") OriEdgeInFace;
 		static TopAbs_Orientation OriEdgeInFace(const TopoDS_Edge & E, const TopoDS_Face & F);
 
@@ -1791,33 +2130,35 @@ class BRepOffset_Tool {
 		%feature("compactdefaultargs") OrientSection;
 		%feature("autodoc", "<e> is a section between <f1> and <f2>. computes <o1> the orientation of <e> in <f1> influenced by <f2>. idem for <o2>.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param F1:
-	:type F1: TopoDS_Face
-	:param F2:
-	:type F2: TopoDS_Face
-	:param O1:
-	:type O1: TopAbs_Orientation
-	:param O2:
-	:type O2: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+F1: TopoDS_Face
+F2: TopoDS_Face
+O1: TopAbs_Orientation
+O2: TopAbs_Orientation
+
+Returns
+-------
+None
 ") OrientSection;
 		static void OrientSection(const TopoDS_Edge & E, const TopoDS_Face & F1, const TopoDS_Face & F2, TopAbs_Orientation & O1, TopAbs_Orientation & O2);
 
 		/****************** PipeInter ******************/
 		%feature("compactdefaultargs") PipeInter;
-		%feature("autodoc", "	:param F1:
-	:type F1: TopoDS_Face
-	:param F2:
-	:type F2: TopoDS_Face
-	:param LInt1:
-	:type LInt1: TopTools_ListOfShape
-	:param LInt2:
-	:type LInt2: TopTools_ListOfShape
-	:param Side:
-	:type Side: TopAbs_State
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F1: TopoDS_Face
+F2: TopoDS_Face
+LInt1: TopTools_ListOfShape
+LInt2: TopTools_ListOfShape
+Side: TopAbs_State
+
+Returns
+-------
+None
 ") PipeInter;
 		static void PipeInter(const TopoDS_Face & F1, const TopoDS_Face & F2, TopTools_ListOfShape & LInt1, TopTools_ListOfShape & LInt2, const TopAbs_State Side);
 
@@ -1825,21 +2166,19 @@ class BRepOffset_Tool {
 		%feature("compactdefaultargs") TryProject;
 		%feature("autodoc", "Find if the edges <edges> of the face <f2> are on the face <f1>. set in <lint1> <lint2> the updated edges. if all the edges are computed, returns true.
 
-	:param F1:
-	:type F1: TopoDS_Face
-	:param F2:
-	:type F2: TopoDS_Face
-	:param Edges:
-	:type Edges: TopTools_ListOfShape
-	:param LInt1:
-	:type LInt1: TopTools_ListOfShape
-	:param LInt2:
-	:type LInt2: TopTools_ListOfShape
-	:param Side:
-	:type Side: TopAbs_State
-	:param TolConf:
-	:type TolConf: float
-	:rtype: bool
+Parameters
+----------
+F1: TopoDS_Face
+F2: TopoDS_Face
+Edges: TopTools_ListOfShape
+LInt1: TopTools_ListOfShape
+LInt2: TopTools_ListOfShape
+Side: TopAbs_State
+TolConf: float
+
+Returns
+-------
+bool
 ") TryProject;
 		static Standard_Boolean TryProject(const TopoDS_Face & F1, const TopoDS_Face & F2, const TopTools_ListOfShape & Edges, TopTools_ListOfShape & LInt1, TopTools_ListOfShape & LInt2, const TopAbs_State Side, const Standard_Real TolConf);
 

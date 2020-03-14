@@ -88,9 +88,13 @@ class GeomAdaptor {
 		%feature("compactdefaultargs") MakeCurve;
 		%feature("autodoc", "Inherited from ghcurve. provides a curve handled by reference. build a geom_curve using the informations from the curve from adaptor3d.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:rtype: opencascade::handle<Geom_Curve>
+Parameters
+----------
+C: Adaptor3d_Curve
+
+Returns
+-------
+opencascade::handle<Geom_Curve>
 ") MakeCurve;
 		static opencascade::handle<Geom_Curve> MakeCurve(const Adaptor3d_Curve & C);
 
@@ -98,11 +102,15 @@ class GeomAdaptor {
 		%feature("compactdefaultargs") MakeSurface;
 		%feature("autodoc", "Build a geom_surface using the informations from the surface from adaptor3d @param thes - surface adaptor to convert. @param thetrimflag - true if perform trim surface values by adaptor and false otherwise.
 
-	:param theS:
-	:type theS: Adaptor3d_Surface
-	:param theTrimFlag: default value is Standard_True
-	:type theTrimFlag: bool
-	:rtype: opencascade::handle<Geom_Surface>
+Parameters
+----------
+theS: Adaptor3d_Surface
+theTrimFlag: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+opencascade::handle<Geom_Surface>
 ") MakeSurface;
 		static opencascade::handle<Geom_Surface> MakeSurface(const Adaptor3d_Surface & theS, const Standard_Boolean theTrimFlag = Standard_True);
 
@@ -124,7 +132,9 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "This will not make a copy of the bspline curve : if you want to modify the curve please make a copy yourself also it will not trim the surface to myfirst/last.
 
-	:rtype: opencascade::handle<Geom_BSplineCurve>
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
 ") BSpline;
 		opencascade::handle<Geom_BSplineCurve> BSpline();
 
@@ -132,19 +142,29 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Bezier;
 		%feature("autodoc", "This will not make a copy of the bezier curve : if you want to modify the curve please make a copy yourself also it will not trim the surface to myfirst/last.
 
-	:rtype: opencascade::handle<Geom_BezierCurve>
+Returns
+-------
+opencascade::handle<Geom_BezierCurve>
 ") Bezier;
 		opencascade::handle<Geom_BezierCurve> Bezier();
 
 		/****************** Circle ******************/
 		%feature("compactdefaultargs") Circle;
-		%feature("autodoc", "	:rtype: gp_Circ
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Circ
 ") Circle;
 		gp_Circ Circle();
 
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
-		%feature("autodoc", "	:rtype: GeomAbs_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_Shape
 ") Continuity;
 		GeomAbs_Shape Continuity();
 
@@ -152,7 +172,9 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Provides a curve inherited from hcurve from adaptor. this is inherited to provide easy to use constructors.
 
-	:rtype: opencascade::handle<Geom_Curve>
+Returns
+-------
+opencascade::handle<Geom_Curve>
 ") Curve;
 		const opencascade::handle<Geom_Curve> & Curve();
 
@@ -160,11 +182,14 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Computes the point of parameter u.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+
+Returns
+-------
+None
 ") D0;
 		void D0(const Standard_Real U, gp_Pnt & P);
 
@@ -172,13 +197,15 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Computes the point of parameter u on the curve with its first derivative. //! warning : on the specific case of bsplinecurve: if the curve is cut in interval of continuity at least c1, the derivatives are computed on the current interval. else the derivatives are computed on the basis curve.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:param V:
-	:type V: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+V: gp_Vec
+
+Returns
+-------
+None
 ") D1;
 		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V);
 
@@ -186,15 +213,16 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "Returns the point p of parameter u, the first and second derivatives v1 and v2. //! warning : on the specific case of bsplinecurve: if the curve is cut in interval of continuity at least c2, the derivatives are computed on the current interval. else the derivatives are computed on the basis curve.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:param V1:
-	:type V1: gp_Vec
-	:param V2:
-	:type V2: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+V1: gp_Vec
+V2: gp_Vec
+
+Returns
+-------
+None
 ") D2;
 		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
 
@@ -202,17 +230,17 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D3;
 		%feature("autodoc", "Returns the point p of parameter u, the first, the second and the third derivative. //! warning : on the specific case of bsplinecurve: if the curve is cut in interval of continuity at least c3, the derivatives are computed on the current interval. else the derivatives are computed on the basis curve.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:param V1:
-	:type V1: gp_Vec
-	:param V2:
-	:type V2: gp_Vec
-	:param V3:
-	:type V3: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+V1: gp_Vec
+V2: gp_Vec
+V3: gp_Vec
+
+Returns
+-------
+None
 ") D3;
 		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
 
@@ -220,11 +248,14 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") DN;
 		%feature("autodoc", "The returned vector gives the value of the derivative for the order of derivation n. warning : on the specific case of bsplinecurve: if the curve is cut in interval of continuity cn, the derivatives are computed on the current interval. else the derivatives are computed on the basis curve. raised if n < 1.
 
-	:param U:
-	:type U: float
-	:param N:
-	:type N: int
-	:rtype: gp_Vec
+Parameters
+----------
+U: float
+N: int
+
+Returns
+-------
+gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Integer N);
 
@@ -232,33 +263,53 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Degree;
 		%feature("autodoc", "This should never make a copy of the underlying curve to read the relevant information.
 
-	:rtype: int
+Returns
+-------
+int
 ") Degree;
 		Standard_Integer Degree();
 
 		/****************** Ellipse ******************/
 		%feature("compactdefaultargs") Ellipse;
-		%feature("autodoc", "	:rtype: gp_Elips
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Elips
 ") Ellipse;
 		gp_Elips Ellipse();
 
 		/****************** FirstParameter ******************/
 		%feature("compactdefaultargs") FirstParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstParameter;
 		Standard_Real FirstParameter();
 
 		/****************** GeomAdaptor_Curve ******************/
 		%feature("compactdefaultargs") GeomAdaptor_Curve;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") GeomAdaptor_Curve;
 		 GeomAdaptor_Curve();
 
 		/****************** GeomAdaptor_Curve ******************/
 		%feature("compactdefaultargs") GeomAdaptor_Curve;
-		%feature("autodoc", "	:param C:
-	:type C: Geom_Curve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Geom_Curve
+
+Returns
+-------
+None
 ") GeomAdaptor_Curve;
 		 GeomAdaptor_Curve(const opencascade::handle<Geom_Curve> & C);
 
@@ -266,25 +317,35 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") GeomAdaptor_Curve;
 		%feature("autodoc", "Constructionerror is raised if ufirst>ulast.
 
-	:param C:
-	:type C: Geom_Curve
-	:param UFirst:
-	:type UFirst: float
-	:param ULast:
-	:type ULast: float
-	:rtype: None
+Parameters
+----------
+C: Geom_Curve
+UFirst: float
+ULast: float
+
+Returns
+-------
+None
 ") GeomAdaptor_Curve;
 		 GeomAdaptor_Curve(const opencascade::handle<Geom_Curve> & C, const Standard_Real UFirst, const Standard_Real ULast);
 
 		/****************** GetType ******************/
 		%feature("compactdefaultargs") GetType;
-		%feature("autodoc", "	:rtype: GeomAbs_CurveType
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_CurveType
 ") GetType;
 		GeomAbs_CurveType GetType();
 
 		/****************** Hyperbola ******************/
 		%feature("compactdefaultargs") Hyperbola;
-		%feature("autodoc", "	:rtype: gp_Hypr
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Hypr
 ") Hyperbola;
 		gp_Hypr Hyperbola();
 
@@ -292,23 +353,34 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Stores in <t> the parameters bounding the intervals of continuity <s>. //! the array must provide enough room to accomodate for the parameters. i.e. t.length() > nbintervals().
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsClosed;
 		Standard_Boolean IsClosed();
 
 		/****************** IsPeriodic ******************/
 		%feature("compactdefaultargs") IsPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsPeriodic;
 		Standard_Boolean IsPeriodic();
 
@@ -316,27 +388,43 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") IsRational;
 		%feature("autodoc", "This should never make a copy of the underlying curve to read the relevant information.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRational;
 		Standard_Boolean IsRational();
 
 		/****************** LastParameter ******************/
 		%feature("compactdefaultargs") LastParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastParameter;
 		Standard_Real LastParameter();
 
 		/****************** Line ******************/
 		%feature("compactdefaultargs") Line;
-		%feature("autodoc", "	:rtype: gp_Lin
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Lin
 ") Line;
 		gp_Lin Line();
 
 		/****************** Load ******************/
 		%feature("compactdefaultargs") Load;
-		%feature("autodoc", "	:param C:
-	:type C: Geom_Curve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Geom_Curve
+
+Returns
+-------
+None
 ") Load;
 		void Load(const opencascade::handle<Geom_Curve> & C);
 
@@ -344,13 +432,15 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Load;
 		%feature("autodoc", "Constructionerror is raised if ufirst>ulast.
 
-	:param C:
-	:type C: Geom_Curve
-	:param UFirst:
-	:type UFirst: float
-	:param ULast:
-	:type ULast: float
-	:rtype: None
+Parameters
+----------
+C: Geom_Curve
+UFirst: float
+ULast: float
+
+Returns
+-------
+None
 ") Load;
 		void Load(const opencascade::handle<Geom_Curve> & C, const Standard_Real UFirst, const Standard_Real ULast);
 
@@ -358,9 +448,13 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals for continuity <s>. may be one if continuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
@@ -368,7 +462,9 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") NbKnots;
 		%feature("autodoc", "This should never make a copy of the underlying curve to read the relevant information.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbKnots;
 		Standard_Integer NbKnots();
 
@@ -376,25 +472,39 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") NbPoles;
 		%feature("autodoc", "This should never make a copy of the underlying curve to read the relevant information.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoles;
 		Standard_Integer NbPoles();
 
 		/****************** OffsetCurve ******************/
 		%feature("compactdefaultargs") OffsetCurve;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom_OffsetCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_OffsetCurve>
 ") OffsetCurve;
 		opencascade::handle<Geom_OffsetCurve> OffsetCurve();
 
 		/****************** Parabola ******************/
 		%feature("compactdefaultargs") Parabola;
-		%feature("autodoc", "	:rtype: gp_Parab
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Parab
 ") Parabola;
 		gp_Parab Parabola();
 
 		/****************** Period ******************/
 		%feature("compactdefaultargs") Period;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Period;
 		Standard_Real Period();
 
@@ -402,7 +512,9 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Reset currently loaded curve (undone load()).
 
-	:rtype: None
+Returns
+-------
+None
 ") Reset;
 		void Reset();
 
@@ -410,9 +522,13 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Resolution;
 		%feature("autodoc", "Returns the parametric resolution.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") Resolution;
 		Standard_Real Resolution(const Standard_Real R3d);
 
@@ -420,13 +536,15 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Trim;
 		%feature("autodoc", "Returns a curve equivalent of <self> between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor3d_HCurve>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HCurve>
 ") Trim;
 		opencascade::handle<Adaptor3d_HCurve> Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
@@ -434,9 +552,13 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the point of parameter u on the curve.
 
-	:param U:
-	:type U: float
-	:rtype: gp_Pnt
+Parameters
+----------
+U: float
+
+Returns
+-------
+gp_Pnt
 ") Value;
 		gp_Pnt Value(const Standard_Real U);
 
@@ -458,7 +580,9 @@ class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") ChangeCurve;
 		%feature("autodoc", "Returns the curve used to create the genhcurve.
 
-	:rtype: GeomAdaptor_Curve
+Returns
+-------
+GeomAdaptor_Curve
 ") ChangeCurve;
 		GeomAdaptor_Curve & ChangeCurve();
 
@@ -466,7 +590,9 @@ class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Returns the curve used to create the genhcurve. this is redefined from hcurve, cannot be inline.
 
-	:rtype: Adaptor3d_Curve
+Returns
+-------
+Adaptor3d_Curve
 ") Curve;
 		const Adaptor3d_Curve & Curve();
 
@@ -474,7 +600,9 @@ class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") GeomAdaptor_GHCurve;
 		%feature("autodoc", "Creates an empty genhcurve.
 
-	:rtype: None
+Returns
+-------
+None
 ") GeomAdaptor_GHCurve;
 		 GeomAdaptor_GHCurve();
 
@@ -482,9 +610,13 @@ class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") GeomAdaptor_GHCurve;
 		%feature("autodoc", "Creates a genhcurve from a curve.
 
-	:param C:
-	:type C: GeomAdaptor_Curve
-	:rtype: None
+Parameters
+----------
+C: GeomAdaptor_Curve
+
+Returns
+-------
+None
 ") GeomAdaptor_GHCurve;
 		 GeomAdaptor_GHCurve(const GeomAdaptor_Curve & C);
 
@@ -492,7 +624,9 @@ class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") GetCurve;
 		%feature("autodoc", "Returns the curve used to create the genhcurve. this is redefined from hcurve, cannot be inline.
 
-	:rtype: Adaptor3d_Curve
+Returns
+-------
+Adaptor3d_Curve
 ") GetCurve;
 		Adaptor3d_Curve & GetCurve();
 
@@ -500,9 +634,13 @@ class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the field of the genhcurve.
 
-	:param C:
-	:type C: GeomAdaptor_Curve
-	:rtype: None
+Parameters
+----------
+C: GeomAdaptor_Curve
+
+Returns
+-------
+None
 ") Set;
 		void Set(const GeomAdaptor_Curve & C);
 
@@ -526,7 +664,9 @@ class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") ChangeSurface;
 		%feature("autodoc", "Returns the surface used to create the genhsurface.
 
-	:rtype: GeomAdaptor_Surface
+Returns
+-------
+GeomAdaptor_Surface
 ") ChangeSurface;
 		GeomAdaptor_Surface & ChangeSurface();
 
@@ -534,7 +674,9 @@ class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") GeomAdaptor_GHSurface;
 		%feature("autodoc", "Creates an empty genhsurface.
 
-	:rtype: None
+Returns
+-------
+None
 ") GeomAdaptor_GHSurface;
 		 GeomAdaptor_GHSurface();
 
@@ -542,9 +684,13 @@ class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") GeomAdaptor_GHSurface;
 		%feature("autodoc", "Creates a genhsurface from a surface.
 
-	:param S:
-	:type S: GeomAdaptor_Surface
-	:rtype: None
+Parameters
+----------
+S: GeomAdaptor_Surface
+
+Returns
+-------
+None
 ") GeomAdaptor_GHSurface;
 		 GeomAdaptor_GHSurface(const GeomAdaptor_Surface & S);
 
@@ -552,9 +698,13 @@ class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the field of the genhsurface.
 
-	:param S:
-	:type S: GeomAdaptor_Surface
-	:rtype: None
+Parameters
+----------
+S: GeomAdaptor_Surface
+
+Returns
+-------
+None
 ") Set;
 		void Set(const GeomAdaptor_Surface & S);
 
@@ -562,7 +712,9 @@ class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") Surface;
 		%feature("autodoc", "Returns a reference to the surface inside the hsurface. this is redefined from hsurface, cannot be inline.
 
-	:rtype: Adaptor3d_Surface
+Returns
+-------
+Adaptor3d_Surface
 ") Surface;
 		const Adaptor3d_Surface & Surface();
 
@@ -586,7 +738,9 @@ class GeomAdaptor_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") ChangeSurface;
 		%feature("autodoc", "Returns the surface used to create the genhsurface.
 
-	:rtype: GeomAdaptor_SurfaceOfLinearExtrusion
+Returns
+-------
+GeomAdaptor_SurfaceOfLinearExtrusion
 ") ChangeSurface;
 		GeomAdaptor_SurfaceOfLinearExtrusion & ChangeSurface();
 
@@ -594,7 +748,9 @@ class GeomAdaptor_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") GeomAdaptor_HSurfaceOfLinearExtrusion;
 		%feature("autodoc", "Creates an empty genhsurface.
 
-	:rtype: None
+Returns
+-------
+None
 ") GeomAdaptor_HSurfaceOfLinearExtrusion;
 		 GeomAdaptor_HSurfaceOfLinearExtrusion();
 
@@ -602,9 +758,13 @@ class GeomAdaptor_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") GeomAdaptor_HSurfaceOfLinearExtrusion;
 		%feature("autodoc", "Creates a genhsurface from a surface.
 
-	:param S:
-	:type S: GeomAdaptor_SurfaceOfLinearExtrusion
-	:rtype: None
+Parameters
+----------
+S: GeomAdaptor_SurfaceOfLinearExtrusion
+
+Returns
+-------
+None
 ") GeomAdaptor_HSurfaceOfLinearExtrusion;
 		 GeomAdaptor_HSurfaceOfLinearExtrusion(const GeomAdaptor_SurfaceOfLinearExtrusion & S);
 
@@ -612,9 +772,13 @@ class GeomAdaptor_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the field of the genhsurface.
 
-	:param S:
-	:type S: GeomAdaptor_SurfaceOfLinearExtrusion
-	:rtype: None
+Parameters
+----------
+S: GeomAdaptor_SurfaceOfLinearExtrusion
+
+Returns
+-------
+None
 ") Set;
 		void Set(const GeomAdaptor_SurfaceOfLinearExtrusion & S);
 
@@ -622,7 +786,9 @@ class GeomAdaptor_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") Surface;
 		%feature("autodoc", "Returns a reference to the surface inside the hsurface. this is redefined from hsurface, cannot be inline.
 
-	:rtype: Adaptor3d_Surface
+Returns
+-------
+Adaptor3d_Surface
 ") Surface;
 		const Adaptor3d_Surface & Surface();
 
@@ -646,7 +812,9 @@ class GeomAdaptor_HSurfaceOfRevolution : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") ChangeSurface;
 		%feature("autodoc", "Returns the surface used to create the genhsurface.
 
-	:rtype: GeomAdaptor_SurfaceOfRevolution
+Returns
+-------
+GeomAdaptor_SurfaceOfRevolution
 ") ChangeSurface;
 		GeomAdaptor_SurfaceOfRevolution & ChangeSurface();
 
@@ -654,7 +822,9 @@ class GeomAdaptor_HSurfaceOfRevolution : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") GeomAdaptor_HSurfaceOfRevolution;
 		%feature("autodoc", "Creates an empty genhsurface.
 
-	:rtype: None
+Returns
+-------
+None
 ") GeomAdaptor_HSurfaceOfRevolution;
 		 GeomAdaptor_HSurfaceOfRevolution();
 
@@ -662,9 +832,13 @@ class GeomAdaptor_HSurfaceOfRevolution : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") GeomAdaptor_HSurfaceOfRevolution;
 		%feature("autodoc", "Creates a genhsurface from a surface.
 
-	:param S:
-	:type S: GeomAdaptor_SurfaceOfRevolution
-	:rtype: None
+Parameters
+----------
+S: GeomAdaptor_SurfaceOfRevolution
+
+Returns
+-------
+None
 ") GeomAdaptor_HSurfaceOfRevolution;
 		 GeomAdaptor_HSurfaceOfRevolution(const GeomAdaptor_SurfaceOfRevolution & S);
 
@@ -672,9 +846,13 @@ class GeomAdaptor_HSurfaceOfRevolution : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the field of the genhsurface.
 
-	:param S:
-	:type S: GeomAdaptor_SurfaceOfRevolution
-	:rtype: None
+Parameters
+----------
+S: GeomAdaptor_SurfaceOfRevolution
+
+Returns
+-------
+None
 ") Set;
 		void Set(const GeomAdaptor_SurfaceOfRevolution & S);
 
@@ -682,7 +860,9 @@ class GeomAdaptor_HSurfaceOfRevolution : public Adaptor3d_HSurface {
 		%feature("compactdefaultargs") Surface;
 		%feature("autodoc", "Returns a reference to the surface inside the hsurface. this is redefined from hsurface, cannot be inline.
 
-	:rtype: Adaptor3d_Surface
+Returns
+-------
+Adaptor3d_Surface
 ") Surface;
 		const Adaptor3d_Surface & Surface();
 
@@ -704,7 +884,11 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 	public:
 		/****************** AxeOfRevolution ******************/
 		%feature("compactdefaultargs") AxeOfRevolution;
-		%feature("autodoc", "	:rtype: gp_Ax1
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Ax1
 ") AxeOfRevolution;
 		gp_Ax1 AxeOfRevolution();
 
@@ -712,19 +896,29 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "This will not make a copy of the bspline surface : if you want to modify the surface please make a copy yourself also it will not trim the surface to myu/vfirst/last.
 
-	:rtype: opencascade::handle<Geom_BSplineSurface>
+Returns
+-------
+opencascade::handle<Geom_BSplineSurface>
 ") BSpline;
 		opencascade::handle<Geom_BSplineSurface> BSpline();
 
 		/****************** BasisCurve ******************/
 		%feature("compactdefaultargs") BasisCurve;
-		%feature("autodoc", "	:rtype: opencascade::handle<Adaptor3d_HCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HCurve>
 ") BasisCurve;
 		opencascade::handle<Adaptor3d_HCurve> BasisCurve();
 
 		/****************** BasisSurface ******************/
 		%feature("compactdefaultargs") BasisSurface;
-		%feature("autodoc", "	:rtype: opencascade::handle<Adaptor3d_HSurface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HSurface>
 ") BasisSurface;
 		opencascade::handle<Adaptor3d_HSurface> BasisSurface();
 
@@ -732,19 +926,29 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") Bezier;
 		%feature("autodoc", "This will not make a copy of the bezier surface : if you want to modify the surface please make a copy yourself also it will not trim the surface to myu/vfirst/last.
 
-	:rtype: opencascade::handle<Geom_BezierSurface>
+Returns
+-------
+opencascade::handle<Geom_BezierSurface>
 ") Bezier;
 		opencascade::handle<Geom_BezierSurface> Bezier();
 
 		/****************** Cone ******************/
 		%feature("compactdefaultargs") Cone;
-		%feature("autodoc", "	:rtype: gp_Cone
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Cone
 ") Cone;
 		gp_Cone Cone();
 
 		/****************** Cylinder ******************/
 		%feature("compactdefaultargs") Cylinder;
-		%feature("autodoc", "	:rtype: gp_Cylinder
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Cylinder
 ") Cylinder;
 		gp_Cylinder Cylinder();
 
@@ -752,13 +956,15 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Computes the point of parameters u,v on the surface.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param P:
-	:type P: gp_Pnt
-	:rtype: None
+Parameters
+----------
+U: float
+V: float
+P: gp_Pnt
+
+Returns
+-------
+None
 ") D0;
 		void D0(const Standard_Real U, const Standard_Real V, gp_Pnt & P);
 
@@ -766,17 +972,17 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Computes the point and the first derivatives on the surface. //! warning : on the specific case of bsplinesurface: if the surface is cut in interval of continuity at least c1, the derivatives are computed on the current interval. else the derivatives are computed on the basis surface.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param P:
-	:type P: gp_Pnt
-	:param D1U:
-	:type D1U: gp_Vec
-	:param D1V:
-	:type D1V: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+V: float
+P: gp_Pnt
+D1U: gp_Vec
+D1V: gp_Vec
+
+Returns
+-------
+None
 ") D1;
 		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
 
@@ -784,23 +990,20 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "Computes the point, the first and second derivatives on the surface. //! warning : on the specific case of bsplinesurface: if the surface is cut in interval of continuity at least c2, the derivatives are computed on the current interval. else the derivatives are computed on the basis surface.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param P:
-	:type P: gp_Pnt
-	:param D1U:
-	:type D1U: gp_Vec
-	:param D1V:
-	:type D1V: gp_Vec
-	:param D2U:
-	:type D2U: gp_Vec
-	:param D2V:
-	:type D2V: gp_Vec
-	:param D2UV:
-	:type D2UV: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+V: float
+P: gp_Pnt
+D1U: gp_Vec
+D1V: gp_Vec
+D2U: gp_Vec
+D2V: gp_Vec
+D2UV: gp_Vec
+
+Returns
+-------
+None
 ") D2;
 		void D2(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV);
 
@@ -808,31 +1011,24 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") D3;
 		%feature("autodoc", "Computes the point, the first, second and third derivatives on the surface. //! warning : on the specific case of bsplinesurface: if the surface is cut in interval of continuity at least c3, the derivatives are computed on the current interval. else the derivatives are computed on the basis surface.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param P:
-	:type P: gp_Pnt
-	:param D1U:
-	:type D1U: gp_Vec
-	:param D1V:
-	:type D1V: gp_Vec
-	:param D2U:
-	:type D2U: gp_Vec
-	:param D2V:
-	:type D2V: gp_Vec
-	:param D2UV:
-	:type D2UV: gp_Vec
-	:param D3U:
-	:type D3U: gp_Vec
-	:param D3V:
-	:type D3V: gp_Vec
-	:param D3UUV:
-	:type D3UUV: gp_Vec
-	:param D3UVV:
-	:type D3UVV: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+V: float
+P: gp_Pnt
+D1U: gp_Vec
+D1V: gp_Vec
+D2U: gp_Vec
+D2V: gp_Vec
+D2UV: gp_Vec
+D3U: gp_Vec
+D3V: gp_Vec
+D3UUV: gp_Vec
+D3UVV: gp_Vec
+
+Returns
+-------
+None
 ") D3;
 		void D3(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV);
 
@@ -840,47 +1036,70 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") DN;
 		%feature("autodoc", "Computes the derivative of order nu in the direction u and nv in the direction v at the point p(u, v). //! warning : on the specific case of bsplinesurface: if the surface is cut in interval of continuity cn, the derivatives are computed on the current interval. else the derivatives are computed on the basis surface. raised if nu + nv < 1 or nu < 0 or nv < 0.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param Nu:
-	:type Nu: int
-	:param Nv:
-	:type Nv: int
-	:rtype: gp_Vec
+Parameters
+----------
+U: float
+V: float
+Nu: int
+Nv: int
+
+Returns
+-------
+gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
 
 		/****************** Direction ******************/
 		%feature("compactdefaultargs") Direction;
-		%feature("autodoc", "	:rtype: gp_Dir
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Dir
 ") Direction;
 		gp_Dir Direction();
 
 		/****************** FirstUParameter ******************/
 		%feature("compactdefaultargs") FirstUParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstUParameter;
 		Standard_Real FirstUParameter();
 
 		/****************** FirstVParameter ******************/
 		%feature("compactdefaultargs") FirstVParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstVParameter;
 		Standard_Real FirstVParameter();
 
 		/****************** GeomAdaptor_Surface ******************/
 		%feature("compactdefaultargs") GeomAdaptor_Surface;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") GeomAdaptor_Surface;
 		 GeomAdaptor_Surface();
 
 		/****************** GeomAdaptor_Surface ******************/
 		%feature("compactdefaultargs") GeomAdaptor_Surface;
-		%feature("autodoc", "	:param S:
-	:type S: Geom_Surface
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: Geom_Surface
+
+Returns
+-------
+None
 ") GeomAdaptor_Surface;
 		 GeomAdaptor_Surface(const opencascade::handle<Geom_Surface> & S);
 
@@ -888,21 +1107,21 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") GeomAdaptor_Surface;
 		%feature("autodoc", "Constructionerror is raised if ufirst>ulast or vfirst>vlast.
 
-	:param S:
-	:type S: Geom_Surface
-	:param UFirst:
-	:type UFirst: float
-	:param ULast:
-	:type ULast: float
-	:param VFirst:
-	:type VFirst: float
-	:param VLast:
-	:type VLast: float
-	:param TolU: default value is 0.0
-	:type TolU: float
-	:param TolV: default value is 0.0
-	:type TolV: float
-	:rtype: None
+Parameters
+----------
+S: Geom_Surface
+UFirst: float
+ULast: float
+VFirst: float
+VLast: float
+TolU: float,optional
+	default value is 0.0
+TolV: float,optional
+	default value is 0.0
+
+Returns
+-------
+None
 ") GeomAdaptor_Surface;
 		 GeomAdaptor_Surface(const opencascade::handle<Geom_Surface> & S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU = 0.0, const Standard_Real TolV = 0.0);
 
@@ -910,63 +1129,103 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") GetType;
 		%feature("autodoc", "Returns the type of the surface : plane, cylinder, cone, sphere, torus, beziersurface, bsplinesurface, surfaceofrevolution, surfaceofextrusion, othersurface.
 
-	:rtype: GeomAbs_SurfaceType
+Returns
+-------
+GeomAbs_SurfaceType
 ") GetType;
 		GeomAbs_SurfaceType GetType();
 
 		/****************** IsUClosed ******************/
 		%feature("compactdefaultargs") IsUClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsUClosed;
 		Standard_Boolean IsUClosed();
 
 		/****************** IsUPeriodic ******************/
 		%feature("compactdefaultargs") IsUPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsUPeriodic;
 		Standard_Boolean IsUPeriodic();
 
 		/****************** IsURational ******************/
 		%feature("compactdefaultargs") IsURational;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsURational;
 		Standard_Boolean IsURational();
 
 		/****************** IsVClosed ******************/
 		%feature("compactdefaultargs") IsVClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsVClosed;
 		Standard_Boolean IsVClosed();
 
 		/****************** IsVPeriodic ******************/
 		%feature("compactdefaultargs") IsVPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsVPeriodic;
 		Standard_Boolean IsVPeriodic();
 
 		/****************** IsVRational ******************/
 		%feature("compactdefaultargs") IsVRational;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsVRational;
 		Standard_Boolean IsVRational();
 
 		/****************** LastUParameter ******************/
 		%feature("compactdefaultargs") LastUParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastUParameter;
 		Standard_Real LastUParameter();
 
 		/****************** LastVParameter ******************/
 		%feature("compactdefaultargs") LastVParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastVParameter;
 		Standard_Real LastVParameter();
 
 		/****************** Load ******************/
 		%feature("compactdefaultargs") Load;
-		%feature("autodoc", "	:param S:
-	:type S: Geom_Surface
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: Geom_Surface
+
+Returns
+-------
+None
 ") Load;
 		void Load(const opencascade::handle<Geom_Surface> & S);
 
@@ -974,21 +1233,21 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") Load;
 		%feature("autodoc", "Constructionerror is raised if ufirst>ulast or vfirst>vlast.
 
-	:param S:
-	:type S: Geom_Surface
-	:param UFirst:
-	:type UFirst: float
-	:param ULast:
-	:type ULast: float
-	:param VFirst:
-	:type VFirst: float
-	:param VLast:
-	:type VLast: float
-	:param TolU: default value is 0.0
-	:type TolU: float
-	:param TolV: default value is 0.0
-	:type TolV: float
-	:rtype: None
+Parameters
+----------
+S: Geom_Surface
+UFirst: float
+ULast: float
+VFirst: float
+VLast: float
+TolU: float,optional
+	default value is 0.0
+TolV: float,optional
+	default value is 0.0
+
+Returns
+-------
+None
 ") Load;
 		void Load(const opencascade::handle<Geom_Surface> & S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU = 0.0, const Standard_Real TolV = 0.0);
 
@@ -996,21 +1255,33 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") NbUIntervals;
 		%feature("autodoc", "Returns the number of u intervals for continuity <s>. may be one if ucontinuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbUIntervals;
 		Standard_Integer NbUIntervals(const GeomAbs_Shape S);
 
 		/****************** NbUKnots ******************/
 		%feature("compactdefaultargs") NbUKnots;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbUKnots;
 		Standard_Integer NbUKnots();
 
 		/****************** NbUPoles ******************/
 		%feature("compactdefaultargs") NbUPoles;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbUPoles;
 		Standard_Integer NbUPoles();
 
@@ -1018,63 +1289,103 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") NbVIntervals;
 		%feature("autodoc", "Returns the number of v intervals for continuity <s>. may be one if vcontinuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbVIntervals;
 		Standard_Integer NbVIntervals(const GeomAbs_Shape S);
 
 		/****************** NbVKnots ******************/
 		%feature("compactdefaultargs") NbVKnots;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbVKnots;
 		Standard_Integer NbVKnots();
 
 		/****************** NbVPoles ******************/
 		%feature("compactdefaultargs") NbVPoles;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbVPoles;
 		Standard_Integer NbVPoles();
 
 		/****************** OffsetValue ******************/
 		%feature("compactdefaultargs") OffsetValue;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") OffsetValue;
 		Standard_Real OffsetValue();
 
 		/****************** Plane ******************/
 		%feature("compactdefaultargs") Plane;
-		%feature("autodoc", "	:rtype: gp_Pln
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pln
 ") Plane;
 		gp_Pln Plane();
 
 		/****************** Sphere ******************/
 		%feature("compactdefaultargs") Sphere;
-		%feature("autodoc", "	:rtype: gp_Sphere
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Sphere
 ") Sphere;
 		gp_Sphere Sphere();
 
 		/****************** Surface ******************/
 		%feature("compactdefaultargs") Surface;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom_Surface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_Surface>
 ") Surface;
 		const opencascade::handle<Geom_Surface> & Surface();
 
 		/****************** Torus ******************/
 		%feature("compactdefaultargs") Torus;
-		%feature("autodoc", "	:rtype: gp_Torus
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Torus
 ") Torus;
 		gp_Torus Torus();
 
 		/****************** UContinuity ******************/
 		%feature("compactdefaultargs") UContinuity;
-		%feature("autodoc", "	:rtype: GeomAbs_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_Shape
 ") UContinuity;
 		GeomAbs_Shape UContinuity();
 
 		/****************** UDegree ******************/
 		%feature("compactdefaultargs") UDegree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") UDegree;
 		Standard_Integer UDegree();
 
@@ -1082,17 +1393,24 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") UIntervals;
 		%feature("autodoc", "Returns the intervals with the requested continuity in the u direction.
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") UIntervals;
 		void UIntervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 		/****************** UPeriod ******************/
 		%feature("compactdefaultargs") UPeriod;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") UPeriod;
 		Standard_Real UPeriod();
 
@@ -1100,9 +1418,13 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") UResolution;
 		%feature("autodoc", "Returns the parametric u resolution corresponding to the real space resolution <r3d>.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") UResolution;
 		Standard_Real UResolution(const Standard_Real R3d);
 
@@ -1110,25 +1432,35 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") UTrim;
 		%feature("autodoc", "Returns a surface trimmed in the u direction equivalent of <self> between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor3d_HSurface>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HSurface>
 ") UTrim;
 		opencascade::handle<Adaptor3d_HSurface> UTrim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
 		/****************** VContinuity ******************/
 		%feature("compactdefaultargs") VContinuity;
-		%feature("autodoc", "	:rtype: GeomAbs_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_Shape
 ") VContinuity;
 		GeomAbs_Shape VContinuity();
 
 		/****************** VDegree ******************/
 		%feature("compactdefaultargs") VDegree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") VDegree;
 		Standard_Integer VDegree();
 
@@ -1136,17 +1468,24 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") VIntervals;
 		%feature("autodoc", "Returns the intervals with the requested continuity in the v direction.
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") VIntervals;
 		void VIntervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 		/****************** VPeriod ******************/
 		%feature("compactdefaultargs") VPeriod;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") VPeriod;
 		Standard_Real VPeriod();
 
@@ -1154,9 +1493,13 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") VResolution;
 		%feature("autodoc", "Returns the parametric v resolution corresponding to the real space resolution <r3d>.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") VResolution;
 		Standard_Real VResolution(const Standard_Real R3d);
 
@@ -1164,13 +1507,15 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") VTrim;
 		%feature("autodoc", "Returns a surface trimmed in the v direction between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor3d_HSurface>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HSurface>
 ") VTrim;
 		opencascade::handle<Adaptor3d_HSurface> VTrim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
@@ -1178,11 +1523,14 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the point of parameters u,v on the surface.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:rtype: gp_Pnt
+Parameters
+----------
+U: float
+V: float
+
+Returns
+-------
+gp_Pnt
 ") Value;
 		gp_Pnt Value(const Standard_Real U, const Standard_Real V);
 
@@ -1202,23 +1550,39 @@ class GeomAdaptor_HCurve : public GeomAdaptor_GHCurve {
 	public:
 		/****************** GeomAdaptor_HCurve ******************/
 		%feature("compactdefaultargs") GeomAdaptor_HCurve;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") GeomAdaptor_HCurve;
 		 GeomAdaptor_HCurve();
 
 		/****************** GeomAdaptor_HCurve ******************/
 		%feature("compactdefaultargs") GeomAdaptor_HCurve;
-		%feature("autodoc", "	:param AS:
-	:type AS: GeomAdaptor_Curve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+AS: GeomAdaptor_Curve
+
+Returns
+-------
+None
 ") GeomAdaptor_HCurve;
 		 GeomAdaptor_HCurve(const GeomAdaptor_Curve & AS);
 
 		/****************** GeomAdaptor_HCurve ******************/
 		%feature("compactdefaultargs") GeomAdaptor_HCurve;
-		%feature("autodoc", "	:param S:
-	:type S: Geom_Curve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: Geom_Curve
+
+Returns
+-------
+None
 ") GeomAdaptor_HCurve;
 		 GeomAdaptor_HCurve(const opencascade::handle<Geom_Curve> & S);
 
@@ -1226,13 +1590,15 @@ class GeomAdaptor_HCurve : public GeomAdaptor_GHCurve {
 		%feature("compactdefaultargs") GeomAdaptor_HCurve;
 		%feature("autodoc", "Constructionerror is raised if ufirst>ulast or vfirst>vlast.
 
-	:param S:
-	:type S: Geom_Curve
-	:param UFirst:
-	:type UFirst: float
-	:param ULast:
-	:type ULast: float
-	:rtype: None
+Parameters
+----------
+S: Geom_Curve
+UFirst: float
+ULast: float
+
+Returns
+-------
+None
 ") GeomAdaptor_HCurve;
 		 GeomAdaptor_HCurve(const opencascade::handle<Geom_Curve> & S, const Standard_Real UFirst, const Standard_Real ULast);
 
@@ -1254,23 +1620,39 @@ class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
 	public:
 		/****************** GeomAdaptor_HSurface ******************/
 		%feature("compactdefaultargs") GeomAdaptor_HSurface;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") GeomAdaptor_HSurface;
 		 GeomAdaptor_HSurface();
 
 		/****************** GeomAdaptor_HSurface ******************/
 		%feature("compactdefaultargs") GeomAdaptor_HSurface;
-		%feature("autodoc", "	:param AS:
-	:type AS: GeomAdaptor_Surface
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+AS: GeomAdaptor_Surface
+
+Returns
+-------
+None
 ") GeomAdaptor_HSurface;
 		 GeomAdaptor_HSurface(const GeomAdaptor_Surface & AS);
 
 		/****************** GeomAdaptor_HSurface ******************/
 		%feature("compactdefaultargs") GeomAdaptor_HSurface;
-		%feature("autodoc", "	:param S:
-	:type S: Geom_Surface
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: Geom_Surface
+
+Returns
+-------
+None
 ") GeomAdaptor_HSurface;
 		 GeomAdaptor_HSurface(const opencascade::handle<Geom_Surface> & S);
 
@@ -1278,21 +1660,21 @@ class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
 		%feature("compactdefaultargs") GeomAdaptor_HSurface;
 		%feature("autodoc", "Constructionerror is raised if ufirst>ulast or vfirst>vlast.
 
-	:param S:
-	:type S: Geom_Surface
-	:param UFirst:
-	:type UFirst: float
-	:param ULast:
-	:type ULast: float
-	:param VFirst:
-	:type VFirst: float
-	:param VLast:
-	:type VLast: float
-	:param TolU: default value is 0.0
-	:type TolU: float
-	:param TolV: default value is 0.0
-	:type TolV: float
-	:rtype: None
+Parameters
+----------
+S: Geom_Surface
+UFirst: float
+ULast: float
+VFirst: float
+VLast: float
+TolU: float,optional
+	default value is 0.0
+TolV: float,optional
+	default value is 0.0
+
+Returns
+-------
+None
 ") GeomAdaptor_HSurface;
 		 GeomAdaptor_HSurface(const opencascade::handle<Geom_Surface> & S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU = 0.0, const Standard_Real TolV = 0.0);
 
@@ -1314,61 +1696,101 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 	public:
 		/****************** AxeOfRevolution ******************/
 		%feature("compactdefaultargs") AxeOfRevolution;
-		%feature("autodoc", "	:rtype: gp_Ax1
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Ax1
 ") AxeOfRevolution;
 		gp_Ax1 AxeOfRevolution();
 
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom_BSplineSurface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BSplineSurface>
 ") BSpline;
 		opencascade::handle<Geom_BSplineSurface> BSpline();
 
 		/****************** BasisCurve ******************/
 		%feature("compactdefaultargs") BasisCurve;
-		%feature("autodoc", "	:rtype: opencascade::handle<Adaptor3d_HCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HCurve>
 ") BasisCurve;
 		opencascade::handle<Adaptor3d_HCurve> BasisCurve();
 
 		/****************** Bezier ******************/
 		%feature("compactdefaultargs") Bezier;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom_BezierSurface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BezierSurface>
 ") Bezier;
 		opencascade::handle<Geom_BezierSurface> Bezier();
 
 		/****************** Cone ******************/
 		%feature("compactdefaultargs") Cone;
-		%feature("autodoc", "	:rtype: gp_Cone
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Cone
 ") Cone;
 		gp_Cone Cone();
 
 		/****************** Cylinder ******************/
 		%feature("compactdefaultargs") Cylinder;
-		%feature("autodoc", "	:rtype: gp_Cylinder
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Cylinder
 ") Cylinder;
 		gp_Cylinder Cylinder();
 
 		/****************** Direction ******************/
 		%feature("compactdefaultargs") Direction;
-		%feature("autodoc", "	:rtype: gp_Dir
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Dir
 ") Direction;
 		gp_Dir Direction();
 
 		/****************** FirstUParameter ******************/
 		%feature("compactdefaultargs") FirstUParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstUParameter;
 		Standard_Real FirstUParameter();
 
 		/****************** FirstVParameter ******************/
 		%feature("compactdefaultargs") FirstVParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstVParameter;
 		Standard_Real FirstVParameter();
 
 		/****************** GeomAdaptor_SurfaceOfLinearExtrusion ******************/
 		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfLinearExtrusion;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") GeomAdaptor_SurfaceOfLinearExtrusion;
 		 GeomAdaptor_SurfaceOfLinearExtrusion();
 
@@ -1376,9 +1798,13 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfLinearExtrusion;
 		%feature("autodoc", "The curve is loaded.
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") GeomAdaptor_SurfaceOfLinearExtrusion;
 		 GeomAdaptor_SurfaceOfLinearExtrusion(const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -1386,11 +1812,14 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfLinearExtrusion;
 		%feature("autodoc", "Thew curve and the direction are loaded.
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param V:
-	:type V: gp_Dir
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+V: gp_Dir
+
+Returns
+-------
+None
 ") GeomAdaptor_SurfaceOfLinearExtrusion;
 		 GeomAdaptor_SurfaceOfLinearExtrusion(const opencascade::handle<Adaptor3d_HCurve> & C, const gp_Dir & V);
 
@@ -1398,55 +1827,89 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") GetType;
 		%feature("autodoc", "Returns the type of the surface : plane, cylinder, cone, sphere, torus, beziersurface, bsplinesurface, surfaceofrevolution, surfaceofextrusion, othersurface.
 
-	:rtype: GeomAbs_SurfaceType
+Returns
+-------
+GeomAbs_SurfaceType
 ") GetType;
 		GeomAbs_SurfaceType GetType();
 
 		/****************** IsUClosed ******************/
 		%feature("compactdefaultargs") IsUClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsUClosed;
 		Standard_Boolean IsUClosed();
 
 		/****************** IsUPeriodic ******************/
 		%feature("compactdefaultargs") IsUPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsUPeriodic;
 		Standard_Boolean IsUPeriodic();
 
 		/****************** IsURational ******************/
 		%feature("compactdefaultargs") IsURational;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsURational;
 		Standard_Boolean IsURational();
 
 		/****************** IsVClosed ******************/
 		%feature("compactdefaultargs") IsVClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsVClosed;
 		Standard_Boolean IsVClosed();
 
 		/****************** IsVPeriodic ******************/
 		%feature("compactdefaultargs") IsVPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsVPeriodic;
 		Standard_Boolean IsVPeriodic();
 
 		/****************** IsVRational ******************/
 		%feature("compactdefaultargs") IsVRational;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsVRational;
 		Standard_Boolean IsVRational();
 
 		/****************** LastUParameter ******************/
 		%feature("compactdefaultargs") LastUParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastUParameter;
 		Standard_Real LastUParameter();
 
 		/****************** LastVParameter ******************/
 		%feature("compactdefaultargs") LastVParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastVParameter;
 		Standard_Real LastVParameter();
 
@@ -1454,9 +1917,13 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") Load;
 		%feature("autodoc", "Changes the curve.
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") Load;
 		void Load(const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -1464,9 +1931,13 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") Load;
 		%feature("autodoc", "Changes the direction.
 
-	:param V:
-	:type V: gp_Dir
-	:rtype: None
+Parameters
+----------
+V: gp_Dir
+
+Returns
+-------
+None
 ") Load;
 		void Load(const gp_Dir & V);
 
@@ -1474,15 +1945,23 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") NbUIntervals;
 		%feature("autodoc", "Returns the number of u intervals for continuity <s>. may be one if ucontinuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbUIntervals;
 		Standard_Integer NbUIntervals(const GeomAbs_Shape S);
 
 		/****************** NbUPoles ******************/
 		%feature("compactdefaultargs") NbUPoles;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbUPoles;
 		Standard_Integer NbUPoles();
 
@@ -1490,39 +1969,63 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") NbVIntervals;
 		%feature("autodoc", "Returns the number of v intervals for continuity <s>. may be one if vcontinuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbVIntervals;
 		Standard_Integer NbVIntervals(const GeomAbs_Shape S);
 
 		/****************** Plane ******************/
 		%feature("compactdefaultargs") Plane;
-		%feature("autodoc", "	:rtype: gp_Pln
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pln
 ") Plane;
 		gp_Pln Plane();
 
 		/****************** Sphere ******************/
 		%feature("compactdefaultargs") Sphere;
-		%feature("autodoc", "	:rtype: gp_Sphere
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Sphere
 ") Sphere;
 		gp_Sphere Sphere();
 
 		/****************** Torus ******************/
 		%feature("compactdefaultargs") Torus;
-		%feature("autodoc", "	:rtype: gp_Torus
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Torus
 ") Torus;
 		gp_Torus Torus();
 
 		/****************** UContinuity ******************/
 		%feature("compactdefaultargs") UContinuity;
-		%feature("autodoc", "	:rtype: GeomAbs_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_Shape
 ") UContinuity;
 		GeomAbs_Shape UContinuity();
 
 		/****************** UDegree ******************/
 		%feature("compactdefaultargs") UDegree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") UDegree;
 		Standard_Integer UDegree();
 
@@ -1530,17 +2033,24 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") UIntervals;
 		%feature("autodoc", "Returns the intervals with the requested continuity in the u direction.
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") UIntervals;
 		void UIntervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 		/****************** UPeriod ******************/
 		%feature("compactdefaultargs") UPeriod;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") UPeriod;
 		Standard_Real UPeriod();
 
@@ -1548,9 +2058,13 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") UResolution;
 		%feature("autodoc", "Returns the parametric u resolution corresponding to the real space resolution <r3d>.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") UResolution;
 		Standard_Real UResolution(const Standard_Real R3d);
 
@@ -1558,13 +2072,15 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") UTrim;
 		%feature("autodoc", "Returns a surface trimmed in the u direction equivalent of <self> between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor3d_HSurface>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HSurface>
 ") UTrim;
 		opencascade::handle<Adaptor3d_HSurface> UTrim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
@@ -1572,7 +2088,9 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") VContinuity;
 		%feature("autodoc", "Return cn.
 
-	:rtype: GeomAbs_Shape
+Returns
+-------
+GeomAbs_Shape
 ") VContinuity;
 		GeomAbs_Shape VContinuity();
 
@@ -1580,17 +2098,24 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") VIntervals;
 		%feature("autodoc", "Returns the intervals with the requested continuity in the v direction.
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") VIntervals;
 		void VIntervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 		/****************** VPeriod ******************/
 		%feature("compactdefaultargs") VPeriod;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") VPeriod;
 		Standard_Real VPeriod();
 
@@ -1598,9 +2123,13 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") VResolution;
 		%feature("autodoc", "Returns the parametric v resolution corresponding to the real space resolution <r3d>.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") VResolution;
 		Standard_Real VResolution(const Standard_Real R3d);
 
@@ -1608,13 +2137,15 @@ class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") VTrim;
 		%feature("autodoc", "Returns a surface trimmed in the v direction between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor3d_HSurface>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HSurface>
 ") VTrim;
 		opencascade::handle<Adaptor3d_HSurface> VTrim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
@@ -1634,31 +2165,51 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 	public:
 		/****************** AxeOfRevolution ******************/
 		%feature("compactdefaultargs") AxeOfRevolution;
-		%feature("autodoc", "	:rtype: gp_Ax1
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Ax1
 ") AxeOfRevolution;
 		gp_Ax1 AxeOfRevolution();
 
 		/****************** Axis ******************/
 		%feature("compactdefaultargs") Axis;
-		%feature("autodoc", "	:rtype: gp_Ax3
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Ax3
 ") Axis;
 		const gp_Ax3 Axis();
 
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom_BSplineSurface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BSplineSurface>
 ") BSpline;
 		opencascade::handle<Geom_BSplineSurface> BSpline();
 
 		/****************** BasisCurve ******************/
 		%feature("compactdefaultargs") BasisCurve;
-		%feature("autodoc", "	:rtype: opencascade::handle<Adaptor3d_HCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HCurve>
 ") BasisCurve;
 		opencascade::handle<Adaptor3d_HCurve> BasisCurve();
 
 		/****************** Bezier ******************/
 		%feature("compactdefaultargs") Bezier;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom_BezierSurface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BezierSurface>
 ") Bezier;
 		opencascade::handle<Geom_BezierSurface> Bezier();
 
@@ -1666,31 +2217,49 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") Cone;
 		%feature("autodoc", "Apex of the cone = cone.position().location() ==> referenceradius = 0.
 
-	:rtype: gp_Cone
+Returns
+-------
+gp_Cone
 ") Cone;
 		gp_Cone Cone();
 
 		/****************** Cylinder ******************/
 		%feature("compactdefaultargs") Cylinder;
-		%feature("autodoc", "	:rtype: gp_Cylinder
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Cylinder
 ") Cylinder;
 		gp_Cylinder Cylinder();
 
 		/****************** FirstUParameter ******************/
 		%feature("compactdefaultargs") FirstUParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstUParameter;
 		Standard_Real FirstUParameter();
 
 		/****************** FirstVParameter ******************/
 		%feature("compactdefaultargs") FirstVParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstVParameter;
 		Standard_Real FirstVParameter();
 
 		/****************** GeomAdaptor_SurfaceOfRevolution ******************/
 		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfRevolution;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") GeomAdaptor_SurfaceOfRevolution;
 		 GeomAdaptor_SurfaceOfRevolution();
 
@@ -1698,9 +2267,13 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfRevolution;
 		%feature("autodoc", "The curve is loaded.
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") GeomAdaptor_SurfaceOfRevolution;
 		 GeomAdaptor_SurfaceOfRevolution(const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -1708,11 +2281,14 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfRevolution;
 		%feature("autodoc", "The curve and the direction are loaded.
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param V:
-	:type V: gp_Ax1
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+V: gp_Ax1
+
+Returns
+-------
+None
 ") GeomAdaptor_SurfaceOfRevolution;
 		 GeomAdaptor_SurfaceOfRevolution(const opencascade::handle<Adaptor3d_HCurve> & C, const gp_Ax1 & V);
 
@@ -1720,55 +2296,89 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") GetType;
 		%feature("autodoc", "Returns the type of the surface : plane, cylinder, cone, sphere, torus, beziersurface, bsplinesurface, surfaceofrevolution, surfaceofextrusion, othersurface.
 
-	:rtype: GeomAbs_SurfaceType
+Returns
+-------
+GeomAbs_SurfaceType
 ") GetType;
 		GeomAbs_SurfaceType GetType();
 
 		/****************** IsUClosed ******************/
 		%feature("compactdefaultargs") IsUClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsUClosed;
 		Standard_Boolean IsUClosed();
 
 		/****************** IsUPeriodic ******************/
 		%feature("compactdefaultargs") IsUPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsUPeriodic;
 		Standard_Boolean IsUPeriodic();
 
 		/****************** IsURational ******************/
 		%feature("compactdefaultargs") IsURational;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsURational;
 		Standard_Boolean IsURational();
 
 		/****************** IsVClosed ******************/
 		%feature("compactdefaultargs") IsVClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsVClosed;
 		Standard_Boolean IsVClosed();
 
 		/****************** IsVPeriodic ******************/
 		%feature("compactdefaultargs") IsVPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsVPeriodic;
 		Standard_Boolean IsVPeriodic();
 
 		/****************** IsVRational ******************/
 		%feature("compactdefaultargs") IsVRational;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsVRational;
 		Standard_Boolean IsVRational();
 
 		/****************** LastUParameter ******************/
 		%feature("compactdefaultargs") LastUParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastUParameter;
 		Standard_Real LastUParameter();
 
 		/****************** LastVParameter ******************/
 		%feature("compactdefaultargs") LastVParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastVParameter;
 		Standard_Real LastVParameter();
 
@@ -1776,9 +2386,13 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") Load;
 		%feature("autodoc", "Changes the curve.
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") Load;
 		void Load(const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -1786,9 +2400,13 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") Load;
 		%feature("autodoc", "Changes the direction.
 
-	:param V:
-	:type V: gp_Ax1
-	:rtype: None
+Parameters
+----------
+V: gp_Ax1
+
+Returns
+-------
+None
 ") Load;
 		void Load(const gp_Ax1 & V);
 
@@ -1796,9 +2414,13 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") NbUIntervals;
 		%feature("autodoc", "Returns the number of u intervals for continuity <s>. may be one if ucontinuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbUIntervals;
 		Standard_Integer NbUIntervals(const GeomAbs_Shape S);
 
@@ -1806,45 +2428,73 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") NbVIntervals;
 		%feature("autodoc", "Returns the number of v intervals for continuity <s>. may be one if vcontinuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbVIntervals;
 		Standard_Integer NbVIntervals(const GeomAbs_Shape S);
 
 		/****************** NbVKnots ******************/
 		%feature("compactdefaultargs") NbVKnots;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbVKnots;
 		Standard_Integer NbVKnots();
 
 		/****************** NbVPoles ******************/
 		%feature("compactdefaultargs") NbVPoles;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbVPoles;
 		Standard_Integer NbVPoles();
 
 		/****************** Plane ******************/
 		%feature("compactdefaultargs") Plane;
-		%feature("autodoc", "	:rtype: gp_Pln
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pln
 ") Plane;
 		gp_Pln Plane();
 
 		/****************** Sphere ******************/
 		%feature("compactdefaultargs") Sphere;
-		%feature("autodoc", "	:rtype: gp_Sphere
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Sphere
 ") Sphere;
 		gp_Sphere Sphere();
 
 		/****************** Torus ******************/
 		%feature("compactdefaultargs") Torus;
-		%feature("autodoc", "	:rtype: gp_Torus
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Torus
 ") Torus;
 		gp_Torus Torus();
 
 		/****************** UContinuity ******************/
 		%feature("compactdefaultargs") UContinuity;
-		%feature("autodoc", "	:rtype: GeomAbs_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_Shape
 ") UContinuity;
 		GeomAbs_Shape UContinuity();
 
@@ -1852,17 +2502,24 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") UIntervals;
 		%feature("autodoc", "Returns the intervals with the requested continuity in the u direction.
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") UIntervals;
 		void UIntervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 		/****************** UPeriod ******************/
 		%feature("compactdefaultargs") UPeriod;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") UPeriod;
 		Standard_Real UPeriod();
 
@@ -1870,9 +2527,13 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") UResolution;
 		%feature("autodoc", "Returns the parametric u resolution corresponding to the real space resolution <r3d>.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") UResolution;
 		Standard_Real UResolution(const Standard_Real R3d);
 
@@ -1880,13 +2541,15 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") UTrim;
 		%feature("autodoc", "Returns a surface trimmed in the u direction equivalent of <self> between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor3d_HSurface>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HSurface>
 ") UTrim;
 		opencascade::handle<Adaptor3d_HSurface> UTrim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
@@ -1894,13 +2557,19 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") VContinuity;
 		%feature("autodoc", "Return cn.
 
-	:rtype: GeomAbs_Shape
+Returns
+-------
+GeomAbs_Shape
 ") VContinuity;
 		GeomAbs_Shape VContinuity();
 
 		/****************** VDegree ******************/
 		%feature("compactdefaultargs") VDegree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") VDegree;
 		Standard_Integer VDegree();
 
@@ -1908,17 +2577,24 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") VIntervals;
 		%feature("autodoc", "Returns the intervals with the requested continuity in the v direction.
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") VIntervals;
 		void VIntervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 		/****************** VPeriod ******************/
 		%feature("compactdefaultargs") VPeriod;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") VPeriod;
 		Standard_Real VPeriod();
 
@@ -1926,9 +2602,13 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") VResolution;
 		%feature("autodoc", "Returns the parametric v resolution corresponding to the real space resolution <r3d>.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") VResolution;
 		Standard_Real VResolution(const Standard_Real R3d);
 
@@ -1936,13 +2616,15 @@ class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 		%feature("compactdefaultargs") VTrim;
 		%feature("autodoc", "Returns a surface trimmed in the v direction between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor3d_HSurface>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HSurface>
 ") VTrim;
 		opencascade::handle<Adaptor3d_HSurface> VTrim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 

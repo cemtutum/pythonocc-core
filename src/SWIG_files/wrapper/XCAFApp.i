@@ -79,7 +79,9 @@ class XCAFApp_Application : public TDocStd_Application {
 		%feature("compactdefaultargs") GetApplication;
 		%feature("autodoc", "Initializes (for the first time) and returns the static object (xcafapp_application) this is the only valid method to get xcafapp_application object, and it should be called at least once before any actions with documents in order to init application.
 
-	:rtype: opencascade::handle<XCAFApp_Application>
+Returns
+-------
+opencascade::handle<XCAFApp_Application>
 ") GetApplication;
 		static opencascade::handle<XCAFApp_Application> GetApplication();
 
@@ -87,9 +89,13 @@ class XCAFApp_Application : public TDocStd_Application {
 		%feature("compactdefaultargs") InitDocument;
 		%feature("autodoc", "Set xcafdoc_documenttool attribute.
 
-	:param aDoc:
-	:type aDoc: TDocStd_Document
-	:rtype: None
+Parameters
+----------
+aDoc: TDocStd_Document
+
+Returns
+-------
+None
 ") InitDocument;
 		virtual void InitDocument(const opencascade::handle<TDocStd_Document> & aDoc);
 
@@ -97,7 +103,9 @@ class XCAFApp_Application : public TDocStd_Application {
 		%feature("compactdefaultargs") ResourcesName;
 		%feature("autodoc", "Methods from tdocstd_application ================================.
 
-	:rtype: char *
+Returns
+-------
+char *
 ") ResourcesName;
 		virtual const char * ResourcesName();
 

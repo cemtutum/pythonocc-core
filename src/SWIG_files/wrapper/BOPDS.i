@@ -236,9 +236,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") AddFace;
 		%feature("autodoc", "Modifier adds the index of the face <af> to the list of indices of faces of the common block.
 
-	:param aF:
-	:type aF: int
-	:rtype: None
+Parameters
+----------
+aF: int
+
+Returns
+-------
+None
 ") AddFace;
 		void AddFace(const Standard_Integer aF);
 
@@ -246,9 +250,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") AddPaveBlock;
 		%feature("autodoc", "Modifier adds the pave block <apb> to the list of pave blocks of the common block.
 
-	:param aPB:
-	:type aPB: BOPDS_PaveBlock
-	:rtype: None
+Parameters
+----------
+aPB: BOPDS_PaveBlock
+
+Returns
+-------
+None
 ") AddPaveBlock;
 		void AddPaveBlock(const opencascade::handle<BOPDS_PaveBlock> & aPB);
 
@@ -256,9 +264,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") AppendFaces;
 		%feature("autodoc", "Modifier appends the list of indices of faces <alf> to the list of indices of faces of the common block (the input list is emptied).
 
-	:param aLF:
-	:type aLF: TColStd_ListOfInteger
-	:rtype: None
+Parameters
+----------
+aLF: TColStd_ListOfInteger
+
+Returns
+-------
+None
 ") AppendFaces;
 		void AppendFaces(TColStd_ListOfInteger & aLF);
 
@@ -266,7 +278,9 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") BOPDS_CommonBlock;
 		%feature("autodoc", "Empty contructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_CommonBlock;
 		 BOPDS_CommonBlock();
 
@@ -274,9 +288,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") BOPDS_CommonBlock;
 		%feature("autodoc", "Contructor <theallocator> - the allocator to manage the memory.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_CommonBlock;
 		 BOPDS_CommonBlock(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -284,9 +302,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") Contains;
 		%feature("autodoc", "Query returns true if the common block contains a pave block that is equal to <thepb>.
 
-	:param thePB:
-	:type thePB: BOPDS_PaveBlock
-	:rtype: bool
+Parameters
+----------
+thePB: BOPDS_PaveBlock
+
+Returns
+-------
+bool
 ") Contains;
 		Standard_Boolean Contains(const opencascade::handle<BOPDS_PaveBlock> & thePB);
 
@@ -294,15 +316,23 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") Contains;
 		%feature("autodoc", "Query returns true if the common block contains the face with index equal to <thef>.
 
-	:param theF:
-	:type theF: int
-	:rtype: bool
+Parameters
+----------
+theF: int
+
+Returns
+-------
+bool
 ") Contains;
 		Standard_Boolean Contains(const Standard_Integer theF);
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Dump;
 		void Dump();
 
@@ -310,7 +340,9 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Selector returns the index of the edge of all pave blocks of the common block.
 
-	:rtype: int
+Returns
+-------
+int
 ") Edge;
 		Standard_Integer Edge();
 
@@ -318,7 +350,9 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") Faces;
 		%feature("autodoc", "Selector returns the list of indices of faces of the common block.
 
-	:rtype: TColStd_ListOfInteger
+Returns
+-------
+TColStd_ListOfInteger
 ") Faces;
 		const TColStd_ListOfInteger & Faces();
 
@@ -326,9 +360,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") IsPaveBlockOnEdge;
 		%feature("autodoc", "Query returns true if the common block contains a pave block that belongs to the edge with index <theix>.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+bool
 ") IsPaveBlockOnEdge;
 		Standard_Boolean IsPaveBlockOnEdge(const Standard_Integer theIndex);
 
@@ -336,9 +374,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") IsPaveBlockOnFace;
 		%feature("autodoc", "Query returns true if the common block contains a pave block that belongs to the face with index <theix>.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+bool
 ") IsPaveBlockOnFace;
 		Standard_Boolean IsPaveBlockOnFace(const Standard_Integer theIndex);
 
@@ -346,7 +388,9 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") PaveBlock1;
 		%feature("autodoc", "Selector returns the first pave block of the common block.
 
-	:rtype: opencascade::handle<BOPDS_PaveBlock>
+Returns
+-------
+opencascade::handle<BOPDS_PaveBlock>
 ") PaveBlock1;
 		const opencascade::handle<BOPDS_PaveBlock> & PaveBlock1();
 
@@ -354,9 +398,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") PaveBlockOnEdge;
 		%feature("autodoc", "Selector returns the pave block that belongs to the edge with index <theix>.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: opencascade::handle<BOPDS_PaveBlock>
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+opencascade::handle<BOPDS_PaveBlock>
 ") PaveBlockOnEdge;
 		opencascade::handle<BOPDS_PaveBlock> & PaveBlockOnEdge(const Standard_Integer theIndex);
 
@@ -364,7 +412,9 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") PaveBlocks;
 		%feature("autodoc", "Selector returns the list of pave blocks of the common block.
 
-	:rtype: BOPDS_ListOfPaveBlock
+Returns
+-------
+BOPDS_ListOfPaveBlock
 ") PaveBlocks;
 		const BOPDS_ListOfPaveBlock & PaveBlocks();
 
@@ -372,9 +422,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") SetEdge;
 		%feature("autodoc", "Modifier assign the index <theedge> as the edge index to all pave blocks of the common block.
 
-	:param theEdge:
-	:type theEdge: int
-	:rtype: None
+Parameters
+----------
+theEdge: int
+
+Returns
+-------
+None
 ") SetEdge;
 		void SetEdge(const Standard_Integer theEdge);
 
@@ -382,9 +436,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") SetFaces;
 		%feature("autodoc", "Modifier sets the list of indices of faces <alf> of the common block.
 
-	:param aLF:
-	:type aLF: TColStd_ListOfInteger
-	:rtype: None
+Parameters
+----------
+aLF: TColStd_ListOfInteger
+
+Returns
+-------
+None
 ") SetFaces;
 		void SetFaces(const TColStd_ListOfInteger & aLF);
 
@@ -392,9 +450,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") SetPaveBlocks;
 		%feature("autodoc", "Modifier sets the list of pave blocks for the common block.
 
-	:param aLPB:
-	:type aLPB: BOPDS_ListOfPaveBlock
-	:rtype: None
+Parameters
+----------
+aLPB: BOPDS_ListOfPaveBlock
+
+Returns
+-------
+None
 ") SetPaveBlocks;
 		void SetPaveBlocks(const BOPDS_ListOfPaveBlock & aLPB);
 
@@ -402,9 +464,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") SetRealPaveBlock;
 		%feature("autodoc", "Moves the pave blocks in the list to make the given pave block to be the first. it will be representative for the whole group.
 
-	:param thePB:
-	:type thePB: BOPDS_PaveBlock
-	:rtype: None
+Parameters
+----------
+thePB: BOPDS_PaveBlock
+
+Returns
+-------
+None
 ") SetRealPaveBlock;
 		void SetRealPaveBlock(const opencascade::handle<BOPDS_PaveBlock> & thePB);
 
@@ -412,9 +478,13 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") SetTolerance;
 		%feature("autodoc", "Sets the tolerance for the common block.
 
-	:param theTol:
-	:type theTol: float
-	:rtype: None
+Parameters
+----------
+theTol: float
+
+Returns
+-------
+None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real theTol);
 
@@ -422,7 +492,9 @@ class BOPDS_CommonBlock : public Standard_Transient {
 		%feature("compactdefaultargs") Tolerance;
 		%feature("autodoc", "Return the tolerance of common block.
 
-	:rtype: float
+Returns
+-------
+float
 ") Tolerance;
 		Standard_Real Tolerance();
 
@@ -446,7 +518,9 @@ class BOPDS_CoupleOfPaveBlocks {
 		%feature("compactdefaultargs") BOPDS_CoupleOfPaveBlocks;
 		%feature("autodoc", "/** * constructor */.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_CoupleOfPaveBlocks;
 		 BOPDS_CoupleOfPaveBlocks();
 
@@ -454,11 +528,14 @@ class BOPDS_CoupleOfPaveBlocks {
 		%feature("compactdefaultargs") BOPDS_CoupleOfPaveBlocks;
 		%feature("autodoc", "/** * constructor * @param thepb1 * first pave block * @param thepb2 * secondt pave block */.
 
-	:param thePB1:
-	:type thePB1: BOPDS_PaveBlock
-	:param thePB2:
-	:type thePB2: BOPDS_PaveBlock
-	:rtype: None
+Parameters
+----------
+thePB1: BOPDS_PaveBlock
+thePB2: BOPDS_PaveBlock
+
+Returns
+-------
+None
 ") BOPDS_CoupleOfPaveBlocks;
 		 BOPDS_CoupleOfPaveBlocks(const opencascade::handle<BOPDS_PaveBlock> & thePB1, const opencascade::handle<BOPDS_PaveBlock> & thePB2);
 
@@ -466,7 +543,9 @@ class BOPDS_CoupleOfPaveBlocks {
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "/** * returns the index * returns * index */.
 
-	:rtype: int
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index();
 
@@ -474,29 +553,44 @@ class BOPDS_CoupleOfPaveBlocks {
 		%feature("compactdefaultargs") IndexInterf;
 		%feature("autodoc", "/** * returns the index of an interference * returns * index of an interference */.
 
-	:rtype: int
+Returns
+-------
+int
 ") IndexInterf;
 		Standard_Integer IndexInterf();
 
 		/****************** PaveBlock1 ******************/
 		%feature("compactdefaultargs") PaveBlock1;
-		%feature("autodoc", "	:rtype: opencascade::handle<BOPDS_PaveBlock>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<BOPDS_PaveBlock>
 ") PaveBlock1;
 		const opencascade::handle<BOPDS_PaveBlock> & PaveBlock1();
 
 		/****************** PaveBlock2 ******************/
 		%feature("compactdefaultargs") PaveBlock2;
-		%feature("autodoc", "	:rtype: opencascade::handle<BOPDS_PaveBlock>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<BOPDS_PaveBlock>
 ") PaveBlock2;
 		const opencascade::handle<BOPDS_PaveBlock> & PaveBlock2();
 
 		/****************** PaveBlocks ******************/
 		%feature("compactdefaultargs") PaveBlocks;
-		%feature("autodoc", "	:param thePB1:
-	:type thePB1: BOPDS_PaveBlock
-	:param thePB2:
-	:type thePB2: BOPDS_PaveBlock
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+thePB1: BOPDS_PaveBlock
+thePB2: BOPDS_PaveBlock
+
+Returns
+-------
+None
 ") PaveBlocks;
 		void PaveBlocks(opencascade::handle<BOPDS_PaveBlock> & thePB1, opencascade::handle<BOPDS_PaveBlock> & thePB2);
 
@@ -504,43 +598,70 @@ class BOPDS_CoupleOfPaveBlocks {
 		%feature("compactdefaultargs") SetIndex;
 		%feature("autodoc", "/** * sets an index * @param theindex * index */.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") SetIndex;
 		void SetIndex(const Standard_Integer theIndex);
 
 		/****************** SetIndexInterf ******************/
 		%feature("compactdefaultargs") SetIndexInterf;
-		%feature("autodoc", "	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") SetIndexInterf;
 		void SetIndexInterf(const Standard_Integer theIndex);
 
 		/****************** SetPaveBlock1 ******************/
 		%feature("compactdefaultargs") SetPaveBlock1;
-		%feature("autodoc", "	:param thePB:
-	:type thePB: BOPDS_PaveBlock
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+thePB: BOPDS_PaveBlock
+
+Returns
+-------
+None
 ") SetPaveBlock1;
 		void SetPaveBlock1(const opencascade::handle<BOPDS_PaveBlock> & thePB);
 
 		/****************** SetPaveBlock2 ******************/
 		%feature("compactdefaultargs") SetPaveBlock2;
-		%feature("autodoc", "	:param thePB:
-	:type thePB: BOPDS_PaveBlock
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+thePB: BOPDS_PaveBlock
+
+Returns
+-------
+None
 ") SetPaveBlock2;
 		void SetPaveBlock2(const opencascade::handle<BOPDS_PaveBlock> & thePB);
 
 		/****************** SetPaveBlocks ******************/
 		%feature("compactdefaultargs") SetPaveBlocks;
-		%feature("autodoc", "	:param thePB1:
-	:type thePB1: BOPDS_PaveBlock
-	:param thePB2:
-	:type thePB2: BOPDS_PaveBlock
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+thePB1: BOPDS_PaveBlock
+thePB2: BOPDS_PaveBlock
+
+Returns
+-------
+None
 ") SetPaveBlocks;
 		void SetPaveBlocks(const opencascade::handle<BOPDS_PaveBlock> & thePB1, const opencascade::handle<BOPDS_PaveBlock> & thePB2);
 
@@ -548,9 +669,13 @@ class BOPDS_CoupleOfPaveBlocks {
 		%feature("compactdefaultargs") SetTolerance;
 		%feature("autodoc", "/** * sets the tolerance associated with this couple */.
 
-	:param theTol:
-	:type theTol: float
-	:rtype: None
+Parameters
+----------
+theTol: float
+
+Returns
+-------
+None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real theTol);
 
@@ -558,7 +683,9 @@ class BOPDS_CoupleOfPaveBlocks {
 		%feature("compactdefaultargs") Tolerance;
 		%feature("autodoc", "/** * returns the tolerance associated with this couple */.
 
-	:rtype: float
+Returns
+-------
+float
 ") Tolerance;
 		Standard_Real Tolerance();
 
@@ -580,7 +707,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") BOPDS_Curve;
 		%feature("autodoc", "Empty contructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_Curve;
 		 BOPDS_Curve();
 
@@ -588,9 +717,13 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") BOPDS_Curve;
 		%feature("autodoc", "Contructor <theallocator> - the allocator to manage the memory.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_Curve;
 		 BOPDS_Curve(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -598,7 +731,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") Box;
 		%feature("autodoc", "Selector returns the bounding box of the curve.
 
-	:rtype: Bnd_Box
+Returns
+-------
+Bnd_Box
 ") Box;
 		const Bnd_Box & Box();
 
@@ -606,7 +741,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") ChangeBox;
 		%feature("autodoc", "Selector/modifier returns the bounding box of the curve.
 
-	:rtype: Bnd_Box
+Returns
+-------
+Bnd_Box
 ") ChangeBox;
 		Bnd_Box & ChangeBox();
 
@@ -614,7 +751,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") ChangePaveBlock1;
 		%feature("autodoc", "Selector/modifier returns initial pave block of the curve.
 
-	:rtype: opencascade::handle<BOPDS_PaveBlock>
+Returns
+-------
+opencascade::handle<BOPDS_PaveBlock>
 ") ChangePaveBlock1;
 		opencascade::handle<BOPDS_PaveBlock> & ChangePaveBlock1();
 
@@ -622,7 +761,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") ChangePaveBlocks;
 		%feature("autodoc", "Selector/modifier returns the list of pave blocks of the curve.
 
-	:rtype: BOPDS_ListOfPaveBlock
+Returns
+-------
+BOPDS_ListOfPaveBlock
 ") ChangePaveBlocks;
 		BOPDS_ListOfPaveBlock & ChangePaveBlocks();
 
@@ -630,7 +771,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") ChangeTechnoVertices;
 		%feature("autodoc", "Selector/modifier returns list of indices of technologic vertices of the curve.
 
-	:rtype: TColStd_ListOfInteger
+Returns
+-------
+TColStd_ListOfInteger
 ") ChangeTechnoVertices;
 		TColStd_ListOfInteger & ChangeTechnoVertices();
 
@@ -638,7 +781,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Selector returns the curve.
 
-	:rtype: IntTools_Curve
+Returns
+-------
+IntTools_Curve
 ") Curve;
 		const IntTools_Curve & Curve();
 
@@ -646,7 +791,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") HasEdge;
 		%feature("autodoc", "Query returns true if at least one pave block of the curve has edge.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasEdge;
 		Standard_Boolean HasEdge();
 
@@ -654,7 +801,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") InitPaveBlock1;
 		%feature("autodoc", "Creates initial pave block of the curve.
 
-	:rtype: None
+Returns
+-------
+None
 ") InitPaveBlock1;
 		void InitPaveBlock1();
 
@@ -662,7 +811,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") PaveBlocks;
 		%feature("autodoc", "Selector returns the list of pave blocks of the curve.
 
-	:rtype: BOPDS_ListOfPaveBlock
+Returns
+-------
+BOPDS_ListOfPaveBlock
 ") PaveBlocks;
 		const BOPDS_ListOfPaveBlock & PaveBlocks();
 
@@ -670,9 +821,13 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") SetBox;
 		%feature("autodoc", "Modifier sets the bounding box <thebox> of the curve.
 
-	:param theBox:
-	:type theBox: Bnd_Box
-	:rtype: None
+Parameters
+----------
+theBox: Bnd_Box
+
+Returns
+-------
+None
 ") SetBox;
 		void SetBox(const Bnd_Box & theBox);
 
@@ -680,17 +835,27 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") SetCurve;
 		%feature("autodoc", "Modifier sets the curve <thec>.
 
-	:param theC:
-	:type theC: IntTools_Curve
-	:rtype: None
+Parameters
+----------
+theC: IntTools_Curve
+
+Returns
+-------
+None
 ") SetCurve;
 		void SetCurve(const IntTools_Curve & theC);
 
 		/****************** SetPaveBlocks ******************/
 		%feature("compactdefaultargs") SetPaveBlocks;
-		%feature("autodoc", "	:param theLPB:
-	:type theLPB: BOPDS_ListOfPaveBlock
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theLPB: BOPDS_ListOfPaveBlock
+
+Returns
+-------
+None
 ") SetPaveBlocks;
 		void SetPaveBlocks(const BOPDS_ListOfPaveBlock & theLPB);
 
@@ -698,9 +863,13 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") SetTolerance;
 		%feature("autodoc", "Sets the tolerance for the curve.
 
-	:param theTol:
-	:type theTol: float
-	:rtype: None
+Parameters
+----------
+theTol: float
+
+Returns
+-------
+None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real theTol);
 
@@ -708,7 +877,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") TangentialTolerance;
 		%feature("autodoc", "Returns the tangential tolerance of the curve.
 
-	:rtype: float
+Returns
+-------
+float
 ") TangentialTolerance;
 		Standard_Real TangentialTolerance();
 
@@ -716,7 +887,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") TechnoVertices;
 		%feature("autodoc", "Selector returns list of indices of technologic vertices of the curve.
 
-	:rtype: TColStd_ListOfInteger
+Returns
+-------
+TColStd_ListOfInteger
 ") TechnoVertices;
 		const TColStd_ListOfInteger & TechnoVertices();
 
@@ -724,7 +897,9 @@ class BOPDS_Curve {
 		%feature("compactdefaultargs") Tolerance;
 		%feature("autodoc", "Returns the tolerance of the curve.
 
-	:rtype: float
+Returns
+-------
+float
 ") Tolerance;
 		Standard_Real Tolerance();
 
@@ -746,11 +921,14 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") AddInterf;
 		%feature("autodoc", "Modifier adds the information about an interference between shapes with indices thei1, thei2 to the summary table of interferences.
 
-	:param theI1:
-	:type theI1: int
-	:param theI2:
-	:type theI2: int
-	:rtype: bool
+Parameters
+----------
+theI1: int
+theI2: int
+
+Returns
+-------
+bool
 ") AddInterf;
 		Standard_Boolean AddInterf(const Standard_Integer theI1, const Standard_Integer theI2);
 
@@ -758,11 +936,14 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") AddShapeSD;
 		%feature("autodoc", "Modifier adds the information about same domain shapes with indices theindex, theindexsd.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theIndexSD:
-	:type theIndexSD: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theIndexSD: int
+
+Returns
+-------
+None
 ") AddShapeSD;
 		void AddShapeSD(const Standard_Integer theIndex, const Standard_Integer theIndexSD);
 
@@ -770,7 +951,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") Allocator;
 		%feature("autodoc", "Selector.
 
-	:rtype: opencascade::handle<NCollection_BaseAllocator>
+Returns
+-------
+opencascade::handle<NCollection_BaseAllocator>
 ") Allocator;
 		const opencascade::handle<NCollection_BaseAllocator> & Allocator();
 
@@ -778,11 +961,14 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") AloneVertices;
 		%feature("autodoc", "Selector returns the indices of alone vertices for the face with index theindex.
 
-	:param theF:
-	:type theF: int
-	:param theLI:
-	:type theLI: TColStd_ListOfInteger
-	:rtype: None
+Parameters
+----------
+theF: int
+theLI: TColStd_ListOfInteger
+
+Returns
+-------
+None
 ") AloneVertices;
 		void AloneVertices(const Standard_Integer theF, TColStd_ListOfInteger & theLI);
 
@@ -790,9 +976,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Modifier appends the information about the shape [thesi] to the data structure returns the index of thesi in the data structure.
 
-	:param theSI:
-	:type theSI: BOPDS_ShapeInfo
-	:rtype: int
+Parameters
+----------
+theSI: BOPDS_ShapeInfo
+
+Returns
+-------
+int
 ") Append;
 		Standard_Integer Append(const BOPDS_ShapeInfo & theSI);
 
@@ -800,9 +990,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Modifier appends the default information about the shape [thes] to the data structure returns the index of thes in the data structure.
 
-	:param theS:
-	:type theS: TopoDS_Shape
-	:rtype: int
+Parameters
+----------
+theS: TopoDS_Shape
+
+Returns
+-------
+int
 ") Append;
 		Standard_Integer Append(const TopoDS_Shape & theS);
 
@@ -810,7 +1004,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") Arguments;
 		%feature("autodoc", "Selector returns the arguments of an operation.
 
-	:rtype: TopTools_ListOfShape
+Returns
+-------
+TopTools_ListOfShape
 ") Arguments;
 		const TopTools_ListOfShape & Arguments();
 
@@ -818,7 +1014,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") BOPDS_DS;
 		%feature("autodoc", "Empty contructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_DS;
 		 BOPDS_DS();
 
@@ -826,9 +1024,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") BOPDS_DS;
 		%feature("autodoc", "Contructor theallocator - the allocator to manage the memory.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_DS;
 		 BOPDS_DS(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -836,13 +1038,16 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") BuildBndBoxSolid;
 		%feature("autodoc", "Computes bounding box <thebox> for the solid with ds-index <theindex>. the flag <thecheckinverted> enables/disables the check of the solid for inverted status. by default the solids will be checked.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theBox:
-	:type theBox: Bnd_Box
-	:param theCheckInverted: default value is Standard_True
-	:type theCheckInverted: bool
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theBox: Bnd_Box
+theCheckInverted: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") BuildBndBoxSolid;
 		void BuildBndBoxSolid(const Standard_Integer theIndex, Bnd_Box & theBox, const Standard_Boolean theCheckInverted = Standard_True);
 
@@ -850,9 +1055,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") ChangeFaceInfo;
 		%feature("autodoc", "Selector/modifier returns the state of face with index theindex.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BOPDS_FaceInfo
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BOPDS_FaceInfo
 ") ChangeFaceInfo;
 		BOPDS_FaceInfo & ChangeFaceInfo(const Standard_Integer theIndex);
 
@@ -860,9 +1069,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") ChangePaveBlocks;
 		%feature("autodoc", "Selector/modifier returns the pave blocks for the shape with index theindex.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BOPDS_ListOfPaveBlock
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BOPDS_ListOfPaveBlock
 ") ChangePaveBlocks;
 		BOPDS_ListOfPaveBlock & ChangePaveBlocks(const Standard_Integer theIndex);
 
@@ -870,7 +1083,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") ChangePaveBlocksPool;
 		%feature("autodoc", "Selector/modifier returns the information about pave blocks on source edges.
 
-	:rtype: BOPDS_VectorOfListOfPaveBlock
+Returns
+-------
+BOPDS_VectorOfListOfPaveBlock
 ") ChangePaveBlocksPool;
 		BOPDS_VectorOfListOfPaveBlock & ChangePaveBlocksPool();
 
@@ -878,9 +1093,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") ChangeShapeInfo;
 		%feature("autodoc", "Selector/modifier returns the information about the shape with index theindex.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BOPDS_ShapeInfo
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BOPDS_ShapeInfo
 ") ChangeShapeInfo;
 		BOPDS_ShapeInfo & ChangeShapeInfo(const Standard_Integer theIndex);
 
@@ -888,7 +1107,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears the contents.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -896,15 +1117,23 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") CommonBlock;
 		%feature("autodoc", "Selector returns the common block.
 
-	:param thePB:
-	:type thePB: BOPDS_PaveBlock
-	:rtype: opencascade::handle<BOPDS_CommonBlock>
+Parameters
+----------
+thePB: BOPDS_PaveBlock
+
+Returns
+-------
+opencascade::handle<BOPDS_CommonBlock>
 ") CommonBlock;
 		opencascade::handle<BOPDS_CommonBlock> CommonBlock(const opencascade::handle<BOPDS_PaveBlock> & thePB);
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Dump;
 		void Dump();
 
@@ -912,9 +1141,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") FaceInfo;
 		%feature("autodoc", "Selector returns the state of face with index theindex.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BOPDS_FaceInfo
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BOPDS_FaceInfo
 ") FaceInfo;
 		const BOPDS_FaceInfo & FaceInfo(const Standard_Integer theIndex);
 
@@ -922,13 +1155,15 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") FaceInfoIn;
 		%feature("autodoc", "Selector returns the state in [thempb,themvp] of face with index theindex.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theMPB:
-	:type theMPB: BOPDS_IndexedMapOfPaveBlock
-	:param theMVP:
-	:type theMVP: TColStd_MapOfInteger
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theMPB: BOPDS_IndexedMapOfPaveBlock
+theMVP: TColStd_MapOfInteger
+
+Returns
+-------
+None
 ") FaceInfoIn;
 		void FaceInfoIn(const Standard_Integer theIndex, BOPDS_IndexedMapOfPaveBlock & theMPB, TColStd_MapOfInteger & theMVP);
 
@@ -936,13 +1171,15 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") FaceInfoOn;
 		%feature("autodoc", "Selector returns the state on [thempb,themvp] of face with index theindex.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theMPB:
-	:type theMPB: BOPDS_IndexedMapOfPaveBlock
-	:param theMVP:
-	:type theMVP: TColStd_MapOfInteger
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theMPB: BOPDS_IndexedMapOfPaveBlock
+theMVP: TColStd_MapOfInteger
+
+Returns
+-------
+None
 ") FaceInfoOn;
 		void FaceInfoOn(const Standard_Integer theIndex, BOPDS_IndexedMapOfPaveBlock & theMPB, TColStd_MapOfInteger & theMVP);
 
@@ -950,7 +1187,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") FaceInfoPool;
 		%feature("autodoc", "Selector returns the information about state of faces.
 
-	:rtype: BOPDS_VectorOfFaceInfo
+Returns
+-------
+BOPDS_VectorOfFaceInfo
 ") FaceInfoPool;
 		const BOPDS_VectorOfFaceInfo & FaceInfoPool();
 
@@ -958,9 +1197,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") HasFaceInfo;
 		%feature("autodoc", "Query returns true if the shape with index theindex has the information about state of face.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+bool
 ") HasFaceInfo;
 		Standard_Boolean HasFaceInfo(const Standard_Integer theIndex);
 
@@ -968,9 +1211,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") HasInterf;
 		%feature("autodoc", "Query returns true if the shape with index thei is interferred.
 
-	:param theI:
-	:type theI: int
-	:rtype: bool
+Parameters
+----------
+theI: int
+
+Returns
+-------
+bool
 ") HasInterf;
 		Standard_Boolean HasInterf(const Standard_Integer theI);
 
@@ -978,11 +1225,14 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") HasInterf;
 		%feature("autodoc", "Query returns true if the shapes with indices thei1, thei2 are interferred.
 
-	:param theI1:
-	:type theI1: int
-	:param theI2:
-	:type theI2: int
-	:rtype: bool
+Parameters
+----------
+theI1: int
+theI2: int
+
+Returns
+-------
+bool
 ") HasInterf;
 		Standard_Boolean HasInterf(const Standard_Integer theI1, const Standard_Integer theI2);
 
@@ -990,13 +1240,16 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") HasInterfShapeSubShapes;
 		%feature("autodoc", "Query returns true if the shape with index thei1 is interfered with any sub-shape of the shape with index thei2 (theflag=true) all sub-shapes of the shape with index thei2 (theflag=false).
 
-	:param theI1:
-	:type theI1: int
-	:param theI2:
-	:type theI2: int
-	:param theFlag: default value is Standard_True
-	:type theFlag: bool
-	:rtype: bool
+Parameters
+----------
+theI1: int
+theI2: int
+theFlag: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+bool
 ") HasInterfShapeSubShapes;
 		Standard_Boolean HasInterfShapeSubShapes(const Standard_Integer theI1, const Standard_Integer theI2, const Standard_Boolean theFlag = Standard_True);
 
@@ -1004,11 +1257,14 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") HasInterfSubShapes;
 		%feature("autodoc", "Query returns true if the shapes with indices thei1, thei2 have interferred sub-shapes.
 
-	:param theI1:
-	:type theI1: int
-	:param theI2:
-	:type theI2: int
-	:rtype: bool
+Parameters
+----------
+theI1: int
+theI2: int
+
+Returns
+-------
+bool
 ") HasInterfSubShapes;
 		Standard_Boolean HasInterfSubShapes(const Standard_Integer theI1, const Standard_Integer theI2);
 
@@ -1016,9 +1272,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") HasPaveBlocks;
 		%feature("autodoc", "Query returns true if the shape with index theindex has the information about pave blocks.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+bool
 ") HasPaveBlocks;
 		Standard_Boolean HasPaveBlocks(const Standard_Integer theIndex);
 
@@ -1026,11 +1286,14 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") HasShapeSD;
 		%feature("autodoc", "Query returns true if the shape with index theindex has the same domain shape. in this case theindexsd will contain the index of same domain shape found //! interferences.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theIndexSD:
-	:type theIndexSD: int
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+theIndexSD: int
+
+Returns
+-------
+bool
 ") HasShapeSD;
 		Standard_Boolean HasShapeSD(const Standard_Integer theIndex, Standard_Integer &OutValue);
 
@@ -1038,9 +1301,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "Selector returns the index of the shape thes.
 
-	:param theS:
-	:type theS: TopoDS_Shape
-	:rtype: int
+Parameters
+----------
+theS: TopoDS_Shape
+
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index(const TopoDS_Shape & theS);
 
@@ -1048,17 +1315,28 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initializes the data structure for the arguments.
 
-	:param theFuzz: default value is Precision::Confusion()
-	:type theFuzz: float
-	:rtype: None
+Parameters
+----------
+theFuzz: float,optional
+	default value is Precision::Confusion()
+
+Returns
+-------
+None
 ") Init;
 		void Init(const Standard_Real theFuzz = Precision::Confusion());
 
 		/****************** InitPaveBlocksForVertex ******************/
 		%feature("compactdefaultargs") InitPaveBlocksForVertex;
-		%feature("autodoc", "	:param theNV:
-	:type theNV: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theNV: int
+
+Returns
+-------
+None
 ") InitPaveBlocksForVertex;
 		void InitPaveBlocksForVertex(const Standard_Integer theNV);
 
@@ -1066,7 +1344,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") InterfEE;
 		%feature("autodoc", "Selector/modifier returns the collection of interferences edge/edge.
 
-	:rtype: BOPDS_VectorOfInterfEE
+Returns
+-------
+BOPDS_VectorOfInterfEE
 ") InterfEE;
 		BOPDS_VectorOfInterfEE & InterfEE();
 
@@ -1074,7 +1354,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") InterfEF;
 		%feature("autodoc", "Selector/modifier returns the collection of interferences edge/face.
 
-	:rtype: BOPDS_VectorOfInterfEF
+Returns
+-------
+BOPDS_VectorOfInterfEF
 ") InterfEF;
 		BOPDS_VectorOfInterfEF & InterfEF();
 
@@ -1082,7 +1364,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") InterfEZ;
 		%feature("autodoc", "Selector/modifier returns the collection of interferences edge/solid.
 
-	:rtype: BOPDS_VectorOfInterfEZ
+Returns
+-------
+BOPDS_VectorOfInterfEZ
 ") InterfEZ;
 		BOPDS_VectorOfInterfEZ & InterfEZ();
 
@@ -1090,7 +1374,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") InterfFF;
 		%feature("autodoc", "Selector/modifier returns the collection of interferences face/face.
 
-	:rtype: BOPDS_VectorOfInterfFF
+Returns
+-------
+BOPDS_VectorOfInterfFF
 ") InterfFF;
 		BOPDS_VectorOfInterfFF & InterfFF();
 
@@ -1098,7 +1384,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") InterfFZ;
 		%feature("autodoc", "Selector/modifier returns the collection of interferences face/solid.
 
-	:rtype: BOPDS_VectorOfInterfFZ
+Returns
+-------
+BOPDS_VectorOfInterfFZ
 ") InterfFZ;
 		BOPDS_VectorOfInterfFZ & InterfFZ();
 
@@ -1106,7 +1394,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") InterfVE;
 		%feature("autodoc", "Selector/modifier returns the collection of interferences vertex/edge.
 
-	:rtype: BOPDS_VectorOfInterfVE
+Returns
+-------
+BOPDS_VectorOfInterfVE
 ") InterfVE;
 		BOPDS_VectorOfInterfVE & InterfVE();
 
@@ -1114,7 +1404,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") InterfVF;
 		%feature("autodoc", "Selector/modifier returns the collection of interferences vertex/face.
 
-	:rtype: BOPDS_VectorOfInterfVF
+Returns
+-------
+BOPDS_VectorOfInterfVF
 ") InterfVF;
 		BOPDS_VectorOfInterfVF & InterfVF();
 
@@ -1122,7 +1414,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") InterfVV;
 		%feature("autodoc", "Selector/modifier returns the collection of interferences vertex/vertex.
 
-	:rtype: BOPDS_VectorOfInterfVV
+Returns
+-------
+BOPDS_VectorOfInterfVV
 ") InterfVV;
 		BOPDS_VectorOfInterfVV & InterfVV();
 
@@ -1130,7 +1424,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") InterfVZ;
 		%feature("autodoc", "Selector/modifier returns the collection of interferences vertex/solid.
 
-	:rtype: BOPDS_VectorOfInterfVZ
+Returns
+-------
+BOPDS_VectorOfInterfVZ
 ") InterfVZ;
 		BOPDS_VectorOfInterfVZ & InterfVZ();
 
@@ -1138,7 +1434,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") InterfZZ;
 		%feature("autodoc", "Selector/modifier returns the collection of interferences solid/solid.
 
-	:rtype: BOPDS_VectorOfInterfZZ
+Returns
+-------
+BOPDS_VectorOfInterfZZ
 ") InterfZZ;
 		BOPDS_VectorOfInterfZZ & InterfZZ();
 
@@ -1146,7 +1444,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") Interferences;
 		%feature("autodoc", "Selector returns the table of interferences //! debug.
 
-	:rtype: BOPDS_MapOfPair
+Returns
+-------
+BOPDS_MapOfPair
 ") Interferences;
 		const BOPDS_MapOfPair & Interferences();
 
@@ -1154,9 +1454,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") IsCommonBlock;
 		%feature("autodoc", "Query returns true if the pave block is common block.
 
-	:param thePB:
-	:type thePB: BOPDS_PaveBlock
-	:rtype: bool
+Parameters
+----------
+thePB: BOPDS_PaveBlock
+
+Returns
+-------
+bool
 ") IsCommonBlock;
 		Standard_Boolean IsCommonBlock(const opencascade::handle<BOPDS_PaveBlock> & thePB);
 
@@ -1164,9 +1468,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") IsCommonBlockOnEdge;
 		%feature("autodoc", "Query returns true if common block contains more then one pave block.
 
-	:param thePB:
-	:type thePB: BOPDS_PaveBlock
-	:rtype: bool
+Parameters
+----------
+thePB: BOPDS_PaveBlock
+
+Returns
+-------
+bool
 ") IsCommonBlockOnEdge;
 		Standard_Boolean IsCommonBlockOnEdge(const opencascade::handle<BOPDS_PaveBlock> & thePB);
 
@@ -1174,19 +1482,28 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") IsNewShape;
 		%feature("autodoc", "Returns true if the shape of index 'i' is not the source shape/sub-shape.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+bool
 ") IsNewShape;
 		Standard_Boolean IsNewShape(const Standard_Integer theIndex);
 
 		/****************** IsSubShape ******************/
 		%feature("compactdefaultargs") IsSubShape;
-		%feature("autodoc", "	:param theI1:
-	:type theI1: int
-	:param theI2:
-	:type theI2: int
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theI1: int
+theI2: int
+
+Returns
+-------
+bool
 ") IsSubShape;
 		Standard_Boolean IsSubShape(const Standard_Integer theI1, const Standard_Integer theI2);
 
@@ -1194,9 +1511,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") IsValidShrunkData;
 		%feature("autodoc", "Checks if the existing shrunk data of the pave block is still valid. the shrunk data may become invalid if e.g. the vertices of the pave block have been replaced with the new one with bigger tolerances, or the tolerances of the existing vertices have been increased.
 
-	:param thePB:
-	:type thePB: BOPDS_PaveBlock
-	:rtype: bool
+Parameters
+----------
+thePB: BOPDS_PaveBlock
+
+Returns
+-------
+bool
 ") IsValidShrunkData;
 		Standard_Boolean IsValidShrunkData(const opencascade::handle<BOPDS_PaveBlock> & thePB);
 
@@ -1204,7 +1525,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") NbInterfTypes;
 		%feature("autodoc", "Returns the number of types of the interferences.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbInterfTypes;
 		static Standard_Integer NbInterfTypes();
 
@@ -1212,7 +1535,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") NbRanges;
 		%feature("autodoc", "Selector returns the number of index ranges.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbRanges;
 		Standard_Integer NbRanges();
 
@@ -1220,7 +1545,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") NbShapes;
 		%feature("autodoc", "Selector returns the total number of shapes stored.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbShapes;
 		Standard_Integer NbShapes();
 
@@ -1228,7 +1555,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") NbSourceShapes;
 		%feature("autodoc", "Selector returns the total number of source shapes stored.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbSourceShapes;
 		Standard_Integer NbSourceShapes();
 
@@ -1236,9 +1565,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") PaveBlocks;
 		%feature("autodoc", "Selector returns the pave blocks for the shape with index theindex.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BOPDS_ListOfPaveBlock
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BOPDS_ListOfPaveBlock
 ") PaveBlocks;
 		const BOPDS_ListOfPaveBlock & PaveBlocks(const Standard_Integer theIndex);
 
@@ -1246,7 +1579,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") PaveBlocksPool;
 		%feature("autodoc", "Selector returns the information about pave blocks on source edges.
 
-	:rtype: BOPDS_VectorOfListOfPaveBlock
+Returns
+-------
+BOPDS_VectorOfListOfPaveBlock
 ") PaveBlocksPool;
 		const BOPDS_VectorOfListOfPaveBlock & PaveBlocksPool();
 
@@ -1254,11 +1589,14 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") Paves;
 		%feature("autodoc", "Fills thelp with sorted paves of the shape with index theindex.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theLP:
-	:type theLP: BOPDS_ListOfPave
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theLP: BOPDS_ListOfPave
+
+Returns
+-------
+None
 ") Paves;
 		void Paves(const Standard_Integer theIndex, BOPDS_ListOfPave & theLP);
 
@@ -1266,9 +1604,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") Range;
 		%feature("autodoc", "Selector returns the index range 'i'.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BOPDS_IndexRange
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BOPDS_IndexRange
 ") Range;
 		const BOPDS_IndexRange & Range(const Standard_Integer theIndex);
 
@@ -1276,9 +1618,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") Rank;
 		%feature("autodoc", "Selector returns the rank of the shape of index 'i'.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: int
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+int
 ") Rank;
 		Standard_Integer Rank(const Standard_Integer theIndex);
 
@@ -1286,9 +1632,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") RealPaveBlock;
 		%feature("autodoc", "Selector returns the real first pave block.
 
-	:param thePB:
-	:type thePB: BOPDS_PaveBlock
-	:rtype: opencascade::handle<BOPDS_PaveBlock>
+Parameters
+----------
+thePB: BOPDS_PaveBlock
+
+Returns
+-------
+opencascade::handle<BOPDS_PaveBlock>
 ") RealPaveBlock;
 		opencascade::handle<BOPDS_PaveBlock> RealPaveBlock(const opencascade::handle<BOPDS_PaveBlock> & thePB);
 
@@ -1296,7 +1646,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") RefineFaceInfoIn;
 		%feature("autodoc", "Removes any pave block from list of having in state if it has also the state on.
 
-	:rtype: None
+Returns
+-------
+None
 ") RefineFaceInfoIn;
 		void RefineFaceInfoIn();
 
@@ -1304,7 +1656,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") RefineFaceInfoOn;
 		%feature("autodoc", "Refine the state on for the all faces having state information //! ++.
 
-	:rtype: None
+Returns
+-------
+None
 ") RefineFaceInfoOn;
 		void RefineFaceInfoOn();
 
@@ -1312,7 +1666,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") ReleasePaveBlocks;
 		%feature("autodoc", "Clears information about paveblocks for the untouched edges.
 
-	:rtype: None
+Returns
+-------
+None
 ") ReleasePaveBlocks;
 		void ReleasePaveBlocks();
 
@@ -1320,9 +1676,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") SetArguments;
 		%feature("autodoc", "Modifier sets the arguments [thels] of an operation.
 
-	:param theLS:
-	:type theLS: TopTools_ListOfShape
-	:rtype: None
+Parameters
+----------
+theLS: TopTools_ListOfShape
+
+Returns
+-------
+None
 ") SetArguments;
 		void SetArguments(const TopTools_ListOfShape & theLS);
 
@@ -1330,11 +1690,14 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") SetCommonBlock;
 		%feature("autodoc", "Modifier sets the common block <thecb>.
 
-	:param thePB:
-	:type thePB: BOPDS_PaveBlock
-	:param theCB:
-	:type theCB: BOPDS_CommonBlock
-	:rtype: None
+Parameters
+----------
+thePB: BOPDS_PaveBlock
+theCB: BOPDS_CommonBlock
+
+Returns
+-------
+None
 ") SetCommonBlock;
 		void SetCommonBlock(const opencascade::handle<BOPDS_PaveBlock> & thePB, const opencascade::handle<BOPDS_CommonBlock> & theCB);
 
@@ -1342,9 +1705,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Selector returns the shape with index theindex.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: TopoDS_Shape
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape(const Standard_Integer theIndex);
 
@@ -1352,9 +1719,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") ShapeInfo;
 		%feature("autodoc", "Selector returns the information about the shape with index theindex.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BOPDS_ShapeInfo
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BOPDS_ShapeInfo
 ") ShapeInfo;
 		const BOPDS_ShapeInfo & ShapeInfo(const Standard_Integer theIndex);
 
@@ -1362,7 +1733,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") ShapesSD;
 		%feature("autodoc", "Selector returns the collection same domain shapes.
 
-	:rtype: TColStd_DataMapOfIntegerInteger
+Returns
+-------
+TColStd_DataMapOfIntegerInteger
 ") ShapesSD;
 		TColStd_DataMapOfIntegerInteger & ShapesSD();
 
@@ -1370,15 +1743,16 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") SharedEdges;
 		%feature("autodoc", "Returns the indices of edges that are shared for the faces with indices thef1, thef2 //! same domain shapes.
 
-	:param theF1:
-	:type theF1: int
-	:param theF2:
-	:type theF2: int
-	:param theLI:
-	:type theLI: TColStd_ListOfInteger
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theF1: int
+theF2: int
+theLI: TColStd_ListOfInteger
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") SharedEdges;
 		void SharedEdges(const Standard_Integer theF1, const Standard_Integer theF2, TColStd_ListOfInteger & theLI, const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -1386,19 +1760,18 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") SubShapesOnIn;
 		%feature("autodoc", "Returns information about on/in sub-shapes of the given faces. @param themvonin the indices of on/in vertices from both faces @param themvcommon the indices of common vertices for both faces @param thepbonin all on/in pave blocks from both faces @param thecommonpb the common pave blocks (that are shared by both faces).
 
-	:param theNF1:
-	:type theNF1: int
-	:param theNF2:
-	:type theNF2: int
-	:param theMVOnIn:
-	:type theMVOnIn: TColStd_MapOfInteger
-	:param theMVCommon:
-	:type theMVCommon: TColStd_MapOfInteger
-	:param thePBOnIn:
-	:type thePBOnIn: BOPDS_IndexedMapOfPaveBlock
-	:param theCommonPB:
-	:type theCommonPB: BOPDS_MapOfPaveBlock
-	:rtype: None
+Parameters
+----------
+theNF1: int
+theNF2: int
+theMVOnIn: TColStd_MapOfInteger
+theMVCommon: TColStd_MapOfInteger
+thePBOnIn: BOPDS_IndexedMapOfPaveBlock
+theCommonPB: BOPDS_MapOfPaveBlock
+
+Returns
+-------
+None
 ") SubShapesOnIn;
 		void SubShapesOnIn(const Standard_Integer theNF1, const Standard_Integer theNF2, TColStd_MapOfInteger & theMVOnIn, TColStd_MapOfInteger & theMVCommon, BOPDS_IndexedMapOfPaveBlock & thePBOnIn, BOPDS_MapOfPaveBlock & theCommonPB);
 
@@ -1406,11 +1779,14 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") UpdateCommonBlock;
 		%feature("autodoc", "Update the common block thecb.
 
-	:param theCB:
-	:type theCB: BOPDS_CommonBlock
-	:param theFuzz:
-	:type theFuzz: float
-	:rtype: None
+Parameters
+----------
+theCB: BOPDS_CommonBlock
+theFuzz: float
+
+Returns
+-------
+None
 ") UpdateCommonBlock;
 		void UpdateCommonBlock(const opencascade::handle<BOPDS_CommonBlock> & theCB, const Standard_Real theFuzz);
 
@@ -1418,9 +1794,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") UpdateCommonBlockWithSDVertices;
 		%feature("autodoc", "Update the pave block of the common block for all shapes in data structure.
 
-	:param theCB:
-	:type theCB: BOPDS_CommonBlock
-	:rtype: None
+Parameters
+----------
+theCB: BOPDS_CommonBlock
+
+Returns
+-------
+None
 ") UpdateCommonBlockWithSDVertices;
 		void UpdateCommonBlockWithSDVertices(const opencascade::handle<BOPDS_CommonBlock> & theCB);
 
@@ -1428,9 +1808,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") UpdateFaceInfoIn;
 		%feature("autodoc", "Update the state in of face with index theindex.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") UpdateFaceInfoIn;
 		void UpdateFaceInfoIn(const Standard_Integer theIndex);
 
@@ -1438,9 +1822,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") UpdateFaceInfoIn;
 		%feature("autodoc", "Update the state in for all faces in the given map.
 
-	:param theFaces:
-	:type theFaces: TColStd_MapOfInteger
-	:rtype: None
+Parameters
+----------
+theFaces: TColStd_MapOfInteger
+
+Returns
+-------
+None
 ") UpdateFaceInfoIn;
 		void UpdateFaceInfoIn(const TColStd_MapOfInteger & theFaces);
 
@@ -1448,9 +1836,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") UpdateFaceInfoOn;
 		%feature("autodoc", "Update the state on of face with index theindex.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") UpdateFaceInfoOn;
 		void UpdateFaceInfoOn(const Standard_Integer theIndex);
 
@@ -1458,9 +1850,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") UpdateFaceInfoOn;
 		%feature("autodoc", "Update the state on for all faces in the given map.
 
-	:param theFaces:
-	:type theFaces: TColStd_MapOfInteger
-	:rtype: None
+Parameters
+----------
+theFaces: TColStd_MapOfInteger
+
+Returns
+-------
+None
 ") UpdateFaceInfoOn;
 		void UpdateFaceInfoOn(const TColStd_MapOfInteger & theFaces);
 
@@ -1468,9 +1864,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") UpdatePaveBlock;
 		%feature("autodoc", "Update the pave block thepb.
 
-	:param thePB:
-	:type thePB: BOPDS_PaveBlock
-	:rtype: None
+Parameters
+----------
+thePB: BOPDS_PaveBlock
+
+Returns
+-------
+None
 ") UpdatePaveBlock;
 		void UpdatePaveBlock(const opencascade::handle<BOPDS_PaveBlock> & thePB);
 
@@ -1478,9 +1878,13 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") UpdatePaveBlockWithSDVertices;
 		%feature("autodoc", "Update the pave block for all shapes in data structure.
 
-	:param thePB:
-	:type thePB: BOPDS_PaveBlock
-	:rtype: None
+Parameters
+----------
+thePB: BOPDS_PaveBlock
+
+Returns
+-------
+None
 ") UpdatePaveBlockWithSDVertices;
 		void UpdatePaveBlockWithSDVertices(const opencascade::handle<BOPDS_PaveBlock> & thePB);
 
@@ -1488,7 +1892,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") UpdatePaveBlocks;
 		%feature("autodoc", "Update the pave blocks for the all shapes in data structure.
 
-	:rtype: None
+Returns
+-------
+None
 ") UpdatePaveBlocks;
 		void UpdatePaveBlocks();
 
@@ -1496,7 +1902,9 @@ class BOPDS_DS {
 		%feature("compactdefaultargs") UpdatePaveBlocksWithSDVertices;
 		%feature("autodoc", "Update the pave blocks for all shapes in data structure.
 
-	:rtype: None
+Returns
+-------
+None
 ") UpdatePaveBlocksWithSDVertices;
 		void UpdatePaveBlocksWithSDVertices();
 
@@ -1518,7 +1926,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") BOPDS_FaceInfo;
 		%feature("autodoc", "Empty contructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_FaceInfo;
 		 BOPDS_FaceInfo();
 
@@ -1526,9 +1936,13 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") BOPDS_FaceInfo;
 		%feature("autodoc", "Contructor theallocator - the allocator to manage the memory.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_FaceInfo;
 		 BOPDS_FaceInfo(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -1536,7 +1950,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") ChangePaveBlocksIn;
 		%feature("autodoc", "Selector/modifier returns the pave blocks of the face that have state in.
 
-	:rtype: BOPDS_IndexedMapOfPaveBlock
+Returns
+-------
+BOPDS_IndexedMapOfPaveBlock
 ") ChangePaveBlocksIn;
 		BOPDS_IndexedMapOfPaveBlock & ChangePaveBlocksIn();
 
@@ -1544,13 +1960,19 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") ChangePaveBlocksOn;
 		%feature("autodoc", "Selector/modifier returns the pave blocks of the face that have state on.
 
-	:rtype: BOPDS_IndexedMapOfPaveBlock
+Returns
+-------
+BOPDS_IndexedMapOfPaveBlock
 ") ChangePaveBlocksOn;
 		BOPDS_IndexedMapOfPaveBlock & ChangePaveBlocksOn();
 
 		/****************** ChangePaveBlocksSc ******************/
 		%feature("compactdefaultargs") ChangePaveBlocksSc;
-		%feature("autodoc", "	:rtype: BOPDS_IndexedMapOfPaveBlock
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+BOPDS_IndexedMapOfPaveBlock
 ") ChangePaveBlocksSc;
 		BOPDS_IndexedMapOfPaveBlock & ChangePaveBlocksSc();
 
@@ -1558,7 +1980,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") ChangeVerticesIn;
 		%feature("autodoc", "Selector/modifier returns the list of indices for vertices of the face that have state in //! on.
 
-	:rtype: TColStd_MapOfInteger
+Returns
+-------
+TColStd_MapOfInteger
 ") ChangeVerticesIn;
 		TColStd_MapOfInteger & ChangeVerticesIn();
 
@@ -1566,7 +1990,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") ChangeVerticesOn;
 		%feature("autodoc", "Selector/modifier returns the list of indices for vertices of the face that have state on //! sections.
 
-	:rtype: TColStd_MapOfInteger
+Returns
+-------
+TColStd_MapOfInteger
 ") ChangeVerticesOn;
 		TColStd_MapOfInteger & ChangeVerticesOn();
 
@@ -1574,7 +2000,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") ChangeVerticesSc;
 		%feature("autodoc", "Selector/modifier returns the list of indices for section vertices of the face //! others.
 
-	:rtype: TColStd_MapOfInteger
+Returns
+-------
+TColStd_MapOfInteger
 ") ChangeVerticesSc;
 		TColStd_MapOfInteger & ChangeVerticesSc();
 
@@ -1582,7 +2010,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears the contents.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -1590,7 +2020,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "Selector returns the index of the face //! in.
 
-	:rtype: int
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index();
 
@@ -1598,7 +2030,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") PaveBlocksIn;
 		%feature("autodoc", "Selector returns the pave blocks of the face that have state in.
 
-	:rtype: BOPDS_IndexedMapOfPaveBlock
+Returns
+-------
+BOPDS_IndexedMapOfPaveBlock
 ") PaveBlocksIn;
 		const BOPDS_IndexedMapOfPaveBlock & PaveBlocksIn();
 
@@ -1606,7 +2040,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") PaveBlocksOn;
 		%feature("autodoc", "Selector returns the pave blocks of the face that have state on.
 
-	:rtype: BOPDS_IndexedMapOfPaveBlock
+Returns
+-------
+BOPDS_IndexedMapOfPaveBlock
 ") PaveBlocksOn;
 		const BOPDS_IndexedMapOfPaveBlock & PaveBlocksOn();
 
@@ -1614,7 +2050,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") PaveBlocksSc;
 		%feature("autodoc", "Selector returns the pave blocks of the face that are pave blocks of section edges.
 
-	:rtype: BOPDS_IndexedMapOfPaveBlock
+Returns
+-------
+BOPDS_IndexedMapOfPaveBlock
 ") PaveBlocksSc;
 		const BOPDS_IndexedMapOfPaveBlock & PaveBlocksSc();
 
@@ -1622,9 +2060,13 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") SetIndex;
 		%feature("autodoc", "Modifier sets the index of the face <thei>.
 
-	:param theI:
-	:type theI: int
-	:rtype: None
+Parameters
+----------
+theI: int
+
+Returns
+-------
+None
 ") SetIndex;
 		void SetIndex(const Standard_Integer theI);
 
@@ -1632,7 +2074,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") VerticesIn;
 		%feature("autodoc", "Selector returns the list of indices for vertices of the face that have state in.
 
-	:rtype: TColStd_MapOfInteger
+Returns
+-------
+TColStd_MapOfInteger
 ") VerticesIn;
 		const TColStd_MapOfInteger & VerticesIn();
 
@@ -1640,7 +2084,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") VerticesOn;
 		%feature("autodoc", "Selector returns the list of indices for vertices of the face that have state on.
 
-	:rtype: TColStd_MapOfInteger
+Returns
+-------
+TColStd_MapOfInteger
 ") VerticesOn;
 		const TColStd_MapOfInteger & VerticesOn();
 
@@ -1648,7 +2094,9 @@ class BOPDS_FaceInfo {
 		%feature("compactdefaultargs") VerticesSc;
 		%feature("autodoc", "Selector returns the list of indices for section vertices of the face.
 
-	:rtype: TColStd_MapOfInteger
+Returns
+-------
+TColStd_MapOfInteger
 ") VerticesSc;
 		const TColStd_MapOfInteger & VerticesSc();
 
@@ -1670,7 +2118,9 @@ class BOPDS_IndexRange {
 		%feature("compactdefaultargs") BOPDS_IndexRange;
 		%feature("autodoc", "Empty contructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_IndexRange;
 		 BOPDS_IndexRange();
 
@@ -1678,15 +2128,23 @@ class BOPDS_IndexRange {
 		%feature("compactdefaultargs") Contains;
 		%feature("autodoc", "Query returns true if the range contains <theindex>.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+bool
 ") Contains;
 		Standard_Boolean Contains(const Standard_Integer theIndex);
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Dump;
 		void Dump();
 
@@ -1694,7 +2152,9 @@ class BOPDS_IndexRange {
 		%feature("compactdefaultargs") First;
 		%feature("autodoc", "Selector returns the first index of the range.
 
-	:rtype: int
+Returns
+-------
+int
 ") First;
 		Standard_Integer First();
 
@@ -1702,11 +2162,14 @@ class BOPDS_IndexRange {
 		%feature("compactdefaultargs") Indices;
 		%feature("autodoc", "Selector returns the first index of the range <thei1> returns the second index of the range <thei2>.
 
-	:param theI1:
-	:type theI1: int
-	:param theI2:
-	:type theI2: int
-	:rtype: None
+Parameters
+----------
+theI1: int
+theI2: int
+
+Returns
+-------
+None
 ") Indices;
 		void Indices(Standard_Integer &OutValue, Standard_Integer &OutValue);
 
@@ -1714,7 +2177,9 @@ class BOPDS_IndexRange {
 		%feature("compactdefaultargs") Last;
 		%feature("autodoc", "Selector returns the second index of the range.
 
-	:rtype: int
+Returns
+-------
+int
 ") Last;
 		Standard_Integer Last();
 
@@ -1722,9 +2187,13 @@ class BOPDS_IndexRange {
 		%feature("compactdefaultargs") SetFirst;
 		%feature("autodoc", "Modifier sets the first index <thei1> of the range.
 
-	:param theI1:
-	:type theI1: int
-	:rtype: None
+Parameters
+----------
+theI1: int
+
+Returns
+-------
+None
 ") SetFirst;
 		void SetFirst(const Standard_Integer theI1);
 
@@ -1732,11 +2201,14 @@ class BOPDS_IndexRange {
 		%feature("compactdefaultargs") SetIndices;
 		%feature("autodoc", "Modifier sets the first index of the range <thei1> sets the second index of the range <thei2>.
 
-	:param theI1:
-	:type theI1: int
-	:param theI2:
-	:type theI2: int
-	:rtype: None
+Parameters
+----------
+theI1: int
+theI2: int
+
+Returns
+-------
+None
 ") SetIndices;
 		void SetIndices(const Standard_Integer theI1, const Standard_Integer theI2);
 
@@ -1744,9 +2216,13 @@ class BOPDS_IndexRange {
 		%feature("compactdefaultargs") SetLast;
 		%feature("autodoc", "Modifier sets the second index <thei2> of the range.
 
-	:param theI2:
-	:type theI2: int
-	:rtype: None
+Parameters
+----------
+theI2: int
+
+Returns
+-------
+None
 ") SetLast;
 		void SetLast(const Standard_Integer theI2);
 
@@ -1771,7 +2247,9 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") BOPDS_Iterator;
 		%feature("autodoc", "Empty contructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_Iterator;
 		 BOPDS_Iterator();
 
@@ -1779,9 +2257,13 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") BOPDS_Iterator;
 		%feature("autodoc", "Contructor theallocator - the allocator to manage the memory.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_Iterator;
 		 BOPDS_Iterator(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -1789,7 +2271,9 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") BlockLength;
 		%feature("autodoc", "Returns the block length.
 
-	:rtype: int
+Returns
+-------
+int
 ") BlockLength;
 		Standard_Integer BlockLength();
 
@@ -1797,7 +2281,9 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") DS;
 		%feature("autodoc", "Selector returns the data structure.
 
-	:rtype: BOPDS_DS
+Returns
+-------
+BOPDS_DS
 ") DS;
 		const BOPDS_DS & DS();
 
@@ -1805,7 +2291,9 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") ExpectedLength;
 		%feature("autodoc", "Returns the number of intersections founded.
 
-	:rtype: int
+Returns
+-------
+int
 ") ExpectedLength;
 		Standard_Integer ExpectedLength();
 
@@ -1813,11 +2301,14 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initializes the iterator thetype1 - the first type of shape thetype2 - the second type of shape.
 
-	:param theType1:
-	:type theType1: TopAbs_ShapeEnum
-	:param theType2:
-	:type theType2: TopAbs_ShapeEnum
-	:rtype: None
+Parameters
+----------
+theType1: TopAbs_ShapeEnum
+theType2: TopAbs_ShapeEnum
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const TopAbs_ShapeEnum theType1, const TopAbs_ShapeEnum theType2);
 
@@ -1825,9 +2316,13 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") IntersectExt;
 		%feature("autodoc", "Updates the tree of bounding boxes with increased boxes and intersects such elements with the tree.
 
-	:param theIndicies:
-	:type theIndicies: TColStd_MapOfInteger
-	:rtype: None
+Parameters
+----------
+theIndicies: TColStd_MapOfInteger
+
+Returns
+-------
+None
 ") IntersectExt;
 		void IntersectExt(const TColStd_MapOfInteger & theIndicies);
 
@@ -1835,13 +2330,19 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Returns true if still there are pairs of intersected shapes.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
 		/****************** NbExtInterfs ******************/
 		%feature("compactdefaultargs") NbExtInterfs;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbExtInterfs;
 		static Standard_Integer NbExtInterfs();
 
@@ -1849,7 +2350,9 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Moves iterations ahead.
 
-	:rtype: None
+Returns
+-------
+None
 ") Next;
 		void Next();
 
@@ -1857,13 +2360,18 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") Prepare;
 		%feature("autodoc", "Perform the intersection algorithm and prepare the results to be used.
 
-	:param theCtx: default value is opencascade::handle<IntTools_Context>()
-	:type theCtx: IntTools_Context
-	:param theCheckOBB: default value is Standard_False
-	:type theCheckOBB: bool
-	:param theFuzzyValue: default value is Precision::Confusion()
-	:type theFuzzyValue: float
-	:rtype: None
+Parameters
+----------
+theCtx: IntTools_Context,optional
+	default value is opencascade::handle<IntTools_Context>()
+theCheckOBB: bool,optional
+	default value is Standard_False
+theFuzzyValue: float,optional
+	default value is Precision::Confusion()
+
+Returns
+-------
+None
 ") Prepare;
 		virtual void Prepare(const opencascade::handle<IntTools_Context> & theCtx = opencascade::handle<IntTools_Context>(), const Standard_Boolean theCheckOBB = Standard_False, const Standard_Real theFuzzyValue = Precision::Confusion());
 
@@ -1871,7 +2379,9 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") RunParallel;
 		%feature("autodoc", "Returns the flag of parallel processing.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") RunParallel;
 		Standard_Boolean RunParallel();
 
@@ -1879,9 +2389,13 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") SetDS;
 		%feature("autodoc", "Modifier sets the data structure <pds> to process.
 
-	:param pDS:
-	:type pDS: BOPDS_PDS
-	:rtype: None
+Parameters
+----------
+pDS: BOPDS_PDS
+
+Returns
+-------
+None
 ") SetDS;
 		void SetDS(const BOPDS_PDS & pDS);
 
@@ -1889,9 +2403,13 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") SetRunParallel;
 		%feature("autodoc", "Set the flag of parallel processing if <theflag> is true the parallel processing is switched on if <theflag> is false the parallel processing is switched off.
 
-	:param theFlag:
-	:type theFlag: bool
-	:rtype: None
+Parameters
+----------
+theFlag: bool
+
+Returns
+-------
+None
 ") SetRunParallel;
 		void SetRunParallel(const Standard_Boolean theFlag);
 
@@ -1899,11 +2417,14 @@ class BOPDS_Iterator {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns indices (ds) of intersected shapes theindex1 - the index of the first shape theindex2 - the index of the second shape.
 
-	:param theIndex1:
-	:type theIndex1: int
-	:param theIndex2:
-	:type theIndex2: int
-	:rtype: None
+Parameters
+----------
+theIndex1: int
+theIndex2: int
+
+Returns
+-------
+None
 ") Value;
 		void Value(Standard_Integer &OutValue, Standard_Integer &OutValue);
 
@@ -1923,17 +2444,26 @@ class BOPDS_Pair {
 	public:
 		/****************** BOPDS_Pair ******************/
 		%feature("compactdefaultargs") BOPDS_Pair;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") BOPDS_Pair;
 		 BOPDS_Pair();
 
 		/****************** BOPDS_Pair ******************/
 		%feature("compactdefaultargs") BOPDS_Pair;
-		%feature("autodoc", "	:param theIndex1:
-	:type theIndex1: int
-	:param theIndex2:
-	:type theIndex2: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theIndex1: int
+theIndex2: int
+
+Returns
+-------
+None
 ") BOPDS_Pair;
 		 BOPDS_Pair(const Standard_Integer theIndex1, const Standard_Integer theIndex2);
 
@@ -1941,9 +2471,13 @@ class BOPDS_Pair {
 		%feature("compactdefaultargs") HashCode;
 		%feature("autodoc", "Computes a hash code for this pair, in the range [1, theupperbound] @param theupperbound the upper bound of the range a computing hash code must be within returns a computed hash code, in the range [1, theupperbound].
 
-	:param theUpperBound:
-	:type theUpperBound: int
-	:rtype: int
+Parameters
+----------
+theUpperBound: int
+
+Returns
+-------
+int
 ") HashCode;
 		Standard_Integer HashCode(const Standard_Integer theUpperBound);
 
@@ -1957,11 +2491,14 @@ class BOPDS_Pair {
 		%feature("compactdefaultargs") Indices;
 		%feature("autodoc", "Gets the indices.
 
-	:param theIndex1:
-	:type theIndex1: int
-	:param theIndex2:
-	:type theIndex2: int
-	:rtype: None
+Parameters
+----------
+theIndex1: int
+theIndex2: int
+
+Returns
+-------
+None
 ") Indices;
 		void Indices(Standard_Integer &OutValue, Standard_Integer &OutValue);
 
@@ -1969,9 +2506,13 @@ class BOPDS_Pair {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Returns true if the pair is equal to <the theother>.
 
-	:param theOther:
-	:type theOther: BOPDS_Pair
-	:rtype: bool
+Parameters
+----------
+theOther: BOPDS_Pair
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const BOPDS_Pair & theOther);
 
@@ -1979,11 +2520,14 @@ class BOPDS_Pair {
 		%feature("compactdefaultargs") SetIndices;
 		%feature("autodoc", "Sets the indices.
 
-	:param theIndex1:
-	:type theIndex1: int
-	:param theIndex2:
-	:type theIndex2: int
-	:rtype: None
+Parameters
+----------
+theIndex1: int
+theIndex2: int
+
+Returns
+-------
+None
 ") SetIndices;
 		void SetIndices(const Standard_Integer theIndex1, const Standard_Integer theIndex2);
 
@@ -2005,21 +2549,29 @@ class BOPDS_PairMapHasher {
 		%feature("compactdefaultargs") HashCode;
 		%feature("autodoc", "Computes a hash code for the given pair, in the range [1, theupperbound] @param thepair the pair which hash code is to be computed @param theupperbound the upper bound of the range a computing hash code must be within returns a computed hash code, in the range [1, theupperbound].
 
-	:param thePair:
-	:type thePair: BOPDS_Pair
-	:param theUpperBound:
-	:type theUpperBound: int
-	:rtype: int
+Parameters
+----------
+thePair: BOPDS_Pair
+theUpperBound: int
+
+Returns
+-------
+int
 ") HashCode;
 		static Standard_Integer HashCode(const BOPDS_Pair & thePair, const Standard_Integer theUpperBound);
 
 		/****************** IsEqual ******************/
 		%feature("compactdefaultargs") IsEqual;
-		%feature("autodoc", "	:param thePair1:
-	:type thePair1: BOPDS_Pair
-	:param thePair2:
-	:type thePair2: BOPDS_Pair
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+thePair1: BOPDS_Pair
+thePair2: BOPDS_Pair
+
+Returns
+-------
+bool
 ") IsEqual;
 		static Standard_Boolean IsEqual(const BOPDS_Pair & thePair1, const BOPDS_Pair & thePair2);
 
@@ -2041,7 +2593,9 @@ class BOPDS_Pave {
 		%feature("compactdefaultargs") BOPDS_Pave;
 		%feature("autodoc", "Empty contructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_Pave;
 		 BOPDS_Pave();
 
@@ -2049,17 +2603,24 @@ class BOPDS_Pave {
 		%feature("compactdefaultargs") Contents;
 		%feature("autodoc", "Selector returns the index of vertex <theindex> returns the parameter of vertex <theparameter>.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theParameter:
-	:type theParameter: float
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theParameter: float
+
+Returns
+-------
+None
 ") Contents;
 		void Contents(Standard_Integer &OutValue, Standard_Real &OutValue);
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Dump;
 		void Dump();
 
@@ -2067,7 +2628,9 @@ class BOPDS_Pave {
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "Selector returns the index of vertex.
 
-	:rtype: int
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index();
 
@@ -2075,9 +2638,13 @@ class BOPDS_Pave {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Query returns true if thr parameter od this is equal to the parameter of <theother>.
 
-	:param theOther:
-	:type theOther: BOPDS_Pave
-	:rtype: bool
+Parameters
+----------
+theOther: BOPDS_Pave
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const BOPDS_Pave & theOther);
 
@@ -2085,9 +2652,13 @@ class BOPDS_Pave {
 		%feature("compactdefaultargs") IsLess;
 		%feature("autodoc", "Query returns true if thr parameter od this is less than the parameter of <theother>.
 
-	:param theOther:
-	:type theOther: BOPDS_Pave
-	:rtype: bool
+Parameters
+----------
+theOther: BOPDS_Pave
+
+Returns
+-------
+bool
 ") IsLess;
 		Standard_Boolean IsLess(const BOPDS_Pave & theOther);
 
@@ -2095,7 +2666,9 @@ class BOPDS_Pave {
 		%feature("compactdefaultargs") Parameter;
 		%feature("autodoc", "Selector returns the parameter of vertex.
 
-	:rtype: float
+Returns
+-------
+float
 ") Parameter;
 		Standard_Real Parameter();
 
@@ -2103,9 +2676,13 @@ class BOPDS_Pave {
 		%feature("compactdefaultargs") SetIndex;
 		%feature("autodoc", "Modifier sets the index of vertex <theindex>.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") SetIndex;
 		void SetIndex(const Standard_Integer theIndex);
 
@@ -2113,9 +2690,13 @@ class BOPDS_Pave {
 		%feature("compactdefaultargs") SetParameter;
 		%feature("autodoc", "Modifier sets the parameter of vertex <theparameter>.
 
-	:param theParameter:
-	:type theParameter: float
-	:rtype: None
+Parameters
+----------
+theParameter: float
+
+Returns
+-------
+None
 ") SetParameter;
 		void SetParameter(const Standard_Real theParameter);
 
@@ -2151,9 +2732,13 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") AppendExtPave;
 		%feature("autodoc", "Modifier appends extra paves <thepave>.
 
-	:param thePave:
-	:type thePave: BOPDS_Pave
-	:rtype: None
+Parameters
+----------
+thePave: BOPDS_Pave
+
+Returns
+-------
+None
 ") AppendExtPave;
 		void AppendExtPave(const BOPDS_Pave & thePave);
 
@@ -2161,9 +2746,13 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") AppendExtPave1;
 		%feature("autodoc", "Modifier appends extra pave <thepave>.
 
-	:param thePave:
-	:type thePave: BOPDS_Pave
-	:rtype: None
+Parameters
+----------
+thePave: BOPDS_Pave
+
+Returns
+-------
+None
 ") AppendExtPave1;
 		void AppendExtPave1(const BOPDS_Pave & thePave);
 
@@ -2171,7 +2760,9 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") BOPDS_PaveBlock;
 		%feature("autodoc", "Empty contructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_PaveBlock;
 		 BOPDS_PaveBlock();
 
@@ -2179,9 +2770,13 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") BOPDS_PaveBlock;
 		%feature("autodoc", "Contructor <theallocator> - the allocator to manage the memory.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_PaveBlock;
 		 BOPDS_PaveBlock(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -2189,7 +2784,9 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") ChangeExtPaves;
 		%feature("autodoc", "Selector / modifier returns the extra paves.
 
-	:rtype: BOPDS_ListOfPave
+Returns
+-------
+BOPDS_ListOfPave
 ") ChangeExtPaves;
 		BOPDS_ListOfPave & ChangeExtPaves();
 
@@ -2197,19 +2794,25 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") ContainsParameter;
 		%feature("autodoc", "Query returns true if the extra paves contain the pave with given value of the parameter <theprm> <thetol> - the value of the tolerance to compare <theind> - index of the found pave.
 
-	:param thePrm:
-	:type thePrm: float
-	:param theTol:
-	:type theTol: float
-	:param theInd:
-	:type theInd: int
-	:rtype: bool
+Parameters
+----------
+thePrm: float
+theTol: float
+theInd: int
+
+Returns
+-------
+bool
 ") ContainsParameter;
 		Standard_Boolean ContainsParameter(const Standard_Real thePrm, const Standard_Real theTol, Standard_Integer &OutValue);
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Dump;
 		void Dump();
 
@@ -2217,7 +2820,9 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Selector returns the index of edge of pave block.
 
-	:rtype: int
+Returns
+-------
+int
 ") Edge;
 		Standard_Integer Edge();
 
@@ -2225,7 +2830,9 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") ExtPaves;
 		%feature("autodoc", "Selector returns the extra paves.
 
-	:rtype: BOPDS_ListOfPave
+Returns
+-------
+BOPDS_ListOfPave
 ") ExtPaves;
 		const BOPDS_ListOfPave & ExtPaves();
 
@@ -2233,7 +2840,9 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") HasEdge;
 		%feature("autodoc", "Query returns true if the pave block has edge.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasEdge;
 		Standard_Boolean HasEdge();
 
@@ -2241,9 +2850,13 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") HasEdge;
 		%feature("autodoc", "Query returns true if the pave block has edge returns the index of edge <theedge>.
 
-	:param theEdge:
-	:type theEdge: int
-	:rtype: bool
+Parameters
+----------
+theEdge: int
+
+Returns
+-------
+bool
 ") HasEdge;
 		Standard_Boolean HasEdge(Standard_Integer &OutValue);
 
@@ -2251,9 +2864,13 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") HasSameBounds;
 		%feature("autodoc", "Query returns true if the pave block has pave indices that equal to the pave indices of the pave block <theother>.
 
-	:param theOther:
-	:type theOther: BOPDS_PaveBlock
-	:rtype: bool
+Parameters
+----------
+theOther: BOPDS_PaveBlock
+
+Returns
+-------
+bool
 ") HasSameBounds;
 		Standard_Boolean HasSameBounds(const opencascade::handle<BOPDS_PaveBlock> & theOther);
 
@@ -2261,7 +2878,9 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") HasShrunkData;
 		%feature("autodoc", "Query returns true if the pave block contains the shrunk data.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasShrunkData;
 		Standard_Boolean HasShrunkData();
 
@@ -2269,11 +2888,14 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") Indices;
 		%feature("autodoc", "Selector returns the pave indices <theindex1,theindex2> of the pave block.
 
-	:param theIndex1:
-	:type theIndex1: int
-	:param theIndex2:
-	:type theIndex2: int
-	:rtype: None
+Parameters
+----------
+theIndex1: int
+theIndex2: int
+
+Returns
+-------
+None
 ") Indices;
 		void Indices(Standard_Integer &OutValue, Standard_Integer &OutValue);
 
@@ -2281,7 +2903,9 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") IsSplitEdge;
 		%feature("autodoc", "Query returns true if the edge is equal to the original edge of the pave block.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsSplitEdge;
 		Standard_Boolean IsSplitEdge();
 
@@ -2289,7 +2913,9 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") IsSplittable;
 		%feature("autodoc", "Query returns false if the pave block has a too short shrunk range and cannot be split, otherwise returns true.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsSplittable;
 		Standard_Boolean IsSplittable();
 
@@ -2297,7 +2923,9 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") IsToUpdate;
 		%feature("autodoc", "Query returns true if the pave block contains extra paves.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsToUpdate;
 		Standard_Boolean IsToUpdate();
 
@@ -2305,7 +2933,9 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") OriginalEdge;
 		%feature("autodoc", "Selector returns the index of original edge of pave block.
 
-	:rtype: int
+Returns
+-------
+int
 ") OriginalEdge;
 		Standard_Integer OriginalEdge();
 
@@ -2313,7 +2943,9 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") Pave1;
 		%feature("autodoc", "Selector returns the first pave.
 
-	:rtype: BOPDS_Pave
+Returns
+-------
+BOPDS_Pave
 ") Pave1;
 		const BOPDS_Pave & Pave1();
 
@@ -2321,7 +2953,9 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") Pave2;
 		%feature("autodoc", "Selector returns the second pave.
 
-	:rtype: BOPDS_Pave
+Returns
+-------
+BOPDS_Pave
 ") Pave2;
 		const BOPDS_Pave & Pave2();
 
@@ -2329,11 +2963,14 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") Range;
 		%feature("autodoc", "Selector returns the parametric range <thet1,thet2> of the pave block.
 
-	:param theT1:
-	:type theT1: float
-	:param theT2:
-	:type theT2: float
-	:rtype: None
+Parameters
+----------
+theT1: float
+theT2: float
+
+Returns
+-------
+None
 ") Range;
 		void Range(Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -2341,9 +2978,13 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveExtPave;
 		%feature("autodoc", "Modifier removes a pave with the given vertex number from extra paves.
 
-	:param theVertNum:
-	:type theVertNum: int
-	:rtype: None
+Parameters
+----------
+theVertNum: int
+
+Returns
+-------
+None
 ") RemoveExtPave;
 		void RemoveExtPave(const Standard_Integer theVertNum);
 
@@ -2351,9 +2992,13 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") SetEdge;
 		%feature("autodoc", "Modifier sets the index of edge of pave block <theedge>.
 
-	:param theEdge:
-	:type theEdge: int
-	:rtype: None
+Parameters
+----------
+theEdge: int
+
+Returns
+-------
+None
 ") SetEdge;
 		void SetEdge(const Standard_Integer theEdge);
 
@@ -2361,9 +3006,13 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") SetOriginalEdge;
 		%feature("autodoc", "Modifier sets the index of original edge of the pave block <theedge>.
 
-	:param theEdge:
-	:type theEdge: int
-	:rtype: None
+Parameters
+----------
+theEdge: int
+
+Returns
+-------
+None
 ") SetOriginalEdge;
 		void SetOriginalEdge(const Standard_Integer theEdge);
 
@@ -2371,9 +3020,13 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") SetPave1;
 		%feature("autodoc", "Modifier sets the first pave <thepave>.
 
-	:param thePave:
-	:type thePave: BOPDS_Pave
-	:rtype: None
+Parameters
+----------
+thePave: BOPDS_Pave
+
+Returns
+-------
+None
 ") SetPave1;
 		void SetPave1(const BOPDS_Pave & thePave);
 
@@ -2381,9 +3034,13 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") SetPave2;
 		%feature("autodoc", "Modifier sets the second pave <thepave>.
 
-	:param thePave:
-	:type thePave: BOPDS_Pave
-	:rtype: None
+Parameters
+----------
+thePave: BOPDS_Pave
+
+Returns
+-------
+None
 ") SetPave2;
 		void SetPave2(const BOPDS_Pave & thePave);
 
@@ -2391,15 +3048,16 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") SetShrunkData;
 		%feature("autodoc", "Modifier sets the shrunk data for the pave block <thets1>, <thets2> - shrunk range <thebox> - the bounding box <theissplittable> - defines whether the edge can be split.
 
-	:param theTS1:
-	:type theTS1: float
-	:param theTS2:
-	:type theTS2: float
-	:param theBox:
-	:type theBox: Bnd_Box
-	:param theIsSplittable:
-	:type theIsSplittable: bool
-	:rtype: None
+Parameters
+----------
+theTS1: float
+theTS2: float
+theBox: Bnd_Box
+theIsSplittable: bool
+
+Returns
+-------
+None
 ") SetShrunkData;
 		void SetShrunkData(const Standard_Real theTS1, const Standard_Real theTS2, const Bnd_Box & theBox, const Standard_Boolean theIsSplittable);
 
@@ -2407,15 +3065,16 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") ShrunkData;
 		%feature("autodoc", "Selector returns the shrunk data for the pave block <thets1>, <thets2> - shrunk range <thebox> - the bounding box <theissplittable> - defines whether the edge can be split.
 
-	:param theTS1:
-	:type theTS1: float
-	:param theTS2:
-	:type theTS2: float
-	:param theBox:
-	:type theBox: Bnd_Box
-	:param theIsSplittable:
-	:type theIsSplittable: bool
-	:rtype: None
+Parameters
+----------
+theTS1: float
+theTS2: float
+theBox: Bnd_Box
+theIsSplittable: bool
+
+Returns
+-------
+None
 ") ShrunkData;
 		void ShrunkData(Standard_Real &OutValue, Standard_Real &OutValue, Bnd_Box & theBox, Standard_Boolean &OutValue);
 
@@ -2423,11 +3082,15 @@ class BOPDS_PaveBlock : public Standard_Transient {
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Modifier updates the pave block. the extra paves are used to create new pave blocks <thelpb>. <theflag> - if true, the first pave and the second pave are used to produce new pave blocks.
 
-	:param theLPB:
-	:type theLPB: BOPDS_ListOfPaveBlock
-	:param theFlag: default value is Standard_True
-	:type theFlag: bool
-	:rtype: None
+Parameters
+----------
+theLPB: BOPDS_ListOfPaveBlock
+theFlag: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Update;
 		void Update(BOPDS_ListOfPaveBlock & theLPB, const Standard_Boolean theFlag = Standard_True);
 
@@ -2451,21 +3114,29 @@ class BOPDS_PaveMapHasher {
 		%feature("compactdefaultargs") HashCode;
 		%feature("autodoc", "Computes a hash code for the given pave, in the range [1, theupperbound] @param thepave the pave which hash code is to be computed @param theupperbound the upper bound of the range a computing hash code must be within returns a computed hash code, in the range [1, theupperbound].
 
-	:param thePave:
-	:type thePave: BOPDS_Pave
-	:param theUpperBound:
-	:type theUpperBound: int
-	:rtype: int
+Parameters
+----------
+thePave: BOPDS_Pave
+theUpperBound: int
+
+Returns
+-------
+int
 ") HashCode;
 		static Standard_Integer HashCode(const BOPDS_Pave & thePave, Standard_Integer theUpperBound);
 
 		/****************** IsEqual ******************/
 		%feature("compactdefaultargs") IsEqual;
-		%feature("autodoc", "	:param aPave1:
-	:type aPave1: BOPDS_Pave
-	:param aPave2:
-	:type aPave2: BOPDS_Pave
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPave1: BOPDS_Pave
+aPave2: BOPDS_Pave
+
+Returns
+-------
+bool
 ") IsEqual;
 		static Standard_Boolean IsEqual(const BOPDS_Pave & aPave1, const BOPDS_Pave & aPave2);
 
@@ -2487,7 +3158,9 @@ class BOPDS_Point {
 		%feature("compactdefaultargs") BOPDS_Point;
 		%feature("autodoc", "Empty contructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_Point;
 		 BOPDS_Point();
 
@@ -2495,7 +3168,9 @@ class BOPDS_Point {
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "Selector returns index of the vertex.
 
-	:rtype: int
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index();
 
@@ -2503,7 +3178,9 @@ class BOPDS_Point {
 		%feature("compactdefaultargs") Pnt;
 		%feature("autodoc", "Selector returns 3d point.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") Pnt;
 		const gp_Pnt Pnt();
 
@@ -2511,7 +3188,9 @@ class BOPDS_Point {
 		%feature("compactdefaultargs") Pnt2D1;
 		%feature("autodoc", "Selector returns 2d point on the first face <thepnt>.
 
-	:rtype: gp_Pnt2d
+Returns
+-------
+gp_Pnt2d
 ") Pnt2D1;
 		const gp_Pnt2d Pnt2D1();
 
@@ -2519,7 +3198,9 @@ class BOPDS_Point {
 		%feature("compactdefaultargs") Pnt2D2;
 		%feature("autodoc", "Selector returns 2d point on the second face <thepnt>.
 
-	:rtype: gp_Pnt2d
+Returns
+-------
+gp_Pnt2d
 ") Pnt2D2;
 		const gp_Pnt2d Pnt2D2();
 
@@ -2527,9 +3208,13 @@ class BOPDS_Point {
 		%feature("compactdefaultargs") SetIndex;
 		%feature("autodoc", "Modifier sets the index of the vertex <theindex>.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") SetIndex;
 		void SetIndex(const Standard_Integer theIndex);
 
@@ -2537,9 +3222,13 @@ class BOPDS_Point {
 		%feature("compactdefaultargs") SetPnt;
 		%feature("autodoc", "Modifier sets 3d point <thepnt>.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: None
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+None
 ") SetPnt;
 		void SetPnt(const gp_Pnt & thePnt);
 
@@ -2547,9 +3236,13 @@ class BOPDS_Point {
 		%feature("compactdefaultargs") SetPnt2D1;
 		%feature("autodoc", "Modifier sets 2d point on the first face <thepnt>.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt2d
-	:rtype: None
+Parameters
+----------
+thePnt: gp_Pnt2d
+
+Returns
+-------
+None
 ") SetPnt2D1;
 		void SetPnt2D1(const gp_Pnt2d & thePnt);
 
@@ -2557,9 +3250,13 @@ class BOPDS_Point {
 		%feature("compactdefaultargs") SetPnt2D2;
 		%feature("autodoc", "Modifier sets 2d point on the second face <thepnt>.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt2d
-	:rtype: None
+Parameters
+----------
+thePnt: gp_Pnt2d
+
+Returns
+-------
+None
 ") SetPnt2D2;
 		void SetPnt2D2(const gp_Pnt2d & thePnt);
 
@@ -2581,7 +3278,9 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") BOPDS_ShapeInfo;
 		%feature("autodoc", "Empty contructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_ShapeInfo;
 		 BOPDS_ShapeInfo();
 
@@ -2589,9 +3288,13 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") BOPDS_ShapeInfo;
 		%feature("autodoc", "Contructor theallocator - the allocator to manage the memory.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_ShapeInfo;
 		 BOPDS_ShapeInfo(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -2599,7 +3302,9 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") Box;
 		%feature("autodoc", "Selector returns the boundung box of the shape.
 
-	:rtype: Bnd_Box
+Returns
+-------
+Bnd_Box
 ") Box;
 		const Bnd_Box & Box();
 
@@ -2607,7 +3312,9 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") ChangeBox;
 		%feature("autodoc", "Selector/modifier returns the boundung box of the shape.
 
-	:rtype: Bnd_Box
+Returns
+-------
+Bnd_Box
 ") ChangeBox;
 		Bnd_Box & ChangeBox();
 
@@ -2615,13 +3322,19 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") ChangeSubShapes;
 		%feature("autodoc", "Selector/ modifier returns the list of indices of sub-shapes.
 
-	:rtype: TColStd_ListOfInteger
+Returns
+-------
+TColStd_ListOfInteger
 ") ChangeSubShapes;
 		TColStd_ListOfInteger & ChangeSubShapes();
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Dump;
 		void Dump();
 
@@ -2629,7 +3342,9 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") Flag;
 		%feature("autodoc", "Returns the flag.
 
-	:rtype: int
+Returns
+-------
+int
 ") Flag;
 		Standard_Integer Flag();
 
@@ -2637,7 +3352,9 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") HasBRep;
 		%feature("autodoc", "Query returns true if the shape has boundary representation.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasBRep;
 		Standard_Boolean HasBRep();
 
@@ -2645,7 +3362,9 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") HasFlag;
 		%feature("autodoc", "Query returns true if there is flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasFlag;
 		Standard_Boolean HasFlag();
 
@@ -2653,15 +3372,23 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") HasFlag;
 		%feature("autodoc", "Query returns true if there is flag. returns the the flag theflag.
 
-	:param theFlag:
-	:type theFlag: int
-	:rtype: bool
+Parameters
+----------
+theFlag: int
+
+Returns
+-------
+bool
 ") HasFlag;
 		Standard_Boolean HasFlag(Standard_Integer &OutValue);
 
 		/****************** HasReference ******************/
 		%feature("compactdefaultargs") HasReference;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") HasReference;
 		Standard_Boolean HasReference();
 
@@ -2669,9 +3396,13 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") HasSubShape;
 		%feature("autodoc", "Query returns true if the shape has sub-shape with index thei.
 
-	:param theI:
-	:type theI: int
-	:rtype: bool
+Parameters
+----------
+theI: int
+
+Returns
+-------
+bool
 ") HasSubShape;
 		Standard_Boolean HasSubShape(const Standard_Integer theI);
 
@@ -2679,7 +3410,9 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") IsInterfering;
 		%feature("autodoc", "Returns true if the shape can be participant of an interference //! flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsInterfering;
 		Standard_Boolean IsInterfering();
 
@@ -2687,7 +3420,9 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") Reference;
 		%feature("autodoc", "Selector returns the index of a reference information.
 
-	:rtype: int
+Returns
+-------
+int
 ") Reference;
 		Standard_Integer Reference();
 
@@ -2695,9 +3430,13 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") SetBox;
 		%feature("autodoc", "Modifier sets the boundung box of the shape thebox.
 
-	:param theBox:
-	:type theBox: Bnd_Box
-	:rtype: None
+Parameters
+----------
+theBox: Bnd_Box
+
+Returns
+-------
+None
 ") SetBox;
 		void SetBox(const Bnd_Box & theBox);
 
@@ -2705,9 +3444,13 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") SetFlag;
 		%feature("autodoc", "Modifier sets the flag.
 
-	:param theI:
-	:type theI: int
-	:rtype: None
+Parameters
+----------
+theI: int
+
+Returns
+-------
+None
 ") SetFlag;
 		void SetFlag(const Standard_Integer theI);
 
@@ -2715,9 +3458,13 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") SetReference;
 		%feature("autodoc", "Modifier sets the index of a reference information.
 
-	:param theI:
-	:type theI: int
-	:rtype: None
+Parameters
+----------
+theI: int
+
+Returns
+-------
+None
 ") SetReference;
 		void SetReference(const Standard_Integer theI);
 
@@ -2725,9 +3472,13 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") SetShape;
 		%feature("autodoc", "Modifier sets the shape <thes>.
 
-	:param theS:
-	:type theS: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+theS: TopoDS_Shape
+
+Returns
+-------
+None
 ") SetShape;
 		void SetShape(const TopoDS_Shape & theS);
 
@@ -2735,9 +3486,13 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") SetShapeType;
 		%feature("autodoc", "Modifier sets the type of shape thetype.
 
-	:param theType:
-	:type theType: TopAbs_ShapeEnum
-	:rtype: None
+Parameters
+----------
+theType: TopAbs_ShapeEnum
+
+Returns
+-------
+None
 ") SetShapeType;
 		void SetShapeType(const TopAbs_ShapeEnum theType);
 
@@ -2745,7 +3500,9 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Selector returns the shape.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
 
@@ -2753,7 +3510,9 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") ShapeType;
 		%feature("autodoc", "Selector returns the type of shape.
 
-	:rtype: TopAbs_ShapeEnum
+Returns
+-------
+TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
@@ -2761,7 +3520,9 @@ class BOPDS_ShapeInfo {
 		%feature("compactdefaultargs") SubShapes;
 		%feature("autodoc", "Selector returns the list of indices of sub-shapes.
 
-	:rtype: TColStd_ListOfInteger
+Returns
+-------
+TColStd_ListOfInteger
 ") SubShapes;
 		const TColStd_ListOfInteger & SubShapes();
 
@@ -2783,7 +3544,9 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") BOPDS_SubIterator;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_SubIterator;
 		 BOPDS_SubIterator();
 
@@ -2791,9 +3554,13 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") BOPDS_SubIterator;
 		%feature("autodoc", "Constructor theallocator - the allocator to manage the memory.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_SubIterator;
 		 BOPDS_SubIterator(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -2801,7 +3568,9 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") DS;
 		%feature("autodoc", "Returns the data structure.
 
-	:rtype: BOPDS_DS
+Returns
+-------
+BOPDS_DS
 ") DS;
 		const BOPDS_DS & DS();
 
@@ -2809,7 +3578,9 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") ExpectedLength;
 		%feature("autodoc", "Returns the number of interfering pairs.
 
-	:rtype: int
+Returns
+-------
+int
 ") ExpectedLength;
 		Standard_Integer ExpectedLength();
 
@@ -2817,7 +3588,9 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initializes the iterator.
 
-	:rtype: None
+Returns
+-------
+None
 ") Initialize;
 		void Initialize();
 
@@ -2825,7 +3598,9 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Returns true if there are more pairs of intersected shapes.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
@@ -2833,7 +3608,9 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Moves iterations ahead.
 
-	:rtype: None
+Returns
+-------
+None
 ") Next;
 		void Next();
 
@@ -2841,7 +3618,9 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") Prepare;
 		%feature("autodoc", "Perform the intersection algorithm and prepare the results to be used.
 
-	:rtype: None
+Returns
+-------
+None
 ") Prepare;
 		virtual void Prepare();
 
@@ -2849,9 +3628,13 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") SetDS;
 		%feature("autodoc", "Sets the data structure <pds> to process. it is used to access the shapes and their bounding boxes.
 
-	:param pDS:
-	:type pDS: BOPDS_PDS
-	:rtype: None
+Parameters
+----------
+pDS: BOPDS_PDS
+
+Returns
+-------
+None
 ") SetDS;
 		void SetDS(const BOPDS_PDS & pDS);
 
@@ -2859,9 +3642,13 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") SetSubSet1;
 		%feature("autodoc", "Sets the first set of indices <theli> to process.
 
-	:param theLI:
-	:type theLI: TColStd_ListOfInteger
-	:rtype: None
+Parameters
+----------
+theLI: TColStd_ListOfInteger
+
+Returns
+-------
+None
 ") SetSubSet1;
 		void SetSubSet1(const TColStd_ListOfInteger & theLI);
 
@@ -2869,9 +3656,13 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") SetSubSet2;
 		%feature("autodoc", "Sets the second set of indices <theli> to process.
 
-	:param theLI:
-	:type theLI: TColStd_ListOfInteger
-	:rtype: None
+Parameters
+----------
+theLI: TColStd_ListOfInteger
+
+Returns
+-------
+None
 ") SetSubSet2;
 		void SetSubSet2(const TColStd_ListOfInteger & theLI);
 
@@ -2879,7 +3670,9 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") SubSet1;
 		%feature("autodoc", "Returns the first set of indices to process.
 
-	:rtype: TColStd_ListOfInteger
+Returns
+-------
+TColStd_ListOfInteger
 ") SubSet1;
 		const TColStd_ListOfInteger & SubSet1();
 
@@ -2887,7 +3680,9 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") SubSet2;
 		%feature("autodoc", "Returns the second set of indices to process.
 
-	:rtype: TColStd_ListOfInteger
+Returns
+-------
+TColStd_ListOfInteger
 ") SubSet2;
 		const TColStd_ListOfInteger & SubSet2();
 
@@ -2895,11 +3690,14 @@ class BOPDS_SubIterator {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns indices (ds) of intersected shapes theindex1 - the index of the first shape theindex2 - the index of the second shape.
 
-	:param theIndex1:
-	:type theIndex1: int
-	:param theIndex2:
-	:type theIndex2: int
-	:rtype: None
+Parameters
+----------
+theIndex1: int
+theIndex2: int
+
+Returns
+-------
+None
 ") Value;
 		void Value(Standard_Integer &OutValue, Standard_Integer &OutValue);
 
@@ -2921,9 +3719,13 @@ class BOPDS_Tools {
 		%feature("compactdefaultargs") HasBRep;
 		%feature("autodoc", "Returns true if the type <thet> correspond to a shape having boundary representation.
 
-	:param theT:
-	:type theT: TopAbs_ShapeEnum
-	:rtype: bool
+Parameters
+----------
+theT: TopAbs_ShapeEnum
+
+Returns
+-------
+bool
 ") HasBRep;
 		static Standard_Boolean HasBRep(const TopAbs_ShapeEnum theT);
 
@@ -2931,9 +3733,13 @@ class BOPDS_Tools {
 		%feature("compactdefaultargs") IsInterfering;
 		%feature("autodoc", "Returns true if the type <thet> can be participant of an interference.
 
-	:param theT:
-	:type theT: TopAbs_ShapeEnum
-	:rtype: bool
+Parameters
+----------
+theT: TopAbs_ShapeEnum
+
+Returns
+-------
+bool
 ") IsInterfering;
 		static Standard_Boolean IsInterfering(const TopAbs_ShapeEnum theT);
 
@@ -2941,11 +3747,14 @@ class BOPDS_Tools {
 		%feature("compactdefaultargs") TypeToInteger;
 		%feature("autodoc", "Converts the conmbination of two types of shape <thet1>,<thet2> to the one integer value, that is returned.
 
-	:param theT1:
-	:type theT1: TopAbs_ShapeEnum
-	:param theT2:
-	:type theT2: TopAbs_ShapeEnum
-	:rtype: int
+Parameters
+----------
+theT1: TopAbs_ShapeEnum
+theT2: TopAbs_ShapeEnum
+
+Returns
+-------
+int
 ") TypeToInteger;
 		static Standard_Integer TypeToInteger(const TopAbs_ShapeEnum theT1, const TopAbs_ShapeEnum theT2);
 
@@ -2953,9 +3762,13 @@ class BOPDS_Tools {
 		%feature("compactdefaultargs") TypeToInteger;
 		%feature("autodoc", "Converts the type of shape <thet>, to integer value, that is returned.
 
-	:param theT:
-	:type theT: TopAbs_ShapeEnum
-	:rtype: int
+Parameters
+----------
+theT: TopAbs_ShapeEnum
+
+Returns
+-------
+int
 ") TypeToInteger;
 		static Standard_Integer TypeToInteger(const TopAbs_ShapeEnum theT);
 
@@ -2977,7 +3790,9 @@ class BOPDS_InterfEE : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfEE;
 		%feature("autodoc", "/** * constructor */.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_InterfEE;
 		 BOPDS_InterfEE();
 
@@ -2985,9 +3800,13 @@ class BOPDS_InterfEE : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfEE;
 		%feature("autodoc", "/** * constructor * @param theallocator * allocator to manage the memory */.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_InterfEE;
 		 BOPDS_InterfEE(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -2995,7 +3814,9 @@ class BOPDS_InterfEE : public BOPDS_Interf {
 		%feature("compactdefaultargs") CommonPart;
 		%feature("autodoc", "/** * selector * returns the info of common part * returns * common part */.
 
-	:rtype: IntTools_CommonPrt
+Returns
+-------
+IntTools_CommonPrt
 ") CommonPart;
 		const IntTools_CommonPrt & CommonPart();
 
@@ -3003,9 +3824,13 @@ class BOPDS_InterfEE : public BOPDS_Interf {
 		%feature("compactdefaultargs") SetCommonPart;
 		%feature("autodoc", "/** * modifier * sets the info of common part * @param thecp * common part */.
 
-	:param theCP:
-	:type theCP: IntTools_CommonPrt
-	:rtype: None
+Parameters
+----------
+theCP: IntTools_CommonPrt
+
+Returns
+-------
+None
 ") SetCommonPart;
 		void SetCommonPart(const IntTools_CommonPrt & theCP);
 
@@ -3027,7 +3852,9 @@ class BOPDS_InterfEF : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfEF;
 		%feature("autodoc", "/** * constructor */.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_InterfEF;
 		 BOPDS_InterfEF();
 
@@ -3035,9 +3862,13 @@ class BOPDS_InterfEF : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfEF;
 		%feature("autodoc", "/** * constructor * @param theallocator * allocator to manage the memory */.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_InterfEF;
 		 BOPDS_InterfEF(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -3045,7 +3876,9 @@ class BOPDS_InterfEF : public BOPDS_Interf {
 		%feature("compactdefaultargs") CommonPart;
 		%feature("autodoc", "/** * selector * returns the info of common part * returns * common part */.
 
-	:rtype: IntTools_CommonPrt
+Returns
+-------
+IntTools_CommonPrt
 ") CommonPart;
 		const IntTools_CommonPrt & CommonPart();
 
@@ -3053,9 +3886,13 @@ class BOPDS_InterfEF : public BOPDS_Interf {
 		%feature("compactdefaultargs") SetCommonPart;
 		%feature("autodoc", "/** * modifier * sets the info of common part * @param thecp * common part */.
 
-	:param theCP:
-	:type theCP: IntTools_CommonPrt
-	:rtype: None
+Parameters
+----------
+theCP: IntTools_CommonPrt
+
+Returns
+-------
+None
 ") SetCommonPart;
 		void SetCommonPart(const IntTools_CommonPrt & theCP);
 
@@ -3077,7 +3914,9 @@ class BOPDS_InterfEZ : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfEZ;
 		%feature("autodoc", "/** * constructor */.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_InterfEZ;
 		 BOPDS_InterfEZ();
 
@@ -3085,9 +3924,13 @@ class BOPDS_InterfEZ : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfEZ;
 		%feature("autodoc", "/** * constructor * @param theallocator * allocator to manage the memory */.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_InterfEZ;
 		 BOPDS_InterfEZ(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -3109,7 +3952,9 @@ class BOPDS_InterfFF : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfFF;
 		%feature("autodoc", "/** * constructor */.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_InterfFF;
 		 BOPDS_InterfFF();
 
@@ -3117,7 +3962,9 @@ class BOPDS_InterfFF : public BOPDS_Interf {
 		%feature("compactdefaultargs") ChangeCurves;
 		%feature("autodoc", "/** * selector/modifier * returns the intersection curves * returns * intersection curves */.
 
-	:rtype: BOPDS_VectorOfCurve
+Returns
+-------
+BOPDS_VectorOfCurve
 ") ChangeCurves;
 		BOPDS_VectorOfCurve & ChangeCurves();
 
@@ -3125,7 +3972,9 @@ class BOPDS_InterfFF : public BOPDS_Interf {
 		%feature("compactdefaultargs") ChangePoints;
 		%feature("autodoc", "/** * selector/modifier * returns the intersection points * returns * intersection points */.
 
-	:rtype: BOPDS_VectorOfPoint
+Returns
+-------
+BOPDS_VectorOfPoint
 ") ChangePoints;
 		BOPDS_VectorOfPoint & ChangePoints();
 
@@ -3133,17 +3982,24 @@ class BOPDS_InterfFF : public BOPDS_Interf {
 		%feature("compactdefaultargs") Curves;
 		%feature("autodoc", "/** * selector * returns the intersection curves * returns * intersection curves */.
 
-	:rtype: BOPDS_VectorOfCurve
+Returns
+-------
+BOPDS_VectorOfCurve
 ") Curves;
 		const BOPDS_VectorOfCurve & Curves();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param theNbCurves:
-	:type theNbCurves: int
-	:param theNbPoints:
-	:type theNbPoints: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theNbCurves: int
+theNbPoints: int
+
+Returns
+-------
+None
 ") Init;
 		void Init(const Standard_Integer theNbCurves, const Standard_Integer theNbPoints);
 
@@ -3151,7 +4007,9 @@ class BOPDS_InterfFF : public BOPDS_Interf {
 		%feature("compactdefaultargs") Points;
 		%feature("autodoc", "/** * selector * returns the intersection points * returns * intersection points */.
 
-	:rtype: BOPDS_VectorOfPoint
+Returns
+-------
+BOPDS_VectorOfPoint
 ") Points;
 		const BOPDS_VectorOfPoint & Points();
 
@@ -3159,9 +4017,13 @@ class BOPDS_InterfFF : public BOPDS_Interf {
 		%feature("compactdefaultargs") SetTangentFaces;
 		%feature("autodoc", "/** * modifier * sets the flag of whether the faces are tangent * @param theflag * the flag */.
 
-	:param theFlag:
-	:type theFlag: bool
-	:rtype: None
+Parameters
+----------
+theFlag: bool
+
+Returns
+-------
+None
 ") SetTangentFaces;
 		void SetTangentFaces(const Standard_Boolean theFlag);
 
@@ -3169,7 +4031,9 @@ class BOPDS_InterfFF : public BOPDS_Interf {
 		%feature("compactdefaultargs") TangentFaces;
 		%feature("autodoc", "/** * selector * returns the flag whether the faces are tangent * returns * the flag */.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") TangentFaces;
 		Standard_Boolean TangentFaces();
 
@@ -3191,7 +4055,9 @@ class BOPDS_InterfFZ : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfFZ;
 		%feature("autodoc", "/** * constructor */.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_InterfFZ;
 		 BOPDS_InterfFZ();
 
@@ -3199,9 +4065,13 @@ class BOPDS_InterfFZ : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfFZ;
 		%feature("autodoc", "/** * constructor * @param theallocator * allocator to manage the memory */.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_InterfFZ;
 		 BOPDS_InterfFZ(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -3223,7 +4093,9 @@ class BOPDS_InterfVE : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfVE;
 		%feature("autodoc", "/** * constructor */.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_InterfVE;
 		 BOPDS_InterfVE();
 
@@ -3231,9 +4103,13 @@ class BOPDS_InterfVE : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfVE;
 		%feature("autodoc", "/** * constructor * @param theallocator * allocator to manage the memory */.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_InterfVE;
 		 BOPDS_InterfVE(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -3241,7 +4117,9 @@ class BOPDS_InterfVE : public BOPDS_Interf {
 		%feature("compactdefaultargs") Parameter;
 		%feature("autodoc", "/** * selector * returrns the value of parameter * of the point of the vertex * on the curve of the edge * returns * value of parameter */.
 
-	:rtype: float
+Returns
+-------
+float
 ") Parameter;
 		Standard_Real Parameter();
 
@@ -3249,9 +4127,13 @@ class BOPDS_InterfVE : public BOPDS_Interf {
 		%feature("compactdefaultargs") SetParameter;
 		%feature("autodoc", "/** * modifier * sets the value of parameter * of the point of the vertex * on the curve of the edge * @param thet * value of parameter */.
 
-	:param theT:
-	:type theT: float
-	:rtype: None
+Parameters
+----------
+theT: float
+
+Returns
+-------
+None
 ") SetParameter;
 		void SetParameter(const Standard_Real theT);
 
@@ -3273,7 +4155,9 @@ class BOPDS_InterfVF : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfVF;
 		%feature("autodoc", "/** * constructor */.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_InterfVF;
 		 BOPDS_InterfVF();
 
@@ -3281,9 +4165,13 @@ class BOPDS_InterfVF : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfVF;
 		%feature("autodoc", "/** * constructor * @param theallocator * allocator to manage the memory */.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_InterfVF;
 		 BOPDS_InterfVF(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -3291,11 +4179,14 @@ class BOPDS_InterfVF : public BOPDS_Interf {
 		%feature("compactdefaultargs") SetUV;
 		%feature("autodoc", "/** * modifier * sets the value of parameters * of the point of the vertex * on the surface of of the face * @param theu * value of u parameter * @param thev * value of u parameter */.
 
-	:param theU:
-	:type theU: float
-	:param theV:
-	:type theV: float
-	:rtype: None
+Parameters
+----------
+theU: float
+theV: float
+
+Returns
+-------
+None
 ") SetUV;
 		void SetUV(const Standard_Real theU, const Standard_Real theV);
 
@@ -3303,11 +4194,14 @@ class BOPDS_InterfVF : public BOPDS_Interf {
 		%feature("compactdefaultargs") UV;
 		%feature("autodoc", "/** * selector * returns the value of parameters * of the point of the vertex * on the surface of of the face * @param theu * value of u parameter * @param thev * value of u parameter */.
 
-	:param theU:
-	:type theU: float
-	:param theV:
-	:type theV: float
-	:rtype: None
+Parameters
+----------
+theU: float
+theV: float
+
+Returns
+-------
+None
 ") UV;
 		void UV(Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -3329,7 +4223,9 @@ class BOPDS_InterfVV : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfVV;
 		%feature("autodoc", "/** * constructor */.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_InterfVV;
 		 BOPDS_InterfVV();
 
@@ -3337,9 +4233,13 @@ class BOPDS_InterfVV : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfVV;
 		%feature("autodoc", "/** * constructor * @param theallocator * allocator to manage the memory */.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_InterfVV;
 		 BOPDS_InterfVV(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -3361,7 +4261,9 @@ class BOPDS_InterfVZ : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfVZ;
 		%feature("autodoc", "/** * constructor */.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_InterfVZ;
 		 BOPDS_InterfVZ();
 
@@ -3369,9 +4271,13 @@ class BOPDS_InterfVZ : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfVZ;
 		%feature("autodoc", "/** * constructor * @param theallocator * allocator to manage the memory */.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_InterfVZ;
 		 BOPDS_InterfVZ(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -3393,7 +4299,9 @@ class BOPDS_InterfZZ : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfZZ;
 		%feature("autodoc", "/** * constructor */.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_InterfZZ;
 		 BOPDS_InterfZZ();
 
@@ -3401,9 +4309,13 @@ class BOPDS_InterfZZ : public BOPDS_Interf {
 		%feature("compactdefaultargs") BOPDS_InterfZZ;
 		%feature("autodoc", "/** * constructor * @param theallocator * allocator to manage the memory */.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_InterfZZ;
 		 BOPDS_InterfZZ(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -3425,7 +4337,9 @@ class BOPDS_IteratorSI : public BOPDS_Iterator {
 		%feature("compactdefaultargs") BOPDS_IteratorSI;
 		%feature("autodoc", "Empty contructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BOPDS_IteratorSI;
 		 BOPDS_IteratorSI();
 
@@ -3433,9 +4347,13 @@ class BOPDS_IteratorSI : public BOPDS_Iterator {
 		%feature("compactdefaultargs") BOPDS_IteratorSI;
 		%feature("autodoc", "Contructor theallocator - the allocator to manage the memory.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") BOPDS_IteratorSI;
 		 BOPDS_IteratorSI(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
@@ -3443,9 +4361,13 @@ class BOPDS_IteratorSI : public BOPDS_Iterator {
 		%feature("compactdefaultargs") UpdateByLevelOfCheck;
 		%feature("autodoc", "Updates the lists of possible intersections according to the value of <thelevel>. it defines which interferferences will be checked: 0 - only v/v; 1 - v/v and v/e; 2 - v/v, v/e and e/e; 3 - v/v, v/e, e/e and v/f; 4 - v/v, v/e, e/e, v/f and e/f; other - all interferences.
 
-	:param theLevel:
-	:type theLevel: int
-	:rtype: None
+Parameters
+----------
+theLevel: int
+
+Returns
+-------
+None
 ") UpdateByLevelOfCheck;
 		void UpdateByLevelOfCheck(const Standard_Integer theLevel);
 

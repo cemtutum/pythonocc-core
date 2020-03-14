@@ -132,21 +132,27 @@ class XCAFPrs {
 		%feature("compactdefaultargs") CollectStyleSettings;
 		%feature("autodoc", "Collect styles defined for shape on label l and its components and subshapes and fills a map of shape - style correspondence the location <loc> is for internal use, it should be null location for external call.
 
-	:param L:
-	:type L: TDF_Label
-	:param loc:
-	:type loc: TopLoc_Location
-	:param settings:
-	:type settings: XCAFPrs_IndexedDataMapOfShapeStyle
-	:param theLayerColor: default value is Quantity_ColorRGBA(Quantity_NOC_WHITE)
-	:type theLayerColor: Quantity_ColorRGBA
-	:rtype: None
+Parameters
+----------
+L: TDF_Label
+loc: TopLoc_Location
+settings: XCAFPrs_IndexedDataMapOfShapeStyle
+theLayerColor: Quantity_ColorRGBA,optional
+	default value is Quantity_ColorRGBA(Quantity_NOC_WHITE)
+
+Returns
+-------
+None
 ") CollectStyleSettings;
 		static void CollectStyleSettings(const TDF_Label & L, const TopLoc_Location & loc, XCAFPrs_IndexedDataMapOfShapeStyle & settings, const Quantity_ColorRGBA & theLayerColor = Quantity_ColorRGBA(Quantity_NOC_WHITE));
 
 		/****************** GetViewNameMode ******************/
 		%feature("compactdefaultargs") GetViewNameMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetViewNameMode;
 		static Standard_Boolean GetViewNameMode();
 
@@ -154,9 +160,13 @@ class XCAFPrs {
 		%feature("compactdefaultargs") SetViewNameMode;
 		%feature("autodoc", "Set viewnamemode for indicate display names or not.
 
-	:param viewNameMode:
-	:type viewNameMode: bool
-	:rtype: None
+Parameters
+----------
+viewNameMode: bool
+
+Returns
+-------
+None
 ") SetViewNameMode;
 		static void SetViewNameMode(const Standard_Boolean viewNameMode);
 
@@ -178,9 +188,14 @@ class XCAFPrs_AISObject : public AIS_ColoredShape {
 		%feature("compactdefaultargs") DispatchStyles;
 		%feature("autodoc", "Fetch the shape from associated label and fill the map of sub-shapes styles. by default, this method is called implicitly within first ::compute(). application might call this method explicitly to manipulate styles afterwards. @param thetosyncstyles flag indicating if method ::compute() should call this method again on first compute or re-compute.
 
-	:param theToSyncStyles: default value is Standard_False
-	:type theToSyncStyles: bool
-	:rtype: None
+Parameters
+----------
+theToSyncStyles: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") DispatchStyles;
 		virtual void DispatchStyles(const Standard_Boolean theToSyncStyles = Standard_False);
 
@@ -188,7 +203,9 @@ class XCAFPrs_AISObject : public AIS_ColoredShape {
 		%feature("compactdefaultargs") GetLabel;
 		%feature("autodoc", "Returns the label which was visualised by this presentation.
 
-	:rtype: TDF_Label
+Returns
+-------
+TDF_Label
 ") GetLabel;
 		const TDF_Label & GetLabel();
 
@@ -196,9 +213,13 @@ class XCAFPrs_AISObject : public AIS_ColoredShape {
 		%feature("compactdefaultargs") SetLabel;
 		%feature("autodoc", "Assign the label to this presentation (but does not mark it outdated with settoupdate()).
 
-	:param theLabel:
-	:type theLabel: TDF_Label
-	:rtype: None
+Parameters
+----------
+theLabel: TDF_Label
+
+Returns
+-------
+None
 ") SetLabel;
 		void SetLabel(const TDF_Label & theLabel);
 
@@ -206,9 +227,13 @@ class XCAFPrs_AISObject : public AIS_ColoredShape {
 		%feature("compactdefaultargs") SetMaterial;
 		%feature("autodoc", "Sets the material aspect. this method assigns the new default material without overriding xde styles. re-computation of existing presentation is not required after calling this method.
 
-	:param theMaterial:
-	:type theMaterial: Graphic3d_MaterialAspect
-	:rtype: None
+Parameters
+----------
+theMaterial: Graphic3d_MaterialAspect
+
+Returns
+-------
+None
 ") SetMaterial;
 		virtual void SetMaterial(const Graphic3d_MaterialAspect & theMaterial);
 
@@ -216,9 +241,13 @@ class XCAFPrs_AISObject : public AIS_ColoredShape {
 		%feature("compactdefaultargs") XCAFPrs_AISObject;
 		%feature("autodoc", "Creates an object to visualise the shape label.
 
-	:param theLabel:
-	:type theLabel: TDF_Label
-	:rtype: None
+Parameters
+----------
+theLabel: TDF_Label
+
+Returns
+-------
+None
 ") XCAFPrs_AISObject;
 		 XCAFPrs_AISObject(const TDF_Label & theLabel);
 
@@ -242,7 +271,9 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") ChangeCurrent;
 		%feature("autodoc", "Return current position.
 
-	:rtype: XCAFPrs_DocumentNode
+Returns
+-------
+XCAFPrs_DocumentNode
 ") ChangeCurrent;
 		XCAFPrs_DocumentNode & ChangeCurrent();
 
@@ -250,7 +281,9 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") Current;
 		%feature("autodoc", "Return current position.
 
-	:rtype: XCAFPrs_DocumentNode
+Returns
+-------
+XCAFPrs_DocumentNode
 ") Current;
 		const XCAFPrs_DocumentNode & Current();
 
@@ -258,9 +291,13 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") Current;
 		%feature("autodoc", "Return current position within specified assembly depth.
 
-	:param theDepth:
-	:type theDepth: int
-	:rtype: XCAFPrs_DocumentNode
+Parameters
+----------
+theDepth: int
+
+Returns
+-------
+XCAFPrs_DocumentNode
 ") Current;
 		const XCAFPrs_DocumentNode & Current(Standard_Integer theDepth);
 
@@ -268,7 +305,9 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") CurrentDepth;
 		%feature("autodoc", "Return depth of the current node in hierarchy, starting from 0. zero means root label.
 
-	:rtype: int
+Returns
+-------
+int
 ") CurrentDepth;
 		Standard_Integer CurrentDepth();
 
@@ -276,11 +315,14 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") DefineChildId;
 		%feature("autodoc", "Construct a unique string identifier for the given label. the identifier is a concatenation of label entries (tdf_tool::entry() with tailing '.') of hierarchy from parent to child joined via '/' and looking like this: @code 0:1:1:1./0:1:1:1:9./0:1:1:5:7. @endcode this generation scheme also allows finding originating labels using tdf_tool::label(). the tailing dot simplifies parent equality check. @param thelabel child label to define id @param theparentid parent string identifier defined by this method.
 
-	:param theLabel:
-	:type theLabel: TDF_Label
-	:param theParentId:
-	:type theParentId: TCollection_AsciiString
-	:rtype: TCollection_AsciiString
+Parameters
+----------
+theLabel: TDF_Label
+theParentId: TCollection_AsciiString
+
+Returns
+-------
+TCollection_AsciiString
 ") DefineChildId;
 		static TCollection_AsciiString DefineChildId(const TDF_Label & theLabel, const TCollection_AsciiString & theParentId);
 
@@ -288,15 +330,16 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") FindLabelFromPathId;
 		%feature("autodoc", "Find a shape entity based on a text identifier constructed from ocaf labels defining full path. @sa definechildid().
 
-	:param theDocument:
-	:type theDocument: TDocStd_Document
-	:param theId:
-	:type theId: TCollection_AsciiString
-	:param theParentLocation:
-	:type theParentLocation: TopLoc_Location
-	:param theLocation:
-	:type theLocation: TopLoc_Location
-	:rtype: TDF_Label
+Parameters
+----------
+theDocument: TDocStd_Document
+theId: TCollection_AsciiString
+theParentLocation: TopLoc_Location
+theLocation: TopLoc_Location
+
+Returns
+-------
+TDF_Label
 ") FindLabelFromPathId;
 		static TDF_Label FindLabelFromPathId(const opencascade::handle<TDocStd_Document> & theDocument, const TCollection_AsciiString & theId, TopLoc_Location & theParentLocation, TopLoc_Location & theLocation);
 
@@ -304,13 +347,15 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") FindLabelFromPathId;
 		%feature("autodoc", "Find a shape entity based on a text identifier constructed from ocaf labels defining full path. @sa definechildid().
 
-	:param theDocument:
-	:type theDocument: TDocStd_Document
-	:param theId:
-	:type theId: TCollection_AsciiString
-	:param theLocation:
-	:type theLocation: TopLoc_Location
-	:rtype: TDF_Label
+Parameters
+----------
+theDocument: TDocStd_Document
+theId: TCollection_AsciiString
+theLocation: TopLoc_Location
+
+Returns
+-------
+TDF_Label
 ") FindLabelFromPathId;
 		static TDF_Label FindLabelFromPathId(const opencascade::handle<TDocStd_Document> & theDocument, const TCollection_AsciiString & theId, TopLoc_Location & theLocation);
 
@@ -318,11 +363,14 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") FindShapeFromPathId;
 		%feature("autodoc", "Find a shape entity based on a text identifier constructed from ocaf labels defining full path. @sa definechildid().
 
-	:param theDocument:
-	:type theDocument: TDocStd_Document
-	:param theId:
-	:type theId: TCollection_AsciiString
-	:rtype: TopoDS_Shape
+Parameters
+----------
+theDocument: TDocStd_Document
+theId: TCollection_AsciiString
+
+Returns
+-------
+TopoDS_Shape
 ") FindShapeFromPathId;
 		static TopoDS_Shape FindShapeFromPathId(const opencascade::handle<TDocStd_Document> & theDocument, const TCollection_AsciiString & theId);
 
@@ -330,15 +378,17 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize the iterator from a single root shape in the document. @param thedocument document to explore @param theroot single root label to explore within specified document @param theflags iteration flags @param thedefstyle default style for nodes with undefined style.
 
-	:param theDocument:
-	:type theDocument: TDocStd_Document
-	:param theRoot:
-	:type theRoot: TDF_Label
-	:param theFlags:
-	:type theFlags: int
-	:param theDefStyle: default value is XCAFPrs_Style()
-	:type theDefStyle: XCAFPrs_Style
-	:rtype: None
+Parameters
+----------
+theDocument: TDocStd_Document
+theRoot: TDF_Label
+theFlags: int
+theDefStyle: XCAFPrs_Style,optional
+	default value is XCAFPrs_Style()
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TDocStd_Document> & theDocument, const TDF_Label & theRoot, int theFlags, const XCAFPrs_Style & theDefStyle = XCAFPrs_Style());
 
@@ -346,15 +396,17 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize the iterator from the list of root shapes in the document. @param thedocument document to explore @param theroots root labels to explore within specified document @param theflags iteration flags @param thedefstyle default style for nodes with undefined style.
 
-	:param theDocument:
-	:type theDocument: TDocStd_Document
-	:param theRoots:
-	:type theRoots: TDF_LabelSequence
-	:param theFlags:
-	:type theFlags: int
-	:param theDefStyle: default value is XCAFPrs_Style()
-	:type theDefStyle: XCAFPrs_Style
-	:rtype: None
+Parameters
+----------
+theDocument: TDocStd_Document
+theRoots: TDF_LabelSequence
+theFlags: int
+theDefStyle: XCAFPrs_Style,optional
+	default value is XCAFPrs_Style()
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TDocStd_Document> & theDocument, const TDF_LabelSequence & theRoots, int theFlags, const XCAFPrs_Style & theDefStyle = XCAFPrs_Style());
 
@@ -362,7 +414,9 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Return true if iterator points to the valid node.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
@@ -370,7 +424,9 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Go to the next node.
 
-	:rtype: None
+Returns
+-------
+None
 ") Next;
 		void Next();
 
@@ -378,7 +434,9 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") XCAFPrs_DocumentExplorer;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") XCAFPrs_DocumentExplorer;
 		 XCAFPrs_DocumentExplorer();
 
@@ -386,13 +444,16 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") XCAFPrs_DocumentExplorer;
 		%feature("autodoc", "Constructor for exploring the whole document. @param thedocument document to explore @param theflags iteration flags @param thedefstyle default style for nodes with undefined style.
 
-	:param theDocument:
-	:type theDocument: TDocStd_Document
-	:param theFlags:
-	:type theFlags: int
-	:param theDefStyle: default value is XCAFPrs_Style()
-	:type theDefStyle: XCAFPrs_Style
-	:rtype: None
+Parameters
+----------
+theDocument: TDocStd_Document
+theFlags: int
+theDefStyle: XCAFPrs_Style,optional
+	default value is XCAFPrs_Style()
+
+Returns
+-------
+None
 ") XCAFPrs_DocumentExplorer;
 		 XCAFPrs_DocumentExplorer(const opencascade::handle<TDocStd_Document> & theDocument, int theFlags, const XCAFPrs_Style & theDefStyle = XCAFPrs_Style());
 
@@ -400,15 +461,17 @@ class XCAFPrs_DocumentExplorer {
 		%feature("compactdefaultargs") XCAFPrs_DocumentExplorer;
 		%feature("autodoc", "Constructor for exploring specified list of root shapes in the document. @param thedocument document to explore @param theroots root labels to explore within specified document @param theflags iteration flags @param thedefstyle default style for nodes with undefined style.
 
-	:param theDocument:
-	:type theDocument: TDocStd_Document
-	:param theRoots:
-	:type theRoots: TDF_LabelSequence
-	:param theFlags:
-	:type theFlags: int
-	:param theDefStyle: default value is XCAFPrs_Style()
-	:type theDefStyle: XCAFPrs_Style
-	:rtype: None
+Parameters
+----------
+theDocument: TDocStd_Document
+theRoots: TDF_LabelSequence
+theFlags: int
+theDefStyle: XCAFPrs_Style,optional
+	default value is XCAFPrs_Style()
+
+Returns
+-------
+None
 ") XCAFPrs_DocumentExplorer;
 		 XCAFPrs_DocumentExplorer(const opencascade::handle<TDocStd_Document> & theDocument, const TDF_LabelSequence & theRoots, int theFlags, const XCAFPrs_Style & theDefStyle = XCAFPrs_Style());
 
@@ -430,7 +493,9 @@ class XCAFPrs_DocumentIdIterator {
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Return true if iterator points to a value.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") More;
 		bool More();
 
@@ -438,7 +503,9 @@ class XCAFPrs_DocumentIdIterator {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Find the next value.
 
-	:rtype: None
+Returns
+-------
+None
 ") Next;
 		void Next();
 
@@ -446,7 +513,9 @@ class XCAFPrs_DocumentIdIterator {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Return current value.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") Value;
 		const TCollection_AsciiString & Value();
 
@@ -454,9 +523,13 @@ class XCAFPrs_DocumentIdIterator {
 		%feature("compactdefaultargs") XCAFPrs_DocumentIdIterator;
 		%feature("autodoc", "Main constructor.
 
-	:param thePath:
-	:type thePath: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+thePath: TCollection_AsciiString
+
+Returns
+-------
+None
 ") XCAFPrs_DocumentIdIterator;
 		 XCAFPrs_DocumentIdIterator(const TCollection_AsciiString & thePath);
 
@@ -484,7 +557,11 @@ class XCAFPrs_DocumentNode {
 		bool IsAssembly;
 		/****************** XCAFPrs_DocumentNode ******************/
 		%feature("compactdefaultargs") XCAFPrs_DocumentNode;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") XCAFPrs_DocumentNode;
 		 XCAFPrs_DocumentNode();
 
@@ -506,17 +583,24 @@ class XCAFPrs_Driver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Returns guid of the driver.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** Update ******************/
 		%feature("compactdefaultargs") Update;
-		%feature("autodoc", "	:param L:
-	:type L: TDF_Label
-	:param ais:
-	:type ais: AIS_InteractiveObject
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+L: TDF_Label
+ais: AIS_InteractiveObject
+
+Returns
+-------
+bool
 ") Update;
 		virtual Standard_Boolean Update(const TDF_Label & L, opencascade::handle<AIS_InteractiveObject> & ais);
 
@@ -548,7 +632,9 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") GetColorCurv;
 		%feature("autodoc", "Return curve color.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") GetColorCurv;
 		const Quantity_Color & GetColorCurv();
 
@@ -556,7 +642,9 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") GetColorSurf;
 		%feature("autodoc", "Return surface color.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") GetColorSurf;
 		const Quantity_Color & GetColorSurf();
 
@@ -564,7 +652,9 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") GetColorSurfRGBA;
 		%feature("autodoc", "Return surface color.
 
-	:rtype: Quantity_ColorRGBA
+Returns
+-------
+Quantity_ColorRGBA
 ") GetColorSurfRGBA;
 		const Quantity_ColorRGBA & GetColorSurfRGBA();
 
@@ -572,11 +662,14 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") HashCode;
 		%feature("autodoc", "Computes a hash code for the given set of styling settings, in the range [1, theupperbound] @param thestyle the set of styling settings which hash code is to be computed @param theupperbound the upper bound of the range a computing hash code must be within returns a computed hash code, in the range [1, theupperbound].
 
-	:param theStyle:
-	:type theStyle: XCAFPrs_Style
-	:param theUpperBound:
-	:type theUpperBound: int
-	:rtype: int
+Parameters
+----------
+theStyle: XCAFPrs_Style
+theUpperBound: int
+
+Returns
+-------
+int
 ") HashCode;
 		static Standard_Integer HashCode(const XCAFPrs_Style & theStyle, const Standard_Integer theUpperBound);
 
@@ -584,9 +677,13 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Returns true if styles are the same methods for using style as key in maps.
 
-	:param theOther:
-	:type theOther: XCAFPrs_Style
-	:rtype: bool
+Parameters
+----------
+theOther: XCAFPrs_Style
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const XCAFPrs_Style & theOther);
 
@@ -594,11 +691,14 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Returns true when the two keys are the same.
 
-	:param theS1:
-	:type theS1: XCAFPrs_Style
-	:param theS2:
-	:type theS2: XCAFPrs_Style
-	:rtype: bool
+Parameters
+----------
+theS1: XCAFPrs_Style
+theS2: XCAFPrs_Style
+
+Returns
+-------
+bool
 ") IsEqual;
 		static Standard_Boolean IsEqual(const XCAFPrs_Style & theS1, const XCAFPrs_Style & theS2);
 
@@ -606,7 +706,9 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") IsSetColorCurv;
 		%feature("autodoc", "Return true if curve color has been defined.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsSetColorCurv;
 		Standard_Boolean IsSetColorCurv();
 
@@ -614,7 +716,9 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") IsSetColorSurf;
 		%feature("autodoc", "Return true if surface color has been defined.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsSetColorSurf;
 		Standard_Boolean IsSetColorSurf();
 
@@ -622,7 +726,9 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") IsVisible;
 		%feature("autodoc", "Manage visibility.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsVisible;
 		Standard_Boolean IsVisible();
 
@@ -630,9 +736,13 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") SetColorCurv;
 		%feature("autodoc", "Set curve color.
 
-	:param col:
-	:type col: Quantity_Color
-	:rtype: None
+Parameters
+----------
+col: Quantity_Color
+
+Returns
+-------
+None
 ") SetColorCurv;
 		void SetColorCurv(const Quantity_Color & col);
 
@@ -640,9 +750,13 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") SetColorSurf;
 		%feature("autodoc", "Set surface color.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetColorSurf;
 		void SetColorSurf(const Quantity_Color & theColor);
 
@@ -650,9 +764,13 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") SetColorSurf;
 		%feature("autodoc", "Set surface color.
 
-	:param theColor:
-	:type theColor: Quantity_ColorRGBA
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_ColorRGBA
+
+Returns
+-------
+None
 ") SetColorSurf;
 		void SetColorSurf(const Quantity_ColorRGBA & theColor);
 
@@ -660,9 +778,13 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") SetVisibility;
 		%feature("autodoc", "Assign visibility.
 
-	:param theVisibility:
-	:type theVisibility: bool
-	:rtype: None
+Parameters
+----------
+theVisibility: bool
+
+Returns
+-------
+None
 ") SetVisibility;
 		void SetVisibility(const Standard_Boolean theVisibility);
 
@@ -670,7 +792,9 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") UnSetColorCurv;
 		%feature("autodoc", "Manage curve color setting.
 
-	:rtype: None
+Returns
+-------
+None
 ") UnSetColorCurv;
 		void UnSetColorCurv();
 
@@ -678,7 +802,9 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") UnSetColorSurf;
 		%feature("autodoc", "Manage surface color setting.
 
-	:rtype: None
+Returns
+-------
+None
 ") UnSetColorSurf;
 		void UnSetColorSurf();
 
@@ -686,7 +812,9 @@ class XCAFPrs_Style {
 		%feature("compactdefaultargs") XCAFPrs_Style;
 		%feature("autodoc", "Empty constructor - colors are unset, visibility is true.
 
-	:rtype: None
+Returns
+-------
+None
 ") XCAFPrs_Style;
 		 XCAFPrs_Style();
 

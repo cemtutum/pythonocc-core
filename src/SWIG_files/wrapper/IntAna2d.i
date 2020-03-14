@@ -71,7 +71,9 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") IdenticalElements;
 		%feature("autodoc", "For the intersection between an element of gp and a conic known by an implicit equation, the result will be true if the element of gp verifies the implicit equation. for the intersection between two lin2d or two circ2d, the result will be true if the elements are identical. the function returns false in all the other cases.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IdenticalElements;
 		Standard_Boolean IdenticalElements();
 
@@ -79,7 +81,9 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") IntAna2d_AnaIntersection;
 		%feature("autodoc", "Empty constructor. isdone returns false.
 
-	:rtype: None
+Returns
+-------
+None
 ") IntAna2d_AnaIntersection;
 		 IntAna2d_AnaIntersection();
 
@@ -87,11 +91,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") IntAna2d_AnaIntersection;
 		%feature("autodoc", "Intersection between two lines.
 
-	:param L1:
-	:type L1: gp_Lin2d
-	:param L2:
-	:type L2: gp_Lin2d
-	:rtype: None
+Parameters
+----------
+L1: gp_Lin2d
+L2: gp_Lin2d
+
+Returns
+-------
+None
 ") IntAna2d_AnaIntersection;
 		 IntAna2d_AnaIntersection(const gp_Lin2d & L1, const gp_Lin2d & L2);
 
@@ -99,11 +106,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") IntAna2d_AnaIntersection;
 		%feature("autodoc", "Intersection between two circles.
 
-	:param C1:
-	:type C1: gp_Circ2d
-	:param C2:
-	:type C2: gp_Circ2d
-	:rtype: None
+Parameters
+----------
+C1: gp_Circ2d
+C2: gp_Circ2d
+
+Returns
+-------
+None
 ") IntAna2d_AnaIntersection;
 		 IntAna2d_AnaIntersection(const gp_Circ2d & C1, const gp_Circ2d & C2);
 
@@ -111,11 +121,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") IntAna2d_AnaIntersection;
 		%feature("autodoc", "Intersection between a line and a circle.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param C:
-	:type C: gp_Circ2d
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+C: gp_Circ2d
+
+Returns
+-------
+None
 ") IntAna2d_AnaIntersection;
 		 IntAna2d_AnaIntersection(const gp_Lin2d & L, const gp_Circ2d & C);
 
@@ -123,11 +136,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") IntAna2d_AnaIntersection;
 		%feature("autodoc", "Intersection between a line and a conic.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param C:
-	:type C: IntAna2d_Conic
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+C: IntAna2d_Conic
+
+Returns
+-------
+None
 ") IntAna2d_AnaIntersection;
 		 IntAna2d_AnaIntersection(const gp_Lin2d & L, const IntAna2d_Conic & C);
 
@@ -135,11 +151,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") IntAna2d_AnaIntersection;
 		%feature("autodoc", "Intersection between a circle and another conic.
 
-	:param C:
-	:type C: gp_Circ2d
-	:param Co:
-	:type Co: IntAna2d_Conic
-	:rtype: None
+Parameters
+----------
+C: gp_Circ2d
+Co: IntAna2d_Conic
+
+Returns
+-------
+None
 ") IntAna2d_AnaIntersection;
 		 IntAna2d_AnaIntersection(const gp_Circ2d & C, const IntAna2d_Conic & Co);
 
@@ -147,11 +166,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") IntAna2d_AnaIntersection;
 		%feature("autodoc", "Intersection between an ellipse and another conic.
 
-	:param E:
-	:type E: gp_Elips2d
-	:param C:
-	:type C: IntAna2d_Conic
-	:rtype: None
+Parameters
+----------
+E: gp_Elips2d
+C: IntAna2d_Conic
+
+Returns
+-------
+None
 ") IntAna2d_AnaIntersection;
 		 IntAna2d_AnaIntersection(const gp_Elips2d & E, const IntAna2d_Conic & C);
 
@@ -159,11 +181,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") IntAna2d_AnaIntersection;
 		%feature("autodoc", "Intersection between a parabola and another conic.
 
-	:param P:
-	:type P: gp_Parab2d
-	:param C:
-	:type C: IntAna2d_Conic
-	:rtype: None
+Parameters
+----------
+P: gp_Parab2d
+C: IntAna2d_Conic
+
+Returns
+-------
+None
 ") IntAna2d_AnaIntersection;
 		 IntAna2d_AnaIntersection(const gp_Parab2d & P, const IntAna2d_Conic & C);
 
@@ -171,11 +196,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") IntAna2d_AnaIntersection;
 		%feature("autodoc", "Intersection between an hyperbola and another conic.
 
-	:param H:
-	:type H: gp_Hypr2d
-	:param C:
-	:type C: IntAna2d_Conic
-	:rtype: None
+Parameters
+----------
+H: gp_Hypr2d
+C: IntAna2d_Conic
+
+Returns
+-------
+None
 ") IntAna2d_AnaIntersection;
 		 IntAna2d_AnaIntersection(const gp_Hypr2d & H, const IntAna2d_Conic & C);
 
@@ -183,7 +211,9 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the computation was succesfull.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -191,7 +221,9 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") IsEmpty;
 		%feature("autodoc", "Returns true when there is no intersection, i-e - no intersection point - the elements are not identical. the element may be parallel in this case.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
@@ -199,7 +231,9 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") NbPoints;
 		%feature("autodoc", "Returns the number of intpoint between the 2 curves.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
@@ -207,7 +241,9 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") ParallelElements;
 		%feature("autodoc", "For the intersection between two lin2d or two circ2d, the function returns true if the elements are parallel. the function returns false in all the other cases.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ParallelElements;
 		Standard_Boolean ParallelElements();
 
@@ -215,11 +251,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between two lines.
 
-	:param L1:
-	:type L1: gp_Lin2d
-	:param L2:
-	:type L2: gp_Lin2d
-	:rtype: None
+Parameters
+----------
+L1: gp_Lin2d
+L2: gp_Lin2d
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin2d & L1, const gp_Lin2d & L2);
 
@@ -227,11 +266,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between two circles.
 
-	:param C1:
-	:type C1: gp_Circ2d
-	:param C2:
-	:type C2: gp_Circ2d
-	:rtype: None
+Parameters
+----------
+C1: gp_Circ2d
+C2: gp_Circ2d
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Circ2d & C1, const gp_Circ2d & C2);
 
@@ -239,11 +281,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a line and a circle.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param C:
-	:type C: gp_Circ2d
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+C: gp_Circ2d
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin2d & L, const gp_Circ2d & C);
 
@@ -251,11 +296,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a line and a conic.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param C:
-	:type C: IntAna2d_Conic
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+C: IntAna2d_Conic
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin2d & L, const IntAna2d_Conic & C);
 
@@ -263,11 +311,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a circle and another conic.
 
-	:param C:
-	:type C: gp_Circ2d
-	:param Co:
-	:type Co: IntAna2d_Conic
-	:rtype: None
+Parameters
+----------
+C: gp_Circ2d
+Co: IntAna2d_Conic
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Circ2d & C, const IntAna2d_Conic & Co);
 
@@ -275,11 +326,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between an ellipse and another conic.
 
-	:param E:
-	:type E: gp_Elips2d
-	:param C:
-	:type C: IntAna2d_Conic
-	:rtype: None
+Parameters
+----------
+E: gp_Elips2d
+C: IntAna2d_Conic
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Elips2d & E, const IntAna2d_Conic & C);
 
@@ -287,11 +341,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a parabola and another conic.
 
-	:param P:
-	:type P: gp_Parab2d
-	:param C:
-	:type C: IntAna2d_Conic
-	:rtype: None
+Parameters
+----------
+P: gp_Parab2d
+C: IntAna2d_Conic
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Parab2d & P, const IntAna2d_Conic & C);
 
@@ -299,11 +356,14 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between an hyperbola and another conic.
 
-	:param H:
-	:type H: gp_Hypr2d
-	:param C:
-	:type C: IntAna2d_Conic
-	:rtype: None
+Parameters
+----------
+H: gp_Hypr2d
+C: IntAna2d_Conic
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Hypr2d & H, const IntAna2d_Conic & C);
 
@@ -311,9 +371,13 @@ class IntAna2d_AnaIntersection {
 		%feature("compactdefaultargs") Point;
 		%feature("autodoc", "Returns the intersection point of range n; if (n<=0) or (n>nbpoints), an exception is raised.
 
-	:param N:
-	:type N: int
-	:rtype: IntAna2d_IntPoint
+Parameters
+----------
+N: int
+
+Returns
+-------
+IntAna2d_IntPoint
 ") Point;
 		const IntAna2d_IntPoint & Point(const Standard_Integer N);
 
@@ -335,19 +399,18 @@ class IntAna2d_Conic {
 		%feature("compactdefaultargs") Coefficients;
 		%feature("autodoc", "Returns the coefficients of the polynomial equation wich defines the conic: a.x**2 + b.y**2 + 2.c.x*y + 2.d.x + 2.e.y + f = 0.
 
-	:param A:
-	:type A: float
-	:param B:
-	:type B: float
-	:param C:
-	:type C: float
-	:param D:
-	:type D: float
-	:param E:
-	:type E: float
-	:param F:
-	:type F: float
-	:rtype: None
+Parameters
+----------
+A: float
+B: float
+C: float
+D: float
+E: float
+F: float
+
+Returns
+-------
+None
 ") Coefficients;
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -355,51 +418,84 @@ class IntAna2d_Conic {
 		%feature("compactdefaultargs") Grad;
 		%feature("autodoc", "Returns the value of the gradient of f at the point x,y.
 
-	:param X:
-	:type X: float
-	:param Y:
-	:type Y: float
-	:rtype: gp_XY
+Parameters
+----------
+X: float
+Y: float
+
+Returns
+-------
+gp_XY
 ") Grad;
 		gp_XY Grad(const Standard_Real X, const Standard_Real Y);
 
 		/****************** IntAna2d_Conic ******************/
 		%feature("compactdefaultargs") IntAna2d_Conic;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Circ2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Circ2d
+
+Returns
+-------
+None
 ") IntAna2d_Conic;
 		 IntAna2d_Conic(const gp_Circ2d & C);
 
 		/****************** IntAna2d_Conic ******************/
 		%feature("compactdefaultargs") IntAna2d_Conic;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Lin2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Lin2d
+
+Returns
+-------
+None
 ") IntAna2d_Conic;
 		 IntAna2d_Conic(const gp_Lin2d & C);
 
 		/****************** IntAna2d_Conic ******************/
 		%feature("compactdefaultargs") IntAna2d_Conic;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Parab2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Parab2d
+
+Returns
+-------
+None
 ") IntAna2d_Conic;
 		 IntAna2d_Conic(const gp_Parab2d & C);
 
 		/****************** IntAna2d_Conic ******************/
 		%feature("compactdefaultargs") IntAna2d_Conic;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Hypr2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Hypr2d
+
+Returns
+-------
+None
 ") IntAna2d_Conic;
 		 IntAna2d_Conic(const gp_Hypr2d & C);
 
 		/****************** IntAna2d_Conic ******************/
 		%feature("compactdefaultargs") IntAna2d_Conic;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Elips2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Elips2d
+
+Returns
+-------
+None
 ") IntAna2d_Conic;
 		 IntAna2d_Conic(const gp_Elips2d & C);
 
@@ -407,21 +503,19 @@ class IntAna2d_Conic {
 		%feature("compactdefaultargs") NewCoefficients;
 		%feature("autodoc", "Returns the coefficients of the polynomial equation ( written in the natural coordinates system ) a x x + b y y + 2 c x y + 2 d x + 2 e y + f in the local coordinates system defined by axis.
 
-	:param A:
-	:type A: float
-	:param B:
-	:type B: float
-	:param C:
-	:type C: float
-	:param D:
-	:type D: float
-	:param E:
-	:type E: float
-	:param F:
-	:type F: float
-	:param Axis:
-	:type Axis: gp_Ax2d
-	:rtype: None
+Parameters
+----------
+A: float
+B: float
+C: float
+D: float
+E: float
+F: float
+Axis: gp_Ax2d
+
+Returns
+-------
+None
 ") NewCoefficients;
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax2d & Axis);
 
@@ -429,15 +523,16 @@ class IntAna2d_Conic {
 		%feature("compactdefaultargs") ValAndGrad;
 		%feature("autodoc", "Returns the value of the function and its gradient at the point x,y.
 
-	:param X:
-	:type X: float
-	:param Y:
-	:type Y: float
-	:param Val:
-	:type Val: float
-	:param Grd:
-	:type Grd: gp_XY
-	:rtype: None
+Parameters
+----------
+X: float
+Y: float
+Val: float
+Grd: gp_XY
+
+Returns
+-------
+None
 ") ValAndGrad;
 		void ValAndGrad(const Standard_Real X, const Standard_Real Y, Standard_Real &OutValue, gp_XY & Grd);
 
@@ -445,11 +540,14 @@ class IntAna2d_Conic {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Value of the function f at the point x,y.
 
-	:param X:
-	:type X: float
-	:param Y:
-	:type Y: float
-	:rtype: float
+Parameters
+----------
+X: float
+Y: float
+
+Returns
+-------
+float
 ") Value;
 		Standard_Real Value(const Standard_Real X, const Standard_Real Y);
 
@@ -471,15 +569,16 @@ class IntAna2d_IntPoint {
 		%feature("compactdefaultargs") IntAna2d_IntPoint;
 		%feature("autodoc", "Create an intersection point between 2 parametric 2d lines. x,y are the coordinate of the point. u1 is the parameter on the first element, u2 the parameter on the second one.
 
-	:param X:
-	:type X: float
-	:param Y:
-	:type Y: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:rtype: None
+Parameters
+----------
+X: float
+Y: float
+U1: float
+U2: float
+
+Returns
+-------
+None
 ") IntAna2d_IntPoint;
 		 IntAna2d_IntPoint(const Standard_Real X, const Standard_Real Y, const Standard_Real U1, const Standard_Real U2);
 
@@ -487,19 +586,25 @@ class IntAna2d_IntPoint {
 		%feature("compactdefaultargs") IntAna2d_IntPoint;
 		%feature("autodoc", "Create an intersection point between a parametric 2d line, and a line given by an implicit equation (implicitcurve). x,y are the coordinate of the point. u1 is the parameter on the parametric element. empty constructor. it's necessary to use one of the setvalue method after this one.
 
-	:param X:
-	:type X: float
-	:param Y:
-	:type Y: float
-	:param U1:
-	:type U1: float
-	:rtype: None
+Parameters
+----------
+X: float
+Y: float
+U1: float
+
+Returns
+-------
+None
 ") IntAna2d_IntPoint;
 		 IntAna2d_IntPoint(const Standard_Real X, const Standard_Real Y, const Standard_Real U1);
 
 		/****************** IntAna2d_IntPoint ******************/
 		%feature("compactdefaultargs") IntAna2d_IntPoint;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") IntAna2d_IntPoint;
 		 IntAna2d_IntPoint();
 
@@ -507,7 +612,9 @@ class IntAna2d_IntPoint {
 		%feature("compactdefaultargs") ParamOnFirst;
 		%feature("autodoc", "Returns the parameter on the first element.
 
-	:rtype: float
+Returns
+-------
+float
 ") ParamOnFirst;
 		Standard_Real ParamOnFirst();
 
@@ -515,7 +622,9 @@ class IntAna2d_IntPoint {
 		%feature("compactdefaultargs") ParamOnSecond;
 		%feature("autodoc", "Returns the parameter on the second element. if the second element is an implicit curve, an exception is raised.
 
-	:rtype: float
+Returns
+-------
+float
 ") ParamOnSecond;
 		Standard_Real ParamOnSecond();
 
@@ -523,7 +632,9 @@ class IntAna2d_IntPoint {
 		%feature("compactdefaultargs") SecondIsImplicit;
 		%feature("autodoc", "Returns true if the second curve is implicit.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") SecondIsImplicit;
 		Standard_Boolean SecondIsImplicit();
 
@@ -531,15 +642,16 @@ class IntAna2d_IntPoint {
 		%feature("compactdefaultargs") SetValue;
 		%feature("autodoc", "Set the values for a 'non-implicit' point.
 
-	:param X:
-	:type X: float
-	:param Y:
-	:type Y: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:rtype: None
+Parameters
+----------
+X: float
+Y: float
+U1: float
+U2: float
+
+Returns
+-------
+None
 ") SetValue;
 		virtual void SetValue(const Standard_Real X, const Standard_Real Y, const Standard_Real U1, const Standard_Real U2);
 
@@ -547,13 +659,15 @@ class IntAna2d_IntPoint {
 		%feature("compactdefaultargs") SetValue;
 		%feature("autodoc", "Set the values for an 'implicit' point.
 
-	:param X:
-	:type X: float
-	:param Y:
-	:type Y: float
-	:param U1:
-	:type U1: float
-	:rtype: None
+Parameters
+----------
+X: float
+Y: float
+U1: float
+
+Returns
+-------
+None
 ") SetValue;
 		virtual void SetValue(const Standard_Real X, const Standard_Real Y, const Standard_Real U1);
 
@@ -561,7 +675,9 @@ class IntAna2d_IntPoint {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the geometric point.
 
-	:rtype: gp_Pnt2d
+Returns
+-------
+gp_Pnt2d
 ") Value;
 		const gp_Pnt2d Value();
 

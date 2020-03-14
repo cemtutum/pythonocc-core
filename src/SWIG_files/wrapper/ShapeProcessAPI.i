@@ -91,7 +91,9 @@ class ShapeProcessAPI_ApplySequence {
 		%feature("compactdefaultargs") ClearMap;
 		%feature("autodoc", "Clears mymap with accumulated history.
 
-	:rtype: None
+Returns
+-------
+None
 ") ClearMap;
 		void ClearMap();
 
@@ -99,7 +101,9 @@ class ShapeProcessAPI_ApplySequence {
 		%feature("compactdefaultargs") Context;
 		%feature("autodoc", "Returns object for managing resource file and sequence of operators.
 
-	:rtype: opencascade::handle<ShapeProcess_ShapeContext>
+Returns
+-------
+opencascade::handle<ShapeProcess_ShapeContext>
 ") Context;
 		opencascade::handle<ShapeProcess_ShapeContext> & Context();
 
@@ -107,7 +111,9 @@ class ShapeProcessAPI_ApplySequence {
 		%feature("compactdefaultargs") Map;
 		%feature("autodoc", "Returns mymap with accumulated history.
 
-	:rtype: TopTools_DataMapOfShapeShape
+Returns
+-------
+TopTools_DataMapOfShapeShape
 ") Map;
 		const TopTools_DataMapOfShapeShape & Map();
 
@@ -115,13 +121,17 @@ class ShapeProcessAPI_ApplySequence {
 		%feature("compactdefaultargs") PrepareShape;
 		%feature("autodoc", "Performs sequence of operators stored in myrsc. if <fillmap> is true adds history 'shape-shape' into mymap for shape and its subshapes until level <until> (included). if <until> is topabs_shape, all the subshapes are considered.
 
-	:param shape:
-	:type shape: TopoDS_Shape
-	:param fillmap: default value is Standard_False
-	:type fillmap: bool
-	:param until: default value is TopAbs_SHAPE
-	:type until: TopAbs_ShapeEnum
-	:rtype: TopoDS_Shape
+Parameters
+----------
+shape: TopoDS_Shape
+fillmap: bool,optional
+	default value is Standard_False
+until: TopAbs_ShapeEnum,optional
+	default value is TopAbs_SHAPE
+
+Returns
+-------
+TopoDS_Shape
 ") PrepareShape;
 		TopoDS_Shape PrepareShape(const TopoDS_Shape & shape, const Standard_Boolean fillmap = Standard_False, const TopAbs_ShapeEnum until = TopAbs_SHAPE);
 
@@ -129,7 +139,9 @@ class ShapeProcessAPI_ApplySequence {
 		%feature("compactdefaultargs") PrintPreparationResult;
 		%feature("autodoc", "Prints result of preparation onto the messenger of the context. note that results can be accumulated from previous preparations it method clearmap was not called before prepareshape.
 
-	:rtype: None
+Returns
+-------
+None
 ") PrintPreparationResult;
 		void PrintPreparationResult();
 
@@ -137,11 +149,15 @@ class ShapeProcessAPI_ApplySequence {
 		%feature("compactdefaultargs") ShapeProcessAPI_ApplySequence;
 		%feature("autodoc", "Creates an object and loads resource file and sequence of operators given by their names.
 
-	:param rscName:
-	:type rscName: char *
-	:param seqName: default value is ""
-	:type seqName: char *
-	:rtype: None
+Parameters
+----------
+rscName: char *
+seqName: char *,optional
+	default value is ""
+
+Returns
+-------
+None
 ") ShapeProcessAPI_ApplySequence;
 		 ShapeProcessAPI_ApplySequence(const char * rscName, const char * seqName = "");
 

@@ -163,7 +163,9 @@ class RWGltf_GltfAccessor {
 		%feature("compactdefaultargs") RWGltf_GltfAccessor;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWGltf_GltfAccessor;
 		 RWGltf_GltfAccessor();
 
@@ -188,7 +190,11 @@ class RWGltf_GltfBufferView {
 		RWGltf_GltfBufferViewTarget Target;
 		/****************** RWGltf_GltfBufferView ******************/
 		%feature("compactdefaultargs") RWGltf_GltfBufferView;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") RWGltf_GltfBufferView;
 		 RWGltf_GltfBufferView();
 
@@ -234,15 +240,25 @@ class RWGltf_GltfPrimArrayData {
 		RWGltf_GltfArrayType Type;
 		/****************** RWGltf_GltfPrimArrayData ******************/
 		%feature("compactdefaultargs") RWGltf_GltfPrimArrayData;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") RWGltf_GltfPrimArrayData;
 		 RWGltf_GltfPrimArrayData();
 
 		/****************** RWGltf_GltfPrimArrayData ******************/
 		%feature("compactdefaultargs") RWGltf_GltfPrimArrayData;
-		%feature("autodoc", "	:param theType:
-	:type theType: RWGltf_GltfArrayType
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theType: RWGltf_GltfArrayType
+
+Returns
+-------
+None
 ") RWGltf_GltfPrimArrayData;
 		 RWGltf_GltfPrimArrayData(RWGltf_GltfArrayType theType);
 
@@ -276,7 +292,11 @@ class RWGltf_MaterialCommon : public Standard_Transient {
 		Standard_ShortReal Transparency;
 		/****************** RWGltf_MaterialCommon ******************/
 		%feature("compactdefaultargs") RWGltf_MaterialCommon;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") RWGltf_MaterialCommon;
 		 RWGltf_MaterialCommon();
 
@@ -309,7 +329,11 @@ class RWGltf_MaterialMetallicRoughness : public Standard_Transient {
 		Standard_ShortReal Roughness;
 		/****************** RWGltf_MaterialMetallicRoughness ******************/
 		%feature("compactdefaultargs") RWGltf_MaterialMetallicRoughness;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") RWGltf_MaterialMetallicRoughness;
 		 RWGltf_MaterialMetallicRoughness();
 

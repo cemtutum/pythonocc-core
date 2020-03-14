@@ -78,7 +78,9 @@ class AppStdL_Application : public TDocStd_Application {
 		%feature("compactdefaultargs") ResourcesName;
 		%feature("autodoc", "Returns the file name which contains application resources.
 
-	:rtype: char *
+Returns
+-------
+char *
 ") ResourcesName;
 		const char * ResourcesName();
 

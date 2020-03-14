@@ -105,45 +105,74 @@ class STEPSelections_AssemblyComponent : public Standard_Transient {
 	public:
 		/****************** GetList ******************/
 		%feature("compactdefaultargs") GetList;
-		%feature("autodoc", "	:rtype: opencascade::handle<STEPSelections_HSequenceOfAssemblyLink>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<STEPSelections_HSequenceOfAssemblyLink>
 ") GetList;
 		opencascade::handle<STEPSelections_HSequenceOfAssemblyLink> GetList();
 
 		/****************** GetSDR ******************/
 		%feature("compactdefaultargs") GetSDR;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_ShapeDefinitionRepresentation>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_ShapeDefinitionRepresentation>
 ") GetSDR;
 		opencascade::handle<StepShape_ShapeDefinitionRepresentation> GetSDR();
 
 		/****************** STEPSelections_AssemblyComponent ******************/
 		%feature("compactdefaultargs") STEPSelections_AssemblyComponent;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPSelections_AssemblyComponent;
 		 STEPSelections_AssemblyComponent();
 
 		/****************** STEPSelections_AssemblyComponent ******************/
 		%feature("compactdefaultargs") STEPSelections_AssemblyComponent;
-		%feature("autodoc", "	:param sdr:
-	:type sdr: StepShape_ShapeDefinitionRepresentation
-	:param list:
-	:type list: STEPSelections_HSequenceOfAssemblyLink
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+sdr: StepShape_ShapeDefinitionRepresentation
+list: STEPSelections_HSequenceOfAssemblyLink
+
+Returns
+-------
+None
 ") STEPSelections_AssemblyComponent;
 		 STEPSelections_AssemblyComponent(const opencascade::handle<StepShape_ShapeDefinitionRepresentation> & sdr, const opencascade::handle<STEPSelections_HSequenceOfAssemblyLink> & list);
 
 		/****************** SetList ******************/
 		%feature("compactdefaultargs") SetList;
-		%feature("autodoc", "	:param list:
-	:type list: STEPSelections_HSequenceOfAssemblyLink
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+list: STEPSelections_HSequenceOfAssemblyLink
+
+Returns
+-------
+None
 ") SetList;
 		void SetList(const opencascade::handle<STEPSelections_HSequenceOfAssemblyLink> & list);
 
 		/****************** SetSDR ******************/
 		%feature("compactdefaultargs") SetSDR;
-		%feature("autodoc", "	:param sdr:
-	:type sdr: StepShape_ShapeDefinitionRepresentation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+sdr: StepShape_ShapeDefinitionRepresentation
+
+Returns
+-------
+None
 ") SetSDR;
 		void SetSDR(const opencascade::handle<StepShape_ShapeDefinitionRepresentation> & sdr);
 
@@ -173,33 +202,57 @@ class STEPSelections_AssemblyExplorer {
         };
 		/****************** FillListWithGraph ******************/
 		%feature("compactdefaultargs") FillListWithGraph;
-		%feature("autodoc", "	:param cmp:
-	:type cmp: STEPSelections_AssemblyComponent
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+cmp: STEPSelections_AssemblyComponent
+
+Returns
+-------
+None
 ") FillListWithGraph;
 		void FillListWithGraph(const opencascade::handle<STEPSelections_AssemblyComponent> & cmp);
 
 		/****************** FindItemWithNAUO ******************/
 		%feature("compactdefaultargs") FindItemWithNAUO;
-		%feature("autodoc", "	:param nauo:
-	:type nauo: StepRepr_NextAssemblyUsageOccurrence
-	:rtype: opencascade::handle<Standard_Transient>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+nauo: StepRepr_NextAssemblyUsageOccurrence
+
+Returns
+-------
+opencascade::handle<Standard_Transient>
 ") FindItemWithNAUO;
 		opencascade::handle<Standard_Transient> FindItemWithNAUO(const opencascade::handle<StepRepr_NextAssemblyUsageOccurrence> & nauo);
 
 		/****************** FindSDRWithProduct ******************/
 		%feature("compactdefaultargs") FindSDRWithProduct;
-		%feature("autodoc", "	:param product:
-	:type product: StepBasic_ProductDefinition
-	:rtype: opencascade::handle<StepShape_ShapeDefinitionRepresentation>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+product: StepBasic_ProductDefinition
+
+Returns
+-------
+opencascade::handle<StepShape_ShapeDefinitionRepresentation>
 ") FindSDRWithProduct;
 		opencascade::handle<StepShape_ShapeDefinitionRepresentation> FindSDRWithProduct(const opencascade::handle<StepBasic_ProductDefinition> & product);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param G:
-	:type G: Interface_Graph
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+G: Interface_Graph
+
+Returns
+-------
+None
 ") Init;
 		void Init(const Interface_Graph & G);
 
@@ -207,7 +260,9 @@ class STEPSelections_AssemblyExplorer {
 		%feature("compactdefaultargs") NbAssemblies;
 		%feature("autodoc", "Returns the number of root assemblies;.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbAssemblies;
 		Standard_Integer NbAssemblies();
 
@@ -215,17 +270,28 @@ class STEPSelections_AssemblyExplorer {
 		%feature("compactdefaultargs") Root;
 		%feature("autodoc", "Returns root of assenbly by its rank;.
 
-	:param rank: default value is 1
-	:type rank: int
-	:rtype: opencascade::handle<STEPSelections_AssemblyComponent>
+Parameters
+----------
+rank: int,optional
+	default value is 1
+
+Returns
+-------
+opencascade::handle<STEPSelections_AssemblyComponent>
 ") Root;
 		opencascade::handle<STEPSelections_AssemblyComponent> Root(const Standard_Integer rank = 1);
 
 		/****************** STEPSelections_AssemblyExplorer ******************/
 		%feature("compactdefaultargs") STEPSelections_AssemblyExplorer;
-		%feature("autodoc", "	:param G:
-	:type G: Interface_Graph
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+G: Interface_Graph
+
+Returns
+-------
+None
 ") STEPSelections_AssemblyExplorer;
 		 STEPSelections_AssemblyExplorer(const Interface_Graph & G);
 
@@ -245,61 +311,99 @@ class STEPSelections_AssemblyLink : public Standard_Transient {
 	public:
 		/****************** GetComponent ******************/
 		%feature("compactdefaultargs") GetComponent;
-		%feature("autodoc", "	:rtype: opencascade::handle<STEPSelections_AssemblyComponent>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<STEPSelections_AssemblyComponent>
 ") GetComponent;
 		opencascade::handle<STEPSelections_AssemblyComponent> GetComponent();
 
 		/****************** GetItem ******************/
 		%feature("compactdefaultargs") GetItem;
-		%feature("autodoc", "	:rtype: opencascade::handle<Standard_Transient>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Standard_Transient>
 ") GetItem;
 		opencascade::handle<Standard_Transient> GetItem();
 
 		/****************** GetNAUO ******************/
 		%feature("compactdefaultargs") GetNAUO;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepRepr_NextAssemblyUsageOccurrence>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepRepr_NextAssemblyUsageOccurrence>
 ") GetNAUO;
 		opencascade::handle<StepRepr_NextAssemblyUsageOccurrence> GetNAUO();
 
 		/****************** STEPSelections_AssemblyLink ******************/
 		%feature("compactdefaultargs") STEPSelections_AssemblyLink;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPSelections_AssemblyLink;
 		 STEPSelections_AssemblyLink();
 
 		/****************** STEPSelections_AssemblyLink ******************/
 		%feature("compactdefaultargs") STEPSelections_AssemblyLink;
-		%feature("autodoc", "	:param nauo:
-	:type nauo: StepRepr_NextAssemblyUsageOccurrence
-	:param item:
-	:type item: Standard_Transient
-	:param part:
-	:type part: STEPSelections_AssemblyComponent
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+nauo: StepRepr_NextAssemblyUsageOccurrence
+item: Standard_Transient
+part: STEPSelections_AssemblyComponent
+
+Returns
+-------
+None
 ") STEPSelections_AssemblyLink;
 		 STEPSelections_AssemblyLink(const opencascade::handle<StepRepr_NextAssemblyUsageOccurrence> & nauo, const opencascade::handle<Standard_Transient> & item, const opencascade::handle<STEPSelections_AssemblyComponent> & part);
 
 		/****************** SetComponent ******************/
 		%feature("compactdefaultargs") SetComponent;
-		%feature("autodoc", "	:param part:
-	:type part: STEPSelections_AssemblyComponent
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+part: STEPSelections_AssemblyComponent
+
+Returns
+-------
+None
 ") SetComponent;
 		void SetComponent(const opencascade::handle<STEPSelections_AssemblyComponent> & part);
 
 		/****************** SetItem ******************/
 		%feature("compactdefaultargs") SetItem;
-		%feature("autodoc", "	:param item:
-	:type item: Standard_Transient
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+item: Standard_Transient
+
+Returns
+-------
+None
 ") SetItem;
 		void SetItem(const opencascade::handle<Standard_Transient> & item);
 
 		/****************** SetNAUO ******************/
 		%feature("compactdefaultargs") SetNAUO;
-		%feature("autodoc", "	:param nauo:
-	:type nauo: StepRepr_NextAssemblyUsageOccurrence
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+nauo: StepRepr_NextAssemblyUsageOccurrence
+
+Returns
+-------
+None
 ") SetNAUO;
 		void SetNAUO(const opencascade::handle<StepRepr_NextAssemblyUsageOccurrence> & nauo);
 
@@ -321,83 +425,136 @@ class STEPSelections_Counter {
 	public:
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
 		/****************** Count ******************/
 		%feature("compactdefaultargs") Count;
-		%feature("autodoc", "	:param graph:
-	:type graph: Interface_Graph
-	:param start:
-	:type start: Standard_Transient
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+graph: Interface_Graph
+start: Standard_Transient
+
+Returns
+-------
+None
 ") Count;
 		void Count(const Interface_Graph & graph, const opencascade::handle<Standard_Transient> & start);
 
 		/****************** NbInstancesOfEdges ******************/
 		%feature("compactdefaultargs") NbInstancesOfEdges;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbInstancesOfEdges;
 		Standard_Integer NbInstancesOfEdges();
 
 		/****************** NbInstancesOfFaces ******************/
 		%feature("compactdefaultargs") NbInstancesOfFaces;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbInstancesOfFaces;
 		Standard_Integer NbInstancesOfFaces();
 
 		/****************** NbInstancesOfShells ******************/
 		%feature("compactdefaultargs") NbInstancesOfShells;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbInstancesOfShells;
 		Standard_Integer NbInstancesOfShells();
 
 		/****************** NbInstancesOfSolids ******************/
 		%feature("compactdefaultargs") NbInstancesOfSolids;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbInstancesOfSolids;
 		Standard_Integer NbInstancesOfSolids();
 
 		/****************** NbInstancesOfWires ******************/
 		%feature("compactdefaultargs") NbInstancesOfWires;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbInstancesOfWires;
 		Standard_Integer NbInstancesOfWires();
 
 		/****************** NbSourceEdges ******************/
 		%feature("compactdefaultargs") NbSourceEdges;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbSourceEdges;
 		Standard_Integer NbSourceEdges();
 
 		/****************** NbSourceFaces ******************/
 		%feature("compactdefaultargs") NbSourceFaces;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbSourceFaces;
 		Standard_Integer NbSourceFaces();
 
 		/****************** NbSourceShells ******************/
 		%feature("compactdefaultargs") NbSourceShells;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbSourceShells;
 		Standard_Integer NbSourceShells();
 
 		/****************** NbSourceSolids ******************/
 		%feature("compactdefaultargs") NbSourceSolids;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbSourceSolids;
 		Standard_Integer NbSourceSolids();
 
 		/****************** NbSourceWires ******************/
 		%feature("compactdefaultargs") NbSourceWires;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbSourceWires;
 		Standard_Integer NbSourceWires();
 
 		/****************** STEPSelections_Counter ******************/
 		%feature("compactdefaultargs") STEPSelections_Counter;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPSelections_Counter;
 		 STEPSelections_Counter();
 
@@ -419,15 +576,16 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 		%feature("compactdefaultargs") Explore;
 		%feature("autodoc", "Explores an entity, to take its faces works recursively.
 
-	:param level:
-	:type level: int
-	:param ent:
-	:type ent: Standard_Transient
-	:param G:
-	:type G: Interface_Graph
-	:param explored:
-	:type explored: Interface_EntityIterator
-	:rtype: bool
+Parameters
+----------
+level: int
+ent: Standard_Transient
+G: Interface_Graph
+explored: Interface_EntityIterator
+
+Returns
+-------
+bool
 ") Explore;
 		Standard_Boolean Explore(const Standard_Integer level, const opencascade::handle<Standard_Transient> & ent, const Interface_Graph & G, Interface_EntityIterator & explored);
 
@@ -435,13 +593,19 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 		%feature("compactdefaultargs") ExploreLabel;
 		%feature("autodoc", "Returns a text defining the criterium : 'assembly structures'.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") ExploreLabel;
 		TCollection_AsciiString ExploreLabel();
 
 		/****************** STEPSelections_SelectAssembly ******************/
 		%feature("compactdefaultargs") STEPSelections_SelectAssembly;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPSelections_SelectAssembly;
 		 STEPSelections_SelectAssembly();
 
@@ -463,21 +627,28 @@ class STEPSelections_SelectDerived : public StepSelect_StepType {
 	public:
 		/****************** Matches ******************/
 		%feature("compactdefaultargs") Matches;
-		%feature("autodoc", "	:param ent:
-	:type ent: Standard_Transient
-	:param model:
-	:type model: Interface_InterfaceModel
-	:param text:
-	:type text: TCollection_AsciiString
-	:param exact:
-	:type exact: bool
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ent: Standard_Transient
+model: Interface_InterfaceModel
+text: TCollection_AsciiString
+exact: bool
+
+Returns
+-------
+bool
 ") Matches;
 		virtual Standard_Boolean Matches(const opencascade::handle<Standard_Transient> & ent, const opencascade::handle<Interface_InterfaceModel> & model, const TCollection_AsciiString & text, const Standard_Boolean exact);
 
 		/****************** STEPSelections_SelectDerived ******************/
 		%feature("compactdefaultargs") STEPSelections_SelectDerived;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPSelections_SelectDerived;
 		 STEPSelections_SelectDerived();
 
@@ -501,15 +672,16 @@ class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
 		%feature("compactdefaultargs") Explore;
 		%feature("autodoc", "Explores an entity, to take its faces works recursively.
 
-	:param level:
-	:type level: int
-	:param ent:
-	:type ent: Standard_Transient
-	:param G:
-	:type G: Interface_Graph
-	:param explored:
-	:type explored: Interface_EntityIterator
-	:rtype: bool
+Parameters
+----------
+level: int
+ent: Standard_Transient
+G: Interface_Graph
+explored: Interface_EntityIterator
+
+Returns
+-------
+bool
 ") Explore;
 		Standard_Boolean Explore(const Standard_Integer level, const opencascade::handle<Standard_Transient> & ent, const Interface_Graph & G, Interface_EntityIterator & explored);
 
@@ -517,13 +689,19 @@ class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
 		%feature("compactdefaultargs") ExploreLabel;
 		%feature("autodoc", "Returns a text defining the criterium : 'faces'.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") ExploreLabel;
 		TCollection_AsciiString ExploreLabel();
 
 		/****************** STEPSelections_SelectFaces ******************/
 		%feature("compactdefaultargs") STEPSelections_SelectFaces;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPSelections_SelectFaces;
 		 STEPSelections_SelectFaces();
 
@@ -545,23 +723,39 @@ class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
 	public:
 		/****************** RootResult ******************/
 		%feature("compactdefaultargs") RootResult;
-		%feature("autodoc", "	:param G:
-	:type G: Interface_Graph
-	:rtype: Interface_EntityIterator
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+G: Interface_Graph
+
+Returns
+-------
+Interface_EntityIterator
 ") RootResult;
 		virtual Interface_EntityIterator RootResult(const Interface_Graph & G);
 
 		/****************** STEPSelections_SelectForTransfer ******************/
 		%feature("compactdefaultargs") STEPSelections_SelectForTransfer;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPSelections_SelectForTransfer;
 		 STEPSelections_SelectForTransfer();
 
 		/****************** STEPSelections_SelectForTransfer ******************/
 		%feature("compactdefaultargs") STEPSelections_SelectForTransfer;
-		%feature("autodoc", "	:param TR:
-	:type TR: XSControl_TransferReader
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TR: XSControl_TransferReader
+
+Returns
+-------
+None
 ") STEPSelections_SelectForTransfer;
 		 STEPSelections_SelectForTransfer(const opencascade::handle<XSControl_TransferReader> & TR);
 
@@ -583,15 +777,18 @@ class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 	public:
 		/****************** Explore ******************/
 		%feature("compactdefaultargs") Explore;
-		%feature("autodoc", "	:param level:
-	:type level: int
-	:param ent:
-	:type ent: Standard_Transient
-	:param G:
-	:type G: Interface_Graph
-	:param explored:
-	:type explored: Interface_EntityIterator
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+level: int
+ent: Standard_Transient
+G: Interface_Graph
+explored: Interface_EntityIterator
+
+Returns
+-------
+bool
 ") Explore;
 		Standard_Boolean Explore(const Standard_Integer level, const opencascade::handle<Standard_Transient> & ent, const Interface_Graph & G, Interface_EntityIterator & explored);
 
@@ -599,13 +796,19 @@ class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 		%feature("compactdefaultargs") ExploreLabel;
 		%feature("autodoc", "Returns a text defining the criterium : 'curves'.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") ExploreLabel;
 		TCollection_AsciiString ExploreLabel();
 
 		/****************** STEPSelections_SelectGSCurves ******************/
 		%feature("compactdefaultargs") STEPSelections_SelectGSCurves;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPSelections_SelectGSCurves;
 		 STEPSelections_SelectGSCurves();
 
@@ -627,15 +830,18 @@ class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 	public:
 		/****************** Explore ******************/
 		%feature("compactdefaultargs") Explore;
-		%feature("autodoc", "	:param level:
-	:type level: int
-	:param ent:
-	:type ent: Standard_Transient
-	:param G:
-	:type G: Interface_Graph
-	:param explored:
-	:type explored: Interface_EntityIterator
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+level: int
+ent: Standard_Transient
+G: Interface_Graph
+explored: Interface_EntityIterator
+
+Returns
+-------
+bool
 ") Explore;
 		Standard_Boolean Explore(const Standard_Integer level, const opencascade::handle<Standard_Transient> & ent, const Interface_Graph & G, Interface_EntityIterator & explored);
 
@@ -643,21 +849,33 @@ class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 		%feature("compactdefaultargs") ExploreLabel;
 		%feature("autodoc", "Returns a text defining the criterium : 'instances'.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") ExploreLabel;
 		TCollection_AsciiString ExploreLabel();
 
 		/****************** RootResult ******************/
 		%feature("compactdefaultargs") RootResult;
-		%feature("autodoc", "	:param G:
-	:type G: Interface_Graph
-	:rtype: Interface_EntityIterator
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+G: Interface_Graph
+
+Returns
+-------
+Interface_EntityIterator
 ") RootResult;
 		Interface_EntityIterator RootResult(const Interface_Graph & G);
 
 		/****************** STEPSelections_SelectInstances ******************/
 		%feature("compactdefaultargs") STEPSelections_SelectInstances;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPSelections_SelectInstances;
 		 STEPSelections_SelectInstances();
 

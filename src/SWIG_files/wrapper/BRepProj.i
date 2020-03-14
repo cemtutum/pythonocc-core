@@ -75,13 +75,15 @@ class BRepProj_Projection {
 		%feature("compactdefaultargs") BRepProj_Projection;
 		%feature("autodoc", "Makes a cylindrical projection of wire om shape.
 
-	:param Wire:
-	:type Wire: TopoDS_Shape
-	:param Shape:
-	:type Shape: TopoDS_Shape
-	:param D:
-	:type D: gp_Dir
-	:rtype: None
+Parameters
+----------
+Wire: TopoDS_Shape
+Shape: TopoDS_Shape
+D: gp_Dir
+
+Returns
+-------
+None
 ") BRepProj_Projection;
 		 BRepProj_Projection(const TopoDS_Shape & Wire, const TopoDS_Shape & Shape, const gp_Dir & D);
 
@@ -89,13 +91,15 @@ class BRepProj_Projection {
 		%feature("compactdefaultargs") BRepProj_Projection;
 		%feature("autodoc", "Makes a conical projection of wire om shape.
 
-	:param Wire:
-	:type Wire: TopoDS_Shape
-	:param Shape:
-	:type Shape: TopoDS_Shape
-	:param P:
-	:type P: gp_Pnt
-	:rtype: None
+Parameters
+----------
+Wire: TopoDS_Shape
+Shape: TopoDS_Shape
+P: gp_Pnt
+
+Returns
+-------
+None
 ") BRepProj_Projection;
 		 BRepProj_Projection(const TopoDS_Shape & Wire, const TopoDS_Shape & Shape, const gp_Pnt & P);
 
@@ -103,7 +107,9 @@ class BRepProj_Projection {
 		%feature("compactdefaultargs") Current;
 		%feature("autodoc", "Returns the current result wire.
 
-	:rtype: TopoDS_Wire
+Returns
+-------
+TopoDS_Wire
 ") Current;
 		TopoDS_Wire Current();
 
@@ -111,7 +117,9 @@ class BRepProj_Projection {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Resets the iterator by resulting wires.
 
-	:rtype: None
+Returns
+-------
+None
 ") Init;
 		void Init();
 
@@ -119,7 +127,9 @@ class BRepProj_Projection {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns false if the section failed.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -127,7 +137,9 @@ class BRepProj_Projection {
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Returns true if there is a current result wire.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
@@ -135,7 +147,9 @@ class BRepProj_Projection {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Move to the next result wire.
 
-	:rtype: None
+Returns
+-------
+None
 ") Next;
 		void Next();
 
@@ -143,7 +157,9 @@ class BRepProj_Projection {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns the complete result as compound of wires.
 
-	:rtype: TopoDS_Compound
+Returns
+-------
+TopoDS_Compound
 ") Shape;
 		TopoDS_Compound Shape();
 

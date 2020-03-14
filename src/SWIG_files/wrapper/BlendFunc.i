@@ -97,63 +97,72 @@ class BlendFunc {
 	public:
 		/****************** ComputeDNormal ******************/
 		%feature("compactdefaultargs") ComputeDNormal;
-		%feature("autodoc", "	:param Surf:
-	:type Surf: Adaptor3d_HSurface
-	:param p2d:
-	:type p2d: gp_Pnt2d
-	:param Normal:
-	:type Normal: gp_Vec
-	:param DNu:
-	:type DNu: gp_Vec
-	:param DNv:
-	:type DNv: gp_Vec
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Surf: Adaptor3d_HSurface
+p2d: gp_Pnt2d
+Normal: gp_Vec
+DNu: gp_Vec
+DNv: gp_Vec
+
+Returns
+-------
+bool
 ") ComputeDNormal;
 		static Standard_Boolean ComputeDNormal(const opencascade::handle<Adaptor3d_HSurface> & Surf, const gp_Pnt2d & p2d, gp_Vec & Normal, gp_Vec & DNu, gp_Vec & DNv);
 
 		/****************** ComputeNormal ******************/
 		%feature("compactdefaultargs") ComputeNormal;
-		%feature("autodoc", "	:param Surf:
-	:type Surf: Adaptor3d_HSurface
-	:param p2d:
-	:type p2d: gp_Pnt2d
-	:param Normal:
-	:type Normal: gp_Vec
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Surf: Adaptor3d_HSurface
+p2d: gp_Pnt2d
+Normal: gp_Vec
+
+Returns
+-------
+bool
 ") ComputeNormal;
 		static Standard_Boolean ComputeNormal(const opencascade::handle<Adaptor3d_HSurface> & Surf, const gp_Pnt2d & p2d, gp_Vec & Normal);
 
 		/****************** GetMinimalWeights ******************/
 		%feature("compactdefaultargs") GetMinimalWeights;
-		%feature("autodoc", "	:param SectShape:
-	:type SectShape: BlendFunc_SectionShape
-	:param TConv:
-	:type TConv: Convert_ParameterisationType
-	:param AngleMin:
-	:type AngleMin: float
-	:param AngleMax:
-	:type AngleMax: float
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SectShape: BlendFunc_SectionShape
+TConv: Convert_ParameterisationType
+AngleMin: float
+AngleMax: float
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") GetMinimalWeights;
 		static void GetMinimalWeights(const BlendFunc_SectionShape SectShape, const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real AngleMax, TColStd_Array1OfReal & Weigths);
 
 		/****************** GetShape ******************/
 		%feature("compactdefaultargs") GetShape;
-		%feature("autodoc", "	:param SectShape:
-	:type SectShape: BlendFunc_SectionShape
-	:param MaxAng:
-	:type MaxAng: float
-	:param NbPoles:
-	:type NbPoles: int
-	:param NbKnots:
-	:type NbKnots: int
-	:param Degree:
-	:type Degree: int
-	:param TypeConv:
-	:type TypeConv: Convert_ParameterisationType
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SectShape: BlendFunc_SectionShape
+MaxAng: float
+NbPoles: int
+NbKnots: int
+Degree: int
+TypeConv: Convert_ParameterisationType
+
+Returns
+-------
+None
 ") GetShape;
 		static void GetShape(const BlendFunc_SectionShape SectShape, const Standard_Real MaxAng, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Convert_ParameterisationType & TypeConv);
 
@@ -161,9 +170,13 @@ class BlendFunc {
 		%feature("compactdefaultargs") NextShape;
 		%feature("autodoc", "Used to obtain the next level of continuity.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: GeomAbs_Shape
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+GeomAbs_Shape
 ") NextShape;
 		static GeomAbs_Shape NextShape(const GeomAbs_Shape S);
 
@@ -185,15 +198,16 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") BlendFunc_CSCircular;
 		%feature("autodoc", "Creates a function for a circular blending between a curve <c> and a surface <s>. the direction of the planes are given by <cguide>. the position of the plane is determined on the curve <c>. <l> defines the change of parameter between <c> and <cguide>. so, the planes are defined as described below : t is the current parameter on the guide line. pguide = c(l(t)); nguide = cguide'(t)/||cguide'(t)||.
 
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param CGuide:
-	:type CGuide: Adaptor3d_HCurve
-	:param L:
-	:type L: Law_Function
-	:rtype: None
+Parameters
+----------
+S: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+CGuide: Adaptor3d_HCurve
+L: Law_Function
+
+Returns
+-------
+None
 ") BlendFunc_CSCircular;
 		 BlendFunc_CSCircular(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HCurve> & CGuide, const opencascade::handle<Law_Function> & L);
 
@@ -201,21 +215,29 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param InfBound:
-	:type InfBound: math_Vector
-	:param SupBound:
-	:type SupBound: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InfBound: math_Vector
+SupBound: math_Vector
+
+Returns
+-------
+None
 ") GetBounds;
 		void GetBounds(math_Vector & InfBound, math_Vector & SupBound);
 
@@ -223,27 +245,32 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") GetMinimalWeight;
 		%feature("autodoc", "Compute the minimal value of weight for each poles of all sections.
 
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+Parameters
+----------
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") GetMinimalWeight;
 		void GetMinimalWeight(TColStd_Array1OfReal & Weigths);
 
 		/****************** GetSection ******************/
 		%feature("compactdefaultargs") GetSection;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param W:
-	:type W: float
-	:param tabP:
-	:type tabP: TColgp_Array1OfPnt
-	:param tabV:
-	:type tabV: TColgp_Array1OfVec
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+U: float
+V: float
+W: float
+tabP: TColgp_Array1OfPnt
+tabV: TColgp_Array1OfVec
+
+Returns
+-------
+bool
 ") GetSection;
 		Standard_Boolean GetSection(const Standard_Real Param, const Standard_Real U, const Standard_Real V, const Standard_Real W, TColgp_Array1OfPnt & tabP, TColgp_Array1OfVec & tabV);
 
@@ -251,31 +278,41 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") GetSectionSize;
 		%feature("autodoc", "Returns the length of the maximum section.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetSectionSize;
 		Standard_Real GetSectionSize();
 
 		/****************** GetShape ******************/
 		%feature("compactdefaultargs") GetShape;
-		%feature("autodoc", "	:param NbPoles:
-	:type NbPoles: int
-	:param NbKnots:
-	:type NbKnots: int
-	:param Degree:
-	:type Degree: int
-	:param NbPoles2d:
-	:type NbPoles2d: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbPoles: int
+NbKnots: int
+Degree: int
+NbPoles2d: int
+
+Returns
+-------
+None
 ") GetShape;
 		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param Tolerance:
-	:type Tolerance: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tolerance: math_Vector
+Tol: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol);
 
@@ -283,17 +320,17 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") GetTolerance;
 		%feature("autodoc", "Returns the tolerance to reach in approximation to respecte boundtol error at the boundary angletol tangent error at the boundary surftol error inside the surface.
 
-	:param BoundTol:
-	:type BoundTol: float
-	:param SurfTol:
-	:type SurfTol: float
-	:param AngleTol:
-	:type AngleTol: float
-	:param Tol3d:
-	:type Tol3d: math_Vector
-	:param Tol1D:
-	:type Tol1D: math_Vector
-	:rtype: None
+Parameters
+----------
+BoundTol: float
+SurfTol: float
+AngleTol: float
+Tol3d: math_Vector
+Tol1D: math_Vector
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D);
 
@@ -301,11 +338,14 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Stores in <t> the parameters bounding the intervals of continuity <s>. //! the array must provide enough room to accomodate for the parameters. i.e. t.length() > nbintervals() raises outofrange from standard.
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
@@ -313,39 +353,62 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") IsRational;
 		%feature("autodoc", "Returns if the section is rationnal.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRational;
 		Standard_Boolean IsRational();
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
 		/****************** IsTangencyPoint ******************/
 		%feature("compactdefaultargs") IsTangencyPoint;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsTangencyPoint;
 		Standard_Boolean IsTangencyPoint();
 
 		/****************** Knots ******************/
 		%feature("compactdefaultargs") Knots;
-		%feature("autodoc", "	:param TKnots:
-	:type TKnots: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TKnots: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Knots;
 		void Knots(TColStd_Array1OfReal & TKnots);
 
 		/****************** Mults ******************/
 		%feature("compactdefaultargs") Mults;
-		%feature("autodoc", "	:param TMults:
-	:type TMults: TColStd_Array1OfInteger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TMults: TColStd_Array1OfInteger
+
+Returns
+-------
+None
 ") Mults;
 		void Mults(TColStd_Array1OfInteger & TMults);
 
@@ -353,7 +416,9 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function (3).
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
@@ -361,15 +426,23 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals for continuity <s>. may be one if continuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
 		/****************** NbVariables ******************/
 		%feature("compactdefaultargs") NbVariables;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbVariables;
 		virtual Standard_Integer NbVariables();
 
@@ -377,7 +450,9 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") ParameterOnC;
 		%feature("autodoc", "Returns parameter of the point on the curve.
 
-	:rtype: float
+Returns
+-------
+float
 ") ParameterOnC;
 		Standard_Real ParameterOnC();
 
@@ -385,53 +460,66 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") Pnt2d;
 		%feature("autodoc", "Returns u,v coordinates of the point on the surface.
 
-	:rtype: gp_Pnt2d
+Returns
+-------
+gp_Pnt2d
 ") Pnt2d;
 		const gp_Pnt2d Pnt2d();
 
 		/****************** PointOnC ******************/
 		%feature("compactdefaultargs") PointOnC;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnC;
 		const gp_Pnt PointOnC();
 
 		/****************** PointOnS ******************/
 		%feature("compactdefaultargs") PointOnS;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS;
 		const gp_Pnt PointOnS();
 
 		/****************** Resolution ******************/
 		%feature("compactdefaultargs") Resolution;
-		%feature("autodoc", "	:param IC2d:
-	:type IC2d: int
-	:param Tol:
-	:type Tol: float
-	:param TolU:
-	:type TolU: float
-	:param TolV:
-	:type TolV: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC2d: int
+Tol: float
+TolU: float
+TolV: float
+
+Returns
+-------
+None
 ") Resolution;
 		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue);
 
 		/****************** Section ******************/
 		%feature("compactdefaultargs") Section;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param W:
-	:type W: float
-	:param Pdeb:
-	:type Pdeb: float
-	:param Pfin:
-	:type Pfin: float
-	:param C:
-	:type C: gp_Circ
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+U: float
+V: float
+W: float
+Pdeb: float
+Pfin: float
+C: gp_Circ
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, const Standard_Real W, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
 
@@ -439,27 +527,22 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section the method returns standard_true if the derivatives are computed, otherwise it returns standard_false.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param D2Poles:
-	:type D2Poles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param D2Poles2d:
-	:type D2Poles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:param D2Weigths:
-	:type D2Weigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+D2Poles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+D2Poles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+D2Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		virtual Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 
@@ -467,63 +550,80 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 
 		/****************** Section ******************/
 		%feature("compactdefaultargs") Section;
-		%feature("autodoc", "	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+Poles2d: TColgp_Array1OfPnt2d
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Param);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+First: float
+Last: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real First, const Standard_Real Last);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Radius:
-	:type Radius: float
-	:param Choix:
-	:type Choix: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Radius: float
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Radius, const Standard_Integer Choix);
 
@@ -531,9 +631,13 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the type of section generation for the approximations.
 
-	:param TypeSection:
-	:type TypeSection: BlendFunc_SectionShape
-	:rtype: None
+Parameters
+----------
+TypeSection: BlendFunc_SectionShape
+
+Returns
+-------
+None
 ") Set;
 		void Set(const BlendFunc_SectionShape TypeSection);
 
@@ -541,33 +645,46 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") Tangent;
 		%feature("autodoc", "Returns the tangent vector at the section, at the beginning and the end of the section, and returns the normal (of the surface) at these points.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param TgS:
-	:type TgS: gp_Vec
-	:param NormS:
-	:type NormS: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+V: float
+TgS: gp_Vec
+NormS: gp_Vec
+
+Returns
+-------
+None
 ") Tangent;
 		void Tangent(const Standard_Real U, const Standard_Real V, gp_Vec & TgS, gp_Vec & NormS);
 
 		/****************** Tangent2d ******************/
 		%feature("compactdefaultargs") Tangent2d;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2d;
 		const gp_Vec2d Tangent2d();
 
 		/****************** TangentOnC ******************/
 		%feature("compactdefaultargs") TangentOnC;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnC;
 		const gp_Vec TangentOnC();
 
 		/****************** TangentOnS ******************/
 		%feature("compactdefaultargs") TangentOnS;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS;
 		const gp_Vec TangentOnS();
 
@@ -575,11 +692,14 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -587,13 +707,15 @@ class BlendFunc_CSCircular : public Blend_CSFunction {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -613,13 +735,17 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 	public:
 		/****************** BlendFunc_CSConstRad ******************/
 		%feature("compactdefaultargs") BlendFunc_CSConstRad;
-		%feature("autodoc", "	:param S:
-	:type S: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param CGuide:
-	:type CGuide: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+CGuide: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_CSConstRad;
 		 BlendFunc_CSConstRad(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HCurve> & CGuide);
 
@@ -627,21 +753,29 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param InfBound:
-	:type InfBound: math_Vector
-	:param SupBound:
-	:type SupBound: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InfBound: math_Vector
+SupBound: math_Vector
+
+Returns
+-------
+None
 ") GetBounds;
 		void GetBounds(math_Vector & InfBound, math_Vector & SupBound);
 
@@ -649,27 +783,32 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") GetMinimalWeight;
 		%feature("autodoc", "Compute the minimal value of weight for each poles of all sections.
 
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+Parameters
+----------
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") GetMinimalWeight;
 		void GetMinimalWeight(TColStd_Array1OfReal & Weigths);
 
 		/****************** GetSection ******************/
 		%feature("compactdefaultargs") GetSection;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param W:
-	:type W: float
-	:param tabP:
-	:type tabP: TColgp_Array1OfPnt
-	:param tabV:
-	:type tabV: TColgp_Array1OfVec
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+U: float
+V: float
+W: float
+tabP: TColgp_Array1OfPnt
+tabV: TColgp_Array1OfVec
+
+Returns
+-------
+bool
 ") GetSection;
 		Standard_Boolean GetSection(const Standard_Real Param, const Standard_Real U, const Standard_Real V, const Standard_Real W, TColgp_Array1OfPnt & tabP, TColgp_Array1OfVec & tabV);
 
@@ -677,31 +816,41 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") GetSectionSize;
 		%feature("autodoc", "Returns the length of the maximum section.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetSectionSize;
 		Standard_Real GetSectionSize();
 
 		/****************** GetShape ******************/
 		%feature("compactdefaultargs") GetShape;
-		%feature("autodoc", "	:param NbPoles:
-	:type NbPoles: int
-	:param NbKnots:
-	:type NbKnots: int
-	:param Degree:
-	:type Degree: int
-	:param NbPoles2d:
-	:type NbPoles2d: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbPoles: int
+NbKnots: int
+Degree: int
+NbPoles2d: int
+
+Returns
+-------
+None
 ") GetShape;
 		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param Tolerance:
-	:type Tolerance: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tolerance: math_Vector
+Tol: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol);
 
@@ -709,17 +858,17 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") GetTolerance;
 		%feature("autodoc", "Returns the tolerance to reach in approximation to respecte boundtol error at the boundary angletol tangent error at the boundary surftol error inside the surface.
 
-	:param BoundTol:
-	:type BoundTol: float
-	:param SurfTol:
-	:type SurfTol: float
-	:param AngleTol:
-	:type AngleTol: float
-	:param Tol3d:
-	:type Tol3d: math_Vector
-	:param Tol1D:
-	:type Tol1D: math_Vector
-	:rtype: None
+Parameters
+----------
+BoundTol: float
+SurfTol: float
+AngleTol: float
+Tol3d: math_Vector
+Tol1D: math_Vector
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D);
 
@@ -727,11 +876,14 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Stores in <t> the parameters bounding the intervals of continuity <s>. the array must provide enough room to accomodate for the parameters. i.e. t.length() > nbintervals() raises outofrange from standard.
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
@@ -739,39 +891,62 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") IsRational;
 		%feature("autodoc", "Returns if the section is rationnal.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRational;
 		Standard_Boolean IsRational();
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
 		/****************** IsTangencyPoint ******************/
 		%feature("compactdefaultargs") IsTangencyPoint;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsTangencyPoint;
 		Standard_Boolean IsTangencyPoint();
 
 		/****************** Knots ******************/
 		%feature("compactdefaultargs") Knots;
-		%feature("autodoc", "	:param TKnots:
-	:type TKnots: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TKnots: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Knots;
 		void Knots(TColStd_Array1OfReal & TKnots);
 
 		/****************** Mults ******************/
 		%feature("compactdefaultargs") Mults;
-		%feature("autodoc", "	:param TMults:
-	:type TMults: TColStd_Array1OfInteger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TMults: TColStd_Array1OfInteger
+
+Returns
+-------
+None
 ") Mults;
 		void Mults(TColStd_Array1OfInteger & TMults);
 
@@ -779,7 +954,9 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function (3).
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
@@ -787,9 +964,13 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals for continuity <s>. may be one if continuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
@@ -797,7 +978,9 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") ParameterOnC;
 		%feature("autodoc", "Returns parameter of the point on the curve.
 
-	:rtype: float
+Returns
+-------
+float
 ") ParameterOnC;
 		Standard_Real ParameterOnC();
 
@@ -805,53 +988,66 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") Pnt2d;
 		%feature("autodoc", "Returns u,v coordinates of the point on the surface.
 
-	:rtype: gp_Pnt2d
+Returns
+-------
+gp_Pnt2d
 ") Pnt2d;
 		const gp_Pnt2d Pnt2d();
 
 		/****************** PointOnC ******************/
 		%feature("compactdefaultargs") PointOnC;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnC;
 		const gp_Pnt PointOnC();
 
 		/****************** PointOnS ******************/
 		%feature("compactdefaultargs") PointOnS;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS;
 		const gp_Pnt PointOnS();
 
 		/****************** Resolution ******************/
 		%feature("compactdefaultargs") Resolution;
-		%feature("autodoc", "	:param IC2d:
-	:type IC2d: int
-	:param Tol:
-	:type Tol: float
-	:param TolU:
-	:type TolU: float
-	:param TolV:
-	:type TolV: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC2d: int
+Tol: float
+TolU: float
+TolV: float
+
+Returns
+-------
+None
 ") Resolution;
 		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue);
 
 		/****************** Section ******************/
 		%feature("compactdefaultargs") Section;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param W:
-	:type W: float
-	:param Pdeb:
-	:type Pdeb: float
-	:param Pfin:
-	:type Pfin: float
-	:param C:
-	:type C: gp_Circ
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+U: float
+V: float
+W: float
+Pdeb: float
+Pfin: float
+C: gp_Circ
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, const Standard_Real W, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
 
@@ -859,27 +1055,22 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section the method returns standard_true if the derivatives are computed, otherwise it returns standard_false.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param D2Poles:
-	:type D2Poles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param D2Poles2d:
-	:type D2Poles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:param D2Weigths:
-	:type D2Weigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+D2Poles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+D2Poles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+D2Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		virtual Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 
@@ -887,63 +1078,80 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 
 		/****************** Section ******************/
 		%feature("compactdefaultargs") Section;
-		%feature("autodoc", "	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+Poles2d: TColgp_Array1OfPnt2d
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Param);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+First: float
+Last: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real First, const Standard_Real Last);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Radius:
-	:type Radius: float
-	:param Choix:
-	:type Choix: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Radius: float
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Radius, const Standard_Integer Choix);
 
@@ -951,9 +1159,13 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the type of section generation for the approximations.
 
-	:param TypeSection:
-	:type TypeSection: BlendFunc_SectionShape
-	:rtype: None
+Parameters
+----------
+TypeSection: BlendFunc_SectionShape
+
+Returns
+-------
+None
 ") Set;
 		void Set(const BlendFunc_SectionShape TypeSection);
 
@@ -961,33 +1173,46 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") Tangent;
 		%feature("autodoc", "Returns the tangent vector at the section, at the beginning and the end of the section, and returns the normal (of the surface) at these points.
 
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param TgS:
-	:type TgS: gp_Vec
-	:param NormS:
-	:type NormS: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+V: float
+TgS: gp_Vec
+NormS: gp_Vec
+
+Returns
+-------
+None
 ") Tangent;
 		void Tangent(const Standard_Real U, const Standard_Real V, gp_Vec & TgS, gp_Vec & NormS);
 
 		/****************** Tangent2d ******************/
 		%feature("compactdefaultargs") Tangent2d;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2d;
 		const gp_Vec2d Tangent2d();
 
 		/****************** TangentOnC ******************/
 		%feature("compactdefaultargs") TangentOnC;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnC;
 		const gp_Vec TangentOnC();
 
 		/****************** TangentOnS ******************/
 		%feature("compactdefaultargs") TangentOnS;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS;
 		const gp_Vec TangentOnS();
 
@@ -995,11 +1220,14 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -1007,13 +1235,15 @@ class BlendFunc_CSConstRad : public Blend_CSFunction {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -1033,13 +1263,17 @@ class BlendFunc_ChAsym : public Blend_Function {
 	public:
 		/****************** BlendFunc_ChAsym ******************/
 		%feature("compactdefaultargs") BlendFunc_ChAsym;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_ChAsym;
 		 BlendFunc_ChAsym(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -1047,13 +1281,15 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") ComputeValues;
 		%feature("autodoc", "Computes the values <f> of the derivatives for the variable <x> between degf and degl. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param DegF:
-	:type DegF: int
-	:param DegL:
-	:type DegL: int
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+DegF: int
+DegL: int
+
+Returns
+-------
+bool
 ") ComputeValues;
 		Standard_Boolean ComputeValues(const math_Vector & X, const Standard_Integer DegF, const Standard_Integer DegL);
 
@@ -1061,21 +1297,29 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param InfBound:
-	:type InfBound: math_Vector
-	:param SupBound:
-	:type SupBound: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InfBound: math_Vector
+SupBound: math_Vector
+
+Returns
+-------
+None
 ") GetBounds;
 		void GetBounds(math_Vector & InfBound, math_Vector & SupBound);
 
@@ -1083,7 +1327,9 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") GetMinimalDistance;
 		%feature("autodoc", "Returns the minimal distance beetween two extremitys of calculed sections.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetMinimalDistance;
 		Standard_Real GetMinimalDistance();
 
@@ -1091,9 +1337,13 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") GetMinimalWeight;
 		%feature("autodoc", "Compute the minimal value of weight for each poles of all sections.
 
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+Parameters
+----------
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") GetMinimalWeight;
 		void GetMinimalWeight(TColStd_Array1OfReal & Weigths);
 
@@ -1101,31 +1351,41 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") GetSectionSize;
 		%feature("autodoc", "Returns the length of the maximum section.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetSectionSize;
 		Standard_Real GetSectionSize();
 
 		/****************** GetShape ******************/
 		%feature("compactdefaultargs") GetShape;
-		%feature("autodoc", "	:param NbPoles:
-	:type NbPoles: int
-	:param NbKnots:
-	:type NbKnots: int
-	:param Degree:
-	:type Degree: int
-	:param NbPoles2d:
-	:type NbPoles2d: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbPoles: int
+NbKnots: int
+Degree: int
+NbPoles2d: int
+
+Returns
+-------
+None
 ") GetShape;
 		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param Tolerance:
-	:type Tolerance: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tolerance: math_Vector
+Tol: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol);
 
@@ -1133,17 +1393,17 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") GetTolerance;
 		%feature("autodoc", "Returns the tolerance to reach in approximation to respecte boundtol error at the boundary angletol tangent error at the boundary surftol error inside the surface.
 
-	:param BoundTol:
-	:type BoundTol: float
-	:param SurfTol:
-	:type SurfTol: float
-	:param AngleTol:
-	:type AngleTol: float
-	:param Tol3d:
-	:type Tol3d: math_Vector
-	:param Tol1D:
-	:type Tol1D: math_Vector
-	:rtype: None
+Parameters
+----------
+BoundTol: float
+SurfTol: float
+AngleTol: float
+Tol3d: math_Vector
+Tol1D: math_Vector
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D);
 
@@ -1151,11 +1411,14 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Stores in <t> the parameters bounding the intervals of continuity <s>. //! the array must provide enough room to accomodate for the parameters. i.e. t.length() > nbintervals().
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
@@ -1163,39 +1426,62 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") IsRational;
 		%feature("autodoc", "Returns if the section is rationnal.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRational;
 		Standard_Boolean IsRational();
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
 		/****************** IsTangencyPoint ******************/
 		%feature("compactdefaultargs") IsTangencyPoint;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsTangencyPoint;
 		Standard_Boolean IsTangencyPoint();
 
 		/****************** Knots ******************/
 		%feature("compactdefaultargs") Knots;
-		%feature("autodoc", "	:param TKnots:
-	:type TKnots: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TKnots: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Knots;
 		void Knots(TColStd_Array1OfReal & TKnots);
 
 		/****************** Mults ******************/
 		%feature("compactdefaultargs") Mults;
-		%feature("autodoc", "	:param TMults:
-	:type TMults: TColStd_Array1OfInteger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TMults: TColStd_Array1OfInteger
+
+Returns
+-------
+None
 ") Mults;
 		void Mults(TColStd_Array1OfInteger & TMults);
 
@@ -1203,7 +1489,9 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
@@ -1211,35 +1499,50 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals for continuity <s>. may be one if continuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
 		/****************** PointOnS1 ******************/
 		%feature("compactdefaultargs") PointOnS1;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS1;
 		const gp_Pnt PointOnS1();
 
 		/****************** PointOnS2 ******************/
 		%feature("compactdefaultargs") PointOnS2;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS2;
 		const gp_Pnt PointOnS2();
 
 		/****************** Resolution ******************/
 		%feature("compactdefaultargs") Resolution;
-		%feature("autodoc", "	:param IC2d:
-	:type IC2d: int
-	:param Tol:
-	:type Tol: float
-	:param TolU:
-	:type TolU: float
-	:param TolV:
-	:type TolV: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC2d: int
+Tol: float
+TolU: float
+TolV: float
+
+Returns
+-------
+None
 ") Resolution;
 		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1247,37 +1550,37 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Utile pour une visu rapide et approximative de la surface.
 
-	:param Param:
-	:type Param: float
-	:param U1:
-	:type U1: float
-	:param V1:
-	:type V1: float
-	:param U2:
-	:type U2: float
-	:param V2:
-	:type V2: float
-	:param Pdeb:
-	:type Pdeb: float
-	:param Pfin:
-	:type Pfin: float
-	:param C:
-	:type C: gp_Lin
-	:rtype: None
+Parameters
+----------
+Param: float
+U1: float
+V1: float
+U2: float
+V2: float
+Pdeb: float
+Pfin: float
+C: gp_Lin
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, Standard_Real &OutValue, Standard_Real &OutValue, gp_Lin & C);
 
 		/****************** Section ******************/
 		%feature("compactdefaultargs") Section;
-		%feature("autodoc", "	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+Poles2d: TColgp_Array1OfPnt2d
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 
@@ -1285,21 +1588,19 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		virtual Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 
@@ -1307,45 +1608,51 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param D2Poles:
-	:type D2Poles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param D2Poles2d:
-	:type D2Poles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:param D2Weigths:
-	:type D2Weigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+D2Poles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+D2Poles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+D2Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		virtual Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Param);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+First: float
+Last: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real First, const Standard_Real Last);
 
@@ -1353,13 +1660,15 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the distances and the angle.
 
-	:param Dist1:
-	:type Dist1: float
-	:param Angle:
-	:type Angle: float
-	:param Choix:
-	:type Choix: int
-	:rtype: None
+Parameters
+----------
+Dist1: float
+Angle: float
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Dist1, const Standard_Real Angle, const Standard_Integer Choix);
 
@@ -1367,59 +1676,80 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") Tangent;
 		%feature("autodoc", "Returns the tangent vector at the section, at the beginning and the end of the section, and returns the normal (of the surfaces) at these points.
 
-	:param U1:
-	:type U1: float
-	:param V1:
-	:type V1: float
-	:param U2:
-	:type U2: float
-	:param V2:
-	:type V2: float
-	:param TgFirst:
-	:type TgFirst: gp_Vec
-	:param TgLast:
-	:type TgLast: gp_Vec
-	:param NormFirst:
-	:type NormFirst: gp_Vec
-	:param NormLast:
-	:type NormLast: gp_Vec
-	:rtype: None
+Parameters
+----------
+U1: float
+V1: float
+U2: float
+V2: float
+TgFirst: gp_Vec
+TgLast: gp_Vec
+NormFirst: gp_Vec
+NormLast: gp_Vec
+
+Returns
+-------
+None
 ") Tangent;
 		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec & TgFirst, gp_Vec & TgLast, gp_Vec & NormFirst, gp_Vec & NormLast);
 
 		/****************** Tangent2dOnS1 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS1;
 		const gp_Vec2d Tangent2dOnS1();
 
 		/****************** Tangent2dOnS2 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS2;
 		const gp_Vec2d Tangent2dOnS2();
 
 		/****************** TangentOnS1 ******************/
 		%feature("compactdefaultargs") TangentOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS1;
 		const gp_Vec TangentOnS1();
 
 		/****************** TangentOnS2 ******************/
 		%feature("compactdefaultargs") TangentOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS2;
 		const gp_Vec TangentOnS2();
 
 		/****************** TwistOnS1 ******************/
 		%feature("compactdefaultargs") TwistOnS1;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") TwistOnS1;
 		virtual Standard_Boolean TwistOnS1();
 
 		/****************** TwistOnS2 ******************/
 		%feature("compactdefaultargs") TwistOnS2;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") TwistOnS2;
 		virtual Standard_Boolean TwistOnS2();
 
@@ -1427,11 +1757,14 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -1439,13 +1772,15 @@ class BlendFunc_ChAsym : public Blend_Function {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -1465,13 +1800,17 @@ class BlendFunc_ChAsymInv : public Blend_FuncInv {
 	public:
 		/****************** BlendFunc_ChAsymInv ******************/
 		%feature("compactdefaultargs") BlendFunc_ChAsymInv;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_ChAsymInv;
 		 BlendFunc_ChAsymInv(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -1479,13 +1818,15 @@ class BlendFunc_ChAsymInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") ComputeValues;
 		%feature("autodoc", "Computes the values <f> of the derivatives for the variable <x> between degf and degl. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param DegF:
-	:type DegF: int
-	:param DegL:
-	:type DegL: int
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+DegF: int
+DegL: int
+
+Returns
+-------
+bool
 ") ComputeValues;
 		Standard_Boolean ComputeValues(const math_Vector & X, const Standard_Integer DegF, const Standard_Integer DegL);
 
@@ -1493,41 +1834,59 @@ class BlendFunc_ChAsymInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param InfBound:
-	:type InfBound: math_Vector
-	:param SupBound:
-	:type SupBound: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InfBound: math_Vector
+SupBound: math_Vector
+
+Returns
+-------
+None
 ") GetBounds;
 		void GetBounds(math_Vector & InfBound, math_Vector & SupBound);
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param Tolerance:
-	:type Tolerance: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tolerance: math_Vector
+Tol: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol);
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
@@ -1535,29 +1894,40 @@ class BlendFunc_ChAsymInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param OnFirst:
-	:type OnFirst: bool
-	:param COnSurf:
-	:type COnSurf: Adaptor2d_HCurve2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+OnFirst: bool
+COnSurf: Adaptor2d_HCurve2d
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Boolean OnFirst, const opencascade::handle<Adaptor2d_HCurve2d> & COnSurf);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Dist1:
-	:type Dist1: float
-	:param Angle:
-	:type Angle: float
-	:param Choix:
-	:type Choix: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Dist1: float
+Angle: float
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Dist1, const Standard_Real Angle, const Standard_Integer Choix);
 
@@ -1565,11 +1935,14 @@ class BlendFunc_ChAsymInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -1577,13 +1950,15 @@ class BlendFunc_ChAsymInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -1603,21 +1978,31 @@ class BlendFunc_ConstRad : public Blend_Function {
 	public:
 		/****************** AxeRot ******************/
 		%feature("compactdefaultargs") AxeRot;
-		%feature("autodoc", "	:param Prm:
-	:type Prm: float
-	:rtype: gp_Ax1
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Prm: float
+
+Returns
+-------
+gp_Ax1
 ") AxeRot;
 		gp_Ax1 AxeRot(const Standard_Real Prm);
 
 		/****************** BlendFunc_ConstRad ******************/
 		%feature("compactdefaultargs") BlendFunc_ConstRad;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_ConstRad;
 		 BlendFunc_ConstRad(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -1625,21 +2010,29 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param InfBound:
-	:type InfBound: math_Vector
-	:param SupBound:
-	:type SupBound: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InfBound: math_Vector
+SupBound: math_Vector
+
+Returns
+-------
+None
 ") GetBounds;
 		void GetBounds(math_Vector & InfBound, math_Vector & SupBound);
 
@@ -1647,7 +2040,9 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") GetMinimalDistance;
 		%feature("autodoc", "Returns the minimal distance beetween two extremitys of calculed sections.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetMinimalDistance;
 		Standard_Real GetMinimalDistance();
 
@@ -1655,9 +2050,13 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") GetMinimalWeight;
 		%feature("autodoc", "Compute the minimal value of weight for each poles of all sections.
 
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+Parameters
+----------
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") GetMinimalWeight;
 		void GetMinimalWeight(TColStd_Array1OfReal & Weigths);
 
@@ -1665,31 +2064,41 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") GetSectionSize;
 		%feature("autodoc", "Returns the length of the maximum section.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetSectionSize;
 		Standard_Real GetSectionSize();
 
 		/****************** GetShape ******************/
 		%feature("compactdefaultargs") GetShape;
-		%feature("autodoc", "	:param NbPoles:
-	:type NbPoles: int
-	:param NbKnots:
-	:type NbKnots: int
-	:param Degree:
-	:type Degree: int
-	:param NbPoles2d:
-	:type NbPoles2d: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbPoles: int
+NbKnots: int
+Degree: int
+NbPoles2d: int
+
+Returns
+-------
+None
 ") GetShape;
 		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param Tolerance:
-	:type Tolerance: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tolerance: math_Vector
+Tol: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol);
 
@@ -1697,17 +2106,17 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") GetTolerance;
 		%feature("autodoc", "Returns the tolerance to reach in approximation to respecte boundtol error at the boundary angletol tangent error at the boundary surftol error inside the surface.
 
-	:param BoundTol:
-	:type BoundTol: float
-	:param SurfTol:
-	:type SurfTol: float
-	:param AngleTol:
-	:type AngleTol: float
-	:param Tol3d:
-	:type Tol3d: math_Vector
-	:param Tol1D:
-	:type Tol1D: math_Vector
-	:rtype: None
+Parameters
+----------
+BoundTol: float
+SurfTol: float
+AngleTol: float
+Tol3d: math_Vector
+Tol1D: math_Vector
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D);
 
@@ -1715,11 +2124,14 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Stores in <t> the parameters bounding the intervals of continuity <s>. //! the array must provide enough room to accomodate for the parameters. i.e. t.length() > nbintervals().
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
@@ -1727,39 +2139,62 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") IsRational;
 		%feature("autodoc", "Returns if the section is rationnal.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRational;
 		Standard_Boolean IsRational();
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
 		/****************** IsTangencyPoint ******************/
 		%feature("compactdefaultargs") IsTangencyPoint;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsTangencyPoint;
 		Standard_Boolean IsTangencyPoint();
 
 		/****************** Knots ******************/
 		%feature("compactdefaultargs") Knots;
-		%feature("autodoc", "	:param TKnots:
-	:type TKnots: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TKnots: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Knots;
 		void Knots(TColStd_Array1OfReal & TKnots);
 
 		/****************** Mults ******************/
 		%feature("compactdefaultargs") Mults;
-		%feature("autodoc", "	:param TMults:
-	:type TMults: TColStd_Array1OfInteger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TMults: TColStd_Array1OfInteger
+
+Returns
+-------
+None
 ") Mults;
 		void Mults(TColStd_Array1OfInteger & TMults);
 
@@ -1767,7 +2202,9 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
@@ -1775,35 +2212,50 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals for continuity <s>. may be one if continuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
 		/****************** PointOnS1 ******************/
 		%feature("compactdefaultargs") PointOnS1;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS1;
 		const gp_Pnt PointOnS1();
 
 		/****************** PointOnS2 ******************/
 		%feature("compactdefaultargs") PointOnS2;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS2;
 		const gp_Pnt PointOnS2();
 
 		/****************** Resolution ******************/
 		%feature("compactdefaultargs") Resolution;
-		%feature("autodoc", "	:param IC2d:
-	:type IC2d: int
-	:param Tol:
-	:type Tol: float
-	:param TolU:
-	:type TolU: float
-	:param TolV:
-	:type TolV: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC2d: int
+Tol: float
+TolU: float
+TolV: float
+
+Returns
+-------
+None
 ") Resolution;
 		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1811,23 +2263,20 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Utile pour une visu rapide et approximative de la surface.
 
-	:param Param:
-	:type Param: float
-	:param U1:
-	:type U1: float
-	:param V1:
-	:type V1: float
-	:param U2:
-	:type U2: float
-	:param V2:
-	:type V2: float
-	:param Pdeb:
-	:type Pdeb: float
-	:param Pfin:
-	:type Pfin: float
-	:param C:
-	:type C: gp_Circ
-	:rtype: None
+Parameters
+----------
+Param: float
+U1: float
+V1: float
+U2: float
+V2: float
+Pdeb: float
+Pfin: float
+C: gp_Circ
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
 
@@ -1835,27 +2284,22 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param D2Poles:
-	:type D2Poles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param D2Poles2d:
-	:type D2Poles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:param D2Weigths:
-	:type D2Weigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+D2Poles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+D2Poles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+D2Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		virtual Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 
@@ -1863,53 +2307,65 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		virtual Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 
 		/****************** Section ******************/
 		%feature("compactdefaultargs") Section;
-		%feature("autodoc", "	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+Poles2d: TColgp_Array1OfPnt2d
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Param);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+First: float
+Last: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real First, const Standard_Real Last);
 
@@ -1917,11 +2373,14 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Inits the value of radius, and the 'quadrant'.
 
-	:param Radius:
-	:type Radius: float
-	:param Choix:
-	:type Choix: int
-	:rtype: None
+Parameters
+----------
+Radius: float
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Radius, const Standard_Integer Choix);
 
@@ -1929,9 +2388,13 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the type of section generation for the approximations.
 
-	:param TypeSection:
-	:type TypeSection: BlendFunc_SectionShape
-	:rtype: None
+Parameters
+----------
+TypeSection: BlendFunc_SectionShape
+
+Returns
+-------
+None
 ") Set;
 		void Set(const BlendFunc_SectionShape TypeSection);
 
@@ -1939,59 +2402,80 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") Tangent;
 		%feature("autodoc", "Returns the tangent vector at the section, at the beginning and the end of the section, and returns the normal (of the surfaces) at these points.
 
-	:param U1:
-	:type U1: float
-	:param V1:
-	:type V1: float
-	:param U2:
-	:type U2: float
-	:param V2:
-	:type V2: float
-	:param TgFirst:
-	:type TgFirst: gp_Vec
-	:param TgLast:
-	:type TgLast: gp_Vec
-	:param NormFirst:
-	:type NormFirst: gp_Vec
-	:param NormLast:
-	:type NormLast: gp_Vec
-	:rtype: None
+Parameters
+----------
+U1: float
+V1: float
+U2: float
+V2: float
+TgFirst: gp_Vec
+TgLast: gp_Vec
+NormFirst: gp_Vec
+NormLast: gp_Vec
+
+Returns
+-------
+None
 ") Tangent;
 		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec & TgFirst, gp_Vec & TgLast, gp_Vec & NormFirst, gp_Vec & NormLast);
 
 		/****************** Tangent2dOnS1 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS1;
 		const gp_Vec2d Tangent2dOnS1();
 
 		/****************** Tangent2dOnS2 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS2;
 		const gp_Vec2d Tangent2dOnS2();
 
 		/****************** TangentOnS1 ******************/
 		%feature("compactdefaultargs") TangentOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS1;
 		const gp_Vec TangentOnS1();
 
 		/****************** TangentOnS2 ******************/
 		%feature("compactdefaultargs") TangentOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS2;
 		const gp_Vec TangentOnS2();
 
 		/****************** TwistOnS1 ******************/
 		%feature("compactdefaultargs") TwistOnS1;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") TwistOnS1;
 		virtual Standard_Boolean TwistOnS1();
 
 		/****************** TwistOnS2 ******************/
 		%feature("compactdefaultargs") TwistOnS2;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") TwistOnS2;
 		virtual Standard_Boolean TwistOnS2();
 
@@ -1999,11 +2483,14 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -2011,13 +2498,15 @@ class BlendFunc_ConstRad : public Blend_Function {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -2037,13 +2526,17 @@ class BlendFunc_ConstRadInv : public Blend_FuncInv {
 	public:
 		/****************** BlendFunc_ConstRadInv ******************/
 		%feature("compactdefaultargs") BlendFunc_ConstRadInv;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_ConstRadInv;
 		 BlendFunc_ConstRadInv(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -2051,41 +2544,59 @@ class BlendFunc_ConstRadInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param InfBound:
-	:type InfBound: math_Vector
-	:param SupBound:
-	:type SupBound: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InfBound: math_Vector
+SupBound: math_Vector
+
+Returns
+-------
+None
 ") GetBounds;
 		void GetBounds(math_Vector & InfBound, math_Vector & SupBound);
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param Tolerance:
-	:type Tolerance: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tolerance: math_Vector
+Tol: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol);
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
@@ -2093,27 +2604,39 @@ class BlendFunc_ConstRadInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param OnFirst:
-	:type OnFirst: bool
-	:param COnSurf:
-	:type COnSurf: Adaptor2d_HCurve2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+OnFirst: bool
+COnSurf: Adaptor2d_HCurve2d
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Boolean OnFirst, const opencascade::handle<Adaptor2d_HCurve2d> & COnSurf);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param R:
-	:type R: float
-	:param Choix:
-	:type Choix: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+R: float
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real R, const Standard_Integer Choix);
 
@@ -2121,11 +2644,14 @@ class BlendFunc_ConstRadInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -2133,13 +2659,15 @@ class BlendFunc_ConstRadInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -2159,11 +2687,16 @@ class BlendFunc_Corde {
 	public:
 		/****************** BlendFunc_Corde ******************/
 		%feature("compactdefaultargs") BlendFunc_Corde;
-		%feature("autodoc", "	:param S:
-	:type S: Adaptor3d_HSurface
-	:param CGuide:
-	:type CGuide: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: Adaptor3d_HSurface
+CGuide: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_Corde;
 		 BlendFunc_Corde(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & CGuide);
 
@@ -2171,11 +2704,14 @@ class BlendFunc_Corde {
 		%feature("compactdefaultargs") DerFguide;
 		%feature("autodoc", "Derived of the function compared to the parameter of the guideline.
 
-	:param Sol:
-	:type Sol: math_Vector
-	:param DerF:
-	:type DerF: gp_Vec2d
-	:rtype: None
+Parameters
+----------
+Sol: math_Vector
+DerF: gp_Vec2d
+
+Returns
+-------
+None
 ") DerFguide;
 		void DerFguide(const math_Vector & Sol, gp_Vec2d & DerF);
 
@@ -2183,11 +2719,14 @@ class BlendFunc_Corde {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
@@ -2195,11 +2734,14 @@ class BlendFunc_Corde {
 		%feature("compactdefaultargs") IsSolution;
 		%feature("autodoc", "Returns false if sol is not solution else returns true and updates the fields tgs and tg2d.
 
-	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
@@ -2207,7 +2749,9 @@ class BlendFunc_Corde {
 		%feature("compactdefaultargs") IsTangencyPoint;
 		%feature("autodoc", "Returns true when it is not possible to compute the tangent vectors at pointons.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsTangencyPoint;
 		Standard_Boolean IsTangencyPoint();
 
@@ -2215,7 +2759,9 @@ class BlendFunc_Corde {
 		%feature("compactdefaultargs") NPlan;
 		%feature("autodoc", "Returns the normal to cguide at ptgui.
 
-	:rtype: gp_Vec
+Returns
+-------
+gp_Vec
 ") NPlan;
 		const gp_Vec NPlan();
 
@@ -2223,29 +2769,47 @@ class BlendFunc_Corde {
 		%feature("compactdefaultargs") PointOnGuide;
 		%feature("autodoc", "Returns the point of parameter <param> on cguide.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") PointOnGuide;
 		const gp_Pnt PointOnGuide();
 
 		/****************** PointOnS ******************/
 		%feature("compactdefaultargs") PointOnS;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS;
 		const gp_Pnt PointOnS();
 
 		/****************** SetDist ******************/
 		%feature("compactdefaultargs") SetDist;
-		%feature("autodoc", "	:param Dist:
-	:type Dist: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Dist: float
+
+Returns
+-------
+None
 ") SetDist;
 		void SetDist(const Standard_Real Dist);
 
 		/****************** SetParam ******************/
 		%feature("compactdefaultargs") SetParam;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+
+Returns
+-------
+None
 ") SetParam;
 		void SetParam(const Standard_Real Param);
 
@@ -2253,7 +2817,9 @@ class BlendFunc_Corde {
 		%feature("compactdefaultargs") Tangent2dOnS;
 		%feature("autodoc", "Returns the tangent vector at pointons, in the parametric space of the first surface.
 
-	:rtype: gp_Vec2d
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS;
 		const gp_Vec2d Tangent2dOnS();
 
@@ -2261,7 +2827,9 @@ class BlendFunc_Corde {
 		%feature("compactdefaultargs") TangentOnS;
 		%feature("autodoc", "Returns the tangent vector at pointons, in 3d space.
 
-	:rtype: gp_Vec
+Returns
+-------
+gp_Vec
 ") TangentOnS;
 		const gp_Vec TangentOnS();
 
@@ -2269,11 +2837,14 @@ class BlendFunc_Corde {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the function for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -2293,15 +2864,18 @@ class BlendFunc_EvolRad : public Blend_Function {
 	public:
 		/****************** BlendFunc_EvolRad ******************/
 		%feature("compactdefaultargs") BlendFunc_EvolRad;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param Law:
-	:type Law: Law_Function
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+Law: Law_Function
+
+Returns
+-------
+None
 ") BlendFunc_EvolRad;
 		 BlendFunc_EvolRad(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Law_Function> & Law);
 
@@ -2309,21 +2883,29 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param InfBound:
-	:type InfBound: math_Vector
-	:param SupBound:
-	:type SupBound: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InfBound: math_Vector
+SupBound: math_Vector
+
+Returns
+-------
+None
 ") GetBounds;
 		void GetBounds(math_Vector & InfBound, math_Vector & SupBound);
 
@@ -2331,7 +2913,9 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") GetMinimalDistance;
 		%feature("autodoc", "Returns the minimal distance beetween two extremitys of calculed sections.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetMinimalDistance;
 		Standard_Real GetMinimalDistance();
 
@@ -2339,9 +2923,13 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") GetMinimalWeight;
 		%feature("autodoc", "Compute the minimal value of weight for each poles of all sections.
 
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+Parameters
+----------
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") GetMinimalWeight;
 		void GetMinimalWeight(TColStd_Array1OfReal & Weigths);
 
@@ -2349,31 +2937,41 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") GetSectionSize;
 		%feature("autodoc", "Returns the length of the maximum section.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetSectionSize;
 		Standard_Real GetSectionSize();
 
 		/****************** GetShape ******************/
 		%feature("compactdefaultargs") GetShape;
-		%feature("autodoc", "	:param NbPoles:
-	:type NbPoles: int
-	:param NbKnots:
-	:type NbKnots: int
-	:param Degree:
-	:type Degree: int
-	:param NbPoles2d:
-	:type NbPoles2d: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbPoles: int
+NbKnots: int
+Degree: int
+NbPoles2d: int
+
+Returns
+-------
+None
 ") GetShape;
 		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param Tolerance:
-	:type Tolerance: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tolerance: math_Vector
+Tol: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol);
 
@@ -2381,17 +2979,17 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") GetTolerance;
 		%feature("autodoc", "Returns the tolerance to reach in approximation to respecte boundtol error at the boundary angletol tangent error at the boundary surftol error inside the surface.
 
-	:param BoundTol:
-	:type BoundTol: float
-	:param SurfTol:
-	:type SurfTol: float
-	:param AngleTol:
-	:type AngleTol: float
-	:param Tol3d:
-	:type Tol3d: math_Vector
-	:param Tol1D:
-	:type Tol1D: math_Vector
-	:rtype: None
+Parameters
+----------
+BoundTol: float
+SurfTol: float
+AngleTol: float
+Tol3d: math_Vector
+Tol1D: math_Vector
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D);
 
@@ -2399,11 +2997,14 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Stores in <t> the parameters bounding the intervals of continuity <s>. //! the array must provide enough room to accomodate for the parameters. i.e. t.length() > nbintervals().
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
@@ -2411,39 +3012,62 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") IsRational;
 		%feature("autodoc", "Returns if the section is rationnal.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRational;
 		Standard_Boolean IsRational();
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
 		/****************** IsTangencyPoint ******************/
 		%feature("compactdefaultargs") IsTangencyPoint;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsTangencyPoint;
 		Standard_Boolean IsTangencyPoint();
 
 		/****************** Knots ******************/
 		%feature("compactdefaultargs") Knots;
-		%feature("autodoc", "	:param TKnots:
-	:type TKnots: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TKnots: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Knots;
 		void Knots(TColStd_Array1OfReal & TKnots);
 
 		/****************** Mults ******************/
 		%feature("compactdefaultargs") Mults;
-		%feature("autodoc", "	:param TMults:
-	:type TMults: TColStd_Array1OfInteger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TMults: TColStd_Array1OfInteger
+
+Returns
+-------
+None
 ") Mults;
 		void Mults(TColStd_Array1OfInteger & TMults);
 
@@ -2451,7 +3075,9 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
@@ -2459,35 +3085,50 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals for continuity <s>. may be one if continuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
 		/****************** PointOnS1 ******************/
 		%feature("compactdefaultargs") PointOnS1;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS1;
 		const gp_Pnt PointOnS1();
 
 		/****************** PointOnS2 ******************/
 		%feature("compactdefaultargs") PointOnS2;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS2;
 		const gp_Pnt PointOnS2();
 
 		/****************** Resolution ******************/
 		%feature("compactdefaultargs") Resolution;
-		%feature("autodoc", "	:param IC2d:
-	:type IC2d: int
-	:param Tol:
-	:type Tol: float
-	:param TolU:
-	:type TolU: float
-	:param TolV:
-	:type TolV: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC2d: int
+Tol: float
+TolU: float
+TolV: float
+
+Returns
+-------
+None
 ") Resolution;
 		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -2495,23 +3136,20 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Method for graphic traces.
 
-	:param Param:
-	:type Param: float
-	:param U1:
-	:type U1: float
-	:param V1:
-	:type V1: float
-	:param U2:
-	:type U2: float
-	:param V2:
-	:type V2: float
-	:param Pdeb:
-	:type Pdeb: float
-	:param Pfin:
-	:type Pfin: float
-	:param C:
-	:type C: gp_Circ
-	:rtype: None
+Parameters
+----------
+Param: float
+U1: float
+V1: float
+U2: float
+V2: float
+Pdeb: float
+Pfin: float
+C: gp_Circ
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
 
@@ -2519,27 +3157,22 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param D2Poles:
-	:type D2Poles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param D2Poles2d:
-	:type D2Poles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:param D2Weigths:
-	:type D2Weigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+D2Poles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+D2Poles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+D2Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		virtual Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 
@@ -2547,61 +3180,79 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		virtual Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 
 		/****************** Section ******************/
 		%feature("compactdefaultargs") Section;
-		%feature("autodoc", "	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+Poles2d: TColgp_Array1OfPnt2d
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Param);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+First: float
+Last: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real First, const Standard_Real Last);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Choix:
-	:type Choix: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Integer Choix);
 
@@ -2609,9 +3260,13 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the type of section generation for the approximations.
 
-	:param TypeSection:
-	:type TypeSection: BlendFunc_SectionShape
-	:rtype: None
+Parameters
+----------
+TypeSection: BlendFunc_SectionShape
+
+Returns
+-------
+None
 ") Set;
 		void Set(const BlendFunc_SectionShape TypeSection);
 
@@ -2619,59 +3274,80 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") Tangent;
 		%feature("autodoc", "Returns the tangent vector at the section, at the beginning and the end of the section, and returns the normal (of the surfaces) at these points.
 
-	:param U1:
-	:type U1: float
-	:param V1:
-	:type V1: float
-	:param U2:
-	:type U2: float
-	:param V2:
-	:type V2: float
-	:param TgFirst:
-	:type TgFirst: gp_Vec
-	:param TgLast:
-	:type TgLast: gp_Vec
-	:param NormFirst:
-	:type NormFirst: gp_Vec
-	:param NormLast:
-	:type NormLast: gp_Vec
-	:rtype: None
+Parameters
+----------
+U1: float
+V1: float
+U2: float
+V2: float
+TgFirst: gp_Vec
+TgLast: gp_Vec
+NormFirst: gp_Vec
+NormLast: gp_Vec
+
+Returns
+-------
+None
 ") Tangent;
 		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec & TgFirst, gp_Vec & TgLast, gp_Vec & NormFirst, gp_Vec & NormLast);
 
 		/****************** Tangent2dOnS1 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS1;
 		const gp_Vec2d Tangent2dOnS1();
 
 		/****************** Tangent2dOnS2 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS2;
 		const gp_Vec2d Tangent2dOnS2();
 
 		/****************** TangentOnS1 ******************/
 		%feature("compactdefaultargs") TangentOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS1;
 		const gp_Vec TangentOnS1();
 
 		/****************** TangentOnS2 ******************/
 		%feature("compactdefaultargs") TangentOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS2;
 		const gp_Vec TangentOnS2();
 
 		/****************** TwistOnS1 ******************/
 		%feature("compactdefaultargs") TwistOnS1;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") TwistOnS1;
 		virtual Standard_Boolean TwistOnS1();
 
 		/****************** TwistOnS2 ******************/
 		%feature("compactdefaultargs") TwistOnS2;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") TwistOnS2;
 		virtual Standard_Boolean TwistOnS2();
 
@@ -2679,11 +3355,14 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -2691,13 +3370,15 @@ class BlendFunc_EvolRad : public Blend_Function {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -2717,15 +3398,18 @@ class BlendFunc_EvolRadInv : public Blend_FuncInv {
 	public:
 		/****************** BlendFunc_EvolRadInv ******************/
 		%feature("compactdefaultargs") BlendFunc_EvolRadInv;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param Law:
-	:type Law: Law_Function
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+Law: Law_Function
+
+Returns
+-------
+None
 ") BlendFunc_EvolRadInv;
 		 BlendFunc_EvolRadInv(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Law_Function> & Law);
 
@@ -2733,41 +3417,59 @@ class BlendFunc_EvolRadInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param InfBound:
-	:type InfBound: math_Vector
-	:param SupBound:
-	:type SupBound: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InfBound: math_Vector
+SupBound: math_Vector
+
+Returns
+-------
+None
 ") GetBounds;
 		void GetBounds(math_Vector & InfBound, math_Vector & SupBound);
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param Tolerance:
-	:type Tolerance: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tolerance: math_Vector
+Tol: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol);
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
@@ -2775,25 +3477,38 @@ class BlendFunc_EvolRadInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param OnFirst:
-	:type OnFirst: bool
-	:param COnSurf:
-	:type COnSurf: Adaptor2d_HCurve2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+OnFirst: bool
+COnSurf: Adaptor2d_HCurve2d
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Boolean OnFirst, const opencascade::handle<Adaptor2d_HCurve2d> & COnSurf);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Choix:
-	:type Choix: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Integer Choix);
 
@@ -2801,11 +3516,14 @@ class BlendFunc_EvolRadInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -2813,13 +3531,15 @@ class BlendFunc_EvolRadInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -2840,21 +3560,31 @@ class BlendFunc_GenChamfInv : public Blend_FuncInv {
 	public:
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param InfBound:
-	:type InfBound: math_Vector
-	:param SupBound:
-	:type SupBound: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InfBound: math_Vector
+SupBound: math_Vector
+
+Returns
+-------
+None
 ") GetBounds;
 		void GetBounds(math_Vector & InfBound, math_Vector & SupBound);
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param Tolerance:
-	:type Tolerance: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tolerance: math_Vector
+Tol: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol);
 
@@ -2862,29 +3592,40 @@ class BlendFunc_GenChamfInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param OnFirst:
-	:type OnFirst: bool
-	:param COnSurf:
-	:type COnSurf: Adaptor2d_HCurve2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+OnFirst: bool
+COnSurf: Adaptor2d_HCurve2d
+
+Returns
+-------
+None
 ") Set;
 		virtual void Set(const Standard_Boolean OnFirst, const opencascade::handle<Adaptor2d_HCurve2d> & COnSurf);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Dist1:
-	:type Dist1: float
-	:param Dist2:
-	:type Dist2: float
-	:param Choix:
-	:type Choix: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Dist1: float
+Dist2: float
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		virtual void Set(const Standard_Real Dist1, const Standard_Real Dist2, const Standard_Integer Choix);
 
@@ -2892,13 +3633,15 @@ class BlendFunc_GenChamfInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -2919,11 +3662,16 @@ class BlendFunc_GenChamfer : public Blend_Function {
 	public:
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param InfBound:
-	:type InfBound: math_Vector
-	:param SupBound:
-	:type SupBound: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InfBound: math_Vector
+SupBound: math_Vector
+
+Returns
+-------
+None
 ") GetBounds;
 		void GetBounds(math_Vector & InfBound, math_Vector & SupBound);
 
@@ -2931,7 +3679,9 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") GetMinimalDistance;
 		%feature("autodoc", "Returns the minimal distance beetween two extremitys of calculed sections.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetMinimalDistance;
 		Standard_Real GetMinimalDistance();
 
@@ -2939,33 +3689,45 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") GetMinimalWeight;
 		%feature("autodoc", "Compute the minimal value of weight for each poles of all sections.
 
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+Parameters
+----------
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") GetMinimalWeight;
 		void GetMinimalWeight(TColStd_Array1OfReal & Weigths);
 
 		/****************** GetShape ******************/
 		%feature("compactdefaultargs") GetShape;
-		%feature("autodoc", "	:param NbPoles:
-	:type NbPoles: int
-	:param NbKnots:
-	:type NbKnots: int
-	:param Degree:
-	:type Degree: int
-	:param NbPoles2d:
-	:type NbPoles2d: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbPoles: int
+NbKnots: int
+Degree: int
+NbPoles2d: int
+
+Returns
+-------
+None
 ") GetShape;
 		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param Tolerance:
-	:type Tolerance: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tolerance: math_Vector
+Tol: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol);
 
@@ -2973,17 +3735,17 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") GetTolerance;
 		%feature("autodoc", "Returns the tolerance to reach in approximation to respecte boundtol error at the boundary angletol tangent error at the boundary surftol error inside the surface.
 
-	:param BoundTol:
-	:type BoundTol: float
-	:param SurfTol:
-	:type SurfTol: float
-	:param AngleTol:
-	:type AngleTol: float
-	:param Tol3d:
-	:type Tol3d: math_Vector
-	:param Tol1D:
-	:type Tol1D: math_Vector
-	:rtype: None
+Parameters
+----------
+BoundTol: float
+SurfTol: float
+AngleTol: float
+Tol3d: math_Vector
+Tol1D: math_Vector
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D);
 
@@ -2991,11 +3753,14 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Stores in <t> the parameters bounding the intervals of continuity <s>. //! the array must provide enough room to accomodate for the parameters. i.e. t.length() > nbintervals() raises outofrange from standard.
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
@@ -3003,23 +3768,37 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") IsRational;
 		%feature("autodoc", "Returns false.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRational;
 		Standard_Boolean IsRational();
 
 		/****************** Knots ******************/
 		%feature("compactdefaultargs") Knots;
-		%feature("autodoc", "	:param TKnots:
-	:type TKnots: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TKnots: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Knots;
 		void Knots(TColStd_Array1OfReal & TKnots);
 
 		/****************** Mults ******************/
 		%feature("compactdefaultargs") Mults;
-		%feature("autodoc", "	:param TMults:
-	:type TMults: TColStd_Array1OfInteger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TMults: TColStd_Array1OfInteger
+
+Returns
+-------
+None
 ") Mults;
 		void Mults(TColStd_Array1OfInteger & TMults);
 
@@ -3027,7 +3806,9 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
@@ -3035,23 +3816,30 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals for continuity <s>. may be one if continuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
 		/****************** Resolution ******************/
 		%feature("compactdefaultargs") Resolution;
-		%feature("autodoc", "	:param IC2d:
-	:type IC2d: int
-	:param Tol:
-	:type Tol: float
-	:param TolU:
-	:type TolU: float
-	:param TolV:
-	:type TolV: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC2d: int
+Tol: float
+TolU: float
+TolV: float
+
+Returns
+-------
+None
 ") Resolution;
 		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -3059,23 +3847,20 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Obsolete method.
 
-	:param Param:
-	:type Param: float
-	:param U1:
-	:type U1: float
-	:param V1:
-	:type V1: float
-	:param U2:
-	:type U2: float
-	:param V2:
-	:type V2: float
-	:param Pdeb:
-	:type Pdeb: float
-	:param Pfin:
-	:type Pfin: float
-	:param C:
-	:type C: gp_Lin
-	:rtype: None
+Parameters
+----------
+Param: float
+U1: float
+V1: float
+U2: float
+V2: float
+Pdeb: float
+Pfin: float
+C: gp_Lin
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, Standard_Real &OutValue, Standard_Real &OutValue, gp_Lin & C);
 
@@ -3083,27 +3868,22 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param D2Poles:
-	:type D2Poles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param D2Poles2d:
-	:type D2Poles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:param D2Weigths:
-	:type D2Weigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+D2Poles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+D2Poles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+D2Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 
@@ -3111,35 +3891,36 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 
 		/****************** Section ******************/
 		%feature("compactdefaultargs") Section;
-		%feature("autodoc", "	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+Poles2d: TColgp_Array1OfPnt2d
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 
@@ -3147,9 +3928,13 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the value of the parameter along the guide line. this determines the plane in which the solution has to be found.
 
-	:param Param:
-	:type Param: float
-	:rtype: None
+Parameters
+----------
+Param: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Param);
 
@@ -3157,11 +3942,14 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the bounds of the parametric interval on the guide line. this determines the derivatives in these values if the function is not cn.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:rtype: None
+Parameters
+----------
+First: float
+Last: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real First, const Standard_Real Last);
 
@@ -3169,13 +3957,15 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the distances and the 'quadrant'.
 
-	:param Dist1:
-	:type Dist1: float
-	:param Dist2:
-	:type Dist2: float
-	:param Choix:
-	:type Choix: int
-	:rtype: None
+Parameters
+----------
+Dist1: float
+Dist2: float
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		virtual void Set(const Standard_Real Dist1, const Standard_Real Dist2, const Standard_Integer Choix);
 
@@ -3183,13 +3973,15 @@ class BlendFunc_GenChamfer : public Blend_Function {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -3209,21 +4001,31 @@ class BlendFunc_Ruled : public Blend_Function {
 	public:
 		/****************** AxeRot ******************/
 		%feature("compactdefaultargs") AxeRot;
-		%feature("autodoc", "	:param Prm:
-	:type Prm: float
-	:rtype: gp_Ax1
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Prm: float
+
+Returns
+-------
+gp_Ax1
 ") AxeRot;
 		gp_Ax1 AxeRot(const Standard_Real Prm);
 
 		/****************** BlendFunc_Ruled ******************/
 		%feature("compactdefaultargs") BlendFunc_Ruled;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_Ruled;
 		 BlendFunc_Ruled(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -3231,21 +4033,29 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param InfBound:
-	:type InfBound: math_Vector
-	:param SupBound:
-	:type SupBound: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InfBound: math_Vector
+SupBound: math_Vector
+
+Returns
+-------
+None
 ") GetBounds;
 		void GetBounds(math_Vector & InfBound, math_Vector & SupBound);
 
@@ -3253,7 +4063,9 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") GetMinimalDistance;
 		%feature("autodoc", "Returns the minimal distance beetween two extremitys of calculed sections.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetMinimalDistance;
 		Standard_Real GetMinimalDistance();
 
@@ -3261,29 +4073,33 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") GetMinimalWeight;
 		%feature("autodoc", "Compute the minimal value of weight for each poles of all sections.
 
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+Parameters
+----------
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") GetMinimalWeight;
 		void GetMinimalWeight(TColStd_Array1OfReal & Weigths);
 
 		/****************** GetSection ******************/
 		%feature("compactdefaultargs") GetSection;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:param U1:
-	:type U1: float
-	:param V1:
-	:type V1: float
-	:param U2:
-	:type U2: float
-	:param V2:
-	:type V2: float
-	:param tabP:
-	:type tabP: TColgp_Array1OfPnt
-	:param tabV:
-	:type tabV: TColgp_Array1OfVec
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+U1: float
+V1: float
+U2: float
+V2: float
+tabP: TColgp_Array1OfPnt
+tabV: TColgp_Array1OfVec
+
+Returns
+-------
+bool
 ") GetSection;
 		Standard_Boolean GetSection(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, TColgp_Array1OfPnt & tabP, TColgp_Array1OfVec & tabV);
 
@@ -3291,31 +4107,41 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") GetSectionSize;
 		%feature("autodoc", "Returns the length of the maximum section.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetSectionSize;
 		Standard_Real GetSectionSize();
 
 		/****************** GetShape ******************/
 		%feature("compactdefaultargs") GetShape;
-		%feature("autodoc", "	:param NbPoles:
-	:type NbPoles: int
-	:param NbKnots:
-	:type NbKnots: int
-	:param Degree:
-	:type Degree: int
-	:param NbPoles2d:
-	:type NbPoles2d: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbPoles: int
+NbKnots: int
+Degree: int
+NbPoles2d: int
+
+Returns
+-------
+None
 ") GetShape;
 		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param Tolerance:
-	:type Tolerance: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tolerance: math_Vector
+Tol: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol);
 
@@ -3323,17 +4149,17 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") GetTolerance;
 		%feature("autodoc", "Returns the tolerance to reach in approximation to respecte boundtol error at the boundary angletol tangent error at the boundary surftol error inside the surface.
 
-	:param BoundTol:
-	:type BoundTol: float
-	:param SurfTol:
-	:type SurfTol: float
-	:param AngleTol:
-	:type AngleTol: float
-	:param Tol3d:
-	:type Tol3d: math_Vector
-	:param Tol1D:
-	:type Tol1D: math_Vector
-	:rtype: None
+Parameters
+----------
+BoundTol: float
+SurfTol: float
+AngleTol: float
+Tol3d: math_Vector
+Tol1D: math_Vector
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D);
 
@@ -3341,11 +4167,14 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Stores in <t> the parameters bounding the intervals of continuity <s>. //! the array must provide enough room to accomodate for the parameters. i.e. t.length() > nbintervals() raises outofrange from standard.
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
@@ -3353,39 +4182,62 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") IsRational;
 		%feature("autodoc", "Returns false.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRational;
 		Standard_Boolean IsRational();
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
 		/****************** IsTangencyPoint ******************/
 		%feature("compactdefaultargs") IsTangencyPoint;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsTangencyPoint;
 		Standard_Boolean IsTangencyPoint();
 
 		/****************** Knots ******************/
 		%feature("compactdefaultargs") Knots;
-		%feature("autodoc", "	:param TKnots:
-	:type TKnots: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TKnots: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Knots;
 		void Knots(TColStd_Array1OfReal & TKnots);
 
 		/****************** Mults ******************/
 		%feature("compactdefaultargs") Mults;
-		%feature("autodoc", "	:param TMults:
-	:type TMults: TColStd_Array1OfInteger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TMults: TColStd_Array1OfInteger
+
+Returns
+-------
+None
 ") Mults;
 		void Mults(TColStd_Array1OfInteger & TMults);
 
@@ -3393,7 +4245,9 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
@@ -3401,35 +4255,50 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals for continuity <s>. may be one if continuity(me) >= <s>.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
 		/****************** PointOnS1 ******************/
 		%feature("compactdefaultargs") PointOnS1;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS1;
 		const gp_Pnt PointOnS1();
 
 		/****************** PointOnS2 ******************/
 		%feature("compactdefaultargs") PointOnS2;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS2;
 		const gp_Pnt PointOnS2();
 
 		/****************** Resolution ******************/
 		%feature("compactdefaultargs") Resolution;
-		%feature("autodoc", "	:param IC2d:
-	:type IC2d: int
-	:param Tol:
-	:type Tol: float
-	:param TolU:
-	:type TolU: float
-	:param TolV:
-	:type TolV: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC2d: int
+Tol: float
+TolU: float
+TolV: float
+
+Returns
+-------
+None
 ") Resolution;
 		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -3437,27 +4306,22 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param D2Poles:
-	:type D2Poles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param D2Poles2d:
-	:type D2Poles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:param D2Weigths:
-	:type D2Weigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+D2Poles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+D2Poles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+D2Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 
@@ -3465,53 +4329,65 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") Section;
 		%feature("autodoc", "Used for the first and last section.
 
-	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param DPoles:
-	:type DPoles: TColgp_Array1OfVec
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param DPoles2d:
-	:type DPoles2d: TColgp_Array1OfVec2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:param DWeigths:
-	:type DWeigths: TColStd_Array1OfReal
-	:rtype: bool
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+DPoles: TColgp_Array1OfVec
+Poles2d: TColgp_Array1OfPnt2d
+DPoles2d: TColgp_Array1OfVec2d
+Weigths: TColStd_Array1OfReal
+DWeigths: TColStd_Array1OfReal
+
+Returns
+-------
+bool
 ") Section;
 		Standard_Boolean Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 
 		/****************** Section ******************/
 		%feature("compactdefaultargs") Section;
-		%feature("autodoc", "	:param P:
-	:type P: Blend_Point
-	:param Poles:
-	:type Poles: TColgp_Array1OfPnt
-	:param Poles2d:
-	:type Poles2d: TColgp_Array1OfPnt2d
-	:param Weigths:
-	:type Weigths: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: Blend_Point
+Poles: TColgp_Array1OfPnt
+Poles2d: TColgp_Array1OfPnt2d
+Weigths: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Blend_Point & P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Param);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+First: float
+Last: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real First, const Standard_Real Last);
 
@@ -3519,47 +4395,60 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") Tangent;
 		%feature("autodoc", "Returns the tangent vector at the section, at the beginning and the end of the section, and returns the normal (of the surfaces) at these points.
 
-	:param U1:
-	:type U1: float
-	:param V1:
-	:type V1: float
-	:param U2:
-	:type U2: float
-	:param V2:
-	:type V2: float
-	:param TgFirst:
-	:type TgFirst: gp_Vec
-	:param TgLast:
-	:type TgLast: gp_Vec
-	:param NormFirst:
-	:type NormFirst: gp_Vec
-	:param NormLast:
-	:type NormLast: gp_Vec
-	:rtype: None
+Parameters
+----------
+U1: float
+V1: float
+U2: float
+V2: float
+TgFirst: gp_Vec
+TgLast: gp_Vec
+NormFirst: gp_Vec
+NormLast: gp_Vec
+
+Returns
+-------
+None
 ") Tangent;
 		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec & TgFirst, gp_Vec & TgLast, gp_Vec & NormFirst, gp_Vec & NormLast);
 
 		/****************** Tangent2dOnS1 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS1;
 		const gp_Vec2d Tangent2dOnS1();
 
 		/****************** Tangent2dOnS2 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS2;
 		const gp_Vec2d Tangent2dOnS2();
 
 		/****************** TangentOnS1 ******************/
 		%feature("compactdefaultargs") TangentOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS1;
 		const gp_Vec TangentOnS1();
 
 		/****************** TangentOnS2 ******************/
 		%feature("compactdefaultargs") TangentOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS2;
 		const gp_Vec TangentOnS2();
 
@@ -3567,11 +4456,14 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -3579,13 +4471,15 @@ class BlendFunc_Ruled : public Blend_Function {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -3605,13 +4499,17 @@ class BlendFunc_RuledInv : public Blend_FuncInv {
 	public:
 		/****************** BlendFunc_RuledInv ******************/
 		%feature("compactdefaultargs") BlendFunc_RuledInv;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_RuledInv;
 		 BlendFunc_RuledInv(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -3619,41 +4517,59 @@ class BlendFunc_RuledInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;
-		%feature("autodoc", "	:param InfBound:
-	:type InfBound: math_Vector
-	:param SupBound:
-	:type SupBound: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InfBound: math_Vector
+SupBound: math_Vector
+
+Returns
+-------
+None
 ") GetBounds;
 		void GetBounds(math_Vector & InfBound, math_Vector & SupBound);
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param Tolerance:
-	:type Tolerance: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tolerance: math_Vector
+Tol: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol);
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
@@ -3661,17 +4577,24 @@ class BlendFunc_RuledInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param OnFirst:
-	:type OnFirst: bool
-	:param COnSurf:
-	:type COnSurf: Adaptor2d_HCurve2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+OnFirst: bool
+COnSurf: Adaptor2d_HCurve2d
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Boolean OnFirst, const opencascade::handle<Adaptor2d_HCurve2d> & COnSurf);
 
@@ -3679,11 +4602,14 @@ class BlendFunc_RuledInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -3691,13 +4617,15 @@ class BlendFunc_RuledInv : public Blend_FuncInv {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -3717,13 +4645,17 @@ class BlendFunc_Tensor {
 	public:
 		/****************** BlendFunc_Tensor ******************/
 		%feature("compactdefaultargs") BlendFunc_Tensor;
-		%feature("autodoc", "	:param NbRow:
-	:type NbRow: int
-	:param NbCol:
-	:type NbCol: int
-	:param NbMat:
-	:type NbMat: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbRow: int
+NbCol: int
+NbMat: int
+
+Returns
+-------
+None
 ") BlendFunc_Tensor;
 		 BlendFunc_Tensor(const Standard_Integer NbRow, const Standard_Integer NbCol, const Standard_Integer NbMat);
 
@@ -3744,19 +4676,28 @@ class BlendFunc_Tensor {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all the elements of a tensor to initialvalue.
 
-	:param InitialValue:
-	:type InitialValue: float
-	:rtype: None
+Parameters
+----------
+InitialValue: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const Standard_Real InitialValue);
 
 		/****************** Multiply ******************/
 		%feature("compactdefaultargs") Multiply;
-		%feature("autodoc", "	:param Right:
-	:type Right: math_Vector
-	:param Product:
-	:type Product: math_Matrix
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Right: math_Vector
+Product: math_Matrix
+
+Returns
+-------
+None
 ") Multiply;
 		void Multiply(const math_Vector & Right, math_Matrix & Product);
 
@@ -3764,13 +4705,15 @@ class BlendFunc_Tensor {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Accesses (in read or write mode) the value of index <row>, <col> and <mat> of a tensor. an exception is raised if <row>, <col> or <mat> are not in the correct range.
 
-	:param Row:
-	:type Row: int
-	:param Col:
-	:type Col: int
-	:param Mat:
-	:type Mat: int
-	:rtype: float
+Parameters
+----------
+Row: int
+Col: int
+Mat: int
+
+Returns
+-------
+float
 ") Value;
 		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat);
 
@@ -3790,13 +4733,17 @@ class BlendFunc_ChamfInv : public BlendFunc_GenChamfInv {
 	public:
 		/****************** BlendFunc_ChamfInv ******************/
 		%feature("compactdefaultargs") BlendFunc_ChamfInv;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_ChamfInv;
 		 BlendFunc_ChamfInv(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -3804,33 +4751,45 @@ class BlendFunc_ChamfInv : public BlendFunc_GenChamfInv {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Dist1:
-	:type Dist1: float
-	:param Dist2:
-	:type Dist2: float
-	:param Choix:
-	:type Choix: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Dist1: float
+Dist2: float
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		virtual void Set(const Standard_Real Dist1, const Standard_Real Dist2, const Standard_Integer Choix);
 
@@ -3838,11 +4797,14 @@ class BlendFunc_ChamfInv : public BlendFunc_GenChamfInv {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -3862,13 +4824,17 @@ class BlendFunc_Chamfer : public BlendFunc_GenChamfer {
 	public:
 		/****************** BlendFunc_Chamfer ******************/
 		%feature("compactdefaultargs") BlendFunc_Chamfer;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param CG:
-	:type CG: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+CG: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_Chamfer;
 		 BlendFunc_Chamfer(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & CG);
 
@@ -3876,11 +4842,14 @@ class BlendFunc_Chamfer : public BlendFunc_GenChamfer {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
@@ -3888,43 +4857,68 @@ class BlendFunc_Chamfer : public BlendFunc_GenChamfer {
 		%feature("compactdefaultargs") GetSectionSize;
 		%feature("autodoc", "Returns the length of the maximum section.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetSectionSize;
 		Standard_Real GetSectionSize();
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
 		/****************** IsTangencyPoint ******************/
 		%feature("compactdefaultargs") IsTangencyPoint;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsTangencyPoint;
 		Standard_Boolean IsTangencyPoint();
 
 		/****************** PointOnS1 ******************/
 		%feature("compactdefaultargs") PointOnS1;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS1;
 		const gp_Pnt PointOnS1();
 
 		/****************** PointOnS2 ******************/
 		%feature("compactdefaultargs") PointOnS2;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS2;
 		const gp_Pnt PointOnS2();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Param);
 
@@ -3932,13 +4926,15 @@ class BlendFunc_Chamfer : public BlendFunc_GenChamfer {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the distances and the 'quadrant'.
 
-	:param Dist1:
-	:type Dist1: float
-	:param Dist2:
-	:type Dist2: float
-	:param Choix:
-	:type Choix: int
-	:rtype: None
+Parameters
+----------
+Dist1: float
+Dist2: float
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Dist1, const Standard_Real Dist2, const Standard_Integer Choix);
 
@@ -3946,47 +4942,60 @@ class BlendFunc_Chamfer : public BlendFunc_GenChamfer {
 		%feature("compactdefaultargs") Tangent;
 		%feature("autodoc", "Returns the tangent vector at the section, at the beginning and the end of the section, and returns the normal (of the surfaces) at these points.
 
-	:param U1:
-	:type U1: float
-	:param V1:
-	:type V1: float
-	:param U2:
-	:type U2: float
-	:param V2:
-	:type V2: float
-	:param TgFirst:
-	:type TgFirst: gp_Vec
-	:param TgLast:
-	:type TgLast: gp_Vec
-	:param NormFirst:
-	:type NormFirst: gp_Vec
-	:param NormLast:
-	:type NormLast: gp_Vec
-	:rtype: None
+Parameters
+----------
+U1: float
+V1: float
+U2: float
+V2: float
+TgFirst: gp_Vec
+TgLast: gp_Vec
+NormFirst: gp_Vec
+NormLast: gp_Vec
+
+Returns
+-------
+None
 ") Tangent;
 		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec & TgFirst, gp_Vec & TgLast, gp_Vec & NormFirst, gp_Vec & NormLast);
 
 		/****************** Tangent2dOnS1 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS1;
 		const gp_Vec2d Tangent2dOnS1();
 
 		/****************** Tangent2dOnS2 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS2;
 		const gp_Vec2d Tangent2dOnS2();
 
 		/****************** TangentOnS1 ******************/
 		%feature("compactdefaultargs") TangentOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS1;
 		const gp_Vec TangentOnS1();
 
 		/****************** TangentOnS2 ******************/
 		%feature("compactdefaultargs") TangentOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS2;
 		const gp_Vec TangentOnS2();
 
@@ -3994,11 +5003,14 @@ class BlendFunc_Chamfer : public BlendFunc_GenChamfer {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -4018,13 +5030,17 @@ class BlendFunc_ConstThroat : public BlendFunc_GenChamfer {
 	public:
 		/****************** BlendFunc_ConstThroat ******************/
 		%feature("compactdefaultargs") BlendFunc_ConstThroat;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_ConstThroat;
 		 BlendFunc_ConstThroat(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -4032,11 +5048,14 @@ class BlendFunc_ConstThroat : public BlendFunc_GenChamfer {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
@@ -4044,43 +5063,68 @@ class BlendFunc_ConstThroat : public BlendFunc_GenChamfer {
 		%feature("compactdefaultargs") GetSectionSize;
 		%feature("autodoc", "Returns the length of the maximum section.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetSectionSize;
 		Standard_Real GetSectionSize();
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
 		/****************** IsTangencyPoint ******************/
 		%feature("compactdefaultargs") IsTangencyPoint;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsTangencyPoint;
 		Standard_Boolean IsTangencyPoint();
 
 		/****************** PointOnS1 ******************/
 		%feature("compactdefaultargs") PointOnS1;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS1;
 		const gp_Pnt PointOnS1();
 
 		/****************** PointOnS2 ******************/
 		%feature("compactdefaultargs") PointOnS2;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PointOnS2;
 		const gp_Pnt PointOnS2();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real Param);
 
@@ -4088,13 +5132,15 @@ class BlendFunc_ConstThroat : public BlendFunc_GenChamfer {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the throat and the 'quadrant'.
 
-	:param aThroat:
-	:type aThroat: float
-	:param Standard_Real:
-	:type Standard_Real: 
-	:param Choix:
-	:type Choix: int
-	:rtype: None
+Parameters
+----------
+aThroat: float
+Standard_Real: 
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real aThroat, const Standard_Real, const Standard_Integer Choix);
 
@@ -4102,47 +5148,60 @@ class BlendFunc_ConstThroat : public BlendFunc_GenChamfer {
 		%feature("compactdefaultargs") Tangent;
 		%feature("autodoc", "Returns the tangent vector at the section, at the beginning and the end of the section, and returns the normal (of the surfaces) at these points.
 
-	:param U1:
-	:type U1: float
-	:param V1:
-	:type V1: float
-	:param U2:
-	:type U2: float
-	:param V2:
-	:type V2: float
-	:param TgFirst:
-	:type TgFirst: gp_Vec
-	:param TgLast:
-	:type TgLast: gp_Vec
-	:param NormFirst:
-	:type NormFirst: gp_Vec
-	:param NormLast:
-	:type NormLast: gp_Vec
-	:rtype: None
+Parameters
+----------
+U1: float
+V1: float
+U2: float
+V2: float
+TgFirst: gp_Vec
+TgLast: gp_Vec
+NormFirst: gp_Vec
+NormLast: gp_Vec
+
+Returns
+-------
+None
 ") Tangent;
 		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec & TgFirst, gp_Vec & TgLast, gp_Vec & NormFirst, gp_Vec & NormLast);
 
 		/****************** Tangent2dOnS1 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS1;
 		const gp_Vec2d Tangent2dOnS1();
 
 		/****************** Tangent2dOnS2 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS2;
 		const gp_Vec2d Tangent2dOnS2();
 
 		/****************** TangentOnS1 ******************/
 		%feature("compactdefaultargs") TangentOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS1;
 		const gp_Vec TangentOnS1();
 
 		/****************** TangentOnS2 ******************/
 		%feature("compactdefaultargs") TangentOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS2;
 		const gp_Vec TangentOnS2();
 
@@ -4150,11 +5209,14 @@ class BlendFunc_ConstThroat : public BlendFunc_GenChamfer {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -4174,13 +5236,17 @@ class BlendFunc_ConstThroatInv : public BlendFunc_GenChamfInv {
 	public:
 		/****************** BlendFunc_ConstThroatInv ******************/
 		%feature("compactdefaultargs") BlendFunc_ConstThroatInv;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_ConstThroatInv;
 		 BlendFunc_ConstThroatInv(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -4188,33 +5254,45 @@ class BlendFunc_ConstThroatInv : public BlendFunc_GenChamfInv {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param theThroat:
-	:type theThroat: float
-	:param Standard_Real:
-	:type Standard_Real: 
-	:param Choix:
-	:type Choix: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theThroat: float
+Standard_Real: 
+Choix: int
+
+Returns
+-------
+None
 ") Set;
 		virtual void Set(const Standard_Real theThroat, const Standard_Real, const Standard_Integer Choix);
 
@@ -4222,11 +5300,14 @@ class BlendFunc_ConstThroatInv : public BlendFunc_GenChamfInv {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -4246,13 +5327,17 @@ class BlendFunc_ConstThroatWithPenetration : public BlendFunc_ConstThroat {
 	public:
 		/****************** BlendFunc_ConstThroatWithPenetration ******************/
 		%feature("compactdefaultargs") BlendFunc_ConstThroatWithPenetration;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_ConstThroatWithPenetration;
 		 BlendFunc_ConstThroatWithPenetration(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -4260,11 +5345,14 @@ class BlendFunc_ConstThroatWithPenetration : public BlendFunc_ConstThroat {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
@@ -4272,41 +5360,64 @@ class BlendFunc_ConstThroatWithPenetration : public BlendFunc_ConstThroat {
 		%feature("compactdefaultargs") GetSectionSize;
 		%feature("autodoc", "Returns the length of the maximum section.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetSectionSize;
 		Standard_Real GetSectionSize();
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
 		/****************** Tangent2dOnS1 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS1;
 		const gp_Vec2d Tangent2dOnS1();
 
 		/****************** Tangent2dOnS2 ******************/
 		%feature("compactdefaultargs") Tangent2dOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec2d
 ") Tangent2dOnS2;
 		const gp_Vec2d Tangent2dOnS2();
 
 		/****************** TangentOnS1 ******************/
 		%feature("compactdefaultargs") TangentOnS1;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS1;
 		const gp_Vec TangentOnS1();
 
 		/****************** TangentOnS2 ******************/
 		%feature("compactdefaultargs") TangentOnS2;
-		%feature("autodoc", "	:rtype: gp_Vec
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
 ") TangentOnS2;
 		const gp_Vec TangentOnS2();
 
@@ -4314,11 +5425,14 @@ class BlendFunc_ConstThroatWithPenetration : public BlendFunc_ConstThroat {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -4338,13 +5452,17 @@ class BlendFunc_ConstThroatWithPenetrationInv : public BlendFunc_ConstThroatInv 
 	public:
 		/****************** BlendFunc_ConstThroatWithPenetrationInv ******************/
 		%feature("compactdefaultargs") BlendFunc_ConstThroatWithPenetrationInv;
-		%feature("autodoc", "	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") BlendFunc_ConstThroatWithPenetrationInv;
 		 BlendFunc_ConstThroatWithPenetrationInv(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -4352,21 +5470,29 @@ class BlendFunc_ConstThroatWithPenetrationInv : public BlendFunc_ConstThroatInv 
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** IsSolution ******************/
 		%feature("compactdefaultargs") IsSolution;
-		%feature("autodoc", "	:param Sol:
-	:type Sol: math_Vector
-	:param Tol:
-	:type Tol: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+Tol: float
+
+Returns
+-------
+bool
 ") IsSolution;
 		Standard_Boolean IsSolution(const math_Vector & Sol, const Standard_Real Tol);
 
@@ -4374,11 +5500,14 @@ class BlendFunc_ConstThroatWithPenetrationInv : public BlendFunc_ConstThroatInv 
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 

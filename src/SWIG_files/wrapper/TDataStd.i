@@ -181,9 +181,13 @@ class TDataStd {
 		%feature("compactdefaultargs") IDList;
 		%feature("autodoc", "Appends to <anidlist> the list of the attributes ids of this package. caution: <anidlist> is not cleared before use.
 
-	:param anIDList:
-	:type anIDList: TDF_IDList
-	:rtype: None
+Parameters
+----------
+anIDList: TDF_IDList
+
+Returns
+-------
+None
 ") IDList;
 		static void IDList(TDF_IDList & anIDList);
 
@@ -191,11 +195,14 @@ class TDataStd {
 		%feature("compactdefaultargs") Print;
 		%feature("autodoc", "Prints the name of the real dimension <dim> as a string on the stream <s> and returns <s>.
 
-	:param DIM:
-	:type DIM: TDataStd_RealEnum
-	:param S:
-	:type S: Standard_OStream
-	:rtype: Standard_OStream
+Parameters
+----------
+DIM: TDataStd_RealEnum
+S: Standard_OStream
+
+Returns
+-------
+Standard_OStream
 ") Print;
 		static Standard_OStream & Print(const TDataStd_RealEnum DIM, Standard_OStream & S);
 
@@ -223,7 +230,11 @@ class TDataStd_AsciiString : public TDF_Attribute {
         };
 		/****************** Get ******************/
 		%feature("compactdefaultargs") Get;
-		%feature("autodoc", "	:rtype: TCollection_AsciiString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_AsciiString
 ") Get;
 		const TCollection_AsciiString & Get();
 
@@ -231,43 +242,68 @@ class TDataStd_AsciiString : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods ============= returns the guid of the attribute.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & with);
 
@@ -275,11 +311,14 @@ class TDataStd_AsciiString : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds, or creates an asciistring attribute and sets the string. the asciistring attribute is returned. asciistring methods ===================.
 
-	:param label:
-	:type label: TDF_Label
-	:param string:
-	:type string: TCollection_AsciiString
-	:rtype: opencascade::handle<TDataStd_AsciiString>
+Parameters
+----------
+label: TDF_Label
+string: TCollection_AsciiString
+
+Returns
+-------
+opencascade::handle<TDataStd_AsciiString>
 ") Set;
 		static opencascade::handle<TDataStd_AsciiString> Set(const TDF_Label & label, const TCollection_AsciiString & string);
 
@@ -287,21 +326,29 @@ class TDataStd_AsciiString : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds, or creates, an asciistring attribute with explicit user defined <guid> and sets <string>. the name attribute is returned. .
 
-	:param label:
-	:type label: TDF_Label
-	:param guid:
-	:type guid: Standard_GUID
-	:param string:
-	:type string: TCollection_AsciiString
-	:rtype: opencascade::handle<TDataStd_AsciiString>
+Parameters
+----------
+label: TDF_Label
+guid: Standard_GUID
+string: TCollection_AsciiString
+
+Returns
+-------
+opencascade::handle<TDataStd_AsciiString>
 ") Set;
 		static opencascade::handle<TDataStd_AsciiString> Set(const TDF_Label & label, const Standard_GUID & guid, const TCollection_AsciiString & string);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param S:
-	:type S: TCollection_AsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TCollection_AsciiString
+
+Returns
+-------
+None
 ") Set;
 		void Set(const TCollection_AsciiString & S);
 
@@ -309,9 +356,13 @@ class TDataStd_AsciiString : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit user defined guid to the attribute.
 
-	:param guid:
-	:type guid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+guid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & guid);
 
@@ -319,13 +370,19 @@ class TDataStd_AsciiString : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
 		/****************** TDataStd_AsciiString ******************/
 		%feature("compactdefaultargs") TDataStd_AsciiString;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_AsciiString;
 		 TDataStd_AsciiString();
 
@@ -357,13 +414,19 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Static methods ============== returns an id for array.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -371,17 +434,24 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize the inner array with bounds from <lower> to <upper>.
 
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:rtype: None
+Parameters
+----------
+lower: int
+upper: int
+
+Returns
+-------
+None
 ") Init;
 		void Init(const Standard_Integer lower, const Standard_Integer upper);
 
 		/****************** InternalArray ******************/
 		%feature("compactdefaultargs") InternalArray;
-		%feature("autodoc", "	:rtype: opencascade::handle<TColStd_HArray1OfByte>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfByte>
 ") InternalArray;
 		const opencascade::handle<TColStd_HArray1OfByte> & InternalArray();
 
@@ -389,7 +459,9 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Returns the number of elements in the array.
 
-	:rtype: int
+Returns
+-------
+int
 ") Length;
 		Standard_Integer Length();
 
@@ -397,31 +469,48 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Lower;
 		%feature("autodoc", "Returns the lower boundary of the array.
 
-	:rtype: int
+Returns
+-------
+int
 ") Lower;
 		Standard_Integer Lower();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & with);
 
@@ -429,13 +518,15 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates an attribute with internal boolean array.
 
-	:param label:
-	:type label: TDF_Label
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:rtype: opencascade::handle<TDataStd_BooleanArray>
+Parameters
+----------
+label: TDF_Label
+lower: int
+upper: int
+
+Returns
+-------
+opencascade::handle<TDataStd_BooleanArray>
 ") Set;
 		static opencascade::handle<TDataStd_BooleanArray> Set(const TDF_Label & label, const Standard_Integer lower, const Standard_Integer upper);
 
@@ -443,15 +534,16 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates an attribute with the array using explicit user defined <guid>.
 
-	:param label:
-	:type label: TDF_Label
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:rtype: opencascade::handle<TDataStd_BooleanArray>
+Parameters
+----------
+label: TDF_Label
+theGuid: Standard_GUID
+lower: int
+upper: int
+
+Returns
+-------
+opencascade::handle<TDataStd_BooleanArray>
 ") Set;
 		static opencascade::handle<TDataStd_BooleanArray> Set(const TDF_Label & label, const Standard_GUID & theGuid, const Standard_Integer lower, const Standard_Integer upper);
 
@@ -459,9 +551,13 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid (user defined) for the attribute.
 
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+theGuid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & theGuid);
 
@@ -469,15 +565,23 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
 		/****************** SetInternalArray ******************/
 		%feature("compactdefaultargs") SetInternalArray;
-		%feature("autodoc", "	:param values:
-	:type values: TColStd_HArray1OfByte
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+values: TColStd_HArray1OfByte
+
+Returns
+-------
+None
 ") SetInternalArray;
 		void SetInternalArray(const opencascade::handle<TColStd_HArray1OfByte> & values);
 
@@ -485,17 +589,24 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetValue;
 		%feature("autodoc", "Sets the <index>th element of the array to <value> outofrange exception is raised if <index> doesn't respect lower and upper bounds of the internal array.
 
-	:param index:
-	:type index: int
-	:param value:
-	:type value: bool
-	:rtype: None
+Parameters
+----------
+index: int
+value: bool
+
+Returns
+-------
+None
 ") SetValue;
 		void SetValue(const Standard_Integer index, const Standard_Boolean value);
 
 		/****************** TDataStd_BooleanArray ******************/
 		%feature("compactdefaultargs") TDataStd_BooleanArray;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_BooleanArray;
 		 TDataStd_BooleanArray();
 
@@ -503,7 +614,9 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Returns the upper boundary of the array.
 
-	:rtype: int
+Returns
+-------
+int
 ") Upper;
 		Standard_Integer Upper();
 
@@ -511,9 +624,13 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Return the value of the <index>th element of the array.
 
-	:param Index:
-	:type Index: int
-	:rtype: bool
+Parameters
+----------
+Index: int
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const Standard_Integer Index);
 
@@ -535,15 +652,25 @@ class TDataStd_BooleanList : public TDF_Attribute {
 	public:
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
-		%feature("autodoc", "	:param value:
-	:type value: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+value: bool
+
+Returns
+-------
+None
 ") Append;
 		void Append(const Standard_Boolean value);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -557,13 +684,21 @@ class TDataStd_BooleanList : public TDF_Attribute {
         };
 		/****************** Extent ******************/
 		%feature("compactdefaultargs") Extent;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Extent;
 		Standard_Integer Extent();
 
 		/****************** First ******************/
 		%feature("compactdefaultargs") First;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") First;
 		Standard_Boolean First();
 
@@ -571,13 +706,19 @@ class TDataStd_BooleanList : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Static methods ============== returns the id of the list of booleans attribute.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -585,11 +726,14 @@ class TDataStd_BooleanList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertAfter;
 		%feature("autodoc", "Inserts the <value> after the <index> position. the indices start with 1 .. extent().
 
-	:param index:
-	:type index: int
-	:param after_value:
-	:type after_value: bool
-	:rtype: bool
+Parameters
+----------
+index: int
+after_value: bool
+
+Returns
+-------
+bool
 ") InsertAfter;
 		Standard_Boolean InsertAfter(const Standard_Integer index, const Standard_Boolean after_value);
 
@@ -597,23 +741,34 @@ class TDataStd_BooleanList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertBefore;
 		%feature("autodoc", "Inserts the <value> before the <index> position. the indices start with 1 .. extent().
 
-	:param index:
-	:type index: int
-	:param before_value:
-	:type before_value: bool
-	:rtype: bool
+Parameters
+----------
+index: int
+before_value: bool
+
+Returns
+-------
+bool
 ") InsertBefore;
 		Standard_Boolean InsertBefore(const Standard_Integer index, const Standard_Boolean before_value);
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
 		/****************** Last ******************/
 		%feature("compactdefaultargs") Last;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Last;
 		Standard_Boolean Last();
 
@@ -621,31 +776,48 @@ class TDataStd_BooleanList : public TDF_Attribute {
 		%feature("compactdefaultargs") List;
 		%feature("autodoc", "1 - means true, 0 - means false.
 
-	:rtype: TDataStd_ListOfByte
+Returns
+-------
+TDataStd_ListOfByte
 ") List;
 		const TDataStd_ListOfByte & List();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Prepend ******************/
 		%feature("compactdefaultargs") Prepend;
-		%feature("autodoc", "	:param value:
-	:type value: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+value: bool
+
+Returns
+-------
+None
 ") Prepend;
 		void Prepend(const Standard_Boolean value);
 
@@ -653,17 +825,27 @@ class TDataStd_BooleanList : public TDF_Attribute {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Removes a value at <index> position.
 
-	:param index:
-	:type index: int
-	:rtype: bool
+Parameters
+----------
+index: int
+
+Returns
+-------
+bool
 ") Remove;
 		Standard_Boolean Remove(const Standard_Integer index);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -671,9 +853,13 @@ class TDataStd_BooleanList : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a list of boolean values attribute.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_BooleanList>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_BooleanList>
 ") Set;
 		static opencascade::handle<TDataStd_BooleanList> Set(const TDF_Label & label);
 
@@ -681,11 +867,14 @@ class TDataStd_BooleanList : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a list of boolean values attribute with explicit user defined <guid>.
 
-	:param label:
-	:type label: TDF_Label
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: opencascade::handle<TDataStd_BooleanList>
+Parameters
+----------
+label: TDF_Label
+theGuid: Standard_GUID
+
+Returns
+-------
+opencascade::handle<TDataStd_BooleanList>
 ") Set;
 		static opencascade::handle<TDataStd_BooleanList> Set(const TDF_Label & label, const Standard_GUID & theGuid);
 
@@ -693,9 +882,13 @@ class TDataStd_BooleanList : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid (user defined) for the attribute.
 
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+theGuid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & theGuid);
 
@@ -703,13 +896,19 @@ class TDataStd_BooleanList : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
 		/****************** TDataStd_BooleanList ******************/
 		%feature("compactdefaultargs") TDataStd_BooleanList;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_BooleanList;
 		 TDataStd_BooleanList();
 
@@ -733,11 +932,15 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") ChangeArray;
 		%feature("autodoc", "Sets the inner array <myvalue> of the attribute to <newarray>. if value of <newarray> differs from <myvalue>, backup performed and myvalue refers to new instance of harray1ofinteger that holds <newarray> values. if <ischeckitems> equal true each item of <newarray> will be checked with each item of <myvalue> for coincidence (to avoid backup).
 
-	:param newArray:
-	:type newArray: TColStd_HArray1OfByte
-	:param isCheckItems: default value is Standard_True
-	:type isCheckItems: bool
-	:rtype: None
+Parameters
+----------
+newArray: TColStd_HArray1OfByte
+isCheckItems: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") ChangeArray;
 		void ChangeArray(const opencascade::handle<TColStd_HArray1OfByte> & newArray, const Standard_Boolean isCheckItems = Standard_True);
 
@@ -745,9 +948,13 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") DeltaOnModification;
 		%feature("autodoc", "Makes a deltaonmodification between <self> and <anoldattribute>.
 
-	:param anOldAttribute:
-	:type anOldAttribute: TDF_Attribute
-	:rtype: opencascade::handle<TDF_DeltaOnModification>
+Parameters
+----------
+anOldAttribute: TDF_Attribute
+
+Returns
+-------
+opencascade::handle<TDF_DeltaOnModification>
 ") DeltaOnModification;
 		virtual opencascade::handle<TDF_DeltaOnModification> DeltaOnModification(const opencascade::handle<TDF_Attribute> & anOldAttribute);
 
@@ -761,7 +968,11 @@ class TDataStd_ByteArray : public TDF_Attribute {
         };
 		/****************** GetDelta ******************/
 		%feature("compactdefaultargs") GetDelta;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetDelta;
 		Standard_Boolean GetDelta();
 
@@ -769,13 +980,19 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Static methods ============== returns an id for array.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -783,17 +1000,24 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize the inner array with bounds from <lower> to <upper>.
 
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:rtype: None
+Parameters
+----------
+lower: int
+upper: int
+
+Returns
+-------
+None
 ") Init;
 		void Init(const Standard_Integer lower, const Standard_Integer upper);
 
 		/****************** InternalArray ******************/
 		%feature("compactdefaultargs") InternalArray;
-		%feature("autodoc", "	:rtype: opencascade::handle<TColStd_HArray1OfByte>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfByte>
 ") InternalArray;
 		const opencascade::handle<TColStd_HArray1OfByte> & InternalArray();
 
@@ -801,7 +1025,9 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Returns the number of elements in the array.
 
-	:rtype: int
+Returns
+-------
+int
 ") Length;
 		Standard_Integer Length();
 
@@ -809,31 +1035,48 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Lower;
 		%feature("autodoc", "Returns the lower boundary of the array.
 
-	:rtype: int
+Returns
+-------
+int
 ") Lower;
 		Standard_Integer Lower();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & with);
 
@@ -841,15 +1084,17 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates an attribute with the array on the specified label. if <isdelta> == false, defaultdeltaonmodification is used. if <isdelta> == true, deltaonmodification of the current attribute is used. if attribute is already set, all input parameters are refused and the found attribute is returned.
 
-	:param label:
-	:type label: TDF_Label
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:param isDelta: default value is Standard_False
-	:type isDelta: bool
-	:rtype: opencascade::handle<TDataStd_ByteArray>
+Parameters
+----------
+label: TDF_Label
+lower: int
+upper: int
+isDelta: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<TDataStd_ByteArray>
 ") Set;
 		static opencascade::handle<TDataStd_ByteArray> Set(const TDF_Label & label, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta = Standard_False);
 
@@ -857,17 +1102,18 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates an attribute with byte array and explicit user defined <guid> on the specified label.
 
-	:param label:
-	:type label: TDF_Label
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:param isDelta: default value is Standard_False
-	:type isDelta: bool
-	:rtype: opencascade::handle<TDataStd_ByteArray>
+Parameters
+----------
+label: TDF_Label
+theGuid: Standard_GUID
+lower: int
+upper: int
+isDelta: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<TDataStd_ByteArray>
 ") Set;
 		static opencascade::handle<TDataStd_ByteArray> Set(const TDF_Label & label, const Standard_GUID & theGuid, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta = Standard_False);
 
@@ -875,9 +1121,13 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetDelta;
 		%feature("autodoc", "For internal use only!.
 
-	:param isDelta:
-	:type isDelta: bool
-	:rtype: None
+Parameters
+----------
+isDelta: bool
+
+Returns
+-------
+None
 ") SetDelta;
 		void SetDelta(const Standard_Boolean isDelta);
 
@@ -885,9 +1135,13 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid (user defined) for the attribute.
 
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+theGuid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & theGuid);
 
@@ -895,7 +1149,9 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
@@ -903,17 +1159,24 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetValue;
 		%feature("autodoc", "Sets the <index>th element of the array to <value> outofrange exception is raised if <index> doesn't respect lower and upper bounds of the internal array.
 
-	:param index:
-	:type index: int
-	:param value:
-	:type value: Standard_Byte
-	:rtype: None
+Parameters
+----------
+index: int
+value: Standard_Byte
+
+Returns
+-------
+None
 ") SetValue;
 		void SetValue(const Standard_Integer index, const Standard_Byte value);
 
 		/****************** TDataStd_ByteArray ******************/
 		%feature("compactdefaultargs") TDataStd_ByteArray;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_ByteArray;
 		 TDataStd_ByteArray();
 
@@ -921,7 +1184,9 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Returns the upper boundary of the array.
 
-	:rtype: int
+Returns
+-------
+int
 ") Upper;
 		Standard_Integer Upper();
 
@@ -929,9 +1194,13 @@ class TDataStd_ByteArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Return the value of the <index>th element of the array.
 
-	:param Index:
-	:type Index: int
-	:rtype: Standard_Byte
+Parameters
+----------
+Index: int
+
+Returns
+-------
+Standard_Byte
 ") Value;
 		Standard_Byte Value(const Standard_Integer Index);
 
@@ -955,11 +1224,15 @@ class TDataStd_ChildNodeIterator {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initializes the iteration on the children step of the given step. if <alllevels> option is set to true, it explores not only the first, but all the sub step levels.
 
-	:param aTreeNode:
-	:type aTreeNode: TDataStd_TreeNode
-	:param allLevels: default value is Standard_False
-	:type allLevels: bool
-	:rtype: None
+Parameters
+----------
+aTreeNode: TDataStd_TreeNode
+allLevels: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const opencascade::handle<TDataStd_TreeNode> & aTreeNode, const Standard_Boolean allLevels = Standard_False);
 
@@ -967,7 +1240,9 @@ class TDataStd_ChildNodeIterator {
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Returns true if there is a current item in the iteration.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
@@ -975,7 +1250,9 @@ class TDataStd_ChildNodeIterator {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Move to the next item.
 
-	:rtype: None
+Returns
+-------
+None
 ") Next;
 		void Next();
 
@@ -983,7 +1260,9 @@ class TDataStd_ChildNodeIterator {
 		%feature("compactdefaultargs") NextBrother;
 		%feature("autodoc", "Move to the next brother. if there is none, go up etc. this method is interesting only with 'alllevels' behavior, because it avoids to explore the current step childstepren.
 
-	:rtype: None
+Returns
+-------
+None
 ") NextBrother;
 		void NextBrother();
 
@@ -991,7 +1270,9 @@ class TDataStd_ChildNodeIterator {
 		%feature("compactdefaultargs") TDataStd_ChildNodeIterator;
 		%feature("autodoc", "Creates an empty iterator.
 
-	:rtype: None
+Returns
+-------
+None
 ") TDataStd_ChildNodeIterator;
 		 TDataStd_ChildNodeIterator();
 
@@ -999,11 +1280,15 @@ class TDataStd_ChildNodeIterator {
 		%feature("compactdefaultargs") TDataStd_ChildNodeIterator;
 		%feature("autodoc", "Iterates on the childstepren of the given step. if <alllevels> option is set to true, it explores not only the first, but all the sub step levels.
 
-	:param aTreeNode:
-	:type aTreeNode: TDataStd_TreeNode
-	:param allLevels: default value is Standard_False
-	:type allLevels: bool
-	:rtype: None
+Parameters
+----------
+aTreeNode: TDataStd_TreeNode
+allLevels: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") TDataStd_ChildNodeIterator;
 		 TDataStd_ChildNodeIterator(const opencascade::handle<TDataStd_TreeNode> & aTreeNode, const Standard_Boolean allLevels = Standard_False);
 
@@ -1011,7 +1296,9 @@ class TDataStd_ChildNodeIterator {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the current item; a null step if there is no one.
 
-	:rtype: opencascade::handle<TDataStd_TreeNode>
+Returns
+-------
+opencascade::handle<TDataStd_TreeNode>
 ") Value;
 		const opencascade::handle<TDataStd_TreeNode> & Value();
 
@@ -1031,9 +1318,16 @@ class TDataStd_Comment : public TDF_Attribute {
 	public:
 		/****************** AfterRetrieval ******************/
 		%feature("compactdefaultargs") AfterRetrieval;
-		%feature("autodoc", "	:param forceIt: default value is Standard_False
-	:type forceIt: bool
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+forceIt: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+bool
 ") AfterRetrieval;
 		Standard_Boolean AfterRetrieval(const Standard_Boolean forceIt = Standard_False);
 
@@ -1049,7 +1343,9 @@ class TDataStd_Comment : public TDF_Attribute {
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "Returns the comment attribute.
 
-	:rtype: TCollection_ExtendedString
+Returns
+-------
+TCollection_ExtendedString
 ") Get;
 		const TCollection_ExtendedString & Get();
 
@@ -1057,37 +1353,58 @@ class TDataStd_Comment : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods ============= returns the guid for comments.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & with);
 
@@ -1095,9 +1412,13 @@ class TDataStd_Comment : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Find, or create a comment attribute. the comment attribute is returned.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_Comment>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_Comment>
 ") Set;
 		static opencascade::handle<TDataStd_Comment> Set(const TDF_Label & label);
 
@@ -1105,25 +1426,38 @@ class TDataStd_Comment : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds, or creates a comment attribute and sets the string. the comment attribute is returned. comment methods ============.
 
-	:param label:
-	:type label: TDF_Label
-	:param string:
-	:type string: TCollection_ExtendedString
-	:rtype: opencascade::handle<TDataStd_Comment>
+Parameters
+----------
+label: TDF_Label
+string: TCollection_ExtendedString
+
+Returns
+-------
+opencascade::handle<TDataStd_Comment>
 ") Set;
 		static opencascade::handle<TDataStd_Comment> Set(const TDF_Label & label, const TCollection_ExtendedString & string);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param S:
-	:type S: TCollection_ExtendedString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") Set;
 		void Set(const TCollection_ExtendedString & S);
 
 		/****************** TDataStd_Comment ******************/
 		%feature("compactdefaultargs") TDataStd_Comment;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_Comment;
 		 TDataStd_Comment();
 
@@ -1155,9 +1489,13 @@ class TDataStd_Current : public TDF_Attribute {
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "Returns current of <acces> framework. raise if (!has).
 
-	:param acces:
-	:type acces: TDF_Label
-	:rtype: TDF_Label
+Parameters
+----------
+acces: TDF_Label
+
+Returns
+-------
+TDF_Label
 ") Get;
 		static TDF_Label Get(const TDF_Label & acces);
 
@@ -1165,13 +1503,19 @@ class TDataStd_Current : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods =============.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** GetLabel ******************/
 		%feature("compactdefaultargs") GetLabel;
-		%feature("autodoc", "	:rtype: TDF_Label
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDF_Label
 ") GetLabel;
 		TDF_Label GetLabel();
 
@@ -1179,39 +1523,62 @@ class TDataStd_Current : public TDF_Attribute {
 		%feature("compactdefaultargs") Has;
 		%feature("autodoc", "Returns true if a current label is managed in <acces> framework. class methods =============.
 
-	:param acces:
-	:type acces: TDF_Label
-	:rtype: bool
+Parameters
+----------
+acces: TDF_Label
+
+Returns
+-------
+bool
 ") Has;
 		static Standard_Boolean Has(const TDF_Label & acces);
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -1219,23 +1586,37 @@ class TDataStd_Current : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Set <l> as current of <l> framework.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: None
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+None
 ") Set;
 		static void Set(const TDF_Label & L);
 
 		/****************** SetLabel ******************/
 		%feature("compactdefaultargs") SetLabel;
-		%feature("autodoc", "	:param current:
-	:type current: TDF_Label
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+current: TDF_Label
+
+Returns
+-------
+None
 ") SetLabel;
 		void SetLabel(const TDF_Label & current);
 
 		/****************** TDataStd_Current ******************/
 		%feature("compactdefaultargs") TDataStd_Current;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_Current;
 		 TDataStd_Current();
 
@@ -1259,7 +1640,9 @@ class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 		%feature("compactdefaultargs") Apply;
 		%feature("autodoc", "Applies the delta to the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") Apply;
 		virtual void Apply();
 
@@ -1267,9 +1650,13 @@ class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 		%feature("compactdefaultargs") TDataStd_DeltaOnModificationOfByteArray;
 		%feature("autodoc", "Initializes a tdf_deltaonmodification.
 
-	:param Arr:
-	:type Arr: TDataStd_ByteArray
-	:rtype: None
+Parameters
+----------
+Arr: TDataStd_ByteArray
+
+Returns
+-------
+None
 ") TDataStd_DeltaOnModificationOfByteArray;
 		 TDataStd_DeltaOnModificationOfByteArray(const opencascade::handle<TDataStd_ByteArray> & Arr);
 
@@ -1293,7 +1680,9 @@ class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModificat
 		%feature("compactdefaultargs") Apply;
 		%feature("autodoc", "Applies the delta to the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") Apply;
 		virtual void Apply();
 
@@ -1301,9 +1690,13 @@ class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModificat
 		%feature("compactdefaultargs") TDataStd_DeltaOnModificationOfExtStringArray;
 		%feature("autodoc", "Initializes a tdf_deltaonmodification.
 
-	:param Arr:
-	:type Arr: TDataStd_ExtStringArray
-	:rtype: None
+Parameters
+----------
+Arr: TDataStd_ExtStringArray
+
+Returns
+-------
+None
 ") TDataStd_DeltaOnModificationOfExtStringArray;
 		 TDataStd_DeltaOnModificationOfExtStringArray(const opencascade::handle<TDataStd_ExtStringArray> & Arr);
 
@@ -1327,7 +1720,9 @@ class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 		%feature("compactdefaultargs") Apply;
 		%feature("autodoc", "Applies the delta to the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") Apply;
 		virtual void Apply();
 
@@ -1335,9 +1730,13 @@ class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 		%feature("compactdefaultargs") TDataStd_DeltaOnModificationOfIntArray;
 		%feature("autodoc", "Initializes a tdf_deltaonmodification.
 
-	:param Arr:
-	:type Arr: TDataStd_IntegerArray
-	:rtype: None
+Parameters
+----------
+Arr: TDataStd_IntegerArray
+
+Returns
+-------
+None
 ") TDataStd_DeltaOnModificationOfIntArray;
 		 TDataStd_DeltaOnModificationOfIntArray(const opencascade::handle<TDataStd_IntegerArray> & Arr);
 
@@ -1361,7 +1760,9 @@ class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModificatio
 		%feature("compactdefaultargs") Apply;
 		%feature("autodoc", "Applies the delta to the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") Apply;
 		virtual void Apply();
 
@@ -1369,9 +1770,13 @@ class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModificatio
 		%feature("compactdefaultargs") TDataStd_DeltaOnModificationOfIntPackedMap;
 		%feature("autodoc", "Initializes a tdf_deltaonmodification.
 
-	:param Arr:
-	:type Arr: TDataStd_IntPackedMap
-	:rtype: None
+Parameters
+----------
+Arr: TDataStd_IntPackedMap
+
+Returns
+-------
+None
 ") TDataStd_DeltaOnModificationOfIntPackedMap;
 		 TDataStd_DeltaOnModificationOfIntPackedMap(const opencascade::handle<TDataStd_IntPackedMap> & Arr);
 
@@ -1395,7 +1800,9 @@ class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 		%feature("compactdefaultargs") Apply;
 		%feature("autodoc", "Applies the delta to the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") Apply;
 		virtual void Apply();
 
@@ -1403,9 +1810,13 @@ class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 		%feature("compactdefaultargs") TDataStd_DeltaOnModificationOfRealArray;
 		%feature("autodoc", "Initializes a tdf_deltaonmodification.
 
-	:param Arr:
-	:type Arr: TDataStd_RealArray
-	:rtype: None
+Parameters
+----------
+Arr: TDataStd_RealArray
+
+Returns
+-------
+None
 ") TDataStd_DeltaOnModificationOfRealArray;
 		 TDataStd_DeltaOnModificationOfRealArray(const opencascade::handle<TDataStd_RealArray> & Arr);
 
@@ -1429,9 +1840,13 @@ class TDataStd_Directory : public TDF_Attribute {
 		%feature("compactdefaultargs") AddDirectory;
 		%feature("autodoc", "Creates a new sub-label and sets the sub-directory dir on that label.
 
-	:param dir:
-	:type dir: TDataStd_Directory
-	:rtype: opencascade::handle<TDataStd_Directory>
+Parameters
+----------
+dir: TDataStd_Directory
+
+Returns
+-------
+opencascade::handle<TDataStd_Directory>
 ") AddDirectory;
 		static opencascade::handle<TDataStd_Directory> AddDirectory(const opencascade::handle<TDataStd_Directory> & dir);
 
@@ -1447,11 +1862,14 @@ class TDataStd_Directory : public TDF_Attribute {
 		%feature("compactdefaultargs") Find;
 		%feature("autodoc", "Class methods ============= searches for a directory attribute on the label current, or on one of the father labels of current. if a directory attribute is found, true is returned, and the attribute found is set as d.
 
-	:param current:
-	:type current: TDF_Label
-	:param D:
-	:type D: TDataStd_Directory
-	:rtype: bool
+Parameters
+----------
+current: TDF_Label
+D: TDataStd_Directory
+
+Returns
+-------
+bool
 ") Find;
 		static Standard_Boolean Find(const TDF_Label & current, opencascade::handle<TDataStd_Directory> & D);
 
@@ -1459,13 +1877,19 @@ class TDataStd_Directory : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Directory methods ===============.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -1473,9 +1897,13 @@ class TDataStd_Directory : public TDF_Attribute {
 		%feature("compactdefaultargs") MakeObjectLabel;
 		%feature("autodoc", "Makes new label and returns it to insert other object attributes (sketch,part...etc...).
 
-	:param dir:
-	:type dir: TDataStd_Directory
-	:rtype: TDF_Label
+Parameters
+----------
+dir: TDataStd_Directory
+
+Returns
+-------
+TDF_Label
 ") MakeObjectLabel;
 		static TDF_Label MakeObjectLabel(const opencascade::handle<TDataStd_Directory> & dir);
 
@@ -1483,47 +1911,76 @@ class TDataStd_Directory : public TDF_Attribute {
 		%feature("compactdefaultargs") New;
 		%feature("autodoc", "Creates an enpty directory attribute, located at <label>. raises if <label> has attribute.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_Directory>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_Directory>
 ") New;
 		static opencascade::handle<TDataStd_Directory> New(const TDF_Label & label);
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** References ******************/
 		%feature("compactdefaultargs") References;
-		%feature("autodoc", "	:param DS:
-	:type DS: TDF_DataSet
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+DS: TDF_DataSet
+
+Returns
+-------
+None
 ") References;
 		virtual void References(const opencascade::handle<TDF_DataSet> & DS);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & with);
 
 		/****************** TDataStd_Directory ******************/
 		%feature("compactdefaultargs") TDataStd_Directory;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_Directory;
 		 TDataStd_Directory();
 
@@ -1553,7 +2010,11 @@ class TDataStd_Expression : public TDF_Attribute {
         };
 		/****************** GetExpression ******************/
 		%feature("compactdefaultargs") GetExpression;
-		%feature("autodoc", "	:rtype: TCollection_ExtendedString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_ExtendedString
 ") GetExpression;
 		const TCollection_ExtendedString & GetExpression();
 
@@ -1561,19 +2022,29 @@ class TDataStd_Expression : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods =============.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** GetVariables ******************/
 		%feature("compactdefaultargs") GetVariables;
-		%feature("autodoc", "	:rtype: TDF_AttributeList
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDF_AttributeList
 ") GetVariables;
 		TDF_AttributeList & GetVariables();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -1581,31 +2052,48 @@ class TDataStd_Expression : public TDF_Attribute {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Build and return the expression name.
 
-	:rtype: TCollection_ExtendedString
+Returns
+-------
+TCollection_ExtendedString
 ") Name;
 		TCollection_ExtendedString Name();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -1613,23 +2101,37 @@ class TDataStd_Expression : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Find, or create, an expression attribute. expressionmethods ============.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_Expression>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_Expression>
 ") Set;
 		static opencascade::handle<TDataStd_Expression> Set(const TDF_Label & label);
 
 		/****************** SetExpression ******************/
 		%feature("compactdefaultargs") SetExpression;
-		%feature("autodoc", "	:param E:
-	:type E: TCollection_ExtendedString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") SetExpression;
 		void SetExpression(const TCollection_ExtendedString & E);
 
 		/****************** TDataStd_Expression ******************/
 		%feature("compactdefaultargs") TDataStd_Expression;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_Expression;
 		 TDataStd_Expression();
 
@@ -1653,7 +2155,9 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Array;
 		%feature("autodoc", "Return the inner array of the extstringarray attribute.
 
-	:rtype: opencascade::handle<TColStd_HArray1OfExtendedString>
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfExtendedString>
 ") Array;
 		const opencascade::handle<TColStd_HArray1OfExtendedString> & Array();
 
@@ -1661,11 +2165,15 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") ChangeArray;
 		%feature("autodoc", "Sets the inner array <myvalue> of the extstringarray attribute to <newarray>. if value of <newarray> differs from <myvalue>, backup performed and myvalue refers to new instance of harray1ofextendedstring that holds <newarray> values if <ischeckitems> equal true each item of <newarray> will be checked with each item of <myvalue> for coincidence (to avoid backup).
 
-	:param newArray:
-	:type newArray: TColStd_HArray1OfExtendedString
-	:param isCheckItems: default value is Standard_True
-	:type isCheckItems: bool
-	:rtype: None
+Parameters
+----------
+newArray: TColStd_HArray1OfExtendedString
+isCheckItems: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") ChangeArray;
 		void ChangeArray(const opencascade::handle<TColStd_HArray1OfExtendedString> & newArray, const Standard_Boolean isCheckItems = Standard_True);
 
@@ -1673,9 +2181,13 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") DeltaOnModification;
 		%feature("autodoc", "Makes a deltaonmodification between <self> and <anoldattribute>.
 
-	:param anOldAttribute:
-	:type anOldAttribute: TDF_Attribute
-	:rtype: opencascade::handle<TDF_DeltaOnModification>
+Parameters
+----------
+anOldAttribute: TDF_Attribute
+
+Returns
+-------
+opencascade::handle<TDF_DeltaOnModification>
 ") DeltaOnModification;
 		virtual opencascade::handle<TDF_DeltaOnModification> DeltaOnModification(const opencascade::handle<TDF_Attribute> & anOldAttribute);
 
@@ -1689,7 +2201,11 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
         };
 		/****************** GetDelta ******************/
 		%feature("compactdefaultargs") GetDelta;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetDelta;
 		Standard_Boolean GetDelta();
 
@@ -1697,13 +2213,19 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods ============= returns the guid for the attribute.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -1711,11 +2233,14 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initializes the inner array with bounds from <lower> to <upper>.
 
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:rtype: None
+Parameters
+----------
+lower: int
+upper: int
+
+Returns
+-------
+None
 ") Init;
 		void Init(const Standard_Integer lower, const Standard_Integer upper);
 
@@ -1723,7 +2248,9 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Return the number of elements of <self>.
 
-	:rtype: int
+Returns
+-------
+int
 ") Length;
 		Standard_Integer Length();
 
@@ -1731,31 +2258,48 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Lower;
 		%feature("autodoc", "Return the lower bound.
 
-	:rtype: int
+Returns
+-------
+int
 ") Lower;
 		Standard_Integer Lower();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -1763,15 +2307,17 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds, or creates, an extstringarray attribute with <lower> and <upper> bounds on the specified label. if <isdelta> == false, defaultdeltaonmodification is used. if <isdelta> == true, deltaonmodification of the current attribute is used. if attribute is already set, all input parameters are refused and the found attribute is returned.
 
-	:param label:
-	:type label: TDF_Label
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:param isDelta: default value is Standard_False
-	:type isDelta: bool
-	:rtype: opencascade::handle<TDataStd_ExtStringArray>
+Parameters
+----------
+label: TDF_Label
+lower: int
+upper: int
+isDelta: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<TDataStd_ExtStringArray>
 ") Set;
 		static opencascade::handle<TDataStd_ExtStringArray> Set(const TDF_Label & label, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta = Standard_False);
 
@@ -1779,17 +2325,18 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds, or creates, an extstringarray attribute with explicit user defined <guid>. the extstringarray attribute is returned.
 
-	:param label:
-	:type label: TDF_Label
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:param isDelta: default value is Standard_False
-	:type isDelta: bool
-	:rtype: opencascade::handle<TDataStd_ExtStringArray>
+Parameters
+----------
+label: TDF_Label
+theGuid: Standard_GUID
+lower: int
+upper: int
+isDelta: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<TDataStd_ExtStringArray>
 ") Set;
 		static opencascade::handle<TDataStd_ExtStringArray> Set(const TDF_Label & label, const Standard_GUID & theGuid, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta = Standard_False);
 
@@ -1797,9 +2344,13 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetDelta;
 		%feature("autodoc", "For internal use only!.
 
-	:param isDelta:
-	:type isDelta: bool
-	:rtype: None
+Parameters
+----------
+isDelta: bool
+
+Returns
+-------
+None
 ") SetDelta;
 		void SetDelta(const Standard_Boolean isDelta);
 
@@ -1807,9 +2358,13 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid (user defined) for the attribute.
 
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+theGuid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & theGuid);
 
@@ -1817,7 +2372,9 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
@@ -1825,17 +2382,24 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetValue;
 		%feature("autodoc", "Sets the <index>th element of the array to <value> outofrange exception is raised if <index> doesn't respect lower and upper bounds of the internal array.
 
-	:param Index:
-	:type Index: int
-	:param Value:
-	:type Value: TCollection_ExtendedString
-	:rtype: None
+Parameters
+----------
+Index: int
+Value: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") SetValue;
 		void SetValue(const Standard_Integer Index, const TCollection_ExtendedString & Value);
 
 		/****************** TDataStd_ExtStringArray ******************/
 		%feature("compactdefaultargs") TDataStd_ExtStringArray;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_ExtStringArray;
 		 TDataStd_ExtStringArray();
 
@@ -1843,7 +2407,9 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Return the upper bound.
 
-	:rtype: int
+Returns
+-------
+int
 ") Upper;
 		Standard_Integer Upper();
 
@@ -1851,9 +2417,13 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the value of the <index>th element of the array.
 
-	:param Index:
-	:type Index: int
-	:rtype: TCollection_ExtendedString
+Parameters
+----------
+Index: int
+
+Returns
+-------
+TCollection_ExtendedString
 ") Value;
 		const TCollection_ExtendedString & Value(const Standard_Integer Index);
 
@@ -1875,15 +2445,25 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 	public:
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
-		%feature("autodoc", "	:param value:
-	:type value: TCollection_ExtendedString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+value: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") Append;
 		void Append(const TCollection_ExtendedString & value);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -1897,13 +2477,21 @@ class TDataStd_ExtStringList : public TDF_Attribute {
         };
 		/****************** Extent ******************/
 		%feature("compactdefaultargs") Extent;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Extent;
 		Standard_Integer Extent();
 
 		/****************** First ******************/
 		%feature("compactdefaultargs") First;
-		%feature("autodoc", "	:rtype: TCollection_ExtendedString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_ExtendedString
 ") First;
 		const TCollection_ExtendedString & First();
 
@@ -1911,13 +2499,19 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Static methods ============== returns the id of the list of strings attribute.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -1925,11 +2519,14 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertAfter;
 		%feature("autodoc", "Inserts the <value> after the first meet of <after_value>.
 
-	:param value:
-	:type value: TCollection_ExtendedString
-	:param after_value:
-	:type after_value: TCollection_ExtendedString
-	:rtype: bool
+Parameters
+----------
+value: TCollection_ExtendedString
+after_value: TCollection_ExtendedString
+
+Returns
+-------
+bool
 ") InsertAfter;
 		Standard_Boolean InsertAfter(const TCollection_ExtendedString & value, const TCollection_ExtendedString & after_value);
 
@@ -1937,11 +2534,14 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertAfter;
 		%feature("autodoc", "Inserts the <value> after the <index> position. the indices start with 1 .. extent().
 
-	:param index:
-	:type index: int
-	:param after_value:
-	:type after_value: TCollection_ExtendedString
-	:rtype: bool
+Parameters
+----------
+index: int
+after_value: TCollection_ExtendedString
+
+Returns
+-------
+bool
 ") InsertAfter;
 		Standard_Boolean InsertAfter(const Standard_Integer index, const TCollection_ExtendedString & after_value);
 
@@ -1949,11 +2549,14 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertBefore;
 		%feature("autodoc", "Inserts the <value> before the first meet of <before_value>.
 
-	:param value:
-	:type value: TCollection_ExtendedString
-	:param before_value:
-	:type before_value: TCollection_ExtendedString
-	:rtype: bool
+Parameters
+----------
+value: TCollection_ExtendedString
+before_value: TCollection_ExtendedString
+
+Returns
+-------
+bool
 ") InsertBefore;
 		Standard_Boolean InsertBefore(const TCollection_ExtendedString & value, const TCollection_ExtendedString & before_value);
 
@@ -1961,53 +2564,83 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertBefore;
 		%feature("autodoc", "Inserts the <value> before the <index> position. the indices start with 1 .. extent().
 
-	:param index:
-	:type index: int
-	:param before_value:
-	:type before_value: TCollection_ExtendedString
-	:rtype: bool
+Parameters
+----------
+index: int
+before_value: TCollection_ExtendedString
+
+Returns
+-------
+bool
 ") InsertBefore;
 		Standard_Boolean InsertBefore(const Standard_Integer index, const TCollection_ExtendedString & before_value);
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
 		/****************** Last ******************/
 		%feature("compactdefaultargs") Last;
-		%feature("autodoc", "	:rtype: TCollection_ExtendedString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_ExtendedString
 ") Last;
 		const TCollection_ExtendedString & Last();
 
 		/****************** List ******************/
 		%feature("compactdefaultargs") List;
-		%feature("autodoc", "	:rtype: TDataStd_ListOfExtendedString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_ListOfExtendedString
 ") List;
 		const TDataStd_ListOfExtendedString & List();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Prepend ******************/
 		%feature("compactdefaultargs") Prepend;
-		%feature("autodoc", "	:param value:
-	:type value: TCollection_ExtendedString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+value: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") Prepend;
 		void Prepend(const TCollection_ExtendedString & value);
 
@@ -2015,9 +2648,13 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Removes the first meet of the <value>.
 
-	:param value:
-	:type value: TCollection_ExtendedString
-	:rtype: bool
+Parameters
+----------
+value: TCollection_ExtendedString
+
+Returns
+-------
+bool
 ") Remove;
 		Standard_Boolean Remove(const TCollection_ExtendedString & value);
 
@@ -2025,17 +2662,27 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Removes a value at <index> position.
 
-	:param index:
-	:type index: int
-	:rtype: bool
+Parameters
+----------
+index: int
+
+Returns
+-------
+bool
 ") Remove;
 		Standard_Boolean Remove(const Standard_Integer index);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -2043,9 +2690,13 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a list of string values attribute with explicit user defined <guid>.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_ExtStringList>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_ExtStringList>
 ") Set;
 		static opencascade::handle<TDataStd_ExtStringList> Set(const TDF_Label & label);
 
@@ -2053,11 +2704,14 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a list of string values attribute.
 
-	:param label:
-	:type label: TDF_Label
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: opencascade::handle<TDataStd_ExtStringList>
+Parameters
+----------
+label: TDF_Label
+theGuid: Standard_GUID
+
+Returns
+-------
+opencascade::handle<TDataStd_ExtStringList>
 ") Set;
 		static opencascade::handle<TDataStd_ExtStringList> Set(const TDF_Label & label, const Standard_GUID & theGuid);
 
@@ -2065,9 +2719,13 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid (user defined) for the attribute.
 
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+theGuid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & theGuid);
 
@@ -2075,13 +2733,19 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
 		/****************** TDataStd_ExtStringList ******************/
 		%feature("compactdefaultargs") TDataStd_ExtStringList;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_ExtStringList;
 		 TDataStd_ExtStringList();
 
@@ -2103,29 +2767,50 @@ class TDataStd_HDataMapOfStringByte : public Standard_Transient {
 	public:
 		/****************** ChangeMap ******************/
 		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "	:rtype: TDataStd_DataMapOfStringByte
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringByte
 ") ChangeMap;
 		TDataStd_DataMapOfStringByte & ChangeMap();
 
 		/****************** Map ******************/
 		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "	:rtype: TDataStd_DataMapOfStringByte
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringByte
 ") Map;
 		const TDataStd_DataMapOfStringByte & Map();
 
 		/****************** TDataStd_HDataMapOfStringByte ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringByte;
-		%feature("autodoc", "	:param NbBuckets: default value is 1
-	:type NbBuckets: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbBuckets: int,optional
+	default value is 1
+
+Returns
+-------
+None
 ") TDataStd_HDataMapOfStringByte;
 		 TDataStd_HDataMapOfStringByte(const Standard_Integer NbBuckets = 1);
 
 		/****************** TDataStd_HDataMapOfStringByte ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringByte;
-		%feature("autodoc", "	:param theOther:
-	:type theOther: TDataStd_DataMapOfStringByte
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theOther: TDataStd_DataMapOfStringByte
+
+Returns
+-------
+None
 ") TDataStd_HDataMapOfStringByte;
 		 TDataStd_HDataMapOfStringByte(const TDataStd_DataMapOfStringByte & theOther);
 
@@ -2147,29 +2832,50 @@ class TDataStd_HDataMapOfStringHArray1OfInteger : public Standard_Transient {
 	public:
 		/****************** ChangeMap ******************/
 		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "	:rtype: TDataStd_DataMapOfStringHArray1OfInteger
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringHArray1OfInteger
 ") ChangeMap;
 		TDataStd_DataMapOfStringHArray1OfInteger & ChangeMap();
 
 		/****************** Map ******************/
 		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "	:rtype: TDataStd_DataMapOfStringHArray1OfInteger
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringHArray1OfInteger
 ") Map;
 		const TDataStd_DataMapOfStringHArray1OfInteger & Map();
 
 		/****************** TDataStd_HDataMapOfStringHArray1OfInteger ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringHArray1OfInteger;
-		%feature("autodoc", "	:param NbBuckets: default value is 1
-	:type NbBuckets: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbBuckets: int,optional
+	default value is 1
+
+Returns
+-------
+None
 ") TDataStd_HDataMapOfStringHArray1OfInteger;
 		 TDataStd_HDataMapOfStringHArray1OfInteger(const Standard_Integer NbBuckets = 1);
 
 		/****************** TDataStd_HDataMapOfStringHArray1OfInteger ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringHArray1OfInteger;
-		%feature("autodoc", "	:param theOther:
-	:type theOther: TDataStd_DataMapOfStringHArray1OfInteger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theOther: TDataStd_DataMapOfStringHArray1OfInteger
+
+Returns
+-------
+None
 ") TDataStd_HDataMapOfStringHArray1OfInteger;
 		 TDataStd_HDataMapOfStringHArray1OfInteger(const TDataStd_DataMapOfStringHArray1OfInteger & theOther);
 
@@ -2191,29 +2897,50 @@ class TDataStd_HDataMapOfStringHArray1OfReal : public Standard_Transient {
 	public:
 		/****************** ChangeMap ******************/
 		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "	:rtype: TDataStd_DataMapOfStringHArray1OfReal
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringHArray1OfReal
 ") ChangeMap;
 		TDataStd_DataMapOfStringHArray1OfReal & ChangeMap();
 
 		/****************** Map ******************/
 		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "	:rtype: TDataStd_DataMapOfStringHArray1OfReal
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringHArray1OfReal
 ") Map;
 		const TDataStd_DataMapOfStringHArray1OfReal & Map();
 
 		/****************** TDataStd_HDataMapOfStringHArray1OfReal ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringHArray1OfReal;
-		%feature("autodoc", "	:param NbBuckets: default value is 1
-	:type NbBuckets: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbBuckets: int,optional
+	default value is 1
+
+Returns
+-------
+None
 ") TDataStd_HDataMapOfStringHArray1OfReal;
 		 TDataStd_HDataMapOfStringHArray1OfReal(const Standard_Integer NbBuckets = 1);
 
 		/****************** TDataStd_HDataMapOfStringHArray1OfReal ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringHArray1OfReal;
-		%feature("autodoc", "	:param theOther:
-	:type theOther: TDataStd_DataMapOfStringHArray1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theOther: TDataStd_DataMapOfStringHArray1OfReal
+
+Returns
+-------
+None
 ") TDataStd_HDataMapOfStringHArray1OfReal;
 		 TDataStd_HDataMapOfStringHArray1OfReal(const TDataStd_DataMapOfStringHArray1OfReal & theOther);
 
@@ -2235,29 +2962,50 @@ class TDataStd_HDataMapOfStringInteger : public Standard_Transient {
 	public:
 		/****************** ChangeMap ******************/
 		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "	:rtype: TColStd_DataMapOfStringInteger
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_DataMapOfStringInteger
 ") ChangeMap;
 		TColStd_DataMapOfStringInteger & ChangeMap();
 
 		/****************** Map ******************/
 		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "	:rtype: TColStd_DataMapOfStringInteger
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_DataMapOfStringInteger
 ") Map;
 		const TColStd_DataMapOfStringInteger & Map();
 
 		/****************** TDataStd_HDataMapOfStringInteger ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringInteger;
-		%feature("autodoc", "	:param NbBuckets: default value is 1
-	:type NbBuckets: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbBuckets: int,optional
+	default value is 1
+
+Returns
+-------
+None
 ") TDataStd_HDataMapOfStringInteger;
 		 TDataStd_HDataMapOfStringInteger(const Standard_Integer NbBuckets = 1);
 
 		/****************** TDataStd_HDataMapOfStringInteger ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringInteger;
-		%feature("autodoc", "	:param theOther:
-	:type theOther: TColStd_DataMapOfStringInteger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theOther: TColStd_DataMapOfStringInteger
+
+Returns
+-------
+None
 ") TDataStd_HDataMapOfStringInteger;
 		 TDataStd_HDataMapOfStringInteger(const TColStd_DataMapOfStringInteger & theOther);
 
@@ -2279,29 +3027,50 @@ class TDataStd_HDataMapOfStringReal : public Standard_Transient {
 	public:
 		/****************** ChangeMap ******************/
 		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "	:rtype: TDataStd_DataMapOfStringReal
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringReal
 ") ChangeMap;
 		TDataStd_DataMapOfStringReal & ChangeMap();
 
 		/****************** Map ******************/
 		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "	:rtype: TDataStd_DataMapOfStringReal
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringReal
 ") Map;
 		const TDataStd_DataMapOfStringReal & Map();
 
 		/****************** TDataStd_HDataMapOfStringReal ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringReal;
-		%feature("autodoc", "	:param NbBuckets: default value is 1
-	:type NbBuckets: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbBuckets: int,optional
+	default value is 1
+
+Returns
+-------
+None
 ") TDataStd_HDataMapOfStringReal;
 		 TDataStd_HDataMapOfStringReal(const Standard_Integer NbBuckets = 1);
 
 		/****************** TDataStd_HDataMapOfStringReal ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringReal;
-		%feature("autodoc", "	:param theOther:
-	:type theOther: TDataStd_DataMapOfStringReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theOther: TDataStd_DataMapOfStringReal
+
+Returns
+-------
+None
 ") TDataStd_HDataMapOfStringReal;
 		 TDataStd_HDataMapOfStringReal(const TDataStd_DataMapOfStringReal & theOther);
 
@@ -2323,29 +3092,50 @@ class TDataStd_HDataMapOfStringString : public Standard_Transient {
 	public:
 		/****************** ChangeMap ******************/
 		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "	:rtype: TDataStd_DataMapOfStringString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringString
 ") ChangeMap;
 		TDataStd_DataMapOfStringString & ChangeMap();
 
 		/****************** Map ******************/
 		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "	:rtype: TDataStd_DataMapOfStringString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringString
 ") Map;
 		const TDataStd_DataMapOfStringString & Map();
 
 		/****************** TDataStd_HDataMapOfStringString ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringString;
-		%feature("autodoc", "	:param NbBuckets: default value is 1
-	:type NbBuckets: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbBuckets: int,optional
+	default value is 1
+
+Returns
+-------
+None
 ") TDataStd_HDataMapOfStringString;
 		 TDataStd_HDataMapOfStringString(const Standard_Integer NbBuckets = 1);
 
 		/****************** TDataStd_HDataMapOfStringString ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringString;
-		%feature("autodoc", "	:param theOther:
-	:type theOther: TDataStd_DataMapOfStringString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theOther: TDataStd_DataMapOfStringString
+
+Returns
+-------
+None
 ") TDataStd_HDataMapOfStringString;
 		 TDataStd_HDataMapOfStringString(const TDataStd_DataMapOfStringString & theOther);
 
@@ -2367,39 +3157,67 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 	public:
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "	:param theKey:
-	:type theKey: int
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theKey: int
+
+Returns
+-------
+bool
 ") Add;
 		Standard_Boolean Add(const Standard_Integer theKey);
 
 		/****************** ChangeMap ******************/
 		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "	:param theMap:
-	:type theMap: TColStd_HPackedMapOfInteger
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMap: TColStd_HPackedMapOfInteger
+
+Returns
+-------
+bool
 ") ChangeMap;
 		Standard_Boolean ChangeMap(const opencascade::handle<TColStd_HPackedMapOfInteger> & theMap);
 
 		/****************** ChangeMap ******************/
 		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "	:param theMap:
-	:type theMap: TColStd_PackedMapOfInteger
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMap: TColStd_PackedMapOfInteger
+
+Returns
+-------
+bool
 ") ChangeMap;
 		Standard_Boolean ChangeMap(const TColStd_PackedMapOfInteger & theMap);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Clear;
 		Standard_Boolean Clear();
 
 		/****************** Contains ******************/
 		%feature("compactdefaultargs") Contains;
-		%feature("autodoc", "	:param theKey:
-	:type theKey: int
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theKey: int
+
+Returns
+-------
+bool
 ") Contains;
 		Standard_Boolean Contains(const Standard_Integer theKey);
 
@@ -2407,9 +3225,13 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 		%feature("compactdefaultargs") DeltaOnModification;
 		%feature("autodoc", "Makes a deltaonmodification between <self> and <anoldattribute>.
 
-	:param anOldAttribute:
-	:type anOldAttribute: TDF_Attribute
-	:rtype: opencascade::handle<TDF_DeltaOnModification>
+Parameters
+----------
+anOldAttribute: TDF_Attribute
+
+Returns
+-------
+opencascade::handle<TDF_DeltaOnModification>
 ") DeltaOnModification;
 		virtual opencascade::handle<TDF_DeltaOnModification> DeltaOnModification(const opencascade::handle<TDF_Attribute> & anOldAttribute);
 
@@ -2423,19 +3245,31 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
         };
 		/****************** Extent ******************/
 		%feature("compactdefaultargs") Extent;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Extent;
 		Standard_Integer Extent();
 
 		/****************** GetDelta ******************/
 		%feature("compactdefaultargs") GetDelta;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetDelta;
 		Standard_Boolean GetDelta();
 
 		/****************** GetHMap ******************/
 		%feature("compactdefaultargs") GetHMap;
-		%feature("autodoc", "	:rtype: opencascade::handle<TColStd_HPackedMapOfInteger>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HPackedMapOfInteger>
 ") GetHMap;
 		const opencascade::handle<TColStd_HPackedMapOfInteger> & GetHMap();
 
@@ -2443,57 +3277,92 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods ============= returns the guid of the attribute.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** GetMap ******************/
 		%feature("compactdefaultargs") GetMap;
-		%feature("autodoc", "	:rtype: TColStd_PackedMapOfInteger
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_PackedMapOfInteger
 ") GetMap;
 		const TColStd_PackedMapOfInteger & GetMap();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Remove ******************/
 		%feature("compactdefaultargs") Remove;
-		%feature("autodoc", "	:param theKey:
-	:type theKey: int
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theKey: int
+
+Returns
+-------
+bool
 ") Remove;
 		Standard_Boolean Remove(const Standard_Integer theKey);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & with);
 
@@ -2501,11 +3370,15 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates an integer map attribute on the given label. if <isdelta> == false, defaultdeltaonmodification is used. if <isdelta> == true, deltaonmodification of the current attribute is used. if attribute is already set, input parameter <isdelta> is refused and the found attribute returned. attribute methods ===================.
 
-	:param label:
-	:type label: TDF_Label
-	:param isDelta: default value is Standard_False
-	:type isDelta: bool
-	:rtype: opencascade::handle<TDataStd_IntPackedMap>
+Parameters
+----------
+label: TDF_Label
+isDelta: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<TDataStd_IntPackedMap>
 ") Set;
 		static opencascade::handle<TDataStd_IntPackedMap> Set(const TDF_Label & label, const Standard_Boolean isDelta = Standard_False);
 
@@ -2513,15 +3386,23 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 		%feature("compactdefaultargs") SetDelta;
 		%feature("autodoc", "For internal use only!.
 
-	:param isDelta:
-	:type isDelta: bool
-	:rtype: None
+Parameters
+----------
+isDelta: bool
+
+Returns
+-------
+None
 ") SetDelta;
 		void SetDelta(const Standard_Boolean isDelta);
 
 		/****************** TDataStd_IntPackedMap ******************/
 		%feature("compactdefaultargs") TDataStd_IntPackedMap;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_IntPackedMap;
 		 TDataStd_IntPackedMap();
 
@@ -2553,7 +3434,9 @@ class TDataStd_Integer : public TDF_Attribute {
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "Returns the integer value contained in the attribute.
 
-	:rtype: int
+Returns
+-------
+int
 ") Get;
 		Standard_Integer Get();
 
@@ -2561,13 +3444,19 @@ class TDataStd_Integer : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods ============= returns the guid for integers.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -2575,31 +3464,48 @@ class TDataStd_Integer : public TDF_Attribute {
 		%feature("compactdefaultargs") IsCaptured;
 		%feature("autodoc", "Returns true if there is a reference on the same label.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsCaptured;
 		Standard_Boolean IsCaptured();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -2607,11 +3513,14 @@ class TDataStd_Integer : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds, or creates, an integer attribute and sets <value> the integer attribute is returned.
 
-	:param label:
-	:type label: TDF_Label
-	:param value:
-	:type value: int
-	:rtype: opencascade::handle<TDataStd_Integer>
+Parameters
+----------
+label: TDF_Label
+value: int
+
+Returns
+-------
+opencascade::handle<TDataStd_Integer>
 ") Set;
 		static opencascade::handle<TDataStd_Integer> Set(const TDF_Label & label, const Standard_Integer value);
 
@@ -2619,13 +3528,15 @@ class TDataStd_Integer : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds, or creates, an integer attribute with explicit user defined <guid> and sets <value>. the integer attribute is returned. .
 
-	:param label:
-	:type label: TDF_Label
-	:param guid:
-	:type guid: Standard_GUID
-	:param value:
-	:type value: int
-	:rtype: opencascade::handle<TDataStd_Integer>
+Parameters
+----------
+label: TDF_Label
+guid: Standard_GUID
+value: int
+
+Returns
+-------
+opencascade::handle<TDataStd_Integer>
 ") Set;
 		static opencascade::handle<TDataStd_Integer> Set(const TDF_Label & label, const Standard_GUID & guid, const Standard_Integer value);
 
@@ -2633,9 +3544,13 @@ class TDataStd_Integer : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Integer methods ===============.
 
-	:param V:
-	:type V: int
-	:rtype: None
+Parameters
+----------
+V: int
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Integer V);
 
@@ -2643,9 +3558,13 @@ class TDataStd_Integer : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid (user defined) for the attribute.
 
-	:param guid:
-	:type guid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+guid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & guid);
 
@@ -2653,13 +3572,19 @@ class TDataStd_Integer : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
 		/****************** TDataStd_Integer ******************/
 		%feature("compactdefaultargs") TDataStd_Integer;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_Integer;
 		 TDataStd_Integer();
 
@@ -2683,7 +3608,9 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Array;
 		%feature("autodoc", "Return the inner array of the integerarray attribute.
 
-	:rtype: opencascade::handle<TColStd_HArray1OfInteger>
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfInteger>
 ") Array;
 		const opencascade::handle<TColStd_HArray1OfInteger> & Array();
 
@@ -2691,11 +3618,15 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") ChangeArray;
 		%feature("autodoc", "Sets the inner array <myvalue> of the integerarray attribute to <newarray>. if value of <newarray> differs from <myvalue>, backup performed and myvalue refers to new instance of harray1ofinteger that holds <newarray> values if <ischeckitems> equal true each item of <newarray> will be checked with each item of <myvalue> for coincidence (to avoid backup).
 
-	:param newArray:
-	:type newArray: TColStd_HArray1OfInteger
-	:param isCheckItems: default value is Standard_True
-	:type isCheckItems: bool
-	:rtype: None
+Parameters
+----------
+newArray: TColStd_HArray1OfInteger
+isCheckItems: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") ChangeArray;
 		void ChangeArray(const opencascade::handle<TColStd_HArray1OfInteger> & newArray, const Standard_Boolean isCheckItems = Standard_True);
 
@@ -2703,9 +3634,13 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") DeltaOnModification;
 		%feature("autodoc", "Makes a deltaonmodification between <self> and <anoldattribute>.
 
-	:param anOldAttribute:
-	:type anOldAttribute: TDF_Attribute
-	:rtype: opencascade::handle<TDF_DeltaOnModification>
+Parameters
+----------
+anOldAttribute: TDF_Attribute
+
+Returns
+-------
+opencascade::handle<TDF_DeltaOnModification>
 ") DeltaOnModification;
 		virtual opencascade::handle<TDF_DeltaOnModification> DeltaOnModification(const opencascade::handle<TDF_Attribute> & anOldAttribute);
 
@@ -2719,7 +3654,11 @@ class TDataStd_IntegerArray : public TDF_Attribute {
         };
 		/****************** GetDelta ******************/
 		%feature("compactdefaultargs") GetDelta;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetDelta;
 		Standard_Boolean GetDelta();
 
@@ -2727,13 +3666,19 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods ============= returns the guid for arrays of integers.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -2741,11 +3686,14 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize the inner array with bounds from <lower> to <upper>.
 
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:rtype: None
+Parameters
+----------
+lower: int
+upper: int
+
+Returns
+-------
+None
 ") Init;
 		void Init(const Standard_Integer lower, const Standard_Integer upper);
 
@@ -2753,7 +3701,9 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Returns the length of this array of integers in terms of the number of elements it contains.
 
-	:rtype: int
+Returns
+-------
+int
 ") Length;
 		Standard_Integer Length();
 
@@ -2761,13 +3711,19 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Lower;
 		%feature("autodoc", "Returns the lower boundary of this array of integers.
 
-	:rtype: int
+Returns
+-------
+int
 ") Lower;
 		Standard_Integer Lower();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
@@ -2775,19 +3731,28 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Paste;
 		%feature("autodoc", "Note. uses inside changearray() method.
 
-	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -2795,15 +3760,17 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates on the <label> an integer array attribute with the specified <lower> and <upper> boundaries. if <isdelta> == false, defaultdeltaonmodification is used. if <isdelta> == true, deltaonmodification of the current attribute is used. if attribute is already set, all input parameters are refused and the found attribute is returned.
 
-	:param label:
-	:type label: TDF_Label
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:param isDelta: default value is Standard_False
-	:type isDelta: bool
-	:rtype: opencascade::handle<TDataStd_IntegerArray>
+Parameters
+----------
+label: TDF_Label
+lower: int
+upper: int
+isDelta: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<TDataStd_IntegerArray>
 ") Set;
 		static opencascade::handle<TDataStd_IntegerArray> Set(const TDF_Label & label, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta = Standard_False);
 
@@ -2811,17 +3778,18 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds, or creates, an integerarray attribute with explicit user defined <guid>. the integerarray attribute is returned.
 
-	:param label:
-	:type label: TDF_Label
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:param isDelta: default value is Standard_False
-	:type isDelta: bool
-	:rtype: opencascade::handle<TDataStd_IntegerArray>
+Parameters
+----------
+label: TDF_Label
+theGuid: Standard_GUID
+lower: int
+upper: int
+isDelta: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<TDataStd_IntegerArray>
 ") Set;
 		static opencascade::handle<TDataStd_IntegerArray> Set(const TDF_Label & label, const Standard_GUID & theGuid, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta = Standard_False);
 
@@ -2829,9 +3797,13 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetDelta;
 		%feature("autodoc", "For internal use only!.
 
-	:param isDelta:
-	:type isDelta: bool
-	:rtype: None
+Parameters
+----------
+isDelta: bool
+
+Returns
+-------
+None
 ") SetDelta;
 		void SetDelta(const Standard_Boolean isDelta);
 
@@ -2839,9 +3811,13 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid (user defined) for the attribute.
 
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+theGuid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & theGuid);
 
@@ -2849,7 +3825,9 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
@@ -2857,17 +3835,24 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetValue;
 		%feature("autodoc", "Sets the <index>th element of the array to <value> outofrange exception is raised if <index> doesn't respect lower and upper bounds of the internal array.
 
-	:param Index:
-	:type Index: int
-	:param Value:
-	:type Value: int
-	:rtype: None
+Parameters
+----------
+Index: int
+Value: int
+
+Returns
+-------
+None
 ") SetValue;
 		void SetValue(const Standard_Integer Index, const Standard_Integer Value);
 
 		/****************** TDataStd_IntegerArray ******************/
 		%feature("compactdefaultargs") TDataStd_IntegerArray;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_IntegerArray;
 		 TDataStd_IntegerArray();
 
@@ -2875,7 +3860,9 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Return the upper boundary of this array of integers.
 
-	:rtype: int
+Returns
+-------
+int
 ") Upper;
 		Standard_Integer Upper();
 
@@ -2883,9 +3870,13 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Return the value of the <index>th element of the array.
 
-	:param Index:
-	:type Index: int
-	:rtype: int
+Parameters
+----------
+Index: int
+
+Returns
+-------
+int
 ") Value;
 		Standard_Integer Value(const Standard_Integer Index);
 
@@ -2907,15 +3898,25 @@ class TDataStd_IntegerList : public TDF_Attribute {
 	public:
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
-		%feature("autodoc", "	:param value:
-	:type value: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+value: int
+
+Returns
+-------
+None
 ") Append;
 		void Append(const Standard_Integer value);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -2929,13 +3930,21 @@ class TDataStd_IntegerList : public TDF_Attribute {
         };
 		/****************** Extent ******************/
 		%feature("compactdefaultargs") Extent;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Extent;
 		Standard_Integer Extent();
 
 		/****************** First ******************/
 		%feature("compactdefaultargs") First;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") First;
 		Standard_Integer First();
 
@@ -2943,13 +3952,19 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Static methods ============== returns the id of the list of integer attribute.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -2957,11 +3972,14 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertAfter;
 		%feature("autodoc", "Inserts the <value> after the first meet of <after_value>.
 
-	:param value:
-	:type value: int
-	:param after_value:
-	:type after_value: int
-	:rtype: bool
+Parameters
+----------
+value: int
+after_value: int
+
+Returns
+-------
+bool
 ") InsertAfter;
 		Standard_Boolean InsertAfter(const Standard_Integer value, const Standard_Integer after_value);
 
@@ -2969,11 +3987,14 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertAfterByIndex;
 		%feature("autodoc", "Inserts the <value> after the <index> position. the indices start with 1 .. extent().
 
-	:param index:
-	:type index: int
-	:param after_value:
-	:type after_value: int
-	:rtype: bool
+Parameters
+----------
+index: int
+after_value: int
+
+Returns
+-------
+bool
 ") InsertAfterByIndex;
 		Standard_Boolean InsertAfterByIndex(const Standard_Integer index, const Standard_Integer after_value);
 
@@ -2981,11 +4002,14 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertBefore;
 		%feature("autodoc", "Inserts the <value> before the first meet of <before_value>.
 
-	:param value:
-	:type value: int
-	:param before_value:
-	:type before_value: int
-	:rtype: bool
+Parameters
+----------
+value: int
+before_value: int
+
+Returns
+-------
+bool
 ") InsertBefore;
 		Standard_Boolean InsertBefore(const Standard_Integer value, const Standard_Integer before_value);
 
@@ -2993,53 +4017,83 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertBeforeByIndex;
 		%feature("autodoc", "Inserts the <value> before the <index> position. the indices start with 1 .. extent().
 
-	:param index:
-	:type index: int
-	:param before_value:
-	:type before_value: int
-	:rtype: bool
+Parameters
+----------
+index: int
+before_value: int
+
+Returns
+-------
+bool
 ") InsertBeforeByIndex;
 		Standard_Boolean InsertBeforeByIndex(const Standard_Integer index, const Standard_Integer before_value);
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
 		/****************** Last ******************/
 		%feature("compactdefaultargs") Last;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Last;
 		Standard_Integer Last();
 
 		/****************** List ******************/
 		%feature("compactdefaultargs") List;
-		%feature("autodoc", "	:rtype: TColStd_ListOfInteger
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_ListOfInteger
 ") List;
 		const TColStd_ListOfInteger & List();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Prepend ******************/
 		%feature("compactdefaultargs") Prepend;
-		%feature("autodoc", "	:param value:
-	:type value: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+value: int
+
+Returns
+-------
+None
 ") Prepend;
 		void Prepend(const Standard_Integer value);
 
@@ -3047,9 +4101,13 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Removes the first meet of the <value>.
 
-	:param value:
-	:type value: int
-	:rtype: bool
+Parameters
+----------
+value: int
+
+Returns
+-------
+bool
 ") Remove;
 		Standard_Boolean Remove(const Standard_Integer value);
 
@@ -3057,17 +4115,27 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		%feature("compactdefaultargs") RemoveByIndex;
 		%feature("autodoc", "Removes a value at <index> position.
 
-	:param index:
-	:type index: int
-	:rtype: bool
+Parameters
+----------
+index: int
+
+Returns
+-------
+bool
 ") RemoveByIndex;
 		Standard_Boolean RemoveByIndex(const Standard_Integer index);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -3075,9 +4143,13 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a list of integer values attribute.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_IntegerList>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_IntegerList>
 ") Set;
 		static opencascade::handle<TDataStd_IntegerList> Set(const TDF_Label & label);
 
@@ -3085,11 +4157,14 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a list of integer values attribute with explicit user defined <guid>.
 
-	:param label:
-	:type label: TDF_Label
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: opencascade::handle<TDataStd_IntegerList>
+Parameters
+----------
+label: TDF_Label
+theGuid: Standard_GUID
+
+Returns
+-------
+opencascade::handle<TDataStd_IntegerList>
 ") Set;
 		static opencascade::handle<TDataStd_IntegerList> Set(const TDF_Label & label, const Standard_GUID & theGuid);
 
@@ -3097,9 +4172,13 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid (user defined) for the attribute.
 
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+theGuid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & theGuid);
 
@@ -3107,13 +4186,19 @@ class TDataStd_IntegerList : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
 		/****************** TDataStd_IntegerList ******************/
 		%feature("compactdefaultargs") TDataStd_IntegerList;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_IntegerList;
 		 TDataStd_IntegerList();
 
@@ -3145,7 +4230,9 @@ class TDataStd_Name : public TDF_Attribute {
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "Returns the name contained in this name attribute.
 
-	:rtype: TCollection_ExtendedString
+Returns
+-------
+TCollection_ExtendedString
 ") Get;
 		const TCollection_ExtendedString & Get();
 
@@ -3153,37 +4240,58 @@ class TDataStd_Name : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods working on the name itself ======================================== returns the guid for name attributes.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & with);
 
@@ -3191,11 +4299,14 @@ class TDataStd_Name : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Creates (if does not exist) and sets the name in the name attribute. from any label <l> search in father labels (l is not concerned) the first name attribute.if found set it in <father>. class methods working on the name tree ====================================== search in the whole tdf_data the name attribute which fit with <fullpath>. returns true if found. search under <currentlabel> a label which fit with <name>. returns true if found. shortcut which avoids building a listofextendedstrin. search in the whole tdf_data the label which fit with name returns true if found. tools methods to translate path <-> pathlist =========================================== move to draw for draw test we may provide this tool method which convert a path in a sequence of string to call after the findlabel methods. example: if it's given 'assembly:part_1:sketch_5' it will return in <pathlist> the list of 3 strings: 'assembly','part_1','sketch_5'. move to draw from <pathlist> build the string path name methods ============.
 
-	:param label:
-	:type label: TDF_Label
-	:param string:
-	:type string: TCollection_ExtendedString
-	:rtype: opencascade::handle<TDataStd_Name>
+Parameters
+----------
+label: TDF_Label
+string: TCollection_ExtendedString
+
+Returns
+-------
+opencascade::handle<TDataStd_Name>
 ") Set;
 		static opencascade::handle<TDataStd_Name> Set(const TDF_Label & label, const TCollection_ExtendedString & string);
 
@@ -3203,13 +4314,15 @@ class TDataStd_Name : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds, or creates, a name attribute with explicit user defined <guid> and sets <string>. the name attribute is returned. .
 
-	:param label:
-	:type label: TDF_Label
-	:param guid:
-	:type guid: Standard_GUID
-	:param string:
-	:type string: TCollection_ExtendedString
-	:rtype: opencascade::handle<TDataStd_Name>
+Parameters
+----------
+label: TDF_Label
+guid: Standard_GUID
+string: TCollection_ExtendedString
+
+Returns
+-------
+opencascade::handle<TDataStd_Name>
 ") Set;
 		static opencascade::handle<TDataStd_Name> Set(const TDF_Label & label, const Standard_GUID & guid, const TCollection_ExtendedString & string);
 
@@ -3217,9 +4330,13 @@ class TDataStd_Name : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets <s> as name. raises if <s> is not a valid name.
 
-	:param S:
-	:type S: TCollection_ExtendedString
-	:rtype: None
+Parameters
+----------
+S: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") Set;
 		void Set(const TCollection_ExtendedString & S);
 
@@ -3227,9 +4344,13 @@ class TDataStd_Name : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit user defined guid to the attribute.
 
-	:param guid:
-	:type guid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+guid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & guid);
 
@@ -3237,13 +4358,19 @@ class TDataStd_Name : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
 		/****************** TDataStd_Name ******************/
 		%feature("compactdefaultargs") TDataStd_Name;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_Name;
 		 TDataStd_Name();
 
@@ -3267,9 +4394,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") ChangeArraysOfIntegers;
 		%feature("autodoc", "Replace the container content by new content of the <thearraysofintegers>.
 
-	:param theArraysOfIntegers:
-	:type theArraysOfIntegers: TDataStd_DataMapOfStringHArray1OfInteger
-	:rtype: None
+Parameters
+----------
+theArraysOfIntegers: TDataStd_DataMapOfStringHArray1OfInteger
+
+Returns
+-------
+None
 ") ChangeArraysOfIntegers;
 		void ChangeArraysOfIntegers(const TDataStd_DataMapOfStringHArray1OfInteger & theArraysOfIntegers);
 
@@ -3277,9 +4408,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") ChangeArraysOfReals;
 		%feature("autodoc", "Replace the container content by new content of the <thearraysofreals>.
 
-	:param theArraysOfReals:
-	:type theArraysOfReals: TDataStd_DataMapOfStringHArray1OfReal
-	:rtype: None
+Parameters
+----------
+theArraysOfReals: TDataStd_DataMapOfStringHArray1OfReal
+
+Returns
+-------
+None
 ") ChangeArraysOfReals;
 		void ChangeArraysOfReals(const TDataStd_DataMapOfStringHArray1OfReal & theArraysOfReals);
 
@@ -3287,9 +4422,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") ChangeBytes;
 		%feature("autodoc", "Replace the container content by new content of the <thebytes>.
 
-	:param theBytes:
-	:type theBytes: TDataStd_DataMapOfStringByte
-	:rtype: None
+Parameters
+----------
+theBytes: TDataStd_DataMapOfStringByte
+
+Returns
+-------
+None
 ") ChangeBytes;
 		void ChangeBytes(const TDataStd_DataMapOfStringByte & theBytes);
 
@@ -3297,9 +4436,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") ChangeIntegers;
 		%feature("autodoc", "Replace the container content by new content of the <theintegers>.
 
-	:param theIntegers:
-	:type theIntegers: TColStd_DataMapOfStringInteger
-	:rtype: None
+Parameters
+----------
+theIntegers: TColStd_DataMapOfStringInteger
+
+Returns
+-------
+None
 ") ChangeIntegers;
 		void ChangeIntegers(const TColStd_DataMapOfStringInteger & theIntegers);
 
@@ -3307,9 +4450,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") ChangeReals;
 		%feature("autodoc", "Replace the container content by new content of the <thereals>.
 
-	:param theReals:
-	:type theReals: TDataStd_DataMapOfStringReal
-	:rtype: None
+Parameters
+----------
+theReals: TDataStd_DataMapOfStringReal
+
+Returns
+-------
+None
 ") ChangeReals;
 		void ChangeReals(const TDataStd_DataMapOfStringReal & theReals);
 
@@ -3317,9 +4464,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") ChangeStrings;
 		%feature("autodoc", "Replace the container content by new content of the <thestrings>.
 
-	:param theStrings:
-	:type theStrings: TDataStd_DataMapOfStringString
-	:rtype: None
+Parameters
+----------
+theStrings: TDataStd_DataMapOfStringString
+
+Returns
+-------
+None
 ") ChangeStrings;
 		void ChangeStrings(const TDataStd_DataMapOfStringString & theStrings);
 
@@ -3335,9 +4486,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetArrayOfIntegers;
 		%feature("autodoc", "Returns the named array of integer values. it returns a null handle if there is no such a named array of integers (use hasarrayofintegers()).
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: opencascade::handle<TColStd_HArray1OfInteger>
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfInteger>
 ") GetArrayOfIntegers;
 		const opencascade::handle<TColStd_HArray1OfInteger> & GetArrayOfIntegers(const TCollection_ExtendedString & theName);
 
@@ -3345,9 +4500,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetArrayOfReals;
 		%feature("autodoc", "Returns the named array of real values. it returns a null handle if there is no such a named array of reals (use hasarrayofreals()).
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: opencascade::handle<TColStd_HArray1OfReal>
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfReal>
 ") GetArrayOfReals;
 		const opencascade::handle<TColStd_HArray1OfReal> & GetArrayOfReals(const TCollection_ExtendedString & theName);
 
@@ -3355,7 +4514,9 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetArraysOfIntegersContainer;
 		%feature("autodoc", "Returns the internal container of named arrays of integer values.
 
-	:rtype: TDataStd_DataMapOfStringHArray1OfInteger
+Returns
+-------
+TDataStd_DataMapOfStringHArray1OfInteger
 ") GetArraysOfIntegersContainer;
 		const TDataStd_DataMapOfStringHArray1OfInteger & GetArraysOfIntegersContainer();
 
@@ -3363,7 +4524,9 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetArraysOfRealsContainer;
 		%feature("autodoc", "Returns the internal container of named arrays of real values.
 
-	:rtype: TDataStd_DataMapOfStringHArray1OfReal
+Returns
+-------
+TDataStd_DataMapOfStringHArray1OfReal
 ") GetArraysOfRealsContainer;
 		const TDataStd_DataMapOfStringHArray1OfReal & GetArraysOfRealsContainer();
 
@@ -3371,9 +4534,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetByte;
 		%feature("autodoc", "Returns the named byte. it returns 0 if there is no such a named byte (use hasbyte()).
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: Standard_Byte
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+Standard_Byte
 ") GetByte;
 		Standard_Byte GetByte(const TCollection_ExtendedString & theName);
 
@@ -3381,7 +4548,9 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetBytesContainer;
 		%feature("autodoc", "Returns the internal container of named bytes.
 
-	:rtype: TDataStd_DataMapOfStringByte
+Returns
+-------
+TDataStd_DataMapOfStringByte
 ") GetBytesContainer;
 		const TDataStd_DataMapOfStringByte & GetBytesContainer();
 
@@ -3389,7 +4558,9 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Static methods ============== returns the id of the named data attribute.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
@@ -3397,9 +4568,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetInteger;
 		%feature("autodoc", "Returns the integer value specified by the name. it returns 0 if internal map doesn't contain the specified integer (use hasinteger() to check before).
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: int
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+int
 ") GetInteger;
 		Standard_Integer GetInteger(const TCollection_ExtendedString & theName);
 
@@ -3407,7 +4582,9 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetIntegersContainer;
 		%feature("autodoc", "Returns the internal container of named integers.
 
-	:rtype: TColStd_DataMapOfStringInteger
+Returns
+-------
+TColStd_DataMapOfStringInteger
 ") GetIntegersContainer;
 		const TColStd_DataMapOfStringInteger & GetIntegersContainer();
 
@@ -3415,9 +4592,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetReal;
 		%feature("autodoc", "Returns the named real. it returns 0.0 if there is no such a named real (use hasreal()).
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: float
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+float
 ") GetReal;
 		Standard_Real GetReal(const TCollection_ExtendedString & theName);
 
@@ -3425,7 +4606,9 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetRealsContainer;
 		%feature("autodoc", "Returns the internal container of named reals.
 
-	:rtype: TDataStd_DataMapOfStringReal
+Returns
+-------
+TDataStd_DataMapOfStringReal
 ") GetRealsContainer;
 		const TDataStd_DataMapOfStringReal & GetRealsContainer();
 
@@ -3433,9 +4616,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetString;
 		%feature("autodoc", "Returns the named string. it returns an empty string if there is no such a named string (use hasstring()).
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: TCollection_ExtendedString
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+TCollection_ExtendedString
 ") GetString;
 		const TCollection_ExtendedString & GetString(const TCollection_ExtendedString & theName);
 
@@ -3443,7 +4630,9 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") GetStringsContainer;
 		%feature("autodoc", "Returns the internal container of named strings.
 
-	:rtype: TDataStd_DataMapOfStringString
+Returns
+-------
+TDataStd_DataMapOfStringString
 ") GetStringsContainer;
 		const TDataStd_DataMapOfStringString & GetStringsContainer();
 
@@ -3451,9 +4640,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") HasArrayOfIntegers;
 		%feature("autodoc", "Returns true if the attribute contains this named array of integer values.
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+bool
 ") HasArrayOfIntegers;
 		Standard_Boolean HasArrayOfIntegers(const TCollection_ExtendedString & theName);
 
@@ -3461,9 +4654,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") HasArrayOfReals;
 		%feature("autodoc", "Returns true if the attribute contains this named array of real values.
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+bool
 ") HasArrayOfReals;
 		Standard_Boolean HasArrayOfReals(const TCollection_ExtendedString & theName);
 
@@ -3471,7 +4668,9 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") HasArraysOfIntegers;
 		%feature("autodoc", "Returns true if there are some named arrays of integer values in the attribute.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasArraysOfIntegers;
 		Standard_Boolean HasArraysOfIntegers();
 
@@ -3479,7 +4678,9 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") HasArraysOfReals;
 		%feature("autodoc", "Returns true if there are some named arrays of real values in the attribute.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasArraysOfReals;
 		Standard_Boolean HasArraysOfReals();
 
@@ -3487,9 +4688,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") HasByte;
 		%feature("autodoc", "Returns true if the attribute contains this named byte.
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+bool
 ") HasByte;
 		Standard_Boolean HasByte(const TCollection_ExtendedString & theName);
 
@@ -3497,7 +4702,9 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") HasBytes;
 		%feature("autodoc", "Returns true if there are some named bytes in the attribute.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasBytes;
 		Standard_Boolean HasBytes();
 
@@ -3505,9 +4712,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") HasInteger;
 		%feature("autodoc", "Returns true if the attribute contains specified by name integer value.
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+bool
 ") HasInteger;
 		Standard_Boolean HasInteger(const TCollection_ExtendedString & theName);
 
@@ -3515,7 +4726,9 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") HasIntegers;
 		%feature("autodoc", "Returns true if at least one named integer value is kept in the attribute.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasIntegers;
 		Standard_Boolean HasIntegers();
 
@@ -3523,9 +4736,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") HasReal;
 		%feature("autodoc", "Returns true if the attribute contains a real specified by name.
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+bool
 ") HasReal;
 		Standard_Boolean HasReal(const TCollection_ExtendedString & theName);
 
@@ -3533,7 +4750,9 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") HasReals;
 		%feature("autodoc", "Returns true if at least one named real value is kept in the attribute.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasReals;
 		Standard_Boolean HasReals();
 
@@ -3541,9 +4760,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") HasString;
 		%feature("autodoc", "Returns true if the attribute contains this named string.
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+bool
 ") HasString;
 		Standard_Boolean HasString(const TCollection_ExtendedString & theName);
 
@@ -3551,37 +4774,58 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") HasStrings;
 		%feature("autodoc", "Returns true if there are some named strings in the attribute.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasStrings;
 		Standard_Boolean HasStrings();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -3589,9 +4833,13 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a named data attribute.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_NamedData>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_NamedData>
 ") Set;
 		static opencascade::handle<TDataStd_NamedData> Set(const TDF_Label & label);
 
@@ -3599,11 +4847,14 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") SetArrayOfIntegers;
 		%feature("autodoc", "Defines a named array of integer values. if the array already exists, it changes its value to <thearrayofintegers>.
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:param theArrayOfIntegers:
-	:type theArrayOfIntegers: TColStd_HArray1OfInteger
-	:rtype: None
+Parameters
+----------
+theName: TCollection_ExtendedString
+theArrayOfIntegers: TColStd_HArray1OfInteger
+
+Returns
+-------
+None
 ") SetArrayOfIntegers;
 		void SetArrayOfIntegers(const TCollection_ExtendedString & theName, const opencascade::handle<TColStd_HArray1OfInteger> & theArrayOfIntegers);
 
@@ -3611,11 +4862,14 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") SetArrayOfReals;
 		%feature("autodoc", "Defines a named array of real values. if the array already exists, it changes its value to <thearrayofreals>.
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:param theArrayOfReals:
-	:type theArrayOfReals: TColStd_HArray1OfReal
-	:rtype: None
+Parameters
+----------
+theName: TCollection_ExtendedString
+theArrayOfReals: TColStd_HArray1OfReal
+
+Returns
+-------
+None
 ") SetArrayOfReals;
 		void SetArrayOfReals(const TCollection_ExtendedString & theName, const opencascade::handle<TColStd_HArray1OfReal> & theArrayOfReals);
 
@@ -3623,11 +4877,14 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") SetByte;
 		%feature("autodoc", "Defines a named byte. if the byte already exists, it changes its value to <thebyte>.
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:param theByte:
-	:type theByte: Standard_Byte
-	:rtype: None
+Parameters
+----------
+theName: TCollection_ExtendedString
+theByte: Standard_Byte
+
+Returns
+-------
+None
 ") SetByte;
 		void SetByte(const TCollection_ExtendedString & theName, const Standard_Byte theByte);
 
@@ -3635,11 +4892,14 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") SetInteger;
 		%feature("autodoc", "Defines a named integer. if the integer already exists, it changes its value to <theinteger>.
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:param theInteger:
-	:type theInteger: int
-	:rtype: None
+Parameters
+----------
+theName: TCollection_ExtendedString
+theInteger: int
+
+Returns
+-------
+None
 ") SetInteger;
 		void SetInteger(const TCollection_ExtendedString & theName, const Standard_Integer theInteger);
 
@@ -3647,11 +4907,14 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") SetReal;
 		%feature("autodoc", "Defines a named real. if the real already exists, it changes its value to <thereal>.
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:param theReal:
-	:type theReal: float
-	:rtype: None
+Parameters
+----------
+theName: TCollection_ExtendedString
+theReal: float
+
+Returns
+-------
+None
 ") SetReal;
 		void SetReal(const TCollection_ExtendedString & theName, const Standard_Real theReal);
 
@@ -3659,17 +4922,24 @@ class TDataStd_NamedData : public TDF_Attribute {
 		%feature("compactdefaultargs") SetString;
 		%feature("autodoc", "Defines a named string. if the string already exists, it changes its value to <thestring>.
 
-	:param theName:
-	:type theName: TCollection_ExtendedString
-	:param theString:
-	:type theString: TCollection_ExtendedString
-	:rtype: None
+Parameters
+----------
+theName: TCollection_ExtendedString
+theString: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") SetString;
 		void SetString(const TCollection_ExtendedString & theName, const TCollection_ExtendedString & theString);
 
 		/****************** TDataStd_NamedData ******************/
 		%feature("compactdefaultargs") TDataStd_NamedData;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_NamedData;
 		 TDataStd_NamedData();
 
@@ -3693,11 +4963,15 @@ class TDataStd_NoteBook : public TDF_Attribute {
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Tool to create an integer attribute from <value>, insert it in a new son label of <self>. the real attribute is returned.
 
-	:param value:
-	:type value: float
-	:param isExported: default value is Standard_False
-	:type isExported: bool
-	:rtype: opencascade::handle<TDataStd_Real>
+Parameters
+----------
+value: float
+isExported: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<TDataStd_Real>
 ") Append;
 		opencascade::handle<TDataStd_Real> Append(const Standard_Real value, const Standard_Boolean isExported = Standard_False);
 
@@ -3705,11 +4979,15 @@ class TDataStd_NoteBook : public TDF_Attribute {
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Tool to create an real attribute from <value>, insert it in a new son label of <self>. the integer attribute is returned.
 
-	:param value:
-	:type value: int
-	:param isExported: default value is Standard_False
-	:type isExported: bool
-	:rtype: opencascade::handle<TDataStd_Integer>
+Parameters
+----------
+value: int
+isExported: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<TDataStd_Integer>
 ") Append;
 		opencascade::handle<TDataStd_Integer> Append(const Standard_Integer value, const Standard_Boolean isExported = Standard_False);
 
@@ -3725,11 +5003,14 @@ class TDataStd_NoteBook : public TDF_Attribute {
 		%feature("compactdefaultargs") Find;
 		%feature("autodoc", "Class methods ============= try to retrieve a notebook attribute at <current> label or in fathers label of <current>. returns true if found and set <n>.
 
-	:param current:
-	:type current: TDF_Label
-	:param N:
-	:type N: TDataStd_NoteBook
-	:rtype: bool
+Parameters
+----------
+current: TDF_Label
+N: TDataStd_NoteBook
+
+Returns
+-------
+bool
 ") Find;
 		static Standard_Boolean Find(const TDF_Label & current, opencascade::handle<TDataStd_NoteBook> & N);
 
@@ -3737,13 +5018,19 @@ class TDataStd_NoteBook : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Notebook methods ===============.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -3751,39 +5038,62 @@ class TDataStd_NoteBook : public TDF_Attribute {
 		%feature("compactdefaultargs") New;
 		%feature("autodoc", "Create an enpty notebook attribute, located at <label>. raises if <label> has attribute.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_NoteBook>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_NoteBook>
 ") New;
 		static opencascade::handle<TDataStd_NoteBook> New(const TDF_Label & label);
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & with);
 
 		/****************** TDataStd_NoteBook ******************/
 		%feature("compactdefaultargs") TDataStd_NoteBook;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_NoteBook;
 		 TDataStd_NoteBook();
 
@@ -3815,7 +5125,9 @@ class TDataStd_Real : public TDF_Attribute {
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "Returns the real number value contained in the attribute.
 
-	:rtype: float
+Returns
+-------
+float
 ") Get;
 		Standard_Real Get();
 
@@ -3823,7 +5135,9 @@ class TDataStd_Real : public TDF_Attribute {
 		%feature("compactdefaultargs") GetDimension;
 		%feature("autodoc", "Obsolete method that will be removed in next versions. this field is not supported in the persistence mechanism.
 
-	:rtype: TDataStd_RealEnum
+Returns
+-------
+TDataStd_RealEnum
 ") GetDimension;
 		TDataStd_RealEnum GetDimension();
 
@@ -3831,13 +5145,19 @@ class TDataStd_Real : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods ============= returns the default guid for real numbers.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -3845,31 +5165,48 @@ class TDataStd_Real : public TDF_Attribute {
 		%feature("compactdefaultargs") IsCaptured;
 		%feature("autodoc", "Returns true if there is a reference on the same label.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsCaptured;
 		Standard_Boolean IsCaptured();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -3877,11 +5214,14 @@ class TDataStd_Real : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds, or creates, a real attribute with default guid and sets <value>. the real attribute is returned. the real dimension is scalar by default. use setdimension to overwrite. real methods ============.
 
-	:param label:
-	:type label: TDF_Label
-	:param value:
-	:type value: float
-	:rtype: opencascade::handle<TDataStd_Real>
+Parameters
+----------
+label: TDF_Label
+value: float
+
+Returns
+-------
+opencascade::handle<TDataStd_Real>
 ") Set;
 		static opencascade::handle<TDataStd_Real> Set(const TDF_Label & label, const Standard_Real value);
 
@@ -3889,13 +5229,15 @@ class TDataStd_Real : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds, or creates, a real attribute with explicit guid and sets <value>. the real attribute is returned. real methods ============.
 
-	:param label:
-	:type label: TDF_Label
-	:param guid:
-	:type guid: Standard_GUID
-	:param value:
-	:type value: float
-	:rtype: opencascade::handle<TDataStd_Real>
+Parameters
+----------
+label: TDF_Label
+guid: Standard_GUID
+value: float
+
+Returns
+-------
+opencascade::handle<TDataStd_Real>
 ") Set;
 		static opencascade::handle<TDataStd_Real> Set(const TDF_Label & label, const Standard_GUID & guid, const Standard_Real value);
 
@@ -3903,9 +5245,13 @@ class TDataStd_Real : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the real number v.
 
-	:param V:
-	:type V: float
-	:rtype: None
+Parameters
+----------
+V: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real V);
 
@@ -3913,9 +5259,13 @@ class TDataStd_Real : public TDF_Attribute {
 		%feature("compactdefaultargs") SetDimension;
 		%feature("autodoc", "Obsolete method that will be removed in next versions. this field is not supported in the persistence mechanism.
 
-	:param DIM:
-	:type DIM: TDataStd_RealEnum
-	:rtype: None
+Parameters
+----------
+DIM: TDataStd_RealEnum
+
+Returns
+-------
+None
 ") SetDimension;
 		void SetDimension(const TDataStd_RealEnum DIM);
 
@@ -3923,9 +5273,13 @@ class TDataStd_Real : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid for the attribute.
 
-	:param guid:
-	:type guid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+guid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & guid);
 
@@ -3933,13 +5287,19 @@ class TDataStd_Real : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
 		/****************** TDataStd_Real ******************/
 		%feature("compactdefaultargs") TDataStd_Real;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_Real;
 		 TDataStd_Real();
 
@@ -3963,7 +5323,9 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Array;
 		%feature("autodoc", "Returns the handle of this array of reals.
 
-	:rtype: opencascade::handle<TColStd_HArray1OfReal>
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfReal>
 ") Array;
 		const opencascade::handle<TColStd_HArray1OfReal> & Array();
 
@@ -3971,11 +5333,15 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") ChangeArray;
 		%feature("autodoc", "Sets the inner array <myvalue> of the realarray attribute to <newarray>. if value of <newarray> differs from <myvalue>, backup performed and myvalue refers to new instance of harray1ofreal that holds <newarray> values if <ischeckitems> equal true each item of <newarray> will be checked with each item of <myvalue> for coincidence (to avoid backup).
 
-	:param newArray:
-	:type newArray: TColStd_HArray1OfReal
-	:param isCheckItems: default value is Standard_True
-	:type isCheckItems: bool
-	:rtype: None
+Parameters
+----------
+newArray: TColStd_HArray1OfReal
+isCheckItems: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") ChangeArray;
 		void ChangeArray(const opencascade::handle<TColStd_HArray1OfReal> & newArray, const Standard_Boolean isCheckItems = Standard_True);
 
@@ -3983,9 +5349,13 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") DeltaOnModification;
 		%feature("autodoc", "Makes a deltaonmodification between <self> and <anoldattribute>.
 
-	:param anOldAttribute:
-	:type anOldAttribute: TDF_Attribute
-	:rtype: opencascade::handle<TDF_DeltaOnModification>
+Parameters
+----------
+anOldAttribute: TDF_Attribute
+
+Returns
+-------
+opencascade::handle<TDF_DeltaOnModification>
 ") DeltaOnModification;
 		virtual opencascade::handle<TDF_DeltaOnModification> DeltaOnModification(const opencascade::handle<TDF_Attribute> & anOldAttribute);
 
@@ -3999,7 +5369,11 @@ class TDataStd_RealArray : public TDF_Attribute {
         };
 		/****************** GetDelta ******************/
 		%feature("compactdefaultargs") GetDelta;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetDelta;
 		Standard_Boolean GetDelta();
 
@@ -4007,13 +5381,19 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods ============= returns the guid for arrays of reals.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -4021,11 +5401,14 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize the inner array with bounds from <lower> to <upper>.
 
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:rtype: None
+Parameters
+----------
+lower: int
+upper: int
+
+Returns
+-------
+None
 ") Init;
 		void Init(const Standard_Integer lower, const Standard_Integer upper);
 
@@ -4033,7 +5416,9 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Returns the number of elements of the array of reals in terms of the number of elements it contains.
 
-	:rtype: int
+Returns
+-------
+int
 ") Length;
 		Standard_Integer Length();
 
@@ -4041,13 +5426,19 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Lower;
 		%feature("autodoc", "Returns the lower boundary of the array.
 
-	:rtype: int
+Returns
+-------
+int
 ") Lower;
 		Standard_Integer Lower();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
@@ -4055,19 +5446,28 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Paste;
 		%feature("autodoc", "Note. uses inside changearray() method.
 
-	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -4075,15 +5475,17 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates on the <label> a real array attribute with the specified <lower> and <upper> boundaries. if <isdelta> == false, defaultdeltaonmodification is used. if <isdelta> == true, deltaonmodification of the current attribute is used. if attribute is already set, input parameter <isdelta> is refused and the found attribute returned.
 
-	:param label:
-	:type label: TDF_Label
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:param isDelta: default value is Standard_False
-	:type isDelta: bool
-	:rtype: opencascade::handle<TDataStd_RealArray>
+Parameters
+----------
+label: TDF_Label
+lower: int
+upper: int
+isDelta: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<TDataStd_RealArray>
 ") Set;
 		static opencascade::handle<TDataStd_RealArray> Set(const TDF_Label & label, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta = Standard_False);
 
@@ -4091,17 +5493,18 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds, or creates, an realarray attribute with explicit user defined <guid>. the realarray attribute is returned.
 
-	:param label:
-	:type label: TDF_Label
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:param isDelta: default value is Standard_False
-	:type isDelta: bool
-	:rtype: opencascade::handle<TDataStd_RealArray>
+Parameters
+----------
+label: TDF_Label
+theGuid: Standard_GUID
+lower: int
+upper: int
+isDelta: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<TDataStd_RealArray>
 ") Set;
 		static opencascade::handle<TDataStd_RealArray> Set(const TDF_Label & label, const Standard_GUID & theGuid, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta = Standard_False);
 
@@ -4109,9 +5512,13 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetDelta;
 		%feature("autodoc", "For internal use only!.
 
-	:param isDelta:
-	:type isDelta: bool
-	:rtype: None
+Parameters
+----------
+isDelta: bool
+
+Returns
+-------
+None
 ") SetDelta;
 		void SetDelta(const Standard_Boolean isDelta);
 
@@ -4119,9 +5526,13 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid (user defined) for the attribute.
 
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+theGuid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & theGuid);
 
@@ -4129,7 +5540,9 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
@@ -4137,17 +5550,24 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetValue;
 		%feature("autodoc", "Sets the <index>th element of the array to <value> outofrange exception is raised if <index> doesn't respect lower and upper bounds of the internal array.
 
-	:param Index:
-	:type Index: int
-	:param Value:
-	:type Value: float
-	:rtype: None
+Parameters
+----------
+Index: int
+Value: float
+
+Returns
+-------
+None
 ") SetValue;
 		void SetValue(const Standard_Integer Index, const Standard_Real Value);
 
 		/****************** TDataStd_RealArray ******************/
 		%feature("compactdefaultargs") TDataStd_RealArray;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_RealArray;
 		 TDataStd_RealArray();
 
@@ -4155,7 +5575,9 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Returns the upper boundary of the array.
 
-	:rtype: int
+Returns
+-------
+int
 ") Upper;
 		Standard_Integer Upper();
 
@@ -4163,9 +5585,13 @@ class TDataStd_RealArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Return the value of the <index>th element of the array.
 
-	:param Index:
-	:type Index: int
-	:rtype: float
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
 ") Value;
 		Standard_Real Value(const Standard_Integer Index);
 
@@ -4187,15 +5613,25 @@ class TDataStd_RealList : public TDF_Attribute {
 	public:
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
-		%feature("autodoc", "	:param value:
-	:type value: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+value: float
+
+Returns
+-------
+None
 ") Append;
 		void Append(const Standard_Real value);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -4209,13 +5645,21 @@ class TDataStd_RealList : public TDF_Attribute {
         };
 		/****************** Extent ******************/
 		%feature("compactdefaultargs") Extent;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Extent;
 		Standard_Integer Extent();
 
 		/****************** First ******************/
 		%feature("compactdefaultargs") First;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") First;
 		Standard_Real First();
 
@@ -4223,13 +5667,19 @@ class TDataStd_RealList : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Static methods ============== returns the id of the list of doubles attribute.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -4237,11 +5687,14 @@ class TDataStd_RealList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertAfter;
 		%feature("autodoc", "Inserts the <value> after the first meet of <after_value>.
 
-	:param value:
-	:type value: float
-	:param after_value:
-	:type after_value: float
-	:rtype: bool
+Parameters
+----------
+value: float
+after_value: float
+
+Returns
+-------
+bool
 ") InsertAfter;
 		Standard_Boolean InsertAfter(const Standard_Real value, const Standard_Real after_value);
 
@@ -4249,11 +5702,14 @@ class TDataStd_RealList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertAfterByIndex;
 		%feature("autodoc", "Inserts the <value> after the <index> position. the indices start with 1 .. extent().
 
-	:param index:
-	:type index: int
-	:param after_value:
-	:type after_value: float
-	:rtype: bool
+Parameters
+----------
+index: int
+after_value: float
+
+Returns
+-------
+bool
 ") InsertAfterByIndex;
 		Standard_Boolean InsertAfterByIndex(const Standard_Integer index, const Standard_Real after_value);
 
@@ -4261,11 +5717,14 @@ class TDataStd_RealList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertBefore;
 		%feature("autodoc", "Inserts the <value> before the first meet of <before_value>.
 
-	:param value:
-	:type value: float
-	:param before_value:
-	:type before_value: float
-	:rtype: bool
+Parameters
+----------
+value: float
+before_value: float
+
+Returns
+-------
+bool
 ") InsertBefore;
 		Standard_Boolean InsertBefore(const Standard_Real value, const Standard_Real before_value);
 
@@ -4273,53 +5732,83 @@ class TDataStd_RealList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertBeforeByIndex;
 		%feature("autodoc", "Inserts the <value> before the <index> position. the indices start with 1 .. extent().
 
-	:param index:
-	:type index: int
-	:param before_value:
-	:type before_value: float
-	:rtype: bool
+Parameters
+----------
+index: int
+before_value: float
+
+Returns
+-------
+bool
 ") InsertBeforeByIndex;
 		Standard_Boolean InsertBeforeByIndex(const Standard_Integer index, const Standard_Real before_value);
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
 		/****************** Last ******************/
 		%feature("compactdefaultargs") Last;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Last;
 		Standard_Real Last();
 
 		/****************** List ******************/
 		%feature("compactdefaultargs") List;
-		%feature("autodoc", "	:rtype: TColStd_ListOfReal
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_ListOfReal
 ") List;
 		const TColStd_ListOfReal & List();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Prepend ******************/
 		%feature("compactdefaultargs") Prepend;
-		%feature("autodoc", "	:param value:
-	:type value: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+value: float
+
+Returns
+-------
+None
 ") Prepend;
 		void Prepend(const Standard_Real value);
 
@@ -4327,9 +5816,13 @@ class TDataStd_RealList : public TDF_Attribute {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Removes the first meet of the <value>.
 
-	:param value:
-	:type value: float
-	:rtype: bool
+Parameters
+----------
+value: float
+
+Returns
+-------
+bool
 ") Remove;
 		Standard_Boolean Remove(const Standard_Real value);
 
@@ -4337,17 +5830,27 @@ class TDataStd_RealList : public TDF_Attribute {
 		%feature("compactdefaultargs") RemoveByIndex;
 		%feature("autodoc", "Removes a value at <index> position.
 
-	:param index:
-	:type index: int
-	:rtype: bool
+Parameters
+----------
+index: int
+
+Returns
+-------
+bool
 ") RemoveByIndex;
 		Standard_Boolean RemoveByIndex(const Standard_Integer index);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -4355,9 +5858,13 @@ class TDataStd_RealList : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a list of double values attribute.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_RealList>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_RealList>
 ") Set;
 		static opencascade::handle<TDataStd_RealList> Set(const TDF_Label & label);
 
@@ -4365,11 +5872,14 @@ class TDataStd_RealList : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a list of double values attribute with explicit user defined <guid>.
 
-	:param label:
-	:type label: TDF_Label
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: opencascade::handle<TDataStd_RealList>
+Parameters
+----------
+label: TDF_Label
+theGuid: Standard_GUID
+
+Returns
+-------
+opencascade::handle<TDataStd_RealList>
 ") Set;
 		static opencascade::handle<TDataStd_RealList> Set(const TDF_Label & label, const Standard_GUID & theGuid);
 
@@ -4377,9 +5887,13 @@ class TDataStd_RealList : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid (user defined) for the attribute.
 
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+theGuid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & theGuid);
 
@@ -4387,13 +5901,19 @@ class TDataStd_RealList : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
 		/****************** TDataStd_RealList ******************/
 		%feature("compactdefaultargs") TDataStd_RealList;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_RealList;
 		 TDataStd_RealList();
 
@@ -4425,13 +5945,19 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Static methods ============== returns the id of the array of references (labels) attribute.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -4439,17 +5965,24 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize the inner array with bounds from <lower> to <upper>.
 
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:rtype: None
+Parameters
+----------
+lower: int
+upper: int
+
+Returns
+-------
+None
 ") Init;
 		void Init(const Standard_Integer lower, const Standard_Integer upper);
 
 		/****************** InternalArray ******************/
 		%feature("compactdefaultargs") InternalArray;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDataStd_HLabelArray1>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDataStd_HLabelArray1>
 ") InternalArray;
 		const opencascade::handle<TDataStd_HLabelArray1> & InternalArray();
 
@@ -4457,7 +5990,9 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Returns the number of elements in the array.
 
-	:rtype: int
+Returns
+-------
+int
 ") Length;
 		Standard_Integer Length();
 
@@ -4465,39 +6000,62 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Lower;
 		%feature("autodoc", "Returns the lower boundary of the array.
 
-	:rtype: int
+Returns
+-------
+int
 ") Lower;
 		Standard_Integer Lower();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** References ******************/
 		%feature("compactdefaultargs") References;
-		%feature("autodoc", "	:param DS:
-	:type DS: TDF_DataSet
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+DS: TDF_DataSet
+
+Returns
+-------
+None
 ") References;
 		virtual void References(const opencascade::handle<TDF_DataSet> & DS);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -4505,13 +6063,15 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates an array of reference values (labels) attribute.
 
-	:param label:
-	:type label: TDF_Label
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:rtype: opencascade::handle<TDataStd_ReferenceArray>
+Parameters
+----------
+label: TDF_Label
+lower: int
+upper: int
+
+Returns
+-------
+opencascade::handle<TDataStd_ReferenceArray>
 ") Set;
 		static opencascade::handle<TDataStd_ReferenceArray> Set(const TDF_Label & label, const Standard_Integer lower, const Standard_Integer upper);
 
@@ -4519,15 +6079,16 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates an array of reference values (labels) attribute with explicit user defined <guid>.
 
-	:param label:
-	:type label: TDF_Label
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:param lower:
-	:type lower: int
-	:param upper:
-	:type upper: int
-	:rtype: opencascade::handle<TDataStd_ReferenceArray>
+Parameters
+----------
+label: TDF_Label
+theGuid: Standard_GUID
+lower: int
+upper: int
+
+Returns
+-------
+opencascade::handle<TDataStd_ReferenceArray>
 ") Set;
 		static opencascade::handle<TDataStd_ReferenceArray> Set(const TDF_Label & label, const Standard_GUID & theGuid, const Standard_Integer lower, const Standard_Integer upper);
 
@@ -4535,9 +6096,13 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid (user defined) for the attribute.
 
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+theGuid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & theGuid);
 
@@ -4545,17 +6110,25 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
 		/****************** SetInternalArray ******************/
 		%feature("compactdefaultargs") SetInternalArray;
-		%feature("autodoc", "	:param values:
-	:type values: TDataStd_HLabelArray1
-	:param isCheckItems: default value is Standard_True
-	:type isCheckItems: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+values: TDataStd_HLabelArray1
+isCheckItems: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") SetInternalArray;
 		void SetInternalArray(const opencascade::handle<TDataStd_HLabelArray1> & values, const Standard_Boolean isCheckItems = Standard_True);
 
@@ -4563,17 +6136,24 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("compactdefaultargs") SetValue;
 		%feature("autodoc", "Sets the <index>th element of the array to <value> outofrange exception is raised if <index> doesn't respect lower and upper bounds of the internal array.
 
-	:param index:
-	:type index: int
-	:param value:
-	:type value: TDF_Label
-	:rtype: None
+Parameters
+----------
+index: int
+value: TDF_Label
+
+Returns
+-------
+None
 ") SetValue;
 		void SetValue(const Standard_Integer index, const TDF_Label & value);
 
 		/****************** TDataStd_ReferenceArray ******************/
 		%feature("compactdefaultargs") TDataStd_ReferenceArray;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_ReferenceArray;
 		 TDataStd_ReferenceArray();
 
@@ -4581,7 +6161,9 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Returns the upper boundary of the array.
 
-	:rtype: int
+Returns
+-------
+int
 ") Upper;
 		Standard_Integer Upper();
 
@@ -4589,9 +6171,13 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the value of the <index>th element of the array.
 
-	:param Index:
-	:type Index: int
-	:rtype: TDF_Label
+Parameters
+----------
+Index: int
+
+Returns
+-------
+TDF_Label
 ") Value;
 		TDF_Label Value(const Standard_Integer Index);
 
@@ -4613,15 +6199,25 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 	public:
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
-		%feature("autodoc", "	:param value:
-	:type value: TDF_Label
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+value: TDF_Label
+
+Returns
+-------
+None
 ") Append;
 		void Append(const TDF_Label & value);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -4635,13 +6231,21 @@ class TDataStd_ReferenceList : public TDF_Attribute {
         };
 		/****************** Extent ******************/
 		%feature("compactdefaultargs") Extent;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Extent;
 		Standard_Integer Extent();
 
 		/****************** First ******************/
 		%feature("compactdefaultargs") First;
-		%feature("autodoc", "	:rtype: TDF_Label
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDF_Label
 ") First;
 		const TDF_Label & First();
 
@@ -4649,13 +6253,19 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Static methods ============== returns the id of the list of references (labels) attribute.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -4663,11 +6273,14 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertAfter;
 		%feature("autodoc", "Inserts the <value> after the first meet of <after_value>.
 
-	:param value:
-	:type value: TDF_Label
-	:param after_value:
-	:type after_value: TDF_Label
-	:rtype: bool
+Parameters
+----------
+value: TDF_Label
+after_value: TDF_Label
+
+Returns
+-------
+bool
 ") InsertAfter;
 		Standard_Boolean InsertAfter(const TDF_Label & value, const TDF_Label & after_value);
 
@@ -4675,11 +6288,14 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertAfter;
 		%feature("autodoc", "Inserts the label after the <index> position. the indices start with 1 .. extent().
 
-	:param index:
-	:type index: int
-	:param after_value:
-	:type after_value: TDF_Label
-	:rtype: bool
+Parameters
+----------
+index: int
+after_value: TDF_Label
+
+Returns
+-------
+bool
 ") InsertAfter;
 		Standard_Boolean InsertAfter(const Standard_Integer index, const TDF_Label & after_value);
 
@@ -4687,11 +6303,14 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertBefore;
 		%feature("autodoc", "Inserts the <value> before the first meet of <before_value>.
 
-	:param value:
-	:type value: TDF_Label
-	:param before_value:
-	:type before_value: TDF_Label
-	:rtype: bool
+Parameters
+----------
+value: TDF_Label
+before_value: TDF_Label
+
+Returns
+-------
+bool
 ") InsertBefore;
 		Standard_Boolean InsertBefore(const TDF_Label & value, const TDF_Label & before_value);
 
@@ -4699,61 +6318,97 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertBefore;
 		%feature("autodoc", "Inserts the label before the <index> position. the indices start with 1 .. extent().
 
-	:param index:
-	:type index: int
-	:param before_value:
-	:type before_value: TDF_Label
-	:rtype: bool
+Parameters
+----------
+index: int
+before_value: TDF_Label
+
+Returns
+-------
+bool
 ") InsertBefore;
 		Standard_Boolean InsertBefore(const Standard_Integer index, const TDF_Label & before_value);
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
 		/****************** Last ******************/
 		%feature("compactdefaultargs") Last;
-		%feature("autodoc", "	:rtype: TDF_Label
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDF_Label
 ") Last;
 		const TDF_Label & Last();
 
 		/****************** List ******************/
 		%feature("compactdefaultargs") List;
-		%feature("autodoc", "	:rtype: TDF_LabelList
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDF_LabelList
 ") List;
 		const TDF_LabelList & List();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Prepend ******************/
 		%feature("compactdefaultargs") Prepend;
-		%feature("autodoc", "	:param value:
-	:type value: TDF_Label
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+value: TDF_Label
+
+Returns
+-------
+None
 ") Prepend;
 		void Prepend(const TDF_Label & value);
 
 		/****************** References ******************/
 		%feature("compactdefaultargs") References;
-		%feature("autodoc", "	:param DS:
-	:type DS: TDF_DataSet
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+DS: TDF_DataSet
+
+Returns
+-------
+None
 ") References;
 		virtual void References(const opencascade::handle<TDF_DataSet> & DS);
 
@@ -4761,9 +6416,13 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Removes the first meet of the <value>.
 
-	:param value:
-	:type value: TDF_Label
-	:rtype: bool
+Parameters
+----------
+value: TDF_Label
+
+Returns
+-------
+bool
 ") Remove;
 		Standard_Boolean Remove(const TDF_Label & value);
 
@@ -4771,17 +6430,27 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Removes a label at 'index' position.
 
-	:param index:
-	:type index: int
-	:rtype: bool
+Parameters
+----------
+index: int
+
+Returns
+-------
+bool
 ") Remove;
 		Standard_Boolean Remove(const Standard_Integer index);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -4789,9 +6458,13 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a list of reference values (labels) attribute.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_ReferenceList>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_ReferenceList>
 ") Set;
 		static opencascade::handle<TDataStd_ReferenceList> Set(const TDF_Label & label);
 
@@ -4799,11 +6472,14 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a list of reference values (labels) attribute with explicit user defined <guid>.
 
-	:param label:
-	:type label: TDF_Label
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: opencascade::handle<TDataStd_ReferenceList>
+Parameters
+----------
+label: TDF_Label
+theGuid: Standard_GUID
+
+Returns
+-------
+opencascade::handle<TDataStd_ReferenceList>
 ") Set;
 		static opencascade::handle<TDataStd_ReferenceList> Set(const TDF_Label & label, const Standard_GUID & theGuid);
 
@@ -4811,9 +6487,13 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets the explicit guid (user defined) for the attribute.
 
-	:param theGuid:
-	:type theGuid: Standard_GUID
-	:rtype: None
+Parameters
+----------
+theGuid: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & theGuid);
 
@@ -4821,13 +6501,19 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 		%feature("compactdefaultargs") SetID;
 		%feature("autodoc", "Sets default guid for the attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetID;
 		void SetID();
 
 		/****************** TDataStd_ReferenceList ******************/
 		%feature("compactdefaultargs") TDataStd_ReferenceList;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_ReferenceList;
 		 TDataStd_ReferenceList();
 
@@ -4859,25 +6545,39 @@ class TDataStd_Relation : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods =============.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** GetRelation ******************/
 		%feature("compactdefaultargs") GetRelation;
-		%feature("autodoc", "	:rtype: TCollection_ExtendedString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_ExtendedString
 ") GetRelation;
 		const TCollection_ExtendedString & GetRelation();
 
 		/****************** GetVariables ******************/
 		%feature("compactdefaultargs") GetVariables;
-		%feature("autodoc", "	:rtype: TDF_AttributeList
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDF_AttributeList
 ") GetVariables;
 		TDF_AttributeList & GetVariables();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -4885,31 +6585,48 @@ class TDataStd_Relation : public TDF_Attribute {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Build and return the relation name.
 
-	:rtype: TCollection_ExtendedString
+Returns
+-------
+TCollection_ExtendedString
 ") Name;
 		TCollection_ExtendedString Name();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -4917,23 +6634,37 @@ class TDataStd_Relation : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Find, or create, an relation attribute. real methods ============.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_Relation>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_Relation>
 ") Set;
 		static opencascade::handle<TDataStd_Relation> Set(const TDF_Label & label);
 
 		/****************** SetRelation ******************/
 		%feature("compactdefaultargs") SetRelation;
-		%feature("autodoc", "	:param E:
-	:type E: TCollection_ExtendedString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") SetRelation;
 		void SetRelation(const TCollection_ExtendedString & E);
 
 		/****************** TDataStd_Relation ******************/
 		%feature("compactdefaultargs") TDataStd_Relation;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_Relation;
 		 TDataStd_Relation();
 
@@ -4965,37 +6696,58 @@ class TDataStd_Tick : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Static methods ==============.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -5003,15 +6755,23 @@ class TDataStd_Tick : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Find, or create, a tick attribute. tick methods ============.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_Tick>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_Tick>
 ") Set;
 		static opencascade::handle<TDataStd_Tick> Set(const TDF_Label & label);
 
 		/****************** TDataStd_Tick ******************/
 		%feature("compactdefaultargs") TDataStd_Tick;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_Tick;
 		 TDataStd_Tick();
 
@@ -5035,7 +6795,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") AfterAddition;
 		%feature("autodoc", "Connect the treenode to its father child list.
 
-	:rtype: None
+Returns
+-------
+None
 ") AfterAddition;
 		virtual void AfterAddition();
 
@@ -5043,7 +6805,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") AfterResume;
 		%feature("autodoc", "Reconnect the treenode to its father child list.
 
-	:rtype: None
+Returns
+-------
+None
 ") AfterResume;
 		virtual void AfterResume();
 
@@ -5051,11 +6815,15 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") AfterUndo;
 		%feature("autodoc", "Reconnect the treenode, if necessary. implementation of attribute methods: ===================================.
 
-	:param anAttDelta:
-	:type anAttDelta: TDF_AttributeDelta
-	:param forceIt: default value is Standard_False
-	:type forceIt: bool
-	:rtype: bool
+Parameters
+----------
+anAttDelta: TDF_AttributeDelta
+forceIt: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+bool
 ") AfterUndo;
 		virtual Standard_Boolean AfterUndo(const opencascade::handle<TDF_AttributeDelta> & anAttDelta, const Standard_Boolean forceIt = Standard_False);
 
@@ -5063,9 +6831,13 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Insert the treenode <child> as last child of <self>. if the insertion is successful <self> becomes the father of <child>.
 
-	:param Child:
-	:type Child: TDataStd_TreeNode
-	:rtype: bool
+Parameters
+----------
+Child: TDataStd_TreeNode
+
+Returns
+-------
+bool
 ") Append;
 		Standard_Boolean Append(const opencascade::handle<TDataStd_TreeNode> & Child);
 
@@ -5073,7 +6845,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") BeforeForget;
 		%feature("autodoc", "Disconnect the treenode from its father child list.
 
-	:rtype: None
+Returns
+-------
+None
 ") BeforeForget;
 		virtual void BeforeForget();
 
@@ -5081,11 +6855,15 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") BeforeUndo;
 		%feature("autodoc", "Disconnect the treenode, if necessary.
 
-	:param anAttDelta:
-	:type anAttDelta: TDF_AttributeDelta
-	:param forceIt: default value is Standard_False
-	:type forceIt: bool
-	:rtype: bool
+Parameters
+----------
+anAttDelta: TDF_AttributeDelta
+forceIt: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+bool
 ") BeforeUndo;
 		virtual Standard_Boolean BeforeUndo(const opencascade::handle<TDF_AttributeDelta> & anAttDelta, const Standard_Boolean forceIt = Standard_False);
 
@@ -5093,7 +6871,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Depth;
 		%feature("autodoc", "Returns the depth of this tree node in the overall tree node structure. in other words, the number of father tree nodes of this one is returned.
 
-	:rtype: int
+Returns
+-------
+int
 ") Depth;
 		Standard_Integer Depth();
 
@@ -5109,7 +6889,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Father;
 		%feature("autodoc", "Returns the father treenode of <self>. null if root.
 
-	:rtype: opencascade::handle<TDataStd_TreeNode>
+Returns
+-------
+opencascade::handle<TDataStd_TreeNode>
 ") Father;
 		opencascade::handle<TDataStd_TreeNode> Father();
 
@@ -5117,11 +6899,14 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Find;
 		%feature("autodoc", "Class methods working on the node =================================== returns true if the tree node t is found on the label l. otherwise, false is returned.
 
-	:param L:
-	:type L: TDF_Label
-	:param T:
-	:type T: TDataStd_TreeNode
-	:rtype: bool
+Parameters
+----------
+L: TDF_Label
+T: TDataStd_TreeNode
+
+Returns
+-------
+bool
 ") Find;
 		static Standard_Boolean Find(const TDF_Label & L, opencascade::handle<TDataStd_TreeNode> & T);
 
@@ -5129,7 +6914,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") FindLast;
 		%feature("autodoc", "Returns the last child tree node in this tree node object. to set fields =============.
 
-	:rtype: opencascade::handle<TDataStd_TreeNode>
+Returns
+-------
+opencascade::handle<TDataStd_TreeNode>
 ") FindLast;
 		opencascade::handle<TDataStd_TreeNode> FindLast();
 
@@ -5137,7 +6924,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") First;
 		%feature("autodoc", "Returns the first child tree node in this tree node object.
 
-	:rtype: opencascade::handle<TDataStd_TreeNode>
+Returns
+-------
+opencascade::handle<TDataStd_TreeNode>
 ") First;
 		opencascade::handle<TDataStd_TreeNode> First();
 
@@ -5145,7 +6934,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") GetDefaultTreeID;
 		%feature("autodoc", "Returns a default tree id. this id is used by the <set> method without explicit tree id. instance methods: ================.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetDefaultTreeID;
 		static const Standard_GUID & GetDefaultTreeID();
 
@@ -5153,7 +6944,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") HasFather;
 		%feature("autodoc", "Returns true if this tree node attribute has a father tree node.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasFather;
 		Standard_Boolean HasFather();
 
@@ -5161,7 +6954,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") HasFirst;
 		%feature("autodoc", "Returns true if this tree node attribute has a first child tree node.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasFirst;
 		Standard_Boolean HasFirst();
 
@@ -5169,7 +6964,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") HasLast;
 		%feature("autodoc", "Returns true if this tree node attribute has a last child tree node.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasLast;
 		Standard_Boolean HasLast();
 
@@ -5177,7 +6974,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") HasNext;
 		%feature("autodoc", "Returns true if this tree node attribute has a next tree node.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasNext;
 		Standard_Boolean HasNext();
 
@@ -5185,7 +6984,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") HasPrevious;
 		%feature("autodoc", "Returns true if this tree node attribute has a previous tree node.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPrevious;
 		Standard_Boolean HasPrevious();
 
@@ -5193,7 +6994,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") ID;
 		%feature("autodoc", "Returns the tree id (default or explicit one depending onthe set method used).
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -5201,9 +7004,13 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertAfter;
 		%feature("autodoc", "Inserts the treenode <node> after <self>. if insertion is successful <self> and <node> belongs to the same father.
 
-	:param Node:
-	:type Node: TDataStd_TreeNode
-	:rtype: bool
+Parameters
+----------
+Node: TDataStd_TreeNode
+
+Returns
+-------
+bool
 ") InsertAfter;
 		Standard_Boolean InsertAfter(const opencascade::handle<TDataStd_TreeNode> & Node);
 
@@ -5211,9 +7018,13 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") InsertBefore;
 		%feature("autodoc", "Inserts the treenode <node> before <self>. if insertion is successful <self> and <node> belongs to the same father.
 
-	:param Node:
-	:type Node: TDataStd_TreeNode
-	:rtype: bool
+Parameters
+----------
+Node: TDataStd_TreeNode
+
+Returns
+-------
+bool
 ") InsertBefore;
 		Standard_Boolean InsertBefore(const opencascade::handle<TDataStd_TreeNode> & Node);
 
@@ -5221,9 +7032,13 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") IsAscendant;
 		%feature("autodoc", "Returns true if this tree node attribute is an ascendant of of. in other words, if it is a father or the father of a father of of.
 
-	:param of:
-	:type of: TDataStd_TreeNode
-	:rtype: bool
+Parameters
+----------
+of: TDataStd_TreeNode
+
+Returns
+-------
+bool
 ") IsAscendant;
 		Standard_Boolean IsAscendant(const opencascade::handle<TDataStd_TreeNode> & of);
 
@@ -5231,9 +7046,13 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") IsChild;
 		%feature("autodoc", "Returns true if this tree node attribute is a child of of.
 
-	:param of:
-	:type of: TDataStd_TreeNode
-	:rtype: bool
+Parameters
+----------
+of: TDataStd_TreeNode
+
+Returns
+-------
+bool
 ") IsChild;
 		Standard_Boolean IsChild(const opencascade::handle<TDataStd_TreeNode> & of);
 
@@ -5241,9 +7060,13 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") IsDescendant;
 		%feature("autodoc", "Returns true if this tree node attribute is a descendant of of. in other words, if it is a child or the child of a child of of.
 
-	:param of:
-	:type of: TDataStd_TreeNode
-	:rtype: bool
+Parameters
+----------
+of: TDataStd_TreeNode
+
+Returns
+-------
+bool
 ") IsDescendant;
 		Standard_Boolean IsDescendant(const opencascade::handle<TDataStd_TreeNode> & of);
 
@@ -5251,9 +7074,13 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") IsFather;
 		%feature("autodoc", "Returns true if this tree node attribute is a father of of.
 
-	:param of:
-	:type of: TDataStd_TreeNode
-	:rtype: bool
+Parameters
+----------
+of: TDataStd_TreeNode
+
+Returns
+-------
+bool
 ") IsFather;
 		Standard_Boolean IsFather(const opencascade::handle<TDataStd_TreeNode> & of);
 
@@ -5261,7 +7088,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") IsRoot;
 		%feature("autodoc", "Returns true if this tree node attribute is the ultimate father in the tree.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRoot;
 		Standard_Boolean IsRoot();
 
@@ -5269,7 +7098,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Last;
 		%feature("autodoc", "Returns the last child tree node in this tree node object.
 
-	:rtype: opencascade::handle<TDataStd_TreeNode>
+Returns
+-------
+opencascade::handle<TDataStd_TreeNode>
 ") Last;
 		opencascade::handle<TDataStd_TreeNode> Last();
 
@@ -5277,15 +7108,24 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") NbChildren;
 		%feature("autodoc", "Returns the number of child nodes. if <alllevels> is true, the method counts children of all levels (children of children ...).
 
-	:param allLevels: default value is Standard_False
-	:type allLevels: bool
-	:rtype: int
+Parameters
+----------
+allLevels: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+int
 ") NbChildren;
 		Standard_Integer NbChildren(const Standard_Boolean allLevels = Standard_False);
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		virtual opencascade::handle<TDF_Attribute> NewEmpty();
 
@@ -5293,17 +7133,24 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Returns the next tree node in this tree node attribute. warning this tree node is null if it is the last one in this tree node attribute.returns the next treenode of <self>. null if last.
 
-	:rtype: opencascade::handle<TDataStd_TreeNode>
+Returns
+-------
+opencascade::handle<TDataStd_TreeNode>
 ") Next;
 		opencascade::handle<TDataStd_TreeNode> Next();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		virtual void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
@@ -5311,9 +7158,13 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Prepend;
 		%feature("autodoc", "Insert the the treenode <child> as first child of <self>. if the insertion is successful <self> becomes the father of <child>.
 
-	:param Child:
-	:type Child: TDataStd_TreeNode
-	:rtype: bool
+Parameters
+----------
+Child: TDataStd_TreeNode
+
+Returns
+-------
+bool
 ") Prepend;
 		Standard_Boolean Prepend(const opencascade::handle<TDataStd_TreeNode> & Child);
 
@@ -5321,15 +7172,23 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Previous;
 		%feature("autodoc", "Returns the previous tree node of this tree node attribute. warning this tree node is null if it is the first one in this tree node attribute.
 
-	:rtype: opencascade::handle<TDataStd_TreeNode>
+Returns
+-------
+opencascade::handle<TDataStd_TreeNode>
 ") Previous;
 		opencascade::handle<TDataStd_TreeNode> Previous();
 
 		/****************** References ******************/
 		%feature("compactdefaultargs") References;
-		%feature("autodoc", "	:param aDataSet:
-	:type aDataSet: TDF_DataSet
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aDataSet: TDF_DataSet
+
+Returns
+-------
+None
 ") References;
 		virtual void References(const opencascade::handle<TDF_DataSet> & aDataSet);
 
@@ -5337,15 +7196,23 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Removes this tree node attribute from its father node. the result is that this attribute becomes a root node.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Remove;
 		Standard_Boolean Remove();
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		virtual void Restore(const opencascade::handle<TDF_Attribute> & with);
 
@@ -5353,7 +7220,9 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Root;
 		%feature("autodoc", "Returns the ultimate father of this tree node attribute.
 
-	:rtype: opencascade::handle<TDataStd_TreeNode>
+Returns
+-------
+opencascade::handle<TDataStd_TreeNode>
 ") Root;
 		opencascade::handle<TDataStd_TreeNode> Root();
 
@@ -5361,9 +7230,13 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a treenode attribute on the label <l> with the default tree id, returned by the method <getdefaulttreeid>. returns the created/found treenode attribute.
 
-	:param L:
-	:type L: TDF_Label
-	:rtype: opencascade::handle<TDataStd_TreeNode>
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_TreeNode>
 ") Set;
 		static opencascade::handle<TDataStd_TreeNode> Set(const TDF_Label & L);
 
@@ -5371,27 +7244,42 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Finds or creates a treenode attribute on the label <l>, with an explicit tree id. <explicittreeid> is the id returned by <tdf_attribute::id> method. returns the found/created treenode attribute.
 
-	:param L:
-	:type L: TDF_Label
-	:param ExplicitTreeID:
-	:type ExplicitTreeID: Standard_GUID
-	:rtype: opencascade::handle<TDataStd_TreeNode>
+Parameters
+----------
+L: TDF_Label
+ExplicitTreeID: Standard_GUID
+
+Returns
+-------
+opencascade::handle<TDataStd_TreeNode>
 ") Set;
 		static opencascade::handle<TDataStd_TreeNode> Set(const TDF_Label & L, const Standard_GUID & ExplicitTreeID);
 
 		/****************** SetFather ******************/
 		%feature("compactdefaultargs") SetFather;
-		%feature("autodoc", "	:param F:
-	:type F: TDataStd_TreeNode
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F: TDataStd_TreeNode
+
+Returns
+-------
+None
 ") SetFather;
 		void SetFather(const opencascade::handle<TDataStd_TreeNode> & F);
 
 		/****************** SetFirst ******************/
 		%feature("compactdefaultargs") SetFirst;
-		%feature("autodoc", "	:param F:
-	:type F: TDataStd_TreeNode
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F: TDataStd_TreeNode
+
+Returns
+-------
+None
 ") SetFirst;
 		void SetFirst(const opencascade::handle<TDataStd_TreeNode> & F);
 
@@ -5399,39 +7287,65 @@ class TDataStd_TreeNode : public TDF_Attribute {
 		%feature("compactdefaultargs") SetLast;
 		%feature("autodoc", "Treenode callback: ==================.
 
-	:param F:
-	:type F: TDataStd_TreeNode
-	:rtype: None
+Parameters
+----------
+F: TDataStd_TreeNode
+
+Returns
+-------
+None
 ") SetLast;
 		void SetLast(const opencascade::handle<TDataStd_TreeNode> & F);
 
 		/****************** SetNext ******************/
 		%feature("compactdefaultargs") SetNext;
-		%feature("autodoc", "	:param F:
-	:type F: TDataStd_TreeNode
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F: TDataStd_TreeNode
+
+Returns
+-------
+None
 ") SetNext;
 		void SetNext(const opencascade::handle<TDataStd_TreeNode> & F);
 
 		/****************** SetPrevious ******************/
 		%feature("compactdefaultargs") SetPrevious;
-		%feature("autodoc", "	:param F:
-	:type F: TDataStd_TreeNode
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F: TDataStd_TreeNode
+
+Returns
+-------
+None
 ") SetPrevious;
 		void SetPrevious(const opencascade::handle<TDataStd_TreeNode> & F);
 
 		/****************** SetTreeID ******************/
 		%feature("compactdefaultargs") SetTreeID;
-		%feature("autodoc", "	:param explicitID:
-	:type explicitID: Standard_GUID
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+explicitID: Standard_GUID
+
+Returns
+-------
+None
 ") SetTreeID;
 		void SetTreeID(const Standard_GUID & explicitID);
 
 		/****************** TDataStd_TreeNode ******************/
 		%feature("compactdefaultargs") TDataStd_TreeNode;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_TreeNode;
 		 TDataStd_TreeNode();
 
@@ -5461,39 +7375,64 @@ class TDataStd_UAttribute : public TDF_Attribute {
         };
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param into:
-	:type into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & into, const opencascade::handle<TDF_RelocationTable> & RT);
 
 		/****************** References ******************/
 		%feature("compactdefaultargs") References;
-		%feature("autodoc", "	:param DS:
-	:type DS: TDF_DataSet
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+DS: TDF_DataSet
+
+Returns
+-------
+None
 ") References;
 		virtual void References(const opencascade::handle<TDF_DataSet> & DS);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param with:
-	:type with: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+with: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & with);
 
@@ -5501,25 +7440,38 @@ class TDataStd_UAttribute : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Api class methods ============= find, or create, a uattribute attribute with <localid> as local guid. the uattribute attribute is returned. uattribute methods ============.
 
-	:param label:
-	:type label: TDF_Label
-	:param LocalID:
-	:type LocalID: Standard_GUID
-	:rtype: opencascade::handle<TDataStd_UAttribute>
+Parameters
+----------
+label: TDF_Label
+LocalID: Standard_GUID
+
+Returns
+-------
+opencascade::handle<TDataStd_UAttribute>
 ") Set;
 		static opencascade::handle<TDataStd_UAttribute> Set(const TDF_Label & label, const Standard_GUID & LocalID);
 
 		/****************** SetID ******************/
 		%feature("compactdefaultargs") SetID;
-		%feature("autodoc", "	:param LocalID:
-	:type LocalID: Standard_GUID
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+LocalID: Standard_GUID
+
+Returns
+-------
+None
 ") SetID;
 		void SetID(const Standard_GUID & LocalID);
 
 		/****************** TDataStd_UAttribute ******************/
 		%feature("compactdefaultargs") TDataStd_UAttribute;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_UAttribute;
 		 TDataStd_UAttribute();
 
@@ -5543,7 +7495,9 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") Assign;
 		%feature("autodoc", "Create(if doesn't exist) and returns the assigned expression attribute. fill it after.
 
-	:rtype: opencascade::handle<TDataStd_Expression>
+Returns
+-------
+opencascade::handle<TDataStd_Expression>
 ") Assign;
 		opencascade::handle<TDataStd_Expression> Assign();
 
@@ -5551,9 +7505,13 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") Constant;
 		%feature("autodoc", "If <status> is true, this variable will not be modified by the solver.
 
-	:param status:
-	:type status: bool
-	:rtype: None
+Parameters
+----------
+status: bool
+
+Returns
+-------
+None
 ") Constant;
 		void Constant(const Standard_Boolean status);
 
@@ -5561,7 +7519,9 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") Desassign;
 		%feature("autodoc", "If <self> is assigned delete the associated expression attribute.
 
-	:rtype: None
+Returns
+-------
+None
 ") Desassign;
 		void Desassign();
 
@@ -5577,7 +7537,9 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") Expression;
 		%feature("autodoc", "If <self> is assigned, returns associated expression attribute.
 
-	:rtype: opencascade::handle<TDataStd_Expression>
+Returns
+-------
+opencascade::handle<TDataStd_Expression>
 ") Expression;
 		opencascade::handle<TDataStd_Expression> Expression();
 
@@ -5585,7 +7547,9 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "Returns value stored in associated real attribute.
 
-	:rtype: float
+Returns
+-------
+float
 ") Get;
 		Standard_Real Get();
 
@@ -5593,13 +7557,19 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Class methods =============.
 
-	:rtype: Standard_GUID
+Returns
+-------
+Standard_GUID
 ") GetID;
 		static const Standard_GUID & GetID();
 
 		/****************** ID ******************/
 		%feature("compactdefaultargs") ID;
-		%feature("autodoc", "	:rtype: Standard_GUID
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_GUID
 ") ID;
 		const Standard_GUID & ID();
 
@@ -5607,7 +7577,9 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") IsAssigned;
 		%feature("autodoc", "Returns true if an expression attribute is associated. create(if doesn't exist), set and returns the assigned expression attribute.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsAssigned;
 		Standard_Boolean IsAssigned();
 
@@ -5615,7 +7587,9 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") IsCaptured;
 		%feature("autodoc", "Shortcut for <real()->iscaptured()>.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsCaptured;
 		Standard_Boolean IsCaptured();
 
@@ -5623,7 +7597,9 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") IsConstant;
 		%feature("autodoc", "A constant value is not modified by regeneration.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsConstant;
 		Standard_Boolean IsConstant();
 
@@ -5631,7 +7607,9 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") IsValued;
 		%feature("autodoc", "Returns true if a real attribute is associated.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsValued;
 		Standard_Boolean IsValued();
 
@@ -5639,9 +7617,13 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Set or change the name of the variable, in myunknown and my associated name attribute.
 
-	:param string:
-	:type string: TCollection_ExtendedString
-	:rtype: None
+Parameters
+----------
+string: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") Name;
 		void Name(const TCollection_ExtendedString & string);
 
@@ -5649,23 +7631,34 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Returns string stored in the associated name attribute.
 
-	:rtype: TCollection_ExtendedString
+Returns
+-------
+TCollection_ExtendedString
 ") Name;
 		const TCollection_ExtendedString & Name();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Into:
-	:type Into: TDF_Attribute
-	:param RT:
-	:type RT: TDF_RelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Into: TDF_Attribute
+RT: TDF_RelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Into, const opencascade::handle<TDF_RelocationTable> & RT);
 
@@ -5673,7 +7666,9 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") Real;
 		%feature("autodoc", "Returns associated real attribute.
 
-	:rtype: opencascade::handle<TDataStd_Real>
+Returns
+-------
+opencascade::handle<TDataStd_Real>
 ") Real;
 		opencascade::handle<TDataStd_Real> Real();
 
@@ -5681,17 +7676,27 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") References;
 		%feature("autodoc", "To export reference to the associated name attribute.
 
-	:param DS:
-	:type DS: TDF_DataSet
-	:rtype: None
+Parameters
+----------
+DS: TDF_DataSet
+
+Returns
+-------
+None
 ") References;
 		virtual void References(const opencascade::handle<TDF_DataSet> & DS);
 
 		/****************** Restore ******************/
 		%feature("compactdefaultargs") Restore;
-		%feature("autodoc", "	:param With:
-	:type With: TDF_Attribute
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+With: TDF_Attribute
+
+Returns
+-------
+None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
@@ -5699,9 +7704,13 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Find, or create, a variable attribute. real methods ============.
 
-	:param label:
-	:type label: TDF_Label
-	:rtype: opencascade::handle<TDataStd_Variable>
+Parameters
+----------
+label: TDF_Label
+
+Returns
+-------
+opencascade::handle<TDataStd_Variable>
 ") Set;
 		static opencascade::handle<TDataStd_Variable> Set(const TDF_Label & label);
 
@@ -5709,9 +7718,13 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Retrieve or create the associated real attribute and set the value <value>.
 
-	:param value:
-	:type value: float
-	:rtype: None
+Parameters
+----------
+value: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real value);
 
@@ -5719,25 +7732,38 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Obsolete method that will be removed in next versions. the dimension argument is not supported in the persistence mechanism.
 
-	:param value:
-	:type value: float
-	:param dimension:
-	:type dimension: TDataStd_RealEnum
-	:rtype: None
+Parameters
+----------
+value: float
+dimension: TDataStd_RealEnum
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Real value, const TDataStd_RealEnum dimension);
 
 		/****************** TDataStd_Variable ******************/
 		%feature("compactdefaultargs") TDataStd_Variable;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TDataStd_Variable;
 		 TDataStd_Variable();
 
 		/****************** Unit ******************/
 		%feature("compactdefaultargs") Unit;
-		%feature("autodoc", "	:param unit:
-	:type unit: TCollection_AsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+unit: TCollection_AsciiString
+
+Returns
+-------
+None
 ") Unit;
 		void Unit(const TCollection_AsciiString & unit);
 
@@ -5745,7 +7771,9 @@ class TDataStd_Variable : public TDF_Attribute {
 		%feature("compactdefaultargs") Unit;
 		%feature("autodoc", "To read/write fields ===================.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") Unit;
 		const TCollection_AsciiString & Unit();
 

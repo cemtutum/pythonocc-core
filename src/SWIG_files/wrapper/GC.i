@@ -73,25 +73,43 @@ class GC_MakeMirror {
 	public:
 		/****************** GC_MakeMirror ******************/
 		%feature("compactdefaultargs") GC_MakeMirror;
-		%feature("autodoc", "	:param Point:
-	:type Point: gp_Pnt
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Point: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeMirror;
 		 GC_MakeMirror(const gp_Pnt & Point);
 
 		/****************** GC_MakeMirror ******************/
 		%feature("compactdefaultargs") GC_MakeMirror;
-		%feature("autodoc", "	:param Axis:
-	:type Axis: gp_Ax1
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Axis: gp_Ax1
+
+Returns
+-------
+None
 ") GC_MakeMirror;
 		 GC_MakeMirror(const gp_Ax1 & Axis);
 
 		/****************** GC_MakeMirror ******************/
 		%feature("compactdefaultargs") GC_MakeMirror;
-		%feature("autodoc", "	:param Line:
-	:type Line: gp_Lin
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Line: gp_Lin
+
+Returns
+-------
+None
 ") GC_MakeMirror;
 		 GC_MakeMirror(const gp_Lin & Line);
 
@@ -99,11 +117,14 @@ class GC_MakeMirror {
 		%feature("compactdefaultargs") GC_MakeMirror;
 		%feature("autodoc", "Make a symetry transformation af axis defined by <point> and <direc>.
 
-	:param Point:
-	:type Point: gp_Pnt
-	:param Direc:
-	:type Direc: gp_Dir
-	:rtype: None
+Parameters
+----------
+Point: gp_Pnt
+Direc: gp_Dir
+
+Returns
+-------
+None
 ") GC_MakeMirror;
 		 GC_MakeMirror(const gp_Pnt & Point, const gp_Dir & Direc);
 
@@ -111,9 +132,13 @@ class GC_MakeMirror {
 		%feature("compactdefaultargs") GC_MakeMirror;
 		%feature("autodoc", "Make a symetry transformation of plane <plane>.
 
-	:param Plane:
-	:type Plane: gp_Pln
-	:rtype: None
+Parameters
+----------
+Plane: gp_Pln
+
+Returns
+-------
+None
 ") GC_MakeMirror;
 		 GC_MakeMirror(const gp_Pln & Plane);
 
@@ -121,9 +146,13 @@ class GC_MakeMirror {
 		%feature("compactdefaultargs") GC_MakeMirror;
 		%feature("autodoc", "Make a symetry transformation of plane <plane>.
 
-	:param Plane:
-	:type Plane: gp_Ax2
-	:rtype: None
+Parameters
+----------
+Plane: gp_Ax2
+
+Returns
+-------
+None
 ") GC_MakeMirror;
 		 GC_MakeMirror(const gp_Ax2 & Plane);
 
@@ -131,7 +160,9 @@ class GC_MakeMirror {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed transformation.
 
-	:rtype: opencascade::handle<Geom_Transformation>
+Returns
+-------
+opencascade::handle<Geom_Transformation>
 ") Value;
 		const opencascade::handle<Geom_Transformation> & Value();
 
@@ -153,11 +184,14 @@ class GC_MakeRotation {
 		%feature("compactdefaultargs") GC_MakeRotation;
 		%feature("autodoc", "Constructs a rotation through angle angle about the axis defined by the line line.
 
-	:param Line:
-	:type Line: gp_Lin
-	:param Angle:
-	:type Angle: float
-	:rtype: None
+Parameters
+----------
+Line: gp_Lin
+Angle: float
+
+Returns
+-------
+None
 ") GC_MakeRotation;
 		 GC_MakeRotation(const gp_Lin & Line, const Standard_Real Angle);
 
@@ -165,11 +199,14 @@ class GC_MakeRotation {
 		%feature("compactdefaultargs") GC_MakeRotation;
 		%feature("autodoc", "Constructs a rotation through angle angle about the axis defined by the axis axis.
 
-	:param Axis:
-	:type Axis: gp_Ax1
-	:param Angle:
-	:type Angle: float
-	:rtype: None
+Parameters
+----------
+Axis: gp_Ax1
+Angle: float
+
+Returns
+-------
+None
 ") GC_MakeRotation;
 		 GC_MakeRotation(const gp_Ax1 & Axis, const Standard_Real Angle);
 
@@ -177,13 +214,15 @@ class GC_MakeRotation {
 		%feature("compactdefaultargs") GC_MakeRotation;
 		%feature("autodoc", "Constructs a rotation through angle angle about the axis defined by the point point and the unit vector direc.
 
-	:param Point:
-	:type Point: gp_Pnt
-	:param Direc:
-	:type Direc: gp_Dir
-	:param Angle:
-	:type Angle: float
-	:rtype: None
+Parameters
+----------
+Point: gp_Pnt
+Direc: gp_Dir
+Angle: float
+
+Returns
+-------
+None
 ") GC_MakeRotation;
 		 GC_MakeRotation(const gp_Pnt & Point, const gp_Dir & Direc, const Standard_Real Angle);
 
@@ -191,7 +230,9 @@ class GC_MakeRotation {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed transformation.
 
-	:rtype: opencascade::handle<Geom_Transformation>
+Returns
+-------
+opencascade::handle<Geom_Transformation>
 ") Value;
 		const opencascade::handle<Geom_Transformation> & Value();
 
@@ -213,11 +254,14 @@ class GC_MakeScale {
 		%feature("compactdefaultargs") GC_MakeScale;
 		%feature("autodoc", "Constructs a scaling transformation with - point as the center of the transformation, and - scale as the scale factor.
 
-	:param Point:
-	:type Point: gp_Pnt
-	:param Scale:
-	:type Scale: float
-	:rtype: None
+Parameters
+----------
+Point: gp_Pnt
+Scale: float
+
+Returns
+-------
+None
 ") GC_MakeScale;
 		 GC_MakeScale(const gp_Pnt & Point, const Standard_Real Scale);
 
@@ -225,7 +269,9 @@ class GC_MakeScale {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed transformation.
 
-	:rtype: opencascade::handle<Geom_Transformation>
+Returns
+-------
+opencascade::handle<Geom_Transformation>
 ") Value;
 		const opencascade::handle<Geom_Transformation> & Value();
 
@@ -247,9 +293,13 @@ class GC_MakeTranslation {
 		%feature("compactdefaultargs") GC_MakeTranslation;
 		%feature("autodoc", "Constructs a translation along the vector ' vect '.
 
-	:param Vect:
-	:type Vect: gp_Vec
-	:rtype: None
+Parameters
+----------
+Vect: gp_Vec
+
+Returns
+-------
+None
 ") GC_MakeTranslation;
 		 GC_MakeTranslation(const gp_Vec & Vect);
 
@@ -257,11 +307,14 @@ class GC_MakeTranslation {
 		%feature("compactdefaultargs") GC_MakeTranslation;
 		%feature("autodoc", "Constructs a translation along the vector (point1,point2) defined from the point point1 to the point point2.
 
-	:param Point1:
-	:type Point1: gp_Pnt
-	:param Point2:
-	:type Point2: gp_Pnt
-	:rtype: None
+Parameters
+----------
+Point1: gp_Pnt
+Point2: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeTranslation;
 		 GC_MakeTranslation(const gp_Pnt & Point1, const gp_Pnt & Point2);
 
@@ -269,7 +322,9 @@ class GC_MakeTranslation {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed transformation.
 
-	:rtype: opencascade::handle<Geom_Transformation>
+Returns
+-------
+opencascade::handle<Geom_Transformation>
 ") Value;
 		const opencascade::handle<Geom_Transformation> & Value();
 
@@ -291,7 +346,9 @@ class GC_Root {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the construction is successful.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -299,7 +356,9 @@ class GC_Root {
 		%feature("compactdefaultargs") Status;
 		%feature("autodoc", "Returns the status of the construction: - gce_done, if the construction is successful, or - another value of the gce_errortype enumeration indicating why the construction failed.
 
-	:rtype: gce_ErrorType
+Returns
+-------
+gce_ErrorType
 ") Status;
 		gce_ErrorType Status();
 
@@ -321,15 +380,16 @@ class GC_MakeArcOfCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfCircle;
 		%feature("autodoc", "Make an arc of circle (trimmedcurve from geom) from a circle between two angles alpha1 and alpha2 given in radiians.
 
-	:param Circ:
-	:type Circ: gp_Circ
-	:param Alpha1:
-	:type Alpha1: float
-	:param Alpha2:
-	:type Alpha2: float
-	:param Sense:
-	:type Sense: bool
-	:rtype: None
+Parameters
+----------
+Circ: gp_Circ
+Alpha1: float
+Alpha2: float
+Sense: bool
+
+Returns
+-------
+None
 ") GC_MakeArcOfCircle;
 		 GC_MakeArcOfCircle(const gp_Circ & Circ, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 
@@ -337,15 +397,16 @@ class GC_MakeArcOfCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfCircle;
 		%feature("autodoc", "Make an arc of circle (trimmedcurve from geom) from a circle between point <p> and the angle alpha given in radians.
 
-	:param Circ:
-	:type Circ: gp_Circ
-	:param P:
-	:type P: gp_Pnt
-	:param Alpha:
-	:type Alpha: float
-	:param Sense:
-	:type Sense: bool
-	:rtype: None
+Parameters
+----------
+Circ: gp_Circ
+P: gp_Pnt
+Alpha: float
+Sense: bool
+
+Returns
+-------
+None
 ") GC_MakeArcOfCircle;
 		 GC_MakeArcOfCircle(const gp_Circ & Circ, const gp_Pnt & P, const Standard_Real Alpha, const Standard_Boolean Sense);
 
@@ -353,15 +414,16 @@ class GC_MakeArcOfCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfCircle;
 		%feature("autodoc", "Make an arc of circle (trimmedcurve from geom) from a circle between two points p1 and p2.
 
-	:param Circ:
-	:type Circ: gp_Circ
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param Sense:
-	:type Sense: bool
-	:rtype: None
+Parameters
+----------
+Circ: gp_Circ
+P1: gp_Pnt
+P2: gp_Pnt
+Sense: bool
+
+Returns
+-------
+None
 ") GC_MakeArcOfCircle;
 		 GC_MakeArcOfCircle(const gp_Circ & Circ, const gp_Pnt & P1, const gp_Pnt & P2, const Standard_Boolean Sense);
 
@@ -369,13 +431,15 @@ class GC_MakeArcOfCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfCircle;
 		%feature("autodoc", "Make an arc of circle (trimmedcurve from geom) from three points p1,p2,p3 between two points p1 and p2.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param P3:
-	:type P3: gp_Pnt
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+P3: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeArcOfCircle;
 		 GC_MakeArcOfCircle(const gp_Pnt & P1, const gp_Pnt & P2, const gp_Pnt & P3);
 
@@ -383,13 +447,15 @@ class GC_MakeArcOfCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfCircle;
 		%feature("autodoc", "Make an arc of circle (trimmedcurve from geom) from two points p1,p2 and the tangente to the solution at the point p1. the orientation of the arc is: - the sense determined by the order of the points p1, p3 and p2; - the sense defined by the vector v; or - for other syntaxes: - the sense of circ if sense is true, or - the opposite sense if sense is false. note: alpha1, alpha2 and alpha are angle values, given in radians. warning if an error occurs (that is, when isdone returns false), the status function returns: - gce_confusedpoints if: - any 2 of the 3 points p1, p2 and p3 are coincident, or - p1 and p2 are coincident; or - gce_intersectionerror if: - p1, p2 and p3 are collinear and not coincident, or - the vector defined by the points p1 and p2 is collinear with the vector v.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param V:
-	:type V: gp_Vec
-	:param P2:
-	:type P2: gp_Pnt
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+V: gp_Vec
+P2: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeArcOfCircle;
 		 GC_MakeArcOfCircle(const gp_Pnt & P1, const gp_Vec & V, const gp_Pnt & P2);
 
@@ -397,7 +463,9 @@ class GC_MakeArcOfCircle : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed arc of circle. exceptions stdfail_notdone if no arc of circle is constructed.
 
-	:rtype: opencascade::handle<Geom_TrimmedCurve>
+Returns
+-------
+opencascade::handle<Geom_TrimmedCurve>
 ") Value;
 		const opencascade::handle<Geom_TrimmedCurve> & Value();
 
@@ -419,15 +487,16 @@ class GC_MakeArcOfEllipse : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfEllipse;
 		%feature("autodoc", "Constructs an arc of ellipse (trimmedcurve from geom) from a ellipse between two parameters alpha1 and alpha2.
 
-	:param Elips:
-	:type Elips: gp_Elips
-	:param Alpha1:
-	:type Alpha1: float
-	:param Alpha2:
-	:type Alpha2: float
-	:param Sense:
-	:type Sense: bool
-	:rtype: None
+Parameters
+----------
+Elips: gp_Elips
+Alpha1: float
+Alpha2: float
+Sense: bool
+
+Returns
+-------
+None
 ") GC_MakeArcOfEllipse;
 		 GC_MakeArcOfEllipse(const gp_Elips & Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 
@@ -435,15 +504,16 @@ class GC_MakeArcOfEllipse : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfEllipse;
 		%feature("autodoc", "Constructs an arc of ellipse (trimmedcurve from geom) from a ellipse between point <p> and the angle alpha given in radians.
 
-	:param Elips:
-	:type Elips: gp_Elips
-	:param P:
-	:type P: gp_Pnt
-	:param Alpha:
-	:type Alpha: float
-	:param Sense:
-	:type Sense: bool
-	:rtype: None
+Parameters
+----------
+Elips: gp_Elips
+P: gp_Pnt
+Alpha: float
+Sense: bool
+
+Returns
+-------
+None
 ") GC_MakeArcOfEllipse;
 		 GC_MakeArcOfEllipse(const gp_Elips & Elips, const gp_Pnt & P, const Standard_Real Alpha, const Standard_Boolean Sense);
 
@@ -451,15 +521,16 @@ class GC_MakeArcOfEllipse : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfEllipse;
 		%feature("autodoc", "Constructs an arc of ellipse (trimmedcurve from geom) from a ellipse between two points p1 and p2. the orientation of the arc of ellipse is: - the sense of elips if sense is true, or - the opposite sense if sense is false. notes: - alpha1, alpha2 and alpha are angle values, given in radians. - isdone always returns true.
 
-	:param Elips:
-	:type Elips: gp_Elips
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param Sense:
-	:type Sense: bool
-	:rtype: None
+Parameters
+----------
+Elips: gp_Elips
+P1: gp_Pnt
+P2: gp_Pnt
+Sense: bool
+
+Returns
+-------
+None
 ") GC_MakeArcOfEllipse;
 		 GC_MakeArcOfEllipse(const gp_Elips & Elips, const gp_Pnt & P1, const gp_Pnt & P2, const Standard_Boolean Sense);
 
@@ -467,7 +538,9 @@ class GC_MakeArcOfEllipse : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed arc of ellipse.
 
-	:rtype: opencascade::handle<Geom_TrimmedCurve>
+Returns
+-------
+opencascade::handle<Geom_TrimmedCurve>
 ") Value;
 		const opencascade::handle<Geom_TrimmedCurve> & Value();
 
@@ -489,15 +562,16 @@ class GC_MakeArcOfHyperbola : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfHyperbola;
 		%feature("autodoc", "Creates an arc of hyperbola (trimmedcurve from geom) from a hyperbola between two parameters alpha1 and alpha2 (given in radians).
 
-	:param Hypr:
-	:type Hypr: gp_Hypr
-	:param Alpha1:
-	:type Alpha1: float
-	:param Alpha2:
-	:type Alpha2: float
-	:param Sense:
-	:type Sense: bool
-	:rtype: None
+Parameters
+----------
+Hypr: gp_Hypr
+Alpha1: float
+Alpha2: float
+Sense: bool
+
+Returns
+-------
+None
 ") GC_MakeArcOfHyperbola;
 		 GC_MakeArcOfHyperbola(const gp_Hypr & Hypr, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 
@@ -505,15 +579,16 @@ class GC_MakeArcOfHyperbola : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfHyperbola;
 		%feature("autodoc", "Creates an arc of hyperbola (trimmedcurve from geom) from a hyperbola between point <p> and the parameter alpha (given in radians).
 
-	:param Hypr:
-	:type Hypr: gp_Hypr
-	:param P:
-	:type P: gp_Pnt
-	:param Alpha:
-	:type Alpha: float
-	:param Sense:
-	:type Sense: bool
-	:rtype: None
+Parameters
+----------
+Hypr: gp_Hypr
+P: gp_Pnt
+Alpha: float
+Sense: bool
+
+Returns
+-------
+None
 ") GC_MakeArcOfHyperbola;
 		 GC_MakeArcOfHyperbola(const gp_Hypr & Hypr, const gp_Pnt & P, const Standard_Real Alpha, const Standard_Boolean Sense);
 
@@ -521,15 +596,16 @@ class GC_MakeArcOfHyperbola : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfHyperbola;
 		%feature("autodoc", "Creates an arc of hyperbola (trimmedcurve from geom) from a hyperbola between two points p1 and p2. the orientation of the arc of hyperbola is: - the sense of hypr if sense is true, or - the opposite sense if sense is false.
 
-	:param Hypr:
-	:type Hypr: gp_Hypr
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param Sense:
-	:type Sense: bool
-	:rtype: None
+Parameters
+----------
+Hypr: gp_Hypr
+P1: gp_Pnt
+P2: gp_Pnt
+Sense: bool
+
+Returns
+-------
+None
 ") GC_MakeArcOfHyperbola;
 		 GC_MakeArcOfHyperbola(const gp_Hypr & Hypr, const gp_Pnt & P1, const gp_Pnt & P2, const Standard_Boolean Sense);
 
@@ -537,7 +613,9 @@ class GC_MakeArcOfHyperbola : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed arc of hyperbola.
 
-	:rtype: opencascade::handle<Geom_TrimmedCurve>
+Returns
+-------
+opencascade::handle<Geom_TrimmedCurve>
 ") Value;
 		const opencascade::handle<Geom_TrimmedCurve> & Value();
 
@@ -559,15 +637,16 @@ class GC_MakeArcOfParabola : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfParabola;
 		%feature("autodoc", "Creates an arc of parabola (trimmedcurve from geom) from a parabola between two parameters alpha1 and alpha2 (given in radians).
 
-	:param Parab:
-	:type Parab: gp_Parab
-	:param Alpha1:
-	:type Alpha1: float
-	:param Alpha2:
-	:type Alpha2: float
-	:param Sense:
-	:type Sense: bool
-	:rtype: None
+Parameters
+----------
+Parab: gp_Parab
+Alpha1: float
+Alpha2: float
+Sense: bool
+
+Returns
+-------
+None
 ") GC_MakeArcOfParabola;
 		 GC_MakeArcOfParabola(const gp_Parab & Parab, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 
@@ -575,15 +654,16 @@ class GC_MakeArcOfParabola : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfParabola;
 		%feature("autodoc", "Creates an arc of parabola (trimmedcurve from geom) from a parabola between point <p> and the parameter alpha (given in radians).
 
-	:param Parab:
-	:type Parab: gp_Parab
-	:param P:
-	:type P: gp_Pnt
-	:param Alpha:
-	:type Alpha: float
-	:param Sense:
-	:type Sense: bool
-	:rtype: None
+Parameters
+----------
+Parab: gp_Parab
+P: gp_Pnt
+Alpha: float
+Sense: bool
+
+Returns
+-------
+None
 ") GC_MakeArcOfParabola;
 		 GC_MakeArcOfParabola(const gp_Parab & Parab, const gp_Pnt & P, const Standard_Real Alpha, const Standard_Boolean Sense);
 
@@ -591,15 +671,16 @@ class GC_MakeArcOfParabola : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeArcOfParabola;
 		%feature("autodoc", "Creates an arc of parabola (trimmedcurve from geom) from a parabola between two points p1 and p2.
 
-	:param Parab:
-	:type Parab: gp_Parab
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param Sense:
-	:type Sense: bool
-	:rtype: None
+Parameters
+----------
+Parab: gp_Parab
+P1: gp_Pnt
+P2: gp_Pnt
+Sense: bool
+
+Returns
+-------
+None
 ") GC_MakeArcOfParabola;
 		 GC_MakeArcOfParabola(const gp_Parab & Parab, const gp_Pnt & P1, const gp_Pnt & P2, const Standard_Boolean Sense);
 
@@ -607,7 +688,9 @@ class GC_MakeArcOfParabola : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed arc of parabola.
 
-	:rtype: opencascade::handle<Geom_TrimmedCurve>
+Returns
+-------
+opencascade::handle<Geom_TrimmedCurve>
 ") Value;
 		const opencascade::handle<Geom_TrimmedCurve> & Value();
 
@@ -629,9 +712,13 @@ class GC_MakeCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCircle;
 		%feature("autodoc", "Creates a circle from a non persistent circle c by its conversion.
 
-	:param C:
-	:type C: gp_Circ
-	:rtype: None
+Parameters
+----------
+C: gp_Circ
+
+Returns
+-------
+None
 ") GC_MakeCircle;
 		 GC_MakeCircle(const gp_Circ & C);
 
@@ -639,11 +726,14 @@ class GC_MakeCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCircle;
 		%feature("autodoc", "A2 is the local coordinates system of the circle. it is not forbidden to create a circle with radius = 0.0 status is 'negativeradius' if radius < 0.
 
-	:param A2:
-	:type A2: gp_Ax2
-	:param Radius:
-	:type Radius: float
-	:rtype: None
+Parameters
+----------
+A2: gp_Ax2
+Radius: float
+
+Returns
+-------
+None
 ") GC_MakeCircle;
 		 GC_MakeCircle(const gp_Ax2 & A2, const Standard_Real Radius);
 
@@ -651,11 +741,14 @@ class GC_MakeCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCircle;
 		%feature("autodoc", "Make a circle from geom <thecirc> parallel to another circ <circ> with a distance <dist>. if dist is greater than zero the result is enclosing the circle <circ>, else the result is enclosed by the circle <circ>.
 
-	:param Circ:
-	:type Circ: gp_Circ
-	:param Dist:
-	:type Dist: float
-	:rtype: None
+Parameters
+----------
+Circ: gp_Circ
+Dist: float
+
+Returns
+-------
+None
 ") GC_MakeCircle;
 		 GC_MakeCircle(const gp_Circ & Circ, const Standard_Real Dist);
 
@@ -663,11 +756,14 @@ class GC_MakeCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCircle;
 		%feature("autodoc", "Make a circle from geom <thecirc> parallel to another circ <circ> and passing through a pnt <point>.
 
-	:param Circ:
-	:type Circ: gp_Circ
-	:param Point:
-	:type Point: gp_Pnt
-	:rtype: None
+Parameters
+----------
+Circ: gp_Circ
+Point: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeCircle;
 		 GC_MakeCircle(const gp_Circ & Circ, const gp_Pnt & Point);
 
@@ -675,13 +771,15 @@ class GC_MakeCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCircle;
 		%feature("autodoc", "Make a circ from gp <thecirc> passing through 3 pnt2d <p1>,<p2>,<p3>.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param P3:
-	:type P3: gp_Pnt
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+P3: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeCircle;
 		 GC_MakeCircle(const gp_Pnt & P1, const gp_Pnt & P2, const gp_Pnt & P3);
 
@@ -689,13 +787,15 @@ class GC_MakeCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCircle;
 		%feature("autodoc", "Make a circle from geom <thecirc> with its center <center> and the normal of its plane <norm> and its radius <radius>.
 
-	:param Center:
-	:type Center: gp_Pnt
-	:param Norm:
-	:type Norm: gp_Dir
-	:param Radius:
-	:type Radius: float
-	:rtype: None
+Parameters
+----------
+Center: gp_Pnt
+Norm: gp_Dir
+Radius: float
+
+Returns
+-------
+None
 ") GC_MakeCircle;
 		 GC_MakeCircle(const gp_Pnt & Center, const gp_Dir & Norm, const Standard_Real Radius);
 
@@ -703,13 +803,15 @@ class GC_MakeCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCircle;
 		%feature("autodoc", "Make a circle from geom <thecirc> with its center <center> and the normal of its plane defined by the two points <center> and <ptaxis> and its radius <radius>.
 
-	:param Center:
-	:type Center: gp_Pnt
-	:param PtAxis:
-	:type PtAxis: gp_Pnt
-	:param Radius:
-	:type Radius: float
-	:rtype: None
+Parameters
+----------
+Center: gp_Pnt
+PtAxis: gp_Pnt
+Radius: float
+
+Returns
+-------
+None
 ") GC_MakeCircle;
 		 GC_MakeCircle(const gp_Pnt & Center, const gp_Pnt & PtAxis, const Standard_Real Radius);
 
@@ -717,11 +819,14 @@ class GC_MakeCircle : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCircle;
 		%feature("autodoc", "Make a circle from geom <thecirc> with its center <center> and its radius <radius>.
 
-	:param Axis:
-	:type Axis: gp_Ax1
-	:param Radius:
-	:type Radius: float
-	:rtype: None
+Parameters
+----------
+Axis: gp_Ax1
+Radius: float
+
+Returns
+-------
+None
 ") GC_MakeCircle;
 		 GC_MakeCircle(const gp_Ax1 & Axis, const Standard_Real Radius);
 
@@ -729,7 +834,9 @@ class GC_MakeCircle : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed circle. exceptions stdfail_notdone if no circle is constructed.
 
-	:rtype: opencascade::handle<Geom_Circle>
+Returns
+-------
+opencascade::handle<Geom_Circle>
 ") Value;
 		const opencascade::handle<Geom_Circle> & Value();
 
@@ -751,13 +858,15 @@ class GC_MakeConicalSurface : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeConicalSurface;
 		%feature("autodoc", "A2 defines the local coordinate system of the conical surface. ang is the conical surface semi-angle ]0, pi/2[. radius is the radius of the circle viso in the placement plane of the conical surface defined with 'xaxis' and 'yaxis'. the 'zdirection' of a2 defines the direction of the surface's axis of symmetry. if the location point of a2 is the apex of the surface radius = 0 . at the creation the parametrization of the surface is defined such that the normal vector (n = d1u ^ d1v) is oriented towards the 'outside region' of the surface. status is 'negativeradius' if radius < 0.0 or 'badangle' if ang < resolution from gp or ang >= pi/ - resolution.
 
-	:param A2:
-	:type A2: gp_Ax2
-	:param Ang:
-	:type Ang: float
-	:param Radius:
-	:type Radius: float
-	:rtype: None
+Parameters
+----------
+A2: gp_Ax2
+Ang: float
+Radius: float
+
+Returns
+-------
+None
 ") GC_MakeConicalSurface;
 		 GC_MakeConicalSurface(const gp_Ax2 & A2, const Standard_Real Ang, const Standard_Real Radius);
 
@@ -765,9 +874,13 @@ class GC_MakeConicalSurface : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeConicalSurface;
 		%feature("autodoc", "Creates a conicalsurface from a non persistent cone from package gp.
 
-	:param C:
-	:type C: gp_Cone
-	:rtype: None
+Parameters
+----------
+C: gp_Cone
+
+Returns
+-------
+None
 ") GC_MakeConicalSurface;
 		 GC_MakeConicalSurface(const gp_Cone & C);
 
@@ -775,15 +888,16 @@ class GC_MakeConicalSurface : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeConicalSurface;
 		%feature("autodoc", "Make a conicalsurface from geom <thecone> passing through 3 pnt <p1>,<p2>,<p3>. its axis is <p1p2> and the radius of its base is the distance between <p3> and <p1p2>. the distance between <p4> and <p1p2> is the radius of the section passing through <p4>. an error iss raised if <p1>,<p2>,<p3>,<p4> are colinear or if <p3p4> is perpendicular to <p1p2> or <p3p4> is colinear to <p1p2>.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param P3:
-	:type P3: gp_Pnt
-	:param P4:
-	:type P4: gp_Pnt
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+P3: gp_Pnt
+P4: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeConicalSurface;
 		 GC_MakeConicalSurface(const gp_Pnt & P1, const gp_Pnt & P2, const gp_Pnt & P3, const gp_Pnt & P4);
 
@@ -791,15 +905,16 @@ class GC_MakeConicalSurface : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeConicalSurface;
 		%feature("autodoc", "Make a conicalsurface with two points and two radius. the axis of the solution is the line passing through <p1> and <p2>. <r1> is the radius of the section passing through <p1> and <r2> the radius of the section passing through <p2>.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param R1:
-	:type R1: float
-	:param R2:
-	:type R2: float
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+R1: float
+R2: float
+
+Returns
+-------
+None
 ") GC_MakeConicalSurface;
 		 GC_MakeConicalSurface(const gp_Pnt & P1, const gp_Pnt & P2, const Standard_Real R1, const Standard_Real R2);
 
@@ -807,7 +922,9 @@ class GC_MakeConicalSurface : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed cone. exceptions stdfail_notdone if no cone is constructed.
 
-	:rtype: opencascade::handle<Geom_ConicalSurface>
+Returns
+-------
+opencascade::handle<Geom_ConicalSurface>
 ") Value;
 		const opencascade::handle<Geom_ConicalSurface> & Value();
 
@@ -829,11 +946,14 @@ class GC_MakeCylindricalSurface : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCylindricalSurface;
 		%feature("autodoc", "A2 defines the local coordinate system of the cylindrical surface. the 'zdirection' of a2 defines the direction of the surface's axis of symmetry. at the creation the parametrization of the surface is defined such that the normal vector (n = d1u ^ d1v) is oriented towards the 'outside region' of the surface. warnings : it is not forbidden to create a cylindrical surface with radius = 0.0 status is 'negativeradius' if radius < 0.0.
 
-	:param A2:
-	:type A2: gp_Ax2
-	:param Radius:
-	:type Radius: float
-	:rtype: None
+Parameters
+----------
+A2: gp_Ax2
+Radius: float
+
+Returns
+-------
+None
 ") GC_MakeCylindricalSurface;
 		 GC_MakeCylindricalSurface(const gp_Ax2 & A2, const Standard_Real Radius);
 
@@ -841,9 +961,13 @@ class GC_MakeCylindricalSurface : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCylindricalSurface;
 		%feature("autodoc", "Creates a cylindricalsurface from a non persistent cylinder from package gp.
 
-	:param C:
-	:type C: gp_Cylinder
-	:rtype: None
+Parameters
+----------
+C: gp_Cylinder
+
+Returns
+-------
+None
 ") GC_MakeCylindricalSurface;
 		 GC_MakeCylindricalSurface(const gp_Cylinder & C);
 
@@ -851,11 +975,14 @@ class GC_MakeCylindricalSurface : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCylindricalSurface;
 		%feature("autodoc", "Make a cylindricalsurface from geom <thecylinder> parallel to another cylindricalsurface <cylinder> and passing through a pnt <point>.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:param Point:
-	:type Point: gp_Pnt
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+Point: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeCylindricalSurface;
 		 GC_MakeCylindricalSurface(const gp_Cylinder & Cyl, const gp_Pnt & Point);
 
@@ -863,11 +990,14 @@ class GC_MakeCylindricalSurface : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCylindricalSurface;
 		%feature("autodoc", "Make a cylindricalsurface from geom <thecylinder> parallel to another cylindricalsurface <cylinder> at the distance <dist> which can be greater or lower than zero. the radius of the result is the absolute value of the radius of <cyl> plus <dist>.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:param Dist:
-	:type Dist: float
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+Dist: float
+
+Returns
+-------
+None
 ") GC_MakeCylindricalSurface;
 		 GC_MakeCylindricalSurface(const gp_Cylinder & Cyl, const Standard_Real Dist);
 
@@ -875,13 +1005,15 @@ class GC_MakeCylindricalSurface : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCylindricalSurface;
 		%feature("autodoc", "Make a cylindricalsurface from geom <thecylinder> passing through 3 pnt <p1>,<p2>,<p3>. its axis is <p1p2> and its radius is the distance between <p3> and <p1p2>.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param P3:
-	:type P3: gp_Pnt
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+P3: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeCylindricalSurface;
 		 GC_MakeCylindricalSurface(const gp_Pnt & P1, const gp_Pnt & P2, const gp_Pnt & P3);
 
@@ -889,11 +1021,14 @@ class GC_MakeCylindricalSurface : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCylindricalSurface;
 		%feature("autodoc", "Make a cylindricalsurface by its axis <axis> and radius <radius>.
 
-	:param Axis:
-	:type Axis: gp_Ax1
-	:param Radius:
-	:type Radius: float
-	:rtype: None
+Parameters
+----------
+Axis: gp_Ax1
+Radius: float
+
+Returns
+-------
+None
 ") GC_MakeCylindricalSurface;
 		 GC_MakeCylindricalSurface(const gp_Ax1 & Axis, const Standard_Real Radius);
 
@@ -901,9 +1036,13 @@ class GC_MakeCylindricalSurface : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeCylindricalSurface;
 		%feature("autodoc", "Make a cylindricalsurface by its circular base.
 
-	:param Circ:
-	:type Circ: gp_Circ
-	:rtype: None
+Parameters
+----------
+Circ: gp_Circ
+
+Returns
+-------
+None
 ") GC_MakeCylindricalSurface;
 		 GC_MakeCylindricalSurface(const gp_Circ & Circ);
 
@@ -911,7 +1050,9 @@ class GC_MakeCylindricalSurface : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed cylinder. exceptions stdfail_notdone if no cylinder is constructed.
 
-	:rtype: opencascade::handle<Geom_CylindricalSurface>
+Returns
+-------
+opencascade::handle<Geom_CylindricalSurface>
 ") Value;
 		const opencascade::handle<Geom_CylindricalSurface> & Value();
 
@@ -933,9 +1074,13 @@ class GC_MakeEllipse : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeEllipse;
 		%feature("autodoc", "Creates an ellipse from a non persistent ellipse e from package gp by its conversion.
 
-	:param E:
-	:type E: gp_Elips
-	:rtype: None
+Parameters
+----------
+E: gp_Elips
+
+Returns
+-------
+None
 ") GC_MakeEllipse;
 		 GC_MakeEllipse(const gp_Elips & E);
 
@@ -943,13 +1088,15 @@ class GC_MakeEllipse : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeEllipse;
 		%feature("autodoc", "Constructs an ellipse with major and minor radii majorradius and minorradius, and located in the plane defined by the 'x axis' and 'y axis' of the coordinate system a2, where: - its center is the origin of a2, and - its major axis is the 'x axis' of a2; warnings : the makeellipse class does not prevent the construction of an ellipse where majorradius is equal to minorradius. if an error occurs (that is, when isdone returns false), the status function returns: - gce_invertradius if majorradius is less than minorradius; - gce_negativeradius if minorradius is less than 0.0; - gce_nullaxis if the points s1 and center are coincident; or - gce_invertaxis if: - the major radius computed with center and s1 is less than the minor radius computed with center, s1 and s2, or - center, s1 and s2 are collinear.
 
-	:param A2:
-	:type A2: gp_Ax2
-	:param MajorRadius:
-	:type MajorRadius: float
-	:param MinorRadius:
-	:type MinorRadius: float
-	:rtype: None
+Parameters
+----------
+A2: gp_Ax2
+MajorRadius: float
+MinorRadius: float
+
+Returns
+-------
+None
 ") GC_MakeEllipse;
 		 GC_MakeEllipse(const gp_Ax2 & A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
 
@@ -957,13 +1104,15 @@ class GC_MakeEllipse : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeEllipse;
 		%feature("autodoc", "Constructs an ellipse centered on the point center, where - the plane of the ellipse is defined by center, s1 and s2, - its major axis is defined by center and s1, - its major radius is the distance between center and s1, and - its minor radius is the distance between s2 and the major axis.
 
-	:param S1:
-	:type S1: gp_Pnt
-	:param S2:
-	:type S2: gp_Pnt
-	:param Center:
-	:type Center: gp_Pnt
-	:rtype: None
+Parameters
+----------
+S1: gp_Pnt
+S2: gp_Pnt
+Center: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeEllipse;
 		 GC_MakeEllipse(const gp_Pnt & S1, const gp_Pnt & S2, const gp_Pnt & Center);
 
@@ -971,7 +1120,9 @@ class GC_MakeEllipse : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed ellipse. exceptions stdfail_notdone if no ellipse is constructed.
 
-	:rtype: opencascade::handle<Geom_Ellipse>
+Returns
+-------
+opencascade::handle<Geom_Ellipse>
 ") Value;
 		const opencascade::handle<Geom_Ellipse> & Value();
 
@@ -993,9 +1144,13 @@ class GC_MakeHyperbola : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeHyperbola;
 		%feature("autodoc", "Creates an hyperbola from a non persistent hyperbola from package gp by conversion.
 
-	:param H:
-	:type H: gp_Hypr
-	:rtype: None
+Parameters
+----------
+H: gp_Hypr
+
+Returns
+-------
+None
 ") GC_MakeHyperbola;
 		 GC_MakeHyperbola(const gp_Hypr & H);
 
@@ -1003,13 +1158,15 @@ class GC_MakeHyperbola : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeHyperbola;
 		%feature("autodoc", "Constructs a hyperbola centered on the origin of the coordinate system a2, with major and minor radii majorradius and minorradius, where: the plane of the hyperbola is defined by the 'x axis' and 'y axis' of a2, - its major axis is the 'x axis' of a2.
 
-	:param A2:
-	:type A2: gp_Ax2
-	:param MajorRadius:
-	:type MajorRadius: float
-	:param MinorRadius:
-	:type MinorRadius: float
-	:rtype: None
+Parameters
+----------
+A2: gp_Ax2
+MajorRadius: float
+MinorRadius: float
+
+Returns
+-------
+None
 ") GC_MakeHyperbola;
 		 GC_MakeHyperbola(const gp_Ax2 & A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
 
@@ -1017,13 +1174,15 @@ class GC_MakeHyperbola : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeHyperbola;
 		%feature("autodoc", "Constructs a hyperbola centered on the point center, where - the plane of the hyperbola is defined by center, s1 and s2, - its major axis is defined by center and s1, - its major radius is the distance between center and s1, and - its minor radius is the distance between s2 and the major axis;.
 
-	:param S1:
-	:type S1: gp_Pnt
-	:param S2:
-	:type S2: gp_Pnt
-	:param Center:
-	:type Center: gp_Pnt
-	:rtype: None
+Parameters
+----------
+S1: gp_Pnt
+S2: gp_Pnt
+Center: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeHyperbola;
 		 GC_MakeHyperbola(const gp_Pnt & S1, const gp_Pnt & S2, const gp_Pnt & Center);
 
@@ -1031,7 +1190,9 @@ class GC_MakeHyperbola : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed hyperbola. exceptions stdfail_notdone if no hyperbola is constructed.
 
-	:rtype: opencascade::handle<Geom_Hyperbola>
+Returns
+-------
+opencascade::handle<Geom_Hyperbola>
 ") Value;
 		const opencascade::handle<Geom_Hyperbola> & Value();
 
@@ -1053,9 +1214,13 @@ class GC_MakeLine : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeLine;
 		%feature("autodoc", "Creates a line located in 3d space with the axis placement a1. the location of a1 is the origin of the line.
 
-	:param A1:
-	:type A1: gp_Ax1
-	:rtype: None
+Parameters
+----------
+A1: gp_Ax1
+
+Returns
+-------
+None
 ") GC_MakeLine;
 		 GC_MakeLine(const gp_Ax1 & A1);
 
@@ -1063,9 +1228,13 @@ class GC_MakeLine : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeLine;
 		%feature("autodoc", "Creates a line from a non persistent line from package gp.
 
-	:param L:
-	:type L: gp_Lin
-	:rtype: None
+Parameters
+----------
+L: gp_Lin
+
+Returns
+-------
+None
 ") GC_MakeLine;
 		 GC_MakeLine(const gp_Lin & L);
 
@@ -1073,11 +1242,14 @@ class GC_MakeLine : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeLine;
 		%feature("autodoc", "P is the origin and v is the direction of the line.
 
-	:param P:
-	:type P: gp_Pnt
-	:param V:
-	:type V: gp_Dir
-	:rtype: None
+Parameters
+----------
+P: gp_Pnt
+V: gp_Dir
+
+Returns
+-------
+None
 ") GC_MakeLine;
 		 GC_MakeLine(const gp_Pnt & P, const gp_Dir & V);
 
@@ -1085,11 +1257,14 @@ class GC_MakeLine : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeLine;
 		%feature("autodoc", "Make a line from geom <thelin> parallel to another lin <lin> and passing through a pnt <point>.
 
-	:param Lin:
-	:type Lin: gp_Lin
-	:param Point:
-	:type Point: gp_Pnt
-	:rtype: None
+Parameters
+----------
+Lin: gp_Lin
+Point: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeLine;
 		 GC_MakeLine(const gp_Lin & Lin, const gp_Pnt & Point);
 
@@ -1097,11 +1272,14 @@ class GC_MakeLine : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeLine;
 		%feature("autodoc", "Make a line from geom <thelin> passing through 2 pnt <p1>,<p2>. it returns false if <p1> and <p2> are confused. warning if the points p1 and p2 are coincident (that is, when isdone returns false), the status function returns gce_confusedpoints.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeLine;
 		 GC_MakeLine(const gp_Pnt & P1, const gp_Pnt & P2);
 
@@ -1109,7 +1287,9 @@ class GC_MakeLine : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed line. exceptions stdfail_notdone if no line is constructed.
 
-	:rtype: opencascade::handle<Geom_Line>
+Returns
+-------
+opencascade::handle<Geom_Line>
 ") Value;
 		const opencascade::handle<Geom_Line> & Value();
 
@@ -1131,9 +1311,13 @@ class GC_MakePlane : public GC_Root {
 		%feature("compactdefaultargs") GC_MakePlane;
 		%feature("autodoc", "Creates a plane from a non persistent plane from package gp.
 
-	:param Pl:
-	:type Pl: gp_Pln
-	:rtype: None
+Parameters
+----------
+Pl: gp_Pln
+
+Returns
+-------
+None
 ") GC_MakePlane;
 		 GC_MakePlane(const gp_Pln & Pl);
 
@@ -1141,11 +1325,14 @@ class GC_MakePlane : public GC_Root {
 		%feature("compactdefaultargs") GC_MakePlane;
 		%feature("autodoc", "P is the 'location' point or origin of the plane. v is the direction normal to the plane.
 
-	:param P:
-	:type P: gp_Pnt
-	:param V:
-	:type V: gp_Dir
-	:rtype: None
+Parameters
+----------
+P: gp_Pnt
+V: gp_Dir
+
+Returns
+-------
+None
 ") GC_MakePlane;
 		 GC_MakePlane(const gp_Pnt & P, const gp_Dir & V);
 
@@ -1153,15 +1340,16 @@ class GC_MakePlane : public GC_Root {
 		%feature("compactdefaultargs") GC_MakePlane;
 		%feature("autodoc", "Creates a plane from its cartesian equation : ax + by + cz + d = 0.0 status is 'badequation' if sqrt (a*a + b*b + c*c) <= resolution from gp.
 
-	:param A:
-	:type A: float
-	:param B:
-	:type B: float
-	:param C:
-	:type C: float
-	:param D:
-	:type D: float
-	:rtype: None
+Parameters
+----------
+A: float
+B: float
+C: float
+D: float
+
+Returns
+-------
+None
 ") GC_MakePlane;
 		 GC_MakePlane(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
 
@@ -1169,11 +1357,14 @@ class GC_MakePlane : public GC_Root {
 		%feature("compactdefaultargs") GC_MakePlane;
 		%feature("autodoc", "Make a plane from geom <theplane> parallel to another pln <pln> and passing through a pnt <point>.
 
-	:param Pln:
-	:type Pln: gp_Pln
-	:param Point:
-	:type Point: gp_Pnt
-	:rtype: None
+Parameters
+----------
+Pln: gp_Pln
+Point: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakePlane;
 		 GC_MakePlane(const gp_Pln & Pln, const gp_Pnt & Point);
 
@@ -1181,11 +1372,14 @@ class GC_MakePlane : public GC_Root {
 		%feature("compactdefaultargs") GC_MakePlane;
 		%feature("autodoc", "Make a plane from geom <theplane> parallel to another pln <pln> at the distance <dist> which can be greater or lower than zero. in the first case the result is at the distance <dist> to the plane <pln> in the direction of the normal to <pln>. otherwize it is in the oposite direction.
 
-	:param Pln:
-	:type Pln: gp_Pln
-	:param Dist:
-	:type Dist: float
-	:rtype: None
+Parameters
+----------
+Pln: gp_Pln
+Dist: float
+
+Returns
+-------
+None
 ") GC_MakePlane;
 		 GC_MakePlane(const gp_Pln & Pln, const Standard_Real Dist);
 
@@ -1193,13 +1387,15 @@ class GC_MakePlane : public GC_Root {
 		%feature("compactdefaultargs") GC_MakePlane;
 		%feature("autodoc", "Make a plane from geom <theplane> passing through 3 pnt <p1>,<p2>,<p3>. it returns false if <p1> <p2> <p3> are confused.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param P3:
-	:type P3: gp_Pnt
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+P3: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakePlane;
 		 GC_MakePlane(const gp_Pnt & P1, const gp_Pnt & P2, const gp_Pnt & P3);
 
@@ -1207,9 +1403,13 @@ class GC_MakePlane : public GC_Root {
 		%feature("compactdefaultargs") GC_MakePlane;
 		%feature("autodoc", "Make a plane passing through the location of <axis>and normal to the direction of <axis>.
 
-	:param Axis:
-	:type Axis: gp_Ax1
-	:rtype: None
+Parameters
+----------
+Axis: gp_Ax1
+
+Returns
+-------
+None
 ") GC_MakePlane;
 		 GC_MakePlane(const gp_Ax1 & Axis);
 
@@ -1217,7 +1417,9 @@ class GC_MakePlane : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed plane. exceptions stdfail_notdone if no plane is constructed.
 
-	:rtype: opencascade::handle<Geom_Plane>
+Returns
+-------
+opencascade::handle<Geom_Plane>
 ") Value;
 		const opencascade::handle<Geom_Plane> & Value();
 
@@ -1239,11 +1441,14 @@ class GC_MakeSegment : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeSegment;
 		%feature("autodoc", "Make a segment of line from the 2 points <p1> and <p2>. it returns nullobject if <p1> and <p2> are confused.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeSegment;
 		 GC_MakeSegment(const gp_Pnt & P1, const gp_Pnt & P2);
 
@@ -1251,13 +1456,15 @@ class GC_MakeSegment : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeSegment;
 		%feature("autodoc", "Make a segment of line from the line <line1> between the two parameters u1 and u2. it returns nullobject if <u1> is equal <u2>.
 
-	:param Line:
-	:type Line: gp_Lin
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:rtype: None
+Parameters
+----------
+Line: gp_Lin
+U1: float
+U2: float
+
+Returns
+-------
+None
 ") GC_MakeSegment;
 		 GC_MakeSegment(const gp_Lin & Line, const Standard_Real U1, const Standard_Real U2);
 
@@ -1265,13 +1472,15 @@ class GC_MakeSegment : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeSegment;
 		%feature("autodoc", "Make a segment of line from the line <line1> between the point <point> and the parameter ulast. it returns nullobject if <u1> is equal <u2>.
 
-	:param Line:
-	:type Line: gp_Lin
-	:param Point:
-	:type Point: gp_Pnt
-	:param Ulast:
-	:type Ulast: float
-	:rtype: None
+Parameters
+----------
+Line: gp_Lin
+Point: gp_Pnt
+Ulast: float
+
+Returns
+-------
+None
 ") GC_MakeSegment;
 		 GC_MakeSegment(const gp_Lin & Line, const gp_Pnt & Point, const Standard_Real Ulast);
 
@@ -1279,13 +1488,15 @@ class GC_MakeSegment : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeSegment;
 		%feature("autodoc", "Make a segment of line from the line <line1> between the two points <p1> and <p2>. it returns nullobject if <u1> is equal <u2>.
 
-	:param Line:
-	:type Line: gp_Lin
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:rtype: None
+Parameters
+----------
+Line: gp_Lin
+P1: gp_Pnt
+P2: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeSegment;
 		 GC_MakeSegment(const gp_Lin & Line, const gp_Pnt & P1, const gp_Pnt & P2);
 
@@ -1293,7 +1504,9 @@ class GC_MakeSegment : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed line segment.
 
-	:rtype: opencascade::handle<Geom_TrimmedCurve>
+Returns
+-------
+opencascade::handle<Geom_TrimmedCurve>
 ") Value;
 		const opencascade::handle<Geom_TrimmedCurve> & Value();
 
@@ -1315,15 +1528,16 @@ class GC_MakeTrimmedCone : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeTrimmedCone;
 		%feature("autodoc", "Make a rectangulartrimmedsurface <thecone> from geom it is trimmed by p3 and p4. its axis is <p1p2> and the radius of its base is the distance between <p3> and <p1p2>. the distance between <p4> and <p1p2> is the radius of the section passing through <p4>. an error iss raised if <p1>,<p2>,<p3>,<p4> are colinear or if <p3p4> is perpendicular to <p1p2> or <p3p4> is colinear to <p1p2>.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param P3:
-	:type P3: gp_Pnt
-	:param P4:
-	:type P4: gp_Pnt
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+P3: gp_Pnt
+P4: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeTrimmedCone;
 		 GC_MakeTrimmedCone(const gp_Pnt & P1, const gp_Pnt & P2, const gp_Pnt & P3, const gp_Pnt & P4);
 
@@ -1331,15 +1545,16 @@ class GC_MakeTrimmedCone : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeTrimmedCone;
 		%feature("autodoc", "Make a rectangulartrimmedsurface from geom <thecone> from a cone and trimmed by two points p1 and p2 and the two radius <r1> and <r2> of the sections passing through <p1> an <p2>. warning if an error occurs (that is, when isdone returns false), the status function returns: - gce_confusedpoints if points p1 and p2, or p3 and p4, are coincident; - gce_nullangle if: - the lines joining p1 to p2 and p3 to p4 are parallel, or - r1 and r2 are equal (i.e. their difference is less than gp::resolution()); - gce_nullradius if: - the line joining p1 to p2 is perpendicular to the line joining p3 to p4, or - the points p1, p2, p3 and p4 are collinear; - gce_negativeradius if r1 or r2 is negative; or - gce_nullaxis if points p1 and p2 are coincident (2nd syntax only).
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param R1:
-	:type R1: float
-	:param R2:
-	:type R2: float
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+R1: float
+R2: float
+
+Returns
+-------
+None
 ") GC_MakeTrimmedCone;
 		 GC_MakeTrimmedCone(const gp_Pnt & P1, const gp_Pnt & P2, const Standard_Real R1, const Standard_Real R2);
 
@@ -1347,7 +1562,9 @@ class GC_MakeTrimmedCone : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed trimmed cone. stdfail_notdone if no trimmed cone is constructed.
 
-	:rtype: opencascade::handle<Geom_RectangularTrimmedSurface>
+Returns
+-------
+opencascade::handle<Geom_RectangularTrimmedSurface>
 ") Value;
 		const opencascade::handle<Geom_RectangularTrimmedSurface> & Value();
 
@@ -1369,13 +1586,15 @@ class GC_MakeTrimmedCylinder : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeTrimmedCylinder;
 		%feature("autodoc", "Make a cylindricalsurface <cyl> from geom its axis is is <p1p2> and its radius is the distance between <p3> and <p1p2>. the height is the distance between p1 and p2.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param P3:
-	:type P3: gp_Pnt
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+P3: gp_Pnt
+
+Returns
+-------
+None
 ") GC_MakeTrimmedCylinder;
 		 GC_MakeTrimmedCylinder(const gp_Pnt & P1, const gp_Pnt & P2, const gp_Pnt & P3);
 
@@ -1383,11 +1602,14 @@ class GC_MakeTrimmedCylinder : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeTrimmedCylinder;
 		%feature("autodoc", "Make a cylindricalsurface <cyl> from gp by its base <circ>. its axis is the normal to the plane defined bi <circ>. <height> can be greater than zero or lower than zero. in the first case the v parametric direction of the result has the same orientation as the normal to <circ>. in the other case it has the opposite orientation.
 
-	:param Circ:
-	:type Circ: gp_Circ
-	:param Height:
-	:type Height: float
-	:rtype: None
+Parameters
+----------
+Circ: gp_Circ
+Height: float
+
+Returns
+-------
+None
 ") GC_MakeTrimmedCylinder;
 		 GC_MakeTrimmedCylinder(const gp_Circ & Circ, const Standard_Real Height);
 
@@ -1395,13 +1617,15 @@ class GC_MakeTrimmedCylinder : public GC_Root {
 		%feature("compactdefaultargs") GC_MakeTrimmedCylinder;
 		%feature("autodoc", "Make a cylindricalsurface <cyl> from gp by its axis <a1> and its radius <radius>. it returns nullobject if <radius> is lower than zero. <height> can be greater than zero or lower than zero. in the first case the v parametric direction of the result has the same orientation as <a1>. in the other case it has the opposite orientation.
 
-	:param A1:
-	:type A1: gp_Ax1
-	:param Radius:
-	:type Radius: float
-	:param Height:
-	:type Height: float
-	:rtype: None
+Parameters
+----------
+A1: gp_Ax1
+Radius: float
+Height: float
+
+Returns
+-------
+None
 ") GC_MakeTrimmedCylinder;
 		 GC_MakeTrimmedCylinder(const gp_Ax1 & A1, const Standard_Real Radius, const Standard_Real Height);
 
@@ -1409,7 +1633,9 @@ class GC_MakeTrimmedCylinder : public GC_Root {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the constructed trimmed cylinder. exceptions stdfail_notdone if no trimmed cylinder is constructed.
 
-	:rtype: opencascade::handle<Geom_RectangularTrimmedSurface>
+Returns
+-------
+opencascade::handle<Geom_RectangularTrimmedSurface>
 ") Value;
 		const opencascade::handle<Geom_RectangularTrimmedSurface> & Value();
 

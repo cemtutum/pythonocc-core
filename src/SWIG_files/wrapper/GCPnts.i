@@ -92,7 +92,11 @@ class GCPnts_AbscissaPoint {
 	public:
 		/****************** GCPnts_AbscissaPoint ******************/
 		%feature("compactdefaultargs") GCPnts_AbscissaPoint;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") GCPnts_AbscissaPoint;
 		 GCPnts_AbscissaPoint();
 
@@ -100,13 +104,15 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") GCPnts_AbscissaPoint;
 		%feature("autodoc", "The algorithm computes a point on a curve <curve> at the distance <abscissa> from the point of parameter <u0>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Abscissa:
-	:type Abscissa: float
-	:param U0:
-	:type U0: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Abscissa: float
+U0: float
+
+Returns
+-------
+None
 ") GCPnts_AbscissaPoint;
 		 GCPnts_AbscissaPoint(const Adaptor3d_Curve & C, const Standard_Real Abscissa, const Standard_Real U0);
 
@@ -114,15 +120,16 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") GCPnts_AbscissaPoint;
 		%feature("autodoc", "The algorithm computes a point on a curve <curve> at the distance <abscissa> from the point of parameter <u0> with the given tolerance.
 
-	:param Tol:
-	:type Tol: float
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Abscissa:
-	:type Abscissa: float
-	:param U0:
-	:type U0: float
-	:rtype: None
+Parameters
+----------
+Tol: float
+C: Adaptor3d_Curve
+Abscissa: float
+U0: float
+
+Returns
+-------
+None
 ") GCPnts_AbscissaPoint;
 		 GCPnts_AbscissaPoint(const Standard_Real Tol, const Adaptor3d_Curve & C, const Standard_Real Abscissa, const Standard_Real U0);
 
@@ -130,15 +137,16 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") GCPnts_AbscissaPoint;
 		%feature("autodoc", "The algorithm computes a point on a curve <curve> at the distance <abscissa> from the point of parameter <u0> with the given tolerance.
 
-	:param Tol:
-	:type Tol: float
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Abscissa:
-	:type Abscissa: float
-	:param U0:
-	:type U0: float
-	:rtype: None
+Parameters
+----------
+Tol: float
+C: Adaptor2d_Curve2d
+Abscissa: float
+U0: float
+
+Returns
+-------
+None
 ") GCPnts_AbscissaPoint;
 		 GCPnts_AbscissaPoint(const Standard_Real Tol, const Adaptor2d_Curve2d & C, const Standard_Real Abscissa, const Standard_Real U0);
 
@@ -146,13 +154,15 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") GCPnts_AbscissaPoint;
 		%feature("autodoc", "The algorithm computes a point on a curve <curve> at the distance <abscissa> from the point of parameter <u0>.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Abscissa:
-	:type Abscissa: float
-	:param U0:
-	:type U0: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Abscissa: float
+U0: float
+
+Returns
+-------
+None
 ") GCPnts_AbscissaPoint;
 		 GCPnts_AbscissaPoint(const Adaptor2d_Curve2d & C, const Standard_Real Abscissa, const Standard_Real U0);
 
@@ -160,15 +170,16 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") GCPnts_AbscissaPoint;
 		%feature("autodoc", "The algorithm computes a point on a curve <curve> at the distance <abscissa> from the point of parameter <u0>. <ui> is the starting value used in the iterative process which find the solution, it must be close to the final solution.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Abscissa:
-	:type Abscissa: float
-	:param U0:
-	:type U0: float
-	:param Ui:
-	:type Ui: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Abscissa: float
+U0: float
+Ui: float
+
+Returns
+-------
+None
 ") GCPnts_AbscissaPoint;
 		 GCPnts_AbscissaPoint(const Adaptor3d_Curve & C, const Standard_Real Abscissa, const Standard_Real U0, const Standard_Real Ui);
 
@@ -176,15 +187,16 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") GCPnts_AbscissaPoint;
 		%feature("autodoc", "The algorithm computes a point on a curve <curve> at the distance <abscissa> from the point of parameter <u0>. <ui> is the starting value used in the iterative process which find the solution, it must be closed to the final solution.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Abscissa:
-	:type Abscissa: float
-	:param U0:
-	:type U0: float
-	:param Ui:
-	:type Ui: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Abscissa: float
+U0: float
+Ui: float
+
+Returns
+-------
+None
 ") GCPnts_AbscissaPoint;
 		 GCPnts_AbscissaPoint(const Adaptor2d_Curve2d & C, const Standard_Real Abscissa, const Standard_Real U0, const Standard_Real Ui);
 
@@ -192,17 +204,17 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") GCPnts_AbscissaPoint;
 		%feature("autodoc", "The algorithm computes a point on a curve <curve> at the distance <abscissa> from the point of parameter <u0>. <ui> is the starting value used in the iterative process which find the solution, it must be close to the final solution.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Abscissa:
-	:type Abscissa: float
-	:param U0:
-	:type U0: float
-	:param Ui:
-	:type Ui: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Abscissa: float
+U0: float
+Ui: float
+Tol: float
+
+Returns
+-------
+None
 ") GCPnts_AbscissaPoint;
 		 GCPnts_AbscissaPoint(const Adaptor3d_Curve & C, const Standard_Real Abscissa, const Standard_Real U0, const Standard_Real Ui, const Standard_Real Tol);
 
@@ -210,17 +222,17 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") GCPnts_AbscissaPoint;
 		%feature("autodoc", "The algorithm computes a point on a curve <curve> at the distance <abscissa> from the point of parameter <u0>. <ui> is the starting value used in the iterative process which find the solution, it must be close to the final solution.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Abscissa:
-	:type Abscissa: float
-	:param U0:
-	:type U0: float
-	:param Ui:
-	:type Ui: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Abscissa: float
+U0: float
+Ui: float
+Tol: float
+
+Returns
+-------
+None
 ") GCPnts_AbscissaPoint;
 		 GCPnts_AbscissaPoint(const Adaptor2d_Curve2d & C, const Standard_Real Abscissa, const Standard_Real U0, const Standard_Real Ui, const Standard_Real Tol);
 
@@ -228,7 +240,9 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "True if the computation was successful, false otherwise. isdone is a protection against: - non-convergence of the algorithm - querying the results before computation.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -236,9 +250,13 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Computes the length of the curve <c>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:rtype: float
+Parameters
+----------
+C: Adaptor3d_Curve
+
+Returns
+-------
+float
 ") Length;
 		static Standard_Real Length(const Adaptor3d_Curve & C);
 
@@ -246,9 +264,13 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Computes the length of the curve <c>.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: float
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+float
 ") Length;
 		static Standard_Real Length(const Adaptor2d_Curve2d & C);
 
@@ -256,11 +278,14 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Computes the length of the curve <c> with the given tolerance.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Tol:
-	:type Tol: float
-	:rtype: float
+Parameters
+----------
+C: Adaptor3d_Curve
+Tol: float
+
+Returns
+-------
+float
 ") Length;
 		static Standard_Real Length(const Adaptor3d_Curve & C, const Standard_Real Tol);
 
@@ -268,11 +293,14 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Computes the length of the curve <c> with the given tolerance.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Tol:
-	:type Tol: float
-	:rtype: float
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Tol: float
+
+Returns
+-------
+float
 ") Length;
 		static Standard_Real Length(const Adaptor2d_Curve2d & C, const Standard_Real Tol);
 
@@ -280,13 +308,15 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Computes the length of the curve <c>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:rtype: float
+Parameters
+----------
+C: Adaptor3d_Curve
+U1: float
+U2: float
+
+Returns
+-------
+float
 ") Length;
 		static Standard_Real Length(const Adaptor3d_Curve & C, const Standard_Real U1, const Standard_Real U2);
 
@@ -294,13 +324,15 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Computes the length of the curve <c>.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:rtype: float
+Parameters
+----------
+C: Adaptor2d_Curve2d
+U1: float
+U2: float
+
+Returns
+-------
+float
 ") Length;
 		static Standard_Real Length(const Adaptor2d_Curve2d & C, const Standard_Real U1, const Standard_Real U2);
 
@@ -308,15 +340,16 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Computes the length of the curve <c> with the given tolerance.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Tol:
-	:type Tol: float
-	:rtype: float
+Parameters
+----------
+C: Adaptor3d_Curve
+U1: float
+U2: float
+Tol: float
+
+Returns
+-------
+float
 ") Length;
 		static Standard_Real Length(const Adaptor3d_Curve & C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol);
 
@@ -324,15 +357,16 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Computes the length of the curve <c> with the given tolerance. constructs an empty algorithm. this function is used only for initializing a framework to compute the length of a curve (or a series of curves). warning the function isdone will return the value false after the use of this function.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Tol:
-	:type Tol: float
-	:rtype: float
+Parameters
+----------
+C: Adaptor2d_Curve2d
+U1: float
+U2: float
+Tol: float
+
+Returns
+-------
+float
 ") Length;
 		static Standard_Real Length(const Adaptor2d_Curve2d & C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol);
 
@@ -340,7 +374,9 @@ class GCPnts_AbscissaPoint {
 		%feature("compactdefaultargs") Parameter;
 		%feature("autodoc", "Returns the parameter on the curve of the point solution of this algorithm. exceptions stdfail_notdone if the computation was not successful, or was not done.
 
-	:rtype: float
+Returns
+-------
+float
 ") Parameter;
 		Standard_Real Parameter();
 
@@ -366,25 +402,40 @@ class GCPnts_DistFunction2dMV : public math_MultipleVarFunction {
 	public:
 		/****************** GCPnts_DistFunction2dMV ******************/
 		%feature("compactdefaultargs") GCPnts_DistFunction2dMV;
-		%feature("autodoc", "	:param theCurvLinDist:
-	:type theCurvLinDist: GCPnts_DistFunction2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theCurvLinDist: GCPnts_DistFunction2d
+
+Returns
+-------
+None
 ") GCPnts_DistFunction2dMV;
 		 GCPnts_DistFunction2dMV(GCPnts_DistFunction2d & theCurvLinDist);
 
 		/****************** NbVariables ******************/
 		%feature("compactdefaultargs") NbVariables;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbVariables;
 		virtual Standard_Integer NbVariables();
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+X: math_Vector
+F: float
+
+Returns
+-------
+bool
 ") Value;
 		virtual Standard_Boolean Value(const math_Vector & X, Standard_Real &OutValue);
 
@@ -404,25 +455,40 @@ class GCPnts_DistFunctionMV : public math_MultipleVarFunction {
 	public:
 		/****************** GCPnts_DistFunctionMV ******************/
 		%feature("compactdefaultargs") GCPnts_DistFunctionMV;
-		%feature("autodoc", "	:param theCurvLinDist:
-	:type theCurvLinDist: GCPnts_DistFunction
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theCurvLinDist: GCPnts_DistFunction
+
+Returns
+-------
+None
 ") GCPnts_DistFunctionMV;
 		 GCPnts_DistFunctionMV(GCPnts_DistFunction & theCurvLinDist);
 
 		/****************** NbVariables ******************/
 		%feature("compactdefaultargs") NbVariables;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbVariables;
 		virtual Standard_Integer NbVariables();
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+X: math_Vector
+F: float
+
+Returns
+-------
+bool
 ") Value;
 		virtual Standard_Boolean Value(const math_Vector & X, Standard_Real &OutValue);
 
@@ -444,7 +510,9 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_QuasiUniformAbscissa;
 		%feature("autodoc", "Constructs an empty algorithm. to define the problem to be solved, use the function initialize.
 
-	:rtype: None
+Returns
+-------
+None
 ") GCPnts_QuasiUniformAbscissa;
 		 GCPnts_QuasiUniformAbscissa();
 
@@ -452,11 +520,14 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_QuasiUniformAbscissa;
 		%feature("autodoc", "Computes a uniform abscissa distribution of points - on the curve c where abscissa is the curvilinear distance between two consecutive points of the distribution.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param NbPoints:
-	:type NbPoints: int
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+NbPoints: int
+
+Returns
+-------
+None
 ") GCPnts_QuasiUniformAbscissa;
 		 GCPnts_QuasiUniformAbscissa(const Adaptor3d_Curve & C, const Standard_Integer NbPoints);
 
@@ -464,15 +535,16 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_QuasiUniformAbscissa;
 		%feature("autodoc", "Computes a uniform abscissa distribution of points on the part of curve c limited by the two parameter values u1 and u2, where abscissa is the curvilinear distance between two consecutive points of the distribution. the first point of the distribution is either the origin of curve c or the point of parameter u1. the following points are computed such that the curvilinear distance between two consecutive points is equal to abscissa. the last point of the distribution is either the end point of curve c or the point of parameter u2. however the curvilinear distance between this last point and the point just preceding it in the distribution is, of course, generally not equal to abscissa. use the function isdone to verify that the computation was successful, the function nbpoints to obtain the number of points of the computed distribution, and the function parameter to read the parameter of each point. warning the roles of u1 and u2 are inverted if u1 > u2 . warning c is an adapted curve, that is, an object which is an interface between: - the services provided by either a 2d curve from the package geom2d (in the case of an adaptor2d_curve2d curve) or a 3d curve from the package geom (in the case of an adaptor3d_curve curve), - and those required on the curve by the computation algorithm.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param NbPoints:
-	:type NbPoints: int
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+NbPoints: int
+U1: float
+U2: float
+
+Returns
+-------
+None
 ") GCPnts_QuasiUniformAbscissa;
 		 GCPnts_QuasiUniformAbscissa(const Adaptor3d_Curve & C, const Standard_Integer NbPoints, const Standard_Real U1, const Standard_Real U2);
 
@@ -480,11 +552,14 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_QuasiUniformAbscissa;
 		%feature("autodoc", "Computes a uniform abscissa distribution of points on the curve2d <c>. <nbpoints> defines the nomber of desired points.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param NbPoints:
-	:type NbPoints: int
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+NbPoints: int
+
+Returns
+-------
+None
 ") GCPnts_QuasiUniformAbscissa;
 		 GCPnts_QuasiUniformAbscissa(const Adaptor2d_Curve2d & C, const Standard_Integer NbPoints);
 
@@ -492,15 +567,16 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_QuasiUniformAbscissa;
 		%feature("autodoc", "Computes a uniform abscissa distribution of points on a part of the curve2d <c>.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param NbPoints:
-	:type NbPoints: int
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+NbPoints: int
+U1: float
+U2: float
+
+Returns
+-------
+None
 ") GCPnts_QuasiUniformAbscissa;
 		 GCPnts_QuasiUniformAbscissa(const Adaptor2d_Curve2d & C, const Standard_Integer NbPoints, const Standard_Real U1, const Standard_Real U2);
 
@@ -508,11 +584,14 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <nbpoints> and.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param NbPoints:
-	:type NbPoints: int
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+NbPoints: int
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor3d_Curve & C, const Standard_Integer NbPoints);
 
@@ -520,15 +599,16 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <abscissa>, <u1>, <u2>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param NbPoints:
-	:type NbPoints: int
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+NbPoints: int
+U1: float
+U2: float
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor3d_Curve & C, const Standard_Integer NbPoints, const Standard_Real U1, const Standard_Real U2);
 
@@ -536,11 +616,14 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <nbpoints> and.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param NbPoints:
-	:type NbPoints: int
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+NbPoints: int
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Integer NbPoints);
 
@@ -548,15 +631,16 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <abscissa>, <u1>, <u2>.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param NbPoints:
-	:type NbPoints: int
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+NbPoints: int
+U1: float
+U2: float
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Integer NbPoints, const Standard_Real U1, const Standard_Real U2);
 
@@ -564,7 +648,9 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the computation was successful. isdone is a protection against: - non-convergence of the algorithm - querying the results before computation.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -572,7 +658,9 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("compactdefaultargs") NbPoints;
 		%feature("autodoc", "Returns the number of points of the distribution computed by this algorithm. this value is either: - the one imposed on the algorithm at the time of construction (or initialization), or - the one computed by the algorithm when the curvilinear distance between two consecutive points of the distribution is imposed on the algorithm at the time of construction (or initialization). exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
@@ -580,9 +668,13 @@ class GCPnts_QuasiUniformAbscissa {
 		%feature("compactdefaultargs") Parameter;
 		%feature("autodoc", "Returns the parameter of the point of index index in the distribution computed by this algorithm. warning index must be greater than or equal to 1, and less than or equal to the number of points of the distribution. however, pay particular attention as this condition is not checked by this function. exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
 
-	:param Index:
-	:type Index: int
-	:rtype: float
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
 ") Parameter;
 		Standard_Real Parameter(const Standard_Integer Index);
 
@@ -604,7 +696,9 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") Deflection;
 		%feature("autodoc", "Returns the deflection between the curve and the polygon resulting from the points of the distribution computed by this algorithm. this is the value given to the algorithm at the time of construction (or initialization). exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
 
-	:rtype: float
+Returns
+-------
+float
 ") Deflection;
 		Standard_Real Deflection();
 
@@ -612,7 +706,9 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") GCPnts_QuasiUniformDeflection;
 		%feature("autodoc", "Constructs an empty algorithm. to define the problem to be solved, use the function initialize.
 
-	:rtype: None
+Returns
+-------
+None
 ") GCPnts_QuasiUniformDeflection;
 		 GCPnts_QuasiUniformDeflection();
 
@@ -620,13 +716,16 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") GCPnts_QuasiUniformDeflection;
 		%feature("autodoc", "Computes a quasiuniform deflection distribution of points on the curve <c>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Deflection:
-	:type Deflection: float
-	:param Continuity: default value is GeomAbs_C1
-	:type Continuity: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Deflection: float
+Continuity: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") GCPnts_QuasiUniformDeflection;
 		 GCPnts_QuasiUniformDeflection(const Adaptor3d_Curve & C, const Standard_Real Deflection, const GeomAbs_Shape Continuity = GeomAbs_C1);
 
@@ -634,13 +733,16 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") GCPnts_QuasiUniformDeflection;
 		%feature("autodoc", "Computes a quasiuniform deflection distribution of points on the curve <c>.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Deflection:
-	:type Deflection: float
-	:param Continuity: default value is GeomAbs_C1
-	:type Continuity: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Deflection: float
+Continuity: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") GCPnts_QuasiUniformDeflection;
 		 GCPnts_QuasiUniformDeflection(const Adaptor2d_Curve2d & C, const Standard_Real Deflection, const GeomAbs_Shape Continuity = GeomAbs_C1);
 
@@ -648,17 +750,18 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") GCPnts_QuasiUniformDeflection;
 		%feature("autodoc", "Computes a quasiuniform deflection distribution of points on a part of the curve <c>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Deflection:
-	:type Deflection: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Continuity: default value is GeomAbs_C1
-	:type Continuity: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Deflection: float
+U1: float
+U2: float
+Continuity: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") GCPnts_QuasiUniformDeflection;
 		 GCPnts_QuasiUniformDeflection(const Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const GeomAbs_Shape Continuity = GeomAbs_C1);
 
@@ -666,17 +769,18 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") GCPnts_QuasiUniformDeflection;
 		%feature("autodoc", "Computes a quasiuniform deflection distribution of points on a part of the curve <c>. this and the above algorithms compute a distribution of points: - on the curve c, or - on the part of curve c limited by the two parameter values u1 and u2, where the deflection resulting from the distributed points is not greater than deflection. the first point of the distribution is either the origin of curve c or the point of parameter u1. the last point of the distribution is either the end point of curve c or the point of parameter u2. intermediate points of the distribution are built such that the deflection is not greater than deflection. using the following evaluation of the deflection: if pi and pj are two consecutive points of the distribution, respectively of parameter ui and uj on the curve, the deflection is the distance between: - the mid-point of pi and pj (the center of the chord joining these two points) - and the point of mid-parameter of these two points (the point of parameter [(ui+uj) / 2 ] on curve c). continuity, defaulted to geomabs_c1, gives the degree of continuity of the curve c. (note that c is an adaptor3d_curve or an adaptor2d_curve2d object, and does not know the degree of continuity of the underlying curve). use the function isdone to verify that the computation was successful, the function nbpoints to obtain the number of points of the computed distribution, and the function parameter to read the parameter of each point. warning - the roles of u1 and u2 are inverted if u1 > u2. - derivative functions on the curve are called according to continuity. an error may occur if continuity is greater than the real degree of continuity of the curve. warning c is an adapted curve, i.e. an object which is an interface between: - the services provided by either a 2d curve from the package geom2d (in the case of an adaptor2d_curve2d curve) or a 3d curve from the package geom (in the case of an adaptor3d_curve curve), - and those required on the curve by the computation algorithm.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Deflection:
-	:type Deflection: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Continuity: default value is GeomAbs_C1
-	:type Continuity: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Deflection: float
+U1: float
+U2: float
+Continuity: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") GCPnts_QuasiUniformDeflection;
 		 GCPnts_QuasiUniformDeflection(const Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const GeomAbs_Shape Continuity = GeomAbs_C1);
 
@@ -684,13 +788,16 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <deflection>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Deflection:
-	:type Deflection: float
-	:param Continuity: default value is GeomAbs_C1
-	:type Continuity: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Deflection: float
+Continuity: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor3d_Curve & C, const Standard_Real Deflection, const GeomAbs_Shape Continuity = GeomAbs_C1);
 
@@ -698,13 +805,16 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <deflection>.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Deflection:
-	:type Deflection: float
-	:param Continuity: default value is GeomAbs_C1
-	:type Continuity: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Deflection: float
+Continuity: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Real Deflection, const GeomAbs_Shape Continuity = GeomAbs_C1);
 
@@ -712,17 +822,18 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <deflection>, <u1>,<u2>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Deflection:
-	:type Deflection: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Continuity: default value is GeomAbs_C1
-	:type Continuity: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Deflection: float
+U1: float
+U2: float
+Continuity: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const GeomAbs_Shape Continuity = GeomAbs_C1);
 
@@ -730,17 +841,18 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <deflection>, -- <u1>,<u2> this and the above algorithms initialize (or reinitialize) this algorithm and compute a distribution of points: - on the curve c, or - on the part of curve c limited by the two parameter values u1 and u2, where the deflection resulting from the distributed points is not greater than deflection. the first point of the distribution is either the origin of curve c or the point of parameter u1. the last point of the distribution is either the end point of curve c or the point of parameter u2. intermediate points of the distribution are built in such a way that the deflection is not greater than deflection. using the following evaluation of the deflection: if pi and pj are two consecutive points of the distribution, respectively of parameter ui and uj on the curve, the deflection is the distance between: - the mid-point of pi and pj (the center of the chord joining these two points) - and the point of mid-parameter of these two points (the point of parameter [(ui+uj) / 2 ] on curve c). continuity, defaulted to geomabs_c1, gives the degree of continuity of the curve c. (note that c is an adaptor3d_curve or an adaptor2d_curve2d object, and does not know the degree of continuity of the underlying curve). use the function isdone to verify that the computation was successful, the function nbpoints to obtain the number of points of the computed distribution, and the function parameter to read the parameter of each point. warning - the roles of u1 and u2 are inverted if u1 > u2. - derivative functions on the curve are called according to continuity. an error may occur if continuity is greater than the real degree of continuity of the curve. warning c is an adapted curve, i.e. an object which is an interface between: - the services provided by either a 2d curve from the package geom2d (in the case of an adaptor2d_curve2d curve) or a 3d curve from the package geom (in the case of an adaptor3d_curve curve), and those required on the curve by the computation algorithm.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Deflection:
-	:type Deflection: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Continuity: default value is GeomAbs_C1
-	:type Continuity: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Deflection: float
+U1: float
+U2: float
+Continuity: GeomAbs_Shape,optional
+	default value is GeomAbs_C1
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const GeomAbs_Shape Continuity = GeomAbs_C1);
 
@@ -748,7 +860,9 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the computation was successful. isdone is a protection against: - non-convergence of the algorithm - querying the results before computation.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -756,7 +870,9 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") NbPoints;
 		%feature("autodoc", "Returns the number of points of the distribution computed by this algorithm. exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
@@ -764,9 +880,13 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") Parameter;
 		%feature("autodoc", "Returns the parameter of the point of index index in the distribution computed by this algorithm. warning index must be greater than or equal to 1, and less than or equal to the number of points of the distribution. however, pay particular attention as this condition is not checked by this function. exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
 
-	:param Index:
-	:type Index: int
-	:rtype: float
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
 ") Parameter;
 		Standard_Real Parameter(const Standard_Integer Index);
 
@@ -774,9 +894,13 @@ class GCPnts_QuasiUniformDeflection {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the point of index index in the distribution computed by this algorithm. warning index must be greater than or equal to 1, and less than or equal to the number of points of the distribution. however, pay particular attention as this condition is not checked by this function. exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
 
-	:param Index:
-	:type Index: int
-	:rtype: gp_Pnt
+Parameters
+----------
+Index: int
+
+Returns
+-------
+gp_Pnt
 ") Value;
 		gp_Pnt Value(const Standard_Integer Index);
 
@@ -798,13 +922,16 @@ class GCPnts_TangentialDeflection {
 		%feature("compactdefaultargs") AddPoint;
 		%feature("autodoc", "Add point to already calculated points (or replace existing) returns index of new added point or founded with parametric tolerance (replaced if theisreplace is true).
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:param theParam:
-	:type theParam: float
-	:param theIsReplace: default value is Standard_True
-	:type theIsReplace: bool
-	:rtype: int
+Parameters
+----------
+thePnt: gp_Pnt
+theParam: float
+theIsReplace: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+int
 ") AddPoint;
 		Standard_Integer AddPoint(const gp_Pnt & thePnt, const Standard_Real theParam, const Standard_Boolean theIsReplace = Standard_True);
 
@@ -812,203 +939,248 @@ class GCPnts_TangentialDeflection {
 		%feature("compactdefaultargs") ArcAngularStep;
 		%feature("autodoc", "Computes angular step for the arc using the given parameters.
 
-	:param theRadius:
-	:type theRadius: float
-	:param theLinearDeflection:
-	:type theLinearDeflection: float
-	:param theAngularDeflection:
-	:type theAngularDeflection: float
-	:param theMinLength:
-	:type theMinLength: float
-	:rtype: float
+Parameters
+----------
+theRadius: float
+theLinearDeflection: float
+theAngularDeflection: float
+theMinLength: float
+
+Returns
+-------
+float
 ") ArcAngularStep;
 		static Standard_Real ArcAngularStep(const Standard_Real theRadius, const Standard_Real theLinearDeflection, const Standard_Real theAngularDeflection, const Standard_Real theMinLength);
 
 		/****************** GCPnts_TangentialDeflection ******************/
 		%feature("compactdefaultargs") GCPnts_TangentialDeflection;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") GCPnts_TangentialDeflection;
 		 GCPnts_TangentialDeflection();
 
 		/****************** GCPnts_TangentialDeflection ******************/
 		%feature("compactdefaultargs") GCPnts_TangentialDeflection;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor3d_Curve
-	:param AngularDeflection:
-	:type AngularDeflection: float
-	:param CurvatureDeflection:
-	:type CurvatureDeflection: float
-	:param MinimumOfPoints: default value is 2
-	:type MinimumOfPoints: int
-	:param UTol: default value is 1.0e-9
-	:type UTol: float
-	:param theMinLen: default value is 1.0e-7
-	:type theMinLen: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor3d_Curve
+AngularDeflection: float
+CurvatureDeflection: float
+MinimumOfPoints: int,optional
+	default value is 2
+UTol: float,optional
+	default value is 1.0e-9
+theMinLen: float,optional
+	default value is 1.0e-7
+
+Returns
+-------
+None
 ") GCPnts_TangentialDeflection;
 		 GCPnts_TangentialDeflection(const Adaptor3d_Curve & C, const Standard_Real AngularDeflection, const Standard_Real CurvatureDeflection, const Standard_Integer MinimumOfPoints = 2, const Standard_Real UTol = 1.0e-9, const Standard_Real theMinLen = 1.0e-7);
 
 		/****************** GCPnts_TangentialDeflection ******************/
 		%feature("compactdefaultargs") GCPnts_TangentialDeflection;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor3d_Curve
-	:param FirstParameter:
-	:type FirstParameter: float
-	:param LastParameter:
-	:type LastParameter: float
-	:param AngularDeflection:
-	:type AngularDeflection: float
-	:param CurvatureDeflection:
-	:type CurvatureDeflection: float
-	:param MinimumOfPoints: default value is 2
-	:type MinimumOfPoints: int
-	:param UTol: default value is 1.0e-9
-	:type UTol: float
-	:param theMinLen: default value is 1.0e-7
-	:type theMinLen: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor3d_Curve
+FirstParameter: float
+LastParameter: float
+AngularDeflection: float
+CurvatureDeflection: float
+MinimumOfPoints: int,optional
+	default value is 2
+UTol: float,optional
+	default value is 1.0e-9
+theMinLen: float,optional
+	default value is 1.0e-7
+
+Returns
+-------
+None
 ") GCPnts_TangentialDeflection;
 		 GCPnts_TangentialDeflection(const Adaptor3d_Curve & C, const Standard_Real FirstParameter, const Standard_Real LastParameter, const Standard_Real AngularDeflection, const Standard_Real CurvatureDeflection, const Standard_Integer MinimumOfPoints = 2, const Standard_Real UTol = 1.0e-9, const Standard_Real theMinLen = 1.0e-7);
 
 		/****************** GCPnts_TangentialDeflection ******************/
 		%feature("compactdefaultargs") GCPnts_TangentialDeflection;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param AngularDeflection:
-	:type AngularDeflection: float
-	:param CurvatureDeflection:
-	:type CurvatureDeflection: float
-	:param MinimumOfPoints: default value is 2
-	:type MinimumOfPoints: int
-	:param UTol: default value is 1.0e-9
-	:type UTol: float
-	:param theMinLen: default value is 1.0e-7
-	:type theMinLen: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+AngularDeflection: float
+CurvatureDeflection: float
+MinimumOfPoints: int,optional
+	default value is 2
+UTol: float,optional
+	default value is 1.0e-9
+theMinLen: float,optional
+	default value is 1.0e-7
+
+Returns
+-------
+None
 ") GCPnts_TangentialDeflection;
 		 GCPnts_TangentialDeflection(const Adaptor2d_Curve2d & C, const Standard_Real AngularDeflection, const Standard_Real CurvatureDeflection, const Standard_Integer MinimumOfPoints = 2, const Standard_Real UTol = 1.0e-9, const Standard_Real theMinLen = 1.0e-7);
 
 		/****************** GCPnts_TangentialDeflection ******************/
 		%feature("compactdefaultargs") GCPnts_TangentialDeflection;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param FirstParameter:
-	:type FirstParameter: float
-	:param LastParameter:
-	:type LastParameter: float
-	:param AngularDeflection:
-	:type AngularDeflection: float
-	:param CurvatureDeflection:
-	:type CurvatureDeflection: float
-	:param MinimumOfPoints: default value is 2
-	:type MinimumOfPoints: int
-	:param UTol: default value is 1.0e-9
-	:type UTol: float
-	:param theMinLen: default value is 1.0e-7
-	:type theMinLen: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+FirstParameter: float
+LastParameter: float
+AngularDeflection: float
+CurvatureDeflection: float
+MinimumOfPoints: int,optional
+	default value is 2
+UTol: float,optional
+	default value is 1.0e-9
+theMinLen: float,optional
+	default value is 1.0e-7
+
+Returns
+-------
+None
 ") GCPnts_TangentialDeflection;
 		 GCPnts_TangentialDeflection(const Adaptor2d_Curve2d & C, const Standard_Real FirstParameter, const Standard_Real LastParameter, const Standard_Real AngularDeflection, const Standard_Real CurvatureDeflection, const Standard_Integer MinimumOfPoints = 2, const Standard_Real UTol = 1.0e-9, const Standard_Real theMinLen = 1.0e-7);
 
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor3d_Curve
-	:param AngularDeflection:
-	:type AngularDeflection: float
-	:param CurvatureDeflection:
-	:type CurvatureDeflection: float
-	:param MinimumOfPoints: default value is 2
-	:type MinimumOfPoints: int
-	:param UTol: default value is 1.0e-9
-	:type UTol: float
-	:param theMinLen: default value is 1.0e-7
-	:type theMinLen: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor3d_Curve
+AngularDeflection: float
+CurvatureDeflection: float
+MinimumOfPoints: int,optional
+	default value is 2
+UTol: float,optional
+	default value is 1.0e-9
+theMinLen: float,optional
+	default value is 1.0e-7
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor3d_Curve & C, const Standard_Real AngularDeflection, const Standard_Real CurvatureDeflection, const Standard_Integer MinimumOfPoints = 2, const Standard_Real UTol = 1.0e-9, const Standard_Real theMinLen = 1.0e-7);
 
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor3d_Curve
-	:param FirstParameter:
-	:type FirstParameter: float
-	:param LastParameter:
-	:type LastParameter: float
-	:param AngularDeflection:
-	:type AngularDeflection: float
-	:param CurvatureDeflection:
-	:type CurvatureDeflection: float
-	:param MinimumOfPoints: default value is 2
-	:type MinimumOfPoints: int
-	:param UTol: default value is 1.0e-9
-	:type UTol: float
-	:param theMinLen: default value is 1.0e-7
-	:type theMinLen: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor3d_Curve
+FirstParameter: float
+LastParameter: float
+AngularDeflection: float
+CurvatureDeflection: float
+MinimumOfPoints: int,optional
+	default value is 2
+UTol: float,optional
+	default value is 1.0e-9
+theMinLen: float,optional
+	default value is 1.0e-7
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor3d_Curve & C, const Standard_Real FirstParameter, const Standard_Real LastParameter, const Standard_Real AngularDeflection, const Standard_Real CurvatureDeflection, const Standard_Integer MinimumOfPoints = 2, const Standard_Real UTol = 1.0e-9, const Standard_Real theMinLen = 1.0e-7);
 
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param AngularDeflection:
-	:type AngularDeflection: float
-	:param CurvatureDeflection:
-	:type CurvatureDeflection: float
-	:param MinimumOfPoints: default value is 2
-	:type MinimumOfPoints: int
-	:param UTol: default value is 1.0e-9
-	:type UTol: float
-	:param theMinLen: default value is 1.0e-7
-	:type theMinLen: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+AngularDeflection: float
+CurvatureDeflection: float
+MinimumOfPoints: int,optional
+	default value is 2
+UTol: float,optional
+	default value is 1.0e-9
+theMinLen: float,optional
+	default value is 1.0e-7
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Real AngularDeflection, const Standard_Real CurvatureDeflection, const Standard_Integer MinimumOfPoints = 2, const Standard_Real UTol = 1.0e-9, const Standard_Real theMinLen = 1.0e-7);
 
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param FirstParameter:
-	:type FirstParameter: float
-	:param LastParameter:
-	:type LastParameter: float
-	:param AngularDeflection:
-	:type AngularDeflection: float
-	:param CurvatureDeflection:
-	:type CurvatureDeflection: float
-	:param MinimumOfPoints: default value is 2
-	:type MinimumOfPoints: int
-	:param UTol: default value is 1.0e-9
-	:type UTol: float
-	:param theMinLen: default value is 1.0e-7
-	:type theMinLen: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+FirstParameter: float
+LastParameter: float
+AngularDeflection: float
+CurvatureDeflection: float
+MinimumOfPoints: int,optional
+	default value is 2
+UTol: float,optional
+	default value is 1.0e-9
+theMinLen: float,optional
+	default value is 1.0e-7
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Real FirstParameter, const Standard_Real LastParameter, const Standard_Real AngularDeflection, const Standard_Real CurvatureDeflection, const Standard_Integer MinimumOfPoints = 2, const Standard_Real UTol = 1.0e-9, const Standard_Real theMinLen = 1.0e-7);
 
 		/****************** NbPoints ******************/
 		%feature("compactdefaultargs") NbPoints;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
 		/****************** Parameter ******************/
 		%feature("compactdefaultargs") Parameter;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+
+Returns
+-------
+float
 ") Parameter;
 		Standard_Real Parameter(const Standard_Integer I);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+
+Returns
+-------
+gp_Pnt
 ") Value;
 		gp_Pnt Value(const Standard_Integer I);
 
@@ -1030,7 +1202,9 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") Abscissa;
 		%feature("autodoc", "Returne the current abscissa ie the distance between two consecutive points.
 
-	:rtype: float
+Returns
+-------
+float
 ") Abscissa;
 		Standard_Real Abscissa();
 
@@ -1038,7 +1212,9 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_UniformAbscissa;
 		%feature("autodoc", "Creation of a indefinite uniformabscissa.
 
-	:rtype: None
+Returns
+-------
+None
 ") GCPnts_UniformAbscissa;
 		 GCPnts_UniformAbscissa();
 
@@ -1046,13 +1222,16 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_UniformAbscissa;
 		%feature("autodoc", "Computes a uniform abscissa distribution of points on the curve <c>. parameter toler is equal precision::confusion by default. it is used for more precise calculation of curve length.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Abscissa:
-	:type Abscissa: float
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Abscissa: float
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") GCPnts_UniformAbscissa;
 		 GCPnts_UniformAbscissa(const Adaptor3d_Curve & C, const Standard_Real Abscissa, const Standard_Real Toler = -1);
 
@@ -1060,17 +1239,18 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_UniformAbscissa;
 		%feature("autodoc", "Computes a uniform abscissa distribution of points on a part of the curve <c>. parameter toler is equal precision::confusion by default. it is used for more precise calculation of curve length.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Abscissa:
-	:type Abscissa: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Abscissa: float
+U1: float
+U2: float
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") GCPnts_UniformAbscissa;
 		 GCPnts_UniformAbscissa(const Adaptor3d_Curve & C, const Standard_Real Abscissa, const Standard_Real U1, const Standard_Real U2, const Standard_Real Toler = -1);
 
@@ -1078,13 +1258,16 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_UniformAbscissa;
 		%feature("autodoc", "Computes a uniform abscissa distribution of points on the curve <c>. <nbpoints> defines the nomber of desired points. parameter toler is equal precision::confusion by default. it is used for more precise calculation of curve length.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param NbPoints:
-	:type NbPoints: int
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+NbPoints: int
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") GCPnts_UniformAbscissa;
 		 GCPnts_UniformAbscissa(const Adaptor3d_Curve & C, const Standard_Integer NbPoints, const Standard_Real Toler = -1);
 
@@ -1092,17 +1275,18 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_UniformAbscissa;
 		%feature("autodoc", "Computes a uniform abscissa distribution of points on a part of the curve <c>. parameter toler is equal precision::confusion by default. it is used for more precise calculation of curve length.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param NbPoints:
-	:type NbPoints: int
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+NbPoints: int
+U1: float
+U2: float
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") GCPnts_UniformAbscissa;
 		 GCPnts_UniformAbscissa(const Adaptor3d_Curve & C, const Standard_Integer NbPoints, const Standard_Real U1, const Standard_Real U2, const Standard_Real Toler = -1);
 
@@ -1110,13 +1294,16 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_UniformAbscissa;
 		%feature("autodoc", "Computes a uniform abscissa distribution of points on the curve2d <c>. parameter toler is equal precision::confusion by default. it is used for more precise calculation of curve length.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Abscissa:
-	:type Abscissa: float
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Abscissa: float
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") GCPnts_UniformAbscissa;
 		 GCPnts_UniformAbscissa(const Adaptor2d_Curve2d & C, const Standard_Real Abscissa, const Standard_Real Toler = -1);
 
@@ -1124,17 +1311,18 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_UniformAbscissa;
 		%feature("autodoc", "Computes a uniform abscissa distribution of points on a part of the curve2d <c>. parameter toler is equal precision::confusion by default. it is used for more precise calculation of curve length.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Abscissa:
-	:type Abscissa: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Abscissa: float
+U1: float
+U2: float
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") GCPnts_UniformAbscissa;
 		 GCPnts_UniformAbscissa(const Adaptor2d_Curve2d & C, const Standard_Real Abscissa, const Standard_Real U1, const Standard_Real U2, const Standard_Real Toler = -1);
 
@@ -1142,13 +1330,16 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_UniformAbscissa;
 		%feature("autodoc", "Computes a uniform abscissa distribution of points on the curve2d <c>. <nbpoints> defines the nomber of desired points. parameter toler is equal precision::confusion by default. it is used for more precise calculation of curve length.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param NbPoints:
-	:type NbPoints: int
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+NbPoints: int
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") GCPnts_UniformAbscissa;
 		 GCPnts_UniformAbscissa(const Adaptor2d_Curve2d & C, const Standard_Integer NbPoints, const Standard_Real Toler = -1);
 
@@ -1156,17 +1347,18 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") GCPnts_UniformAbscissa;
 		%feature("autodoc", "Computes a uniform abscissa distribution of points on a part of the curve2d <c>. parameter toler is equal precision::confusion by default. it is used for more precise calculation of curve length.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param NbPoints:
-	:type NbPoints: int
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+NbPoints: int
+U1: float
+U2: float
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") GCPnts_UniformAbscissa;
 		 GCPnts_UniformAbscissa(const Adaptor2d_Curve2d & C, const Standard_Integer NbPoints, const Standard_Real U1, const Standard_Real U2, const Standard_Real Toler = -1);
 
@@ -1174,13 +1366,16 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <abscissa>, <toler>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Abscissa:
-	:type Abscissa: float
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Abscissa: float
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor3d_Curve & C, const Standard_Real Abscissa, const Standard_Real Toler = -1);
 
@@ -1188,17 +1383,18 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <abscissa>, <u1>, <u2>, <toler>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Abscissa:
-	:type Abscissa: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Abscissa: float
+U1: float
+U2: float
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor3d_Curve & C, const Standard_Real Abscissa, const Standard_Real U1, const Standard_Real U2, const Standard_Real Toler = -1);
 
@@ -1206,13 +1402,16 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <nbpoints>, <toler> and.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param NbPoints:
-	:type NbPoints: int
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+NbPoints: int
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor3d_Curve & C, const Standard_Integer NbPoints, const Standard_Real Toler = -1);
 
@@ -1220,17 +1419,18 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <abscissa>, <u1>, <u2>, <toler>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param NbPoints:
-	:type NbPoints: int
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+NbPoints: int
+U1: float
+U2: float
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor3d_Curve & C, const Standard_Integer NbPoints, const Standard_Real U1, const Standard_Real U2, const Standard_Real Toler = -1);
 
@@ -1238,13 +1438,16 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <abscissa>, <toler>.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Abscissa:
-	:type Abscissa: float
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Abscissa: float
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Real Abscissa, const Standard_Real Toler = -1);
 
@@ -1252,17 +1455,18 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <abscissa>, <u1>, <u2>, <toler>.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Abscissa:
-	:type Abscissa: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Abscissa: float
+U1: float
+U2: float
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Real Abscissa, const Standard_Real U1, const Standard_Real U2, const Standard_Real Toler = -1);
 
@@ -1270,13 +1474,16 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <nbpoints>, <toler> and.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param NbPoints:
-	:type NbPoints: int
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+NbPoints: int
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Integer NbPoints, const Standard_Real Toler = -1);
 
@@ -1284,29 +1491,38 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <abscissa>, <u1>, <u2>, <toler>.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param NbPoints:
-	:type NbPoints: int
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param Toler: default value is -1
-	:type Toler: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+NbPoints: int
+U1: float
+U2: float
+Toler: float,optional
+	default value is -1
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Integer NbPoints, const Standard_Real U1, const Standard_Real U2, const Standard_Real Toler = -1);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
 		/****************** NbPoints ******************/
 		%feature("compactdefaultargs") NbPoints;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
@@ -1314,9 +1530,13 @@ class GCPnts_UniformAbscissa {
 		%feature("compactdefaultargs") Parameter;
 		%feature("autodoc", "Returns the computed parameter of index <index>.
 
-	:param Index:
-	:type Index: int
-	:rtype: float
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
 ") Parameter;
 		Standard_Real Parameter(const Standard_Integer Index);
 
@@ -1338,7 +1558,9 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") Deflection;
 		%feature("autodoc", "Returns the deflection between the curve and the polygon resulting from the points of the distribution computed by this algorithm. this value is the one given to the algorithm at the time of construction (or initialization). exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
 
-	:rtype: float
+Returns
+-------
+float
 ") Deflection;
 		Standard_Real Deflection();
 
@@ -1346,7 +1568,9 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") GCPnts_UniformDeflection;
 		%feature("autodoc", "Constructs an empty algorithm. to define the problem to be solved, use the function initialize.
 
-	:rtype: None
+Returns
+-------
+None
 ") GCPnts_UniformDeflection;
 		 GCPnts_UniformDeflection();
 
@@ -1354,13 +1578,16 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") GCPnts_UniformDeflection;
 		%feature("autodoc", "Computes a uniform deflection distribution of points on the curve <c>. if <withcontrol> is true,the algorithm controls the estimate deflection.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Deflection:
-	:type Deflection: float
-	:param WithControl: default value is Standard_True
-	:type WithControl: bool
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Deflection: float
+WithControl: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") GCPnts_UniformDeflection;
 		 GCPnts_UniformDeflection(const Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Boolean WithControl = Standard_True);
 
@@ -1368,13 +1595,16 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") GCPnts_UniformDeflection;
 		%feature("autodoc", "Computes a uniform deflection distribution of points on the curve <c>. if <withcontrol> is true,the algorithm controls the estimate deflection.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Deflection:
-	:type Deflection: float
-	:param WithControl: default value is Standard_True
-	:type WithControl: bool
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Deflection: float
+WithControl: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") GCPnts_UniformDeflection;
 		 GCPnts_UniformDeflection(const Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Boolean WithControl = Standard_True);
 
@@ -1382,17 +1612,18 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") GCPnts_UniformDeflection;
 		%feature("autodoc", "Computes a uniform deflection distribution of points on a part of the curve <c>. if <withcontrol> is true,the algorithm controls the estimate deflection.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Deflection:
-	:type Deflection: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param WithControl: default value is Standard_True
-	:type WithControl: bool
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Deflection: float
+U1: float
+U2: float
+WithControl: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") GCPnts_UniformDeflection;
 		 GCPnts_UniformDeflection(const Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl = Standard_True);
 
@@ -1400,17 +1631,18 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") GCPnts_UniformDeflection;
 		%feature("autodoc", "Computes a uniform deflection distribution of points on a part of the curve <c>. if <withcontrol> is true,the algorithm controls the estimate deflection.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Deflection:
-	:type Deflection: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param WithControl: default value is Standard_True
-	:type WithControl: bool
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Deflection: float
+U1: float
+U2: float
+WithControl: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") GCPnts_UniformDeflection;
 		 GCPnts_UniformDeflection(const Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl = Standard_True);
 
@@ -1418,13 +1650,16 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <deflection>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Deflection:
-	:type Deflection: float
-	:param WithControl: default value is Standard_True
-	:type WithControl: bool
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Deflection: float
+WithControl: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Boolean WithControl = Standard_True);
 
@@ -1432,13 +1667,16 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <deflection>.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Deflection:
-	:type Deflection: float
-	:param WithControl: default value is Standard_True
-	:type WithControl: bool
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Deflection: float
+WithControl: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Boolean WithControl = Standard_True);
 
@@ -1446,17 +1684,18 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <deflection>, <u1>,<u2>.
 
-	:param C:
-	:type C: Adaptor3d_Curve
-	:param Deflection:
-	:type Deflection: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param WithControl: default value is Standard_True
-	:type WithControl: bool
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_Curve
+Deflection: float
+U1: float
+U2: float
+WithControl: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl = Standard_True);
 
@@ -1464,17 +1703,18 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize the algoritms with <c>, <deflection>, <u1>,<u2> this and the above methods initialize (or reinitialize) this algorithm and compute a distribution of points: - on the curve c, or - on the part of curve c limited by the two parameter values u1 and u2, where the maximum distance between c and the polygon that results from the points of the distribution is not greater than deflection. the first point of the distribution is either the origin of curve c or the point of parameter u1. the last point of the distribution is either the end point of curve c or the point of parameter u2. intermediate points of the distribution are built using interpolations of segments of the curve limited at the 2nd degree. the construction ensures, in a first step, that the chordal deviation for this interpolation of the curve is less than or equal to deflection. however, it does not ensure that the chordal deviation for the curve itself is less than or equal to deflection. to do this a check is necessary, which may generate (second step) additional intermediate points. this check is time consuming, and can be avoided by setting withcontrol to false. note that by default withcontrol is true and check is performed. use the function isdone to verify that the computation was successful, the function nbpoints to obtain the number of points of the computed distribution, and the function parameter to read the parameter of each point. warning - c is necessary, 'c2' continuous. this property is not checked at construction time. - the roles of u1 and u2 are inverted if u1 > u2. warning c is an adapted curve, i.e. an object which is an interface between: - the services provided by either a 2d curve from the package geom2d (in the case of an adaptor2d_curve2d curve) or a 3d curve from the package geom (in the case of an adaptor3d_curve curve), - and those required on the curve by the computation algorithm.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Deflection:
-	:type Deflection: float
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:param WithControl: default value is Standard_True
-	:type WithControl: bool
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Deflection: float
+U1: float
+U2: float
+WithControl: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl = Standard_True);
 
@@ -1482,7 +1722,9 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the computation was successful. isdone is a protection against: - non-convergence of the algorithm - querying the results before computation.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -1490,7 +1732,9 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") NbPoints;
 		%feature("autodoc", "Returns the number of points of the distribution computed by this algorithm. exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
@@ -1498,9 +1742,13 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") Parameter;
 		%feature("autodoc", "Returns the parameter of the point of index index in the distribution computed by this algorithm. warning index must be greater than or equal to 1, and less than or equal to the number of points of the distribution. however, pay particular attention as this condition is not checked by this function. exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
 
-	:param Index:
-	:type Index: int
-	:rtype: float
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
 ") Parameter;
 		Standard_Real Parameter(const Standard_Integer Index);
 
@@ -1508,9 +1756,13 @@ class GCPnts_UniformDeflection {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the point of index index in the distribution computed by this algorithm. warning index must be greater than or equal to 1, and less than or equal to the number of points of the distribution. however, pay particular attention as this condition is not checked by this function. exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
 
-	:param Index:
-	:type Index: int
-	:rtype: gp_Pnt
+Parameters
+----------
+Index: int
+
+Returns
+-------
+gp_Pnt
 ") Value;
 		gp_Pnt Value(const Standard_Integer Index);
 

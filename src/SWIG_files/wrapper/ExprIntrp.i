@@ -106,135 +106,231 @@ class ExprIntrp_Analysis {
 	public:
 		/****************** ExprIntrp_Analysis ******************/
 		%feature("compactdefaultargs") ExprIntrp_Analysis;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") ExprIntrp_Analysis;
 		 ExprIntrp_Analysis();
 
 		/****************** GetFunction ******************/
 		%feature("compactdefaultargs") GetFunction;
-		%feature("autodoc", "	:param name:
-	:type name: TCollection_AsciiString
-	:rtype: opencascade::handle<Expr_NamedFunction>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+name: TCollection_AsciiString
+
+Returns
+-------
+opencascade::handle<Expr_NamedFunction>
 ") GetFunction;
 		opencascade::handle<Expr_NamedFunction> GetFunction(const TCollection_AsciiString & name);
 
 		/****************** GetNamed ******************/
 		%feature("compactdefaultargs") GetNamed;
-		%feature("autodoc", "	:param name:
-	:type name: TCollection_AsciiString
-	:rtype: opencascade::handle<Expr_NamedExpression>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+name: TCollection_AsciiString
+
+Returns
+-------
+opencascade::handle<Expr_NamedExpression>
 ") GetNamed;
 		opencascade::handle<Expr_NamedExpression> GetNamed(const TCollection_AsciiString & name);
 
 		/****************** IsExpStackEmpty ******************/
 		%feature("compactdefaultargs") IsExpStackEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsExpStackEmpty;
 		Standard_Boolean IsExpStackEmpty();
 
 		/****************** IsRelStackEmpty ******************/
 		%feature("compactdefaultargs") IsRelStackEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsRelStackEmpty;
 		Standard_Boolean IsRelStackEmpty();
 
 		/****************** Pop ******************/
 		%feature("compactdefaultargs") Pop;
-		%feature("autodoc", "	:rtype: opencascade::handle<Expr_GeneralExpression>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Expr_GeneralExpression>
 ") Pop;
 		opencascade::handle<Expr_GeneralExpression> Pop();
 
 		/****************** PopFunction ******************/
 		%feature("compactdefaultargs") PopFunction;
-		%feature("autodoc", "	:rtype: opencascade::handle<Expr_GeneralFunction>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Expr_GeneralFunction>
 ") PopFunction;
 		opencascade::handle<Expr_GeneralFunction> PopFunction();
 
 		/****************** PopName ******************/
 		%feature("compactdefaultargs") PopName;
-		%feature("autodoc", "	:rtype: TCollection_AsciiString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_AsciiString
 ") PopName;
 		TCollection_AsciiString PopName();
 
 		/****************** PopRelation ******************/
 		%feature("compactdefaultargs") PopRelation;
-		%feature("autodoc", "	:rtype: opencascade::handle<Expr_GeneralRelation>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Expr_GeneralRelation>
 ") PopRelation;
 		opencascade::handle<Expr_GeneralRelation> PopRelation();
 
 		/****************** PopValue ******************/
 		%feature("compactdefaultargs") PopValue;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") PopValue;
 		Standard_Integer PopValue();
 
 		/****************** Push ******************/
 		%feature("compactdefaultargs") Push;
-		%feature("autodoc", "	:param exp:
-	:type exp: Expr_GeneralExpression
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+exp: Expr_GeneralExpression
+
+Returns
+-------
+None
 ") Push;
 		void Push(const opencascade::handle<Expr_GeneralExpression> & exp);
 
 		/****************** PushFunction ******************/
 		%feature("compactdefaultargs") PushFunction;
-		%feature("autodoc", "	:param func:
-	:type func: Expr_GeneralFunction
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+func: Expr_GeneralFunction
+
+Returns
+-------
+None
 ") PushFunction;
 		void PushFunction(const opencascade::handle<Expr_GeneralFunction> & func);
 
 		/****************** PushName ******************/
 		%feature("compactdefaultargs") PushName;
-		%feature("autodoc", "	:param name:
-	:type name: TCollection_AsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+name: TCollection_AsciiString
+
+Returns
+-------
+None
 ") PushName;
 		void PushName(const TCollection_AsciiString & name);
 
 		/****************** PushRelation ******************/
 		%feature("compactdefaultargs") PushRelation;
-		%feature("autodoc", "	:param rel:
-	:type rel: Expr_GeneralRelation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+rel: Expr_GeneralRelation
+
+Returns
+-------
+None
 ") PushRelation;
 		void PushRelation(const opencascade::handle<Expr_GeneralRelation> & rel);
 
 		/****************** PushValue ******************/
 		%feature("compactdefaultargs") PushValue;
-		%feature("autodoc", "	:param degree:
-	:type degree: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+degree: int
+
+Returns
+-------
+None
 ") PushValue;
 		void PushValue(const Standard_Integer degree);
 
 		/****************** ResetAll ******************/
 		%feature("compactdefaultargs") ResetAll;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") ResetAll;
 		void ResetAll();
 
 		/****************** SetMaster ******************/
 		%feature("compactdefaultargs") SetMaster;
-		%feature("autodoc", "	:param agen:
-	:type agen: ExprIntrp_Generator
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+agen: ExprIntrp_Generator
+
+Returns
+-------
+None
 ") SetMaster;
 		void SetMaster(const opencascade::handle<ExprIntrp_Generator> & agen);
 
 		/****************** Use ******************/
 		%feature("compactdefaultargs") Use;
-		%feature("autodoc", "	:param func:
-	:type func: Expr_NamedFunction
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+func: Expr_NamedFunction
+
+Returns
+-------
+None
 ") Use;
 		void Use(const opencascade::handle<Expr_NamedFunction> & func);
 
 		/****************** Use ******************/
 		%feature("compactdefaultargs") Use;
-		%feature("autodoc", "	:param named:
-	:type named: Expr_NamedExpression
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+named: Expr_NamedExpression
+
+Returns
+-------
+None
 ") Use;
 		void Use(const opencascade::handle<Expr_NamedExpression> & named);
 
@@ -257,21 +353,33 @@ class ExprIntrp_Generator : public Standard_Transient {
 		%feature("compactdefaultargs") GetFunction;
 		%feature("autodoc", "Returns namedfunction with name <name> already interpreted if it exists. returns a null handle if not.
 
-	:param name:
-	:type name: TCollection_AsciiString
-	:rtype: opencascade::handle<Expr_NamedFunction>
+Parameters
+----------
+name: TCollection_AsciiString
+
+Returns
+-------
+opencascade::handle<Expr_NamedFunction>
 ") GetFunction;
 		opencascade::handle<Expr_NamedFunction> GetFunction(const TCollection_AsciiString & name);
 
 		/****************** GetFunctions ******************/
 		%feature("compactdefaultargs") GetFunctions;
-		%feature("autodoc", "	:rtype: ExprIntrp_SequenceOfNamedFunction
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+ExprIntrp_SequenceOfNamedFunction
 ") GetFunctions;
 		const ExprIntrp_SequenceOfNamedFunction & GetFunctions();
 
 		/****************** GetNamed ******************/
 		%feature("compactdefaultargs") GetNamed;
-		%feature("autodoc", "	:rtype: ExprIntrp_SequenceOfNamedExpression
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+ExprIntrp_SequenceOfNamedExpression
 ") GetNamed;
 		const ExprIntrp_SequenceOfNamedExpression & GetNamed();
 
@@ -279,25 +387,41 @@ class ExprIntrp_Generator : public Standard_Transient {
 		%feature("compactdefaultargs") GetNamed;
 		%feature("autodoc", "Returns namedexpression with name <name> already interpreted if it exists. returns a null handle if not.
 
-	:param name:
-	:type name: TCollection_AsciiString
-	:rtype: opencascade::handle<Expr_NamedExpression>
+Parameters
+----------
+name: TCollection_AsciiString
+
+Returns
+-------
+opencascade::handle<Expr_NamedExpression>
 ") GetNamed;
 		opencascade::handle<Expr_NamedExpression> GetNamed(const TCollection_AsciiString & name);
 
 		/****************** Use ******************/
 		%feature("compactdefaultargs") Use;
-		%feature("autodoc", "	:param func:
-	:type func: Expr_NamedFunction
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+func: Expr_NamedFunction
+
+Returns
+-------
+None
 ") Use;
 		void Use(const opencascade::handle<Expr_NamedFunction> & func);
 
 		/****************** Use ******************/
 		%feature("compactdefaultargs") Use;
-		%feature("autodoc", "	:param named:
-	:type named: Expr_NamedExpression
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+named: Expr_NamedExpression
+
+Returns
+-------
+None
 ") Use;
 		void Use(const opencascade::handle<Expr_NamedExpression> & named);
 
@@ -320,7 +444,11 @@ class ExprIntrp_GenExp : public ExprIntrp_Generator {
 	public:
 		/****************** Create ******************/
 		%feature("compactdefaultargs") Create;
-		%feature("autodoc", "	:rtype: opencascade::handle<ExprIntrp_GenExp>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<ExprIntrp_GenExp>
 ") Create;
 		static opencascade::handle<ExprIntrp_GenExp> Create();
 
@@ -328,7 +456,9 @@ class ExprIntrp_GenExp : public ExprIntrp_Generator {
 		%feature("compactdefaultargs") Expression;
 		%feature("autodoc", "Returns expression generated. raises an exception if isdone answers false.
 
-	:rtype: opencascade::handle<Expr_GeneralExpression>
+Returns
+-------
+opencascade::handle<Expr_GeneralExpression>
 ") Expression;
 		opencascade::handle<Expr_GeneralExpression> Expression();
 
@@ -336,7 +466,9 @@ class ExprIntrp_GenExp : public ExprIntrp_Generator {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns false if any syntax error has occurred during process.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -344,9 +476,13 @@ class ExprIntrp_GenExp : public ExprIntrp_Generator {
 		%feature("compactdefaultargs") Process;
 		%feature("autodoc", "Processes given string.
 
-	:param str:
-	:type str: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+str: TCollection_AsciiString
+
+Returns
+-------
+None
 ") Process;
 		void Process(const TCollection_AsciiString & str);
 
@@ -369,21 +505,35 @@ class ExprIntrp_GenFct : public ExprIntrp_Generator {
 	public:
 		/****************** Create ******************/
 		%feature("compactdefaultargs") Create;
-		%feature("autodoc", "	:rtype: opencascade::handle<ExprIntrp_GenFct>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<ExprIntrp_GenFct>
 ") Create;
 		static opencascade::handle<ExprIntrp_GenFct> Create();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
 		/****************** Process ******************/
 		%feature("compactdefaultargs") Process;
-		%feature("autodoc", "	:param str:
-	:type str: TCollection_AsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+str: TCollection_AsciiString
+
+Returns
+-------
+None
 ") Process;
 		void Process(const TCollection_AsciiString & str);
 
@@ -406,7 +556,11 @@ class ExprIntrp_GenRel : public ExprIntrp_Generator {
 	public:
 		/****************** Create ******************/
 		%feature("compactdefaultargs") Create;
-		%feature("autodoc", "	:rtype: opencascade::handle<ExprIntrp_GenRel>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<ExprIntrp_GenRel>
 ") Create;
 		static opencascade::handle<ExprIntrp_GenRel> Create();
 
@@ -414,7 +568,9 @@ class ExprIntrp_GenRel : public ExprIntrp_Generator {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns false if any syntax error has occurred during process.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -422,9 +578,13 @@ class ExprIntrp_GenRel : public ExprIntrp_Generator {
 		%feature("compactdefaultargs") Process;
 		%feature("autodoc", "Processes given string.
 
-	:param str:
-	:type str: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+str: TCollection_AsciiString
+
+Returns
+-------
+None
 ") Process;
 		void Process(const TCollection_AsciiString & str);
 
@@ -432,7 +592,9 @@ class ExprIntrp_GenRel : public ExprIntrp_Generator {
 		%feature("compactdefaultargs") Relation;
 		%feature("autodoc", "Returns relation generated. raises an exception if isdone answers false.
 
-	:rtype: opencascade::handle<Expr_GeneralRelation>
+Returns
+-------
+opencascade::handle<Expr_GeneralRelation>
 ") Relation;
 		opencascade::handle<Expr_GeneralRelation> Relation();
 

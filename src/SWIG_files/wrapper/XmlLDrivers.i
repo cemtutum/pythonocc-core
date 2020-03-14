@@ -89,15 +89,25 @@ class XmlLDrivers {
 	public:
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
-		%feature("autodoc", "	:param theMsgDriver:
-	:type theMsgDriver: Message_Messenger
-	:rtype: opencascade::handle<XmlMDF_ADriverTable>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMsgDriver: Message_Messenger
+
+Returns
+-------
+opencascade::handle<XmlMDF_ADriverTable>
 ") AttributeDrivers;
 		static opencascade::handle<XmlMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
 
 		/****************** CreationDate ******************/
 		%feature("compactdefaultargs") CreationDate;
-		%feature("autodoc", "	:rtype: TCollection_AsciiString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_AsciiString
 ") CreationDate;
 		static TCollection_AsciiString CreationDate();
 
@@ -105,23 +115,37 @@ class XmlLDrivers {
 		%feature("compactdefaultargs") DefineFormat;
 		%feature("autodoc", "Defines format 'xmllocaf' and registers its read and write drivers in the specified application.
 
-	:param theApp:
-	:type theApp: TDocStd_Application
-	:rtype: None
+Parameters
+----------
+theApp: TDocStd_Application
+
+Returns
+-------
+None
 ") DefineFormat;
 		static void DefineFormat(const opencascade::handle<TDocStd_Application> & theApp);
 
 		/****************** Factory ******************/
 		%feature("compactdefaultargs") Factory;
-		%feature("autodoc", "	:param theGUID:
-	:type theGUID: Standard_GUID
-	:rtype: opencascade::handle<Standard_Transient>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theGUID: Standard_GUID
+
+Returns
+-------
+opencascade::handle<Standard_Transient>
 ") Factory;
 		static const opencascade::handle<Standard_Transient> & Factory(const Standard_GUID & theGUID);
 
 		/****************** StorageVersion ******************/
 		%feature("compactdefaultargs") StorageVersion;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") StorageVersion;
 		static int StorageVersion();
 
@@ -141,47 +165,68 @@ class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	public:
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
-		%feature("autodoc", "	:param theMsgDriver:
-	:type theMsgDriver: Message_Messenger
-	:rtype: opencascade::handle<XmlMDF_ADriverTable>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMsgDriver: Message_Messenger
+
+Returns
+-------
+opencascade::handle<XmlMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<XmlMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
 
 		/****************** CreateDocument ******************/
 		%feature("compactdefaultargs") CreateDocument;
-		%feature("autodoc", "	:rtype: opencascade::handle<CDM_Document>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<CDM_Document>
 ") CreateDocument;
 		virtual opencascade::handle<CDM_Document> CreateDocument();
 
 		/****************** Read ******************/
 		%feature("compactdefaultargs") Read;
-		%feature("autodoc", "	:param theFileName:
-	:type theFileName: TCollection_ExtendedString
-	:param theNewDocument:
-	:type theNewDocument: CDM_Document
-	:param theApplication:
-	:type theApplication: CDM_Application
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theFileName: TCollection_ExtendedString
+theNewDocument: CDM_Document
+theApplication: CDM_Application
+
+Returns
+-------
+None
 ") Read;
 		virtual void Read(const TCollection_ExtendedString & theFileName, const opencascade::handle<CDM_Document> & theNewDocument, const opencascade::handle<CDM_Application> & theApplication);
 
 		/****************** Read ******************/
 		%feature("compactdefaultargs") Read;
-		%feature("autodoc", "	:param theIStream:
-	:type theIStream: Standard_IStream
-	:param theStorageData:
-	:type theStorageData: Storage_Data
-	:param theDoc:
-	:type theDoc: CDM_Document
-	:param theApplication:
-	:type theApplication: CDM_Application
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theIStream: Standard_IStream
+theStorageData: Storage_Data
+theDoc: CDM_Document
+theApplication: CDM_Application
+
+Returns
+-------
+None
 ") Read;
 		virtual void Read(Standard_IStream & theIStream, const opencascade::handle<Storage_Data> & theStorageData, const opencascade::handle<CDM_Document> & theDoc, const opencascade::handle<CDM_Application> & theApplication);
 
 		/****************** XmlLDrivers_DocumentRetrievalDriver ******************/
 		%feature("compactdefaultargs") XmlLDrivers_DocumentRetrievalDriver;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") XmlLDrivers_DocumentRetrievalDriver;
 		 XmlLDrivers_DocumentRetrievalDriver();
 
@@ -203,37 +248,59 @@ class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 	public:
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
-		%feature("autodoc", "	:param theMsgDriver:
-	:type theMsgDriver: Message_Messenger
-	:rtype: opencascade::handle<XmlMDF_ADriverTable>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMsgDriver: Message_Messenger
+
+Returns
+-------
+opencascade::handle<XmlMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<XmlMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
 
 		/****************** Write ******************/
 		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "	:param theDocument:
-	:type theDocument: CDM_Document
-	:param theFileName:
-	:type theFileName: TCollection_ExtendedString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDocument: CDM_Document
+theFileName: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") Write;
 		virtual void Write(const opencascade::handle<CDM_Document> & theDocument, const TCollection_ExtendedString & theFileName);
 
 		/****************** Write ******************/
 		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "	:param theDocument:
-	:type theDocument: CDM_Document
-	:param theOStream:
-	:type theOStream: Standard_OStream
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDocument: CDM_Document
+theOStream: Standard_OStream
+
+Returns
+-------
+None
 ") Write;
 		virtual void Write(const opencascade::handle<CDM_Document> & theDocument, Standard_OStream & theOStream);
 
 		/****************** XmlLDrivers_DocumentStorageDriver ******************/
 		%feature("compactdefaultargs") XmlLDrivers_DocumentStorageDriver;
-		%feature("autodoc", "	:param theCopyright:
-	:type theCopyright: TCollection_ExtendedString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theCopyright: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") XmlLDrivers_DocumentStorageDriver;
 		 XmlLDrivers_DocumentStorageDriver(const TCollection_ExtendedString & theCopyright);
 
@@ -255,29 +322,46 @@ class XmlLDrivers_NamespaceDef {
 	public:
 		/****************** Prefix ******************/
 		%feature("compactdefaultargs") Prefix;
-		%feature("autodoc", "	:rtype: TCollection_AsciiString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_AsciiString
 ") Prefix;
 		const TCollection_AsciiString & Prefix();
 
 		/****************** URI ******************/
 		%feature("compactdefaultargs") URI;
-		%feature("autodoc", "	:rtype: TCollection_AsciiString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_AsciiString
 ") URI;
 		const TCollection_AsciiString & URI();
 
 		/****************** XmlLDrivers_NamespaceDef ******************/
 		%feature("compactdefaultargs") XmlLDrivers_NamespaceDef;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") XmlLDrivers_NamespaceDef;
 		 XmlLDrivers_NamespaceDef();
 
 		/****************** XmlLDrivers_NamespaceDef ******************/
 		%feature("compactdefaultargs") XmlLDrivers_NamespaceDef;
-		%feature("autodoc", "	:param thePrefix:
-	:type thePrefix: TCollection_AsciiString
-	:param theURI:
-	:type theURI: TCollection_AsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+thePrefix: TCollection_AsciiString
+theURI: TCollection_AsciiString
+
+Returns
+-------
+None
 ") XmlLDrivers_NamespaceDef;
 		 XmlLDrivers_NamespaceDef(const TCollection_AsciiString & thePrefix, const TCollection_AsciiString & theURI);
 

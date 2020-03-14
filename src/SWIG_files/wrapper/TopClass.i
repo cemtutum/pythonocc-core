@@ -82,7 +82,9 @@ class TopClass_SolidExplorer {
 		%feature("compactdefaultargs") CurrentFace;
 		%feature("autodoc", "Returns the current face.
 
-	:rtype: TopoDS_Face
+Returns
+-------
+TopoDS_Face
 ") CurrentFace;
 		virtual TopoDS_Face CurrentFace();
 
@@ -90,7 +92,9 @@ class TopClass_SolidExplorer {
 		%feature("compactdefaultargs") InitFace;
 		%feature("autodoc", "Starts an exploration of the faces.
 
-	:rtype: None
+Returns
+-------
+None
 ") InitFace;
 		virtual void InitFace();
 
@@ -98,7 +102,9 @@ class TopClass_SolidExplorer {
 		%feature("compactdefaultargs") InitShell;
 		%feature("autodoc", "Starts an exploration of the shells.
 
-	:rtype: None
+Returns
+-------
+None
 ") InitShell;
 		virtual void InitShell();
 
@@ -106,7 +112,9 @@ class TopClass_SolidExplorer {
 		%feature("compactdefaultargs") MoreFaces;
 		%feature("autodoc", "Returns true if there is a current face.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") MoreFaces;
 		virtual Standard_Boolean MoreFaces();
 
@@ -114,7 +122,9 @@ class TopClass_SolidExplorer {
 		%feature("compactdefaultargs") MoreShells;
 		%feature("autodoc", "Returns true if there is a current shell.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") MoreShells;
 		virtual Standard_Boolean MoreShells();
 
@@ -122,7 +132,9 @@ class TopClass_SolidExplorer {
 		%feature("compactdefaultargs") NextFace;
 		%feature("autodoc", "Sets the explorer to the next face and returns false if there are no more wires.
 
-	:rtype: None
+Returns
+-------
+None
 ") NextFace;
 		virtual void NextFace();
 
@@ -130,7 +142,9 @@ class TopClass_SolidExplorer {
 		%feature("compactdefaultargs") NextShell;
 		%feature("autodoc", "Sets the explorer to the next shell and returns false if there are no more wires.
 
-	:rtype: None
+Returns
+-------
+None
 ") NextShell;
 		virtual void NextShell();
 
@@ -138,13 +152,15 @@ class TopClass_SolidExplorer {
 		%feature("compactdefaultargs") OtherSegment;
 		%feature("autodoc", "Returns in <l>, <par> a segment having at least one intersection with the shape boundary to compute intersections. //! the first call to this method returns a line which point to a point of the first face of the shape. the second call provide a line to the second face and so on. //! if the method is called n times on a shape with f faces (n>f) the line point to other points on the face 1,2,3 ... n.
 
-	:param P:
-	:type P: gp_Pnt
-	:param L:
-	:type L: gp_Lin
-	:param Par:
-	:type Par: float
-	:rtype: None
+Parameters
+----------
+P: gp_Pnt
+L: gp_Lin
+Par: float
+
+Returns
+-------
+None
 ") OtherSegment;
 		virtual void OtherSegment(const gp_Pnt & P, gp_Lin & L, Standard_Real &OutValue);
 
@@ -152,9 +168,13 @@ class TopClass_SolidExplorer {
 		%feature("compactdefaultargs") Reject;
 		%feature("autodoc", "Should return true if the point is outside a bounding volume of the shape.
 
-	:param P:
-	:type P: gp_Pnt
-	:rtype: bool
+Parameters
+----------
+P: gp_Pnt
+
+Returns
+-------
+bool
 ") Reject;
 		virtual Standard_Boolean Reject(const gp_Pnt & P);
 
@@ -162,11 +182,14 @@ class TopClass_SolidExplorer {
 		%feature("compactdefaultargs") RejectFace;
 		%feature("autodoc", "Returns true if the face bounding volume does not intersect the segment.
 
-	:param L:
-	:type L: gp_Lin
-	:param Par:
-	:type Par: float
-	:rtype: bool
+Parameters
+----------
+L: gp_Lin
+Par: float
+
+Returns
+-------
+bool
 ") RejectFace;
 		virtual Standard_Boolean RejectFace(const gp_Lin & L, const Standard_Real Par);
 
@@ -174,11 +197,14 @@ class TopClass_SolidExplorer {
 		%feature("compactdefaultargs") RejectShell;
 		%feature("autodoc", "Returns true if the shell bounding volume does not intersect the segment.
 
-	:param L:
-	:type L: gp_Lin
-	:param Par:
-	:type Par: float
-	:rtype: bool
+Parameters
+----------
+L: gp_Lin
+Par: float
+
+Returns
+-------
+bool
 ") RejectShell;
 		virtual Standard_Boolean RejectShell(const gp_Lin & L, const Standard_Real Par);
 
@@ -186,13 +212,15 @@ class TopClass_SolidExplorer {
 		%feature("compactdefaultargs") Segment;
 		%feature("autodoc", "Returns in <l>, <par> a segment having at least one intersection with the shape boundary to compute intersections.
 
-	:param P:
-	:type P: gp_Pnt
-	:param L:
-	:type L: gp_Lin
-	:param Par:
-	:type Par: float
-	:rtype: None
+Parameters
+----------
+P: gp_Pnt
+L: gp_Lin
+Par: float
+
+Returns
+-------
+None
 ") Segment;
 		virtual void Segment(const gp_Pnt & P, gp_Lin & L, Standard_Real &OutValue);
 

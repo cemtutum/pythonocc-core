@@ -154,9 +154,13 @@ class IMeshData_ParametersList : public Standard_Transient {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears parameters list.
 
-	:param isKeepEndPoints:
-	:type isKeepEndPoints: bool
-	:rtype: None
+Parameters
+----------
+isKeepEndPoints: bool
+
+Returns
+-------
+None
 ") Clear;
 		virtual void Clear(const Standard_Boolean isKeepEndPoints);
 
@@ -164,9 +168,13 @@ class IMeshData_ParametersList : public Standard_Transient {
 		%feature("compactdefaultargs") GetParameter;
 		%feature("autodoc", "Returns parameter with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: float
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+float
 ") GetParameter;
 		virtual Standard_Real & GetParameter(const Standard_Integer theIndex);
 
@@ -174,7 +182,9 @@ class IMeshData_ParametersList : public Standard_Transient {
 		%feature("compactdefaultargs") ParametersNb;
 		%feature("autodoc", "Returns number of parameters.
 
-	:rtype: int
+Returns
+-------
+int
 ") ParametersNb;
 		virtual Standard_Integer ParametersNb();
 
@@ -199,7 +209,9 @@ class IMeshData_Shape : public Standard_Transient {
 		%feature("compactdefaultargs") GetShape;
 		%feature("autodoc", "Returns shape assigned to discrete shape.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") GetShape;
 		const TopoDS_Shape GetShape();
 
@@ -207,9 +219,13 @@ class IMeshData_Shape : public Standard_Transient {
 		%feature("compactdefaultargs") SetShape;
 		%feature("autodoc", "Assigns shape to discrete shape.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+None
 ") SetShape;
 		void SetShape(const TopoDS_Shape & theShape);
 
@@ -234,7 +250,9 @@ class IMeshData_StatusOwner {
 		%feature("compactdefaultargs") GetStatusMask;
 		%feature("autodoc", "Returns complete status mask.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetStatusMask;
 		Standard_Integer GetStatusMask();
 
@@ -242,9 +260,13 @@ class IMeshData_StatusOwner {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Returns true in case if status is strictly equal to the given value.
 
-	:param theValue:
-	:type theValue: IMeshData_Status
-	:rtype: bool
+Parameters
+----------
+theValue: IMeshData_Status
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const IMeshData_Status theValue);
 
@@ -252,9 +274,13 @@ class IMeshData_StatusOwner {
 		%feature("compactdefaultargs") IsSet;
 		%feature("autodoc", "Returns true in case if status is set.
 
-	:param theValue:
-	:type theValue: IMeshData_Status
-	:rtype: bool
+Parameters
+----------
+theValue: IMeshData_Status
+
+Returns
+-------
+bool
 ") IsSet;
 		Standard_Boolean IsSet(const IMeshData_Status theValue);
 
@@ -262,9 +288,13 @@ class IMeshData_StatusOwner {
 		%feature("compactdefaultargs") SetStatus;
 		%feature("autodoc", "Adds status to status flags of a face.
 
-	:param theValue:
-	:type theValue: IMeshData_Status
-	:rtype: None
+Parameters
+----------
+theValue: IMeshData_Status
+
+Returns
+-------
+None
 ") SetStatus;
 		void SetStatus(const IMeshData_Status theValue);
 
@@ -272,9 +302,13 @@ class IMeshData_StatusOwner {
 		%feature("compactdefaultargs") UnsetStatus;
 		%feature("autodoc", "Adds status to status flags of a face.
 
-	:param theValue:
-	:type theValue: IMeshData_Status
-	:rtype: None
+Parameters
+----------
+theValue: IMeshData_Status
+
+Returns
+-------
+None
 ") UnsetStatus;
 		void UnsetStatus(const IMeshData_Status theValue);
 
@@ -300,11 +334,14 @@ class IMeshData_Curve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") AddPoint;
 		%feature("autodoc", "Adds new discretization point to curve.
 
-	:param thePoint:
-	:type thePoint: gp_Pnt
-	:param theParamOnCurve:
-	:type theParamOnCurve: float
-	:rtype: None
+Parameters
+----------
+thePoint: gp_Pnt
+theParamOnCurve: float
+
+Returns
+-------
+None
 ") AddPoint;
 		virtual void AddPoint(const gp_Pnt & thePoint, const Standard_Real theParamOnCurve);
 
@@ -312,9 +349,13 @@ class IMeshData_Curve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") GetPoint;
 		%feature("autodoc", "Returns discretization point with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: gp_Pnt
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+gp_Pnt
 ") GetPoint;
 		virtual gp_Pnt GetPoint(const Standard_Integer theIndex);
 
@@ -322,13 +363,15 @@ class IMeshData_Curve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") InsertPoint;
 		%feature("autodoc", "Inserts new discretization point at the given position.
 
-	:param thePosition:
-	:type thePosition: int
-	:param thePoint:
-	:type thePoint: gp_Pnt
-	:param theParamOnPCurve:
-	:type theParamOnPCurve: float
-	:rtype: None
+Parameters
+----------
+thePosition: int
+thePoint: gp_Pnt
+theParamOnPCurve: float
+
+Returns
+-------
+None
 ") InsertPoint;
 		virtual void InsertPoint(const Standard_Integer thePosition, const gp_Pnt & thePoint, const Standard_Real theParamOnPCurve);
 
@@ -336,9 +379,13 @@ class IMeshData_Curve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") RemovePoint;
 		%feature("autodoc", "Removes point with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") RemovePoint;
 		virtual void RemovePoint(const Standard_Integer theIndex);
 
@@ -363,9 +410,13 @@ class IMeshData_Model : public IMeshData_Shape {
 		%feature("compactdefaultargs") AddEdge;
 		%feature("autodoc", "Adds new edge to shape model.
 
-	:param theEdge:
-	:type theEdge: TopoDS_Edge
-	:rtype: IMeshData::IEdgeHandle
+Parameters
+----------
+theEdge: TopoDS_Edge
+
+Returns
+-------
+IMeshData::IEdgeHandle
 ") AddEdge;
 		virtual const IMeshData::IEdgeHandle & AddEdge(const TopoDS_Edge & theEdge);
 
@@ -373,9 +424,13 @@ class IMeshData_Model : public IMeshData_Shape {
 		%feature("compactdefaultargs") AddFace;
 		%feature("autodoc", "Adds new face to shape model.
 
-	:param theFace:
-	:type theFace: TopoDS_Face
-	:rtype: IMeshData::IFaceHandle
+Parameters
+----------
+theFace: TopoDS_Face
+
+Returns
+-------
+IMeshData::IFaceHandle
 ") AddFace;
 		virtual const IMeshData::IFaceHandle & AddFace(const TopoDS_Face & theFace);
 
@@ -383,7 +438,9 @@ class IMeshData_Model : public IMeshData_Shape {
 		%feature("compactdefaultargs") EdgesNb;
 		%feature("autodoc", "Returns number of edges in discrete model.
 
-	:rtype: int
+Returns
+-------
+int
 ") EdgesNb;
 		virtual Standard_Integer EdgesNb();
 
@@ -391,7 +448,9 @@ class IMeshData_Model : public IMeshData_Shape {
 		%feature("compactdefaultargs") FacesNb;
 		%feature("autodoc", "Returns number of faces in discrete model.
 
-	:rtype: int
+Returns
+-------
+int
 ") FacesNb;
 		virtual Standard_Integer FacesNb();
 
@@ -399,9 +458,13 @@ class IMeshData_Model : public IMeshData_Shape {
 		%feature("compactdefaultargs") GetEdge;
 		%feature("autodoc", "Gets model's edge with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: IMeshData::IEdgeHandle
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+IMeshData::IEdgeHandle
 ") GetEdge;
 		virtual const IMeshData::IEdgeHandle & GetEdge(const Standard_Integer theIndex);
 
@@ -409,9 +472,13 @@ class IMeshData_Model : public IMeshData_Shape {
 		%feature("compactdefaultargs") GetFace;
 		%feature("autodoc", "Gets model's face with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: IMeshData::IFaceHandle
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+IMeshData::IFaceHandle
 ") GetFace;
 		virtual const IMeshData::IFaceHandle & GetFace(const Standard_Integer theIndex);
 
@@ -419,7 +486,9 @@ class IMeshData_Model : public IMeshData_Shape {
 		%feature("compactdefaultargs") GetMaxSize;
 		%feature("autodoc", "Returns maximum size of shape model.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetMaxSize;
 		virtual Standard_Real GetMaxSize();
 
@@ -444,11 +513,14 @@ class IMeshData_PCurve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") AddPoint;
 		%feature("autodoc", "Adds new discretization point to pcurve.
 
-	:param thePoint:
-	:type thePoint: gp_Pnt2d
-	:param theParamOnPCurve:
-	:type theParamOnPCurve: float
-	:rtype: None
+Parameters
+----------
+thePoint: gp_Pnt2d
+theParamOnPCurve: float
+
+Returns
+-------
+None
 ") AddPoint;
 		virtual void AddPoint(const gp_Pnt2d & thePoint, const Standard_Real theParamOnPCurve);
 
@@ -456,7 +528,9 @@ class IMeshData_PCurve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") GetFace;
 		%feature("autodoc", "Returns discrete face pcurve is associated to.
 
-	:rtype: IMeshData::IFacePtr
+Returns
+-------
+IMeshData::IFacePtr
 ") GetFace;
 		const IMeshData::IFacePtr & GetFace();
 
@@ -464,9 +538,13 @@ class IMeshData_PCurve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") GetIndex;
 		%feature("autodoc", "Returns index in mesh corresponded to discretization point with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: int
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+int
 ") GetIndex;
 		virtual Standard_Integer & GetIndex(const Standard_Integer theIndex);
 
@@ -474,7 +552,9 @@ class IMeshData_PCurve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") GetOrientation;
 		%feature("autodoc", "Returns orientation of the edge associated with current pcurve.
 
-	:rtype: TopAbs_Orientation
+Returns
+-------
+TopAbs_Orientation
 ") GetOrientation;
 		TopAbs_Orientation GetOrientation();
 
@@ -482,9 +562,13 @@ class IMeshData_PCurve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") GetPoint;
 		%feature("autodoc", "Returns discretization point with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: gp_Pnt2d
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+gp_Pnt2d
 ") GetPoint;
 		virtual gp_Pnt2d GetPoint(const Standard_Integer theIndex);
 
@@ -492,13 +576,15 @@ class IMeshData_PCurve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") InsertPoint;
 		%feature("autodoc", "Inserts new discretization point at the given position.
 
-	:param thePosition:
-	:type thePosition: int
-	:param thePoint:
-	:type thePoint: gp_Pnt2d
-	:param theParamOnPCurve:
-	:type theParamOnPCurve: float
-	:rtype: None
+Parameters
+----------
+thePosition: int
+thePoint: gp_Pnt2d
+theParamOnPCurve: float
+
+Returns
+-------
+None
 ") InsertPoint;
 		virtual void InsertPoint(const Standard_Integer thePosition, const gp_Pnt2d & thePoint, const Standard_Real theParamOnPCurve);
 
@@ -506,7 +592,9 @@ class IMeshData_PCurve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") IsForward;
 		%feature("autodoc", "Returns forward flag of this pcurve.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsForward;
 		Standard_Boolean IsForward();
 
@@ -514,7 +602,9 @@ class IMeshData_PCurve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") IsInternal;
 		%feature("autodoc", "Returns internal flag of this pcurve.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsInternal;
 		Standard_Boolean IsInternal();
 
@@ -522,9 +612,13 @@ class IMeshData_PCurve : public IMeshData_ParametersList {
 		%feature("compactdefaultargs") RemovePoint;
 		%feature("autodoc", "Removes point with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") RemovePoint;
 		virtual void RemovePoint(const Standard_Integer theIndex);
 
@@ -549,7 +643,9 @@ class IMeshData_TessellatedShape : public IMeshData_Shape {
 		%feature("compactdefaultargs") GetDeflection;
 		%feature("autodoc", "Gets deflection value for the discrete model.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetDeflection;
 		Standard_Real GetDeflection();
 
@@ -557,9 +653,13 @@ class IMeshData_TessellatedShape : public IMeshData_Shape {
 		%feature("compactdefaultargs") SetDeflection;
 		%feature("autodoc", "Sets deflection value for the discrete model.
 
-	:param theValue:
-	:type theValue: float
-	:rtype: None
+Parameters
+----------
+theValue: float
+
+Returns
+-------
+None
 ") SetDeflection;
 		void SetDeflection(const Standard_Real theValue);
 
@@ -584,11 +684,14 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") AddPCurve;
 		%feature("autodoc", "Adds discrete pcurve for the specifed discrete face.
 
-	:param theDFace:
-	:type theDFace: IMeshData::IFacePtr
-	:param theOrientation:
-	:type theOrientation: TopAbs_Orientation
-	:rtype: IMeshData::IPCurveHandle
+Parameters
+----------
+theDFace: IMeshData::IFacePtr
+theOrientation: TopAbs_Orientation
+
+Returns
+-------
+IMeshData::IPCurveHandle
 ") AddPCurve;
 		virtual const IMeshData::IPCurveHandle & AddPCurve(const IMeshData::IFacePtr & theDFace, const TopAbs_Orientation theOrientation);
 
@@ -596,9 +699,13 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears curve and all pcurves assigned to the edge from discretization.
 
-	:param isKeepEndPoints:
-	:type isKeepEndPoints: bool
-	:rtype: None
+Parameters
+----------
+isKeepEndPoints: bool
+
+Returns
+-------
+None
 ") Clear;
 		void Clear(const Standard_Boolean isKeepEndPoints);
 
@@ -606,7 +713,9 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetAngularDeflection;
 		%feature("autodoc", "Gets value of angular deflection for the discrete model.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetAngularDeflection;
 		Standard_Real GetAngularDeflection();
 
@@ -614,7 +723,9 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetCurve;
 		%feature("autodoc", "Returns 3d curve associated with current edge.
 
-	:rtype: IMeshData::ICurveHandle
+Returns
+-------
+IMeshData::ICurveHandle
 ") GetCurve;
 		const IMeshData::ICurveHandle & GetCurve();
 
@@ -622,7 +733,9 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetDegenerated;
 		%feature("autodoc", "Returns degenerative flag. by default equals to flag stored in topological shape.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") GetDegenerated;
 		Standard_Boolean GetDegenerated();
 
@@ -630,7 +743,9 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetEdge;
 		%feature("autodoc", "Returns topods_edge attached to model.
 
-	:rtype: TopoDS_Edge
+Returns
+-------
+TopoDS_Edge
 ") GetEdge;
 		const TopoDS_Edge GetEdge();
 
@@ -638,11 +753,14 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetPCurve;
 		%feature("autodoc", "Returns pcurve for the specified discrete face.
 
-	:param theDFace:
-	:type theDFace: IMeshData::IFacePtr
-	:param theOrientation:
-	:type theOrientation: TopAbs_Orientation
-	:rtype: IMeshData::IPCurveHandle
+Parameters
+----------
+theDFace: IMeshData::IFacePtr
+theOrientation: TopAbs_Orientation
+
+Returns
+-------
+IMeshData::IPCurveHandle
 ") GetPCurve;
 		virtual const IMeshData::IPCurveHandle & GetPCurve(const IMeshData::IFacePtr & theDFace, const TopAbs_Orientation theOrientation);
 
@@ -650,9 +768,13 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetPCurve;
 		%feature("autodoc", "Returns pcurve with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: IMeshData::IPCurveHandle
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+IMeshData::IPCurveHandle
 ") GetPCurve;
 		virtual const IMeshData::IPCurveHandle & GetPCurve(const Standard_Integer theIndex);
 
@@ -660,7 +782,9 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetSameParam;
 		%feature("autodoc", "Returns same param flag. by default equals to flag stored in topological shape.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") GetSameParam;
 		Standard_Boolean GetSameParam();
 
@@ -668,7 +792,9 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetSameRange;
 		%feature("autodoc", "Returns same range flag. by default equals to flag stored in topological shape.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") GetSameRange;
 		Standard_Boolean GetSameRange();
 
@@ -676,7 +802,9 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") IsFree;
 		%feature("autodoc", "Returns true in case if the edge is free one, i.e. it does not have pcurves.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsFree;
 		Standard_Boolean IsFree();
 
@@ -684,7 +812,9 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") PCurvesNb;
 		%feature("autodoc", "Returns number of pcurves assigned to current edge.
 
-	:rtype: int
+Returns
+-------
+int
 ") PCurvesNb;
 		virtual Standard_Integer PCurvesNb();
 
@@ -692,9 +822,13 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") SetAngularDeflection;
 		%feature("autodoc", "Sets value of angular deflection for the discrete model.
 
-	:param theValue:
-	:type theValue: float
-	:rtype: None
+Parameters
+----------
+theValue: float
+
+Returns
+-------
+None
 ") SetAngularDeflection;
 		void SetAngularDeflection(const Standard_Real theValue);
 
@@ -702,9 +836,13 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") SetCurve;
 		%feature("autodoc", "Sets 3d curve associated with current edge.
 
-	:param theCurve:
-	:type theCurve: IMeshData::ICurveHandle
-	:rtype: None
+Parameters
+----------
+theCurve: IMeshData::ICurveHandle
+
+Returns
+-------
+None
 ") SetCurve;
 		void SetCurve(const IMeshData::ICurveHandle & theCurve);
 
@@ -712,9 +850,13 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") SetDegenerated;
 		%feature("autodoc", "Updates degenerative flag.
 
-	:param theValue:
-	:type theValue: bool
-	:rtype: None
+Parameters
+----------
+theValue: bool
+
+Returns
+-------
+None
 ") SetDegenerated;
 		void SetDegenerated(const Standard_Boolean theValue);
 
@@ -722,9 +864,13 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") SetSameParam;
 		%feature("autodoc", "Updates same param flag.
 
-	:param theValue:
-	:type theValue: bool
-	:rtype: None
+Parameters
+----------
+theValue: bool
+
+Returns
+-------
+None
 ") SetSameParam;
 		void SetSameParam(const Standard_Boolean theValue);
 
@@ -732,9 +878,13 @@ class IMeshData_Edge : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") SetSameRange;
 		%feature("autodoc", "Updates same range flag.
 
-	:param theValue:
-	:type theValue: bool
-	:rtype: None
+Parameters
+----------
+theValue: bool
+
+Returns
+-------
+None
 ") SetSameRange;
 		void SetSameRange(const Standard_Boolean theValue);
 
@@ -759,11 +909,15 @@ class IMeshData_Face : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") AddWire;
 		%feature("autodoc", "Adds wire to discrete model of face.
 
-	:param theWire:
-	:type theWire: TopoDS_Wire
-	:param theEdgeNb: default value is 0
-	:type theEdgeNb: int
-	:rtype: IMeshData::IWireHandle
+Parameters
+----------
+theWire: TopoDS_Wire
+theEdgeNb: int,optional
+	default value is 0
+
+Returns
+-------
+IMeshData::IWireHandle
 ") AddWire;
 		virtual const IMeshData::IWireHandle & AddWire(const TopoDS_Wire & theWire, const Standard_Integer theEdgeNb = 0);
 
@@ -771,7 +925,9 @@ class IMeshData_Face : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetFace;
 		%feature("autodoc", "Returns topods_face attached to model.
 
-	:rtype: TopoDS_Face
+Returns
+-------
+TopoDS_Face
 ") GetFace;
 		const TopoDS_Face GetFace();
 
@@ -779,7 +935,9 @@ class IMeshData_Face : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetSurface;
 		%feature("autodoc", "Returns face's surface.
 
-	:rtype: opencascade::handle<BRepAdaptor_HSurface>
+Returns
+-------
+opencascade::handle<BRepAdaptor_HSurface>
 ") GetSurface;
 		const opencascade::handle<BRepAdaptor_HSurface> & GetSurface();
 
@@ -787,9 +945,13 @@ class IMeshData_Face : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetWire;
 		%feature("autodoc", "Returns discrete edge with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: IMeshData::IWireHandle
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+IMeshData::IWireHandle
 ") GetWire;
 		virtual const IMeshData::IWireHandle & GetWire(const Standard_Integer theIndex);
 
@@ -797,7 +959,9 @@ class IMeshData_Face : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") IsValid;
 		%feature("autodoc", "Returns whether the face discrete model is valid.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsValid;
 		Standard_Boolean IsValid();
 
@@ -805,7 +969,9 @@ class IMeshData_Face : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") WiresNb;
 		%feature("autodoc", "Returns number of wires.
 
-	:rtype: int
+Returns
+-------
+int
 ") WiresNb;
 		virtual Standard_Integer WiresNb();
 
@@ -830,11 +996,14 @@ class IMeshData_Wire : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") AddEdge;
 		%feature("autodoc", "Adds new discrete edge with specified orientation to wire chain. returns index of added edge in wire chain.
 
-	:param theDEdge:
-	:type theDEdge: IMeshData::IEdgePtr
-	:param theOrientation:
-	:type theOrientation: TopAbs_Orientation
-	:rtype: int
+Parameters
+----------
+theDEdge: IMeshData::IEdgePtr
+theOrientation: TopAbs_Orientation
+
+Returns
+-------
+int
 ") AddEdge;
 		virtual Standard_Integer AddEdge(const IMeshData::IEdgePtr & theDEdge, const TopAbs_Orientation theOrientation);
 
@@ -842,7 +1011,9 @@ class IMeshData_Wire : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") EdgesNb;
 		%feature("autodoc", "Returns number of edges.
 
-	:rtype: int
+Returns
+-------
+int
 ") EdgesNb;
 		virtual Standard_Integer EdgesNb();
 
@@ -850,9 +1021,13 @@ class IMeshData_Wire : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetEdge;
 		%feature("autodoc", "Returns discrete edge with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: IMeshData::IEdgePtr
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+IMeshData::IEdgePtr
 ") GetEdge;
 		virtual const IMeshData::IEdgePtr & GetEdge(const Standard_Integer theIndex);
 
@@ -860,9 +1035,13 @@ class IMeshData_Wire : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetEdgeOrientation;
 		%feature("autodoc", "Returns true if orientation of discrete edge with the given index is forward.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: TopAbs_Orientation
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+TopAbs_Orientation
 ") GetEdgeOrientation;
 		virtual TopAbs_Orientation GetEdgeOrientation(const Standard_Integer theIndex);
 
@@ -870,7 +1049,9 @@ class IMeshData_Wire : public IMeshData_TessellatedShape, public IMeshData_Statu
 		%feature("compactdefaultargs") GetWire;
 		%feature("autodoc", "Returns topods_face attached to model.
 
-	:rtype: TopoDS_Wire
+Returns
+-------
+TopoDS_Wire
 ") GetWire;
 		const TopoDS_Wire GetWire();
 

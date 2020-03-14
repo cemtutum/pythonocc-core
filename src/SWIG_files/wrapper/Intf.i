@@ -123,15 +123,16 @@ class Intf {
 		%feature("compactdefaultargs") Contain;
 		%feature("autodoc", "Compute if the triangle <p1> <p2> <p3> contain <thepnt>.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param P3:
-	:type P3: gp_Pnt
-	:param ThePnt:
-	:type ThePnt: gp_Pnt
-	:rtype: bool
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+P3: gp_Pnt
+ThePnt: gp_Pnt
+
+Returns
+-------
+bool
 ") Contain;
 		static Standard_Boolean Contain(const gp_Pnt & P1, const gp_Pnt & P2, const gp_Pnt & P3, const gp_Pnt & ThePnt);
 
@@ -139,17 +140,17 @@ class Intf {
 		%feature("compactdefaultargs") PlaneEquation;
 		%feature("autodoc", "Computes the interference between two polygons in 2d. result : points of intersections and zones of tangence. computes the interference between a polygon or a straight line and a polyhedron. points of intersection and zones of tangence. give the plane equation of the triangle <p1> <p2> <p3>.
 
-	:param P1:
-	:type P1: gp_Pnt
-	:param P2:
-	:type P2: gp_Pnt
-	:param P3:
-	:type P3: gp_Pnt
-	:param NormalVector:
-	:type NormalVector: gp_XYZ
-	:param PolarDistance:
-	:type PolarDistance: float
-	:rtype: None
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+P3: gp_Pnt
+NormalVector: gp_XYZ
+PolarDistance: float
+
+Returns
+-------
+None
 ") PlaneEquation;
 		static void PlaneEquation(const gp_Pnt & P1, const gp_Pnt & P2, const gp_Pnt & P3, gp_XYZ & NormalVector, Standard_Real &OutValue);
 
@@ -173,15 +174,23 @@ class Intf_Interference {
 		%feature("compactdefaultargs") Contains;
 		%feature("autodoc", "Tests if the polylines of intersection or the zones of tangence contain the point of intersection <thepnt>.
 
-	:param ThePnt:
-	:type ThePnt: Intf_SectionPoint
-	:rtype: bool
+Parameters
+----------
+ThePnt: Intf_SectionPoint
+
+Returns
+-------
+bool
 ") Contains;
 		Standard_Boolean Contains(const Intf_SectionPoint & ThePnt);
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Dump;
 		void Dump();
 
@@ -189,7 +198,9 @@ class Intf_Interference {
 		%feature("compactdefaultargs") GetTolerance;
 		%feature("autodoc", "Gives the tolerance used for the calculation.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetTolerance;
 		Standard_Real GetTolerance();
 
@@ -197,9 +208,13 @@ class Intf_Interference {
 		%feature("compactdefaultargs") Insert;
 		%feature("autodoc", "Inserts a new zone of tangence in the current list of tangent zones of the interference and returns true when done.
 
-	:param TheZone:
-	:type TheZone: Intf_TangentZone
-	:rtype: bool
+Parameters
+----------
+TheZone: Intf_TangentZone
+
+Returns
+-------
+bool
 ") Insert;
 		Standard_Boolean Insert(const Intf_TangentZone & TheZone);
 
@@ -207,11 +222,14 @@ class Intf_Interference {
 		%feature("compactdefaultargs") Insert;
 		%feature("autodoc", "Insert a new segment of intersection in the current list of polylines of intersection of the interference.
 
-	:param pdeb:
-	:type pdeb: Intf_SectionPoint
-	:param pfin:
-	:type pfin: Intf_SectionPoint
-	:rtype: None
+Parameters
+----------
+pdeb: Intf_SectionPoint
+pfin: Intf_SectionPoint
+
+Returns
+-------
+None
 ") Insert;
 		void Insert(const Intf_SectionPoint & pdeb, const Intf_SectionPoint & pfin);
 
@@ -219,9 +237,13 @@ class Intf_Interference {
 		%feature("compactdefaultargs") LineValue;
 		%feature("autodoc", "Gives the polyline of intersection at address <index> in the interference.
 
-	:param Index:
-	:type Index: int
-	:rtype: Intf_SectionLine
+Parameters
+----------
+Index: int
+
+Returns
+-------
+Intf_SectionLine
 ") LineValue;
 		const Intf_SectionLine & LineValue(const Standard_Integer Index);
 
@@ -229,7 +251,9 @@ class Intf_Interference {
 		%feature("compactdefaultargs") NbSectionLines;
 		%feature("autodoc", "Gives the number of polylines of intersection in the interference.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbSectionLines;
 		Standard_Integer NbSectionLines();
 
@@ -237,7 +261,9 @@ class Intf_Interference {
 		%feature("compactdefaultargs") NbSectionPoints;
 		%feature("autodoc", "Gives the number of points of intersection in the interference.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbSectionPoints;
 		Standard_Integer NbSectionPoints();
 
@@ -245,7 +271,9 @@ class Intf_Interference {
 		%feature("compactdefaultargs") NbTangentZones;
 		%feature("autodoc", "Gives the number of zones of tangence in the interference.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbTangentZones;
 		Standard_Integer NbTangentZones();
 
@@ -253,9 +281,13 @@ class Intf_Interference {
 		%feature("compactdefaultargs") PntValue;
 		%feature("autodoc", "Gives the point of intersection of address index in the interference.
 
-	:param Index:
-	:type Index: int
-	:rtype: Intf_SectionPoint
+Parameters
+----------
+Index: int
+
+Returns
+-------
+Intf_SectionPoint
 ") PntValue;
 		const Intf_SectionPoint & PntValue(const Standard_Integer Index);
 
@@ -263,9 +295,13 @@ class Intf_Interference {
 		%feature("compactdefaultargs") ZoneValue;
 		%feature("autodoc", "Gives the zone of tangence at address index in the interference.
 
-	:param Index:
-	:type Index: int
-	:rtype: Intf_TangentZone
+Parameters
+----------
+Index: int
+
+Returns
+-------
+Intf_TangentZone
 ") ZoneValue;
 		const Intf_TangentZone & ZoneValue(const Standard_Integer Index);
 
@@ -288,7 +324,9 @@ class Intf_Polygon2d {
 		%feature("compactdefaultargs") Bounding;
 		%feature("autodoc", "Returns the bounding box of the polygon.
 
-	:rtype: Bnd_Box2d
+Returns
+-------
+Bnd_Box2d
 ") Bounding;
 		const Bnd_Box2d & Bounding();
 
@@ -296,7 +334,9 @@ class Intf_Polygon2d {
 		%feature("compactdefaultargs") Closed;
 		%feature("autodoc", "Returns true if the polyline is closed.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Closed;
 		virtual Standard_Boolean Closed();
 
@@ -304,7 +344,9 @@ class Intf_Polygon2d {
 		%feature("compactdefaultargs") DeflectionOverEstimation;
 		%feature("autodoc", "Returns the tolerance of the polygon.
 
-	:rtype: float
+Returns
+-------
+float
 ") DeflectionOverEstimation;
 		virtual Standard_Real DeflectionOverEstimation();
 
@@ -312,7 +354,9 @@ class Intf_Polygon2d {
 		%feature("compactdefaultargs") NbSegments;
 		%feature("autodoc", "Returns the number of segments in the polyline.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbSegments;
 		virtual Standard_Integer NbSegments();
 
@@ -320,13 +364,15 @@ class Intf_Polygon2d {
 		%feature("compactdefaultargs") Segment;
 		%feature("autodoc", "Returns the points of the segment <index> in the polygon.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theBegin:
-	:type theBegin: gp_Pnt2d
-	:param theEnd:
-	:type theEnd: gp_Pnt2d
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theBegin: gp_Pnt2d
+theEnd: gp_Pnt2d
+
+Returns
+-------
+None
 ") Segment;
 		virtual void Segment(const Standard_Integer theIndex, gp_Pnt2d & theBegin, gp_Pnt2d & theEnd);
 
@@ -348,9 +394,13 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Adds a point at the end of the sectionline.
 
-	:param Pi:
-	:type Pi: Intf_SectionPoint
-	:rtype: None
+Parameters
+----------
+Pi: Intf_SectionPoint
+
+Returns
+-------
+None
 ") Append;
 		void Append(const Intf_SectionPoint & Pi);
 
@@ -358,9 +408,13 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Concatenates the sectionline <ls> at the end of the sectionline <self>.
 
-	:param LS:
-	:type LS: Intf_SectionLine
-	:rtype: None
+Parameters
+----------
+LS: Intf_SectionLine
+
+Returns
+-------
+None
 ") Append;
 		void Append(Intf_SectionLine & LS);
 
@@ -368,7 +422,9 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") Close;
 		%feature("autodoc", "Closes the sectionline.
 
-	:rtype: None
+Returns
+-------
+None
 ") Close;
 		void Close();
 
@@ -376,17 +432,27 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") Contains;
 		%feature("autodoc", "Returns true if thepi is in the sectionline <self>.
 
-	:param ThePI:
-	:type ThePI: Intf_SectionPoint
-	:rtype: bool
+Parameters
+----------
+ThePI: Intf_SectionPoint
+
+Returns
+-------
+bool
 ") Contains;
 		Standard_Boolean Contains(const Intf_SectionPoint & ThePI);
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:param Indent:
-	:type Indent: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Indent: int
+
+Returns
+-------
+None
 ") Dump;
 		void Dump(const Standard_Integer Indent);
 
@@ -394,9 +460,13 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") GetPoint;
 		%feature("autodoc", "Gives the point of intersection of address <index> in the sectionline.
 
-	:param Index:
-	:type Index: int
-	:rtype: Intf_SectionPoint
+Parameters
+----------
+Index: int
+
+Returns
+-------
+Intf_SectionPoint
 ") GetPoint;
 		const Intf_SectionPoint & GetPoint(const Standard_Integer Index);
 
@@ -404,7 +474,9 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") Intf_SectionLine;
 		%feature("autodoc", "Constructs an empty sectionline.
 
-	:rtype: None
+Returns
+-------
+None
 ") Intf_SectionLine;
 		 Intf_SectionLine();
 
@@ -412,9 +484,13 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") Intf_SectionLine;
 		%feature("autodoc", "Copies a sectionline.
 
-	:param Other:
-	:type Other: Intf_SectionLine
-	:rtype: None
+Parameters
+----------
+Other: Intf_SectionLine
+
+Returns
+-------
+None
 ") Intf_SectionLine;
 		 Intf_SectionLine(const Intf_SectionLine & Other);
 
@@ -422,7 +498,9 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") IsClosed;
 		%feature("autodoc", "Returns true if the sectionline is closed.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsClosed;
 		Standard_Boolean IsClosed();
 
@@ -430,9 +508,13 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") IsEnd;
 		%feature("autodoc", "Checks if <thepi> is an end of the sectionline. returns 1 for the beginning, 2 for the end, otherwise 0.
 
-	:param ThePI:
-	:type ThePI: Intf_SectionPoint
-	:rtype: int
+Parameters
+----------
+ThePI: Intf_SectionPoint
+
+Returns
+-------
+int
 ") IsEnd;
 		Standard_Integer IsEnd(const Intf_SectionPoint & ThePI);
 
@@ -440,9 +522,13 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Compares two sectionlines.
 
-	:param Other:
-	:type Other: Intf_SectionLine
-	:rtype: bool
+Parameters
+----------
+Other: Intf_SectionLine
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const Intf_SectionLine & Other);
 
@@ -450,7 +536,9 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") NumberOfPoints;
 		%feature("autodoc", "Returns number of points in this sectionline.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfPoints;
 		Standard_Integer NumberOfPoints();
 
@@ -458,9 +546,13 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") Prepend;
 		%feature("autodoc", "Adds a point to the beginning of the sectionline <self>.
 
-	:param Pi:
-	:type Pi: Intf_SectionPoint
-	:rtype: None
+Parameters
+----------
+Pi: Intf_SectionPoint
+
+Returns
+-------
+None
 ") Prepend;
 		void Prepend(const Intf_SectionPoint & Pi);
 
@@ -468,9 +560,13 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") Prepend;
 		%feature("autodoc", "Concatenates a sectionline <ls> at the beginning of the sectionline <self>.
 
-	:param LS:
-	:type LS: Intf_SectionLine
-	:rtype: None
+Parameters
+----------
+LS: Intf_SectionLine
+
+Returns
+-------
+None
 ") Prepend;
 		void Prepend(Intf_SectionLine & LS);
 
@@ -478,7 +574,9 @@ class Intf_SectionLine {
 		%feature("compactdefaultargs") Reverse;
 		%feature("autodoc", "Reverses the order of the elements of the sectionline.
 
-	:rtype: None
+Returns
+-------
+None
 ") Reverse;
 		void Reverse();
 
@@ -512,9 +610,15 @@ class Intf_SectionPoint {
 	public:
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:param Indent:
-	:type Indent: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Indent: int
+
+Returns
+-------
+None
 ") Dump;
 		void Dump(const Standard_Integer Indent);
 
@@ -522,21 +626,26 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") Incidence;
 		%feature("autodoc", "Gives the incidence at this section point. the incidence between the two triangles is given by the cosine. the best incidence is 0. (pi/2). the worst is 1. (null angle).
 
-	:rtype: float
+Returns
+-------
+float
 ") Incidence;
 		Standard_Real Incidence();
 
 		/****************** InfoFirst ******************/
 		%feature("compactdefaultargs") InfoFirst;
-		%feature("autodoc", "	:param Dim:
-	:type Dim: Intf_PIType
-	:param Add1:
-	:type Add1: int
-	:param Add2:
-	:type Add2: int
-	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Dim: Intf_PIType
+Add1: int
+Add2: int
+Param: float
+
+Returns
+-------
+None
 ") InfoFirst;
 		void InfoFirst(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue);
 
@@ -544,27 +653,32 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") InfoFirst;
 		%feature("autodoc", "Gives the datas about the first argument of the interference.
 
-	:param Dim:
-	:type Dim: Intf_PIType
-	:param Addr:
-	:type Addr: int
-	:param Param:
-	:type Param: float
-	:rtype: None
+Parameters
+----------
+Dim: Intf_PIType
+Addr: int
+Param: float
+
+Returns
+-------
+None
 ") InfoFirst;
 		void InfoFirst(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Real &OutValue);
 
 		/****************** InfoSecond ******************/
 		%feature("compactdefaultargs") InfoSecond;
-		%feature("autodoc", "	:param Dim:
-	:type Dim: Intf_PIType
-	:param Add1:
-	:type Add1: int
-	:param Add2:
-	:type Add2: int
-	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Dim: Intf_PIType
+Add1: int
+Add2: int
+Param: float
+
+Returns
+-------
+None
 ") InfoSecond;
 		void InfoSecond(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue);
 
@@ -572,19 +686,25 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") InfoSecond;
 		%feature("autodoc", "Gives the datas about the second argument of the interference.
 
-	:param Dim:
-	:type Dim: Intf_PIType
-	:param Addr:
-	:type Addr: int
-	:param Param:
-	:type Param: float
-	:rtype: None
+Parameters
+----------
+Dim: Intf_PIType
+Addr: int
+Param: float
+
+Returns
+-------
+None
 ") InfoSecond;
 		void InfoSecond(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Real &OutValue);
 
 		/****************** Intf_SectionPoint ******************/
 		%feature("compactdefaultargs") Intf_SectionPoint;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Intf_SectionPoint;
 		 Intf_SectionPoint();
 
@@ -592,27 +712,22 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") Intf_SectionPoint;
 		%feature("autodoc", "Builds a sectionpoint with the respective dimensions (vertex edge or face) of the concerned arguments and their addresses in the topological structure.
 
-	:param Where:
-	:type Where: gp_Pnt
-	:param DimeO:
-	:type DimeO: Intf_PIType
-	:param AddrO1:
-	:type AddrO1: int
-	:param AddrO2:
-	:type AddrO2: int
-	:param ParamO:
-	:type ParamO: float
-	:param DimeT:
-	:type DimeT: Intf_PIType
-	:param AddrT1:
-	:type AddrT1: int
-	:param AddrT2:
-	:type AddrT2: int
-	:param ParamT:
-	:type ParamT: float
-	:param Incid:
-	:type Incid: float
-	:rtype: None
+Parameters
+----------
+Where: gp_Pnt
+DimeO: Intf_PIType
+AddrO1: int
+AddrO2: int
+ParamO: float
+DimeT: Intf_PIType
+AddrT1: int
+AddrT2: int
+ParamT: float
+Incid: float
+
+Returns
+-------
+None
 ") Intf_SectionPoint;
 		 Intf_SectionPoint(const gp_Pnt & Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Integer AddrO2, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Integer AddrT2, const Standard_Real ParamT, const Standard_Real Incid);
 
@@ -620,23 +735,20 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") Intf_SectionPoint;
 		%feature("autodoc", "Builds a sectionpoint 2d with the respective dimensions (vertex or edge) of the concerned arguments and their addresses in the topological structure.
 
-	:param Where:
-	:type Where: gp_Pnt2d
-	:param DimeO:
-	:type DimeO: Intf_PIType
-	:param AddrO1:
-	:type AddrO1: int
-	:param ParamO:
-	:type ParamO: float
-	:param DimeT:
-	:type DimeT: Intf_PIType
-	:param AddrT1:
-	:type AddrT1: int
-	:param ParamT:
-	:type ParamT: float
-	:param Incid:
-	:type Incid: float
-	:rtype: None
+Parameters
+----------
+Where: gp_Pnt2d
+DimeO: Intf_PIType
+AddrO1: int
+ParamO: float
+DimeT: Intf_PIType
+AddrT1: int
+ParamT: float
+Incid: float
+
+Returns
+-------
+None
 ") Intf_SectionPoint;
 		 Intf_SectionPoint(const gp_Pnt2d & Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Real ParamT, const Standard_Real Incid);
 
@@ -644,9 +756,13 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Returns true if the two sectionpoint have the same logical informations.
 
-	:param Other:
-	:type Other: Intf_SectionPoint
-	:rtype: bool
+Parameters
+----------
+Other: Intf_SectionPoint
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const Intf_SectionPoint & Other);
 
@@ -654,9 +770,13 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") IsOnSameEdge;
 		%feature("autodoc", "Returns true if the two sectionpoints are on the same edge of the first or the second element.
 
-	:param Other:
-	:type Other: Intf_SectionPoint
-	:rtype: bool
+Parameters
+----------
+Other: Intf_SectionPoint
+
+Returns
+-------
+bool
 ") IsOnSameEdge;
 		Standard_Boolean IsOnSameEdge(const Intf_SectionPoint & Other);
 
@@ -664,9 +784,13 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") Merge;
 		%feature("autodoc", "Merges two sectionpoints.
 
-	:param Other:
-	:type Other: Intf_SectionPoint
-	:rtype: None
+Parameters
+----------
+Other: Intf_SectionPoint
+
+Returns
+-------
+None
 ") Merge;
 		void Merge(Intf_SectionPoint & Other);
 
@@ -674,7 +798,9 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") ParamOnFirst;
 		%feature("autodoc", "Returns the cumulated parameter of the sectionpoint on the first element.
 
-	:rtype: float
+Returns
+-------
+float
 ") ParamOnFirst;
 		Standard_Real ParamOnFirst();
 
@@ -682,7 +808,9 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") ParamOnSecond;
 		%feature("autodoc", "Returns the cumulated parameter of the section point on the second element.
 
-	:rtype: float
+Returns
+-------
+float
 ") ParamOnSecond;
 		Standard_Real ParamOnSecond();
 
@@ -690,7 +818,9 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") Pnt;
 		%feature("autodoc", "Returns the location of the sectionpoint.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") Pnt;
 		const gp_Pnt Pnt();
 
@@ -698,7 +828,9 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") TypeOnFirst;
 		%feature("autodoc", "Returns the type of the section point on the first element.
 
-	:rtype: Intf_PIType
+Returns
+-------
+Intf_PIType
 ") TypeOnFirst;
 		Intf_PIType TypeOnFirst();
 
@@ -706,7 +838,9 @@ class Intf_SectionPoint {
 		%feature("compactdefaultargs") TypeOnSecond;
 		%feature("autodoc", "Returns the type of the section point on the second element.
 
-	:rtype: Intf_PIType
+Returns
+-------
+Intf_PIType
 ") TypeOnSecond;
 		Intf_PIType TypeOnSecond();
 
@@ -742,9 +876,13 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Adds a sectionpoint to the tangentzone.
 
-	:param Pi:
-	:type Pi: Intf_SectionPoint
-	:rtype: None
+Parameters
+----------
+Pi: Intf_SectionPoint
+
+Returns
+-------
+None
 ") Append;
 		void Append(const Intf_SectionPoint & Pi);
 
@@ -752,9 +890,13 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Adds the tangentzone <tzi> to <self>.
 
-	:param Tzi:
-	:type Tzi: Intf_TangentZone
-	:rtype: None
+Parameters
+----------
+Tzi: Intf_TangentZone
+
+Returns
+-------
+None
 ") Append;
 		void Append(const Intf_TangentZone & Tzi);
 
@@ -762,17 +904,27 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") Contains;
 		%feature("autodoc", "Checks if <thepi> is in tangentzone.
 
-	:param ThePI:
-	:type ThePI: Intf_SectionPoint
-	:rtype: bool
+Parameters
+----------
+ThePI: Intf_SectionPoint
+
+Returns
+-------
+bool
 ") Contains;
 		Standard_Boolean Contains(const Intf_SectionPoint & ThePI);
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:param Indent:
-	:type Indent: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Indent: int
+
+Returns
+-------
+None
 ") Dump;
 		void Dump(const Standard_Integer Indent);
 
@@ -780,9 +932,13 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") GetPoint;
 		%feature("autodoc", "Gives the sectionpoint of address <index> in the tangentzone.
 
-	:param Index:
-	:type Index: int
-	:rtype: Intf_SectionPoint
+Parameters
+----------
+Index: int
+
+Returns
+-------
+Intf_SectionPoint
 ") GetPoint;
 		const Intf_SectionPoint & GetPoint(const Standard_Integer Index);
 
@@ -790,9 +946,13 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") HasCommonRange;
 		%feature("autodoc", "Returns true if the tangentzone <other> has a common part with <self>.
 
-	:param Other:
-	:type Other: Intf_TangentZone
-	:rtype: bool
+Parameters
+----------
+Other: Intf_TangentZone
+
+Returns
+-------
+bool
 ") HasCommonRange;
 		Standard_Boolean HasCommonRange(const Intf_TangentZone & Other);
 
@@ -800,15 +960,16 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") InfoFirst;
 		%feature("autodoc", "Gives information about the first argument of the interference. (usable only for polygon).
 
-	:param segMin:
-	:type segMin: int
-	:param paraMin:
-	:type paraMin: float
-	:param segMax:
-	:type segMax: int
-	:param paraMax:
-	:type paraMax: float
-	:rtype: None
+Parameters
+----------
+segMin: int
+paraMin: float
+segMax: int
+paraMax: float
+
+Returns
+-------
+None
 ") InfoFirst;
 		void InfoFirst(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue);
 
@@ -816,15 +977,16 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") InfoSecond;
 		%feature("autodoc", "Gives informations about the second argument of the interference. (usable only for polygon).
 
-	:param segMin:
-	:type segMin: int
-	:param paraMin:
-	:type paraMin: float
-	:param segMax:
-	:type segMax: int
-	:param paraMax:
-	:type paraMax: float
-	:rtype: None
+Parameters
+----------
+segMin: int
+paraMin: float
+segMax: int
+paraMax: float
+
+Returns
+-------
+None
 ") InfoSecond;
 		void InfoSecond(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue);
 
@@ -832,9 +994,13 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") Insert;
 		%feature("autodoc", "Inserts a sectionpoint in the tangentzone.
 
-	:param Pi:
-	:type Pi: Intf_SectionPoint
-	:rtype: bool
+Parameters
+----------
+Pi: Intf_SectionPoint
+
+Returns
+-------
+bool
 ") Insert;
 		Standard_Boolean Insert(const Intf_SectionPoint & Pi);
 
@@ -842,11 +1008,14 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") InsertAfter;
 		%feature("autodoc", "Inserts a sectionpoint after <index> in the tangentzone.
 
-	:param Index:
-	:type Index: int
-	:param Pi:
-	:type Pi: Intf_SectionPoint
-	:rtype: None
+Parameters
+----------
+Index: int
+Pi: Intf_SectionPoint
+
+Returns
+-------
+None
 ") InsertAfter;
 		void InsertAfter(const Standard_Integer Index, const Intf_SectionPoint & Pi);
 
@@ -854,11 +1023,14 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") InsertBefore;
 		%feature("autodoc", "Inserts a sectionpoint before <index> in the tangentzone.
 
-	:param Index:
-	:type Index: int
-	:param Pi:
-	:type Pi: Intf_SectionPoint
-	:rtype: None
+Parameters
+----------
+Index: int
+Pi: Intf_SectionPoint
+
+Returns
+-------
+None
 ") InsertBefore;
 		void InsertBefore(const Standard_Integer Index, const Intf_SectionPoint & Pi);
 
@@ -866,7 +1038,9 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") Intf_TangentZone;
 		%feature("autodoc", "Builds an empty tangent zone.
 
-	:rtype: None
+Returns
+-------
+None
 ") Intf_TangentZone;
 		 Intf_TangentZone();
 
@@ -874,9 +1048,13 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") Intf_TangentZone;
 		%feature("autodoc", "Copies a tangent zone.
 
-	:param Other:
-	:type Other: Intf_TangentZone
-	:rtype: None
+Parameters
+----------
+Other: Intf_TangentZone
+
+Returns
+-------
+None
 ") Intf_TangentZone;
 		 Intf_TangentZone(const Intf_TangentZone & Other);
 
@@ -884,9 +1062,13 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Compares two tangentzones.
 
-	:param Other:
-	:type Other: Intf_TangentZone
-	:rtype: bool
+Parameters
+----------
+Other: Intf_TangentZone
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const Intf_TangentZone & Other);
 
@@ -894,7 +1076,9 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") NumberOfPoints;
 		%feature("autodoc", "Returns number of sectionpoint in this tangentzone.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfPoints;
 		Standard_Integer NumberOfPoints();
 
@@ -902,11 +1086,14 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") ParamOnFirst;
 		%feature("autodoc", "Gives the parameter range of the tangentzone on the first argument of the interference. (usable only for polygon).
 
-	:param paraMin:
-	:type paraMin: float
-	:param paraMax:
-	:type paraMax: float
-	:rtype: None
+Parameters
+----------
+paraMin: float
+paraMax: float
+
+Returns
+-------
+None
 ") ParamOnFirst;
 		void ParamOnFirst(Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -914,11 +1101,14 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") ParamOnSecond;
 		%feature("autodoc", "Gives the parameter range of the tangentzone on the second argument of the interference. (usable only for polygon).
 
-	:param paraMin:
-	:type paraMin: float
-	:param paraMax:
-	:type paraMax: float
-	:rtype: None
+Parameters
+----------
+paraMin: float
+paraMax: float
+
+Returns
+-------
+None
 ") ParamOnSecond;
 		void ParamOnSecond(Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -926,9 +1116,13 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") PolygonInsert;
 		%feature("autodoc", "Inserts a point in the polygonal tangentzone.
 
-	:param Pi:
-	:type Pi: Intf_SectionPoint
-	:rtype: None
+Parameters
+----------
+Pi: Intf_SectionPoint
+
+Returns
+-------
+None
 ") PolygonInsert;
 		void PolygonInsert(const Intf_SectionPoint & Pi);
 
@@ -936,9 +1130,13 @@ class Intf_TangentZone {
 		%feature("compactdefaultargs") RangeContains;
 		%feature("autodoc", "Returns true if <thepi> is in the parameter range of the tangentzone.
 
-	:param ThePI:
-	:type ThePI: Intf_SectionPoint
-	:rtype: bool
+Parameters
+----------
+ThePI: Intf_SectionPoint
+
+Returns
+-------
+bool
 ") RangeContains;
 		Standard_Boolean RangeContains(const Intf_SectionPoint & ThePI);
 
@@ -972,101 +1170,145 @@ class Intf_Tool {
 	public:
 		/****************** BeginParam ******************/
 		%feature("compactdefaultargs") BeginParam;
-		%feature("autodoc", "	:param SegmentNum:
-	:type SegmentNum: int
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SegmentNum: int
+
+Returns
+-------
+float
 ") BeginParam;
 		Standard_Real BeginParam(const Standard_Integer SegmentNum);
 
 		/****************** EndParam ******************/
 		%feature("compactdefaultargs") EndParam;
-		%feature("autodoc", "	:param SegmentNum:
-	:type SegmentNum: int
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SegmentNum: int
+
+Returns
+-------
+float
 ") EndParam;
 		Standard_Real EndParam(const Standard_Integer SegmentNum);
 
 		/****************** Hypr2dBox ******************/
 		%feature("compactdefaultargs") Hypr2dBox;
-		%feature("autodoc", "	:param theHypr2d:
-	:type theHypr2d: gp_Hypr2d
-	:param bounding:
-	:type bounding: Bnd_Box2d
-	:param boxHypr:
-	:type boxHypr: Bnd_Box2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theHypr2d: gp_Hypr2d
+bounding: Bnd_Box2d
+boxHypr: Bnd_Box2d
+
+Returns
+-------
+None
 ") Hypr2dBox;
 		void Hypr2dBox(const gp_Hypr2d & theHypr2d, const Bnd_Box2d & bounding, Bnd_Box2d & boxHypr);
 
 		/****************** HyprBox ******************/
 		%feature("compactdefaultargs") HyprBox;
-		%feature("autodoc", "	:param theHypr:
-	:type theHypr: gp_Hypr
-	:param bounding:
-	:type bounding: Bnd_Box
-	:param boxHypr:
-	:type boxHypr: Bnd_Box
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theHypr: gp_Hypr
+bounding: Bnd_Box
+boxHypr: Bnd_Box
+
+Returns
+-------
+None
 ") HyprBox;
 		void HyprBox(const gp_Hypr & theHypr, const Bnd_Box & bounding, Bnd_Box & boxHypr);
 
 		/****************** Intf_Tool ******************/
 		%feature("compactdefaultargs") Intf_Tool;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Intf_Tool;
 		 Intf_Tool();
 
 		/****************** Lin2dBox ******************/
 		%feature("compactdefaultargs") Lin2dBox;
-		%feature("autodoc", "	:param theLin2d:
-	:type theLin2d: gp_Lin2d
-	:param bounding:
-	:type bounding: Bnd_Box2d
-	:param boxLin:
-	:type boxLin: Bnd_Box2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theLin2d: gp_Lin2d
+bounding: Bnd_Box2d
+boxLin: Bnd_Box2d
+
+Returns
+-------
+None
 ") Lin2dBox;
 		void Lin2dBox(const gp_Lin2d & theLin2d, const Bnd_Box2d & bounding, Bnd_Box2d & boxLin);
 
 		/****************** LinBox ******************/
 		%feature("compactdefaultargs") LinBox;
-		%feature("autodoc", "	:param theLin:
-	:type theLin: gp_Lin
-	:param bounding:
-	:type bounding: Bnd_Box
-	:param boxLin:
-	:type boxLin: Bnd_Box
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theLin: gp_Lin
+bounding: Bnd_Box
+boxLin: Bnd_Box
+
+Returns
+-------
+None
 ") LinBox;
 		void LinBox(const gp_Lin & theLin, const Bnd_Box & bounding, Bnd_Box & boxLin);
 
 		/****************** NbSegments ******************/
 		%feature("compactdefaultargs") NbSegments;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbSegments;
 		Standard_Integer NbSegments();
 
 		/****************** Parab2dBox ******************/
 		%feature("compactdefaultargs") Parab2dBox;
-		%feature("autodoc", "	:param theParab2d:
-	:type theParab2d: gp_Parab2d
-	:param bounding:
-	:type bounding: Bnd_Box2d
-	:param boxHypr:
-	:type boxHypr: Bnd_Box2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theParab2d: gp_Parab2d
+bounding: Bnd_Box2d
+boxHypr: Bnd_Box2d
+
+Returns
+-------
+None
 ") Parab2dBox;
 		void Parab2dBox(const gp_Parab2d & theParab2d, const Bnd_Box2d & bounding, Bnd_Box2d & boxHypr);
 
 		/****************** ParabBox ******************/
 		%feature("compactdefaultargs") ParabBox;
-		%feature("autodoc", "	:param theParab:
-	:type theParab: gp_Parab
-	:param bounding:
-	:type bounding: Bnd_Box
-	:param boxHypr:
-	:type boxHypr: Bnd_Box
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theParab: gp_Parab
+bounding: Bnd_Box
+boxHypr: Bnd_Box
+
+Returns
+-------
+None
 ") ParabBox;
 		void ParabBox(const gp_Parab & theParab, const Bnd_Box & bounding, Bnd_Box & boxHypr);
 
@@ -1088,7 +1330,9 @@ class Intf_InterferencePolygon2d : public Intf_Interference {
 		%feature("compactdefaultargs") Intf_InterferencePolygon2d;
 		%feature("autodoc", "Constructs an empty interference of polygon.
 
-	:rtype: None
+Returns
+-------
+None
 ") Intf_InterferencePolygon2d;
 		 Intf_InterferencePolygon2d();
 
@@ -1096,11 +1340,14 @@ class Intf_InterferencePolygon2d : public Intf_Interference {
 		%feature("compactdefaultargs") Intf_InterferencePolygon2d;
 		%feature("autodoc", "Constructs and computes an interference between two polygons.
 
-	:param Obje1:
-	:type Obje1: Intf_Polygon2d
-	:param Obje2:
-	:type Obje2: Intf_Polygon2d
-	:rtype: None
+Parameters
+----------
+Obje1: Intf_Polygon2d
+Obje2: Intf_Polygon2d
+
+Returns
+-------
+None
 ") Intf_InterferencePolygon2d;
 		 Intf_InterferencePolygon2d(const Intf_Polygon2d & Obje1, const Intf_Polygon2d & Obje2);
 
@@ -1108,9 +1355,13 @@ class Intf_InterferencePolygon2d : public Intf_Interference {
 		%feature("compactdefaultargs") Intf_InterferencePolygon2d;
 		%feature("autodoc", "Constructs and computes the auto interference of a polygon.
 
-	:param Obje:
-	:type Obje: Intf_Polygon2d
-	:rtype: None
+Parameters
+----------
+Obje: Intf_Polygon2d
+
+Returns
+-------
+None
 ") Intf_InterferencePolygon2d;
 		 Intf_InterferencePolygon2d(const Intf_Polygon2d & Obje);
 
@@ -1118,11 +1369,14 @@ class Intf_InterferencePolygon2d : public Intf_Interference {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Computes an interference between two polygons.
 
-	:param Obje1:
-	:type Obje1: Intf_Polygon2d
-	:param Obje2:
-	:type Obje2: Intf_Polygon2d
-	:rtype: None
+Parameters
+----------
+Obje1: Intf_Polygon2d
+Obje2: Intf_Polygon2d
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Intf_Polygon2d & Obje1, const Intf_Polygon2d & Obje2);
 
@@ -1130,9 +1384,13 @@ class Intf_InterferencePolygon2d : public Intf_Interference {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Computes the self interference of a polygon.
 
-	:param Obje:
-	:type Obje: Intf_Polygon2d
-	:rtype: None
+Parameters
+----------
+Obje: Intf_Polygon2d
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Intf_Polygon2d & Obje);
 
@@ -1140,9 +1398,13 @@ class Intf_InterferencePolygon2d : public Intf_Interference {
 		%feature("compactdefaultargs") Pnt2dValue;
 		%feature("autodoc", "Gives the geometrical 2d point of the intersection point at address <index> in the interference.
 
-	:param Index:
-	:type Index: int
-	:rtype: gp_Pnt2d
+Parameters
+----------
+Index: int
+
+Returns
+-------
+gp_Pnt2d
 ") Pnt2dValue;
 		gp_Pnt2d Pnt2dValue(const Standard_Integer Index);
 

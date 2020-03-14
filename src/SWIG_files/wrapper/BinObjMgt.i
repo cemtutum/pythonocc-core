@@ -84,7 +84,9 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") BinObjMgt_Persistent;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BinObjMgt_Persistent;
 		 BinObjMgt_Persistent();
 
@@ -92,31 +94,51 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") Destroy;
 		%feature("autodoc", "Frees the allocated memory; this object can be reused after call to init.
 
-	:rtype: None
+Returns
+-------
+None
 ") Destroy;
 		void Destroy();
 
 		/****************** GetAsciiString ******************/
 		%feature("compactdefaultargs") GetAsciiString;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: TCollection_AsciiString
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: TCollection_AsciiString
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetAsciiString;
 		const BinObjMgt_Persistent & GetAsciiString(TCollection_AsciiString & theValue);
 
 		/****************** GetBoolean ******************/
 		%feature("compactdefaultargs") GetBoolean;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: bool
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: bool
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetBoolean;
 		const BinObjMgt_Persistent & GetBoolean(Standard_Boolean &OutValue);
 
 		/****************** GetByte ******************/
 		%feature("compactdefaultargs") GetByte;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: Standard_Byte
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: Standard_Byte
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetByte;
 		const BinObjMgt_Persistent & GetByte(Standard_Byte & theValue);
 
@@ -124,11 +146,14 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") GetByteArray;
 		%feature("autodoc", "Get c array of unsigned chars, thelength is the number of elements; thearray must point to a space enough to place thelength elements.
 
-	:param theArray:
-	:type theArray: BinObjMgt_PByte
-	:param theLength:
-	:type theLength: int
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theArray: BinObjMgt_PByte
+theLength: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetByteArray;
 		const BinObjMgt_Persistent & GetByteArray(const BinObjMgt_PByte theArray, const Standard_Integer theLength);
 
@@ -136,19 +161,28 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") GetCharArray;
 		%feature("autodoc", "Get c array of char, thelength is the number of elements; thearray must point to a space enough to place thelength elements.
 
-	:param theArray:
-	:type theArray: BinObjMgt_PChar
-	:param theLength:
-	:type theLength: int
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theArray: BinObjMgt_PChar
+theLength: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetCharArray;
 		const BinObjMgt_Persistent & GetCharArray(const BinObjMgt_PChar theArray, const Standard_Integer theLength);
 
 		/****************** GetCharacter ******************/
 		%feature("compactdefaultargs") GetCharacter;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: Standard_Character
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: Standard_Character
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetCharacter;
 		const BinObjMgt_Persistent & GetCharacter(Standard_Character & theValue);
 
@@ -156,35 +190,56 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") GetExtCharArray;
 		%feature("autodoc", "Get c array of extcharacter, thelength is the number of elements; thearray must point to a space enough to place thelength elements.
 
-	:param theArray:
-	:type theArray: BinObjMgt_PExtChar
-	:param theLength:
-	:type theLength: int
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theArray: BinObjMgt_PExtChar
+theLength: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetExtCharArray;
 		const BinObjMgt_Persistent & GetExtCharArray(const BinObjMgt_PExtChar theArray, const Standard_Integer theLength);
 
 		/****************** GetExtCharacter ******************/
 		%feature("compactdefaultargs") GetExtCharacter;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: Standard_ExtCharacter
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: Standard_ExtCharacter
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetExtCharacter;
 		const BinObjMgt_Persistent & GetExtCharacter(Standard_ExtCharacter & theValue);
 
 		/****************** GetExtendedString ******************/
 		%feature("compactdefaultargs") GetExtendedString;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: TCollection_ExtendedString
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: TCollection_ExtendedString
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetExtendedString;
 		const BinObjMgt_Persistent & GetExtendedString(TCollection_ExtendedString & theValue);
 
 		/****************** GetGUID ******************/
 		%feature("compactdefaultargs") GetGUID;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: Standard_GUID
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: Standard_GUID
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetGUID;
 		const BinObjMgt_Persistent & GetGUID(Standard_GUID & theValue);
 
@@ -192,37 +247,57 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") GetIntArray;
 		%feature("autodoc", "Get c array of int, thelength is the number of elements; thearray must point to a space enough to place thelength elements.
 
-	:param theArray:
-	:type theArray: BinObjMgt_PInteger
-	:param theLength:
-	:type theLength: int
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theArray: BinObjMgt_PInteger
+theLength: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetIntArray;
 		const BinObjMgt_Persistent & GetIntArray(const BinObjMgt_PInteger theArray, const Standard_Integer theLength);
 
 		/****************** GetInteger ******************/
 		%feature("compactdefaultargs") GetInteger;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: int
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetInteger;
 		const BinObjMgt_Persistent & GetInteger(Standard_Integer &OutValue);
 
 		/****************** GetLabel ******************/
 		%feature("compactdefaultargs") GetLabel;
-		%feature("autodoc", "	:param theDS:
-	:type theDS: TDF_Data
-	:param theValue:
-	:type theValue: TDF_Label
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDS: TDF_Data
+theValue: TDF_Label
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetLabel;
 		const BinObjMgt_Persistent & GetLabel(const opencascade::handle<TDF_Data> & theDS, TDF_Label & theValue);
 
 		/****************** GetReal ******************/
 		%feature("compactdefaultargs") GetReal;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: float
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: float
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetReal;
 		const BinObjMgt_Persistent & GetReal(Standard_Real &OutValue);
 
@@ -230,19 +305,28 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") GetRealArray;
 		%feature("autodoc", "Get c array of double, thelength is the number of elements; thearray must point to a space enough to place thelength elements.
 
-	:param theArray:
-	:type theArray: BinObjMgt_PReal
-	:param theLength:
-	:type theLength: int
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theArray: BinObjMgt_PReal
+theLength: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetRealArray;
 		const BinObjMgt_Persistent & GetRealArray(const BinObjMgt_PReal theArray, const Standard_Integer theLength);
 
 		/****************** GetShortReal ******************/
 		%feature("compactdefaultargs") GetShortReal;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: Standard_ShortReal
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: Standard_ShortReal
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetShortReal;
 		const BinObjMgt_Persistent & GetShortReal(Standard_ShortReal & theValue);
 
@@ -250,11 +334,14 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") GetShortRealArray;
 		%feature("autodoc", "Get c array of float, thelength is the number of elements; thearray must point to a space enough to place thelength elements.
 
-	:param theArray:
-	:type theArray: BinObjMgt_PShortReal
-	:param theLength:
-	:type theLength: int
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theArray: BinObjMgt_PShortReal
+theLength: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") GetShortRealArray;
 		const BinObjMgt_Persistent & GetShortRealArray(const BinObjMgt_PShortReal theArray, const Standard_Integer theLength);
 
@@ -262,7 +349,9 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") Id;
 		%feature("autodoc", "Returns the id of the object.
 
-	:rtype: int
+Returns
+-------
+int
 ") Id;
 		Standard_Integer Id();
 
@@ -270,7 +359,9 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initializes me to reuse again.
 
-	:rtype: None
+Returns
+-------
+None
 ") Init;
 		void Init();
 
@@ -278,7 +369,9 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") IsError;
 		%feature("autodoc", "Indicates an error after get methods or setposition.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsError;
 		Standard_Boolean IsError();
 
@@ -286,7 +379,9 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") IsOK;
 		%feature("autodoc", "Indicates a good state after get methods or setposition.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsOK;
 		Standard_Boolean IsOK();
 
@@ -294,7 +389,9 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Returns the length of data.
 
-	:rtype: int
+Returns
+-------
+int
 ") Length;
 		Standard_Integer Length();
 
@@ -302,7 +399,9 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") Position;
 		%feature("autodoc", "Tells the current position for get/put.
 
-	:rtype: int
+Returns
+-------
+int
 ") Position;
 		Standard_Integer Position();
 
@@ -310,25 +409,41 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") PutAsciiString;
 		%feature("autodoc", "Offset in output buffer is word-aligned.
 
-	:param theValue:
-	:type theValue: TCollection_AsciiString
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theValue: TCollection_AsciiString
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutAsciiString;
 		BinObjMgt_Persistent & PutAsciiString(const TCollection_AsciiString & theValue);
 
 		/****************** PutBoolean ******************/
 		%feature("compactdefaultargs") PutBoolean;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: bool
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: bool
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutBoolean;
 		BinObjMgt_Persistent & PutBoolean(const Standard_Boolean theValue);
 
 		/****************** PutByte ******************/
 		%feature("compactdefaultargs") PutByte;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: Standard_Byte
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: Standard_Byte
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutByte;
 		BinObjMgt_Persistent & PutByte(const Standard_Byte theValue);
 
@@ -336,11 +451,14 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") PutByteArray;
 		%feature("autodoc", "Put c array of unsigned chars, thelength is the number of elements.
 
-	:param theArray:
-	:type theArray: BinObjMgt_PByte
-	:param theLength:
-	:type theLength: int
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theArray: BinObjMgt_PByte
+theLength: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutByteArray;
 		BinObjMgt_Persistent & PutByteArray(const BinObjMgt_PByte theArray, const Standard_Integer theLength);
 
@@ -348,9 +466,13 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") PutCString;
 		%feature("autodoc", "Offset in output buffer is not aligned.
 
-	:param theValue:
-	:type theValue: char *
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theValue: char *
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutCString;
 		BinObjMgt_Persistent & PutCString(const char * theValue);
 
@@ -358,19 +480,28 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") PutCharArray;
 		%feature("autodoc", "Put c array of char, thelength is the number of elements.
 
-	:param theArray:
-	:type theArray: BinObjMgt_PChar
-	:param theLength:
-	:type theLength: int
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theArray: BinObjMgt_PChar
+theLength: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutCharArray;
 		BinObjMgt_Persistent & PutCharArray(const BinObjMgt_PChar theArray, const Standard_Integer theLength);
 
 		/****************** PutCharacter ******************/
 		%feature("compactdefaultargs") PutCharacter;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: Standard_Character
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: Standard_Character
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutCharacter;
 		BinObjMgt_Persistent & PutCharacter(const Standard_Character theValue);
 
@@ -378,19 +509,28 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") PutExtCharArray;
 		%feature("autodoc", "Put c array of extcharacter, thelength is the number of elements.
 
-	:param theArray:
-	:type theArray: BinObjMgt_PExtChar
-	:param theLength:
-	:type theLength: int
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theArray: BinObjMgt_PExtChar
+theLength: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutExtCharArray;
 		BinObjMgt_Persistent & PutExtCharArray(const BinObjMgt_PExtChar theArray, const Standard_Integer theLength);
 
 		/****************** PutExtCharacter ******************/
 		%feature("compactdefaultargs") PutExtCharacter;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: Standard_ExtCharacter
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: Standard_ExtCharacter
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutExtCharacter;
 		BinObjMgt_Persistent & PutExtCharacter(const Standard_ExtCharacter theValue);
 
@@ -398,17 +538,27 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") PutExtendedString;
 		%feature("autodoc", "Offset in output buffer is word-aligned.
 
-	:param theValue:
-	:type theValue: TCollection_ExtendedString
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theValue: TCollection_ExtendedString
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutExtendedString;
 		BinObjMgt_Persistent & PutExtendedString(const TCollection_ExtendedString & theValue);
 
 		/****************** PutGUID ******************/
 		%feature("compactdefaultargs") PutGUID;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: Standard_GUID
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: Standard_GUID
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutGUID;
 		BinObjMgt_Persistent & PutGUID(const Standard_GUID & theValue);
 
@@ -416,35 +566,56 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") PutIntArray;
 		%feature("autodoc", "Put c array of int, thelength is the number of elements.
 
-	:param theArray:
-	:type theArray: BinObjMgt_PInteger
-	:param theLength:
-	:type theLength: int
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theArray: BinObjMgt_PInteger
+theLength: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutIntArray;
 		BinObjMgt_Persistent & PutIntArray(const BinObjMgt_PInteger theArray, const Standard_Integer theLength);
 
 		/****************** PutInteger ******************/
 		%feature("compactdefaultargs") PutInteger;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: int
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutInteger;
 		BinObjMgt_Persistent & PutInteger(const Standard_Integer theValue);
 
 		/****************** PutLabel ******************/
 		%feature("compactdefaultargs") PutLabel;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: TDF_Label
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: TDF_Label
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutLabel;
 		BinObjMgt_Persistent & PutLabel(const TDF_Label & theValue);
 
 		/****************** PutReal ******************/
 		%feature("compactdefaultargs") PutReal;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: float
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: float
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutReal;
 		BinObjMgt_Persistent & PutReal(const Standard_Real theValue);
 
@@ -452,19 +623,28 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") PutRealArray;
 		%feature("autodoc", "Put c array of double, thelength is the number of elements.
 
-	:param theArray:
-	:type theArray: BinObjMgt_PReal
-	:param theLength:
-	:type theLength: int
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theArray: BinObjMgt_PReal
+theLength: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutRealArray;
 		BinObjMgt_Persistent & PutRealArray(const BinObjMgt_PReal theArray, const Standard_Integer theLength);
 
 		/****************** PutShortReal ******************/
 		%feature("compactdefaultargs") PutShortReal;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: Standard_ShortReal
-	:rtype: BinObjMgt_Persistent
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: Standard_ShortReal
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutShortReal;
 		BinObjMgt_Persistent & PutShortReal(const Standard_ShortReal theValue);
 
@@ -472,11 +652,14 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") PutShortRealArray;
 		%feature("autodoc", "Put c array of float, thelength is the number of elements.
 
-	:param theArray:
-	:type theArray: BinObjMgt_PShortReal
-	:param theLength:
-	:type theLength: int
-	:rtype: BinObjMgt_Persistent
+Parameters
+----------
+theArray: BinObjMgt_PShortReal
+theLength: int
+
+Returns
+-------
+BinObjMgt_Persistent
 ") PutShortRealArray;
 		BinObjMgt_Persistent & PutShortRealArray(const BinObjMgt_PShortReal theArray, const Standard_Integer theLength);
 
@@ -491,9 +674,13 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") SetId;
 		%feature("autodoc", "Sets the id of the object.
 
-	:param theId:
-	:type theId: int
-	:rtype: None
+Parameters
+----------
+theId: int
+
+Returns
+-------
+None
 ") SetId;
 		void SetId(const Standard_Integer theId);
 
@@ -501,9 +688,13 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") SetPosition;
 		%feature("autodoc", "Sets the current position for get/put. resets an error state depending on the validity of thepos. returns the new state (value of isok()).
 
-	:param thePos:
-	:type thePos: int
-	:rtype: bool
+Parameters
+----------
+thePos: int
+
+Returns
+-------
+bool
 ") SetPosition;
 		Standard_Boolean SetPosition(const Standard_Integer thePos);
 
@@ -511,9 +702,13 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") SetTypeId;
 		%feature("autodoc", "Sets the id of the type of the object.
 
-	:param theId:
-	:type theId: int
-	:rtype: None
+Parameters
+----------
+theId: int
+
+Returns
+-------
+None
 ") SetTypeId;
 		void SetTypeId(const Standard_Integer theId);
 
@@ -521,7 +716,9 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") Truncate;
 		%feature("autodoc", "Truncates the buffer by current position, i.e. updates mysize.
 
-	:rtype: None
+Returns
+-------
+None
 ") Truncate;
 		void Truncate();
 
@@ -529,7 +726,9 @@ class BinObjMgt_Persistent {
 		%feature("compactdefaultargs") TypeId;
 		%feature("autodoc", "Returns the id of the type of the object.
 
-	:rtype: int
+Returns
+-------
+int
 ") TypeId;
 		Standard_Integer TypeId();
 
@@ -557,9 +756,16 @@ class BinObjMgt_RRelocationTable : public TColStd_DataMapOfIntegerTransient {
 	public:
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:param doReleaseMemory: default value is Standard_True
-	:type doReleaseMemory: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+doReleaseMemory: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Clear;
 		void Clear(const Standard_Boolean doReleaseMemory = Standard_True);
 
@@ -567,7 +773,9 @@ class BinObjMgt_RRelocationTable : public TColStd_DataMapOfIntegerTransient {
 		%feature("compactdefaultargs") GetHeaderData;
 		%feature("autodoc", "Returns a handle to the header data of the file that is begin read.
 
-	:rtype: opencascade::handle<Storage_HeaderData>
+Returns
+-------
+opencascade::handle<Storage_HeaderData>
 ") GetHeaderData;
 		const opencascade::handle<Storage_HeaderData> & GetHeaderData();
 
@@ -575,9 +783,13 @@ class BinObjMgt_RRelocationTable : public TColStd_DataMapOfIntegerTransient {
 		%feature("compactdefaultargs") SetHeaderData;
 		%feature("autodoc", "Sets the storage header data. //! @param theheaderdata header data of the file that is begin read.
 
-	:param theHeaderData:
-	:type theHeaderData: Storage_HeaderData
-	:rtype: None
+Parameters
+----------
+theHeaderData: Storage_HeaderData
+
+Returns
+-------
+None
 ") SetHeaderData;
 		void SetHeaderData(const opencascade::handle<Storage_HeaderData> & theHeaderData);
 

@@ -74,29 +74,49 @@ class TopBas_TestInterference {
 	public:
 		/****************** Boundary ******************/
 		%feature("compactdefaultargs") Boundary;
-		%feature("autodoc", "	:param B:
-	:type B: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: int
+
+Returns
+-------
+None
 ") Boundary;
 		void Boundary(const Standard_Integer & B);
 
 		/****************** Boundary ******************/
 		%feature("compactdefaultargs") Boundary;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Boundary;
 		const Standard_Integer & Boundary();
 
 		/****************** BoundaryTransition ******************/
 		%feature("compactdefaultargs") BoundaryTransition;
-		%feature("autodoc", "	:param BTr:
-	:type BTr: TopAbs_Orientation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+BTr: TopAbs_Orientation
+
+Returns
+-------
+None
 ") BoundaryTransition;
 		void BoundaryTransition(const TopAbs_Orientation BTr);
 
 		/****************** BoundaryTransition ******************/
 		%feature("compactdefaultargs") BoundaryTransition;
-		%feature("autodoc", "	:rtype: TopAbs_Orientation
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopAbs_Orientation
 ") BoundaryTransition;
 		TopAbs_Orientation BoundaryTransition();
 
@@ -128,65 +148,101 @@ class TopBas_TestInterference {
         };
 		/****************** Intersection ******************/
 		%feature("compactdefaultargs") Intersection;
-		%feature("autodoc", "	:param I:
-	:type I: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: float
+
+Returns
+-------
+None
 ") Intersection;
 		void Intersection(const Standard_Real & I);
 
 		/****************** Intersection ******************/
 		%feature("compactdefaultargs") Intersection;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Intersection;
 		const Standard_Real & Intersection();
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:param O:
-	:type O: TopAbs_Orientation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+O: TopAbs_Orientation
+
+Returns
+-------
+None
 ") Orientation;
 		void Orientation(const TopAbs_Orientation O);
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:rtype: TopAbs_Orientation
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation();
 
 		/****************** TopBas_TestInterference ******************/
 		%feature("compactdefaultargs") TopBas_TestInterference;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") TopBas_TestInterference;
 		 TopBas_TestInterference();
 
 		/****************** TopBas_TestInterference ******************/
 		%feature("compactdefaultargs") TopBas_TestInterference;
-		%feature("autodoc", "	:param Inters:
-	:type Inters: float
-	:param Bound:
-	:type Bound: int
-	:param Orient:
-	:type Orient: TopAbs_Orientation
-	:param Trans:
-	:type Trans: TopAbs_Orientation
-	:param BTrans:
-	:type BTrans: TopAbs_Orientation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Inters: float
+Bound: int
+Orient: TopAbs_Orientation
+Trans: TopAbs_Orientation
+BTrans: TopAbs_Orientation
+
+Returns
+-------
+None
 ") TopBas_TestInterference;
 		 TopBas_TestInterference(const Standard_Real & Inters, const Standard_Integer & Bound, const TopAbs_Orientation Orient, const TopAbs_Orientation Trans, const TopAbs_Orientation BTrans);
 
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
-		%feature("autodoc", "	:param Tr:
-	:type Tr: TopAbs_Orientation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tr: TopAbs_Orientation
+
+Returns
+-------
+None
 ") Transition;
 		void Transition(const TopAbs_Orientation Tr);
 
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
-		%feature("autodoc", "	:rtype: TopAbs_Orientation
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopAbs_Orientation
 ") Transition;
 		TopAbs_Orientation Transition();
 

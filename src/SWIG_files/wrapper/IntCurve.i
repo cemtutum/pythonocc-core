@@ -78,27 +78,34 @@ class IntCurve_IConicTool {
 	public:
 		/****************** D1 ******************/
 		%feature("compactdefaultargs") D1;
-		%feature("autodoc", "	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:param T:
-	:type T: gp_Vec2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+U: float
+P: gp_Pnt2d
+T: gp_Vec2d
+
+Returns
+-------
+None
 ") D1;
 		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
 
 		/****************** D2 ******************/
 		%feature("compactdefaultargs") D2;
-		%feature("autodoc", "	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:param T:
-	:type T: gp_Vec2d
-	:param N:
-	:type N: gp_Vec2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+U: float
+P: gp_Pnt2d
+T: gp_Vec2d
+N: gp_Vec2d
+
+Returns
+-------
+None
 ") D2;
 		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
 
@@ -106,9 +113,13 @@ class IntCurve_IConicTool {
 		%feature("compactdefaultargs") Distance;
 		%feature("autodoc", "Computes the value of the signed distance between the point p and the implicit curve.
 
-	:param P:
-	:type P: gp_Pnt2d
-	:rtype: float
+Parameters
+----------
+P: gp_Pnt2d
+
+Returns
+-------
+float
 ") Distance;
 		Standard_Real Distance(const gp_Pnt2d & P);
 
@@ -116,9 +127,13 @@ class IntCurve_IConicTool {
 		%feature("compactdefaultargs") FindParameter;
 		%feature("autodoc", "Returns the parameter u of the point on the implicit curve corresponding to the point p. the correspondance between p and the point p(u) on the implicit curve must be coherent with the way of determination of the signed distance.
 
-	:param P:
-	:type P: gp_Pnt2d
-	:rtype: float
+Parameters
+----------
+P: gp_Pnt2d
+
+Returns
+-------
+float
 ") FindParameter;
 		Standard_Real FindParameter(const gp_Pnt2d & P);
 
@@ -126,71 +141,121 @@ class IntCurve_IConicTool {
 		%feature("compactdefaultargs") GradDistance;
 		%feature("autodoc", "Computes the gradient of the signed distance between a point and the implicit curve, at the point p.
 
-	:param P:
-	:type P: gp_Pnt2d
-	:rtype: gp_Vec2d
+Parameters
+----------
+P: gp_Pnt2d
+
+Returns
+-------
+gp_Vec2d
 ") GradDistance;
 		gp_Vec2d GradDistance(const gp_Pnt2d & P);
 
 		/****************** IntCurve_IConicTool ******************/
 		%feature("compactdefaultargs") IntCurve_IConicTool;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") IntCurve_IConicTool;
 		 IntCurve_IConicTool();
 
 		/****************** IntCurve_IConicTool ******************/
 		%feature("compactdefaultargs") IntCurve_IConicTool;
-		%feature("autodoc", "	:param IT:
-	:type IT: IntCurve_IConicTool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IT: IntCurve_IConicTool
+
+Returns
+-------
+None
 ") IntCurve_IConicTool;
 		 IntCurve_IConicTool(const IntCurve_IConicTool & IT);
 
 		/****************** IntCurve_IConicTool ******************/
 		%feature("compactdefaultargs") IntCurve_IConicTool;
-		%feature("autodoc", "	:param E:
-	:type E: gp_Elips2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: gp_Elips2d
+
+Returns
+-------
+None
 ") IntCurve_IConicTool;
 		 IntCurve_IConicTool(const gp_Elips2d & E);
 
 		/****************** IntCurve_IConicTool ******************/
 		%feature("compactdefaultargs") IntCurve_IConicTool;
-		%feature("autodoc", "	:param L:
-	:type L: gp_Lin2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+L: gp_Lin2d
+
+Returns
+-------
+None
 ") IntCurve_IConicTool;
 		 IntCurve_IConicTool(const gp_Lin2d & L);
 
 		/****************** IntCurve_IConicTool ******************/
 		%feature("compactdefaultargs") IntCurve_IConicTool;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Circ2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Circ2d
+
+Returns
+-------
+None
 ") IntCurve_IConicTool;
 		 IntCurve_IConicTool(const gp_Circ2d & C);
 
 		/****************** IntCurve_IConicTool ******************/
 		%feature("compactdefaultargs") IntCurve_IConicTool;
-		%feature("autodoc", "	:param P:
-	:type P: gp_Parab2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Parab2d
+
+Returns
+-------
+None
 ") IntCurve_IConicTool;
 		 IntCurve_IConicTool(const gp_Parab2d & P);
 
 		/****************** IntCurve_IConicTool ******************/
 		%feature("compactdefaultargs") IntCurve_IConicTool;
-		%feature("autodoc", "	:param H:
-	:type H: gp_Hypr2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+H: gp_Hypr2d
+
+Returns
+-------
+None
 ") IntCurve_IConicTool;
 		 IntCurve_IConicTool(const gp_Hypr2d & H);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "	:param X:
-	:type X: float
-	:rtype: gp_Pnt2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+X: float
+
+Returns
+-------
+gp_Pnt2d
 ") Value;
 		gp_Pnt2d Value(const Standard_Real X);
 
@@ -212,7 +277,9 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic();
 
@@ -220,19 +287,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between 2 lines from gp.
 
-	:param L1:
-	:type L1: gp_Lin2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param L2:
-	:type L2: gp_Lin2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L1: gp_Lin2d
+D1: IntRes2d_Domain
+L2: gp_Lin2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Lin2d & L1, const IntRes2d_Domain & D1, const gp_Lin2d & L2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -240,19 +306,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between a line and a circle. the exception constructionerror is raised if the method isclosed of the domain of the circle returns false.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param DL:
-	:type DL: IntRes2d_Domain
-	:param C:
-	:type C: gp_Circ2d
-	:param DC:
-	:type DC: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+DL: IntRes2d_Domain
+C: gp_Circ2d
+DC: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Lin2d & L, const IntRes2d_Domain & DL, const gp_Circ2d & C, const IntRes2d_Domain & DC, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -260,19 +325,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between a line and an ellipse. the exception constructionerror is raised if the method isclosed of the domain of the ellipse returns false.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param DL:
-	:type DL: IntRes2d_Domain
-	:param E:
-	:type E: gp_Elips2d
-	:param DE:
-	:type DE: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+DL: IntRes2d_Domain
+E: gp_Elips2d
+DE: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Lin2d & L, const IntRes2d_Domain & DL, const gp_Elips2d & E, const IntRes2d_Domain & DE, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -280,19 +344,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between a line and a parabola from gp.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param DL:
-	:type DL: IntRes2d_Domain
-	:param P:
-	:type P: gp_Parab2d
-	:param DP:
-	:type DP: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+DL: IntRes2d_Domain
+P: gp_Parab2d
+DP: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Lin2d & L, const IntRes2d_Domain & DL, const gp_Parab2d & P, const IntRes2d_Domain & DP, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -300,19 +363,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between a line and an hyperbola.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param DL:
-	:type DL: IntRes2d_Domain
-	:param H:
-	:type H: gp_Hypr2d
-	:param DH:
-	:type DH: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+DL: IntRes2d_Domain
+H: gp_Hypr2d
+DH: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Lin2d & L, const IntRes2d_Domain & DL, const gp_Hypr2d & H, const IntRes2d_Domain & DH, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -320,19 +382,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between 2 circles from gp. the exception constructionerror is raised if the method isclosed of one of the domain returns false.
 
-	:param C1:
-	:type C1: gp_Circ2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param C2:
-	:type C2: gp_Circ2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C1: gp_Circ2d
+D1: IntRes2d_Domain
+C2: gp_Circ2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Circ2d & C1, const IntRes2d_Domain & D1, const gp_Circ2d & C2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -340,19 +401,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between a circle and an ellipse. the exception constructionerror is raised if the method isclosed of one the domain returns false.
 
-	:param C:
-	:type C: gp_Circ2d
-	:param DC:
-	:type DC: IntRes2d_Domain
-	:param E:
-	:type E: gp_Elips2d
-	:param DE:
-	:type DE: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Circ2d
+DC: IntRes2d_Domain
+E: gp_Elips2d
+DE: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Circ2d & C, const IntRes2d_Domain & DC, const gp_Elips2d & E, const IntRes2d_Domain & DE, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -360,19 +420,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between a circle and a parabola. the exception constructionerror is raised if the method isclosed of the domain of the circle returns false.
 
-	:param C:
-	:type C: gp_Circ2d
-	:param DC:
-	:type DC: IntRes2d_Domain
-	:param P:
-	:type P: gp_Parab2d
-	:param DP:
-	:type DP: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Circ2d
+DC: IntRes2d_Domain
+P: gp_Parab2d
+DP: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Circ2d & C, const IntRes2d_Domain & DC, const gp_Parab2d & P, const IntRes2d_Domain & DP, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -380,19 +439,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between a circle and an hyperbola. the exception constructionerror is raised if the method isclosed of the domain of the circle returns false.
 
-	:param C:
-	:type C: gp_Circ2d
-	:param DC:
-	:type DC: IntRes2d_Domain
-	:param H:
-	:type H: gp_Hypr2d
-	:param DH:
-	:type DH: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Circ2d
+DC: IntRes2d_Domain
+H: gp_Hypr2d
+DH: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Circ2d & C, const IntRes2d_Domain & DC, const gp_Hypr2d & H, const IntRes2d_Domain & DH, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -400,19 +458,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between 2 ellipses. the exception constructionerror is raised if the method isclosed of one of the domain returns false.
 
-	:param E1:
-	:type E1: gp_Elips2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param E2:
-	:type E2: gp_Elips2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+E1: gp_Elips2d
+D1: IntRes2d_Domain
+E2: gp_Elips2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Elips2d & E1, const IntRes2d_Domain & D1, const gp_Elips2d & E2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -420,19 +477,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between an ellipse and a parabola. the exception constructionerror is raised if the method isclosed of the domain of the ellipse returns false.
 
-	:param E:
-	:type E: gp_Elips2d
-	:param DE:
-	:type DE: IntRes2d_Domain
-	:param P:
-	:type P: gp_Parab2d
-	:param DP:
-	:type DP: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+E: gp_Elips2d
+DE: IntRes2d_Domain
+P: gp_Parab2d
+DP: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Elips2d & E, const IntRes2d_Domain & DE, const gp_Parab2d & P, const IntRes2d_Domain & DP, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -440,19 +496,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between an ellipse and an hyperbola. the exception constructionerror is raised if the method isclosed of the domain of the ellipse returns false.
 
-	:param E:
-	:type E: gp_Elips2d
-	:param DE:
-	:type DE: IntRes2d_Domain
-	:param H:
-	:type H: gp_Hypr2d
-	:param DH:
-	:type DH: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+E: gp_Elips2d
+DE: IntRes2d_Domain
+H: gp_Hypr2d
+DH: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Elips2d & E, const IntRes2d_Domain & DE, const gp_Hypr2d & H, const IntRes2d_Domain & DH, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -460,19 +515,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between 2 parabolas.
 
-	:param P1:
-	:type P1: gp_Parab2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param P2:
-	:type P2: gp_Parab2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+P1: gp_Parab2d
+D1: IntRes2d_Domain
+P2: gp_Parab2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Parab2d & P1, const IntRes2d_Domain & D1, const gp_Parab2d & P2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -480,19 +534,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between a parabola and an hyperbola.
 
-	:param P:
-	:type P: gp_Parab2d
-	:param DP:
-	:type DP: IntRes2d_Domain
-	:param H:
-	:type H: gp_Hypr2d
-	:param DH:
-	:type DH: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+P: gp_Parab2d
+DP: IntRes2d_Domain
+H: gp_Hypr2d
+DH: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Parab2d & P, const IntRes2d_Domain & DP, const gp_Hypr2d & H, const IntRes2d_Domain & DH, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -500,19 +553,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntConicConic;
 		%feature("autodoc", "Intersection between 2 hyperbolas.
 
-	:param H1:
-	:type H1: gp_Hypr2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param H2:
-	:type H2: gp_Hypr2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+H1: gp_Hypr2d
+D1: IntRes2d_Domain
+H2: gp_Hypr2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntConicConic;
 		 IntCurve_IntConicConic(const gp_Hypr2d & H1, const IntRes2d_Domain & D1, const gp_Hypr2d & H2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -520,19 +572,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between 2 lines from gp.
 
-	:param L1:
-	:type L1: gp_Lin2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param L2:
-	:type L2: gp_Lin2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L1: gp_Lin2d
+D1: IntRes2d_Domain
+L2: gp_Lin2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin2d & L1, const IntRes2d_Domain & D1, const gp_Lin2d & L2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -540,19 +591,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a line and a circle. the exception constructionerror is raised if the method isclosed of the domain of the circle returns false.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param DL:
-	:type DL: IntRes2d_Domain
-	:param C:
-	:type C: gp_Circ2d
-	:param DC:
-	:type DC: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+DL: IntRes2d_Domain
+C: gp_Circ2d
+DC: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin2d & L, const IntRes2d_Domain & DL, const gp_Circ2d & C, const IntRes2d_Domain & DC, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -560,19 +610,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a line and an ellipse. the exception constructionerror is raised if the method isclosed of the domain of the ellipse returns false.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param DL:
-	:type DL: IntRes2d_Domain
-	:param E:
-	:type E: gp_Elips2d
-	:param DE:
-	:type DE: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+DL: IntRes2d_Domain
+E: gp_Elips2d
+DE: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin2d & L, const IntRes2d_Domain & DL, const gp_Elips2d & E, const IntRes2d_Domain & DE, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -580,19 +629,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a line and a parabola from gp.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param DL:
-	:type DL: IntRes2d_Domain
-	:param P:
-	:type P: gp_Parab2d
-	:param DP:
-	:type DP: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+DL: IntRes2d_Domain
+P: gp_Parab2d
+DP: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin2d & L, const IntRes2d_Domain & DL, const gp_Parab2d & P, const IntRes2d_Domain & DP, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -600,19 +648,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a line and an hyperbola.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param DL:
-	:type DL: IntRes2d_Domain
-	:param H:
-	:type H: gp_Hypr2d
-	:param DH:
-	:type DH: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+DL: IntRes2d_Domain
+H: gp_Hypr2d
+DH: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin2d & L, const IntRes2d_Domain & DL, const gp_Hypr2d & H, const IntRes2d_Domain & DH, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -620,19 +667,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between 2 circles from gp. the exception constructionerror is raised if the method isclosed of the domain of one of the circle returns false.
 
-	:param C1:
-	:type C1: gp_Circ2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param C2:
-	:type C2: gp_Circ2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C1: gp_Circ2d
+D1: IntRes2d_Domain
+C2: gp_Circ2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Circ2d & C1, const IntRes2d_Domain & D1, const gp_Circ2d & C2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -640,19 +686,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a circle and an ellipse. the exception constructionerror is raised if the method isclosed of one the domain returns false.
 
-	:param C:
-	:type C: gp_Circ2d
-	:param DC:
-	:type DC: IntRes2d_Domain
-	:param E:
-	:type E: gp_Elips2d
-	:param DE:
-	:type DE: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Circ2d
+DC: IntRes2d_Domain
+E: gp_Elips2d
+DE: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Circ2d & C, const IntRes2d_Domain & DC, const gp_Elips2d & E, const IntRes2d_Domain & DE, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -660,19 +705,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a circle and a parabola. the exception constructionerror is raised if the method isclosed of the domain of the circle returns false.
 
-	:param C:
-	:type C: gp_Circ2d
-	:param DC:
-	:type DC: IntRes2d_Domain
-	:param P:
-	:type P: gp_Parab2d
-	:param DP:
-	:type DP: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Circ2d
+DC: IntRes2d_Domain
+P: gp_Parab2d
+DP: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Circ2d & C, const IntRes2d_Domain & DC, const gp_Parab2d & P, const IntRes2d_Domain & DP, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -680,19 +724,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a circle and an hyperbola. the exception constructionerror is raised if the method isclosed of the domain of the circle returns false.
 
-	:param C:
-	:type C: gp_Circ2d
-	:param DC:
-	:type DC: IntRes2d_Domain
-	:param H:
-	:type H: gp_Hypr2d
-	:param DH:
-	:type DH: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Circ2d
+DC: IntRes2d_Domain
+H: gp_Hypr2d
+DH: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Circ2d & C, const IntRes2d_Domain & DC, const gp_Hypr2d & H, const IntRes2d_Domain & DH, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -700,19 +743,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between 2 ellipses. the exception constructionerror is raised if the method isclosed of one of the domain returns false.
 
-	:param E1:
-	:type E1: gp_Elips2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param E2:
-	:type E2: gp_Elips2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+E1: gp_Elips2d
+D1: IntRes2d_Domain
+E2: gp_Elips2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Elips2d & E1, const IntRes2d_Domain & D1, const gp_Elips2d & E2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -720,19 +762,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between an ellipse and a parabola. the exception constructionerror is raised if the method isclosed of the domain of the ellipse returns false.
 
-	:param E:
-	:type E: gp_Elips2d
-	:param DE:
-	:type DE: IntRes2d_Domain
-	:param P:
-	:type P: gp_Parab2d
-	:param DP:
-	:type DP: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+E: gp_Elips2d
+DE: IntRes2d_Domain
+P: gp_Parab2d
+DP: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Elips2d & E, const IntRes2d_Domain & DE, const gp_Parab2d & P, const IntRes2d_Domain & DP, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -740,19 +781,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between an ellipse and an hyperbola. the exception constructionerror is raised if the method isclosed of the domain of the ellipse returns false.
 
-	:param E:
-	:type E: gp_Elips2d
-	:param DE:
-	:type DE: IntRes2d_Domain
-	:param H:
-	:type H: gp_Hypr2d
-	:param DH:
-	:type DH: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+E: gp_Elips2d
+DE: IntRes2d_Domain
+H: gp_Hypr2d
+DH: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Elips2d & E, const IntRes2d_Domain & DE, const gp_Hypr2d & H, const IntRes2d_Domain & DH, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -760,19 +800,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between 2 parabolas.
 
-	:param P1:
-	:type P1: gp_Parab2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param P2:
-	:type P2: gp_Parab2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+P1: gp_Parab2d
+D1: IntRes2d_Domain
+P2: gp_Parab2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Parab2d & P1, const IntRes2d_Domain & D1, const gp_Parab2d & P2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -780,19 +819,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a parabola and an hyperbola.
 
-	:param P:
-	:type P: gp_Parab2d
-	:param DP:
-	:type DP: IntRes2d_Domain
-	:param H:
-	:type H: gp_Hypr2d
-	:param DH:
-	:type DH: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+P: gp_Parab2d
+DP: IntRes2d_Domain
+H: gp_Hypr2d
+DH: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Parab2d & P, const IntRes2d_Domain & DP, const gp_Hypr2d & H, const IntRes2d_Domain & DH, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -800,19 +838,18 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between 2 hyperbolas.
 
-	:param H1:
-	:type H1: gp_Hypr2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param H2:
-	:type H2: gp_Hypr2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+H1: gp_Hypr2d
+D1: IntRes2d_Domain
+H2: gp_Hypr2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Hypr2d & H1, const IntRes2d_Domain & D1, const gp_Hypr2d & H2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -832,63 +869,62 @@ class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 	public:
 		/****************** And_Domaine_Objet1_Intersections ******************/
 		%feature("compactdefaultargs") And_Domaine_Objet1_Intersections;
-		%feature("autodoc", "	:param TheImpTool:
-	:type TheImpTool: IntCurve_IConicTool
-	:param TheParCurve:
-	:type TheParCurve: IntCurve_PConic
-	:param TheImpCurveDomain:
-	:type TheImpCurveDomain: IntRes2d_Domain
-	:param TheParCurveDomain:
-	:type TheParCurveDomain: IntRes2d_Domain
-	:param NbResultats:
-	:type NbResultats: int
-	:param Inter2_And_Domain2:
-	:type Inter2_And_Domain2: TColStd_Array1OfReal
-	:param Inter1:
-	:type Inter1: TColStd_Array1OfReal
-	:param Resultat1:
-	:type Resultat1: TColStd_Array1OfReal
-	:param Resultat2:
-	:type Resultat2: TColStd_Array1OfReal
-	:param EpsNul:
-	:type EpsNul: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TheImpTool: IntCurve_IConicTool
+TheParCurve: IntCurve_PConic
+TheImpCurveDomain: IntRes2d_Domain
+TheParCurveDomain: IntRes2d_Domain
+NbResultats: int
+Inter2_And_Domain2: TColStd_Array1OfReal
+Inter1: TColStd_Array1OfReal
+Resultat1: TColStd_Array1OfReal
+Resultat2: TColStd_Array1OfReal
+EpsNul: float
+
+Returns
+-------
+None
 ") And_Domaine_Objet1_Intersections;
 		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool & TheImpTool, const IntCurve_PConic & TheParCurve, const IntRes2d_Domain & TheImpCurveDomain, const IntRes2d_Domain & TheParCurveDomain, Standard_Integer &OutValue, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul);
 
 		/****************** FindU ******************/
 		%feature("compactdefaultargs") FindU;
-		%feature("autodoc", "	:param parameter:
-	:type parameter: float
-	:param point:
-	:type point: gp_Pnt2d
-	:param TheParCurev:
-	:type TheParCurev: IntCurve_PConic
-	:param TheImpTool:
-	:type TheImpTool: IntCurve_IConicTool
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+parameter: float
+point: gp_Pnt2d
+TheParCurev: IntCurve_PConic
+TheImpTool: IntCurve_IConicTool
+
+Returns
+-------
+float
 ") FindU;
 		Standard_Real FindU(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_PConic & TheParCurev, const IntCurve_IConicTool & TheImpTool);
 
 		/****************** FindV ******************/
 		%feature("compactdefaultargs") FindV;
-		%feature("autodoc", "	:param parameter:
-	:type parameter: float
-	:param point:
-	:type point: gp_Pnt2d
-	:param TheImpTool:
-	:type TheImpTool: IntCurve_IConicTool
-	:param ParCurve:
-	:type ParCurve: IntCurve_PConic
-	:param TheParCurveDomain:
-	:type TheParCurveDomain: IntRes2d_Domain
-	:param V0:
-	:type V0: float
-	:param V1:
-	:type V1: float
-	:param Tolerance:
-	:type Tolerance: float
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+parameter: float
+point: gp_Pnt2d
+TheImpTool: IntCurve_IConicTool
+ParCurve: IntCurve_PConic
+TheParCurveDomain: IntRes2d_Domain
+V0: float
+V1: float
+Tolerance: float
+
+Returns
+-------
+float
 ") FindV;
 		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool & TheImpTool, const IntCurve_PConic & ParCurve, const IntRes2d_Domain & TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance);
 
@@ -896,7 +932,9 @@ class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntImpConicParConic;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") IntCurve_IntImpConicParConic;
 		 IntCurve_IntImpConicParConic();
 
@@ -904,19 +942,18 @@ class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") IntCurve_IntImpConicParConic;
 		%feature("autodoc", "Intersection between an implicit curve and a parametrised curve. the exception constructionerror is raised if the domain of the parametrised curve does not verify hasfirstpoint and haslastpoint return true.
 
-	:param ITool:
-	:type ITool: IntCurve_IConicTool
-	:param Dom1:
-	:type Dom1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: IntCurve_PConic
-	:param Dom2:
-	:type Dom2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+ITool: IntCurve_IConicTool
+Dom1: IntRes2d_Domain
+PCurve: IntCurve_PConic
+Dom2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") IntCurve_IntImpConicParConic;
 		 IntCurve_IntImpConicParConic(const IntCurve_IConicTool & ITool, const IntRes2d_Domain & Dom1, const IntCurve_PConic & PCurve, const IntRes2d_Domain & Dom2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -924,19 +961,18 @@ class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between an implicit curve and a parametrised curve. the exception constructionerror is raised if the domain of the parametrised curve does not verify hasfirstpoint and haslastpoint return true.
 
-	:param ITool:
-	:type ITool: IntCurve_IConicTool
-	:param Dom1:
-	:type Dom1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: IntCurve_PConic
-	:param Dom2:
-	:type Dom2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+ITool: IntCurve_IConicTool
+Dom1: IntRes2d_Domain
+PCurve: IntCurve_PConic
+Dom2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const IntCurve_IConicTool & ITool, const IntRes2d_Domain & Dom1, const IntCurve_PConic & PCurve, const IntRes2d_Domain & Dom2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -958,11 +994,14 @@ class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDeriv
 		%feature("compactdefaultargs") Derivative;
 		%feature("autodoc", "Computes the derivative of the previous function at parameter param.
 
-	:param Param:
-	:type Param: float
-	:param D:
-	:type D: float
-	:rtype: bool
+Parameters
+----------
+Param: float
+D: float
+
+Returns
+-------
+bool
 ") Derivative;
 		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
 
@@ -970,11 +1009,14 @@ class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDeriv
 		%feature("compactdefaultargs") IntCurve_MyImpParToolOfIntImpConicParConic;
 		%feature("autodoc", "Constructor of the class.
 
-	:param IT:
-	:type IT: IntCurve_IConicTool
-	:param PC:
-	:type PC: IntCurve_PConic
-	:rtype: None
+Parameters
+----------
+IT: IntCurve_IConicTool
+PC: IntCurve_PConic
+
+Returns
+-------
+None
 ") IntCurve_MyImpParToolOfIntImpConicParConic;
 		 IntCurve_MyImpParToolOfIntImpConicParConic(const IntCurve_IConicTool & IT, const IntCurve_PConic & PC);
 
@@ -982,11 +1024,14 @@ class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDeriv
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the value of the signed distance between the implicit curve and the point at parameter param on the parametrised curve.
 
-	:param Param:
-	:type Param: float
-	:param F:
-	:type F: float
-	:rtype: bool
+Parameters
+----------
+Param: float
+F: float
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
 
@@ -994,13 +1039,15 @@ class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDeriv
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Computes the value and the derivative of the function.
 
-	:param Param:
-	:type Param: float
-	:param F:
-	:type F: float
-	:param D:
-	:type D: float
-	:rtype: bool
+Parameters
+----------
+Param: float
+F: float
+D: float
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1020,79 +1067,135 @@ class IntCurve_PConic {
 	public:
 		/****************** Accuracy ******************/
 		%feature("compactdefaultargs") Accuracy;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Accuracy;
 		Standard_Integer Accuracy();
 
 		/****************** Axis2 ******************/
 		%feature("compactdefaultargs") Axis2;
-		%feature("autodoc", "	:rtype: gp_Ax22d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Ax22d
 ") Axis2;
 		const gp_Ax22d Axis2();
 
 		/****************** EpsX ******************/
 		%feature("compactdefaultargs") EpsX;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") EpsX;
 		Standard_Real EpsX();
 
 		/****************** IntCurve_PConic ******************/
 		%feature("compactdefaultargs") IntCurve_PConic;
-		%feature("autodoc", "	:param PC:
-	:type PC: IntCurve_PConic
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+PC: IntCurve_PConic
+
+Returns
+-------
+None
 ") IntCurve_PConic;
 		 IntCurve_PConic(const IntCurve_PConic & PC);
 
 		/****************** IntCurve_PConic ******************/
 		%feature("compactdefaultargs") IntCurve_PConic;
-		%feature("autodoc", "	:param E:
-	:type E: gp_Elips2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: gp_Elips2d
+
+Returns
+-------
+None
 ") IntCurve_PConic;
 		 IntCurve_PConic(const gp_Elips2d & E);
 
 		/****************** IntCurve_PConic ******************/
 		%feature("compactdefaultargs") IntCurve_PConic;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Circ2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Circ2d
+
+Returns
+-------
+None
 ") IntCurve_PConic;
 		 IntCurve_PConic(const gp_Circ2d & C);
 
 		/****************** IntCurve_PConic ******************/
 		%feature("compactdefaultargs") IntCurve_PConic;
-		%feature("autodoc", "	:param P:
-	:type P: gp_Parab2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Parab2d
+
+Returns
+-------
+None
 ") IntCurve_PConic;
 		 IntCurve_PConic(const gp_Parab2d & P);
 
 		/****************** IntCurve_PConic ******************/
 		%feature("compactdefaultargs") IntCurve_PConic;
-		%feature("autodoc", "	:param H:
-	:type H: gp_Hypr2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+H: gp_Hypr2d
+
+Returns
+-------
+None
 ") IntCurve_PConic;
 		 IntCurve_PConic(const gp_Hypr2d & H);
 
 		/****************** IntCurve_PConic ******************/
 		%feature("compactdefaultargs") IntCurve_PConic;
-		%feature("autodoc", "	:param L:
-	:type L: gp_Lin2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+L: gp_Lin2d
+
+Returns
+-------
+None
 ") IntCurve_PConic;
 		 IntCurve_PConic(const gp_Lin2d & L);
 
 		/****************** Param1 ******************/
 		%feature("compactdefaultargs") Param1;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Param1;
 		Standard_Real Param1();
 
 		/****************** Param2 ******************/
 		%feature("compactdefaultargs") Param2;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Param2;
 		Standard_Real Param2();
 
@@ -1100,9 +1203,13 @@ class IntCurve_PConic {
 		%feature("compactdefaultargs") SetAccuracy;
 		%feature("autodoc", "Accuracy is the number of samples used to approximate the parametric curve on its domain.
 
-	:param Nb:
-	:type Nb: int
-	:rtype: None
+Parameters
+----------
+Nb: int
+
+Returns
+-------
+None
 ") SetAccuracy;
 		void SetAccuracy(const Standard_Integer Nb);
 
@@ -1110,9 +1217,13 @@ class IntCurve_PConic {
 		%feature("compactdefaultargs") SetEpsX;
 		%feature("autodoc", "Epsx is a internal tolerance used in math algorithms, usually about 1e-10 (see functionallroots for more details).
 
-	:param EpsDist:
-	:type EpsDist: float
-	:rtype: None
+Parameters
+----------
+EpsDist: float
+
+Returns
+-------
+None
 ") SetEpsX;
 		void SetEpsX(const Standard_Real EpsDist);
 
@@ -1120,7 +1231,9 @@ class IntCurve_PConic {
 		%feature("compactdefaultargs") TypeCurve;
 		%feature("autodoc", "The conics are manipulated as objects which only depend on three parameters : axis and two real from standards. type curve is used to select the correct conic.
 
-	:rtype: GeomAbs_CurveType
+Returns
+-------
+GeomAbs_CurveType
 ") TypeCurve;
 		GeomAbs_CurveType TypeCurve();
 
@@ -1140,69 +1253,95 @@ class IntCurve_PConicTool {
 	public:
 		/****************** D1 ******************/
 		%feature("compactdefaultargs") D1;
-		%feature("autodoc", "	:param C:
-	:type C: IntCurve_PConic
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:param T:
-	:type T: gp_Vec2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: IntCurve_PConic
+U: float
+P: gp_Pnt2d
+T: gp_Vec2d
+
+Returns
+-------
+None
 ") D1;
 		static void D1(const IntCurve_PConic & C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
 
 		/****************** D2 ******************/
 		%feature("compactdefaultargs") D2;
-		%feature("autodoc", "	:param C:
-	:type C: IntCurve_PConic
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:param T:
-	:type T: gp_Vec2d
-	:param N:
-	:type N: gp_Vec2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: IntCurve_PConic
+U: float
+P: gp_Pnt2d
+T: gp_Vec2d
+N: gp_Vec2d
+
+Returns
+-------
+None
 ") D2;
 		static void D2(const IntCurve_PConic & C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
 
 		/****************** EpsX ******************/
 		%feature("compactdefaultargs") EpsX;
-		%feature("autodoc", "	:param C:
-	:type C: IntCurve_PConic
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: IntCurve_PConic
+
+Returns
+-------
+float
 ") EpsX;
 		static Standard_Real EpsX(const IntCurve_PConic & C);
 
 		/****************** NbSamples ******************/
 		%feature("compactdefaultargs") NbSamples;
-		%feature("autodoc", "	:param C:
-	:type C: IntCurve_PConic
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: IntCurve_PConic
+
+Returns
+-------
+int
 ") NbSamples;
 		static Standard_Integer NbSamples(const IntCurve_PConic & C);
 
 		/****************** NbSamples ******************/
 		%feature("compactdefaultargs") NbSamples;
-		%feature("autodoc", "	:param C:
-	:type C: IntCurve_PConic
-	:param U0:
-	:type U0: float
-	:param U1:
-	:type U1: float
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: IntCurve_PConic
+U0: float
+U1: float
+
+Returns
+-------
+int
 ") NbSamples;
 		static Standard_Integer NbSamples(const IntCurve_PConic & C, const Standard_Real U0, const Standard_Real U1);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "	:param C:
-	:type C: IntCurve_PConic
-	:param X:
-	:type X: float
-	:rtype: gp_Pnt2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: IntCurve_PConic
+X: float
+
+Returns
+-------
+gp_Pnt2d
 ") Value;
 		static gp_Pnt2d Value(const IntCurve_PConic & C, const Standard_Real X);
 
@@ -1224,13 +1363,15 @@ class IntCurve_ProjectOnPConicTool {
 		%feature("compactdefaultargs") FindParameter;
 		%feature("autodoc", "Returns the parameter v of the point on the parametric curve corresponding to the point pnt. the correspondance between pnt and the point p(v) on the parametric curve must be coherent with the way of determination of the signed distance between a point and the implicit curve. tol is the tolerance on the distance between a point and the parametrised curve. in that case, no bounds are given. the research of the rigth parameter has to be made on the natural parametric domain of the curve.
 
-	:param C:
-	:type C: IntCurve_PConic
-	:param Pnt:
-	:type Pnt: gp_Pnt2d
-	:param Tol:
-	:type Tol: float
-	:rtype: float
+Parameters
+----------
+C: IntCurve_PConic
+Pnt: gp_Pnt2d
+Tol: float
+
+Returns
+-------
+float
 ") FindParameter;
 		static Standard_Real FindParameter(const IntCurve_PConic & C, const gp_Pnt2d & Pnt, const Standard_Real Tol);
 
@@ -1238,17 +1379,17 @@ class IntCurve_ProjectOnPConicTool {
 		%feature("compactdefaultargs") FindParameter;
 		%feature("autodoc", "Returns the parameter v of the point on the parametric curve corresponding to the point pnt. the correspondance between pnt and the point p(v) on the parametric curve must be coherent with the way of determination of the signed distance between a point and the implicit curve. tol is the tolerance on the distance between a point and the parametrised curve. lowparameter and highparameter give the boundaries of the interval in wich the parameter certainly lies. these parameters are given to implement a more efficient algoritm. so, it is not necessary to check that the returned value verifies lowparameter <= value <= highparameter.
 
-	:param C:
-	:type C: IntCurve_PConic
-	:param Pnt:
-	:type Pnt: gp_Pnt2d
-	:param LowParameter:
-	:type LowParameter: float
-	:param HighParameter:
-	:type HighParameter: float
-	:param Tol:
-	:type Tol: float
-	:rtype: float
+Parameters
+----------
+C: IntCurve_PConic
+Pnt: gp_Pnt2d
+LowParameter: float
+HighParameter: float
+Tol: float
+
+Returns
+-------
+float
 ") FindParameter;
 		static Standard_Real FindParameter(const IntCurve_PConic & C, const gp_Pnt2d & Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
 

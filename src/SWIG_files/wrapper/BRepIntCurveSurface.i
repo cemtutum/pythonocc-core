@@ -87,7 +87,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") BRepIntCurveSurface_Inter;
 		%feature("autodoc", "Empty constructor;.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepIntCurveSurface_Inter;
 		 BRepIntCurveSurface_Inter();
 
@@ -95,7 +97,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") Face;
 		%feature("autodoc", "Returns the current face.
 
-	:rtype: TopoDS_Face
+Returns
+-------
+TopoDS_Face
 ") Face;
 		const TopoDS_Face Face();
 
@@ -103,13 +107,15 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Load the shape, the curve and initialize the tolerance used for the classification.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theCurve:
-	:type theCurve: GeomAdaptor_Curve
-	:param theTol:
-	:type theTol: float
-	:rtype: None
+Parameters
+----------
+theShape: TopoDS_Shape
+theCurve: GeomAdaptor_Curve
+theTol: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Shape & theShape, const GeomAdaptor_Curve & theCurve, const Standard_Real theTol);
 
@@ -117,13 +123,15 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Load the shape, the curve and initialize the tolerance used for the classification.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theLine:
-	:type theLine: gp_Lin
-	:param theTol:
-	:type theTol: float
-	:rtype: None
+Parameters
+----------
+theShape: TopoDS_Shape
+theLine: gp_Lin
+theTol: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Shape & theShape, const gp_Lin & theLine, const Standard_Real theTol);
 
@@ -131,9 +139,13 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Method to find intersections of specified curve with loaded shape.
 
-	:param theCurve:
-	:type theCurve: GeomAdaptor_Curve
-	:rtype: None
+Parameters
+----------
+theCurve: GeomAdaptor_Curve
+
+Returns
+-------
+None
 ") Init;
 		void Init(const GeomAdaptor_Curve & theCurve);
 
@@ -141,11 +153,14 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") Load;
 		%feature("autodoc", "Load the shape, and initialize the tolerance used for the classification.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theTol:
-	:type theTol: float
-	:rtype: None
+Parameters
+----------
+theShape: TopoDS_Shape
+theTol: float
+
+Returns
+-------
+None
 ") Load;
 		void Load(const TopoDS_Shape & theShape, const Standard_Real theTol);
 
@@ -153,7 +168,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Returns true if there is a current face.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
@@ -161,7 +178,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Sets the next intersection point to check.
 
-	:rtype: None
+Returns
+-------
+None
 ") Next;
 		void Next();
 
@@ -169,7 +188,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") Pnt;
 		%feature("autodoc", "Returns the current geometric point.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") Pnt;
 		const gp_Pnt Pnt();
 
@@ -177,7 +198,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") Point;
 		%feature("autodoc", "Returns the current intersection point.
 
-	:rtype: IntCurveSurface_IntersectionPoint
+Returns
+-------
+IntCurveSurface_IntersectionPoint
 ") Point;
 		IntCurveSurface_IntersectionPoint Point();
 
@@ -185,7 +208,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") State;
 		%feature("autodoc", "Returns the current state (in or on).
 
-	:rtype: TopAbs_State
+Returns
+-------
+TopAbs_State
 ") State;
 		TopAbs_State State();
 
@@ -193,7 +218,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") Transition;
 		%feature("autodoc", "Returns the transition of the line on the surface (in or out or unknown).
 
-	:rtype: IntCurveSurface_TransitionOnCurve
+Returns
+-------
+IntCurveSurface_TransitionOnCurve
 ") Transition;
 		IntCurveSurface_TransitionOnCurve Transition();
 
@@ -201,7 +228,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") U;
 		%feature("autodoc", "Returns the u parameter of the current point on the current face.
 
-	:rtype: float
+Returns
+-------
+float
 ") U;
 		Standard_Real U();
 
@@ -209,7 +238,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") V;
 		%feature("autodoc", "Returns the v parameter of the current point on the current face.
 
-	:rtype: float
+Returns
+-------
+float
 ") V;
 		Standard_Real V();
 
@@ -217,7 +248,9 @@ class BRepIntCurveSurface_Inter {
 		%feature("compactdefaultargs") W;
 		%feature("autodoc", "Returns the parameter of the current point on the curve.
 
-	:rtype: float
+Returns
+-------
+float
 ") W;
 		Standard_Real W();
 

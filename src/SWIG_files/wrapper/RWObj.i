@@ -98,15 +98,16 @@ class RWObj_IShapeReceiver {
 		%feature("compactdefaultargs") BindNamedShape;
 		%feature("autodoc", "@param theshape shape to register @param thename shape name @param thematerial shape material @param theisrootshape indicates that this is a root object (free shape).
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param theMaterial:
-	:type theMaterial: RWObj_Material *
-	:param theIsRootShape:
-	:type theIsRootShape: bool
-	:rtype: None
+Parameters
+----------
+theShape: TopoDS_Shape
+theName: TCollection_AsciiString
+theMaterial: RWObj_Material *
+theIsRootShape: bool
+
+Returns
+-------
+None
 ") BindNamedShape;
 		virtual void BindNamedShape(const TopoDS_Shape & theShape, const TCollection_AsciiString & theName, const RWObj_Material * theMaterial, const Standard_Boolean theIsRootShape);
 
@@ -135,7 +136,11 @@ class RWObj_Material {
 		Standard_ShortReal Transparency;
 		/****************** RWObj_Material ******************/
 		%feature("compactdefaultargs") RWObj_Material;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") RWObj_Material;
 		 RWObj_Material();
 

@@ -90,13 +90,15 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") D1u;
 		%feature("autodoc", "Returns the point and the first derivative at parameter theta on the curve.
 
-	:param Theta:
-	:type Theta: float
-	:param P:
-	:type P: gp_Pnt
-	:param V:
-	:type V: gp_Vec
-	:rtype: bool
+Parameters
+----------
+Theta: float
+P: gp_Pnt
+V: gp_Vec
+
+Returns
+-------
+bool
 ") D1u;
 		Standard_Boolean D1u(const Standard_Real Theta, gp_Pnt & P, gp_Vec & V);
 
@@ -104,11 +106,14 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") Domain;
 		%feature("autodoc", "Returns the paramatric domain of the curve.
 
-	:param theFirst:
-	:type theFirst: float
-	:param theLast:
-	:type theLast: float
-	:rtype: None
+Parameters
+----------
+theFirst: float
+theLast: float
+
+Returns
+-------
+None
 ") Domain;
 		void Domain(Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -116,11 +121,14 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") FindParameter;
 		%feature("autodoc", "Tries to find the parameter of the point p on the curve. if the method returns false, the 'projection' is impossible. if the method returns true at least one parameter has been found. theparams is always sorted in ascending order.
 
-	:param P:
-	:type P: gp_Pnt
-	:param theParams:
-	:type theParams: TColStd_ListOfReal
-	:rtype: None
+Parameters
+----------
+P: gp_Pnt
+theParams: TColStd_ListOfReal
+
+Returns
+-------
+None
 ") FindParameter;
 		void FindParameter(const gp_Pnt & P, TColStd_ListOfReal & theParams);
 
@@ -128,7 +136,9 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") IntAna_Curve;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") IntAna_Curve;
 		 IntAna_Curve();
 
@@ -136,7 +146,9 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") IsConstant;
 		%feature("autodoc", "Returns true if the function is constant.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsConstant;
 		Standard_Boolean IsConstant();
 
@@ -144,7 +156,9 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") IsFirstOpen;
 		%feature("autodoc", "Returns true if the domain is open at the beginning.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsFirstOpen;
 		Standard_Boolean IsFirstOpen();
 
@@ -152,7 +166,9 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") IsLastOpen;
 		%feature("autodoc", "Returns true if the domain is open at the end.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsLastOpen;
 		Standard_Boolean IsLastOpen();
 
@@ -160,7 +176,9 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") IsOpen;
 		%feature("autodoc", "Returns true if the curve is not infinite at the last parameter or at the first parameter of the domain.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsOpen;
 		Standard_Boolean IsOpen();
 
@@ -168,39 +186,28 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") SetConeQuadValues;
 		%feature("autodoc", "Sets the parameters used to compute points and derivative on the curve.
 
-	:param Cone:
-	:type Cone: gp_Cone
-	:param Qxx:
-	:type Qxx: float
-	:param Qyy:
-	:type Qyy: float
-	:param Qzz:
-	:type Qzz: float
-	:param Qxy:
-	:type Qxy: float
-	:param Qxz:
-	:type Qxz: float
-	:param Qyz:
-	:type Qyz: float
-	:param Qx:
-	:type Qx: float
-	:param Qy:
-	:type Qy: float
-	:param Qz:
-	:type Qz: float
-	:param Q1:
-	:type Q1: float
-	:param Tol:
-	:type Tol: float
-	:param DomInf:
-	:type DomInf: float
-	:param DomSup:
-	:type DomSup: float
-	:param TwoZForATheta:
-	:type TwoZForATheta: bool
-	:param ZIsPositive:
-	:type ZIsPositive: bool
-	:rtype: None
+Parameters
+----------
+Cone: gp_Cone
+Qxx: float
+Qyy: float
+Qzz: float
+Qxy: float
+Qxz: float
+Qyz: float
+Qx: float
+Qy: float
+Qz: float
+Q1: float
+Tol: float
+DomInf: float
+DomSup: float
+TwoZForATheta: bool
+ZIsPositive: bool
+
+Returns
+-------
+None
 ") SetConeQuadValues;
 		void SetConeQuadValues(const gp_Cone & Cone, const Standard_Real Qxx, const Standard_Real Qyy, const Standard_Real Qzz, const Standard_Real Qxy, const Standard_Real Qxz, const Standard_Real Qyz, const Standard_Real Qx, const Standard_Real Qy, const Standard_Real Qz, const Standard_Real Q1, const Standard_Real Tol, const Standard_Real DomInf, const Standard_Real DomSup, const Standard_Boolean TwoZForATheta, const Standard_Boolean ZIsPositive);
 
@@ -208,39 +215,28 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") SetCylinderQuadValues;
 		%feature("autodoc", "Sets the parameters used to compute points and derivative on the curve.
 
-	:param Cylinder:
-	:type Cylinder: gp_Cylinder
-	:param Qxx:
-	:type Qxx: float
-	:param Qyy:
-	:type Qyy: float
-	:param Qzz:
-	:type Qzz: float
-	:param Qxy:
-	:type Qxy: float
-	:param Qxz:
-	:type Qxz: float
-	:param Qyz:
-	:type Qyz: float
-	:param Qx:
-	:type Qx: float
-	:param Qy:
-	:type Qy: float
-	:param Qz:
-	:type Qz: float
-	:param Q1:
-	:type Q1: float
-	:param Tol:
-	:type Tol: float
-	:param DomInf:
-	:type DomInf: float
-	:param DomSup:
-	:type DomSup: float
-	:param TwoZForATheta:
-	:type TwoZForATheta: bool
-	:param ZIsPositive:
-	:type ZIsPositive: bool
-	:rtype: None
+Parameters
+----------
+Cylinder: gp_Cylinder
+Qxx: float
+Qyy: float
+Qzz: float
+Qxy: float
+Qxz: float
+Qyz: float
+Qx: float
+Qy: float
+Qz: float
+Q1: float
+Tol: float
+DomInf: float
+DomSup: float
+TwoZForATheta: bool
+ZIsPositive: bool
+
+Returns
+-------
+None
 ") SetCylinderQuadValues;
 		void SetCylinderQuadValues(const gp_Cylinder & Cylinder, const Standard_Real Qxx, const Standard_Real Qyy, const Standard_Real Qzz, const Standard_Real Qxy, const Standard_Real Qxz, const Standard_Real Qyz, const Standard_Real Qx, const Standard_Real Qy, const Standard_Real Qz, const Standard_Real Q1, const Standard_Real Tol, const Standard_Real DomInf, const Standard_Real DomSup, const Standard_Boolean TwoZForATheta, const Standard_Boolean ZIsPositive);
 
@@ -248,11 +244,14 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") SetDomain;
 		%feature("autodoc", "Trims this curve.
 
-	:param theFirst:
-	:type theFirst: float
-	:param theLast:
-	:type theLast: float
-	:rtype: None
+Parameters
+----------
+theFirst: float
+theLast: float
+
+Returns
+-------
+None
 ") SetDomain;
 		void SetDomain(const Standard_Real theFirst, const Standard_Real theLast);
 
@@ -260,9 +259,13 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") SetIsFirstOpen;
 		%feature("autodoc", "If flag is true, the curve is not defined at the first parameter of its domain.
 
-	:param Flag:
-	:type Flag: bool
-	:rtype: None
+Parameters
+----------
+Flag: bool
+
+Returns
+-------
+None
 ") SetIsFirstOpen;
 		void SetIsFirstOpen(const Standard_Boolean Flag);
 
@@ -270,9 +273,13 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") SetIsLastOpen;
 		%feature("autodoc", "If flag is true, the curve is not defined at the first parameter of its domain.
 
-	:param Flag:
-	:type Flag: bool
-	:rtype: None
+Parameters
+----------
+Flag: bool
+
+Returns
+-------
+None
 ") SetIsLastOpen;
 		void SetIsLastOpen(const Standard_Boolean Flag);
 
@@ -280,9 +287,13 @@ class IntAna_Curve {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the point at parameter theta on the curve.
 
-	:param Theta:
-	:type Theta: float
-	:rtype: gp_Pnt
+Parameters
+----------
+Theta: float
+
+Returns
+-------
+gp_Pnt
 ") Value;
 		gp_Pnt Value(const Standard_Real Theta);
 
@@ -302,7 +313,11 @@ class IntAna_Int3Pln {
 	public:
 		/****************** IntAna_Int3Pln ******************/
 		%feature("compactdefaultargs") IntAna_Int3Pln;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") IntAna_Int3Pln;
 		 IntAna_Int3Pln();
 
@@ -310,13 +325,15 @@ class IntAna_Int3Pln {
 		%feature("compactdefaultargs") IntAna_Int3Pln;
 		%feature("autodoc", "Determination of the intersection point between 3 planes.
 
-	:param P1:
-	:type P1: gp_Pln
-	:param P2:
-	:type P2: gp_Pln
-	:param P3:
-	:type P3: gp_Pln
-	:rtype: None
+Parameters
+----------
+P1: gp_Pln
+P2: gp_Pln
+P3: gp_Pln
+
+Returns
+-------
+None
 ") IntAna_Int3Pln;
 		 IntAna_Int3Pln(const gp_Pln & P1, const gp_Pln & P2, const gp_Pln & P3);
 
@@ -324,7 +341,9 @@ class IntAna_Int3Pln {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the computation was successful.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -332,7 +351,9 @@ class IntAna_Int3Pln {
 		%feature("compactdefaultargs") IsEmpty;
 		%feature("autodoc", "Returns true if there is no intersection point. if 2 planes are identical or parallel, isempty will return true.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
@@ -340,13 +361,15 @@ class IntAna_Int3Pln {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Determination of the intersection point between 3 planes.
 
-	:param P1:
-	:type P1: gp_Pln
-	:param P2:
-	:type P2: gp_Pln
-	:param P3:
-	:type P3: gp_Pln
-	:rtype: None
+Parameters
+----------
+P1: gp_Pln
+P2: gp_Pln
+P3: gp_Pln
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Pln & P1, const gp_Pln & P2, const gp_Pln & P3);
 
@@ -354,7 +377,9 @@ class IntAna_Int3Pln {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the intersection point.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") Value;
 		const gp_Pnt Value();
 
@@ -376,7 +401,9 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IntAna_IntConicQuad;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") IntAna_IntConicQuad;
 		 IntAna_IntConicQuad();
 
@@ -384,11 +411,14 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IntAna_IntConicQuad;
 		%feature("autodoc", "Creates the intersection between a line and a quadric.
 
-	:param L:
-	:type L: gp_Lin
-	:param Q:
-	:type Q: IntAna_Quadric
-	:rtype: None
+Parameters
+----------
+L: gp_Lin
+Q: IntAna_Quadric
+
+Returns
+-------
+None
 ") IntAna_IntConicQuad;
 		 IntAna_IntConicQuad(const gp_Lin & L, const IntAna_Quadric & Q);
 
@@ -396,11 +426,14 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IntAna_IntConicQuad;
 		%feature("autodoc", "Creates the intersection between a circle and a quadric.
 
-	:param C:
-	:type C: gp_Circ
-	:param Q:
-	:type Q: IntAna_Quadric
-	:rtype: None
+Parameters
+----------
+C: gp_Circ
+Q: IntAna_Quadric
+
+Returns
+-------
+None
 ") IntAna_IntConicQuad;
 		 IntAna_IntConicQuad(const gp_Circ & C, const IntAna_Quadric & Q);
 
@@ -408,11 +441,14 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IntAna_IntConicQuad;
 		%feature("autodoc", "Creates the intersection between an ellipse and a quadric.
 
-	:param E:
-	:type E: gp_Elips
-	:param Q:
-	:type Q: IntAna_Quadric
-	:rtype: None
+Parameters
+----------
+E: gp_Elips
+Q: IntAna_Quadric
+
+Returns
+-------
+None
 ") IntAna_IntConicQuad;
 		 IntAna_IntConicQuad(const gp_Elips & E, const IntAna_Quadric & Q);
 
@@ -420,11 +456,14 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IntAna_IntConicQuad;
 		%feature("autodoc", "Creates the intersection between a parabola and a quadric.
 
-	:param P:
-	:type P: gp_Parab
-	:param Q:
-	:type Q: IntAna_Quadric
-	:rtype: None
+Parameters
+----------
+P: gp_Parab
+Q: IntAna_Quadric
+
+Returns
+-------
+None
 ") IntAna_IntConicQuad;
 		 IntAna_IntConicQuad(const gp_Parab & P, const IntAna_Quadric & Q);
 
@@ -432,11 +471,14 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IntAna_IntConicQuad;
 		%feature("autodoc", "Creates the intersection between an hyperbola and a quadric.
 
-	:param H:
-	:type H: gp_Hypr
-	:param Q:
-	:type Q: IntAna_Quadric
-	:rtype: None
+Parameters
+----------
+H: gp_Hypr
+Q: IntAna_Quadric
+
+Returns
+-------
+None
 ") IntAna_IntConicQuad;
 		 IntAna_IntConicQuad(const gp_Hypr & H, const IntAna_Quadric & Q);
 
@@ -444,17 +486,19 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IntAna_IntConicQuad;
 		%feature("autodoc", "Intersection between a line and a plane. tolang is used to determine if the angle between two vectors is null. tol is used to check the distance between line and plane on the distance <len> from the origin of the line.
 
-	:param L:
-	:type L: gp_Lin
-	:param P:
-	:type P: gp_Pln
-	:param Tolang:
-	:type Tolang: float
-	:param Tol: default value is 0
-	:type Tol: float
-	:param Len: default value is 0
-	:type Len: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin
+P: gp_Pln
+Tolang: float
+Tol: float,optional
+	default value is 0
+Len: float,optional
+	default value is 0
+
+Returns
+-------
+None
 ") IntAna_IntConicQuad;
 		 IntAna_IntConicQuad(const gp_Lin & L, const gp_Pln & P, const Standard_Real Tolang, const Standard_Real Tol = 0, const Standard_Real Len = 0);
 
@@ -462,15 +506,16 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IntAna_IntConicQuad;
 		%feature("autodoc", "Intersection between a circle and a plane. tolang is used to determine if the angle between two vectors is null. tol is used to determine if a distance is null.
 
-	:param C:
-	:type C: gp_Circ
-	:param P:
-	:type P: gp_Pln
-	:param Tolang:
-	:type Tolang: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Circ
+P: gp_Pln
+Tolang: float
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_IntConicQuad;
 		 IntAna_IntConicQuad(const gp_Circ & C, const gp_Pln & P, const Standard_Real Tolang, const Standard_Real Tol);
 
@@ -478,15 +523,16 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IntAna_IntConicQuad;
 		%feature("autodoc", "Intersection between an ellipse and a plane. tolang is used to determine if the angle between two vectors is null. tol is used to determine if a distance is null.
 
-	:param E:
-	:type E: gp_Elips
-	:param P:
-	:type P: gp_Pln
-	:param Tolang:
-	:type Tolang: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+E: gp_Elips
+P: gp_Pln
+Tolang: float
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_IntConicQuad;
 		 IntAna_IntConicQuad(const gp_Elips & E, const gp_Pln & P, const Standard_Real Tolang, const Standard_Real Tol);
 
@@ -494,13 +540,15 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IntAna_IntConicQuad;
 		%feature("autodoc", "Intersection between a parabola and a plane. tolang is used to determine if the angle between two vectors is null.
 
-	:param Pb:
-	:type Pb: gp_Parab
-	:param P:
-	:type P: gp_Pln
-	:param Tolang:
-	:type Tolang: float
-	:rtype: None
+Parameters
+----------
+Pb: gp_Parab
+P: gp_Pln
+Tolang: float
+
+Returns
+-------
+None
 ") IntAna_IntConicQuad;
 		 IntAna_IntConicQuad(const gp_Parab & Pb, const gp_Pln & P, const Standard_Real Tolang);
 
@@ -508,13 +556,15 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IntAna_IntConicQuad;
 		%feature("autodoc", "Intersection between an hyperbola and a plane. tolang is used to determine if the angle between two vectors is null.
 
-	:param H:
-	:type H: gp_Hypr
-	:param P:
-	:type P: gp_Pln
-	:param Tolang:
-	:type Tolang: float
-	:rtype: None
+Parameters
+----------
+H: gp_Hypr
+P: gp_Pln
+Tolang: float
+
+Returns
+-------
+None
 ") IntAna_IntConicQuad;
 		 IntAna_IntConicQuad(const gp_Hypr & H, const gp_Pln & P, const Standard_Real Tolang);
 
@@ -522,7 +572,9 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the creation completed.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -530,7 +582,9 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IsInQuadric;
 		%feature("autodoc", "Returns true if the conic is in the quadric.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsInQuadric;
 		Standard_Boolean IsInQuadric();
 
@@ -538,7 +592,9 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") IsParallel;
 		%feature("autodoc", "Returns true if the line is in a quadric which is parallel to the quadric.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsParallel;
 		Standard_Boolean IsParallel();
 
@@ -546,7 +602,9 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") NbPoints;
 		%feature("autodoc", "Returns the number of intersection point.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
@@ -554,9 +612,13 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") ParamOnConic;
 		%feature("autodoc", "Returns the parameter on the line of the intersection point of range n.
 
-	:param N:
-	:type N: int
-	:rtype: float
+Parameters
+----------
+N: int
+
+Returns
+-------
+float
 ") ParamOnConic;
 		Standard_Real ParamOnConic(const Standard_Integer N);
 
@@ -564,11 +626,14 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a line and a quadric.
 
-	:param L:
-	:type L: gp_Lin
-	:param Q:
-	:type Q: IntAna_Quadric
-	:rtype: None
+Parameters
+----------
+L: gp_Lin
+Q: IntAna_Quadric
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin & L, const IntAna_Quadric & Q);
 
@@ -576,11 +641,14 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a circle and a quadric.
 
-	:param C:
-	:type C: gp_Circ
-	:param Q:
-	:type Q: IntAna_Quadric
-	:rtype: None
+Parameters
+----------
+C: gp_Circ
+Q: IntAna_Quadric
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Circ & C, const IntAna_Quadric & Q);
 
@@ -588,11 +656,14 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects an ellipse and a quadric.
 
-	:param E:
-	:type E: gp_Elips
-	:param Q:
-	:type Q: IntAna_Quadric
-	:rtype: None
+Parameters
+----------
+E: gp_Elips
+Q: IntAna_Quadric
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Elips & E, const IntAna_Quadric & Q);
 
@@ -600,11 +671,14 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a parabola and a quadric.
 
-	:param P:
-	:type P: gp_Parab
-	:param Q:
-	:type Q: IntAna_Quadric
-	:rtype: None
+Parameters
+----------
+P: gp_Parab
+Q: IntAna_Quadric
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Parab & P, const IntAna_Quadric & Q);
 
@@ -612,11 +686,14 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects an hyperbola and a quadric.
 
-	:param H:
-	:type H: gp_Hypr
-	:param Q:
-	:type Q: IntAna_Quadric
-	:rtype: None
+Parameters
+----------
+H: gp_Hypr
+Q: IntAna_Quadric
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Hypr & H, const IntAna_Quadric & Q);
 
@@ -624,17 +701,19 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a line and a plane. tolang is used to determine if the angle between two vectors is null. tol is used to check the distance between line and plane on the distance <len> from the origin of the line.
 
-	:param L:
-	:type L: gp_Lin
-	:param P:
-	:type P: gp_Pln
-	:param Tolang:
-	:type Tolang: float
-	:param Tol: default value is 0
-	:type Tol: float
-	:param Len: default value is 0
-	:type Len: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin
+P: gp_Pln
+Tolang: float
+Tol: float,optional
+	default value is 0
+Len: float,optional
+	default value is 0
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin & L, const gp_Pln & P, const Standard_Real Tolang, const Standard_Real Tol = 0, const Standard_Real Len = 0);
 
@@ -642,15 +721,16 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a circle and a plane. tolang is used to determine if the angle between two vectors is null. tol is used to determine if a distance is null.
 
-	:param C:
-	:type C: gp_Circ
-	:param P:
-	:type P: gp_Pln
-	:param Tolang:
-	:type Tolang: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Circ
+P: gp_Pln
+Tolang: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Circ & C, const gp_Pln & P, const Standard_Real Tolang, const Standard_Real Tol);
 
@@ -658,15 +738,16 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects an ellipse and a plane. tolang is used to determine if the angle between two vectors is null. tol is used to determine if a distance is null.
 
-	:param E:
-	:type E: gp_Elips
-	:param P:
-	:type P: gp_Pln
-	:param Tolang:
-	:type Tolang: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+E: gp_Elips
+P: gp_Pln
+Tolang: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Elips & E, const gp_Pln & P, const Standard_Real Tolang, const Standard_Real Tol);
 
@@ -674,13 +755,15 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a parabola and a plane. tolang is used to determine if the angle between two vectors is null.
 
-	:param Pb:
-	:type Pb: gp_Parab
-	:param P:
-	:type P: gp_Pln
-	:param Tolang:
-	:type Tolang: float
-	:rtype: None
+Parameters
+----------
+Pb: gp_Parab
+P: gp_Pln
+Tolang: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Parab & Pb, const gp_Pln & P, const Standard_Real Tolang);
 
@@ -688,13 +771,15 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects an hyperbola and a plane. tolang is used to determine if the angle between two vectors is null.
 
-	:param H:
-	:type H: gp_Hypr
-	:param P:
-	:type P: gp_Pln
-	:param Tolang:
-	:type Tolang: float
-	:rtype: None
+Parameters
+----------
+H: gp_Hypr
+P: gp_Pln
+Tolang: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Hypr & H, const gp_Pln & P, const Standard_Real Tolang);
 
@@ -702,9 +787,13 @@ class IntAna_IntConicQuad {
 		%feature("compactdefaultargs") Point;
 		%feature("autodoc", "Returns the point of range n.
 
-	:param N:
-	:type N: int
-	:rtype: gp_Pnt
+Parameters
+----------
+N: int
+
+Returns
+-------
+gp_Pnt
 ") Point;
 		const gp_Pnt Point(const Standard_Integer N);
 
@@ -724,7 +813,11 @@ class IntAna_IntLinTorus {
 	public:
 		/****************** IntAna_IntLinTorus ******************/
 		%feature("compactdefaultargs") IntAna_IntLinTorus;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") IntAna_IntLinTorus;
 		 IntAna_IntLinTorus();
 
@@ -732,11 +825,14 @@ class IntAna_IntLinTorus {
 		%feature("compactdefaultargs") IntAna_IntLinTorus;
 		%feature("autodoc", "Creates the intersection between a line and a torus.
 
-	:param L:
-	:type L: gp_Lin
-	:param T:
-	:type T: gp_Torus
-	:rtype: None
+Parameters
+----------
+L: gp_Lin
+T: gp_Torus
+
+Returns
+-------
+None
 ") IntAna_IntLinTorus;
 		 IntAna_IntLinTorus(const gp_Lin & L, const gp_Torus & T);
 
@@ -744,7 +840,9 @@ class IntAna_IntLinTorus {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the computation was successful.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -752,7 +850,9 @@ class IntAna_IntLinTorus {
 		%feature("compactdefaultargs") NbPoints;
 		%feature("autodoc", "Returns the number of intersection points.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
@@ -760,9 +860,13 @@ class IntAna_IntLinTorus {
 		%feature("compactdefaultargs") ParamOnLine;
 		%feature("autodoc", "Returns the parameter on the line of the intersection point of range index.
 
-	:param Index:
-	:type Index: int
-	:rtype: float
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
 ") ParamOnLine;
 		Standard_Real ParamOnLine(const Standard_Integer Index);
 
@@ -770,13 +874,15 @@ class IntAna_IntLinTorus {
 		%feature("compactdefaultargs") ParamOnTorus;
 		%feature("autodoc", "Returns the parameters on the torus of the intersection point of range index.
 
-	:param Index:
-	:type Index: int
-	:param FI:
-	:type FI: float
-	:param THETA:
-	:type THETA: float
-	:rtype: None
+Parameters
+----------
+Index: int
+FI: float
+THETA: float
+
+Returns
+-------
+None
 ") ParamOnTorus;
 		void ParamOnTorus(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -784,11 +890,14 @@ class IntAna_IntLinTorus {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a line and a torus.
 
-	:param L:
-	:type L: gp_Lin
-	:param T:
-	:type T: gp_Torus
-	:rtype: None
+Parameters
+----------
+L: gp_Lin
+T: gp_Torus
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin & L, const gp_Torus & T);
 
@@ -796,9 +905,13 @@ class IntAna_IntLinTorus {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the intersection point of range index.
 
-	:param Index:
-	:type Index: int
-	:rtype: gp_Pnt
+Parameters
+----------
+Index: int
+
+Returns
+-------
+gp_Pnt
 ") Value;
 		const gp_Pnt Value(const Standard_Integer Index);
 
@@ -820,9 +933,13 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Returns the curve of range n.
 
-	:param N:
-	:type N: int
-	:rtype: IntAna_Curve
+Parameters
+----------
+N: int
+
+Returns
+-------
+IntAna_Curve
 ") Curve;
 		const IntAna_Curve & Curve(const Standard_Integer N);
 
@@ -830,9 +947,13 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") HasNextCurve;
 		%feature("autodoc", "Returns true if the curve i shares its last bound with another curve.
 
-	:param I:
-	:type I: int
-	:rtype: bool
+Parameters
+----------
+I: int
+
+Returns
+-------
+bool
 ") HasNextCurve;
 		Standard_Boolean HasNextCurve(const Standard_Integer I);
 
@@ -840,9 +961,13 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") HasPreviousCurve;
 		%feature("autodoc", "Returns true if the curve i shares its first bound with another curve.
 
-	:param I:
-	:type I: int
-	:rtype: bool
+Parameters
+----------
+I: int
+
+Returns
+-------
+bool
 ") HasPreviousCurve;
 		Standard_Boolean HasPreviousCurve(const Standard_Integer I);
 
@@ -850,7 +975,9 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") IdenticalElements;
 		%feature("autodoc", "Returns true if the cylinder, the cone or the sphere is identical to the quadric.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IdenticalElements;
 		Standard_Boolean IdenticalElements();
 
@@ -858,7 +985,9 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") IntAna_IntQuadQuad;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") IntAna_IntQuadQuad;
 		 IntAna_IntQuadQuad();
 
@@ -866,13 +995,15 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") IntAna_IntQuadQuad;
 		%feature("autodoc", "Creates the intersection between a cylinder and a quadric . tol est a definir plus precisemment.
 
-	:param C:
-	:type C: gp_Cylinder
-	:param Q:
-	:type Q: IntAna_Quadric
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Cylinder
+Q: IntAna_Quadric
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_IntQuadQuad;
 		 IntAna_IntQuadQuad(const gp_Cylinder & C, const IntAna_Quadric & Q, const Standard_Real Tol);
 
@@ -880,13 +1011,15 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") IntAna_IntQuadQuad;
 		%feature("autodoc", "Creates the intersection between a cone and a quadric. tol est a definir plus precisemment.
 
-	:param C:
-	:type C: gp_Cone
-	:param Q:
-	:type Q: IntAna_Quadric
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Cone
+Q: IntAna_Quadric
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_IntQuadQuad;
 		 IntAna_IntQuadQuad(const gp_Cone & C, const IntAna_Quadric & Q, const Standard_Real Tol);
 
@@ -894,7 +1027,9 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the computation was successful.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -902,7 +1037,9 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") NbCurve;
 		%feature("autodoc", "Returns the number of curves solution.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbCurve;
 		Standard_Integer NbCurve();
 
@@ -910,7 +1047,9 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") NbPnt;
 		%feature("autodoc", "Returns the number of contact point.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPnt;
 		Standard_Integer NbPnt();
 
@@ -918,11 +1057,14 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") NextCurve;
 		%feature("autodoc", "If hasnextcurve(i) returns true, this function returns the index j of the curve which has a common bound with the curve i. if theopposite == true , then the last parameter of the curve i, and the last parameter of the curve j give the same point. else the last parameter of the curve i and the first parameter of the curve j are the same point.
 
-	:param I:
-	:type I: int
-	:param theOpposite:
-	:type theOpposite: bool
-	:rtype: int
+Parameters
+----------
+I: int
+theOpposite: bool
+
+Returns
+-------
+int
 ") NextCurve;
 		Standard_Integer NextCurve(const Standard_Integer I, Standard_Boolean &OutValue);
 
@@ -930,13 +1072,15 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") Parameters;
 		%feature("autodoc", "Returns the paramaters on the 'explicit quadric' (i.e the cylinder or the cone, the first argument given to the constructor) of the point of range n.
 
-	:param N:
-	:type N: int
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:rtype: None
+Parameters
+----------
+N: int
+U1: float
+U2: float
+
+Returns
+-------
+None
 ") Parameters;
 		void Parameters(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -944,13 +1088,15 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a cylinder and a quadric . tol est a definir plus precisemment.
 
-	:param C:
-	:type C: gp_Cylinder
-	:param Q:
-	:type Q: IntAna_Quadric
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Cylinder
+Q: IntAna_Quadric
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Cylinder & C, const IntAna_Quadric & Q, const Standard_Real Tol);
 
@@ -958,13 +1104,15 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a cone and a quadric. tol est a definir plus precisemment.
 
-	:param C:
-	:type C: gp_Cone
-	:param Q:
-	:type Q: IntAna_Quadric
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Cone
+Q: IntAna_Quadric
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Cone & C, const IntAna_Quadric & Q, const Standard_Real Tol);
 
@@ -972,9 +1120,13 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") Point;
 		%feature("autodoc", "Returns the point of range n.
 
-	:param N:
-	:type N: int
-	:rtype: gp_Pnt
+Parameters
+----------
+N: int
+
+Returns
+-------
+gp_Pnt
 ") Point;
 		const gp_Pnt Point(const Standard_Integer N);
 
@@ -982,11 +1134,14 @@ class IntAna_IntQuadQuad {
 		%feature("compactdefaultargs") PreviousCurve;
 		%feature("autodoc", "If haspreviouscurve(i) returns true, this function returns the index j of the curve which has a common bound with the curve i. if theopposite == true , then the first parameter of the curve i, and the first parameter of the curve j give the same point. else the first parameter of the curve i and the last parameter of the curve j are the same point.
 
-	:param I:
-	:type I: int
-	:param theOpposite:
-	:type theOpposite: bool
-	:rtype: int
+Parameters
+----------
+I: int
+theOpposite: bool
+
+Returns
+-------
+int
 ") PreviousCurve;
 		Standard_Integer PreviousCurve(const Standard_Integer I, Standard_Boolean &OutValue);
 
@@ -1008,9 +1163,13 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Circle;
 		%feature("autodoc", "Returns the circle solution of range num.
 
-	:param Num:
-	:type Num: int
-	:rtype: gp_Circ
+Parameters
+----------
+Num: int
+
+Returns
+-------
+gp_Circ
 ") Circle;
 		gp_Circ Circle(const Standard_Integer Num);
 
@@ -1018,15 +1177,23 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Ellipse;
 		%feature("autodoc", "Returns the ellipse solution of range num.
 
-	:param Num:
-	:type Num: int
-	:rtype: gp_Elips
+Parameters
+----------
+Num: int
+
+Returns
+-------
+gp_Elips
 ") Ellipse;
 		gp_Elips Ellipse(const Standard_Integer Num);
 
 		/****************** HasCommonGen ******************/
 		%feature("compactdefaultargs") HasCommonGen;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") HasCommonGen;
 		Standard_Boolean HasCommonGen();
 
@@ -1034,9 +1201,13 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Hyperbola;
 		%feature("autodoc", "Returns the hyperbola solution of range num.
 
-	:param Num:
-	:type Num: int
-	:rtype: gp_Hypr
+Parameters
+----------
+Num: int
+
+Returns
+-------
+gp_Hypr
 ") Hyperbola;
 		gp_Hypr Hyperbola(const Standard_Integer Num);
 
@@ -1044,7 +1215,9 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo();
 
@@ -1052,15 +1225,16 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection between two planes. tolang is the angular tolerance used to determine if the planes are parallel. tol is the tolerance used to determine if the planes are identical (only when they are parallel).
 
-	:param P1:
-	:type P1: gp_Pln
-	:param P2:
-	:type P2: gp_Pln
-	:param TolAng:
-	:type TolAng: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+P1: gp_Pln
+P2: gp_Pln
+TolAng: float
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Pln & P1, const gp_Pln & P2, const Standard_Real TolAng, const Standard_Real Tol);
 
@@ -1068,17 +1242,18 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection between a plane and a cylinder. tolang is the angular tolerance used to determine if the axis of the cylinder is parallel to the plane. tol is the tolerance used to determine if the result is a circle or an ellipse. if the maximum distance between the ellipse solution and the circle centered at the ellipse center is less than tol, the result will be the circle. h is the height of the cylinder <cyl>. it is used to check whether the plane and cylinder are parallel.
 
-	:param P:
-	:type P: gp_Pln
-	:param C:
-	:type C: gp_Cylinder
-	:param Tolang:
-	:type Tolang: float
-	:param Tol:
-	:type Tol: float
-	:param H: default value is 0
-	:type H: float
-	:rtype: None
+Parameters
+----------
+P: gp_Pln
+C: gp_Cylinder
+Tolang: float
+Tol: float
+H: float,optional
+	default value is 0
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Pln & P, const gp_Cylinder & C, const Standard_Real Tolang, const Standard_Real Tol, const Standard_Real H = 0);
 
@@ -1086,11 +1261,14 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection between a plane and a sphere.
 
-	:param P:
-	:type P: gp_Pln
-	:param S:
-	:type S: gp_Sphere
-	:rtype: None
+Parameters
+----------
+P: gp_Pln
+S: gp_Sphere
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Pln & P, const gp_Sphere & S);
 
@@ -1098,15 +1276,16 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection between a plane and a cone. tolang is the angular tolerance used to determine if the axis of the cone is parallel or perpendicular to the plane, and if the generating line of the cone is parallel to the plane. tol is the tolerance used to determine if the apex of the cone is in the plane.
 
-	:param P:
-	:type P: gp_Pln
-	:param C:
-	:type C: gp_Cone
-	:param Tolang:
-	:type Tolang: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+P: gp_Pln
+C: gp_Cone
+Tolang: float
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Pln & P, const gp_Cone & C, const Standard_Real Tolang, const Standard_Real Tol);
 
@@ -1114,13 +1293,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection between two cylinders.
 
-	:param Cyl1:
-	:type Cyl1: gp_Cylinder
-	:param Cyl2:
-	:type Cyl2: gp_Cylinder
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Cyl1: gp_Cylinder
+Cyl2: gp_Cylinder
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Cylinder & Cyl1, const gp_Cylinder & Cyl2, const Standard_Real Tol);
 
@@ -1128,13 +1309,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection between a cylinder and a sphere.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:param Sph:
-	:type Sph: gp_Sphere
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+Sph: gp_Sphere
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Cylinder & Cyl, const gp_Sphere & Sph, const Standard_Real Tol);
 
@@ -1142,13 +1325,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection between a cylinder and a cone.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:param Con:
-	:type Con: gp_Cone
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+Con: gp_Cone
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Cylinder & Cyl, const gp_Cone & Con, const Standard_Real Tol);
 
@@ -1156,13 +1341,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection between two spheres.
 
-	:param Sph1:
-	:type Sph1: gp_Sphere
-	:param Sph2:
-	:type Sph2: gp_Sphere
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Sph1: gp_Sphere
+Sph2: gp_Sphere
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Sphere & Sph1, const gp_Sphere & Sph2, const Standard_Real Tol);
 
@@ -1170,13 +1357,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection beween a sphere and a cone.
 
-	:param Sph:
-	:type Sph: gp_Sphere
-	:param Con:
-	:type Con: gp_Cone
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Sph: gp_Sphere
+Con: gp_Cone
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Sphere & Sph, const gp_Cone & Con, const Standard_Real Tol);
 
@@ -1184,13 +1373,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection beween two cones.
 
-	:param Con1:
-	:type Con1: gp_Cone
-	:param Con2:
-	:type Con2: gp_Cone
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Con1: gp_Cone
+Con2: gp_Cone
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Cone & Con1, const gp_Cone & Con2, const Standard_Real Tol);
 
@@ -1198,13 +1389,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection beween plane and torus.
 
-	:param Pln:
-	:type Pln: gp_Pln
-	:param Tor:
-	:type Tor: gp_Torus
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Pln: gp_Pln
+Tor: gp_Torus
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Pln & Pln, const gp_Torus & Tor, const Standard_Real Tol);
 
@@ -1212,13 +1405,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection beween cylinder and torus.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:param Tor:
-	:type Tor: gp_Torus
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+Tor: gp_Torus
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Cylinder & Cyl, const gp_Torus & Tor, const Standard_Real Tol);
 
@@ -1226,13 +1421,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection beween cone and torus.
 
-	:param Con:
-	:type Con: gp_Cone
-	:param Tor:
-	:type Tor: gp_Torus
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Con: gp_Cone
+Tor: gp_Torus
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Cone & Con, const gp_Torus & Tor, const Standard_Real Tol);
 
@@ -1240,13 +1437,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection beween sphere and torus.
 
-	:param Sph:
-	:type Sph: gp_Sphere
-	:param Tor:
-	:type Tor: gp_Torus
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Sph: gp_Sphere
+Tor: gp_Torus
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Sphere & Sph, const gp_Torus & Tor, const Standard_Real Tol);
 
@@ -1254,13 +1453,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Creates the intersection beween two toruses.
 
-	:param Tor1:
-	:type Tor1: gp_Torus
-	:param Tor2:
-	:type Tor2: gp_Torus
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Tor1: gp_Torus
+Tor2: gp_Torus
+Tol: float
+
+Returns
+-------
+None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Torus & Tor1, const gp_Torus & Tor2, const Standard_Real Tol);
 
@@ -1268,7 +1469,9 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns standard_true if the computation was successful.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -1276,9 +1479,13 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Line;
 		%feature("autodoc", "Returns the line solution of range num.
 
-	:param Num:
-	:type Num: int
-	:rtype: gp_Lin
+Parameters
+----------
+Num: int
+
+Returns
+-------
+gp_Lin
 ") Line;
 		gp_Lin Line(const Standard_Integer Num);
 
@@ -1286,13 +1493,19 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") NbSolutions;
 		%feature("autodoc", "Returns the number of interesections. the possible intersections are : - 1 point - 1 or 2 line(s) - 1 point and 1 line - 1 circle - 1 ellipse - 1 parabola - 1 or 2 hyperbola(s).
 
-	:rtype: int
+Returns
+-------
+int
 ") NbSolutions;
 		Standard_Integer NbSolutions();
 
 		/****************** PChar ******************/
 		%feature("compactdefaultargs") PChar;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") PChar;
 		const gp_Pnt PChar();
 
@@ -1300,9 +1513,13 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Parabola;
 		%feature("autodoc", "Returns the parabola solution of range num.
 
-	:param Num:
-	:type Num: int
-	:rtype: gp_Parab
+Parameters
+----------
+Num: int
+
+Returns
+-------
+gp_Parab
 ") Parabola;
 		gp_Parab Parabola(const Standard_Integer Num);
 
@@ -1310,15 +1527,16 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects two planes. tolang is the angular tolerance used to determine if the planes are parallel. tol is the tolerance used to determine if the planes are identical (only when they are parallel).
 
-	:param P1:
-	:type P1: gp_Pln
-	:param P2:
-	:type P2: gp_Pln
-	:param TolAng:
-	:type TolAng: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+P1: gp_Pln
+P2: gp_Pln
+TolAng: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Pln & P1, const gp_Pln & P2, const Standard_Real TolAng, const Standard_Real Tol);
 
@@ -1326,17 +1544,18 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a plane and a cylinder. tolang is the angular tolerance used to determine if the axis of the cylinder is parallel to the plane. tol is the tolerance used to determine if the result is a circle or an ellipse. if the maximum distance between the ellipse solution and the circle centered at the ellipse center is less than tol, the result will be the circle. h is the height of the cylinder <cyl>. it is used to check whether the plane and cylinder are parallel.
 
-	:param P:
-	:type P: gp_Pln
-	:param C:
-	:type C: gp_Cylinder
-	:param Tolang:
-	:type Tolang: float
-	:param Tol:
-	:type Tol: float
-	:param H: default value is 0
-	:type H: float
-	:rtype: None
+Parameters
+----------
+P: gp_Pln
+C: gp_Cylinder
+Tolang: float
+Tol: float
+H: float,optional
+	default value is 0
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Pln & P, const gp_Cylinder & C, const Standard_Real Tolang, const Standard_Real Tol, const Standard_Real H = 0);
 
@@ -1344,11 +1563,14 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a plane and a sphere.
 
-	:param P:
-	:type P: gp_Pln
-	:param S:
-	:type S: gp_Sphere
-	:rtype: None
+Parameters
+----------
+P: gp_Pln
+S: gp_Sphere
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Pln & P, const gp_Sphere & S);
 
@@ -1356,15 +1578,16 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a plane and a cone. tolang is the angular tolerance used to determine if the axis of the cone is parallel or perpendicular to the plane, and if the generating line of the cone is parallel to the plane. tol is the tolerance used to determine if the apex of the cone is in the plane.
 
-	:param P:
-	:type P: gp_Pln
-	:param C:
-	:type C: gp_Cone
-	:param Tolang:
-	:type Tolang: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+P: gp_Pln
+C: gp_Cone
+Tolang: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Pln & P, const gp_Cone & C, const Standard_Real Tolang, const Standard_Real Tol);
 
@@ -1372,13 +1595,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects two cylinders.
 
-	:param Cyl1:
-	:type Cyl1: gp_Cylinder
-	:param Cyl2:
-	:type Cyl2: gp_Cylinder
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Cyl1: gp_Cylinder
+Cyl2: gp_Cylinder
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Cylinder & Cyl1, const gp_Cylinder & Cyl2, const Standard_Real Tol);
 
@@ -1386,13 +1611,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a cylinder and a sphere.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:param Sph:
-	:type Sph: gp_Sphere
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+Sph: gp_Sphere
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Cylinder & Cyl, const gp_Sphere & Sph, const Standard_Real Tol);
 
@@ -1400,13 +1627,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a cylinder and a cone.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:param Con:
-	:type Con: gp_Cone
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+Con: gp_Cone
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Cylinder & Cyl, const gp_Cone & Con, const Standard_Real Tol);
 
@@ -1414,13 +1643,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a two spheres.
 
-	:param Sph1:
-	:type Sph1: gp_Sphere
-	:param Sph2:
-	:type Sph2: gp_Sphere
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Sph1: gp_Sphere
+Sph2: gp_Sphere
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Sphere & Sph1, const gp_Sphere & Sph2, const Standard_Real Tol);
 
@@ -1428,13 +1659,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects a sphere and a cone.
 
-	:param Sph:
-	:type Sph: gp_Sphere
-	:param Con:
-	:type Con: gp_Cone
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Sph: gp_Sphere
+Con: gp_Cone
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Sphere & Sph, const gp_Cone & Con, const Standard_Real Tol);
 
@@ -1442,13 +1675,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects two cones.
 
-	:param Con1:
-	:type Con1: gp_Cone
-	:param Con2:
-	:type Con2: gp_Cone
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Con1: gp_Cone
+Con2: gp_Cone
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Cone & Con1, const gp_Cone & Con2, const Standard_Real Tol);
 
@@ -1456,13 +1691,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects plane and torus.
 
-	:param Pln:
-	:type Pln: gp_Pln
-	:param Tor:
-	:type Tor: gp_Torus
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Pln: gp_Pln
+Tor: gp_Torus
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Pln & Pln, const gp_Torus & Tor, const Standard_Real Tol);
 
@@ -1470,13 +1707,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects cylinder and torus.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:param Tor:
-	:type Tor: gp_Torus
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+Tor: gp_Torus
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Cylinder & Cyl, const gp_Torus & Tor, const Standard_Real Tol);
 
@@ -1484,13 +1723,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects cone and torus.
 
-	:param Con:
-	:type Con: gp_Cone
-	:param Tor:
-	:type Tor: gp_Torus
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Con: gp_Cone
+Tor: gp_Torus
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Cone & Con, const gp_Torus & Tor, const Standard_Real Tol);
 
@@ -1498,13 +1739,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects sphere and torus.
 
-	:param Sph:
-	:type Sph: gp_Sphere
-	:param Tor:
-	:type Tor: gp_Torus
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Sph: gp_Sphere
+Tor: gp_Torus
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Sphere & Sph, const gp_Torus & Tor, const Standard_Real Tol);
 
@@ -1512,13 +1755,15 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersects two toruses.
 
-	:param Tor1:
-	:type Tor1: gp_Torus
-	:param Tor2:
-	:type Tor2: gp_Torus
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Tor1: gp_Torus
+Tor2: gp_Torus
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Torus & Tor1, const gp_Torus & Tor2, const Standard_Real Tol);
 
@@ -1526,9 +1771,13 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") Point;
 		%feature("autodoc", "Returns the point solution of range num.
 
-	:param Num:
-	:type Num: int
-	:rtype: gp_Pnt
+Parameters
+----------
+Num: int
+
+Returns
+-------
+gp_Pnt
 ") Point;
 		gp_Pnt Point(const Standard_Integer Num);
 
@@ -1536,7 +1785,9 @@ class IntAna_QuadQuadGeo {
 		%feature("compactdefaultargs") TypeInter;
 		%feature("autodoc", "Returns the type of intersection.
 
-	:rtype: IntAna_ResultType
+Returns
+-------
+IntAna_ResultType
 ") TypeInter;
 		IntAna_ResultType TypeInter();
 
@@ -1558,27 +1809,22 @@ class IntAna_Quadric {
 		%feature("compactdefaultargs") Coefficients;
 		%feature("autodoc", "Returns the coefficients of the polynomial equation which define the quadric: xcxx x**2 + xcyy y**2 + xczz z**2 + 2 ( xcxy x y + xcxz x z + xcyz y z ) + 2 ( xcx x + xcy y + xcz z ) + xccte.
 
-	:param xCXX:
-	:type xCXX: float
-	:param xCYY:
-	:type xCYY: float
-	:param xCZZ:
-	:type xCZZ: float
-	:param xCXY:
-	:type xCXY: float
-	:param xCXZ:
-	:type xCXZ: float
-	:param xCYZ:
-	:type xCYZ: float
-	:param xCX:
-	:type xCX: float
-	:param xCY:
-	:type xCY: float
-	:param xCZ:
-	:type xCZ: float
-	:param xCCte:
-	:type xCCte: float
-	:rtype: None
+Parameters
+----------
+xCXX: float
+xCYY: float
+xCZZ: float
+xCXY: float
+xCXZ: float
+xCYZ: float
+xCX: float
+xCY: float
+xCZ: float
+xCCte: float
+
+Returns
+-------
+None
 ") Coefficients;
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1586,7 +1832,9 @@ class IntAna_Quadric {
 		%feature("compactdefaultargs") IntAna_Quadric;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") IntAna_Quadric;
 		 IntAna_Quadric();
 
@@ -1594,9 +1842,13 @@ class IntAna_Quadric {
 		%feature("compactdefaultargs") IntAna_Quadric;
 		%feature("autodoc", "Creates a quadric from a pln.
 
-	:param P:
-	:type P: gp_Pln
-	:rtype: None
+Parameters
+----------
+P: gp_Pln
+
+Returns
+-------
+None
 ") IntAna_Quadric;
 		 IntAna_Quadric(const gp_Pln & P);
 
@@ -1604,9 +1856,13 @@ class IntAna_Quadric {
 		%feature("compactdefaultargs") IntAna_Quadric;
 		%feature("autodoc", "Creates a quadric from a sphere.
 
-	:param Sph:
-	:type Sph: gp_Sphere
-	:rtype: None
+Parameters
+----------
+Sph: gp_Sphere
+
+Returns
+-------
+None
 ") IntAna_Quadric;
 		 IntAna_Quadric(const gp_Sphere & Sph);
 
@@ -1614,9 +1870,13 @@ class IntAna_Quadric {
 		%feature("compactdefaultargs") IntAna_Quadric;
 		%feature("autodoc", "Creates a quadric from a cylinder.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+
+Returns
+-------
+None
 ") IntAna_Quadric;
 		 IntAna_Quadric(const gp_Cylinder & Cyl);
 
@@ -1624,9 +1884,13 @@ class IntAna_Quadric {
 		%feature("compactdefaultargs") IntAna_Quadric;
 		%feature("autodoc", "Creates a quadric from a cone.
 
-	:param Cone:
-	:type Cone: gp_Cone
-	:rtype: None
+Parameters
+----------
+Cone: gp_Cone
+
+Returns
+-------
+None
 ") IntAna_Quadric;
 		 IntAna_Quadric(const gp_Cone & Cone);
 
@@ -1634,29 +1898,23 @@ class IntAna_Quadric {
 		%feature("compactdefaultargs") NewCoefficients;
 		%feature("autodoc", "Returns the coefficients of the polynomial equation ( written in the natural coordinates system ) in the local coordinates system defined by axis.
 
-	:param xCXX:
-	:type xCXX: float
-	:param xCYY:
-	:type xCYY: float
-	:param xCZZ:
-	:type xCZZ: float
-	:param xCXY:
-	:type xCXY: float
-	:param xCXZ:
-	:type xCXZ: float
-	:param xCYZ:
-	:type xCYZ: float
-	:param xCX:
-	:type xCX: float
-	:param xCY:
-	:type xCY: float
-	:param xCZ:
-	:type xCZ: float
-	:param xCCte:
-	:type xCCte: float
-	:param Axis:
-	:type Axis: gp_Ax3
-	:rtype: None
+Parameters
+----------
+xCXX: float
+xCYY: float
+xCZZ: float
+xCXY: float
+xCXZ: float
+xCYZ: float
+xCX: float
+xCY: float
+xCZ: float
+xCCte: float
+Axis: gp_Ax3
+
+Returns
+-------
+None
 ") NewCoefficients;
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax3 & Axis);
 
@@ -1664,9 +1922,13 @@ class IntAna_Quadric {
 		%feature("compactdefaultargs") SetQuadric;
 		%feature("autodoc", "Initializes the quadric with a pln.
 
-	:param P:
-	:type P: gp_Pln
-	:rtype: None
+Parameters
+----------
+P: gp_Pln
+
+Returns
+-------
+None
 ") SetQuadric;
 		void SetQuadric(const gp_Pln & P);
 
@@ -1674,9 +1936,13 @@ class IntAna_Quadric {
 		%feature("compactdefaultargs") SetQuadric;
 		%feature("autodoc", "Initialize the quadric with a sphere.
 
-	:param Sph:
-	:type Sph: gp_Sphere
-	:rtype: None
+Parameters
+----------
+Sph: gp_Sphere
+
+Returns
+-------
+None
 ") SetQuadric;
 		void SetQuadric(const gp_Sphere & Sph);
 
@@ -1684,9 +1950,13 @@ class IntAna_Quadric {
 		%feature("compactdefaultargs") SetQuadric;
 		%feature("autodoc", "Initializes the quadric with a cone.
 
-	:param Con:
-	:type Con: gp_Cone
-	:rtype: None
+Parameters
+----------
+Con: gp_Cone
+
+Returns
+-------
+None
 ") SetQuadric;
 		void SetQuadric(const gp_Cone & Con);
 
@@ -1694,9 +1964,13 @@ class IntAna_Quadric {
 		%feature("compactdefaultargs") SetQuadric;
 		%feature("autodoc", "Initializes the quadric with a cylinder.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+
+Returns
+-------
+None
 ") SetQuadric;
 		void SetQuadric(const gp_Cylinder & Cyl);
 
@@ -1704,7 +1978,9 @@ class IntAna_Quadric {
 		%feature("compactdefaultargs") SpecialPoints;
 		%feature("autodoc", "Returns the list of special points (with singularities).
 
-	:rtype: NCollection_List<gp_Pnt>
+Returns
+-------
+NCollection_List<gp_Pnt>
 ") SpecialPoints;
 		const NCollection_List<gp_Pnt> SpecialPoints();
 

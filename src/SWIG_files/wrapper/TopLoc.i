@@ -96,7 +96,9 @@ class TopLoc_Datum3D : public Standard_Transient {
 		%feature("compactdefaultargs") TopLoc_Datum3D;
 		%feature("autodoc", "Constructs a default datum3d.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopLoc_Datum3D;
 		 TopLoc_Datum3D();
 
@@ -104,9 +106,13 @@ class TopLoc_Datum3D : public Standard_Transient {
 		%feature("compactdefaultargs") TopLoc_Datum3D;
 		%feature("autodoc", "Constructs a datum3d form a trsf from gp. an error is raised if the trsf is not a rigid transformation.
 
-	:param T:
-	:type T: gp_Trsf
-	:rtype: None
+Parameters
+----------
+T: gp_Trsf
+
+Returns
+-------
+None
 ") TopLoc_Datum3D;
 		 TopLoc_Datum3D(const gp_Trsf & T);
 
@@ -114,7 +120,9 @@ class TopLoc_Datum3D : public Standard_Transient {
 		%feature("compactdefaultargs") Transformation;
 		%feature("autodoc", "Returns a gp_trsf which, when applied to this datum, produces the default datum.
 
-	:rtype: gp_Trsf
+Returns
+-------
+gp_Trsf
 ") Transformation;
 		const gp_Trsf Transformation();
 
@@ -146,11 +154,14 @@ class TopLoc_ItemLocation {
 		%feature("compactdefaultargs") TopLoc_ItemLocation;
 		%feature("autodoc", "Sets the elementary datum to <d> sets the exponent to <p>.
 
-	:param D:
-	:type D: TopLoc_Datum3D
-	:param P:
-	:type P: int
-	:rtype: None
+Parameters
+----------
+D: TopLoc_Datum3D
+P: int
+
+Returns
+-------
+None
 ") TopLoc_ItemLocation;
 		 TopLoc_ItemLocation(const opencascade::handle<TopLoc_Datum3D> & D, const Standard_Integer P);
 
@@ -172,9 +183,13 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") Divided;
 		%feature("autodoc", "Returns <self> / <other>.
 
-	:param Other:
-	:type Other: TopLoc_Location
-	:rtype: TopLoc_Location
+Parameters
+----------
+Other: TopLoc_Location
+
+Returns
+-------
+TopLoc_Location
 ") Divided;
 		TopLoc_Location Divided(const TopLoc_Location & Other);
 
@@ -190,7 +205,9 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") FirstDatum;
 		%feature("autodoc", "Returns the first elementary datum of the location. use the nextlocation function recursively to access the other data comprising this location. exceptions standard_nosuchobject if this location is empty.
 
-	:rtype: opencascade::handle<TopLoc_Datum3D>
+Returns
+-------
+opencascade::handle<TopLoc_Datum3D>
 ") FirstDatum;
 		const opencascade::handle<TopLoc_Datum3D> & FirstDatum();
 
@@ -198,7 +215,9 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") FirstPower;
 		%feature("autodoc", "Returns the power elevation of the first elementary datum. exceptions standard_nosuchobject if this location is empty.
 
-	:rtype: int
+Returns
+-------
+int
 ") FirstPower;
 		Standard_Integer FirstPower();
 
@@ -206,9 +225,13 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") HashCode;
 		%feature("autodoc", "Returns a hashed value for this local coordinate system. this value is used, with map tables, to store and retrieve the object easily, and is in the range [1, theupperbound]. @param theupperbound the upper bound of the range a computing hash code must be within returns a computed hash code, in the range [1, theupperbound].
 
-	:param theUpperBound:
-	:type theUpperBound: int
-	:rtype: int
+Parameters
+----------
+theUpperBound: int
+
+Returns
+-------
+int
 ") HashCode;
 		Standard_Integer HashCode(Standard_Integer theUpperBound);
 
@@ -222,7 +245,9 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") Identity;
 		%feature("autodoc", "Resets this location to the identity transformation.
 
-	:rtype: None
+Returns
+-------
+None
 ") Identity;
 		void Identity();
 
@@ -230,7 +255,9 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") Inverted;
 		%feature("autodoc", "Returns the inverse of <self>. //! <self> * inverted() is an identity.
 
-	:rtype: TopLoc_Location
+Returns
+-------
+TopLoc_Location
 ") Inverted;
 		TopLoc_Location Inverted();
 
@@ -238,9 +265,13 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") IsDifferent;
 		%feature("autodoc", "Returns true if this location and the location other do not have the same elementary data, i.e. do not contain the same series of toploc_datum3d and respective powers. this method is an alias for operator !=.
 
-	:param Other:
-	:type Other: TopLoc_Location
-	:rtype: bool
+Parameters
+----------
+Other: TopLoc_Location
+
+Returns
+-------
+bool
 ") IsDifferent;
 		Standard_Boolean IsDifferent(const TopLoc_Location & Other);
 
@@ -248,9 +279,13 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Returns true if this location and the location other have the same elementary data, i.e. contain the same series of toploc_datum3d and respective powers. this method is an alias for operator ==.
 
-	:param Other:
-	:type Other: TopLoc_Location
-	:rtype: bool
+Parameters
+----------
+Other: TopLoc_Location
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const TopLoc_Location & Other);
 
@@ -258,7 +293,9 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") IsIdentity;
 		%feature("autodoc", "Returns true if this location is equal to the identity transformation.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsIdentity;
 		Standard_Boolean IsIdentity();
 
@@ -266,9 +303,13 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") Multiplied;
 		%feature("autodoc", "Returns <self> * <other>, the elementary datums are concatenated.
 
-	:param Other:
-	:type Other: TopLoc_Location
-	:rtype: TopLoc_Location
+Parameters
+----------
+Other: TopLoc_Location
+
+Returns
+-------
+TopLoc_Location
 ") Multiplied;
 		TopLoc_Location Multiplied(const TopLoc_Location & Other);
 
@@ -276,7 +317,9 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") NextLocation;
 		%feature("autodoc", "Returns a location representing <self> without the first datum. we have the relation : //! <self> = nextlocation() * firstdatum() ^ firstpower() exceptions standard_nosuchobject if this location is empty.
 
-	:rtype: TopLoc_Location
+Returns
+-------
+TopLoc_Location
 ") NextLocation;
 		const TopLoc_Location & NextLocation();
 
@@ -284,9 +327,13 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") Powered;
 		%feature("autodoc", "Returns me at the power <pwr>. if <pwr> is zero returns identity. <pwr> can be lower than zero (usual meaning for powers).
 
-	:param pwr:
-	:type pwr: int
-	:rtype: TopLoc_Location
+Parameters
+----------
+pwr: int
+
+Returns
+-------
+TopLoc_Location
 ") Powered;
 		TopLoc_Location Powered(const Standard_Integer pwr);
 
@@ -294,9 +341,13 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") Predivided;
 		%feature("autodoc", "Returns <other>.inverted() * <self>.
 
-	:param Other:
-	:type Other: TopLoc_Location
-	:rtype: TopLoc_Location
+Parameters
+----------
+Other: TopLoc_Location
+
+Returns
+-------
+TopLoc_Location
 ") Predivided;
 		TopLoc_Location Predivided(const TopLoc_Location & Other);
 
@@ -312,7 +363,9 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") TopLoc_Location;
 		%feature("autodoc", "Constructs an empty local coordinate system object. note: a location constructed from a default datum is said to be 'empty'.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopLoc_Location;
 		 TopLoc_Location();
 
@@ -320,9 +373,13 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") TopLoc_Location;
 		%feature("autodoc", "Constructs the local coordinate system object defined by the transformation t. t invokes in turn, a toploc_datum3d object.
 
-	:param T:
-	:type T: gp_Trsf
-	:rtype: None
+Parameters
+----------
+T: gp_Trsf
+
+Returns
+-------
+None
 ") TopLoc_Location;
 		 TopLoc_Location(const gp_Trsf & T);
 
@@ -330,9 +387,13 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") TopLoc_Location;
 		%feature("autodoc", "Constructs the local coordinate system object defined by the 3d datum d. exceptions standard_constructionerror if the transformation t does not represent a 3d coordinate system.
 
-	:param D:
-	:type D: TopLoc_Datum3D
-	:rtype: None
+Parameters
+----------
+D: TopLoc_Datum3D
+
+Returns
+-------
+None
 ") TopLoc_Location;
 		 TopLoc_Location(const opencascade::handle<TopLoc_Datum3D> & D);
 
@@ -340,7 +401,9 @@ class TopLoc_Location {
 		%feature("compactdefaultargs") Transformation;
 		%feature("autodoc", "Returns the transformation associated to the coordinate system.
 
-	:rtype: gp_Trsf
+Returns
+-------
+gp_Trsf
 ") Transformation;
 		const gp_Trsf Transformation();
 
@@ -360,17 +423,29 @@ class TopLoc_Location {
             }
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
-		%feature("autodoc", "	:param Other:
-	:type Other: TopLoc_Location
-	:rtype: TopLoc_Location
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Other: TopLoc_Location
+
+Returns
+-------
+TopLoc_Location
 ") operator *;
 		TopLoc_Location operator *(const TopLoc_Location & Other);
 
 		/****************** operator / ******************/
 		%feature("compactdefaultargs") operator /;
-		%feature("autodoc", "	:param Other:
-	:type Other: TopLoc_Location
-	:rtype: TopLoc_Location
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Other: TopLoc_Location
+
+Returns
+-------
+TopLoc_Location
 ") operator /;
 		TopLoc_Location operator /(const TopLoc_Location & Other);
 
@@ -404,23 +479,36 @@ class TopLoc_SListNodeOfItemLocation : public Standard_Transient {
 	public:
 		/****************** Tail ******************/
 		%feature("compactdefaultargs") Tail;
-		%feature("autodoc", "	:rtype: TopLoc_SListOfItemLocation
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopLoc_SListOfItemLocation
 ") Tail;
 		TopLoc_SListOfItemLocation & Tail();
 
 		/****************** TopLoc_SListNodeOfItemLocation ******************/
 		%feature("compactdefaultargs") TopLoc_SListNodeOfItemLocation;
-		%feature("autodoc", "	:param I:
-	:type I: TopLoc_ItemLocation
-	:param aTail:
-	:type aTail: TopLoc_SListOfItemLocation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: TopLoc_ItemLocation
+aTail: TopLoc_SListOfItemLocation
+
+Returns
+-------
+None
 ") TopLoc_SListNodeOfItemLocation;
 		 TopLoc_SListNodeOfItemLocation(const TopLoc_ItemLocation & I, const TopLoc_SListOfItemLocation & aTail);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "	:rtype: TopLoc_ItemLocation
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopLoc_ItemLocation
 ") Value;
 		TopLoc_ItemLocation & Value();
 
@@ -444,9 +532,13 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") Assign;
 		%feature("autodoc", "Sets a list from an other one. the lists are shared. the list itself is returned.
 
-	:param Other:
-	:type Other: TopLoc_SListOfItemLocation
-	:rtype: TopLoc_SListOfItemLocation
+Parameters
+----------
+Other: TopLoc_SListOfItemLocation
+
+Returns
+-------
+TopLoc_SListOfItemLocation
 ") Assign;
 		TopLoc_SListOfItemLocation & Assign(const TopLoc_SListOfItemLocation & Other);
 
@@ -454,7 +546,9 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Sets the list to be empty.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -462,9 +556,13 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") Construct;
 		%feature("autodoc", "Replaces the list by a list with <anitem> as value and the list <self> as tail.
 
-	:param anItem:
-	:type anItem: TopLoc_ItemLocation
-	:rtype: None
+Parameters
+----------
+anItem: TopLoc_ItemLocation
+
+Returns
+-------
+None
 ") Construct;
 		void Construct(const TopLoc_ItemLocation & anItem);
 
@@ -472,7 +570,9 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") IsEmpty;
 		%feature("autodoc", "Returne true if this list is empty.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
@@ -480,7 +580,9 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Returns true if the iterator has a current value. this is !isempty().
 
-	:rtype: bool
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
@@ -488,7 +590,9 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Moves the iterator to the next object in the list. if the iterator is empty it will stay empty. this is totail().
 
-	:rtype: None
+Returns
+-------
+None
 ") Next;
 		void Next();
 
@@ -496,7 +600,9 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") Tail;
 		%feature("autodoc", "Returns the current tail of the list. on an empty list the tail is the list itself.
 
-	:rtype: TopLoc_SListOfItemLocation
+Returns
+-------
+TopLoc_SListOfItemLocation
 ") Tail;
 		const TopLoc_SListOfItemLocation & Tail();
 
@@ -504,7 +610,9 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") ToTail;
 		%feature("autodoc", "Replaces the list <self> by its tail.
 
-	:rtype: None
+Returns
+-------
+None
 ") ToTail;
 		void ToTail();
 
@@ -512,7 +620,9 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") TopLoc_SListOfItemLocation;
 		%feature("autodoc", "Creates an empty list.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopLoc_SListOfItemLocation;
 		 TopLoc_SListOfItemLocation();
 
@@ -520,11 +630,14 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") TopLoc_SListOfItemLocation;
 		%feature("autodoc", "Creates a list with <anitem> as value and <atail> as tail.
 
-	:param anItem:
-	:type anItem: TopLoc_ItemLocation
-	:param aTail:
-	:type aTail: TopLoc_SListOfItemLocation
-	:rtype: None
+Parameters
+----------
+anItem: TopLoc_ItemLocation
+aTail: TopLoc_SListOfItemLocation
+
+Returns
+-------
+None
 ") TopLoc_SListOfItemLocation;
 		 TopLoc_SListOfItemLocation(const TopLoc_ItemLocation & anItem, const TopLoc_SListOfItemLocation & aTail);
 
@@ -532,9 +645,13 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") TopLoc_SListOfItemLocation;
 		%feature("autodoc", "Creates a list from an other one. the lists are shared.
 
-	:param Other:
-	:type Other: TopLoc_SListOfItemLocation
-	:rtype: None
+Parameters
+----------
+Other: TopLoc_SListOfItemLocation
+
+Returns
+-------
+None
 ") TopLoc_SListOfItemLocation;
 		 TopLoc_SListOfItemLocation(const TopLoc_SListOfItemLocation & Other);
 
@@ -542,9 +659,13 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") TopLoc_SListOfItemLocation;
 		%feature("autodoc", "Move constructor.
 
-	:param theOther:
-	:type theOther: TopLoc_SListOfItemLocation
-	:rtype: None
+Parameters
+----------
+theOther: TopLoc_SListOfItemLocation
+
+Returns
+-------
+None
 ") TopLoc_SListOfItemLocation;
 		 TopLoc_SListOfItemLocation(TopLoc_SListOfItemLocation & theOther);
 
@@ -552,7 +673,9 @@ class TopLoc_SListOfItemLocation {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the current value of the list. an error is raised if the list is empty.
 
-	:rtype: TopLoc_ItemLocation
+Returns
+-------
+TopLoc_ItemLocation
 ") Value;
 		const TopLoc_ItemLocation & Value();
 

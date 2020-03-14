@@ -97,9 +97,13 @@ class ProjLib {
 		%feature("compactdefaultargs") IsAnaSurf;
 		%feature("autodoc", "Returns 'true' if surface is analytical, that is it can be plane, cylinder, cone, sphere, torus. for all other types of surface method returns 'false'.
 
-	:param theAS:
-	:type theAS: Adaptor3d_HSurface
-	:rtype: bool
+Parameters
+----------
+theAS: Adaptor3d_HSurface
+
+Returns
+-------
+bool
 ") IsAnaSurf;
 		static Standard_Boolean IsAnaSurf(const opencascade::handle<Adaptor3d_HSurface> & theAS);
 
@@ -107,171 +111,254 @@ class ProjLib {
 		%feature("compactdefaultargs") MakePCurveOfType;
 		%feature("autodoc", "Make empty p-curve <ac> of relevant to <pc> type.
 
-	:param PC:
-	:type PC: ProjLib_ProjectedCurve
-	:param aC:
-	:type aC: Geom2d_Curve
-	:rtype: None
+Parameters
+----------
+PC: ProjLib_ProjectedCurve
+aC: Geom2d_Curve
+
+Returns
+-------
+None
 ") MakePCurveOfType;
 		static void MakePCurveOfType(const ProjLib_ProjectedCurve & PC, opencascade::handle<Geom2d_Curve> & aC);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Pl:
-	:type Pl: gp_Pln
-	:param P:
-	:type P: gp_Pnt
-	:rtype: gp_Pnt2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Pl: gp_Pln
+P: gp_Pnt
+
+Returns
+-------
+gp_Pnt2d
 ") Project;
 		static gp_Pnt2d Project(const gp_Pln & Pl, const gp_Pnt & P);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Pl:
-	:type Pl: gp_Pln
-	:param L:
-	:type L: gp_Lin
-	:rtype: gp_Lin2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Pl: gp_Pln
+L: gp_Lin
+
+Returns
+-------
+gp_Lin2d
 ") Project;
 		static gp_Lin2d Project(const gp_Pln & Pl, const gp_Lin & L);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Pl:
-	:type Pl: gp_Pln
-	:param C:
-	:type C: gp_Circ
-	:rtype: gp_Circ2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Pl: gp_Pln
+C: gp_Circ
+
+Returns
+-------
+gp_Circ2d
 ") Project;
 		static gp_Circ2d Project(const gp_Pln & Pl, const gp_Circ & C);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Pl:
-	:type Pl: gp_Pln
-	:param E:
-	:type E: gp_Elips
-	:rtype: gp_Elips2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Pl: gp_Pln
+E: gp_Elips
+
+Returns
+-------
+gp_Elips2d
 ") Project;
 		static gp_Elips2d Project(const gp_Pln & Pl, const gp_Elips & E);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Pl:
-	:type Pl: gp_Pln
-	:param P:
-	:type P: gp_Parab
-	:rtype: gp_Parab2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Pl: gp_Pln
+P: gp_Parab
+
+Returns
+-------
+gp_Parab2d
 ") Project;
 		static gp_Parab2d Project(const gp_Pln & Pl, const gp_Parab & P);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Pl:
-	:type Pl: gp_Pln
-	:param H:
-	:type H: gp_Hypr
-	:rtype: gp_Hypr2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Pl: gp_Pln
+H: gp_Hypr
+
+Returns
+-------
+gp_Hypr2d
 ") Project;
 		static gp_Hypr2d Project(const gp_Pln & Pl, const gp_Hypr & H);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Cy:
-	:type Cy: gp_Cylinder
-	:param P:
-	:type P: gp_Pnt
-	:rtype: gp_Pnt2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Cy: gp_Cylinder
+P: gp_Pnt
+
+Returns
+-------
+gp_Pnt2d
 ") Project;
 		static gp_Pnt2d Project(const gp_Cylinder & Cy, const gp_Pnt & P);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Cy:
-	:type Cy: gp_Cylinder
-	:param L:
-	:type L: gp_Lin
-	:rtype: gp_Lin2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Cy: gp_Cylinder
+L: gp_Lin
+
+Returns
+-------
+gp_Lin2d
 ") Project;
 		static gp_Lin2d Project(const gp_Cylinder & Cy, const gp_Lin & L);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Cy:
-	:type Cy: gp_Cylinder
-	:param Ci:
-	:type Ci: gp_Circ
-	:rtype: gp_Lin2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Cy: gp_Cylinder
+Ci: gp_Circ
+
+Returns
+-------
+gp_Lin2d
 ") Project;
 		static gp_Lin2d Project(const gp_Cylinder & Cy, const gp_Circ & Ci);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Co:
-	:type Co: gp_Cone
-	:param P:
-	:type P: gp_Pnt
-	:rtype: gp_Pnt2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Co: gp_Cone
+P: gp_Pnt
+
+Returns
+-------
+gp_Pnt2d
 ") Project;
 		static gp_Pnt2d Project(const gp_Cone & Co, const gp_Pnt & P);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Co:
-	:type Co: gp_Cone
-	:param L:
-	:type L: gp_Lin
-	:rtype: gp_Lin2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Co: gp_Cone
+L: gp_Lin
+
+Returns
+-------
+gp_Lin2d
 ") Project;
 		static gp_Lin2d Project(const gp_Cone & Co, const gp_Lin & L);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Co:
-	:type Co: gp_Cone
-	:param Ci:
-	:type Ci: gp_Circ
-	:rtype: gp_Lin2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Co: gp_Cone
+Ci: gp_Circ
+
+Returns
+-------
+gp_Lin2d
 ") Project;
 		static gp_Lin2d Project(const gp_Cone & Co, const gp_Circ & Ci);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Sp:
-	:type Sp: gp_Sphere
-	:param P:
-	:type P: gp_Pnt
-	:rtype: gp_Pnt2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sp: gp_Sphere
+P: gp_Pnt
+
+Returns
+-------
+gp_Pnt2d
 ") Project;
 		static gp_Pnt2d Project(const gp_Sphere & Sp, const gp_Pnt & P);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param Sp:
-	:type Sp: gp_Sphere
-	:param Ci:
-	:type Ci: gp_Circ
-	:rtype: gp_Lin2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sp: gp_Sphere
+Ci: gp_Circ
+
+Returns
+-------
+gp_Lin2d
 ") Project;
 		static gp_Lin2d Project(const gp_Sphere & Sp, const gp_Circ & Ci);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param To:
-	:type To: gp_Torus
-	:param P:
-	:type P: gp_Pnt
-	:rtype: gp_Pnt2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+To: gp_Torus
+P: gp_Pnt
+
+Returns
+-------
+gp_Pnt2d
 ") Project;
 		static gp_Pnt2d Project(const gp_Torus & To, const gp_Pnt & P);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param To:
-	:type To: gp_Torus
-	:param Ci:
-	:type Ci: gp_Circ
-	:rtype: gp_Lin2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+To: gp_Torus
+Ci: gp_Circ
+
+Returns
+-------
+gp_Lin2d
 ") Project;
 		static gp_Lin2d Project(const gp_Torus & To, const gp_Circ & Ci);
 
@@ -293,13 +380,15 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "Returns the bounds of the continuous part corresponding to index.
 
-	:param Index:
-	:type Index: int
-	:param Udeb:
-	:type Udeb: float
-	:param Ufin:
-	:type Ufin: float
-	:rtype: None
+Parameters
+----------
+Index: int
+Udeb: float
+Ufin: float
+
+Returns
+-------
+None
 ") Bounds;
 		void Bounds(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -307,11 +396,14 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Computes the point of parameter u on the curve.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt2d
+
+Returns
+-------
+None
 ") D0;
 		void D0(const Standard_Real U, gp_Pnt2d & P);
 
@@ -319,13 +411,15 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Computes the point of parameter u on the curve with its first derivative. raised if the continuity of the current interval is not c1.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:param V:
-	:type V: gp_Vec2d
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt2d
+V: gp_Vec2d
+
+Returns
+-------
+None
 ") D1;
 		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V);
 
@@ -333,15 +427,16 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "Returns the point p of parameter u, the first and second derivatives v1 and v2. raised if the continuity of the current interval is not c2.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:param V1:
-	:type V1: gp_Vec2d
-	:param V2:
-	:type V2: gp_Vec2d
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt2d
+V1: gp_Vec2d
+V2: gp_Vec2d
+
+Returns
+-------
+None
 ") D2;
 		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2);
 
@@ -349,11 +444,14 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") DN;
 		%feature("autodoc", "The returned vector gives the value of the derivative for the order of derivation n. raised if n < 1. raised if n > 2.
 
-	:param U:
-	:type U: float
-	:param N:
-	:type N: int
-	:rtype: gp_Vec2d
+Parameters
+----------
+U: float
+N: int
+
+Returns
+-------
+gp_Vec2d
 ") DN;
 		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N);
 
@@ -361,35 +459,54 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") FirstParameter;
 		%feature("autodoc", "Returns the first parameter of the curve c which has a projection on s.
 
-	:rtype: float
+Returns
+-------
+float
 ") FirstParameter;
 		Standard_Real FirstParameter();
 
 		/****************** GetCurve ******************/
 		%feature("compactdefaultargs") GetCurve;
-		%feature("autodoc", "	:rtype: opencascade::handle<Adaptor3d_HCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HCurve>
 ") GetCurve;
 		const opencascade::handle<Adaptor3d_HCurve> & GetCurve();
 
 		/****************** GetSequence ******************/
 		%feature("compactdefaultargs") GetSequence;
-		%feature("autodoc", "	:rtype: opencascade::handle<ProjLib_HSequenceOfHSequenceOfPnt>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<ProjLib_HSequenceOfHSequenceOfPnt>
 ") GetSequence;
 		const opencascade::handle<ProjLib_HSequenceOfHSequenceOfPnt> & GetSequence();
 
 		/****************** GetSurface ******************/
 		%feature("compactdefaultargs") GetSurface;
-		%feature("autodoc", "	:rtype: opencascade::handle<Adaptor3d_HSurface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HSurface>
 ") GetSurface;
 		const opencascade::handle<Adaptor3d_HSurface> & GetSurface();
 
 		/****************** GetTolerance ******************/
 		%feature("compactdefaultargs") GetTolerance;
-		%feature("autodoc", "	:param TolU:
-	:type TolU: float
-	:param TolV:
-	:type TolV: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TolU: float
+TolV: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -397,7 +514,9 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") GetType;
 		%feature("autodoc", "Returns the type of the curve in the current interval : line, circle, ellipse, hyperbola, parabola, beziercurve, bsplinecurve, othercurve.
 
-	:rtype: GeomAbs_CurveType
+Returns
+-------
+GeomAbs_CurveType
 ") GetType;
 		GeomAbs_CurveType GetType();
 
@@ -405,7 +524,9 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Computes a set of projected point and determine the continuous parts of the projected curves. the points corresponding to a projection on the bounds of the surface are included in this set of points.
 
-	:rtype: None
+Returns
+-------
+None
 ") Init;
 		void Init();
 
@@ -413,11 +534,14 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Returns the parameters corresponding to s discontinuities. //! the array must provide enough room to accommodate for the parameters. i.e. t.length() > nbintervals().
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
@@ -425,11 +549,14 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") IsSinglePnt;
 		%feature("autodoc", "Returns true if part of projection with number index is a single point and writes its coordinates in p.
 
-	:param Index:
-	:type Index: int
-	:param P:
-	:type P: gp_Pnt2d
-	:rtype: bool
+Parameters
+----------
+Index: int
+P: gp_Pnt2d
+
+Returns
+-------
+bool
 ") IsSinglePnt;
 		Standard_Boolean IsSinglePnt(const Standard_Integer Index, gp_Pnt2d & P);
 
@@ -437,11 +564,14 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") IsUIso;
 		%feature("autodoc", "Returns true if part of projection with number index is an u-isoparametric curve of input surface.
 
-	:param Index:
-	:type Index: int
-	:param U:
-	:type U: float
-	:rtype: bool
+Parameters
+----------
+Index: int
+U: float
+
+Returns
+-------
+bool
 ") IsUIso;
 		Standard_Boolean IsUIso(const Standard_Integer Index, Standard_Real &OutValue);
 
@@ -449,11 +579,14 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") IsVIso;
 		%feature("autodoc", "Returns true if part of projection with number index is an v-isoparametric curve of input surface.
 
-	:param Index:
-	:type Index: int
-	:param V:
-	:type V: float
-	:rtype: bool
+Parameters
+----------
+Index: int
+V: float
+
+Returns
+-------
+bool
 ") IsVIso;
 		Standard_Boolean IsVIso(const Standard_Integer Index, Standard_Real &OutValue);
 
@@ -461,7 +594,9 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") LastParameter;
 		%feature("autodoc", "Returns the last parameter of the curve c which has a projection on s.
 
-	:rtype: float
+Returns
+-------
+float
 ") LastParameter;
 		Standard_Real LastParameter();
 
@@ -469,9 +604,13 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Load;
 		%feature("autodoc", "Changes the surface.
 
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:rtype: None
+Parameters
+----------
+S: Adaptor3d_HSurface
+
+Returns
+-------
+None
 ") Load;
 		void Load(const opencascade::handle<Adaptor3d_HSurface> & S);
 
@@ -479,9 +618,13 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Load;
 		%feature("autodoc", "Changes the curve.
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") Load;
 		void Load(const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -489,9 +632,13 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") MaxDistance;
 		%feature("autodoc", "Returns the maximum distance between curve to project and surface.
 
-	:param Index:
-	:type Index: int
-	:rtype: float
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
 ") MaxDistance;
 		Standard_Real MaxDistance(const Standard_Integer Index);
 
@@ -499,7 +646,9 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") NbCurves;
 		%feature("autodoc", "Returns the number of continuous part of the projected curve.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbCurves;
 		Standard_Integer NbCurves();
 
@@ -507,15 +656,23 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals which define an s continuous part of the projected curve.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
 		/****************** ProjLib_CompProjectedCurve ******************/
 		%feature("compactdefaultargs") ProjLib_CompProjectedCurve;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") ProjLib_CompProjectedCurve;
 		 ProjLib_CompProjectedCurve();
 
@@ -523,15 +680,16 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") ProjLib_CompProjectedCurve;
 		%feature("autodoc", "Try to find all solutions.
 
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param TolU:
-	:type TolU: float
-	:param TolV:
-	:type TolV: float
-	:rtype: None
+Parameters
+----------
+S: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+TolU: float
+TolV: float
+
+Returns
+-------
+None
 ") ProjLib_CompProjectedCurve;
 		 ProjLib_CompProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Real TolU, const Standard_Real TolV);
 
@@ -539,17 +697,17 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") ProjLib_CompProjectedCurve;
 		%feature("autodoc", "This constructor tries to optimize the search using the assumption that maximum distance between surface and curve less or equal then maxdist. if maxdist < 0 then algorithm works as above.
 
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param TolU:
-	:type TolU: float
-	:param TolV:
-	:type TolV: float
-	:param MaxDist:
-	:type MaxDist: float
-	:rtype: None
+Parameters
+----------
+S: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+TolU: float
+TolV: float
+MaxDist: float
+
+Returns
+-------
+None
 ") ProjLib_CompProjectedCurve;
 		 ProjLib_CompProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Real TolU, const Standard_Real TolV, const Standard_Real MaxDist);
 
@@ -557,13 +715,15 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Trim;
 		%feature("autodoc", "Returns a curve equivalent of <self> between parameters <first> and <last>. <tol> is used to test for 2d points confusion. if <first> >= <last>.
 
-	:param FirstParam:
-	:type FirstParam: float
-	:param LastParam:
-	:type LastParam: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor2d_HCurve2d>
+Parameters
+----------
+FirstParam: float
+LastParam: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor2d_HCurve2d>
 ") Trim;
 		opencascade::handle<Adaptor2d_HCurve2d> Trim(const Standard_Real FirstParam, const Standard_Real LastParam, const Standard_Real Tol);
 
@@ -571,9 +731,13 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the point of parameter u on the curve.
 
-	:param U:
-	:type U: float
-	:rtype: gp_Pnt2d
+Parameters
+----------
+U: float
+
+Returns
+-------
+gp_Pnt2d
 ") Value;
 		gp_Pnt2d Value(const Standard_Real U);
 
@@ -593,13 +757,21 @@ class ProjLib_ComputeApprox {
 	public:
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom2d_BSplineCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
 ") BSpline;
 		opencascade::handle<Geom2d_BSplineCurve> BSpline();
 
 		/****************** Bezier ******************/
 		%feature("compactdefaultargs") Bezier;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom2d_BezierCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom2d_BezierCurve>
 ") Bezier;
 		opencascade::handle<Geom2d_BezierCurve> Bezier();
 
@@ -607,11 +779,14 @@ class ProjLib_ComputeApprox {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Performs projecting. in case of approximation current values of parameters are used: default values or set by corresponding methods set...
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S);
 
@@ -619,7 +794,9 @@ class ProjLib_ComputeApprox {
 		%feature("compactdefaultargs") ProjLib_ComputeApprox;
 		%feature("autodoc", "Empty constructor, it only sets some initial values for class fields.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_ComputeApprox;
 		 ProjLib_ComputeApprox();
 
@@ -627,13 +804,15 @@ class ProjLib_ComputeApprox {
 		%feature("compactdefaultargs") ProjLib_ComputeApprox;
 		%feature("autodoc", "<tol> is the tolerance with which the approximation is performed. other parameters for approximation have default values.
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+Tol: float
+
+Returns
+-------
+None
 ") ProjLib_ComputeApprox;
 		 ProjLib_ComputeApprox(const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real Tol);
 
@@ -641,9 +820,13 @@ class ProjLib_ComputeApprox {
 		%feature("compactdefaultargs") SetBndPnt;
 		%feature("autodoc", "Set the parameter, which defines type of boundary condition between segments during approximation. it can be appparcurves_passpoint or appparcurves_tangencypoint. default value is appparcurves_tangencypoint;.
 
-	:param theBndPnt:
-	:type theBndPnt: AppParCurves_Constraint
-	:rtype: None
+Parameters
+----------
+theBndPnt: AppParCurves_Constraint
+
+Returns
+-------
+None
 ") SetBndPnt;
 		void SetBndPnt(const AppParCurves_Constraint theBndPnt);
 
@@ -651,11 +834,14 @@ class ProjLib_ComputeApprox {
 		%feature("compactdefaultargs") SetDegree;
 		%feature("autodoc", "Set min and max possible degree of result bspline curve2d, which is got by approximation. if thedegmin/max < 0, algorithm uses values that are chosen depending of types curve 3d and surface.
 
-	:param theDegMin:
-	:type theDegMin: int
-	:param theDegMax:
-	:type theDegMax: int
-	:rtype: None
+Parameters
+----------
+theDegMin: int
+theDegMax: int
+
+Returns
+-------
+None
 ") SetDegree;
 		void SetDegree(const Standard_Integer theDegMin, const Standard_Integer theDegMax);
 
@@ -663,9 +849,13 @@ class ProjLib_ComputeApprox {
 		%feature("compactdefaultargs") SetMaxSegments;
 		%feature("autodoc", "Set the parameter, which defines maximal value of parametric intervals the projected curve can be cut for approximation. if themaxsegments < 0, algorithm uses default value = 1000.
 
-	:param theMaxSegments:
-	:type theMaxSegments: int
-	:rtype: None
+Parameters
+----------
+theMaxSegments: int
+
+Returns
+-------
+None
 ") SetMaxSegments;
 		void SetMaxSegments(const Standard_Integer theMaxSegments);
 
@@ -673,9 +863,13 @@ class ProjLib_ComputeApprox {
 		%feature("compactdefaultargs") SetTolerance;
 		%feature("autodoc", "Set tolerance of approximation. default value is precision::confusion().
 
-	:param theTolerance:
-	:type theTolerance: float
-	:rtype: None
+Parameters
+----------
+theTolerance: float
+
+Returns
+-------
+None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real theTolerance);
 
@@ -683,7 +877,9 @@ class ProjLib_ComputeApprox {
 		%feature("compactdefaultargs") Tolerance;
 		%feature("autodoc", "Returns the reached tolerance.
 
-	:rtype: float
+Returns
+-------
+float
 ") Tolerance;
 		Standard_Real Tolerance();
 
@@ -705,7 +901,9 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "Returns result curve 2d.
 
-	:rtype: opencascade::handle<Geom2d_BSplineCurve>
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
 ") BSpline;
 		opencascade::handle<Geom2d_BSplineCurve> BSpline();
 
@@ -713,11 +911,14 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") BuildInitialCurve2d;
 		%feature("autodoc", "Builds initial 2d curve as bspline with degree = 1 using extrema algoritm. method is used in method perform(...).
 
-	:param Curve:
-	:type Curve: Adaptor3d_HCurve
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:rtype: opencascade::handle<Adaptor2d_HCurve2d>
+Parameters
+----------
+Curve: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+
+Returns
+-------
+opencascade::handle<Adaptor2d_HCurve2d>
 ") BuildInitialCurve2d;
 		opencascade::handle<Adaptor2d_HCurve2d> BuildInitialCurve2d(const opencascade::handle<Adaptor3d_HCurve> & Curve, const opencascade::handle<Adaptor3d_HSurface> & S);
 
@@ -725,13 +926,19 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") Curve2d;
 		%feature("autodoc", "Returns second 2d curve.
 
-	:rtype: opencascade::handle<Geom2d_Curve>
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") Curve2d;
 		opencascade::handle<Geom2d_Curve> Curve2d();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -739,11 +946,14 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Method, which performs projecting, using default values of parameters or they must be set by corresponding methods before using.
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S);
 
@@ -751,13 +961,15 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Method, which performs projecting, using default values of parameters or they must be set by corresponding methods before using. parameter initcurve2d is any rough estimation of 2d result curve.
 
-	:param InitCurve2d:
-	:type InitCurve2d: Adaptor2d_HCurve2d
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:rtype: opencascade::handle<Geom2d_BSplineCurve>
+Parameters
+----------
+InitCurve2d: Adaptor2d_HCurve2d
+C: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
 ") Perform;
 		opencascade::handle<Geom2d_BSplineCurve> Perform(const opencascade::handle<Adaptor2d_HCurve2d> & InitCurve2d, const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S);
 
@@ -765,7 +977,9 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") ProjLib_ComputeApproxOnPolarSurface;
 		%feature("autodoc", "Empty constructor, it only sets some initial values for class fields.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_ComputeApproxOnPolarSurface;
 		 ProjLib_ComputeApproxOnPolarSurface();
 
@@ -773,13 +987,16 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") ProjLib_ComputeApproxOnPolarSurface;
 		%feature("autodoc", "Constructor, which performs projecting.
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:param Tol: default value is 1.0e-4
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+Tol: float,optional
+	default value is 1.0e-4
+
+Returns
+-------
+None
 ") ProjLib_ComputeApproxOnPolarSurface;
 		 ProjLib_ComputeApproxOnPolarSurface(const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real Tol = 1.0e-4);
 
@@ -787,15 +1004,16 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") ProjLib_ComputeApproxOnPolarSurface;
 		%feature("autodoc", "Constructor, which performs projecting, using initial curve 2d initcurve2d, which is any rough approximation of result curve. parameter tol is 3d tolerance of approximation.
 
-	:param InitCurve2d:
-	:type InitCurve2d: Adaptor2d_HCurve2d
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+InitCurve2d: Adaptor2d_HCurve2d
+C: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+Tol: float
+
+Returns
+-------
+None
 ") ProjLib_ComputeApproxOnPolarSurface;
 		 ProjLib_ComputeApproxOnPolarSurface(const opencascade::handle<Adaptor2d_HCurve2d> & InitCurve2d, const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real Tol);
 
@@ -803,17 +1021,17 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") ProjLib_ComputeApproxOnPolarSurface;
 		%feature("autodoc", "Constructor, which performs projecting, using two initial curves 2d: initcurve2d and initcurve2dbis that are any rough approximations of result curves. this constructor is used to get two pcurves for seem edge. parameter tol is 3d tolerance of approximation.
 
-	:param InitCurve2d:
-	:type InitCurve2d: Adaptor2d_HCurve2d
-	:param InitCurve2dBis:
-	:type InitCurve2dBis: Adaptor2d_HCurve2d
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+InitCurve2d: Adaptor2d_HCurve2d
+InitCurve2dBis: Adaptor2d_HCurve2d
+C: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+Tol: float
+
+Returns
+-------
+None
 ") ProjLib_ComputeApproxOnPolarSurface;
 		 ProjLib_ComputeApproxOnPolarSurface(const opencascade::handle<Adaptor2d_HCurve2d> & InitCurve2d, const opencascade::handle<Adaptor2d_HCurve2d> & InitCurve2dBis, const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real Tol);
 
@@ -821,13 +1039,15 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") ProjectUsingInitialCurve2d;
 		%feature("autodoc", "Method, which performs projecting. method is used in method perform(...).
 
-	:param Curve:
-	:type Curve: Adaptor3d_HCurve
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:param InitCurve2d:
-	:type InitCurve2d: Adaptor2d_HCurve2d
-	:rtype: opencascade::handle<Geom2d_BSplineCurve>
+Parameters
+----------
+Curve: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+InitCurve2d: Adaptor2d_HCurve2d
+
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
 ") ProjectUsingInitialCurve2d;
 		opencascade::handle<Geom2d_BSplineCurve> ProjectUsingInitialCurve2d(const opencascade::handle<Adaptor3d_HCurve> & Curve, const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor2d_HCurve2d> & InitCurve2d);
 
@@ -835,9 +1055,13 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") SetBndPnt;
 		%feature("autodoc", "Set the parameter, which defines type of boundary condition between segments during approximation. it can be appparcurves_passpoint or appparcurves_tangencypoint. default value is appparcurves_tangencypoint.
 
-	:param theBndPnt:
-	:type theBndPnt: AppParCurves_Constraint
-	:rtype: None
+Parameters
+----------
+theBndPnt: AppParCurves_Constraint
+
+Returns
+-------
+None
 ") SetBndPnt;
 		void SetBndPnt(const AppParCurves_Constraint theBndPnt);
 
@@ -845,11 +1069,14 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") SetDegree;
 		%feature("autodoc", "Set min and max possible degree of result bspline curve2d, which is got by approximation. if thedegmin/max < 0, algorithm uses values min = 2, max = 8.
 
-	:param theDegMin:
-	:type theDegMin: int
-	:param theDegMax:
-	:type theDegMax: int
-	:rtype: None
+Parameters
+----------
+theDegMin: int
+theDegMax: int
+
+Returns
+-------
+None
 ") SetDegree;
 		void SetDegree(const Standard_Integer theDegMin, const Standard_Integer theDegMax);
 
@@ -857,9 +1084,13 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") SetMaxDist;
 		%feature("autodoc", "Set the parameter, which defines maximal possible distance between projected curve and surface. it is used only for projecting on not analytical surfaces. if themaxdist < 0, algoritm uses default value 100.*tolerance. if real distance between curve and surface more then themaxdist, algorithm stops working.
 
-	:param theMaxDist:
-	:type theMaxDist: float
-	:rtype: None
+Parameters
+----------
+theMaxDist: float
+
+Returns
+-------
+None
 ") SetMaxDist;
 		void SetMaxDist(const Standard_Real theMaxDist);
 
@@ -867,9 +1098,13 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") SetMaxSegments;
 		%feature("autodoc", "Set the parameter, which defines maximal value of parametric intervals the projected curve can be cut for approximation. if themaxsegments < 0, algorithm uses default value = 1000.
 
-	:param theMaxSegments:
-	:type theMaxSegments: int
-	:rtype: None
+Parameters
+----------
+theMaxSegments: int
+
+Returns
+-------
+None
 ") SetMaxSegments;
 		void SetMaxSegments(const Standard_Integer theMaxSegments);
 
@@ -877,9 +1112,13 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") SetTolerance;
 		%feature("autodoc", "Set the tolerance used to project the curve on the surface. default value is precision::approximation().
 
-	:param theTolerance:
-	:type theTolerance: float
-	:rtype: None
+Parameters
+----------
+theTolerance: float
+
+Returns
+-------
+None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real theTolerance);
 
@@ -887,7 +1126,9 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("compactdefaultargs") Tolerance;
 		%feature("autodoc", "Returns the reached tolerance.
 
-	:rtype: float
+Returns
+-------
+float
 ") Tolerance;
 		Standard_Real Tolerance();
 
@@ -909,7 +1150,9 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") ChangeCurve2d;
 		%feature("autodoc", "Returns the curve used to create the genhcurve.
 
-	:rtype: ProjLib_CompProjectedCurve
+Returns
+-------
+ProjLib_CompProjectedCurve
 ") ChangeCurve2d;
 		ProjLib_CompProjectedCurve & ChangeCurve2d();
 
@@ -917,7 +1160,9 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") Curve2d;
 		%feature("autodoc", "Returns the curve used to create the genhcurve2d. this is redefined from hcurve2d, cannot be inline.
 
-	:rtype: Adaptor2d_Curve2d
+Returns
+-------
+Adaptor2d_Curve2d
 ") Curve2d;
 		const Adaptor2d_Curve2d & Curve2d();
 
@@ -925,7 +1170,9 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") ProjLib_HCompProjectedCurve;
 		%feature("autodoc", "Creates an empty genhcurve2d.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_HCompProjectedCurve;
 		 ProjLib_HCompProjectedCurve();
 
@@ -933,9 +1180,13 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") ProjLib_HCompProjectedCurve;
 		%feature("autodoc", "Creates a genhcurve2d from a curve.
 
-	:param C:
-	:type C: ProjLib_CompProjectedCurve
-	:rtype: None
+Parameters
+----------
+C: ProjLib_CompProjectedCurve
+
+Returns
+-------
+None
 ") ProjLib_HCompProjectedCurve;
 		 ProjLib_HCompProjectedCurve(const ProjLib_CompProjectedCurve & C);
 
@@ -943,9 +1194,13 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the field of the genhcurve2d.
 
-	:param C:
-	:type C: ProjLib_CompProjectedCurve
-	:rtype: None
+Parameters
+----------
+C: ProjLib_CompProjectedCurve
+
+Returns
+-------
+None
 ") Set;
 		void Set(const ProjLib_CompProjectedCurve & C);
 
@@ -969,7 +1224,9 @@ class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") ChangeCurve2d;
 		%feature("autodoc", "Returns the curve used to create the genhcurve.
 
-	:rtype: ProjLib_ProjectedCurve
+Returns
+-------
+ProjLib_ProjectedCurve
 ") ChangeCurve2d;
 		ProjLib_ProjectedCurve & ChangeCurve2d();
 
@@ -977,7 +1234,9 @@ class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") Curve2d;
 		%feature("autodoc", "Returns the curve used to create the genhcurve2d. this is redefined from hcurve2d, cannot be inline.
 
-	:rtype: Adaptor2d_Curve2d
+Returns
+-------
+Adaptor2d_Curve2d
 ") Curve2d;
 		const Adaptor2d_Curve2d & Curve2d();
 
@@ -985,7 +1244,9 @@ class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") ProjLib_HProjectedCurve;
 		%feature("autodoc", "Creates an empty genhcurve2d.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_HProjectedCurve;
 		 ProjLib_HProjectedCurve();
 
@@ -993,9 +1254,13 @@ class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") ProjLib_HProjectedCurve;
 		%feature("autodoc", "Creates a genhcurve2d from a curve.
 
-	:param C:
-	:type C: ProjLib_ProjectedCurve
-	:rtype: None
+Parameters
+----------
+C: ProjLib_ProjectedCurve
+
+Returns
+-------
+None
 ") ProjLib_HProjectedCurve;
 		 ProjLib_HProjectedCurve(const ProjLib_ProjectedCurve & C);
 
@@ -1003,9 +1268,13 @@ class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets the field of the genhcurve2d.
 
-	:param C:
-	:type C: ProjLib_ProjectedCurve
-	:rtype: None
+Parameters
+----------
+C: ProjLib_ProjectedCurve
+
+Returns
+-------
+None
 ") Set;
 		void Set(const ProjLib_ProjectedCurve & C);
 
@@ -1029,11 +1298,14 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
@@ -1041,7 +1313,9 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
@@ -1049,21 +1323,26 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 		%feature("compactdefaultargs") NbVariables;
 		%feature("autodoc", "Returns the number of variables of the function.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbVariables;
 		Standard_Integer NbVariables();
 
 		/****************** ProjLib_PrjFunc ******************/
 		%feature("compactdefaultargs") ProjLib_PrjFunc;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor3d_CurvePtr
-	:param FixVal:
-	:type FixVal: float
-	:param S:
-	:type S: Adaptor3d_SurfacePtr
-	:param Fix:
-	:type Fix: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor3d_CurvePtr
+FixVal: float
+S: Adaptor3d_SurfacePtr
+Fix: int
+
+Returns
+-------
+None
 ") ProjLib_PrjFunc;
 		 ProjLib_PrjFunc(const Adaptor3d_CurvePtr & C, const Standard_Real FixVal, const Adaptor3d_SurfacePtr & S, const Standard_Integer Fix);
 
@@ -1071,7 +1350,9 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 		%feature("compactdefaultargs") Solution;
 		%feature("autodoc", "Returns point on surface.
 
-	:rtype: gp_Pnt2d
+Returns
+-------
+gp_Pnt2d
 ") Solution;
 		gp_Pnt2d Solution();
 
@@ -1079,11 +1360,14 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -1091,13 +1375,15 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -1119,7 +1405,9 @@ class ProjLib_PrjResolve {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the distance is found.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -1127,35 +1415,38 @@ class ProjLib_PrjResolve {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Calculates the ort from c(t) to s with a close point. the close point is defined by the parameter values u0 and v0. the function f(u,v)=distance(s(u,v),c(t)) has an extremum when gradient(f)=0. the algorithm searchs a zero near the close point.
 
-	:param t:
-	:type t: float
-	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:param Tol:
-	:type Tol: gp_Pnt2d
-	:param Inf:
-	:type Inf: gp_Pnt2d
-	:param Sup:
-	:type Sup: gp_Pnt2d
-	:param FTol: default value is -1
-	:type FTol: float
-	:param StrictInside: default value is Standard_False
-	:type StrictInside: bool
-	:rtype: None
+Parameters
+----------
+t: float
+U: float
+V: float
+Tol: gp_Pnt2d
+Inf: gp_Pnt2d
+Sup: gp_Pnt2d
+FTol: float,optional
+	default value is -1
+StrictInside: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Standard_Real t, const Standard_Real U, const Standard_Real V, const gp_Pnt2d & Tol, const gp_Pnt2d & Inf, const gp_Pnt2d & Sup, const Standard_Real FTol = -1, const Standard_Boolean StrictInside = Standard_False);
 
 		/****************** ProjLib_PrjResolve ******************/
 		%feature("compactdefaultargs") ProjLib_PrjResolve;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor3d_Curve
-	:param S:
-	:type S: Adaptor3d_Surface
-	:param Fix:
-	:type Fix: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor3d_Curve
+S: Adaptor3d_Surface
+Fix: int
+
+Returns
+-------
+None
 ") ProjLib_PrjResolve;
 		 ProjLib_PrjResolve(const Adaptor3d_Curve & C, const Adaptor3d_Surface & S, const Standard_Integer Fix);
 
@@ -1163,7 +1454,9 @@ class ProjLib_PrjResolve {
 		%feature("compactdefaultargs") Solution;
 		%feature("autodoc", "Returns the point of the extremum distance.
 
-	:rtype: gp_Pnt2d
+Returns
+-------
+gp_Pnt2d
 ") Solution;
 		gp_Pnt2d Solution();
 
@@ -1185,7 +1478,9 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "Warning ! this will not make a copy of the bspline curve : if you want to modify the curve please make a copy yourself also it will not trim the surface to myfirst/last.
 
-	:rtype: opencascade::handle<Geom_BSplineCurve>
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
 ") BSpline;
 		opencascade::handle<Geom_BSplineCurve> BSpline();
 
@@ -1193,19 +1488,29 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Bezier;
 		%feature("autodoc", "Warning ! this will not make a copy of the bezier curve : if you want to modify the curve please make a copy yourself also it will not trim the surface to myfirst/last.
 
-	:rtype: opencascade::handle<Geom_BezierCurve>
+Returns
+-------
+opencascade::handle<Geom_BezierCurve>
 ") Bezier;
 		opencascade::handle<Geom_BezierCurve> Bezier();
 
 		/****************** Circle ******************/
 		%feature("compactdefaultargs") Circle;
-		%feature("autodoc", "	:rtype: gp_Circ
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Circ
 ") Circle;
 		gp_Circ Circle();
 
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
-		%feature("autodoc", "	:rtype: GeomAbs_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_Shape
 ") Continuity;
 		GeomAbs_Shape Continuity();
 
@@ -1213,11 +1518,14 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Computes the point of parameter u on the curve.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+
+Returns
+-------
+None
 ") D0;
 		void D0(const Standard_Real U, gp_Pnt & P);
 
@@ -1225,13 +1533,15 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Computes the point of parameter u on the curve with its first derivative. raised if the continuity of the current interval is not c1.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:param V:
-	:type V: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+V: gp_Vec
+
+Returns
+-------
+None
 ") D1;
 		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V);
 
@@ -1239,15 +1549,16 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "Returns the point p of parameter u, the first and second derivatives v1 and v2. raised if the continuity of the current interval is not c2.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:param V1:
-	:type V1: gp_Vec
-	:param V2:
-	:type V2: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+V1: gp_Vec
+V2: gp_Vec
+
+Returns
+-------
+None
 ") D2;
 		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
 
@@ -1255,17 +1566,17 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") D3;
 		%feature("autodoc", "Returns the point p of parameter u, the first, the second and the third derivative. raised if the continuity of the current interval is not c3.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt
-	:param V1:
-	:type V1: gp_Vec
-	:param V2:
-	:type V2: gp_Vec
-	:param V3:
-	:type V3: gp_Vec
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt
+V1: gp_Vec
+V2: gp_Vec
+V3: gp_Vec
+
+Returns
+-------
+None
 ") D3;
 		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
 
@@ -1273,53 +1584,84 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") DN;
 		%feature("autodoc", "The returned vector gives the value of the derivative for the order of derivation n. raised if the continuity of the current interval is not cn. raised if n < 1.
 
-	:param U:
-	:type U: float
-	:param N:
-	:type N: int
-	:rtype: gp_Vec
+Parameters
+----------
+U: float
+N: int
+
+Returns
+-------
+gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Integer N);
 
 		/****************** Degree ******************/
 		%feature("compactdefaultargs") Degree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Degree;
 		Standard_Integer Degree();
 
 		/****************** Ellipse ******************/
 		%feature("compactdefaultargs") Ellipse;
-		%feature("autodoc", "	:rtype: gp_Elips
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Elips
 ") Ellipse;
 		gp_Elips Ellipse();
 
 		/****************** FirstParameter ******************/
 		%feature("compactdefaultargs") FirstParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstParameter;
 		Standard_Real FirstParameter();
 
 		/****************** GetCurve ******************/
 		%feature("compactdefaultargs") GetCurve;
-		%feature("autodoc", "	:rtype: opencascade::handle<Adaptor3d_HCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HCurve>
 ") GetCurve;
 		const opencascade::handle<Adaptor3d_HCurve> & GetCurve();
 
 		/****************** GetDirection ******************/
 		%feature("compactdefaultargs") GetDirection;
-		%feature("autodoc", "	:rtype: gp_Dir
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Dir
 ") GetDirection;
 		const gp_Dir GetDirection();
 
 		/****************** GetPlane ******************/
 		%feature("compactdefaultargs") GetPlane;
-		%feature("autodoc", "	:rtype: gp_Ax3
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Ax3
 ") GetPlane;
 		const gp_Ax3 GetPlane();
 
 		/****************** GetResult ******************/
 		%feature("compactdefaultargs") GetResult;
-		%feature("autodoc", "	:rtype: opencascade::handle<GeomAdaptor_HCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<GeomAdaptor_HCurve>
 ") GetResult;
 		const opencascade::handle<GeomAdaptor_HCurve> & GetResult();
 
@@ -1327,13 +1669,19 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") GetType;
 		%feature("autodoc", "Returns the type of the curve in the current interval : line, circle, ellipse, hyperbola, parabola, beziercurve, bsplinecurve, othercurve.
 
-	:rtype: GeomAbs_CurveType
+Returns
+-------
+GeomAbs_CurveType
 ") GetType;
 		GeomAbs_CurveType GetType();
 
 		/****************** Hyperbola ******************/
 		%feature("compactdefaultargs") Hyperbola;
-		%feature("autodoc", "	:rtype: gp_Hypr
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Hypr
 ") Hyperbola;
 		gp_Hypr Hyperbola();
 
@@ -1341,41 +1689,64 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Stores in <t> the parameters bounding the intervals of continuity <s>. //! the array must provide enough room to accomodate for the parameters. i.e. t.length() > nbintervals().
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsClosed;
 		Standard_Boolean IsClosed();
 
 		/****************** IsPeriodic ******************/
 		%feature("compactdefaultargs") IsPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsPeriodic;
 		Standard_Boolean IsPeriodic();
 
 		/****************** IsRational ******************/
 		%feature("compactdefaultargs") IsRational;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsRational;
 		Standard_Boolean IsRational();
 
 		/****************** LastParameter ******************/
 		%feature("compactdefaultargs") LastParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastParameter;
 		Standard_Real LastParameter();
 
 		/****************** Line ******************/
 		%feature("compactdefaultargs") Line;
-		%feature("autodoc", "	:rtype: gp_Lin
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Lin
 ") Line;
 		gp_Lin Line();
 
@@ -1383,13 +1754,16 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Load;
 		%feature("autodoc", "Sets the curve and perform the projection. if <keepparametrization> is true, the parametrization of the projected curve <pc> will be the same as the parametrization of the initial curve <c>. it meens: proj(c(u)) = pc(u) for each u. otherwize, the parametrization may change.
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param Tolerance:
-	:type Tolerance: float
-	:param KeepParametrization: default value is Standard_True
-	:type KeepParametrization: bool
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+Tolerance: float
+KeepParametrization: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Load;
 		void Load(const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Real Tolerance, const Standard_Boolean KeepParametrization = Standard_True);
 
@@ -1397,33 +1771,53 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "If necessary, breaks the curve in intervals of continuity <s>. and returns the number of intervals.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
 		/****************** NbKnots ******************/
 		%feature("compactdefaultargs") NbKnots;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbKnots;
 		Standard_Integer NbKnots();
 
 		/****************** NbPoles ******************/
 		%feature("compactdefaultargs") NbPoles;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbPoles;
 		Standard_Integer NbPoles();
 
 		/****************** Parabola ******************/
 		%feature("compactdefaultargs") Parabola;
-		%feature("autodoc", "	:rtype: gp_Parab
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Parab
 ") Parabola;
 		gp_Parab Parabola();
 
 		/****************** Period ******************/
 		%feature("compactdefaultargs") Period;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Period;
 		Standard_Real Period();
 
@@ -1431,7 +1825,9 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") ProjLib_ProjectOnPlane;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_ProjectOnPlane;
 		 ProjLib_ProjectOnPlane();
 
@@ -1439,9 +1835,13 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") ProjLib_ProjectOnPlane;
 		%feature("autodoc", "The projection will be normal to the plane defined by the ax3 <pl>.
 
-	:param Pl:
-	:type Pl: gp_Ax3
-	:rtype: None
+Parameters
+----------
+Pl: gp_Ax3
+
+Returns
+-------
+None
 ") ProjLib_ProjectOnPlane;
 		 ProjLib_ProjectOnPlane(const gp_Ax3 & Pl);
 
@@ -1449,11 +1849,14 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") ProjLib_ProjectOnPlane;
 		%feature("autodoc", "The projection will be along the direction <d> on the plane defined by the ax3 <pl>. raises if the direction <d> is parallel to the plane <pl>.
 
-	:param Pl:
-	:type Pl: gp_Ax3
-	:param D:
-	:type D: gp_Dir
-	:rtype: None
+Parameters
+----------
+Pl: gp_Ax3
+D: gp_Dir
+
+Returns
+-------
+None
 ") ProjLib_ProjectOnPlane;
 		 ProjLib_ProjectOnPlane(const gp_Ax3 & Pl, const gp_Dir & D);
 
@@ -1461,9 +1864,13 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Resolution;
 		%feature("autodoc", "Returns the parametric resolution corresponding to the real space resolution <r3d>.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") Resolution;
 		Standard_Real Resolution(const Standard_Real R3d);
 
@@ -1471,13 +1878,15 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Trim;
 		%feature("autodoc", "Returns a curve equivalent of <self> between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor3d_HCurve>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HCurve>
 ") Trim;
 		opencascade::handle<Adaptor3d_HCurve> Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
@@ -1485,9 +1894,13 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the point of parameter u on the curve.
 
-	:param U:
-	:type U: float
-	:rtype: gp_Pnt
+Parameters
+----------
+U: float
+
+Returns
+-------
+gp_Pnt
 ") Value;
 		gp_Pnt Value(const Standard_Real U);
 
@@ -1507,13 +1920,21 @@ class ProjLib_ProjectOnSurface {
 	public:
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom_BSplineCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
 ") BSpline;
 		opencascade::handle<Geom_BSplineCurve> BSpline();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -1521,7 +1942,9 @@ class ProjLib_ProjectOnSurface {
 		%feature("compactdefaultargs") ProjLib_ProjectOnSurface;
 		%feature("autodoc", "Create an empty projector.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_ProjectOnSurface;
 		 ProjLib_ProjectOnSurface();
 
@@ -1529,9 +1952,13 @@ class ProjLib_ProjectOnSurface {
 		%feature("compactdefaultargs") ProjLib_ProjectOnSurface;
 		%feature("autodoc", "Create a projector normaly to the surface <s>.
 
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:rtype: None
+Parameters
+----------
+S: Adaptor3d_HSurface
+
+Returns
+-------
+None
 ") ProjLib_ProjectOnSurface;
 		 ProjLib_ProjectOnSurface(const opencascade::handle<Adaptor3d_HSurface> & S);
 
@@ -1553,7 +1980,9 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "Warning ! this will not make a copy of the bspline curve - if you want to modify the curve please make a copy yourself also it will not trim the surface to myfirst/last.
 
-	:rtype: opencascade::handle<Geom2d_BSplineCurve>
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
 ") BSpline;
 		opencascade::handle<Geom2d_BSplineCurve> BSpline();
 
@@ -1561,19 +1990,29 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Bezier;
 		%feature("autodoc", "Warning ! this will not make a copy of the -- bezier curve - if you want to modify -- the curve please make a copy yourself -- also it will not trim the surface to -- myfirst/last.
 
-	:rtype: opencascade::handle<Geom2d_BezierCurve>
+Returns
+-------
+opencascade::handle<Geom2d_BezierCurve>
 ") Bezier;
 		opencascade::handle<Geom2d_BezierCurve> Bezier();
 
 		/****************** Circle ******************/
 		%feature("compactdefaultargs") Circle;
-		%feature("autodoc", "	:rtype: gp_Circ2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Circ2d
 ") Circle;
 		gp_Circ2d Circle();
 
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
-		%feature("autodoc", "	:rtype: GeomAbs_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_Shape
 ") Continuity;
 		GeomAbs_Shape Continuity();
 
@@ -1581,11 +2020,14 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Computes the point of parameter u on the curve.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt2d
+
+Returns
+-------
+None
 ") D0;
 		void D0(const Standard_Real U, gp_Pnt2d & P);
 
@@ -1593,13 +2035,15 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Computes the point of parameter u on the curve with its first derivative. raised if the continuity of the current interval is not c1.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:param V:
-	:type V: gp_Vec2d
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt2d
+V: gp_Vec2d
+
+Returns
+-------
+None
 ") D1;
 		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V);
 
@@ -1607,15 +2051,16 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "Returns the point p of parameter u, the first and second derivatives v1 and v2. raised if the continuity of the current interval is not c2.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:param V1:
-	:type V1: gp_Vec2d
-	:param V2:
-	:type V2: gp_Vec2d
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt2d
+V1: gp_Vec2d
+V2: gp_Vec2d
+
+Returns
+-------
+None
 ") D2;
 		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2);
 
@@ -1623,17 +2068,17 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") D3;
 		%feature("autodoc", "Returns the point p of parameter u, the first, the second and the third derivative. raised if the continuity of the current interval is not c3.
 
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:param V1:
-	:type V1: gp_Vec2d
-	:param V2:
-	:type V2: gp_Vec2d
-	:param V3:
-	:type V3: gp_Vec2d
-	:rtype: None
+Parameters
+----------
+U: float
+P: gp_Pnt2d
+V1: gp_Vec2d
+V2: gp_Vec2d
+V3: gp_Vec2d
+
+Returns
+-------
+None
 ") D3;
 		void D3(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
 
@@ -1641,41 +2086,64 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") DN;
 		%feature("autodoc", "The returned vector gives the value of the derivative for the order of derivation n. raised if the continuity of the current interval is not cn. raised if n < 1.
 
-	:param U:
-	:type U: float
-	:param N:
-	:type N: int
-	:rtype: gp_Vec2d
+Parameters
+----------
+U: float
+N: int
+
+Returns
+-------
+gp_Vec2d
 ") DN;
 		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N);
 
 		/****************** Degree ******************/
 		%feature("compactdefaultargs") Degree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Degree;
 		Standard_Integer Degree();
 
 		/****************** Ellipse ******************/
 		%feature("compactdefaultargs") Ellipse;
-		%feature("autodoc", "	:rtype: gp_Elips2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Elips2d
 ") Ellipse;
 		gp_Elips2d Ellipse();
 
 		/****************** FirstParameter ******************/
 		%feature("compactdefaultargs") FirstParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstParameter;
 		Standard_Real FirstParameter();
 
 		/****************** GetCurve ******************/
 		%feature("compactdefaultargs") GetCurve;
-		%feature("autodoc", "	:rtype: opencascade::handle<Adaptor3d_HCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HCurve>
 ") GetCurve;
 		const opencascade::handle<Adaptor3d_HCurve> & GetCurve();
 
 		/****************** GetSurface ******************/
 		%feature("compactdefaultargs") GetSurface;
-		%feature("autodoc", "	:rtype: opencascade::handle<Adaptor3d_HSurface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Adaptor3d_HSurface>
 ") GetSurface;
 		const opencascade::handle<Adaptor3d_HSurface> & GetSurface();
 
@@ -1683,7 +2151,9 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") GetTolerance;
 		%feature("autodoc", "Returns the tolerance reached if an approximation is done.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetTolerance;
 		Standard_Real GetTolerance();
 
@@ -1691,13 +2161,19 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") GetType;
 		%feature("autodoc", "Returns the type of the curve in the current interval : line, circle, ellipse, hyperbola, parabola, beziercurve, bsplinecurve, othercurve.
 
-	:rtype: GeomAbs_CurveType
+Returns
+-------
+GeomAbs_CurveType
 ") GetType;
 		GeomAbs_CurveType GetType();
 
 		/****************** Hyperbola ******************/
 		%feature("compactdefaultargs") Hyperbola;
-		%feature("autodoc", "	:rtype: gp_Hypr2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Hypr2d
 ") Hyperbola;
 		gp_Hypr2d Hyperbola();
 
@@ -1705,41 +2181,64 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Stores in <t> the parameters bounding the intervals of continuity <s>. //! the array must provide enough room to accomodate for the parameters. i.e. t.length() > nbintervals().
 
-	:param T:
-	:type T: TColStd_Array1OfReal
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: None
+Parameters
+----------
+T: TColStd_Array1OfReal
+S: GeomAbs_Shape
+
+Returns
+-------
+None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsClosed;
 		Standard_Boolean IsClosed();
 
 		/****************** IsPeriodic ******************/
 		%feature("compactdefaultargs") IsPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsPeriodic;
 		Standard_Boolean IsPeriodic();
 
 		/****************** IsRational ******************/
 		%feature("compactdefaultargs") IsRational;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsRational;
 		Standard_Boolean IsRational();
 
 		/****************** LastParameter ******************/
 		%feature("compactdefaultargs") LastParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") LastParameter;
 		Standard_Real LastParameter();
 
 		/****************** Line ******************/
 		%feature("compactdefaultargs") Line;
-		%feature("autodoc", "	:rtype: gp_Lin2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Lin2d
 ") Line;
 		gp_Lin2d Line();
 
@@ -1747,27 +2246,43 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "If necessary, breaks the curve in intervals of continuity <s>. and returns the number of intervals.
 
-	:param S:
-	:type S: GeomAbs_Shape
-	:rtype: int
+Parameters
+----------
+S: GeomAbs_Shape
+
+Returns
+-------
+int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
 		/****************** NbKnots ******************/
 		%feature("compactdefaultargs") NbKnots;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbKnots;
 		Standard_Integer NbKnots();
 
 		/****************** NbPoles ******************/
 		%feature("compactdefaultargs") NbPoles;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbPoles;
 		Standard_Integer NbPoles();
 
 		/****************** Parabola ******************/
 		%feature("compactdefaultargs") Parabola;
-		%feature("autodoc", "	:rtype: gp_Parab2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Parab2d
 ") Parabola;
 		gp_Parab2d Parabola();
 
@@ -1775,15 +2290,23 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Performs projecting for given curve. if projecting uses approximation, approximation parameters can be set before by corresponding methods setdegree(...), setmaxsegmets(...), setbndpnt(...), setmaxdist(...).
 
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+Parameters
+----------
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const opencascade::handle<Adaptor3d_HCurve> & C);
 
 		/****************** Period ******************/
 		%feature("compactdefaultargs") Period;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Period;
 		Standard_Real Period();
 
@@ -1791,7 +2314,9 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") ProjLib_ProjectedCurve;
 		%feature("autodoc", "Empty constructor, it only sets some initial values for class fields.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_ProjectedCurve;
 		 ProjLib_ProjectedCurve();
 
@@ -1799,9 +2324,13 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") ProjLib_ProjectedCurve;
 		%feature("autodoc", "Constructor with initialisation field mysurface.
 
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:rtype: None
+Parameters
+----------
+S: Adaptor3d_HSurface
+
+Returns
+-------
+None
 ") ProjLib_ProjectedCurve;
 		 ProjLib_ProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S);
 
@@ -1809,11 +2338,14 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") ProjLib_ProjectedCurve;
 		%feature("autodoc", "Constructor, which performs projecting. if projecting uses approximation, default parameters are used, in particular, 3d tolerance of approximation is precision::confusion().
 
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:rtype: None
+Parameters
+----------
+S: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
 ") ProjLib_ProjectedCurve;
 		 ProjLib_ProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C);
 
@@ -1821,13 +2353,15 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") ProjLib_ProjectedCurve;
 		%feature("autodoc", "Constructor, which performs projecting. if projecting uses approximation, 3d tolerance is tol, default parameters are used, .
 
-	:param S:
-	:type S: Adaptor3d_HSurface
-	:param C:
-	:type C: Adaptor3d_HCurve
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+S: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+Tol: float
+
+Returns
+-------
+None
 ") ProjLib_ProjectedCurve;
 		 ProjLib_ProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Real Tol);
 
@@ -1835,9 +2369,13 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Resolution;
 		%feature("autodoc", "Returns the parametric resolution corresponding to the real space resolution <r3d>.
 
-	:param R3d:
-	:type R3d: float
-	:rtype: float
+Parameters
+----------
+R3d: float
+
+Returns
+-------
+float
 ") Resolution;
 		Standard_Real Resolution(const Standard_Real R3d);
 
@@ -1845,9 +2383,13 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") SetBndPnt;
 		%feature("autodoc", "Set the parameter, which defines type of boundary condition between segments during approximation. it can be appparcurves_passpoint or appparcurves_tangencypoint. default value is appparcurves_tangencypoint;.
 
-	:param theBndPnt:
-	:type theBndPnt: AppParCurves_Constraint
-	:rtype: None
+Parameters
+----------
+theBndPnt: AppParCurves_Constraint
+
+Returns
+-------
+None
 ") SetBndPnt;
 		void SetBndPnt(const AppParCurves_Constraint theBndPnt);
 
@@ -1855,11 +2397,14 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") SetDegree;
 		%feature("autodoc", "Set min and max possible degree of result bspline curve2d, which is got by approximation. if thedegmin/max < 0, algorithm uses values that are chosen depending of types curve 3d and surface.
 
-	:param theDegMin:
-	:type theDegMin: int
-	:param theDegMax:
-	:type theDegMax: int
-	:rtype: None
+Parameters
+----------
+theDegMin: int
+theDegMax: int
+
+Returns
+-------
+None
 ") SetDegree;
 		void SetDegree(const Standard_Integer theDegMin, const Standard_Integer theDegMax);
 
@@ -1867,9 +2412,13 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") SetMaxDist;
 		%feature("autodoc", "Set the parameter, which degines maximal possible distance between projected curve and surface. it uses only for projecting on not analytical surfaces. if themaxdist < 0, algoritm uses default value 100.*tolerance. if real distance between curve and surface more then themaxdist, algorithm stops working.
 
-	:param theMaxDist:
-	:type theMaxDist: float
-	:rtype: None
+Parameters
+----------
+theMaxDist: float
+
+Returns
+-------
+None
 ") SetMaxDist;
 		void SetMaxDist(const Standard_Real theMaxDist);
 
@@ -1877,9 +2426,13 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") SetMaxSegments;
 		%feature("autodoc", "Set the parameter, which defines maximal value of parametric intervals the projected curve can be cut for approximation. if themaxsegments < 0, algorithm uses default value = 1000.
 
-	:param theMaxSegments:
-	:type theMaxSegments: int
-	:rtype: None
+Parameters
+----------
+theMaxSegments: int
+
+Returns
+-------
+None
 ") SetMaxSegments;
 		void SetMaxSegments(const Standard_Integer theMaxSegments);
 
@@ -1887,13 +2440,15 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Trim;
 		%feature("autodoc", "Returns a curve equivalent of <self> between parameters <first> and <last>. <tol> is used to test for 3d points confusion. if <first> >= <last>.
 
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Tol:
-	:type Tol: float
-	:rtype: opencascade::handle<Adaptor2d_HCurve2d>
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+opencascade::handle<Adaptor2d_HCurve2d>
 ") Trim;
 		opencascade::handle<Adaptor2d_HCurve2d> Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
 
@@ -1901,9 +2456,13 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the point of parameter u on the curve.
 
-	:param U:
-	:type U: float
-	:rtype: gp_Pnt2d
+Parameters
+----------
+U: float
+
+Returns
+-------
+gp_Pnt2d
 ") Value;
 		gp_Pnt2d Value(const Standard_Real U);
 
@@ -1923,19 +2482,31 @@ class ProjLib_Projector {
 	public:
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom2d_BSplineCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
 ") BSpline;
 		opencascade::handle<Geom2d_BSplineCurve> BSpline();
 
 		/****************** Bezier ******************/
 		%feature("compactdefaultargs") Bezier;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom2d_BezierCurve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom2d_BezierCurve>
 ") Bezier;
 		opencascade::handle<Geom2d_BezierCurve> Bezier();
 
 		/****************** Circle ******************/
 		%feature("compactdefaultargs") Circle;
-		%feature("autodoc", "	:rtype: gp_Circ2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Circ2d
 ") Circle;
 		const gp_Circ2d Circle();
 
@@ -1943,49 +2514,79 @@ class ProjLib_Projector {
 		%feature("compactdefaultargs") Done;
 		%feature("autodoc", "Set isdone = standard_true;.
 
-	:rtype: None
+Returns
+-------
+None
 ") Done;
 		void Done();
 
 		/****************** Ellipse ******************/
 		%feature("compactdefaultargs") Ellipse;
-		%feature("autodoc", "	:rtype: gp_Elips2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Elips2d
 ") Ellipse;
 		const gp_Elips2d Ellipse();
 
 		/****************** GetType ******************/
 		%feature("compactdefaultargs") GetType;
-		%feature("autodoc", "	:rtype: GeomAbs_CurveType
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+GeomAbs_CurveType
 ") GetType;
 		GeomAbs_CurveType GetType();
 
 		/****************** Hyperbola ******************/
 		%feature("compactdefaultargs") Hyperbola;
-		%feature("autodoc", "	:rtype: gp_Hypr2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Hypr2d
 ") Hyperbola;
 		const gp_Hypr2d Hyperbola();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
 		/****************** IsPeriodic ******************/
 		%feature("compactdefaultargs") IsPeriodic;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsPeriodic;
 		Standard_Boolean IsPeriodic();
 
 		/****************** Line ******************/
 		%feature("compactdefaultargs") Line;
-		%feature("autodoc", "	:rtype: gp_Lin2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Lin2d
 ") Line;
 		const gp_Lin2d Line();
 
 		/****************** Parabola ******************/
 		%feature("compactdefaultargs") Parabola;
-		%feature("autodoc", "	:rtype: gp_Parab2d
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Parab2d
 ") Parabola;
 		const gp_Parab2d Parabola();
 
@@ -1993,77 +2594,131 @@ class ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Projector;
 		%feature("autodoc", "Sets the type to othercurve.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_Projector;
 		 ProjLib_Projector();
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param L:
-	:type L: gp_Lin
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+L: gp_Lin
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Lin & L);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Circ
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Circ
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Circ & C);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param E:
-	:type E: gp_Elips
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: gp_Elips
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Elips & E);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param P:
-	:type P: gp_Parab
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Parab
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Parab & P);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param H:
-	:type H: gp_Hypr
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+H: gp_Hypr
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Hypr & H);
 
 		/****************** SetBSpline ******************/
 		%feature("compactdefaultargs") SetBSpline;
-		%feature("autodoc", "	:param C:
-	:type C: Geom2d_BSplineCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Geom2d_BSplineCurve
+
+Returns
+-------
+None
 ") SetBSpline;
 		void SetBSpline(const opencascade::handle<Geom2d_BSplineCurve> & C);
 
 		/****************** SetBezier ******************/
 		%feature("compactdefaultargs") SetBezier;
-		%feature("autodoc", "	:param C:
-	:type C: Geom2d_BezierCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Geom2d_BezierCurve
+
+Returns
+-------
+None
 ") SetBezier;
 		void SetBezier(const opencascade::handle<Geom2d_BezierCurve> & C);
 
 		/****************** SetPeriodic ******************/
 		%feature("compactdefaultargs") SetPeriodic;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") SetPeriodic;
 		void SetPeriodic();
 
 		/****************** SetType ******************/
 		%feature("compactdefaultargs") SetType;
-		%feature("autodoc", "	:param Type:
-	:type Type: GeomAbs_CurveType
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Type: GeomAbs_CurveType
+
+Returns
+-------
+None
 ") SetType;
 		void SetType(const GeomAbs_CurveType Type);
 
@@ -2071,15 +2726,16 @@ class ProjLib_Projector {
 		%feature("compactdefaultargs") UFrame;
 		%feature("autodoc", "Translates the 2d curve to set the part of the curve [cfirst, clast] in the range [ ufirst, ufirst + period [.
 
-	:param CFirst:
-	:type CFirst: float
-	:param CLast:
-	:type CLast: float
-	:param UFirst:
-	:type UFirst: float
-	:param Period:
-	:type Period: float
-	:rtype: None
+Parameters
+----------
+CFirst: float
+CLast: float
+UFirst: float
+Period: float
+
+Returns
+-------
+None
 ") UFrame;
 		void UFrame(const Standard_Real CFirst, const Standard_Real CLast, const Standard_Real UFirst, const Standard_Real Period);
 
@@ -2087,15 +2743,16 @@ class ProjLib_Projector {
 		%feature("compactdefaultargs") VFrame;
 		%feature("autodoc", "Translates the 2d curve to set the part of the curve [cfirst, clast] in the range [ vfirst, vfirst + period [.
 
-	:param CFirst:
-	:type CFirst: float
-	:param CLast:
-	:type CLast: float
-	:param VFirst:
-	:type VFirst: float
-	:param Period:
-	:type Period: float
-	:rtype: None
+Parameters
+----------
+CFirst: float
+CLast: float
+VFirst: float
+Period: float
+
+Returns
+-------
+None
 ") VFrame;
 		void VFrame(const Standard_Real CFirst, const Standard_Real CLast, const Standard_Real VFirst, const Standard_Real Period);
 
@@ -2115,9 +2772,15 @@ class ProjLib_Cone : public ProjLib_Projector {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param Co:
-	:type Co: gp_Cone
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Co: gp_Cone
+
+Returns
+-------
+None
 ") Init;
 		void Init(const gp_Cone & Co);
 
@@ -2125,7 +2788,9 @@ class ProjLib_Cone : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Cone;
 		%feature("autodoc", "Undefined projection.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_Cone;
 		 ProjLib_Cone();
 
@@ -2133,9 +2798,13 @@ class ProjLib_Cone : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Cone;
 		%feature("autodoc", "Projection on the cone <co>.
 
-	:param Co:
-	:type Co: gp_Cone
-	:rtype: None
+Parameters
+----------
+Co: gp_Cone
+
+Returns
+-------
+None
 ") ProjLib_Cone;
 		 ProjLib_Cone(const gp_Cone & Co);
 
@@ -2143,11 +2812,14 @@ class ProjLib_Cone : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Cone;
 		%feature("autodoc", "Projection of the line <l> on the cone <co>.
 
-	:param Co:
-	:type Co: gp_Cone
-	:param L:
-	:type L: gp_Lin
-	:rtype: None
+Parameters
+----------
+Co: gp_Cone
+L: gp_Lin
+
+Returns
+-------
+None
 ") ProjLib_Cone;
 		 ProjLib_Cone(const gp_Cone & Co, const gp_Lin & L);
 
@@ -2155,51 +2827,84 @@ class ProjLib_Cone : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Cone;
 		%feature("autodoc", "Projection of the circle <c> on the cone <co>.
 
-	:param Co:
-	:type Co: gp_Cone
-	:param C:
-	:type C: gp_Circ
-	:rtype: None
+Parameters
+----------
+Co: gp_Cone
+C: gp_Circ
+
+Returns
+-------
+None
 ") ProjLib_Cone;
 		 ProjLib_Cone(const gp_Cone & Co, const gp_Circ & C);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param L:
-	:type L: gp_Lin
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+L: gp_Lin
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Lin & L);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Circ
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Circ
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Circ & C);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param E:
-	:type E: gp_Elips
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: gp_Elips
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Elips & E);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param P:
-	:type P: gp_Parab
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Parab
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Parab & P);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param H:
-	:type H: gp_Hypr
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+H: gp_Hypr
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Hypr & H);
 
@@ -2219,9 +2924,15 @@ class ProjLib_Cylinder : public ProjLib_Projector {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Cyl: gp_Cylinder
+
+Returns
+-------
+None
 ") Init;
 		void Init(const gp_Cylinder & Cyl);
 
@@ -2229,7 +2940,9 @@ class ProjLib_Cylinder : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Cylinder;
 		%feature("autodoc", "Undefined projection.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_Cylinder;
 		 ProjLib_Cylinder();
 
@@ -2237,9 +2950,13 @@ class ProjLib_Cylinder : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Cylinder;
 		%feature("autodoc", "Projection on the cylinder <cyl>.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+
+Returns
+-------
+None
 ") ProjLib_Cylinder;
 		 ProjLib_Cylinder(const gp_Cylinder & Cyl);
 
@@ -2247,11 +2964,14 @@ class ProjLib_Cylinder : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Cylinder;
 		%feature("autodoc", "Projection of the line <l> on the cylinder <cyl>.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:param L:
-	:type L: gp_Lin
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+L: gp_Lin
+
+Returns
+-------
+None
 ") ProjLib_Cylinder;
 		 ProjLib_Cylinder(const gp_Cylinder & Cyl, const gp_Lin & L);
 
@@ -2259,11 +2979,14 @@ class ProjLib_Cylinder : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Cylinder;
 		%feature("autodoc", "Projection of the circle <c> on the cylinder <cyl>.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:param C:
-	:type C: gp_Circ
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+C: gp_Circ
+
+Returns
+-------
+None
 ") ProjLib_Cylinder;
 		 ProjLib_Cylinder(const gp_Cylinder & Cyl, const gp_Circ & C);
 
@@ -2271,51 +2994,84 @@ class ProjLib_Cylinder : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Cylinder;
 		%feature("autodoc", "Projection of the ellipse <e> on the cylinder <cyl>.
 
-	:param Cyl:
-	:type Cyl: gp_Cylinder
-	:param E:
-	:type E: gp_Elips
-	:rtype: None
+Parameters
+----------
+Cyl: gp_Cylinder
+E: gp_Elips
+
+Returns
+-------
+None
 ") ProjLib_Cylinder;
 		 ProjLib_Cylinder(const gp_Cylinder & Cyl, const gp_Elips & E);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param L:
-	:type L: gp_Lin
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+L: gp_Lin
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Lin & L);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Circ
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Circ
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Circ & C);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param E:
-	:type E: gp_Elips
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: gp_Elips
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Elips & E);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param P:
-	:type P: gp_Parab
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Parab
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Parab & P);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param H:
-	:type H: gp_Hypr
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+H: gp_Hypr
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Hypr & H);
 
@@ -2335,9 +3091,15 @@ class ProjLib_Plane : public ProjLib_Projector {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param Pl:
-	:type Pl: gp_Pln
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Pl: gp_Pln
+
+Returns
+-------
+None
 ") Init;
 		void Init(const gp_Pln & Pl);
 
@@ -2345,7 +3107,9 @@ class ProjLib_Plane : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Plane;
 		%feature("autodoc", "Undefined projection.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_Plane;
 		 ProjLib_Plane();
 
@@ -2353,9 +3117,13 @@ class ProjLib_Plane : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Plane;
 		%feature("autodoc", "Projection on the plane <pl>.
 
-	:param Pl:
-	:type Pl: gp_Pln
-	:rtype: None
+Parameters
+----------
+Pl: gp_Pln
+
+Returns
+-------
+None
 ") ProjLib_Plane;
 		 ProjLib_Plane(const gp_Pln & Pl);
 
@@ -2363,11 +3131,14 @@ class ProjLib_Plane : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Plane;
 		%feature("autodoc", "Projection of the line <l> on the plane <pl>.
 
-	:param Pl:
-	:type Pl: gp_Pln
-	:param L:
-	:type L: gp_Lin
-	:rtype: None
+Parameters
+----------
+Pl: gp_Pln
+L: gp_Lin
+
+Returns
+-------
+None
 ") ProjLib_Plane;
 		 ProjLib_Plane(const gp_Pln & Pl, const gp_Lin & L);
 
@@ -2375,11 +3146,14 @@ class ProjLib_Plane : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Plane;
 		%feature("autodoc", "Projection of the circle <c> on the plane <pl>.
 
-	:param Pl:
-	:type Pl: gp_Pln
-	:param C:
-	:type C: gp_Circ
-	:rtype: None
+Parameters
+----------
+Pl: gp_Pln
+C: gp_Circ
+
+Returns
+-------
+None
 ") ProjLib_Plane;
 		 ProjLib_Plane(const gp_Pln & Pl, const gp_Circ & C);
 
@@ -2387,11 +3161,14 @@ class ProjLib_Plane : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Plane;
 		%feature("autodoc", "Projection of the ellipse <e> on the plane <pl>.
 
-	:param Pl:
-	:type Pl: gp_Pln
-	:param E:
-	:type E: gp_Elips
-	:rtype: None
+Parameters
+----------
+Pl: gp_Pln
+E: gp_Elips
+
+Returns
+-------
+None
 ") ProjLib_Plane;
 		 ProjLib_Plane(const gp_Pln & Pl, const gp_Elips & E);
 
@@ -2399,11 +3176,14 @@ class ProjLib_Plane : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Plane;
 		%feature("autodoc", "Projection of the parabola <p> on the plane <pl>.
 
-	:param Pl:
-	:type Pl: gp_Pln
-	:param P:
-	:type P: gp_Parab
-	:rtype: None
+Parameters
+----------
+Pl: gp_Pln
+P: gp_Parab
+
+Returns
+-------
+None
 ") ProjLib_Plane;
 		 ProjLib_Plane(const gp_Pln & Pl, const gp_Parab & P);
 
@@ -2411,51 +3191,84 @@ class ProjLib_Plane : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Plane;
 		%feature("autodoc", "Projection of the hyperbola <h> on the plane <pl>.
 
-	:param Pl:
-	:type Pl: gp_Pln
-	:param H:
-	:type H: gp_Hypr
-	:rtype: None
+Parameters
+----------
+Pl: gp_Pln
+H: gp_Hypr
+
+Returns
+-------
+None
 ") ProjLib_Plane;
 		 ProjLib_Plane(const gp_Pln & Pl, const gp_Hypr & H);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param L:
-	:type L: gp_Lin
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+L: gp_Lin
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Lin & L);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Circ
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Circ
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Circ & C);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param E:
-	:type E: gp_Elips
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: gp_Elips
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Elips & E);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param P:
-	:type P: gp_Parab
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Parab
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Parab & P);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param H:
-	:type H: gp_Hypr
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+H: gp_Hypr
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Hypr & H);
 
@@ -2475,9 +3288,15 @@ class ProjLib_Sphere : public ProjLib_Projector {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param Sp:
-	:type Sp: gp_Sphere
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sp: gp_Sphere
+
+Returns
+-------
+None
 ") Init;
 		void Init(const gp_Sphere & Sp);
 
@@ -2485,7 +3304,9 @@ class ProjLib_Sphere : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Sphere;
 		%feature("autodoc", "Undefined projection.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_Sphere;
 		 ProjLib_Sphere();
 
@@ -2493,9 +3314,13 @@ class ProjLib_Sphere : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Sphere;
 		%feature("autodoc", "Projection on the sphere <sp>.
 
-	:param Sp:
-	:type Sp: gp_Sphere
-	:rtype: None
+Parameters
+----------
+Sp: gp_Sphere
+
+Returns
+-------
+None
 ") ProjLib_Sphere;
 		 ProjLib_Sphere(const gp_Sphere & Sp);
 
@@ -2503,51 +3328,84 @@ class ProjLib_Sphere : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Sphere;
 		%feature("autodoc", "Projection of the circle <c> on the sphere <sp>.
 
-	:param Sp:
-	:type Sp: gp_Sphere
-	:param C:
-	:type C: gp_Circ
-	:rtype: None
+Parameters
+----------
+Sp: gp_Sphere
+C: gp_Circ
+
+Returns
+-------
+None
 ") ProjLib_Sphere;
 		 ProjLib_Sphere(const gp_Sphere & Sp, const gp_Circ & C);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param L:
-	:type L: gp_Lin
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+L: gp_Lin
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Lin & L);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Circ
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Circ
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Circ & C);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param E:
-	:type E: gp_Elips
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: gp_Elips
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Elips & E);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param P:
-	:type P: gp_Parab
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Parab
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Parab & P);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param H:
-	:type H: gp_Hypr
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+H: gp_Hypr
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Hypr & H);
 
@@ -2555,9 +3413,13 @@ class ProjLib_Sphere : public ProjLib_Projector {
 		%feature("compactdefaultargs") SetInBounds;
 		%feature("autodoc", "Set the point of parameter u on c in the natural restrictions of the sphere.
 
-	:param U:
-	:type U: float
-	:rtype: None
+Parameters
+----------
+U: float
+
+Returns
+-------
+None
 ") SetInBounds;
 		void SetInBounds(const Standard_Real U);
 
@@ -2577,9 +3439,15 @@ class ProjLib_Torus : public ProjLib_Projector {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param To:
-	:type To: gp_Torus
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+To: gp_Torus
+
+Returns
+-------
+None
 ") Init;
 		void Init(const gp_Torus & To);
 
@@ -2587,7 +3455,9 @@ class ProjLib_Torus : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Torus;
 		%feature("autodoc", "Undefined projection.
 
-	:rtype: None
+Returns
+-------
+None
 ") ProjLib_Torus;
 		 ProjLib_Torus();
 
@@ -2595,9 +3465,13 @@ class ProjLib_Torus : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Torus;
 		%feature("autodoc", "Projection on the torus <to>.
 
-	:param To:
-	:type To: gp_Torus
-	:rtype: None
+Parameters
+----------
+To: gp_Torus
+
+Returns
+-------
+None
 ") ProjLib_Torus;
 		 ProjLib_Torus(const gp_Torus & To);
 
@@ -2605,51 +3479,84 @@ class ProjLib_Torus : public ProjLib_Projector {
 		%feature("compactdefaultargs") ProjLib_Torus;
 		%feature("autodoc", "Projection of the circle <c> on the torus <to>.
 
-	:param To:
-	:type To: gp_Torus
-	:param C:
-	:type C: gp_Circ
-	:rtype: None
+Parameters
+----------
+To: gp_Torus
+C: gp_Circ
+
+Returns
+-------
+None
 ") ProjLib_Torus;
 		 ProjLib_Torus(const gp_Torus & To, const gp_Circ & C);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param L:
-	:type L: gp_Lin
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+L: gp_Lin
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Lin & L);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param C:
-	:type C: gp_Circ
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Circ
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Circ & C);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param E:
-	:type E: gp_Elips
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: gp_Elips
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Elips & E);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param P:
-	:type P: gp_Parab
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Parab
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Parab & P);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
-		%feature("autodoc", "	:param H:
-	:type H: gp_Hypr
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+H: gp_Hypr
+
+Returns
+-------
+None
 ") Project;
 		virtual void Project(const gp_Hypr & H);
 

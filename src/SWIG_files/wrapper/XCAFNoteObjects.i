@@ -74,7 +74,9 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPlane;
 		%feature("autodoc", "Returns a right-handed coordinate system of the plane.
 
-	:rtype: gp_Ax2
+Returns
+-------
+gp_Ax2
 ") GetPlane;
 		const gp_Ax2 GetPlane();
 
@@ -82,7 +84,9 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPoint;
 		%feature("autodoc", "Returns the attachment point on the annotated object.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") GetPoint;
 		const gp_Pnt GetPoint();
 
@@ -90,7 +94,9 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPointText;
 		%feature("autodoc", "Returns the text position.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") GetPointText;
 		const gp_Pnt GetPointText();
 
@@ -98,7 +104,9 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPresentation;
 		%feature("autodoc", "Returns a tesselated annotation if specified.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") GetPresentation;
 		const TopoDS_Shape GetPresentation();
 
@@ -106,7 +114,9 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasPlane;
 		%feature("autodoc", "Returns true if plane is specified.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPlane;
 		Standard_Boolean HasPlane();
 
@@ -114,7 +124,9 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasPoint;
 		%feature("autodoc", "Returns true if the attachment point on the annotated object is specified.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPoint;
 		Standard_Boolean HasPoint();
 
@@ -122,7 +134,9 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasPointText;
 		%feature("autodoc", "Returns true if the text position is specified.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPointText;
 		Standard_Boolean HasPointText();
 
@@ -130,7 +144,9 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Resets data to the state after calling the default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Reset;
 		void Reset();
 
@@ -138,9 +154,13 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPlane;
 		%feature("autodoc", "Sets a right-handed coordinate system of the plane.
 
-	:param thePlane:
-	:type thePlane: gp_Ax2
-	:rtype: None
+Parameters
+----------
+thePlane: gp_Ax2
+
+Returns
+-------
+None
 ") SetPlane;
 		void SetPlane(const gp_Ax2 & thePlane);
 
@@ -148,9 +168,13 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPoint;
 		%feature("autodoc", "Sets the anchor point on the annotated object.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: None
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+None
 ") SetPoint;
 		void SetPoint(const gp_Pnt & thePnt);
 
@@ -158,9 +182,13 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPointText;
 		%feature("autodoc", "Sets the text position.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: None
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+None
 ") SetPointText;
 		void SetPointText(const gp_Pnt & thePnt);
 
@@ -168,9 +196,13 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPresentation;
 		%feature("autodoc", "Sets a tesselated annotation.
 
-	:param thePresentation:
-	:type thePresentation: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+thePresentation: TopoDS_Shape
+
+Returns
+-------
+None
 ") SetPresentation;
 		void SetPresentation(const TopoDS_Shape & thePresentation);
 
@@ -178,7 +210,9 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") XCAFNoteObjects_NoteObject;
 		%feature("autodoc", "Empty object.
 
-	:rtype: None
+Returns
+-------
+None
 ") XCAFNoteObjects_NoteObject;
 		 XCAFNoteObjects_NoteObject();
 
@@ -186,9 +220,13 @@ class XCAFNoteObjects_NoteObject : public Standard_Transient {
 		%feature("compactdefaultargs") XCAFNoteObjects_NoteObject;
 		%feature("autodoc", "Copy constructor.
 
-	:param theObj:
-	:type theObj: XCAFNoteObjects_NoteObject
-	:rtype: None
+Parameters
+----------
+theObj: XCAFNoteObjects_NoteObject
+
+Returns
+-------
+None
 ") XCAFNoteObjects_NoteObject;
 		 XCAFNoteObjects_NoteObject(const opencascade::handle<XCAFNoteObjects_NoteObject> & theObj);
 

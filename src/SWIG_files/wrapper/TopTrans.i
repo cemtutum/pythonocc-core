@@ -75,19 +75,18 @@ class TopTrans_CurveTransition {
 		%feature("compactdefaultargs") Compare;
 		%feature("autodoc", "Add a curve element to the boundary. if or is reversed the curve is before the intersection, else if or is forward the curv is after the intersection and if or is internal the intersection is in the middle of the curv.
 
-	:param Tole:
-	:type Tole: float
-	:param Tang:
-	:type Tang: gp_Dir
-	:param Norm:
-	:type Norm: gp_Dir
-	:param Curv:
-	:type Curv: float
-	:param S:
-	:type S: TopAbs_Orientation
-	:param Or:
-	:type Or: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+Tole: float
+Tang: gp_Dir
+Norm: gp_Dir
+Curv: float
+S: TopAbs_Orientation
+Or: TopAbs_Orientation
+
+Returns
+-------
+None
 ") Compare;
 		void Compare(const Standard_Real Tole, const gp_Dir & Tang, const gp_Dir & Norm, const Standard_Real Curv, const TopAbs_Orientation S, const TopAbs_Orientation Or);
 
@@ -95,13 +94,15 @@ class TopTrans_CurveTransition {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Initialize a transition with the local description of a curve.
 
-	:param Tgt:
-	:type Tgt: gp_Dir
-	:param Norm:
-	:type Norm: gp_Dir
-	:param Curv:
-	:type Curv: float
-	:rtype: None
+Parameters
+----------
+Tgt: gp_Dir
+Norm: gp_Dir
+Curv: float
+
+Returns
+-------
+None
 ") Reset;
 		void Reset(const gp_Dir & Tgt, const gp_Dir & Norm, const Standard_Real Curv);
 
@@ -109,9 +110,13 @@ class TopTrans_CurveTransition {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Initialize a transition with the local description of a straigth line.
 
-	:param Tgt:
-	:type Tgt: gp_Dir
-	:rtype: None
+Parameters
+----------
+Tgt: gp_Dir
+
+Returns
+-------
+None
 ") Reset;
 		void Reset(const gp_Dir & Tgt);
 
@@ -119,7 +124,9 @@ class TopTrans_CurveTransition {
 		%feature("compactdefaultargs") StateAfter;
 		%feature("autodoc", "Returns the state of the curve after the intersection, this is the position relative to the boundary of a point very close to the intersection on the positive side of the tangent.
 
-	:rtype: TopAbs_State
+Returns
+-------
+TopAbs_State
 ") StateAfter;
 		TopAbs_State StateAfter();
 
@@ -127,7 +134,9 @@ class TopTrans_CurveTransition {
 		%feature("compactdefaultargs") StateBefore;
 		%feature("autodoc", "Returns the state of the curve before the intersection, this is the position relative to the boundary of a point very close to the intersection on the negative side of the tangent.
 
-	:rtype: TopAbs_State
+Returns
+-------
+TopAbs_State
 ") StateBefore;
 		TopAbs_State StateBefore();
 
@@ -135,7 +144,9 @@ class TopTrans_CurveTransition {
 		%feature("compactdefaultargs") TopTrans_CurveTransition;
 		%feature("autodoc", "Create an empty curve transition.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopTrans_CurveTransition;
 		 TopTrans_CurveTransition();
 
@@ -157,23 +168,20 @@ class TopTrans_SurfaceTransition {
 		%feature("compactdefaultargs") Compare;
 		%feature("autodoc", "Add a face element to the boundary. //! - s defines topological orientation for the face : s forward means: along the intersection curve on the reference surface, transition states while crossing the face are out,in. s reversed means states are in,out. s internal means states are in,in. //! - o defines curve's position on face : o forward means the face is before the intersection o reversed means the face is after o internal means the curve intersection is in the face. prequesitory : norm oriented outside 'geometric matter'.
 
-	:param Tole:
-	:type Tole: float
-	:param Norm:
-	:type Norm: gp_Dir
-	:param MaxD:
-	:type MaxD: gp_Dir
-	:param MinD:
-	:type MinD: gp_Dir
-	:param MaxCurv:
-	:type MaxCurv: float
-	:param MinCurv:
-	:type MinCurv: float
-	:param S:
-	:type S: TopAbs_Orientation
-	:param O:
-	:type O: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+Tole: float
+Norm: gp_Dir
+MaxD: gp_Dir
+MinD: gp_Dir
+MaxCurv: float
+MinCurv: float
+S: TopAbs_Orientation
+O: TopAbs_Orientation
+
+Returns
+-------
+None
 ") Compare;
 		void Compare(const Standard_Real Tole, const gp_Dir & Norm, const gp_Dir & MaxD, const gp_Dir & MinD, const Standard_Real MaxCurv, const Standard_Real MinCurv, const TopAbs_Orientation S, const TopAbs_Orientation O);
 
@@ -181,31 +189,44 @@ class TopTrans_SurfaceTransition {
 		%feature("compactdefaultargs") Compare;
 		%feature("autodoc", "Add a plane or a cylindric face to the boundary.
 
-	:param Tole:
-	:type Tole: float
-	:param Norm:
-	:type Norm: gp_Dir
-	:param S:
-	:type S: TopAbs_Orientation
-	:param O:
-	:type O: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+Tole: float
+Norm: gp_Dir
+S: TopAbs_Orientation
+O: TopAbs_Orientation
+
+Returns
+-------
+None
 ") Compare;
 		void Compare(const Standard_Real Tole, const gp_Dir & Norm, const TopAbs_Orientation S, const TopAbs_Orientation O);
 
 		/****************** GetAfter ******************/
 		%feature("compactdefaultargs") GetAfter;
-		%feature("autodoc", "	:param Tran:
-	:type Tran: TopAbs_Orientation
-	:rtype: TopAbs_State
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tran: TopAbs_Orientation
+
+Returns
+-------
+TopAbs_State
 ") GetAfter;
 		static TopAbs_State GetAfter(const TopAbs_Orientation Tran);
 
 		/****************** GetBefore ******************/
 		%feature("compactdefaultargs") GetBefore;
-		%feature("autodoc", "	:param Tran:
-	:type Tran: TopAbs_Orientation
-	:rtype: TopAbs_State
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tran: TopAbs_Orientation
+
+Returns
+-------
+TopAbs_State
 ") GetBefore;
 		static TopAbs_State GetBefore(const TopAbs_Orientation Tran);
 
@@ -213,19 +234,18 @@ class TopTrans_SurfaceTransition {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Initialize a surface transition with the local description of the intersection curve and of the reference surface. prequesitory : norm oriented outside 'geometric matter'.
 
-	:param Tgt:
-	:type Tgt: gp_Dir
-	:param Norm:
-	:type Norm: gp_Dir
-	:param MaxD:
-	:type MaxD: gp_Dir
-	:param MinD:
-	:type MinD: gp_Dir
-	:param MaxCurv:
-	:type MaxCurv: float
-	:param MinCurv:
-	:type MinCurv: float
-	:rtype: None
+Parameters
+----------
+Tgt: gp_Dir
+Norm: gp_Dir
+MaxD: gp_Dir
+MinD: gp_Dir
+MaxCurv: float
+MinCurv: float
+
+Returns
+-------
+None
 ") Reset;
 		void Reset(const gp_Dir & Tgt, const gp_Dir & Norm, const gp_Dir & MaxD, const gp_Dir & MinD, const Standard_Real MaxCurv, const Standard_Real MinCurv);
 
@@ -233,11 +253,14 @@ class TopTrans_SurfaceTransition {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Initialize a surface transition with the local description of a straight line.
 
-	:param Tgt:
-	:type Tgt: gp_Dir
-	:param Norm:
-	:type Norm: gp_Dir
-	:rtype: None
+Parameters
+----------
+Tgt: gp_Dir
+Norm: gp_Dir
+
+Returns
+-------
+None
 ") Reset;
 		void Reset(const gp_Dir & Tgt, const gp_Dir & Norm);
 
@@ -245,7 +268,9 @@ class TopTrans_SurfaceTransition {
 		%feature("compactdefaultargs") StateAfter;
 		%feature("autodoc", "Returns the state of the reference surface after interference, this is the position relative to the surface of a point very close to the intersection on the positive side of the tangent.
 
-	:rtype: TopAbs_State
+Returns
+-------
+TopAbs_State
 ") StateAfter;
 		TopAbs_State StateAfter();
 
@@ -253,7 +278,9 @@ class TopTrans_SurfaceTransition {
 		%feature("compactdefaultargs") StateBefore;
 		%feature("autodoc", "Returns the state of the reference surface before the interference, this is the position relative to the surface of a point very close to the intersection on the negative side of the tangent.
 
-	:rtype: TopAbs_State
+Returns
+-------
+TopAbs_State
 ") StateBefore;
 		TopAbs_State StateBefore();
 
@@ -261,7 +288,9 @@ class TopTrans_SurfaceTransition {
 		%feature("compactdefaultargs") TopTrans_SurfaceTransition;
 		%feature("autodoc", "Create an empty surface transition.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopTrans_SurfaceTransition;
 		 TopTrans_SurfaceTransition();
 

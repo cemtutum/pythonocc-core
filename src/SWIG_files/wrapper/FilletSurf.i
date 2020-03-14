@@ -120,9 +120,13 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") CurveOnFace1;
 		%feature("autodoc", "Gives the 3d curve of surfacefillet(index) on supportface1(index).
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom_Curve>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom_Curve>
 ") CurveOnFace1;
 		const opencascade::handle<Geom_Curve> & CurveOnFace1(const Standard_Integer Index);
 
@@ -130,15 +134,23 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") CurveOnFace2;
 		%feature("autodoc", "Gives the 3d curve of surfacefillet(index) on supportface2(index).
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom_Curve>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom_Curve>
 ") CurveOnFace2;
 		const opencascade::handle<Geom_Curve> & CurveOnFace2(const Standard_Integer Index);
 
 		/****************** EndSectionStatus ******************/
 		%feature("compactdefaultargs") EndSectionStatus;
-		%feature("autodoc", "	:rtype: FilletSurf_StatusType
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+FilletSurf_StatusType
 ") EndSectionStatus;
 		FilletSurf_StatusType EndSectionStatus();
 
@@ -146,19 +158,21 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") FilletSurf_Builder;
 		%feature("autodoc", "Initialize of the informations necessary for the computation of the fillet on the shape s from a list of edges e and a radius r. //! ta is the angular tolerance tapp3d is the 3d approximation tolerance tapp2d is the 2d approximation tolerance.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param E:
-	:type E: TopTools_ListOfShape
-	:param R:
-	:type R: float
-	:param Ta: default value is 1.0e-2
-	:type Ta: float
-	:param Tapp3d: default value is 1.0e-4
-	:type Tapp3d: float
-	:param Tapp2d: default value is 1.0e-5
-	:type Tapp2d: float
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+E: TopTools_ListOfShape
+R: float
+Ta: float,optional
+	default value is 1.0e-2
+Tapp3d: float,optional
+	default value is 1.0e-4
+Tapp2d: float,optional
+	default value is 1.0e-5
+
+Returns
+-------
+None
 ") FilletSurf_Builder;
 		 FilletSurf_Builder(const TopoDS_Shape & S, const TopTools_ListOfShape & E, const Standard_Real R, const Standard_Real Ta = 1.0e-2, const Standard_Real Tapp3d = 1.0e-4, const Standard_Real Tapp2d = 1.0e-5);
 
@@ -166,7 +180,9 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") FirstParameter;
 		%feature("autodoc", "Gives the parameter of the fillet on the first edge.
 
-	:rtype: float
+Returns
+-------
+float
 ") FirstParameter;
 		Standard_Real FirstParameter();
 
@@ -174,7 +190,9 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Gives the status about the computation of the fillet returns: isok :no problem during the computation isnotok: no result is produced ispartial: the result is partial.
 
-	:rtype: FilletSurf_StatusDone
+Returns
+-------
+FilletSurf_StatusDone
 ") IsDone;
 		FilletSurf_StatusDone IsDone();
 
@@ -182,15 +200,23 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") LastParameter;
 		%feature("autodoc", "Gives the parameter of the fillet on the last edge.
 
-	:rtype: float
+Returns
+-------
+float
 ") LastParameter;
 		Standard_Real LastParameter();
 
 		/****************** NbSection ******************/
 		%feature("compactdefaultargs") NbSection;
-		%feature("autodoc", "	:param IndexSurf:
-	:type IndexSurf: int
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IndexSurf: int
+
+Returns
+-------
+int
 ") NbSection;
 		Standard_Integer NbSection(const Standard_Integer IndexSurf);
 
@@ -198,7 +224,9 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") NbSurface;
 		%feature("autodoc", "Gives the number of nubs surfaces of the fillet.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbSurface;
 		Standard_Integer NbSurface();
 
@@ -206,9 +234,13 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") PCurve1OnFillet;
 		%feature("autodoc", "Gives the pcurve associated to curveonface1(index) on the fillet.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom2d_Curve>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") PCurve1OnFillet;
 		const opencascade::handle<Geom2d_Curve> & PCurve1OnFillet(const Standard_Integer Index);
 
@@ -216,9 +248,13 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") PCurve2OnFillet;
 		%feature("autodoc", "Gives the pcurve associated to curveonsup2(index) on the fillet.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom2d_Curve>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") PCurve2OnFillet;
 		const opencascade::handle<Geom2d_Curve> & PCurve2OnFillet(const Standard_Integer Index);
 
@@ -226,9 +262,13 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") PCurveOnFace1;
 		%feature("autodoc", "Gives the pcurve associated to curvonsup1(index) on the support face.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom2d_Curve>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") PCurveOnFace1;
 		const opencascade::handle<Geom2d_Curve> & PCurveOnFace1(const Standard_Integer Index);
 
@@ -236,9 +276,13 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") PCurveOnFace2;
 		%feature("autodoc", "Gives the pcurve associated to curveonsup2(index) on the support face.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom2d_Curve>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") PCurveOnFace2;
 		const opencascade::handle<Geom2d_Curve> & PCurveOnFace2(const Standard_Integer Index);
 
@@ -246,31 +290,45 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "---purpose computation of the fillet (list of nubs).
 
-	:rtype: None
+Returns
+-------
+None
 ") Perform;
 		void Perform();
 
 		/****************** Section ******************/
 		%feature("compactdefaultargs") Section;
-		%feature("autodoc", "	:param IndexSurf:
-	:type IndexSurf: int
-	:param IndexSec:
-	:type IndexSec: int
-	:param Circ:
-	:type Circ: Geom_TrimmedCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IndexSurf: int
+IndexSec: int
+Circ: Geom_TrimmedCurve
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Standard_Integer IndexSurf, const Standard_Integer IndexSec, opencascade::handle<Geom_TrimmedCurve> & Circ);
 
 		/****************** Simulate ******************/
 		%feature("compactdefaultargs") Simulate;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Simulate;
 		void Simulate();
 
 		/****************** StartSectionStatus ******************/
 		%feature("compactdefaultargs") StartSectionStatus;
-		%feature("autodoc", "	:rtype: FilletSurf_StatusType
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+FilletSurf_StatusType
 ") StartSectionStatus;
 		FilletSurf_StatusType StartSectionStatus();
 
@@ -278,7 +336,9 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") StatusError;
 		%feature("autodoc", "Gives informations about error status if isdone=isnotok returns edgenotg1: the edges are not g1 facesnotg1 : two connected faces on a same support are not g1 edgenotonshape: the edge is not on shape notsharpedge: the edge is not sharp pbfilletcompute: problem during the computation of the fillet.
 
-	:rtype: FilletSurf_ErrorTypeStatus
+Returns
+-------
+FilletSurf_ErrorTypeStatus
 ") StatusError;
 		FilletSurf_ErrorTypeStatus StatusError();
 
@@ -286,9 +346,13 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") SupportFace1;
 		%feature("autodoc", "Gives the first support face relative to surfacefillet(index);.
 
-	:param Index:
-	:type Index: int
-	:rtype: TopoDS_Face
+Parameters
+----------
+Index: int
+
+Returns
+-------
+TopoDS_Face
 ") SupportFace1;
 		const TopoDS_Face SupportFace1(const Standard_Integer Index);
 
@@ -296,9 +360,13 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") SupportFace2;
 		%feature("autodoc", "Gives the second support face relative to surfacefillet(index);.
 
-	:param Index:
-	:type Index: int
-	:rtype: TopoDS_Face
+Parameters
+----------
+Index: int
+
+Returns
+-------
+TopoDS_Face
 ") SupportFace2;
 		const TopoDS_Face SupportFace2(const Standard_Integer Index);
 
@@ -306,9 +374,13 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") SurfaceFillet;
 		%feature("autodoc", "Gives the nubs surface of index index.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom_Surface>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom_Surface>
 ") SurfaceFillet;
 		const opencascade::handle<Geom_Surface> & SurfaceFillet(const Standard_Integer Index);
 
@@ -316,9 +388,13 @@ class FilletSurf_Builder {
 		%feature("compactdefaultargs") TolApp3d;
 		%feature("autodoc", "Gives the 3d tolerance reached during approximation of surface of index index.
 
-	:param Index:
-	:type Index: int
-	:rtype: float
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
 ") TolApp3d;
 		Standard_Real TolApp3d(const Standard_Integer Index);
 
@@ -340,11 +416,14 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Initializes the contour with a list of edges 0 : no problem 1 : empty list 2 : the edges are not g1 3 : two connected faces on a same support are not g1 4 : the edge is not on shape 5 : notsharpedge: the edge is not sharp.
 
-	:param E:
-	:type E: TopTools_ListOfShape
-	:param R:
-	:type R: float
-	:rtype: int
+Parameters
+----------
+E: TopTools_ListOfShape
+R: float
+
+Returns
+-------
+int
 ") Add;
 		Standard_Integer Add(const TopTools_ListOfShape & E, const Standard_Real R);
 
@@ -352,9 +431,13 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") CurveOnFace1;
 		%feature("autodoc", "Gives the 3d curve of surfacefillet(index) on supportface1(index).
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom_Curve>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom_Curve>
 ") CurveOnFace1;
 		const opencascade::handle<Geom_Curve> & CurveOnFace1(const Standard_Integer Index);
 
@@ -362,37 +445,55 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") CurveOnFace2;
 		%feature("autodoc", "Gives the 3d curve of surfacefillet(index) on supportface2(index).
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom_Curve>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom_Curve>
 ") CurveOnFace2;
 		const opencascade::handle<Geom_Curve> & CurveOnFace2(const Standard_Integer Index);
 
 		/****************** Done ******************/
 		%feature("compactdefaultargs") Done;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Done;
 		Standard_Boolean Done();
 
 		/****************** EndSectionStatus ******************/
 		%feature("compactdefaultargs") EndSectionStatus;
-		%feature("autodoc", "	:rtype: FilletSurf_StatusType
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+FilletSurf_StatusType
 ") EndSectionStatus;
 		FilletSurf_StatusType EndSectionStatus();
 
 		/****************** FilletSurf_InternalBuilder ******************/
 		%feature("compactdefaultargs") FilletSurf_InternalBuilder;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:param FShape: default value is ChFi3d_Polynomial
-	:type FShape: ChFi3d_FilletShape
-	:param Ta: default value is 1.0e-2
-	:type Ta: float
-	:param Tapp3d: default value is 1.0e-4
-	:type Tapp3d: float
-	:param Tapp2d: default value is 1.0e-5
-	:type Tapp2d: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+FShape: ChFi3d_FilletShape,optional
+	default value is ChFi3d_Polynomial
+Ta: float,optional
+	default value is 1.0e-2
+Tapp3d: float,optional
+	default value is 1.0e-4
+Tapp2d: float,optional
+	default value is 1.0e-5
+
+Returns
+-------
+None
 ") FilletSurf_InternalBuilder;
 		 FilletSurf_InternalBuilder(const TopoDS_Shape & S, const ChFi3d_FilletShape FShape = ChFi3d_Polynomial, const Standard_Real Ta = 1.0e-2, const Standard_Real Tapp3d = 1.0e-4, const Standard_Real Tapp2d = 1.0e-5);
 
@@ -400,7 +501,9 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") FirstParameter;
 		%feature("autodoc", "Gives the parameter of the fillet on the first edge.
 
-	:rtype: float
+Returns
+-------
+float
 ") FirstParameter;
 		Standard_Real FirstParameter();
 
@@ -408,15 +511,23 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") LastParameter;
 		%feature("autodoc", "Gives the parameter of the fillet on the last edge.
 
-	:rtype: float
+Returns
+-------
+float
 ") LastParameter;
 		Standard_Real LastParameter();
 
 		/****************** NbSection ******************/
 		%feature("compactdefaultargs") NbSection;
-		%feature("autodoc", "	:param IndexSurf:
-	:type IndexSurf: int
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IndexSurf: int
+
+Returns
+-------
+int
 ") NbSection;
 		Standard_Integer NbSection(const Standard_Integer IndexSurf);
 
@@ -424,7 +535,9 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") NbSurface;
 		%feature("autodoc", "Gives the number of nubs surfaces of the fillet.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbSurface;
 		Standard_Integer NbSurface();
 
@@ -432,9 +545,13 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") PCurve1OnFillet;
 		%feature("autodoc", "Gives the pcurve associated to curveonface1(index) on the fillet.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom2d_Curve>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") PCurve1OnFillet;
 		const opencascade::handle<Geom2d_Curve> & PCurve1OnFillet(const Standard_Integer Index);
 
@@ -442,9 +559,13 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") PCurve2OnFillet;
 		%feature("autodoc", "Gives the pcurve associated to curveonsup2(index) on the fillet.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom2d_Curve>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") PCurve2OnFillet;
 		const opencascade::handle<Geom2d_Curve> & PCurve2OnFillet(const Standard_Integer Index);
 
@@ -452,9 +573,13 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") PCurveOnFace1;
 		%feature("autodoc", "Gives the pcurve associated to curvonsup1(index) on the support face.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom2d_Curve>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") PCurveOnFace1;
 		const opencascade::handle<Geom2d_Curve> & PCurveOnFace1(const Standard_Integer Index);
 
@@ -462,39 +587,59 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") PCurveOnFace2;
 		%feature("autodoc", "Gives the pcurve associated to curveonsup2(index) on the support face.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom2d_Curve>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") PCurveOnFace2;
 		const opencascade::handle<Geom2d_Curve> & PCurveOnFace2(const Standard_Integer Index);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Perform;
 		void Perform();
 
 		/****************** Section ******************/
 		%feature("compactdefaultargs") Section;
-		%feature("autodoc", "	:param IndexSurf:
-	:type IndexSurf: int
-	:param IndexSec:
-	:type IndexSec: int
-	:param Circ:
-	:type Circ: Geom_TrimmedCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IndexSurf: int
+IndexSec: int
+Circ: Geom_TrimmedCurve
+
+Returns
+-------
+None
 ") Section;
 		void Section(const Standard_Integer IndexSurf, const Standard_Integer IndexSec, opencascade::handle<Geom_TrimmedCurve> & Circ);
 
 		/****************** Simulate ******************/
 		%feature("compactdefaultargs") Simulate;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Simulate;
 		void Simulate();
 
 		/****************** StartSectionStatus ******************/
 		%feature("compactdefaultargs") StartSectionStatus;
-		%feature("autodoc", "	:rtype: FilletSurf_StatusType
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+FilletSurf_StatusType
 ") StartSectionStatus;
 		FilletSurf_StatusType StartSectionStatus();
 
@@ -502,9 +647,13 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") SupportFace1;
 		%feature("autodoc", "Gives the first support face relative to surfacefillet(index);.
 
-	:param Index:
-	:type Index: int
-	:rtype: TopoDS_Face
+Parameters
+----------
+Index: int
+
+Returns
+-------
+TopoDS_Face
 ") SupportFace1;
 		const TopoDS_Face SupportFace1(const Standard_Integer Index);
 
@@ -512,9 +661,13 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") SupportFace2;
 		%feature("autodoc", "Gives the second support face relative to surfacefillet(index);.
 
-	:param Index:
-	:type Index: int
-	:rtype: TopoDS_Face
+Parameters
+----------
+Index: int
+
+Returns
+-------
+TopoDS_Face
 ") SupportFace2;
 		const TopoDS_Face SupportFace2(const Standard_Integer Index);
 
@@ -522,9 +675,13 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") SurfaceFillet;
 		%feature("autodoc", "Gives the nubs surface of index index.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<Geom_Surface>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom_Surface>
 ") SurfaceFillet;
 		const opencascade::handle<Geom_Surface> & SurfaceFillet(const Standard_Integer Index);
 
@@ -532,9 +689,13 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		%feature("compactdefaultargs") TolApp3d;
 		%feature("autodoc", "Gives the 3d tolerance reached during approximation of the surface of index index.
 
-	:param Index:
-	:type Index: int
-	:rtype: float
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
 ") TolApp3d;
 		Standard_Real TolApp3d(const Standard_Integer Index);
 

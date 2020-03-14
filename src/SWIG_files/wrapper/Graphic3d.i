@@ -775,9 +775,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddBound;
 		%feature("autodoc", "Adds a bound of length theedgenumber in the bound array returns the actual bounds number.
 
-	:param theEdgeNumber:
-	:type theEdgeNumber: int
-	:rtype: int
+Parameters
+----------
+theEdgeNumber: int
+
+Returns
+-------
+int
 ") AddBound;
 		Standard_Integer AddBound(const Standard_Integer theEdgeNumber);
 
@@ -785,11 +789,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddBound;
 		%feature("autodoc", "Adds a bound of length theedgenumber and bound color thebcolor in the bound array. warning: thebcolor is ignored when the hasbcolors constructor parameter is false returns the actual bounds number.
 
-	:param theEdgeNumber:
-	:type theEdgeNumber: int
-	:param theBColor:
-	:type theBColor: Quantity_Color
-	:rtype: int
+Parameters
+----------
+theEdgeNumber: int
+theBColor: Quantity_Color
+
+Returns
+-------
+int
 ") AddBound;
 		Standard_Integer AddBound(const Standard_Integer theEdgeNumber, const Quantity_Color & theBColor);
 
@@ -797,15 +804,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddBound;
 		%feature("autodoc", "Adds a bound of length theedgenumber and bound color coordinates in the bound array. warning: <ther,theg,theb> are ignored when the hasbcolors constructor parameter is false returns the actual bounds number.
 
-	:param theEdgeNumber:
-	:type theEdgeNumber: int
-	:param theR:
-	:type theR: float
-	:param theG:
-	:type theG: float
-	:param theB:
-	:type theB: float
-	:rtype: int
+Parameters
+----------
+theEdgeNumber: int
+theR: float
+theG: float
+theB: float
+
+Returns
+-------
+int
 ") AddBound;
 		Standard_Integer AddBound(const Standard_Integer theEdgeNumber, const Standard_Real theR, const Standard_Real theG, const Standard_Real theB);
 
@@ -813,9 +821,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddEdge;
 		%feature("autodoc", "Adds an edge in the range [1,vertexnumber()] in the array. returns the actual edges number.
 
-	:param theVertexIndex:
-	:type theVertexIndex: int
-	:rtype: int
+Parameters
+----------
+theVertexIndex: int
+
+Returns
+-------
+int
 ") AddEdge;
 		Standard_Integer AddEdge(const Standard_Integer theVertexIndex);
 
@@ -823,11 +835,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddEdges;
 		%feature("autodoc", "Convenience method, adds two vertex indices (a segment) in the range [1,vertexnumber()] in the array. returns the actual edges number.
 
-	:param theVertexIndex1:
-	:type theVertexIndex1: int
-	:param theVertexIndex2:
-	:type theVertexIndex2: int
-	:rtype: int
+Parameters
+----------
+theVertexIndex1: int
+theVertexIndex2: int
+
+Returns
+-------
+int
 ") AddEdges;
 		Standard_Integer AddEdges(Standard_Integer theVertexIndex1, Standard_Integer theVertexIndex2);
 
@@ -835,13 +850,15 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddEdges;
 		%feature("autodoc", "Convenience method, adds three vertex indices (a triangle) in the range [1,vertexnumber()] in the array. returns the actual edges number.
 
-	:param theVertexIndex1:
-	:type theVertexIndex1: int
-	:param theVertexIndex2:
-	:type theVertexIndex2: int
-	:param theVertexIndex3:
-	:type theVertexIndex3: int
-	:rtype: int
+Parameters
+----------
+theVertexIndex1: int
+theVertexIndex2: int
+theVertexIndex3: int
+
+Returns
+-------
+int
 ") AddEdges;
 		Standard_Integer AddEdges(Standard_Integer theVertexIndex1, Standard_Integer theVertexIndex2, Standard_Integer theVertexIndex3);
 
@@ -849,15 +866,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddEdges;
 		%feature("autodoc", "Convenience method, adds four vertex indices (a quad) in the range [1,vertexnumber()] in the array. returns the actual edges number.
 
-	:param theVertexIndex1:
-	:type theVertexIndex1: int
-	:param theVertexIndex2:
-	:type theVertexIndex2: int
-	:param theVertexIndex3:
-	:type theVertexIndex3: int
-	:param theVertexIndex4:
-	:type theVertexIndex4: int
-	:rtype: int
+Parameters
+----------
+theVertexIndex1: int
+theVertexIndex2: int
+theVertexIndex3: int
+theVertexIndex4: int
+
+Returns
+-------
+int
 ") AddEdges;
 		Standard_Integer AddEdges(Standard_Integer theVertexIndex1, Standard_Integer theVertexIndex2, Standard_Integer theVertexIndex3, Standard_Integer theVertexIndex4);
 
@@ -865,13 +883,15 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddPolylineEdges;
 		%feature("autodoc", "Add line strip (polyline) into indexed segments array. n-1 segments are added from n input nodes (or n with closed flag). raises exception if array is not of type graphic3d_topa_segments. @param thevertexlower [in] index of first node defining line strip fun (center) @param thevertexupper [in] index of last node defining triangle fun @param thetoclose [in] close triangle fan (connect first and last points).
 
-	:param theVertexLower:
-	:type theVertexLower: int
-	:param theVertexUpper:
-	:type theVertexUpper: int
-	:param theToClose:
-	:type theToClose: bool
-	:rtype: None
+Parameters
+----------
+theVertexLower: int
+theVertexUpper: int
+theToClose: bool
+
+Returns
+-------
+None
 ") AddPolylineEdges;
 		void AddPolylineEdges(Standard_Integer theVertexLower, Standard_Integer theVertexUpper, Standard_Boolean theToClose);
 
@@ -879,15 +899,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddQuadEdges;
 		%feature("autodoc", "Convenience method, adds four vertex indices (a quad) in the range [1,vertexnumber()] in the array of quads. raises exception if array is not of type graphic3d_topa_quadrangles. returns the actual edges number.
 
-	:param theVertexIndex1:
-	:type theVertexIndex1: int
-	:param theVertexIndex2:
-	:type theVertexIndex2: int
-	:param theVertexIndex3:
-	:type theVertexIndex3: int
-	:param theVertexIndex4:
-	:type theVertexIndex4: int
-	:rtype: int
+Parameters
+----------
+theVertexIndex1: int
+theVertexIndex2: int
+theVertexIndex3: int
+theVertexIndex4: int
+
+Returns
+-------
+int
 ") AddQuadEdges;
 		Standard_Integer AddQuadEdges(Standard_Integer theVertexIndex1, Standard_Integer theVertexIndex2, Standard_Integer theVertexIndex3, Standard_Integer theVertexIndex4);
 
@@ -895,15 +916,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddQuadTriangleEdges;
 		%feature("autodoc", "Convenience method, adds quad indices in the range [1,vertexnumber()] into array or triangles as two triangles. raises exception if array is not of type graphic3d_topa_triangles. returns the actual edges number.
 
-	:param theVertexIndex1:
-	:type theVertexIndex1: int
-	:param theVertexIndex2:
-	:type theVertexIndex2: int
-	:param theVertexIndex3:
-	:type theVertexIndex3: int
-	:param theVertexIndex4:
-	:type theVertexIndex4: int
-	:rtype: int
+Parameters
+----------
+theVertexIndex1: int
+theVertexIndex2: int
+theVertexIndex3: int
+theVertexIndex4: int
+
+Returns
+-------
+int
 ") AddQuadTriangleEdges;
 		Standard_Integer AddQuadTriangleEdges(Standard_Integer theVertexIndex1, Standard_Integer theVertexIndex2, Standard_Integer theVertexIndex3, Standard_Integer theVertexIndex4);
 
@@ -911,9 +933,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddQuadTriangleEdges;
 		%feature("autodoc", "Convenience method, adds quad indices in the range [1,vertexnumber()] into array or triangles as two triangles. raises exception if array is not of type graphic3d_topa_triangles. returns the actual edges number.
 
-	:param theIndexes:
-	:type theIndexes: Graphic3d_Vec4i
-	:rtype: int
+Parameters
+----------
+theIndexes: Graphic3d_Vec4i
+
+Returns
+-------
+int
 ") AddQuadTriangleEdges;
 		Standard_Integer AddQuadTriangleEdges(const Graphic3d_Vec4i & theIndexes);
 
@@ -921,11 +947,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddSegmentEdges;
 		%feature("autodoc", "Convenience method, adds two vertex indices (a segment) in the range [1,vertexnumber()] in the array of segments (graphic3d_topa_segments). raises exception if array is not of type graphic3d_topa_segments. returns the actual edges number.
 
-	:param theVertexIndex1:
-	:type theVertexIndex1: int
-	:param theVertexIndex2:
-	:type theVertexIndex2: int
-	:rtype: int
+Parameters
+----------
+theVertexIndex1: int
+theVertexIndex2: int
+
+Returns
+-------
+int
 ") AddSegmentEdges;
 		Standard_Integer AddSegmentEdges(Standard_Integer theVertexIndex1, Standard_Integer theVertexIndex2);
 
@@ -933,13 +962,15 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddTriangleEdges;
 		%feature("autodoc", "Convenience method, adds three vertex indices of triangle in the range [1,vertexnumber()] in the array of triangles. raises exception if array is not of type graphic3d_topa_triangles. returns the actual edges number.
 
-	:param theVertexIndex1:
-	:type theVertexIndex1: int
-	:param theVertexIndex2:
-	:type theVertexIndex2: int
-	:param theVertexIndex3:
-	:type theVertexIndex3: int
-	:rtype: int
+Parameters
+----------
+theVertexIndex1: int
+theVertexIndex2: int
+theVertexIndex3: int
+
+Returns
+-------
+int
 ") AddTriangleEdges;
 		Standard_Integer AddTriangleEdges(Standard_Integer theVertexIndex1, Standard_Integer theVertexIndex2, Standard_Integer theVertexIndex3);
 
@@ -947,9 +978,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddTriangleEdges;
 		%feature("autodoc", "Convenience method, adds three vertex indices of triangle in the range [1,vertexnumber()] in the array of triangles. raises exception if array is not of type graphic3d_topa_triangles. returns the actual edges number.
 
-	:param theIndexes:
-	:type theIndexes: Graphic3d_Vec3i
-	:rtype: int
+Parameters
+----------
+theIndexes: Graphic3d_Vec3i
+
+Returns
+-------
+int
 ") AddTriangleEdges;
 		Standard_Integer AddTriangleEdges(const Graphic3d_Vec3i & theIndexes);
 
@@ -957,9 +992,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddTriangleEdges;
 		%feature("autodoc", "Convenience method, adds three vertex indices (4th component is ignored) of triangle in the range [1,vertexnumber()] in the array of triangles. raises exception if array is not of type graphic3d_topa_triangles. returns the actual edges number.
 
-	:param theIndexes:
-	:type theIndexes: Graphic3d_Vec4i
-	:rtype: int
+Parameters
+----------
+theIndexes: Graphic3d_Vec4i
+
+Returns
+-------
+int
 ") AddTriangleEdges;
 		Standard_Integer AddTriangleEdges(const Graphic3d_Vec4i & theIndexes);
 
@@ -967,13 +1006,15 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddTriangleFanEdges;
 		%feature("autodoc", "Add triangle fan into indexed triangulation array. n-2 triangles are added from n input nodes (or n-1 with closed flag). raises exception if array is not of type graphic3d_topa_triangles. @param thevertexlower [in] index of first node defining triangle fun (center) @param thevertexupper [in] index of last node defining triangle fun @param thetoclose [in] close triangle fan (connect first and last points).
 
-	:param theVertexLower:
-	:type theVertexLower: int
-	:param theVertexUpper:
-	:type theVertexUpper: int
-	:param theToClose:
-	:type theToClose: bool
-	:rtype: None
+Parameters
+----------
+theVertexLower: int
+theVertexUpper: int
+theToClose: bool
+
+Returns
+-------
+None
 ") AddTriangleFanEdges;
 		void AddTriangleFanEdges(Standard_Integer theVertexLower, Standard_Integer theVertexUpper, Standard_Boolean theToClose);
 
@@ -981,11 +1022,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddTriangleStripEdges;
 		%feature("autodoc", "Add triangle strip into indexed triangulation array. n-2 triangles are added from n input nodes. raises exception if array is not of type graphic3d_topa_triangles. @param thevertexlower [in] index of first node defining triangle strip @param thevertexupper [in] index of last node defining triangle strip.
 
-	:param theVertexLower:
-	:type theVertexLower: int
-	:param theVertexUpper:
-	:type theVertexUpper: int
-	:rtype: None
+Parameters
+----------
+theVertexLower: int
+theVertexUpper: int
+
+Returns
+-------
+None
 ") AddTriangleStripEdges;
 		void AddTriangleStripEdges(Standard_Integer theVertexLower, Standard_Integer theVertexUpper);
 
@@ -993,9 +1037,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice in the array. returns the actual vertex number.
 
-	:param theVertex:
-	:type theVertex: gp_Pnt
-	:rtype: int
+Parameters
+----------
+theVertex: gp_Pnt
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const gp_Pnt & theVertex);
 
@@ -1003,9 +1051,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice in the array. returns the actual vertex number.
 
-	:param theVertex:
-	:type theVertex: Graphic3d_Vec3
-	:rtype: int
+Parameters
+----------
+theVertex: Graphic3d_Vec3
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const Graphic3d_Vec3 & theVertex);
 
@@ -1013,13 +1065,15 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice in the array. returns the actual vertex number.
 
-	:param theX:
-	:type theX: float
-	:param theY:
-	:type theY: float
-	:param theZ:
-	:type theZ: float
-	:rtype: int
+Parameters
+----------
+theX: float
+theY: float
+theZ: float
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const Standard_Real theX, const Standard_Real theY, const Standard_Real theZ);
 
@@ -1027,13 +1081,15 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice in the array. returns the actual vertex number.
 
-	:param theX:
-	:type theX: Standard_ShortReal
-	:param theY:
-	:type theY: Standard_ShortReal
-	:param theZ:
-	:type theZ: Standard_ShortReal
-	:rtype: int
+Parameters
+----------
+theX: Standard_ShortReal
+theY: Standard_ShortReal
+theZ: Standard_ShortReal
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const Standard_ShortReal theX, const Standard_ShortReal theY, const Standard_ShortReal theZ);
 
@@ -1041,11 +1097,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice and vertex color in the vertex array. warning: thecolor is ignored when the hasvcolors constructor parameter is false returns the actual vertex number.
 
-	:param theVertex:
-	:type theVertex: gp_Pnt
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: int
+Parameters
+----------
+theVertex: gp_Pnt
+theColor: Quantity_Color
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const gp_Pnt & theVertex, const Quantity_Color & theColor);
 
@@ -1053,11 +1112,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice and vertex color in the vertex array. warning: thecolor is ignored when the hasvcolors constructor parameter is false @code thecolor32 = alpha << 24 + blue << 16 + green << 8 + red @endcode returns the actual vertex number.
 
-	:param theVertex:
-	:type theVertex: gp_Pnt
-	:param theColor32:
-	:type theColor32: int
-	:rtype: int
+Parameters
+----------
+theVertex: gp_Pnt
+theColor32: int
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const gp_Pnt & theVertex, const Standard_Integer theColor32);
 
@@ -1065,11 +1127,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice and vertex color in the vertex array. warning: thecolor is ignored when the hasvcolors constructor parameter is false returns the actual vertex number.
 
-	:param theVertex:
-	:type theVertex: gp_Pnt
-	:param theColor:
-	:type theColor: Graphic3d_Vec4ub
-	:rtype: int
+Parameters
+----------
+theVertex: gp_Pnt
+theColor: Graphic3d_Vec4ub
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const gp_Pnt & theVertex, const Graphic3d_Vec4ub & theColor);
 
@@ -1077,11 +1142,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice and vertex normal in the vertex array. warning: thenormal is ignored when the hasvnormals constructor parameter is false. returns the actual vertex number.
 
-	:param theVertex:
-	:type theVertex: gp_Pnt
-	:param theNormal:
-	:type theNormal: gp_Dir
-	:rtype: int
+Parameters
+----------
+theVertex: gp_Pnt
+theNormal: gp_Dir
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const gp_Pnt & theVertex, const gp_Dir & theNormal);
 
@@ -1089,19 +1157,18 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice and vertex normal in the vertex array. warning: normal is ignored when the hasvnormals constructor parameter is false. returns the actual vertex number.
 
-	:param theX:
-	:type theX: float
-	:param theY:
-	:type theY: float
-	:param theZ:
-	:type theZ: float
-	:param theNX:
-	:type theNX: float
-	:param theNY:
-	:type theNY: float
-	:param theNZ:
-	:type theNZ: float
-	:rtype: int
+Parameters
+----------
+theX: float
+theY: float
+theZ: float
+theNX: float
+theNY: float
+theNZ: float
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const Standard_Real theX, const Standard_Real theY, const Standard_Real theZ, const Standard_Real theNX, const Standard_Real theNY, const Standard_Real theNZ);
 
@@ -1109,19 +1176,18 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice and vertex normal in the vertex array. warning: normal is ignored when the hasvnormals constructor parameter is false. returns the actual vertex number.
 
-	:param theX:
-	:type theX: Standard_ShortReal
-	:param theY:
-	:type theY: Standard_ShortReal
-	:param theZ:
-	:type theZ: Standard_ShortReal
-	:param theNX:
-	:type theNX: Standard_ShortReal
-	:param theNY:
-	:type theNY: Standard_ShortReal
-	:param theNZ:
-	:type theNZ: Standard_ShortReal
-	:rtype: int
+Parameters
+----------
+theX: Standard_ShortReal
+theY: Standard_ShortReal
+theZ: Standard_ShortReal
+theNX: Standard_ShortReal
+theNY: Standard_ShortReal
+theNZ: Standard_ShortReal
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const Standard_ShortReal theX, const Standard_ShortReal theY, const Standard_ShortReal theZ, const Standard_ShortReal theNX, const Standard_ShortReal theNY, const Standard_ShortReal theNZ);
 
@@ -1129,13 +1195,15 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice,vertex normal and color in the vertex array. warning: thenormal is ignored when the hasvnormals constructor parameter is false and thecolor is ignored when the hasvcolors constructor parameter is false. returns the actual vertex number.
 
-	:param theVertex:
-	:type theVertex: gp_Pnt
-	:param theNormal:
-	:type theNormal: gp_Dir
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: int
+Parameters
+----------
+theVertex: gp_Pnt
+theNormal: gp_Dir
+theColor: Quantity_Color
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const gp_Pnt & theVertex, const gp_Dir & theNormal, const Quantity_Color & theColor);
 
@@ -1143,13 +1211,15 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice,vertex normal and color in the vertex array. warning: thenormal is ignored when the hasvnormals constructor parameter is false and thecolor is ignored when the hasvcolors constructor parameter is false. @code thecolor32 = alpha << 24 + blue << 16 + green << 8 + red @endcode returns the actual vertex number.
 
-	:param theVertex:
-	:type theVertex: gp_Pnt
-	:param theNormal:
-	:type theNormal: gp_Dir
-	:param theColor32:
-	:type theColor32: int
-	:rtype: int
+Parameters
+----------
+theVertex: gp_Pnt
+theNormal: gp_Dir
+theColor32: int
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const gp_Pnt & theVertex, const gp_Dir & theNormal, const Standard_Integer theColor32);
 
@@ -1157,11 +1227,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice and vertex texture in the vertex array. thetexel is ignored when the hasvtexels constructor parameter is false. returns the actual vertex number.
 
-	:param theVertex:
-	:type theVertex: gp_Pnt
-	:param theTexel:
-	:type theTexel: gp_Pnt2d
-	:rtype: int
+Parameters
+----------
+theVertex: gp_Pnt
+theTexel: gp_Pnt2d
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const gp_Pnt & theVertex, const gp_Pnt2d & theTexel);
 
@@ -1169,17 +1242,17 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice and vertex texture coordinates in the vertex array. texel is ignored when the hasvtexels constructor parameter is false. returns the actual vertex number.
 
-	:param theX:
-	:type theX: float
-	:param theY:
-	:type theY: float
-	:param theZ:
-	:type theZ: float
-	:param theTX:
-	:type theTX: float
-	:param theTY:
-	:type theTY: float
-	:rtype: int
+Parameters
+----------
+theX: float
+theY: float
+theZ: float
+theTX: float
+theTY: float
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const Standard_Real theX, const Standard_Real theY, const Standard_Real theZ, const Standard_Real theTX, const Standard_Real theTY);
 
@@ -1187,17 +1260,17 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice and vertex texture coordinates in the vertex array. texel is ignored when the hasvtexels constructor parameter is false. returns the actual vertex number.
 
-	:param theX:
-	:type theX: Standard_ShortReal
-	:param theY:
-	:type theY: Standard_ShortReal
-	:param theZ:
-	:type theZ: Standard_ShortReal
-	:param theTX:
-	:type theTX: Standard_ShortReal
-	:param theTY:
-	:type theTY: Standard_ShortReal
-	:rtype: int
+Parameters
+----------
+theX: Standard_ShortReal
+theY: Standard_ShortReal
+theZ: Standard_ShortReal
+theTX: Standard_ShortReal
+theTY: Standard_ShortReal
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const Standard_ShortReal theX, const Standard_ShortReal theY, const Standard_ShortReal theZ, const Standard_ShortReal theTX, const Standard_ShortReal theTY);
 
@@ -1205,13 +1278,15 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice,vertex normal and texture in the vertex array. warning: thenormal is ignored when the hasvnormals constructor parameter is false and thetexel is ignored when the hasvtexels constructor parameter is false. returns the actual vertex number.
 
-	:param theVertex:
-	:type theVertex: gp_Pnt
-	:param theNormal:
-	:type theNormal: gp_Dir
-	:param theTexel:
-	:type theTexel: gp_Pnt2d
-	:rtype: int
+Parameters
+----------
+theVertex: gp_Pnt
+theNormal: gp_Dir
+theTexel: gp_Pnt2d
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const gp_Pnt & theVertex, const gp_Dir & theNormal, const gp_Pnt2d & theTexel);
 
@@ -1219,23 +1294,20 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice,vertex normal and texture in the vertex array. warning: normal is ignored when the hasvnormals constructor parameter is false and texel is ignored when the hasvtexels constructor parameter is false. returns the actual vertex number.
 
-	:param theX:
-	:type theX: float
-	:param theY:
-	:type theY: float
-	:param theZ:
-	:type theZ: float
-	:param theNX:
-	:type theNX: float
-	:param theNY:
-	:type theNY: float
-	:param theNZ:
-	:type theNZ: float
-	:param theTX:
-	:type theTX: float
-	:param theTY:
-	:type theTY: float
-	:rtype: int
+Parameters
+----------
+theX: float
+theY: float
+theZ: float
+theNX: float
+theNY: float
+theNZ: float
+theTX: float
+theTY: float
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const Standard_Real theX, const Standard_Real theY, const Standard_Real theZ, const Standard_Real theNX, const Standard_Real theNY, const Standard_Real theNZ, const Standard_Real theTX, const Standard_Real theTY);
 
@@ -1243,23 +1315,20 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds a vertice,vertex normal and texture in the vertex array. warning: normal is ignored when the hasvnormals constructor parameter is false and texel is ignored when the hasvtexels constructor parameter is false. returns the actual vertex number.
 
-	:param theX:
-	:type theX: Standard_ShortReal
-	:param theY:
-	:type theY: Standard_ShortReal
-	:param theZ:
-	:type theZ: Standard_ShortReal
-	:param theNX:
-	:type theNX: Standard_ShortReal
-	:param theNY:
-	:type theNY: Standard_ShortReal
-	:param theNZ:
-	:type theNZ: Standard_ShortReal
-	:param theTX:
-	:type theTX: Standard_ShortReal
-	:param theTY:
-	:type theTY: Standard_ShortReal
-	:rtype: int
+Parameters
+----------
+theX: Standard_ShortReal
+theY: Standard_ShortReal
+theZ: Standard_ShortReal
+theNX: Standard_ShortReal
+theNY: Standard_ShortReal
+theNZ: Standard_ShortReal
+theTX: Standard_ShortReal
+theTY: Standard_ShortReal
+
+Returns
+-------
+int
 ") AddVertex;
 		Standard_Integer AddVertex(const Standard_ShortReal theX, const Standard_ShortReal theY, const Standard_ShortReal theZ, const Standard_ShortReal theNX, const Standard_ShortReal theNY, const Standard_ShortReal theNZ, const Standard_ShortReal theTX, const Standard_ShortReal theTY);
 
@@ -1267,7 +1336,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") Attributes;
 		%feature("autodoc", "Returns vertex attributes buffer (colors, normals, texture coordinates).
 
-	:rtype: opencascade::handle<Graphic3d_Buffer>
+Returns
+-------
+opencascade::handle<Graphic3d_Buffer>
 ") Attributes;
 		const opencascade::handle<Graphic3d_Buffer> & Attributes();
 
@@ -1275,9 +1346,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") Bound;
 		%feature("autodoc", "Returns the edge number at rank therank.
 
-	:param theRank:
-	:type theRank: int
-	:rtype: int
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+int
 ") Bound;
 		Standard_Integer Bound(const Standard_Integer theRank);
 
@@ -1285,9 +1360,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") BoundColor;
 		%feature("autodoc", "Returns the bound color at rank therank from the bound table if defined.
 
-	:param theRank:
-	:type theRank: int
-	:rtype: Quantity_Color
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+Quantity_Color
 ") BoundColor;
 		Quantity_Color BoundColor(const Standard_Integer theRank);
 
@@ -1295,15 +1374,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") BoundColor;
 		%feature("autodoc", "Returns the bound color values at rank therank from the bound table if defined.
 
-	:param theRank:
-	:type theRank: int
-	:param theR:
-	:type theR: float
-	:param theG:
-	:type theG: float
-	:param theB:
-	:type theB: float
-	:rtype: None
+Parameters
+----------
+theRank: int
+theR: float
+theG: float
+theB: float
+
+Returns
+-------
+None
 ") BoundColor;
 		void BoundColor(const Standard_Integer theRank, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1311,7 +1391,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") BoundNumber;
 		%feature("autodoc", "Returns the number of defined bounds.
 
-	:rtype: int
+Returns
+-------
+int
 ") BoundNumber;
 		Standard_Integer BoundNumber();
 
@@ -1319,7 +1401,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") BoundNumberAllocated;
 		%feature("autodoc", "Returns the number of allocated bounds.
 
-	:rtype: int
+Returns
+-------
+int
 ") BoundNumberAllocated;
 		Standard_Integer BoundNumberAllocated();
 
@@ -1327,7 +1411,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "Returns optional bounds buffer.
 
-	:rtype: opencascade::handle<Graphic3d_BoundBuffer>
+Returns
+-------
+opencascade::handle<Graphic3d_BoundBuffer>
 ") Bounds;
 		const opencascade::handle<Graphic3d_BoundBuffer> & Bounds();
 
@@ -1335,15 +1421,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") CreateArray;
 		%feature("autodoc", "Create an array of specified type.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfPrimitiveArray
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxEdges:
-	:type theMaxEdges: int
-	:param theArrayFlags:
-	:type theArrayFlags: int
-	:rtype: opencascade::handle<Graphic3d_ArrayOfPrimitives>
+Parameters
+----------
+theType: Graphic3d_TypeOfPrimitiveArray
+theMaxVertexs: int
+theMaxEdges: int
+theArrayFlags: int
+
+Returns
+-------
+opencascade::handle<Graphic3d_ArrayOfPrimitives>
 ") CreateArray;
 		static opencascade::handle<Graphic3d_ArrayOfPrimitives> CreateArray(Graphic3d_TypeOfPrimitiveArray theType, Standard_Integer theMaxVertexs, Standard_Integer theMaxEdges, int theArrayFlags);
 
@@ -1351,17 +1438,17 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") CreateArray;
 		%feature("autodoc", "Create an array of specified type.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfPrimitiveArray
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxBounds:
-	:type theMaxBounds: int
-	:param theMaxEdges:
-	:type theMaxEdges: int
-	:param theArrayFlags:
-	:type theArrayFlags: int
-	:rtype: opencascade::handle<Graphic3d_ArrayOfPrimitives>
+Parameters
+----------
+theType: Graphic3d_TypeOfPrimitiveArray
+theMaxVertexs: int
+theMaxBounds: int
+theMaxEdges: int
+theArrayFlags: int
+
+Returns
+-------
+opencascade::handle<Graphic3d_ArrayOfPrimitives>
 ") CreateArray;
 		static opencascade::handle<Graphic3d_ArrayOfPrimitives> CreateArray(Graphic3d_TypeOfPrimitiveArray theType, Standard_Integer theMaxVertexs, Standard_Integer theMaxBounds, Standard_Integer theMaxEdges, int theArrayFlags);
 
@@ -1369,9 +1456,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Returns the vertex index at rank therank in the range [1,edgenumber()].
 
-	:param theRank:
-	:type theRank: int
-	:rtype: int
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+int
 ") Edge;
 		Standard_Integer Edge(const Standard_Integer theRank);
 
@@ -1379,7 +1470,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") EdgeNumber;
 		%feature("autodoc", "Returns the number of defined edges.
 
-	:rtype: int
+Returns
+-------
+int
 ") EdgeNumber;
 		Standard_Integer EdgeNumber();
 
@@ -1387,7 +1480,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") EdgeNumberAllocated;
 		%feature("autodoc", "Returns the number of allocated edges.
 
-	:rtype: int
+Returns
+-------
+int
 ") EdgeNumberAllocated;
 		Standard_Integer EdgeNumberAllocated();
 
@@ -1395,7 +1490,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") HasBoundColors;
 		%feature("autodoc", "Returns true when bound colors array is defined.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasBoundColors;
 		Standard_Boolean HasBoundColors();
 
@@ -1403,7 +1500,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") HasVertexColors;
 		%feature("autodoc", "Returns true when vertex colors array is defined.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasVertexColors;
 		Standard_Boolean HasVertexColors();
 
@@ -1411,7 +1510,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") HasVertexNormals;
 		%feature("autodoc", "Returns true when vertex normals array is defined.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasVertexNormals;
 		Standard_Boolean HasVertexNormals();
 
@@ -1419,7 +1520,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") HasVertexTexels;
 		%feature("autodoc", "Returns true when vertex texels array is defined.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasVertexTexels;
 		Standard_Boolean HasVertexTexels();
 
@@ -1427,7 +1530,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") Indices;
 		%feature("autodoc", "Returns optional index buffer.
 
-	:rtype: opencascade::handle<Graphic3d_IndexBuffer>
+Returns
+-------
+opencascade::handle<Graphic3d_IndexBuffer>
 ") Indices;
 		const opencascade::handle<Graphic3d_IndexBuffer> & Indices();
 
@@ -1435,7 +1540,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") IsValid;
 		%feature("autodoc", "Returns true only when the contains of this array is available.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsValid;
 		Standard_Boolean IsValid();
 
@@ -1443,7 +1550,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") ItemNumber;
 		%feature("autodoc", "Returns the number of total items according to the array type.
 
-	:rtype: int
+Returns
+-------
+int
 ") ItemNumber;
 		Standard_Integer ItemNumber();
 
@@ -1451,11 +1560,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") SetBoundColor;
 		%feature("autodoc", "Change the bound color of rank theindex in the array.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetBoundColor;
 		void SetBoundColor(const Standard_Integer theIndex, const Quantity_Color & theColor);
 
@@ -1463,15 +1575,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") SetBoundColor;
 		%feature("autodoc", "Change the bound color of rank theindex in the array.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theR:
-	:type theR: float
-	:param theG:
-	:type theG: float
-	:param theB:
-	:type theB: float
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theR: float
+theG: float
+theB: float
+
+Returns
+-------
+None
 ") SetBoundColor;
 		void SetBoundColor(const Standard_Integer theIndex, const Standard_Real theR, const Standard_Real theG, const Standard_Real theB);
 
@@ -1479,11 +1592,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") SetVertexColor;
 		%feature("autodoc", "Change the vertex color of rank theindex in the array.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetVertexColor;
 		void SetVertexColor(const Standard_Integer theIndex, const Quantity_Color & theColor);
 
@@ -1491,15 +1607,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") SetVertexColor;
 		%feature("autodoc", "Change the vertex color of rank theindex in the array.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theR:
-	:type theR: float
-	:param theG:
-	:type theG: float
-	:param theB:
-	:type theB: float
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theR: float
+theG: float
+theB: float
+
+Returns
+-------
+None
 ") SetVertexColor;
 		void SetVertexColor(const Standard_Integer theIndex, const Standard_Real theR, const Standard_Real theG, const Standard_Real theB);
 
@@ -1507,11 +1624,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") SetVertexColor;
 		%feature("autodoc", "Change the vertex color of rank theindex in the array.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theColor:
-	:type theColor: Graphic3d_Vec4ub
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theColor: Graphic3d_Vec4ub
+
+Returns
+-------
+None
 ") SetVertexColor;
 		void SetVertexColor(const Standard_Integer theIndex, const Graphic3d_Vec4ub & theColor);
 
@@ -1519,11 +1639,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") SetVertexColor;
 		%feature("autodoc", "Change the vertex color of rank theindex> in the array. @code thecolor32 = alpha << 24 + blue << 16 + green << 8 + red @endcode.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theColor32:
-	:type theColor32: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theColor32: int
+
+Returns
+-------
+None
 ") SetVertexColor;
 		void SetVertexColor(const Standard_Integer theIndex, const Standard_Integer theColor32);
 
@@ -1531,11 +1654,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") SetVertexNormal;
 		%feature("autodoc", "Change the vertex normal of rank theindex in the array.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theNormal:
-	:type theNormal: gp_Dir
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theNormal: gp_Dir
+
+Returns
+-------
+None
 ") SetVertexNormal;
 		void SetVertexNormal(const Standard_Integer theIndex, const gp_Dir & theNormal);
 
@@ -1543,15 +1669,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") SetVertexNormal;
 		%feature("autodoc", "Change the vertex normal of rank theindex in the array.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theNX:
-	:type theNX: float
-	:param theNY:
-	:type theNY: float
-	:param theNZ:
-	:type theNZ: float
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theNX: float
+theNY: float
+theNZ: float
+
+Returns
+-------
+None
 ") SetVertexNormal;
 		void SetVertexNormal(const Standard_Integer theIndex, const Standard_Real theNX, const Standard_Real theNY, const Standard_Real theNZ);
 
@@ -1559,11 +1686,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") SetVertexTexel;
 		%feature("autodoc", "Change the vertex texel of rank theindex in the array.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theTexel:
-	:type theTexel: gp_Pnt2d
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theTexel: gp_Pnt2d
+
+Returns
+-------
+None
 ") SetVertexTexel;
 		void SetVertexTexel(const Standard_Integer theIndex, const gp_Pnt2d & theTexel);
 
@@ -1571,13 +1701,15 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") SetVertexTexel;
 		%feature("autodoc", "Change the vertex texel of rank theindex in the array.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theTX:
-	:type theTX: float
-	:param theTY:
-	:type theTY: float
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theTX: float
+theTY: float
+
+Returns
+-------
+None
 ") SetVertexTexel;
 		void SetVertexTexel(const Standard_Integer theIndex, const Standard_Real theTX, const Standard_Real theTY);
 
@@ -1585,11 +1717,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") SetVertice;
 		%feature("autodoc", "Change the vertice of rank theindex in the array.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theVertex:
-	:type theVertex: gp_Pnt
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theVertex: gp_Pnt
+
+Returns
+-------
+None
 ") SetVertice;
 		void SetVertice(const Standard_Integer theIndex, const gp_Pnt & theVertex);
 
@@ -1597,15 +1732,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") SetVertice;
 		%feature("autodoc", "Change the vertice of rank theindex in the array.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theX:
-	:type theX: Standard_ShortReal
-	:param theY:
-	:type theY: Standard_ShortReal
-	:param theZ:
-	:type theZ: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theX: Standard_ShortReal
+theY: Standard_ShortReal
+theZ: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetVertice;
 		void SetVertice(const Standard_Integer theIndex, const Standard_ShortReal theX, const Standard_ShortReal theY, const Standard_ShortReal theZ);
 
@@ -1613,7 +1749,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") StringType;
 		%feature("autodoc", "Returns the string type of this primitive.
 
-	:rtype: char *
+Returns
+-------
+char *
 ") StringType;
 		const char * StringType();
 
@@ -1621,7 +1759,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Returns the type of this primitive.
 
-	:rtype: Graphic3d_TypeOfPrimitiveArray
+Returns
+-------
+Graphic3d_TypeOfPrimitiveArray
 ") Type;
 		Graphic3d_TypeOfPrimitiveArray Type();
 
@@ -1629,9 +1769,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") VertexColor;
 		%feature("autodoc", "Returns the vertex color at rank therank from the vertex table if defined.
 
-	:param theRank:
-	:type theRank: int
-	:rtype: Quantity_Color
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+Quantity_Color
 ") VertexColor;
 		Quantity_Color VertexColor(const Standard_Integer theRank);
 
@@ -1639,11 +1783,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") VertexColor;
 		%feature("autodoc", "Returns the vertex color at rank theindex from the vertex table if defined.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theColor:
-	:type theColor: Graphic3d_Vec4ub
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theColor: Graphic3d_Vec4ub
+
+Returns
+-------
+None
 ") VertexColor;
 		void VertexColor(const Standard_Integer theIndex, Graphic3d_Vec4ub & theColor);
 
@@ -1651,15 +1798,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") VertexColor;
 		%feature("autodoc", "Returns the vertex color values at rank therank from the vertex table if defined.
 
-	:param theRank:
-	:type theRank: int
-	:param theR:
-	:type theR: float
-	:param theG:
-	:type theG: float
-	:param theB:
-	:type theB: float
-	:rtype: None
+Parameters
+----------
+theRank: int
+theR: float
+theG: float
+theB: float
+
+Returns
+-------
+None
 ") VertexColor;
 		void VertexColor(const Standard_Integer theRank, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1667,11 +1815,14 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") VertexColor;
 		%feature("autodoc", "Returns the vertex color values at rank therank from the vertex table if defined.
 
-	:param theRank:
-	:type theRank: int
-	:param theColor:
-	:type theColor: int
-	:rtype: None
+Parameters
+----------
+theRank: int
+theColor: int
+
+Returns
+-------
+None
 ") VertexColor;
 		void VertexColor(const Standard_Integer theRank, Standard_Integer &OutValue);
 
@@ -1679,9 +1830,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") VertexNormal;
 		%feature("autodoc", "Returns the vertex normal at rank therank from the vertex table if defined.
 
-	:param theRank:
-	:type theRank: int
-	:rtype: gp_Dir
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+gp_Dir
 ") VertexNormal;
 		gp_Dir VertexNormal(const Standard_Integer theRank);
 
@@ -1689,15 +1844,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") VertexNormal;
 		%feature("autodoc", "Returns the vertex normal coordinates at rank therank from the vertex table if defined.
 
-	:param theRank:
-	:type theRank: int
-	:param theNX:
-	:type theNX: float
-	:param theNY:
-	:type theNY: float
-	:param theNZ:
-	:type theNZ: float
-	:rtype: None
+Parameters
+----------
+theRank: int
+theNX: float
+theNY: float
+theNZ: float
+
+Returns
+-------
+None
 ") VertexNormal;
 		void VertexNormal(const Standard_Integer theRank, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1705,7 +1861,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") VertexNumber;
 		%feature("autodoc", "Returns the number of defined vertex.
 
-	:rtype: int
+Returns
+-------
+int
 ") VertexNumber;
 		Standard_Integer VertexNumber();
 
@@ -1713,7 +1871,9 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") VertexNumberAllocated;
 		%feature("autodoc", "Returns the number of allocated vertex.
 
-	:rtype: int
+Returns
+-------
+int
 ") VertexNumberAllocated;
 		Standard_Integer VertexNumberAllocated();
 
@@ -1721,9 +1881,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") VertexTexel;
 		%feature("autodoc", "Returns the vertex texture at rank therank from the vertex table if defined.
 
-	:param theRank:
-	:type theRank: int
-	:rtype: gp_Pnt2d
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+gp_Pnt2d
 ") VertexTexel;
 		gp_Pnt2d VertexTexel(const Standard_Integer theRank);
 
@@ -1731,13 +1895,15 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") VertexTexel;
 		%feature("autodoc", "Returns the vertex texture coordinates at rank therank from the vertex table if defined.
 
-	:param theRank:
-	:type theRank: int
-	:param theTX:
-	:type theTX: float
-	:param theTY:
-	:type theTY: float
-	:rtype: None
+Parameters
+----------
+theRank: int
+theTX: float
+theTY: float
+
+Returns
+-------
+None
 ") VertexTexel;
 		void VertexTexel(const Standard_Integer theRank, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1745,9 +1911,13 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") Vertice;
 		%feature("autodoc", "Returns the vertice at rank therank from the vertex table if defined.
 
-	:param theRank:
-	:type theRank: int
-	:rtype: gp_Pnt
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+gp_Pnt
 ") Vertice;
 		gp_Pnt Vertice(const Standard_Integer theRank);
 
@@ -1755,15 +1925,16 @@ class Graphic3d_ArrayOfPrimitives : public Standard_Transient {
 		%feature("compactdefaultargs") Vertice;
 		%feature("autodoc", "Returns the vertice coordinates at rank therank from the vertex table if defined.
 
-	:param theRank:
-	:type theRank: int
-	:param theX:
-	:type theX: float
-	:param theY:
-	:type theY: float
-	:param theZ:
-	:type theZ: float
-	:rtype: None
+Parameters
+----------
+theRank: int
+theX: float
+theY: float
+theZ: float
+
+Returns
+-------
+None
 ") Vertice;
 		void Vertice(const Standard_Integer theRank, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1787,7 +1958,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") AllowBackFace;
 		%feature("autodoc", "Allows the display of back-facing filled polygons.
 
-	:rtype: None
+Returns
+-------
+None
 ") AllowBackFace;
 		void AllowBackFace();
 
@@ -1795,7 +1968,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") AlphaCutoff;
 		%feature("autodoc", "Returns alpha cutoff threshold, for discarding fragments within graphic3d_alphamode_mask mode (0.5 by default). if the alpha value is greater than or equal to this value then it is rendered as fully opaque, otherwise, it is rendered as fully transparent.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") AlphaCutoff;
 		Standard_ShortReal AlphaCutoff();
 
@@ -1803,7 +1978,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") AlphaMode;
 		%feature("autodoc", "Returns the way how alpha value should be treated (graphic3d_alphamode_blendauto by default, for backward compatibility).
 
-	:rtype: Graphic3d_AlphaMode
+Returns
+-------
+Graphic3d_AlphaMode
 ") AlphaMode;
 		Graphic3d_AlphaMode AlphaMode();
 
@@ -1811,7 +1988,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") BackFace;
 		%feature("autodoc", "Returns true if back faces should be suppressed (true by default).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") BackFace;
 		bool BackFace();
 
@@ -1819,7 +1998,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") BackInteriorColor;
 		%feature("autodoc", "Return back interior color.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") BackInteriorColor;
 		const Quantity_Color & BackInteriorColor();
 
@@ -1827,7 +2008,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") BackInteriorColorRGBA;
 		%feature("autodoc", "Return back interior color.
 
-	:rtype: Quantity_ColorRGBA
+Returns
+-------
+Quantity_ColorRGBA
 ") BackInteriorColorRGBA;
 		const Quantity_ColorRGBA & BackInteriorColorRGBA();
 
@@ -1835,7 +2018,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") BackMaterial;
 		%feature("autodoc", "Returns the surface material of internal faces.
 
-	:rtype: Graphic3d_MaterialAspect
+Returns
+-------
+Graphic3d_MaterialAspect
 ") BackMaterial;
 		const Graphic3d_MaterialAspect & BackMaterial();
 
@@ -1843,7 +2028,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") ChangeBackMaterial;
 		%feature("autodoc", "Returns the surface material of internal faces.
 
-	:rtype: Graphic3d_MaterialAspect
+Returns
+-------
+Graphic3d_MaterialAspect
 ") ChangeBackMaterial;
 		Graphic3d_MaterialAspect & ChangeBackMaterial();
 
@@ -1851,7 +2038,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") ChangeFrontMaterial;
 		%feature("autodoc", "Returns the surface material of external faces.
 
-	:rtype: Graphic3d_MaterialAspect
+Returns
+-------
+Graphic3d_MaterialAspect
 ") ChangeFrontMaterial;
 		Graphic3d_MaterialAspect & ChangeFrontMaterial();
 
@@ -1859,7 +2048,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") Color;
 		%feature("autodoc", "Return the color.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") Color;
 		const Quantity_Color & Color();
 
@@ -1867,7 +2058,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") ColorRGBA;
 		%feature("autodoc", "Return color.
 
-	:rtype: Quantity_ColorRGBA
+Returns
+-------
+Quantity_ColorRGBA
 ") ColorRGBA;
 		const Quantity_ColorRGBA & ColorRGBA();
 
@@ -1875,7 +2068,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") ColorSubTitle;
 		%feature("autodoc", "Return text background/shadow color; equals to edgecolor() property.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") ColorSubTitle;
 		const Quantity_Color & ColorSubTitle();
 
@@ -1883,7 +2078,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") ColorSubTitleRGBA;
 		%feature("autodoc", "Returns text background/shadow color; equals to edgecolor() property.
 
-	:rtype: Quantity_ColorRGBA
+Returns
+-------
+Quantity_ColorRGBA
 ") ColorSubTitleRGBA;
 		const Quantity_ColorRGBA & ColorSubTitleRGBA();
 
@@ -1891,7 +2088,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") Distinguish;
 		%feature("autodoc", "Returns true if material properties should be distinguished for back and front faces (false by default).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Distinguish;
 		bool Distinguish();
 
@@ -1907,7 +2106,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") EdgeColor;
 		%feature("autodoc", "Return color of edges.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") EdgeColor;
 		const Quantity_Color & EdgeColor();
 
@@ -1915,7 +2116,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") EdgeColorRGBA;
 		%feature("autodoc", "Return color of edges.
 
-	:rtype: Quantity_ColorRGBA
+Returns
+-------
+Quantity_ColorRGBA
 ") EdgeColorRGBA;
 		const Quantity_ColorRGBA & EdgeColorRGBA();
 
@@ -1923,7 +2126,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") EdgeLineType;
 		%feature("autodoc", "Return edges line type (same as linetype()).
 
-	:rtype: Aspect_TypeOfLine
+Returns
+-------
+Aspect_TypeOfLine
 ") EdgeLineType;
 		Aspect_TypeOfLine EdgeLineType();
 
@@ -1931,7 +2136,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") EdgeWidth;
 		%feature("autodoc", "Return width for edges in pixels (same as linewidth()).
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") EdgeWidth;
 		Standard_ShortReal EdgeWidth();
 
@@ -1939,7 +2146,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") FrontMaterial;
 		%feature("autodoc", "Returns the surface material of external faces.
 
-	:rtype: Graphic3d_MaterialAspect
+Returns
+-------
+Graphic3d_MaterialAspect
 ") FrontMaterial;
 		const Graphic3d_MaterialAspect & FrontMaterial();
 
@@ -1947,7 +2156,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_Aspects;
 		%feature("autodoc", "Creates a context table for drawing primitives defined with the following default values:.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_Aspects;
 		 Graphic3d_Aspects();
 
@@ -1955,7 +2166,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") HatchStyle;
 		%feature("autodoc", "Returns the hatch type used when interiorstyle is is_hatch.
 
-	:rtype: opencascade::handle<Graphic3d_HatchStyle>
+Returns
+-------
+opencascade::handle<Graphic3d_HatchStyle>
 ") HatchStyle;
 		const opencascade::handle<Graphic3d_HatchStyle> & HatchStyle();
 
@@ -1963,7 +2176,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") InteriorColor;
 		%feature("autodoc", "Return interior color.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") InteriorColor;
 		const Quantity_Color & InteriorColor();
 
@@ -1971,7 +2186,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") InteriorColorRGBA;
 		%feature("autodoc", "Return interior color.
 
-	:rtype: Quantity_ColorRGBA
+Returns
+-------
+Quantity_ColorRGBA
 ") InteriorColorRGBA;
 		const Quantity_ColorRGBA & InteriorColorRGBA();
 
@@ -1979,7 +2196,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") InteriorStyle;
 		%feature("autodoc", "Return interior rendering style; aspect_is_solid by default.
 
-	:rtype: Aspect_InteriorStyle
+Returns
+-------
+Aspect_InteriorStyle
 ") InteriorStyle;
 		Aspect_InteriorStyle InteriorStyle();
 
@@ -1987,9 +2206,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Check for equality with another aspects.
 
-	:param theOther:
-	:type theOther: Graphic3d_Aspects
-	:rtype: bool
+Parameters
+----------
+theOther: Graphic3d_Aspects
+
+Returns
+-------
+bool
 ") IsEqual;
 		bool IsEqual(const Graphic3d_Aspects & theOther);
 
@@ -1997,7 +2220,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") IsMarkerSprite;
 		%feature("autodoc", "Returns true if marker should be drawn using marker sprite (either user-provided or generated).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsMarkerSprite;
 		bool IsMarkerSprite();
 
@@ -2005,7 +2230,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") IsTextZoomable;
 		%feature("autodoc", "Returns true when the text zoomable is on.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsTextZoomable;
 		bool IsTextZoomable();
 
@@ -2013,7 +2240,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") LineType;
 		%feature("autodoc", "Return line type; aspect_tol_solid by default.
 
-	:rtype: Aspect_TypeOfLine
+Returns
+-------
+Aspect_TypeOfLine
 ") LineType;
 		Aspect_TypeOfLine LineType();
 
@@ -2021,7 +2250,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") LineWidth;
 		%feature("autodoc", "Return width for edges in pixels; 1.0 by default.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") LineWidth;
 		Standard_ShortReal LineWidth();
 
@@ -2029,7 +2260,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") MarkerImage;
 		%feature("autodoc", "Returns marker's image texture. could be null handle if marker aspect has been initialized as default type of marker.
 
-	:rtype: opencascade::handle<Graphic3d_MarkerImage>
+Returns
+-------
+opencascade::handle<Graphic3d_MarkerImage>
 ") MarkerImage;
 		const opencascade::handle<Graphic3d_MarkerImage> & MarkerImage();
 
@@ -2037,7 +2270,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") MarkerScale;
 		%feature("autodoc", "Return marker scale factor; 1.0 by default.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") MarkerScale;
 		Standard_ShortReal MarkerScale();
 
@@ -2045,7 +2280,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") MarkerType;
 		%feature("autodoc", "Return marker type; aspect_tom_point by default.
 
-	:rtype: Aspect_TypeOfMarker
+Returns
+-------
+Aspect_TypeOfMarker
 ") MarkerType;
 		Aspect_TypeOfMarker MarkerType();
 
@@ -2053,7 +2290,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") PolygonOffset;
 		%feature("autodoc", "Returns current polygon offsets settings.
 
-	:rtype: Graphic3d_PolygonOffset
+Returns
+-------
+Graphic3d_PolygonOffset
 ") PolygonOffset;
 		const Graphic3d_PolygonOffset & PolygonOffset();
 
@@ -2061,13 +2300,15 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") PolygonOffsets;
 		%feature("autodoc", "Returns current polygon offsets settings.
 
-	:param theMode:
-	:type theMode: int
-	:param theFactor:
-	:type theFactor: Standard_ShortReal
-	:param theUnits:
-	:type theUnits: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theMode: int
+theFactor: Standard_ShortReal
+theUnits: Standard_ShortReal
+
+Returns
+-------
+None
 ") PolygonOffsets;
 		void PolygonOffsets(Standard_Integer &OutValue, Standard_ShortReal & theFactor, Standard_ShortReal & theUnits);
 
@@ -2075,11 +2316,15 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetAlphaMode;
 		%feature("autodoc", "Defines the way how alpha value should be treated.
 
-	:param theMode:
-	:type theMode: Graphic3d_AlphaMode
-	:param theAlphaCutoff: default value is 0.5f
-	:type theAlphaCutoff: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theMode: Graphic3d_AlphaMode
+theAlphaCutoff: Standard_ShortReal,optional
+	default value is 0.5f
+
+Returns
+-------
+None
 ") SetAlphaMode;
 		void SetAlphaMode(Graphic3d_AlphaMode theMode, Standard_ShortReal theAlphaCutoff = 0.5f);
 
@@ -2087,9 +2332,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetBackInteriorColor;
 		%feature("autodoc", "Modifies the color of the interior of the back face.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetBackInteriorColor;
 		void SetBackInteriorColor(const Quantity_Color & theColor);
 
@@ -2097,9 +2346,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetBackInteriorColor;
 		%feature("autodoc", "Modifies the color of the interior of the back face.
 
-	:param theColor:
-	:type theColor: Quantity_ColorRGBA
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_ColorRGBA
+
+Returns
+-------
+None
 ") SetBackInteriorColor;
 		void SetBackInteriorColor(const Quantity_ColorRGBA & theColor);
 
@@ -2107,9 +2360,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetBackMaterial;
 		%feature("autodoc", "Modifies the surface material of internal faces.
 
-	:param theMaterial:
-	:type theMaterial: Graphic3d_MaterialAspect
-	:rtype: None
+Parameters
+----------
+theMaterial: Graphic3d_MaterialAspect
+
+Returns
+-------
+None
 ") SetBackMaterial;
 		void SetBackMaterial(const Graphic3d_MaterialAspect & theMaterial);
 
@@ -2117,9 +2374,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetColor;
 		%feature("autodoc", "Modifies the color.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetColor;
 		void SetColor(const Quantity_Color & theColor);
 
@@ -2127,9 +2388,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetColorSubTitle;
 		%feature("autodoc", "Modifies text background/shadow color; equals to edgecolor() property.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetColorSubTitle;
 		void SetColorSubTitle(const Quantity_Color & theColor);
 
@@ -2137,9 +2402,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetColorSubTitle;
 		%feature("autodoc", "Modifies text background/shadow color; equals to edgecolor() property.
 
-	:param theColor:
-	:type theColor: Quantity_ColorRGBA
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_ColorRGBA
+
+Returns
+-------
+None
 ") SetColorSubTitle;
 		void SetColorSubTitle(const Quantity_ColorRGBA & theColor);
 
@@ -2147,9 +2416,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetDistinguish;
 		%feature("autodoc", "Set material distinction between front and back faces.
 
-	:param toDistinguish:
-	:type toDistinguish: bool
-	:rtype: None
+Parameters
+----------
+toDistinguish: bool
+
+Returns
+-------
+None
 ") SetDistinguish;
 		void SetDistinguish(bool toDistinguish);
 
@@ -2157,7 +2430,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetDistinguishOff;
 		%feature("autodoc", "Forbids material distinction between front and back faces.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetDistinguishOff;
 		void SetDistinguishOff();
 
@@ -2165,7 +2440,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetDistinguishOn;
 		%feature("autodoc", "Allows material distinction between front and back faces.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetDistinguishOn;
 		void SetDistinguishOn();
 
@@ -2173,9 +2450,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetDrawEdges;
 		%feature("autodoc", "Set if mesh edges should be drawn or not.
 
-	:param theToDraw:
-	:type theToDraw: bool
-	:rtype: None
+Parameters
+----------
+theToDraw: bool
+
+Returns
+-------
+None
 ") SetDrawEdges;
 		void SetDrawEdges(bool theToDraw);
 
@@ -2183,9 +2464,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetDrawSilhouette;
 		%feature("autodoc", "Enables/disables drawing silhouette (outline).
 
-	:param theToDraw:
-	:type theToDraw: bool
-	:rtype: None
+Parameters
+----------
+theToDraw: bool
+
+Returns
+-------
+None
 ") SetDrawSilhouette;
 		void SetDrawSilhouette(bool theToDraw);
 
@@ -2193,9 +2478,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetEdgeColor;
 		%feature("autodoc", "Modifies the color of the edge of the face.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetEdgeColor;
 		void SetEdgeColor(const Quantity_Color & theColor);
 
@@ -2203,9 +2492,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetEdgeColor;
 		%feature("autodoc", "Modifies the color of the edge of the face.
 
-	:param theColor:
-	:type theColor: Quantity_ColorRGBA
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_ColorRGBA
+
+Returns
+-------
+None
 ") SetEdgeColor;
 		void SetEdgeColor(const Quantity_ColorRGBA & theColor);
 
@@ -2213,9 +2506,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetEdgeLineType;
 		%feature("autodoc", "Modifies the edge line type (same as setlinetype()).
 
-	:param theType:
-	:type theType: Aspect_TypeOfLine
-	:rtype: None
+Parameters
+----------
+theType: Aspect_TypeOfLine
+
+Returns
+-------
+None
 ") SetEdgeLineType;
 		void SetEdgeLineType(Aspect_TypeOfLine theType);
 
@@ -2223,7 +2520,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetEdgeOff;
 		%feature("autodoc", "The edges of fillareas are not drawn.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetEdgeOff;
 		void SetEdgeOff();
 
@@ -2231,7 +2530,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetEdgeOn;
 		%feature("autodoc", "The edges of fillareas are drawn.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetEdgeOn;
 		void SetEdgeOn();
 
@@ -2239,9 +2540,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetEdgeWidth;
 		%feature("autodoc", "Modifies the edge thickness (same as setlinewidth()).
 
-	:param theWidth:
-	:type theWidth: float
-	:rtype: None
+Parameters
+----------
+theWidth: float
+
+Returns
+-------
+None
 ") SetEdgeWidth;
 		void SetEdgeWidth(Standard_Real theWidth);
 
@@ -2249,9 +2554,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetFrontMaterial;
 		%feature("autodoc", "Modifies the surface material of external faces.
 
-	:param theMaterial:
-	:type theMaterial: Graphic3d_MaterialAspect
-	:rtype: None
+Parameters
+----------
+theMaterial: Graphic3d_MaterialAspect
+
+Returns
+-------
+None
 ") SetFrontMaterial;
 		void SetFrontMaterial(const Graphic3d_MaterialAspect & theMaterial);
 
@@ -2259,9 +2568,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetHatchStyle;
 		%feature("autodoc", "Modifies the hatch type used when interiorstyle is is_hatch.
 
-	:param theStyle:
-	:type theStyle: Graphic3d_HatchStyle
-	:rtype: None
+Parameters
+----------
+theStyle: Graphic3d_HatchStyle
+
+Returns
+-------
+None
 ") SetHatchStyle;
 		void SetHatchStyle(const opencascade::handle<Graphic3d_HatchStyle> & theStyle);
 
@@ -2269,9 +2582,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetHatchStyle;
 		%feature("autodoc", "Modifies the hatch type used when interiorstyle is is_hatch @warning this method always creates a new handle for a given hatch style.
 
-	:param theStyle:
-	:type theStyle: Aspect_HatchStyle
-	:rtype: None
+Parameters
+----------
+theStyle: Aspect_HatchStyle
+
+Returns
+-------
+None
 ") SetHatchStyle;
 		void SetHatchStyle(const Aspect_HatchStyle theStyle);
 
@@ -2279,9 +2596,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetInteriorColor;
 		%feature("autodoc", "Modifies the color of the interior of the face.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetInteriorColor;
 		void SetInteriorColor(const Quantity_Color & theColor);
 
@@ -2289,9 +2610,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetInteriorColor;
 		%feature("autodoc", "Modifies the color of the interior of the face.
 
-	:param theColor:
-	:type theColor: Quantity_ColorRGBA
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_ColorRGBA
+
+Returns
+-------
+None
 ") SetInteriorColor;
 		void SetInteriorColor(const Quantity_ColorRGBA & theColor);
 
@@ -2299,9 +2624,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetInteriorStyle;
 		%feature("autodoc", "Modifies the interior type used for rendering.
 
-	:param theStyle:
-	:type theStyle: Aspect_InteriorStyle
-	:rtype: None
+Parameters
+----------
+theStyle: Aspect_InteriorStyle
+
+Returns
+-------
+None
 ") SetInteriorStyle;
 		void SetInteriorStyle(const Aspect_InteriorStyle theStyle);
 
@@ -2309,9 +2638,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetLineType;
 		%feature("autodoc", "Modifies the line type.
 
-	:param theType:
-	:type theType: Aspect_TypeOfLine
-	:rtype: None
+Parameters
+----------
+theType: Aspect_TypeOfLine
+
+Returns
+-------
+None
 ") SetLineType;
 		void SetLineType(Aspect_TypeOfLine theType);
 
@@ -2319,9 +2652,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetLineWidth;
 		%feature("autodoc", "Modifies the line thickness warning: raises standard_outofrange if the width is a negative value.
 
-	:param theWidth:
-	:type theWidth: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theWidth: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetLineWidth;
 		void SetLineWidth(Standard_ShortReal theWidth);
 
@@ -2329,9 +2666,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetMarkerImage;
 		%feature("autodoc", "Set marker's image texture.
 
-	:param theImage:
-	:type theImage: Graphic3d_MarkerImage
-	:rtype: None
+Parameters
+----------
+theImage: Graphic3d_MarkerImage
+
+Returns
+-------
+None
 ") SetMarkerImage;
 		void SetMarkerImage(const opencascade::handle<Graphic3d_MarkerImage> & theImage);
 
@@ -2339,9 +2680,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetMarkerScale;
 		%feature("autodoc", "Modifies the scale factor. marker type aspect_tom_point is not affected by the marker size scale factor. it is always the smallest displayable dot. warning: raises standard_outofrange if the scale is a negative value.
 
-	:param theScale:
-	:type theScale: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theScale: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetMarkerScale;
 		void SetMarkerScale(const Standard_ShortReal theScale);
 
@@ -2349,9 +2694,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetMarkerType;
 		%feature("autodoc", "Modifies the type of marker.
 
-	:param theType:
-	:type theType: Aspect_TypeOfMarker
-	:rtype: None
+Parameters
+----------
+theType: Aspect_TypeOfMarker
+
+Returns
+-------
+None
 ") SetMarkerType;
 		void SetMarkerType(Aspect_TypeOfMarker theType);
 
@@ -2359,9 +2708,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetPolygonOffset;
 		%feature("autodoc", "Sets polygon offsets settings.
 
-	:param theOffset:
-	:type theOffset: Graphic3d_PolygonOffset
-	:rtype: None
+Parameters
+----------
+theOffset: Graphic3d_PolygonOffset
+
+Returns
+-------
+None
 ") SetPolygonOffset;
 		void SetPolygonOffset(const Graphic3d_PolygonOffset & theOffset);
 
@@ -2369,13 +2722,17 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetPolygonOffsets;
 		%feature("autodoc", "Sets up opengl polygon offsets mechanism. <amode> parameter can contain various combinations of aspect_polygonoffsetmode enumeration elements (aspect_pom_none means that polygon offsets are not changed). if <amode> is different from aspect_pom_off and aspect_pom_none, then <afactor> and <aunits> arguments are used by graphic renderer to calculate a depth offset value: //! offset = <afactor> * m + <aunits> * r, where m - maximum depth slope for the polygon currently being displayed, r - minimum window coordinates depth resolution (implementation-specific) //! default settings for occ 3d viewer: mode = aspect_pom_fill, factor = 1., units = 0. //! negative offset values move polygons closer to the viewport, while positive values shift polygons away. consult opengl reference for details (glpolygonoffset function description).
 
-	:param theMode:
-	:type theMode: int
-	:param theFactor: default value is 1.0f
-	:type theFactor: Standard_ShortReal
-	:param theUnits: default value is 0.0f
-	:type theUnits: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theMode: int
+theFactor: Standard_ShortReal,optional
+	default value is 1.0f
+theUnits: Standard_ShortReal,optional
+	default value is 0.0f
+
+Returns
+-------
+None
 ") SetPolygonOffsets;
 		void SetPolygonOffsets(const Standard_Integer theMode, const Standard_ShortReal theFactor = 1.0f, const Standard_ShortReal theUnits = 0.0f);
 
@@ -2383,9 +2740,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetShaderProgram;
 		%feature("autodoc", "Sets up opengl/glsl shader program.
 
-	:param theProgram:
-	:type theProgram: Graphic3d_ShaderProgram
-	:rtype: None
+Parameters
+----------
+theProgram: Graphic3d_ShaderProgram
+
+Returns
+-------
+None
 ") SetShaderProgram;
 		void SetShaderProgram(const opencascade::handle<Graphic3d_ShaderProgram> & theProgram);
 
@@ -2393,9 +2754,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetShadingModel;
 		%feature("autodoc", "Sets shading model.
 
-	:param theShadingModel:
-	:type theShadingModel: Graphic3d_TypeOfShadingModel
-	:rtype: None
+Parameters
+----------
+theShadingModel: Graphic3d_TypeOfShadingModel
+
+Returns
+-------
+None
 ") SetShadingModel;
 		void SetShadingModel(const Graphic3d_TypeOfShadingModel theShadingModel);
 
@@ -2403,9 +2768,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetSkipFirstEdge;
 		%feature("autodoc", "Set skip first triangle edge flag for drawing wireframe presentation of quads array split into triangles.
 
-	:param theToSkipFirstEdge:
-	:type theToSkipFirstEdge: bool
-	:rtype: None
+Parameters
+----------
+theToSkipFirstEdge: bool
+
+Returns
+-------
+None
 ") SetSkipFirstEdge;
 		void SetSkipFirstEdge(bool theToSkipFirstEdge);
 
@@ -2413,9 +2782,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetSuppressBackFaces;
 		%feature("autodoc", "Assign back faces culling flag.
 
-	:param theToSuppress:
-	:type theToSuppress: bool
-	:rtype: None
+Parameters
+----------
+theToSuppress: bool
+
+Returns
+-------
+None
 ") SetSuppressBackFaces;
 		void SetSuppressBackFaces(bool theToSuppress);
 
@@ -2423,9 +2796,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetTextAngle;
 		%feature("autodoc", "Turns usage of text rotated.
 
-	:param theAngle:
-	:type theAngle: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theAngle: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetTextAngle;
 		void SetTextAngle(Standard_ShortReal theAngle);
 
@@ -2433,9 +2810,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetTextDisplayType;
 		%feature("autodoc", "Sets display type.
 
-	:param theType:
-	:type theType: Aspect_TypeOfDisplayText
-	:rtype: None
+Parameters
+----------
+theType: Aspect_TypeOfDisplayText
+
+Returns
+-------
+None
 ") SetTextDisplayType;
 		void SetTextDisplayType(Aspect_TypeOfDisplayText theType);
 
@@ -2443,9 +2824,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetTextFont;
 		%feature("autodoc", "Modifies the font.
 
-	:param theFont:
-	:type theFont: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+theFont: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetTextFont;
 		void SetTextFont(const opencascade::handle<TCollection_HAsciiString> & theFont);
 
@@ -2453,9 +2838,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetTextFontAspect;
 		%feature("autodoc", "Turns usage of aspect text.
 
-	:param theFontAspect:
-	:type theFontAspect: Font_FontAspect
-	:rtype: None
+Parameters
+----------
+theFontAspect: Font_FontAspect
+
+Returns
+-------
+None
 ") SetTextFontAspect;
 		void SetTextFontAspect(Font_FontAspect theFontAspect);
 
@@ -2463,9 +2852,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetTextStyle;
 		%feature("autodoc", "Modifies the style of the text.
 
-	:param theStyle:
-	:type theStyle: Aspect_TypeOfStyleText
-	:rtype: None
+Parameters
+----------
+theStyle: Aspect_TypeOfStyleText
+
+Returns
+-------
+None
 ") SetTextStyle;
 		void SetTextStyle(Aspect_TypeOfStyleText theStyle);
 
@@ -2473,9 +2866,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetTextZoomable;
 		%feature("autodoc", "Turns usage of text zoomable on/off.
 
-	:param theFlag:
-	:type theFlag: bool
-	:rtype: None
+Parameters
+----------
+theFlag: bool
+
+Returns
+-------
+None
 ") SetTextZoomable;
 		void SetTextZoomable(bool theFlag);
 
@@ -2483,9 +2880,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetTextureMap;
 		%feature("autodoc", "Assign texture to be mapped. see also settexturemapon() to actually activate texture mapping. ////standard_deprecated('deprecated method, settextureset() should be used instead').
 
-	:param theTexture:
-	:type theTexture: Graphic3d_TextureMap
-	:rtype: None
+Parameters
+----------
+theTexture: Graphic3d_TextureMap
+
+Returns
+-------
+None
 ") SetTextureMap;
 		void SetTextureMap(const opencascade::handle<Graphic3d_TextureMap> & theTexture);
 
@@ -2493,7 +2894,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetTextureMapOff;
 		%feature("autodoc", "Disable texture mapping.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetTextureMapOff;
 		void SetTextureMapOff();
 
@@ -2501,9 +2904,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetTextureMapOn;
 		%feature("autodoc", "Enable or disable texture mapping (has no effect if texture is not set).
 
-	:param theToMap:
-	:type theToMap: bool
-	:rtype: None
+Parameters
+----------
+theToMap: bool
+
+Returns
+-------
+None
 ") SetTextureMapOn;
 		void SetTextureMapOn(bool theToMap);
 
@@ -2511,7 +2918,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetTextureMapOn;
 		%feature("autodoc", "Enable texture mapping (has no effect if texture is not set).
 
-	:rtype: None
+Returns
+-------
+None
 ") SetTextureMapOn;
 		void SetTextureMapOn();
 
@@ -2519,9 +2928,13 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SetTextureSet;
 		%feature("autodoc", "Setup texture array to be mapped.
 
-	:param theTextures:
-	:type theTextures: Graphic3d_TextureSet
-	:rtype: None
+Parameters
+----------
+theTextures: Graphic3d_TextureSet
+
+Returns
+-------
+None
 ") SetTextureSet;
 		void SetTextureSet(const opencascade::handle<Graphic3d_TextureSet> & theTextures);
 
@@ -2529,7 +2942,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") ShaderProgram;
 		%feature("autodoc", "Return shader program.
 
-	:rtype: opencascade::handle<Graphic3d_ShaderProgram>
+Returns
+-------
+opencascade::handle<Graphic3d_ShaderProgram>
 ") ShaderProgram;
 		const opencascade::handle<Graphic3d_ShaderProgram> & ShaderProgram();
 
@@ -2537,7 +2952,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") ShadingModel;
 		%feature("autodoc", "Returns shading model; graphic3d_tosm_default by default. graphic3d_tosm_default means that shading model set as default for entire viewer will be used.
 
-	:rtype: Graphic3d_TypeOfShadingModel
+Returns
+-------
+Graphic3d_TypeOfShadingModel
 ") ShadingModel;
 		Graphic3d_TypeOfShadingModel ShadingModel();
 
@@ -2545,7 +2962,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") SuppressBackFace;
 		%feature("autodoc", "Suppress the display of back-facing filled polygons. a back-facing polygon is defined as a polygon whose vertices are in a clockwise order with respect to screen coordinates.
 
-	:rtype: None
+Returns
+-------
+None
 ") SuppressBackFace;
 		void SuppressBackFace();
 
@@ -2553,7 +2972,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") TextAngle;
 		%feature("autodoc", "Returns angle of degree.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") TextAngle;
 		Standard_ShortReal TextAngle();
 
@@ -2561,7 +2982,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") TextDisplayType;
 		%feature("autodoc", "Returns display type; aspect_todt_normal by default.
 
-	:rtype: Aspect_TypeOfDisplayText
+Returns
+-------
+Aspect_TypeOfDisplayText
 ") TextDisplayType;
 		Aspect_TypeOfDisplayText TextDisplayType();
 
@@ -2569,7 +2992,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") TextFont;
 		%feature("autodoc", "Returns the font; null string by default.
 
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") TextFont;
 		const opencascade::handle<TCollection_HAsciiString> & TextFont();
 
@@ -2577,7 +3002,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") TextFontAspect;
 		%feature("autodoc", "Returns text fontaspect.
 
-	:rtype: Font_FontAspect
+Returns
+-------
+Font_FontAspect
 ") TextFontAspect;
 		Font_FontAspect TextFontAspect();
 
@@ -2585,7 +3012,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") TextStyle;
 		%feature("autodoc", "Returns the text style; aspect_tost_normal by default.
 
-	:rtype: Aspect_TypeOfStyleText
+Returns
+-------
+Aspect_TypeOfStyleText
 ") TextStyle;
 		Aspect_TypeOfStyleText TextStyle();
 
@@ -2593,7 +3022,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") TextureMap;
 		%feature("autodoc", "Return texture to be mapped. ////standard_deprecated('deprecated method, textureset() should be used instead').
 
-	:rtype: opencascade::handle<Graphic3d_TextureMap>
+Returns
+-------
+opencascade::handle<Graphic3d_TextureMap>
 ") TextureMap;
 		opencascade::handle<Graphic3d_TextureMap> TextureMap();
 
@@ -2601,7 +3032,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") TextureMapState;
 		%feature("autodoc", "Return true if texture mapping is enabled (false by default).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") TextureMapState;
 		bool TextureMapState();
 
@@ -2609,7 +3042,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") TextureSet;
 		%feature("autodoc", "Return texture array to be mapped.
 
-	:rtype: opencascade::handle<Graphic3d_TextureSet>
+Returns
+-------
+opencascade::handle<Graphic3d_TextureSet>
 ") TextureSet;
 		const opencascade::handle<Graphic3d_TextureSet> & TextureSet();
 
@@ -2617,7 +3052,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") ToDrawEdges;
 		%feature("autodoc", "Returns true if mesh edges should be drawn (false by default).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToDrawEdges;
 		bool ToDrawEdges();
 
@@ -2625,7 +3062,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") ToDrawSilhouette;
 		%feature("autodoc", "Returns true if silhouette (outline) should be drawn (with edge color and width); false by default.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToDrawSilhouette;
 		bool ToDrawSilhouette();
 
@@ -2633,7 +3072,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") ToMapTexture;
 		%feature("autodoc", "Return true if texture mapping is enabled (false by default).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToMapTexture;
 		bool ToMapTexture();
 
@@ -2641,7 +3082,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") ToSkipFirstEdge;
 		%feature("autodoc", "Returns true if drawing element edges should discard first edge in triangle; false by default. graphics hardware works mostly with triangles, so that wireframe presentation will draw triangle edges by default. this flag allows rendering wireframe presentation of quad-only array split into triangles. for this, quads should be split in specific order, so that the quad diagonal (to be not rendered) goes first: 1------2 / / triangle #1: 2-0-1; triangle #2: 0-2-3 0------3.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToSkipFirstEdge;
 		bool ToSkipFirstEdge();
 
@@ -2649,7 +3092,9 @@ class Graphic3d_Aspects : public Standard_Transient {
 		%feature("compactdefaultargs") ToSuppressBackFaces;
 		%feature("autodoc", "Returns true if back faces should be suppressed (true by default).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToSuppressBackFaces;
 		bool ToSuppressBackFaces();
 
@@ -2673,7 +3118,11 @@ class Graphic3d_Attribute {
 		Graphic3d_TypeOfData DataType;
 		/****************** Stride ******************/
 		%feature("compactdefaultargs") Stride;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Stride;
 		Standard_Integer Stride();
 
@@ -2681,9 +3130,13 @@ class Graphic3d_Attribute {
 		%feature("compactdefaultargs") Stride;
 		%feature("autodoc", "Returns size of attribute of specified data type.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfData
-	:rtype: int
+Parameters
+----------
+theType: Graphic3d_TypeOfData
+
+Returns
+-------
+int
 ") Stride;
 		static Standard_Integer Stride(const Graphic3d_TypeOfData theType);
 
@@ -2705,51 +3158,72 @@ class Graphic3d_AxisAspect {
 		%feature("compactdefaultargs") Color;
 		%feature("autodoc", "Color of axis and values.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") Color;
 		const Quantity_Color & Color();
 
 		/****************** Graphic3d_AxisAspect ******************/
 		%feature("compactdefaultargs") Graphic3d_AxisAspect;
-		%feature("autodoc", "	:param theName: default value is ""
-	:type theName: TCollection_ExtendedString
-	:param theNameColor: default value is Quantity_NOC_BLACK
-	:type theNameColor: Quantity_Color
-	:param theColor: default value is Quantity_NOC_BLACK
-	:type theColor: Quantity_Color
-	:param theValuesOffset: default value is 10
-	:type theValuesOffset: int
-	:param theNameOffset: default value is 30
-	:type theNameOffset: int
-	:param theTickmarksNumber: default value is 5
-	:type theTickmarksNumber: int
-	:param theTickmarksLength: default value is 10
-	:type theTickmarksLength: int
-	:param theToDrawName: default value is Standard_True
-	:type theToDrawName: bool
-	:param theToDrawValues: default value is Standard_True
-	:type theToDrawValues: bool
-	:param theToDrawTickmarks: default value is Standard_True
-	:type theToDrawTickmarks: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theName: TCollection_ExtendedString,optional
+	default value is ""
+theNameColor: Quantity_Color,optional
+	default value is Quantity_NOC_BLACK
+theColor: Quantity_Color,optional
+	default value is Quantity_NOC_BLACK
+theValuesOffset: int,optional
+	default value is 10
+theNameOffset: int,optional
+	default value is 30
+theTickmarksNumber: int,optional
+	default value is 5
+theTickmarksLength: int,optional
+	default value is 10
+theToDrawName: bool,optional
+	default value is Standard_True
+theToDrawValues: bool,optional
+	default value is Standard_True
+theToDrawTickmarks: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Graphic3d_AxisAspect;
 		 Graphic3d_AxisAspect(const TCollection_ExtendedString theName = "", const Quantity_Color theNameColor = Quantity_NOC_BLACK, const Quantity_Color theColor = Quantity_NOC_BLACK, const Standard_Integer theValuesOffset = 10, const Standard_Integer theNameOffset = 30, const Standard_Integer theTickmarksNumber = 5, const Standard_Integer theTickmarksLength = 10, const Standard_Boolean theToDrawName = Standard_True, const Standard_Boolean theToDrawValues = Standard_True, const Standard_Boolean theToDrawTickmarks = Standard_True);
 
 		/****************** Name ******************/
 		%feature("compactdefaultargs") Name;
-		%feature("autodoc", "	:rtype: TCollection_ExtendedString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_ExtendedString
 ") Name;
 		const TCollection_ExtendedString & Name();
 
 		/****************** NameColor ******************/
 		%feature("compactdefaultargs") NameColor;
-		%feature("autodoc", "	:rtype: Quantity_Color
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Quantity_Color
 ") NameColor;
 		const Quantity_Color & NameColor();
 
 		/****************** NameOffset ******************/
 		%feature("compactdefaultargs") NameOffset;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NameOffset;
 		Standard_Integer NameOffset();
 
@@ -2757,117 +3231,199 @@ class Graphic3d_AxisAspect {
 		%feature("compactdefaultargs") SetColor;
 		%feature("autodoc", "Sets color of axis and values.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetColor;
 		void SetColor(const Quantity_Color & theColor);
 
 		/****************** SetDrawName ******************/
 		%feature("compactdefaultargs") SetDrawName;
-		%feature("autodoc", "	:param theToDraw:
-	:type theToDraw: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theToDraw: bool
+
+Returns
+-------
+None
 ") SetDrawName;
 		void SetDrawName(const Standard_Boolean theToDraw);
 
 		/****************** SetDrawTickmarks ******************/
 		%feature("compactdefaultargs") SetDrawTickmarks;
-		%feature("autodoc", "	:param theToDraw:
-	:type theToDraw: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theToDraw: bool
+
+Returns
+-------
+None
 ") SetDrawTickmarks;
 		void SetDrawTickmarks(const Standard_Boolean theToDraw);
 
 		/****************** SetDrawValues ******************/
 		%feature("compactdefaultargs") SetDrawValues;
-		%feature("autodoc", "	:param theToDraw:
-	:type theToDraw: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theToDraw: bool
+
+Returns
+-------
+None
 ") SetDrawValues;
 		void SetDrawValues(const Standard_Boolean theToDraw);
 
 		/****************** SetName ******************/
 		%feature("compactdefaultargs") SetName;
-		%feature("autodoc", "	:param theName:
-	:type theName: TCollection_ExtendedString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theName: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") SetName;
 		void SetName(const TCollection_ExtendedString & theName);
 
 		/****************** SetNameColor ******************/
 		%feature("compactdefaultargs") SetNameColor;
-		%feature("autodoc", "	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetNameColor;
 		void SetNameColor(const Quantity_Color & theColor);
 
 		/****************** SetNameOffset ******************/
 		%feature("compactdefaultargs") SetNameOffset;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: int
+
+Returns
+-------
+None
 ") SetNameOffset;
 		void SetNameOffset(const Standard_Integer theValue);
 
 		/****************** SetTickmarksLength ******************/
 		%feature("compactdefaultargs") SetTickmarksLength;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: int
+
+Returns
+-------
+None
 ") SetTickmarksLength;
 		void SetTickmarksLength(const Standard_Integer theValue);
 
 		/****************** SetTickmarksNumber ******************/
 		%feature("compactdefaultargs") SetTickmarksNumber;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: int
+
+Returns
+-------
+None
 ") SetTickmarksNumber;
 		void SetTickmarksNumber(const Standard_Integer theValue);
 
 		/****************** SetValuesOffset ******************/
 		%feature("compactdefaultargs") SetValuesOffset;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: int
+
+Returns
+-------
+None
 ") SetValuesOffset;
 		void SetValuesOffset(const Standard_Integer theValue);
 
 		/****************** TickmarksLength ******************/
 		%feature("compactdefaultargs") TickmarksLength;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") TickmarksLength;
 		Standard_Integer TickmarksLength();
 
 		/****************** TickmarksNumber ******************/
 		%feature("compactdefaultargs") TickmarksNumber;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") TickmarksNumber;
 		Standard_Integer TickmarksNumber();
 
 		/****************** ToDrawName ******************/
 		%feature("compactdefaultargs") ToDrawName;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") ToDrawName;
 		Standard_Boolean ToDrawName();
 
 		/****************** ToDrawTickmarks ******************/
 		%feature("compactdefaultargs") ToDrawTickmarks;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") ToDrawTickmarks;
 		Standard_Boolean ToDrawTickmarks();
 
 		/****************** ToDrawValues ******************/
 		%feature("compactdefaultargs") ToDrawValues;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") ToDrawValues;
 		Standard_Boolean ToDrawValues();
 
 		/****************** ValuesOffset ******************/
 		%feature("compactdefaultargs") ValuesOffset;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") ValuesOffset;
 		Standard_Integer ValuesOffset();
 
@@ -2897,9 +3453,13 @@ class Graphic3d_BSDF {
 		%feature("compactdefaultargs") CreateDiffuse;
 		%feature("autodoc", "Creates bsdf describing diffuse (lambertian) surface.
 
-	:param theWeight:
-	:type theWeight: Graphic3d_Vec3
-	:rtype: Graphic3d_BSDF
+Parameters
+----------
+theWeight: Graphic3d_Vec3
+
+Returns
+-------
+Graphic3d_BSDF
 ") CreateDiffuse;
 		static Graphic3d_BSDF CreateDiffuse(const Graphic3d_Vec3 & theWeight);
 
@@ -2907,15 +3467,16 @@ class Graphic3d_BSDF {
 		%feature("compactdefaultargs") CreateGlass;
 		%feature("autodoc", "Creates bsdf describing glass-like object. glass-like bsdf mixes refraction and reflection effects at grazing angles using physically-based fresnel dielectric model.
 
-	:param theWeight:
-	:type theWeight: Graphic3d_Vec3
-	:param theAbsorptionColor:
-	:type theAbsorptionColor: Graphic3d_Vec3
-	:param theAbsorptionCoeff:
-	:type theAbsorptionCoeff: Standard_ShortReal
-	:param theRefractionIndex:
-	:type theRefractionIndex: Standard_ShortReal
-	:rtype: Graphic3d_BSDF
+Parameters
+----------
+theWeight: Graphic3d_Vec3
+theAbsorptionColor: Graphic3d_Vec3
+theAbsorptionCoeff: Standard_ShortReal
+theRefractionIndex: Standard_ShortReal
+
+Returns
+-------
+Graphic3d_BSDF
 ") CreateGlass;
 		static Graphic3d_BSDF CreateGlass(const Graphic3d_Vec3 & theWeight, const Graphic3d_Vec3 & theAbsorptionColor, const Standard_ShortReal theAbsorptionCoeff, const Standard_ShortReal theRefractionIndex);
 
@@ -2923,13 +3484,15 @@ class Graphic3d_BSDF {
 		%feature("compactdefaultargs") CreateMetallic;
 		%feature("autodoc", "Creates bsdf describing polished metallic-like surface.
 
-	:param theWeight:
-	:type theWeight: Graphic3d_Vec3
-	:param theFresnel:
-	:type theFresnel: Graphic3d_Fresnel
-	:param theRoughness:
-	:type theRoughness: Standard_ShortReal
-	:rtype: Graphic3d_BSDF
+Parameters
+----------
+theWeight: Graphic3d_Vec3
+theFresnel: Graphic3d_Fresnel
+theRoughness: Standard_ShortReal
+
+Returns
+-------
+Graphic3d_BSDF
 ") CreateMetallic;
 		static Graphic3d_BSDF CreateMetallic(const Graphic3d_Vec3 & theWeight, const Graphic3d_Fresnel & theFresnel, const Standard_ShortReal theRoughness);
 
@@ -2937,13 +3500,15 @@ class Graphic3d_BSDF {
 		%feature("compactdefaultargs") CreateTransparent;
 		%feature("autodoc", "Creates bsdf describing transparent object. transparent bsdf models simple transparency without refraction (the ray passes straight through the surface).
 
-	:param theWeight:
-	:type theWeight: Graphic3d_Vec3
-	:param theAbsorptionColor:
-	:type theAbsorptionColor: Graphic3d_Vec3
-	:param theAbsorptionCoeff:
-	:type theAbsorptionCoeff: Standard_ShortReal
-	:rtype: Graphic3d_BSDF
+Parameters
+----------
+theWeight: Graphic3d_Vec3
+theAbsorptionColor: Graphic3d_Vec3
+theAbsorptionCoeff: Standard_ShortReal
+
+Returns
+-------
+Graphic3d_BSDF
 ") CreateTransparent;
 		static Graphic3d_BSDF CreateTransparent(const Graphic3d_Vec3 & theWeight, const Graphic3d_Vec3 & theAbsorptionColor, const Standard_ShortReal theAbsorptionCoeff);
 
@@ -2951,7 +3516,9 @@ class Graphic3d_BSDF {
 		%feature("compactdefaultargs") Graphic3d_BSDF;
 		%feature("autodoc", "Creates uninitialized bsdf.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_BSDF;
 		 Graphic3d_BSDF();
 
@@ -2959,7 +3526,9 @@ class Graphic3d_BSDF {
 		%feature("compactdefaultargs") Normalize;
 		%feature("autodoc", "Normalizes bsdf components.
 
-	:rtype: None
+Returns
+-------
+None
 ") Normalize;
 		void Normalize();
 
@@ -2999,9 +3568,13 @@ class Graphic3d_BoundBuffer : public NCollection_Buffer {
 		%feature("compactdefaultargs") Graphic3d_BoundBuffer;
 		%feature("autodoc", "Empty constructor.
 
-	:param theAlloc:
-	:type theAlloc: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAlloc: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") Graphic3d_BoundBuffer;
 		 Graphic3d_BoundBuffer(const opencascade::handle<NCollection_BaseAllocator> & theAlloc);
 
@@ -3009,11 +3582,14 @@ class Graphic3d_BoundBuffer : public NCollection_Buffer {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Allocates new empty array.
 
-	:param theNbBounds:
-	:type theNbBounds: int
-	:param theHasColors:
-	:type theHasColors: bool
-	:rtype: bool
+Parameters
+----------
+theNbBounds: int
+theHasColors: bool
+
+Returns
+-------
+bool
 ") Init;
 		bool Init(const Standard_Integer theNbBounds, const Standard_Boolean theHasColors);
 
@@ -3042,7 +3618,9 @@ class Graphic3d_BufferRange {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clear the range.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -3050,7 +3628,9 @@ class Graphic3d_BufferRange {
 		%feature("compactdefaultargs") Graphic3d_BufferRange;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_BufferRange;
 		 Graphic3d_BufferRange();
 
@@ -3058,11 +3638,14 @@ class Graphic3d_BufferRange {
 		%feature("compactdefaultargs") Graphic3d_BufferRange;
 		%feature("autodoc", "Constructor.
 
-	:param theStart:
-	:type theStart: int
-	:param theLength:
-	:type theLength: int
-	:rtype: None
+Parameters
+----------
+theStart: int
+theLength: int
+
+Returns
+-------
+None
 ") Graphic3d_BufferRange;
 		 Graphic3d_BufferRange(Standard_Integer theStart, Standard_Integer theLength);
 
@@ -3070,7 +3653,9 @@ class Graphic3d_BufferRange {
 		%feature("compactdefaultargs") IsEmpty;
 		%feature("autodoc", "Return true if range is empty.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
@@ -3078,9 +3663,13 @@ class Graphic3d_BufferRange {
 		%feature("compactdefaultargs") Unite;
 		%feature("autodoc", "Add another range to this one.
 
-	:param theRange:
-	:type theRange: Graphic3d_BufferRange
-	:rtype: None
+Parameters
+----------
+theRange: Graphic3d_BufferRange
+
+Returns
+-------
+None
 ") Unite;
 		void Unite(const Graphic3d_BufferRange & theRange);
 
@@ -3088,7 +3677,9 @@ class Graphic3d_BufferRange {
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Return the upper element within the range.
 
-	:rtype: int
+Returns
+-------
+int
 ") Upper;
 		Standard_Integer Upper();
 
@@ -3111,9 +3702,13 @@ class Graphic3d_BvhCStructureSet : public BVH_PrimitiveSet3d {
 		%feature("compactdefaultargs") Box;
 		%feature("autodoc", "Returns aabb of the structure.
 
-	:param theIdx:
-	:type theIdx: int
-	:rtype: Graphic3d_BndBox3d
+Parameters
+----------
+theIdx: int
+
+Returns
+-------
+Graphic3d_BndBox3d
 ") Box;
 		virtual Graphic3d_BndBox3d Box(const Standard_Integer theIdx);
 
@@ -3121,11 +3716,14 @@ class Graphic3d_BvhCStructureSet : public BVH_PrimitiveSet3d {
 		%feature("compactdefaultargs") Center;
 		%feature("autodoc", "Calculates center of the aabb along given axis.
 
-	:param theIdx:
-	:type theIdx: int
-	:param theAxis:
-	:type theAxis: int
-	:rtype: float
+Parameters
+----------
+theIdx: int
+theAxis: int
+
+Returns
+-------
+float
 ") Center;
 		virtual Standard_Real Center(const Standard_Integer theIdx, const Standard_Integer theAxis);
 
@@ -3133,7 +3731,9 @@ class Graphic3d_BvhCStructureSet : public BVH_PrimitiveSet3d {
 		%feature("compactdefaultargs") Size;
 		%feature("autodoc", "Returns total number of structures.
 
-	:rtype: int
+Returns
+-------
+int
 ") Size;
 		virtual Standard_Integer Size();
 
@@ -3141,7 +3741,9 @@ class Graphic3d_BvhCStructureSet : public BVH_PrimitiveSet3d {
 		%feature("compactdefaultargs") Structures;
 		%feature("autodoc", "Access directly a collection of structures.
 
-	:rtype: NCollection_IndexedMap< Graphic3d_CStructure *>
+Returns
+-------
+NCollection_IndexedMap< Graphic3d_CStructure *>
 ") Structures;
 		const NCollection_IndexedMap<const Graphic3d_CStructure *> & Structures();
 
@@ -3149,11 +3751,14 @@ class Graphic3d_BvhCStructureSet : public BVH_PrimitiveSet3d {
 		%feature("compactdefaultargs") Swap;
 		%feature("autodoc", "Swaps structures with the given indices.
 
-	:param theIdx1:
-	:type theIdx1: int
-	:param theIdx2:
-	:type theIdx2: int
-	:rtype: None
+Parameters
+----------
+theIdx1: int
+theIdx2: int
+
+Returns
+-------
+None
 ") Swap;
 		virtual void Swap(const Standard_Integer theIdx1, const Standard_Integer theIdx2);
 
@@ -3178,7 +3783,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Returns an angle in radians of the cone created by the spot; 30 degrees by default.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Angle;
 		Standard_ShortReal Angle();
 
@@ -3186,11 +3793,14 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Attenuation;
 		%feature("autodoc", "Returns the attenuation factors.
 
-	:param theConstAttenuation:
-	:type theConstAttenuation: float
-	:param theLinearAttenuation:
-	:type theLinearAttenuation: float
-	:rtype: None
+Parameters
+----------
+theConstAttenuation: float
+theLinearAttenuation: float
+
+Returns
+-------
+None
 ") Attenuation;
 		void Attenuation(Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -3198,7 +3808,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Color;
 		%feature("autodoc", "Returns the color of the light source; white by default.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") Color;
 		const Quantity_Color & Color();
 
@@ -3206,7 +3818,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Concentration;
 		%feature("autodoc", "Returns intensity distribution of the spot light, within [0.0, 1.0] range; 1.0 by default. this coefficient should be converted into spotlight exponent within [0.0, 128.0] range: @code float aspotexponent = concentration() * 128.0; anattenuation *= pow (acosa, aspotexponent);' @endcode the concentration factor determines the dispersion of the light on the surface, the default value (1.0) corresponds to a minimum of dispersion.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Concentration;
 		Standard_ShortReal Concentration();
 
@@ -3214,7 +3828,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") ConstAttenuation;
 		%feature("autodoc", "Returns constant attenuation factor of positional/spot light source; 1.0f by default. distance attenuation factors of reducing positional/spot light intensity depending on the distance from its position: @code float anattenuation = 1.0 / (constattenuation() + linearattenuation() * thedistance + quadraticattenuation() * thedistance * thedistance); @endcode.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") ConstAttenuation;
 		Standard_ShortReal ConstAttenuation();
 
@@ -3222,7 +3838,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Direction;
 		%feature("autodoc", "Returns direction of directional/spot light.
 
-	:rtype: gp_Dir
+Returns
+-------
+gp_Dir
 ") Direction;
 		gp_Dir Direction();
 
@@ -3230,13 +3848,15 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Direction;
 		%feature("autodoc", "Returns the thevx, thevy, thevz direction of the light source.
 
-	:param theVx:
-	:type theVx: float
-	:param theVy:
-	:type theVy: float
-	:param theVz:
-	:type theVz: float
-	:rtype: None
+Parameters
+----------
+theVx: float
+theVy: float
+theVz: float
+
+Returns
+-------
+None
 ") Direction;
 		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -3244,7 +3864,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") GetId;
 		%feature("autodoc", "Returns light resource identifier string.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") GetId;
 		const TCollection_AsciiString & GetId();
 
@@ -3252,9 +3874,13 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_CLight;
 		%feature("autodoc", "Empty constructor, which should be followed by light source properties configuration.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfLightSource
-	:rtype: None
+Parameters
+----------
+theType: Graphic3d_TypeOfLightSource
+
+Returns
+-------
+None
 ") Graphic3d_CLight;
 		 Graphic3d_CLight(Graphic3d_TypeOfLightSource theType);
 
@@ -3262,7 +3888,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Headlight;
 		%feature("autodoc", "Alias for isheadlight().
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Headlight;
 		Standard_Boolean Headlight();
 
@@ -3270,7 +3898,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Intensity;
 		%feature("autodoc", "Returns the intensity of light source; 1.0 by default.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Intensity;
 		Standard_ShortReal Intensity();
 
@@ -3278,7 +3908,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") IsEnabled;
 		%feature("autodoc", "Check that the light source is turned on; true by default. this flag affects all occurrences of light sources, where it was registered and activated; so that it is possible defining an active light in view which is actually in disabled state.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEnabled;
 		Standard_Boolean IsEnabled();
 
@@ -3286,7 +3918,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") IsHeadlight;
 		%feature("autodoc", "Returns true if the light is a headlight; false by default. headlight flag means that light position/direction are defined not in a world coordinate system, but relative to the camera orientation.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsHeadlight;
 		Standard_Boolean IsHeadlight();
 
@@ -3294,7 +3928,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") LinearAttenuation;
 		%feature("autodoc", "Returns linear attenuation factor of positional/spot light source; 0.0 by default. distance attenuation factors of reducing positional/spot light intensity depending on the distance from its position: @code float anattenuation = 1.0 / (constattenuation() + linearattenuation() * thedistance + quadraticattenuation() * thedistance * thedistance); @endcode.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") LinearAttenuation;
 		Standard_ShortReal LinearAttenuation();
 
@@ -3302,7 +3938,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Returns light source name; empty string by default.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") Name;
 		const TCollection_AsciiString & Name();
 
@@ -3310,7 +3948,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") PackedColor;
 		%feature("autodoc", "Returns the color of the light source with dummy alpha component, which should be ignored.
 
-	:rtype: Graphic3d_Vec4
+Returns
+-------
+Graphic3d_Vec4
 ") PackedColor;
 		const Graphic3d_Vec4 & PackedColor();
 
@@ -3318,7 +3958,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") PackedDirection;
 		%feature("autodoc", "Returns direction of directional/spot light.
 
-	:rtype: Graphic3d_Vec4
+Returns
+-------
+Graphic3d_Vec4
 ") PackedDirection;
 		const Graphic3d_Vec4 & PackedDirection();
 
@@ -3326,7 +3968,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") PackedParams;
 		%feature("autodoc", "Packed light parameters.
 
-	:rtype: Graphic3d_Vec4
+Returns
+-------
+Graphic3d_Vec4
 ") PackedParams;
 		const Graphic3d_Vec4 & PackedParams();
 
@@ -3334,7 +3978,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Position;
 		%feature("autodoc", "Returns location of positional/spot light; (0, 0, 0) by default.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") Position;
 		const gp_Pnt Position();
 
@@ -3342,13 +3988,15 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Position;
 		%feature("autodoc", "Returns location of positional/spot light.
 
-	:param theX:
-	:type theX: float
-	:param theY:
-	:type theY: float
-	:param theZ:
-	:type theZ: float
-	:rtype: None
+Parameters
+----------
+theX: float
+theY: float
+theZ: float
+
+Returns
+-------
+None
 ") Position;
 		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -3356,7 +4004,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Revision;
 		%feature("autodoc", "Returns modification counter.
 
-	:rtype: Standard_Size
+Returns
+-------
+Standard_Size
 ") Revision;
 		Standard_Size Revision();
 
@@ -3364,9 +4014,13 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetAngle;
 		%feature("autodoc", "Angle in radians of the cone created by the spot, should be within range (0.0, m_pi).
 
-	:param theAngle:
-	:type theAngle: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theAngle: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetAngle;
 		void SetAngle(Standard_ShortReal theAngle);
 
@@ -3374,11 +4028,14 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetAttenuation;
 		%feature("autodoc", "Defines the coefficients of attenuation; values should be >= 0.0 and their summ should not be equal to 0.
 
-	:param theConstAttenuation:
-	:type theConstAttenuation: Standard_ShortReal
-	:param theLinearAttenuation:
-	:type theLinearAttenuation: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theConstAttenuation: Standard_ShortReal
+theLinearAttenuation: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetAttenuation;
 		void SetAttenuation(Standard_ShortReal theConstAttenuation, Standard_ShortReal theLinearAttenuation);
 
@@ -3386,9 +4043,13 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetColor;
 		%feature("autodoc", "Defines the color of a light source by giving the basic color.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetColor;
 		void SetColor(const Quantity_Color & theColor);
 
@@ -3396,9 +4057,13 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetConcentration;
 		%feature("autodoc", "Defines the coefficient of concentration; value should be within range [0.0, 1.0].
 
-	:param theConcentration:
-	:type theConcentration: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theConcentration: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetConcentration;
 		void SetConcentration(Standard_ShortReal theConcentration);
 
@@ -3406,9 +4071,13 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetDirection;
 		%feature("autodoc", "Sets direction of directional/spot light.
 
-	:param theDir:
-	:type theDir: gp_Dir
-	:rtype: None
+Parameters
+----------
+theDir: gp_Dir
+
+Returns
+-------
+None
 ") SetDirection;
 		void SetDirection(const gp_Dir & theDir);
 
@@ -3416,13 +4085,15 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetDirection;
 		%feature("autodoc", "Sets direction of directional/spot light.
 
-	:param theVx:
-	:type theVx: float
-	:param theVy:
-	:type theVy: float
-	:param theVz:
-	:type theVz: float
-	:rtype: None
+Parameters
+----------
+theVx: float
+theVy: float
+theVz: float
+
+Returns
+-------
+None
 ") SetDirection;
 		void SetDirection(Standard_Real theVx, Standard_Real theVy, Standard_Real theVz);
 
@@ -3430,9 +4101,13 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetEnabled;
 		%feature("autodoc", "Change enabled state of the light state. this call does not remove or deactivate light source in views/viewers; instead it turns it off so that it just have no effect.
 
-	:param theIsOn:
-	:type theIsOn: bool
-	:rtype: None
+Parameters
+----------
+theIsOn: bool
+
+Returns
+-------
+None
 ") SetEnabled;
 		void SetEnabled(Standard_Boolean theIsOn);
 
@@ -3440,9 +4115,13 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetHeadlight;
 		%feature("autodoc", "Setup headlight flag.
 
-	:param theValue:
-	:type theValue: bool
-	:rtype: None
+Parameters
+----------
+theValue: bool
+
+Returns
+-------
+None
 ") SetHeadlight;
 		void SetHeadlight(Standard_Boolean theValue);
 
@@ -3450,9 +4129,13 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetIntensity;
 		%feature("autodoc", "Modifies the intensity of light source, which should be > 0.0.
 
-	:param theValue:
-	:type theValue: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theValue: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetIntensity;
 		void SetIntensity(Standard_ShortReal theValue);
 
@@ -3460,9 +4143,13 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetName;
 		%feature("autodoc", "Sets light source name.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theName: TCollection_AsciiString
+
+Returns
+-------
+None
 ") SetName;
 		void SetName(const TCollection_AsciiString & theName);
 
@@ -3470,9 +4157,13 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetPosition;
 		%feature("autodoc", "Setup location of positional/spot light.
 
-	:param thePosition:
-	:type thePosition: gp_Pnt
-	:rtype: None
+Parameters
+----------
+thePosition: gp_Pnt
+
+Returns
+-------
+None
 ") SetPosition;
 		void SetPosition(const gp_Pnt & thePosition);
 
@@ -3480,13 +4171,15 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetPosition;
 		%feature("autodoc", "Setup location of positional/spot light.
 
-	:param theX:
-	:type theX: float
-	:param theY:
-	:type theY: float
-	:param theZ:
-	:type theZ: float
-	:rtype: None
+Parameters
+----------
+theX: float
+theY: float
+theZ: float
+
+Returns
+-------
+None
 ") SetPosition;
 		void SetPosition(Standard_Real theX, Standard_Real theY, Standard_Real theZ);
 
@@ -3494,9 +4187,13 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetSmoothAngle;
 		%feature("autodoc", "Modifies the smoothing angle (in radians) of directional light source; should be within range [0.0, m_pi/2].
 
-	:param theValue:
-	:type theValue: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theValue: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetSmoothAngle;
 		void SetSmoothAngle(Standard_ShortReal theValue);
 
@@ -3504,9 +4201,13 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") SetSmoothRadius;
 		%feature("autodoc", "Modifies the smoothing radius of positional/spot light; should be >= 0.0.
 
-	:param theValue:
-	:type theValue: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theValue: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetSmoothRadius;
 		void SetSmoothRadius(Standard_ShortReal theValue);
 
@@ -3514,7 +4215,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Smoothness;
 		%feature("autodoc", "Returns the smoothness of light source (either smoothing angle for directional light or smoothing radius in case of positional light); 0.0 by default.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Smoothness;
 		Standard_ShortReal Smoothness();
 
@@ -3522,7 +4225,9 @@ class Graphic3d_CLight : public Standard_Transient {
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Returns the type of the light, cannot be changed after object construction.
 
-	:rtype: Graphic3d_TypeOfLightSource
+Returns
+-------
+Graphic3d_TypeOfLightSource
 ") Type;
 		Graphic3d_TypeOfLightSource Type();
 
@@ -3563,7 +4268,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") BndBoxClipCheck;
 		%feature("autodoc", "Returns whether check of object's bounding box clipping is enabled before drawing of object; true by default.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") BndBoxClipCheck;
 		Standard_Boolean BndBoxClipCheck();
 
@@ -3571,7 +4278,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") BoundingBox;
 		%feature("autodoc", "Returns bounding box of this presentation.
 
-	:rtype: Graphic3d_BndBox3d
+Returns
+-------
+Graphic3d_BndBox3d
 ") BoundingBox;
 		const Graphic3d_BndBox3d & BoundingBox();
 
@@ -3579,7 +4288,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") ChangeBoundingBox;
 		%feature("autodoc", "Returns bounding box of this presentation without transformation matrix applied.
 
-	:rtype: Graphic3d_BndBox3d
+Returns
+-------
+Graphic3d_BndBox3d
 ") ChangeBoundingBox;
 		Graphic3d_BndBox3d & ChangeBoundingBox();
 
@@ -3587,7 +4298,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clear graphic data.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		virtual void Clear();
 
@@ -3595,7 +4308,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") ClipPlanes;
 		%feature("autodoc", "Returns associated clip planes.
 
-	:rtype: opencascade::handle<Graphic3d_SequenceOfHClipPlane>
+Returns
+-------
+opencascade::handle<Graphic3d_SequenceOfHClipPlane>
 ") ClipPlanes;
 		const opencascade::handle<Graphic3d_SequenceOfHClipPlane> & ClipPlanes();
 
@@ -3603,9 +4318,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") Connect;
 		%feature("autodoc", "Connect other structure to this one.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_CStructure
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_CStructure
+
+Returns
+-------
+None
 ") Connect;
 		virtual void Connect(Graphic3d_CStructure & theStructure);
 
@@ -3613,9 +4332,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") Disconnect;
 		%feature("autodoc", "Disconnect other structure to this one.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_CStructure
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_CStructure
+
+Returns
+-------
+None
 ") Disconnect;
 		virtual void Disconnect(Graphic3d_CStructure & theStructure);
 
@@ -3623,7 +4346,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") GraphicDriver;
 		%feature("autodoc", "Returns graphic driver created this structure.
 
-	:rtype: opencascade::handle<Graphic3d_GraphicDriver>
+Returns
+-------
+opencascade::handle<Graphic3d_GraphicDriver>
 ") GraphicDriver;
 		const opencascade::handle<Graphic3d_GraphicDriver> & GraphicDriver();
 
@@ -3631,9 +4356,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") GraphicHighlight;
 		%feature("autodoc", "Highlights structure with the given style.
 
-	:param theStyle:
-	:type theStyle: Graphic3d_PresentationAttributes
-	:rtype: None
+Parameters
+----------
+theStyle: Graphic3d_PresentationAttributes
+
+Returns
+-------
+None
 ") GraphicHighlight;
 		virtual void GraphicHighlight(const opencascade::handle<Graphic3d_PresentationAttributes> & theStyle);
 
@@ -3641,7 +4370,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") GraphicUnhighlight;
 		%feature("autodoc", "Unhighlights the structure and invalidates pointer to structure's highlight style.
 
-	:rtype: None
+Returns
+-------
+None
 ") GraphicUnhighlight;
 		virtual void GraphicUnhighlight();
 
@@ -3649,7 +4380,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") Groups;
 		%feature("autodoc", "Returns graphic groups.
 
-	:rtype: Graphic3d_SequenceOfGroup
+Returns
+-------
+Graphic3d_SequenceOfGroup
 ") Groups;
 		const Graphic3d_SequenceOfGroup & Groups();
 
@@ -3657,7 +4390,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") HighlightStyle;
 		%feature("autodoc", "Returns valid handle to highlight style of the structure in case if highlight flag is set to true.
 
-	:rtype: opencascade::handle<Graphic3d_PresentationAttributes>
+Returns
+-------
+opencascade::handle<Graphic3d_PresentationAttributes>
 ") HighlightStyle;
 		const opencascade::handle<Graphic3d_PresentationAttributes> & HighlightStyle();
 
@@ -3665,7 +4400,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") IsAlwaysRendered;
 		%feature("autodoc", "Checks if the structure should be included into bvh tree or not.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsAlwaysRendered;
 		Standard_Boolean IsAlwaysRendered();
 
@@ -3673,7 +4410,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") IsCulled;
 		%feature("autodoc", "Returns false if the structure hits the current view volume, otherwise returns true.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsCulled;
 		Standard_Boolean IsCulled();
 
@@ -3681,7 +4420,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") IsVisible;
 		%feature("autodoc", "Return structure visibility flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsVisible;
 		bool IsVisible();
 
@@ -3689,9 +4430,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") IsVisible;
 		%feature("autodoc", "Return structure visibility considering both view affinity and global visibility state.
 
-	:param theViewId:
-	:type theViewId: int
-	:rtype: bool
+Parameters
+----------
+theViewId: int
+
+Returns
+-------
+bool
 ") IsVisible;
 		bool IsVisible(const Standard_Integer theViewId);
 
@@ -3699,7 +4444,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") MarkAsNotCulled;
 		%feature("autodoc", "Marks structure as overlapping the current view volume one. the method is called during traverse of bvh tree.
 
-	:rtype: None
+Returns
+-------
+None
 ") MarkAsNotCulled;
 		void MarkAsNotCulled();
 
@@ -3707,9 +4454,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") NewGroup;
 		%feature("autodoc", "Create new group within this structure.
 
-	:param theStruct:
-	:type theStruct: Graphic3d_Structure
-	:rtype: opencascade::handle<Graphic3d_Group>
+Parameters
+----------
+theStruct: Graphic3d_Structure
+
+Returns
+-------
+opencascade::handle<Graphic3d_Group>
 ") NewGroup;
 		virtual opencascade::handle<Graphic3d_Group> NewGroup(const opencascade::handle<Graphic3d_Structure> & theStruct);
 
@@ -3717,7 +4468,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") OnVisibilityChanged;
 		%feature("autodoc", "Update structure visibility state.
 
-	:rtype: None
+Returns
+-------
+None
 ") OnVisibilityChanged;
 		virtual void OnVisibilityChanged();
 
@@ -3725,9 +4478,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveGroup;
 		%feature("autodoc", "Remove group from this structure.
 
-	:param theGroup:
-	:type theGroup: Graphic3d_Group
-	:rtype: None
+Parameters
+----------
+theGroup: Graphic3d_Group
+
+Returns
+-------
+None
 ") RemoveGroup;
 		virtual void RemoveGroup(const opencascade::handle<Graphic3d_Group> & theGroup);
 
@@ -3735,9 +4492,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") SetBndBoxClipCheck;
 		%feature("autodoc", "Enable/disable check of object's bounding box clipping before drawing of object.
 
-	:param theBndBoxClipCheck:
-	:type theBndBoxClipCheck: bool
-	:rtype: None
+Parameters
+----------
+theBndBoxClipCheck: bool
+
+Returns
+-------
+None
 ") SetBndBoxClipCheck;
 		void SetBndBoxClipCheck(Standard_Boolean theBndBoxClipCheck);
 
@@ -3745,9 +4506,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") SetClipPlanes;
 		%feature("autodoc", "Pass clip planes to the associated graphic driver structure.
 
-	:param thePlanes:
-	:type thePlanes: Graphic3d_SequenceOfHClipPlane
-	:rtype: None
+Parameters
+----------
+thePlanes: Graphic3d_SequenceOfHClipPlane
+
+Returns
+-------
+None
 ") SetClipPlanes;
 		void SetClipPlanes(const opencascade::handle<Graphic3d_SequenceOfHClipPlane> & thePlanes);
 
@@ -3755,9 +4520,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") SetCulled;
 		%feature("autodoc", "Marks structure as culled/not culled - note that isalwaysrendered() is ignored here!.
 
-	:param theIsCulled:
-	:type theIsCulled: bool
-	:rtype: None
+Parameters
+----------
+theIsCulled: bool
+
+Returns
+-------
+None
 ") SetCulled;
 		void SetCulled(Standard_Boolean theIsCulled);
 
@@ -3765,9 +4534,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") SetTransformPersistence;
 		%feature("autodoc", "Set transformation persistence.
 
-	:param theTrsfPers:
-	:type theTrsfPers: Graphic3d_TransformPers
-	:rtype: None
+Parameters
+----------
+theTrsfPers: Graphic3d_TransformPers
+
+Returns
+-------
+None
 ") SetTransformPersistence;
 		virtual void SetTransformPersistence(const opencascade::handle<Graphic3d_TransformPers> & theTrsfPers);
 
@@ -3775,9 +4548,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") SetTransformation;
 		%feature("autodoc", "Assign transformation.
 
-	:param theTrsf:
-	:type theTrsf: Geom_Transformation
-	:rtype: None
+Parameters
+----------
+theTrsf: Geom_Transformation
+
+Returns
+-------
+None
 ") SetTransformation;
 		virtual void SetTransformation(const opencascade::handle<Geom_Transformation> & theTrsf);
 
@@ -3785,9 +4562,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") SetZLayer;
 		%feature("autodoc", "Set z layer id to display the structure in specified layer.
 
-	:param theLayerIndex:
-	:type theLayerIndex: int
-	:rtype: None
+Parameters
+----------
+theLayerIndex: int
+
+Returns
+-------
+None
 ") SetZLayer;
 		virtual void SetZLayer(int theLayerIndex);
 
@@ -3795,9 +4576,13 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") ShadowLink;
 		%feature("autodoc", "Create shadow link to this structure.
 
-	:param theManager:
-	:type theManager: Graphic3d_StructureManager
-	:rtype: opencascade::handle<Graphic3d_CStructure>
+Parameters
+----------
+theManager: Graphic3d_StructureManager
+
+Returns
+-------
+opencascade::handle<Graphic3d_CStructure>
 ") ShadowLink;
 		virtual opencascade::handle<Graphic3d_CStructure> ShadowLink(const opencascade::handle<Graphic3d_StructureManager> & theManager);
 
@@ -3805,7 +4590,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") TransformPersistence;
 		%feature("autodoc", "Return transformation persistence.
 
-	:rtype: opencascade::handle<Graphic3d_TransformPers>
+Returns
+-------
+opencascade::handle<Graphic3d_TransformPers>
 ") TransformPersistence;
 		const opencascade::handle<Graphic3d_TransformPers> & TransformPersistence();
 
@@ -3813,7 +4600,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") Transformation;
 		%feature("autodoc", "Return transformation.
 
-	:rtype: opencascade::handle<Geom_Transformation>
+Returns
+-------
+opencascade::handle<Geom_Transformation>
 ") Transformation;
 		const opencascade::handle<Geom_Transformation> & Transformation();
 
@@ -3821,7 +4610,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") ZLayer;
 		%feature("autodoc", "Get z layer id.
 
-	:rtype: Graphic3d_ZLayerId
+Returns
+-------
+Graphic3d_ZLayerId
 ") ZLayer;
 		Graphic3d_ZLayerId ZLayer();
 
@@ -3829,7 +4620,9 @@ class Graphic3d_CStructure : public Standard_Transient {
 		%feature("compactdefaultargs") updateLayerTransformation;
 		%feature("autodoc", "Update render transformation matrix.
 
-	:rtype: None
+Returns
+-------
+None
 ") updateLayerTransformation;
 		virtual void updateLayerTransformation();
 
@@ -3853,7 +4646,11 @@ class Graphic3d_CTexture {
 		int doTextureMap;
 		/****************** Graphic3d_CTexture ******************/
 		%feature("compactdefaultargs") Graphic3d_CTexture;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Graphic3d_CTexture;
 		 Graphic3d_CTexture();
 
@@ -3909,7 +4706,9 @@ enum  {
 		%feature("compactdefaultargs") Aspect;
 		%feature("autodoc", "Get camera display ratio. returns display ratio.
 
-	:rtype: float
+Returns
+-------
+float
 ") Aspect;
 		Standard_Real Aspect();
 
@@ -3917,7 +4716,9 @@ enum  {
 		%feature("compactdefaultargs") AxialScale;
 		%feature("autodoc", "Get camera axial scale. returns camera's axial scale.
 
-	:rtype: gp_XYZ
+Returns
+-------
+gp_XYZ
 ") AxialScale;
 		const gp_XYZ AxialScale();
 
@@ -3925,7 +4726,9 @@ enum  {
 		%feature("compactdefaultargs") Center;
 		%feature("autodoc", "Get center of the camera, e.g. the point where camera looks at. this point is computed as eye() translated along direction() at distance(). returns the point where the camera looks at.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") Center;
 		gp_Pnt Center();
 
@@ -3933,9 +4736,13 @@ enum  {
 		%feature("compactdefaultargs") ConvertProj2View;
 		%feature("autodoc", "Convert point from projection coordinate space to view coordinate space. @param thepnt [in] the point in ndc. returns point in vcs.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: gp_Pnt
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+gp_Pnt
 ") ConvertProj2View;
 		gp_Pnt ConvertProj2View(const gp_Pnt & thePnt);
 
@@ -3943,9 +4750,13 @@ enum  {
 		%feature("compactdefaultargs") ConvertView2Proj;
 		%feature("autodoc", "Convert point from view coordinate space to projection coordinate space. @param thepnt [in] the point in vcs. returns point in ndc.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: gp_Pnt
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+gp_Pnt
 ") ConvertView2Proj;
 		gp_Pnt ConvertView2Proj(const gp_Pnt & thePnt);
 
@@ -3953,9 +4764,13 @@ enum  {
 		%feature("compactdefaultargs") ConvertView2World;
 		%feature("autodoc", "Convert point from view coordinate space to world coordinates. @param thepnt [in] the 3d point in vcs. returns point in wcs.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: gp_Pnt
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+gp_Pnt
 ") ConvertView2World;
 		gp_Pnt ConvertView2World(const gp_Pnt & thePnt);
 
@@ -3963,9 +4778,13 @@ enum  {
 		%feature("compactdefaultargs") ConvertWorld2View;
 		%feature("autodoc", "Convert point from world coordinate space to view coordinate space. @param thepnt [in] the 3d point in wcs. returns point in vcs.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: gp_Pnt
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+gp_Pnt
 ") ConvertWorld2View;
 		gp_Pnt ConvertWorld2View(const gp_Pnt & thePnt);
 
@@ -3973,9 +4792,13 @@ enum  {
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "Copy properties of another camera. @param theother [in] the camera to copy from.
 
-	:param theOther:
-	:type theOther: Graphic3d_Camera
-	:rtype: None
+Parameters
+----------
+theOther: Graphic3d_Camera
+
+Returns
+-------
+None
 ") Copy;
 		void Copy(const opencascade::handle<Graphic3d_Camera> & theOther);
 
@@ -3983,9 +4806,13 @@ enum  {
 		%feature("compactdefaultargs") CopyMappingData;
 		%feature("autodoc", "Initialize mapping related parameters from other camera handle.
 
-	:param theOtherCamera:
-	:type theOtherCamera: Graphic3d_Camera
-	:rtype: None
+Parameters
+----------
+theOtherCamera: Graphic3d_Camera
+
+Returns
+-------
+None
 ") CopyMappingData;
 		void CopyMappingData(const opencascade::handle<Graphic3d_Camera> & theOtherCamera);
 
@@ -3993,9 +4820,13 @@ enum  {
 		%feature("compactdefaultargs") CopyOrientationData;
 		%feature("autodoc", "Initialize orientation related parameters from other camera handle.
 
-	:param theOtherCamera:
-	:type theOtherCamera: Graphic3d_Camera
-	:rtype: None
+Parameters
+----------
+theOtherCamera: Graphic3d_Camera
+
+Returns
+-------
+None
 ") CopyOrientationData;
 		void CopyOrientationData(const opencascade::handle<Graphic3d_Camera> & theOtherCamera);
 
@@ -4003,7 +4834,9 @@ enum  {
 		%feature("compactdefaultargs") Direction;
 		%feature("autodoc", "Get camera look direction. returns camera look direction.
 
-	:rtype: gp_Dir
+Returns
+-------
+gp_Dir
 ") Direction;
 		const gp_Dir Direction();
 
@@ -4011,7 +4844,9 @@ enum  {
 		%feature("compactdefaultargs") Distance;
 		%feature("autodoc", "Get distance of eye from camera center. returns the distance.
 
-	:rtype: float
+Returns
+-------
+float
 ") Distance;
 		Standard_Real Distance();
 
@@ -4019,7 +4854,9 @@ enum  {
 		%feature("compactdefaultargs") Eye;
 		%feature("autodoc", "Get camera eye position. returns camera eye location.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") Eye;
 		const gp_Pnt Eye();
 
@@ -4027,7 +4864,9 @@ enum  {
 		%feature("compactdefaultargs") FOVy;
 		%feature("autodoc", "Get field of view (fov) in y axis. returns the fov value in degrees.
 
-	:rtype: float
+Returns
+-------
+float
 ") FOVy;
 		Standard_Real FOVy();
 
@@ -4035,19 +4874,18 @@ enum  {
 		%feature("compactdefaultargs") Frustum;
 		%feature("autodoc", "Calculate wcs frustum planes for the camera projection volume. frustum is a convex volume determined by six planes directing inwards. the frustum planes are usually used as inputs for camera algorithms. thus, if any changes to projection matrix calculation are necessary, the frustum planes calculation should be also touched. @param theleft [out] the frustum plane for left side of view. @param theright [out] the frustum plane for right side of view. @param thebottom [out] the frustum plane for bottom side of view. @param thetop [out] the frustum plane for top side of view. @param thenear [out] the frustum plane for near side of view. @param thefar [out] the frustum plane for far side of view.
 
-	:param theLeft:
-	:type theLeft: gp_Pln
-	:param theRight:
-	:type theRight: gp_Pln
-	:param theBottom:
-	:type theBottom: gp_Pln
-	:param theTop:
-	:type theTop: gp_Pln
-	:param theNear:
-	:type theNear: gp_Pln
-	:param theFar:
-	:type theFar: gp_Pln
-	:rtype: None
+Parameters
+----------
+theLeft: gp_Pln
+theRight: gp_Pln
+theBottom: gp_Pln
+theTop: gp_Pln
+theNear: gp_Pln
+theFar: gp_Pln
+
+Returns
+-------
+None
 ") Frustum;
 		void Frustum(gp_Pln & theLeft, gp_Pln & theRight, gp_Pln & theBottom, gp_Pln & theTop, gp_Pln & theNear, gp_Pln & theFar);
 
@@ -4055,9 +4893,13 @@ enum  {
 		%feature("compactdefaultargs") FrustumPoints;
 		%feature("autodoc", "Fill array of current view frustum corners. the size of this array is equal to frustumverticesnb. the order of vertices is as defined in frustumvert_* enumeration.
 
-	:param thePoints:
-	:type thePoints: NCollection_Array1<Graphic3d_Vec3d>
-	:rtype: None
+Parameters
+----------
+thePoints: NCollection_Array1<Graphic3d_Vec3d>
+
+Returns
+-------
+None
 ") FrustumPoints;
 		void FrustumPoints(NCollection_Array1<Graphic3d_Vec3d> & thePoints);
 
@@ -4065,7 +4907,9 @@ enum  {
 		%feature("compactdefaultargs") GetIODType;
 		%feature("autodoc", "Get intraocular distance definition type. returns definition type used for intraocular distance.
 
-	:rtype: Graphic3d_Camera::IODType
+Returns
+-------
+Graphic3d_Camera::IODType
 ") GetIODType;
 		Graphic3d_Camera::IODType GetIODType();
 
@@ -4073,7 +4917,9 @@ enum  {
 		%feature("compactdefaultargs") Graphic3d_Camera;
 		%feature("autodoc", "Default constructor. initializes camera with the following properties: eye (0, 0, -2); center (0, 0, 0); up (0, 1, 0); type (orthographic); fovy (45); scale (1000); isstereo(false); znear (0.001); zfar (3000.0); aspect(1); zfocus(1.0); zfocustype(relative); iod(0.05); iodtype(relative).
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_Camera;
 		 Graphic3d_Camera();
 
@@ -4081,9 +4927,13 @@ enum  {
 		%feature("compactdefaultargs") Graphic3d_Camera;
 		%feature("autodoc", "Copy constructor. @param theother [in] the camera to copy from.
 
-	:param theOther:
-	:type theOther: Graphic3d_Camera
-	:rtype: None
+Parameters
+----------
+theOther: Graphic3d_Camera
+
+Returns
+-------
+None
 ") Graphic3d_Camera;
 		 Graphic3d_Camera(const opencascade::handle<Graphic3d_Camera> & theOther);
 
@@ -4091,7 +4941,9 @@ enum  {
 		%feature("compactdefaultargs") IOD;
 		%feature("autodoc", "Get intraocular distance value. returns absolute or relative iod value depending on its definition type.
 
-	:rtype: float
+Returns
+-------
+float
 ") IOD;
 		Standard_Real IOD();
 
@@ -4099,7 +4951,9 @@ enum  {
 		%feature("compactdefaultargs") InvalidateOrientation;
 		%feature("autodoc", "Invalidate orientation matrix. the matrix will be updated on request.
 
-	:rtype: None
+Returns
+-------
+None
 ") InvalidateOrientation;
 		void InvalidateOrientation();
 
@@ -4107,7 +4961,9 @@ enum  {
 		%feature("compactdefaultargs") InvalidateProjection;
 		%feature("autodoc", "Invalidate state of projection matrix. the matrix will be updated on request.
 
-	:rtype: None
+Returns
+-------
+None
 ") InvalidateProjection;
 		void InvalidateProjection();
 
@@ -4115,7 +4971,9 @@ enum  {
 		%feature("compactdefaultargs") IsOrthographic;
 		%feature("autodoc", "Check that the camera projection is orthographic. returns boolean flag that indicates whether the camera's projection is orthographic or not.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsOrthographic;
 		Standard_Boolean IsOrthographic();
 
@@ -4123,7 +4981,9 @@ enum  {
 		%feature("compactdefaultargs") IsStereo;
 		%feature("autodoc", "Check whether the camera projection is stereo. please note that stereo rendering is now implemented with support of quad buffering. returns boolean flag indicating whether the stereographic l/r projection is chosen.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsStereo;
 		Standard_Boolean IsStereo();
 
@@ -4131,9 +4991,13 @@ enum  {
 		%feature("compactdefaultargs") MoveEyeTo;
 		%feature("autodoc", "Sets camera eye position. unlike seteye(), this method only changes eye point and preserves camera direction. @param theeye [in] the location of camera's eye. @sa seteye().
 
-	:param theEye:
-	:type theEye: gp_Pnt
-	:rtype: None
+Parameters
+----------
+theEye: gp_Pnt
+
+Returns
+-------
+None
 ") MoveEyeTo;
 		void MoveEyeTo(const gp_Pnt & theEye);
 
@@ -4141,7 +5005,9 @@ enum  {
 		%feature("compactdefaultargs") OrientationMatrix;
 		%feature("autodoc", "Get orientation matrix. returns camera orientation matrix.
 
-	:rtype: Graphic3d_Mat4d
+Returns
+-------
+Graphic3d_Mat4d
 ") OrientationMatrix;
 		const Graphic3d_Mat4d & OrientationMatrix();
 
@@ -4149,7 +5015,9 @@ enum  {
 		%feature("compactdefaultargs") OrientationMatrixF;
 		%feature("autodoc", "Get orientation matrix of standard_shortreal precision. returns camera orientation matrix.
 
-	:rtype: Graphic3d_Mat4
+Returns
+-------
+Graphic3d_Mat4
 ") OrientationMatrixF;
 		const Graphic3d_Mat4 & OrientationMatrixF();
 
@@ -4157,7 +5025,9 @@ enum  {
 		%feature("compactdefaultargs") OrthogonalizeUp;
 		%feature("autodoc", "Orthogonalize up direction vector.
 
-	:rtype: None
+Returns
+-------
+None
 ") OrthogonalizeUp;
 		void OrthogonalizeUp();
 
@@ -4165,7 +5035,9 @@ enum  {
 		%feature("compactdefaultargs") OrthogonalizedUp;
 		%feature("autodoc", "Return a copy of orthogonalized up direction vector.
 
-	:rtype: gp_Dir
+Returns
+-------
+gp_Dir
 ") OrthogonalizedUp;
 		gp_Dir OrthogonalizedUp();
 
@@ -4173,9 +5045,13 @@ enum  {
 		%feature("compactdefaultargs") Project;
 		%feature("autodoc", "Project point from world coordinate space to normalized device coordinates (mapping). @param thepnt [in] the 3d point in wcs. returns mapped point in ndc.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: gp_Pnt
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+gp_Pnt
 ") Project;
 		gp_Pnt Project(const gp_Pnt & thePnt);
 
@@ -4183,7 +5059,9 @@ enum  {
 		%feature("compactdefaultargs") ProjectionMatrix;
 		%feature("autodoc", "Get monographic or middle point projection matrix used for monographic rendering and for point projection / unprojection. returns monographic projection matrix.
 
-	:rtype: Graphic3d_Mat4d
+Returns
+-------
+Graphic3d_Mat4d
 ") ProjectionMatrix;
 		const Graphic3d_Mat4d & ProjectionMatrix();
 
@@ -4191,7 +5069,9 @@ enum  {
 		%feature("compactdefaultargs") ProjectionMatrixF;
 		%feature("autodoc", "Get monographic or middle point projection matrix of standard_shortreal precision used for monographic rendering and for point projection / unprojection. returns monographic projection matrix.
 
-	:rtype: Graphic3d_Mat4
+Returns
+-------
+Graphic3d_Mat4
 ") ProjectionMatrixF;
 		const Graphic3d_Mat4 & ProjectionMatrixF();
 
@@ -4199,7 +5079,9 @@ enum  {
 		%feature("compactdefaultargs") ProjectionState;
 		%feature("autodoc", "Returns modification state of camera projection matrix.
 
-	:rtype: Standard_Size
+Returns
+-------
+Standard_Size
 ") ProjectionState;
 		Standard_Size ProjectionState();
 
@@ -4207,7 +5089,9 @@ enum  {
 		%feature("compactdefaultargs") ProjectionStereoLeft;
 		%feature("autodoc", "Returns stereographic matrix computed for left eye. please note that this method is used for rendering for <i>projection_stereo</i>.
 
-	:rtype: Graphic3d_Mat4d
+Returns
+-------
+Graphic3d_Mat4d
 ") ProjectionStereoLeft;
 		const Graphic3d_Mat4d & ProjectionStereoLeft();
 
@@ -4215,7 +5099,9 @@ enum  {
 		%feature("compactdefaultargs") ProjectionStereoLeftF;
 		%feature("autodoc", "Returns stereographic matrix of standard_shortreal precision computed for left eye. please note that this method is used for rendering for <i>projection_stereo</i>.
 
-	:rtype: Graphic3d_Mat4
+Returns
+-------
+Graphic3d_Mat4
 ") ProjectionStereoLeftF;
 		const Graphic3d_Mat4 & ProjectionStereoLeftF();
 
@@ -4223,7 +5109,9 @@ enum  {
 		%feature("compactdefaultargs") ProjectionStereoRight;
 		%feature("autodoc", "Returns stereographic matrix computed for right eye. please note that this method is used for rendering for <i>projection_stereo</i>.
 
-	:rtype: Graphic3d_Mat4d
+Returns
+-------
+Graphic3d_Mat4d
 ") ProjectionStereoRight;
 		const Graphic3d_Mat4d & ProjectionStereoRight();
 
@@ -4231,7 +5119,9 @@ enum  {
 		%feature("compactdefaultargs") ProjectionStereoRightF;
 		%feature("autodoc", "Returns stereographic matrix of standard_shortreal precision computed for right eye. please note that this method is used for rendering for <i>projection_stereo</i>.
 
-	:rtype: Graphic3d_Mat4
+Returns
+-------
+Graphic3d_Mat4
 ") ProjectionStereoRightF;
 		const Graphic3d_Mat4 & ProjectionStereoRightF();
 
@@ -4239,7 +5129,9 @@ enum  {
 		%feature("compactdefaultargs") ProjectionType;
 		%feature("autodoc", "Returns camera projection type.
 
-	:rtype: Graphic3d_Camera::Projection
+Returns
+-------
+Graphic3d_Camera::Projection
 ") ProjectionType;
 		Graphic3d_Camera::Projection ProjectionType();
 
@@ -4247,7 +5139,9 @@ enum  {
 		%feature("compactdefaultargs") Scale;
 		%feature("autodoc", "Get camera scale. returns camera scale factor.
 
-	:rtype: float
+Returns
+-------
+float
 ") Scale;
 		Standard_Real Scale();
 
@@ -4255,9 +5149,13 @@ enum  {
 		%feature("compactdefaultargs") SetAspect;
 		%feature("autodoc", "Changes width / height display ratio. @param theaspect [in] the display ratio.
 
-	:param theAspect:
-	:type theAspect: float
-	:rtype: None
+Parameters
+----------
+theAspect: float
+
+Returns
+-------
+None
 ") SetAspect;
 		void SetAspect(const Standard_Real theAspect);
 
@@ -4265,9 +5163,13 @@ enum  {
 		%feature("compactdefaultargs") SetAxialScale;
 		%feature("autodoc", "Set camera axial scale. @param theaxialscale [in] the axial scale vector.
 
-	:param theAxialScale:
-	:type theAxialScale: gp_XYZ
-	:rtype: None
+Parameters
+----------
+theAxialScale: gp_XYZ
+
+Returns
+-------
+None
 ") SetAxialScale;
 		void SetAxialScale(const gp_XYZ & theAxialScale);
 
@@ -4275,9 +5177,13 @@ enum  {
 		%feature("compactdefaultargs") SetCenter;
 		%feature("autodoc", "Sets center of the camera, e.g. the point where camera looks at. this methods changes camera direction, so that the new direction is computed from current eye position to specified center position. @param thecenter [in] the point where the camera looks at.
 
-	:param theCenter:
-	:type theCenter: gp_Pnt
-	:rtype: None
+Parameters
+----------
+theCenter: gp_Pnt
+
+Returns
+-------
+None
 ") SetCenter;
 		void SetCenter(const gp_Pnt & theCenter);
 
@@ -4285,9 +5191,13 @@ enum  {
 		%feature("compactdefaultargs") SetDirection;
 		%feature("autodoc", "Sets camera look direction and computes the new eye position relative to current center. warning! this method does not verify that the current up() vector is orthogonal to the new direction. @param thedir [in] the direction.
 
-	:param theDir:
-	:type theDir: gp_Dir
-	:rtype: None
+Parameters
+----------
+theDir: gp_Dir
+
+Returns
+-------
+None
 ") SetDirection;
 		void SetDirection(const gp_Dir & theDir);
 
@@ -4295,9 +5205,13 @@ enum  {
 		%feature("compactdefaultargs") SetDirectionFromEye;
 		%feature("autodoc", "Sets camera look direction preserving the current eye() position. warning! this method does not verify that the current up() vector is orthogonal to the new direction. @param thedir [in] the direction.
 
-	:param theDir:
-	:type theDir: gp_Dir
-	:rtype: None
+Parameters
+----------
+theDir: gp_Dir
+
+Returns
+-------
+None
 ") SetDirectionFromEye;
 		void SetDirectionFromEye(const gp_Dir & theDir);
 
@@ -4305,9 +5219,13 @@ enum  {
 		%feature("compactdefaultargs") SetDistance;
 		%feature("autodoc", "Set distance of eye from camera center. @param thedistance [in] the distance.
 
-	:param theDistance:
-	:type theDistance: float
-	:rtype: None
+Parameters
+----------
+theDistance: float
+
+Returns
+-------
+None
 ") SetDistance;
 		void SetDistance(const Standard_Real theDistance);
 
@@ -4315,9 +5233,13 @@ enum  {
 		%feature("compactdefaultargs") SetEye;
 		%feature("autodoc", "Sets camera eye position. warning! for backward compatibility reasons, this method also changes view direction, so that the new direction is computed from new eye position to old center position. @param theeye [in] the location of camera's eye. @sa moveeyeto(), seteyeandcenter().
 
-	:param theEye:
-	:type theEye: gp_Pnt
-	:rtype: None
+Parameters
+----------
+theEye: gp_Pnt
+
+Returns
+-------
+None
 ") SetEye;
 		void SetEye(const gp_Pnt & theEye);
 
@@ -4325,11 +5247,14 @@ enum  {
 		%feature("compactdefaultargs") SetEyeAndCenter;
 		%feature("autodoc", "Sets camera eye and center positions. @param theeye [in] the location of camera's eye @param thecenter [in] the location of camera's center.
 
-	:param theEye:
-	:type theEye: gp_Pnt
-	:param theCenter:
-	:type theCenter: gp_Pnt
-	:rtype: None
+Parameters
+----------
+theEye: gp_Pnt
+theCenter: gp_Pnt
+
+Returns
+-------
+None
 ") SetEyeAndCenter;
 		void SetEyeAndCenter(const gp_Pnt & theEye, const gp_Pnt & theCenter);
 
@@ -4337,9 +5262,13 @@ enum  {
 		%feature("compactdefaultargs") SetFOVy;
 		%feature("autodoc", "Set field of view (fov) in y axis for perspective projection. @param thefovy [in] the fov in degrees.
 
-	:param theFOVy:
-	:type theFOVy: float
-	:rtype: None
+Parameters
+----------
+theFOVy: float
+
+Returns
+-------
+None
 ") SetFOVy;
 		void SetFOVy(const Standard_Real theFOVy);
 
@@ -4347,11 +5276,14 @@ enum  {
 		%feature("compactdefaultargs") SetIOD;
 		%feature("autodoc", "Sets intraocular distance. @param thetype [in] the iod definition type. iod can be defined as absolute value or relatively to (as coefficient of) camera focal length. @param theiod [in] the intraocular distance.
 
-	:param theType:
-	:type theType: IODType
-	:param theIOD:
-	:type theIOD: float
-	:rtype: None
+Parameters
+----------
+theType: IODType
+theIOD: float
+
+Returns
+-------
+None
 ") SetIOD;
 		void SetIOD(IODType theType, const Standard_Real theIOD);
 
@@ -4359,9 +5291,13 @@ enum  {
 		%feature("compactdefaultargs") SetProjectionType;
 		%feature("autodoc", "Change camera projection type. when switching to perspective projection from orthographic one, the znear and zfar are reset to default values (0.001, 3000.0) if less than 0.0. @param theprojectiontype [in] the camera projection type.
 
-	:param theProjection:
-	:type theProjection: Projection
-	:rtype: None
+Parameters
+----------
+theProjection: Projection
+
+Returns
+-------
+None
 ") SetProjectionType;
 		void SetProjectionType(Projection theProjection);
 
@@ -4369,9 +5305,13 @@ enum  {
 		%feature("compactdefaultargs") SetScale;
 		%feature("autodoc", "Sets camera scale. for orthographic projection the scale factor corresponds to parallel scale of view mapping (i.e. size of viewport). for perspective camera scale is converted to distance. the scale specifies equal size of the view projection in both dimensions assuming that the aspect is 1.0. the projection height and width are specified with the scale and correspondingly multiplied by the aspect. @param thescale [in] the scale factor.
 
-	:param theScale:
-	:type theScale: float
-	:rtype: None
+Parameters
+----------
+theScale: float
+
+Returns
+-------
+None
 ") SetScale;
 		void SetScale(const Standard_Real theScale);
 
@@ -4379,9 +5319,13 @@ enum  {
 		%feature("compactdefaultargs") SetTile;
 		%feature("autodoc", "Sets the tile defining the drawing sub-area within view. note that tile defining a region outside the view boundaries is also valid - use method graphic3d_cameratile::cropped() to assign a cropped copy. @param thetile tile definition.
 
-	:param theTile:
-	:type theTile: Graphic3d_CameraTile
-	:rtype: None
+Parameters
+----------
+theTile: Graphic3d_CameraTile
+
+Returns
+-------
+None
 ") SetTile;
 		void SetTile(const Graphic3d_CameraTile & theTile);
 
@@ -4389,9 +5333,13 @@ enum  {
 		%feature("compactdefaultargs") SetUp;
 		%feature("autodoc", "Sets camera up direction vector, orthogonal to camera direction. warning! this method does not verify that the new up vector is orthogonal to the current direction(). @param theup [in] the up direction vector. @sa orthogonalizeup().
 
-	:param theUp:
-	:type theUp: gp_Dir
-	:rtype: None
+Parameters
+----------
+theUp: gp_Dir
+
+Returns
+-------
+None
 ") SetUp;
 		void SetUp(const gp_Dir & theUp);
 
@@ -4399,11 +5347,14 @@ enum  {
 		%feature("compactdefaultargs") SetZFocus;
 		%feature("autodoc", "Sets stereographic focus distance. @param thetype [in] the focus definition type. focus can be defined as absolute value or relatively to (as coefficient of) coefficient of camera focal length. @param thezfocus [in] the focus absolute value or coefficient depending on the passed definition type.
 
-	:param theType:
-	:type theType: FocusType
-	:param theZFocus:
-	:type theZFocus: float
-	:rtype: None
+Parameters
+----------
+theType: FocusType
+theZFocus: float
+
+Returns
+-------
+None
 ") SetZFocus;
 		void SetZFocus(FocusType theType, const Standard_Real theZFocus);
 
@@ -4411,11 +5362,14 @@ enum  {
 		%feature("compactdefaultargs") SetZRange;
 		%feature("autodoc", "Change the near and far z-clipping plane positions. for orthographic projection, theznear, thezfar can be negative or positive. for perspective projection, only positive values are allowed. program error exception is raised if non-positive values are specified for perspective projection or theznear >= thezfar. @param theznear [in] the distance of the plane from the eye. @param thezfar [in] the distance of the plane from the eye.
 
-	:param theZNear:
-	:type theZNear: float
-	:param theZFar:
-	:type theZFar: float
-	:rtype: None
+Parameters
+----------
+theZNear: float
+theZFar: float
+
+Returns
+-------
+None
 ") SetZRange;
 		void SetZRange(const Standard_Real theZNear, const Standard_Real theZFar);
 
@@ -4423,7 +5377,9 @@ enum  {
 		%feature("compactdefaultargs") Tile;
 		%feature("autodoc", "Get current tile.
 
-	:rtype: Graphic3d_CameraTile
+Returns
+-------
+Graphic3d_CameraTile
 ") Tile;
 		const Graphic3d_CameraTile & Tile();
 
@@ -4431,9 +5387,13 @@ enum  {
 		%feature("compactdefaultargs") Transform;
 		%feature("autodoc", "Transform orientation components of the camera: eye, up and center points. @param thetrsf [in] the transformation to apply.
 
-	:param theTrsf:
-	:type theTrsf: gp_Trsf
-	:rtype: None
+Parameters
+----------
+theTrsf: gp_Trsf
+
+Returns
+-------
+None
 ") Transform;
 		void Transform(const gp_Trsf & theTrsf);
 
@@ -4441,9 +5401,13 @@ enum  {
 		%feature("compactdefaultargs") UnProject;
 		%feature("autodoc", "Unproject point from normalized device coordinates to world coordinate space. @param thepnt [in] the ndc point. returns 3d point in wcs.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: gp_Pnt
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+gp_Pnt
 ") UnProject;
 		gp_Pnt UnProject(const gp_Pnt & thePnt);
 
@@ -4451,7 +5415,9 @@ enum  {
 		%feature("compactdefaultargs") Up;
 		%feature("autodoc", "Get camera up direction vector. returns camera's up direction vector.
 
-	:rtype: gp_Dir
+Returns
+-------
+gp_Dir
 ") Up;
 		const gp_Dir Up();
 
@@ -4459,7 +5425,9 @@ enum  {
 		%feature("compactdefaultargs") ViewDimensions;
 		%feature("autodoc", "Calculate view plane size at center (target) point and distance between zfar and znear planes. returns values in form of gp_pnt (width, height, depth).
 
-	:rtype: gp_XYZ
+Returns
+-------
+gp_XYZ
 ") ViewDimensions;
 		gp_XYZ ViewDimensions();
 
@@ -4467,9 +5435,13 @@ enum  {
 		%feature("compactdefaultargs") ViewDimensions;
 		%feature("autodoc", "Calculate view plane size at center point with specified z offset and distance between zfar and znear planes. @param thezvalue [in] the distance from the eye in eye-to-center direction returns values in form of gp_pnt (width, height, depth).
 
-	:param theZValue:
-	:type theZValue: float
-	:rtype: gp_XYZ
+Parameters
+----------
+theZValue: float
+
+Returns
+-------
+gp_XYZ
 ") ViewDimensions;
 		gp_XYZ ViewDimensions(const Standard_Real theZValue);
 
@@ -4477,7 +5449,9 @@ enum  {
 		%feature("compactdefaultargs") WorldViewProjState;
 		%feature("autodoc", "Returns projection modification state of the camera.
 
-	:rtype: Graphic3d_WorldViewProjState
+Returns
+-------
+Graphic3d_WorldViewProjState
 ") WorldViewProjState;
 		const Graphic3d_WorldViewProjState & WorldViewProjState();
 
@@ -4485,7 +5459,9 @@ enum  {
 		%feature("compactdefaultargs") WorldViewState;
 		%feature("autodoc", "Returns modification state of camera world view transformation matrix.
 
-	:rtype: Standard_Size
+Returns
+-------
+Standard_Size
 ") WorldViewState;
 		Standard_Size WorldViewState();
 
@@ -4493,7 +5469,9 @@ enum  {
 		%feature("compactdefaultargs") ZFar;
 		%feature("autodoc", "Get the far z-clipping plane position. returns the distance of the plane from the eye.
 
-	:rtype: float
+Returns
+-------
+float
 ") ZFar;
 		Standard_Real ZFar();
 
@@ -4501,17 +5479,17 @@ enum  {
 		%feature("compactdefaultargs") ZFitAll;
 		%feature("autodoc", "Estimate z-min and z-max planes of projection volume to match the displayed objects. the methods ensures that view volume will be close by depth range to the displayed objects. fitting assumes that for orthogonal projection the view volume contains the displayed objects completely. for zoomed perspective view, the view volume is adjusted such that it contains the objects or their parts, located in front of the camera. @param thescalefactor [in] the scale factor for z-range. the range between z-min, z-max projection volume planes evaluated by z fitting method will be scaled using this coefficient. program error exception is thrown if negative or zero value is passed. @param theminmax [in] applicative min max boundaries. @param thescalefactor [in] real graphical boundaries (not accounting infinite flag).
 
-	:param theScaleFactor:
-	:type theScaleFactor: float
-	:param theMinMax:
-	:type theMinMax: Bnd_Box
-	:param theGraphicBB:
-	:type theGraphicBB: Bnd_Box
-	:param theZNear:
-	:type theZNear: float
-	:param theZFar:
-	:type theZFar: float
-	:rtype: bool
+Parameters
+----------
+theScaleFactor: float
+theMinMax: Bnd_Box
+theGraphicBB: Bnd_Box
+theZNear: float
+theZFar: float
+
+Returns
+-------
+bool
 ") ZFitAll;
 		bool ZFitAll(const Standard_Real theScaleFactor, const Bnd_Box & theMinMax, const Bnd_Box & theGraphicBB, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -4519,13 +5497,15 @@ enum  {
 		%feature("compactdefaultargs") ZFitAll;
 		%feature("autodoc", "Change z-min and z-max planes of projection volume to match the displayed objects.
 
-	:param theScaleFactor:
-	:type theScaleFactor: float
-	:param theMinMax:
-	:type theMinMax: Bnd_Box
-	:param theGraphicBB:
-	:type theGraphicBB: Bnd_Box
-	:rtype: None
+Parameters
+----------
+theScaleFactor: float
+theMinMax: Bnd_Box
+theGraphicBB: Bnd_Box
+
+Returns
+-------
+None
 ") ZFitAll;
 		void ZFitAll(const Standard_Real theScaleFactor, const Bnd_Box & theMinMax, const Bnd_Box & theGraphicBB);
 
@@ -4533,7 +5513,9 @@ enum  {
 		%feature("compactdefaultargs") ZFocus;
 		%feature("autodoc", "Get stereographic focus value. returns absolute or relative stereographic focus value depending on its definition type.
 
-	:rtype: float
+Returns
+-------
+float
 ") ZFocus;
 		Standard_Real ZFocus();
 
@@ -4541,7 +5523,9 @@ enum  {
 		%feature("compactdefaultargs") ZFocusType;
 		%feature("autodoc", "Get stereographic focus definition type. returns definition type used for stereographic focus.
 
-	:rtype: Graphic3d_Camera::FocusType
+Returns
+-------
+Graphic3d_Camera::FocusType
 ") ZFocusType;
 		Graphic3d_Camera::FocusType ZFocusType();
 
@@ -4549,7 +5533,9 @@ enum  {
 		%feature("compactdefaultargs") ZNear;
 		%feature("autodoc", "Get the near z-clipping plane position. returns the distance of the plane from the eye.
 
-	:rtype: float
+Returns
+-------
+float
 ") ZNear;
 		Standard_Real ZNear();
 
@@ -4577,7 +5563,9 @@ class Graphic3d_CameraTile {
 		%feature("compactdefaultargs") Cropped;
 		%feature("autodoc", "Return the copy cropped by total size.
 
-	:rtype: Graphic3d_CameraTile
+Returns
+-------
+Graphic3d_CameraTile
 ") Cropped;
 		Graphic3d_CameraTile Cropped();
 
@@ -4585,7 +5573,9 @@ class Graphic3d_CameraTile {
 		%feature("compactdefaultargs") Graphic3d_CameraTile;
 		%feature("autodoc", "Default constructor. initializes the empty tile of zero size and lower-left offset orientation. such tile is considered uninitialized (invalid).
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_CameraTile;
 		 Graphic3d_CameraTile();
 
@@ -4593,7 +5583,9 @@ class Graphic3d_CameraTile {
 		%feature("compactdefaultargs") IsValid;
 		%feature("autodoc", "Return true if tile has been defined.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsValid;
 		bool IsValid();
 
@@ -4601,7 +5593,9 @@ class Graphic3d_CameraTile {
 		%feature("compactdefaultargs") OffsetLowerLeft;
 		%feature("autodoc", "Return offset position from lower-left corner.
 
-	:rtype: Graphic3d_Vec2i
+Returns
+-------
+Graphic3d_Vec2i
 ") OffsetLowerLeft;
 		Graphic3d_Vec2i OffsetLowerLeft();
 
@@ -4638,7 +5632,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") CappingAspect;
 		%feature("autodoc", "Return capping aspect. returns capping surface rendering aspect.
 
-	:rtype: opencascade::handle<Graphic3d_AspectFillArea3d>
+Returns
+-------
+opencascade::handle<Graphic3d_AspectFillArea3d>
 ") CappingAspect;
 		const opencascade::handle<Graphic3d_AspectFillArea3d> & CappingAspect();
 
@@ -4646,7 +5642,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") CappingColor;
 		%feature("autodoc", "Return color for rendering capping surface.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") CappingColor;
 		Quantity_Color CappingColor();
 
@@ -4654,7 +5652,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") CappingCustomHatch;
 		%feature("autodoc", "Returns hatching style.
 
-	:rtype: opencascade::handle<Graphic3d_HatchStyle>
+Returns
+-------
+opencascade::handle<Graphic3d_HatchStyle>
 ") CappingCustomHatch;
 		const opencascade::handle<Graphic3d_HatchStyle> & CappingCustomHatch();
 
@@ -4662,7 +5662,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") CappingHatch;
 		%feature("autodoc", "Returns hatching style.
 
-	:rtype: Aspect_HatchStyle
+Returns
+-------
+Aspect_HatchStyle
 ") CappingHatch;
 		Aspect_HatchStyle CappingHatch();
 
@@ -4670,7 +5672,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") CappingMaterial;
 		%feature("autodoc", "Returns capping material.
 
-	:rtype: Graphic3d_MaterialAspect
+Returns
+-------
+Graphic3d_MaterialAspect
 ") CappingMaterial;
 		const Graphic3d_MaterialAspect & CappingMaterial();
 
@@ -4678,13 +5682,19 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") CappingTexture;
 		%feature("autodoc", "Returns capping texture map.
 
-	:rtype: opencascade::handle<Graphic3d_TextureMap>
+Returns
+-------
+opencascade::handle<Graphic3d_TextureMap>
 ") CappingTexture;
 		opencascade::handle<Graphic3d_TextureMap> CappingTexture();
 
 		/****************** ChainNextPlane ******************/
 		%feature("compactdefaultargs") ChainNextPlane;
-		%feature("autodoc", "	:rtype: opencascade::handle<Graphic3d_ClipPlane>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Graphic3d_ClipPlane>
 ") ChainNextPlane;
 		const opencascade::handle<Graphic3d_ClipPlane> & ChainNextPlane();
 
@@ -4692,7 +5702,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ChainPreviousPlane;
 		%feature("autodoc", "Return the previous plane in a chain of planes defining logical and operation, or null if there is no chain or it is a first element in chain. when clipping is defined by a chain of planes, it cuts a space only in case if check fails for all planes in chain.
 
-	:rtype: opencascade::handle<Graphic3d_ClipPlane>
+Returns
+-------
+opencascade::handle<Graphic3d_ClipPlane>
 ") ChainPreviousPlane;
 		opencascade::handle<Graphic3d_ClipPlane> ChainPreviousPlane();
 
@@ -4700,7 +5712,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") Clone;
 		%feature("autodoc", "Clone plane. virtual method to simplify copying procedure if plane class is redefined at application level to add specific fields to it e.g. id, name, etc. returns new instance of clipping plane with same properties and attributes.
 
-	:rtype: opencascade::handle<Graphic3d_ClipPlane>
+Returns
+-------
+opencascade::handle<Graphic3d_ClipPlane>
 ") Clone;
 		virtual opencascade::handle<Graphic3d_ClipPlane> Clone();
 
@@ -4708,7 +5722,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") GetEquation;
 		%feature("autodoc", "Get 4-component equation vector for clipping plane. returns clipping plane equation vector.
 
-	:rtype: Graphic3d_Vec4d
+Returns
+-------
+Graphic3d_Vec4d
 ") GetEquation;
 		const Graphic3d_Vec4d & GetEquation();
 
@@ -4716,7 +5732,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") GetId;
 		%feature("autodoc", "This id is used for managing associated resources in graphical driver. the clip plane can be assigned within a range of io which can be displayed in separate opengl contexts. for each of the context an associated opengl resource for graphical aspects should be created and kept. the resources are stored in graphical driver for each of individual groups of shared context under the clip plane identifier. returns clip plane resource identifier string.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") GetId;
 		const TCollection_AsciiString & GetId();
 
@@ -4724,7 +5742,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") Graphic3d_ClipPlane;
 		%feature("autodoc", "Default constructor. initializes clip plane container with the following properties: - equation (0.0, 0.0, 1.0, 0) - ison (true), - iscapping (false), - material (graphic3d_nom_default), - texture (null), - hatchstyle (aspect_hs_horizontal), - ishatchon (false).
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_ClipPlane;
 		 Graphic3d_ClipPlane();
 
@@ -4732,9 +5752,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") Graphic3d_ClipPlane;
 		%feature("autodoc", "Copy constructor. @param theother [in] the copied plane.
 
-	:param theOther:
-	:type theOther: Graphic3d_ClipPlane
-	:rtype: None
+Parameters
+----------
+theOther: Graphic3d_ClipPlane
+
+Returns
+-------
+None
 ") Graphic3d_ClipPlane;
 		 Graphic3d_ClipPlane(const Graphic3d_ClipPlane & theOther);
 
@@ -4742,9 +5766,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") Graphic3d_ClipPlane;
 		%feature("autodoc", "Construct clip plane for the passed equation. by default the plane is on, capping is turned off. @param theequation [in] the plane equation.
 
-	:param theEquation:
-	:type theEquation: Graphic3d_Vec4d
-	:rtype: None
+Parameters
+----------
+theEquation: Graphic3d_Vec4d
+
+Returns
+-------
+None
 ") Graphic3d_ClipPlane;
 		 Graphic3d_ClipPlane(const Graphic3d_Vec4d & theEquation);
 
@@ -4752,9 +5780,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") Graphic3d_ClipPlane;
 		%feature("autodoc", "Construct clip plane from the passed geometrical definition. by default the plane is on, capping is turned off. @param theplane [in] the plane.
 
-	:param thePlane:
-	:type thePlane: gp_Pln
-	:rtype: None
+Parameters
+----------
+thePlane: gp_Pln
+
+Returns
+-------
+None
 ") Graphic3d_ClipPlane;
 		 Graphic3d_ClipPlane(const gp_Pln & thePlane);
 
@@ -4762,9 +5794,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") IsBoxFullInHalfspace;
 		%feature("autodoc", "Check if the given bounding box is fully inside (or touches from inside) the half-space (e.g. not discarded by clipping plane).
 
-	:param theBox:
-	:type theBox: Graphic3d_BndBox3d
-	:rtype: bool
+Parameters
+----------
+theBox: Graphic3d_BndBox3d
+
+Returns
+-------
+bool
 ") IsBoxFullInHalfspace;
 		bool IsBoxFullInHalfspace(const Graphic3d_BndBox3d & theBox);
 
@@ -4772,9 +5808,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") IsBoxFullOutHalfspace;
 		%feature("autodoc", "Check if the given bounding box is fully outside of the half-space (e.g. should be discarded by clipping plane).
 
-	:param theBox:
-	:type theBox: Graphic3d_BndBox3d
-	:rtype: bool
+Parameters
+----------
+theBox: Graphic3d_BndBox3d
+
+Returns
+-------
+bool
 ") IsBoxFullOutHalfspace;
 		bool IsBoxFullOutHalfspace(const Graphic3d_BndBox3d & theBox);
 
@@ -4782,7 +5822,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") IsCapping;
 		%feature("autodoc", "Check state of capping surface rendering. returns true (turned on) or false depending on the state.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsCapping;
 		Standard_Boolean IsCapping();
 
@@ -4790,7 +5832,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") IsChain;
 		%feature("autodoc", "Return true if this item defines a conjunction (logical and) between a set of planes. graphic3d_clipplane item defines either a clipping halfspace (single clipping plane) or a clipping volume defined by a logical and (conjunction) operation between a set of planes defined as a chain (so that the volume cuts a space only in case if check fails for all planes in the chain). //! note that graphic3d_clipplane item cannot: - define a chain with logical or (disjunction) operation; this should be done through graphic3d_sequenceofhclipplane. - define nested chains. - disable chain items; only entire chain can be disabled (by disabled a head of chain). //! the head of a chain defines all visual properties of the chain, so that graphic3d_clipplane of next items in a chain merely defines only geometrical definition of the plane.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsChain;
 		Standard_Boolean IsChain();
 
@@ -4798,7 +5842,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") IsHatchOn;
 		%feature("autodoc", "Returns true if hatching mask is turned on.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsHatchOn;
 		Standard_Boolean IsHatchOn();
 
@@ -4806,7 +5852,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") IsOn;
 		%feature("autodoc", "Check that the clipping plane is turned on. returns boolean flag indicating whether the plane is in on or off state.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsOn;
 		Standard_Boolean IsOn();
 
@@ -4814,9 +5862,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") IsPointOutHalfspace;
 		%feature("autodoc", "Check if the given point is outside of the half-space (e.g. should be discarded by clipping plane).
 
-	:param thePoint:
-	:type thePoint: Graphic3d_Vec4d
-	:rtype: bool
+Parameters
+----------
+thePoint: Graphic3d_Vec4d
+
+Returns
+-------
+bool
 ") IsPointOutHalfspace;
 		bool IsPointOutHalfspace(const Graphic3d_Vec4d & thePoint);
 
@@ -4824,7 +5876,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") MCountAspect;
 		%feature("autodoc", "Returns modification counter for aspect.
 
-	:rtype: unsigned int
+Returns
+-------
+unsigned int
 ") MCountAspect;
 		unsigned int MCountAspect();
 
@@ -4832,7 +5886,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") MCountEquation;
 		%feature("autodoc", "Returns modification counter for equation.
 
-	:rtype: unsigned int
+Returns
+-------
+unsigned int
 ") MCountEquation;
 		unsigned int MCountEquation();
 
@@ -4840,7 +5896,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") NbChainNextPlanes;
 		%feature("autodoc", "Return the number of chains in forward direction (including this item, so it is always >= 1). for a head of chain - returns the length of entire chain.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbChainNextPlanes;
 		Standard_Integer NbChainNextPlanes();
 
@@ -4848,9 +5906,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ProbeBox;
 		%feature("autodoc", "Check if the given bounding box is fully outside / fully inside.
 
-	:param theBox:
-	:type theBox: Graphic3d_BndBox3d
-	:rtype: Graphic3d_ClipState
+Parameters
+----------
+theBox: Graphic3d_BndBox3d
+
+Returns
+-------
+Graphic3d_ClipState
 ") ProbeBox;
 		Graphic3d_ClipState ProbeBox(const Graphic3d_BndBox3d & theBox);
 
@@ -4858,9 +5920,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ProbeBoxHalfspace;
 		%feature("autodoc", "Check if the given bounding box is fully outside / fully inside the half-space.
 
-	:param theBox:
-	:type theBox: Graphic3d_BndBox3d
-	:rtype: Graphic3d_ClipState
+Parameters
+----------
+theBox: Graphic3d_BndBox3d
+
+Returns
+-------
+Graphic3d_ClipState
 ") ProbeBoxHalfspace;
 		Graphic3d_ClipState ProbeBoxHalfspace(const Graphic3d_BndBox3d & theBox);
 
@@ -4868,9 +5934,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ProbeBoxMaxPointHalfspace;
 		%feature("autodoc", "Check if the given bounding box is fully outside of the half-space (e.g. should be discarded by clipping plane).
 
-	:param theBox:
-	:type theBox: Graphic3d_BndBox3d
-	:rtype: Graphic3d_ClipState
+Parameters
+----------
+theBox: Graphic3d_BndBox3d
+
+Returns
+-------
+Graphic3d_ClipState
 ") ProbeBoxMaxPointHalfspace;
 		Graphic3d_ClipState ProbeBoxMaxPointHalfspace(const Graphic3d_BndBox3d & theBox);
 
@@ -4878,9 +5948,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ProbeBoxTouch;
 		%feature("autodoc", "Check if the given bounding box is in and touch the clipping planes.
 
-	:param theBox:
-	:type theBox: Graphic3d_BndBox3d
-	:rtype: bool
+Parameters
+----------
+theBox: Graphic3d_BndBox3d
+
+Returns
+-------
+bool
 ") ProbeBoxTouch;
 		Standard_Boolean ProbeBoxTouch(const Graphic3d_BndBox3d & theBox);
 
@@ -4888,9 +5962,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ProbePoint;
 		%feature("autodoc", "Check if the given point is outside / inside / on section.
 
-	:param thePoint:
-	:type thePoint: Graphic3d_Vec4d
-	:rtype: Graphic3d_ClipState
+Parameters
+----------
+thePoint: Graphic3d_Vec4d
+
+Returns
+-------
+Graphic3d_ClipState
 ") ProbePoint;
 		Graphic3d_ClipState ProbePoint(const Graphic3d_Vec4d & thePoint);
 
@@ -4898,9 +5976,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ProbePointHalfspace;
 		%feature("autodoc", "Check if the given point is outside of the half-space (e.g. should be discarded by clipping plane).
 
-	:param thePoint:
-	:type thePoint: Graphic3d_Vec4d
-	:rtype: Graphic3d_ClipState
+Parameters
+----------
+thePoint: Graphic3d_Vec4d
+
+Returns
+-------
+Graphic3d_ClipState
 ") ProbePointHalfspace;
 		Graphic3d_ClipState ProbePointHalfspace(const Graphic3d_Vec4d & thePoint);
 
@@ -4908,7 +5990,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ReversedEquation;
 		%feature("autodoc", "Get 4-component equation vector for clipping plane. returns clipping plane equation vector.
 
-	:rtype: Graphic3d_Vec4d
+Returns
+-------
+Graphic3d_Vec4d
 ") ReversedEquation;
 		const Graphic3d_Vec4d & ReversedEquation();
 
@@ -4916,9 +6000,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetCapping;
 		%feature("autodoc", "Change state of capping surface rendering. @param theison [in] the flag specifying whether the graphic driver should perform rendering of capping surface produced by this plane. the graphic driver produces this surface for convex graphics by means of stencil-test and multi-pass rendering.
 
-	:param theIsOn:
-	:type theIsOn: bool
-	:rtype: None
+Parameters
+----------
+theIsOn: bool
+
+Returns
+-------
+None
 ") SetCapping;
 		void SetCapping(const Standard_Boolean theIsOn);
 
@@ -4926,9 +6014,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetCappingAspect;
 		%feature("autodoc", "Assign capping aspect.
 
-	:param theAspect:
-	:type theAspect: Graphic3d_AspectFillArea3d
-	:rtype: None
+Parameters
+----------
+theAspect: Graphic3d_AspectFillArea3d
+
+Returns
+-------
+None
 ") SetCappingAspect;
 		void SetCappingAspect(const opencascade::handle<Graphic3d_AspectFillArea3d> & theAspect);
 
@@ -4936,9 +6028,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetCappingColor;
 		%feature("autodoc", "Set color for rendering capping surface.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetCappingColor;
 		void SetCappingColor(const Quantity_Color & theColor);
 
@@ -4946,9 +6042,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetCappingCustomHatch;
 		%feature("autodoc", "Set custom hatch style (stipple) and turn hatching on. @param thestyle [in] the hatch pattern.
 
-	:param theStyle:
-	:type theStyle: Graphic3d_HatchStyle
-	:rtype: None
+Parameters
+----------
+theStyle: Graphic3d_HatchStyle
+
+Returns
+-------
+None
 ") SetCappingCustomHatch;
 		void SetCappingCustomHatch(const opencascade::handle<Graphic3d_HatchStyle> & theStyle);
 
@@ -4956,9 +6056,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetCappingHatch;
 		%feature("autodoc", "Set hatch style (stipple) and turn hatching on. @param thestyle [in] the hatch style.
 
-	:param theStyle:
-	:type theStyle: Aspect_HatchStyle
-	:rtype: None
+Parameters
+----------
+theStyle: Aspect_HatchStyle
+
+Returns
+-------
+None
 ") SetCappingHatch;
 		void SetCappingHatch(const Aspect_HatchStyle theStyle);
 
@@ -4966,7 +6070,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetCappingHatchOff;
 		%feature("autodoc", "Turn off hatching.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetCappingHatchOff;
 		void SetCappingHatchOff();
 
@@ -4974,7 +6080,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetCappingHatchOn;
 		%feature("autodoc", "Turn on hatching.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetCappingHatchOn;
 		void SetCappingHatchOn();
 
@@ -4982,9 +6090,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetCappingMaterial;
 		%feature("autodoc", "Set material for rendering capping surface. @param themat [in] the material.
 
-	:param theMat:
-	:type theMat: Graphic3d_MaterialAspect
-	:rtype: None
+Parameters
+----------
+theMat: Graphic3d_MaterialAspect
+
+Returns
+-------
+None
 ") SetCappingMaterial;
 		void SetCappingMaterial(const Graphic3d_MaterialAspect & theMat);
 
@@ -4992,9 +6104,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetCappingTexture;
 		%feature("autodoc", "Set texture to be applied on capping surface. @param thetexture [in] the texture.
 
-	:param theTexture:
-	:type theTexture: Graphic3d_TextureMap
-	:rtype: None
+Parameters
+----------
+theTexture: Graphic3d_TextureMap
+
+Returns
+-------
+None
 ") SetCappingTexture;
 		void SetCappingTexture(const opencascade::handle<Graphic3d_TextureMap> & theTexture);
 
@@ -5002,9 +6118,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetChainNextPlane;
 		%feature("autodoc", "Set the next plane in a chain of planes. this operation also updates relationship between chains (previous/next items), so that the previously set next plane is cut off.
 
-	:param thePlane:
-	:type thePlane: Graphic3d_ClipPlane
-	:rtype: None
+Parameters
+----------
+thePlane: Graphic3d_ClipPlane
+
+Returns
+-------
+None
 ") SetChainNextPlane;
 		void SetChainNextPlane(const opencascade::handle<Graphic3d_ClipPlane> & thePlane);
 
@@ -5012,9 +6132,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetEquation;
 		%feature("autodoc", "Set plane equation by its geometrical definition. the equation is specified in 'world' coordinate system. @param theplane [in] the plane.
 
-	:param thePlane:
-	:type thePlane: gp_Pln
-	:rtype: None
+Parameters
+----------
+thePlane: gp_Pln
+
+Returns
+-------
+None
 ") SetEquation;
 		void SetEquation(const gp_Pln & thePlane);
 
@@ -5022,9 +6146,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetEquation;
 		%feature("autodoc", "Set 4-component equation vector for clipping plane. the equation is specified in 'world' coordinate system. @param theequation [in] the xyzw (or 'abcd') equation vector.
 
-	:param theEquation:
-	:type theEquation: Graphic3d_Vec4d
-	:rtype: None
+Parameters
+----------
+theEquation: Graphic3d_Vec4d
+
+Returns
+-------
+None
 ") SetEquation;
 		void SetEquation(const Graphic3d_Vec4d & theEquation);
 
@@ -5032,9 +6160,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetOn;
 		%feature("autodoc", "Change state of the clipping plane. @param theison [in] the flag specifying whether the graphic driver clipping by this plane should be turned on or off.
 
-	:param theIsOn:
-	:type theIsOn: bool
-	:rtype: None
+Parameters
+----------
+theIsOn: bool
+
+Returns
+-------
+None
 ") SetOn;
 		void SetOn(const Standard_Boolean theIsOn);
 
@@ -5042,9 +6174,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetUseObjectMaterial;
 		%feature("autodoc", "Set flag for controlling the source of capping plane material.
 
-	:param theToUse:
-	:type theToUse: bool
-	:rtype: None
+Parameters
+----------
+theToUse: bool
+
+Returns
+-------
+None
 ") SetUseObjectMaterial;
 		void SetUseObjectMaterial(bool theToUse);
 
@@ -5052,9 +6188,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetUseObjectShader;
 		%feature("autodoc", "Set flag for controlling the source of capping plane shader program.
 
-	:param theToUse:
-	:type theToUse: bool
-	:rtype: None
+Parameters
+----------
+theToUse: bool
+
+Returns
+-------
+None
 ") SetUseObjectShader;
 		void SetUseObjectShader(bool theToUse);
 
@@ -5062,9 +6202,13 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") SetUseObjectTexture;
 		%feature("autodoc", "Set flag for controlling the source of capping plane texture.
 
-	:param theToUse:
-	:type theToUse: bool
-	:rtype: None
+Parameters
+----------
+theToUse: bool
+
+Returns
+-------
+None
 ") SetUseObjectTexture;
 		void SetUseObjectTexture(bool theToUse);
 
@@ -5072,7 +6216,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ToPlane;
 		%feature("autodoc", "Get geometrical definition. returns geometrical definition of clipping plane.
 
-	:rtype: gp_Pln
+Returns
+-------
+gp_Pln
 ") ToPlane;
 		const gp_Pln ToPlane();
 
@@ -5080,7 +6226,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ToUseObjectMaterial;
 		%feature("autodoc", "Flag indicating whether material for capping plane should be taken from object. default value: false (use dedicated capping plane material).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToUseObjectMaterial;
 		bool ToUseObjectMaterial();
 
@@ -5088,7 +6236,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ToUseObjectProperties;
 		%feature("autodoc", "Return true if some fill area aspect properties should be taken from object.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToUseObjectProperties;
 		bool ToUseObjectProperties();
 
@@ -5096,7 +6246,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ToUseObjectShader;
 		%feature("autodoc", "Flag indicating whether shader program for capping plane should be taken from object. default value: false.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToUseObjectShader;
 		bool ToUseObjectShader();
 
@@ -5104,7 +6256,9 @@ typedef Graphic3d_Vec4d Equation;
 		%feature("compactdefaultargs") ToUseObjectTexture;
 		%feature("autodoc", "Flag indicating whether texture for capping plane should be taken from object. default value: false.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToUseObjectTexture;
 		bool ToUseObjectTexture();
 
@@ -5133,7 +6287,9 @@ class Graphic3d_CullingTool {
 		%feature("compactdefaultargs") CacheClipPtsProjections;
 		%feature("autodoc", "Caches view volume's vertices projections along its normals and aabbs dimensions. must be called at the beginning of each bvh tree traverse loop.
 
-	:rtype: None
+Returns
+-------
+None
 ") CacheClipPtsProjections;
 		void CacheClipPtsProjections();
 
@@ -5141,7 +6297,9 @@ class Graphic3d_CullingTool {
 		%feature("compactdefaultargs") Camera;
 		%feature("autodoc", "Return the camera definition.
 
-	:rtype: opencascade::handle<Graphic3d_Camera>
+Returns
+-------
+opencascade::handle<Graphic3d_Camera>
 ") Camera;
 		const opencascade::handle<Graphic3d_Camera> & Camera();
 
@@ -5149,7 +6307,9 @@ class Graphic3d_CullingTool {
 		%feature("compactdefaultargs") Graphic3d_CullingTool;
 		%feature("autodoc", "Creates an empty selector object with parallel projection type by default.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_CullingTool;
 		 Graphic3d_CullingTool();
 
@@ -5157,13 +6317,15 @@ class Graphic3d_CullingTool {
 		%feature("compactdefaultargs") IsCulled;
 		%feature("autodoc", "Checks whether given aabb should be entirely culled or not. @param thectx [in] culling properties @param theminpt [in] maximum point of aabb @param themaxpt [in] minimum point of aabb returns standard_true, if aabb is in viewing area, standard_false otherwise.
 
-	:param theCtx:
-	:type theCtx: CullingContext
-	:param theMinPt:
-	:type theMinPt: Graphic3d_Vec3d
-	:param theMaxPt:
-	:type theMaxPt: Graphic3d_Vec3d
-	:rtype: bool
+Parameters
+----------
+theCtx: CullingContext
+theMinPt: Graphic3d_Vec3d
+theMaxPt: Graphic3d_Vec3d
+
+Returns
+-------
+bool
 ") IsCulled;
 		bool IsCulled(CullingContext theCtx, const Graphic3d_Vec3d & theMinPt, const Graphic3d_Vec3d & theMaxPt);
 
@@ -5171,7 +6333,9 @@ class Graphic3d_CullingTool {
 		%feature("compactdefaultargs") ProjectionMatrix;
 		%feature("autodoc", "Returns current projection matrix.
 
-	:rtype: Graphic3d_Mat4d
+Returns
+-------
+Graphic3d_Mat4d
 ") ProjectionMatrix;
 		const Graphic3d_Mat4d & ProjectionMatrix();
 
@@ -5179,11 +6343,14 @@ class Graphic3d_CullingTool {
 		%feature("compactdefaultargs") SetCullingDistance;
 		%feature("autodoc", "Setup distance culling.
 
-	:param theCtx:
-	:type theCtx: CullingContext
-	:param theDistance:
-	:type theDistance: float
-	:rtype: None
+Parameters
+----------
+theCtx: CullingContext
+theDistance: float
+
+Returns
+-------
+None
 ") SetCullingDistance;
 		void SetCullingDistance(CullingContext theCtx, Standard_Real theDistance);
 
@@ -5191,11 +6358,14 @@ class Graphic3d_CullingTool {
 		%feature("compactdefaultargs") SetCullingSize;
 		%feature("autodoc", "Setup size culling.
 
-	:param theCtx:
-	:type theCtx: CullingContext
-	:param theSize:
-	:type theSize: float
-	:rtype: None
+Parameters
+----------
+theCtx: CullingContext
+theSize: float
+
+Returns
+-------
+None
 ") SetCullingSize;
 		void SetCullingSize(CullingContext theCtx, Standard_Real theSize);
 
@@ -5203,33 +6373,49 @@ class Graphic3d_CullingTool {
 		%feature("compactdefaultargs") SetViewVolume;
 		%feature("autodoc", "Retrieves view volume's planes equations and its vertices from projection and world-view matrices.
 
-	:param theCamera:
-	:type theCamera: Graphic3d_Camera
-	:rtype: None
+Parameters
+----------
+theCamera: Graphic3d_Camera
+
+Returns
+-------
+None
 ") SetViewVolume;
 		void SetViewVolume(const opencascade::handle<Graphic3d_Camera> & theCamera);
 
 		/****************** SetViewportSize ******************/
 		%feature("compactdefaultargs") SetViewportSize;
-		%feature("autodoc", "	:param theViewportWidth:
-	:type theViewportWidth: int
-	:param theViewportHeight:
-	:type theViewportHeight: int
-	:param theResolutionRatio:
-	:type theResolutionRatio: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theViewportWidth: int
+theViewportHeight: int
+theResolutionRatio: float
+
+Returns
+-------
+None
 ") SetViewportSize;
 		void SetViewportSize(Standard_Integer theViewportWidth, Standard_Integer theViewportHeight, Standard_Real theResolutionRatio);
 
 		/****************** ViewportHeight ******************/
 		%feature("compactdefaultargs") ViewportHeight;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") ViewportHeight;
 		Standard_Integer ViewportHeight();
 
 		/****************** ViewportWidth ******************/
 		%feature("compactdefaultargs") ViewportWidth;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") ViewportWidth;
 		Standard_Integer ViewportWidth();
 
@@ -5237,7 +6423,9 @@ class Graphic3d_CullingTool {
 		%feature("compactdefaultargs") WorldViewMatrix;
 		%feature("autodoc", "Returns current world view transformation matrix.
 
-	:rtype: Graphic3d_Mat4d
+Returns
+-------
+Graphic3d_Mat4d
 ") WorldViewMatrix;
 		const Graphic3d_Mat4d & WorldViewMatrix();
 
@@ -5245,7 +6433,9 @@ class Graphic3d_CullingTool {
 		%feature("compactdefaultargs") WorldViewProjState;
 		%feature("autodoc", "Returns state of current world view projection transformation matrices.
 
-	:rtype: Graphic3d_WorldViewProjState
+Returns
+-------
+Graphic3d_WorldViewProjState
 ") WorldViewProjState;
 		const Graphic3d_WorldViewProjState & WorldViewProjState();
 
@@ -5285,7 +6475,9 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") ActiveDataFrame;
 		%feature("autodoc", "Returns currently filling data frame for modification, should be called between ::framestart() and ::frameend() calls.
 
-	:rtype: Graphic3d_FrameStatsDataTmp
+Returns
+-------
+Graphic3d_FrameStatsDataTmp
 ") ActiveDataFrame;
 		Graphic3d_FrameStatsDataTmp & ActiveDataFrame();
 
@@ -5293,9 +6485,13 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") ChangeCounter;
 		%feature("autodoc", "Returns value of specified counter for modification, should be called between ::framestart() and ::frameend() calls.
 
-	:param theCounter:
-	:type theCounter: Graphic3d_FrameStatsCounter
-	:rtype: Standard_Size
+Parameters
+----------
+theCounter: Graphic3d_FrameStatsCounter
+
+Returns
+-------
+Standard_Size
 ") ChangeCounter;
 		Standard_Size & ChangeCounter(Graphic3d_FrameStatsCounter theCounter);
 
@@ -5303,7 +6499,9 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") ChangeDataFrames;
 		%feature("autodoc", "Returns data frames.
 
-	:rtype: NCollection_Array1<Graphic3d_FrameStatsData>
+Returns
+-------
+NCollection_Array1<Graphic3d_FrameStatsData>
 ") ChangeDataFrames;
 		NCollection_Array1<Graphic3d_FrameStatsData> & ChangeDataFrames();
 
@@ -5324,9 +6522,13 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") CounterValue;
 		%feature("autodoc", "Returns value of specified counter, cached between stats updates. should not be called between ::framestart() and ::frameend() calls.
 
-	:param theCounter:
-	:type theCounter: Graphic3d_FrameStatsCounter
-	:rtype: Standard_Size
+Parameters
+----------
+theCounter: Graphic3d_FrameStatsCounter
+
+Returns
+-------
+Standard_Size
 ") CounterValue;
 		Standard_Size CounterValue(Graphic3d_FrameStatsCounter theCounter);
 
@@ -5334,7 +6536,9 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") DataFrames;
 		%feature("autodoc", "Returns data frames.
 
-	:rtype: NCollection_Array1<Graphic3d_FrameStatsData>
+Returns
+-------
+NCollection_Array1<Graphic3d_FrameStatsData>
 ") DataFrames;
 		const NCollection_Array1<Graphic3d_FrameStatsData> & DataFrames();
 
@@ -5342,9 +6546,13 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") FormatStats;
 		%feature("autodoc", "Returns formatted string.
 
-	:param theFlags:
-	:type theFlags: Graphic3d_RenderingParams::PerfCounters
-	:rtype: TCollection_AsciiString
+Parameters
+----------
+theFlags: Graphic3d_RenderingParams::PerfCounters
+
+Returns
+-------
+TCollection_AsciiString
 ") FormatStats;
 		virtual TCollection_AsciiString FormatStats(Graphic3d_RenderingParams::PerfCounters theFlags);
 
@@ -5352,11 +6560,14 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") FormatStats;
 		%feature("autodoc", "Fill in the dictionary with formatted statistic info.
 
-	:param theDict:
-	:type theDict: TColStd_IndexedDataMapOfStringString
-	:param theFlags:
-	:type theFlags: Graphic3d_RenderingParams::PerfCounters
-	:rtype: None
+Parameters
+----------
+theDict: TColStd_IndexedDataMapOfStringString
+theFlags: Graphic3d_RenderingParams::PerfCounters
+
+Returns
+-------
+None
 ") FormatStats;
 		virtual void FormatStats(TColStd_IndexedDataMapOfStringString & theDict, Graphic3d_RenderingParams::PerfCounters theFlags);
 
@@ -5364,7 +6575,9 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") FrameDuration;
 		%feature("autodoc", "Returns duration of the last frame in seconds.
 
-	:rtype: float
+Returns
+-------
+float
 ") FrameDuration;
 		Standard_Real FrameDuration();
 
@@ -5372,11 +6585,14 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") FrameEnd;
 		%feature("autodoc", "Frame redraw finished.
 
-	:param theView:
-	:type theView: Graphic3d_CView
-	:param theIsImmediateOnly:
-	:type theIsImmediateOnly: bool
-	:rtype: None
+Parameters
+----------
+theView: Graphic3d_CView
+theIsImmediateOnly: bool
+
+Returns
+-------
+None
 ") FrameEnd;
 		virtual void FrameEnd(const opencascade::handle<Graphic3d_CView> & theView, bool theIsImmediateOnly);
 
@@ -5384,7 +6600,9 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") FrameRate;
 		%feature("autodoc", "Returns fps (frames per seconds, elapsed time). this number indicates an actual frame rate averaged for several frames within updateinterval() duration, basing on a real elapsed time between updates.
 
-	:rtype: float
+Returns
+-------
+float
 ") FrameRate;
 		Standard_Real FrameRate();
 
@@ -5392,7 +6610,9 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") FrameRateCpu;
 		%feature("autodoc", "Returns cpu fps (frames per seconds, cpu time). this number indicates a predicted frame rate, basing on cpu elapsed time between updates and not real elapsed time (which might include periods of cpu inactivity). number is expected to be greater then actual frame rate returned by framerate(). values significantly greater actual frame rate indicate that rendering is limited by gpu performance (cpu is stalled in-between), while values around actual frame rate indicate rendering being limited by cpu performance (gpu is stalled in-between).
 
-	:rtype: float
+Returns
+-------
+float
 ") FrameRateCpu;
 		Standard_Real FrameRateCpu();
 
@@ -5400,11 +6620,14 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") FrameStart;
 		%feature("autodoc", "Frame redraw started.
 
-	:param theView:
-	:type theView: Graphic3d_CView
-	:param theIsImmediateOnly:
-	:type theIsImmediateOnly: bool
-	:rtype: None
+Parameters
+----------
+theView: Graphic3d_CView
+theIsImmediateOnly: bool
+
+Returns
+-------
+None
 ") FrameStart;
 		virtual void FrameStart(const opencascade::handle<Graphic3d_CView> & theView, bool theIsImmediateOnly);
 
@@ -5412,7 +6635,9 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") HasCulledLayers;
 		%feature("autodoc", "Returns true if some layers have been culled.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasCulledLayers;
 		Standard_Boolean HasCulledLayers();
 
@@ -5420,7 +6645,9 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") HasCulledStructs;
 		%feature("autodoc", "Returns true if some structures have been culled.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasCulledStructs;
 		Standard_Boolean HasCulledStructs();
 
@@ -5428,7 +6655,9 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") IsLongLineFormat;
 		%feature("autodoc", "Prefer longer lines over more greater of lines.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsLongLineFormat;
 		Standard_Boolean IsLongLineFormat();
 
@@ -5436,7 +6665,9 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") LastDataFrame;
 		%feature("autodoc", "Returns last data frame, cached between stats updates. should not be called between ::framestart() and ::frameend() calls.
 
-	:rtype: Graphic3d_FrameStatsData
+Returns
+-------
+Graphic3d_FrameStatsData
 ") LastDataFrame;
 		const Graphic3d_FrameStatsData & LastDataFrame();
 
@@ -5444,7 +6675,9 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") LastDataFrameIndex;
 		%feature("autodoc", "Returns last data frame index.
 
-	:rtype: int
+Returns
+-------
+int
 ") LastDataFrameIndex;
 		Standard_Integer LastDataFrameIndex();
 
@@ -5452,9 +6685,13 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") SetLongLineFormat;
 		%feature("autodoc", "Set if format should prefer longer lines over greater number of lines.
 
-	:param theValue:
-	:type theValue: bool
-	:rtype: None
+Parameters
+----------
+theValue: bool
+
+Returns
+-------
+None
 ") SetLongLineFormat;
 		void SetLongLineFormat(Standard_Boolean theValue);
 
@@ -5462,9 +6699,13 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") SetUpdateInterval;
 		%feature("autodoc", "Sets interval in seconds for updating values.
 
-	:param theInterval:
-	:type theInterval: float
-	:rtype: None
+Parameters
+----------
+theInterval: float
+
+Returns
+-------
+None
 ") SetUpdateInterval;
 		void SetUpdateInterval(Standard_Real theInterval);
 
@@ -5472,9 +6713,13 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") TimerValue;
 		%feature("autodoc", "Returns value of specified timer for modification, should be called between ::framestart() and ::frameend() calls. should not be called between ::framestart() and ::frameend() calls.
 
-	:param theTimer:
-	:type theTimer: Graphic3d_FrameStatsTimer
-	:rtype: float
+Parameters
+----------
+theTimer: Graphic3d_FrameStatsTimer
+
+Returns
+-------
+float
 ") TimerValue;
 		Standard_Real TimerValue(Graphic3d_FrameStatsTimer theTimer);
 
@@ -5482,7 +6727,9 @@ class Graphic3d_FrameStats : public Standard_Transient {
 		%feature("compactdefaultargs") UpdateInterval;
 		%feature("autodoc", "Returns interval in seconds for updating meters across several frames; 1 second by default.
 
-	:rtype: float
+Returns
+-------
+float
 ") UpdateInterval;
 		Standard_Real UpdateInterval();
 
@@ -5506,9 +6753,13 @@ class Graphic3d_FrameStatsData {
 		%feature("compactdefaultargs") CounterValue;
 		%feature("autodoc", "Get counter value.
 
-	:param theIndex:
-	:type theIndex: Graphic3d_FrameStatsCounter
-	:rtype: Standard_Size
+Parameters
+----------
+theIndex: Graphic3d_FrameStatsCounter
+
+Returns
+-------
+Standard_Size
 ") CounterValue;
 		Standard_Size CounterValue(Graphic3d_FrameStatsCounter theIndex);
 
@@ -5516,9 +6767,13 @@ class Graphic3d_FrameStatsData {
 		%feature("compactdefaultargs") FillMax;
 		%feature("autodoc", "Fill with maximum values.
 
-	:param theOther:
-	:type theOther: Graphic3d_FrameStatsData
-	:rtype: None
+Parameters
+----------
+theOther: Graphic3d_FrameStatsData
+
+Returns
+-------
+None
 ") FillMax;
 		void FillMax(const Graphic3d_FrameStatsData & theOther);
 
@@ -5526,7 +6781,9 @@ class Graphic3d_FrameStatsData {
 		%feature("compactdefaultargs") FrameRate;
 		%feature("autodoc", "Returns fps (frames per seconds, elapsed time). this number indicates an actual frame rate averaged for several frames within updateinterval() duration, basing on a real elapsed time between updates.
 
-	:rtype: float
+Returns
+-------
+float
 ") FrameRate;
 		Standard_Real FrameRate();
 
@@ -5534,7 +6791,9 @@ class Graphic3d_FrameStatsData {
 		%feature("compactdefaultargs") FrameRateCpu;
 		%feature("autodoc", "Returns cpu fps (frames per seconds, cpu time). this number indicates a predicted frame rate, basing on cpu elapsed time between updates and not real elapsed time (which might include periods of cpu inactivity). number is expected to be greater then actual frame rate returned by framerate(). values significantly greater actual frame rate indicate that rendering is limited by gpu performance (cpu is stalled in-between), while values around actual frame rate indicate rendering being limited by cpu performance (gpu is stalled in-between).
 
-	:rtype: float
+Returns
+-------
+float
 ") FrameRateCpu;
 		Standard_Real FrameRateCpu();
 
@@ -5542,7 +6801,9 @@ class Graphic3d_FrameStatsData {
 		%feature("compactdefaultargs") Graphic3d_FrameStatsData;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_FrameStatsData;
 		 Graphic3d_FrameStatsData();
 
@@ -5550,7 +6811,9 @@ class Graphic3d_FrameStatsData {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Reset data.
 
-	:rtype: None
+Returns
+-------
+None
 ") Reset;
 		void Reset();
 
@@ -5558,9 +6821,13 @@ class Graphic3d_FrameStatsData {
 		%feature("compactdefaultargs") TimerValue;
 		%feature("autodoc", "Get timer value.
 
-	:param theIndex:
-	:type theIndex: Graphic3d_FrameStatsTimer
-	:rtype: float
+Parameters
+----------
+theIndex: Graphic3d_FrameStatsTimer
+
+Returns
+-------
+float
 ") TimerValue;
 		Standard_Real TimerValue(Graphic3d_FrameStatsTimer theIndex);
 
@@ -5582,11 +6849,14 @@ class Graphic3d_Fresnel {
 		%feature("compactdefaultargs") CreateConductor;
 		%feature("autodoc", "Creates fresnel factor for physical-based conductor model.
 
-	:param theRefractionIndex:
-	:type theRefractionIndex: Standard_ShortReal
-	:param theAbsorptionIndex:
-	:type theAbsorptionIndex: Standard_ShortReal
-	:rtype: Graphic3d_Fresnel
+Parameters
+----------
+theRefractionIndex: Standard_ShortReal
+theAbsorptionIndex: Standard_ShortReal
+
+Returns
+-------
+Graphic3d_Fresnel
 ") CreateConductor;
 		static Graphic3d_Fresnel CreateConductor(Standard_ShortReal theRefractionIndex, Standard_ShortReal theAbsorptionIndex);
 
@@ -5594,11 +6864,14 @@ class Graphic3d_Fresnel {
 		%feature("compactdefaultargs") CreateConductor;
 		%feature("autodoc", "Creates fresnel factor for physical-based conductor model (spectral version).
 
-	:param theRefractionIndex:
-	:type theRefractionIndex: Graphic3d_Vec3
-	:param theAbsorptionIndex:
-	:type theAbsorptionIndex: Graphic3d_Vec3
-	:rtype: Graphic3d_Fresnel
+Parameters
+----------
+theRefractionIndex: Graphic3d_Vec3
+theAbsorptionIndex: Graphic3d_Vec3
+
+Returns
+-------
+Graphic3d_Fresnel
 ") CreateConductor;
 		static Graphic3d_Fresnel CreateConductor(const Graphic3d_Vec3 & theRefractionIndex, const Graphic3d_Vec3 & theAbsorptionIndex);
 
@@ -5606,9 +6879,13 @@ class Graphic3d_Fresnel {
 		%feature("compactdefaultargs") CreateConstant;
 		%feature("autodoc", "Creates fresnel factor for constant reflection.
 
-	:param theReflection:
-	:type theReflection: Standard_ShortReal
-	:rtype: Graphic3d_Fresnel
+Parameters
+----------
+theReflection: Standard_ShortReal
+
+Returns
+-------
+Graphic3d_Fresnel
 ") CreateConstant;
 		static Graphic3d_Fresnel CreateConstant(const Standard_ShortReal theReflection);
 
@@ -5616,9 +6893,13 @@ class Graphic3d_Fresnel {
 		%feature("compactdefaultargs") CreateDielectric;
 		%feature("autodoc", "Creates fresnel factor for physical-based dielectric model.
 
-	:param theRefractionIndex:
-	:type theRefractionIndex: Standard_ShortReal
-	:rtype: Graphic3d_Fresnel
+Parameters
+----------
+theRefractionIndex: Standard_ShortReal
+
+Returns
+-------
+Graphic3d_Fresnel
 ") CreateDielectric;
 		static Graphic3d_Fresnel CreateDielectric(Standard_ShortReal theRefractionIndex);
 
@@ -5626,9 +6907,13 @@ class Graphic3d_Fresnel {
 		%feature("compactdefaultargs") CreateSchlick;
 		%feature("autodoc", "Creates schlick's approximation of fresnel factor.
 
-	:param theSpecularColor:
-	:type theSpecularColor: Graphic3d_Vec3
-	:rtype: Graphic3d_Fresnel
+Parameters
+----------
+theSpecularColor: Graphic3d_Vec3
+
+Returns
+-------
+Graphic3d_Fresnel
 ") CreateSchlick;
 		static Graphic3d_Fresnel CreateSchlick(const Graphic3d_Vec3 & theSpecularColor);
 
@@ -5636,7 +6921,9 @@ class Graphic3d_Fresnel {
 		%feature("compactdefaultargs") FresnelType;
 		%feature("autodoc", "Returns type of fresnel.
 
-	:rtype: Graphic3d_FresnelModel
+Returns
+-------
+Graphic3d_FresnelModel
 ") FresnelType;
 		Graphic3d_FresnelModel FresnelType();
 
@@ -5644,7 +6931,9 @@ class Graphic3d_Fresnel {
 		%feature("compactdefaultargs") Graphic3d_Fresnel;
 		%feature("autodoc", "Creates uninitialized fresnel factor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_Fresnel;
 		 Graphic3d_Fresnel();
 
@@ -5652,7 +6941,9 @@ class Graphic3d_Fresnel {
 		%feature("compactdefaultargs") Serialize;
 		%feature("autodoc", "Returns serialized representation of fresnel factor.
 
-	:rtype: Graphic3d_Vec4
+Returns
+-------
+Graphic3d_Vec4
 ") Serialize;
 		Graphic3d_Vec4 Serialize();
 
@@ -5687,41 +6978,69 @@ class Graphic3d_GraduatedTrihedron {
 		Graphic3d_CView * PtrView;
 		/****************** ArrowsLength ******************/
 		%feature("compactdefaultargs") ArrowsLength;
-		%feature("autodoc", "	:rtype: Standard_ShortReal
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_ShortReal
 ") ArrowsLength;
 		Standard_ShortReal ArrowsLength();
 
 		/****************** AxisAspect ******************/
 		%feature("compactdefaultargs") AxisAspect;
-		%feature("autodoc", "	:param theIndex:
-	:type theIndex: int
-	:rtype: Graphic3d_AxisAspect
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+Graphic3d_AxisAspect
 ") AxisAspect;
 		const Graphic3d_AxisAspect & AxisAspect(const Standard_Integer theIndex);
 
 		/****************** ChangeAxisAspect ******************/
 		%feature("compactdefaultargs") ChangeAxisAspect;
-		%feature("autodoc", "	:param theIndex:
-	:type theIndex: int
-	:rtype: Graphic3d_AxisAspect
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+Graphic3d_AxisAspect
 ") ChangeAxisAspect;
 		Graphic3d_AxisAspect & ChangeAxisAspect(const Standard_Integer theIndex);
 
 		/****************** ChangeXAxisAspect ******************/
 		%feature("compactdefaultargs") ChangeXAxisAspect;
-		%feature("autodoc", "	:rtype: Graphic3d_AxisAspect
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Graphic3d_AxisAspect
 ") ChangeXAxisAspect;
 		Graphic3d_AxisAspect & ChangeXAxisAspect();
 
 		/****************** ChangeYAxisAspect ******************/
 		%feature("compactdefaultargs") ChangeYAxisAspect;
-		%feature("autodoc", "	:rtype: Graphic3d_AxisAspect
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Graphic3d_AxisAspect
 ") ChangeYAxisAspect;
 		Graphic3d_AxisAspect & ChangeYAxisAspect();
 
 		/****************** ChangeZAxisAspect ******************/
 		%feature("compactdefaultargs") ChangeZAxisAspect;
-		%feature("autodoc", "	:rtype: Graphic3d_AxisAspect
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Graphic3d_AxisAspect
 ") ChangeZAxisAspect;
 		Graphic3d_AxisAspect & ChangeZAxisAspect();
 
@@ -5729,179 +7048,292 @@ class Graphic3d_GraduatedTrihedron {
 		%feature("compactdefaultargs") Graphic3d_GraduatedTrihedron;
 		%feature("autodoc", "Default constructor constructs the default graduated trihedron with grid, x, y, z axes, and tickmarks.
 
-	:param theNamesFont: default value is 'Arial'
-	:type theNamesFont: TCollection_AsciiString
-	:param theNamesStyle: default value is Font_FA_Bold
-	:type theNamesStyle: Font_FontAspect
-	:param theNamesSize: default value is 12
-	:type theNamesSize: int
-	:param theValuesFont: default value is 'Arial'
-	:type theValuesFont: TCollection_AsciiString
-	:param theValuesStyle: default value is Font_FA_Regular
-	:type theValuesStyle: Font_FontAspect
-	:param theValuesSize: default value is 12
-	:type theValuesSize: int
-	:param theArrowsLength: default value is 30.0f
-	:type theArrowsLength: Standard_ShortReal
-	:param theGridColor: default value is Quantity_NOC_WHITE
-	:type theGridColor: Quantity_Color
-	:param theToDrawGrid: default value is Standard_True
-	:type theToDrawGrid: bool
-	:param theToDrawAxes: default value is Standard_True
-	:type theToDrawAxes: bool
-	:rtype: None
+Parameters
+----------
+theNamesFont: TCollection_AsciiString,optional
+	default value is 'Arial'
+theNamesStyle: Font_FontAspect,optional
+	default value is Font_FA_Bold
+theNamesSize: int,optional
+	default value is 12
+theValuesFont: TCollection_AsciiString,optional
+	default value is 'Arial'
+theValuesStyle: Font_FontAspect,optional
+	default value is Font_FA_Regular
+theValuesSize: int,optional
+	default value is 12
+theArrowsLength: Standard_ShortReal,optional
+	default value is 30.0f
+theGridColor: Quantity_Color,optional
+	default value is Quantity_NOC_WHITE
+theToDrawGrid: bool,optional
+	default value is Standard_True
+theToDrawAxes: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Graphic3d_GraduatedTrihedron;
 		 Graphic3d_GraduatedTrihedron(const TCollection_AsciiString & theNamesFont = "Arial", const Font_FontAspect & theNamesStyle = Font_FA_Bold, const Standard_Integer theNamesSize = 12, const TCollection_AsciiString & theValuesFont = "Arial", const Font_FontAspect & theValuesStyle = Font_FA_Regular, const Standard_Integer theValuesSize = 12, const Standard_ShortReal theArrowsLength = 30.0f, const Quantity_Color theGridColor = Quantity_NOC_WHITE, const Standard_Boolean theToDrawGrid = Standard_True, const Standard_Boolean theToDrawAxes = Standard_True);
 
 		/****************** GridColor ******************/
 		%feature("compactdefaultargs") GridColor;
-		%feature("autodoc", "	:rtype: Quantity_Color
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Quantity_Color
 ") GridColor;
 		const Quantity_Color & GridColor();
 
 		/****************** NamesFont ******************/
 		%feature("compactdefaultargs") NamesFont;
-		%feature("autodoc", "	:rtype: TCollection_AsciiString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_AsciiString
 ") NamesFont;
 		const TCollection_AsciiString & NamesFont();
 
 		/****************** NamesFontAspect ******************/
 		%feature("compactdefaultargs") NamesFontAspect;
-		%feature("autodoc", "	:rtype: Font_FontAspect
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Font_FontAspect
 ") NamesFontAspect;
 		Font_FontAspect NamesFontAspect();
 
 		/****************** NamesSize ******************/
 		%feature("compactdefaultargs") NamesSize;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NamesSize;
 		Standard_Integer NamesSize();
 
 		/****************** SetArrowsLength ******************/
 		%feature("compactdefaultargs") SetArrowsLength;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: Standard_ShortReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetArrowsLength;
 		void SetArrowsLength(const Standard_ShortReal theValue);
 
 		/****************** SetDrawAxes ******************/
 		%feature("compactdefaultargs") SetDrawAxes;
-		%feature("autodoc", "	:param theToDraw:
-	:type theToDraw: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theToDraw: bool
+
+Returns
+-------
+None
 ") SetDrawAxes;
 		void SetDrawAxes(const Standard_Boolean theToDraw);
 
 		/****************** SetDrawGrid ******************/
 		%feature("compactdefaultargs") SetDrawGrid;
-		%feature("autodoc", "	:param theToDraw:
-	:type theToDraw: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theToDraw: bool
+
+Returns
+-------
+None
 ") SetDrawGrid;
 		void SetDrawGrid(const Standard_Boolean theToDraw);
 
 		/****************** SetGridColor ******************/
 		%feature("compactdefaultargs") SetGridColor;
-		%feature("autodoc", "	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetGridColor;
 		void SetGridColor(const Quantity_Color & theColor);
 
 		/****************** SetNamesFont ******************/
 		%feature("compactdefaultargs") SetNamesFont;
-		%feature("autodoc", "	:param theFont:
-	:type theFont: TCollection_AsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theFont: TCollection_AsciiString
+
+Returns
+-------
+None
 ") SetNamesFont;
 		void SetNamesFont(const TCollection_AsciiString & theFont);
 
 		/****************** SetNamesFontAspect ******************/
 		%feature("compactdefaultargs") SetNamesFontAspect;
-		%feature("autodoc", "	:param theAspect:
-	:type theAspect: Font_FontAspect
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theAspect: Font_FontAspect
+
+Returns
+-------
+None
 ") SetNamesFontAspect;
 		void SetNamesFontAspect(Font_FontAspect theAspect);
 
 		/****************** SetNamesSize ******************/
 		%feature("compactdefaultargs") SetNamesSize;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: int
+
+Returns
+-------
+None
 ") SetNamesSize;
 		void SetNamesSize(const Standard_Integer theValue);
 
 		/****************** SetValuesFont ******************/
 		%feature("compactdefaultargs") SetValuesFont;
-		%feature("autodoc", "	:param theFont:
-	:type theFont: TCollection_AsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theFont: TCollection_AsciiString
+
+Returns
+-------
+None
 ") SetValuesFont;
 		void SetValuesFont(const TCollection_AsciiString & theFont);
 
 		/****************** SetValuesFontAspect ******************/
 		%feature("compactdefaultargs") SetValuesFontAspect;
-		%feature("autodoc", "	:param theAspect:
-	:type theAspect: Font_FontAspect
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theAspect: Font_FontAspect
+
+Returns
+-------
+None
 ") SetValuesFontAspect;
 		void SetValuesFontAspect(Font_FontAspect theAspect);
 
 		/****************** SetValuesSize ******************/
 		%feature("compactdefaultargs") SetValuesSize;
-		%feature("autodoc", "	:param theValue:
-	:type theValue: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theValue: int
+
+Returns
+-------
+None
 ") SetValuesSize;
 		void SetValuesSize(const Standard_Integer theValue);
 
 		/****************** ToDrawAxes ******************/
 		%feature("compactdefaultargs") ToDrawAxes;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") ToDrawAxes;
 		Standard_Boolean ToDrawAxes();
 
 		/****************** ToDrawGrid ******************/
 		%feature("compactdefaultargs") ToDrawGrid;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") ToDrawGrid;
 		Standard_Boolean ToDrawGrid();
 
 		/****************** ValuesFont ******************/
 		%feature("compactdefaultargs") ValuesFont;
-		%feature("autodoc", "	:rtype: TCollection_AsciiString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_AsciiString
 ") ValuesFont;
 		const TCollection_AsciiString & ValuesFont();
 
 		/****************** ValuesFontAspect ******************/
 		%feature("compactdefaultargs") ValuesFontAspect;
-		%feature("autodoc", "	:rtype: Font_FontAspect
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Font_FontAspect
 ") ValuesFontAspect;
 		Font_FontAspect ValuesFontAspect();
 
 		/****************** ValuesSize ******************/
 		%feature("compactdefaultargs") ValuesSize;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") ValuesSize;
 		Standard_Integer ValuesSize();
 
 		/****************** XAxisAspect ******************/
 		%feature("compactdefaultargs") XAxisAspect;
-		%feature("autodoc", "	:rtype: Graphic3d_AxisAspect
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Graphic3d_AxisAspect
 ") XAxisAspect;
 		const Graphic3d_AxisAspect & XAxisAspect();
 
 		/****************** YAxisAspect ******************/
 		%feature("compactdefaultargs") YAxisAspect;
-		%feature("autodoc", "	:rtype: Graphic3d_AxisAspect
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Graphic3d_AxisAspect
 ") YAxisAspect;
 		const Graphic3d_AxisAspect & YAxisAspect();
 
 		/****************** ZAxisAspect ******************/
 		%feature("compactdefaultargs") ZAxisAspect;
-		%feature("autodoc", "	:rtype: Graphic3d_AxisAspect
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Graphic3d_AxisAspect
 ") ZAxisAspect;
 		const Graphic3d_AxisAspect & ZAxisAspect();
 
@@ -5924,9 +7356,13 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") CreateStructure;
 		%feature("autodoc", "Creates new empty graphic structure.
 
-	:param theManager:
-	:type theManager: Graphic3d_StructureManager
-	:rtype: opencascade::handle<Graphic3d_CStructure>
+Parameters
+----------
+theManager: Graphic3d_StructureManager
+
+Returns
+-------
+opencascade::handle<Graphic3d_CStructure>
 ") CreateStructure;
 		virtual opencascade::handle<Graphic3d_CStructure> CreateStructure(const opencascade::handle<Graphic3d_StructureManager> & theManager);
 
@@ -5934,15 +7370,23 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") CreateView;
 		%feature("autodoc", "Creates new view for this graphic driver.
 
-	:param theMgr:
-	:type theMgr: Graphic3d_StructureManager
-	:rtype: opencascade::handle<Graphic3d_CView>
+Parameters
+----------
+theMgr: Graphic3d_StructureManager
+
+Returns
+-------
+opencascade::handle<Graphic3d_CView>
 ") CreateView;
 		virtual opencascade::handle<Graphic3d_CView> CreateView(const opencascade::handle<Graphic3d_StructureManager> & theMgr);
 
 		/****************** DefaultTextHeight ******************/
 		%feature("compactdefaultargs") DefaultTextHeight;
-		%feature("autodoc", "	:rtype: Standard_ShortReal
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_ShortReal
 ") DefaultTextHeight;
 		virtual Standard_ShortReal DefaultTextHeight();
 
@@ -5950,9 +7394,13 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") EnableVBO;
 		%feature("autodoc", "Enables/disables usage of opengl vertex buffer arrays while drawing primitiev arrays.
 
-	:param status:
-	:type status: bool
-	:rtype: None
+Parameters
+----------
+status: bool
+
+Returns
+-------
+None
 ") EnableVBO;
 		virtual void EnableVBO(const Standard_Boolean status);
 
@@ -5960,7 +7408,9 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") GetDisplayConnection;
 		%feature("autodoc", "Returns handle to display connection.
 
-	:rtype: opencascade::handle<Aspect_DisplayConnection>
+Returns
+-------
+opencascade::handle<Aspect_DisplayConnection>
 ") GetDisplayConnection;
 		const opencascade::handle<Aspect_DisplayConnection> & GetDisplayConnection();
 
@@ -5968,7 +7418,9 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") InquireLightLimit;
 		%feature("autodoc", "Request maximum number of active light sources supported by driver and hardware.
 
-	:rtype: int
+Returns
+-------
+int
 ") InquireLightLimit;
 		Standard_Integer InquireLightLimit();
 
@@ -5976,9 +7428,13 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") InquireLimit;
 		%feature("autodoc", "Request limit of graphic resource of specific type.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfLimit
-	:rtype: int
+Parameters
+----------
+theType: Graphic3d_TypeOfLimit
+
+Returns
+-------
+int
 ") InquireLimit;
 		virtual Standard_Integer InquireLimit(const Graphic3d_TypeOfLimit theType);
 
@@ -5986,7 +7442,9 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") InquirePlaneLimit;
 		%feature("autodoc", "Request maximum number of active clipping planes supported by driver and hardware.
 
-	:rtype: int
+Returns
+-------
+int
 ") InquirePlaneLimit;
 		Standard_Integer InquirePlaneLimit();
 
@@ -5994,7 +7452,9 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") InquireViewLimit;
 		%feature("autodoc", "Request maximum number of views supported by driver.
 
-	:rtype: int
+Returns
+-------
+int
 ") InquireViewLimit;
 		Standard_Integer InquireViewLimit();
 
@@ -6002,13 +7462,15 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") InsertLayerAfter;
 		%feature("autodoc", "Adds a layer to all views. @param thenewlayerid [in] id of new layer, should be > 0 (negative values are reserved for default layers). @param thesettings [in] new layer settings @param thelayerbefore [in] id of layer to append new layer after.
 
-	:param theNewLayerId:
-	:type theNewLayerId: int
-	:param theSettings:
-	:type theSettings: Graphic3d_ZLayerSettings
-	:param theLayerBefore:
-	:type theLayerBefore: int
-	:rtype: None
+Parameters
+----------
+theNewLayerId: int
+theSettings: Graphic3d_ZLayerSettings
+theLayerBefore: int
+
+Returns
+-------
+None
 ") InsertLayerAfter;
 		virtual void InsertLayerAfter(int theNewLayerId, const Graphic3d_ZLayerSettings & theSettings, int theLayerBefore);
 
@@ -6016,13 +7478,15 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") InsertLayerBefore;
 		%feature("autodoc", "Adds a layer to all views. to add a structure to desired layer on display it is necessary to set the layer id for the structure. @param thenewlayerid [in] id of new layer, should be > 0 (negative values are reserved for default layers). @param thesettings [in] new layer settings @param thelayerafter [in] id of layer to append new layer before.
 
-	:param theNewLayerId:
-	:type theNewLayerId: int
-	:param theSettings:
-	:type theSettings: Graphic3d_ZLayerSettings
-	:param theLayerAfter:
-	:type theLayerAfter: int
-	:rtype: None
+Parameters
+----------
+theNewLayerId: int
+theSettings: Graphic3d_ZLayerSettings
+theLayerAfter: int
+
+Returns
+-------
+None
 ") InsertLayerBefore;
 		virtual void InsertLayerBefore(int theNewLayerId, const Graphic3d_ZLayerSettings & theSettings, int theLayerAfter);
 
@@ -6030,11 +7494,14 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") MemoryInfo;
 		%feature("autodoc", "Returns information about gpu memory usage.
 
-	:param theFreeBytes:
-	:type theFreeBytes: Standard_Size
-	:param theInfo:
-	:type theInfo: TCollection_AsciiString
-	:rtype: bool
+Parameters
+----------
+theFreeBytes: Standard_Size
+theInfo: TCollection_AsciiString
+
+Returns
+-------
+bool
 ") MemoryInfo;
 		virtual Standard_Boolean MemoryInfo(Standard_Size & theFreeBytes, TCollection_AsciiString & theInfo);
 
@@ -6042,7 +7509,9 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") NewIdentification;
 		%feature("autodoc", "Returns a new identification number for a new structure.
 
-	:rtype: int
+Returns
+-------
+int
 ") NewIdentification;
 		Standard_Integer NewIdentification();
 
@@ -6050,9 +7519,13 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveIdentification;
 		%feature("autodoc", "Frees the identifier of a structure.
 
-	:param theId:
-	:type theId: int
-	:rtype: None
+Parameters
+----------
+theId: int
+
+Returns
+-------
+None
 ") RemoveIdentification;
 		void RemoveIdentification(const Standard_Integer theId);
 
@@ -6060,9 +7533,13 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveStructure;
 		%feature("autodoc", "Removes structure from graphic driver and releases its resources.
 
-	:param theCStructure:
-	:type theCStructure: Graphic3d_CStructure
-	:rtype: None
+Parameters
+----------
+theCStructure: Graphic3d_CStructure
+
+Returns
+-------
+None
 ") RemoveStructure;
 		virtual void RemoveStructure(opencascade::handle<Graphic3d_CStructure> & theCStructure);
 
@@ -6070,9 +7547,13 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveView;
 		%feature("autodoc", "Removes view from graphic driver and releases its resources.
 
-	:param theView:
-	:type theView: Graphic3d_CView
-	:rtype: None
+Parameters
+----------
+theView: Graphic3d_CView
+
+Returns
+-------
+None
 ") RemoveView;
 		virtual void RemoveView(const opencascade::handle<Graphic3d_CView> & theView);
 
@@ -6080,9 +7561,13 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveZLayer;
 		%feature("autodoc", "Removes z layer. all structures displayed at the moment in layer will be displayed in default layer (the bottom-level z layer). by default, there are always default bottom-level layer that can't be removed. the passed thelayerid should be not less than 0 (reserved for default layers that can not be removed).
 
-	:param theLayerId:
-	:type theLayerId: int
-	:rtype: None
+Parameters
+----------
+theLayerId: int
+
+Returns
+-------
+None
 ") RemoveZLayer;
 		virtual void RemoveZLayer(int theLayerId);
 
@@ -6090,11 +7575,14 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") SetZLayerSettings;
 		%feature("autodoc", "Sets the settings for a single z layer.
 
-	:param theLayerId:
-	:type theLayerId: int
-	:param theSettings:
-	:type theSettings: Graphic3d_ZLayerSettings
-	:rtype: None
+Parameters
+----------
+theLayerId: int
+theSettings: Graphic3d_ZLayerSettings
+
+Returns
+-------
+None
 ") SetZLayerSettings;
 		virtual void SetZLayerSettings(int theLayerId, const Graphic3d_ZLayerSettings & theSettings);
 
@@ -6102,19 +7590,18 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") TextSize;
 		%feature("autodoc", "Computes text width.
 
-	:param theView:
-	:type theView: Graphic3d_CView
-	:param theText:
-	:type theText: char *
-	:param theHeight:
-	:type theHeight: Standard_ShortReal
-	:param theWidth:
-	:type theWidth: Standard_ShortReal
-	:param theAscent:
-	:type theAscent: Standard_ShortReal
-	:param theDescent:
-	:type theDescent: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theView: Graphic3d_CView
+theText: char *
+theHeight: Standard_ShortReal
+theWidth: Standard_ShortReal
+theAscent: Standard_ShortReal
+theDescent: Standard_ShortReal
+
+Returns
+-------
+None
 ") TextSize;
 		virtual void TextSize(const opencascade::handle<Graphic3d_CView> & theView, const char * theText, const Standard_ShortReal theHeight, Standard_ShortReal & theWidth, Standard_ShortReal & theAscent, Standard_ShortReal & theDescent);
 
@@ -6122,11 +7609,14 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") ViewExists;
 		%feature("autodoc", "Returns view associated with the window if it is exists and is activated. returns standard_true if the view associated to the window exists.
 
-	:param theWindow:
-	:type theWindow: Aspect_Window
-	:param theView:
-	:type theView: Graphic3d_CView
-	:rtype: bool
+Parameters
+----------
+theWindow: Aspect_Window
+theView: Graphic3d_CView
+
+Returns
+-------
+bool
 ") ViewExists;
 		virtual Standard_Boolean ViewExists(const opencascade::handle<Aspect_Window> & theWindow, opencascade::handle<Graphic3d_CView> & theView);
 
@@ -6134,9 +7624,13 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") ZLayerSettings;
 		%feature("autodoc", "Returns the settings of a single z layer.
 
-	:param theLayerId:
-	:type theLayerId: int
-	:rtype: Graphic3d_ZLayerSettings
+Parameters
+----------
+theLayerId: int
+
+Returns
+-------
+Graphic3d_ZLayerSettings
 ") ZLayerSettings;
 		virtual const Graphic3d_ZLayerSettings & ZLayerSettings(int theLayerId);
 
@@ -6144,9 +7638,13 @@ class Graphic3d_GraphicDriver : public Standard_Transient {
 		%feature("compactdefaultargs") ZLayers;
 		%feature("autodoc", "Returns list of z layers defined for the graphical driver.
 
-	:param theLayerSeq:
-	:type theLayerSeq: TColStd_SequenceOfInteger
-	:rtype: None
+Parameters
+----------
+theLayerSeq: TColStd_SequenceOfInteger
+
+Returns
+-------
+None
 ") ZLayers;
 		virtual void ZLayers(TColStd_SequenceOfInteger & theLayerSeq);
 
@@ -6171,17 +7669,18 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") AddPrimitiveArray;
 		%feature("autodoc", "Adds an array of primitives for display.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfPrimitiveArray
-	:param theIndices:
-	:type theIndices: Graphic3d_IndexBuffer
-	:param theAttribs:
-	:type theAttribs: Graphic3d_Buffer
-	:param theBounds:
-	:type theBounds: Graphic3d_BoundBuffer
-	:param theToEvalMinMax: default value is Standard_True
-	:type theToEvalMinMax: bool
-	:rtype: None
+Parameters
+----------
+theType: Graphic3d_TypeOfPrimitiveArray
+theIndices: Graphic3d_IndexBuffer
+theAttribs: Graphic3d_Buffer
+theBounds: Graphic3d_BoundBuffer
+theToEvalMinMax: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") AddPrimitiveArray;
 		virtual void AddPrimitiveArray(const Graphic3d_TypeOfPrimitiveArray theType, const opencascade::handle<Graphic3d_IndexBuffer> & theIndices, const opencascade::handle<Graphic3d_Buffer> & theAttribs, const opencascade::handle<Graphic3d_BoundBuffer> & theBounds, const Standard_Boolean theToEvalMinMax = Standard_True);
 
@@ -6189,11 +7688,15 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") AddPrimitiveArray;
 		%feature("autodoc", "Adds an array of primitives for display.
 
-	:param thePrim:
-	:type thePrim: Graphic3d_ArrayOfPrimitives
-	:param theToEvalMinMax: default value is Standard_True
-	:type theToEvalMinMax: bool
-	:rtype: None
+Parameters
+----------
+thePrim: Graphic3d_ArrayOfPrimitives
+theToEvalMinMax: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") AddPrimitiveArray;
 		void AddPrimitiveArray(const opencascade::handle<Graphic3d_ArrayOfPrimitives> & thePrim, const Standard_Boolean theToEvalMinMax = Standard_True);
 
@@ -6201,11 +7704,15 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") AddText;
 		%feature("autodoc", "Adds a text for display.
 
-	:param theTextParams:
-	:type theTextParams: Graphic3d_Text
-	:param theToEvalMinMax: default value is Standard_True
-	:type theToEvalMinMax: bool
-	:rtype: None
+Parameters
+----------
+theTextParams: Graphic3d_Text
+theToEvalMinMax: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") AddText;
 		virtual void AddText(const opencascade::handle<Graphic3d_Text> & theTextParams, const Standard_Boolean theToEvalMinMax = Standard_True);
 
@@ -6213,7 +7720,9 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") Aspects;
 		%feature("autodoc", "Return fill area aspect.
 
-	:rtype: opencascade::handle<Graphic3d_Aspects>
+Returns
+-------
+opencascade::handle<Graphic3d_Aspects>
 ") Aspects;
 		virtual opencascade::handle<Graphic3d_Aspects> Aspects();
 
@@ -6221,7 +7730,9 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") BoundingBox;
 		%feature("autodoc", "Returns boundary box of the group <self> without transformation applied,.
 
-	:rtype: Graphic3d_BndBox4f
+Returns
+-------
+Graphic3d_BndBox4f
 ") BoundingBox;
 		const Graphic3d_BndBox4f & BoundingBox();
 
@@ -6229,7 +7740,9 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") ChangeBoundingBox;
 		%feature("autodoc", "Returns non-const boundary box of the group <self> without transformation applied,.
 
-	:rtype: Graphic3d_BndBox4f
+Returns
+-------
+Graphic3d_BndBox4f
 ") ChangeBoundingBox;
 		Graphic3d_BndBox4f & ChangeBoundingBox();
 
@@ -6237,9 +7750,14 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Supress all primitives and attributes of <self>. to clear group without update in graphic3d_structuremanager pass standard_false as <theupdatestructuremgr>. this used on context and viewer destruction, when the pointer to structure manager in graphic3d_structure could be already released (pointers are used here to avoid handle cross-reference);.
 
-	:param theUpdateStructureMgr: default value is Standard_True
-	:type theUpdateStructureMgr: bool
-	:rtype: None
+Parameters
+----------
+theUpdateStructureMgr: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Clear;
 		virtual void Clear(const Standard_Boolean theUpdateStructureMgr = Standard_True);
 
@@ -6247,7 +7765,9 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") ContainsFacet;
 		%feature("autodoc", "Returns true if the group contains polygons, triangles or quadrangles.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ContainsFacet;
 		bool ContainsFacet();
 
@@ -6263,7 +7783,9 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") IsClosed;
 		%feature("autodoc", "Return true if primitive arrays within this graphic group form closed volume (do no contain open shells).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsClosed;
 		bool IsClosed();
 
@@ -6271,7 +7793,9 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") IsDeleted;
 		%feature("autodoc", "Returns standard_true if the group <self> is deleted. <self> is deleted after the call remove (me) or the associated structure is deleted.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDeleted;
 		Standard_Boolean IsDeleted();
 
@@ -6279,7 +7803,9 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") IsEmpty;
 		%feature("autodoc", "Returns standard_true if the group <self> is empty.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
@@ -6287,11 +7813,15 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") Marker;
 		%feature("autodoc", "Creates a primitive array with single marker using addprimitivearray().
 
-	:param thePoint:
-	:type thePoint: Graphic3d_Vertex
-	:param theToEvalMinMax: default value is Standard_True
-	:type theToEvalMinMax: bool
-	:rtype: None
+Parameters
+----------
+thePoint: Graphic3d_Vertex
+theToEvalMinMax: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Marker;
 		void Marker(const Graphic3d_Vertex & thePoint, const Standard_Boolean theToEvalMinMax = Standard_True);
 
@@ -6299,19 +7829,18 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") MinMaxValues;
 		%feature("autodoc", "Returns the coordinates of the boundary box of the group.
 
-	:param theXMin:
-	:type theXMin: float
-	:param theYMin:
-	:type theYMin: float
-	:param theZMin:
-	:type theZMin: float
-	:param theXMax:
-	:type theXMax: float
-	:param theYMax:
-	:type theYMax: float
-	:param theZMax:
-	:type theZMax: float
-	:rtype: None
+Parameters
+----------
+theXMin: float
+theYMin: float
+theZMin: float
+theXMax: float
+theYMax: float
+theZMax: float
+
+Returns
+-------
+None
 ") MinMaxValues;
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -6319,7 +7848,9 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Supress the group <self> in the structure. warning: no more graphic operations in <self> after this call. modifies the current modelling transform persistence (pan, zoom or rotate) get the current modelling transform persistence (pan, zoom or rotate).
 
-	:rtype: None
+Returns
+-------
+None
 ") Remove;
 		void Remove();
 
@@ -6327,9 +7858,13 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") ReplaceAspects;
 		%feature("autodoc", "Replace aspects specified in the replacement map.
 
-	:param theMap:
-	:type theMap: Graphic3d_MapOfAspectsToAspects
-	:rtype: None
+Parameters
+----------
+theMap: Graphic3d_MapOfAspectsToAspects
+
+Returns
+-------
+None
 ") ReplaceAspects;
 		virtual void ReplaceAspects(const Graphic3d_MapOfAspectsToAspects & theMap);
 
@@ -6337,9 +7872,13 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") SetClosed;
 		%feature("autodoc", "Changes property shown that primitive arrays within this group form closed volume (do no contain open shells).
 
-	:param theIsClosed:
-	:type theIsClosed: bool
-	:rtype: None
+Parameters
+----------
+theIsClosed: bool
+
+Returns
+-------
+None
 ") SetClosed;
 		void SetClosed(const bool theIsClosed);
 
@@ -6347,11 +7886,14 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") SetFlippingOptions;
 		%feature("autodoc", "Sets the flipping to theisenabled state.
 
-	:param theIsEnabled:
-	:type theIsEnabled: bool
-	:param theRefPlane:
-	:type theRefPlane: gp_Ax2
-	:rtype: None
+Parameters
+----------
+theIsEnabled: bool
+theRefPlane: gp_Ax2
+
+Returns
+-------
+None
 ") SetFlippingOptions;
 		virtual void SetFlippingOptions(const Standard_Boolean theIsEnabled, const gp_Ax2 & theRefPlane);
 
@@ -6359,19 +7901,18 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") SetMinMaxValues;
 		%feature("autodoc", "Sets the coordinates of the boundary box of the group.
 
-	:param theXMin:
-	:type theXMin: float
-	:param theYMin:
-	:type theYMin: float
-	:param theZMin:
-	:type theZMin: float
-	:param theXMax:
-	:type theXMax: float
-	:param theYMax:
-	:type theYMax: float
-	:param theZMax:
-	:type theZMax: float
-	:rtype: None
+Parameters
+----------
+theXMin: float
+theYMin: float
+theZMin: float
+theXMax: float
+theYMax: float
+theZMax: float
+
+Returns
+-------
+None
 ") SetMinMaxValues;
 		void SetMinMaxValues(const Standard_Real theXMin, const Standard_Real theYMin, const Standard_Real theZMin, const Standard_Real theXMax, const Standard_Real theYMax, const Standard_Real theZMax);
 
@@ -6379,9 +7920,13 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") SetPrimitivesAspect;
 		%feature("autodoc", "Modifies the current context of the group to give another aspect for all the primitives created after this call in the group.
 
-	:param theAspect:
-	:type theAspect: Graphic3d_Aspects
-	:rtype: None
+Parameters
+----------
+theAspect: Graphic3d_Aspects
+
+Returns
+-------
+None
 ") SetPrimitivesAspect;
 		virtual void SetPrimitivesAspect(const opencascade::handle<Graphic3d_Aspects> & theAspect);
 
@@ -6389,9 +7934,13 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") SetStencilTestOptions;
 		%feature("autodoc", "Sets the stencil test to theisenabled state;.
 
-	:param theIsEnabled:
-	:type theIsEnabled: bool
-	:rtype: None
+Parameters
+----------
+theIsEnabled: bool
+
+Returns
+-------
+None
 ") SetStencilTestOptions;
 		virtual void SetStencilTestOptions(const Standard_Boolean theIsEnabled);
 
@@ -6399,7 +7948,9 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") Structure;
 		%feature("autodoc", "Returns the structure containing the group <self>.
 
-	:rtype: opencascade::handle<Graphic3d_Structure>
+Returns
+-------
+opencascade::handle<Graphic3d_Structure>
 ") Structure;
 		opencascade::handle<Graphic3d_Structure> Structure();
 
@@ -6407,7 +7958,9 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") SynchronizeAspects;
 		%feature("autodoc", "Update presentation aspects after their modification.
 
-	:rtype: None
+Returns
+-------
+None
 ") SynchronizeAspects;
 		virtual void SynchronizeAspects();
 
@@ -6415,23 +7968,21 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") Text;
 		%feature("autodoc", "Creates the string <atext> at position <apoint>. the 3d point of attachment is projected. the text is written in the plane of projection. the attributes are given with respect to the plane of projection. aheight : height of text. (relative to the normalized projection coordinates (npc) space). aangle : orientation of the text (with respect to the horizontal).
 
-	:param AText:
-	:type AText: char *
-	:param APoint:
-	:type APoint: Graphic3d_Vertex
-	:param AHeight:
-	:type AHeight: float
-	:param AAngle:
-	:type AAngle: float
-	:param ATp:
-	:type ATp: Graphic3d_TextPath
-	:param AHta:
-	:type AHta: Graphic3d_HorizontalTextAlignment
-	:param AVta:
-	:type AVta: Graphic3d_VerticalTextAlignment
-	:param EvalMinMax: default value is Standard_True
-	:type EvalMinMax: bool
-	:rtype: None
+Parameters
+----------
+AText: char *
+APoint: Graphic3d_Vertex
+AHeight: float
+AAngle: float
+ATp: Graphic3d_TextPath
+AHta: Graphic3d_HorizontalTextAlignment
+AVta: Graphic3d_VerticalTextAlignment
+EvalMinMax: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Text;
 		virtual void Text(const char * AText, const Graphic3d_Vertex & APoint, const Standard_Real AHeight, const Standard_Real AAngle, const Graphic3d_TextPath ATp, const Graphic3d_HorizontalTextAlignment AHta, const Graphic3d_VerticalTextAlignment AVta, const Standard_Boolean EvalMinMax = Standard_True);
 
@@ -6439,15 +7990,17 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") Text;
 		%feature("autodoc", "Creates the string <atext> at position <apoint>. the 3d point of attachment is projected. the text is written in the plane of projection. the attributes are given with respect to the plane of projection. aheight : height of text. (relative to the normalized projection coordinates (npc) space). the other attributes have the following default values: aangle : pi / 2. atp : tp_right ahta : hta_left avta : vta_bottom.
 
-	:param AText:
-	:type AText: char *
-	:param APoint:
-	:type APoint: Graphic3d_Vertex
-	:param AHeight:
-	:type AHeight: float
-	:param EvalMinMax: default value is Standard_True
-	:type EvalMinMax: bool
-	:rtype: None
+Parameters
+----------
+AText: char *
+APoint: Graphic3d_Vertex
+AHeight: float
+EvalMinMax: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Text;
 		void Text(const char * AText, const Graphic3d_Vertex & APoint, const Standard_Real AHeight, const Standard_Boolean EvalMinMax = Standard_True);
 
@@ -6455,23 +8008,21 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") Text;
 		%feature("autodoc", "Creates the string <atext> at position <apoint>. the 3d point of attachment is projected. the text is written in the plane of projection. the attributes are given with respect to the plane of projection. aheight : height of text. (relative to the normalized projection coordinates (npc) space). aangle : orientation of the text (with respect to the horizontal).
 
-	:param AText:
-	:type AText: TCollection_ExtendedString
-	:param APoint:
-	:type APoint: Graphic3d_Vertex
-	:param AHeight:
-	:type AHeight: float
-	:param AAngle:
-	:type AAngle: float
-	:param ATp:
-	:type ATp: Graphic3d_TextPath
-	:param AHta:
-	:type AHta: Graphic3d_HorizontalTextAlignment
-	:param AVta:
-	:type AVta: Graphic3d_VerticalTextAlignment
-	:param EvalMinMax: default value is Standard_True
-	:type EvalMinMax: bool
-	:rtype: None
+Parameters
+----------
+AText: TCollection_ExtendedString
+APoint: Graphic3d_Vertex
+AHeight: float
+AAngle: float
+ATp: Graphic3d_TextPath
+AHta: Graphic3d_HorizontalTextAlignment
+AVta: Graphic3d_VerticalTextAlignment
+EvalMinMax: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Text;
 		void Text(const TCollection_ExtendedString & AText, const Graphic3d_Vertex & APoint, const Standard_Real AHeight, const Standard_Real AAngle, const Graphic3d_TextPath ATp, const Graphic3d_HorizontalTextAlignment AHta, const Graphic3d_VerticalTextAlignment AVta, const Standard_Boolean EvalMinMax = Standard_True);
 
@@ -6479,15 +8030,17 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") Text;
 		%feature("autodoc", "Creates the string <atext> at position <apoint>. the 3d point of attachment is projected. the text is written in the plane of projection. the attributes are given with respect to the plane of projection. aheight : height of text. (relative to the normalized projection coordinates (npc) space). the other attributes have the following default values: aangle : pi / 2. atp : tp_right ahta : hta_left avta : vta_bottom.
 
-	:param AText:
-	:type AText: TCollection_ExtendedString
-	:param APoint:
-	:type APoint: Graphic3d_Vertex
-	:param AHeight:
-	:type AHeight: float
-	:param EvalMinMax: default value is Standard_True
-	:type EvalMinMax: bool
-	:rtype: None
+Parameters
+----------
+AText: TCollection_ExtendedString
+APoint: Graphic3d_Vertex
+AHeight: float
+EvalMinMax: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Text;
 		void Text(const TCollection_ExtendedString & AText, const Graphic3d_Vertex & APoint, const Standard_Real AHeight, const Standard_Boolean EvalMinMax = Standard_True);
 
@@ -6495,25 +8048,23 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") Text;
 		%feature("autodoc", "Creates the string <thetext> at orientation <theorientation> in 3d space.
 
-	:param theTextUtf:
-	:type theTextUtf: char *
-	:param theOrientation:
-	:type theOrientation: gp_Ax2
-	:param theHeight:
-	:type theHeight: float
-	:param theAngle:
-	:type theAngle: float
-	:param theTp:
-	:type theTp: Graphic3d_TextPath
-	:param theHTA:
-	:type theHTA: Graphic3d_HorizontalTextAlignment
-	:param theVTA:
-	:type theVTA: Graphic3d_VerticalTextAlignment
-	:param theToEvalMinMax: default value is Standard_True
-	:type theToEvalMinMax: bool
-	:param theHasOwnAnchor: default value is Standard_True
-	:type theHasOwnAnchor: bool
-	:rtype: None
+Parameters
+----------
+theTextUtf: char *
+theOrientation: gp_Ax2
+theHeight: float
+theAngle: float
+theTp: Graphic3d_TextPath
+theHTA: Graphic3d_HorizontalTextAlignment
+theVTA: Graphic3d_VerticalTextAlignment
+theToEvalMinMax: bool,optional
+	default value is Standard_True
+theHasOwnAnchor: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Text;
 		virtual void Text(const char * theTextUtf, const gp_Ax2 & theOrientation, const Standard_Real theHeight, const Standard_Real theAngle, const Graphic3d_TextPath theTp, const Graphic3d_HorizontalTextAlignment theHTA, const Graphic3d_VerticalTextAlignment theVTA, const Standard_Boolean theToEvalMinMax = Standard_True, const Standard_Boolean theHasOwnAnchor = Standard_True);
 
@@ -6521,25 +8072,23 @@ class Graphic3d_Group : public Standard_Transient {
 		%feature("compactdefaultargs") Text;
 		%feature("autodoc", "Creates the string <thetext> at orientation <theorientation> in 3d space.
 
-	:param theText:
-	:type theText: TCollection_ExtendedString
-	:param theOrientation:
-	:type theOrientation: gp_Ax2
-	:param theHeight:
-	:type theHeight: float
-	:param theAngle:
-	:type theAngle: float
-	:param theTp:
-	:type theTp: Graphic3d_TextPath
-	:param theHTA:
-	:type theHTA: Graphic3d_HorizontalTextAlignment
-	:param theVTA:
-	:type theVTA: Graphic3d_VerticalTextAlignment
-	:param theToEvalMinMax: default value is Standard_True
-	:type theToEvalMinMax: bool
-	:param theHasOwnAnchor: default value is Standard_True
-	:type theHasOwnAnchor: bool
-	:rtype: None
+Parameters
+----------
+theText: TCollection_ExtendedString
+theOrientation: gp_Ax2
+theHeight: float
+theAngle: float
+theTp: Graphic3d_TextPath
+theHTA: Graphic3d_HorizontalTextAlignment
+theVTA: Graphic3d_VerticalTextAlignment
+theToEvalMinMax: bool,optional
+	default value is Standard_True
+theHasOwnAnchor: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Text;
 		virtual void Text(const TCollection_ExtendedString & theText, const gp_Ax2 & theOrientation, const Standard_Real theHeight, const Standard_Real theAngle, const Graphic3d_TextPath theTp, const Graphic3d_HorizontalTextAlignment theHTA, const Graphic3d_VerticalTextAlignment theVTA, const Standard_Boolean theToEvalMinMax = Standard_True, const Standard_Boolean theHasOwnAnchor = Standard_True);
 
@@ -6563,9 +8112,13 @@ class Graphic3d_HatchStyle : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_HatchStyle;
 		%feature("autodoc", "Creates a new custom hatch style with the given pattern and unique style id @warning raises a program error if given pattern image is not a valid 32*32 bitmap.
 
-	:param thePattern:
-	:type thePattern: Image_PixMap
-	:rtype: None
+Parameters
+----------
+thePattern: Image_PixMap
+
+Returns
+-------
+None
 ") Graphic3d_HatchStyle;
 		 Graphic3d_HatchStyle(const opencascade::handle<Image_PixMap> & thePattern);
 
@@ -6573,9 +8126,13 @@ class Graphic3d_HatchStyle : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_HatchStyle;
 		%feature("autodoc", "Creates a new predefined hatch style with the given id in aspect_hatchstyle enum. gpu memory for the pattern will not be allocated.
 
-	:param theType:
-	:type theType: Aspect_HatchStyle
-	:rtype: None
+Parameters
+----------
+theType: Aspect_HatchStyle
+
+Returns
+-------
+None
 ") Graphic3d_HatchStyle;
 		 Graphic3d_HatchStyle(const Aspect_HatchStyle theType);
 
@@ -6583,7 +8140,9 @@ class Graphic3d_HatchStyle : public Standard_Transient {
 		%feature("compactdefaultargs") HatchType;
 		%feature("autodoc", "In case if predefined occt style is used, returns index in aspect_hatchstyle enumeration. if the style is custom, returns unique index of the style.
 
-	:rtype: int
+Returns
+-------
+int
 ") HatchType;
 		Standard_Integer HatchType();
 
@@ -6591,7 +8150,9 @@ class Graphic3d_HatchStyle : public Standard_Transient {
 		%feature("compactdefaultargs") Pattern;
 		%feature("autodoc", "Returns the pattern of custom hatch style.
 
-	:rtype: Standard_Byte *
+Returns
+-------
+Standard_Byte *
 ") Pattern;
 		const Standard_Byte * Pattern();
 
@@ -6614,13 +8175,18 @@ class Graphic3d_Layer : public Standard_Transient {
 	public:
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "	:param theStruct:
-	:type theStruct: Graphic3d_CStructure *
-	:param thePriority:
-	:type thePriority: int
-	:param isForChangePriority: default value is Standard_False
-	:type isForChangePriority: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theStruct: Graphic3d_CStructure *
+thePriority: int
+isForChangePriority: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Add;
 		void Add(const Graphic3d_CStructure * theStruct, Standard_Integer thePriority, Standard_Boolean isForChangePriority = Standard_False);
 
@@ -6628,9 +8194,13 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Append layer of acceptable type (with similar number of priorities or less). returns standard_false if the list can not be accepted.
 
-	:param theOther:
-	:type theOther: Graphic3d_Layer
-	:rtype: bool
+Parameters
+----------
+theOther: Graphic3d_Layer
+
+Returns
+-------
+bool
 ") Append;
 		Standard_Boolean Append(const Graphic3d_Layer & theOther);
 
@@ -6638,7 +8208,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") ArrayOfStructures;
 		%feature("autodoc", "Returns array of structures.
 
-	:rtype: Graphic3d_ArrayOfIndexedMapOfStructure
+Returns
+-------
+Graphic3d_ArrayOfIndexedMapOfStructure
 ") ArrayOfStructures;
 		const Graphic3d_ArrayOfIndexedMapOfStructure & ArrayOfStructures();
 
@@ -6646,17 +8218,17 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") BoundingBox;
 		%feature("autodoc", "Returns layer bounding box. @param theviewid view index to consider view affinity in structure @param thecamera camera definition @param thewindowwidth viewport width (for applying transformation-persistence) @param thewindowheight viewport height (for applying transformation-persistence) @param thetoincludeauxiliary consider also auxiliary presentations (with infinite flag or with trihedron transformation persistence) returns computed bounding box.
 
-	:param theViewId:
-	:type theViewId: int
-	:param theCamera:
-	:type theCamera: Graphic3d_Camera
-	:param theWindowWidth:
-	:type theWindowWidth: int
-	:param theWindowHeight:
-	:type theWindowHeight: int
-	:param theToIncludeAuxiliary:
-	:type theToIncludeAuxiliary: bool
-	:rtype: Bnd_Box
+Parameters
+----------
+theViewId: int
+theCamera: Graphic3d_Camera
+theWindowWidth: int
+theWindowHeight: int
+theToIncludeAuxiliary: bool
+
+Returns
+-------
+Bnd_Box
 ") BoundingBox;
 		Bnd_Box BoundingBox(Standard_Integer theViewId, const opencascade::handle<Graphic3d_Camera> & theCamera, Standard_Integer theWindowWidth, Standard_Integer theWindowHeight, Standard_Boolean theToIncludeAuxiliary);
 
@@ -6664,7 +8236,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") CullableStructuresBVH;
 		%feature("autodoc", "Returns set of graphic3d_cstructures structures for building bvh tree.
 
-	:rtype: Graphic3d_BvhCStructureSet
+Returns
+-------
+Graphic3d_BvhCStructureSet
 ") CullableStructuresBVH;
 		const Graphic3d_BvhCStructureSet & CullableStructuresBVH();
 
@@ -6672,7 +8246,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") CullableTrsfPersStructuresBVH;
 		%feature("autodoc", "Returns set of transform persistent graphic3d_cstructures for building bvh tree.
 
-	:rtype: Graphic3d_BvhCStructureSetTrsfPers
+Returns
+-------
+Graphic3d_BvhCStructureSetTrsfPers
 ") CullableTrsfPersStructuresBVH;
 		const Graphic3d_BvhCStructureSetTrsfPers & CullableTrsfPersStructuresBVH();
 
@@ -6680,7 +8256,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") InvalidateBVHData;
 		%feature("autodoc", "Marks bvh tree for given priority list as dirty and marks primitive set for rebuild.
 
-	:rtype: None
+Returns
+-------
+None
 ") InvalidateBVHData;
 		void InvalidateBVHData();
 
@@ -6688,7 +8266,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") InvalidateBoundingBox;
 		%feature("autodoc", "Marks cached bounding box as obsolete.
 
-	:rtype: None
+Returns
+-------
+None
 ") InvalidateBoundingBox;
 		void InvalidateBoundingBox();
 
@@ -6696,7 +8276,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") IsCulled;
 		%feature("autodoc", "Returns true if layer is empty or has been discarded entirely by culling test.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsCulled;
 		bool IsCulled();
 
@@ -6704,7 +8286,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") IsImmediate;
 		%feature("autodoc", "Return true if layer was marked with immediate flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsImmediate;
 		Standard_Boolean IsImmediate();
 
@@ -6712,7 +8296,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") LayerId;
 		%feature("autodoc", "Return layer id.
 
-	:rtype: Graphic3d_ZLayerId
+Returns
+-------
+Graphic3d_ZLayerId
 ") LayerId;
 		Graphic3d_ZLayerId LayerId();
 
@@ -6720,7 +8306,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") LayerSettings;
 		%feature("autodoc", "Returns settings of the layer object.
 
-	:rtype: Graphic3d_ZLayerSettings
+Returns
+-------
+Graphic3d_ZLayerSettings
 ") LayerSettings;
 		const Graphic3d_ZLayerSettings & LayerSettings();
 
@@ -6728,7 +8316,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") NbOfTransformPersistenceObjects;
 		%feature("autodoc", "Returns number of transform persistence objects.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbOfTransformPersistenceObjects;
 		Standard_Integer NbOfTransformPersistenceObjects();
 
@@ -6736,7 +8326,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") NbPriorities;
 		%feature("autodoc", "Returns the number of available priority levels.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPriorities;
 		Standard_Integer NbPriorities();
 
@@ -6744,7 +8336,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") NbStructures;
 		%feature("autodoc", "Returns the number of structures.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbStructures;
 		Standard_Integer NbStructures();
 
@@ -6752,7 +8346,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") NbStructuresNotCulled;
 		%feature("autodoc", "Number of not culled structures in the layer.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbStructuresNotCulled;
 		Standard_Integer NbStructuresNotCulled();
 
@@ -6760,7 +8356,9 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") NonCullableStructures;
 		%feature("autodoc", "Returns indexed map of always rendered structures.
 
-	:rtype: NCollection_IndexedMap< Graphic3d_CStructure *>
+Returns
+-------
+NCollection_IndexedMap< Graphic3d_CStructure *>
 ") NonCullableStructures;
 		const NCollection_IndexedMap<const Graphic3d_CStructure *> & NonCullableStructures();
 
@@ -6768,13 +8366,16 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Remove structure and returns its priority, if the structure is not found, method returns negative value.
 
-	:param theStruct:
-	:type theStruct: Graphic3d_CStructure *
-	:param thePriority:
-	:type thePriority: int
-	:param isForChangePriority: default value is Standard_False
-	:type isForChangePriority: bool
-	:rtype: bool
+Parameters
+----------
+theStruct: Graphic3d_CStructure *
+thePriority: int
+isForChangePriority: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+bool
 ") Remove;
 		bool Remove(const Graphic3d_CStructure * theStruct, Standard_Integer &OutValue, Standard_Boolean isForChangePriority = Standard_False);
 
@@ -6782,9 +8383,13 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") SetLayerSettings;
 		%feature("autodoc", "Sets settings of the layer object.
 
-	:param theSettings:
-	:type theSettings: Graphic3d_ZLayerSettings
-	:rtype: None
+Parameters
+----------
+theSettings: Graphic3d_ZLayerSettings
+
+Returns
+-------
+None
 ") SetLayerSettings;
 		void SetLayerSettings(const Graphic3d_ZLayerSettings & theSettings);
 
@@ -6792,13 +8397,15 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") UpdateCulling;
 		%feature("autodoc", "Update culling state - should be called before rendering. traverses through bvh tree to determine which structures are in view volume.
 
-	:param theViewId:
-	:type theViewId: int
-	:param theSelector:
-	:type theSelector: Graphic3d_CullingTool
-	:param theFrustumCullingState:
-	:type theFrustumCullingState: Graphic3d_RenderingParams::FrustumCulling
-	:rtype: None
+Parameters
+----------
+theViewId: int
+theSelector: Graphic3d_CullingTool
+theFrustumCullingState: Graphic3d_RenderingParams::FrustumCulling
+
+Returns
+-------
+None
 ") UpdateCulling;
 		void UpdateCulling(Standard_Integer theViewId, const Graphic3d_CullingTool & theSelector, const Graphic3d_RenderingParams::FrustumCulling theFrustumCullingState);
 
@@ -6806,15 +8413,16 @@ class Graphic3d_Layer : public Standard_Transient {
 		%feature("compactdefaultargs") considerZoomPersistenceObjects;
 		%feature("autodoc", "Returns zoom-scale factor.
 
-	:param theViewId:
-	:type theViewId: int
-	:param theCamera:
-	:type theCamera: Graphic3d_Camera
-	:param theWindowWidth:
-	:type theWindowWidth: int
-	:param theWindowHeight:
-	:type theWindowHeight: int
-	:rtype: float
+Parameters
+----------
+theViewId: int
+theCamera: Graphic3d_Camera
+theWindowWidth: int
+theWindowHeight: int
+
+Returns
+-------
+float
 ") considerZoomPersistenceObjects;
 		Standard_Real considerZoomPersistenceObjects(Standard_Integer theViewId, const opencascade::handle<Graphic3d_Camera> & theCamera, Standard_Integer theWindowWidth, Standard_Integer theWindowHeight);
 
@@ -6849,9 +8457,13 @@ enum IterationFilter {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Append new light source.
 
-	:param theLight:
-	:type theLight: Graphic3d_CLight
-	:rtype: bool
+Parameters
+----------
+theLight: Graphic3d_CLight
+
+Returns
+-------
+bool
 ") Add;
 		Standard_Boolean Add(const opencascade::handle<Graphic3d_CLight> & theLight);
 
@@ -6859,7 +8471,9 @@ enum IterationFilter {
 		%feature("compactdefaultargs") AmbientColor;
 		%feature("autodoc", "Returns cumulative ambient color, which is computed as sum of all enabled ambient light sources. values are not clamped (can be greater than 1.0f) and alpha component is fixed to 1.0f. @sa updaterevision().
 
-	:rtype: Graphic3d_Vec4
+Returns
+-------
+Graphic3d_Vec4
 ") AmbientColor;
 		const Graphic3d_Vec4 & AmbientColor();
 
@@ -6867,9 +8481,13 @@ enum IterationFilter {
 		%feature("compactdefaultargs") Contains;
 		%feature("autodoc", "Return true if light source is defined in this set.
 
-	:param theLight:
-	:type theLight: Graphic3d_CLight
-	:rtype: bool
+Parameters
+----------
+theLight: Graphic3d_CLight
+
+Returns
+-------
+bool
 ") Contains;
 		Standard_Boolean Contains(const opencascade::handle<Graphic3d_CLight> & theLight);
 
@@ -6877,7 +8495,9 @@ enum IterationFilter {
 		%feature("compactdefaultargs") Extent;
 		%feature("autodoc", "Return number of light sources.
 
-	:rtype: int
+Returns
+-------
+int
 ") Extent;
 		Standard_Integer Extent();
 
@@ -6885,7 +8505,9 @@ enum IterationFilter {
 		%feature("compactdefaultargs") Graphic3d_LightSet;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_LightSet;
 		 Graphic3d_LightSet();
 
@@ -6893,7 +8515,9 @@ enum IterationFilter {
 		%feature("compactdefaultargs") IsEmpty;
 		%feature("autodoc", "Return true if lights list is empty.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
@@ -6901,7 +8525,9 @@ enum IterationFilter {
 		%feature("compactdefaultargs") KeyEnabledLong;
 		%feature("autodoc", "Returns a string defining a list of enabled light sources as concatenation of letters 'd' (directional), 'p' (point), 's' (spot) depending on the type of light source in the list. example: 'dppp'. @sa updaterevision().
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") KeyEnabledLong;
 		const TCollection_AsciiString & KeyEnabledLong();
 
@@ -6909,7 +8535,9 @@ enum IterationFilter {
 		%feature("compactdefaultargs") KeyEnabledShort;
 		%feature("autodoc", "Returns a string defining a list of enabled light sources as concatenation of letters 'd' (directional), 'p' (point), 's' (spot) depending on the type of light source in the list, specified only once. example: 'dp'. @sa updaterevision().
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") KeyEnabledShort;
 		const TCollection_AsciiString & KeyEnabledShort();
 
@@ -6917,7 +8545,9 @@ enum IterationFilter {
 		%feature("compactdefaultargs") Lower;
 		%feature("autodoc", "Return lower light index.
 
-	:rtype: int
+Returns
+-------
+int
 ") Lower;
 		Standard_Integer Lower();
 
@@ -6925,7 +8555,9 @@ enum IterationFilter {
 		%feature("compactdefaultargs") NbEnabled;
 		%feature("autodoc", "Returns total amount of enabled lights excluding ambient. @sa updaterevision().
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEnabled;
 		Standard_Integer NbEnabled();
 
@@ -6933,9 +8565,13 @@ enum IterationFilter {
 		%feature("compactdefaultargs") NbEnabledLightsOfType;
 		%feature("autodoc", "Returns total amount of enabled lights of specified type. @sa updaterevision().
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfLightSource
-	:rtype: int
+Parameters
+----------
+theType: Graphic3d_TypeOfLightSource
+
+Returns
+-------
+int
 ") NbEnabledLightsOfType;
 		Standard_Integer NbEnabledLightsOfType(Graphic3d_TypeOfLightSource theType);
 
@@ -6943,9 +8579,13 @@ enum IterationFilter {
 		%feature("compactdefaultargs") NbLightsOfType;
 		%feature("autodoc", "Returns total amount of lights of specified type.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfLightSource
-	:rtype: int
+Parameters
+----------
+theType: Graphic3d_TypeOfLightSource
+
+Returns
+-------
+int
 ") NbLightsOfType;
 		Standard_Integer NbLightsOfType(Graphic3d_TypeOfLightSource theType);
 
@@ -6953,9 +8593,13 @@ enum IterationFilter {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Remove light source.
 
-	:param theLight:
-	:type theLight: Graphic3d_CLight
-	:rtype: bool
+Parameters
+----------
+theLight: Graphic3d_CLight
+
+Returns
+-------
+bool
 ") Remove;
 		Standard_Boolean Remove(const opencascade::handle<Graphic3d_CLight> & theLight);
 
@@ -6963,7 +8607,9 @@ enum IterationFilter {
 		%feature("compactdefaultargs") Revision;
 		%feature("autodoc", "Return light sources revision. @sa updaterevision().
 
-	:rtype: Standard_Size
+Returns
+-------
+Standard_Size
 ") Revision;
 		Standard_Size Revision();
 
@@ -6971,7 +8617,9 @@ enum IterationFilter {
 		%feature("compactdefaultargs") UpdateRevision;
 		%feature("autodoc", "Update light sources revision.
 
-	:rtype: Standard_Size
+Returns
+-------
+Standard_Size
 ") UpdateRevision;
 		Standard_Size UpdateRevision();
 
@@ -6979,7 +8627,9 @@ enum IterationFilter {
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Return upper light index.
 
-	:rtype: int
+Returns
+-------
+int
 ") Upper;
 		Standard_Integer Upper();
 
@@ -6987,9 +8637,13 @@ enum IterationFilter {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Return the light source for specified index within range [lower(), upper()].
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: opencascade::handle<Graphic3d_CLight>
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+opencascade::handle<Graphic3d_CLight>
 ") Value;
 		const opencascade::handle<Graphic3d_CLight> & Value(Standard_Integer theIndex);
 
@@ -7013,9 +8667,14 @@ class Graphic3d_MarkerImage : public Standard_Transient {
 		%feature("compactdefaultargs") GetBitMapArray;
 		%feature("autodoc", "@param thealphavalue pixels in the image that have alpha value greater than  or equal to this parameter will be stored in bitmap as '1',  others will be stored as '0' returns marker image as array of bytes. if an instance of the class has been initialized with image, it will be converted to bitmap based on the parameter thealphavalue.
 
-	:param theAlphaValue: default value is 0.5
-	:type theAlphaValue: float
-	:rtype: opencascade::handle<TColStd_HArray1OfByte>
+Parameters
+----------
+theAlphaValue: float,optional
+	default value is 0.5
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfByte>
 ") GetBitMapArray;
 		opencascade::handle<TColStd_HArray1OfByte> GetBitMapArray(const Standard_Real & theAlphaValue = 0.5);
 
@@ -7023,7 +8682,9 @@ class Graphic3d_MarkerImage : public Standard_Transient {
 		%feature("compactdefaultargs") GetImage;
 		%feature("autodoc", "Returns marker image. if an instance of the class has been initialized with a bitmap, it will be converted to image.
 
-	:rtype: opencascade::handle<Image_PixMap>
+Returns
+-------
+opencascade::handle<Image_PixMap>
 ") GetImage;
 		const opencascade::handle<Image_PixMap> & GetImage();
 
@@ -7031,7 +8692,9 @@ class Graphic3d_MarkerImage : public Standard_Transient {
 		%feature("compactdefaultargs") GetImageAlpha;
 		%feature("autodoc", "Returns image alpha as grayscale image. note that if an instance of the class has been initialized with a bitmap or with grayscale image this method will return exactly the same image as getimage().
 
-	:rtype: opencascade::handle<Image_PixMap>
+Returns
+-------
+opencascade::handle<Image_PixMap>
 ") GetImageAlpha;
 		const opencascade::handle<Image_PixMap> & GetImageAlpha();
 
@@ -7039,7 +8702,9 @@ class Graphic3d_MarkerImage : public Standard_Transient {
 		%feature("compactdefaultargs") GetImageAlphaId;
 		%feature("autodoc", "Returns an unique id. this id will be used to manage resource in graphic driver.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") GetImageAlphaId;
 		const TCollection_AsciiString & GetImageAlphaId();
 
@@ -7047,7 +8712,9 @@ class Graphic3d_MarkerImage : public Standard_Transient {
 		%feature("compactdefaultargs") GetImageId;
 		%feature("autodoc", "Returns an unique id. this id will be used to manage resource in graphic driver.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") GetImageId;
 		const TCollection_AsciiString & GetImageId();
 
@@ -7055,11 +8722,14 @@ class Graphic3d_MarkerImage : public Standard_Transient {
 		%feature("compactdefaultargs") GetTextureSize;
 		%feature("autodoc", "Returns texture size.
 
-	:param theWidth:
-	:type theWidth: int
-	:param theHeight:
-	:type theHeight: int
-	:rtype: None
+Parameters
+----------
+theWidth: int
+theHeight: int
+
+Returns
+-------
+None
 ") GetTextureSize;
 		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
 
@@ -7067,9 +8737,13 @@ class Graphic3d_MarkerImage : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_MarkerImage;
 		%feature("autodoc", "@param theimage - source image.
 
-	:param theImage:
-	:type theImage: Image_PixMap
-	:rtype: None
+Parameters
+----------
+theImage: Image_PixMap
+
+Returns
+-------
+None
 ") Graphic3d_MarkerImage;
 		 Graphic3d_MarkerImage(const opencascade::handle<Image_PixMap> & theImage);
 
@@ -7077,13 +8751,15 @@ class Graphic3d_MarkerImage : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_MarkerImage;
 		%feature("autodoc", "Creates marker image from array of bytes (method for compatibility with old markers definition). @param thebitmap - source bitmap stored as array of bytes @param thewidth - number of bits in a row @param theheight - number of bits in a column.
 
-	:param theBitMap:
-	:type theBitMap: TColStd_HArray1OfByte
-	:param theWidth:
-	:type theWidth: int
-	:param theHeight:
-	:type theHeight: int
-	:rtype: None
+Parameters
+----------
+theBitMap: TColStd_HArray1OfByte
+theWidth: int
+theHeight: int
+
+Returns
+-------
+None
 ") Graphic3d_MarkerImage;
 		 Graphic3d_MarkerImage(const opencascade::handle<TColStd_HArray1OfByte> & theBitMap, const Standard_Integer & theWidth, const Standard_Integer & theHeight);
 
@@ -7107,7 +8783,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") Alpha;
 		%feature("autodoc", "Returns the alpha coefficient of the surface (1.0 - transparency); 1.0 means opaque.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Alpha;
 		Standard_ShortReal Alpha();
 
@@ -7115,7 +8793,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") AmbientColor;
 		%feature("autodoc", "Returns the ambient color of the surface.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") AmbientColor;
 		const Quantity_Color & AmbientColor();
 
@@ -7123,7 +8803,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") BSDF;
 		%feature("autodoc", "Returns bsdf (bidirectional scattering distribution function).
 
-	:rtype: Graphic3d_BSDF
+Returns
+-------
+Graphic3d_BSDF
 ") BSDF;
 		const Graphic3d_BSDF & BSDF();
 
@@ -7131,7 +8813,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") Color;
 		%feature("autodoc", "Returns the diffuse color of the surface. warning! this method does not return color for graphic3d_material_aspect material (color is defined by graphic3d_aspects::interiorcolor()).
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") Color;
 		const Quantity_Color & Color();
 
@@ -7139,7 +8823,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") DiffuseColor;
 		%feature("autodoc", "Returns the diffuse color of the surface.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") DiffuseColor;
 		const Quantity_Color & DiffuseColor();
 
@@ -7147,7 +8833,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") EmissiveColor;
 		%feature("autodoc", "Returns the emissive color of the surface.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") EmissiveColor;
 		const Quantity_Color & EmissiveColor();
 
@@ -7155,7 +8843,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") Graphic3d_MaterialAspect;
 		%feature("autodoc", "Creates a material from default values.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_MaterialAspect;
 		 Graphic3d_MaterialAspect();
 
@@ -7163,9 +8853,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") Graphic3d_MaterialAspect;
 		%feature("autodoc", "Creates a generic material.
 
-	:param theName:
-	:type theName: Graphic3d_NameOfMaterial
-	:rtype: None
+Parameters
+----------
+theName: Graphic3d_NameOfMaterial
+
+Returns
+-------
+None
 ") Graphic3d_MaterialAspect;
 		 Graphic3d_MaterialAspect(const Graphic3d_NameOfMaterial theName);
 
@@ -7173,9 +8867,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") IncreaseShine;
 		%feature("autodoc", "Increases or decreases the luminosity. @param thedelta a signed percentage.
 
-	:param theDelta:
-	:type theDelta: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theDelta: Standard_ShortReal
+
+Returns
+-------
+None
 ") IncreaseShine;
 		void IncreaseShine(const Standard_ShortReal theDelta);
 
@@ -7183,9 +8881,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") IsDifferent;
 		%feature("autodoc", "Returns true if this material differs from specified one.
 
-	:param theOther:
-	:type theOther: Graphic3d_MaterialAspect
-	:rtype: bool
+Parameters
+----------
+theOther: Graphic3d_MaterialAspect
+
+Returns
+-------
+bool
 ") IsDifferent;
 		Standard_Boolean IsDifferent(const Graphic3d_MaterialAspect & theOther);
 
@@ -7193,9 +8895,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Returns true if this material is identical to specified one.
 
-	:param theOther:
-	:type theOther: Graphic3d_MaterialAspect
-	:rtype: bool
+Parameters
+----------
+theOther: Graphic3d_MaterialAspect
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const Graphic3d_MaterialAspect & theOther);
 
@@ -7203,11 +8909,14 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") MaterialFromName;
 		%feature("autodoc", "Finds the material for specified name. @param thename [in] name to find @param themat [out] found material returns false if name was unrecognized.
 
-	:param theName:
-	:type theName: char *
-	:param theMat:
-	:type theMat: Graphic3d_NameOfMaterial
-	:rtype: bool
+Parameters
+----------
+theName: char *
+theMat: Graphic3d_NameOfMaterial
+
+Returns
+-------
+bool
 ") MaterialFromName;
 		static Standard_Boolean MaterialFromName(const char * theName, Graphic3d_NameOfMaterial & theMat);
 
@@ -7215,9 +8924,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") MaterialFromName;
 		%feature("autodoc", "Returns the material for specified name or graphic3d_nom_default if name is unknown.
 
-	:param theName:
-	:type theName: char *
-	:rtype: Graphic3d_NameOfMaterial
+Parameters
+----------
+theName: char *
+
+Returns
+-------
+Graphic3d_NameOfMaterial
 ") MaterialFromName;
 		static Graphic3d_NameOfMaterial MaterialFromName(const char * theName);
 
@@ -7225,9 +8938,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") MaterialName;
 		%feature("autodoc", "Returns the name of the predefined material of specified rank within range [1, numberofmaterials()].
 
-	:param theRank:
-	:type theRank: int
-	:rtype: char *
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+char *
 ") MaterialName;
 		static const char * MaterialName(const Standard_Integer theRank);
 
@@ -7235,7 +8952,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") MaterialName;
 		%feature("autodoc", "Returns the given name of this material. this might be:.
 
-	:rtype: char *
+Returns
+-------
+char *
 ") MaterialName;
 		const char * MaterialName();
 
@@ -7243,9 +8962,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") MaterialType;
 		%feature("autodoc", "Returns the type of the predefined material of specified rank within range [1, numberofmaterials()].
 
-	:param theRank:
-	:type theRank: int
-	:rtype: Graphic3d_TypeOfMaterial
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+Graphic3d_TypeOfMaterial
 ") MaterialType;
 		static Graphic3d_TypeOfMaterial MaterialType(const Standard_Integer theRank);
 
@@ -7253,7 +8976,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") MaterialType;
 		%feature("autodoc", "Returns material type.
 
-	:rtype: Graphic3d_TypeOfMaterial
+Returns
+-------
+Graphic3d_TypeOfMaterial
 ") MaterialType;
 		Graphic3d_TypeOfMaterial MaterialType();
 
@@ -7261,9 +8986,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") MaterialType;
 		%feature("autodoc", "Returns true if type of this material is equal to specified type.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfMaterial
-	:rtype: bool
+Parameters
+----------
+theType: Graphic3d_TypeOfMaterial
+
+Returns
+-------
+bool
 ") MaterialType;
 		Standard_Boolean MaterialType(const Graphic3d_TypeOfMaterial theType);
 
@@ -7271,7 +9000,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Returns the material name (within predefined enumeration).
 
-	:rtype: Graphic3d_NameOfMaterial
+Returns
+-------
+Graphic3d_NameOfMaterial
 ") Name;
 		Graphic3d_NameOfMaterial Name();
 
@@ -7279,7 +9010,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") NumberOfMaterials;
 		%feature("autodoc", "Returns the number of predefined textures.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfMaterials;
 		static Standard_Integer NumberOfMaterials();
 
@@ -7287,9 +9020,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") ReflectionMode;
 		%feature("autodoc", "Returns true if the reflection mode is active, false otherwise.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfReflection
-	:rtype: bool
+Parameters
+----------
+theType: Graphic3d_TypeOfReflection
+
+Returns
+-------
+bool
 ") ReflectionMode;
 		Standard_Boolean ReflectionMode(const Graphic3d_TypeOfReflection theType);
 
@@ -7297,7 +9034,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") RefractionIndex;
 		%feature("autodoc", "Returns the refraction index of the material.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") RefractionIndex;
 		Standard_ShortReal RefractionIndex();
 
@@ -7305,7 +9044,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") RequestedName;
 		%feature("autodoc", "Returns the material name within predefined enumeration which has been requested (before modifications).
 
-	:rtype: Graphic3d_NameOfMaterial
+Returns
+-------
+Graphic3d_NameOfMaterial
 ") RequestedName;
 		Graphic3d_NameOfMaterial RequestedName();
 
@@ -7313,7 +9054,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Resets the material with the original values according to the material name but leave the current color values untouched for the material of type aspect.
 
-	:rtype: None
+Returns
+-------
+None
 ") Reset;
 		void Reset();
 
@@ -7321,9 +9064,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetAlpha;
 		%feature("autodoc", "Modifies the alpha coefficient of the surface, where 1.0 is opaque and 0.0 is fully transparent.
 
-	:param theValue:
-	:type theValue: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theValue: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetAlpha;
 		void SetAlpha(Standard_ShortReal theValue);
 
@@ -7331,9 +9078,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetAmbientColor;
 		%feature("autodoc", "Modifies the ambient color of the surface.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetAmbientColor;
 		void SetAmbientColor(const Quantity_Color & theColor);
 
@@ -7341,9 +9092,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetBSDF;
 		%feature("autodoc", "Modifies the bsdf (bidirectional scattering distribution function).
 
-	:param theBSDF:
-	:type theBSDF: Graphic3d_BSDF
-	:rtype: None
+Parameters
+----------
+theBSDF: Graphic3d_BSDF
+
+Returns
+-------
+None
 ") SetBSDF;
 		void SetBSDF(const Graphic3d_BSDF & theBSDF);
 
@@ -7351,9 +9106,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetColor;
 		%feature("autodoc", "Modifies the ambient and diffuse color of the surface. warning! has no effect for graphic3d_material_aspect material (color should be set to graphic3d_aspects::setinteriorcolor()).
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetColor;
 		void SetColor(const Quantity_Color & theColor);
 
@@ -7361,9 +9120,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetDiffuseColor;
 		%feature("autodoc", "Modifies the diffuse color of the surface.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetDiffuseColor;
 		void SetDiffuseColor(const Quantity_Color & theColor);
 
@@ -7371,9 +9134,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetEmissiveColor;
 		%feature("autodoc", "Modifies the emissive color of the surface.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetEmissiveColor;
 		void SetEmissiveColor(const Quantity_Color & theColor);
 
@@ -7381,9 +9148,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetMaterialName;
 		%feature("autodoc", "The current material become a 'userdefined' material. set the name of the 'userdefined' material.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theName: TCollection_AsciiString
+
+Returns
+-------
+None
 ") SetMaterialName;
 		void SetMaterialName(const TCollection_AsciiString & theName);
 
@@ -7391,9 +9162,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetMaterialType;
 		%feature("autodoc", "Set material type.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfMaterial
-	:rtype: None
+Parameters
+----------
+theType: Graphic3d_TypeOfMaterial
+
+Returns
+-------
+None
 ") SetMaterialType;
 		void SetMaterialType(const Graphic3d_TypeOfMaterial theType);
 
@@ -7401,9 +9176,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetReflectionModeOff;
 		%feature("autodoc", "Deactivates the reflective properties of the surface with specified reflection type.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfReflection
-	:rtype: None
+Parameters
+----------
+theType: Graphic3d_TypeOfReflection
+
+Returns
+-------
+None
 ") SetReflectionModeOff;
 		void SetReflectionModeOff(const Graphic3d_TypeOfReflection theType);
 
@@ -7411,9 +9190,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetRefractionIndex;
 		%feature("autodoc", "Modifies the refraction index of the material. warning: raises materialdefinitionerror if given value is a lesser than 1.0.
 
-	:param theValue:
-	:type theValue: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theValue: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetRefractionIndex;
 		void SetRefractionIndex(const Standard_ShortReal theValue);
 
@@ -7421,9 +9204,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetShininess;
 		%feature("autodoc", "Modifies the luminosity of the surface. warning: raises materialdefinitionerror if given value is a negative value or greater than 1.0.
 
-	:param theValue:
-	:type theValue: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theValue: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetShininess;
 		void SetShininess(const Standard_ShortReal theValue);
 
@@ -7431,9 +9218,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetSpecularColor;
 		%feature("autodoc", "Modifies the specular color of the surface.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetSpecularColor;
 		void SetSpecularColor(const Quantity_Color & theColor);
 
@@ -7441,9 +9232,13 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SetTransparency;
 		%feature("autodoc", "Modifies the transparency coefficient of the surface, where 0 is opaque and 1 is fully transparent. transparency is applicable to materials that have at least one of reflection modes (ambient, diffuse, specular or emissive) enabled. see also setreflectionmodeon() and setreflectionmodeoff() methods. //! warning: raises materialdefinitionerror if given value is a negative value or greater than 1.0.
 
-	:param theValue:
-	:type theValue: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theValue: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetTransparency;
 		void SetTransparency(const Standard_ShortReal theValue);
 
@@ -7451,7 +9246,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") Shininess;
 		%feature("autodoc", "Returns the luminosity of the surface.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Shininess;
 		Standard_ShortReal Shininess();
 
@@ -7459,7 +9256,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") SpecularColor;
 		%feature("autodoc", "Returns the specular color of the surface.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") SpecularColor;
 		const Quantity_Color & SpecularColor();
 
@@ -7467,7 +9266,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") StringName;
 		%feature("autodoc", "Returns the given name of this material. this might be: - given name set by method ::setmaterialname() - standard name for a material within enumeration - 'userdefined' for non-standard material without name specified externally.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") StringName;
 		const TCollection_AsciiString & StringName();
 
@@ -7475,7 +9276,9 @@ class Graphic3d_MaterialAspect {
 		%feature("compactdefaultargs") Transparency;
 		%feature("autodoc", "Returns the transparency coefficient of the surface (1.0 - alpha); 0.0 means opaque.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Transparency;
 		Standard_ShortReal Transparency();
 
@@ -7536,7 +9339,9 @@ class Graphic3d_PolygonOffset {
 		%feature("compactdefaultargs") Graphic3d_PolygonOffset;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_PolygonOffset;
 		 Graphic3d_PolygonOffset();
 
@@ -7572,7 +9377,9 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") BasicFillAreaAspect;
 		%feature("autodoc", "Return basic presentation fill area aspect, null by default. when set, might be used instead of color() property.
 
-	:rtype: opencascade::handle<Graphic3d_AspectFillArea3d>
+Returns
+-------
+opencascade::handle<Graphic3d_AspectFillArea3d>
 ") BasicFillAreaAspect;
 		const opencascade::handle<Graphic3d_AspectFillArea3d> & BasicFillAreaAspect();
 
@@ -7580,7 +9387,9 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") Color;
 		%feature("autodoc", "Returns basic presentation color, quantity_noc_white by default.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") Color;
 		const Quantity_Color & Color();
 
@@ -7588,7 +9397,9 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") ColorRGBA;
 		%feature("autodoc", "Returns basic presentation color (including alpha channel).
 
-	:rtype: Quantity_ColorRGBA
+Returns
+-------
+Quantity_ColorRGBA
 ") ColorRGBA;
 		const Quantity_ColorRGBA & ColorRGBA();
 
@@ -7596,7 +9407,9 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") DisplayMode;
 		%feature("autodoc", "Returns display mode, 0 by default. -1 means undefined (main display mode of presentation to be used).
 
-	:rtype: int
+Returns
+-------
+int
 ") DisplayMode;
 		Standard_Integer DisplayMode();
 
@@ -7604,7 +9417,9 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_PresentationAttributes;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_PresentationAttributes;
 		 Graphic3d_PresentationAttributes();
 
@@ -7612,7 +9427,9 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") Method;
 		%feature("autodoc", "Returns highlight method, aspect_tohm_color by default.
 
-	:rtype: Aspect_TypeOfHighlightMethod
+Returns
+-------
+Aspect_TypeOfHighlightMethod
 ") Method;
 		Aspect_TypeOfHighlightMethod Method();
 
@@ -7620,9 +9437,13 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") SetBasicFillAreaAspect;
 		%feature("autodoc", "Sets basic presentation fill area aspect.
 
-	:param theAspect:
-	:type theAspect: Graphic3d_AspectFillArea3d
-	:rtype: None
+Parameters
+----------
+theAspect: Graphic3d_AspectFillArea3d
+
+Returns
+-------
+None
 ") SetBasicFillAreaAspect;
 		virtual void SetBasicFillAreaAspect(const opencascade::handle<Graphic3d_AspectFillArea3d> & theAspect);
 
@@ -7630,9 +9451,13 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") SetColor;
 		%feature("autodoc", "Sets basic presentation color (rgb components, does not modifies transparency).
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetColor;
 		virtual void SetColor(const Quantity_Color & theColor);
 
@@ -7640,9 +9465,13 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") SetDisplayMode;
 		%feature("autodoc", "Sets display mode.
 
-	:param theMode:
-	:type theMode: int
-	:rtype: None
+Parameters
+----------
+theMode: int
+
+Returns
+-------
+None
 ") SetDisplayMode;
 		virtual void SetDisplayMode(const Standard_Integer theMode);
 
@@ -7650,9 +9479,13 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") SetMethod;
 		%feature("autodoc", "Changes highlight method to the given one.
 
-	:param theMethod:
-	:type theMethod: Aspect_TypeOfHighlightMethod
-	:rtype: None
+Parameters
+----------
+theMethod: Aspect_TypeOfHighlightMethod
+
+Returns
+-------
+None
 ") SetMethod;
 		virtual void SetMethod(const Aspect_TypeOfHighlightMethod theMethod);
 
@@ -7660,9 +9493,13 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") SetTransparency;
 		%feature("autodoc", "Sets basic presentation transparency (0 - opaque, 1 - fully transparent).
 
-	:param theTranspCoef:
-	:type theTranspCoef: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theTranspCoef: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetTransparency;
 		virtual void SetTransparency(const Standard_ShortReal theTranspCoef);
 
@@ -7670,9 +9507,13 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") SetZLayer;
 		%feature("autodoc", "Sets presentation zlayer.
 
-	:param theLayer:
-	:type theLayer: int
-	:rtype: None
+Parameters
+----------
+theLayer: int
+
+Returns
+-------
+None
 ") SetZLayer;
 		virtual void SetZLayer(int theLayer);
 
@@ -7680,7 +9521,9 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") Transparency;
 		%feature("autodoc", "Returns basic presentation transparency (0 - opaque, 1 - fully transparent), 0 by default (opaque).
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Transparency;
 		Standard_ShortReal Transparency();
 
@@ -7688,7 +9531,9 @@ class Graphic3d_PresentationAttributes : public Standard_Transient {
 		%feature("compactdefaultargs") ZLayer;
 		%feature("autodoc", "Returns presentation zlayer, graphic3d_zlayerid_default by default. graphic3d_zlayerid_unknown means undefined (a layer of main presentation to be used).
 
-	:rtype: Graphic3d_ZLayerId
+Returns
+-------
+Graphic3d_ZLayerId
 ") ZLayer;
 		Graphic3d_ZLayerId ZLayer();
 
@@ -7796,7 +9641,9 @@ enum FrustumCulling {
 		%feature("compactdefaultargs") Graphic3d_RenderingParams;
 		%feature("autodoc", "Creates default rendering parameters.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_RenderingParams;
 		 Graphic3d_RenderingParams();
 
@@ -7804,7 +9651,9 @@ enum FrustumCulling {
 		%feature("compactdefaultargs") ResolutionRatio;
 		%feature("autodoc", "Returns resolution ratio.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") ResolutionRatio;
 		Standard_ShortReal ResolutionRatio();
 
@@ -7827,9 +9676,13 @@ class Graphic3d_SequenceOfHClipPlane : public Standard_Transient {
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Append a plane. returns true if new item has been added (false if item already existed).
 
-	:param theItem:
-	:type theItem: Graphic3d_ClipPlane
-	:rtype: bool
+Parameters
+----------
+theItem: Graphic3d_ClipPlane
+
+Returns
+-------
+bool
 ") Append;
 		bool Append(const opencascade::handle<Graphic3d_ClipPlane> & theItem);
 
@@ -7837,7 +9690,9 @@ class Graphic3d_SequenceOfHClipPlane : public Standard_Transient {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clear the items out.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -7845,7 +9700,9 @@ class Graphic3d_SequenceOfHClipPlane : public Standard_Transient {
 		%feature("compactdefaultargs") First;
 		%feature("autodoc", "Return the first item in sequence.
 
-	:rtype: opencascade::handle<Graphic3d_ClipPlane>
+Returns
+-------
+opencascade::handle<Graphic3d_ClipPlane>
 ") First;
 		const opencascade::handle<Graphic3d_ClipPlane> & First();
 
@@ -7853,7 +9710,9 @@ class Graphic3d_SequenceOfHClipPlane : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_SequenceOfHClipPlane;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_SequenceOfHClipPlane;
 		 Graphic3d_SequenceOfHClipPlane();
 
@@ -7861,7 +9720,9 @@ class Graphic3d_SequenceOfHClipPlane : public Standard_Transient {
 		%feature("compactdefaultargs") IsEmpty;
 		%feature("autodoc", "Return true if sequence is empty.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEmpty;
 		bool IsEmpty();
 
@@ -7869,9 +9730,13 @@ class Graphic3d_SequenceOfHClipPlane : public Standard_Transient {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Remove a plane. returns true if item has been found and removed.
 
-	:param theItem:
-	:type theItem: Graphic3d_ClipPlane
-	:rtype: bool
+Parameters
+----------
+theItem: Graphic3d_ClipPlane
+
+Returns
+-------
+bool
 ") Remove;
 		bool Remove(const opencascade::handle<Graphic3d_ClipPlane> & theItem);
 
@@ -7879,9 +9744,13 @@ class Graphic3d_SequenceOfHClipPlane : public Standard_Transient {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Remove a plane.
 
-	:param theItem:
-	:type theItem: Iterator
-	:rtype: None
+Parameters
+----------
+theItem: Iterator
+
+Returns
+-------
+None
 ") Remove;
 		void Remove(Iterator theItem);
 
@@ -7889,9 +9758,13 @@ class Graphic3d_SequenceOfHClipPlane : public Standard_Transient {
 		%feature("compactdefaultargs") SetOverrideGlobal;
 		%feature("autodoc", "Setup flag defining if local properties should override global properties.
 
-	:param theToOverride:
-	:type theToOverride: bool
-	:rtype: None
+Parameters
+----------
+theToOverride: bool
+
+Returns
+-------
+None
 ") SetOverrideGlobal;
 		void SetOverrideGlobal(const Standard_Boolean theToOverride);
 
@@ -7899,7 +9772,9 @@ class Graphic3d_SequenceOfHClipPlane : public Standard_Transient {
 		%feature("compactdefaultargs") Size;
 		%feature("autodoc", "Return the number of items in sequence.
 
-	:rtype: int
+Returns
+-------
+int
 ") Size;
 		Standard_Integer Size();
 
@@ -7907,7 +9782,9 @@ class Graphic3d_SequenceOfHClipPlane : public Standard_Transient {
 		%feature("compactdefaultargs") ToOverrideGlobal;
 		%feature("autodoc", "Return true if local properties should override global properties.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToOverrideGlobal;
 		Standard_Boolean ToOverrideGlobal();
 
@@ -7931,11 +9808,14 @@ class Graphic3d_ShaderAttribute : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_ShaderAttribute;
 		%feature("autodoc", "Creates new attribute.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param theLocation:
-	:type theLocation: int
-	:rtype: None
+Parameters
+----------
+theName: TCollection_AsciiString
+theLocation: int
+
+Returns
+-------
+None
 ") Graphic3d_ShaderAttribute;
 		 Graphic3d_ShaderAttribute(const TCollection_AsciiString & theName, const int theLocation);
 
@@ -7943,7 +9823,9 @@ class Graphic3d_ShaderAttribute : public Standard_Transient {
 		%feature("compactdefaultargs") Location;
 		%feature("autodoc", "Returns attribute location to be bound on glsl program linkage stage.
 
-	:rtype: int
+Returns
+-------
+int
 ") Location;
 		int Location();
 
@@ -7951,7 +9833,9 @@ class Graphic3d_ShaderAttribute : public Standard_Transient {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Returns name of shader variable.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") Name;
 		const TCollection_AsciiString & Name();
 
@@ -7976,11 +9860,14 @@ class Graphic3d_ShaderObject : public Standard_Transient {
 		%feature("compactdefaultargs") CreateFromFile;
 		%feature("autodoc", "Creates new shader object from specified file.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfShaderObject
-	:param thePath:
-	:type thePath: TCollection_AsciiString
-	:rtype: opencascade::handle<Graphic3d_ShaderObject>
+Parameters
+----------
+theType: Graphic3d_TypeOfShaderObject
+thePath: TCollection_AsciiString
+
+Returns
+-------
+opencascade::handle<Graphic3d_ShaderObject>
 ") CreateFromFile;
 		static opencascade::handle<Graphic3d_ShaderObject> CreateFromFile(const Graphic3d_TypeOfShaderObject theType, const TCollection_AsciiString & thePath);
 
@@ -7988,11 +9875,14 @@ class Graphic3d_ShaderObject : public Standard_Transient {
 		%feature("compactdefaultargs") CreateFromSource;
 		%feature("autodoc", "Creates new shader object from specified source.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfShaderObject
-	:param theSource:
-	:type theSource: TCollection_AsciiString
-	:rtype: opencascade::handle<Graphic3d_ShaderObject>
+Parameters
+----------
+theType: Graphic3d_TypeOfShaderObject
+theSource: TCollection_AsciiString
+
+Returns
+-------
+opencascade::handle<Graphic3d_ShaderObject>
 ") CreateFromSource;
 		static opencascade::handle<Graphic3d_ShaderObject> CreateFromSource(const Graphic3d_TypeOfShaderObject theType, const TCollection_AsciiString & theSource);
 
@@ -8000,7 +9890,9 @@ class Graphic3d_ShaderObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetId;
 		%feature("autodoc", "Returns unique id used to manage resource in graphic driver.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") GetId;
 		const TCollection_AsciiString & GetId();
 
@@ -8008,7 +9900,9 @@ class Graphic3d_ShaderObject : public Standard_Transient {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Checks if the shader object is valid or not.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		virtual Standard_Boolean IsDone();
 
@@ -8016,7 +9910,9 @@ class Graphic3d_ShaderObject : public Standard_Transient {
 		%feature("compactdefaultargs") Path;
 		%feature("autodoc", "Returns the full path to the shader source.
 
-	:rtype: OSD_Path
+Returns
+-------
+OSD_Path
 ") Path;
 		const OSD_Path & Path();
 
@@ -8024,7 +9920,9 @@ class Graphic3d_ShaderObject : public Standard_Transient {
 		%feature("compactdefaultargs") Source;
 		%feature("autodoc", "Returns the source code of the shader object.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") Source;
 		const TCollection_AsciiString & Source();
 
@@ -8032,7 +9930,9 @@ class Graphic3d_ShaderObject : public Standard_Transient {
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Returns type of the shader object.
 
-	:rtype: Graphic3d_TypeOfShaderObject
+Returns
+-------
+Graphic3d_TypeOfShaderObject
 ") Type;
 		Graphic3d_TypeOfShaderObject Type();
 
@@ -8056,9 +9956,13 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") AppendToHeader;
 		%feature("autodoc", "Append line to glsl header.
 
-	:param theHeaderLine:
-	:type theHeaderLine: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theHeaderLine: TCollection_AsciiString
+
+Returns
+-------
+None
 ") AppendToHeader;
 		void AppendToHeader(const TCollection_AsciiString & theHeaderLine);
 
@@ -8066,9 +9970,13 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") AttachShader;
 		%feature("autodoc", "Attaches shader object to the program object.
 
-	:param theShader:
-	:type theShader: Graphic3d_ShaderObject
-	:rtype: bool
+Parameters
+----------
+theShader: Graphic3d_ShaderObject
+
+Returns
+-------
+bool
 ") AttachShader;
 		Standard_Boolean AttachShader(const opencascade::handle<Graphic3d_ShaderObject> & theShader);
 
@@ -8076,7 +9984,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") ClearVariables;
 		%feature("autodoc", "Removes all custom uniform variables from the program.
 
-	:rtype: None
+Returns
+-------
+None
 ") ClearVariables;
 		void ClearVariables();
 
@@ -8084,9 +9994,13 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") DetachShader;
 		%feature("autodoc", "Detaches shader object from the program object.
 
-	:param theShader:
-	:type theShader: Graphic3d_ShaderObject
-	:rtype: bool
+Parameters
+----------
+theShader: Graphic3d_ShaderObject
+
+Returns
+-------
+bool
 ") DetachShader;
 		Standard_Boolean DetachShader(const opencascade::handle<Graphic3d_ShaderObject> & theShader);
 
@@ -8094,7 +10008,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") GetId;
 		%feature("autodoc", "Returns unique id used to manage resource in graphic driver.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") GetId;
 		const TCollection_AsciiString & GetId();
 
@@ -8102,7 +10018,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_ShaderProgram;
 		%feature("autodoc", "Creates new empty program object.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_ShaderProgram;
 		 Graphic3d_ShaderProgram();
 
@@ -8110,7 +10028,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") HasAlphaTest;
 		%feature("autodoc", "Return true if fragment shader should perform alpha test; false by default.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasAlphaTest;
 		Standard_Boolean HasAlphaTest();
 
@@ -8118,7 +10038,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") HasDefaultSampler;
 		%feature("autodoc", "Return true if standard program header should define default texture sampler occsampler0; true by default for compatibility.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasDefaultSampler;
 		Standard_Boolean HasDefaultSampler();
 
@@ -8126,7 +10048,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") HasWeightOitOutput;
 		%feature("autodoc", "Return true if fragment shader color should output the weighted oit coverage; false by default.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasWeightOitOutput;
 		Standard_Boolean HasWeightOitOutput();
 
@@ -8134,7 +10058,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") Header;
 		%feature("autodoc", "Returns glsl header (version code and extensions).
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") Header;
 		const TCollection_AsciiString & Header();
 
@@ -8142,7 +10068,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Checks if the program object is valid or not.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		virtual Standard_Boolean IsDone();
 
@@ -8150,7 +10078,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") NbClipPlanesMax;
 		%feature("autodoc", "Return the length of array of clipping planes (the_max_clip_planes), to be used for initialization occclipplaneequations. default value is the_max_clip_planes_default.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbClipPlanesMax;
 		Standard_Integer NbClipPlanesMax();
 
@@ -8158,7 +10088,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") NbFragmentOutputs;
 		%feature("autodoc", "Returns the number (1+) of fragment shader outputs to be written to (more than 1 can be in case of multiple draw buffers); 1 by default.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbFragmentOutputs;
 		Standard_Integer NbFragmentOutputs();
 
@@ -8166,7 +10098,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") NbLightsMax;
 		%feature("autodoc", "Return the length of array of light sources (the_max_lights), to be used for initialization occlightsources. default value is the_max_lights_default.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbLightsMax;
 		Standard_Integer NbLightsMax();
 
@@ -8174,11 +10108,14 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") PushVariableFloat;
 		%feature("autodoc", "Pushes float uniform.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param theValue:
-	:type theValue: float
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_AsciiString
+theValue: float
+
+Returns
+-------
+bool
 ") PushVariableFloat;
 		Standard_Boolean PushVariableFloat(const TCollection_AsciiString & theName, const float theValue);
 
@@ -8186,11 +10123,14 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") PushVariableInt;
 		%feature("autodoc", "Pushes int uniform.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param theValue:
-	:type theValue: int
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_AsciiString
+theValue: int
+
+Returns
+-------
+bool
 ") PushVariableInt;
 		Standard_Boolean PushVariableInt(const TCollection_AsciiString & theName, const int theValue);
 
@@ -8198,11 +10138,14 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") PushVariableVec2;
 		%feature("autodoc", "Pushes vec2 uniform.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param theValue:
-	:type theValue: Graphic3d_Vec2
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_AsciiString
+theValue: Graphic3d_Vec2
+
+Returns
+-------
+bool
 ") PushVariableVec2;
 		Standard_Boolean PushVariableVec2(const TCollection_AsciiString & theName, const Graphic3d_Vec2 & theValue);
 
@@ -8210,11 +10153,14 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") PushVariableVec2i;
 		%feature("autodoc", "Pushes vec2i uniform.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param theValue:
-	:type theValue: Graphic3d_Vec2i
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_AsciiString
+theValue: Graphic3d_Vec2i
+
+Returns
+-------
+bool
 ") PushVariableVec2i;
 		Standard_Boolean PushVariableVec2i(const TCollection_AsciiString & theName, const Graphic3d_Vec2i & theValue);
 
@@ -8222,11 +10168,14 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") PushVariableVec3;
 		%feature("autodoc", "Pushes vec3 uniform.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param theValue:
-	:type theValue: Graphic3d_Vec3
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_AsciiString
+theValue: Graphic3d_Vec3
+
+Returns
+-------
+bool
 ") PushVariableVec3;
 		Standard_Boolean PushVariableVec3(const TCollection_AsciiString & theName, const Graphic3d_Vec3 & theValue);
 
@@ -8234,11 +10183,14 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") PushVariableVec3i;
 		%feature("autodoc", "Pushes vec3i uniform.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param theValue:
-	:type theValue: Graphic3d_Vec3i
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_AsciiString
+theValue: Graphic3d_Vec3i
+
+Returns
+-------
+bool
 ") PushVariableVec3i;
 		Standard_Boolean PushVariableVec3i(const TCollection_AsciiString & theName, const Graphic3d_Vec3i & theValue);
 
@@ -8246,11 +10198,14 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") PushVariableVec4;
 		%feature("autodoc", "Pushes vec4 uniform.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param theValue:
-	:type theValue: Graphic3d_Vec4
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_AsciiString
+theValue: Graphic3d_Vec4
+
+Returns
+-------
+bool
 ") PushVariableVec4;
 		Standard_Boolean PushVariableVec4(const TCollection_AsciiString & theName, const Graphic3d_Vec4 & theValue);
 
@@ -8258,11 +10213,14 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") PushVariableVec4i;
 		%feature("autodoc", "Pushes vec4i uniform.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param theValue:
-	:type theValue: Graphic3d_Vec4i
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_AsciiString
+theValue: Graphic3d_Vec4i
+
+Returns
+-------
+bool
 ") PushVariableVec4i;
 		Standard_Boolean PushVariableVec4i(const TCollection_AsciiString & theName, const Graphic3d_Vec4i & theValue);
 
@@ -8270,9 +10228,13 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") SetAlphaTest;
 		%feature("autodoc", "Set if fragment shader should perform alpha test. note that this flag is designed for usage with - custom shader program may discard fragment regardless this flag.
 
-	:param theAlphaTest:
-	:type theAlphaTest: bool
-	:rtype: None
+Parameters
+----------
+theAlphaTest: bool
+
+Returns
+-------
+None
 ") SetAlphaTest;
 		void SetAlphaTest(Standard_Boolean theAlphaTest);
 
@@ -8280,9 +10242,13 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") SetDefaultSampler;
 		%feature("autodoc", "Set if standard program header should define default texture sampler occsampler0.
 
-	:param theHasDefSampler:
-	:type theHasDefSampler: bool
-	:rtype: None
+Parameters
+----------
+theHasDefSampler: bool
+
+Returns
+-------
+None
 ") SetDefaultSampler;
 		void SetDefaultSampler(Standard_Boolean theHasDefSampler);
 
@@ -8290,9 +10256,13 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") SetHeader;
 		%feature("autodoc", "Setup glsl header containing language version code and used extensions. will be prepended to the very beginning of the source code. example: @code #version 300 es #extension gl_arb_bindless_texture : require @endcode.
 
-	:param theHeader:
-	:type theHeader: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theHeader: TCollection_AsciiString
+
+Returns
+-------
+None
 ") SetHeader;
 		void SetHeader(const TCollection_AsciiString & theHeader);
 
@@ -8300,9 +10270,13 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") SetId;
 		%feature("autodoc", "Sets unique id used to manage resource in graphic driver. warning! graphic3d_shaderprogram constructor generates a unique id for proper resource management; however if application overrides it, it is responsibility of application to avoid name collisions.
 
-	:param theId:
-	:type theId: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theId: TCollection_AsciiString
+
+Returns
+-------
+None
 ") SetId;
 		void SetId(const TCollection_AsciiString & theId);
 
@@ -8310,9 +10284,13 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") SetNbClipPlanesMax;
 		%feature("autodoc", "Specify the length of array of clipping planes (the_max_clip_planes).
 
-	:param theNbPlanes:
-	:type theNbPlanes: int
-	:rtype: None
+Parameters
+----------
+theNbPlanes: int
+
+Returns
+-------
+None
 ") SetNbClipPlanesMax;
 		void SetNbClipPlanesMax(Standard_Integer theNbPlanes);
 
@@ -8320,9 +10298,13 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") SetNbFragmentOutputs;
 		%feature("autodoc", "Sets the number of fragment shader outputs to be written to. should be done before glsl program initialization.
 
-	:param theNbOutputs:
-	:type theNbOutputs: int
-	:rtype: None
+Parameters
+----------
+theNbOutputs: int
+
+Returns
+-------
+None
 ") SetNbFragmentOutputs;
 		void SetNbFragmentOutputs(const Standard_Integer theNbOutputs);
 
@@ -8330,9 +10312,13 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") SetNbLightsMax;
 		%feature("autodoc", "Specify the length of array of light sources (the_max_lights).
 
-	:param theNbLights:
-	:type theNbLights: int
-	:rtype: None
+Parameters
+----------
+theNbLights: int
+
+Returns
+-------
+None
 ") SetNbLightsMax;
 		void SetNbLightsMax(Standard_Integer theNbLights);
 
@@ -8340,9 +10326,13 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") SetVertexAttributes;
 		%feature("autodoc", "Assign the list of custom vertex attributes. should be done before glsl program initialization.
 
-	:param theAttributes:
-	:type theAttributes: Graphic3d_ShaderAttributeList
-	:rtype: None
+Parameters
+----------
+theAttributes: Graphic3d_ShaderAttributeList
+
+Returns
+-------
+None
 ") SetVertexAttributes;
 		void SetVertexAttributes(const Graphic3d_ShaderAttributeList & theAttributes);
 
@@ -8350,9 +10340,13 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") SetWeightOitOutput;
 		%feature("autodoc", "Set if fragment shader color should output the weighted oit coverage. note that weighted oit also requires at least 2 fragment outputs (color + coverage).
 
-	:param theOutput:
-	:type theOutput: bool
-	:rtype: None
+Parameters
+----------
+theOutput: bool
+
+Returns
+-------
+None
 ") SetWeightOitOutput;
 		void SetWeightOitOutput(Standard_Boolean theOutput);
 
@@ -8360,7 +10354,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") ShaderObjects;
 		%feature("autodoc", "Returns list of attached shader objects.
 
-	:rtype: Graphic3d_ShaderObjectList
+Returns
+-------
+Graphic3d_ShaderObjectList
 ") ShaderObjects;
 		const Graphic3d_ShaderObjectList & ShaderObjects();
 
@@ -8368,7 +10364,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") ShadersFolder;
 		%feature("autodoc", "The path to glsl programs determined from csf_shadersdirectory or casroot environment variables. returns the root folder with default glsl programs.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") ShadersFolder;
 		static const TCollection_AsciiString & ShadersFolder();
 
@@ -8376,7 +10374,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") Variables;
 		%feature("autodoc", "The list of currently pushed but not applied custom uniform variables. this list is automatically cleared after applying to glsl program.
 
-	:rtype: Graphic3d_ShaderVariableList
+Returns
+-------
+Graphic3d_ShaderVariableList
 ") Variables;
 		const Graphic3d_ShaderVariableList & Variables();
 
@@ -8384,7 +10384,9 @@ class Graphic3d_ShaderProgram : public Standard_Transient {
 		%feature("compactdefaultargs") VertexAttributes;
 		%feature("autodoc", "Return the list of custom vertex attributes.
 
-	:rtype: Graphic3d_ShaderAttributeList
+Returns
+-------
+Graphic3d_ShaderAttributeList
 ") VertexAttributes;
 		const Graphic3d_ShaderAttributeList & VertexAttributes();
 
@@ -8409,7 +10411,9 @@ class Graphic3d_ShaderVariable : public Standard_Transient {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Checks if the shader variable is valid or not.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -8417,7 +10421,9 @@ class Graphic3d_ShaderVariable : public Standard_Transient {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Returns name of shader variable.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") Name;
 		const TCollection_AsciiString & Name();
 
@@ -8425,7 +10431,9 @@ class Graphic3d_ShaderVariable : public Standard_Transient {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns interface of shader variable value.
 
-	:rtype: Graphic3d_ValueInterface *
+Returns
+-------
+Graphic3d_ValueInterface *
 ") Value;
 		Graphic3d_ValueInterface * Value();
 
@@ -8449,13 +10457,15 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") AcceptConnection;
 		%feature("autodoc", "Returns standard_true if the connection is possible between <astructure1> and <astructure2> without a creation of a cycle. //! it's not possible to call the method astructure1->connect (astructure2, typeofconnection) if - the set of all ancestors of <astructure1> contains <astructure1> and if the typeofconnection == toc_descendant - the set of all descendants of <astructure1> contains <astructure2> and if the typeofconnection == toc_ancestor.
 
-	:param theStructure1:
-	:type theStructure1: Graphic3d_Structure *
-	:param theStructure2:
-	:type theStructure2: Graphic3d_Structure *
-	:param theType:
-	:type theType: Graphic3d_TypeOfConnection
-	:rtype: bool
+Parameters
+----------
+theStructure1: Graphic3d_Structure *
+theStructure2: Graphic3d_Structure *
+theType: Graphic3d_TypeOfConnection
+
+Returns
+-------
+bool
 ") AcceptConnection;
 		static Standard_Boolean AcceptConnection(Graphic3d_Structure * theStructure1, Graphic3d_Structure * theStructure2, Graphic3d_TypeOfConnection theType);
 
@@ -8463,9 +10473,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Ancestors;
 		%feature("autodoc", "Returns the group of structures to which <self> is connected.
 
-	:param SG:
-	:type SG: Graphic3d_MapOfStructure
-	:rtype: None
+Parameters
+----------
+SG: Graphic3d_MapOfStructure
+
+Returns
+-------
+None
 ") Ancestors;
 		void Ancestors(Graphic3d_MapOfStructure & SG);
 
@@ -8473,7 +10487,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") CStructure;
 		%feature("autodoc", "Returns the low-level structure.
 
-	:rtype: opencascade::handle<Graphic3d_CStructure>
+Returns
+-------
+opencascade::handle<Graphic3d_CStructure>
 ") CStructure;
 		const opencascade::handle<Graphic3d_CStructure> & CStructure();
 
@@ -8481,7 +10497,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") CalculateBoundBox;
 		%feature("autodoc", "Computes axis-aligned bounding box of a structure.
 
-	:rtype: None
+Returns
+-------
+None
 ") CalculateBoundBox;
 		virtual void CalculateBoundBox();
 
@@ -8489,9 +10507,14 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "If withdestruction == standard_true then suppress all the groups of primitives in the structure. and it is mandatory to create a new group in <self>. if withdestruction == standard_false then clears all the groups of primitives in the structure. and all the groups are conserved and empty. they will be erased at the next screen update. the structure itself is conserved. the transformation and the attributes of <self> are conserved. the childs of <self> are conserved.
 
-	:param WithDestruction: default value is Standard_True
-	:type WithDestruction: bool
-	:rtype: None
+Parameters
+----------
+WithDestruction: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Clear;
 		virtual void Clear(const Standard_Boolean WithDestruction = Standard_True);
 
@@ -8499,13 +10522,19 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") ClipPlanes;
 		%feature("autodoc", "Get clip planes slicing the structure on rendering. returns set of clip planes.
 
-	:rtype: opencascade::handle<Graphic3d_SequenceOfHClipPlane>
+Returns
+-------
+opencascade::handle<Graphic3d_SequenceOfHClipPlane>
 ") ClipPlanes;
 		const opencascade::handle<Graphic3d_SequenceOfHClipPlane> & ClipPlanes();
 
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Compute;
 		virtual void Compute();
 
@@ -8513,9 +10542,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "Returns the new structure defined for the new visualization.
 
-	:param theProjector:
-	:type theProjector: Graphic3d_DataStructureManager
-	:rtype: opencascade::handle<Graphic3d_Structure>
+Parameters
+----------
+theProjector: Graphic3d_DataStructureManager
+
+Returns
+-------
+opencascade::handle<Graphic3d_Structure>
 ") Compute;
 		virtual opencascade::handle<Graphic3d_Structure> Compute(const opencascade::handle<Graphic3d_DataStructureManager> & theProjector);
 
@@ -8523,11 +10556,14 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "Returns the new structure defined for the new visualization.
 
-	:param theProjector:
-	:type theProjector: Graphic3d_DataStructureManager
-	:param theTrsf:
-	:type theTrsf: Geom_Transformation
-	:rtype: opencascade::handle<Graphic3d_Structure>
+Parameters
+----------
+theProjector: Graphic3d_DataStructureManager
+theTrsf: Geom_Transformation
+
+Returns
+-------
+opencascade::handle<Graphic3d_Structure>
 ") Compute;
 		virtual opencascade::handle<Graphic3d_Structure> Compute(const opencascade::handle<Graphic3d_DataStructureManager> & theProjector, const opencascade::handle<Geom_Transformation> & theTrsf);
 
@@ -8535,11 +10571,14 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "Returns the new structure defined for the new visualization.
 
-	:param theProjector:
-	:type theProjector: Graphic3d_DataStructureManager
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure
-	:rtype: None
+Parameters
+----------
+theProjector: Graphic3d_DataStructureManager
+theStructure: Graphic3d_Structure
+
+Returns
+-------
+None
 ") Compute;
 		virtual void Compute(const opencascade::handle<Graphic3d_DataStructureManager> & theProjector, opencascade::handle<Graphic3d_Structure> & theStructure);
 
@@ -8547,19 +10586,25 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "Returns the new structure defined for the new visualization.
 
-	:param theProjector:
-	:type theProjector: Graphic3d_DataStructureManager
-	:param theTrsf:
-	:type theTrsf: Geom_Transformation
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure
-	:rtype: None
+Parameters
+----------
+theProjector: Graphic3d_DataStructureManager
+theTrsf: Geom_Transformation
+theStructure: Graphic3d_Structure
+
+Returns
+-------
+None
 ") Compute;
 		virtual void Compute(const opencascade::handle<Graphic3d_DataStructureManager> & theProjector, const opencascade::handle<Geom_Transformation> & theTrsf, opencascade::handle<Graphic3d_Structure> & theStructure);
 
 		/****************** ComputeVisual ******************/
 		%feature("compactdefaultargs") ComputeVisual;
-		%feature("autodoc", "	:rtype: Graphic3d_TypeOfStructure
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Graphic3d_TypeOfStructure
 ") ComputeVisual;
 		Graphic3d_TypeOfStructure ComputeVisual();
 
@@ -8567,21 +10612,30 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Connect;
 		%feature("autodoc", "If atype is toc_descendant then add <astructure> as a child structure of <self>. if atype is toc_ancestor then add <astructure> as a parent structure of <self>. the connection propagates display, highlight, erase, remove, and stacks the transformations. no connection if the graph of the structures contains a cycle and <withcheck> is standard_true;.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure *
-	:param theType:
-	:type theType: Graphic3d_TypeOfConnection
-	:param theWithCheck: default value is Standard_False
-	:type theWithCheck: bool
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure *
+theType: Graphic3d_TypeOfConnection
+theWithCheck: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Connect;
 		void Connect(Graphic3d_Structure * theStructure, Graphic3d_TypeOfConnection theType, Standard_Boolean theWithCheck = Standard_False);
 
 		/****************** Connect ******************/
 		%feature("compactdefaultargs") Connect;
-		%feature("autodoc", "	:param thePrs:
-	:type thePrs: Graphic3d_Structure
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+thePrs: Graphic3d_Structure
+
+Returns
+-------
+None
 ") Connect;
 		void Connect(const opencascade::handle<Graphic3d_Structure> & thePrs);
 
@@ -8589,7 +10643,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") ContainsFacet;
 		%feature("autodoc", "Returns standard_true if the structure <self> contains polygons, triangles or quadrangles.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ContainsFacet;
 		Standard_Boolean ContainsFacet();
 
@@ -8597,7 +10653,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") CurrentGroup;
 		%feature("autodoc", "Returns the last created group or creates new one if list is empty.
 
-	:rtype: opencascade::handle<Graphic3d_Group>
+Returns
+-------
+opencascade::handle<Graphic3d_Group>
 ") CurrentGroup;
 		opencascade::handle<Graphic3d_Group> CurrentGroup();
 
@@ -8605,9 +10663,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Descendants;
 		%feature("autodoc", "Returns the group of structures connected to <self>.
 
-	:param SG:
-	:type SG: Graphic3d_MapOfStructure
-	:rtype: None
+Parameters
+----------
+SG: Graphic3d_MapOfStructure
+
+Returns
+-------
+None
 ") Descendants;
 		void Descendants(Graphic3d_MapOfStructure & SG);
 
@@ -8615,9 +10677,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Disconnect;
 		%feature("autodoc", "Suppress the connection between <astructure> and <self>.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure *
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure *
+
+Returns
+-------
+None
 ") Disconnect;
 		void Disconnect(Graphic3d_Structure * theStructure);
 
@@ -8625,9 +10691,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") DisconnectAll;
 		%feature("autodoc", "If atype is toc_descendant then suppress all the connections with the child structures of <self>. if atype is toc_ancestor then suppress all the connections with the parent structures of <self>.
 
-	:param AType:
-	:type AType: Graphic3d_TypeOfConnection
-	:rtype: None
+Parameters
+----------
+AType: Graphic3d_TypeOfConnection
+
+Returns
+-------
+None
 ") DisconnectAll;
 		void DisconnectAll(const Graphic3d_TypeOfConnection AType);
 
@@ -8635,7 +10705,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Display;
 		%feature("autodoc", "Displays the structure <self> in all the views of the visualiser.
 
-	:rtype: None
+Returns
+-------
+None
 ") Display;
 		virtual void Display();
 
@@ -8643,7 +10715,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") DisplayPriority;
 		%feature("autodoc", "Returns the current display priority for this structure.
 
-	:rtype: int
+Returns
+-------
+int
 ") DisplayPriority;
 		Standard_Integer DisplayPriority();
 
@@ -8651,7 +10725,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Erase;
 		%feature("autodoc", "Erases the structure <self> in all the views of the visualiser.
 
-	:rtype: None
+Returns
+-------
+None
 ") Erase;
 		virtual void Erase();
 
@@ -8659,7 +10735,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") GetZLayer;
 		%feature("autodoc", "Get z layer id of displayed structure. the method returns -1 if the structure has no id (deleted from graphic driver).
 
-	:rtype: Graphic3d_ZLayerId
+Returns
+-------
+Graphic3d_ZLayerId
 ") GetZLayer;
 		Graphic3d_ZLayerId GetZLayer();
 
@@ -8667,11 +10745,15 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_Structure;
 		%feature("autodoc", "Creates a graphic object in the manager themanager. it will appear in all the views of the visualiser. the structure is not displayed when it is created. @param themanager structure manager holding this structure @param thelinkprs another structure for creating a shadow (linked) structure.
 
-	:param theManager:
-	:type theManager: Graphic3d_StructureManager
-	:param theLinkPrs: default value is opencascade::handle<Graphic3d_Structure>()
-	:type theLinkPrs: Graphic3d_Structure
-	:rtype: None
+Parameters
+----------
+theManager: Graphic3d_StructureManager
+theLinkPrs: Graphic3d_Structure,optional
+	default value is opencascade::handle<Graphic3d_Structure>()
+
+Returns
+-------
+None
 ") Graphic3d_Structure;
 		 Graphic3d_Structure(const opencascade::handle<Graphic3d_StructureManager> & theManager, const opencascade::handle<Graphic3d_Structure> & theLinkPrs = opencascade::handle<Graphic3d_Structure>());
 
@@ -8679,25 +10761,41 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") GraphicClear;
 		%feature("autodoc", "Clears the structure <self>.
 
-	:param WithDestruction:
-	:type WithDestruction: bool
-	:rtype: None
+Parameters
+----------
+WithDestruction: bool
+
+Returns
+-------
+None
 ") GraphicClear;
 		void GraphicClear(const Standard_Boolean WithDestruction);
 
 		/****************** GraphicConnect ******************/
 		%feature("compactdefaultargs") GraphicConnect;
-		%feature("autodoc", "	:param theDaughter:
-	:type theDaughter: Graphic3d_Structure
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDaughter: Graphic3d_Structure
+
+Returns
+-------
+None
 ") GraphicConnect;
 		void GraphicConnect(const opencascade::handle<Graphic3d_Structure> & theDaughter);
 
 		/****************** GraphicDisconnect ******************/
 		%feature("compactdefaultargs") GraphicDisconnect;
-		%feature("autodoc", "	:param theDaughter:
-	:type theDaughter: Graphic3d_Structure
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDaughter: Graphic3d_Structure
+
+Returns
+-------
+None
 ") GraphicDisconnect;
 		void GraphicDisconnect(const opencascade::handle<Graphic3d_Structure> & theDaughter);
 
@@ -8705,9 +10803,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") GraphicTransform;
 		%feature("autodoc", "Internal method which sets new transformation without calling graphic manager callbacks.
 
-	:param theTrsf:
-	:type theTrsf: Geom_Transformation
-	:rtype: None
+Parameters
+----------
+theTrsf: Geom_Transformation
+
+Returns
+-------
+None
 ") GraphicTransform;
 		void GraphicTransform(const opencascade::handle<Geom_Transformation> & theTrsf);
 
@@ -8715,7 +10817,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Groups;
 		%feature("autodoc", "Returns the groups sequence included in this structure.
 
-	:rtype: Graphic3d_SequenceOfGroup
+Returns
+-------
+Graphic3d_SequenceOfGroup
 ") Groups;
 		const Graphic3d_SequenceOfGroup & Groups();
 
@@ -8723,7 +10827,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") HLRValidation;
 		%feature("autodoc", "Hidden parts stored in this structure are valid if: 1) the owner is defined. 2) they are not invalid.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HLRValidation;
 		Standard_Boolean HLRValidation();
 
@@ -8731,11 +10837,15 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Highlight;
 		%feature("autodoc", "Highlights the structure in all the views with the given style @param thestyle [in] the style (type of highlighting: box/color, color and opacity) @param thetoupdatemgr [in] defines whether related computed structures will be highlighted via structure manager or not.
 
-	:param theStyle:
-	:type theStyle: Graphic3d_PresentationAttributes
-	:param theToUpdateMgr: default value is Standard_True
-	:type theToUpdateMgr: bool
-	:rtype: None
+Parameters
+----------
+theStyle: Graphic3d_PresentationAttributes
+theToUpdateMgr: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Highlight;
 		void Highlight(const opencascade::handle<Graphic3d_PresentationAttributes> & theStyle, const Standard_Boolean theToUpdateMgr = Standard_True);
 
@@ -8743,7 +10853,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") HighlightStyle;
 		%feature("autodoc", "Returns the highlight attributes.
 
-	:rtype: opencascade::handle<Graphic3d_PresentationAttributes>
+Returns
+-------
+opencascade::handle<Graphic3d_PresentationAttributes>
 ") HighlightStyle;
 		const opencascade::handle<Graphic3d_PresentationAttributes> & HighlightStyle();
 
@@ -8751,7 +10863,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Identification;
 		%feature("autodoc", "Returns the identification number of this structure.
 
-	:rtype: int
+Returns
+-------
+int
 ") Identification;
 		Standard_Integer Identification();
 
@@ -8759,7 +10873,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") IsDeleted;
 		%feature("autodoc", "Returns true if this structure is deleted (after remove() call).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDeleted;
 		Standard_Boolean IsDeleted();
 
@@ -8767,7 +10883,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") IsDisplayed;
 		%feature("autodoc", "Returns the display indicator for this structure.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDisplayed;
 		virtual Standard_Boolean IsDisplayed();
 
@@ -8775,7 +10893,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") IsEmpty;
 		%feature("autodoc", "Returns standard_true if the structure <self> is empty. warning: a structure is empty if : it do not have group or all the groups are empties and it do not have descendant or all the descendants are empties.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
@@ -8783,7 +10903,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") IsHighlighted;
 		%feature("autodoc", "Returns the highlight indicator for this structure.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsHighlighted;
 		virtual Standard_Boolean IsHighlighted();
 
@@ -8791,7 +10913,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") IsInfinite;
 		%feature("autodoc", "Returns standard_true if the structure <self> is infinite.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsInfinite;
 		Standard_Boolean IsInfinite();
 
@@ -8799,7 +10923,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") IsMutable;
 		%feature("autodoc", "Returns true if structure has mutable nature (content or location are be changed regularly). mutable structure will be managed in different way than static onces.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsMutable;
 		Standard_Boolean IsMutable();
 
@@ -8807,7 +10933,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") IsTransformed;
 		%feature("autodoc", "Returns true if the structure is transformed.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsTransformed;
 		Standard_Boolean IsTransformed();
 
@@ -8815,7 +10943,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") IsVisible;
 		%feature("autodoc", "Returns the visibility indicator for this structure.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsVisible;
 		Standard_Boolean IsVisible();
 
@@ -8823,9 +10953,14 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") MinMaxValues;
 		%feature("autodoc", "Returns the coordinates of the boundary box of the structure <self>. if <thetoignoreinfiniteflag> is true, the method returns actual graphical boundaries of the graphic3d_group components. otherwise, the method returns boundaries taking into account infinite state of the structure. this approach generally used for application specific fit operation (e.g. fitting the model into screen, not taking into accout infinite helper elements). warning: if the structure <self> is empty then the empty box is returned, if the structure <self> is infinite then the whole box is returned.
 
-	:param theToIgnoreInfiniteFlag: default value is Standard_False
-	:type theToIgnoreInfiniteFlag: bool
-	:rtype: Bnd_Box
+Parameters
+----------
+theToIgnoreInfiniteFlag: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+Bnd_Box
 ") MinMaxValues;
 		Bnd_Box MinMaxValues(const Standard_Boolean theToIgnoreInfiniteFlag = Standard_False);
 
@@ -8833,13 +10968,15 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Network;
 		%feature("autodoc", "Returns <aset> the group of structures : - directly or indirectly connected to <astructure> if the typeofconnection == toc_descendant - to which <astructure> is directly or indirectly connected if the typeofconnection == toc_ancestor.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure *
-	:param theType:
-	:type theType: Graphic3d_TypeOfConnection
-	:param theSet:
-	:type theSet: NCollection_Map<Graphic3d_Structure *>
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure *
+theType: Graphic3d_TypeOfConnection
+theSet: NCollection_Map<Graphic3d_Structure *>
+
+Returns
+-------
+None
 ") Network;
 		static void Network(Graphic3d_Structure * theStructure, const Graphic3d_TypeOfConnection theType, NCollection_Map<Graphic3d_Structure *> & theSet);
 
@@ -8847,7 +10984,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") NewGroup;
 		%feature("autodoc", "Append new group to this structure.
 
-	:rtype: opencascade::handle<Graphic3d_Group>
+Returns
+-------
+opencascade::handle<Graphic3d_Group>
 ") NewGroup;
 		opencascade::handle<Graphic3d_Group> NewGroup();
 
@@ -8855,13 +10994,19 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") NumberOfGroups;
 		%feature("autodoc", "Returns the current number of groups in this structure.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfGroups;
 		Standard_Integer NumberOfGroups();
 
 		/****************** Owner ******************/
 		%feature("compactdefaultargs") Owner;
-		%feature("autodoc", "	:rtype: Standard_Address
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_Address
 ") Owner;
 		Standard_Address Owner();
 
@@ -8869,11 +11014,14 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") PrintNetwork;
 		%feature("autodoc", "Prints informations about the network associated with the structure <astructure>.
 
-	:param AStructure:
-	:type AStructure: Graphic3d_Structure
-	:param AType:
-	:type AType: Graphic3d_TypeOfConnection
-	:rtype: None
+Parameters
+----------
+AStructure: Graphic3d_Structure
+AType: Graphic3d_TypeOfConnection
+
+Returns
+-------
+None
 ") PrintNetwork;
 		static void PrintNetwork(const opencascade::handle<Graphic3d_Structure> & AStructure, const Graphic3d_TypeOfConnection AType);
 
@@ -8881,7 +11029,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") ReCompute;
 		%feature("autodoc", "Forces a new construction of the structure <self> if <self> is displayed and tos_computed.
 
-	:rtype: None
+Returns
+-------
+None
 ") ReCompute;
 		void ReCompute();
 
@@ -8889,9 +11039,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") ReCompute;
 		%feature("autodoc", "Forces a new construction of the structure <self> if <self> is displayed in <aprojetor> and tos_computed.
 
-	:param aProjector:
-	:type aProjector: Graphic3d_DataStructureManager
-	:rtype: None
+Parameters
+----------
+aProjector: Graphic3d_DataStructureManager
+
+Returns
+-------
+None
 ") ReCompute;
 		void ReCompute(const opencascade::handle<Graphic3d_DataStructureManager> & aProjector);
 
@@ -8899,15 +11053,23 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Suppress the structure <self>. it will be erased at the next screen update. warning: no more graphic operations in <self> after this call. category: methods to modify the class definition.
 
-	:rtype: None
+Returns
+-------
+None
 ") Remove;
 		void Remove();
 
 		/****************** Remove ******************/
 		%feature("compactdefaultargs") Remove;
-		%feature("autodoc", "	:param thePrs:
-	:type thePrs: Graphic3d_Structure
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+thePrs: Graphic3d_Structure
+
+Returns
+-------
+None
 ") Remove;
 		void Remove(const opencascade::handle<Graphic3d_Structure> & thePrs);
 
@@ -8915,17 +11077,24 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Suppress the structure in the list of descendants or in the list of ancestors.
 
-	:param thePtr:
-	:type thePtr: Graphic3d_Structure *
-	:param theType:
-	:type theType: Graphic3d_TypeOfConnection
-	:rtype: None
+Parameters
+----------
+thePtr: Graphic3d_Structure *
+theType: Graphic3d_TypeOfConnection
+
+Returns
+-------
+None
 ") Remove;
 		void Remove(Graphic3d_Structure * thePtr, const Graphic3d_TypeOfConnection theType);
 
 		/****************** RemoveAll ******************/
 		%feature("compactdefaultargs") RemoveAll;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") RemoveAll;
 		void RemoveAll();
 
@@ -8933,7 +11102,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") ResetDisplayPriority;
 		%feature("autodoc", "Reset the current priority of the structure to the previous priority. category: methods to modify the class definition warning: if <self> is displayed then the setdisplaypriority method erase <self> and display <self> with the previous priority.
 
-	:rtype: None
+Returns
+-------
+None
 ") ResetDisplayPriority;
 		void ResetDisplayPriority();
 
@@ -8941,17 +11112,27 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") SetClipPlanes;
 		%feature("autodoc", "Changes a sequence of clip planes slicing the structure on rendering. @param theplanes [in] the set of clip planes.
 
-	:param thePlanes:
-	:type thePlanes: Graphic3d_SequenceOfHClipPlane
-	:rtype: None
+Parameters
+----------
+thePlanes: Graphic3d_SequenceOfHClipPlane
+
+Returns
+-------
+None
 ") SetClipPlanes;
 		void SetClipPlanes(const opencascade::handle<Graphic3d_SequenceOfHClipPlane> & thePlanes);
 
 		/****************** SetComputeVisual ******************/
 		%feature("compactdefaultargs") SetComputeVisual;
-		%feature("autodoc", "	:param theVisual:
-	:type theVisual: Graphic3d_TypeOfStructure
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theVisual: Graphic3d_TypeOfStructure
+
+Returns
+-------
+None
 ") SetComputeVisual;
 		void SetComputeVisual(const Graphic3d_TypeOfStructure theVisual);
 
@@ -8959,17 +11140,27 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") SetDisplayPriority;
 		%feature("autodoc", "Modifies the order of displaying the structure. values are between 0 and 10. structures are drawn according to their display priorities in ascending order. a structure of priority 10 is displayed the last and appears over the others. the default value is 5. category: methods to modify the class definition warning: if <self> is displayed then the setdisplaypriority method erase <self> and display <self> with the new priority. raises prioritydefinitionerror if <priority> is greater than 10 or a negative value.
 
-	:param Priority:
-	:type Priority: int
-	:rtype: None
+Parameters
+----------
+Priority: int
+
+Returns
+-------
+None
 ") SetDisplayPriority;
 		void SetDisplayPriority(const Standard_Integer Priority);
 
 		/****************** SetHLRValidation ******************/
 		%feature("compactdefaultargs") SetHLRValidation;
-		%feature("autodoc", "	:param theFlag:
-	:type theFlag: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theFlag: bool
+
+Returns
+-------
+None
 ") SetHLRValidation;
 		void SetHLRValidation(const Standard_Boolean theFlag);
 
@@ -8977,9 +11168,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") SetInfiniteState;
 		%feature("autodoc", "Sets infinite flag. when true, the minmaxvalues method returns: thexmin = theymin = thezmin = realfirst(). thexmax = theymax = thezmax = reallast(). by default, structure is created not infinite but empty.
 
-	:param theToSet:
-	:type theToSet: bool
-	:rtype: None
+Parameters
+----------
+theToSet: bool
+
+Returns
+-------
+None
 ") SetInfiniteState;
 		void SetInfiniteState(const Standard_Boolean theToSet);
 
@@ -8987,9 +11182,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") SetIsForHighlight;
 		%feature("autodoc", "Marks the structure <self> representing wired structure needed for highlight only so it won't be added to bvh tree.
 
-	:param isForHighlight:
-	:type isForHighlight: bool
-	:rtype: None
+Parameters
+----------
+isForHighlight: bool
+
+Returns
+-------
+None
 ") SetIsForHighlight;
 		void SetIsForHighlight(const Standard_Boolean isForHighlight);
 
@@ -8997,17 +11196,27 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") SetMutable;
 		%feature("autodoc", "Sets if the structure location has mutable nature (content or location will be changed regularly).
 
-	:param theIsMutable:
-	:type theIsMutable: bool
-	:rtype: None
+Parameters
+----------
+theIsMutable: bool
+
+Returns
+-------
+None
 ") SetMutable;
 		void SetMutable(const Standard_Boolean theIsMutable);
 
 		/****************** SetOwner ******************/
 		%feature("compactdefaultargs") SetOwner;
-		%feature("autodoc", "	:param theOwner:
-	:type theOwner: Standard_Address
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theOwner: Standard_Address
+
+Returns
+-------
+None
 ") SetOwner;
 		void SetOwner(const Standard_Address theOwner);
 
@@ -9015,9 +11224,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") SetTransformPersistence;
 		%feature("autodoc", "Modifies the current transform persistence (pan, zoom or rotate).
 
-	:param theTrsfPers:
-	:type theTrsfPers: Graphic3d_TransformPers
-	:rtype: None
+Parameters
+----------
+theTrsfPers: Graphic3d_TransformPers
+
+Returns
+-------
+None
 ") SetTransformPersistence;
 		void SetTransformPersistence(const opencascade::handle<Graphic3d_TransformPers> & theTrsfPers);
 
@@ -9025,9 +11238,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") SetTransformation;
 		%feature("autodoc", "Modifies the current local transformation.
 
-	:param theTrsf:
-	:type theTrsf: Geom_Transformation
-	:rtype: None
+Parameters
+----------
+theTrsf: Geom_Transformation
+
+Returns
+-------
+None
 ") SetTransformation;
 		void SetTransformation(const opencascade::handle<Geom_Transformation> & theTrsf);
 
@@ -9035,9 +11252,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") SetVisible;
 		%feature("autodoc", "Modifies the visibility indicator to standard_true or standard_false for the structure <self>. the default value at the definition of <self> is standard_true.
 
-	:param AValue:
-	:type AValue: bool
-	:rtype: None
+Parameters
+----------
+AValue: bool
+
+Returns
+-------
+None
 ") SetVisible;
 		void SetVisible(const Standard_Boolean AValue);
 
@@ -9045,9 +11266,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") SetVisual;
 		%feature("autodoc", "Modifies the visualisation mode for the structure <self>.
 
-	:param AVisual:
-	:type AVisual: Graphic3d_TypeOfStructure
-	:rtype: None
+Parameters
+----------
+AVisual: Graphic3d_TypeOfStructure
+
+Returns
+-------
+None
 ") SetVisual;
 		virtual void SetVisual(const Graphic3d_TypeOfStructure AVisual);
 
@@ -9055,9 +11280,13 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") SetZLayer;
 		%feature("autodoc", "Set z layer id for the structure. the z layer mechanism allows to display structures presented in higher layers in overlay of structures in lower layers by switching off z buffer depth test between layers.
 
-	:param theLayerId:
-	:type theLayerId: int
-	:rtype: None
+Parameters
+----------
+theLayerId: int
+
+Returns
+-------
+None
 ") SetZLayer;
 		void SetZLayer(int theLayerId);
 
@@ -9065,19 +11294,28 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") SetZoomLimit;
 		%feature("autodoc", "Modifies the minimum and maximum zoom coefficients for the structure <self>. the default value at the definition of <self> is unlimited. category: methods to modify the class definition warning: raises structuredefinitionerror if <limitinf> is greater than <limitsup> or if <limitinf> or <limitsup> is a negative value.
 
-	:param LimitInf:
-	:type LimitInf: float
-	:param LimitSup:
-	:type LimitSup: float
-	:rtype: None
+Parameters
+----------
+LimitInf: float
+LimitSup: float
+
+Returns
+-------
+None
 ") SetZoomLimit;
 		void SetZoomLimit(const Standard_Real LimitInf, const Standard_Real LimitSup);
 
 		/****************** Transform ******************/
 		%feature("compactdefaultargs") Transform;
-		%feature("autodoc", "	:param theTrsf:
-	:type theTrsf: Geom_Transformation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theTrsf: Geom_Transformation
+
+Returns
+-------
+None
 ") Transform;
 		void Transform(const opencascade::handle<Geom_Transformation> & theTrsf);
 
@@ -9085,7 +11323,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") TransformPersistence;
 		%feature("autodoc", "Returns transform persistence of the presentable object.
 
-	:rtype: opencascade::handle<Graphic3d_TransformPers>
+Returns
+-------
+opencascade::handle<Graphic3d_TransformPers>
 ") TransformPersistence;
 		const opencascade::handle<Graphic3d_TransformPers> & TransformPersistence();
 
@@ -9093,7 +11333,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Transformation;
 		%feature("autodoc", "Return local transformation.
 
-	:rtype: opencascade::handle<Geom_Transformation>
+Returns
+-------
+opencascade::handle<Geom_Transformation>
 ") Transformation;
 		const opencascade::handle<Geom_Transformation> & Transformation();
 
@@ -9101,21 +11343,19 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Transforms;
 		%feature("autodoc", "Transforms thex, they, thez with the transformation thetrsf.
 
-	:param theTrsf:
-	:type theTrsf: gp_Trsf
-	:param theX:
-	:type theX: float
-	:param theY:
-	:type theY: float
-	:param theZ:
-	:type theZ: float
-	:param theNewX:
-	:type theNewX: float
-	:param theNewY:
-	:type theNewY: float
-	:param theNewZ:
-	:type theNewZ: float
-	:rtype: None
+Parameters
+----------
+theTrsf: gp_Trsf
+theX: float
+theY: float
+theZ: float
+theNewX: float
+theNewY: float
+theNewZ: float
+
+Returns
+-------
+None
 ") Transforms;
 		static void Transforms(const gp_Trsf & theTrsf, const Standard_Real theX, const Standard_Real theY, const Standard_Real theZ, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -9123,7 +11363,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") UnHighlight;
 		%feature("autodoc", "Suppresses the highlight for the structure <self> in all the views of the visualiser.
 
-	:rtype: None
+Returns
+-------
+None
 ") UnHighlight;
 		void UnHighlight();
 
@@ -9131,7 +11373,9 @@ class Graphic3d_Structure : public Standard_Transient {
 		%feature("compactdefaultargs") Visual;
 		%feature("autodoc", "Returns the visualisation mode for the structure <self>.
 
-	:rtype: Graphic3d_TypeOfStructure
+Returns
+-------
+Graphic3d_TypeOfStructure
 ") Visual;
 		Graphic3d_TypeOfStructure Visual();
 
@@ -9155,13 +11399,15 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") ChangeDisplayPriority;
 		%feature("autodoc", "Changes the display priority of the structure <astructure>.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure
-	:param theOldPriority:
-	:type theOldPriority: int
-	:param theNewPriority:
-	:type theNewPriority: int
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure
+theOldPriority: int
+theNewPriority: int
+
+Returns
+-------
+None
 ") ChangeDisplayPriority;
 		virtual void ChangeDisplayPriority(const opencascade::handle<Graphic3d_Structure> & theStructure, const Standard_Integer theOldPriority, const Standard_Integer theNewPriority);
 
@@ -9169,11 +11415,14 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") ChangeZLayer;
 		%feature("autodoc", "Change z layer for structure. the z layer mechanism allows to display structures in higher layers in overlay of structures in lower layers.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure
-	:param theLayerId:
-	:type theLayerId: int
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure
+theLayerId: int
+
+Returns
+-------
+None
 ") ChangeZLayer;
 		virtual void ChangeZLayer(const opencascade::handle<Graphic3d_Structure> & theStructure, int theLayerId);
 
@@ -9181,11 +11430,14 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears the structure.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure *
-	:param theWithDestruction:
-	:type theWithDestruction: bool
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure *
+theWithDestruction: bool
+
+Returns
+-------
+None
 ") Clear;
 		virtual void Clear(Graphic3d_Structure * theStructure, const Standard_Boolean theWithDestruction);
 
@@ -9193,11 +11445,14 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") Connect;
 		%feature("autodoc", "Connects the structures.
 
-	:param theMother:
-	:type theMother: Graphic3d_Structure *
-	:param theDaughter:
-	:type theDaughter: Graphic3d_Structure *
-	:rtype: None
+Parameters
+----------
+theMother: Graphic3d_Structure *
+theDaughter: Graphic3d_Structure *
+
+Returns
+-------
+None
 ") Connect;
 		virtual void Connect(const Graphic3d_Structure * theMother, const Graphic3d_Structure * theDaughter);
 
@@ -9205,7 +11460,9 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") DefinedViews;
 		%feature("autodoc", "Returns the group of views defined in the structure manager.
 
-	:rtype: Graphic3d_IndexedMapOfView
+Returns
+-------
+Graphic3d_IndexedMapOfView
 ") DefinedViews;
 		const Graphic3d_IndexedMapOfView & DefinedViews();
 
@@ -9213,11 +11470,14 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") Disconnect;
 		%feature("autodoc", "Disconnects the structures.
 
-	:param theMother:
-	:type theMother: Graphic3d_Structure *
-	:param theDaughter:
-	:type theDaughter: Graphic3d_Structure *
-	:rtype: None
+Parameters
+----------
+theMother: Graphic3d_Structure *
+theDaughter: Graphic3d_Structure *
+
+Returns
+-------
+None
 ") Disconnect;
 		virtual void Disconnect(const Graphic3d_Structure * theMother, const Graphic3d_Structure * theDaughter);
 
@@ -9225,9 +11485,13 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") Display;
 		%feature("autodoc", "Display the structure.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure
+
+Returns
+-------
+None
 ") Display;
 		virtual void Display(const opencascade::handle<Graphic3d_Structure> & theStructure);
 
@@ -9235,9 +11499,13 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") DisplayedStructures;
 		%feature("autodoc", "Returns the set of structures displayed in visualiser <self>.
 
-	:param SG:
-	:type SG: Graphic3d_MapOfStructure
-	:rtype: None
+Parameters
+----------
+SG: Graphic3d_MapOfStructure
+
+Returns
+-------
+None
 ") DisplayedStructures;
 		void DisplayedStructures(Graphic3d_MapOfStructure & SG);
 
@@ -9245,7 +11513,9 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") Erase;
 		%feature("autodoc", "Erases all the structures.
 
-	:rtype: None
+Returns
+-------
+None
 ") Erase;
 		virtual void Erase();
 
@@ -9253,9 +11523,13 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") Erase;
 		%feature("autodoc", "Erases the structure.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure
+
+Returns
+-------
+None
 ") Erase;
 		virtual void Erase(const opencascade::handle<Graphic3d_Structure> & theStructure);
 
@@ -9263,9 +11537,13 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_StructureManager;
 		%feature("autodoc", "Initializes the viewmanager. currently creating of more than 100 viewer instances is not supported and leads to initializationerror and initialization failure. this limitation might be addressed in some future occt releases. warning: raises initialisationerror if the initialization of the viewmanager failed.
 
-	:param theDriver:
-	:type theDriver: Graphic3d_GraphicDriver
-	:rtype: None
+Parameters
+----------
+theDriver: Graphic3d_GraphicDriver
+
+Returns
+-------
+None
 ") Graphic3d_StructureManager;
 		 Graphic3d_StructureManager(const opencascade::handle<Graphic3d_GraphicDriver> & theDriver);
 
@@ -9273,7 +11551,9 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") GraphicDriver;
 		%feature("autodoc", "Returns the graphic driver of <self>.
 
-	:rtype: opencascade::handle<Graphic3d_GraphicDriver>
+Returns
+-------
+opencascade::handle<Graphic3d_GraphicDriver>
 ") GraphicDriver;
 		const opencascade::handle<Graphic3d_GraphicDriver> & GraphicDriver();
 
@@ -9281,9 +11561,13 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") Highlight;
 		%feature("autodoc", "Highlights the structure.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure
+
+Returns
+-------
+None
 ") Highlight;
 		virtual void Highlight(const opencascade::handle<Graphic3d_Structure> & theStructure);
 
@@ -9291,9 +11575,13 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") HighlightedStructures;
 		%feature("autodoc", "Returns the set of highlighted structures in a visualiser <self>.
 
-	:param SG:
-	:type SG: Graphic3d_MapOfStructure
-	:rtype: None
+Parameters
+----------
+SG: Graphic3d_MapOfStructure
+
+Returns
+-------
+None
 ") HighlightedStructures;
 		void HighlightedStructures(Graphic3d_MapOfStructure & SG);
 
@@ -9301,9 +11589,13 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") Identification;
 		%feature("autodoc", "Attaches the view to this structure manager and sets its identification number within the manager.
 
-	:param theView:
-	:type theView: Graphic3d_CView *
-	:rtype: int
+Parameters
+----------
+theView: Graphic3d_CView *
+
+Returns
+-------
+int
 ") Identification;
 		Standard_Integer Identification(Graphic3d_CView * theView);
 
@@ -9311,9 +11603,13 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") Identification;
 		%feature("autodoc", "Returns the structure with the identification number <aid>.
 
-	:param AId:
-	:type AId: int
-	:rtype: opencascade::handle<Graphic3d_Structure>
+Parameters
+----------
+AId: int
+
+Returns
+-------
+opencascade::handle<Graphic3d_Structure>
 ") Identification;
 		virtual opencascade::handle<Graphic3d_Structure> Identification(const Standard_Integer AId);
 
@@ -9321,7 +11617,9 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") IsDeviceLost;
 		%feature("autodoc", "Returns true if device lost flag has been set and presentation data should be reuploaded onto graphics driver.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDeviceLost;
 		Standard_Boolean IsDeviceLost();
 
@@ -9329,15 +11627,23 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") MaxNumOfViews;
 		%feature("autodoc", "Returns the theoretical maximum number of definable views in the manager. warning: it's not possible to accept an infinite number of definable views because each view must have an identification and we have different managers.
 
-	:rtype: int
+Returns
+-------
+int
 ") MaxNumOfViews;
 		Standard_Integer MaxNumOfViews();
 
 		/****************** ObjectAffinity ******************/
 		%feature("compactdefaultargs") ObjectAffinity;
-		%feature("autodoc", "	:param theObject:
-	:type theObject: Standard_Transient
-	:rtype: opencascade::handle<Graphic3d_ViewAffinity>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theObject: Standard_Transient
+
+Returns
+-------
+opencascade::handle<Graphic3d_ViewAffinity>
 ") ObjectAffinity;
 		opencascade::handle<Graphic3d_ViewAffinity> ObjectAffinity(const opencascade::handle<Standard_Transient> & theObject);
 
@@ -9345,9 +11651,13 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") ReCompute;
 		%feature("autodoc", "Forces a new construction of the structure. if <thestructure> is displayed and tos_computed.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure
+
+Returns
+-------
+None
 ") ReCompute;
 		virtual void ReCompute(const opencascade::handle<Graphic3d_Structure> & theStructure);
 
@@ -9355,11 +11665,14 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") ReCompute;
 		%feature("autodoc", "Forces a new construction of the structure. if <thestructure> is displayed in <theprojector> and tos_computed.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure
-	:param theProjector:
-	:type theProjector: Graphic3d_DataStructureManager
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure
+theProjector: Graphic3d_DataStructureManager
+
+Returns
+-------
+None
 ") ReCompute;
 		virtual void ReCompute(const opencascade::handle<Graphic3d_Structure> & theStructure, const opencascade::handle<Graphic3d_DataStructureManager> & theProjector);
 
@@ -9367,7 +11680,9 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") RecomputeStructures;
 		%feature("autodoc", "Recomputes all structures in the manager. resets device lost flag.
 
-	:rtype: None
+Returns
+-------
+None
 ") RecomputeStructures;
 		void RecomputeStructures();
 
@@ -9375,17 +11690,27 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") RecomputeStructures;
 		%feature("autodoc", "Recomputes all structures from thestructures.
 
-	:param theStructures:
-	:type theStructures: NCollection_Map<Graphic3d_Structure *>
-	:rtype: None
+Parameters
+----------
+theStructures: NCollection_Map<Graphic3d_Structure *>
+
+Returns
+-------
+None
 ") RecomputeStructures;
 		void RecomputeStructures(const NCollection_Map<Graphic3d_Structure *> & theStructures);
 
 		/****************** RegisterObject ******************/
 		%feature("compactdefaultargs") RegisterObject;
-		%feature("autodoc", "	:param theObject:
-	:type theObject: Standard_Transient
-	:rtype: opencascade::handle<Graphic3d_ViewAffinity>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theObject: Standard_Transient
+
+Returns
+-------
+opencascade::handle<Graphic3d_ViewAffinity>
 ") RegisterObject;
 		opencascade::handle<Graphic3d_ViewAffinity> RegisterObject(const opencascade::handle<Standard_Transient> & theObject);
 
@@ -9393,7 +11718,9 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Deletes and erases the 3d structure manager.
 
-	:rtype: None
+Returns
+-------
+None
 ") Remove;
 		virtual void Remove();
 
@@ -9401,7 +11728,9 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") SetDeviceLost;
 		%feature("autodoc", "Sets device lost flag.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetDeviceLost;
 		void SetDeviceLost();
 
@@ -9409,11 +11738,14 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") SetTransform;
 		%feature("autodoc", "Transforms the structure.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure
-	:param theTrsf:
-	:type theTrsf: Geom_Transformation
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure
+theTrsf: Geom_Transformation
+
+Returns
+-------
+None
 ") SetTransform;
 		virtual void SetTransform(const opencascade::handle<Graphic3d_Structure> & theStructure, const opencascade::handle<Geom_Transformation> & theTrsf);
 
@@ -9421,9 +11753,13 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") UnHighlight;
 		%feature("autodoc", "Suppress the highlighting on the structure <astructure>.
 
-	:param AStructure:
-	:type AStructure: Graphic3d_Structure
-	:rtype: None
+Parameters
+----------
+AStructure: Graphic3d_Structure
+
+Returns
+-------
+None
 ") UnHighlight;
 		virtual void UnHighlight(const opencascade::handle<Graphic3d_Structure> & AStructure);
 
@@ -9431,7 +11767,9 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") UnHighlight;
 		%feature("autodoc", "Suppresses the highlighting on all the structures in <self>.
 
-	:rtype: None
+Returns
+-------
+None
 ") UnHighlight;
 		virtual void UnHighlight();
 
@@ -9439,17 +11777,27 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") UnIdentification;
 		%feature("autodoc", "Detach the view from this structure manager and release its identification.
 
-	:param theView:
-	:type theView: Graphic3d_CView *
-	:rtype: None
+Parameters
+----------
+theView: Graphic3d_CView *
+
+Returns
+-------
+None
 ") UnIdentification;
 		void UnIdentification(Graphic3d_CView * theView);
 
 		/****************** UnregisterObject ******************/
 		%feature("compactdefaultargs") UnregisterObject;
-		%feature("autodoc", "	:param theObject:
-	:type theObject: Standard_Transient
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theObject: Standard_Transient
+
+Returns
+-------
+None
 ") UnregisterObject;
 		void UnregisterObject(const opencascade::handle<Standard_Transient> & theObject);
 
@@ -9457,9 +11805,14 @@ class Graphic3d_StructureManager : public Standard_Transient {
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Invalidates bounding box of specified zlayerid.
 
-	:param theLayerId: default value is Graphic3d_ZLayerId_UNKNOWN
-	:type theLayerId: int
-	:rtype: None
+Parameters
+----------
+theLayerId: int,optional
+	default value is Graphic3d_ZLayerId_UNKNOWN
+
+Returns
+-------
+None
 ") Update;
 		virtual void Update(int theLayerId = Graphic3d_ZLayerId_UNKNOWN);
 
@@ -9483,9 +11836,13 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_Text;
 		%feature("autodoc", "Creates default text parameters.
 
-	:param theHeight:
-	:type theHeight: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theHeight: Standard_ShortReal
+
+Returns
+-------
+None
 ") Graphic3d_Text;
 		 Graphic3d_Text(const Standard_ShortReal theHeight);
 
@@ -9493,7 +11850,9 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") HasOwnAnchorPoint;
 		%feature("autodoc", "Returns true if the text has an anchor point.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasOwnAnchorPoint;
 		Standard_Boolean HasOwnAnchorPoint();
 
@@ -9501,7 +11860,9 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") HasPlane;
 		%feature("autodoc", "Returns true if the text is filled by a point.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPlane;
 		Standard_Boolean HasPlane();
 
@@ -9509,7 +11870,9 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") Height;
 		%feature("autodoc", "Sets height of text. (relative to the normalized projection coordinates (npc) space).
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Height;
 		Standard_ShortReal Height();
 
@@ -9517,7 +11880,9 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") HorizontalAlignment;
 		%feature("autodoc", "Returns horizontal alignment of text.
 
-	:rtype: Graphic3d_HorizontalTextAlignment
+Returns
+-------
+Graphic3d_HorizontalTextAlignment
 ") HorizontalAlignment;
 		Graphic3d_HorizontalTextAlignment HorizontalAlignment();
 
@@ -9525,7 +11890,9 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") Orientation;
 		%feature("autodoc", "Returns text orientation in 3d space.
 
-	:rtype: gp_Ax2
+Returns
+-------
+gp_Ax2
 ") Orientation;
 		const gp_Ax2 Orientation();
 
@@ -9533,7 +11900,9 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") Position;
 		%feature("autodoc", "The 3d point of attachment is projected. if the orientation is defined, the text is written in the plane of projection.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") Position;
 		const gp_Pnt Position();
 
@@ -9541,7 +11910,9 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") ResetOrientation;
 		%feature("autodoc", "Reset text orientation in 3d space.
 
-	:rtype: None
+Returns
+-------
+None
 ") ResetOrientation;
 		void ResetOrientation();
 
@@ -9549,9 +11920,13 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") SetHeight;
 		%feature("autodoc", "Returns height of text.
 
-	:param theHeight:
-	:type theHeight: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theHeight: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetHeight;
 		void SetHeight(const Standard_ShortReal theHeight);
 
@@ -9559,9 +11934,13 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") SetHorizontalAlignment;
 		%feature("autodoc", "Sets horizontal alignment of text.
 
-	:param theJustification:
-	:type theJustification: Graphic3d_HorizontalTextAlignment
-	:rtype: None
+Parameters
+----------
+theJustification: Graphic3d_HorizontalTextAlignment
+
+Returns
+-------
+None
 ") SetHorizontalAlignment;
 		void SetHorizontalAlignment(const Graphic3d_HorizontalTextAlignment theJustification);
 
@@ -9569,9 +11948,13 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") SetOrientation;
 		%feature("autodoc", "Sets text orientation in 3d space.
 
-	:param theOrientation:
-	:type theOrientation: gp_Ax2
-	:rtype: None
+Parameters
+----------
+theOrientation: gp_Ax2
+
+Returns
+-------
+None
 ") SetOrientation;
 		void SetOrientation(const gp_Ax2 & theOrientation);
 
@@ -9579,9 +11962,13 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") SetOwnAnchorPoint;
 		%feature("autodoc", "Returns true if the text has an anchor point.
 
-	:param theHasOwnAnchor:
-	:type theHasOwnAnchor: bool
-	:rtype: None
+Parameters
+----------
+theHasOwnAnchor: bool
+
+Returns
+-------
+None
 ") SetOwnAnchorPoint;
 		void SetOwnAnchorPoint(const Standard_Boolean theHasOwnAnchor);
 
@@ -9589,9 +11976,13 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") SetPosition;
 		%feature("autodoc", "Sets text point.
 
-	:param thePoint:
-	:type thePoint: gp_Pnt
-	:rtype: None
+Parameters
+----------
+thePoint: gp_Pnt
+
+Returns
+-------
+None
 ") SetPosition;
 		void SetPosition(const gp_Pnt & thePoint);
 
@@ -9599,9 +11990,13 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") SetText;
 		%feature("autodoc", "Sets text value.
 
-	:param theText:
-	:type theText: NCollection_String
-	:rtype: None
+Parameters
+----------
+theText: NCollection_String
+
+Returns
+-------
+None
 ") SetText;
 		void SetText(const NCollection_String & theText);
 
@@ -9609,9 +12004,13 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") SetText;
 		%feature("autodoc", "Sets text value.
 
-	:param theText:
-	:type theText: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theText: TCollection_AsciiString
+
+Returns
+-------
+None
 ") SetText;
 		void SetText(const TCollection_AsciiString & theText);
 
@@ -9619,9 +12018,13 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") SetText;
 		%feature("autodoc", "Sets text value.
 
-	:param theText:
-	:type theText: char *
-	:rtype: None
+Parameters
+----------
+theText: char *
+
+Returns
+-------
+None
 ") SetText;
 		void SetText(const char * theText);
 
@@ -9629,9 +12032,13 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") SetVerticalAlignment;
 		%feature("autodoc", "Sets vertical alignment of text.
 
-	:param theJustification:
-	:type theJustification: Graphic3d_VerticalTextAlignment
-	:rtype: None
+Parameters
+----------
+theJustification: Graphic3d_VerticalTextAlignment
+
+Returns
+-------
+None
 ") SetVerticalAlignment;
 		void SetVerticalAlignment(const Graphic3d_VerticalTextAlignment theJustification);
 
@@ -9639,7 +12046,9 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") Text;
 		%feature("autodoc", "Returns text value.
 
-	:rtype: NCollection_String
+Returns
+-------
+NCollection_String
 ") Text;
 		const NCollection_String & Text();
 
@@ -9647,7 +12056,9 @@ class Graphic3d_Text : public Standard_Transient {
 		%feature("compactdefaultargs") VerticalAlignment;
 		%feature("autodoc", "Returns vertical alignment of text.
 
-	:rtype: Graphic3d_VerticalTextAlignment
+Returns
+-------
+Graphic3d_VerticalTextAlignment
 ") VerticalAlignment;
 		Graphic3d_VerticalTextAlignment VerticalAlignment();
 
@@ -9671,7 +12082,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") AnisoFilter;
 		%feature("autodoc", "Returns level of anisontropy texture filter. default value is graphic3d_lota_off.
 
-	:rtype: Graphic3d_LevelOfTextureAnisotropy
+Returns
+-------
+Graphic3d_LevelOfTextureAnisotropy
 ") AnisoFilter;
 		Graphic3d_LevelOfTextureAnisotropy AnisoFilter();
 
@@ -9679,7 +12092,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") Filter;
 		%feature("autodoc", "Returns texture interpolation filter. default value is graphic3d_totf_nearest.
 
-	:rtype: Graphic3d_TypeOfTextureFilter
+Returns
+-------
+Graphic3d_TypeOfTextureFilter
 ") Filter;
 		Graphic3d_TypeOfTextureFilter Filter();
 
@@ -9687,7 +12102,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") GenMode;
 		%feature("autodoc", "Returns texture coordinates generation mode. default value is graphic3d_totm_manual.
 
-	:rtype: Graphic3d_TypeOfTextureMode
+Returns
+-------
+Graphic3d_TypeOfTextureMode
 ") GenMode;
 		Graphic3d_TypeOfTextureMode GenMode();
 
@@ -9695,7 +12112,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") GenPlaneS;
 		%feature("autodoc", "Returns texture coordinates generation plane s.
 
-	:rtype: Graphic3d_Vec4
+Returns
+-------
+Graphic3d_Vec4
 ") GenPlaneS;
 		const Graphic3d_Vec4 & GenPlaneS();
 
@@ -9703,7 +12122,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") GenPlaneT;
 		%feature("autodoc", "Returns texture coordinates generation plane t.
 
-	:rtype: Graphic3d_Vec4
+Returns
+-------
+Graphic3d_Vec4
 ") GenPlaneT;
 		const Graphic3d_Vec4 & GenPlaneT();
 
@@ -9711,7 +12132,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_TextureParams;
 		%feature("autodoc", "Default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_TextureParams;
 		 Graphic3d_TextureParams();
 
@@ -9719,7 +12142,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") IsModulate;
 		%feature("autodoc", "Returns true if the texture is modulate. default value is false.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsModulate;
 		Standard_Boolean IsModulate();
 
@@ -9727,7 +12152,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") IsRepeat;
 		%feature("autodoc", "Returns true if the texture repeat is enabled. default value is false.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRepeat;
 		Standard_Boolean IsRepeat();
 
@@ -9735,7 +12162,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") Rotation;
 		%feature("autodoc", "Returns rotation angle in degrees default value is 0.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Rotation;
 		Standard_ShortReal Rotation();
 
@@ -9743,7 +12172,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") SamplerRevision;
 		%feature("autodoc", "Return modification counter of parameters related to sampler state.
 
-	:rtype: unsigned int
+Returns
+-------
+unsigned int
 ") SamplerRevision;
 		unsigned int SamplerRevision();
 
@@ -9751,7 +12182,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") Scale;
 		%feature("autodoc", "Returns scale factor default value is no scaling (1.0; 1.0).
 
-	:rtype: Graphic3d_Vec2
+Returns
+-------
+Graphic3d_Vec2
 ") Scale;
 		const Graphic3d_Vec2 & Scale();
 
@@ -9759,9 +12192,13 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") SetAnisoFilter;
 		%feature("autodoc", "@param thelevel level of anisontropy texture filter.
 
-	:param theLevel:
-	:type theLevel: Graphic3d_LevelOfTextureAnisotropy
-	:rtype: None
+Parameters
+----------
+theLevel: Graphic3d_LevelOfTextureAnisotropy
+
+Returns
+-------
+None
 ") SetAnisoFilter;
 		void SetAnisoFilter(const Graphic3d_LevelOfTextureAnisotropy theLevel);
 
@@ -9769,9 +12206,13 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") SetFilter;
 		%feature("autodoc", "@param thefilter texture interpolation filter.
 
-	:param theFilter:
-	:type theFilter: Graphic3d_TypeOfTextureFilter
-	:rtype: None
+Parameters
+----------
+theFilter: Graphic3d_TypeOfTextureFilter
+
+Returns
+-------
+None
 ") SetFilter;
 		void SetFilter(const Graphic3d_TypeOfTextureFilter theFilter);
 
@@ -9779,13 +12220,15 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") SetGenMode;
 		%feature("autodoc", "Setup texture coordinates generation mode.
 
-	:param theMode:
-	:type theMode: Graphic3d_TypeOfTextureMode
-	:param thePlaneS:
-	:type thePlaneS: Graphic3d_Vec4
-	:param thePlaneT:
-	:type thePlaneT: Graphic3d_Vec4
-	:rtype: None
+Parameters
+----------
+theMode: Graphic3d_TypeOfTextureMode
+thePlaneS: Graphic3d_Vec4
+thePlaneT: Graphic3d_Vec4
+
+Returns
+-------
+None
 ") SetGenMode;
 		void SetGenMode(const Graphic3d_TypeOfTextureMode theMode, const Graphic3d_Vec4 thePlaneS, const Graphic3d_Vec4 thePlaneT);
 
@@ -9793,9 +12236,13 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") SetModulate;
 		%feature("autodoc", "@param thetomodulate turn modulation on/off.
 
-	:param theToModulate:
-	:type theToModulate: bool
-	:rtype: None
+Parameters
+----------
+theToModulate: bool
+
+Returns
+-------
+None
 ") SetModulate;
 		void SetModulate(const Standard_Boolean theToModulate);
 
@@ -9803,9 +12250,13 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") SetRepeat;
 		%feature("autodoc", "@param thetorepeat turn texture repeat mode on or off (clamping).
 
-	:param theToRepeat:
-	:type theToRepeat: bool
-	:rtype: None
+Parameters
+----------
+theToRepeat: bool
+
+Returns
+-------
+None
 ") SetRepeat;
 		void SetRepeat(const Standard_Boolean theToRepeat);
 
@@ -9813,9 +12264,13 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") SetRotation;
 		%feature("autodoc", "@param theangledegrees rotation angle.
 
-	:param theAngleDegrees:
-	:type theAngleDegrees: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theAngleDegrees: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetRotation;
 		void SetRotation(const Standard_ShortReal theAngleDegrees);
 
@@ -9823,9 +12278,13 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") SetScale;
 		%feature("autodoc", "@param thescale scale factor.
 
-	:param theScale:
-	:type theScale: Graphic3d_Vec2
-	:rtype: None
+Parameters
+----------
+theScale: Graphic3d_Vec2
+
+Returns
+-------
+None
 ") SetScale;
 		void SetScale(const Graphic3d_Vec2 theScale);
 
@@ -9833,9 +12292,13 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") SetTextureUnit;
 		%feature("autodoc", "Setup default texture unit.
 
-	:param theUnit:
-	:type theUnit: Graphic3d_TextureUnit
-	:rtype: None
+Parameters
+----------
+theUnit: Graphic3d_TextureUnit
+
+Returns
+-------
+None
 ") SetTextureUnit;
 		void SetTextureUnit(Graphic3d_TextureUnit theUnit);
 
@@ -9843,9 +12306,13 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") SetTranslation;
 		%feature("autodoc", "@param thevec translation vector.
 
-	:param theVec:
-	:type theVec: Graphic3d_Vec2
-	:rtype: None
+Parameters
+----------
+theVec: Graphic3d_Vec2
+
+Returns
+-------
+None
 ") SetTranslation;
 		void SetTranslation(const Graphic3d_Vec2 theVec);
 
@@ -9853,7 +12320,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") TextureUnit;
 		%feature("autodoc", "Default texture unit to be used, default is graphic3d_textureunit_basecolor.
 
-	:rtype: Graphic3d_TextureUnit
+Returns
+-------
+Graphic3d_TextureUnit
 ") TextureUnit;
 		Graphic3d_TextureUnit TextureUnit();
 
@@ -9861,7 +12330,9 @@ class Graphic3d_TextureParams : public Standard_Transient {
 		%feature("compactdefaultargs") Translation;
 		%feature("autodoc", "Returns translation vector default value is no translation (0.0; 0.0).
 
-	:rtype: Graphic3d_Vec2
+Returns
+-------
+Graphic3d_Vec2
 ") Translation;
 		const Graphic3d_Vec2 & Translation();
 
@@ -9886,7 +12357,9 @@ class Graphic3d_TextureRoot : public Standard_Transient {
 		%feature("compactdefaultargs") GetId;
 		%feature("autodoc", "This id will be used to manage resource in graphic driver. //! default implementation generates unique id within constructor; inheritors may re-initialize it within their constructor, but should never modify it afterwards. //! multiple graphic3d_textureroot instances with same id will be treated as single texture with different parameters to optimize memory usage though this will be more natural to use same instance of graphic3d_textureroot when possible. //! if this id is set to empty string by inheritor, then independent graphical resource will be created for each instance of graphic3d_aspectfillarea3d where texture will be used. //! returns texture identifier.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") GetId;
 		const TCollection_AsciiString & GetId();
 
@@ -9894,7 +12367,9 @@ class Graphic3d_TextureRoot : public Standard_Transient {
 		%feature("compactdefaultargs") GetImage;
 		%feature("autodoc", "This method will be called by graphic driver each time when texture resource should be created. default constructors allow defining the texture source as path to texture image or directly as pixmap. if the source is defined as path, then the image will be dynamically loaded when this method is called (and no copy will be preserved in this class instance). inheritors may dynamically generate the image. notice, image data should be in bottom-up order (see image_pixmap::istopdown())! returns the image for texture.
 
-	:rtype: opencascade::handle<Image_PixMap>
+Returns
+-------
+opencascade::handle<Image_PixMap>
 ") GetImage;
 		virtual opencascade::handle<Image_PixMap> GetImage();
 
@@ -9902,7 +12377,9 @@ class Graphic3d_TextureRoot : public Standard_Transient {
 		%feature("compactdefaultargs") GetParams;
 		%feature("autodoc", "Returns low-level texture parameters.
 
-	:rtype: opencascade::handle<Graphic3d_TextureParams>
+Returns
+-------
+opencascade::handle<Graphic3d_TextureParams>
 ") GetParams;
 		const opencascade::handle<Graphic3d_TextureParams> & GetParams();
 
@@ -9910,7 +12387,9 @@ class Graphic3d_TextureRoot : public Standard_Transient {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Checks if a texture class is valid or not. returns true if the construction of the class is correct.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		virtual Standard_Boolean IsDone();
 
@@ -9918,7 +12397,9 @@ class Graphic3d_TextureRoot : public Standard_Transient {
 		%feature("compactdefaultargs") Path;
 		%feature("autodoc", "Returns the full path of the defined texture. it could be empty path if getimage() is overridden to load image not from file.
 
-	:rtype: OSD_Path
+Returns
+-------
+OSD_Path
 ") Path;
 		const OSD_Path & Path();
 
@@ -9926,7 +12407,9 @@ class Graphic3d_TextureRoot : public Standard_Transient {
 		%feature("compactdefaultargs") Revision;
 		%feature("autodoc", "Return image revision.
 
-	:rtype: Standard_Size
+Returns
+-------
+Standard_Size
 ") Revision;
 		Standard_Size Revision();
 
@@ -9934,7 +12417,9 @@ class Graphic3d_TextureRoot : public Standard_Transient {
 		%feature("compactdefaultargs") TexturesFolder;
 		%feature("autodoc", "The path to textures determined from csf_mdtvtexturesdirectory or casroot environment variables. returns the root folder with default textures.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") TexturesFolder;
 		static TCollection_AsciiString TexturesFolder();
 
@@ -9942,7 +12427,9 @@ class Graphic3d_TextureRoot : public Standard_Transient {
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Returns the texture type.
 
-	:rtype: Graphic3d_TypeOfTexture
+Returns
+-------
+Graphic3d_TypeOfTexture
 ") Type;
 		Graphic3d_TypeOfTexture Type();
 
@@ -9950,7 +12437,9 @@ class Graphic3d_TextureRoot : public Standard_Transient {
 		%feature("compactdefaultargs") UpdateRevision;
 		%feature("autodoc", "Update image revision. can be used for signaling changes in the texture source (e.g. file update, pixmap update) without re-creating texture source itself (since unique id should be never modified).
 
-	:rtype: None
+Returns
+-------
+None
 ") UpdateRevision;
 		void UpdateRevision();
 
@@ -10111,7 +12600,9 @@ class Graphic3d_ValueInterface {
 		%feature("compactdefaultargs") TypeID;
 		%feature("autodoc", "Returns unique identifier of value type.
 
-	:rtype: Standard_Size
+Returns
+-------
+Standard_Size
 ") TypeID;
 		virtual Standard_Size TypeID();
 
@@ -10134,13 +12625,15 @@ class Graphic3d_Vertex {
 		%feature("compactdefaultargs") Coord;
 		%feature("autodoc", "Returns the coordinates.
 
-	:param theX:
-	:type theX: Standard_ShortReal
-	:param theY:
-	:type theY: Standard_ShortReal
-	:param theZ:
-	:type theZ: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theX: Standard_ShortReal
+theY: Standard_ShortReal
+theZ: Standard_ShortReal
+
+Returns
+-------
+None
 ") Coord;
 		void Coord(Standard_ShortReal & theX, Standard_ShortReal & theY, Standard_ShortReal & theZ);
 
@@ -10148,13 +12641,15 @@ class Graphic3d_Vertex {
 		%feature("compactdefaultargs") Coord;
 		%feature("autodoc", "Returns the coordinates.
 
-	:param theX:
-	:type theX: float
-	:param theY:
-	:type theY: float
-	:param theZ:
-	:type theZ: float
-	:rtype: None
+Parameters
+----------
+theX: float
+theY: float
+theZ: float
+
+Returns
+-------
+None
 ") Coord;
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -10162,9 +12657,13 @@ class Graphic3d_Vertex {
 		%feature("compactdefaultargs") Distance;
 		%feature("autodoc", "Returns the distance between two points.
 
-	:param theOther:
-	:type theOther: Graphic3d_Vertex
-	:rtype: Standard_ShortReal
+Parameters
+----------
+theOther: Graphic3d_Vertex
+
+Returns
+-------
+Standard_ShortReal
 ") Distance;
 		Standard_ShortReal Distance(const Graphic3d_Vertex & theOther);
 
@@ -10172,7 +12671,9 @@ class Graphic3d_Vertex {
 		%feature("compactdefaultargs") Graphic3d_Vertex;
 		%feature("autodoc", "Creates a point with 0.0, 0.0, 0.0 coordinates.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_Vertex;
 		 Graphic3d_Vertex();
 
@@ -10180,9 +12681,13 @@ class Graphic3d_Vertex {
 		%feature("compactdefaultargs") Graphic3d_Vertex;
 		%feature("autodoc", "Creates a point with coordinates identical to thepoint.
 
-	:param thePoint:
-	:type thePoint: Graphic3d_Vertex
-	:rtype: None
+Parameters
+----------
+thePoint: Graphic3d_Vertex
+
+Returns
+-------
+None
 ") Graphic3d_Vertex;
 		 Graphic3d_Vertex(const Graphic3d_Vertex & thePoint);
 
@@ -10190,13 +12695,15 @@ class Graphic3d_Vertex {
 		%feature("compactdefaultargs") Graphic3d_Vertex;
 		%feature("autodoc", "Creates a point with thex, they and thez coordinates.
 
-	:param theX:
-	:type theX: Standard_ShortReal
-	:param theY:
-	:type theY: Standard_ShortReal
-	:param theZ:
-	:type theZ: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theX: Standard_ShortReal
+theY: Standard_ShortReal
+theZ: Standard_ShortReal
+
+Returns
+-------
+None
 ") Graphic3d_Vertex;
 		 Graphic3d_Vertex(const Standard_ShortReal theX, const Standard_ShortReal theY, const Standard_ShortReal theZ);
 
@@ -10204,13 +12711,15 @@ class Graphic3d_Vertex {
 		%feature("compactdefaultargs") Graphic3d_Vertex;
 		%feature("autodoc", "Creates a point with thex, they and thez coordinates.
 
-	:param theX:
-	:type theX: float
-	:param theY:
-	:type theY: float
-	:param theZ:
-	:type theZ: float
-	:rtype: None
+Parameters
+----------
+theX: float
+theY: float
+theZ: float
+
+Returns
+-------
+None
 ") Graphic3d_Vertex;
 		 Graphic3d_Vertex(const Standard_Real theX, const Standard_Real theY, const Standard_Real theZ);
 
@@ -10218,13 +12727,15 @@ class Graphic3d_Vertex {
 		%feature("compactdefaultargs") SetCoord;
 		%feature("autodoc", "Modifies the coordinates.
 
-	:param theX:
-	:type theX: Standard_ShortReal
-	:param theY:
-	:type theY: Standard_ShortReal
-	:param theZ:
-	:type theZ: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theX: Standard_ShortReal
+theY: Standard_ShortReal
+theZ: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetCoord;
 		void SetCoord(const Standard_ShortReal theX, const Standard_ShortReal theY, const Standard_ShortReal theZ);
 
@@ -10232,13 +12743,15 @@ class Graphic3d_Vertex {
 		%feature("compactdefaultargs") SetCoord;
 		%feature("autodoc", "Modifies the coordinates.
 
-	:param theX:
-	:type theX: float
-	:param theY:
-	:type theY: float
-	:param theZ:
-	:type theZ: float
-	:rtype: None
+Parameters
+----------
+theX: float
+theY: float
+theZ: float
+
+Returns
+-------
+None
 ") SetCoord;
 		void SetCoord(const Standard_Real theX, const Standard_Real theY, const Standard_Real theZ);
 
@@ -10246,7 +12759,9 @@ class Graphic3d_Vertex {
 		%feature("compactdefaultargs") X;
 		%feature("autodoc", "Returns the x coordinates.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") X;
 		Standard_ShortReal X();
 
@@ -10254,7 +12769,9 @@ class Graphic3d_Vertex {
 		%feature("compactdefaultargs") Y;
 		%feature("autodoc", "Returns the y coordinate.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Y;
 		Standard_ShortReal Y();
 
@@ -10262,7 +12779,9 @@ class Graphic3d_Vertex {
 		%feature("compactdefaultargs") Z;
 		%feature("autodoc", "Returns the z coordinate.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Z;
 		Standard_ShortReal Z();
 
@@ -10284,7 +12803,9 @@ class Graphic3d_ViewAffinity : public Standard_Transient {
 		%feature("compactdefaultargs") Graphic3d_ViewAffinity;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_ViewAffinity;
 		 Graphic3d_ViewAffinity();
 
@@ -10292,9 +12813,13 @@ class Graphic3d_ViewAffinity : public Standard_Transient {
 		%feature("compactdefaultargs") IsVisible;
 		%feature("autodoc", "Return visibility flag.
 
-	:param theViewId:
-	:type theViewId: int
-	:rtype: bool
+Parameters
+----------
+theViewId: int
+
+Returns
+-------
+bool
 ") IsVisible;
 		bool IsVisible(const Standard_Integer theViewId);
 
@@ -10302,9 +12827,13 @@ class Graphic3d_ViewAffinity : public Standard_Transient {
 		%feature("compactdefaultargs") SetVisible;
 		%feature("autodoc", "Setup visibility flag for all views.
 
-	:param theIsVisible:
-	:type theIsVisible: bool
-	:rtype: None
+Parameters
+----------
+theIsVisible: bool
+
+Returns
+-------
+None
 ") SetVisible;
 		void SetVisible(const Standard_Boolean theIsVisible);
 
@@ -10312,11 +12841,14 @@ class Graphic3d_ViewAffinity : public Standard_Transient {
 		%feature("compactdefaultargs") SetVisible;
 		%feature("autodoc", "Setup visibility flag.
 
-	:param theViewId:
-	:type theViewId: int
-	:param theIsVisible:
-	:type theIsVisible: bool
-	:rtype: None
+Parameters
+----------
+theViewId: int
+theIsVisible: bool
+
+Returns
+-------
+None
 ") SetVisible;
 		void SetVisible(const Standard_Integer theViewId, const bool theIsVisible);
 
@@ -10340,7 +12872,9 @@ class Graphic3d_WorldViewProjState {
 		%feature("compactdefaultargs") Graphic3d_WorldViewProjState;
 		%feature("autodoc", "Default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_WorldViewProjState;
 		 Graphic3d_WorldViewProjState();
 
@@ -10348,13 +12882,16 @@ class Graphic3d_WorldViewProjState {
 		%feature("compactdefaultargs") Graphic3d_WorldViewProjState;
 		%feature("autodoc", "Constructor for custom projector type. @param theprojectionstate [in] the projection state. @param theworldviewstate [in] the world view state. @param thecamera [in] the pointer to the class supplying projection and  world view matrices (camera).
 
-	:param theProjectionState:
-	:type theProjectionState: Standard_Size
-	:param theWorldViewState:
-	:type theWorldViewState: Standard_Size
-	:param theCamera: default value is NULL
-	:type theCamera: Standard_Transient *
-	:rtype: None
+Parameters
+----------
+theProjectionState: Standard_Size
+theWorldViewState: Standard_Size
+theCamera: Standard_Transient *,optional
+	default value is NULL
+
+Returns
+-------
+None
 ") Graphic3d_WorldViewProjState;
 		 Graphic3d_WorldViewProjState(const Standard_Size theProjectionState, const Standard_Size theWorldViewState, const Standard_Transient * theCamera = NULL);
 
@@ -10362,13 +12899,16 @@ class Graphic3d_WorldViewProjState {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize world view projection state.
 
-	:param theProjectionState:
-	:type theProjectionState: Standard_Size
-	:param theWorldViewState:
-	:type theWorldViewState: Standard_Size
-	:param theCamera: default value is NULL
-	:type theCamera: Standard_Transient *
-	:rtype: None
+Parameters
+----------
+theProjectionState: Standard_Size
+theWorldViewState: Standard_Size
+theCamera: Standard_Transient *,optional
+	default value is NULL
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Standard_Size theProjectionState, const Standard_Size theWorldViewState, const Standard_Transient * theCamera = NULL);
 
@@ -10376,9 +12916,14 @@ class Graphic3d_WorldViewProjState {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize world view projection state.
 
-	:param theCamera: default value is NULL
-	:type theCamera: Standard_Transient *
-	:rtype: None
+Parameters
+----------
+theCamera: Standard_Transient *,optional
+	default value is NULL
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Standard_Transient * theCamera = NULL);
 
@@ -10386,9 +12931,13 @@ class Graphic3d_WorldViewProjState {
 		%feature("compactdefaultargs") IsChanged;
 		%feature("autodoc", "Compare with other world view projection state. returns true when the projection of the given camera state differs from this one.
 
-	:param theState:
-	:type theState: Graphic3d_WorldViewProjState
-	:rtype: bool
+Parameters
+----------
+theState: Graphic3d_WorldViewProjState
+
+Returns
+-------
+bool
 ") IsChanged;
 		Standard_Boolean IsChanged(const Graphic3d_WorldViewProjState & theState);
 
@@ -10396,9 +12945,13 @@ class Graphic3d_WorldViewProjState {
 		%feature("compactdefaultargs") IsProjectionChanged;
 		%feature("autodoc", "Compare projection with other state. returns true when the projection of the given camera state differs from this one.
 
-	:param theState:
-	:type theState: Graphic3d_WorldViewProjState
-	:rtype: bool
+Parameters
+----------
+theState: Graphic3d_WorldViewProjState
+
+Returns
+-------
+bool
 ") IsProjectionChanged;
 		Standard_Boolean IsProjectionChanged(const Graphic3d_WorldViewProjState & theState);
 
@@ -10406,7 +12959,9 @@ class Graphic3d_WorldViewProjState {
 		%feature("compactdefaultargs") IsValid;
 		%feature("autodoc", "Check state validity. returns true if state is set.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsValid;
 		Standard_Boolean IsValid();
 
@@ -10414,9 +12969,13 @@ class Graphic3d_WorldViewProjState {
 		%feature("compactdefaultargs") IsWorldViewChanged;
 		%feature("autodoc", "Compare world view transformation with other state. returns true when the orientation of the given camera state differs from this one.
 
-	:param theState:
-	:type theState: Graphic3d_WorldViewProjState
-	:rtype: bool
+Parameters
+----------
+theState: Graphic3d_WorldViewProjState
+
+Returns
+-------
+bool
 ") IsWorldViewChanged;
 		Standard_Boolean IsWorldViewChanged(const Graphic3d_WorldViewProjState & theState);
 
@@ -10424,7 +12983,9 @@ class Graphic3d_WorldViewProjState {
 		%feature("compactdefaultargs") ProjectionState;
 		%feature("autodoc", "Returns projection state counter.
 
-	:rtype: Standard_Size
+Returns
+-------
+Standard_Size
 ") ProjectionState;
 		Standard_Size & ProjectionState();
 
@@ -10432,7 +12993,9 @@ class Graphic3d_WorldViewProjState {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Invalidate world view projection state.
 
-	:rtype: None
+Returns
+-------
+None
 ") Reset;
 		void Reset();
 
@@ -10440,7 +13003,9 @@ class Graphic3d_WorldViewProjState {
 		%feature("compactdefaultargs") WorldViewState;
 		%feature("autodoc", "Returns world view state counter.
 
-	:rtype: Standard_Size
+Returns
+-------
+Standard_Size
 ") WorldViewState;
 		Standard_Size & WorldViewState();
 
@@ -10490,7 +13055,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") ChangePolygonOffset;
 		%feature("autodoc", "Modify glpolygonoffset() arguments.
 
-	:rtype: Graphic3d_PolygonOffset
+Returns
+-------
+Graphic3d_PolygonOffset
 ") ChangePolygonOffset;
 		Graphic3d_PolygonOffset & ChangePolygonOffset();
 
@@ -10498,7 +13065,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") CullingDistance;
 		%feature("autodoc", "Return the distance to discard drawing of distant objects (distance from camera eye point); by default it is infinite (distance culling is disabled). since camera eye definition has no strong meaning within orthographic projection, option is considered only within perspective projection. note also that this option has effect only when frustum culling is enabled.
 
-	:rtype: float
+Returns
+-------
+float
 ") CullingDistance;
 		Standard_Real CullingDistance();
 
@@ -10506,7 +13075,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") CullingSize;
 		%feature("autodoc", "Return the size to discard drawing of small objects; by default it is infinite (size culling is disabled). current implementation checks the length of projected diagonal of bounding box in pixels for discarding. note that this option has effect only when frustum culling is enabled.
 
-	:rtype: float
+Returns
+-------
+float
 ") CullingSize;
 		Standard_Real CullingSize();
 
@@ -10514,9 +13085,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") DisableSetting;
 		%feature("autodoc", "Disables thesetting.
 
-	:param theSetting:
-	:type theSetting: Graphic3d_ZLayerSetting
-	:rtype: None
+Parameters
+----------
+theSetting: Graphic3d_ZLayerSetting
+
+Returns
+-------
+None
 ") DisableSetting;
 		void DisableSetting(const Graphic3d_ZLayerSetting theSetting);
 
@@ -10524,9 +13099,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") EnableSetting;
 		%feature("autodoc", "Enables thesetting.
 
-	:param theSetting:
-	:type theSetting: Graphic3d_ZLayerSetting
-	:rtype: None
+Parameters
+----------
+theSetting: Graphic3d_ZLayerSetting
+
+Returns
+-------
+None
 ") EnableSetting;
 		void EnableSetting(const Graphic3d_ZLayerSetting theSetting);
 
@@ -10534,7 +13113,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") Graphic3d_ZLayerSettings;
 		%feature("autodoc", "Default settings.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_ZLayerSettings;
 		 Graphic3d_ZLayerSettings();
 
@@ -10542,7 +13123,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") HasCullingDistance;
 		%feature("autodoc", "Return true, if culling of distant objects (distance culling) should be performed; false by default. @sa cullingdistance().
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasCullingDistance;
 		Standard_Boolean HasCullingDistance();
 
@@ -10550,7 +13133,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") HasCullingSize;
 		%feature("autodoc", "Return true, if culling of small objects (size culling) should be performed; false by default. @sa cullingsize().
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasCullingSize;
 		Standard_Boolean HasCullingSize();
 
@@ -10558,7 +13143,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") IsImmediate;
 		%feature("autodoc", "Return true if this layer should be drawn after all normal (non-immediate) layers.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsImmediate;
 		Standard_Boolean IsImmediate();
 
@@ -10566,7 +13153,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") IsRaytracable;
 		%feature("autodoc", "Returns true if layer should be processed by ray-tracing renderer; true by default. note that this flag is ignored for layers with isimmediate() flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRaytracable;
 		Standard_Boolean IsRaytracable();
 
@@ -10574,9 +13163,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") IsSettingEnabled;
 		%feature("autodoc", "Returns true if thesetting is enabled.
 
-	:param theSetting:
-	:type theSetting: Graphic3d_ZLayerSetting
-	:rtype: bool
+Parameters
+----------
+theSetting: Graphic3d_ZLayerSetting
+
+Returns
+-------
+bool
 ") IsSettingEnabled;
 		Standard_Boolean IsSettingEnabled(const Graphic3d_ZLayerSetting theSetting);
 
@@ -10584,7 +13177,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") Lights;
 		%feature("autodoc", "Return lights list to be used for rendering presentations within this z-layer; null by default. null list (but not empty list!) means that default lights assigned to the view should be used instead of per-layer lights.
 
-	:rtype: opencascade::handle<Graphic3d_LightSet>
+Returns
+-------
+opencascade::handle<Graphic3d_LightSet>
 ") Lights;
 		const opencascade::handle<Graphic3d_LightSet> & Lights();
 
@@ -10592,7 +13187,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Return user-provided name.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") Name;
 		const TCollection_AsciiString & Name();
 
@@ -10600,7 +13197,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") Origin;
 		%feature("autodoc", "Return the origin of all objects within the layer.
 
-	:rtype: gp_XYZ
+Returns
+-------
+gp_XYZ
 ") Origin;
 		const gp_XYZ Origin();
 
@@ -10608,7 +13207,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") OriginTransformation;
 		%feature("autodoc", "Return the transformation to the origin.
 
-	:rtype: opencascade::handle<Geom_Transformation>
+Returns
+-------
+opencascade::handle<Geom_Transformation>
 ") OriginTransformation;
 		const opencascade::handle<Geom_Transformation> & OriginTransformation();
 
@@ -10616,7 +13217,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") PolygonOffset;
 		%feature("autodoc", "Return glpolygonoffset() arguments.
 
-	:rtype: Graphic3d_PolygonOffset
+Returns
+-------
+Graphic3d_PolygonOffset
 ") PolygonOffset;
 		const Graphic3d_PolygonOffset & PolygonOffset();
 
@@ -10624,9 +13227,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetClearDepth;
 		%feature("autodoc", "Set if depth values should be cleared before drawing the layer.
 
-	:param theValue:
-	:type theValue: bool
-	:rtype: None
+Parameters
+----------
+theValue: bool
+
+Returns
+-------
+None
 ") SetClearDepth;
 		void SetClearDepth(const Standard_Boolean theValue);
 
@@ -10634,9 +13241,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetCullingDistance;
 		%feature("autodoc", "Set the distance to discard drawing objects.
 
-	:param theDistance:
-	:type theDistance: float
-	:rtype: None
+Parameters
+----------
+theDistance: float
+
+Returns
+-------
+None
 ") SetCullingDistance;
 		void SetCullingDistance(Standard_Real theDistance);
 
@@ -10644,9 +13255,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetCullingSize;
 		%feature("autodoc", "Set the distance to discard drawing objects.
 
-	:param theSize:
-	:type theSize: float
-	:rtype: None
+Parameters
+----------
+theSize: float
+
+Returns
+-------
+None
 ") SetCullingSize;
 		void SetCullingSize(Standard_Real theSize);
 
@@ -10654,7 +13269,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetDepthOffsetNegative;
 		%feature("autodoc", "Sets minimal possible negative depth offset.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetDepthOffsetNegative;
 		void SetDepthOffsetNegative();
 
@@ -10662,7 +13279,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetDepthOffsetPositive;
 		%feature("autodoc", "Sets minimal possible positive depth offset.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetDepthOffsetPositive;
 		void SetDepthOffsetPositive();
 
@@ -10670,9 +13289,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetEnableDepthTest;
 		%feature("autodoc", "Set if depth test should be enabled.
 
-	:param theValue:
-	:type theValue: bool
-	:rtype: None
+Parameters
+----------
+theValue: bool
+
+Returns
+-------
+None
 ") SetEnableDepthTest;
 		void SetEnableDepthTest(const Standard_Boolean theValue);
 
@@ -10680,9 +13303,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetEnableDepthWrite;
 		%feature("autodoc", "Set if depth values should be written during rendering.
 
-	:param theValue:
-	:type theValue: bool
-	:rtype: None
+Parameters
+----------
+theValue: bool
+
+Returns
+-------
+None
 ") SetEnableDepthWrite;
 		void SetEnableDepthWrite(const Standard_Boolean theValue);
 
@@ -10690,9 +13317,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetEnvironmentTexture;
 		%feature("autodoc", "Set the flag to allow/prevent environment texture mapping usage for specific layer.
 
-	:param theValue:
-	:type theValue: bool
-	:rtype: None
+Parameters
+----------
+theValue: bool
+
+Returns
+-------
+None
 ") SetEnvironmentTexture;
 		void SetEnvironmentTexture(const Standard_Boolean theValue);
 
@@ -10700,9 +13331,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetImmediate;
 		%feature("autodoc", "Set the flag indicating the immediate layer, which should be drawn after all normal (non-immediate) layers.
 
-	:param theValue:
-	:type theValue: bool
-	:rtype: None
+Parameters
+----------
+theValue: bool
+
+Returns
+-------
+None
 ") SetImmediate;
 		void SetImmediate(const Standard_Boolean theValue);
 
@@ -10710,9 +13345,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetLights;
 		%feature("autodoc", "Assign lights list to be used.
 
-	:param theLights:
-	:type theLights: Graphic3d_LightSet
-	:rtype: None
+Parameters
+----------
+theLights: Graphic3d_LightSet
+
+Returns
+-------
+None
 ") SetLights;
 		void SetLights(const opencascade::handle<Graphic3d_LightSet> & theLights);
 
@@ -10720,9 +13359,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetName;
 		%feature("autodoc", "Set custom name.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theName: TCollection_AsciiString
+
+Returns
+-------
+None
 ") SetName;
 		void SetName(const TCollection_AsciiString & theName);
 
@@ -10730,9 +13373,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetOrigin;
 		%feature("autodoc", "Set the origin of all objects within the layer.
 
-	:param theOrigin:
-	:type theOrigin: gp_XYZ
-	:rtype: None
+Parameters
+----------
+theOrigin: gp_XYZ
+
+Returns
+-------
+None
 ") SetOrigin;
 		void SetOrigin(const gp_XYZ & theOrigin);
 
@@ -10740,9 +13387,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetPolygonOffset;
 		%feature("autodoc", "Setup glpolygonoffset() arguments.
 
-	:param theParams:
-	:type theParams: Graphic3d_PolygonOffset
-	:rtype: None
+Parameters
+----------
+theParams: Graphic3d_PolygonOffset
+
+Returns
+-------
+None
 ") SetPolygonOffset;
 		void SetPolygonOffset(const Graphic3d_PolygonOffset & theParams);
 
@@ -10750,9 +13401,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetRaytracable;
 		%feature("autodoc", "Sets if layer should be processed by ray-tracing renderer.
 
-	:param theToRaytrace:
-	:type theToRaytrace: bool
-	:rtype: None
+Parameters
+----------
+theToRaytrace: bool
+
+Returns
+-------
+None
 ") SetRaytracable;
 		void SetRaytracable(Standard_Boolean theToRaytrace);
 
@@ -10760,9 +13415,13 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") SetRenderInDepthPrepass;
 		%feature("autodoc", "Set if layer should be rendered within depth pre-pass.
 
-	:param theToRender:
-	:type theToRender: bool
-	:rtype: None
+Parameters
+----------
+theToRender: bool
+
+Returns
+-------
+None
 ") SetRenderInDepthPrepass;
 		void SetRenderInDepthPrepass(Standard_Boolean theToRender);
 
@@ -10770,7 +13429,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") ToClearDepth;
 		%feature("autodoc", "Return true if depth values should be cleared before drawing the layer.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToClearDepth;
 		Standard_Boolean ToClearDepth();
 
@@ -10778,7 +13439,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") ToEnableDepthTest;
 		%feature("autodoc", "Return true if depth test should be enabled.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToEnableDepthTest;
 		Standard_Boolean ToEnableDepthTest();
 
@@ -10786,7 +13449,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") ToEnableDepthWrite;
 		%feature("autodoc", "Return true depth values should be written during rendering.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToEnableDepthWrite;
 		Standard_Boolean ToEnableDepthWrite();
 
@@ -10794,7 +13459,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") ToRenderInDepthPrepass;
 		%feature("autodoc", "Return true if layer should be rendered within depth pre-pass; true by default.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ToRenderInDepthPrepass;
 		Standard_Boolean ToRenderInDepthPrepass();
 
@@ -10802,7 +13469,9 @@ class Graphic3d_ZLayerSettings {
 		%feature("compactdefaultargs") UseEnvironmentTexture;
 		%feature("autodoc", "Return flag to allow/prevent environment texture mapping usage for specific layer.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") UseEnvironmentTexture;
 		Standard_Boolean UseEnvironmentTexture();
 
@@ -10842,11 +13511,14 @@ class Graphic3d_ArrayOfPoints : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfPoints;
 		%feature("autodoc", "Creates an array of points (graphic3d_topa_points). the array must be filled using the addvertex(point) method. @param themaxvertexs maximum number of points @param thearrayflags array flags.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theArrayFlags:
-	:type theArrayFlags: int
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theArrayFlags: int
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfPoints;
 		 Graphic3d_ArrayOfPoints(Standard_Integer theMaxVertexs, int theArrayFlags);
 
@@ -10854,13 +13526,17 @@ class Graphic3d_ArrayOfPoints : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfPoints;
 		%feature("autodoc", "Creates an array of points (graphic3d_topa_points). the array must be filled using the addvertex(point) method. @param themaxvertexs maximum number of points @param thehasvcolors when true, addvertex(point,color) should be used for specifying vertex color @param thehasvnormals when true, addvertex(point,normal) should be used for specifying vertex normal.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theHasVColors: default value is Standard_False
-	:type theHasVColors: bool
-	:param theHasVNormals: default value is Standard_False
-	:type theHasVNormals: bool
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theHasVColors: bool,optional
+	default value is Standard_False
+theHasVNormals: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfPoints;
 		 Graphic3d_ArrayOfPoints(Standard_Integer theMaxVertexs, Standard_Boolean theHasVColors = Standard_False, Standard_Boolean theHasVNormals = Standard_False);
 
@@ -10884,15 +13560,16 @@ class Graphic3d_ArrayOfPolygons : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfPolygons;
 		%feature("autodoc", "Creates an array of polygons (graphic3d_topa_polygons), a polygon can be filled as: 1) creating a single polygon defined with his vertexes, i.e: @code myarray = graphic3d_arrayofpolygons (7); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x7, y7, z7); @endcode 2) creating separate polygons defined with a predefined number of bounds and the number of vertex per bound, i.e: @code myarray = graphic3d_arrayofpolygons (7, 2); myarray->addbound (4); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x4, y4, z4); myarray->addbound (3); myarray->addvertex (x5, y5, z5); .... myarray->addvertex (x7, y7, z7); @endcode 3) creating a single indexed polygon defined with his vertex ans edges, i.e: @code myarray = graphic3d_arrayofpolygons (4, 0, 6); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x4, y4, z4); myarray->addedge (1); myarray->addedge (2); myarray->addedge (3); myarray->addedge (1); myarray->addedge (2); myarray->addedge (4); @endcode 4) creating separate polygons defined with a predefined number of bounds and the number of edges per bound, i.e: @code myarray = graphic3d_arrayofpolygons (6, 4, 14); myarray->addbound (3); myarray->addvertex (x1, y1, z1); myarray->addvertex (x2, y2, z2); myarray->addvertex (x3, y3, z3); myarray->addedge (1); myarray->addedge (2); myarray->addedge (3); myarray->addbound (3); myarray->addvertex (x4, y4, z4); myarray->addvertex (x5, y5, z5); myarray->addvertex (x6, y6, z6); myarray->addedge (4); myarray->addedge (5); myarray->addedge (6); myarray->addbound (4); myarray->addedge (2); myarray->addedge (3); myarray->addedge (5); myarray->addedge (6); myarray->addbound (4); myarray->addedge (1); myarray->addedge (3); myarray->addedge (5); myarray->addedge (4); @endcode @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxbounds defines the maximum allowed bound number in the array @param themaxedges defines the maximum allowed edge number in the array @param thearrayflags array flags.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxBounds:
-	:type theMaxBounds: int
-	:param theMaxEdges:
-	:type theMaxEdges: int
-	:param theArrayFlags:
-	:type theArrayFlags: int
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxBounds: int
+theMaxEdges: int
+theArrayFlags: int
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfPolygons;
 		 Graphic3d_ArrayOfPolygons(Standard_Integer theMaxVertexs, Standard_Integer theMaxBounds, Standard_Integer theMaxEdges, int theArrayFlags);
 
@@ -10900,21 +13577,25 @@ class Graphic3d_ArrayOfPolygons : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfPolygons;
 		%feature("autodoc", "Creates an array of polygons (graphic3d_topa_polygons): @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxbounds defines the maximum allowed bound number in the array @param themaxedges defines the maximum allowed edge number in the array.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxBounds: default value is 0
-	:type theMaxBounds: int
-	:param theMaxEdges: default value is 0
-	:type theMaxEdges: int
-	:param theHasVNormals: default value is Standard_False
-	:type theHasVNormals: bool
-	:param theHasVColors: default value is Standard_False
-	:type theHasVColors: bool
-	:param theHasBColors: default value is Standard_False
-	:type theHasBColors: bool
-	:param theHasVTexels: default value is Standard_False
-	:type theHasVTexels: bool
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxBounds: int,optional
+	default value is 0
+theMaxEdges: int,optional
+	default value is 0
+theHasVNormals: bool,optional
+	default value is Standard_False
+theHasVColors: bool,optional
+	default value is Standard_False
+theHasBColors: bool,optional
+	default value is Standard_False
+theHasVTexels: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfPolygons;
 		 Graphic3d_ArrayOfPolygons(const Standard_Integer theMaxVertexs, const Standard_Integer theMaxBounds = 0, const Standard_Integer theMaxEdges = 0, const Standard_Boolean theHasVNormals = Standard_False, const Standard_Boolean theHasVColors = Standard_False, const Standard_Boolean theHasBColors = Standard_False, const Standard_Boolean theHasVTexels = Standard_False);
 
@@ -10938,15 +13619,16 @@ class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfPolylines;
 		%feature("autodoc", "Creates an array of polylines (graphic3d_topa_polylines), a polyline can be filled as: 1) creating a single polyline defined with his vertexes, i.e: @code myarray = graphic3d_arrayofpolylines (7); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x7, y7, z7); @endcode 2) creating separate polylines defined with a predefined number of bounds and the number of vertex per bound, i.e: @code myarray = graphic3d_arrayofpolylines (7, 2); myarray->addbound (4); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x4, y4, z4); myarray->addbound (3); myarray->addvertex (x5, y5, z5); .... myarray->addvertex (x7, y7, z7); @endcode 3) creating a single indexed polyline defined with his vertex and edges, i.e: @code myarray = graphic3d_arrayofpolylines (4, 0, 6); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x4, y4, z4); myarray->addedge (1); myarray->addedge (2); myarray->addedge (3); myarray->addedge (1); myarray->addedge (2); myarray->addedge (4); @endcode 4) creating separate polylines defined with a predefined number of bounds and the number of edges per bound, i.e: @code myarray = graphic3d_arrayofpolylines (6, 4, 14); myarray->addbound (3); myarray->addvertex (x1, y1, z1); myarray->addvertex (x2, y2, z2); myarray->addvertex (x3, y3, z3); myarray->addedge (1); myarray->addedge (2); myarray->addedge (3); myarray->addbound (3); myarray->addvertex (x4, y4, z4); myarray->addvertex (x5, y5, z5); myarray->addvertex (x6, y6, z6); myarray->addedge (4); myarray->addedge (5); myarray->addedge (6); myarray->addbound (4); myarray->addedge (2); myarray->addedge (3); myarray->addedge (5); myarray->addedge (6); myarray->addbound (4); myarray->addedge (1); myarray->addedge (3); myarray->addedge (5); myarray->addedge (4); @endcode @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxbounds defines the maximum allowed bound number in the array @param themaxedges defines the maximum allowed edge number in the array @param thearrayflags array flags.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxBounds:
-	:type theMaxBounds: int
-	:param theMaxEdges:
-	:type theMaxEdges: int
-	:param theArrayFlags:
-	:type theArrayFlags: int
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxBounds: int
+theMaxEdges: int
+theArrayFlags: int
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfPolylines;
 		 Graphic3d_ArrayOfPolylines(Standard_Integer theMaxVertexs, Standard_Integer theMaxBounds, Standard_Integer theMaxEdges, int theArrayFlags);
 
@@ -10954,17 +13636,21 @@ class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfPolylines;
 		%feature("autodoc", "Creates an array of polylines (graphic3d_topa_polylines). @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxbounds defines the maximum allowed bound number in the array @param themaxedges defines the maximum allowed edge number in the array @param thehasvcolors when true addvertex(point,color) or addvertex(point,normal,color) should be used to specify per-vertex color values @param thehasbcolors when true addbound(number,color) should be used to specify sub-group color.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxBounds: default value is 0
-	:type theMaxBounds: int
-	:param theMaxEdges: default value is 0
-	:type theMaxEdges: int
-	:param theHasVColors: default value is Standard_False
-	:type theHasVColors: bool
-	:param theHasBColors: default value is Standard_False
-	:type theHasBColors: bool
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxBounds: int,optional
+	default value is 0
+theMaxEdges: int,optional
+	default value is 0
+theHasVColors: bool,optional
+	default value is Standard_False
+theHasBColors: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfPolylines;
 		 Graphic3d_ArrayOfPolylines(Standard_Integer theMaxVertexs, Standard_Integer theMaxBounds = 0, Standard_Integer theMaxEdges = 0, Standard_Boolean theHasVColors = Standard_False, Standard_Boolean theHasBColors = Standard_False);
 
@@ -10988,13 +13674,15 @@ class Graphic3d_ArrayOfQuadrangleStrips : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfQuadrangleStrips;
 		%feature("autodoc", "Creates an array of quadrangle strips (graphic3d_topa_quadranglestrips), a polygon can be filled as: 1) creating a single strip defined with his vertexes, i.e: @code myarray = graphic3d_arrayofquadranglestrips (7); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x7, y7, z7); @endcode 2) creating separate strips defined with a predefined number of strips and the number of vertex per strip, i.e: @code myarray = graphic3d_arrayofquadranglestrips (8, 2); myarray->addbound (4); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x4, y4, z4); myarray->addbound (4); myarray->addvertex (x5, y5, z5); .... myarray->addvertex (x8, y8, z8); @endcode the number of quadrangle really drawn is: vertexnumber()/2 - min(1, boundnumber()). @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxstrips defines the maximum allowed strip number in the array @param thearrayflags array flags.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxStrips:
-	:type theMaxStrips: int
-	:param theArrayFlags:
-	:type theArrayFlags: int
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxStrips: int
+theArrayFlags: int
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfQuadrangleStrips;
 		 Graphic3d_ArrayOfQuadrangleStrips(Standard_Integer theMaxVertexs, Standard_Integer theMaxStrips, int theArrayFlags);
 
@@ -11002,19 +13690,23 @@ class Graphic3d_ArrayOfQuadrangleStrips : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfQuadrangleStrips;
 		%feature("autodoc", "Creates an array of quadrangle strips (graphic3d_topa_quadranglestrips). @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxstrips defines the maximum allowed strip number in the array.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxStrips: default value is 0
-	:type theMaxStrips: int
-	:param theHasVNormals: default value is Standard_False
-	:type theHasVNormals: bool
-	:param theHasVColors: default value is Standard_False
-	:type theHasVColors: bool
-	:param theHasSColors: default value is Standard_False
-	:type theHasSColors: bool
-	:param theHasVTexels: default value is Standard_False
-	:type theHasVTexels: bool
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxStrips: int,optional
+	default value is 0
+theHasVNormals: bool,optional
+	default value is Standard_False
+theHasVColors: bool,optional
+	default value is Standard_False
+theHasSColors: bool,optional
+	default value is Standard_False
+theHasVTexels: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfQuadrangleStrips;
 		 Graphic3d_ArrayOfQuadrangleStrips(Standard_Integer theMaxVertexs, Standard_Integer theMaxStrips = 0, Standard_Boolean theHasVNormals = Standard_False, Standard_Boolean theHasVColors = Standard_False, Standard_Boolean theHasSColors = Standard_False, Standard_Boolean theHasVTexels = Standard_False);
 
@@ -11038,13 +13730,15 @@ class Graphic3d_ArrayOfQuadrangles : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfQuadrangles;
 		%feature("autodoc", "Creates an array of quadrangles (graphic3d_topa_quadrangles), a quadrangle can be filled as: 1) creating a set of quadrangles defined with his vertexes, i.e: @code myarray = graphic3d_arrayofquadrangles (8); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x8, y8, z8); @endcode 2) creating a set of indexed quadrangles defined with his vertex ans edges, i.e: @code myarray = graphic3d_arrayofquadrangles (6, 8); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x6, y6, z6); myarray->addedges (1, 2, 3, 4); myarray->addedges (3, 4, 5, 6); @endcode @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxedges defines the maximum allowed edge number in the array (for indexed array) @param thearrayflags array flags.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxEdges:
-	:type theMaxEdges: int
-	:param theArrayFlags:
-	:type theArrayFlags: int
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxEdges: int
+theArrayFlags: int
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfQuadrangles;
 		 Graphic3d_ArrayOfQuadrangles(Standard_Integer theMaxVertexs, Standard_Integer theMaxEdges, int theArrayFlags);
 
@@ -11052,17 +13746,21 @@ class Graphic3d_ArrayOfQuadrangles : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfQuadrangles;
 		%feature("autodoc", "Creates an array of quadrangles (graphic3d_topa_quadrangles). @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxedges defines the maximum allowed edge number in the array (for indexed array).
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxEdges: default value is 0
-	:type theMaxEdges: int
-	:param theHasVNormals: default value is Standard_False
-	:type theHasVNormals: bool
-	:param theHasVColors: default value is Standard_False
-	:type theHasVColors: bool
-	:param theHasVTexels: default value is Standard_False
-	:type theHasVTexels: bool
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxEdges: int,optional
+	default value is 0
+theHasVNormals: bool,optional
+	default value is Standard_False
+theHasVColors: bool,optional
+	default value is Standard_False
+theHasVTexels: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfQuadrangles;
 		 Graphic3d_ArrayOfQuadrangles(Standard_Integer theMaxVertexs, Standard_Integer theMaxEdges = 0, Standard_Boolean theHasVNormals = Standard_False, Standard_Boolean theHasVColors = Standard_False, Standard_Boolean theHasVTexels = Standard_False);
 
@@ -11086,13 +13784,15 @@ class Graphic3d_ArrayOfSegments : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfSegments;
 		%feature("autodoc", "Creates an array of segments (graphic3d_topa_segments), a segment can be filled as: 1) creating a set of segments defined with his vertexes, i.e: @code myarray = graphic3d_arrayofsegments (4); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x4, y4, z4); @endcode 2) creating a set of indexed segments defined with his vertex and edges, i.e: @code myarray = graphic3d_arrayofsegments (4, 8); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x4, y4, z4); myarray->addedges (1, 2); myarray->addedges (3, 4); myarray->addedges (2, 4); myarray->addedges (1, 3); @endcode @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxedges defines the maximum allowed edge number in the array @param thearrayflags array flags.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxEdges:
-	:type theMaxEdges: int
-	:param theArrayFlags:
-	:type theArrayFlags: int
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxEdges: int
+theArrayFlags: int
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfSegments;
 		 Graphic3d_ArrayOfSegments(Standard_Integer theMaxVertexs, Standard_Integer theMaxEdges, int theArrayFlags);
 
@@ -11100,13 +13800,17 @@ class Graphic3d_ArrayOfSegments : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfSegments;
 		%feature("autodoc", "Creates an array of segments (graphic3d_topa_segments). @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxedges defines the maximum allowed edge number in the array @param thehasvcolors when true, addvertex(point,color) should be used for specifying vertex color.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxEdges: default value is 0
-	:type theMaxEdges: int
-	:param theHasVColors: default value is Standard_False
-	:type theHasVColors: bool
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxEdges: int,optional
+	default value is 0
+theHasVColors: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfSegments;
 		 Graphic3d_ArrayOfSegments(Standard_Integer theMaxVertexs, Standard_Integer theMaxEdges = 0, Standard_Boolean theHasVColors = Standard_False);
 
@@ -11130,13 +13834,15 @@ class Graphic3d_ArrayOfTriangleFans : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfTriangleFans;
 		%feature("autodoc", "Creates an array of triangle fans (graphic3d_topa_trianglefans), a polygon can be filled as: 1) creating a single fan defined with his vertexes, i.e: @code myarray = graphic3d_arrayoftrianglefans (7); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x7, y7, z7); @endcode 2) creating separate fans defined with a predefined number of fans and the number of vertex per fan, i.e: @code myarray = graphic3d_arrayoftrianglefans (8, 2); myarray->addbound (4); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x4, y4, z4); myarray->addbound (4); myarray->addvertex (x5, y5, z5); .... myarray->addvertex (x8, y8, z8); @endcode the number of triangle really drawn is: vertexnumber() - 2 * min(1, boundnumber()) @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxfans defines the maximum allowed fan number in the array @param thearrayflags array flags.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxFans:
-	:type theMaxFans: int
-	:param theArrayFlags:
-	:type theArrayFlags: int
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxFans: int
+theArrayFlags: int
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfTriangleFans;
 		 Graphic3d_ArrayOfTriangleFans(Standard_Integer theMaxVertexs, Standard_Integer theMaxFans, int theArrayFlags);
 
@@ -11144,19 +13850,23 @@ class Graphic3d_ArrayOfTriangleFans : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfTriangleFans;
 		%feature("autodoc", "Creates an array of triangle fans (graphic3d_topa_trianglefans). @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxfans defines the maximum allowed fan number in the array.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxFans: default value is 0
-	:type theMaxFans: int
-	:param theHasVNormals: default value is Standard_False
-	:type theHasVNormals: bool
-	:param theHasVColors: default value is Standard_False
-	:type theHasVColors: bool
-	:param theHasBColors: default value is Standard_False
-	:type theHasBColors: bool
-	:param theHasVTexels: default value is Standard_False
-	:type theHasVTexels: bool
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxFans: int,optional
+	default value is 0
+theHasVNormals: bool,optional
+	default value is Standard_False
+theHasVColors: bool,optional
+	default value is Standard_False
+theHasBColors: bool,optional
+	default value is Standard_False
+theHasVTexels: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfTriangleFans;
 		 Graphic3d_ArrayOfTriangleFans(Standard_Integer theMaxVertexs, Standard_Integer theMaxFans = 0, Standard_Boolean theHasVNormals = Standard_False, Standard_Boolean theHasVColors = Standard_False, Standard_Boolean theHasBColors = Standard_False, Standard_Boolean theHasVTexels = Standard_False);
 
@@ -11180,13 +13890,15 @@ class Graphic3d_ArrayOfTriangleStrips : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfTriangleStrips;
 		%feature("autodoc", "Creates an array of triangle strips (graphic3d_topa_trianglestrips), a polygon can be filled as: 1) creating a single strip defined with his vertexes, i.e: @code myarray = graphic3d_arrayoftrianglestrips (7); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x7, y7, z7); @endcode 2) creating separate strips defined with a predefined number of strips and the number of vertex per strip, i.e: @code myarray = graphic3d_arrayoftrianglestrips (8, 2); myarray->addbound (4); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x4, y4, z4); myarray->addbound (4); myarray->addvertex (x5, y5, z5); .... myarray->addvertex (x8, y8, z8); @endcode @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxstrips defines the maximum allowed strip number in the array;  the number of triangle really drawn is: vertexnumber() - 2 * min(1, boundnumber()) @param thearrayflags array flags.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxStrips:
-	:type theMaxStrips: int
-	:param theArrayFlags:
-	:type theArrayFlags: int
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxStrips: int
+theArrayFlags: int
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfTriangleStrips;
 		 Graphic3d_ArrayOfTriangleStrips(Standard_Integer theMaxVertexs, Standard_Integer theMaxStrips, int theArrayFlags);
 
@@ -11194,19 +13906,23 @@ class Graphic3d_ArrayOfTriangleStrips : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfTriangleStrips;
 		%feature("autodoc", "Creates an array of triangle strips (graphic3d_topa_trianglestrips). @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxstrips defines the maximum allowed strip number in the array;  the number of triangle really drawn is: vertexnumber() - 2 * min(1, boundnumber()) @param thehasvnormals when true, addvertex(point,normal), addvertex(point,normal,color) or addvertex(point,normal,texel) should be used to specify vertex normal;  vertex normals should be specified coherent to triangle orientation (defined by order of vertexes within triangle) for proper rendering @param thehasvcolors when true, addvertex(point,color) or addvertex(point,normal,color) should be used to specify vertex color @param thehasbcolors when true, addbound(number,color) should be used to specify sub-group color @param thehasvtexels when true, addvertex(point,texel) or addvertex(point,normal,texel) should be used to specify vertex uv coordinates.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxStrips: default value is 0
-	:type theMaxStrips: int
-	:param theHasVNormals: default value is Standard_False
-	:type theHasVNormals: bool
-	:param theHasVColors: default value is Standard_False
-	:type theHasVColors: bool
-	:param theHasBColors: default value is Standard_False
-	:type theHasBColors: bool
-	:param theHasVTexels: default value is Standard_False
-	:type theHasVTexels: bool
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxStrips: int,optional
+	default value is 0
+theHasVNormals: bool,optional
+	default value is Standard_False
+theHasVColors: bool,optional
+	default value is Standard_False
+theHasBColors: bool,optional
+	default value is Standard_False
+theHasVTexels: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfTriangleStrips;
 		 Graphic3d_ArrayOfTriangleStrips(Standard_Integer theMaxVertexs, Standard_Integer theMaxStrips = 0, Standard_Boolean theHasVNormals = Standard_False, Standard_Boolean theHasVColors = Standard_False, Standard_Boolean theHasBColors = Standard_False, Standard_Boolean theHasVTexels = Standard_False);
 
@@ -11230,13 +13946,15 @@ class Graphic3d_ArrayOfTriangles : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfTriangles;
 		%feature("autodoc", "Creates an array of triangles (graphic3d_topa_triangles), a triangle can be filled as: 1) creating a set of triangles defined with his vertexes, i.e: @code myarray = graphic3d_arrayoftriangles (6); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x6, y6, z6); @endcode 3) creating a set of indexed triangles defined with his vertex and edges, i.e: @code myarray = graphic3d_arrayoftriangles (4, 6); myarray->addvertex (x1, y1, z1); .... myarray->addvertex (x4, y4, z4); myarray->addedges (1, 2, 3); myarray->addedges (2, 3, 4); @endcode @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxedges defines the maximum allowed edge number in the array @param thearrayflags array flags.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxEdges:
-	:type theMaxEdges: int
-	:param theArrayFlags:
-	:type theArrayFlags: int
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxEdges: int
+theArrayFlags: int
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfTriangles;
 		 Graphic3d_ArrayOfTriangles(Standard_Integer theMaxVertexs, Standard_Integer theMaxEdges, int theArrayFlags);
 
@@ -11244,17 +13962,21 @@ class Graphic3d_ArrayOfTriangles : public Graphic3d_ArrayOfPrimitives {
 		%feature("compactdefaultargs") Graphic3d_ArrayOfTriangles;
 		%feature("autodoc", "Creates an array of triangles (graphic3d_topa_triangles). @param themaxvertexs defines the maximum allowed vertex number in the array @param themaxedges defines the maximum allowed edge number in the array @param thehasvnormals when true, addvertex(point,normal), addvertex(point,normal,color) or addvertex(point,normal,texel) should be used to specify vertex normal;  vertex normals should be specified coherent to triangle orientation (defined by order of vertexes within triangle) for proper rendering @param thehasvcolors when true, addvertex(point,color) or addvertex(point,normal,color) should be used to specify vertex color @param thehasvtexels when true, addvertex(point,texel) or addvertex(point,normal,texel) should be used to specify vertex uv coordinates.
 
-	:param theMaxVertexs:
-	:type theMaxVertexs: int
-	:param theMaxEdges: default value is 0
-	:type theMaxEdges: int
-	:param theHasVNormals: default value is Standard_False
-	:type theHasVNormals: bool
-	:param theHasVColors: default value is Standard_False
-	:type theHasVColors: bool
-	:param theHasVTexels: default value is Standard_False
-	:type theHasVTexels: bool
-	:rtype: None
+Parameters
+----------
+theMaxVertexs: int
+theMaxEdges: int,optional
+	default value is 0
+theHasVNormals: bool,optional
+	default value is Standard_False
+theHasVColors: bool,optional
+	default value is Standard_False
+theHasVTexels: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Graphic3d_ArrayOfTriangles;
 		 Graphic3d_ArrayOfTriangles(Standard_Integer theMaxVertexs, Standard_Integer theMaxEdges = 0, Standard_Boolean theHasVNormals = Standard_False, Standard_Boolean theHasVColors = Standard_False, Standard_Boolean theHasVTexels = Standard_False);
 
@@ -11276,7 +13998,11 @@ class Graphic3d_AspectFillArea3d : public Graphic3d_Aspects {
 	public:
 		/****************** Edge ******************/
 		%feature("compactdefaultargs") Edge;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Edge;
 		bool Edge();
 
@@ -11284,7 +14010,9 @@ class Graphic3d_AspectFillArea3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Graphic3d_AspectFillArea3d;
 		%feature("autodoc", "Creates a context table for fill area primitives defined with the following default values: //! interiorstyle : aspect_is_empty interiorcolor : quantity_noc_cyan1 edgecolor : quantity_noc_white edgelinetype : aspect_tol_solid edgewidth : 1.0 frontmaterial : nom_brass backmaterial : nom_brass hatchstyle : aspect_hs_solid //! display of back-facing filled polygons. no distinction between external and internal faces of fillareas. the edges are not drawn. polygon offset parameters: mode = aspect_pom_none, factor = 1., units = 0.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_AspectFillArea3d;
 		 Graphic3d_AspectFillArea3d();
 
@@ -11292,21 +14020,19 @@ class Graphic3d_AspectFillArea3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Graphic3d_AspectFillArea3d;
 		%feature("autodoc", "Creates a context table for fill area primitives defined with the specified values. display of back-facing filled polygons. no distinction between external and internal faces of fillareas. the edges are not drawn. polygon offset parameters: mode = aspect_pom_none, factor = 1., units = 0.
 
-	:param theInterior:
-	:type theInterior: Aspect_InteriorStyle
-	:param theInteriorColor:
-	:type theInteriorColor: Quantity_Color
-	:param theEdgeColor:
-	:type theEdgeColor: Quantity_Color
-	:param theEdgeLineType:
-	:type theEdgeLineType: Aspect_TypeOfLine
-	:param theEdgeWidth:
-	:type theEdgeWidth: float
-	:param theFrontMaterial:
-	:type theFrontMaterial: Graphic3d_MaterialAspect
-	:param theBackMaterial:
-	:type theBackMaterial: Graphic3d_MaterialAspect
-	:rtype: None
+Parameters
+----------
+theInterior: Aspect_InteriorStyle
+theInteriorColor: Quantity_Color
+theEdgeColor: Quantity_Color
+theEdgeLineType: Aspect_TypeOfLine
+theEdgeWidth: float
+theFrontMaterial: Graphic3d_MaterialAspect
+theBackMaterial: Graphic3d_MaterialAspect
+
+Returns
+-------
+None
 ") Graphic3d_AspectFillArea3d;
 		 Graphic3d_AspectFillArea3d(const Aspect_InteriorStyle theInterior, const Quantity_Color & theInteriorColor, const Quantity_Color & theEdgeColor, const Aspect_TypeOfLine theEdgeLineType, const Standard_Real theEdgeWidth, const Graphic3d_MaterialAspect & theFrontMaterial, const Graphic3d_MaterialAspect & theBackMaterial);
 
@@ -11330,7 +14056,9 @@ class Graphic3d_AspectLine3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Graphic3d_AspectLine3d;
 		%feature("autodoc", "Creates a context table for line primitives defined with the following default values: //! color = quantity_noc_yellow; type = aspect_tol_solid; width = 1.0;.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_AspectLine3d;
 		 Graphic3d_AspectLine3d();
 
@@ -11338,13 +14066,15 @@ class Graphic3d_AspectLine3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Graphic3d_AspectLine3d;
 		%feature("autodoc", "Creates a context table for line primitives defined with the specified values. warning: thewidth is the 'line width scale factor'. the nominal line width is 1 pixel. the width of the line is determined by applying the line width scale factor to this nominal line width. the supported line widths vary by 1-pixel units.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:param theType:
-	:type theType: Aspect_TypeOfLine
-	:param theWidth:
-	:type theWidth: float
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+theType: Aspect_TypeOfLine
+theWidth: float
+
+Returns
+-------
+None
 ") Graphic3d_AspectLine3d;
 		 Graphic3d_AspectLine3d(const Quantity_Color & theColor, Aspect_TypeOfLine theType, Standard_Real theWidth);
 
@@ -11352,9 +14082,13 @@ class Graphic3d_AspectLine3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetType;
 		%feature("autodoc", "Modifies the type of line.
 
-	:param theType:
-	:type theType: Aspect_TypeOfLine
-	:rtype: None
+Parameters
+----------
+theType: Aspect_TypeOfLine
+
+Returns
+-------
+None
 ") SetType;
 		void SetType(const Aspect_TypeOfLine theType);
 
@@ -11362,9 +14096,13 @@ class Graphic3d_AspectLine3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetWidth;
 		%feature("autodoc", "Modifies the line thickness. warning: raises standard_outofrange if the width is a negative value.
 
-	:param theWidth:
-	:type theWidth: float
-	:rtype: None
+Parameters
+----------
+theWidth: float
+
+Returns
+-------
+None
 ") SetWidth;
 		void SetWidth(const Standard_Real theWidth);
 
@@ -11372,9 +14110,13 @@ class Graphic3d_AspectLine3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetWidth;
 		%feature("autodoc", "Modifies the line thickness. warning: raises standard_outofrange if the width is a negative value.
 
-	:param theWidth:
-	:type theWidth: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theWidth: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetWidth;
 		void SetWidth(Standard_ShortReal theWidth);
 
@@ -11382,7 +14124,9 @@ class Graphic3d_AspectLine3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Return line type.
 
-	:rtype: Aspect_TypeOfLine
+Returns
+-------
+Aspect_TypeOfLine
 ") Type;
 		Aspect_TypeOfLine Type();
 
@@ -11390,7 +14134,9 @@ class Graphic3d_AspectLine3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Width;
 		%feature("autodoc", "Return line width.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Width;
 		Standard_ShortReal Width();
 
@@ -11414,7 +14160,9 @@ class Graphic3d_AspectMarker3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") GetMarkerImage;
 		%feature("autodoc", "Returns marker's image texture. could be null handle if marker aspect has been initialized as default type of marker.
 
-	:rtype: opencascade::handle<Graphic3d_MarkerImage>
+Returns
+-------
+opencascade::handle<Graphic3d_MarkerImage>
 ") GetMarkerImage;
 		const opencascade::handle<Graphic3d_MarkerImage> & GetMarkerImage();
 
@@ -11422,11 +14170,14 @@ class Graphic3d_AspectMarker3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") GetTextureSize;
 		%feature("autodoc", "Returns marker's texture size.
 
-	:param theWidth:
-	:type theWidth: int
-	:param theHeight:
-	:type theHeight: int
-	:rtype: None
+Parameters
+----------
+theWidth: int
+theHeight: int
+
+Returns
+-------
+None
 ") GetTextureSize;
 		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
 
@@ -11434,19 +14185,25 @@ class Graphic3d_AspectMarker3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Graphic3d_AspectMarker3d;
 		%feature("autodoc", "Creates a context table for marker primitives defined with the following default values: //! marker type : tom_x color : yellow scale factor: 1.0.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_AspectMarker3d;
 		 Graphic3d_AspectMarker3d();
 
 		/****************** Graphic3d_AspectMarker3d ******************/
 		%feature("compactdefaultargs") Graphic3d_AspectMarker3d;
-		%feature("autodoc", "	:param theType:
-	:type theType: Aspect_TypeOfMarker
-	:param theColor:
-	:type theColor: Quantity_Color
-	:param theScale:
-	:type theScale: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theType: Aspect_TypeOfMarker
+theColor: Quantity_Color
+theScale: float
+
+Returns
+-------
+None
 ") Graphic3d_AspectMarker3d;
 		 Graphic3d_AspectMarker3d(const Aspect_TypeOfMarker theType, const Quantity_Color & theColor, const Standard_Real theScale);
 
@@ -11454,15 +14211,16 @@ class Graphic3d_AspectMarker3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Graphic3d_AspectMarker3d;
 		%feature("autodoc", "Creates a context table for marker primitives defined with the specified values.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:param theWidth:
-	:type theWidth: int
-	:param theHeight:
-	:type theHeight: int
-	:param theTextureBitmap:
-	:type theTextureBitmap: TColStd_HArray1OfByte
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+theWidth: int
+theHeight: int
+theTextureBitmap: TColStd_HArray1OfByte
+
+Returns
+-------
+None
 ") Graphic3d_AspectMarker3d;
 		 Graphic3d_AspectMarker3d(const Quantity_Color & theColor, const Standard_Integer theWidth, const Standard_Integer theHeight, const opencascade::handle<TColStd_HArray1OfByte> & theTextureBitmap);
 
@@ -11470,9 +14228,13 @@ class Graphic3d_AspectMarker3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Graphic3d_AspectMarker3d;
 		%feature("autodoc", "Creates a context table for marker primitives defined with the specified values.
 
-	:param theTextureImage:
-	:type theTextureImage: Image_PixMap
-	:rtype: None
+Parameters
+----------
+theTextureImage: Image_PixMap
+
+Returns
+-------
+None
 ") Graphic3d_AspectMarker3d;
 		 Graphic3d_AspectMarker3d(const opencascade::handle<Image_PixMap> & theTextureImage);
 
@@ -11480,19 +14242,25 @@ class Graphic3d_AspectMarker3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Scale;
 		%feature("autodoc", "Return scale factor.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") Scale;
 		Standard_ShortReal Scale();
 
 		/****************** SetBitMap ******************/
 		%feature("compactdefaultargs") SetBitMap;
-		%feature("autodoc", "	:param theWidth:
-	:type theWidth: int
-	:param theHeight:
-	:type theHeight: int
-	:param theTexture:
-	:type theTexture: TColStd_HArray1OfByte
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theWidth: int
+theHeight: int
+theTexture: TColStd_HArray1OfByte
+
+Returns
+-------
+None
 ") SetBitMap;
 		void SetBitMap(const Standard_Integer theWidth, const Standard_Integer theHeight, const opencascade::handle<TColStd_HArray1OfByte> & theTexture);
 
@@ -11500,9 +14268,13 @@ class Graphic3d_AspectMarker3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetScale;
 		%feature("autodoc", "Modifies the scale factor. marker type aspect_tom_point is not affected by the marker size scale factor. it is always the smallest displayable dot. warning: raises standard_outofrange if the scale is a negative value.
 
-	:param theScale:
-	:type theScale: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theScale: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetScale;
 		void SetScale(const Standard_ShortReal theScale);
 
@@ -11510,9 +14282,13 @@ class Graphic3d_AspectMarker3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetScale;
 		%feature("autodoc", "Assign scale factor.
 
-	:param theScale:
-	:type theScale: float
-	:rtype: None
+Parameters
+----------
+theScale: float
+
+Returns
+-------
+None
 ") SetScale;
 		void SetScale(const Standard_Real theScale);
 
@@ -11520,9 +14296,13 @@ class Graphic3d_AspectMarker3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetType;
 		%feature("autodoc", "Modifies the type of marker.
 
-	:param theType:
-	:type theType: Aspect_TypeOfMarker
-	:rtype: None
+Parameters
+----------
+theType: Aspect_TypeOfMarker
+
+Returns
+-------
+None
 ") SetType;
 		void SetType(const Aspect_TypeOfMarker theType);
 
@@ -11530,7 +14310,9 @@ class Graphic3d_AspectMarker3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Return marker type.
 
-	:rtype: Aspect_TypeOfMarker
+Returns
+-------
+Aspect_TypeOfMarker
 ") Type;
 		Aspect_TypeOfMarker Type();
 
@@ -11554,7 +14336,9 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Color;
 		%feature("autodoc", "Return the text color.
 
-	:rtype: Quantity_Color
+Returns
+-------
+Quantity_Color
 ") Color;
 		const Quantity_Color & Color();
 
@@ -11562,7 +14346,9 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") ColorRGBA;
 		%feature("autodoc", "Return the text color.
 
-	:rtype: Quantity_ColorRGBA
+Returns
+-------
+Quantity_ColorRGBA
 ") ColorRGBA;
 		const Quantity_ColorRGBA & ColorRGBA();
 
@@ -11570,7 +14356,9 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") DisplayType;
 		%feature("autodoc", "Return display type.
 
-	:rtype: Aspect_TypeOfDisplayText
+Returns
+-------
+Aspect_TypeOfDisplayText
 ") DisplayType;
 		Aspect_TypeOfDisplayText DisplayType();
 
@@ -11578,7 +14366,9 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Font;
 		%feature("autodoc", "Return the font.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") Font;
 		const TCollection_AsciiString & Font();
 
@@ -11586,7 +14376,9 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") GetTextAngle;
 		%feature("autodoc", "Returns angle of degree.
 
-	:rtype: Standard_ShortReal
+Returns
+-------
+Standard_ShortReal
 ") GetTextAngle;
 		Standard_ShortReal GetTextAngle();
 
@@ -11594,7 +14386,9 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") GetTextFontAspect;
 		%feature("autodoc", "Returns text fontaspect.
 
-	:rtype: Font_FontAspect
+Returns
+-------
+Font_FontAspect
 ") GetTextFontAspect;
 		Font_FontAspect GetTextFontAspect();
 
@@ -11602,7 +14396,9 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") GetTextZoomable;
 		%feature("autodoc", "Returns true when the text zoomable is on.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") GetTextZoomable;
 		bool GetTextZoomable();
 
@@ -11610,7 +14406,9 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Graphic3d_AspectText3d;
 		%feature("autodoc", "Creates a context table for text primitives defined with the following default values: color : quantity_noc_yellow font : font_nof_ascii_mono the style : aspect_tost_normal the display type : aspect_todt_normal.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_AspectText3d;
 		 Graphic3d_AspectText3d();
 
@@ -11618,19 +14416,20 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Graphic3d_AspectText3d;
 		%feature("autodoc", "Creates a context table for text primitives defined with the specified values. @param thecolor [in] text color @param thefont [in] font family name or alias like font_nof_ascii_mono @param theexpansionfactor [in] deprecated parameter, has no effect @param thespace [in] deprecated parameter, has no effect @param thestyle [in] font style @param thedisplaytype [in] display mode.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:param theFont:
-	:type theFont: char *
-	:param theExpansionFactor:
-	:type theExpansionFactor: float
-	:param theSpace:
-	:type theSpace: float
-	:param theStyle: default value is Aspect_TOST_NORMAL
-	:type theStyle: Aspect_TypeOfStyleText
-	:param theDisplayType: default value is Aspect_TODT_NORMAL
-	:type theDisplayType: Aspect_TypeOfDisplayText
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+theFont: char *
+theExpansionFactor: float
+theSpace: float
+theStyle: Aspect_TypeOfStyleText,optional
+	default value is Aspect_TOST_NORMAL
+theDisplayType: Aspect_TypeOfDisplayText,optional
+	default value is Aspect_TODT_NORMAL
+
+Returns
+-------
+None
 ") Graphic3d_AspectText3d;
 		 Graphic3d_AspectText3d(const Quantity_Color & theColor, const char * theFont, Standard_Real theExpansionFactor, Standard_Real theSpace, Aspect_TypeOfStyleText theStyle = Aspect_TOST_NORMAL, Aspect_TypeOfDisplayText theDisplayType = Aspect_TODT_NORMAL);
 
@@ -11638,9 +14437,13 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetColor;
 		%feature("autodoc", "Modifies the color.
 
-	:param theColor:
-	:type theColor: Quantity_Color
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_Color
+
+Returns
+-------
+None
 ") SetColor;
 		void SetColor(const Quantity_Color & theColor);
 
@@ -11648,9 +14451,13 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetColor;
 		%feature("autodoc", "Modifies the color.
 
-	:param theColor:
-	:type theColor: Quantity_ColorRGBA
-	:rtype: None
+Parameters
+----------
+theColor: Quantity_ColorRGBA
+
+Returns
+-------
+None
 ") SetColor;
 		void SetColor(const Quantity_ColorRGBA & theColor);
 
@@ -11658,9 +14465,13 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetDisplayType;
 		%feature("autodoc", "Define the display type of the text.
 
-	:param theDisplayType:
-	:type theDisplayType: Aspect_TypeOfDisplayText
-	:rtype: None
+Parameters
+----------
+theDisplayType: Aspect_TypeOfDisplayText
+
+Returns
+-------
+None
 ") SetDisplayType;
 		void SetDisplayType(Aspect_TypeOfDisplayText theDisplayType);
 
@@ -11668,9 +14479,13 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetFont;
 		%feature("autodoc", "Modifies the font.
 
-	:param theFont:
-	:type theFont: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theFont: TCollection_AsciiString
+
+Returns
+-------
+None
 ") SetFont;
 		void SetFont(const TCollection_AsciiString & theFont);
 
@@ -11678,9 +14493,13 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetFont;
 		%feature("autodoc", "Modifies the font.
 
-	:param theFont:
-	:type theFont: char *
-	:rtype: None
+Parameters
+----------
+theFont: char *
+
+Returns
+-------
+None
 ") SetFont;
 		void SetFont(const char * theFont);
 
@@ -11688,9 +14507,13 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetStyle;
 		%feature("autodoc", "Modifies the style of the text.
 
-	:param theStyle:
-	:type theStyle: Aspect_TypeOfStyleText
-	:rtype: None
+Parameters
+----------
+theStyle: Aspect_TypeOfStyleText
+
+Returns
+-------
+None
 ") SetStyle;
 		void SetStyle(Aspect_TypeOfStyleText theStyle);
 
@@ -11698,9 +14521,13 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") SetTextAngle;
 		%feature("autodoc", "Turns usage of text rotated.
 
-	:param theAngle:
-	:type theAngle: float
-	:rtype: None
+Parameters
+----------
+theAngle: float
+
+Returns
+-------
+None
 ") SetTextAngle;
 		void SetTextAngle(const Standard_Real theAngle);
 
@@ -11708,7 +14535,9 @@ class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 		%feature("compactdefaultargs") Style;
 		%feature("autodoc", "Return the text style.
 
-	:rtype: Aspect_TypeOfStyleText
+Returns
+-------
+Aspect_TypeOfStyleText
 ") Style;
 		Aspect_TypeOfStyleText Style();
 
@@ -11732,9 +14561,13 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") Graphic3d_AttribBuffer;
 		%feature("autodoc", "Empty constructor.
 
-	:param theAlloc:
-	:type theAlloc: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAlloc: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") Graphic3d_AttribBuffer;
 		 Graphic3d_AttribBuffer(const opencascade::handle<NCollection_BaseAllocator> & theAlloc);
 
@@ -11742,13 +14575,15 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Allocates new empty array.
 
-	:param theNbElems:
-	:type theNbElems: int
-	:param theAttribs:
-	:type theAttribs: Graphic3d_Attribute *
-	:param theNbAttribs:
-	:type theNbAttribs: int
-	:rtype: bool
+Parameters
+----------
+theNbElems: int
+theAttribs: Graphic3d_Attribute *
+theNbAttribs: int
+
+Returns
+-------
+bool
 ") Init;
 		bool Init(const Standard_Integer theNbElems, const Graphic3d_Attribute * theAttribs, const Standard_Integer theNbAttribs);
 
@@ -11756,11 +14591,14 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Allocates new empty array.
 
-	:param theNbElems:
-	:type theNbElems: int
-	:param theAttribs:
-	:type theAttribs: Graphic3d_Array1OfAttribute
-	:rtype: bool
+Parameters
+----------
+theNbElems: int
+theAttribs: Graphic3d_Array1OfAttribute
+
+Returns
+-------
+bool
 ") Init;
 		bool Init(const Standard_Integer theNbElems, const Graphic3d_Array1OfAttribute & theAttribs);
 
@@ -11768,7 +14606,9 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") Invalidate;
 		%feature("autodoc", "Invalidate the entire buffer data.
 
-	:rtype: None
+Returns
+-------
+None
 ") Invalidate;
 		virtual void Invalidate();
 
@@ -11776,9 +14616,13 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") Invalidate;
 		%feature("autodoc", "Invalidate the entire attribute data.
 
-	:param theAttributeIndex:
-	:type theAttributeIndex: int
-	:rtype: None
+Parameters
+----------
+theAttributeIndex: int
+
+Returns
+-------
+None
 ") Invalidate;
 		void Invalidate(Standard_Integer theAttributeIndex);
 
@@ -11786,13 +14630,15 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") Invalidate;
 		%feature("autodoc", "Invalidate attribute data within specified sub-range (starting from 0).
 
-	:param theAttributeIndex:
-	:type theAttributeIndex: int
-	:param theVertexLower:
-	:type theVertexLower: int
-	:param theVertexUpper:
-	:type theVertexUpper: int
-	:rtype: None
+Parameters
+----------
+theAttributeIndex: int
+theVertexLower: int
+theVertexUpper: int
+
+Returns
+-------
+None
 ") Invalidate;
 		void Invalidate(Standard_Integer theAttributeIndex, Standard_Integer theVertexLower, Standard_Integer theVertexUpper);
 
@@ -11800,11 +14646,14 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") Invalidate;
 		%feature("autodoc", "Invalidate all attribute data within specified vertex sub-range (starting from 0).
 
-	:param theVertexLower:
-	:type theVertexLower: int
-	:param theVertexUpper:
-	:type theVertexUpper: int
-	:rtype: None
+Parameters
+----------
+theVertexLower: int
+theVertexUpper: int
+
+Returns
+-------
+None
 ") Invalidate;
 		void Invalidate(Standard_Integer theVertexLower, Standard_Integer theVertexUpper);
 
@@ -11812,7 +14661,9 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") InvalidatedRange;
 		%feature("autodoc", "Return invalidated range.
 
-	:rtype: Graphic3d_BufferRange
+Returns
+-------
+Graphic3d_BufferRange
 ") InvalidatedRange;
 		virtual Graphic3d_BufferRange InvalidatedRange();
 
@@ -11820,7 +14671,9 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") IsInterleaved;
 		%feature("autodoc", "Return true for interleaved array; true by default.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsInterleaved;
 		virtual Standard_Boolean IsInterleaved();
 
@@ -11828,7 +14681,9 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") IsMutable;
 		%feature("autodoc", "Return true if data can be invalidated; false by default.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsMutable;
 		virtual Standard_Boolean IsMutable();
 
@@ -11836,9 +14691,13 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") SetInterleaved;
 		%feature("autodoc", "Setup interleaved/non-interleaved array. warning! filling non-interleaved buffer should be implemented on user side without graphic3d_buffer auxiliary methods designed for interleaved data.
 
-	:param theIsInterleaved:
-	:type theIsInterleaved: bool
-	:rtype: None
+Parameters
+----------
+theIsInterleaved: bool
+
+Returns
+-------
+None
 ") SetInterleaved;
 		void SetInterleaved(Standard_Boolean theIsInterleaved);
 
@@ -11846,9 +14705,13 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") SetMutable;
 		%feature("autodoc", "Set if data can be invalidated.
 
-	:param theMutable:
-	:type theMutable: bool
-	:rtype: None
+Parameters
+----------
+theMutable: bool
+
+Returns
+-------
+None
 ") SetMutable;
 		void SetMutable(Standard_Boolean theMutable);
 
@@ -11856,7 +14719,9 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") Validate;
 		%feature("autodoc", "Reset invalidated range.
 
-	:rtype: None
+Returns
+-------
+None
 ") Validate;
 		virtual void Validate();
 
@@ -11864,9 +14729,13 @@ class Graphic3d_AttribBuffer : public Graphic3d_Buffer {
 		%feature("compactdefaultargs") invalidate;
 		%feature("autodoc", "Invalidate specified sub-range of data (as byte offsets).
 
-	:param theRange:
-	:type theRange: Graphic3d_BufferRange
-	:rtype: None
+Parameters
+----------
+theRange: Graphic3d_BufferRange
+
+Returns
+-------
+None
 ") invalidate;
 		void invalidate(const Graphic3d_BufferRange & theRange);
 
@@ -11889,7 +14758,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Activate;
 		%feature("autodoc", "Activates the view. maps presentations defined within structure manager onto this view.
 
-	:rtype: None
+Returns
+-------
+None
 ") Activate;
 		virtual void Activate();
 
@@ -11897,7 +14768,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") BackfacingModel;
 		%feature("autodoc", "Return backfacing model used for the view.
 
-	:rtype: Graphic3d_TypeOfBackfacingModel
+Returns
+-------
+Graphic3d_TypeOfBackfacingModel
 ") BackfacingModel;
 		virtual Graphic3d_TypeOfBackfacingModel BackfacingModel();
 
@@ -11905,7 +14778,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Background;
 		%feature("autodoc", "Returns background fill color.
 
-	:rtype: Aspect_Background
+Returns
+-------
+Aspect_Background
 ") Background;
 		virtual Aspect_Background Background();
 
@@ -11913,7 +14788,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") BackgroundCubeMap;
 		%feature("autodoc", "Returns cubemap being setted last time on background.
 
-	:rtype: opencascade::handle<Graphic3d_CubeMap>
+Returns
+-------
+opencascade::handle<Graphic3d_CubeMap>
 ") BackgroundCubeMap;
 		virtual opencascade::handle<Graphic3d_CubeMap> BackgroundCubeMap();
 
@@ -11921,7 +14798,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") BackgroundImage;
 		%feature("autodoc", "Returns background image texture file path.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") BackgroundImage;
 		virtual TCollection_AsciiString BackgroundImage();
 
@@ -11929,7 +14808,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") BackgroundImageStyle;
 		%feature("autodoc", "Returns background image fill style.
 
-	:rtype: Aspect_FillMethod
+Returns
+-------
+Aspect_FillMethod
 ") BackgroundImageStyle;
 		virtual Aspect_FillMethod BackgroundImageStyle();
 
@@ -11937,11 +14818,14 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") BufferDump;
 		%feature("autodoc", "Dump active rendering buffer into specified memory buffer.
 
-	:param theImage:
-	:type theImage: Image_PixMap
-	:param theBufferType:
-	:type theBufferType: Graphic3d_BufferType
-	:rtype: bool
+Parameters
+----------
+theImage: Image_PixMap
+theBufferType: Graphic3d_BufferType
+
+Returns
+-------
+bool
 ") BufferDump;
 		virtual Standard_Boolean BufferDump(Image_PixMap & theImage, const Graphic3d_BufferType & theBufferType);
 
@@ -11949,7 +14833,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Camera;
 		%feature("autodoc", "Returns camera object of the view.
 
-	:rtype: opencascade::handle<Graphic3d_Camera>
+Returns
+-------
+opencascade::handle<Graphic3d_Camera>
 ") Camera;
 		virtual const opencascade::handle<Graphic3d_Camera> & Camera();
 
@@ -11957,7 +14843,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") ChangeHiddenObjects;
 		%feature("autodoc", "Returns map of objects hidden within this specific view (not viewer-wise).
 
-	:rtype: opencascade::handle<Graphic3d_NMapOfTransient>
+Returns
+-------
+opencascade::handle<Graphic3d_NMapOfTransient>
 ") ChangeHiddenObjects;
 		opencascade::handle<Graphic3d_NMapOfTransient> & ChangeHiddenObjects();
 
@@ -11965,7 +14853,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") ChangeRenderingParams;
 		%feature("autodoc", "Returns reference to current rendering parameters and effect settings.
 
-	:rtype: Graphic3d_RenderingParams
+Returns
+-------
+Graphic3d_RenderingParams
 ") ChangeRenderingParams;
 		Graphic3d_RenderingParams & ChangeRenderingParams();
 
@@ -11973,7 +14863,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") ClipPlanes;
 		%feature("autodoc", "Returns list of clip planes set for the view.
 
-	:rtype: opencascade::handle<Graphic3d_SequenceOfHClipPlane>
+Returns
+-------
+opencascade::handle<Graphic3d_SequenceOfHClipPlane>
 ") ClipPlanes;
 		virtual const opencascade::handle<Graphic3d_SequenceOfHClipPlane> & ClipPlanes();
 
@@ -11981,7 +14873,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "Computes the new presentation of the structures displayed in this view with the type graphic3d_tos_computed.
 
-	:rtype: None
+Returns
+-------
+None
 ") Compute;
 		void Compute();
 
@@ -11989,7 +14883,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") ComputedMode;
 		%feature("autodoc", "Returns the computed hlr mode state.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ComputedMode;
 		Standard_Boolean ComputedMode();
 
@@ -11997,7 +14893,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") ConsiderZoomPersistenceObjects;
 		%feature("autodoc", "Returns zoom-scale factor.
 
-	:rtype: float
+Returns
+-------
+float
 ") ConsiderZoomPersistenceObjects;
 		Standard_Real ConsiderZoomPersistenceObjects();
 
@@ -12005,7 +14903,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") ContainsFacet;
 		%feature("autodoc", "Returns standard_true if one of the structures displayed in the view contains polygons, triangles or quadrangles.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ContainsFacet;
 		Standard_Boolean ContainsFacet();
 
@@ -12013,9 +14913,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") ContainsFacet;
 		%feature("autodoc", "Returns standard_true if one of the structures in the set contains polygons, triangles or quadrangles.
 
-	:param theSet:
-	:type theSet: Graphic3d_MapOfStructure
-	:rtype: bool
+Parameters
+----------
+theSet: Graphic3d_MapOfStructure
+
+Returns
+-------
+bool
 ") ContainsFacet;
 		Standard_Boolean ContainsFacet(const Graphic3d_MapOfStructure & theSet);
 
@@ -12023,9 +14927,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") CopySettings;
 		%feature("autodoc", "Copy visualization settings from another view. method is used for cloning views in viewer when its required to create view with same view properties.
 
-	:param theOther:
-	:type theOther: Graphic3d_CView
-	:rtype: None
+Parameters
+----------
+theOther: Graphic3d_CView
+
+Returns
+-------
+None
 ") CopySettings;
 		virtual void CopySettings(const opencascade::handle<Graphic3d_CView> & theOther);
 
@@ -12033,7 +14941,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Deactivate;
 		%feature("autodoc", "Deactivates the view. unmaps presentations defined within structure manager. the view in deactivated state will ignore actions on structures such as display().
 
-	:rtype: None
+Returns
+-------
+None
 ") Deactivate;
 		virtual void Deactivate();
 
@@ -12041,11 +14951,14 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") DiagnosticInformation;
 		%feature("autodoc", "Fill in the dictionary with diagnostic info. should be called within rendering thread. //! this api should be used only for user output or for creating automated reports. the format of returned information (e.g. key-value layout) is not part of this api and can be changed at any time. thus application should not parse returned information to weed out specific parameters.
 
-	:param theDict:
-	:type theDict: TColStd_IndexedDataMapOfStringString
-	:param theFlags:
-	:type theFlags: Graphic3d_DiagnosticInfo
-	:rtype: None
+Parameters
+----------
+theDict: TColStd_IndexedDataMapOfStringString
+theFlags: Graphic3d_DiagnosticInfo
+
+Returns
+-------
+None
 ") DiagnosticInformation;
 		virtual void DiagnosticInformation(TColStd_IndexedDataMapOfStringString & theDict, Graphic3d_DiagnosticInfo theFlags);
 
@@ -12053,9 +14966,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") DisplayedStructures;
 		%feature("autodoc", "Returns the set of structures displayed in this view.
 
-	:param theStructures:
-	:type theStructures: Graphic3d_MapOfStructure
-	:rtype: None
+Parameters
+----------
+theStructures: Graphic3d_MapOfStructure
+
+Returns
+-------
+None
 ") DisplayedStructures;
 		void DisplayedStructures(Graphic3d_MapOfStructure & theStructures);
 
@@ -12063,7 +14980,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") FBO;
 		%feature("autodoc", "Returns pointer to an assigned framebuffer object.
 
-	:rtype: opencascade::handle<Standard_Transient>
+Returns
+-------
+opencascade::handle<Standard_Transient>
 ") FBO;
 		virtual opencascade::handle<Standard_Transient> FBO();
 
@@ -12071,13 +14990,15 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") FBOChangeViewport;
 		%feature("autodoc", "Change offscreen fbo viewport.
 
-	:param theFbo:
-	:type theFbo: Standard_Transient
-	:param theWidth:
-	:type theWidth: int
-	:param theHeight:
-	:type theHeight: int
-	:rtype: None
+Parameters
+----------
+theFbo: Standard_Transient
+theWidth: int
+theHeight: int
+
+Returns
+-------
+None
 ") FBOChangeViewport;
 		virtual void FBOChangeViewport(const opencascade::handle<Standard_Transient> & theFbo, const Standard_Integer theWidth, const Standard_Integer theHeight);
 
@@ -12085,11 +15006,14 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") FBOCreate;
 		%feature("autodoc", "Generate offscreen fbo in the graphic library. if not supported on hardware returns null.
 
-	:param theWidth:
-	:type theWidth: int
-	:param theHeight:
-	:type theHeight: int
-	:rtype: opencascade::handle<Standard_Transient>
+Parameters
+----------
+theWidth: int
+theHeight: int
+
+Returns
+-------
+opencascade::handle<Standard_Transient>
 ") FBOCreate;
 		virtual opencascade::handle<Standard_Transient> FBOCreate(const Standard_Integer theWidth, const Standard_Integer theHeight);
 
@@ -12097,17 +15021,17 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") FBOGetDimensions;
 		%feature("autodoc", "Read offscreen fbo configuration.
 
-	:param theFbo:
-	:type theFbo: Standard_Transient
-	:param theWidth:
-	:type theWidth: int
-	:param theHeight:
-	:type theHeight: int
-	:param theWidthMax:
-	:type theWidthMax: int
-	:param theHeightMax:
-	:type theHeightMax: int
-	:rtype: None
+Parameters
+----------
+theFbo: Standard_Transient
+theWidth: int
+theHeight: int
+theWidthMax: int
+theHeightMax: int
+
+Returns
+-------
+None
 ") FBOGetDimensions;
 		virtual void FBOGetDimensions(const opencascade::handle<Standard_Transient> & theFbo, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
@@ -12115,9 +15039,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") FBORelease;
 		%feature("autodoc", "Remove offscreen fbo from the graphic library.
 
-	:param theFbo:
-	:type theFbo: Standard_Transient
-	:rtype: None
+Parameters
+----------
+theFbo: Standard_Transient
+
+Returns
+-------
+None
 ") FBORelease;
 		virtual void FBORelease(opencascade::handle<Standard_Transient> & theFbo);
 
@@ -12125,7 +15053,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") GetGraduatedTrihedron;
 		%feature("autodoc", "Returns data of a graduated trihedron.
 
-	:rtype: Graphic3d_GraduatedTrihedron
+Returns
+-------
+Graphic3d_GraduatedTrihedron
 ") GetGraduatedTrihedron;
 		virtual const Graphic3d_GraduatedTrihedron & GetGraduatedTrihedron();
 
@@ -12133,7 +15063,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") GradientBackground;
 		%feature("autodoc", "Returns gradient background fill colors.
 
-	:rtype: Aspect_GradientBackground
+Returns
+-------
+Aspect_GradientBackground
 ") GradientBackground;
 		virtual Aspect_GradientBackground GradientBackground();
 
@@ -12141,9 +15073,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") GraduatedTrihedronDisplay;
 		%feature("autodoc", "Displays graduated trihedron.
 
-	:param theTrihedronData:
-	:type theTrihedronData: Graphic3d_GraduatedTrihedron
-	:rtype: None
+Parameters
+----------
+theTrihedronData: Graphic3d_GraduatedTrihedron
+
+Returns
+-------
+None
 ") GraduatedTrihedronDisplay;
 		virtual void GraduatedTrihedronDisplay(const Graphic3d_GraduatedTrihedron & theTrihedronData);
 
@@ -12151,7 +15087,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") GraduatedTrihedronErase;
 		%feature("autodoc", "Erases graduated trihedron.
 
-	:rtype: None
+Returns
+-------
+None
 ") GraduatedTrihedronErase;
 		virtual void GraduatedTrihedronErase();
 
@@ -12159,11 +15097,14 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") GraduatedTrihedronMinMaxValues;
 		%feature("autodoc", "Sets minimum and maximum points of scene bounding box for graduated trihedron stored in graphic view object. @param themin [in] the minimum point of scene. @param themax [in] the maximum point of scene.
 
-	:param theMin:
-	:type theMin: Graphic3d_Vec3
-	:param theMax:
-	:type theMax: Graphic3d_Vec3
-	:rtype: None
+Parameters
+----------
+theMin: Graphic3d_Vec3
+theMax: Graphic3d_Vec3
+
+Returns
+-------
+None
 ") GraduatedTrihedronMinMaxValues;
 		virtual void GraduatedTrihedronMinMaxValues(const Graphic3d_Vec3 theMin, const Graphic3d_Vec3 theMax);
 
@@ -12171,7 +15112,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") HiddenObjects;
 		%feature("autodoc", "Returns map of objects hidden within this specific view (not viewer-wise).
 
-	:rtype: opencascade::handle<Graphic3d_NMapOfTransient>
+Returns
+-------
+opencascade::handle<Graphic3d_NMapOfTransient>
 ") HiddenObjects;
 		const opencascade::handle<Graphic3d_NMapOfTransient> & HiddenObjects();
 
@@ -12179,7 +15122,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Identification;
 		%feature("autodoc", "Returns the identification number of the view.
 
-	:rtype: int
+Returns
+-------
+int
 ") Identification;
 		Standard_Integer Identification();
 
@@ -12187,13 +15132,15 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") InsertLayerAfter;
 		%feature("autodoc", "Add a layer to the view. @param thenewlayerid [in] id of new layer, should be > 0 (negative values are reserved for default layers). @param thesettings [in] new layer settings @param thelayerbefore [in] id of layer to append new layer after.
 
-	:param theNewLayerId:
-	:type theNewLayerId: int
-	:param theSettings:
-	:type theSettings: Graphic3d_ZLayerSettings
-	:param theLayerBefore:
-	:type theLayerBefore: int
-	:rtype: None
+Parameters
+----------
+theNewLayerId: int
+theSettings: Graphic3d_ZLayerSettings
+theLayerBefore: int
+
+Returns
+-------
+None
 ") InsertLayerAfter;
 		virtual void InsertLayerAfter(int theNewLayerId, const Graphic3d_ZLayerSettings & theSettings, int theLayerBefore);
 
@@ -12201,13 +15148,15 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") InsertLayerBefore;
 		%feature("autodoc", "Add a layer to the view. @param thenewlayerid [in] id of new layer, should be > 0 (negative values are reserved for default layers). @param thesettings [in] new layer settings @param thelayerafter [in] id of layer to append new layer before.
 
-	:param theNewLayerId:
-	:type theNewLayerId: int
-	:param theSettings:
-	:type theSettings: Graphic3d_ZLayerSettings
-	:param theLayerAfter:
-	:type theLayerAfter: int
-	:rtype: None
+Parameters
+----------
+theNewLayerId: int
+theSettings: Graphic3d_ZLayerSettings
+theLayerAfter: int
+
+Returns
+-------
+None
 ") InsertLayerBefore;
 		virtual void InsertLayerBefore(int theNewLayerId, const Graphic3d_ZLayerSettings & theSettings, int theLayerAfter);
 
@@ -12215,7 +15164,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Invalidate;
 		%feature("autodoc", "Invalidates content of the view but does not redraw it.
 
-	:rtype: None
+Returns
+-------
+None
 ") Invalidate;
 		virtual void Invalidate();
 
@@ -12223,9 +15174,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") InvalidateBVHData;
 		%feature("autodoc", "Marks bvh tree and the set of bvh primitives of correspondent priority list with id thelayerid as outdated.
 
-	:param theLayerId:
-	:type theLayerId: int
-	:rtype: None
+Parameters
+----------
+theLayerId: int
+
+Returns
+-------
+None
 ") InvalidateBVHData;
 		virtual void InvalidateBVHData(int theLayerId);
 
@@ -12233,9 +15188,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") InvalidateZLayerBoundingBox;
 		%feature("autodoc", "Returns the bounding box of all structures displayed in the z layer.
 
-	:param theLayerId:
-	:type theLayerId: int
-	:rtype: None
+Parameters
+----------
+theLayerId: int
+
+Returns
+-------
+None
 ") InvalidateZLayerBoundingBox;
 		virtual void InvalidateZLayerBoundingBox(int theLayerId);
 
@@ -12243,7 +15202,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") IsActive;
 		%feature("autodoc", "Returns the activity flag of the view.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsActive;
 		Standard_Boolean IsActive();
 
@@ -12251,11 +15212,14 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") IsComputed;
 		%feature("autodoc", "Returns standard_true in case if the structure with the given <thestructid> is in list of structures to be computed and stores computed struct to <thecomputedstruct>.
 
-	:param theStructId:
-	:type theStructId: int
-	:param theComputedStruct:
-	:type theComputedStruct: Graphic3d_Structure
-	:rtype: bool
+Parameters
+----------
+theStructId: int
+theComputedStruct: Graphic3d_Structure
+
+Returns
+-------
+bool
 ") IsComputed;
 		Standard_Boolean IsComputed(const Standard_Integer theStructId, opencascade::handle<Graphic3d_Structure> & theComputedStruct);
 
@@ -12263,7 +15227,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") IsDefined;
 		%feature("autodoc", "Returns true if the window associated to the view is defined.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDefined;
 		virtual Standard_Boolean IsDefined();
 
@@ -12271,7 +15237,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") IsInvalidated;
 		%feature("autodoc", "Return true if view content cache has been invalidated.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsInvalidated;
 		virtual Standard_Boolean IsInvalidated();
 
@@ -12279,7 +15247,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") IsRemoved;
 		%feature("autodoc", "Returns true if the view was removed.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRemoved;
 		Standard_Boolean IsRemoved();
 
@@ -12287,9 +15257,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Layer;
 		%feature("autodoc", "Returns layer with given id or null if undefined.
 
-	:param theLayerId:
-	:type theLayerId: int
-	:rtype: opencascade::handle<Graphic3d_Layer>
+Parameters
+----------
+theLayerId: int
+
+Returns
+-------
+opencascade::handle<Graphic3d_Layer>
 ") Layer;
 		virtual opencascade::handle<Graphic3d_Layer> Layer(int theLayerId);
 
@@ -12297,7 +15271,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Layers;
 		%feature("autodoc", "Returns the list of layers.
 
-	:rtype: NCollection_List<opencascade::handle<Graphic3d_Layer>>
+Returns
+-------
+NCollection_List<opencascade::handle<Graphic3d_Layer>>
 ") Layers;
 		virtual const NCollection_List<opencascade::handle<Graphic3d_Layer>> & Layers();
 
@@ -12305,7 +15281,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Lights;
 		%feature("autodoc", "Returns list of lights of the view.
 
-	:rtype: opencascade::handle<Graphic3d_LightSet>
+Returns
+-------
+opencascade::handle<Graphic3d_LightSet>
 ") Lights;
 		virtual const opencascade::handle<Graphic3d_LightSet> & Lights();
 
@@ -12313,9 +15291,14 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") MinMaxValues;
 		%feature("autodoc", "Returns the bounding box of all structures displayed in the view. if thetoincludeauxiliary is true, then the boundary box also includes minimum and maximum limits of graphical elements forming parts of infinite and other auxiliary structures. @param thetoincludeauxiliary consider also auxiliary presentations (with infinite flag or with trihedron transformation persistence) returns computed bounding box.
 
-	:param theToIncludeAuxiliary: default value is Standard_False
-	:type theToIncludeAuxiliary: bool
-	:rtype: Bnd_Box
+Parameters
+----------
+theToIncludeAuxiliary: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+Bnd_Box
 ") MinMaxValues;
 		virtual Bnd_Box MinMaxValues(const Standard_Boolean theToIncludeAuxiliary = Standard_False);
 
@@ -12323,11 +15306,15 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") MinMaxValues;
 		%feature("autodoc", "Returns the coordinates of the boundary box of all structures in the set <theset>. if <thetoignoreinfiniteflag> is true, then the boundary box also includes minimum and maximum limits of graphical elements forming parts of infinite structures.
 
-	:param theSet:
-	:type theSet: Graphic3d_MapOfStructure
-	:param theToIncludeAuxiliary: default value is Standard_False
-	:type theToIncludeAuxiliary: bool
-	:rtype: Bnd_Box
+Parameters
+----------
+theSet: Graphic3d_MapOfStructure
+theToIncludeAuxiliary: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+Bnd_Box
 ") MinMaxValues;
 		Bnd_Box MinMaxValues(const Graphic3d_MapOfStructure & theSet, const Standard_Boolean theToIncludeAuxiliary = Standard_False);
 
@@ -12335,7 +15322,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") NumberOfDisplayedStructures;
 		%feature("autodoc", "Returns number of displayed structures in the view.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfDisplayedStructures;
 		virtual Standard_Integer NumberOfDisplayedStructures();
 
@@ -12343,9 +15332,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") ReCompute;
 		%feature("autodoc", "Computes the new presentation of the structure displayed in this view with the type graphic3d_tos_computed.
 
-	:param theStructure:
-	:type theStructure: Graphic3d_Structure
-	:rtype: None
+Parameters
+----------
+theStructure: Graphic3d_Structure
+
+Returns
+-------
+None
 ") ReCompute;
 		void ReCompute(const opencascade::handle<Graphic3d_Structure> & theStructure);
 
@@ -12353,7 +15346,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Redraw;
 		%feature("autodoc", "Redraw content of the view.
 
-	:rtype: None
+Returns
+-------
+None
 ") Redraw;
 		virtual void Redraw();
 
@@ -12361,7 +15356,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") RedrawImmediate;
 		%feature("autodoc", "Redraw immediate content of the view.
 
-	:rtype: None
+Returns
+-------
+None
 ") RedrawImmediate;
 		virtual void RedrawImmediate();
 
@@ -12369,7 +15366,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Erases the view and removes from graphic driver. no more graphic operations are allowed in this view after the call.
 
-	:rtype: None
+Returns
+-------
+None
 ") Remove;
 		virtual void Remove();
 
@@ -12377,9 +15376,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") RemoveZLayer;
 		%feature("autodoc", "Remove z layer from the specified view. all structures displayed at the moment in layer will be displayed in default layer ( the bottom-level z layer ). to unset layer id from associated structures use method unsetzlayer (...).
 
-	:param theLayerId:
-	:type theLayerId: int
-	:rtype: None
+Parameters
+----------
+theLayerId: int
+
+Returns
+-------
+None
 ") RemoveZLayer;
 		virtual void RemoveZLayer(int theLayerId);
 
@@ -12387,7 +15390,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") RenderingParams;
 		%feature("autodoc", "Returns current rendering parameters and effect settings.
 
-	:rtype: Graphic3d_RenderingParams
+Returns
+-------
+Graphic3d_RenderingParams
 ") RenderingParams;
 		const Graphic3d_RenderingParams & RenderingParams();
 
@@ -12395,7 +15400,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Resized;
 		%feature("autodoc", "Handle changing size of the rendering window.
 
-	:rtype: None
+Returns
+-------
+None
 ") Resized;
 		virtual void Resized();
 
@@ -12403,9 +15410,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetBackfacingModel;
 		%feature("autodoc", "Sets backfacing model for the view.
 
-	:param theModel:
-	:type theModel: Graphic3d_TypeOfBackfacingModel
-	:rtype: None
+Parameters
+----------
+theModel: Graphic3d_TypeOfBackfacingModel
+
+Returns
+-------
+None
 ") SetBackfacingModel;
 		virtual void SetBackfacingModel(const Graphic3d_TypeOfBackfacingModel theModel);
 
@@ -12413,9 +15424,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetBackground;
 		%feature("autodoc", "Sets background fill color.
 
-	:param theBackground:
-	:type theBackground: Aspect_Background
-	:rtype: None
+Parameters
+----------
+theBackground: Aspect_Background
+
+Returns
+-------
+None
 ") SetBackground;
 		virtual void SetBackground(const Aspect_Background & theBackground);
 
@@ -12423,9 +15438,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetBackgroundCubeMap;
 		%feature("autodoc", "Sets environment cubemap as background.
 
-	:param theCubeMap:
-	:type theCubeMap: Graphic3d_CubeMap
-	:rtype: None
+Parameters
+----------
+theCubeMap: Graphic3d_CubeMap
+
+Returns
+-------
+None
 ") SetBackgroundCubeMap;
 		virtual void SetBackgroundCubeMap(const opencascade::handle<Graphic3d_CubeMap> & theCubeMap);
 
@@ -12433,9 +15452,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetBackgroundImage;
 		%feature("autodoc", "Sets background image texture file path.
 
-	:param theFilePath:
-	:type theFilePath: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theFilePath: TCollection_AsciiString
+
+Returns
+-------
+None
 ") SetBackgroundImage;
 		virtual void SetBackgroundImage(const TCollection_AsciiString & theFilePath);
 
@@ -12443,9 +15466,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetBackgroundImageStyle;
 		%feature("autodoc", "Sets background image fill style.
 
-	:param theFillStyle:
-	:type theFillStyle: Aspect_FillMethod
-	:rtype: None
+Parameters
+----------
+theFillStyle: Aspect_FillMethod
+
+Returns
+-------
+None
 ") SetBackgroundImageStyle;
 		virtual void SetBackgroundImageStyle(const Aspect_FillMethod theFillStyle);
 
@@ -12453,9 +15480,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetCamera;
 		%feature("autodoc", "Sets camera used by the view.
 
-	:param theCamera:
-	:type theCamera: Graphic3d_Camera
-	:rtype: None
+Parameters
+----------
+theCamera: Graphic3d_Camera
+
+Returns
+-------
+None
 ") SetCamera;
 		virtual void SetCamera(const opencascade::handle<Graphic3d_Camera> & theCamera);
 
@@ -12463,9 +15494,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetClipPlanes;
 		%feature("autodoc", "Sets list of clip planes for the view.
 
-	:param thePlanes:
-	:type thePlanes: Graphic3d_SequenceOfHClipPlane
-	:rtype: None
+Parameters
+----------
+thePlanes: Graphic3d_SequenceOfHClipPlane
+
+Returns
+-------
+None
 ") SetClipPlanes;
 		virtual void SetClipPlanes(const opencascade::handle<Graphic3d_SequenceOfHClipPlane> & thePlanes);
 
@@ -12473,9 +15508,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetComputedMode;
 		%feature("autodoc", "Switches computed hlr mode in the view.
 
-	:param theMode:
-	:type theMode: bool
-	:rtype: None
+Parameters
+----------
+theMode: bool
+
+Returns
+-------
+None
 ") SetComputedMode;
 		void SetComputedMode(const Standard_Boolean theMode);
 
@@ -12483,9 +15522,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetFBO;
 		%feature("autodoc", "Sets framebuffer object for offscreen rendering.
 
-	:param theFbo:
-	:type theFbo: Standard_Transient
-	:rtype: None
+Parameters
+----------
+theFbo: Standard_Transient
+
+Returns
+-------
+None
 ") SetFBO;
 		virtual void SetFBO(const opencascade::handle<Standard_Transient> & theFbo);
 
@@ -12493,9 +15536,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetGradientBackground;
 		%feature("autodoc", "Sets gradient background fill colors.
 
-	:param theBackground:
-	:type theBackground: Aspect_GradientBackground
-	:rtype: None
+Parameters
+----------
+theBackground: Aspect_GradientBackground
+
+Returns
+-------
+None
 ") SetGradientBackground;
 		virtual void SetGradientBackground(const Aspect_GradientBackground & theBackground);
 
@@ -12503,9 +15550,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetImmediateModeDrawToFront;
 		%feature("autodoc", "@param thedrawtofrontbuffer advanced option to modify rendering mode: 1. true. drawing immediate mode structures directly to the front buffer over the scene image. fast, so preferred for interactive work (used by default). however these extra drawings will be missed in image dump since it is performed from back buffer. notice that since no pre-buffering used the v-sync will be ignored and rendering could be seen in run-time (in case of slow hardware) and/or tearing may appear. so this is strongly recommended to draw only simple (fast) structures. 2. false. drawing immediate mode structures to the back buffer. the complete scene is redrawn first, so this mode is slower if scene contains complex data and/or v-sync is turned on. but it works in any case and is especially useful for view dump because the dump image is read from the back buffer. returns previous mode.
 
-	:param theDrawToFrontBuffer:
-	:type theDrawToFrontBuffer: bool
-	:rtype: bool
+Parameters
+----------
+theDrawToFrontBuffer: bool
+
+Returns
+-------
+bool
 ") SetImmediateModeDrawToFront;
 		virtual Standard_Boolean SetImmediateModeDrawToFront(const Standard_Boolean theDrawToFrontBuffer);
 
@@ -12513,9 +15564,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetLights;
 		%feature("autodoc", "Sets list of lights for the view.
 
-	:param theLights:
-	:type theLights: Graphic3d_LightSet
-	:rtype: None
+Parameters
+----------
+theLights: Graphic3d_LightSet
+
+Returns
+-------
+None
 ") SetLights;
 		virtual void SetLights(const opencascade::handle<Graphic3d_LightSet> & theLights);
 
@@ -12523,9 +15578,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetShadingModel;
 		%feature("autodoc", "Sets default shading model of the view. will throw an exception on attempt to set graphic3d_tosm_default.
 
-	:param theModel:
-	:type theModel: Graphic3d_TypeOfShadingModel
-	:rtype: None
+Parameters
+----------
+theModel: Graphic3d_TypeOfShadingModel
+
+Returns
+-------
+None
 ") SetShadingModel;
 		void SetShadingModel(Graphic3d_TypeOfShadingModel theModel);
 
@@ -12533,9 +15592,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetTextureEnv;
 		%feature("autodoc", "Sets environment texture for the view.
 
-	:param theTextureEnv:
-	:type theTextureEnv: Graphic3d_TextureEnv
-	:rtype: None
+Parameters
+----------
+theTextureEnv: Graphic3d_TextureEnv
+
+Returns
+-------
+None
 ") SetTextureEnv;
 		virtual void SetTextureEnv(const opencascade::handle<Graphic3d_TextureEnv> & theTextureEnv);
 
@@ -12543,9 +15606,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetVisualizationType;
 		%feature("autodoc", "Sets visualization type of the view.
 
-	:param theType:
-	:type theType: Graphic3d_TypeOfVisualization
-	:rtype: None
+Parameters
+----------
+theType: Graphic3d_TypeOfVisualization
+
+Returns
+-------
+None
 ") SetVisualizationType;
 		void SetVisualizationType(const Graphic3d_TypeOfVisualization theType);
 
@@ -12553,11 +15620,15 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetWindow;
 		%feature("autodoc", "Creates and maps rendering window to the view. @param thewindow [in] the window. @param thecontext [in] the rendering context. if null the context will be created internally.
 
-	:param theWindow:
-	:type theWindow: Aspect_Window
-	:param theContext: default value is NULL
-	:type theContext: Aspect_RenderingContext
-	:rtype: None
+Parameters
+----------
+theWindow: Aspect_Window
+theContext: Aspect_RenderingContext,optional
+	default value is NULL
+
+Returns
+-------
+None
 ") SetWindow;
 		virtual void SetWindow(const opencascade::handle<Aspect_Window> & theWindow, const Aspect_RenderingContext theContext = NULL);
 
@@ -12565,11 +15636,14 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") SetZLayerSettings;
 		%feature("autodoc", "Sets the settings for a single z layer of specified view.
 
-	:param theLayerId:
-	:type theLayerId: int
-	:param theSettings:
-	:type theSettings: Graphic3d_ZLayerSettings
-	:rtype: None
+Parameters
+----------
+theLayerId: int
+theSettings: Graphic3d_ZLayerSettings
+
+Returns
+-------
+None
 ") SetZLayerSettings;
 		virtual void SetZLayerSettings(int theLayerId, const Graphic3d_ZLayerSettings & theSettings);
 
@@ -12577,7 +15651,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") ShadingModel;
 		%feature("autodoc", "Returns default shading model of the view; graphic3d_tosm_fragment by default.
 
-	:rtype: Graphic3d_TypeOfShadingModel
+Returns
+-------
+Graphic3d_TypeOfShadingModel
 ") ShadingModel;
 		Graphic3d_TypeOfShadingModel ShadingModel();
 
@@ -12585,7 +15661,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") StatisticInformation;
 		%feature("autodoc", "Returns string with statistic performance info.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") StatisticInformation;
 		virtual TCollection_AsciiString StatisticInformation();
 
@@ -12593,9 +15671,13 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") StatisticInformation;
 		%feature("autodoc", "Fills in the dictionary with statistic performance info.
 
-	:param theDict:
-	:type theDict: TColStd_IndexedDataMapOfStringString
-	:rtype: None
+Parameters
+----------
+theDict: TColStd_IndexedDataMapOfStringString
+
+Returns
+-------
+None
 ") StatisticInformation;
 		virtual void StatisticInformation(TColStd_IndexedDataMapOfStringString & theDict);
 
@@ -12603,7 +15685,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") StructureManager;
 		%feature("autodoc", "Returns the structure manager handle which manage structures associated with this view.
 
-	:rtype: opencascade::handle<Graphic3d_StructureManager>
+Returns
+-------
+opencascade::handle<Graphic3d_StructureManager>
 ") StructureManager;
 		const opencascade::handle<Graphic3d_StructureManager> & StructureManager();
 
@@ -12611,7 +15695,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") TextureEnv;
 		%feature("autodoc", "Returns environment texture set for the view.
 
-	:rtype: opencascade::handle<Graphic3d_TextureEnv>
+Returns
+-------
+opencascade::handle<Graphic3d_TextureEnv>
 ") TextureEnv;
 		virtual opencascade::handle<Graphic3d_TextureEnv> TextureEnv();
 
@@ -12619,9 +15705,14 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Invalidates bounding box of specified zlayerid.
 
-	:param theLayerId: default value is Graphic3d_ZLayerId_UNKNOWN
-	:type theLayerId: int
-	:rtype: None
+Parameters
+----------
+theLayerId: int,optional
+	default value is Graphic3d_ZLayerId_UNKNOWN
+
+Returns
+-------
+None
 ") Update;
 		void Update(int theLayerId = Graphic3d_ZLayerId_UNKNOWN);
 
@@ -12629,7 +15720,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") VisualizationType;
 		%feature("autodoc", "Returns visualization type of the view.
 
-	:rtype: Graphic3d_TypeOfVisualization
+Returns
+-------
+Graphic3d_TypeOfVisualization
 ") VisualizationType;
 		Graphic3d_TypeOfVisualization VisualizationType();
 
@@ -12637,7 +15730,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") Window;
 		%feature("autodoc", "Returns the window associated to the view.
 
-	:rtype: opencascade::handle<Aspect_Window>
+Returns
+-------
+opencascade::handle<Aspect_Window>
 ") Window;
 		virtual opencascade::handle<Aspect_Window> Window();
 
@@ -12645,7 +15740,9 @@ class Graphic3d_CView : public Graphic3d_DataStructureManager {
 		%feature("compactdefaultargs") ZLayerMax;
 		%feature("autodoc", "Returns the maximum z layer id. first layer id is graphic3d_zlayerid_default, last id is zlayermax().
 
-	:rtype: int
+Returns
+-------
+int
 ") ZLayerMax;
 		virtual Standard_Integer ZLayerMax();
 
@@ -12669,9 +15766,13 @@ class Graphic3d_FrameStatsDataTmp : public Graphic3d_FrameStatsData {
 		%feature("compactdefaultargs") ChangeCounterValue;
 		%feature("autodoc", "Get counter value.
 
-	:param theIndex:
-	:type theIndex: Graphic3d_FrameStatsCounter
-	:rtype: Standard_Size
+Parameters
+----------
+theIndex: Graphic3d_FrameStatsCounter
+
+Returns
+-------
+Standard_Size
 ") ChangeCounterValue;
 		Standard_Size & ChangeCounterValue(Graphic3d_FrameStatsCounter theIndex);
 
@@ -12705,9 +15806,13 @@ class Graphic3d_FrameStatsDataTmp : public Graphic3d_FrameStatsData {
 		%feature("compactdefaultargs") ChangeTimer;
 		%feature("autodoc", "Return a timer object for time measurements.
 
-	:param theTimer:
-	:type theTimer: Graphic3d_FrameStatsTimer
-	:rtype: OSD_Timer
+Parameters
+----------
+theTimer: Graphic3d_FrameStatsTimer
+
+Returns
+-------
+OSD_Timer
 ") ChangeTimer;
 		OSD_Timer & ChangeTimer(Graphic3d_FrameStatsTimer theTimer);
 
@@ -12728,11 +15833,14 @@ class Graphic3d_FrameStatsDataTmp : public Graphic3d_FrameStatsData {
 		%feature("compactdefaultargs") FlushTimers;
 		%feature("autodoc", "Compute average data considering the amount of rendered frames.
 
-	:param theNbFrames:
-	:type theNbFrames: Standard_Size
-	:param theIsFinal:
-	:type theIsFinal: bool
-	:rtype: None
+Parameters
+----------
+theNbFrames: Standard_Size
+theIsFinal: bool
+
+Returns
+-------
+None
 ") FlushTimers;
 		void FlushTimers(Standard_Size theNbFrames, bool theIsFinal);
 
@@ -12740,7 +15848,9 @@ class Graphic3d_FrameStatsDataTmp : public Graphic3d_FrameStatsData {
 		%feature("compactdefaultargs") Graphic3d_FrameStatsDataTmp;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_FrameStatsDataTmp;
 		 Graphic3d_FrameStatsDataTmp();
 
@@ -12748,7 +15858,9 @@ class Graphic3d_FrameStatsDataTmp : public Graphic3d_FrameStatsData {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Reset data.
 
-	:rtype: None
+Returns
+-------
+None
 ") Reset;
 		void Reset();
 
@@ -12773,7 +15885,9 @@ class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFra
 		%feature("compactdefaultargs") Duration;
 		%feature("autodoc", "Return duration in seconds.
 
-	:rtype: double
+Returns
+-------
+double
 ") Duration;
 		double Duration();
 
@@ -12781,7 +15895,9 @@ class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFra
 		%feature("compactdefaultargs") FrameSize;
 		%feature("autodoc", "Return front frame dimensions.
 
-	:rtype: Graphic3d_Vec2i
+Returns
+-------
+Graphic3d_Vec2i
 ") FrameSize;
 		Graphic3d_Vec2i FrameSize();
 
@@ -12789,7 +15905,9 @@ class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFra
 		%feature("compactdefaultargs") Graphic3d_MediaTextureSet;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Graphic3d_MediaTextureSet;
 		 Graphic3d_MediaTextureSet();
 
@@ -12797,7 +15915,9 @@ class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFra
 		%feature("compactdefaultargs") Input;
 		%feature("autodoc", "Return input media.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") Input;
 		const TCollection_AsciiString & Input();
 
@@ -12805,7 +15925,9 @@ class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFra
 		%feature("compactdefaultargs") IsFullRangeYUV;
 		%feature("autodoc", "Return true if yuv range is full.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsFullRangeYUV;
 		Standard_Boolean IsFullRangeYUV();
 
@@ -12813,7 +15935,9 @@ class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFra
 		%feature("compactdefaultargs") IsPlanarYUV;
 		%feature("autodoc", "Return true if texture set defined 3 yuv planes.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsPlanarYUV;
 		Standard_Boolean IsPlanarYUV();
 
@@ -12821,7 +15945,9 @@ class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFra
 		%feature("compactdefaultargs") Notify;
 		%feature("autodoc", "Call callback.
 
-	:rtype: None
+Returns
+-------
+None
 ") Notify;
 		void Notify();
 
@@ -12829,11 +15955,14 @@ class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFra
 		%feature("compactdefaultargs") OpenInput;
 		%feature("autodoc", "Open specified file. passing an empty path would close current input.
 
-	:param thePath:
-	:type thePath: TCollection_AsciiString
-	:param theToWait:
-	:type theToWait: bool
-	:rtype: None
+Parameters
+----------
+thePath: TCollection_AsciiString
+theToWait: bool
+
+Returns
+-------
+None
 ") OpenInput;
 		void OpenInput(const TCollection_AsciiString & thePath, Standard_Boolean theToWait);
 
@@ -12841,7 +15970,9 @@ class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFra
 		%feature("compactdefaultargs") PlayerContext;
 		%feature("autodoc", "Return player context; it can be null until first openinput().
 
-	:rtype: opencascade::handle<Media_PlayerContext>
+Returns
+-------
+opencascade::handle<Media_PlayerContext>
 ") PlayerContext;
 		const opencascade::handle<Media_PlayerContext> & PlayerContext();
 
@@ -12849,7 +15980,9 @@ class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFra
 		%feature("compactdefaultargs") Progress;
 		%feature("autodoc", "Return playback progress in seconds.
 
-	:rtype: double
+Returns
+-------
+double
 ") Progress;
 		double Progress();
 
@@ -12857,7 +15990,9 @@ class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFra
 		%feature("compactdefaultargs") ShaderProgram;
 		%feature("autodoc", "Return shader program for displaying texture set.
 
-	:rtype: opencascade::handle<Graphic3d_ShaderProgram>
+Returns
+-------
+opencascade::handle<Graphic3d_ShaderProgram>
 ") ShaderProgram;
 		opencascade::handle<Graphic3d_ShaderProgram> ShaderProgram();
 
@@ -12865,7 +16000,9 @@ class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFra
 		%feature("compactdefaultargs") SwapFrames;
 		%feature("autodoc", "Swap front/back frames.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") SwapFrames;
 		Standard_Boolean SwapFrames();
 
@@ -12889,9 +16026,13 @@ class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") Graphic3d_TextureEnv;
 		%feature("autodoc", "Creates an environment texture from a file.
 
-	:param theFileName:
-	:type theFileName: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theFileName: TCollection_AsciiString
+
+Returns
+-------
+None
 ") Graphic3d_TextureEnv;
 		 Graphic3d_TextureEnv(const TCollection_AsciiString & theFileName);
 
@@ -12899,9 +16040,13 @@ class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") Graphic3d_TextureEnv;
 		%feature("autodoc", "Creates an environment texture from a predefined texture name set.
 
-	:param theName:
-	:type theName: Graphic3d_NameOfTextureEnv
-	:rtype: None
+Parameters
+----------
+theName: Graphic3d_NameOfTextureEnv
+
+Returns
+-------
+None
 ") Graphic3d_TextureEnv;
 		 Graphic3d_TextureEnv(const Graphic3d_NameOfTextureEnv theName);
 
@@ -12909,9 +16054,13 @@ class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") Graphic3d_TextureEnv;
 		%feature("autodoc", "Creates an environment texture from the pixmap.
 
-	:param thePixMap:
-	:type thePixMap: Image_PixMap
-	:rtype: None
+Parameters
+----------
+thePixMap: Image_PixMap
+
+Returns
+-------
+None
 ") Graphic3d_TextureEnv;
 		 Graphic3d_TextureEnv(const opencascade::handle<Image_PixMap> & thePixMap);
 
@@ -12919,7 +16068,9 @@ class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Returns the name of the predefined textures or not_env_unknown when the name is given as a filename.
 
-	:rtype: Graphic3d_NameOfTextureEnv
+Returns
+-------
+Graphic3d_NameOfTextureEnv
 ") Name;
 		Graphic3d_NameOfTextureEnv Name();
 
@@ -12927,7 +16078,9 @@ class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") NumberOfTextures;
 		%feature("autodoc", "Returns the number of predefined textures.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfTextures;
 		static Standard_Integer NumberOfTextures();
 
@@ -12935,9 +16088,13 @@ class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") TextureName;
 		%feature("autodoc", "Returns the name of the predefined texture of rank <arank>.
 
-	:param theRank:
-	:type theRank: int
-	:rtype: TCollection_AsciiString
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+TCollection_AsciiString
 ") TextureName;
 		static TCollection_AsciiString TextureName(const Standard_Integer theRank);
 
@@ -12962,7 +16119,9 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") AnisoFilter;
 		%feature("autodoc", "Returns level of anisontropy texture filter. default value is graphic3d_lota_off.
 
-	:rtype: Graphic3d_LevelOfTextureAnisotropy
+Returns
+-------
+Graphic3d_LevelOfTextureAnisotropy
 ") AnisoFilter;
 		Graphic3d_LevelOfTextureAnisotropy AnisoFilter();
 
@@ -12970,7 +16129,9 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") DisableModulate;
 		%feature("autodoc", "Disable texture modulate mode. the image is directly decal on the surface.
 
-	:rtype: None
+Returns
+-------
+None
 ") DisableModulate;
 		void DisableModulate();
 
@@ -12978,7 +16139,9 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") DisableRepeat;
 		%feature("autodoc", "Use this methods if you want to disable texture repetition on your objects.
 
-	:rtype: None
+Returns
+-------
+None
 ") DisableRepeat;
 		void DisableRepeat();
 
@@ -12986,7 +16149,9 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") DisableSmooth;
 		%feature("autodoc", "Disable texture smoothing.
 
-	:rtype: None
+Returns
+-------
+None
 ") DisableSmooth;
 		void DisableSmooth();
 
@@ -12994,7 +16159,9 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") EnableModulate;
 		%feature("autodoc", "Enable texture modulate mode. the image is modulate with the shading of the surface.
 
-	:rtype: None
+Returns
+-------
+None
 ") EnableModulate;
 		void EnableModulate();
 
@@ -13002,7 +16169,9 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") EnableRepeat;
 		%feature("autodoc", "Use this methods if you want to enable texture repetition on your objects.
 
-	:rtype: None
+Returns
+-------
+None
 ") EnableRepeat;
 		void EnableRepeat();
 
@@ -13010,7 +16179,9 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") EnableSmooth;
 		%feature("autodoc", "Enable texture smoothing.
 
-	:rtype: None
+Returns
+-------
+None
 ") EnableSmooth;
 		void EnableSmooth();
 
@@ -13018,7 +16189,9 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") IsModulate;
 		%feature("autodoc", "Returns true if the texture is modulate.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsModulate;
 		Standard_Boolean IsModulate();
 
@@ -13026,7 +16199,9 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") IsRepeat;
 		%feature("autodoc", "Returns true if the texture repeat is enable.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsRepeat;
 		Standard_Boolean IsRepeat();
 
@@ -13034,7 +16209,9 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") IsSmoothed;
 		%feature("autodoc", "Returns true if the texture is smoothed.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsSmoothed;
 		Standard_Boolean IsSmoothed();
 
@@ -13042,9 +16219,13 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 		%feature("compactdefaultargs") SetAnisoFilter;
 		%feature("autodoc", "@param thelevel level of anisontropy texture filter.
 
-	:param theLevel:
-	:type theLevel: Graphic3d_LevelOfTextureAnisotropy
-	:rtype: None
+Parameters
+----------
+theLevel: Graphic3d_LevelOfTextureAnisotropy
+
+Returns
+-------
+None
 ") SetAnisoFilter;
 		void SetAnisoFilter(const Graphic3d_LevelOfTextureAnisotropy theLevel);
 
@@ -13072,7 +16253,9 @@ class Graphic3d_CubeMap : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") CurrentSide;
 		%feature("autodoc", "Returns current cubemap side (iterator state).
 
-	:rtype: Graphic3d_CubeMapSide
+Returns
+-------
+Graphic3d_CubeMapSide
 ") CurrentSide;
 		Graphic3d_CubeMapSide CurrentSide();
 
@@ -13080,7 +16263,9 @@ class Graphic3d_CubeMap : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") IsTopDown;
 		%feature("autodoc", "Returns whether row's memory layout is top-down.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsTopDown;
 		Standard_Boolean IsTopDown();
 
@@ -13088,7 +16273,9 @@ class Graphic3d_CubeMap : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Returns whether the iterator has reached the end (true if it hasn't). .
 
-	:rtype: bool
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
@@ -13096,7 +16283,9 @@ class Graphic3d_CubeMap : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Moves iterator to the next cubemap side. uses opengl cubemap sides order +x -> -x -> +y -> -y -> +z -> -z.
 
-	:rtype: None
+Returns
+-------
+None
 ") Next;
 		void Next();
 
@@ -13104,7 +16293,9 @@ class Graphic3d_CubeMap : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Sets iterator state to +x cubemap side.
 
-	:rtype: Graphic3d_CubeMap
+Returns
+-------
+Graphic3d_CubeMap
 ") Reset;
 		Graphic3d_CubeMap & Reset();
 
@@ -13112,9 +16303,13 @@ class Graphic3d_CubeMap : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") SetZInversion;
 		%feature("autodoc", "Sets z axis inversion (vertical flipping).
 
-	:param theZIsInverted:
-	:type theZIsInverted: bool
-	:rtype: None
+Parameters
+----------
+theZIsInverted: bool
+
+Returns
+-------
+None
 ") SetZInversion;
 		void SetZInversion(Standard_Boolean theZIsInverted);
 
@@ -13122,7 +16317,9 @@ class Graphic3d_CubeMap : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns pixmap containing current side of cubemap. returns null handle if current side is invalid.
 
-	:rtype: opencascade::handle<Image_PixMap>
+Returns
+-------
+opencascade::handle<Image_PixMap>
 ") Value;
 		virtual opencascade::handle<Image_PixMap> Value();
 
@@ -13130,7 +16327,9 @@ class Graphic3d_CubeMap : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") ZIsInverted;
 		%feature("autodoc", "Returns whether z axis is inverted.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") ZIsInverted;
 		Standard_Boolean ZIsInverted();
 
@@ -13154,9 +16353,13 @@ class Graphic3d_MutableIndexBuffer : public Graphic3d_IndexBuffer {
 		%feature("compactdefaultargs") Graphic3d_MutableIndexBuffer;
 		%feature("autodoc", "Empty constructor.
 
-	:param theAlloc:
-	:type theAlloc: NCollection_BaseAllocator
-	:rtype: None
+Parameters
+----------
+theAlloc: NCollection_BaseAllocator
+
+Returns
+-------
+None
 ") Graphic3d_MutableIndexBuffer;
 		 Graphic3d_MutableIndexBuffer(const opencascade::handle<NCollection_BaseAllocator> & theAlloc);
 
@@ -13164,7 +16367,9 @@ class Graphic3d_MutableIndexBuffer : public Graphic3d_IndexBuffer {
 		%feature("compactdefaultargs") Invalidate;
 		%feature("autodoc", "Invalidate the entire buffer data.
 
-	:rtype: None
+Returns
+-------
+None
 ") Invalidate;
 		virtual void Invalidate();
 
@@ -13172,11 +16377,14 @@ class Graphic3d_MutableIndexBuffer : public Graphic3d_IndexBuffer {
 		%feature("compactdefaultargs") Invalidate;
 		%feature("autodoc", "Invalidate the given indexes (starting from 0).
 
-	:param theIndexLower:
-	:type theIndexLower: int
-	:param theIndexUpper:
-	:type theIndexUpper: int
-	:rtype: None
+Parameters
+----------
+theIndexLower: int
+theIndexUpper: int
+
+Returns
+-------
+None
 ") Invalidate;
 		void Invalidate(Standard_Integer theIndexLower, Standard_Integer theIndexUpper);
 
@@ -13184,7 +16392,9 @@ class Graphic3d_MutableIndexBuffer : public Graphic3d_IndexBuffer {
 		%feature("compactdefaultargs") InvalidatedRange;
 		%feature("autodoc", "Return invalidated range.
 
-	:rtype: Graphic3d_BufferRange
+Returns
+-------
+Graphic3d_BufferRange
 ") InvalidatedRange;
 		virtual Graphic3d_BufferRange InvalidatedRange();
 
@@ -13192,7 +16402,9 @@ class Graphic3d_MutableIndexBuffer : public Graphic3d_IndexBuffer {
 		%feature("compactdefaultargs") IsMutable;
 		%feature("autodoc", "Return true if data can be invalidated.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsMutable;
 		virtual Standard_Boolean IsMutable();
 
@@ -13200,7 +16412,9 @@ class Graphic3d_MutableIndexBuffer : public Graphic3d_IndexBuffer {
 		%feature("compactdefaultargs") Validate;
 		%feature("autodoc", "Reset invalidated range.
 
-	:rtype: None
+Returns
+-------
+None
 ") Validate;
 		virtual void Validate();
 
@@ -13208,9 +16422,13 @@ class Graphic3d_MutableIndexBuffer : public Graphic3d_IndexBuffer {
 		%feature("compactdefaultargs") invalidate;
 		%feature("autodoc", "Invalidate specified sub-range of data (as byte offsets).
 
-	:param theRange:
-	:type theRange: Graphic3d_BufferRange
-	:rtype: None
+Parameters
+----------
+theRange: Graphic3d_BufferRange
+
+Returns
+-------
+None
 ") invalidate;
 		void invalidate(const Graphic3d_BufferRange & theRange);
 
@@ -13233,7 +16451,9 @@ class Graphic3d_Texture1D : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Returns the name of the predefined textures or not_1d_unknown when the name is given as a filename.
 
-	:rtype: Graphic3d_NameOfTexture1D
+Returns
+-------
+Graphic3d_NameOfTexture1D
 ") Name;
 		Graphic3d_NameOfTexture1D Name();
 
@@ -13241,7 +16461,9 @@ class Graphic3d_Texture1D : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") NumberOfTextures;
 		%feature("autodoc", "Returns the number of predefined textures.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfTextures;
 		static Standard_Integer NumberOfTextures();
 
@@ -13249,9 +16471,13 @@ class Graphic3d_Texture1D : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") TextureName;
 		%feature("autodoc", "Returns the name of the predefined texture of rank <arank>.
 
-	:param aRank:
-	:type aRank: int
-	:rtype: TCollection_AsciiString
+Parameters
+----------
+aRank: int
+
+Returns
+-------
+TCollection_AsciiString
 ") TextureName;
 		static TCollection_AsciiString TextureName(const Standard_Integer aRank);
 
@@ -13276,7 +16502,9 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") HasMipMaps;
 		%feature("autodoc", "Return true if mip-maps should be used.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasMipMaps;
 		Standard_Boolean HasMipMaps();
 
@@ -13284,7 +16512,9 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Returns the name of the predefined textures or not_2d_unknown when the name is given as a filename.
 
-	:rtype: Graphic3d_NameOfTexture2D
+Returns
+-------
+Graphic3d_NameOfTexture2D
 ") Name;
 		Graphic3d_NameOfTexture2D Name();
 
@@ -13292,7 +16522,9 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") NumberOfTextures;
 		%feature("autodoc", "Returns the number of predefined textures.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfTextures;
 		static Standard_Integer NumberOfTextures();
 
@@ -13300,9 +16532,13 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") SetImage;
 		%feature("autodoc", "Assign new image to the texture. note that this method does not invalidate already uploaded resources - consider calling ::updaterevision() if needed.
 
-	:param thePixMap:
-	:type thePixMap: Image_PixMap
-	:rtype: None
+Parameters
+----------
+thePixMap: Image_PixMap
+
+Returns
+-------
+None
 ") SetImage;
 		void SetImage(const opencascade::handle<Image_PixMap> & thePixMap);
 
@@ -13310,9 +16546,13 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") SetMipMaps;
 		%feature("autodoc", "Set if mip-maps should be used (generated if needed). note that this method should be called before loading / using the texture.
 
-	:param theToUse:
-	:type theToUse: bool
-	:rtype: None
+Parameters
+----------
+theToUse: bool
+
+Returns
+-------
+None
 ") SetMipMaps;
 		void SetMipMaps(const Standard_Boolean theToUse);
 
@@ -13320,9 +16560,13 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 		%feature("compactdefaultargs") TextureName;
 		%feature("autodoc", "Returns the name of the predefined texture of rank <arank>.
 
-	:param theRank:
-	:type theRank: int
-	:rtype: TCollection_AsciiString
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+TCollection_AsciiString
 ") TextureName;
 		static TCollection_AsciiString TextureName(const Standard_Integer theRank);
 
@@ -13349,7 +16593,9 @@ class Graphic3d_CubeMapSeparate : public Graphic3d_CubeMap {
 		%feature("compactdefaultargs") GetImage;
 		%feature("autodoc", "Returns null.
 
-	:rtype: opencascade::handle<Image_PixMap>
+Returns
+-------
+opencascade::handle<Image_PixMap>
 ") GetImage;
 		virtual opencascade::handle<Image_PixMap> GetImage();
 
@@ -13357,9 +16603,13 @@ class Graphic3d_CubeMapSeparate : public Graphic3d_CubeMap {
 		%feature("compactdefaultargs") Graphic3d_CubeMapSeparate;
 		%feature("autodoc", "Initializes cubemap to be loaded from file. @thepaths - array of paths to separate image files (has to have size equal 6).
 
-	:param thePaths:
-	:type thePaths: NCollection_Array1<TCollection_AsciiString>
-	:rtype: None
+Parameters
+----------
+thePaths: NCollection_Array1<TCollection_AsciiString>
+
+Returns
+-------
+None
 ") Graphic3d_CubeMapSeparate;
 		 Graphic3d_CubeMapSeparate(const NCollection_Array1<TCollection_AsciiString> & thePaths);
 
@@ -13367,9 +16617,13 @@ class Graphic3d_CubeMapSeparate : public Graphic3d_CubeMap {
 		%feature("compactdefaultargs") Graphic3d_CubeMapSeparate;
 		%feature("autodoc", "Initializes cubemap to be setted directly from pixmaps. @theimages - array if pixmaps (has to have size equal 6).
 
-	:param theImages:
-	:type theImages: Image_PixMap
-	:rtype: None
+Parameters
+----------
+theImages: Image_PixMap
+
+Returns
+-------
+None
 ") Graphic3d_CubeMapSeparate;
 		 Graphic3d_CubeMapSeparate(const NCollection_Array1<opencascade::handle<Image_PixMap> > & theImages);
 
@@ -13377,7 +16631,9 @@ class Graphic3d_CubeMapSeparate : public Graphic3d_CubeMap {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Checks if a texture class is valid or not. returns true if the construction of the class is correct.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -13385,7 +16641,9 @@ class Graphic3d_CubeMapSeparate : public Graphic3d_CubeMap {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns current side of cubemap as pixmap. returns null handle if current side or whole cubemap is invalid. all origin images have to have the same sizes, format and quad shapes to form valid cubemap.
 
-	:rtype: opencascade::handle<Image_PixMap>
+Returns
+-------
+opencascade::handle<Image_PixMap>
 ") Value;
 		opencascade::handle<Image_PixMap> Value();
 
@@ -13409,7 +16667,9 @@ class Graphic3d_MediaTexture : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") Frame;
 		%feature("autodoc", "Return the frame.
 
-	:rtype: opencascade::handle<Media_Frame>
+Returns
+-------
+opencascade::handle<Media_Frame>
 ") Frame;
 		const opencascade::handle<Media_Frame> & Frame();
 
@@ -13417,7 +16677,9 @@ class Graphic3d_MediaTexture : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") GenerateNewId;
 		%feature("autodoc", "Regenerate a new texture id.
 
-	:rtype: None
+Returns
+-------
+None
 ") GenerateNewId;
 		void GenerateNewId();
 
@@ -13425,7 +16687,9 @@ class Graphic3d_MediaTexture : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") GetImage;
 		%feature("autodoc", "Image reader.
 
-	:rtype: opencascade::handle<Image_PixMap>
+Returns
+-------
+opencascade::handle<Image_PixMap>
 ") GetImage;
 		virtual opencascade::handle<Image_PixMap> GetImage();
 
@@ -13433,11 +16697,15 @@ class Graphic3d_MediaTexture : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") Graphic3d_MediaTexture;
 		%feature("autodoc", "Main constructor.
 
-	:param theMutex:
-	:type theMutex: Media_HMutex
-	:param thePlane: default value is -1
-	:type thePlane: int
-	:rtype: None
+Parameters
+----------
+theMutex: Media_HMutex
+thePlane: int,optional
+	default value is -1
+
+Returns
+-------
+None
 ") Graphic3d_MediaTexture;
 		 Graphic3d_MediaTexture(const opencascade::handle<Media_HMutex> & theMutex, Standard_Integer thePlane = -1);
 
@@ -13445,9 +16713,13 @@ class Graphic3d_MediaTexture : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") SetFrame;
 		%feature("autodoc", "Set the frame.
 
-	:param theFrame:
-	:type theFrame: Media_Frame
-	:rtype: None
+Parameters
+----------
+theFrame: Media_Frame
+
+Returns
+-------
+None
 ") SetFrame;
 		void SetFrame(const opencascade::handle<Media_Frame> & theFrame);
 
@@ -13471,9 +16743,13 @@ class Graphic3d_Texture1Dmanual : public Graphic3d_Texture1D {
 		%feature("compactdefaultargs") Graphic3d_Texture1Dmanual;
 		%feature("autodoc", "Creates a texture from the file filename.
 
-	:param theFileName:
-	:type theFileName: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theFileName: TCollection_AsciiString
+
+Returns
+-------
+None
 ") Graphic3d_Texture1Dmanual;
 		 Graphic3d_Texture1Dmanual(const TCollection_AsciiString & theFileName);
 
@@ -13481,9 +16757,13 @@ class Graphic3d_Texture1Dmanual : public Graphic3d_Texture1D {
 		%feature("compactdefaultargs") Graphic3d_Texture1Dmanual;
 		%feature("autodoc", "Create a texture from a predefined texture name set.
 
-	:param theNOT:
-	:type theNOT: Graphic3d_NameOfTexture1D
-	:rtype: None
+Parameters
+----------
+theNOT: Graphic3d_NameOfTexture1D
+
+Returns
+-------
+None
 ") Graphic3d_Texture1Dmanual;
 		 Graphic3d_Texture1Dmanual(const Graphic3d_NameOfTexture1D theNOT);
 
@@ -13491,9 +16771,13 @@ class Graphic3d_Texture1Dmanual : public Graphic3d_Texture1D {
 		%feature("compactdefaultargs") Graphic3d_Texture1Dmanual;
 		%feature("autodoc", "Creates a texture from the pixmap.
 
-	:param thePixMap:
-	:type thePixMap: Image_PixMap
-	:rtype: None
+Parameters
+----------
+thePixMap: Image_PixMap
+
+Returns
+-------
+None
 ") Graphic3d_Texture1Dmanual;
 		 Graphic3d_Texture1Dmanual(const opencascade::handle<Image_PixMap> & thePixMap);
 
@@ -13517,9 +16801,13 @@ class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
 		%feature("compactdefaultargs") Graphic3d_Texture1Dsegment;
 		%feature("autodoc", "Creates a texture from a file.
 
-	:param theFileName:
-	:type theFileName: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theFileName: TCollection_AsciiString
+
+Returns
+-------
+None
 ") Graphic3d_Texture1Dsegment;
 		 Graphic3d_Texture1Dsegment(const TCollection_AsciiString & theFileName);
 
@@ -13527,9 +16815,13 @@ class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
 		%feature("compactdefaultargs") Graphic3d_Texture1Dsegment;
 		%feature("autodoc", "Creates a texture from a predefined texture name set.
 
-	:param theNOT:
-	:type theNOT: Graphic3d_NameOfTexture1D
-	:rtype: None
+Parameters
+----------
+theNOT: Graphic3d_NameOfTexture1D
+
+Returns
+-------
+None
 ") Graphic3d_Texture1Dsegment;
 		 Graphic3d_Texture1Dsegment(const Graphic3d_NameOfTexture1D theNOT);
 
@@ -13537,9 +16829,13 @@ class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
 		%feature("compactdefaultargs") Graphic3d_Texture1Dsegment;
 		%feature("autodoc", "Creates a texture from the pixmap.
 
-	:param thePixMap:
-	:type thePixMap: Image_PixMap
-	:rtype: None
+Parameters
+----------
+thePixMap: Image_PixMap
+
+Returns
+-------
+None
 ") Graphic3d_Texture1Dsegment;
 		 Graphic3d_Texture1Dsegment(const opencascade::handle<Image_PixMap> & thePixMap);
 
@@ -13547,19 +16843,18 @@ class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
 		%feature("compactdefaultargs") Segment;
 		%feature("autodoc", "Returns the values of the current segment x1, y1, z1 , x2, y2, z2.
 
-	:param theX1:
-	:type theX1: Standard_ShortReal
-	:param theY1:
-	:type theY1: Standard_ShortReal
-	:param theZ1:
-	:type theZ1: Standard_ShortReal
-	:param theX2:
-	:type theX2: Standard_ShortReal
-	:param theY2:
-	:type theY2: Standard_ShortReal
-	:param theZ2:
-	:type theZ2: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theX1: Standard_ShortReal
+theY1: Standard_ShortReal
+theZ1: Standard_ShortReal
+theX2: Standard_ShortReal
+theY2: Standard_ShortReal
+theZ2: Standard_ShortReal
+
+Returns
+-------
+None
 ") Segment;
 		void Segment(Standard_ShortReal & theX1, Standard_ShortReal & theY1, Standard_ShortReal & theZ1, Standard_ShortReal & theX2, Standard_ShortReal & theY2, Standard_ShortReal & theZ2);
 
@@ -13567,19 +16862,18 @@ class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
 		%feature("compactdefaultargs") SetSegment;
 		%feature("autodoc", "Sets the texture application bounds. defines the way the texture is stretched across facets. default values are <0.0, 0.0, 0.0> , <0.0, 0.0, 1.0>.
 
-	:param theX1:
-	:type theX1: Standard_ShortReal
-	:param theY1:
-	:type theY1: Standard_ShortReal
-	:param theZ1:
-	:type theZ1: Standard_ShortReal
-	:param theX2:
-	:type theX2: Standard_ShortReal
-	:param theY2:
-	:type theY2: Standard_ShortReal
-	:param theZ2:
-	:type theZ2: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theX1: Standard_ShortReal
+theY1: Standard_ShortReal
+theZ1: Standard_ShortReal
+theX2: Standard_ShortReal
+theY2: Standard_ShortReal
+theZ2: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetSegment;
 		void SetSegment(const Standard_ShortReal theX1, const Standard_ShortReal theY1, const Standard_ShortReal theZ1, const Standard_ShortReal theX2, const Standard_ShortReal theY2, const Standard_ShortReal theZ2);
 
@@ -13603,9 +16897,13 @@ class Graphic3d_Texture2Dmanual : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") Graphic3d_Texture2Dmanual;
 		%feature("autodoc", "Creates a texture from a file. mipmaps levels will be automatically generated if needed.
 
-	:param theFileName:
-	:type theFileName: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theFileName: TCollection_AsciiString
+
+Returns
+-------
+None
 ") Graphic3d_Texture2Dmanual;
 		 Graphic3d_Texture2Dmanual(const TCollection_AsciiString & theFileName);
 
@@ -13613,9 +16911,13 @@ class Graphic3d_Texture2Dmanual : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") Graphic3d_Texture2Dmanual;
 		%feature("autodoc", "Creates a texture from a predefined texture name set. mipmaps levels will be automatically generated if needed.
 
-	:param theNOT:
-	:type theNOT: Graphic3d_NameOfTexture2D
-	:rtype: None
+Parameters
+----------
+theNOT: Graphic3d_NameOfTexture2D
+
+Returns
+-------
+None
 ") Graphic3d_Texture2Dmanual;
 		 Graphic3d_Texture2Dmanual(const Graphic3d_NameOfTexture2D theNOT);
 
@@ -13623,9 +16925,13 @@ class Graphic3d_Texture2Dmanual : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") Graphic3d_Texture2Dmanual;
 		%feature("autodoc", "Creates a texture from the pixmap. mipmaps levels will be automatically generated if needed.
 
-	:param thePixMap:
-	:type thePixMap: Image_PixMap
-	:rtype: None
+Parameters
+----------
+thePixMap: Image_PixMap
+
+Returns
+-------
+None
 ") Graphic3d_Texture2Dmanual;
 		 Graphic3d_Texture2Dmanual(const opencascade::handle<Image_PixMap> & thePixMap);
 
@@ -13649,9 +16955,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") Graphic3d_Texture2Dplane;
 		%feature("autodoc", "Creates a texture from a file.
 
-	:param theFileName:
-	:type theFileName: TCollection_AsciiString
-	:rtype: None
+Parameters
+----------
+theFileName: TCollection_AsciiString
+
+Returns
+-------
+None
 ") Graphic3d_Texture2Dplane;
 		 Graphic3d_Texture2Dplane(const TCollection_AsciiString & theFileName);
 
@@ -13659,9 +16969,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") Graphic3d_Texture2Dplane;
 		%feature("autodoc", "Creates a texture from a predefined texture name set.
 
-	:param theNOT:
-	:type theNOT: Graphic3d_NameOfTexture2D
-	:rtype: None
+Parameters
+----------
+theNOT: Graphic3d_NameOfTexture2D
+
+Returns
+-------
+None
 ") Graphic3d_Texture2Dplane;
 		 Graphic3d_Texture2Dplane(const Graphic3d_NameOfTexture2D theNOT);
 
@@ -13669,9 +16983,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") Graphic3d_Texture2Dplane;
 		%feature("autodoc", "Creates a texture from the pixmap.
 
-	:param thePixMap:
-	:type thePixMap: Image_PixMap
-	:rtype: None
+Parameters
+----------
+thePixMap: Image_PixMap
+
+Returns
+-------
+None
 ") Graphic3d_Texture2Dplane;
 		 Graphic3d_Texture2Dplane(const opencascade::handle<Image_PixMap> & thePixMap);
 
@@ -13679,7 +16997,9 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") Plane;
 		%feature("autodoc", "Returns the current texture plane name or notp_unknown when the plane is user defined.
 
-	:rtype: Graphic3d_NameOfTexturePlane
+Returns
+-------
+Graphic3d_NameOfTexturePlane
 ") Plane;
 		Graphic3d_NameOfTexturePlane Plane();
 
@@ -13687,15 +17007,16 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") PlaneS;
 		%feature("autodoc", "Returns the current texture plane s equation.
 
-	:param A:
-	:type A: Standard_ShortReal
-	:param B:
-	:type B: Standard_ShortReal
-	:param C:
-	:type C: Standard_ShortReal
-	:param D:
-	:type D: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+A: Standard_ShortReal
+B: Standard_ShortReal
+C: Standard_ShortReal
+D: Standard_ShortReal
+
+Returns
+-------
+None
 ") PlaneS;
 		void PlaneS(Standard_ShortReal & A, Standard_ShortReal & B, Standard_ShortReal & C, Standard_ShortReal & D);
 
@@ -13703,15 +17024,16 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") PlaneT;
 		%feature("autodoc", "Returns the current texture plane t equation.
 
-	:param A:
-	:type A: Standard_ShortReal
-	:param B:
-	:type B: Standard_ShortReal
-	:param C:
-	:type C: Standard_ShortReal
-	:param D:
-	:type D: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+A: Standard_ShortReal
+B: Standard_ShortReal
+C: Standard_ShortReal
+D: Standard_ShortReal
+
+Returns
+-------
+None
 ") PlaneT;
 		void PlaneT(Standard_ShortReal & A, Standard_ShortReal & B, Standard_ShortReal & C, Standard_ShortReal & D);
 
@@ -13719,9 +17041,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") Rotation;
 		%feature("autodoc", "Returns the current texture rotation angle.
 
-	:param theVal:
-	:type theVal: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theVal: Standard_ShortReal
+
+Returns
+-------
+None
 ") Rotation;
 		void Rotation(Standard_ShortReal & theVal);
 
@@ -13729,9 +17055,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") ScaleS;
 		%feature("autodoc", "Returns the current texture s scale value.
 
-	:param theVal:
-	:type theVal: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theVal: Standard_ShortReal
+
+Returns
+-------
+None
 ") ScaleS;
 		void ScaleS(Standard_ShortReal & theVal);
 
@@ -13739,9 +17069,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") ScaleT;
 		%feature("autodoc", "Returns the current texture t scale value.
 
-	:param theVal:
-	:type theVal: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theVal: Standard_ShortReal
+
+Returns
+-------
+None
 ") ScaleT;
 		void ScaleT(Standard_ShortReal & theVal);
 
@@ -13749,9 +17083,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") SetPlane;
 		%feature("autodoc", "Defines the texture projection plane for both s and t texture coordinate default is notp_xy meaning: <1.0, 0.0, 0.0, 0.0> for s and <0.0, 1.0, 0.0, 0.0> for t.
 
-	:param thePlane:
-	:type thePlane: Graphic3d_NameOfTexturePlane
-	:rtype: None
+Parameters
+----------
+thePlane: Graphic3d_NameOfTexturePlane
+
+Returns
+-------
+None
 ") SetPlane;
 		void SetPlane(const Graphic3d_NameOfTexturePlane thePlane);
 
@@ -13759,15 +17097,16 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") SetPlaneS;
 		%feature("autodoc", "Defines the texture projection plane for texture coordinate s default is <1.0, 0.0, 0.0, 0.0>.
 
-	:param A:
-	:type A: Standard_ShortReal
-	:param B:
-	:type B: Standard_ShortReal
-	:param C:
-	:type C: Standard_ShortReal
-	:param D:
-	:type D: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+A: Standard_ShortReal
+B: Standard_ShortReal
+C: Standard_ShortReal
+D: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetPlaneS;
 		void SetPlaneS(const Standard_ShortReal A, const Standard_ShortReal B, const Standard_ShortReal C, const Standard_ShortReal D);
 
@@ -13775,15 +17114,16 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") SetPlaneT;
 		%feature("autodoc", "Defines the texture projection plane for texture coordinate t default is <0.0, 1.0, 0.0, 0.0>.
 
-	:param A:
-	:type A: Standard_ShortReal
-	:param B:
-	:type B: Standard_ShortReal
-	:param C:
-	:type C: Standard_ShortReal
-	:param D:
-	:type D: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+A: Standard_ShortReal
+B: Standard_ShortReal
+C: Standard_ShortReal
+D: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetPlaneT;
 		void SetPlaneT(const Standard_ShortReal A, const Standard_ShortReal B, const Standard_ShortReal C, const Standard_ShortReal D);
 
@@ -13791,9 +17131,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") SetRotation;
 		%feature("autodoc", "Sets the rotation angle of the whole texture. the same result might be achieved by recomputing the s and t plane equation but it's not the easiest way... the angle is expressed in degrees default is 0.0.
 
-	:param theVal:
-	:type theVal: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theVal: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetRotation;
 		void SetRotation(const Standard_ShortReal theVal);
 
@@ -13801,9 +17145,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") SetScaleS;
 		%feature("autodoc", "Defines the texture scale for the s texture coordinate much easier than recomputing the s plane equation but the result is the same default to 1.0.
 
-	:param theVal:
-	:type theVal: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theVal: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetScaleS;
 		void SetScaleS(const Standard_ShortReal theVal);
 
@@ -13811,9 +17159,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") SetScaleT;
 		%feature("autodoc", "Defines the texture scale for the t texture coordinate much easier than recompution the t plane equation but the result is the same default to 1.0.
 
-	:param theVal:
-	:type theVal: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theVal: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetScaleT;
 		void SetScaleT(const Standard_ShortReal theVal);
 
@@ -13821,9 +17173,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") SetTranslateS;
 		%feature("autodoc", "Defines the texture translation for the s texture coordinate you can obtain the same effect by modifying the s plane equation but its not easier. default to 0.0.
 
-	:param theVal:
-	:type theVal: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theVal: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetTranslateS;
 		void SetTranslateS(const Standard_ShortReal theVal);
 
@@ -13831,9 +17187,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") SetTranslateT;
 		%feature("autodoc", "Defines the texture translation for the t texture coordinate you can obtain the same effect by modifying the t plane equation but its not easier. default to 0.0.
 
-	:param theVal:
-	:type theVal: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theVal: Standard_ShortReal
+
+Returns
+-------
+None
 ") SetTranslateT;
 		void SetTranslateT(const Standard_ShortReal theVal);
 
@@ -13841,9 +17201,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") TranslateS;
 		%feature("autodoc", "Returns the current texture s translation value.
 
-	:param theVal:
-	:type theVal: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theVal: Standard_ShortReal
+
+Returns
+-------
+None
 ") TranslateS;
 		void TranslateS(Standard_ShortReal & theVal);
 
@@ -13851,9 +17215,13 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("compactdefaultargs") TranslateT;
 		%feature("autodoc", "Returns the current texture t translation value.
 
-	:param theVal:
-	:type theVal: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+theVal: Standard_ShortReal
+
+Returns
+-------
+None
 ") TranslateT;
 		void TranslateT(Standard_ShortReal & theVal);
 

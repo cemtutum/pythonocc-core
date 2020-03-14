@@ -90,17 +90,27 @@ class TopoDS {
 		%feature("compactdefaultargs") CompSolid;
 		%feature("autodoc", "Casts shape s to the more specialized return type, compsolid. exceptions standard_typemismatch if s cannot be cast to this return type.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopoDS_CompSolid
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopoDS_CompSolid
 ") CompSolid;
 		static const TopoDS_CompSolid CompSolid(const TopoDS_Shape & S);
 
 		/****************** CompSolid ******************/
 		%feature("compactdefaultargs") CompSolid;
-		%feature("autodoc", "	:param &:
-	:type &: TopoDS_Shape
-	:rtype: TopoDS_CompSolid
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+&: TopoDS_Shape
+
+Returns
+-------
+TopoDS_CompSolid
 ") CompSolid;
 		static TopoDS_CompSolid CompSolid(TopoDS_Shape &);
 
@@ -108,17 +118,27 @@ class TopoDS {
 		%feature("compactdefaultargs") Compound;
 		%feature("autodoc", "Casts shape s to the more specialized return type, compound. exceptions standard_typemismatch if s cannot be cast to this return type.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopoDS_Compound
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Compound
 ") Compound;
 		static const TopoDS_Compound Compound(const TopoDS_Shape & S);
 
 		/****************** Compound ******************/
 		%feature("compactdefaultargs") Compound;
-		%feature("autodoc", "	:param &:
-	:type &: TopoDS_Shape
-	:rtype: TopoDS_Compound
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+&: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Compound
 ") Compound;
 		static TopoDS_Compound Compound(TopoDS_Shape &);
 
@@ -126,17 +146,27 @@ class TopoDS {
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Casts shape s to the more specialized return type, edge exceptions standard_typemismatch if s cannot be cast to this return type.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopoDS_Edge
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Edge
 ") Edge;
 		static const TopoDS_Edge Edge(const TopoDS_Shape & S);
 
 		/****************** Edge ******************/
 		%feature("compactdefaultargs") Edge;
-		%feature("autodoc", "	:param &:
-	:type &: TopoDS_Shape
-	:rtype: TopoDS_Edge
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+&: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Edge
 ") Edge;
 		static TopoDS_Edge Edge(TopoDS_Shape &);
 
@@ -144,17 +174,27 @@ class TopoDS {
 		%feature("compactdefaultargs") Face;
 		%feature("autodoc", "Casts shape s to the more specialized return type, face. exceptions standard_typemismatch if s cannot be cast to this return type.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopoDS_Face
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Face
 ") Face;
 		static const TopoDS_Face Face(const TopoDS_Shape & S);
 
 		/****************** Face ******************/
 		%feature("compactdefaultargs") Face;
-		%feature("autodoc", "	:param &:
-	:type &: TopoDS_Shape
-	:rtype: TopoDS_Face
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+&: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Face
 ") Face;
 		static TopoDS_Face Face(TopoDS_Shape &);
 
@@ -162,17 +202,27 @@ class TopoDS {
 		%feature("compactdefaultargs") Shell;
 		%feature("autodoc", "Casts shape s to the more specialized return type, shell. exceptions standard_typemismatch if s cannot be cast to this return type.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopoDS_Shell
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shell
 ") Shell;
 		static const TopoDS_Shell Shell(const TopoDS_Shape & S);
 
 		/****************** Shell ******************/
 		%feature("compactdefaultargs") Shell;
-		%feature("autodoc", "	:param &:
-	:type &: TopoDS_Shape
-	:rtype: TopoDS_Shell
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+&: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shell
 ") Shell;
 		static TopoDS_Shell Shell(TopoDS_Shape &);
 
@@ -180,17 +230,27 @@ class TopoDS {
 		%feature("compactdefaultargs") Solid;
 		%feature("autodoc", "Casts shape s to the more specialized return type, solid. exceptions standard_typemismatch if s cannot be cast to this return type.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopoDS_Solid
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Solid
 ") Solid;
 		static const TopoDS_Solid Solid(const TopoDS_Shape & S);
 
 		/****************** Solid ******************/
 		%feature("compactdefaultargs") Solid;
-		%feature("autodoc", "	:param &:
-	:type &: TopoDS_Shape
-	:rtype: TopoDS_Solid
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+&: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Solid
 ") Solid;
 		static TopoDS_Solid Solid(TopoDS_Shape &);
 
@@ -198,17 +258,27 @@ class TopoDS {
 		%feature("compactdefaultargs") Vertex;
 		%feature("autodoc", "Basic tool to access the data structure. casts shape s to the more specialized return type, vertex. exceptions standard_typemismatch if s cannot be cast to this return type.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Vertex
 ") Vertex;
 		static const TopoDS_Vertex Vertex(const TopoDS_Shape & S);
 
 		/****************** Vertex ******************/
 		%feature("compactdefaultargs") Vertex;
-		%feature("autodoc", "	:param &:
-	:type &: TopoDS_Shape
-	:rtype: TopoDS_Vertex
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+&: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Vertex
 ") Vertex;
 		static TopoDS_Vertex Vertex(TopoDS_Shape &);
 
@@ -216,17 +286,27 @@ class TopoDS {
 		%feature("compactdefaultargs") Wire;
 		%feature("autodoc", "Casts shape s to the more specialized return type, wire. exceptions standard_typemismatch if s cannot be cast to this return type.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopoDS_Wire
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Wire
 ") Wire;
 		static const TopoDS_Wire Wire(const TopoDS_Shape & S);
 
 		/****************** Wire ******************/
 		%feature("compactdefaultargs") Wire;
-		%feature("autodoc", "	:param &:
-	:type &: TopoDS_Shape
-	:rtype: TopoDS_Wire
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+&: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Wire
 ") Wire;
 		static TopoDS_Wire Wire(TopoDS_Shape &);
 
@@ -248,7 +328,9 @@ class TopoDS_AlertWithShape : public Message_Alert {
 		%feature("compactdefaultargs") GetShape;
 		%feature("autodoc", "Returns contained shape.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") GetShape;
 		const TopoDS_Shape GetShape();
 
@@ -256,9 +338,13 @@ class TopoDS_AlertWithShape : public Message_Alert {
 		%feature("compactdefaultargs") Merge;
 		%feature("autodoc", "Returns false.
 
-	:param theTarget:
-	:type theTarget: Message_Alert
-	:rtype: bool
+Parameters
+----------
+theTarget: Message_Alert
+
+Returns
+-------
+bool
 ") Merge;
 		virtual Standard_Boolean Merge(const opencascade::handle<Message_Alert> & theTarget);
 
@@ -266,9 +352,13 @@ class TopoDS_AlertWithShape : public Message_Alert {
 		%feature("compactdefaultargs") SetShape;
 		%feature("autodoc", "Sets the shape.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+None
 ") SetShape;
 		void SetShape(const TopoDS_Shape & theShape);
 
@@ -276,7 +366,9 @@ class TopoDS_AlertWithShape : public Message_Alert {
 		%feature("compactdefaultargs") SupportsMerge;
 		%feature("autodoc", "Returns false.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") SupportsMerge;
 		virtual Standard_Boolean SupportsMerge();
 
@@ -284,9 +376,13 @@ class TopoDS_AlertWithShape : public Message_Alert {
 		%feature("compactdefaultargs") TopoDS_AlertWithShape;
 		%feature("autodoc", "Constructor with shape argument.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+None
 ") TopoDS_AlertWithShape;
 		 TopoDS_AlertWithShape(const TopoDS_Shape & theShape);
 
@@ -308,11 +404,14 @@ class TopoDS_Builder {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add the shape c in the shape s. exceptions - topods_frozenshape if s is not free and cannot be modified. - topods__uncompatibleshapes if s and c are not compatible.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param C:
-	:type C: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+C: TopoDS_Shape
+
+Returns
+-------
+None
 ") Add;
 		void Add(TopoDS_Shape & S, const TopoDS_Shape & C);
 
@@ -320,9 +419,13 @@ class TopoDS_Builder {
 		%feature("compactdefaultargs") MakeCompSolid;
 		%feature("autodoc", "Make an empty composite solid.
 
-	:param C:
-	:type C: TopoDS_CompSolid
-	:rtype: None
+Parameters
+----------
+C: TopoDS_CompSolid
+
+Returns
+-------
+None
 ") MakeCompSolid;
 		void MakeCompSolid(TopoDS_CompSolid & C);
 
@@ -330,9 +433,13 @@ class TopoDS_Builder {
 		%feature("compactdefaultargs") MakeCompound;
 		%feature("autodoc", "Make an empty compound.
 
-	:param C:
-	:type C: TopoDS_Compound
-	:rtype: None
+Parameters
+----------
+C: TopoDS_Compound
+
+Returns
+-------
+None
 ") MakeCompound;
 		void MakeCompound(TopoDS_Compound & C);
 
@@ -340,9 +447,13 @@ class TopoDS_Builder {
 		%feature("compactdefaultargs") MakeShell;
 		%feature("autodoc", "Make an empty shell.
 
-	:param S:
-	:type S: TopoDS_Shell
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shell
+
+Returns
+-------
+None
 ") MakeShell;
 		void MakeShell(TopoDS_Shell & S);
 
@@ -350,9 +461,13 @@ class TopoDS_Builder {
 		%feature("compactdefaultargs") MakeSolid;
 		%feature("autodoc", "Make a solid covering the whole 3d space.
 
-	:param S:
-	:type S: TopoDS_Solid
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Solid
+
+Returns
+-------
+None
 ") MakeSolid;
 		void MakeSolid(TopoDS_Solid & S);
 
@@ -360,9 +475,13 @@ class TopoDS_Builder {
 		%feature("compactdefaultargs") MakeWire;
 		%feature("autodoc", "Make an empty wire.
 
-	:param W:
-	:type W: TopoDS_Wire
-	:rtype: None
+Parameters
+----------
+W: TopoDS_Wire
+
+Returns
+-------
+None
 ") MakeWire;
 		void MakeWire(TopoDS_Wire & W);
 
@@ -370,11 +489,14 @@ class TopoDS_Builder {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Remove the shape c from the shape s. exceptions topods_frozenshape if s is frozen and cannot be modified.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param C:
-	:type C: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+C: TopoDS_Shape
+
+Returns
+-------
+None
 ") Remove;
 		void Remove(TopoDS_Shape & S, const TopoDS_Shape & C);
 
@@ -396,7 +518,9 @@ class TopoDS_HShape : public Standard_Transient {
 		%feature("compactdefaultargs") ChangeShape;
 		%feature("autodoc", "Exchanges the topods_shape object defining this shape for another one referencing the same underlying shape accesses the list of shapes within the underlying shape referenced by the topods_shape object. returns a reference to a topods_shape based on this shape. the topods_shape can be modified.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") ChangeShape;
 		TopoDS_Shape ChangeShape();
 
@@ -404,9 +528,13 @@ class TopoDS_HShape : public Standard_Transient {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Loads this shape with the shape ashape.
 
-	:param aShape:
-	:type aShape: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+aShape: TopoDS_Shape
+
+Returns
+-------
+None
 ") Shape;
 		void Shape(const TopoDS_Shape & aShape);
 
@@ -414,7 +542,9 @@ class TopoDS_HShape : public Standard_Transient {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns a reference to a constant topods_shape based on this shape.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
 
@@ -422,7 +552,9 @@ class TopoDS_HShape : public Standard_Transient {
 		%feature("compactdefaultargs") TopoDS_HShape;
 		%feature("autodoc", "Constructs an empty shape object.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_HShape;
 		 TopoDS_HShape();
 
@@ -430,9 +562,13 @@ class TopoDS_HShape : public Standard_Transient {
 		%feature("compactdefaultargs") TopoDS_HShape;
 		%feature("autodoc", "Constructs a shape object defined by the shape ashape.
 
-	:param aShape:
-	:type aShape: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+aShape: TopoDS_Shape
+
+Returns
+-------
+None
 ") TopoDS_HShape;
 		 TopoDS_HShape(const TopoDS_Shape & aShape);
 
@@ -456,13 +592,17 @@ class TopoDS_Iterator {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initializes this iterator with shape s. note: - if cumori is true, the function composes all sub-shapes with the orientation of s. - if cumloc is true, the function multiplies all sub-shapes by the location of s, i.e. it applies to each sub-shape the transformation that is associated with s.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param cumOri: default value is Standard_True
-	:type cumOri: bool
-	:param cumLoc: default value is Standard_True
-	:type cumLoc: bool
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+cumOri: bool,optional
+	default value is Standard_True
+cumLoc: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const TopoDS_Shape & S, const Standard_Boolean cumOri = Standard_True, const Standard_Boolean cumLoc = Standard_True);
 
@@ -470,7 +610,9 @@ class TopoDS_Iterator {
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Returns true if there is another sub-shape in the shape which this iterator is scanning.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
@@ -478,7 +620,9 @@ class TopoDS_Iterator {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Moves on to the next sub-shape in the shape which this iterator is scanning. exceptions standard_nomoreobject if there are no more sub-shapes in the shape.
 
-	:rtype: None
+Returns
+-------
+None
 ") Next;
 		void Next();
 
@@ -486,7 +630,9 @@ class TopoDS_Iterator {
 		%feature("compactdefaultargs") TopoDS_Iterator;
 		%feature("autodoc", "Creates an empty iterator.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_Iterator;
 		 TopoDS_Iterator();
 
@@ -494,13 +640,17 @@ class TopoDS_Iterator {
 		%feature("compactdefaultargs") TopoDS_Iterator;
 		%feature("autodoc", "Creates an iterator on <s> sub-shapes. note: - if cumori is true, the function composes all sub-shapes with the orientation of s. - if cumloc is true, the function multiplies all sub-shapes by the location of s, i.e. it applies to each sub-shape the transformation that is associated with s.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param cumOri: default value is Standard_True
-	:type cumOri: bool
-	:param cumLoc: default value is Standard_True
-	:type cumLoc: bool
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+cumOri: bool,optional
+	default value is Standard_True
+cumLoc: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") TopoDS_Iterator;
 		 TopoDS_Iterator(const TopoDS_Shape & S, const Standard_Boolean cumOri = Standard_True, const Standard_Boolean cumLoc = Standard_True);
 
@@ -508,7 +658,9 @@ class TopoDS_Iterator {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the current sub-shape in the shape which this iterator is scanning. exceptions standard_nosuchobject if there is no current sub-shape.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Value;
 		const TopoDS_Shape Value();
 
@@ -532,7 +684,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Checked;
 		%feature("autodoc", "Returns the checked flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Checked;
 		Standard_Boolean Checked();
 
@@ -540,9 +694,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Checked;
 		%feature("autodoc", "Sets the checked flag.
 
-	:param theIsChecked:
-	:type theIsChecked: bool
-	:rtype: None
+Parameters
+----------
+theIsChecked: bool
+
+Returns
+-------
+None
 ") Checked;
 		void Checked(Standard_Boolean theIsChecked);
 
@@ -550,7 +708,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Closed;
 		%feature("autodoc", "Returns the closedness flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Closed;
 		Standard_Boolean Closed();
 
@@ -558,9 +718,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Closed;
 		%feature("autodoc", "Sets the closedness flag.
 
-	:param theIsClosed:
-	:type theIsClosed: bool
-	:rtype: None
+Parameters
+----------
+theIsClosed: bool
+
+Returns
+-------
+None
 ") Closed;
 		void Closed(Standard_Boolean theIsClosed);
 
@@ -568,7 +732,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Complement;
 		%feature("autodoc", "Complements the orientation, using the complement method from the topabs package.
 
-	:rtype: None
+Returns
+-------
+None
 ") Complement;
 		void Complement();
 
@@ -576,7 +742,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Complemented;
 		%feature("autodoc", "Returns a shape similar to <self> with the orientation complemented, using the complement method from the topabs package.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Complemented;
 		TopoDS_Shape Complemented();
 
@@ -584,9 +752,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Compose;
 		%feature("autodoc", "Updates the shape orientation by composition with theorient, using the compose method from the topabs package.
 
-	:param theOrient:
-	:type theOrient: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+theOrient: TopAbs_Orientation
+
+Returns
+-------
+None
 ") Compose;
 		void Compose(TopAbs_Orientation theOrient);
 
@@ -594,9 +766,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Composed;
 		%feature("autodoc", "Returns a shape similar to <self> with the orientation composed with theorient, using the compose method from the topabs package.
 
-	:param theOrient:
-	:type theOrient: TopAbs_Orientation
-	:rtype: TopoDS_Shape
+Parameters
+----------
+theOrient: TopAbs_Orientation
+
+Returns
+-------
+TopoDS_Shape
 ") Composed;
 		TopoDS_Shape Composed(TopAbs_Orientation theOrient);
 
@@ -604,7 +780,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Convex;
 		%feature("autodoc", "Returns the convexness flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Convex;
 		Standard_Boolean Convex();
 
@@ -612,9 +790,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Convex;
 		%feature("autodoc", "Sets the convexness flag.
 
-	:param theIsConvex:
-	:type theIsConvex: bool
-	:rtype: None
+Parameters
+----------
+theIsConvex: bool
+
+Returns
+-------
+None
 ") Convex;
 		void Convex(Standard_Boolean theIsConvex);
 
@@ -630,7 +812,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") EmptyCopied;
 		%feature("autodoc", "Returns a new shape with the same orientation and location and a new tshape with the same geometry and no sub-shapes.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") EmptyCopied;
 		TopoDS_Shape EmptyCopied();
 
@@ -638,7 +822,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Replace <self> by a new shape with the same orientation and location and a new tshape with the same geometry and no sub-shapes.
 
-	:rtype: None
+Returns
+-------
+None
 ") EmptyCopy;
 		void EmptyCopy();
 
@@ -646,7 +832,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Free;
 		%feature("autodoc", "Returns the free flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Free;
 		Standard_Boolean Free();
 
@@ -654,9 +842,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Free;
 		%feature("autodoc", "Sets the free flag.
 
-	:param theIsFree:
-	:type theIsFree: bool
-	:rtype: None
+Parameters
+----------
+theIsFree: bool
+
+Returns
+-------
+None
 ") Free;
 		void Free(Standard_Boolean theIsFree);
 
@@ -664,9 +856,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") HashCode;
 		%feature("autodoc", "Returns a hashed value denoting <self>. this value is in the range [1, theupperbound]. it is computed from the tshape and the location. the orientation is not used. @param theupperbound the upper bound of the range a computing hash code must be within returns a computed hash code, in the range [1, theupperbound].
 
-	:param theUpperBound:
-	:type theUpperBound: int
-	:rtype: int
+Parameters
+----------
+theUpperBound: int
+
+Returns
+-------
+int
 ") HashCode;
 		Standard_Integer HashCode(Standard_Integer theUpperBound);
 
@@ -680,7 +876,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Infinite;
 		%feature("autodoc", "Returns the infinity flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Infinite;
 		Standard_Boolean Infinite();
 
@@ -688,9 +886,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Infinite;
 		%feature("autodoc", "Sets the infinity flag.
 
-	:param theIsInfinite:
-	:type theIsInfinite: bool
-	:rtype: None
+Parameters
+----------
+theIsInfinite: bool
+
+Returns
+-------
+None
 ") Infinite;
 		void Infinite(Standard_Boolean theIsInfinite);
 
@@ -698,9 +900,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Returns true if two shapes are equal, i.e. if they share the same tshape with the same locations and orientations.
 
-	:param theOther:
-	:type theOther: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+theOther: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const TopoDS_Shape & theOther);
 
@@ -708,9 +914,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") IsNotEqual;
 		%feature("autodoc", "Negation of the isequal method.
 
-	:param theOther:
-	:type theOther: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+theOther: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsNotEqual;
 		Standard_Boolean IsNotEqual(const TopoDS_Shape & theOther);
 
@@ -718,7 +928,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") IsNull;
 		%feature("autodoc", "Returns true if this shape is null. in other words, it references no underlying shape with the potential to be given a location and an orientation.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsNull;
 		Standard_Boolean IsNull();
 
@@ -726,9 +938,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") IsPartner;
 		%feature("autodoc", "Returns true if two shapes are partners, i.e. if they share the same tshape. locations and orientations may differ.
 
-	:param theOther:
-	:type theOther: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+theOther: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsPartner;
 		Standard_Boolean IsPartner(const TopoDS_Shape & theOther);
 
@@ -736,9 +952,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") IsSame;
 		%feature("autodoc", "Returns true if two shapes are same, i.e. if they share the same tshape with the same locations. orientations may differ.
 
-	:param theOther:
-	:type theOther: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+theOther: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsSame;
 		Standard_Boolean IsSame(const TopoDS_Shape & theOther);
 
@@ -746,9 +966,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Located;
 		%feature("autodoc", "Returns a shape similar to <self> with the local coordinate system set to <loc>.
 
-	:param theLoc:
-	:type theLoc: TopLoc_Location
-	:rtype: TopoDS_Shape
+Parameters
+----------
+theLoc: TopLoc_Location
+
+Returns
+-------
+TopoDS_Shape
 ") Located;
 		TopoDS_Shape Located(const TopLoc_Location & theLoc);
 
@@ -756,7 +980,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Location;
 		%feature("autodoc", "Returns the shape local coordinate system.
 
-	:rtype: TopLoc_Location
+Returns
+-------
+TopLoc_Location
 ") Location;
 		const TopLoc_Location & Location();
 
@@ -764,9 +990,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Location;
 		%feature("autodoc", "Sets the shape local coordinate system.
 
-	:param theLoc:
-	:type theLoc: TopLoc_Location
-	:rtype: None
+Parameters
+----------
+theLoc: TopLoc_Location
+
+Returns
+-------
+None
 ") Location;
 		void Location(const TopLoc_Location & theLoc);
 
@@ -774,7 +1004,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Locked;
 		%feature("autodoc", "Returns the locked flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Locked;
 		Standard_Boolean Locked();
 
@@ -782,9 +1014,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Locked;
 		%feature("autodoc", "Sets the locked flag.
 
-	:param theIsLocked:
-	:type theIsLocked: bool
-	:rtype: None
+Parameters
+----------
+theIsLocked: bool
+
+Returns
+-------
+None
 ") Locked;
 		void Locked(Standard_Boolean theIsLocked);
 
@@ -792,7 +1028,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Modified;
 		%feature("autodoc", "Returns the modification flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Modified;
 		Standard_Boolean Modified();
 
@@ -800,9 +1038,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Modified;
 		%feature("autodoc", "Sets the modification flag.
 
-	:param theIsModified:
-	:type theIsModified: bool
-	:rtype: None
+Parameters
+----------
+theIsModified: bool
+
+Returns
+-------
+None
 ") Modified;
 		void Modified(Standard_Boolean theIsModified);
 
@@ -810,9 +1052,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Move;
 		%feature("autodoc", "Multiplies the shape location by theposition.
 
-	:param thePosition:
-	:type thePosition: TopLoc_Location
-	:rtype: None
+Parameters
+----------
+thePosition: TopLoc_Location
+
+Returns
+-------
+None
 ") Move;
 		void Move(const TopLoc_Location & thePosition);
 
@@ -820,9 +1066,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Moved;
 		%feature("autodoc", "Returns a shape similar to <self> with a location multiplied by theposition.
 
-	:param thePosition:
-	:type thePosition: TopLoc_Location
-	:rtype: TopoDS_Shape
+Parameters
+----------
+thePosition: TopLoc_Location
+
+Returns
+-------
+TopoDS_Shape
 ") Moved;
 		TopoDS_Shape Moved(const TopLoc_Location & thePosition);
 
@@ -830,7 +1080,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") NbChildren;
 		%feature("autodoc", "Returns the number of direct sub-shapes (children). @sa topods_iterator for accessing sub-shapes.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbChildren;
 		Standard_Integer NbChildren();
 
@@ -838,7 +1090,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Nullify;
 		%feature("autodoc", "Destroys the reference to the underlying shape stored in this shape. as a result, this shape becomes null.
 
-	:rtype: None
+Returns
+-------
+None
 ") Nullify;
 		void Nullify();
 
@@ -846,7 +1100,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Orientable;
 		%feature("autodoc", "Returns the orientability flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Orientable;
 		Standard_Boolean Orientable();
 
@@ -854,9 +1110,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Orientable;
 		%feature("autodoc", "Sets the orientability flag.
 
-	:param theIsOrientable:
-	:type theIsOrientable: bool
-	:rtype: None
+Parameters
+----------
+theIsOrientable: bool
+
+Returns
+-------
+None
 ") Orientable;
 		void Orientable(const Standard_Boolean theIsOrientable);
 
@@ -864,7 +1124,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Orientation;
 		%feature("autodoc", "Returns the shape orientation.
 
-	:rtype: TopAbs_Orientation
+Returns
+-------
+TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation();
 
@@ -872,9 +1134,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Orientation;
 		%feature("autodoc", "Sets the shape orientation.
 
-	:param theOrient:
-	:type theOrient: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+theOrient: TopAbs_Orientation
+
+Returns
+-------
+None
 ") Orientation;
 		void Orientation(TopAbs_Orientation theOrient);
 
@@ -882,9 +1148,13 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Oriented;
 		%feature("autodoc", "Returns a shape similar to <self> with the orientation set to <or>.
 
-	:param theOrient:
-	:type theOrient: TopAbs_Orientation
-	:rtype: TopoDS_Shape
+Parameters
+----------
+theOrient: TopAbs_Orientation
+
+Returns
+-------
+TopoDS_Shape
 ") Oriented;
 		TopoDS_Shape Oriented(TopAbs_Orientation theOrient);
 
@@ -892,7 +1162,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Reverse;
 		%feature("autodoc", "Reverses the orientation, using the reverse method from the topabs package.
 
-	:rtype: None
+Returns
+-------
+None
 ") Reverse;
 		void Reverse();
 
@@ -900,7 +1172,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") Reversed;
 		%feature("autodoc", "Returns a shape similar to <self> with the orientation reversed, using the reverse method from the topabs package.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Reversed;
 		TopoDS_Shape Reversed();
 
@@ -908,7 +1182,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") ShapeType;
 		%feature("autodoc", "Returns the value of the topabs_shapeenum enumeration that corresponds to this shape, for example vertex, edge, and so on. exceptions standard_nullobject if this shape is null.
 
-	:rtype: TopAbs_ShapeEnum
+Returns
+-------
+TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
@@ -916,15 +1192,23 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") TShape;
 		%feature("autodoc", "Returns a handle to the actual shape implementation.
 
-	:rtype: opencascade::handle<TopoDS_TShape>
+Returns
+-------
+opencascade::handle<TopoDS_TShape>
 ") TShape;
 		const opencascade::handle<TopoDS_TShape> TShape();
 
 		/****************** TShape ******************/
 		%feature("compactdefaultargs") TShape;
-		%feature("autodoc", "	:param theTShape:
-	:type theTShape: TopoDS_TShape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theTShape: TopoDS_TShape
+
+Returns
+-------
+None
 ") TShape;
 		void TShape(const opencascade::handle<TopoDS_TShape> & theTShape);
 
@@ -932,7 +1216,9 @@ class TopoDS_Shape {
 		%feature("compactdefaultargs") TopoDS_Shape;
 		%feature("autodoc", "Creates a null shape referring to nothing.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_Shape;
 		 TopoDS_Shape();
 
@@ -1003,7 +1289,9 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Checked;
 		%feature("autodoc", "Returns the checked flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Checked;
 		Standard_Boolean Checked();
 
@@ -1011,9 +1299,13 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Checked;
 		%feature("autodoc", "Sets the checked flag.
 
-	:param theIsChecked:
-	:type theIsChecked: bool
-	:rtype: None
+Parameters
+----------
+theIsChecked: bool
+
+Returns
+-------
+None
 ") Checked;
 		void Checked(Standard_Boolean theIsChecked);
 
@@ -1021,7 +1313,9 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Closed;
 		%feature("autodoc", "Returns the closedness flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Closed;
 		Standard_Boolean Closed();
 
@@ -1029,9 +1323,13 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Closed;
 		%feature("autodoc", "Sets the closedness flag.
 
-	:param theIsClosed:
-	:type theIsClosed: bool
-	:rtype: None
+Parameters
+----------
+theIsClosed: bool
+
+Returns
+-------
+None
 ") Closed;
 		void Closed(Standard_Boolean theIsClosed);
 
@@ -1039,7 +1337,9 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Convex;
 		%feature("autodoc", "Returns the convexness flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Convex;
 		Standard_Boolean Convex();
 
@@ -1047,9 +1347,13 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Convex;
 		%feature("autodoc", "Sets the convexness flag.
 
-	:param theIsConvex:
-	:type theIsConvex: bool
-	:rtype: None
+Parameters
+----------
+theIsConvex: bool
+
+Returns
+-------
+None
 ") Convex;
 		void Convex(Standard_Boolean theIsConvex);
 
@@ -1065,7 +1369,9 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns a copy of the tshape with no sub-shapes.
 
-	:rtype: opencascade::handle<TopoDS_TShape>
+Returns
+-------
+opencascade::handle<TopoDS_TShape>
 ") EmptyCopy;
 		virtual opencascade::handle<TopoDS_TShape> EmptyCopy();
 
@@ -1073,7 +1379,9 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Free;
 		%feature("autodoc", "Returns the free flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Free;
 		Standard_Boolean Free();
 
@@ -1081,9 +1389,13 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Free;
 		%feature("autodoc", "Sets the free flag.
 
-	:param theIsFree:
-	:type theIsFree: bool
-	:rtype: None
+Parameters
+----------
+theIsFree: bool
+
+Returns
+-------
+None
 ") Free;
 		void Free(Standard_Boolean theIsFree);
 
@@ -1091,7 +1403,9 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Infinite;
 		%feature("autodoc", "Returns the infinity flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Infinite;
 		Standard_Boolean Infinite();
 
@@ -1099,9 +1413,13 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Infinite;
 		%feature("autodoc", "Sets the infinity flag.
 
-	:param theIsInfinite:
-	:type theIsInfinite: bool
-	:rtype: None
+Parameters
+----------
+theIsInfinite: bool
+
+Returns
+-------
+None
 ") Infinite;
 		void Infinite(Standard_Boolean theIsInfinite);
 
@@ -1109,7 +1427,9 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Locked;
 		%feature("autodoc", "Returns the locked flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Locked;
 		Standard_Boolean Locked();
 
@@ -1117,9 +1437,13 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Locked;
 		%feature("autodoc", "Sets the locked flag.
 
-	:param theIsLocked:
-	:type theIsLocked: bool
-	:rtype: None
+Parameters
+----------
+theIsLocked: bool
+
+Returns
+-------
+None
 ") Locked;
 		void Locked(Standard_Boolean theIsLocked);
 
@@ -1127,7 +1451,9 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Modified;
 		%feature("autodoc", "Returns the modification flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Modified;
 		Standard_Boolean Modified();
 
@@ -1135,9 +1461,13 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Modified;
 		%feature("autodoc", "Sets the modification flag.
 
-	:param theIsModified:
-	:type theIsModified: bool
-	:rtype: None
+Parameters
+----------
+theIsModified: bool
+
+Returns
+-------
+None
 ") Modified;
 		void Modified(Standard_Boolean theIsModified);
 
@@ -1145,7 +1475,9 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") NbChildren;
 		%feature("autodoc", "Returns the number of direct sub-shapes (children). @sa topods_iterator for accessing sub-shapes.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbChildren;
 		Standard_Integer NbChildren();
 
@@ -1153,7 +1485,9 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Orientable;
 		%feature("autodoc", "Returns the orientability flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Orientable;
 		Standard_Boolean Orientable();
 
@@ -1161,9 +1495,13 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") Orientable;
 		%feature("autodoc", "Sets the orientability flag.
 
-	:param theIsOrientable:
-	:type theIsOrientable: bool
-	:rtype: None
+Parameters
+----------
+theIsOrientable: bool
+
+Returns
+-------
+None
 ") Orientable;
 		void Orientable(Standard_Boolean theIsOrientable);
 
@@ -1171,7 +1509,9 @@ class TopoDS_TShape : public Standard_Transient {
 		%feature("compactdefaultargs") ShapeType;
 		%feature("autodoc", "Returns the type as a term of the shapeenum enum : vertex, edge, wire, face, ....
 
-	:rtype: TopAbs_ShapeEnum
+Returns
+-------
+TopAbs_ShapeEnum
 ") ShapeType;
 		virtual TopAbs_ShapeEnum ShapeType();
 
@@ -1195,7 +1535,9 @@ class TopoDS_CompSolid : public TopoDS_Shape {
 		%feature("compactdefaultargs") TopoDS_CompSolid;
 		%feature("autodoc", "Constructs an undefined compsolid.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_CompSolid;
 		 TopoDS_CompSolid();
 
@@ -1217,7 +1559,9 @@ class TopoDS_Compound : public TopoDS_Shape {
 		%feature("compactdefaultargs") TopoDS_Compound;
 		%feature("autodoc", "Constructs an undefined compound.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_Compound;
 		 TopoDS_Compound();
 
@@ -1239,7 +1583,9 @@ class TopoDS_Edge : public TopoDS_Shape {
 		%feature("compactdefaultargs") TopoDS_Edge;
 		%feature("autodoc", "Undefined edge.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_Edge;
 		 TopoDS_Edge();
 
@@ -1261,7 +1607,9 @@ class TopoDS_Face : public TopoDS_Shape {
 		%feature("compactdefaultargs") TopoDS_Face;
 		%feature("autodoc", "Undefined face.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_Face;
 		 TopoDS_Face();
 
@@ -1283,7 +1631,9 @@ class TopoDS_Shell : public TopoDS_Shape {
 		%feature("compactdefaultargs") TopoDS_Shell;
 		%feature("autodoc", "Constructs an undefined shell.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_Shell;
 		 TopoDS_Shell();
 
@@ -1305,7 +1655,9 @@ class TopoDS_Solid : public TopoDS_Shape {
 		%feature("compactdefaultargs") TopoDS_Solid;
 		%feature("autodoc", "Constructs an undefined solid.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_Solid;
 		 TopoDS_Solid();
 
@@ -1327,7 +1679,9 @@ class TopoDS_TCompSolid : public TopoDS_TShape {
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns an empty tcompsolid.
 
-	:rtype: opencascade::handle<TopoDS_TShape>
+Returns
+-------
+opencascade::handle<TopoDS_TShape>
 ") EmptyCopy;
 		opencascade::handle<TopoDS_TShape> EmptyCopy();
 
@@ -1335,7 +1689,9 @@ class TopoDS_TCompSolid : public TopoDS_TShape {
 		%feature("compactdefaultargs") ShapeType;
 		%feature("autodoc", "Returns compsolid.
 
-	:rtype: TopAbs_ShapeEnum
+Returns
+-------
+TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
@@ -1343,7 +1699,9 @@ class TopoDS_TCompSolid : public TopoDS_TShape {
 		%feature("compactdefaultargs") TopoDS_TCompSolid;
 		%feature("autodoc", "Creates an empty tcompsolid.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_TCompSolid;
 		 TopoDS_TCompSolid();
 
@@ -1367,7 +1725,9 @@ class TopoDS_TCompound : public TopoDS_TShape {
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns an empty tcompound.
 
-	:rtype: opencascade::handle<TopoDS_TShape>
+Returns
+-------
+opencascade::handle<TopoDS_TShape>
 ") EmptyCopy;
 		opencascade::handle<TopoDS_TShape> EmptyCopy();
 
@@ -1375,7 +1735,9 @@ class TopoDS_TCompound : public TopoDS_TShape {
 		%feature("compactdefaultargs") ShapeType;
 		%feature("autodoc", "Returns compound.
 
-	:rtype: TopAbs_ShapeEnum
+Returns
+-------
+TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
@@ -1383,7 +1745,9 @@ class TopoDS_TCompound : public TopoDS_TShape {
 		%feature("compactdefaultargs") TopoDS_TCompound;
 		%feature("autodoc", "Creates an empty tcompound.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_TCompound;
 		 TopoDS_TCompound();
 
@@ -1408,7 +1772,9 @@ class TopoDS_TEdge : public TopoDS_TShape {
 		%feature("compactdefaultargs") ShapeType;
 		%feature("autodoc", "Returns edge.
 
-	:rtype: TopAbs_ShapeEnum
+Returns
+-------
+TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
@@ -1432,7 +1798,9 @@ class TopoDS_TFace : public TopoDS_TShape {
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns an empty tface.
 
-	:rtype: opencascade::handle<TopoDS_TShape>
+Returns
+-------
+opencascade::handle<TopoDS_TShape>
 ") EmptyCopy;
 		virtual opencascade::handle<TopoDS_TShape> EmptyCopy();
 
@@ -1440,7 +1808,9 @@ class TopoDS_TFace : public TopoDS_TShape {
 		%feature("compactdefaultargs") ShapeType;
 		%feature("autodoc", "Returns face.
 
-	:rtype: TopAbs_ShapeEnum
+Returns
+-------
+TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
@@ -1448,7 +1818,9 @@ class TopoDS_TFace : public TopoDS_TShape {
 		%feature("compactdefaultargs") TopoDS_TFace;
 		%feature("autodoc", "Creates an empty tface.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_TFace;
 		 TopoDS_TFace();
 
@@ -1472,7 +1844,9 @@ class TopoDS_TShell : public TopoDS_TShape {
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns an empty tshell.
 
-	:rtype: opencascade::handle<TopoDS_TShape>
+Returns
+-------
+opencascade::handle<TopoDS_TShape>
 ") EmptyCopy;
 		opencascade::handle<TopoDS_TShape> EmptyCopy();
 
@@ -1480,7 +1854,9 @@ class TopoDS_TShell : public TopoDS_TShape {
 		%feature("compactdefaultargs") ShapeType;
 		%feature("autodoc", "Returns shell.
 
-	:rtype: TopAbs_ShapeEnum
+Returns
+-------
+TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
@@ -1488,7 +1864,9 @@ class TopoDS_TShell : public TopoDS_TShape {
 		%feature("compactdefaultargs") TopoDS_TShell;
 		%feature("autodoc", "Creates an empty tshell.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_TShell;
 		 TopoDS_TShell();
 
@@ -1512,7 +1890,9 @@ class TopoDS_TSolid : public TopoDS_TShape {
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns an empty tsolid.
 
-	:rtype: opencascade::handle<TopoDS_TShape>
+Returns
+-------
+opencascade::handle<TopoDS_TShape>
 ") EmptyCopy;
 		opencascade::handle<TopoDS_TShape> EmptyCopy();
 
@@ -1520,7 +1900,9 @@ class TopoDS_TSolid : public TopoDS_TShape {
 		%feature("compactdefaultargs") ShapeType;
 		%feature("autodoc", "Returns solid.
 
-	:rtype: TopAbs_ShapeEnum
+Returns
+-------
+TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
@@ -1528,7 +1910,9 @@ class TopoDS_TSolid : public TopoDS_TShape {
 		%feature("compactdefaultargs") TopoDS_TSolid;
 		%feature("autodoc", "Creates an empty tsolid.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_TSolid;
 		 TopoDS_TSolid();
 
@@ -1553,7 +1937,9 @@ class TopoDS_TVertex : public TopoDS_TShape {
 		%feature("compactdefaultargs") ShapeType;
 		%feature("autodoc", "Returns vertex.
 
-	:rtype: TopAbs_ShapeEnum
+Returns
+-------
+TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
@@ -1577,7 +1963,9 @@ class TopoDS_TWire : public TopoDS_TShape {
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns an empty twire.
 
-	:rtype: opencascade::handle<TopoDS_TShape>
+Returns
+-------
+opencascade::handle<TopoDS_TShape>
 ") EmptyCopy;
 		opencascade::handle<TopoDS_TShape> EmptyCopy();
 
@@ -1585,7 +1973,9 @@ class TopoDS_TWire : public TopoDS_TShape {
 		%feature("compactdefaultargs") ShapeType;
 		%feature("autodoc", "Returns wire.
 
-	:rtype: TopAbs_ShapeEnum
+Returns
+-------
+TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
@@ -1593,7 +1983,9 @@ class TopoDS_TWire : public TopoDS_TShape {
 		%feature("compactdefaultargs") TopoDS_TWire;
 		%feature("autodoc", "Creates an empty twire.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_TWire;
 		 TopoDS_TWire();
 
@@ -1619,7 +2011,9 @@ class TopoDS_Vertex : public TopoDS_Shape {
 		%feature("compactdefaultargs") TopoDS_Vertex;
 		%feature("autodoc", "Undefined vertex.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_Vertex;
 		 TopoDS_Vertex();
 
@@ -1641,7 +2035,9 @@ class TopoDS_Wire : public TopoDS_Shape {
 		%feature("compactdefaultargs") TopoDS_Wire;
 		%feature("autodoc", "Undefined wire.
 
-	:rtype: None
+Returns
+-------
+None
 ") TopoDS_Wire;
 		 TopoDS_Wire();
 

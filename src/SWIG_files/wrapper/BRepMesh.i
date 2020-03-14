@@ -142,11 +142,14 @@ typedef NCollection_Shared<NCollection_Vector<gp_Pnt>> VectorOfPnt;
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Performs processing of the given face.
 
-	:param theDFace:
-	:type theDFace: IMeshData::IFaceHandle
-	:param theParameters:
-	:type theParameters: IMeshTools_Parameters
-	:rtype: None
+Parameters
+----------
+theDFace: IMeshData::IFaceHandle
+theParameters: IMeshTools_Parameters
+
+Returns
+-------
+None
 ") Perform;
 		virtual void Perform(const IMeshData::IFaceHandle & theDFace, const IMeshTools_Parameters & theParameters);
 
@@ -168,7 +171,9 @@ class BRepMesh_Circle {
 		%feature("compactdefaultargs") BRepMesh_Circle;
 		%feature("autodoc", "Default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_Circle;
 		 BRepMesh_Circle();
 
@@ -176,11 +181,14 @@ class BRepMesh_Circle {
 		%feature("compactdefaultargs") BRepMesh_Circle;
 		%feature("autodoc", "Constructor. @param thelocation location of a circle. @param theradius radius of a circle.
 
-	:param theLocation:
-	:type theLocation: gp_XY
-	:param theRadius:
-	:type theRadius: float
-	:rtype: None
+Parameters
+----------
+theLocation: gp_XY
+theRadius: float
+
+Returns
+-------
+None
 ") BRepMesh_Circle;
 		 BRepMesh_Circle(const gp_XY & theLocation, const Standard_Real theRadius);
 
@@ -188,7 +196,9 @@ class BRepMesh_Circle {
 		%feature("compactdefaultargs") Location;
 		%feature("autodoc", "Returns location of a circle.
 
-	:rtype: gp_XY
+Returns
+-------
+gp_XY
 ") Location;
 		const gp_XY Location();
 
@@ -196,7 +206,9 @@ class BRepMesh_Circle {
 		%feature("compactdefaultargs") Radius;
 		%feature("autodoc", "Returns radius of a circle.
 
-	:rtype: float
+Returns
+-------
+float
 ") Radius;
 		const Standard_Real & Radius();
 
@@ -204,9 +216,13 @@ class BRepMesh_Circle {
 		%feature("compactdefaultargs") SetLocation;
 		%feature("autodoc", "Sets location of a circle. @param thelocation location of a circle.
 
-	:param theLocation:
-	:type theLocation: gp_XY
-	:rtype: None
+Parameters
+----------
+theLocation: gp_XY
+
+Returns
+-------
+None
 ") SetLocation;
 		void SetLocation(const gp_XY & theLocation);
 
@@ -214,9 +230,13 @@ class BRepMesh_Circle {
 		%feature("compactdefaultargs") SetRadius;
 		%feature("autodoc", "Sets radius of a circle. @param theradius radius of a circle.
 
-	:param theRadius:
-	:type theRadius: float
-	:rtype: None
+Parameters
+----------
+theRadius: float
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const Standard_Real theRadius);
 
@@ -239,13 +259,15 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") BRepMesh_CircleInspector;
 		%feature("autodoc", "Constructor. @param thetolerance tolerance to be used for identification of shot circles. @param thereservedsize size to be reserved for vector of circles. @param theallocator memory allocator to be used by internal collections.
 
-	:param theTolerance:
-	:type theTolerance: float
-	:param theReservedSize:
-	:type theReservedSize: int
-	:param theAllocator:
-	:type theAllocator: NCollection_IncAllocator
-	:rtype: None
+Parameters
+----------
+theTolerance: float
+theReservedSize: int
+theAllocator: NCollection_IncAllocator
+
+Returns
+-------
+None
 ") BRepMesh_CircleInspector;
 		 BRepMesh_CircleInspector(const Standard_Real theTolerance, const Standard_Integer theReservedSize, const opencascade::handle<NCollection_IncAllocator> & theAllocator);
 
@@ -253,11 +275,14 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") Bind;
 		%feature("autodoc", "Adds the circle to vector of circles at the given position. @param theindex position of circle in the vector. @param thecircle circle to be added.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theCircle:
-	:type theCircle: BRepMesh_Circle
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theCircle: BRepMesh_Circle
+
+Returns
+-------
+None
 ") Bind;
 		void Bind(const Standard_Integer theIndex, const BRepMesh_Circle & theCircle);
 
@@ -265,9 +290,13 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") Circle;
 		%feature("autodoc", "Returns circle with the given index. @param theindex index of circle. returns circle with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BRepMesh_Circle
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BRepMesh_Circle
 ") Circle;
 		BRepMesh_Circle & Circle(const Standard_Integer theIndex);
 
@@ -275,7 +304,9 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") Circles;
 		%feature("autodoc", "Resutns vector of registered circles.
 
-	:rtype: IMeshData::VectorOfCircle
+Returns
+-------
+IMeshData::VectorOfCircle
 ") Circles;
 		const IMeshData::VectorOfCircle & Circles();
 
@@ -283,7 +314,9 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") GetShotCircles;
 		%feature("autodoc", "Returns list of circles shot by the reference point.
 
-	:rtype: IMeshData::ListOfInteger
+Returns
+-------
+IMeshData::ListOfInteger
 ") GetShotCircles;
 		IMeshData::ListOfInteger & GetShotCircles();
 
@@ -291,9 +324,13 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") Inspect;
 		%feature("autodoc", "Performs inspection of a circle with the given index. @param thetargetindex index of a circle to be checked. returns status of the check.
 
-	:param theTargetIndex:
-	:type theTargetIndex: int
-	:rtype: NCollection_CellFilter_Action
+Parameters
+----------
+theTargetIndex: int
+
+Returns
+-------
+NCollection_CellFilter_Action
 ") Inspect;
 		NCollection_CellFilter_Action Inspect(const Standard_Integer theTargetIndex);
 
@@ -301,11 +338,14 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Checks indices for equlity.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theTargetIndex:
-	:type theTargetIndex: int
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+theTargetIndex: int
+
+Returns
+-------
+bool
 ") IsEqual;
 		static Standard_Boolean IsEqual(const Standard_Integer theIndex, const Standard_Integer theTargetIndex);
 
@@ -313,9 +353,13 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") SetPoint;
 		%feature("autodoc", "Set reference point to be checked. @param thepoint bullet point.
 
-	:param thePoint:
-	:type thePoint: gp_XY
-	:rtype: None
+Parameters
+----------
+thePoint: gp_XY
+
+Returns
+-------
+None
 ") SetPoint;
 		void SetPoint(const gp_XY & thePoint);
 
@@ -337,9 +381,13 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") BRepMesh_CircleTool;
 		%feature("autodoc", "Constructor. @param theallocator memory allocator to be used by internal structures.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_IncAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_IncAllocator
+
+Returns
+-------
+None
 ") BRepMesh_CircleTool;
 		 BRepMesh_CircleTool(const opencascade::handle<NCollection_IncAllocator> & theAllocator);
 
@@ -347,11 +395,14 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") BRepMesh_CircleTool;
 		%feature("autodoc", "Constructor. @param thereservedsize size to be reserved for vector of circles. @param theallocator memory allocator to be used by internal structures.
 
-	:param theReservedSize:
-	:type theReservedSize: int
-	:param theAllocator:
-	:type theAllocator: NCollection_IncAllocator
-	:rtype: None
+Parameters
+----------
+theReservedSize: int
+theAllocator: NCollection_IncAllocator
+
+Returns
+-------
+None
 ") BRepMesh_CircleTool;
 		 BRepMesh_CircleTool(const Standard_Integer theReservedSize, const opencascade::handle<NCollection_IncAllocator> & theAllocator);
 
@@ -359,11 +410,14 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") Bind;
 		%feature("autodoc", "Binds the circle to the tool. @param theindex index a circle should be bound with. @param thecircle circle to be bound.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theCircle:
-	:type theCircle: gp_Circ2d
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theCircle: gp_Circ2d
+
+Returns
+-------
+None
 ") Bind;
 		void Bind(const Standard_Integer theIndex, const gp_Circ2d & theCircle);
 
@@ -371,15 +425,16 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") Bind;
 		%feature("autodoc", "Computes circle on three points and bind it to the tool. @param theindex index a circle should be bound with. @param thepoint1 first point. @param thepoint2 second point. @param thepoint3 third point. returns false in case of impossibility to build a circle on the given points, true elsewhere.
 
-	:param theIndex:
-	:type theIndex: int
-	:param thePoint1:
-	:type thePoint1: gp_XY
-	:param thePoint2:
-	:type thePoint2: gp_XY
-	:param thePoint3:
-	:type thePoint3: gp_XY
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+thePoint1: gp_XY
+thePoint2: gp_XY
+thePoint3: gp_XY
+
+Returns
+-------
+bool
 ") Bind;
 		Standard_Boolean Bind(const Standard_Integer theIndex, const gp_XY & thePoint1, const gp_XY & thePoint2, const gp_XY & thePoint3);
 
@@ -387,9 +442,13 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") Delete;
 		%feature("autodoc", "Deletes a circle from the tool. @param theindex index of a circle to be removed.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") Delete;
 		void Delete(const Standard_Integer theIndex);
 
@@ -397,9 +456,13 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initializes the tool. @param thereservedsize size to be reserved for vector of circles.
 
-	:param Standard_Integer:
-	:type Standard_Integer: 
-	:rtype: None
+Parameters
+----------
+Standard_Integer: 
+
+Returns
+-------
+None
 ") Init;
 		void Init(const Standard_Integer);
 
@@ -407,7 +470,9 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") IsEmpty;
 		%feature("autodoc", "Retruns true if cell filter contains no circle.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
@@ -415,17 +480,17 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") MakeCircle;
 		%feature("autodoc", "Computes circle on three points. @param thepoint1 first point. @param thepoint2 second point. @param thepoint3 third point. @param[out] thelocation center of computed circle. @param[out] theradius radius of computed circle. returns false in case of impossibility to build a circle on the given points, true elsewhere.
 
-	:param thePoint1:
-	:type thePoint1: gp_XY
-	:param thePoint2:
-	:type thePoint2: gp_XY
-	:param thePoint3:
-	:type thePoint3: gp_XY
-	:param theLocation:
-	:type theLocation: gp_XY
-	:param theRadius:
-	:type theRadius: float
-	:rtype: bool
+Parameters
+----------
+thePoint1: gp_XY
+thePoint2: gp_XY
+thePoint3: gp_XY
+theLocation: gp_XY
+theRadius: float
+
+Returns
+-------
+bool
 ") MakeCircle;
 		static Standard_Boolean MakeCircle(const gp_XY & thePoint1, const gp_XY & thePoint2, const gp_XY & thePoint3, gp_XY & theLocation, Standard_Real &OutValue);
 
@@ -433,9 +498,13 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") MocBind;
 		%feature("autodoc", "Binds implicit zero circle. @param theindex index a zero circle should be bound with.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") MocBind;
 		void MocBind(const Standard_Integer theIndex);
 
@@ -443,9 +512,13 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") Select;
 		%feature("autodoc", "Select the circles shot by the given point. @param thepoint bullet point.
 
-	:param thePoint:
-	:type thePoint: gp_XY
-	:rtype: IMeshData::ListOfInteger
+Parameters
+----------
+thePoint: gp_XY
+
+Returns
+-------
+IMeshData::ListOfInteger
 ") Select;
 		IMeshData::ListOfInteger & Select(const gp_XY & thePoint);
 
@@ -453,9 +526,13 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") SetCellSize;
 		%feature("autodoc", "Sets new size for cell filter. @param thesize cell size to be set for x and y dimensions.
 
-	:param theSize:
-	:type theSize: float
-	:rtype: None
+Parameters
+----------
+theSize: float
+
+Returns
+-------
+None
 ") SetCellSize;
 		void SetCellSize(const Standard_Real theSize);
 
@@ -463,11 +540,14 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") SetCellSize;
 		%feature("autodoc", "Sets new size for cell filter. @param thesizex cell size to be set for x dimension. @param thesizey cell size to be set for y dimension.
 
-	:param theSizeX:
-	:type theSizeX: float
-	:param theSizeY:
-	:type theSizeY: float
-	:rtype: None
+Parameters
+----------
+theSizeX: float
+theSizeY: float
+
+Returns
+-------
+None
 ") SetCellSize;
 		void SetCellSize(const Standard_Real theSizeX, const Standard_Real theSizeY);
 
@@ -475,11 +555,14 @@ class BRepMesh_CircleTool {
 		%feature("compactdefaultargs") SetMinMaxSize;
 		%feature("autodoc", "Sets limits of inspection area. @param themin bottom left corner of inspection area. @param themax top right corner of inspection area.
 
-	:param theMin:
-	:type theMin: gp_XY
-	:param theMax:
-	:type theMax: gp_XY
-	:rtype: None
+Parameters
+----------
+theMin: gp_XY
+theMax: gp_XY
+
+Returns
+-------
+None
 ") SetMinMaxSize;
 		void SetMinMaxSize(const gp_XY & theMin, const gp_XY & theMax);
 
@@ -501,7 +584,9 @@ class BRepMesh_Classifier : public Standard_Transient {
 		%feature("compactdefaultargs") BRepMesh_Classifier;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_Classifier;
 		 BRepMesh_Classifier();
 
@@ -509,9 +594,13 @@ class BRepMesh_Classifier : public Standard_Transient {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Performs classification of the given point regarding to face internals. @param thepoint point in parametric space to be classified. returns topabs_in if point lies within face boundaries and topabs_out elsewhere.
 
-	:param thePoint:
-	:type thePoint: gp_Pnt2d
-	:rtype: TopAbs_State
+Parameters
+----------
+thePoint: gp_Pnt2d
+
+Returns
+-------
+TopAbs_State
 ") Perform;
 		TopAbs_State Perform(const gp_Pnt2d & thePoint);
 
@@ -519,15 +608,16 @@ class BRepMesh_Classifier : public Standard_Transient {
 		%feature("compactdefaultargs") RegisterWire;
 		%feature("autodoc", "Registers wire specified by sequence of points for further classification of points. @param thewire wire to be registered. specified by sequence of points. @param thetoluv tolerance to be used for calculations in parametric space. @param theumin lower u boundary of the face in parametric space. @param theumax upper u boundary of the face in parametric space. @param thevmin lower v boundary of the face in parametric space. @param thevmax upper v boundary of the face in parametric space.
 
-	:param theWire:
-	:type theWire: NCollection_Sequence< gp_Pnt2d *>
-	:param theTolUV:
-	:type theTolUV: std::pair<float, float>
-	:param theRangeU:
-	:type theRangeU: std::pair<float, float>
-	:param theRangeV:
-	:type theRangeV: std::pair<float, float>
-	:rtype: None
+Parameters
+----------
+theWire: NCollection_Sequence< gp_Pnt2d *>
+theTolUV: std::pair<float, float>
+theRangeU: std::pair<float, float>
+theRangeV: std::pair<float, float>
+
+Returns
+-------
+None
 ") RegisterWire;
 		void RegisterWire(const NCollection_Sequence<const gp_Pnt2d *> & theWire, const std::pair<Standard_Real, Standard_Real> & theTolUV, const std::pair<Standard_Real, Standard_Real> & theRangeU, const std::pair<Standard_Real, Standard_Real> & theRangeV);
 
@@ -551,7 +641,9 @@ class BRepMesh_Context : public IMeshTools_Context {
 		%feature("compactdefaultargs") BRepMesh_Context;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_Context;
 		 BRepMesh_Context();
 
@@ -573,11 +665,14 @@ class BRepMesh_CurveTessellator : public IMeshTools_CurveTessellator {
 		%feature("compactdefaultargs") BRepMesh_CurveTessellator;
 		%feature("autodoc", "Constructor.
 
-	:param theEdge:
-	:type theEdge: IMeshData::IEdgeHandle
-	:param theParameters:
-	:type theParameters: IMeshTools_Parameters
-	:rtype: None
+Parameters
+----------
+theEdge: IMeshData::IEdgeHandle
+theParameters: IMeshTools_Parameters
+
+Returns
+-------
+None
 ") BRepMesh_CurveTessellator;
 		 BRepMesh_CurveTessellator(const IMeshData::IEdgeHandle & theEdge, const IMeshTools_Parameters & theParameters);
 
@@ -585,15 +680,16 @@ class BRepMesh_CurveTessellator : public IMeshTools_CurveTessellator {
 		%feature("compactdefaultargs") BRepMesh_CurveTessellator;
 		%feature("autodoc", "Constructor.
 
-	:param theEdge:
-	:type theEdge: IMeshData::IEdgeHandle
-	:param theOrientation:
-	:type theOrientation: TopAbs_Orientation
-	:param theFace:
-	:type theFace: IMeshData::IFaceHandle
-	:param theParameters:
-	:type theParameters: IMeshTools_Parameters
-	:rtype: None
+Parameters
+----------
+theEdge: IMeshData::IEdgeHandle
+theOrientation: TopAbs_Orientation
+theFace: IMeshData::IFaceHandle
+theParameters: IMeshTools_Parameters
+
+Returns
+-------
+None
 ") BRepMesh_CurveTessellator;
 		 BRepMesh_CurveTessellator(const IMeshData::IEdgeHandle & theEdge, const TopAbs_Orientation theOrientation, const IMeshData::IFaceHandle & theFace, const IMeshTools_Parameters & theParameters);
 
@@ -601,7 +697,9 @@ class BRepMesh_CurveTessellator : public IMeshTools_CurveTessellator {
 		%feature("compactdefaultargs") PointsNb;
 		%feature("autodoc", "Returns number of tessellation points.
 
-	:rtype: int
+Returns
+-------
+int
 ") PointsNb;
 		virtual Standard_Integer PointsNb();
 
@@ -609,13 +707,15 @@ class BRepMesh_CurveTessellator : public IMeshTools_CurveTessellator {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns parameters of solution with the given index. @param theindex index of tessellation point. @param theparameter parameters on pcurve corresponded to the solution. @param thepoint tessellation point. returns true in case of valid result, false elewhere.
 
-	:param theIndex:
-	:type theIndex: int
-	:param thePoint:
-	:type thePoint: gp_Pnt
-	:param theParameter:
-	:type theParameter: float
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+thePoint: gp_Pnt
+theParameter: float
+
+Returns
+-------
+bool
 ") Value;
 		virtual Standard_Boolean Value(const Standard_Integer theIndex, gp_Pnt & thePoint, Standard_Real &OutValue);
 
@@ -640,9 +740,13 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") AddElement;
 		%feature("autodoc", "Adds element to the mesh if it is not already in the mesh. @param theelement element to be added to the mesh. returns index of the element in the structure.
 
-	:param theElement:
-	:type theElement: BRepMesh_Triangle
-	:rtype: int
+Parameters
+----------
+theElement: BRepMesh_Triangle
+
+Returns
+-------
+int
 ") AddElement;
 		Standard_Integer AddElement(const BRepMesh_Triangle & theElement);
 
@@ -650,9 +754,13 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") AddLink;
 		%feature("autodoc", "Adds link to the mesh if it is not already in the mesh. @param thelink link to be added to the mesh. returns index of the link in the structure.
 
-	:param theLink:
-	:type theLink: BRepMesh_Edge
-	:rtype: int
+Parameters
+----------
+theLink: BRepMesh_Edge
+
+Returns
+-------
+int
 ") AddLink;
 		Standard_Integer AddLink(const BRepMesh_Edge & theLink);
 
@@ -660,11 +768,15 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") AddNode;
 		%feature("autodoc", "Adds node to the mesh if it is not already in the mesh. @param thenode node to be added to the mesh. @param isforceadd adds the given node to structure without checking on coincidence with other nodes. returns index of the node in the structure.
 
-	:param theNode:
-	:type theNode: BRepMesh_Vertex
-	:param isForceAdd: default value is Standard_False
-	:type isForceAdd: bool
-	:rtype: int
+Parameters
+----------
+theNode: BRepMesh_Vertex
+isForceAdd: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+int
 ") AddNode;
 		Standard_Integer AddNode(const BRepMesh_Vertex & theNode, const Standard_Boolean isForceAdd = Standard_False);
 
@@ -672,7 +784,9 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") Allocator;
 		%feature("autodoc", "Returns memory allocator used by the structure.
 
-	:rtype: opencascade::handle<NCollection_IncAllocator>
+Returns
+-------
+opencascade::handle<NCollection_IncAllocator>
 ") Allocator;
 		const opencascade::handle<NCollection_IncAllocator> & Allocator();
 
@@ -680,11 +794,15 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") BRepMesh_DataStructureOfDelaun;
 		%feature("autodoc", "Constructor. @param theallocator memory allocator to be used by internal structures. @param thereservednodesize presumed number of nodes in this mesh.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_IncAllocator
-	:param theReservedNodeSize: default value is 100
-	:type theReservedNodeSize: int
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_IncAllocator
+theReservedNodeSize: int,optional
+	default value is 100
+
+Returns
+-------
+None
 ") BRepMesh_DataStructureOfDelaun;
 		 BRepMesh_DataStructureOfDelaun(const opencascade::handle<NCollection_IncAllocator> & theAllocator, const Standard_Integer theReservedNodeSize = 100);
 
@@ -692,7 +810,9 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") ClearDeleted;
 		%feature("autodoc", "Substitutes deleted items by the last one from corresponding map to have only non-deleted elements, links or nodes in the structure.
 
-	:rtype: None
+Returns
+-------
+None
 ") ClearDeleted;
 		void ClearDeleted();
 
@@ -700,7 +820,9 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") ClearDomain;
 		%feature("autodoc", "Removes all elements.
 
-	:rtype: None
+Returns
+-------
+None
 ") ClearDomain;
 		void ClearDomain();
 
@@ -708,15 +830,23 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") Data;
 		%feature("autodoc", "Gives the data structure for initialization of cell size and tolerance.
 
-	:rtype: opencascade::handle<BRepMesh_VertexTool>
+Returns
+-------
+opencascade::handle<BRepMesh_VertexTool>
 ") Data;
 		const opencascade::handle<BRepMesh_VertexTool> & Data();
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:param theFileNameStr:
-	:type theFileNameStr: char *
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theFileNameStr: char *
+
+Returns
+-------
+None
 ") Dump;
 		void Dump(const char * theFileNameStr);
 
@@ -724,11 +854,14 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") ElementNodes;
 		%feature("autodoc", "Returns indices of nodes forming the given element. @param theelement element which nodes should be retrieved. @param[out] thenodes nodes of the given element.
 
-	:param theElement:
-	:type theElement: BRepMesh_Triangle
-	:param ):
-	:type ): int (  theNodes
-	:rtype: None
+Parameters
+----------
+theElement: BRepMesh_Triangle
+): int (  theNodes
+
+Returns
+-------
+None
 ") ElementNodes;
 		void ElementNodes(const BRepMesh_Triangle & theElement, Standard_Integer ( & theNodes )[3]);
 
@@ -736,9 +869,13 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") ElementsConnectedTo;
 		%feature("autodoc", "Returns indices of elements conected to the link with the given index. @param thelinkindex index of link whose data should be retrieved. returns indices of elements conected to the link.
 
-	:param theLinkIndex:
-	:type theLinkIndex: int
-	:rtype: BRepMesh_PairOfIndex
+Parameters
+----------
+theLinkIndex: int
+
+Returns
+-------
+BRepMesh_PairOfIndex
 ") ElementsConnectedTo;
 		const BRepMesh_PairOfIndex & ElementsConnectedTo(const Standard_Integer theLinkIndex);
 
@@ -746,7 +883,9 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") ElementsOfDomain;
 		%feature("autodoc", "Returns map of indices of elements registered in mesh.
 
-	:rtype: IMeshData::MapOfInteger
+Returns
+-------
+IMeshData::MapOfInteger
 ") ElementsOfDomain;
 		const IMeshData::MapOfInteger & ElementsOfDomain();
 
@@ -754,9 +893,13 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") GetElement;
 		%feature("autodoc", "Get element by the index. @param theindex index of an element. returns element with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BRepMesh_Triangle
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BRepMesh_Triangle
 ") GetElement;
 		const BRepMesh_Triangle & GetElement(const Standard_Integer theIndex);
 
@@ -764,9 +907,13 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") GetLink;
 		%feature("autodoc", "Get link by the index. @param theindex index of a link. returns link with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BRepMesh_Edge
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BRepMesh_Edge
 ") GetLink;
 		const BRepMesh_Edge & GetLink(const Standard_Integer theIndex);
 
@@ -774,9 +921,13 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") GetNode;
 		%feature("autodoc", "Get node by the index. @param theindex index of a node. returns node with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BRepMesh_Vertex
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BRepMesh_Vertex
 ") GetNode;
 		const BRepMesh_Vertex & GetNode(const Standard_Integer theIndex);
 
@@ -784,9 +935,13 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") IndexOf;
 		%feature("autodoc", "Finds the index of the given node. @param thenode node to find. returns index of the given element of zero if node is not in the mesh.
 
-	:param theNode:
-	:type theNode: BRepMesh_Vertex
-	:rtype: int
+Parameters
+----------
+theNode: BRepMesh_Vertex
+
+Returns
+-------
+int
 ") IndexOf;
 		Standard_Integer IndexOf(const BRepMesh_Vertex & theNode);
 
@@ -794,9 +949,13 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") IndexOf;
 		%feature("autodoc", "Finds the index of the given link. @param thelink link to find. returns index of the given element of zero if link is not in the mesh.
 
-	:param theLink:
-	:type theLink: BRepMesh_Edge
-	:rtype: int
+Parameters
+----------
+theLink: BRepMesh_Edge
+
+Returns
+-------
+int
 ") IndexOf;
 		Standard_Integer IndexOf(const BRepMesh_Edge & theLink);
 
@@ -804,9 +963,13 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") LinksConnectedTo;
 		%feature("autodoc", "Get list of links attached to the node with the given index. @param theindex index of node whose links should be retrieved. returns list of links attached to the node.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: IMeshData::ListOfInteger
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+IMeshData::ListOfInteger
 ") LinksConnectedTo;
 		const IMeshData::ListOfInteger & LinksConnectedTo(const Standard_Integer theIndex);
 
@@ -814,7 +977,9 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") LinksOfDomain;
 		%feature("autodoc", "Returns map of indices of links registered in mesh.
 
-	:rtype: IMeshData::MapOfInteger
+Returns
+-------
+IMeshData::MapOfInteger
 ") LinksOfDomain;
 		const IMeshData::MapOfInteger & LinksOfDomain();
 
@@ -822,7 +987,9 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") NbElements;
 		%feature("autodoc", "Returns number of links.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbElements;
 		Standard_Integer NbElements();
 
@@ -830,7 +997,9 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") NbLinks;
 		%feature("autodoc", "Returns number of links.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbLinks;
 		Standard_Integer NbLinks();
 
@@ -838,7 +1007,9 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") NbNodes;
 		%feature("autodoc", "Returns number of nodes.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbNodes;
 		Standard_Integer NbNodes();
 
@@ -846,9 +1017,13 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveElement;
 		%feature("autodoc", "Removes element from the mesh. @param theindex index of element to be removed.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") RemoveElement;
 		void RemoveElement(const Standard_Integer theIndex);
 
@@ -856,11 +1031,15 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveLink;
 		%feature("autodoc", "Removes link from the mesh in case if it has no connected elements and its type is free. @param theindex index of link to be removed. @param isforce if true link will be removed even if movability is not free.
 
-	:param theIndex:
-	:type theIndex: int
-	:param isForce: default value is Standard_False
-	:type isForce: bool
-	:rtype: None
+Parameters
+----------
+theIndex: int
+isForce: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") RemoveLink;
 		void RemoveLink(const Standard_Integer theIndex, const Standard_Boolean isForce = Standard_False);
 
@@ -868,11 +1047,15 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveNode;
 		%feature("autodoc", "Removes node from the mesh in case if it has no connected links and its type is free. @param theindex index of node to be removed. @param isforce if true node will be removed even if movability is not free.
 
-	:param theIndex:
-	:type theIndex: int
-	:param isForce: default value is Standard_False
-	:type isForce: bool
-	:rtype: None
+Parameters
+----------
+theIndex: int
+isForce: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") RemoveNode;
 		void RemoveNode(const Standard_Integer theIndex, const Standard_Boolean isForce = Standard_False);
 
@@ -888,11 +1071,14 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") SubstituteElement;
 		%feature("autodoc", "Substitutes the element with the given index by new one. @param theindex index of element to be substituted. @param thenewlink substituting element. returns false in case if new element is already in the structure, true elsewhere.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theNewElement:
-	:type theNewElement: BRepMesh_Triangle
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+theNewElement: BRepMesh_Triangle
+
+Returns
+-------
+bool
 ") SubstituteElement;
 		Standard_Boolean SubstituteElement(const Standard_Integer theIndex, const BRepMesh_Triangle & theNewElement);
 
@@ -900,11 +1086,14 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") SubstituteLink;
 		%feature("autodoc", "Substitutes the link with the given index by new one. @param theindex index of link to be substituted. @param thenewlink substituting link. returns false in case if new link is already in the structure, true elsewhere.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theNewLink:
-	:type theNewLink: BRepMesh_Edge
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+theNewLink: BRepMesh_Edge
+
+Returns
+-------
+bool
 ") SubstituteLink;
 		Standard_Boolean SubstituteLink(const Standard_Integer theIndex, const BRepMesh_Edge & theNewLink);
 
@@ -912,11 +1101,14 @@ class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") SubstituteNode;
 		%feature("autodoc", "Substitutes the node with the given index by new one. @param theindex index of node to be substituted. @param thenewnode substituting node. returns false in case if new node is already in the structure, true elsewhere.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theNewNode:
-	:type theNewNode: BRepMesh_Vertex
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+theNewNode: BRepMesh_Vertex
+
+Returns
+-------
+bool
 ") SubstituteNode;
 		Standard_Boolean SubstituteNode(const Standard_Integer theIndex, const BRepMesh_Vertex & theNewNode);
 
@@ -940,13 +1132,15 @@ class BRepMesh_Deflection : public Standard_Transient {
 		%feature("compactdefaultargs") ComputeAbsoluteDeflection;
 		%feature("autodoc", "Returns absolute deflection for theshape with respect to the relative deflection and themaxshapesize. @param theshape shape for that the deflection should be computed. @param therelativedeflection relative deflection. @param themaxshapesize maximum size of the whole shape. returns absolute deflection for the shape.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theRelativeDeflection:
-	:type theRelativeDeflection: float
-	:param theMaxShapeSize:
-	:type theMaxShapeSize: float
-	:rtype: float
+Parameters
+----------
+theShape: TopoDS_Shape
+theRelativeDeflection: float
+theMaxShapeSize: float
+
+Returns
+-------
+float
 ") ComputeAbsoluteDeflection;
 		static Standard_Real ComputeAbsoluteDeflection(const TopoDS_Shape & theShape, const Standard_Real theRelativeDeflection, const Standard_Real theMaxShapeSize);
 
@@ -954,13 +1148,15 @@ class BRepMesh_Deflection : public Standard_Transient {
 		%feature("compactdefaultargs") ComputeDeflection;
 		%feature("autodoc", "Computes and updates deflection of the given discrete edge.
 
-	:param theDEdge:
-	:type theDEdge: IMeshData::IEdgeHandle
-	:param theMaxShapeSize:
-	:type theMaxShapeSize: float
-	:param theParameters:
-	:type theParameters: IMeshTools_Parameters
-	:rtype: None
+Parameters
+----------
+theDEdge: IMeshData::IEdgeHandle
+theMaxShapeSize: float
+theParameters: IMeshTools_Parameters
+
+Returns
+-------
+None
 ") ComputeDeflection;
 		static void ComputeDeflection(const IMeshData::IEdgeHandle & theDEdge, const Standard_Real theMaxShapeSize, const IMeshTools_Parameters & theParameters);
 
@@ -968,11 +1164,14 @@ class BRepMesh_Deflection : public Standard_Transient {
 		%feature("compactdefaultargs") ComputeDeflection;
 		%feature("autodoc", "Computes and updates deflection of the given discrete wire.
 
-	:param theDWire:
-	:type theDWire: IMeshData::IWireHandle
-	:param theParameters:
-	:type theParameters: IMeshTools_Parameters
-	:rtype: None
+Parameters
+----------
+theDWire: IMeshData::IWireHandle
+theParameters: IMeshTools_Parameters
+
+Returns
+-------
+None
 ") ComputeDeflection;
 		static void ComputeDeflection(const IMeshData::IWireHandle & theDWire, const IMeshTools_Parameters & theParameters);
 
@@ -980,11 +1179,14 @@ class BRepMesh_Deflection : public Standard_Transient {
 		%feature("compactdefaultargs") ComputeDeflection;
 		%feature("autodoc", "Computes and updates deflection of the given discrete face.
 
-	:param theDFace:
-	:type theDFace: IMeshData::IFaceHandle
-	:param theParameters:
-	:type theParameters: IMeshTools_Parameters
-	:rtype: None
+Parameters
+----------
+theDFace: IMeshData::IFaceHandle
+theParameters: IMeshTools_Parameters
+
+Returns
+-------
+None
 ") ComputeDeflection;
 		static void ComputeDeflection(const IMeshData::IFaceHandle & theDFace, const IMeshTools_Parameters & theParameters);
 
@@ -1008,9 +1210,13 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") AddVertices;
 		%feature("autodoc", "Adds some vertices into the triangulation.
 
-	:param theVerticesIndices:
-	:type theVerticesIndices: IMeshData::VectorOfInteger
-	:rtype: None
+Parameters
+----------
+theVerticesIndices: IMeshData::VectorOfInteger
+
+Returns
+-------
+None
 ") AddVertices;
 		void AddVertices(IMeshData::VectorOfInteger & theVerticesIndices);
 
@@ -1018,15 +1224,16 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") BRepMesh_Delaun;
 		%feature("autodoc", "Creates instance of triangulator, but do not run the algorithm automatically.
 
-	:param theOldMesh:
-	:type theOldMesh: BRepMesh_DataStructureOfDelaun
-	:param theCellsCountU:
-	:type theCellsCountU: int
-	:param theCellsCountV:
-	:type theCellsCountV: int
-	:param isFillCircles:
-	:type isFillCircles: bool
-	:rtype: None
+Parameters
+----------
+theOldMesh: BRepMesh_DataStructureOfDelaun
+theCellsCountU: int
+theCellsCountV: int
+isFillCircles: bool
+
+Returns
+-------
+None
 ") BRepMesh_Delaun;
 		 BRepMesh_Delaun(const opencascade::handle<BRepMesh_DataStructureOfDelaun> & theOldMesh, const Standard_Integer theCellsCountU, const Standard_Integer theCellsCountV, const Standard_Boolean isFillCircles);
 
@@ -1034,9 +1241,13 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") BRepMesh_Delaun;
 		%feature("autodoc", "Creates the triangulation with an empty mesh data structure.
 
-	:param theVertices:
-	:type theVertices: IMeshData::Array1OfVertexOfDelaun
-	:rtype: None
+Parameters
+----------
+theVertices: IMeshData::Array1OfVertexOfDelaun
+
+Returns
+-------
+None
 ") BRepMesh_Delaun;
 		 BRepMesh_Delaun(IMeshData::Array1OfVertexOfDelaun & theVertices);
 
@@ -1044,11 +1255,14 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") BRepMesh_Delaun;
 		%feature("autodoc", "Creates the triangulation with an existent mesh data structure.
 
-	:param theOldMesh:
-	:type theOldMesh: BRepMesh_DataStructureOfDelaun
-	:param theVertices:
-	:type theVertices: IMeshData::Array1OfVertexOfDelaun
-	:rtype: None
+Parameters
+----------
+theOldMesh: BRepMesh_DataStructureOfDelaun
+theVertices: IMeshData::Array1OfVertexOfDelaun
+
+Returns
+-------
+None
 ") BRepMesh_Delaun;
 		 BRepMesh_Delaun(const opencascade::handle<BRepMesh_DataStructureOfDelaun> & theOldMesh, IMeshData::Array1OfVertexOfDelaun & theVertices);
 
@@ -1056,11 +1270,14 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") BRepMesh_Delaun;
 		%feature("autodoc", "Creates the triangulation with an existant mesh data structure.
 
-	:param theOldMesh:
-	:type theOldMesh: BRepMesh_DataStructureOfDelaun
-	:param theVertexIndices:
-	:type theVertexIndices: IMeshData::VectorOfInteger
-	:rtype: None
+Parameters
+----------
+theOldMesh: BRepMesh_DataStructureOfDelaun
+theVertexIndices: IMeshData::VectorOfInteger
+
+Returns
+-------
+None
 ") BRepMesh_Delaun;
 		 BRepMesh_Delaun(const opencascade::handle<BRepMesh_DataStructureOfDelaun> & theOldMesh, IMeshData::VectorOfInteger & theVertexIndices);
 
@@ -1068,15 +1285,16 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") BRepMesh_Delaun;
 		%feature("autodoc", "Creates the triangulation with an existant mesh data structure.
 
-	:param theOldMesh:
-	:type theOldMesh: Handle ( BRepMesh_DataStructureOfDelaun )
-	:param theVertexIndices:
-	:type theVertexIndices: IMeshData::VectorOfInteger
-	:param theCellsCountU:
-	:type theCellsCountU: int
-	:param theCellsCountV:
-	:type theCellsCountV: int
-	:rtype: None
+Parameters
+----------
+theOldMesh: Handle ( BRepMesh_DataStructureOfDelaun )
+theVertexIndices: IMeshData::VectorOfInteger
+theCellsCountU: int
+theCellsCountV: int
+
+Returns
+-------
+None
 ") BRepMesh_Delaun;
 		 BRepMesh_Delaun(const Handle ( BRepMesh_DataStructureOfDelaun ) & theOldMesh, IMeshData::VectorOfInteger & theVertexIndices, const Standard_Integer theCellsCountU, const Standard_Integer theCellsCountV);
 
@@ -1084,7 +1302,9 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") Circles;
 		%feature("autodoc", "Returns tool used to build mesh consistent to delaunay criteria.
 
-	:rtype: BRepMesh_CircleTool
+Returns
+-------
+BRepMesh_CircleTool
 ") Circles;
 		const BRepMesh_CircleTool & Circles();
 
@@ -1092,15 +1312,16 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") Contains;
 		%feature("autodoc", "Test is the given triangle contains the given vertex. @param thesqtolerance square tolerance to check closeness to some edge @param theedgeon if it is != 0 the vertex lies onto the edge index returned through this parameter.
 
-	:param theTriangleId:
-	:type theTriangleId: int
-	:param theVertex:
-	:type theVertex: BRepMesh_Vertex
-	:param theSqTolerance:
-	:type theSqTolerance: float
-	:param theEdgeOn:
-	:type theEdgeOn: int
-	:rtype: bool
+Parameters
+----------
+theTriangleId: int
+theVertex: BRepMesh_Vertex
+theSqTolerance: float
+theEdgeOn: int
+
+Returns
+-------
+bool
 ") Contains;
 		Standard_Boolean Contains(const Standard_Integer theTriangleId, const BRepMesh_Vertex & theVertex, const Standard_Real theSqTolerance, Standard_Integer &OutValue);
 
@@ -1108,9 +1329,13 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") GetEdge;
 		%feature("autodoc", "Gives edge with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BRepMesh_Edge
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BRepMesh_Edge
 ") GetEdge;
 		const BRepMesh_Edge & GetEdge(const Standard_Integer theIndex);
 
@@ -1118,9 +1343,13 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") GetTriangle;
 		%feature("autodoc", "Gives triangle with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BRepMesh_Triangle
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BRepMesh_Triangle
 ") GetTriangle;
 		const BRepMesh_Triangle & GetTriangle(const Standard_Integer theIndex);
 
@@ -1128,9 +1357,13 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") GetVertex;
 		%feature("autodoc", "Gives vertex with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BRepMesh_Vertex
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BRepMesh_Vertex
 ") GetVertex;
 		const BRepMesh_Vertex & GetVertex(const Standard_Integer theIndex);
 
@@ -1138,9 +1371,13 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initializes the triangulation with an array of vertices.
 
-	:param theVertices:
-	:type theVertices: IMeshData::Array1OfVertexOfDelaun
-	:rtype: None
+Parameters
+----------
+theVertices: IMeshData::Array1OfVertexOfDelaun
+
+Returns
+-------
+None
 ") Init;
 		void Init(IMeshData::Array1OfVertexOfDelaun & theVertices);
 
@@ -1148,11 +1385,14 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") InitCirclesTool;
 		%feature("autodoc", "Forces initialization of circles cell filter using working structure.
 
-	:param theCellsCountU:
-	:type theCellsCountU: int
-	:param theCellsCountV:
-	:type theCellsCountV: int
-	:rtype: None
+Parameters
+----------
+theCellsCountU: int
+theCellsCountV: int
+
+Returns
+-------
+None
 ") InitCirclesTool;
 		void InitCirclesTool(const Standard_Integer theCellsCountU, const Standard_Integer theCellsCountV);
 
@@ -1160,9 +1400,13 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") RemoveVertex;
 		%feature("autodoc", "Removes a vertex from the triangulation.
 
-	:param theVertex:
-	:type theVertex: BRepMesh_Vertex
-	:rtype: None
+Parameters
+----------
+theVertex: BRepMesh_Vertex
+
+Returns
+-------
+None
 ") RemoveVertex;
 		void RemoveVertex(const BRepMesh_Vertex & theVertex);
 
@@ -1170,7 +1414,9 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") Result;
 		%feature("autodoc", "Gives the mesh data structure.
 
-	:rtype: opencascade::handle<BRepMesh_DataStructureOfDelaun>
+Returns
+-------
+opencascade::handle<BRepMesh_DataStructureOfDelaun>
 ") Result;
 		const opencascade::handle<BRepMesh_DataStructureOfDelaun> & Result();
 
@@ -1178,9 +1424,13 @@ class BRepMesh_Delaun {
 		%feature("compactdefaultargs") UseEdge;
 		%feature("autodoc", "Modify mesh to use the edge. returns true if done.
 
-	:param theEdge:
-	:type theEdge: int
-	:rtype: bool
+Parameters
+----------
+theEdge: int
+
+Returns
+-------
+bool
 ") UseEdge;
 		Standard_Boolean UseEdge(const Standard_Integer theEdge);
 
@@ -1204,7 +1454,9 @@ class BRepMesh_DiscretFactory {
 		%feature("compactdefaultargs") DefaultName;
 		%feature("autodoc", "Returns name for current meshing algorithm.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") DefaultName;
 		const TCollection_AsciiString & DefaultName();
 
@@ -1212,13 +1464,15 @@ class BRepMesh_DiscretFactory {
 		%feature("compactdefaultargs") Discret;
 		%feature("autodoc", "Returns triangulation algorithm instance. @param theshape shape to be meshed. @param thelindeflection linear deflection to be used for meshing. @param theangdeflection angular deflection to be used for meshing.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theLinDeflection:
-	:type theLinDeflection: float
-	:param theAngDeflection:
-	:type theAngDeflection: float
-	:rtype: opencascade::handle<BRepMesh_DiscretRoot>
+Parameters
+----------
+theShape: TopoDS_Shape
+theLinDeflection: float
+theAngDeflection: float
+
+Returns
+-------
+opencascade::handle<BRepMesh_DiscretRoot>
 ") Discret;
 		opencascade::handle<BRepMesh_DiscretRoot> Discret(const TopoDS_Shape & theShape, const Standard_Real theLinDeflection, const Standard_Real theAngDeflection);
 
@@ -1226,7 +1480,9 @@ class BRepMesh_DiscretFactory {
 		%feature("compactdefaultargs") ErrorStatus;
 		%feature("autodoc", "Returns error status for last meshing algorithm switch.
 
-	:rtype: BRepMesh_FactoryError
+Returns
+-------
+BRepMesh_FactoryError
 ") ErrorStatus;
 		BRepMesh_FactoryError ErrorStatus();
 
@@ -1234,7 +1490,9 @@ class BRepMesh_DiscretFactory {
 		%feature("compactdefaultargs") FunctionName;
 		%feature("autodoc", "Returns function name that should be exported by plugin.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") FunctionName;
 		const TCollection_AsciiString & FunctionName();
 
@@ -1242,7 +1500,9 @@ class BRepMesh_DiscretFactory {
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "Returns the global factory instance.
 
-	:rtype: BRepMesh_DiscretFactory
+Returns
+-------
+BRepMesh_DiscretFactory
 ") Get;
 		static BRepMesh_DiscretFactory & Get();
 
@@ -1250,7 +1510,9 @@ class BRepMesh_DiscretFactory {
 		%feature("compactdefaultargs") Names;
 		%feature("autodoc", "Returns the list of registered meshing algorithms.
 
-	:rtype: TColStd_MapOfAsciiString
+Returns
+-------
+TColStd_MapOfAsciiString
 ") Names;
 		const TColStd_MapOfAsciiString & Names();
 
@@ -1258,11 +1520,15 @@ class BRepMesh_DiscretFactory {
 		%feature("compactdefaultargs") SetDefault;
 		%feature("autodoc", "Setup meshing algorithm that should be created by this factory. returns true if requested tool is available. on fail factory will continue to use previous algo. call ::errorstatus() method to retrieve fault reason.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param theFuncName: default value is 'DISCRETALGO'
-	:type theFuncName: TCollection_AsciiString
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_AsciiString
+theFuncName: TCollection_AsciiString,optional
+	default value is 'DISCRETALGO'
+
+Returns
+-------
+bool
 ") SetDefault;
 		Standard_Boolean SetDefault(const TCollection_AsciiString & theName, const TCollection_AsciiString & theFuncName = "DISCRETALGO");
 
@@ -1270,9 +1536,13 @@ class BRepMesh_DiscretFactory {
 		%feature("compactdefaultargs") SetDefaultName;
 		%feature("autodoc", "Setup meshing algorithm by name. returns true if requested tool is available. on fail factory will continue to use previous algo.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:rtype: bool
+Parameters
+----------
+theName: TCollection_AsciiString
+
+Returns
+-------
+bool
 ") SetDefaultName;
 		Standard_Boolean SetDefaultName(const TCollection_AsciiString & theName);
 
@@ -1280,9 +1550,13 @@ class BRepMesh_DiscretFactory {
 		%feature("compactdefaultargs") SetFunctionName;
 		%feature("autodoc", "Advanced function. changes function name to retrieve from plugin. returns true if requested tool is available. on fail factory will continue to use previous algo.
 
-	:param theFuncName:
-	:type theFuncName: TCollection_AsciiString
-	:rtype: bool
+Parameters
+----------
+theFuncName: TCollection_AsciiString
+
+Returns
+-------
+bool
 ") SetFunctionName;
 		Standard_Boolean SetFunctionName(const TCollection_AsciiString & theFuncName);
 
@@ -1305,7 +1579,9 @@ class BRepMesh_DiscretRoot : public Standard_Transient {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if triangualtion was performed and has success.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -1313,7 +1589,9 @@ class BRepMesh_DiscretRoot : public Standard_Transient {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Compute triangulation for set shape.
 
-	:rtype: None
+Returns
+-------
+None
 ") Perform;
 		virtual void Perform();
 
@@ -1321,15 +1599,23 @@ class BRepMesh_DiscretRoot : public Standard_Transient {
 		%feature("compactdefaultargs") SetShape;
 		%feature("autodoc", "Set the shape to triangulate.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+None
 ") SetShape;
 		void SetShape(const TopoDS_Shape & theShape);
 
 		/****************** Shape ******************/
 		%feature("compactdefaultargs") Shape;
-		%feature("autodoc", "	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
 
@@ -1353,7 +1639,9 @@ class BRepMesh_EdgeDiscret : public IMeshTools_ModelAlgo {
 		%feature("compactdefaultargs") BRepMesh_EdgeDiscret;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_EdgeDiscret;
 		 BRepMesh_EdgeDiscret();
 
@@ -1361,11 +1649,14 @@ class BRepMesh_EdgeDiscret : public IMeshTools_ModelAlgo {
 		%feature("compactdefaultargs") CreateEdgeTessellationExtractor;
 		%feature("autodoc", "Creates instance of tessellation extractor.
 
-	:param theDEdge:
-	:type theDEdge: IMeshData::IEdgeHandle
-	:param theDFace:
-	:type theDFace: IMeshData::IFaceHandle
-	:rtype: opencascade::handle<IMeshTools_CurveTessellator>
+Parameters
+----------
+theDEdge: IMeshData::IEdgeHandle
+theDFace: IMeshData::IFaceHandle
+
+Returns
+-------
+opencascade::handle<IMeshTools_CurveTessellator>
 ") CreateEdgeTessellationExtractor;
 		static opencascade::handle<IMeshTools_CurveTessellator> CreateEdgeTessellationExtractor(const IMeshData::IEdgeHandle & theDEdge, const IMeshData::IFaceHandle & theDFace);
 
@@ -1373,11 +1664,14 @@ class BRepMesh_EdgeDiscret : public IMeshTools_ModelAlgo {
 		%feature("compactdefaultargs") CreateEdgeTessellator;
 		%feature("autodoc", "Creates instance of free edge tessellator.
 
-	:param theDEdge:
-	:type theDEdge: IMeshData::IEdgeHandle
-	:param theParameters:
-	:type theParameters: IMeshTools_Parameters
-	:rtype: opencascade::handle<IMeshTools_CurveTessellator>
+Parameters
+----------
+theDEdge: IMeshData::IEdgeHandle
+theParameters: IMeshTools_Parameters
+
+Returns
+-------
+opencascade::handle<IMeshTools_CurveTessellator>
 ") CreateEdgeTessellator;
 		static opencascade::handle<IMeshTools_CurveTessellator> CreateEdgeTessellator(const IMeshData::IEdgeHandle & theDEdge, const IMeshTools_Parameters & theParameters);
 
@@ -1385,15 +1679,16 @@ class BRepMesh_EdgeDiscret : public IMeshTools_ModelAlgo {
 		%feature("compactdefaultargs") CreateEdgeTessellator;
 		%feature("autodoc", "Creates instance of edge tessellator.
 
-	:param theDEdge:
-	:type theDEdge: IMeshData::IEdgeHandle
-	:param theOrientation:
-	:type theOrientation: TopAbs_Orientation
-	:param theDFace:
-	:type theDFace: IMeshData::IFaceHandle
-	:param theParameters:
-	:type theParameters: IMeshTools_Parameters
-	:rtype: opencascade::handle<IMeshTools_CurveTessellator>
+Parameters
+----------
+theDEdge: IMeshData::IEdgeHandle
+theOrientation: TopAbs_Orientation
+theDFace: IMeshData::IFaceHandle
+theParameters: IMeshTools_Parameters
+
+Returns
+-------
+opencascade::handle<IMeshTools_CurveTessellator>
 ") CreateEdgeTessellator;
 		static opencascade::handle<IMeshTools_CurveTessellator> CreateEdgeTessellator(const IMeshData::IEdgeHandle & theDEdge, const TopAbs_Orientation theOrientation, const IMeshData::IFaceHandle & theDFace, const IMeshTools_Parameters & theParameters);
 
@@ -1401,11 +1696,14 @@ class BRepMesh_EdgeDiscret : public IMeshTools_ModelAlgo {
 		%feature("compactdefaultargs") Tessellate2d;
 		%feature("autodoc", "Updates 2d discrete edge model using tessellation of 3d curve.
 
-	:param theDEdge:
-	:type theDEdge: IMeshData::IEdgeHandle
-	:param theUpdateEnds:
-	:type theUpdateEnds: bool
-	:rtype: None
+Parameters
+----------
+theDEdge: IMeshData::IEdgeHandle
+theUpdateEnds: bool
+
+Returns
+-------
+None
 ") Tessellate2d;
 		static void Tessellate2d(const IMeshData::IEdgeHandle & theDEdge, const Standard_Boolean theUpdateEnds);
 
@@ -1413,13 +1711,15 @@ class BRepMesh_EdgeDiscret : public IMeshTools_ModelAlgo {
 		%feature("compactdefaultargs") Tessellate3d;
 		%feature("autodoc", "Updates 3d discrete edge model using the given tessellation tool.
 
-	:param theDEdge:
-	:type theDEdge: IMeshData::IEdgeHandle
-	:param theTessellator:
-	:type theTessellator: IMeshTools_CurveTessellator
-	:param theUpdateEnds:
-	:type theUpdateEnds: bool
-	:rtype: None
+Parameters
+----------
+theDEdge: IMeshData::IEdgeHandle
+theTessellator: IMeshTools_CurveTessellator
+theUpdateEnds: bool
+
+Returns
+-------
+None
 ") Tessellate3d;
 		static void Tessellate3d(const IMeshData::IEdgeHandle & theDEdge, const opencascade::handle<IMeshTools_CurveTessellator> & theTessellator, const Standard_Boolean theUpdateEnds);
 
@@ -1450,11 +1750,14 @@ typedef NCollection_Shared<NCollection_Array1<opencascade ::handle<Segments>>> A
 		%feature("compactdefaultargs") BRepMesh_FaceChecker;
 		%feature("autodoc", "Default constructor.
 
-	:param theFace:
-	:type theFace: IMeshData::IFaceHandle
-	:param theParameters:
-	:type theParameters: IMeshTools_Parameters
-	:rtype: None
+Parameters
+----------
+theFace: IMeshData::IFaceHandle
+theParameters: IMeshTools_Parameters
+
+Returns
+-------
+None
 ") BRepMesh_FaceChecker;
 		 BRepMesh_FaceChecker(const IMeshData::IFaceHandle & theFace, const IMeshTools_Parameters & theParameters);
 
@@ -1462,7 +1765,9 @@ typedef NCollection_Shared<NCollection_Array1<opencascade ::handle<Segments>>> A
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Performs check wires of the face for intersections. returns true if there is no intersection, false elsewhere.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Perform;
 		Standard_Boolean Perform();
 
@@ -1486,9 +1791,13 @@ class BRepMesh_FaceDiscret : public IMeshTools_ModelAlgo {
 		%feature("compactdefaultargs") BRepMesh_FaceDiscret;
 		%feature("autodoc", "Constructor.
 
-	:param theAlgoFactory:
-	:type theAlgoFactory: IMeshTools_MeshAlgoFactory
-	:rtype: None
+Parameters
+----------
+theAlgoFactory: IMeshTools_MeshAlgoFactory
+
+Returns
+-------
+None
 ") BRepMesh_FaceDiscret;
 		 BRepMesh_FaceDiscret(const opencascade::handle<IMeshTools_MeshAlgoFactory> & theAlgoFactory);
 
@@ -1522,13 +1831,16 @@ enum IntFlag {
 		%feature("compactdefaultargs") AddPoint;
 		%feature("autodoc", "Adds point to already calculated points (or replaces existing). @param thepoint point to be added. @param theparam parameter on the curve corresponding to the given point. @param theisreplace if true replaces existing point lying within parameteric tolerance of the given point. returns index of new added point or found with parametric tolerance.
 
-	:param thePoint:
-	:type thePoint: gp_Pnt
-	:param theParam:
-	:type theParam: float
-	:param theIsReplace: default value is Standard_True
-	:type theIsReplace: bool
-	:rtype: int
+Parameters
+----------
+thePoint: gp_Pnt
+theParam: float
+theIsReplace: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+int
 ") AddPoint;
 		Standard_Integer AddPoint(const gp_Pnt & thePoint, const Standard_Real theParam, const Standard_Boolean theIsReplace = Standard_True);
 
@@ -1536,21 +1848,21 @@ enum IntFlag {
 		%feature("compactdefaultargs") BRepMesh_GeomTool;
 		%feature("autodoc", "Constructor. initiates discretization of the given geometric curve. @param thecurve curve to be discretized. @param thefirstparam first parameter of the curve. @param thelastparam last parameter of the curve. @param thelindeflection linear deflection. @param theangdeflection angular deflection. @param theminpointsnb minimum nuber of points to be produced.
 
-	:param theCurve:
-	:type theCurve: BRepAdaptor_Curve
-	:param theFirstParam:
-	:type theFirstParam: float
-	:param theLastParam:
-	:type theLastParam: float
-	:param theLinDeflection:
-	:type theLinDeflection: float
-	:param theAngDeflection:
-	:type theAngDeflection: float
-	:param theMinPointsNb: default value is 2
-	:type theMinPointsNb: int
-	:param theMinSize: default value is Precision::Confusion()
-	:type theMinSize: float
-	:rtype: None
+Parameters
+----------
+theCurve: BRepAdaptor_Curve
+theFirstParam: float
+theLastParam: float
+theLinDeflection: float
+theAngDeflection: float
+theMinPointsNb: int,optional
+	default value is 2
+theMinSize: float,optional
+	default value is Precision::Confusion()
+
+Returns
+-------
+None
 ") BRepMesh_GeomTool;
 		 BRepMesh_GeomTool(const BRepAdaptor_Curve & theCurve, const Standard_Real theFirstParam, const Standard_Real theLastParam, const Standard_Real theLinDeflection, const Standard_Real theAngDeflection, const Standard_Integer theMinPointsNb = 2, const Standard_Real theMinSize = Precision::Confusion());
 
@@ -1558,39 +1870,40 @@ enum IntFlag {
 		%feature("compactdefaultargs") BRepMesh_GeomTool;
 		%feature("autodoc", "Constructor. initiates discretization of geometric curve corresponding to iso curve of the given surface. @param thesurface surface the iso curve to be taken from. @param theisotype type of iso curve to be used, u or v. @param theparamiso parameter on the surface specifying the iso curve. @param thefirstparam first parameter of the curve. @param thelastparam last parameter of the curve. @param thelindeflection linear deflection. @param theangdeflection angular deflection. @param theminpointsnb minimum nuber of points to be produced.
 
-	:param theSurface:
-	:type theSurface: BRepAdaptor_HSurface
-	:param theIsoType:
-	:type theIsoType: GeomAbs_IsoType
-	:param theParamIso:
-	:type theParamIso: float
-	:param theFirstParam:
-	:type theFirstParam: float
-	:param theLastParam:
-	:type theLastParam: float
-	:param theLinDeflection:
-	:type theLinDeflection: float
-	:param theAngDeflection:
-	:type theAngDeflection: float
-	:param theMinPointsNb: default value is 2
-	:type theMinPointsNb: int
-	:param theMinSize: default value is Precision::Confusion()
-	:type theMinSize: float
-	:rtype: None
+Parameters
+----------
+theSurface: BRepAdaptor_HSurface
+theIsoType: GeomAbs_IsoType
+theParamIso: float
+theFirstParam: float
+theLastParam: float
+theLinDeflection: float
+theAngDeflection: float
+theMinPointsNb: int,optional
+	default value is 2
+theMinSize: float,optional
+	default value is Precision::Confusion()
+
+Returns
+-------
+None
 ") BRepMesh_GeomTool;
 		 BRepMesh_GeomTool(const opencascade::handle<BRepAdaptor_HSurface> & theSurface, const GeomAbs_IsoType theIsoType, const Standard_Real theParamIso, const Standard_Real theFirstParam, const Standard_Real theLastParam, const Standard_Real theLinDeflection, const Standard_Real theAngDeflection, const Standard_Integer theMinPointsNb = 2, const Standard_Real theMinSize = Precision::Confusion());
 
 		/****************** CellsCount ******************/
 		%feature("compactdefaultargs") CellsCount;
-		%feature("autodoc", "	:param theSurface:
-	:type theSurface: Handle ( Adaptor3d_HSurface )
-	:param theVerticesNb:
-	:type theVerticesNb: int
-	:param theDeflection:
-	:type theDeflection: float
-	:param theRangeSplitter:
-	:type theRangeSplitter: BRepMesh_DefaultRangeSplitter *
-	:rtype: std::pair<int, int >
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theSurface: Handle ( Adaptor3d_HSurface )
+theVerticesNb: int
+theDeflection: float
+theRangeSplitter: BRepMesh_DefaultRangeSplitter *
+
+Returns
+-------
+std::pair<int, int >
 ") CellsCount;
 		static std::pair<Standard_Integer, Standard_Integer > CellsCount(const Handle ( Adaptor3d_HSurface ) & theSurface, const Standard_Integer theVerticesNb, const Standard_Real theDeflection, const BRepMesh_DefaultRangeSplitter * theRangeSplitter);
 
@@ -1598,7 +1911,9 @@ enum IntFlag {
 		%feature("compactdefaultargs") NbPoints;
 		%feature("autodoc", "Returns number of discretization points.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
@@ -1606,13 +1921,15 @@ enum IntFlag {
 		%feature("compactdefaultargs") SquareDeflectionOfSegment;
 		%feature("autodoc", "Compute deflection of the given segment.
 
-	:param theFirstPoint:
-	:type theFirstPoint: gp_Pnt
-	:param theLastPoint:
-	:type theLastPoint: gp_Pnt
-	:param theMidPoint:
-	:type theMidPoint: gp_Pnt
-	:rtype: float
+Parameters
+----------
+theFirstPoint: gp_Pnt
+theLastPoint: gp_Pnt
+theMidPoint: gp_Pnt
+
+Returns
+-------
+float
 ") SquareDeflectionOfSegment;
 		static Standard_Real SquareDeflectionOfSegment(const gp_Pnt & theFirstPoint, const gp_Pnt & theLastPoint, const gp_Pnt & theMidPoint);
 
@@ -1620,17 +1937,17 @@ enum IntFlag {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Gets parameters of discretization point with the given index. @param theindex index of discretization point. @param theisoparam parameter on surface to be used as second coordinate of resulting 2d point. @param theparam[out] parameter of the point on the iso curve. @param thepoint[out] discretization point. @param theuv[out] discretization point in parametric space of the surface. returns true on success, false elsewhere.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theIsoParam:
-	:type theIsoParam: float
-	:param theParam:
-	:type theParam: float
-	:param thePoint:
-	:type thePoint: gp_Pnt
-	:param theUV:
-	:type theUV: gp_Pnt2d
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+theIsoParam: float
+theParam: float
+thePoint: gp_Pnt
+theUV: gp_Pnt2d
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const Standard_Integer theIndex, const Standard_Real theIsoParam, Standard_Real &OutValue, gp_Pnt & thePoint, gp_Pnt2d & theUV);
 
@@ -1638,17 +1955,17 @@ enum IntFlag {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Gets parameters of discretization point with the given index. @param theindex index of discretization point. @param thesurface surface the curve is lying onto. @param theparam[out] parameter of the point on the curve. @param thepoint[out] discretization point. @param theuv[out] discretization point in parametric space of the surface. returns true on success, false elsewhere.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theSurface:
-	:type theSurface: BRepAdaptor_HSurface
-	:param theParam:
-	:type theParam: float
-	:param thePoint:
-	:type thePoint: gp_Pnt
-	:param theUV:
-	:type theUV: gp_Pnt2d
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+theSurface: BRepAdaptor_HSurface
+theParam: float
+thePoint: gp_Pnt
+theUV: gp_Pnt2d
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const Standard_Integer theIndex, const opencascade::handle<BRepAdaptor_HSurface> & theSurface, Standard_Real &OutValue, gp_Pnt & thePoint, gp_Pnt2d & theUV);
 
@@ -1670,7 +1987,9 @@ class BRepMesh_MeshAlgoFactory : public IMeshTools_MeshAlgoFactory {
 		%feature("compactdefaultargs") BRepMesh_MeshAlgoFactory;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_MeshAlgoFactory;
 		 BRepMesh_MeshAlgoFactory();
 
@@ -1678,11 +1997,14 @@ class BRepMesh_MeshAlgoFactory : public IMeshTools_MeshAlgoFactory {
 		%feature("compactdefaultargs") GetAlgo;
 		%feature("autodoc", "Creates instance of meshing algorithm for the given type of surface.
 
-	:param theSurfaceType:
-	:type theSurfaceType: GeomAbs_SurfaceType
-	:param theParameters:
-	:type theParameters: IMeshTools_Parameters
-	:rtype: opencascade::handle<IMeshTools_MeshAlgo>
+Parameters
+----------
+theSurfaceType: GeomAbs_SurfaceType
+theParameters: IMeshTools_Parameters
+
+Returns
+-------
+opencascade::handle<IMeshTools_MeshAlgo>
 ") GetAlgo;
 		virtual opencascade::handle<IMeshTools_MeshAlgo> GetAlgo(const GeomAbs_SurfaceType theSurfaceType, const IMeshTools_Parameters & theParameters);
 
@@ -1705,13 +2027,15 @@ class BRepMesh_MeshTool : public Standard_Transient {
 		%feature("compactdefaultargs") AddAndLegalizeTriangle;
 		%feature("autodoc", "Adds new triangle with specified nodes to mesh. legalizes triangle in case if it violates circle criteria.
 
-	:param thePoint1:
-	:type thePoint1: int
-	:param thePoint2:
-	:type thePoint2: int
-	:param thePoint3:
-	:type thePoint3: int
-	:rtype: None
+Parameters
+----------
+thePoint1: int
+thePoint2: int
+thePoint3: int
+
+Returns
+-------
+None
 ") AddAndLegalizeTriangle;
 		void AddAndLegalizeTriangle(const Standard_Integer thePoint1, const Standard_Integer thePoint2, const Standard_Integer thePoint3);
 
@@ -1719,15 +2043,16 @@ class BRepMesh_MeshTool : public Standard_Transient {
 		%feature("compactdefaultargs") AddLink;
 		%feature("autodoc", "Adds new link to mesh. updates link index and link orientaion parameters.
 
-	:param theFirstNode:
-	:type theFirstNode: int
-	:param theLastNode:
-	:type theLastNode: int
-	:param theLinkIndex:
-	:type theLinkIndex: int
-	:param theLinkOri:
-	:type theLinkOri: bool
-	:rtype: None
+Parameters
+----------
+theFirstNode: int
+theLastNode: int
+theLinkIndex: int
+theLinkOri: bool
+
+Returns
+-------
+None
 ") AddLink;
 		void AddLink(const Standard_Integer theFirstNode, const Standard_Integer theLastNode, Standard_Integer &OutValue, Standard_Boolean &OutValue);
 
@@ -1735,15 +2060,16 @@ class BRepMesh_MeshTool : public Standard_Transient {
 		%feature("compactdefaultargs") AddTriangle;
 		%feature("autodoc", "Adds new triangle with specified nodes to mesh.
 
-	:param thePoint1:
-	:type thePoint1: int
-	:param thePoint2:
-	:type thePoint2: int
-	:param thePoint3:
-	:type thePoint3: int
-	:param ):
-	:type ): int (  theEdges
-	:rtype: None
+Parameters
+----------
+thePoint1: int
+thePoint2: int
+thePoint3: int
+): int (  theEdges
+
+Returns
+-------
+None
 ") AddTriangle;
 		void AddTriangle(const Standard_Integer thePoint1, const Standard_Integer thePoint2, const Standard_Integer thePoint3, Standard_Integer ( & theEdges )[3]);
 
@@ -1751,9 +2077,13 @@ class BRepMesh_MeshTool : public Standard_Transient {
 		%feature("compactdefaultargs") BRepMesh_MeshTool;
 		%feature("autodoc", "Constructor. initializes tool by the given data structure.
 
-	:param theStructure:
-	:type theStructure: BRepMesh_DataStructureOfDelaun
-	:rtype: None
+Parameters
+----------
+theStructure: BRepMesh_DataStructureOfDelaun
+
+Returns
+-------
+None
 ") BRepMesh_MeshTool;
 		 BRepMesh_MeshTool(const opencascade::handle<BRepMesh_DataStructureOfDelaun> & theStructure);
 
@@ -1761,7 +2091,9 @@ class BRepMesh_MeshTool : public Standard_Transient {
 		%feature("compactdefaultargs") CleanFrontierLinks;
 		%feature("autodoc", "Cleans frontier links from triangles to the right.
 
-	:rtype: None
+Returns
+-------
+None
 ") CleanFrontierLinks;
 		void CleanFrontierLinks();
 
@@ -1769,7 +2101,9 @@ class BRepMesh_MeshTool : public Standard_Transient {
 		%feature("compactdefaultargs") EraseFreeLinks;
 		%feature("autodoc", "Erases all links that have no elements connected to them.
 
-	:rtype: None
+Returns
+-------
+None
 ") EraseFreeLinks;
 		void EraseFreeLinks();
 
@@ -1777,9 +2111,13 @@ class BRepMesh_MeshTool : public Standard_Transient {
 		%feature("compactdefaultargs") EraseFreeLinks;
 		%feature("autodoc", "Erases links from the specified map that have no elements connected to them.
 
-	:param theLinks:
-	:type theLinks: IMeshData::MapOfIntegerInteger
-	:rtype: None
+Parameters
+----------
+theLinks: IMeshData::MapOfIntegerInteger
+
+Returns
+-------
+None
 ") EraseFreeLinks;
 		void EraseFreeLinks(const IMeshData::MapOfIntegerInteger & theLinks);
 
@@ -1787,9 +2125,13 @@ class BRepMesh_MeshTool : public Standard_Transient {
 		%feature("compactdefaultargs") EraseItemsConnectedTo;
 		%feature("autodoc", "Erases all elements connected to the specified artificial node. in addition, erases the artificial node itself.
 
-	:param theNodeIndex:
-	:type theNodeIndex: int
-	:rtype: None
+Parameters
+----------
+theNodeIndex: int
+
+Returns
+-------
+None
 ") EraseItemsConnectedTo;
 		void EraseItemsConnectedTo(const Standard_Integer theNodeIndex);
 
@@ -1797,11 +2139,14 @@ class BRepMesh_MeshTool : public Standard_Transient {
 		%feature("compactdefaultargs") EraseTriangle;
 		%feature("autodoc", "Erases triangle with the given index and adds the free edges into the map. when an edge is suppressed more than one time it is destroyed.
 
-	:param theTriangleIndex:
-	:type theTriangleIndex: int
-	:param theLoopEdges:
-	:type theLoopEdges: IMeshData::MapOfIntegerInteger
-	:rtype: None
+Parameters
+----------
+theTriangleIndex: int
+theLoopEdges: IMeshData::MapOfIntegerInteger
+
+Returns
+-------
+None
 ") EraseTriangle;
 		void EraseTriangle(const Standard_Integer theTriangleIndex, IMeshData::MapOfIntegerInteger & theLoopEdges);
 
@@ -1809,7 +2154,9 @@ class BRepMesh_MeshTool : public Standard_Transient {
 		%feature("compactdefaultargs") GetStructure;
 		%feature("autodoc", "Returns data structure manipulated by this tool.
 
-	:rtype: opencascade::handle<BRepMesh_DataStructureOfDelaun>
+Returns
+-------
+opencascade::handle<BRepMesh_DataStructureOfDelaun>
 ") GetStructure;
 		const opencascade::handle<BRepMesh_DataStructureOfDelaun> & GetStructure();
 
@@ -1817,9 +2164,13 @@ class BRepMesh_MeshTool : public Standard_Transient {
 		%feature("compactdefaultargs") Legalize;
 		%feature("autodoc", "Performs legalization of triangles connected to the specified link.
 
-	:param theLinkIndex:
-	:type theLinkIndex: int
-	:rtype: None
+Parameters
+----------
+theLinkIndex: int
+
+Returns
+-------
+None
 ") Legalize;
 		void Legalize(const Standard_Integer theLinkIndex);
 
@@ -1843,7 +2194,9 @@ class BRepMesh_ModelBuilder : public IMeshTools_ModelBuilder {
 		%feature("compactdefaultargs") BRepMesh_ModelBuilder;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_ModelBuilder;
 		 BRepMesh_ModelBuilder();
 
@@ -1865,7 +2218,9 @@ class BRepMesh_ModelHealer : public IMeshTools_ModelAlgo {
 		%feature("compactdefaultargs") BRepMesh_ModelHealer;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_ModelHealer;
 		 BRepMesh_ModelHealer();
 
@@ -1887,7 +2242,9 @@ class BRepMesh_ModelPostProcessor : public IMeshTools_ModelAlgo {
 		%feature("compactdefaultargs") BRepMesh_ModelPostProcessor;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_ModelPostProcessor;
 		 BRepMesh_ModelPostProcessor();
 
@@ -1909,7 +2266,9 @@ class BRepMesh_ModelPreProcessor : public IMeshTools_ModelAlgo {
 		%feature("compactdefaultargs") BRepMesh_ModelPreProcessor;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_ModelPreProcessor;
 		 BRepMesh_ModelPreProcessor();
 
@@ -1934,7 +2293,9 @@ class BRepMesh_OrientedEdge {
 		%feature("compactdefaultargs") BRepMesh_OrientedEdge;
 		%feature("autodoc", "Default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_OrientedEdge;
 		 BRepMesh_OrientedEdge();
 
@@ -1942,11 +2303,14 @@ class BRepMesh_OrientedEdge {
 		%feature("compactdefaultargs") BRepMesh_OrientedEdge;
 		%feature("autodoc", "Constructs a link between two vertices.
 
-	:param theFirstNode:
-	:type theFirstNode: int
-	:param theLastNode:
-	:type theLastNode: int
-	:rtype: None
+Parameters
+----------
+theFirstNode: int
+theLastNode: int
+
+Returns
+-------
+None
 ") BRepMesh_OrientedEdge;
 		 BRepMesh_OrientedEdge(const Standard_Integer theFirstNode, const Standard_Integer theLastNode);
 
@@ -1954,7 +2318,9 @@ class BRepMesh_OrientedEdge {
 		%feature("compactdefaultargs") FirstNode;
 		%feature("autodoc", "Returns index of first node of the link.
 
-	:rtype: int
+Returns
+-------
+int
 ") FirstNode;
 		Standard_Integer FirstNode();
 
@@ -1962,9 +2328,13 @@ class BRepMesh_OrientedEdge {
 		%feature("compactdefaultargs") HashCode;
 		%feature("autodoc", "Computes a hash code for this oriented edge, in the range [1, theupperbound] @param theupperbound the upper bound of the range a computing hash code must be within returns a computed hash code, in the range [1, theupperbound].
 
-	:param theUpperBound:
-	:type theUpperBound: int
-	:rtype: int
+Parameters
+----------
+theUpperBound: int
+
+Returns
+-------
+int
 ") HashCode;
 		Standard_Integer HashCode(const Standard_Integer theUpperBound);
 
@@ -1978,9 +2348,13 @@ class BRepMesh_OrientedEdge {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Checks this and other edge for equality. @param theother edge to be checked against this one. @retrun true if edges have the same orientation, false if not.
 
-	:param theOther:
-	:type theOther: BRepMesh_OrientedEdge
-	:rtype: bool
+Parameters
+----------
+theOther: BRepMesh_OrientedEdge
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const BRepMesh_OrientedEdge & theOther);
 
@@ -1988,7 +2362,9 @@ class BRepMesh_OrientedEdge {
 		%feature("compactdefaultargs") LastNode;
 		%feature("autodoc", "Returns index of last node of the link.
 
-	:rtype: int
+Returns
+-------
+int
 ") LastNode;
 		Standard_Integer LastNode();
 
@@ -2024,9 +2400,13 @@ class BRepMesh_PairOfIndex {
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Appends index to the pair.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") Append;
 		void Append(const Standard_Integer theIndex);
 
@@ -2034,7 +2414,9 @@ class BRepMesh_PairOfIndex {
 		%feature("compactdefaultargs") BRepMesh_PairOfIndex;
 		%feature("autodoc", "Default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_PairOfIndex;
 		 BRepMesh_PairOfIndex();
 
@@ -2042,7 +2424,9 @@ class BRepMesh_PairOfIndex {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears indices.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -2050,7 +2434,9 @@ class BRepMesh_PairOfIndex {
 		%feature("compactdefaultargs") Extent;
 		%feature("autodoc", "Returns number of initialized indeces.
 
-	:rtype: int
+Returns
+-------
+int
 ") Extent;
 		Standard_Integer Extent();
 
@@ -2058,7 +2444,9 @@ class BRepMesh_PairOfIndex {
 		%feature("compactdefaultargs") FirstIndex;
 		%feature("autodoc", "Returns first index of pair.
 
-	:rtype: int
+Returns
+-------
+int
 ") FirstIndex;
 		Standard_Integer FirstIndex();
 
@@ -2066,9 +2454,13 @@ class BRepMesh_PairOfIndex {
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "Returns index corresponding to the given position in the pair. @param thepairpos position of index in the pair (1 or 2).
 
-	:param thePairPos:
-	:type thePairPos: int
-	:rtype: int
+Parameters
+----------
+thePairPos: int
+
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index(const Standard_Integer thePairPos);
 
@@ -2076,7 +2468,9 @@ class BRepMesh_PairOfIndex {
 		%feature("compactdefaultargs") IsEmpty;
 		%feature("autodoc", "Returns is pair is empty.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
@@ -2084,7 +2478,9 @@ class BRepMesh_PairOfIndex {
 		%feature("compactdefaultargs") LastIndex;
 		%feature("autodoc", "Returns last index of pair.
 
-	:rtype: int
+Returns
+-------
+int
 ") LastIndex;
 		Standard_Integer LastIndex();
 
@@ -2092,9 +2488,13 @@ class BRepMesh_PairOfIndex {
 		%feature("compactdefaultargs") Prepend;
 		%feature("autodoc", "Prepends index to the pair.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") Prepend;
 		void Prepend(const Standard_Integer theIndex);
 
@@ -2102,9 +2502,13 @@ class BRepMesh_PairOfIndex {
 		%feature("compactdefaultargs") RemoveIndex;
 		%feature("autodoc", "Remove index from the given position. @param thepairpos position of index in the pair (1 or 2).
 
-	:param thePairPos:
-	:type thePairPos: int
-	:rtype: None
+Parameters
+----------
+thePairPos: int
+
+Returns
+-------
+None
 ") RemoveIndex;
 		void RemoveIndex(const Standard_Integer thePairPos);
 
@@ -2112,11 +2516,14 @@ class BRepMesh_PairOfIndex {
 		%feature("compactdefaultargs") SetIndex;
 		%feature("autodoc", "Sets index corresponding to the given position in the pair. @param thepairpos position of index in the pair (1 or 2). @param theindex index to be stored.
 
-	:param thePairPos:
-	:type thePairPos: int
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+thePairPos: int
+theIndex: int
+
+Returns
+-------
+None
 ") SetIndex;
 		void SetIndex(const Standard_Integer thePairPos, const Standard_Integer theIndex);
 
@@ -2138,7 +2545,9 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") AddNeighbours;
 		%feature("autodoc", "Adds a level of neighbours by edge the selector.
 
-	:rtype: None
+Returns
+-------
+None
 ") AddNeighbours;
 		void AddNeighbours();
 
@@ -2146,7 +2555,9 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") BRepMesh_SelectorOfDataStructureOfDelaun;
 		%feature("autodoc", "Default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_SelectorOfDataStructureOfDelaun;
 		 BRepMesh_SelectorOfDataStructureOfDelaun();
 
@@ -2154,9 +2565,13 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") BRepMesh_SelectorOfDataStructureOfDelaun;
 		%feature("autodoc", "Constructor. initializes selector by the mesh.
 
-	:param theMesh:
-	:type theMesh: BRepMesh_DataStructureOfDelaun
-	:rtype: None
+Parameters
+----------
+theMesh: BRepMesh_DataStructureOfDelaun
+
+Returns
+-------
+None
 ") BRepMesh_SelectorOfDataStructureOfDelaun;
 		 BRepMesh_SelectorOfDataStructureOfDelaun(const opencascade::handle<BRepMesh_DataStructureOfDelaun> & theMesh);
 
@@ -2164,7 +2579,9 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") Elements;
 		%feature("autodoc", "Returns selected elements.
 
-	:rtype: IMeshData::MapOfInteger
+Returns
+-------
+IMeshData::MapOfInteger
 ") Elements;
 		const IMeshData::MapOfInteger & Elements();
 
@@ -2172,7 +2589,9 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") FrontierLinks;
 		%feature("autodoc", "Gives the list of incices of frontier links.
 
-	:rtype: IMeshData::MapOfInteger
+Returns
+-------
+IMeshData::MapOfInteger
 ") FrontierLinks;
 		const IMeshData::MapOfInteger & FrontierLinks();
 
@@ -2180,9 +2599,13 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initializes selector by the mesh.
 
-	:param theMesh:
-	:type theMesh: BRepMesh_DataStructureOfDelaun
-	:rtype: None
+Parameters
+----------
+theMesh: BRepMesh_DataStructureOfDelaun
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const opencascade::handle<BRepMesh_DataStructureOfDelaun> & theMesh);
 
@@ -2190,7 +2613,9 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") Links;
 		%feature("autodoc", "Returns selected links.
 
-	:rtype: IMeshData::MapOfInteger
+Returns
+-------
+IMeshData::MapOfInteger
 ") Links;
 		const IMeshData::MapOfInteger & Links();
 
@@ -2198,9 +2623,13 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") NeighboursByEdgeOf;
 		%feature("autodoc", "Selects all neighboring elements by links of the given element.
 
-	:param theElement:
-	:type theElement: BRepMesh_Triangle
-	:rtype: None
+Parameters
+----------
+theElement: BRepMesh_Triangle
+
+Returns
+-------
+None
 ") NeighboursByEdgeOf;
 		void NeighboursByEdgeOf(const BRepMesh_Triangle & theElement);
 
@@ -2208,9 +2637,13 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") NeighboursOf;
 		%feature("autodoc", "Selects all neighboring elements of the given node.
 
-	:param theNode:
-	:type theNode: BRepMesh_Vertex
-	:rtype: None
+Parameters
+----------
+theNode: BRepMesh_Vertex
+
+Returns
+-------
+None
 ") NeighboursOf;
 		void NeighboursOf(const BRepMesh_Vertex & theNode);
 
@@ -2218,9 +2651,13 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") NeighboursOf;
 		%feature("autodoc", "Selects all neighboring elements of the given link.
 
-	:param theLink:
-	:type theLink: BRepMesh_Edge
-	:rtype: None
+Parameters
+----------
+theLink: BRepMesh_Edge
+
+Returns
+-------
+None
 ") NeighboursOf;
 		void NeighboursOf(const BRepMesh_Edge & theLink);
 
@@ -2228,9 +2665,13 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") NeighboursOf;
 		%feature("autodoc", "Selects all neighboring elements of the given element.
 
-	:param theElement:
-	:type theElement: BRepMesh_Triangle
-	:rtype: None
+Parameters
+----------
+theElement: BRepMesh_Triangle
+
+Returns
+-------
+None
 ") NeighboursOf;
 		void NeighboursOf(const BRepMesh_Triangle & theElement);
 
@@ -2238,9 +2679,13 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") NeighboursOf;
 		%feature("autodoc", "Adds a level of neighbours by edge to the selector.
 
-	:param &:
-	:type &: BRepMesh_SelectorOfDataStructureOfDelaun
-	:rtype: None
+Parameters
+----------
+&: BRepMesh_SelectorOfDataStructureOfDelaun
+
+Returns
+-------
+None
 ") NeighboursOf;
 		void NeighboursOf(const BRepMesh_SelectorOfDataStructureOfDelaun &);
 
@@ -2248,9 +2693,13 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") NeighboursOfElement;
 		%feature("autodoc", "Selects all neighboring elements by nodes of the given element.
 
-	:param theElementIndex:
-	:type theElementIndex: int
-	:rtype: None
+Parameters
+----------
+theElementIndex: int
+
+Returns
+-------
+None
 ") NeighboursOfElement;
 		void NeighboursOfElement(const Standard_Integer theElementIndex);
 
@@ -2258,9 +2707,13 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") NeighboursOfLink;
 		%feature("autodoc", "Selects all neighboring elements of link with the given index.
 
-	:param theLinkIndex:
-	:type theLinkIndex: int
-	:rtype: None
+Parameters
+----------
+theLinkIndex: int
+
+Returns
+-------
+None
 ") NeighboursOfLink;
 		void NeighboursOfLink(const Standard_Integer theLinkIndex);
 
@@ -2268,9 +2721,13 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") NeighboursOfNode;
 		%feature("autodoc", "Selects all neighboring elements of node with the given index.
 
-	:param theNodeIndex:
-	:type theNodeIndex: int
-	:rtype: None
+Parameters
+----------
+theNodeIndex: int
+
+Returns
+-------
+None
 ") NeighboursOfNode;
 		void NeighboursOfNode(const Standard_Integer theNodeIndex);
 
@@ -2278,7 +2735,9 @@ class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 		%feature("compactdefaultargs") Nodes;
 		%feature("autodoc", "Returns selected nodes.
 
-	:rtype: IMeshData::MapOfInteger
+Returns
+-------
+IMeshData::MapOfInteger
 ") Nodes;
 		const IMeshData::MapOfInteger & Nodes();
 
@@ -2302,11 +2761,14 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") AddInFace;
 		%feature("autodoc", "Stores the given triangulation into the given face. @param theface face to be updated by triangulation. @param thetriangulation triangulation to be stored into the face.
 
-	:param theFace:
-	:type theFace: TopoDS_Face
-	:param theTriangulation:
-	:type theTriangulation: Poly_Triangulation
-	:rtype: None
+Parameters
+----------
+theFace: TopoDS_Face
+theTriangulation: Poly_Triangulation
+
+Returns
+-------
+None
 ") AddInFace;
 		static void AddInFace(const TopoDS_Face & theFace, opencascade::handle<Poly_Triangulation> & theTriangulation);
 
@@ -2314,11 +2776,14 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") BoxMaxDimension;
 		%feature("autodoc", "Gets the maximum dimension of the given bounding box. if the given bounding box is void leaves the resulting value unchanged. @param thebox bounding box to be processed. @param themaxdimension maximum dimension of the given box.
 
-	:param theBox:
-	:type theBox: Bnd_Box
-	:param theMaxDimension:
-	:type theMaxDimension: float
-	:rtype: None
+Parameters
+----------
+theBox: Bnd_Box
+theMaxDimension: float
+
+Returns
+-------
+None
 ") BoxMaxDimension;
 		static void BoxMaxDimension(const Bnd_Box & theBox, Standard_Real &OutValue);
 
@@ -2326,11 +2791,14 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") CheckAndUpdateFlags;
 		%feature("autodoc", "Checks same parameter, same range and degenerativity attributes using geometrical data of the given edge and updates edge model by computed parameters in case of worst case - it can drop flags same parameter and same range to false but never to true if it is already set to false. in contrary, it can also drop degenerated flag to true, but never to false if it is already set to true.
 
-	:param theEdge:
-	:type theEdge: IMeshData::IEdgeHandle
-	:param thePCurve:
-	:type thePCurve: IMeshData::IPCurveHandle
-	:rtype: None
+Parameters
+----------
+theEdge: IMeshData::IEdgeHandle
+thePCurve: IMeshData::IPCurveHandle
+
+Returns
+-------
+None
 ") CheckAndUpdateFlags;
 		static void CheckAndUpdateFlags(const IMeshData::IEdgeHandle & theEdge, const IMeshData::IPCurveHandle & thePCurve);
 
@@ -2338,9 +2806,13 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") MaxFaceTolerance;
 		%feature("autodoc", "Returns maximum tolerance of the given face. considers tolerances of edges and vertices contained in the given face.
 
-	:param theFace:
-	:type theFace: TopoDS_Face
-	:rtype: float
+Parameters
+----------
+theFace: TopoDS_Face
+
+Returns
+-------
+float
 ") MaxFaceTolerance;
 		static Standard_Real MaxFaceTolerance(const TopoDS_Face & theFace);
 
@@ -2348,13 +2820,15 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") NullifyEdge;
 		%feature("autodoc", "Nullifies polygon on triangulation stored in the edge. @param theedge edge to be updated by null polygon. @param thetriangulation triangulation the given edge is associated to. @param thelocation face location.
 
-	:param theEdge:
-	:type theEdge: TopoDS_Edge
-	:param theTriangulation:
-	:type theTriangulation: Handle ( Poly_Triangulation )
-	:param theLocation:
-	:type theLocation: TopLoc_Location
-	:rtype: None
+Parameters
+----------
+theEdge: TopoDS_Edge
+theTriangulation: Handle ( Poly_Triangulation )
+theLocation: TopLoc_Location
+
+Returns
+-------
+None
 ") NullifyEdge;
 		static void NullifyEdge(const TopoDS_Edge & theEdge, const Handle ( Poly_Triangulation ) & theTriangulation, const TopLoc_Location & theLocation);
 
@@ -2362,11 +2836,14 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") NullifyEdge;
 		%feature("autodoc", "Nullifies 3d polygon stored in the edge. @param theedge edge to be updated by null polygon. @param thelocation face location.
 
-	:param theEdge:
-	:type theEdge: TopoDS_Edge
-	:param theLocation:
-	:type theLocation: TopLoc_Location
-	:rtype: None
+Parameters
+----------
+theEdge: TopoDS_Edge
+theLocation: TopLoc_Location
+
+Returns
+-------
+None
 ") NullifyEdge;
 		static void NullifyEdge(const TopoDS_Edge & theEdge, const TopLoc_Location & theLocation);
 
@@ -2374,9 +2851,13 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") NullifyFace;
 		%feature("autodoc", "Nullifies triangulation stored in the face. @param theface face to be updated by null triangulation.
 
-	:param theFace:
-	:type theFace: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+theFace: TopoDS_Face
+
+Returns
+-------
+None
 ") NullifyFace;
 		static void NullifyFace(const TopoDS_Face & theFace);
 
@@ -2384,19 +2865,19 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") Range;
 		%feature("autodoc", "Gets the parametric range of the given edge on the given face.
 
-	:param theEdge:
-	:type theEdge: TopoDS_Edge
-	:param theFace:
-	:type theFace: TopoDS_Face
-	:param thePCurve:
-	:type thePCurve: Handle ( Geom2d_Curve )
-	:param theFirstParam:
-	:type theFirstParam: float
-	:param theLastParam:
-	:type theLastParam: float
-	:param isConsiderOrientation: default value is Standard_False
-	:type isConsiderOrientation: bool
-	:rtype: bool
+Parameters
+----------
+theEdge: TopoDS_Edge
+theFace: TopoDS_Face
+thePCurve: Handle ( Geom2d_Curve )
+theFirstParam: float
+theLastParam: float
+isConsiderOrientation: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+bool
 ") Range;
 		static Standard_Boolean Range(const TopoDS_Edge & theEdge, const TopoDS_Face & theFace, Handle ( Geom2d_Curve ) & thePCurve, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean isConsiderOrientation = Standard_False);
 
@@ -2404,17 +2885,18 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") Range;
 		%feature("autodoc", "Gets the 3d range of the given edge.
 
-	:param theEdge:
-	:type theEdge: TopoDS_Edge
-	:param theCurve:
-	:type theCurve: Handle ( Geom_Curve )
-	:param theFirstParam:
-	:type theFirstParam: float
-	:param theLastParam:
-	:type theLastParam: float
-	:param isConsiderOrientation: default value is Standard_False
-	:type isConsiderOrientation: bool
-	:rtype: bool
+Parameters
+----------
+theEdge: TopoDS_Edge
+theCurve: Handle ( Geom_Curve )
+theFirstParam: float
+theLastParam: float
+isConsiderOrientation: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+bool
 ") Range;
 		static Standard_Boolean Range(const TopoDS_Edge & theEdge, Handle ( Geom_Curve ) & theCurve, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean isConsiderOrientation = Standard_False);
 
@@ -2422,17 +2904,18 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") UVPoints;
 		%feature("autodoc", "Gets the strict uv locations of the extremities of the edge using pcurve.
 
-	:param theEdge:
-	:type theEdge: TopoDS_Edge
-	:param theFace:
-	:type theFace: TopoDS_Face
-	:param theFirstPoint2d:
-	:type theFirstPoint2d: gp_Pnt2d
-	:param theLastPoint2d:
-	:type theLastPoint2d: gp_Pnt2d
-	:param isConsiderOrientation: default value is Standard_False
-	:type isConsiderOrientation: bool
-	:rtype: bool
+Parameters
+----------
+theEdge: TopoDS_Edge
+theFace: TopoDS_Face
+theFirstPoint2d: gp_Pnt2d
+theLastPoint2d: gp_Pnt2d
+isConsiderOrientation: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+bool
 ") UVPoints;
 		static Standard_Boolean UVPoints(const TopoDS_Edge & theEdge, const TopoDS_Face & theFace, gp_Pnt2d & theFirstPoint2d, gp_Pnt2d & theLastPoint2d, const Standard_Boolean isConsiderOrientation = Standard_False);
 
@@ -2440,15 +2923,16 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") UpdateEdge;
 		%feature("autodoc", "Updates the given edge by the given tessellated representation. @param theedge edge to be updated. @param thepolygon tessellated representation of the edge to be stored. @param thetriangulation triangulation the given edge is associated to. @param thelocation face location.
 
-	:param theEdge:
-	:type theEdge: TopoDS_Edge
-	:param thePolygon:
-	:type thePolygon: Handle ( Poly_PolygonOnTriangulation )
-	:param theTriangulation:
-	:type theTriangulation: Handle ( Poly_Triangulation )
-	:param theLocation:
-	:type theLocation: TopLoc_Location
-	:rtype: None
+Parameters
+----------
+theEdge: TopoDS_Edge
+thePolygon: Handle ( Poly_PolygonOnTriangulation )
+theTriangulation: Handle ( Poly_Triangulation )
+theLocation: TopLoc_Location
+
+Returns
+-------
+None
 ") UpdateEdge;
 		static void UpdateEdge(const TopoDS_Edge & theEdge, const Handle ( Poly_PolygonOnTriangulation ) & thePolygon, const Handle ( Poly_Triangulation ) & theTriangulation, const TopLoc_Location & theLocation);
 
@@ -2456,11 +2940,14 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") UpdateEdge;
 		%feature("autodoc", "Updates the given edge by the given tessellated representation. @param theedge edge to be updated. @param thepolygon tessellated representation of the edge to be stored.
 
-	:param theEdge:
-	:type theEdge: TopoDS_Edge
-	:param thePolygon:
-	:type thePolygon: Poly_Polygon3D
-	:rtype: None
+Parameters
+----------
+theEdge: TopoDS_Edge
+thePolygon: Poly_Polygon3D
+
+Returns
+-------
+None
 ") UpdateEdge;
 		static void UpdateEdge(const TopoDS_Edge & theEdge, const opencascade::handle<Poly_Polygon3D> & thePolygon);
 
@@ -2468,17 +2955,17 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") UpdateEdge;
 		%feature("autodoc", "Updates the given seam edge by the given tessellated representations. @param theedge edge to be updated. @param thepolygon1 tessellated representation corresponding to forward direction of the seam edge. @param thepolygon2 tessellated representation corresponding to reversed direction of the seam edge. @param thetriangulation triangulation the given edge is associated to. @param thelocation face location.
 
-	:param theEdge:
-	:type theEdge: TopoDS_Edge
-	:param thePolygon1:
-	:type thePolygon1: Handle ( Poly_PolygonOnTriangulation )
-	:param thePolygon2:
-	:type thePolygon2: Handle ( Poly_PolygonOnTriangulation )
-	:param theTriangulation:
-	:type theTriangulation: Handle ( Poly_Triangulation )
-	:param theLocation:
-	:type theLocation: TopLoc_Location
-	:rtype: None
+Parameters
+----------
+theEdge: TopoDS_Edge
+thePolygon1: Handle ( Poly_PolygonOnTriangulation )
+thePolygon2: Handle ( Poly_PolygonOnTriangulation )
+theTriangulation: Handle ( Poly_Triangulation )
+theLocation: TopLoc_Location
+
+Returns
+-------
+None
 ") UpdateEdge;
 		static void UpdateEdge(const TopoDS_Edge & theEdge, const Handle ( Poly_PolygonOnTriangulation ) & thePolygon1, const Handle ( Poly_PolygonOnTriangulation ) & thePolygon2, const Handle ( Poly_Triangulation ) & theTriangulation, const TopLoc_Location & theLocation);
 
@@ -2486,11 +2973,14 @@ class BRepMesh_ShapeTool : public Standard_Transient {
 		%feature("compactdefaultargs") UseLocation;
 		%feature("autodoc", "Applies location to the given point and return result. @param thepnt point to be transformed. @param theloc location to be applied.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:param theLoc:
-	:type theLoc: TopLoc_Location
-	:rtype: gp_Pnt
+Parameters
+----------
+thePnt: gp_Pnt
+theLoc: TopLoc_Location
+
+Returns
+-------
+gp_Pnt
 ") UseLocation;
 		static gp_Pnt UseLocation(const gp_Pnt & thePnt, const TopLoc_Location & theLoc);
 
@@ -2514,9 +3004,13 @@ class BRepMesh_ShapeVisitor : public IMeshTools_ShapeVisitor {
 		%feature("compactdefaultargs") BRepMesh_ShapeVisitor;
 		%feature("autodoc", "Constructor.
 
-	:param theModel:
-	:type theModel: Handle ( IMeshData_Model )
-	:rtype: None
+Parameters
+----------
+theModel: Handle ( IMeshData_Model )
+
+Returns
+-------
+None
 ") BRepMesh_ShapeVisitor;
 		 BRepMesh_ShapeVisitor(const Handle ( IMeshData_Model ) & theModel);
 
@@ -2524,9 +3018,13 @@ class BRepMesh_ShapeVisitor : public IMeshTools_ShapeVisitor {
 		%feature("compactdefaultargs") Visit;
 		%feature("autodoc", "Handles topods_face object.
 
-	:param theFace:
-	:type theFace: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+theFace: TopoDS_Face
+
+Returns
+-------
+None
 ") Visit;
 		virtual void Visit(const TopoDS_Face & theFace);
 
@@ -2534,9 +3032,13 @@ class BRepMesh_ShapeVisitor : public IMeshTools_ShapeVisitor {
 		%feature("compactdefaultargs") Visit;
 		%feature("autodoc", "Handles topods_edge object.
 
-	:param theEdge:
-	:type theEdge: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+theEdge: TopoDS_Edge
+
+Returns
+-------
+None
 ") Visit;
 		virtual void Visit(const TopoDS_Edge & theEdge);
 
@@ -2561,7 +3063,9 @@ class BRepMesh_Triangle {
 		%feature("compactdefaultargs") BRepMesh_Triangle;
 		%feature("autodoc", "Default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_Triangle;
 		 BRepMesh_Triangle();
 
@@ -2569,13 +3073,15 @@ class BRepMesh_Triangle {
 		%feature("compactdefaultargs") BRepMesh_Triangle;
 		%feature("autodoc", "Constructor. @param theedges array of edges of triangle. @param theorientations array of edge's orientations. @param themovability movability of triangle.
 
-	:param ):
-	:type ): int (  theEdges
-	:param ):
-	:type ): bool (  theOrientations
-	:param theMovability:
-	:type theMovability: BRepMesh_DegreeOfFreedom
-	:rtype: None
+Parameters
+----------
+): int (  theEdges
+): bool (  theOrientations
+theMovability: BRepMesh_DegreeOfFreedom
+
+Returns
+-------
+None
 ") BRepMesh_Triangle;
 		 BRepMesh_Triangle(const Standard_Integer ( & theEdges )[3], const Standard_Boolean ( & theOrientations )[3], const BRepMesh_DegreeOfFreedom theMovability);
 
@@ -2583,11 +3089,14 @@ class BRepMesh_Triangle {
 		%feature("compactdefaultargs") Edges;
 		%feature("autodoc", "Gets edges with orientations composing the triangle. @param[out] theedges array edges are stored to. @param[out] theorientations array orientations are stored to.
 
-	:param ):
-	:type ): int (  theEdges
-	:param ):
-	:type ): bool (  theOrientations
-	:rtype: None
+Parameters
+----------
+): int (  theEdges
+): bool (  theOrientations
+
+Returns
+-------
+None
 ") Edges;
 		void Edges(Standard_Integer ( & theEdges )[3], Standard_Boolean ( & theOrientations )[3]);
 
@@ -2595,9 +3104,13 @@ class BRepMesh_Triangle {
 		%feature("compactdefaultargs") HashCode;
 		%feature("autodoc", "Computes a hash code for this triangle, in the range [1, theupperbound] @param theupperbound the upper bound of the range a computing hash code must be within returns a computed hash code, in the range [1, theupperbound].
 
-	:param theUpperBound:
-	:type theUpperBound: int
-	:rtype: int
+Parameters
+----------
+theUpperBound: int
+
+Returns
+-------
+int
 ") HashCode;
 		Standard_Integer HashCode(const Standard_Integer theUpperBound);
 
@@ -2611,13 +3124,15 @@ class BRepMesh_Triangle {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initializes the triangle by the given parameters. @param theedges array of edges of triangle. @param theorientations array of edge's orientations. @param themovability movability of triangle.
 
-	:param ):
-	:type ): int (  theEdges
-	:param ):
-	:type ): bool (  theOrientations
-	:param theMovability:
-	:type theMovability: BRepMesh_DegreeOfFreedom
-	:rtype: None
+Parameters
+----------
+): int (  theEdges
+): bool (  theOrientations
+theMovability: BRepMesh_DegreeOfFreedom
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Standard_Integer ( & theEdges )[3], const Standard_Boolean ( & theOrientations )[3], const BRepMesh_DegreeOfFreedom theMovability);
 
@@ -2625,9 +3140,13 @@ class BRepMesh_Triangle {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Checks for equality with another triangle. @param theother triangle to be checked against this one. returns true if equal, false if not.
 
-	:param theOther:
-	:type theOther: BRepMesh_Triangle
-	:rtype: bool
+Parameters
+----------
+theOther: BRepMesh_Triangle
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const BRepMesh_Triangle & theOther);
 
@@ -2635,7 +3154,9 @@ class BRepMesh_Triangle {
 		%feature("compactdefaultargs") Movability;
 		%feature("autodoc", "Returns movability of the triangle.
 
-	:rtype: BRepMesh_DegreeOfFreedom
+Returns
+-------
+BRepMesh_DegreeOfFreedom
 ") Movability;
 		BRepMesh_DegreeOfFreedom Movability();
 
@@ -2643,9 +3164,13 @@ class BRepMesh_Triangle {
 		%feature("compactdefaultargs") SetMovability;
 		%feature("autodoc", "Sets movability of the triangle.
 
-	:param theMovability:
-	:type theMovability: BRepMesh_DegreeOfFreedom
-	:rtype: None
+Parameters
+----------
+theMovability: BRepMesh_DegreeOfFreedom
+
+Returns
+-------
+None
 ") SetMovability;
 		void SetMovability(const BRepMesh_DegreeOfFreedom theMovability);
 
@@ -2681,7 +3206,9 @@ class BRepMesh_Vertex {
 		%feature("compactdefaultargs") BRepMesh_Vertex;
 		%feature("autodoc", "Default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_Vertex;
 		 BRepMesh_Vertex();
 
@@ -2689,13 +3216,15 @@ class BRepMesh_Vertex {
 		%feature("compactdefaultargs") BRepMesh_Vertex;
 		%feature("autodoc", "Creates vertex associated with point in 3d space. @param theuv position of vertex in parametric space. @param thelocation3d index of 3d point to be associated with vertex. @param themovability movability of the vertex.
 
-	:param theUV:
-	:type theUV: gp_XY
-	:param theLocation3d:
-	:type theLocation3d: int
-	:param theMovability:
-	:type theMovability: BRepMesh_DegreeOfFreedom
-	:rtype: None
+Parameters
+----------
+theUV: gp_XY
+theLocation3d: int
+theMovability: BRepMesh_DegreeOfFreedom
+
+Returns
+-------
+None
 ") BRepMesh_Vertex;
 		 BRepMesh_Vertex(const gp_XY & theUV, const Standard_Integer theLocation3d, const BRepMesh_DegreeOfFreedom theMovability);
 
@@ -2703,13 +3232,15 @@ class BRepMesh_Vertex {
 		%feature("compactdefaultargs") BRepMesh_Vertex;
 		%feature("autodoc", "Creates vertex without association with point in 3d space. @param theu u position of vertex in parametric space. @param thev v position of vertex in parametric space. @param themovability movability of the vertex.
 
-	:param theU:
-	:type theU: float
-	:param theV:
-	:type theV: float
-	:param theMovability:
-	:type theMovability: BRepMesh_DegreeOfFreedom
-	:rtype: None
+Parameters
+----------
+theU: float
+theV: float
+theMovability: BRepMesh_DegreeOfFreedom
+
+Returns
+-------
+None
 ") BRepMesh_Vertex;
 		 BRepMesh_Vertex(const Standard_Real theU, const Standard_Real theV, const BRepMesh_DegreeOfFreedom theMovability);
 
@@ -2717,7 +3248,9 @@ class BRepMesh_Vertex {
 		%feature("compactdefaultargs") ChangeCoord;
 		%feature("autodoc", "Returns position of the vertex in parametric space for modification.
 
-	:rtype: gp_XY
+Returns
+-------
+gp_XY
 ") ChangeCoord;
 		gp_XY ChangeCoord();
 
@@ -2725,7 +3258,9 @@ class BRepMesh_Vertex {
 		%feature("compactdefaultargs") Coord;
 		%feature("autodoc", "Returns position of the vertex in parametric space.
 
-	:rtype: gp_XY
+Returns
+-------
+gp_XY
 ") Coord;
 		const gp_XY Coord();
 
@@ -2733,9 +3268,13 @@ class BRepMesh_Vertex {
 		%feature("compactdefaultargs") HashCode;
 		%feature("autodoc", "Computes a hash code for this vertex, in the range [1, theupperbound] @param theupperbound the upper bound of the range a computing hash code must be within returns a computed hash code, in the range [1, theupperbound].
 
-	:param theUpperBound:
-	:type theUpperBound: int
-	:rtype: int
+Parameters
+----------
+theUpperBound: int
+
+Returns
+-------
+int
 ") HashCode;
 		Standard_Integer HashCode(const Standard_Integer theUpperBound);
 
@@ -2749,13 +3288,15 @@ class BRepMesh_Vertex {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initializes vertex associated with point in 3d space. @param theuv position of vertex in parametric space. @param thelocation3d index of 3d point to be associated with vertex. @param themovability movability of the vertex.
 
-	:param theUV:
-	:type theUV: gp_XY
-	:param theLocation3d:
-	:type theLocation3d: int
-	:param theMovability:
-	:type theMovability: BRepMesh_DegreeOfFreedom
-	:rtype: None
+Parameters
+----------
+theUV: gp_XY
+theLocation3d: int
+theMovability: BRepMesh_DegreeOfFreedom
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const gp_XY & theUV, const Standard_Integer theLocation3d, const BRepMesh_DegreeOfFreedom theMovability);
 
@@ -2763,9 +3304,13 @@ class BRepMesh_Vertex {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Checks for equality with another vertex. @param theother vertex to be checked against this one. returns true if equal, false if not.
 
-	:param theOther:
-	:type theOther: BRepMesh_Vertex
-	:rtype: bool
+Parameters
+----------
+theOther: BRepMesh_Vertex
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const BRepMesh_Vertex & theOther);
 
@@ -2773,7 +3318,9 @@ class BRepMesh_Vertex {
 		%feature("compactdefaultargs") Location3d;
 		%feature("autodoc", "Returns index of 3d point associated with the vertex.
 
-	:rtype: int
+Returns
+-------
+int
 ") Location3d;
 		Standard_Integer Location3d();
 
@@ -2781,7 +3328,9 @@ class BRepMesh_Vertex {
 		%feature("compactdefaultargs") Movability;
 		%feature("autodoc", "Returns movability of the vertex.
 
-	:rtype: BRepMesh_DegreeOfFreedom
+Returns
+-------
+BRepMesh_DegreeOfFreedom
 ") Movability;
 		BRepMesh_DegreeOfFreedom Movability();
 
@@ -2789,9 +3338,13 @@ class BRepMesh_Vertex {
 		%feature("compactdefaultargs") SetMovability;
 		%feature("autodoc", "Sets movability of the vertex.
 
-	:param theMovability:
-	:type theMovability: BRepMesh_DegreeOfFreedom
-	:rtype: None
+Parameters
+----------
+theMovability: BRepMesh_DegreeOfFreedom
+
+Returns
+-------
+None
 ") SetMovability;
 		void SetMovability(const BRepMesh_DegreeOfFreedom theMovability);
 
@@ -2828,9 +3381,13 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Registers the given vertex. @param thevertex vertex to be registered.
 
-	:param theVertex:
-	:type theVertex: BRepMesh_Vertex
-	:rtype: int
+Parameters
+----------
+theVertex: BRepMesh_Vertex
+
+Returns
+-------
+int
 ") Add;
 		Standard_Integer Add(const BRepMesh_Vertex & theVertex);
 
@@ -2838,9 +3395,13 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") BRepMesh_VertexInspector;
 		%feature("autodoc", "Constructor. @param theallocator memory allocator to be used by internal collections.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_IncAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_IncAllocator
+
+Returns
+-------
+None
 ") BRepMesh_VertexInspector;
 		 BRepMesh_VertexInspector(const opencascade::handle<NCollection_IncAllocator> & theAllocator);
 
@@ -2848,7 +3409,9 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clear inspector's internal data structures.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -2856,9 +3419,13 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") Delete;
 		%feature("autodoc", "Deletes vertex with the given index. @param theindex index of vertex to be removed.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") Delete;
 		void Delete(const Standard_Integer theIndex);
 
@@ -2866,7 +3433,9 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") GetCoincidentPoint;
 		%feature("autodoc", "Returns index of point coinciding with regerence one.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetCoincidentPoint;
 		Standard_Integer GetCoincidentPoint();
 
@@ -2874,7 +3443,9 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") GetListOfDelPoints;
 		%feature("autodoc", "Returns list with indexes of vertices that have movability attribute equal to brepmesh_deleted and can be replaced with another node.
 
-	:rtype: IMeshData::ListOfInteger
+Returns
+-------
+IMeshData::ListOfInteger
 ") GetListOfDelPoints;
 		const IMeshData::ListOfInteger & GetListOfDelPoints();
 
@@ -2882,9 +3453,13 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") GetVertex;
 		%feature("autodoc", "Returns vertex with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BRepMesh_Vertex
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BRepMesh_Vertex
 ") GetVertex;
 		BRepMesh_Vertex & GetVertex(Standard_Integer theIndex);
 
@@ -2892,9 +3467,13 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") Inspect;
 		%feature("autodoc", "Performs inspection of a point with the given index. @param thetargetindex index of a circle to be checked. returns status of the check.
 
-	:param theTargetIndex:
-	:type theTargetIndex: int
-	:rtype: NCollection_CellFilter_Action
+Parameters
+----------
+theTargetIndex: int
+
+Returns
+-------
+NCollection_CellFilter_Action
 ") Inspect;
 		NCollection_CellFilter_Action Inspect(const Standard_Integer theTargetIndex);
 
@@ -2902,11 +3481,14 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Checks indices for equlity.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theTargetIndex:
-	:type theTargetIndex: int
-	:rtype: bool
+Parameters
+----------
+theIndex: int
+theTargetIndex: int
+
+Returns
+-------
+bool
 ") IsEqual;
 		static Standard_Boolean IsEqual(const Standard_Integer theIndex, const Standard_Integer theTargetIndex);
 
@@ -2914,7 +3496,9 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") NbVertices;
 		%feature("autodoc", "Returns number of registered vertices.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbVertices;
 		Standard_Integer NbVertices();
 
@@ -2922,9 +3506,13 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") SetPoint;
 		%feature("autodoc", "Set reference point to be checked.
 
-	:param thePoint:
-	:type thePoint: gp_XY
-	:rtype: None
+Parameters
+----------
+thePoint: gp_XY
+
+Returns
+-------
+None
 ") SetPoint;
 		void SetPoint(const gp_XY & thePoint);
 
@@ -2932,9 +3520,13 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") SetTolerance;
 		%feature("autodoc", "Sets the tolerance to be used for identification of coincident vertices equal for both dimensions.
 
-	:param theTolerance:
-	:type theTolerance: float
-	:rtype: None
+Parameters
+----------
+theTolerance: float
+
+Returns
+-------
+None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real theTolerance);
 
@@ -2942,11 +3534,14 @@ typedef Standard_Integer Target;
 		%feature("compactdefaultargs") SetTolerance;
 		%feature("autodoc", "Sets the tolerance to be used for identification of coincident vertices. @param thetolerancex tolerance for x dimension. @param thetolerancey tolerance for y dimension.
 
-	:param theToleranceX:
-	:type theToleranceX: float
-	:param theToleranceY:
-	:type theToleranceY: float
-	:rtype: None
+Parameters
+----------
+theToleranceX: float
+theToleranceY: float
+
+Returns
+-------
+None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real theToleranceX, const Standard_Real theToleranceY);
 
@@ -2968,11 +3563,14 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds vertex with empty data to the tool. @param thevertex node to be added to the mesh. @param isforceadd adds the given node to structure without checking on coincidence with other nodes. returns index of the node in the structure.
 
-	:param theVertex:
-	:type theVertex: BRepMesh_Vertex
-	:param isForceAdd:
-	:type isForceAdd: bool
-	:rtype: int
+Parameters
+----------
+theVertex: BRepMesh_Vertex
+isForceAdd: bool
+
+Returns
+-------
+int
 ") Add;
 		Standard_Integer Add(const BRepMesh_Vertex & theVertex, const Standard_Boolean isForceAdd);
 
@@ -2980,9 +3578,13 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") BRepMesh_VertexTool;
 		%feature("autodoc", "Constructor. @param theallocator memory allocator to be used by internal collections.
 
-	:param theAllocator:
-	:type theAllocator: NCollection_IncAllocator
-	:rtype: None
+Parameters
+----------
+theAllocator: NCollection_IncAllocator
+
+Returns
+-------
+None
 ") BRepMesh_VertexTool;
 		 BRepMesh_VertexTool(const opencascade::handle<NCollection_IncAllocator> & theAllocator);
 
@@ -2990,9 +3592,13 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") DeleteVertex;
 		%feature("autodoc", "Deletes vertex with the given index from the tool.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") DeleteVertex;
 		void DeleteVertex(const Standard_Integer theIndex);
 
@@ -3000,7 +3606,9 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") Extent;
 		%feature("autodoc", "Returns a number of vertices.
 
-	:rtype: int
+Returns
+-------
+int
 ") Extent;
 		Standard_Integer Extent();
 
@@ -3008,9 +3616,13 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") FindIndex;
 		%feature("autodoc", "Returns index of the given vertex.
 
-	:param theVertex:
-	:type theVertex: BRepMesh_Vertex
-	:rtype: int
+Parameters
+----------
+theVertex: BRepMesh_Vertex
+
+Returns
+-------
+int
 ") FindIndex;
 		Standard_Integer FindIndex(const BRepMesh_Vertex & theVertex);
 
@@ -3018,9 +3630,13 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") FindKey;
 		%feature("autodoc", "Returns vertex by the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: BRepMesh_Vertex
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+BRepMesh_Vertex
 ") FindKey;
 		const BRepMesh_Vertex & FindKey(const Standard_Integer theIndex);
 
@@ -3028,7 +3644,9 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") GetListOfDelNodes;
 		%feature("autodoc", "Returns the list with indexes of vertices that have movability attribute equal to brepmesh_deleted and can be replaced with another node.
 
-	:rtype: IMeshData::ListOfInteger
+Returns
+-------
+IMeshData::ListOfInteger
 ") GetListOfDelNodes;
 		const IMeshData::ListOfInteger & GetListOfDelNodes();
 
@@ -3036,11 +3654,14 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") GetTolerance;
 		%feature("autodoc", "Gets the tolerance to be used for identification of coincident vertices. @param thetolerancex tolerance for x dimension. @param thetolerancey tolerance for y dimension.
 
-	:param theToleranceX:
-	:type theToleranceX: float
-	:param theToleranceY:
-	:type theToleranceY: float
-	:rtype: None
+Parameters
+----------
+theToleranceX: float
+theToleranceY: float
+
+Returns
+-------
+None
 ") GetTolerance;
 		void GetTolerance(Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -3048,7 +3669,9 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") IsEmpty;
 		%feature("autodoc", "Returns true when the map contains no keys. .
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
@@ -3056,7 +3679,9 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveLast;
 		%feature("autodoc", "Remove last node from the structure.
 
-	:rtype: None
+Returns
+-------
+None
 ") RemoveLast;
 		void RemoveLast();
 
@@ -3064,9 +3689,13 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") SetCellSize;
 		%feature("autodoc", "Sets new size of cell for cellfilter equal in both directions.
 
-	:param theSize:
-	:type theSize: float
-	:rtype: None
+Parameters
+----------
+theSize: float
+
+Returns
+-------
+None
 ") SetCellSize;
 		void SetCellSize(const Standard_Real theSize);
 
@@ -3074,11 +3703,14 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") SetCellSize;
 		%feature("autodoc", "Sets new size of cell for cellfilter. @param thesizex size for x dimension. @param thesizey size for y dimension.
 
-	:param theSizeX:
-	:type theSizeX: float
-	:param theSizeY:
-	:type theSizeY: float
-	:rtype: None
+Parameters
+----------
+theSizeX: float
+theSizeY: float
+
+Returns
+-------
+None
 ") SetCellSize;
 		void SetCellSize(const Standard_Real theSizeX, const Standard_Real theSizeY);
 
@@ -3086,9 +3718,13 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") SetTolerance;
 		%feature("autodoc", "Sets the tolerance to be used for identification of coincident vertices equal for both dimensions.
 
-	:param theTolerance:
-	:type theTolerance: float
-	:rtype: None
+Parameters
+----------
+theTolerance: float
+
+Returns
+-------
+None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real theTolerance);
 
@@ -3096,11 +3732,14 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") SetTolerance;
 		%feature("autodoc", "Sets the tolerance to be used for identification of coincident vertices. @param thetolerancex tolerance for x dimension. @param thetolerancey tolerance for y dimension.
 
-	:param theToleranceX:
-	:type theToleranceX: float
-	:param theToleranceY:
-	:type theToleranceY: float
-	:rtype: None
+Parameters
+----------
+theToleranceX: float
+theToleranceY: float
+
+Returns
+-------
+None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real theToleranceX, const Standard_Real theToleranceY);
 
@@ -3116,11 +3755,14 @@ class BRepMesh_VertexTool : public Standard_Transient {
 		%feature("compactdefaultargs") Substitute;
 		%feature("autodoc", "Substitutes vertex with the given by the given vertex with attributes. @param theindex index of vertex to be substituted. @param thevertex replacement vertex.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theVertex:
-	:type theVertex: BRepMesh_Vertex
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theVertex: BRepMesh_Vertex
+
+Returns
+-------
+None
 ") Substitute;
 		void Substitute(const Standard_Integer theIndex, const BRepMesh_Vertex & theVertex);
 
@@ -3153,7 +3795,9 @@ class BRepMesh_Edge : public BRepMesh_OrientedEdge {
 		%feature("compactdefaultargs") BRepMesh_Edge;
 		%feature("autodoc", "Default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_Edge;
 		 BRepMesh_Edge();
 
@@ -3161,13 +3805,15 @@ class BRepMesh_Edge : public BRepMesh_OrientedEdge {
 		%feature("compactdefaultargs") BRepMesh_Edge;
 		%feature("autodoc", "Constructs a link between two vertices.
 
-	:param theFirstNode:
-	:type theFirstNode: int
-	:param theLastNode:
-	:type theLastNode: int
-	:param theMovability:
-	:type theMovability: BRepMesh_DegreeOfFreedom
-	:rtype: None
+Parameters
+----------
+theFirstNode: int
+theLastNode: int
+theMovability: BRepMesh_DegreeOfFreedom
+
+Returns
+-------
+None
 ") BRepMesh_Edge;
 		 BRepMesh_Edge(const Standard_Integer theFirstNode, const Standard_Integer theLastNode, const BRepMesh_DegreeOfFreedom theMovability);
 
@@ -3175,9 +3821,13 @@ class BRepMesh_Edge : public BRepMesh_OrientedEdge {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Checks for equality with another edge. @param theother edge to be checked against this one. returns true if equal, false if not.
 
-	:param theOther:
-	:type theOther: BRepMesh_Edge
-	:rtype: bool
+Parameters
+----------
+theOther: BRepMesh_Edge
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const BRepMesh_Edge & theOther);
 
@@ -3185,9 +3835,13 @@ class BRepMesh_Edge : public BRepMesh_OrientedEdge {
 		%feature("compactdefaultargs") IsSameOrientation;
 		%feature("autodoc", "Checks if the given edge and this one have the same orientation. @param theother edge to be checked against this one. etrun true if edges have the same orientation, false if not.
 
-	:param theOther:
-	:type theOther: BRepMesh_Edge
-	:rtype: bool
+Parameters
+----------
+theOther: BRepMesh_Edge
+
+Returns
+-------
+bool
 ") IsSameOrientation;
 		Standard_Boolean IsSameOrientation(const BRepMesh_Edge & theOther);
 
@@ -3195,7 +3849,9 @@ class BRepMesh_Edge : public BRepMesh_OrientedEdge {
 		%feature("compactdefaultargs") Movability;
 		%feature("autodoc", "Returns movability flag of the link.
 
-	:rtype: BRepMesh_DegreeOfFreedom
+Returns
+-------
+BRepMesh_DegreeOfFreedom
 ") Movability;
 		BRepMesh_DegreeOfFreedom Movability();
 
@@ -3203,9 +3859,13 @@ class BRepMesh_Edge : public BRepMesh_OrientedEdge {
 		%feature("compactdefaultargs") SetMovability;
 		%feature("autodoc", "Sets movability flag of the link. @param themovability flag to be set.
 
-	:param theMovability:
-	:type theMovability: BRepMesh_DegreeOfFreedom
-	:rtype: None
+Parameters
+----------
+theMovability: BRepMesh_DegreeOfFreedom
+
+Returns
+-------
+None
 ") SetMovability;
 		void SetMovability(const BRepMesh_DegreeOfFreedom theMovability);
 
@@ -3241,7 +3901,9 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("compactdefaultargs") BRepMesh_IncrementalMesh;
 		%feature("autodoc", "Default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_IncrementalMesh;
 		 BRepMesh_IncrementalMesh();
 
@@ -3249,17 +3911,20 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("compactdefaultargs") BRepMesh_IncrementalMesh;
 		%feature("autodoc", "Constructor. automatically calls method perform. @param theshape shape to be meshed. @param thelindeflection linear deflection. @param isrelative if true deflection used for discretization of each edge will be <thelindeflection> * <size of edge>. deflection used for the faces will be the maximum deflection of their edges. @param theangdeflection angular deflection. @param isinparallel if true shape will be meshed in parallel.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theLinDeflection:
-	:type theLinDeflection: float
-	:param isRelative: default value is Standard_False
-	:type isRelative: bool
-	:param theAngDeflection: default value is 0.5
-	:type theAngDeflection: float
-	:param isInParallel: default value is Standard_False
-	:type isInParallel: bool
-	:rtype: None
+Parameters
+----------
+theShape: TopoDS_Shape
+theLinDeflection: float
+isRelative: bool,optional
+	default value is Standard_False
+theAngDeflection: float,optional
+	default value is 0.5
+isInParallel: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") BRepMesh_IncrementalMesh;
 		 BRepMesh_IncrementalMesh(const TopoDS_Shape & theShape, const Standard_Real theLinDeflection, const Standard_Boolean isRelative = Standard_False, const Standard_Real theAngDeflection = 0.5, const Standard_Boolean isInParallel = Standard_False);
 
@@ -3267,11 +3932,14 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("compactdefaultargs") BRepMesh_IncrementalMesh;
 		%feature("autodoc", "Constructor. automatically calls method perform. @param theshape shape to be meshed. @param theparameters - parameters of meshing.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theParameters:
-	:type theParameters: IMeshTools_Parameters
-	:rtype: None
+Parameters
+----------
+theShape: TopoDS_Shape
+theParameters: IMeshTools_Parameters
+
+Returns
+-------
+None
 ") BRepMesh_IncrementalMesh;
 		 BRepMesh_IncrementalMesh(const TopoDS_Shape & theShape, const IMeshTools_Parameters & theParameters);
 
@@ -3279,7 +3947,9 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("compactdefaultargs") ChangeParameters;
 		%feature("autodoc", "Returns modifiable meshing parameters.
 
-	:rtype: IMeshTools_Parameters
+Returns
+-------
+IMeshTools_Parameters
 ") ChangeParameters;
 		IMeshTools_Parameters & ChangeParameters();
 
@@ -3287,15 +3957,16 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("compactdefaultargs") Discret;
 		%feature("autodoc", "Plugin interface for the mesh factories. initializes meshing algorithm with the given parameters. @param theshape shape to be meshed. @param thelindeflection linear deflection. @param theangdeflection angular deflection. @param[out] thealgo pointer to initialized algorithm.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theLinDeflection:
-	:type theLinDeflection: float
-	:param theAngDeflection:
-	:type theAngDeflection: float
-	:param theAlgo:
-	:type theAlgo: BRepMesh_DiscretRoot *
-	:rtype: int
+Parameters
+----------
+theShape: TopoDS_Shape
+theLinDeflection: float
+theAngDeflection: float
+theAlgo: BRepMesh_DiscretRoot *
+
+Returns
+-------
+int
 ") Discret;
 		static Standard_Integer Discret(const TopoDS_Shape & theShape, const Standard_Real theLinDeflection, const Standard_Real theAngDeflection, BRepMesh_DiscretRoot * & theAlgo);
 
@@ -3303,7 +3974,9 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("compactdefaultargs") GetStatusFlags;
 		%feature("autodoc", "Returns accumulated status flags faced during meshing.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetStatusFlags;
 		Standard_Integer GetStatusFlags();
 
@@ -3311,7 +3984,9 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("compactdefaultargs") IsModified;
 		%feature("autodoc", "Returns modified flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsModified;
 		Standard_Boolean IsModified();
 
@@ -3319,7 +3994,9 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("compactdefaultargs") IsParallelDefault;
 		%feature("autodoc", "Returns multi-threading usage flag set by default in discret() static method (thus applied only to mesh factories).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsParallelDefault;
 		static Standard_Boolean IsParallelDefault();
 
@@ -3327,7 +4004,9 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("compactdefaultargs") Parameters;
 		%feature("autodoc", "Returns meshing parameters.
 
-	:rtype: IMeshTools_Parameters
+Returns
+-------
+IMeshTools_Parameters
 ") Parameters;
 		const IMeshTools_Parameters & Parameters();
 
@@ -3335,7 +4014,9 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Performs meshing ot the shape.
 
-	:rtype: None
+Returns
+-------
+None
 ") Perform;
 		virtual void Perform();
 
@@ -3343,9 +4024,13 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Performs meshing using custom context;.
 
-	:param theContext:
-	:type theContext: IMeshTools_Context
-	:rtype: None
+Parameters
+----------
+theContext: IMeshTools_Context
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const opencascade::handle<IMeshTools_Context> & theContext);
 
@@ -3353,9 +4038,13 @@ class BRepMesh_IncrementalMesh : public BRepMesh_DiscretRoot {
 		%feature("compactdefaultargs") SetParallelDefault;
 		%feature("autodoc", "Setup multi-threading usage flag set by default in discret() static method (thus applied only to mesh factories).
 
-	:param isInParallel:
-	:type isInParallel: bool
-	:rtype: None
+Parameters
+----------
+isInParallel: bool
+
+Returns
+-------
+None
 ") SetParallelDefault;
 		static void SetParallelDefault(const Standard_Boolean isInParallel);
 
@@ -3379,7 +4068,9 @@ class BRepMesh_DelaunayBaseMeshAlgo : public BRepMesh_ConstrainedBaseMeshAlgo {
 		%feature("compactdefaultargs") BRepMesh_DelaunayBaseMeshAlgo;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepMesh_DelaunayBaseMeshAlgo;
 		 BRepMesh_DelaunayBaseMeshAlgo();
 

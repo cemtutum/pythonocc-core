@@ -333,9 +333,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") AddModifier;
 		%feature("autodoc", "Adds a modifier to the datum sequence of modifiers.
 
-	:param theModifier:
-	:type theModifier: XCAFDimTolObjects_DatumSingleModif
-	:rtype: None
+Parameters
+----------
+theModifier: XCAFDimTolObjects_DatumSingleModif
+
+Returns
+-------
+None
 ") AddModifier;
 		void AddModifier(const XCAFDimTolObjects_DatumSingleModif theModifier);
 
@@ -343,7 +347,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetDatumTarget;
 		%feature("autodoc", "Returns datum target shape.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") GetDatumTarget;
 		TopoDS_Shape GetDatumTarget();
 
@@ -351,7 +357,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetDatumTargetAxis;
 		%feature("autodoc", "Returns datum target axis. the z axis of the datum placement denotes the normal of the surface pointing away from the material. .
 
-	:rtype: gp_Ax2
+Returns
+-------
+gp_Ax2
 ") GetDatumTargetAxis;
 		gp_Ax2 GetDatumTargetAxis();
 
@@ -359,7 +367,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetDatumTargetLength;
 		%feature("autodoc", "Returns datum target length for line and rectangle types. the length along the x axis of the datum placement.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetDatumTargetLength;
 		Standard_Real GetDatumTargetLength();
 
@@ -367,7 +377,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetDatumTargetNumber;
 		%feature("autodoc", "Returns datum target number.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetDatumTargetNumber;
 		Standard_Integer GetDatumTargetNumber();
 
@@ -375,7 +387,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetDatumTargetType;
 		%feature("autodoc", "Returns datum target type.
 
-	:rtype: XCAFDimTolObjects_DatumTargetType
+Returns
+-------
+XCAFDimTolObjects_DatumTargetType
 ") GetDatumTargetType;
 		XCAFDimTolObjects_DatumTargetType GetDatumTargetType();
 
@@ -383,7 +397,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetDatumTargetWidth;
 		%feature("autodoc", "Returns datum target width for rectangle type. the width along the derived y axis, with the placement itself positioned at the centre of the rectangle.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetDatumTargetWidth;
 		Standard_Real GetDatumTargetWidth();
 
@@ -391,11 +407,14 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetModifierWithValue;
 		%feature("autodoc", "Retrieves datum modifier with value.
 
-	:param theModifier:
-	:type theModifier: XCAFDimTolObjects_DatumModifWithValue
-	:param theValue:
-	:type theValue: float
-	:rtype: None
+Parameters
+----------
+theModifier: XCAFDimTolObjects_DatumModifWithValue
+theValue: float
+
+Returns
+-------
+None
 ") GetModifierWithValue;
 		void GetModifierWithValue(XCAFDimTolObjects_DatumModifWithValue & theModifier, Standard_Real &OutValue);
 
@@ -403,7 +422,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetModifiers;
 		%feature("autodoc", "Returns a sequence of modifiers of the datum.
 
-	:rtype: XCAFDimTolObjects_DatumModifiersSequence
+Returns
+-------
+XCAFDimTolObjects_DatumModifiersSequence
 ") GetModifiers;
 		XCAFDimTolObjects_DatumModifiersSequence GetModifiers();
 
@@ -411,7 +432,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetName;
 		%feature("autodoc", "Returns datum name.
 
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetName;
 		opencascade::handle<TCollection_HAsciiString> GetName();
 
@@ -419,7 +442,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPlane;
 		%feature("autodoc", "Returns annotation plane.
 
-	:rtype: gp_Ax2
+Returns
+-------
+gp_Ax2
 ") GetPlane;
 		const gp_Ax2 GetPlane();
 
@@ -427,7 +452,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPoint;
 		%feature("autodoc", "Gets point on the datum shape.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") GetPoint;
 		const gp_Pnt GetPoint();
 
@@ -435,7 +462,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPointTextAttach;
 		%feature("autodoc", "Gets datum text position.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") GetPointTextAttach;
 		const gp_Pnt GetPointTextAttach();
 
@@ -443,7 +472,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPosition;
 		%feature("autodoc", "Returns datum position in the related geometric tolerance object.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetPosition;
 		Standard_Integer GetPosition();
 
@@ -451,7 +482,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPresentation;
 		%feature("autodoc", "Returns graphical presentation of the object.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") GetPresentation;
 		TopoDS_Shape GetPresentation();
 
@@ -459,7 +492,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPresentationName;
 		%feature("autodoc", "Returns graphical presentation of the object.
 
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetPresentationName;
 		opencascade::handle<TCollection_HAsciiString> GetPresentationName();
 
@@ -467,7 +502,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetSemanticName;
 		%feature("autodoc", "Returns semantic name.
 
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetSemanticName;
 		opencascade::handle<TCollection_HAsciiString> GetSemanticName();
 
@@ -475,7 +512,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasDatumTargetParams;
 		%feature("autodoc", "Returns true if the datum has valid parameters for datum target (width, length, circle radius etc).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasDatumTargetParams;
 		Standard_Boolean HasDatumTargetParams();
 
@@ -483,7 +522,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasPlane;
 		%feature("autodoc", "Returns true if the datum has annotation plane.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPlane;
 		Standard_Boolean HasPlane();
 
@@ -491,7 +532,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasPoint;
 		%feature("autodoc", "Returns true if point on the datum target is specified.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPoint;
 		Standard_Boolean HasPoint();
 
@@ -499,7 +542,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasPointText;
 		%feature("autodoc", "Returns true if the datum text position is specified.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPointText;
 		Standard_Boolean HasPointText();
 
@@ -507,7 +552,9 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") IsDatumTarget;
 		%feature("autodoc", "Returns true if the datum target is specified.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDatumTarget;
 		Standard_Boolean IsDatumTarget();
 
@@ -515,9 +562,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") IsDatumTarget;
 		%feature("autodoc", "Sets or drops the datum target indicator.
 
-	:param theIsDT:
-	:type theIsDT: bool
-	:rtype: None
+Parameters
+----------
+theIsDT: bool
+
+Returns
+-------
+None
 ") IsDatumTarget;
 		void IsDatumTarget(const Standard_Boolean theIsDT);
 
@@ -525,9 +576,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetDatumTarget;
 		%feature("autodoc", "Sets datum target shape.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+None
 ") SetDatumTarget;
 		void SetDatumTarget(const TopoDS_Shape & theShape);
 
@@ -535,9 +590,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetDatumTargetAxis;
 		%feature("autodoc", "Sets datum target axis.
 
-	:param theAxis:
-	:type theAxis: gp_Ax2
-	:rtype: None
+Parameters
+----------
+theAxis: gp_Ax2
+
+Returns
+-------
+None
 ") SetDatumTargetAxis;
 		void SetDatumTargetAxis(const gp_Ax2 & theAxis);
 
@@ -545,9 +604,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetDatumTargetLength;
 		%feature("autodoc", "Sets datum target length.
 
-	:param theLength:
-	:type theLength: float
-	:rtype: None
+Parameters
+----------
+theLength: float
+
+Returns
+-------
+None
 ") SetDatumTargetLength;
 		void SetDatumTargetLength(const Standard_Real theLength);
 
@@ -555,9 +618,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetDatumTargetNumber;
 		%feature("autodoc", "Sets datum target number.
 
-	:param theNumber:
-	:type theNumber: int
-	:rtype: None
+Parameters
+----------
+theNumber: int
+
+Returns
+-------
+None
 ") SetDatumTargetNumber;
 		void SetDatumTargetNumber(const Standard_Integer theNumber);
 
@@ -565,9 +632,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetDatumTargetType;
 		%feature("autodoc", "Sets datum target to point, line, rectangle, circle or area type.
 
-	:param theType:
-	:type theType: XCAFDimTolObjects_DatumTargetType
-	:rtype: None
+Parameters
+----------
+theType: XCAFDimTolObjects_DatumTargetType
+
+Returns
+-------
+None
 ") SetDatumTargetType;
 		void SetDatumTargetType(const XCAFDimTolObjects_DatumTargetType theType);
 
@@ -575,9 +646,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetDatumTargetWidth;
 		%feature("autodoc", "Sets datum target width.
 
-	:param theWidth:
-	:type theWidth: float
-	:rtype: None
+Parameters
+----------
+theWidth: float
+
+Returns
+-------
+None
 ") SetDatumTargetWidth;
 		void SetDatumTargetWidth(const Standard_Real theWidth);
 
@@ -585,11 +660,14 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetModifierWithValue;
 		%feature("autodoc", "Sets datum modifier with value.
 
-	:param theModifier:
-	:type theModifier: XCAFDimTolObjects_DatumModifWithValue
-	:param theValue:
-	:type theValue: float
-	:rtype: None
+Parameters
+----------
+theModifier: XCAFDimTolObjects_DatumModifWithValue
+theValue: float
+
+Returns
+-------
+None
 ") SetModifierWithValue;
 		void SetModifierWithValue(const XCAFDimTolObjects_DatumModifWithValue theModifier, const Standard_Real theValue);
 
@@ -597,9 +675,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetModifiers;
 		%feature("autodoc", "Sets new sequence of datum modifiers.
 
-	:param theModifiers:
-	:type theModifiers: XCAFDimTolObjects_DatumModifiersSequence
-	:rtype: None
+Parameters
+----------
+theModifiers: XCAFDimTolObjects_DatumModifiersSequence
+
+Returns
+-------
+None
 ") SetModifiers;
 		void SetModifiers(const XCAFDimTolObjects_DatumModifiersSequence & theModifiers);
 
@@ -607,9 +689,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetName;
 		%feature("autodoc", "Sets datum name.
 
-	:param theTag:
-	:type theTag: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+theTag: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & theTag);
 
@@ -617,9 +703,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPlane;
 		%feature("autodoc", "Sets annotation plane.
 
-	:param thePlane:
-	:type thePlane: gp_Ax2
-	:rtype: None
+Parameters
+----------
+thePlane: gp_Ax2
+
+Returns
+-------
+None
 ") SetPlane;
 		void SetPlane(const gp_Ax2 & thePlane);
 
@@ -627,9 +717,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPoint;
 		%feature("autodoc", "Sets a point on the datum target shape.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: None
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+None
 ") SetPoint;
 		void SetPoint(const gp_Pnt & thePnt);
 
@@ -637,9 +731,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPointTextAttach;
 		%feature("autodoc", "Sets a position of the datum text.
 
-	:param thePntText:
-	:type thePntText: gp_Pnt
-	:rtype: None
+Parameters
+----------
+thePntText: gp_Pnt
+
+Returns
+-------
+None
 ") SetPointTextAttach;
 		void SetPointTextAttach(const gp_Pnt & thePntText);
 
@@ -647,9 +745,13 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPosition;
 		%feature("autodoc", "Sets datum position in the related geometric tolerance object.
 
-	:param thePosition:
-	:type thePosition: int
-	:rtype: None
+Parameters
+----------
+thePosition: int
+
+Returns
+-------
+None
 ") SetPosition;
 		void SetPosition(const Standard_Integer thePosition);
 
@@ -657,11 +759,14 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPresentation;
 		%feature("autodoc", "Set graphical presentation for object.
 
-	:param thePresentation:
-	:type thePresentation: TopoDS_Shape
-	:param thePresentationName:
-	:type thePresentationName: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+thePresentation: TopoDS_Shape
+thePresentationName: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetPresentation;
 		void SetPresentation(const TopoDS_Shape & thePresentation, const opencascade::handle<TCollection_HAsciiString> & thePresentationName);
 
@@ -669,23 +774,37 @@ class XCAFDimTolObjects_DatumObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetSemanticName;
 		%feature("autodoc", "Sets semantic name.
 
-	:param theName:
-	:type theName: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+theName: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetSemanticName;
 		void SetSemanticName(const opencascade::handle<TCollection_HAsciiString> & theName);
 
 		/****************** XCAFDimTolObjects_DatumObject ******************/
 		%feature("compactdefaultargs") XCAFDimTolObjects_DatumObject;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") XCAFDimTolObjects_DatumObject;
 		 XCAFDimTolObjects_DatumObject();
 
 		/****************** XCAFDimTolObjects_DatumObject ******************/
 		%feature("compactdefaultargs") XCAFDimTolObjects_DatumObject;
-		%feature("autodoc", "	:param theObj:
-	:type theObj: XCAFDimTolObjects_DatumObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theObj: XCAFDimTolObjects_DatumObject
+
+Returns
+-------
+None
 ") XCAFDimTolObjects_DatumObject;
 		 XCAFDimTolObjects_DatumObject(const opencascade::handle<XCAFDimTolObjects_DatumObject> & theObj);
 
@@ -709,11 +828,14 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") AddDescription;
 		%feature("autodoc", "Add new description.
 
-	:param theDescription:
-	:type theDescription: TCollection_HAsciiString
-	:param theName:
-	:type theName: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+theDescription: TCollection_HAsciiString
+theName: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") AddDescription;
 		void AddDescription(const opencascade::handle<TCollection_HAsciiString > theDescription, const opencascade::handle<TCollection_HAsciiString > theName);
 
@@ -721,9 +843,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") AddModifier;
 		%feature("autodoc", "Adds a modifier to the dimension sequence of modifiers.
 
-	:param theModifier:
-	:type theModifier: XCAFDimTolObjects_DimensionModif
-	:rtype: None
+Parameters
+----------
+theModifier: XCAFDimTolObjects_DimensionModif
+
+Returns
+-------
+None
 ") AddModifier;
 		void AddModifier(const XCAFDimTolObjects_DimensionModif theModifier);
 
@@ -731,13 +857,15 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetClassOfTolerance;
 		%feature("autodoc", "Retrieves tolerance class parameters of the dimension. returns true if the dimension is toleranced.
 
-	:param theHole:
-	:type theHole: bool
-	:param theFormVariance:
-	:type theFormVariance: XCAFDimTolObjects_DimensionFormVariance
-	:param theGrade:
-	:type theGrade: XCAFDimTolObjects_DimensionGrade
-	:rtype: bool
+Parameters
+----------
+theHole: bool
+theFormVariance: XCAFDimTolObjects_DimensionFormVariance
+theGrade: XCAFDimTolObjects_DimensionGrade
+
+Returns
+-------
+bool
 ") GetClassOfTolerance;
 		Standard_Boolean GetClassOfTolerance(Standard_Boolean &OutValue, XCAFDimTolObjects_DimensionFormVariance & theFormVariance, XCAFDimTolObjects_DimensionGrade & theGrade);
 
@@ -745,9 +873,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetDescription;
 		%feature("autodoc", "Returns description with the given number.
 
-	:param theNumber:
-	:type theNumber: int
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+Parameters
+----------
+theNumber: int
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetDescription;
 		opencascade::handle<TCollection_HAsciiString> GetDescription(const Standard_Integer theNumber);
 
@@ -755,9 +887,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetDescriptionName;
 		%feature("autodoc", "Returns name of description with the given number.
 
-	:param theNumber:
-	:type theNumber: int
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+Parameters
+----------
+theNumber: int
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetDescriptionName;
 		opencascade::handle<TCollection_HAsciiString> GetDescriptionName(const Standard_Integer theNumber);
 
@@ -765,9 +901,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetDirection;
 		%feature("autodoc", "Returns the orientation of the dimension in annotation plane.
 
-	:param theDir:
-	:type theDir: gp_Dir
-	:rtype: bool
+Parameters
+----------
+theDir: gp_Dir
+
+Returns
+-------
+bool
 ") GetDirection;
 		Standard_Boolean GetDirection(gp_Dir & theDir);
 
@@ -775,7 +915,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetLowerBound;
 		%feature("autodoc", "Returns the lower bound of the range dimension, otherwise - zero.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetLowerBound;
 		Standard_Real GetLowerBound();
 
@@ -783,7 +925,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetLowerTolValue;
 		%feature("autodoc", "Returns the upper value of the toleranced dimension, otherwise - zero.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetLowerTolValue;
 		Standard_Real GetLowerTolValue();
 
@@ -791,7 +935,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetModifiers;
 		%feature("autodoc", "Returns a sequence of modifiers of the dimension.
 
-	:rtype: XCAFDimTolObjects_DimensionModifiersSequence
+Returns
+-------
+XCAFDimTolObjects_DimensionModifiersSequence
 ") GetModifiers;
 		XCAFDimTolObjects_DimensionModifiersSequence GetModifiers();
 
@@ -799,11 +945,14 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetNbOfDecimalPlaces;
 		%feature("autodoc", "Returns the number of places to the left and right of the decimal point respectively.
 
-	:param theL:
-	:type theL: int
-	:param theR:
-	:type theR: int
-	:rtype: None
+Parameters
+----------
+theL: int
+theR: int
+
+Returns
+-------
+None
 ") GetNbOfDecimalPlaces;
 		void GetNbOfDecimalPlaces(Standard_Integer &OutValue, Standard_Integer &OutValue);
 
@@ -811,7 +960,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPath;
 		%feature("autodoc", "Returns a 'curve' along which the dimension is measured.
 
-	:rtype: TopoDS_Edge
+Returns
+-------
+TopoDS_Edge
 ") GetPath;
 		TopoDS_Edge GetPath();
 
@@ -819,7 +970,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPlane;
 		%feature("autodoc", "Returns annotation plane.
 
-	:rtype: gp_Ax2
+Returns
+-------
+gp_Ax2
 ") GetPlane;
 		const gp_Ax2 GetPlane();
 
@@ -827,13 +980,19 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPoint;
 		%feature("autodoc", "Get connection point (for dimesional_size), get connection point for the first shape (for dimensional_location).
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") GetPoint;
 		gp_Pnt GetPoint();
 
 		/****************** GetPoint2 ******************/
 		%feature("compactdefaultargs") GetPoint2;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") GetPoint2;
 		gp_Pnt GetPoint2();
 
@@ -841,7 +1000,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPointTextAttach;
 		%feature("autodoc", "Returns position of the dimension text.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") GetPointTextAttach;
 		const gp_Pnt GetPointTextAttach();
 
@@ -849,7 +1010,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPresentation;
 		%feature("autodoc", "Returns graphical presentation of the object.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") GetPresentation;
 		TopoDS_Shape GetPresentation();
 
@@ -857,7 +1020,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPresentationName;
 		%feature("autodoc", "Returns graphical presentation of the object.
 
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetPresentationName;
 		opencascade::handle<TCollection_HAsciiString> GetPresentationName();
 
@@ -865,7 +1030,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetQualifier;
 		%feature("autodoc", "Returns dimension qualifier.
 
-	:rtype: XCAFDimTolObjects_DimensionQualifier
+Returns
+-------
+XCAFDimTolObjects_DimensionQualifier
 ") GetQualifier;
 		XCAFDimTolObjects_DimensionQualifier GetQualifier();
 
@@ -873,7 +1040,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetSemanticName;
 		%feature("autodoc", "Returns semantic name.
 
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetSemanticName;
 		opencascade::handle<TCollection_HAsciiString> GetSemanticName();
 
@@ -881,7 +1050,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetType;
 		%feature("autodoc", "Returns dimension type.
 
-	:rtype: XCAFDimTolObjects_DimensionType
+Returns
+-------
+XCAFDimTolObjects_DimensionType
 ") GetType;
 		XCAFDimTolObjects_DimensionType GetType();
 
@@ -889,7 +1060,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetUpperBound;
 		%feature("autodoc", "Returns the upper bound of the range dimension, otherwise - zero.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetUpperBound;
 		Standard_Real GetUpperBound();
 
@@ -897,7 +1070,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetUpperTolValue;
 		%feature("autodoc", "Returns the lower value of the toleranced dimension, otherwise - zero.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetUpperTolValue;
 		Standard_Real GetUpperTolValue();
 
@@ -905,7 +1080,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetValue;
 		%feature("autodoc", "Returns the main dimension value. it will be the middle value in case of range dimension.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetValue;
 		Standard_Real GetValue();
 
@@ -913,7 +1090,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetValues;
 		%feature("autodoc", "Returns raw array of dimension values.
 
-	:rtype: opencascade::handle<TColStd_HArray1OfReal>
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfReal>
 ") GetValues;
 		opencascade::handle<TColStd_HArray1OfReal> GetValues();
 
@@ -921,7 +1100,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasDescriptions;
 		%feature("autodoc", "Returns true, if the object has descriptions.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasDescriptions;
 		Standard_Boolean HasDescriptions();
 
@@ -929,7 +1110,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasPlane;
 		%feature("autodoc", "Returns true if the object has annotation plane.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPlane;
 		Standard_Boolean HasPlane();
 
@@ -937,13 +1120,19 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasPoint;
 		%feature("autodoc", "Returns true, if connection point exists (for dimesional_size), if connection point for the first shape exists (for dimensional_location).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPoint;
 		Standard_Boolean HasPoint();
 
 		/****************** HasPoint2 ******************/
 		%feature("compactdefaultargs") HasPoint2;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") HasPoint2;
 		Standard_Boolean HasPoint2();
 
@@ -951,7 +1140,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasQualifier;
 		%feature("autodoc", "Returns true if the object has dimension qualifier.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasQualifier;
 		Standard_Boolean HasQualifier();
 
@@ -959,7 +1150,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasTextPoint;
 		%feature("autodoc", "Returns true if the position of dimension text is specified.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasTextPoint;
 		Standard_Boolean HasTextPoint();
 
@@ -967,7 +1160,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") IsDimWithClassOfTolerance;
 		%feature("autodoc", "Returns true if the form variance was set to not xcafdimtolobjects_dimensionformvariance_none value.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDimWithClassOfTolerance;
 		Standard_Boolean IsDimWithClassOfTolerance();
 
@@ -975,7 +1170,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") IsDimWithPlusMinusTolerance;
 		%feature("autodoc", "Returns true if the dimension is of +/- tolerance kind. dimension is of +/- tolerance kind if its values array contains three elements defining the main value and the lower/upper tolerances.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDimWithPlusMinusTolerance;
 		Standard_Boolean IsDimWithPlusMinusTolerance();
 
@@ -983,7 +1180,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") IsDimWithRange;
 		%feature("autodoc", "Returns true if the dimension is of range kind. dimension is of range kind if its values array contains two elements defining lower and upper bounds.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDimWithRange;
 		Standard_Boolean IsDimWithRange();
 
@@ -991,7 +1190,9 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") NbDescriptions;
 		%feature("autodoc", "Returns number of descriptions.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbDescriptions;
 		Standard_Integer NbDescriptions();
 
@@ -999,9 +1200,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveDescription;
 		%feature("autodoc", "Remove description with the given number.
 
-	:param theNumber:
-	:type theNumber: int
-	:rtype: None
+Parameters
+----------
+theNumber: int
+
+Returns
+-------
+None
 ") RemoveDescription;
 		void RemoveDescription(const Standard_Integer theNumber);
 
@@ -1009,13 +1214,15 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetClassOfTolerance;
 		%feature("autodoc", "Sets tolerance class of the dimension. \param thehole - true if the tolerance applies to an internal feature \param theformvariance - represents the fundamental deviation or 'position letter'  of the iso 286 limits-and-fits tolerance classification. \param thegrade - represents the quality or the accuracy grade of a tolerance.
 
-	:param theHole:
-	:type theHole: bool
-	:param theFormVariance:
-	:type theFormVariance: XCAFDimTolObjects_DimensionFormVariance
-	:param theGrade:
-	:type theGrade: XCAFDimTolObjects_DimensionGrade
-	:rtype: None
+Parameters
+----------
+theHole: bool
+theFormVariance: XCAFDimTolObjects_DimensionFormVariance
+theGrade: XCAFDimTolObjects_DimensionGrade
+
+Returns
+-------
+None
 ") SetClassOfTolerance;
 		void SetClassOfTolerance(const Standard_Boolean theHole, const XCAFDimTolObjects_DimensionFormVariance theFormVariance, const XCAFDimTolObjects_DimensionGrade theGrade);
 
@@ -1023,9 +1230,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetDirection;
 		%feature("autodoc", "Sets an orientation of the dimension in annotation plane.
 
-	:param theDir:
-	:type theDir: gp_Dir
-	:rtype: bool
+Parameters
+----------
+theDir: gp_Dir
+
+Returns
+-------
+bool
 ") SetDirection;
 		Standard_Boolean SetDirection(const gp_Dir & theDir);
 
@@ -1033,9 +1244,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetLowerBound;
 		%feature("autodoc", "Sets the lower bound of the range dimension, otherwise resets it to an empty range with the specified lower bound.
 
-	:param theLowerBound:
-	:type theLowerBound: float
-	:rtype: None
+Parameters
+----------
+theLowerBound: float
+
+Returns
+-------
+None
 ") SetLowerBound;
 		void SetLowerBound(const Standard_Real theLowerBound);
 
@@ -1043,9 +1258,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetLowerTolValue;
 		%feature("autodoc", "Sets the lower value of the toleranced dimension, otherwise resets a simple dimension to toleranced one with the specified lower/upper tolerances. returns false in case of range dimension.
 
-	:param theLowerTolValue:
-	:type theLowerTolValue: float
-	:rtype: bool
+Parameters
+----------
+theLowerTolValue: float
+
+Returns
+-------
+bool
 ") SetLowerTolValue;
 		Standard_Boolean SetLowerTolValue(const Standard_Real theLowerTolValue);
 
@@ -1053,9 +1272,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetModifiers;
 		%feature("autodoc", "Sets new sequence of dimension modifiers.
 
-	:param theModifiers:
-	:type theModifiers: XCAFDimTolObjects_DimensionModifiersSequence
-	:rtype: None
+Parameters
+----------
+theModifiers: XCAFDimTolObjects_DimensionModifiersSequence
+
+Returns
+-------
+None
 ") SetModifiers;
 		void SetModifiers(const XCAFDimTolObjects_DimensionModifiersSequence & theModifiers);
 
@@ -1063,11 +1286,14 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetNbOfDecimalPlaces;
 		%feature("autodoc", "Sets the number of places to the left and right of the decimal point respectively.
 
-	:param theL:
-	:type theL: int
-	:param theR:
-	:type theR: int
-	:rtype: None
+Parameters
+----------
+theL: int
+theR: int
+
+Returns
+-------
+None
 ") SetNbOfDecimalPlaces;
 		void SetNbOfDecimalPlaces(const Standard_Integer theL, const Standard_Integer theR);
 
@@ -1075,9 +1301,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPath;
 		%feature("autodoc", "Sets a 'curve' along which the dimension is measured.
 
-	:param thePath:
-	:type thePath: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+thePath: TopoDS_Edge
+
+Returns
+-------
+None
 ") SetPath;
 		void SetPath(const TopoDS_Edge & thePath);
 
@@ -1085,9 +1315,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPlane;
 		%feature("autodoc", "Sets annotation plane.
 
-	:param thePlane:
-	:type thePlane: gp_Ax2
-	:rtype: None
+Parameters
+----------
+thePlane: gp_Ax2
+
+Returns
+-------
+None
 ") SetPlane;
 		void SetPlane(const gp_Ax2 & thePlane);
 
@@ -1095,17 +1329,27 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPoint;
 		%feature("autodoc", "Set connection point (for dimesional_size), set connection point for the first shape (for dimensional_location).
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: None
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+None
 ") SetPoint;
 		void SetPoint(const gp_Pnt thePnt);
 
 		/****************** SetPoint2 ******************/
 		%feature("compactdefaultargs") SetPoint2;
-		%feature("autodoc", "	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+None
 ") SetPoint2;
 		void SetPoint2(const gp_Pnt thePnt);
 
@@ -1113,9 +1357,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPointTextAttach;
 		%feature("autodoc", "Sets position of the dimension text.
 
-	:param thePntText:
-	:type thePntText: gp_Pnt
-	:rtype: None
+Parameters
+----------
+thePntText: gp_Pnt
+
+Returns
+-------
+None
 ") SetPointTextAttach;
 		void SetPointTextAttach(const gp_Pnt & thePntText);
 
@@ -1123,11 +1371,14 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPresentation;
 		%feature("autodoc", "Set graphical presentation for the object.
 
-	:param thePresentation:
-	:type thePresentation: TopoDS_Shape
-	:param thePresentationName:
-	:type thePresentationName: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+thePresentation: TopoDS_Shape
+thePresentationName: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetPresentation;
 		void SetPresentation(const TopoDS_Shape & thePresentation, const opencascade::handle<TCollection_HAsciiString> & thePresentationName);
 
@@ -1135,9 +1386,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetQualifier;
 		%feature("autodoc", "Sets dimension qualifier as min., max. or average.
 
-	:param theQualifier:
-	:type theQualifier: XCAFDimTolObjects_DimensionQualifier
-	:rtype: None
+Parameters
+----------
+theQualifier: XCAFDimTolObjects_DimensionQualifier
+
+Returns
+-------
+None
 ") SetQualifier;
 		void SetQualifier(const XCAFDimTolObjects_DimensionQualifier theQualifier);
 
@@ -1145,9 +1400,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetSemanticName;
 		%feature("autodoc", "Sets semantic name.
 
-	:param theName:
-	:type theName: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+theName: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetSemanticName;
 		void SetSemanticName(const opencascade::handle<TCollection_HAsciiString> & theName);
 
@@ -1155,9 +1414,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetType;
 		%feature("autodoc", "Sets a specific type of dimension.
 
-	:param theTyupe:
-	:type theTyupe: XCAFDimTolObjects_DimensionType
-	:rtype: None
+Parameters
+----------
+theTyupe: XCAFDimTolObjects_DimensionType
+
+Returns
+-------
+None
 ") SetType;
 		void SetType(const XCAFDimTolObjects_DimensionType theTyupe);
 
@@ -1165,9 +1428,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetUpperBound;
 		%feature("autodoc", "Sets the upper bound of the range dimension, otherwise resets it to an empty range with the specified upper bound.
 
-	:param theUpperBound:
-	:type theUpperBound: float
-	:rtype: None
+Parameters
+----------
+theUpperBound: float
+
+Returns
+-------
+None
 ") SetUpperBound;
 		void SetUpperBound(const Standard_Real theUpperBound);
 
@@ -1175,9 +1442,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetUpperTolValue;
 		%feature("autodoc", "Sets the upper value of the toleranced dimension, otherwise resets a simple dimension to toleranced one with the specified lower/upper tolerances. returns false in case of range dimension.
 
-	:param theUperTolValue:
-	:type theUperTolValue: float
-	:rtype: bool
+Parameters
+----------
+theUperTolValue: float
+
+Returns
+-------
+bool
 ") SetUpperTolValue;
 		Standard_Boolean SetUpperTolValue(const Standard_Real theUperTolValue);
 
@@ -1185,9 +1456,13 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetValue;
 		%feature("autodoc", "Sets the main dimension value. overwrites previous values.
 
-	:param theValue:
-	:type theValue: float
-	:rtype: None
+Parameters
+----------
+theValue: float
+
+Returns
+-------
+None
 ") SetValue;
 		void SetValue(const Standard_Real theValue);
 
@@ -1195,23 +1470,37 @@ class XCAFDimTolObjects_DimensionObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetValues;
 		%feature("autodoc", "Replaces current raw array of dimension values with thevalues array.
 
-	:param theValue:
-	:type theValue: TColStd_HArray1OfReal
-	:rtype: None
+Parameters
+----------
+theValue: TColStd_HArray1OfReal
+
+Returns
+-------
+None
 ") SetValues;
 		void SetValues(const opencascade::handle<TColStd_HArray1OfReal> & theValue);
 
 		/****************** XCAFDimTolObjects_DimensionObject ******************/
 		%feature("compactdefaultargs") XCAFDimTolObjects_DimensionObject;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") XCAFDimTolObjects_DimensionObject;
 		 XCAFDimTolObjects_DimensionObject();
 
 		/****************** XCAFDimTolObjects_DimensionObject ******************/
 		%feature("compactdefaultargs") XCAFDimTolObjects_DimensionObject;
-		%feature("autodoc", "	:param theObj:
-	:type theObj: XCAFDimTolObjects_DimensionObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theObj: XCAFDimTolObjects_DimensionObject
+
+Returns
+-------
+None
 ") XCAFDimTolObjects_DimensionObject;
 		 XCAFDimTolObjects_DimensionObject(const opencascade::handle<XCAFDimTolObjects_DimensionObject> & theObj);
 
@@ -1235,9 +1524,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") AddModifier;
 		%feature("autodoc", "Adds a tolerance modifier to the sequence of modifiers.
 
-	:param theModifier:
-	:type theModifier: XCAFDimTolObjects_GeomToleranceModif
-	:rtype: None
+Parameters
+----------
+theModifier: XCAFDimTolObjects_GeomToleranceModif
+
+Returns
+-------
+None
 ") AddModifier;
 		void AddModifier(const XCAFDimTolObjects_GeomToleranceModif theModifier);
 
@@ -1245,19 +1538,29 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetAffectedPlane;
 		%feature("autodoc", "Returns affected plane.
 
-	:rtype: gp_Pln
+Returns
+-------
+gp_Pln
 ") GetAffectedPlane;
 		const gp_Pln GetAffectedPlane();
 
 		/****************** GetAffectedPlaneType ******************/
 		%feature("compactdefaultargs") GetAffectedPlaneType;
-		%feature("autodoc", "	:rtype: XCAFDimTolObjects_ToleranceZoneAffectedPlane
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+XCAFDimTolObjects_ToleranceZoneAffectedPlane
 ") GetAffectedPlaneType;
 		XCAFDimTolObjects_ToleranceZoneAffectedPlane GetAffectedPlaneType();
 
 		/****************** GetAxis ******************/
 		%feature("compactdefaultargs") GetAxis;
-		%feature("autodoc", "	:rtype: gp_Ax2
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Ax2
 ") GetAxis;
 		gp_Ax2 GetAxis();
 
@@ -1265,7 +1568,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetMaterialRequirementModifier;
 		%feature("autodoc", "Returns material requirement of the tolerance.
 
-	:rtype: XCAFDimTolObjects_GeomToleranceMatReqModif
+Returns
+-------
+XCAFDimTolObjects_GeomToleranceMatReqModif
 ") GetMaterialRequirementModifier;
 		XCAFDimTolObjects_GeomToleranceMatReqModif GetMaterialRequirementModifier();
 
@@ -1273,7 +1578,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetMaxValueModifier;
 		%feature("autodoc", "Returns the maximal upper tolerance.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetMaxValueModifier;
 		Standard_Real GetMaxValueModifier();
 
@@ -1281,7 +1588,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetModifiers;
 		%feature("autodoc", "Returns a sequence of modifiers of the tolerance.
 
-	:rtype: XCAFDimTolObjects_GeomToleranceModifiersSequence
+Returns
+-------
+XCAFDimTolObjects_GeomToleranceModifiersSequence
 ") GetModifiers;
 		XCAFDimTolObjects_GeomToleranceModifiersSequence GetModifiers();
 
@@ -1289,7 +1598,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPlane;
 		%feature("autodoc", "Returns annotation plane.
 
-	:rtype: gp_Ax2
+Returns
+-------
+gp_Ax2
 ") GetPlane;
 		const gp_Ax2 GetPlane();
 
@@ -1297,7 +1608,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPoint;
 		%feature("autodoc", "Returns reference point.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") GetPoint;
 		const gp_Pnt GetPoint();
 
@@ -1305,7 +1618,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPointTextAttach;
 		%feature("autodoc", "Returns the text position.
 
-	:rtype: gp_Pnt
+Returns
+-------
+gp_Pnt
 ") GetPointTextAttach;
 		const gp_Pnt GetPointTextAttach();
 
@@ -1313,7 +1628,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPresentation;
 		%feature("autodoc", "Returns graphical presentation of the object.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") GetPresentation;
 		TopoDS_Shape GetPresentation();
 
@@ -1321,7 +1638,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetPresentationName;
 		%feature("autodoc", "Returns graphical presentation of the object.
 
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetPresentationName;
 		opencascade::handle<TCollection_HAsciiString> GetPresentationName();
 
@@ -1329,7 +1648,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetSemanticName;
 		%feature("autodoc", "Returns semantic name.
 
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetSemanticName;
 		opencascade::handle<TCollection_HAsciiString> GetSemanticName();
 
@@ -1337,7 +1658,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetType;
 		%feature("autodoc", "Returns type of the object.
 
-	:rtype: XCAFDimTolObjects_GeomToleranceType
+Returns
+-------
+XCAFDimTolObjects_GeomToleranceType
 ") GetType;
 		XCAFDimTolObjects_GeomToleranceType GetType();
 
@@ -1345,7 +1668,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetTypeOfValue;
 		%feature("autodoc", "Returns type of tolerance value.
 
-	:rtype: XCAFDimTolObjects_GeomToleranceTypeValue
+Returns
+-------
+XCAFDimTolObjects_GeomToleranceTypeValue
 ") GetTypeOfValue;
 		XCAFDimTolObjects_GeomToleranceTypeValue GetTypeOfValue();
 
@@ -1353,7 +1678,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetValue;
 		%feature("autodoc", "Returns tolerance value.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetValue;
 		Standard_Real GetValue();
 
@@ -1361,7 +1688,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetValueOfZoneModifier;
 		%feature("autodoc", "Returns value associated with tolerance zone.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetValueOfZoneModifier;
 		Standard_Real GetValueOfZoneModifier();
 
@@ -1369,19 +1698,29 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") GetZoneModifier;
 		%feature("autodoc", "Returns tolerance zone.
 
-	:rtype: XCAFDimTolObjects_GeomToleranceZoneModif
+Returns
+-------
+XCAFDimTolObjects_GeomToleranceZoneModif
 ") GetZoneModifier;
 		XCAFDimTolObjects_GeomToleranceZoneModif GetZoneModifier();
 
 		/****************** HasAffectedPlane ******************/
 		%feature("compactdefaultargs") HasAffectedPlane;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") HasAffectedPlane;
 		bool HasAffectedPlane();
 
 		/****************** HasAxis ******************/
 		%feature("compactdefaultargs") HasAxis;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") HasAxis;
 		Standard_Boolean HasAxis();
 
@@ -1389,7 +1728,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasPlane;
 		%feature("autodoc", "Returns true if the object has annotation plane.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPlane;
 		Standard_Boolean HasPlane();
 
@@ -1397,7 +1738,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasPoint;
 		%feature("autodoc", "Returns true if reference point is specified.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPoint;
 		Standard_Boolean HasPoint();
 
@@ -1405,7 +1748,9 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") HasPointText;
 		%feature("autodoc", "Returns true if text position is specified.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasPointText;
 		Standard_Boolean HasPointText();
 
@@ -1413,9 +1758,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetAffectedPlane;
 		%feature("autodoc", "Sets affected plane.
 
-	:param thePlane:
-	:type thePlane: gp_Pln
-	:rtype: None
+Parameters
+----------
+thePlane: gp_Pln
+
+Returns
+-------
+None
 ") SetAffectedPlane;
 		void SetAffectedPlane(const gp_Pln & thePlane);
 
@@ -1423,27 +1772,42 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetAffectedPlane;
 		%feature("autodoc", "Sets affected plane.
 
-	:param thePlane:
-	:type thePlane: gp_Pln
-	:param theType:
-	:type theType: XCAFDimTolObjects_ToleranceZoneAffectedPlane
-	:rtype: None
+Parameters
+----------
+thePlane: gp_Pln
+theType: XCAFDimTolObjects_ToleranceZoneAffectedPlane
+
+Returns
+-------
+None
 ") SetAffectedPlane;
 		void SetAffectedPlane(const gp_Pln & thePlane, const XCAFDimTolObjects_ToleranceZoneAffectedPlane theType);
 
 		/****************** SetAffectedPlaneType ******************/
 		%feature("compactdefaultargs") SetAffectedPlaneType;
-		%feature("autodoc", "	:param theType:
-	:type theType: XCAFDimTolObjects_ToleranceZoneAffectedPlane
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theType: XCAFDimTolObjects_ToleranceZoneAffectedPlane
+
+Returns
+-------
+None
 ") SetAffectedPlaneType;
 		void SetAffectedPlaneType(const XCAFDimTolObjects_ToleranceZoneAffectedPlane theType);
 
 		/****************** SetAxis ******************/
 		%feature("compactdefaultargs") SetAxis;
-		%feature("autodoc", "	:param theAxis:
-	:type theAxis: gp_Ax2
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theAxis: gp_Ax2
+
+Returns
+-------
+None
 ") SetAxis;
 		void SetAxis(const gp_Ax2 theAxis);
 
@@ -1451,9 +1815,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetMaterialRequirementModifier;
 		%feature("autodoc", "Sets material requirement of the tolerance.
 
-	:param theMatReqModif:
-	:type theMatReqModif: XCAFDimTolObjects_GeomToleranceMatReqModif
-	:rtype: None
+Parameters
+----------
+theMatReqModif: XCAFDimTolObjects_GeomToleranceMatReqModif
+
+Returns
+-------
+None
 ") SetMaterialRequirementModifier;
 		void SetMaterialRequirementModifier(const XCAFDimTolObjects_GeomToleranceMatReqModif theMatReqModif);
 
@@ -1461,9 +1829,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetMaxValueModifier;
 		%feature("autodoc", "Sets the maximal upper tolerance value for tolerance with modifiers.
 
-	:param theModifier:
-	:type theModifier: float
-	:rtype: None
+Parameters
+----------
+theModifier: float
+
+Returns
+-------
+None
 ") SetMaxValueModifier;
 		void SetMaxValueModifier(const Standard_Real theModifier);
 
@@ -1471,9 +1843,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetModifiers;
 		%feature("autodoc", "Sets new sequence of tolerance modifiers.
 
-	:param theModifiers:
-	:type theModifiers: XCAFDimTolObjects_GeomToleranceModifiersSequence
-	:rtype: None
+Parameters
+----------
+theModifiers: XCAFDimTolObjects_GeomToleranceModifiersSequence
+
+Returns
+-------
+None
 ") SetModifiers;
 		void SetModifiers(const XCAFDimTolObjects_GeomToleranceModifiersSequence & theModifiers);
 
@@ -1481,9 +1857,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPlane;
 		%feature("autodoc", "Sets annotation plane.
 
-	:param thePlane:
-	:type thePlane: gp_Ax2
-	:rtype: None
+Parameters
+----------
+thePlane: gp_Ax2
+
+Returns
+-------
+None
 ") SetPlane;
 		void SetPlane(const gp_Ax2 & thePlane);
 
@@ -1491,9 +1871,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPoint;
 		%feature("autodoc", "Sets reference point.
 
-	:param thePnt:
-	:type thePnt: gp_Pnt
-	:rtype: None
+Parameters
+----------
+thePnt: gp_Pnt
+
+Returns
+-------
+None
 ") SetPoint;
 		void SetPoint(const gp_Pnt & thePnt);
 
@@ -1501,9 +1885,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPointTextAttach;
 		%feature("autodoc", "Sets text position.
 
-	:param thePntText:
-	:type thePntText: gp_Pnt
-	:rtype: None
+Parameters
+----------
+thePntText: gp_Pnt
+
+Returns
+-------
+None
 ") SetPointTextAttach;
 		void SetPointTextAttach(const gp_Pnt & thePntText);
 
@@ -1511,11 +1899,14 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetPresentation;
 		%feature("autodoc", "Set graphical presentation for object.
 
-	:param thePresentation:
-	:type thePresentation: TopoDS_Shape
-	:param thePresentationName:
-	:type thePresentationName: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+thePresentation: TopoDS_Shape
+thePresentationName: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetPresentation;
 		void SetPresentation(const TopoDS_Shape & thePresentation, const opencascade::handle<TCollection_HAsciiString> & thePresentationName);
 
@@ -1523,9 +1914,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetSemanticName;
 		%feature("autodoc", "Sets semantic name.
 
-	:param theName:
-	:type theName: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+theName: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetSemanticName;
 		void SetSemanticName(const opencascade::handle<TCollection_HAsciiString> & theName);
 
@@ -1533,9 +1928,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetType;
 		%feature("autodoc", "Sets type of the object.
 
-	:param theType:
-	:type theType: XCAFDimTolObjects_GeomToleranceType
-	:rtype: None
+Parameters
+----------
+theType: XCAFDimTolObjects_GeomToleranceType
+
+Returns
+-------
+None
 ") SetType;
 		void SetType(const XCAFDimTolObjects_GeomToleranceType theType);
 
@@ -1543,9 +1942,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetTypeOfValue;
 		%feature("autodoc", "Sets type of tolerance value.
 
-	:param theTypeOfValue:
-	:type theTypeOfValue: XCAFDimTolObjects_GeomToleranceTypeValue
-	:rtype: None
+Parameters
+----------
+theTypeOfValue: XCAFDimTolObjects_GeomToleranceTypeValue
+
+Returns
+-------
+None
 ") SetTypeOfValue;
 		void SetTypeOfValue(const XCAFDimTolObjects_GeomToleranceTypeValue theTypeOfValue);
 
@@ -1553,9 +1956,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetValue;
 		%feature("autodoc", "Sets tolerance value.
 
-	:param theValue:
-	:type theValue: float
-	:rtype: None
+Parameters
+----------
+theValue: float
+
+Returns
+-------
+None
 ") SetValue;
 		void SetValue(const Standard_Real theValue);
 
@@ -1563,9 +1970,13 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetValueOfZoneModifier;
 		%feature("autodoc", "Sets value associated with tolerance zone.
 
-	:param theValue:
-	:type theValue: float
-	:rtype: None
+Parameters
+----------
+theValue: float
+
+Returns
+-------
+None
 ") SetValueOfZoneModifier;
 		void SetValueOfZoneModifier(const Standard_Real theValue);
 
@@ -1573,23 +1984,37 @@ class XCAFDimTolObjects_GeomToleranceObject : public Standard_Transient {
 		%feature("compactdefaultargs") SetZoneModifier;
 		%feature("autodoc", "Sets tolerance zone.
 
-	:param theZoneModif:
-	:type theZoneModif: XCAFDimTolObjects_GeomToleranceZoneModif
-	:rtype: None
+Parameters
+----------
+theZoneModif: XCAFDimTolObjects_GeomToleranceZoneModif
+
+Returns
+-------
+None
 ") SetZoneModifier;
 		void SetZoneModifier(const XCAFDimTolObjects_GeomToleranceZoneModif theZoneModif);
 
 		/****************** XCAFDimTolObjects_GeomToleranceObject ******************/
 		%feature("compactdefaultargs") XCAFDimTolObjects_GeomToleranceObject;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") XCAFDimTolObjects_GeomToleranceObject;
 		 XCAFDimTolObjects_GeomToleranceObject();
 
 		/****************** XCAFDimTolObjects_GeomToleranceObject ******************/
 		%feature("compactdefaultargs") XCAFDimTolObjects_GeomToleranceObject;
-		%feature("autodoc", "	:param theObj:
-	:type theObj: XCAFDimTolObjects_GeomToleranceObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theObj: XCAFDimTolObjects_GeomToleranceObject
+
+Returns
+-------
+None
 ") XCAFDimTolObjects_GeomToleranceObject;
 		 XCAFDimTolObjects_GeomToleranceObject(const opencascade::handle<XCAFDimTolObjects_GeomToleranceObject> & theObj);
 
@@ -1613,9 +2038,13 @@ class XCAFDimTolObjects_Tool {
 		%feature("compactdefaultargs") GetDimensions;
 		%feature("autodoc", "Returns a sequence of dimensions currently stored in the gd&t table.
 
-	:param theDimensionObjectSequence:
-	:type theDimensionObjectSequence: XCAFDimTolObjects_DimensionObjectSequence
-	:rtype: None
+Parameters
+----------
+theDimensionObjectSequence: XCAFDimTolObjects_DimensionObjectSequence
+
+Returns
+-------
+None
 ") GetDimensions;
 		void GetDimensions(XCAFDimTolObjects_DimensionObjectSequence & theDimensionObjectSequence);
 
@@ -1623,13 +2052,15 @@ class XCAFDimTolObjects_Tool {
 		%feature("compactdefaultargs") GetGeomTolerances;
 		%feature("autodoc", "Returns a sequence of tolerances currently stored in the gd&t table.
 
-	:param theGeomToleranceObjectSequence:
-	:type theGeomToleranceObjectSequence: XCAFDimTolObjects_GeomToleranceObjectSequence
-	:param theDatumObjectSequence:
-	:type theDatumObjectSequence: XCAFDimTolObjects_DatumObjectSequence
-	:param theMap:
-	:type theMap: XCAFDimTolObjects_DataMapOfToleranceDatum
-	:rtype: None
+Parameters
+----------
+theGeomToleranceObjectSequence: XCAFDimTolObjects_GeomToleranceObjectSequence
+theDatumObjectSequence: XCAFDimTolObjects_DatumObjectSequence
+theMap: XCAFDimTolObjects_DataMapOfToleranceDatum
+
+Returns
+-------
+None
 ") GetGeomTolerances;
 		void GetGeomTolerances(XCAFDimTolObjects_GeomToleranceObjectSequence & theGeomToleranceObjectSequence, XCAFDimTolObjects_DatumObjectSequence & theDatumObjectSequence, XCAFDimTolObjects_DataMapOfToleranceDatum & theMap);
 
@@ -1637,11 +2068,14 @@ class XCAFDimTolObjects_Tool {
 		%feature("compactdefaultargs") GetRefDatum;
 		%feature("autodoc", "Returns datumobject defined for shape.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theDatum:
-	:type theDatum: XCAFDimTolObjects_DatumObject
-	:rtype: bool
+Parameters
+----------
+theShape: TopoDS_Shape
+theDatum: XCAFDimTolObjects_DatumObject
+
+Returns
+-------
+bool
 ") GetRefDatum;
 		Standard_Boolean GetRefDatum(const TopoDS_Shape & theShape, opencascade::handle<XCAFDimTolObjects_DatumObject> & theDatum);
 
@@ -1649,11 +2083,14 @@ class XCAFDimTolObjects_Tool {
 		%feature("compactdefaultargs") GetRefDimensions;
 		%feature("autodoc", "Returns all dimensions defined for shape.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theDimensions:
-	:type theDimensions: XCAFDimTolObjects_DimensionObjectSequence
-	:rtype: bool
+Parameters
+----------
+theShape: TopoDS_Shape
+theDimensions: XCAFDimTolObjects_DimensionObjectSequence
+
+Returns
+-------
+bool
 ") GetRefDimensions;
 		Standard_Boolean GetRefDimensions(const TopoDS_Shape & theShape, XCAFDimTolObjects_DimensionObjectSequence & theDimensions);
 
@@ -1661,23 +2098,30 @@ class XCAFDimTolObjects_Tool {
 		%feature("compactdefaultargs") GetRefGeomTolerances;
 		%feature("autodoc", "Returns all geomtolerances defined for shape.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theGeomToleranceObjectSequence:
-	:type theGeomToleranceObjectSequence: XCAFDimTolObjects_GeomToleranceObjectSequence
-	:param theDatumObjectSequence:
-	:type theDatumObjectSequence: XCAFDimTolObjects_DatumObjectSequence
-	:param theMap:
-	:type theMap: XCAFDimTolObjects_DataMapOfToleranceDatum
-	:rtype: bool
+Parameters
+----------
+theShape: TopoDS_Shape
+theGeomToleranceObjectSequence: XCAFDimTolObjects_GeomToleranceObjectSequence
+theDatumObjectSequence: XCAFDimTolObjects_DatumObjectSequence
+theMap: XCAFDimTolObjects_DataMapOfToleranceDatum
+
+Returns
+-------
+bool
 ") GetRefGeomTolerances;
 		Standard_Boolean GetRefGeomTolerances(const TopoDS_Shape & theShape, XCAFDimTolObjects_GeomToleranceObjectSequence & theGeomToleranceObjectSequence, XCAFDimTolObjects_DatumObjectSequence & theDatumObjectSequence, XCAFDimTolObjects_DataMapOfToleranceDatum & theMap);
 
 		/****************** XCAFDimTolObjects_Tool ******************/
 		%feature("compactdefaultargs") XCAFDimTolObjects_Tool;
-		%feature("autodoc", "	:param theDoc:
-	:type theDoc: TDocStd_Document
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDoc: TDocStd_Document
+
+Returns
+-------
+None
 ") XCAFDimTolObjects_Tool;
 		 XCAFDimTolObjects_Tool(const opencascade::handle<TDocStd_Document> & theDoc);
 

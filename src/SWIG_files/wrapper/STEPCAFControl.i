@@ -146,7 +146,9 @@ class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
 		%feature("compactdefaultargs") ClearMap;
 		%feature("autodoc", "Clears map of shapes registered as assemblies.
 
-	:rtype: None
+Returns
+-------
+None
 ") ClearMap;
 		void ClearMap();
 
@@ -154,9 +156,13 @@ class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
 		%feature("compactdefaultargs") IsAssembly;
 		%feature("autodoc", "Check whether shape s is assembly returns true if shape is registered in assemblies map.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsAssembly;
 		virtual Standard_Boolean IsAssembly(TopoDS_Shape & S);
 
@@ -164,15 +170,23 @@ class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
 		%feature("compactdefaultargs") RegisterAssembly;
 		%feature("autodoc", "Registers shape to be written as assembly the shape should be topods_compound (else does nothing).
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
 ") RegisterAssembly;
 		void RegisterAssembly(const TopoDS_Shape & S);
 
 		/****************** STEPCAFControl_ActorWrite ******************/
 		%feature("compactdefaultargs") STEPCAFControl_ActorWrite;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPCAFControl_ActorWrite;
 		 STEPCAFControl_ActorWrite();
 
@@ -180,9 +194,14 @@ class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
 		%feature("compactdefaultargs") SetStdMode;
 		%feature("autodoc", "Set standard mode of work in standard mode actor (default) behaves exactly as its ancestor, also map is cleared.
 
-	:param stdmode: default value is Standard_True
-	:type stdmode: bool
-	:rtype: None
+Parameters
+----------
+stdmode: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") SetStdMode;
 		void SetStdMode(const Standard_Boolean stdmode = Standard_True);
 
@@ -206,7 +225,9 @@ class STEPCAFControl_Controller : public STEPControl_Controller {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Standard initialisation. it creates a controller for step-xcaf and records it to various names, available to select it later returns true when done, false if could not be done.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Init;
 		static Standard_Boolean Init();
 
@@ -214,7 +235,9 @@ class STEPCAFControl_Controller : public STEPControl_Controller {
 		%feature("compactdefaultargs") STEPCAFControl_Controller;
 		%feature("autodoc", "Initializes the use of step norm (the first time).
 
-	:rtype: None
+Returns
+-------
+None
 ") STEPCAFControl_Controller;
 		 STEPCAFControl_Controller();
 
@@ -236,37 +259,61 @@ class STEPCAFControl_ExternFile : public Standard_Transient {
 	public:
 		/****************** GetLabel ******************/
 		%feature("compactdefaultargs") GetLabel;
-		%feature("autodoc", "	:rtype: TDF_Label
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDF_Label
 ") GetLabel;
 		TDF_Label GetLabel();
 
 		/****************** GetLoadStatus ******************/
 		%feature("compactdefaultargs") GetLoadStatus;
-		%feature("autodoc", "	:rtype: IFSelect_ReturnStatus
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+IFSelect_ReturnStatus
 ") GetLoadStatus;
 		IFSelect_ReturnStatus GetLoadStatus();
 
 		/****************** GetName ******************/
 		%feature("compactdefaultargs") GetName;
-		%feature("autodoc", "	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetName;
 		opencascade::handle<TCollection_HAsciiString> GetName();
 
 		/****************** GetTransferStatus ******************/
 		%feature("compactdefaultargs") GetTransferStatus;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetTransferStatus;
 		Standard_Boolean GetTransferStatus();
 
 		/****************** GetWS ******************/
 		%feature("compactdefaultargs") GetWS;
-		%feature("autodoc", "	:rtype: opencascade::handle<XSControl_WorkSession>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<XSControl_WorkSession>
 ") GetWS;
 		opencascade::handle<XSControl_WorkSession> GetWS();
 
 		/****************** GetWriteStatus ******************/
 		%feature("compactdefaultargs") GetWriteStatus;
-		%feature("autodoc", "	:rtype: IFSelect_ReturnStatus
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+IFSelect_ReturnStatus
 ") GetWriteStatus;
 		IFSelect_ReturnStatus GetWriteStatus();
 
@@ -274,55 +321,93 @@ class STEPCAFControl_ExternFile : public Standard_Transient {
 		%feature("compactdefaultargs") STEPCAFControl_ExternFile;
 		%feature("autodoc", "Creates an empty structure.
 
-	:rtype: None
+Returns
+-------
+None
 ") STEPCAFControl_ExternFile;
 		 STEPCAFControl_ExternFile();
 
 		/****************** SetLabel ******************/
 		%feature("compactdefaultargs") SetLabel;
-		%feature("autodoc", "	:param L:
-	:type L: TDF_Label
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+None
 ") SetLabel;
 		void SetLabel(const TDF_Label & L);
 
 		/****************** SetLoadStatus ******************/
 		%feature("compactdefaultargs") SetLoadStatus;
-		%feature("autodoc", "	:param stat:
-	:type stat: IFSelect_ReturnStatus
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+stat: IFSelect_ReturnStatus
+
+Returns
+-------
+None
 ") SetLoadStatus;
 		void SetLoadStatus(const IFSelect_ReturnStatus stat);
 
 		/****************** SetName ******************/
 		%feature("compactdefaultargs") SetName;
-		%feature("autodoc", "	:param name:
-	:type name: TCollection_HAsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+name: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & name);
 
 		/****************** SetTransferStatus ******************/
 		%feature("compactdefaultargs") SetTransferStatus;
-		%feature("autodoc", "	:param isok:
-	:type isok: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+isok: bool
+
+Returns
+-------
+None
 ") SetTransferStatus;
 		void SetTransferStatus(const Standard_Boolean isok);
 
 		/****************** SetWS ******************/
 		%feature("compactdefaultargs") SetWS;
-		%feature("autodoc", "	:param WS:
-	:type WS: XSControl_WorkSession
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+
+Returns
+-------
+None
 ") SetWS;
 		void SetWS(const opencascade::handle<XSControl_WorkSession> & WS);
 
 		/****************** SetWriteStatus ******************/
 		%feature("compactdefaultargs") SetWriteStatus;
-		%feature("autodoc", "	:param stat:
-	:type stat: IFSelect_ReturnStatus
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+stat: IFSelect_ReturnStatus
+
+Returns
+-------
+None
 ") SetWriteStatus;
 		void SetWriteStatus(const IFSelect_ReturnStatus stat);
 
@@ -344,193 +429,304 @@ class STEPCAFControl_GDTProperty {
 	public:
 		/****************** GetDatumRefModifiers ******************/
 		%feature("compactdefaultargs") GetDatumRefModifiers;
-		%feature("autodoc", "	:param theModifiers:
-	:type theModifiers: XCAFDimTolObjects_DatumModifiersSequence
-	:param theModifWithVal:
-	:type theModifWithVal: XCAFDimTolObjects_DatumModifWithValue
-	:param theValue:
-	:type theValue: float
-	:param theUnit:
-	:type theUnit: StepBasic_Unit
-	:rtype: opencascade::handle<StepDimTol_HArray1OfDatumReferenceModifier>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theModifiers: XCAFDimTolObjects_DatumModifiersSequence
+theModifWithVal: XCAFDimTolObjects_DatumModifWithValue
+theValue: float
+theUnit: StepBasic_Unit
+
+Returns
+-------
+opencascade::handle<StepDimTol_HArray1OfDatumReferenceModifier>
 ") GetDatumRefModifiers;
 		static opencascade::handle<StepDimTol_HArray1OfDatumReferenceModifier> GetDatumRefModifiers(const XCAFDimTolObjects_DatumModifiersSequence theModifiers, const XCAFDimTolObjects_DatumModifWithValue theModifWithVal, const Standard_Real theValue, const StepBasic_Unit theUnit);
 
 		/****************** GetDatumTargetName ******************/
 		%feature("compactdefaultargs") GetDatumTargetName;
-		%feature("autodoc", "	:param theDatumType:
-	:type theDatumType: XCAFDimTolObjects_DatumTargetType
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDatumType: XCAFDimTolObjects_DatumTargetType
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetDatumTargetName;
 		static opencascade::handle<TCollection_HAsciiString> GetDatumTargetName(const XCAFDimTolObjects_DatumTargetType theDatumType);
 
 		/****************** GetDatumTargetType ******************/
 		%feature("compactdefaultargs") GetDatumTargetType;
-		%feature("autodoc", "	:param theDescription:
-	:type theDescription: TCollection_HAsciiString
-	:param theType:
-	:type theType: XCAFDimTolObjects_DatumTargetType
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDescription: TCollection_HAsciiString
+theType: XCAFDimTolObjects_DatumTargetType
+
+Returns
+-------
+bool
 ") GetDatumTargetType;
 		static Standard_Boolean GetDatumTargetType(const opencascade::handle<TCollection_HAsciiString> & theDescription, XCAFDimTolObjects_DatumTargetType & theType);
 
 		/****************** GetDimClassOfTolerance ******************/
 		%feature("compactdefaultargs") GetDimClassOfTolerance;
-		%feature("autodoc", "	:param theLAF:
-	:type theLAF: StepShape_LimitsAndFits
-	:param theHolle:
-	:type theHolle: bool
-	:param theFV:
-	:type theFV: XCAFDimTolObjects_DimensionFormVariance
-	:param theG:
-	:type theG: XCAFDimTolObjects_DimensionGrade
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theLAF: StepShape_LimitsAndFits
+theHolle: bool
+theFV: XCAFDimTolObjects_DimensionFormVariance
+theG: XCAFDimTolObjects_DimensionGrade
+
+Returns
+-------
+None
 ") GetDimClassOfTolerance;
 		static void GetDimClassOfTolerance(const opencascade::handle<StepShape_LimitsAndFits> & theLAF, Standard_Boolean &OutValue, XCAFDimTolObjects_DimensionFormVariance & theFV, XCAFDimTolObjects_DimensionGrade & theG);
 
 		/****************** GetDimModifierName ******************/
 		%feature("compactdefaultargs") GetDimModifierName;
-		%feature("autodoc", "	:param theModifier:
-	:type theModifier: XCAFDimTolObjects_DimensionModif
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theModifier: XCAFDimTolObjects_DimensionModif
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetDimModifierName;
 		static opencascade::handle<TCollection_HAsciiString> GetDimModifierName(const XCAFDimTolObjects_DimensionModif theModifier);
 
 		/****************** GetDimModifiers ******************/
 		%feature("compactdefaultargs") GetDimModifiers;
-		%feature("autodoc", "	:param theCRI:
-	:type theCRI: StepRepr_CompoundRepresentationItem
-	:param theModifiers:
-	:type theModifiers: XCAFDimTolObjects_DimensionModifiersSequence
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theCRI: StepRepr_CompoundRepresentationItem
+theModifiers: XCAFDimTolObjects_DimensionModifiersSequence
+
+Returns
+-------
+None
 ") GetDimModifiers;
 		static void GetDimModifiers(const opencascade::handle<StepRepr_CompoundRepresentationItem> & theCRI, XCAFDimTolObjects_DimensionModifiersSequence & theModifiers);
 
 		/****************** GetDimQualifierName ******************/
 		%feature("compactdefaultargs") GetDimQualifierName;
-		%feature("autodoc", "	:param theQualifier:
-	:type theQualifier: XCAFDimTolObjects_DimensionQualifier
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theQualifier: XCAFDimTolObjects_DimensionQualifier
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetDimQualifierName;
 		static opencascade::handle<TCollection_HAsciiString> GetDimQualifierName(const XCAFDimTolObjects_DimensionQualifier theQualifier);
 
 		/****************** GetDimQualifierType ******************/
 		%feature("compactdefaultargs") GetDimQualifierType;
-		%feature("autodoc", "	:param theDescription:
-	:type theDescription: TCollection_HAsciiString
-	:param theType:
-	:type theType: XCAFDimTolObjects_DimensionQualifier
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDescription: TCollection_HAsciiString
+theType: XCAFDimTolObjects_DimensionQualifier
+
+Returns
+-------
+bool
 ") GetDimQualifierType;
 		static Standard_Boolean GetDimQualifierType(const opencascade::handle<TCollection_HAsciiString> & theDescription, XCAFDimTolObjects_DimensionQualifier & theType);
 
 		/****************** GetDimType ******************/
 		%feature("compactdefaultargs") GetDimType;
-		%feature("autodoc", "	:param theName:
-	:type theName: TCollection_HAsciiString
-	:param theType:
-	:type theType: XCAFDimTolObjects_DimensionType
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theName: TCollection_HAsciiString
+theType: XCAFDimTolObjects_DimensionType
+
+Returns
+-------
+bool
 ") GetDimType;
 		static Standard_Boolean GetDimType(const opencascade::handle<TCollection_HAsciiString> & theName, XCAFDimTolObjects_DimensionType & theType);
 
 		/****************** GetDimTypeName ******************/
 		%feature("compactdefaultargs") GetDimTypeName;
-		%feature("autodoc", "	:param theType:
-	:type theType: XCAFDimTolObjects_DimensionType
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theType: XCAFDimTolObjects_DimensionType
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetDimTypeName;
 		static opencascade::handle<TCollection_HAsciiString> GetDimTypeName(const XCAFDimTolObjects_DimensionType theType);
 
 		/****************** GetGeomTolerance ******************/
 		%feature("compactdefaultargs") GetGeomTolerance;
-		%feature("autodoc", "	:param theType:
-	:type theType: XCAFDimTolObjects_GeomToleranceType
-	:rtype: opencascade::handle<StepDimTol_GeometricTolerance>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theType: XCAFDimTolObjects_GeomToleranceType
+
+Returns
+-------
+opencascade::handle<StepDimTol_GeometricTolerance>
 ") GetGeomTolerance;
 		static opencascade::handle<StepDimTol_GeometricTolerance> GetGeomTolerance(const XCAFDimTolObjects_GeomToleranceType theType);
 
 		/****************** GetGeomToleranceModifier ******************/
 		%feature("compactdefaultargs") GetGeomToleranceModifier;
-		%feature("autodoc", "	:param theModifier:
-	:type theModifier: XCAFDimTolObjects_GeomToleranceModif
-	:rtype: StepDimTol_GeometricToleranceModifier
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theModifier: XCAFDimTolObjects_GeomToleranceModif
+
+Returns
+-------
+StepDimTol_GeometricToleranceModifier
 ") GetGeomToleranceModifier;
 		static StepDimTol_GeometricToleranceModifier GetGeomToleranceModifier(const XCAFDimTolObjects_GeomToleranceModif theModifier);
 
 		/****************** GetGeomToleranceType ******************/
 		%feature("compactdefaultargs") GetGeomToleranceType;
-		%feature("autodoc", "	:param theType:
-	:type theType: XCAFDimTolObjects_GeomToleranceType
-	:rtype: StepDimTol_GeometricToleranceType
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theType: XCAFDimTolObjects_GeomToleranceType
+
+Returns
+-------
+StepDimTol_GeometricToleranceType
 ") GetGeomToleranceType;
 		static StepDimTol_GeometricToleranceType GetGeomToleranceType(const XCAFDimTolObjects_GeomToleranceType theType);
 
 		/****************** GetGeomToleranceType ******************/
 		%feature("compactdefaultargs") GetGeomToleranceType;
-		%feature("autodoc", "	:param theType:
-	:type theType: StepDimTol_GeometricToleranceType
-	:rtype: XCAFDimTolObjects_GeomToleranceType
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theType: StepDimTol_GeometricToleranceType
+
+Returns
+-------
+XCAFDimTolObjects_GeomToleranceType
 ") GetGeomToleranceType;
 		static XCAFDimTolObjects_GeomToleranceType GetGeomToleranceType(const StepDimTol_GeometricToleranceType theType);
 
 		/****************** GetLimitsAndFits ******************/
 		%feature("compactdefaultargs") GetLimitsAndFits;
-		%feature("autodoc", "	:param theHole:
-	:type theHole: bool
-	:param theFormVariance:
-	:type theFormVariance: XCAFDimTolObjects_DimensionFormVariance
-	:param theGrade:
-	:type theGrade: XCAFDimTolObjects_DimensionGrade
-	:rtype: opencascade::handle<StepShape_LimitsAndFits>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theHole: bool
+theFormVariance: XCAFDimTolObjects_DimensionFormVariance
+theGrade: XCAFDimTolObjects_DimensionGrade
+
+Returns
+-------
+opencascade::handle<StepShape_LimitsAndFits>
 ") GetLimitsAndFits;
 		static opencascade::handle<StepShape_LimitsAndFits> GetLimitsAndFits(Standard_Boolean theHole, XCAFDimTolObjects_DimensionFormVariance theFormVariance, XCAFDimTolObjects_DimensionGrade theGrade);
 
 		/****************** GetTessellation ******************/
 		%feature("compactdefaultargs") GetTessellation;
-		%feature("autodoc", "	:param theShape:
-	:type theShape: TopoDS_Shape
-	:rtype: opencascade::handle<StepVisual_TessellatedGeometricSet>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+opencascade::handle<StepVisual_TessellatedGeometricSet>
 ") GetTessellation;
 		static opencascade::handle<StepVisual_TessellatedGeometricSet> GetTessellation(const TopoDS_Shape theShape);
 
 		/****************** GetTolValueType ******************/
 		%feature("compactdefaultargs") GetTolValueType;
-		%feature("autodoc", "	:param theDescription:
-	:type theDescription: TCollection_HAsciiString
-	:param theType:
-	:type theType: XCAFDimTolObjects_GeomToleranceTypeValue
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDescription: TCollection_HAsciiString
+theType: XCAFDimTolObjects_GeomToleranceTypeValue
+
+Returns
+-------
+bool
 ") GetTolValueType;
 		static Standard_Boolean GetTolValueType(const opencascade::handle<TCollection_HAsciiString> & theDescription, XCAFDimTolObjects_GeomToleranceTypeValue & theType);
 
 		/****************** GetTolValueType ******************/
 		%feature("compactdefaultargs") GetTolValueType;
-		%feature("autodoc", "	:param theType:
-	:type theType: XCAFDimTolObjects_GeomToleranceTypeValue
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theType: XCAFDimTolObjects_GeomToleranceTypeValue
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") GetTolValueType;
 		static opencascade::handle<TCollection_HAsciiString> GetTolValueType(const XCAFDimTolObjects_GeomToleranceTypeValue & theType);
 
 		/****************** IsDimensionalLocation ******************/
 		%feature("compactdefaultargs") IsDimensionalLocation;
-		%feature("autodoc", "	:param theType:
-	:type theType: XCAFDimTolObjects_DimensionType
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theType: XCAFDimTolObjects_DimensionType
+
+Returns
+-------
+bool
 ") IsDimensionalLocation;
 		static Standard_Boolean IsDimensionalLocation(const XCAFDimTolObjects_DimensionType theType);
 
 		/****************** IsDimensionalSize ******************/
 		%feature("compactdefaultargs") IsDimensionalSize;
-		%feature("autodoc", "	:param theType:
-	:type theType: XCAFDimTolObjects_DimensionType
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theType: XCAFDimTolObjects_DimensionType
+
+Returns
+-------
+bool
 ") IsDimensionalSize;
 		static Standard_Boolean IsDimensionalSize(const XCAFDimTolObjects_DimensionType theType);
 
 		/****************** STEPCAFControl_GDTProperty ******************/
 		%feature("compactdefaultargs") STEPCAFControl_GDTProperty;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPCAFControl_GDTProperty;
 		 STEPCAFControl_GDTProperty();
 
@@ -552,7 +748,9 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") ChangeReader;
 		%feature("autodoc", "Returns basic reader.
 
-	:rtype: STEPControl_Reader
+Returns
+-------
+STEPControl_Reader
 ") ChangeReader;
 		STEPControl_Reader & ChangeReader();
 
@@ -560,11 +758,14 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") ExternFile;
 		%feature("autodoc", "Returns data on external file by its name returns false if no external file with given name is read.
 
-	:param name:
-	:type name: char *
-	:param ef:
-	:type ef: STEPCAFControl_ExternFile
-	:rtype: bool
+Parameters
+----------
+name: char *
+ef: STEPCAFControl_ExternFile
+
+Returns
+-------
+bool
 ") ExternFile;
 		Standard_Boolean ExternFile(const char * name, opencascade::handle<STEPCAFControl_ExternFile> & ef);
 
@@ -572,7 +773,9 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") ExternFiles;
 		%feature("autodoc", "Returns data on external files returns null handle if no external files are read.
 
-	:rtype: NCollection_DataMap<TCollection_AsciiString, opencascade::handle<STEPCAFControl_ExternFile>>
+Returns
+-------
+NCollection_DataMap<TCollection_AsciiString, opencascade::handle<STEPCAFControl_ExternFile>>
 ") ExternFiles;
 		const NCollection_DataMap<TCollection_AsciiString, opencascade::handle<STEPCAFControl_ExternFile>> & ExternFiles();
 
@@ -580,57 +783,86 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") FindInstance;
 		%feature("autodoc", "Returns label of instance of an assembly component corresponding to a given nauo.
 
-	:param NAUO:
-	:type NAUO: StepRepr_NextAssemblyUsageOccurrence
-	:param STool:
-	:type STool: XCAFDoc_ShapeTool
-	:param Tool:
-	:type Tool: STEPConstruct_Tool
-	:param ShapeLabelMap:
-	:type ShapeLabelMap: XCAFDoc_DataMapOfShapeLabel
-	:rtype: TDF_Label
+Parameters
+----------
+NAUO: StepRepr_NextAssemblyUsageOccurrence
+STool: XCAFDoc_ShapeTool
+Tool: STEPConstruct_Tool
+ShapeLabelMap: XCAFDoc_DataMapOfShapeLabel
+
+Returns
+-------
+TDF_Label
 ") FindInstance;
 		static TDF_Label FindInstance(const opencascade::handle<StepRepr_NextAssemblyUsageOccurrence> & NAUO, const opencascade::handle<XCAFDoc_ShapeTool> & STool, const STEPConstruct_Tool & Tool, const XCAFDoc_DataMapOfShapeLabel & ShapeLabelMap);
 
 		/****************** GetColorMode ******************/
 		%feature("compactdefaultargs") GetColorMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetColorMode;
 		Standard_Boolean GetColorMode();
 
 		/****************** GetGDTMode ******************/
 		%feature("compactdefaultargs") GetGDTMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetGDTMode;
 		Standard_Boolean GetGDTMode();
 
 		/****************** GetLayerMode ******************/
 		%feature("compactdefaultargs") GetLayerMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetLayerMode;
 		Standard_Boolean GetLayerMode();
 
 		/****************** GetMatMode ******************/
 		%feature("compactdefaultargs") GetMatMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetMatMode;
 		Standard_Boolean GetMatMode();
 
 		/****************** GetNameMode ******************/
 		%feature("compactdefaultargs") GetNameMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetNameMode;
 		Standard_Boolean GetNameMode();
 
 		/****************** GetPropsMode ******************/
 		%feature("compactdefaultargs") GetPropsMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetPropsMode;
 		Standard_Boolean GetPropsMode();
 
 		/****************** GetSHUOMode ******************/
 		%feature("compactdefaultargs") GetSHUOMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetSHUOMode;
 		Standard_Boolean GetSHUOMode();
 
@@ -638,7 +870,9 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") GetViewMode;
 		%feature("autodoc", "Get view mode.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") GetViewMode;
 		Standard_Boolean GetViewMode();
 
@@ -646,11 +880,15 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Clears the internal data structures and attaches to a new session clears the session if it was not yet set for step.
 
-	:param WS:
-	:type WS: XSControl_WorkSession
-	:param scratch: default value is Standard_True
-	:type scratch: bool
-	:rtype: None
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
 
@@ -658,17 +896,24 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") NbRootsForTransfer;
 		%feature("autodoc", "Returns number of roots recognized for transfer shortcut for reader().nbrootsfortransfer().
 
-	:rtype: int
+Returns
+-------
+int
 ") NbRootsForTransfer;
 		Standard_Integer NbRootsForTransfer();
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "	:param filename:
-	:type filename: TCollection_AsciiString
-	:param doc:
-	:type doc: TDocStd_Document
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+filename: TCollection_AsciiString
+doc: TDocStd_Document
+
+Returns
+-------
+bool
 ") Perform;
 		Standard_Boolean Perform(const TCollection_AsciiString & filename, opencascade::handle<TDocStd_Document> & doc);
 
@@ -676,11 +921,14 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Translate step file given by filename into the document return true if succeeded, and false in case of fail.
 
-	:param filename:
-	:type filename: char *
-	:param doc:
-	:type doc: TDocStd_Document
-	:rtype: bool
+Parameters
+----------
+filename: char *
+doc: TDocStd_Document
+
+Returns
+-------
+bool
 ") Perform;
 		Standard_Boolean Perform(const char * filename, opencascade::handle<TDocStd_Document> & doc);
 
@@ -688,9 +936,13 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") ReadFile;
 		%feature("autodoc", "Loads a file and returns the read status provided for use like single-file reader.
 
-	:param filename:
-	:type filename: char *
-	:rtype: IFSelect_ReturnStatus
+Parameters
+----------
+filename: char *
+
+Returns
+-------
+IFSelect_ReturnStatus
 ") ReadFile;
 		IFSelect_ReturnStatus ReadFile(const char * filename);
 
@@ -698,7 +950,9 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") Reader;
 		%feature("autodoc", "Returns basic reader as const.
 
-	:rtype: STEPControl_Reader
+Returns
+-------
+STEPControl_Reader
 ") Reader;
 		const STEPControl_Reader & Reader();
 
@@ -706,7 +960,9 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") STEPCAFControl_Reader;
 		%feature("autodoc", "Creates a reader with an empty step model and sets colormode, layermode, namemode and propsmode to standard_true.
 
-	:rtype: None
+Returns
+-------
+None
 ") STEPCAFControl_Reader;
 		 STEPCAFControl_Reader();
 
@@ -714,11 +970,15 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") STEPCAFControl_Reader;
 		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for step.
 
-	:param WS:
-	:type WS: XSControl_WorkSession
-	:param scratch: default value is Standard_True
-	:type scratch: bool
-	:rtype: None
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") STEPCAFControl_Reader;
 		 STEPCAFControl_Reader(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
 
@@ -726,9 +986,13 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") SetColorMode;
 		%feature("autodoc", "Set colormode for indicate read colors or not.
 
-	:param colormode:
-	:type colormode: bool
-	:rtype: None
+Parameters
+----------
+colormode: bool
+
+Returns
+-------
+None
 ") SetColorMode;
 		void SetColorMode(const Standard_Boolean colormode);
 
@@ -736,9 +1000,13 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") SetGDTMode;
 		%feature("autodoc", "Set gdt mode for indicate write gdt or not.
 
-	:param gdtmode:
-	:type gdtmode: bool
-	:rtype: None
+Parameters
+----------
+gdtmode: bool
+
+Returns
+-------
+None
 ") SetGDTMode;
 		void SetGDTMode(const Standard_Boolean gdtmode);
 
@@ -746,9 +1014,13 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") SetLayerMode;
 		%feature("autodoc", "Set layermode for indicate read layers or not.
 
-	:param layermode:
-	:type layermode: bool
-	:rtype: None
+Parameters
+----------
+layermode: bool
+
+Returns
+-------
+None
 ") SetLayerMode;
 		void SetLayerMode(const Standard_Boolean layermode);
 
@@ -756,9 +1028,13 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") SetMatMode;
 		%feature("autodoc", "Set material mode.
 
-	:param matmode:
-	:type matmode: bool
-	:rtype: None
+Parameters
+----------
+matmode: bool
+
+Returns
+-------
+None
 ") SetMatMode;
 		void SetMatMode(const Standard_Boolean matmode);
 
@@ -766,9 +1042,13 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") SetNameMode;
 		%feature("autodoc", "Set namemode for indicate read name or not.
 
-	:param namemode:
-	:type namemode: bool
-	:rtype: None
+Parameters
+----------
+namemode: bool
+
+Returns
+-------
+None
 ") SetNameMode;
 		void SetNameMode(const Standard_Boolean namemode);
 
@@ -776,9 +1056,13 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") SetPropsMode;
 		%feature("autodoc", "Propsmode for indicate read validation properties or not.
 
-	:param propsmode:
-	:type propsmode: bool
-	:rtype: None
+Parameters
+----------
+propsmode: bool
+
+Returns
+-------
+None
 ") SetPropsMode;
 		void SetPropsMode(const Standard_Boolean propsmode);
 
@@ -786,9 +1070,13 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") SetSHUOMode;
 		%feature("autodoc", "Set shuo mode for indicate write shuo or not.
 
-	:param shuomode:
-	:type shuomode: bool
-	:rtype: None
+Parameters
+----------
+shuomode: bool
+
+Returns
+-------
+None
 ") SetSHUOMode;
 		void SetSHUOMode(const Standard_Boolean shuomode);
 
@@ -796,9 +1084,13 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") SetSourceCodePage;
 		%feature("autodoc", "Return the encoding of step file for converting names into unicode.
 
-	:param theCode:
-	:type theCode: Resource_FormatType
-	:rtype: None
+Parameters
+----------
+theCode: Resource_FormatType
+
+Returns
+-------
+None
 ") SetSourceCodePage;
 		void SetSourceCodePage(Resource_FormatType theCode);
 
@@ -806,9 +1098,13 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") SetViewMode;
 		%feature("autodoc", "Set view mode.
 
-	:param viewmode:
-	:type viewmode: bool
-	:rtype: None
+Parameters
+----------
+viewmode: bool
+
+Returns
+-------
+None
 ") SetViewMode;
 		void SetViewMode(const Standard_Boolean viewmode);
 
@@ -816,7 +1112,9 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") SourceCodePage;
 		%feature("autodoc", "Return the encoding of step file for converting names into unicode. initialized from 'read.stepcaf.codepage' variable by constructor, which is resource_utf8 by default.
 
-	:rtype: Resource_FormatType
+Returns
+-------
+Resource_FormatType
 ") SourceCodePage;
 		Resource_FormatType SourceCodePage();
 
@@ -824,9 +1122,13 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") Transfer;
 		%feature("autodoc", "Translates currently loaded step file into the document returns true if succeeded, and false in case of fail provided for use like single-file reader.
 
-	:param doc:
-	:type doc: TDocStd_Document
-	:rtype: bool
+Parameters
+----------
+doc: TDocStd_Document
+
+Returns
+-------
+bool
 ") Transfer;
 		Standard_Boolean Transfer(opencascade::handle<TDocStd_Document> & doc);
 
@@ -834,11 +1136,14 @@ class STEPCAFControl_Reader {
 		%feature("compactdefaultargs") TransferOneRoot;
 		%feature("autodoc", "Translates currently loaded step file into the document returns true if succeeded, and false in case of fail provided for use like single-file reader.
 
-	:param num:
-	:type num: int
-	:param doc:
-	:type doc: TDocStd_Document
-	:rtype: bool
+Parameters
+----------
+num: int
+doc: TDocStd_Document
+
+Returns
+-------
+bool
 ") TransferOneRoot;
 		Standard_Boolean TransferOneRoot(const Standard_Integer num, opencascade::handle<TDocStd_Document> & doc);
 
@@ -860,7 +1165,9 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") ChangeWriter;
 		%feature("autodoc", "Returns basic reader for root file.
 
-	:rtype: STEPControl_Writer
+Returns
+-------
+STEPControl_Writer
 ") ChangeWriter;
 		STEPControl_Writer & ChangeWriter();
 
@@ -868,11 +1175,14 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") ExternFile;
 		%feature("autodoc", "Returns data on external file by its original label returns false if no external file with given name is read.
 
-	:param L:
-	:type L: TDF_Label
-	:param ef:
-	:type ef: STEPCAFControl_ExternFile
-	:rtype: bool
+Parameters
+----------
+L: TDF_Label
+ef: STEPCAFControl_ExternFile
+
+Returns
+-------
+bool
 ") ExternFile;
 		Standard_Boolean ExternFile(const TDF_Label & L, opencascade::handle<STEPCAFControl_ExternFile> & ef);
 
@@ -880,11 +1190,14 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") ExternFile;
 		%feature("autodoc", "Returns data on external file by its name returns false if no external file with given name is read.
 
-	:param name:
-	:type name: char *
-	:param ef:
-	:type ef: STEPCAFControl_ExternFile
-	:rtype: bool
+Parameters
+----------
+name: char *
+ef: STEPCAFControl_ExternFile
+
+Returns
+-------
+bool
 ") ExternFile;
 		Standard_Boolean ExternFile(const char * name, opencascade::handle<STEPCAFControl_ExternFile> & ef);
 
@@ -892,49 +1205,79 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") ExternFiles;
 		%feature("autodoc", "Returns data on external files returns null handle if no external files are read.
 
-	:rtype: NCollection_DataMap<TCollection_AsciiString, opencascade::handle<STEPCAFControl_ExternFile>>
+Returns
+-------
+NCollection_DataMap<TCollection_AsciiString, opencascade::handle<STEPCAFControl_ExternFile>>
 ") ExternFiles;
 		const NCollection_DataMap<TCollection_AsciiString, opencascade::handle<STEPCAFControl_ExternFile>> & ExternFiles();
 
 		/****************** GetColorMode ******************/
 		%feature("compactdefaultargs") GetColorMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetColorMode;
 		Standard_Boolean GetColorMode();
 
 		/****************** GetDimTolMode ******************/
 		%feature("compactdefaultargs") GetDimTolMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetDimTolMode;
 		Standard_Boolean GetDimTolMode();
 
 		/****************** GetLayerMode ******************/
 		%feature("compactdefaultargs") GetLayerMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetLayerMode;
 		Standard_Boolean GetLayerMode();
 
 		/****************** GetMaterialMode ******************/
 		%feature("compactdefaultargs") GetMaterialMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetMaterialMode;
 		Standard_Boolean GetMaterialMode();
 
 		/****************** GetNameMode ******************/
 		%feature("compactdefaultargs") GetNameMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetNameMode;
 		Standard_Boolean GetNameMode();
 
 		/****************** GetPropsMode ******************/
 		%feature("compactdefaultargs") GetPropsMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetPropsMode;
 		Standard_Boolean GetPropsMode();
 
 		/****************** GetSHUOMode ******************/
 		%feature("compactdefaultargs") GetSHUOMode;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") GetSHUOMode;
 		Standard_Boolean GetSHUOMode();
 
@@ -942,21 +1285,30 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Clears the internal data structures and attaches to a new session clears the session if it was not yet set for step.
 
-	:param WS:
-	:type WS: XSControl_WorkSession
-	:param scratch: default value is Standard_True
-	:type scratch: bool
-	:rtype: None
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "	:param doc:
-	:type doc: TDocStd_Document
-	:param filename:
-	:type filename: TCollection_AsciiString
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+doc: TDocStd_Document
+filename: TCollection_AsciiString
+
+Returns
+-------
+bool
 ") Perform;
 		Standard_Boolean Perform(const opencascade::handle<TDocStd_Document> & doc, const TCollection_AsciiString & filename);
 
@@ -964,11 +1316,14 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Transfers a document and writes it to a step file returns true if translation is ok.
 
-	:param doc:
-	:type doc: TDocStd_Document
-	:param filename:
-	:type filename: char *
-	:rtype: bool
+Parameters
+----------
+doc: TDocStd_Document
+filename: char *
+
+Returns
+-------
+bool
 ") Perform;
 		Standard_Boolean Perform(const opencascade::handle<TDocStd_Document> & doc, const char * filename);
 
@@ -976,7 +1331,9 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") STEPCAFControl_Writer;
 		%feature("autodoc", "Creates a writer with an empty step model and sets colormode, layermode, namemode and propsmode to standard_true.
 
-	:rtype: None
+Returns
+-------
+None
 ") STEPCAFControl_Writer;
 		 STEPCAFControl_Writer();
 
@@ -984,11 +1341,15 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") STEPCAFControl_Writer;
 		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for step clears the internal data structures.
 
-	:param WS:
-	:type WS: XSControl_WorkSession
-	:param scratch: default value is Standard_True
-	:type scratch: bool
-	:rtype: None
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") STEPCAFControl_Writer;
 		 STEPCAFControl_Writer(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
 
@@ -996,9 +1357,13 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") SetColorMode;
 		%feature("autodoc", "Set colormode for indicate write colors or not.
 
-	:param colormode:
-	:type colormode: bool
-	:rtype: None
+Parameters
+----------
+colormode: bool
+
+Returns
+-------
+None
 ") SetColorMode;
 		void SetColorMode(const Standard_Boolean colormode);
 
@@ -1006,9 +1371,13 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") SetDimTolMode;
 		%feature("autodoc", "Set dimtolmode for indicate write d&gts or not.
 
-	:param dimtolmode:
-	:type dimtolmode: bool
-	:rtype: None
+Parameters
+----------
+dimtolmode: bool
+
+Returns
+-------
+None
 ") SetDimTolMode;
 		void SetDimTolMode(const Standard_Boolean dimtolmode);
 
@@ -1016,9 +1385,13 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") SetLayerMode;
 		%feature("autodoc", "Set layermode for indicate write layers or not.
 
-	:param layermode:
-	:type layermode: bool
-	:rtype: None
+Parameters
+----------
+layermode: bool
+
+Returns
+-------
+None
 ") SetLayerMode;
 		void SetLayerMode(const Standard_Boolean layermode);
 
@@ -1026,9 +1399,13 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") SetMaterialMode;
 		%feature("autodoc", "Set dimtolmode for indicate write d&gts or not.
 
-	:param matmode:
-	:type matmode: bool
-	:rtype: None
+Parameters
+----------
+matmode: bool
+
+Returns
+-------
+None
 ") SetMaterialMode;
 		void SetMaterialMode(const Standard_Boolean matmode);
 
@@ -1036,9 +1413,13 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") SetNameMode;
 		%feature("autodoc", "Set namemode for indicate write name or not.
 
-	:param namemode:
-	:type namemode: bool
-	:rtype: None
+Parameters
+----------
+namemode: bool
+
+Returns
+-------
+None
 ") SetNameMode;
 		void SetNameMode(const Standard_Boolean namemode);
 
@@ -1046,9 +1427,13 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") SetPropsMode;
 		%feature("autodoc", "Propsmode for indicate write validation properties or not.
 
-	:param propsmode:
-	:type propsmode: bool
-	:rtype: None
+Parameters
+----------
+propsmode: bool
+
+Returns
+-------
+None
 ") SetPropsMode;
 		void SetPropsMode(const Standard_Boolean propsmode);
 
@@ -1056,9 +1441,13 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") SetSHUOMode;
 		%feature("autodoc", "Set shuo mode for indicate write shuo or not.
 
-	:param shuomode:
-	:type shuomode: bool
-	:rtype: None
+Parameters
+----------
+shuomode: bool
+
+Returns
+-------
+None
 ") SetSHUOMode;
 		void SetSHUOMode(const Standard_Boolean shuomode);
 
@@ -1066,13 +1455,17 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") Transfer;
 		%feature("autodoc", "Transfers a document (or single label) to a step model the mode of translation of shape is asis if multi is not null pointer, it switches to multifile mode (with external refs), and string pointed by <multi> gives prefix for names of extern files (can be empty string) returns true if translation is ok.
 
-	:param doc:
-	:type doc: TDocStd_Document
-	:param mode: default value is STEPControl_AsIs
-	:type mode: STEPControl_StepModelType
-	:param multi: default value is 0
-	:type multi: char *
-	:rtype: bool
+Parameters
+----------
+doc: TDocStd_Document
+mode: STEPControl_StepModelType,optional
+	default value is STEPControl_AsIs
+multi: char *,optional
+	default value is 0
+
+Returns
+-------
+bool
 ") Transfer;
 		Standard_Boolean Transfer(const opencascade::handle<TDocStd_Document> & doc, const STEPControl_StepModelType mode = STEPControl_AsIs, const char * multi = 0);
 
@@ -1080,13 +1473,17 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") Transfer;
 		%feature("autodoc", "Method to transfer part of the document specified by label.
 
-	:param L:
-	:type L: TDF_Label
-	:param mode: default value is STEPControl_AsIs
-	:type mode: STEPControl_StepModelType
-	:param multi: default value is 0
-	:type multi: char *
-	:rtype: bool
+Parameters
+----------
+L: TDF_Label
+mode: STEPControl_StepModelType,optional
+	default value is STEPControl_AsIs
+multi: char *,optional
+	default value is 0
+
+Returns
+-------
+bool
 ") Transfer;
 		Standard_Boolean Transfer(const TDF_Label & L, const STEPControl_StepModelType mode = STEPControl_AsIs, const char * multi = 0);
 
@@ -1094,9 +1491,13 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") Write;
 		%feature("autodoc", "Writes all the produced models into file in case of multimodel with extern references, filename will be a name of root file, all other files have names of corresponding parts provided for use like single-file writer.
 
-	:param filename:
-	:type filename: char *
-	:rtype: IFSelect_ReturnStatus
+Parameters
+----------
+filename: char *
+
+Returns
+-------
+IFSelect_ReturnStatus
 ") Write;
 		IFSelect_ReturnStatus Write(const char * filename);
 
@@ -1104,7 +1505,9 @@ class STEPCAFControl_Writer {
 		%feature("compactdefaultargs") Writer;
 		%feature("autodoc", "Returns basic reader as const.
 
-	:rtype: STEPControl_Writer
+Returns
+-------
+STEPControl_Writer
 ") Writer;
 		const STEPControl_Writer & Writer();
 

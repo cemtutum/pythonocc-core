@@ -86,13 +86,15 @@ class BRepSweep_Builder {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the shape 1 in the shape 2, set to <orient> orientation.
 
-	:param aShape1:
-	:type aShape1: TopoDS_Shape
-	:param aShape2:
-	:type aShape2: TopoDS_Shape
-	:param Orient:
-	:type Orient: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aShape1: TopoDS_Shape
+aShape2: TopoDS_Shape
+Orient: TopAbs_Orientation
+
+Returns
+-------
+None
 ") Add;
 		void Add(TopoDS_Shape & aShape1, const TopoDS_Shape & aShape2, const TopAbs_Orientation Orient);
 
@@ -100,11 +102,14 @@ class BRepSweep_Builder {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the shape 1 in the shape 2.
 
-	:param aShape1:
-	:type aShape1: TopoDS_Shape
-	:param aShape2:
-	:type aShape2: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+aShape1: TopoDS_Shape
+aShape2: TopoDS_Shape
+
+Returns
+-------
+None
 ") Add;
 		void Add(TopoDS_Shape & aShape1, const TopoDS_Shape & aShape2);
 
@@ -112,15 +117,23 @@ class BRepSweep_Builder {
 		%feature("compactdefaultargs") BRepSweep_Builder;
 		%feature("autodoc", "Creates a builder.
 
-	:param aBuilder:
-	:type aBuilder: BRep_Builder
-	:rtype: None
+Parameters
+----------
+aBuilder: BRep_Builder
+
+Returns
+-------
+None
 ") BRepSweep_Builder;
 		 BRepSweep_Builder(const BRep_Builder & aBuilder);
 
 		/****************** Builder ******************/
 		%feature("compactdefaultargs") Builder;
-		%feature("autodoc", "	:rtype: BRep_Builder
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+BRep_Builder
 ") Builder;
 		const BRep_Builder & Builder();
 
@@ -128,9 +141,13 @@ class BRepSweep_Builder {
 		%feature("compactdefaultargs") MakeCompSolid;
 		%feature("autodoc", "Returns an empty compsolid.
 
-	:param aCompSolid:
-	:type aCompSolid: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+aCompSolid: TopoDS_Shape
+
+Returns
+-------
+None
 ") MakeCompSolid;
 		void MakeCompSolid(TopoDS_Shape & aCompSolid);
 
@@ -138,9 +155,13 @@ class BRepSweep_Builder {
 		%feature("compactdefaultargs") MakeCompound;
 		%feature("autodoc", "Returns an empty compound.
 
-	:param aCompound:
-	:type aCompound: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+aCompound: TopoDS_Shape
+
+Returns
+-------
+None
 ") MakeCompound;
 		void MakeCompound(TopoDS_Shape & aCompound);
 
@@ -148,9 +169,13 @@ class BRepSweep_Builder {
 		%feature("compactdefaultargs") MakeShell;
 		%feature("autodoc", "Returns an empty shell.
 
-	:param aShell:
-	:type aShell: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+aShell: TopoDS_Shape
+
+Returns
+-------
+None
 ") MakeShell;
 		void MakeShell(TopoDS_Shape & aShell);
 
@@ -158,9 +183,13 @@ class BRepSweep_Builder {
 		%feature("compactdefaultargs") MakeSolid;
 		%feature("autodoc", "Returns an empty solid.
 
-	:param aSolid:
-	:type aSolid: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+aSolid: TopoDS_Shape
+
+Returns
+-------
+None
 ") MakeSolid;
 		void MakeSolid(TopoDS_Shape & aSolid);
 
@@ -168,9 +197,13 @@ class BRepSweep_Builder {
 		%feature("compactdefaultargs") MakeWire;
 		%feature("autodoc", "Returns an empty wire.
 
-	:param aWire:
-	:type aWire: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+aWire: TopoDS_Shape
+
+Returns
+-------
+None
 ") MakeWire;
 		void MakeWire(TopoDS_Shape & aWire);
 
@@ -190,7 +223,11 @@ class BRepSweep_Iterator {
 	public:
 		/****************** BRepSweep_Iterator ******************/
 		%feature("compactdefaultargs") BRepSweep_Iterator;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") BRepSweep_Iterator;
 		 BRepSweep_Iterator();
 
@@ -198,9 +235,13 @@ class BRepSweep_Iterator {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Resest the iterator on sub-shapes of <ashape>.
 
-	:param aShape:
-	:type aShape: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+aShape: TopoDS_Shape
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Shape & aShape);
 
@@ -208,7 +249,9 @@ class BRepSweep_Iterator {
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Returns true if there is a current sub-shape.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
@@ -216,7 +259,9 @@ class BRepSweep_Iterator {
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "Moves to the next sub-shape.
 
-	:rtype: None
+Returns
+-------
+None
 ") Next;
 		void Next();
 
@@ -224,7 +269,9 @@ class BRepSweep_Iterator {
 		%feature("compactdefaultargs") Orientation;
 		%feature("autodoc", "Returns the orientation of the current sub-shape.
 
-	:rtype: TopAbs_Orientation
+Returns
+-------
+TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation();
 
@@ -232,7 +279,9 @@ class BRepSweep_Iterator {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the current sub-shape.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Value;
 		const TopoDS_Shape Value();
 
@@ -253,7 +302,11 @@ class BRepSweep_NumLinearRegularSweep {
 	public:
 		/****************** Closed ******************/
 		%feature("compactdefaultargs") Closed;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Closed;
 		Standard_Boolean Closed();
 
@@ -261,11 +314,14 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") DirectSolid;
 		%feature("autodoc", "Returns the orientation of the shell in the solid generated by the face agens with the edge adirs. it is reversed if the surface is swept in the direction of the normal.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: TopAbs_Orientation
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+TopAbs_Orientation
 ") DirectSolid;
 		virtual TopAbs_Orientation DirectSolid(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -273,7 +329,9 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") FirstShape;
 		%feature("autodoc", "Returns the resulting shape indexed by the first vertex of mydirwire and mygenshape.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") FirstShape;
 		TopoDS_Shape FirstShape();
 
@@ -281,9 +339,13 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") FirstShape;
 		%feature("autodoc", "Returns the resulting shape indexed by the first vertex of mydirwire and agens.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") FirstShape;
 		TopoDS_Shape FirstShape(const TopoDS_Shape & aGenS);
 
@@ -291,17 +353,17 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") GDDShapeIsToAdd;
 		%feature("autodoc", "Returns true if anewsubshape (addressed by agens and asubdirs) must be added in anewshape (addressed by agens and adirs).
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:param aNewSubShape:
-	:type aNewSubShape: TopoDS_Shape
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:param aSubDirS:
-	:type aSubDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aNewShape: TopoDS_Shape
+aNewSubShape: TopoDS_Shape
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+aSubDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") GDDShapeIsToAdd;
 		virtual Standard_Boolean GDDShapeIsToAdd(const TopoDS_Shape & aNewShape, const TopoDS_Shape & aNewSubShape, const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS, const Sweep_NumShape & aSubDirS);
 
@@ -309,17 +371,17 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") GGDShapeIsToAdd;
 		%feature("autodoc", "Returns true if anewsubshape (addressed by asubgens and adirs) must be added in anewshape (addressed by agens and adirs).
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:param aNewSubShape:
-	:type aNewSubShape: TopoDS_Shape
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aSubGenS:
-	:type aSubGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aNewShape: TopoDS_Shape
+aNewSubShape: TopoDS_Shape
+aGenS: TopoDS_Shape
+aSubGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") GGDShapeIsToAdd;
 		virtual Standard_Boolean GGDShapeIsToAdd(const TopoDS_Shape & aNewShape, const TopoDS_Shape & aNewSubShape, const TopoDS_Shape & aGenS, const TopoDS_Shape & aSubGenS, const Sweep_NumShape & aDirS);
 
@@ -327,9 +389,13 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") GenIsUsed;
 		%feature("autodoc", "Returns true if the shape, generated from thes is used in result shape.
 
-	:param theS:
-	:type theS: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+theS: TopoDS_Shape
+
+Returns
+-------
+bool
 ") GenIsUsed;
 		Standard_Boolean GenIsUsed(const TopoDS_Shape & theS);
 
@@ -337,11 +403,14 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") HasShape;
 		%feature("autodoc", "Returns true if adirs and agens addresses a resulting shape. in some specific cases the shape can be geometrically inexsistant, then this function returns false.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") HasShape;
 		virtual Standard_Boolean HasShape(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -349,9 +418,13 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") IsInvariant;
 		%feature("autodoc", "Returns true if agens cannot be transformed.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsInvariant;
 		virtual Standard_Boolean IsInvariant(const TopoDS_Shape & aGenS);
 
@@ -359,9 +432,13 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") IsUsed;
 		%feature("autodoc", "Returns true if the initial shape agens is used in result shape.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsUsed;
 		Standard_Boolean IsUsed(const TopoDS_Shape & aGenS);
 
@@ -369,7 +446,9 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") LastShape;
 		%feature("autodoc", "Returns the resulting shape indexed by the last vertex of mydirwire and mygenshape.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") LastShape;
 		TopoDS_Shape LastShape();
 
@@ -377,9 +456,13 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") LastShape;
 		%feature("autodoc", "Returns the resulting shape indexed by the last vertex of mydirwire and agens.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") LastShape;
 		TopoDS_Shape LastShape(const TopoDS_Shape & aGenS);
 
@@ -387,11 +470,14 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") MakeEmptyDirectingEdge;
 		%feature("autodoc", "Builds the edge addressed by [agenv,adire], with its geometric part, but without subcomponents.
 
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenV: TopoDS_Shape
+aDirE: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyDirectingEdge;
 		virtual TopoDS_Shape MakeEmptyDirectingEdge(const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirE);
 
@@ -399,11 +485,14 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") MakeEmptyFace;
 		%feature("autodoc", "Builds the face addressed by [agens,adirs], with its geometric part, but without subcomponents. the couple agens, adirs can be a 'generating face and a directing vertex' or 'a generating edge and a directing edge'.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyFace;
 		virtual TopoDS_Shape MakeEmptyFace(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -411,11 +500,14 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") MakeEmptyGeneratingEdge;
 		%feature("autodoc", "Builds the edge addressed by [agene,adirv], with its geometric part, but without subcomponents.
 
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenE: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyGeneratingEdge;
 		virtual TopoDS_Shape MakeEmptyGeneratingEdge(const TopoDS_Shape & aGenE, const Sweep_NumShape & aDirV);
 
@@ -423,11 +515,14 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") MakeEmptyVertex;
 		%feature("autodoc", "Builds the vertex addressed by [agenv,adirv], with its geometric part, but without subcomponents.
 
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenV: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyVertex;
 		virtual TopoDS_Shape MakeEmptyVertex(const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirV);
 
@@ -435,17 +530,17 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SeparatedWires;
 		%feature("autodoc", "In some particular cases the topology of a generated face must be composed of independant closed wires, in this case this function returns true.
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:param aNewSubShape:
-	:type aNewSubShape: TopoDS_Shape
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aSubGenS:
-	:type aSubGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aNewShape: TopoDS_Shape
+aNewSubShape: TopoDS_Shape
+aGenS: TopoDS_Shape
+aSubGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") SeparatedWires;
 		virtual Standard_Boolean SeparatedWires(const TopoDS_Shape & aNewShape, const TopoDS_Shape & aNewSubShape, const TopoDS_Shape & aGenS, const TopoDS_Shape & aSubGenS, const Sweep_NumShape & aDirS);
 
@@ -453,11 +548,14 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetContinuity;
 		%feature("autodoc", "Called to propagate the continuity of every vertex between two edges of the generating wire agens on the generated edge and faces.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetContinuity;
 		virtual void SetContinuity(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -465,19 +563,18 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetDirectingPCurve;
 		%feature("autodoc", "Sets the pcurve for a new edge on a new face. the new edge and the new face were generated using agene, adire and agenv.
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:param orien:
-	:type orien: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewEdge: TopoDS_Shape
+aGenE: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirE: Sweep_NumShape
+orien: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetDirectingPCurve;
 		virtual void SetDirectingPCurve(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape & aGenE, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirE, const TopAbs_Orientation orien);
 
@@ -485,17 +582,17 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetDirectingParameter;
 		%feature("autodoc", "Sets the parameter of the new vertex on the new edge. the new edge and new vertex where generated from agenv adire, and adirv.
 
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aNewVertex:
-	:type aNewVertex: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aNewEdge: TopoDS_Shape
+aNewVertex: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirE: Sweep_NumShape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetDirectingParameter;
 		virtual void SetDirectingParameter(const TopoDS_Shape & aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirE, const Sweep_NumShape & aDirV);
 
@@ -503,19 +600,18 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetGeneratingPCurve;
 		%feature("autodoc", "Sets the pcurve for a new edge on a new face. the new edge and the new face were generated using agene, adire and adirv.
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:param orien:
-	:type orien: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewEdge: TopoDS_Shape
+aGenE: TopoDS_Shape
+aDirE: Sweep_NumShape
+aDirV: Sweep_NumShape
+orien: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetGeneratingPCurve;
 		virtual void SetGeneratingPCurve(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape & aGenE, const Sweep_NumShape & aDirE, const Sweep_NumShape & aDirV, const TopAbs_Orientation orien);
 
@@ -523,17 +619,17 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetGeneratingParameter;
 		%feature("autodoc", "Sets the parameter of the new vertex on the new edge. the new edge and new vertex where generated from agene, agenv and adirv .
 
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aNewVertex:
-	:type aNewVertex: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aNewEdge: TopoDS_Shape
+aNewVertex: TopoDS_Shape
+aGenE: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetGeneratingParameter;
 		virtual void SetGeneratingParameter(const TopoDS_Shape & aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape & aGenE, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirV);
 
@@ -541,19 +637,18 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetPCurve;
 		%feature("autodoc", "Sets the pcurve for a new edge on a new face. the new edge and the new face were generated using agenf, agene and adirv.
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aGenF:
-	:type aGenF: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:param orien:
-	:type orien: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewEdge: TopoDS_Shape
+aGenF: TopoDS_Shape
+aGenE: TopoDS_Shape
+aDirV: Sweep_NumShape
+orien: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetPCurve;
 		virtual void SetPCurve(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape & aGenF, const TopoDS_Shape & aGenE, const Sweep_NumShape & aDirV, const TopAbs_Orientation orien);
 
@@ -561,17 +656,17 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetParameters;
 		%feature("autodoc", "Sets the parameters of the new vertex on the new face. the new face and new vertex where generated from agenf, agenv and adirv .
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewVertex:
-	:type aNewVertex: TopoDS_Shape
-	:param aGenF:
-	:type aGenF: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewVertex: TopoDS_Shape
+aGenF: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetParameters;
 		virtual void SetParameters(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewVertex, const TopoDS_Shape & aGenF, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirV);
 
@@ -579,11 +674,14 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns the resulting shape indexed by adirs and agens.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -591,9 +689,13 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns the resulting shape indexed by mydirwire and agens.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape(const TopoDS_Shape & aGenS);
 
@@ -601,7 +703,9 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns the resulting shape indexed by mydirwire and mygenshape.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
 
@@ -609,9 +713,13 @@ class BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SplitShell;
 		%feature("autodoc", "In some particular cases the topology of a generated shell must be composed of independant closed shells, in this case this function returns a compound of independant shells.
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aNewShape: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") SplitShell;
 		virtual TopoDS_Shape SplitShell(const TopoDS_Shape & aNewShape);
 
@@ -633,15 +741,18 @@ class BRepSweep_Prism {
 		%feature("compactdefaultargs") BRepSweep_Prism;
 		%feature("autodoc", "Builds the prism of base s and vector v. if c is true, s is copied. if canonize is true then generated surfaces are attempted to be canonized in simple types.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param V:
-	:type V: gp_Vec
-	:param Copy: default value is Standard_False
-	:type Copy: bool
-	:param Canonize: default value is Standard_True
-	:type Canonize: bool
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+V: gp_Vec
+Copy: bool,optional
+	default value is Standard_False
+Canonize: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") BRepSweep_Prism;
 		 BRepSweep_Prism(const TopoDS_Shape & S, const gp_Vec & V, const Standard_Boolean Copy = Standard_False, const Standard_Boolean Canonize = Standard_True);
 
@@ -649,17 +760,20 @@ class BRepSweep_Prism {
 		%feature("compactdefaultargs") BRepSweep_Prism;
 		%feature("autodoc", "Builds a semi-infinite or an infinite prism of base s. if copy is true s is copied. if inf is true the prism is infinite, if inf is false the prism is infinite in the direction d. if canonize is true then generated surfaces are attempted to be canonized in simple types.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param D:
-	:type D: gp_Dir
-	:param Inf: default value is Standard_True
-	:type Inf: bool
-	:param Copy: default value is Standard_False
-	:type Copy: bool
-	:param Canonize: default value is Standard_True
-	:type Canonize: bool
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+D: gp_Dir
+Inf: bool,optional
+	default value is Standard_True
+Copy: bool,optional
+	default value is Standard_False
+Canonize: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") BRepSweep_Prism;
 		 BRepSweep_Prism(const TopoDS_Shape & S, const gp_Dir & D, const Standard_Boolean Inf = Standard_True, const Standard_Boolean Copy = Standard_False, const Standard_Boolean Canonize = Standard_True);
 
@@ -667,7 +781,9 @@ class BRepSweep_Prism {
 		%feature("compactdefaultargs") FirstShape;
 		%feature("autodoc", "Returns the topods shape of the bottom of the prism.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") FirstShape;
 		TopoDS_Shape FirstShape();
 
@@ -675,9 +791,13 @@ class BRepSweep_Prism {
 		%feature("compactdefaultargs") FirstShape;
 		%feature("autodoc", "Returns the topods shape of the bottom of the prism. generated with agens (subshape of the generating shape).
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") FirstShape;
 		TopoDS_Shape FirstShape(const TopoDS_Shape & aGenS);
 
@@ -685,9 +805,13 @@ class BRepSweep_Prism {
 		%feature("compactdefaultargs") GenIsUsed;
 		%feature("autodoc", "Returns true if the shape, generated from thes is used in result shape.
 
-	:param theS:
-	:type theS: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+theS: TopoDS_Shape
+
+Returns
+-------
+bool
 ") GenIsUsed;
 		Standard_Boolean GenIsUsed(const TopoDS_Shape & theS);
 
@@ -695,9 +819,13 @@ class BRepSweep_Prism {
 		%feature("compactdefaultargs") IsUsed;
 		%feature("autodoc", "Returns true if the agens is used in resulting shape.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsUsed;
 		Standard_Boolean IsUsed(const TopoDS_Shape & aGenS);
 
@@ -705,7 +833,9 @@ class BRepSweep_Prism {
 		%feature("compactdefaultargs") LastShape;
 		%feature("autodoc", "Returns the topods shape of the top of the prism.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") LastShape;
 		TopoDS_Shape LastShape();
 
@@ -713,9 +843,13 @@ class BRepSweep_Prism {
 		%feature("compactdefaultargs") LastShape;
 		%feature("autodoc", "Returns the topods shape of the top of the prism. generated with agens (subshape of the generating shape).
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") LastShape;
 		TopoDS_Shape LastShape(const TopoDS_Shape & aGenS);
 
@@ -723,7 +857,9 @@ class BRepSweep_Prism {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns the topods shape attached to the prism.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
 
@@ -731,9 +867,13 @@ class BRepSweep_Prism {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns the topods shape generated with agens (subshape of the generating shape).
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape(const TopoDS_Shape & aGenS);
 
@@ -741,7 +881,9 @@ class BRepSweep_Prism {
 		%feature("compactdefaultargs") Vec;
 		%feature("autodoc", "Returns the vector of the prism, if it is an infinite prism the vec is unitar.
 
-	:rtype: gp_Vec
+Returns
+-------
+gp_Vec
 ") Vec;
 		gp_Vec Vec();
 
@@ -763,7 +905,9 @@ class BRepSweep_Revol {
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Returns the angle.
 
-	:rtype: float
+Returns
+-------
+float
 ") Angle;
 		Standard_Real Angle();
 
@@ -771,7 +915,9 @@ class BRepSweep_Revol {
 		%feature("compactdefaultargs") Axe;
 		%feature("autodoc", "Returns the axis.
 
-	:rtype: gp_Ax1
+Returns
+-------
+gp_Ax1
 ") Axe;
 		gp_Ax1 Axe();
 
@@ -779,15 +925,17 @@ class BRepSweep_Revol {
 		%feature("compactdefaultargs") BRepSweep_Revol;
 		%feature("autodoc", "Builds the revol of meridian s axis a and angle d. if c is true s is copied.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param A:
-	:type A: gp_Ax1
-	:param D:
-	:type D: float
-	:param C: default value is Standard_False
-	:type C: bool
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+A: gp_Ax1
+D: float
+C: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") BRepSweep_Revol;
 		 BRepSweep_Revol(const TopoDS_Shape & S, const gp_Ax1 & A, const Standard_Real D, const Standard_Boolean C = Standard_False);
 
@@ -795,13 +943,16 @@ class BRepSweep_Revol {
 		%feature("compactdefaultargs") BRepSweep_Revol;
 		%feature("autodoc", "Builds the revol of meridian s axis a and angle 2*pi. if c is true s is copied.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param A:
-	:type A: gp_Ax1
-	:param C: default value is Standard_False
-	:type C: bool
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+A: gp_Ax1
+C: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") BRepSweep_Revol;
 		 BRepSweep_Revol(const TopoDS_Shape & S, const gp_Ax1 & A, const Standard_Boolean C = Standard_False);
 
@@ -809,7 +960,9 @@ class BRepSweep_Revol {
 		%feature("compactdefaultargs") FirstShape;
 		%feature("autodoc", "Returns the first shape of the revol (coinciding with the generating shape).
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") FirstShape;
 		TopoDS_Shape FirstShape();
 
@@ -817,9 +970,13 @@ class BRepSweep_Revol {
 		%feature("compactdefaultargs") FirstShape;
 		%feature("autodoc", "Returns the first shape of the revol (coinciding with the generating shape).
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") FirstShape;
 		TopoDS_Shape FirstShape(const TopoDS_Shape & aGenS);
 
@@ -827,9 +984,13 @@ class BRepSweep_Revol {
 		%feature("compactdefaultargs") IsUsed;
 		%feature("autodoc", "Returns true if the agens is used in resulting shape .
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsUsed;
 		Standard_Boolean IsUsed(const TopoDS_Shape & aGenS);
 
@@ -837,7 +998,9 @@ class BRepSweep_Revol {
 		%feature("compactdefaultargs") LastShape;
 		%feature("autodoc", "Returns the topods shape of the top of the prism.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") LastShape;
 		TopoDS_Shape LastShape();
 
@@ -845,9 +1008,13 @@ class BRepSweep_Revol {
 		%feature("compactdefaultargs") LastShape;
 		%feature("autodoc", "Returns the topods shape of the top of the prism. generated with agens (subshape of the generating shape).
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") LastShape;
 		TopoDS_Shape LastShape(const TopoDS_Shape & aGenS);
 
@@ -855,7 +1022,9 @@ class BRepSweep_Revol {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns the topods shape attached to the revol.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
 
@@ -863,9 +1032,13 @@ class BRepSweep_Revol {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns the topods shape generated with agens (subshape of the generating shape).
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape(const TopoDS_Shape & aGenS);
 
@@ -887,9 +1060,13 @@ class BRepSweep_Tool {
 		%feature("compactdefaultargs") BRepSweep_Tool;
 		%feature("autodoc", "Initialize the tool with <ashape>. the indextool must prepare an indexation for all the subshapes of this shape.
 
-	:param aShape:
-	:type aShape: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+aShape: TopoDS_Shape
+
+Returns
+-------
+None
 ") BRepSweep_Tool;
 		 BRepSweep_Tool(const TopoDS_Shape & aShape);
 
@@ -897,9 +1074,13 @@ class BRepSweep_Tool {
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "Returns the index of <ashape>.
 
-	:param aShape:
-	:type aShape: TopoDS_Shape
-	:rtype: int
+Parameters
+----------
+aShape: TopoDS_Shape
+
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index(const TopoDS_Shape & aShape);
 
@@ -907,7 +1088,9 @@ class BRepSweep_Tool {
 		%feature("compactdefaultargs") NbShapes;
 		%feature("autodoc", "Returns the number of subshapes in the shape.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbShapes;
 		Standard_Integer NbShapes();
 
@@ -915,9 +1098,13 @@ class BRepSweep_Tool {
 		%feature("compactdefaultargs") Orientation;
 		%feature("autodoc", "Returns the orientation of <ashape>.
 
-	:param aShape:
-	:type aShape: TopoDS_Shape
-	:rtype: TopAbs_Orientation
+Parameters
+----------
+aShape: TopoDS_Shape
+
+Returns
+-------
+TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation(const TopoDS_Shape & aShape);
 
@@ -925,11 +1112,14 @@ class BRepSweep_Tool {
 		%feature("compactdefaultargs") SetOrientation;
 		%feature("autodoc", "Set the orientation of <ashape> with or.
 
-	:param aShape:
-	:type aShape: TopoDS_Shape
-	:param Or:
-	:type Or: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aShape: TopoDS_Shape
+Or: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetOrientation;
 		void SetOrientation(TopoDS_Shape & aShape, const TopAbs_Orientation Or);
 
@@ -937,9 +1127,13 @@ class BRepSweep_Tool {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns the shape at index anidex.
 
-	:param anIndex:
-	:type anIndex: int
-	:rtype: TopoDS_Shape
+Parameters
+----------
+anIndex: int
+
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape(const Standard_Integer anIndex);
 
@@ -947,9 +1141,13 @@ class BRepSweep_Tool {
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Returns the type of <ashape>.
 
-	:param aShape:
-	:type aShape: TopoDS_Shape
-	:rtype: TopAbs_ShapeEnum
+Parameters
+----------
+aShape: TopoDS_Shape
+
+Returns
+-------
+TopAbs_ShapeEnum
 ") Type;
 		TopAbs_ShapeEnum Type(const TopoDS_Shape & aShape);
 
@@ -972,17 +1170,17 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") GDDShapeIsToAdd;
 		%feature("autodoc", "Returns true if anewsubshape (addressed by agens and asubdirs) must be added in anewshape (addressed by agens and adirs).
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:param aNewSubShape:
-	:type aNewSubShape: TopoDS_Shape
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:param aSubDirS:
-	:type aSubDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aNewShape: TopoDS_Shape
+aNewSubShape: TopoDS_Shape
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+aSubDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") GDDShapeIsToAdd;
 		virtual Standard_Boolean GDDShapeIsToAdd(const TopoDS_Shape & aNewShape, const TopoDS_Shape & aNewSubShape, const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS, const Sweep_NumShape & aSubDirS);
 
@@ -990,17 +1188,17 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") GGDShapeIsToAdd;
 		%feature("autodoc", "Returns true if anewsubshape (addressed by asubgens and adirs) must be added in anewshape (addressed by agens and adirs).
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:param aNewSubShape:
-	:type aNewSubShape: TopoDS_Shape
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aSubGenS:
-	:type aSubGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aNewShape: TopoDS_Shape
+aNewSubShape: TopoDS_Shape
+aGenS: TopoDS_Shape
+aSubGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") GGDShapeIsToAdd;
 		virtual Standard_Boolean GGDShapeIsToAdd(const TopoDS_Shape & aNewShape, const TopoDS_Shape & aNewSubShape, const TopoDS_Shape & aGenS, const TopoDS_Shape & aSubGenS, const Sweep_NumShape & aDirS);
 
@@ -1008,11 +1206,14 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") HasShape;
 		%feature("autodoc", "Returns true if adirs and agens addresses a resulting shape. in some specific cases the shape can be geometrically inexsistant, then this function returns false.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") HasShape;
 		virtual Standard_Boolean HasShape(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -1020,7 +1221,9 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Ends the construction of the swept primitive calling the virtual geometric functions that can't be called in the initialize.
 
-	:rtype: None
+Returns
+-------
+None
 ") Init;
 		void Init();
 
@@ -1028,9 +1231,13 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") IsInvariant;
 		%feature("autodoc", "Returns true if the geometry of agens is not modified by the trsf of the brepsweep trsf.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsInvariant;
 		virtual Standard_Boolean IsInvariant(const TopoDS_Shape & aGenS);
 
@@ -1038,11 +1245,14 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") MakeEmptyDirectingEdge;
 		%feature("autodoc", "Builds the edge addressed by [agenv,adire], with its geometric part, but without subcomponents.
 
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenV: TopoDS_Shape
+aDirE: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyDirectingEdge;
 		virtual TopoDS_Shape MakeEmptyDirectingEdge(const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirE);
 
@@ -1050,11 +1260,14 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") MakeEmptyFace;
 		%feature("autodoc", "Builds the face addressed by [agens,adirs], with its geometric part, but without subcomponents. the couple agens, adirs can be a 'generating face and a directing vertex' or 'a generating edge and a directing edge'.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyFace;
 		virtual TopoDS_Shape MakeEmptyFace(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -1062,11 +1275,14 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") MakeEmptyGeneratingEdge;
 		%feature("autodoc", "Builds the edge addressed by [agene,adirv], with its geometric part, but without subcomponents.
 
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenE: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyGeneratingEdge;
 		virtual TopoDS_Shape MakeEmptyGeneratingEdge(const TopoDS_Shape & aGenE, const Sweep_NumShape & aDirV);
 
@@ -1074,11 +1290,14 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") MakeEmptyVertex;
 		%feature("autodoc", "Builds the vertex addressed by [agenv,adirv], with its geometric part, but without subcomponents.
 
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenV: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyVertex;
 		virtual TopoDS_Shape MakeEmptyVertex(const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirV);
 
@@ -1086,11 +1305,14 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") Process;
 		%feature("autodoc", "Function called to analize the way of construction of the shapes generated by agens and adirv.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+bool
 ") Process;
 		Standard_Boolean Process(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirV);
 
@@ -1098,17 +1320,17 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SeparatedWires;
 		%feature("autodoc", "In some particular cases the topology of a generated face must be composed of independant closed wires, in this case this function returns true.
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:param aNewSubShape:
-	:type aNewSubShape: TopoDS_Shape
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aSubGenS:
-	:type aSubGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aNewShape: TopoDS_Shape
+aNewSubShape: TopoDS_Shape
+aGenS: TopoDS_Shape
+aSubGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") SeparatedWires;
 		virtual Standard_Boolean SeparatedWires(const TopoDS_Shape & aNewShape, const TopoDS_Shape & aNewSubShape, const TopoDS_Shape & aGenS, const TopoDS_Shape & aSubGenS, const Sweep_NumShape & aDirS);
 
@@ -1116,11 +1338,14 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetContinuity;
 		%feature("autodoc", "Called to propagate the continuity of every vertex between two edges of the generating wire agens on the generated edge and faces.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetContinuity;
 		void SetContinuity(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -1128,19 +1353,18 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetDirectingPCurve;
 		%feature("autodoc", "Sets the pcurve for a new edge on a new face. the new edge and the new face were generated using agene, adire and agenv.
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:param orien:
-	:type orien: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewEdge: TopoDS_Shape
+aGenE: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirE: Sweep_NumShape
+orien: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetDirectingPCurve;
 		virtual void SetDirectingPCurve(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape & aGenE, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirE, const TopAbs_Orientation orien);
 
@@ -1148,17 +1372,17 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetDirectingParameter;
 		%feature("autodoc", "Sets the parameter of the new vertex on the new edge. the new edge and new vertex where generated from agenv adire, and adirv.
 
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aNewVertex:
-	:type aNewVertex: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aNewEdge: TopoDS_Shape
+aNewVertex: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirE: Sweep_NumShape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetDirectingParameter;
 		virtual void SetDirectingParameter(const TopoDS_Shape & aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirE, const Sweep_NumShape & aDirV);
 
@@ -1166,19 +1390,18 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetGeneratingPCurve;
 		%feature("autodoc", "Sets the pcurve for a new edge on a new face. the new edge and the new face were generated using agene, adire and adirv.
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:param orien:
-	:type orien: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewEdge: TopoDS_Shape
+aGenE: TopoDS_Shape
+aDirE: Sweep_NumShape
+aDirV: Sweep_NumShape
+orien: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetGeneratingPCurve;
 		virtual void SetGeneratingPCurve(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape & aGenE, const Sweep_NumShape & aDirE, const Sweep_NumShape & aDirV, const TopAbs_Orientation orien);
 
@@ -1186,17 +1409,17 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetGeneratingParameter;
 		%feature("autodoc", "Sets the parameter of the new vertex on the new edge. the new edge and new vertex where generated from agene, agenv and adirv .
 
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aNewVertex:
-	:type aNewVertex: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aNewEdge: TopoDS_Shape
+aNewVertex: TopoDS_Shape
+aGenE: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetGeneratingParameter;
 		virtual void SetGeneratingParameter(const TopoDS_Shape & aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape & aGenE, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirV);
 
@@ -1204,19 +1427,18 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetPCurve;
 		%feature("autodoc", "Sets the pcurve for a new edge on a new face. the new edge and the new face were generated using agenf, agene and adirv.
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aGenF:
-	:type aGenF: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:param orien:
-	:type orien: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewEdge: TopoDS_Shape
+aGenF: TopoDS_Shape
+aGenE: TopoDS_Shape
+aDirV: Sweep_NumShape
+orien: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetPCurve;
 		virtual void SetPCurve(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape & aGenF, const TopoDS_Shape & aGenE, const Sweep_NumShape & aDirV, const TopAbs_Orientation orien);
 
@@ -1224,17 +1446,17 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		%feature("compactdefaultargs") SetParameters;
 		%feature("autodoc", "Sets the parameters of the new vertex on the new face. the new face and new vertex where generated from agenf, agenv and adirv .
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewVertex:
-	:type aNewVertex: TopoDS_Shape
-	:param aGenF:
-	:type aGenF: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewVertex: TopoDS_Shape
+aGenF: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetParameters;
 		virtual void SetParameters(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewVertex, const TopoDS_Shape & aGenF, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirV);
 
@@ -1256,7 +1478,9 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Returns the angle.
 
-	:rtype: float
+Returns
+-------
+float
 ") Angle;
 		Standard_Real Angle();
 
@@ -1264,7 +1488,9 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") Axe;
 		%feature("autodoc", "Returns the axis.
 
-	:rtype: gp_Ax1
+Returns
+-------
+gp_Ax1
 ") Axe;
 		gp_Ax1 Axe();
 
@@ -1272,19 +1498,18 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") BRepSweep_Rotation;
 		%feature("autodoc", "Creates a topology by rotating <s> around a with the angle d.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param N:
-	:type N: Sweep_NumShape
-	:param L:
-	:type L: TopLoc_Location
-	:param A:
-	:type A: gp_Ax1
-	:param D:
-	:type D: float
-	:param C:
-	:type C: bool
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+N: Sweep_NumShape
+L: TopLoc_Location
+A: gp_Ax1
+D: float
+C: bool
+
+Returns
+-------
+None
 ") BRepSweep_Rotation;
 		 BRepSweep_Rotation(const TopoDS_Shape & S, const Sweep_NumShape & N, const TopLoc_Location & L, const gp_Ax1 & A, const Standard_Real D, const Standard_Boolean C);
 
@@ -1292,11 +1517,14 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") DirectSolid;
 		%feature("autodoc", "Returns the orientation of the shell in the solid generated by the face agens with the edge adirs. it is reversed if the surface is swept in the direction of the normal.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: TopAbs_Orientation
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+TopAbs_Orientation
 ") DirectSolid;
 		TopAbs_Orientation DirectSolid(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -1304,17 +1532,17 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") GDDShapeIsToAdd;
 		%feature("autodoc", "Returns true if anewsubshape (addressed by agens and asubdirs) must be added in anewshape (addressed by agens and adirs).
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:param aNewSubShape:
-	:type aNewSubShape: TopoDS_Shape
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:param aSubDirS:
-	:type aSubDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aNewShape: TopoDS_Shape
+aNewSubShape: TopoDS_Shape
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+aSubDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") GDDShapeIsToAdd;
 		Standard_Boolean GDDShapeIsToAdd(const TopoDS_Shape & aNewShape, const TopoDS_Shape & aNewSubShape, const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS, const Sweep_NumShape & aSubDirS);
 
@@ -1322,17 +1550,17 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") GGDShapeIsToAdd;
 		%feature("autodoc", "Returns true if anewsubshape (addressed by asubgens and adirs) must be added in anewshape (addressed by agens and adirs).
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:param aNewSubShape:
-	:type aNewSubShape: TopoDS_Shape
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aSubGenS:
-	:type aSubGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aNewShape: TopoDS_Shape
+aNewSubShape: TopoDS_Shape
+aGenS: TopoDS_Shape
+aSubGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") GGDShapeIsToAdd;
 		Standard_Boolean GGDShapeIsToAdd(const TopoDS_Shape & aNewShape, const TopoDS_Shape & aNewSubShape, const TopoDS_Shape & aGenS, const TopoDS_Shape & aSubGenS, const Sweep_NumShape & aDirS);
 
@@ -1340,11 +1568,14 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") HasShape;
 		%feature("autodoc", "Returns true if adirs and agens addresses a resulting shape. in some specific cases the shape can be geometrically inexsistant, then this function returns false.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") HasShape;
 		Standard_Boolean HasShape(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -1352,9 +1583,13 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") IsInvariant;
 		%feature("autodoc", "Returns true when the geometry of agens is not modified by the rotation.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsInvariant;
 		Standard_Boolean IsInvariant(const TopoDS_Shape & aGenS);
 
@@ -1362,11 +1597,14 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") MakeEmptyDirectingEdge;
 		%feature("autodoc", "Builds the edge addressed by [agenv,adire], with its geometric part, but without subcomponents.
 
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenV: TopoDS_Shape
+aDirE: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyDirectingEdge;
 		TopoDS_Shape MakeEmptyDirectingEdge(const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirE);
 
@@ -1374,11 +1612,14 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") MakeEmptyFace;
 		%feature("autodoc", "Builds the face addressed by [agens,adirs], with its geometric part, but without subcomponents. the couple agens, adirs can be a 'generating face and a directing vertex' or 'a generating edge and a directing edge'.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyFace;
 		TopoDS_Shape MakeEmptyFace(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -1386,11 +1627,14 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") MakeEmptyGeneratingEdge;
 		%feature("autodoc", "Builds the edge addressed by [agene,adirv], with its geometric part, but without subcomponents.
 
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenE: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyGeneratingEdge;
 		TopoDS_Shape MakeEmptyGeneratingEdge(const TopoDS_Shape & aGenE, const Sweep_NumShape & aDirV);
 
@@ -1398,11 +1642,14 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") MakeEmptyVertex;
 		%feature("autodoc", "Builds the vertex addressed by [agenv,adirv], with its geometric part, but without subcomponents.
 
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenV: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyVertex;
 		TopoDS_Shape MakeEmptyVertex(const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirV);
 
@@ -1410,17 +1657,17 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SeparatedWires;
 		%feature("autodoc", "In some particular cases the topology of a generated face must be composed of independant closed wires, in this case this function returns true. the only case in whitch the function may return true is a planar face in a closed revol.
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:param aNewSubShape:
-	:type aNewSubShape: TopoDS_Shape
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aSubGenS:
-	:type aSubGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aNewShape: TopoDS_Shape
+aNewSubShape: TopoDS_Shape
+aGenS: TopoDS_Shape
+aSubGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") SeparatedWires;
 		Standard_Boolean SeparatedWires(const TopoDS_Shape & aNewShape, const TopoDS_Shape & aNewSubShape, const TopoDS_Shape & aGenS, const TopoDS_Shape & aSubGenS, const Sweep_NumShape & aDirS);
 
@@ -1428,19 +1675,18 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SetDirectingPCurve;
 		%feature("autodoc", "Sets the pcurve for a new edge on a new face. the new edge and the new face were generated using agene, adire and agenv.
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:param orien:
-	:type orien: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewEdge: TopoDS_Shape
+aGenE: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirE: Sweep_NumShape
+orien: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetDirectingPCurve;
 		void SetDirectingPCurve(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape & aGenE, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirE, const TopAbs_Orientation orien);
 
@@ -1448,17 +1694,17 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SetDirectingParameter;
 		%feature("autodoc", "Sets the parameter of the new vertex on the new edge. the new edge and new vertex where generated from agenv adire, and adirv.
 
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aNewVertex:
-	:type aNewVertex: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aNewEdge: TopoDS_Shape
+aNewVertex: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirE: Sweep_NumShape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetDirectingParameter;
 		void SetDirectingParameter(const TopoDS_Shape & aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirE, const Sweep_NumShape & aDirV);
 
@@ -1466,19 +1712,18 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SetGeneratingPCurve;
 		%feature("autodoc", "Sets the pcurve for a new edge on a new face. the new edge and the new face were generated using agene, adire and adirv.
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:param orien:
-	:type orien: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewEdge: TopoDS_Shape
+aGenE: TopoDS_Shape
+aDirE: Sweep_NumShape
+aDirV: Sweep_NumShape
+orien: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetGeneratingPCurve;
 		void SetGeneratingPCurve(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape & aGenE, const Sweep_NumShape & aDirE, const Sweep_NumShape & aDirV, const TopAbs_Orientation orien);
 
@@ -1486,17 +1731,17 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SetGeneratingParameter;
 		%feature("autodoc", "Sets the parameter of the new vertex on the new edge. the new edge and new vertex where generated from agene, agenv and adirv .
 
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aNewVertex:
-	:type aNewVertex: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aNewEdge: TopoDS_Shape
+aNewVertex: TopoDS_Shape
+aGenE: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetGeneratingParameter;
 		void SetGeneratingParameter(const TopoDS_Shape & aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape & aGenE, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirV);
 
@@ -1504,19 +1749,18 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SetPCurve;
 		%feature("autodoc", "Sets the pcurve for a new edge on a new face. the new edge and the new face were generated using agenf, agene and adirv.
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aGenF:
-	:type aGenF: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:param orien:
-	:type orien: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewEdge: TopoDS_Shape
+aGenF: TopoDS_Shape
+aGenE: TopoDS_Shape
+aDirV: Sweep_NumShape
+orien: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetPCurve;
 		void SetPCurve(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape & aGenF, const TopoDS_Shape & aGenE, const Sweep_NumShape & aDirV, const TopAbs_Orientation orien);
 
@@ -1524,17 +1768,17 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SetParameters;
 		%feature("autodoc", "Sets the parameters of the new vertex on the new face. the new face and new vertex where generated from agenf, agenv and adirv .
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewVertex:
-	:type aNewVertex: TopoDS_Shape
-	:param aGenF:
-	:type aGenF: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewVertex: TopoDS_Shape
+aGenF: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetParameters;
 		void SetParameters(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewVertex, const TopoDS_Shape & aGenF, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirV);
 
@@ -1542,9 +1786,13 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SplitShell;
 		%feature("autodoc", "In some particular cases the topology of a generated shell must be composed of independant closed shells, in this case this function returns a compound of independant shells.
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aNewShape: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") SplitShell;
 		virtual TopoDS_Shape SplitShell(const TopoDS_Shape & aNewShape);
 
@@ -1566,19 +1814,19 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") BRepSweep_Translation;
 		%feature("autodoc", "Creates a topology by translating <s> with the vector <v>. if c is true s sucomponents are copied. if canonize is true then generated surfaces are attempted to be canonized in simple types.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param N:
-	:type N: Sweep_NumShape
-	:param L:
-	:type L: TopLoc_Location
-	:param V:
-	:type V: gp_Vec
-	:param C:
-	:type C: bool
-	:param Canonize: default value is Standard_True
-	:type Canonize: bool
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+N: Sweep_NumShape
+L: TopLoc_Location
+V: gp_Vec
+C: bool
+Canonize: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") BRepSweep_Translation;
 		 BRepSweep_Translation(const TopoDS_Shape & S, const Sweep_NumShape & N, const TopLoc_Location & L, const gp_Vec & V, const Standard_Boolean C, const Standard_Boolean Canonize = Standard_True);
 
@@ -1586,11 +1834,14 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") DirectSolid;
 		%feature("autodoc", "Returns the orientation of the shell in the solid generated by the face agens with the edge adirs. it is reversed if the surface is swept in the direction of the normal.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: TopAbs_Orientation
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+TopAbs_Orientation
 ") DirectSolid;
 		TopAbs_Orientation DirectSolid(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -1598,17 +1849,17 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") GDDShapeIsToAdd;
 		%feature("autodoc", "Returns true if anewsubshape (addressed by agens and asubdirs) must be added in anewshape (addressed by agens and adirs).
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:param aNewSubShape:
-	:type aNewSubShape: TopoDS_Shape
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:param aSubDirS:
-	:type aSubDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aNewShape: TopoDS_Shape
+aNewSubShape: TopoDS_Shape
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+aSubDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") GDDShapeIsToAdd;
 		Standard_Boolean GDDShapeIsToAdd(const TopoDS_Shape & aNewShape, const TopoDS_Shape & aNewSubShape, const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS, const Sweep_NumShape & aSubDirS);
 
@@ -1616,17 +1867,17 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") GGDShapeIsToAdd;
 		%feature("autodoc", "Returns true if anewsubshape (addressed by asubgens and adirs) must be added in anewshape (addressed by agens and adirs).
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:param aNewSubShape:
-	:type aNewSubShape: TopoDS_Shape
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aSubGenS:
-	:type aSubGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aNewShape: TopoDS_Shape
+aNewSubShape: TopoDS_Shape
+aGenS: TopoDS_Shape
+aSubGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") GGDShapeIsToAdd;
 		Standard_Boolean GGDShapeIsToAdd(const TopoDS_Shape & aNewShape, const TopoDS_Shape & aNewSubShape, const TopoDS_Shape & aGenS, const TopoDS_Shape & aSubGenS, const Sweep_NumShape & aDirS);
 
@@ -1634,11 +1885,14 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") HasShape;
 		%feature("autodoc", "Returns true if adirs and agens addresses a resulting shape. in some specific cases the shape can be geometrically inexsistant, then this function returns false.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") HasShape;
 		Standard_Boolean HasShape(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -1646,9 +1900,13 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") IsInvariant;
 		%feature("autodoc", "Returns always false because here the transformation is a translation.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+aGenS: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsInvariant;
 		Standard_Boolean IsInvariant(const TopoDS_Shape & aGenS);
 
@@ -1656,11 +1914,14 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") MakeEmptyDirectingEdge;
 		%feature("autodoc", "Builds the edge addressed by [agenv,adire], with its geometric part, but without subcomponents.
 
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenV: TopoDS_Shape
+aDirE: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyDirectingEdge;
 		TopoDS_Shape MakeEmptyDirectingEdge(const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirE);
 
@@ -1668,11 +1929,14 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") MakeEmptyFace;
 		%feature("autodoc", "Builds the face addressed by [agens,adirs], with its geometric part, but without subcomponents. the couple agens, adirs can be a 'generating face and a directing vertex' or 'a generating edge and a directing edge'.
 
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyFace;
 		TopoDS_Shape MakeEmptyFace(const TopoDS_Shape & aGenS, const Sweep_NumShape & aDirS);
 
@@ -1680,11 +1944,14 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") MakeEmptyGeneratingEdge;
 		%feature("autodoc", "Builds the edge addressed by [agene,adirv], with its geometric part, but without subcomponents.
 
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenE: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyGeneratingEdge;
 		TopoDS_Shape MakeEmptyGeneratingEdge(const TopoDS_Shape & aGenE, const Sweep_NumShape & aDirV);
 
@@ -1692,11 +1959,14 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") MakeEmptyVertex;
 		%feature("autodoc", "Builds the vertex addressed by [agenv,adirv], with its geometric part, but without subcomponents.
 
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+aGenV: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+TopoDS_Shape
 ") MakeEmptyVertex;
 		TopoDS_Shape MakeEmptyVertex(const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirV);
 
@@ -1704,17 +1974,17 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SeparatedWires;
 		%feature("autodoc", "In some particular cases the topology of a generated face must be composed of independant closed wires, in this case this function returns true. here it always returns false.
 
-	:param aNewShape:
-	:type aNewShape: TopoDS_Shape
-	:param aNewSubShape:
-	:type aNewSubShape: TopoDS_Shape
-	:param aGenS:
-	:type aGenS: TopoDS_Shape
-	:param aSubGenS:
-	:type aSubGenS: TopoDS_Shape
-	:param aDirS:
-	:type aDirS: Sweep_NumShape
-	:rtype: bool
+Parameters
+----------
+aNewShape: TopoDS_Shape
+aNewSubShape: TopoDS_Shape
+aGenS: TopoDS_Shape
+aSubGenS: TopoDS_Shape
+aDirS: Sweep_NumShape
+
+Returns
+-------
+bool
 ") SeparatedWires;
 		Standard_Boolean SeparatedWires(const TopoDS_Shape & aNewShape, const TopoDS_Shape & aNewSubShape, const TopoDS_Shape & aGenS, const TopoDS_Shape & aSubGenS, const Sweep_NumShape & aDirS);
 
@@ -1722,19 +1992,18 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SetDirectingPCurve;
 		%feature("autodoc", "Sets the pcurve for a new edge on a new face. the new edge and the new face were generated using agene, adire and agenv.
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:param orien:
-	:type orien: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewEdge: TopoDS_Shape
+aGenE: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirE: Sweep_NumShape
+orien: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetDirectingPCurve;
 		void SetDirectingPCurve(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape & aGenE, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirE, const TopAbs_Orientation orien);
 
@@ -1742,17 +2011,17 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SetDirectingParameter;
 		%feature("autodoc", "Sets the parameter of the new vertex on the new edge. the new edge and new vertex where generated from agenv adire, and adirv.
 
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aNewVertex:
-	:type aNewVertex: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aNewEdge: TopoDS_Shape
+aNewVertex: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirE: Sweep_NumShape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetDirectingParameter;
 		void SetDirectingParameter(const TopoDS_Shape & aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirE, const Sweep_NumShape & aDirV);
 
@@ -1760,19 +2029,18 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SetGeneratingPCurve;
 		%feature("autodoc", "Sets the pcurve for a new edge on a new face. the new edge and the new face were generated using agene, adire and adirv.
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aDirE:
-	:type aDirE: Sweep_NumShape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:param orien:
-	:type orien: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewEdge: TopoDS_Shape
+aGenE: TopoDS_Shape
+aDirE: Sweep_NumShape
+aDirV: Sweep_NumShape
+orien: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetGeneratingPCurve;
 		void SetGeneratingPCurve(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape & aGenE, const Sweep_NumShape & aDirE, const Sweep_NumShape & aDirV, const TopAbs_Orientation orien);
 
@@ -1780,17 +2048,17 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SetGeneratingParameter;
 		%feature("autodoc", "Sets the parameter of the new vertex on the new edge. the new edge and new vertex where generated from agene, agenv and adirv .
 
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aNewVertex:
-	:type aNewVertex: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aNewEdge: TopoDS_Shape
+aNewVertex: TopoDS_Shape
+aGenE: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetGeneratingParameter;
 		void SetGeneratingParameter(const TopoDS_Shape & aNewEdge, TopoDS_Shape & aNewVertex, const TopoDS_Shape & aGenE, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirV);
 
@@ -1798,19 +2066,18 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SetPCurve;
 		%feature("autodoc", "Sets the pcurve for a new edge on a new face. the new edge and the new face were generated using agenf, agene and adirv.
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewEdge:
-	:type aNewEdge: TopoDS_Shape
-	:param aGenF:
-	:type aGenF: TopoDS_Shape
-	:param aGenE:
-	:type aGenE: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:param orien:
-	:type orien: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewEdge: TopoDS_Shape
+aGenF: TopoDS_Shape
+aGenE: TopoDS_Shape
+aDirV: Sweep_NumShape
+orien: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetPCurve;
 		void SetPCurve(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewEdge, const TopoDS_Shape & aGenF, const TopoDS_Shape & aGenE, const Sweep_NumShape & aDirV, const TopAbs_Orientation orien);
 
@@ -1818,17 +2085,17 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") SetParameters;
 		%feature("autodoc", "Sets the parameters of the new vertex on the new face. the new face and new vertex where generated from agenf, agenv and adirv .
 
-	:param aNewFace:
-	:type aNewFace: TopoDS_Shape
-	:param aNewVertex:
-	:type aNewVertex: TopoDS_Shape
-	:param aGenF:
-	:type aGenF: TopoDS_Shape
-	:param aGenV:
-	:type aGenV: TopoDS_Shape
-	:param aDirV:
-	:type aDirV: Sweep_NumShape
-	:rtype: None
+Parameters
+----------
+aNewFace: TopoDS_Shape
+aNewVertex: TopoDS_Shape
+aGenF: TopoDS_Shape
+aGenV: TopoDS_Shape
+aDirV: Sweep_NumShape
+
+Returns
+-------
+None
 ") SetParameters;
 		void SetParameters(const TopoDS_Shape & aNewFace, TopoDS_Shape & aNewVertex, const TopoDS_Shape & aGenF, const TopoDS_Shape & aGenV, const Sweep_NumShape & aDirV);
 
@@ -1836,7 +2103,9 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		%feature("compactdefaultargs") Vec;
 		%feature("autodoc", "Returns the vector of the prism, if it is an infinite prism the vec is unitar.
 
-	:rtype: gp_Vec
+Returns
+-------
+gp_Vec
 ") Vec;
 		gp_Vec Vec();
 

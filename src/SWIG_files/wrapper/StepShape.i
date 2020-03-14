@@ -593,55 +593,85 @@ class StepShape_Block : public StepGeom_GeometricRepresentationItem {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aPosition:
-	:type aPosition: StepGeom_Axis2Placement3d
-	:param aX:
-	:type aX: float
-	:param aY:
-	:type aY: float
-	:param aZ:
-	:type aZ: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aPosition: StepGeom_Axis2Placement3d
+aX: float
+aY: float
+aZ: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepGeom_Axis2Placement3d> & aPosition, const Standard_Real aX, const Standard_Real aY, const Standard_Real aZ);
 
 		/****************** Position ******************/
 		%feature("compactdefaultargs") Position;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Axis2Placement3d>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Axis2Placement3d>
 ") Position;
 		opencascade::handle<StepGeom_Axis2Placement3d> Position();
 
 		/****************** SetPosition ******************/
 		%feature("compactdefaultargs") SetPosition;
-		%feature("autodoc", "	:param aPosition:
-	:type aPosition: StepGeom_Axis2Placement3d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPosition: StepGeom_Axis2Placement3d
+
+Returns
+-------
+None
 ") SetPosition;
 		void SetPosition(const opencascade::handle<StepGeom_Axis2Placement3d> & aPosition);
 
 		/****************** SetX ******************/
 		%feature("compactdefaultargs") SetX;
-		%feature("autodoc", "	:param aX:
-	:type aX: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aX: float
+
+Returns
+-------
+None
 ") SetX;
 		void SetX(const Standard_Real aX);
 
 		/****************** SetY ******************/
 		%feature("compactdefaultargs") SetY;
-		%feature("autodoc", "	:param aY:
-	:type aY: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aY: float
+
+Returns
+-------
+None
 ") SetY;
 		void SetY(const Standard_Real aY);
 
 		/****************** SetZ ******************/
 		%feature("compactdefaultargs") SetZ;
-		%feature("autodoc", "	:param aZ:
-	:type aZ: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aZ: float
+
+Returns
+-------
+None
 ") SetZ;
 		void SetZ(const Standard_Real aZ);
 
@@ -649,25 +679,39 @@ class StepShape_Block : public StepGeom_GeometricRepresentationItem {
 		%feature("compactdefaultargs") StepShape_Block;
 		%feature("autodoc", "Returns a block.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_Block;
 		 StepShape_Block();
 
 		/****************** X ******************/
 		%feature("compactdefaultargs") X;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") X;
 		Standard_Real X();
 
 		/****************** Y ******************/
 		%feature("compactdefaultargs") Y;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Y;
 		Standard_Real Y();
 
 		/****************** Z ******************/
 		%feature("compactdefaultargs") Z;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Z;
 		Standard_Real Z();
 
@@ -691,7 +735,9 @@ class StepShape_BooleanOperand {
 		%feature("compactdefaultargs") BooleanResult;
 		%feature("autodoc", "Returns value as a booleanresult (null if another type).
 
-	:rtype: opencascade::handle<StepShape_BooleanResult>
+Returns
+-------
+opencascade::handle<StepShape_BooleanResult>
 ") BooleanResult;
 		opencascade::handle<StepShape_BooleanResult> BooleanResult();
 
@@ -699,7 +745,9 @@ class StepShape_BooleanOperand {
 		%feature("compactdefaultargs") CsgPrimitive;
 		%feature("autodoc", "Returns value as a csgprimitive (null if another type) csgprimitive is another select type.
 
-	:rtype: StepShape_CsgPrimitive
+Returns
+-------
+StepShape_CsgPrimitive
 ") CsgPrimitive;
 		StepShape_CsgPrimitive CsgPrimitive();
 
@@ -707,47 +755,79 @@ class StepShape_BooleanOperand {
 		%feature("compactdefaultargs") HalfSpaceSolid;
 		%feature("autodoc", "Returns value as a halfspacesolid (null if another type).
 
-	:rtype: opencascade::handle<StepShape_HalfSpaceSolid>
+Returns
+-------
+opencascade::handle<StepShape_HalfSpaceSolid>
 ") HalfSpaceSolid;
 		opencascade::handle<StepShape_HalfSpaceSolid> HalfSpaceSolid();
 
 		/****************** SetBooleanResult ******************/
 		%feature("compactdefaultargs") SetBooleanResult;
-		%feature("autodoc", "	:param aBooleanResult:
-	:type aBooleanResult: StepShape_BooleanResult
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aBooleanResult: StepShape_BooleanResult
+
+Returns
+-------
+None
 ") SetBooleanResult;
 		void SetBooleanResult(const opencascade::handle<StepShape_BooleanResult> & aBooleanResult);
 
 		/****************** SetCsgPrimitive ******************/
 		%feature("compactdefaultargs") SetCsgPrimitive;
-		%feature("autodoc", "	:param aCsgPrimitive:
-	:type aCsgPrimitive: StepShape_CsgPrimitive
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aCsgPrimitive: StepShape_CsgPrimitive
+
+Returns
+-------
+None
 ") SetCsgPrimitive;
 		void SetCsgPrimitive(const StepShape_CsgPrimitive & aCsgPrimitive);
 
 		/****************** SetHalfSpaceSolid ******************/
 		%feature("compactdefaultargs") SetHalfSpaceSolid;
-		%feature("autodoc", "	:param aHalfSpaceSolid:
-	:type aHalfSpaceSolid: StepShape_HalfSpaceSolid
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aHalfSpaceSolid: StepShape_HalfSpaceSolid
+
+Returns
+-------
+None
 ") SetHalfSpaceSolid;
 		void SetHalfSpaceSolid(const opencascade::handle<StepShape_HalfSpaceSolid> & aHalfSpaceSolid);
 
 		/****************** SetSolidModel ******************/
 		%feature("compactdefaultargs") SetSolidModel;
-		%feature("autodoc", "	:param aSolidModel:
-	:type aSolidModel: StepShape_SolidModel
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aSolidModel: StepShape_SolidModel
+
+Returns
+-------
+None
 ") SetSolidModel;
 		void SetSolidModel(const opencascade::handle<StepShape_SolidModel> & aSolidModel);
 
 		/****************** SetTypeOfContent ******************/
 		%feature("compactdefaultargs") SetTypeOfContent;
-		%feature("autodoc", "	:param aTypeOfContent:
-	:type aTypeOfContent: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aTypeOfContent: int
+
+Returns
+-------
+None
 ") SetTypeOfContent;
 		void SetTypeOfContent(const Standard_Integer aTypeOfContent);
 
@@ -755,7 +835,9 @@ class StepShape_BooleanOperand {
 		%feature("compactdefaultargs") SolidModel;
 		%feature("autodoc", "Returns value as a solidmodel (null if another type).
 
-	:rtype: opencascade::handle<StepShape_SolidModel>
+Returns
+-------
+opencascade::handle<StepShape_SolidModel>
 ") SolidModel;
 		opencascade::handle<StepShape_SolidModel> SolidModel();
 
@@ -763,13 +845,19 @@ class StepShape_BooleanOperand {
 		%feature("compactdefaultargs") StepShape_BooleanOperand;
 		%feature("autodoc", "Returns a booleanoperand selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_BooleanOperand;
 		 StepShape_BooleanOperand();
 
 		/****************** TypeOfContent ******************/
 		%feature("compactdefaultargs") TypeOfContent;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") TypeOfContent;
 		Standard_Integer TypeOfContent();
 
@@ -789,57 +877,90 @@ class StepShape_BooleanResult : public StepGeom_GeometricRepresentationItem {
 	public:
 		/****************** FirstOperand ******************/
 		%feature("compactdefaultargs") FirstOperand;
-		%feature("autodoc", "	:rtype: StepShape_BooleanOperand
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+StepShape_BooleanOperand
 ") FirstOperand;
 		StepShape_BooleanOperand FirstOperand();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aOperator:
-	:type aOperator: StepShape_BooleanOperator
-	:param aFirstOperand:
-	:type aFirstOperand: StepShape_BooleanOperand
-	:param aSecondOperand:
-	:type aSecondOperand: StepShape_BooleanOperand
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aOperator: StepShape_BooleanOperator
+aFirstOperand: StepShape_BooleanOperand
+aSecondOperand: StepShape_BooleanOperand
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const StepShape_BooleanOperator aOperator, const StepShape_BooleanOperand & aFirstOperand, const StepShape_BooleanOperand & aSecondOperand);
 
 		/****************** Operator ******************/
 		%feature("compactdefaultargs") Operator;
-		%feature("autodoc", "	:rtype: StepShape_BooleanOperator
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+StepShape_BooleanOperator
 ") Operator;
 		StepShape_BooleanOperator Operator();
 
 		/****************** SecondOperand ******************/
 		%feature("compactdefaultargs") SecondOperand;
-		%feature("autodoc", "	:rtype: StepShape_BooleanOperand
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+StepShape_BooleanOperand
 ") SecondOperand;
 		StepShape_BooleanOperand SecondOperand();
 
 		/****************** SetFirstOperand ******************/
 		%feature("compactdefaultargs") SetFirstOperand;
-		%feature("autodoc", "	:param aFirstOperand:
-	:type aFirstOperand: StepShape_BooleanOperand
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aFirstOperand: StepShape_BooleanOperand
+
+Returns
+-------
+None
 ") SetFirstOperand;
 		void SetFirstOperand(const StepShape_BooleanOperand & aFirstOperand);
 
 		/****************** SetOperator ******************/
 		%feature("compactdefaultargs") SetOperator;
-		%feature("autodoc", "	:param aOperator:
-	:type aOperator: StepShape_BooleanOperator
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aOperator: StepShape_BooleanOperator
+
+Returns
+-------
+None
 ") SetOperator;
 		void SetOperator(const StepShape_BooleanOperator aOperator);
 
 		/****************** SetSecondOperand ******************/
 		%feature("compactdefaultargs") SetSecondOperand;
-		%feature("autodoc", "	:param aSecondOperand:
-	:type aSecondOperand: StepShape_BooleanOperand
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aSecondOperand: StepShape_BooleanOperand
+
+Returns
+-------
+None
 ") SetSecondOperand;
 		void SetSecondOperand(const StepShape_BooleanOperand & aSecondOperand);
 
@@ -847,7 +968,9 @@ class StepShape_BooleanResult : public StepGeom_GeometricRepresentationItem {
 		%feature("compactdefaultargs") StepShape_BooleanResult;
 		%feature("autodoc", "Returns a booleanresult.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_BooleanResult;
 		 StepShape_BooleanResult();
 
@@ -869,53 +992,84 @@ class StepShape_BoxDomain : public Standard_Transient {
 	public:
 		/****************** Corner ******************/
 		%feature("compactdefaultargs") Corner;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_CartesianPoint>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_CartesianPoint>
 ") Corner;
 		opencascade::handle<StepGeom_CartesianPoint> Corner();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aCorner:
-	:type aCorner: StepGeom_CartesianPoint
-	:param aXlength:
-	:type aXlength: float
-	:param aYlength:
-	:type aYlength: float
-	:param aZlength:
-	:type aZlength: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aCorner: StepGeom_CartesianPoint
+aXlength: float
+aYlength: float
+aZlength: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepGeom_CartesianPoint> & aCorner, const Standard_Real aXlength, const Standard_Real aYlength, const Standard_Real aZlength);
 
 		/****************** SetCorner ******************/
 		%feature("compactdefaultargs") SetCorner;
-		%feature("autodoc", "	:param aCorner:
-	:type aCorner: StepGeom_CartesianPoint
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aCorner: StepGeom_CartesianPoint
+
+Returns
+-------
+None
 ") SetCorner;
 		void SetCorner(const opencascade::handle<StepGeom_CartesianPoint> & aCorner);
 
 		/****************** SetXlength ******************/
 		%feature("compactdefaultargs") SetXlength;
-		%feature("autodoc", "	:param aXlength:
-	:type aXlength: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aXlength: float
+
+Returns
+-------
+None
 ") SetXlength;
 		void SetXlength(const Standard_Real aXlength);
 
 		/****************** SetYlength ******************/
 		%feature("compactdefaultargs") SetYlength;
-		%feature("autodoc", "	:param aYlength:
-	:type aYlength: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aYlength: float
+
+Returns
+-------
+None
 ") SetYlength;
 		void SetYlength(const Standard_Real aYlength);
 
 		/****************** SetZlength ******************/
 		%feature("compactdefaultargs") SetZlength;
-		%feature("autodoc", "	:param aZlength:
-	:type aZlength: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aZlength: float
+
+Returns
+-------
+None
 ") SetZlength;
 		void SetZlength(const Standard_Real aZlength);
 
@@ -923,25 +1077,39 @@ class StepShape_BoxDomain : public Standard_Transient {
 		%feature("compactdefaultargs") StepShape_BoxDomain;
 		%feature("autodoc", "Returns a boxdomain.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_BoxDomain;
 		 StepShape_BoxDomain();
 
 		/****************** Xlength ******************/
 		%feature("compactdefaultargs") Xlength;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Xlength;
 		Standard_Real Xlength();
 
 		/****************** Ylength ******************/
 		%feature("compactdefaultargs") Ylength;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Ylength;
 		Standard_Real Ylength();
 
 		/****************** Zlength ******************/
 		%feature("compactdefaultargs") Zlength;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Zlength;
 		Standard_Real Zlength();
 
@@ -965,7 +1133,9 @@ class StepShape_ConnectedFaceShapeRepresentation : public StepRepr_Representatio
 		%feature("compactdefaultargs") StepShape_ConnectedFaceShapeRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ConnectedFaceShapeRepresentation;
 		 StepShape_ConnectedFaceShapeRepresentation();
 
@@ -987,45 +1157,74 @@ class StepShape_ContextDependentShapeRepresentation : public Standard_Transient 
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aRepRel:
-	:type aRepRel: StepRepr_ShapeRepresentationRelationship
-	:param aProRel:
-	:type aProRel: StepRepr_ProductDefinitionShape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aRepRel: StepRepr_ShapeRepresentationRelationship
+aProRel: StepRepr_ProductDefinitionShape
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepRepr_ShapeRepresentationRelationship> & aRepRel, const opencascade::handle<StepRepr_ProductDefinitionShape> & aProRel);
 
 		/****************** RepresentationRelation ******************/
 		%feature("compactdefaultargs") RepresentationRelation;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepRepr_ShapeRepresentationRelationship>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepRepr_ShapeRepresentationRelationship>
 ") RepresentationRelation;
 		opencascade::handle<StepRepr_ShapeRepresentationRelationship> RepresentationRelation();
 
 		/****************** RepresentedProductRelation ******************/
 		%feature("compactdefaultargs") RepresentedProductRelation;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepRepr_ProductDefinitionShape>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepRepr_ProductDefinitionShape>
 ") RepresentedProductRelation;
 		opencascade::handle<StepRepr_ProductDefinitionShape> RepresentedProductRelation();
 
 		/****************** SetRepresentationRelation ******************/
 		%feature("compactdefaultargs") SetRepresentationRelation;
-		%feature("autodoc", "	:param aRepRel:
-	:type aRepRel: StepRepr_ShapeRepresentationRelationship
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aRepRel: StepRepr_ShapeRepresentationRelationship
+
+Returns
+-------
+None
 ") SetRepresentationRelation;
 		void SetRepresentationRelation(const opencascade::handle<StepRepr_ShapeRepresentationRelationship> & aRepRel);
 
 		/****************** SetRepresentedProductRelation ******************/
 		%feature("compactdefaultargs") SetRepresentedProductRelation;
-		%feature("autodoc", "	:param aProRel:
-	:type aProRel: StepRepr_ProductDefinitionShape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aProRel: StepRepr_ProductDefinitionShape
+
+Returns
+-------
+None
 ") SetRepresentedProductRelation;
 		void SetRepresentedProductRelation(const opencascade::handle<StepRepr_ProductDefinitionShape> & aProRel);
 
 		/****************** StepShape_ContextDependentShapeRepresentation ******************/
 		%feature("compactdefaultargs") StepShape_ContextDependentShapeRepresentation;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_ContextDependentShapeRepresentation;
 		 StepShape_ContextDependentShapeRepresentation();
 
@@ -1049,7 +1248,9 @@ class StepShape_CsgPrimitive : public StepData_SelectType {
 		%feature("compactdefaultargs") Block;
 		%feature("autodoc", "Returns value as a block (null if another type).
 
-	:rtype: opencascade::handle<StepShape_Block>
+Returns
+-------
+opencascade::handle<StepShape_Block>
 ") Block;
 		opencascade::handle<StepShape_Block> Block();
 
@@ -1057,9 +1258,13 @@ class StepShape_CsgPrimitive : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a csgprimitive kind entity that is : 1 -> sphere 2 -> block 3 -> rightangularwedge 4 -> torus 5 -> rightcircularcone 6 -> rightcircularcylinder 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -1067,7 +1272,9 @@ class StepShape_CsgPrimitive : public StepData_SelectType {
 		%feature("compactdefaultargs") RightAngularWedge;
 		%feature("autodoc", "Returns value as a rightangularwedge (null if another type).
 
-	:rtype: opencascade::handle<StepShape_RightAngularWedge>
+Returns
+-------
+opencascade::handle<StepShape_RightAngularWedge>
 ") RightAngularWedge;
 		opencascade::handle<StepShape_RightAngularWedge> RightAngularWedge();
 
@@ -1075,7 +1282,9 @@ class StepShape_CsgPrimitive : public StepData_SelectType {
 		%feature("compactdefaultargs") RightCircularCone;
 		%feature("autodoc", "Returns value as a rightcircularcone (null if another type).
 
-	:rtype: opencascade::handle<StepShape_RightCircularCone>
+Returns
+-------
+opencascade::handle<StepShape_RightCircularCone>
 ") RightCircularCone;
 		opencascade::handle<StepShape_RightCircularCone> RightCircularCone();
 
@@ -1083,7 +1292,9 @@ class StepShape_CsgPrimitive : public StepData_SelectType {
 		%feature("compactdefaultargs") RightCircularCylinder;
 		%feature("autodoc", "Returns value as a rightcircularcylinder (null if another type).
 
-	:rtype: opencascade::handle<StepShape_RightCircularCylinder>
+Returns
+-------
+opencascade::handle<StepShape_RightCircularCylinder>
 ") RightCircularCylinder;
 		opencascade::handle<StepShape_RightCircularCylinder> RightCircularCylinder();
 
@@ -1091,7 +1302,9 @@ class StepShape_CsgPrimitive : public StepData_SelectType {
 		%feature("compactdefaultargs") Sphere;
 		%feature("autodoc", "Returns value as a sphere (null if another type).
 
-	:rtype: opencascade::handle<StepShape_Sphere>
+Returns
+-------
+opencascade::handle<StepShape_Sphere>
 ") Sphere;
 		opencascade::handle<StepShape_Sphere> Sphere();
 
@@ -1099,7 +1312,9 @@ class StepShape_CsgPrimitive : public StepData_SelectType {
 		%feature("compactdefaultargs") StepShape_CsgPrimitive;
 		%feature("autodoc", "Returns a csgprimitive selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_CsgPrimitive;
 		 StepShape_CsgPrimitive();
 
@@ -1107,7 +1322,9 @@ class StepShape_CsgPrimitive : public StepData_SelectType {
 		%feature("compactdefaultargs") Torus;
 		%feature("autodoc", "Returns value as a torus (null if another type).
 
-	:rtype: opencascade::handle<StepShape_Torus>
+Returns
+-------
+opencascade::handle<StepShape_Torus>
 ") Torus;
 		opencascade::handle<StepShape_Torus> Torus();
 
@@ -1129,7 +1346,9 @@ class StepShape_CsgSelect {
 		%feature("compactdefaultargs") BooleanResult;
 		%feature("autodoc", "Returns value as a booleanresult (null if another type).
 
-	:rtype: opencascade::handle<StepShape_BooleanResult>
+Returns
+-------
+opencascade::handle<StepShape_BooleanResult>
 ") BooleanResult;
 		opencascade::handle<StepShape_BooleanResult> BooleanResult();
 
@@ -1137,31 +1356,51 @@ class StepShape_CsgSelect {
 		%feature("compactdefaultargs") CsgPrimitive;
 		%feature("autodoc", "Returns value as a csgprimitive (null if another type).
 
-	:rtype: StepShape_CsgPrimitive
+Returns
+-------
+StepShape_CsgPrimitive
 ") CsgPrimitive;
 		StepShape_CsgPrimitive CsgPrimitive();
 
 		/****************** SetBooleanResult ******************/
 		%feature("compactdefaultargs") SetBooleanResult;
-		%feature("autodoc", "	:param aBooleanResult:
-	:type aBooleanResult: StepShape_BooleanResult
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aBooleanResult: StepShape_BooleanResult
+
+Returns
+-------
+None
 ") SetBooleanResult;
 		void SetBooleanResult(const opencascade::handle<StepShape_BooleanResult> & aBooleanResult);
 
 		/****************** SetCsgPrimitive ******************/
 		%feature("compactdefaultargs") SetCsgPrimitive;
-		%feature("autodoc", "	:param aCsgPrimitive:
-	:type aCsgPrimitive: StepShape_CsgPrimitive
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aCsgPrimitive: StepShape_CsgPrimitive
+
+Returns
+-------
+None
 ") SetCsgPrimitive;
 		void SetCsgPrimitive(const StepShape_CsgPrimitive & aCsgPrimitive);
 
 		/****************** SetTypeOfContent ******************/
 		%feature("compactdefaultargs") SetTypeOfContent;
-		%feature("autodoc", "	:param aTypeOfContent:
-	:type aTypeOfContent: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aTypeOfContent: int
+
+Returns
+-------
+None
 ") SetTypeOfContent;
 		void SetTypeOfContent(const Standard_Integer aTypeOfContent);
 
@@ -1169,13 +1408,19 @@ class StepShape_CsgSelect {
 		%feature("compactdefaultargs") StepShape_CsgSelect;
 		%feature("autodoc", "Returns a csgselect selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_CsgSelect;
 		 StepShape_CsgSelect();
 
 		/****************** TypeOfContent ******************/
 		%feature("compactdefaultargs") TypeOfContent;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") TypeOfContent;
 		Standard_Integer TypeOfContent();
 
@@ -1195,7 +1440,11 @@ class StepShape_DefinitionalRepresentationAndShapeRepresentation : public StepRe
 	public:
 		/****************** StepShape_DefinitionalRepresentationAndShapeRepresentation ******************/
 		%feature("compactdefaultargs") StepShape_DefinitionalRepresentationAndShapeRepresentation;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_DefinitionalRepresentationAndShapeRepresentation;
 		 StepShape_DefinitionalRepresentationAndShapeRepresentation();
 
@@ -1219,9 +1468,13 @@ class StepShape_DimensionalCharacteristic : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of dimensionalcharacteristic select type 1 -> dimensionallocation from stepshape 2 -> dimensionalsize from stepshape 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -1229,7 +1482,9 @@ class StepShape_DimensionalCharacteristic : public StepData_SelectType {
 		%feature("compactdefaultargs") DimensionalLocation;
 		%feature("autodoc", "Returns value as dimensionallocation (or null if another type).
 
-	:rtype: opencascade::handle<StepShape_DimensionalLocation>
+Returns
+-------
+opencascade::handle<StepShape_DimensionalLocation>
 ") DimensionalLocation;
 		opencascade::handle<StepShape_DimensionalLocation> DimensionalLocation();
 
@@ -1237,7 +1492,9 @@ class StepShape_DimensionalCharacteristic : public StepData_SelectType {
 		%feature("compactdefaultargs") DimensionalSize;
 		%feature("autodoc", "Returns value as dimensionalsize (or null if another type).
 
-	:rtype: opencascade::handle<StepShape_DimensionalSize>
+Returns
+-------
+opencascade::handle<StepShape_DimensionalSize>
 ") DimensionalSize;
 		opencascade::handle<StepShape_DimensionalSize> DimensionalSize();
 
@@ -1245,7 +1502,9 @@ class StepShape_DimensionalCharacteristic : public StepData_SelectType {
 		%feature("compactdefaultargs") StepShape_DimensionalCharacteristic;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_DimensionalCharacteristic;
 		 StepShape_DimensionalCharacteristic();
 
@@ -1267,7 +1526,9 @@ class StepShape_DimensionalCharacteristicRepresentation : public Standard_Transi
 		%feature("compactdefaultargs") Dimension;
 		%feature("autodoc", "Returns field dimension.
 
-	:rtype: StepShape_DimensionalCharacteristic
+Returns
+-------
+StepShape_DimensionalCharacteristic
 ") Dimension;
 		StepShape_DimensionalCharacteristic Dimension();
 
@@ -1275,11 +1536,14 @@ class StepShape_DimensionalCharacteristicRepresentation : public Standard_Transi
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aDimension:
-	:type aDimension: StepShape_DimensionalCharacteristic
-	:param aRepresentation:
-	:type aRepresentation: StepShape_ShapeDimensionRepresentation
-	:rtype: None
+Parameters
+----------
+aDimension: StepShape_DimensionalCharacteristic
+aRepresentation: StepShape_ShapeDimensionRepresentation
+
+Returns
+-------
+None
 ") Init;
 		void Init(const StepShape_DimensionalCharacteristic & aDimension, const opencascade::handle<StepShape_ShapeDimensionRepresentation> & aRepresentation);
 
@@ -1287,7 +1551,9 @@ class StepShape_DimensionalCharacteristicRepresentation : public Standard_Transi
 		%feature("compactdefaultargs") Representation;
 		%feature("autodoc", "Returns field representation.
 
-	:rtype: opencascade::handle<StepShape_ShapeDimensionRepresentation>
+Returns
+-------
+opencascade::handle<StepShape_ShapeDimensionRepresentation>
 ") Representation;
 		opencascade::handle<StepShape_ShapeDimensionRepresentation> Representation();
 
@@ -1295,9 +1561,13 @@ class StepShape_DimensionalCharacteristicRepresentation : public Standard_Transi
 		%feature("compactdefaultargs") SetDimension;
 		%feature("autodoc", "Set field dimension.
 
-	:param Dimension:
-	:type Dimension: StepShape_DimensionalCharacteristic
-	:rtype: None
+Parameters
+----------
+Dimension: StepShape_DimensionalCharacteristic
+
+Returns
+-------
+None
 ") SetDimension;
 		void SetDimension(const StepShape_DimensionalCharacteristic & Dimension);
 
@@ -1305,9 +1575,13 @@ class StepShape_DimensionalCharacteristicRepresentation : public Standard_Transi
 		%feature("compactdefaultargs") SetRepresentation;
 		%feature("autodoc", "Set field representation.
 
-	:param Representation:
-	:type Representation: StepShape_ShapeDimensionRepresentation
-	:rtype: None
+Parameters
+----------
+Representation: StepShape_ShapeDimensionRepresentation
+
+Returns
+-------
+None
 ") SetRepresentation;
 		void SetRepresentation(const opencascade::handle<StepShape_ShapeDimensionRepresentation> & Representation);
 
@@ -1315,7 +1589,9 @@ class StepShape_DimensionalCharacteristicRepresentation : public Standard_Transi
 		%feature("compactdefaultargs") StepShape_DimensionalCharacteristicRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_DimensionalCharacteristicRepresentation;
 		 StepShape_DimensionalCharacteristicRepresentation();
 
@@ -1339,7 +1615,9 @@ class StepShape_DimensionalLocation : public StepRepr_ShapeAspectRelationship {
 		%feature("compactdefaultargs") StepShape_DimensionalLocation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_DimensionalLocation;
 		 StepShape_DimensionalLocation();
 
@@ -1363,7 +1641,9 @@ class StepShape_DimensionalSize : public Standard_Transient {
 		%feature("compactdefaultargs") AppliesTo;
 		%feature("autodoc", "Returns field appliesto.
 
-	:rtype: opencascade::handle<StepRepr_ShapeAspect>
+Returns
+-------
+opencascade::handle<StepRepr_ShapeAspect>
 ") AppliesTo;
 		opencascade::handle<StepRepr_ShapeAspect> AppliesTo();
 
@@ -1371,11 +1651,14 @@ class StepShape_DimensionalSize : public Standard_Transient {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aAppliesTo:
-	:type aAppliesTo: StepRepr_ShapeAspect
-	:param aName:
-	:type aName: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+aAppliesTo: StepRepr_ShapeAspect
+aName: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepRepr_ShapeAspect> & aAppliesTo, const opencascade::handle<TCollection_HAsciiString> & aName);
 
@@ -1383,7 +1666,9 @@ class StepShape_DimensionalSize : public Standard_Transient {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Returns field name.
 
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") Name;
 		opencascade::handle<TCollection_HAsciiString> Name();
 
@@ -1391,9 +1676,13 @@ class StepShape_DimensionalSize : public Standard_Transient {
 		%feature("compactdefaultargs") SetAppliesTo;
 		%feature("autodoc", "Set field appliesto.
 
-	:param AppliesTo:
-	:type AppliesTo: StepRepr_ShapeAspect
-	:rtype: None
+Parameters
+----------
+AppliesTo: StepRepr_ShapeAspect
+
+Returns
+-------
+None
 ") SetAppliesTo;
 		void SetAppliesTo(const opencascade::handle<StepRepr_ShapeAspect> & AppliesTo);
 
@@ -1401,9 +1690,13 @@ class StepShape_DimensionalSize : public Standard_Transient {
 		%feature("compactdefaultargs") SetName;
 		%feature("autodoc", "Set field name.
 
-	:param Name:
-	:type Name: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+Name: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & Name);
 
@@ -1411,7 +1704,9 @@ class StepShape_DimensionalSize : public Standard_Transient {
 		%feature("compactdefaultargs") StepShape_DimensionalSize;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_DimensionalSize;
 		 StepShape_DimensionalSize();
 
@@ -1435,7 +1730,9 @@ class StepShape_EdgeBasedWireframeModel : public StepGeom_GeometricRepresentatio
 		%feature("compactdefaultargs") EbwmBoundary;
 		%feature("autodoc", "Returns field ebwmboundary.
 
-	:rtype: opencascade::handle<StepShape_HArray1OfConnectedEdgeSet>
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfConnectedEdgeSet>
 ") EbwmBoundary;
 		opencascade::handle<StepShape_HArray1OfConnectedEdgeSet> EbwmBoundary();
 
@@ -1443,11 +1740,14 @@ class StepShape_EdgeBasedWireframeModel : public StepGeom_GeometricRepresentatio
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aRepresentationItem_Name:
-	:type aRepresentationItem_Name: TCollection_HAsciiString
-	:param aEbwmBoundary:
-	:type aEbwmBoundary: StepShape_HArray1OfConnectedEdgeSet
-	:rtype: None
+Parameters
+----------
+aRepresentationItem_Name: TCollection_HAsciiString
+aEbwmBoundary: StepShape_HArray1OfConnectedEdgeSet
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aRepresentationItem_Name, const opencascade::handle<StepShape_HArray1OfConnectedEdgeSet> & aEbwmBoundary);
 
@@ -1455,9 +1755,13 @@ class StepShape_EdgeBasedWireframeModel : public StepGeom_GeometricRepresentatio
 		%feature("compactdefaultargs") SetEbwmBoundary;
 		%feature("autodoc", "Set field ebwmboundary.
 
-	:param EbwmBoundary:
-	:type EbwmBoundary: StepShape_HArray1OfConnectedEdgeSet
-	:rtype: None
+Parameters
+----------
+EbwmBoundary: StepShape_HArray1OfConnectedEdgeSet
+
+Returns
+-------
+None
 ") SetEbwmBoundary;
 		void SetEbwmBoundary(const opencascade::handle<StepShape_HArray1OfConnectedEdgeSet> & EbwmBoundary);
 
@@ -1465,7 +1769,9 @@ class StepShape_EdgeBasedWireframeModel : public StepGeom_GeometricRepresentatio
 		%feature("compactdefaultargs") StepShape_EdgeBasedWireframeModel;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_EdgeBasedWireframeModel;
 		 StepShape_EdgeBasedWireframeModel();
 
@@ -1489,7 +1795,9 @@ class StepShape_FaceBasedSurfaceModel : public StepGeom_GeometricRepresentationI
 		%feature("compactdefaultargs") FbsmFaces;
 		%feature("autodoc", "Returns field fbsmfaces.
 
-	:rtype: opencascade::handle<StepShape_HArray1OfConnectedFaceSet>
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfConnectedFaceSet>
 ") FbsmFaces;
 		opencascade::handle<StepShape_HArray1OfConnectedFaceSet> FbsmFaces();
 
@@ -1497,11 +1805,14 @@ class StepShape_FaceBasedSurfaceModel : public StepGeom_GeometricRepresentationI
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aRepresentationItem_Name:
-	:type aRepresentationItem_Name: TCollection_HAsciiString
-	:param aFbsmFaces:
-	:type aFbsmFaces: StepShape_HArray1OfConnectedFaceSet
-	:rtype: None
+Parameters
+----------
+aRepresentationItem_Name: TCollection_HAsciiString
+aFbsmFaces: StepShape_HArray1OfConnectedFaceSet
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aRepresentationItem_Name, const opencascade::handle<StepShape_HArray1OfConnectedFaceSet> & aFbsmFaces);
 
@@ -1509,9 +1820,13 @@ class StepShape_FaceBasedSurfaceModel : public StepGeom_GeometricRepresentationI
 		%feature("compactdefaultargs") SetFbsmFaces;
 		%feature("autodoc", "Set field fbsmfaces.
 
-	:param FbsmFaces:
-	:type FbsmFaces: StepShape_HArray1OfConnectedFaceSet
-	:rtype: None
+Parameters
+----------
+FbsmFaces: StepShape_HArray1OfConnectedFaceSet
+
+Returns
+-------
+None
 ") SetFbsmFaces;
 		void SetFbsmFaces(const opencascade::handle<StepShape_HArray1OfConnectedFaceSet> & FbsmFaces);
 
@@ -1519,7 +1834,9 @@ class StepShape_FaceBasedSurfaceModel : public StepGeom_GeometricRepresentationI
 		%feature("compactdefaultargs") StepShape_FaceBasedSurfaceModel;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_FaceBasedSurfaceModel;
 		 StepShape_FaceBasedSurfaceModel();
 
@@ -1541,39 +1858,64 @@ class StepShape_GeometricSet : public StepGeom_GeometricRepresentationItem {
 	public:
 		/****************** Elements ******************/
 		%feature("compactdefaultargs") Elements;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfGeometricSetSelect>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfGeometricSetSelect>
 ") Elements;
 		opencascade::handle<StepShape_HArray1OfGeometricSetSelect> Elements();
 
 		/****************** ElementsValue ******************/
 		%feature("compactdefaultargs") ElementsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepShape_GeometricSetSelect
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepShape_GeometricSetSelect
 ") ElementsValue;
 		StepShape_GeometricSetSelect ElementsValue(const Standard_Integer num);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aElements:
-	:type aElements: StepShape_HArray1OfGeometricSetSelect
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aElements: StepShape_HArray1OfGeometricSetSelect
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_HArray1OfGeometricSetSelect> & aElements);
 
 		/****************** NbElements ******************/
 		%feature("compactdefaultargs") NbElements;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbElements;
 		Standard_Integer NbElements();
 
 		/****************** SetElements ******************/
 		%feature("compactdefaultargs") SetElements;
-		%feature("autodoc", "	:param aElements:
-	:type aElements: StepShape_HArray1OfGeometricSetSelect
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aElements: StepShape_HArray1OfGeometricSetSelect
+
+Returns
+-------
+None
 ") SetElements;
 		void SetElements(const opencascade::handle<StepShape_HArray1OfGeometricSetSelect> & aElements);
 
@@ -1581,7 +1923,9 @@ class StepShape_GeometricSet : public StepGeom_GeometricRepresentationItem {
 		%feature("compactdefaultargs") StepShape_GeometricSet;
 		%feature("autodoc", "Returns a geometricset.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_GeometricSet;
 		 StepShape_GeometricSet();
 
@@ -1605,9 +1949,13 @@ class StepShape_GeometricSetSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a geometricsetselect kind entity that is : 1 -> point 2 -> curve 3 -> surface 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -1615,7 +1963,9 @@ class StepShape_GeometricSetSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Returns value as a curve (null if another type).
 
-	:rtype: opencascade::handle<StepGeom_Curve>
+Returns
+-------
+opencascade::handle<StepGeom_Curve>
 ") Curve;
 		opencascade::handle<StepGeom_Curve> Curve();
 
@@ -1623,7 +1973,9 @@ class StepShape_GeometricSetSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") Point;
 		%feature("autodoc", "Returns value as a point (null if another type).
 
-	:rtype: opencascade::handle<StepGeom_Point>
+Returns
+-------
+opencascade::handle<StepGeom_Point>
 ") Point;
 		opencascade::handle<StepGeom_Point> Point();
 
@@ -1631,7 +1983,9 @@ class StepShape_GeometricSetSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") StepShape_GeometricSetSelect;
 		%feature("autodoc", "Returns a geometricsetselect selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_GeometricSetSelect;
 		 StepShape_GeometricSetSelect();
 
@@ -1639,7 +1993,9 @@ class StepShape_GeometricSetSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") Surface;
 		%feature("autodoc", "Returns value as a surface (null if another type).
 
-	:rtype: opencascade::handle<StepGeom_Surface>
+Returns
+-------
+opencascade::handle<StepGeom_Surface>
 ") Surface;
 		opencascade::handle<StepGeom_Surface> Surface();
 
@@ -1659,41 +2015,65 @@ class StepShape_HalfSpaceSolid : public StepGeom_GeometricRepresentationItem {
 	public:
 		/****************** AgreementFlag ******************/
 		%feature("compactdefaultargs") AgreementFlag;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") AgreementFlag;
 		Standard_Boolean AgreementFlag();
 
 		/****************** BaseSurface ******************/
 		%feature("compactdefaultargs") BaseSurface;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Surface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Surface>
 ") BaseSurface;
 		opencascade::handle<StepGeom_Surface> BaseSurface();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aBaseSurface:
-	:type aBaseSurface: StepGeom_Surface
-	:param aAgreementFlag:
-	:type aAgreementFlag: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aBaseSurface: StepGeom_Surface
+aAgreementFlag: bool
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepGeom_Surface> & aBaseSurface, const Standard_Boolean aAgreementFlag);
 
 		/****************** SetAgreementFlag ******************/
 		%feature("compactdefaultargs") SetAgreementFlag;
-		%feature("autodoc", "	:param aAgreementFlag:
-	:type aAgreementFlag: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAgreementFlag: bool
+
+Returns
+-------
+None
 ") SetAgreementFlag;
 		void SetAgreementFlag(const Standard_Boolean aAgreementFlag);
 
 		/****************** SetBaseSurface ******************/
 		%feature("compactdefaultargs") SetBaseSurface;
-		%feature("autodoc", "	:param aBaseSurface:
-	:type aBaseSurface: StepGeom_Surface
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aBaseSurface: StepGeom_Surface
+
+Returns
+-------
+None
 ") SetBaseSurface;
 		void SetBaseSurface(const opencascade::handle<StepGeom_Surface> & aBaseSurface);
 
@@ -1701,7 +2081,9 @@ class StepShape_HalfSpaceSolid : public StepGeom_GeometricRepresentationItem {
 		%feature("compactdefaultargs") StepShape_HalfSpaceSolid;
 		%feature("autodoc", "Returns a halfspacesolid.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_HalfSpaceSolid;
 		 StepShape_HalfSpaceSolid();
 
@@ -1723,77 +2105,124 @@ class StepShape_LimitsAndFits : public Standard_Transient {
 	public:
 		/****************** FormVariance ******************/
 		%feature("compactdefaultargs") FormVariance;
-		%feature("autodoc", "	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") FormVariance;
 		opencascade::handle<TCollection_HAsciiString> FormVariance();
 
 		/****************** Grade ******************/
 		%feature("compactdefaultargs") Grade;
-		%feature("autodoc", "	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") Grade;
 		opencascade::handle<TCollection_HAsciiString> Grade();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param form_variance:
-	:type form_variance: TCollection_HAsciiString
-	:param zone_variance:
-	:type zone_variance: TCollection_HAsciiString
-	:param grade:
-	:type grade: TCollection_HAsciiString
-	:param source:
-	:type source: TCollection_HAsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+form_variance: TCollection_HAsciiString
+zone_variance: TCollection_HAsciiString
+grade: TCollection_HAsciiString
+source: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & form_variance, const opencascade::handle<TCollection_HAsciiString> & zone_variance, const opencascade::handle<TCollection_HAsciiString> & grade, const opencascade::handle<TCollection_HAsciiString> & source);
 
 		/****************** SetFormVariance ******************/
 		%feature("compactdefaultargs") SetFormVariance;
-		%feature("autodoc", "	:param form_variance:
-	:type form_variance: TCollection_HAsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+form_variance: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetFormVariance;
 		void SetFormVariance(const opencascade::handle<TCollection_HAsciiString> & form_variance);
 
 		/****************** SetGrade ******************/
 		%feature("compactdefaultargs") SetGrade;
-		%feature("autodoc", "	:param grade:
-	:type grade: TCollection_HAsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+grade: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetGrade;
 		void SetGrade(const opencascade::handle<TCollection_HAsciiString> & grade);
 
 		/****************** SetSource ******************/
 		%feature("compactdefaultargs") SetSource;
-		%feature("autodoc", "	:param source:
-	:type source: TCollection_HAsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+source: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetSource;
 		void SetSource(const opencascade::handle<TCollection_HAsciiString> & source);
 
 		/****************** SetZoneVariance ******************/
 		%feature("compactdefaultargs") SetZoneVariance;
-		%feature("autodoc", "	:param zone_variance:
-	:type zone_variance: TCollection_HAsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+zone_variance: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetZoneVariance;
 		void SetZoneVariance(const opencascade::handle<TCollection_HAsciiString> & zone_variance);
 
 		/****************** Source ******************/
 		%feature("compactdefaultargs") Source;
-		%feature("autodoc", "	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") Source;
 		opencascade::handle<TCollection_HAsciiString> Source();
 
 		/****************** StepShape_LimitsAndFits ******************/
 		%feature("compactdefaultargs") StepShape_LimitsAndFits;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_LimitsAndFits;
 		 StepShape_LimitsAndFits();
 
 		/****************** ZoneVariance ******************/
 		%feature("compactdefaultargs") ZoneVariance;
-		%feature("autodoc", "	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") ZoneVariance;
 		opencascade::handle<TCollection_HAsciiString> ZoneVariance();
 
@@ -1815,101 +2244,163 @@ class StepShape_MeasureQualification : public Standard_Transient {
 	public:
 		/****************** Description ******************/
 		%feature("compactdefaultargs") Description;
-		%feature("autodoc", "	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") Description;
 		opencascade::handle<TCollection_HAsciiString> Description();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param name:
-	:type name: TCollection_HAsciiString
-	:param description:
-	:type description: TCollection_HAsciiString
-	:param qualified_measure:
-	:type qualified_measure: StepBasic_MeasureWithUnit
-	:param qualifiers:
-	:type qualifiers: StepShape_HArray1OfValueQualifier
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+name: TCollection_HAsciiString
+description: TCollection_HAsciiString
+qualified_measure: StepBasic_MeasureWithUnit
+qualifiers: StepShape_HArray1OfValueQualifier
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & name, const opencascade::handle<TCollection_HAsciiString> & description, const opencascade::handle<StepBasic_MeasureWithUnit> & qualified_measure, const opencascade::handle<StepShape_HArray1OfValueQualifier> & qualifiers);
 
 		/****************** Name ******************/
 		%feature("compactdefaultargs") Name;
-		%feature("autodoc", "	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") Name;
 		opencascade::handle<TCollection_HAsciiString> Name();
 
 		/****************** NbQualifiers ******************/
 		%feature("compactdefaultargs") NbQualifiers;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbQualifiers;
 		Standard_Integer NbQualifiers();
 
 		/****************** QualifiedMeasure ******************/
 		%feature("compactdefaultargs") QualifiedMeasure;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_MeasureWithUnit>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_MeasureWithUnit>
 ") QualifiedMeasure;
 		opencascade::handle<StepBasic_MeasureWithUnit> QualifiedMeasure();
 
 		/****************** Qualifiers ******************/
 		%feature("compactdefaultargs") Qualifiers;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfValueQualifier>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfValueQualifier>
 ") Qualifiers;
 		opencascade::handle<StepShape_HArray1OfValueQualifier> Qualifiers();
 
 		/****************** QualifiersValue ******************/
 		%feature("compactdefaultargs") QualifiersValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepShape_ValueQualifier
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepShape_ValueQualifier
 ") QualifiersValue;
 		StepShape_ValueQualifier QualifiersValue(const Standard_Integer num);
 
 		/****************** SetDescription ******************/
 		%feature("compactdefaultargs") SetDescription;
-		%feature("autodoc", "	:param description:
-	:type description: TCollection_HAsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+description: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetDescription;
 		void SetDescription(const opencascade::handle<TCollection_HAsciiString> & description);
 
 		/****************** SetName ******************/
 		%feature("compactdefaultargs") SetName;
-		%feature("autodoc", "	:param name:
-	:type name: TCollection_HAsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+name: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & name);
 
 		/****************** SetQualifiedMeasure ******************/
 		%feature("compactdefaultargs") SetQualifiedMeasure;
-		%feature("autodoc", "	:param qualified_measure:
-	:type qualified_measure: StepBasic_MeasureWithUnit
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+qualified_measure: StepBasic_MeasureWithUnit
+
+Returns
+-------
+None
 ") SetQualifiedMeasure;
 		void SetQualifiedMeasure(const opencascade::handle<StepBasic_MeasureWithUnit> & qualified_measure);
 
 		/****************** SetQualifiers ******************/
 		%feature("compactdefaultargs") SetQualifiers;
-		%feature("autodoc", "	:param qualifiers:
-	:type qualifiers: StepShape_HArray1OfValueQualifier
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+qualifiers: StepShape_HArray1OfValueQualifier
+
+Returns
+-------
+None
 ") SetQualifiers;
 		void SetQualifiers(const opencascade::handle<StepShape_HArray1OfValueQualifier> & qualifiers);
 
 		/****************** SetQualifiersValue ******************/
 		%feature("compactdefaultargs") SetQualifiersValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:param aqualifier:
-	:type aqualifier: StepShape_ValueQualifier
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+aqualifier: StepShape_ValueQualifier
+
+Returns
+-------
+None
 ") SetQualifiersValue;
 		void SetQualifiersValue(const Standard_Integer num, const StepShape_ValueQualifier & aqualifier);
 
 		/****************** StepShape_MeasureQualification ******************/
 		%feature("compactdefaultargs") StepShape_MeasureQualification;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_MeasureQualification;
 		 StepShape_MeasureQualification();
 
@@ -1931,73 +2422,115 @@ class StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem : public
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aValueComponent:
-	:type aValueComponent: StepBasic_MeasureValueMember
-	:param aUnitComponent:
-	:type aUnitComponent: StepBasic_Unit
-	:param qualifiers:
-	:type qualifiers: StepShape_HArray1OfValueQualifier
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aValueComponent: StepBasic_MeasureValueMember
+aUnitComponent: StepBasic_Unit
+qualifiers: StepShape_HArray1OfValueQualifier
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepBasic_MeasureValueMember> & aValueComponent, const StepBasic_Unit & aUnitComponent, const opencascade::handle<StepShape_HArray1OfValueQualifier> & qualifiers);
 
 		/****************** Measure ******************/
 		%feature("compactdefaultargs") Measure;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_MeasureWithUnit>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_MeasureWithUnit>
 ") Measure;
 		opencascade::handle<StepBasic_MeasureWithUnit> Measure();
 
 		/****************** NbQualifiers ******************/
 		%feature("compactdefaultargs") NbQualifiers;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbQualifiers;
 		Standard_Integer NbQualifiers();
 
 		/****************** Qualifiers ******************/
 		%feature("compactdefaultargs") Qualifiers;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfValueQualifier>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfValueQualifier>
 ") Qualifiers;
 		opencascade::handle<StepShape_HArray1OfValueQualifier> Qualifiers();
 
 		/****************** QualifiersValue ******************/
 		%feature("compactdefaultargs") QualifiersValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepShape_ValueQualifier
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepShape_ValueQualifier
 ") QualifiersValue;
 		StepShape_ValueQualifier QualifiersValue(const Standard_Integer num);
 
 		/****************** SetMeasure ******************/
 		%feature("compactdefaultargs") SetMeasure;
-		%feature("autodoc", "	:param Measure:
-	:type Measure: StepBasic_MeasureWithUnit
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Measure: StepBasic_MeasureWithUnit
+
+Returns
+-------
+None
 ") SetMeasure;
 		void SetMeasure(const opencascade::handle<StepBasic_MeasureWithUnit> & Measure);
 
 		/****************** SetQualifiers ******************/
 		%feature("compactdefaultargs") SetQualifiers;
-		%feature("autodoc", "	:param qualifiers:
-	:type qualifiers: StepShape_HArray1OfValueQualifier
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+qualifiers: StepShape_HArray1OfValueQualifier
+
+Returns
+-------
+None
 ") SetQualifiers;
 		void SetQualifiers(const opencascade::handle<StepShape_HArray1OfValueQualifier> & qualifiers);
 
 		/****************** SetQualifiersValue ******************/
 		%feature("compactdefaultargs") SetQualifiersValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:param aqualifier:
-	:type aqualifier: StepShape_ValueQualifier
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+aqualifier: StepShape_ValueQualifier
+
+Returns
+-------
+None
 ") SetQualifiersValue;
 		void SetQualifiersValue(const Standard_Integer num, const StepShape_ValueQualifier & aqualifier);
 
 		/****************** StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem ******************/
 		%feature("compactdefaultargs") StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem;
 		 StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem();
 
@@ -2019,45 +2552,74 @@ class StepShape_PlusMinusTolerance : public Standard_Transient {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param range:
-	:type range: StepShape_ToleranceMethodDefinition
-	:param toleranced_dimension:
-	:type toleranced_dimension: StepShape_DimensionalCharacteristic
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+range: StepShape_ToleranceMethodDefinition
+toleranced_dimension: StepShape_DimensionalCharacteristic
+
+Returns
+-------
+None
 ") Init;
 		void Init(const StepShape_ToleranceMethodDefinition & range, const StepShape_DimensionalCharacteristic & toleranced_dimension);
 
 		/****************** Range ******************/
 		%feature("compactdefaultargs") Range;
-		%feature("autodoc", "	:rtype: StepShape_ToleranceMethodDefinition
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+StepShape_ToleranceMethodDefinition
 ") Range;
 		StepShape_ToleranceMethodDefinition Range();
 
 		/****************** SetRange ******************/
 		%feature("compactdefaultargs") SetRange;
-		%feature("autodoc", "	:param range:
-	:type range: StepShape_ToleranceMethodDefinition
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+range: StepShape_ToleranceMethodDefinition
+
+Returns
+-------
+None
 ") SetRange;
 		void SetRange(const StepShape_ToleranceMethodDefinition & range);
 
 		/****************** SetTolerancedDimension ******************/
 		%feature("compactdefaultargs") SetTolerancedDimension;
-		%feature("autodoc", "	:param toleranced_dimension:
-	:type toleranced_dimension: StepShape_DimensionalCharacteristic
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+toleranced_dimension: StepShape_DimensionalCharacteristic
+
+Returns
+-------
+None
 ") SetTolerancedDimension;
 		void SetTolerancedDimension(const StepShape_DimensionalCharacteristic & toleranced_dimension);
 
 		/****************** StepShape_PlusMinusTolerance ******************/
 		%feature("compactdefaultargs") StepShape_PlusMinusTolerance;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_PlusMinusTolerance;
 		 StepShape_PlusMinusTolerance();
 
 		/****************** TolerancedDimension ******************/
 		%feature("compactdefaultargs") TolerancedDimension;
-		%feature("autodoc", "	:rtype: StepShape_DimensionalCharacteristic
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+StepShape_DimensionalCharacteristic
 ") TolerancedDimension;
 		StepShape_DimensionalCharacteristic TolerancedDimension();
 
@@ -2079,29 +2641,49 @@ class StepShape_PrecisionQualifier : public Standard_Transient {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param precision_value:
-	:type precision_value: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+precision_value: int
+
+Returns
+-------
+None
 ") Init;
 		void Init(const Standard_Integer precision_value);
 
 		/****************** PrecisionValue ******************/
 		%feature("compactdefaultargs") PrecisionValue;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") PrecisionValue;
 		Standard_Integer PrecisionValue();
 
 		/****************** SetPrecisionValue ******************/
 		%feature("compactdefaultargs") SetPrecisionValue;
-		%feature("autodoc", "	:param precision_value:
-	:type precision_value: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+precision_value: int
+
+Returns
+-------
+None
 ") SetPrecisionValue;
 		void SetPrecisionValue(const Standard_Integer precision_value);
 
 		/****************** StepShape_PrecisionQualifier ******************/
 		%feature("compactdefaultargs") StepShape_PrecisionQualifier;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_PrecisionQualifier;
 		 StepShape_PrecisionQualifier();
 
@@ -2123,55 +2705,89 @@ class StepShape_QualifiedRepresentationItem : public StepRepr_RepresentationItem
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param qualifiers:
-	:type qualifiers: StepShape_HArray1OfValueQualifier
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+qualifiers: StepShape_HArray1OfValueQualifier
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_HArray1OfValueQualifier> & qualifiers);
 
 		/****************** NbQualifiers ******************/
 		%feature("compactdefaultargs") NbQualifiers;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbQualifiers;
 		Standard_Integer NbQualifiers();
 
 		/****************** Qualifiers ******************/
 		%feature("compactdefaultargs") Qualifiers;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfValueQualifier>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfValueQualifier>
 ") Qualifiers;
 		opencascade::handle<StepShape_HArray1OfValueQualifier> Qualifiers();
 
 		/****************** QualifiersValue ******************/
 		%feature("compactdefaultargs") QualifiersValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepShape_ValueQualifier
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepShape_ValueQualifier
 ") QualifiersValue;
 		StepShape_ValueQualifier QualifiersValue(const Standard_Integer num);
 
 		/****************** SetQualifiers ******************/
 		%feature("compactdefaultargs") SetQualifiers;
-		%feature("autodoc", "	:param qualifiers:
-	:type qualifiers: StepShape_HArray1OfValueQualifier
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+qualifiers: StepShape_HArray1OfValueQualifier
+
+Returns
+-------
+None
 ") SetQualifiers;
 		void SetQualifiers(const opencascade::handle<StepShape_HArray1OfValueQualifier> & qualifiers);
 
 		/****************** SetQualifiersValue ******************/
 		%feature("compactdefaultargs") SetQualifiersValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:param aqualifier:
-	:type aqualifier: StepShape_ValueQualifier
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+aqualifier: StepShape_ValueQualifier
+
+Returns
+-------
+None
 ") SetQualifiersValue;
 		void SetQualifiersValue(const Standard_Integer num, const StepShape_ValueQualifier & aqualifier);
 
 		/****************** StepShape_QualifiedRepresentationItem ******************/
 		%feature("compactdefaultargs") StepShape_QualifiedRepresentationItem;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_QualifiedRepresentationItem;
 		 StepShape_QualifiedRepresentationItem();
 
@@ -2195,9 +2811,13 @@ class StepShape_ReversibleTopologyItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a reversibletopologyitem kind entity that is : 1 -> edge 2 -> path 3 -> face 4 -> facebound 5 -> closedshell 6 -> openshell 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -2205,7 +2825,9 @@ class StepShape_ReversibleTopologyItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ClosedShell;
 		%feature("autodoc", "Returns value as a closedshell (null if another type).
 
-	:rtype: opencascade::handle<StepShape_ClosedShell>
+Returns
+-------
+opencascade::handle<StepShape_ClosedShell>
 ") ClosedShell;
 		opencascade::handle<StepShape_ClosedShell> ClosedShell();
 
@@ -2213,7 +2835,9 @@ class StepShape_ReversibleTopologyItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Returns value as a edge (null if another type).
 
-	:rtype: opencascade::handle<StepShape_Edge>
+Returns
+-------
+opencascade::handle<StepShape_Edge>
 ") Edge;
 		opencascade::handle<StepShape_Edge> Edge();
 
@@ -2221,7 +2845,9 @@ class StepShape_ReversibleTopologyItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Face;
 		%feature("autodoc", "Returns value as a face (null if another type).
 
-	:rtype: opencascade::handle<StepShape_Face>
+Returns
+-------
+opencascade::handle<StepShape_Face>
 ") Face;
 		opencascade::handle<StepShape_Face> Face();
 
@@ -2229,7 +2855,9 @@ class StepShape_ReversibleTopologyItem : public StepData_SelectType {
 		%feature("compactdefaultargs") FaceBound;
 		%feature("autodoc", "Returns value as a facebound (null if another type).
 
-	:rtype: opencascade::handle<StepShape_FaceBound>
+Returns
+-------
+opencascade::handle<StepShape_FaceBound>
 ") FaceBound;
 		opencascade::handle<StepShape_FaceBound> FaceBound();
 
@@ -2237,7 +2865,9 @@ class StepShape_ReversibleTopologyItem : public StepData_SelectType {
 		%feature("compactdefaultargs") OpenShell;
 		%feature("autodoc", "Returns value as a openshell (null if another type).
 
-	:rtype: opencascade::handle<StepShape_OpenShell>
+Returns
+-------
+opencascade::handle<StepShape_OpenShell>
 ") OpenShell;
 		opencascade::handle<StepShape_OpenShell> OpenShell();
 
@@ -2245,7 +2875,9 @@ class StepShape_ReversibleTopologyItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Path;
 		%feature("autodoc", "Returns value as a path (null if another type).
 
-	:rtype: opencascade::handle<StepShape_Path>
+Returns
+-------
+opencascade::handle<StepShape_Path>
 ") Path;
 		opencascade::handle<StepShape_Path> Path();
 
@@ -2253,7 +2885,9 @@ class StepShape_ReversibleTopologyItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StepShape_ReversibleTopologyItem;
 		%feature("autodoc", "Returns a reversibletopologyitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ReversibleTopologyItem;
 		 StepShape_ReversibleTopologyItem();
 
@@ -2273,71 +2907,110 @@ class StepShape_RightAngularWedge : public StepGeom_GeometricRepresentationItem 
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aPosition:
-	:type aPosition: StepGeom_Axis2Placement3d
-	:param aX:
-	:type aX: float
-	:param aY:
-	:type aY: float
-	:param aZ:
-	:type aZ: float
-	:param aLtx:
-	:type aLtx: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aPosition: StepGeom_Axis2Placement3d
+aX: float
+aY: float
+aZ: float
+aLtx: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepGeom_Axis2Placement3d> & aPosition, const Standard_Real aX, const Standard_Real aY, const Standard_Real aZ, const Standard_Real aLtx);
 
 		/****************** Ltx ******************/
 		%feature("compactdefaultargs") Ltx;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Ltx;
 		Standard_Real Ltx();
 
 		/****************** Position ******************/
 		%feature("compactdefaultargs") Position;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Axis2Placement3d>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Axis2Placement3d>
 ") Position;
 		opencascade::handle<StepGeom_Axis2Placement3d> Position();
 
 		/****************** SetLtx ******************/
 		%feature("compactdefaultargs") SetLtx;
-		%feature("autodoc", "	:param aLtx:
-	:type aLtx: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aLtx: float
+
+Returns
+-------
+None
 ") SetLtx;
 		void SetLtx(const Standard_Real aLtx);
 
 		/****************** SetPosition ******************/
 		%feature("compactdefaultargs") SetPosition;
-		%feature("autodoc", "	:param aPosition:
-	:type aPosition: StepGeom_Axis2Placement3d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPosition: StepGeom_Axis2Placement3d
+
+Returns
+-------
+None
 ") SetPosition;
 		void SetPosition(const opencascade::handle<StepGeom_Axis2Placement3d> & aPosition);
 
 		/****************** SetX ******************/
 		%feature("compactdefaultargs") SetX;
-		%feature("autodoc", "	:param aX:
-	:type aX: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aX: float
+
+Returns
+-------
+None
 ") SetX;
 		void SetX(const Standard_Real aX);
 
 		/****************** SetY ******************/
 		%feature("compactdefaultargs") SetY;
-		%feature("autodoc", "	:param aY:
-	:type aY: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aY: float
+
+Returns
+-------
+None
 ") SetY;
 		void SetY(const Standard_Real aY);
 
 		/****************** SetZ ******************/
 		%feature("compactdefaultargs") SetZ;
-		%feature("autodoc", "	:param aZ:
-	:type aZ: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aZ: float
+
+Returns
+-------
+None
 ") SetZ;
 		void SetZ(const Standard_Real aZ);
 
@@ -2345,25 +3018,39 @@ class StepShape_RightAngularWedge : public StepGeom_GeometricRepresentationItem 
 		%feature("compactdefaultargs") StepShape_RightAngularWedge;
 		%feature("autodoc", "Returns a rightangularwedge.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_RightAngularWedge;
 		 StepShape_RightAngularWedge();
 
 		/****************** X ******************/
 		%feature("compactdefaultargs") X;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") X;
 		Standard_Real X();
 
 		/****************** Y ******************/
 		%feature("compactdefaultargs") Y;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Y;
 		Standard_Real Y();
 
 		/****************** Z ******************/
 		%feature("compactdefaultargs") Z;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Z;
 		Standard_Real Z();
 
@@ -2385,73 +3072,115 @@ class StepShape_RightCircularCone : public StepGeom_GeometricRepresentationItem 
 	public:
 		/****************** Height ******************/
 		%feature("compactdefaultargs") Height;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Height;
 		Standard_Real Height();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aPosition:
-	:type aPosition: StepGeom_Axis1Placement
-	:param aHeight:
-	:type aHeight: float
-	:param aRadius:
-	:type aRadius: float
-	:param aSemiAngle:
-	:type aSemiAngle: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aPosition: StepGeom_Axis1Placement
+aHeight: float
+aRadius: float
+aSemiAngle: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepGeom_Axis1Placement> & aPosition, const Standard_Real aHeight, const Standard_Real aRadius, const Standard_Real aSemiAngle);
 
 		/****************** Position ******************/
 		%feature("compactdefaultargs") Position;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Axis1Placement>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Axis1Placement>
 ") Position;
 		opencascade::handle<StepGeom_Axis1Placement> Position();
 
 		/****************** Radius ******************/
 		%feature("compactdefaultargs") Radius;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Radius;
 		Standard_Real Radius();
 
 		/****************** SemiAngle ******************/
 		%feature("compactdefaultargs") SemiAngle;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") SemiAngle;
 		Standard_Real SemiAngle();
 
 		/****************** SetHeight ******************/
 		%feature("compactdefaultargs") SetHeight;
-		%feature("autodoc", "	:param aHeight:
-	:type aHeight: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aHeight: float
+
+Returns
+-------
+None
 ") SetHeight;
 		void SetHeight(const Standard_Real aHeight);
 
 		/****************** SetPosition ******************/
 		%feature("compactdefaultargs") SetPosition;
-		%feature("autodoc", "	:param aPosition:
-	:type aPosition: StepGeom_Axis1Placement
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPosition: StepGeom_Axis1Placement
+
+Returns
+-------
+None
 ") SetPosition;
 		void SetPosition(const opencascade::handle<StepGeom_Axis1Placement> & aPosition);
 
 		/****************** SetRadius ******************/
 		%feature("compactdefaultargs") SetRadius;
-		%feature("autodoc", "	:param aRadius:
-	:type aRadius: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aRadius: float
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const Standard_Real aRadius);
 
 		/****************** SetSemiAngle ******************/
 		%feature("compactdefaultargs") SetSemiAngle;
-		%feature("autodoc", "	:param aSemiAngle:
-	:type aSemiAngle: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aSemiAngle: float
+
+Returns
+-------
+None
 ") SetSemiAngle;
 		void SetSemiAngle(const Standard_Real aSemiAngle);
 
@@ -2459,7 +3188,9 @@ class StepShape_RightCircularCone : public StepGeom_GeometricRepresentationItem 
 		%feature("compactdefaultargs") StepShape_RightCircularCone;
 		%feature("autodoc", "Returns a rightcircularcone.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_RightCircularCone;
 		 StepShape_RightCircularCone();
 
@@ -2481,57 +3212,90 @@ class StepShape_RightCircularCylinder : public StepGeom_GeometricRepresentationI
 	public:
 		/****************** Height ******************/
 		%feature("compactdefaultargs") Height;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Height;
 		Standard_Real Height();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aPosition:
-	:type aPosition: StepGeom_Axis1Placement
-	:param aHeight:
-	:type aHeight: float
-	:param aRadius:
-	:type aRadius: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aPosition: StepGeom_Axis1Placement
+aHeight: float
+aRadius: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepGeom_Axis1Placement> & aPosition, const Standard_Real aHeight, const Standard_Real aRadius);
 
 		/****************** Position ******************/
 		%feature("compactdefaultargs") Position;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Axis1Placement>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Axis1Placement>
 ") Position;
 		opencascade::handle<StepGeom_Axis1Placement> Position();
 
 		/****************** Radius ******************/
 		%feature("compactdefaultargs") Radius;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Radius;
 		Standard_Real Radius();
 
 		/****************** SetHeight ******************/
 		%feature("compactdefaultargs") SetHeight;
-		%feature("autodoc", "	:param aHeight:
-	:type aHeight: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aHeight: float
+
+Returns
+-------
+None
 ") SetHeight;
 		void SetHeight(const Standard_Real aHeight);
 
 		/****************** SetPosition ******************/
 		%feature("compactdefaultargs") SetPosition;
-		%feature("autodoc", "	:param aPosition:
-	:type aPosition: StepGeom_Axis1Placement
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPosition: StepGeom_Axis1Placement
+
+Returns
+-------
+None
 ") SetPosition;
 		void SetPosition(const opencascade::handle<StepGeom_Axis1Placement> & aPosition);
 
 		/****************** SetRadius ******************/
 		%feature("compactdefaultargs") SetRadius;
-		%feature("autodoc", "	:param aRadius:
-	:type aRadius: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aRadius: float
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const Standard_Real aRadius);
 
@@ -2539,7 +3303,9 @@ class StepShape_RightCircularCylinder : public StepGeom_GeometricRepresentationI
 		%feature("compactdefaultargs") StepShape_RightCircularCylinder;
 		%feature("autodoc", "Returns a rightcircularcylinder.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_RightCircularCylinder;
 		 StepShape_RightCircularCylinder();
 
@@ -2563,7 +3329,9 @@ class StepShape_ShapeDefinitionRepresentation : public StepRepr_PropertyDefiniti
 		%feature("compactdefaultargs") StepShape_ShapeDefinitionRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ShapeDefinitionRepresentation;
 		 StepShape_ShapeDefinitionRepresentation();
 
@@ -2587,9 +3355,13 @@ class StepShape_ShapeDimensionRepresentationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a shapedimensionrepresentationitem kind entity that is : 1 -> compoundrepresentationitem 2 -> descriptiverepresentationitem 3 -> measurerepresentationitem 4 -> placement 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -2597,7 +3369,9 @@ class StepShape_ShapeDimensionRepresentationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CompoundRepresentationItem;
 		%feature("autodoc", "Returns value as a compoundrepresentationitem (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_CompoundRepresentationItem>
+Returns
+-------
+opencascade::handle<StepRepr_CompoundRepresentationItem>
 ") CompoundRepresentationItem;
 		opencascade::handle<StepRepr_CompoundRepresentationItem> CompoundRepresentationItem();
 
@@ -2605,7 +3379,9 @@ class StepShape_ShapeDimensionRepresentationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") DescriptiveRepresentationItem;
 		%feature("autodoc", "Returns value as a descriptiverepresentationitem (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_DescriptiveRepresentationItem>
+Returns
+-------
+opencascade::handle<StepRepr_DescriptiveRepresentationItem>
 ") DescriptiveRepresentationItem;
 		opencascade::handle<StepRepr_DescriptiveRepresentationItem> DescriptiveRepresentationItem();
 
@@ -2613,7 +3389,9 @@ class StepShape_ShapeDimensionRepresentationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") MeasureRepresentationItem;
 		%feature("autodoc", "Returns value as a measurerepresentationitem (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_MeasureRepresentationItem>
+Returns
+-------
+opencascade::handle<StepRepr_MeasureRepresentationItem>
 ") MeasureRepresentationItem;
 		opencascade::handle<StepRepr_MeasureRepresentationItem> MeasureRepresentationItem();
 
@@ -2621,7 +3399,9 @@ class StepShape_ShapeDimensionRepresentationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Placement;
 		%feature("autodoc", "Returns value as a placement (null if another type).
 
-	:rtype: opencascade::handle<StepGeom_Placement>
+Returns
+-------
+opencascade::handle<StepGeom_Placement>
 ") Placement;
 		opencascade::handle<StepGeom_Placement> Placement();
 
@@ -2629,7 +3409,9 @@ class StepShape_ShapeDimensionRepresentationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StepShape_ShapeDimensionRepresentationItem;
 		%feature("autodoc", "Returns a shapedimensionrepresentationitem select type.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ShapeDimensionRepresentationItem;
 		 StepShape_ShapeDimensionRepresentationItem();
 
@@ -2651,7 +3433,9 @@ class StepShape_ShapeRepresentation : public StepRepr_Representation {
 		%feature("compactdefaultargs") StepShape_ShapeRepresentation;
 		%feature("autodoc", "Returns a shaperepresentation.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ShapeRepresentation;
 		 StepShape_ShapeRepresentation();
 
@@ -2675,9 +3459,13 @@ class StepShape_Shell : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a shell kind entity that is : 1 -> openshell 2 -> closedshell 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -2685,7 +3473,9 @@ class StepShape_Shell : public StepData_SelectType {
 		%feature("compactdefaultargs") ClosedShell;
 		%feature("autodoc", "Returns value as a closedshell (null if another type).
 
-	:rtype: opencascade::handle<StepShape_ClosedShell>
+Returns
+-------
+opencascade::handle<StepShape_ClosedShell>
 ") ClosedShell;
 		opencascade::handle<StepShape_ClosedShell> ClosedShell();
 
@@ -2693,7 +3483,9 @@ class StepShape_Shell : public StepData_SelectType {
 		%feature("compactdefaultargs") OpenShell;
 		%feature("autodoc", "Returns value as a openshell (null if another type).
 
-	:rtype: opencascade::handle<StepShape_OpenShell>
+Returns
+-------
+opencascade::handle<StepShape_OpenShell>
 ") OpenShell;
 		opencascade::handle<StepShape_OpenShell> OpenShell();
 
@@ -2701,7 +3493,9 @@ class StepShape_Shell : public StepData_SelectType {
 		%feature("compactdefaultargs") StepShape_Shell;
 		%feature("autodoc", "Returns a shell selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_Shell;
 		 StepShape_Shell();
 
@@ -2721,39 +3515,64 @@ class StepShape_ShellBasedSurfaceModel : public StepGeom_GeometricRepresentation
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aSbsmBoundary:
-	:type aSbsmBoundary: StepShape_HArray1OfShell
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aSbsmBoundary: StepShape_HArray1OfShell
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_HArray1OfShell> & aSbsmBoundary);
 
 		/****************** NbSbsmBoundary ******************/
 		%feature("compactdefaultargs") NbSbsmBoundary;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbSbsmBoundary;
 		Standard_Integer NbSbsmBoundary();
 
 		/****************** SbsmBoundary ******************/
 		%feature("compactdefaultargs") SbsmBoundary;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfShell>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfShell>
 ") SbsmBoundary;
 		opencascade::handle<StepShape_HArray1OfShell> SbsmBoundary();
 
 		/****************** SbsmBoundaryValue ******************/
 		%feature("compactdefaultargs") SbsmBoundaryValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepShape_Shell
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepShape_Shell
 ") SbsmBoundaryValue;
 		StepShape_Shell SbsmBoundaryValue(const Standard_Integer num);
 
 		/****************** SetSbsmBoundary ******************/
 		%feature("compactdefaultargs") SetSbsmBoundary;
-		%feature("autodoc", "	:param aSbsmBoundary:
-	:type aSbsmBoundary: StepShape_HArray1OfShell
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aSbsmBoundary: StepShape_HArray1OfShell
+
+Returns
+-------
+None
 ") SetSbsmBoundary;
 		void SetSbsmBoundary(const opencascade::handle<StepShape_HArray1OfShell> & aSbsmBoundary);
 
@@ -2761,7 +3580,9 @@ class StepShape_ShellBasedSurfaceModel : public StepGeom_GeometricRepresentation
 		%feature("compactdefaultargs") StepShape_ShellBasedSurfaceModel;
 		%feature("autodoc", "Returns a shellbasedsurfacemodel.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ShellBasedSurfaceModel;
 		 StepShape_ShellBasedSurfaceModel();
 
@@ -2785,7 +3606,9 @@ class StepShape_SolidModel : public StepGeom_GeometricRepresentationItem {
 		%feature("compactdefaultargs") StepShape_SolidModel;
 		%feature("autodoc", "Returns a solidmodel.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_SolidModel;
 		 StepShape_SolidModel();
 
@@ -2807,41 +3630,65 @@ class StepShape_Sphere : public StepGeom_GeometricRepresentationItem {
 	public:
 		/****************** Centre ******************/
 		%feature("compactdefaultargs") Centre;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Point>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Point>
 ") Centre;
 		opencascade::handle<StepGeom_Point> Centre();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aRadius:
-	:type aRadius: float
-	:param aCentre:
-	:type aCentre: StepGeom_Point
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aRadius: float
+aCentre: StepGeom_Point
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const Standard_Real aRadius, const opencascade::handle<StepGeom_Point> & aCentre);
 
 		/****************** Radius ******************/
 		%feature("compactdefaultargs") Radius;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Radius;
 		Standard_Real Radius();
 
 		/****************** SetCentre ******************/
 		%feature("compactdefaultargs") SetCentre;
-		%feature("autodoc", "	:param aCentre:
-	:type aCentre: StepGeom_Point
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aCentre: StepGeom_Point
+
+Returns
+-------
+None
 ") SetCentre;
 		void SetCentre(const opencascade::handle<StepGeom_Point> & aCentre);
 
 		/****************** SetRadius ******************/
 		%feature("compactdefaultargs") SetRadius;
-		%feature("autodoc", "	:param aRadius:
-	:type aRadius: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aRadius: float
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const Standard_Real aRadius);
 
@@ -2849,7 +3696,9 @@ class StepShape_Sphere : public StepGeom_GeometricRepresentationItem {
 		%feature("compactdefaultargs") StepShape_Sphere;
 		%feature("autodoc", "Returns a sphere.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_Sphere;
 		 StepShape_Sphere();
 
@@ -2873,9 +3722,13 @@ class StepShape_SurfaceModel : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a surfacemodel kind entity that is : 1 -> shellbasedsurfacemodel 2 -> facebasedsurfacemodel 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -2883,7 +3736,9 @@ class StepShape_SurfaceModel : public StepData_SelectType {
 		%feature("compactdefaultargs") ShellBasedSurfaceModel;
 		%feature("autodoc", "Returns value as a shellbasedsurfacemodel (null if another type).
 
-	:rtype: opencascade::handle<StepShape_ShellBasedSurfaceModel>
+Returns
+-------
+opencascade::handle<StepShape_ShellBasedSurfaceModel>
 ") ShellBasedSurfaceModel;
 		opencascade::handle<StepShape_ShellBasedSurfaceModel> ShellBasedSurfaceModel();
 
@@ -2891,7 +3746,9 @@ class StepShape_SurfaceModel : public StepData_SelectType {
 		%feature("compactdefaultargs") StepShape_SurfaceModel;
 		%feature("autodoc", "Returns a surfacemodel selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_SurfaceModel;
 		 StepShape_SurfaceModel();
 
@@ -2913,9 +3770,13 @@ class StepShape_ToleranceMethodDefinition : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of valuequalifier select type : 1 -> tolerancevalue from stepshape 2 -> limitsandfits from stepshape.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -2923,13 +3784,19 @@ class StepShape_ToleranceMethodDefinition : public StepData_SelectType {
 		%feature("compactdefaultargs") LimitsAndFits;
 		%feature("autodoc", "Returns value as limitsandfits.
 
-	:rtype: opencascade::handle<StepShape_LimitsAndFits>
+Returns
+-------
+opencascade::handle<StepShape_LimitsAndFits>
 ") LimitsAndFits;
 		opencascade::handle<StepShape_LimitsAndFits> LimitsAndFits();
 
 		/****************** StepShape_ToleranceMethodDefinition ******************/
 		%feature("compactdefaultargs") StepShape_ToleranceMethodDefinition;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_ToleranceMethodDefinition;
 		 StepShape_ToleranceMethodDefinition();
 
@@ -2937,7 +3804,9 @@ class StepShape_ToleranceMethodDefinition : public StepData_SelectType {
 		%feature("compactdefaultargs") ToleranceValue;
 		%feature("autodoc", "Returns value as tolerancevalue.
 
-	:rtype: opencascade::handle<StepShape_ToleranceValue>
+Returns
+-------
+opencascade::handle<StepShape_ToleranceValue>
 ") ToleranceValue;
 		opencascade::handle<StepShape_ToleranceValue> ToleranceValue();
 
@@ -2957,45 +3826,74 @@ class StepShape_ToleranceValue : public Standard_Transient {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param lower_bound:
-	:type lower_bound: Standard_Transient
-	:param upper_bound:
-	:type upper_bound: Standard_Transient
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+lower_bound: Standard_Transient
+upper_bound: Standard_Transient
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<Standard_Transient> & lower_bound, const opencascade::handle<Standard_Transient> & upper_bound);
 
 		/****************** LowerBound ******************/
 		%feature("compactdefaultargs") LowerBound;
-		%feature("autodoc", "	:rtype: opencascade::handle<Standard_Transient>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Standard_Transient>
 ") LowerBound;
 		opencascade::handle<Standard_Transient> LowerBound();
 
 		/****************** SetLowerBound ******************/
 		%feature("compactdefaultargs") SetLowerBound;
-		%feature("autodoc", "	:param lower_bound:
-	:type lower_bound: Standard_Transient
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+lower_bound: Standard_Transient
+
+Returns
+-------
+None
 ") SetLowerBound;
 		void SetLowerBound(const opencascade::handle<Standard_Transient> & lower_bound);
 
 		/****************** SetUpperBound ******************/
 		%feature("compactdefaultargs") SetUpperBound;
-		%feature("autodoc", "	:param upper_bound:
-	:type upper_bound: Standard_Transient
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+upper_bound: Standard_Transient
+
+Returns
+-------
+None
 ") SetUpperBound;
 		void SetUpperBound(const opencascade::handle<Standard_Transient> & upper_bound);
 
 		/****************** StepShape_ToleranceValue ******************/
 		%feature("compactdefaultargs") StepShape_ToleranceValue;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_ToleranceValue;
 		 StepShape_ToleranceValue();
 
 		/****************** UpperBound ******************/
 		%feature("compactdefaultargs") UpperBound;
-		%feature("autodoc", "	:rtype: opencascade::handle<Standard_Transient>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Standard_Transient>
 ") UpperBound;
 		opencascade::handle<Standard_Transient> UpperBound();
 
@@ -3019,7 +3917,9 @@ class StepShape_TopologicalRepresentationItem : public StepRepr_RepresentationIt
 		%feature("compactdefaultargs") StepShape_TopologicalRepresentationItem;
 		%feature("autodoc", "Returns a topologicalrepresentationitem.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_TopologicalRepresentationItem;
 		 StepShape_TopologicalRepresentationItem();
 
@@ -3041,57 +3941,90 @@ class StepShape_Torus : public StepGeom_GeometricRepresentationItem {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aPosition:
-	:type aPosition: StepGeom_Axis1Placement
-	:param aMajorRadius:
-	:type aMajorRadius: float
-	:param aMinorRadius:
-	:type aMinorRadius: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aPosition: StepGeom_Axis1Placement
+aMajorRadius: float
+aMinorRadius: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepGeom_Axis1Placement> & aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
 
 		/****************** MajorRadius ******************/
 		%feature("compactdefaultargs") MajorRadius;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") MajorRadius;
 		Standard_Real MajorRadius();
 
 		/****************** MinorRadius ******************/
 		%feature("compactdefaultargs") MinorRadius;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") MinorRadius;
 		Standard_Real MinorRadius();
 
 		/****************** Position ******************/
 		%feature("compactdefaultargs") Position;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Axis1Placement>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Axis1Placement>
 ") Position;
 		opencascade::handle<StepGeom_Axis1Placement> Position();
 
 		/****************** SetMajorRadius ******************/
 		%feature("compactdefaultargs") SetMajorRadius;
-		%feature("autodoc", "	:param aMajorRadius:
-	:type aMajorRadius: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aMajorRadius: float
+
+Returns
+-------
+None
 ") SetMajorRadius;
 		void SetMajorRadius(const Standard_Real aMajorRadius);
 
 		/****************** SetMinorRadius ******************/
 		%feature("compactdefaultargs") SetMinorRadius;
-		%feature("autodoc", "	:param aMinorRadius:
-	:type aMinorRadius: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aMinorRadius: float
+
+Returns
+-------
+None
 ") SetMinorRadius;
 		void SetMinorRadius(const Standard_Real aMinorRadius);
 
 		/****************** SetPosition ******************/
 		%feature("compactdefaultargs") SetPosition;
-		%feature("autodoc", "	:param aPosition:
-	:type aPosition: StepGeom_Axis1Placement
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPosition: StepGeom_Axis1Placement
+
+Returns
+-------
+None
 ") SetPosition;
 		void SetPosition(const opencascade::handle<StepGeom_Axis1Placement> & aPosition);
 
@@ -3099,7 +4032,9 @@ class StepShape_Torus : public StepGeom_GeometricRepresentationItem {
 		%feature("compactdefaultargs") StepShape_Torus;
 		%feature("autodoc", "Returns a torus.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_Torus;
 		 StepShape_Torus();
 
@@ -3121,29 +4056,49 @@ class StepShape_TypeQualifier : public Standard_Transient {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param name:
-	:type name: TCollection_HAsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+name: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & name);
 
 		/****************** Name ******************/
 		%feature("compactdefaultargs") Name;
-		%feature("autodoc", "	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") Name;
 		opencascade::handle<TCollection_HAsciiString> Name();
 
 		/****************** SetName ******************/
 		%feature("compactdefaultargs") SetName;
-		%feature("autodoc", "	:param name:
-	:type name: TCollection_HAsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+name: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & name);
 
 		/****************** StepShape_TypeQualifier ******************/
 		%feature("compactdefaultargs") StepShape_TypeQualifier;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_TypeQualifier;
 		 StepShape_TypeQualifier();
 
@@ -3167,7 +4122,9 @@ class StepShape_ValueFormatTypeQualifier : public Standard_Transient {
 		%feature("compactdefaultargs") FormatType;
 		%feature("autodoc", "Returns field formattype.
 
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") FormatType;
 		opencascade::handle<TCollection_HAsciiString> FormatType();
 
@@ -3175,9 +4132,13 @@ class StepShape_ValueFormatTypeQualifier : public Standard_Transient {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Init all field own and inherited.
 
-	:param theFormatType:
-	:type theFormatType: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+theFormatType: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & theFormatType);
 
@@ -3185,15 +4146,23 @@ class StepShape_ValueFormatTypeQualifier : public Standard_Transient {
 		%feature("compactdefaultargs") SetFormatType;
 		%feature("autodoc", "Set field formattype.
 
-	:param theFormatType:
-	:type theFormatType: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+theFormatType: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetFormatType;
 		void SetFormatType(const opencascade::handle<TCollection_HAsciiString> & theFormatType);
 
 		/****************** StepShape_ValueFormatTypeQualifier ******************/
 		%feature("compactdefaultargs") StepShape_ValueFormatTypeQualifier;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_ValueFormatTypeQualifier;
 		 StepShape_ValueFormatTypeQualifier();
 
@@ -3217,9 +4186,13 @@ class StepShape_ValueQualifier : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of valuequalifier select type : 1 -> precisionqualifier from stepshape 2 -> typequalifier from stepshape 3 -> unceraintyqualifier .. not yet implemented 4 -> valueformattypequalifier.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -3227,13 +4200,19 @@ class StepShape_ValueQualifier : public StepData_SelectType {
 		%feature("compactdefaultargs") PrecisionQualifier;
 		%feature("autodoc", "Returns value as precisionqualifier.
 
-	:rtype: opencascade::handle<StepShape_PrecisionQualifier>
+Returns
+-------
+opencascade::handle<StepShape_PrecisionQualifier>
 ") PrecisionQualifier;
 		opencascade::handle<StepShape_PrecisionQualifier> PrecisionQualifier();
 
 		/****************** StepShape_ValueQualifier ******************/
 		%feature("compactdefaultargs") StepShape_ValueQualifier;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepShape_ValueQualifier;
 		 StepShape_ValueQualifier();
 
@@ -3241,7 +4220,9 @@ class StepShape_ValueQualifier : public StepData_SelectType {
 		%feature("compactdefaultargs") TypeQualifier;
 		%feature("autodoc", "Returns value as typequalifier.
 
-	:rtype: opencascade::handle<StepShape_TypeQualifier>
+Returns
+-------
+opencascade::handle<StepShape_TypeQualifier>
 ") TypeQualifier;
 		opencascade::handle<StepShape_TypeQualifier> TypeQualifier();
 
@@ -3249,7 +4230,9 @@ class StepShape_ValueQualifier : public StepData_SelectType {
 		%feature("compactdefaultargs") ValueFormatTypeQualifier;
 		%feature("autodoc", "Returns value as valueformattypequalifier.
 
-	:rtype: opencascade::handle<StepShape_ValueFormatTypeQualifier>
+Returns
+-------
+opencascade::handle<StepShape_ValueFormatTypeQualifier>
 ") ValueFormatTypeQualifier;
 		opencascade::handle<StepShape_ValueFormatTypeQualifier> ValueFormatTypeQualifier();
 
@@ -3271,7 +4254,9 @@ class StepShape_AdvancedBrepShapeRepresentation : public StepShape_ShapeRepresen
 		%feature("compactdefaultargs") StepShape_AdvancedBrepShapeRepresentation;
 		%feature("autodoc", "Returns a advancedbrepshaperepresentation.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_AdvancedBrepShapeRepresentation;
 		 StepShape_AdvancedBrepShapeRepresentation();
 
@@ -3295,7 +4280,9 @@ class StepShape_AngularLocation : public StepShape_DimensionalLocation {
 		%feature("compactdefaultargs") AngleSelection;
 		%feature("autodoc", "Returns field angleselection.
 
-	:rtype: StepShape_AngleRelator
+Returns
+-------
+StepShape_AngleRelator
 ") AngleSelection;
 		StepShape_AngleRelator AngleSelection();
 
@@ -3303,19 +4290,18 @@ class StepShape_AngularLocation : public StepShape_DimensionalLocation {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aShapeAspectRelationship_Name:
-	:type aShapeAspectRelationship_Name: TCollection_HAsciiString
-	:param hasShapeAspectRelationship_Description:
-	:type hasShapeAspectRelationship_Description: bool
-	:param aShapeAspectRelationship_Description:
-	:type aShapeAspectRelationship_Description: TCollection_HAsciiString
-	:param aShapeAspectRelationship_RelatingShapeAspect:
-	:type aShapeAspectRelationship_RelatingShapeAspect: StepRepr_ShapeAspect
-	:param aShapeAspectRelationship_RelatedShapeAspect:
-	:type aShapeAspectRelationship_RelatedShapeAspect: StepRepr_ShapeAspect
-	:param aAngleSelection:
-	:type aAngleSelection: StepShape_AngleRelator
-	:rtype: None
+Parameters
+----------
+aShapeAspectRelationship_Name: TCollection_HAsciiString
+hasShapeAspectRelationship_Description: bool
+aShapeAspectRelationship_Description: TCollection_HAsciiString
+aShapeAspectRelationship_RelatingShapeAspect: StepRepr_ShapeAspect
+aShapeAspectRelationship_RelatedShapeAspect: StepRepr_ShapeAspect
+aAngleSelection: StepShape_AngleRelator
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aShapeAspectRelationship_Name, const Standard_Boolean hasShapeAspectRelationship_Description, const opencascade::handle<TCollection_HAsciiString> & aShapeAspectRelationship_Description, const opencascade::handle<StepRepr_ShapeAspect> & aShapeAspectRelationship_RelatingShapeAspect, const opencascade::handle<StepRepr_ShapeAspect> & aShapeAspectRelationship_RelatedShapeAspect, const StepShape_AngleRelator aAngleSelection);
 
@@ -3323,9 +4309,13 @@ class StepShape_AngularLocation : public StepShape_DimensionalLocation {
 		%feature("compactdefaultargs") SetAngleSelection;
 		%feature("autodoc", "Set field angleselection.
 
-	:param AngleSelection:
-	:type AngleSelection: StepShape_AngleRelator
-	:rtype: None
+Parameters
+----------
+AngleSelection: StepShape_AngleRelator
+
+Returns
+-------
+None
 ") SetAngleSelection;
 		void SetAngleSelection(const StepShape_AngleRelator AngleSelection);
 
@@ -3333,7 +4323,9 @@ class StepShape_AngularLocation : public StepShape_DimensionalLocation {
 		%feature("compactdefaultargs") StepShape_AngularLocation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_AngularLocation;
 		 StepShape_AngularLocation();
 
@@ -3357,7 +4349,9 @@ class StepShape_AngularSize : public StepShape_DimensionalSize {
 		%feature("compactdefaultargs") AngleSelection;
 		%feature("autodoc", "Returns field angleselection.
 
-	:rtype: StepShape_AngleRelator
+Returns
+-------
+StepShape_AngleRelator
 ") AngleSelection;
 		StepShape_AngleRelator AngleSelection();
 
@@ -3365,13 +4359,15 @@ class StepShape_AngularSize : public StepShape_DimensionalSize {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aDimensionalSize_AppliesTo:
-	:type aDimensionalSize_AppliesTo: StepRepr_ShapeAspect
-	:param aDimensionalSize_Name:
-	:type aDimensionalSize_Name: TCollection_HAsciiString
-	:param aAngleSelection:
-	:type aAngleSelection: StepShape_AngleRelator
-	:rtype: None
+Parameters
+----------
+aDimensionalSize_AppliesTo: StepRepr_ShapeAspect
+aDimensionalSize_Name: TCollection_HAsciiString
+aAngleSelection: StepShape_AngleRelator
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepRepr_ShapeAspect> & aDimensionalSize_AppliesTo, const opencascade::handle<TCollection_HAsciiString> & aDimensionalSize_Name, const StepShape_AngleRelator aAngleSelection);
 
@@ -3379,9 +4375,13 @@ class StepShape_AngularSize : public StepShape_DimensionalSize {
 		%feature("compactdefaultargs") SetAngleSelection;
 		%feature("autodoc", "Set field angleselection.
 
-	:param AngleSelection:
-	:type AngleSelection: StepShape_AngleRelator
-	:rtype: None
+Parameters
+----------
+AngleSelection: StepShape_AngleRelator
+
+Returns
+-------
+None
 ") SetAngleSelection;
 		void SetAngleSelection(const StepShape_AngleRelator AngleSelection);
 
@@ -3389,7 +4389,9 @@ class StepShape_AngularSize : public StepShape_DimensionalSize {
 		%feature("compactdefaultargs") StepShape_AngularSize;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_AngularSize;
 		 StepShape_AngularSize();
 
@@ -3411,29 +4413,42 @@ class StepShape_BoxedHalfSpace : public StepShape_HalfSpaceSolid {
 	public:
 		/****************** Enclosure ******************/
 		%feature("compactdefaultargs") Enclosure;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_BoxDomain>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_BoxDomain>
 ") Enclosure;
 		opencascade::handle<StepShape_BoxDomain> Enclosure();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aBaseSurface:
-	:type aBaseSurface: StepGeom_Surface
-	:param aAgreementFlag:
-	:type aAgreementFlag: bool
-	:param aEnclosure:
-	:type aEnclosure: StepShape_BoxDomain
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aBaseSurface: StepGeom_Surface
+aAgreementFlag: bool
+aEnclosure: StepShape_BoxDomain
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepGeom_Surface> & aBaseSurface, const Standard_Boolean aAgreementFlag, const opencascade::handle<StepShape_BoxDomain> & aEnclosure);
 
 		/****************** SetEnclosure ******************/
 		%feature("compactdefaultargs") SetEnclosure;
-		%feature("autodoc", "	:param aEnclosure:
-	:type aEnclosure: StepShape_BoxDomain
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aEnclosure: StepShape_BoxDomain
+
+Returns
+-------
+None
 ") SetEnclosure;
 		void SetEnclosure(const opencascade::handle<StepShape_BoxDomain> & aEnclosure);
 
@@ -3441,7 +4456,9 @@ class StepShape_BoxedHalfSpace : public StepShape_HalfSpaceSolid {
 		%feature("compactdefaultargs") StepShape_BoxedHalfSpace;
 		%feature("autodoc", "Returns a boxedhalfspace.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_BoxedHalfSpace;
 		 StepShape_BoxedHalfSpace();
 
@@ -3465,7 +4482,9 @@ class StepShape_CompoundShapeRepresentation : public StepShape_ShapeRepresentati
 		%feature("compactdefaultargs") StepShape_CompoundShapeRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_CompoundShapeRepresentation;
 		 StepShape_CompoundShapeRepresentation();
 
@@ -3489,7 +4508,9 @@ class StepShape_ConnectedEdgeSet : public StepShape_TopologicalRepresentationIte
 		%feature("compactdefaultargs") CesEdges;
 		%feature("autodoc", "Returns field cesedges.
 
-	:rtype: opencascade::handle<StepShape_HArray1OfEdge>
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfEdge>
 ") CesEdges;
 		opencascade::handle<StepShape_HArray1OfEdge> CesEdges();
 
@@ -3497,11 +4518,14 @@ class StepShape_ConnectedEdgeSet : public StepShape_TopologicalRepresentationIte
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aRepresentationItem_Name:
-	:type aRepresentationItem_Name: TCollection_HAsciiString
-	:param aCesEdges:
-	:type aCesEdges: StepShape_HArray1OfEdge
-	:rtype: None
+Parameters
+----------
+aRepresentationItem_Name: TCollection_HAsciiString
+aCesEdges: StepShape_HArray1OfEdge
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aRepresentationItem_Name, const opencascade::handle<StepShape_HArray1OfEdge> & aCesEdges);
 
@@ -3509,9 +4533,13 @@ class StepShape_ConnectedEdgeSet : public StepShape_TopologicalRepresentationIte
 		%feature("compactdefaultargs") SetCesEdges;
 		%feature("autodoc", "Set field cesedges.
 
-	:param CesEdges:
-	:type CesEdges: StepShape_HArray1OfEdge
-	:rtype: None
+Parameters
+----------
+CesEdges: StepShape_HArray1OfEdge
+
+Returns
+-------
+None
 ") SetCesEdges;
 		void SetCesEdges(const opencascade::handle<StepShape_HArray1OfEdge> & CesEdges);
 
@@ -3519,7 +4547,9 @@ class StepShape_ConnectedEdgeSet : public StepShape_TopologicalRepresentationIte
 		%feature("compactdefaultargs") StepShape_ConnectedEdgeSet;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ConnectedEdgeSet;
 		 StepShape_ConnectedEdgeSet();
 
@@ -3541,39 +4571,64 @@ class StepShape_ConnectedFaceSet : public StepShape_TopologicalRepresentationIte
 	public:
 		/****************** CfsFaces ******************/
 		%feature("compactdefaultargs") CfsFaces;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfFace>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfFace>
 ") CfsFaces;
 		virtual opencascade::handle<StepShape_HArray1OfFace> CfsFaces();
 
 		/****************** CfsFacesValue ******************/
 		%feature("compactdefaultargs") CfsFacesValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepShape_Face>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepShape_Face>
 ") CfsFacesValue;
 		virtual opencascade::handle<StepShape_Face> CfsFacesValue(const Standard_Integer num);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aCfsFaces:
-	:type aCfsFaces: StepShape_HArray1OfFace
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aCfsFaces: StepShape_HArray1OfFace
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_HArray1OfFace> & aCfsFaces);
 
 		/****************** NbCfsFaces ******************/
 		%feature("compactdefaultargs") NbCfsFaces;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbCfsFaces;
 		virtual Standard_Integer NbCfsFaces();
 
 		/****************** SetCfsFaces ******************/
 		%feature("compactdefaultargs") SetCfsFaces;
-		%feature("autodoc", "	:param aCfsFaces:
-	:type aCfsFaces: StepShape_HArray1OfFace
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aCfsFaces: StepShape_HArray1OfFace
+
+Returns
+-------
+None
 ") SetCfsFaces;
 		virtual void SetCfsFaces(const opencascade::handle<StepShape_HArray1OfFace> & aCfsFaces);
 
@@ -3581,7 +4636,9 @@ class StepShape_ConnectedFaceSet : public StepShape_TopologicalRepresentationIte
 		%feature("compactdefaultargs") StepShape_ConnectedFaceSet;
 		%feature("autodoc", "Returns a connectedfaceset.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ConnectedFaceSet;
 		 StepShape_ConnectedFaceSet();
 
@@ -3605,7 +4662,9 @@ class StepShape_CsgShapeRepresentation : public StepShape_ShapeRepresentation {
 		%feature("compactdefaultargs") StepShape_CsgShapeRepresentation;
 		%feature("autodoc", "Returns a csgshaperepresentation.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_CsgShapeRepresentation;
 		 StepShape_CsgShapeRepresentation();
 
@@ -3627,19 +4686,30 @@ class StepShape_CsgSolid : public StepShape_SolidModel {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aTreeRootExpression:
-	:type aTreeRootExpression: StepShape_CsgSelect
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aTreeRootExpression: StepShape_CsgSelect
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const StepShape_CsgSelect & aTreeRootExpression);
 
 		/****************** SetTreeRootExpression ******************/
 		%feature("compactdefaultargs") SetTreeRootExpression;
-		%feature("autodoc", "	:param aTreeRootExpression:
-	:type aTreeRootExpression: StepShape_CsgSelect
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aTreeRootExpression: StepShape_CsgSelect
+
+Returns
+-------
+None
 ") SetTreeRootExpression;
 		void SetTreeRootExpression(const StepShape_CsgSelect & aTreeRootExpression);
 
@@ -3647,13 +4717,19 @@ class StepShape_CsgSolid : public StepShape_SolidModel {
 		%feature("compactdefaultargs") StepShape_CsgSolid;
 		%feature("autodoc", "Returns a csgsolid.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_CsgSolid;
 		 StepShape_CsgSolid();
 
 		/****************** TreeRootExpression ******************/
 		%feature("compactdefaultargs") TreeRootExpression;
-		%feature("autodoc", "	:rtype: StepShape_CsgSelect
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+StepShape_CsgSelect
 ") TreeRootExpression;
 		StepShape_CsgSelect TreeRootExpression();
 
@@ -3677,19 +4753,18 @@ class StepShape_DimensionalLocationWithPath : public StepShape_DimensionalLocati
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aShapeAspectRelationship_Name:
-	:type aShapeAspectRelationship_Name: TCollection_HAsciiString
-	:param hasShapeAspectRelationship_Description:
-	:type hasShapeAspectRelationship_Description: bool
-	:param aShapeAspectRelationship_Description:
-	:type aShapeAspectRelationship_Description: TCollection_HAsciiString
-	:param aShapeAspectRelationship_RelatingShapeAspect:
-	:type aShapeAspectRelationship_RelatingShapeAspect: StepRepr_ShapeAspect
-	:param aShapeAspectRelationship_RelatedShapeAspect:
-	:type aShapeAspectRelationship_RelatedShapeAspect: StepRepr_ShapeAspect
-	:param aPath:
-	:type aPath: StepRepr_ShapeAspect
-	:rtype: None
+Parameters
+----------
+aShapeAspectRelationship_Name: TCollection_HAsciiString
+hasShapeAspectRelationship_Description: bool
+aShapeAspectRelationship_Description: TCollection_HAsciiString
+aShapeAspectRelationship_RelatingShapeAspect: StepRepr_ShapeAspect
+aShapeAspectRelationship_RelatedShapeAspect: StepRepr_ShapeAspect
+aPath: StepRepr_ShapeAspect
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aShapeAspectRelationship_Name, const Standard_Boolean hasShapeAspectRelationship_Description, const opencascade::handle<TCollection_HAsciiString> & aShapeAspectRelationship_Description, const opencascade::handle<StepRepr_ShapeAspect> & aShapeAspectRelationship_RelatingShapeAspect, const opencascade::handle<StepRepr_ShapeAspect> & aShapeAspectRelationship_RelatedShapeAspect, const opencascade::handle<StepRepr_ShapeAspect> & aPath);
 
@@ -3697,7 +4772,9 @@ class StepShape_DimensionalLocationWithPath : public StepShape_DimensionalLocati
 		%feature("compactdefaultargs") Path;
 		%feature("autodoc", "Returns field path.
 
-	:rtype: opencascade::handle<StepRepr_ShapeAspect>
+Returns
+-------
+opencascade::handle<StepRepr_ShapeAspect>
 ") Path;
 		opencascade::handle<StepRepr_ShapeAspect> Path();
 
@@ -3705,9 +4782,13 @@ class StepShape_DimensionalLocationWithPath : public StepShape_DimensionalLocati
 		%feature("compactdefaultargs") SetPath;
 		%feature("autodoc", "Set field path.
 
-	:param Path:
-	:type Path: StepRepr_ShapeAspect
-	:rtype: None
+Parameters
+----------
+Path: StepRepr_ShapeAspect
+
+Returns
+-------
+None
 ") SetPath;
 		void SetPath(const opencascade::handle<StepRepr_ShapeAspect> & Path);
 
@@ -3715,7 +4796,9 @@ class StepShape_DimensionalLocationWithPath : public StepShape_DimensionalLocati
 		%feature("compactdefaultargs") StepShape_DimensionalLocationWithPath;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_DimensionalLocationWithPath;
 		 StepShape_DimensionalLocationWithPath();
 
@@ -3739,13 +4822,15 @@ class StepShape_DimensionalSizeWithPath : public StepShape_DimensionalSize {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aDimensionalSize_AppliesTo:
-	:type aDimensionalSize_AppliesTo: StepRepr_ShapeAspect
-	:param aDimensionalSize_Name:
-	:type aDimensionalSize_Name: TCollection_HAsciiString
-	:param aPath:
-	:type aPath: StepRepr_ShapeAspect
-	:rtype: None
+Parameters
+----------
+aDimensionalSize_AppliesTo: StepRepr_ShapeAspect
+aDimensionalSize_Name: TCollection_HAsciiString
+aPath: StepRepr_ShapeAspect
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepRepr_ShapeAspect> & aDimensionalSize_AppliesTo, const opencascade::handle<TCollection_HAsciiString> & aDimensionalSize_Name, const opencascade::handle<StepRepr_ShapeAspect> & aPath);
 
@@ -3753,7 +4838,9 @@ class StepShape_DimensionalSizeWithPath : public StepShape_DimensionalSize {
 		%feature("compactdefaultargs") Path;
 		%feature("autodoc", "Returns field path.
 
-	:rtype: opencascade::handle<StepRepr_ShapeAspect>
+Returns
+-------
+opencascade::handle<StepRepr_ShapeAspect>
 ") Path;
 		opencascade::handle<StepRepr_ShapeAspect> Path();
 
@@ -3761,9 +4848,13 @@ class StepShape_DimensionalSizeWithPath : public StepShape_DimensionalSize {
 		%feature("compactdefaultargs") SetPath;
 		%feature("autodoc", "Set field path.
 
-	:param Path:
-	:type Path: StepRepr_ShapeAspect
-	:rtype: None
+Parameters
+----------
+Path: StepRepr_ShapeAspect
+
+Returns
+-------
+None
 ") SetPath;
 		void SetPath(const opencascade::handle<StepRepr_ShapeAspect> & Path);
 
@@ -3771,7 +4862,9 @@ class StepShape_DimensionalSizeWithPath : public StepShape_DimensionalSize {
 		%feature("compactdefaultargs") StepShape_DimensionalSizeWithPath;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_DimensionalSizeWithPath;
 		 StepShape_DimensionalSizeWithPath();
 
@@ -3795,7 +4888,9 @@ class StepShape_DirectedDimensionalLocation : public StepShape_DimensionalLocati
 		%feature("compactdefaultargs") StepShape_DirectedDimensionalLocation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_DirectedDimensionalLocation;
 		 StepShape_DirectedDimensionalLocation();
 
@@ -3817,41 +4912,65 @@ class StepShape_Edge : public StepShape_TopologicalRepresentationItem {
 	public:
 		/****************** EdgeEnd ******************/
 		%feature("compactdefaultargs") EdgeEnd;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_Vertex>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_Vertex>
 ") EdgeEnd;
 		virtual opencascade::handle<StepShape_Vertex> EdgeEnd();
 
 		/****************** EdgeStart ******************/
 		%feature("compactdefaultargs") EdgeStart;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_Vertex>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_Vertex>
 ") EdgeStart;
 		virtual opencascade::handle<StepShape_Vertex> EdgeStart();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aEdgeStart:
-	:type aEdgeStart: StepShape_Vertex
-	:param aEdgeEnd:
-	:type aEdgeEnd: StepShape_Vertex
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aEdgeStart: StepShape_Vertex
+aEdgeEnd: StepShape_Vertex
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_Vertex> & aEdgeStart, const opencascade::handle<StepShape_Vertex> & aEdgeEnd);
 
 		/****************** SetEdgeEnd ******************/
 		%feature("compactdefaultargs") SetEdgeEnd;
-		%feature("autodoc", "	:param aEdgeEnd:
-	:type aEdgeEnd: StepShape_Vertex
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aEdgeEnd: StepShape_Vertex
+
+Returns
+-------
+None
 ") SetEdgeEnd;
 		virtual void SetEdgeEnd(const opencascade::handle<StepShape_Vertex> & aEdgeEnd);
 
 		/****************** SetEdgeStart ******************/
 		%feature("compactdefaultargs") SetEdgeStart;
-		%feature("autodoc", "	:param aEdgeStart:
-	:type aEdgeStart: StepShape_Vertex
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aEdgeStart: StepShape_Vertex
+
+Returns
+-------
+None
 ") SetEdgeStart;
 		virtual void SetEdgeStart(const opencascade::handle<StepShape_Vertex> & aEdgeStart);
 
@@ -3859,7 +4978,9 @@ class StepShape_Edge : public StepShape_TopologicalRepresentationItem {
 		%feature("compactdefaultargs") StepShape_Edge;
 		%feature("autodoc", "Returns a edge.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_Edge;
 		 StepShape_Edge();
 
@@ -3883,7 +5004,9 @@ class StepShape_EdgeBasedWireframeShapeRepresentation : public StepShape_ShapeRe
 		%feature("compactdefaultargs") StepShape_EdgeBasedWireframeShapeRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_EdgeBasedWireframeShapeRepresentation;
 		 StepShape_EdgeBasedWireframeShapeRepresentation();
 
@@ -3905,39 +5028,64 @@ class StepShape_Face : public StepShape_TopologicalRepresentationItem {
 	public:
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfFaceBound>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfFaceBound>
 ") Bounds;
 		virtual opencascade::handle<StepShape_HArray1OfFaceBound> Bounds();
 
 		/****************** BoundsValue ******************/
 		%feature("compactdefaultargs") BoundsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepShape_FaceBound>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepShape_FaceBound>
 ") BoundsValue;
 		virtual opencascade::handle<StepShape_FaceBound> BoundsValue(const Standard_Integer num);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aBounds:
-	:type aBounds: StepShape_HArray1OfFaceBound
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aBounds: StepShape_HArray1OfFaceBound
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_HArray1OfFaceBound> & aBounds);
 
 		/****************** NbBounds ******************/
 		%feature("compactdefaultargs") NbBounds;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbBounds;
 		virtual Standard_Integer NbBounds();
 
 		/****************** SetBounds ******************/
 		%feature("compactdefaultargs") SetBounds;
-		%feature("autodoc", "	:param aBounds:
-	:type aBounds: StepShape_HArray1OfFaceBound
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aBounds: StepShape_HArray1OfFaceBound
+
+Returns
+-------
+None
 ") SetBounds;
 		virtual void SetBounds(const opencascade::handle<StepShape_HArray1OfFaceBound> & aBounds);
 
@@ -3945,7 +5093,9 @@ class StepShape_Face : public StepShape_TopologicalRepresentationItem {
 		%feature("compactdefaultargs") StepShape_Face;
 		%feature("autodoc", "Returns a face.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_Face;
 		 StepShape_Face();
 
@@ -3967,41 +5117,65 @@ class StepShape_FaceBound : public StepShape_TopologicalRepresentationItem {
 	public:
 		/****************** Bound ******************/
 		%feature("compactdefaultargs") Bound;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_Loop>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_Loop>
 ") Bound;
 		opencascade::handle<StepShape_Loop> Bound();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aBound:
-	:type aBound: StepShape_Loop
-	:param aOrientation:
-	:type aOrientation: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aBound: StepShape_Loop
+aOrientation: bool
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_Loop> & aBound, const Standard_Boolean aOrientation);
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Orientation;
 		Standard_Boolean Orientation();
 
 		/****************** SetBound ******************/
 		%feature("compactdefaultargs") SetBound;
-		%feature("autodoc", "	:param aBound:
-	:type aBound: StepShape_Loop
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aBound: StepShape_Loop
+
+Returns
+-------
+None
 ") SetBound;
 		void SetBound(const opencascade::handle<StepShape_Loop> & aBound);
 
 		/****************** SetOrientation ******************/
 		%feature("compactdefaultargs") SetOrientation;
-		%feature("autodoc", "	:param aOrientation:
-	:type aOrientation: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aOrientation: bool
+
+Returns
+-------
+None
 ") SetOrientation;
 		void SetOrientation(const Standard_Boolean aOrientation);
 
@@ -4009,7 +5183,9 @@ class StepShape_FaceBound : public StepShape_TopologicalRepresentationItem {
 		%feature("compactdefaultargs") StepShape_FaceBound;
 		%feature("autodoc", "Returns a facebound.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_FaceBound;
 		 StepShape_FaceBound();
 
@@ -4033,7 +5209,9 @@ class StepShape_FacetedBrepShapeRepresentation : public StepShape_ShapeRepresent
 		%feature("compactdefaultargs") StepShape_FacetedBrepShapeRepresentation;
 		%feature("autodoc", "Returns a facetedbrepshaperepresentation.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_FacetedBrepShapeRepresentation;
 		 StepShape_FacetedBrepShapeRepresentation();
 
@@ -4057,7 +5235,9 @@ class StepShape_GeometricCurveSet : public StepShape_GeometricSet {
 		%feature("compactdefaultargs") StepShape_GeometricCurveSet;
 		%feature("autodoc", "Returns a geometriccurveset.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_GeometricCurveSet;
 		 StepShape_GeometricCurveSet();
 
@@ -4081,7 +5261,9 @@ class StepShape_GeometricallyBoundedSurfaceShapeRepresentation : public StepShap
 		%feature("compactdefaultargs") StepShape_GeometricallyBoundedSurfaceShapeRepresentation;
 		%feature("autodoc", "Returns a geometricallyboundedsurfaceshaperepresentation.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_GeometricallyBoundedSurfaceShapeRepresentation;
 		 StepShape_GeometricallyBoundedSurfaceShapeRepresentation();
 
@@ -4105,7 +5287,9 @@ class StepShape_GeometricallyBoundedWireframeShapeRepresentation : public StepSh
 		%feature("compactdefaultargs") StepShape_GeometricallyBoundedWireframeShapeRepresentation;
 		%feature("autodoc", "Returns a geometricallyboundedwireframeshaperepresentation.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_GeometricallyBoundedWireframeShapeRepresentation;
 		 StepShape_GeometricallyBoundedWireframeShapeRepresentation();
 
@@ -4129,7 +5313,9 @@ class StepShape_Loop : public StepShape_TopologicalRepresentationItem {
 		%feature("compactdefaultargs") StepShape_Loop;
 		%feature("autodoc", "Returns a loop.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_Loop;
 		 StepShape_Loop();
 
@@ -4151,79 +5337,128 @@ class StepShape_LoopAndPath : public StepShape_TopologicalRepresentationItem {
 	public:
 		/****************** EdgeList ******************/
 		%feature("compactdefaultargs") EdgeList;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfOrientedEdge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfOrientedEdge>
 ") EdgeList;
 		opencascade::handle<StepShape_HArray1OfOrientedEdge> EdgeList();
 
 		/****************** EdgeListValue ******************/
 		%feature("compactdefaultargs") EdgeListValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepShape_OrientedEdge>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepShape_OrientedEdge>
 ") EdgeListValue;
 		opencascade::handle<StepShape_OrientedEdge> EdgeListValue(const Standard_Integer num);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aLoop:
-	:type aLoop: StepShape_Loop
-	:param aPath:
-	:type aPath: StepShape_Path
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aLoop: StepShape_Loop
+aPath: StepShape_Path
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_Loop> & aLoop, const opencascade::handle<StepShape_Path> & aPath);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aEdgeList:
-	:type aEdgeList: StepShape_HArray1OfOrientedEdge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aEdgeList: StepShape_HArray1OfOrientedEdge
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_HArray1OfOrientedEdge> & aEdgeList);
 
 		/****************** Loop ******************/
 		%feature("compactdefaultargs") Loop;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_Loop>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_Loop>
 ") Loop;
 		opencascade::handle<StepShape_Loop> Loop();
 
 		/****************** NbEdgeList ******************/
 		%feature("compactdefaultargs") NbEdgeList;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbEdgeList;
 		Standard_Integer NbEdgeList();
 
 		/****************** Path ******************/
 		%feature("compactdefaultargs") Path;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_Path>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_Path>
 ") Path;
 		opencascade::handle<StepShape_Path> Path();
 
 		/****************** SetEdgeList ******************/
 		%feature("compactdefaultargs") SetEdgeList;
-		%feature("autodoc", "	:param aEdgeList:
-	:type aEdgeList: StepShape_HArray1OfOrientedEdge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aEdgeList: StepShape_HArray1OfOrientedEdge
+
+Returns
+-------
+None
 ") SetEdgeList;
 		void SetEdgeList(const opencascade::handle<StepShape_HArray1OfOrientedEdge> & aEdgeList);
 
 		/****************** SetLoop ******************/
 		%feature("compactdefaultargs") SetLoop;
-		%feature("autodoc", "	:param aLoop:
-	:type aLoop: StepShape_Loop
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aLoop: StepShape_Loop
+
+Returns
+-------
+None
 ") SetLoop;
 		void SetLoop(const opencascade::handle<StepShape_Loop> & aLoop);
 
 		/****************** SetPath ******************/
 		%feature("compactdefaultargs") SetPath;
-		%feature("autodoc", "	:param aPath:
-	:type aPath: StepShape_Path
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPath: StepShape_Path
+
+Returns
+-------
+None
 ") SetPath;
 		void SetPath(const opencascade::handle<StepShape_Path> & aPath);
 
@@ -4231,7 +5466,9 @@ class StepShape_LoopAndPath : public StepShape_TopologicalRepresentationItem {
 		%feature("compactdefaultargs") StepShape_LoopAndPath;
 		%feature("autodoc", "Returns a loopandpath.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_LoopAndPath;
 		 StepShape_LoopAndPath();
 
@@ -4253,35 +5490,55 @@ class StepShape_ManifoldSolidBrep : public StepShape_SolidModel {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aOuter:
-	:type aOuter: StepShape_ClosedShell
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aOuter: StepShape_ClosedShell
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_ClosedShell> & aOuter);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aOuter:
-	:type aOuter: StepShape_ConnectedFaceSet
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aOuter: StepShape_ConnectedFaceSet
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_ConnectedFaceSet> & aOuter);
 
 		/****************** Outer ******************/
 		%feature("compactdefaultargs") Outer;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_ConnectedFaceSet>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_ConnectedFaceSet>
 ") Outer;
 		opencascade::handle<StepShape_ConnectedFaceSet> Outer();
 
 		/****************** SetOuter ******************/
 		%feature("compactdefaultargs") SetOuter;
-		%feature("autodoc", "	:param aOuter:
-	:type aOuter: StepShape_ConnectedFaceSet
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aOuter: StepShape_ConnectedFaceSet
+
+Returns
+-------
+None
 ") SetOuter;
 		void SetOuter(const opencascade::handle<StepShape_ConnectedFaceSet> & aOuter);
 
@@ -4289,7 +5546,9 @@ class StepShape_ManifoldSolidBrep : public StepShape_SolidModel {
 		%feature("compactdefaultargs") StepShape_ManifoldSolidBrep;
 		%feature("autodoc", "Returns a manifoldsolidbrep.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ManifoldSolidBrep;
 		 StepShape_ManifoldSolidBrep();
 
@@ -4313,7 +5572,9 @@ class StepShape_ManifoldSurfaceShapeRepresentation : public StepShape_ShapeRepre
 		%feature("compactdefaultargs") StepShape_ManifoldSurfaceShapeRepresentation;
 		%feature("autodoc", "Returns a manifoldsurfaceshaperepresentation.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ManifoldSurfaceShapeRepresentation;
 		 StepShape_ManifoldSurfaceShapeRepresentation();
 
@@ -4337,7 +5598,9 @@ class StepShape_NonManifoldSurfaceShapeRepresentation : public StepShape_ShapeRe
 		%feature("compactdefaultargs") StepShape_NonManifoldSurfaceShapeRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_NonManifoldSurfaceShapeRepresentation;
 		 StepShape_NonManifoldSurfaceShapeRepresentation();
 
@@ -4359,39 +5622,64 @@ class StepShape_Path : public StepShape_TopologicalRepresentationItem {
 	public:
 		/****************** EdgeList ******************/
 		%feature("compactdefaultargs") EdgeList;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfOrientedEdge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfOrientedEdge>
 ") EdgeList;
 		virtual opencascade::handle<StepShape_HArray1OfOrientedEdge> EdgeList();
 
 		/****************** EdgeListValue ******************/
 		%feature("compactdefaultargs") EdgeListValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepShape_OrientedEdge>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepShape_OrientedEdge>
 ") EdgeListValue;
 		virtual opencascade::handle<StepShape_OrientedEdge> EdgeListValue(const Standard_Integer num);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aEdgeList:
-	:type aEdgeList: StepShape_HArray1OfOrientedEdge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aEdgeList: StepShape_HArray1OfOrientedEdge
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_HArray1OfOrientedEdge> & aEdgeList);
 
 		/****************** NbEdgeList ******************/
 		%feature("compactdefaultargs") NbEdgeList;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbEdgeList;
 		virtual Standard_Integer NbEdgeList();
 
 		/****************** SetEdgeList ******************/
 		%feature("compactdefaultargs") SetEdgeList;
-		%feature("autodoc", "	:param aEdgeList:
-	:type aEdgeList: StepShape_HArray1OfOrientedEdge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aEdgeList: StepShape_HArray1OfOrientedEdge
+
+Returns
+-------
+None
 ") SetEdgeList;
 		virtual void SetEdgeList(const opencascade::handle<StepShape_HArray1OfOrientedEdge> & aEdgeList);
 
@@ -4399,7 +5687,9 @@ class StepShape_Path : public StepShape_TopologicalRepresentationItem {
 		%feature("compactdefaultargs") StepShape_Path;
 		%feature("autodoc", "Returns a path.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_Path;
 		 StepShape_Path();
 
@@ -4423,7 +5713,9 @@ class StepShape_PointRepresentation : public StepShape_ShapeRepresentation {
 		%feature("compactdefaultargs") StepShape_PointRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_PointRepresentation;
 		 StepShape_PointRepresentation();
 
@@ -4447,13 +5739,15 @@ class StepShape_ShapeDimensionRepresentation : public StepShape_ShapeRepresentat
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields ap214.
 
-	:param theName:
-	:type theName: TCollection_HAsciiString
-	:param theItems:
-	:type theItems: StepRepr_HArray1OfRepresentationItem
-	:param theContextOfItems:
-	:type theContextOfItems: StepRepr_RepresentationContext
-	:rtype: None
+Parameters
+----------
+theName: TCollection_HAsciiString
+theItems: StepRepr_HArray1OfRepresentationItem
+theContextOfItems: StepRepr_RepresentationContext
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & theName, const opencascade::handle<StepRepr_HArray1OfRepresentationItem> & theItems, const opencascade::handle<StepRepr_RepresentationContext> & theContextOfItems);
 
@@ -4461,27 +5755,39 @@ class StepShape_ShapeDimensionRepresentation : public StepShape_ShapeRepresentat
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields ap242.
 
-	:param theName:
-	:type theName: TCollection_HAsciiString
-	:param theItems:
-	:type theItems: StepShape_HArray1OfShapeDimensionRepresentationItem
-	:param theContextOfItems:
-	:type theContextOfItems: StepRepr_RepresentationContext
-	:rtype: None
+Parameters
+----------
+theName: TCollection_HAsciiString
+theItems: StepShape_HArray1OfShapeDimensionRepresentationItem
+theContextOfItems: StepRepr_RepresentationContext
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & theName, const opencascade::handle<StepShape_HArray1OfShapeDimensionRepresentationItem> & theItems, const opencascade::handle<StepRepr_RepresentationContext> & theContextOfItems);
 
 		/****************** ItemsAP242 ******************/
 		%feature("compactdefaultargs") ItemsAP242;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfShapeDimensionRepresentationItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfShapeDimensionRepresentationItem>
 ") ItemsAP242;
 		opencascade::handle<StepShape_HArray1OfShapeDimensionRepresentationItem> ItemsAP242();
 
 		/****************** SetItemsAP242 ******************/
 		%feature("compactdefaultargs") SetItemsAP242;
-		%feature("autodoc", "	:param theItems:
-	:type theItems: StepShape_HArray1OfShapeDimensionRepresentationItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theItems: StepShape_HArray1OfShapeDimensionRepresentationItem
+
+Returns
+-------
+None
 ") SetItemsAP242;
 		void SetItemsAP242(const opencascade::handle<StepShape_HArray1OfShapeDimensionRepresentationItem> & theItems);
 
@@ -4489,7 +5795,9 @@ class StepShape_ShapeDimensionRepresentation : public StepShape_ShapeRepresentat
 		%feature("compactdefaultargs") StepShape_ShapeDimensionRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ShapeDimensionRepresentation;
 		 StepShape_ShapeDimensionRepresentation();
 
@@ -4513,7 +5821,9 @@ class StepShape_ShapeRepresentationWithParameters : public StepShape_ShapeRepres
 		%feature("compactdefaultargs") StepShape_ShapeRepresentationWithParameters;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ShapeRepresentationWithParameters;
 		 StepShape_ShapeRepresentationWithParameters();
 
@@ -4535,35 +5845,55 @@ class StepShape_SolidReplica : public StepShape_SolidModel {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aParentSolid:
-	:type aParentSolid: StepShape_SolidModel
-	:param aTransformation:
-	:type aTransformation: StepGeom_CartesianTransformationOperator3d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aParentSolid: StepShape_SolidModel
+aTransformation: StepGeom_CartesianTransformationOperator3d
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_SolidModel> & aParentSolid, const opencascade::handle<StepGeom_CartesianTransformationOperator3d> & aTransformation);
 
 		/****************** ParentSolid ******************/
 		%feature("compactdefaultargs") ParentSolid;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_SolidModel>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_SolidModel>
 ") ParentSolid;
 		opencascade::handle<StepShape_SolidModel> ParentSolid();
 
 		/****************** SetParentSolid ******************/
 		%feature("compactdefaultargs") SetParentSolid;
-		%feature("autodoc", "	:param aParentSolid:
-	:type aParentSolid: StepShape_SolidModel
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aParentSolid: StepShape_SolidModel
+
+Returns
+-------
+None
 ") SetParentSolid;
 		void SetParentSolid(const opencascade::handle<StepShape_SolidModel> & aParentSolid);
 
 		/****************** SetTransformation ******************/
 		%feature("compactdefaultargs") SetTransformation;
-		%feature("autodoc", "	:param aTransformation:
-	:type aTransformation: StepGeom_CartesianTransformationOperator3d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aTransformation: StepGeom_CartesianTransformationOperator3d
+
+Returns
+-------
+None
 ") SetTransformation;
 		void SetTransformation(const opencascade::handle<StepGeom_CartesianTransformationOperator3d> & aTransformation);
 
@@ -4571,13 +5901,19 @@ class StepShape_SolidReplica : public StepShape_SolidModel {
 		%feature("compactdefaultargs") StepShape_SolidReplica;
 		%feature("autodoc", "Returns a solidreplica.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_SolidReplica;
 		 StepShape_SolidReplica();
 
 		/****************** Transformation ******************/
 		%feature("compactdefaultargs") Transformation;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_CartesianTransformationOperator3d>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_CartesianTransformationOperator3d>
 ") Transformation;
 		opencascade::handle<StepGeom_CartesianTransformationOperator3d> Transformation();
 
@@ -4599,19 +5935,30 @@ class StepShape_SweptAreaSolid : public StepShape_SolidModel {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aSweptArea:
-	:type aSweptArea: StepGeom_CurveBoundedSurface
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aSweptArea: StepGeom_CurveBoundedSurface
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepGeom_CurveBoundedSurface> & aSweptArea);
 
 		/****************** SetSweptArea ******************/
 		%feature("compactdefaultargs") SetSweptArea;
-		%feature("autodoc", "	:param aSweptArea:
-	:type aSweptArea: StepGeom_CurveBoundedSurface
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aSweptArea: StepGeom_CurveBoundedSurface
+
+Returns
+-------
+None
 ") SetSweptArea;
 		void SetSweptArea(const opencascade::handle<StepGeom_CurveBoundedSurface> & aSweptArea);
 
@@ -4619,13 +5966,19 @@ class StepShape_SweptAreaSolid : public StepShape_SolidModel {
 		%feature("compactdefaultargs") StepShape_SweptAreaSolid;
 		%feature("autodoc", "Returns a sweptareasolid.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_SweptAreaSolid;
 		 StepShape_SweptAreaSolid();
 
 		/****************** SweptArea ******************/
 		%feature("compactdefaultargs") SweptArea;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_CurveBoundedSurface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_CurveBoundedSurface>
 ") SweptArea;
 		opencascade::handle<StepGeom_CurveBoundedSurface> SweptArea();
 
@@ -4647,19 +6000,30 @@ class StepShape_SweptFaceSolid : public StepShape_SolidModel {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aSweptArea:
-	:type aSweptArea: StepShape_FaceSurface
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aSweptArea: StepShape_FaceSurface
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_FaceSurface> & aSweptArea);
 
 		/****************** SetSweptFace ******************/
 		%feature("compactdefaultargs") SetSweptFace;
-		%feature("autodoc", "	:param aSweptArea:
-	:type aSweptArea: StepShape_FaceSurface
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aSweptArea: StepShape_FaceSurface
+
+Returns
+-------
+None
 ") SetSweptFace;
 		virtual void SetSweptFace(const opencascade::handle<StepShape_FaceSurface> & aSweptArea);
 
@@ -4667,13 +6031,19 @@ class StepShape_SweptFaceSolid : public StepShape_SolidModel {
 		%feature("compactdefaultargs") StepShape_SweptFaceSolid;
 		%feature("autodoc", "Returns a sweptfacesolid.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_SweptFaceSolid;
 		 StepShape_SweptFaceSolid();
 
 		/****************** SweptFace ******************/
 		%feature("compactdefaultargs") SweptFace;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_FaceSurface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_FaceSurface>
 ") SweptFace;
 		virtual opencascade::handle<StepShape_FaceSurface> SweptFace();
 
@@ -4697,7 +6067,9 @@ class StepShape_TransitionalShapeRepresentation : public StepShape_ShapeRepresen
 		%feature("compactdefaultargs") StepShape_TransitionalShapeRepresentation;
 		%feature("autodoc", "Returns a transitionalshaperepresentation.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_TransitionalShapeRepresentation;
 		 StepShape_TransitionalShapeRepresentation();
 
@@ -4721,7 +6093,9 @@ class StepShape_Vertex : public StepShape_TopologicalRepresentationItem {
 		%feature("compactdefaultargs") StepShape_Vertex;
 		%feature("autodoc", "Returns a vertex.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_Vertex;
 		 StepShape_Vertex();
 
@@ -4743,27 +6117,41 @@ class StepShape_BrepWithVoids : public StepShape_ManifoldSolidBrep {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aOuter:
-	:type aOuter: StepShape_ClosedShell
-	:param aVoids:
-	:type aVoids: StepShape_HArray1OfOrientedClosedShell
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aOuter: StepShape_ClosedShell
+aVoids: StepShape_HArray1OfOrientedClosedShell
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_ClosedShell> & aOuter, const opencascade::handle<StepShape_HArray1OfOrientedClosedShell> & aVoids);
 
 		/****************** NbVoids ******************/
 		%feature("compactdefaultargs") NbVoids;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbVoids;
 		Standard_Integer NbVoids();
 
 		/****************** SetVoids ******************/
 		%feature("compactdefaultargs") SetVoids;
-		%feature("autodoc", "	:param aVoids:
-	:type aVoids: StepShape_HArray1OfOrientedClosedShell
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aVoids: StepShape_HArray1OfOrientedClosedShell
+
+Returns
+-------
+None
 ") SetVoids;
 		void SetVoids(const opencascade::handle<StepShape_HArray1OfOrientedClosedShell> & aVoids);
 
@@ -4771,21 +6159,33 @@ class StepShape_BrepWithVoids : public StepShape_ManifoldSolidBrep {
 		%feature("compactdefaultargs") StepShape_BrepWithVoids;
 		%feature("autodoc", "Returns a brepwithvoids.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_BrepWithVoids;
 		 StepShape_BrepWithVoids();
 
 		/****************** Voids ******************/
 		%feature("compactdefaultargs") Voids;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfOrientedClosedShell>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfOrientedClosedShell>
 ") Voids;
 		opencascade::handle<StepShape_HArray1OfOrientedClosedShell> Voids();
 
 		/****************** VoidsValue ******************/
 		%feature("compactdefaultargs") VoidsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepShape_OrientedClosedShell>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepShape_OrientedClosedShell>
 ") VoidsValue;
 		opencascade::handle<StepShape_OrientedClosedShell> VoidsValue(const Standard_Integer num);
 
@@ -4809,7 +6209,9 @@ class StepShape_ClosedShell : public StepShape_ConnectedFaceSet {
 		%feature("compactdefaultargs") StepShape_ClosedShell;
 		%feature("autodoc", "Returns a closedshell.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ClosedShell;
 		 StepShape_ClosedShell();
 
@@ -4833,13 +6235,15 @@ class StepShape_ConnectedFaceSubSet : public StepShape_ConnectedFaceSet {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aRepresentationItem_Name:
-	:type aRepresentationItem_Name: TCollection_HAsciiString
-	:param aConnectedFaceSet_CfsFaces:
-	:type aConnectedFaceSet_CfsFaces: StepShape_HArray1OfFace
-	:param aParentFaceSet:
-	:type aParentFaceSet: StepShape_ConnectedFaceSet
-	:rtype: None
+Parameters
+----------
+aRepresentationItem_Name: TCollection_HAsciiString
+aConnectedFaceSet_CfsFaces: StepShape_HArray1OfFace
+aParentFaceSet: StepShape_ConnectedFaceSet
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aRepresentationItem_Name, const opencascade::handle<StepShape_HArray1OfFace> & aConnectedFaceSet_CfsFaces, const opencascade::handle<StepShape_ConnectedFaceSet> & aParentFaceSet);
 
@@ -4847,7 +6251,9 @@ class StepShape_ConnectedFaceSubSet : public StepShape_ConnectedFaceSet {
 		%feature("compactdefaultargs") ParentFaceSet;
 		%feature("autodoc", "Returns field parentfaceset.
 
-	:rtype: opencascade::handle<StepShape_ConnectedFaceSet>
+Returns
+-------
+opencascade::handle<StepShape_ConnectedFaceSet>
 ") ParentFaceSet;
 		opencascade::handle<StepShape_ConnectedFaceSet> ParentFaceSet();
 
@@ -4855,9 +6261,13 @@ class StepShape_ConnectedFaceSubSet : public StepShape_ConnectedFaceSet {
 		%feature("compactdefaultargs") SetParentFaceSet;
 		%feature("autodoc", "Set field parentfaceset.
 
-	:param ParentFaceSet:
-	:type ParentFaceSet: StepShape_ConnectedFaceSet
-	:rtype: None
+Parameters
+----------
+ParentFaceSet: StepShape_ConnectedFaceSet
+
+Returns
+-------
+None
 ") SetParentFaceSet;
 		void SetParentFaceSet(const opencascade::handle<StepShape_ConnectedFaceSet> & ParentFaceSet);
 
@@ -4865,7 +6275,9 @@ class StepShape_ConnectedFaceSubSet : public StepShape_ConnectedFaceSet {
 		%feature("compactdefaultargs") StepShape_ConnectedFaceSubSet;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ConnectedFaceSubSet;
 		 StepShape_ConnectedFaceSubSet();
 
@@ -4887,45 +6299,67 @@ class StepShape_EdgeCurve : public StepShape_Edge {
 	public:
 		/****************** EdgeGeometry ******************/
 		%feature("compactdefaultargs") EdgeGeometry;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Curve>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Curve>
 ") EdgeGeometry;
 		opencascade::handle<StepGeom_Curve> EdgeGeometry();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aEdgeStart:
-	:type aEdgeStart: StepShape_Vertex
-	:param aEdgeEnd:
-	:type aEdgeEnd: StepShape_Vertex
-	:param aEdgeGeometry:
-	:type aEdgeGeometry: StepGeom_Curve
-	:param aSameSense:
-	:type aSameSense: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aEdgeStart: StepShape_Vertex
+aEdgeEnd: StepShape_Vertex
+aEdgeGeometry: StepGeom_Curve
+aSameSense: bool
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_Vertex> & aEdgeStart, const opencascade::handle<StepShape_Vertex> & aEdgeEnd, const opencascade::handle<StepGeom_Curve> & aEdgeGeometry, const Standard_Boolean aSameSense);
 
 		/****************** SameSense ******************/
 		%feature("compactdefaultargs") SameSense;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") SameSense;
 		Standard_Boolean SameSense();
 
 		/****************** SetEdgeGeometry ******************/
 		%feature("compactdefaultargs") SetEdgeGeometry;
-		%feature("autodoc", "	:param aEdgeGeometry:
-	:type aEdgeGeometry: StepGeom_Curve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aEdgeGeometry: StepGeom_Curve
+
+Returns
+-------
+None
 ") SetEdgeGeometry;
 		void SetEdgeGeometry(const opencascade::handle<StepGeom_Curve> & aEdgeGeometry);
 
 		/****************** SetSameSense ******************/
 		%feature("compactdefaultargs") SetSameSense;
-		%feature("autodoc", "	:param aSameSense:
-	:type aSameSense: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aSameSense: bool
+
+Returns
+-------
+None
 ") SetSameSense;
 		void SetSameSense(const Standard_Boolean aSameSense);
 
@@ -4933,7 +6367,9 @@ class StepShape_EdgeCurve : public StepShape_Edge {
 		%feature("compactdefaultargs") StepShape_EdgeCurve;
 		%feature("autodoc", "Returns a edgecurve.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_EdgeCurve;
 		 StepShape_EdgeCurve();
 
@@ -4955,39 +6391,64 @@ class StepShape_EdgeLoop : public StepShape_Loop {
 	public:
 		/****************** EdgeList ******************/
 		%feature("compactdefaultargs") EdgeList;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfOrientedEdge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfOrientedEdge>
 ") EdgeList;
 		opencascade::handle<StepShape_HArray1OfOrientedEdge> EdgeList();
 
 		/****************** EdgeListValue ******************/
 		%feature("compactdefaultargs") EdgeListValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepShape_OrientedEdge>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepShape_OrientedEdge>
 ") EdgeListValue;
 		opencascade::handle<StepShape_OrientedEdge> EdgeListValue(const Standard_Integer num);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aEdgeList:
-	:type aEdgeList: StepShape_HArray1OfOrientedEdge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aEdgeList: StepShape_HArray1OfOrientedEdge
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_HArray1OfOrientedEdge> & aEdgeList);
 
 		/****************** NbEdgeList ******************/
 		%feature("compactdefaultargs") NbEdgeList;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbEdgeList;
 		Standard_Integer NbEdgeList();
 
 		/****************** SetEdgeList ******************/
 		%feature("compactdefaultargs") SetEdgeList;
-		%feature("autodoc", "	:param aEdgeList:
-	:type aEdgeList: StepShape_HArray1OfOrientedEdge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aEdgeList: StepShape_HArray1OfOrientedEdge
+
+Returns
+-------
+None
 ") SetEdgeList;
 		void SetEdgeList(const opencascade::handle<StepShape_HArray1OfOrientedEdge> & aEdgeList);
 
@@ -4995,7 +6456,9 @@ class StepShape_EdgeLoop : public StepShape_Loop {
 		%feature("compactdefaultargs") StepShape_EdgeLoop;
 		%feature("autodoc", "Returns a edgeloop.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_EdgeLoop;
 		 StepShape_EdgeLoop();
 
@@ -5017,43 +6480,66 @@ class StepShape_ExtrudedAreaSolid : public StepShape_SweptAreaSolid {
 	public:
 		/****************** Depth ******************/
 		%feature("compactdefaultargs") Depth;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Depth;
 		Standard_Real Depth();
 
 		/****************** ExtrudedDirection ******************/
 		%feature("compactdefaultargs") ExtrudedDirection;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Direction>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Direction>
 ") ExtrudedDirection;
 		opencascade::handle<StepGeom_Direction> ExtrudedDirection();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aSweptArea:
-	:type aSweptArea: StepGeom_CurveBoundedSurface
-	:param aExtrudedDirection:
-	:type aExtrudedDirection: StepGeom_Direction
-	:param aDepth:
-	:type aDepth: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aSweptArea: StepGeom_CurveBoundedSurface
+aExtrudedDirection: StepGeom_Direction
+aDepth: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepGeom_CurveBoundedSurface> & aSweptArea, const opencascade::handle<StepGeom_Direction> & aExtrudedDirection, const Standard_Real aDepth);
 
 		/****************** SetDepth ******************/
 		%feature("compactdefaultargs") SetDepth;
-		%feature("autodoc", "	:param aDepth:
-	:type aDepth: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aDepth: float
+
+Returns
+-------
+None
 ") SetDepth;
 		void SetDepth(const Standard_Real aDepth);
 
 		/****************** SetExtrudedDirection ******************/
 		%feature("compactdefaultargs") SetExtrudedDirection;
-		%feature("autodoc", "	:param aExtrudedDirection:
-	:type aExtrudedDirection: StepGeom_Direction
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aExtrudedDirection: StepGeom_Direction
+
+Returns
+-------
+None
 ") SetExtrudedDirection;
 		void SetExtrudedDirection(const opencascade::handle<StepGeom_Direction> & aExtrudedDirection);
 
@@ -5061,7 +6547,9 @@ class StepShape_ExtrudedAreaSolid : public StepShape_SweptAreaSolid {
 		%feature("compactdefaultargs") StepShape_ExtrudedAreaSolid;
 		%feature("autodoc", "Returns a extrudedareasolid.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ExtrudedAreaSolid;
 		 StepShape_ExtrudedAreaSolid();
 
@@ -5083,43 +6571,66 @@ class StepShape_ExtrudedFaceSolid : public StepShape_SweptFaceSolid {
 	public:
 		/****************** Depth ******************/
 		%feature("compactdefaultargs") Depth;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Depth;
 		Standard_Real Depth();
 
 		/****************** ExtrudedDirection ******************/
 		%feature("compactdefaultargs") ExtrudedDirection;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Direction>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Direction>
 ") ExtrudedDirection;
 		opencascade::handle<StepGeom_Direction> ExtrudedDirection();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aSweptArea:
-	:type aSweptArea: StepShape_FaceSurface
-	:param aExtrudedDirection:
-	:type aExtrudedDirection: StepGeom_Direction
-	:param aDepth:
-	:type aDepth: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aSweptArea: StepShape_FaceSurface
+aExtrudedDirection: StepGeom_Direction
+aDepth: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_FaceSurface> & aSweptArea, const opencascade::handle<StepGeom_Direction> & aExtrudedDirection, const Standard_Real aDepth);
 
 		/****************** SetDepth ******************/
 		%feature("compactdefaultargs") SetDepth;
-		%feature("autodoc", "	:param aDepth:
-	:type aDepth: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aDepth: float
+
+Returns
+-------
+None
 ") SetDepth;
 		void SetDepth(const Standard_Real aDepth);
 
 		/****************** SetExtrudedDirection ******************/
 		%feature("compactdefaultargs") SetExtrudedDirection;
-		%feature("autodoc", "	:param aExtrudedDirection:
-	:type aExtrudedDirection: StepGeom_Direction
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aExtrudedDirection: StepGeom_Direction
+
+Returns
+-------
+None
 ") SetExtrudedDirection;
 		void SetExtrudedDirection(const opencascade::handle<StepGeom_Direction> & aExtrudedDirection);
 
@@ -5127,7 +6638,9 @@ class StepShape_ExtrudedFaceSolid : public StepShape_SweptFaceSolid {
 		%feature("compactdefaultargs") StepShape_ExtrudedFaceSolid;
 		%feature("autodoc", "Returns a extrudedfacesolid.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_ExtrudedFaceSolid;
 		 StepShape_ExtrudedFaceSolid();
 
@@ -5151,7 +6664,9 @@ class StepShape_FaceOuterBound : public StepShape_FaceBound {
 		%feature("compactdefaultargs") StepShape_FaceOuterBound;
 		%feature("autodoc", "Returns a faceouterbound.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_FaceOuterBound;
 		 StepShape_FaceOuterBound();
 
@@ -5173,43 +6688,66 @@ class StepShape_FaceSurface : public StepShape_Face {
 	public:
 		/****************** FaceGeometry ******************/
 		%feature("compactdefaultargs") FaceGeometry;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Surface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Surface>
 ") FaceGeometry;
 		opencascade::handle<StepGeom_Surface> FaceGeometry();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aBounds:
-	:type aBounds: StepShape_HArray1OfFaceBound
-	:param aFaceGeometry:
-	:type aFaceGeometry: StepGeom_Surface
-	:param aSameSense:
-	:type aSameSense: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aBounds: StepShape_HArray1OfFaceBound
+aFaceGeometry: StepGeom_Surface
+aSameSense: bool
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_HArray1OfFaceBound> & aBounds, const opencascade::handle<StepGeom_Surface> & aFaceGeometry, const Standard_Boolean aSameSense);
 
 		/****************** SameSense ******************/
 		%feature("compactdefaultargs") SameSense;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") SameSense;
 		Standard_Boolean SameSense();
 
 		/****************** SetFaceGeometry ******************/
 		%feature("compactdefaultargs") SetFaceGeometry;
-		%feature("autodoc", "	:param aFaceGeometry:
-	:type aFaceGeometry: StepGeom_Surface
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aFaceGeometry: StepGeom_Surface
+
+Returns
+-------
+None
 ") SetFaceGeometry;
 		void SetFaceGeometry(const opencascade::handle<StepGeom_Surface> & aFaceGeometry);
 
 		/****************** SetSameSense ******************/
 		%feature("compactdefaultargs") SetSameSense;
-		%feature("autodoc", "	:param aSameSense:
-	:type aSameSense: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aSameSense: bool
+
+Returns
+-------
+None
 ") SetSameSense;
 		void SetSameSense(const Standard_Boolean aSameSense);
 
@@ -5217,7 +6755,9 @@ class StepShape_FaceSurface : public StepShape_Face {
 		%feature("compactdefaultargs") StepShape_FaceSurface;
 		%feature("autodoc", "Returns a facesurface.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_FaceSurface;
 		 StepShape_FaceSurface();
 
@@ -5241,7 +6781,9 @@ class StepShape_FacetedBrep : public StepShape_ManifoldSolidBrep {
 		%feature("compactdefaultargs") StepShape_FacetedBrep;
 		%feature("autodoc", "Returns a facetedbrep.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_FacetedBrep;
 		 StepShape_FacetedBrep();
 
@@ -5263,69 +6805,106 @@ class StepShape_FacetedBrepAndBrepWithVoids : public StepShape_ManifoldSolidBrep
 	public:
 		/****************** BrepWithVoids ******************/
 		%feature("compactdefaultargs") BrepWithVoids;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_BrepWithVoids>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_BrepWithVoids>
 ") BrepWithVoids;
 		opencascade::handle<StepShape_BrepWithVoids> BrepWithVoids();
 
 		/****************** FacetedBrep ******************/
 		%feature("compactdefaultargs") FacetedBrep;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_FacetedBrep>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_FacetedBrep>
 ") FacetedBrep;
 		opencascade::handle<StepShape_FacetedBrep> FacetedBrep();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aOuter:
-	:type aOuter: StepShape_ClosedShell
-	:param aFacetedBrep:
-	:type aFacetedBrep: StepShape_FacetedBrep
-	:param aBrepWithVoids:
-	:type aBrepWithVoids: StepShape_BrepWithVoids
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aOuter: StepShape_ClosedShell
+aFacetedBrep: StepShape_FacetedBrep
+aBrepWithVoids: StepShape_BrepWithVoids
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_ClosedShell> & aOuter, const opencascade::handle<StepShape_FacetedBrep> & aFacetedBrep, const opencascade::handle<StepShape_BrepWithVoids> & aBrepWithVoids);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aOuter:
-	:type aOuter: StepShape_ClosedShell
-	:param aVoids:
-	:type aVoids: StepShape_HArray1OfOrientedClosedShell
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aOuter: StepShape_ClosedShell
+aVoids: StepShape_HArray1OfOrientedClosedShell
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_ClosedShell> & aOuter, const opencascade::handle<StepShape_HArray1OfOrientedClosedShell> & aVoids);
 
 		/****************** NbVoids ******************/
 		%feature("compactdefaultargs") NbVoids;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbVoids;
 		Standard_Integer NbVoids();
 
 		/****************** SetBrepWithVoids ******************/
 		%feature("compactdefaultargs") SetBrepWithVoids;
-		%feature("autodoc", "	:param aBrepWithVoids:
-	:type aBrepWithVoids: StepShape_BrepWithVoids
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aBrepWithVoids: StepShape_BrepWithVoids
+
+Returns
+-------
+None
 ") SetBrepWithVoids;
 		void SetBrepWithVoids(const opencascade::handle<StepShape_BrepWithVoids> & aBrepWithVoids);
 
 		/****************** SetFacetedBrep ******************/
 		%feature("compactdefaultargs") SetFacetedBrep;
-		%feature("autodoc", "	:param aFacetedBrep:
-	:type aFacetedBrep: StepShape_FacetedBrep
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aFacetedBrep: StepShape_FacetedBrep
+
+Returns
+-------
+None
 ") SetFacetedBrep;
 		void SetFacetedBrep(const opencascade::handle<StepShape_FacetedBrep> & aFacetedBrep);
 
 		/****************** SetVoids ******************/
 		%feature("compactdefaultargs") SetVoids;
-		%feature("autodoc", "	:param aVoids:
-	:type aVoids: StepShape_HArray1OfOrientedClosedShell
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aVoids: StepShape_HArray1OfOrientedClosedShell
+
+Returns
+-------
+None
 ") SetVoids;
 		void SetVoids(const opencascade::handle<StepShape_HArray1OfOrientedClosedShell> & aVoids);
 
@@ -5333,21 +6912,33 @@ class StepShape_FacetedBrepAndBrepWithVoids : public StepShape_ManifoldSolidBrep
 		%feature("compactdefaultargs") StepShape_FacetedBrepAndBrepWithVoids;
 		%feature("autodoc", "Returns a facetedbrepandbrepwithvoids.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_FacetedBrepAndBrepWithVoids;
 		 StepShape_FacetedBrepAndBrepWithVoids();
 
 		/****************** Voids ******************/
 		%feature("compactdefaultargs") Voids;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfOrientedClosedShell>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfOrientedClosedShell>
 ") Voids;
 		opencascade::handle<StepShape_HArray1OfOrientedClosedShell> Voids();
 
 		/****************** VoidsValue ******************/
 		%feature("compactdefaultargs") VoidsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepShape_OrientedClosedShell>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepShape_OrientedClosedShell>
 ") VoidsValue;
 		opencascade::handle<StepShape_OrientedClosedShell> VoidsValue(const Standard_Integer num);
 
@@ -5371,7 +6962,9 @@ class StepShape_OpenShell : public StepShape_ConnectedFaceSet {
 		%feature("compactdefaultargs") StepShape_OpenShell;
 		%feature("autodoc", "Returns a openshell.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_OpenShell;
 		 StepShape_OpenShell();
 
@@ -5393,69 +6986,113 @@ class StepShape_OrientedEdge : public StepShape_Edge {
 	public:
 		/****************** EdgeElement ******************/
 		%feature("compactdefaultargs") EdgeElement;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_Edge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_Edge>
 ") EdgeElement;
 		opencascade::handle<StepShape_Edge> EdgeElement();
 
 		/****************** EdgeEnd ******************/
 		%feature("compactdefaultargs") EdgeEnd;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_Vertex>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_Vertex>
 ") EdgeEnd;
 		virtual opencascade::handle<StepShape_Vertex> EdgeEnd();
 
 		/****************** EdgeStart ******************/
 		%feature("compactdefaultargs") EdgeStart;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_Vertex>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_Vertex>
 ") EdgeStart;
 		virtual opencascade::handle<StepShape_Vertex> EdgeStart();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aEdgeElement:
-	:type aEdgeElement: StepShape_Edge
-	:param aOrientation:
-	:type aOrientation: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aEdgeElement: StepShape_Edge
+aOrientation: bool
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_Edge> & aEdgeElement, const Standard_Boolean aOrientation);
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Orientation;
 		Standard_Boolean Orientation();
 
 		/****************** SetEdgeElement ******************/
 		%feature("compactdefaultargs") SetEdgeElement;
-		%feature("autodoc", "	:param aEdgeElement:
-	:type aEdgeElement: StepShape_Edge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aEdgeElement: StepShape_Edge
+
+Returns
+-------
+None
 ") SetEdgeElement;
 		void SetEdgeElement(const opencascade::handle<StepShape_Edge> & aEdgeElement);
 
 		/****************** SetEdgeEnd ******************/
 		%feature("compactdefaultargs") SetEdgeEnd;
-		%feature("autodoc", "	:param aEdgeEnd:
-	:type aEdgeEnd: StepShape_Vertex
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aEdgeEnd: StepShape_Vertex
+
+Returns
+-------
+None
 ") SetEdgeEnd;
 		virtual void SetEdgeEnd(const opencascade::handle<StepShape_Vertex> & aEdgeEnd);
 
 		/****************** SetEdgeStart ******************/
 		%feature("compactdefaultargs") SetEdgeStart;
-		%feature("autodoc", "	:param aEdgeStart:
-	:type aEdgeStart: StepShape_Vertex
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aEdgeStart: StepShape_Vertex
+
+Returns
+-------
+None
 ") SetEdgeStart;
 		virtual void SetEdgeStart(const opencascade::handle<StepShape_Vertex> & aEdgeStart);
 
 		/****************** SetOrientation ******************/
 		%feature("compactdefaultargs") SetOrientation;
-		%feature("autodoc", "	:param aOrientation:
-	:type aOrientation: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aOrientation: bool
+
+Returns
+-------
+None
 ") SetOrientation;
 		void SetOrientation(const Standard_Boolean aOrientation);
 
@@ -5463,7 +7100,9 @@ class StepShape_OrientedEdge : public StepShape_Edge {
 		%feature("compactdefaultargs") StepShape_OrientedEdge;
 		%feature("autodoc", "Returns a orientededge.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_OrientedEdge;
 		 StepShape_OrientedEdge();
 
@@ -5485,69 +7124,113 @@ class StepShape_OrientedFace : public StepShape_Face {
 	public:
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfFaceBound>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfFaceBound>
 ") Bounds;
 		virtual opencascade::handle<StepShape_HArray1OfFaceBound> Bounds();
 
 		/****************** BoundsValue ******************/
 		%feature("compactdefaultargs") BoundsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepShape_FaceBound>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepShape_FaceBound>
 ") BoundsValue;
 		virtual opencascade::handle<StepShape_FaceBound> BoundsValue(const Standard_Integer num);
 
 		/****************** FaceElement ******************/
 		%feature("compactdefaultargs") FaceElement;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_Face>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_Face>
 ") FaceElement;
 		opencascade::handle<StepShape_Face> FaceElement();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aFaceElement:
-	:type aFaceElement: StepShape_Face
-	:param aOrientation:
-	:type aOrientation: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aFaceElement: StepShape_Face
+aOrientation: bool
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_Face> & aFaceElement, const Standard_Boolean aOrientation);
 
 		/****************** NbBounds ******************/
 		%feature("compactdefaultargs") NbBounds;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbBounds;
 		virtual Standard_Integer NbBounds();
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Orientation;
 		Standard_Boolean Orientation();
 
 		/****************** SetBounds ******************/
 		%feature("compactdefaultargs") SetBounds;
-		%feature("autodoc", "	:param aBounds:
-	:type aBounds: StepShape_HArray1OfFaceBound
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aBounds: StepShape_HArray1OfFaceBound
+
+Returns
+-------
+None
 ") SetBounds;
 		virtual void SetBounds(const opencascade::handle<StepShape_HArray1OfFaceBound> & aBounds);
 
 		/****************** SetFaceElement ******************/
 		%feature("compactdefaultargs") SetFaceElement;
-		%feature("autodoc", "	:param aFaceElement:
-	:type aFaceElement: StepShape_Face
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aFaceElement: StepShape_Face
+
+Returns
+-------
+None
 ") SetFaceElement;
 		void SetFaceElement(const opencascade::handle<StepShape_Face> & aFaceElement);
 
 		/****************** SetOrientation ******************/
 		%feature("compactdefaultargs") SetOrientation;
-		%feature("autodoc", "	:param aOrientation:
-	:type aOrientation: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aOrientation: bool
+
+Returns
+-------
+None
 ") SetOrientation;
 		void SetOrientation(const Standard_Boolean aOrientation);
 
@@ -5555,7 +7238,9 @@ class StepShape_OrientedFace : public StepShape_Face {
 		%feature("compactdefaultargs") StepShape_OrientedFace;
 		%feature("autodoc", "Returns a orientedface.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_OrientedFace;
 		 StepShape_OrientedFace();
 
@@ -5577,69 +7262,113 @@ class StepShape_OrientedPath : public StepShape_Path {
 	public:
 		/****************** EdgeList ******************/
 		%feature("compactdefaultargs") EdgeList;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfOrientedEdge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfOrientedEdge>
 ") EdgeList;
 		virtual opencascade::handle<StepShape_HArray1OfOrientedEdge> EdgeList();
 
 		/****************** EdgeListValue ******************/
 		%feature("compactdefaultargs") EdgeListValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepShape_OrientedEdge>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepShape_OrientedEdge>
 ") EdgeListValue;
 		virtual opencascade::handle<StepShape_OrientedEdge> EdgeListValue(const Standard_Integer num);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aPathElement:
-	:type aPathElement: StepShape_EdgeLoop
-	:param aOrientation:
-	:type aOrientation: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aPathElement: StepShape_EdgeLoop
+aOrientation: bool
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_EdgeLoop> & aPathElement, const Standard_Boolean aOrientation);
 
 		/****************** NbEdgeList ******************/
 		%feature("compactdefaultargs") NbEdgeList;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbEdgeList;
 		virtual Standard_Integer NbEdgeList();
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Orientation;
 		Standard_Boolean Orientation();
 
 		/****************** PathElement ******************/
 		%feature("compactdefaultargs") PathElement;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_EdgeLoop>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_EdgeLoop>
 ") PathElement;
 		opencascade::handle<StepShape_EdgeLoop> PathElement();
 
 		/****************** SetEdgeList ******************/
 		%feature("compactdefaultargs") SetEdgeList;
-		%feature("autodoc", "	:param aEdgeList:
-	:type aEdgeList: StepShape_HArray1OfOrientedEdge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aEdgeList: StepShape_HArray1OfOrientedEdge
+
+Returns
+-------
+None
 ") SetEdgeList;
 		virtual void SetEdgeList(const opencascade::handle<StepShape_HArray1OfOrientedEdge> & aEdgeList);
 
 		/****************** SetOrientation ******************/
 		%feature("compactdefaultargs") SetOrientation;
-		%feature("autodoc", "	:param aOrientation:
-	:type aOrientation: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aOrientation: bool
+
+Returns
+-------
+None
 ") SetOrientation;
 		void SetOrientation(const Standard_Boolean aOrientation);
 
 		/****************** SetPathElement ******************/
 		%feature("compactdefaultargs") SetPathElement;
-		%feature("autodoc", "	:param aPathElement:
-	:type aPathElement: StepShape_EdgeLoop
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPathElement: StepShape_EdgeLoop
+
+Returns
+-------
+None
 ") SetPathElement;
 		void SetPathElement(const opencascade::handle<StepShape_EdgeLoop> & aPathElement);
 
@@ -5647,7 +7376,9 @@ class StepShape_OrientedPath : public StepShape_Path {
 		%feature("compactdefaultargs") StepShape_OrientedPath;
 		%feature("autodoc", "Returns a orientedpath.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_OrientedPath;
 		 StepShape_OrientedPath();
 
@@ -5669,39 +7400,64 @@ class StepShape_PolyLoop : public StepShape_Loop {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aPolygon:
-	:type aPolygon: StepGeom_HArray1OfCartesianPoint
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aPolygon: StepGeom_HArray1OfCartesianPoint
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepGeom_HArray1OfCartesianPoint> & aPolygon);
 
 		/****************** NbPolygon ******************/
 		%feature("compactdefaultargs") NbPolygon;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbPolygon;
 		Standard_Integer NbPolygon();
 
 		/****************** Polygon ******************/
 		%feature("compactdefaultargs") Polygon;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_HArray1OfCartesianPoint>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_HArray1OfCartesianPoint>
 ") Polygon;
 		opencascade::handle<StepGeom_HArray1OfCartesianPoint> Polygon();
 
 		/****************** PolygonValue ******************/
 		%feature("compactdefaultargs") PolygonValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepGeom_CartesianPoint>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepGeom_CartesianPoint>
 ") PolygonValue;
 		opencascade::handle<StepGeom_CartesianPoint> PolygonValue(const Standard_Integer num);
 
 		/****************** SetPolygon ******************/
 		%feature("compactdefaultargs") SetPolygon;
-		%feature("autodoc", "	:param aPolygon:
-	:type aPolygon: StepGeom_HArray1OfCartesianPoint
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPolygon: StepGeom_HArray1OfCartesianPoint
+
+Returns
+-------
+None
 ") SetPolygon;
 		void SetPolygon(const opencascade::handle<StepGeom_HArray1OfCartesianPoint> & aPolygon);
 
@@ -5709,7 +7465,9 @@ class StepShape_PolyLoop : public StepShape_Loop {
 		%feature("compactdefaultargs") StepShape_PolyLoop;
 		%feature("autodoc", "Returns a polyloop.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_PolyLoop;
 		 StepShape_PolyLoop();
 
@@ -5731,43 +7489,66 @@ class StepShape_RevolvedAreaSolid : public StepShape_SweptAreaSolid {
 	public:
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Angle;
 		Standard_Real Angle();
 
 		/****************** Axis ******************/
 		%feature("compactdefaultargs") Axis;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Axis1Placement>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Axis1Placement>
 ") Axis;
 		opencascade::handle<StepGeom_Axis1Placement> Axis();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aSweptArea:
-	:type aSweptArea: StepGeom_CurveBoundedSurface
-	:param aAxis:
-	:type aAxis: StepGeom_Axis1Placement
-	:param aAngle:
-	:type aAngle: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aSweptArea: StepGeom_CurveBoundedSurface
+aAxis: StepGeom_Axis1Placement
+aAngle: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepGeom_CurveBoundedSurface> & aSweptArea, const opencascade::handle<StepGeom_Axis1Placement> & aAxis, const Standard_Real aAngle);
 
 		/****************** SetAngle ******************/
 		%feature("compactdefaultargs") SetAngle;
-		%feature("autodoc", "	:param aAngle:
-	:type aAngle: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAngle: float
+
+Returns
+-------
+None
 ") SetAngle;
 		void SetAngle(const Standard_Real aAngle);
 
 		/****************** SetAxis ******************/
 		%feature("compactdefaultargs") SetAxis;
-		%feature("autodoc", "	:param aAxis:
-	:type aAxis: StepGeom_Axis1Placement
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAxis: StepGeom_Axis1Placement
+
+Returns
+-------
+None
 ") SetAxis;
 		void SetAxis(const opencascade::handle<StepGeom_Axis1Placement> & aAxis);
 
@@ -5775,7 +7556,9 @@ class StepShape_RevolvedAreaSolid : public StepShape_SweptAreaSolid {
 		%feature("compactdefaultargs") StepShape_RevolvedAreaSolid;
 		%feature("autodoc", "Returns a revolvedareasolid.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_RevolvedAreaSolid;
 		 StepShape_RevolvedAreaSolid();
 
@@ -5797,53 +7580,81 @@ class StepShape_RevolvedFaceSolid : public StepShape_SweptFaceSolid {
 	public:
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Angle;
 		Standard_Real Angle();
 
 		/****************** Axis ******************/
 		%feature("compactdefaultargs") Axis;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Axis1Placement>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Axis1Placement>
 ") Axis;
 		opencascade::handle<StepGeom_Axis1Placement> Axis();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aSweptArea:
-	:type aSweptArea: StepShape_FaceSurface
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aSweptArea: StepShape_FaceSurface
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_FaceSurface> & aSweptArea);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aSweptArea:
-	:type aSweptArea: StepShape_FaceSurface
-	:param aAxis:
-	:type aAxis: StepGeom_Axis1Placement
-	:param aAngle:
-	:type aAngle: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aSweptArea: StepShape_FaceSurface
+aAxis: StepGeom_Axis1Placement
+aAngle: float
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_FaceSurface> & aSweptArea, const opencascade::handle<StepGeom_Axis1Placement> & aAxis, const Standard_Real aAngle);
 
 		/****************** SetAngle ******************/
 		%feature("compactdefaultargs") SetAngle;
-		%feature("autodoc", "	:param aAngle:
-	:type aAngle: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAngle: float
+
+Returns
+-------
+None
 ") SetAngle;
 		void SetAngle(const Standard_Real aAngle);
 
 		/****************** SetAxis ******************/
 		%feature("compactdefaultargs") SetAxis;
-		%feature("autodoc", "	:param aAxis:
-	:type aAxis: StepGeom_Axis1Placement
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAxis: StepGeom_Axis1Placement
+
+Returns
+-------
+None
 ") SetAxis;
 		void SetAxis(const opencascade::handle<StepGeom_Axis1Placement> & aAxis);
 
@@ -5851,7 +7662,9 @@ class StepShape_RevolvedFaceSolid : public StepShape_SweptFaceSolid {
 		%feature("compactdefaultargs") StepShape_RevolvedFaceSolid;
 		%feature("autodoc", "Returns a revolvedfacesolid.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_RevolvedFaceSolid;
 		 StepShape_RevolvedFaceSolid();
 
@@ -5875,15 +7688,16 @@ class StepShape_Subedge : public StepShape_Edge {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aRepresentationItem_Name:
-	:type aRepresentationItem_Name: TCollection_HAsciiString
-	:param aEdge_EdgeStart:
-	:type aEdge_EdgeStart: StepShape_Vertex
-	:param aEdge_EdgeEnd:
-	:type aEdge_EdgeEnd: StepShape_Vertex
-	:param aParentEdge:
-	:type aParentEdge: StepShape_Edge
-	:rtype: None
+Parameters
+----------
+aRepresentationItem_Name: TCollection_HAsciiString
+aEdge_EdgeStart: StepShape_Vertex
+aEdge_EdgeEnd: StepShape_Vertex
+aParentEdge: StepShape_Edge
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aRepresentationItem_Name, const opencascade::handle<StepShape_Vertex> & aEdge_EdgeStart, const opencascade::handle<StepShape_Vertex> & aEdge_EdgeEnd, const opencascade::handle<StepShape_Edge> & aParentEdge);
 
@@ -5891,7 +7705,9 @@ class StepShape_Subedge : public StepShape_Edge {
 		%feature("compactdefaultargs") ParentEdge;
 		%feature("autodoc", "Returns field parentedge.
 
-	:rtype: opencascade::handle<StepShape_Edge>
+Returns
+-------
+opencascade::handle<StepShape_Edge>
 ") ParentEdge;
 		opencascade::handle<StepShape_Edge> ParentEdge();
 
@@ -5899,9 +7715,13 @@ class StepShape_Subedge : public StepShape_Edge {
 		%feature("compactdefaultargs") SetParentEdge;
 		%feature("autodoc", "Set field parentedge.
 
-	:param ParentEdge:
-	:type ParentEdge: StepShape_Edge
-	:rtype: None
+Parameters
+----------
+ParentEdge: StepShape_Edge
+
+Returns
+-------
+None
 ") SetParentEdge;
 		void SetParentEdge(const opencascade::handle<StepShape_Edge> & ParentEdge);
 
@@ -5909,7 +7729,9 @@ class StepShape_Subedge : public StepShape_Edge {
 		%feature("compactdefaultargs") StepShape_Subedge;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_Subedge;
 		 StepShape_Subedge();
 
@@ -5933,13 +7755,15 @@ class StepShape_Subface : public StepShape_Face {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aRepresentationItem_Name:
-	:type aRepresentationItem_Name: TCollection_HAsciiString
-	:param aFace_Bounds:
-	:type aFace_Bounds: StepShape_HArray1OfFaceBound
-	:param aParentFace:
-	:type aParentFace: StepShape_Face
-	:rtype: None
+Parameters
+----------
+aRepresentationItem_Name: TCollection_HAsciiString
+aFace_Bounds: StepShape_HArray1OfFaceBound
+aParentFace: StepShape_Face
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aRepresentationItem_Name, const opencascade::handle<StepShape_HArray1OfFaceBound> & aFace_Bounds, const opencascade::handle<StepShape_Face> & aParentFace);
 
@@ -5947,7 +7771,9 @@ class StepShape_Subface : public StepShape_Face {
 		%feature("compactdefaultargs") ParentFace;
 		%feature("autodoc", "Returns field parentface.
 
-	:rtype: opencascade::handle<StepShape_Face>
+Returns
+-------
+opencascade::handle<StepShape_Face>
 ") ParentFace;
 		opencascade::handle<StepShape_Face> ParentFace();
 
@@ -5955,9 +7781,13 @@ class StepShape_Subface : public StepShape_Face {
 		%feature("compactdefaultargs") SetParentFace;
 		%feature("autodoc", "Set field parentface.
 
-	:param ParentFace:
-	:type ParentFace: StepShape_Face
-	:rtype: None
+Parameters
+----------
+ParentFace: StepShape_Face
+
+Returns
+-------
+None
 ") SetParentFace;
 		void SetParentFace(const opencascade::handle<StepShape_Face> & ParentFace);
 
@@ -5965,7 +7795,9 @@ class StepShape_Subface : public StepShape_Face {
 		%feature("compactdefaultargs") StepShape_Subface;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_Subface;
 		 StepShape_Subface();
 
@@ -5987,25 +7819,40 @@ class StepShape_VertexLoop : public StepShape_Loop {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aLoopVertex:
-	:type aLoopVertex: StepShape_Vertex
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aLoopVertex: StepShape_Vertex
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_Vertex> & aLoopVertex);
 
 		/****************** LoopVertex ******************/
 		%feature("compactdefaultargs") LoopVertex;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_Vertex>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_Vertex>
 ") LoopVertex;
 		opencascade::handle<StepShape_Vertex> LoopVertex();
 
 		/****************** SetLoopVertex ******************/
 		%feature("compactdefaultargs") SetLoopVertex;
-		%feature("autodoc", "	:param aLoopVertex:
-	:type aLoopVertex: StepShape_Vertex
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aLoopVertex: StepShape_Vertex
+
+Returns
+-------
+None
 ") SetLoopVertex;
 		void SetLoopVertex(const opencascade::handle<StepShape_Vertex> & aLoopVertex);
 
@@ -6013,7 +7860,9 @@ class StepShape_VertexLoop : public StepShape_Loop {
 		%feature("compactdefaultargs") StepShape_VertexLoop;
 		%feature("autodoc", "Returns a vertexloop.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_VertexLoop;
 		 StepShape_VertexLoop();
 
@@ -6035,19 +7884,30 @@ class StepShape_VertexPoint : public StepShape_Vertex {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aVertexGeometry:
-	:type aVertexGeometry: StepGeom_Point
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aVertexGeometry: StepGeom_Point
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepGeom_Point> & aVertexGeometry);
 
 		/****************** SetVertexGeometry ******************/
 		%feature("compactdefaultargs") SetVertexGeometry;
-		%feature("autodoc", "	:param aVertexGeometry:
-	:type aVertexGeometry: StepGeom_Point
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aVertexGeometry: StepGeom_Point
+
+Returns
+-------
+None
 ") SetVertexGeometry;
 		void SetVertexGeometry(const opencascade::handle<StepGeom_Point> & aVertexGeometry);
 
@@ -6055,13 +7915,19 @@ class StepShape_VertexPoint : public StepShape_Vertex {
 		%feature("compactdefaultargs") StepShape_VertexPoint;
 		%feature("autodoc", "Returns a vertexpoint.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_VertexPoint;
 		 StepShape_VertexPoint();
 
 		/****************** VertexGeometry ******************/
 		%feature("compactdefaultargs") VertexGeometry;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepGeom_Point>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepGeom_Point>
 ") VertexGeometry;
 		opencascade::handle<StepGeom_Point> VertexGeometry();
 
@@ -6085,7 +7951,9 @@ class StepShape_AdvancedFace : public StepShape_FaceSurface {
 		%feature("compactdefaultargs") StepShape_AdvancedFace;
 		%feature("autodoc", "Returns a advancedface.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_AdvancedFace;
 		 StepShape_AdvancedFace();
 
@@ -6107,69 +7975,113 @@ class StepShape_OrientedClosedShell : public StepShape_ClosedShell {
 	public:
 		/****************** CfsFaces ******************/
 		%feature("compactdefaultargs") CfsFaces;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfFace>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfFace>
 ") CfsFaces;
 		virtual opencascade::handle<StepShape_HArray1OfFace> CfsFaces();
 
 		/****************** CfsFacesValue ******************/
 		%feature("compactdefaultargs") CfsFacesValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepShape_Face>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepShape_Face>
 ") CfsFacesValue;
 		virtual opencascade::handle<StepShape_Face> CfsFacesValue(const Standard_Integer num);
 
 		/****************** ClosedShellElement ******************/
 		%feature("compactdefaultargs") ClosedShellElement;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_ClosedShell>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_ClosedShell>
 ") ClosedShellElement;
 		opencascade::handle<StepShape_ClosedShell> ClosedShellElement();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aClosedShellElement:
-	:type aClosedShellElement: StepShape_ClosedShell
-	:param aOrientation:
-	:type aOrientation: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aClosedShellElement: StepShape_ClosedShell
+aOrientation: bool
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_ClosedShell> & aClosedShellElement, const Standard_Boolean aOrientation);
 
 		/****************** NbCfsFaces ******************/
 		%feature("compactdefaultargs") NbCfsFaces;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbCfsFaces;
 		virtual Standard_Integer NbCfsFaces();
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Orientation;
 		Standard_Boolean Orientation();
 
 		/****************** SetCfsFaces ******************/
 		%feature("compactdefaultargs") SetCfsFaces;
-		%feature("autodoc", "	:param aCfsFaces:
-	:type aCfsFaces: StepShape_HArray1OfFace
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aCfsFaces: StepShape_HArray1OfFace
+
+Returns
+-------
+None
 ") SetCfsFaces;
 		virtual void SetCfsFaces(const opencascade::handle<StepShape_HArray1OfFace> & aCfsFaces);
 
 		/****************** SetClosedShellElement ******************/
 		%feature("compactdefaultargs") SetClosedShellElement;
-		%feature("autodoc", "	:param aClosedShellElement:
-	:type aClosedShellElement: StepShape_ClosedShell
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aClosedShellElement: StepShape_ClosedShell
+
+Returns
+-------
+None
 ") SetClosedShellElement;
 		void SetClosedShellElement(const opencascade::handle<StepShape_ClosedShell> & aClosedShellElement);
 
 		/****************** SetOrientation ******************/
 		%feature("compactdefaultargs") SetOrientation;
-		%feature("autodoc", "	:param aOrientation:
-	:type aOrientation: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aOrientation: bool
+
+Returns
+-------
+None
 ") SetOrientation;
 		void SetOrientation(const Standard_Boolean aOrientation);
 
@@ -6177,7 +8089,9 @@ class StepShape_OrientedClosedShell : public StepShape_ClosedShell {
 		%feature("compactdefaultargs") StepShape_OrientedClosedShell;
 		%feature("autodoc", "Returns a orientedclosedshell.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_OrientedClosedShell;
 		 StepShape_OrientedClosedShell();
 
@@ -6199,69 +8113,113 @@ class StepShape_OrientedOpenShell : public StepShape_OpenShell {
 	public:
 		/****************** CfsFaces ******************/
 		%feature("compactdefaultargs") CfsFaces;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_HArray1OfFace>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_HArray1OfFace>
 ") CfsFaces;
 		virtual opencascade::handle<StepShape_HArray1OfFace> CfsFaces();
 
 		/****************** CfsFacesValue ******************/
 		%feature("compactdefaultargs") CfsFacesValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepShape_Face>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepShape_Face>
 ") CfsFacesValue;
 		virtual opencascade::handle<StepShape_Face> CfsFacesValue(const Standard_Integer num);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aName:
-	:type aName: TCollection_HAsciiString
-	:param aOpenShellElement:
-	:type aOpenShellElement: StepShape_OpenShell
-	:param aOrientation:
-	:type aOrientation: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_HAsciiString
+aOpenShellElement: StepShape_OpenShell
+aOrientation: bool
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<StepShape_OpenShell> & aOpenShellElement, const Standard_Boolean aOrientation);
 
 		/****************** NbCfsFaces ******************/
 		%feature("compactdefaultargs") NbCfsFaces;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbCfsFaces;
 		virtual Standard_Integer NbCfsFaces();
 
 		/****************** OpenShellElement ******************/
 		%feature("compactdefaultargs") OpenShellElement;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepShape_OpenShell>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_OpenShell>
 ") OpenShellElement;
 		opencascade::handle<StepShape_OpenShell> OpenShellElement();
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Orientation;
 		Standard_Boolean Orientation();
 
 		/****************** SetCfsFaces ******************/
 		%feature("compactdefaultargs") SetCfsFaces;
-		%feature("autodoc", "	:param aCfsFaces:
-	:type aCfsFaces: StepShape_HArray1OfFace
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aCfsFaces: StepShape_HArray1OfFace
+
+Returns
+-------
+None
 ") SetCfsFaces;
 		virtual void SetCfsFaces(const opencascade::handle<StepShape_HArray1OfFace> & aCfsFaces);
 
 		/****************** SetOpenShellElement ******************/
 		%feature("compactdefaultargs") SetOpenShellElement;
-		%feature("autodoc", "	:param aOpenShellElement:
-	:type aOpenShellElement: StepShape_OpenShell
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aOpenShellElement: StepShape_OpenShell
+
+Returns
+-------
+None
 ") SetOpenShellElement;
 		void SetOpenShellElement(const opencascade::handle<StepShape_OpenShell> & aOpenShellElement);
 
 		/****************** SetOrientation ******************/
 		%feature("compactdefaultargs") SetOrientation;
-		%feature("autodoc", "	:param aOrientation:
-	:type aOrientation: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aOrientation: bool
+
+Returns
+-------
+None
 ") SetOrientation;
 		void SetOrientation(const Standard_Boolean aOrientation);
 
@@ -6269,7 +8227,9 @@ class StepShape_OrientedOpenShell : public StepShape_OpenShell {
 		%feature("compactdefaultargs") StepShape_OrientedOpenShell;
 		%feature("autodoc", "Returns a orientedopenshell.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_OrientedOpenShell;
 		 StepShape_OrientedOpenShell();
 
@@ -6293,15 +8253,16 @@ class StepShape_SeamEdge : public StepShape_OrientedEdge {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aRepresentationItem_Name:
-	:type aRepresentationItem_Name: TCollection_HAsciiString
-	:param aOrientedEdge_EdgeElement:
-	:type aOrientedEdge_EdgeElement: StepShape_Edge
-	:param aOrientedEdge_Orientation:
-	:type aOrientedEdge_Orientation: bool
-	:param aPcurveReference:
-	:type aPcurveReference: StepGeom_Pcurve
-	:rtype: None
+Parameters
+----------
+aRepresentationItem_Name: TCollection_HAsciiString
+aOrientedEdge_EdgeElement: StepShape_Edge
+aOrientedEdge_Orientation: bool
+aPcurveReference: StepGeom_Pcurve
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aRepresentationItem_Name, const opencascade::handle<StepShape_Edge> & aOrientedEdge_EdgeElement, const Standard_Boolean aOrientedEdge_Orientation, const opencascade::handle<StepGeom_Pcurve> & aPcurveReference);
 
@@ -6309,7 +8270,9 @@ class StepShape_SeamEdge : public StepShape_OrientedEdge {
 		%feature("compactdefaultargs") PcurveReference;
 		%feature("autodoc", "Returns field pcurvereference.
 
-	:rtype: opencascade::handle<StepGeom_Pcurve>
+Returns
+-------
+opencascade::handle<StepGeom_Pcurve>
 ") PcurveReference;
 		opencascade::handle<StepGeom_Pcurve> PcurveReference();
 
@@ -6317,9 +8280,13 @@ class StepShape_SeamEdge : public StepShape_OrientedEdge {
 		%feature("compactdefaultargs") SetPcurveReference;
 		%feature("autodoc", "Set field pcurvereference.
 
-	:param PcurveReference:
-	:type PcurveReference: StepGeom_Pcurve
-	:rtype: None
+Parameters
+----------
+PcurveReference: StepGeom_Pcurve
+
+Returns
+-------
+None
 ") SetPcurveReference;
 		void SetPcurveReference(const opencascade::handle<StepGeom_Pcurve> & PcurveReference);
 
@@ -6327,7 +8294,9 @@ class StepShape_SeamEdge : public StepShape_OrientedEdge {
 		%feature("compactdefaultargs") StepShape_SeamEdge;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepShape_SeamEdge;
 		 StepShape_SeamEdge();
 

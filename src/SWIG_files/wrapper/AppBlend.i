@@ -72,167 +72,245 @@ class AppBlend_Approx {
 	public:
 		/****************** Curve2d ******************/
 		%feature("compactdefaultargs") Curve2d;
-		%feature("autodoc", "	:param Index:
-	:type Index: int
-	:param TPoles:
-	:type TPoles: TColgp_Array1OfPnt2d
-	:param TKnots:
-	:type TKnots: TColStd_Array1OfReal
-	:param TMults:
-	:type TMults: TColStd_Array1OfInteger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Index: int
+TPoles: TColgp_Array1OfPnt2d
+TKnots: TColStd_Array1OfReal
+TMults: TColStd_Array1OfInteger
+
+Returns
+-------
+None
 ") Curve2d;
 		virtual void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults);
 
 		/****************** Curve2dPoles ******************/
 		%feature("compactdefaultargs") Curve2dPoles;
-		%feature("autodoc", "	:param Index:
-	:type Index: int
-	:rtype: TColgp_Array1OfPnt2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+TColgp_Array1OfPnt2d
 ") Curve2dPoles;
 		virtual const TColgp_Array1OfPnt2d & Curve2dPoles(const Standard_Integer Index);
 
 		/****************** Curves2dDegree ******************/
 		%feature("compactdefaultargs") Curves2dDegree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Curves2dDegree;
 		virtual Standard_Integer Curves2dDegree();
 
 		/****************** Curves2dKnots ******************/
 		%feature("compactdefaultargs") Curves2dKnots;
-		%feature("autodoc", "	:rtype: TColStd_Array1OfReal
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_Array1OfReal
 ") Curves2dKnots;
 		virtual const TColStd_Array1OfReal & Curves2dKnots();
 
 		/****************** Curves2dMults ******************/
 		%feature("compactdefaultargs") Curves2dMults;
-		%feature("autodoc", "	:rtype: TColStd_Array1OfInteger
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_Array1OfInteger
 ") Curves2dMults;
 		virtual const TColStd_Array1OfInteger & Curves2dMults();
 
 		/****************** Curves2dShape ******************/
 		%feature("compactdefaultargs") Curves2dShape;
-		%feature("autodoc", "	:param Degree:
-	:type Degree: int
-	:param NbPoles:
-	:type NbPoles: int
-	:param NbKnots:
-	:type NbKnots: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Degree: int
+NbPoles: int
+NbKnots: int
+
+Returns
+-------
+None
 ") Curves2dShape;
 		virtual void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		virtual Standard_Boolean IsDone();
 
 		/****************** NbCurves2d ******************/
 		%feature("compactdefaultargs") NbCurves2d;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbCurves2d;
 		virtual Standard_Integer NbCurves2d();
 
 		/****************** SurfPoles ******************/
 		%feature("compactdefaultargs") SurfPoles;
-		%feature("autodoc", "	:rtype: TColgp_Array2OfPnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColgp_Array2OfPnt
 ") SurfPoles;
 		virtual const TColgp_Array2OfPnt & SurfPoles();
 
 		/****************** SurfShape ******************/
 		%feature("compactdefaultargs") SurfShape;
-		%feature("autodoc", "	:param UDegree:
-	:type UDegree: int
-	:param VDegree:
-	:type VDegree: int
-	:param NbUPoles:
-	:type NbUPoles: int
-	:param NbVPoles:
-	:type NbVPoles: int
-	:param NbUKnots:
-	:type NbUKnots: int
-	:param NbVKnots:
-	:type NbVKnots: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+UDegree: int
+VDegree: int
+NbUPoles: int
+NbVPoles: int
+NbUKnots: int
+NbVKnots: int
+
+Returns
+-------
+None
 ") SurfShape;
 		virtual void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** SurfUKnots ******************/
 		%feature("compactdefaultargs") SurfUKnots;
-		%feature("autodoc", "	:rtype: TColStd_Array1OfReal
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_Array1OfReal
 ") SurfUKnots;
 		virtual const TColStd_Array1OfReal & SurfUKnots();
 
 		/****************** SurfUMults ******************/
 		%feature("compactdefaultargs") SurfUMults;
-		%feature("autodoc", "	:rtype: TColStd_Array1OfInteger
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_Array1OfInteger
 ") SurfUMults;
 		virtual const TColStd_Array1OfInteger & SurfUMults();
 
 		/****************** SurfVKnots ******************/
 		%feature("compactdefaultargs") SurfVKnots;
-		%feature("autodoc", "	:rtype: TColStd_Array1OfReal
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_Array1OfReal
 ") SurfVKnots;
 		virtual const TColStd_Array1OfReal & SurfVKnots();
 
 		/****************** SurfVMults ******************/
 		%feature("compactdefaultargs") SurfVMults;
-		%feature("autodoc", "	:rtype: TColStd_Array1OfInteger
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_Array1OfInteger
 ") SurfVMults;
 		virtual const TColStd_Array1OfInteger & SurfVMults();
 
 		/****************** SurfWeights ******************/
 		%feature("compactdefaultargs") SurfWeights;
-		%feature("autodoc", "	:rtype: TColStd_Array2OfReal
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_Array2OfReal
 ") SurfWeights;
 		virtual const TColStd_Array2OfReal & SurfWeights();
 
 		/****************** Surface ******************/
 		%feature("compactdefaultargs") Surface;
-		%feature("autodoc", "	:param TPoles:
-	:type TPoles: TColgp_Array2OfPnt
-	:param TWeights:
-	:type TWeights: TColStd_Array2OfReal
-	:param TUKnots:
-	:type TUKnots: TColStd_Array1OfReal
-	:param TVKnots:
-	:type TVKnots: TColStd_Array1OfReal
-	:param TUMults:
-	:type TUMults: TColStd_Array1OfInteger
-	:param TVMults:
-	:type TVMults: TColStd_Array1OfInteger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TPoles: TColgp_Array2OfPnt
+TWeights: TColStd_Array2OfReal
+TUKnots: TColStd_Array1OfReal
+TVKnots: TColStd_Array1OfReal
+TUMults: TColStd_Array1OfInteger
+TVMults: TColStd_Array1OfInteger
+
+Returns
+-------
+None
 ") Surface;
 		virtual void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults);
 
 		/****************** TolCurveOnSurf ******************/
 		%feature("compactdefaultargs") TolCurveOnSurf;
-		%feature("autodoc", "	:param Index:
-	:type Index: int
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
 ") TolCurveOnSurf;
 		virtual Standard_Real TolCurveOnSurf(const Standard_Integer Index);
 
 		/****************** TolReached ******************/
 		%feature("compactdefaultargs") TolReached;
-		%feature("autodoc", "	:param Tol3d:
-	:type Tol3d: float
-	:param Tol2d:
-	:type Tol2d: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tol3d: float
+Tol2d: float
+
+Returns
+-------
+None
 ") TolReached;
 		virtual void TolReached(Standard_Real &OutValue, Standard_Real &OutValue);
 
 		/****************** UDegree ******************/
 		%feature("compactdefaultargs") UDegree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") UDegree;
 		virtual Standard_Integer UDegree();
 
 		/****************** VDegree ******************/
 		%feature("compactdefaultargs") VDegree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") VDegree;
 		virtual Standard_Integer VDegree();
 

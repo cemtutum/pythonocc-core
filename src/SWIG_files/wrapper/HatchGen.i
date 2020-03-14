@@ -94,9 +94,14 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "Dump of the domain.
 
-	:param Index: default value is 0
-	:type Index: int
-	:rtype: None
+Parameters
+----------
+Index: int,optional
+	default value is 0
+
+Returns
+-------
+None
 ") Dump;
 		void Dump(const Standard_Integer Index = 0);
 
@@ -104,7 +109,9 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") FirstPoint;
 		%feature("autodoc", "Returns the first point of the domain. the exception domainerror is raised if hasfirstpoint returns false.
 
-	:rtype: HatchGen_PointOnHatching
+Returns
+-------
+HatchGen_PointOnHatching
 ") FirstPoint;
 		const HatchGen_PointOnHatching & FirstPoint();
 
@@ -112,7 +119,9 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") HasFirstPoint;
 		%feature("autodoc", "Returns true if the domain has a first point.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasFirstPoint;
 		Standard_Boolean HasFirstPoint();
 
@@ -120,7 +129,9 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") HasSecondPoint;
 		%feature("autodoc", "Returns true if the domain has a second point.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasSecondPoint;
 		Standard_Boolean HasSecondPoint();
 
@@ -128,7 +139,9 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") HatchGen_Domain;
 		%feature("autodoc", "Creates an infinite domain.
 
-	:rtype: None
+Returns
+-------
+None
 ") HatchGen_Domain;
 		 HatchGen_Domain();
 
@@ -136,11 +149,14 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") HatchGen_Domain;
 		%feature("autodoc", "Creates a domain for the curve associated to a hatching.
 
-	:param P1:
-	:type P1: HatchGen_PointOnHatching
-	:param P2:
-	:type P2: HatchGen_PointOnHatching
-	:rtype: None
+Parameters
+----------
+P1: HatchGen_PointOnHatching
+P2: HatchGen_PointOnHatching
+
+Returns
+-------
+None
 ") HatchGen_Domain;
 		 HatchGen_Domain(const HatchGen_PointOnHatching & P1, const HatchGen_PointOnHatching & P2);
 
@@ -148,11 +164,14 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") HatchGen_Domain;
 		%feature("autodoc", "Creates a semi-infinite domain for the curve associated to a hatching. the `first' flag means that the given point is the first one.
 
-	:param P:
-	:type P: HatchGen_PointOnHatching
-	:param First:
-	:type First: bool
-	:rtype: None
+Parameters
+----------
+P: HatchGen_PointOnHatching
+First: bool
+
+Returns
+-------
+None
 ") HatchGen_Domain;
 		 HatchGen_Domain(const HatchGen_PointOnHatching & P, const Standard_Boolean First);
 
@@ -160,7 +179,9 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") SecondPoint;
 		%feature("autodoc", "Returns the second point of the domain. the exception domainerror is raised if hassecondpoint returns false.
 
-	:rtype: HatchGen_PointOnHatching
+Returns
+-------
+HatchGen_PointOnHatching
 ") SecondPoint;
 		const HatchGen_PointOnHatching & SecondPoint();
 
@@ -168,9 +189,13 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") SetFirstPoint;
 		%feature("autodoc", "Sets the first point of the domain.
 
-	:param P:
-	:type P: HatchGen_PointOnHatching
-	:rtype: None
+Parameters
+----------
+P: HatchGen_PointOnHatching
+
+Returns
+-------
+None
 ") SetFirstPoint;
 		void SetFirstPoint(const HatchGen_PointOnHatching & P);
 
@@ -178,7 +203,9 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") SetFirstPoint;
 		%feature("autodoc", "Sets the first point of the domain at the infinite.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetFirstPoint;
 		void SetFirstPoint();
 
@@ -186,11 +213,14 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") SetPoints;
 		%feature("autodoc", "Sets the first and the second points of the domain.
 
-	:param P1:
-	:type P1: HatchGen_PointOnHatching
-	:param P2:
-	:type P2: HatchGen_PointOnHatching
-	:rtype: None
+Parameters
+----------
+P1: HatchGen_PointOnHatching
+P2: HatchGen_PointOnHatching
+
+Returns
+-------
+None
 ") SetPoints;
 		void SetPoints(const HatchGen_PointOnHatching & P1, const HatchGen_PointOnHatching & P2);
 
@@ -198,7 +228,9 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") SetPoints;
 		%feature("autodoc", "Sets the first and the second points of the domain as the infinite.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetPoints;
 		void SetPoints();
 
@@ -206,9 +238,13 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") SetSecondPoint;
 		%feature("autodoc", "Sets the second point of the domain.
 
-	:param P:
-	:type P: HatchGen_PointOnHatching
-	:rtype: None
+Parameters
+----------
+P: HatchGen_PointOnHatching
+
+Returns
+-------
+None
 ") SetSecondPoint;
 		void SetSecondPoint(const HatchGen_PointOnHatching & P);
 
@@ -216,7 +252,9 @@ class HatchGen_Domain {
 		%feature("compactdefaultargs") SetSecondPoint;
 		%feature("autodoc", "Sets the second point of the domain at the infinite.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetSecondPoint;
 		void SetSecondPoint();
 
@@ -240,9 +278,14 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "Dump of the point on element.
 
-	:param Index: default value is 0
-	:type Index: int
-	:rtype: None
+Parameters
+----------
+Index: int,optional
+	default value is 0
+
+Returns
+-------
+None
 ") Dump;
 		virtual void Dump(const Standard_Integer Index = 0);
 
@@ -250,7 +293,9 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "Returns the index of the supporting curve.
 
-	:rtype: int
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index();
 
@@ -258,7 +303,9 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") Parameter;
 		%feature("autodoc", "Returns the parameter on the curve.
 
-	:rtype: float
+Returns
+-------
+float
 ") Parameter;
 		Standard_Real Parameter();
 
@@ -266,7 +313,9 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") Position;
 		%feature("autodoc", "Returns the position of the point on the curve.
 
-	:rtype: TopAbs_Orientation
+Returns
+-------
+TopAbs_Orientation
 ") Position;
 		TopAbs_Orientation Position();
 
@@ -274,7 +323,9 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") SegmentBeginning;
 		%feature("autodoc", "Returns the flag that the point is the beginning of a segment.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") SegmentBeginning;
 		Standard_Boolean SegmentBeginning();
 
@@ -282,7 +333,9 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") SegmentEnd;
 		%feature("autodoc", "Returns the flag that the point is the end of a segment.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") SegmentEnd;
 		Standard_Boolean SegmentEnd();
 
@@ -290,9 +343,13 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") SetIndex;
 		%feature("autodoc", "Sets the index of the supporting curve.
 
-	:param Index:
-	:type Index: int
-	:rtype: None
+Parameters
+----------
+Index: int
+
+Returns
+-------
+None
 ") SetIndex;
 		void SetIndex(const Standard_Integer Index);
 
@@ -300,9 +357,13 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") SetParameter;
 		%feature("autodoc", "Sets the parameter on the curve.
 
-	:param Parameter:
-	:type Parameter: float
-	:rtype: None
+Parameters
+----------
+Parameter: float
+
+Returns
+-------
+None
 ") SetParameter;
 		void SetParameter(const Standard_Real Parameter);
 
@@ -310,9 +371,13 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") SetPosition;
 		%feature("autodoc", "Sets the position of the point on the curve.
 
-	:param Position:
-	:type Position: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+Position: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetPosition;
 		void SetPosition(const TopAbs_Orientation Position);
 
@@ -320,9 +385,14 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") SetSegmentBeginning;
 		%feature("autodoc", "Sets the flag that the point is the beginning of a segment.
 
-	:param State: default value is Standard_True
-	:type State: bool
-	:rtype: None
+Parameters
+----------
+State: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") SetSegmentBeginning;
 		void SetSegmentBeginning(const Standard_Boolean State = Standard_True);
 
@@ -330,9 +400,14 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") SetSegmentEnd;
 		%feature("autodoc", "Sets the flag that the point is the end of a segment.
 
-	:param State: default value is Standard_True
-	:type State: bool
-	:rtype: None
+Parameters
+----------
+State: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") SetSegmentEnd;
 		void SetSegmentEnd(const Standard_Boolean State = Standard_True);
 
@@ -340,9 +415,13 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") SetStateAfter;
 		%feature("autodoc", "Sets the transition state after the intersection.
 
-	:param State:
-	:type State: TopAbs_State
-	:rtype: None
+Parameters
+----------
+State: TopAbs_State
+
+Returns
+-------
+None
 ") SetStateAfter;
 		void SetStateAfter(const TopAbs_State State);
 
@@ -350,9 +429,13 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") SetStateBefore;
 		%feature("autodoc", "Sets the transition state before the intersection.
 
-	:param State:
-	:type State: TopAbs_State
-	:rtype: None
+Parameters
+----------
+State: TopAbs_State
+
+Returns
+-------
+None
 ") SetStateBefore;
 		void SetStateBefore(const TopAbs_State State);
 
@@ -360,7 +443,9 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") StateAfter;
 		%feature("autodoc", "Returns the transition state after of the intersection.
 
-	:rtype: TopAbs_State
+Returns
+-------
+TopAbs_State
 ") StateAfter;
 		TopAbs_State StateAfter();
 
@@ -368,7 +453,9 @@ class HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") StateBefore;
 		%feature("autodoc", "Returns the transition state before the intersection.
 
-	:rtype: TopAbs_State
+Returns
+-------
+TopAbs_State
 ") StateBefore;
 		TopAbs_State StateBefore();
 
@@ -390,9 +477,14 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "Dump of the point on element.
 
-	:param Index: default value is 0
-	:type Index: int
-	:rtype: None
+Parameters
+----------
+Index: int,optional
+	default value is 0
+
+Returns
+-------
+None
 ") Dump;
 		void Dump(const Standard_Integer Index = 0);
 
@@ -400,7 +492,9 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") HatchGen_PointOnElement;
 		%feature("autodoc", "---purpose; creates an empty point on element.
 
-	:rtype: None
+Returns
+-------
+None
 ") HatchGen_PointOnElement;
 		 HatchGen_PointOnElement();
 
@@ -408,9 +502,13 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") HatchGen_PointOnElement;
 		%feature("autodoc", "Creates a point from an other.
 
-	:param Point:
-	:type Point: HatchGen_PointOnElement
-	:rtype: None
+Parameters
+----------
+Point: HatchGen_PointOnElement
+
+Returns
+-------
+None
 ") HatchGen_PointOnElement;
 		 HatchGen_PointOnElement(const HatchGen_PointOnElement & Point);
 
@@ -418,9 +516,13 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") HatchGen_PointOnElement;
 		%feature("autodoc", "Creates a point from an intersection point.
 
-	:param Point:
-	:type Point: IntRes2d_IntersectionPoint
-	:rtype: None
+Parameters
+----------
+Point: IntRes2d_IntersectionPoint
+
+Returns
+-------
+None
 ") HatchGen_PointOnElement;
 		 HatchGen_PointOnElement(const IntRes2d_IntersectionPoint & Point);
 
@@ -428,7 +530,9 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") IntersectionType;
 		%feature("autodoc", "Returns the intersection type at this point.
 
-	:rtype: HatchGen_IntersectionType
+Returns
+-------
+HatchGen_IntersectionType
 ") IntersectionType;
 		HatchGen_IntersectionType IntersectionType();
 
@@ -436,11 +540,14 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") IsDifferent;
 		%feature("autodoc", "Tests if the point is different from an other.
 
-	:param Point:
-	:type Point: HatchGen_PointOnElement
-	:param Confusion:
-	:type Confusion: float
-	:rtype: bool
+Parameters
+----------
+Point: HatchGen_PointOnElement
+Confusion: float
+
+Returns
+-------
+bool
 ") IsDifferent;
 		Standard_Boolean IsDifferent(const HatchGen_PointOnElement & Point, const Standard_Real Confusion);
 
@@ -448,11 +555,14 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") IsIdentical;
 		%feature("autodoc", "Tests if the point is identical to an other. that is to say : p1.myindex = p2.myindex abs (p1.myparam - p2.myparam) <= confusion p1.myposit = p2.myposit p1.mybefore = p2.mybefore p1.myafter = p2.myafter p1.mysegbeg = p2.mysegbeg p1.mysegend = p2.mysegend p1.mytype = p2.mytype.
 
-	:param Point:
-	:type Point: HatchGen_PointOnElement
-	:param Confusion:
-	:type Confusion: float
-	:rtype: bool
+Parameters
+----------
+Point: HatchGen_PointOnElement
+Confusion: float
+
+Returns
+-------
+bool
 ") IsIdentical;
 		Standard_Boolean IsIdentical(const HatchGen_PointOnElement & Point, const Standard_Real Confusion);
 
@@ -460,9 +570,13 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") SetIntersectionType;
 		%feature("autodoc", "Sets the intersection type at this point.
 
-	:param Type:
-	:type Type: HatchGen_IntersectionType
-	:rtype: None
+Parameters
+----------
+Type: HatchGen_IntersectionType
+
+Returns
+-------
+None
 ") SetIntersectionType;
 		void SetIntersectionType(const HatchGen_IntersectionType Type);
 
@@ -484,11 +598,14 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") AddPoint;
 		%feature("autodoc", "Adds a point on element to the point.
 
-	:param Point:
-	:type Point: HatchGen_PointOnElement
-	:param Confusion:
-	:type Confusion: float
-	:rtype: None
+Parameters
+----------
+Point: HatchGen_PointOnElement
+Confusion: float
+
+Returns
+-------
+None
 ") AddPoint;
 		void AddPoint(const HatchGen_PointOnElement & Point, const Standard_Real Confusion);
 
@@ -496,7 +613,9 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") ClrPoints;
 		%feature("autodoc", "Removes all the points on element of the point.
 
-	:rtype: None
+Returns
+-------
+None
 ") ClrPoints;
 		void ClrPoints();
 
@@ -504,9 +623,14 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "Dump of the point.
 
-	:param Index: default value is 0
-	:type Index: int
-	:rtype: None
+Parameters
+----------
+Index: int,optional
+	default value is 0
+
+Returns
+-------
+None
 ") Dump;
 		void Dump(const Standard_Integer Index = 0);
 
@@ -514,7 +638,9 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") HatchGen_PointOnHatching;
 		%feature("autodoc", "Creates an empty point.
 
-	:rtype: None
+Returns
+-------
+None
 ") HatchGen_PointOnHatching;
 		 HatchGen_PointOnHatching();
 
@@ -522,9 +648,13 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") HatchGen_PointOnHatching;
 		%feature("autodoc", "Creates a point from an other.
 
-	:param Point:
-	:type Point: HatchGen_PointOnHatching
-	:rtype: None
+Parameters
+----------
+Point: HatchGen_PointOnHatching
+
+Returns
+-------
+None
 ") HatchGen_PointOnHatching;
 		 HatchGen_PointOnHatching(const HatchGen_PointOnHatching & Point);
 
@@ -532,9 +662,13 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") HatchGen_PointOnHatching;
 		%feature("autodoc", "Creates a point from an intersection point.
 
-	:param Point:
-	:type Point: IntRes2d_IntersectionPoint
-	:rtype: None
+Parameters
+----------
+Point: IntRes2d_IntersectionPoint
+
+Returns
+-------
+None
 ") HatchGen_PointOnHatching;
 		 HatchGen_PointOnHatching(const IntRes2d_IntersectionPoint & Point);
 
@@ -542,11 +676,14 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Tests if the point is equal to an other. a point on hatching p1 is said to be equal to an other p2 if : | p2.myparam - p1.myparam | <= confusion.
 
-	:param Point:
-	:type Point: HatchGen_PointOnHatching
-	:param Confusion:
-	:type Confusion: float
-	:rtype: bool
+Parameters
+----------
+Point: HatchGen_PointOnHatching
+Confusion: float
+
+Returns
+-------
+bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const HatchGen_PointOnHatching & Point, const Standard_Real Confusion);
 
@@ -554,11 +691,14 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") IsGreater;
 		%feature("autodoc", "Tests if the point is greater than an other. a point on hatching p1 is said to be greater than an other p2 if : p1.myparam - p2.myparam > confusion.
 
-	:param Point:
-	:type Point: HatchGen_PointOnHatching
-	:param Confusion:
-	:type Confusion: float
-	:rtype: bool
+Parameters
+----------
+Point: HatchGen_PointOnHatching
+Confusion: float
+
+Returns
+-------
+bool
 ") IsGreater;
 		Standard_Boolean IsGreater(const HatchGen_PointOnHatching & Point, const Standard_Real Confusion);
 
@@ -566,11 +706,14 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") IsLower;
 		%feature("autodoc", "Tests if the point is lower than an other. a point on hatching p1 is said to be lower than an other p2 if : p2.myparam - p1.myparam > confusion.
 
-	:param Point:
-	:type Point: HatchGen_PointOnHatching
-	:param Confusion:
-	:type Confusion: float
-	:rtype: bool
+Parameters
+----------
+Point: HatchGen_PointOnHatching
+Confusion: float
+
+Returns
+-------
+bool
 ") IsLower;
 		Standard_Boolean IsLower(const HatchGen_PointOnHatching & Point, const Standard_Real Confusion);
 
@@ -578,7 +721,9 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") NbPoints;
 		%feature("autodoc", "Returns the number of elements intersecting the hatching at this point.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
@@ -586,9 +731,13 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") Point;
 		%feature("autodoc", "Returns the index-th point on element of the point. the exception outofrange is raised if index > nbpoints.
 
-	:param Index:
-	:type Index: int
-	:rtype: HatchGen_PointOnElement
+Parameters
+----------
+Index: int
+
+Returns
+-------
+HatchGen_PointOnElement
 ") Point;
 		const HatchGen_PointOnElement & Point(const Standard_Integer Index);
 
@@ -596,9 +745,13 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		%feature("compactdefaultargs") RemPoint;
 		%feature("autodoc", "Removes the index-th point on element of the point. the exception outofrange is raised if index > nbpoints.
 
-	:param Index:
-	:type Index: int
-	:rtype: None
+Parameters
+----------
+Index: int
+
+Returns
+-------
+None
 ") RemPoint;
 		void RemPoint(const Standard_Integer Index);
 

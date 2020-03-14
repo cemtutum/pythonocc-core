@@ -78,245 +78,416 @@ class XCAFView_Object : public Standard_Transient {
 	public:
 		/****************** BackPlaneDistance ******************/
 		%feature("compactdefaultargs") BackPlaneDistance;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") BackPlaneDistance;
 		Standard_Real BackPlaneDistance();
 
 		/****************** ClippingExpression ******************/
 		%feature("compactdefaultargs") ClippingExpression;
-		%feature("autodoc", "	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") ClippingExpression;
 		opencascade::handle<TCollection_HAsciiString> ClippingExpression();
 
 		/****************** CreateGDTPoints ******************/
 		%feature("compactdefaultargs") CreateGDTPoints;
-		%feature("autodoc", "	:param theLenght:
-	:type theLenght: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theLenght: int
+
+Returns
+-------
+None
 ") CreateGDTPoints;
 		void CreateGDTPoints(const Standard_Integer theLenght);
 
 		/****************** FrontPlaneDistance ******************/
 		%feature("compactdefaultargs") FrontPlaneDistance;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FrontPlaneDistance;
 		Standard_Real FrontPlaneDistance();
 
 		/****************** GDTPoint ******************/
 		%feature("compactdefaultargs") GDTPoint;
-		%feature("autodoc", "	:param theIndex:
-	:type theIndex: int
-	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+gp_Pnt
 ") GDTPoint;
 		gp_Pnt GDTPoint(const Standard_Integer theIndex);
 
 		/****************** HasBackPlaneClipping ******************/
 		%feature("compactdefaultargs") HasBackPlaneClipping;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") HasBackPlaneClipping;
 		Standard_Boolean HasBackPlaneClipping();
 
 		/****************** HasFrontPlaneClipping ******************/
 		%feature("compactdefaultargs") HasFrontPlaneClipping;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") HasFrontPlaneClipping;
 		Standard_Boolean HasFrontPlaneClipping();
 
 		/****************** HasGDTPoints ******************/
 		%feature("compactdefaultargs") HasGDTPoints;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") HasGDTPoints;
 		Standard_Boolean HasGDTPoints();
 
 		/****************** HasViewVolumeSidesClipping ******************/
 		%feature("compactdefaultargs") HasViewVolumeSidesClipping;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") HasViewVolumeSidesClipping;
 		Standard_Boolean HasViewVolumeSidesClipping();
 
 		/****************** Name ******************/
 		%feature("compactdefaultargs") Name;
-		%feature("autodoc", "	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") Name;
 		opencascade::handle<TCollection_HAsciiString> Name();
 
 		/****************** NbGDTPoints ******************/
 		%feature("compactdefaultargs") NbGDTPoints;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbGDTPoints;
 		Standard_Integer NbGDTPoints();
 
 		/****************** ProjectionPoint ******************/
 		%feature("compactdefaultargs") ProjectionPoint;
-		%feature("autodoc", "	:rtype: gp_Pnt
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Pnt
 ") ProjectionPoint;
 		gp_Pnt ProjectionPoint();
 
 		/****************** SetBackPlaneDistance ******************/
 		%feature("compactdefaultargs") SetBackPlaneDistance;
-		%feature("autodoc", "	:param theDistance:
-	:type theDistance: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDistance: float
+
+Returns
+-------
+None
 ") SetBackPlaneDistance;
 		void SetBackPlaneDistance(Standard_Real theDistance);
 
 		/****************** SetClippingExpression ******************/
 		%feature("compactdefaultargs") SetClippingExpression;
-		%feature("autodoc", "	:param theExpression:
-	:type theExpression: TCollection_HAsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theExpression: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetClippingExpression;
 		void SetClippingExpression(opencascade::handle<TCollection_HAsciiString > theExpression);
 
 		/****************** SetFrontPlaneDistance ******************/
 		%feature("compactdefaultargs") SetFrontPlaneDistance;
-		%feature("autodoc", "	:param theDistance:
-	:type theDistance: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDistance: float
+
+Returns
+-------
+None
 ") SetFrontPlaneDistance;
 		void SetFrontPlaneDistance(Standard_Real theDistance);
 
 		/****************** SetGDTPoint ******************/
 		%feature("compactdefaultargs") SetGDTPoint;
-		%feature("autodoc", "	:param theIndex:
-	:type theIndex: int
-	:param thePoint:
-	:type thePoint: gp_Pnt
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theIndex: int
+thePoint: gp_Pnt
+
+Returns
+-------
+None
 ") SetGDTPoint;
 		void SetGDTPoint(const Standard_Integer theIndex, const gp_Pnt thePoint);
 
 		/****************** SetName ******************/
 		%feature("compactdefaultargs") SetName;
-		%feature("autodoc", "	:param theName:
-	:type theName: TCollection_HAsciiString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theName: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") SetName;
 		void SetName(opencascade::handle<TCollection_HAsciiString > theName);
 
 		/****************** SetProjectionPoint ******************/
 		%feature("compactdefaultargs") SetProjectionPoint;
-		%feature("autodoc", "	:param thePoint:
-	:type thePoint: gp_Pnt
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+thePoint: gp_Pnt
+
+Returns
+-------
+None
 ") SetProjectionPoint;
 		void SetProjectionPoint(gp_Pnt thePoint);
 
 		/****************** SetType ******************/
 		%feature("compactdefaultargs") SetType;
-		%feature("autodoc", "	:param theType:
-	:type theType: XCAFView_ProjectionType
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theType: XCAFView_ProjectionType
+
+Returns
+-------
+None
 ") SetType;
 		void SetType(XCAFView_ProjectionType theType);
 
 		/****************** SetUpDirection ******************/
 		%feature("compactdefaultargs") SetUpDirection;
-		%feature("autodoc", "	:param theDirection:
-	:type theDirection: gp_Dir
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDirection: gp_Dir
+
+Returns
+-------
+None
 ") SetUpDirection;
 		void SetUpDirection(gp_Dir theDirection);
 
 		/****************** SetViewDirection ******************/
 		%feature("compactdefaultargs") SetViewDirection;
-		%feature("autodoc", "	:param theDirection:
-	:type theDirection: gp_Dir
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDirection: gp_Dir
+
+Returns
+-------
+None
 ") SetViewDirection;
 		void SetViewDirection(gp_Dir theDirection);
 
 		/****************** SetViewVolumeSidesClipping ******************/
 		%feature("compactdefaultargs") SetViewVolumeSidesClipping;
-		%feature("autodoc", "	:param theViewVolumeSidesClipping:
-	:type theViewVolumeSidesClipping: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theViewVolumeSidesClipping: bool
+
+Returns
+-------
+None
 ") SetViewVolumeSidesClipping;
 		void SetViewVolumeSidesClipping(Standard_Boolean theViewVolumeSidesClipping);
 
 		/****************** SetWindowHorizontalSize ******************/
 		%feature("compactdefaultargs") SetWindowHorizontalSize;
-		%feature("autodoc", "	:param theSize:
-	:type theSize: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theSize: float
+
+Returns
+-------
+None
 ") SetWindowHorizontalSize;
 		void SetWindowHorizontalSize(Standard_Real theSize);
 
 		/****************** SetWindowVerticalSize ******************/
 		%feature("compactdefaultargs") SetWindowVerticalSize;
-		%feature("autodoc", "	:param theSize:
-	:type theSize: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theSize: float
+
+Returns
+-------
+None
 ") SetWindowVerticalSize;
 		void SetWindowVerticalSize(Standard_Real theSize);
 
 		/****************** SetZoomFactor ******************/
 		%feature("compactdefaultargs") SetZoomFactor;
-		%feature("autodoc", "	:param theZoomFactor:
-	:type theZoomFactor: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theZoomFactor: float
+
+Returns
+-------
+None
 ") SetZoomFactor;
 		void SetZoomFactor(Standard_Real theZoomFactor);
 
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
-		%feature("autodoc", "	:rtype: XCAFView_ProjectionType
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+XCAFView_ProjectionType
 ") Type;
 		XCAFView_ProjectionType Type();
 
 		/****************** UnsetBackPlaneClipping ******************/
 		%feature("compactdefaultargs") UnsetBackPlaneClipping;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") UnsetBackPlaneClipping;
 		void UnsetBackPlaneClipping();
 
 		/****************** UnsetFrontPlaneClipping ******************/
 		%feature("compactdefaultargs") UnsetFrontPlaneClipping;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") UnsetFrontPlaneClipping;
 		void UnsetFrontPlaneClipping();
 
 		/****************** UpDirection ******************/
 		%feature("compactdefaultargs") UpDirection;
-		%feature("autodoc", "	:rtype: gp_Dir
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Dir
 ") UpDirection;
 		gp_Dir UpDirection();
 
 		/****************** ViewDirection ******************/
 		%feature("compactdefaultargs") ViewDirection;
-		%feature("autodoc", "	:rtype: gp_Dir
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Dir
 ") ViewDirection;
 		gp_Dir ViewDirection();
 
 		/****************** WindowHorizontalSize ******************/
 		%feature("compactdefaultargs") WindowHorizontalSize;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") WindowHorizontalSize;
 		Standard_Real WindowHorizontalSize();
 
 		/****************** WindowVerticalSize ******************/
 		%feature("compactdefaultargs") WindowVerticalSize;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") WindowVerticalSize;
 		Standard_Real WindowVerticalSize();
 
 		/****************** XCAFView_Object ******************/
 		%feature("compactdefaultargs") XCAFView_Object;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") XCAFView_Object;
 		 XCAFView_Object();
 
 		/****************** XCAFView_Object ******************/
 		%feature("compactdefaultargs") XCAFView_Object;
-		%feature("autodoc", "	:param theObj:
-	:type theObj: XCAFView_Object
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theObj: XCAFView_Object
+
+Returns
+-------
+None
 ") XCAFView_Object;
 		 XCAFView_Object(const opencascade::handle<XCAFView_Object> & theObj);
 
 		/****************** ZoomFactor ******************/
 		%feature("compactdefaultargs") ZoomFactor;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") ZoomFactor;
 		Standard_Real ZoomFactor();
 

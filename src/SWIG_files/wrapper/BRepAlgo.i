@@ -113,13 +113,16 @@ class BRepAlgo {
 		%feature("compactdefaultargs") ConcatenateWire;
 		%feature("autodoc", "This method makes a wire whose edges are c1 from a wire whose edges could be g1. it removes a vertex between g1 edges. option can be g1 or c1.
 
-	:param Wire:
-	:type Wire: TopoDS_Wire
-	:param Option:
-	:type Option: GeomAbs_Shape
-	:param AngularTolerance: default value is 1.0e-4
-	:type AngularTolerance: float
-	:rtype: TopoDS_Wire
+Parameters
+----------
+Wire: TopoDS_Wire
+Option: GeomAbs_Shape
+AngularTolerance: float,optional
+	default value is 1.0e-4
+
+Returns
+-------
+TopoDS_Wire
 ") ConcatenateWire;
 		static TopoDS_Wire ConcatenateWire(const TopoDS_Wire & Wire, const GeomAbs_Shape Option, const Standard_Real AngularTolerance = 1.0e-4);
 
@@ -127,9 +130,13 @@ class BRepAlgo {
 		%feature("compactdefaultargs") ConcatenateWireC0;
 		%feature("autodoc", "This method makes an edge from a wire. junction points between edges of wire may be sharp, resulting curve of the resulting edge may be c0.
 
-	:param Wire:
-	:type Wire: TopoDS_Wire
-	:rtype: TopoDS_Edge
+Parameters
+----------
+Wire: TopoDS_Wire
+
+Returns
+-------
+TopoDS_Edge
 ") ConcatenateWireC0;
 		static TopoDS_Edge ConcatenateWireC0(const TopoDS_Wire & Wire);
 
@@ -137,9 +144,13 @@ class BRepAlgo {
 		%feature("compactdefaultargs") IsTopologicallyValid;
 		%feature("autodoc", "Checks if the shape is 'correct'. if not, returns <standard_false>, else returns <standard_true>. this method differs from the previous one in the fact that no geometric contols (intersection of wires, pcurve validity) are performed.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsTopologicallyValid;
 		static Standard_Boolean IsTopologicallyValid(const TopoDS_Shape & S);
 
@@ -147,9 +158,13 @@ class BRepAlgo {
 		%feature("compactdefaultargs") IsValid;
 		%feature("autodoc", "Checks if the shape is 'correct'. if not, returns <standard_false>, else returns <standard_true>.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsValid;
 		static Standard_Boolean IsValid(const TopoDS_Shape & S);
 
@@ -157,15 +172,18 @@ class BRepAlgo {
 		%feature("compactdefaultargs") IsValid;
 		%feature("autodoc", "Checks if the generated and modified faces from the shapes <arguments> in the shape <result> are 'correct'. the args may be empty, then all faces will be checked. if <closed> is true, only closed shape are valid. if <geomctrl> is false the geometry of new vertices and edges are not verified and the auto-intersection of new wires are not searched.
 
-	:param theArgs:
-	:type theArgs: TopTools_ListOfShape
-	:param theResult:
-	:type theResult: TopoDS_Shape
-	:param closedSolid: default value is Standard_False
-	:type closedSolid: bool
-	:param GeomCtrl: default value is Standard_True
-	:type GeomCtrl: bool
-	:rtype: bool
+Parameters
+----------
+theArgs: TopTools_ListOfShape
+theResult: TopoDS_Shape
+closedSolid: bool,optional
+	default value is Standard_False
+GeomCtrl: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+bool
 ") IsValid;
 		static Standard_Boolean IsValid(const TopTools_ListOfShape & theArgs, const TopoDS_Shape & theResult, const Standard_Boolean closedSolid = Standard_False, const Standard_Boolean GeomCtrl = Standard_True);
 
@@ -187,11 +205,14 @@ class BRepAlgo_AsDes : public Standard_Transient {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Stores <ss> as a futur subshape of <s>.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param SS:
-	:type SS: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+SS: TopoDS_Shape
+
+Returns
+-------
+None
 ") Add;
 		void Add(const TopoDS_Shape & S, const TopoDS_Shape & SS);
 
@@ -199,11 +220,14 @@ class BRepAlgo_AsDes : public Standard_Transient {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Stores <ss> as futurs subshapes of <s>.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param SS:
-	:type SS: TopTools_ListOfShape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+SS: TopTools_ListOfShape
+
+Returns
+-------
+None
 ") Add;
 		void Add(const TopoDS_Shape & S, const TopTools_ListOfShape & SS);
 
@@ -211,9 +235,13 @@ class BRepAlgo_AsDes : public Standard_Transient {
 		%feature("compactdefaultargs") Ascendant;
 		%feature("autodoc", "Returns the shape containing <s>.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") Ascendant;
 		const TopTools_ListOfShape & Ascendant(const TopoDS_Shape & S);
 
@@ -221,7 +249,9 @@ class BRepAlgo_AsDes : public Standard_Transient {
 		%feature("compactdefaultargs") BRepAlgo_AsDes;
 		%feature("autodoc", "Creates an empty asdes.
 
-	:rtype: None
+Returns
+-------
+None
 ") BRepAlgo_AsDes;
 		 BRepAlgo_AsDes();
 
@@ -229,15 +259,23 @@ class BRepAlgo_AsDes : public Standard_Transient {
 		%feature("compactdefaultargs") ChangeDescendant;
 		%feature("autodoc", "Returns futur subhapes of <s>.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") ChangeDescendant;
 		TopTools_ListOfShape & ChangeDescendant(const TopoDS_Shape & S);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -245,17 +283,27 @@ class BRepAlgo_AsDes : public Standard_Transient {
 		%feature("compactdefaultargs") Descendant;
 		%feature("autodoc", "Returns futur subhapes of <s>.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") Descendant;
 		const TopTools_ListOfShape & Descendant(const TopoDS_Shape & S);
 
 		/****************** HasAscendant ******************/
 		%feature("compactdefaultargs") HasAscendant;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+bool
 ") HasAscendant;
 		Standard_Boolean HasAscendant(const TopoDS_Shape & S);
 
@@ -263,21 +311,29 @@ class BRepAlgo_AsDes : public Standard_Transient {
 		%feature("compactdefaultargs") HasCommonDescendant;
 		%feature("autodoc", "Returns true if (s1> and <s2> has common descendants. stores in <lc> the commons descendants.
 
-	:param S1:
-	:type S1: TopoDS_Shape
-	:param S2:
-	:type S2: TopoDS_Shape
-	:param LC:
-	:type LC: TopTools_ListOfShape
-	:rtype: bool
+Parameters
+----------
+S1: TopoDS_Shape
+S2: TopoDS_Shape
+LC: TopTools_ListOfShape
+
+Returns
+-------
+bool
 ") HasCommonDescendant;
 		Standard_Boolean HasCommonDescendant(const TopoDS_Shape & S1, const TopoDS_Shape & S2, TopTools_ListOfShape & LC);
 
 		/****************** HasDescendant ******************/
 		%feature("compactdefaultargs") HasDescendant;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+bool
 ") HasDescendant;
 		Standard_Boolean HasDescendant(const TopoDS_Shape & S);
 
@@ -285,9 +341,13 @@ class BRepAlgo_AsDes : public Standard_Transient {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Remove <s> from me.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
 ") Remove;
 		void Remove(const TopoDS_Shape & S);
 
@@ -295,11 +355,14 @@ class BRepAlgo_AsDes : public Standard_Transient {
 		%feature("compactdefaultargs") Replace;
 		%feature("autodoc", "Replace <olds> by <news>. <olds> disapear from <self>.
 
-	:param OldS:
-	:type OldS: TopoDS_Shape
-	:param NewS:
-	:type NewS: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+OldS: TopoDS_Shape
+NewS: TopoDS_Shape
+
+Returns
+-------
+None
 ") Replace;
 		void Replace(const TopoDS_Shape & OldS, const TopoDS_Shape & NewS);
 
@@ -322,15 +385,25 @@ class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
 	public:
 		/****************** Builder ******************/
 		%feature("compactdefaultargs") Builder;
-		%feature("autodoc", "	:rtype: opencascade::handle<TopOpeBRepBuild_HBuilder>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TopOpeBRepBuild_HBuilder>
 ") Builder;
 		opencascade::handle<TopOpeBRepBuild_HBuilder> Builder();
 
 		/****************** IsDeleted ******************/
 		%feature("compactdefaultargs") IsDeleted;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsDeleted;
 		virtual Standard_Boolean IsDeleted(const TopoDS_Shape & S);
 
@@ -338,25 +411,38 @@ class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Modified;
 		%feature("autodoc", "Returns the list of shapes modified from the shape <s>.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") Modified;
 		virtual const TopTools_ListOfShape & Modified(const TopoDS_Shape & S);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "	:param St1:
-	:type St1: TopAbs_State
-	:param St2:
-	:type St2: TopAbs_State
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+St1: TopAbs_State
+St2: TopAbs_State
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const TopAbs_State St1, const TopAbs_State St2);
 
 		/****************** PerformDS ******************/
 		%feature("compactdefaultargs") PerformDS;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") PerformDS;
 		void PerformDS();
 
@@ -364,7 +450,9 @@ class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Shape1;
 		%feature("autodoc", "Returns the first shape involved in this boolean operation.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Shape1;
 		const TopoDS_Shape Shape1();
 
@@ -372,7 +460,9 @@ class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		%feature("compactdefaultargs") Shape2;
 		%feature("autodoc", "Returns the second shape involved in this boolean operation.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Shape2;
 		const TopoDS_Shape Shape2();
 
@@ -394,15 +484,23 @@ class BRepAlgo_FaceRestrictor {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add the wire <w> to the set of wires. //! warning: the wires must be closed. //! the edges of <w> can be modified if they have not pcurves on the surface <s> of <f>. in this case if <proj> is false the first pcurve of the edge is positionned on <s>. if <proj> is true ,the pcurve on <s> is the projection of the curve 3d on <f>.
 
-	:param W:
-	:type W: TopoDS_Wire
-	:rtype: None
+Parameters
+----------
+W: TopoDS_Wire
+
+Returns
+-------
+None
 ") Add;
 		void Add(TopoDS_Wire & W);
 
 		/****************** BRepAlgo_FaceRestrictor ******************/
 		%feature("compactdefaultargs") BRepAlgo_FaceRestrictor;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") BRepAlgo_FaceRestrictor;
 		 BRepAlgo_FaceRestrictor();
 
@@ -410,13 +508,19 @@ class BRepAlgo_FaceRestrictor {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Removes all the wires.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
 		/****************** Current ******************/
 		%feature("compactdefaultargs") Current;
-		%feature("autodoc", "	:rtype: TopoDS_Face
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDS_Face
 ") Current;
 		TopoDS_Face Current();
 
@@ -424,31 +528,47 @@ class BRepAlgo_FaceRestrictor {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "The surface of <f> will be the the surface of each new faces built. <proj> is used to update pcurves on edges if necessary. see add().
 
-	:param F:
-	:type F: TopoDS_Face
-	:param Proj: default value is Standard_False
-	:type Proj: bool
-	:param ControlOrientation: default value is Standard_False
-	:type ControlOrientation: bool
-	:rtype: None
+Parameters
+----------
+F: TopoDS_Face
+Proj: bool,optional
+	default value is Standard_False
+ControlOrientation: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Face & F, const Standard_Boolean Proj = Standard_False, const Standard_Boolean ControlOrientation = Standard_False);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Next;
 		void Next();
 
@@ -456,7 +576,9 @@ class BRepAlgo_FaceRestrictor {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Evaluate all the faces limited by the set of wires.
 
-	:rtype: None
+Returns
+-------
+None
 ") Perform;
 		void Perform();
 
@@ -478,11 +600,14 @@ class BRepAlgo_Image {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add <news> to the image of <olds>.
 
-	:param OldS:
-	:type OldS: TopoDS_Shape
-	:param NewS:
-	:type NewS: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+OldS: TopoDS_Shape
+NewS: TopoDS_Shape
+
+Returns
+-------
+None
 ") Add;
 		void Add(const TopoDS_Shape & OldS, const TopoDS_Shape & NewS);
 
@@ -490,17 +615,24 @@ class BRepAlgo_Image {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add <news> to the image of <olds>.
 
-	:param OldS:
-	:type OldS: TopoDS_Shape
-	:param NewS:
-	:type NewS: TopTools_ListOfShape
-	:rtype: None
+Parameters
+----------
+OldS: TopoDS_Shape
+NewS: TopTools_ListOfShape
+
+Returns
+-------
+None
 ") Add;
 		void Add(const TopoDS_Shape & OldS, const TopTools_ListOfShape & NewS);
 
 		/****************** BRepAlgo_Image ******************/
 		%feature("compactdefaultargs") BRepAlgo_Image;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") BRepAlgo_Image;
 		 BRepAlgo_Image();
 
@@ -508,11 +640,14 @@ class BRepAlgo_Image {
 		%feature("compactdefaultargs") Bind;
 		%feature("autodoc", "Links <news> as image of <olds>.
 
-	:param OldS:
-	:type OldS: TopoDS_Shape
-	:param NewS:
-	:type NewS: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+OldS: TopoDS_Shape
+NewS: TopoDS_Shape
+
+Returns
+-------
+None
 ") Bind;
 		void Bind(const TopoDS_Shape & OldS, const TopoDS_Shape & NewS);
 
@@ -520,17 +655,24 @@ class BRepAlgo_Image {
 		%feature("compactdefaultargs") Bind;
 		%feature("autodoc", "Links <news> as image of <olds>.
 
-	:param OldS:
-	:type OldS: TopoDS_Shape
-	:param NewS:
-	:type NewS: TopTools_ListOfShape
-	:rtype: None
+Parameters
+----------
+OldS: TopoDS_Shape
+NewS: TopTools_ListOfShape
+
+Returns
+-------
+None
 ") Bind;
 		void Bind(const TopoDS_Shape & OldS, const TopTools_ListOfShape & NewS);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -538,7 +680,9 @@ class BRepAlgo_Image {
 		%feature("compactdefaultargs") Compact;
 		%feature("autodoc", "Keeps only the link between roots and lastimage.
 
-	:rtype: None
+Returns
+-------
+None
 ") Compact;
 		void Compact();
 
@@ -546,19 +690,28 @@ class BRepAlgo_Image {
 		%feature("compactdefaultargs") Filter;
 		%feature("autodoc", "Deletes in the images the shape of type <shapetype> which are not in <s>. warning: compact() must be call before.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param ShapeType:
-	:type ShapeType: TopAbs_ShapeEnum
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+ShapeType: TopAbs_ShapeEnum
+
+Returns
+-------
+None
 ") Filter;
 		void Filter(const TopoDS_Shape & S, const TopAbs_ShapeEnum ShapeType);
 
 		/****************** HasImage ******************/
 		%feature("compactdefaultargs") HasImage;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+bool
 ") HasImage;
 		Standard_Boolean HasImage(const TopoDS_Shape & S);
 
@@ -566,9 +719,13 @@ class BRepAlgo_Image {
 		%feature("compactdefaultargs") Image;
 		%feature("autodoc", "Returns the image of <s>. returns <s> in the list if hasimage(s) is false.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") Image;
 		const TopTools_ListOfShape & Image(const TopoDS_Shape & S);
 
@@ -576,17 +733,27 @@ class BRepAlgo_Image {
 		%feature("compactdefaultargs") ImageFrom;
 		%feature("autodoc", "Returns the generator of <s>.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") ImageFrom;
 		const TopoDS_Shape ImageFrom(const TopoDS_Shape & S);
 
 		/****************** IsImage ******************/
 		%feature("compactdefaultargs") IsImage;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsImage;
 		Standard_Boolean IsImage(const TopoDS_Shape & S);
 
@@ -594,11 +761,14 @@ class BRepAlgo_Image {
 		%feature("compactdefaultargs") LastImage;
 		%feature("autodoc", "Stores in <l> the images of images of...images of <s>. <l> contains only <s> if hasimage(s) is false.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param L:
-	:type L: TopTools_ListOfShape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+L: TopTools_ListOfShape
+
+Returns
+-------
+None
 ") LastImage;
 		void LastImage(const TopoDS_Shape & S, TopTools_ListOfShape & L);
 
@@ -606,9 +776,13 @@ class BRepAlgo_Image {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Remove <s> to set of images.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
 ") Remove;
 		void Remove(const TopoDS_Shape & S);
 
@@ -616,23 +790,37 @@ class BRepAlgo_Image {
 		%feature("compactdefaultargs") Root;
 		%feature("autodoc", "Returns the upper generator of <s>.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopoDS_Shape
 ") Root;
 		const TopoDS_Shape Root(const TopoDS_Shape & S);
 
 		/****************** Roots ******************/
 		%feature("compactdefaultargs") Roots;
-		%feature("autodoc", "	:rtype: TopTools_ListOfShape
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopTools_ListOfShape
 ") Roots;
 		const TopTools_ListOfShape & Roots();
 
 		/****************** SetRoot ******************/
 		%feature("compactdefaultargs") SetRoot;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
 ") SetRoot;
 		void SetRoot(const TopoDS_Shape & S);
 
@@ -654,9 +842,13 @@ class BRepAlgo_Loop {
 		%feature("compactdefaultargs") AddConstEdge;
 		%feature("autodoc", "Add <e> as const edge, e can be in the result.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") AddConstEdge;
 		void AddConstEdge(const TopoDS_Edge & E);
 
@@ -664,9 +856,13 @@ class BRepAlgo_Loop {
 		%feature("compactdefaultargs") AddConstEdges;
 		%feature("autodoc", "Add <le> as a set of const edges.
 
-	:param LE:
-	:type LE: TopTools_ListOfShape
-	:rtype: None
+Parameters
+----------
+LE: TopTools_ListOfShape
+
+Returns
+-------
+None
 ") AddConstEdges;
 		void AddConstEdges(const TopTools_ListOfShape & LE);
 
@@ -674,17 +870,24 @@ class BRepAlgo_Loop {
 		%feature("compactdefaultargs") AddEdge;
 		%feature("autodoc", "Add e with <lv>. <e> will be copied and trim by vertices in <lv>.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param LV:
-	:type LV: TopTools_ListOfShape
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+LV: TopTools_ListOfShape
+
+Returns
+-------
+None
 ") AddEdge;
 		void AddEdge(TopoDS_Edge & E, const TopTools_ListOfShape & LV);
 
 		/****************** BRepAlgo_Loop ******************/
 		%feature("compactdefaultargs") BRepAlgo_Loop;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") BRepAlgo_Loop;
 		 BRepAlgo_Loop();
 
@@ -692,13 +895,15 @@ class BRepAlgo_Loop {
 		%feature("compactdefaultargs") CutEdge;
 		%feature("autodoc", "Cut the edge <e> in several edges <ne> on the vertices<vone>.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param VonE:
-	:type VonE: TopTools_ListOfShape
-	:param NE:
-	:type NE: TopTools_ListOfShape
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+VonE: TopTools_ListOfShape
+NE: TopTools_ListOfShape
+
+Returns
+-------
+None
 ") CutEdge;
 		void CutEdge(const TopoDS_Edge & E, const TopTools_ListOfShape & VonE, TopTools_ListOfShape & NE);
 
@@ -706,9 +911,13 @@ class BRepAlgo_Loop {
 		%feature("compactdefaultargs") GetVerticesForSubstitute;
 		%feature("autodoc", "Returns the datamap of vertices with their substitutes.
 
-	:param VerVerMap:
-	:type VerVerMap: TopTools_DataMapOfShapeShape
-	:rtype: None
+Parameters
+----------
+VerVerMap: TopTools_DataMapOfShapeShape
+
+Returns
+-------
+None
 ") GetVerticesForSubstitute;
 		void GetVerticesForSubstitute(TopTools_DataMapOfShapeShape & VerVerMap);
 
@@ -716,9 +925,13 @@ class BRepAlgo_Loop {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Init with <f> the set of edges must have pcurves on <f>.
 
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Face & F);
 
@@ -726,9 +939,13 @@ class BRepAlgo_Loop {
 		%feature("compactdefaultargs") NewEdges;
 		%feature("autodoc", "Returns the list of new edges built from an edge <e> it can be an empty list.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+TopTools_ListOfShape
 ") NewEdges;
 		const TopTools_ListOfShape & NewEdges(const TopoDS_Edge & E);
 
@@ -736,7 +953,9 @@ class BRepAlgo_Loop {
 		%feature("compactdefaultargs") NewFaces;
 		%feature("autodoc", "Returns the list of faces. warning: the method <wirestofaces> as to be called before. can be an empty list.
 
-	:rtype: TopTools_ListOfShape
+Returns
+-------
+TopTools_ListOfShape
 ") NewFaces;
 		const TopTools_ListOfShape & NewFaces();
 
@@ -744,7 +963,9 @@ class BRepAlgo_Loop {
 		%feature("compactdefaultargs") NewWires;
 		%feature("autodoc", "Returns the list of wires performed. can be an empty list.
 
-	:rtype: TopTools_ListOfShape
+Returns
+-------
+TopTools_ListOfShape
 ") NewWires;
 		const TopTools_ListOfShape & NewWires();
 
@@ -752,15 +973,23 @@ class BRepAlgo_Loop {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Make loops.
 
-	:rtype: None
+Returns
+-------
+None
 ") Perform;
 		void Perform();
 
 		/****************** VerticesForSubstitute ******************/
 		%feature("compactdefaultargs") VerticesForSubstitute;
-		%feature("autodoc", "	:param VerVerMap:
-	:type VerVerMap: TopTools_DataMapOfShapeShape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+VerVerMap: TopTools_DataMapOfShapeShape
+
+Returns
+-------
+None
 ") VerticesForSubstitute;
 		void VerticesForSubstitute(TopTools_DataMapOfShapeShape & VerVerMap);
 
@@ -768,7 +997,9 @@ class BRepAlgo_Loop {
 		%feature("compactdefaultargs") WiresToFaces;
 		%feature("autodoc", "Build faces from the wires result.
 
-	:rtype: None
+Returns
+-------
+None
 ") WiresToFaces;
 		void WiresToFaces();
 
@@ -790,9 +1021,13 @@ class BRepAlgo_NormalProjection {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add an edge or a wire to the list of shape to project.
 
-	:param ToProj:
-	:type ToProj: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+ToProj: TopoDS_Shape
+
+Returns
+-------
+None
 ") Add;
 		void Add(const TopoDS_Shape & ToProj);
 
@@ -800,23 +1035,37 @@ class BRepAlgo_NormalProjection {
 		%feature("compactdefaultargs") Ancestor;
 		%feature("autodoc", "For a resulting edge, returns the corresponding initial edge.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: TopoDS_Shape
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+TopoDS_Shape
 ") Ancestor;
 		const TopoDS_Shape Ancestor(const TopoDS_Edge & E);
 
 		/****************** BRepAlgo_NormalProjection ******************/
 		%feature("compactdefaultargs") BRepAlgo_NormalProjection;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") BRepAlgo_NormalProjection;
 		 BRepAlgo_NormalProjection();
 
 		/****************** BRepAlgo_NormalProjection ******************/
 		%feature("compactdefaultargs") BRepAlgo_NormalProjection;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
 ") BRepAlgo_NormalProjection;
 		 BRepAlgo_NormalProjection(const TopoDS_Shape & S);
 
@@ -824,7 +1073,9 @@ class BRepAlgo_NormalProjection {
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Builds the result as a compound.
 
-	:rtype: None
+Returns
+-------
+None
 ") Build;
 		void Build();
 
@@ -832,9 +1083,13 @@ class BRepAlgo_NormalProjection {
 		%feature("compactdefaultargs") BuildWire;
 		%feature("autodoc", "Build the result as a list of wire if possible in -- a first returns a wire only if there is only a wire.
 
-	:param Liste:
-	:type Liste: TopTools_ListOfShape
-	:rtype: bool
+Parameters
+----------
+Liste: TopTools_ListOfShape
+
+Returns
+-------
+bool
 ") BuildWire;
 		Standard_Boolean BuildWire(TopTools_ListOfShape & Liste);
 
@@ -842,9 +1097,14 @@ class BRepAlgo_NormalProjection {
 		%feature("compactdefaultargs") Compute3d;
 		%feature("autodoc", "If with3d = standard_false the 3dcurve is not computed the initial 3dcurve is kept to build the resulting edges.
 
-	:param With3d: default value is Standard_True
-	:type With3d: bool
-	:rtype: None
+Parameters
+----------
+With3d: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") Compute3d;
 		void Compute3d(const Standard_Boolean With3d = Standard_True);
 
@@ -852,9 +1112,13 @@ class BRepAlgo_NormalProjection {
 		%feature("compactdefaultargs") Couple;
 		%feature("autodoc", "For a projected edge, returns the corresponding initial face.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: TopoDS_Shape
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+TopoDS_Shape
 ") Couple;
 		const TopoDS_Shape Couple(const TopoDS_Edge & E);
 
@@ -862,31 +1126,51 @@ class BRepAlgo_NormalProjection {
 		%feature("compactdefaultargs") Generated;
 		%feature("autodoc", "Returns the list of shapes generated from the shape <s>.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") Generated;
 		const TopTools_ListOfShape & Generated(const TopoDS_Shape & S);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Shape & S);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
 		/****************** IsElementary ******************/
 		%feature("compactdefaultargs") IsElementary;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor3d_Curve
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor3d_Curve
+
+Returns
+-------
+bool
 ") IsElementary;
 		Standard_Boolean IsElementary(const Adaptor3d_Curve & C);
 
@@ -894,7 +1178,9 @@ class BRepAlgo_NormalProjection {
 		%feature("compactdefaultargs") Projection;
 		%feature("autodoc", "Returns the result.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Projection;
 		const TopoDS_Shape Projection();
 
@@ -902,7 +1188,9 @@ class BRepAlgo_NormalProjection {
 		%feature("compactdefaultargs") SetDefaultParams;
 		%feature("autodoc", "Set the parameters used for computation in their default values.
 
-	:rtype: None
+Returns
+-------
+None
 ") SetDefaultParams;
 		void SetDefaultParams();
 
@@ -910,9 +1198,14 @@ class BRepAlgo_NormalProjection {
 		%feature("compactdefaultargs") SetLimit;
 		%feature("autodoc", "Manage limitation of projected edges.
 
-	:param FaceBoundaries: default value is Standard_True
-	:type FaceBoundaries: bool
-	:rtype: None
+Parameters
+----------
+FaceBoundaries: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") SetLimit;
 		void SetLimit(const Standard_Boolean FaceBoundaries = Standard_True);
 
@@ -920,9 +1213,13 @@ class BRepAlgo_NormalProjection {
 		%feature("compactdefaultargs") SetMaxDistance;
 		%feature("autodoc", "Sets the maximum distance between target shape and shape to project. if this condition is not satisfied then corresponding part of solution is discarded. if maxdist < 0 then this method does not affect the algorithm.
 
-	:param MaxDist:
-	:type MaxDist: float
-	:rtype: None
+Parameters
+----------
+MaxDist: float
+
+Returns
+-------
+None
 ") SetMaxDistance;
 		void SetMaxDistance(const Standard_Real MaxDist);
 
@@ -930,17 +1227,17 @@ class BRepAlgo_NormalProjection {
 		%feature("compactdefaultargs") SetParams;
 		%feature("autodoc", "Set the parameters used for computation tol3d is the requiered tolerance between the 3d projected curve and its 2d representation internalcontinuity is the order of constraints used for approximation. maxdeg and maxseg are the maximum degree and the maximum number of segment for bspline resulting of an approximation.
 
-	:param Tol3D:
-	:type Tol3D: float
-	:param Tol2D:
-	:type Tol2D: float
-	:param InternalContinuity:
-	:type InternalContinuity: GeomAbs_Shape
-	:param MaxDegree:
-	:type MaxDegree: int
-	:param MaxSeg:
-	:type MaxSeg: int
-	:rtype: None
+Parameters
+----------
+Tol3D: float
+Tol2D: float
+InternalContinuity: GeomAbs_Shape
+MaxDegree: int
+MaxSeg: int
+
+Returns
+-------
+None
 ") SetParams;
 		void SetParams(const Standard_Real Tol3D, const Standard_Real Tol2D, const GeomAbs_Shape InternalContinuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSeg);
 
@@ -962,11 +1259,14 @@ class BRepAlgo_Tool {
 		%feature("compactdefaultargs") Deboucle3D;
 		%feature("autodoc", "Remove the non valid part of an offsetshape 1 - remove all the free boundary and the faces connex to such edges. 2 - remove all the shapes not valid in the result (according to the side of offseting) in this verion only the first point is implemented.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param Boundary:
-	:type Boundary: TopTools_MapOfShape
-	:rtype: TopoDS_Shape
+Parameters
+----------
+S: TopoDS_Shape
+Boundary: TopTools_MapOfShape
+
+Returns
+-------
+TopoDS_Shape
 ") Deboucle3D;
 		static TopoDS_Shape Deboucle3D(const TopoDS_Shape & S, const TopTools_MapOfShape & Boundary);
 
@@ -988,11 +1288,14 @@ class BRepAlgo_Common : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") BRepAlgo_Common;
 		%feature("autodoc", "Constructs the common part of shapes s1 and s2.
 
-	:param S1:
-	:type S1: TopoDS_Shape
-	:param S2:
-	:type S2: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S1: TopoDS_Shape
+S2: TopoDS_Shape
+
+Returns
+-------
+None
 ") BRepAlgo_Common;
 		 BRepAlgo_Common(const TopoDS_Shape & S1, const TopoDS_Shape & S2);
 
@@ -1014,11 +1317,14 @@ class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") BRepAlgo_Cut;
 		%feature("autodoc", "Cuts the shape s2 from the shape s1.
 
-	:param S1:
-	:type S1: TopoDS_Shape
-	:param S2:
-	:type S2: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S1: TopoDS_Shape
+S2: TopoDS_Shape
+
+Returns
+-------
+None
 ") BRepAlgo_Cut;
 		 BRepAlgo_Cut(const TopoDS_Shape & S1, const TopoDS_Shape & S2);
 
@@ -1040,11 +1346,14 @@ class BRepAlgo_Fuse : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") BRepAlgo_Fuse;
 		%feature("autodoc", "Fuse s1 and s2.
 
-	:param S1:
-	:type S1: TopoDS_Shape
-	:param S2:
-	:type S2: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S1: TopoDS_Shape
+S2: TopoDS_Shape
+
+Returns
+-------
+None
 ") BRepAlgo_Fuse;
 		 BRepAlgo_Fuse(const TopoDS_Shape & S1, const TopoDS_Shape & S2);
 
@@ -1066,57 +1375,81 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") Approximation;
 		%feature("autodoc", "Defines an option for computation of further intersections. this computation will be performed by the function build in this framework. by default, the underlying 3d geometry attached to each elementary edge of the result of a computed intersection is: - analytic where possible, provided the corresponding geometry corresponds to a type of analytic curve defined in the geom package; for example the intersection of a cylindrical shape with a plane gives an ellipse or a circle; - or elsewhere, given as a succession of points grouped together in a bspline curve of degree 1. if approx equals true, when further computations are performed in this framework with the function build, these edges will have an attached 3d geometry which is a bspline approximation of the computed set of points. note that as a result, approximations will be computed on edges built only on new intersection lines.
 
-	:param B:
-	:type B: bool
-	:rtype: None
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
 ") Approximation;
 		void Approximation(const Standard_Boolean B);
 
 		/****************** BRepAlgo_Section ******************/
 		%feature("compactdefaultargs") BRepAlgo_Section;
-		%feature("autodoc", "	:param Sh1:
-	:type Sh1: TopoDS_Shape
-	:param Sh2:
-	:type Sh2: TopoDS_Shape
-	:param PerformNow: default value is Standard_True
-	:type PerformNow: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sh1: TopoDS_Shape
+Sh2: TopoDS_Shape
+PerformNow: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") BRepAlgo_Section;
 		 BRepAlgo_Section(const TopoDS_Shape & Sh1, const TopoDS_Shape & Sh2, const Standard_Boolean PerformNow = Standard_True);
 
 		/****************** BRepAlgo_Section ******************/
 		%feature("compactdefaultargs") BRepAlgo_Section;
-		%feature("autodoc", "	:param Sh:
-	:type Sh: TopoDS_Shape
-	:param Pl:
-	:type Pl: gp_Pln
-	:param PerformNow: default value is Standard_True
-	:type PerformNow: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sh: TopoDS_Shape
+Pl: gp_Pln
+PerformNow: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") BRepAlgo_Section;
 		 BRepAlgo_Section(const TopoDS_Shape & Sh, const gp_Pln & Pl, const Standard_Boolean PerformNow = Standard_True);
 
 		/****************** BRepAlgo_Section ******************/
 		%feature("compactdefaultargs") BRepAlgo_Section;
-		%feature("autodoc", "	:param Sh:
-	:type Sh: TopoDS_Shape
-	:param Sf:
-	:type Sf: Geom_Surface
-	:param PerformNow: default value is Standard_True
-	:type PerformNow: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sh: TopoDS_Shape
+Sf: Geom_Surface
+PerformNow: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") BRepAlgo_Section;
 		 BRepAlgo_Section(const TopoDS_Shape & Sh, const opencascade::handle<Geom_Surface> & Sf, const Standard_Boolean PerformNow = Standard_True);
 
 		/****************** BRepAlgo_Section ******************/
 		%feature("compactdefaultargs") BRepAlgo_Section;
-		%feature("autodoc", "	:param Sf:
-	:type Sf: Geom_Surface
-	:param Sh:
-	:type Sh: TopoDS_Shape
-	:param PerformNow: default value is Standard_True
-	:type PerformNow: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sf: Geom_Surface
+Sh: TopoDS_Shape
+PerformNow: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") BRepAlgo_Section;
 		 BRepAlgo_Section(const opencascade::handle<Geom_Surface> & Sf, const TopoDS_Shape & Sh, const Standard_Boolean PerformNow = Standard_True);
 
@@ -1124,13 +1457,16 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") BRepAlgo_Section;
 		%feature("autodoc", "This and the above algorithms construct a framework for computing the section lines of - the two shapes sh1 and sh2, or - the shape sh and the plane pl, or - the shape sh and the surface sf, or - the surface sf and the shape sh, or - the two surfaces sf1 and sf2, and builds the result if performnow equals true, its default value. if performnow equals false, the intersection will be computed later by the function build. the constructed shape will be returned by the function shape. this is a compound object composed of edges. these intersection edges may be built: - on new intersection lines, or - on coincident portions of edges in the two intersected shapes. these intersection edges are independent: they are not chained or grouped in wires. if no intersection edge exists, the result is an empty compound object. note that other objects than topods_shape shapes involved in these syntaxes are converted into faces or shells before performing the computation of the intersection. a shape resulting from this conversion can be retrieved with the function shape1 or shape2. parametric 2d curves on intersection edges no parametric 2d curve (pcurve) is defined for each elementary edge of the result. to attach such parametric curves to the constructed edges you may use a constructor with the performnow flag equal to false; then you use: - the function computepcurveon1 to ask for the additional computation of a pcurve in the parametric space of the first shape, - the function computepcurveon2 to ask for the additional computation of a pcurve in the parametric space of the second shape, - in the end, the function build to construct the result. note that as a result, pcurves will only be added on edges built on new intersection lines. approximation of intersection edges the underlying 3d geometry attached to each elementary edge of the result is: - analytic where possible, provided the corresponding geometry corresponds to a type of analytic curve defined in the geom package; for example, the intersection of a cylindrical shape with a plane gives an ellipse or a circle; - or elsewhere, given as a succession of points grouped together in a bspline curve of degree 1. if you prefer to have an attached 3d geometry which is a bspline approximation of the computed set of points on computed elementary intersection edges whose underlying geometry is not analytic, you may use a constructor with the performnow flag equal to false. then you use: - the function approximation to ask for this computation option, and - the function build to construct the result. note that as a result, approximations will only be computed on edges built on new intersection lines. example you may also combine these computation options. in the following example: - each elementary edge of the computed intersection, built on a new intersection line, which does not correspond to an analytic geom curve, will be approximated by a bspline curve whose degree is not greater than 8. - each elementary edge built on a new intersection line, will have: - a pcurve in the parametric space of the shape s1, - no pcurve in the parametric space of the shape s2. // topods_shape s1 = ... , s2 = ... ; standard_boolean performnow = standard_false; brepalgo_section s ( s1, s2, performnow ); s.computepcurveon1 (standard_true); s.approximation (standard_true); s.build(); topods_shape r = s.shape();.
 
-	:param Sf1:
-	:type Sf1: Geom_Surface
-	:param Sf2:
-	:type Sf2: Geom_Surface
-	:param PerformNow: default value is Standard_True
-	:type PerformNow: bool
-	:rtype: None
+Parameters
+----------
+Sf1: Geom_Surface
+Sf2: Geom_Surface
+PerformNow: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") BRepAlgo_Section;
 		 BRepAlgo_Section(const opencascade::handle<Geom_Surface> & Sf1, const opencascade::handle<Geom_Surface> & Sf2, const Standard_Boolean PerformNow = Standard_True);
 
@@ -1138,7 +1474,9 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Performs the computation of the section lines between the two parts defined at the time of construction of this framework or reinitialized with the init1 and init2 functions. the constructed shape will be returned by the function shape. this is a compound object composed of edges. these intersection edges may be built: - on new intersection lines, or - on coincident portions of edges in the two intersected shapes. these intersection edges are independent: they are not chained or grouped into wires. if no intersection edge exists, the result is an empty compound object. the shapes involved in the construction of the section lines can be retrieved with the function shape1 or shape2. note that other objects than topods_shape shapes given as arguments at the construction time of this framework, or to the init1 or init2 function, are converted into faces or shells before performing the computation of the intersection. parametric 2d curves on intersection edges no parametric 2d curve (pcurve) is defined for the elementary edges of the result. to attach parametric curves like this to the constructed edges you have to use: - the function computepcurveon1 to ask for the additional computation of a pcurve in the parametric space of the first shape, - the function computepcurveon2 to ask for the additional computation of a pcurve in the parametric space of the second shape. this must be done before calling this function. note that as a result, pcurves are added on edges built on new intersection lines only. approximation of intersection edges the underlying 3d geometry attached to each elementary edge of the result is: - analytic where possible provided the corresponding geometry corresponds to a type of analytic curve defined in the geom package; for example, the intersection of a cylindrical shape with a plane gives an ellipse or a circle; or - elsewhere, given as a succession of points grouped together in a bspline curve of degree 1. if, on computed elementary intersection edges whose underlying geometry is not analytic, you prefer to have an attached 3d geometry which is a bspline approximation of the computed set of points, you have to use the function approximation to ask for this computation option before calling this function. you may also have combined these computation options: look at the example given above to illustrate the use of the constructors.
 
-	:rtype: None
+Returns
+-------
+None
 ") Build;
 		void Build();
 
@@ -1146,9 +1484,13 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") ComputePCurveOn1;
 		%feature("autodoc", "Indicates if the pcurve must be (or not) performed on first part.
 
-	:param B:
-	:type B: bool
-	:rtype: None
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
 ") ComputePCurveOn1;
 		void ComputePCurveOn1(const Standard_Boolean B);
 
@@ -1156,9 +1498,13 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") ComputePCurveOn2;
 		%feature("autodoc", "Define options for the computation of further intersections which will be performed by the function build in this framework. by default, no parametric 2d curve (pcurve) is defined for the elementary edges of the result. if computepcurve1 equals true, further computations performed in this framework with the function build will attach an additional pcurve in the parametric space of the first shape to the constructed edges. if computepcurve2 equals true, the additional pcurve will be attached to the constructed edges in the parametric space of the second shape. these two functions may be used together. note that as a result, pcurves will only be added onto edges built on new intersection lines.
 
-	:param B:
-	:type B: bool
-	:rtype: None
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
 ") ComputePCurveOn2;
 		void ComputePCurveOn2(const Standard_Boolean B);
 
@@ -1166,11 +1512,14 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") HasAncestorFaceOn1;
 		%feature("autodoc", "Identifies the ancestor faces of the new intersection edge e resulting from the last computation performed in this framework, that is, the faces of the two original shapes on which the edge e lies: - hasancestorfaceon1 gives the ancestor face in the first shape, and these functions return: - true if an ancestor face f is found, or - false if not. an ancestor face is identifiable for the edge e if the three following conditions are satisfied: - the first part on which this algorithm performed its last computation is a shape, that is, it was not given as a surface or a plane at the time of construction of this algorithm or at a later time by the init1 function, - e is one of the elementary edges built by the last computation of this section algorithm, - the edge e is built on an intersection curve. in other words, e is a new edge built on the intersection curve, not on edges belonging to the intersecting shapes. to use these functions properly, you have to test the returned boolean value before using the ancestor face: f is significant only if the returned boolean value equals true.
 
-	:param E:
-	:type E: TopoDS_Shape
-	:param F:
-	:type F: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+E: TopoDS_Shape
+F: TopoDS_Shape
+
+Returns
+-------
+bool
 ") HasAncestorFaceOn1;
 		Standard_Boolean HasAncestorFaceOn1(const TopoDS_Shape & E, TopoDS_Shape & F);
 
@@ -1178,11 +1527,14 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") HasAncestorFaceOn2;
 		%feature("autodoc", "Identifies the ancestor faces of the new intersection edge e resulting from the last computation performed in this framework, that is, the faces of the two original shapes on which the edge e lies: - hasancestorfaceon2 gives the ancestor face in the second shape. these functions return: - true if an ancestor face f is found, or - false if not. an ancestor face is identifiable for the edge e if the three following conditions are satisfied: - the first part on which this algorithm performed its last computation is a shape, that is, it was not given as a surface or a plane at the time of construction of this algorithm or at a later time by the init1 function, - e is one of the elementary edges built by the last computation of this section algorithm, - the edge e is built on an intersection curve. in other words, e is a new edge built on the intersection curve, not on edges belonging to the intersecting shapes. to use these functions properly, you have to test the returned boolean value before using the ancestor face: f is significant only if the returned boolean value equals true.
 
-	:param E:
-	:type E: TopoDS_Shape
-	:param F:
-	:type F: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+E: TopoDS_Shape
+F: TopoDS_Shape
+
+Returns
+-------
+bool
 ") HasAncestorFaceOn2;
 		Standard_Boolean HasAncestorFaceOn2(const TopoDS_Shape & E, TopoDS_Shape & F);
 
@@ -1190,9 +1542,13 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") Init1;
 		%feature("autodoc", "Initializes the first part.
 
-	:param S1:
-	:type S1: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S1: TopoDS_Shape
+
+Returns
+-------
+None
 ") Init1;
 		void Init1(const TopoDS_Shape & S1);
 
@@ -1200,9 +1556,13 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") Init1;
 		%feature("autodoc", "Initializes the first part.
 
-	:param Pl:
-	:type Pl: gp_Pln
-	:rtype: None
+Parameters
+----------
+Pl: gp_Pln
+
+Returns
+-------
+None
 ") Init1;
 		void Init1(const gp_Pln & Pl);
 
@@ -1210,9 +1570,13 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") Init1;
 		%feature("autodoc", "Initializes the first part.
 
-	:param Sf:
-	:type Sf: Geom_Surface
-	:rtype: None
+Parameters
+----------
+Sf: Geom_Surface
+
+Returns
+-------
+None
 ") Init1;
 		void Init1(const opencascade::handle<Geom_Surface> & Sf);
 
@@ -1220,9 +1584,13 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") Init2;
 		%feature("autodoc", "Initialize second part.
 
-	:param S2:
-	:type S2: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S2: TopoDS_Shape
+
+Returns
+-------
+None
 ") Init2;
 		void Init2(const TopoDS_Shape & S2);
 
@@ -1230,9 +1598,13 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") Init2;
 		%feature("autodoc", "Initializes the second part.
 
-	:param Pl:
-	:type Pl: gp_Pln
-	:rtype: None
+Parameters
+----------
+Pl: gp_Pln
+
+Returns
+-------
+None
 ") Init2;
 		void Init2(const gp_Pln & Pl);
 
@@ -1240,9 +1612,13 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		%feature("compactdefaultargs") Init2;
 		%feature("autodoc", "This and the above algorithms reinitialize the first and the second parts on which this algorithm is going to perform the intersection computation. this is done with either: the surface sf, the plane pl or the shape sh. you use the function build to construct the result.
 
-	:param Sf:
-	:type Sf: Geom_Surface
-	:rtype: None
+Parameters
+----------
+Sf: Geom_Surface
+
+Returns
+-------
+None
 ") Init2;
 		void Init2(const opencascade::handle<Geom_Surface> & Sf);
 

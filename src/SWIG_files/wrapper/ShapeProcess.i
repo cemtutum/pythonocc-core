@@ -105,11 +105,14 @@ class ShapeProcess {
 		%feature("compactdefaultargs") FindOperator;
 		%feature("autodoc", "Finds operator by its name.
 
-	:param name:
-	:type name: char *
-	:param op:
-	:type op: ShapeProcess_Operator
-	:rtype: bool
+Parameters
+----------
+name: char *
+op: ShapeProcess_Operator
+
+Returns
+-------
+bool
 ") FindOperator;
 		static Standard_Boolean FindOperator(const char * name, opencascade::handle<ShapeProcess_Operator> & op);
 
@@ -117,11 +120,14 @@ class ShapeProcess {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Performs a specified sequence of operators on context resource file and other data should be already loaded to context (including description of sequence seq).
 
-	:param context:
-	:type context: ShapeProcess_Context
-	:param seq:
-	:type seq: char *
-	:rtype: bool
+Parameters
+----------
+context: ShapeProcess_Context
+seq: char *
+
+Returns
+-------
+bool
 ") Perform;
 		static Standard_Boolean Perform(const opencascade::handle<ShapeProcess_Context> & context, const char * seq);
 
@@ -129,11 +135,14 @@ class ShapeProcess {
 		%feature("compactdefaultargs") RegisterOperator;
 		%feature("autodoc", "Registers operator to make it visible for performer.
 
-	:param name:
-	:type name: char *
-	:param op:
-	:type op: ShapeProcess_Operator
-	:rtype: bool
+Parameters
+----------
+name: char *
+op: ShapeProcess_Operator
+
+Returns
+-------
+bool
 ") RegisterOperator;
 		static Standard_Boolean RegisterOperator(const char * name, const opencascade::handle<ShapeProcess_Operator> & op);
 
@@ -153,41 +162,61 @@ class ShapeProcess_Context : public Standard_Transient {
 	public:
 		/****************** BooleanVal ******************/
 		%feature("compactdefaultargs") BooleanVal;
-		%feature("autodoc", "	:param param:
-	:type param: char *
-	:param def:
-	:type def: bool
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+param: char *
+def: bool
+
+Returns
+-------
+bool
 ") BooleanVal;
 		Standard_Boolean BooleanVal(const char * param, const Standard_Boolean def);
 
 		/****************** GetBoolean ******************/
 		%feature("compactdefaultargs") GetBoolean;
-		%feature("autodoc", "	:param param:
-	:type param: char *
-	:param val:
-	:type val: bool
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+param: char *
+val: bool
+
+Returns
+-------
+bool
 ") GetBoolean;
 		Standard_Boolean GetBoolean(const char * param, Standard_Boolean &OutValue);
 
 		/****************** GetInteger ******************/
 		%feature("compactdefaultargs") GetInteger;
-		%feature("autodoc", "	:param param:
-	:type param: char *
-	:param val:
-	:type val: int
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+param: char *
+val: int
+
+Returns
+-------
+bool
 ") GetInteger;
 		Standard_Boolean GetInteger(const char * param, Standard_Integer &OutValue);
 
 		/****************** GetReal ******************/
 		%feature("compactdefaultargs") GetReal;
-		%feature("autodoc", "	:param param:
-	:type param: char *
-	:param val:
-	:type val: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+param: char *
+val: float
+
+Returns
+-------
+bool
 ") GetReal;
 		Standard_Boolean GetReal(const char * param, Standard_Real &OutValue);
 
@@ -195,11 +224,14 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") GetString;
 		%feature("autodoc", "Get value of parameter as being of specific type returns false if parameter is not defined or has a wrong type.
 
-	:param param:
-	:type param: char *
-	:param val:
-	:type val: TCollection_AsciiString
-	:rtype: bool
+Parameters
+----------
+param: char *
+val: TCollection_AsciiString
+
+Returns
+-------
+bool
 ") GetString;
 		Standard_Boolean GetString(const char * param, TCollection_AsciiString & val);
 
@@ -207,21 +239,30 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialises a tool by loading resource file and (if specified) sets starting scope returns false if resource file not found.
 
-	:param file:
-	:type file: char *
-	:param scope: default value is ""
-	:type scope: char *
-	:rtype: bool
+Parameters
+----------
+file: char *
+scope: char *,optional
+	default value is ""
+
+Returns
+-------
+bool
 ") Init;
 		Standard_Boolean Init(const char * file, const char * scope = "");
 
 		/****************** IntegerVal ******************/
 		%feature("compactdefaultargs") IntegerVal;
-		%feature("autodoc", "	:param param:
-	:type param: char *
-	:param def:
-	:type def: int
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+param: char *
+def: int
+
+Returns
+-------
+int
 ") IntegerVal;
 		Standard_Integer IntegerVal(const char * param, const Standard_Integer def);
 
@@ -229,9 +270,13 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") IsParamSet;
 		%feature("autodoc", "Returns true if parameter is defined in the resource file.
 
-	:param param:
-	:type param: char *
-	:rtype: bool
+Parameters
+----------
+param: char *
+
+Returns
+-------
+bool
 ") IsParamSet;
 		Standard_Boolean IsParamSet(const char * param);
 
@@ -239,9 +284,13 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") LoadResourceManager;
 		%feature("autodoc", "Loading resource_manager object if this object not equal internal static resource_manager object or internal static resource_manager object is null.
 
-	:param file:
-	:type file: char *
-	:rtype: opencascade::handle<Resource_Manager>
+Parameters
+----------
+file: char *
+
+Returns
+-------
+opencascade::handle<Resource_Manager>
 ") LoadResourceManager;
 		opencascade::handle<Resource_Manager> LoadResourceManager(const char * file);
 
@@ -249,7 +298,9 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") Messenger;
 		%feature("autodoc", "Returns messenger used for outputting messages.
 
-	:rtype: opencascade::handle<Message_Messenger>
+Returns
+-------
+opencascade::handle<Message_Messenger>
 ") Messenger;
 		opencascade::handle<Message_Messenger> Messenger();
 
@@ -257,17 +308,24 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") Progress;
 		%feature("autodoc", "Returns progress indicator.
 
-	:rtype: opencascade::handle<Message_ProgressIndicator>
+Returns
+-------
+opencascade::handle<Message_ProgressIndicator>
 ") Progress;
 		opencascade::handle<Message_ProgressIndicator> Progress();
 
 		/****************** RealVal ******************/
 		%feature("compactdefaultargs") RealVal;
-		%feature("autodoc", "	:param param:
-	:type param: char *
-	:param def:
-	:type def: float
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+param: char *
+def: float
+
+Returns
+-------
+float
 ") RealVal;
 		Standard_Real RealVal(const char * param, const Standard_Real def);
 
@@ -275,7 +333,9 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") ResourceManager;
 		%feature("autodoc", "Returns internal resource_manager object.
 
-	:rtype: opencascade::handle<Resource_Manager>
+Returns
+-------
+opencascade::handle<Resource_Manager>
 ") ResourceManager;
 		const opencascade::handle<Resource_Manager> & ResourceManager();
 
@@ -283,9 +343,13 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") SetMessenger;
 		%feature("autodoc", "Sets messenger used for outputting messages.
 
-	:param messenger:
-	:type messenger: Message_Messenger
-	:rtype: None
+Parameters
+----------
+messenger: Message_Messenger
+
+Returns
+-------
+None
 ") SetMessenger;
 		void SetMessenger(const opencascade::handle<Message_Messenger> & messenger);
 
@@ -293,9 +357,13 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") SetProgress;
 		%feature("autodoc", "Sets progress indicator.
 
-	:param theProgress:
-	:type theProgress: Message_ProgressIndicator
-	:rtype: None
+Parameters
+----------
+theProgress: Message_ProgressIndicator
+
+Returns
+-------
+None
 ") SetProgress;
 		void SetProgress(const opencascade::handle<Message_ProgressIndicator> & theProgress);
 
@@ -303,9 +371,13 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") SetScope;
 		%feature("autodoc", "Set a new (sub)scope.
 
-	:param scope:
-	:type scope: char *
-	:rtype: None
+Parameters
+----------
+scope: char *
+
+Returns
+-------
+None
 ") SetScope;
 		void SetScope(const char * scope);
 
@@ -313,9 +385,13 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") SetTraceLevel;
 		%feature("autodoc", "Sets trace level used for outputting messages - 0: no trace at all - 1: errors - 2: errors and warnings - 3: all messages default is 1 : errors traced.
 
-	:param tracelev:
-	:type tracelev: int
-	:rtype: None
+Parameters
+----------
+tracelev: int
+
+Returns
+-------
+None
 ") SetTraceLevel;
 		void SetTraceLevel(const Standard_Integer tracelev);
 
@@ -323,7 +399,9 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") ShapeProcess_Context;
 		%feature("autodoc", "Creates an empty tool.
 
-	:rtype: None
+Returns
+-------
+None
 ") ShapeProcess_Context;
 		 ShapeProcess_Context();
 
@@ -331,11 +409,15 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") ShapeProcess_Context;
 		%feature("autodoc", "Creates a new tool and initialises by name of resource file and (if specified) starting scope calls method init().
 
-	:param file:
-	:type file: char *
-	:param scope: default value is ""
-	:type scope: char *
-	:rtype: None
+Parameters
+----------
+file: char *
+scope: char *,optional
+	default value is ""
+
+Returns
+-------
+None
 ") ShapeProcess_Context;
 		 ShapeProcess_Context(const char * file, const char * scope = "");
 
@@ -343,11 +425,14 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") StringVal;
 		%feature("autodoc", "Get value of parameter as being of specific type if parameter is not defined or does not have expected type, returns default value as specified.
 
-	:param param:
-	:type param: char *
-	:param def:
-	:type def: char *
-	:rtype: char *
+Parameters
+----------
+param: char *
+def: char *
+
+Returns
+-------
+char *
 ") StringVal;
 		const char * StringVal(const char * param, const char * def);
 
@@ -355,7 +440,9 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") TraceLevel;
 		%feature("autodoc", "Returns trace level used for outputting messages.
 
-	:rtype: int
+Returns
+-------
+int
 ") TraceLevel;
 		Standard_Integer TraceLevel();
 
@@ -363,7 +450,9 @@ class ShapeProcess_Context : public Standard_Transient {
 		%feature("compactdefaultargs") UnSetScope;
 		%feature("autodoc", "Go out of current scope.
 
-	:rtype: None
+Returns
+-------
+None
 ") UnSetScope;
 		void UnSetScope();
 
@@ -387,19 +476,20 @@ class ShapeProcess_OperLibrary {
 		%feature("compactdefaultargs") ApplyModifier;
 		%feature("autodoc", "Applies breptools_modification to a shape, taking into account sharing of components of compounds. if themutableinput vat is set to true then imput shape s can be modified during the modification process.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param context:
-	:type context: ShapeProcess_ShapeContext
-	:param M:
-	:type M: BRepTools_Modification
-	:param map:
-	:type map: TopTools_DataMapOfShapeShape
-	:param msg: default value is 0
-	:type msg: ShapeExtend_MsgRegistrator
-	:param theMutableInput: default value is Standard_False
-	:type theMutableInput: bool
-	:rtype: TopoDS_Shape
+Parameters
+----------
+S: TopoDS_Shape
+context: ShapeProcess_ShapeContext
+M: BRepTools_Modification
+map: TopTools_DataMapOfShapeShape
+msg: ShapeExtend_MsgRegistrator,optional
+	default value is 0
+theMutableInput: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+TopoDS_Shape
 ") ApplyModifier;
 		static TopoDS_Shape ApplyModifier(const TopoDS_Shape & S, const opencascade::handle<ShapeProcess_ShapeContext> & context, const opencascade::handle<BRepTools_Modification> & M, TopTools_DataMapOfShapeShape & map, const opencascade::handle<ShapeExtend_MsgRegistrator> & msg = 0, Standard_Boolean theMutableInput = Standard_False);
 
@@ -407,7 +497,9 @@ class ShapeProcess_OperLibrary {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Registers all the operators.
 
-	:rtype: None
+Returns
+-------
+None
 ") Init;
 		static void Init();
 
@@ -430,9 +522,13 @@ class ShapeProcess_Operator : public Standard_Transient {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Performs operation and eventually records changes in the context.
 
-	:param context:
-	:type context: ShapeProcess_Context
-	:rtype: bool
+Parameters
+----------
+context: ShapeProcess_Context
+
+Returns
+-------
+bool
 ") Perform;
 		virtual Standard_Boolean Perform(const opencascade::handle<ShapeProcess_Context> & context);
 
@@ -456,13 +552,16 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") AddMessage;
 		%feature("autodoc", "Record a message for shape s shape s should be one of subshapes of original shape (or whole one), but not one of intermediate shapes records only if message() is not null.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param msg:
-	:type msg: Message_Msg
-	:param gravity: default value is Message_Warning
-	:type gravity: Message_Gravity
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+msg: Message_Msg
+gravity: Message_Gravity,optional
+	default value is Message_Warning
+
+Returns
+-------
+None
 ") AddMessage;
 		void AddMessage(const TopoDS_Shape & S, const Message_Msg & msg, const Message_Gravity gravity = Message_Warning);
 
@@ -470,11 +569,14 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") ContinuityVal;
 		%feature("autodoc", "Get value of parameter as being of the type geomabs_shape if parameter is not defined or does not have expected type, returns default value as specified.
 
-	:param param:
-	:type param: char *
-	:param def:
-	:type def: GeomAbs_Shape
-	:rtype: GeomAbs_Shape
+Parameters
+----------
+param: char *
+def: GeomAbs_Shape
+
+Returns
+-------
+GeomAbs_Shape
 ") ContinuityVal;
 		GeomAbs_Shape ContinuityVal(const char * param, const GeomAbs_Shape def);
 
@@ -482,11 +584,14 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") GetContinuity;
 		%feature("autodoc", "Get value of parameter as being of the type geomabs_shape returns false if parameter is not defined or has a wrong type.
 
-	:param param:
-	:type param: char *
-	:param val:
-	:type val: GeomAbs_Shape
-	:rtype: bool
+Parameters
+----------
+param: char *
+val: GeomAbs_Shape
+
+Returns
+-------
+bool
 ") GetContinuity;
 		Standard_Boolean GetContinuity(const char * param, GeomAbs_Shape & val);
 
@@ -494,7 +599,9 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") GetDetalisation;
 		%feature("autodoc", "Set and get value for detalisation level only shapes of types from topods_compound and until specified detalisation level will be recorded in maps to cancel mapping, use topabs_shape to force full mapping, use topabs_vertex the default level is topabs_face.
 
-	:rtype: TopAbs_ShapeEnum
+Returns
+-------
+TopAbs_ShapeEnum
 ") GetDetalisation;
 		TopAbs_ShapeEnum GetDetalisation();
 
@@ -502,9 +609,13 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initializes tool by a new shape and clears all results.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
 ") Init;
 		void Init(const TopoDS_Shape & S);
 
@@ -512,7 +623,9 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") IsNonManifold;
 		%feature("autodoc", "Get nonmanifold flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsNonManifold;
 		Standard_Boolean IsNonManifold();
 
@@ -520,13 +633,19 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") Map;
 		%feature("autodoc", "Returns map of replacements shape -> shape this map is not recursive.
 
-	:rtype: TopTools_DataMapOfShapeShape
+Returns
+-------
+TopTools_DataMapOfShapeShape
 ") Map;
 		const TopTools_DataMapOfShapeShape & Map();
 
 		/****************** Messages ******************/
 		%feature("compactdefaultargs") Messages;
-		%feature("autodoc", "	:rtype: opencascade::handle<ShapeExtend_MsgRegistrator>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<ShapeExtend_MsgRegistrator>
 ") Messages;
 		const opencascade::handle<ShapeExtend_MsgRegistrator> & Messages();
 
@@ -534,7 +653,9 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") Messages;
 		%feature("autodoc", "Returns messages recorded during shape processing it can be nullified before processing in order to avoid recording messages.
 
-	:rtype: opencascade::handle<ShapeExtend_MsgRegistrator>
+Returns
+-------
+opencascade::handle<ShapeExtend_MsgRegistrator>
 ") Messages;
 		opencascade::handle<ShapeExtend_MsgRegistrator> & Messages();
 
@@ -542,35 +663,54 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") PrintStatistics;
 		%feature("autodoc", "Prints statistics on shape processing onto the current messenger.
 
-	:rtype: None
+Returns
+-------
+None
 ") PrintStatistics;
 		void PrintStatistics();
 
 		/****************** RecordModification ******************/
 		%feature("compactdefaultargs") RecordModification;
-		%feature("autodoc", "	:param repl:
-	:type repl: TopTools_DataMapOfShapeShape
-	:param msg: default value is 0
-	:type msg: ShapeExtend_MsgRegistrator
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+repl: TopTools_DataMapOfShapeShape
+msg: ShapeExtend_MsgRegistrator,optional
+	default value is 0
+
+Returns
+-------
+None
 ") RecordModification;
 		void RecordModification(const TopTools_DataMapOfShapeShape & repl, const opencascade::handle<ShapeExtend_MsgRegistrator> & msg = 0);
 
 		/****************** RecordModification ******************/
 		%feature("compactdefaultargs") RecordModification;
-		%feature("autodoc", "	:param repl:
-	:type repl: ShapeBuild_ReShape
-	:param msg:
-	:type msg: ShapeExtend_MsgRegistrator
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+repl: ShapeBuild_ReShape
+msg: ShapeExtend_MsgRegistrator
+
+Returns
+-------
+None
 ") RecordModification;
 		void RecordModification(const opencascade::handle<ShapeBuild_ReShape> & repl, const opencascade::handle<ShapeExtend_MsgRegistrator> & msg);
 
 		/****************** RecordModification ******************/
 		%feature("compactdefaultargs") RecordModification;
-		%feature("autodoc", "	:param repl:
-	:type repl: ShapeBuild_ReShape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+repl: ShapeBuild_ReShape
+
+Returns
+-------
+None
 ") RecordModification;
 		void RecordModification(const opencascade::handle<ShapeBuild_ReShape> & repl);
 
@@ -578,13 +718,16 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") RecordModification;
 		%feature("autodoc", "Records modifications and resets result accordingly note: modification of resulting shape should be explicitly defined in the maps along with modifications of subshapes //! in the last function, sh is the shape on which modifier was run. it can be different from the whole shape, but in that case result as a whole should be reset later either by call to setresult(), or by another call to recordmodification() which contains mapping of current result to a new one explicitly.
 
-	:param sh:
-	:type sh: TopoDS_Shape
-	:param repl:
-	:type repl: BRepTools_Modifier
-	:param msg: default value is 0
-	:type msg: ShapeExtend_MsgRegistrator
-	:rtype: None
+Parameters
+----------
+sh: TopoDS_Shape
+repl: BRepTools_Modifier
+msg: ShapeExtend_MsgRegistrator,optional
+	default value is 0
+
+Returns
+-------
+None
 ") RecordModification;
 		void RecordModification(const TopoDS_Shape & sh, const BRepTools_Modifier & repl, const opencascade::handle<ShapeExtend_MsgRegistrator> & msg = 0);
 
@@ -592,15 +735,23 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") Result;
 		%feature("autodoc", "Returns current result.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Result;
 		const TopoDS_Shape Result();
 
 		/****************** SetDetalisation ******************/
 		%feature("compactdefaultargs") SetDetalisation;
-		%feature("autodoc", "	:param level:
-	:type level: TopAbs_ShapeEnum
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+level: TopAbs_ShapeEnum
+
+Returns
+-------
+None
 ") SetDetalisation;
 		void SetDetalisation(const TopAbs_ShapeEnum level);
 
@@ -608,9 +759,13 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") SetNonManifold;
 		%feature("autodoc", "Set nonmanifold flag.
 
-	:param theNonManifold:
-	:type theNonManifold: bool
-	:rtype: None
+Parameters
+----------
+theNonManifold: bool
+
+Returns
+-------
+None
 ") SetNonManifold;
 		void SetNonManifold(Standard_Boolean theNonManifold);
 
@@ -618,9 +773,13 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") SetResult;
 		%feature("autodoc", "Sets a new result shape note: this method should be used very carefully to keep consistency of modifications it is recommended to use recordmodification() methods with explicit definition of mapping from current result to a new one.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
 ") SetResult;
 		void SetResult(const TopoDS_Shape & S);
 
@@ -628,17 +787,25 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns shape being processed.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
 
 		/****************** ShapeProcess_ShapeContext ******************/
 		%feature("compactdefaultargs") ShapeProcess_ShapeContext;
-		%feature("autodoc", "	:param file:
-	:type file: char *
-	:param seq: default value is ""
-	:type seq: char *
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+file: char *
+seq: char *,optional
+	default value is ""
+
+Returns
+-------
+None
 ") ShapeProcess_ShapeContext;
 		 ShapeProcess_ShapeContext(const char * file, const char * seq = "");
 
@@ -646,13 +813,16 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 		%feature("compactdefaultargs") ShapeProcess_ShapeContext;
 		%feature("autodoc", "Initializes a tool by resource file and shape to be processed.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param file:
-	:type file: char *
-	:param seq: default value is ""
-	:type seq: char *
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+file: char *
+seq: char *,optional
+	default value is ""
+
+Returns
+-------
+None
 ") ShapeProcess_ShapeContext;
 		 ShapeProcess_ShapeContext(const TopoDS_Shape & S, const char * file, const char * seq = "");
 
@@ -676,9 +846,13 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Performs operation and records changes in the context.
 
-	:param context:
-	:type context: ShapeProcess_Context
-	:rtype: bool
+Parameters
+----------
+context: ShapeProcess_Context
+
+Returns
+-------
+bool
 ") Perform;
 		virtual Standard_Boolean Perform(const opencascade::handle<ShapeProcess_Context> & context);
 
@@ -686,9 +860,13 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 		%feature("compactdefaultargs") ShapeProcess_UOperator;
 		%feature("autodoc", "Creates operator with implementation defined as operfunc (static function).
 
-	:param func:
-	:type func: ShapeProcess_OperFunc
-	:rtype: None
+Parameters
+----------
+func: ShapeProcess_OperFunc
+
+Returns
+-------
+None
 ") ShapeProcess_UOperator;
 		 ShapeProcess_UOperator(const ShapeProcess_OperFunc func);
 

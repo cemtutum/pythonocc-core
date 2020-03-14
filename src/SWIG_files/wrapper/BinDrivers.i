@@ -94,9 +94,13 @@ class BinDrivers {
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "Creates the table of drivers of types supported.
 
-	:param MsgDrv:
-	:type MsgDrv: Message_Messenger
-	:rtype: opencascade::handle<BinMDF_ADriverTable>
+Parameters
+----------
+MsgDrv: Message_Messenger
+
+Returns
+-------
+opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		static opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & MsgDrv);
 
@@ -104,17 +108,27 @@ class BinDrivers {
 		%feature("compactdefaultargs") DefineFormat;
 		%feature("autodoc", "Defines format 'binocaf' and registers its read and write drivers in the specified application.
 
-	:param theApp:
-	:type theApp: TDocStd_Application
-	:rtype: None
+Parameters
+----------
+theApp: TDocStd_Application
+
+Returns
+-------
+None
 ") DefineFormat;
 		static void DefineFormat(const opencascade::handle<TDocStd_Application> & theApp);
 
 		/****************** Factory ******************/
 		%feature("compactdefaultargs") Factory;
-		%feature("autodoc", "	:param theGUID:
-	:type theGUID: Standard_GUID
-	:rtype: opencascade::handle<Standard_Transient>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theGUID: Standard_GUID
+
+Returns
+-------
+opencascade::handle<Standard_Transient>
 ") Factory;
 		static const opencascade::handle<Standard_Transient> & Factory(const Standard_GUID & theGUID);
 
@@ -122,7 +136,9 @@ class BinDrivers {
 		%feature("compactdefaultargs") StorageVersion;
 		%feature("autodoc", "Returns '1'.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") StorageVersion;
 		static TCollection_AsciiString StorageVersion();
 
@@ -142,9 +158,15 @@ class BinDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalD
 	public:
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
-		%feature("autodoc", "	:param theMsgDriver:
-	:type theMsgDriver: Message_Messenger
-	:rtype: opencascade::handle<BinMDF_ADriverTable>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMsgDriver: Message_Messenger
+
+Returns
+-------
+opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
 
@@ -152,17 +174,24 @@ class BinDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalD
 		%feature("compactdefaultargs") BinDrivers_DocumentRetrievalDriver;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BinDrivers_DocumentRetrievalDriver;
 		 BinDrivers_DocumentRetrievalDriver();
 
 		/****************** CheckShapeSection ******************/
 		%feature("compactdefaultargs") CheckShapeSection;
-		%feature("autodoc", "	:param thePos:
-	:type thePos: Storage_Position
-	:param theIS:
-	:type theIS: Standard_IStream
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+thePos: Storage_Position
+theIS: Standard_IStream
+
+Returns
+-------
+None
 ") CheckShapeSection;
 		virtual void CheckShapeSection(const Storage_Position & thePos, Standard_IStream & theIS);
 
@@ -170,19 +199,26 @@ class BinDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalD
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears the namedshape driver.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		virtual void Clear();
 
 		/****************** ReadShapeSection ******************/
 		%feature("compactdefaultargs") ReadShapeSection;
-		%feature("autodoc", "	:param theSection:
-	:type theSection: BinLDrivers_DocumentSection
-	:param theIS:
-	:type theIS: Standard_IStream
-	:param isMess: default value is Standard_False
-	:type isMess: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theSection: BinLDrivers_DocumentSection
+theIS: Standard_IStream
+isMess: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") ReadShapeSection;
 		virtual void ReadShapeSection(BinLDrivers_DocumentSection & theSection, Standard_IStream & theIS, const Standard_Boolean isMess = Standard_False);
 
@@ -204,9 +240,15 @@ class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDrive
 	public:
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
-		%feature("autodoc", "	:param theMsgDriver:
-	:type theMsgDriver: Message_Messenger
-	:rtype: opencascade::handle<BinMDF_ADriverTable>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMsgDriver: Message_Messenger
+
+Returns
+-------
+opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
 
@@ -214,7 +256,9 @@ class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDrive
 		%feature("compactdefaultargs") BinDrivers_DocumentStorageDriver;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BinDrivers_DocumentStorageDriver;
 		 BinDrivers_DocumentStorageDriver();
 
@@ -222,7 +266,9 @@ class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDrive
 		%feature("compactdefaultargs") IsWithTriangles;
 		%feature("autodoc", "Return true if shape should be stored with triangles.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsWithTriangles;
 		Standard_Boolean IsWithTriangles();
 
@@ -230,11 +276,14 @@ class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDrive
 		%feature("compactdefaultargs") SetWithTriangles;
 		%feature("autodoc", "Set if triangulation should be stored or not.
 
-	:param theMessageDriver:
-	:type theMessageDriver: Message_Messenger
-	:param theWithTriangulation:
-	:type theWithTriangulation: bool
-	:rtype: None
+Parameters
+----------
+theMessageDriver: Message_Messenger
+theWithTriangulation: bool
+
+Returns
+-------
+None
 ") SetWithTriangles;
 		void SetWithTriangles(const opencascade::handle<Message_Messenger> & theMessageDriver, const Standard_Boolean theWithTriangulation);
 
@@ -242,11 +291,14 @@ class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDrive
 		%feature("compactdefaultargs") WriteShapeSection;
 		%feature("autodoc", "Implements the procedure of writing a shape section to file.
 
-	:param theDocSection:
-	:type theDocSection: BinLDrivers_DocumentSection
-	:param theOS:
-	:type theOS: Standard_OStream
-	:rtype: None
+Parameters
+----------
+theDocSection: BinLDrivers_DocumentSection
+theOS: Standard_OStream
+
+Returns
+-------
+None
 ") WriteShapeSection;
 		virtual void WriteShapeSection(BinLDrivers_DocumentSection & theDocSection, Standard_OStream & theOS);
 

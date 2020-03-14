@@ -89,11 +89,14 @@ class XmlMNaming {
 		%feature("compactdefaultargs") AddDrivers;
 		%feature("autodoc", "Adds the attribute drivers to <adrivertable>.
 
-	:param aDriverTable:
-	:type aDriverTable: XmlMDF_ADriverTable
-	:param aMessageDriver:
-	:type aMessageDriver: Message_Messenger
-	:rtype: None
+Parameters
+----------
+aDriverTable: XmlMDF_ADriverTable
+aMessageDriver: Message_Messenger
+
+Returns
+-------
+None
 ") AddDrivers;
 		static void AddDrivers(const opencascade::handle<XmlMDF_ADriverTable> & aDriverTable, const opencascade::handle<Message_Messenger> & aMessageDriver);
 
@@ -115,7 +118,9 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clear myshapeset.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -123,37 +128,51 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 		%feature("compactdefaultargs") GetShapesLocations;
 		%feature("autodoc", "Get the format of topology.
 
-	:rtype: TopTools_LocationSet
+Returns
+-------
+TopTools_LocationSet
 ") GetShapesLocations;
 		TopTools_LocationSet & GetShapesLocations();
 
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		virtual opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param theSource:
-	:type theSource: XmlObjMgt_Persistent
-	:param theTarget:
-	:type theTarget: TDF_Attribute
-	:param theRelocTable:
-	:type theRelocTable: XmlObjMgt_RRelocationTable
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theSource: XmlObjMgt_Persistent
+theTarget: TDF_Attribute
+theRelocTable: XmlObjMgt_RRelocationTable
+
+Returns
+-------
+bool
 ") Paste;
 		virtual Standard_Boolean Paste(const XmlObjMgt_Persistent & theSource, const opencascade::handle<TDF_Attribute> & theTarget, XmlObjMgt_RRelocationTable & theRelocTable);
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param theSource:
-	:type theSource: TDF_Attribute
-	:param theTarget:
-	:type theTarget: XmlObjMgt_Persistent
-	:param theRelocTable:
-	:type theRelocTable: XmlObjMgt_SRelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theSource: TDF_Attribute
+theTarget: XmlObjMgt_Persistent
+theRelocTable: XmlObjMgt_SRelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		virtual void Paste(const opencascade::handle<TDF_Attribute> & theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable);
 
@@ -161,9 +180,13 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 		%feature("compactdefaultargs") ReadShapeSection;
 		%feature("autodoc", "Input the shapes from dom element.
 
-	:param anElement:
-	:type anElement: XmlObjMgt_Element
-	:rtype: None
+Parameters
+----------
+anElement: XmlObjMgt_Element
+
+Returns
+-------
+None
 ") ReadShapeSection;
 		void ReadShapeSection(const XmlObjMgt_Element & anElement);
 
@@ -171,17 +194,27 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 		%feature("compactdefaultargs") WriteShapeSection;
 		%feature("autodoc", "Output the shapes into dom element.
 
-	:param anElement:
-	:type anElement: XmlObjMgt_Element
-	:rtype: None
+Parameters
+----------
+anElement: XmlObjMgt_Element
+
+Returns
+-------
+None
 ") WriteShapeSection;
 		void WriteShapeSection(XmlObjMgt_Element & anElement);
 
 		/****************** XmlMNaming_NamedShapeDriver ******************/
 		%feature("compactdefaultargs") XmlMNaming_NamedShapeDriver;
-		%feature("autodoc", "	:param aMessageDriver:
-	:type aMessageDriver: Message_Messenger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aMessageDriver: Message_Messenger
+
+Returns
+-------
+None
 ") XmlMNaming_NamedShapeDriver;
 		 XmlMNaming_NamedShapeDriver(const opencascade::handle<Message_Messenger> & aMessageDriver);
 
@@ -203,39 +236,57 @@ class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 	public:
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param theSource:
-	:type theSource: XmlObjMgt_Persistent
-	:param theTarget:
-	:type theTarget: TDF_Attribute
-	:param theRelocTable:
-	:type theRelocTable: XmlObjMgt_RRelocationTable
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theSource: XmlObjMgt_Persistent
+theTarget: TDF_Attribute
+theRelocTable: XmlObjMgt_RRelocationTable
+
+Returns
+-------
+bool
 ") Paste;
 		Standard_Boolean Paste(const XmlObjMgt_Persistent & theSource, const opencascade::handle<TDF_Attribute> & theTarget, XmlObjMgt_RRelocationTable & theRelocTable);
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param theSource:
-	:type theSource: TDF_Attribute
-	:param theTarget:
-	:type theTarget: XmlObjMgt_Persistent
-	:param theRelocTable:
-	:type theRelocTable: XmlObjMgt_SRelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theSource: TDF_Attribute
+theTarget: XmlObjMgt_Persistent
+theRelocTable: XmlObjMgt_SRelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable);
 
 		/****************** XmlMNaming_NamingDriver ******************/
 		%feature("compactdefaultargs") XmlMNaming_NamingDriver;
-		%feature("autodoc", "	:param aMessageDriver:
-	:type aMessageDriver: Message_Messenger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aMessageDriver: Message_Messenger
+
+Returns
+-------
+None
 ") XmlMNaming_NamingDriver;
 		 XmlMNaming_NamingDriver(const opencascade::handle<Message_Messenger> & aMessageDriver);
 
@@ -259,7 +310,9 @@ class XmlMNaming_Shape1 {
 		%feature("compactdefaultargs") Element;
 		%feature("autodoc", "Return myelement.
 
-	:rtype: XmlObjMgt_Element
+Returns
+-------
+XmlObjMgt_Element
 ") Element;
 		const XmlObjMgt_Element & Element();
 
@@ -267,61 +320,97 @@ class XmlMNaming_Shape1 {
 		%feature("compactdefaultargs") Element;
 		%feature("autodoc", "Return myelement.
 
-	:rtype: XmlObjMgt_Element
+Returns
+-------
+XmlObjMgt_Element
 ") Element;
 		XmlObjMgt_Element & Element();
 
 		/****************** LocId ******************/
 		%feature("compactdefaultargs") LocId;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") LocId;
 		Standard_Integer LocId();
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:rtype: TopAbs_Orientation
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation();
 
 		/****************** SetShape ******************/
 		%feature("compactdefaultargs") SetShape;
-		%feature("autodoc", "	:param ID:
-	:type ID: int
-	:param LocID:
-	:type LocID: int
-	:param Orient:
-	:type Orient: TopAbs_Orientation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ID: int
+LocID: int
+Orient: TopAbs_Orientation
+
+Returns
+-------
+None
 ") SetShape;
 		void SetShape(const Standard_Integer ID, const Standard_Integer LocID, const TopAbs_Orientation Orient);
 
 		/****************** SetVertex ******************/
 		%feature("compactdefaultargs") SetVertex;
-		%feature("autodoc", "	:param theVertex:
-	:type theVertex: TopoDS_Shape
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theVertex: TopoDS_Shape
+
+Returns
+-------
+None
 ") SetVertex;
 		void SetVertex(const TopoDS_Shape & theVertex);
 
 		/****************** TShapeId ******************/
 		%feature("compactdefaultargs") TShapeId;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") TShapeId;
 		Standard_Integer TShapeId();
 
 		/****************** XmlMNaming_Shape1 ******************/
 		%feature("compactdefaultargs") XmlMNaming_Shape1;
-		%feature("autodoc", "	:param Doc:
-	:type Doc: XmlObjMgt_Document
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Doc: XmlObjMgt_Document
+
+Returns
+-------
+None
 ") XmlMNaming_Shape1;
 		 XmlMNaming_Shape1(XmlObjMgt_Document & Doc);
 
 		/****************** XmlMNaming_Shape1 ******************/
 		%feature("compactdefaultargs") XmlMNaming_Shape1;
-		%feature("autodoc", "	:param E:
-	:type E: XmlObjMgt_Element
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: XmlObjMgt_Element
+
+Returns
+-------
+None
 ") XmlMNaming_Shape1;
 		 XmlMNaming_Shape1(const XmlObjMgt_Element & E);
 

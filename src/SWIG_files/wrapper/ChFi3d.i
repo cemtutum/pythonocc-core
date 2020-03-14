@@ -128,17 +128,17 @@ class ChFi3d {
 		%feature("compactdefaultargs") ConcaveSide;
 		%feature("autodoc", "Returns reversed in or1 and(or) or2 if the concave edge defined by the interior of faces f1 and f2, in the neighbourhood of their boundary e is of the edge opposite to the normal of their surface support. the orientation of faces is not taken into consideration in the calculation. the function returns 0 if the calculation fails (tangence), if not, it returns the number of choice of the fillet or chamfer corresponding to the orientations calculated and to the tangent to the guide line read in e.
 
-	:param S1:
-	:type S1: BRepAdaptor_Surface
-	:param S2:
-	:type S2: BRepAdaptor_Surface
-	:param E:
-	:type E: TopoDS_Edge
-	:param Or1:
-	:type Or1: TopAbs_Orientation
-	:param Or2:
-	:type Or2: TopAbs_Orientation
-	:rtype: int
+Parameters
+----------
+S1: BRepAdaptor_Surface
+S2: BRepAdaptor_Surface
+E: TopoDS_Edge
+Or1: TopAbs_Orientation
+Or2: TopAbs_Orientation
+
+Returns
+-------
+int
 ") ConcaveSide;
 		static Standard_Integer ConcaveSide(const BRepAdaptor_Surface & S1, const BRepAdaptor_Surface & S2, const TopoDS_Edge & E, TopAbs_Orientation & Or1, TopAbs_Orientation & Or2);
 
@@ -146,17 +146,17 @@ class ChFi3d {
 		%feature("compactdefaultargs") NextSide;
 		%feature("autodoc", "Same as concaveside, but the orientations are logically deduced from the result of the call of concaveside on the first pair of faces of the fillet or chamnfer.
 
-	:param Or1:
-	:type Or1: TopAbs_Orientation
-	:param Or2:
-	:type Or2: TopAbs_Orientation
-	:param OrSave1:
-	:type OrSave1: TopAbs_Orientation
-	:param OrSave2:
-	:type OrSave2: TopAbs_Orientation
-	:param ChoixSauv:
-	:type ChoixSauv: int
-	:rtype: int
+Parameters
+----------
+Or1: TopAbs_Orientation
+Or2: TopAbs_Orientation
+OrSave1: TopAbs_Orientation
+OrSave2: TopAbs_Orientation
+ChoixSauv: int
+
+Returns
+-------
+int
 ") NextSide;
 		static Standard_Integer NextSide(TopAbs_Orientation & Or1, TopAbs_Orientation & Or2, const TopAbs_Orientation OrSave1, const TopAbs_Orientation OrSave2, const Standard_Integer ChoixSauv);
 
@@ -164,13 +164,15 @@ class ChFi3d {
 		%feature("compactdefaultargs") NextSide;
 		%feature("autodoc", "Same as the other nextside, but the calculation is done on an edge only.
 
-	:param Or:
-	:type Or: TopAbs_Orientation
-	:param OrSave:
-	:type OrSave: TopAbs_Orientation
-	:param OrFace:
-	:type OrFace: TopAbs_Orientation
-	:rtype: None
+Parameters
+----------
+Or: TopAbs_Orientation
+OrSave: TopAbs_Orientation
+OrFace: TopAbs_Orientation
+
+Returns
+-------
+None
 ") NextSide;
 		static void NextSide(TopAbs_Orientation & Or, const TopAbs_Orientation OrSave, const TopAbs_Orientation OrFace);
 
@@ -178,17 +180,17 @@ class ChFi3d {
 		%feature("compactdefaultargs") SameSide;
 		%feature("autodoc", "Enables to determine while processing an angle, if two fillets or chamfers constituting a face have identic or opposed concave edges.
 
-	:param Or:
-	:type Or: TopAbs_Orientation
-	:param OrSave1:
-	:type OrSave1: TopAbs_Orientation
-	:param OrSave2:
-	:type OrSave2: TopAbs_Orientation
-	:param OrFace1:
-	:type OrFace1: TopAbs_Orientation
-	:param OrFace2:
-	:type OrFace2: TopAbs_Orientation
-	:rtype: bool
+Parameters
+----------
+Or: TopAbs_Orientation
+OrSave1: TopAbs_Orientation
+OrSave2: TopAbs_Orientation
+OrFace1: TopAbs_Orientation
+OrFace2: TopAbs_Orientation
+
+Returns
+-------
+bool
 ") SameSide;
 		static Standard_Boolean SameSide(const TopAbs_Orientation Or, const TopAbs_Orientation OrSave1, const TopAbs_Orientation OrSave2, const TopAbs_Orientation OrFace1, const TopAbs_Orientation OrFace2);
 
@@ -211,11 +213,14 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") Abscissa;
 		%feature("autodoc", "Returns the abscissa of the vertex v on the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:param V:
-	:type V: TopoDS_Vertex
-	:rtype: float
+Parameters
+----------
+IC: int
+V: TopoDS_Vertex
+
+Returns
+-------
+float
 ") Abscissa;
 		Standard_Real Abscissa(const Standard_Integer IC, const TopoDS_Vertex & V);
 
@@ -223,7 +228,9 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") BadShape;
 		%feature("autodoc", "If (hasresult()) returns partial result if (!hasresult()).
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") BadShape;
 		TopoDS_Shape BadShape();
 
@@ -231,7 +238,9 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") Builder;
 		%feature("autodoc", "Returns the builder of topologic operations.
 
-	:rtype: opencascade::handle<TopOpeBRepBuild_HBuilder>
+Returns
+-------
+opencascade::handle<TopOpeBRepBuild_HBuilder>
 ") Builder;
 		opencascade::handle<TopOpeBRepBuild_HBuilder> Builder();
 
@@ -239,9 +248,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") Closed;
 		%feature("autodoc", "Returns true if the contour of index ic is closed.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") Closed;
 		Standard_Boolean Closed(const Standard_Integer IC);
 
@@ -249,9 +262,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") ClosedAndTangent;
 		%feature("autodoc", "Returns true if the contour of index ic is closed an tangent.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") ClosedAndTangent;
 		Standard_Boolean ClosedAndTangent(const Standard_Integer IC);
 
@@ -259,7 +276,9 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "General calculation of geometry on all edges, topologic reconstruction.
 
-	:rtype: None
+Returns
+-------
+None
 ") Compute;
 		void Compute();
 
@@ -267,11 +286,14 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") ComputedSurface;
 		%feature("autodoc", "Returns the is'th surface calculated on the contour ic.
 
-	:param IC:
-	:type IC: int
-	:param IS:
-	:type IS: int
-	:rtype: opencascade::handle<Geom_Surface>
+Parameters
+----------
+IC: int
+IS: int
+
+Returns
+-------
+opencascade::handle<Geom_Surface>
 ") ComputedSurface;
 		opencascade::handle<Geom_Surface> ComputedSurface(const Standard_Integer IC, const Standard_Integer IS);
 
@@ -279,9 +301,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") Contains;
 		%feature("autodoc", "Gives the number of the contour containing e or 0 if e does not belong to any contour.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: int
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+int
 ") Contains;
 		Standard_Integer Contains(const TopoDS_Edge & E);
 
@@ -289,11 +315,14 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") Contains;
 		%feature("autodoc", "Gives the number of the contour containing e or 0 if e does not belong to any contour. sets in indexinspine the index of e in the contour if it's found.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:param IndexInSpine:
-	:type IndexInSpine: int
-	:rtype: int
+Parameters
+----------
+E: TopoDS_Edge
+IndexInSpine: int
+
+Returns
+-------
+int
 ") Contains;
 		Standard_Integer Contains(const TopoDS_Edge & E, Standard_Integer &OutValue);
 
@@ -301,9 +330,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") FaultyContour;
 		%feature("autodoc", "Returns the number of i'th contour on which the calculation has failed.
 
-	:param I:
-	:type I: int
-	:rtype: int
+Parameters
+----------
+I: int
+
+Returns
+-------
+int
 ") FaultyContour;
 		Standard_Integer FaultyContour(const Standard_Integer I);
 
@@ -311,9 +344,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") FaultyVertex;
 		%feature("autodoc", "Returns the iv'th vertex on which the calculation has failed.
 
-	:param IV:
-	:type IV: int
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+IV: int
+
+Returns
+-------
+TopoDS_Vertex
 ") FaultyVertex;
 		TopoDS_Vertex FaultyVertex(const Standard_Integer IV);
 
@@ -321,9 +358,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") FirstVertex;
 		%feature("autodoc", "Returns the first vertex v of the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+IC: int
+
+Returns
+-------
+TopoDS_Vertex
 ") FirstVertex;
 		TopoDS_Vertex FirstVertex(const Standard_Integer IC);
 
@@ -331,9 +372,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") Generated;
 		%feature("autodoc", "Advanced function for the history.
 
-	:param EouV:
-	:type EouV: TopoDS_Shape
-	:rtype: TopTools_ListOfShape
+Parameters
+----------
+EouV: TopoDS_Shape
+
+Returns
+-------
+TopTools_ListOfShape
 ") Generated;
 		const TopTools_ListOfShape & Generated(const TopoDS_Shape & EouV);
 
@@ -341,7 +386,9 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") HasResult;
 		%feature("autodoc", "Returns true if a partial result has been calculated.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") HasResult;
 		Standard_Boolean HasResult();
 
@@ -349,7 +396,9 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the computation is success.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -357,9 +406,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") LastVertex;
 		%feature("autodoc", "Returns the last vertex v of the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+IC: int
+
+Returns
+-------
+TopoDS_Vertex
 ") LastVertex;
 		TopoDS_Vertex LastVertex(const Standard_Integer IC);
 
@@ -367,9 +420,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Returns the length of the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:rtype: float
+Parameters
+----------
+IC: int
+
+Returns
+-------
+float
 ") Length;
 		Standard_Real Length(const Standard_Integer IC);
 
@@ -377,9 +434,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") NbComputedSurfaces;
 		%feature("autodoc", "Returns the number of surfaces calculated on the contour ic.
 
-	:param IC:
-	:type IC: int
-	:rtype: int
+Parameters
+----------
+IC: int
+
+Returns
+-------
+int
 ") NbComputedSurfaces;
 		Standard_Integer NbComputedSurfaces(const Standard_Integer IC);
 
@@ -387,7 +448,9 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") NbElements;
 		%feature("autodoc", "Gives the number of disjoint contours on which the fillets are calculated.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbElements;
 		Standard_Integer NbElements();
 
@@ -395,7 +458,9 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") NbFaultyContours;
 		%feature("autodoc", "Returns the number of contours on which the calculation has failed.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbFaultyContours;
 		Standard_Integer NbFaultyContours();
 
@@ -403,15 +468,23 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") NbFaultyVertices;
 		%feature("autodoc", "Returns the number of vertices on which the calculation has failed.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbFaultyVertices;
 		Standard_Integer NbFaultyVertices();
 
 		/****************** PerformTwoCornerbyInter ******************/
 		%feature("compactdefaultargs") PerformTwoCornerbyInter;
-		%feature("autodoc", "	:param Index:
-	:type Index: int
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+bool
 ") PerformTwoCornerbyInter;
 		Standard_Boolean PerformTwoCornerbyInter(const Standard_Integer Index);
 
@@ -419,11 +492,14 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") RelativeAbscissa;
 		%feature("autodoc", "Returns the relative abscissa([0.,1.]) of the vertex v on the contour of index ic.
 
-	:param IC:
-	:type IC: int
-	:param V:
-	:type V: TopoDS_Vertex
-	:rtype: float
+Parameters
+----------
+IC: int
+V: TopoDS_Vertex
+
+Returns
+-------
+float
 ") RelativeAbscissa;
 		Standard_Real RelativeAbscissa(const Standard_Integer IC, const TopoDS_Vertex & V);
 
@@ -431,9 +507,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") Remove;
 		%feature("autodoc", "Extracts from the list the contour containing edge e.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Remove;
 		void Remove(const TopoDS_Edge & E);
 
@@ -441,35 +521,43 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Reset all results of compute and returns the algorythm in the state of the last acquisition to enable modification of contours or areas.
 
-	:rtype: None
+Returns
+-------
+None
 ") Reset;
 		void Reset();
 
 		/****************** SetContinuity ******************/
 		%feature("compactdefaultargs") SetContinuity;
-		%feature("autodoc", "	:param InternalContinuity:
-	:type InternalContinuity: GeomAbs_Shape
-	:param AngularTolerance:
-	:type AngularTolerance: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InternalContinuity: GeomAbs_Shape
+AngularTolerance: float
+
+Returns
+-------
+None
 ") SetContinuity;
 		void SetContinuity(const GeomAbs_Shape InternalContinuity, const Standard_Real AngularTolerance);
 
 		/****************** SetParams ******************/
 		%feature("compactdefaultargs") SetParams;
-		%feature("autodoc", "	:param Tang:
-	:type Tang: float
-	:param Tesp:
-	:type Tesp: float
-	:param T2d:
-	:type T2d: float
-	:param TApp3d:
-	:type TApp3d: float
-	:param TolApp2d:
-	:type TolApp2d: float
-	:param Fleche:
-	:type Fleche: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tang: float
+Tesp: float
+T2d: float
+TApp3d: float
+TolApp2d: float
+Fleche: float
+
+Returns
+-------
+None
 ") SetParams;
 		void SetParams(const Standard_Real Tang, const Standard_Real Tesp, const Standard_Real T2d, const Standard_Real TApp3d, const Standard_Real TolApp2d, const Standard_Real Fleche);
 
@@ -477,7 +565,9 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "If (isdone()) makes the result. if (!isdone()).
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
 
@@ -485,27 +575,22 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") SplitKPart;
 		%feature("autodoc", "Method, implemented in the inheritants, calculates the elements of construction of the surface (fillet or chamfer).
 
-	:param Data:
-	:type Data: ChFiDS_SurfData
-	:param SetData:
-	:type SetData: ChFiDS_SequenceOfSurfData
-	:param Spine:
-	:type Spine: ChFiDS_Spine
-	:param Iedge:
-	:type Iedge: int
-	:param S1:
-	:type S1: Adaptor3d_HSurface
-	:param I1:
-	:type I1: Adaptor3d_TopolTool
-	:param S2:
-	:type S2: Adaptor3d_HSurface
-	:param I2:
-	:type I2: Adaptor3d_TopolTool
-	:param Intf:
-	:type Intf: bool
-	:param Intl:
-	:type Intl: bool
-	:rtype: bool
+Parameters
+----------
+Data: ChFiDS_SurfData
+SetData: ChFiDS_SequenceOfSurfData
+Spine: ChFiDS_Spine
+Iedge: int
+S1: Adaptor3d_HSurface
+I1: Adaptor3d_TopolTool
+S2: Adaptor3d_HSurface
+I2: Adaptor3d_TopolTool
+Intf: bool
+Intl: bool
+
+Returns
+-------
+bool
 ") SplitKPart;
 		Standard_Boolean SplitKPart(const opencascade::handle<ChFiDS_SurfData> & Data, ChFiDS_SequenceOfSurfData & SetData, const opencascade::handle<ChFiDS_Spine> & Spine, const Standard_Integer Iedge, const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_TopolTool> & I1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_TopolTool> & I2, Standard_Boolean &OutValue, Standard_Boolean &OutValue);
 
@@ -513,9 +598,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") StripeStatus;
 		%feature("autodoc", "For the stripe ic ,indication on the cause of failure walkingfailure,twistedsurface,error, ok.
 
-	:param IC:
-	:type IC: int
-	:rtype: ChFiDS_ErrorStatus
+Parameters
+----------
+IC: int
+
+Returns
+-------
+ChFiDS_ErrorStatus
 ") StripeStatus;
 		ChFiDS_ErrorStatus StripeStatus(const Standard_Integer IC);
 
@@ -523,9 +612,13 @@ class ChFi3d_Builder {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Gives the n'th set of edges (contour) if i >nbelements().
 
-	:param I:
-	:type I: int
-	:rtype: opencascade::handle<ChFiDS_Spine>
+Parameters
+----------
+I: int
+
+Returns
+-------
+opencascade::handle<ChFiDS_Spine>
 ") Value;
 		opencascade::handle<ChFiDS_Spine> Value(const Standard_Integer I);
 
@@ -545,11 +638,16 @@ class ChFi3d_SearchSing : public math_FunctionWithDerivative {
 	public:
 		/****************** ChFi3d_SearchSing ******************/
 		%feature("compactdefaultargs") ChFi3d_SearchSing;
-		%feature("autodoc", "	:param C1:
-	:type C1: Geom_Curve
-	:param C2:
-	:type C2: Geom_Curve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C1: Geom_Curve
+C2: Geom_Curve
+
+Returns
+-------
+None
 ") ChFi3d_SearchSing;
 		 ChFi3d_SearchSing(const opencascade::handle<Geom_Curve> & C1, const opencascade::handle<Geom_Curve> & C2);
 
@@ -557,11 +655,14 @@ class ChFi3d_SearchSing : public math_FunctionWithDerivative {
 		%feature("compactdefaultargs") Derivative;
 		%feature("autodoc", "Computes the derivative <d> of the function for the variable <x>. returns true if the calculation were successfully done, false otherwise.
 
-	:param X:
-	:type X: float
-	:param D:
-	:type D: float
-	:rtype: bool
+Parameters
+----------
+X: float
+D: float
+
+Returns
+-------
+bool
 ") Derivative;
 		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 
@@ -569,11 +670,14 @@ class ChFi3d_SearchSing : public math_FunctionWithDerivative {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the value of the function <f> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: float
-	:param F:
-	:type F: float
-	:rtype: bool
+Parameters
+----------
+X: float
+F: float
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 
@@ -581,13 +685,15 @@ class ChFi3d_SearchSing : public math_FunctionWithDerivative {
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Computes the value <f> and the derivative <d> of the function for the variable <x>. returns true if the calculation were successfully done, false otherwise.
 
-	:param X:
-	:type X: float
-	:param F:
-	:type F: float
-	:param D:
-	:type D: float
-	:rtype: bool
+Parameters
+----------
+X: float
+F: float
+D: float
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -609,9 +715,13 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Initializes a contour with the edge <e> as first (the next are found by propagation ). the two distances (parameters of the chamfer) must be set after. if the edge <e> has more than 2 adjacent faces.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Add;
 		void Add(const TopoDS_Edge & E);
 
@@ -619,11 +729,14 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Initializes a new contour with the edge <e> as first (the next are found by propagation ), and the distance <dis> if the edge <e> has more than 2 adjacent faces.
 
-	:param Dis:
-	:type Dis: float
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+Dis: float
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Add;
 		void Add(const Standard_Real Dis, const TopoDS_Edge & E);
 
@@ -631,15 +744,16 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Initializes a new contour with the edge <e> as first (the next are found by propagation ), and the distance <dis1> and <dis2> if the edge <e> has more than 2 adjacent faces.
 
-	:param Dis1:
-	:type Dis1: float
-	:param Dis2:
-	:type Dis2: float
-	:param E:
-	:type E: TopoDS_Edge
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+Dis1: float
+Dis2: float
+E: TopoDS_Edge
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") Add;
 		void Add(const Standard_Real Dis1, const Standard_Real Dis2, const TopoDS_Edge & E, const TopoDS_Face & F);
 
@@ -647,15 +761,16 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") AddDA;
 		%feature("autodoc", "Initializes a new contour with the edge <e> as first (the next are found by propagation ), and the distance <dis1> and <angle> if the edge <e> has more than 2 adjacent faces.
 
-	:param Dis:
-	:type Dis: float
-	:param Angle:
-	:type Angle: float
-	:param E:
-	:type E: TopoDS_Edge
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+Dis: float
+Angle: float
+E: TopoDS_Edge
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") AddDA;
 		void AddDA(const Standard_Real Dis, const Standard_Real Angle, const TopoDS_Edge & E, const TopoDS_Face & F);
 
@@ -663,11 +778,15 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") ChFi3d_ChBuilder;
 		%feature("autodoc", "Initializes the builder with the shape <s> for the computation of chamfers.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:param Ta: default value is 1.0e-2
-	:type Ta: float
-	:rtype: None
+Parameters
+----------
+S: TopoDS_Shape
+Ta: float,optional
+	default value is 1.0e-2
+
+Returns
+-------
+None
 ") ChFi3d_ChBuilder;
 		 ChFi3d_ChBuilder(const TopoDS_Shape & S, const Standard_Real Ta = 1.0e-2);
 
@@ -675,13 +794,15 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") Dists;
 		%feature("autodoc", "Gives the distances <dis1> and <dis2> of the fillet contour of index <ic> in the ds.
 
-	:param IC:
-	:type IC: int
-	:param Dis1:
-	:type Dis1: float
-	:param Dis2:
-	:type Dis2: float
-	:rtype: None
+Parameters
+----------
+IC: int
+Dis1: float
+Dis2: float
+
+Returns
+-------
+None
 ") Dists;
 		void Dists(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -689,11 +810,14 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") GetDist;
 		%feature("autodoc", "Gives the distances <dis> of the fillet contour of index <ic> in the ds.
 
-	:param IC:
-	:type IC: int
-	:param Dis:
-	:type Dis: float
-	:rtype: None
+Parameters
+----------
+IC: int
+Dis: float
+
+Returns
+-------
+None
 ") GetDist;
 		void GetDist(const Standard_Integer IC, Standard_Real &OutValue);
 
@@ -701,13 +825,15 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") GetDistAngle;
 		%feature("autodoc", "Gives the distances <dis> and <angle> of the fillet contour of index <ic> in the ds.
 
-	:param IC:
-	:type IC: int
-	:param Dis:
-	:type Dis: float
-	:param Angle:
-	:type Angle: float
-	:rtype: None
+Parameters
+----------
+IC: int
+Dis: float
+Angle: float
+
+Returns
+-------
+None
 ") GetDistAngle;
 		void GetDistAngle(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -715,9 +841,13 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") IsChamfer;
 		%feature("autodoc", "Renvoi la methode des chanfreins utilisee.
 
-	:param IC:
-	:type IC: int
-	:rtype: ChFiDS_ChamfMethod
+Parameters
+----------
+IC: int
+
+Returns
+-------
+ChFiDS_ChamfMethod
 ") IsChamfer;
 		ChFiDS_ChamfMethod IsChamfer(const Standard_Integer IC);
 
@@ -725,15 +855,23 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") Mode;
 		%feature("autodoc", "Returns the mode of chamfer used.
 
-	:rtype: ChFiDS_ChamfMode
+Returns
+-------
+ChFiDS_ChamfMode
 ") Mode;
 		ChFiDS_ChamfMode Mode();
 
 		/****************** NbSurf ******************/
 		%feature("compactdefaultargs") NbSurf;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+
+Returns
+-------
+int
 ") NbSurf;
 		Standard_Integer NbSurf(const Standard_Integer IC);
 
@@ -741,49 +879,33 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") PerformSurf;
 		%feature("autodoc", "Methode, implemented in inheritants, calculates the elements of construction of the surface (fillet or chamfer).
 
-	:param Data:
-	:type Data: ChFiDS_SequenceOfSurfData
-	:param Guide:
-	:type Guide: ChFiDS_HElSpine
-	:param Spine:
-	:type Spine: ChFiDS_Spine
-	:param Choix:
-	:type Choix: int
-	:param S1:
-	:type S1: BRepAdaptor_HSurface
-	:param I1:
-	:type I1: Adaptor3d_TopolTool
-	:param S2:
-	:type S2: BRepAdaptor_HSurface
-	:param I2:
-	:type I2: Adaptor3d_TopolTool
-	:param MaxStep:
-	:type MaxStep: float
-	:param Fleche:
-	:type Fleche: float
-	:param TolGuide:
-	:type TolGuide: float
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Inside:
-	:type Inside: bool
-	:param Appro:
-	:type Appro: bool
-	:param Forward:
-	:type Forward: bool
-	:param RecOnS1:
-	:type RecOnS1: bool
-	:param RecOnS2:
-	:type RecOnS2: bool
-	:param Soldep:
-	:type Soldep: math_Vector
-	:param Intf:
-	:type Intf: int
-	:param Intl:
-	:type Intl: int
-	:rtype: bool
+Parameters
+----------
+Data: ChFiDS_SequenceOfSurfData
+Guide: ChFiDS_HElSpine
+Spine: ChFiDS_Spine
+Choix: int
+S1: BRepAdaptor_HSurface
+I1: Adaptor3d_TopolTool
+S2: BRepAdaptor_HSurface
+I2: Adaptor3d_TopolTool
+MaxStep: float
+Fleche: float
+TolGuide: float
+First: float
+Last: float
+Inside: bool
+Appro: bool
+Forward: bool
+RecOnS1: bool
+RecOnS2: bool
+Soldep: math_Vector
+Intf: int
+Intl: int
+
+Returns
+-------
+bool
 ") PerformSurf;
 		virtual Standard_Boolean PerformSurf(ChFiDS_SequenceOfSurfData & Data, const opencascade::handle<ChFiDS_HElSpine> & Guide, const opencascade::handle<ChFiDS_Spine> & Spine, const Standard_Integer Choix, const opencascade::handle<BRepAdaptor_HSurface> & S1, const opencascade::handle<Adaptor3d_TopolTool> & I1, const opencascade::handle<BRepAdaptor_HSurface> & S2, const opencascade::handle<Adaptor3d_TopolTool> & I2, const Standard_Real MaxStep, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecOnS1, const Standard_Boolean RecOnS2, const math_Vector & Soldep, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
@@ -791,57 +913,37 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") PerformSurf;
 		%feature("autodoc", "Method, implemented in the inheritants, calculates the elements of construction of the surface (fillet or chamfer) contact edge/face.
 
-	:param Data:
-	:type Data: ChFiDS_SequenceOfSurfData
-	:param Guide:
-	:type Guide: ChFiDS_HElSpine
-	:param Spine:
-	:type Spine: ChFiDS_Spine
-	:param Choix:
-	:type Choix: int
-	:param S1:
-	:type S1: BRepAdaptor_HSurface
-	:param I1:
-	:type I1: Adaptor3d_TopolTool
-	:param PC1:
-	:type PC1: BRepAdaptor_HCurve2d
-	:param Sref1:
-	:type Sref1: BRepAdaptor_HSurface
-	:param PCref1:
-	:type PCref1: BRepAdaptor_HCurve2d
-	:param Decroch1:
-	:type Decroch1: bool
-	:param S2:
-	:type S2: BRepAdaptor_HSurface
-	:param I2:
-	:type I2: Adaptor3d_TopolTool
-	:param Or2:
-	:type Or2: TopAbs_Orientation
-	:param MaxStep:
-	:type MaxStep: float
-	:param Fleche:
-	:type Fleche: float
-	:param TolGuide:
-	:type TolGuide: float
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Inside:
-	:type Inside: bool
-	:param Appro:
-	:type Appro: bool
-	:param Forward:
-	:type Forward: bool
-	:param RecP:
-	:type RecP: bool
-	:param RecS:
-	:type RecS: bool
-	:param RecRst:
-	:type RecRst: bool
-	:param Soldep:
-	:type Soldep: math_Vector
-	:rtype: None
+Parameters
+----------
+Data: ChFiDS_SequenceOfSurfData
+Guide: ChFiDS_HElSpine
+Spine: ChFiDS_Spine
+Choix: int
+S1: BRepAdaptor_HSurface
+I1: Adaptor3d_TopolTool
+PC1: BRepAdaptor_HCurve2d
+Sref1: BRepAdaptor_HSurface
+PCref1: BRepAdaptor_HCurve2d
+Decroch1: bool
+S2: BRepAdaptor_HSurface
+I2: Adaptor3d_TopolTool
+Or2: TopAbs_Orientation
+MaxStep: float
+Fleche: float
+TolGuide: float
+First: float
+Last: float
+Inside: bool
+Appro: bool
+Forward: bool
+RecP: bool
+RecS: bool
+RecRst: bool
+Soldep: math_Vector
+
+Returns
+-------
+None
 ") PerformSurf;
 		virtual void PerformSurf(ChFiDS_SequenceOfSurfData & Data, const opencascade::handle<ChFiDS_HElSpine> & Guide, const opencascade::handle<ChFiDS_Spine> & Spine, const Standard_Integer Choix, const opencascade::handle<BRepAdaptor_HSurface> & S1, const opencascade::handle<Adaptor3d_TopolTool> & I1, const opencascade::handle<BRepAdaptor_HCurve2d> & PC1, const opencascade::handle<BRepAdaptor_HSurface> & Sref1, const opencascade::handle<BRepAdaptor_HCurve2d> & PCref1, Standard_Boolean &OutValue, const opencascade::handle<BRepAdaptor_HSurface> & S2, const opencascade::handle<Adaptor3d_TopolTool> & I2, const TopAbs_Orientation Or2, const Standard_Real MaxStep, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP, const Standard_Boolean RecS, const Standard_Boolean RecRst, const math_Vector & Soldep);
 
@@ -849,57 +951,37 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") PerformSurf;
 		%feature("autodoc", "Method, implemented in inheritants, calculates the elements of construction of the surface (fillet or chamfer) contact edge/face.
 
-	:param Data:
-	:type Data: ChFiDS_SequenceOfSurfData
-	:param Guide:
-	:type Guide: ChFiDS_HElSpine
-	:param Spine:
-	:type Spine: ChFiDS_Spine
-	:param Choix:
-	:type Choix: int
-	:param S1:
-	:type S1: BRepAdaptor_HSurface
-	:param I1:
-	:type I1: Adaptor3d_TopolTool
-	:param Or1:
-	:type Or1: TopAbs_Orientation
-	:param S2:
-	:type S2: BRepAdaptor_HSurface
-	:param I2:
-	:type I2: Adaptor3d_TopolTool
-	:param PC2:
-	:type PC2: BRepAdaptor_HCurve2d
-	:param Sref2:
-	:type Sref2: BRepAdaptor_HSurface
-	:param PCref2:
-	:type PCref2: BRepAdaptor_HCurve2d
-	:param Decroch2:
-	:type Decroch2: bool
-	:param MaxStep:
-	:type MaxStep: float
-	:param Fleche:
-	:type Fleche: float
-	:param TolGuide:
-	:type TolGuide: float
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Inside:
-	:type Inside: bool
-	:param Appro:
-	:type Appro: bool
-	:param Forward:
-	:type Forward: bool
-	:param RecP:
-	:type RecP: bool
-	:param RecS:
-	:type RecS: bool
-	:param RecRst:
-	:type RecRst: bool
-	:param Soldep:
-	:type Soldep: math_Vector
-	:rtype: None
+Parameters
+----------
+Data: ChFiDS_SequenceOfSurfData
+Guide: ChFiDS_HElSpine
+Spine: ChFiDS_Spine
+Choix: int
+S1: BRepAdaptor_HSurface
+I1: Adaptor3d_TopolTool
+Or1: TopAbs_Orientation
+S2: BRepAdaptor_HSurface
+I2: Adaptor3d_TopolTool
+PC2: BRepAdaptor_HCurve2d
+Sref2: BRepAdaptor_HSurface
+PCref2: BRepAdaptor_HCurve2d
+Decroch2: bool
+MaxStep: float
+Fleche: float
+TolGuide: float
+First: float
+Last: float
+Inside: bool
+Appro: bool
+Forward: bool
+RecP: bool
+RecS: bool
+RecRst: bool
+Soldep: math_Vector
+
+Returns
+-------
+None
 ") PerformSurf;
 		virtual void PerformSurf(ChFiDS_SequenceOfSurfData & Data, const opencascade::handle<ChFiDS_HElSpine> & Guide, const opencascade::handle<ChFiDS_Spine> & Spine, const Standard_Integer Choix, const opencascade::handle<BRepAdaptor_HSurface> & S1, const opencascade::handle<Adaptor3d_TopolTool> & I1, const TopAbs_Orientation Or1, const opencascade::handle<BRepAdaptor_HSurface> & S2, const opencascade::handle<Adaptor3d_TopolTool> & I2, const opencascade::handle<BRepAdaptor_HCurve2d> & PC2, const opencascade::handle<BRepAdaptor_HSurface> & Sref2, const opencascade::handle<BRepAdaptor_HCurve2d> & PCref2, Standard_Boolean &OutValue, const Standard_Real MaxStep, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP, const Standard_Boolean RecS, const Standard_Boolean RecRst, const math_Vector & Soldep);
 
@@ -907,69 +989,43 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") PerformSurf;
 		%feature("autodoc", "Method, implemented in inheritants, calculates the elements of construction of the surface (fillet or chamfer) contact edge/edge.
 
-	:param Data:
-	:type Data: ChFiDS_SequenceOfSurfData
-	:param Guide:
-	:type Guide: ChFiDS_HElSpine
-	:param Spine:
-	:type Spine: ChFiDS_Spine
-	:param Choix:
-	:type Choix: int
-	:param S1:
-	:type S1: BRepAdaptor_HSurface
-	:param I1:
-	:type I1: Adaptor3d_TopolTool
-	:param PC1:
-	:type PC1: BRepAdaptor_HCurve2d
-	:param Sref1:
-	:type Sref1: BRepAdaptor_HSurface
-	:param PCref1:
-	:type PCref1: BRepAdaptor_HCurve2d
-	:param Decroch1:
-	:type Decroch1: bool
-	:param Or1:
-	:type Or1: TopAbs_Orientation
-	:param S2:
-	:type S2: BRepAdaptor_HSurface
-	:param I2:
-	:type I2: Adaptor3d_TopolTool
-	:param PC2:
-	:type PC2: BRepAdaptor_HCurve2d
-	:param Sref2:
-	:type Sref2: BRepAdaptor_HSurface
-	:param PCref2:
-	:type PCref2: BRepAdaptor_HCurve2d
-	:param Decroch2:
-	:type Decroch2: bool
-	:param Or2:
-	:type Or2: TopAbs_Orientation
-	:param MaxStep:
-	:type MaxStep: float
-	:param Fleche:
-	:type Fleche: float
-	:param TolGuide:
-	:type TolGuide: float
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Inside:
-	:type Inside: bool
-	:param Appro:
-	:type Appro: bool
-	:param Forward:
-	:type Forward: bool
-	:param RecP1:
-	:type RecP1: bool
-	:param RecRst1:
-	:type RecRst1: bool
-	:param RecP2:
-	:type RecP2: bool
-	:param RecRst2:
-	:type RecRst2: bool
-	:param Soldep:
-	:type Soldep: math_Vector
-	:rtype: None
+Parameters
+----------
+Data: ChFiDS_SequenceOfSurfData
+Guide: ChFiDS_HElSpine
+Spine: ChFiDS_Spine
+Choix: int
+S1: BRepAdaptor_HSurface
+I1: Adaptor3d_TopolTool
+PC1: BRepAdaptor_HCurve2d
+Sref1: BRepAdaptor_HSurface
+PCref1: BRepAdaptor_HCurve2d
+Decroch1: bool
+Or1: TopAbs_Orientation
+S2: BRepAdaptor_HSurface
+I2: Adaptor3d_TopolTool
+PC2: BRepAdaptor_HCurve2d
+Sref2: BRepAdaptor_HSurface
+PCref2: BRepAdaptor_HCurve2d
+Decroch2: bool
+Or2: TopAbs_Orientation
+MaxStep: float
+Fleche: float
+TolGuide: float
+First: float
+Last: float
+Inside: bool
+Appro: bool
+Forward: bool
+RecP1: bool
+RecRst1: bool
+RecP2: bool
+RecRst2: bool
+Soldep: math_Vector
+
+Returns
+-------
+None
 ") PerformSurf;
 		virtual void PerformSurf(ChFiDS_SequenceOfSurfData & Data, const opencascade::handle<ChFiDS_HElSpine> & Guide, const opencascade::handle<ChFiDS_Spine> & Spine, const Standard_Integer Choix, const opencascade::handle<BRepAdaptor_HSurface> & S1, const opencascade::handle<Adaptor3d_TopolTool> & I1, const opencascade::handle<BRepAdaptor_HCurve2d> & PC1, const opencascade::handle<BRepAdaptor_HSurface> & Sref1, const opencascade::handle<BRepAdaptor_HCurve2d> & PCref1, Standard_Boolean &OutValue, const TopAbs_Orientation Or1, const opencascade::handle<BRepAdaptor_HSurface> & S2, const opencascade::handle<Adaptor3d_TopolTool> & I2, const opencascade::handle<BRepAdaptor_HCurve2d> & PC2, const opencascade::handle<BRepAdaptor_HSurface> & Sref2, const opencascade::handle<BRepAdaptor_HCurve2d> & PCref2, Standard_Boolean &OutValue, const TopAbs_Orientation Or2, const Standard_Real MaxStep, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP1, const Standard_Boolean RecRst1, const Standard_Boolean RecP2, const Standard_Boolean RecRst2, const math_Vector & Soldep);
 
@@ -977,19 +1033,28 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") ResetContour;
 		%feature("autodoc", "Reset tous rayons du contour ic.
 
-	:param IC:
-	:type IC: int
-	:rtype: None
+Parameters
+----------
+IC: int
+
+Returns
+-------
+None
 ") ResetContour;
 		void ResetContour(const Standard_Integer IC);
 
 		/****************** Sect ******************/
 		%feature("compactdefaultargs") Sect;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:param IS:
-	:type IS: int
-	:rtype: opencascade::handle<ChFiDS_SecHArray1>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+IS: int
+
+Returns
+-------
+opencascade::handle<ChFiDS_SecHArray1>
 ") Sect;
 		opencascade::handle<ChFiDS_SecHArray1> Sect(const Standard_Integer IC, const Standard_Integer IS);
 
@@ -997,13 +1062,15 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") SetDist;
 		%feature("autodoc", "Set the distance <dis> of the fillet contour of index <ic> in the ds with <dis> on <f>. if the face <f> is not one of common faces of an edge of the contour <ic>.
 
-	:param Dis:
-	:type Dis: float
-	:param IC:
-	:type IC: int
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+Dis: float
+IC: int
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") SetDist;
 		void SetDist(const Standard_Real Dis, const Standard_Integer IC, const TopoDS_Face & F);
 
@@ -1011,15 +1078,16 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") SetDistAngle;
 		%feature("autodoc", "Set the distance <dis> and <angle> of the fillet contour of index <ic> in the ds with <dis> on <f>. if the face <f> is not one of common faces of an edge of the contour <ic>.
 
-	:param Dis:
-	:type Dis: float
-	:param Angle:
-	:type Angle: float
-	:param IC:
-	:type IC: int
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+Dis: float
+Angle: float
+IC: int
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") SetDistAngle;
 		void SetDistAngle(const Standard_Real Dis, const Standard_Real Angle, const Standard_Integer IC, const TopoDS_Face & F);
 
@@ -1027,15 +1095,16 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") SetDists;
 		%feature("autodoc", "Set the distances <dis1> and <dis2> of the fillet contour of index <ic> in the ds with <dis1> on <f>. if the face <f> is not one of common faces of an edge of the contour <ic>.
 
-	:param Dis1:
-	:type Dis1: float
-	:param Dis2:
-	:type Dis2: float
-	:param IC:
-	:type IC: int
-	:param F:
-	:type F: TopoDS_Face
-	:rtype: None
+Parameters
+----------
+Dis1: float
+Dis2: float
+IC: int
+F: TopoDS_Face
+
+Returns
+-------
+None
 ") SetDists;
 		void SetDists(const Standard_Real Dis1, const Standard_Real Dis2, const Standard_Integer IC, const TopoDS_Face & F);
 
@@ -1043,191 +1112,144 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") SetMode;
 		%feature("autodoc", "Set the mode of shamfer.
 
-	:param theMode:
-	:type theMode: ChFiDS_ChamfMode
-	:rtype: None
+Parameters
+----------
+theMode: ChFiDS_ChamfMode
+
+Returns
+-------
+None
 ") SetMode;
 		void SetMode(const ChFiDS_ChamfMode theMode);
 
 		/****************** SimulSurf ******************/
 		%feature("compactdefaultargs") SimulSurf;
-		%feature("autodoc", "	:param Data:
-	:type Data: ChFiDS_SurfData
-	:param Guide:
-	:type Guide: ChFiDS_HElSpine
-	:param Spine:
-	:type Spine: ChFiDS_Spine
-	:param Choix:
-	:type Choix: int
-	:param S1:
-	:type S1: BRepAdaptor_HSurface
-	:param I1:
-	:type I1: Adaptor3d_TopolTool
-	:param PC1:
-	:type PC1: BRepAdaptor_HCurve2d
-	:param Sref1:
-	:type Sref1: BRepAdaptor_HSurface
-	:param PCref1:
-	:type PCref1: BRepAdaptor_HCurve2d
-	:param Decroch1:
-	:type Decroch1: bool
-	:param S2:
-	:type S2: BRepAdaptor_HSurface
-	:param I2:
-	:type I2: Adaptor3d_TopolTool
-	:param Or2:
-	:type Or2: TopAbs_Orientation
-	:param Fleche:
-	:type Fleche: float
-	:param TolGuide:
-	:type TolGuide: float
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Inside:
-	:type Inside: bool
-	:param Appro:
-	:type Appro: bool
-	:param Forward:
-	:type Forward: bool
-	:param RecP:
-	:type RecP: bool
-	:param RecS:
-	:type RecS: bool
-	:param RecRst:
-	:type RecRst: bool
-	:param Soldep:
-	:type Soldep: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Data: ChFiDS_SurfData
+Guide: ChFiDS_HElSpine
+Spine: ChFiDS_Spine
+Choix: int
+S1: BRepAdaptor_HSurface
+I1: Adaptor3d_TopolTool
+PC1: BRepAdaptor_HCurve2d
+Sref1: BRepAdaptor_HSurface
+PCref1: BRepAdaptor_HCurve2d
+Decroch1: bool
+S2: BRepAdaptor_HSurface
+I2: Adaptor3d_TopolTool
+Or2: TopAbs_Orientation
+Fleche: float
+TolGuide: float
+First: float
+Last: float
+Inside: bool
+Appro: bool
+Forward: bool
+RecP: bool
+RecS: bool
+RecRst: bool
+Soldep: math_Vector
+
+Returns
+-------
+None
 ") SimulSurf;
 		virtual void SimulSurf(opencascade::handle<ChFiDS_SurfData> & Data, const opencascade::handle<ChFiDS_HElSpine> & Guide, const opencascade::handle<ChFiDS_Spine> & Spine, const Standard_Integer Choix, const opencascade::handle<BRepAdaptor_HSurface> & S1, const opencascade::handle<Adaptor3d_TopolTool> & I1, const opencascade::handle<BRepAdaptor_HCurve2d> & PC1, const opencascade::handle<BRepAdaptor_HSurface> & Sref1, const opencascade::handle<BRepAdaptor_HCurve2d> & PCref1, Standard_Boolean &OutValue, const opencascade::handle<BRepAdaptor_HSurface> & S2, const opencascade::handle<Adaptor3d_TopolTool> & I2, const TopAbs_Orientation Or2, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP, const Standard_Boolean RecS, const Standard_Boolean RecRst, const math_Vector & Soldep);
 
 		/****************** SimulSurf ******************/
 		%feature("compactdefaultargs") SimulSurf;
-		%feature("autodoc", "	:param Data:
-	:type Data: ChFiDS_SurfData
-	:param Guide:
-	:type Guide: ChFiDS_HElSpine
-	:param Spine:
-	:type Spine: ChFiDS_Spine
-	:param Choix:
-	:type Choix: int
-	:param S1:
-	:type S1: BRepAdaptor_HSurface
-	:param I1:
-	:type I1: Adaptor3d_TopolTool
-	:param Or1:
-	:type Or1: TopAbs_Orientation
-	:param S2:
-	:type S2: BRepAdaptor_HSurface
-	:param I2:
-	:type I2: Adaptor3d_TopolTool
-	:param PC2:
-	:type PC2: BRepAdaptor_HCurve2d
-	:param Sref2:
-	:type Sref2: BRepAdaptor_HSurface
-	:param PCref2:
-	:type PCref2: BRepAdaptor_HCurve2d
-	:param Decroch2:
-	:type Decroch2: bool
-	:param Fleche:
-	:type Fleche: float
-	:param TolGuide:
-	:type TolGuide: float
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Inside:
-	:type Inside: bool
-	:param Appro:
-	:type Appro: bool
-	:param Forward:
-	:type Forward: bool
-	:param RecP:
-	:type RecP: bool
-	:param RecS:
-	:type RecS: bool
-	:param RecRst:
-	:type RecRst: bool
-	:param Soldep:
-	:type Soldep: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Data: ChFiDS_SurfData
+Guide: ChFiDS_HElSpine
+Spine: ChFiDS_Spine
+Choix: int
+S1: BRepAdaptor_HSurface
+I1: Adaptor3d_TopolTool
+Or1: TopAbs_Orientation
+S2: BRepAdaptor_HSurface
+I2: Adaptor3d_TopolTool
+PC2: BRepAdaptor_HCurve2d
+Sref2: BRepAdaptor_HSurface
+PCref2: BRepAdaptor_HCurve2d
+Decroch2: bool
+Fleche: float
+TolGuide: float
+First: float
+Last: float
+Inside: bool
+Appro: bool
+Forward: bool
+RecP: bool
+RecS: bool
+RecRst: bool
+Soldep: math_Vector
+
+Returns
+-------
+None
 ") SimulSurf;
 		virtual void SimulSurf(opencascade::handle<ChFiDS_SurfData> & Data, const opencascade::handle<ChFiDS_HElSpine> & Guide, const opencascade::handle<ChFiDS_Spine> & Spine, const Standard_Integer Choix, const opencascade::handle<BRepAdaptor_HSurface> & S1, const opencascade::handle<Adaptor3d_TopolTool> & I1, const TopAbs_Orientation Or1, const opencascade::handle<BRepAdaptor_HSurface> & S2, const opencascade::handle<Adaptor3d_TopolTool> & I2, const opencascade::handle<BRepAdaptor_HCurve2d> & PC2, const opencascade::handle<BRepAdaptor_HSurface> & Sref2, const opencascade::handle<BRepAdaptor_HCurve2d> & PCref2, Standard_Boolean &OutValue, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP, const Standard_Boolean RecS, const Standard_Boolean RecRst, const math_Vector & Soldep);
 
 		/****************** SimulSurf ******************/
 		%feature("compactdefaultargs") SimulSurf;
-		%feature("autodoc", "	:param Data:
-	:type Data: ChFiDS_SurfData
-	:param Guide:
-	:type Guide: ChFiDS_HElSpine
-	:param Spine:
-	:type Spine: ChFiDS_Spine
-	:param Choix:
-	:type Choix: int
-	:param S1:
-	:type S1: BRepAdaptor_HSurface
-	:param I1:
-	:type I1: Adaptor3d_TopolTool
-	:param PC1:
-	:type PC1: BRepAdaptor_HCurve2d
-	:param Sref1:
-	:type Sref1: BRepAdaptor_HSurface
-	:param PCref1:
-	:type PCref1: BRepAdaptor_HCurve2d
-	:param Decroch1:
-	:type Decroch1: bool
-	:param Or1:
-	:type Or1: TopAbs_Orientation
-	:param S2:
-	:type S2: BRepAdaptor_HSurface
-	:param I2:
-	:type I2: Adaptor3d_TopolTool
-	:param PC2:
-	:type PC2: BRepAdaptor_HCurve2d
-	:param Sref2:
-	:type Sref2: BRepAdaptor_HSurface
-	:param PCref2:
-	:type PCref2: BRepAdaptor_HCurve2d
-	:param Decroch2:
-	:type Decroch2: bool
-	:param Or2:
-	:type Or2: TopAbs_Orientation
-	:param Fleche:
-	:type Fleche: float
-	:param TolGuide:
-	:type TolGuide: float
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Inside:
-	:type Inside: bool
-	:param Appro:
-	:type Appro: bool
-	:param Forward:
-	:type Forward: bool
-	:param RecP1:
-	:type RecP1: bool
-	:param RecRst1:
-	:type RecRst1: bool
-	:param RecP2:
-	:type RecP2: bool
-	:param RecRst2:
-	:type RecRst2: bool
-	:param Soldep:
-	:type Soldep: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Data: ChFiDS_SurfData
+Guide: ChFiDS_HElSpine
+Spine: ChFiDS_Spine
+Choix: int
+S1: BRepAdaptor_HSurface
+I1: Adaptor3d_TopolTool
+PC1: BRepAdaptor_HCurve2d
+Sref1: BRepAdaptor_HSurface
+PCref1: BRepAdaptor_HCurve2d
+Decroch1: bool
+Or1: TopAbs_Orientation
+S2: BRepAdaptor_HSurface
+I2: Adaptor3d_TopolTool
+PC2: BRepAdaptor_HCurve2d
+Sref2: BRepAdaptor_HSurface
+PCref2: BRepAdaptor_HCurve2d
+Decroch2: bool
+Or2: TopAbs_Orientation
+Fleche: float
+TolGuide: float
+First: float
+Last: float
+Inside: bool
+Appro: bool
+Forward: bool
+RecP1: bool
+RecRst1: bool
+RecP2: bool
+RecRst2: bool
+Soldep: math_Vector
+
+Returns
+-------
+None
 ") SimulSurf;
 		virtual void SimulSurf(opencascade::handle<ChFiDS_SurfData> & Data, const opencascade::handle<ChFiDS_HElSpine> & Guide, const opencascade::handle<ChFiDS_Spine> & Spine, const Standard_Integer Choix, const opencascade::handle<BRepAdaptor_HSurface> & S1, const opencascade::handle<Adaptor3d_TopolTool> & I1, const opencascade::handle<BRepAdaptor_HCurve2d> & PC1, const opencascade::handle<BRepAdaptor_HSurface> & Sref1, const opencascade::handle<BRepAdaptor_HCurve2d> & PCref1, Standard_Boolean &OutValue, const TopAbs_Orientation Or1, const opencascade::handle<BRepAdaptor_HSurface> & S2, const opencascade::handle<Adaptor3d_TopolTool> & I2, const opencascade::handle<BRepAdaptor_HCurve2d> & PC2, const opencascade::handle<BRepAdaptor_HSurface> & Sref2, const opencascade::handle<BRepAdaptor_HCurve2d> & PCref2, Standard_Boolean &OutValue, const TopAbs_Orientation Or2, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP1, const Standard_Boolean RecRst1, const Standard_Boolean RecP2, const Standard_Boolean RecRst2, const math_Vector & Soldep);
 
 		/****************** Simulate ******************/
 		%feature("compactdefaultargs") Simulate;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+
+Returns
+-------
+None
 ") Simulate;
 		void Simulate(const Standard_Integer IC);
 
@@ -1249,9 +1271,13 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Initialisation of a contour with the first edge (the following are found by propagation). attention, you need to start with setradius.
 
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Add;
 		void Add(const TopoDS_Edge & E);
 
@@ -1259,23 +1285,32 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Initialisation of the constant vector the corresponding 1st edge.
 
-	:param Radius:
-	:type Radius: float
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+Radius: float
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") Add;
 		void Add(const Standard_Real Radius, const TopoDS_Edge & E);
 
 		/****************** ChFi3d_FilBuilder ******************/
 		%feature("compactdefaultargs") ChFi3d_FilBuilder;
-		%feature("autodoc", "	:param S:
-	:type S: TopoDS_Shape
-	:param FShape: default value is ChFi3d_Rational
-	:type FShape: ChFi3d_FilletShape
-	:param Ta: default value is 1.0e-2
-	:type Ta: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+FShape: ChFi3d_FilletShape,optional
+	default value is ChFi3d_Rational
+Ta: float,optional
+	default value is 1.0e-2
+
+Returns
+-------
+None
 ") ChFi3d_FilBuilder;
 		 ChFi3d_FilBuilder(const TopoDS_Shape & S, const ChFi3d_FilletShape FShape = ChFi3d_Rational, const Standard_Real Ta = 1.0e-2);
 
@@ -1283,15 +1318,16 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") GetBounds;
 		%feature("autodoc", "Returns in first and last les extremities of the part of variable vector framing e, returns false if e is flagged as edge constant.
 
-	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:rtype: bool
+Parameters
+----------
+IC: int
+E: TopoDS_Edge
+First: float
+Last: float
+
+Returns
+-------
+bool
 ") GetBounds;
 		Standard_Boolean GetBounds(const Standard_Integer IC, const TopoDS_Edge & E, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1299,7 +1335,9 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") GetFilletShape;
 		%feature("autodoc", "Returns the type of fillet surface.
 
-	:rtype: ChFi3d_FilletShape
+Returns
+-------
+ChFi3d_FilletShape
 ") GetFilletShape;
 		ChFi3d_FilletShape GetFilletShape();
 
@@ -1307,11 +1345,14 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") GetLaw;
 		%feature("autodoc", "Returns the rule of elementary evolution of the part to variable vector framing e, returns a rule zero if e is flagged as edge constant.
 
-	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: opencascade::handle<Law_Function>
+Parameters
+----------
+IC: int
+E: TopoDS_Edge
+
+Returns
+-------
+opencascade::handle<Law_Function>
 ") GetLaw;
 		opencascade::handle<Law_Function> GetLaw(const Standard_Integer IC, const TopoDS_Edge & E);
 
@@ -1319,9 +1360,13 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") IsConstant;
 		%feature("autodoc", "Returns true the contour is flaged as edge constant.
 
-	:param IC:
-	:type IC: int
-	:rtype: bool
+Parameters
+----------
+IC: int
+
+Returns
+-------
+bool
 ") IsConstant;
 		Standard_Boolean IsConstant(const Standard_Integer IC);
 
@@ -1329,19 +1374,28 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") IsConstant;
 		%feature("autodoc", "Returns true e is flagged as edge constant.
 
-	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: bool
+Parameters
+----------
+IC: int
+E: TopoDS_Edge
+
+Returns
+-------
+bool
 ") IsConstant;
 		Standard_Boolean IsConstant(const Standard_Integer IC, const TopoDS_Edge & E);
 
 		/****************** NbSurf ******************/
 		%feature("compactdefaultargs") NbSurf;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+
+Returns
+-------
+int
 ") NbSurf;
 		Standard_Integer NbSurf(const Standard_Integer IC);
 
@@ -1349,9 +1403,13 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") Radius;
 		%feature("autodoc", "Returns the vector if the contour is flagged as edge constant.
 
-	:param IC:
-	:type IC: int
-	:rtype: float
+Parameters
+----------
+IC: int
+
+Returns
+-------
+float
 ") Radius;
 		Standard_Real Radius(const Standard_Integer IC);
 
@@ -1359,11 +1417,14 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") Radius;
 		%feature("autodoc", "Returns the vector if e is flagged as edge constant.
 
-	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: float
+Parameters
+----------
+IC: int
+E: TopoDS_Edge
+
+Returns
+-------
+float
 ") Radius;
 		Standard_Real Radius(const Standard_Integer IC, const TopoDS_Edge & E);
 
@@ -1371,19 +1432,28 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") ResetContour;
 		%feature("autodoc", "Reset all vectors of contour ic.
 
-	:param IC:
-	:type IC: int
-	:rtype: None
+Parameters
+----------
+IC: int
+
+Returns
+-------
+None
 ") ResetContour;
 		void ResetContour(const Standard_Integer IC);
 
 		/****************** Sect ******************/
 		%feature("compactdefaultargs") Sect;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:param IS:
-	:type IS: int
-	:rtype: opencascade::handle<ChFiDS_SecHArray1>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+IS: int
+
+Returns
+-------
+opencascade::handle<ChFiDS_SecHArray1>
 ") Sect;
 		opencascade::handle<ChFiDS_SecHArray1> Sect(const Standard_Integer IC, const Standard_Integer IS);
 
@@ -1391,9 +1461,13 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") SetFilletShape;
 		%feature("autodoc", "Sets the type of fillet surface.
 
-	:param FShape:
-	:type FShape: ChFi3d_FilletShape
-	:rtype: None
+Parameters
+----------
+FShape: ChFi3d_FilletShape
+
+Returns
+-------
+None
 ") SetFilletShape;
 		void SetFilletShape(const ChFi3d_FilletShape FShape);
 
@@ -1401,13 +1475,15 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") SetLaw;
 		%feature("autodoc", "Sets the rule of elementary evolution of the part to variable vector framing e.
 
-	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:param L:
-	:type L: Law_Function
-	:rtype: None
+Parameters
+----------
+IC: int
+E: TopoDS_Edge
+L: Law_Function
+
+Returns
+-------
+None
 ") SetLaw;
 		void SetLaw(const Standard_Integer IC, const TopoDS_Edge & E, const opencascade::handle<Law_Function> & L);
 
@@ -1415,13 +1491,15 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") SetRadius;
 		%feature("autodoc", "Set the radius of the contour of index ic.
 
-	:param C:
-	:type C: Law_Function
-	:param IC:
-	:type IC: int
-	:param IinC:
-	:type IinC: int
-	:rtype: None
+Parameters
+----------
+C: Law_Function
+IC: int
+IinC: int
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const opencascade::handle<Law_Function> & C, const Standard_Integer IC, const Standard_Integer IinC);
 
@@ -1429,13 +1507,15 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") SetRadius;
 		%feature("autodoc", "Set a constant on edge e of the contour of index ic. since then e is flagged as constant.
 
-	:param Radius:
-	:type Radius: float
-	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+Radius: float
+IC: int
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Edge & E);
 
@@ -1443,13 +1523,15 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") SetRadius;
 		%feature("autodoc", "Set a vector on vertex v of the contour of index ic.
 
-	:param Radius:
-	:type Radius: float
-	:param IC:
-	:type IC: int
-	:param V:
-	:type V: TopoDS_Vertex
-	:rtype: None
+Parameters
+----------
+Radius: float
+IC: int
+V: TopoDS_Vertex
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Vertex & V);
 
@@ -1457,21 +1539,29 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") SetRadius;
 		%feature("autodoc", "Set a vertex on the point of parametre u in the edge iinc of the contour of index ic.
 
-	:param UandR:
-	:type UandR: gp_XY
-	:param IC:
-	:type IC: int
-	:param IinC:
-	:type IinC: int
-	:rtype: None
+Parameters
+----------
+UandR: gp_XY
+IC: int
+IinC: int
+
+Returns
+-------
+None
 ") SetRadius;
 		void SetRadius(const gp_XY & UandR, const Standard_Integer IC, const Standard_Integer IinC);
 
 		/****************** Simulate ******************/
 		%feature("compactdefaultargs") Simulate;
-		%feature("autodoc", "	:param IC:
-	:type IC: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IC: int
+
+Returns
+-------
+None
 ") Simulate;
 		void Simulate(const Standard_Integer IC);
 
@@ -1479,11 +1569,14 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") UnSet;
 		%feature("autodoc", "Extracts the flag constant and the vector of edge e.
 
-	:param IC:
-	:type IC: int
-	:param E:
-	:type E: TopoDS_Edge
-	:rtype: None
+Parameters
+----------
+IC: int
+E: TopoDS_Edge
+
+Returns
+-------
+None
 ") UnSet;
 		void UnSet(const Standard_Integer IC, const TopoDS_Edge & E);
 
@@ -1491,11 +1584,14 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		%feature("compactdefaultargs") UnSet;
 		%feature("autodoc", "Extracts the vector of the vertex v.
 
-	:param IC:
-	:type IC: int
-	:param V:
-	:type V: TopoDS_Vertex
-	:rtype: None
+Parameters
+----------
+IC: int
+V: TopoDS_Vertex
+
+Returns
+-------
+None
 ") UnSet;
 		void UnSet(const Standard_Integer IC, const TopoDS_Vertex & V);
 

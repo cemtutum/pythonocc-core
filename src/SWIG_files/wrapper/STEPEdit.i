@@ -85,7 +85,9 @@ class STEPEdit {
 		%feature("compactdefaultargs") NewModel;
 		%feature("autodoc", "Returns a new empty stepmodel fit for step i.e. with its header determined from protocol.
 
-	:rtype: opencascade::handle<StepData_StepModel>
+Returns
+-------
+opencascade::handle<StepData_StepModel>
 ") NewModel;
 		static opencascade::handle<StepData_StepModel> NewModel();
 
@@ -93,7 +95,9 @@ class STEPEdit {
 		%feature("compactdefaultargs") NewSelectPlacedItem;
 		%feature("autodoc", "Creates a selection for placed items, i.e. mappeditem or contextdependentshaperepresentation, which itself refers to a representationrelationship with possible subtypes (shape... and/or ...withtransformation) by default in the whole stepmodel.
 
-	:rtype: opencascade::handle<IFSelect_SelectSignature>
+Returns
+-------
+opencascade::handle<IFSelect_SelectSignature>
 ") NewSelectPlacedItem;
 		static opencascade::handle<IFSelect_SelectSignature> NewSelectPlacedItem();
 
@@ -101,7 +105,9 @@ class STEPEdit {
 		%feature("compactdefaultargs") NewSelectSDR;
 		%feature("autodoc", "Creates a selection for shapedefinitionrepresentation by default searches among root entities.
 
-	:rtype: opencascade::handle<IFSelect_SelectSignature>
+Returns
+-------
+opencascade::handle<IFSelect_SelectSignature>
 ") NewSelectSDR;
 		static opencascade::handle<IFSelect_SelectSignature> NewSelectSDR();
 
@@ -109,7 +115,9 @@ class STEPEdit {
 		%feature("compactdefaultargs") NewSelectShapeRepr;
 		%feature("autodoc", "Creates a selection for shaperepresentation and its sub-types, plus contextdependentshaperepresentation (which is not a sub-type of shaperepresentation) by default in the whole stepmodel.
 
-	:rtype: opencascade::handle<IFSelect_SelectSignature>
+Returns
+-------
+opencascade::handle<IFSelect_SelectSignature>
 ") NewSelectShapeRepr;
 		static opencascade::handle<IFSelect_SelectSignature> NewSelectShapeRepr();
 
@@ -117,7 +125,9 @@ class STEPEdit {
 		%feature("compactdefaultargs") Protocol;
 		%feature("autodoc", "Returns a protocol fit for step (creates the first time).
 
-	:rtype: opencascade::handle<Interface_Protocol>
+Returns
+-------
+opencascade::handle<Interface_Protocol>
 ") Protocol;
 		static opencascade::handle<Interface_Protocol> Protocol();
 
@@ -125,7 +135,9 @@ class STEPEdit {
 		%feature("compactdefaultargs") SignType;
 		%feature("autodoc", "Returns a signtype fit for step (creates the first time).
 
-	:rtype: opencascade::handle<IFSelect_Signature>
+Returns
+-------
+opencascade::handle<IFSelect_Signature>
 ") SignType;
 		static opencascade::handle<IFSelect_Signature> SignType();
 
@@ -145,55 +157,82 @@ class STEPEdit_EditContext : public IFSelect_Editor {
 	public:
 		/****************** Apply ******************/
 		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "	:param form:
-	:type form: IFSelect_EditForm
-	:param ent:
-	:type ent: Standard_Transient
-	:param model:
-	:type model: Interface_InterfaceModel
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+form: IFSelect_EditForm
+ent: Standard_Transient
+model: Interface_InterfaceModel
+
+Returns
+-------
+bool
 ") Apply;
 		Standard_Boolean Apply(const opencascade::handle<IFSelect_EditForm> & form, const opencascade::handle<Standard_Transient> & ent, const opencascade::handle<Interface_InterfaceModel> & model);
 
 		/****************** Label ******************/
 		%feature("compactdefaultargs") Label;
-		%feature("autodoc", "	:rtype: TCollection_AsciiString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_AsciiString
 ") Label;
 		TCollection_AsciiString Label();
 
 		/****************** Load ******************/
 		%feature("compactdefaultargs") Load;
-		%feature("autodoc", "	:param form:
-	:type form: IFSelect_EditForm
-	:param ent:
-	:type ent: Standard_Transient
-	:param model:
-	:type model: Interface_InterfaceModel
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+form: IFSelect_EditForm
+ent: Standard_Transient
+model: Interface_InterfaceModel
+
+Returns
+-------
+bool
 ") Load;
 		Standard_Boolean Load(const opencascade::handle<IFSelect_EditForm> & form, const opencascade::handle<Standard_Transient> & ent, const opencascade::handle<Interface_InterfaceModel> & model);
 
 		/****************** Recognize ******************/
 		%feature("compactdefaultargs") Recognize;
-		%feature("autodoc", "	:param form:
-	:type form: IFSelect_EditForm
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+form: IFSelect_EditForm
+
+Returns
+-------
+bool
 ") Recognize;
 		Standard_Boolean Recognize(const opencascade::handle<IFSelect_EditForm> & form);
 
 		/****************** STEPEdit_EditContext ******************/
 		%feature("compactdefaultargs") STEPEdit_EditContext;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPEdit_EditContext;
 		 STEPEdit_EditContext();
 
 		/****************** StringValue ******************/
 		%feature("compactdefaultargs") StringValue;
-		%feature("autodoc", "	:param form:
-	:type form: IFSelect_EditForm
-	:param num:
-	:type num: int
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+form: IFSelect_EditForm
+num: int
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") StringValue;
 		opencascade::handle<TCollection_HAsciiString> StringValue(const opencascade::handle<IFSelect_EditForm> & form, const Standard_Integer num);
 
@@ -215,55 +254,82 @@ class STEPEdit_EditSDR : public IFSelect_Editor {
 	public:
 		/****************** Apply ******************/
 		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "	:param form:
-	:type form: IFSelect_EditForm
-	:param ent:
-	:type ent: Standard_Transient
-	:param model:
-	:type model: Interface_InterfaceModel
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+form: IFSelect_EditForm
+ent: Standard_Transient
+model: Interface_InterfaceModel
+
+Returns
+-------
+bool
 ") Apply;
 		Standard_Boolean Apply(const opencascade::handle<IFSelect_EditForm> & form, const opencascade::handle<Standard_Transient> & ent, const opencascade::handle<Interface_InterfaceModel> & model);
 
 		/****************** Label ******************/
 		%feature("compactdefaultargs") Label;
-		%feature("autodoc", "	:rtype: TCollection_AsciiString
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_AsciiString
 ") Label;
 		TCollection_AsciiString Label();
 
 		/****************** Load ******************/
 		%feature("compactdefaultargs") Load;
-		%feature("autodoc", "	:param form:
-	:type form: IFSelect_EditForm
-	:param ent:
-	:type ent: Standard_Transient
-	:param model:
-	:type model: Interface_InterfaceModel
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+form: IFSelect_EditForm
+ent: Standard_Transient
+model: Interface_InterfaceModel
+
+Returns
+-------
+bool
 ") Load;
 		Standard_Boolean Load(const opencascade::handle<IFSelect_EditForm> & form, const opencascade::handle<Standard_Transient> & ent, const opencascade::handle<Interface_InterfaceModel> & model);
 
 		/****************** Recognize ******************/
 		%feature("compactdefaultargs") Recognize;
-		%feature("autodoc", "	:param form:
-	:type form: IFSelect_EditForm
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+form: IFSelect_EditForm
+
+Returns
+-------
+bool
 ") Recognize;
 		Standard_Boolean Recognize(const opencascade::handle<IFSelect_EditForm> & form);
 
 		/****************** STEPEdit_EditSDR ******************/
 		%feature("compactdefaultargs") STEPEdit_EditSDR;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPEdit_EditSDR;
 		 STEPEdit_EditSDR();
 
 		/****************** StringValue ******************/
 		%feature("compactdefaultargs") StringValue;
-		%feature("autodoc", "	:param form:
-	:type form: IFSelect_EditForm
-	:param num:
-	:type num: int
-	:rtype: opencascade::handle<TCollection_HAsciiString>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+form: IFSelect_EditForm
+num: int
+
+Returns
+-------
+opencascade::handle<TCollection_HAsciiString>
 ") StringValue;
 		opencascade::handle<TCollection_HAsciiString> StringValue(const opencascade::handle<IFSelect_EditForm> & form, const Standard_Integer num);
 

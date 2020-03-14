@@ -77,31 +77,24 @@ class AdvApprox_ApproxAFunction {
 		%feature("compactdefaultargs") AdvApprox_ApproxAFunction;
 		%feature("autodoc", "Constructs approximator tool. //! warning: the func should be valid reference to object of type inherited from class evaluatorfunction from approx with life time longer than that of the approximator tool; //! the result should be formatted in the following way : <--num1dss--> <--2 * num2dss--> <--3 * num3dss--> r[0] .... r[num1dss].....  r[dimension-1] //! the order in which each subspace appears should be consistent with the tolerances given in the create function and the results will be given in that order as well that is : curve2d(n) will correspond to the nth entry described by num2dss, curve(n) will correspond to the nth entry described by num3dss the same type of schema applies to the poles1d, poles2d and poles.
 
-	:param Num1DSS:
-	:type Num1DSS: int
-	:param Num2DSS:
-	:type Num2DSS: int
-	:param Num3DSS:
-	:type Num3DSS: int
-	:param OneDTol:
-	:type OneDTol: TColStd_HArray1OfReal
-	:param TwoDTol:
-	:type TwoDTol: TColStd_HArray1OfReal
-	:param ThreeDTol:
-	:type ThreeDTol: TColStd_HArray1OfReal
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Continuity:
-	:type Continuity: GeomAbs_Shape
-	:param MaxDeg:
-	:type MaxDeg: int
-	:param MaxSeg:
-	:type MaxSeg: int
-	:param Func:
-	:type Func: AdvApprox_EvaluatorFunction
-	:rtype: None
+Parameters
+----------
+Num1DSS: int
+Num2DSS: int
+Num3DSS: int
+OneDTol: TColStd_HArray1OfReal
+TwoDTol: TColStd_HArray1OfReal
+ThreeDTol: TColStd_HArray1OfReal
+First: float
+Last: float
+Continuity: GeomAbs_Shape
+MaxDeg: int
+MaxSeg: int
+Func: AdvApprox_EvaluatorFunction
+
+Returns
+-------
+None
 ") AdvApprox_ApproxAFunction;
 		 AdvApprox_ApproxAFunction(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const opencascade::handle<TColStd_HArray1OfReal> & OneDTol, const opencascade::handle<TColStd_HArray1OfReal> & TwoDTol, const opencascade::handle<TColStd_HArray1OfReal> & ThreeDTol, const Standard_Real First, const Standard_Real Last, const GeomAbs_Shape Continuity, const Standard_Integer MaxDeg, const Standard_Integer MaxSeg, const AdvApprox_EvaluatorFunction & Func);
 
@@ -109,77 +102,57 @@ class AdvApprox_ApproxAFunction {
 		%feature("compactdefaultargs") AdvApprox_ApproxAFunction;
 		%feature("autodoc", "Approximation with user methode of cutting.
 
-	:param Num1DSS:
-	:type Num1DSS: int
-	:param Num2DSS:
-	:type Num2DSS: int
-	:param Num3DSS:
-	:type Num3DSS: int
-	:param OneDTol:
-	:type OneDTol: TColStd_HArray1OfReal
-	:param TwoDTol:
-	:type TwoDTol: TColStd_HArray1OfReal
-	:param ThreeDTol:
-	:type ThreeDTol: TColStd_HArray1OfReal
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Continuity:
-	:type Continuity: GeomAbs_Shape
-	:param MaxDeg:
-	:type MaxDeg: int
-	:param MaxSeg:
-	:type MaxSeg: int
-	:param Func:
-	:type Func: AdvApprox_EvaluatorFunction
-	:param CutTool:
-	:type CutTool: AdvApprox_Cutting
-	:rtype: None
+Parameters
+----------
+Num1DSS: int
+Num2DSS: int
+Num3DSS: int
+OneDTol: TColStd_HArray1OfReal
+TwoDTol: TColStd_HArray1OfReal
+ThreeDTol: TColStd_HArray1OfReal
+First: float
+Last: float
+Continuity: GeomAbs_Shape
+MaxDeg: int
+MaxSeg: int
+Func: AdvApprox_EvaluatorFunction
+CutTool: AdvApprox_Cutting
+
+Returns
+-------
+None
 ") AdvApprox_ApproxAFunction;
 		 AdvApprox_ApproxAFunction(const Standard_Integer Num1DSS, const Standard_Integer Num2DSS, const Standard_Integer Num3DSS, const opencascade::handle<TColStd_HArray1OfReal> & OneDTol, const opencascade::handle<TColStd_HArray1OfReal> & TwoDTol, const opencascade::handle<TColStd_HArray1OfReal> & ThreeDTol, const Standard_Real First, const Standard_Real Last, const GeomAbs_Shape Continuity, const Standard_Integer MaxDeg, const Standard_Integer MaxSeg, const AdvApprox_EvaluatorFunction & Func, const AdvApprox_Cutting & CutTool);
 
 		/****************** Approximation ******************/
 		%feature("compactdefaultargs") Approximation;
-		%feature("autodoc", "	:param TotalDimension:
-	:type TotalDimension: int
-	:param TotalNumSS:
-	:type TotalNumSS: int
-	:param LocalDimension:
-	:type LocalDimension: TColStd_Array1OfInteger
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param Evaluator:
-	:type Evaluator: AdvApprox_EvaluatorFunction
-	:param CutTool:
-	:type CutTool: AdvApprox_Cutting
-	:param ContinuityOrder:
-	:type ContinuityOrder: int
-	:param NumMaxCoeffs:
-	:type NumMaxCoeffs: int
-	:param MaxSegments:
-	:type MaxSegments: int
-	:param TolerancesArray:
-	:type TolerancesArray: TColStd_Array1OfReal
-	:param code_precis:
-	:type code_precis: int
-	:param NumCurves:
-	:type NumCurves: int
-	:param NumCoeffPerCurveArray:
-	:type NumCoeffPerCurveArray: TColStd_Array1OfInteger
-	:param LocalCoefficientArray:
-	:type LocalCoefficientArray: TColStd_Array1OfReal
-	:param IntervalsArray:
-	:type IntervalsArray: TColStd_Array1OfReal
-	:param ErrorMaxArray:
-	:type ErrorMaxArray: TColStd_Array1OfReal
-	:param AverageErrorArray:
-	:type AverageErrorArray: TColStd_Array1OfReal
-	:param ErrorCode:
-	:type ErrorCode: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TotalDimension: int
+TotalNumSS: int
+LocalDimension: TColStd_Array1OfInteger
+First: float
+Last: float
+Evaluator: AdvApprox_EvaluatorFunction
+CutTool: AdvApprox_Cutting
+ContinuityOrder: int
+NumMaxCoeffs: int
+MaxSegments: int
+TolerancesArray: TColStd_Array1OfReal
+code_precis: int
+NumCurves: int
+NumCoeffPerCurveArray: TColStd_Array1OfInteger
+LocalCoefficientArray: TColStd_Array1OfReal
+IntervalsArray: TColStd_Array1OfReal
+ErrorMaxArray: TColStd_Array1OfReal
+AverageErrorArray: TColStd_Array1OfReal
+ErrorCode: int
+
+Returns
+-------
+None
 ") Approximation;
 		static void Approximation(const Standard_Integer TotalDimension, const Standard_Integer TotalNumSS, const TColStd_Array1OfInteger & LocalDimension, const Standard_Real First, const Standard_Real Last, AdvApprox_EvaluatorFunction & Evaluator, const AdvApprox_Cutting & CutTool, const Standard_Integer ContinuityOrder, const Standard_Integer NumMaxCoeffs, const Standard_Integer MaxSegments, const TColStd_Array1OfReal & TolerancesArray, const Standard_Integer code_precis, Standard_Integer &OutValue, TColStd_Array1OfInteger & NumCoeffPerCurveArray, TColStd_Array1OfReal & LocalCoefficientArray, TColStd_Array1OfReal & IntervalsArray, TColStd_Array1OfReal & ErrorMaxArray, TColStd_Array1OfReal & AverageErrorArray, Standard_Integer &OutValue);
 
@@ -187,25 +160,38 @@ class AdvApprox_ApproxAFunction {
 		%feature("compactdefaultargs") AverageError;
 		%feature("autodoc", "Returns the error as is in the algorithms.
 
-	:param Dimension:
-	:type Dimension: int
-	:rtype: opencascade::handle<TColStd_HArray1OfReal>
+Parameters
+----------
+Dimension: int
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfReal>
 ") AverageError;
 		opencascade::handle<TColStd_HArray1OfReal> AverageError(const Standard_Integer Dimension);
 
 		/****************** AverageError ******************/
 		%feature("compactdefaultargs") AverageError;
-		%feature("autodoc", "	:param Dimension:
-	:type Dimension: int
-	:param Index:
-	:type Index: int
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Dimension: int
+Index: int
+
+Returns
+-------
+float
 ") AverageError;
 		Standard_Real AverageError(const Standard_Integer Dimension, const Standard_Integer Index);
 
 		/****************** Degree ******************/
 		%feature("compactdefaultargs") Degree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Degree;
 		Standard_Integer Degree();
 
@@ -219,19 +205,31 @@ class AdvApprox_ApproxAFunction {
         };
 		/****************** HasResult ******************/
 		%feature("compactdefaultargs") HasResult;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") HasResult;
 		Standard_Boolean HasResult();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
 		/****************** Knots ******************/
 		%feature("compactdefaultargs") Knots;
-		%feature("autodoc", "	:rtype: opencascade::handle<TColStd_HArray1OfReal>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfReal>
 ") Knots;
 		opencascade::handle<TColStd_HArray1OfReal> Knots();
 
@@ -239,31 +237,48 @@ class AdvApprox_ApproxAFunction {
 		%feature("compactdefaultargs") MaxError;
 		%feature("autodoc", "Returns the error as is in the algorithms.
 
-	:param Dimension:
-	:type Dimension: int
-	:rtype: opencascade::handle<TColStd_HArray1OfReal>
+Parameters
+----------
+Dimension: int
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfReal>
 ") MaxError;
 		opencascade::handle<TColStd_HArray1OfReal> MaxError(const Standard_Integer Dimension);
 
 		/****************** MaxError ******************/
 		%feature("compactdefaultargs") MaxError;
-		%feature("autodoc", "	:param Dimension:
-	:type Dimension: int
-	:param Index:
-	:type Index: int
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Dimension: int
+Index: int
+
+Returns
+-------
+float
 ") MaxError;
 		Standard_Real MaxError(const Standard_Integer Dimension, const Standard_Integer Index);
 
 		/****************** Multiplicities ******************/
 		%feature("compactdefaultargs") Multiplicities;
-		%feature("autodoc", "	:rtype: opencascade::handle<TColStd_HArray1OfInteger>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfInteger>
 ") Multiplicities;
 		opencascade::handle<TColStd_HArray1OfInteger> Multiplicities();
 
 		/****************** NbKnots ******************/
 		%feature("compactdefaultargs") NbKnots;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbKnots;
 		Standard_Integer NbKnots();
 
@@ -271,15 +286,23 @@ class AdvApprox_ApproxAFunction {
 		%feature("compactdefaultargs") NbPoles;
 		%feature("autodoc", "As the name says.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoles;
 		Standard_Integer NbPoles();
 
 		/****************** NumSubSpaces ******************/
 		%feature("compactdefaultargs") NumSubSpaces;
-		%feature("autodoc", "	:param Dimension:
-	:type Dimension: int
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Dimension: int
+
+Returns
+-------
+int
 ") NumSubSpaces;
 		Standard_Integer NumSubSpaces(const Standard_Integer Dimension);
 
@@ -287,7 +310,9 @@ class AdvApprox_ApproxAFunction {
 		%feature("compactdefaultargs") Poles;
 		%feature("autodoc", "-- returns the poles from the algorithms as is.
 
-	:rtype: opencascade::handle<TColgp_HArray2OfPnt>
+Returns
+-------
+opencascade::handle<TColgp_HArray2OfPnt>
 ") Poles;
 		opencascade::handle<TColgp_HArray2OfPnt> Poles();
 
@@ -295,11 +320,14 @@ class AdvApprox_ApproxAFunction {
 		%feature("compactdefaultargs") Poles;
 		%feature("autodoc", "Returns the poles at index from the 3d subspace.
 
-	:param Index:
-	:type Index: int
-	:param P:
-	:type P: TColgp_Array1OfPnt
-	:rtype: None
+Parameters
+----------
+Index: int
+P: TColgp_Array1OfPnt
+
+Returns
+-------
+None
 ") Poles;
 		void Poles(const Standard_Integer Index, TColgp_Array1OfPnt & P);
 
@@ -307,7 +335,9 @@ class AdvApprox_ApproxAFunction {
 		%feature("compactdefaultargs") Poles1d;
 		%feature("autodoc", "Returns the poles from the algorithms as is.
 
-	:rtype: opencascade::handle<TColStd_HArray2OfReal>
+Returns
+-------
+opencascade::handle<TColStd_HArray2OfReal>
 ") Poles1d;
 		opencascade::handle<TColStd_HArray2OfReal> Poles1d();
 
@@ -315,11 +345,14 @@ class AdvApprox_ApproxAFunction {
 		%feature("compactdefaultargs") Poles1d;
 		%feature("autodoc", "Returns the poles at index from the 1d subspace.
 
-	:param Index:
-	:type Index: int
-	:param P:
-	:type P: TColStd_Array1OfReal
-	:rtype: None
+Parameters
+----------
+Index: int
+P: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Poles1d;
 		void Poles1d(const Standard_Integer Index, TColStd_Array1OfReal & P);
 
@@ -327,7 +360,9 @@ class AdvApprox_ApproxAFunction {
 		%feature("compactdefaultargs") Poles2d;
 		%feature("autodoc", "Returns the poles from the algorithms as is.
 
-	:rtype: opencascade::handle<TColgp_HArray2OfPnt2d>
+Returns
+-------
+opencascade::handle<TColgp_HArray2OfPnt2d>
 ") Poles2d;
 		opencascade::handle<TColgp_HArray2OfPnt2d> Poles2d();
 
@@ -335,11 +370,14 @@ class AdvApprox_ApproxAFunction {
 		%feature("compactdefaultargs") Poles2d;
 		%feature("autodoc", "Returns the poles at index from the 2d subspace.
 
-	:param Index:
-	:type Index: int
-	:param P:
-	:type P: TColgp_Array1OfPnt2d
-	:rtype: None
+Parameters
+----------
+Index: int
+P: TColgp_Array1OfPnt2d
+
+Returns
+-------
+None
 ") Poles2d;
 		void Poles2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & P);
 
@@ -360,13 +398,17 @@ class AdvApprox_Cutting {
 	public:
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "	:param a:
-	:type a: float
-	:param b:
-	:type b: float
-	:param cuttingvalue:
-	:type cuttingvalue: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+a: float
+b: float
+cuttingvalue: float
+
+Returns
+-------
+bool
 ") Value;
 		virtual Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue);
 
@@ -389,29 +431,35 @@ class AdvApprox_SimpleApprox {
 	public:
 		/****************** AdvApprox_SimpleApprox ******************/
 		%feature("compactdefaultargs") AdvApprox_SimpleApprox;
-		%feature("autodoc", "	:param TotalDimension:
-	:type TotalDimension: int
-	:param TotalNumSS:
-	:type TotalNumSS: int
-	:param Continuity:
-	:type Continuity: GeomAbs_Shape
-	:param WorkDegree:
-	:type WorkDegree: int
-	:param NbGaussPoints:
-	:type NbGaussPoints: int
-	:param JacobiBase:
-	:type JacobiBase: PLib_JacobiPolynomial
-	:param Func:
-	:type Func: AdvApprox_EvaluatorFunction
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TotalDimension: int
+TotalNumSS: int
+Continuity: GeomAbs_Shape
+WorkDegree: int
+NbGaussPoints: int
+JacobiBase: PLib_JacobiPolynomial
+Func: AdvApprox_EvaluatorFunction
+
+Returns
+-------
+None
 ") AdvApprox_SimpleApprox;
 		 AdvApprox_SimpleApprox(const Standard_Integer TotalDimension, const Standard_Integer TotalNumSS, const GeomAbs_Shape Continuity, const Standard_Integer WorkDegree, const Standard_Integer NbGaussPoints, const opencascade::handle<PLib_JacobiPolynomial> & JacobiBase, const AdvApprox_EvaluatorFunction & Func);
 
 		/****************** AverageError ******************/
 		%feature("compactdefaultargs") AverageError;
-		%feature("autodoc", "	:param Index:
-	:type Index: int
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
 ") AverageError;
 		Standard_Real AverageError(const Standard_Integer Index);
 
@@ -419,19 +467,29 @@ class AdvApprox_SimpleApprox {
 		%feature("compactdefaultargs") Coefficients;
 		%feature("autodoc", "Returns the coefficients in the jacobi base.
 
-	:rtype: opencascade::handle<TColStd_HArray1OfReal>
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfReal>
 ") Coefficients;
 		opencascade::handle<TColStd_HArray1OfReal> Coefficients();
 
 		/****************** Degree ******************/
 		%feature("compactdefaultargs") Degree;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Degree;
 		Standard_Integer Degree();
 
 		/****************** DifTab ******************/
 		%feature("compactdefaultargs") DifTab;
-		%feature("autodoc", "	:rtype: opencascade::handle<TColStd_HArray1OfReal>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfReal>
 ") DifTab;
 		opencascade::handle<TColStd_HArray1OfReal> DifTab();
 
@@ -447,13 +505,19 @@ class AdvApprox_SimpleApprox {
 		%feature("compactdefaultargs") FirstConstr;
 		%feature("autodoc", "Returns the constraints at first.
 
-	:rtype: opencascade::handle<TColStd_HArray2OfReal>
+Returns
+-------
+opencascade::handle<TColStd_HArray2OfReal>
 ") FirstConstr;
 		opencascade::handle<TColStd_HArray2OfReal> FirstConstr();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -461,15 +525,23 @@ class AdvApprox_SimpleApprox {
 		%feature("compactdefaultargs") LastConstr;
 		%feature("autodoc", "Returns the constraints at last.
 
-	:rtype: opencascade::handle<TColStd_HArray2OfReal>
+Returns
+-------
+opencascade::handle<TColStd_HArray2OfReal>
 ") LastConstr;
 		opencascade::handle<TColStd_HArray2OfReal> LastConstr();
 
 		/****************** MaxError ******************/
 		%feature("compactdefaultargs") MaxError;
-		%feature("autodoc", "	:param Index:
-	:type Index: int
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
 ") MaxError;
 		Standard_Real MaxError(const Standard_Integer Index);
 
@@ -477,23 +549,27 @@ class AdvApprox_SimpleApprox {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Constructs approximator tool. //! warning: the func should be valid reference to object of type inherited from class evaluatorfunction from approx with life time longer than that of the approximator tool;.
 
-	:param LocalDimension:
-	:type LocalDimension: TColStd_Array1OfInteger
-	:param LocalTolerancesArray:
-	:type LocalTolerancesArray: TColStd_Array1OfReal
-	:param First:
-	:type First: float
-	:param Last:
-	:type Last: float
-	:param MaxDegree:
-	:type MaxDegree: int
-	:rtype: None
+Parameters
+----------
+LocalDimension: TColStd_Array1OfInteger
+LocalTolerancesArray: TColStd_Array1OfReal
+First: float
+Last: float
+MaxDegree: int
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const TColStd_Array1OfInteger & LocalDimension, const TColStd_Array1OfReal & LocalTolerancesArray, const Standard_Real First, const Standard_Real Last, const Standard_Integer MaxDegree);
 
 		/****************** SomTab ******************/
 		%feature("compactdefaultargs") SomTab;
-		%feature("autodoc", "	:rtype: opencascade::handle<TColStd_HArray1OfReal>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfReal>
 ") SomTab;
 		opencascade::handle<TColStd_HArray1OfReal> SomTab();
 
@@ -513,19 +589,27 @@ class AdvApprox_DichoCutting : public AdvApprox_Cutting {
 	public:
 		/****************** AdvApprox_DichoCutting ******************/
 		%feature("compactdefaultargs") AdvApprox_DichoCutting;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") AdvApprox_DichoCutting;
 		 AdvApprox_DichoCutting();
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "	:param a:
-	:type a: float
-	:param b:
-	:type b: float
-	:param cuttingvalue:
-	:type cuttingvalue: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+a: float
+b: float
+cuttingvalue: float
+
+Returns
+-------
+bool
 ") Value;
 		virtual Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue);
 
@@ -545,13 +629,18 @@ class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 	public:
 		/****************** AdvApprox_PrefAndRec ******************/
 		%feature("compactdefaultargs") AdvApprox_PrefAndRec;
-		%feature("autodoc", "	:param RecomendedCut:
-	:type RecomendedCut: TColStd_Array1OfReal
-	:param PrefferedCut:
-	:type PrefferedCut: TColStd_Array1OfReal
-	:param Weight: default value is 5
-	:type Weight: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+RecomendedCut: TColStd_Array1OfReal
+PrefferedCut: TColStd_Array1OfReal
+Weight: float,optional
+	default value is 5
+
+Returns
+-------
+None
 ") AdvApprox_PrefAndRec;
 		 AdvApprox_PrefAndRec(const TColStd_Array1OfReal & RecomendedCut, const TColStd_Array1OfReal & PrefferedCut, const Standard_Real Weight = 5);
 
@@ -559,13 +648,15 @@ class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Cuting value is - the recommended point nerest of (a+b)/2 if pi is in ]a,b[ or else - the preferential point nearest of (a+b) / 2 if pi is in ](r*a+b)/(r+1) , (a+r*b)/(r+1)[ where r = weight - or (a+b)/2 else.
 
-	:param a:
-	:type a: float
-	:param b:
-	:type b: float
-	:param cuttingvalue:
-	:type cuttingvalue: float
-	:rtype: bool
+Parameters
+----------
+a: float
+b: float
+cuttingvalue: float
+
+Returns
+-------
+bool
 ") Value;
 		virtual Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue);
 
@@ -585,21 +676,31 @@ class AdvApprox_PrefCutting : public AdvApprox_Cutting {
 	public:
 		/****************** AdvApprox_PrefCutting ******************/
 		%feature("compactdefaultargs") AdvApprox_PrefCutting;
-		%feature("autodoc", "	:param CutPnts:
-	:type CutPnts: TColStd_Array1OfReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+CutPnts: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") AdvApprox_PrefCutting;
 		 AdvApprox_PrefCutting(const TColStd_Array1OfReal & CutPnts);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "	:param a:
-	:type a: float
-	:param b:
-	:type b: float
-	:param cuttingvalue:
-	:type cuttingvalue: float
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+a: float
+b: float
+cuttingvalue: float
+
+Returns
+-------
+bool
 ") Value;
 		virtual Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue);
 

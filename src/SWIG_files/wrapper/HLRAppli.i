@@ -90,13 +90,15 @@ class HLRAppli_ReflectLines {
 		%feature("compactdefaultargs") GetCompoundOf3dEdges;
 		%feature("autodoc", "Returns resulting compound of lines of specified type and visibility represented by edges in 3d or 2d.
 
-	:param type:
-	:type type: HLRBRep_TypeOfResultingEdge
-	:param visible:
-	:type visible: bool
-	:param In3d:
-	:type In3d: bool
-	:rtype: TopoDS_Shape
+Parameters
+----------
+type: HLRBRep_TypeOfResultingEdge
+visible: bool
+In3d: bool
+
+Returns
+-------
+TopoDS_Shape
 ") GetCompoundOf3dEdges;
 		TopoDS_Shape GetCompoundOf3dEdges(const HLRBRep_TypeOfResultingEdge type, const Standard_Boolean visible, const Standard_Boolean In3d);
 
@@ -104,7 +106,9 @@ class HLRAppli_ReflectLines {
 		%feature("compactdefaultargs") GetResult;
 		%feature("autodoc", "Returns resulting compound of reflect lines represented by edges in 3d.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") GetResult;
 		TopoDS_Shape GetResult();
 
@@ -112,15 +116,23 @@ class HLRAppli_ReflectLines {
 		%feature("compactdefaultargs") HLRAppli_ReflectLines;
 		%feature("autodoc", "Constructor.
 
-	:param aShape:
-	:type aShape: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+aShape: TopoDS_Shape
+
+Returns
+-------
+None
 ") HLRAppli_ReflectLines;
 		 HLRAppli_ReflectLines(const TopoDS_Shape & aShape);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Perform;
 		void Perform();
 
@@ -128,25 +140,21 @@ class HLRAppli_ReflectLines {
 		%feature("compactdefaultargs") SetAxes;
 		%feature("autodoc", "Sets the normal to the plane of visualisation, the coordinates of the view point and the coordinates of the vertical direction vector.
 
-	:param Nx:
-	:type Nx: float
-	:param Ny:
-	:type Ny: float
-	:param Nz:
-	:type Nz: float
-	:param XAt:
-	:type XAt: float
-	:param YAt:
-	:type YAt: float
-	:param ZAt:
-	:type ZAt: float
-	:param XUp:
-	:type XUp: float
-	:param YUp:
-	:type YUp: float
-	:param ZUp:
-	:type ZUp: float
-	:rtype: None
+Parameters
+----------
+Nx: float
+Ny: float
+Nz: float
+XAt: float
+YAt: float
+ZAt: float
+XUp: float
+YUp: float
+ZUp: float
+
+Returns
+-------
+None
 ") SetAxes;
 		void SetAxes(const Standard_Real Nx, const Standard_Real Ny, const Standard_Real Nz, const Standard_Real XAt, const Standard_Real YAt, const Standard_Real ZAt, const Standard_Real XUp, const Standard_Real YUp, const Standard_Real ZUp);
 

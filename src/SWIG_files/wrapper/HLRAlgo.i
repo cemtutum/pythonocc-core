@@ -220,87 +220,114 @@ class HLRAlgo {
 	public:
 		/****************** AddMinMax ******************/
 		%feature("compactdefaultargs") AddMinMax;
-		%feature("autodoc", "	:param IMin:
-	:type IMin: HLRAlgo_EdgesBlock::MinMaxIndices
-	:param IMax:
-	:type IMax: HLRAlgo_EdgesBlock::MinMaxIndices
-	:param OMin:
-	:type OMin: HLRAlgo_EdgesBlock::MinMaxIndices
-	:param OMax:
-	:type OMax: HLRAlgo_EdgesBlock::MinMaxIndices
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IMin: HLRAlgo_EdgesBlock::MinMaxIndices
+IMax: HLRAlgo_EdgesBlock::MinMaxIndices
+OMin: HLRAlgo_EdgesBlock::MinMaxIndices
+OMax: HLRAlgo_EdgesBlock::MinMaxIndices
+
+Returns
+-------
+None
 ") AddMinMax;
 		static void AddMinMax(HLRAlgo_EdgesBlock::MinMaxIndices & IMin, HLRAlgo_EdgesBlock::MinMaxIndices & IMax, HLRAlgo_EdgesBlock::MinMaxIndices & OMin, HLRAlgo_EdgesBlock::MinMaxIndices & OMax);
 
 		/****************** CopyMinMax ******************/
 		%feature("compactdefaultargs") CopyMinMax;
-		%feature("autodoc", "	:param IMin:
-	:type IMin: HLRAlgo_EdgesBlock::MinMaxIndices
-	:param IMax:
-	:type IMax: HLRAlgo_EdgesBlock::MinMaxIndices
-	:param OMin:
-	:type OMin: HLRAlgo_EdgesBlock::MinMaxIndices
-	:param OMax:
-	:type OMax: HLRAlgo_EdgesBlock::MinMaxIndices
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+IMin: HLRAlgo_EdgesBlock::MinMaxIndices
+IMax: HLRAlgo_EdgesBlock::MinMaxIndices
+OMin: HLRAlgo_EdgesBlock::MinMaxIndices
+OMax: HLRAlgo_EdgesBlock::MinMaxIndices
+
+Returns
+-------
+None
 ") CopyMinMax;
 		static void CopyMinMax(HLRAlgo_EdgesBlock::MinMaxIndices & IMin, HLRAlgo_EdgesBlock::MinMaxIndices & IMax, HLRAlgo_EdgesBlock::MinMaxIndices & OMin, HLRAlgo_EdgesBlock::MinMaxIndices & OMax);
 
 		/****************** DecodeMinMax ******************/
 		%feature("compactdefaultargs") DecodeMinMax;
-		%feature("autodoc", "	:param MinMax:
-	:type MinMax: HLRAlgo_EdgesBlock::MinMaxIndices
-	:param Min:
-	:type Min: HLRAlgo_EdgesBlock::MinMaxIndices
-	:param Max:
-	:type Max: HLRAlgo_EdgesBlock::MinMaxIndices
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+MinMax: HLRAlgo_EdgesBlock::MinMaxIndices
+Min: HLRAlgo_EdgesBlock::MinMaxIndices
+Max: HLRAlgo_EdgesBlock::MinMaxIndices
+
+Returns
+-------
+None
 ") DecodeMinMax;
 		static void DecodeMinMax(const HLRAlgo_EdgesBlock::MinMaxIndices & MinMax, HLRAlgo_EdgesBlock::MinMaxIndices & Min, HLRAlgo_EdgesBlock::MinMaxIndices & Max);
 
 		/****************** EncodeMinMax ******************/
 		%feature("compactdefaultargs") EncodeMinMax;
-		%feature("autodoc", "	:param Min:
-	:type Min: HLRAlgo_EdgesBlock::MinMaxIndices
-	:param Max:
-	:type Max: HLRAlgo_EdgesBlock::MinMaxIndices
-	:param MinMax:
-	:type MinMax: HLRAlgo_EdgesBlock::MinMaxIndices
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Min: HLRAlgo_EdgesBlock::MinMaxIndices
+Max: HLRAlgo_EdgesBlock::MinMaxIndices
+MinMax: HLRAlgo_EdgesBlock::MinMaxIndices
+
+Returns
+-------
+None
 ") EncodeMinMax;
 		static void EncodeMinMax(HLRAlgo_EdgesBlock::MinMaxIndices & Min, HLRAlgo_EdgesBlock::MinMaxIndices & Max, HLRAlgo_EdgesBlock::MinMaxIndices & MinMax);
 
 		/****************** EnlargeMinMax ******************/
 		%feature("compactdefaultargs") EnlargeMinMax;
-		%feature("autodoc", "	:param tol:
-	:type tol: float
-	:param Min:
-	:type Min: float
-	:param Max:
-	:type Max: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+tol: float
+Min: float
+Max: float
+
+Returns
+-------
+None
 ") EnlargeMinMax;
 		static void EnlargeMinMax(const Standard_Real tol, Standard_Real Min[16], Standard_Real Max[16]);
 
 		/****************** InitMinMax ******************/
 		%feature("compactdefaultargs") InitMinMax;
-		%feature("autodoc", "	:param Big:
-	:type Big: float
-	:param Min:
-	:type Min: float
-	:param Max:
-	:type Max: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Big: float
+Min: float
+Max: float
+
+Returns
+-------
+None
 ") InitMinMax;
 		static void InitMinMax(const Standard_Real Big, Standard_Real Min[16], Standard_Real Max[16]);
 
 		/****************** SizeBox ******************/
 		%feature("compactdefaultargs") SizeBox;
-		%feature("autodoc", "	:param Min:
-	:type Min: HLRAlgo_EdgesBlock::MinMaxIndices
-	:param Max:
-	:type Max: HLRAlgo_EdgesBlock::MinMaxIndices
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Min: HLRAlgo_EdgesBlock::MinMaxIndices
+Max: HLRAlgo_EdgesBlock::MinMaxIndices
+
+Returns
+-------
+float
 ") SizeBox;
 		static Standard_Real SizeBox(HLRAlgo_EdgesBlock::MinMaxIndices & Min, HLRAlgo_EdgesBlock::MinMaxIndices & Max);
 
@@ -308,17 +335,17 @@ class HLRAlgo {
 		%feature("compactdefaultargs") UpdateMinMax;
 		%feature("autodoc", "Iterator on the visible or hidden parts of an edgestatus.
 
-	:param x:
-	:type x: float
-	:param y:
-	:type y: float
-	:param z:
-	:type z: float
-	:param Min:
-	:type Min: float
-	:param Max:
-	:type Max: float
-	:rtype: None
+Parameters
+----------
+x: float
+y: float
+z: float
+Min: float
+Max: float
+
+Returns
+-------
+None
 ") UpdateMinMax;
 		static void UpdateMinMax(const Standard_Real x, const Standard_Real y, const Standard_Real z, Standard_Real Min[16], Standard_Real Max[16]);
 
@@ -340,335 +367,320 @@ class HLRAlgo_BiPoint {
 		class PointsT {};
 		/****************** HLRAlgo_BiPoint ******************/
 		%feature("compactdefaultargs") HLRAlgo_BiPoint;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") HLRAlgo_BiPoint;
 		 HLRAlgo_BiPoint();
 
 		/****************** HLRAlgo_BiPoint ******************/
 		%feature("compactdefaultargs") HLRAlgo_BiPoint;
-		%feature("autodoc", "	:param X1:
-	:type X1: float
-	:param Y1:
-	:type Y1: float
-	:param Z1:
-	:type Z1: float
-	:param X2:
-	:type X2: float
-	:param Y2:
-	:type Y2: float
-	:param Z2:
-	:type Z2: float
-	:param XT1:
-	:type XT1: float
-	:param YT1:
-	:type YT1: float
-	:param ZT1:
-	:type ZT1: float
-	:param XT2:
-	:type XT2: float
-	:param YT2:
-	:type YT2: float
-	:param ZT2:
-	:type ZT2: float
-	:param Index:
-	:type Index: int
-	:param reg1:
-	:type reg1: bool
-	:param regn:
-	:type regn: bool
-	:param outl:
-	:type outl: bool
-	:param intl:
-	:type intl: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+X1: float
+Y1: float
+Z1: float
+X2: float
+Y2: float
+Z2: float
+XT1: float
+YT1: float
+ZT1: float
+XT2: float
+YT2: float
+ZT2: float
+Index: int
+reg1: bool
+regn: bool
+outl: bool
+intl: bool
+
+Returns
+-------
+None
 ") HLRAlgo_BiPoint;
 		 HLRAlgo_BiPoint(const Standard_Real X1, const Standard_Real Y1, const Standard_Real Z1, const Standard_Real X2, const Standard_Real Y2, const Standard_Real Z2, const Standard_Real XT1, const Standard_Real YT1, const Standard_Real ZT1, const Standard_Real XT2, const Standard_Real YT2, const Standard_Real ZT2, const Standard_Integer Index, const Standard_Boolean reg1, const Standard_Boolean regn, const Standard_Boolean outl, const Standard_Boolean intl);
 
 		/****************** HLRAlgo_BiPoint ******************/
 		%feature("compactdefaultargs") HLRAlgo_BiPoint;
-		%feature("autodoc", "	:param X1:
-	:type X1: float
-	:param Y1:
-	:type Y1: float
-	:param Z1:
-	:type Z1: float
-	:param X2:
-	:type X2: float
-	:param Y2:
-	:type Y2: float
-	:param Z2:
-	:type Z2: float
-	:param XT1:
-	:type XT1: float
-	:param YT1:
-	:type YT1: float
-	:param ZT1:
-	:type ZT1: float
-	:param XT2:
-	:type XT2: float
-	:param YT2:
-	:type YT2: float
-	:param ZT2:
-	:type ZT2: float
-	:param Index:
-	:type Index: int
-	:param flag:
-	:type flag: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+X1: float
+Y1: float
+Z1: float
+X2: float
+Y2: float
+Z2: float
+XT1: float
+YT1: float
+ZT1: float
+XT2: float
+YT2: float
+ZT2: float
+Index: int
+flag: int
+
+Returns
+-------
+None
 ") HLRAlgo_BiPoint;
 		 HLRAlgo_BiPoint(const Standard_Real X1, const Standard_Real Y1, const Standard_Real Z1, const Standard_Real X2, const Standard_Real Y2, const Standard_Real Z2, const Standard_Real XT1, const Standard_Real YT1, const Standard_Real ZT1, const Standard_Real XT2, const Standard_Real YT2, const Standard_Real ZT2, const Standard_Integer Index, const Standard_Integer flag);
 
 		/****************** HLRAlgo_BiPoint ******************/
 		%feature("compactdefaultargs") HLRAlgo_BiPoint;
-		%feature("autodoc", "	:param X1:
-	:type X1: float
-	:param Y1:
-	:type Y1: float
-	:param Z1:
-	:type Z1: float
-	:param X2:
-	:type X2: float
-	:param Y2:
-	:type Y2: float
-	:param Z2:
-	:type Z2: float
-	:param XT1:
-	:type XT1: float
-	:param YT1:
-	:type YT1: float
-	:param ZT1:
-	:type ZT1: float
-	:param XT2:
-	:type XT2: float
-	:param YT2:
-	:type YT2: float
-	:param ZT2:
-	:type ZT2: float
-	:param Index:
-	:type Index: int
-	:param i1:
-	:type i1: int
-	:param i1p1:
-	:type i1p1: int
-	:param i1p2:
-	:type i1p2: int
-	:param reg1:
-	:type reg1: bool
-	:param regn:
-	:type regn: bool
-	:param outl:
-	:type outl: bool
-	:param intl:
-	:type intl: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+X1: float
+Y1: float
+Z1: float
+X2: float
+Y2: float
+Z2: float
+XT1: float
+YT1: float
+ZT1: float
+XT2: float
+YT2: float
+ZT2: float
+Index: int
+i1: int
+i1p1: int
+i1p2: int
+reg1: bool
+regn: bool
+outl: bool
+intl: bool
+
+Returns
+-------
+None
 ") HLRAlgo_BiPoint;
 		 HLRAlgo_BiPoint(const Standard_Real X1, const Standard_Real Y1, const Standard_Real Z1, const Standard_Real X2, const Standard_Real Y2, const Standard_Real Z2, const Standard_Real XT1, const Standard_Real YT1, const Standard_Real ZT1, const Standard_Real XT2, const Standard_Real YT2, const Standard_Real ZT2, const Standard_Integer Index, const Standard_Integer i1, const Standard_Integer i1p1, const Standard_Integer i1p2, const Standard_Boolean reg1, const Standard_Boolean regn, const Standard_Boolean outl, const Standard_Boolean intl);
 
 		/****************** HLRAlgo_BiPoint ******************/
 		%feature("compactdefaultargs") HLRAlgo_BiPoint;
-		%feature("autodoc", "	:param X1:
-	:type X1: float
-	:param Y1:
-	:type Y1: float
-	:param Z1:
-	:type Z1: float
-	:param X2:
-	:type X2: float
-	:param Y2:
-	:type Y2: float
-	:param Z2:
-	:type Z2: float
-	:param XT1:
-	:type XT1: float
-	:param YT1:
-	:type YT1: float
-	:param ZT1:
-	:type ZT1: float
-	:param XT2:
-	:type XT2: float
-	:param YT2:
-	:type YT2: float
-	:param ZT2:
-	:type ZT2: float
-	:param Index:
-	:type Index: int
-	:param i1:
-	:type i1: int
-	:param i1p1:
-	:type i1p1: int
-	:param i1p2:
-	:type i1p2: int
-	:param flag:
-	:type flag: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+X1: float
+Y1: float
+Z1: float
+X2: float
+Y2: float
+Z2: float
+XT1: float
+YT1: float
+ZT1: float
+XT2: float
+YT2: float
+ZT2: float
+Index: int
+i1: int
+i1p1: int
+i1p2: int
+flag: int
+
+Returns
+-------
+None
 ") HLRAlgo_BiPoint;
 		 HLRAlgo_BiPoint(const Standard_Real X1, const Standard_Real Y1, const Standard_Real Z1, const Standard_Real X2, const Standard_Real Y2, const Standard_Real Z2, const Standard_Real XT1, const Standard_Real YT1, const Standard_Real ZT1, const Standard_Real XT2, const Standard_Real YT2, const Standard_Real ZT2, const Standard_Integer Index, const Standard_Integer i1, const Standard_Integer i1p1, const Standard_Integer i1p2, const Standard_Integer flag);
 
 		/****************** HLRAlgo_BiPoint ******************/
 		%feature("compactdefaultargs") HLRAlgo_BiPoint;
-		%feature("autodoc", "	:param X1:
-	:type X1: float
-	:param Y1:
-	:type Y1: float
-	:param Z1:
-	:type Z1: float
-	:param X2:
-	:type X2: float
-	:param Y2:
-	:type Y2: float
-	:param Z2:
-	:type Z2: float
-	:param XT1:
-	:type XT1: float
-	:param YT1:
-	:type YT1: float
-	:param ZT1:
-	:type ZT1: float
-	:param XT2:
-	:type XT2: float
-	:param YT2:
-	:type YT2: float
-	:param ZT2:
-	:type ZT2: float
-	:param Index:
-	:type Index: int
-	:param i1:
-	:type i1: int
-	:param i1p1:
-	:type i1p1: int
-	:param i1p2:
-	:type i1p2: int
-	:param i2:
-	:type i2: int
-	:param i2p1:
-	:type i2p1: int
-	:param i2p2:
-	:type i2p2: int
-	:param reg1:
-	:type reg1: bool
-	:param regn:
-	:type regn: bool
-	:param outl:
-	:type outl: bool
-	:param intl:
-	:type intl: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+X1: float
+Y1: float
+Z1: float
+X2: float
+Y2: float
+Z2: float
+XT1: float
+YT1: float
+ZT1: float
+XT2: float
+YT2: float
+ZT2: float
+Index: int
+i1: int
+i1p1: int
+i1p2: int
+i2: int
+i2p1: int
+i2p2: int
+reg1: bool
+regn: bool
+outl: bool
+intl: bool
+
+Returns
+-------
+None
 ") HLRAlgo_BiPoint;
 		 HLRAlgo_BiPoint(const Standard_Real X1, const Standard_Real Y1, const Standard_Real Z1, const Standard_Real X2, const Standard_Real Y2, const Standard_Real Z2, const Standard_Real XT1, const Standard_Real YT1, const Standard_Real ZT1, const Standard_Real XT2, const Standard_Real YT2, const Standard_Real ZT2, const Standard_Integer Index, const Standard_Integer i1, const Standard_Integer i1p1, const Standard_Integer i1p2, const Standard_Integer i2, const Standard_Integer i2p1, const Standard_Integer i2p2, const Standard_Boolean reg1, const Standard_Boolean regn, const Standard_Boolean outl, const Standard_Boolean intl);
 
 		/****************** HLRAlgo_BiPoint ******************/
 		%feature("compactdefaultargs") HLRAlgo_BiPoint;
-		%feature("autodoc", "	:param X1:
-	:type X1: float
-	:param Y1:
-	:type Y1: float
-	:param Z1:
-	:type Z1: float
-	:param X2:
-	:type X2: float
-	:param Y2:
-	:type Y2: float
-	:param Z2:
-	:type Z2: float
-	:param XT1:
-	:type XT1: float
-	:param YT1:
-	:type YT1: float
-	:param ZT1:
-	:type ZT1: float
-	:param XT2:
-	:type XT2: float
-	:param YT2:
-	:type YT2: float
-	:param ZT2:
-	:type ZT2: float
-	:param Index:
-	:type Index: int
-	:param i1:
-	:type i1: int
-	:param i1p1:
-	:type i1p1: int
-	:param i1p2:
-	:type i1p2: int
-	:param i2:
-	:type i2: int
-	:param i2p1:
-	:type i2p1: int
-	:param i2p2:
-	:type i2p2: int
-	:param flag:
-	:type flag: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+X1: float
+Y1: float
+Z1: float
+X2: float
+Y2: float
+Z2: float
+XT1: float
+YT1: float
+ZT1: float
+XT2: float
+YT2: float
+ZT2: float
+Index: int
+i1: int
+i1p1: int
+i1p2: int
+i2: int
+i2p1: int
+i2p2: int
+flag: int
+
+Returns
+-------
+None
 ") HLRAlgo_BiPoint;
 		 HLRAlgo_BiPoint(const Standard_Real X1, const Standard_Real Y1, const Standard_Real Z1, const Standard_Real X2, const Standard_Real Y2, const Standard_Real Z2, const Standard_Real XT1, const Standard_Real YT1, const Standard_Real ZT1, const Standard_Real XT2, const Standard_Real YT2, const Standard_Real ZT2, const Standard_Integer Index, const Standard_Integer i1, const Standard_Integer i1p1, const Standard_Integer i1p2, const Standard_Integer i2, const Standard_Integer i2p1, const Standard_Integer i2p2, const Standard_Integer flag);
 
 		/****************** Hidden ******************/
 		%feature("compactdefaultargs") Hidden;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Hidden;
 		Standard_Boolean Hidden();
 
 		/****************** Hidden ******************/
 		%feature("compactdefaultargs") Hidden;
-		%feature("autodoc", "	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
 ") Hidden;
 		void Hidden(const Standard_Boolean B);
 
 		/****************** IntLine ******************/
 		%feature("compactdefaultargs") IntLine;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IntLine;
 		Standard_Boolean IntLine();
 
 		/****************** IntLine ******************/
 		%feature("compactdefaultargs") IntLine;
-		%feature("autodoc", "	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
 ") IntLine;
 		void IntLine(const Standard_Boolean B);
 
 		/****************** OutLine ******************/
 		%feature("compactdefaultargs") OutLine;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") OutLine;
 		Standard_Boolean OutLine();
 
 		/****************** OutLine ******************/
 		%feature("compactdefaultargs") OutLine;
-		%feature("autodoc", "	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
 ") OutLine;
 		void OutLine(const Standard_Boolean B);
 
 		/****************** Rg1Line ******************/
 		%feature("compactdefaultargs") Rg1Line;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Rg1Line;
 		Standard_Boolean Rg1Line();
 
 		/****************** Rg1Line ******************/
 		%feature("compactdefaultargs") Rg1Line;
-		%feature("autodoc", "	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
 ") Rg1Line;
 		void Rg1Line(const Standard_Boolean B);
 
 		/****************** RgNLine ******************/
 		%feature("compactdefaultargs") RgNLine;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") RgNLine;
 		Standard_Boolean RgNLine();
 
 		/****************** RgNLine ******************/
 		%feature("compactdefaultargs") RgNLine;
-		%feature("autodoc", "	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
 ") RgNLine;
 		void RgNLine(const Standard_Boolean B);
 
@@ -688,47 +700,71 @@ class HLRAlgo_Coincidence {
 	public:
 		/****************** HLRAlgo_Coincidence ******************/
 		%feature("compactdefaultargs") HLRAlgo_Coincidence;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") HLRAlgo_Coincidence;
 		 HLRAlgo_Coincidence();
 
 		/****************** Set2D ******************/
 		%feature("compactdefaultargs") Set2D;
-		%feature("autodoc", "	:param FE:
-	:type FE: int
-	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+FE: int
+Param: float
+
+Returns
+-------
+None
 ") Set2D;
 		void Set2D(const Standard_Integer FE, const Standard_Real Param);
 
 		/****************** SetState3D ******************/
 		%feature("compactdefaultargs") SetState3D;
-		%feature("autodoc", "	:param stbef:
-	:type stbef: TopAbs_State
-	:param staft:
-	:type staft: TopAbs_State
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+stbef: TopAbs_State
+staft: TopAbs_State
+
+Returns
+-------
+None
 ") SetState3D;
 		void SetState3D(const TopAbs_State stbef, const TopAbs_State staft);
 
 		/****************** State3D ******************/
 		%feature("compactdefaultargs") State3D;
-		%feature("autodoc", "	:param stbef:
-	:type stbef: TopAbs_State
-	:param staft:
-	:type staft: TopAbs_State
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+stbef: TopAbs_State
+staft: TopAbs_State
+
+Returns
+-------
+None
 ") State3D;
 		void State3D(TopAbs_State & stbef, TopAbs_State & staft);
 
 		/****************** Value2D ******************/
 		%feature("compactdefaultargs") Value2D;
-		%feature("autodoc", "	:param FE:
-	:type FE: int
-	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+FE: int
+Param: float
+
+Returns
+-------
+None
 ") Value2D;
 		void Value2D(Standard_Integer &OutValue, Standard_Real &OutValue);
 
@@ -750,7 +786,9 @@ class HLRAlgo_EdgeIterator {
 		%feature("compactdefaultargs") HLRAlgo_EdgeIterator;
 		%feature("autodoc", "Iterator on the visible or hidden parts of an edge.
 
-	:rtype: None
+Returns
+-------
+None
 ") HLRAlgo_EdgeIterator;
 		 HLRAlgo_EdgeIterator();
 
@@ -758,55 +796,84 @@ class HLRAlgo_EdgeIterator {
 		%feature("compactdefaultargs") Hidden;
 		%feature("autodoc", "Returns the bounds and the tolerances of the current hidden interval.
 
-	:param Start:
-	:type Start: float
-	:param TolStart:
-	:type TolStart: Standard_ShortReal
-	:param End:
-	:type End: float
-	:param TolEnd:
-	:type TolEnd: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+Start: float
+TolStart: Standard_ShortReal
+End: float
+TolEnd: Standard_ShortReal
+
+Returns
+-------
+None
 ") Hidden;
 		void Hidden(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
 
 		/****************** InitHidden ******************/
 		%feature("compactdefaultargs") InitHidden;
-		%feature("autodoc", "	:param status:
-	:type status: HLRAlgo_EdgeStatus
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+status: HLRAlgo_EdgeStatus
+
+Returns
+-------
+None
 ") InitHidden;
 		void InitHidden(HLRAlgo_EdgeStatus & status);
 
 		/****************** InitVisible ******************/
 		%feature("compactdefaultargs") InitVisible;
-		%feature("autodoc", "	:param status:
-	:type status: HLRAlgo_EdgeStatus
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+status: HLRAlgo_EdgeStatus
+
+Returns
+-------
+None
 ") InitVisible;
 		void InitVisible(HLRAlgo_EdgeStatus & status);
 
 		/****************** MoreHidden ******************/
 		%feature("compactdefaultargs") MoreHidden;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") MoreHidden;
 		Standard_Boolean MoreHidden();
 
 		/****************** MoreVisible ******************/
 		%feature("compactdefaultargs") MoreVisible;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") MoreVisible;
 		Standard_Boolean MoreVisible();
 
 		/****************** NextHidden ******************/
 		%feature("compactdefaultargs") NextHidden;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") NextHidden;
 		void NextHidden();
 
 		/****************** NextVisible ******************/
 		%feature("compactdefaultargs") NextVisible;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") NextVisible;
 		void NextVisible();
 
@@ -814,15 +881,16 @@ class HLRAlgo_EdgeIterator {
 		%feature("compactdefaultargs") Visible;
 		%feature("autodoc", "Returns the bounds and the tolerances of the current visible interval.
 
-	:param Start:
-	:type Start: float
-	:param TolStart:
-	:type TolStart: Standard_ShortReal
-	:param End:
-	:type End: float
-	:param TolEnd:
-	:type TolEnd: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+Start: float
+TolStart: Standard_ShortReal
+End: float
+TolEnd: Standard_ShortReal
+
+Returns
+-------
+None
 ") Visible;
 		void Visible(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
 
@@ -842,49 +910,76 @@ class HLRAlgo_EdgeStatus {
 	public:
 		/****************** AllHidden ******************/
 		%feature("compactdefaultargs") AllHidden;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") AllHidden;
 		Standard_Boolean AllHidden();
 
 		/****************** AllHidden ******************/
 		%feature("compactdefaultargs") AllHidden;
-		%feature("autodoc", "	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
 ") AllHidden;
 		void AllHidden(const Standard_Boolean B);
 
 		/****************** AllVisible ******************/
 		%feature("compactdefaultargs") AllVisible;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") AllVisible;
 		Standard_Boolean AllVisible();
 
 		/****************** AllVisible ******************/
 		%feature("compactdefaultargs") AllVisible;
-		%feature("autodoc", "	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
 ") AllVisible;
 		void AllVisible(const Standard_Boolean B);
 
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
-		%feature("autodoc", "	:param theStart:
-	:type theStart: float
-	:param theTolStart:
-	:type theTolStart: Standard_ShortReal
-	:param theEnd:
-	:type theEnd: float
-	:param theTolEnd:
-	:type theTolEnd: Standard_ShortReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theStart: float
+theTolStart: Standard_ShortReal
+theEnd: float
+theTolEnd: Standard_ShortReal
+
+Returns
+-------
+None
 ") Bounds;
 		void Bounds(Standard_Real &OutValue, Standard_ShortReal & theTolStart, Standard_Real &OutValue, Standard_ShortReal & theTolEnd);
 
 		/****************** HLRAlgo_EdgeStatus ******************/
 		%feature("compactdefaultargs") HLRAlgo_EdgeStatus;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") HLRAlgo_EdgeStatus;
 		 HLRAlgo_EdgeStatus();
 
@@ -892,15 +987,16 @@ class HLRAlgo_EdgeStatus {
 		%feature("compactdefaultargs") HLRAlgo_EdgeStatus;
 		%feature("autodoc", "Creates a new edgestatus. default visible. the edge is bounded by the interval <start>, <end> with the tolerances <tolstart>, <tolend>.
 
-	:param Start:
-	:type Start: float
-	:param TolStart:
-	:type TolStart: Standard_ShortReal
-	:param End:
-	:type End: float
-	:param TolEnd:
-	:type TolEnd: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+Start: float
+TolStart: Standard_ShortReal
+End: float
+TolEnd: Standard_ShortReal
+
+Returns
+-------
+None
 ") HLRAlgo_EdgeStatus;
 		 HLRAlgo_EdgeStatus(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
 
@@ -908,19 +1004,18 @@ class HLRAlgo_EdgeStatus {
 		%feature("compactdefaultargs") Hide;
 		%feature("autodoc", "Hides the interval <start>, <end> with the tolerances <tolstart>, <tolend>. this interval is subtracted from the visible parts. if the hidden part is on ( or under ) the face the flag <onface> is true ( or false ). if the hidden part is on ( or inside ) the boundary of the face the flag <onboundary> is true ( or false ).
 
-	:param Start:
-	:type Start: float
-	:param TolStart:
-	:type TolStart: Standard_ShortReal
-	:param End:
-	:type End: float
-	:param TolEnd:
-	:type TolEnd: Standard_ShortReal
-	:param OnFace:
-	:type OnFace: bool
-	:param OnBoundary:
-	:type OnBoundary: bool
-	:rtype: None
+Parameters
+----------
+Start: float
+TolStart: Standard_ShortReal
+End: float
+TolEnd: Standard_ShortReal
+OnFace: bool
+OnBoundary: bool
+
+Returns
+-------
+None
 ") Hide;
 		void Hide(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd, const Standard_Boolean OnFace, const Standard_Boolean OnBoundary);
 
@@ -928,7 +1023,9 @@ class HLRAlgo_EdgeStatus {
 		%feature("compactdefaultargs") HideAll;
 		%feature("autodoc", "Hide the whole edge.
 
-	:rtype: None
+Returns
+-------
+None
 ") HideAll;
 		void HideAll();
 
@@ -936,21 +1033,26 @@ class HLRAlgo_EdgeStatus {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initialize an edgestatus. default visible. the edge is bounded by the interval <start>, <end> with the tolerances <tolstart>, <tolend>.
 
-	:param Start:
-	:type Start: float
-	:param TolStart:
-	:type TolStart: Standard_ShortReal
-	:param End:
-	:type End: float
-	:param TolEnd:
-	:type TolEnd: Standard_ShortReal
-	:rtype: None
+Parameters
+----------
+Start: float
+TolStart: Standard_ShortReal
+End: float
+TolEnd: Standard_ShortReal
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
 
 		/****************** NbVisiblePart ******************/
 		%feature("compactdefaultargs") NbVisiblePart;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbVisiblePart;
 		Standard_Integer NbVisiblePart();
 
@@ -958,23 +1060,27 @@ class HLRAlgo_EdgeStatus {
 		%feature("compactdefaultargs") ShowAll;
 		%feature("autodoc", "Show the whole edge.
 
-	:rtype: None
+Returns
+-------
+None
 ") ShowAll;
 		void ShowAll();
 
 		/****************** VisiblePart ******************/
 		%feature("compactdefaultargs") VisiblePart;
-		%feature("autodoc", "	:param Index:
-	:type Index: int
-	:param Start:
-	:type Start: float
-	:param TolStart:
-	:type TolStart: Standard_ShortReal
-	:param End:
-	:type End: float
-	:param TolEnd:
-	:type TolEnd: Standard_ShortReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Index: int
+Start: float
+TolStart: Standard_ShortReal
+End: float
+TolEnd: Standard_ShortReal
+
+Returns
+-------
+None
 ") VisiblePart;
 		void VisiblePart(const Standard_Integer Index, Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
 
@@ -995,37 +1101,59 @@ class HLRAlgo_EdgesBlock : public Standard_Transient {
 		class MinMaxIndices {};
 		/****************** Double ******************/
 		%feature("compactdefaultargs") Double;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+
+Returns
+-------
+bool
 ") Double;
 		Standard_Boolean Double(const Standard_Integer I);
 
 		/****************** Double ******************/
 		%feature("compactdefaultargs") Double;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+B: bool
+
+Returns
+-------
+None
 ") Double;
 		void Double(const Standard_Integer I, const Standard_Boolean B);
 
 		/****************** Edge ******************/
 		%feature("compactdefaultargs") Edge;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:param EI:
-	:type EI: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+EI: int
+
+Returns
+-------
+None
 ") Edge;
 		void Edge(const Standard_Integer I, const Standard_Integer EI);
 
 		/****************** Edge ******************/
 		%feature("compactdefaultargs") Edge;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+
+Returns
+-------
+int
 ") Edge;
 		Standard_Integer Edge(const Standard_Integer I);
 
@@ -1033,87 +1161,139 @@ class HLRAlgo_EdgesBlock : public Standard_Transient {
 		%feature("compactdefaultargs") HLRAlgo_EdgesBlock;
 		%feature("autodoc", "Create a block of edges for a wire.
 
-	:param NbEdges:
-	:type NbEdges: int
-	:rtype: None
+Parameters
+----------
+NbEdges: int
+
+Returns
+-------
+None
 ") HLRAlgo_EdgesBlock;
 		 HLRAlgo_EdgesBlock(const Standard_Integer NbEdges);
 
 		/****************** Internal ******************/
 		%feature("compactdefaultargs") Internal;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+
+Returns
+-------
+bool
 ") Internal;
 		Standard_Boolean Internal(const Standard_Integer I);
 
 		/****************** Internal ******************/
 		%feature("compactdefaultargs") Internal;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+B: bool
+
+Returns
+-------
+None
 ") Internal;
 		void Internal(const Standard_Integer I, const Standard_Boolean B);
 
 		/****************** IsoLine ******************/
 		%feature("compactdefaultargs") IsoLine;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+
+Returns
+-------
+bool
 ") IsoLine;
 		Standard_Boolean IsoLine(const Standard_Integer I);
 
 		/****************** IsoLine ******************/
 		%feature("compactdefaultargs") IsoLine;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+B: bool
+
+Returns
+-------
+None
 ") IsoLine;
 		void IsoLine(const Standard_Integer I, const Standard_Boolean B);
 
 		/****************** NbEdges ******************/
 		%feature("compactdefaultargs") NbEdges;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbEdges;
 		Standard_Integer NbEdges();
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:param Or:
-	:type Or: TopAbs_Orientation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+Or: TopAbs_Orientation
+
+Returns
+-------
+None
 ") Orientation;
 		void Orientation(const Standard_Integer I, const TopAbs_Orientation Or);
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:rtype: TopAbs_Orientation
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+
+Returns
+-------
+TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation(const Standard_Integer I);
 
 		/****************** OutLine ******************/
 		%feature("compactdefaultargs") OutLine;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+
+Returns
+-------
+bool
 ") OutLine;
 		Standard_Boolean OutLine(const Standard_Integer I);
 
 		/****************** OutLine ******************/
 		%feature("compactdefaultargs") OutLine;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+B: bool
+
+Returns
+-------
+None
 ") OutLine;
 		void OutLine(const Standard_Integer I, const Standard_Boolean B);
 
@@ -1135,105 +1315,169 @@ class HLRAlgo_Interference {
 	public:
 		/****************** Boundary ******************/
 		%feature("compactdefaultargs") Boundary;
-		%feature("autodoc", "	:param B:
-	:type B: HLRAlgo_Coincidence
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: HLRAlgo_Coincidence
+
+Returns
+-------
+None
 ") Boundary;
 		void Boundary(const HLRAlgo_Coincidence & B);
 
 		/****************** Boundary ******************/
 		%feature("compactdefaultargs") Boundary;
-		%feature("autodoc", "	:rtype: HLRAlgo_Coincidence
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_Coincidence
 ") Boundary;
 		const HLRAlgo_Coincidence & Boundary();
 
 		/****************** BoundaryTransition ******************/
 		%feature("compactdefaultargs") BoundaryTransition;
-		%feature("autodoc", "	:param BTr:
-	:type BTr: TopAbs_Orientation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+BTr: TopAbs_Orientation
+
+Returns
+-------
+None
 ") BoundaryTransition;
 		void BoundaryTransition(const TopAbs_Orientation BTr);
 
 		/****************** BoundaryTransition ******************/
 		%feature("compactdefaultargs") BoundaryTransition;
-		%feature("autodoc", "	:rtype: TopAbs_Orientation
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopAbs_Orientation
 ") BoundaryTransition;
 		TopAbs_Orientation BoundaryTransition();
 
 		/****************** ChangeBoundary ******************/
 		%feature("compactdefaultargs") ChangeBoundary;
-		%feature("autodoc", "	:rtype: HLRAlgo_Coincidence
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_Coincidence
 ") ChangeBoundary;
 		HLRAlgo_Coincidence & ChangeBoundary();
 
 		/****************** ChangeIntersection ******************/
 		%feature("compactdefaultargs") ChangeIntersection;
-		%feature("autodoc", "	:rtype: HLRAlgo_Intersection
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_Intersection
 ") ChangeIntersection;
 		HLRAlgo_Intersection & ChangeIntersection();
 
 		/****************** HLRAlgo_Interference ******************/
 		%feature("compactdefaultargs") HLRAlgo_Interference;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") HLRAlgo_Interference;
 		 HLRAlgo_Interference();
 
 		/****************** HLRAlgo_Interference ******************/
 		%feature("compactdefaultargs") HLRAlgo_Interference;
-		%feature("autodoc", "	:param Inters:
-	:type Inters: HLRAlgo_Intersection
-	:param Bound:
-	:type Bound: HLRAlgo_Coincidence
-	:param Orient:
-	:type Orient: TopAbs_Orientation
-	:param Trans:
-	:type Trans: TopAbs_Orientation
-	:param BTrans:
-	:type BTrans: TopAbs_Orientation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Inters: HLRAlgo_Intersection
+Bound: HLRAlgo_Coincidence
+Orient: TopAbs_Orientation
+Trans: TopAbs_Orientation
+BTrans: TopAbs_Orientation
+
+Returns
+-------
+None
 ") HLRAlgo_Interference;
 		 HLRAlgo_Interference(const HLRAlgo_Intersection & Inters, const HLRAlgo_Coincidence & Bound, const TopAbs_Orientation Orient, const TopAbs_Orientation Trans, const TopAbs_Orientation BTrans);
 
 		/****************** Intersection ******************/
 		%feature("compactdefaultargs") Intersection;
-		%feature("autodoc", "	:param I:
-	:type I: HLRAlgo_Intersection
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: HLRAlgo_Intersection
+
+Returns
+-------
+None
 ") Intersection;
 		void Intersection(const HLRAlgo_Intersection & I);
 
 		/****************** Intersection ******************/
 		%feature("compactdefaultargs") Intersection;
-		%feature("autodoc", "	:rtype: HLRAlgo_Intersection
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_Intersection
 ") Intersection;
 		const HLRAlgo_Intersection & Intersection();
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:param O:
-	:type O: TopAbs_Orientation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+O: TopAbs_Orientation
+
+Returns
+-------
+None
 ") Orientation;
 		void Orientation(const TopAbs_Orientation O);
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:rtype: TopAbs_Orientation
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation();
 
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
-		%feature("autodoc", "	:param Tr:
-	:type Tr: TopAbs_Orientation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tr: TopAbs_Orientation
+
+Returns
+-------
+None
 ") Transition;
 		void Transition(const TopAbs_Orientation Tr);
 
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
-		%feature("autodoc", "	:rtype: TopAbs_Orientation
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopAbs_Orientation
 ") Transition;
 		TopAbs_Orientation Transition();
 
@@ -1253,125 +1497,199 @@ class HLRAlgo_Intersection {
 	public:
 		/****************** HLRAlgo_Intersection ******************/
 		%feature("compactdefaultargs") HLRAlgo_Intersection;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") HLRAlgo_Intersection;
 		 HLRAlgo_Intersection();
 
 		/****************** HLRAlgo_Intersection ******************/
 		%feature("compactdefaultargs") HLRAlgo_Intersection;
-		%feature("autodoc", "	:param Ori:
-	:type Ori: TopAbs_Orientation
-	:param Lev:
-	:type Lev: int
-	:param SegInd:
-	:type SegInd: int
-	:param Ind:
-	:type Ind: int
-	:param P:
-	:type P: float
-	:param Tol:
-	:type Tol: Standard_ShortReal
-	:param S:
-	:type S: TopAbs_State
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Ori: TopAbs_Orientation
+Lev: int
+SegInd: int
+Ind: int
+P: float
+Tol: Standard_ShortReal
+S: TopAbs_State
+
+Returns
+-------
+None
 ") HLRAlgo_Intersection;
 		 HLRAlgo_Intersection(const TopAbs_Orientation Ori, const Standard_Integer Lev, const Standard_Integer SegInd, const Standard_Integer Ind, const Standard_Real P, const Standard_ShortReal Tol, const TopAbs_State S);
 
 		/****************** Index ******************/
 		%feature("compactdefaultargs") Index;
-		%feature("autodoc", "	:param Ind:
-	:type Ind: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Ind: int
+
+Returns
+-------
+None
 ") Index;
 		void Index(const Standard_Integer Ind);
 
 		/****************** Index ******************/
 		%feature("compactdefaultargs") Index;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index();
 
 		/****************** Level ******************/
 		%feature("compactdefaultargs") Level;
-		%feature("autodoc", "	:param Lev:
-	:type Lev: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Lev: int
+
+Returns
+-------
+None
 ") Level;
 		void Level(const Standard_Integer Lev);
 
 		/****************** Level ******************/
 		%feature("compactdefaultargs") Level;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Level;
 		Standard_Integer Level();
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:param Ori:
-	:type Ori: TopAbs_Orientation
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Ori: TopAbs_Orientation
+
+Returns
+-------
+None
 ") Orientation;
 		void Orientation(const TopAbs_Orientation Ori);
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
-		%feature("autodoc", "	:rtype: TopAbs_Orientation
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation();
 
 		/****************** Parameter ******************/
 		%feature("compactdefaultargs") Parameter;
-		%feature("autodoc", "	:param P:
-	:type P: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: float
+
+Returns
+-------
+None
 ") Parameter;
 		void Parameter(const Standard_Real P);
 
 		/****************** Parameter ******************/
 		%feature("compactdefaultargs") Parameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Parameter;
 		Standard_Real Parameter();
 
 		/****************** SegIndex ******************/
 		%feature("compactdefaultargs") SegIndex;
-		%feature("autodoc", "	:param SegInd:
-	:type SegInd: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SegInd: int
+
+Returns
+-------
+None
 ") SegIndex;
 		void SegIndex(const Standard_Integer SegInd);
 
 		/****************** SegIndex ******************/
 		%feature("compactdefaultargs") SegIndex;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") SegIndex;
 		Standard_Integer SegIndex();
 
 		/****************** State ******************/
 		%feature("compactdefaultargs") State;
-		%feature("autodoc", "	:param S:
-	:type S: TopAbs_State
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopAbs_State
+
+Returns
+-------
+None
 ") State;
 		void State(const TopAbs_State S);
 
 		/****************** State ******************/
 		%feature("compactdefaultargs") State;
-		%feature("autodoc", "	:rtype: TopAbs_State
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopAbs_State
 ") State;
 		TopAbs_State State();
 
 		/****************** Tolerance ******************/
 		%feature("compactdefaultargs") Tolerance;
-		%feature("autodoc", "	:param T:
-	:type T: Standard_ShortReal
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+T: Standard_ShortReal
+
+Returns
+-------
+None
 ") Tolerance;
 		void Tolerance(const Standard_ShortReal T);
 
 		/****************** Tolerance ******************/
 		%feature("compactdefaultargs") Tolerance;
-		%feature("autodoc", "	:rtype: Standard_ShortReal
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_ShortReal
 ") Tolerance;
 		Standard_ShortReal Tolerance();
 
@@ -1391,13 +1709,21 @@ class HLRAlgo_PolyAlgo : public Standard_Transient {
 	public:
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
 		/****************** HLRAlgo_PolyAlgo ******************/
 		%feature("compactdefaultargs") HLRAlgo_PolyAlgo;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") HLRAlgo_PolyAlgo;
 		 HLRAlgo_PolyAlgo();
 
@@ -1405,69 +1731,102 @@ class HLRAlgo_PolyAlgo : public Standard_Transient {
 		%feature("compactdefaultargs") Hide;
 		%feature("autodoc", "Process hiding between <pt1> and <pt2>.
 
-	:param status:
-	:type status: HLRAlgo_EdgeStatus
-	:param Index:
-	:type Index: int
-	:param reg1:
-	:type reg1: bool
-	:param regn:
-	:type regn: bool
-	:param outl:
-	:type outl: bool
-	:param intl:
-	:type intl: bool
-	:rtype: HLRAlgo_BiPoint::PointsT
+Parameters
+----------
+status: HLRAlgo_EdgeStatus
+Index: int
+reg1: bool
+regn: bool
+outl: bool
+intl: bool
+
+Returns
+-------
+HLRAlgo_BiPoint::PointsT
 ") Hide;
 		HLRAlgo_BiPoint::PointsT & Hide(HLRAlgo_EdgeStatus & status, Standard_Integer &OutValue, Standard_Boolean &OutValue, Standard_Boolean &OutValue, Standard_Boolean &OutValue, Standard_Boolean &OutValue);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param HShell:
-	:type HShell: TColStd_HArray1OfTransient
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HShell: TColStd_HArray1OfTransient
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TColStd_HArray1OfTransient> & HShell);
 
 		/****************** InitHide ******************/
 		%feature("compactdefaultargs") InitHide;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") InitHide;
 		void InitHide();
 
 		/****************** InitShow ******************/
 		%feature("compactdefaultargs") InitShow;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") InitShow;
 		void InitShow();
 
 		/****************** MoreHide ******************/
 		%feature("compactdefaultargs") MoreHide;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") MoreHide;
 		Standard_Boolean MoreHide();
 
 		/****************** MoreShow ******************/
 		%feature("compactdefaultargs") MoreShow;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") MoreShow;
 		Standard_Boolean MoreShow();
 
 		/****************** NextHide ******************/
 		%feature("compactdefaultargs") NextHide;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") NextHide;
 		void NextHide();
 
 		/****************** NextShow ******************/
 		%feature("compactdefaultargs") NextShow;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") NextShow;
 		void NextShow();
 
 		/****************** PolyShell ******************/
 		%feature("compactdefaultargs") PolyShell;
-		%feature("autodoc", "	:rtype: TColStd_Array1OfTransient
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_Array1OfTransient
 ") PolyShell;
 		TColStd_Array1OfTransient & PolyShell();
 
@@ -1475,17 +1834,17 @@ class HLRAlgo_PolyAlgo : public Standard_Transient {
 		%feature("compactdefaultargs") Show;
 		%feature("autodoc", "Process hiding between <pt1> and <pt2>.
 
-	:param Index:
-	:type Index: int
-	:param reg1:
-	:type reg1: bool
-	:param regn:
-	:type regn: bool
-	:param outl:
-	:type outl: bool
-	:param intl:
-	:type intl: bool
-	:rtype: HLRAlgo_BiPoint::PointsT
+Parameters
+----------
+Index: int
+reg1: bool
+regn: bool
+outl: bool
+intl: bool
+
+Returns
+-------
+HLRAlgo_BiPoint::PointsT
 ") Show;
 		HLRAlgo_BiPoint::PointsT & Show(Standard_Integer &OutValue, Standard_Boolean &OutValue, Standard_Boolean &OutValue, Standard_Boolean &OutValue, Standard_Boolean &OutValue);
 
@@ -1493,7 +1852,9 @@ class HLRAlgo_PolyAlgo : public Standard_Transient {
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Prepare all the data to process the algo.
 
-	:rtype: None
+Returns
+-------
+None
 ") Update;
 		void Update();
 
@@ -1518,69 +1879,117 @@ class HLRAlgo_PolyData : public Standard_Transient {
 		class Box {};
 		/****************** FaceIndex ******************/
 		%feature("compactdefaultargs") FaceIndex;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+
+Returns
+-------
+None
 ") FaceIndex;
 		void FaceIndex(const Standard_Integer I);
 
 		/****************** FaceIndex ******************/
 		%feature("compactdefaultargs") FaceIndex;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") FaceIndex;
 		Standard_Integer FaceIndex();
 
 		/****************** HLRAlgo_PolyData ******************/
 		%feature("compactdefaultargs") HLRAlgo_PolyData;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") HLRAlgo_PolyData;
 		 HLRAlgo_PolyData();
 
 		/****************** HNodes ******************/
 		%feature("compactdefaultargs") HNodes;
-		%feature("autodoc", "	:param HNodes:
-	:type HNodes: TColgp_HArray1OfXYZ
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HNodes: TColgp_HArray1OfXYZ
+
+Returns
+-------
+None
 ") HNodes;
 		void HNodes(const opencascade::handle<TColgp_HArray1OfXYZ> & HNodes);
 
 		/****************** HPHDat ******************/
 		%feature("compactdefaultargs") HPHDat;
-		%feature("autodoc", "	:param HPHDat:
-	:type HPHDat: HLRAlgo_HArray1OfPHDat
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HPHDat: HLRAlgo_HArray1OfPHDat
+
+Returns
+-------
+None
 ") HPHDat;
 		void HPHDat(const opencascade::handle<HLRAlgo_HArray1OfPHDat> & HPHDat);
 
 		/****************** HTData ******************/
 		%feature("compactdefaultargs") HTData;
-		%feature("autodoc", "	:param HTData:
-	:type HTData: HLRAlgo_HArray1OfTData
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HTData: HLRAlgo_HArray1OfTData
+
+Returns
+-------
+None
 ") HTData;
 		void HTData(const opencascade::handle<HLRAlgo_HArray1OfTData> & HTData);
 
 		/****************** Hiding ******************/
 		%feature("compactdefaultargs") Hiding;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Hiding;
 		Standard_Boolean Hiding();
 
 		/****************** Nodes ******************/
 		%feature("compactdefaultargs") Nodes;
-		%feature("autodoc", "	:rtype: TColgp_Array1OfXYZ
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColgp_Array1OfXYZ
 ") Nodes;
 		TColgp_Array1OfXYZ & Nodes();
 
 		/****************** PHDat ******************/
 		%feature("compactdefaultargs") PHDat;
-		%feature("autodoc", "	:rtype: HLRAlgo_Array1OfPHDat
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_Array1OfPHDat
 ") PHDat;
 		HLRAlgo_Array1OfPHDat & PHDat();
 
 		/****************** TData ******************/
 		%feature("compactdefaultargs") TData;
-		%feature("autodoc", "	:rtype: HLRAlgo_Array1OfTData
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_Array1OfTData
 ") TData;
 		HLRAlgo_Array1OfTData & TData();
 
@@ -1602,187 +2011,268 @@ class HLRAlgo_PolyInternalData : public Standard_Transient {
 	public:
 		/****************** AddNode ******************/
 		%feature("compactdefaultargs") AddNode;
-		%feature("autodoc", "	:param Nod1RValues:
-	:type Nod1RValues: HLRAlgo_PolyInternalNode::NodeData
-	:param Nod2RValues:
-	:type Nod2RValues: HLRAlgo_PolyInternalNode::NodeData
-	:param PINod1:
-	:type PINod1: HLRAlgo_Array1OfPINod *
-	:param PINod2:
-	:type PINod2: HLRAlgo_Array1OfPINod *
-	:param coef1:
-	:type coef1: float
-	:param X3:
-	:type X3: float
-	:param Y3:
-	:type Y3: float
-	:param Z3:
-	:type Z3: float
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Nod1RValues: HLRAlgo_PolyInternalNode::NodeData
+Nod2RValues: HLRAlgo_PolyInternalNode::NodeData
+PINod1: HLRAlgo_Array1OfPINod *
+PINod2: HLRAlgo_Array1OfPINod *
+coef1: float
+X3: float
+Y3: float
+Z3: float
+
+Returns
+-------
+int
 ") AddNode;
 		Standard_Integer AddNode(HLRAlgo_PolyInternalNode::NodeData & Nod1RValues, HLRAlgo_PolyInternalNode::NodeData & Nod2RValues, HLRAlgo_Array1OfPINod * & PINod1, HLRAlgo_Array1OfPINod * & PINod2, const Standard_Real coef1, const Standard_Real X3, const Standard_Real Y3, const Standard_Real Z3);
 
 		/****************** DecPINod ******************/
 		%feature("compactdefaultargs") DecPINod;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") DecPINod;
 		void DecPINod();
 
 		/****************** DecPISeg ******************/
 		%feature("compactdefaultargs") DecPISeg;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") DecPISeg;
 		void DecPISeg();
 
 		/****************** DecTData ******************/
 		%feature("compactdefaultargs") DecTData;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") DecTData;
 		void DecTData();
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Dump;
 		void Dump();
 
 		/****************** HLRAlgo_PolyInternalData ******************/
 		%feature("compactdefaultargs") HLRAlgo_PolyInternalData;
-		%feature("autodoc", "	:param nbNod:
-	:type nbNod: int
-	:param nbTri:
-	:type nbTri: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+nbNod: int
+nbTri: int
+
+Returns
+-------
+None
 ") HLRAlgo_PolyInternalData;
 		 HLRAlgo_PolyInternalData(const Standard_Integer nbNod, const Standard_Integer nbTri);
 
 		/****************** IncPINod ******************/
 		%feature("compactdefaultargs") IncPINod;
-		%feature("autodoc", "	:param PINod1:
-	:type PINod1: HLRAlgo_Array1OfPINod *
-	:param PINod2:
-	:type PINod2: HLRAlgo_Array1OfPINod *
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+PINod1: HLRAlgo_Array1OfPINod *
+PINod2: HLRAlgo_Array1OfPINod *
+
+Returns
+-------
+None
 ") IncPINod;
 		void IncPINod(HLRAlgo_Array1OfPINod * & PINod1, HLRAlgo_Array1OfPINod * & PINod2);
 
 		/****************** IncPISeg ******************/
 		%feature("compactdefaultargs") IncPISeg;
-		%feature("autodoc", "	:param PISeg1:
-	:type PISeg1: HLRAlgo_Array1OfPISeg *
-	:param PISeg2:
-	:type PISeg2: HLRAlgo_Array1OfPISeg *
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+PISeg1: HLRAlgo_Array1OfPISeg *
+PISeg2: HLRAlgo_Array1OfPISeg *
+
+Returns
+-------
+None
 ") IncPISeg;
 		void IncPISeg(HLRAlgo_Array1OfPISeg * & PISeg1, HLRAlgo_Array1OfPISeg * & PISeg2);
 
 		/****************** IncTData ******************/
 		%feature("compactdefaultargs") IncTData;
-		%feature("autodoc", "	:param TData1:
-	:type TData1: HLRAlgo_Array1OfTData *
-	:param TData2:
-	:type TData2: HLRAlgo_Array1OfTData *
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TData1: HLRAlgo_Array1OfTData *
+TData2: HLRAlgo_Array1OfTData *
+
+Returns
+-------
+None
 ") IncTData;
 		void IncTData(HLRAlgo_Array1OfTData * & TData1, HLRAlgo_Array1OfTData * & TData2);
 
 		/****************** IntOutL ******************/
 		%feature("compactdefaultargs") IntOutL;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IntOutL;
 		Standard_Boolean IntOutL();
 
 		/****************** IntOutL ******************/
 		%feature("compactdefaultargs") IntOutL;
-		%feature("autodoc", "	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
 ") IntOutL;
 		void IntOutL(const Standard_Boolean B);
 
 		/****************** NbPINod ******************/
 		%feature("compactdefaultargs") NbPINod;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbPINod;
 		Standard_Integer NbPINod();
 
 		/****************** NbPISeg ******************/
 		%feature("compactdefaultargs") NbPISeg;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbPISeg;
 		Standard_Integer NbPISeg();
 
 		/****************** NbTData ******************/
 		%feature("compactdefaultargs") NbTData;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbTData;
 		Standard_Integer NbTData();
 
 		/****************** PINod ******************/
 		%feature("compactdefaultargs") PINod;
-		%feature("autodoc", "	:rtype: HLRAlgo_Array1OfPINod
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_Array1OfPINod
 ") PINod;
 		HLRAlgo_Array1OfPINod & PINod();
 
 		/****************** PISeg ******************/
 		%feature("compactdefaultargs") PISeg;
-		%feature("autodoc", "	:rtype: HLRAlgo_Array1OfPISeg
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_Array1OfPISeg
 ") PISeg;
 		HLRAlgo_Array1OfPISeg & PISeg();
 
 		/****************** Planar ******************/
 		%feature("compactdefaultargs") Planar;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Planar;
 		Standard_Boolean Planar();
 
 		/****************** Planar ******************/
 		%feature("compactdefaultargs") Planar;
-		%feature("autodoc", "	:param B:
-	:type B: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
 ") Planar;
 		void Planar(const Standard_Boolean B);
 
 		/****************** TData ******************/
 		%feature("compactdefaultargs") TData;
-		%feature("autodoc", "	:rtype: HLRAlgo_Array1OfTData
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_Array1OfTData
 ") TData;
 		HLRAlgo_Array1OfTData & TData();
 
 		/****************** UpdateLinks ******************/
 		%feature("compactdefaultargs") UpdateLinks;
-		%feature("autodoc", "	:param TData:
-	:type TData: HLRAlgo_Array1OfTData *
-	:param PISeg:
-	:type PISeg: HLRAlgo_Array1OfPISeg *
-	:param PINod:
-	:type PINod: HLRAlgo_Array1OfPINod *
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TData: HLRAlgo_Array1OfTData *
+PISeg: HLRAlgo_Array1OfPISeg *
+PINod: HLRAlgo_Array1OfPINod *
+
+Returns
+-------
+None
 ") UpdateLinks;
 		void UpdateLinks(HLRAlgo_Array1OfTData * & TData, HLRAlgo_Array1OfPISeg * & PISeg, HLRAlgo_Array1OfPINod * & PINod);
 
 		/****************** UpdateLinks ******************/
 		%feature("compactdefaultargs") UpdateLinks;
-		%feature("autodoc", "	:param ip1:
-	:type ip1: int
-	:param ip2:
-	:type ip2: int
-	:param ip3:
-	:type ip3: int
-	:param TData1:
-	:type TData1: HLRAlgo_Array1OfTData *
-	:param TData2:
-	:type TData2: HLRAlgo_Array1OfTData *
-	:param PISeg1:
-	:type PISeg1: HLRAlgo_Array1OfPISeg *
-	:param PISeg2:
-	:type PISeg2: HLRAlgo_Array1OfPISeg *
-	:param PINod1:
-	:type PINod1: HLRAlgo_Array1OfPINod *
-	:param PINod2:
-	:type PINod2: HLRAlgo_Array1OfPINod *
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ip1: int
+ip2: int
+ip3: int
+TData1: HLRAlgo_Array1OfTData *
+TData2: HLRAlgo_Array1OfTData *
+PISeg1: HLRAlgo_Array1OfPISeg *
+PISeg2: HLRAlgo_Array1OfPISeg *
+PINod1: HLRAlgo_Array1OfPINod *
+PINod2: HLRAlgo_Array1OfPINod *
+
+Returns
+-------
+None
 ") UpdateLinks;
 		void UpdateLinks(const Standard_Integer ip1, const Standard_Integer ip2, const Standard_Integer ip3, HLRAlgo_Array1OfTData * & TData1, HLRAlgo_Array1OfTData * & TData2, HLRAlgo_Array1OfPISeg * & PISeg1, HLRAlgo_Array1OfPISeg * & PISeg2, HLRAlgo_Array1OfPINod * & PINod1, HLRAlgo_Array1OfPINod * & PINod2);
 
@@ -1806,7 +2296,11 @@ class HLRAlgo_PolyInternalNode : public Standard_Transient {
 		class NodeData {};
 		/****************** HLRAlgo_PolyInternalNode ******************/
 		%feature("compactdefaultargs") HLRAlgo_PolyInternalNode;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") HLRAlgo_PolyInternalNode;
 		 HLRAlgo_PolyInternalNode();
 
@@ -1832,49 +2326,83 @@ class HLRAlgo_PolyShellData : public Standard_Transient {
 		class ShellIndices {};
 		/****************** Edges ******************/
 		%feature("compactdefaultargs") Edges;
-		%feature("autodoc", "	:rtype: HLRAlgo_ListOfBPoint
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_ListOfBPoint
 ") Edges;
 		HLRAlgo_ListOfBPoint & Edges();
 
 		/****************** HLRAlgo_PolyShellData ******************/
 		%feature("compactdefaultargs") HLRAlgo_PolyShellData;
-		%feature("autodoc", "	:param nbFace:
-	:type nbFace: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+nbFace: int
+
+Returns
+-------
+None
 ") HLRAlgo_PolyShellData;
 		 HLRAlgo_PolyShellData(const Standard_Integer nbFace);
 
 		/****************** Hiding ******************/
 		%feature("compactdefaultargs") Hiding;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") Hiding;
 		Standard_Boolean Hiding();
 
 		/****************** HidingPolyData ******************/
 		%feature("compactdefaultargs") HidingPolyData;
-		%feature("autodoc", "	:rtype: TColStd_Array1OfTransient
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_Array1OfTransient
 ") HidingPolyData;
 		TColStd_Array1OfTransient & HidingPolyData();
 
 		/****************** PolyData ******************/
 		%feature("compactdefaultargs") PolyData;
-		%feature("autodoc", "	:rtype: TColStd_Array1OfTransient
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_Array1OfTransient
 ") PolyData;
 		TColStd_Array1OfTransient & PolyData();
 
 		/****************** UpdateGlobalMinMax ******************/
 		%feature("compactdefaultargs") UpdateGlobalMinMax;
-		%feature("autodoc", "	:param theBox:
-	:type theBox: HLRAlgo_PolyData::Box
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theBox: HLRAlgo_PolyData::Box
+
+Returns
+-------
+None
 ") UpdateGlobalMinMax;
 		void UpdateGlobalMinMax(HLRAlgo_PolyData::Box & theBox);
 
 		/****************** UpdateHiding ******************/
 		%feature("compactdefaultargs") UpdateHiding;
-		%feature("autodoc", "	:param nbHiding:
-	:type nbHiding: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+nbHiding: int
+
+Returns
+-------
+None
 ") UpdateHiding;
 		void UpdateHiding(const Standard_Integer nbHiding);
 
@@ -1896,13 +2424,17 @@ class HLRAlgo_Projector {
 	public:
 		/****************** Directions ******************/
 		%feature("compactdefaultargs") Directions;
-		%feature("autodoc", "	:param D1:
-	:type D1: gp_Vec2d
-	:param D2:
-	:type D2: gp_Vec2d
-	:param D3:
-	:type D3: gp_Vec2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+D1: gp_Vec2d
+D2: gp_Vec2d
+D3: gp_Vec2d
+
+Returns
+-------
+None
 ") Directions;
 		void Directions(gp_Vec2d & D1, gp_Vec2d & D2, gp_Vec2d & D3);
 
@@ -1910,7 +2442,9 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") Focus;
 		%feature("autodoc", "Returns the focal length.
 
-	:rtype: float
+Returns
+-------
+float
 ") Focus;
 		Standard_Real Focus();
 
@@ -1918,13 +2452,19 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") FullTransformation;
 		%feature("autodoc", "Returns the original transformation.
 
-	:rtype: gp_Trsf
+Returns
+-------
+gp_Trsf
 ") FullTransformation;
 		const gp_Trsf FullTransformation();
 
 		/****************** HLRAlgo_Projector ******************/
 		%feature("compactdefaultargs") HLRAlgo_Projector;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") HLRAlgo_Projector;
 		 HLRAlgo_Projector();
 
@@ -1932,9 +2472,13 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") HLRAlgo_Projector;
 		%feature("autodoc", "Creates an axonometric projector. <cs> is the viewing coordinate system.
 
-	:param CS:
-	:type CS: gp_Ax2
-	:rtype: None
+Parameters
+----------
+CS: gp_Ax2
+
+Returns
+-------
+None
 ") HLRAlgo_Projector;
 		 HLRAlgo_Projector(const gp_Ax2 & CS);
 
@@ -1942,11 +2486,14 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") HLRAlgo_Projector;
 		%feature("autodoc", "Creates a perspective projector. <cs> is the viewing coordinate system.
 
-	:param CS:
-	:type CS: gp_Ax2
-	:param Focus:
-	:type Focus: float
-	:rtype: None
+Parameters
+----------
+CS: gp_Ax2
+Focus: float
+
+Returns
+-------
+None
 ") HLRAlgo_Projector;
 		 HLRAlgo_Projector(const gp_Ax2 & CS, const Standard_Real Focus);
 
@@ -1954,13 +2501,15 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") HLRAlgo_Projector;
 		%feature("autodoc", "Build a projector with automatic minmax directions.
 
-	:param T:
-	:type T: gp_Trsf
-	:param Persp:
-	:type Persp: bool
-	:param Focus:
-	:type Focus: float
-	:rtype: None
+Parameters
+----------
+T: gp_Trsf
+Persp: bool
+Focus: float
+
+Returns
+-------
+None
 ") HLRAlgo_Projector;
 		 HLRAlgo_Projector(const gp_Trsf & T, const Standard_Boolean Persp, const Standard_Real Focus);
 
@@ -1968,19 +2517,18 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") HLRAlgo_Projector;
 		%feature("autodoc", "Build a projector with given minmax directions.
 
-	:param T:
-	:type T: gp_Trsf
-	:param Persp:
-	:type Persp: bool
-	:param Focus:
-	:type Focus: float
-	:param v1:
-	:type v1: gp_Vec2d
-	:param v2:
-	:type v2: gp_Vec2d
-	:param v3:
-	:type v3: gp_Vec2d
-	:rtype: None
+Parameters
+----------
+T: gp_Trsf
+Persp: bool
+Focus: float
+v1: gp_Vec2d
+v2: gp_Vec2d
+v3: gp_Vec2d
+
+Returns
+-------
+None
 ") HLRAlgo_Projector;
 		 HLRAlgo_Projector(const gp_Trsf & T, const Standard_Boolean Persp, const Standard_Real Focus, const gp_Vec2d & v1, const gp_Vec2d & v2, const gp_Vec2d & v3);
 
@@ -1988,7 +2536,9 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") InvertedTransformation;
 		%feature("autodoc", "Returns the active inverted transformation.
 
-	:rtype: gp_Trsf
+Returns
+-------
+gp_Trsf
 ") InvertedTransformation;
 		const gp_Trsf InvertedTransformation();
 
@@ -1996,7 +2546,9 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") Perspective;
 		%feature("autodoc", "Returns true if there is a perspective transformation.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Perspective;
 		Standard_Boolean Perspective();
 
@@ -2004,11 +2556,14 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") Project;
 		%feature("autodoc", "Transform and apply perspective if needed.
 
-	:param P:
-	:type P: gp_Pnt
-	:param Pout:
-	:type Pout: gp_Pnt2d
-	:rtype: None
+Parameters
+----------
+P: gp_Pnt
+Pout: gp_Pnt2d
+
+Returns
+-------
+None
 ") Project;
 		void Project(const gp_Pnt & P, gp_Pnt2d & Pout);
 
@@ -2016,15 +2571,16 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") Project;
 		%feature("autodoc", "Transform and apply perspective if needed.
 
-	:param P:
-	:type P: gp_Pnt
-	:param X:
-	:type X: float
-	:param Y:
-	:type Y: float
-	:param Z:
-	:type Z: float
-	:rtype: None
+Parameters
+----------
+P: gp_Pnt
+X: float
+Y: float
+Z: float
+
+Returns
+-------
+None
 ") Project;
 		void Project(const gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -2032,15 +2588,16 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") Project;
 		%feature("autodoc", "Transform and apply perspective if needed.
 
-	:param P:
-	:type P: gp_Pnt
-	:param D1:
-	:type D1: gp_Vec
-	:param Pout:
-	:type Pout: gp_Pnt2d
-	:param D1out:
-	:type D1out: gp_Vec2d
-	:rtype: None
+Parameters
+----------
+P: gp_Pnt
+D1: gp_Vec
+Pout: gp_Pnt2d
+D1out: gp_Vec2d
+
+Returns
+-------
+None
 ") Project;
 		void Project(const gp_Pnt & P, const gp_Vec & D1, gp_Pnt2d & Pout, gp_Vec2d & D1out);
 
@@ -2048,21 +2605,30 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") Scaled;
 		%feature("autodoc", "To compute with the given scale and translation.
 
-	:param On: default value is Standard_False
-	:type On: bool
-	:rtype: None
+Parameters
+----------
+On: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
 ") Scaled;
 		void Scaled(const Standard_Boolean On = Standard_False);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param T:
-	:type T: gp_Trsf
-	:param Persp:
-	:type Persp: bool
-	:param Focus:
-	:type Focus: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+T: gp_Trsf
+Persp: bool
+Focus: float
+
+Returns
+-------
+None
 ") Set;
 		void Set(const gp_Trsf & T, const Standard_Boolean Persp, const Standard_Real Focus);
 
@@ -2070,27 +2636,42 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") Shoot;
 		%feature("autodoc", "Return a line going through the eye towards the 2d point <x,y>.
 
-	:param X:
-	:type X: float
-	:param Y:
-	:type Y: float
-	:rtype: gp_Lin
+Parameters
+----------
+X: float
+Y: float
+
+Returns
+-------
+gp_Lin
 ") Shoot;
 		gp_Lin Shoot(const Standard_Real X, const Standard_Real Y);
 
 		/****************** Transform ******************/
 		%feature("compactdefaultargs") Transform;
-		%feature("autodoc", "	:param D:
-	:type D: gp_Vec
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+D: gp_Vec
+
+Returns
+-------
+None
 ") Transform;
 		void Transform(gp_Vec & D);
 
 		/****************** Transform ******************/
 		%feature("compactdefaultargs") Transform;
-		%feature("autodoc", "	:param Pnt:
-	:type Pnt: gp_Pnt
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Pnt: gp_Pnt
+
+Returns
+-------
+None
 ") Transform;
 		void Transform(gp_Pnt & Pnt);
 
@@ -2098,7 +2679,9 @@ class HLRAlgo_Projector {
 		%feature("compactdefaultargs") Transformation;
 		%feature("autodoc", "Returns the active transformation.
 
-	:rtype: gp_Trsf
+Returns
+-------
+gp_Trsf
 ") Transformation;
 		const gp_Trsf Transformation();
 
@@ -2123,47 +2706,76 @@ class HLRAlgo_WiresBlock : public Standard_Transient {
 		%feature("compactdefaultargs") HLRAlgo_WiresBlock;
 		%feature("autodoc", "Create a block of blocks.
 
-	:param NbWires:
-	:type NbWires: int
-	:rtype: None
+Parameters
+----------
+NbWires: int
+
+Returns
+-------
+None
 ") HLRAlgo_WiresBlock;
 		 HLRAlgo_WiresBlock(const Standard_Integer NbWires);
 
 		/****************** MinMax ******************/
 		%feature("compactdefaultargs") MinMax;
-		%feature("autodoc", "	:rtype: HLRAlgo_EdgesBlock::MinMaxIndices
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_EdgesBlock::MinMaxIndices
 ") MinMax;
 		HLRAlgo_EdgesBlock::MinMaxIndices & MinMax();
 
 		/****************** NbWires ******************/
 		%feature("compactdefaultargs") NbWires;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbWires;
 		Standard_Integer NbWires();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:param W:
-	:type W: HLRAlgo_EdgesBlock
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+W: HLRAlgo_EdgesBlock
+
+Returns
+-------
+None
 ") Set;
 		void Set(const Standard_Integer I, const opencascade::handle<HLRAlgo_EdgesBlock> & W);
 
 		/****************** UpdateMinMax ******************/
 		%feature("compactdefaultargs") UpdateMinMax;
-		%feature("autodoc", "	:param theMinMaxes:
-	:type theMinMaxes: HLRAlgo_EdgesBlock::MinMaxIndices
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMinMaxes: HLRAlgo_EdgesBlock::MinMaxIndices
+
+Returns
+-------
+None
 ") UpdateMinMax;
 		void UpdateMinMax(const HLRAlgo_EdgesBlock::MinMaxIndices & theMinMaxes);
 
 		/****************** Wire ******************/
 		%feature("compactdefaultargs") Wire;
-		%feature("autodoc", "	:param I:
-	:type I: int
-	:rtype: opencascade::handle<HLRAlgo_EdgesBlock>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: int
+
+Returns
+-------
+opencascade::handle<HLRAlgo_EdgesBlock>
 ") Wire;
 		opencascade::handle<HLRAlgo_EdgesBlock> & Wire(const Standard_Integer I);
 

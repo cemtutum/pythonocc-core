@@ -86,9 +86,13 @@ class XmlXCAFDrivers {
 		%feature("compactdefaultargs") DefineFormat;
 		%feature("autodoc", "Defines format 'xmlxcaf' and registers its read and write drivers in the specified application.
 
-	:param theApp:
-	:type theApp: TDocStd_Application
-	:rtype: None
+Parameters
+----------
+theApp: TDocStd_Application
+
+Returns
+-------
+None
 ") DefineFormat;
 		static void DefineFormat(const opencascade::handle<TDocStd_Application> & theApp);
 
@@ -96,9 +100,13 @@ class XmlXCAFDrivers {
 		%feature("compactdefaultargs") Factory;
 		%feature("autodoc", "Depending from the id, returns a list of storage or retrieval attribute drivers. used for plugin. //! standard data model drivers =========================== 47b0b826-d931-11d1-b5da-00a0c9064368 transient-persistent 47b0b827-d931-11d1-b5da-00a0c9064368 persistent-transient //! xcaf data model drivers ================================= ed8793f8-3142-11d4-b9b5-0060b0ee281b transient-persistent ed8793f9-3142-11d4-b9b5-0060b0ee281b persistent-transient ed8793fa-3142-11d4-b9b5-0060b0ee281b xcafschema.
 
-	:param aGUID:
-	:type aGUID: Standard_GUID
-	:rtype: opencascade::handle<Standard_Transient>
+Parameters
+----------
+aGUID: Standard_GUID
+
+Returns
+-------
+opencascade::handle<Standard_Transient>
 ") Factory;
 		static const opencascade::handle<Standard_Transient> & Factory(const Standard_GUID & aGUID);
 
@@ -118,15 +126,25 @@ class XmlXCAFDrivers_DocumentRetrievalDriver : public XmlDrivers_DocumentRetriev
 	public:
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
-		%feature("autodoc", "	:param theMsgDriver:
-	:type theMsgDriver: Message_Messenger
-	:rtype: opencascade::handle<XmlMDF_ADriverTable>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMsgDriver: Message_Messenger
+
+Returns
+-------
+opencascade::handle<XmlMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<XmlMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
 
 		/****************** XmlXCAFDrivers_DocumentRetrievalDriver ******************/
 		%feature("compactdefaultargs") XmlXCAFDrivers_DocumentRetrievalDriver;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") XmlXCAFDrivers_DocumentRetrievalDriver;
 		 XmlXCAFDrivers_DocumentRetrievalDriver();
 
@@ -148,17 +166,29 @@ class XmlXCAFDrivers_DocumentStorageDriver : public XmlDrivers_DocumentStorageDr
 	public:
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
-		%feature("autodoc", "	:param theMsgDriver:
-	:type theMsgDriver: Message_Messenger
-	:rtype: opencascade::handle<XmlMDF_ADriverTable>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMsgDriver: Message_Messenger
+
+Returns
+-------
+opencascade::handle<XmlMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<XmlMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
 
 		/****************** XmlXCAFDrivers_DocumentStorageDriver ******************/
 		%feature("compactdefaultargs") XmlXCAFDrivers_DocumentStorageDriver;
-		%feature("autodoc", "	:param theCopyright:
-	:type theCopyright: TCollection_ExtendedString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theCopyright: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") XmlXCAFDrivers_DocumentStorageDriver;
 		 XmlXCAFDrivers_DocumentStorageDriver(const TCollection_ExtendedString & theCopyright);
 

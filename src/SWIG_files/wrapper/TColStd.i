@@ -557,29 +557,50 @@ class TColStd_HPackedMapOfInteger : public Standard_Transient {
 	public:
 		/****************** ChangeMap ******************/
 		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "	:rtype: TColStd_PackedMapOfInteger
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_PackedMapOfInteger
 ") ChangeMap;
 		TColStd_PackedMapOfInteger & ChangeMap();
 
 		/****************** Map ******************/
 		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "	:rtype: TColStd_PackedMapOfInteger
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_PackedMapOfInteger
 ") Map;
 		const TColStd_PackedMapOfInteger & Map();
 
 		/****************** TColStd_HPackedMapOfInteger ******************/
 		%feature("compactdefaultargs") TColStd_HPackedMapOfInteger;
-		%feature("autodoc", "	:param NbBuckets: default value is 1
-	:type NbBuckets: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbBuckets: int,optional
+	default value is 1
+
+Returns
+-------
+None
 ") TColStd_HPackedMapOfInteger;
 		 TColStd_HPackedMapOfInteger(const Standard_Integer NbBuckets = 1);
 
 		/****************** TColStd_HPackedMapOfInteger ******************/
 		%feature("compactdefaultargs") TColStd_HPackedMapOfInteger;
-		%feature("autodoc", "	:param theOther:
-	:type theOther: TColStd_PackedMapOfInteger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theOther: TColStd_PackedMapOfInteger
+
+Returns
+-------
+None
 ") TColStd_HPackedMapOfInteger;
 		 TColStd_HPackedMapOfInteger(const TColStd_PackedMapOfInteger & theOther);
 

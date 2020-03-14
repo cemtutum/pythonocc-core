@@ -750,7 +750,9 @@ class StepAP214 {
 		%feature("compactdefaultargs") Protocol;
 		%feature("autodoc", "Creates a protocol.
 
-	:rtype: opencascade::handle<StepAP214_Protocol>
+Returns
+-------
+opencascade::handle<StepAP214_Protocol>
 ") Protocol;
 		static opencascade::handle<StepAP214_Protocol> Protocol();
 
@@ -770,39 +772,64 @@ class StepAP214_AppliedApprovalAssignment : public StepBasic_ApprovalAssignment 
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedApproval:
-	:type aAssignedApproval: StepBasic_Approval
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfApprovalItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedApproval: StepBasic_Approval
+aItems: StepAP214_HArray1OfApprovalItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_Approval> & aAssignedApproval, const opencascade::handle<StepAP214_HArray1OfApprovalItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfApprovalItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfApprovalItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfApprovalItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_ApprovalItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_ApprovalItem
 ") ItemsValue;
 		StepAP214_ApprovalItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfApprovalItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfApprovalItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfApprovalItem> & aItems);
 
@@ -810,7 +837,9 @@ class StepAP214_AppliedApprovalAssignment : public StepBasic_ApprovalAssignment 
 		%feature("compactdefaultargs") StepAP214_AppliedApprovalAssignment;
 		%feature("autodoc", "Returns a appliedapprovalassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AppliedApprovalAssignment;
 		 StepAP214_AppliedApprovalAssignment();
 
@@ -832,41 +861,65 @@ class StepAP214_AppliedDateAndTimeAssignment : public StepBasic_DateAndTimeAssig
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedDateAndTime:
-	:type aAssignedDateAndTime: StepBasic_DateAndTime
-	:param aRole:
-	:type aRole: StepBasic_DateTimeRole
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfDateAndTimeItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedDateAndTime: StepBasic_DateAndTime
+aRole: StepBasic_DateTimeRole
+aItems: StepAP214_HArray1OfDateAndTimeItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_DateAndTime> & aAssignedDateAndTime, const opencascade::handle<StepBasic_DateTimeRole> & aRole, const opencascade::handle<StepAP214_HArray1OfDateAndTimeItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfDateAndTimeItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfDateAndTimeItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfDateAndTimeItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_DateAndTimeItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_DateAndTimeItem
 ") ItemsValue;
 		StepAP214_DateAndTimeItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfDateAndTimeItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfDateAndTimeItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfDateAndTimeItem> & aItems);
 
@@ -874,7 +927,9 @@ class StepAP214_AppliedDateAndTimeAssignment : public StepBasic_DateAndTimeAssig
 		%feature("compactdefaultargs") StepAP214_AppliedDateAndTimeAssignment;
 		%feature("autodoc", "Returns a applieddateandtimeassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AppliedDateAndTimeAssignment;
 		 StepAP214_AppliedDateAndTimeAssignment();
 
@@ -896,41 +951,65 @@ class StepAP214_AppliedDateAssignment : public StepBasic_DateAssignment {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedDate:
-	:type aAssignedDate: StepBasic_Date
-	:param aRole:
-	:type aRole: StepBasic_DateRole
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfDateItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedDate: StepBasic_Date
+aRole: StepBasic_DateRole
+aItems: StepAP214_HArray1OfDateItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_Date> & aAssignedDate, const opencascade::handle<StepBasic_DateRole> & aRole, const opencascade::handle<StepAP214_HArray1OfDateItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfDateItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfDateItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfDateItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_DateItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_DateItem
 ") ItemsValue;
 		StepAP214_DateItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfDateItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfDateItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfDateItem> & aItems);
 
@@ -938,7 +1017,9 @@ class StepAP214_AppliedDateAssignment : public StepBasic_DateAssignment {
 		%feature("compactdefaultargs") StepAP214_AppliedDateAssignment;
 		%feature("autodoc", "Returns a applieddateassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AppliedDateAssignment;
 		 StepAP214_AppliedDateAssignment();
 
@@ -960,47 +1041,75 @@ class StepAP214_AppliedDocumentReference : public StepBasic_DocumentReference {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedDocument:
-	:type aAssignedDocument: StepBasic_Document
-	:param aSource:
-	:type aSource: TCollection_HAsciiString
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfDocumentReferenceItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedDocument: StepBasic_Document
+aSource: TCollection_HAsciiString
+aItems: StepAP214_HArray1OfDocumentReferenceItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_Document> & aAssignedDocument, const opencascade::handle<TCollection_HAsciiString> & aSource, const opencascade::handle<StepAP214_HArray1OfDocumentReferenceItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfDocumentReferenceItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfDocumentReferenceItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfDocumentReferenceItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_DocumentReferenceItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_DocumentReferenceItem
 ") ItemsValue;
 		StepAP214_DocumentReferenceItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfDocumentReferenceItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfDocumentReferenceItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfDocumentReferenceItem> & aItems);
 
 		/****************** StepAP214_AppliedDocumentReference ******************/
 		%feature("compactdefaultargs") StepAP214_AppliedDocumentReference;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepAP214_AppliedDocumentReference;
 		 StepAP214_AppliedDocumentReference();
 
@@ -1024,15 +1133,16 @@ class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_Exter
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aIdentificationAssignment_AssignedId:
-	:type aIdentificationAssignment_AssignedId: TCollection_HAsciiString
-	:param aIdentificationAssignment_Role:
-	:type aIdentificationAssignment_Role: StepBasic_IdentificationRole
-	:param aExternalIdentificationAssignment_Source:
-	:type aExternalIdentificationAssignment_Source: StepBasic_ExternalSource
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfExternalIdentificationItem
-	:rtype: None
+Parameters
+----------
+aIdentificationAssignment_AssignedId: TCollection_HAsciiString
+aIdentificationAssignment_Role: StepBasic_IdentificationRole
+aExternalIdentificationAssignment_Source: StepBasic_ExternalSource
+aItems: StepAP214_HArray1OfExternalIdentificationItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aIdentificationAssignment_AssignedId, const opencascade::handle<StepBasic_IdentificationRole> & aIdentificationAssignment_Role, const opencascade::handle<StepBasic_ExternalSource> & aExternalIdentificationAssignment_Source, const opencascade::handle<StepAP214_HArray1OfExternalIdentificationItem> & aItems);
 
@@ -1040,7 +1150,9 @@ class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_Exter
 		%feature("compactdefaultargs") Items;
 		%feature("autodoc", "Returns field items.
 
-	:rtype: opencascade::handle<StepAP214_HArray1OfExternalIdentificationItem>
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfExternalIdentificationItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfExternalIdentificationItem> Items();
 
@@ -1048,9 +1160,13 @@ class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_Exter
 		%feature("compactdefaultargs") SetItems;
 		%feature("autodoc", "Set field items.
 
-	:param Items:
-	:type Items: StepAP214_HArray1OfExternalIdentificationItem
-	:rtype: None
+Parameters
+----------
+Items: StepAP214_HArray1OfExternalIdentificationItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfExternalIdentificationItem> & Items);
 
@@ -1058,7 +1174,9 @@ class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_Exter
 		%feature("compactdefaultargs") StepAP214_AppliedExternalIdentificationAssignment;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AppliedExternalIdentificationAssignment;
 		 StepAP214_AppliedExternalIdentificationAssignment();
 
@@ -1082,11 +1200,14 @@ class StepAP214_AppliedGroupAssignment : public StepBasic_GroupAssignment {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aGroupAssignment_AssignedGroup:
-	:type aGroupAssignment_AssignedGroup: StepBasic_Group
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfGroupItem
-	:rtype: None
+Parameters
+----------
+aGroupAssignment_AssignedGroup: StepBasic_Group
+aItems: StepAP214_HArray1OfGroupItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_Group> & aGroupAssignment_AssignedGroup, const opencascade::handle<StepAP214_HArray1OfGroupItem> & aItems);
 
@@ -1094,7 +1215,9 @@ class StepAP214_AppliedGroupAssignment : public StepBasic_GroupAssignment {
 		%feature("compactdefaultargs") Items;
 		%feature("autodoc", "Returns field items.
 
-	:rtype: opencascade::handle<StepAP214_HArray1OfGroupItem>
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfGroupItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfGroupItem> Items();
 
@@ -1102,9 +1225,13 @@ class StepAP214_AppliedGroupAssignment : public StepBasic_GroupAssignment {
 		%feature("compactdefaultargs") SetItems;
 		%feature("autodoc", "Set field items.
 
-	:param Items:
-	:type Items: StepAP214_HArray1OfGroupItem
-	:rtype: None
+Parameters
+----------
+Items: StepAP214_HArray1OfGroupItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfGroupItem> & Items);
 
@@ -1112,7 +1239,9 @@ class StepAP214_AppliedGroupAssignment : public StepBasic_GroupAssignment {
 		%feature("compactdefaultargs") StepAP214_AppliedGroupAssignment;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AppliedGroupAssignment;
 		 StepAP214_AppliedGroupAssignment();
 
@@ -1134,41 +1263,65 @@ class StepAP214_AppliedOrganizationAssignment : public StepBasic_OrganizationAss
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedOrganization:
-	:type aAssignedOrganization: StepBasic_Organization
-	:param aRole:
-	:type aRole: StepBasic_OrganizationRole
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfOrganizationItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedOrganization: StepBasic_Organization
+aRole: StepBasic_OrganizationRole
+aItems: StepAP214_HArray1OfOrganizationItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_Organization> & aAssignedOrganization, const opencascade::handle<StepBasic_OrganizationRole> & aRole, const opencascade::handle<StepAP214_HArray1OfOrganizationItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfOrganizationItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfOrganizationItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfOrganizationItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_OrganizationItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_OrganizationItem
 ") ItemsValue;
 		StepAP214_OrganizationItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfOrganizationItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfOrganizationItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfOrganizationItem> & aItems);
 
@@ -1176,7 +1329,9 @@ class StepAP214_AppliedOrganizationAssignment : public StepBasic_OrganizationAss
 		%feature("compactdefaultargs") StepAP214_AppliedOrganizationAssignment;
 		%feature("autodoc", "Returns a appliedorganizationassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AppliedOrganizationAssignment;
 		 StepAP214_AppliedOrganizationAssignment();
 
@@ -1198,41 +1353,65 @@ class StepAP214_AppliedPersonAndOrganizationAssignment : public StepBasic_Person
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedPersonAndOrganization:
-	:type aAssignedPersonAndOrganization: StepBasic_PersonAndOrganization
-	:param aRole:
-	:type aRole: StepBasic_PersonAndOrganizationRole
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfPersonAndOrganizationItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedPersonAndOrganization: StepBasic_PersonAndOrganization
+aRole: StepBasic_PersonAndOrganizationRole
+aItems: StepAP214_HArray1OfPersonAndOrganizationItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_PersonAndOrganization> & aAssignedPersonAndOrganization, const opencascade::handle<StepBasic_PersonAndOrganizationRole> & aRole, const opencascade::handle<StepAP214_HArray1OfPersonAndOrganizationItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfPersonAndOrganizationItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfPersonAndOrganizationItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfPersonAndOrganizationItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_PersonAndOrganizationItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_PersonAndOrganizationItem
 ") ItemsValue;
 		StepAP214_PersonAndOrganizationItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfPersonAndOrganizationItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfPersonAndOrganizationItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfPersonAndOrganizationItem> & aItems);
 
@@ -1240,7 +1419,9 @@ class StepAP214_AppliedPersonAndOrganizationAssignment : public StepBasic_Person
 		%feature("compactdefaultargs") StepAP214_AppliedPersonAndOrganizationAssignment;
 		%feature("autodoc", "Returns a autodesigndateandpersonassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AppliedPersonAndOrganizationAssignment;
 		 StepAP214_AppliedPersonAndOrganizationAssignment();
 
@@ -1262,37 +1443,63 @@ class StepAP214_AppliedPresentedItem : public StepVisual_PresentedItem {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfPresentedItemSelect
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfPresentedItemSelect
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepAP214_HArray1OfPresentedItemSelect> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfPresentedItemSelect>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfPresentedItemSelect>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfPresentedItemSelect> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_PresentedItemSelect
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_PresentedItemSelect
 ") ItemsValue;
 		StepAP214_PresentedItemSelect ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfPresentedItemSelect
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfPresentedItemSelect
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfPresentedItemSelect> & aItems);
 
@@ -1300,7 +1507,9 @@ class StepAP214_AppliedPresentedItem : public StepVisual_PresentedItem {
 		%feature("compactdefaultargs") StepAP214_AppliedPresentedItem;
 		%feature("autodoc", "Returns a autodesignpresenteditem.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AppliedPresentedItem;
 		 StepAP214_AppliedPresentedItem();
 
@@ -1322,39 +1531,64 @@ class StepAP214_AppliedSecurityClassificationAssignment : public StepBasic_Secur
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedSecurityClassification:
-	:type aAssignedSecurityClassification: StepBasic_SecurityClassification
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfSecurityClassificationItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedSecurityClassification: StepBasic_SecurityClassification
+aItems: StepAP214_HArray1OfSecurityClassificationItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_SecurityClassification> & aAssignedSecurityClassification, const opencascade::handle<StepAP214_HArray1OfSecurityClassificationItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfSecurityClassificationItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfSecurityClassificationItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfSecurityClassificationItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_SecurityClassificationItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_SecurityClassificationItem
 ") ItemsValue;
 		const StepAP214_SecurityClassificationItem & ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfSecurityClassificationItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfSecurityClassificationItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfSecurityClassificationItem> & aItems);
 
@@ -1362,7 +1596,9 @@ class StepAP214_AppliedSecurityClassificationAssignment : public StepBasic_Secur
 		%feature("compactdefaultargs") StepAP214_AppliedSecurityClassificationAssignment;
 		%feature("autodoc", "Returns a appliedsecurityclassificationassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AppliedSecurityClassificationAssignment;
 		 StepAP214_AppliedSecurityClassificationAssignment();
 
@@ -1386,7 +1622,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") AssemblyComponentUsageSubstitute;
 		%feature("autodoc", "Returns value as a assemblycomponentusagesubstitute (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_AssemblyComponentUsageSubstitute>
+Returns
+-------
+opencascade::handle<StepRepr_AssemblyComponentUsageSubstitute>
 ") AssemblyComponentUsageSubstitute;
 		virtual opencascade::handle<StepRepr_AssemblyComponentUsageSubstitute> AssemblyComponentUsageSubstitute();
 
@@ -1394,9 +1632,13 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a approvalitem kind entity that is : 1 -> assemblycomponentusagesubstitute 2 -> documentfile 3 -> materialdesignation 4 -> mechanicaldesigngeometricpresentationrepresentation 5 -> presentationarea 6 -> product 7 -> productdefinition 8 -> productdefinitionformation 9 -> productdefinitionrelationship 10 -> propertydefinition 11 -> shaperepresentation 12 -> securityclassification 13 -> configurationitem 14 -> date 15 -> document 16 -> effectivity 17 -> group 18 -> grouprelationship 19 -> productdefinitionformationrelationship 20 -> representation 21 -> shapeaspectrelationship 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		virtual Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -1404,7 +1646,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ConfigurationItem;
 		%feature("autodoc", "Returns value as a configurationitem (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ConfigurationItem>
+Returns
+-------
+opencascade::handle<StepRepr_ConfigurationItem>
 ") ConfigurationItem;
 		virtual opencascade::handle<StepRepr_ConfigurationItem> ConfigurationItem();
 
@@ -1412,7 +1656,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Date;
 		%feature("autodoc", "Returns value as a date (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_Date>
+Returns
+-------
+opencascade::handle<StepBasic_Date>
 ") Date;
 		virtual opencascade::handle<StepBasic_Date> Date();
 
@@ -1420,7 +1666,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Document;
 		%feature("autodoc", "Returns value as a document (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_Document>
+Returns
+-------
+opencascade::handle<StepBasic_Document>
 ") Document;
 		virtual opencascade::handle<StepBasic_Document> Document();
 
@@ -1428,7 +1676,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") DocumentFile;
 		%feature("autodoc", "Returns value as a documentfile (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_DocumentFile>
+Returns
+-------
+opencascade::handle<StepBasic_DocumentFile>
 ") DocumentFile;
 		virtual opencascade::handle<StepBasic_DocumentFile> DocumentFile();
 
@@ -1436,7 +1686,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Effectivity;
 		%feature("autodoc", "Returns value as a effectivity (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_Effectivity>
+Returns
+-------
+opencascade::handle<StepBasic_Effectivity>
 ") Effectivity;
 		virtual opencascade::handle<StepBasic_Effectivity> Effectivity();
 
@@ -1444,7 +1696,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Group;
 		%feature("autodoc", "Returns value as a group (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_Group>
+Returns
+-------
+opencascade::handle<StepBasic_Group>
 ") Group;
 		virtual opencascade::handle<StepBasic_Group> Group();
 
@@ -1452,7 +1706,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") GroupRelationship;
 		%feature("autodoc", "Returns value as a grouprelationship (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_GroupRelationship>
+Returns
+-------
+opencascade::handle<StepBasic_GroupRelationship>
 ") GroupRelationship;
 		virtual opencascade::handle<StepBasic_GroupRelationship> GroupRelationship();
 
@@ -1460,7 +1716,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") MaterialDesignation;
 		%feature("autodoc", "Returns value as a materialdesignation (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_MaterialDesignation>
+Returns
+-------
+opencascade::handle<StepRepr_MaterialDesignation>
 ") MaterialDesignation;
 		virtual opencascade::handle<StepRepr_MaterialDesignation> MaterialDesignation();
 
@@ -1468,7 +1726,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") MechanicalDesignGeometricPresentationRepresentation;
 		%feature("autodoc", "Returns value as a mechanicaldesigngeometricpresentationrepresentation (null if another type).
 
-	:rtype: opencascade::handle<StepVisual_MechanicalDesignGeometricPresentationRepresentation>
+Returns
+-------
+opencascade::handle<StepVisual_MechanicalDesignGeometricPresentationRepresentation>
 ") MechanicalDesignGeometricPresentationRepresentation;
 		virtual opencascade::handle<StepVisual_MechanicalDesignGeometricPresentationRepresentation> MechanicalDesignGeometricPresentationRepresentation();
 
@@ -1476,7 +1736,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") PresentationArea;
 		%feature("autodoc", "Returns value as a presentationarea (null if another type).
 
-	:rtype: opencascade::handle<StepVisual_PresentationArea>
+Returns
+-------
+opencascade::handle<StepVisual_PresentationArea>
 ") PresentationArea;
 		virtual opencascade::handle<StepVisual_PresentationArea> PresentationArea();
 
@@ -1484,7 +1746,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Product;
 		%feature("autodoc", "Returns value as a product (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_Product>
+Returns
+-------
+opencascade::handle<StepBasic_Product>
 ") Product;
 		virtual opencascade::handle<StepBasic_Product> Product();
 
@@ -1492,7 +1756,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinition;
 		%feature("autodoc", "Returns value as a productdefinition (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinition>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinition>
 ") ProductDefinition;
 		virtual opencascade::handle<StepBasic_ProductDefinition> ProductDefinition();
 
@@ -1500,7 +1766,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionFormation;
 		%feature("autodoc", "Returns value as a productdefinitionformation (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinitionFormation>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionFormation>
 ") ProductDefinitionFormation;
 		virtual opencascade::handle<StepBasic_ProductDefinitionFormation> ProductDefinitionFormation();
 
@@ -1508,7 +1776,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionFormationRelationship;
 		%feature("autodoc", "Returns value as a productdefinitionformationrelationship (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinitionFormationRelationship>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionFormationRelationship>
 ") ProductDefinitionFormationRelationship;
 		virtual opencascade::handle<StepBasic_ProductDefinitionFormationRelationship> ProductDefinitionFormationRelationship();
 
@@ -1516,7 +1786,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionRelationship;
 		%feature("autodoc", "Returns value as aproductdefinitionrelationship (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinitionRelationship>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionRelationship>
 ") ProductDefinitionRelationship;
 		virtual opencascade::handle<StepBasic_ProductDefinitionRelationship> ProductDefinitionRelationship();
 
@@ -1524,7 +1796,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") PropertyDefinition;
 		%feature("autodoc", "Returns value as a propertydefinition (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_PropertyDefinition>
+Returns
+-------
+opencascade::handle<StepRepr_PropertyDefinition>
 ") PropertyDefinition;
 		virtual opencascade::handle<StepRepr_PropertyDefinition> PropertyDefinition();
 
@@ -1532,7 +1806,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Representation;
 		%feature("autodoc", "Returns value as a representation (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_Representation>
+Returns
+-------
+opencascade::handle<StepRepr_Representation>
 ") Representation;
 		virtual opencascade::handle<StepRepr_Representation> Representation();
 
@@ -1540,7 +1816,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") SecurityClassification;
 		%feature("autodoc", "Returns value as a securityclassification (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_SecurityClassification>
+Returns
+-------
+opencascade::handle<StepBasic_SecurityClassification>
 ") SecurityClassification;
 		virtual opencascade::handle<StepBasic_SecurityClassification> SecurityClassification();
 
@@ -1548,7 +1826,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ShapeAspectRelationship;
 		%feature("autodoc", "Returns value as a shapeaspectrelationship (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ShapeAspectRelationship>
+Returns
+-------
+opencascade::handle<StepRepr_ShapeAspectRelationship>
 ") ShapeAspectRelationship;
 		virtual opencascade::handle<StepRepr_ShapeAspectRelationship> ShapeAspectRelationship();
 
@@ -1556,7 +1836,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ShapeRepresentation;
 		%feature("autodoc", "Returns value as a shaperepresentation (null if another type).
 
-	:rtype: opencascade::handle<StepShape_ShapeRepresentation>
+Returns
+-------
+opencascade::handle<StepShape_ShapeRepresentation>
 ") ShapeRepresentation;
 		virtual opencascade::handle<StepShape_ShapeRepresentation> ShapeRepresentation();
 
@@ -1564,7 +1846,9 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StepAP214_ApprovalItem;
 		%feature("autodoc", "Returns a approvalitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_ApprovalItem;
 		 StepAP214_ApprovalItem();
 
@@ -1584,41 +1868,65 @@ class StepAP214_AutoDesignActualDateAndTimeAssignment : public StepBasic_DateAnd
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedDateAndTime:
-	:type aAssignedDateAndTime: StepBasic_DateAndTime
-	:param aRole:
-	:type aRole: StepBasic_DateTimeRole
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignDateAndTimeItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedDateAndTime: StepBasic_DateAndTime
+aRole: StepBasic_DateTimeRole
+aItems: StepAP214_HArray1OfAutoDesignDateAndTimeItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_DateAndTime> & aAssignedDateAndTime, const opencascade::handle<StepBasic_DateTimeRole> & aRole, const opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndTimeItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndTimeItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndTimeItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndTimeItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_AutoDesignDateAndTimeItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_AutoDesignDateAndTimeItem
 ") ItemsValue;
 		StepAP214_AutoDesignDateAndTimeItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignDateAndTimeItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfAutoDesignDateAndTimeItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndTimeItem> & aItems);
 
@@ -1626,7 +1934,9 @@ class StepAP214_AutoDesignActualDateAndTimeAssignment : public StepBasic_DateAnd
 		%feature("compactdefaultargs") StepAP214_AutoDesignActualDateAndTimeAssignment;
 		%feature("autodoc", "Returns a autodesignactualdateandtimeassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignActualDateAndTimeAssignment;
 		 StepAP214_AutoDesignActualDateAndTimeAssignment();
 
@@ -1648,41 +1958,65 @@ class StepAP214_AutoDesignActualDateAssignment : public StepBasic_DateAssignment
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedDate:
-	:type aAssignedDate: StepBasic_Date
-	:param aRole:
-	:type aRole: StepBasic_DateRole
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignDatedItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedDate: StepBasic_Date
+aRole: StepBasic_DateRole
+aItems: StepAP214_HArray1OfAutoDesignDatedItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_Date> & aAssignedDate, const opencascade::handle<StepBasic_DateRole> & aRole, const opencascade::handle<StepAP214_HArray1OfAutoDesignDatedItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfAutoDesignDatedItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfAutoDesignDatedItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfAutoDesignDatedItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_AutoDesignDatedItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_AutoDesignDatedItem
 ") ItemsValue;
 		StepAP214_AutoDesignDatedItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignDatedItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfAutoDesignDatedItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignDatedItem> & aItems);
 
@@ -1690,7 +2024,9 @@ class StepAP214_AutoDesignActualDateAssignment : public StepBasic_DateAssignment
 		%feature("compactdefaultargs") StepAP214_AutoDesignActualDateAssignment;
 		%feature("autodoc", "Returns a autodesignactualdateassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignActualDateAssignment;
 		 StepAP214_AutoDesignActualDateAssignment();
 
@@ -1712,39 +2048,64 @@ class StepAP214_AutoDesignApprovalAssignment : public StepBasic_ApprovalAssignme
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedApproval:
-	:type aAssignedApproval: StepBasic_Approval
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignGeneralOrgItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedApproval: StepBasic_Approval
+aItems: StepAP214_HArray1OfAutoDesignGeneralOrgItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_Approval> & aAssignedApproval, const opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_AutoDesignGeneralOrgItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_AutoDesignGeneralOrgItem
 ") ItemsValue;
 		StepAP214_AutoDesignGeneralOrgItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignGeneralOrgItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfAutoDesignGeneralOrgItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem> & aItems);
 
@@ -1752,7 +2113,9 @@ class StepAP214_AutoDesignApprovalAssignment : public StepBasic_ApprovalAssignme
 		%feature("compactdefaultargs") StepAP214_AutoDesignApprovalAssignment;
 		%feature("autodoc", "Returns a autodesignapprovalassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignApprovalAssignment;
 		 StepAP214_AutoDesignApprovalAssignment();
 
@@ -1774,41 +2137,65 @@ class StepAP214_AutoDesignDateAndPersonAssignment : public StepBasic_PersonAndOr
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedPersonAndOrganization:
-	:type aAssignedPersonAndOrganization: StepBasic_PersonAndOrganization
-	:param aRole:
-	:type aRole: StepBasic_PersonAndOrganizationRole
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignDateAndPersonItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedPersonAndOrganization: StepBasic_PersonAndOrganization
+aRole: StepBasic_PersonAndOrganizationRole
+aItems: StepAP214_HArray1OfAutoDesignDateAndPersonItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_PersonAndOrganization> & aAssignedPersonAndOrganization, const opencascade::handle<StepBasic_PersonAndOrganizationRole> & aRole, const opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndPersonItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndPersonItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndPersonItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndPersonItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_AutoDesignDateAndPersonItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_AutoDesignDateAndPersonItem
 ") ItemsValue;
 		StepAP214_AutoDesignDateAndPersonItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignDateAndPersonItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfAutoDesignDateAndPersonItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndPersonItem> & aItems);
 
@@ -1816,7 +2203,9 @@ class StepAP214_AutoDesignDateAndPersonAssignment : public StepBasic_PersonAndOr
 		%feature("compactdefaultargs") StepAP214_AutoDesignDateAndPersonAssignment;
 		%feature("autodoc", "Returns a autodesigndateandpersonassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignDateAndPersonAssignment;
 		 StepAP214_AutoDesignDateAndPersonAssignment();
 
@@ -1838,13 +2227,21 @@ class StepAP214_AutoDesignDateAndPersonItem : public StepData_SelectType {
 	public:
 		/****************** AutoDesignDocumentReference ******************/
 		%feature("compactdefaultargs") AutoDesignDocumentReference;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_AutoDesignDocumentReference>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_AutoDesignDocumentReference>
 ") AutoDesignDocumentReference;
 		opencascade::handle<StepAP214_AutoDesignDocumentReference> AutoDesignDocumentReference();
 
 		/****************** AutoDesignOrganizationAssignment ******************/
 		%feature("compactdefaultargs") AutoDesignOrganizationAssignment;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_AutoDesignOrganizationAssignment>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_AutoDesignOrganizationAssignment>
 ") AutoDesignOrganizationAssignment;
 		opencascade::handle<StepAP214_AutoDesignOrganizationAssignment> AutoDesignOrganizationAssignment();
 
@@ -1852,51 +2249,83 @@ class StepAP214_AutoDesignDateAndPersonItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a autodesigndateandpersonitem kind entity that is : 1 autodesignorganizationassignment from stepap214, 2 product from stepbasic, 3 productdefinition from stepbasic, 4 productdefinitionformation from stepbasic, 5 representation from steprepr, 6 autodesigndocumentreference from stepap214, 7 externallydefinedrepresentation from steprepr, 8 productdefinitionrelationship from stepbasic, 9 productdefinitionwithassociateddocuments from stepbasic 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
 		/****************** ExternallyDefinedRepresentation ******************/
 		%feature("compactdefaultargs") ExternallyDefinedRepresentation;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepRepr_ExternallyDefinedRepresentation>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepRepr_ExternallyDefinedRepresentation>
 ") ExternallyDefinedRepresentation;
 		opencascade::handle<StepRepr_ExternallyDefinedRepresentation> ExternallyDefinedRepresentation();
 
 		/****************** Product ******************/
 		%feature("compactdefaultargs") Product;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_Product>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_Product>
 ") Product;
 		opencascade::handle<StepBasic_Product> Product();
 
 		/****************** ProductDefinition ******************/
 		%feature("compactdefaultargs") ProductDefinition;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_ProductDefinition>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinition>
 ") ProductDefinition;
 		opencascade::handle<StepBasic_ProductDefinition> ProductDefinition();
 
 		/****************** ProductDefinitionFormation ******************/
 		%feature("compactdefaultargs") ProductDefinitionFormation;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_ProductDefinitionFormation>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionFormation>
 ") ProductDefinitionFormation;
 		opencascade::handle<StepBasic_ProductDefinitionFormation> ProductDefinitionFormation();
 
 		/****************** ProductDefinitionRelationship ******************/
 		%feature("compactdefaultargs") ProductDefinitionRelationship;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_ProductDefinitionRelationship>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionRelationship>
 ") ProductDefinitionRelationship;
 		opencascade::handle<StepBasic_ProductDefinitionRelationship> ProductDefinitionRelationship();
 
 		/****************** ProductDefinitionWithAssociatedDocuments ******************/
 		%feature("compactdefaultargs") ProductDefinitionWithAssociatedDocuments;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_ProductDefinitionWithAssociatedDocuments>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionWithAssociatedDocuments>
 ") ProductDefinitionWithAssociatedDocuments;
 		opencascade::handle<StepBasic_ProductDefinitionWithAssociatedDocuments> ProductDefinitionWithAssociatedDocuments();
 
 		/****************** Representation ******************/
 		%feature("compactdefaultargs") Representation;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepRepr_Representation>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepRepr_Representation>
 ") Representation;
 		opencascade::handle<StepRepr_Representation> Representation();
 
@@ -1904,7 +2333,9 @@ class StepAP214_AutoDesignDateAndPersonItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StepAP214_AutoDesignDateAndPersonItem;
 		%feature("autodoc", "Returns a autodesigndateandpersonitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignDateAndPersonItem;
 		 StepAP214_AutoDesignDateAndPersonItem();
 
@@ -1926,7 +2357,9 @@ class StepAP214_AutoDesignDateAndTimeItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ApprovalPersonOrganization;
 		%feature("autodoc", "Returns value as a approvalpersonorganization (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ApprovalPersonOrganization>
+Returns
+-------
+opencascade::handle<StepBasic_ApprovalPersonOrganization>
 ") ApprovalPersonOrganization;
 		opencascade::handle<StepBasic_ApprovalPersonOrganization> ApprovalPersonOrganization();
 
@@ -1934,7 +2367,9 @@ class StepAP214_AutoDesignDateAndTimeItem : public StepData_SelectType {
 		%feature("compactdefaultargs") AutoDesignDateAndPersonAssignment;
 		%feature("autodoc", "Returns value as a autodesigndateandpersonassignment (null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AutoDesignDateAndPersonAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AutoDesignDateAndPersonAssignment>
 ") AutoDesignDateAndPersonAssignment;
 		opencascade::handle<StepAP214_AutoDesignDateAndPersonAssignment> AutoDesignDateAndPersonAssignment();
 
@@ -1942,15 +2377,23 @@ class StepAP214_AutoDesignDateAndTimeItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a autodesigndateandtimeitem kind entity that is : 1 -> approvalpersonorganization 2 -> autodesigndateandpersonassignment 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
 		/****************** ProductDefinitionEffectivity ******************/
 		%feature("compactdefaultargs") ProductDefinitionEffectivity;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_ProductDefinitionEffectivity>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionEffectivity>
 ") ProductDefinitionEffectivity;
 		opencascade::handle<StepBasic_ProductDefinitionEffectivity> ProductDefinitionEffectivity();
 
@@ -1958,7 +2401,9 @@ class StepAP214_AutoDesignDateAndTimeItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StepAP214_AutoDesignDateAndTimeItem;
 		%feature("autodoc", "Returns a autodesigndateandtimeitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignDateAndTimeItem;
 		 StepAP214_AutoDesignDateAndTimeItem();
 
@@ -1980,7 +2425,9 @@ class StepAP214_AutoDesignDatedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ApprovalPersonOrganization;
 		%feature("autodoc", "Returns value as a approvalpersonorganization (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ApprovalPersonOrganization>
+Returns
+-------
+opencascade::handle<StepBasic_ApprovalPersonOrganization>
 ") ApprovalPersonOrganization;
 		opencascade::handle<StepBasic_ApprovalPersonOrganization> ApprovalPersonOrganization();
 
@@ -1988,7 +2435,9 @@ class StepAP214_AutoDesignDatedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") AutoDesignDateAndPersonAssignment;
 		%feature("autodoc", "Returns value as a autodesigndateandpersonassignment (null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AutoDesignDateAndPersonAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AutoDesignDateAndPersonAssignment>
 ") AutoDesignDateAndPersonAssignment;
 		opencascade::handle<StepAP214_AutoDesignDateAndPersonAssignment> AutoDesignDateAndPersonAssignment();
 
@@ -1996,9 +2445,13 @@ class StepAP214_AutoDesignDatedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a autodesigndateditem kind entity that is : 1 -> approvalpersonorganization 2 -> autodesigndateandpersonassignment 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -2006,7 +2459,9 @@ class StepAP214_AutoDesignDatedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionEffectivity;
 		%feature("autodoc", "Returns value as a productdefinitioneffectivity.
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinitionEffectivity>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionEffectivity>
 ") ProductDefinitionEffectivity;
 		opencascade::handle<StepBasic_ProductDefinitionEffectivity> ProductDefinitionEffectivity();
 
@@ -2014,7 +2469,9 @@ class StepAP214_AutoDesignDatedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StepAP214_AutoDesignDatedItem;
 		%feature("autodoc", "Returns a autodesigndateditem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignDatedItem;
 		 StepAP214_AutoDesignDatedItem();
 
@@ -2034,47 +2491,75 @@ class StepAP214_AutoDesignDocumentReference : public StepBasic_DocumentReference
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedDocument:
-	:type aAssignedDocument: StepBasic_Document
-	:param aSource:
-	:type aSource: TCollection_HAsciiString
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignReferencingItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedDocument: StepBasic_Document
+aSource: TCollection_HAsciiString
+aItems: StepAP214_HArray1OfAutoDesignReferencingItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_Document> & aAssignedDocument, const opencascade::handle<TCollection_HAsciiString> & aSource, const opencascade::handle<StepAP214_HArray1OfAutoDesignReferencingItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfAutoDesignReferencingItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfAutoDesignReferencingItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfAutoDesignReferencingItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_AutoDesignReferencingItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_AutoDesignReferencingItem
 ") ItemsValue;
 		StepAP214_AutoDesignReferencingItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignReferencingItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfAutoDesignReferencingItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignReferencingItem> & aItems);
 
 		/****************** StepAP214_AutoDesignDocumentReference ******************/
 		%feature("compactdefaultargs") StepAP214_AutoDesignDocumentReference;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepAP214_AutoDesignDocumentReference;
 		 StepAP214_AutoDesignDocumentReference();
 
@@ -2096,7 +2581,11 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 	public:
 		/****************** AutoDesignDocumentReference ******************/
 		%feature("compactdefaultargs") AutoDesignDocumentReference;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_AutoDesignDocumentReference>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_AutoDesignDocumentReference>
 ") AutoDesignDocumentReference;
 		opencascade::handle<StepAP214_AutoDesignDocumentReference> AutoDesignDocumentReference();
 
@@ -2104,9 +2593,13 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a autodesigngeneralorgitem kind entity that is : 1 product from stepbasic, 2 productdefinition from stepbasic, 3 productdefinitionformation from stepbasic, 4 productdefinitionrelationship from stepbasic, 5 productdefinitionwithassociateddocuments from stepbasic, 6 representation from steprepr 7 externallydefinedrepresentation from steprepr, 8 autodesigndocumentreference from stepap214, 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -2114,7 +2607,9 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ExternallyDefinedRepresentation;
 		%feature("autodoc", "Returns value as a representation (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ExternallyDefinedRepresentation>
+Returns
+-------
+opencascade::handle<StepRepr_ExternallyDefinedRepresentation>
 ") ExternallyDefinedRepresentation;
 		opencascade::handle<StepRepr_ExternallyDefinedRepresentation> ExternallyDefinedRepresentation();
 
@@ -2122,7 +2617,9 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Product;
 		%feature("autodoc", "Returns value as a product (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_Product>
+Returns
+-------
+opencascade::handle<StepBasic_Product>
 ") Product;
 		opencascade::handle<StepBasic_Product> Product();
 
@@ -2130,7 +2627,9 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinition;
 		%feature("autodoc", "Returns value as a productdefinition (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinition>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinition>
 ") ProductDefinition;
 		opencascade::handle<StepBasic_ProductDefinition> ProductDefinition();
 
@@ -2138,7 +2637,9 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionFormation;
 		%feature("autodoc", "Returns value as a productdefinitionformation (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinitionFormation>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionFormation>
 ") ProductDefinitionFormation;
 		opencascade::handle<StepBasic_ProductDefinitionFormation> ProductDefinitionFormation();
 
@@ -2146,7 +2647,9 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionRelationship;
 		%feature("autodoc", "Returns value as a productdefinitionrelationship (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinitionRelationship>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionRelationship>
 ") ProductDefinitionRelationship;
 		opencascade::handle<StepBasic_ProductDefinitionRelationship> ProductDefinitionRelationship();
 
@@ -2154,7 +2657,9 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionWithAssociatedDocuments;
 		%feature("autodoc", "Returns value as a productdefinitionwithassociateddocuments (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinitionWithAssociatedDocuments>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionWithAssociatedDocuments>
 ") ProductDefinitionWithAssociatedDocuments;
 		opencascade::handle<StepBasic_ProductDefinitionWithAssociatedDocuments> ProductDefinitionWithAssociatedDocuments();
 
@@ -2162,7 +2667,9 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Representation;
 		%feature("autodoc", "Returns value as a representation (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_Representation>
+Returns
+-------
+opencascade::handle<StepRepr_Representation>
 ") Representation;
 		opencascade::handle<StepRepr_Representation> Representation();
 
@@ -2170,7 +2677,9 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StepAP214_AutoDesignGeneralOrgItem;
 		%feature("autodoc", "Returns a autodesigngeneralorgitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignGeneralOrgItem;
 		 StepAP214_AutoDesignGeneralOrgItem();
 
@@ -2190,39 +2699,64 @@ class StepAP214_AutoDesignGroupAssignment : public StepBasic_GroupAssignment {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedGroup:
-	:type aAssignedGroup: StepBasic_Group
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignGroupedItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedGroup: StepBasic_Group
+aItems: StepAP214_HArray1OfAutoDesignGroupedItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_Group> & aAssignedGroup, const opencascade::handle<StepAP214_HArray1OfAutoDesignGroupedItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfAutoDesignGroupedItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfAutoDesignGroupedItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfAutoDesignGroupedItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_AutoDesignGroupedItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_AutoDesignGroupedItem
 ") ItemsValue;
 		StepAP214_AutoDesignGroupedItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignGroupedItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfAutoDesignGroupedItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignGroupedItem> & aItems);
 
@@ -2230,7 +2764,9 @@ class StepAP214_AutoDesignGroupAssignment : public StepBasic_GroupAssignment {
 		%feature("compactdefaultargs") StepAP214_AutoDesignGroupAssignment;
 		%feature("autodoc", "Returns a autodesigngroupassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignGroupAssignment;
 		 StepAP214_AutoDesignGroupAssignment();
 
@@ -2254,7 +2790,9 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") AdvancedBrepShapeRepresentation;
 		%feature("autodoc", "Returns value as a advancedbrepshaperepresentation (null if another type).
 
-	:rtype: opencascade::handle<StepShape_AdvancedBrepShapeRepresentation>
+Returns
+-------
+opencascade::handle<StepShape_AdvancedBrepShapeRepresentation>
 ") AdvancedBrepShapeRepresentation;
 		opencascade::handle<StepShape_AdvancedBrepShapeRepresentation> AdvancedBrepShapeRepresentation();
 
@@ -2262,9 +2800,13 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a autodesigngroupeditem kind entity that is : 1 -> advancedbrepshaperepresentation 2 -> csgshaperepresentation 3 -> facetedbrepshaperepresentation 4 -> geometricallyboundedsurfaceshaperepresentation 5 -> geometricallyboundedwireframeshaperepresentation 6 -> manifoldsurfaceshaperepresentation 7 -> representation 8 -> representationitem 9 -> shapeaspect 10 -> shaperepresentation 11 -> templateinstance 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -2272,7 +2814,9 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CsgShapeRepresentation;
 		%feature("autodoc", "Returns value as a csgshaperepresentation (null if another type).
 
-	:rtype: opencascade::handle<StepShape_CsgShapeRepresentation>
+Returns
+-------
+opencascade::handle<StepShape_CsgShapeRepresentation>
 ") CsgShapeRepresentation;
 		opencascade::handle<StepShape_CsgShapeRepresentation> CsgShapeRepresentation();
 
@@ -2280,7 +2824,9 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") FacetedBrepShapeRepresentation;
 		%feature("autodoc", "Returns value as a facetedbrepshaperepresentation (null if another type).
 
-	:rtype: opencascade::handle<StepShape_FacetedBrepShapeRepresentation>
+Returns
+-------
+opencascade::handle<StepShape_FacetedBrepShapeRepresentation>
 ") FacetedBrepShapeRepresentation;
 		opencascade::handle<StepShape_FacetedBrepShapeRepresentation> FacetedBrepShapeRepresentation();
 
@@ -2288,7 +2834,9 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") GeometricallyBoundedSurfaceShapeRepresentation;
 		%feature("autodoc", "Returns value as a geometricallyboundedsurfaceshaperepresentation (null if another type).
 
-	:rtype: opencascade::handle<StepShape_GeometricallyBoundedSurfaceShapeRepresentation>
+Returns
+-------
+opencascade::handle<StepShape_GeometricallyBoundedSurfaceShapeRepresentation>
 ") GeometricallyBoundedSurfaceShapeRepresentation;
 		opencascade::handle<StepShape_GeometricallyBoundedSurfaceShapeRepresentation> GeometricallyBoundedSurfaceShapeRepresentation();
 
@@ -2296,7 +2844,9 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") GeometricallyBoundedWireframeShapeRepresentation;
 		%feature("autodoc", "Returns value as a geometricallyboundedwireframeshaperepresentation (null if another type).
 
-	:rtype: opencascade::handle<StepShape_GeometricallyBoundedWireframeShapeRepresentation>
+Returns
+-------
+opencascade::handle<StepShape_GeometricallyBoundedWireframeShapeRepresentation>
 ") GeometricallyBoundedWireframeShapeRepresentation;
 		opencascade::handle<StepShape_GeometricallyBoundedWireframeShapeRepresentation> GeometricallyBoundedWireframeShapeRepresentation();
 
@@ -2304,7 +2854,9 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ManifoldSurfaceShapeRepresentation;
 		%feature("autodoc", "Returns value as a manifoldsurfaceshaperepresentation (null if another type).
 
-	:rtype: opencascade::handle<StepShape_ManifoldSurfaceShapeRepresentation>
+Returns
+-------
+opencascade::handle<StepShape_ManifoldSurfaceShapeRepresentation>
 ") ManifoldSurfaceShapeRepresentation;
 		opencascade::handle<StepShape_ManifoldSurfaceShapeRepresentation> ManifoldSurfaceShapeRepresentation();
 
@@ -2312,7 +2864,9 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Representation;
 		%feature("autodoc", "Returns value as a representation (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_Representation>
+Returns
+-------
+opencascade::handle<StepRepr_Representation>
 ") Representation;
 		opencascade::handle<StepRepr_Representation> Representation();
 
@@ -2320,7 +2874,9 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") RepresentationItem;
 		%feature("autodoc", "Returns value as a representationitem (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_RepresentationItem>
+Returns
+-------
+opencascade::handle<StepRepr_RepresentationItem>
 ") RepresentationItem;
 		opencascade::handle<StepRepr_RepresentationItem> RepresentationItem();
 
@@ -2328,7 +2884,9 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ShapeAspect;
 		%feature("autodoc", "Returns value as a shapeaspect (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ShapeAspect>
+Returns
+-------
+opencascade::handle<StepRepr_ShapeAspect>
 ") ShapeAspect;
 		opencascade::handle<StepRepr_ShapeAspect> ShapeAspect();
 
@@ -2336,7 +2894,9 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ShapeRepresentation;
 		%feature("autodoc", "Returns value as a shaperepresentation (null if another type).
 
-	:rtype: opencascade::handle<StepShape_ShapeRepresentation>
+Returns
+-------
+opencascade::handle<StepShape_ShapeRepresentation>
 ") ShapeRepresentation;
 		opencascade::handle<StepShape_ShapeRepresentation> ShapeRepresentation();
 
@@ -2344,7 +2904,9 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StepAP214_AutoDesignGroupedItem;
 		%feature("autodoc", "Returns a autodesigngroupeditem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignGroupedItem;
 		 StepAP214_AutoDesignGroupedItem();
 
@@ -2352,7 +2914,9 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		%feature("compactdefaultargs") TemplateInstance;
 		%feature("autodoc", "Returns value as a templateinstance (null if another type).
 
-	:rtype: opencascade::handle<StepVisual_TemplateInstance>
+Returns
+-------
+opencascade::handle<StepVisual_TemplateInstance>
 ") TemplateInstance;
 		opencascade::handle<StepVisual_TemplateInstance> TemplateInstance();
 
@@ -2372,41 +2936,65 @@ class StepAP214_AutoDesignNominalDateAndTimeAssignment : public StepBasic_DateAn
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedDateAndTime:
-	:type aAssignedDateAndTime: StepBasic_DateAndTime
-	:param aRole:
-	:type aRole: StepBasic_DateTimeRole
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignDateAndTimeItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedDateAndTime: StepBasic_DateAndTime
+aRole: StepBasic_DateTimeRole
+aItems: StepAP214_HArray1OfAutoDesignDateAndTimeItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_DateAndTime> & aAssignedDateAndTime, const opencascade::handle<StepBasic_DateTimeRole> & aRole, const opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndTimeItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndTimeItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndTimeItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndTimeItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_AutoDesignDateAndTimeItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_AutoDesignDateAndTimeItem
 ") ItemsValue;
 		StepAP214_AutoDesignDateAndTimeItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignDateAndTimeItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfAutoDesignDateAndTimeItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndTimeItem> & aItems);
 
@@ -2414,7 +3002,9 @@ class StepAP214_AutoDesignNominalDateAndTimeAssignment : public StepBasic_DateAn
 		%feature("compactdefaultargs") StepAP214_AutoDesignNominalDateAndTimeAssignment;
 		%feature("autodoc", "Returns a autodesignnominaldateandtimeassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignNominalDateAndTimeAssignment;
 		 StepAP214_AutoDesignNominalDateAndTimeAssignment();
 
@@ -2436,41 +3026,65 @@ class StepAP214_AutoDesignNominalDateAssignment : public StepBasic_DateAssignmen
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedDate:
-	:type aAssignedDate: StepBasic_Date
-	:param aRole:
-	:type aRole: StepBasic_DateRole
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignDatedItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedDate: StepBasic_Date
+aRole: StepBasic_DateRole
+aItems: StepAP214_HArray1OfAutoDesignDatedItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_Date> & aAssignedDate, const opencascade::handle<StepBasic_DateRole> & aRole, const opencascade::handle<StepAP214_HArray1OfAutoDesignDatedItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfAutoDesignDatedItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfAutoDesignDatedItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfAutoDesignDatedItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_AutoDesignDatedItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_AutoDesignDatedItem
 ") ItemsValue;
 		StepAP214_AutoDesignDatedItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignDatedItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfAutoDesignDatedItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignDatedItem> & aItems);
 
@@ -2478,7 +3092,9 @@ class StepAP214_AutoDesignNominalDateAssignment : public StepBasic_DateAssignmen
 		%feature("compactdefaultargs") StepAP214_AutoDesignNominalDateAssignment;
 		%feature("autodoc", "Returns a autodesignnominaldateassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignNominalDateAssignment;
 		 StepAP214_AutoDesignNominalDateAssignment();
 
@@ -2500,41 +3116,65 @@ class StepAP214_AutoDesignOrganizationAssignment : public StepBasic_Organization
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedOrganization:
-	:type aAssignedOrganization: StepBasic_Organization
-	:param aRole:
-	:type aRole: StepBasic_OrganizationRole
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignGeneralOrgItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedOrganization: StepBasic_Organization
+aRole: StepBasic_OrganizationRole
+aItems: StepAP214_HArray1OfAutoDesignGeneralOrgItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_Organization> & aAssignedOrganization, const opencascade::handle<StepBasic_OrganizationRole> & aRole, const opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_AutoDesignGeneralOrgItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_AutoDesignGeneralOrgItem
 ") ItemsValue;
 		StepAP214_AutoDesignGeneralOrgItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignGeneralOrgItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfAutoDesignGeneralOrgItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem> & aItems);
 
@@ -2542,7 +3182,9 @@ class StepAP214_AutoDesignOrganizationAssignment : public StepBasic_Organization
 		%feature("compactdefaultargs") StepAP214_AutoDesignOrganizationAssignment;
 		%feature("autodoc", "Returns a autodesignorganizationassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignOrganizationAssignment;
 		 StepAP214_AutoDesignOrganizationAssignment();
 
@@ -2564,41 +3206,65 @@ class StepAP214_AutoDesignPersonAndOrganizationAssignment : public StepBasic_Per
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedPersonAndOrganization:
-	:type aAssignedPersonAndOrganization: StepBasic_PersonAndOrganization
-	:param aRole:
-	:type aRole: StepBasic_PersonAndOrganizationRole
-	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignGeneralOrgItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedPersonAndOrganization: StepBasic_PersonAndOrganization
+aRole: StepBasic_PersonAndOrganizationRole
+aItems: StepAP214_HArray1OfAutoDesignGeneralOrgItem
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_PersonAndOrganization> & aAssignedPersonAndOrganization, const opencascade::handle<StepBasic_PersonAndOrganizationRole> & aRole, const opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_AutoDesignGeneralOrgItem
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_AutoDesignGeneralOrgItem
 ") ItemsValue;
 		StepAP214_AutoDesignGeneralOrgItem ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignGeneralOrgItem
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfAutoDesignGeneralOrgItem
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem> & aItems);
 
@@ -2606,7 +3272,9 @@ class StepAP214_AutoDesignPersonAndOrganizationAssignment : public StepBasic_Per
 		%feature("compactdefaultargs") StepAP214_AutoDesignPersonAndOrganizationAssignment;
 		%feature("autodoc", "Returns a autodesignpersonandorganizationassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignPersonAndOrganizationAssignment;
 		 StepAP214_AutoDesignPersonAndOrganizationAssignment();
 
@@ -2628,37 +3296,63 @@ class StepAP214_AutoDesignPresentedItem : public StepVisual_PresentedItem {
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignPresentedItemSelect
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfAutoDesignPresentedItemSelect
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepAP214_HArray1OfAutoDesignPresentedItemSelect> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepAP214_HArray1OfAutoDesignPresentedItemSelect>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepAP214_HArray1OfAutoDesignPresentedItemSelect>
 ") Items;
 		opencascade::handle<StepAP214_HArray1OfAutoDesignPresentedItemSelect> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: StepAP214_AutoDesignPresentedItemSelect
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+StepAP214_AutoDesignPresentedItemSelect
 ") ItemsValue;
 		StepAP214_AutoDesignPresentedItemSelect ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepAP214_HArray1OfAutoDesignPresentedItemSelect
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepAP214_HArray1OfAutoDesignPresentedItemSelect
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignPresentedItemSelect> & aItems);
 
@@ -2666,7 +3360,9 @@ class StepAP214_AutoDesignPresentedItem : public StepVisual_PresentedItem {
 		%feature("compactdefaultargs") StepAP214_AutoDesignPresentedItem;
 		%feature("autodoc", "Returns a autodesignpresenteditem.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignPresentedItem;
 		 StepAP214_AutoDesignPresentedItem();
 
@@ -2690,9 +3386,13 @@ class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a autodesignpresenteditemselect kind entity that is : 1 -> productdefinition, 2 -> productdefinitionrelationship, 3 -> productdefinitionshape 4 -> representationrelationship 5 -> shapeaspect 6 -> documentrelationship, 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -2700,7 +3400,9 @@ class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") DocumentRelationship;
 		%feature("autodoc", "Returns value as a documentrelationship (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_DocumentRelationship>
+Returns
+-------
+opencascade::handle<StepBasic_DocumentRelationship>
 ") DocumentRelationship;
 		opencascade::handle<StepBasic_DocumentRelationship> DocumentRelationship();
 
@@ -2708,7 +3410,9 @@ class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinition;
 		%feature("autodoc", "Returns value as a productdefinition (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinition>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinition>
 ") ProductDefinition;
 		opencascade::handle<StepBasic_ProductDefinition> ProductDefinition();
 
@@ -2716,7 +3420,9 @@ class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionRelationship;
 		%feature("autodoc", "Returns value as a productdefinitionrelationship (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinitionRelationship>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionRelationship>
 ") ProductDefinitionRelationship;
 		opencascade::handle<StepBasic_ProductDefinitionRelationship> ProductDefinitionRelationship();
 
@@ -2724,7 +3430,9 @@ class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionShape;
 		%feature("autodoc", "Returns value as a productdefinitionshape (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ProductDefinitionShape>
+Returns
+-------
+opencascade::handle<StepRepr_ProductDefinitionShape>
 ") ProductDefinitionShape;
 		opencascade::handle<StepRepr_ProductDefinitionShape> ProductDefinitionShape();
 
@@ -2732,7 +3440,9 @@ class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") RepresentationRelationship;
 		%feature("autodoc", "Returns value as a representationrelationship (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_RepresentationRelationship>
+Returns
+-------
+opencascade::handle<StepRepr_RepresentationRelationship>
 ") RepresentationRelationship;
 		opencascade::handle<StepRepr_RepresentationRelationship> RepresentationRelationship();
 
@@ -2740,7 +3450,9 @@ class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") ShapeAspect;
 		%feature("autodoc", "Returns value as a shapeaspect (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ShapeAspect>
+Returns
+-------
+opencascade::handle<StepRepr_ShapeAspect>
 ") ShapeAspect;
 		opencascade::handle<StepRepr_ShapeAspect> ShapeAspect();
 
@@ -2748,7 +3460,9 @@ class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") StepAP214_AutoDesignPresentedItemSelect;
 		%feature("autodoc", "Returns a autodesignpresenteditemselect selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignPresentedItemSelect;
 		 StepAP214_AutoDesignPresentedItemSelect();
 
@@ -2768,7 +3482,11 @@ class StepAP214_AutoDesignReferencingItem : public StepData_SelectType {
 	public:
 		/****************** Approval ******************/
 		%feature("compactdefaultargs") Approval;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_Approval>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_Approval>
 ") Approval;
 		opencascade::handle<StepBasic_Approval> Approval();
 
@@ -2776,87 +3494,143 @@ class StepAP214_AutoDesignReferencingItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a autodesignreferencingitem kind entity that is : 1 approval from stepbasic, 2 documentrelationship from stepbasic, 3 externallydefinedrepresentation from steprepr, 4 mappeditem from steprepr, 5 materialdesignation from steprepr, 6 presentationarea from stepvisual, 7 presentationview from stepvisual, 8 productcategory from stepbasic, 9 productdefinition from stepbasic, 10 productdefinitionrelationship from stepbasic, 11 propertydefinition from stepbasic, 12 representation from steprepr, 13 representationrelationship from steprepr, 14 shapeaspect from steprepr 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
 		/****************** DocumentRelationship ******************/
 		%feature("compactdefaultargs") DocumentRelationship;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_DocumentRelationship>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_DocumentRelationship>
 ") DocumentRelationship;
 		opencascade::handle<StepBasic_DocumentRelationship> DocumentRelationship();
 
 		/****************** ExternallyDefinedRepresentation ******************/
 		%feature("compactdefaultargs") ExternallyDefinedRepresentation;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepRepr_ExternallyDefinedRepresentation>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepRepr_ExternallyDefinedRepresentation>
 ") ExternallyDefinedRepresentation;
 		opencascade::handle<StepRepr_ExternallyDefinedRepresentation> ExternallyDefinedRepresentation();
 
 		/****************** MappedItem ******************/
 		%feature("compactdefaultargs") MappedItem;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepRepr_MappedItem>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepRepr_MappedItem>
 ") MappedItem;
 		opencascade::handle<StepRepr_MappedItem> MappedItem();
 
 		/****************** MaterialDesignation ******************/
 		%feature("compactdefaultargs") MaterialDesignation;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepRepr_MaterialDesignation>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepRepr_MaterialDesignation>
 ") MaterialDesignation;
 		opencascade::handle<StepRepr_MaterialDesignation> MaterialDesignation();
 
 		/****************** PresentationArea ******************/
 		%feature("compactdefaultargs") PresentationArea;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepVisual_PresentationArea>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepVisual_PresentationArea>
 ") PresentationArea;
 		opencascade::handle<StepVisual_PresentationArea> PresentationArea();
 
 		/****************** PresentationView ******************/
 		%feature("compactdefaultargs") PresentationView;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepVisual_PresentationView>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepVisual_PresentationView>
 ") PresentationView;
 		opencascade::handle<StepVisual_PresentationView> PresentationView();
 
 		/****************** ProductCategory ******************/
 		%feature("compactdefaultargs") ProductCategory;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_ProductCategory>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_ProductCategory>
 ") ProductCategory;
 		opencascade::handle<StepBasic_ProductCategory> ProductCategory();
 
 		/****************** ProductDefinition ******************/
 		%feature("compactdefaultargs") ProductDefinition;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_ProductDefinition>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinition>
 ") ProductDefinition;
 		opencascade::handle<StepBasic_ProductDefinition> ProductDefinition();
 
 		/****************** ProductDefinitionRelationship ******************/
 		%feature("compactdefaultargs") ProductDefinitionRelationship;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_ProductDefinitionRelationship>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionRelationship>
 ") ProductDefinitionRelationship;
 		opencascade::handle<StepBasic_ProductDefinitionRelationship> ProductDefinitionRelationship();
 
 		/****************** PropertyDefinition ******************/
 		%feature("compactdefaultargs") PropertyDefinition;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepRepr_PropertyDefinition>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepRepr_PropertyDefinition>
 ") PropertyDefinition;
 		opencascade::handle<StepRepr_PropertyDefinition> PropertyDefinition();
 
 		/****************** Representation ******************/
 		%feature("compactdefaultargs") Representation;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepRepr_Representation>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepRepr_Representation>
 ") Representation;
 		opencascade::handle<StepRepr_Representation> Representation();
 
 		/****************** RepresentationRelationship ******************/
 		%feature("compactdefaultargs") RepresentationRelationship;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepRepr_RepresentationRelationship>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepRepr_RepresentationRelationship>
 ") RepresentationRelationship;
 		opencascade::handle<StepRepr_RepresentationRelationship> RepresentationRelationship();
 
 		/****************** ShapeAspect ******************/
 		%feature("compactdefaultargs") ShapeAspect;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepRepr_ShapeAspect>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepRepr_ShapeAspect>
 ") ShapeAspect;
 		opencascade::handle<StepRepr_ShapeAspect> ShapeAspect();
 
@@ -2864,7 +3638,9 @@ class StepAP214_AutoDesignReferencingItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StepAP214_AutoDesignReferencingItem;
 		%feature("autodoc", "Returns a autodesignreferencingitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignReferencingItem;
 		 StepAP214_AutoDesignReferencingItem();
 
@@ -2884,39 +3660,64 @@ class StepAP214_AutoDesignSecurityClassificationAssignment : public StepBasic_Se
 	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aAssignedSecurityClassification:
-	:type aAssignedSecurityClassification: StepBasic_SecurityClassification
-	:param aItems:
-	:type aItems: StepBasic_HArray1OfApproval
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAssignedSecurityClassification: StepBasic_SecurityClassification
+aItems: StepBasic_HArray1OfApproval
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<StepBasic_SecurityClassification> & aAssignedSecurityClassification, const opencascade::handle<StepBasic_HArray1OfApproval> & aItems);
 
 		/****************** Items ******************/
 		%feature("compactdefaultargs") Items;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_HArray1OfApproval>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_HArray1OfApproval>
 ") Items;
 		opencascade::handle<StepBasic_HArray1OfApproval> Items();
 
 		/****************** ItemsValue ******************/
 		%feature("compactdefaultargs") ItemsValue;
-		%feature("autodoc", "	:param num:
-	:type num: int
-	:rtype: opencascade::handle<StepBasic_Approval>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<StepBasic_Approval>
 ") ItemsValue;
 		opencascade::handle<StepBasic_Approval> ItemsValue(const Standard_Integer num);
 
 		/****************** NbItems ******************/
 		%feature("compactdefaultargs") NbItems;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbItems;
 		Standard_Integer NbItems();
 
 		/****************** SetItems ******************/
 		%feature("compactdefaultargs") SetItems;
-		%feature("autodoc", "	:param aItems:
-	:type aItems: StepBasic_HArray1OfApproval
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aItems: StepBasic_HArray1OfApproval
+
+Returns
+-------
+None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepBasic_HArray1OfApproval> & aItems);
 
@@ -2924,7 +3725,9 @@ class StepAP214_AutoDesignSecurityClassificationAssignment : public StepBasic_Se
 		%feature("compactdefaultargs") StepAP214_AutoDesignSecurityClassificationAssignment;
 		%feature("autodoc", "Returns a autodesignsecurityclassificationassignment.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_AutoDesignSecurityClassificationAssignment;
 		 StepAP214_AutoDesignSecurityClassificationAssignment();
 
@@ -2948,7 +3751,9 @@ class StepAP214_Class : public StepBasic_Group {
 		%feature("compactdefaultargs") StepAP214_Class;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_Class;
 		 StepAP214_Class();
 
@@ -2972,7 +3777,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") AppliedExternalIdentificationAssignment;
 		%feature("autodoc", "Returns value as a appliedexternalidentificationassignment (null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AppliedExternalIdentificationAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AppliedExternalIdentificationAssignment>
 ") AppliedExternalIdentificationAssignment;
 		opencascade::handle<StepAP214_AppliedExternalIdentificationAssignment> AppliedExternalIdentificationAssignment();
 
@@ -2980,7 +3787,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Approval;
 		%feature("autodoc", "Returns value as a approval (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_Approval>
+Returns
+-------
+opencascade::handle<StepBasic_Approval>
 ") Approval;
 		opencascade::handle<StepBasic_Approval> Approval();
 
@@ -2988,7 +3797,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") AssemblyComponentUsage;
 		%feature("autodoc", "Returns value as a assemblycomponentusage (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_AssemblyComponentUsage>
+Returns
+-------
+opencascade::handle<StepRepr_AssemblyComponentUsage>
 ") AssemblyComponentUsage;
 		opencascade::handle<StepRepr_AssemblyComponentUsage> AssemblyComponentUsage();
 
@@ -2996,9 +3807,13 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a documentreferenceitem kind entity that is :.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -3006,7 +3821,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CharacterizedObject;
 		%feature("autodoc", "Returns value as a characterizedobject (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_CharacterizedObject>
+Returns
+-------
+opencascade::handle<StepBasic_CharacterizedObject>
 ") CharacterizedObject;
 		opencascade::handle<StepBasic_CharacterizedObject> CharacterizedObject();
 
@@ -3014,7 +3831,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") DescriptiveRepresentationItem;
 		%feature("autodoc", "Returns value as a (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_DescriptiveRepresentationItem>
+Returns
+-------
+opencascade::handle<StepRepr_DescriptiveRepresentationItem>
 ") DescriptiveRepresentationItem;
 		opencascade::handle<StepRepr_DescriptiveRepresentationItem> DescriptiveRepresentationItem();
 
@@ -3022,7 +3841,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") DimensionalSize;
 		%feature("autodoc", "Returns value as a dimensionalsize (null if another type).
 
-	:rtype: opencascade::handle<StepShape_DimensionalSize>
+Returns
+-------
+opencascade::handle<StepShape_DimensionalSize>
 ") DimensionalSize;
 		opencascade::handle<StepShape_DimensionalSize> DimensionalSize();
 
@@ -3030,7 +3851,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ExternallyDefinedItem;
 		%feature("autodoc", "Returns value as a externallydefineditem (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ExternallyDefinedItem>
+Returns
+-------
+opencascade::handle<StepBasic_ExternallyDefinedItem>
 ") ExternallyDefinedItem;
 		opencascade::handle<StepBasic_ExternallyDefinedItem> ExternallyDefinedItem();
 
@@ -3038,7 +3861,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Group;
 		%feature("autodoc", "Returns value as a group (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_Group>
+Returns
+-------
+opencascade::handle<StepBasic_Group>
 ") Group;
 		opencascade::handle<StepBasic_Group> Group();
 
@@ -3046,7 +3871,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") GroupRelationship;
 		%feature("autodoc", "Returns value as a grouprelationship (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_GroupRelationship>
+Returns
+-------
+opencascade::handle<StepBasic_GroupRelationship>
 ") GroupRelationship;
 		opencascade::handle<StepBasic_GroupRelationship> GroupRelationship();
 
@@ -3054,7 +3881,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") MaterialDesignation;
 		%feature("autodoc", "Returns value as a materialdesignation (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_MaterialDesignation>
+Returns
+-------
+opencascade::handle<StepRepr_MaterialDesignation>
 ") MaterialDesignation;
 		opencascade::handle<StepRepr_MaterialDesignation> MaterialDesignation();
 
@@ -3062,7 +3891,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") MeasureRepresentationItem;
 		%feature("autodoc", "Returns value as a measurerepresentationitem (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_MeasureRepresentationItem>
+Returns
+-------
+opencascade::handle<StepRepr_MeasureRepresentationItem>
 ") MeasureRepresentationItem;
 		opencascade::handle<StepRepr_MeasureRepresentationItem> MeasureRepresentationItem();
 
@@ -3070,7 +3901,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductCategory;
 		%feature("autodoc", "Returns value as a productcategory (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductCategory>
+Returns
+-------
+opencascade::handle<StepBasic_ProductCategory>
 ") ProductCategory;
 		opencascade::handle<StepBasic_ProductCategory> ProductCategory();
 
@@ -3078,7 +3911,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinition;
 		%feature("autodoc", "Returns value as a productdefinition (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinition>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinition>
 ") ProductDefinition;
 		opencascade::handle<StepBasic_ProductDefinition> ProductDefinition();
 
@@ -3086,7 +3921,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionContext;
 		%feature("autodoc", "Returns value as a productdefinitioncontext (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinitionContext>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionContext>
 ") ProductDefinitionContext;
 		opencascade::handle<StepBasic_ProductDefinitionContext> ProductDefinitionContext();
 
@@ -3094,7 +3931,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionRelationship;
 		%feature("autodoc", "Returns value as aproductdefinitionrelationship (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinitionRelationship>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionRelationship>
 ") ProductDefinitionRelationship;
 		opencascade::handle<StepBasic_ProductDefinitionRelationship> ProductDefinitionRelationship();
 
@@ -3102,7 +3941,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") PropertyDefinition;
 		%feature("autodoc", "Returns value as a propertydefinition (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_PropertyDefinition>
+Returns
+-------
+opencascade::handle<StepRepr_PropertyDefinition>
 ") PropertyDefinition;
 		opencascade::handle<StepRepr_PropertyDefinition> PropertyDefinition();
 
@@ -3110,7 +3951,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Representation;
 		%feature("autodoc", "Returns value as a representation (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_Representation>
+Returns
+-------
+opencascade::handle<StepRepr_Representation>
 ") Representation;
 		opencascade::handle<StepRepr_Representation> Representation();
 
@@ -3118,7 +3961,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") RepresentationItem;
 		%feature("autodoc", "Returns value as a representationitem (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_RepresentationItem>
+Returns
+-------
+opencascade::handle<StepRepr_RepresentationItem>
 ") RepresentationItem;
 		opencascade::handle<StepRepr_RepresentationItem> RepresentationItem();
 
@@ -3126,7 +3971,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ShapeAspect;
 		%feature("autodoc", "Returns value as a shapeaspect (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ShapeAspect>
+Returns
+-------
+opencascade::handle<StepRepr_ShapeAspect>
 ") ShapeAspect;
 		opencascade::handle<StepRepr_ShapeAspect> ShapeAspect();
 
@@ -3134,7 +3981,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ShapeAspectRelationship;
 		%feature("autodoc", "Returns value as a shapeaspectrelationship (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ShapeAspectRelationship>
+Returns
+-------
+opencascade::handle<StepRepr_ShapeAspectRelationship>
 ") ShapeAspectRelationship;
 		opencascade::handle<StepRepr_ShapeAspectRelationship> ShapeAspectRelationship();
 
@@ -3142,7 +3991,9 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StepAP214_DocumentReferenceItem;
 		%feature("autodoc", "Returns a documentreferenceitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_DocumentReferenceItem;
 		 StepAP214_DocumentReferenceItem();
 
@@ -3164,7 +4015,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") AppliedOrganizationAssignment;
 		%feature("autodoc", "Returns value as appliedorganizationassignment (or null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AppliedOrganizationAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AppliedOrganizationAssignment>
 ") AppliedOrganizationAssignment;
 		opencascade::handle<StepAP214_AppliedOrganizationAssignment> AppliedOrganizationAssignment();
 
@@ -3172,7 +4025,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") AppliedPersonAndOrganizationAssignment;
 		%feature("autodoc", "Returns value as appliedpersonandorganizationassignment (or null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AppliedPersonAndOrganizationAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AppliedPersonAndOrganizationAssignment>
 ") AppliedPersonAndOrganizationAssignment;
 		opencascade::handle<StepAP214_AppliedPersonAndOrganizationAssignment> AppliedPersonAndOrganizationAssignment();
 
@@ -3180,7 +4035,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Approval;
 		%feature("autodoc", "Returns value as approval (or null if another type).
 
-	:rtype: opencascade::handle<StepBasic_Approval>
+Returns
+-------
+opencascade::handle<StepBasic_Approval>
 ") Approval;
 		opencascade::handle<StepBasic_Approval> Approval();
 
@@ -3188,7 +4045,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ApprovalStatus;
 		%feature("autodoc", "Returns value as approvalstatus (or null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ApprovalStatus>
+Returns
+-------
+opencascade::handle<StepBasic_ApprovalStatus>
 ") ApprovalStatus;
 		opencascade::handle<StepBasic_ApprovalStatus> ApprovalStatus();
 
@@ -3196,9 +4055,13 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of externalidentificationitem select type 1 -> documentfile from stepbasic 2 -> externallydefinedclass from stepap214 3 -> externallydefinedgeneralproperty from stepap214 4 -> productdefinition from stepbasic 5 -> appliedorganizationassignment from ap214 6 -> appliedpersonandorganizationassignment from ap214 7 -> approval from stepbasic 8 -> approvalstatus from stepbasic 9 -> externalsource from stepbasic 10 -> organizationaladdress from stepbasic 11 -> securityclassification from stepbasic 12 -> trimmedcurve from stepgeom 13 -> versionedactionrequest from stepbasic 14 -> dateandtimeassignment from stepbasic 15 -> dateassignment from stepbasic 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -3206,7 +4069,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") DateAndTimeAssignment;
 		%feature("autodoc", "Returns value as dateandtimeassignment (or null if another type).
 
-	:rtype: opencascade::handle<StepBasic_DateAndTimeAssignment>
+Returns
+-------
+opencascade::handle<StepBasic_DateAndTimeAssignment>
 ") DateAndTimeAssignment;
 		opencascade::handle<StepBasic_DateAndTimeAssignment> DateAndTimeAssignment();
 
@@ -3214,7 +4079,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") DateAssignment;
 		%feature("autodoc", "Returns value as dateassignment (or null if another type).
 
-	:rtype: opencascade::handle<StepBasic_DateAssignment>
+Returns
+-------
+opencascade::handle<StepBasic_DateAssignment>
 ") DateAssignment;
 		opencascade::handle<StepBasic_DateAssignment> DateAssignment();
 
@@ -3222,7 +4089,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") DocumentFile;
 		%feature("autodoc", "Returns value as documentfile (or null if another type).
 
-	:rtype: opencascade::handle<StepBasic_DocumentFile>
+Returns
+-------
+opencascade::handle<StepBasic_DocumentFile>
 ") DocumentFile;
 		opencascade::handle<StepBasic_DocumentFile> DocumentFile();
 
@@ -3230,7 +4099,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ExternalSource;
 		%feature("autodoc", "Returns value as externalsource (or null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ExternalSource>
+Returns
+-------
+opencascade::handle<StepBasic_ExternalSource>
 ") ExternalSource;
 		opencascade::handle<StepBasic_ExternalSource> ExternalSource();
 
@@ -3238,7 +4109,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ExternallyDefinedClass;
 		%feature("autodoc", "Returns value as externallydefinedclass (or null if another type).
 
-	:rtype: opencascade::handle<StepAP214_ExternallyDefinedClass>
+Returns
+-------
+opencascade::handle<StepAP214_ExternallyDefinedClass>
 ") ExternallyDefinedClass;
 		opencascade::handle<StepAP214_ExternallyDefinedClass> ExternallyDefinedClass();
 
@@ -3246,7 +4119,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ExternallyDefinedGeneralProperty;
 		%feature("autodoc", "Returns value as externallydefinedgeneralproperty (or null if another type).
 
-	:rtype: opencascade::handle<StepAP214_ExternallyDefinedGeneralProperty>
+Returns
+-------
+opencascade::handle<StepAP214_ExternallyDefinedGeneralProperty>
 ") ExternallyDefinedGeneralProperty;
 		opencascade::handle<StepAP214_ExternallyDefinedGeneralProperty> ExternallyDefinedGeneralProperty();
 
@@ -3254,7 +4129,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") OrganizationalAddress;
 		%feature("autodoc", "Returns value as organizationaladdress (or null if another type).
 
-	:rtype: opencascade::handle<StepBasic_OrganizationalAddress>
+Returns
+-------
+opencascade::handle<StepBasic_OrganizationalAddress>
 ") OrganizationalAddress;
 		opencascade::handle<StepBasic_OrganizationalAddress> OrganizationalAddress();
 
@@ -3262,7 +4139,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinition;
 		%feature("autodoc", "Returns value as productdefinition (or null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinition>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinition>
 ") ProductDefinition;
 		opencascade::handle<StepBasic_ProductDefinition> ProductDefinition();
 
@@ -3270,7 +4149,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") SecurityClassification;
 		%feature("autodoc", "Returns value as securityclassification (or null if another type).
 
-	:rtype: opencascade::handle<StepBasic_SecurityClassification>
+Returns
+-------
+opencascade::handle<StepBasic_SecurityClassification>
 ") SecurityClassification;
 		opencascade::handle<StepBasic_SecurityClassification> SecurityClassification();
 
@@ -3278,7 +4159,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StepAP214_ExternalIdentificationItem;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_ExternalIdentificationItem;
 		 StepAP214_ExternalIdentificationItem();
 
@@ -3286,7 +4169,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") TrimmedCurve;
 		%feature("autodoc", "Returns value as trimmedcurve (or null if another type).
 
-	:rtype: opencascade::handle<StepGeom_TrimmedCurve>
+Returns
+-------
+opencascade::handle<StepGeom_TrimmedCurve>
 ") TrimmedCurve;
 		opencascade::handle<StepGeom_TrimmedCurve> TrimmedCurve();
 
@@ -3294,7 +4179,9 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		%feature("compactdefaultargs") VersionedActionRequest;
 		%feature("autodoc", "Returns value as versionedactionrequest (or null if another type).
 
-	:rtype: opencascade::handle<StepBasic_VersionedActionRequest>
+Returns
+-------
+opencascade::handle<StepBasic_VersionedActionRequest>
 ") VersionedActionRequest;
 		opencascade::handle<StepBasic_VersionedActionRequest> VersionedActionRequest();
 
@@ -3316,7 +4203,9 @@ class StepAP214_ExternallyDefinedGeneralProperty : public StepBasic_GeneralPrope
 		%feature("compactdefaultargs") ExternallyDefinedItem;
 		%feature("autodoc", "Returns data for supertype externallydefineditem.
 
-	:rtype: opencascade::handle<StepBasic_ExternallyDefinedItem>
+Returns
+-------
+opencascade::handle<StepBasic_ExternallyDefinedItem>
 ") ExternallyDefinedItem;
 		opencascade::handle<StepBasic_ExternallyDefinedItem> ExternallyDefinedItem();
 
@@ -3324,19 +4213,18 @@ class StepAP214_ExternallyDefinedGeneralProperty : public StepBasic_GeneralPrope
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aGeneralProperty_Id:
-	:type aGeneralProperty_Id: TCollection_HAsciiString
-	:param aGeneralProperty_Name:
-	:type aGeneralProperty_Name: TCollection_HAsciiString
-	:param hasGeneralProperty_Description:
-	:type hasGeneralProperty_Description: bool
-	:param aGeneralProperty_Description:
-	:type aGeneralProperty_Description: TCollection_HAsciiString
-	:param aExternallyDefinedItem_ItemId:
-	:type aExternallyDefinedItem_ItemId: StepBasic_SourceItem
-	:param aExternallyDefinedItem_Source:
-	:type aExternallyDefinedItem_Source: StepBasic_ExternalSource
-	:rtype: None
+Parameters
+----------
+aGeneralProperty_Id: TCollection_HAsciiString
+aGeneralProperty_Name: TCollection_HAsciiString
+hasGeneralProperty_Description: bool
+aGeneralProperty_Description: TCollection_HAsciiString
+aExternallyDefinedItem_ItemId: StepBasic_SourceItem
+aExternallyDefinedItem_Source: StepBasic_ExternalSource
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aGeneralProperty_Id, const opencascade::handle<TCollection_HAsciiString> & aGeneralProperty_Name, const Standard_Boolean hasGeneralProperty_Description, const opencascade::handle<TCollection_HAsciiString> & aGeneralProperty_Description, const StepBasic_SourceItem & aExternallyDefinedItem_ItemId, const opencascade::handle<StepBasic_ExternalSource> & aExternallyDefinedItem_Source);
 
@@ -3344,9 +4232,13 @@ class StepAP214_ExternallyDefinedGeneralProperty : public StepBasic_GeneralPrope
 		%feature("compactdefaultargs") SetExternallyDefinedItem;
 		%feature("autodoc", "Set data for supertype externallydefineditem.
 
-	:param ExternallyDefinedItem:
-	:type ExternallyDefinedItem: StepBasic_ExternallyDefinedItem
-	:rtype: None
+Parameters
+----------
+ExternallyDefinedItem: StepBasic_ExternallyDefinedItem
+
+Returns
+-------
+None
 ") SetExternallyDefinedItem;
 		void SetExternallyDefinedItem(const opencascade::handle<StepBasic_ExternallyDefinedItem> & ExternallyDefinedItem);
 
@@ -3354,7 +4246,9 @@ class StepAP214_ExternallyDefinedGeneralProperty : public StepBasic_GeneralPrope
 		%feature("compactdefaultargs") StepAP214_ExternallyDefinedGeneralProperty;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_ExternallyDefinedGeneralProperty;
 		 StepAP214_ExternallyDefinedGeneralProperty();
 
@@ -3378,9 +4272,13 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a groupitem kind entity that is : 1 -> geometricrepresentationitem 2 -> grouprelationship 3 -> mappeditem 4 -> productdefinition 5 -> productdefinitionformation 6 -> propertydefinitionrepresentation 7 -> representation 8 -> representationitem 9 -> representationrelationshipwithtransformation 10 -> shapeaspect 11 -> shapeaspectrelationship 12 -> shaperepresentationrelationship 13 -> styleditem 14 -> topologicalrepresentationitem 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		virtual Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -3388,7 +4286,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") GeometricRepresentationItem;
 		%feature("autodoc", "Returns value as a geometricrepresentationitem (null if another type).
 
-	:rtype: opencascade::handle<StepGeom_GeometricRepresentationItem>
+Returns
+-------
+opencascade::handle<StepGeom_GeometricRepresentationItem>
 ") GeometricRepresentationItem;
 		virtual opencascade::handle<StepGeom_GeometricRepresentationItem> GeometricRepresentationItem();
 
@@ -3396,7 +4296,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") GroupRelationship;
 		%feature("autodoc", "Returns value as a grouprelationship (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_GroupRelationship>
+Returns
+-------
+opencascade::handle<StepBasic_GroupRelationship>
 ") GroupRelationship;
 		virtual opencascade::handle<StepBasic_GroupRelationship> GroupRelationship();
 
@@ -3404,7 +4306,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") MappedItem;
 		%feature("autodoc", "Returns value as a mappeditem (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_MappedItem>
+Returns
+-------
+opencascade::handle<StepRepr_MappedItem>
 ") MappedItem;
 		virtual opencascade::handle<StepRepr_MappedItem> MappedItem();
 
@@ -3412,7 +4316,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinition;
 		%feature("autodoc", "Returns value as a productdefinition (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinition>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinition>
 ") ProductDefinition;
 		virtual opencascade::handle<StepBasic_ProductDefinition> ProductDefinition();
 
@@ -3420,7 +4326,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionFormation;
 		%feature("autodoc", "Returns value as a productdefinitionformation (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinitionFormation>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionFormation>
 ") ProductDefinitionFormation;
 		virtual opencascade::handle<StepBasic_ProductDefinitionFormation> ProductDefinitionFormation();
 
@@ -3428,7 +4336,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") PropertyDefinitionRepresentation;
 		%feature("autodoc", "Returns value as a propertydefinitionrepresentation (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_PropertyDefinitionRepresentation>
+Returns
+-------
+opencascade::handle<StepRepr_PropertyDefinitionRepresentation>
 ") PropertyDefinitionRepresentation;
 		virtual opencascade::handle<StepRepr_PropertyDefinitionRepresentation> PropertyDefinitionRepresentation();
 
@@ -3436,7 +4346,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") Representation;
 		%feature("autodoc", "Returns value as a representation (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_Representation>
+Returns
+-------
+opencascade::handle<StepRepr_Representation>
 ") Representation;
 		virtual opencascade::handle<StepRepr_Representation> Representation();
 
@@ -3444,7 +4356,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") RepresentationItem;
 		%feature("autodoc", "Returns value as a representationitem (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_RepresentationItem>
+Returns
+-------
+opencascade::handle<StepRepr_RepresentationItem>
 ") RepresentationItem;
 		virtual opencascade::handle<StepRepr_RepresentationItem> RepresentationItem();
 
@@ -3452,7 +4366,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") RepresentationRelationshipWithTransformation;
 		%feature("autodoc", "Returns value as a representationrelationshipwithtransformation (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_RepresentationRelationshipWithTransformation>
+Returns
+-------
+opencascade::handle<StepRepr_RepresentationRelationshipWithTransformation>
 ") RepresentationRelationshipWithTransformation;
 		virtual opencascade::handle<StepRepr_RepresentationRelationshipWithTransformation> RepresentationRelationshipWithTransformation();
 
@@ -3460,7 +4376,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ShapeAspect;
 		%feature("autodoc", "Returns value as a shapeaspect (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ShapeAspect>
+Returns
+-------
+opencascade::handle<StepRepr_ShapeAspect>
 ") ShapeAspect;
 		virtual opencascade::handle<StepRepr_ShapeAspect> ShapeAspect();
 
@@ -3468,7 +4386,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ShapeAspectRelationship;
 		%feature("autodoc", "Returns value as a shapeaspectrelationship (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ShapeAspectRelationship>
+Returns
+-------
+opencascade::handle<StepRepr_ShapeAspectRelationship>
 ") ShapeAspectRelationship;
 		virtual opencascade::handle<StepRepr_ShapeAspectRelationship> ShapeAspectRelationship();
 
@@ -3476,7 +4396,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") ShapeRepresentationRelationship;
 		%feature("autodoc", "Returns value as a shaperepresentationrelationship (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ShapeRepresentationRelationship>
+Returns
+-------
+opencascade::handle<StepRepr_ShapeRepresentationRelationship>
 ") ShapeRepresentationRelationship;
 		virtual opencascade::handle<StepRepr_ShapeRepresentationRelationship> ShapeRepresentationRelationship();
 
@@ -3484,7 +4406,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StepAP214_GroupItem;
 		%feature("autodoc", "Returns a groupitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_GroupItem;
 		 StepAP214_GroupItem();
 
@@ -3492,7 +4416,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") StyledItem;
 		%feature("autodoc", "Returns value as a styleditem (null if another type).
 
-	:rtype: opencascade::handle<StepVisual_StyledItem>
+Returns
+-------
+opencascade::handle<StepVisual_StyledItem>
 ") StyledItem;
 		virtual opencascade::handle<StepVisual_StyledItem> StyledItem();
 
@@ -3500,7 +4426,9 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		%feature("compactdefaultargs") TopologicalRepresentationItem;
 		%feature("autodoc", "Returns value as a topologicalrepresentationitem (null if another type).
 
-	:rtype: opencascade::handle<StepShape_TopologicalRepresentationItem>
+Returns
+-------
+opencascade::handle<StepShape_TopologicalRepresentationItem>
 ") TopologicalRepresentationItem;
 		virtual opencascade::handle<StepShape_TopologicalRepresentationItem> TopologicalRepresentationItem();
 
@@ -3522,9 +4450,13 @@ class StepAP214_PresentedItemSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a presenteditemselect kind entity that is : 1 -> productdefinition, 2 -> productdefinitionrelationship, 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -3532,7 +4464,9 @@ class StepAP214_PresentedItemSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinition;
 		%feature("autodoc", "Returns value as a productdefinition (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinition>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinition>
 ") ProductDefinition;
 		opencascade::handle<StepBasic_ProductDefinition> ProductDefinition();
 
@@ -3540,7 +4474,9 @@ class StepAP214_PresentedItemSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") ProductDefinitionRelationship;
 		%feature("autodoc", "Returns value as a productdefinitionrelationship (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ProductDefinitionRelationship>
+Returns
+-------
+opencascade::handle<StepBasic_ProductDefinitionRelationship>
 ") ProductDefinitionRelationship;
 		opencascade::handle<StepBasic_ProductDefinitionRelationship> ProductDefinitionRelationship();
 
@@ -3548,7 +4484,9 @@ class StepAP214_PresentedItemSelect : public StepData_SelectType {
 		%feature("compactdefaultargs") StepAP214_PresentedItemSelect;
 		%feature("autodoc", "Returns a presenteditemselect selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_PresentedItemSelect;
 		 StepAP214_PresentedItemSelect();
 
@@ -3570,7 +4508,9 @@ class StepAP214_Protocol : public StepData_Protocol {
 		%feature("compactdefaultargs") NbResources;
 		%feature("autodoc", "Returns count of protocol used as resources (level one).
 
-	:rtype: int
+Returns
+-------
+int
 ") NbResources;
 		virtual Standard_Integer NbResources();
 
@@ -3578,21 +4518,33 @@ class StepAP214_Protocol : public StepData_Protocol {
 		%feature("compactdefaultargs") Resource;
 		%feature("autodoc", "Returns a resource, given its rank (between 1 and nbresources).
 
-	:param num:
-	:type num: int
-	:rtype: opencascade::handle<Interface_Protocol>
+Parameters
+----------
+num: int
+
+Returns
+-------
+opencascade::handle<Interface_Protocol>
 ") Resource;
 		virtual opencascade::handle<Interface_Protocol> Resource(const Standard_Integer num);
 
 		/****************** SchemaName ******************/
 		%feature("compactdefaultargs") SchemaName;
-		%feature("autodoc", "	:rtype: char *
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+char *
 ") SchemaName;
 		virtual const char * SchemaName();
 
 		/****************** StepAP214_Protocol ******************/
 		%feature("compactdefaultargs") StepAP214_Protocol;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepAP214_Protocol;
 		 StepAP214_Protocol();
 
@@ -3600,9 +4552,13 @@ class StepAP214_Protocol : public StepData_Protocol {
 		%feature("compactdefaultargs") TypeNumber;
 		%feature("autodoc", "Returns a case number for each of the stepap214 entities.
 
-	:param atype:
-	:type atype: Standard_Type
-	:rtype: int
+Parameters
+----------
+atype: Standard_Type
+
+Returns
+-------
+int
 ") TypeNumber;
 		virtual Standard_Integer TypeNumber(const opencascade::handle<Standard_Type> & atype);
 
@@ -3626,15 +4582,16 @@ class StepAP214_RepItemGroup : public StepBasic_Group {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aGroup_Name:
-	:type aGroup_Name: TCollection_HAsciiString
-	:param hasGroup_Description:
-	:type hasGroup_Description: bool
-	:param aGroup_Description:
-	:type aGroup_Description: TCollection_HAsciiString
-	:param aRepresentationItem_Name:
-	:type aRepresentationItem_Name: TCollection_HAsciiString
-	:rtype: None
+Parameters
+----------
+aGroup_Name: TCollection_HAsciiString
+hasGroup_Description: bool
+aGroup_Description: TCollection_HAsciiString
+aRepresentationItem_Name: TCollection_HAsciiString
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aGroup_Name, const Standard_Boolean hasGroup_Description, const opencascade::handle<TCollection_HAsciiString> & aGroup_Description, const opencascade::handle<TCollection_HAsciiString> & aRepresentationItem_Name);
 
@@ -3642,7 +4599,9 @@ class StepAP214_RepItemGroup : public StepBasic_Group {
 		%feature("compactdefaultargs") RepresentationItem;
 		%feature("autodoc", "Returns data for supertype representationitem.
 
-	:rtype: opencascade::handle<StepRepr_RepresentationItem>
+Returns
+-------
+opencascade::handle<StepRepr_RepresentationItem>
 ") RepresentationItem;
 		opencascade::handle<StepRepr_RepresentationItem> RepresentationItem();
 
@@ -3650,9 +4609,13 @@ class StepAP214_RepItemGroup : public StepBasic_Group {
 		%feature("compactdefaultargs") SetRepresentationItem;
 		%feature("autodoc", "Set data for supertype representationitem.
 
-	:param RepresentationItem:
-	:type RepresentationItem: StepRepr_RepresentationItem
-	:rtype: None
+Parameters
+----------
+RepresentationItem: StepRepr_RepresentationItem
+
+Returns
+-------
+None
 ") SetRepresentationItem;
 		void SetRepresentationItem(const opencascade::handle<StepRepr_RepresentationItem> & RepresentationItem);
 
@@ -3660,7 +4623,9 @@ class StepAP214_RepItemGroup : public StepBasic_Group {
 		%feature("compactdefaultargs") StepAP214_RepItemGroup;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_RepItemGroup;
 		 StepAP214_RepItemGroup();
 
@@ -3682,27 +4647,45 @@ class StepAP214_AutoDesignOrganizationItem : public StepAP214_AutoDesignGeneralO
 	public:
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
-		%feature("autodoc", "	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		virtual Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
 		/****************** Document ******************/
 		%feature("compactdefaultargs") Document;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_Document>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_Document>
 ") Document;
 		opencascade::handle<StepBasic_Document> Document();
 
 		/****************** PhysicallyModeledProductDefinition ******************/
 		%feature("compactdefaultargs") PhysicallyModeledProductDefinition;
-		%feature("autodoc", "	:rtype: opencascade::handle<StepBasic_PhysicallyModeledProductDefinition>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepBasic_PhysicallyModeledProductDefinition>
 ") PhysicallyModeledProductDefinition;
 		opencascade::handle<StepBasic_PhysicallyModeledProductDefinition> PhysicallyModeledProductDefinition();
 
 		/****************** StepAP214_AutoDesignOrganizationItem ******************/
 		%feature("compactdefaultargs") StepAP214_AutoDesignOrganizationItem;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") StepAP214_AutoDesignOrganizationItem;
 		 StepAP214_AutoDesignOrganizationItem();
 
@@ -3724,7 +4707,9 @@ class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") AppliedOrganizationAssignment;
 		%feature("autodoc", "Returns value as a appliedorganizationassignment (null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AppliedOrganizationAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AppliedOrganizationAssignment>
 ") AppliedOrganizationAssignment;
 		opencascade::handle<StepAP214_AppliedOrganizationAssignment> AppliedOrganizationAssignment();
 
@@ -3732,7 +4717,9 @@ class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") AppliedPersonAndOrganizationAssignment;
 		%feature("autodoc", "Returns value as a applieddateandpersonassignment (null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AppliedPersonAndOrganizationAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AppliedPersonAndOrganizationAssignment>
 ") AppliedPersonAndOrganizationAssignment;
 		opencascade::handle<StepAP214_AppliedPersonAndOrganizationAssignment> AppliedPersonAndOrganizationAssignment();
 
@@ -3740,7 +4727,9 @@ class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") ApprovalPersonOrganization;
 		%feature("autodoc", "Returns value as a approvalpersonorganization (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ApprovalPersonOrganization>
+Returns
+-------
+opencascade::handle<StepBasic_ApprovalPersonOrganization>
 ") ApprovalPersonOrganization;
 		opencascade::handle<StepBasic_ApprovalPersonOrganization> ApprovalPersonOrganization();
 
@@ -3748,9 +4737,13 @@ class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a dateandtimeitem kind entity that is : 1 -> approvalpersonorganization 2 -> applieddateandpersonassignment 3 -> appliedorganizationassignment 4 -> assemblycomponentusagesubstitute 5 -> documentfile 6 -> effectivity 7 -> materialdesignation 8 -> mechanicaldesigngeometricpresentationrepresentation 9 -> presentationarea 10 -> product 11 -> productdefinition 12 -> productdefinitionformation 13 -> productdefinitionrelationship 14 -> propertydefinition 15 -> shaperepresentation 16 -> securityclassification 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		virtual Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -3758,7 +4751,9 @@ class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") StepAP214_DateAndTimeItem;
 		%feature("autodoc", "Returns a dateandtimeitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_DateAndTimeItem;
 		 StepAP214_DateAndTimeItem();
 
@@ -3780,7 +4775,9 @@ class StepAP214_DateItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") AppliedOrganizationAssignment;
 		%feature("autodoc", "Returns value as a appliedorganizationassignment (null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AppliedOrganizationAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AppliedOrganizationAssignment>
 ") AppliedOrganizationAssignment;
 		opencascade::handle<StepAP214_AppliedOrganizationAssignment> AppliedOrganizationAssignment();
 
@@ -3788,7 +4785,9 @@ class StepAP214_DateItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") AppliedPersonAndOrganizationAssignment;
 		%feature("autodoc", "Returns value as a applieddateandpersonassignment (null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AppliedPersonAndOrganizationAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AppliedPersonAndOrganizationAssignment>
 ") AppliedPersonAndOrganizationAssignment;
 		opencascade::handle<StepAP214_AppliedPersonAndOrganizationAssignment> AppliedPersonAndOrganizationAssignment();
 
@@ -3796,7 +4795,9 @@ class StepAP214_DateItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") AppliedSecurityClassificationAssignment;
 		%feature("autodoc", "Returns value as a appliedsecurityclassificationassignment (null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AppliedSecurityClassificationAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AppliedSecurityClassificationAssignment>
 ") AppliedSecurityClassificationAssignment;
 		opencascade::handle<StepAP214_AppliedSecurityClassificationAssignment> AppliedSecurityClassificationAssignment();
 
@@ -3804,7 +4805,9 @@ class StepAP214_DateItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") ApprovalPersonOrganization;
 		%feature("autodoc", "Returns value as a approvalpersonorganization (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_ApprovalPersonOrganization>
+Returns
+-------
+opencascade::handle<StepBasic_ApprovalPersonOrganization>
 ") ApprovalPersonOrganization;
 		opencascade::handle<StepBasic_ApprovalPersonOrganization> ApprovalPersonOrganization();
 
@@ -3812,9 +4815,13 @@ class StepAP214_DateItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a dateitem kind entity that is : 1 -> approvalpersonorganization 2 -> applieddateandpersonassignment 3 -> appliedorganizationassignment 4 -> assemblycomponentusagesubstitute 5 -> documentfile 6 -> effectivity 7 -> materialdesignation 8 -> mechanicaldesigngeometricpresentationrepresentation 9 -> presentationarea 10 -> product 11 -> productdefinition 12 -> productdefinitionformation 13 -> productdefinitionrelationship 14 -> propertydefinition 15 -> shaperepresentation 16 -> appliedsecurityclassificationassignment 17 -> document 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		virtual Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -3822,7 +4829,9 @@ class StepAP214_DateItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") StepAP214_DateItem;
 		%feature("autodoc", "Returns a dateitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_DateItem;
 		 StepAP214_DateItem();
 
@@ -3844,7 +4853,9 @@ class StepAP214_ExternallyDefinedClass : public StepAP214_Class {
 		%feature("compactdefaultargs") ExternallyDefinedItem;
 		%feature("autodoc", "Returns data for supertype externallydefineditem.
 
-	:rtype: opencascade::handle<StepBasic_ExternallyDefinedItem>
+Returns
+-------
+opencascade::handle<StepBasic_ExternallyDefinedItem>
 ") ExternallyDefinedItem;
 		opencascade::handle<StepBasic_ExternallyDefinedItem> ExternallyDefinedItem();
 
@@ -3852,17 +4863,17 @@ class StepAP214_ExternallyDefinedClass : public StepAP214_Class {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
 
-	:param aGroup_Name:
-	:type aGroup_Name: TCollection_HAsciiString
-	:param hasGroup_Description:
-	:type hasGroup_Description: bool
-	:param aGroup_Description:
-	:type aGroup_Description: TCollection_HAsciiString
-	:param aExternallyDefinedItem_ItemId:
-	:type aExternallyDefinedItem_ItemId: StepBasic_SourceItem
-	:param aExternallyDefinedItem_Source:
-	:type aExternallyDefinedItem_Source: StepBasic_ExternalSource
-	:rtype: None
+Parameters
+----------
+aGroup_Name: TCollection_HAsciiString
+hasGroup_Description: bool
+aGroup_Description: TCollection_HAsciiString
+aExternallyDefinedItem_ItemId: StepBasic_SourceItem
+aExternallyDefinedItem_Source: StepBasic_ExternalSource
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & aGroup_Name, const Standard_Boolean hasGroup_Description, const opencascade::handle<TCollection_HAsciiString> & aGroup_Description, const StepBasic_SourceItem & aExternallyDefinedItem_ItemId, const opencascade::handle<StepBasic_ExternalSource> & aExternallyDefinedItem_Source);
 
@@ -3870,9 +4881,13 @@ class StepAP214_ExternallyDefinedClass : public StepAP214_Class {
 		%feature("compactdefaultargs") SetExternallyDefinedItem;
 		%feature("autodoc", "Set data for supertype externallydefineditem.
 
-	:param ExternallyDefinedItem:
-	:type ExternallyDefinedItem: StepBasic_ExternallyDefinedItem
-	:rtype: None
+Parameters
+----------
+ExternallyDefinedItem: StepBasic_ExternallyDefinedItem
+
+Returns
+-------
+None
 ") SetExternallyDefinedItem;
 		void SetExternallyDefinedItem(const opencascade::handle<StepBasic_ExternallyDefinedItem> & ExternallyDefinedItem);
 
@@ -3880,7 +4895,9 @@ class StepAP214_ExternallyDefinedClass : public StepAP214_Class {
 		%feature("compactdefaultargs") StepAP214_ExternallyDefinedClass;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_ExternallyDefinedClass;
 		 StepAP214_ExternallyDefinedClass();
 
@@ -3904,7 +4921,9 @@ class StepAP214_OrganizationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") AppliedOrganizationAssignment;
 		%feature("autodoc", "Returns value as a appliedorganizationassignment (null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AppliedOrganizationAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AppliedOrganizationAssignment>
 ") AppliedOrganizationAssignment;
 		opencascade::handle<StepAP214_AppliedOrganizationAssignment> AppliedOrganizationAssignment();
 
@@ -3912,7 +4931,9 @@ class StepAP214_OrganizationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") AppliedSecurityClassificationAssignment;
 		%feature("autodoc", "Returns value as a appliedsecurityclassificationassignment (null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AppliedSecurityClassificationAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AppliedSecurityClassificationAssignment>
 ") AppliedSecurityClassificationAssignment;
 		opencascade::handle<StepAP214_AppliedSecurityClassificationAssignment> AppliedSecurityClassificationAssignment();
 
@@ -3920,7 +4941,9 @@ class StepAP214_OrganizationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") Approval;
 		%feature("autodoc", "Returns value as a approval (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_Approval>
+Returns
+-------
+opencascade::handle<StepBasic_Approval>
 ") Approval;
 		opencascade::handle<StepBasic_Approval> Approval();
 
@@ -3928,9 +4951,13 @@ class StepAP214_OrganizationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a organizationitem kind entity that is :.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		virtual Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -3938,7 +4965,9 @@ class StepAP214_OrganizationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") StepAP214_OrganizationItem;
 		%feature("autodoc", "Returns a organizationitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_OrganizationItem;
 		 StepAP214_OrganizationItem();
 
@@ -3960,7 +4989,9 @@ class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") AppliedOrganizationAssignment;
 		%feature("autodoc", "Returns value as a appliedorganizationassignment (null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AppliedOrganizationAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AppliedOrganizationAssignment>
 ") AppliedOrganizationAssignment;
 		opencascade::handle<StepAP214_AppliedOrganizationAssignment> AppliedOrganizationAssignment();
 
@@ -3968,7 +4999,9 @@ class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") AppliedSecurityClassificationAssignment;
 		%feature("autodoc", "Returns value as a appliedsecurityclassificationassignment (null if another type).
 
-	:rtype: opencascade::handle<StepAP214_AppliedSecurityClassificationAssignment>
+Returns
+-------
+opencascade::handle<StepAP214_AppliedSecurityClassificationAssignment>
 ") AppliedSecurityClassificationAssignment;
 		opencascade::handle<StepAP214_AppliedSecurityClassificationAssignment> AppliedSecurityClassificationAssignment();
 
@@ -3976,7 +5009,9 @@ class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") Approval;
 		%feature("autodoc", "Returns value as a approval (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_Approval>
+Returns
+-------
+opencascade::handle<StepBasic_Approval>
 ") Approval;
 		opencascade::handle<StepBasic_Approval> Approval();
 
@@ -3984,9 +5019,13 @@ class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a apersonandorganizationitem kind entity that is : 1 -> appliedorganizationassignment 2 -> assemblycomponentusagesubstitute 3 -> documentfile 4 -> materialdesignation 5 -> mechanicaldesigngeometricpresentationrepresentation 6 -> presentationarea 7 -> product 8 -> productdefinition 9 -> productdefinitionformation 10 -> productdefinitionrelationship 11 -> propertydefinition 12 -> shaperepresentation 13 -> securityclassification 14 -> appliedsecurityclassificationassignment 15 -> approval 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		virtual Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -3994,7 +5033,9 @@ class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") StepAP214_PersonAndOrganizationItem;
 		%feature("autodoc", "Returns a personandorganizationitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_PersonAndOrganizationItem;
 		 StepAP214_PersonAndOrganizationItem();
 
@@ -4016,7 +5057,9 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") Action;
 		%feature("autodoc", "Returns value as a action (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_Action>
+Returns
+-------
+opencascade::handle<StepBasic_Action>
 ") Action;
 		virtual opencascade::handle<StepBasic_Action> Action();
 
@@ -4024,7 +5067,9 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") AssemblyComponentUsage;
 		%feature("autodoc", "Returns value as a assemblycomponentusage (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_AssemblyComponentUsage>
+Returns
+-------
+opencascade::handle<StepRepr_AssemblyComponentUsage>
 ") AssemblyComponentUsage;
 		virtual opencascade::handle<StepRepr_AssemblyComponentUsage> AssemblyComponentUsage();
 
@@ -4032,9 +5077,13 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a securityclassificationitem kind entity that is : 1 -> action 2 -> assemblycomponentusage 3 -> assemblycomponentusagesubstitute 4 -> configurationdesign 5 -> configurationeffectivity 6 -> document 7 -> documentfile 8 -> draughtingmodel 9 -> generalproperty 10 -> makefromusageoption 11 -> materialdesignation 12 -> mechanicaldesigngeometricpresentationrepresentation 13 -> presentationarea 14 -> product 15 -> productconcept 16 -> productdefinition 17 -> productdefinitionformation 18 -> productdefinitionrelationship 19 -> productdefinitionusage 20 -> propertydefinition 21 -> shaperepresentation 22 -> versionedactionrequest 0 else.
 
-	:param ent:
-	:type ent: Standard_Transient
-	:rtype: int
+Parameters
+----------
+ent: Standard_Transient
+
+Returns
+-------
+int
 ") CaseNum;
 		virtual Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
@@ -4042,7 +5091,9 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") ConfigurationDesign;
 		%feature("autodoc", "Returns value as a configurationdesign (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ConfigurationDesign>
+Returns
+-------
+opencascade::handle<StepRepr_ConfigurationDesign>
 ") ConfigurationDesign;
 		virtual opencascade::handle<StepRepr_ConfigurationDesign> ConfigurationDesign();
 
@@ -4050,7 +5101,9 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") ConfigurationEffectivity;
 		%feature("autodoc", "Returns value as a configurationeffectivity (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ConfigurationEffectivity>
+Returns
+-------
+opencascade::handle<StepRepr_ConfigurationEffectivity>
 ") ConfigurationEffectivity;
 		virtual opencascade::handle<StepRepr_ConfigurationEffectivity> ConfigurationEffectivity();
 
@@ -4058,7 +5111,9 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") DraughtingModel;
 		%feature("autodoc", "Returns value as a draughtingmodel (null if another type).
 
-	:rtype: opencascade::handle<StepVisual_DraughtingModel>
+Returns
+-------
+opencascade::handle<StepVisual_DraughtingModel>
 ") DraughtingModel;
 		virtual opencascade::handle<StepVisual_DraughtingModel> DraughtingModel();
 
@@ -4066,7 +5121,9 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") GeneralProperty;
 		%feature("autodoc", "Returns value as a generalproperty (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_GeneralProperty>
+Returns
+-------
+opencascade::handle<StepBasic_GeneralProperty>
 ") GeneralProperty;
 		virtual opencascade::handle<StepBasic_GeneralProperty> GeneralProperty();
 
@@ -4074,7 +5131,9 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") MakeFromUsageOption;
 		%feature("autodoc", "Returns value as a makefromusageoption (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_MakeFromUsageOption>
+Returns
+-------
+opencascade::handle<StepRepr_MakeFromUsageOption>
 ") MakeFromUsageOption;
 		virtual opencascade::handle<StepRepr_MakeFromUsageOption> MakeFromUsageOption();
 
@@ -4082,7 +5141,9 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") ProductConcept;
 		%feature("autodoc", "Returns value as a productconcept (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ProductConcept>
+Returns
+-------
+opencascade::handle<StepRepr_ProductConcept>
 ") ProductConcept;
 		virtual opencascade::handle<StepRepr_ProductConcept> ProductConcept();
 
@@ -4090,7 +5151,9 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") ProductDefinitionUsage;
 		%feature("autodoc", "Returns value as a productdefinitionusage (null if another type).
 
-	:rtype: opencascade::handle<StepRepr_ProductDefinitionUsage>
+Returns
+-------
+opencascade::handle<StepRepr_ProductDefinitionUsage>
 ") ProductDefinitionUsage;
 		virtual opencascade::handle<StepRepr_ProductDefinitionUsage> ProductDefinitionUsage();
 
@@ -4098,7 +5161,9 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") StepAP214_SecurityClassificationItem;
 		%feature("autodoc", "Returns a securityclassificationitem selecttype.
 
-	:rtype: None
+Returns
+-------
+None
 ") StepAP214_SecurityClassificationItem;
 		 StepAP214_SecurityClassificationItem();
 
@@ -4106,7 +5171,9 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		%feature("compactdefaultargs") VersionedActionRequest;
 		%feature("autodoc", "Returns value as a versionedactionrequest (null if another type).
 
-	:rtype: opencascade::handle<StepBasic_VersionedActionRequest>
+Returns
+-------
+opencascade::handle<StepBasic_VersionedActionRequest>
 ") VersionedActionRequest;
 		virtual opencascade::handle<StepBasic_VersionedActionRequest> VersionedActionRequest();
 

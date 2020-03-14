@@ -116,9 +116,13 @@ class GccEnt {
 		%feature("compactdefaultargs") Enclosed;
 		%feature("autodoc", "Constructs a qualified line, so that the solution computed by a construction algorithm using the qualified circle or line is enclosed by the circle or line.
 
-	:param Obj:
-	:type Obj: gp_Lin2d
-	:rtype: GccEnt_QualifiedLin
+Parameters
+----------
+Obj: gp_Lin2d
+
+Returns
+-------
+GccEnt_QualifiedLin
 ") Enclosed;
 		static GccEnt_QualifiedLin Enclosed(const gp_Lin2d & Obj);
 
@@ -126,9 +130,13 @@ class GccEnt {
 		%feature("compactdefaultargs") Enclosed;
 		%feature("autodoc", "Constructs a qualified circle so that the solution computed by a construction algorithm using the qualified circle or line is enclosed by the circle or line.
 
-	:param Obj:
-	:type Obj: gp_Circ2d
-	:rtype: GccEnt_QualifiedCirc
+Parameters
+----------
+Obj: gp_Circ2d
+
+Returns
+-------
+GccEnt_QualifiedCirc
 ") Enclosed;
 		static GccEnt_QualifiedCirc Enclosed(const gp_Circ2d & Obj);
 
@@ -136,9 +144,13 @@ class GccEnt {
 		%feature("compactdefaultargs") Enclosing;
 		%feature("autodoc", "Constructs such a qualified circle that the solution computed by a construction algorithm using the qualified circle encloses the circle.
 
-	:param Obj:
-	:type Obj: gp_Circ2d
-	:rtype: GccEnt_QualifiedCirc
+Parameters
+----------
+Obj: gp_Circ2d
+
+Returns
+-------
+GccEnt_QualifiedCirc
 ") Enclosing;
 		static GccEnt_QualifiedCirc Enclosing(const gp_Circ2d & Obj);
 
@@ -146,9 +158,13 @@ class GccEnt {
 		%feature("compactdefaultargs") Outside;
 		%feature("autodoc", "Constructs a qualified line, so that the solution computed by a construction algorithm using the qualified circle or line and the circle or line are external to one another.
 
-	:param Obj:
-	:type Obj: gp_Lin2d
-	:rtype: GccEnt_QualifiedLin
+Parameters
+----------
+Obj: gp_Lin2d
+
+Returns
+-------
+GccEnt_QualifiedLin
 ") Outside;
 		static GccEnt_QualifiedLin Outside(const gp_Lin2d & Obj);
 
@@ -156,9 +172,13 @@ class GccEnt {
 		%feature("compactdefaultargs") Outside;
 		%feature("autodoc", "Constructs a qualified circle so that the solution computed by a construction algorithm using the qualified circle or line and the circle or line are external to one another.
 
-	:param Obj:
-	:type Obj: gp_Circ2d
-	:rtype: GccEnt_QualifiedCirc
+Parameters
+----------
+Obj: gp_Circ2d
+
+Returns
+-------
+GccEnt_QualifiedCirc
 ") Outside;
 		static GccEnt_QualifiedCirc Outside(const gp_Circ2d & Obj);
 
@@ -166,9 +186,13 @@ class GccEnt {
 		%feature("compactdefaultargs") PositionFromString;
 		%feature("autodoc", "Returns the position from the given string identifier (using case-insensitive comparison). @param thepositionstring string identifier returns position or gccent_unqualified if string identifier is invalid.
 
-	:param thePositionString:
-	:type thePositionString: char *
-	:rtype: GccEnt_Position
+Parameters
+----------
+thePositionString: char *
+
+Returns
+-------
+GccEnt_Position
 ") PositionFromString;
 		static GccEnt_Position PositionFromString(const char * thePositionString);
 
@@ -176,11 +200,14 @@ class GccEnt {
 		%feature("compactdefaultargs") PositionFromString;
 		%feature("autodoc", "Determines the position from the given string identifier (using case-insensitive comparison). @param thepositionstring string identifier @param theposition detected shape type returns true if string identifier is known.
 
-	:param thePositionString:
-	:type thePositionString: char *
-	:param thePosition:
-	:type thePosition: GccEnt_Position
-	:rtype: bool
+Parameters
+----------
+thePositionString: char *
+thePosition: GccEnt_Position
+
+Returns
+-------
+bool
 ") PositionFromString;
 		static Standard_Boolean PositionFromString(const char * thePositionString, GccEnt_Position & thePosition);
 
@@ -188,9 +215,13 @@ class GccEnt {
 		%feature("compactdefaultargs") PositionToString;
 		%feature("autodoc", "Returns the string name for a given position. @param theposition position type returns string identifier from the list unqualified enclosing enclosed outside noqualifier.
 
-	:param thePosition:
-	:type thePosition: GccEnt_Position
-	:rtype: char *
+Parameters
+----------
+thePosition: GccEnt_Position
+
+Returns
+-------
+char *
 ") PositionToString;
 		static const char * PositionToString(GccEnt_Position thePosition);
 
@@ -198,11 +229,14 @@ class GccEnt {
 		%feature("compactdefaultargs") Print;
 		%feature("autodoc", "Prints the name of position type as a string on the stream.
 
-	:param thePosition:
-	:type thePosition: GccEnt_Position
-	:param theStream:
-	:type theStream: Standard_OStream
-	:rtype: Standard_OStream
+Parameters
+----------
+thePosition: GccEnt_Position
+theStream: Standard_OStream
+
+Returns
+-------
+Standard_OStream
 ") Print;
 		static Standard_OStream & Print(const GccEnt_Position thePosition, Standard_OStream & theStream);
 
@@ -210,9 +244,13 @@ class GccEnt {
 		%feature("compactdefaultargs") Unqualified;
 		%feature("autodoc", "Constructs a qualified line, so that the relative position to the circle or line of the solution computed by a construction algorithm using the qualified circle or line is not qualified, i.e. all solutions apply.
 
-	:param Obj:
-	:type Obj: gp_Lin2d
-	:rtype: GccEnt_QualifiedLin
+Parameters
+----------
+Obj: gp_Lin2d
+
+Returns
+-------
+GccEnt_QualifiedLin
 ") Unqualified;
 		static GccEnt_QualifiedLin Unqualified(const gp_Lin2d & Obj);
 
@@ -220,9 +258,13 @@ class GccEnt {
 		%feature("compactdefaultargs") Unqualified;
 		%feature("autodoc", "Constructs a qualified circle so that the relative position to the circle or line of the solution computed by a construction algorithm using the qualified circle or line is not qualified, i.e. all solutions apply.
 
-	:param Obj:
-	:type Obj: gp_Circ2d
-	:rtype: GccEnt_QualifiedCirc
+Parameters
+----------
+Obj: gp_Circ2d
+
+Returns
+-------
+GccEnt_QualifiedCirc
 ") Unqualified;
 		static GccEnt_QualifiedCirc Unqualified(const gp_Circ2d & Obj);
 
@@ -244,11 +286,14 @@ class GccEnt_QualifiedCirc {
 		%feature("compactdefaultargs") GccEnt_QualifiedCirc;
 		%feature("autodoc", "Constructs a qualified circle by assigning the qualifier qualifier to the circle qualified. qualifier may be: - gccent_enclosing if the solution computed by a construction algorithm using the qualified circle encloses the circle, or - gccent_enclosed if the solution is enclosed by the circle, or - gccent_outside if both the solution and the circle are external to one another, or - gccent_unqualified if all solutions apply.
 
-	:param Qualified:
-	:type Qualified: gp_Circ2d
-	:param Qualifier:
-	:type Qualifier: GccEnt_Position
-	:rtype: None
+Parameters
+----------
+Qualified: gp_Circ2d
+Qualifier: GccEnt_Position
+
+Returns
+-------
+None
 ") GccEnt_QualifiedCirc;
 		 GccEnt_QualifiedCirc(const gp_Circ2d & Qualified, const GccEnt_Position Qualifier);
 
@@ -256,7 +301,9 @@ class GccEnt_QualifiedCirc {
 		%feature("compactdefaultargs") IsEnclosed;
 		%feature("autodoc", "Returns true if the solution computed by a construction algorithm using this qualified circle is enclosed by the circle.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEnclosed;
 		Standard_Boolean IsEnclosed();
 
@@ -264,7 +311,9 @@ class GccEnt_QualifiedCirc {
 		%feature("compactdefaultargs") IsEnclosing;
 		%feature("autodoc", "Returns true if the solution computed by a construction algorithm using this qualified circle encloses the circle.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEnclosing;
 		Standard_Boolean IsEnclosing();
 
@@ -272,7 +321,9 @@ class GccEnt_QualifiedCirc {
 		%feature("compactdefaultargs") IsOutside;
 		%feature("autodoc", "Returns true if both the solution computed by a construction algorithm using this qualified circle and the circle are external to one another.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsOutside;
 		Standard_Boolean IsOutside();
 
@@ -280,7 +331,9 @@ class GccEnt_QualifiedCirc {
 		%feature("compactdefaultargs") IsUnqualified;
 		%feature("autodoc", "Returns true if the circ2d is unqualified and false in the other cases.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsUnqualified;
 		Standard_Boolean IsUnqualified();
 
@@ -288,7 +341,9 @@ class GccEnt_QualifiedCirc {
 		%feature("compactdefaultargs") Qualified;
 		%feature("autodoc", "Returns a 2d circle to which the qualifier is assigned.
 
-	:rtype: gp_Circ2d
+Returns
+-------
+gp_Circ2d
 ") Qualified;
 		gp_Circ2d Qualified();
 
@@ -296,7 +351,9 @@ class GccEnt_QualifiedCirc {
 		%feature("compactdefaultargs") Qualifier;
 		%feature("autodoc", "Returns - the qualifier of this qualified circle, if it is enclosing, enclosed or outside, or - gccent_noqualifier if it is unqualified.
 
-	:rtype: GccEnt_Position
+Returns
+-------
+GccEnt_Position
 ") Qualifier;
 		GccEnt_Position Qualifier();
 
@@ -318,11 +375,14 @@ class GccEnt_QualifiedLin {
 		%feature("compactdefaultargs") GccEnt_QualifiedLin;
 		%feature("autodoc", "Constructs a qualified line by assigning the qualifier qualifier to the line qualified. qualifier may be: - gccent_enclosed if the solution is enclosed by the line, or - gccent_outside if both the solution and the line are external to one another, or - gccent_unqualified if all solutions apply. note : the interior of a line is defined as the left-hand side of the line in relation to its orientation.
 
-	:param Qualified:
-	:type Qualified: gp_Lin2d
-	:param Qualifier:
-	:type Qualifier: GccEnt_Position
-	:rtype: None
+Parameters
+----------
+Qualified: gp_Lin2d
+Qualifier: GccEnt_Position
+
+Returns
+-------
+None
 ") GccEnt_QualifiedLin;
 		 GccEnt_QualifiedLin(const gp_Lin2d & Qualified, const GccEnt_Position Qualifier);
 
@@ -330,7 +390,9 @@ class GccEnt_QualifiedLin {
 		%feature("compactdefaultargs") IsEnclosed;
 		%feature("autodoc", "Returns true if the solution is enclosed in the lin2d and false in the other cases.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsEnclosed;
 		Standard_Boolean IsEnclosed();
 
@@ -338,7 +400,9 @@ class GccEnt_QualifiedLin {
 		%feature("compactdefaultargs") IsOutside;
 		%feature("autodoc", "Returns true if the solution is outside the lin2d and false in the other cases.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsOutside;
 		Standard_Boolean IsOutside();
 
@@ -346,7 +410,9 @@ class GccEnt_QualifiedLin {
 		%feature("compactdefaultargs") IsUnqualified;
 		%feature("autodoc", "Returns true if the solution is unqualified and false in the other cases.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsUnqualified;
 		Standard_Boolean IsUnqualified();
 
@@ -354,7 +420,9 @@ class GccEnt_QualifiedLin {
 		%feature("compactdefaultargs") Qualified;
 		%feature("autodoc", "Returns a 2d line to which the qualifier is assigned.
 
-	:rtype: gp_Lin2d
+Returns
+-------
+gp_Lin2d
 ") Qualified;
 		gp_Lin2d Qualified();
 
@@ -362,7 +430,9 @@ class GccEnt_QualifiedLin {
 		%feature("compactdefaultargs") Qualifier;
 		%feature("autodoc", "Returns the qualifier of this qualified line, if it is 'enclosed' or 'outside', or - gccent_noqualifier if it is unqualified.
 
-	:rtype: GccEnt_Position
+Returns
+-------
+GccEnt_Position
 ") Qualifier;
 		GccEnt_Position Qualifier();
 

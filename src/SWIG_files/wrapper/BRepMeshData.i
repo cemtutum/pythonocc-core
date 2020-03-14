@@ -85,11 +85,14 @@ class BRepMeshData_Curve : public IMeshData_Curve {
 		%feature("compactdefaultargs") AddPoint;
 		%feature("autodoc", "Adds new discretization point to pcurve.
 
-	:param thePoint:
-	:type thePoint: gp_Pnt
-	:param theParamOnCurve:
-	:type theParamOnCurve: float
-	:rtype: None
+Parameters
+----------
+thePoint: gp_Pnt
+theParamOnCurve: float
+
+Returns
+-------
+None
 ") AddPoint;
 		virtual void AddPoint(const gp_Pnt & thePoint, const Standard_Real theParamOnCurve);
 
@@ -97,9 +100,13 @@ class BRepMeshData_Curve : public IMeshData_Curve {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears parameters list.
 
-	:param isKeepEndPoints:
-	:type isKeepEndPoints: bool
-	:rtype: None
+Parameters
+----------
+isKeepEndPoints: bool
+
+Returns
+-------
+None
 ") Clear;
 		virtual void Clear(const Standard_Boolean isKeepEndPoints);
 
@@ -107,9 +114,13 @@ class BRepMeshData_Curve : public IMeshData_Curve {
 		%feature("compactdefaultargs") GetParameter;
 		%feature("autodoc", "Returns parameter with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: float
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+float
 ") GetParameter;
 		virtual Standard_Real & GetParameter(const Standard_Integer theIndex);
 
@@ -117,9 +128,13 @@ class BRepMeshData_Curve : public IMeshData_Curve {
 		%feature("compactdefaultargs") GetPoint;
 		%feature("autodoc", "Returns discretization point with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: gp_Pnt
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+gp_Pnt
 ") GetPoint;
 		virtual gp_Pnt GetPoint(const Standard_Integer theIndex);
 
@@ -127,13 +142,15 @@ class BRepMeshData_Curve : public IMeshData_Curve {
 		%feature("compactdefaultargs") InsertPoint;
 		%feature("autodoc", "Inserts new discretization point at the given position.
 
-	:param thePosition:
-	:type thePosition: int
-	:param thePoint:
-	:type thePoint: gp_Pnt
-	:param theParamOnPCurve:
-	:type theParamOnPCurve: float
-	:rtype: None
+Parameters
+----------
+thePosition: int
+thePoint: gp_Pnt
+theParamOnPCurve: float
+
+Returns
+-------
+None
 ") InsertPoint;
 		virtual void InsertPoint(const Standard_Integer thePosition, const gp_Pnt & thePoint, const Standard_Real theParamOnPCurve);
 
@@ -141,7 +158,9 @@ class BRepMeshData_Curve : public IMeshData_Curve {
 		%feature("compactdefaultargs") ParametersNb;
 		%feature("autodoc", "Returns number of parameters stored in curve.
 
-	:rtype: int
+Returns
+-------
+int
 ") ParametersNb;
 		virtual Standard_Integer ParametersNb();
 
@@ -149,9 +168,13 @@ class BRepMeshData_Curve : public IMeshData_Curve {
 		%feature("compactdefaultargs") RemovePoint;
 		%feature("autodoc", "Removes point with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") RemovePoint;
 		virtual void RemovePoint(const Standard_Integer theIndex);
 
@@ -174,11 +197,14 @@ class BRepMeshData_Edge : public IMeshData_Edge {
 		%feature("compactdefaultargs") AddPCurve;
 		%feature("autodoc", "Adds disrete pcurve for the specifed discrete face.
 
-	:param theDFace:
-	:type theDFace: IMeshData::IFacePtr
-	:param theOrientation:
-	:type theOrientation: TopAbs_Orientation
-	:rtype: IMeshData::IPCurveHandle
+Parameters
+----------
+theDFace: IMeshData::IFacePtr
+theOrientation: TopAbs_Orientation
+
+Returns
+-------
+IMeshData::IPCurveHandle
 ") AddPCurve;
 		virtual const IMeshData::IPCurveHandle & AddPCurve(const IMeshData::IFacePtr & theDFace, const TopAbs_Orientation theOrientation);
 
@@ -186,11 +212,14 @@ class BRepMeshData_Edge : public IMeshData_Edge {
 		%feature("compactdefaultargs") GetPCurve;
 		%feature("autodoc", "Returns pcurve for the specified discrete face.
 
-	:param theDFace:
-	:type theDFace: IMeshData::IFacePtr
-	:param theOrientation:
-	:type theOrientation: TopAbs_Orientation
-	:rtype: IMeshData::IPCurveHandle
+Parameters
+----------
+theDFace: IMeshData::IFacePtr
+theOrientation: TopAbs_Orientation
+
+Returns
+-------
+IMeshData::IPCurveHandle
 ") GetPCurve;
 		virtual const IMeshData::IPCurveHandle & GetPCurve(const IMeshData::IFacePtr & theDFace, const TopAbs_Orientation theOrientation);
 
@@ -198,9 +227,13 @@ class BRepMeshData_Edge : public IMeshData_Edge {
 		%feature("compactdefaultargs") GetPCurve;
 		%feature("autodoc", "Returns pcurve with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: IMeshData::IPCurveHandle
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+IMeshData::IPCurveHandle
 ") GetPCurve;
 		virtual const IMeshData::IPCurveHandle & GetPCurve(const Standard_Integer theIndex);
 
@@ -208,7 +241,9 @@ class BRepMeshData_Edge : public IMeshData_Edge {
 		%feature("compactdefaultargs") PCurvesNb;
 		%feature("autodoc", "Returns number of pcurves assigned to current edge.
 
-	:rtype: int
+Returns
+-------
+int
 ") PCurvesNb;
 		virtual Standard_Integer PCurvesNb();
 
@@ -231,11 +266,15 @@ class BRepMeshData_Face : public IMeshData_Face {
 		%feature("compactdefaultargs") AddWire;
 		%feature("autodoc", "Adds wire to discrete model of face.
 
-	:param theWire:
-	:type theWire: TopoDS_Wire
-	:param theEdgeNb: default value is 0
-	:type theEdgeNb: int
-	:rtype: IMeshData::IWireHandle
+Parameters
+----------
+theWire: TopoDS_Wire
+theEdgeNb: int,optional
+	default value is 0
+
+Returns
+-------
+IMeshData::IWireHandle
 ") AddWire;
 		virtual const IMeshData::IWireHandle & AddWire(const TopoDS_Wire & theWire, const Standard_Integer theEdgeNb = 0);
 
@@ -243,9 +282,13 @@ class BRepMeshData_Face : public IMeshData_Face {
 		%feature("compactdefaultargs") GetWire;
 		%feature("autodoc", "Gets wire with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: IMeshData::IWireHandle
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+IMeshData::IWireHandle
 ") GetWire;
 		virtual const IMeshData::IWireHandle & GetWire(const Standard_Integer theIndex);
 
@@ -253,7 +296,9 @@ class BRepMeshData_Face : public IMeshData_Face {
 		%feature("compactdefaultargs") WiresNb;
 		%feature("autodoc", "Gets number of children.
 
-	:rtype: int
+Returns
+-------
+int
 ") WiresNb;
 		virtual Standard_Integer WiresNb();
 
@@ -275,9 +320,13 @@ class BRepMeshData_Model : public IMeshData_Model {
 		%feature("compactdefaultargs") AddEdge;
 		%feature("autodoc", "Adds new edge to shape model.
 
-	:param theEdge:
-	:type theEdge: TopoDS_Edge
-	:rtype: IMeshData::IEdgeHandle
+Parameters
+----------
+theEdge: TopoDS_Edge
+
+Returns
+-------
+IMeshData::IEdgeHandle
 ") AddEdge;
 		virtual const IMeshData::IEdgeHandle & AddEdge(const TopoDS_Edge & theEdge);
 
@@ -285,9 +334,13 @@ class BRepMeshData_Model : public IMeshData_Model {
 		%feature("compactdefaultargs") AddFace;
 		%feature("autodoc", "Adds new face to shape model.
 
-	:param theFace:
-	:type theFace: TopoDS_Face
-	:rtype: IMeshData::IFaceHandle
+Parameters
+----------
+theFace: TopoDS_Face
+
+Returns
+-------
+IMeshData::IFaceHandle
 ") AddFace;
 		virtual const IMeshData::IFaceHandle & AddFace(const TopoDS_Face & theFace);
 
@@ -295,9 +348,13 @@ class BRepMeshData_Model : public IMeshData_Model {
 		%feature("compactdefaultargs") BRepMeshData_Model;
 		%feature("autodoc", "Constructor. initializes empty model.
 
-	:param theShape:
-	:type theShape: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+None
 ") BRepMeshData_Model;
 		 BRepMeshData_Model(const TopoDS_Shape & theShape);
 
@@ -305,7 +362,9 @@ class BRepMeshData_Model : public IMeshData_Model {
 		%feature("compactdefaultargs") EdgesNb;
 		%feature("autodoc", "Returns number of edges in discrete model.
 
-	:rtype: int
+Returns
+-------
+int
 ") EdgesNb;
 		virtual Standard_Integer EdgesNb();
 
@@ -313,7 +372,9 @@ class BRepMeshData_Model : public IMeshData_Model {
 		%feature("compactdefaultargs") FacesNb;
 		%feature("autodoc", "Returns number of faces in discrete model.
 
-	:rtype: int
+Returns
+-------
+int
 ") FacesNb;
 		virtual Standard_Integer FacesNb();
 
@@ -321,9 +382,13 @@ class BRepMeshData_Model : public IMeshData_Model {
 		%feature("compactdefaultargs") GetEdge;
 		%feature("autodoc", "Gets model's edge with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: IMeshData::IEdgeHandle
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+IMeshData::IEdgeHandle
 ") GetEdge;
 		virtual const IMeshData::IEdgeHandle & GetEdge(const Standard_Integer theIndex);
 
@@ -331,9 +396,13 @@ class BRepMeshData_Model : public IMeshData_Model {
 		%feature("compactdefaultargs") GetFace;
 		%feature("autodoc", "Gets model's face with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: IMeshData::IFaceHandle
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+IMeshData::IFaceHandle
 ") GetFace;
 		virtual const IMeshData::IFaceHandle & GetFace(const Standard_Integer theIndex);
 
@@ -341,7 +410,9 @@ class BRepMeshData_Model : public IMeshData_Model {
 		%feature("compactdefaultargs") GetMaxSize;
 		%feature("autodoc", "Returns maximum size of shape's bounding box.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetMaxSize;
 		virtual Standard_Real GetMaxSize();
 
@@ -349,9 +420,13 @@ class BRepMeshData_Model : public IMeshData_Model {
 		%feature("compactdefaultargs") SetMaxSize;
 		%feature("autodoc", "Sets maximum size of shape's bounding box.
 
-	:param theValue:
-	:type theValue: float
-	:rtype: None
+Parameters
+----------
+theValue: float
+
+Returns
+-------
+None
 ") SetMaxSize;
 		void SetMaxSize(const Standard_Real theValue);
 
@@ -374,11 +449,14 @@ class BRepMeshData_PCurve : public IMeshData_PCurve {
 		%feature("compactdefaultargs") AddPoint;
 		%feature("autodoc", "Adds new discretization point to pcurve.
 
-	:param thePoint:
-	:type thePoint: gp_Pnt2d
-	:param theParamOnPCurve:
-	:type theParamOnPCurve: float
-	:rtype: None
+Parameters
+----------
+thePoint: gp_Pnt2d
+theParamOnPCurve: float
+
+Returns
+-------
+None
 ") AddPoint;
 		virtual void AddPoint(const gp_Pnt2d & thePoint, const Standard_Real theParamOnPCurve);
 
@@ -386,9 +464,13 @@ class BRepMeshData_PCurve : public IMeshData_PCurve {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears parameters list.
 
-	:param isKeepEndPoints:
-	:type isKeepEndPoints: bool
-	:rtype: None
+Parameters
+----------
+isKeepEndPoints: bool
+
+Returns
+-------
+None
 ") Clear;
 		virtual void Clear(const Standard_Boolean isKeepEndPoints);
 
@@ -396,9 +478,13 @@ class BRepMeshData_PCurve : public IMeshData_PCurve {
 		%feature("compactdefaultargs") GetIndex;
 		%feature("autodoc", "Returns index in mesh corresponded to discretization point with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: int
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+int
 ") GetIndex;
 		virtual Standard_Integer & GetIndex(const Standard_Integer theIndex);
 
@@ -406,9 +492,13 @@ class BRepMeshData_PCurve : public IMeshData_PCurve {
 		%feature("compactdefaultargs") GetParameter;
 		%feature("autodoc", "Returns parameter with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: float
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+float
 ") GetParameter;
 		virtual Standard_Real & GetParameter(const Standard_Integer theIndex);
 
@@ -416,9 +506,13 @@ class BRepMeshData_PCurve : public IMeshData_PCurve {
 		%feature("compactdefaultargs") GetPoint;
 		%feature("autodoc", "Returns discretization point with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: gp_Pnt2d
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+gp_Pnt2d
 ") GetPoint;
 		virtual gp_Pnt2d GetPoint(const Standard_Integer theIndex);
 
@@ -426,13 +520,15 @@ class BRepMeshData_PCurve : public IMeshData_PCurve {
 		%feature("compactdefaultargs") InsertPoint;
 		%feature("autodoc", "Inserts new discretization point at the given position.
 
-	:param thePosition:
-	:type thePosition: int
-	:param thePoint:
-	:type thePoint: gp_Pnt2d
-	:param theParamOnPCurve:
-	:type theParamOnPCurve: float
-	:rtype: None
+Parameters
+----------
+thePosition: int
+thePoint: gp_Pnt2d
+theParamOnPCurve: float
+
+Returns
+-------
+None
 ") InsertPoint;
 		virtual void InsertPoint(const Standard_Integer thePosition, const gp_Pnt2d & thePoint, const Standard_Real theParamOnPCurve);
 
@@ -440,7 +536,9 @@ class BRepMeshData_PCurve : public IMeshData_PCurve {
 		%feature("compactdefaultargs") ParametersNb;
 		%feature("autodoc", "Returns number of parameters stored in pcurve.
 
-	:rtype: int
+Returns
+-------
+int
 ") ParametersNb;
 		virtual Standard_Integer ParametersNb();
 
@@ -448,9 +546,13 @@ class BRepMeshData_PCurve : public IMeshData_PCurve {
 		%feature("compactdefaultargs") RemovePoint;
 		%feature("autodoc", "Removes point with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: None
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
 ") RemovePoint;
 		virtual void RemovePoint(const Standard_Integer theIndex);
 
@@ -473,11 +575,14 @@ class BRepMeshData_Wire : public IMeshData_Wire {
 		%feature("compactdefaultargs") AddEdge;
 		%feature("autodoc", "Adds new discrete edge with specified orientation to wire chain. returns index of added edge in wire chain.
 
-	:param theDEdge:
-	:type theDEdge: IMeshData::IEdgePtr
-	:param theOrientation:
-	:type theOrientation: TopAbs_Orientation
-	:rtype: int
+Parameters
+----------
+theDEdge: IMeshData::IEdgePtr
+theOrientation: TopAbs_Orientation
+
+Returns
+-------
+int
 ") AddEdge;
 		virtual Standard_Integer AddEdge(const IMeshData::IEdgePtr & theDEdge, const TopAbs_Orientation theOrientation);
 
@@ -485,7 +590,9 @@ class BRepMeshData_Wire : public IMeshData_Wire {
 		%feature("compactdefaultargs") EdgesNb;
 		%feature("autodoc", "Gets number of children.
 
-	:rtype: int
+Returns
+-------
+int
 ") EdgesNb;
 		virtual Standard_Integer EdgesNb();
 
@@ -493,9 +600,13 @@ class BRepMeshData_Wire : public IMeshData_Wire {
 		%feature("compactdefaultargs") GetEdge;
 		%feature("autodoc", "Gets edge with the given index.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: IMeshData::IEdgePtr
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+IMeshData::IEdgePtr
 ") GetEdge;
 		virtual const IMeshData::IEdgePtr & GetEdge(const Standard_Integer theIndex);
 
@@ -503,9 +614,13 @@ class BRepMeshData_Wire : public IMeshData_Wire {
 		%feature("compactdefaultargs") GetEdgeOrientation;
 		%feature("autodoc", "Returns true if orientation of discrete edge with the given index is forward.
 
-	:param theIndex:
-	:type theIndex: int
-	:rtype: TopAbs_Orientation
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+TopAbs_Orientation
 ") GetEdgeOrientation;
 		virtual TopAbs_Orientation GetEdgeOrientation(const Standard_Integer theIndex);
 

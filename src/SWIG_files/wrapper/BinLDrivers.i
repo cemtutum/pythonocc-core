@@ -96,9 +96,13 @@ class BinLDrivers {
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "Creates a table of the supported drivers' types.
 
-	:param MsgDrv:
-	:type MsgDrv: Message_Messenger
-	:rtype: opencascade::handle<BinMDF_ADriverTable>
+Parameters
+----------
+MsgDrv: Message_Messenger
+
+Returns
+-------
+opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		static opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & MsgDrv);
 
@@ -106,17 +110,27 @@ class BinLDrivers {
 		%feature("compactdefaultargs") DefineFormat;
 		%feature("autodoc", "Defines format 'binlocaf' and registers its read and write drivers in the specified application.
 
-	:param theApp:
-	:type theApp: TDocStd_Application
-	:rtype: None
+Parameters
+----------
+theApp: TDocStd_Application
+
+Returns
+-------
+None
 ") DefineFormat;
 		static void DefineFormat(const opencascade::handle<TDocStd_Application> & theApp);
 
 		/****************** Factory ******************/
 		%feature("compactdefaultargs") Factory;
-		%feature("autodoc", "	:param theGUID:
-	:type theGUID: Standard_GUID
-	:rtype: opencascade::handle<Standard_Transient>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theGUID: Standard_GUID
+
+Returns
+-------
+opencascade::handle<Standard_Transient>
 ") Factory;
 		static const opencascade::handle<Standard_Transient> & Factory(const Standard_GUID & theGUID);
 
@@ -124,7 +138,9 @@ class BinLDrivers {
 		%feature("compactdefaultargs") StorageVersion;
 		%feature("autodoc", "Returns last storage version.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") StorageVersion;
 		static TCollection_AsciiString StorageVersion();
 
@@ -144,9 +160,15 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	public:
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
-		%feature("autodoc", "	:param theMsgDriver:
-	:type theMsgDriver: Message_Messenger
-	:rtype: opencascade::handle<BinMDF_ADriverTable>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMsgDriver: Message_Messenger
+
+Returns
+-------
+opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
 
@@ -154,7 +176,9 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 		%feature("compactdefaultargs") BinLDrivers_DocumentRetrievalDriver;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BinLDrivers_DocumentRetrievalDriver;
 		 BinLDrivers_DocumentRetrievalDriver();
 
@@ -162,7 +186,9 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 		%feature("compactdefaultargs") CreateDocument;
 		%feature("autodoc", "Pure virtual method definition.
 
-	:rtype: opencascade::handle<CDM_Document>
+Returns
+-------
+opencascade::handle<CDM_Document>
 ") CreateDocument;
 		virtual opencascade::handle<CDM_Document> CreateDocument();
 
@@ -170,27 +196,32 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 		%feature("compactdefaultargs") Read;
 		%feature("autodoc", "Retrieves the content of the file into a new document.
 
-	:param theFileName:
-	:type theFileName: TCollection_ExtendedString
-	:param theNewDocument:
-	:type theNewDocument: CDM_Document
-	:param theApplication:
-	:type theApplication: CDM_Application
-	:rtype: None
+Parameters
+----------
+theFileName: TCollection_ExtendedString
+theNewDocument: CDM_Document
+theApplication: CDM_Application
+
+Returns
+-------
+None
 ") Read;
 		virtual void Read(const TCollection_ExtendedString & theFileName, const opencascade::handle<CDM_Document> & theNewDocument, const opencascade::handle<CDM_Application> & theApplication);
 
 		/****************** Read ******************/
 		%feature("compactdefaultargs") Read;
-		%feature("autodoc", "	:param theIStream:
-	:type theIStream: Standard_IStream
-	:param theStorageData:
-	:type theStorageData: Storage_Data
-	:param theDoc:
-	:type theDoc: CDM_Document
-	:param theApplication:
-	:type theApplication: CDM_Application
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theIStream: Standard_IStream
+theStorageData: Storage_Data
+theDoc: CDM_Document
+theApplication: CDM_Application
+
+Returns
+-------
+None
 ") Read;
 		virtual void Read(Standard_IStream & theIStream, const opencascade::handle<Storage_Data> & theStorageData, const opencascade::handle<CDM_Document> & theDoc, const opencascade::handle<CDM_Application> & theApplication);
 
@@ -214,7 +245,9 @@ class BinLDrivers_DocumentSection {
 		%feature("compactdefaultargs") BinLDrivers_DocumentSection;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BinLDrivers_DocumentSection;
 		 BinLDrivers_DocumentSection();
 
@@ -222,11 +255,14 @@ class BinLDrivers_DocumentSection {
 		%feature("compactdefaultargs") BinLDrivers_DocumentSection;
 		%feature("autodoc", "Constructor.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param isPostRead:
-	:type isPostRead: bool
-	:rtype: None
+Parameters
+----------
+theName: TCollection_AsciiString
+isPostRead: bool
+
+Returns
+-------
+None
 ") BinLDrivers_DocumentSection;
 		 BinLDrivers_DocumentSection(const TCollection_AsciiString & theName, const Standard_Boolean isPostRead);
 
@@ -234,7 +270,9 @@ class BinLDrivers_DocumentSection {
 		%feature("compactdefaultargs") IsPostRead;
 		%feature("autodoc", "Query the status: if the section should be read after ocaf; false means that the section is read before starting to read ocaf data.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsPostRead;
 		Standard_Boolean IsPostRead();
 
@@ -242,7 +280,9 @@ class BinLDrivers_DocumentSection {
 		%feature("compactdefaultargs") Length;
 		%feature("autodoc", "Query the length of the section in the persistent file.
 
-	:rtype: uint64_t
+Returns
+-------
+uint64_t
 ") Length;
 		uint64_t Length();
 
@@ -250,7 +290,9 @@ class BinLDrivers_DocumentSection {
 		%feature("compactdefaultargs") Name;
 		%feature("autodoc", "Query the name of the section.
 
-	:rtype: TCollection_AsciiString
+Returns
+-------
+TCollection_AsciiString
 ") Name;
 		const TCollection_AsciiString & Name();
 
@@ -258,7 +300,9 @@ class BinLDrivers_DocumentSection {
 		%feature("compactdefaultargs") Offset;
 		%feature("autodoc", "Query the offset of the section in the persistent file.
 
-	:rtype: uint64_t
+Returns
+-------
+uint64_t
 ") Offset;
 		uint64_t Offset();
 
@@ -266,13 +310,15 @@ class BinLDrivers_DocumentSection {
 		%feature("compactdefaultargs") ReadTOC;
 		%feature("autodoc", "Fill a documentsection instance from the data that are read from toc.
 
-	:param theSection:
-	:type theSection: BinLDrivers_DocumentSection
-	:param theIS:
-	:type theIS: Standard_IStream
-	:param theDocFormatVersion:
-	:type theDocFormatVersion: int
-	:rtype: None
+Parameters
+----------
+theSection: BinLDrivers_DocumentSection
+theIS: Standard_IStream
+theDocFormatVersion: int
+
+Returns
+-------
+None
 ") ReadTOC;
 		static void ReadTOC(BinLDrivers_DocumentSection & theSection, Standard_IStream & theIS, const Standard_Integer theDocFormatVersion);
 
@@ -280,9 +326,13 @@ class BinLDrivers_DocumentSection {
 		%feature("compactdefaultargs") SetLength;
 		%feature("autodoc", "Set the length of the section in the persistent file.
 
-	:param theLength:
-	:type theLength: uint64_t
-	:rtype: None
+Parameters
+----------
+theLength: uint64_t
+
+Returns
+-------
+None
 ") SetLength;
 		void SetLength(const uint64_t theLength);
 
@@ -290,9 +340,13 @@ class BinLDrivers_DocumentSection {
 		%feature("compactdefaultargs") SetOffset;
 		%feature("autodoc", "Set the offset of the section in the persistent file.
 
-	:param theOffset:
-	:type theOffset: uint64_t
-	:rtype: None
+Parameters
+----------
+theOffset: uint64_t
+
+Returns
+-------
+None
 ") SetOffset;
 		void SetOffset(const uint64_t theOffset);
 
@@ -300,11 +354,14 @@ class BinLDrivers_DocumentSection {
 		%feature("compactdefaultargs") Write;
 		%feature("autodoc", "Save offset and length data into the section entry in the document toc (list of sections).
 
-	:param theOS:
-	:type theOS: Standard_OStream
-	:param theOffset:
-	:type theOffset: uint64_t
-	:rtype: None
+Parameters
+----------
+theOS: Standard_OStream
+theOffset: uint64_t
+
+Returns
+-------
+None
 ") Write;
 		void Write(Standard_OStream & theOS, const uint64_t theOffset);
 
@@ -334,19 +391,29 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 		%feature("compactdefaultargs") AddSection;
 		%feature("autodoc", "Create a section that should be written after the ocaf data.
 
-	:param theName:
-	:type theName: TCollection_AsciiString
-	:param isPostRead: default value is Standard_True
-	:type isPostRead: bool
-	:rtype: None
+Parameters
+----------
+theName: TCollection_AsciiString
+isPostRead: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") AddSection;
 		void AddSection(const TCollection_AsciiString & theName, const Standard_Boolean isPostRead = Standard_True);
 
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
-		%feature("autodoc", "	:param theMsgDriver:
-	:type theMsgDriver: Message_Messenger
-	:rtype: opencascade::handle<BinMDF_ADriverTable>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMsgDriver: Message_Messenger
+
+Returns
+-------
+opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
 
@@ -354,7 +421,9 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 		%feature("compactdefaultargs") BinLDrivers_DocumentStorageDriver;
 		%feature("autodoc", "Constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") BinLDrivers_DocumentStorageDriver;
 		 BinLDrivers_DocumentStorageDriver();
 
@@ -362,11 +431,14 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 		%feature("compactdefaultargs") Write;
 		%feature("autodoc", "Write <thedocument> to the binary file <thefilename>.
 
-	:param theDocument:
-	:type theDocument: CDM_Document
-	:param theFileName:
-	:type theFileName: TCollection_ExtendedString
-	:rtype: None
+Parameters
+----------
+theDocument: CDM_Document
+theFileName: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") Write;
 		virtual void Write(const opencascade::handle<CDM_Document> & theDocument, const TCollection_ExtendedString & theFileName);
 
@@ -374,11 +446,14 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 		%feature("compactdefaultargs") Write;
 		%feature("autodoc", "Write <thedocument> to theostream.
 
-	:param theDocument:
-	:type theDocument: CDM_Document
-	:param theOStream:
-	:type theOStream: Standard_OStream
-	:rtype: None
+Parameters
+----------
+theDocument: CDM_Document
+theOStream: Standard_OStream
+
+Returns
+-------
+None
 ") Write;
 		virtual void Write(const opencascade::handle<CDM_Document> & theDocument, Standard_OStream & theOStream);
 

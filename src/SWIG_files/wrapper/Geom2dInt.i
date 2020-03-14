@@ -91,71 +91,90 @@ class Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
 	public:
 		/****************** AnErrorOccurred ******************/
 		%feature("compactdefaultargs") AnErrorOccurred;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") AnErrorOccurred;
 		Standard_Boolean AnErrorOccurred();
 
 		/****************** Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter ******************/
 		%feature("compactdefaultargs") Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter;
-		%feature("autodoc", "	:param C1:
-	:type C1: Adaptor2d_Curve2d
-	:param C2:
-	:type C2: Adaptor2d_Curve2d
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+C2: Adaptor2d_Curve2d
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter;
 		 Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d & C1, const Adaptor2d_Curve2d & C2, const Standard_Real Tol);
 
 		/****************** NbRoots ******************/
 		%feature("compactdefaultargs") NbRoots;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") NbRoots;
 		Standard_Integer NbRoots();
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "	:param Poly1:
-	:type Poly1: Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter
-	:param Poly2:
-	:type Poly2: Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter
-	:param NumSegOn1:
-	:type NumSegOn1: int
-	:param NumSegOn2:
-	:type NumSegOn2: int
-	:param ParamOnSeg1:
-	:type ParamOnSeg1: float
-	:param ParamOnSeg2:
-	:type ParamOnSeg2: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Poly1: Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter
+Poly2: Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter
+NumSegOn1: int
+NumSegOn2: int
+ParamOnSeg1: float
+ParamOnSeg2: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter & Poly1, const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter & Poly2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "	:param Uo:
-	:type Uo: float
-	:param Vo:
-	:type Vo: float
-	:param UInf:
-	:type UInf: float
-	:param VInf:
-	:type VInf: float
-	:param USup:
-	:type USup: float
-	:param VSup:
-	:type VSup: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Uo: float
+Vo: float
+UInf: float
+VInf: float
+USup: float
+VSup: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Standard_Real Uo, const Standard_Real Vo, const Standard_Real UInf, const Standard_Real VInf, const Standard_Real USup, const Standard_Real VSup);
 
 		/****************** Roots ******************/
 		%feature("compactdefaultargs") Roots;
-		%feature("autodoc", "	:param U:
-	:type U: float
-	:param V:
-	:type V: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+U: float
+V: float
+
+Returns
+-------
+None
 ") Roots;
 		void Roots(Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -177,11 +196,14 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") ComputeDomain;
 		%feature("autodoc", "Create a domain from a curve.
 
-	:param C1:
-	:type C1: Adaptor2d_Curve2d
-	:param TolDomain:
-	:type TolDomain: float
-	:rtype: IntRes2d_Domain
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+TolDomain: float
+
+Returns
+-------
+IntRes2d_Domain
 ") ComputeDomain;
 		IntRes2d_Domain ComputeDomain(const Adaptor2d_Curve2d & C1, const Standard_Real TolDomain);
 
@@ -189,7 +211,9 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_GInter;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Geom2dInt_GInter;
 		 Geom2dInt_GInter();
 
@@ -197,13 +221,15 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_GInter;
 		%feature("autodoc", "Self intersection of a curve.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_GInter;
 		 Geom2dInt_GInter(const Adaptor2d_Curve2d & C, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -211,15 +237,16 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_GInter;
 		%feature("autodoc", "Self intersection of a curve with a domain.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param D:
-	:type D: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+D: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_GInter;
 		 Geom2dInt_GInter(const Adaptor2d_Curve2d & C, const IntRes2d_Domain & D, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -227,15 +254,16 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_GInter;
 		%feature("autodoc", "Intersection between 2 curves.
 
-	:param C1:
-	:type C1: Adaptor2d_Curve2d
-	:param C2:
-	:type C2: Adaptor2d_Curve2d
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+C2: Adaptor2d_Curve2d
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_GInter;
 		 Geom2dInt_GInter(const Adaptor2d_Curve2d & C1, const Adaptor2d_Curve2d & C2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -243,17 +271,17 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_GInter;
 		%feature("autodoc", "Intersection between 2 curves.
 
-	:param C1:
-	:type C1: Adaptor2d_Curve2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param C2:
-	:type C2: Adaptor2d_Curve2d
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+D1: IntRes2d_Domain
+C2: Adaptor2d_Curve2d
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_GInter;
 		 Geom2dInt_GInter(const Adaptor2d_Curve2d & C1, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & C2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -261,17 +289,17 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_GInter;
 		%feature("autodoc", "Intersection between 2 curves.
 
-	:param C1:
-	:type C1: Adaptor2d_Curve2d
-	:param C2:
-	:type C2: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+C2: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_GInter;
 		 Geom2dInt_GInter(const Adaptor2d_Curve2d & C1, const Adaptor2d_Curve2d & C2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -279,25 +307,28 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_GInter;
 		%feature("autodoc", "Intersection between 2 curves.
 
-	:param C1:
-	:type C1: Adaptor2d_Curve2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param C2:
-	:type C2: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+D1: IntRes2d_Domain
+C2: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_GInter;
 		 Geom2dInt_GInter(const Adaptor2d_Curve2d & C1, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & C2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
 		/****************** GetMinNbSamples ******************/
 		%feature("compactdefaultargs") GetMinNbSamples;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") GetMinNbSamples;
 		Standard_Integer GetMinNbSamples();
 
@@ -305,19 +336,18 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between 2 curves.
 
-	:param C1:
-	:type C1: Adaptor2d_Curve2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param C2:
-	:type C2: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+D1: IntRes2d_Domain
+C2: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Adaptor2d_Curve2d & C1, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & C2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -325,15 +355,16 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between 2 curves.
 
-	:param C1:
-	:type C1: Adaptor2d_Curve2d
-	:param C2:
-	:type C2: Adaptor2d_Curve2d
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+C2: Adaptor2d_Curve2d
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Adaptor2d_Curve2d & C1, const Adaptor2d_Curve2d & C2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -341,15 +372,16 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between 2 curves.
 
-	:param C1:
-	:type C1: Adaptor2d_Curve2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+D1: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Adaptor2d_Curve2d & C1, const IntRes2d_Domain & D1, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -357,13 +389,15 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between 2 curves.
 
-	:param C1:
-	:type C1: Adaptor2d_Curve2d
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Adaptor2d_Curve2d & C1, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -371,17 +405,17 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between 2 curves.
 
-	:param C1:
-	:type C1: Adaptor2d_Curve2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param C2:
-	:type C2: Adaptor2d_Curve2d
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+D1: IntRes2d_Domain
+C2: Adaptor2d_Curve2d
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Adaptor2d_Curve2d & C1, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & C2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -389,17 +423,17 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between 2 curves.
 
-	:param C1:
-	:type C1: Adaptor2d_Curve2d
-	:param C2:
-	:type C2: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+C2: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Adaptor2d_Curve2d & C1, const Adaptor2d_Curve2d & C2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -407,9 +441,13 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") SetMinNbSamples;
 		%feature("autodoc", "Set / get minimum number of points in polygon intersection.
 
-	:param theMinNbSamples:
-	:type theMinNbSamples: int
-	:rtype: None
+Parameters
+----------
+theMinNbSamples: int
+
+Returns
+-------
+None
 ") SetMinNbSamples;
 		void SetMinNbSamples(const Standard_Integer theMinNbSamples);
 
@@ -431,89 +469,113 @@ class Geom2dInt_Geom2dCurveTool {
 		%feature("compactdefaultargs") Circle;
 		%feature("autodoc", "Returns the circ2d from gp corresponding to the curve c. this method is called only when thetype returns geomabs_circle.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: gp_Circ2d
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+gp_Circ2d
 ") Circle;
 		static gp_Circ2d Circle(const Adaptor2d_Curve2d & C);
 
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+U: float
+P: gp_Pnt2d
+
+Returns
+-------
+None
 ") D0;
 		static void D0(const Adaptor2d_Curve2d & C, const Standard_Real U, gp_Pnt2d & P);
 
 		/****************** D1 ******************/
 		%feature("compactdefaultargs") D1;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:param T:
-	:type T: gp_Vec2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+U: float
+P: gp_Pnt2d
+T: gp_Vec2d
+
+Returns
+-------
+None
 ") D1;
 		static void D1(const Adaptor2d_Curve2d & C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
 
 		/****************** D2 ******************/
 		%feature("compactdefaultargs") D2;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:param T:
-	:type T: gp_Vec2d
-	:param N:
-	:type N: gp_Vec2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+U: float
+P: gp_Pnt2d
+T: gp_Vec2d
+N: gp_Vec2d
+
+Returns
+-------
+None
 ") D2;
 		static void D2(const Adaptor2d_Curve2d & C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
 
 		/****************** D3 ******************/
 		%feature("compactdefaultargs") D3;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param U:
-	:type U: float
-	:param P:
-	:type P: gp_Pnt2d
-	:param T:
-	:type T: gp_Vec2d
-	:param N:
-	:type N: gp_Vec2d
-	:param V:
-	:type V: gp_Vec2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+U: float
+P: gp_Pnt2d
+T: gp_Vec2d
+N: gp_Vec2d
+V: gp_Vec2d
+
+Returns
+-------
+None
 ") D3;
 		static void D3(const Adaptor2d_Curve2d & C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N, gp_Vec2d & V);
 
 		/****************** DN ******************/
 		%feature("compactdefaultargs") DN;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param U:
-	:type U: float
-	:param N:
-	:type N: int
-	:rtype: gp_Vec2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+U: float
+N: int
+
+Returns
+-------
+gp_Vec2d
 ") DN;
 		static gp_Vec2d DN(const Adaptor2d_Curve2d & C, const Standard_Real U, const Standard_Integer N);
 
 		/****************** Degree ******************/
 		%feature("compactdefaultargs") Degree;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+int
 ") Degree;
 		static Standard_Integer Degree(const Adaptor2d_Curve2d & C);
 
@@ -521,35 +583,56 @@ class Geom2dInt_Geom2dCurveTool {
 		%feature("compactdefaultargs") Ellipse;
 		%feature("autodoc", "Returns the elips2d from gp corresponding to the curve c. this method is called only when thetype returns geomabs_ellipse.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: gp_Elips2d
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+gp_Elips2d
 ") Ellipse;
 		static gp_Elips2d Ellipse(const Adaptor2d_Curve2d & C);
 
 		/****************** EpsX ******************/
 		%feature("compactdefaultargs") EpsX;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+float
 ") EpsX;
 		static Standard_Real EpsX(const Adaptor2d_Curve2d & C);
 
 		/****************** EpsX ******************/
 		%feature("compactdefaultargs") EpsX;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Eps_XYZ:
-	:type Eps_XYZ: float
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Eps_XYZ: float
+
+Returns
+-------
+float
 ") EpsX;
 		static Standard_Real EpsX(const Adaptor2d_Curve2d & C, const Standard_Real Eps_XYZ);
 
 		/****************** FirstParameter ******************/
 		%feature("compactdefaultargs") FirstParameter;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+float
 ") FirstParameter;
 		static Standard_Real FirstParameter(const Adaptor2d_Curve2d & C);
 
@@ -557,25 +640,31 @@ class Geom2dInt_Geom2dCurveTool {
 		%feature("compactdefaultargs") GetInterval;
 		%feature("autodoc", "Output the bounds of interval of index <index> used if type == composite.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Index:
-	:type Index: int
-	:param Tab:
-	:type Tab: TColStd_Array1OfReal
-	:param U1:
-	:type U1: float
-	:param U2:
-	:type U2: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Index: int
+Tab: TColStd_Array1OfReal
+U1: float
+U2: float
+
+Returns
+-------
+None
 ") GetInterval;
 		static void GetInterval(const Adaptor2d_Curve2d & C, const Standard_Integer Index, const TColStd_Array1OfReal & Tab, Standard_Real &OutValue, Standard_Real &OutValue);
 
 		/****************** GetType ******************/
 		%feature("compactdefaultargs") GetType;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: GeomAbs_CurveType
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+GeomAbs_CurveType
 ") GetType;
 		static GeomAbs_CurveType GetType(const Adaptor2d_Curve2d & C);
 
@@ -583,9 +672,13 @@ class Geom2dInt_Geom2dCurveTool {
 		%feature("compactdefaultargs") Hyperbola;
 		%feature("autodoc", "Returns the hypr2d from gp corresponding to the curve c. this method is called only when thetype returns geomabs_hyperbola.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: gp_Hypr2d
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+gp_Hypr2d
 ") Hyperbola;
 		static gp_Hypr2d Hyperbola(const Adaptor2d_Curve2d & C);
 
@@ -593,19 +686,28 @@ class Geom2dInt_Geom2dCurveTool {
 		%feature("compactdefaultargs") Intervals;
 		%feature("autodoc", "Compute tab.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Tab:
-	:type Tab: TColStd_Array1OfReal
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Tab: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") Intervals;
 		static void Intervals(const Adaptor2d_Curve2d & C, TColStd_Array1OfReal & Tab);
 
 		/****************** LastParameter ******************/
 		%feature("compactdefaultargs") LastParameter;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+float
 ") LastParameter;
 		static Standard_Real LastParameter(const Adaptor2d_Curve2d & C);
 
@@ -613,9 +715,13 @@ class Geom2dInt_Geom2dCurveTool {
 		%feature("compactdefaultargs") Line;
 		%feature("autodoc", "Returns the lin2d from gp corresponding to the curve c. this method is called only when thetype returns geomabs_line.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: gp_Lin2d
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+gp_Lin2d
 ") Line;
 		static gp_Lin2d Line(const Adaptor2d_Curve2d & C);
 
@@ -623,29 +729,43 @@ class Geom2dInt_Geom2dCurveTool {
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Output the number of interval of continuity c2 of the curve.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: int
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+int
 ") NbIntervals;
 		static Standard_Integer NbIntervals(const Adaptor2d_Curve2d & C);
 
 		/****************** NbSamples ******************/
 		%feature("compactdefaultargs") NbSamples;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+int
 ") NbSamples;
 		static Standard_Integer NbSamples(const Adaptor2d_Curve2d & C);
 
 		/****************** NbSamples ******************/
 		%feature("compactdefaultargs") NbSamples;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param U0:
-	:type U0: float
-	:param U1:
-	:type U1: float
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+U0: float
+U1: float
+
+Returns
+-------
+int
 ") NbSamples;
 		static Standard_Integer NbSamples(const Adaptor2d_Curve2d & C, const Standard_Real U0, const Standard_Real U1);
 
@@ -653,19 +773,28 @@ class Geom2dInt_Geom2dCurveTool {
 		%feature("compactdefaultargs") Parabola;
 		%feature("autodoc", "Returns the parab2d from gp corresponding to the curve c. this method is called only when thetype returns geomabs_parabola.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: gp_Parab2d
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+gp_Parab2d
 ") Parabola;
 		static gp_Parab2d Parabola(const Adaptor2d_Curve2d & C);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param X:
-	:type X: float
-	:rtype: gp_Pnt2d
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor2d_Curve2d
+X: float
+
+Returns
+-------
+gp_Pnt2d
 ") Value;
 		static gp_Pnt2d Value(const Adaptor2d_Curve2d & C, const Standard_Real X);
 
@@ -687,7 +816,9 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_IntConicCurveOfGInter;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Geom2dInt_IntConicCurveOfGInter;
 		 Geom2dInt_IntConicCurveOfGInter();
 
@@ -695,19 +826,18 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_IntConicCurveOfGInter;
 		%feature("autodoc", "Intersection between a line and a parametric curve.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_IntConicCurveOfGInter;
 		 Geom2dInt_IntConicCurveOfGInter(const gp_Lin2d & L, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -715,19 +845,18 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_IntConicCurveOfGInter;
 		%feature("autodoc", "Intersection between a line and a parametric curve.
 
-	:param C:
-	:type C: gp_Circ2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Circ2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_IntConicCurveOfGInter;
 		 Geom2dInt_IntConicCurveOfGInter(const gp_Circ2d & C, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -735,19 +864,18 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_IntConicCurveOfGInter;
 		%feature("autodoc", "Intersection between an ellipse and a parametric curve.
 
-	:param E:
-	:type E: gp_Elips2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+E: gp_Elips2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_IntConicCurveOfGInter;
 		 Geom2dInt_IntConicCurveOfGInter(const gp_Elips2d & E, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -755,19 +883,18 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_IntConicCurveOfGInter;
 		%feature("autodoc", "Intersection between a parabola and a parametric curve.
 
-	:param Prb:
-	:type Prb: gp_Parab2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Prb: gp_Parab2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_IntConicCurveOfGInter;
 		 Geom2dInt_IntConicCurveOfGInter(const gp_Parab2d & Prb, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -775,19 +902,18 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_IntConicCurveOfGInter;
 		%feature("autodoc", "Intersection between the main branch of an hyperbola and a parametric curve.
 
-	:param H:
-	:type H: gp_Hypr2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+H: gp_Hypr2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_IntConicCurveOfGInter;
 		 Geom2dInt_IntConicCurveOfGInter(const gp_Hypr2d & H, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -795,19 +921,18 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a line and a parametric curve.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin2d & L, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -815,19 +940,18 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a line and a parametric curve.
 
-	:param C:
-	:type C: gp_Circ2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Circ2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Circ2d & C, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -835,19 +959,18 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between an ellipse and a parametric curve.
 
-	:param E:
-	:type E: gp_Elips2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+E: gp_Elips2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Elips2d & E, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -855,19 +978,18 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a parabola and a parametric curve.
 
-	:param Prb:
-	:type Prb: gp_Parab2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Prb: gp_Parab2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Parab2d & Prb, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -875,19 +997,18 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between the main branch of an hyperbola and a parametric curve.
 
-	:param H:
-	:type H: gp_Hypr2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+H: gp_Hypr2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Hypr2d & H, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -909,11 +1030,14 @@ class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public 
 		%feature("compactdefaultargs") Derivative;
 		%feature("autodoc", "Computes the derivative of the previous function at parameter param.
 
-	:param Param:
-	:type Param: float
-	:param D:
-	:type D: float
-	:rtype: bool
+Parameters
+----------
+Param: float
+D: float
+
+Returns
+-------
+bool
 ") Derivative;
 		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
 
@@ -921,11 +1045,14 @@ class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public 
 		%feature("compactdefaultargs") Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter;
 		%feature("autodoc", "Constructor of the class.
 
-	:param IT:
-	:type IT: IntCurve_IConicTool
-	:param PC:
-	:type PC: Adaptor2d_Curve2d
-	:rtype: None
+Parameters
+----------
+IT: IntCurve_IConicTool
+PC: Adaptor2d_Curve2d
+
+Returns
+-------
+None
 ") Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter;
 		 Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter(const IntCurve_IConicTool & IT, const Adaptor2d_Curve2d & PC);
 
@@ -933,11 +1060,14 @@ class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public 
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the value of the signed distance between the implicit curve and the point at parameter param on the parametrised curve.
 
-	:param Param:
-	:type Param: float
-	:param F:
-	:type F: float
-	:rtype: bool
+Parameters
+----------
+Param: float
+F: float
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
 
@@ -945,13 +1075,15 @@ class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public 
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Computes the value and the derivative of the function.
 
-	:param Param:
-	:type Param: float
-	:param F:
-	:type F: float
-	:param D:
-	:type D: float
-	:rtype: bool
+Parameters
+----------
+Param: float
+F: float
+D: float
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -973,27 +1105,39 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("compactdefaultargs") Derivative;
 		%feature("autodoc", "Calculation of f'(u).
 
-	:param U:
-	:type U: float
-	:param DF:
-	:type DF: float
-	:rtype: bool
+Parameters
+----------
+U: float
+DF: float
+
+Returns
+-------
+bool
 ") Derivative;
 		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
 
 		/****************** Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter ******************/
 		%feature("compactdefaultargs") Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
 		 Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter();
 
 		/****************** Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter ******************/
 		%feature("compactdefaultargs") Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
-		%feature("autodoc", "	:param P:
-	:type P: gp_Pnt2d
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Pnt2d
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+None
 ") Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
 		 Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d & P, const Adaptor2d_Curve2d & C);
 
@@ -1001,7 +1145,9 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("compactdefaultargs") GetStateNumber;
 		%feature("autodoc", "Save the found extremum.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetStateNumber;
 		virtual Standard_Integer GetStateNumber();
 
@@ -1009,9 +1155,13 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Sets the field mycurve of the function.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C);
 
@@ -1019,9 +1169,13 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("compactdefaultargs") IsMin;
 		%feature("autodoc", "Shows if the nth distance is a minimum.
 
-	:param N:
-	:type N: int
-	:rtype: bool
+Parameters
+----------
+N: int
+
+Returns
+-------
+bool
 ") IsMin;
 		Standard_Boolean IsMin(const Standard_Integer N);
 
@@ -1029,7 +1183,9 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("compactdefaultargs") NbExt;
 		%feature("autodoc", "Return the nunber of found extrema.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbExt;
 		Standard_Integer NbExt();
 
@@ -1037,9 +1193,13 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("compactdefaultargs") Point;
 		%feature("autodoc", "Returns the nth extremum.
 
-	:param N:
-	:type N: int
-	:rtype: Extrema_POnCurv2d
+Parameters
+----------
+N: int
+
+Returns
+-------
+Extrema_POnCurv2d
 ") Point;
 		const Extrema_POnCurv2d & Point(const Standard_Integer N);
 
@@ -1047,7 +1207,9 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("compactdefaultargs") SearchOfTolerance;
 		%feature("autodoc", "Computes a tol value. if 1st derivative of curve |d1|<tol, it is considered d1=0.
 
-	:rtype: float
+Returns
+-------
+float
 ") SearchOfTolerance;
 		Standard_Real SearchOfTolerance();
 
@@ -1055,9 +1217,13 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("compactdefaultargs") SetPoint;
 		%feature("autodoc", "Sets the field p of the function.
 
-	:param P:
-	:type P: gp_Pnt2d
-	:rtype: None
+Parameters
+----------
+P: gp_Pnt2d
+
+Returns
+-------
+None
 ") SetPoint;
 		void SetPoint(const gp_Pnt2d & P);
 
@@ -1065,9 +1231,13 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("compactdefaultargs") SquareDistance;
 		%feature("autodoc", "Returns the nth distance.
 
-	:param N:
-	:type N: int
-	:rtype: float
+Parameters
+----------
+N: int
+
+Returns
+-------
+float
 ") SquareDistance;
 		Standard_Real SquareDistance(const Standard_Integer N);
 
@@ -1075,11 +1245,14 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("compactdefaultargs") SubIntervalInitialize;
 		%feature("autodoc", "Determines boundaries of subinterval for find of root.
 
-	:param theUfirst:
-	:type theUfirst: float
-	:param theUlast:
-	:type theUlast: float
-	:rtype: None
+Parameters
+----------
+theUfirst: float
+theUlast: float
+
+Returns
+-------
+None
 ") SubIntervalInitialize;
 		void SubIntervalInitialize(const Standard_Real theUfirst, const Standard_Real theUlast);
 
@@ -1087,11 +1260,14 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Calculation of f(u).
 
-	:param U:
-	:type U: float
-	:param F:
-	:type F: float
-	:rtype: bool
+Parameters
+----------
+U: float
+F: float
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
 
@@ -1099,13 +1275,15 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Calculation of f(u) and f'(u).
 
-	:param U:
-	:type U: float
-	:param F:
-	:type F: float
-	:param DF:
-	:type DF: float
-	:rtype: bool
+Parameters
+----------
+U: float
+F: float
+DF: float
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 
@@ -1141,21 +1319,29 @@ class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter ******************/
 		%feature("compactdefaultargs") Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter;
-		%feature("autodoc", "	:param curve1:
-	:type curve1: Adaptor2d_Curve2d
-	:param curve2:
-	:type curve2: Adaptor2d_Curve2d
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+curve1: Adaptor2d_Curve2d
+curve2: Adaptor2d_Curve2d
+
+Returns
+-------
+None
 ") Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter;
 		 Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d & curve1, const Adaptor2d_Curve2d & curve2);
 
@@ -1163,7 +1349,9 @@ class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns 2.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbEquations;
 		Standard_Integer NbEquations();
 
@@ -1171,7 +1359,9 @@ class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_
 		%feature("compactdefaultargs") NbVariables;
 		%feature("autodoc", "Returns 2.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbVariables;
 		Standard_Integer NbVariables();
 
@@ -1179,11 +1369,14 @@ class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Computes the values <f> of the functions for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+
+Returns
+-------
+bool
 ") Value;
 		Standard_Boolean Value(const math_Vector & X, math_Vector & F);
 
@@ -1191,13 +1384,15 @@ class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_
 		%feature("compactdefaultargs") Values;
 		%feature("autodoc", "Returns the values <f> of the functions and the derivatives <d> for the variable <x>. returns true if the computation was done successfully, false otherwise.
 
-	:param X:
-	:type X: math_Vector
-	:param F:
-	:type F: math_Vector
-	:param D:
-	:type D: math_Matrix
-	:rtype: bool
+Parameters
+----------
+X: math_Vector
+F: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
 ") Values;
 		Standard_Boolean Values(const math_Vector & X, math_Vector & F, math_Matrix & D);
 
@@ -1219,7 +1414,9 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_TheIntConicCurveOfGInter;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Geom2dInt_TheIntConicCurveOfGInter;
 		 Geom2dInt_TheIntConicCurveOfGInter();
 
@@ -1227,19 +1424,18 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_TheIntConicCurveOfGInter;
 		%feature("autodoc", "Intersection between a line and a parametric curve.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_TheIntConicCurveOfGInter;
 		 Geom2dInt_TheIntConicCurveOfGInter(const gp_Lin2d & L, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1247,19 +1443,18 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_TheIntConicCurveOfGInter;
 		%feature("autodoc", "Intersection between a line and a parametric curve.
 
-	:param C:
-	:type C: gp_Circ2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Circ2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_TheIntConicCurveOfGInter;
 		 Geom2dInt_TheIntConicCurveOfGInter(const gp_Circ2d & C, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1267,19 +1462,18 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_TheIntConicCurveOfGInter;
 		%feature("autodoc", "Intersection between an ellipse and a parametric curve.
 
-	:param E:
-	:type E: gp_Elips2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+E: gp_Elips2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_TheIntConicCurveOfGInter;
 		 Geom2dInt_TheIntConicCurveOfGInter(const gp_Elips2d & E, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1287,19 +1481,18 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_TheIntConicCurveOfGInter;
 		%feature("autodoc", "Intersection between a parabola and a parametric curve.
 
-	:param Prb:
-	:type Prb: gp_Parab2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Prb: gp_Parab2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_TheIntConicCurveOfGInter;
 		 Geom2dInt_TheIntConicCurveOfGInter(const gp_Parab2d & Prb, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1307,19 +1500,18 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Geom2dInt_TheIntConicCurveOfGInter;
 		%feature("autodoc", "Intersection between the main branch of an hyperbola and a parametric curve.
 
-	:param H:
-	:type H: gp_Hypr2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+H: gp_Hypr2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_TheIntConicCurveOfGInter;
 		 Geom2dInt_TheIntConicCurveOfGInter(const gp_Hypr2d & H, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1327,19 +1519,18 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a line and a parametric curve.
 
-	:param L:
-	:type L: gp_Lin2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+L: gp_Lin2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Lin2d & L, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1347,19 +1538,18 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a line and a parametric curve.
 
-	:param C:
-	:type C: gp_Circ2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+C: gp_Circ2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Circ2d & C, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1367,19 +1557,18 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between an ellipse and a parametric curve.
 
-	:param E:
-	:type E: gp_Elips2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+E: gp_Elips2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Elips2d & E, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1387,19 +1576,18 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between a parabola and a parametric curve.
 
-	:param Prb:
-	:type Prb: gp_Parab2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Prb: gp_Parab2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Parab2d & Prb, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1407,19 +1595,18 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between the main branch of an hyperbola and a parametric curve.
 
-	:param H:
-	:type H: gp_Hypr2d
-	:param D1:
-	:type D1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param D2:
-	:type D2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+H: gp_Hypr2d
+D1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+D2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Hypr2d & H, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1439,45 +1626,57 @@ class Geom2dInt_TheIntPCurvePCurveOfGInter : public IntRes2d_Intersection {
 	public:
 		/****************** Geom2dInt_TheIntPCurvePCurveOfGInter ******************/
 		%feature("compactdefaultargs") Geom2dInt_TheIntPCurvePCurveOfGInter;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Geom2dInt_TheIntPCurvePCurveOfGInter;
 		 Geom2dInt_TheIntPCurvePCurveOfGInter();
 
 		/****************** GetMinNbSamples ******************/
 		%feature("compactdefaultargs") GetMinNbSamples;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") GetMinNbSamples;
 		Standard_Integer GetMinNbSamples();
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "	:param Curve1:
-	:type Curve1: Adaptor2d_Curve2d
-	:param Domain1:
-	:type Domain1: IntRes2d_Domain
-	:param Curve2:
-	:type Curve2: Adaptor2d_Curve2d
-	:param Domain2:
-	:type Domain2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Curve1: Adaptor2d_Curve2d
+Domain1: IntRes2d_Domain
+Curve2: Adaptor2d_Curve2d
+Domain2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Adaptor2d_Curve2d & Curve1, const IntRes2d_Domain & Domain1, const Adaptor2d_Curve2d & Curve2, const IntRes2d_Domain & Domain2, const Standard_Real TolConf, const Standard_Real Tol);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "	:param Curve1:
-	:type Curve1: Adaptor2d_Curve2d
-	:param Domain1:
-	:type Domain1: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Curve1: Adaptor2d_Curve2d
+Domain1: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Adaptor2d_Curve2d & Curve1, const IntRes2d_Domain & Domain1, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1485,9 +1684,13 @@ class Geom2dInt_TheIntPCurvePCurveOfGInter : public IntRes2d_Intersection {
 		%feature("compactdefaultargs") SetMinNbSamples;
 		%feature("autodoc", "Set / get minimum number of points in polygon for intersection.
 
-	:param theMinNbSamples:
-	:type theMinNbSamples: int
-	:rtype: None
+Parameters
+----------
+theMinNbSamples: int
+
+Returns
+-------
+None
 ") SetMinNbSamples;
 		void SetMinNbSamples(const Standard_Integer theMinNbSamples);
 
@@ -1507,63 +1710,62 @@ class Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter : public IntRes2d_Inter
 	public:
 		/****************** And_Domaine_Objet1_Intersections ******************/
 		%feature("compactdefaultargs") And_Domaine_Objet1_Intersections;
-		%feature("autodoc", "	:param TheImpTool:
-	:type TheImpTool: IntCurve_IConicTool
-	:param TheParCurve:
-	:type TheParCurve: Adaptor2d_Curve2d
-	:param TheImpCurveDomain:
-	:type TheImpCurveDomain: IntRes2d_Domain
-	:param TheParCurveDomain:
-	:type TheParCurveDomain: IntRes2d_Domain
-	:param NbResultats:
-	:type NbResultats: int
-	:param Inter2_And_Domain2:
-	:type Inter2_And_Domain2: TColStd_Array1OfReal
-	:param Inter1:
-	:type Inter1: TColStd_Array1OfReal
-	:param Resultat1:
-	:type Resultat1: TColStd_Array1OfReal
-	:param Resultat2:
-	:type Resultat2: TColStd_Array1OfReal
-	:param EpsNul:
-	:type EpsNul: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TheImpTool: IntCurve_IConicTool
+TheParCurve: Adaptor2d_Curve2d
+TheImpCurveDomain: IntRes2d_Domain
+TheParCurveDomain: IntRes2d_Domain
+NbResultats: int
+Inter2_And_Domain2: TColStd_Array1OfReal
+Inter1: TColStd_Array1OfReal
+Resultat1: TColStd_Array1OfReal
+Resultat2: TColStd_Array1OfReal
+EpsNul: float
+
+Returns
+-------
+None
 ") And_Domaine_Objet1_Intersections;
 		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool & TheImpTool, const Adaptor2d_Curve2d & TheParCurve, const IntRes2d_Domain & TheImpCurveDomain, const IntRes2d_Domain & TheParCurveDomain, Standard_Integer &OutValue, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul);
 
 		/****************** FindU ******************/
 		%feature("compactdefaultargs") FindU;
-		%feature("autodoc", "	:param parameter:
-	:type parameter: float
-	:param point:
-	:type point: gp_Pnt2d
-	:param TheParCurev:
-	:type TheParCurev: Adaptor2d_Curve2d
-	:param TheImpTool:
-	:type TheImpTool: IntCurve_IConicTool
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+parameter: float
+point: gp_Pnt2d
+TheParCurev: Adaptor2d_Curve2d
+TheImpTool: IntCurve_IConicTool
+
+Returns
+-------
+float
 ") FindU;
 		Standard_Real FindU(const Standard_Real parameter, gp_Pnt2d & point, const Adaptor2d_Curve2d & TheParCurev, const IntCurve_IConicTool & TheImpTool);
 
 		/****************** FindV ******************/
 		%feature("compactdefaultargs") FindV;
-		%feature("autodoc", "	:param parameter:
-	:type parameter: float
-	:param point:
-	:type point: gp_Pnt2d
-	:param TheImpTool:
-	:type TheImpTool: IntCurve_IConicTool
-	:param ParCurve:
-	:type ParCurve: Adaptor2d_Curve2d
-	:param TheParCurveDomain:
-	:type TheParCurveDomain: IntRes2d_Domain
-	:param V0:
-	:type V0: float
-	:param V1:
-	:type V1: float
-	:param Tolerance:
-	:type Tolerance: float
-	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+parameter: float
+point: gp_Pnt2d
+TheImpTool: IntCurve_IConicTool
+ParCurve: Adaptor2d_Curve2d
+TheParCurveDomain: IntRes2d_Domain
+V0: float
+V1: float
+Tolerance: float
+
+Returns
+-------
+float
 ") FindV;
 		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool & TheImpTool, const Adaptor2d_Curve2d & ParCurve, const IntRes2d_Domain & TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance);
 
@@ -1571,7 +1773,9 @@ class Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter : public IntRes2d_Inter
 		%feature("compactdefaultargs") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
 		 Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter();
 
@@ -1579,19 +1783,18 @@ class Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter : public IntRes2d_Inter
 		%feature("compactdefaultargs") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
 		%feature("autodoc", "Intersection between an implicit curve and a parametrised curve. the exception constructionerror is raised if the domain of the parametrised curve does not verify hasfirstpoint and haslastpoint return true.
 
-	:param ITool:
-	:type ITool: IntCurve_IConicTool
-	:param Dom1:
-	:type Dom1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param Dom2:
-	:type Dom2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+ITool: IntCurve_IConicTool
+Dom1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+Dom2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
 		 Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter(const IntCurve_IConicTool & ITool, const IntRes2d_Domain & Dom1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & Dom2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1599,19 +1802,18 @@ class Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter : public IntRes2d_Inter
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between an implicit curve and a parametrised curve. the exception constructionerror is raised if the domain of the parametrised curve does not verify hasfirstpoint and haslastpoint return true.
 
-	:param ITool:
-	:type ITool: IntCurve_IConicTool
-	:param Dom1:
-	:type Dom1: IntRes2d_Domain
-	:param PCurve:
-	:type PCurve: Adaptor2d_Curve2d
-	:param Dom2:
-	:type Dom2: IntRes2d_Domain
-	:param TolConf:
-	:type TolConf: float
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+ITool: IntCurve_IConicTool
+Dom1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+Dom2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const IntCurve_IConicTool & ITool, const IntRes2d_Domain & Dom1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & Dom2, const Standard_Real TolConf, const Standard_Real Tol);
 
@@ -1631,7 +1833,11 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 	public:
 		/****************** Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter ******************/
 		%feature("compactdefaultargs") Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter;
 		 Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter();
 
@@ -1639,15 +1845,16 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 		%feature("compactdefaultargs") Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter;
 		%feature("autodoc", "Calculates the distance with a close point. the close point is defined by the parameter value u0. the function f(u)=distance(p,c(u)) has an extremum when g(u)=df/du=0. the algorithm searchs a zero near the close point. tolu is used to decide to stop the iterations. at the nth iteration, the criteria is: abs(un - un-1) < tolu.
 
-	:param P:
-	:type P: gp_Pnt2d
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param U0:
-	:type U0: float
-	:param TolU:
-	:type TolU: float
-	:rtype: None
+Parameters
+----------
+P: gp_Pnt2d
+C: Adaptor2d_Curve2d
+U0: float
+TolU: float
+
+Returns
+-------
+None
 ") Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter;
 		 Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d & P, const Adaptor2d_Curve2d & C, const Standard_Real U0, const Standard_Real TolU);
 
@@ -1655,19 +1862,18 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 		%feature("compactdefaultargs") Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter;
 		%feature("autodoc", "Calculates the distance with a close point. the close point is defined by the parameter value u0. the function f(u)=distance(p,c(u)) has an extremum when g(u)=df/du=0. the algorithm searchs a zero near the close point. zeros are searched between umin et usup. tolu is used to decide to stop the iterations. at the nth iteration, the criteria is: abs(un - un-1) < tolu.
 
-	:param P:
-	:type P: gp_Pnt2d
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param U0:
-	:type U0: float
-	:param Umin:
-	:type Umin: float
-	:param Usup:
-	:type Usup: float
-	:param TolU:
-	:type TolU: float
-	:rtype: None
+Parameters
+----------
+P: gp_Pnt2d
+C: Adaptor2d_Curve2d
+U0: float
+Umin: float
+Usup: float
+TolU: float
+
+Returns
+-------
+None
 ") Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter;
 		 Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d & P, const Adaptor2d_Curve2d & C, const Standard_Real U0, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
 
@@ -1675,15 +1881,16 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Sets the fields of the algorithm.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Umin:
-	:type Umin: float
-	:param Usup:
-	:type Usup: float
-	:param TolU:
-	:type TolU: float
-	:rtype: None
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Umin: float
+Usup: float
+TolU: float
+
+Returns
+-------
+None
 ") Initialize;
 		void Initialize(const Adaptor2d_Curve2d & C, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real TolU);
 
@@ -1691,7 +1898,9 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the distance is found.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -1699,7 +1908,9 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 		%feature("compactdefaultargs") IsMin;
 		%feature("autodoc", "Returns true if the extremum distance is a minimum.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsMin;
 		Standard_Boolean IsMin();
 
@@ -1707,11 +1918,14 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "The algorithm is done with the point p. an exception is raised if the fields have not been initialized.
 
-	:param P:
-	:type P: gp_Pnt2d
-	:param U0:
-	:type U0: float
-	:rtype: None
+Parameters
+----------
+P: gp_Pnt2d
+U0: float
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const gp_Pnt2d & P, const Standard_Real U0);
 
@@ -1719,7 +1933,9 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 		%feature("compactdefaultargs") Point;
 		%feature("autodoc", "Returns the point of the extremum distance.
 
-	:rtype: Extrema_POnCurv2d
+Returns
+-------
+Extrema_POnCurv2d
 ") Point;
 		const Extrema_POnCurv2d & Point();
 
@@ -1727,7 +1943,9 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 		%feature("compactdefaultargs") SquareDistance;
 		%feature("autodoc", "Returns the value of the extremum square distance.
 
-	:rtype: float
+Returns
+-------
+float
 ") SquareDistance;
 		Standard_Real SquareDistance();
 
@@ -1749,43 +1967,57 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter : public Intf_Polygon2d
 		%feature("compactdefaultargs") ApproxParamOnCurve;
 		%feature("autodoc", "Give an approximation of the parameter on the curve according to the discretization of the curve.
 
-	:param Index:
-	:type Index: int
-	:param ParamOnLine:
-	:type ParamOnLine: float
-	:rtype: float
+Parameters
+----------
+Index: int
+ParamOnLine: float
+
+Returns
+-------
+float
 ") ApproxParamOnCurve;
 		Standard_Real ApproxParamOnCurve(const Standard_Integer Index, const Standard_Real ParamOnLine);
 
 		/****************** AutoIntersectionIsPossible ******************/
 		%feature("compactdefaultargs") AutoIntersectionIsPossible;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") AutoIntersectionIsPossible;
 		Standard_Boolean AutoIntersectionIsPossible();
 
 		/****************** CalculRegion ******************/
 		%feature("compactdefaultargs") CalculRegion;
-		%feature("autodoc", "	:param x:
-	:type x: float
-	:param y:
-	:type y: float
-	:param x1:
-	:type x1: float
-	:param x2:
-	:type x2: float
-	:param y1:
-	:type y1: float
-	:param y2:
-	:type y2: float
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+x: float
+y: float
+x1: float
+x2: float
+y1: float
+y2: float
+
+Returns
+-------
+int
 ") CalculRegion;
 		Standard_Integer CalculRegion(const Standard_Real x, const Standard_Real y, const Standard_Real x1, const Standard_Real x2, const Standard_Real y1, const Standard_Real y2);
 
 		/****************** Closed ******************/
 		%feature("compactdefaultargs") Closed;
-		%feature("autodoc", "	:param clos:
-	:type clos: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+clos: bool
+
+Returns
+-------
+None
 ") Closed;
 		void Closed(const Standard_Boolean clos);
 
@@ -1793,7 +2025,9 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter : public Intf_Polygon2d
 		%feature("compactdefaultargs") Closed;
 		%feature("autodoc", "Returns true if the polyline is closed.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Closed;
 		virtual Standard_Boolean Closed();
 
@@ -1801,23 +2035,34 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter : public Intf_Polygon2d
 		%feature("compactdefaultargs") ComputeWithBox;
 		%feature("autodoc", "The current polygon is modified if most of the points of the polygon are are outside the box <otherbox>. in this situation, bounds are computed to build a polygon inside or near the otherbox.
 
-	:param Curve:
-	:type Curve: Adaptor2d_Curve2d
-	:param OtherBox:
-	:type OtherBox: Bnd_Box2d
-	:rtype: None
+Parameters
+----------
+Curve: Adaptor2d_Curve2d
+OtherBox: Bnd_Box2d
+
+Returns
+-------
+None
 ") ComputeWithBox;
 		void ComputeWithBox(const Adaptor2d_Curve2d & Curve, const Bnd_Box2d & OtherBox);
 
 		/****************** DeflectionOverEstimation ******************/
 		%feature("compactdefaultargs") DeflectionOverEstimation;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") DeflectionOverEstimation;
 		virtual Standard_Real DeflectionOverEstimation();
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Dump;
 		void Dump();
 
@@ -1825,15 +2070,16 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter : public Intf_Polygon2d
 		%feature("compactdefaultargs") Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter;
 		%feature("autodoc", "Compute a polygon on the domain of the curve.
 
-	:param Curve:
-	:type Curve: Adaptor2d_Curve2d
-	:param NbPnt:
-	:type NbPnt: int
-	:param Domain:
-	:type Domain: IntRes2d_Domain
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Curve: Adaptor2d_Curve2d
+NbPnt: int
+Domain: IntRes2d_Domain
+Tol: float
+
+Returns
+-------
+None
 ") Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter;
 		 Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d & Curve, const Standard_Integer NbPnt, const IntRes2d_Domain & Domain, const Standard_Real Tol);
 
@@ -1841,7 +2087,9 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter : public Intf_Polygon2d
 		%feature("compactdefaultargs") InfParameter;
 		%feature("autodoc", "Returns the parameter (on the curve) of the first point of the polygon.
 
-	:rtype: float
+Returns
+-------
+float
 ") InfParameter;
 		Standard_Real InfParameter();
 
@@ -1849,7 +2097,9 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter : public Intf_Polygon2d
 		%feature("compactdefaultargs") NbSegments;
 		%feature("autodoc", "Give the number of segments in the polyline.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbSegments;
 		virtual Standard_Integer NbSegments();
 
@@ -1857,21 +2107,29 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter : public Intf_Polygon2d
 		%feature("compactdefaultargs") Segment;
 		%feature("autodoc", "Returns the points of the segment <index> in the polygon.
 
-	:param theIndex:
-	:type theIndex: int
-	:param theBegin:
-	:type theBegin: gp_Pnt2d
-	:param theEnd:
-	:type theEnd: gp_Pnt2d
-	:rtype: None
+Parameters
+----------
+theIndex: int
+theBegin: gp_Pnt2d
+theEnd: gp_Pnt2d
+
+Returns
+-------
+None
 ") Segment;
 		virtual void Segment(const Standard_Integer theIndex, gp_Pnt2d & theBegin, gp_Pnt2d & theEnd);
 
 		/****************** SetDeflectionOverEstimation ******************/
 		%feature("compactdefaultargs") SetDeflectionOverEstimation;
-		%feature("autodoc", "	:param x:
-	:type x: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+x: float
+
+Returns
+-------
+None
 ") SetDeflectionOverEstimation;
 		void SetDeflectionOverEstimation(const Standard_Real x);
 
@@ -1879,7 +2137,9 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter : public Intf_Polygon2d
 		%feature("compactdefaultargs") SupParameter;
 		%feature("autodoc", "Returns the parameter (on the curve) of the last point of the polygon.
 
-	:rtype: float
+Returns
+-------
+float
 ") SupParameter;
 		Standard_Real SupParameter();
 
@@ -1901,13 +2161,15 @@ class Geom2dInt_TheProjPCurOfGInter {
 		%feature("compactdefaultargs") FindParameter;
 		%feature("autodoc", "Returns the parameter v of the point on the parametric curve corresponding to the point pnt. the correspondance between pnt and the point p(v) on the parametric curve must be coherent with the way of determination of the signed distance between a point and the implicit curve. tol is the tolerance on the distance between a point and the parametrised curve. in that case, no bounds are given. the research of the rigth parameter has to be made on the natural parametric domain of the curve.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Pnt:
-	:type Pnt: gp_Pnt2d
-	:param Tol:
-	:type Tol: float
-	:rtype: float
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Pnt: gp_Pnt2d
+Tol: float
+
+Returns
+-------
+float
 ") FindParameter;
 		static Standard_Real FindParameter(const Adaptor2d_Curve2d & C, const gp_Pnt2d & Pnt, const Standard_Real Tol);
 
@@ -1915,17 +2177,17 @@ class Geom2dInt_TheProjPCurOfGInter {
 		%feature("compactdefaultargs") FindParameter;
 		%feature("autodoc", "Returns the parameter v of the point on the parametric curve corresponding to the point pnt. the correspondance between pnt and the point p(v) on the parametric curve must be coherent with the way of determination of the signed distance between a point and the implicit curve. tol is the tolerance on the distance between a point and the parametrised curve. lowparameter and highparameter give the boundaries of the interval in wich the parameter certainly lies. these parameters are given to implement a more efficient algoritm. so, it is not necessary to check that the returned value verifies lowparameter <= value <= highparameter.
 
-	:param C:
-	:type C: Adaptor2d_Curve2d
-	:param Pnt:
-	:type Pnt: gp_Pnt2d
-	:param LowParameter:
-	:type LowParameter: float
-	:param HighParameter:
-	:type HighParameter: float
-	:param Tol:
-	:type Tol: float
-	:rtype: float
+Parameters
+----------
+C: Adaptor2d_Curve2d
+Pnt: gp_Pnt2d
+LowParameter: float
+HighParameter: float
+Tol: float
+
+Returns
+-------
+float
 ") FindParameter;
 		static Standard_Real FindParameter(const Adaptor2d_Curve2d & C, const gp_Pnt2d & Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
 

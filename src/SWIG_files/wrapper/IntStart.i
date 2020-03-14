@@ -73,11 +73,16 @@ class IntStart_SITopolTool : public Standard_Transient {
 	public:
 		/****************** Classify ******************/
 		%feature("compactdefaultargs") Classify;
-		%feature("autodoc", "	:param P:
-	:type P: gp_Pnt2d
-	:param Tol:
-	:type Tol: float
-	:rtype: TopAbs_State
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Pnt2d
+Tol: float
+
+Returns
+-------
+TopAbs_State
 ") Classify;
 		virtual TopAbs_State Classify(const gp_Pnt2d & P, const Standard_Real Tol);
 

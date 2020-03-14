@@ -111,235 +111,348 @@ class TPrsStd_ConstraintTools {
 	public:
 		/****************** ComputeAngle ******************/
 		%feature("compactdefaultargs") ComputeAngle;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeAngle;
 		static void ComputeAngle(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeAngleForOneFace ******************/
 		%feature("compactdefaultargs") ComputeAngleForOneFace;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeAngleForOneFace;
 		static void ComputeAngleForOneFace(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeCoincident ******************/
 		%feature("compactdefaultargs") ComputeCoincident;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeCoincident;
 		static void ComputeCoincident(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeConcentric ******************/
 		%feature("compactdefaultargs") ComputeConcentric;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeConcentric;
 		static void ComputeConcentric(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeDiameter ******************/
 		%feature("compactdefaultargs") ComputeDiameter;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeDiameter;
 		static void ComputeDiameter(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeDistance ******************/
 		%feature("compactdefaultargs") ComputeDistance;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeDistance;
 		static void ComputeDistance(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeEqualDistance ******************/
 		%feature("compactdefaultargs") ComputeEqualDistance;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeEqualDistance;
 		static void ComputeEqualDistance(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeEqualRadius ******************/
 		%feature("compactdefaultargs") ComputeEqualRadius;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeEqualRadius;
 		static void ComputeEqualRadius(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeFix ******************/
 		%feature("compactdefaultargs") ComputeFix;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeFix;
 		static void ComputeFix(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeMaxRadius ******************/
 		%feature("compactdefaultargs") ComputeMaxRadius;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeMaxRadius;
 		static void ComputeMaxRadius(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeMidPoint ******************/
 		%feature("compactdefaultargs") ComputeMidPoint;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeMidPoint;
 		static void ComputeMidPoint(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeMinRadius ******************/
 		%feature("compactdefaultargs") ComputeMinRadius;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeMinRadius;
 		static void ComputeMinRadius(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeOffset ******************/
 		%feature("compactdefaultargs") ComputeOffset;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeOffset;
 		static void ComputeOffset(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeOthers ******************/
 		%feature("compactdefaultargs") ComputeOthers;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeOthers;
 		static void ComputeOthers(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeParallel ******************/
 		%feature("compactdefaultargs") ComputeParallel;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeParallel;
 		static void ComputeParallel(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputePerpendicular ******************/
 		%feature("compactdefaultargs") ComputePerpendicular;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputePerpendicular;
 		static void ComputePerpendicular(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputePlacement ******************/
 		%feature("compactdefaultargs") ComputePlacement;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputePlacement;
 		static void ComputePlacement(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeRadius ******************/
 		%feature("compactdefaultargs") ComputeRadius;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeRadius;
 		static void ComputeRadius(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeRound ******************/
 		%feature("compactdefaultargs") ComputeRound;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeRound;
 		static void ComputeRound(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeSymmetry ******************/
 		%feature("compactdefaultargs") ComputeSymmetry;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeSymmetry;
 		static void ComputeSymmetry(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeTangent ******************/
 		%feature("compactdefaultargs") ComputeTangent;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") ComputeTangent;
 		static void ComputeTangent(const opencascade::handle<TDataXtd_Constraint> & aConst, opencascade::handle<AIS_InteractiveObject> & anAIS);
 
 		/****************** ComputeTextAndValue ******************/
 		%feature("compactdefaultargs") ComputeTextAndValue;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param aValue:
-	:type aValue: float
-	:param aText:
-	:type aText: TCollection_ExtendedString
-	:param anIsAngle:
-	:type anIsAngle: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+aValue: float
+aText: TCollection_ExtendedString
+anIsAngle: bool
+
+Returns
+-------
+None
 ") ComputeTextAndValue;
 		static void ComputeTextAndValue(const opencascade::handle<TDataXtd_Constraint> & aConst, Standard_Real &OutValue, TCollection_ExtendedString & aText, const Standard_Boolean anIsAngle);
 
 		/****************** UpdateOnlyValue ******************/
 		%feature("compactdefaultargs") UpdateOnlyValue;
-		%feature("autodoc", "	:param aConst:
-	:type aConst: TDataXtd_Constraint
-	:param anAIS:
-	:type anAIS: AIS_InteractiveObject
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aConst: TDataXtd_Constraint
+anAIS: AIS_InteractiveObject
+
+Returns
+-------
+None
 ") UpdateOnlyValue;
 		static void UpdateOnlyValue(const opencascade::handle<TDataXtd_Constraint> & aConst, const opencascade::handle<AIS_InteractiveObject> & anAIS);
 
@@ -362,11 +475,14 @@ class TPrsStd_Driver : public Standard_Transient {
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Updates the interactive object ais with information found on the attributes associated with the label l.
 
-	:param L:
-	:type L: TDF_Label
-	:param ais:
-	:type ais: AIS_InteractiveObject
-	:rtype: bool
+Parameters
+----------
+L: TDF_Label
+ais: AIS_InteractiveObject
+
+Returns
+-------
+bool
 ") Update;
 		virtual Standard_Boolean Update(const TDF_Label & L, opencascade::handle<AIS_InteractiveObject> & ais);
 
@@ -390,11 +506,14 @@ class TPrsStd_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") AddDriver;
 		%feature("autodoc", "Returns true if the driver has been added successfully to the driver table.
 
-	:param guid:
-	:type guid: Standard_GUID
-	:param driver:
-	:type driver: TPrsStd_Driver
-	:rtype: bool
+Parameters
+----------
+guid: Standard_GUID
+driver: TPrsStd_Driver
+
+Returns
+-------
+bool
 ") AddDriver;
 		Standard_Boolean AddDriver(const Standard_GUID & guid, const opencascade::handle<TPrsStd_Driver> & driver);
 
@@ -402,7 +521,9 @@ class TPrsStd_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Removes all drivers. returns true if the driver has been removed successfully. if this method is used, the initstandarddrivers method should be called to fill the table with standard drivers.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -410,11 +531,14 @@ class TPrsStd_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") FindDriver;
 		%feature("autodoc", "Returns true if the driver was found.
 
-	:param guid:
-	:type guid: Standard_GUID
-	:param driver:
-	:type driver: TPrsStd_Driver
-	:rtype: bool
+Parameters
+----------
+guid: Standard_GUID
+driver: TPrsStd_Driver
+
+Returns
+-------
+bool
 ") FindDriver;
 		Standard_Boolean FindDriver(const Standard_GUID & guid, opencascade::handle<TPrsStd_Driver> & driver);
 
@@ -422,7 +546,9 @@ class TPrsStd_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "Returns the static table. if it does not exist, creates it and fills it with standard drivers.
 
-	:rtype: opencascade::handle<TPrsStd_DriverTable>
+Returns
+-------
+opencascade::handle<TPrsStd_DriverTable>
 ") Get;
 		static opencascade::handle<TPrsStd_DriverTable> Get();
 
@@ -430,7 +556,9 @@ class TPrsStd_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") InitStandardDrivers;
 		%feature("autodoc", "Fills the table with standard drivers.
 
-	:rtype: None
+Returns
+-------
+None
 ") InitStandardDrivers;
 		void InitStandardDrivers();
 
@@ -438,9 +566,13 @@ class TPrsStd_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") RemoveDriver;
 		%feature("autodoc", "Removes a driver with the given guid. returns true if the driver has been removed successfully.
 
-	:param guid:
-	:type guid: Standard_GUID
-	:rtype: bool
+Parameters
+----------
+guid: Standard_GUID
+
+Returns
+-------
+bool
 ") RemoveDriver;
 		Standard_Boolean RemoveDriver(const Standard_GUID & guid);
 
@@ -448,7 +580,9 @@ class TPrsStd_DriverTable : public Standard_Transient {
 		%feature("compactdefaultargs") TPrsStd_DriverTable;
 		%feature("autodoc", "Default constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") TPrsStd_DriverTable;
 		 TPrsStd_DriverTable();
 
@@ -472,7 +606,9 @@ class TPrsStd_AxisDriver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") TPrsStd_AxisDriver;
 		%feature("autodoc", "Constructs an empty axis driver.
 
-	:rtype: None
+Returns
+-------
+None
 ") TPrsStd_AxisDriver;
 		 TPrsStd_AxisDriver();
 
@@ -480,11 +616,14 @@ class TPrsStd_AxisDriver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Build the aisobject (if null) or update it. no compute is done. returns <true> if informations was found and aisobject updated.
 
-	:param aLabel:
-	:type aLabel: TDF_Label
-	:param anAISObject:
-	:type anAISObject: AIS_InteractiveObject
-	:rtype: bool
+Parameters
+----------
+aLabel: TDF_Label
+anAISObject: AIS_InteractiveObject
+
+Returns
+-------
+bool
 ") Update;
 		virtual Standard_Boolean Update(const TDF_Label & aLabel, opencascade::handle<AIS_InteractiveObject> & anAISObject);
 
@@ -508,7 +647,9 @@ class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") TPrsStd_ConstraintDriver;
 		%feature("autodoc", "Constructs an empty constraint driver.
 
-	:rtype: None
+Returns
+-------
+None
 ") TPrsStd_ConstraintDriver;
 		 TPrsStd_ConstraintDriver();
 
@@ -516,11 +657,14 @@ class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Build the aisobject (if null) or update it. no compute is done. returns <true> if informations was found and aisobject updated.
 
-	:param aLabel:
-	:type aLabel: TDF_Label
-	:param anAISObject:
-	:type anAISObject: AIS_InteractiveObject
-	:rtype: bool
+Parameters
+----------
+aLabel: TDF_Label
+anAISObject: AIS_InteractiveObject
+
+Returns
+-------
+bool
 ") Update;
 		virtual Standard_Boolean Update(const TDF_Label & aLabel, opencascade::handle<AIS_InteractiveObject> & anAISObject);
 
@@ -544,7 +688,9 @@ class TPrsStd_GeometryDriver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") TPrsStd_GeometryDriver;
 		%feature("autodoc", "Constructs an empty geometry driver.
 
-	:rtype: None
+Returns
+-------
+None
 ") TPrsStd_GeometryDriver;
 		 TPrsStd_GeometryDriver();
 
@@ -552,11 +698,14 @@ class TPrsStd_GeometryDriver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Build the aisobject (if null) or update it. no compute is done. returns <true> if informations was found and aisobject updated.
 
-	:param aLabel:
-	:type aLabel: TDF_Label
-	:param anAISObject:
-	:type anAISObject: AIS_InteractiveObject
-	:rtype: bool
+Parameters
+----------
+aLabel: TDF_Label
+anAISObject: AIS_InteractiveObject
+
+Returns
+-------
+bool
 ") Update;
 		virtual Standard_Boolean Update(const TDF_Label & aLabel, opencascade::handle<AIS_InteractiveObject> & anAISObject);
 
@@ -580,7 +729,9 @@ class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") TPrsStd_NamedShapeDriver;
 		%feature("autodoc", "Constructs an empty named shape driver.
 
-	:rtype: None
+Returns
+-------
+None
 ") TPrsStd_NamedShapeDriver;
 		 TPrsStd_NamedShapeDriver();
 
@@ -588,11 +739,14 @@ class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Build the aisobject (if null) or update it. no compute is done. returns <true> if informations was found and aisobject updated.
 
-	:param aLabel:
-	:type aLabel: TDF_Label
-	:param anAISObject:
-	:type anAISObject: AIS_InteractiveObject
-	:rtype: bool
+Parameters
+----------
+aLabel: TDF_Label
+anAISObject: AIS_InteractiveObject
+
+Returns
+-------
+bool
 ") Update;
 		virtual Standard_Boolean Update(const TDF_Label & aLabel, opencascade::handle<AIS_InteractiveObject> & anAISObject);
 
@@ -616,7 +770,9 @@ class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") TPrsStd_PlaneDriver;
 		%feature("autodoc", "Constructs an empty plane driver.
 
-	:rtype: None
+Returns
+-------
+None
 ") TPrsStd_PlaneDriver;
 		 TPrsStd_PlaneDriver();
 
@@ -624,11 +780,14 @@ class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Build the aisobject (if null) or update it. no compute is done. returns <true> if informations was found and aisobject updated.
 
-	:param aLabel:
-	:type aLabel: TDF_Label
-	:param anAISObject:
-	:type anAISObject: AIS_InteractiveObject
-	:rtype: bool
+Parameters
+----------
+aLabel: TDF_Label
+anAISObject: AIS_InteractiveObject
+
+Returns
+-------
+bool
 ") Update;
 		virtual Standard_Boolean Update(const TDF_Label & aLabel, opencascade::handle<AIS_InteractiveObject> & anAISObject);
 
@@ -652,7 +811,9 @@ class TPrsStd_PointDriver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") TPrsStd_PointDriver;
 		%feature("autodoc", "Constructs an empty point driver.
 
-	:rtype: None
+Returns
+-------
+None
 ") TPrsStd_PointDriver;
 		 TPrsStd_PointDriver();
 
@@ -660,11 +821,14 @@ class TPrsStd_PointDriver : public TPrsStd_Driver {
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Build the aisobject (if null) or update it. no compute is done. returns <true> if informations was found and aisobject updated.
 
-	:param aLabel:
-	:type aLabel: TDF_Label
-	:param anAISObject:
-	:type anAISObject: AIS_InteractiveObject
-	:rtype: bool
+Parameters
+----------
+aLabel: TDF_Label
+anAISObject: AIS_InteractiveObject
+
+Returns
+-------
+bool
 ") Update;
 		virtual Standard_Boolean Update(const TDF_Label & aLabel, opencascade::handle<AIS_InteractiveObject> & anAISObject);
 

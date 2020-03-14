@@ -82,7 +82,9 @@ class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 		%feature("compactdefaultargs") RWStepFEA_RWAlignedCurve3dElementCoordinateSystem;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWAlignedCurve3dElementCoordinateSystem;
 		 RWStepFEA_RWAlignedCurve3dElementCoordinateSystem();
 
@@ -90,15 +92,16 @@ class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads alignedcurve3delementcoordinatesystem.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_AlignedCurve3dElementCoordinateSystem
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_AlignedCurve3dElementCoordinateSystem
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_AlignedCurve3dElementCoordinateSystem> & ent);
 
@@ -106,11 +109,14 @@ class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_AlignedCurve3dElementCoordinateSystem
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_AlignedCurve3dElementCoordinateSystem
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_AlignedCurve3dElementCoordinateSystem> & ent, Interface_EntityIterator & iter);
 
@@ -118,11 +124,14 @@ class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes alignedcurve3delementcoordinatesystem.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_AlignedCurve3dElementCoordinateSystem
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_AlignedCurve3dElementCoordinateSystem
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_AlignedCurve3dElementCoordinateSystem> & ent);
 
@@ -144,7 +153,9 @@ class RWStepFEA_RWAlignedSurface3dElementCoordinateSystem {
 		%feature("compactdefaultargs") RWStepFEA_RWAlignedSurface3dElementCoordinateSystem;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWAlignedSurface3dElementCoordinateSystem;
 		 RWStepFEA_RWAlignedSurface3dElementCoordinateSystem();
 
@@ -152,15 +163,16 @@ class RWStepFEA_RWAlignedSurface3dElementCoordinateSystem {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads alignedsurface3delementcoordinatesystem.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_AlignedSurface3dElementCoordinateSystem
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_AlignedSurface3dElementCoordinateSystem
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_AlignedSurface3dElementCoordinateSystem> & ent);
 
@@ -168,11 +180,14 @@ class RWStepFEA_RWAlignedSurface3dElementCoordinateSystem {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_AlignedSurface3dElementCoordinateSystem
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_AlignedSurface3dElementCoordinateSystem
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_AlignedSurface3dElementCoordinateSystem> & ent, Interface_EntityIterator & iter);
 
@@ -180,11 +195,14 @@ class RWStepFEA_RWAlignedSurface3dElementCoordinateSystem {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes alignedsurface3delementcoordinatesystem.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_AlignedSurface3dElementCoordinateSystem
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_AlignedSurface3dElementCoordinateSystem
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_AlignedSurface3dElementCoordinateSystem> & ent);
 
@@ -206,7 +224,9 @@ class RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem {
 		%feature("compactdefaultargs") RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem;
 		 RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem();
 
@@ -214,15 +234,16 @@ class RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads arbitraryvolume3delementcoordinatesystem.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_ArbitraryVolume3dElementCoordinateSystem
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_ArbitraryVolume3dElementCoordinateSystem
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_ArbitraryVolume3dElementCoordinateSystem> & ent);
 
@@ -230,11 +251,14 @@ class RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_ArbitraryVolume3dElementCoordinateSystem
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_ArbitraryVolume3dElementCoordinateSystem
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_ArbitraryVolume3dElementCoordinateSystem> & ent, Interface_EntityIterator & iter);
 
@@ -242,11 +266,14 @@ class RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes arbitraryvolume3delementcoordinatesystem.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_ArbitraryVolume3dElementCoordinateSystem
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_ArbitraryVolume3dElementCoordinateSystem
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_ArbitraryVolume3dElementCoordinateSystem> & ent);
 
@@ -268,7 +295,9 @@ class RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
 		%feature("compactdefaultargs") RWStepFEA_RWConstantSurface3dElementCoordinateSystem;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWConstantSurface3dElementCoordinateSystem;
 		 RWStepFEA_RWConstantSurface3dElementCoordinateSystem();
 
@@ -276,15 +305,16 @@ class RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads constantsurface3delementcoordinatesystem.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_ConstantSurface3dElementCoordinateSystem
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_ConstantSurface3dElementCoordinateSystem
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_ConstantSurface3dElementCoordinateSystem> & ent);
 
@@ -292,11 +322,14 @@ class RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_ConstantSurface3dElementCoordinateSystem
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_ConstantSurface3dElementCoordinateSystem
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_ConstantSurface3dElementCoordinateSystem> & ent, Interface_EntityIterator & iter);
 
@@ -304,11 +337,14 @@ class RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes constantsurface3delementcoordinatesystem.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_ConstantSurface3dElementCoordinateSystem
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_ConstantSurface3dElementCoordinateSystem
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_ConstantSurface3dElementCoordinateSystem> & ent);
 
@@ -330,7 +366,9 @@ class RWStepFEA_RWCurve3dElementProperty {
 		%feature("compactdefaultargs") RWStepFEA_RWCurve3dElementProperty;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWCurve3dElementProperty;
 		 RWStepFEA_RWCurve3dElementProperty();
 
@@ -338,15 +376,16 @@ class RWStepFEA_RWCurve3dElementProperty {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads curve3delementproperty.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_Curve3dElementProperty
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_Curve3dElementProperty
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_Curve3dElementProperty> & ent);
 
@@ -354,11 +393,14 @@ class RWStepFEA_RWCurve3dElementProperty {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_Curve3dElementProperty
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_Curve3dElementProperty
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_Curve3dElementProperty> & ent, Interface_EntityIterator & iter);
 
@@ -366,11 +408,14 @@ class RWStepFEA_RWCurve3dElementProperty {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes curve3delementproperty.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_Curve3dElementProperty
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_Curve3dElementProperty
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_Curve3dElementProperty> & ent);
 
@@ -392,7 +437,9 @@ class RWStepFEA_RWCurve3dElementRepresentation {
 		%feature("compactdefaultargs") RWStepFEA_RWCurve3dElementRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWCurve3dElementRepresentation;
 		 RWStepFEA_RWCurve3dElementRepresentation();
 
@@ -400,15 +447,16 @@ class RWStepFEA_RWCurve3dElementRepresentation {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads curve3delementrepresentation.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_Curve3dElementRepresentation
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_Curve3dElementRepresentation
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_Curve3dElementRepresentation> & ent);
 
@@ -416,11 +464,14 @@ class RWStepFEA_RWCurve3dElementRepresentation {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_Curve3dElementRepresentation
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_Curve3dElementRepresentation
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_Curve3dElementRepresentation> & ent, Interface_EntityIterator & iter);
 
@@ -428,11 +479,14 @@ class RWStepFEA_RWCurve3dElementRepresentation {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes curve3delementrepresentation.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_Curve3dElementRepresentation
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_Curve3dElementRepresentation
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_Curve3dElementRepresentation> & ent);
 
@@ -454,7 +508,9 @@ class RWStepFEA_RWCurveElementEndOffset {
 		%feature("compactdefaultargs") RWStepFEA_RWCurveElementEndOffset;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWCurveElementEndOffset;
 		 RWStepFEA_RWCurveElementEndOffset();
 
@@ -462,15 +518,16 @@ class RWStepFEA_RWCurveElementEndOffset {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads curveelementendoffset.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_CurveElementEndOffset
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_CurveElementEndOffset
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_CurveElementEndOffset> & ent);
 
@@ -478,11 +535,14 @@ class RWStepFEA_RWCurveElementEndOffset {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_CurveElementEndOffset
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_CurveElementEndOffset
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_CurveElementEndOffset> & ent, Interface_EntityIterator & iter);
 
@@ -490,11 +550,14 @@ class RWStepFEA_RWCurveElementEndOffset {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes curveelementendoffset.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_CurveElementEndOffset
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_CurveElementEndOffset
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_CurveElementEndOffset> & ent);
 
@@ -516,7 +579,9 @@ class RWStepFEA_RWCurveElementEndRelease {
 		%feature("compactdefaultargs") RWStepFEA_RWCurveElementEndRelease;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWCurveElementEndRelease;
 		 RWStepFEA_RWCurveElementEndRelease();
 
@@ -524,15 +589,16 @@ class RWStepFEA_RWCurveElementEndRelease {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads curveelementendrelease.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_CurveElementEndRelease
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_CurveElementEndRelease
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_CurveElementEndRelease> & ent);
 
@@ -540,11 +606,14 @@ class RWStepFEA_RWCurveElementEndRelease {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_CurveElementEndRelease
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_CurveElementEndRelease
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_CurveElementEndRelease> & ent, Interface_EntityIterator & iter);
 
@@ -552,11 +621,14 @@ class RWStepFEA_RWCurveElementEndRelease {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes curveelementendrelease.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_CurveElementEndRelease
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_CurveElementEndRelease
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_CurveElementEndRelease> & ent);
 
@@ -578,7 +650,9 @@ class RWStepFEA_RWCurveElementInterval {
 		%feature("compactdefaultargs") RWStepFEA_RWCurveElementInterval;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWCurveElementInterval;
 		 RWStepFEA_RWCurveElementInterval();
 
@@ -586,15 +660,16 @@ class RWStepFEA_RWCurveElementInterval {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads curveelementinterval.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_CurveElementInterval
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_CurveElementInterval
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_CurveElementInterval> & ent);
 
@@ -602,11 +677,14 @@ class RWStepFEA_RWCurveElementInterval {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_CurveElementInterval
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_CurveElementInterval
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_CurveElementInterval> & ent, Interface_EntityIterator & iter);
 
@@ -614,11 +692,14 @@ class RWStepFEA_RWCurveElementInterval {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes curveelementinterval.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_CurveElementInterval
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_CurveElementInterval
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_CurveElementInterval> & ent);
 
@@ -640,7 +721,9 @@ class RWStepFEA_RWCurveElementIntervalConstant {
 		%feature("compactdefaultargs") RWStepFEA_RWCurveElementIntervalConstant;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWCurveElementIntervalConstant;
 		 RWStepFEA_RWCurveElementIntervalConstant();
 
@@ -648,15 +731,16 @@ class RWStepFEA_RWCurveElementIntervalConstant {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads curveelementintervalconstant.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_CurveElementIntervalConstant
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_CurveElementIntervalConstant
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_CurveElementIntervalConstant> & ent);
 
@@ -664,11 +748,14 @@ class RWStepFEA_RWCurveElementIntervalConstant {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_CurveElementIntervalConstant
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_CurveElementIntervalConstant
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_CurveElementIntervalConstant> & ent, Interface_EntityIterator & iter);
 
@@ -676,11 +763,14 @@ class RWStepFEA_RWCurveElementIntervalConstant {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes curveelementintervalconstant.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_CurveElementIntervalConstant
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_CurveElementIntervalConstant
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_CurveElementIntervalConstant> & ent);
 
@@ -702,7 +792,9 @@ class RWStepFEA_RWCurveElementIntervalLinearlyVarying {
 		%feature("compactdefaultargs") RWStepFEA_RWCurveElementIntervalLinearlyVarying;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWCurveElementIntervalLinearlyVarying;
 		 RWStepFEA_RWCurveElementIntervalLinearlyVarying();
 
@@ -710,15 +802,16 @@ class RWStepFEA_RWCurveElementIntervalLinearlyVarying {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads curveelementintervallinearlyvarying.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_CurveElementIntervalLinearlyVarying
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_CurveElementIntervalLinearlyVarying
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_CurveElementIntervalLinearlyVarying> & ent);
 
@@ -726,11 +819,14 @@ class RWStepFEA_RWCurveElementIntervalLinearlyVarying {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_CurveElementIntervalLinearlyVarying
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_CurveElementIntervalLinearlyVarying
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_CurveElementIntervalLinearlyVarying> & ent, Interface_EntityIterator & iter);
 
@@ -738,11 +834,14 @@ class RWStepFEA_RWCurveElementIntervalLinearlyVarying {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes curveelementintervallinearlyvarying.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_CurveElementIntervalLinearlyVarying
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_CurveElementIntervalLinearlyVarying
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_CurveElementIntervalLinearlyVarying> & ent);
 
@@ -764,7 +863,9 @@ class RWStepFEA_RWCurveElementLocation {
 		%feature("compactdefaultargs") RWStepFEA_RWCurveElementLocation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWCurveElementLocation;
 		 RWStepFEA_RWCurveElementLocation();
 
@@ -772,15 +873,16 @@ class RWStepFEA_RWCurveElementLocation {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads curveelementlocation.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_CurveElementLocation
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_CurveElementLocation
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_CurveElementLocation> & ent);
 
@@ -788,11 +890,14 @@ class RWStepFEA_RWCurveElementLocation {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_CurveElementLocation
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_CurveElementLocation
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_CurveElementLocation> & ent, Interface_EntityIterator & iter);
 
@@ -800,11 +905,14 @@ class RWStepFEA_RWCurveElementLocation {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes curveelementlocation.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_CurveElementLocation
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_CurveElementLocation
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_CurveElementLocation> & ent);
 
@@ -826,7 +934,9 @@ class RWStepFEA_RWDummyNode {
 		%feature("compactdefaultargs") RWStepFEA_RWDummyNode;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWDummyNode;
 		 RWStepFEA_RWDummyNode();
 
@@ -834,15 +944,16 @@ class RWStepFEA_RWDummyNode {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads dummynode.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_DummyNode
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_DummyNode
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_DummyNode> & ent);
 
@@ -850,11 +961,14 @@ class RWStepFEA_RWDummyNode {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_DummyNode
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_DummyNode
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_DummyNode> & ent, Interface_EntityIterator & iter);
 
@@ -862,11 +976,14 @@ class RWStepFEA_RWDummyNode {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes dummynode.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_DummyNode
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_DummyNode
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_DummyNode> & ent);
 
@@ -888,7 +1005,9 @@ class RWStepFEA_RWElementGeometricRelationship {
 		%feature("compactdefaultargs") RWStepFEA_RWElementGeometricRelationship;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWElementGeometricRelationship;
 		 RWStepFEA_RWElementGeometricRelationship();
 
@@ -896,15 +1015,16 @@ class RWStepFEA_RWElementGeometricRelationship {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads elementgeometricrelationship.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_ElementGeometricRelationship
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_ElementGeometricRelationship
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_ElementGeometricRelationship> & ent);
 
@@ -912,11 +1032,14 @@ class RWStepFEA_RWElementGeometricRelationship {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_ElementGeometricRelationship
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_ElementGeometricRelationship
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_ElementGeometricRelationship> & ent, Interface_EntityIterator & iter);
 
@@ -924,11 +1047,14 @@ class RWStepFEA_RWElementGeometricRelationship {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes elementgeometricrelationship.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_ElementGeometricRelationship
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_ElementGeometricRelationship
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_ElementGeometricRelationship> & ent);
 
@@ -950,7 +1076,9 @@ class RWStepFEA_RWElementGroup {
 		%feature("compactdefaultargs") RWStepFEA_RWElementGroup;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWElementGroup;
 		 RWStepFEA_RWElementGroup();
 
@@ -958,15 +1086,16 @@ class RWStepFEA_RWElementGroup {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads elementgroup.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_ElementGroup
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_ElementGroup
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_ElementGroup> & ent);
 
@@ -974,11 +1103,14 @@ class RWStepFEA_RWElementGroup {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_ElementGroup
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_ElementGroup
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_ElementGroup> & ent, Interface_EntityIterator & iter);
 
@@ -986,11 +1118,14 @@ class RWStepFEA_RWElementGroup {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes elementgroup.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_ElementGroup
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_ElementGroup
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_ElementGroup> & ent);
 
@@ -1012,7 +1147,9 @@ class RWStepFEA_RWElementRepresentation {
 		%feature("compactdefaultargs") RWStepFEA_RWElementRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWElementRepresentation;
 		 RWStepFEA_RWElementRepresentation();
 
@@ -1020,15 +1157,16 @@ class RWStepFEA_RWElementRepresentation {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads elementrepresentation.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_ElementRepresentation
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_ElementRepresentation
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_ElementRepresentation> & ent);
 
@@ -1036,11 +1174,14 @@ class RWStepFEA_RWElementRepresentation {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_ElementRepresentation
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_ElementRepresentation
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_ElementRepresentation> & ent, Interface_EntityIterator & iter);
 
@@ -1048,11 +1189,14 @@ class RWStepFEA_RWElementRepresentation {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes elementrepresentation.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_ElementRepresentation
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_ElementRepresentation
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_ElementRepresentation> & ent);
 
@@ -1074,7 +1218,9 @@ class RWStepFEA_RWFeaAreaDensity {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaAreaDensity;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaAreaDensity;
 		 RWStepFEA_RWFeaAreaDensity();
 
@@ -1082,15 +1228,16 @@ class RWStepFEA_RWFeaAreaDensity {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feaareadensity.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaAreaDensity
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaAreaDensity
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaAreaDensity> & ent);
 
@@ -1098,11 +1245,14 @@ class RWStepFEA_RWFeaAreaDensity {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaAreaDensity
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaAreaDensity
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaAreaDensity> & ent, Interface_EntityIterator & iter);
 
@@ -1110,11 +1260,14 @@ class RWStepFEA_RWFeaAreaDensity {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feaareadensity.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaAreaDensity
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaAreaDensity
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaAreaDensity> & ent);
 
@@ -1136,7 +1289,9 @@ class RWStepFEA_RWFeaAxis2Placement3d {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaAxis2Placement3d;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaAxis2Placement3d;
 		 RWStepFEA_RWFeaAxis2Placement3d();
 
@@ -1144,15 +1299,16 @@ class RWStepFEA_RWFeaAxis2Placement3d {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feaaxis2placement3d.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaAxis2Placement3d
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaAxis2Placement3d
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaAxis2Placement3d> & ent);
 
@@ -1160,11 +1316,14 @@ class RWStepFEA_RWFeaAxis2Placement3d {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaAxis2Placement3d
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaAxis2Placement3d
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaAxis2Placement3d> & ent, Interface_EntityIterator & iter);
 
@@ -1172,11 +1331,14 @@ class RWStepFEA_RWFeaAxis2Placement3d {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feaaxis2placement3d.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaAxis2Placement3d
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaAxis2Placement3d
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaAxis2Placement3d> & ent);
 
@@ -1198,7 +1360,9 @@ class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaCurveSectionGeometricRelationship;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaCurveSectionGeometricRelationship;
 		 RWStepFEA_RWFeaCurveSectionGeometricRelationship();
 
@@ -1206,15 +1370,16 @@ class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feacurvesectiongeometricrelationship.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaCurveSectionGeometricRelationship
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaCurveSectionGeometricRelationship
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaCurveSectionGeometricRelationship> & ent);
 
@@ -1222,11 +1387,14 @@ class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaCurveSectionGeometricRelationship
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaCurveSectionGeometricRelationship
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaCurveSectionGeometricRelationship> & ent, Interface_EntityIterator & iter);
 
@@ -1234,11 +1402,14 @@ class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feacurvesectiongeometricrelationship.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaCurveSectionGeometricRelationship
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaCurveSectionGeometricRelationship
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaCurveSectionGeometricRelationship> & ent);
 
@@ -1260,7 +1431,9 @@ class RWStepFEA_RWFeaGroup {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaGroup;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaGroup;
 		 RWStepFEA_RWFeaGroup();
 
@@ -1268,15 +1441,16 @@ class RWStepFEA_RWFeaGroup {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feagroup.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaGroup
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaGroup
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaGroup> & ent);
 
@@ -1284,11 +1458,14 @@ class RWStepFEA_RWFeaGroup {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaGroup
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaGroup
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaGroup> & ent, Interface_EntityIterator & iter);
 
@@ -1296,11 +1473,14 @@ class RWStepFEA_RWFeaGroup {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feagroup.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaGroup
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaGroup
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaGroup> & ent);
 
@@ -1322,7 +1502,9 @@ class RWStepFEA_RWFeaLinearElasticity {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaLinearElasticity;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaLinearElasticity;
 		 RWStepFEA_RWFeaLinearElasticity();
 
@@ -1330,15 +1512,16 @@ class RWStepFEA_RWFeaLinearElasticity {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads fealinearelasticity.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaLinearElasticity
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaLinearElasticity
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaLinearElasticity> & ent);
 
@@ -1346,11 +1529,14 @@ class RWStepFEA_RWFeaLinearElasticity {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaLinearElasticity
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaLinearElasticity
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaLinearElasticity> & ent, Interface_EntityIterator & iter);
 
@@ -1358,11 +1544,14 @@ class RWStepFEA_RWFeaLinearElasticity {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes fealinearelasticity.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaLinearElasticity
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaLinearElasticity
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaLinearElasticity> & ent);
 
@@ -1384,7 +1573,9 @@ class RWStepFEA_RWFeaMassDensity {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaMassDensity;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaMassDensity;
 		 RWStepFEA_RWFeaMassDensity();
 
@@ -1392,15 +1583,16 @@ class RWStepFEA_RWFeaMassDensity {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feamassdensity.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaMassDensity
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaMassDensity
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaMassDensity> & ent);
 
@@ -1408,11 +1600,14 @@ class RWStepFEA_RWFeaMassDensity {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaMassDensity
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaMassDensity
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaMassDensity> & ent, Interface_EntityIterator & iter);
 
@@ -1420,11 +1615,14 @@ class RWStepFEA_RWFeaMassDensity {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feamassdensity.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaMassDensity
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaMassDensity
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaMassDensity> & ent);
 
@@ -1446,7 +1644,9 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentation {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaMaterialPropertyRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaMaterialPropertyRepresentation;
 		 RWStepFEA_RWFeaMaterialPropertyRepresentation();
 
@@ -1454,15 +1654,16 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentation {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feamaterialpropertyrepresentation.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaMaterialPropertyRepresentation
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaMaterialPropertyRepresentation
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaMaterialPropertyRepresentation> & ent);
 
@@ -1470,11 +1671,14 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentation {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaMaterialPropertyRepresentation
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaMaterialPropertyRepresentation
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaMaterialPropertyRepresentation> & ent, Interface_EntityIterator & iter);
 
@@ -1482,11 +1686,14 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentation {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feamaterialpropertyrepresentation.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaMaterialPropertyRepresentation
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaMaterialPropertyRepresentation
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaMaterialPropertyRepresentation> & ent);
 
@@ -1508,7 +1715,9 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaMaterialPropertyRepresentationItem;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaMaterialPropertyRepresentationItem;
 		 RWStepFEA_RWFeaMaterialPropertyRepresentationItem();
 
@@ -1516,15 +1725,16 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feamaterialpropertyrepresentationitem.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaMaterialPropertyRepresentationItem
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaMaterialPropertyRepresentationItem
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaMaterialPropertyRepresentationItem> & ent);
 
@@ -1532,11 +1742,14 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaMaterialPropertyRepresentationItem
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaMaterialPropertyRepresentationItem
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaMaterialPropertyRepresentationItem> & ent, Interface_EntityIterator & iter);
 
@@ -1544,11 +1757,14 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feamaterialpropertyrepresentationitem.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaMaterialPropertyRepresentationItem
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaMaterialPropertyRepresentationItem
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaMaterialPropertyRepresentationItem> & ent);
 
@@ -1570,7 +1786,9 @@ class RWStepFEA_RWFeaModel {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaModel;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaModel;
 		 RWStepFEA_RWFeaModel();
 
@@ -1578,15 +1796,16 @@ class RWStepFEA_RWFeaModel {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feamodel.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaModel
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaModel
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaModel> & ent);
 
@@ -1594,11 +1813,14 @@ class RWStepFEA_RWFeaModel {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaModel
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaModel
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaModel> & ent, Interface_EntityIterator & iter);
 
@@ -1606,11 +1828,14 @@ class RWStepFEA_RWFeaModel {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feamodel.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaModel
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaModel
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaModel> & ent);
 
@@ -1632,7 +1857,9 @@ class RWStepFEA_RWFeaModel3d {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaModel3d;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaModel3d;
 		 RWStepFEA_RWFeaModel3d();
 
@@ -1640,15 +1867,16 @@ class RWStepFEA_RWFeaModel3d {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feamodel3d.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaModel3d
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaModel3d
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaModel3d> & ent);
 
@@ -1656,11 +1884,14 @@ class RWStepFEA_RWFeaModel3d {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaModel3d
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaModel3d
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaModel3d> & ent, Interface_EntityIterator & iter);
 
@@ -1668,11 +1899,14 @@ class RWStepFEA_RWFeaModel3d {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feamodel3d.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaModel3d
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaModel3d
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaModel3d> & ent);
 
@@ -1694,7 +1928,9 @@ class RWStepFEA_RWFeaModelDefinition {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaModelDefinition;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaModelDefinition;
 		 RWStepFEA_RWFeaModelDefinition();
 
@@ -1702,15 +1938,16 @@ class RWStepFEA_RWFeaModelDefinition {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feamodeldefinition.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaModelDefinition
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaModelDefinition
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaModelDefinition> & ent);
 
@@ -1718,11 +1955,14 @@ class RWStepFEA_RWFeaModelDefinition {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaModelDefinition
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaModelDefinition
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaModelDefinition> & ent, Interface_EntityIterator & iter);
 
@@ -1730,11 +1970,14 @@ class RWStepFEA_RWFeaModelDefinition {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feamodeldefinition.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaModelDefinition
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaModelDefinition
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaModelDefinition> & ent);
 
@@ -1756,7 +1999,9 @@ class RWStepFEA_RWFeaMoistureAbsorption {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaMoistureAbsorption;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaMoistureAbsorption;
 		 RWStepFEA_RWFeaMoistureAbsorption();
 
@@ -1764,15 +2009,16 @@ class RWStepFEA_RWFeaMoistureAbsorption {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feamoistureabsorption.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaMoistureAbsorption
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaMoistureAbsorption
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaMoistureAbsorption> & ent);
 
@@ -1780,11 +2026,14 @@ class RWStepFEA_RWFeaMoistureAbsorption {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaMoistureAbsorption
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaMoistureAbsorption
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaMoistureAbsorption> & ent, Interface_EntityIterator & iter);
 
@@ -1792,11 +2041,14 @@ class RWStepFEA_RWFeaMoistureAbsorption {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feamoistureabsorption.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaMoistureAbsorption
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaMoistureAbsorption
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaMoistureAbsorption> & ent);
 
@@ -1818,7 +2070,9 @@ class RWStepFEA_RWFeaParametricPoint {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaParametricPoint;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaParametricPoint;
 		 RWStepFEA_RWFeaParametricPoint();
 
@@ -1826,15 +2080,16 @@ class RWStepFEA_RWFeaParametricPoint {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feaparametricpoint.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaParametricPoint
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaParametricPoint
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaParametricPoint> & ent);
 
@@ -1842,11 +2097,14 @@ class RWStepFEA_RWFeaParametricPoint {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaParametricPoint
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaParametricPoint
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaParametricPoint> & ent, Interface_EntityIterator & iter);
 
@@ -1854,11 +2112,14 @@ class RWStepFEA_RWFeaParametricPoint {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feaparametricpoint.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaParametricPoint
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaParametricPoint
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaParametricPoint> & ent);
 
@@ -1880,7 +2141,9 @@ class RWStepFEA_RWFeaRepresentationItem {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaRepresentationItem;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaRepresentationItem;
 		 RWStepFEA_RWFeaRepresentationItem();
 
@@ -1888,15 +2151,16 @@ class RWStepFEA_RWFeaRepresentationItem {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads fearepresentationitem.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaRepresentationItem
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaRepresentationItem
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaRepresentationItem> & ent);
 
@@ -1904,11 +2168,14 @@ class RWStepFEA_RWFeaRepresentationItem {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaRepresentationItem
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaRepresentationItem
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaRepresentationItem> & ent, Interface_EntityIterator & iter);
 
@@ -1916,11 +2183,14 @@ class RWStepFEA_RWFeaRepresentationItem {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes fearepresentationitem.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaRepresentationItem
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaRepresentationItem
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaRepresentationItem> & ent);
 
@@ -1942,7 +2212,9 @@ class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion;
 		 RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion();
 
@@ -1950,15 +2222,16 @@ class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feasecantcoefficientoflinearthermalexpansion.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaSecantCoefficientOfLinearThermalExpansion
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaSecantCoefficientOfLinearThermalExpansion
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaSecantCoefficientOfLinearThermalExpansion> & ent);
 
@@ -1966,11 +2239,14 @@ class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaSecantCoefficientOfLinearThermalExpansion
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaSecantCoefficientOfLinearThermalExpansion
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaSecantCoefficientOfLinearThermalExpansion> & ent, Interface_EntityIterator & iter);
 
@@ -1978,11 +2254,14 @@ class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feasecantcoefficientoflinearthermalexpansion.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaSecantCoefficientOfLinearThermalExpansion
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaSecantCoefficientOfLinearThermalExpansion
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaSecantCoefficientOfLinearThermalExpansion> & ent);
 
@@ -2004,7 +2283,9 @@ class RWStepFEA_RWFeaShellBendingStiffness {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaShellBendingStiffness;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaShellBendingStiffness;
 		 RWStepFEA_RWFeaShellBendingStiffness();
 
@@ -2012,15 +2293,16 @@ class RWStepFEA_RWFeaShellBendingStiffness {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feashellbendingstiffness.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaShellBendingStiffness
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaShellBendingStiffness
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaShellBendingStiffness> & ent);
 
@@ -2028,11 +2310,14 @@ class RWStepFEA_RWFeaShellBendingStiffness {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaShellBendingStiffness
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaShellBendingStiffness
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaShellBendingStiffness> & ent, Interface_EntityIterator & iter);
 
@@ -2040,11 +2325,14 @@ class RWStepFEA_RWFeaShellBendingStiffness {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feashellbendingstiffness.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaShellBendingStiffness
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaShellBendingStiffness
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaShellBendingStiffness> & ent);
 
@@ -2066,7 +2354,9 @@ class RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness;
 		 RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness();
 
@@ -2074,15 +2364,16 @@ class RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feashellmembranebendingcouplingstiffness.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaShellMembraneBendingCouplingStiffness
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaShellMembraneBendingCouplingStiffness
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaShellMembraneBendingCouplingStiffness> & ent);
 
@@ -2090,11 +2381,14 @@ class RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaShellMembraneBendingCouplingStiffness
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaShellMembraneBendingCouplingStiffness
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaShellMembraneBendingCouplingStiffness> & ent, Interface_EntityIterator & iter);
 
@@ -2102,11 +2396,14 @@ class RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feashellmembranebendingcouplingstiffness.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaShellMembraneBendingCouplingStiffness
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaShellMembraneBendingCouplingStiffness
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaShellMembraneBendingCouplingStiffness> & ent);
 
@@ -2128,7 +2425,9 @@ class RWStepFEA_RWFeaShellMembraneStiffness {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaShellMembraneStiffness;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaShellMembraneStiffness;
 		 RWStepFEA_RWFeaShellMembraneStiffness();
 
@@ -2136,15 +2435,16 @@ class RWStepFEA_RWFeaShellMembraneStiffness {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feashellmembranestiffness.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaShellMembraneStiffness
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaShellMembraneStiffness
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaShellMembraneStiffness> & ent);
 
@@ -2152,11 +2452,14 @@ class RWStepFEA_RWFeaShellMembraneStiffness {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaShellMembraneStiffness
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaShellMembraneStiffness
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaShellMembraneStiffness> & ent, Interface_EntityIterator & iter);
 
@@ -2164,11 +2467,14 @@ class RWStepFEA_RWFeaShellMembraneStiffness {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feashellmembranestiffness.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaShellMembraneStiffness
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaShellMembraneStiffness
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaShellMembraneStiffness> & ent);
 
@@ -2190,7 +2496,9 @@ class RWStepFEA_RWFeaShellShearStiffness {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaShellShearStiffness;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaShellShearStiffness;
 		 RWStepFEA_RWFeaShellShearStiffness();
 
@@ -2198,15 +2506,16 @@ class RWStepFEA_RWFeaShellShearStiffness {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feashellshearstiffness.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaShellShearStiffness
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaShellShearStiffness
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaShellShearStiffness> & ent);
 
@@ -2214,11 +2523,14 @@ class RWStepFEA_RWFeaShellShearStiffness {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaShellShearStiffness
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaShellShearStiffness
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaShellShearStiffness> & ent, Interface_EntityIterator & iter);
 
@@ -2226,11 +2538,14 @@ class RWStepFEA_RWFeaShellShearStiffness {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feashellshearstiffness.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaShellShearStiffness
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaShellShearStiffness
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaShellShearStiffness> & ent);
 
@@ -2252,7 +2567,9 @@ class RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaSurfaceSectionGeometricRelationship;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaSurfaceSectionGeometricRelationship;
 		 RWStepFEA_RWFeaSurfaceSectionGeometricRelationship();
 
@@ -2260,15 +2577,16 @@ class RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads feasurfacesectiongeometricrelationship.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaSurfaceSectionGeometricRelationship
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaSurfaceSectionGeometricRelationship
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaSurfaceSectionGeometricRelationship> & ent);
 
@@ -2276,11 +2594,14 @@ class RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaSurfaceSectionGeometricRelationship
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaSurfaceSectionGeometricRelationship
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaSurfaceSectionGeometricRelationship> & ent, Interface_EntityIterator & iter);
 
@@ -2288,11 +2609,14 @@ class RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes feasurfacesectiongeometricrelationship.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaSurfaceSectionGeometricRelationship
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaSurfaceSectionGeometricRelationship
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaSurfaceSectionGeometricRelationship> & ent);
 
@@ -2314,7 +2638,9 @@ class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
 		%feature("compactdefaultargs") RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion;
 		 RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion();
 
@@ -2322,15 +2648,16 @@ class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads featangentialcoefficientoflinearthermalexpansion.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion> & ent);
 
@@ -2338,11 +2665,14 @@ class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion> & ent, Interface_EntityIterator & iter);
 
@@ -2350,11 +2680,14 @@ class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes featangentialcoefficientoflinearthermalexpansion.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion> & ent);
 
@@ -2376,7 +2709,9 @@ class RWStepFEA_RWFreedomAndCoefficient {
 		%feature("compactdefaultargs") RWStepFEA_RWFreedomAndCoefficient;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFreedomAndCoefficient;
 		 RWStepFEA_RWFreedomAndCoefficient();
 
@@ -2384,15 +2719,16 @@ class RWStepFEA_RWFreedomAndCoefficient {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads freedomandcoefficient.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FreedomAndCoefficient
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FreedomAndCoefficient
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FreedomAndCoefficient> & ent);
 
@@ -2400,11 +2736,14 @@ class RWStepFEA_RWFreedomAndCoefficient {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FreedomAndCoefficient
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FreedomAndCoefficient
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FreedomAndCoefficient> & ent, Interface_EntityIterator & iter);
 
@@ -2412,11 +2751,14 @@ class RWStepFEA_RWFreedomAndCoefficient {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes freedomandcoefficient.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FreedomAndCoefficient
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FreedomAndCoefficient
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FreedomAndCoefficient> & ent);
 
@@ -2438,7 +2780,9 @@ class RWStepFEA_RWFreedomsList {
 		%feature("compactdefaultargs") RWStepFEA_RWFreedomsList;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWFreedomsList;
 		 RWStepFEA_RWFreedomsList();
 
@@ -2446,15 +2790,16 @@ class RWStepFEA_RWFreedomsList {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads freedomslist.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_FreedomsList
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_FreedomsList
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_FreedomsList> & ent);
 
@@ -2462,11 +2807,14 @@ class RWStepFEA_RWFreedomsList {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_FreedomsList
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_FreedomsList
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_FreedomsList> & ent, Interface_EntityIterator & iter);
 
@@ -2474,11 +2822,14 @@ class RWStepFEA_RWFreedomsList {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes freedomslist.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_FreedomsList
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_FreedomsList
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_FreedomsList> & ent);
 
@@ -2500,7 +2851,9 @@ class RWStepFEA_RWGeometricNode {
 		%feature("compactdefaultargs") RWStepFEA_RWGeometricNode;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWGeometricNode;
 		 RWStepFEA_RWGeometricNode();
 
@@ -2508,15 +2861,16 @@ class RWStepFEA_RWGeometricNode {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads geometricnode.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_GeometricNode
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_GeometricNode
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_GeometricNode> & ent);
 
@@ -2524,11 +2878,14 @@ class RWStepFEA_RWGeometricNode {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_GeometricNode
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_GeometricNode
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_GeometricNode> & ent, Interface_EntityIterator & iter);
 
@@ -2536,11 +2893,14 @@ class RWStepFEA_RWGeometricNode {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes geometricnode.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_GeometricNode
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_GeometricNode
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_GeometricNode> & ent);
 
@@ -2562,7 +2922,9 @@ class RWStepFEA_RWNode {
 		%feature("compactdefaultargs") RWStepFEA_RWNode;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWNode;
 		 RWStepFEA_RWNode();
 
@@ -2570,15 +2932,16 @@ class RWStepFEA_RWNode {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads node.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_Node
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_Node
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_Node> & ent);
 
@@ -2586,11 +2949,14 @@ class RWStepFEA_RWNode {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_Node
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_Node
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_Node> & ent, Interface_EntityIterator & iter);
 
@@ -2598,11 +2964,14 @@ class RWStepFEA_RWNode {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes node.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_Node
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_Node
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_Node> & ent);
 
@@ -2624,7 +2993,9 @@ class RWStepFEA_RWNodeDefinition {
 		%feature("compactdefaultargs") RWStepFEA_RWNodeDefinition;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWNodeDefinition;
 		 RWStepFEA_RWNodeDefinition();
 
@@ -2632,15 +3003,16 @@ class RWStepFEA_RWNodeDefinition {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads nodedefinition.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_NodeDefinition
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_NodeDefinition
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_NodeDefinition> & ent);
 
@@ -2648,11 +3020,14 @@ class RWStepFEA_RWNodeDefinition {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_NodeDefinition
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_NodeDefinition
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_NodeDefinition> & ent, Interface_EntityIterator & iter);
 
@@ -2660,11 +3035,14 @@ class RWStepFEA_RWNodeDefinition {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes nodedefinition.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_NodeDefinition
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_NodeDefinition
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_NodeDefinition> & ent);
 
@@ -2686,7 +3064,9 @@ class RWStepFEA_RWNodeGroup {
 		%feature("compactdefaultargs") RWStepFEA_RWNodeGroup;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWNodeGroup;
 		 RWStepFEA_RWNodeGroup();
 
@@ -2694,15 +3074,16 @@ class RWStepFEA_RWNodeGroup {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads nodegroup.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_NodeGroup
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_NodeGroup
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_NodeGroup> & ent);
 
@@ -2710,11 +3091,14 @@ class RWStepFEA_RWNodeGroup {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_NodeGroup
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_NodeGroup
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_NodeGroup> & ent, Interface_EntityIterator & iter);
 
@@ -2722,11 +3106,14 @@ class RWStepFEA_RWNodeGroup {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes nodegroup.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_NodeGroup
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_NodeGroup
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_NodeGroup> & ent);
 
@@ -2748,7 +3135,9 @@ class RWStepFEA_RWNodeRepresentation {
 		%feature("compactdefaultargs") RWStepFEA_RWNodeRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWNodeRepresentation;
 		 RWStepFEA_RWNodeRepresentation();
 
@@ -2756,15 +3145,16 @@ class RWStepFEA_RWNodeRepresentation {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads noderepresentation.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_NodeRepresentation
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_NodeRepresentation
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_NodeRepresentation> & ent);
 
@@ -2772,11 +3162,14 @@ class RWStepFEA_RWNodeRepresentation {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_NodeRepresentation
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_NodeRepresentation
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_NodeRepresentation> & ent, Interface_EntityIterator & iter);
 
@@ -2784,11 +3177,14 @@ class RWStepFEA_RWNodeRepresentation {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes noderepresentation.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_NodeRepresentation
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_NodeRepresentation
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_NodeRepresentation> & ent);
 
@@ -2810,7 +3206,9 @@ class RWStepFEA_RWNodeSet {
 		%feature("compactdefaultargs") RWStepFEA_RWNodeSet;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWNodeSet;
 		 RWStepFEA_RWNodeSet();
 
@@ -2818,15 +3216,16 @@ class RWStepFEA_RWNodeSet {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads nodeset.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_NodeSet
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_NodeSet
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_NodeSet> & ent);
 
@@ -2834,11 +3233,14 @@ class RWStepFEA_RWNodeSet {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_NodeSet
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_NodeSet
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_NodeSet> & ent, Interface_EntityIterator & iter);
 
@@ -2846,11 +3248,14 @@ class RWStepFEA_RWNodeSet {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes nodeset.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_NodeSet
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_NodeSet
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_NodeSet> & ent);
 
@@ -2872,7 +3277,9 @@ class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 		%feature("compactdefaultargs") RWStepFEA_RWNodeWithSolutionCoordinateSystem;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWNodeWithSolutionCoordinateSystem;
 		 RWStepFEA_RWNodeWithSolutionCoordinateSystem();
 
@@ -2880,15 +3287,16 @@ class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads nodewithsolutioncoordinatesystem.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_NodeWithSolutionCoordinateSystem
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_NodeWithSolutionCoordinateSystem
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_NodeWithSolutionCoordinateSystem> & ent);
 
@@ -2896,11 +3304,14 @@ class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_NodeWithSolutionCoordinateSystem
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_NodeWithSolutionCoordinateSystem
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_NodeWithSolutionCoordinateSystem> & ent, Interface_EntityIterator & iter);
 
@@ -2908,11 +3319,14 @@ class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes nodewithsolutioncoordinatesystem.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_NodeWithSolutionCoordinateSystem
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_NodeWithSolutionCoordinateSystem
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_NodeWithSolutionCoordinateSystem> & ent);
 
@@ -2934,7 +3348,9 @@ class RWStepFEA_RWNodeWithVector {
 		%feature("compactdefaultargs") RWStepFEA_RWNodeWithVector;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWNodeWithVector;
 		 RWStepFEA_RWNodeWithVector();
 
@@ -2942,15 +3358,16 @@ class RWStepFEA_RWNodeWithVector {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads nodewithvector.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_NodeWithVector
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_NodeWithVector
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_NodeWithVector> & ent);
 
@@ -2958,11 +3375,14 @@ class RWStepFEA_RWNodeWithVector {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_NodeWithVector
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_NodeWithVector
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_NodeWithVector> & ent, Interface_EntityIterator & iter);
 
@@ -2970,11 +3390,14 @@ class RWStepFEA_RWNodeWithVector {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes nodewithvector.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_NodeWithVector
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_NodeWithVector
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_NodeWithVector> & ent);
 
@@ -2996,7 +3419,9 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
 		%feature("compactdefaultargs") RWStepFEA_RWParametricCurve3dElementCoordinateDirection;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWParametricCurve3dElementCoordinateDirection;
 		 RWStepFEA_RWParametricCurve3dElementCoordinateDirection();
 
@@ -3004,15 +3429,16 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads parametriccurve3delementcoordinatedirection.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_ParametricCurve3dElementCoordinateDirection
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_ParametricCurve3dElementCoordinateDirection
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_ParametricCurve3dElementCoordinateDirection> & ent);
 
@@ -3020,11 +3446,14 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_ParametricCurve3dElementCoordinateDirection
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_ParametricCurve3dElementCoordinateDirection
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_ParametricCurve3dElementCoordinateDirection> & ent, Interface_EntityIterator & iter);
 
@@ -3032,11 +3461,14 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes parametriccurve3delementcoordinatedirection.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_ParametricCurve3dElementCoordinateDirection
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_ParametricCurve3dElementCoordinateDirection
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_ParametricCurve3dElementCoordinateDirection> & ent);
 
@@ -3058,7 +3490,9 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
 		%feature("compactdefaultargs") RWStepFEA_RWParametricCurve3dElementCoordinateSystem;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWParametricCurve3dElementCoordinateSystem;
 		 RWStepFEA_RWParametricCurve3dElementCoordinateSystem();
 
@@ -3066,15 +3500,16 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads parametriccurve3delementcoordinatesystem.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_ParametricCurve3dElementCoordinateSystem
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_ParametricCurve3dElementCoordinateSystem
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_ParametricCurve3dElementCoordinateSystem> & ent);
 
@@ -3082,11 +3517,14 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_ParametricCurve3dElementCoordinateSystem
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_ParametricCurve3dElementCoordinateSystem
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_ParametricCurve3dElementCoordinateSystem> & ent, Interface_EntityIterator & iter);
 
@@ -3094,11 +3532,14 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes parametriccurve3delementcoordinatesystem.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_ParametricCurve3dElementCoordinateSystem
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_ParametricCurve3dElementCoordinateSystem
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_ParametricCurve3dElementCoordinateSystem> & ent);
 
@@ -3120,7 +3561,9 @@ class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
 		%feature("compactdefaultargs") RWStepFEA_RWParametricSurface3dElementCoordinateSystem;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWParametricSurface3dElementCoordinateSystem;
 		 RWStepFEA_RWParametricSurface3dElementCoordinateSystem();
 
@@ -3128,15 +3571,16 @@ class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads parametricsurface3delementcoordinatesystem.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_ParametricSurface3dElementCoordinateSystem
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_ParametricSurface3dElementCoordinateSystem
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_ParametricSurface3dElementCoordinateSystem> & ent);
 
@@ -3144,11 +3588,14 @@ class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_ParametricSurface3dElementCoordinateSystem
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_ParametricSurface3dElementCoordinateSystem
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_ParametricSurface3dElementCoordinateSystem> & ent, Interface_EntityIterator & iter);
 
@@ -3156,11 +3603,14 @@ class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes parametricsurface3delementcoordinatesystem.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_ParametricSurface3dElementCoordinateSystem
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_ParametricSurface3dElementCoordinateSystem
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_ParametricSurface3dElementCoordinateSystem> & ent);
 
@@ -3182,7 +3632,9 @@ class RWStepFEA_RWSurface3dElementRepresentation {
 		%feature("compactdefaultargs") RWStepFEA_RWSurface3dElementRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWSurface3dElementRepresentation;
 		 RWStepFEA_RWSurface3dElementRepresentation();
 
@@ -3190,15 +3642,16 @@ class RWStepFEA_RWSurface3dElementRepresentation {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads surface3delementrepresentation.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_Surface3dElementRepresentation
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_Surface3dElementRepresentation
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_Surface3dElementRepresentation> & ent);
 
@@ -3206,11 +3659,14 @@ class RWStepFEA_RWSurface3dElementRepresentation {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_Surface3dElementRepresentation
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_Surface3dElementRepresentation
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_Surface3dElementRepresentation> & ent, Interface_EntityIterator & iter);
 
@@ -3218,11 +3674,14 @@ class RWStepFEA_RWSurface3dElementRepresentation {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes surface3delementrepresentation.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_Surface3dElementRepresentation
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_Surface3dElementRepresentation
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_Surface3dElementRepresentation> & ent);
 
@@ -3244,7 +3703,9 @@ class RWStepFEA_RWVolume3dElementRepresentation {
 		%feature("compactdefaultargs") RWStepFEA_RWVolume3dElementRepresentation;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") RWStepFEA_RWVolume3dElementRepresentation;
 		 RWStepFEA_RWVolume3dElementRepresentation();
 
@@ -3252,15 +3713,16 @@ class RWStepFEA_RWVolume3dElementRepresentation {
 		%feature("compactdefaultargs") ReadStep;
 		%feature("autodoc", "Reads volume3delementrepresentation.
 
-	:param data:
-	:type data: StepData_StepReaderData
-	:param num:
-	:type num: int
-	:param ach:
-	:type ach: Interface_Check
-	:param ent:
-	:type ent: StepFEA_Volume3dElementRepresentation
-	:rtype: None
+Parameters
+----------
+data: StepData_StepReaderData
+num: int
+ach: Interface_Check
+ent: StepFEA_Volume3dElementRepresentation
+
+Returns
+-------
+None
 ") ReadStep;
 		void ReadStep(const opencascade::handle<StepData_StepReaderData> & data, const Standard_Integer num, opencascade::handle<Interface_Check> & ach, const opencascade::handle<StepFEA_Volume3dElementRepresentation> & ent);
 
@@ -3268,11 +3730,14 @@ class RWStepFEA_RWVolume3dElementRepresentation {
 		%feature("compactdefaultargs") Share;
 		%feature("autodoc", "Fills data for graph (shared items).
 
-	:param ent:
-	:type ent: StepFEA_Volume3dElementRepresentation
-	:param iter:
-	:type iter: Interface_EntityIterator
-	:rtype: None
+Parameters
+----------
+ent: StepFEA_Volume3dElementRepresentation
+iter: Interface_EntityIterator
+
+Returns
+-------
+None
 ") Share;
 		void Share(const opencascade::handle<StepFEA_Volume3dElementRepresentation> & ent, Interface_EntityIterator & iter);
 
@@ -3280,11 +3745,14 @@ class RWStepFEA_RWVolume3dElementRepresentation {
 		%feature("compactdefaultargs") WriteStep;
 		%feature("autodoc", "Writes volume3delementrepresentation.
 
-	:param SW:
-	:type SW: StepData_StepWriter
-	:param ent:
-	:type ent: StepFEA_Volume3dElementRepresentation
-	:rtype: None
+Parameters
+----------
+SW: StepData_StepWriter
+ent: StepFEA_Volume3dElementRepresentation
+
+Returns
+-------
+None
 ") WriteStep;
 		void WriteStep(StepData_StepWriter & SW, const opencascade::handle<StepFEA_Volume3dElementRepresentation> & ent);
 

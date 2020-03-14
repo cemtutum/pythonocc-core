@@ -149,7 +149,9 @@ class MAT_Arc : public Standard_Transient {
 		%feature("compactdefaultargs") FirstElement;
 		%feature("autodoc", "Returns one of the basicelt equidistant from <self>.
 
-	:rtype: opencascade::handle<MAT_BasicElt>
+Returns
+-------
+opencascade::handle<MAT_BasicElt>
 ") FirstElement;
 		opencascade::handle<MAT_BasicElt> FirstElement();
 
@@ -157,7 +159,9 @@ class MAT_Arc : public Standard_Transient {
 		%feature("compactdefaultargs") FirstNode;
 		%feature("autodoc", "Returns one node extremity of <self>.
 
-	:rtype: opencascade::handle<MAT_Node>
+Returns
+-------
+opencascade::handle<MAT_Node>
 ") FirstNode;
 		opencascade::handle<MAT_Node> FirstNode();
 
@@ -165,7 +169,9 @@ class MAT_Arc : public Standard_Transient {
 		%feature("compactdefaultargs") GeomIndex;
 		%feature("autodoc", "Returns the index associated of the geometric representation of <self>.
 
-	:rtype: int
+Returns
+-------
+int
 ") GeomIndex;
 		Standard_Integer GeomIndex();
 
@@ -173,11 +179,14 @@ class MAT_Arc : public Standard_Transient {
 		%feature("compactdefaultargs") HasNeighbour;
 		%feature("autodoc", "Returnst true is there is an arc linked to the node <anode> located on the side <aside> of <self>; if <anode> is not on <self>.
 
-	:param aNode:
-	:type aNode: MAT_Node
-	:param aSide:
-	:type aSide: MAT_Side
-	:rtype: bool
+Parameters
+----------
+aNode: MAT_Node
+aSide: MAT_Side
+
+Returns
+-------
+bool
 ") HasNeighbour;
 		Standard_Boolean HasNeighbour(const opencascade::handle<MAT_Node> & aNode, const MAT_Side aSide);
 
@@ -185,21 +194,26 @@ class MAT_Arc : public Standard_Transient {
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "Returns the index of <self> in graph.thearcs.
 
-	:rtype: int
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index();
 
 		/****************** MAT_Arc ******************/
 		%feature("compactdefaultargs") MAT_Arc;
-		%feature("autodoc", "	:param ArcIndex:
-	:type ArcIndex: int
-	:param GeomIndex:
-	:type GeomIndex: int
-	:param FirstElement:
-	:type FirstElement: MAT_BasicElt
-	:param SecondElement:
-	:type SecondElement: MAT_BasicElt
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ArcIndex: int
+GeomIndex: int
+FirstElement: MAT_BasicElt
+SecondElement: MAT_BasicElt
+
+Returns
+-------
+None
 ") MAT_Arc;
 		 MAT_Arc(const Standard_Integer ArcIndex, const Standard_Integer GeomIndex, const opencascade::handle<MAT_BasicElt> & FirstElement, const opencascade::handle<MAT_BasicElt> & SecondElement);
 
@@ -207,11 +221,14 @@ class MAT_Arc : public Standard_Transient {
 		%feature("compactdefaultargs") Neighbour;
 		%feature("autodoc", "Returns the first arc linked to the node <anode> located on the side <aside> of <self>; if hasneighbour() returns false.
 
-	:param aNode:
-	:type aNode: MAT_Node
-	:param aSide:
-	:type aSide: MAT_Side
-	:rtype: opencascade::handle<MAT_Arc>
+Parameters
+----------
+aNode: MAT_Node
+aSide: MAT_Side
+
+Returns
+-------
+opencascade::handle<MAT_Arc>
 ") Neighbour;
 		opencascade::handle<MAT_Arc> Neighbour(const opencascade::handle<MAT_Node> & aNode, const MAT_Side aSide);
 
@@ -219,7 +236,9 @@ class MAT_Arc : public Standard_Transient {
 		%feature("compactdefaultargs") SecondElement;
 		%feature("autodoc", "Returns the other basicelt equidistant from <self>.
 
-	:rtype: opencascade::handle<MAT_BasicElt>
+Returns
+-------
+opencascade::handle<MAT_BasicElt>
 ") SecondElement;
 		opencascade::handle<MAT_BasicElt> SecondElement();
 
@@ -227,87 +246,139 @@ class MAT_Arc : public Standard_Transient {
 		%feature("compactdefaultargs") SecondNode;
 		%feature("autodoc", "Returns the other node extremity of <self>.
 
-	:rtype: opencascade::handle<MAT_Node>
+Returns
+-------
+opencascade::handle<MAT_Node>
 ") SecondNode;
 		opencascade::handle<MAT_Node> SecondNode();
 
 		/****************** SetFirstArc ******************/
 		%feature("compactdefaultargs") SetFirstArc;
-		%feature("autodoc", "	:param aSide:
-	:type aSide: MAT_Side
-	:param anArc:
-	:type anArc: MAT_Arc
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aSide: MAT_Side
+anArc: MAT_Arc
+
+Returns
+-------
+None
 ") SetFirstArc;
 		void SetFirstArc(const MAT_Side aSide, const opencascade::handle<MAT_Arc> & anArc);
 
 		/****************** SetFirstElement ******************/
 		%feature("compactdefaultargs") SetFirstElement;
-		%feature("autodoc", "	:param aBasicElt:
-	:type aBasicElt: MAT_BasicElt
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aBasicElt: MAT_BasicElt
+
+Returns
+-------
+None
 ") SetFirstElement;
 		void SetFirstElement(const opencascade::handle<MAT_BasicElt> & aBasicElt);
 
 		/****************** SetFirstNode ******************/
 		%feature("compactdefaultargs") SetFirstNode;
-		%feature("autodoc", "	:param aNode:
-	:type aNode: MAT_Node
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aNode: MAT_Node
+
+Returns
+-------
+None
 ") SetFirstNode;
 		void SetFirstNode(const opencascade::handle<MAT_Node> & aNode);
 
 		/****************** SetGeomIndex ******************/
 		%feature("compactdefaultargs") SetGeomIndex;
-		%feature("autodoc", "	:param anInteger:
-	:type anInteger: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anInteger: int
+
+Returns
+-------
+None
 ") SetGeomIndex;
 		void SetGeomIndex(const Standard_Integer anInteger);
 
 		/****************** SetIndex ******************/
 		%feature("compactdefaultargs") SetIndex;
-		%feature("autodoc", "	:param anInteger:
-	:type anInteger: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anInteger: int
+
+Returns
+-------
+None
 ") SetIndex;
 		void SetIndex(const Standard_Integer anInteger);
 
 		/****************** SetNeighbour ******************/
 		%feature("compactdefaultargs") SetNeighbour;
-		%feature("autodoc", "	:param aSide:
-	:type aSide: MAT_Side
-	:param aNode:
-	:type aNode: MAT_Node
-	:param anArc:
-	:type anArc: MAT_Arc
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aSide: MAT_Side
+aNode: MAT_Node
+anArc: MAT_Arc
+
+Returns
+-------
+None
 ") SetNeighbour;
 		void SetNeighbour(const MAT_Side aSide, const opencascade::handle<MAT_Node> & aNode, const opencascade::handle<MAT_Arc> & anArc);
 
 		/****************** SetSecondArc ******************/
 		%feature("compactdefaultargs") SetSecondArc;
-		%feature("autodoc", "	:param aSide:
-	:type aSide: MAT_Side
-	:param anArc:
-	:type anArc: MAT_Arc
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aSide: MAT_Side
+anArc: MAT_Arc
+
+Returns
+-------
+None
 ") SetSecondArc;
 		void SetSecondArc(const MAT_Side aSide, const opencascade::handle<MAT_Arc> & anArc);
 
 		/****************** SetSecondElement ******************/
 		%feature("compactdefaultargs") SetSecondElement;
-		%feature("autodoc", "	:param aBasicElt:
-	:type aBasicElt: MAT_BasicElt
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aBasicElt: MAT_BasicElt
+
+Returns
+-------
+None
 ") SetSecondElement;
 		void SetSecondElement(const opencascade::handle<MAT_BasicElt> & aBasicElt);
 
 		/****************** SetSecondNode ******************/
 		%feature("compactdefaultargs") SetSecondNode;
-		%feature("autodoc", "	:param aNode:
-	:type aNode: MAT_Node
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aNode: MAT_Node
+
+Returns
+-------
+None
 ") SetSecondNode;
 		void SetSecondNode(const opencascade::handle<MAT_Node> & aNode);
 
@@ -315,9 +386,13 @@ class MAT_Arc : public Standard_Transient {
 		%feature("compactdefaultargs") TheOtherNode;
 		%feature("autodoc", "An arc has two node, if <anode> egal one returns the other. //! if <anode> is not oh <self>.
 
-	:param aNode:
-	:type aNode: MAT_Node
-	:rtype: opencascade::handle<MAT_Node>
+Parameters
+----------
+aNode: MAT_Node
+
+Returns
+-------
+opencascade::handle<MAT_Node>
 ") TheOtherNode;
 		opencascade::handle<MAT_Node> TheOtherNode(const opencascade::handle<MAT_Node> & aNode);
 
@@ -341,7 +416,9 @@ class MAT_BasicElt : public Standard_Transient {
 		%feature("compactdefaultargs") EndArc;
 		%feature("autodoc", "Return <endarcleft> or <endarcright> corresponding to <aside>.
 
-	:rtype: opencascade::handle<MAT_Arc>
+Returns
+-------
+opencascade::handle<MAT_Arc>
 ") EndArc;
 		opencascade::handle<MAT_Arc> EndArc();
 
@@ -349,7 +426,9 @@ class MAT_BasicElt : public Standard_Transient {
 		%feature("compactdefaultargs") GeomIndex;
 		%feature("autodoc", "Return the <geomindex> of <self>.
 
-	:rtype: int
+Returns
+-------
+int
 ") GeomIndex;
 		Standard_Integer GeomIndex();
 
@@ -357,7 +436,9 @@ class MAT_BasicElt : public Standard_Transient {
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "Return the <index> of <self> in graph.thebasicelts.
 
-	:rtype: int
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index();
 
@@ -365,41 +446,69 @@ class MAT_BasicElt : public Standard_Transient {
 		%feature("compactdefaultargs") MAT_BasicElt;
 		%feature("autodoc", "Constructor, <aninteger> is the <index> of <self>.
 
-	:param anInteger:
-	:type anInteger: int
-	:rtype: None
+Parameters
+----------
+anInteger: int
+
+Returns
+-------
+None
 ") MAT_BasicElt;
 		 MAT_BasicElt(const Standard_Integer anInteger);
 
 		/****************** SetEndArc ******************/
 		%feature("compactdefaultargs") SetEndArc;
-		%feature("autodoc", "	:param anArc:
-	:type anArc: MAT_Arc
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anArc: MAT_Arc
+
+Returns
+-------
+None
 ") SetEndArc;
 		void SetEndArc(const opencascade::handle<MAT_Arc> & anArc);
 
 		/****************** SetGeomIndex ******************/
 		%feature("compactdefaultargs") SetGeomIndex;
-		%feature("autodoc", "	:param anInteger:
-	:type anInteger: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anInteger: int
+
+Returns
+-------
+None
 ") SetGeomIndex;
 		void SetGeomIndex(const Standard_Integer anInteger);
 
 		/****************** SetIndex ******************/
 		%feature("compactdefaultargs") SetIndex;
-		%feature("autodoc", "	:param anInteger:
-	:type anInteger: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anInteger: int
+
+Returns
+-------
+None
 ") SetIndex;
 		void SetIndex(const Standard_Integer anInteger);
 
 		/****************** SetStartArc ******************/
 		%feature("compactdefaultargs") SetStartArc;
-		%feature("autodoc", "	:param anArc:
-	:type anArc: MAT_Arc
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anArc: MAT_Arc
+
+Returns
+-------
+None
 ") SetStartArc;
 		void SetStartArc(const opencascade::handle<MAT_Arc> & anArc);
 
@@ -407,7 +516,9 @@ class MAT_BasicElt : public Standard_Transient {
 		%feature("compactdefaultargs") StartArc;
 		%feature("autodoc", "Return <startarcleft> or <startarcright> corresponding to <aside>.
 
-	:rtype: opencascade::handle<MAT_Arc>
+Returns
+-------
+opencascade::handle<MAT_Arc>
 ") StartArc;
 		opencascade::handle<MAT_Arc> StartArc();
 
@@ -429,211 +540,358 @@ class MAT_Bisector : public Standard_Transient {
 	public:
 		/****************** AddBisector ******************/
 		%feature("compactdefaultargs") AddBisector;
-		%feature("autodoc", "	:param abisector:
-	:type abisector: MAT_Bisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+abisector: MAT_Bisector
+
+Returns
+-------
+None
 ") AddBisector;
 		void AddBisector(const opencascade::handle<MAT_Bisector> & abisector);
 
 		/****************** BisectorNumber ******************/
 		%feature("compactdefaultargs") BisectorNumber;
-		%feature("autodoc", "	:param anumber:
-	:type anumber: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anumber: int
+
+Returns
+-------
+None
 ") BisectorNumber;
 		void BisectorNumber(const Standard_Integer anumber);
 
 		/****************** BisectorNumber ******************/
 		%feature("compactdefaultargs") BisectorNumber;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") BisectorNumber;
 		Standard_Integer BisectorNumber();
 
 		/****************** DistIssuePoint ******************/
 		%feature("compactdefaultargs") DistIssuePoint;
-		%feature("autodoc", "	:param areal:
-	:type areal: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+areal: float
+
+Returns
+-------
+None
 ") DistIssuePoint;
 		void DistIssuePoint(const Standard_Real areal);
 
 		/****************** DistIssuePoint ******************/
 		%feature("compactdefaultargs") DistIssuePoint;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") DistIssuePoint;
 		Standard_Real DistIssuePoint();
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:param ashift:
-	:type ashift: int
-	:param alevel:
-	:type alevel: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ashift: int
+alevel: int
+
+Returns
+-------
+None
 ") Dump;
 		void Dump(const Standard_Integer ashift, const Standard_Integer alevel);
 
 		/****************** EndPoint ******************/
 		%feature("compactdefaultargs") EndPoint;
-		%feature("autodoc", "	:param apoint:
-	:type apoint: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+apoint: int
+
+Returns
+-------
+None
 ") EndPoint;
 		void EndPoint(const Standard_Integer apoint);
 
 		/****************** EndPoint ******************/
 		%feature("compactdefaultargs") EndPoint;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") EndPoint;
 		Standard_Integer EndPoint();
 
 		/****************** FirstBisector ******************/
 		%feature("compactdefaultargs") FirstBisector;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Bisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Bisector>
 ") FirstBisector;
 		opencascade::handle<MAT_Bisector> FirstBisector();
 
 		/****************** FirstEdge ******************/
 		%feature("compactdefaultargs") FirstEdge;
-		%feature("autodoc", "	:param anedge:
-	:type anedge: MAT_Edge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anedge: MAT_Edge
+
+Returns
+-------
+None
 ") FirstEdge;
 		void FirstEdge(const opencascade::handle<MAT_Edge> & anedge);
 
 		/****************** FirstEdge ******************/
 		%feature("compactdefaultargs") FirstEdge;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Edge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Edge>
 ") FirstEdge;
 		opencascade::handle<MAT_Edge> FirstEdge();
 
 		/****************** FirstParameter ******************/
 		%feature("compactdefaultargs") FirstParameter;
-		%feature("autodoc", "	:param aparameter:
-	:type aparameter: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aparameter: float
+
+Returns
+-------
+None
 ") FirstParameter;
 		void FirstParameter(const Standard_Real aparameter);
 
 		/****************** FirstParameter ******************/
 		%feature("compactdefaultargs") FirstParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") FirstParameter;
 		Standard_Real FirstParameter();
 
 		/****************** FirstVector ******************/
 		%feature("compactdefaultargs") FirstVector;
-		%feature("autodoc", "	:param avector:
-	:type avector: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+avector: int
+
+Returns
+-------
+None
 ") FirstVector;
 		void FirstVector(const Standard_Integer avector);
 
 		/****************** FirstVector ******************/
 		%feature("compactdefaultargs") FirstVector;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") FirstVector;
 		Standard_Integer FirstVector();
 
 		/****************** IndexNumber ******************/
 		%feature("compactdefaultargs") IndexNumber;
-		%feature("autodoc", "	:param anumber:
-	:type anumber: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anumber: int
+
+Returns
+-------
+None
 ") IndexNumber;
 		void IndexNumber(const Standard_Integer anumber);
 
 		/****************** IndexNumber ******************/
 		%feature("compactdefaultargs") IndexNumber;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") IndexNumber;
 		Standard_Integer IndexNumber();
 
 		/****************** IssuePoint ******************/
 		%feature("compactdefaultargs") IssuePoint;
-		%feature("autodoc", "	:param apoint:
-	:type apoint: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+apoint: int
+
+Returns
+-------
+None
 ") IssuePoint;
 		void IssuePoint(const Standard_Integer apoint);
 
 		/****************** IssuePoint ******************/
 		%feature("compactdefaultargs") IssuePoint;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") IssuePoint;
 		Standard_Integer IssuePoint();
 
 		/****************** LastBisector ******************/
 		%feature("compactdefaultargs") LastBisector;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Bisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Bisector>
 ") LastBisector;
 		opencascade::handle<MAT_Bisector> LastBisector();
 
 		/****************** List ******************/
 		%feature("compactdefaultargs") List;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_ListOfBisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_ListOfBisector>
 ") List;
 		opencascade::handle<MAT_ListOfBisector> List();
 
 		/****************** MAT_Bisector ******************/
 		%feature("compactdefaultargs") MAT_Bisector;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") MAT_Bisector;
 		 MAT_Bisector();
 
 		/****************** SecondEdge ******************/
 		%feature("compactdefaultargs") SecondEdge;
-		%feature("autodoc", "	:param anedge:
-	:type anedge: MAT_Edge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anedge: MAT_Edge
+
+Returns
+-------
+None
 ") SecondEdge;
 		void SecondEdge(const opencascade::handle<MAT_Edge> & anedge);
 
 		/****************** SecondEdge ******************/
 		%feature("compactdefaultargs") SecondEdge;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Edge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Edge>
 ") SecondEdge;
 		opencascade::handle<MAT_Edge> SecondEdge();
 
 		/****************** SecondParameter ******************/
 		%feature("compactdefaultargs") SecondParameter;
-		%feature("autodoc", "	:param aparameter:
-	:type aparameter: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aparameter: float
+
+Returns
+-------
+None
 ") SecondParameter;
 		void SecondParameter(const Standard_Real aparameter);
 
 		/****************** SecondParameter ******************/
 		%feature("compactdefaultargs") SecondParameter;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") SecondParameter;
 		Standard_Real SecondParameter();
 
 		/****************** SecondVector ******************/
 		%feature("compactdefaultargs") SecondVector;
-		%feature("autodoc", "	:param avector:
-	:type avector: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+avector: int
+
+Returns
+-------
+None
 ") SecondVector;
 		void SecondVector(const Standard_Integer avector);
 
 		/****************** SecondVector ******************/
 		%feature("compactdefaultargs") SecondVector;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") SecondVector;
 		Standard_Integer SecondVector();
 
 		/****************** Sense ******************/
 		%feature("compactdefaultargs") Sense;
-		%feature("autodoc", "	:param asense:
-	:type asense: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+asense: float
+
+Returns
+-------
+None
 ") Sense;
 		void Sense(const Standard_Real asense);
 
 		/****************** Sense ******************/
 		%feature("compactdefaultargs") Sense;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Sense;
 		Standard_Real Sense();
 
@@ -655,87 +913,146 @@ class MAT_Edge : public Standard_Transient {
 	public:
 		/****************** Distance ******************/
 		%feature("compactdefaultargs") Distance;
-		%feature("autodoc", "	:param adistance:
-	:type adistance: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+adistance: float
+
+Returns
+-------
+None
 ") Distance;
 		void Distance(const Standard_Real adistance);
 
 		/****************** Distance ******************/
 		%feature("compactdefaultargs") Distance;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Distance;
 		Standard_Real Distance();
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:param ashift:
-	:type ashift: int
-	:param alevel:
-	:type alevel: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ashift: int
+alevel: int
+
+Returns
+-------
+None
 ") Dump;
 		void Dump(const Standard_Integer ashift, const Standard_Integer alevel);
 
 		/****************** EdgeNumber ******************/
 		%feature("compactdefaultargs") EdgeNumber;
-		%feature("autodoc", "	:param anumber:
-	:type anumber: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anumber: int
+
+Returns
+-------
+None
 ") EdgeNumber;
 		void EdgeNumber(const Standard_Integer anumber);
 
 		/****************** EdgeNumber ******************/
 		%feature("compactdefaultargs") EdgeNumber;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") EdgeNumber;
 		Standard_Integer EdgeNumber();
 
 		/****************** FirstBisector ******************/
 		%feature("compactdefaultargs") FirstBisector;
-		%feature("autodoc", "	:param abisector:
-	:type abisector: MAT_Bisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+abisector: MAT_Bisector
+
+Returns
+-------
+None
 ") FirstBisector;
 		void FirstBisector(const opencascade::handle<MAT_Bisector> & abisector);
 
 		/****************** FirstBisector ******************/
 		%feature("compactdefaultargs") FirstBisector;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Bisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Bisector>
 ") FirstBisector;
 		opencascade::handle<MAT_Bisector> FirstBisector();
 
 		/****************** IntersectionPoint ******************/
 		%feature("compactdefaultargs") IntersectionPoint;
-		%feature("autodoc", "	:param apoint:
-	:type apoint: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+apoint: int
+
+Returns
+-------
+None
 ") IntersectionPoint;
 		void IntersectionPoint(const Standard_Integer apoint);
 
 		/****************** IntersectionPoint ******************/
 		%feature("compactdefaultargs") IntersectionPoint;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") IntersectionPoint;
 		Standard_Integer IntersectionPoint();
 
 		/****************** MAT_Edge ******************/
 		%feature("compactdefaultargs") MAT_Edge;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") MAT_Edge;
 		 MAT_Edge();
 
 		/****************** SecondBisector ******************/
 		%feature("compactdefaultargs") SecondBisector;
-		%feature("autodoc", "	:param abisector:
-	:type abisector: MAT_Bisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+abisector: MAT_Bisector
+
+Returns
+-------
+None
 ") SecondBisector;
 		void SecondBisector(const opencascade::handle<MAT_Bisector> & abisector);
 
 		/****************** SecondBisector ******************/
 		%feature("compactdefaultargs") SecondBisector;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Bisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Bisector>
 ") SecondBisector;
 		opencascade::handle<MAT_Bisector> SecondBisector();
 
@@ -759,9 +1076,13 @@ class MAT_Graph : public Standard_Transient {
 		%feature("compactdefaultargs") Arc;
 		%feature("autodoc", "Return the arc of index <index> in <thearcs>.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<MAT_Arc>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<MAT_Arc>
 ") Arc;
 		opencascade::handle<MAT_Arc> Arc(const Standard_Integer Index);
 
@@ -769,37 +1090,61 @@ class MAT_Graph : public Standard_Transient {
 		%feature("compactdefaultargs") BasicElt;
 		%feature("autodoc", "Return the basicelt of index <index> in <thebasicelts>.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<MAT_BasicElt>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<MAT_BasicElt>
 ") BasicElt;
 		opencascade::handle<MAT_BasicElt> BasicElt(const Standard_Integer Index);
 
 		/****************** ChangeBasicElt ******************/
 		%feature("compactdefaultargs") ChangeBasicElt;
-		%feature("autodoc", "	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<MAT_BasicElt>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<MAT_BasicElt>
 ") ChangeBasicElt;
 		opencascade::handle<MAT_BasicElt> ChangeBasicElt(const Standard_Integer Index);
 
 		/****************** ChangeBasicElts ******************/
 		%feature("compactdefaultargs") ChangeBasicElts;
-		%feature("autodoc", "	:param NewMap:
-	:type NewMap: MAT_DataMapOfIntegerBasicElt
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NewMap: MAT_DataMapOfIntegerBasicElt
+
+Returns
+-------
+None
 ") ChangeBasicElts;
 		void ChangeBasicElts(const MAT_DataMapOfIntegerBasicElt & NewMap);
 
 		/****************** CompactArcs ******************/
 		%feature("compactdefaultargs") CompactArcs;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") CompactArcs;
 		void CompactArcs();
 
 		/****************** CompactNodes ******************/
 		%feature("compactdefaultargs") CompactNodes;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") CompactNodes;
 		void CompactNodes();
 
@@ -807,23 +1152,20 @@ class MAT_Graph : public Standard_Transient {
 		%feature("compactdefaultargs") FusionOfBasicElts;
 		%feature("autodoc", "Merge two basicelts. the end of the basicelt elt1 of indexelt1 becomes the end of the basicelt elt2 of indexelt2. elt2 is replaced in the arcs by elt1, elt2 is eliminated. //! <mergearc1> is true if the fusion of the basicelts => a fusion of two arcs which separated the same elements. in this case <geomindexarc1> and <geomindexarc2> are the geometric index of this arcs. //! if the basicelt corresponds to a close line , the startarc and the endarc of elt1 can separate the same elements . in this case there is a fusion of this arcs, <mergearc2> is true and <geomindexarc3> and <geomindexarc4> are the geometric index of this arcs.
 
-	:param IndexElt1:
-	:type IndexElt1: int
-	:param IndexElt2:
-	:type IndexElt2: int
-	:param MergeArc1:
-	:type MergeArc1: bool
-	:param GeomIndexArc1:
-	:type GeomIndexArc1: int
-	:param GeomIndexArc2:
-	:type GeomIndexArc2: int
-	:param MergeArc2:
-	:type MergeArc2: bool
-	:param GeomIndexArc3:
-	:type GeomIndexArc3: int
-	:param GeomIndexArc4:
-	:type GeomIndexArc4: int
-	:rtype: None
+Parameters
+----------
+IndexElt1: int
+IndexElt2: int
+MergeArc1: bool
+GeomIndexArc1: int
+GeomIndexArc2: int
+MergeArc2: bool
+GeomIndexArc3: int
+GeomIndexArc4: int
+
+Returns
+-------
+None
 ") FusionOfBasicElts;
 		void FusionOfBasicElts(const Standard_Integer IndexElt1, const Standard_Integer IndexElt2, Standard_Boolean &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
@@ -831,7 +1173,9 @@ class MAT_Graph : public Standard_Transient {
 		%feature("compactdefaultargs") MAT_Graph;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") MAT_Graph;
 		 MAT_Graph();
 
@@ -839,9 +1183,13 @@ class MAT_Graph : public Standard_Transient {
 		%feature("compactdefaultargs") Node;
 		%feature("autodoc", "Return the node of index <index> in <thenodes>.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<MAT_Node>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<MAT_Node>
 ") Node;
 		opencascade::handle<MAT_Node> Node(const Standard_Integer Index);
 
@@ -849,7 +1197,9 @@ class MAT_Graph : public Standard_Transient {
 		%feature("compactdefaultargs") NumberOfArcs;
 		%feature("autodoc", "Return the number of arcs of <self>.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfArcs;
 		Standard_Integer NumberOfArcs();
 
@@ -857,7 +1207,9 @@ class MAT_Graph : public Standard_Transient {
 		%feature("compactdefaultargs") NumberOfBasicElts;
 		%feature("autodoc", "Return the number of basic elements of <self>.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfBasicElts;
 		Standard_Integer NumberOfBasicElts();
 
@@ -865,7 +1217,9 @@ class MAT_Graph : public Standard_Transient {
 		%feature("compactdefaultargs") NumberOfInfiniteNodes;
 		%feature("autodoc", "Return the number of infinites nodes of <self>.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfInfiniteNodes;
 		Standard_Integer NumberOfInfiniteNodes();
 
@@ -873,7 +1227,9 @@ class MAT_Graph : public Standard_Transient {
 		%feature("compactdefaultargs") NumberOfNodes;
 		%feature("autodoc", "Return the number of nodes of <self>.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfNodes;
 		Standard_Integer NumberOfNodes();
 
@@ -881,15 +1237,16 @@ class MAT_Graph : public Standard_Transient {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Construct <self> from the result of the method <createmat> of the class <mat> from <mat>. //! <semiinfinite> : if some bisector are infinites. <theroots> : set of the bisectors. <nbbasicelts> : number of basic elements. <nbarcs> : number of arcs = number of bisectors.
 
-	:param SemiInfinite:
-	:type SemiInfinite: bool
-	:param TheRoots:
-	:type TheRoots: MAT_ListOfBisector
-	:param NbBasicElts:
-	:type NbBasicElts: int
-	:param NbArcs:
-	:type NbArcs: int
-	:rtype: None
+Parameters
+----------
+SemiInfinite: bool
+TheRoots: MAT_ListOfBisector
+NbBasicElts: int
+NbArcs: int
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const Standard_Boolean SemiInfinite, const opencascade::handle<MAT_ListOfBisector> & TheRoots, const Standard_Integer NbBasicElts, const Standard_Integer NbArcs);
 
@@ -911,169 +1268,284 @@ class MAT_ListOfBisector : public Standard_Transient {
 	public:
 		/****************** BackAdd ******************/
 		%feature("compactdefaultargs") BackAdd;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Bisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Bisector
+
+Returns
+-------
+None
 ") BackAdd;
 		void BackAdd(const opencascade::handle<MAT_Bisector> & anitem);
 
 		/****************** Brackets ******************/
 		%feature("compactdefaultargs") Brackets;
-		%feature("autodoc", "	:param anindex:
-	:type anindex: int
-	:rtype: opencascade::handle<MAT_Bisector>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anindex: int
+
+Returns
+-------
+opencascade::handle<MAT_Bisector>
 ") Brackets;
 		opencascade::handle<MAT_Bisector> Brackets(const Standard_Integer anindex);
 
 		/****************** Current ******************/
 		%feature("compactdefaultargs") Current;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Bisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Bisector>
 ") Current;
 		opencascade::handle<MAT_Bisector> Current();
 
 		/****************** Current ******************/
 		%feature("compactdefaultargs") Current;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Bisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Bisector
+
+Returns
+-------
+None
 ") Current;
 		void Current(const opencascade::handle<MAT_Bisector> & anitem);
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:param ashift:
-	:type ashift: int
-	:param alevel:
-	:type alevel: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ashift: int
+alevel: int
+
+Returns
+-------
+None
 ") Dump;
 		void Dump(const Standard_Integer ashift, const Standard_Integer alevel);
 
 		/****************** First ******************/
 		%feature("compactdefaultargs") First;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") First;
 		void First();
 
 		/****************** FirstItem ******************/
 		%feature("compactdefaultargs") FirstItem;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Bisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Bisector>
 ") FirstItem;
 		opencascade::handle<MAT_Bisector> FirstItem();
 
 		/****************** FrontAdd ******************/
 		%feature("compactdefaultargs") FrontAdd;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Bisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Bisector
+
+Returns
+-------
+None
 ") FrontAdd;
 		void FrontAdd(const opencascade::handle<MAT_Bisector> & anitem);
 
 		/****************** Index ******************/
 		%feature("compactdefaultargs") Index;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aniten:
-	:type aniten: MAT_Bisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aniten: MAT_Bisector
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<MAT_Bisector> & aniten);
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
 		/****************** Last ******************/
 		%feature("compactdefaultargs") Last;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Last;
 		void Last();
 
 		/****************** LastItem ******************/
 		%feature("compactdefaultargs") LastItem;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Bisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Bisector>
 ") LastItem;
 		opencascade::handle<MAT_Bisector> LastItem();
 
 		/****************** LinkAfter ******************/
 		%feature("compactdefaultargs") LinkAfter;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Bisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Bisector
+
+Returns
+-------
+None
 ") LinkAfter;
 		void LinkAfter(const opencascade::handle<MAT_Bisector> & anitem);
 
 		/****************** LinkBefore ******************/
 		%feature("compactdefaultargs") LinkBefore;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Bisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Bisector
+
+Returns
+-------
+None
 ") LinkBefore;
 		void LinkBefore(const opencascade::handle<MAT_Bisector> & anitem);
 
 		/****************** Loop ******************/
 		%feature("compactdefaultargs") Loop;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Loop;
 		void Loop();
 
 		/****************** MAT_ListOfBisector ******************/
 		%feature("compactdefaultargs") MAT_ListOfBisector;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") MAT_ListOfBisector;
 		 MAT_ListOfBisector();
 
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Next;
 		void Next();
 
 		/****************** NextItem ******************/
 		%feature("compactdefaultargs") NextItem;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Bisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Bisector>
 ") NextItem;
 		opencascade::handle<MAT_Bisector> NextItem();
 
 		/****************** Number ******************/
 		%feature("compactdefaultargs") Number;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Number;
 		Standard_Integer Number();
 
 		/****************** Permute ******************/
 		%feature("compactdefaultargs") Permute;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Permute;
 		void Permute();
 
 		/****************** Previous ******************/
 		%feature("compactdefaultargs") Previous;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Previous;
 		void Previous();
 
 		/****************** PreviousItem ******************/
 		%feature("compactdefaultargs") PreviousItem;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Bisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Bisector>
 ") PreviousItem;
 		opencascade::handle<MAT_Bisector> PreviousItem();
 
 		/****************** Unlink ******************/
 		%feature("compactdefaultargs") Unlink;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Unlink;
 		void Unlink();
 
@@ -1095,169 +1567,284 @@ class MAT_ListOfEdge : public Standard_Transient {
 	public:
 		/****************** BackAdd ******************/
 		%feature("compactdefaultargs") BackAdd;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Edge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Edge
+
+Returns
+-------
+None
 ") BackAdd;
 		void BackAdd(const opencascade::handle<MAT_Edge> & anitem);
 
 		/****************** Brackets ******************/
 		%feature("compactdefaultargs") Brackets;
-		%feature("autodoc", "	:param anindex:
-	:type anindex: int
-	:rtype: opencascade::handle<MAT_Edge>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anindex: int
+
+Returns
+-------
+opencascade::handle<MAT_Edge>
 ") Brackets;
 		opencascade::handle<MAT_Edge> Brackets(const Standard_Integer anindex);
 
 		/****************** Current ******************/
 		%feature("compactdefaultargs") Current;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Edge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Edge>
 ") Current;
 		opencascade::handle<MAT_Edge> Current();
 
 		/****************** Current ******************/
 		%feature("compactdefaultargs") Current;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Edge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Edge
+
+Returns
+-------
+None
 ") Current;
 		void Current(const opencascade::handle<MAT_Edge> & anitem);
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "	:param ashift:
-	:type ashift: int
-	:param alevel:
-	:type alevel: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ashift: int
+alevel: int
+
+Returns
+-------
+None
 ") Dump;
 		void Dump(const Standard_Integer ashift, const Standard_Integer alevel);
 
 		/****************** First ******************/
 		%feature("compactdefaultargs") First;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") First;
 		void First();
 
 		/****************** FirstItem ******************/
 		%feature("compactdefaultargs") FirstItem;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Edge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Edge>
 ") FirstItem;
 		opencascade::handle<MAT_Edge> FirstItem();
 
 		/****************** FrontAdd ******************/
 		%feature("compactdefaultargs") FrontAdd;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Edge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Edge
+
+Returns
+-------
+None
 ") FrontAdd;
 		void FrontAdd(const opencascade::handle<MAT_Edge> & anitem);
 
 		/****************** Index ******************/
 		%feature("compactdefaultargs") Index;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "	:param aniten:
-	:type aniten: MAT_Edge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aniten: MAT_Edge
+
+Returns
+-------
+None
 ") Init;
 		void Init(const opencascade::handle<MAT_Edge> & aniten);
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
 		/****************** Last ******************/
 		%feature("compactdefaultargs") Last;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Last;
 		void Last();
 
 		/****************** LastItem ******************/
 		%feature("compactdefaultargs") LastItem;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Edge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Edge>
 ") LastItem;
 		opencascade::handle<MAT_Edge> LastItem();
 
 		/****************** LinkAfter ******************/
 		%feature("compactdefaultargs") LinkAfter;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Edge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Edge
+
+Returns
+-------
+None
 ") LinkAfter;
 		void LinkAfter(const opencascade::handle<MAT_Edge> & anitem);
 
 		/****************** LinkBefore ******************/
 		%feature("compactdefaultargs") LinkBefore;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Edge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Edge
+
+Returns
+-------
+None
 ") LinkBefore;
 		void LinkBefore(const opencascade::handle<MAT_Edge> & anitem);
 
 		/****************** Loop ******************/
 		%feature("compactdefaultargs") Loop;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Loop;
 		void Loop();
 
 		/****************** MAT_ListOfEdge ******************/
 		%feature("compactdefaultargs") MAT_ListOfEdge;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") MAT_ListOfEdge;
 		 MAT_ListOfEdge();
 
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") More;
 		Standard_Boolean More();
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Next;
 		void Next();
 
 		/****************** NextItem ******************/
 		%feature("compactdefaultargs") NextItem;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Edge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Edge>
 ") NextItem;
 		opencascade::handle<MAT_Edge> NextItem();
 
 		/****************** Number ******************/
 		%feature("compactdefaultargs") Number;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") Number;
 		Standard_Integer Number();
 
 		/****************** Permute ******************/
 		%feature("compactdefaultargs") Permute;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Permute;
 		void Permute();
 
 		/****************** Previous ******************/
 		%feature("compactdefaultargs") Previous;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Previous;
 		void Previous();
 
 		/****************** PreviousItem ******************/
 		%feature("compactdefaultargs") PreviousItem;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Edge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Edge>
 ") PreviousItem;
 		opencascade::handle<MAT_Edge> PreviousItem();
 
 		/****************** Unlink ******************/
 		%feature("compactdefaultargs") Unlink;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Unlink;
 		void Unlink();
 
@@ -1279,7 +1866,11 @@ class MAT_Node : public Standard_Transient {
 	public:
 		/****************** Distance ******************/
 		%feature("compactdefaultargs") Distance;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") Distance;
 		Standard_Real Distance();
 
@@ -1287,7 +1878,9 @@ class MAT_Node : public Standard_Transient {
 		%feature("compactdefaultargs") GeomIndex;
 		%feature("autodoc", "Returns the index associated of the geometric representation of <self>.
 
-	:rtype: int
+Returns
+-------
+int
 ") GeomIndex;
 		Standard_Integer GeomIndex();
 
@@ -1295,7 +1888,9 @@ class MAT_Node : public Standard_Transient {
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "Returns the index associated of the node.
 
-	:rtype: int
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index();
 
@@ -1303,7 +1898,9 @@ class MAT_Node : public Standard_Transient {
 		%feature("compactdefaultargs") Infinite;
 		%feature("autodoc", "Returns true if the distance of <self> is infinite.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Infinite;
 		Standard_Boolean Infinite();
 
@@ -1311,21 +1908,29 @@ class MAT_Node : public Standard_Transient {
 		%feature("compactdefaultargs") LinkedArcs;
 		%feature("autodoc", "Returns in <s> the arcs linked to <self>.
 
-	:param S:
-	:type S: MAT_SequenceOfArc
-	:rtype: None
+Parameters
+----------
+S: MAT_SequenceOfArc
+
+Returns
+-------
+None
 ") LinkedArcs;
 		void LinkedArcs(MAT_SequenceOfArc & S);
 
 		/****************** MAT_Node ******************/
 		%feature("compactdefaultargs") MAT_Node;
-		%feature("autodoc", "	:param GeomIndex:
-	:type GeomIndex: int
-	:param LinkedArc:
-	:type LinkedArc: MAT_Arc
-	:param Distance:
-	:type Distance: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+GeomIndex: int
+LinkedArc: MAT_Arc
+Distance: float
+
+Returns
+-------
+None
 ") MAT_Node;
 		 MAT_Node(const Standard_Integer GeomIndex, const opencascade::handle<MAT_Arc> & LinkedArc, const Standard_Real Distance);
 
@@ -1333,9 +1938,13 @@ class MAT_Node : public Standard_Transient {
 		%feature("compactdefaultargs") NearElts;
 		%feature("autodoc", "Returns in <s> the basicelts equidistant to <self>.
 
-	:param S:
-	:type S: MAT_SequenceOfBasicElt
-	:rtype: None
+Parameters
+----------
+S: MAT_SequenceOfBasicElt
+
+Returns
+-------
+None
 ") NearElts;
 		void NearElts(MAT_SequenceOfBasicElt & S);
 
@@ -1343,7 +1952,9 @@ class MAT_Node : public Standard_Transient {
 		%feature("compactdefaultargs") OnBasicElt;
 		%feature("autodoc", "Returns true if <self> belongs to the figure.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") OnBasicElt;
 		Standard_Boolean OnBasicElt();
 
@@ -1351,7 +1962,9 @@ class MAT_Node : public Standard_Transient {
 		%feature("compactdefaultargs") PendingNode;
 		%feature("autodoc", "Returns true if <self> is a pending node. (ie : the number of arc linked = 1).
 
-	:rtype: bool
+Returns
+-------
+bool
 ") PendingNode;
 		Standard_Boolean PendingNode();
 
@@ -1359,17 +1972,27 @@ class MAT_Node : public Standard_Transient {
 		%feature("compactdefaultargs") SetIndex;
 		%feature("autodoc", "Set the index associated of the node.
 
-	:param anIndex:
-	:type anIndex: int
-	:rtype: None
+Parameters
+----------
+anIndex: int
+
+Returns
+-------
+None
 ") SetIndex;
 		void SetIndex(const Standard_Integer anIndex);
 
 		/****************** SetLinkedArc ******************/
 		%feature("compactdefaultargs") SetLinkedArc;
-		%feature("autodoc", "	:param anArc:
-	:type anArc: MAT_Arc
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anArc: MAT_Arc
+
+Returns
+-------
+None
 ") SetLinkedArc;
 		void SetLinkedArc(const opencascade::handle<MAT_Arc> & anArc);
 
@@ -1391,63 +2014,107 @@ class MAT_TListNodeOfListOfBisector : public Standard_Transient {
 	public:
 		/****************** Dummy ******************/
 		%feature("compactdefaultargs") Dummy;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Dummy;
 		void Dummy();
 
 		/****************** GetItem ******************/
 		%feature("compactdefaultargs") GetItem;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Bisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Bisector>
 ") GetItem;
 		opencascade::handle<MAT_Bisector> GetItem();
 
 		/****************** MAT_TListNodeOfListOfBisector ******************/
 		%feature("compactdefaultargs") MAT_TListNodeOfListOfBisector;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") MAT_TListNodeOfListOfBisector;
 		 MAT_TListNodeOfListOfBisector();
 
 		/****************** MAT_TListNodeOfListOfBisector ******************/
 		%feature("compactdefaultargs") MAT_TListNodeOfListOfBisector;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Bisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Bisector
+
+Returns
+-------
+None
 ") MAT_TListNodeOfListOfBisector;
 		 MAT_TListNodeOfListOfBisector(const opencascade::handle<MAT_Bisector> & anitem);
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_TListNodeOfListOfBisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_TListNodeOfListOfBisector>
 ") Next;
 		opencascade::handle<MAT_TListNodeOfListOfBisector> Next();
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
-		%feature("autodoc", "	:param atlistnode:
-	:type atlistnode: MAT_TListNodeOfListOfBisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+atlistnode: MAT_TListNodeOfListOfBisector
+
+Returns
+-------
+None
 ") Next;
 		void Next(const opencascade::handle<MAT_TListNodeOfListOfBisector> & atlistnode);
 
 		/****************** Previous ******************/
 		%feature("compactdefaultargs") Previous;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_TListNodeOfListOfBisector>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_TListNodeOfListOfBisector>
 ") Previous;
 		opencascade::handle<MAT_TListNodeOfListOfBisector> Previous();
 
 		/****************** Previous ******************/
 		%feature("compactdefaultargs") Previous;
-		%feature("autodoc", "	:param atlistnode:
-	:type atlistnode: MAT_TListNodeOfListOfBisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+atlistnode: MAT_TListNodeOfListOfBisector
+
+Returns
+-------
+None
 ") Previous;
 		void Previous(const opencascade::handle<MAT_TListNodeOfListOfBisector> & atlistnode);
 
 		/****************** SetItem ******************/
 		%feature("compactdefaultargs") SetItem;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Bisector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Bisector
+
+Returns
+-------
+None
 ") SetItem;
 		void SetItem(const opencascade::handle<MAT_Bisector> & anitem);
 
@@ -1469,63 +2136,107 @@ class MAT_TListNodeOfListOfEdge : public Standard_Transient {
 	public:
 		/****************** Dummy ******************/
 		%feature("compactdefaultargs") Dummy;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Dummy;
 		void Dummy();
 
 		/****************** GetItem ******************/
 		%feature("compactdefaultargs") GetItem;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_Edge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Edge>
 ") GetItem;
 		opencascade::handle<MAT_Edge> GetItem();
 
 		/****************** MAT_TListNodeOfListOfEdge ******************/
 		%feature("compactdefaultargs") MAT_TListNodeOfListOfEdge;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") MAT_TListNodeOfListOfEdge;
 		 MAT_TListNodeOfListOfEdge();
 
 		/****************** MAT_TListNodeOfListOfEdge ******************/
 		%feature("compactdefaultargs") MAT_TListNodeOfListOfEdge;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Edge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Edge
+
+Returns
+-------
+None
 ") MAT_TListNodeOfListOfEdge;
 		 MAT_TListNodeOfListOfEdge(const opencascade::handle<MAT_Edge> & anitem);
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_TListNodeOfListOfEdge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_TListNodeOfListOfEdge>
 ") Next;
 		opencascade::handle<MAT_TListNodeOfListOfEdge> Next();
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
-		%feature("autodoc", "	:param atlistnode:
-	:type atlistnode: MAT_TListNodeOfListOfEdge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+atlistnode: MAT_TListNodeOfListOfEdge
+
+Returns
+-------
+None
 ") Next;
 		void Next(const opencascade::handle<MAT_TListNodeOfListOfEdge> & atlistnode);
 
 		/****************** Previous ******************/
 		%feature("compactdefaultargs") Previous;
-		%feature("autodoc", "	:rtype: opencascade::handle<MAT_TListNodeOfListOfEdge>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_TListNodeOfListOfEdge>
 ") Previous;
 		opencascade::handle<MAT_TListNodeOfListOfEdge> Previous();
 
 		/****************** Previous ******************/
 		%feature("compactdefaultargs") Previous;
-		%feature("autodoc", "	:param atlistnode:
-	:type atlistnode: MAT_TListNodeOfListOfEdge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+atlistnode: MAT_TListNodeOfListOfEdge
+
+Returns
+-------
+None
 ") Previous;
 		void Previous(const opencascade::handle<MAT_TListNodeOfListOfEdge> & atlistnode);
 
 		/****************** SetItem ******************/
 		%feature("compactdefaultargs") SetItem;
-		%feature("autodoc", "	:param anitem:
-	:type anitem: MAT_Edge
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+anitem: MAT_Edge
+
+Returns
+-------
+None
 ") SetItem;
 		void SetItem(const opencascade::handle<MAT_Edge> & anitem);
 
@@ -1549,9 +2260,13 @@ class MAT_Zone : public Standard_Transient {
 		%feature("compactdefaultargs") ArcOnFrontier;
 		%feature("autodoc", "Return the arc number <index> on the frontier. of <self>.
 
-	:param Index:
-	:type Index: int
-	:rtype: opencascade::handle<MAT_Arc>
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<MAT_Arc>
 ") ArcOnFrontier;
 		opencascade::handle<MAT_Arc> ArcOnFrontier(const Standard_Integer Index);
 
@@ -1559,13 +2274,19 @@ class MAT_Zone : public Standard_Transient {
 		%feature("compactdefaultargs") Limited;
 		%feature("autodoc", "Return true if <self> is limited.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Limited;
 		Standard_Boolean Limited();
 
 		/****************** MAT_Zone ******************/
 		%feature("compactdefaultargs") MAT_Zone;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") MAT_Zone;
 		 MAT_Zone();
 
@@ -1573,9 +2294,13 @@ class MAT_Zone : public Standard_Transient {
 		%feature("compactdefaultargs") MAT_Zone;
 		%feature("autodoc", "Compute the frontier of the zone of proximity.
 
-	:param aBasicElt:
-	:type aBasicElt: MAT_BasicElt
-	:rtype: None
+Parameters
+----------
+aBasicElt: MAT_BasicElt
+
+Returns
+-------
+None
 ") MAT_Zone;
 		 MAT_Zone(const opencascade::handle<MAT_BasicElt> & aBasicElt);
 
@@ -1583,7 +2308,9 @@ class MAT_Zone : public Standard_Transient {
 		%feature("compactdefaultargs") NoEmptyZone;
 		%feature("autodoc", "Return true if <self> is not empty .
 
-	:rtype: bool
+Returns
+-------
+bool
 ") NoEmptyZone;
 		Standard_Boolean NoEmptyZone();
 
@@ -1591,7 +2318,9 @@ class MAT_Zone : public Standard_Transient {
 		%feature("compactdefaultargs") NumberOfArcs;
 		%feature("autodoc", "Return the number of arcs on the frontier of <self>.
 
-	:rtype: int
+Returns
+-------
+int
 ") NumberOfArcs;
 		Standard_Integer NumberOfArcs();
 
@@ -1599,9 +2328,13 @@ class MAT_Zone : public Standard_Transient {
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Compute the frontier of the zone of proximity.
 
-	:param aBasicElt:
-	:type aBasicElt: MAT_BasicElt
-	:rtype: None
+Parameters
+----------
+aBasicElt: MAT_BasicElt
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const opencascade::handle<MAT_BasicElt> & aBasicElt);
 

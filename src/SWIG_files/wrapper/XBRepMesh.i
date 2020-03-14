@@ -86,15 +86,18 @@ class XBRepMesh {
 	public:
 		/****************** Discret ******************/
 		%feature("compactdefaultargs") Discret;
-		%feature("autodoc", "	:param theShape:
-	:type theShape: TopoDS_Shape
-	:param theDeflection:
-	:type theDeflection: float
-	:param theAngle:
-	:type theAngle: float
-	:param theAlgo:
-	:type theAlgo: BRepMesh_DiscretRoot *
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theShape: TopoDS_Shape
+theDeflection: float
+theAngle: float
+theAlgo: BRepMesh_DiscretRoot *
+
+Returns
+-------
+int
 ") Discret;
 		static Standard_Integer Discret(const TopoDS_Shape & theShape, const Standard_Real theDeflection, const Standard_Real theAngle, BRepMesh_DiscretRoot * & theAlgo);
 

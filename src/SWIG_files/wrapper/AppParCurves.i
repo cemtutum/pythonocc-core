@@ -235,57 +235,69 @@ class AppParCurves {
 	public:
 		/****************** Bernstein ******************/
 		%feature("compactdefaultargs") Bernstein;
-		%feature("autodoc", "	:param NbPoles:
-	:type NbPoles: int
-	:param U:
-	:type U: math_Vector
-	:param A:
-	:type A: math_Matrix
-	:param DA:
-	:type DA: math_Matrix
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbPoles: int
+U: math_Vector
+A: math_Matrix
+DA: math_Matrix
+
+Returns
+-------
+None
 ") Bernstein;
 		static void Bernstein(const Standard_Integer NbPoles, const math_Vector & U, math_Matrix & A, math_Matrix & DA);
 
 		/****************** BernsteinMatrix ******************/
 		%feature("compactdefaultargs") BernsteinMatrix;
-		%feature("autodoc", "	:param NbPoles:
-	:type NbPoles: int
-	:param U:
-	:type U: math_Vector
-	:param A:
-	:type A: math_Matrix
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbPoles: int
+U: math_Vector
+A: math_Matrix
+
+Returns
+-------
+None
 ") BernsteinMatrix;
 		static void BernsteinMatrix(const Standard_Integer NbPoles, const math_Vector & U, math_Matrix & A);
 
 		/****************** SecondDerivativeBernstein ******************/
 		%feature("compactdefaultargs") SecondDerivativeBernstein;
-		%feature("autodoc", "	:param U:
-	:type U: float
-	:param DDA:
-	:type DDA: math_Vector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+U: float
+DDA: math_Vector
+
+Returns
+-------
+None
 ") SecondDerivativeBernstein;
 		static void SecondDerivativeBernstein(const Standard_Real U, math_Vector & DDA);
 
 		/****************** SplineFunction ******************/
 		%feature("compactdefaultargs") SplineFunction;
-		%feature("autodoc", "	:param NbPoles:
-	:type NbPoles: int
-	:param Degree:
-	:type Degree: int
-	:param Parameters:
-	:type Parameters: math_Vector
-	:param FlatKnots:
-	:type FlatKnots: math_Vector
-	:param A:
-	:type A: math_Matrix
-	:param DA:
-	:type DA: math_Matrix
-	:param Index:
-	:type Index: math_IntegerVector
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+NbPoles: int
+Degree: int
+Parameters: math_Vector
+FlatKnots: math_Vector
+A: math_Matrix
+DA: math_Matrix
+Index: math_IntegerVector
+
+Returns
+-------
+None
 ") SplineFunction;
 		static void SplineFunction(const Standard_Integer NbPoles, const Standard_Integer Degree, const math_Vector & Parameters, const math_Vector & FlatKnots, math_Matrix & A, math_Matrix & DA, math_IntegerVector & Index);
 
@@ -307,7 +319,9 @@ class AppParCurves_ConstraintCouple {
 		%feature("compactdefaultargs") AppParCurves_ConstraintCouple;
 		%feature("autodoc", "Returns an indefinite constraintcouple.
 
-	:rtype: None
+Returns
+-------
+None
 ") AppParCurves_ConstraintCouple;
 		 AppParCurves_ConstraintCouple();
 
@@ -315,11 +329,14 @@ class AppParCurves_ConstraintCouple {
 		%feature("compactdefaultargs") AppParCurves_ConstraintCouple;
 		%feature("autodoc", "Create a couple the object <index> will have the constraint <cons>.
 
-	:param TheIndex:
-	:type TheIndex: int
-	:param Cons:
-	:type Cons: AppParCurves_Constraint
-	:rtype: None
+Parameters
+----------
+TheIndex: int
+Cons: AppParCurves_Constraint
+
+Returns
+-------
+None
 ") AppParCurves_ConstraintCouple;
 		 AppParCurves_ConstraintCouple(const Standard_Integer TheIndex, const AppParCurves_Constraint Cons);
 
@@ -327,7 +344,9 @@ class AppParCurves_ConstraintCouple {
 		%feature("compactdefaultargs") Constraint;
 		%feature("autodoc", "Returns the constraint of the object.
 
-	:rtype: AppParCurves_Constraint
+Returns
+-------
+AppParCurves_Constraint
 ") Constraint;
 		AppParCurves_Constraint Constraint();
 
@@ -335,7 +354,9 @@ class AppParCurves_ConstraintCouple {
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "Returns the index of the constraint object.
 
-	:rtype: int
+Returns
+-------
+int
 ") Index;
 		Standard_Integer Index();
 
@@ -343,9 +364,13 @@ class AppParCurves_ConstraintCouple {
 		%feature("compactdefaultargs") SetConstraint;
 		%feature("autodoc", "Changes the constraint of the object.
 
-	:param Cons:
-	:type Cons: AppParCurves_Constraint
-	:rtype: None
+Parameters
+----------
+Cons: AppParCurves_Constraint
+
+Returns
+-------
+None
 ") SetConstraint;
 		void SetConstraint(const AppParCurves_Constraint Cons);
 
@@ -353,9 +378,13 @@ class AppParCurves_ConstraintCouple {
 		%feature("compactdefaultargs") SetIndex;
 		%feature("autodoc", "Changes the index of the constraint object.
 
-	:param TheIndex:
-	:type TheIndex: int
-	:rtype: None
+Parameters
+----------
+TheIndex: int
+
+Returns
+-------
+None
 ") SetIndex;
 		void SetIndex(const Standard_Integer TheIndex);
 
@@ -377,7 +406,9 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") AppParCurves_MultiCurve;
 		%feature("autodoc", "Returns an indefinite multicurve.
 
-	:rtype: None
+Returns
+-------
+None
 ") AppParCurves_MultiCurve;
 		 AppParCurves_MultiCurve();
 
@@ -385,9 +416,13 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") AppParCurves_MultiCurve;
 		%feature("autodoc", "Creates a multicurve, describing bezier curves all containing the same number of multipoint. an exception is raised if degree < 0.
 
-	:param NbPol:
-	:type NbPol: int
-	:rtype: None
+Parameters
+----------
+NbPol: int
+
+Returns
+-------
+None
 ") AppParCurves_MultiCurve;
 		 AppParCurves_MultiCurve(const Standard_Integer NbPol);
 
@@ -395,9 +430,13 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") AppParCurves_MultiCurve;
 		%feature("autodoc", "Creates a multicurve, describing bezier curves all containing the same number of multipoint. each multipoint must have nbcurves poles.
 
-	:param tabMU:
-	:type tabMU: AppParCurves_Array1OfMultiPoint
-	:rtype: None
+Parameters
+----------
+tabMU: AppParCurves_Array1OfMultiPoint
+
+Returns
+-------
+None
 ") AppParCurves_MultiCurve;
 		 AppParCurves_MultiCurve(const AppParCurves_Array1OfMultiPoint & tabMU);
 
@@ -405,11 +444,14 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Returns the pole array of the curve of range cuindex. an exception is raised if the dimension of the curve is 2d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param TabPnt:
-	:type TabPnt: TColgp_Array1OfPnt
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+TabPnt: TColgp_Array1OfPnt
+
+Returns
+-------
+None
 ") Curve;
 		void Curve(const Standard_Integer CuIndex, TColgp_Array1OfPnt & TabPnt);
 
@@ -417,11 +459,14 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Returns the pole array of the curve of range cuindex. an exception is raised if the dimension of the curve is 3d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param TabPnt:
-	:type TabPnt: TColgp_Array1OfPnt2d
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+TabPnt: TColgp_Array1OfPnt2d
+
+Returns
+-------
+None
 ") Curve;
 		void Curve(const Standard_Integer CuIndex, TColgp_Array1OfPnt2d & TabPnt);
 
@@ -429,15 +474,16 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Returns the value of the point with a parameter u on the bezier curve number cuindex. an exception is raised if cuindex <0 or > nbcurves. an exception is raised if the curve dimension is 3d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param U:
-	:type U: float
-	:param Pt:
-	:type Pt: gp_Pnt
-	:param V1:
-	:type V1: gp_Vec
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+U: float
+Pt: gp_Pnt
+V1: gp_Vec
+
+Returns
+-------
+None
 ") D1;
 		virtual void D1(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt, gp_Vec & V1);
 
@@ -445,15 +491,16 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Returns the value of the point with a parameter u on the bezier curve number cuindex. an exception is raised if cuindex <0 or > nbcurves. an exception is raised if the curve dimension is 2d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param U:
-	:type U: float
-	:param Pt:
-	:type Pt: gp_Pnt2d
-	:param V1:
-	:type V1: gp_Vec2d
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+U: float
+Pt: gp_Pnt2d
+V1: gp_Vec2d
+
+Returns
+-------
+None
 ") D1;
 		virtual void D1(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt, gp_Vec2d & V1);
 
@@ -461,17 +508,17 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "Returns the value of the point with a parameter u on the bezier curve number cuindex. an exception is raised if cuindex <0 or > nbcurves. an exception is raised if the curve dimension is 3d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param U:
-	:type U: float
-	:param Pt:
-	:type Pt: gp_Pnt
-	:param V1:
-	:type V1: gp_Vec
-	:param V2:
-	:type V2: gp_Vec
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+U: float
+Pt: gp_Pnt
+V1: gp_Vec
+V2: gp_Vec
+
+Returns
+-------
+None
 ") D2;
 		virtual void D2(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt, gp_Vec & V1, gp_Vec & V2);
 
@@ -479,17 +526,17 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "Returns the value of the point with a parameter u on the bezier curve number cuindex. an exception is raised if cuindex <0 or > nbcurves. an exception is raised if the curve dimension is 2d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param U:
-	:type U: float
-	:param Pt:
-	:type Pt: gp_Pnt2d
-	:param V1:
-	:type V1: gp_Vec2d
-	:param V2:
-	:type V2: gp_Vec2d
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+U: float
+Pt: gp_Pnt2d
+V1: gp_Vec2d
+V2: gp_Vec2d
+
+Returns
+-------
+None
 ") D2;
 		virtual void D2(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt, gp_Vec2d & V1, gp_Vec2d & V2);
 
@@ -497,7 +544,9 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Degree;
 		%feature("autodoc", "Returns the degree of the curves.
 
-	:rtype: int
+Returns
+-------
+int
 ") Degree;
 		virtual Standard_Integer Degree();
 
@@ -505,9 +554,13 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Dimension;
 		%feature("autodoc", "Returns the dimension of the cuindex curve. an exception is raised if cuindex<0 or cuindex>nbcurves.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:rtype: int
+Parameters
+----------
+CuIndex: int
+
+Returns
+-------
+int
 ") Dimension;
 		Standard_Integer Dimension(const Standard_Integer CuIndex);
 
@@ -523,7 +576,9 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") NbCurves;
 		%feature("autodoc", "Returns the number of curves resulting from the approximation of a multiline.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbCurves;
 		Standard_Integer NbCurves();
 
@@ -531,7 +586,9 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") NbPoles;
 		%feature("autodoc", "Returns the number of poles on curves resulting from the approximation of a multiline.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoles;
 		virtual Standard_Integer NbPoles();
 
@@ -539,11 +596,14 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Pole;
 		%feature("autodoc", "Returns the nieme pole of the cuindex curve. the curve must be a 3d curve.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param Nieme:
-	:type Nieme: int
-	:rtype: gp_Pnt
+Parameters
+----------
+CuIndex: int
+Nieme: int
+
+Returns
+-------
+gp_Pnt
 ") Pole;
 		const gp_Pnt Pole(const Standard_Integer CuIndex, const Standard_Integer Nieme);
 
@@ -551,11 +611,14 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Pole2d;
 		%feature("autodoc", "Returns the nieme pole of the cuindex curve. the curve must be a 2d curve.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param Nieme:
-	:type Nieme: int
-	:rtype: gp_Pnt2d
+Parameters
+----------
+CuIndex: int
+Nieme: int
+
+Returns
+-------
+gp_Pnt2d
 ") Pole2d;
 		const gp_Pnt2d Pole2d(const Standard_Integer CuIndex, const Standard_Integer Nieme);
 
@@ -563,9 +626,13 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") SetNbPoles;
 		%feature("autodoc", "The number of poles of the multicurve will be set to <nbpoles>.
 
-	:param nbPoles:
-	:type nbPoles: int
-	:rtype: None
+Parameters
+----------
+nbPoles: int
+
+Returns
+-------
+None
 ") SetNbPoles;
 		void SetNbPoles(const Standard_Integer nbPoles);
 
@@ -573,11 +640,14 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") SetValue;
 		%feature("autodoc", "Sets the multipoint of range index to the value <mpoint>. an exception is raised if index <0 or index >nbmpoint.
 
-	:param Index:
-	:type Index: int
-	:param MPoint:
-	:type MPoint: AppParCurves_MultiPoint
-	:rtype: None
+Parameters
+----------
+Index: int
+MPoint: AppParCurves_MultiPoint
+
+Returns
+-------
+None
 ") SetValue;
 		void SetValue(const Standard_Integer Index, const AppParCurves_MultiPoint & MPoint);
 
@@ -585,21 +655,19 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Transform;
 		%feature("autodoc", "Applies a transformation to the curve of range <cuindex>. newx = x + dx*oldx newy = y + dy*oldy for all points of the curve. newz = z + dz*oldz.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param x:
-	:type x: float
-	:param dx:
-	:type dx: float
-	:param y:
-	:type y: float
-	:param dy:
-	:type dy: float
-	:param z:
-	:type z: float
-	:param dz:
-	:type dz: float
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+x: float
+dx: float
+y: float
+dy: float
+z: float
+dz: float
+
+Returns
+-------
+None
 ") Transform;
 		void Transform(const Standard_Integer CuIndex, const Standard_Real x, const Standard_Real dx, const Standard_Real y, const Standard_Real dy, const Standard_Real z, const Standard_Real dz);
 
@@ -607,17 +675,17 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Transform2d;
 		%feature("autodoc", "Applies a transformation to the curve of range <cuindex>. newx = x + dx*oldx newy = y + dy*oldy for all points of the curve.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param x:
-	:type x: float
-	:param dx:
-	:type dx: float
-	:param y:
-	:type y: float
-	:param dy:
-	:type dy: float
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+x: float
+dx: float
+y: float
+dy: float
+
+Returns
+-------
+None
 ") Transform2d;
 		void Transform2d(const Standard_Integer CuIndex, const Standard_Real x, const Standard_Real dx, const Standard_Real y, const Standard_Real dy);
 
@@ -625,9 +693,13 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the index multipoint. an exception is raised if index <0 or index >degree+1.
 
-	:param Index:
-	:type Index: int
-	:rtype: AppParCurves_MultiPoint
+Parameters
+----------
+Index: int
+
+Returns
+-------
+AppParCurves_MultiPoint
 ") Value;
 		const AppParCurves_MultiPoint & Value(const Standard_Integer Index);
 
@@ -635,13 +707,15 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the value of the point with a parameter u on the bezier curve number cuindex. an exception is raised if cuindex <0 or > nbcurves. an exception is raised if the curve dimension is 2d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param U:
-	:type U: float
-	:param Pt:
-	:type Pt: gp_Pnt
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+U: float
+Pt: gp_Pnt
+
+Returns
+-------
+None
 ") Value;
 		virtual void Value(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt);
 
@@ -649,13 +723,15 @@ class AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the value of the point with a parameter u on the bezier curve number cuindex. an exception is raised if cuindex <0 or > nbcurves. an exception is raised if the curve dimension is 3d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param U:
-	:type U: float
-	:param Pt:
-	:type Pt: gp_Pnt2d
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+U: float
+Pt: gp_Pnt2d
+
+Returns
+-------
+None
 ") Value;
 		virtual void Value(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt);
 
@@ -677,7 +753,9 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") AppParCurves_MultiPoint;
 		%feature("autodoc", "Creates an indefinite multipoint.
 
-	:rtype: None
+Returns
+-------
+None
 ") AppParCurves_MultiPoint;
 		 AppParCurves_MultiPoint();
 
@@ -685,11 +763,14 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") AppParCurves_MultiPoint;
 		%feature("autodoc", "Constructs a set of points used to approximate a multiline. these points can be of 2 or 3 dimensions. points will be initialized with setpoint and setpoint2d. nbpoints is the number of 3d points. nbpoints2d is the number of 2d points.
 
-	:param NbPoints:
-	:type NbPoints: int
-	:param NbPoints2d:
-	:type NbPoints2d: int
-	:rtype: None
+Parameters
+----------
+NbPoints: int
+NbPoints2d: int
+
+Returns
+-------
+None
 ") AppParCurves_MultiPoint;
 		 AppParCurves_MultiPoint(const Standard_Integer NbPoints, const Standard_Integer NbPoints2d);
 
@@ -697,9 +778,13 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") AppParCurves_MultiPoint;
 		%feature("autodoc", "Creates a multipoint only composed of 3d points.
 
-	:param tabP:
-	:type tabP: TColgp_Array1OfPnt
-	:rtype: None
+Parameters
+----------
+tabP: TColgp_Array1OfPnt
+
+Returns
+-------
+None
 ") AppParCurves_MultiPoint;
 		 AppParCurves_MultiPoint(const TColgp_Array1OfPnt & tabP);
 
@@ -707,9 +792,13 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") AppParCurves_MultiPoint;
 		%feature("autodoc", "Creates a multipoint only composed of 2d points.
 
-	:param tabP2d:
-	:type tabP2d: TColgp_Array1OfPnt2d
-	:rtype: None
+Parameters
+----------
+tabP2d: TColgp_Array1OfPnt2d
+
+Returns
+-------
+None
 ") AppParCurves_MultiPoint;
 		 AppParCurves_MultiPoint(const TColgp_Array1OfPnt2d & tabP2d);
 
@@ -717,11 +806,14 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") AppParCurves_MultiPoint;
 		%feature("autodoc", "Constructs a set of points used to approximate a multiline. these points can be of 2 or 3 dimensions. points will be initialized with setpoint and setpoint2d. nbpoints is the total number of points.
 
-	:param tabP:
-	:type tabP: TColgp_Array1OfPnt
-	:param tabP2d:
-	:type tabP2d: TColgp_Array1OfPnt2d
-	:rtype: None
+Parameters
+----------
+tabP: TColgp_Array1OfPnt
+tabP2d: TColgp_Array1OfPnt2d
+
+Returns
+-------
+None
 ") AppParCurves_MultiPoint;
 		 AppParCurves_MultiPoint(const TColgp_Array1OfPnt & tabP, const TColgp_Array1OfPnt2d & tabP2d);
 
@@ -729,9 +821,13 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") Dimension;
 		%feature("autodoc", "Returns the dimension of the point of range index. an exception is raised if index <0 or index > nbcurves.
 
-	:param Index:
-	:type Index: int
-	:rtype: int
+Parameters
+----------
+Index: int
+
+Returns
+-------
+int
 ") Dimension;
 		Standard_Integer Dimension(const Standard_Integer Index);
 
@@ -747,7 +843,9 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") NbPoints;
 		%feature("autodoc", "Returns the number of points of dimension 3d.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
@@ -755,7 +853,9 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") NbPoints2d;
 		%feature("autodoc", "Returns the number of points of dimension 2d.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoints2d;
 		Standard_Integer NbPoints2d();
 
@@ -763,9 +863,13 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") Point;
 		%feature("autodoc", "Returns the 3d point of range index. an exception is raised if index < 0 or index < number of 3d points.
 
-	:param Index:
-	:type Index: int
-	:rtype: gp_Pnt
+Parameters
+----------
+Index: int
+
+Returns
+-------
+gp_Pnt
 ") Point;
 		const gp_Pnt Point(const Standard_Integer Index);
 
@@ -773,9 +877,13 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") Point2d;
 		%feature("autodoc", "Returns the 2d point of range index. an exception is raised if index <= number of 3d points or index > total number of points.
 
-	:param Index:
-	:type Index: int
-	:rtype: gp_Pnt2d
+Parameters
+----------
+Index: int
+
+Returns
+-------
+gp_Pnt2d
 ") Point2d;
 		const gp_Pnt2d Point2d(const Standard_Integer Index);
 
@@ -783,11 +891,14 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") SetPoint;
 		%feature("autodoc", "The 3d point of range index of this multipoint is set to <point>. an exception is raised if index < 0 or index > number of 3d points.
 
-	:param Index:
-	:type Index: int
-	:param Point:
-	:type Point: gp_Pnt
-	:rtype: None
+Parameters
+----------
+Index: int
+Point: gp_Pnt
+
+Returns
+-------
+None
 ") SetPoint;
 		void SetPoint(const Standard_Integer Index, const gp_Pnt & Point);
 
@@ -795,11 +906,14 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") SetPoint2d;
 		%feature("autodoc", "The 2d point of range index is set to <point>. an exception is raised if index > 3d points or index > total number of points.
 
-	:param Index:
-	:type Index: int
-	:param Point:
-	:type Point: gp_Pnt2d
-	:rtype: None
+Parameters
+----------
+Index: int
+Point: gp_Pnt2d
+
+Returns
+-------
+None
 ") SetPoint2d;
 		void SetPoint2d(const Standard_Integer Index, const gp_Pnt2d & Point);
 
@@ -807,21 +921,19 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") Transform;
 		%feature("autodoc", "Applies a transformation to the curve of range <cuindex>. newx = x + dx*oldx newy = y + dy*oldy for all points of the curve. newz = z + dz*oldz.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param x:
-	:type x: float
-	:param dx:
-	:type dx: float
-	:param y:
-	:type y: float
-	:param dy:
-	:type dy: float
-	:param z:
-	:type z: float
-	:param dz:
-	:type dz: float
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+x: float
+dx: float
+y: float
+dy: float
+z: float
+dz: float
+
+Returns
+-------
+None
 ") Transform;
 		void Transform(const Standard_Integer CuIndex, const Standard_Real x, const Standard_Real dx, const Standard_Real y, const Standard_Real dy, const Standard_Real z, const Standard_Real dz);
 
@@ -829,17 +941,17 @@ class AppParCurves_MultiPoint {
 		%feature("compactdefaultargs") Transform2d;
 		%feature("autodoc", "Applies a transformation to the curve of range <cuindex>. newx = x + dx*oldx newy = y + dy*oldy for all points of the curve.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param x:
-	:type x: float
-	:param dx:
-	:type dx: float
-	:param y:
-	:type y: float
-	:param dy:
-	:type dy: float
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+x: float
+dx: float
+y: float
+dy: float
+
+Returns
+-------
+None
 ") Transform2d;
 		void Transform2d(const Standard_Integer CuIndex, const Standard_Real x, const Standard_Real dx, const Standard_Real y, const Standard_Real dy);
 
@@ -861,7 +973,9 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") AppParCurves_MultiBSpCurve;
 		%feature("autodoc", "Returns an indefinite multibspcurve.
 
-	:rtype: None
+Returns
+-------
+None
 ") AppParCurves_MultiBSpCurve;
 		 AppParCurves_MultiBSpCurve();
 
@@ -869,9 +983,13 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") AppParCurves_MultiBSpCurve;
 		%feature("autodoc", "Creates a multibspcurve, describing bspline curves all containing the same number of multipoint. an exception is raised if degree < 0.
 
-	:param NbPol:
-	:type NbPol: int
-	:rtype: None
+Parameters
+----------
+NbPol: int
+
+Returns
+-------
+None
 ") AppParCurves_MultiBSpCurve;
 		 AppParCurves_MultiBSpCurve(const Standard_Integer NbPol);
 
@@ -879,13 +997,15 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") AppParCurves_MultiBSpCurve;
 		%feature("autodoc", "Creates a multibspcurve, describing bspline curves all containing the same number of multipoint. each multipoint must have nbcurves poles.
 
-	:param tabMU:
-	:type tabMU: AppParCurves_Array1OfMultiPoint
-	:param Knots:
-	:type Knots: TColStd_Array1OfReal
-	:param Mults:
-	:type Mults: TColStd_Array1OfInteger
-	:rtype: None
+Parameters
+----------
+tabMU: AppParCurves_Array1OfMultiPoint
+Knots: TColStd_Array1OfReal
+Mults: TColStd_Array1OfInteger
+
+Returns
+-------
+None
 ") AppParCurves_MultiBSpCurve;
 		 AppParCurves_MultiBSpCurve(const AppParCurves_Array1OfMultiPoint & tabMU, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults);
 
@@ -893,13 +1013,15 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") AppParCurves_MultiBSpCurve;
 		%feature("autodoc", "Creates a multibspcurve, describing bspline curves, taking control points from <sc>.
 
-	:param SC:
-	:type SC: AppParCurves_MultiCurve
-	:param Knots:
-	:type Knots: TColStd_Array1OfReal
-	:param Mults:
-	:type Mults: TColStd_Array1OfInteger
-	:rtype: None
+Parameters
+----------
+SC: AppParCurves_MultiCurve
+Knots: TColStd_Array1OfReal
+Mults: TColStd_Array1OfInteger
+
+Returns
+-------
+None
 ") AppParCurves_MultiBSpCurve;
 		 AppParCurves_MultiBSpCurve(const AppParCurves_MultiCurve & SC, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults);
 
@@ -907,15 +1029,16 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Returns the value of the point with a parameter u on the bspline curve number cuindex. an exception is raised if cuindex <0 or > nbcurves. an exception is raised if the curve dimension is 3d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param U:
-	:type U: float
-	:param Pt:
-	:type Pt: gp_Pnt
-	:param V1:
-	:type V1: gp_Vec
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+U: float
+Pt: gp_Pnt
+V1: gp_Vec
+
+Returns
+-------
+None
 ") D1;
 		virtual void D1(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt, gp_Vec & V1);
 
@@ -923,15 +1046,16 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Returns the value of the point with a parameter u on the bspline curve number cuindex. an exception is raised if cuindex <0 or > nbcurves. an exception is raised if the curve dimension is 2d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param U:
-	:type U: float
-	:param Pt:
-	:type Pt: gp_Pnt2d
-	:param V1:
-	:type V1: gp_Vec2d
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+U: float
+Pt: gp_Pnt2d
+V1: gp_Vec2d
+
+Returns
+-------
+None
 ") D1;
 		virtual void D1(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt, gp_Vec2d & V1);
 
@@ -939,17 +1063,17 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "Returns the value of the point with a parameter u on the bspline curve number cuindex. an exception is raised if cuindex <0 or > nbcurves. an exception is raised if the curve dimension is 3d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param U:
-	:type U: float
-	:param Pt:
-	:type Pt: gp_Pnt
-	:param V1:
-	:type V1: gp_Vec
-	:param V2:
-	:type V2: gp_Vec
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+U: float
+Pt: gp_Pnt
+V1: gp_Vec
+V2: gp_Vec
+
+Returns
+-------
+None
 ") D2;
 		virtual void D2(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt, gp_Vec & V1, gp_Vec & V2);
 
@@ -957,17 +1081,17 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "Returns the value of the point with a parameter u on the bspline curve number cuindex. an exception is raised if cuindex <0 or > nbcurves. an exception is raised if the curve dimension is 2d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param U:
-	:type U: float
-	:param Pt:
-	:type Pt: gp_Pnt2d
-	:param V1:
-	:type V1: gp_Vec2d
-	:param V2:
-	:type V2: gp_Vec2d
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+U: float
+Pt: gp_Pnt2d
+V1: gp_Vec2d
+V2: gp_Vec2d
+
+Returns
+-------
+None
 ") D2;
 		virtual void D2(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt, gp_Vec2d & V1, gp_Vec2d & V2);
 
@@ -975,7 +1099,9 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Degree;
 		%feature("autodoc", "Returns the degree of the curve(s).
 
-	:rtype: int
+Returns
+-------
+int
 ") Degree;
 		virtual Standard_Integer Degree();
 
@@ -991,7 +1117,9 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Knots;
 		%feature("autodoc", "Returns an array of reals containing the multiplicities of curves resulting from the approximation.
 
-	:rtype: TColStd_Array1OfReal
+Returns
+-------
+TColStd_Array1OfReal
 ") Knots;
 		const TColStd_Array1OfReal & Knots();
 
@@ -999,7 +1127,9 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Multiplicities;
 		%feature("autodoc", "Returns an array of reals containing the multiplicities of curves resulting from the approximation.
 
-	:rtype: TColStd_Array1OfInteger
+Returns
+-------
+TColStd_Array1OfInteger
 ") Multiplicities;
 		const TColStd_Array1OfInteger & Multiplicities();
 
@@ -1007,9 +1137,13 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") SetKnots;
 		%feature("autodoc", "Knots of the multibspcurve are assigned to <theknots>.
 
-	:param theKnots:
-	:type theKnots: TColStd_Array1OfReal
-	:rtype: None
+Parameters
+----------
+theKnots: TColStd_Array1OfReal
+
+Returns
+-------
+None
 ") SetKnots;
 		void SetKnots(const TColStd_Array1OfReal & theKnots);
 
@@ -1017,9 +1151,13 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") SetMultiplicities;
 		%feature("autodoc", "Multiplicities of the multibspcurve are assigned to <themults>.
 
-	:param theMults:
-	:type theMults: TColStd_Array1OfInteger
-	:rtype: None
+Parameters
+----------
+theMults: TColStd_Array1OfInteger
+
+Returns
+-------
+None
 ") SetMultiplicities;
 		void SetMultiplicities(const TColStd_Array1OfInteger & theMults);
 
@@ -1027,13 +1165,15 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the value of the point with a parameter u on the bspline curve number cuindex. an exception is raised if cuindex <0 or > nbcurves. an exception is raised if the curve dimension is 2d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param U:
-	:type U: float
-	:param Pt:
-	:type Pt: gp_Pnt
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+U: float
+Pt: gp_Pnt
+
+Returns
+-------
+None
 ") Value;
 		virtual void Value(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt);
 
@@ -1041,13 +1181,15 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the value of the point with a parameter u on the bspline curve number cuindex. an exception is raised if cuindex <0 or > nbcurves. an exception is raised if the curve dimension is 3d.
 
-	:param CuIndex:
-	:type CuIndex: int
-	:param U:
-	:type U: float
-	:param Pt:
-	:type Pt: gp_Pnt2d
-	:rtype: None
+Parameters
+----------
+CuIndex: int
+U: float
+Pt: gp_Pnt2d
+
+Returns
+-------
+None
 ") Value;
 		virtual void Value(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt);
 

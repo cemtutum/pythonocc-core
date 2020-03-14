@@ -115,13 +115,15 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 		%feature("compactdefaultargs") ComputeSRRWT;
 		%feature("autodoc", "Computes transformation defined by given representation_relationship_with_transformation.
 
-	:param SRR:
-	:type SRR: StepRepr_RepresentationRelationship
-	:param TP:
-	:type TP: Transfer_TransientProcess
-	:param Trsf:
-	:type Trsf: gp_Trsf
-	:rtype: bool
+Parameters
+----------
+SRR: StepRepr_RepresentationRelationship
+TP: Transfer_TransientProcess
+Trsf: gp_Trsf
+
+Returns
+-------
+bool
 ") ComputeSRRWT;
 		Standard_Boolean ComputeSRRWT(const opencascade::handle<StepRepr_RepresentationRelationship> & SRR, const opencascade::handle<Transfer_TransientProcess> & TP, gp_Trsf & Trsf);
 
@@ -129,19 +131,18 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 		%feature("compactdefaultargs") ComputeTransformation;
 		%feature("autodoc", "Computes transformation defined by two axis placements (in mapped_item or item_defined_transformation) taking into account their representation contexts (i.e. units, which may be different) returns true if transformation is computed and is not an identity.
 
-	:param Origin:
-	:type Origin: StepGeom_Axis2Placement3d
-	:param Target:
-	:type Target: StepGeom_Axis2Placement3d
-	:param OrigContext:
-	:type OrigContext: StepRepr_Representation
-	:param TargContext:
-	:type TargContext: StepRepr_Representation
-	:param TP:
-	:type TP: Transfer_TransientProcess
-	:param Trsf:
-	:type Trsf: gp_Trsf
-	:rtype: bool
+Parameters
+----------
+Origin: StepGeom_Axis2Placement3d
+Target: StepGeom_Axis2Placement3d
+OrigContext: StepRepr_Representation
+TargContext: StepRepr_Representation
+TP: Transfer_TransientProcess
+Trsf: gp_Trsf
+
+Returns
+-------
+bool
 ") ComputeTransformation;
 		Standard_Boolean ComputeTransformation(const opencascade::handle<StepGeom_Axis2Placement3d> & Origin, const opencascade::handle<StepGeom_Axis2Placement3d> & Target, const opencascade::handle<StepRepr_Representation> & OrigContext, const opencascade::handle<StepRepr_Representation> & TargContext, const opencascade::handle<Transfer_TransientProcess> & TP, gp_Trsf & Trsf);
 
@@ -149,19 +150,28 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 		%feature("compactdefaultargs") PrepareUnits;
 		%feature("autodoc", "Set units and tolerances context by given shaperepresentation.
 
-	:param rep:
-	:type rep: StepRepr_Representation
-	:param TP:
-	:type TP: Transfer_TransientProcess
-	:rtype: None
+Parameters
+----------
+rep: StepRepr_Representation
+TP: Transfer_TransientProcess
+
+Returns
+-------
+None
 ") PrepareUnits;
 		void PrepareUnits(const opencascade::handle<StepRepr_Representation> & rep, const opencascade::handle<Transfer_TransientProcess> & TP);
 
 		/****************** Recognize ******************/
 		%feature("compactdefaultargs") Recognize;
-		%feature("autodoc", "	:param start:
-	:type start: Standard_Transient
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: Standard_Transient
+
+Returns
+-------
+bool
 ") Recognize;
 		virtual Standard_Boolean Recognize(const opencascade::handle<Standard_Transient> & start);
 
@@ -169,35 +179,51 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 		%feature("compactdefaultargs") ResetUnits;
 		%feature("autodoc", "Reset units and tolerances context to default (mm, radians, read.precision.val, etc.).
 
-	:rtype: None
+Returns
+-------
+None
 ") ResetUnits;
 		void ResetUnits();
 
 		/****************** STEPControl_ActorRead ******************/
 		%feature("compactdefaultargs") STEPControl_ActorRead;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPControl_ActorRead;
 		 STEPControl_ActorRead();
 
 		/****************** Transfer ******************/
 		%feature("compactdefaultargs") Transfer;
-		%feature("autodoc", "	:param start:
-	:type start: Standard_Transient
-	:param TP:
-	:type TP: Transfer_TransientProcess
-	:rtype: opencascade::handle<Transfer_Binder>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: Standard_Transient
+TP: Transfer_TransientProcess
+
+Returns
+-------
+opencascade::handle<Transfer_Binder>
 ") Transfer;
 		virtual opencascade::handle<Transfer_Binder> Transfer(const opencascade::handle<Standard_Transient> & start, const opencascade::handle<Transfer_TransientProcess> & TP);
 
 		/****************** TransferShape ******************/
 		%feature("compactdefaultargs") TransferShape;
-		%feature("autodoc", "	:param start:
-	:type start: Standard_Transient
-	:param TP:
-	:type TP: Transfer_TransientProcess
-	:param isManifold: default value is Standard_True
-	:type isManifold: bool
-	:rtype: opencascade::handle<Transfer_Binder>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: Standard_Transient
+TP: Transfer_TransientProcess
+isManifold: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+opencascade::handle<Transfer_Binder>
 ") TransferShape;
 		opencascade::handle<Transfer_Binder> TransferShape(const opencascade::handle<Standard_Transient> & start, const opencascade::handle<Transfer_TransientProcess> & TP, const Standard_Boolean isManifold = Standard_True);
 
@@ -219,7 +245,11 @@ class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 	public:
 		/****************** GroupMode ******************/
 		%feature("compactdefaultargs") GroupMode;
-		%feature("autodoc", "	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
 ") GroupMode;
 		Standard_Integer GroupMode();
 
@@ -227,109 +257,161 @@ class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 		%feature("compactdefaultargs") IsAssembly;
 		%feature("autodoc", "Customizable method to check whether shape s should be written as assembly or not default implementation uses flag groupmode and analyses the shape itself note: this method can modify shape.
 
-	:param S:
-	:type S: TopoDS_Shape
-	:rtype: bool
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+bool
 ") IsAssembly;
 		virtual Standard_Boolean IsAssembly(TopoDS_Shape & S);
 
 		/****************** Mode ******************/
 		%feature("compactdefaultargs") Mode;
-		%feature("autodoc", "	:rtype: STEPControl_StepModelType
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+STEPControl_StepModelType
 ") Mode;
 		STEPControl_StepModelType Mode();
 
 		/****************** Recognize ******************/
 		%feature("compactdefaultargs") Recognize;
-		%feature("autodoc", "	:param start:
-	:type start: Transfer_Finder
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: Transfer_Finder
+
+Returns
+-------
+bool
 ") Recognize;
 		virtual Standard_Boolean Recognize(const opencascade::handle<Transfer_Finder> & start);
 
 		/****************** STEPControl_ActorWrite ******************/
 		%feature("compactdefaultargs") STEPControl_ActorWrite;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") STEPControl_ActorWrite;
 		 STEPControl_ActorWrite();
 
 		/****************** SetGroupMode ******************/
 		%feature("compactdefaultargs") SetGroupMode;
-		%feature("autodoc", "	:param mode:
-	:type mode: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+mode: int
+
+Returns
+-------
+None
 ") SetGroupMode;
 		void SetGroupMode(const Standard_Integer mode);
 
 		/****************** SetMode ******************/
 		%feature("compactdefaultargs") SetMode;
-		%feature("autodoc", "	:param M:
-	:type M: STEPControl_StepModelType
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+M: STEPControl_StepModelType
+
+Returns
+-------
+None
 ") SetMode;
 		void SetMode(const STEPControl_StepModelType M);
 
 		/****************** SetTolerance ******************/
 		%feature("compactdefaultargs") SetTolerance;
-		%feature("autodoc", "	:param Tol:
-	:type Tol: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tol: float
+
+Returns
+-------
+None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real Tol);
 
 		/****************** Transfer ******************/
 		%feature("compactdefaultargs") Transfer;
-		%feature("autodoc", "	:param start:
-	:type start: Transfer_Finder
-	:param FP:
-	:type FP: Transfer_FinderProcess
-	:rtype: opencascade::handle<Transfer_Binder>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: Transfer_Finder
+FP: Transfer_FinderProcess
+
+Returns
+-------
+opencascade::handle<Transfer_Binder>
 ") Transfer;
 		virtual opencascade::handle<Transfer_Binder> Transfer(const opencascade::handle<Transfer_Finder> & start, const opencascade::handle<Transfer_FinderProcess> & FP);
 
 		/****************** TransferCompound ******************/
 		%feature("compactdefaultargs") TransferCompound;
-		%feature("autodoc", "	:param start:
-	:type start: Transfer_Finder
-	:param SDR:
-	:type SDR: StepShape_ShapeDefinitionRepresentation
-	:param FP:
-	:type FP: Transfer_FinderProcess
-	:rtype: opencascade::handle<Transfer_Binder>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: Transfer_Finder
+SDR: StepShape_ShapeDefinitionRepresentation
+FP: Transfer_FinderProcess
+
+Returns
+-------
+opencascade::handle<Transfer_Binder>
 ") TransferCompound;
 		opencascade::handle<Transfer_Binder> TransferCompound(const opencascade::handle<Transfer_Finder> & start, const opencascade::handle<StepShape_ShapeDefinitionRepresentation> & SDR, const opencascade::handle<Transfer_FinderProcess> & FP);
 
 		/****************** TransferShape ******************/
 		%feature("compactdefaultargs") TransferShape;
-		%feature("autodoc", "	:param start:
-	:type start: Transfer_Finder
-	:param SDR:
-	:type SDR: StepShape_ShapeDefinitionRepresentation
-	:param FP:
-	:type FP: Transfer_FinderProcess
-	:param shapeGroup: default value is NULL
-	:type shapeGroup: TopTools_HSequenceOfShape
-	:param isManifold: default value is Standard_True
-	:type isManifold: bool
-	:rtype: opencascade::handle<Transfer_Binder>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: Transfer_Finder
+SDR: StepShape_ShapeDefinitionRepresentation
+FP: Transfer_FinderProcess
+shapeGroup: TopTools_HSequenceOfShape,optional
+	default value is NULL
+isManifold: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+opencascade::handle<Transfer_Binder>
 ") TransferShape;
 		opencascade::handle<Transfer_Binder> TransferShape(const opencascade::handle<Transfer_Finder> & start, const opencascade::handle<StepShape_ShapeDefinitionRepresentation> & SDR, const opencascade::handle<Transfer_FinderProcess> & FP, const opencascade::handle<TopTools_HSequenceOfShape> & shapeGroup = NULL, const Standard_Boolean isManifold = Standard_True);
 
 		/****************** TransferSubShape ******************/
 		%feature("compactdefaultargs") TransferSubShape;
-		%feature("autodoc", "	:param start:
-	:type start: Transfer_Finder
-	:param SDR:
-	:type SDR: StepShape_ShapeDefinitionRepresentation
-	:param AX1:
-	:type AX1: StepGeom_Axis2Placement3d
-	:param FP:
-	:type FP: Transfer_FinderProcess
-	:param shapeGroup: default value is NULL
-	:type shapeGroup: TopTools_HSequenceOfShape
-	:param isManifold: default value is Standard_True
-	:type isManifold: bool
-	:rtype: opencascade::handle<Transfer_Binder>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: Transfer_Finder
+SDR: StepShape_ShapeDefinitionRepresentation
+AX1: StepGeom_Axis2Placement3d
+FP: Transfer_FinderProcess
+shapeGroup: TopTools_HSequenceOfShape,optional
+	default value is NULL
+isManifold: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+opencascade::handle<Transfer_Binder>
 ") TransferSubShape;
 		opencascade::handle<Transfer_Binder> TransferSubShape(const opencascade::handle<Transfer_Finder> & start, const opencascade::handle<StepShape_ShapeDefinitionRepresentation> & SDR, opencascade::handle<StepGeom_Axis2Placement3d> & AX1, const opencascade::handle<Transfer_FinderProcess> & FP, const opencascade::handle<TopTools_HSequenceOfShape> & shapeGroup = NULL, const Standard_Boolean isManifold = Standard_True);
 
@@ -351,9 +433,15 @@ class STEPControl_Controller : public XSControl_Controller {
 	public:
 		/****************** Customise ******************/
 		%feature("compactdefaultargs") Customise;
-		%feature("autodoc", "	:param WS:
-	:type WS: XSControl_WorkSession
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+
+Returns
+-------
+None
 ") Customise;
 		virtual void Customise(opencascade::handle<XSControl_WorkSession> & WS);
 
@@ -361,7 +449,9 @@ class STEPControl_Controller : public XSControl_Controller {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Standard initialisation. it creates a controller for step and records it to various names, available to select it later returns true when done, false if could not be done.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") Init;
 		static Standard_Boolean Init();
 
@@ -369,7 +459,9 @@ class STEPControl_Controller : public XSControl_Controller {
 		%feature("compactdefaultargs") NewModel;
 		%feature("autodoc", "Creates a new empty model ready to receive data of the norm. it is taken from step template model.
 
-	:rtype: opencascade::handle<Interface_InterfaceModel>
+Returns
+-------
+opencascade::handle<Interface_InterfaceModel>
 ") NewModel;
 		opencascade::handle<Interface_InterfaceModel> NewModel();
 
@@ -377,7 +469,9 @@ class STEPControl_Controller : public XSControl_Controller {
 		%feature("compactdefaultargs") STEPControl_Controller;
 		%feature("autodoc", "Initializes the use of step norm (the first time) and returns a controller.
 
-	:rtype: None
+Returns
+-------
+None
 ") STEPControl_Controller;
 		 STEPControl_Controller();
 
@@ -385,15 +479,17 @@ class STEPControl_Controller : public XSControl_Controller {
 		%feature("compactdefaultargs") TransferWriteShape;
 		%feature("autodoc", "Takes one shape and transfers it to the interfacemodel (already created by newmodel for instance) <modeshape> is to be interpreted by each kind of xstepadaptor returns a status : 0 ok 1 no result 2 fail -1 bad modeshape -2 bad model (requires a stepmodel) modeshape : 1 facetted brep, 2 shell, 3 manifold solid.
 
-	:param shape:
-	:type shape: TopoDS_Shape
-	:param FP:
-	:type FP: Transfer_FinderProcess
-	:param model:
-	:type model: Interface_InterfaceModel
-	:param modetrans: default value is 0
-	:type modetrans: int
-	:rtype: IFSelect_ReturnStatus
+Parameters
+----------
+shape: TopoDS_Shape
+FP: Transfer_FinderProcess
+model: Interface_InterfaceModel
+modetrans: int,optional
+	default value is 0
+
+Returns
+-------
+IFSelect_ReturnStatus
 ") TransferWriteShape;
 		virtual IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape & shape, const opencascade::handle<Transfer_FinderProcess> & FP, const opencascade::handle<Interface_InterfaceModel> & model, const Standard_Integer modetrans = 0);
 
@@ -417,13 +513,15 @@ class STEPControl_Reader : public XSControl_Reader {
 		%feature("compactdefaultargs") FileUnits;
 		%feature("autodoc", "Returns sequence of all unit names for shape representations found in file.
 
-	:param theUnitLengthNames:
-	:type theUnitLengthNames: TColStd_SequenceOfAsciiString
-	:param theUnitAngleNames:
-	:type theUnitAngleNames: TColStd_SequenceOfAsciiString
-	:param theUnitSolidAngleNames:
-	:type theUnitSolidAngleNames: TColStd_SequenceOfAsciiString
-	:rtype: None
+Parameters
+----------
+theUnitLengthNames: TColStd_SequenceOfAsciiString
+theUnitAngleNames: TColStd_SequenceOfAsciiString
+theUnitSolidAngleNames: TColStd_SequenceOfAsciiString
+
+Returns
+-------
+None
 ") FileUnits;
 		void FileUnits(TColStd_SequenceOfAsciiString & theUnitLengthNames, TColStd_SequenceOfAsciiString & theUnitAngleNames, TColStd_SequenceOfAsciiString & theUnitSolidAngleNames);
 
@@ -431,7 +529,9 @@ class STEPControl_Reader : public XSControl_Reader {
 		%feature("compactdefaultargs") NbRootsForTransfer;
 		%feature("autodoc", "Determines the list of root entities from model which are candidate for a transfer to a shape (type of entities is product).
 
-	:rtype: int
+Returns
+-------
+int
 ") NbRootsForTransfer;
 		virtual Standard_Integer NbRootsForTransfer();
 
@@ -439,7 +539,9 @@ class STEPControl_Reader : public XSControl_Reader {
 		%feature("compactdefaultargs") STEPControl_Reader;
 		%feature("autodoc", "Creates a reader object with an empty step model.
 
-	:rtype: None
+Returns
+-------
+None
 ") STEPControl_Reader;
 		 STEPControl_Reader();
 
@@ -447,11 +549,15 @@ class STEPControl_Reader : public XSControl_Reader {
 		%feature("compactdefaultargs") STEPControl_Reader;
 		%feature("autodoc", "Creates a reader for step from an already existing session clears the session if it was not yet set for step.
 
-	:param WS:
-	:type WS: XSControl_WorkSession
-	:param scratch: default value is Standard_True
-	:type scratch: bool
-	:rtype: None
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") STEPControl_Reader;
 		 STEPControl_Reader(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
 
@@ -459,7 +565,9 @@ class STEPControl_Reader : public XSControl_Reader {
 		%feature("compactdefaultargs") StepModel;
 		%feature("autodoc", "Returns the model as a stepmodel. it can then be consulted (header, product).
 
-	:rtype: opencascade::handle<StepData_StepModel>
+Returns
+-------
+opencascade::handle<StepData_StepModel>
 ") StepModel;
 		opencascade::handle<StepData_StepModel> StepModel();
 
@@ -467,9 +575,14 @@ class STEPControl_Reader : public XSControl_Reader {
 		%feature("compactdefaultargs") TransferRoot;
 		%feature("autodoc", "Transfers a root given its rank in the list of candidate roots default is the first one returns true if a shape has resulted, false else same as inherited transferoneroot, kept for compatibility.
 
-	:param num: default value is 1
-	:type num: int
-	:rtype: bool
+Parameters
+----------
+num: int,optional
+	default value is 1
+
+Returns
+-------
+bool
 ") TransferRoot;
 		Standard_Boolean TransferRoot(const Standard_Integer num = 1);
 
@@ -491,9 +604,14 @@ class STEPControl_Writer {
 		%feature("compactdefaultargs") Model;
 		%feature("autodoc", "Returns the produced model. produces a new one if not yet done or if <newone> is true this method allows for instance to edit product or header data before writing.
 
-	:param newone: default value is Standard_False
-	:type newone: bool
-	:rtype: opencascade::handle<StepData_StepModel>
+Parameters
+----------
+newone: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+opencascade::handle<StepData_StepModel>
 ") Model;
 		opencascade::handle<StepData_StepModel> Model(const Standard_Boolean newone = Standard_False);
 
@@ -501,11 +619,15 @@ class STEPControl_Writer {
 		%feature("compactdefaultargs") PrintStatsTransfer;
 		%feature("autodoc", "Displays the statistics for the last translation. what defines the kind of statistics that are displayed: - 0 gives general statistics (number of translated roots, number of warnings, number of fail messages), - 1 gives root results, - 2 gives statistics for all checked entities, - 3 gives the list of translated entities, - 4 gives warning and fail messages, - 5 gives fail messages only. mode is used according to the use of what. if what is 0, mode is ignored. if what is 1, 2 or 3, mode defines the following: - 0 lists the numbers of step entities in a step model, - 1 gives the number, identifier, type and result type for each step entity and/or its status (fail, warning, etc.), - 2 gives maximum information for each step entity (i.e. checks), - 3 gives the number of entities by the type of a step entity, - 4 gives the number of of step entities per result type and/or status, - 5 gives the number of pairs (step or result type and status), - 6 gives the number of pairs (step or result type and status) and the list of entity numbers in the step model.
 
-	:param what:
-	:type what: int
-	:param mode: default value is 0
-	:type mode: int
-	:rtype: None
+Parameters
+----------
+what: int
+mode: int,optional
+	default value is 0
+
+Returns
+-------
+None
 ") PrintStatsTransfer;
 		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode = 0);
 
@@ -513,7 +635,9 @@ class STEPControl_Writer {
 		%feature("compactdefaultargs") STEPControl_Writer;
 		%feature("autodoc", "Creates a writer from scratch.
 
-	:rtype: None
+Returns
+-------
+None
 ") STEPControl_Writer;
 		 STEPControl_Writer();
 
@@ -521,11 +645,15 @@ class STEPControl_Writer {
 		%feature("compactdefaultargs") STEPControl_Writer;
 		%feature("autodoc", "Creates a writer from an already existing session if <scratch> is true (d), clears already recorded data.
 
-	:param WS:
-	:type WS: XSControl_WorkSession
-	:param scratch: default value is Standard_True
-	:type scratch: bool
-	:rtype: None
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") STEPControl_Writer;
 		 STEPControl_Writer(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
 
@@ -533,9 +661,13 @@ class STEPControl_Writer {
 		%feature("compactdefaultargs") SetTolerance;
 		%feature("autodoc", "Sets a length-measure value that will be written to uncertainty-measure-with-unit when the next shape is translated.
 
-	:param Tol:
-	:type Tol: float
-	:rtype: None
+Parameters
+----------
+Tol: float
+
+Returns
+-------
+None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real Tol);
 
@@ -543,11 +675,15 @@ class STEPControl_Writer {
 		%feature("compactdefaultargs") SetWS;
 		%feature("autodoc", "Sets a specific session to <self>.
 
-	:param WS:
-	:type WS: XSControl_WorkSession
-	:param scratch: default value is Standard_True
-	:type scratch: bool
-	:rtype: None
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") SetWS;
 		void SetWS(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
 
@@ -555,13 +691,16 @@ class STEPControl_Writer {
 		%feature("compactdefaultargs") Transfer;
 		%feature("autodoc", "Translates shape sh to a step entity. mode defines the step entity type to be output: - stepcontrolstd_asis translates a shape to its highest possible step representation. - stepcontrolstd_manifoldsolidbrep translates a shape to a step manifold_solid_brep or brep_with_voids entity. - stepcontrolstd_facetedbrep translates a shape into a step faceted_brep entity. - stepcontrolstd_shellbasedsurfacemodel translates a shape into a step shell_based_surface_model entity. - stepcontrolstd_geometriccurveset translates a shape into a step geometric_curve_set entity.
 
-	:param sh:
-	:type sh: TopoDS_Shape
-	:param mode:
-	:type mode: STEPControl_StepModelType
-	:param compgraph: default value is Standard_True
-	:type compgraph: bool
-	:rtype: IFSelect_ReturnStatus
+Parameters
+----------
+sh: TopoDS_Shape
+mode: STEPControl_StepModelType
+compgraph: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+IFSelect_ReturnStatus
 ") Transfer;
 		IFSelect_ReturnStatus Transfer(const TopoDS_Shape & sh, const STEPControl_StepModelType mode, const Standard_Boolean compgraph = Standard_True);
 
@@ -569,7 +708,9 @@ class STEPControl_Writer {
 		%feature("compactdefaultargs") UnsetTolerance;
 		%feature("autodoc", "Unsets the tolerance formerly forced by settolerance.
 
-	:rtype: None
+Returns
+-------
+None
 ") UnsetTolerance;
 		void UnsetTolerance();
 
@@ -577,7 +718,9 @@ class STEPControl_Writer {
 		%feature("compactdefaultargs") WS;
 		%feature("autodoc", "Returns the session used in <self>.
 
-	:rtype: opencascade::handle<XSControl_WorkSession>
+Returns
+-------
+opencascade::handle<XSControl_WorkSession>
 ") WS;
 		opencascade::handle<XSControl_WorkSession> WS();
 
@@ -585,9 +728,13 @@ class STEPControl_Writer {
 		%feature("compactdefaultargs") Write;
 		%feature("autodoc", "Writes a step model in the file identified by filename.
 
-	:param filename:
-	:type filename: char *
-	:rtype: IFSelect_ReturnStatus
+Parameters
+----------
+filename: char *
+
+Returns
+-------
+IFSelect_ReturnStatus
 ") Write;
 		IFSelect_ReturnStatus Write(const char * filename);
 

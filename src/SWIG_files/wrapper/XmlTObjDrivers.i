@@ -92,11 +92,16 @@ class XmlTObjDrivers {
 	public:
 		/****************** AddDrivers ******************/
 		%feature("compactdefaultargs") AddDrivers;
-		%feature("autodoc", "	:param aDriverTable:
-	:type aDriverTable: XmlMDF_ADriverTable
-	:param anMsgDrv:
-	:type anMsgDrv: Message_Messenger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aDriverTable: XmlMDF_ADriverTable
+anMsgDrv: Message_Messenger
+
+Returns
+-------
+None
 ") AddDrivers;
 		static void AddDrivers(const opencascade::handle<XmlMDF_ADriverTable> & aDriverTable, const opencascade::handle<Message_Messenger> & anMsgDrv);
 
@@ -104,9 +109,13 @@ class XmlTObjDrivers {
 		%feature("compactdefaultargs") DefineFormat;
 		%feature("autodoc", "Defines format 'tobjxml' and registers its read and write drivers in the specified application.
 
-	:param theApp:
-	:type theApp: TDocStd_Application
-	:rtype: None
+Parameters
+----------
+theApp: TDocStd_Application
+
+Returns
+-------
+None
 ") DefineFormat;
 		static void DefineFormat(const opencascade::handle<TDocStd_Application> & theApp);
 
@@ -114,9 +123,13 @@ class XmlTObjDrivers {
 		%feature("compactdefaultargs") Factory;
 		%feature("autodoc", "Returns a driver corresponding to <aguid>. used for plugin.
 
-	:param aGUID:
-	:type aGUID: Standard_GUID
-	:rtype: opencascade::handle<Standard_Transient>
+Parameters
+----------
+aGUID: Standard_GUID
+
+Returns
+-------
+opencascade::handle<Standard_Transient>
 ") Factory;
 		static const opencascade::handle<Standard_Transient> & Factory(const Standard_GUID & aGUID);
 
@@ -136,15 +149,25 @@ class XmlTObjDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrie
 	public:
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
-		%feature("autodoc", "	:param theMsgDriver:
-	:type theMsgDriver: Message_Messenger
-	:rtype: opencascade::handle<XmlMDF_ADriverTable>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMsgDriver: Message_Messenger
+
+Returns
+-------
+opencascade::handle<XmlMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<XmlMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
 
 		/****************** XmlTObjDrivers_DocumentRetrievalDriver ******************/
 		%feature("compactdefaultargs") XmlTObjDrivers_DocumentRetrievalDriver;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") XmlTObjDrivers_DocumentRetrievalDriver;
 		 XmlTObjDrivers_DocumentRetrievalDriver();
 
@@ -166,17 +189,29 @@ class XmlTObjDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageD
 	public:
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
-		%feature("autodoc", "	:param theMsgDriver:
-	:type theMsgDriver: Message_Messenger
-	:rtype: opencascade::handle<XmlMDF_ADriverTable>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMsgDriver: Message_Messenger
+
+Returns
+-------
+opencascade::handle<XmlMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<XmlMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
 
 		/****************** XmlTObjDrivers_DocumentStorageDriver ******************/
 		%feature("compactdefaultargs") XmlTObjDrivers_DocumentStorageDriver;
-		%feature("autodoc", "	:param theCopyright:
-	:type theCopyright: TCollection_ExtendedString
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theCopyright: TCollection_ExtendedString
+
+Returns
+-------
+None
 ") XmlTObjDrivers_DocumentStorageDriver;
 		 XmlTObjDrivers_DocumentStorageDriver(const TCollection_ExtendedString & theCopyright);
 
@@ -198,39 +233,57 @@ class XmlTObjDrivers_IntSparseArrayDriver : public XmlMDF_ADriver {
 	public:
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param theSource:
-	:type theSource: XmlObjMgt_Persistent
-	:param theTarget:
-	:type theTarget: TDF_Attribute
-	:param theRelocTable:
-	:type theRelocTable: XmlObjMgt_RRelocationTable
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theSource: XmlObjMgt_Persistent
+theTarget: TDF_Attribute
+theRelocTable: XmlObjMgt_RRelocationTable
+
+Returns
+-------
+bool
 ") Paste;
 		Standard_Boolean Paste(const XmlObjMgt_Persistent & theSource, const opencascade::handle<TDF_Attribute> & theTarget, XmlObjMgt_RRelocationTable & theRelocTable);
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param theSource:
-	:type theSource: TDF_Attribute
-	:param theTarget:
-	:type theTarget: XmlObjMgt_Persistent
-	:param theRelocTable:
-	:type theRelocTable: XmlObjMgt_SRelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theSource: TDF_Attribute
+theTarget: XmlObjMgt_Persistent
+theRelocTable: XmlObjMgt_SRelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable);
 
 		/****************** XmlTObjDrivers_IntSparseArrayDriver ******************/
 		%feature("compactdefaultargs") XmlTObjDrivers_IntSparseArrayDriver;
-		%feature("autodoc", "	:param theMessageDriver:
-	:type theMessageDriver: Message_Messenger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
 ") XmlTObjDrivers_IntSparseArrayDriver;
 		 XmlTObjDrivers_IntSparseArrayDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
@@ -252,39 +305,57 @@ class XmlTObjDrivers_ModelDriver : public XmlMDF_ADriver {
 	public:
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Source:
-	:type Source: XmlObjMgt_Persistent
-	:param Target:
-	:type Target: TDF_Attribute
-	:param RelocTable:
-	:type RelocTable: XmlObjMgt_RRelocationTable
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Source: XmlObjMgt_Persistent
+Target: TDF_Attribute
+RelocTable: XmlObjMgt_RRelocationTable
+
+Returns
+-------
+bool
 ") Paste;
 		Standard_Boolean Paste(const XmlObjMgt_Persistent & Source, const opencascade::handle<TDF_Attribute> & Target, XmlObjMgt_RRelocationTable & RelocTable);
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Source:
-	:type Source: TDF_Attribute
-	:param Target:
-	:type Target: XmlObjMgt_Persistent
-	:param RelocTable:
-	:type RelocTable: XmlObjMgt_SRelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Source: TDF_Attribute
+Target: XmlObjMgt_Persistent
+RelocTable: XmlObjMgt_SRelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
 
 		/****************** XmlTObjDrivers_ModelDriver ******************/
 		%feature("compactdefaultargs") XmlTObjDrivers_ModelDriver;
-		%feature("autodoc", "	:param theMessageDriver:
-	:type theMessageDriver: Message_Messenger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
 ") XmlTObjDrivers_ModelDriver;
 		 XmlTObjDrivers_ModelDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
@@ -306,39 +377,57 @@ class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
 	public:
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Source:
-	:type Source: XmlObjMgt_Persistent
-	:param Target:
-	:type Target: TDF_Attribute
-	:param RelocTable:
-	:type RelocTable: XmlObjMgt_RRelocationTable
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Source: XmlObjMgt_Persistent
+Target: TDF_Attribute
+RelocTable: XmlObjMgt_RRelocationTable
+
+Returns
+-------
+bool
 ") Paste;
 		Standard_Boolean Paste(const XmlObjMgt_Persistent & Source, const opencascade::handle<TDF_Attribute> & Target, XmlObjMgt_RRelocationTable & RelocTable);
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Source:
-	:type Source: TDF_Attribute
-	:param Target:
-	:type Target: XmlObjMgt_Persistent
-	:param RelocTable:
-	:type RelocTable: XmlObjMgt_SRelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Source: TDF_Attribute
+Target: XmlObjMgt_Persistent
+RelocTable: XmlObjMgt_SRelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
 
 		/****************** XmlTObjDrivers_ObjectDriver ******************/
 		%feature("compactdefaultargs") XmlTObjDrivers_ObjectDriver;
-		%feature("autodoc", "	:param theMessageDriver:
-	:type theMessageDriver: Message_Messenger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
 ") XmlTObjDrivers_ObjectDriver;
 		 XmlTObjDrivers_ObjectDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
@@ -360,39 +449,57 @@ class XmlTObjDrivers_ReferenceDriver : public XmlMDF_ADriver {
 	public:
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Source:
-	:type Source: XmlObjMgt_Persistent
-	:param Target:
-	:type Target: TDF_Attribute
-	:param RelocTable:
-	:type RelocTable: XmlObjMgt_RRelocationTable
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Source: XmlObjMgt_Persistent
+Target: TDF_Attribute
+RelocTable: XmlObjMgt_RRelocationTable
+
+Returns
+-------
+bool
 ") Paste;
 		Standard_Boolean Paste(const XmlObjMgt_Persistent & Source, const opencascade::handle<TDF_Attribute> & Target, XmlObjMgt_RRelocationTable & RelocTable);
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Source:
-	:type Source: TDF_Attribute
-	:param Target:
-	:type Target: XmlObjMgt_Persistent
-	:param RelocTable:
-	:type RelocTable: XmlObjMgt_SRelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Source: TDF_Attribute
+Target: XmlObjMgt_Persistent
+RelocTable: XmlObjMgt_SRelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
 
 		/****************** XmlTObjDrivers_ReferenceDriver ******************/
 		%feature("compactdefaultargs") XmlTObjDrivers_ReferenceDriver;
-		%feature("autodoc", "	:param theMessageDriver:
-	:type theMessageDriver: Message_Messenger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
 ") XmlTObjDrivers_ReferenceDriver;
 		 XmlTObjDrivers_ReferenceDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
@@ -414,39 +521,57 @@ class XmlTObjDrivers_XYZDriver : public XmlMDF_ADriver {
 	public:
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
-		%feature("autodoc", "	:rtype: opencascade::handle<TDF_Attribute>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TDF_Attribute>
 ") NewEmpty;
 		opencascade::handle<TDF_Attribute> NewEmpty();
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Source:
-	:type Source: XmlObjMgt_Persistent
-	:param Target:
-	:type Target: TDF_Attribute
-	:param RelocTable:
-	:type RelocTable: XmlObjMgt_RRelocationTable
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Source: XmlObjMgt_Persistent
+Target: TDF_Attribute
+RelocTable: XmlObjMgt_RRelocationTable
+
+Returns
+-------
+bool
 ") Paste;
 		Standard_Boolean Paste(const XmlObjMgt_Persistent & Source, const opencascade::handle<TDF_Attribute> & Target, XmlObjMgt_RRelocationTable & RelocTable);
 
 		/****************** Paste ******************/
 		%feature("compactdefaultargs") Paste;
-		%feature("autodoc", "	:param Source:
-	:type Source: TDF_Attribute
-	:param Target:
-	:type Target: XmlObjMgt_Persistent
-	:param RelocTable:
-	:type RelocTable: XmlObjMgt_SRelocationTable
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Source: TDF_Attribute
+Target: XmlObjMgt_Persistent
+RelocTable: XmlObjMgt_SRelocationTable
+
+Returns
+-------
+None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
 
 		/****************** XmlTObjDrivers_XYZDriver ******************/
 		%feature("compactdefaultargs") XmlTObjDrivers_XYZDriver;
-		%feature("autodoc", "	:param theMessageDriver:
-	:type theMessageDriver: Message_Messenger
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
 ") XmlTObjDrivers_XYZDriver;
 		 XmlTObjDrivers_XYZDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 

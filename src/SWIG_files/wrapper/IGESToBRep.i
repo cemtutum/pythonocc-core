@@ -97,17 +97,24 @@ class IGESToBRep {
 		%feature("compactdefaultargs") AlgoContainer;
 		%feature("autodoc", "Returns default algocontainer.
 
-	:rtype: opencascade::handle<IGESToBRep_AlgoContainer>
+Returns
+-------
+opencascade::handle<IGESToBRep_AlgoContainer>
 ") AlgoContainer;
 		static opencascade::handle<IGESToBRep_AlgoContainer> AlgoContainer();
 
 		/****************** IGESCurveToSequenceOfIGESCurve ******************/
 		%feature("compactdefaultargs") IGESCurveToSequenceOfIGESCurve;
-		%feature("autodoc", "	:param curve:
-	:type curve: IGESData_IGESEntity
-	:param sequence:
-	:type sequence: TColStd_HSequenceOfTransient
-	:rtype: int
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+curve: IGESData_IGESEntity
+sequence: TColStd_HSequenceOfTransient
+
+Returns
+-------
+int
 ") IGESCurveToSequenceOfIGESCurve;
 		static Standard_Integer IGESCurveToSequenceOfIGESCurve(const opencascade::handle<IGESData_IGESEntity> & curve, opencascade::handle<TColStd_HSequenceOfTransient> & sequence);
 
@@ -115,7 +122,9 @@ class IGESToBRep {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Creates and initializes default algocontainer.
 
-	:rtype: None
+Returns
+-------
+None
 ") Init;
 		static void Init();
 
@@ -123,9 +132,13 @@ class IGESToBRep {
 		%feature("compactdefaultargs") IsBRepEntity;
 		%feature("autodoc", "Return true if the igesentity can be transfered by transferbrepentity. ex: vertexlist, edgelist, loop, face, shell, manifold solid brep object from igessolid : 502, 504, 508, 510, 514, 186.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: bool
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+bool
 ") IsBRepEntity;
 		static Standard_Boolean IsBRepEntity(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -133,9 +146,13 @@ class IGESToBRep {
 		%feature("compactdefaultargs") IsBasicCurve;
 		%feature("autodoc", "Return true if the igesentity can be transfered by transferbasiccurve. ex: circulararc, conicarc, line, copiousdata, bsplinecurve, splinecurve... from igesgeom : 104,110,112,126.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: bool
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+bool
 ") IsBasicCurve;
 		static Standard_Boolean IsBasicCurve(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -143,9 +160,13 @@ class IGESToBRep {
 		%feature("compactdefaultargs") IsBasicSurface;
 		%feature("autodoc", "Return true if the igesentity can be transfered by transferbasicsurface. ex: bsplinesurface, splinesurface... from igesgeom : 114,128.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: bool
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+bool
 ") IsBasicSurface;
 		static Standard_Boolean IsBasicSurface(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -153,9 +174,13 @@ class IGESToBRep {
 		%feature("compactdefaultargs") IsCurveAndSurface;
 		%feature("autodoc", "Return true if the igesentity can be transfered by transfercurveandsurface. ex: all igesentity from igesgeom.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: bool
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+bool
 ") IsCurveAndSurface;
 		static Standard_Boolean IsCurveAndSurface(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -163,9 +188,13 @@ class IGESToBRep {
 		%feature("compactdefaultargs") IsTopoCurve;
 		%feature("autodoc", "Return true if the igesentity can be transfered by transfertopocurve. ex: all curves from igesgeom : all basic curves,102,130,142,144.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: bool
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+bool
 ") IsTopoCurve;
 		static Standard_Boolean IsTopoCurve(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -173,9 +202,13 @@ class IGESToBRep {
 		%feature("compactdefaultargs") IsTopoSurface;
 		%feature("autodoc", "Return true if the igesentity can be transfered by transfertoposurface. ex: all surfaces from igesgeom : all basic surfaces,108,118,120,122,141,143.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: bool
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+bool
 ") IsTopoSurface;
 		static Standard_Boolean IsTopoSurface(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -183,21 +216,29 @@ class IGESToBRep {
 		%feature("compactdefaultargs") SetAlgoContainer;
 		%feature("autodoc", "Sets default algocontainer.
 
-	:param aContainer:
-	:type aContainer: IGESToBRep_AlgoContainer
-	:rtype: None
+Parameters
+----------
+aContainer: IGESToBRep_AlgoContainer
+
+Returns
+-------
+None
 ") SetAlgoContainer;
 		static void SetAlgoContainer(const opencascade::handle<IGESToBRep_AlgoContainer> & aContainer);
 
 		/****************** TransferPCurve ******************/
 		%feature("compactdefaultargs") TransferPCurve;
-		%feature("autodoc", "	:param fromedge:
-	:type fromedge: TopoDS_Edge
-	:param toedge:
-	:type toedge: TopoDS_Edge
-	:param face:
-	:type face: TopoDS_Face
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+fromedge: TopoDS_Edge
+toedge: TopoDS_Edge
+face: TopoDS_Face
+
+Returns
+-------
+bool
 ") TransferPCurve;
 		static Standard_Boolean TransferPCurve(const TopoDS_Edge & fromedge, const TopoDS_Edge & toedge, const TopoDS_Face & face);
 
@@ -219,21 +260,33 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 		%feature("compactdefaultargs") GetContinuity;
 		%feature("autodoc", "Return 'thecontinuity'.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetContinuity;
 		Standard_Integer GetContinuity();
 
 		/****************** IGESToBRep_Actor ******************/
 		%feature("compactdefaultargs") IGESToBRep_Actor;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") IGESToBRep_Actor;
 		 IGESToBRep_Actor();
 
 		/****************** Recognize ******************/
 		%feature("compactdefaultargs") Recognize;
-		%feature("autodoc", "	:param start:
-	:type start: Standard_Transient
-	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: Standard_Transient
+
+Returns
+-------
+bool
 ") Recognize;
 		virtual Standard_Boolean Recognize(const opencascade::handle<Standard_Transient> & start);
 
@@ -241,27 +294,43 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 		%feature("compactdefaultargs") SetContinuity;
 		%feature("autodoc", "---purpose by default continuity = 0 if continuity = 1 : try c1 if continuity = 2 : try c2.
 
-	:param continuity: default value is 0
-	:type continuity: int
-	:rtype: None
+Parameters
+----------
+continuity: int,optional
+	default value is 0
+
+Returns
+-------
+None
 ") SetContinuity;
 		void SetContinuity(const Standard_Integer continuity = 0);
 
 		/****************** SetModel ******************/
 		%feature("compactdefaultargs") SetModel;
-		%feature("autodoc", "	:param model:
-	:type model: Interface_InterfaceModel
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+model: Interface_InterfaceModel
+
+Returns
+-------
+None
 ") SetModel;
 		void SetModel(const opencascade::handle<Interface_InterfaceModel> & model);
 
 		/****************** Transfer ******************/
 		%feature("compactdefaultargs") Transfer;
-		%feature("autodoc", "	:param start:
-	:type start: Standard_Transient
-	:param TP:
-	:type TP: Transfer_TransientProcess
-	:rtype: opencascade::handle<Transfer_Binder>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: Standard_Transient
+TP: Transfer_TransientProcess
+
+Returns
+-------
+opencascade::handle<Transfer_Binder>
 ") Transfer;
 		virtual opencascade::handle<Transfer_Binder> Transfer(const opencascade::handle<Standard_Transient> & start, const opencascade::handle<Transfer_TransientProcess> & TP);
 
@@ -269,7 +338,9 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 		%feature("compactdefaultargs") UsedTolerance;
 		%feature("autodoc", "Returns the tolerance which was actually used, either from the file or from statics.
 
-	:rtype: float
+Returns
+-------
+float
 ") UsedTolerance;
 		Standard_Real UsedTolerance();
 
@@ -293,7 +364,9 @@ class IGESToBRep_AlgoContainer : public Standard_Transient {
 		%feature("compactdefaultargs") IGESToBRep_AlgoContainer;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") IGESToBRep_AlgoContainer;
 		 IGESToBRep_AlgoContainer();
 
@@ -301,9 +374,13 @@ class IGESToBRep_AlgoContainer : public Standard_Transient {
 		%feature("compactdefaultargs") SetToolContainer;
 		%feature("autodoc", "Sets toolcontainer.
 
-	:param TC:
-	:type TC: IGESToBRep_ToolContainer
-	:rtype: None
+Parameters
+----------
+TC: IGESToBRep_ToolContainer
+
+Returns
+-------
+None
 ") SetToolContainer;
 		void SetToolContainer(const opencascade::handle<IGESToBRep_ToolContainer> & TC);
 
@@ -311,7 +388,9 @@ class IGESToBRep_AlgoContainer : public Standard_Transient {
 		%feature("compactdefaultargs") ToolContainer;
 		%feature("autodoc", "Returns toolcontainer.
 
-	:rtype: opencascade::handle<IGESToBRep_ToolContainer>
+Returns
+-------
+opencascade::handle<IGESToBRep_ToolContainer>
 ") ToolContainer;
 		opencascade::handle<IGESToBRep_ToolContainer> ToolContainer();
 
@@ -335,11 +414,14 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") AddShapeResult;
 		%feature("autodoc", "Set in 'mymap' the result of the transfer of the entity of the igesentity start ( type vertexlist or edgelist).
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:param result:
-	:type result: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+start: IGESData_IGESEntity
+result: TopoDS_Shape
+
+Returns
+-------
+None
 ") AddShapeResult;
 		void AddShapeResult(const opencascade::handle<IGESData_IGESEntity> & start, const TopoDS_Shape & result);
 
@@ -347,7 +429,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetContinuity;
 		%feature("autodoc", "Returns the value of 'mycontinuity'.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetContinuity;
 		Standard_Integer GetContinuity();
 
@@ -355,7 +439,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetEpsCoeff;
 		%feature("autodoc", "Returns the value of 'myepscoeff'.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetEpsCoeff;
 		Standard_Real GetEpsCoeff();
 
@@ -363,7 +449,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetEpsGeom;
 		%feature("autodoc", "Returns the value of 'myepsgeom'.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetEpsGeom;
 		Standard_Real GetEpsGeom();
 
@@ -371,7 +459,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetEpsilon;
 		%feature("autodoc", "Returns the value of 'myeps'.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetEpsilon;
 		Standard_Real GetEpsilon();
 
@@ -379,7 +469,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetMaxTol;
 		%feature("autodoc", "Returns the value of 'mymaxtol'.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetMaxTol;
 		Standard_Real GetMaxTol();
 
@@ -387,7 +479,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetMinTol;
 		%feature("autodoc", "Returns the value of 'mymintol'.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetMinTol;
 		Standard_Real GetMinTol();
 
@@ -395,7 +489,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetModeApprox;
 		%feature("autodoc", "Returns the value of 'mymodeapprox'.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") GetModeApprox;
 		Standard_Boolean GetModeApprox();
 
@@ -403,7 +499,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetModeTransfer;
 		%feature("autodoc", "Returns the value of 'mymodeistopo'.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") GetModeTransfer;
 		Standard_Boolean GetModeTransfer();
 
@@ -411,7 +509,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetModel;
 		%feature("autodoc", "Returns the value of 'mymodel'.
 
-	:rtype: opencascade::handle<IGESData_IGESModel>
+Returns
+-------
+opencascade::handle<IGESData_IGESModel>
 ") GetModel;
 		opencascade::handle<IGESData_IGESModel> GetModel();
 
@@ -419,7 +519,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetOptimized;
 		%feature("autodoc", "Returns the value of 'mycontisopti'.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") GetOptimized;
 		Standard_Boolean GetOptimized();
 
@@ -427,9 +529,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetShapeResult;
 		%feature("autodoc", "Returns the result of the transfer of the igesentity 'start' contained in 'mymap' . (if hasshaperesult is true).
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: TopoDS_Shape
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+TopoDS_Shape
 ") GetShapeResult;
 		TopoDS_Shape GetShapeResult(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -437,11 +543,14 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetShapeResult;
 		%feature("autodoc", "Returns the numth result of the igesentity start (type vertexlist or edgelist) in 'mymap'. (if nbshaperesult is not null).
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:param num:
-	:type num: int
-	:rtype: TopoDS_Shape
+Parameters
+----------
+start: IGESData_IGESEntity
+num: int
+
+Returns
+-------
+TopoDS_Shape
 ") GetShapeResult;
 		TopoDS_Shape GetShapeResult(const opencascade::handle<IGESData_IGESEntity> & start, const Standard_Integer num);
 
@@ -449,7 +558,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetSurfaceCurve;
 		%feature("autodoc", "Returns the value of ' mysurfacecurve' 0 = value in file , 2 = kepp 2d and compute 3d 3 = keep 3d and compute 2d.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetSurfaceCurve;
 		Standard_Integer GetSurfaceCurve();
 
@@ -457,13 +568,19 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetTransferProcess;
 		%feature("autodoc", "Returns the value of 'mymsgreg'.
 
-	:rtype: opencascade::handle<Transfer_TransientProcess>
+Returns
+-------
+opencascade::handle<Transfer_TransientProcess>
 ") GetTransferProcess;
 		opencascade::handle<Transfer_TransientProcess> GetTransferProcess();
 
 		/****************** GetUVResolution ******************/
 		%feature("compactdefaultargs") GetUVResolution;
-		%feature("autodoc", "	:rtype: float
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
 ") GetUVResolution;
 		Standard_Real GetUVResolution();
 
@@ -471,7 +588,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") GetUnitFactor;
 		%feature("autodoc", "Returns the value of ' myunitfactor'.
 
-	:rtype: float
+Returns
+-------
+float
 ") GetUnitFactor;
 		Standard_Real GetUnitFactor();
 
@@ -479,9 +598,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") HasShapeResult;
 		%feature("autodoc", "Returns true if start was already treated and has a result in 'mymap' else returns false.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: bool
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+bool
 ") HasShapeResult;
 		Standard_Boolean HasShapeResult(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -489,7 +612,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_CurveAndSurface;
 		%feature("autodoc", "Creates a tool curveandsurface ready to run, with epsilons set to 1.e-04, mymodetopo to true, the optimization of the continuity to false.
 
-	:rtype: None
+Returns
+-------
+None
 ") IGESToBRep_CurveAndSurface;
 		 IGESToBRep_CurveAndSurface();
 
@@ -497,9 +622,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_CurveAndSurface;
 		%feature("autodoc", "Creates a tool curveandsurface ready to run and sets its fields as cs's.
 
-	:param CS:
-	:type CS: IGESToBRep_CurveAndSurface
-	:rtype: None
+Parameters
+----------
+CS: IGESToBRep_CurveAndSurface
+
+Returns
+-------
+None
 ") IGESToBRep_CurveAndSurface;
 		 IGESToBRep_CurveAndSurface(const IGESToBRep_CurveAndSurface & CS);
 
@@ -507,19 +636,18 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_CurveAndSurface;
 		%feature("autodoc", "Creates a tool curveandsurface ready to run.
 
-	:param eps:
-	:type eps: float
-	:param epsGeom:
-	:type epsGeom: float
-	:param epsCoeff:
-	:type epsCoeff: float
-	:param mode:
-	:type mode: bool
-	:param modeapprox:
-	:type modeapprox: bool
-	:param optimized:
-	:type optimized: bool
-	:rtype: None
+Parameters
+----------
+eps: float
+epsGeom: float
+epsCoeff: float
+mode: bool
+modeapprox: bool
+optimized: bool
+
+Returns
+-------
+None
 ") IGESToBRep_CurveAndSurface;
 		 IGESToBRep_CurveAndSurface(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
 
@@ -527,7 +655,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initializes the field of the tool curveandsurface with default creating values.
 
-	:rtype: None
+Returns
+-------
+None
 ") Init;
 		void Init();
 
@@ -535,9 +665,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") NbShapeResult;
 		%feature("autodoc", "Returns the number of shapes results contained in 'mymap' for the igesentity start ( type vertexlist or edgelist).
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: int
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+int
 ") NbShapeResult;
 		Standard_Integer NbShapeResult(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -545,11 +679,14 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SendFail;
 		%feature("autodoc", "Records a new fail message.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:param amsg:
-	:type amsg: Message_Msg
-	:rtype: None
+Parameters
+----------
+start: IGESData_IGESEntity
+amsg: Message_Msg
+
+Returns
+-------
+None
 ") SendFail;
 		void SendFail(const opencascade::handle<IGESData_IGESEntity> & start, const Message_Msg & amsg);
 
@@ -557,11 +694,14 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SendMsg;
 		%feature("autodoc", "Records a new information message from the definition of a msg (original+value).
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:param amsg:
-	:type amsg: Message_Msg
-	:rtype: None
+Parameters
+----------
+start: IGESData_IGESEntity
+amsg: Message_Msg
+
+Returns
+-------
+None
 ") SendMsg;
 		void SendMsg(const opencascade::handle<IGESData_IGESEntity> & start, const Message_Msg & amsg);
 
@@ -569,11 +709,14 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SendWarning;
 		%feature("autodoc", "Records a new warning message.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:param amsg:
-	:type amsg: Message_Msg
-	:rtype: None
+Parameters
+----------
+start: IGESData_IGESEntity
+amsg: Message_Msg
+
+Returns
+-------
+None
 ") SendWarning;
 		void SendWarning(const opencascade::handle<IGESData_IGESEntity> & start, const Message_Msg & amsg);
 
@@ -581,9 +724,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetContinuity;
 		%feature("autodoc", "Changes the value of 'mycontinuity' if continuity = 0 do nothing else if continuity = 1 try c1 if continuity = 2 try c2.
 
-	:param continuity:
-	:type continuity: int
-	:rtype: None
+Parameters
+----------
+continuity: int
+
+Returns
+-------
+None
 ") SetContinuity;
 		void SetContinuity(const Standard_Integer continuity);
 
@@ -591,9 +738,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetEpsCoeff;
 		%feature("autodoc", "Changes the value of 'myepscoeff'.
 
-	:param eps:
-	:type eps: float
-	:rtype: None
+Parameters
+----------
+eps: float
+
+Returns
+-------
+None
 ") SetEpsCoeff;
 		void SetEpsCoeff(const Standard_Real eps);
 
@@ -601,9 +752,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetEpsGeom;
 		%feature("autodoc", "Changes the value of 'myepsgeom'.
 
-	:param eps:
-	:type eps: float
-	:rtype: None
+Parameters
+----------
+eps: float
+
+Returns
+-------
+None
 ") SetEpsGeom;
 		void SetEpsGeom(const Standard_Real eps);
 
@@ -611,9 +766,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetEpsilon;
 		%feature("autodoc", "Changes the value of 'myeps'.
 
-	:param eps:
-	:type eps: float
-	:rtype: None
+Parameters
+----------
+eps: float
+
+Returns
+-------
+None
 ") SetEpsilon;
 		void SetEpsilon(const Standard_Real eps);
 
@@ -621,9 +780,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetMaxTol;
 		%feature("autodoc", "Changes the value of 'mymaxtol'.
 
-	:param maxtol:
-	:type maxtol: float
-	:rtype: None
+Parameters
+----------
+maxtol: float
+
+Returns
+-------
+None
 ") SetMaxTol;
 		void SetMaxTol(const Standard_Real maxtol);
 
@@ -631,9 +794,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetMinTol;
 		%feature("autodoc", "Changes the value of 'mymintol'.
 
-	:param mintol:
-	:type mintol: float
-	:rtype: None
+Parameters
+----------
+mintol: float
+
+Returns
+-------
+None
 ") SetMinTol;
 		void SetMinTol(const Standard_Real mintol);
 
@@ -641,9 +808,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetModeApprox;
 		%feature("autodoc", "Changes the value of 'mymodeapprox'.
 
-	:param mode:
-	:type mode: bool
-	:rtype: None
+Parameters
+----------
+mode: bool
+
+Returns
+-------
+None
 ") SetModeApprox;
 		void SetModeApprox(const Standard_Boolean mode);
 
@@ -651,9 +822,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetModeTransfer;
 		%feature("autodoc", "Changes the value of 'mymodeistopo'.
 
-	:param mode:
-	:type mode: bool
-	:rtype: None
+Parameters
+----------
+mode: bool
+
+Returns
+-------
+None
 ") SetModeTransfer;
 		void SetModeTransfer(const Standard_Boolean mode);
 
@@ -661,9 +836,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetModel;
 		%feature("autodoc", "Set the value of 'mymodel'.
 
-	:param model:
-	:type model: IGESData_IGESModel
-	:rtype: None
+Parameters
+----------
+model: IGESData_IGESModel
+
+Returns
+-------
+None
 ") SetModel;
 		void SetModel(const opencascade::handle<IGESData_IGESModel> & model);
 
@@ -671,9 +850,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetOptimized;
 		%feature("autodoc", "Changes the value of 'mycontisopti'.
 
-	:param optimized:
-	:type optimized: bool
-	:rtype: None
+Parameters
+----------
+optimized: bool
+
+Returns
+-------
+None
 ") SetOptimized;
 		void SetOptimized(const Standard_Boolean optimized);
 
@@ -681,19 +864,28 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetShapeResult;
 		%feature("autodoc", "Set in 'mymap' the result of the transfer of the igesentity 'start'.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:param result:
-	:type result: TopoDS_Shape
-	:rtype: None
+Parameters
+----------
+start: IGESData_IGESEntity
+result: TopoDS_Shape
+
+Returns
+-------
+None
 ") SetShapeResult;
 		void SetShapeResult(const opencascade::handle<IGESData_IGESEntity> & start, const TopoDS_Shape & result);
 
 		/****************** SetSurface ******************/
 		%feature("compactdefaultargs") SetSurface;
-		%feature("autodoc", "	:param theSurface:
-	:type theSurface: Geom_Surface
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theSurface: Geom_Surface
+
+Returns
+-------
+None
 ") SetSurface;
 		void SetSurface(const opencascade::handle<Geom_Surface> & theSurface);
 
@@ -701,9 +893,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetSurfaceCurve;
 		%feature("autodoc", "Changes the value of 'mysurfacecurve'.
 
-	:param ival:
-	:type ival: int
-	:rtype: None
+Parameters
+----------
+ival: int
+
+Returns
+-------
+None
 ") SetSurfaceCurve;
 		void SetSurfaceCurve(const Standard_Integer ival);
 
@@ -711,15 +907,23 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetTransferProcess;
 		%feature("autodoc", "Set the value of 'mymsgreg'.
 
-	:param TP:
-	:type TP: Transfer_TransientProcess
-	:rtype: None
+Parameters
+----------
+TP: Transfer_TransientProcess
+
+Returns
+-------
+None
 ") SetTransferProcess;
 		void SetTransferProcess(const opencascade::handle<Transfer_TransientProcess> & TP);
 
 		/****************** Surface ******************/
 		%feature("compactdefaultargs") Surface;
-		%feature("autodoc", "	:rtype: opencascade::handle<Geom_Surface>
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_Surface>
 ") Surface;
 		opencascade::handle<Geom_Surface> Surface();
 
@@ -727,9 +931,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferCurveAndSurface;
 		%feature("autodoc", "Returns the result of the transfert of any iges curve or surface entity. if the transfer has failed, this member return a nullentity.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: TopoDS_Shape
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+TopoDS_Shape
 ") TransferCurveAndSurface;
 		TopoDS_Shape TransferCurveAndSurface(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -737,9 +945,13 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferGeometry;
 		%feature("autodoc", "Returns the result of the transfert the geometry of any igesentity. if the transfer has failed, this member return a nullentity.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: TopoDS_Shape
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+TopoDS_Shape
 ") TransferGeometry;
 		TopoDS_Shape TransferGeometry(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -747,7 +959,9 @@ class IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") UpdateMinMaxTol;
 		%feature("autodoc", "Sets values of 'mymintol' and 'mymaxtol' as follows mymaxtol = max ('read.maxprecision.val', myepsgeom * myunitfactor) mymintol = precision::confusion() remark: this method is automatically invoked each time the values of 'myepsgeom' or 'myunitfactor' are changed.
 
-	:rtype: None
+Returns
+-------
+None
 ") UpdateMinMaxTol;
 		void UpdateMinMaxTol();
 
@@ -769,15 +983,16 @@ class IGESToBRep_IGESBoundary : public Standard_Transient {
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "Checks result of translation of iges boundary entities (types 141, 142 or 508). checks consistency of 2d and 3d representations and keeps only one if they are inconsistent. <result>: result of translation (returned by transfer), <checkclosure>: false for 142 without parent 144 entity, otherwise true, <okcurve3d>, <okcurve2d>: those returned by transfer.
 
-	:param result:
-	:type result: bool
-	:param checkclosure:
-	:type checkclosure: bool
-	:param okCurve3d:
-	:type okCurve3d: bool
-	:param okCurve2d:
-	:type okCurve2d: bool
-	:rtype: None
+Parameters
+----------
+result: bool
+checkclosure: bool
+okCurve3d: bool
+okCurve2d: bool
+
+Returns
+-------
+None
 ") Check;
 		virtual void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
 
@@ -785,7 +1000,9 @@ class IGESToBRep_IGESBoundary : public Standard_Transient {
 		%feature("compactdefaultargs") IGESToBRep_IGESBoundary;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") IGESToBRep_IGESBoundary;
 		 IGESToBRep_IGESBoundary();
 
@@ -793,9 +1010,13 @@ class IGESToBRep_IGESBoundary : public Standard_Transient {
 		%feature("compactdefaultargs") IGESToBRep_IGESBoundary;
 		%feature("autodoc", "Empty constructor.
 
-	:param CS:
-	:type CS: IGESToBRep_CurveAndSurface
-	:rtype: None
+Parameters
+----------
+CS: IGESToBRep_CurveAndSurface
+
+Returns
+-------
+None
 ") IGESToBRep_IGESBoundary;
 		 IGESToBRep_IGESBoundary(const IGESToBRep_CurveAndSurface & CS);
 
@@ -803,19 +1024,18 @@ class IGESToBRep_IGESBoundary : public Standard_Transient {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Inits the object with parameters common for all types of iges boundaries. <cs>: object to be used for retrieving translation parameters and sending messages, <entity>: boundary entity to be processed, <face>, <trans>, <ufact>: as for igestobrep_topocurve <filepreference>: preferred representation (2 or 3) given in the iges file.
 
-	:param CS:
-	:type CS: IGESToBRep_CurveAndSurface
-	:param entity:
-	:type entity: IGESData_IGESEntity
-	:param face:
-	:type face: TopoDS_Face
-	:param trans:
-	:type trans: gp_Trsf2d
-	:param uFact:
-	:type uFact: float
-	:param filepreference:
-	:type filepreference: int
-	:rtype: None
+Parameters
+----------
+CS: IGESToBRep_CurveAndSurface
+entity: IGESData_IGESEntity
+face: TopoDS_Face
+trans: gp_Trsf2d
+uFact: float
+filepreference: int
+
+Returns
+-------
+None
 ") Init;
 		void Init(const IGESToBRep_CurveAndSurface & CS, const opencascade::handle<IGESData_IGESEntity> & entity, const TopoDS_Face & face, const gp_Trsf2d & trans, const Standard_Real uFact, const Standard_Integer filepreference);
 
@@ -823,21 +1043,19 @@ class IGESToBRep_IGESBoundary : public Standard_Transient {
 		%feature("compactdefaultargs") Transfer;
 		%feature("autodoc", "Translates 141 and 142 entities. returns true if the curve has been successfully translated, otherwise returns false. <okcurve..>: flags that indicate whether corresponding representation has been successfully translated (must be set to true before first call), <curve3d>: model space curve for 142 and current model space curve for 141, <toreverse3d>: false for 142 and current orientation flag for 141, <curves2d>: 1 parameter space curve for 142 or list of them for current model space curves for 141, <number>: 1 for 142 and rank number of model space curve for 141.
 
-	:param okCurve:
-	:type okCurve: bool
-	:param okCurve3d:
-	:type okCurve3d: bool
-	:param okCurve2d:
-	:type okCurve2d: bool
-	:param curve3d:
-	:type curve3d: IGESData_IGESEntity
-	:param toreverse3d:
-	:type toreverse3d: bool
-	:param curves2d:
-	:type curves2d: IGESData_HArray1OfIGESEntity
-	:param number:
-	:type number: int
-	:rtype: bool
+Parameters
+----------
+okCurve: bool
+okCurve3d: bool
+okCurve2d: bool
+curve3d: IGESData_IGESEntity
+toreverse3d: bool
+curves2d: IGESData_HArray1OfIGESEntity
+number: int
+
+Returns
+-------
+bool
 ") Transfer;
 		Standard_Boolean Transfer(Standard_Boolean &OutValue, Standard_Boolean &OutValue, Standard_Boolean &OutValue, const opencascade::handle<IGESData_IGESEntity> & curve3d, const Standard_Boolean toreverse3d, const opencascade::handle<IGESData_HArray1OfIGESEntity> & curves2d, const Standard_Integer number);
 
@@ -845,23 +1063,20 @@ class IGESToBRep_IGESBoundary : public Standard_Transient {
 		%feature("compactdefaultargs") Transfer;
 		%feature("autodoc", "Translates 508 entity. returns true if the curve has been successfully translated, otherwise returns false. input object igesboundary must be created and initialized before. <okcurve..>: flags that indicate whether corresponding representation has been successfully translated (must be set to true before first call), <curve3d>: result of translation of current edge, <curves2d>: list of parameter space curves for edge, <toreverse2d>: orientation flag of current edge in respect to its model space curve, <number>: rank number of edge, <lsewd>: returns the result of translation of current edge.
 
-	:param okCurve:
-	:type okCurve: bool
-	:param okCurve3d:
-	:type okCurve3d: bool
-	:param okCurve2d:
-	:type okCurve2d: bool
-	:param curve3d:
-	:type curve3d: ShapeExtend_WireData
-	:param curves2d:
-	:type curves2d: IGESData_HArray1OfIGESEntity
-	:param toreverse2d:
-	:type toreverse2d: bool
-	:param number:
-	:type number: int
-	:param lsewd:
-	:type lsewd: ShapeExtend_WireData
-	:rtype: bool
+Parameters
+----------
+okCurve: bool
+okCurve3d: bool
+okCurve2d: bool
+curve3d: ShapeExtend_WireData
+curves2d: IGESData_HArray1OfIGESEntity
+toreverse2d: bool
+number: int
+lsewd: ShapeExtend_WireData
+
+Returns
+-------
+bool
 ") Transfer;
 		Standard_Boolean Transfer(Standard_Boolean &OutValue, Standard_Boolean &OutValue, Standard_Boolean &OutValue, const opencascade::handle<ShapeExtend_WireData> & curve3d, const opencascade::handle<IGESData_HArray1OfIGESEntity> & curves2d, const Standard_Boolean toreverse2d, const Standard_Integer number, opencascade::handle<ShapeExtend_WireData> & lsewd);
 
@@ -869,7 +1084,9 @@ class IGESToBRep_IGESBoundary : public Standard_Transient {
 		%feature("compactdefaultargs") WireData;
 		%feature("autodoc", "Returns the resulting wire.
 
-	:rtype: opencascade::handle<ShapeExtend_WireData>
+Returns
+-------
+opencascade::handle<ShapeExtend_WireData>
 ") WireData;
 		opencascade::handle<ShapeExtend_WireData> WireData();
 
@@ -877,7 +1094,9 @@ class IGESToBRep_IGESBoundary : public Standard_Transient {
 		%feature("compactdefaultargs") WireData2d;
 		%feature("autodoc", "Returns the the wire from 2d curves (edges contain pcurves only).
 
-	:rtype: opencascade::handle<ShapeExtend_WireData>
+Returns
+-------
+opencascade::handle<ShapeExtend_WireData>
 ") WireData2d;
 		opencascade::handle<ShapeExtend_WireData> WireData2d();
 
@@ -885,7 +1104,9 @@ class IGESToBRep_IGESBoundary : public Standard_Transient {
 		%feature("compactdefaultargs") WireData3d;
 		%feature("autodoc", "Returns the wire from 3d curves (edges contain 3d curves and may contain pcurves).
 
-	:rtype: opencascade::handle<ShapeExtend_WireData>
+Returns
+-------
+opencascade::handle<ShapeExtend_WireData>
 ") WireData3d;
 		opencascade::handle<ShapeExtend_WireData> WireData3d();
 
@@ -909,7 +1130,9 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") Actor;
 		%feature("autodoc", "Returns 'theactor'.
 
-	:rtype: opencascade::handle<IGESToBRep_Actor>
+Returns
+-------
+opencascade::handle<IGESToBRep_Actor>
 ") Actor;
 		opencascade::handle<IGESToBRep_Actor> Actor();
 
@@ -917,9 +1140,13 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "Checks the iges file that was loaded into memory. displays error messages in the default message file if withprint is true. returns true if no fail message was found and false if there was at least one fail message.
 
-	:param withprint:
-	:type withprint: bool
-	:rtype: bool
+Parameters
+----------
+withprint: bool
+
+Returns
+-------
+bool
 ") Check;
 		Standard_Boolean Check(const Standard_Boolean withprint);
 
@@ -927,7 +1154,9 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears the results between two translation operations.
 
-	:rtype: None
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
@@ -935,7 +1164,9 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") IGESToBRep_Reader;
 		%feature("autodoc", "Creates a reader.
 
-	:rtype: None
+Returns
+-------
+None
 ") IGESToBRep_Reader;
 		 IGESToBRep_Reader();
 
@@ -943,7 +1174,9 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the last transfer/transferroots was a success.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
@@ -951,9 +1184,13 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") LoadFile;
 		%feature("autodoc", "Loads a model from a file.returns 0 if success. returns 1 if the file could not be opened, returns -1 if an error occurred while the file was being loaded.
 
-	:param filename:
-	:type filename: char *
-	:rtype: int
+Parameters
+----------
+filename: char *
+
+Returns
+-------
+int
 ") LoadFile;
 		Standard_Integer LoadFile(const char * filename);
 
@@ -961,7 +1198,9 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") Model;
 		%feature("autodoc", "Returns the model to be worked on.
 
-	:rtype: opencascade::handle<IGESData_IGESModel>
+Returns
+-------
+opencascade::handle<IGESData_IGESModel>
 ") Model;
 		opencascade::handle<IGESData_IGESModel> Model();
 
@@ -969,7 +1208,9 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") NbShapes;
 		%feature("autodoc", "Returns the number of shapes produced by the translation.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbShapes;
 		Standard_Integer NbShapes();
 
@@ -977,7 +1218,9 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") OneShape;
 		%feature("autodoc", "Returns all of the results in a single shape which is: - a null shape if there are no results, - a shape if there is one result, - a compound containing the resulting shapes if there are several.
 
-	:rtype: TopoDS_Shape
+Returns
+-------
+TopoDS_Shape
 ") OneShape;
 		TopoDS_Shape OneShape();
 
@@ -985,9 +1228,13 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") SetModel;
 		%feature("autodoc", "Specifies a model to work on also clears the result and done status, sets transientprocess.
 
-	:param model:
-	:type model: IGESData_IGESModel
-	:rtype: None
+Parameters
+----------
+model: IGESData_IGESModel
+
+Returns
+-------
+None
 ") SetModel;
 		void SetModel(const opencascade::handle<IGESData_IGESModel> & model);
 
@@ -995,9 +1242,13 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") SetTransientProcess;
 		%feature("autodoc", "Allows to set an already defined transientprocess (to be called after loadfile or setmodel).
 
-	:param TP:
-	:type TP: Transfer_TransientProcess
-	:rtype: None
+Parameters
+----------
+TP: Transfer_TransientProcess
+
+Returns
+-------
+None
 ") SetTransientProcess;
 		void SetTransientProcess(const opencascade::handle<Transfer_TransientProcess> & TP);
 
@@ -1005,9 +1256,14 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns the num the resulting shape in a translation operation.
 
-	:param num: default value is 1
-	:type num: int
-	:rtype: TopoDS_Shape
+Parameters
+----------
+num: int,optional
+	default value is 1
+
+Returns
+-------
+TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape(const Standard_Integer num = 1);
 
@@ -1015,9 +1271,13 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") Transfer;
 		%feature("autodoc", "Transfers an entity given its rank in the model (root or not) returns true if it is recognized as geom-topol. (but it can have failed : see isdone).
 
-	:param num:
-	:type num: int
-	:rtype: bool
+Parameters
+----------
+num: int
+
+Returns
+-------
+bool
 ") Transfer;
 		Standard_Boolean Transfer(const Standard_Integer num);
 
@@ -1025,9 +1285,14 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") TransferRoots;
 		%feature("autodoc", "Translates root entities in an iges file. standard_true is the default value and means that only visible root entities are translated. standard_false translates all of the roots (visible and invisible).
 
-	:param onlyvisible: default value is Standard_True
-	:type onlyvisible: bool
-	:rtype: None
+Parameters
+----------
+onlyvisible: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
 ") TransferRoots;
 		void TransferRoots(const Standard_Boolean onlyvisible = Standard_True);
 
@@ -1035,7 +1300,9 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") TransientProcess;
 		%feature("autodoc", "Returns the transientprocess.
 
-	:rtype: opencascade::handle<Transfer_TransientProcess>
+Returns
+-------
+opencascade::handle<Transfer_TransientProcess>
 ") TransientProcess;
 		opencascade::handle<Transfer_TransientProcess> TransientProcess();
 
@@ -1043,7 +1310,9 @@ class IGESToBRep_Reader {
 		%feature("compactdefaultargs") UsedTolerance;
 		%feature("autodoc", "Returns the tolerance which has been actually used, converted in millimeters (either that from file or that from session, according the mode).
 
-	:rtype: float
+Returns
+-------
+float
 ") UsedTolerance;
 		Standard_Real UsedTolerance();
 
@@ -1065,7 +1334,9 @@ class IGESToBRep_ToolContainer : public Standard_Transient {
 		%feature("compactdefaultargs") IGESBoundary;
 		%feature("autodoc", "Returns igestobrep_igesboundary.
 
-	:rtype: opencascade::handle<IGESToBRep_IGESBoundary>
+Returns
+-------
+opencascade::handle<IGESToBRep_IGESBoundary>
 ") IGESBoundary;
 		virtual opencascade::handle<IGESToBRep_IGESBoundary> IGESBoundary();
 
@@ -1073,7 +1344,9 @@ class IGESToBRep_ToolContainer : public Standard_Transient {
 		%feature("compactdefaultargs") IGESToBRep_ToolContainer;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") IGESToBRep_ToolContainer;
 		 IGESToBRep_ToolContainer();
 
@@ -1097,7 +1370,9 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_BRepEntity;
 		%feature("autodoc", "Creates a tool brepentity ready to run, with epsilons set to 1.e-04, themodetopo to true, the optimization of the continuity to false.
 
-	:rtype: None
+Returns
+-------
+None
 ") IGESToBRep_BRepEntity;
 		 IGESToBRep_BRepEntity();
 
@@ -1105,9 +1380,13 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_BRepEntity;
 		%feature("autodoc", "Creates a tool brepentity ready to run and sets its fields as cs's.
 
-	:param CS:
-	:type CS: IGESToBRep_CurveAndSurface
-	:rtype: None
+Parameters
+----------
+CS: IGESToBRep_CurveAndSurface
+
+Returns
+-------
+None
 ") IGESToBRep_BRepEntity;
 		 IGESToBRep_BRepEntity(const IGESToBRep_CurveAndSurface & CS);
 
@@ -1115,19 +1394,18 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_BRepEntity;
 		%feature("autodoc", "Creates a tool brepentity ready to run.
 
-	:param eps:
-	:type eps: float
-	:param epsGeom:
-	:type epsGeom: float
-	:param epsCoeff:
-	:type epsCoeff: float
-	:param mode:
-	:type mode: bool
-	:param modeapprox:
-	:type modeapprox: bool
-	:param optimized:
-	:type optimized: bool
-	:rtype: None
+Parameters
+----------
+eps: float
+epsGeom: float
+epsCoeff: float
+mode: bool
+modeapprox: bool
+optimized: bool
+
+Returns
+-------
+None
 ") IGESToBRep_BRepEntity;
 		 IGESToBRep_BRepEntity(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
 
@@ -1135,9 +1413,13 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferBRepEntity;
 		%feature("autodoc", "Transfer the brepentity' : face, shell or manifoldsolid.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: TopoDS_Shape
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+TopoDS_Shape
 ") TransferBRepEntity;
 		TopoDS_Shape TransferBRepEntity(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -1145,11 +1427,14 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferEdge;
 		%feature("autodoc", "Transfer the entity number 'index' of the edgelist 'start'.
 
-	:param start:
-	:type start: IGESSolid_EdgeList
-	:param index:
-	:type index: int
-	:rtype: TopoDS_Shape
+Parameters
+----------
+start: IGESSolid_EdgeList
+index: int
+
+Returns
+-------
+TopoDS_Shape
 ") TransferEdge;
 		TopoDS_Shape TransferEdge(const opencascade::handle<IGESSolid_EdgeList> & start, const Standard_Integer index);
 
@@ -1157,9 +1442,13 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferFace;
 		%feature("autodoc", "Transfer the face entity.
 
-	:param start:
-	:type start: IGESSolid_Face
-	:rtype: TopoDS_Shape
+Parameters
+----------
+start: IGESSolid_Face
+
+Returns
+-------
+TopoDS_Shape
 ") TransferFace;
 		TopoDS_Shape TransferFace(const opencascade::handle<IGESSolid_Face> & start);
 
@@ -1167,15 +1456,16 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferLoop;
 		%feature("autodoc", "Transfer the loop entity.
 
-	:param start:
-	:type start: IGESSolid_Loop
-	:param Face:
-	:type Face: TopoDS_Face
-	:param trans:
-	:type trans: gp_Trsf2d
-	:param uFact:
-	:type uFact: float
-	:rtype: TopoDS_Shape
+Parameters
+----------
+start: IGESSolid_Loop
+Face: TopoDS_Face
+trans: gp_Trsf2d
+uFact: float
+
+Returns
+-------
+TopoDS_Shape
 ") TransferLoop;
 		TopoDS_Shape TransferLoop(const opencascade::handle<IGESSolid_Loop> & start, const TopoDS_Face & Face, const gp_Trsf2d & trans, const Standard_Real uFact);
 
@@ -1183,9 +1473,13 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferManifoldSolid;
 		%feature("autodoc", "Transfer the manifoldsolid entity.
 
-	:param start:
-	:type start: IGESSolid_ManifoldSolid
-	:rtype: TopoDS_Shape
+Parameters
+----------
+start: IGESSolid_ManifoldSolid
+
+Returns
+-------
+TopoDS_Shape
 ") TransferManifoldSolid;
 		TopoDS_Shape TransferManifoldSolid(const opencascade::handle<IGESSolid_ManifoldSolid> & start);
 
@@ -1193,9 +1487,13 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferShell;
 		%feature("autodoc", "Transfer the shell entity.
 
-	:param start:
-	:type start: IGESSolid_Shell
-	:rtype: TopoDS_Shape
+Parameters
+----------
+start: IGESSolid_Shell
+
+Returns
+-------
+TopoDS_Shape
 ") TransferShell;
 		TopoDS_Shape TransferShell(const opencascade::handle<IGESSolid_Shell> & start);
 
@@ -1203,11 +1501,14 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferVertex;
 		%feature("autodoc", "Transfer the entity number 'index' of the vertexlist 'start'.
 
-	:param start:
-	:type start: IGESSolid_VertexList
-	:param index:
-	:type index: int
-	:rtype: TopoDS_Vertex
+Parameters
+----------
+start: IGESSolid_VertexList
+index: int
+
+Returns
+-------
+TopoDS_Vertex
 ") TransferVertex;
 		TopoDS_Vertex TransferVertex(const opencascade::handle<IGESSolid_VertexList> & start, const Standard_Integer index);
 
@@ -1229,7 +1530,9 @@ class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_BasicCurve;
 		%feature("autodoc", "Creates a tool basiccurve ready to run, with epsilons set to 1.e-04, themodetopo to true, the optimization of the continuity to false.
 
-	:rtype: None
+Returns
+-------
+None
 ") IGESToBRep_BasicCurve;
 		 IGESToBRep_BasicCurve();
 
@@ -1237,9 +1540,13 @@ class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_BasicCurve;
 		%feature("autodoc", "Creates a tool basiccurve ready to run and sets its fields as cs's.
 
-	:param CS:
-	:type CS: IGESToBRep_CurveAndSurface
-	:rtype: None
+Parameters
+----------
+CS: IGESToBRep_CurveAndSurface
+
+Returns
+-------
+None
 ") IGESToBRep_BasicCurve;
 		 IGESToBRep_BasicCurve(const IGESToBRep_CurveAndSurface & CS);
 
@@ -1247,27 +1554,32 @@ class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_BasicCurve;
 		%feature("autodoc", "Creates a tool basiccurve ready to run.
 
-	:param eps:
-	:type eps: float
-	:param epsGeom:
-	:type epsGeom: float
-	:param epsCoeff:
-	:type epsCoeff: float
-	:param mode:
-	:type mode: bool
-	:param modeapprox:
-	:type modeapprox: bool
-	:param optimized:
-	:type optimized: bool
-	:rtype: None
+Parameters
+----------
+eps: float
+epsGeom: float
+epsCoeff: float
+mode: bool
+modeapprox: bool
+optimized: bool
+
+Returns
+-------
+None
 ") IGESToBRep_BasicCurve;
 		 IGESToBRep_BasicCurve(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
 
 		/****************** Transfer2dBSplineCurve ******************/
 		%feature("compactdefaultargs") Transfer2dBSplineCurve;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_BSplineCurve
-	:rtype: opencascade::handle<Geom2d_Curve>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_BSplineCurve
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") Transfer2dBSplineCurve;
 		opencascade::handle<Geom2d_Curve> Transfer2dBSplineCurve(const opencascade::handle<IGESGeom_BSplineCurve> & start);
 
@@ -1275,57 +1587,97 @@ class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") Transfer2dBasicCurve;
 		%feature("autodoc", "Transfert a igesentity which answer true to the member : igestobrep::isbasiccurve(igesentity). the igesentity must be a curve uv and its associed trsf must be planar .if this entity could not be converted, this member returns a nullentity.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: opencascade::handle<Geom2d_Curve>
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") Transfer2dBasicCurve;
 		opencascade::handle<Geom2d_Curve> Transfer2dBasicCurve(const opencascade::handle<IGESData_IGESEntity> & start);
 
 		/****************** Transfer2dCircularArc ******************/
 		%feature("compactdefaultargs") Transfer2dCircularArc;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_CircularArc
-	:rtype: opencascade::handle<Geom2d_Curve>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_CircularArc
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") Transfer2dCircularArc;
 		opencascade::handle<Geom2d_Curve> Transfer2dCircularArc(const opencascade::handle<IGESGeom_CircularArc> & start);
 
 		/****************** Transfer2dConicArc ******************/
 		%feature("compactdefaultargs") Transfer2dConicArc;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_ConicArc
-	:rtype: opencascade::handle<Geom2d_Curve>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_ConicArc
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") Transfer2dConicArc;
 		opencascade::handle<Geom2d_Curve> Transfer2dConicArc(const opencascade::handle<IGESGeom_ConicArc> & start);
 
 		/****************** Transfer2dCopiousData ******************/
 		%feature("compactdefaultargs") Transfer2dCopiousData;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_CopiousData
-	:rtype: opencascade::handle<Geom2d_BSplineCurve>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_CopiousData
+
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
 ") Transfer2dCopiousData;
 		opencascade::handle<Geom2d_BSplineCurve> Transfer2dCopiousData(const opencascade::handle<IGESGeom_CopiousData> & start);
 
 		/****************** Transfer2dLine ******************/
 		%feature("compactdefaultargs") Transfer2dLine;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_Line
-	:rtype: opencascade::handle<Geom2d_Curve>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_Line
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") Transfer2dLine;
 		opencascade::handle<Geom2d_Curve> Transfer2dLine(const opencascade::handle<IGESGeom_Line> & start);
 
 		/****************** Transfer2dSplineCurve ******************/
 		%feature("compactdefaultargs") Transfer2dSplineCurve;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_SplineCurve
-	:rtype: opencascade::handle<Geom2d_BSplineCurve>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_SplineCurve
+
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
 ") Transfer2dSplineCurve;
 		opencascade::handle<Geom2d_BSplineCurve> Transfer2dSplineCurve(const opencascade::handle<IGESGeom_SplineCurve> & start);
 
 		/****************** TransferBSplineCurve ******************/
 		%feature("compactdefaultargs") TransferBSplineCurve;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_BSplineCurve
-	:rtype: opencascade::handle<Geom_Curve>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_BSplineCurve
+
+Returns
+-------
+opencascade::handle<Geom_Curve>
 ") TransferBSplineCurve;
 		opencascade::handle<Geom_Curve> TransferBSplineCurve(const opencascade::handle<IGESGeom_BSplineCurve> & start);
 
@@ -1333,57 +1685,97 @@ class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferBasicCurve;
 		%feature("autodoc", "Transfert a igesentity which answer true to the member : igestobrep::isbasiccurve(igesentity). if this entity could not be converted, this member returns a nullentity.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: opencascade::handle<Geom_Curve>
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+opencascade::handle<Geom_Curve>
 ") TransferBasicCurve;
 		opencascade::handle<Geom_Curve> TransferBasicCurve(const opencascade::handle<IGESData_IGESEntity> & start);
 
 		/****************** TransferCircularArc ******************/
 		%feature("compactdefaultargs") TransferCircularArc;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_CircularArc
-	:rtype: opencascade::handle<Geom_Curve>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_CircularArc
+
+Returns
+-------
+opencascade::handle<Geom_Curve>
 ") TransferCircularArc;
 		opencascade::handle<Geom_Curve> TransferCircularArc(const opencascade::handle<IGESGeom_CircularArc> & start);
 
 		/****************** TransferConicArc ******************/
 		%feature("compactdefaultargs") TransferConicArc;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_ConicArc
-	:rtype: opencascade::handle<Geom_Curve>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_ConicArc
+
+Returns
+-------
+opencascade::handle<Geom_Curve>
 ") TransferConicArc;
 		opencascade::handle<Geom_Curve> TransferConicArc(const opencascade::handle<IGESGeom_ConicArc> & start);
 
 		/****************** TransferCopiousData ******************/
 		%feature("compactdefaultargs") TransferCopiousData;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_CopiousData
-	:rtype: opencascade::handle<Geom_BSplineCurve>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_CopiousData
+
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
 ") TransferCopiousData;
 		opencascade::handle<Geom_BSplineCurve> TransferCopiousData(const opencascade::handle<IGESGeom_CopiousData> & start);
 
 		/****************** TransferLine ******************/
 		%feature("compactdefaultargs") TransferLine;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_Line
-	:rtype: opencascade::handle<Geom_Curve>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_Line
+
+Returns
+-------
+opencascade::handle<Geom_Curve>
 ") TransferLine;
 		opencascade::handle<Geom_Curve> TransferLine(const opencascade::handle<IGESGeom_Line> & start);
 
 		/****************** TransferSplineCurve ******************/
 		%feature("compactdefaultargs") TransferSplineCurve;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_SplineCurve
-	:rtype: opencascade::handle<Geom_BSplineCurve>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_SplineCurve
+
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
 ") TransferSplineCurve;
 		opencascade::handle<Geom_BSplineCurve> TransferSplineCurve(const opencascade::handle<IGESGeom_SplineCurve> & start);
 
 		/****************** TransferTransformation ******************/
 		%feature("compactdefaultargs") TransferTransformation;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_TransformationMatrix
-	:rtype: opencascade::handle<Geom_Transformation>
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_TransformationMatrix
+
+Returns
+-------
+opencascade::handle<Geom_Transformation>
 ") TransferTransformation;
 		opencascade::handle<Geom_Transformation> TransferTransformation(const opencascade::handle<IGESGeom_TransformationMatrix> & start);
 
@@ -1405,7 +1797,9 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_BasicSurface;
 		%feature("autodoc", "Creates a tool basicsurface ready to run, with epsilons set to 1.e-04, themodetopo to true, the optimization of the continuity to false.
 
-	:rtype: None
+Returns
+-------
+None
 ") IGESToBRep_BasicSurface;
 		 IGESToBRep_BasicSurface();
 
@@ -1413,9 +1807,13 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_BasicSurface;
 		%feature("autodoc", "Creates a tool basicsurface ready to run and sets its fields as cs's.
 
-	:param CS:
-	:type CS: IGESToBRep_CurveAndSurface
-	:rtype: None
+Parameters
+----------
+CS: IGESToBRep_CurveAndSurface
+
+Returns
+-------
+None
 ") IGESToBRep_BasicSurface;
 		 IGESToBRep_BasicSurface(const IGESToBRep_CurveAndSurface & CS);
 
@@ -1423,19 +1821,18 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_BasicSurface;
 		%feature("autodoc", "Creates a tool basicsurface ready to run.
 
-	:param eps:
-	:type eps: float
-	:param epsGeom:
-	:type epsGeom: float
-	:param epsCoeff:
-	:type epsCoeff: float
-	:param mode:
-	:type mode: bool
-	:param modeapprox:
-	:type modeapprox: bool
-	:param optimized:
-	:type optimized: bool
-	:rtype: None
+Parameters
+----------
+eps: float
+epsGeom: float
+epsCoeff: float
+mode: bool
+modeapprox: bool
+optimized: bool
+
+Returns
+-------
+None
 ") IGESToBRep_BasicSurface;
 		 IGESToBRep_BasicSurface(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
 
@@ -1443,9 +1840,13 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferBSplineSurface;
 		%feature("autodoc", "Returns bsplinesurface from geom if the transfer has succeded.
 
-	:param start:
-	:type start: IGESGeom_BSplineSurface
-	:rtype: opencascade::handle<Geom_BSplineSurface>
+Parameters
+----------
+start: IGESGeom_BSplineSurface
+
+Returns
+-------
+opencascade::handle<Geom_BSplineSurface>
 ") TransferBSplineSurface;
 		opencascade::handle<Geom_BSplineSurface> TransferBSplineSurface(const opencascade::handle<IGESGeom_BSplineSurface> & start);
 
@@ -1453,9 +1854,13 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferBasicSurface;
 		%feature("autodoc", "Returns surface from geom if the last transfer has succeded.
 
-	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: opencascade::handle<Geom_Surface>
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+opencascade::handle<Geom_Surface>
 ") TransferBasicSurface;
 		opencascade::handle<Geom_Surface> TransferBasicSurface(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -1463,9 +1868,13 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferPlaneSurface;
 		%feature("autodoc", "Returns plane from geom if the transfer has succeded.
 
-	:param start:
-	:type start: IGESSolid_PlaneSurface
-	:rtype: opencascade::handle<Geom_Plane>
+Parameters
+----------
+start: IGESSolid_PlaneSurface
+
+Returns
+-------
+opencascade::handle<Geom_Plane>
 ") TransferPlaneSurface;
 		opencascade::handle<Geom_Plane> TransferPlaneSurface(const opencascade::handle<IGESSolid_PlaneSurface> & start);
 
@@ -1473,9 +1882,13 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferRigthConicalSurface;
 		%feature("autodoc", "Returns conicalsurface from geom if the transfer has succeded.
 
-	:param start:
-	:type start: IGESSolid_ConicalSurface
-	:rtype: opencascade::handle<Geom_ConicalSurface>
+Parameters
+----------
+start: IGESSolid_ConicalSurface
+
+Returns
+-------
+opencascade::handle<Geom_ConicalSurface>
 ") TransferRigthConicalSurface;
 		opencascade::handle<Geom_ConicalSurface> TransferRigthConicalSurface(const opencascade::handle<IGESSolid_ConicalSurface> & start);
 
@@ -1483,9 +1896,13 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferRigthCylindricalSurface;
 		%feature("autodoc", "Returns cylindricalsurface from geom if the transfer has succeded.
 
-	:param start:
-	:type start: IGESSolid_CylindricalSurface
-	:rtype: opencascade::handle<Geom_CylindricalSurface>
+Parameters
+----------
+start: IGESSolid_CylindricalSurface
+
+Returns
+-------
+opencascade::handle<Geom_CylindricalSurface>
 ") TransferRigthCylindricalSurface;
 		opencascade::handle<Geom_CylindricalSurface> TransferRigthCylindricalSurface(const opencascade::handle<IGESSolid_CylindricalSurface> & start);
 
@@ -1493,9 +1910,13 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferSphericalSurface;
 		%feature("autodoc", "Returns sphericalsurface from geom if the transfer has succeded.
 
-	:param start:
-	:type start: IGESSolid_SphericalSurface
-	:rtype: opencascade::handle<Geom_SphericalSurface>
+Parameters
+----------
+start: IGESSolid_SphericalSurface
+
+Returns
+-------
+opencascade::handle<Geom_SphericalSurface>
 ") TransferSphericalSurface;
 		opencascade::handle<Geom_SphericalSurface> TransferSphericalSurface(const opencascade::handle<IGESSolid_SphericalSurface> & start);
 
@@ -1503,9 +1924,13 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferSplineSurface;
 		%feature("autodoc", "Returns bsplinesurface from geom if the transfer has succeded.
 
-	:param start:
-	:type start: IGESGeom_SplineSurface
-	:rtype: opencascade::handle<Geom_BSplineSurface>
+Parameters
+----------
+start: IGESGeom_SplineSurface
+
+Returns
+-------
+opencascade::handle<Geom_BSplineSurface>
 ") TransferSplineSurface;
 		opencascade::handle<Geom_BSplineSurface> TransferSplineSurface(const opencascade::handle<IGESGeom_SplineSurface> & start);
 
@@ -1513,9 +1938,13 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferToroidalSurface;
 		%feature("autodoc", "Returns sphericalsurface from geom if the transfer has succeded.
 
-	:param start:
-	:type start: IGESSolid_ToroidalSurface
-	:rtype: opencascade::handle<Geom_ToroidalSurface>
+Parameters
+----------
+start: IGESSolid_ToroidalSurface
+
+Returns
+-------
+opencascade::handle<Geom_ToroidalSurface>
 ") TransferToroidalSurface;
 		opencascade::handle<Geom_ToroidalSurface> TransferToroidalSurface(const opencascade::handle<IGESSolid_ToroidalSurface> & start);
 
@@ -1535,17 +1964,29 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 	public:
 		/****************** Approx2dBSplineCurve ******************/
 		%feature("compactdefaultargs") Approx2dBSplineCurve;
-		%feature("autodoc", "	:param start:
-	:type start: Geom2d_BSplineCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: Geom2d_BSplineCurve
+
+Returns
+-------
+None
 ") Approx2dBSplineCurve;
 		void Approx2dBSplineCurve(const opencascade::handle<Geom2d_BSplineCurve> & start);
 
 		/****************** ApproxBSplineCurve ******************/
 		%feature("compactdefaultargs") ApproxBSplineCurve;
-		%feature("autodoc", "	:param start:
-	:type start: Geom_BSplineCurve
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: Geom_BSplineCurve
+
+Returns
+-------
+None
 ") ApproxBSplineCurve;
 		void ApproxBSplineCurve(const opencascade::handle<Geom_BSplineCurve> & start);
 
@@ -1553,7 +1994,9 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") BadCase;
 		%feature("autodoc", "Returns thebadcase flag.
 
-	:rtype: bool
+Returns
+-------
+bool
 ") BadCase;
 		Standard_Boolean BadCase();
 
@@ -1561,9 +2004,14 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Returns a curve given its rank, by default the first one (null curvee if out of range) in 'thecurves'.
 
-	:param num: default value is 1
-	:type num: int
-	:rtype: opencascade::handle<Geom_Curve>
+Parameters
+----------
+num: int,optional
+	default value is 1
+
+Returns
+-------
+opencascade::handle<Geom_Curve>
 ") Curve;
 		opencascade::handle<Geom_Curve> Curve(const Standard_Integer num = 1);
 
@@ -1571,9 +2019,14 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") Curve2d;
 		%feature("autodoc", "Returns a curve given its rank, by default the first one (null curvee if out of range) in 'thecurves2d'.
 
-	:param num: default value is 1
-	:type num: int
-	:rtype: opencascade::handle<Geom2d_Curve>
+Parameters
+----------
+num: int,optional
+	default value is 1
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
 ") Curve2d;
 		opencascade::handle<Geom2d_Curve> Curve2d(const Standard_Integer num = 1);
 
@@ -1581,7 +2034,9 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_TopoCurve;
 		%feature("autodoc", "Creates a tool topocurve ready to run, with epsilons set to 1.e-04, themodetopo to true, the optimization of the continuity to false.
 
-	:rtype: None
+Returns
+-------
+None
 ") IGESToBRep_TopoCurve;
 		 IGESToBRep_TopoCurve();
 
@@ -1589,9 +2044,13 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_TopoCurve;
 		%feature("autodoc", "Creates a tool topocurve ready to run and sets its fields as cs's.
 
-	:param CS:
-	:type CS: IGESToBRep_CurveAndSurface
-	:rtype: None
+Parameters
+----------
+CS: IGESToBRep_CurveAndSurface
+
+Returns
+-------
+None
 ") IGESToBRep_TopoCurve;
 		 IGESToBRep_TopoCurve(const IGESToBRep_CurveAndSurface & CS);
 
@@ -1599,9 +2058,13 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_TopoCurve;
 		%feature("autodoc", "Creates a tool topocurve ready to run and sets its fields as cs's.
 
-	:param CS:
-	:type CS: IGESToBRep_TopoCurve
-	:rtype: None
+Parameters
+----------
+CS: IGESToBRep_TopoCurve
+
+Returns
+-------
+None
 ") IGESToBRep_TopoCurve;
 		 IGESToBRep_TopoCurve(const IGESToBRep_TopoCurve & CS);
 
@@ -1609,19 +2072,18 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_TopoCurve;
 		%feature("autodoc", "Creates a tool topocurve ready to run.
 
-	:param eps:
-	:type eps: float
-	:param epsGeom:
-	:type epsGeom: float
-	:param epsCoeff:
-	:type epsCoeff: float
-	:param mode:
-	:type mode: bool
-	:param modeapprox:
-	:type modeapprox: bool
-	:param optimized:
-	:type optimized: bool
-	:rtype: None
+Parameters
+----------
+eps: float
+epsGeom: float
+epsCoeff: float
+mode: bool
+modeapprox: bool
+optimized: bool
+
+Returns
+-------
+None
 ") IGESToBRep_TopoCurve;
 		 IGESToBRep_TopoCurve(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
 
@@ -1629,7 +2091,9 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") NbCurves;
 		%feature("autodoc", "Returns the count of curves in 'thecurves'.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbCurves;
 		Standard_Integer NbCurves();
 
@@ -1637,7 +2101,9 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") NbCurves2d;
 		%feature("autodoc", "Returns the count of curves in 'thecurves2d'.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbCurves2d;
 		Standard_Integer NbCurves2d();
 
@@ -1645,81 +2111,109 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") SetBadCase;
 		%feature("autodoc", "Sets thebadcase flag.
 
-	:param value:
-	:type value: bool
-	:rtype: None
+Parameters
+----------
+value: bool
+
+Returns
+-------
+None
 ") SetBadCase;
 		void SetBadCase(const Standard_Boolean value);
 
 		/****************** Transfer2dCompositeCurve ******************/
 		%feature("compactdefaultargs") Transfer2dCompositeCurve;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_CompositeCurve
-	:param face:
-	:type face: TopoDS_Face
-	:param trans:
-	:type trans: gp_Trsf2d
-	:param uFact:
-	:type uFact: float
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_CompositeCurve
+face: TopoDS_Face
+trans: gp_Trsf2d
+uFact: float
+
+Returns
+-------
+TopoDS_Shape
 ") Transfer2dCompositeCurve;
 		TopoDS_Shape Transfer2dCompositeCurve(const opencascade::handle<IGESGeom_CompositeCurve> & start, const TopoDS_Face & face, const gp_Trsf2d & trans, const Standard_Real uFact);
 
 		/****************** Transfer2dOffsetCurve ******************/
 		%feature("compactdefaultargs") Transfer2dOffsetCurve;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_OffsetCurve
-	:param face:
-	:type face: TopoDS_Face
-	:param trans:
-	:type trans: gp_Trsf2d
-	:param uFact:
-	:type uFact: float
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_OffsetCurve
+face: TopoDS_Face
+trans: gp_Trsf2d
+uFact: float
+
+Returns
+-------
+TopoDS_Shape
 ") Transfer2dOffsetCurve;
 		TopoDS_Shape Transfer2dOffsetCurve(const opencascade::handle<IGESGeom_OffsetCurve> & start, const TopoDS_Face & face, const gp_Trsf2d & trans, const Standard_Real uFact);
 
 		/****************** Transfer2dPoint ******************/
 		%feature("compactdefaultargs") Transfer2dPoint;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_Point
-	:rtype: TopoDS_Vertex
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_Point
+
+Returns
+-------
+TopoDS_Vertex
 ") Transfer2dPoint;
 		TopoDS_Vertex Transfer2dPoint(const opencascade::handle<IGESGeom_Point> & start);
 
 		/****************** Transfer2dTopoBasicCurve ******************/
 		%feature("compactdefaultargs") Transfer2dTopoBasicCurve;
-		%feature("autodoc", "	:param start:
-	:type start: IGESData_IGESEntity
-	:param face:
-	:type face: TopoDS_Face
-	:param trans:
-	:type trans: gp_Trsf2d
-	:param uFact:
-	:type uFact: float
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESData_IGESEntity
+face: TopoDS_Face
+trans: gp_Trsf2d
+uFact: float
+
+Returns
+-------
+TopoDS_Shape
 ") Transfer2dTopoBasicCurve;
 		TopoDS_Shape Transfer2dTopoBasicCurve(const opencascade::handle<IGESData_IGESEntity> & start, const TopoDS_Face & face, const gp_Trsf2d & trans, const Standard_Real uFact);
 
 		/****************** Transfer2dTopoCurve ******************/
 		%feature("compactdefaultargs") Transfer2dTopoCurve;
-		%feature("autodoc", "	:param start:
-	:type start: IGESData_IGESEntity
-	:param face:
-	:type face: TopoDS_Face
-	:param trans:
-	:type trans: gp_Trsf2d
-	:param uFact:
-	:type uFact: float
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESData_IGESEntity
+face: TopoDS_Face
+trans: gp_Trsf2d
+uFact: float
+
+Returns
+-------
+TopoDS_Shape
 ") Transfer2dTopoCurve;
 		TopoDS_Shape Transfer2dTopoCurve(const opencascade::handle<IGESData_IGESEntity> & start, const TopoDS_Face & face, const gp_Trsf2d & trans, const Standard_Real uFact);
 
 		/****************** TransferBoundary ******************/
 		%feature("compactdefaultargs") TransferBoundary;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_Boundary
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_Boundary
+
+Returns
+-------
+TopoDS_Shape
 ") TransferBoundary;
 		TopoDS_Shape TransferBoundary(const opencascade::handle<IGESGeom_Boundary> & start);
 
@@ -1727,23 +2221,30 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferBoundaryOnFace;
 		%feature("autodoc", "Transfers a boundary directly on a face to trim it.
 
-	:param face:
-	:type face: TopoDS_Face
-	:param start:
-	:type start: IGESGeom_Boundary
-	:param trans:
-	:type trans: gp_Trsf2d
-	:param uFact:
-	:type uFact: float
-	:rtype: TopoDS_Shape
+Parameters
+----------
+face: TopoDS_Face
+start: IGESGeom_Boundary
+trans: gp_Trsf2d
+uFact: float
+
+Returns
+-------
+TopoDS_Shape
 ") TransferBoundaryOnFace;
 		TopoDS_Shape TransferBoundaryOnFace(TopoDS_Face & face, const opencascade::handle<IGESGeom_Boundary> & start, const gp_Trsf2d & trans, const Standard_Real uFact);
 
 		/****************** TransferCompositeCurve ******************/
 		%feature("compactdefaultargs") TransferCompositeCurve;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_CompositeCurve
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_CompositeCurve
+
+Returns
+-------
+TopoDS_Shape
 ") TransferCompositeCurve;
 		TopoDS_Shape TransferCompositeCurve(const opencascade::handle<IGESGeom_CompositeCurve> & start);
 
@@ -1751,57 +2252,87 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") TransferCurveOnFace;
 		%feature("autodoc", "Transfers a curveonsurface directly on a face to trim it. the curveonsurface have to be defined outer or inner.
 
-	:param face:
-	:type face: TopoDS_Face
-	:param start:
-	:type start: IGESGeom_CurveOnSurface
-	:param trans:
-	:type trans: gp_Trsf2d
-	:param uFact:
-	:type uFact: float
-	:param IsCurv:
-	:type IsCurv: bool
-	:rtype: TopoDS_Shape
+Parameters
+----------
+face: TopoDS_Face
+start: IGESGeom_CurveOnSurface
+trans: gp_Trsf2d
+uFact: float
+IsCurv: bool
+
+Returns
+-------
+TopoDS_Shape
 ") TransferCurveOnFace;
 		TopoDS_Shape TransferCurveOnFace(TopoDS_Face & face, const opencascade::handle<IGESGeom_CurveOnSurface> & start, const gp_Trsf2d & trans, const Standard_Real uFact, const Standard_Boolean IsCurv);
 
 		/****************** TransferCurveOnSurface ******************/
 		%feature("compactdefaultargs") TransferCurveOnSurface;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_CurveOnSurface
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_CurveOnSurface
+
+Returns
+-------
+TopoDS_Shape
 ") TransferCurveOnSurface;
 		TopoDS_Shape TransferCurveOnSurface(const opencascade::handle<IGESGeom_CurveOnSurface> & start);
 
 		/****************** TransferOffsetCurve ******************/
 		%feature("compactdefaultargs") TransferOffsetCurve;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_OffsetCurve
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_OffsetCurve
+
+Returns
+-------
+TopoDS_Shape
 ") TransferOffsetCurve;
 		TopoDS_Shape TransferOffsetCurve(const opencascade::handle<IGESGeom_OffsetCurve> & start);
 
 		/****************** TransferPoint ******************/
 		%feature("compactdefaultargs") TransferPoint;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_Point
-	:rtype: TopoDS_Vertex
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_Point
+
+Returns
+-------
+TopoDS_Vertex
 ") TransferPoint;
 		TopoDS_Vertex TransferPoint(const opencascade::handle<IGESGeom_Point> & start);
 
 		/****************** TransferTopoBasicCurve ******************/
 		%feature("compactdefaultargs") TransferTopoBasicCurve;
-		%feature("autodoc", "	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+TopoDS_Shape
 ") TransferTopoBasicCurve;
 		TopoDS_Shape TransferTopoBasicCurve(const opencascade::handle<IGESData_IGESEntity> & start);
 
 		/****************** TransferTopoCurve ******************/
 		%feature("compactdefaultargs") TransferTopoCurve;
-		%feature("autodoc", "	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+TopoDS_Shape
 ") TransferTopoCurve;
 		TopoDS_Shape TransferTopoCurve(const opencascade::handle<IGESData_IGESEntity> & start);
 
@@ -1823,7 +2354,9 @@ class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_TopoSurface;
 		%feature("autodoc", "Creates a tool toposurface ready to run, with epsilons set to 1.e-04, themodetopo to true, the optimization of the continuity to false.
 
-	:rtype: None
+Returns
+-------
+None
 ") IGESToBRep_TopoSurface;
 		 IGESToBRep_TopoSurface();
 
@@ -1831,9 +2364,13 @@ class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_TopoSurface;
 		%feature("autodoc", "Creates a tool toposurface ready to run and sets its fields as cs's.
 
-	:param CS:
-	:type CS: IGESToBRep_CurveAndSurface
-	:rtype: None
+Parameters
+----------
+CS: IGESToBRep_CurveAndSurface
+
+Returns
+-------
+None
 ") IGESToBRep_TopoSurface;
 		 IGESToBRep_TopoSurface(const IGESToBRep_CurveAndSurface & CS);
 
@@ -1841,111 +2378,174 @@ class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 		%feature("compactdefaultargs") IGESToBRep_TopoSurface;
 		%feature("autodoc", "Creates a tool toposurface ready to run.
 
-	:param eps:
-	:type eps: float
-	:param epsGeom:
-	:type epsGeom: float
-	:param epsCoeff:
-	:type epsCoeff: float
-	:param mode:
-	:type mode: bool
-	:param modeapprox:
-	:type modeapprox: bool
-	:param optimized:
-	:type optimized: bool
-	:rtype: None
+Parameters
+----------
+eps: float
+epsGeom: float
+epsCoeff: float
+mode: bool
+modeapprox: bool
+optimized: bool
+
+Returns
+-------
+None
 ") IGESToBRep_TopoSurface;
 		 IGESToBRep_TopoSurface(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
 
 		/****************** ParamSurface ******************/
 		%feature("compactdefaultargs") ParamSurface;
-		%feature("autodoc", "	:param start:
-	:type start: IGESData_IGESEntity
-	:param trans:
-	:type trans: gp_Trsf2d
-	:param uFact:
-	:type uFact: float
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESData_IGESEntity
+trans: gp_Trsf2d
+uFact: float
+
+Returns
+-------
+TopoDS_Shape
 ") ParamSurface;
 		TopoDS_Shape ParamSurface(const opencascade::handle<IGESData_IGESEntity> & start, gp_Trsf2d & trans, Standard_Real &OutValue);
 
 		/****************** TransferBoundedSurface ******************/
 		%feature("compactdefaultargs") TransferBoundedSurface;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_BoundedSurface
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_BoundedSurface
+
+Returns
+-------
+TopoDS_Shape
 ") TransferBoundedSurface;
 		TopoDS_Shape TransferBoundedSurface(const opencascade::handle<IGESGeom_BoundedSurface> & start);
 
 		/****************** TransferOffsetSurface ******************/
 		%feature("compactdefaultargs") TransferOffsetSurface;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_OffsetSurface
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_OffsetSurface
+
+Returns
+-------
+TopoDS_Shape
 ") TransferOffsetSurface;
 		TopoDS_Shape TransferOffsetSurface(const opencascade::handle<IGESGeom_OffsetSurface> & start);
 
 		/****************** TransferPerforate ******************/
 		%feature("compactdefaultargs") TransferPerforate;
-		%feature("autodoc", "	:param start:
-	:type start: IGESBasic_SingleParent
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESBasic_SingleParent
+
+Returns
+-------
+TopoDS_Shape
 ") TransferPerforate;
 		TopoDS_Shape TransferPerforate(const opencascade::handle<IGESBasic_SingleParent> & start);
 
 		/****************** TransferPlane ******************/
 		%feature("compactdefaultargs") TransferPlane;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_Plane
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_Plane
+
+Returns
+-------
+TopoDS_Shape
 ") TransferPlane;
 		TopoDS_Shape TransferPlane(const opencascade::handle<IGESGeom_Plane> & start);
 
 		/****************** TransferRuledSurface ******************/
 		%feature("compactdefaultargs") TransferRuledSurface;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_RuledSurface
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_RuledSurface
+
+Returns
+-------
+TopoDS_Shape
 ") TransferRuledSurface;
 		TopoDS_Shape TransferRuledSurface(const opencascade::handle<IGESGeom_RuledSurface> & start);
 
 		/****************** TransferSurfaceOfRevolution ******************/
 		%feature("compactdefaultargs") TransferSurfaceOfRevolution;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_SurfaceOfRevolution
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_SurfaceOfRevolution
+
+Returns
+-------
+TopoDS_Shape
 ") TransferSurfaceOfRevolution;
 		TopoDS_Shape TransferSurfaceOfRevolution(const opencascade::handle<IGESGeom_SurfaceOfRevolution> & start);
 
 		/****************** TransferTabulatedCylinder ******************/
 		%feature("compactdefaultargs") TransferTabulatedCylinder;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_TabulatedCylinder
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_TabulatedCylinder
+
+Returns
+-------
+TopoDS_Shape
 ") TransferTabulatedCylinder;
 		TopoDS_Shape TransferTabulatedCylinder(const opencascade::handle<IGESGeom_TabulatedCylinder> & start);
 
 		/****************** TransferTopoBasicSurface ******************/
 		%feature("compactdefaultargs") TransferTopoBasicSurface;
-		%feature("autodoc", "	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+TopoDS_Shape
 ") TransferTopoBasicSurface;
 		TopoDS_Shape TransferTopoBasicSurface(const opencascade::handle<IGESData_IGESEntity> & start);
 
 		/****************** TransferTopoSurface ******************/
 		%feature("compactdefaultargs") TransferTopoSurface;
-		%feature("autodoc", "	:param start:
-	:type start: IGESData_IGESEntity
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESData_IGESEntity
+
+Returns
+-------
+TopoDS_Shape
 ") TransferTopoSurface;
 		TopoDS_Shape TransferTopoSurface(const opencascade::handle<IGESData_IGESEntity> & start);
 
 		/****************** TransferTrimmedSurface ******************/
 		%feature("compactdefaultargs") TransferTrimmedSurface;
-		%feature("autodoc", "	:param start:
-	:type start: IGESGeom_TrimmedSurface
-	:rtype: TopoDS_Shape
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+start: IGESGeom_TrimmedSurface
+
+Returns
+-------
+TopoDS_Shape
 ") TransferTrimmedSurface;
 		TopoDS_Shape TransferTrimmedSurface(const opencascade::handle<IGESGeom_TrimmedSurface> & start);
 

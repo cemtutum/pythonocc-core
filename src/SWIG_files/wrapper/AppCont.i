@@ -74,13 +74,15 @@ class AppCont_Function {
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Returns the derivative at parameter <theu>.
 
-	:param theU:
-	:type theU: float
-	:param theVec2d:
-	:type theVec2d: NCollection_Array1<gp_Vec2d>
-	:param theVec:
-	:type theVec: NCollection_Array1<gp_Vec>
-	:rtype: bool
+Parameters
+----------
+theU: float
+theVec2d: NCollection_Array1<gp_Vec2d>
+theVec: NCollection_Array1<gp_Vec>
+
+Returns
+-------
+bool
 ") D1;
 		virtual Standard_Boolean D1(const Standard_Real theU, NCollection_Array1<gp_Vec2d> & theVec2d, NCollection_Array1<gp_Vec> & theVec);
 
@@ -88,7 +90,9 @@ class AppCont_Function {
 		%feature("compactdefaultargs") FirstParameter;
 		%feature("autodoc", "Returns the first parameter of the function.
 
-	:rtype: float
+Returns
+-------
+float
 ") FirstParameter;
 		virtual Standard_Real FirstParameter();
 
@@ -96,7 +100,9 @@ class AppCont_Function {
 		%feature("compactdefaultargs") GetNbOf2dPoints;
 		%feature("autodoc", "Get number of 2d points returned by 'value' and 'd1' functions.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetNbOf2dPoints;
 		Standard_Integer GetNbOf2dPoints();
 
@@ -104,7 +110,9 @@ class AppCont_Function {
 		%feature("compactdefaultargs") GetNbOf3dPoints;
 		%feature("autodoc", "Get number of 3d points returned by 'value' and 'd1' functions.
 
-	:rtype: int
+Returns
+-------
+int
 ") GetNbOf3dPoints;
 		Standard_Integer GetNbOf3dPoints();
 
@@ -112,11 +120,14 @@ class AppCont_Function {
 		%feature("compactdefaultargs") GetNumberOfPoints;
 		%feature("autodoc", "Get number of 3d and 2d points returned by 'value' and 'd1' functions.
 
-	:param theNbPnt:
-	:type theNbPnt: int
-	:param theNbPnt2d:
-	:type theNbPnt2d: int
-	:rtype: None
+Parameters
+----------
+theNbPnt: int
+theNbPnt2d: int
+
+Returns
+-------
+None
 ") GetNumberOfPoints;
 		void GetNumberOfPoints(Standard_Integer &OutValue, Standard_Integer &OutValue);
 
@@ -124,7 +135,9 @@ class AppCont_Function {
 		%feature("compactdefaultargs") LastParameter;
 		%feature("autodoc", "Returns the last parameter of the function.
 
-	:rtype: float
+Returns
+-------
+float
 ") LastParameter;
 		virtual Standard_Real LastParameter();
 
@@ -132,13 +145,15 @@ class AppCont_Function {
 		%feature("compactdefaultargs") PeriodInformation;
 		%feature("autodoc", "Return information about peridicity in output paramateters space. @param thedimidx defines index in output parameters space. 1 <= thedimidx <= 3 * mynbpnt + 2 * mynbpnt2d.
 
-	:param Standard_Integer:
-	:type Standard_Integer: 
-	:param IsPeriodic:
-	:type IsPeriodic: bool
-	:param thePeriod:
-	:type thePeriod: float
-	:rtype: None
+Parameters
+----------
+Standard_Integer: 
+IsPeriodic: bool
+thePeriod: float
+
+Returns
+-------
+None
 ") PeriodInformation;
 		virtual void PeriodInformation(const Standard_Integer, Standard_Boolean &OutValue, Standard_Real &OutValue);
 
@@ -146,13 +161,15 @@ class AppCont_Function {
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the point at parameter <theu>.
 
-	:param theU:
-	:type theU: float
-	:param thePnt2d:
-	:type thePnt2d: NCollection_Array1<gp_Pnt2d>
-	:param thePnt:
-	:type thePnt: NCollection_Array1<gp_Pnt>
-	:rtype: bool
+Parameters
+----------
+theU: float
+thePnt2d: NCollection_Array1<gp_Pnt2d>
+thePnt: NCollection_Array1<gp_Pnt>
+
+Returns
+-------
+bool
 ") Value;
 		virtual Standard_Boolean Value(const Standard_Real theU, NCollection_Array1<gp_Pnt2d> & thePnt2d, NCollection_Array1<gp_Pnt> & thePnt);
 
@@ -172,45 +189,57 @@ class AppCont_LeastSquare {
 	public:
 		/****************** AppCont_LeastSquare ******************/
 		%feature("compactdefaultargs") AppCont_LeastSquare;
-		%feature("autodoc", "	:param SSP:
-	:type SSP: AppCont_Function
-	:param U0:
-	:type U0: float
-	:param U1:
-	:type U1: float
-	:param FirstCons:
-	:type FirstCons: AppParCurves_Constraint
-	:param LastCons:
-	:type LastCons: AppParCurves_Constraint
-	:param Deg:
-	:type Deg: int
-	:param NbPoints:
-	:type NbPoints: int
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SSP: AppCont_Function
+U0: float
+U1: float
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+Deg: int
+NbPoints: int
+
+Returns
+-------
+None
 ") AppCont_LeastSquare;
 		 AppCont_LeastSquare(const AppCont_Function & SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints);
 
 		/****************** Error ******************/
 		%feature("compactdefaultargs") Error;
-		%feature("autodoc", "	:param F:
-	:type F: float
-	:param MaxE3d:
-	:type MaxE3d: float
-	:param MaxE2d:
-	:type MaxE2d: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F: float
+MaxE3d: float
+MaxE2d: float
+
+Returns
+-------
+None
 ") Error;
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "	:rtype: AppParCurves_MultiCurve
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+AppParCurves_MultiCurve
 ") Value;
 		const AppParCurves_MultiCurve & Value();
 

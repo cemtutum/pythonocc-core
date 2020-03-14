@@ -84,21 +84,28 @@ class LProp_AnalyticCurInf {
 	public:
 		/****************** LProp_AnalyticCurInf ******************/
 		%feature("compactdefaultargs") LProp_AnalyticCurInf;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") LProp_AnalyticCurInf;
 		 LProp_AnalyticCurInf();
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "	:param T:
-	:type T: GeomAbs_CurveType
-	:param UFirst:
-	:type UFirst: float
-	:param ULast:
-	:type ULast: float
-	:param Result:
-	:type Result: LProp_CurAndInf
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+T: GeomAbs_CurveType
+UFirst: float
+ULast: float
+Result: LProp_CurAndInf
+
+Returns
+-------
+None
 ") Perform;
 		void Perform(const GeomAbs_CurveType T, const Standard_Real UFirst, const Standard_Real ULast, LProp_CurAndInf & Result);
 
@@ -118,37 +125,60 @@ class LProp_CurAndInf {
 	public:
 		/****************** AddExtCur ******************/
 		%feature("compactdefaultargs") AddExtCur;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:param IsMin:
-	:type IsMin: bool
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+IsMin: bool
+
+Returns
+-------
+None
 ") AddExtCur;
 		void AddExtCur(const Standard_Real Param, const Standard_Boolean IsMin);
 
 		/****************** AddInflection ******************/
 		%feature("compactdefaultargs") AddInflection;
-		%feature("autodoc", "	:param Param:
-	:type Param: float
-	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Param: float
+
+Returns
+-------
+None
 ") AddInflection;
 		void AddInflection(const Standard_Real Param);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") Clear;
 		void Clear();
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
-		%feature("autodoc", "	:rtype: bool
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
 
 		/****************** LProp_CurAndInf ******************/
 		%feature("compactdefaultargs") LProp_CurAndInf;
-		%feature("autodoc", "	:rtype: None
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
 ") LProp_CurAndInf;
 		 LProp_CurAndInf();
 
@@ -156,7 +186,9 @@ class LProp_CurAndInf {
 		%feature("compactdefaultargs") NbPoints;
 		%feature("autodoc", "Returns the number of points. the points are stored to increasing parameter.
 
-	:rtype: int
+Returns
+-------
+int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
@@ -164,9 +196,13 @@ class LProp_CurAndInf {
 		%feature("compactdefaultargs") Parameter;
 		%feature("autodoc", "Returns the parameter of the nth point. raises if n not in the range [1,nbpoints()].
 
-	:param N:
-	:type N: int
-	:rtype: float
+Parameters
+----------
+N: int
+
+Returns
+-------
+float
 ") Parameter;
 		Standard_Real Parameter(const Standard_Integer N);
 
@@ -174,9 +210,13 @@ class LProp_CurAndInf {
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Returns - mincur if the nth parameter corresponds to a minimum of the radius of curvature. - maxcur if the nth parameter corresponds to a maximum of the radius of curvature. - inflection if the parameter corresponds to a point of inflection. raises if n not in the range [1,nbpoints()].
 
-	:param N:
-	:type N: int
-	:rtype: LProp_CIType
+Parameters
+----------
+N: int
+
+Returns
+-------
+LProp_CIType
 ") Type;
 		LProp_CIType Type(const Standard_Integer N);
 

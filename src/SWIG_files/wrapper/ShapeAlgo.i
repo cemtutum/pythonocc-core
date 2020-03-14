@@ -94,7 +94,9 @@ class ShapeAlgo {
 		%feature("compactdefaultargs") AlgoContainer;
 		%feature("autodoc", "Returns default algocontainer.
 
-	:rtype: opencascade::handle<ShapeAlgo_AlgoContainer>
+Returns
+-------
+opencascade::handle<ShapeAlgo_AlgoContainer>
 ") AlgoContainer;
 		static opencascade::handle<ShapeAlgo_AlgoContainer> AlgoContainer();
 
@@ -102,7 +104,9 @@ class ShapeAlgo {
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Provides initerface to the algorithms from shape healing. creates and initializes default algocontainer.
 
-	:rtype: None
+Returns
+-------
+None
 ") Init;
 		static void Init();
 
@@ -110,9 +114,13 @@ class ShapeAlgo {
 		%feature("compactdefaultargs") SetAlgoContainer;
 		%feature("autodoc", "Sets default algocontainer.
 
-	:param aContainer:
-	:type aContainer: ShapeAlgo_AlgoContainer
-	:rtype: None
+Parameters
+----------
+aContainer: ShapeAlgo_AlgoContainer
+
+Returns
+-------
+None
 ") SetAlgoContainer;
 		static void SetAlgoContainer(const opencascade::handle<ShapeAlgo_AlgoContainer> & aContainer);
 
@@ -137,7 +145,9 @@ class ShapeAlgo_ToolContainer : public Standard_Transient {
 		%feature("compactdefaultargs") EdgeProjAux;
 		%feature("autodoc", "Returns shapefix_edgeprojaux.
 
-	:rtype: opencascade::handle<ShapeFix_EdgeProjAux>
+Returns
+-------
+opencascade::handle<ShapeFix_EdgeProjAux>
 ") EdgeProjAux;
 		virtual opencascade::handle<ShapeFix_EdgeProjAux> EdgeProjAux();
 
@@ -145,7 +155,9 @@ class ShapeAlgo_ToolContainer : public Standard_Transient {
 		%feature("compactdefaultargs") FixShape;
 		%feature("autodoc", "Returns shapefix_shape.
 
-	:rtype: opencascade::handle<ShapeFix_Shape>
+Returns
+-------
+opencascade::handle<ShapeFix_Shape>
 ") FixShape;
 		virtual opencascade::handle<ShapeFix_Shape> FixShape();
 
@@ -153,7 +165,9 @@ class ShapeAlgo_ToolContainer : public Standard_Transient {
 		%feature("compactdefaultargs") ShapeAlgo_ToolContainer;
 		%feature("autodoc", "Empty constructor.
 
-	:rtype: None
+Returns
+-------
+None
 ") ShapeAlgo_ToolContainer;
 		 ShapeAlgo_ToolContainer();
 
