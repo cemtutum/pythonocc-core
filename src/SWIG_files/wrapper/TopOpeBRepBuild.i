@@ -79,6 +79,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topopebrepbuild.h
 %import gp.i
 %import TCollection.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum TopOpeBRepBuild_LoopEnum {
 	TopOpeBRepBuild_ANYLOOP = 0,
@@ -87,6 +92,16 @@ enum TopOpeBRepBuild_LoopEnum {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TopOpeBRepBuild_LoopEnum:
+	TopOpeBRepBuild_ANYLOOP = 0
+	TopOpeBRepBuild_BOUNDARY = 1
+	TopOpeBRepBuild_BLOCK = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TopOpeBRepBuild_HBuilder)
@@ -4459,39 +4474,6 @@ TopOpeBRepBuild_GTopo
 ") CopyPermuted;
 		TopOpeBRepBuild_GTopo CopyPermuted();
 
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-OS: Standard_OStream
-s: Standard_Address,optional
-	default value is NULL
-
-Returns
--------
-None
-") Dump;
-		virtual void Dump(Standard_OStream & OS, const Standard_Address s = NULL);
-
-		/****************** DumpSSB ******************/
-		%feature("compactdefaultargs") DumpSSB;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-OS: Standard_OStream
-s1: TopAbs_State
-s2: TopAbs_State
-b: bool
-
-Returns
--------
-None
-") DumpSSB;
-		static void DumpSSB(Standard_OStream & OS, const TopAbs_State s1, const TopAbs_State s2, const Standard_Boolean b);
-
 
         %feature("autodoc", "1");
         %extend{
@@ -4500,22 +4482,6 @@ None
             self->DumpType(s);
             return s.str();}
         };
-		/****************** DumpVal ******************/
-		%feature("compactdefaultargs") DumpVal;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-OS: Standard_OStream
-s1: TopAbs_State
-s2: TopAbs_State
-
-Returns
--------
-None
-") DumpVal;
-		void DumpVal(Standard_OStream & OS, const TopAbs_State s1, const TopAbs_State s2);
-
 		/****************** GIndex ******************/
 		%feature("compactdefaultargs") GIndex;
 		%feature("autodoc", "No available documentation.
@@ -5668,38 +5634,6 @@ Returns
 None
 ") DumpBB;
 		virtual void DumpBB();
-
-		/****************** DumpCheck ******************/
-		%feature("compactdefaultargs") DumpCheck;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-OS: Standard_OStream
-str: TCollection_AsciiString
-S: TopoDS_Shape
-chk: bool
-
-Returns
--------
-None
-") DumpCheck;
-		void DumpCheck(Standard_OStream & OS, const TCollection_AsciiString & str, const TopoDS_Shape & S, const Standard_Boolean chk);
-
-		/****************** DumpName ******************/
-		%feature("compactdefaultargs") DumpName;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-OS: Standard_OStream
-str: TCollection_AsciiString
-
-Returns
--------
-None
-") DumpName;
-		void DumpName(Standard_OStream & OS, const TCollection_AsciiString & str);
 
 		/****************** DumpSS ******************/
 		%feature("compactdefaultargs") DumpSS;
@@ -7552,6 +7486,10 @@ int
 %extend TopOpeBRepBuild_Builder1 {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def GFillSplitsPVS(self):
+		pass
 	}
 };
 

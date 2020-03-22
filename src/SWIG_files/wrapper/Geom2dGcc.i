@@ -49,6 +49,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geom2dgcc.html"
 #include<math_module.hxx>
 #include<GccInt_module.hxx>
 #include<Adaptor2d_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -62,6 +63,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geom2dgcc.html"
 %import GccAna.i
 %import GccEnt.i
 %import math.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Geom2dGcc_Type2 {
 	Geom2dGcc_CuCuOnCu = 0,
@@ -93,6 +99,37 @@ enum Geom2dGcc_Type1 {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Geom2dGcc_Type2:
+	Geom2dGcc_CuCuOnCu = 0
+	Geom2dGcc_CiCuOnCu = 1
+	Geom2dGcc_LiCuOnCu = 2
+	Geom2dGcc_CuPtOnCu = 3
+	Geom2dGcc_CuCuOnLi = 4
+	Geom2dGcc_CiCuOnLi = 5
+	Geom2dGcc_LiCuOnLi = 6
+	Geom2dGcc_CuPtOnLi = 7
+	Geom2dGcc_CuCuOnCi = 8
+	Geom2dGcc_CiCuOnCi = 9
+	Geom2dGcc_LiCuOnCi = 10
+	Geom2dGcc_CuPtOnCi = 11
+
+class Geom2dGcc_Type3:
+	Geom2dGcc_CuCu = 0
+	Geom2dGcc_CiCu = 1
+
+class Geom2dGcc_Type1:
+	Geom2dGcc_CuCuCu = 0
+	Geom2dGcc_CiCuCu = 1
+	Geom2dGcc_CiCiCu = 2
+	Geom2dGcc_CiLiCu = 3
+	Geom2dGcc_LiLiCu = 4
+	Geom2dGcc_LiCuCu = 5
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -3790,6 +3827,10 @@ None
 %extend Geom2dGcc_Lin2dTanObl {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def IsParallel2(self):
+		pass
 	}
 };
 
@@ -4080,6 +4121,18 @@ GccEnt_Position
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class Geom2dGcc_FuncTCuCuCuOfMyC2d3Tan:
+	pass
+
+@classnotwrapped
+class Geom2dGcc_FunctionTanCuCuCu:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

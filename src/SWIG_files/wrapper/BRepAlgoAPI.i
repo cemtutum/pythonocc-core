@@ -82,9 +82,19 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepalgoapi.html"
 %import gp.i
 %import Geom.i
 
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
+
 %include "BRepAlgoAPI_Algo.hxx";
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

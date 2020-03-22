@@ -74,8 +74,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_breptools.html"
 %import gp.i
 %import Poly.i
 %import TopAbs.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BRepTools_History)
@@ -222,21 +232,6 @@ None
 ") DetectClosedness;
 		static void DetectClosedness(const TopoDS_Face & theFace, Standard_Boolean &OutValue, Standard_Boolean &OutValue);
 
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "Dumps the topological structure and the geometry of <sh> on the stream <s>.
-
-Parameters
-----------
-Sh: TopoDS_Shape
-S: Standard_OStream
-
-Returns
--------
-None
-") Dump;
-		static void Dump(const TopoDS_Shape & Sh, Standard_OStream & S);
-
 		/****************** EvalAndUpdateTol ******************/
 		%feature("compactdefaultargs") EvalAndUpdateTol;
 		%feature("autodoc", "Evals real tolerance of edge <thee>. <thec3d>, <thec2d>, <thes>, <thef>, <thel> are correspondently 3d curve of edge, 2d curve on surface <thes> and rang of edge if calculated tolerance is more then current edge tolerance, edge is updated. method returns actual tolerance of edge.
@@ -299,24 +294,6 @@ Returns
 TopoDS_Wire
 ") OuterWire;
 		static TopoDS_Wire OuterWire(const TopoDS_Face & F);
-
-		/****************** Read ******************/
-		%feature("compactdefaultargs") Read;
-		%feature("autodoc", "Reads a shape from <s> in returns it in <sh>. <b> is used to build the shape.
-
-Parameters
-----------
-Sh: TopoDS_Shape
-S: Standard_IStream
-B: BRep_Builder
-PR: Message_ProgressIndicator,optional
-	default value is NULL
-
-Returns
--------
-None
-") Read;
-		static void Read(TopoDS_Shape & Sh, Standard_IStream & S, const BRep_Builder & B, const opencascade::handle<Message_ProgressIndicator> & PR = NULL);
 
 		/****************** Read ******************/
 		%feature("compactdefaultargs") Read;
@@ -563,23 +540,6 @@ None
 
 		/****************** Write ******************/
 		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Writes <sh> on <s> in an ascii format.
-
-Parameters
-----------
-Sh: TopoDS_Shape
-S: Standard_OStream
-PR: Message_ProgressIndicator,optional
-	default value is NULL
-
-Returns
--------
-None
-") Write;
-		static void Write(const TopoDS_Shape & Sh, Standard_OStream & S, const opencascade::handle<Message_ProgressIndicator> & PR = NULL);
-
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
 		%feature("autodoc", "Writes <sh> in <file>.
 
 Parameters
@@ -617,6 +577,16 @@ enum TRelationType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TRelationType:
+	TRelationType_Removed = 0
+	TRelationType_Generated = 1
+	TRelationType_Modified = 2
+};
+/* end python proxy for enums */
 
 		/****************** AddGenerated ******************/
 		%feature("compactdefaultargs") AddGenerated;
@@ -804,6 +774,14 @@ None
 %extend BRepTools_History {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def BRepTools_History(self):
+		pass
+
+	@methodnotwrapped
+	def Merge(self):
+		pass
 	}
 };
 
@@ -1411,6 +1389,10 @@ TopoDS_Shape
 %extend BRepTools_ReShape {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Merge(self):
+		pass
 	}
 };
 
@@ -1512,21 +1494,6 @@ None
             self->DumpGeometry(s);
             return s.str();}
         };
-		/****************** DumpGeometry ******************/
-		%feature("compactdefaultargs") DumpGeometry;
-		%feature("autodoc", "Dumps the geometry of <s> on the stream <os>.
-
-Parameters
-----------
-S: TopoDS_Shape
-OS: Standard_OStream
-
-Returns
--------
-None
-") DumpGeometry;
-		virtual void DumpGeometry(const TopoDS_Shape & S, Standard_OStream & OS);
-
 
         %feature("autodoc", "1");
         %extend{
@@ -1558,22 +1525,6 @@ None
                 std::stringstream s(src);
                 self->ReadGeometry(s);}
             };
-		/****************** ReadGeometry ******************/
-		%feature("compactdefaultargs") ReadGeometry;
-		%feature("autodoc", "Reads the geometry of a shape of type <t> from the stream <is> and returns it in <s>.
-
-Parameters
-----------
-T: TopAbs_ShapeEnum
-IS: Standard_IStream
-S: TopoDS_Shape
-
-Returns
--------
-None
-") ReadGeometry;
-		virtual void ReadGeometry(const TopAbs_ShapeEnum T, Standard_IStream & IS, TopoDS_Shape & S);
-
 
             %feature("autodoc", "1");
             %extend{
@@ -1603,69 +1554,6 @@ None
             self->WriteGeometry(s);
             return s.str();}
         };
-		/****************** WriteGeometry ******************/
-		%feature("compactdefaultargs") WriteGeometry;
-		%feature("autodoc", "Writes the geometry of <s> on the stream <os> in a format that can be read back by read.
-
-Parameters
-----------
-S: TopoDS_Shape
-OS: Standard_OStream
-
-Returns
--------
-None
-") WriteGeometry;
-		virtual void WriteGeometry(const TopoDS_Shape & S, Standard_OStream & OS);
-
-		/****************** WritePolygon3D ******************/
-		%feature("compactdefaultargs") WritePolygon3D;
-		%feature("autodoc", "Writes the 3d polygons on the stream <os> in a format that can be read back by read.
-
-Parameters
-----------
-OS: Standard_OStream
-Compact: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") WritePolygon3D;
-		void WritePolygon3D(Standard_OStream & OS, const Standard_Boolean Compact = Standard_True);
-
-		/****************** WritePolygonOnTriangulation ******************/
-		%feature("compactdefaultargs") WritePolygonOnTriangulation;
-		%feature("autodoc", "Writes the polygons on triangulation on the stream <os> in a format that can be read back by read.
-
-Parameters
-----------
-OS: Standard_OStream
-Compact: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") WritePolygonOnTriangulation;
-		void WritePolygonOnTriangulation(Standard_OStream & OS, const Standard_Boolean Compact = Standard_True);
-
-		/****************** WriteTriangulation ******************/
-		%feature("compactdefaultargs") WriteTriangulation;
-		%feature("autodoc", "Writes the triangulation on the stream <os> in a format that can be read back by read.
-
-Parameters
-----------
-OS: Standard_OStream
-Compact: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") WriteTriangulation;
-		void WriteTriangulation(Standard_OStream & OS, const Standard_Boolean Compact = Standard_True);
-
 };
 
 

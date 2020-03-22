@@ -55,6 +55,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_rwobj.html"
 #include<Aspect_module.hxx>
 #include<Bnd_module.hxx>
 #include<Quantity_module.hxx>
+#include<Message_module.hxx>
+#include<Media_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -66,6 +68,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_rwobj.html"
 %import TCollection.i
 %import Graphic3d.i
 %import gp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum RWObj_SubMeshReason {
 	RWObj_SubMeshReason_NewObject = 0,
@@ -75,6 +82,17 @@ enum RWObj_SubMeshReason {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class RWObj_SubMeshReason:
+	RWObj_SubMeshReason_NewObject = 0
+	RWObj_SubMeshReason_NewGroup = 1
+	RWObj_SubMeshReason_NewMaterial = 2
+	RWObj_SubMeshReason_NewSmoothGroup = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -183,6 +201,30 @@ class RWObj_SubMesh {
 /**********************************
 * class RWObj_TriangulationReader *
 **********************************/
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class RWObj:
+	pass
+
+@classnotwrapped
+class RWObj_MtlReader:
+	pass
+
+@classnotwrapped
+class RWObj_CafReader:
+	pass
+
+@classnotwrapped
+class RWObj_TriangulationReader:
+	pass
+
+@classnotwrapped
+class RWObj_Reader:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

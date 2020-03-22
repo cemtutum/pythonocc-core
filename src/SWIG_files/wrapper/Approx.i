@@ -53,6 +53,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_approx.html"
 #include<gp_module.hxx>
 #include<FEmTool_module.hxx>
 #include<Adaptor2d_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -70,6 +71,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_approx.html"
 %import AppParCurves.i
 %import TColgp.i
 %import gp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Approx_Status {
 	Approx_PointsAdded = 0,
@@ -84,6 +90,21 @@ enum Approx_ParametrizationType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Approx_Status:
+	Approx_PointsAdded = 0
+	Approx_NoPointsAdded = 1
+	Approx_NoApproximation = 2
+
+class Approx_ParametrizationType:
+	Approx_ChordLength = 0
+	Approx_Centripetal = 1
+	Approx_IsoParametric = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Approx_CurvlinFunc)

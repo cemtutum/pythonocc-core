@@ -82,6 +82,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_xcafdoc.html"
 %import TopTools.i
 %import TDataStd.i
 %import XCAFView.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum XCAFDoc_ColorType {
 	XCAFDoc_ColorGen = 0,
@@ -90,6 +95,16 @@ enum XCAFDoc_ColorType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class XCAFDoc_ColorType:
+	XCAFDoc_ColorGen = 0
+	XCAFDoc_ColorSurf = 1
+	XCAFDoc_ColorCurv = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(XCAFDoc_Area)
@@ -5949,21 +5964,6 @@ None
 ") ComputeSimpleShapes;
 		void ComputeSimpleShapes();
 
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theDumpLog: Standard_OStream
-deep: bool
-
-Returns
--------
-Standard_OStream
-") Dump;
-		Standard_OStream & Dump(Standard_OStream & theDumpLog, const Standard_Boolean deep);
-
 
         %feature("autodoc", "1");
         %extend{
@@ -5972,25 +5972,6 @@ Standard_OStream
             self->Dump(s);
             return s.str();}
         };
-		/****************** DumpShape ******************/
-		%feature("compactdefaultargs") DumpShape;
-		%feature("autodoc", "Print to std::ostream <thedumplog> type of shape found on <l> label and the entry of <l>, with <level> tabs before. if <deep>, print also tshape and location addresses.
-
-Parameters
-----------
-theDumpLog: Standard_OStream
-L: TDF_Label
-level: int,optional
-	default value is 0
-deep: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") DumpShape;
-		static void DumpShape(Standard_OStream & theDumpLog, const TDF_Label & L, const Standard_Integer level = 0, const Standard_Boolean deep = Standard_False);
-
 		/****************** Expand ******************/
 		%feature("compactdefaultargs") Expand;
 		%feature("autodoc", "Convert shape (compound/compsolid/shell/wire) to assembly.
@@ -7989,6 +7970,18 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class XCAFDoc_DimTolTool:
+	pass
+
+@classnotwrapped
+class XCAFDoc_GeomTolerance:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

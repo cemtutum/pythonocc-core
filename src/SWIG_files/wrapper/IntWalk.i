@@ -51,6 +51,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_intwalk.html"
 #include<Adaptor2d_module.hxx>
 #include<Geom2d_module.hxx>
 #include<IntSurf_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -64,6 +65,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_intwalk.html"
 %import TColStd.i
 %import gp.i
 %import IntSurf.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum IntWalk_StatusDeflection {
 	IntWalk_PasTropGrand = 0,
@@ -75,6 +81,19 @@ enum IntWalk_StatusDeflection {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class IntWalk_StatusDeflection:
+	IntWalk_PasTropGrand = 0
+	IntWalk_StepTooSmall = 1
+	IntWalk_PointConfondu = 2
+	IntWalk_ArretSurPointPrecedent = 3
+	IntWalk_ArretSurPoint = 4
+	IntWalk_OK = 5
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

@@ -45,6 +45,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_appparcurves.html
 #include<TColgp_module.hxx>
 #include<gp_module.hxx>
 #include<TColStd_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -56,6 +57,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_appparcurves.html
 %import TColgp.i
 %import gp.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum AppParCurves_Constraint {
 	AppParCurves_NoConstraint = 0,
@@ -65,6 +71,17 @@ enum AppParCurves_Constraint {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class AppParCurves_Constraint:
+	AppParCurves_NoConstraint = 0
+	AppParCurves_PassPoint = 1
+	AppParCurves_TangencyPoint = 2
+	AppParCurves_CurvaturePoint = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(AppParCurves_HArray1OfMultiCurve)

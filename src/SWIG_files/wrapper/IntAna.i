@@ -52,6 +52,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_intana.html"
 %import NCollection.i
 %import gp.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum IntAna_ResultType {
 	IntAna_Point = 0,
@@ -67,6 +72,23 @@ enum IntAna_ResultType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class IntAna_ResultType:
+	IntAna_Point = 0
+	IntAna_Line = 1
+	IntAna_Circle = 2
+	IntAna_PointAndCircle = 3
+	IntAna_Ellipse = 4
+	IntAna_Parabola = 5
+	IntAna_Hyperbola = 6
+	IntAna_Empty = 7
+	IntAna_Same = 8
+	IntAna_NoGeometricSolution = 9
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

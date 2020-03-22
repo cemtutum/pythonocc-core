@@ -81,6 +81,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_bopalgo.html"
 %import BRepTools.i
 %import BOPTools.i
 %import TopAbs.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BOPAlgo_CheckStatus {
 	BOPAlgo_CheckUnknown = 0,
@@ -113,6 +118,38 @@ enum BOPAlgo_GlueEnum {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BOPAlgo_CheckStatus:
+	BOPAlgo_CheckUnknown = 0
+	BOPAlgo_BadType = 1
+	BOPAlgo_SelfIntersect = 2
+	BOPAlgo_TooSmallEdge = 3
+	BOPAlgo_NonRecoverableFace = 4
+	BOPAlgo_IncompatibilityOfVertex = 5
+	BOPAlgo_IncompatibilityOfEdge = 6
+	BOPAlgo_IncompatibilityOfFace = 7
+	BOPAlgo_OperationAborted = 8
+	BOPAlgo_GeomAbs_C0 = 9
+	BOPAlgo_InvalidCurveOnSurface = 10
+	BOPAlgo_NotValid = 11
+
+class BOPAlgo_Operation:
+	BOPAlgo_COMMON = 0
+	BOPAlgo_FUSE = 1
+	BOPAlgo_CUT = 2
+	BOPAlgo_CUT21 = 3
+	BOPAlgo_SECTION = 4
+	BOPAlgo_UNKNOWN = 5
+
+class BOPAlgo_GlueEnum:
+	BOPAlgo_GlueOff = 0
+	BOPAlgo_GlueShift = 1
+	BOPAlgo_GlueFull = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -934,6 +971,14 @@ bool
 %extend BOPAlgo_Tools {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def MakeBlocks(self):
+		pass
+
+	@methodnotwrapped
+	def FillMap(self):
+		pass
 	}
 };
 
@@ -2484,6 +2529,10 @@ None
 %extend BOPAlgo_PaveFiller {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Iterator(self):
+		pass
 	}
 };
 

@@ -59,7 +59,6 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_meshvs.html"
 #include<Message_module.hxx>
 #include<TShort_module.hxx>
 #include<Geom_module.hxx>
-#include<Visual3d_module.hxx>
 #include<HLRAlgo_module.hxx>
 #include<Poly_module.hxx>
 #include<TColQuantity_module.hxx>
@@ -68,6 +67,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_meshvs.html"
 #include<TopLoc_module.hxx>
 #include<Prs3d_module.hxx>
 #include<StdSelect_module.hxx>
+#include<Media_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -89,6 +89,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_meshvs.html"
 %import PrsMgr.i
 %import Prs3d.i
 %import Aspect.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum MeshVS_EntityType {
 	MeshVS_ET_NONE = 0,
@@ -192,6 +197,79 @@ enum  {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class MeshVS_EntityType:
+	MeshVS_ET_NONE = 0
+	MeshVS_ET_Node = 1
+	MeshVS_ET_0D = 2
+	MeshVS_ET_Link = 4
+	MeshVS_ET_Face = 8
+	MeshVS_ET_Volume = 16
+	MeshVS_ET_Element = MeshVS_ET_0D | MeshVS_ET_Link | MeshVS_ET_Face | MeshVS_ET_Volume
+	MeshVS_ET_All = MeshVS_ET_Element | MeshVS_ET_Node
+
+class MeshVS_MeshSelectionMethod:
+	MeshVS_MSM_PRECISE = 0
+	MeshVS_MSM_NODES = 1
+	MeshVS_MSM_BOX = 2
+
+class MeshVS_SelectionModeFlags:
+	MeshVS_SMF_Mesh = 0
+	MeshVS_SMF_Node = 1
+	MeshVS_SMF_0D = 2
+	MeshVS_SMF_Link = 4
+	MeshVS_SMF_Face = 8
+	MeshVS_SMF_Volume = 16
+	MeshVS_SMF_Element = MeshVS_SMF_0D | MeshVS_SMF_Link | MeshVS_SMF_Face | MeshVS_SMF_Volume
+	MeshVS_SMF_All = MeshVS_SMF_Element | MeshVS_SMF_Node
+	MeshVS_SMF_Group = 256
+
+class MeshVS_DrawerAttribute:
+	MeshVS_DA_InteriorStyle = 0
+	MeshVS_DA_InteriorColor = 1
+	MeshVS_DA_BackInteriorColor = 2
+	MeshVS_DA_EdgeColor = 3
+	MeshVS_DA_EdgeType = 4
+	MeshVS_DA_EdgeWidth = 5
+	MeshVS_DA_HatchStyle = 6
+	MeshVS_DA_FrontMaterial = 7
+	MeshVS_DA_BackMaterial = 8
+	MeshVS_DA_BeamType = 9
+	MeshVS_DA_BeamWidth = 10
+	MeshVS_DA_BeamColor = 11
+	MeshVS_DA_MarkerType = 12
+	MeshVS_DA_MarkerColor = 13
+	MeshVS_DA_MarkerScale = 14
+	MeshVS_DA_TextColor = 15
+	MeshVS_DA_TextHeight = 16
+	MeshVS_DA_TextFont = 17
+	MeshVS_DA_TextExpansionFactor = 18
+	MeshVS_DA_TextSpace = 19
+	MeshVS_DA_TextStyle = 20
+	MeshVS_DA_TextDisplayType = 21
+	MeshVS_DA_TextTexFont = 22
+	MeshVS_DA_TextFontAspect = 23
+	MeshVS_DA_VectorColor = 24
+	MeshVS_DA_VectorMaxLength = 25
+	MeshVS_DA_VectorArrowPart = 26
+	MeshVS_DA_IsAllowOverlapped = 27
+	MeshVS_DA_Reflection = 28
+	MeshVS_DA_ColorReflection = 29
+	MeshVS_DA_ShrinkCoeff = 30
+	MeshVS_DA_MaxFaceNodes = 31
+	MeshVS_DA_ComputeTime = 32
+	MeshVS_DA_ComputeSelectionTime = 33
+	MeshVS_DA_DisplayNodes = 34
+	MeshVS_DA_SelectableAuto = 35
+	MeshVS_DA_ShowEdges = 36
+	MeshVS_DA_SmoothShading = 37
+	MeshVS_DA_SupressBackFaces = 38
+	MeshVS_DA_User = 39
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(MeshVS_CommonSensitiveEntity)

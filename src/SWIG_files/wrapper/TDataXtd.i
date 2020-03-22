@@ -69,6 +69,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_tdataxtd.html"
 %import TopoDS.i
 %import Poly.i
 %import TShort.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum TDataXtd_ConstraintEnum {
 	TDataXtd_RADIUS = 0,
@@ -111,6 +116,49 @@ enum TDataXtd_GeometryEnum {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TDataXtd_ConstraintEnum:
+	TDataXtd_RADIUS = 0
+	TDataXtd_DIAMETER = 1
+	TDataXtd_MINOR_RADIUS = 2
+	TDataXtd_MAJOR_RADIUS = 3
+	TDataXtd_TANGENT = 4
+	TDataXtd_PARALLEL = 5
+	TDataXtd_PERPENDICULAR = 6
+	TDataXtd_CONCENTRIC = 7
+	TDataXtd_COINCIDENT = 8
+	TDataXtd_DISTANCE = 9
+	TDataXtd_ANGLE = 10
+	TDataXtd_EQUAL_RADIUS = 11
+	TDataXtd_SYMMETRY = 12
+	TDataXtd_MIDPOINT = 13
+	TDataXtd_EQUAL_DISTANCE = 14
+	TDataXtd_FIX = 15
+	TDataXtd_RIGID = 16
+	TDataXtd_FROM = 17
+	TDataXtd_AXIS = 18
+	TDataXtd_MATE = 19
+	TDataXtd_ALIGN_FACES = 20
+	TDataXtd_ALIGN_AXES = 21
+	TDataXtd_AXES_ANGLE = 22
+	TDataXtd_FACES_ANGLE = 23
+	TDataXtd_ROUND = 24
+	TDataXtd_OFFSET = 25
+
+class TDataXtd_GeometryEnum:
+	TDataXtd_ANY_GEOM = 0
+	TDataXtd_POINT = 1
+	TDataXtd_LINE = 2
+	TDataXtd_CIRCLE = 3
+	TDataXtd_ELLIPSE = 4
+	TDataXtd_SPLINE = 5
+	TDataXtd_PLANE = 6
+	TDataXtd_CYLINDER = 7
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TDataXtd_Axis)
@@ -189,36 +237,6 @@ Returns
 None
 ") IDList;
 		static void IDList(TDF_IDList & anIDList);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the name of the geometry dimension <geo> as a string on the stream <s> and returns <s>.
-
-Parameters
-----------
-GEO: TDataXtd_GeometryEnum
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TDataXtd_GeometryEnum GEO, Standard_OStream & S);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the name of the constraint <ctr> as a string on the stream <s> and returns <s>.
-
-Parameters
-----------
-CTR: TDataXtd_ConstraintEnum
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TDataXtd_ConstraintEnum CTR, Standard_OStream & S);
 
 };
 

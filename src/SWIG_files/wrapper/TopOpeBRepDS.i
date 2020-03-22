@@ -81,6 +81,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topopebrepds.html
 %import TopTools.i
 %import gp.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum TopOpeBRepDS_Config {
 	TopOpeBRepDS_UNSHGEOMETRY = 0,
@@ -109,6 +114,34 @@ enum TopOpeBRepDS_Kind {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TopOpeBRepDS_Config:
+	TopOpeBRepDS_UNSHGEOMETRY = 0
+	TopOpeBRepDS_SAMEORIENTED = 1
+	TopOpeBRepDS_DIFFORIENTED = 2
+
+class TopOpeBRepDS_CheckStatus:
+	TopOpeBRepDS_OK = 0
+	TopOpeBRepDS_NOK = 1
+
+class TopOpeBRepDS_Kind:
+	TopOpeBRepDS_POINT = 0
+	TopOpeBRepDS_CURVE = 1
+	TopOpeBRepDS_SURFACE = 2
+	TopOpeBRepDS_VERTEX = 3
+	TopOpeBRepDS_EDGE = 4
+	TopOpeBRepDS_WIRE = 5
+	TopOpeBRepDS_FACE = 6
+	TopOpeBRepDS_SHELL = 7
+	TopOpeBRepDS_SOLID = 8
+	TopOpeBRepDS_COMPSOLID = 9
+	TopOpeBRepDS_COMPOUND = 10
+	TopOpeBRepDS_UNKNOWN = 11
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TopOpeBRepDS_Association)
@@ -333,87 +366,6 @@ Returns
 TopAbs_ShapeEnum
 ") KindToShape;
 		static TopAbs_ShapeEnum KindToShape(const TopOpeBRepDS_Kind K);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopAbs_State
-OS: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TopAbs_State S, Standard_OStream & OS);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-K: TopOpeBRepDS_Kind
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TopOpeBRepDS_Kind K, Standard_OStream & S);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-K: TopOpeBRepDS_Kind
-I: int
-S: Standard_OStream
-B: TCollection_AsciiString,optional
-	default value is ""
-A: TCollection_AsciiString,optional
-	default value is ""
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TopOpeBRepDS_Kind K, const Standard_Integer I, Standard_OStream & S, const TCollection_AsciiString & B = "", const TCollection_AsciiString & A = "");
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-T: TopAbs_ShapeEnum
-I: int
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TopAbs_ShapeEnum T, const Standard_Integer I, Standard_OStream & S);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-C: TopOpeBRepDS_Config
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TopOpeBRepDS_Config C, Standard_OStream & S);
 
 		/****************** SPrint ******************/
 		%feature("compactdefaultargs") SPrint;
@@ -1422,21 +1374,6 @@ bool
 ") OneVertexOnPnt;
 		Standard_Boolean OneVertexOnPnt();
 
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the name of checkstatus <stat> as a string.
-
-Parameters
-----------
-stat: TopOpeBRepDS_CheckStatus
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		Standard_OStream & Print(const TopOpeBRepDS_CheckStatus stat, Standard_OStream & S);
-
 
         %feature("autodoc", "1");
         %extend{
@@ -1445,36 +1382,6 @@ Standard_OStream
             self->PrintIntg(s);
             return s.str();}
         };
-		/****************** PrintShape ******************/
-		%feature("compactdefaultargs") PrintShape;
-		%feature("autodoc", "Prints the name of checkstatus <stat> as a string.
-
-Parameters
-----------
-SE: TopAbs_ShapeEnum
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") PrintShape;
-		Standard_OStream & PrintShape(const TopAbs_ShapeEnum SE, Standard_OStream & S);
-
-		/****************** PrintShape ******************/
-		%feature("compactdefaultargs") PrintShape;
-		%feature("autodoc", "Prints the name of checkstatus <stat> as a string.
-
-Parameters
-----------
-index: int
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") PrintShape;
-		Standard_OStream & PrintShape(const Standard_Integer index, Standard_OStream & S);
-
 		/****************** TopOpeBRepDS_Check ******************/
 		%feature("compactdefaultargs") TopOpeBRepDS_Check;
 		%feature("autodoc", "No available documentation.
@@ -3552,6 +3459,10 @@ None
 %extend TopOpeBRepDS_Dumper {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Print(self):
+		pass
 	}
 };
 
@@ -7700,6 +7611,18 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class TopOpeBRepDS_DSS:
+	pass
+
+@classnotwrapped
+class TopOpeBRepDS_HDataStructure:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 class TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference : public  TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference, public Standard_Transient {
   public:

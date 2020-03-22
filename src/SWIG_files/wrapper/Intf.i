@@ -52,6 +52,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_intf.html"
 %import NCollection.i
 %import gp.i
 %import Bnd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Intf_PIType {
 	Intf_EXTERNAL = 0,
@@ -61,6 +66,17 @@ enum Intf_PIType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Intf_PIType:
+	Intf_EXTERNAL = 0
+	Intf_FACE = 1
+	Intf_EDGE = 2
+	Intf_VERTEX = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

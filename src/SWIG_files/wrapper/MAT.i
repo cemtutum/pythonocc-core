@@ -48,6 +48,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_mat.html"
 %};
 %import Standard.i
 %import NCollection.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum MAT_Side {
 	MAT_Left = 0,
@@ -55,6 +60,15 @@ enum MAT_Side {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class MAT_Side:
+	MAT_Left = 0
+	MAT_Right = 1
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(MAT_Arc)

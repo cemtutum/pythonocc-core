@@ -58,6 +58,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_vrml.html"
 %import Quantity.i
 %import gp.i
 %import TCollection.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Vrml_VertexOrdering {
 	Vrml_UNKNOWN_ORDERING = 0,
@@ -143,6 +148,80 @@ enum Vrml_FontStyleStyle {
 
 /* end public enums declaration */
 
+/* python proy classes for enums */
+%pythoncode {
+
+class Vrml_VertexOrdering:
+	Vrml_UNKNOWN_ORDERING = 0
+	Vrml_CLOCKWISE = 1
+	Vrml_COUNTERCLOCKWISE = 2
+
+class Vrml_FontStyleFamily:
+	Vrml_SERIF = 0
+	Vrml_SANS = 1
+	Vrml_TYPEWRITER = 2
+
+class Vrml_SeparatorRenderCulling:
+	Vrml_OFF = 0
+	Vrml_ON = 1
+	Vrml_AUTO = 2
+
+class Vrml_Texture2Wrap:
+	Vrml_REPEAT = 0
+	Vrml_CLAMP = 1
+
+class Vrml_FaceType:
+	Vrml_UNKNOWN_FACE_TYPE = 0
+	Vrml_CONVEX = 1
+
+class Vrml_AsciiTextJustification:
+	Vrml_LEFT = 0
+	Vrml_CENTER = 1
+	Vrml_RIGHT = 2
+
+class Vrml_ConeParts:
+	Vrml_ConeSIDES = 0
+	Vrml_ConeBOTTOM = 1
+	Vrml_ConeALL = 2
+
+class Vrml_SFImageNumber:
+	Vrml_NULL = 0
+	Vrml_ONE = 1
+	Vrml_TWO = 2
+	Vrml_THREE = 3
+	Vrml_FOUR = 4
+
+class Vrml_MaterialBindingAndNormalBinding:
+	Vrml_DEFAULT = 0
+	Vrml_OVERALL = 1
+	Vrml_PER_PART = 2
+	Vrml_PER_PART_INDEXED = 3
+	Vrml_PER_FACE = 4
+	Vrml_PER_FACE_INDEXED = 5
+	Vrml_PER_VERTEX = 6
+	Vrml_PER_VERTEX_INDEXED = 7
+
+class Vrml_ShapeType:
+	Vrml_UNKNOWN_SHAPE_TYPE = 0
+	Vrml_SOLID = 1
+
+class Vrml_WWWAnchorMap:
+	Vrml_MAP_NONE = 0
+	Vrml_POINT = 1
+
+class Vrml_CylinderParts:
+	Vrml_CylinderSIDES = 0
+	Vrml_CylinderTOP = 1
+	Vrml_CylinderBOTTOM = 2
+	Vrml_CylinderALL = 3
+
+class Vrml_FontStyleStyle:
+	Vrml_NONE = 0
+	Vrml_BOLD = 1
+	Vrml_ITALIC = 2
+};
+/* end python proxy for enums */
+
 /* handles */
 %wrap_handle(Vrml_AsciiText)
 %wrap_handle(Vrml_Coordinate3)
@@ -167,21 +246,6 @@ enum Vrml_FontStyleStyle {
 %rename(vrml) Vrml;
 class Vrml {
 	public:
-		/****************** CommentWriter ******************/
-		%feature("compactdefaultargs") CommentWriter;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aComment: char *
-anOStream: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") CommentWriter;
-		static Standard_OStream & CommentWriter(const char * aComment, Standard_OStream & anOStream);
-
 
         %feature("autodoc", "1");
         %extend{

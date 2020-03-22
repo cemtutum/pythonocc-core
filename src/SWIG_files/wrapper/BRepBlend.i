@@ -94,8 +94,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepblend.html"
 %import Law.i
 %import ChFiDS.i
 %import TopAbs.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BRepBlend_AppFuncRoot)
@@ -1170,6 +1180,10 @@ int
 %extend BRepBlend_AppSurface {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def TolReached(self):
+		pass
 	}
 };
 

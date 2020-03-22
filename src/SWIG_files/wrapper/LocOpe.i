@@ -77,6 +77,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_locope.html"
 %import TColGeom.i
 %import gp.i
 %import Geom.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum LocOpe_Operation {
 	LocOpe_FUSE = 0,
@@ -85,6 +90,16 @@ enum LocOpe_Operation {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class LocOpe_Operation:
+	LocOpe_FUSE = 0
+	LocOpe_CUT = 1
+	LocOpe_INVALID = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(LocOpe_GeneratedShape)
@@ -2762,6 +2777,18 @@ TopTools_ListOfShape
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class LocOpe_Revol:
+	pass
+
+@classnotwrapped
+class LocOpe_RevolutionForm:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

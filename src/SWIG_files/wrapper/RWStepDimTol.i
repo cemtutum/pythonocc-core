@@ -51,6 +51,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_rwstepdimtol.html
 #include<StepRepr_module.hxx>
 #include<StepElement_module.hxx>
 #include<MoniTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -61,8 +62,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_rwstepdimtol.html
 %import StepData.i
 %import Interface.i
 %import StepDimTol.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

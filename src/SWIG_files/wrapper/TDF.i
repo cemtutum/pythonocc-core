@@ -53,6 +53,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_tdf.html"
 %import NCollection.i
 %import TCollection.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum  {
 	TDF_LabelNodeImportMsk = ( int ) 0x80000000,
@@ -62,6 +67,11 @@ enum  {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TDF_Attribute)
@@ -475,22 +485,6 @@ opencascade::handle<TDF_DeltaOnResume>
             self->Dump(s);
             return s.str();}
         };
-		/****************** ExtendedDump ******************/
-		%feature("compactdefaultargs") ExtendedDump;
-		%feature("autodoc", "Dumps the attribute content on <astream>, using <amap> like this: if an attribute is not in the map, first put add it to the map and then dump it. use the map rank instead of dumping each attribute field.
-
-Parameters
-----------
-anOS: Standard_OStream
-aFilter: TDF_IDFilter
-aMap: TDF_AttributeIndexedMap
-
-Returns
--------
-None
-") ExtendedDump;
-		virtual void ExtendedDump(Standard_OStream & anOS, const TDF_IDFilter & aFilter, TDF_AttributeIndexedMap & aMap);
-
 		/****************** FindAttribute ******************/
 		%feature("compactdefaultargs") FindAttribute;
 		%feature("autodoc", "Finds an associated attribute of <self>, according to <anid>. the returned <anattribute> is a valid one. the method returns true if found, false otherwise. a removed attribute cannot be found using this method.
@@ -2230,22 +2224,6 @@ int
             self->EntryDump(s);
             return s.str();}
         };
-		/****************** ExtendedDump ******************/
-		%feature("compactdefaultargs") ExtendedDump;
-		%feature("autodoc", "Dumps the label on <astream> and its attributes rank in <amap> if their ids are kept by <idfilter>.
-
-Parameters
-----------
-anOS: Standard_OStream
-aFilter: TDF_IDFilter
-aMap: TDF_AttributeIndexedMap
-
-Returns
--------
-None
-") ExtendedDump;
-		void ExtendedDump(Standard_OStream & anOS, const TDF_IDFilter & aFilter, TDF_AttributeIndexedMap & aMap);
-
 		/****************** Father ******************/
 		%feature("compactdefaultargs") Father;
 		%feature("autodoc", "Returns the label father. this label may be null if the label is root.
@@ -2744,23 +2722,6 @@ None
 ") Clear;
 		void Clear();
 
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "Dumps the relocation table.
-
-Parameters
-----------
-dumpLabels: bool
-dumpAttributes: bool
-dumpTransients: bool
-anOS: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Dump;
-		Standard_OStream & Dump(const Standard_Boolean dumpLabels, const Standard_Boolean dumpAttributes, const Standard_Boolean dumpTransients, Standard_OStream & anOS);
-
 		/****************** HasRelocation ******************/
 		%feature("compactdefaultargs") HasRelocation;
 		%feature("autodoc", "Finds the relocation value of <asourcelabel> and returns it into <atargetlabel>. //! (see above selfrelocate method for more explanation about the method behavior).
@@ -2984,36 +2945,6 @@ None
 ") DeductLabels;
 		static void DeductLabels(TDF_LabelList & aLabelList, TDF_LabelIntegerMap & aLabelMap);
 
-		/****************** DeepDump ******************/
-		%feature("compactdefaultargs") DeepDump;
-		%feature("autodoc", "Dumps <adf> and its labels and their attributes.
-
-Parameters
-----------
-anOS: Standard_OStream
-aDF: TDF_Data
-
-Returns
--------
-None
-") DeepDump;
-		static void DeepDump(Standard_OStream & anOS, const opencascade::handle<TDF_Data> & aDF);
-
-		/****************** DeepDump ******************/
-		%feature("compactdefaultargs") DeepDump;
-		%feature("autodoc", "Dumps <alabel>, its chilren and their attributes.
-
-Parameters
-----------
-anOS: Standard_OStream
-aLabel: TDF_Label
-
-Returns
--------
-None
-") DeepDump;
-		static void DeepDump(Standard_OStream & anOS, const TDF_Label & aLabel);
-
 		/****************** Entry ******************/
 		%feature("compactdefaultargs") Entry;
 		%feature("autodoc", "Returns the entry for the label alabel in the form of the ascii character string anentry containing the tag list for alabel.
@@ -3028,38 +2959,6 @@ Returns
 None
 ") Entry;
 		static void Entry(const TDF_Label & aLabel, TCollection_AsciiString & anEntry);
-
-		/****************** ExtendedDeepDump ******************/
-		%feature("compactdefaultargs") ExtendedDeepDump;
-		%feature("autodoc", "Dumps <adf> and its labels and their attributes, if their ids are kept by <afilter>. dumps also the attributes content.
-
-Parameters
-----------
-anOS: Standard_OStream
-aDF: TDF_Data
-aFilter: TDF_IDFilter
-
-Returns
--------
-None
-") ExtendedDeepDump;
-		static void ExtendedDeepDump(Standard_OStream & anOS, const opencascade::handle<TDF_Data> & aDF, const TDF_IDFilter & aFilter);
-
-		/****************** ExtendedDeepDump ******************/
-		%feature("compactdefaultargs") ExtendedDeepDump;
-		%feature("autodoc", "Dumps <alabel>, its chilren and their attributes, if their ids are kept by <afilter>. dumps also the attributes content.
-
-Parameters
-----------
-anOS: Standard_OStream
-aLabel: TDF_Label
-aFilter: TDF_IDFilter
-
-Returns
--------
-None
-") ExtendedDeepDump;
-		static void ExtendedDeepDump(Standard_OStream & anOS, const TDF_Label & aLabel, const TDF_IDFilter & aFilter);
 
 		/****************** IsSelfContained ******************/
 		%feature("compactdefaultargs") IsSelfContained;
@@ -3990,6 +3889,14 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class TDF_LabelNode:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 class TDF_HAttributeArray1 : public  TDF_AttributeArray1, public Standard_Transient {
   public:

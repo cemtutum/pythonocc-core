@@ -47,6 +47,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_cpnts.html"
 #include<gp_module.hxx>
 #include<Geom_module.hxx>
 #include<Geom2d_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -58,8 +59,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_cpnts.html"
 %import Adaptor2d.i
 %import math.i
 %import gp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

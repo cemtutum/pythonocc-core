@@ -55,6 +55,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepap242.html"
 #include<StepGeom_module.hxx>
 #include<StepVisual_module.hxx>
 #include<MoniTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -69,8 +70,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepap242.html"
 %import StepDimTol.i
 %import StepRepr.i
 %import StepAP214.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(StepAP242_IdAttribute)

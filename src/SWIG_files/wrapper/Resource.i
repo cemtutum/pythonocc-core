@@ -50,6 +50,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_resource.html"
 %import Standard.i
 %import NCollection.i
 %import TCollection.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Resource_FormatType {
 	Resource_FormatType_SJIS = 0,
@@ -65,6 +70,23 @@ enum Resource_FormatType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Resource_FormatType:
+	Resource_FormatType_SJIS = 0
+	Resource_FormatType_EUC = 1
+	Resource_FormatType_ANSI = 2
+	Resource_FormatType_GB = 3
+	Resource_FormatType_UTF8 = 4
+	Resource_FormatType_SystemLocale = 5
+	Resource_SJIS = Resource_FormatType_SJIS
+	Resource_EUC = Resource_FormatType_EUC
+	Resource_ANSI = Resource_FormatType_ANSI
+	Resource_GB = Resource_FormatType_GB
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Resource_Manager)

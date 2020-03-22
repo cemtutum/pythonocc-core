@@ -46,6 +46,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepdata.html"
 #include<TColStd_module.hxx>
 #include<Message_module.hxx>
 #include<MoniTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -57,6 +58,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepdata.html"
 %import TCollection.i
 %import TColStd.i
 %import Message.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum StepData_Logical {
 	StepData_LFalse = 0,
@@ -65,6 +71,16 @@ enum StepData_Logical {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class StepData_Logical:
+	StepData_LFalse = 0
+	StepData_LTrue = 1
+	StepData_LUnknown = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(StepData_Described)
@@ -4103,6 +4119,14 @@ int
 %extend StepData_StepReaderData {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def ReadMember(self):
+		pass
+
+	@methodnotwrapped
+	def ReadEntity(self):
+		pass
 	}
 };
 
@@ -6561,6 +6585,18 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class StepData_FreeFormEntity:
+	pass
+
+@classnotwrapped
+class StepData_UndefinedEntity:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 class StepData_HArray1OfField : public  StepData_Array1OfField, public Standard_Transient {
   public:

@@ -57,6 +57,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_localanalysis.htm
 %import Geom.i
 %import GeomLProp.i
 %import Geom2d.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum LocalAnalysis_StatusErrorType {
 	LocalAnalysis_NullFirstDerivative = 0,
@@ -67,6 +72,18 @@ enum LocalAnalysis_StatusErrorType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class LocalAnalysis_StatusErrorType:
+	LocalAnalysis_NullFirstDerivative = 0
+	LocalAnalysis_NullSecondDerivative = 1
+	LocalAnalysis_TangentNotDefined = 2
+	LocalAnalysis_NormalNotDefined = 3
+	LocalAnalysis_CurvatureNotDefined = 4
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -83,36 +100,6 @@ enum LocalAnalysis_StatusErrorType {
 %rename(localanalysis) LocalAnalysis;
 class LocalAnalysis {
 	public:
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "This class compute s and gives tools to check the local continuity between two points situated on 2 curves) //! this fonction gives informations about a variable curvecontinuity.
-
-Parameters
-----------
-surfconti: LocalAnalysis_SurfaceContinuity
-o: Standard_OStream
-
-Returns
--------
-None
-") Dump;
-		static void Dump(const LocalAnalysis_SurfaceContinuity & surfconti, Standard_OStream & o);
-
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "This fonction gives informations about a variable surfacecontinuity.
-
-Parameters
-----------
-curvconti: LocalAnalysis_CurveContinuity
-o: Standard_OStream
-
-Returns
--------
-None
-") Dump;
-		static void Dump(const LocalAnalysis_CurveContinuity & curvconti, Standard_OStream & o);
-
 };
 
 

@@ -58,6 +58,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_intsurf.html"
 %import gp.i
 %import Adaptor3d.i
 %import GeomAbs.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum IntSurf_Situation {
 	IntSurf_Inside = 0,
@@ -73,6 +78,22 @@ enum IntSurf_TypeTrans {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class IntSurf_Situation:
+	IntSurf_Inside = 0
+	IntSurf_Outside = 1
+	IntSurf_Unknown = 2
+
+class IntSurf_TypeTrans:
+	IntSurf_In = 0
+	IntSurf_Out = 1
+	IntSurf_Touch = 2
+	IntSurf_Undecided = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(IntSurf_LineOn2S)

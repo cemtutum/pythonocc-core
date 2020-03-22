@@ -52,6 +52,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_hatchgen.html"
 %import NCollection.i
 %import TopAbs.i
 %import IntRes2d.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum HatchGen_ErrorStatus {
 	HatchGen_NoProblem = 0,
@@ -69,6 +74,24 @@ enum HatchGen_IntersectionType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class HatchGen_ErrorStatus:
+	HatchGen_NoProblem = 0
+	HatchGen_TrimFailure = 1
+	HatchGen_TransitionFailure = 2
+	HatchGen_IncoherentParity = 3
+	HatchGen_IncompatibleStates = 4
+
+class HatchGen_IntersectionType:
+	HatchGen_TRUE = 0
+	HatchGen_TOUCH = 1
+	HatchGen_TANGENT = 2
+	HatchGen_UNDETERMINED = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

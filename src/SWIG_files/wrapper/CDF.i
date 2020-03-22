@@ -45,6 +45,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_cdf.html"
 #include<TCollection_module.hxx>
 #include<PCDM_module.hxx>
 #include<Resource_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -55,6 +56,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_cdf.html"
 %import CDM.i
 %import TCollection.i
 %import PCDM.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum CDF_TypeOfActivation {
 	CDF_TOA_New = 0,
@@ -83,6 +89,33 @@ enum CDF_StoreSetNameStatus {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class CDF_TypeOfActivation:
+	CDF_TOA_New = 0
+	CDF_TOA_Modified = 1
+	CDF_TOA_Unchanged = 2
+
+class CDF_TryStoreStatus:
+	CDF_TS_OK = 0
+	CDF_TS_NoCurrentDocument = 1
+	CDF_TS_NoDriver = 2
+	CDF_TS_NoSubComponentDriver = 3
+
+class CDF_SubComponentStatus:
+	CDF_SCS_Consistent = 0
+	CDF_SCS_Unconsistent = 1
+	CDF_SCS_Stored = 2
+	CDF_SCS_Modified = 3
+
+class CDF_StoreSetNameStatus:
+	CDF_SSNS_OK = 0
+	CDF_SSNS_ReplacingAnExistentDocument = 1
+	CDF_SSNS_OpenDocument = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(CDF_Application)

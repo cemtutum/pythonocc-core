@@ -52,6 +52,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepvisual.html"
 #include<Message_module.hxx>
 #include<Interface_module.hxx>
 #include<MoniTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -67,6 +68,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepvisual.html"
 %import TCollection.i
 %import StepBasic.i
 %import TColgp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum StepVisual_NullStyle {
 	StepVisual_Null = 0,
@@ -101,6 +107,38 @@ enum StepVisual_MarkerType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class StepVisual_NullStyle:
+	StepVisual_Null = 0
+
+class StepVisual_CentralOrParallel:
+	StepVisual_copCentral = 0
+	StepVisual_copParallel = 1
+
+class StepVisual_SurfaceSide:
+	StepVisual_ssNegative = 0
+	StepVisual_ssPositive = 1
+	StepVisual_ssBoth = 2
+
+class StepVisual_TextPath:
+	StepVisual_tpUp = 0
+	StepVisual_tpRight = 1
+	StepVisual_tpDown = 2
+	StepVisual_tpLeft = 3
+
+class StepVisual_MarkerType:
+	StepVisual_mtDot = 0
+	StepVisual_mtX = 1
+	StepVisual_mtPlus = 2
+	StepVisual_mtAsterisk = 3
+	StepVisual_mtRing = 4
+	StepVisual_mtSquare = 5
+	StepVisual_mtTriangle = 6
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(StepVisual_AnnotationFillArea)

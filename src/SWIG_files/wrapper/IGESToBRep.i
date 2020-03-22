@@ -71,8 +71,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_igestobrep.html"
 %import gp.i
 %import ShapeExtend.i
 %import Geom2d.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(IGESToBRep_Actor)
@@ -2555,6 +2565,10 @@ TopoDS_Shape
 %extend IGESToBRep_TopoSurface {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def TransferPlaneSurface(self):
+		pass
 	}
 };
 

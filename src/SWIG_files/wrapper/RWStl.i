@@ -55,8 +55,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_rwstl.html"
 %import OSD.i
 %import Message.i
 %import Poly.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -183,6 +193,14 @@ bool
 /*********************
 * class RWStl_Reader *
 *********************/
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class RWStl_Reader:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

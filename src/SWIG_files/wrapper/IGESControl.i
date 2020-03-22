@@ -72,8 +72,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_igescontrol.html"
 %import TopoDS.i
 %import IFSelect.i
 %import IGESData.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(IGESControl_ActorWrite)
@@ -591,22 +601,6 @@ Returns
 opencascade::handle<Transfer_FinderProcess>
 ") TransferProcess;
 		const opencascade::handle<Transfer_FinderProcess> & TransferProcess();
-
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Computes then writes the model to an ostream returns true when done, false in case of error.
-
-Parameters
-----------
-S: Standard_OStream
-fnes: bool,optional
-	default value is Standard_False
-
-Returns
--------
-bool
-") Write;
-		Standard_Boolean Write(Standard_OStream & S, const Standard_Boolean fnes = Standard_False);
 
 		/****************** Write ******************/
 		%feature("compactdefaultargs") Write;

@@ -63,6 +63,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_prs3d.html"
 #include<Geom_module.hxx>
 #include<SelectMgr_module.hxx>
 #include<Select3D_module.hxx>
+#include<Media_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -84,6 +85,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_prs3d.html"
 %import TopTools.i
 %import Quantity.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 
 %include "Prs3d_Point.hxx";
 /* public enums */
@@ -174,6 +180,86 @@ enum Prs3d_DimensionArrowOrientation {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Prs3d_DimensionTextVerticalPosition:
+	Prs3d_DTVP_Above = 0
+	Prs3d_DTVP_Below = 1
+	Prs3d_DTVP_Center = 2
+
+class Prs3d_TypeOfHighlight:
+	Prs3d_TypeOfHighlight_None = 0
+	Prs3d_TypeOfHighlight_Selected = 1
+	Prs3d_TypeOfHighlight_Dynamic = 2
+	Prs3d_TypeOfHighlight_LocalSelected = 3
+	Prs3d_TypeOfHighlight_LocalDynamic = 4
+	Prs3d_TypeOfHighlight_SubIntensity = 5
+	Prs3d_TypeOfHighlight_NB = 6
+
+class Prs3d_VertexDrawMode:
+	Prs3d_VDM_Isolated = 0
+	Prs3d_VDM_All = 1
+	Prs3d_VDM_Inherited = 2
+
+class Prs3d_DatumMode:
+	Prs3d_DM_WireFrame = 0
+	Prs3d_DM_Shaded = 1
+
+class Prs3d_DatumAttribute:
+	Prs3d_DA_XAxisLength = 0
+	Prs3d_DA_YAxisLength = 1
+	Prs3d_DA_ZAxisLength = 2
+	Prs3d_DP_ShadingTubeRadiusPercent = 3
+	Prs3d_DP_ShadingConeRadiusPercent = 4
+	Prs3d_DP_ShadingConeLengthPercent = 5
+	Prs3d_DP_ShadingOriginRadiusPercent = 6
+	Prs3d_DP_ShadingNumberOfFacettes = 7
+
+class Prs3d_DimensionTextHorizontalPosition:
+	Prs3d_DTHP_Left = 0
+	Prs3d_DTHP_Right = 1
+	Prs3d_DTHP_Center = 2
+	Prs3d_DTHP_Fit = 3
+
+class Prs3d_TypeOfLinePicking:
+	Prs3d_TOLP_Point = 0
+	Prs3d_TOLP_Segment = 1
+
+class Prs3d_TypeOfHLR:
+	Prs3d_TOH_NotSet = 0
+	Prs3d_TOH_PolyAlgo = 1
+	Prs3d_TOH_Algo = 2
+
+class Prs3d_DatumAxes:
+	Prs3d_DA_XAxis = 1
+	Prs3d_DA_YAxis = 2
+	Prs3d_DA_ZAxis = 4
+	Prs3d_DA_XYAxis = Prs3d_DA_XAxis | Prs3d_DA_YAxis
+	Prs3d_DA_YZAxis = Prs3d_DA_YAxis | Prs3d_DA_ZAxis
+	Prs3d_DA_XZAxis = Prs3d_DA_XAxis | Prs3d_DA_ZAxis
+	Prs3d_DA_XYZAxis = Prs3d_DA_XAxis | Prs3d_DA_YAxis | Prs3d_DA_ZAxis
+
+class Prs3d_DatumParts:
+	Prs3d_DP_Origin = 0
+	Prs3d_DP_XAxis = 1
+	Prs3d_DP_YAxis = 2
+	Prs3d_DP_ZAxis = 3
+	Prs3d_DP_XArrow = 4
+	Prs3d_DP_YArrow = 5
+	Prs3d_DP_ZArrow = 6
+	Prs3d_DP_XOYAxis = 7
+	Prs3d_DP_YOZAxis = 8
+	Prs3d_DP_XOZAxis = 9
+	Prs3d_DP_None = 10
+
+class Prs3d_DimensionArrowOrientation:
+	Prs3d_DAO_Internal = 0
+	Prs3d_DAO_External = 1
+	Prs3d_DAO_Fit = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Prs3d_BasicAspect)
@@ -4976,6 +5062,18 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class Prs3d_WFShape:
+	pass
+
+@classnotwrapped
+class Prs3d_Point:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

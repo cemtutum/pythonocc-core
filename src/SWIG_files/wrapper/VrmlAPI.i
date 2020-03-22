@@ -75,6 +75,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_vrmlapi.html"
 %import Vrml.i
 %import Quantity.i
 %import TDocStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum VrmlAPI_RepresentationOfShape {
 	VrmlAPI_ShadedRepresentation = 0,
@@ -83,6 +88,16 @@ enum VrmlAPI_RepresentationOfShape {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class VrmlAPI_RepresentationOfShape:
+	VrmlAPI_ShadedRepresentation = 0
+	VrmlAPI_WireFrameRepresentation = 1
+	VrmlAPI_BothRepresentation = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

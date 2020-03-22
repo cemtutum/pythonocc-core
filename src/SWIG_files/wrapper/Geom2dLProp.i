@@ -45,6 +45,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geom2dlprop.html"
 #include<Geom2d_module.hxx>
 #include<LProp_module.hxx>
 #include<math_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -56,8 +57,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geom2dlprop.html"
 %import Geom2d.i
 %import LProp.i
 %import math.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

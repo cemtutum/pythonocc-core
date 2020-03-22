@@ -97,6 +97,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepfill.html"
 %import Law.i
 %import TColgp.i
 %import Bisector.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BRepFill_TypeOfContact {
 	BRepFill_NoContact = 0,
@@ -111,6 +116,21 @@ enum BRepFill_TransitionStyle {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BRepFill_TypeOfContact:
+	BRepFill_NoContact = 0
+	BRepFill_Contact = 1
+	BRepFill_ContactOnBorder = 2
+
+class BRepFill_TransitionStyle:
+	BRepFill_Modified = 0
+	BRepFill_Right = 1
+	BRepFill_Round = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BRepFill_CurveConstraint)

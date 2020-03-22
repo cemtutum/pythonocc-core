@@ -54,6 +54,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_gprop.html"
 %import gp.i
 %import TColgp.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum GProp_EquaType {
 	GProp_Plane = 0,
@@ -78,6 +83,31 @@ enum GProp_ValueType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class GProp_EquaType:
+	GProp_Plane = 0
+	GProp_Line = 1
+	GProp_Point = 2
+	GProp_Space = 3
+	GProp_None = 4
+
+class GProp_ValueType:
+	GProp_Mass = 0
+	GProp_CenterMassX = 1
+	GProp_CenterMassY = 2
+	GProp_CenterMassZ = 3
+	GProp_InertiaXX = 4
+	GProp_InertiaYY = 5
+	GProp_InertiaZZ = 6
+	GProp_InertiaXY = 7
+	GProp_InertiaXZ = 8
+	GProp_InertiaYZ = 9
+	GProp_Unknown = 10
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

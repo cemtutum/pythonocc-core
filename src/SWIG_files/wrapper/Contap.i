@@ -53,6 +53,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_contap.html"
 #include<Geom_module.hxx>
 #include<NCollection_module.hxx>
 #include<Adaptor3d_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -68,6 +69,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_contap.html"
 %import GeomAbs.i
 %import Geom2d.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Contap_IType {
 	Contap_Lin = 0,
@@ -84,6 +90,23 @@ enum Contap_TFunction {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Contap_IType:
+	Contap_Lin = 0
+	Contap_Circle = 1
+	Contap_Walking = 2
+	Contap_Restriction = 3
+
+class Contap_TFunction:
+	Contap_ContourStd = 0
+	Contap_ContourPrs = 1
+	Contap_DraftStd = 2
+	Contap_DraftPrs = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Contap_TheIWLineOfTheIWalking)

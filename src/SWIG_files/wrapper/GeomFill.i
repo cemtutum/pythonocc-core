@@ -58,6 +58,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geomfill.html"
 #include<FEmTool_module.hxx>
 #include<AppParCurves_module.hxx>
 #include<PLib_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -78,6 +79,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geomfill.html"
 %import math.i
 %import Geom2d.i
 %import TColGeom.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum GeomFill_ApproxStyle {
 	GeomFill_Section = 0,
@@ -111,6 +117,38 @@ enum GeomFill_PipeError {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class GeomFill_ApproxStyle:
+	GeomFill_Section = 0
+	GeomFill_Location = 1
+
+class GeomFill_Trihedron:
+	GeomFill_IsCorrectedFrenet = 0
+	GeomFill_IsFixed = 1
+	GeomFill_IsFrenet = 2
+	GeomFill_IsConstantNormal = 3
+	GeomFill_IsDarboux = 4
+	GeomFill_IsGuideAC = 5
+	GeomFill_IsGuidePlan = 6
+	GeomFill_IsGuideACWithContact = 7
+	GeomFill_IsGuidePlanWithContact = 8
+	GeomFill_IsDiscreteTrihedron = 9
+
+class GeomFill_FillingStyle:
+	GeomFill_StretchStyle = 0
+	GeomFill_CoonsStyle = 1
+	GeomFill_CurvedStyle = 2
+
+class GeomFill_PipeError:
+	GeomFill_PipeOk = 0
+	GeomFill_PipeNotOk = 1
+	GeomFill_PlaneNotIntersectGuide = 2
+	GeomFill_ImpossibleContact = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(GeomFill_Boundary)
@@ -2921,6 +2959,10 @@ bool
 %extend GeomFill_FunctionGuide {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Deriv2T(self):
+		pass
 	}
 };
 
@@ -10545,6 +10587,18 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class GeomFill_NSections:
+	pass
+
+@classnotwrapped
+class GeomFill_SweepSectionGenerator:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 class GeomFill_HArray1OfLocationLaw : public  GeomFill_Array1OfLocationLaw, public Standard_Transient {
   public:

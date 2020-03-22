@@ -51,6 +51,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_graphic3d.html"
 #include<TColStd_module.hxx>
 #include<Image_module.hxx>
 #include<OSD_module.hxx>
+#include<Media_module.hxx>
 #include<TShort_module.hxx>
 #include<TColQuantity_module.hxx>
 #include<BVH_module.hxx>
@@ -76,6 +77,12 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_graphic3d.html"
 %import TColStd.i
 %import Image.i
 %import OSD.i
+%import Media.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 
 %define Handle_Graphic3d_TextureSet Handle(Graphic3d_TextureSet)
 %enddef
@@ -555,6 +562,388 @@ enum Graphic3d_NameOfTextureEnv {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Graphic3d_ClipState:
+	Graphic3d_ClipState_Out = 0
+	Graphic3d_ClipState_In = 1
+	Graphic3d_ClipState_On = 2
+
+class Graphic3d_BufferType:
+	Graphic3d_BT_RGB = 0
+	Graphic3d_BT_RGBA = 1
+	Graphic3d_BT_Depth = 2
+	Graphic3d_BT_RGB_RayTraceHdrLeft = 3
+
+class Graphic3d_FrameStatsTimer:
+	Graphic3d_FrameStatsTimer_ElapsedFrame = 0
+	Graphic3d_FrameStatsTimer_CpuFrame = 1
+	Graphic3d_FrameStatsTimer_CpuCulling = 2
+	Graphic3d_FrameStatsTimer_CpuPicking = 3
+	Graphic3d_FrameStatsTimer_CpuDynamics = 4
+
+class Graphic3d_VerticalTextAlignment:
+	Graphic3d_VTA_BOTTOM = 0
+	Graphic3d_VTA_CENTER = 1
+	Graphic3d_VTA_TOP = 2
+	Graphic3d_VTA_TOPFIRSTLINE = 3
+
+class Graphic3d_LevelOfTextureAnisotropy:
+	Graphic3d_LOTA_OFF = 0
+	Graphic3d_LOTA_FAST = 1
+	Graphic3d_LOTA_MIDDLE = 2
+	Graphic3d_LOTA_QUALITY = 3
+
+class Graphic3d_TypeOfLimit:
+	Graphic3d_TypeOfLimit_MaxNbLights = 0
+	Graphic3d_TypeOfLimit_MaxNbClipPlanes = 1
+	Graphic3d_TypeOfLimit_MaxNbViews = 2
+	Graphic3d_TypeOfLimit_MaxTextureSize = 3
+	Graphic3d_TypeOfLimit_MaxViewDumpSizeX = 4
+	Graphic3d_TypeOfLimit_MaxViewDumpSizeY = 5
+	Graphic3d_TypeOfLimit_MaxCombinedTextureUnits = 6
+	Graphic3d_TypeOfLimit_MaxMsaa = 7
+	Graphic3d_TypeOfLimit_HasRayTracing = 8
+	Graphic3d_TypeOfLimit_HasRayTracingTextures = 9
+	Graphic3d_TypeOfLimit_HasRayTracingAdaptiveSampling = 10
+	Graphic3d_TypeOfLimit_HasRayTracingAdaptiveSamplingAtomic = 11
+	Graphic3d_TypeOfLimit_HasBlendedOit = 12
+	Graphic3d_TypeOfLimit_HasBlendedOitMsaa = 13
+	Graphic3d_TypeOfLimit_HasFlatShading = 14
+	Graphic3d_TypeOfLimit_HasMeshEdges = 15
+	Graphic3d_TypeOfLimit_IsWorkaroundFBO = 16
+	Graphic3d_TypeOfLimit_NB = 17
+
+class Graphic3d_DiagnosticInfo:
+	Graphic3d_DiagnosticInfo_Device = 1
+	Graphic3d_DiagnosticInfo_FrameBuffer = 2
+	Graphic3d_DiagnosticInfo_Limits = 4
+	Graphic3d_DiagnosticInfo_Memory = 8
+	Graphic3d_DiagnosticInfo_NativePlatform = 16
+	Graphic3d_DiagnosticInfo_Extensions = 32
+	Graphic3d_DiagnosticInfo_Short = Graphic3d_DiagnosticInfo_Device | Graphic3d_DiagnosticInfo_FrameBuffer | Graphic3d_DiagnosticInfo_Limits
+	Graphic3d_DiagnosticInfo_Basic = Graphic3d_DiagnosticInfo_Short | Graphic3d_DiagnosticInfo_NativePlatform | Graphic3d_DiagnosticInfo_Memory
+	Graphic3d_DiagnosticInfo_Complete = Graphic3d_DiagnosticInfo_Basic | Graphic3d_DiagnosticInfo_Extensions
+
+class Graphic3d_StereoMode:
+	Graphic3d_StereoMode_QuadBuffer = 0
+	Graphic3d_StereoMode_Anaglyph = 1
+	Graphic3d_StereoMode_RowInterlaced = 2
+	Graphic3d_StereoMode_ColumnInterlaced = 3
+	Graphic3d_StereoMode_ChessBoard = 4
+	Graphic3d_StereoMode_SideBySide = 5
+	Graphic3d_StereoMode_OverUnder = 6
+	Graphic3d_StereoMode_SoftPageFlip = 7
+	Graphic3d_StereoMode_NB = 8
+
+class Graphic3d_AlphaMode:
+	Graphic3d_AlphaMode_Opaque = 0
+	Graphic3d_AlphaMode_Mask = 1
+	Graphic3d_AlphaMode_Blend = 2
+	Graphic3d_AlphaMode_BlendAuto = - 1
+
+class Graphic3d_FresnelModel:
+	Graphic3d_FM_SCHLICK = 0
+	Graphic3d_FM_CONSTANT = 1
+	Graphic3d_FM_CONDUCTOR = 2
+	Graphic3d_FM_DIELECTRIC = 3
+
+class Graphic3d_TypeOfReflection:
+	Graphic3d_TOR_AMBIENT = 0
+	Graphic3d_TOR_DIFFUSE = 1
+	Graphic3d_TOR_SPECULAR = 2
+	Graphic3d_TOR_EMISSION = 3
+
+class Graphic3d_RenderTransparentMethod:
+	Graphic3d_RTM_BLEND_UNORDERED = 0
+	Graphic3d_RTM_BLEND_OIT = 1
+
+class Graphic3d_RenderingMode:
+	Graphic3d_RM_RASTERIZATION = 0
+	Graphic3d_RM_RAYTRACING = 1
+
+class Graphic3d_FrameStatsCounter:
+	Graphic3d_FrameStatsCounter_NbLayers = 0
+	Graphic3d_FrameStatsCounter_NbLayersNotCulled = 1
+	Graphic3d_FrameStatsCounter_NbStructs = 2
+	Graphic3d_FrameStatsCounter_NbStructsNotCulled = 3
+	Graphic3d_FrameStatsCounter_NbGroupsNotCulled = 4
+	Graphic3d_FrameStatsCounter_NbElemsNotCulled = 5
+	Graphic3d_FrameStatsCounter_NbElemsFillNotCulled = 6
+	Graphic3d_FrameStatsCounter_NbElemsLineNotCulled = 7
+	Graphic3d_FrameStatsCounter_NbElemsPointNotCulled = 8
+	Graphic3d_FrameStatsCounter_NbElemsTextNotCulled = 9
+	Graphic3d_FrameStatsCounter_NbTrianglesNotCulled = 10
+	Graphic3d_FrameStatsCounter_NbPointsNotCulled = 11
+	Graphic3d_FrameStatsCounter_EstimatedBytesGeom = 12
+	Graphic3d_FrameStatsCounter_EstimatedBytesFbos = 13
+	Graphic3d_FrameStatsCounter_EstimatedBytesTextures = 14
+
+class Graphic3d_TypeOfBackground:
+	Graphic3d_TOB_NONE = - 1
+	Graphic3d_TOB_GRADIENT = 1
+	Graphic3d_TOB_TEXTURE = 2
+	Graphic3d_TOB_CUBEMAP = 3
+
+class Graphic3d_TypeOfStructure:
+	Graphic3d_TOS_WIREFRAME = 0
+	Graphic3d_TOS_SHADING = 1
+	Graphic3d_TOS_COMPUTED = 2
+	Graphic3d_TOS_ALL = 3
+
+class Graphic3d_TypeOfTextureMode:
+	Graphic3d_TOTM_OBJECT = 0
+	Graphic3d_TOTM_SPHERE = 1
+	Graphic3d_TOTM_EYE = 2
+	Graphic3d_TOTM_MANUAL = 3
+	Graphic3d_TOTM_SPRITE = 4
+
+class Graphic3d_TypeOfShaderObject:
+	Graphic3d_TOS_VERTEX = 1
+	Graphic3d_TOS_TESS_CONTROL = 2
+	Graphic3d_TOS_TESS_EVALUATION = 4
+	Graphic3d_TOS_GEOMETRY = 8
+	Graphic3d_TOS_FRAGMENT = 16
+	Graphic3d_TOS_COMPUTE = 32
+
+class Graphic3d_ZLayerSetting:
+	Graphic3d_ZLayerDepthTest = 1
+	Graphic3d_ZLayerDepthWrite = 2
+	Graphic3d_ZLayerDepthClear = 4
+	Graphic3d_ZLayerDepthOffset = 8
+
+class Graphic3d_CappingFlags:
+	Graphic3d_CappingFlags_None = 0
+	Graphic3d_CappingFlags_ObjectMaterial = 1
+	Graphic3d_CappingFlags_ObjectTexture = 2
+	Graphic3d_CappingFlags_ObjectShader = 8
+	Graphic3d_CappingFlags_ObjectAspect = Graphic3d_CappingFlags_ObjectMaterial | Graphic3d_CappingFlags_ObjectTexture | Graphic3d_CappingFlags_ObjectShader
+
+class Graphic3d_NameOfTexturePlane:
+	Graphic3d_NOTP_XY = 0
+	Graphic3d_NOTP_YZ = 1
+	Graphic3d_NOTP_ZX = 2
+	Graphic3d_NOTP_UNKNOWN = 3
+
+class Graphic3d_TypeOfShadingModel:
+	Graphic3d_TOSM_DEFAULT = - 1
+	Graphic3d_TOSM_UNLIT = 0
+	Graphic3d_TOSM_FACET = 1
+	Graphic3d_TOSM_VERTEX = 2
+	Graphic3d_TOSM_FRAGMENT = 3
+	Graphic3d_TOSM_NONE = Graphic3d_TOSM_UNLIT
+	V3d_COLOR = Graphic3d_TOSM_NONE
+	V3d_FLAT = Graphic3d_TOSM_FACET
+	V3d_GOURAUD = Graphic3d_TOSM_VERTEX
+	V3d_PHONG = Graphic3d_TOSM_FRAGMENT
+
+class Graphic3d_TypeOfPrimitiveArray:
+	Graphic3d_TOPA_UNDEFINED = 0
+	Graphic3d_TOPA_POINTS = 1
+	Graphic3d_TOPA_SEGMENTS = 2
+	Graphic3d_TOPA_POLYLINES = 3
+	Graphic3d_TOPA_TRIANGLES = 4
+	Graphic3d_TOPA_TRIANGLESTRIPS = 5
+	Graphic3d_TOPA_TRIANGLEFANS = 6
+	Graphic3d_TOPA_LINES_ADJACENCY = 7
+	Graphic3d_TOPA_LINE_STRIP_ADJACENCY = 8
+	Graphic3d_TOPA_TRIANGLES_ADJACENCY = 9
+	Graphic3d_TOPA_TRIANGLE_STRIP_ADJACENCY = 10
+	Graphic3d_TOPA_QUADRANGLES = 11
+	Graphic3d_TOPA_QUADRANGLESTRIPS = 12
+	Graphic3d_TOPA_POLYGONS = 13
+
+class Graphic3d_ToneMappingMethod:
+	Graphic3d_ToneMappingMethod_Disabled = 0
+	Graphic3d_ToneMappingMethod_Filmic = 1
+
+class Graphic3d_TypeOfTexture:
+	Graphic3d_TOT_1D = 0
+	Graphic3d_TOT_2D = 1
+	Graphic3d_TOT_2D_MIPMAP = 2
+	Graphic3d_TOT_CUBEMAP = 3
+
+class Graphic3d_TypeOfMaterial:
+	Graphic3d_MATERIAL_ASPECT = 0
+	Graphic3d_MATERIAL_PHYSIC = 1
+
+class Graphic3d_TypeOfBackfacingModel:
+	Graphic3d_TOBM_AUTOMATIC = 0
+	Graphic3d_TOBM_FORCE = 1
+	Graphic3d_TOBM_DISABLE = 2
+
+class Graphic3d_HorizontalTextAlignment:
+	Graphic3d_HTA_LEFT = 0
+	Graphic3d_HTA_CENTER = 1
+	Graphic3d_HTA_RIGHT = 2
+
+class Graphic3d_TransModeFlags:
+	Graphic3d_TMF_None = 0
+	Graphic3d_TMF_ZoomPers = 2
+	Graphic3d_TMF_RotatePers = 8
+	Graphic3d_TMF_TriedronPers = 32
+	Graphic3d_TMF_2d = 64
+	Graphic3d_TMF_ZoomRotatePers = Graphic3d_TMF_ZoomPers | Graphic3d_TMF_RotatePers
+
+class Graphic3d_TypeOfAnswer:
+	Graphic3d_TOA_YES = 0
+	Graphic3d_TOA_NO = 1
+	Graphic3d_TOA_COMPUTE = 2
+
+class Graphic3d_GroupAspect:
+	Graphic3d_ASPECT_LINE = 0
+	Graphic3d_ASPECT_TEXT = 1
+	Graphic3d_ASPECT_MARKER = 2
+	Graphic3d_ASPECT_FILL_AREA = 3
+
+class Graphic3d_TextureUnit:
+	Graphic3d_TextureUnit_0 = 0
+	Graphic3d_TextureUnit_1 = 1
+	Graphic3d_TextureUnit_2 = 2
+	Graphic3d_TextureUnit_3 = 3
+	Graphic3d_TextureUnit_4 = 4
+	Graphic3d_TextureUnit_5 = 5
+	Graphic3d_TextureUnit_6 = 6
+	Graphic3d_TextureUnit_7 = 7
+	Graphic3d_TextureUnit_8 = 8
+	Graphic3d_TextureUnit_9 = 9
+	Graphic3d_TextureUnit_10 = 10
+	Graphic3d_TextureUnit_11 = 11
+	Graphic3d_TextureUnit_12 = 12
+	Graphic3d_TextureUnit_13 = 13
+	Graphic3d_TextureUnit_14 = 14
+	Graphic3d_TextureUnit_15 = 15
+	Graphic3d_TextureUnit_BaseColor = Graphic3d_TextureUnit_0
+	Graphic3d_TextureUnit_EnvMap = Graphic3d_TextureUnit_0
+
+class Graphic3d_TypeOfConnection:
+	Graphic3d_TOC_ANCESTOR = 0
+	Graphic3d_TOC_DESCENDANT = 1
+
+class Graphic3d_NameOfTexture1D:
+	Graphic3d_NOT_1D_ELEVATION = 0
+	Graphic3d_NOT_1D_UNKNOWN = 1
+
+class Graphic3d_TextPath:
+	Graphic3d_TP_UP = 0
+	Graphic3d_TP_DOWN = 1
+	Graphic3d_TP_LEFT = 2
+	Graphic3d_TP_RIGHT = 3
+
+class Graphic3d_CubeMapSide:
+	Graphic3d_CMS_POS_X = 0
+	Graphic3d_CMS_NEG_X = 1
+	Graphic3d_CMS_POS_Y = 2
+	Graphic3d_CMS_NEG_Y = 3
+	Graphic3d_CMS_POS_Z = 4
+	Graphic3d_CMS_NEG_Z = 5
+
+class Graphic3d_TypeOfComposition:
+	Graphic3d_TOC_REPLACE = 0
+	Graphic3d_TOC_POSTCONCATENATE = 1
+
+class Graphic3d_TypeOfAttribute:
+	Graphic3d_TOA_POS = 0
+	Graphic3d_TOA_NORM = 1
+	Graphic3d_TOA_UV = 2
+	Graphic3d_TOA_COLOR = 3
+	Graphic3d_TOA_CUSTOM = 4
+
+class Graphic3d_TypeOfData:
+	Graphic3d_TOD_USHORT = 0
+	Graphic3d_TOD_UINT = 1
+	Graphic3d_TOD_VEC2 = 2
+	Graphic3d_TOD_VEC3 = 3
+	Graphic3d_TOD_VEC4 = 4
+	Graphic3d_TOD_VEC4UB = 5
+	Graphic3d_TOD_FLOAT = 6
+
+class Graphic3d_NameOfTexture2D:
+	Graphic3d_NOT_2D_MATRA = 0
+	Graphic3d_NOT_2D_ALIENSKIN = 1
+	Graphic3d_NOT_2D_BLUE_ROCK = 2
+	Graphic3d_NOT_2D_BLUEWHITE_PAPER = 3
+	Graphic3d_NOT_2D_BRUSHED = 4
+	Graphic3d_NOT_2D_BUBBLES = 5
+	Graphic3d_NOT_2D_BUMP = 6
+	Graphic3d_NOT_2D_CAST = 7
+	Graphic3d_NOT_2D_CHIPBD = 8
+	Graphic3d_NOT_2D_CLOUDS = 9
+	Graphic3d_NOT_2D_FLESH = 10
+	Graphic3d_NOT_2D_FLOOR = 11
+	Graphic3d_NOT_2D_GALVNISD = 12
+	Graphic3d_NOT_2D_GRASS = 13
+	Graphic3d_NOT_2D_ALUMINUM = 14
+	Graphic3d_NOT_2D_ROCK = 15
+	Graphic3d_NOT_2D_KNURL = 16
+	Graphic3d_NOT_2D_MAPLE = 17
+	Graphic3d_NOT_2D_MARBLE = 18
+	Graphic3d_NOT_2D_MOTTLED = 19
+	Graphic3d_NOT_2D_RAIN = 20
+	Graphic3d_NOT_2D_CHESS = 21
+	Graphic3d_NOT_2D_UNKNOWN = 22
+
+class Graphic3d_NameOfMaterial:
+	Graphic3d_NOM_BRASS = 0
+	Graphic3d_NOM_BRONZE = 1
+	Graphic3d_NOM_COPPER = 2
+	Graphic3d_NOM_GOLD = 3
+	Graphic3d_NOM_PEWTER = 4
+	Graphic3d_NOM_PLASTER = 5
+	Graphic3d_NOM_PLASTIC = 6
+	Graphic3d_NOM_SILVER = 7
+	Graphic3d_NOM_STEEL = 8
+	Graphic3d_NOM_STONE = 9
+	Graphic3d_NOM_SHINY_PLASTIC = 10
+	Graphic3d_NOM_SATIN = 11
+	Graphic3d_NOM_METALIZED = 12
+	Graphic3d_NOM_NEON_GNC = 13
+	Graphic3d_NOM_CHROME = 14
+	Graphic3d_NOM_ALUMINIUM = 15
+	Graphic3d_NOM_OBSIDIAN = 16
+	Graphic3d_NOM_NEON_PHC = 17
+	Graphic3d_NOM_JADE = 18
+	Graphic3d_NOM_CHARCOAL = 19
+	Graphic3d_NOM_WATER = 20
+	Graphic3d_NOM_GLASS = 21
+	Graphic3d_NOM_DIAMOND = 22
+	Graphic3d_NOM_TRANSPARENT = 23
+	Graphic3d_NOM_DEFAULT = 24
+	Graphic3d_NOM_UserDefined = 25
+
+class Graphic3d_TypeOfTextureFilter:
+	Graphic3d_TOTF_NEAREST = 0
+	Graphic3d_TOTF_BILINEAR = 1
+	Graphic3d_TOTF_TRILINEAR = 2
+
+class Graphic3d_TypeOfVisualization:
+	Graphic3d_TOV_WIREFRAME = 0
+	Graphic3d_TOV_SHADING = 1
+
+class Graphic3d_TypeOfLightSource:
+	Graphic3d_TOLS_AMBIENT = 0
+	Graphic3d_TOLS_DIRECTIONAL = 1
+	Graphic3d_TOLS_POSITIONAL = 2
+	Graphic3d_TOLS_SPOT = 3
+	V3d_AMBIENT = Graphic3d_TOLS_AMBIENT
+	V3d_DIRECTIONAL = Graphic3d_TOLS_DIRECTIONAL
+	V3d_POSITIONAL = Graphic3d_TOLS_POSITIONAL
+	V3d_SPOT = Graphic3d_TOLS_SPOT
+
+class Graphic3d_NameOfTextureEnv:
+	Graphic3d_NOT_ENV_CLOUDS = 0
+	Graphic3d_NOT_ENV_CV = 1
+	Graphic3d_NOT_ENV_MEDIT = 2
+	Graphic3d_NOT_ENV_PEARL = 3
+	Graphic3d_NOT_ENV_SKY1 = 4
+	Graphic3d_NOT_ENV_SKY2 = 5
+	Graphic3d_NOT_ENV_LINES = 6
+	Graphic3d_NOT_ENV_ROAD = 7
+	Graphic3d_NOT_ENV_UNKNOWN = 8
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Graphic3d_ArrayOfPrimitives)
@@ -3768,6 +4157,26 @@ None
 %extend Graphic3d_BvhCStructureSet {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Graphic3d_BvhCStructureSet(self):
+		pass
+
+	@methodnotwrapped
+	def Add(self):
+		pass
+
+	@methodnotwrapped
+	def Clear(self):
+		pass
+
+	@methodnotwrapped
+	def GetStructureById(self):
+		pass
+
+	@methodnotwrapped
+	def Remove(self):
+		pass
 	}
 };
 
@@ -4701,6 +5110,26 @@ enum  {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Projection:
+	Projection_Orthographic = 0
+	Projection_Perspective = 1
+	Projection_Stereo = 2
+	Projection_MonoLeftEye = 3
+	Projection_MonoRightEye = 4
+
+class FocusType:
+	FocusType_Absolute = 0
+	FocusType_Relative = 1
+
+class IODType:
+	IODType_Absolute = 0
+	IODType_Relative = 1
+};
+/* end python proxy for enums */
 
 		/****************** Aspect ******************/
 		%feature("compactdefaultargs") Aspect;
@@ -7656,6 +8085,10 @@ None
 %extend Graphic3d_GraphicDriver {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Print(self):
+		pass
 	}
 };
 
@@ -8100,6 +8533,10 @@ None
 %extend Graphic3d_Group {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def SetGroupPrimitivesAspect(self):
+		pass
 	}
 };
 
@@ -8434,6 +8871,18 @@ float
 %extend Graphic3d_Layer {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def FrustumCullingBVHBuilder(self):
+		pass
+
+	@methodnotwrapped
+	def Graphic3d_Layer(self):
+		pass
+
+	@methodnotwrapped
+	def SetFrustumCullingBVHBuilder(self):
+		pass
 	}
 };
 
@@ -8452,6 +8901,17 @@ enum IterationFilter {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class IterationFilter:
+	IterationFilter_None = 0
+	IterationFilter_ExcludeAmbient = 2
+	IterationFilter_ExcludeDisabled = 4
+	IterationFilter_ExcludeDisabledAndAmbient = IterationFilter_ExcludeAmbient | IterationFilter_ExcludeDisabled
+};
+/* end python proxy for enums */
 
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
@@ -9590,6 +10050,42 @@ enum FrustumCulling {
 
 /* end public enums declaration */
 
+/* python proy classes for enums */
+%pythoncode {
+
+class Anaglyph:
+	Anaglyph_RedCyan_Simple = 0
+	Anaglyph_RedCyan_Optimized = 1
+	Anaglyph_YellowBlue_Simple = 2
+	Anaglyph_YellowBlue_Optimized = 3
+	Anaglyph_GreenMagenta_Simple = 4
+	Anaglyph_UserDefined = 5
+
+class PerfCounters:
+	PerfCounters_NONE = 0
+	PerfCounters_FrameRate = 1
+	PerfCounters_CPU = 2
+	PerfCounters_Layers = 4
+	PerfCounters_Structures = 8
+	PerfCounters_Groups = 16
+	PerfCounters_GroupArrays = 32
+	PerfCounters_Triangles = 64
+	PerfCounters_Points = 128
+	PerfCounters_EstimMem = 256
+	PerfCounters_FrameTime = 512
+	PerfCounters_FrameTimeMax = 1024
+	PerfCounters_SkipImmediate = 2048
+	PerfCounters_Basic = PerfCounters_FrameRate | PerfCounters_CPU | PerfCounters_Layers | PerfCounters_Structures
+	PerfCounters_Extended = PerfCounters_Basic | PerfCounters_Groups | PerfCounters_GroupArrays | PerfCounters_Triangles | PerfCounters_Points | PerfCounters_EstimMem
+	PerfCounters_All = PerfCounters_Extended | PerfCounters_FrameTime | PerfCounters_FrameTimeMax
+
+class FrustumCulling:
+	FrustumCulling_Off = 0
+	FrustumCulling_On = 1
+	FrustumCulling_NoUpdate = 2
+};
+/* end python proxy for enums */
+
 		Graphic3d_RenderingMode Method;
 		Graphic3d_RenderTransparentMethod TransparencyMethod;
 		Standard_ShortReal LineFeather;
@@ -10398,6 +10894,10 @@ Graphic3d_ShaderAttributeList
 %extend Graphic3d_ShaderProgram {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def PushVariable(self):
+		pass
 	}
 };
 
@@ -10445,6 +10945,10 @@ Graphic3d_ValueInterface *
 %extend Graphic3d_ShaderVariable {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Create(self):
+		pass
 	}
 };
 
@@ -12612,6 +13116,10 @@ Standard_Size
 %extend Graphic3d_ValueInterface {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def As(self):
+		pass
 	}
 };
 
@@ -16014,6 +16522,10 @@ bool
 %extend Graphic3d_MediaTextureSet {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def SetCallback(self):
+		pass
 	}
 };
 
@@ -17236,6 +17748,50 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class Graphic3d_UniformValue:
+	pass
+
+@classnotwrapped
+class Graphic3d_UniformValueType:
+	pass
+
+@classnotwrapped
+class Graphic3d_UniformValueTypeID:
+	pass
+
+@classnotwrapped
+class Graphic3d_Buffer:
+	pass
+
+@classnotwrapped
+class Graphic3d_IndexBuffer:
+	pass
+
+@classnotwrapped
+class Graphic3d_TransformPers:
+	pass
+
+@classnotwrapped
+class Graphic3d_TextureSet:
+	pass
+
+@classnotwrapped
+class Graphic3d_CubeMapOrder:
+	pass
+
+@classnotwrapped
+class Graphic3d_CubeMapPacked:
+	pass
+
+@classnotwrapped
+class Graphic3d_BvhCStructureSetTrsfPers:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

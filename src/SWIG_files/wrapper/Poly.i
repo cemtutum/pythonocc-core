@@ -57,8 +57,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_poly.html"
 %import TColgp.i
 %import TColStd.i
 %import TShort.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Poly_Polygon2D)
@@ -149,51 +159,6 @@ None
 ") ComputeNormals;
 		static void ComputeNormals(const opencascade::handle<Poly_Triangulation> & Tri);
 
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "Dumps the triangulation. this is a call to the previous method with comapct set to false.
-
-Parameters
-----------
-T: Poly_Triangulation
-OS: Standard_OStream
-
-Returns
--------
-None
-") Dump;
-		static void Dump(const opencascade::handle<Poly_Triangulation> & T, Standard_OStream & OS);
-
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "Dumps the 3d polygon. this is a call to the previous method with comapct set to false.
-
-Parameters
-----------
-P: Poly_Polygon3D
-OS: Standard_OStream
-
-Returns
--------
-None
-") Dump;
-		static void Dump(const opencascade::handle<Poly_Polygon3D> & P, Standard_OStream & OS);
-
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "Dumps the 2d polygon. this is a call to the previous method with comapct set to false.
-
-Parameters
-----------
-P: Poly_Polygon2D
-OS: Standard_OStream
-
-Returns
--------
-None
-") Dump;
-		static void Dump(const opencascade::handle<Poly_Polygon2D> & P, Standard_OStream & OS);
-
 		/****************** PointOnTriangle ******************/
 		%feature("compactdefaultargs") PointOnTriangle;
 		%feature("autodoc", "Computes parameters of the point p on triangle defined by points p1, p2, and p3, in 2d. the parameters u and v are defined so that p = p1 + u * (p2 - p1) + v * (p3 - p1), with u >= 0, v >= 0, u + v <= 1. if p is located outside of triangle, or triangle is degenerated, the returned parameters correspond to closest point, and returned value is square of the distance from original point to triangle (0 if point is inside).
@@ -233,63 +198,16 @@ float
                 std::stringstream s(src);
                 self->ReadTriangulation(s);}
             };
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Writes the content of the triangulation <t> on the stream <os>. if <compact> is true this is a 'save' format intended to be read back with the read method. if compact is false it is a 'dump' format intended to be informative.
-
-Parameters
-----------
-T: Poly_Triangulation
-OS: Standard_OStream
-Compact: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Write;
-		static void Write(const opencascade::handle<Poly_Triangulation> & T, Standard_OStream & OS, const Standard_Boolean Compact = Standard_True);
-
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Writes the content of the 3d polygon <p> on the stream <os>. if <compact> is true this is a 'save' format intended to be read back with the read method. if compact is false it is a 'dump' format intended to be informative.
-
-Parameters
-----------
-P: Poly_Polygon3D
-OS: Standard_OStream
-Compact: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Write;
-		static void Write(const opencascade::handle<Poly_Polygon3D> & P, Standard_OStream & OS, const Standard_Boolean Compact = Standard_True);
-
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Writes the content of the 2d polygon <p> on the stream <os>. if <compact> is true this is a 'save' format intended to be read back with the read method. if compact is false it is a 'dump' format intended to be informative.
-
-Parameters
-----------
-P: Poly_Polygon2D
-OS: Standard_OStream
-Compact: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Write;
-		static void Write(const opencascade::handle<Poly_Polygon2D> & P, Standard_OStream & OS, const Standard_Boolean Compact = Standard_True);
-
 };
 
 
 %extend Poly {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def PolygonProperties(self):
+		pass
 	}
 };
 
@@ -1782,6 +1700,30 @@ TColgp_Array1OfPnt2d
 /*************************
 * class Poly_MakeLoops3D *
 *************************/
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class Poly_CoherentTriPtr:
+	pass
+
+@classnotwrapped
+class Poly_CoherentTriangulation:
+	pass
+
+@classnotwrapped
+class Poly_MakeLoops:
+	pass
+
+@classnotwrapped
+class Poly_MakeLoops3D:
+	pass
+
+@classnotwrapped
+class Poly_MakeLoops2D:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 class Poly_HArray1OfTriangle : public  Poly_Array1OfTriangle, public Standard_Transient {
   public:

@@ -80,8 +80,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepapprox.html"
 %import gp.i
 %import ApproxInt.i
 %import TColgp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BRepApprox_ApproxLine)
@@ -193,6 +203,10 @@ AppParCurves_MultiBSpCurve
 %extend BRepApprox_Approx {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Perform(self):
+		pass
 	}
 };
 
@@ -2336,6 +2350,10 @@ bool
 %extend BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Error(self):
+		pass
 	}
 };
 
@@ -2429,6 +2447,10 @@ bool
 %extend BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Error(self):
+		pass
 	}
 };
 
@@ -3481,6 +3503,10 @@ bool
 %extend BRepApprox_TheImpPrmSvSurfacesOfApprox {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def FillInitialVectorOfSolution(self):
+		pass
 	}
 };
 

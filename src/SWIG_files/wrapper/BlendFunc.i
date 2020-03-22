@@ -53,6 +53,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_blendfunc.html"
 #include<Adaptor2d_module.hxx>
 #include<Geom2d_module.hxx>
 #include<Geom_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -70,6 +71,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_blendfunc.html"
 %import math.i
 %import TColgp.i
 %import Adaptor2d.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BlendFunc_SectionShape {
 	BlendFunc_Rational = 0,
@@ -79,6 +85,17 @@ enum BlendFunc_SectionShape {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BlendFunc_SectionShape:
+	BlendFunc_Rational = 0
+	BlendFunc_QuasiAngular = 1
+	BlendFunc_Polynomial = 2
+	BlendFunc_Linear = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -186,6 +203,14 @@ GeomAbs_Shape
 %extend BlendFunc {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Mults(self):
+		pass
+
+	@methodnotwrapped
+	def Knots(self):
+		pass
 	}
 };
 

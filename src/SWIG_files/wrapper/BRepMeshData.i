@@ -52,6 +52,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepmeshdata.html
 #include<Adaptor3d_module.hxx>
 #include<Adaptor2d_module.hxx>
 #include<BRepAdaptor_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -63,8 +64,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepmeshdata.html
 %import gp.i
 %import TopAbs.i
 %import TopoDS.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -184,6 +195,78 @@ None
 %extend BRepMeshData_Curve {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def B(self):
+		pass
+
+	@methodnotwrapped
+	def R(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
+
+	@methodnotwrapped
+	def p(self):
+		pass
+
+	@methodnotwrapped
+	def M(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
+
+	@methodnotwrapped
+	def s(self):
+		pass
+
+	@methodnotwrapped
+	def h(self):
+		pass
+
+	@methodnotwrapped
+	def D(self):
+		pass
+
+	@methodnotwrapped
+	def a(self):
+		pass
+
+	@methodnotwrapped
+	def t(self):
+		pass
+
+	@methodnotwrapped
+	def a(self):
+		pass
+
+	@methodnotwrapped
+	def _(self):
+		pass
+
+	@methodnotwrapped
+	def C(self):
+		pass
+
+	@methodnotwrapped
+	def u(self):
+		pass
+
+	@methodnotwrapped
+	def r(self):
+		pass
+
+	@methodnotwrapped
+	def v(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
 	}
 };
 
@@ -253,6 +336,74 @@ int
 %extend BRepMeshData_Edge {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def B(self):
+		pass
+
+	@methodnotwrapped
+	def R(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
+
+	@methodnotwrapped
+	def p(self):
+		pass
+
+	@methodnotwrapped
+	def M(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
+
+	@methodnotwrapped
+	def s(self):
+		pass
+
+	@methodnotwrapped
+	def h(self):
+		pass
+
+	@methodnotwrapped
+	def D(self):
+		pass
+
+	@methodnotwrapped
+	def a(self):
+		pass
+
+	@methodnotwrapped
+	def t(self):
+		pass
+
+	@methodnotwrapped
+	def a(self):
+		pass
+
+	@methodnotwrapped
+	def _(self):
+		pass
+
+	@methodnotwrapped
+	def E(self):
+		pass
+
+	@methodnotwrapped
+	def d(self):
+		pass
+
+	@methodnotwrapped
+	def g(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
 	}
 };
 
@@ -308,6 +459,74 @@ int
 %extend BRepMeshData_Face {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def B(self):
+		pass
+
+	@methodnotwrapped
+	def R(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
+
+	@methodnotwrapped
+	def p(self):
+		pass
+
+	@methodnotwrapped
+	def M(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
+
+	@methodnotwrapped
+	def s(self):
+		pass
+
+	@methodnotwrapped
+	def h(self):
+		pass
+
+	@methodnotwrapped
+	def D(self):
+		pass
+
+	@methodnotwrapped
+	def a(self):
+		pass
+
+	@methodnotwrapped
+	def t(self):
+		pass
+
+	@methodnotwrapped
+	def a(self):
+		pass
+
+	@methodnotwrapped
+	def _(self):
+		pass
+
+	@methodnotwrapped
+	def F(self):
+		pass
+
+	@methodnotwrapped
+	def a(self):
+		pass
+
+	@methodnotwrapped
+	def c(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
 	}
 };
 
@@ -562,6 +781,82 @@ None
 %extend BRepMeshData_PCurve {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def B(self):
+		pass
+
+	@methodnotwrapped
+	def R(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
+
+	@methodnotwrapped
+	def p(self):
+		pass
+
+	@methodnotwrapped
+	def M(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
+
+	@methodnotwrapped
+	def s(self):
+		pass
+
+	@methodnotwrapped
+	def h(self):
+		pass
+
+	@methodnotwrapped
+	def D(self):
+		pass
+
+	@methodnotwrapped
+	def a(self):
+		pass
+
+	@methodnotwrapped
+	def t(self):
+		pass
+
+	@methodnotwrapped
+	def a(self):
+		pass
+
+	@methodnotwrapped
+	def _(self):
+		pass
+
+	@methodnotwrapped
+	def P(self):
+		pass
+
+	@methodnotwrapped
+	def C(self):
+		pass
+
+	@methodnotwrapped
+	def u(self):
+		pass
+
+	@methodnotwrapped
+	def r(self):
+		pass
+
+	@methodnotwrapped
+	def v(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
 	}
 };
 
@@ -630,6 +925,74 @@ TopAbs_Orientation
 %extend BRepMeshData_Wire {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def B(self):
+		pass
+
+	@methodnotwrapped
+	def R(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
+
+	@methodnotwrapped
+	def p(self):
+		pass
+
+	@methodnotwrapped
+	def M(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
+
+	@methodnotwrapped
+	def s(self):
+		pass
+
+	@methodnotwrapped
+	def h(self):
+		pass
+
+	@methodnotwrapped
+	def D(self):
+		pass
+
+	@methodnotwrapped
+	def a(self):
+		pass
+
+	@methodnotwrapped
+	def t(self):
+		pass
+
+	@methodnotwrapped
+	def a(self):
+		pass
+
+	@methodnotwrapped
+	def _(self):
+		pass
+
+	@methodnotwrapped
+	def W(self):
+		pass
+
+	@methodnotwrapped
+	def i(self):
+		pass
+
+	@methodnotwrapped
+	def r(self):
+		pass
+
+	@methodnotwrapped
+	def e(self):
+		pass
 	}
 };
 

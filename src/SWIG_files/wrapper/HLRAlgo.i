@@ -57,6 +57,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_hlralgo.html"
 %import TColStd.i
 %import TColgp.i
 %import gp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum HLRAlgo_PolyMask {
 	HLRAlgo_PolyMask_EMskOutLin1 = 1,
@@ -75,6 +80,26 @@ enum HLRAlgo_PolyMask {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class HLRAlgo_PolyMask:
+	HLRAlgo_PolyMask_EMskOutLin1 = 1
+	HLRAlgo_PolyMask_EMskOutLin2 = 2
+	HLRAlgo_PolyMask_EMskOutLin3 = 4
+	HLRAlgo_PolyMask_EMskGrALin1 = 8
+	HLRAlgo_PolyMask_EMskGrALin2 = 16
+	HLRAlgo_PolyMask_EMskGrALin3 = 32
+	HLRAlgo_PolyMask_FMskBack = 64
+	HLRAlgo_PolyMask_FMskSide = 128
+	HLRAlgo_PolyMask_FMskHiding = 256
+	HLRAlgo_PolyMask_FMskFlat = 512
+	HLRAlgo_PolyMask_FMskOnOutL = 1024
+	HLRAlgo_PolyMask_FMskOrBack = 2048
+	HLRAlgo_PolyMask_FMskFrBack = 4096
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(HLRAlgo_EdgesBlock)
@@ -690,6 +715,14 @@ None
 %extend HLRAlgo_BiPoint {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Indices(self):
+		pass
+
+	@methodnotwrapped
+	def Points(self):
+		pass
 	}
 };
 
@@ -1229,6 +1262,16 @@ None
 ") IsoLine;
 		void IsoLine(const Standard_Integer I, const Standard_Boolean B);
 
+		/****************** MinMax ******************/
+		%feature("compactdefaultargs") MinMax;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_EdgesBlock::MinMaxIndices
+") MinMax;
+		HLRAlgo_EdgesBlock::MinMaxIndices MinMax();
+
 		/****************** NbEdges ******************/
 		%feature("compactdefaultargs") NbEdges;
 		%feature("autodoc", "No available documentation.
@@ -1305,6 +1348,10 @@ None
 %extend HLRAlgo_EdgesBlock {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def UpdateMinMax(self):
+		pass
 	}
 };
 
@@ -2001,6 +2048,18 @@ HLRAlgo_Array1OfTData
 %extend HLRAlgo_PolyData {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def UpdateGlobalMinMax(self):
+		pass
+
+	@methodnotwrapped
+	def HideByPolyData(self):
+		pass
+
+	@methodnotwrapped
+	def Indices(self):
+		pass
 	}
 };
 
@@ -2312,6 +2371,14 @@ None
 %extend HLRAlgo_PolyInternalNode {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Indices(self):
+		pass
+
+	@methodnotwrapped
+	def Data(self):
+		pass
 	}
 };
 
@@ -2414,6 +2481,10 @@ None
 %extend HLRAlgo_PolyShellData {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Indices(self):
+		pass
 	}
 };
 
@@ -2790,6 +2861,22 @@ opencascade::handle<HLRAlgo_EdgesBlock>
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class HLRAlgo_TriangleData:
+	pass
+
+@classnotwrapped
+class HLRAlgo_PolyInternalSegment:
+	pass
+
+@classnotwrapped
+class HLRAlgo_PolyHidingData:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 class HLRAlgo_HArray1OfPINod : public  HLRAlgo_Array1OfPINod, public Standard_Transient {
   public:

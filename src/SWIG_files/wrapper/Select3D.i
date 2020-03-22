@@ -54,7 +54,6 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_select3d.html"
 #include<TShort_module.hxx>
 #include<TColQuantity_module.hxx>
 #include<Aspect_module.hxx>
-#include<Visual3d_module.hxx>
 #include<Graphic3d_module.hxx>
 #include<Quantity_module.hxx>
 #include<Message_module.hxx>
@@ -64,6 +63,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_select3d.html"
 #include<Poly_module.hxx>
 #include<HLRAlgo_module.hxx>
 #include<Prs3d_module.hxx>
+#include<TopoDS_module.hxx>
+#include<Media_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -81,6 +82,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_select3d.html"
 %import TopLoc.i
 %import TColStd.i
 %import Geom.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Select3D_TypeOfSensitivity {
 	Select3D_TOS_INTERIOR = 0,
@@ -88,6 +94,15 @@ enum Select3D_TypeOfSensitivity {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Select3D_TypeOfSensitivity:
+	Select3D_TOS_INTERIOR = 0
+	Select3D_TOS_BOUNDARY = 1
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Select3D_BVHIndexBuffer)
@@ -456,6 +471,10 @@ None
 %extend Select3D_SensitiveBox {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Box(self):
+		pass
 	}
 };
 
@@ -2531,6 +2550,26 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class Select3D_SensitiveTriangulation:
+	pass
+
+@classnotwrapped
+class Select3D_SensitiveEntity:
+	pass
+
+@classnotwrapped
+class Handle_Select3D_SensitiveEntity:
+	pass
+
+@classnotwrapped
+class Select3D_SensitiveSet:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

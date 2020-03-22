@@ -48,6 +48,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_intrv.html"
 %};
 %import Standard.i
 %import NCollection.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Intrv_Position {
 	Intrv_Before = 0,
@@ -66,6 +71,26 @@ enum Intrv_Position {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Intrv_Position:
+	Intrv_Before = 0
+	Intrv_JustBefore = 1
+	Intrv_OverlappingAtStart = 2
+	Intrv_JustEnclosingAtEnd = 3
+	Intrv_Enclosing = 4
+	Intrv_JustOverlappingAtStart = 5
+	Intrv_Similar = 6
+	Intrv_JustEnclosingAtStart = 7
+	Intrv_Inside = 8
+	Intrv_JustOverlappingAtEnd = 9
+	Intrv_OverlappingAtEnd = 10
+	Intrv_JustAfter = 11
+	Intrv_After = 12
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

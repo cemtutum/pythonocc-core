@@ -47,6 +47,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_igesdata.html"
 #include<Message_module.hxx>
 #include<TColStd_module.hxx>
 #include<MoniTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -59,6 +60,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_igesdata.html"
 %import gp.i
 %import Message.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum IGESData_ReadStage {
 	IGESData_ReadDir = 0,
@@ -93,6 +99,39 @@ enum IGESData_DefType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class IGESData_ReadStage:
+	IGESData_ReadDir = 0
+	IGESData_ReadOwn = 1
+	IGESData_ReadAssocs = 2
+	IGESData_ReadProps = 3
+	IGESData_ReadEnd = 4
+
+class IGESData_DefList:
+	IGESData_DefNone = 0
+	IGESData_DefOne = 1
+	IGESData_DefSeveral = 2
+	IGESData_ErrorOne = 3
+	IGESData_ErrorSeveral = 4
+
+class IGESData_Status:
+	IGESData_EntityOK = 0
+	IGESData_EntityError = 1
+	IGESData_ReferenceError = 2
+	IGESData_TypeError = 3
+
+class IGESData_DefType:
+	IGESData_DefVoid = 0
+	IGESData_DefValue = 1
+	IGESData_DefReference = 2
+	IGESData_DefAny = 3
+	IGESData_ErrorVal = 4
+	IGESData_ErrorRef = 5
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(IGESData_FileRecognizer)
@@ -4243,6 +4282,10 @@ None
 %extend IGESData_IGESWriter {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Send(self):
+		pass
 	}
 };
 
@@ -5398,6 +5441,10 @@ IGESData_ReadStage
 %extend IGESData_ParamReader {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def ReadEntity(self):
+		pass
 	}
 };
 

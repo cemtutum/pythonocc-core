@@ -88,6 +88,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepfeat.html"
 %import BRepBuilderAPI.i
 %import TColGeom.i
 %import LocOpe.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BRepFeat_Status {
 	BRepFeat_NoError = 0,
@@ -135,6 +140,53 @@ enum BRepFeat_PerfSelection {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BRepFeat_Status:
+	BRepFeat_NoError = 0
+	BRepFeat_InvalidPlacement = 1
+	BRepFeat_HoleTooLong = 2
+
+class BRepFeat_StatusError:
+	BRepFeat_OK = 0
+	BRepFeat_BadDirect = 1
+	BRepFeat_BadIntersect = 2
+	BRepFeat_EmptyBaryCurve = 3
+	BRepFeat_EmptyCutResult = 4
+	BRepFeat_FalseSide = 5
+	BRepFeat_IncDirection = 6
+	BRepFeat_IncSlidFace = 7
+	BRepFeat_IncParameter = 8
+	BRepFeat_IncTypes = 9
+	BRepFeat_IntervalOverlap = 10
+	BRepFeat_InvFirstShape = 11
+	BRepFeat_InvOption = 12
+	BRepFeat_InvShape = 13
+	BRepFeat_LocOpeNotDone = 14
+	BRepFeat_LocOpeInvNotDone = 15
+	BRepFeat_NoExtFace = 16
+	BRepFeat_NoFaceProf = 17
+	BRepFeat_NoGluer = 18
+	BRepFeat_NoIntersectF = 19
+	BRepFeat_NoIntersectU = 20
+	BRepFeat_NoParts = 21
+	BRepFeat_NoProjPt = 22
+	BRepFeat_NotInitialized = 23
+	BRepFeat_NotYetImplemented = 24
+	BRepFeat_NullRealTool = 25
+	BRepFeat_NullToolF = 26
+	BRepFeat_NullToolU = 27
+
+class BRepFeat_PerfSelection:
+	BRepFeat_NoSelection = 0
+	BRepFeat_SelectionFU = 1
+	BRepFeat_SelectionU = 2
+	BRepFeat_SelectionSh = 3
+	BRepFeat_SelectionShU = 4
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -233,21 +285,6 @@ None
 ") ParametricMinMax;
 		static void ParametricMinMax(const TopoDS_Shape & S, const opencascade::handle<Geom_Curve> & C, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean &OutValue, const Standard_Boolean Ori = Standard_False);
 
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the error description of the state <st> as a string on the stream <s> and returns <s>.
-
-Parameters
-----------
-SE: BRepFeat_StatusError
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const BRepFeat_StatusError SE, Standard_OStream & S);
-
 		/****************** SampleEdges ******************/
 		%feature("compactdefaultargs") SampleEdges;
 		%feature("autodoc", "No available documentation.
@@ -285,6 +322,10 @@ TopoDS_Solid
 %extend BRepFeat {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def IsInOut(self):
+		pass
 	}
 };
 
@@ -1680,6 +1721,10 @@ bool
 %extend BRepFeat_MakeLinearForm {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def TransformShapeFU(self):
+		pass
 	}
 };
 

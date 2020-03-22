@@ -49,6 +49,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_storage.html"
 %};
 %import Standard.i
 %import NCollection.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Storage_SolveMode {
 	Storage_AddSolve = 0,
@@ -81,6 +86,38 @@ enum Storage_OpenMode {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Storage_SolveMode:
+	Storage_AddSolve = 0
+	Storage_WriteSolve = 1
+	Storage_ReadSolve = 2
+
+class Storage_Error:
+	Storage_VSOk = 0
+	Storage_VSOpenError = 1
+	Storage_VSModeError = 2
+	Storage_VSCloseError = 3
+	Storage_VSAlreadyOpen = 4
+	Storage_VSNotOpen = 5
+	Storage_VSSectionNotFound = 6
+	Storage_VSWriteError = 7
+	Storage_VSFormatError = 8
+	Storage_VSUnknownType = 9
+	Storage_VSTypeMismatch = 10
+	Storage_VSInternalError = 11
+	Storage_VSExtCharParityError = 12
+	Storage_VSWrongFileDriver = 13
+
+class Storage_OpenMode:
+	Storage_VSNone = 0
+	Storage_VSRead = 1
+	Storage_VSWrite = 2
+	Storage_VSReadWrite = 3
+};
+/* end python proxy for enums */
 
 /* templates */
 %template(Storage_PType) NCollection_IndexedDataMap<TCollection_AsciiString,Standard_Integer,TCollection_AsciiString>;
@@ -171,6 +208,115 @@ typedef NCollection_Array1<opencascade::handle<Storage_Schema>> Storage_ArrayOfS
 typedef NCollection_Sequence<opencascade::handle<Storage_Root>> Storage_SeqOfRoot;
 /* end typedefs declaration */
 
+/****************
+* class Storage *
+****************/
+/***************************
+* class Storage_BaseDriver *
+***************************/
+/***********************
+* class Storage_Bucket *
+***********************/
+/*******************************
+* class Storage_BucketIterator *
+*******************************/
+/***********************************
+* class Storage_BucketOfPersistent *
+***********************************/
+/*************************
+* class Storage_CallBack *
+*************************/
+/*********************
+* class Storage_Data *
+*********************/
+/***************************
+* class Storage_HeaderData *
+***************************/
+/*****************************
+* class Storage_InternalData *
+*****************************/
+/*********************
+* class Storage_Root *
+*********************/
+/*************************
+* class Storage_RootData *
+*************************/
+/***********************
+* class Storage_Schema *
+***********************/
+/*************************
+* class Storage_TypeData *
+*************************/
+/******************************
+* class Storage_TypedCallBack *
+******************************/
+/********************************
+* class Storage_DefaultCallBack *
+********************************/
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class Storage_Bucket:
+	pass
+
+@classnotwrapped
+class Storage_BucketOfPersistent:
+	pass
+
+@classnotwrapped
+class Storage_BucketIterator:
+	pass
+
+@classnotwrapped
+class Storage_RootData:
+	pass
+
+@classnotwrapped
+class Storage_TypeData:
+	pass
+
+@classnotwrapped
+class Storage_Root:
+	pass
+
+@classnotwrapped
+class Storage_Schema:
+	pass
+
+@classnotwrapped
+class Storage_DefaultCallBack:
+	pass
+
+@classnotwrapped
+class Storage_TypedCallBack:
+	pass
+
+@classnotwrapped
+class Storage_CallBack:
+	pass
+
+@classnotwrapped
+class Storage_HeaderData:
+	pass
+
+@classnotwrapped
+class Storage_BaseDriver:
+	pass
+
+@classnotwrapped
+class Storage_InternalData:
+	pass
+
+@classnotwrapped
+class Storage_Data:
+	pass
+
+@classnotwrapped
+class Storage:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 class Storage_HArrayOfSchema : public  Storage_ArrayOfSchema, public Standard_Transient {
   public:

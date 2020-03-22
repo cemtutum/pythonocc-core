@@ -68,6 +68,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topodstostep.html
 %import StepShape.i
 %import MoniTool.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum TopoDSToStep_MakeEdgeError {
 	TopoDSToStep_EdgeDone = 0,
@@ -107,6 +112,42 @@ enum TopoDSToStep_FacetedError {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TopoDSToStep_MakeEdgeError:
+	TopoDSToStep_EdgeDone = 0
+	TopoDSToStep_NonManifoldEdge = 1
+	TopoDSToStep_EdgeOther = 2
+
+class TopoDSToStep_BuilderError:
+	TopoDSToStep_BuilderDone = 0
+	TopoDSToStep_NoFaceMapped = 1
+	TopoDSToStep_BuilderOther = 2
+
+class TopoDSToStep_MakeVertexError:
+	TopoDSToStep_VertexDone = 0
+	TopoDSToStep_VertexOther = 1
+
+class TopoDSToStep_MakeWireError:
+	TopoDSToStep_WireDone = 0
+	TopoDSToStep_NonManifoldWire = 1
+	TopoDSToStep_WireOther = 2
+
+class TopoDSToStep_MakeFaceError:
+	TopoDSToStep_FaceDone = 0
+	TopoDSToStep_InfiniteFace = 1
+	TopoDSToStep_NonManifoldFace = 2
+	TopoDSToStep_NoWireMapped = 3
+	TopoDSToStep_FaceOther = 4
+
+class TopoDSToStep_FacetedError:
+	TopoDSToStep_FacetedDone = 0
+	TopoDSToStep_SurfaceNotPlane = 1
+	TopoDSToStep_PCurveNotLinear = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

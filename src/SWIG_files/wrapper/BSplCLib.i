@@ -46,6 +46,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_bsplclib.html"
 #include<TColgp_module.hxx>
 #include<gp_module.hxx>
 #include<GeomAbs_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -58,6 +59,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_bsplclib.html"
 %import TColgp.i
 %import gp.i
 %import GeomAbs.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BSplCLib_MultDistribution {
 	BSplCLib_NonConstant = 0,
@@ -71,6 +77,20 @@ enum BSplCLib_KnotDistribution {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BSplCLib_MultDistribution:
+	BSplCLib_NonConstant = 0
+	BSplCLib_Constant = 1
+	BSplCLib_QuasiConstant = 2
+
+class BSplCLib_KnotDistribution:
+	BSplCLib_NonUniform = 0
+	BSplCLib_Uniform = 1
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BSplCLib_Cache)
@@ -3079,6 +3099,10 @@ None
 %extend BSplCLib {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def DN(self):
+		pass
 	}
 };
 
@@ -3396,6 +3420,14 @@ float
 /***********************************
 * class BSplCLib_EvaluatorFunction *
 ***********************************/
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class BSplCLib_EvaluatorFunction:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

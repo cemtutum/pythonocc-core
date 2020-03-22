@@ -66,6 +66,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_xcafdimtolobjects
 %import TCollection.i
 %import TColStd.i
 %import TDocStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum XCAFDimTolObjects_GeomToleranceType {
 	XCAFDimTolObjects_GeomToleranceType_None = 0,
@@ -297,6 +302,226 @@ enum XCAFDimTolObjects_DimensionGrade {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class XCAFDimTolObjects_GeomToleranceType:
+	XCAFDimTolObjects_GeomToleranceType_None = 0
+	XCAFDimTolObjects_GeomToleranceType_Angularity = 1
+	XCAFDimTolObjects_GeomToleranceType_CircularRunout = 2
+	XCAFDimTolObjects_GeomToleranceType_CircularityOrRoundness = 3
+	XCAFDimTolObjects_GeomToleranceType_Coaxiality = 4
+	XCAFDimTolObjects_GeomToleranceType_Concentricity = 5
+	XCAFDimTolObjects_GeomToleranceType_Cylindricity = 6
+	XCAFDimTolObjects_GeomToleranceType_Flatness = 7
+	XCAFDimTolObjects_GeomToleranceType_Parallelism = 8
+	XCAFDimTolObjects_GeomToleranceType_Perpendicularity = 9
+	XCAFDimTolObjects_GeomToleranceType_Position = 10
+	XCAFDimTolObjects_GeomToleranceType_ProfileOfLine = 11
+	XCAFDimTolObjects_GeomToleranceType_ProfileOfSurface = 12
+	XCAFDimTolObjects_GeomToleranceType_Straightness = 13
+	XCAFDimTolObjects_GeomToleranceType_Symmetry = 14
+	XCAFDimTolObjects_GeomToleranceType_TotalRunout = 15
+
+class XCAFDimTolObjects_GeomToleranceModif:
+	XCAFDimTolObjects_GeomToleranceModif_Any_Cross_Section = 0
+	XCAFDimTolObjects_GeomToleranceModif_Common_Zone = 1
+	XCAFDimTolObjects_GeomToleranceModif_Each_Radial_Element = 2
+	XCAFDimTolObjects_GeomToleranceModif_Free_State = 3
+	XCAFDimTolObjects_GeomToleranceModif_Least_Material_Requirement = 4
+	XCAFDimTolObjects_GeomToleranceModif_Line_Element = 5
+	XCAFDimTolObjects_GeomToleranceModif_Major_Diameter = 6
+	XCAFDimTolObjects_GeomToleranceModif_Maximum_Material_Requirement = 7
+	XCAFDimTolObjects_GeomToleranceModif_Minor_Diameter = 8
+	XCAFDimTolObjects_GeomToleranceModif_Not_Convex = 9
+	XCAFDimTolObjects_GeomToleranceModif_Pitch_Diameter = 10
+	XCAFDimTolObjects_GeomToleranceModif_Reciprocity_Requirement = 11
+	XCAFDimTolObjects_GeomToleranceModif_Separate_Requirement = 12
+	XCAFDimTolObjects_GeomToleranceModif_Statistical_Tolerance = 13
+	XCAFDimTolObjects_GeomToleranceModif_Tangent_Plane = 14
+	XCAFDimTolObjects_GeomToleranceModif_All_Around = 15
+	XCAFDimTolObjects_GeomToleranceModif_All_Over = 16
+
+class XCAFDimTolObjects_DimensionModif:
+	XCAFDimTolObjects_DimensionModif_ControlledRadius = 0
+	XCAFDimTolObjects_DimensionModif_Square = 1
+	XCAFDimTolObjects_DimensionModif_StatisticalTolerance = 2
+	XCAFDimTolObjects_DimensionModif_ContinuousFeature = 3
+	XCAFDimTolObjects_DimensionModif_TwoPointSize = 4
+	XCAFDimTolObjects_DimensionModif_LocalSizeDefinedBySphere = 5
+	XCAFDimTolObjects_DimensionModif_LeastSquaresAssociationCriterion = 6
+	XCAFDimTolObjects_DimensionModif_MaximumInscribedAssociation = 7
+	XCAFDimTolObjects_DimensionModif_MinimumCircumscribedAssociation = 8
+	XCAFDimTolObjects_DimensionModif_CircumferenceDiameter = 9
+	XCAFDimTolObjects_DimensionModif_AreaDiameter = 10
+	XCAFDimTolObjects_DimensionModif_VolumeDiameter = 11
+	XCAFDimTolObjects_DimensionModif_MaximumSize = 12
+	XCAFDimTolObjects_DimensionModif_MinimumSize = 13
+	XCAFDimTolObjects_DimensionModif_AverageSize = 14
+	XCAFDimTolObjects_DimensionModif_MedianSize = 15
+	XCAFDimTolObjects_DimensionModif_MidRangeSize = 16
+	XCAFDimTolObjects_DimensionModif_RangeOfSizes = 17
+	XCAFDimTolObjects_DimensionModif_AnyRestrictedPortionOfFeature = 18
+	XCAFDimTolObjects_DimensionModif_AnyCrossSection = 19
+	XCAFDimTolObjects_DimensionModif_SpecificFixedCrossSection = 20
+	XCAFDimTolObjects_DimensionModif_CommonTolerance = 21
+	XCAFDimTolObjects_DimensionModif_FreeStateCondition = 22
+	XCAFDimTolObjects_DimensionModif_Between = 23
+
+class XCAFDimTolObjects_DatumModifWithValue:
+	XCAFDimTolObjects_DatumModifWithValue_None = 0
+	XCAFDimTolObjects_DatumModifWithValue_CircularOrCylindrical = 1
+	XCAFDimTolObjects_DatumModifWithValue_Distance = 2
+	XCAFDimTolObjects_DatumModifWithValue_Projected = 3
+	XCAFDimTolObjects_DatumModifWithValue_Spherical = 4
+
+class XCAFDimTolObjects_DimensionFormVariance:
+	XCAFDimTolObjects_DimensionFormVariance_None = 0
+	XCAFDimTolObjects_DimensionFormVariance_A = 1
+	XCAFDimTolObjects_DimensionFormVariance_B = 2
+	XCAFDimTolObjects_DimensionFormVariance_C = 3
+	XCAFDimTolObjects_DimensionFormVariance_CD = 4
+	XCAFDimTolObjects_DimensionFormVariance_D = 5
+	XCAFDimTolObjects_DimensionFormVariance_E = 6
+	XCAFDimTolObjects_DimensionFormVariance_EF = 7
+	XCAFDimTolObjects_DimensionFormVariance_F = 8
+	XCAFDimTolObjects_DimensionFormVariance_FG = 9
+	XCAFDimTolObjects_DimensionFormVariance_G = 10
+	XCAFDimTolObjects_DimensionFormVariance_H = 11
+	XCAFDimTolObjects_DimensionFormVariance_JS = 12
+	XCAFDimTolObjects_DimensionFormVariance_J = 13
+	XCAFDimTolObjects_DimensionFormVariance_K = 14
+	XCAFDimTolObjects_DimensionFormVariance_M = 15
+	XCAFDimTolObjects_DimensionFormVariance_N = 16
+	XCAFDimTolObjects_DimensionFormVariance_P = 17
+	XCAFDimTolObjects_DimensionFormVariance_R = 18
+	XCAFDimTolObjects_DimensionFormVariance_S = 19
+	XCAFDimTolObjects_DimensionFormVariance_T = 20
+	XCAFDimTolObjects_DimensionFormVariance_U = 21
+	XCAFDimTolObjects_DimensionFormVariance_V = 22
+	XCAFDimTolObjects_DimensionFormVariance_X = 23
+	XCAFDimTolObjects_DimensionFormVariance_Y = 24
+	XCAFDimTolObjects_DimensionFormVariance_Z = 25
+	XCAFDimTolObjects_DimensionFormVariance_ZA = 26
+	XCAFDimTolObjects_DimensionFormVariance_ZB = 27
+	XCAFDimTolObjects_DimensionFormVariance_ZC = 28
+
+class XCAFDimTolObjects_GeomToleranceZoneModif:
+	XCAFDimTolObjects_GeomToleranceZoneModif_None = 0
+	XCAFDimTolObjects_GeomToleranceZoneModif_Projected = 1
+	XCAFDimTolObjects_GeomToleranceZoneModif_Runout = 2
+	XCAFDimTolObjects_GeomToleranceZoneModif_NonUniform = 3
+
+class XCAFDimTolObjects_DatumTargetType:
+	XCAFDimTolObjects_DatumTargetType_Point = 0
+	XCAFDimTolObjects_DatumTargetType_Line = 1
+	XCAFDimTolObjects_DatumTargetType_Rectangle = 2
+	XCAFDimTolObjects_DatumTargetType_Circle = 3
+	XCAFDimTolObjects_DatumTargetType_Area = 4
+
+class XCAFDimTolObjects_DatumSingleModif:
+	XCAFDimTolObjects_DatumSingleModif_AnyCrossSection = 0
+	XCAFDimTolObjects_DatumSingleModif_Any_LongitudinalSection = 1
+	XCAFDimTolObjects_DatumSingleModif_Basic = 2
+	XCAFDimTolObjects_DatumSingleModif_ContactingFeature = 3
+	XCAFDimTolObjects_DatumSingleModif_DegreeOfFreedomConstraintU = 4
+	XCAFDimTolObjects_DatumSingleModif_DegreeOfFreedomConstraintV = 5
+	XCAFDimTolObjects_DatumSingleModif_DegreeOfFreedomConstraintW = 6
+	XCAFDimTolObjects_DatumSingleModif_DegreeOfFreedomConstraintX = 7
+	XCAFDimTolObjects_DatumSingleModif_DegreeOfFreedomConstraintY = 8
+	XCAFDimTolObjects_DatumSingleModif_DegreeOfFreedomConstraintZ = 9
+	XCAFDimTolObjects_DatumSingleModif_DistanceVariable = 10
+	XCAFDimTolObjects_DatumSingleModif_FreeState = 11
+	XCAFDimTolObjects_DatumSingleModif_LeastMaterialRequirement = 12
+	XCAFDimTolObjects_DatumSingleModif_Line = 13
+	XCAFDimTolObjects_DatumSingleModif_MajorDiameter = 14
+	XCAFDimTolObjects_DatumSingleModif_MaximumMaterialRequirement = 15
+	XCAFDimTolObjects_DatumSingleModif_MinorDiameter = 16
+	XCAFDimTolObjects_DatumSingleModif_Orientation = 17
+	XCAFDimTolObjects_DatumSingleModif_PitchDiameter = 18
+	XCAFDimTolObjects_DatumSingleModif_Plane = 19
+	XCAFDimTolObjects_DatumSingleModif_Point = 20
+	XCAFDimTolObjects_DatumSingleModif_Translation = 21
+
+class XCAFDimTolObjects_DimensionQualifier:
+	XCAFDimTolObjects_DimensionQualifier_None = 0
+	XCAFDimTolObjects_DimensionQualifier_Min = 1
+	XCAFDimTolObjects_DimensionQualifier_Max = 2
+	XCAFDimTolObjects_DimensionQualifier_Avg = 3
+
+class XCAFDimTolObjects_GeomToleranceTypeValue:
+	XCAFDimTolObjects_GeomToleranceTypeValue_None = 0
+	XCAFDimTolObjects_GeomToleranceTypeValue_Diameter = 1
+	XCAFDimTolObjects_GeomToleranceTypeValue_SphericalDiameter = 2
+
+class XCAFDimTolObjects_ToleranceZoneAffectedPlane:
+	XCAFDimTolObjects_ToleranceZoneAffectedPlane_None = 0
+	XCAFDimTolObjects_ToleranceZoneAffectedPlane_Intersection = 1
+	XCAFDimTolObjects_ToleranceZoneAffectedPlane_Orientation = 2
+
+class XCAFDimTolObjects_DimensionType:
+	XCAFDimTolObjects_DimensionType_Location_None = 0
+	XCAFDimTolObjects_DimensionType_Location_CurvedDistance = 1
+	XCAFDimTolObjects_DimensionType_Location_LinearDistance = 2
+	XCAFDimTolObjects_DimensionType_Location_LinearDistance_FromCenterToOuter = 3
+	XCAFDimTolObjects_DimensionType_Location_LinearDistance_FromCenterToInner = 4
+	XCAFDimTolObjects_DimensionType_Location_LinearDistance_FromOuterToCenter = 5
+	XCAFDimTolObjects_DimensionType_Location_LinearDistance_FromOuterToOuter = 6
+	XCAFDimTolObjects_DimensionType_Location_LinearDistance_FromOuterToInner = 7
+	XCAFDimTolObjects_DimensionType_Location_LinearDistance_FromInnerToCenter = 8
+	XCAFDimTolObjects_DimensionType_Location_LinearDistance_FromInnerToOuter = 9
+	XCAFDimTolObjects_DimensionType_Location_LinearDistance_FromInnerToInner = 10
+	XCAFDimTolObjects_DimensionType_Location_Angular = 11
+	XCAFDimTolObjects_DimensionType_Location_Oriented = 12
+	XCAFDimTolObjects_DimensionType_Location_WithPath = 13
+	XCAFDimTolObjects_DimensionType_Size_CurveLength = 14
+	XCAFDimTolObjects_DimensionType_Size_Diameter = 15
+	XCAFDimTolObjects_DimensionType_Size_SphericalDiameter = 16
+	XCAFDimTolObjects_DimensionType_Size_Radius = 17
+	XCAFDimTolObjects_DimensionType_Size_SphericalRadius = 18
+	XCAFDimTolObjects_DimensionType_Size_ToroidalMinorDiameter = 19
+	XCAFDimTolObjects_DimensionType_Size_ToroidalMajorDiameter = 20
+	XCAFDimTolObjects_DimensionType_Size_ToroidalMinorRadius = 21
+	XCAFDimTolObjects_DimensionType_Size_ToroidalMajorRadius = 22
+	XCAFDimTolObjects_DimensionType_Size_ToroidalHighMajorDiameter = 23
+	XCAFDimTolObjects_DimensionType_Size_ToroidalLowMajorDiameter = 24
+	XCAFDimTolObjects_DimensionType_Size_ToroidalHighMajorRadius = 25
+	XCAFDimTolObjects_DimensionType_Size_ToroidalLowMajorRadius = 26
+	XCAFDimTolObjects_DimensionType_Size_Thickness = 27
+	XCAFDimTolObjects_DimensionType_Size_Angular = 28
+	XCAFDimTolObjects_DimensionType_Size_WithPath = 29
+	XCAFDimTolObjects_DimensionType_CommonLabel = 30
+	XCAFDimTolObjects_DimensionType_DimensionPresentation = 31
+
+class XCAFDimTolObjects_GeomToleranceMatReqModif:
+	XCAFDimTolObjects_GeomToleranceMatReqModif_None = 0
+	XCAFDimTolObjects_GeomToleranceMatReqModif_M = 1
+	XCAFDimTolObjects_GeomToleranceMatReqModif_L = 2
+
+class XCAFDimTolObjects_DimensionGrade:
+	XCAFDimTolObjects_DimensionGrade_IT01 = 0
+	XCAFDimTolObjects_DimensionGrade_IT0 = 1
+	XCAFDimTolObjects_DimensionGrade_IT1 = 2
+	XCAFDimTolObjects_DimensionGrade_IT2 = 3
+	XCAFDimTolObjects_DimensionGrade_IT3 = 4
+	XCAFDimTolObjects_DimensionGrade_IT4 = 5
+	XCAFDimTolObjects_DimensionGrade_IT5 = 6
+	XCAFDimTolObjects_DimensionGrade_IT6 = 7
+	XCAFDimTolObjects_DimensionGrade_IT7 = 8
+	XCAFDimTolObjects_DimensionGrade_IT8 = 9
+	XCAFDimTolObjects_DimensionGrade_IT9 = 10
+	XCAFDimTolObjects_DimensionGrade_IT10 = 11
+	XCAFDimTolObjects_DimensionGrade_IT11 = 12
+	XCAFDimTolObjects_DimensionGrade_IT12 = 13
+	XCAFDimTolObjects_DimensionGrade_IT13 = 14
+	XCAFDimTolObjects_DimensionGrade_IT14 = 15
+	XCAFDimTolObjects_DimensionGrade_IT15 = 16
+	XCAFDimTolObjects_DimensionGrade_IT16 = 17
+	XCAFDimTolObjects_DimensionGrade_IT17 = 18
+	XCAFDimTolObjects_DimensionGrade_IT18 = 19
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(XCAFDimTolObjects_DatumObject)
@@ -1512,6 +1737,10 @@ None
 %extend XCAFDimTolObjects_DimensionObject {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def GetPoints(self):
+		pass
 	}
 };
 

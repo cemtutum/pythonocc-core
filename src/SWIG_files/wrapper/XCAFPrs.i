@@ -61,8 +61,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_xcafprs.html"
 #include<HLRAlgo_module.hxx>
 #include<Bnd_module.hxx>
 #include<SelectBasics_module.hxx>
-#include<Visual3d_module.hxx>
 #include<Prs3d_module.hxx>
+#include<Media_module.hxx>
 #include<TColQuantity_module.hxx>
 #include<TDF_module.hxx>
 #include<TDataStd_module.hxx>
@@ -92,6 +92,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_xcafprs.html"
 %import TDocStd.i
 %import TopoDS.i
 %import TPrsStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum  {
 	XCAFPrs_DocumentExplorerFlags_None = 0,
@@ -100,6 +105,11 @@ enum  {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(XCAFPrs_AISObject)

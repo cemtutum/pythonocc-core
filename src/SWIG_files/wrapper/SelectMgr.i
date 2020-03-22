@@ -58,7 +58,6 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_selectmgr.html"
 #include<Message_module.hxx>
 #include<TShort_module.hxx>
 #include<SelectBasics_module.hxx>
-#include<Visual3d_module.hxx>
 #include<gp_module.hxx>
 #include<HLRAlgo_module.hxx>
 #include<TColQuantity_module.hxx>
@@ -72,6 +71,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_selectmgr.html"
 #include<Quantity_module.hxx>
 #include<BVH_module.hxx>
 #include<Prs3d_module.hxx>
+#include<Media_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -92,6 +92,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_selectmgr.html"
 %import TColgp.i
 %import Select3D.i
 %import Bnd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum SelectMgr_TypeOfUpdate {
 	SelectMgr_TOU_Full = 0,
@@ -120,6 +125,33 @@ enum SelectMgr_PickingStrategy {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class SelectMgr_TypeOfUpdate:
+	SelectMgr_TOU_Full = 0
+	SelectMgr_TOU_Partial = 1
+	SelectMgr_TOU_None = 2
+
+class SelectMgr_TypeOfBVHUpdate:
+	SelectMgr_TBU_Add = 0
+	SelectMgr_TBU_Remove = 1
+	SelectMgr_TBU_Renew = 2
+	SelectMgr_TBU_Invalidate = 3
+	SelectMgr_TBU_None = 4
+
+class SelectMgr_StateOfSelection:
+	SelectMgr_SOS_Any = - 2
+	SelectMgr_SOS_Unknown = - 1
+	SelectMgr_SOS_Deactivated = 0
+	SelectMgr_SOS_Activated = 1
+
+class SelectMgr_PickingStrategy:
+	SelectMgr_PickingStrategy_FirstAcceptable = 0
+	SelectMgr_PickingStrategy_OnlyTopmost = 1
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(SelectMgr_EntityOwner)
@@ -1046,6 +1078,10 @@ None
 %extend SelectMgr_SelectableObject {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def BndBoxOfSelected(self):
+		pass
 	}
 };
 
@@ -1064,6 +1100,17 @@ enum BVHSubset {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BVHSubset:
+	BVHSubset_3d = 0
+	BVHSubset_3dPersistent = 1
+	BVHSubset_2dPersistent = 2
+	BVHSubsetNb = 3
+};
+/* end python proxy for enums */
 
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
@@ -1772,6 +1819,10 @@ Graphic3d_WorldViewProjState
 %extend SelectMgr_SelectingVolumeManager {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def ActiveVolume(self):
+		pass
 	}
 };
 
@@ -2744,6 +2795,46 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class SelectMgr_Frustum:
+	pass
+
+@classnotwrapped
+class SelectMgr_FrustumBuilder:
+	pass
+
+@classnotwrapped
+class SelectMgr_BaseFrustum:
+	pass
+
+@classnotwrapped
+class SelectMgr_TriangularFrustum:
+	pass
+
+@classnotwrapped
+class SelectMgr_RectangularFrustum:
+	pass
+
+@classnotwrapped
+class SelectMgr_TriangularFrustumSet:
+	pass
+
+@classnotwrapped
+class SelectMgr_ToleranceMap:
+	pass
+
+@classnotwrapped
+class SelectMgr_ViewerSelector:
+	pass
+
+@classnotwrapped
+class SelectMgr_SensitiveEntitySet:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

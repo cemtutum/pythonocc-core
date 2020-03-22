@@ -51,6 +51,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_imeshdata.html"
 #include<Geom2dAdaptor_module.hxx>
 #include<Adaptor3d_module.hxx>
 #include<Adaptor2d_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -62,6 +63,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_imeshdata.html"
 %import gp.i
 %import TopAbs.i
 %import BRepAdaptor.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum IMeshData_Status {
 	IMeshData_NoError = 0,
@@ -76,6 +82,22 @@ enum IMeshData_Status {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class IMeshData_Status:
+	IMeshData_NoError = 0
+	IMeshData_OpenWire = 1
+	IMeshData_SelfIntersectingWire = 2
+	IMeshData_Failure = 4
+	IMeshData_ReMesh = 8
+	IMeshData_UnorientedWire = 16
+	IMeshData_TooFewPoints = 32
+	IMeshData_Outdated = 64
+	IMeshData_Reused = 128
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(IMeshData_ParametersList)

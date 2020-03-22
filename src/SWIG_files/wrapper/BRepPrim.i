@@ -62,6 +62,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepprim.html"
 %import gp.i
 %import Geom.i
 %import Geom2d.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BRepPrim_Direction {
 	BRepPrim_XMin = 0,
@@ -73,6 +78,19 @@ enum BRepPrim_Direction {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BRepPrim_Direction:
+	BRepPrim_XMin = 0
+	BRepPrim_XMax = 1
+	BRepPrim_YMin = 2
+	BRepPrim_YMax = 3
+	BRepPrim_ZMin = 4
+	BRepPrim_ZMax = 5
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

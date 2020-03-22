@@ -56,8 +56,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_bnd.html"
 %import TColStd.i
 %import TColgp.i
 %import BVH.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Bnd_HArray1OfBox)

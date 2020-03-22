@@ -60,8 +60,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_bintools.html"
 %import Geom.i
 %import TopLoc.i
 %import TopAbs.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -79,141 +89,6 @@ typedef BinTools_LocationSet * BinTools_LocationSetPtr;
 %rename(bintools) BinTools;
 class BinTools {
 	public:
-		/****************** GetBool ******************/
-		%feature("compactdefaultargs") GetBool;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-IS: Standard_IStream
-theValue: bool
-
-Returns
--------
-Standard_IStream
-") GetBool;
-		static Standard_IStream & GetBool(Standard_IStream & IS, Standard_Boolean &OutValue);
-
-		/****************** GetExtChar ******************/
-		%feature("compactdefaultargs") GetExtChar;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-IS: Standard_IStream
-theValue: Standard_ExtCharacter
-
-Returns
--------
-Standard_IStream
-") GetExtChar;
-		static Standard_IStream & GetExtChar(Standard_IStream & IS, Standard_ExtCharacter & theValue);
-
-		/****************** GetInteger ******************/
-		%feature("compactdefaultargs") GetInteger;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-IS: Standard_IStream
-theValue: int
-
-Returns
--------
-Standard_IStream
-") GetInteger;
-		static Standard_IStream & GetInteger(Standard_IStream & IS, Standard_Integer &OutValue);
-
-		/****************** GetReal ******************/
-		%feature("compactdefaultargs") GetReal;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-IS: Standard_IStream
-theValue: float
-
-Returns
--------
-Standard_IStream
-") GetReal;
-		static Standard_IStream & GetReal(Standard_IStream & IS, Standard_Real &OutValue);
-
-		/****************** PutBool ******************/
-		%feature("compactdefaultargs") PutBool;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-OS: Standard_OStream
-theValue: bool
-
-Returns
--------
-Standard_OStream
-") PutBool;
-		static Standard_OStream & PutBool(Standard_OStream & OS, const Standard_Boolean theValue);
-
-		/****************** PutExtChar ******************/
-		%feature("compactdefaultargs") PutExtChar;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-OS: Standard_OStream
-theValue: Standard_ExtCharacter
-
-Returns
--------
-Standard_OStream
-") PutExtChar;
-		static Standard_OStream & PutExtChar(Standard_OStream & OS, const Standard_ExtCharacter theValue);
-
-		/****************** PutInteger ******************/
-		%feature("compactdefaultargs") PutInteger;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-OS: Standard_OStream
-theValue: int
-
-Returns
--------
-Standard_OStream
-") PutInteger;
-		static Standard_OStream & PutInteger(Standard_OStream & OS, const Standard_Integer theValue);
-
-		/****************** PutReal ******************/
-		%feature("compactdefaultargs") PutReal;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-OS: Standard_OStream
-theValue: float
-
-Returns
--------
-Standard_OStream
-") PutReal;
-		static Standard_OStream & PutReal(Standard_OStream & OS, const Standard_Real theValue);
-
-		/****************** Read ******************/
-		%feature("compactdefaultargs") Read;
-		%feature("autodoc", "Reads a shape from <thestream> and returns it in <theshape>.
-
-Parameters
-----------
-theShape: TopoDS_Shape
-theStream: Standard_IStream
-
-Returns
--------
-None
-") Read;
-		static void Read(TopoDS_Shape & theShape, Standard_IStream & theStream);
-
 		/****************** Read ******************/
 		%feature("compactdefaultargs") Read;
 		%feature("autodoc", "Reads a shape from <thefile> and returns it in <theshape>.
@@ -228,21 +103,6 @@ Returns
 bool
 ") Read;
 		static Standard_Boolean Read(TopoDS_Shape & theShape, const char * theFile);
-
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Writes <theshape> on <thestream> in binary format.
-
-Parameters
-----------
-theShape: TopoDS_Shape
-theStream: Standard_OStream
-
-Returns
--------
-None
-") Write;
-		static void Write(const TopoDS_Shape & theShape, Standard_OStream & theStream);
 
 		/****************** Write ******************/
 		%feature("compactdefaultargs") Write;
@@ -342,21 +202,6 @@ int
                 std::stringstream s(src);
                 self->Read(s);}
             };
-		/****************** ReadCurve2d ******************/
-		%feature("compactdefaultargs") ReadCurve2d;
-		%feature("autodoc", "Reads the curve from the stream. the curve is assumed to have been written with the write method.
-
-Parameters
-----------
-IS: Standard_IStream
-C: Geom2d_Curve
-
-Returns
--------
-Standard_IStream
-") ReadCurve2d;
-		static Standard_IStream & ReadCurve2d(Standard_IStream & IS, opencascade::handle<Geom2d_Curve> & C);
-
 
         %feature("autodoc", "1");
         %extend{
@@ -365,27 +210,16 @@ Standard_IStream
             self->Write(s);
             return s.str();}
         };
-		/****************** WriteCurve2d ******************/
-		%feature("compactdefaultargs") WriteCurve2d;
-		%feature("autodoc", "Dumps the curve on the binary stream, that can be read back.
-
-Parameters
-----------
-C: Geom2d_Curve
-OS: Standard_OStream
-
-Returns
--------
-None
-") WriteCurve2d;
-		static void WriteCurve2d(const opencascade::handle<Geom2d_Curve> & C, Standard_OStream & OS);
-
 };
 
 
 %extend BinTools_Curve2dSet {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Dump(self):
+		pass
 	}
 };
 
@@ -463,21 +297,6 @@ int
                 std::stringstream s(src);
                 self->Read(s);}
             };
-		/****************** ReadCurve ******************/
-		%feature("compactdefaultargs") ReadCurve;
-		%feature("autodoc", "Reads the curve from the stream. the curve is assumed to have been written with the write method.
-
-Parameters
-----------
-IS: Standard_IStream
-C: Geom_Curve
-
-Returns
--------
-Standard_IStream
-") ReadCurve;
-		static Standard_IStream & ReadCurve(Standard_IStream & IS, opencascade::handle<Geom_Curve> & C);
-
 
         %feature("autodoc", "1");
         %extend{
@@ -486,21 +305,6 @@ Standard_IStream
             self->Write(s);
             return s.str();}
         };
-		/****************** WriteCurve ******************/
-		%feature("compactdefaultargs") WriteCurve;
-		%feature("autodoc", "Dumps the curve on the stream in binary format that can be read back.
-
-Parameters
-----------
-C: Geom_Curve
-OS: Standard_OStream
-
-Returns
--------
-None
-") WriteCurve;
-		static void WriteCurve(const opencascade::handle<Geom_Curve> & C, Standard_OStream & OS);
-
 };
 
 
@@ -755,22 +559,6 @@ int
                 std::stringstream s(src);
                 self->Read(s);}
             };
-		/****************** Read ******************/
-		%feature("compactdefaultargs") Read;
-		%feature("autodoc", "Reads from <is> a shape and returns it in s. <nbshapes> is the number of tshapes in the set.
-
-Parameters
-----------
-S: TopoDS_Shape
-IS: Standard_IStream
-NbShapes: int
-
-Returns
--------
-None
-") Read;
-		virtual void Read(TopoDS_Shape & S, Standard_IStream & IS, const Standard_Integer NbShapes);
-
 
             %feature("autodoc", "1");
             %extend{
@@ -778,22 +566,6 @@ None
                 std::stringstream s(src);
                 self->ReadGeometry(s);}
             };
-		/****************** ReadGeometry ******************/
-		%feature("compactdefaultargs") ReadGeometry;
-		%feature("autodoc", "Reads the geometry of a shape of type <t> from the stream <is> and returns it in <s>.
-
-Parameters
-----------
-T: TopAbs_ShapeEnum
-IS: Standard_IStream
-S: TopoDS_Shape
-
-Returns
--------
-None
-") ReadGeometry;
-		virtual void ReadGeometry(const TopAbs_ShapeEnum T, Standard_IStream & IS, TopoDS_Shape & S);
-
 
             %feature("autodoc", "1");
             %extend{
@@ -865,21 +637,6 @@ TopoDS_Shape
             self->Write(s);
             return s.str();}
         };
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Writes on <os> the shape <s>. writes the orientation, the index of the tshape and the index of the location.
-
-Parameters
-----------
-S: TopoDS_Shape
-OS: Standard_OStream
-
-Returns
--------
-None
-") Write;
-		virtual void Write(const TopoDS_Shape & S, Standard_OStream & OS);
-
 
         %feature("autodoc", "1");
         %extend{
@@ -888,21 +645,6 @@ None
             self->WriteGeometry(s);
             return s.str();}
         };
-		/****************** WriteGeometry ******************/
-		%feature("compactdefaultargs") WriteGeometry;
-		%feature("autodoc", "Writes the geometry of <s> on the stream <os> in a binary format that can be read back by read.
-
-Parameters
-----------
-S: TopoDS_Shape
-OS: Standard_OStream
-
-Returns
--------
-None
-") WriteGeometry;
-		virtual void WriteGeometry(const TopoDS_Shape & S, Standard_OStream & OS);
-
 
         %feature("autodoc", "1");
         %extend{
@@ -996,21 +738,6 @@ int
                 std::stringstream s(src);
                 self->Read(s);}
             };
-		/****************** ReadSurface ******************/
-		%feature("compactdefaultargs") ReadSurface;
-		%feature("autodoc", "Reads the surface from the stream. the surface is assumed to have been written with the write method.
-
-Parameters
-----------
-IS: Standard_IStream
-S: Geom_Surface
-
-Returns
--------
-Standard_IStream
-") ReadSurface;
-		static Standard_IStream & ReadSurface(Standard_IStream & IS, opencascade::handle<Geom_Surface> & S);
-
 		/****************** Surface ******************/
 		%feature("compactdefaultargs") Surface;
 		%feature("autodoc", "Returns the surface of index <i>.
@@ -1033,21 +760,6 @@ opencascade::handle<Geom_Surface>
             self->Write(s);
             return s.str();}
         };
-		/****************** WriteSurface ******************/
-		%feature("compactdefaultargs") WriteSurface;
-		%feature("autodoc", "Dumps the surface on the stream in binary format that can be read back.
-
-Parameters
-----------
-S: Geom_Surface
-OS: Standard_OStream
-
-Returns
--------
-None
-") WriteSurface;
-		static void WriteSurface(const opencascade::handle<Geom_Surface> & S, Standard_OStream & OS);
-
 };
 
 

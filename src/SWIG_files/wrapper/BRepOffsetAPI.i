@@ -114,8 +114,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepoffsetapi.htm
 %import GeomFill.i
 %import Law.i
 %import Approx.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -537,6 +547,10 @@ TopoDS_Edge
 %extend BRepOffsetAPI_FindContigousEdges {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def NbEdges(self):
+		pass
 	}
 };
 

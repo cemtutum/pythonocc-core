@@ -77,6 +77,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_chfids.html"
 %import TopTools.i
 %import BRepAdaptor.i
 %import Law.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum ChFiDS_State {
 	ChFiDS_OnSame = 0,
@@ -109,6 +114,37 @@ enum ChFiDS_ErrorStatus {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class ChFiDS_State:
+	ChFiDS_OnSame = 0
+	ChFiDS_OnDiff = 1
+	ChFiDS_AllSame = 2
+	ChFiDS_BreakPoint = 3
+	ChFiDS_FreeBoundary = 4
+	ChFiDS_Closed = 5
+	ChFiDS_Tangent = 6
+
+class ChFiDS_ChamfMethod:
+	ChFiDS_Sym = 0
+	ChFiDS_TwoDist = 1
+	ChFiDS_DistAngle = 2
+
+class ChFiDS_ChamfMode:
+	ChFiDS_ClassicChamfer = 0
+	ChFiDS_ConstThroatChamfer = 1
+	ChFiDS_ConstThroatWithPenetrationChamfer = 2
+
+class ChFiDS_ErrorStatus:
+	ChFiDS_Ok = 0
+	ChFiDS_Error = 1
+	ChFiDS_WalkingFailure = 2
+	ChFiDS_StartsolFailure = 3
+	ChFiDS_TwistedSurface = 4
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(ChFiDS_HElSpine)

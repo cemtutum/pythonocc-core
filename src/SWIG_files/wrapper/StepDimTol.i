@@ -52,6 +52,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepdimtol.html"
 #include<StepData_module.hxx>
 #include<StepBasic_module.hxx>
 #include<MoniTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -64,6 +65,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepdimtol.html"
 %import StepData.i
 %import StepBasic.i
 %import StepShape.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum StepDimTol_LimitCondition {
 	StepDimTol_MaximumMaterialCondition = 0,
@@ -146,6 +152,85 @@ enum StepDimTol_GeometricToleranceModifier {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class StepDimTol_LimitCondition:
+	StepDimTol_MaximumMaterialCondition = 0
+	StepDimTol_LeastMaterialCondition = 1
+	StepDimTol_RegardlessOfFeatureSize = 2
+
+class StepDimTol_GeometricToleranceType:
+	StepDimTol_GTTAngularityTolerance = 0
+	StepDimTol_GTTCircularRunoutTolerance = 1
+	StepDimTol_GTTCoaxialityTolerance = 2
+	StepDimTol_GTTConcentricityTolerance = 3
+	StepDimTol_GTTCylindricityTolerance = 4
+	StepDimTol_GTTFlatnessTolerance = 5
+	StepDimTol_GTTLineProfileTolerance = 6
+	StepDimTol_GTTParallelismTolerance = 7
+	StepDimTol_GTTPerpendicularityTolerance = 8
+	StepDimTol_GTTPositionTolerance = 9
+	StepDimTol_GTTRoundnessTolerance = 10
+	StepDimTol_GTTStraightnessTolerance = 11
+	StepDimTol_GTTSurfaceProfileTolerance = 12
+	StepDimTol_GTTSymmetryTolerance = 13
+	StepDimTol_GTTTotalRunoutTolerance = 14
+
+class StepDimTol_DatumReferenceModifierType:
+	StepDimTol_CircularOrCylindrical = 0
+	StepDimTol_Distance = 1
+	StepDimTol_Projected = 2
+	StepDimTol_Spherical = 3
+
+class StepDimTol_SimpleDatumReferenceModifier:
+	StepDimTol_SDRMAnyCrossSection = 0
+	StepDimTol_SDRMAnyLongitudinalSection = 1
+	StepDimTol_SDRMBasic = 2
+	StepDimTol_SDRMContactingFeature = 3
+	StepDimTol_SDRMDegreeOfFreedomConstraintU = 4
+	StepDimTol_SDRMDegreeOfFreedomConstraintV = 5
+	StepDimTol_SDRMDegreeOfFreedomConstraintW = 6
+	StepDimTol_SDRMDegreeOfFreedomConstraintX = 7
+	StepDimTol_SDRMDegreeOfFreedomConstraintY = 8
+	StepDimTol_SDRMDegreeOfFreedomConstraintZ = 9
+	StepDimTol_SDRMDistanceVariable = 10
+	StepDimTol_SDRMFreeState = 11
+	StepDimTol_SDRMLeastMaterialRequirement = 12
+	StepDimTol_SDRMLine = 13
+	StepDimTol_SDRMMajorDiameter = 14
+	StepDimTol_SDRMMaximumMaterialRequirement = 15
+	StepDimTol_SDRMMinorDiameter = 16
+	StepDimTol_SDRMOrientation = 17
+	StepDimTol_SDRMPitchDiameter = 18
+	StepDimTol_SDRMPlane = 19
+	StepDimTol_SDRMPoint = 20
+	StepDimTol_SDRMTranslation = 21
+
+class StepDimTol_AreaUnitType:
+	StepDimTol_Circular = 0
+	StepDimTol_Rectangular = 1
+	StepDimTol_Square = 2
+
+class StepDimTol_GeometricToleranceModifier:
+	StepDimTol_GTMAnyCrossSection = 0
+	StepDimTol_GTMCommonZone = 1
+	StepDimTol_GTMEachRadialElement = 2
+	StepDimTol_GTMFreeState = 3
+	StepDimTol_GTMLeastMaterialRequirement = 4
+	StepDimTol_GTMLineElement = 5
+	StepDimTol_GTMMajorDiameter = 6
+	StepDimTol_GTMMaximumMaterialRequirement = 7
+	StepDimTol_GTMMinorDiameter = 8
+	StepDimTol_GTMNotConvex = 9
+	StepDimTol_GTMPitchDiameter = 10
+	StepDimTol_GTMReciprocityRequirement = 11
+	StepDimTol_GTMSeparateRequirement = 12
+	StepDimTol_GTMStatisticalTolerance = 13
+	StepDimTol_GTMTangentPlane = 14
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(StepDimTol_CommonDatum)

@@ -65,6 +65,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_bindrivers.html"
 %import TCollection.i
 %import BinLDrivers.i
 %import Storage.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BinDrivers_Marker {
 	BinDrivers_ENDATTRLIST = - 1,
@@ -72,6 +77,15 @@ enum BinDrivers_Marker {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BinDrivers_Marker:
+	BinDrivers_ENDATTRLIST = - 1
+	BinDrivers_ENDLABEL = - 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BinDrivers_DocumentRetrievalDriver)
@@ -180,21 +194,6 @@ None
 ") BinDrivers_DocumentRetrievalDriver;
 		 BinDrivers_DocumentRetrievalDriver();
 
-		/****************** CheckShapeSection ******************/
-		%feature("compactdefaultargs") CheckShapeSection;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-thePos: Storage_Position
-theIS: Standard_IStream
-
-Returns
--------
-None
-") CheckShapeSection;
-		virtual void CheckShapeSection(const Storage_Position & thePos, Standard_IStream & theIS);
-
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears the namedshape driver.
@@ -204,23 +203,6 @@ Returns
 None
 ") Clear;
 		virtual void Clear();
-
-		/****************** ReadShapeSection ******************/
-		%feature("compactdefaultargs") ReadShapeSection;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theSection: BinLDrivers_DocumentSection
-theIS: Standard_IStream
-isMess: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") ReadShapeSection;
-		virtual void ReadShapeSection(BinLDrivers_DocumentSection & theSection, Standard_IStream & theIS, const Standard_Boolean isMess = Standard_False);
 
 };
 
@@ -286,21 +268,6 @@ Returns
 None
 ") SetWithTriangles;
 		void SetWithTriangles(const opencascade::handle<Message_Messenger> & theMessageDriver, const Standard_Boolean theWithTriangulation);
-
-		/****************** WriteShapeSection ******************/
-		%feature("compactdefaultargs") WriteShapeSection;
-		%feature("autodoc", "Implements the procedure of writing a shape section to file.
-
-Parameters
-----------
-theDocSection: BinLDrivers_DocumentSection
-theOS: Standard_OStream
-
-Returns
--------
-None
-") WriteShapeSection;
-		virtual void WriteShapeSection(BinLDrivers_DocumentSection & theDocSection, Standard_OStream & theOS);
 
 };
 

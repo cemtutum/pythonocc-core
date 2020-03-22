@@ -51,6 +51,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geomconvert.html"
 #include<Geom2d_module.hxx>
 #include<Adaptor3d_module.hxx>
 #include<Adaptor2d_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -65,8 +66,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geomconvert.html"
 %import GeomAbs.i
 %import Adaptor3d.i
 %import TColgp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -1193,6 +1204,10 @@ None
 %extend GeomConvert_CompCurveToBSplineCurve {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Clear(self):
+		pass
 	}
 };
 

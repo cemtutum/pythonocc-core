@@ -99,6 +99,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_hlrbrep.html"
 %import Adaptor3d.i
 %import Intf.i
 %import IntSurf.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum HLRBRep_TypeOfResultingEdge {
 	HLRBRep_Undefined = 0,
@@ -110,6 +115,19 @@ enum HLRBRep_TypeOfResultingEdge {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class HLRBRep_TypeOfResultingEdge:
+	HLRBRep_Undefined = 0
+	HLRBRep_IsoLine = 1
+	HLRBRep_OutLine = 2
+	HLRBRep_Rg1Line = 3
+	HLRBRep_RgNLine = 4
+	HLRBRep_Sharp = 5
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(HLRBRep_AreaLimit)
@@ -11447,6 +11465,26 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class HLRBRep_ThePolyhedronOfInterCSurf:
+	pass
+
+@classnotwrapped
+class HLRBRep_BSurfaceTool:
+	pass
+
+@classnotwrapped
+class HLRBRep_Surface:
+	pass
+
+@classnotwrapped
+class HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

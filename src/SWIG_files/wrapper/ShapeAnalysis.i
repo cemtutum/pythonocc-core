@@ -80,8 +80,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_shapeanalysis.htm
 %import TopAbs.i
 %import GeomAdaptor.i
 %import IntRes2d.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(ShapeAnalysis_FreeBoundData)
@@ -5411,6 +5421,18 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class ShapeAnalysis_BoxBndTreeSelector:
+	pass
+
+@classnotwrapped
+class ShapeCustom_ConvertToRevolution:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

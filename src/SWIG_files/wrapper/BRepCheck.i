@@ -60,6 +60,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepcheck.html"
 %import Adaptor3d.i
 %import TopoDS.i
 %import TopTools.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BRepCheck_Status {
 	BRepCheck_NoError = 0,
@@ -102,6 +107,50 @@ enum BRepCheck_Status {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BRepCheck_Status:
+	BRepCheck_NoError = 0
+	BRepCheck_InvalidPointOnCurve = 1
+	BRepCheck_InvalidPointOnCurveOnSurface = 2
+	BRepCheck_InvalidPointOnSurface = 3
+	BRepCheck_No3DCurve = 4
+	BRepCheck_Multiple3DCurve = 5
+	BRepCheck_Invalid3DCurve = 6
+	BRepCheck_NoCurveOnSurface = 7
+	BRepCheck_InvalidCurveOnSurface = 8
+	BRepCheck_InvalidCurveOnClosedSurface = 9
+	BRepCheck_InvalidSameRangeFlag = 10
+	BRepCheck_InvalidSameParameterFlag = 11
+	BRepCheck_InvalidDegeneratedFlag = 12
+	BRepCheck_FreeEdge = 13
+	BRepCheck_InvalidMultiConnexity = 14
+	BRepCheck_InvalidRange = 15
+	BRepCheck_EmptyWire = 16
+	BRepCheck_RedundantEdge = 17
+	BRepCheck_SelfIntersectingWire = 18
+	BRepCheck_NoSurface = 19
+	BRepCheck_InvalidWire = 20
+	BRepCheck_RedundantWire = 21
+	BRepCheck_IntersectingWires = 22
+	BRepCheck_InvalidImbricationOfWires = 23
+	BRepCheck_EmptyShell = 24
+	BRepCheck_RedundantFace = 25
+	BRepCheck_InvalidImbricationOfShells = 26
+	BRepCheck_UnorientableShape = 27
+	BRepCheck_NotClosed = 28
+	BRepCheck_NotConnected = 29
+	BRepCheck_SubshapeNotInShape = 30
+	BRepCheck_BadOrientation = 31
+	BRepCheck_BadOrientationOfSubshape = 32
+	BRepCheck_InvalidPolygonOnTriangulation = 33
+	BRepCheck_InvalidToleranceValue = 34
+	BRepCheck_EnclosedRegion = 35
+	BRepCheck_CheckFail = 36
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BRepCheck_Result)
@@ -177,21 +226,6 @@ Returns
 float
 ") PrecSurface;
 		static Standard_Real PrecSurface(const opencascade::handle<Adaptor3d_HSurface> & aAHSurf);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Stat: BRepCheck_Status
-OS: Standard_OStream
-
-Returns
--------
-None
-") Print;
-		static void Print(const BRepCheck_Status Stat, Standard_OStream & OS);
 
 		/****************** SelfIntersection ******************/
 		%feature("compactdefaultargs") SelfIntersection;

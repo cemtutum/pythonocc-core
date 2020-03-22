@@ -74,8 +74,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepgprop.html"
 %import GeomAbs.i
 %import TColgp.i
 %import math.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -899,6 +909,15 @@ enum BRepGProp_GaussType {
 
 /* end public enums declaration */
 
+/* python proy classes for enums */
+%pythoncode {
+
+class BRepGProp_GaussType:
+	Vinert = 0
+	Sinert = 1
+};
+/* end python proxy for enums */
+
 		/****************** BRepGProp_Gauss ******************/
 		%feature("compactdefaultargs") BRepGProp_Gauss;
 		%feature("autodoc", "Constructor.
@@ -919,6 +938,10 @@ None
 %extend BRepGProp_Gauss {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Compute(self):
+		pass
 	}
 };
 
@@ -2109,9 +2132,21 @@ None
 %extend BRepGProp_VinertGK {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def GetAbsolutError(self):
+		pass
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class BRepGProp_MeshProps:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

@@ -107,6 +107,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepoffset.html"
 %import TopLoc.i
 %import Geom2d.i
 %import gp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BRepOffset_Error {
 	BRepOffset_NoError = 0,
@@ -148,6 +153,45 @@ enum BRepOffset_Status {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BRepOffset_Error:
+	BRepOffset_NoError = 0
+	BRepOffset_UnknownError = 1
+	BRepOffset_BadNormalsOnGeometry = 2
+	BRepOffset_C0Geometry = 3
+	BRepOffset_NullOffset = 4
+	BRepOffset_NotConnectedShell = 5
+
+class BRepOffsetSimple_Status:
+	BRepOffsetSimple_OK = 0
+	BRepOffsetSimple_NullInputShape = 1
+	BRepOffsetSimple_ErrorOffsetComputation = 2
+	BRepOffsetSimple_ErrorWallFaceComputation = 3
+	BRepOffsetSimple_ErrorInvalidNbShells = 4
+	BRepOffsetSimple_ErrorNonClosedShell = 5
+
+class BRepOffset_Mode:
+	BRepOffset_Skin = 0
+	BRepOffset_Pipe = 1
+	BRepOffset_RectoVerso = 2
+
+class BRepOffset_Type:
+	BRepOffset_Concave = 0
+	BRepOffset_Convex = 1
+	BRepOffset_Tangent = 2
+	BRepOffset_FreeBoundary = 3
+	BRepOffset_Other = 4
+
+class BRepOffset_Status:
+	BRepOffset_Good = 0
+	BRepOffset_Reversed = 1
+	BRepOffset_Degenerated = 2
+	BRepOffset_Unknown = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BRepOffset_SimpleOffset)
@@ -1182,6 +1226,10 @@ TopoDS_Shape
 %extend BRepOffset_MakeOffset {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def GetAnalyse(self):
+		pass
 	}
 };
 
@@ -1386,6 +1434,10 @@ None
 %extend BRepOffset_MakeSimpleOffset {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def GetSafeOffset(self):
+		pass
 	}
 };
 

@@ -80,6 +80,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepcontrol.html"
 %import IFSelect.i
 %import TColStd.i
 %import StepData.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum STEPControl_StepModelType {
 	STEPControl_AsIs = 0,
@@ -93,6 +98,21 @@ enum STEPControl_StepModelType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class STEPControl_StepModelType:
+	STEPControl_AsIs = 0
+	STEPControl_ManifoldSolidBrep = 1
+	STEPControl_BrepWithVoids = 2
+	STEPControl_FacetedBrep = 3
+	STEPControl_FacetedBrepAndBrepWithVoids = 4
+	STEPControl_ShellBasedSurfaceModel = 5
+	STEPControl_GeometricCurveSet = 6
+	STEPControl_Hybrid = 7
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(STEPControl_ActorRead)

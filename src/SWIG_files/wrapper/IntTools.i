@@ -104,8 +104,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_inttools.html"
 %import IntPatch.i
 %import GeomAdaptor.i
 %import GeomInt.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(IntTools_Context)
@@ -3127,12 +3137,26 @@ None
 ") SetValid;
 		void SetValid(const Standard_Boolean bF);
 
+		/****************** Valid ******************/
+		%feature("compactdefaultargs") Valid;
+		%feature("autodoc", "Selector.
+
+Returns
+-------
+bool
+") Valid;
+		Standard_Boolean Valid();
+
 };
 
 
 %extend IntTools_PntOnFace {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def IsValid(self):
+		pass
 	}
 };
 
@@ -5169,6 +5193,18 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class IntTools_CArray1OfInteger:
+	pass
+
+@classnotwrapped
+class IntTools_CArray1OfReal:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

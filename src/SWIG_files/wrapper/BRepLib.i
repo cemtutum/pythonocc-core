@@ -73,6 +73,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_breplib.html"
 %import Geom.i
 %import BRepTools.i
 %import TopLoc.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BRepLib_EdgeError {
 	BRepLib_EdgeDone = 0,
@@ -115,6 +120,46 @@ enum BRepLib_FaceError {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BRepLib_EdgeError:
+	BRepLib_EdgeDone = 0
+	BRepLib_PointProjectionFailed = 1
+	BRepLib_ParameterOutOfRange = 2
+	BRepLib_DifferentPointsOnClosedCurve = 3
+	BRepLib_PointWithInfiniteParameter = 4
+	BRepLib_DifferentsPointAndParameter = 5
+	BRepLib_LineThroughIdenticPoints = 6
+
+class BRepLib_ShellError:
+	BRepLib_ShellDone = 0
+	BRepLib_EmptyShell = 1
+	BRepLib_DisconnectedShell = 2
+	BRepLib_ShellParametersOutOfRange = 3
+
+class BRepLib_ShapeModification:
+	BRepLib_Preserved = 0
+	BRepLib_Deleted = 1
+	BRepLib_Trimmed = 2
+	BRepLib_Merged = 3
+	BRepLib_BoundaryModified = 4
+
+class BRepLib_WireError:
+	BRepLib_WireDone = 0
+	BRepLib_EmptyWire = 1
+	BRepLib_DisconnectedWire = 2
+	BRepLib_NonManifoldWire = 3
+
+class BRepLib_FaceError:
+	BRepLib_FaceDone = 0
+	BRepLib_NoFace = 1
+	BRepLib_NotPlanar = 2
+	BRepLib_CurveProjectionFailed = 3
+	BRepLib_ParametersOutOfRange = 4
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -643,6 +688,10 @@ None
 %extend BRepLib {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def BuildPCurveForEdgesOnPlane(self):
+		pass
 	}
 };
 

@@ -48,6 +48,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_gp.html"
 %};
 %import Standard.i
 %import NCollection.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum gp_TrsfForm {
 	gp_Identity = 0,
@@ -91,6 +96,50 @@ enum gp_EulerSequence {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class gp_TrsfForm:
+	gp_Identity = 0
+	gp_Rotation = 1
+	gp_Translation = 2
+	gp_PntMirror = 3
+	gp_Ax1Mirror = 4
+	gp_Ax2Mirror = 5
+	gp_Scale = 6
+	gp_CompoundTrsf = 7
+	gp_Other = 8
+
+class gp_EulerSequence:
+	gp_EulerAngles = 0
+	gp_YawPitchRoll = 1
+	gp_Extrinsic_XYZ = 2
+	gp_Extrinsic_XZY = 3
+	gp_Extrinsic_YZX = 4
+	gp_Extrinsic_YXZ = 5
+	gp_Extrinsic_ZXY = 6
+	gp_Extrinsic_ZYX = 7
+	gp_Intrinsic_XYZ = 8
+	gp_Intrinsic_XZY = 9
+	gp_Intrinsic_YZX = 10
+	gp_Intrinsic_YXZ = 11
+	gp_Intrinsic_ZXY = 12
+	gp_Intrinsic_ZYX = 13
+	gp_Extrinsic_XYX = 14
+	gp_Extrinsic_XZX = 15
+	gp_Extrinsic_YZY = 16
+	gp_Extrinsic_YXY = 17
+	gp_Extrinsic_ZYZ = 18
+	gp_Extrinsic_ZXZ = 19
+	gp_Intrinsic_XYX = 20
+	gp_Intrinsic_XZX = 21
+	gp_Intrinsic_YZY = 22
+	gp_Intrinsic_YXY = 23
+	gp_Intrinsic_ZXZ = 24
+	gp_Intrinsic_ZYZ = 25
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -14611,6 +14660,10 @@ None
 %extend gp_Torus {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Coefficients(self):
+		pass
 	}
 };
 
@@ -15143,6 +15196,10 @@ gp_Trsf
 %extend gp_Trsf {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def GetMat4(self):
+		pass
 	}
 };
 

@@ -51,6 +51,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepshape.html"
 #include<Interface_module.hxx>
 #include<StepBasic_module.hxx>
 #include<Message_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -63,6 +64,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepshape.html"
 %import StepRepr.i
 %import StepData.i
 %import StepBasic.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum StepShape_AngleRelator {
 	StepShape_Equal = 0,
@@ -77,6 +83,21 @@ enum StepShape_BooleanOperator {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class StepShape_AngleRelator:
+	StepShape_Equal = 0
+	StepShape_Large = 1
+	StepShape_Small = 2
+
+class StepShape_BooleanOperator:
+	StepShape_boDifference = 0
+	StepShape_boIntersection = 1
+	StepShape_boUnion = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(StepShape_Block)

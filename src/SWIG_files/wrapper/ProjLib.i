@@ -52,6 +52,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_projlib.html"
 #include<math_module.hxx>
 #include<Geom_module.hxx>
 #include<GeomAdaptor_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -70,8 +71,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_projlib.html"
 %import math.i
 %import Geom.i
 %import GeomAdaptor.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(ProjLib_HCompProjectedCurve)
@@ -1968,6 +1979,10 @@ None
 %extend ProjLib_ProjectOnSurface {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Load(self):
+		pass
 	}
 };
 
@@ -2472,6 +2487,10 @@ gp_Pnt2d
 %extend ProjLib_ProjectedCurve {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Load(self):
+		pass
 	}
 };
 

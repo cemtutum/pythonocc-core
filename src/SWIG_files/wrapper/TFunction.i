@@ -52,6 +52,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_tfunction.html"
 %import NCollection.i
 %import TDF.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum TFunction_ExecutionStatus {
 	TFunction_ES_WrongDefinition = 0,
@@ -62,6 +67,18 @@ enum TFunction_ExecutionStatus {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TFunction_ExecutionStatus:
+	TFunction_ES_WrongDefinition = 0
+	TFunction_ES_NotExecuted = 1
+	TFunction_ES_Executing = 2
+	TFunction_ES_Succeeded = 3
+	TFunction_ES_Failed = 4
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TFunction_Driver)

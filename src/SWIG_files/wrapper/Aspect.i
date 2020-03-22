@@ -52,6 +52,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_aspect.html"
 %import NCollection.i
 %import Quantity.i
 %import TCollection.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Aspect_VKeyBasic {
 	Aspect_VKey_UNKNOWN = 0,
@@ -397,6 +402,302 @@ enum Aspect_InteriorStyle {
 
 /* end public enums declaration */
 
+/* python proy classes for enums */
+%pythoncode {
+
+class Aspect_VKeyBasic:
+	Aspect_VKey_UNKNOWN = 0
+	Aspect_VKey_A = 1
+	Aspect_VKey_B = 2
+	Aspect_VKey_C = 3
+	Aspect_VKey_D = 4
+	Aspect_VKey_E = 5
+	Aspect_VKey_F = 6
+	Aspect_VKey_G = 7
+	Aspect_VKey_H = 8
+	Aspect_VKey_I = 9
+	Aspect_VKey_J = 10
+	Aspect_VKey_K = 11
+	Aspect_VKey_L = 12
+	Aspect_VKey_M = 13
+	Aspect_VKey_N = 14
+	Aspect_VKey_O = 15
+	Aspect_VKey_P = 16
+	Aspect_VKey_Q = 17
+	Aspect_VKey_R = 18
+	Aspect_VKey_S = 19
+	Aspect_VKey_T = 20
+	Aspect_VKey_U = 21
+	Aspect_VKey_V = 22
+	Aspect_VKey_W = 23
+	Aspect_VKey_X = 24
+	Aspect_VKey_Y = 25
+	Aspect_VKey_Z = 26
+	Aspect_VKey_0 = 27
+	Aspect_VKey_1 = 28
+	Aspect_VKey_2 = 29
+	Aspect_VKey_3 = 30
+	Aspect_VKey_4 = 31
+	Aspect_VKey_5 = 32
+	Aspect_VKey_6 = 33
+	Aspect_VKey_7 = 34
+	Aspect_VKey_8 = 35
+	Aspect_VKey_9 = 36
+	Aspect_VKey_F1 = 37
+	Aspect_VKey_F2 = 38
+	Aspect_VKey_F3 = 39
+	Aspect_VKey_F4 = 40
+	Aspect_VKey_F5 = 41
+	Aspect_VKey_F6 = 42
+	Aspect_VKey_F7 = 43
+	Aspect_VKey_F8 = 44
+	Aspect_VKey_F9 = 45
+	Aspect_VKey_F10 = 46
+	Aspect_VKey_F11 = 47
+	Aspect_VKey_F12 = 48
+	Aspect_VKey_Up = 49
+	Aspect_VKey_Down = 50
+	Aspect_VKey_Left = 51
+	Aspect_VKey_Right = 52
+	Aspect_VKey_Plus = 53
+	Aspect_VKey_Minus = 54
+	Aspect_VKey_Equal = 55
+	Aspect_VKey_PageUp = 56
+	Aspect_VKey_PageDown = 57
+	Aspect_VKey_Home = 58
+	Aspect_VKey_End = 59
+	Aspect_VKey_Escape = 60
+	Aspect_VKey_Back = 61
+	Aspect_VKey_Enter = 62
+	Aspect_VKey_Backspace = 63
+	Aspect_VKey_Space = 64
+	Aspect_VKey_Delete = 65
+	Aspect_VKey_Tilde = 66
+	Aspect_VKey_Tab = 67
+	Aspect_VKey_Comma = 68
+	Aspect_VKey_Period = 69
+	Aspect_VKey_Semicolon = 70
+	Aspect_VKey_Slash = 71
+	Aspect_VKey_BracketLeft = 72
+	Aspect_VKey_Backslash = 73
+	Aspect_VKey_BracketRight = 74
+	Aspect_VKey_Apostrophe = 75
+	Aspect_VKey_Numlock = 76
+	Aspect_VKey_Scroll = 77
+	Aspect_VKey_Numpad0 = 78
+	Aspect_VKey_Numpad1 = 79
+	Aspect_VKey_Numpad2 = 80
+	Aspect_VKey_Numpad3 = 81
+	Aspect_VKey_Numpad4 = 82
+	Aspect_VKey_Numpad5 = 83
+	Aspect_VKey_Numpad6 = 84
+	Aspect_VKey_Numpad7 = 85
+	Aspect_VKey_Numpad8 = 86
+	Aspect_VKey_Numpad9 = 87
+	Aspect_VKey_NumpadMultiply = 88
+	Aspect_VKey_NumpadAdd = 89
+	Aspect_VKey_NumpadSubtract = 90
+	Aspect_VKey_NumpadDivide = 91
+	Aspect_VKey_MediaNextTrack = 92
+	Aspect_VKey_MediaPreviousTrack = 93
+	Aspect_VKey_MediaStop = 94
+	Aspect_VKey_MediaPlayPause = 95
+	Aspect_VKey_VolumeMute = 96
+	Aspect_VKey_VolumeDown = 97
+	Aspect_VKey_VolumeUp = 98
+	Aspect_VKey_BrowserBack = 99
+	Aspect_VKey_BrowserForward = 100
+	Aspect_VKey_BrowserRefresh = 101
+	Aspect_VKey_BrowserStop = 102
+	Aspect_VKey_BrowserSearch = 103
+	Aspect_VKey_BrowserFavorites = 104
+	Aspect_VKey_BrowserHome = 105
+	Aspect_VKey_Shift = 106
+	Aspect_VKey_Control = 107
+	Aspect_VKey_Alt = 108
+	Aspect_VKey_Menu = 109
+	Aspect_VKey_Meta = 110
+	Aspect_VKey_NavInteract = 111
+	Aspect_VKey_NavForward = 112
+	Aspect_VKey_NavBackward = 113
+	Aspect_VKey_NavSlideLeft = 114
+	Aspect_VKey_NavSlideRight = 115
+	Aspect_VKey_NavSlideUp = 116
+	Aspect_VKey_NavSlideDown = 117
+	Aspect_VKey_NavRollCCW = 118
+	Aspect_VKey_NavRollCW = 119
+	Aspect_VKey_NavLookLeft = 120
+	Aspect_VKey_NavLookRight = 121
+	Aspect_VKey_NavLookUp = 122
+	Aspect_VKey_NavLookDown = 123
+	Aspect_VKey_NavCrouch = 124
+	Aspect_VKey_NavJump = 125
+	Aspect_VKey_NavThrustForward = 126
+	Aspect_VKey_NavThrustBackward = 127
+	Aspect_VKey_NavThrustStop = 128
+	Aspect_VKey_NavSpeedIncrease = 129
+	Aspect_VKey_NavSpeedDecrease = 130
+
+class Aspect_TypeOfDeflection:
+	Aspect_TOD_RELATIVE = 0
+	Aspect_TOD_ABSOLUTE = 1
+
+class Aspect_TypeOfLine:
+	Aspect_TOL_EMPTY = - 1
+	Aspect_TOL_SOLID = 0
+	Aspect_TOL_DASH = 1
+	Aspect_TOL_DOT = 2
+	Aspect_TOL_DOTDASH = 3
+	Aspect_TOL_USERDEFINED = 4
+
+class Aspect_GradientFillMethod:
+	Aspect_GFM_NONE = 0
+	Aspect_GFM_HOR = 1
+	Aspect_GFM_VER = 2
+	Aspect_GFM_DIAG1 = 3
+	Aspect_GFM_DIAG2 = 4
+	Aspect_GFM_CORNER1 = 5
+	Aspect_GFM_CORNER2 = 6
+	Aspect_GFM_CORNER3 = 7
+	Aspect_GFM_CORNER4 = 8
+
+class Aspect_TypeOfHighlightMethod:
+	Aspect_TOHM_COLOR = 0
+	Aspect_TOHM_BOUNDBOX = 1
+
+class Aspect_TypeOfResize:
+	Aspect_TOR_UNKNOWN = 0
+	Aspect_TOR_NO_BORDER = 1
+	Aspect_TOR_TOP_BORDER = 2
+	Aspect_TOR_RIGHT_BORDER = 3
+	Aspect_TOR_BOTTOM_BORDER = 4
+	Aspect_TOR_LEFT_BORDER = 5
+	Aspect_TOR_TOP_AND_RIGHT_BORDER = 6
+	Aspect_TOR_RIGHT_AND_BOTTOM_BORDER = 7
+	Aspect_TOR_BOTTOM_AND_LEFT_BORDER = 8
+	Aspect_TOR_LEFT_AND_TOP_BORDER = 9
+
+class Aspect_GridType:
+	Aspect_GT_Rectangular = 0
+	Aspect_GT_Circular = 1
+
+class Aspect_TypeOfColorScaleData:
+	Aspect_TOCSD_AUTO = 0
+	Aspect_TOCSD_USER = 1
+
+class Aspect_TypeOfStyleText:
+	Aspect_TOST_NORMAL = 0
+	Aspect_TOST_ANNOTATION = 1
+
+class Aspect_TypeOfMarker:
+	Aspect_TOM_EMPTY = - 1
+	Aspect_TOM_POINT = 0
+	Aspect_TOM_PLUS = 1
+	Aspect_TOM_STAR = 2
+	Aspect_TOM_X = 3
+	Aspect_TOM_O = 4
+	Aspect_TOM_O_POINT = 5
+	Aspect_TOM_O_PLUS = 6
+	Aspect_TOM_O_STAR = 7
+	Aspect_TOM_O_X = 8
+	Aspect_TOM_RING1 = 9
+	Aspect_TOM_RING2 = 10
+	Aspect_TOM_RING3 = 11
+	Aspect_TOM_BALL = 12
+	Aspect_TOM_USERDEFINED = 13
+
+class Aspect_TypeOfColorScaleOrientation:
+	Aspect_TOCSO_NONE = 0
+	Aspect_TOCSO_LEFT = 1
+	Aspect_TOCSO_RIGHT = 2
+	Aspect_TOCSO_CENTER = 3
+
+class Aspect_TypeOfFacingModel:
+	Aspect_TOFM_BOTH_SIDE = 0
+	Aspect_TOFM_BACK_SIDE = 1
+	Aspect_TOFM_FRONT_SIDE = 2
+
+class Aspect_FillMethod:
+	Aspect_FM_NONE = 0
+	Aspect_FM_CENTERED = 1
+	Aspect_FM_TILED = 2
+	Aspect_FM_STRETCH = 3
+
+class Aspect_HatchStyle:
+	Aspect_HS_SOLID = 0
+	Aspect_HS_HORIZONTAL = 7
+	Aspect_HS_HORIZONTAL_WIDE = 11
+	Aspect_HS_VERTICAL = 8
+	Aspect_HS_VERTICAL_WIDE = 12
+	Aspect_HS_DIAGONAL_45 = 5
+	Aspect_HS_DIAGONAL_45_WIDE = 9
+	Aspect_HS_DIAGONAL_135 = 6
+	Aspect_HS_DIAGONAL_135_WIDE = 10
+	Aspect_HS_GRID = 3
+	Aspect_HS_GRID_WIDE = 4
+	Aspect_HS_GRID_DIAGONAL = 1
+	Aspect_HS_GRID_DIAGONAL_WIDE = 2
+	Aspect_HS_NB = 13
+
+class Aspect_PolygonOffsetMode:
+	Aspect_POM_Off = 0
+	Aspect_POM_Fill = 1
+	Aspect_POM_Line = 2
+	Aspect_POM_Point = 4
+	Aspect_POM_All = Aspect_POM_Fill | Aspect_POM_Line | Aspect_POM_Point
+	Aspect_POM_None = 8
+	Aspect_POM_Mask = Aspect_POM_All | Aspect_POM_None
+
+class Aspect_TypeOfColorScalePosition:
+	Aspect_TOCSP_NONE = 0
+	Aspect_TOCSP_LEFT = 1
+	Aspect_TOCSP_RIGHT = 2
+	Aspect_TOCSP_CENTER = 3
+
+class Aspect_XAtom:
+	Aspect_XA_DELETE_WINDOW = 0
+
+class Aspect_TypeOfTriedronPosition:
+	Aspect_TOTP_CENTER = 0
+	Aspect_TOTP_TOP = 1
+	Aspect_TOTP_BOTTOM = 2
+	Aspect_TOTP_LEFT = 4
+	Aspect_TOTP_RIGHT = 8
+	Aspect_TOTP_LEFT_LOWER = Aspect_TOTP_BOTTOM | Aspect_TOTP_LEFT
+	Aspect_TOTP_LEFT_UPPER = Aspect_TOTP_TOP | Aspect_TOTP_LEFT
+	Aspect_TOTP_RIGHT_LOWER = Aspect_TOTP_BOTTOM | Aspect_TOTP_RIGHT
+	Aspect_TOTP_RIGHT_UPPER = Aspect_TOTP_TOP | Aspect_TOTP_RIGHT
+
+class Aspect_GridDrawMode:
+	Aspect_GDM_Lines = 0
+	Aspect_GDM_Points = 1
+	Aspect_GDM_None = 2
+
+class Aspect_WidthOfLine:
+	Aspect_WOL_THIN = 0
+	Aspect_WOL_MEDIUM = 1
+	Aspect_WOL_THICK = 2
+	Aspect_WOL_VERYTHICK = 3
+	Aspect_WOL_USERDEFINED = 4
+
+class Aspect_TypeOfDisplayText:
+	Aspect_TODT_NORMAL = 0
+	Aspect_TODT_SUBTITLE = 1
+	Aspect_TODT_DEKALE = 2
+	Aspect_TODT_BLEND = 3
+	Aspect_TODT_DIMENSION = 4
+	Aspect_TODT_SHADOW = 5
+
+class Aspect_InteriorStyle:
+	Aspect_IS_EMPTY = - 1
+	Aspect_IS_SOLID = 0
+	Aspect_IS_HATCH = 1
+	Aspect_IS_HIDDENLINE = 2
+	Aspect_IS_POINT = 3
+	Aspect_IS_HOLLOW = Aspect_IS_EMPTY
+};
+/* end python proxy for enums */
+
 /* handles */
 %wrap_handle(Aspect_DisplayConnection)
 %wrap_handle(Aspect_Grid)
@@ -498,6 +799,30 @@ class Aspect_DisplayConnection : public Standard_Transient {
 %extend Aspect_DisplayConnection {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Aspect_DisplayConnection(self):
+		pass
+
+	@methodnotwrapped
+	def GetAtom(self):
+		pass
+
+	@methodnotwrapped
+	def GetDisplay(self):
+		pass
+
+	@methodnotwrapped
+	def GetDisplayName(self):
+		pass
+
+	@methodnotwrapped
+	def Init(self):
+		pass
+
+	@methodnotwrapped
+	def IsOwnDisplay(self):
+		pass
 	}
 };
 
@@ -1305,6 +1630,14 @@ None
 %extend Aspect_Window {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def NativeHandle(self):
+		pass
+
+	@methodnotwrapped
+	def NativeParentHandle(self):
+		pass
 	}
 };
 
@@ -1400,6 +1733,22 @@ None
 /*******************************
 * class Aspect_RectangularGrid *
 *******************************/
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class Aspect_CircularGrid:
+	pass
+
+@classnotwrapped
+class Aspect_NeutralWindow:
+	pass
+
+@classnotwrapped
+class Aspect_RectangularGrid:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

@@ -58,8 +58,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_selectbasics.html
 %import NCollection.i
 %import gp.i
 %import TColgp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -277,6 +287,17 @@ enum SelectionType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class SelectionType:
+	Point = 0
+	Box = 1
+	Polyline = 2
+	Unknown = 3
+};
+/* end python proxy for enums */
 
 		/****************** DetectedPoint ******************/
 		%feature("compactdefaultargs") DetectedPoint;

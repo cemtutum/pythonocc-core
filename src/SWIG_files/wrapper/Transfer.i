@@ -45,6 +45,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_transfer.html"
 #include<TColStd_module.hxx>
 #include<Message_module.hxx>
 #include<MoniTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -55,6 +56,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_transfer.html"
 %import Interface.i
 %import TColStd.i
 %import Message.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Transfer_StatusExec {
 	Transfer_StatusInitial = 0,
@@ -78,6 +84,29 @@ enum Transfer_StatusResult {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Transfer_StatusExec:
+	Transfer_StatusInitial = 0
+	Transfer_StatusRun = 1
+	Transfer_StatusDone = 2
+	Transfer_StatusError = 3
+	Transfer_StatusLoop = 4
+
+class Transfer_UndefMode:
+	Transfer_UndefIgnore = 0
+	Transfer_UndefFailure = 1
+	Transfer_UndefContent = 2
+	Transfer_UndefUser = 3
+
+class Transfer_StatusResult:
+	Transfer_StatusVoid = 0
+	Transfer_StatusDefined = 1
+	Transfer_StatusUsed = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Transfer_ActorOfProcessForFinder)
@@ -4384,6 +4413,14 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class Transfer_ProcessForFinder:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

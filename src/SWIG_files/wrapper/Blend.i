@@ -48,6 +48,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_blend.html"
 #include<TColgp_module.hxx>
 #include<Adaptor2d_module.hxx>
 #include<Geom2d_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -61,6 +62,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_blend.html"
 %import gp.i
 %import TColgp.i
 %import Adaptor2d.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Blend_Status {
 	Blend_StepTooLarge = 0,
@@ -81,6 +87,27 @@ enum Blend_DecrochStatus {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Blend_Status:
+	Blend_StepTooLarge = 0
+	Blend_StepTooSmall = 1
+	Blend_Backward = 2
+	Blend_SamePoints = 3
+	Blend_OnRst1 = 4
+	Blend_OnRst2 = 5
+	Blend_OnRst12 = 6
+	Blend_OK = 7
+
+class Blend_DecrochStatus:
+	Blend_NoDecroch = 0
+	Blend_DecrochRst1 = 1
+	Blend_DecrochRst2 = 2
+	Blend_DecrochBoth = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

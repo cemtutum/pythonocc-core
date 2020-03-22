@@ -56,6 +56,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_cdm.html"
 %import TCollection.i
 %import Message.i
 %import Resource.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum CDM_CanCloseStatus {
 	CDM_CCS_OK = 0,
@@ -66,6 +71,18 @@ enum CDM_CanCloseStatus {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class CDM_CanCloseStatus:
+	CDM_CCS_OK = 0
+	CDM_CCS_NotOpen = 1
+	CDM_CCS_UnstoredReferenced = 2
+	CDM_CCS_ModifiedReferenced = 3
+	CDM_CCS_ReferenceRejection = 4
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(CDM_Application)

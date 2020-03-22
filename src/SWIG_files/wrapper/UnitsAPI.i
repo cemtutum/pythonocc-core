@@ -50,6 +50,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_unitsapi.html"
 %import Standard.i
 %import NCollection.i
 %import Units.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum UnitsAPI_SystemUnits {
 	UnitsAPI_DEFAULT = 0,
@@ -58,6 +63,16 @@ enum UnitsAPI_SystemUnits {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class UnitsAPI_SystemUnits:
+	UnitsAPI_DEFAULT = 0
+	UnitsAPI_SI = 1
+	UnitsAPI_MDTV = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

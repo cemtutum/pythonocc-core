@@ -67,6 +67,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_bitgte.html"
 %import gp.i
 %import GeomAbs.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BiTgte_ContactType {
 	BiTgte_FaceFace = 0,
@@ -78,6 +83,19 @@ enum BiTgte_ContactType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BiTgte_ContactType:
+	BiTgte_FaceFace = 0
+	BiTgte_FaceEdge = 1
+	BiTgte_FaceVertex = 2
+	BiTgte_EdgeEdge = 3
+	BiTgte_EdgeVertex = 4
+	BiTgte_VertexVertex = 5
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BiTgte_HCurveOnEdge)

@@ -53,6 +53,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geomlib.html"
 #include<PLib_module.hxx>
 #include<Adaptor2d_module.hxx>
 #include<Precision_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -69,6 +70,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geomlib.html"
 %import Geom2d.i
 %import math.i
 %import AdvApprox.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum GeomLib_InterpolationErrors {
 	GeomLib_NoError = 0,
@@ -78,6 +84,17 @@ enum GeomLib_InterpolationErrors {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class GeomLib_InterpolationErrors:
+	GeomLib_NoError = 0
+	GeomLib_NotEnoughtPoints = 1
+	GeomLib_DegreeSmallerThan3 = 2
+	GeomLib_InversionProblem = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

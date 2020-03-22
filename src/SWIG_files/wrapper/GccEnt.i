@@ -50,6 +50,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_gccent.html"
 %import Standard.i
 %import NCollection.i
 %import gp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum GccEnt_Position {
 	GccEnt_unqualified = 0,
@@ -60,6 +65,18 @@ enum GccEnt_Position {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class GccEnt_Position:
+	GccEnt_unqualified = 0
+	GccEnt_enclosing = 1
+	GccEnt_enclosed = 2
+	GccEnt_outside = 3
+	GccEnt_noqualifier = 4
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -224,21 +241,6 @@ Returns
 char *
 ") PositionToString;
 		static const char * PositionToString(GccEnt_Position thePosition);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the name of position type as a string on the stream.
-
-Parameters
-----------
-thePosition: GccEnt_Position
-theStream: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const GccEnt_Position thePosition, Standard_OStream & theStream);
 
 		/****************** Unqualified ******************/
 		%feature("compactdefaultargs") Unqualified;

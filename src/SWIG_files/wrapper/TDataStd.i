@@ -54,6 +54,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_tdatastd.html"
 %import TColStd.i
 %import TDF.i
 %import TCollection.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum TDataStd_RealEnum {
 	TDataStd_SCALAR = 0,
@@ -62,6 +67,16 @@ enum TDataStd_RealEnum {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TDataStd_RealEnum:
+	TDataStd_SCALAR = 0
+	TDataStd_LENGTH = 1
+	TDataStd_ANGULAR = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TDataStd_AsciiString)
@@ -190,21 +205,6 @@ Returns
 None
 ") IDList;
 		static void IDList(TDF_IDList & anIDList);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the name of the real dimension <dim> as a string on the stream <s> and returns <s>.
-
-Parameters
-----------
-DIM: TDataStd_RealEnum
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TDataStd_RealEnum DIM, Standard_OStream & S);
 
 };
 

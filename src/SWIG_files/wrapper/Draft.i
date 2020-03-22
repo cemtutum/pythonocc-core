@@ -69,6 +69,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_draft.html"
 %import TopTools.i
 %import GeomAbs.i
 %import TopLoc.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Draft_ErrorStatus {
 	Draft_NoError = 0,
@@ -78,6 +83,17 @@ enum Draft_ErrorStatus {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Draft_ErrorStatus:
+	Draft_NoError = 0
+	Draft_FaceRecomputation = 1
+	Draft_EdgeRecomputation = 2
+	Draft_VertexRecomputation = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Draft_Modification)

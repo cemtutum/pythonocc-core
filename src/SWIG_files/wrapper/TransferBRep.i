@@ -64,8 +64,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_transferbrep.html
 %import Transfer.i
 %import TopoDS.i
 %import TopAbs.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TransferBRep_BinderOfShape)
@@ -360,6 +370,10 @@ opencascade::handle<Standard_Transient>
 %extend TransferBRep {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def BRepCheck(self):
+		pass
 	}
 };
 

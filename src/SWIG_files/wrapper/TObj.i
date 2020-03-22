@@ -62,6 +62,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_tobj.html"
 %import Message.i
 %import TDF.i
 %import gp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum TObj_DeletingMode {
 	TObj_FreeOnly = 0,
@@ -70,6 +75,16 @@ enum TObj_DeletingMode {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TObj_DeletingMode:
+	TObj_FreeOnly = 0
+	TObj_KeepDepending = 1
+	TObj_Forced = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TObj_Application)
@@ -962,6 +977,21 @@ enum ObjectState {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TypeFlags:
+	Visible = 1
+
+class ObjectState:
+	ObjectState_Hidden = 1
+	ObjectState_Saved = 2
+	ObjectState_Imported = 4
+	ObjectState_ImportedByFile = 8
+	ObjectState_Ordered = 16
+};
+/* end python proxy for enums */
 
 		/****************** AddBackReference ******************/
 		%feature("compactdefaultargs") AddBackReference;

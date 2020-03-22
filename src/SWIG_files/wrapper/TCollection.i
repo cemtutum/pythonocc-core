@@ -48,6 +48,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_tcollection.html"
 %};
 %import Standard.i
 %import NCollection.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum TCollection_Side {
 	TCollection_Left = 0,
@@ -55,6 +60,15 @@ enum TCollection_Side {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TCollection_Side:
+	TCollection_Left = 0
+	TCollection_Right = 1
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TCollection_HAsciiString)
@@ -2394,6 +2408,10 @@ TCollection_ExtendedString
 %extend TCollection_ExtendedString {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def ToWideString(self):
+		pass
 	}
 };
 

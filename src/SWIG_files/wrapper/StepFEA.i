@@ -53,6 +53,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepfea.html"
 #include<StepData_module.hxx>
 #include<StepShape_module.hxx>
 #include<MoniTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -67,6 +68,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepfea.html"
 %import StepBasic.i
 %import StepRepr.i
 %import StepGeom.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum StepFEA_ElementVolume {
 	StepFEA_Volume = 0,
@@ -97,6 +103,34 @@ enum StepFEA_UnspecifiedValue {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class StepFEA_ElementVolume:
+	StepFEA_Volume = 0
+
+class StepFEA_CoordinateSystemType:
+	StepFEA_Cartesian = 0
+	StepFEA_Cylindrical = 1
+	StepFEA_Spherical = 2
+
+class StepFEA_EnumeratedDegreeOfFreedom:
+	StepFEA_XTranslation = 0
+	StepFEA_YTranslation = 1
+	StepFEA_ZTranslation = 2
+	StepFEA_XRotation = 3
+	StepFEA_YRotation = 4
+	StepFEA_ZRotation = 5
+	StepFEA_Warp = 6
+
+class StepFEA_CurveEdge:
+	StepFEA_ElementEdge = 0
+
+class StepFEA_UnspecifiedValue:
+	StepFEA_Unspecified = 0
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(StepFEA_Curve3dElementProperty)
@@ -2720,6 +2754,16 @@ opencascade::handle<TColStd_HArray1OfReal>
 ") FeaIsoOrthotropicSymmetricTensor43d;
 		opencascade::handle<TColStd_HArray1OfReal> FeaIsoOrthotropicSymmetricTensor43d();
 
+		/****************** FeaIsotropicSymmetricTensor43d ******************/
+		%feature("compactdefaultargs") FeaIsotropicSymmetricTensor43d;
+		%feature("autodoc", "Returns value as feaisotropicsymmetrictensor43d (or null if another type).
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfReal>
+") FeaIsotropicSymmetricTensor43d;
+		opencascade::handle<TColStd_HArray1OfReal> FeaIsotropicSymmetricTensor43d();
+
 		/****************** FeaTransverseIsotropicSymmetricTensor43d ******************/
 		%feature("compactdefaultargs") FeaTransverseIsotropicSymmetricTensor43d;
 		%feature("autodoc", "Returns value as featransverseisotropicsymmetrictensor43d (or null if another type).
@@ -2756,6 +2800,10 @@ None
 %extend StepFEA_SymmetricTensor43d {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def SetFeaIsotropicSymmetricTensor43d(self):
+		pass
 	}
 };
 

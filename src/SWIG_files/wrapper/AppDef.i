@@ -54,6 +54,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_appdef.html"
 #include<Geom_module.hxx>
 #include<Geom2d_module.hxx>
 #include<PLib_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -69,8 +70,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_appdef.html"
 %import gp.i
 %import FEmTool.i
 %import GeomAbs.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(AppDef_SmoothCriterion)
@@ -1684,6 +1695,10 @@ AppDef_MultiPointConstraint
 %extend AppDef_MultiLine {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def SetParameter(self):
+		pass
 	}
 };
 
@@ -4143,6 +4158,10 @@ bool
 %extend AppDef_ResConstraintOfMyGradientOfCompute {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Error(self):
+		pass
 	}
 };
 
@@ -4236,6 +4255,10 @@ bool
 %extend AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Error(self):
+		pass
 	}
 };
 
@@ -4329,6 +4352,10 @@ bool
 %extend AppDef_ResConstraintOfTheGradient {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Error(self):
+		pass
 	}
 };
 
@@ -5255,6 +5282,10 @@ bool
 %extend AppDef_TheResol {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Error(self):
+		pass
 	}
 };
 

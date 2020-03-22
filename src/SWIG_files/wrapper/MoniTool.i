@@ -60,6 +60,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_monitool.html"
 %import Message.i
 %import OSD.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum MoniTool_ValueType {
 	MoniTool_ValueMisc = 0,
@@ -76,6 +81,24 @@ enum MoniTool_ValueType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class MoniTool_ValueType:
+	MoniTool_ValueMisc = 0
+	MoniTool_ValueInteger = 1
+	MoniTool_ValueReal = 2
+	MoniTool_ValueIdent = 3
+	MoniTool_ValueVoid = 4
+	MoniTool_ValueText = 5
+	MoniTool_ValueEnum = 6
+	MoniTool_ValueLogical = 7
+	MoniTool_ValueSub = 8
+	MoniTool_ValueHexa = 9
+	MoniTool_ValueBinary = 10
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(MoniTool_CaseData)

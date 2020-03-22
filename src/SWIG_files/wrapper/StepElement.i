@@ -51,6 +51,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepelement.html"
 #include<StepShape_module.hxx>
 #include<StepGeom_module.hxx>
 #include<MoniTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -62,6 +63,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepelement.html"
 %import StepRepr.i
 %import StepData.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum StepElement_ElementVolume {
 	StepElement_Volume = 0,
@@ -127,6 +133,64 @@ enum StepElement_EnumeratedCurveElementPurpose {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class StepElement_ElementVolume:
+	StepElement_Volume = 0
+
+class StepElement_CurveEdge:
+	StepElement_ElementEdge = 0
+
+class StepElement_Volume3dElementShape:
+	StepElement_Hexahedron = 0
+	StepElement_Wedge = 1
+	StepElement_Tetrahedron = 2
+	StepElement_Pyramid = 3
+
+class StepElement_ElementOrder:
+	StepElement_Linear = 0
+	StepElement_Quadratic = 1
+	StepElement_Cubic = 2
+
+class StepElement_Element2dShape:
+	StepElement_Quadrilateral = 0
+	StepElement_Triangle = 1
+
+class StepElement_EnumeratedCurveElementFreedom:
+	StepElement_XTranslation = 0
+	StepElement_YTranslation = 1
+	StepElement_ZTranslation = 2
+	StepElement_XRotation = 3
+	StepElement_YRotation = 4
+	StepElement_ZRotation = 5
+	StepElement_Warp = 6
+	StepElement_None = 7
+
+class StepElement_EnumeratedVolumeElementPurpose:
+	StepElement_StressDisplacement = 0
+
+class StepElement_EnumeratedSurfaceElementPurpose:
+	StepElement_MembraneDirect = 0
+	StepElement_MembraneShear = 1
+	StepElement_BendingDirect = 2
+	StepElement_BendingTorsion = 3
+	StepElement_NormalToPlaneShear = 4
+
+class StepElement_UnspecifiedValue:
+	StepElement_Unspecified = 0
+
+class StepElement_EnumeratedCurveElementPurpose:
+	StepElement_Axial = 0
+	StepElement_YYBending = 1
+	StepElement_ZZBending = 2
+	StepElement_Torsion = 3
+	StepElement_XYShear = 4
+	StepElement_XZShear = 5
+	StepElement_Warping = 6
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(StepElement_AnalysisItemWithinRepresentation)

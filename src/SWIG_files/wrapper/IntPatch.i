@@ -54,6 +54,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_intpatch.html"
 #include<IntAna_module.hxx>
 #include<Geom_module.hxx>
 #include<Adaptor3d_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -72,6 +73,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_intpatch.html"
 %import TColStd.i
 %import Bnd.i
 %import IntAna.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum IntPatch_SpecPntType {
 	IntPatch_SPntNone = 0,
@@ -94,6 +100,29 @@ enum IntPatch_IType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class IntPatch_SpecPntType:
+	IntPatch_SPntNone = 0
+	IntPatch_SPntSeamU = 1
+	IntPatch_SPntSeamV = 2
+	IntPatch_SPntSeamUV = 3
+	IntPatch_SPntPoleSeamU = 4
+	IntPatch_SPntPole = 5
+
+class IntPatch_IType:
+	IntPatch_Lin = 0
+	IntPatch_Circle = 1
+	IntPatch_Ellipse = 2
+	IntPatch_Parabola = 3
+	IntPatch_Hyperbola = 4
+	IntPatch_Analytic = 5
+	IntPatch_Walking = 6
+	IntPatch_Restriction = 7
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(IntPatch_Line)
@@ -1460,6 +1489,16 @@ enum IntStatus {
 
 /* end public enums declaration */
 
+/* python proy classes for enums */
+%pythoncode {
+
+class IntStatus:
+	IntStatus_OK = 0
+	IntStatus_InfiniteSectionCurve = 1
+	IntStatus_Fail = 2
+};
+/* end python proxy for enums */
+
 		/****************** IntPatch_ImpImpIntersection ******************/
 		%feature("compactdefaultargs") IntPatch_ImpImpIntersection;
 		%feature("autodoc", "No available documentation.
@@ -1606,6 +1645,10 @@ bool
 %extend IntPatch_ImpImpIntersection {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def GetStatus(self):
+		pass
 	}
 };
 
@@ -6559,6 +6602,14 @@ IntPatch_Point
 %extend IntPatch_RLine {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def SetParamOnS1(self):
+		pass
+
+	@methodnotwrapped
+	def SetParamOnS2(self):
+		pass
 	}
 };
 
@@ -6576,6 +6627,17 @@ enum IntPatch_WLType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class IntPatch_WLType:
+	IntPatch_WLUnknown = 0
+	IntPatch_WLImpImp = 1
+	IntPatch_WLImpPrm = 2
+	IntPatch_WLPrmPrm = 3
+};
+/* end python proxy for enums */
 
 		/****************** AddVertex ******************/
 		%feature("compactdefaultargs") AddVertex;
@@ -7133,6 +7195,14 @@ IntPatch_Point
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class IntPatch_Polyhedron:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

@@ -69,8 +69,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepadaptor.html"
 %import GeomAdaptor.i
 %import Geom2dAdaptor.i
 %import Adaptor2d.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BRepAdaptor_HCompCurve)

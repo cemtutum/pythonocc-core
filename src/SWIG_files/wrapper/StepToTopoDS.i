@@ -57,6 +57,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_steptotopods.html
 #include<Transfer_module.hxx>
 #include<StepData_module.hxx>
 #include<MoniTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -73,6 +74,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_steptotopods.html
 %import gp.i
 %import Transfer.i
 %import Geom2d.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum StepToTopoDS_GeometricToolError {
 	StepToTopoDS_GeometricToolDone = 0,
@@ -124,6 +130,51 @@ enum StepToTopoDS_TranslateVertexError {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class StepToTopoDS_GeometricToolError:
+	StepToTopoDS_GeometricToolDone = 0
+	StepToTopoDS_GeometricToolIsDegenerated = 1
+	StepToTopoDS_GeometricToolHasNoPCurve = 2
+	StepToTopoDS_GeometricToolWrong3dParameters = 3
+	StepToTopoDS_GeometricToolNoProjectiOnCurve = 4
+	StepToTopoDS_GeometricToolOther = 5
+
+class StepToTopoDS_TranslateShellError:
+	StepToTopoDS_TranslateShellDone = 0
+	StepToTopoDS_TranslateShellOther = 1
+
+class StepToTopoDS_TranslatePolyLoopError:
+	StepToTopoDS_TranslatePolyLoopDone = 0
+	StepToTopoDS_TranslatePolyLoopOther = 1
+
+class StepToTopoDS_TranslateEdgeError:
+	StepToTopoDS_TranslateEdgeDone = 0
+	StepToTopoDS_TranslateEdgeOther = 1
+
+class StepToTopoDS_BuilderError:
+	StepToTopoDS_BuilderDone = 0
+	StepToTopoDS_BuilderOther = 1
+
+class StepToTopoDS_TranslateFaceError:
+	StepToTopoDS_TranslateFaceDone = 0
+	StepToTopoDS_TranslateFaceOther = 1
+
+class StepToTopoDS_TranslateVertexLoopError:
+	StepToTopoDS_TranslateVertexLoopDone = 0
+	StepToTopoDS_TranslateVertexLoopOther = 1
+
+class StepToTopoDS_TranslateEdgeLoopError:
+	StepToTopoDS_TranslateEdgeLoopDone = 0
+	StepToTopoDS_TranslateEdgeLoopOther = 1
+
+class StepToTopoDS_TranslateVertexError:
+	StepToTopoDS_TranslateVertexDone = 0
+	StepToTopoDS_TranslateVertexOther = 1
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -1635,6 +1686,18 @@ TopoDS_Shape
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class StepToTopoDS_Builder:
+	pass
+
+@classnotwrapped
+class StepToTopoDS_PointVertexMap:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

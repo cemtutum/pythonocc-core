@@ -46,6 +46,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_faircurve.html"
 #include<math_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -58,6 +59,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_faircurve.html"
 %import math.i
 %import TColgp.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum FairCurve_AnalysisCode {
 	FairCurve_OK = 0,
@@ -67,6 +73,17 @@ enum FairCurve_AnalysisCode {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class FairCurve_AnalysisCode:
+	FairCurve_OK = 0
+	FairCurve_NotConverged = 1
+	FairCurve_InfiniteSliding = 2
+	FairCurve_NullHeight = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

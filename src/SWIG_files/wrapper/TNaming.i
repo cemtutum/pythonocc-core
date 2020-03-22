@@ -64,6 +64,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_tnaming.html"
 %import gp.i
 %import TColStd.i
 %import TopAbs.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum TNaming_Evolution {
 	TNaming_PRIMITIVE = 0,
@@ -90,6 +95,33 @@ enum TNaming_NameType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TNaming_Evolution:
+	TNaming_PRIMITIVE = 0
+	TNaming_GENERATED = 1
+	TNaming_MODIFY = 2
+	TNaming_DELETE = 3
+	TNaming_REPLACE = 4
+	TNaming_SELECTED = 5
+
+class TNaming_NameType:
+	TNaming_UNKNOWN = 0
+	TNaming_IDENTITY = 1
+	TNaming_MODIFUNTIL = 2
+	TNaming_GENERATION = 3
+	TNaming_INTERSECTION = 4
+	TNaming_UNION = 5
+	TNaming_SUBSTRACTION = 6
+	TNaming_CONSTSHAPE = 7
+	TNaming_FILTERBYNEIGHBOURGS = 8
+	TNaming_ORIENTATION = 9
+	TNaming_WIREIN = 10
+	TNaming_SHELLIN = 11
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TNaming_DeltaOnModification)
@@ -264,51 +296,6 @@ Returns
 bool
 ") OuterWire;
 		static Standard_Boolean OuterWire(const TopoDS_Face & theFace, TopoDS_Wire & theWire);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the evolution <evol> as a string on the stream <s> and returns <s>.
-
-Parameters
-----------
-EVOL: TNaming_Evolution
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TNaming_Evolution EVOL, Standard_OStream & S);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the name of name type <name> as a string on the stream <s> and returns <s>.
-
-Parameters
-----------
-NAME: TNaming_NameType
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TNaming_NameType NAME, Standard_OStream & S);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the content of usedshapes private attribute as a string table on the stream <s> and returns <s>.
-
-Parameters
-----------
-ACCESS: TDF_Label
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TDF_Label & ACCESS, Standard_OStream & S);
 
 		/****************** Replicate ******************/
 		%feature("compactdefaultargs") Replicate;
@@ -1806,22 +1793,6 @@ TNaming_Name
             self->Dump(s);
             return s.str();}
         };
-		/****************** ExtendedDump ******************/
-		%feature("compactdefaultargs") ExtendedDump;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-anOS: Standard_OStream
-aFilter: TDF_IDFilter
-aMap: TDF_AttributeIndexedMap
-
-Returns
--------
-None
-") ExtendedDump;
-		virtual void ExtendedDump(Standard_OStream & anOS, const TDF_IDFilter & aFilter, TDF_AttributeIndexedMap & aMap);
-
 		/****************** GetID ******************/
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "Following code from tdesignstd ==============================.

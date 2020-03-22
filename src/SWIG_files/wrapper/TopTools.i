@@ -59,8 +59,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_toptools.html"
 %import Message.i
 %import TopAbs.i
 %import TCollection.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TopTools_HArray1OfShape)
@@ -253,21 +263,6 @@ Returns
 None
 ") Dummy;
 		static void Dummy(const Standard_Integer I);
-
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "A set of shapes. can be dump, wrote or read. dumps the topological structure of <sh> on the stream <s>.
-
-Parameters
-----------
-Sh: TopoDS_Shape
-S: Standard_OStream
-
-Returns
--------
-None
-") Dump;
-		static void Dump(const TopoDS_Shape & Sh, Standard_OStream & S);
 
 };
 
@@ -657,21 +652,6 @@ None
             self->Dump(s);
             return s.str();}
         };
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "Dumps on <os> the shape <s>. dumps the orientation, the index of the tshape and the index of the location.
-
-Parameters
-----------
-S: TopoDS_Shape
-OS: Standard_OStream
-
-Returns
--------
-None
-") Dump;
-		void Dump(const TopoDS_Shape & S, Standard_OStream & OS);
-
 
         %feature("autodoc", "1");
         %extend{
@@ -702,21 +682,6 @@ None
             self->DumpGeometry(s);
             return s.str();}
         };
-		/****************** DumpGeometry ******************/
-		%feature("compactdefaultargs") DumpGeometry;
-		%feature("autodoc", "Dumps the geometry of <s> on the stream <os>.
-
-Parameters
-----------
-S: TopoDS_Shape
-OS: Standard_OStream
-
-Returns
--------
-None
-") DumpGeometry;
-		virtual void DumpGeometry(const TopoDS_Shape & S, Standard_OStream & OS);
-
 		/****************** FormatNb ******************/
 		%feature("compactdefaultargs") FormatNb;
 		%feature("autodoc", "Two formats available for the moment: first: does not write curveonsurface uv points into the file on reading calls check() method. second: stores curveonsurface uv points. on reading format is recognized from version string.
@@ -778,21 +743,6 @@ int
                 std::stringstream s(src);
                 self->Read(s);}
             };
-		/****************** Read ******************/
-		%feature("compactdefaultargs") Read;
-		%feature("autodoc", "Reads from <is> a shape and returns it in s.
-
-Parameters
-----------
-S: TopoDS_Shape
-IS: Standard_IStream
-
-Returns
--------
-None
-") Read;
-		void Read(TopoDS_Shape & S, Standard_IStream & IS);
-
 
             %feature("autodoc", "1");
             %extend{
@@ -800,22 +750,6 @@ None
                 std::stringstream s(src);
                 self->ReadGeometry(s);}
             };
-		/****************** ReadGeometry ******************/
-		%feature("compactdefaultargs") ReadGeometry;
-		%feature("autodoc", "Reads the geometry of a shape of type <t> from the stream <is> and returns it in <s>.
-
-Parameters
-----------
-T: TopAbs_ShapeEnum
-IS: Standard_IStream
-S: TopoDS_Shape
-
-Returns
--------
-None
-") ReadGeometry;
-		virtual void ReadGeometry(const TopAbs_ShapeEnum T, Standard_IStream & IS, TopoDS_Shape & S);
-
 		/****************** SetFormatNb ******************/
 		%feature("compactdefaultargs") SetFormatNb;
 		%feature("autodoc", "No available documentation.
@@ -876,21 +810,6 @@ None
             self->Write(s);
             return s.str();}
         };
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Writes on <os> the shape <s>. writes the orientation, the index of the tshape and the index of the location.
-
-Parameters
-----------
-S: TopoDS_Shape
-OS: Standard_OStream
-
-Returns
--------
-None
-") Write;
-		void Write(const TopoDS_Shape & S, Standard_OStream & OS);
-
 
         %feature("autodoc", "1");
         %extend{
@@ -899,21 +818,6 @@ None
             self->WriteGeometry(s);
             return s.str();}
         };
-		/****************** WriteGeometry ******************/
-		%feature("compactdefaultargs") WriteGeometry;
-		%feature("autodoc", "Writes the geometry of <s> on the stream <os> in a format that can be read back by read.
-
-Parameters
-----------
-S: TopoDS_Shape
-OS: Standard_OStream
-
-Returns
--------
-None
-") WriteGeometry;
-		virtual void WriteGeometry(const TopoDS_Shape & S, Standard_OStream & OS);
-
 };
 
 

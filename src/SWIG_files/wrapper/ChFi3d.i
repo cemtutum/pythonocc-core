@@ -100,6 +100,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_chfi3d.html"
 %import BRepBlend.i
 %import IntSurf.i
 %import GeomFill.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum ChFi3d_FilletShape {
 	ChFi3d_Rational = 0,
@@ -108,6 +113,16 @@ enum ChFi3d_FilletShape {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class ChFi3d_FilletShape:
+	ChFi3d_Rational = 0
+	ChFi3d_QuasiAngular = 1
+	ChFi3d_Polynomial = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

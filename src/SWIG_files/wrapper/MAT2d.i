@@ -48,6 +48,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_mat2d.html"
 #include<MAT_module.hxx>
 #include<Bisector_module.hxx>
 #include<Geom2d_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -61,8 +62,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_mat2d.html"
 %import gp.i
 %import MAT.i
 %import Bisector.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(MAT2d_Circuit)
@@ -1326,6 +1337,18 @@ bool
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class MAT2d_SketchExplorer:
+	pass
+
+@classnotwrapped
+class MAT2d_CutCurve:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

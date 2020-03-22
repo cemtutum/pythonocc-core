@@ -64,8 +64,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_tdocstd.html"
 %import TColStd.i
 %import Resource.i
 %import CDM.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TDocStd_Application)
@@ -304,21 +314,6 @@ PCDM_ReaderStatus
 ") Open;
 		PCDM_ReaderStatus Open(const TCollection_ExtendedString & path, opencascade::handle<TDocStd_Document> & aDoc);
 
-		/****************** Open ******************/
-		%feature("compactdefaultargs") Open;
-		%feature("autodoc", "Retrieves adoc from standard seekable stream theistream. the stream should support seek fuctionality.
-
-Parameters
-----------
-theIStream: Standard_IStream
-theDoc: TDocStd_Document
-
-Returns
--------
-PCDM_ReaderStatus
-") Open;
-		PCDM_ReaderStatus Open(Standard_IStream & theIStream, opencascade::handle<TDocStd_Document> & theDoc);
-
 		/****************** ReadingFormats ******************/
 		%feature("compactdefaultargs") ReadingFormats;
 		%feature("autodoc", "Returns the sequence of reading formats supported by the application. //! @param theformats - sequence of reading formats. output parameter.
@@ -399,21 +394,6 @@ PCDM_StoreStatus
 
 		/****************** SaveAs ******************/
 		%feature("compactdefaultargs") SaveAs;
-		%feature("autodoc", "Save thedoc to standard seekable stream theostream. the stream should support seek fuctionality.
-
-Parameters
-----------
-theDoc: TDocStd_Document
-theOStream: Standard_OStream
-
-Returns
--------
-PCDM_StoreStatus
-") SaveAs;
-		PCDM_StoreStatus SaveAs(const opencascade::handle<TDocStd_Document> & theDoc, Standard_OStream & theOStream);
-
-		/****************** SaveAs ******************/
-		%feature("compactdefaultargs") SaveAs;
 		%feature("autodoc", "Save the active document in the file <name> in the path <path> . overwrite the file if it already exist.
 
 Parameters
@@ -427,22 +407,6 @@ Returns
 PCDM_StoreStatus
 ") SaveAs;
 		PCDM_StoreStatus SaveAs(const opencascade::handle<TDocStd_Document> & aDoc, const TCollection_ExtendedString & path, TCollection_ExtendedString & theStatusMessage);
-
-		/****************** SaveAs ******************/
-		%feature("compactdefaultargs") SaveAs;
-		%feature("autodoc", "Save thedoc to standard seekable stream theostream. the stream should support seek fuctionality.
-
-Parameters
-----------
-theDoc: TDocStd_Document
-theOStream: Standard_OStream
-theStatusMessage: TCollection_ExtendedString
-
-Returns
--------
-PCDM_StoreStatus
-") SaveAs;
-		PCDM_StoreStatus SaveAs(const opencascade::handle<TDocStd_Document> & theDoc, Standard_OStream & theOStream, TCollection_ExtendedString & theStatusMessage);
 
 		/****************** TDocStd_Application ******************/
 		%feature("compactdefaultargs") TDocStd_Application;

@@ -56,6 +56,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_rwgltf.html"
 %};
 %import Standard.i
 %import NCollection.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum RWGltf_GltfPrimitiveMode {
 	RWGltf_GltfPrimitiveMode_UNKNOWN = - 1,
@@ -132,6 +137,79 @@ enum RWGltf_GltfAccessorLayout {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class RWGltf_GltfPrimitiveMode:
+	RWGltf_GltfPrimitiveMode_UNKNOWN = - 1
+	RWGltf_GltfPrimitiveMode_Points = 0
+	RWGltf_GltfPrimitiveMode_Lines = 1
+	RWGltf_GltfPrimitiveMode_LineLoop = 2
+	RWGltf_GltfPrimitiveMode_LineStrip = 3
+	RWGltf_GltfPrimitiveMode_Triangles = 4
+	RWGltf_GltfPrimitiveMode_TriangleStrip = 5
+	RWGltf_GltfPrimitiveMode_TriangleFan = 6
+
+class RWGltf_GltfBufferViewTarget:
+	RWGltf_GltfBufferViewTarget_UNKNOWN = 0
+	RWGltf_GltfBufferViewTarget_ARRAY_BUFFER = 34962
+	RWGltf_GltfBufferViewTarget_ELEMENT_ARRAY_BUFFER = 34963
+
+class RWGltf_GltfArrayType:
+	RWGltf_GltfArrayType_UNKNOWN = 0
+	RWGltf_GltfArrayType_Indices = 1
+	RWGltf_GltfArrayType_Position = 2
+	RWGltf_GltfArrayType_Normal = 3
+	RWGltf_GltfArrayType_Color = 4
+	RWGltf_GltfArrayType_TCoord0 = 5
+	RWGltf_GltfArrayType_TCoord1 = 6
+	RWGltf_GltfArrayType_Joint = 7
+	RWGltf_GltfArrayType_Weight = 8
+
+class RWGltf_GltfRootElement:
+	RWGltf_GltfRootElement_Asset = 0
+	RWGltf_GltfRootElement_Scenes = 1
+	RWGltf_GltfRootElement_Scene = 2
+	RWGltf_GltfRootElement_Nodes = 3
+	RWGltf_GltfRootElement_Meshes = 4
+	RWGltf_GltfRootElement_Accessors = 5
+	RWGltf_GltfRootElement_BufferViews = 6
+	RWGltf_GltfRootElement_Buffers = 7
+	RWGltf_GltfRootElement_NB_MANDATORY = 8
+	RWGltf_GltfRootElement_Animations = RWGltf_GltfRootElement_NB_MANDATORY
+	RWGltf_GltfRootElement_Materials = 10
+	RWGltf_GltfRootElement_Programs = 11
+	RWGltf_GltfRootElement_Samplers = 12
+	RWGltf_GltfRootElement_Shaders = 13
+	RWGltf_GltfRootElement_Skins = 14
+	RWGltf_GltfRootElement_Techniques = 15
+	RWGltf_GltfRootElement_Textures = 16
+	RWGltf_GltfRootElement_Images = 17
+	RWGltf_GltfRootElement_ExtensionsUsed = 18
+	RWGltf_GltfRootElement_ExtensionsRequired = 19
+	RWGltf_GltfRootElement_NB = 20
+
+class RWGltf_GltfAccessorCompType:
+	RWGltf_GltfAccessorCompType_UNKNOWN = 0
+	RWGltf_GltfAccessorCompType_Int8 = 5120
+	RWGltf_GltfAccessorCompType_UInt8 = 5121
+	RWGltf_GltfAccessorCompType_Int16 = 5122
+	RWGltf_GltfAccessorCompType_UInt16 = 5123
+	RWGltf_GltfAccessorCompType_UInt32 = 5125
+	RWGltf_GltfAccessorCompType_Float32 = 5126
+
+class RWGltf_GltfAccessorLayout:
+	RWGltf_GltfAccessorLayout_UNKNOWN = 0
+	RWGltf_GltfAccessorLayout_Scalar = 1
+	RWGltf_GltfAccessorLayout_Vec2 = 2
+	RWGltf_GltfAccessorLayout_Vec3 = 3
+	RWGltf_GltfAccessorLayout_Vec4 = 4
+	RWGltf_GltfAccessorLayout_Mat2 = 5
+	RWGltf_GltfAccessorLayout_Mat3 = 6
+	RWGltf_GltfAccessorLayout_Mat4 = 7
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(RWGltf_MaterialCommon)
@@ -354,6 +432,30 @@ None
 /***********************************
 * class RWGltf_TriangulationReader *
 ***********************************/
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class RWGltf_GltfSharedIStream:
+	pass
+
+@classnotwrapped
+class RWGltf_TriangulationReader:
+	pass
+
+@classnotwrapped
+class RWGltf_GltfLatePrimitiveArray:
+	pass
+
+@classnotwrapped
+class RWGltf_PrimitiveArrayReader:
+	pass
+
+@classnotwrapped
+class RWGltf_CafReader:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

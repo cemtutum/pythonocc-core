@@ -95,6 +95,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topopebreptool.ht
 %import TCollection.i
 %import GeomAbs.i
 %import Extrema.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum TopOpeBRepTool_OutCurveType {
 	TopOpeBRepTool_BSPLINE1 = 0,
@@ -103,6 +108,16 @@ enum TopOpeBRepTool_OutCurveType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TopOpeBRepTool_OutCurveType:
+	TopOpeBRepTool_BSPLINE1 = 0
+	TopOpeBRepTool_APPROX = 1
+	TopOpeBRepTool_INTERPOL = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TopOpeBRepTool_HBoxTool)
@@ -176,21 +191,6 @@ Returns
 bool
 ") MakeFaces;
 		static Standard_Boolean MakeFaces(const TopoDS_Face & F, const TopTools_ListOfShape & LOF, const TopTools_IndexedMapOfOrientedShape & MshNOK, TopTools_ListOfShape & LOFF);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints <oct> as string on stream <s>; returns <s>.
-
-Parameters
-----------
-OCT: TopOpeBRepTool_OutCurveType
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TopOpeBRepTool_OutCurveType OCT, Standard_OStream & S);
 
 		/****************** PurgeClosingEdges ******************/
 		%feature("compactdefaultargs") PurgeClosingEdges;
@@ -4595,6 +4595,18 @@ None
 /********************************
 * class TopOpeBRepTool_mkTondgE *
 ********************************/
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class TopOpeBRepTool_STATE:
+	pass
+
+@classnotwrapped
+class TopOpeBRepTool_mkTondgE:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

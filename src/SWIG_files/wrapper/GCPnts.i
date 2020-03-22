@@ -48,6 +48,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_gcpnts.html"
 #include<gp_module.hxx>
 #include<Geom_module.hxx>
 #include<Geom2d_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -60,6 +61,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_gcpnts.html"
 %import math.i
 %import GeomAbs.i
 %import gp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum GCPnts_DeflectionType {
 	GCPnts_Linear = 0,
@@ -75,6 +81,22 @@ enum GCPnts_AbscissaType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class GCPnts_DeflectionType:
+	GCPnts_Linear = 0
+	GCPnts_Circular = 1
+	GCPnts_Curved = 2
+	GCPnts_DefComposite = 3
+
+class GCPnts_AbscissaType:
+	GCPnts_LengthParametrized = 0
+	GCPnts_Parametrized = 1
+	GCPnts_AbsComposite = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -1775,6 +1797,18 @@ gp_Pnt
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class GCPnts_DistFunction:
+	pass
+
+@classnotwrapped
+class GCPnts_DistFunction2d:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

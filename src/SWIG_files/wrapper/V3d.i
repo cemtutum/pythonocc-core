@@ -60,6 +60,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_v3d.html"
 #include<Poly_module.hxx>
 #include<HLRAlgo_module.hxx>
 #include<Select3D_module.hxx>
+#include<Media_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -75,6 +76,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_v3d.html"
 %import Bnd.i
 %import TCollection.i
 %import Image.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum V3d_TypeOfPickCamera {
 	V3d_POSITIONCAMERA = 0,
@@ -176,6 +182,101 @@ enum V3d_TypeOfPickLight {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class V3d_TypeOfPickCamera:
+	V3d_POSITIONCAMERA = 0
+	V3d_SPACECAMERA = 1
+	V3d_RADIUSTEXTCAMERA = 2
+	V3d_ExtRADIUSCAMERA = 3
+	V3d_IntRADIUSCAMERA = 4
+	V3d_NOTHINGCAMERA = 5
+
+class V3d_TypeOfVisualization:
+	V3d_WIREFRAME = 0
+	V3d_ZBUFFER = 1
+
+class V3d_TypeOfView:
+	V3d_ORTHOGRAPHIC = 0
+	V3d_PERSPECTIVE = 1
+
+class V3d_StereoDumpOptions:
+	V3d_SDO_MONO = 0
+	V3d_SDO_LEFT_EYE = 1
+	V3d_SDO_RIGHT_EYE = 2
+	V3d_SDO_BLENDED = 3
+
+class V3d_TypeOfOrientation:
+	V3d_Xpos = 0
+	V3d_Ypos = 1
+	V3d_Zpos = 2
+	V3d_Xneg = 3
+	V3d_Yneg = 4
+	V3d_Zneg = 5
+	V3d_XposYpos = 6
+	V3d_XposZpos = 7
+	V3d_YposZpos = 8
+	V3d_XnegYneg = 9
+	V3d_XnegYpos = 10
+	V3d_XnegZneg = 11
+	V3d_XnegZpos = 12
+	V3d_YnegZneg = 13
+	V3d_YnegZpos = 14
+	V3d_XposYneg = 15
+	V3d_XposZneg = 16
+	V3d_YposZneg = 17
+	V3d_XposYposZpos = 18
+	V3d_XposYnegZpos = 19
+	V3d_XposYposZneg = 20
+	V3d_XnegYposZpos = 21
+	V3d_XposYnegZneg = 22
+	V3d_XnegYposZneg = 23
+	V3d_XnegYnegZpos = 24
+	V3d_XnegYnegZneg = 25
+	V3d_TypeOfOrientation_Zup_AxoLeft = V3d_XnegYnegZpos
+	V3d_TypeOfOrientation_Zup_AxoRight = V3d_XposYnegZpos
+	V3d_TypeOfOrientation_Zup_Front = V3d_Yneg
+	V3d_TypeOfOrientation_Zup_Back = V3d_Ypos
+	V3d_TypeOfOrientation_Zup_Top = V3d_Zpos
+	V3d_TypeOfOrientation_Zup_Bottom = V3d_Zneg
+	V3d_TypeOfOrientation_Zup_Left = V3d_Xneg
+	V3d_TypeOfOrientation_Zup_Right = V3d_Xpos
+	V3d_TypeOfOrientation_Yup_AxoLeft = V3d_XnegYposZpos
+	V3d_TypeOfOrientation_Yup_AxoRight = V3d_XposYposZpos
+	V3d_TypeOfOrientation_Yup_Front = V3d_Zpos
+	V3d_TypeOfOrientation_Yup_Back = V3d_Zneg
+	V3d_TypeOfOrientation_Yup_Top = V3d_Ypos
+	V3d_TypeOfOrientation_Yup_Bottom = V3d_Yneg
+	V3d_TypeOfOrientation_Yup_Left = V3d_Xpos
+	V3d_TypeOfOrientation_Yup_Right = V3d_Xneg
+
+class V3d_TypeOfAxe:
+	V3d_X = 0
+	V3d_Y = 1
+	V3d_Z = 2
+
+class V3d_TypeOfRepresentation:
+	V3d_SIMPLE = 0
+	V3d_COMPLETE = 1
+	V3d_PARTIAL = 2
+	V3d_SAMELAST = 3
+
+class V3d_TypeOfBackfacingModel:
+	V3d_TOBM_AUTOMATIC = 0
+	V3d_TOBM_ALWAYS_DISPLAYED = 1
+	V3d_TOBM_NEVER_DISPLAYED = 2
+
+class V3d_TypeOfPickLight:
+	V3d_POSITIONLIGHT = 0
+	V3d_SPACELIGHT = 1
+	V3d_RADIUSTEXTLIGHT = 2
+	V3d_ExtRADIUSLIGHT = 3
+	V3d_IntRADIUSLIGHT = 4
+	V3d_NOTHING = 5
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(V3d_AmbientLight)
@@ -3257,6 +3358,10 @@ None
 %extend V3d_View {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Print(self):
+		pass
 	}
 };
 
@@ -4500,6 +4605,10 @@ Graphic3d_ZLayerSettings
 %extend V3d_Viewer {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Print(self):
+		pass
 	}
 };
 

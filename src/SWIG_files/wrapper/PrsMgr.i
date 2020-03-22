@@ -54,8 +54,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_prsmgr.html"
 #include<HLRAlgo_module.hxx>
 #include<TopoDS_module.hxx>
 #include<Aspect_module.hxx>
-#include<Visual3d_module.hxx>
 #include<TShort_module.hxx>
+#include<Media_module.hxx>
 #include<Message_module.hxx>
 #include<Bnd_module.hxx>
 #include<TopTools_module.hxx>
@@ -82,6 +82,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_prsmgr.html"
 %import gp.i
 %import TColStd.i
 %import V3d.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum PrsMgr_TypeOfPresentation3d {
 	PrsMgr_TOP_AllView = 0,
@@ -89,6 +94,15 @@ enum PrsMgr_TypeOfPresentation3d {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class PrsMgr_TypeOfPresentation3d:
+	PrsMgr_TOP_AllView = 0
+	PrsMgr_TOP_ProjectorDependant = 1
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(PrsMgr_PresentableObject)

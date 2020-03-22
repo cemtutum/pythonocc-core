@@ -54,8 +54,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepbndlib.html"
 %import NCollection.i
 %import TopoDS.i
 %import Bnd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

@@ -65,6 +65,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_vrmldata.html"
 %import TDocStd.i
 %import Bnd.i
 %import Quantity.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum VrmlData_ErrorStatus {
 	VrmlData_StatusOK = 0,
@@ -88,6 +93,31 @@ enum VrmlData_ErrorStatus {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class VrmlData_ErrorStatus:
+	VrmlData_StatusOK = 0
+	VrmlData_EmptyData = 1
+	VrmlData_UnrecoverableError = 2
+	VrmlData_GeneralError = 3
+	VrmlData_EndOfFile = 4
+	VrmlData_NotVrmlFile = 5
+	VrmlData_CannotOpenFile = 6
+	VrmlData_VrmlFormatError = 7
+	VrmlData_NumericInputError = 8
+	VrmlData_IrrelevantNumber = 9
+	VrmlData_BooleanInputError = 10
+	VrmlData_StringInputError = 11
+	VrmlData_NodeNameUnknown = 12
+	VrmlData_NonPositiveSize = 13
+	VrmlData_ReadUnknownNode = 14
+	VrmlData_NonSupportedFeature = 15
+	VrmlData_OutputStreamUndefined = 16
+	VrmlData_NotImplemented = 17
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(VrmlData_Node)
@@ -3634,9 +3664,37 @@ VrmlData_ErrorStatus
 %extend VrmlData_IndexedFaceSet {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def GetNormal(self):
+		pass
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class VrmlData_InBuffer:
+	pass
+
+@classnotwrapped
+class VrmlData_ArrayVec3d:
+	pass
+
+@classnotwrapped
+class VrmlData_Texture:
+	pass
+
+@classnotwrapped
+class VrmlData_TextureTransform:
+	pass
+
+@classnotwrapped
+class VrmlData_Faceted:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

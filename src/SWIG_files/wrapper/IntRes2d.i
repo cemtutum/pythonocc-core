@@ -50,6 +50,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_intres2d.html"
 %import Standard.i
 %import NCollection.i
 %import gp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum IntRes2d_Position {
 	IntRes2d_Head = 0,
@@ -71,6 +76,27 @@ enum IntRes2d_TypeTrans {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class IntRes2d_Position:
+	IntRes2d_Head = 0
+	IntRes2d_Middle = 1
+	IntRes2d_End = 2
+
+class IntRes2d_Situation:
+	IntRes2d_Inside = 0
+	IntRes2d_Outside = 1
+	IntRes2d_Unknown = 2
+
+class IntRes2d_TypeTrans:
+	IntRes2d_In = 0
+	IntRes2d_Out = 1
+	IntRes2d_Touch = 2
+	IntRes2d_Undecided = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

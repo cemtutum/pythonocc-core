@@ -54,6 +54,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_convert.html"
 %import TColgp.i
 %import TColStd.i
 %import gp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Convert_ParameterisationType {
 	Convert_TgtThetaOver2 = 0,
@@ -67,6 +72,21 @@ enum Convert_ParameterisationType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Convert_ParameterisationType:
+	Convert_TgtThetaOver2 = 0
+	Convert_TgtThetaOver2_1 = 1
+	Convert_TgtThetaOver2_2 = 2
+	Convert_TgtThetaOver2_3 = 3
+	Convert_TgtThetaOver2_4 = 4
+	Convert_QuasiAngular = 5
+	Convert_RationalC1 = 6
+	Convert_Polynomial = 7
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

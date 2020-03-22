@@ -59,6 +59,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_pcdm.html"
 %import Message.i
 %import TColStd.i
 %import CDM.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum PCDM_StoreStatus {
 	PCDM_SS_OK = 0,
@@ -104,6 +109,50 @@ enum PCDM_ReaderStatus {
 
 /* end public enums declaration */
 
+/* python proy classes for enums */
+%pythoncode {
+
+class PCDM_StoreStatus:
+	PCDM_SS_OK = 0
+	PCDM_SS_DriverFailure = 1
+	PCDM_SS_WriteFailure = 2
+	PCDM_SS_Failure = 3
+	PCDM_SS_Doc_IsNull = 4
+	PCDM_SS_No_Obj = 5
+	PCDM_SS_Info_Section_Error = 6
+
+class PCDM_TypeOfFileDriver:
+	PCDM_TOFD_File = 0
+	PCDM_TOFD_CmpFile = 1
+	PCDM_TOFD_XmlFile = 2
+	PCDM_TOFD_Unknown = 3
+
+class PCDM_ReaderStatus:
+	PCDM_RS_OK = 0
+	PCDM_RS_NoDriver = 1
+	PCDM_RS_UnknownFileDriver = 2
+	PCDM_RS_OpenError = 3
+	PCDM_RS_NoVersion = 4
+	PCDM_RS_NoSchema = 5
+	PCDM_RS_NoDocument = 6
+	PCDM_RS_ExtensionFailure = 7
+	PCDM_RS_WrongStreamMode = 8
+	PCDM_RS_FormatFailure = 9
+	PCDM_RS_TypeFailure = 10
+	PCDM_RS_TypeNotFoundInSchema = 11
+	PCDM_RS_UnrecognizedFileFormat = 12
+	PCDM_RS_MakeFailure = 13
+	PCDM_RS_PermissionDenied = 14
+	PCDM_RS_DriverFailure = 15
+	PCDM_RS_AlreadyRetrievedAndModified = 16
+	PCDM_RS_AlreadyRetrieved = 17
+	PCDM_RS_UnknownDocument = 18
+	PCDM_RS_WrongResource = 19
+	PCDM_RS_ReaderException = 20
+	PCDM_RS_NoModel = 21
+};
+/* end python proxy for enums */
+
 /* handles */
 %wrap_handle(PCDM_ReadWriter)
 %wrap_handle(PCDM_Reader)
@@ -146,21 +195,6 @@ PCDM_TypeOfFileDriver
 ") FileDriverType;
 		static PCDM_TypeOfFileDriver FileDriverType(const TCollection_AsciiString & aFileName, PCDM_BaseDriverPointer & aBaseDriver);
 
-		/****************** FileDriverType ******************/
-		%feature("compactdefaultargs") FileDriverType;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theIStream: Standard_IStream
-theBaseDriver: PCDM_BaseDriverPointer
-
-Returns
--------
-PCDM_TypeOfFileDriver
-") FileDriverType;
-		static PCDM_TypeOfFileDriver FileDriverType(Standard_IStream & theIStream, PCDM_BaseDriverPointer & theBaseDriver);
-
 };
 
 
@@ -195,21 +229,6 @@ Returns
 TCollection_ExtendedString
 ") FileFormat;
 		static TCollection_ExtendedString FileFormat(const TCollection_ExtendedString & aFileName);
-
-		/****************** FileFormat ******************/
-		%feature("compactdefaultargs") FileFormat;
-		%feature("autodoc", "Tries to get a format from the stream. returns an empty string if the file could not be read or does not have a fileformat information.
-
-Parameters
-----------
-theIStream: Standard_IStream
-theData: Storage_Data
-
-Returns
--------
-TCollection_ExtendedString
-") FileFormat;
-		static TCollection_ExtendedString FileFormat(Standard_IStream & theIStream, opencascade::handle<Storage_Data> & theData);
 
 		/****************** Open ******************/
 		%feature("compactdefaultargs") Open;
@@ -452,23 +471,6 @@ None
 ") Read;
 		virtual void Read(const TCollection_ExtendedString & aFileName, const opencascade::handle<CDM_Document> & aNewDocument, const opencascade::handle<CDM_Application> & anApplication);
 
-		/****************** Read ******************/
-		%feature("compactdefaultargs") Read;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theIStream: Standard_IStream
-theStorageData: Storage_Data
-theDoc: CDM_Document
-theApplication: CDM_Application
-
-Returns
--------
-None
-") Read;
-		virtual void Read(Standard_IStream & theIStream, const opencascade::handle<Storage_Data> & theStorageData, const opencascade::handle<CDM_Document> & theDoc, const opencascade::handle<CDM_Application> & theApplication);
-
 };
 
 
@@ -631,21 +633,6 @@ Returns
 None
 ") Write;
 		virtual void Write(const opencascade::handle<CDM_Document> & aDocument, const TCollection_ExtendedString & aFileName);
-
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Write <thedocument> to theostream.
-
-Parameters
-----------
-theDocument: CDM_Document
-theOStream: Standard_OStream
-
-Returns
--------
-None
-") Write;
-		virtual void Write(const opencascade::handle<CDM_Document> & theDocument, Standard_OStream & theOStream);
 
 };
 
@@ -1009,21 +996,6 @@ None
 ") Write;
 		virtual void Write(const opencascade::handle<CDM_Document> & aDocument, const TCollection_ExtendedString & aFileName);
 
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Write <thedocument> to theostream.
-
-Parameters
-----------
-theDocument: CDM_Document
-theOStream: Standard_OStream
-
-Returns
--------
-None
-") Write;
-		virtual void Write(const opencascade::handle<CDM_Document> & theDocument, Standard_OStream & theOStream);
-
 };
 
 
@@ -1035,6 +1007,18 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class PCDM_DOMHeaderParser:
+	pass
+
+@classnotwrapped
+class PCDM_Document:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

@@ -48,6 +48,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topabs.html"
 %};
 %import Standard.i
 %import NCollection.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum TopAbs_Orientation {
 	TopAbs_FORWARD = 0,
@@ -76,6 +81,34 @@ enum TopAbs_State {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TopAbs_Orientation:
+	TopAbs_FORWARD = 0
+	TopAbs_REVERSED = 1
+	TopAbs_INTERNAL = 2
+	TopAbs_EXTERNAL = 3
+
+class TopAbs_ShapeEnum:
+	TopAbs_COMPOUND = 0
+	TopAbs_COMPSOLID = 1
+	TopAbs_SOLID = 2
+	TopAbs_SHELL = 3
+	TopAbs_FACE = 4
+	TopAbs_WIRE = 5
+	TopAbs_EDGE = 6
+	TopAbs_VERTEX = 7
+	TopAbs_SHAPE = 8
+
+class TopAbs_State:
+	TopAbs_IN = 0
+	TopAbs_OUT = 1
+	TopAbs_ON = 2
+	TopAbs_UNKNOWN = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -120,51 +153,6 @@ Returns
 TopAbs_Orientation
 ") Compose;
 		static TopAbs_Orientation Compose(const TopAbs_Orientation Or1, const TopAbs_Orientation Or2);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the name of shape type as a string on the stream.
-
-Parameters
-----------
-theShapeType: TopAbs_ShapeEnum
-theStream: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TopAbs_ShapeEnum theShapeType, Standard_OStream & theStream);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the name of the orientation as a string on the stream.
-
-Parameters
-----------
-theOrientation: TopAbs_Orientation
-theStream: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TopAbs_Orientation theOrientation, Standard_OStream & theStream);
-
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the name of the state <st> as a string on the stream <s> and returns <s>.
-
-Parameters
-----------
-St: TopAbs_State
-S: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TopAbs_State St, Standard_OStream & S);
 
 		/****************** Reverse ******************/
 		%feature("compactdefaultargs") Reverse;

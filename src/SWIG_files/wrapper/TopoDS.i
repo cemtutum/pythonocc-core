@@ -54,8 +54,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topods.html"
 %import Message.i
 %import TopAbs.i
 %import TopLoc.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TopoDS_HShape)

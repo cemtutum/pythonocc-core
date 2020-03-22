@@ -57,8 +57,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_xmlmdataxtd.html"
 %import Message.i
 %import TDF.i
 %import XmlObjMgt.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(XmlMDataXtd_AxisDriver)

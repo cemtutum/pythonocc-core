@@ -52,8 +52,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_intimppargen.html
 %import NCollection.i
 %import IntRes2d.i
 %import gp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -156,6 +166,14 @@ float
 /*****************************
 * class IntImpParGen_ImpTool *
 *****************************/
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class IntImpParGen_ImpTool:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

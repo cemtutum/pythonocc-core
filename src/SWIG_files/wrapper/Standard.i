@@ -44,6 +44,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_standard.html"
 #include<TCollection_module.hxx>
 #include<Storage_module.hxx>
 %};
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Standard_HandlerStatus {
 	Standard_HandlerVoid = 0,
@@ -52,6 +57,16 @@ enum Standard_HandlerStatus {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Standard_HandlerStatus:
+	Standard_HandlerVoid = 0
+	Standard_HandlerJumped = 1
+	Standard_HandlerProcessed = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Standard_Transient)
@@ -169,6 +184,14 @@ Standard_Address
 %extend Standard {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Free(self):
+		pass
+
+	@methodnotwrapped
+	def FreeAligned(self):
+		pass
 	}
 };
 
@@ -320,6 +343,10 @@ bool
 %extend Standard_Condition {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def getHandle(self):
+		pass
 	}
 };
 
@@ -1138,6 +1165,10 @@ None
 %extend Standard_MMgrOpt {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def SetCallBackFunction(self):
+		pass
 	}
 };
 
@@ -1429,6 +1460,42 @@ None
 /**********************
 * class Standard_Type *
 **********************/
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class Standard_AncestorIterator:
+	pass
+
+@classnotwrapped
+class Standard_Static_Assert:
+	pass
+
+@classnotwrapped
+class Standard_CLocaleSentry:
+	pass
+
+@classnotwrapped
+class Standard_Type:
+	pass
+
+@classnotwrapped
+class Standard_Failure:
+	pass
+
+@classnotwrapped
+class Standard_Mutex:
+	pass
+
+@classnotwrapped
+class Standard_ReadLineBuffer:
+	pass
+
+@classnotwrapped
+class Standard_ReadBuffer:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

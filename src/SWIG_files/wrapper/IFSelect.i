@@ -46,6 +46,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_ifselect.html"
 #include<TCollection_module.hxx>
 #include<Message_module.hxx>
 #include<MoniTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -58,6 +59,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_ifselect.html"
 %import TCollection.i
 %import Message.i
 %import MoniTool.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum IFSelect_PrintFail {
 	IFSelect_FailOnly = 0,
@@ -101,6 +107,47 @@ enum IFSelect_PrintCount {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class IFSelect_PrintFail:
+	IFSelect_FailOnly = 0
+	IFSelect_FailAndWarn = 1
+
+class IFSelect_RemainMode:
+	IFSelect_RemainForget = 0
+	IFSelect_RemainCompute = 1
+	IFSelect_RemainDisplay = 2
+	IFSelect_RemainUndo = 3
+
+class IFSelect_EditValue:
+	IFSelect_Optional = 0
+	IFSelect_Editable = 1
+	IFSelect_EditProtected = 2
+	IFSelect_EditComputed = 3
+	IFSelect_EditRead = 4
+	IFSelect_EditDynamic = 5
+
+class IFSelect_ReturnStatus:
+	IFSelect_RetVoid = 0
+	IFSelect_RetDone = 1
+	IFSelect_RetError = 2
+	IFSelect_RetFail = 3
+	IFSelect_RetStop = 4
+
+class IFSelect_PrintCount:
+	IFSelect_ItemsByEntity = 0
+	IFSelect_CountByItem = 1
+	IFSelect_ShortByItem = 2
+	IFSelect_ListByItem = 3
+	IFSelect_EntitiesByItem = 4
+	IFSelect_CountSummary = 5
+	IFSelect_GeneralInfo = 6
+	IFSelect_Mapping = 7
+	IFSelect_ResultCount = 8
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(IFSelect_Activator)
@@ -923,6 +970,10 @@ opencascade::handle<Standard_Transient>
 %extend IFSelect_ContextModif {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Search(self):
+		pass
 	}
 };
 
@@ -1954,6 +2005,21 @@ None
 ") SetModel;
 		void SetModel(const opencascade::handle<Interface_InterfaceModel> & model);
 
+		/****************** Touch ******************/
+		%feature("compactdefaultargs") Touch;
+		%feature("autodoc", "Gives a new value computed by the editor, if another parameter commands the value of <num> it is generally the case for a computed parameter for instance increments the counter of touched parameters warning : it gives no protection for readonly etc... while it is the internal way of touching parameters does not work (returns false) if <num> is for a list.
+
+Parameters
+----------
+num: int
+newval: TCollection_HAsciiString
+
+Returns
+-------
+bool
+") Touch;
+		Standard_Boolean Touch(const Standard_Integer num, const opencascade::handle<TCollection_HAsciiString> & newval);
+
 		/****************** TouchList ******************/
 		%feature("compactdefaultargs") TouchList;
 		%feature("autodoc", "Acts as touch but for a list does not work (returns false) if <num> is for a single param.
@@ -1987,6 +2053,10 @@ bool
 %extend IFSelect_EditForm {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def NbTouched(self):
+		pass
 	}
 };
 
@@ -2603,6 +2673,10 @@ int
 %extend IFSelect_IntParam {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def StaticName(self):
+		pass
 	}
 };
 
@@ -7683,6 +7757,10 @@ IFSelect_ReturnStatus
 %extend IFSelect_WorkSession {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def theerrhand(self):
+		pass
 	}
 };
 

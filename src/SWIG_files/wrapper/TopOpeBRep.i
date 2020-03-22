@@ -95,6 +95,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topopebrep.html"
 %import TopTools.i
 %import Geom2d.i
 %import Geom.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum TopOpeBRep_P2Dstatus {
 	TopOpeBRep_P2DUNK = 0,
@@ -117,6 +122,29 @@ enum TopOpeBRep_TypeLineCurve {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class TopOpeBRep_P2Dstatus:
+	TopOpeBRep_P2DUNK = 0
+	TopOpeBRep_P2DINT = 1
+	TopOpeBRep_P2DSGF = 2
+	TopOpeBRep_P2DSGL = 3
+	TopOpeBRep_P2DNEW = 4
+
+class TopOpeBRep_TypeLineCurve:
+	TopOpeBRep_ANALYTIC = 0
+	TopOpeBRep_RESTRICTION = 1
+	TopOpeBRep_WALKING = 2
+	TopOpeBRep_LINE = 3
+	TopOpeBRep_CIRCLE = 4
+	TopOpeBRep_ELLIPSE = 5
+	TopOpeBRep_PARABOLA = 6
+	TopOpeBRep_HYPERBOLA = 7
+	TopOpeBRep_OTHERTYPE = 8
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(TopOpeBRep_FFDumper)
@@ -226,21 +254,6 @@ typedef NCollection_Array1<TopOpeBRep_VPointInter> TopOpeBRep_Array1OfVPointInte
 %rename(topopebrep) TopOpeBRep;
 class TopOpeBRep {
 	public:
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints the name of <tlc> as a string on the stream <s> and returns <s>.
-
-Parameters
-----------
-TLC: TopOpeBRep_TypeLineCurve
-OS: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Print;
-		static Standard_OStream & Print(const TopOpeBRep_TypeLineCurve TLC, Standard_OStream & OS);
-
 };
 
 
@@ -1064,6 +1077,10 @@ None
 %extend TopOpeBRep_EdgesIntersector {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Tolerance2(self):
+		pass
 	}
 };
 
@@ -2256,6 +2273,10 @@ None
 %extend TopOpeBRep_FacesFiller {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def EqualpP(self):
+		pass
 	}
 };
 
@@ -2595,6 +2616,10 @@ None
 %extend TopOpeBRep_GeomTool {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def MakePrivateCurves(self):
+		pass
 	}
 };
 
@@ -4528,38 +4553,6 @@ None
 ") ChangeKeep;
 		void ChangeKeep(const Standard_Boolean keep);
 
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-I: int
-F: TopoDS_Face
-OS: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Dump;
-		Standard_OStream & Dump(const Standard_Integer I, const TopoDS_Face & F, Standard_OStream & OS);
-
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-F1: TopoDS_Face
-F2: TopoDS_Face
-OS: Standard_OStream
-
-Returns
--------
-Standard_OStream
-") Dump;
-		Standard_OStream & Dump(const TopoDS_Face & F1, const TopoDS_Face & F2, Standard_OStream & OS);
-
 		/****************** Edge ******************/
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Get the edge of shape i (1,2) containing the point. returned shape is null if the vpoint is not on an edge of shape i (1,2).
@@ -5490,6 +5483,14 @@ None
 /*****************************
 * class TopOpeBRep_traceSIFF *
 *****************************/
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class TopOpeBRep_traceSIFF:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 class TopOpeBRep_HArray1OfVPointInter : public  TopOpeBRep_Array1OfVPointInter, public Standard_Transient {
   public:

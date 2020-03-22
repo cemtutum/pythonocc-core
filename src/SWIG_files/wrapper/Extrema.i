@@ -51,6 +51,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_extrema.html"
 #include<Geom_module.hxx>
 #include<GeomAdaptor_module.hxx>
 #include<Precision_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -67,6 +68,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_extrema.html"
 %import TColStd.i
 %import Geom.i
 %import GeomAdaptor.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Extrema_ExtAlgo {
 	Extrema_ExtAlgo_Grad = 0,
@@ -87,6 +93,26 @@ enum Extrema_ElementType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Extrema_ExtAlgo:
+	Extrema_ExtAlgo_Grad = 0
+	Extrema_ExtAlgo_Tree = 1
+
+class Extrema_ExtFlag:
+	Extrema_ExtFlag_MIN = 0
+	Extrema_ExtFlag_MAX = 1
+	Extrema_ExtFlag_MINMAX = 2
+
+class Extrema_ElementType:
+	Extrema_Node = 0
+	Extrema_UIsoEdge = 1
+	Extrema_VIsoEdge = 2
+	Extrema_Face = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Extrema_ExtPExtS)

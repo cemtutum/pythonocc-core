@@ -65,6 +65,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_binldrivers.html"
 %import PCDM.i
 %import CDM.i
 %import Storage.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BinLDrivers_Marker {
 	BinLDrivers_ENDATTRLIST = - 1,
@@ -72,6 +77,15 @@ enum BinLDrivers_Marker {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BinLDrivers_Marker:
+	BinLDrivers_ENDATTRLIST = - 1
+	BinLDrivers_ENDLABEL = - 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BinLDrivers_DocumentRetrievalDriver)
@@ -208,23 +222,6 @@ None
 ") Read;
 		virtual void Read(const TCollection_ExtendedString & theFileName, const opencascade::handle<CDM_Document> & theNewDocument, const opencascade::handle<CDM_Application> & theApplication);
 
-		/****************** Read ******************/
-		%feature("compactdefaultargs") Read;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theIStream: Standard_IStream
-theStorageData: Storage_Data
-theDoc: CDM_Document
-theApplication: CDM_Application
-
-Returns
--------
-None
-") Read;
-		virtual void Read(Standard_IStream & theIStream, const opencascade::handle<Storage_Data> & theStorageData, const opencascade::handle<CDM_Document> & theDoc, const opencascade::handle<CDM_Application> & theApplication);
-
 };
 
 
@@ -306,22 +303,6 @@ uint64_t
 ") Offset;
 		uint64_t Offset();
 
-		/****************** ReadTOC ******************/
-		%feature("compactdefaultargs") ReadTOC;
-		%feature("autodoc", "Fill a documentsection instance from the data that are read from toc.
-
-Parameters
-----------
-theSection: BinLDrivers_DocumentSection
-theIS: Standard_IStream
-theDocFormatVersion: int
-
-Returns
--------
-None
-") ReadTOC;
-		static void ReadTOC(BinLDrivers_DocumentSection & theSection, Standard_IStream & theIS, const Standard_Integer theDocFormatVersion);
-
 		/****************** SetLength ******************/
 		%feature("compactdefaultargs") SetLength;
 		%feature("autodoc", "Set the length of the section in the persistent file.
@@ -349,21 +330,6 @@ Returns
 None
 ") SetOffset;
 		void SetOffset(const uint64_t theOffset);
-
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Save offset and length data into the section entry in the document toc (list of sections).
-
-Parameters
-----------
-theOS: Standard_OStream
-theOffset: uint64_t
-
-Returns
--------
-None
-") Write;
-		void Write(Standard_OStream & theOS, const uint64_t theOffset);
 
 
         %feature("autodoc", "1");
@@ -441,21 +407,6 @@ Returns
 None
 ") Write;
 		virtual void Write(const opencascade::handle<CDM_Document> & theDocument, const TCollection_ExtendedString & theFileName);
-
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Write <thedocument> to theostream.
-
-Parameters
-----------
-theDocument: CDM_Document
-theOStream: Standard_OStream
-
-Returns
--------
-None
-") Write;
-		virtual void Write(const opencascade::handle<CDM_Document> & theDocument, Standard_OStream & theOStream);
 
 };
 

@@ -62,6 +62,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geomint.html"
 #include<Adaptor2d_module.hxx>
 #include<GeomAdaptor_module.hxx>
 #include<Adaptor3d_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -85,8 +86,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geomint.html"
 %import ApproxInt.i
 %import IntSurf.i
 %import TColgp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -1224,6 +1235,14 @@ None
 %extend GeomInt_IntSS {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def TolFixTangents(self):
+		pass
+
+	@methodnotwrapped
+	def SetTolFixTangents(self):
+		pass
 	}
 };
 
@@ -2889,6 +2908,10 @@ bool
 %extend GeomInt_ResConstraintOfMyGradientOfTheComputeLineBezierOfWLApprox {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Error(self):
+		pass
 	}
 };
 
@@ -2982,6 +3005,10 @@ bool
 %extend GeomInt_ResConstraintOfMyGradientbisOfTheComputeLineOfWLApprox {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Error(self):
+		pass
 	}
 };
 
@@ -4034,6 +4061,10 @@ bool
 %extend GeomInt_TheImpPrmSvSurfacesOfWLApprox {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def FillInitialVectorOfSolution(self):
+		pass
 	}
 };
 
@@ -5141,6 +5172,14 @@ bool
 /*************************
 * class GeomInt_WLApprox *
 *************************/
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class GeomInt_WLApprox:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

@@ -50,6 +50,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_lprop.html"
 %import Standard.i
 %import NCollection.i
 %import GeomAbs.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum LProp_Status {
 	LProp_Undecided = 0,
@@ -65,6 +70,22 @@ enum LProp_CIType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class LProp_Status:
+	LProp_Undecided = 0
+	LProp_Undefined = 1
+	LProp_Defined = 2
+	LProp_Computed = 3
+
+class LProp_CIType:
+	LProp_Inflection = 0
+	LProp_MinCur = 1
+	LProp_MaxCur = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

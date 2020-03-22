@@ -45,6 +45,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_advapprox.html"
 #include<GeomAbs_module.hxx>
 #include<TColgp_module.hxx>
 #include<PLib_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -56,8 +57,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_advapprox.html"
 %import GeomAbs.i
 %import TColgp.i
 %import PLib.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -713,6 +724,14 @@ bool
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class AdvApprox_EvaluatorFunction:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

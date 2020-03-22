@@ -78,8 +78,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_boptools.html"
 %import Geom.i
 %import Geom2d.i
 %import BRepAdaptor.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -1111,6 +1121,46 @@ None
 ") BuildPCurveForEdgeOnFace;
 		static void BuildPCurveForEdgeOnFace(const TopoDS_Edge & aE, const TopoDS_Face & aF, const opencascade::handle<IntTools_Context> & theContext = opencascade::handle<IntTools_Context>());
 
+		/****************** CurveOnSurface ******************/
+		%feature("compactdefaultargs") CurveOnSurface;
+		%feature("autodoc", "Get p-curve <ac> for the edge <ae> on surface <af> . if the p-curve does not exist, build it using make2d(). [atoler] - reached tolerance raises exception standard_constructionerror if algorithm make2d() fails. <thecontext> - storage for caching the geometrical tools.
+
+Parameters
+----------
+aE: TopoDS_Edge
+aF: TopoDS_Face
+aC: Geom2d_Curve
+aToler: float
+theContext: IntTools_Context,optional
+	default value is opencascade::handle<IntTools_Context>()
+
+Returns
+-------
+None
+") CurveOnSurface;
+		static void CurveOnSurface(const TopoDS_Edge & aE, const TopoDS_Face & aF, opencascade::handle<Geom2d_Curve> & aC, Standard_Real &OutValue, const opencascade::handle<IntTools_Context> & theContext = opencascade::handle<IntTools_Context>());
+
+		/****************** CurveOnSurface ******************/
+		%feature("compactdefaultargs") CurveOnSurface;
+		%feature("autodoc", "Get p-curve <ac> for the edge <ae> on surface <af> . if the p-curve does not exist, build it using make2d(). [afirst, alast] - range of the p-curve [atoler] - reached tolerance raises exception standard_constructionerror if algorithm make2d() fails. <thecontext> - storage for caching the geometrical tools.
+
+Parameters
+----------
+aE: TopoDS_Edge
+aF: TopoDS_Face
+aC: Geom2d_Curve
+aFirst: float
+aLast: float
+aToler: float
+theContext: IntTools_Context,optional
+	default value is opencascade::handle<IntTools_Context>()
+
+Returns
+-------
+None
+") CurveOnSurface;
+		static void CurveOnSurface(const TopoDS_Edge & aE, const TopoDS_Face & aF, opencascade::handle<Geom2d_Curve> & aC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const opencascade::handle<IntTools_Context> & theContext = opencascade::handle<IntTools_Context>());
+
 		/****************** EdgeTangent ******************/
 		%feature("compactdefaultargs") EdgeTangent;
 		%feature("autodoc", "Compute tangent for the edge <ae> [in 3d] at parameter <at>.
@@ -1294,6 +1344,10 @@ None
 %extend BOPTools_AlgoTools2D {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def MakeCurveOnSurface(self):
+		pass
 	}
 };
 
@@ -1977,6 +2031,26 @@ bool
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class BOPTools_Parallel:
+	pass
+
+@classnotwrapped
+class BOPTools_BoxSelector:
+	pass
+
+@classnotwrapped
+class BOPTools_BoxSet:
+	pass
+
+@classnotwrapped
+class BOPTools_PairSelector:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

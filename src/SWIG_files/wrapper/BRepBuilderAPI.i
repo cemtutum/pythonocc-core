@@ -70,6 +70,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepbuilderapi.ht
 %import TColStd.i
 %import Bnd.i
 %import Geom2d.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BRepBuilderAPI_ShapeModification {
 	BRepBuilderAPI_Preserved = 0,
@@ -125,6 +130,57 @@ enum BRepBuilderAPI_ShellError {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BRepBuilderAPI_ShapeModification:
+	BRepBuilderAPI_Preserved = 0
+	BRepBuilderAPI_Deleted = 1
+	BRepBuilderAPI_Trimmed = 2
+	BRepBuilderAPI_Merged = 3
+	BRepBuilderAPI_BoundaryModified = 4
+
+class BRepBuilderAPI_WireError:
+	BRepBuilderAPI_WireDone = 0
+	BRepBuilderAPI_EmptyWire = 1
+	BRepBuilderAPI_DisconnectedWire = 2
+	BRepBuilderAPI_NonManifoldWire = 3
+
+class BRepBuilderAPI_EdgeError:
+	BRepBuilderAPI_EdgeDone = 0
+	BRepBuilderAPI_PointProjectionFailed = 1
+	BRepBuilderAPI_ParameterOutOfRange = 2
+	BRepBuilderAPI_DifferentPointsOnClosedCurve = 3
+	BRepBuilderAPI_PointWithInfiniteParameter = 4
+	BRepBuilderAPI_DifferentsPointAndParameter = 5
+	BRepBuilderAPI_LineThroughIdenticPoints = 6
+
+class BRepBuilderAPI_PipeError:
+	BRepBuilderAPI_PipeDone = 0
+	BRepBuilderAPI_PipeNotDone = 1
+	BRepBuilderAPI_PlaneNotIntersectGuide = 2
+	BRepBuilderAPI_ImpossibleContact = 3
+
+class BRepBuilderAPI_TransitionMode:
+	BRepBuilderAPI_Transformed = 0
+	BRepBuilderAPI_RightCorner = 1
+	BRepBuilderAPI_RoundCorner = 2
+
+class BRepBuilderAPI_FaceError:
+	BRepBuilderAPI_FaceDone = 0
+	BRepBuilderAPI_NoFace = 1
+	BRepBuilderAPI_NotPlanar = 2
+	BRepBuilderAPI_CurveProjectionFailed = 3
+	BRepBuilderAPI_ParametersOutOfRange = 4
+
+class BRepBuilderAPI_ShellError:
+	BRepBuilderAPI_ShellDone = 0
+	BRepBuilderAPI_EmptyShell = 1
+	BRepBuilderAPI_DisconnectedShell = 2
+	BRepBuilderAPI_ShellParametersOutOfRange = 3
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BRepBuilderAPI_FastSewing)
@@ -367,6 +423,22 @@ enum FS_Statuses {
 
 /* end public enums declaration */
 
+/* python proy classes for enums */
+%pythoncode {
+
+class FS_Statuses:
+	FS_OK = 0
+	FS_Degenerated = 1
+	FS_FindVertexError = 2
+	FS_FindEdgeError = 4
+	FS_FaceWithNullSurface = 8
+	FS_NotNaturalBoundsFace = 16
+	FS_InfiniteSurface = 32
+	FS_EmptyInput = 64
+	FS_Exception = 128
+};
+/* end python proxy for enums */
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds faces of a shape.
@@ -462,6 +534,10 @@ None
 %extend BRepBuilderAPI_FastSewing {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def GetStatuses(self):
+		pass
 	}
 };
 

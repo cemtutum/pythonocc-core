@@ -71,6 +71,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stdprs.html"
 #include<V3d_module.hxx>
 #include<SelectMgr_module.hxx>
 #include<Select3D_module.hxx>
+#include<Media_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -95,6 +96,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stdprs.html"
 %import GeomAbs.i
 %import TopAbs.i
 %import Adaptor2d.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum StdPrs_Volume {
 	StdPrs_Volume_Autodetection = 0,
@@ -103,6 +109,16 @@ enum StdPrs_Volume {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class StdPrs_Volume:
+	StdPrs_Volume_Autodetection = 0
+	StdPrs_Volume_Closed = 1
+	StdPrs_Volume_Opened = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -1915,6 +1931,14 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class StdPrs_DeflectionCurve:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

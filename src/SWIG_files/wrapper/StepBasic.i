@@ -50,6 +50,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepbasic.html"
 #include<StepBasic_module.hxx>
 #include<Message_module.hxx>
 #include<Interface_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -61,6 +62,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepbasic.html"
 %import StepData.i
 %import TColStd.i
 %import Interface.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum StepBasic_Source {
 	StepBasic_sMade = 0,
@@ -125,6 +131,69 @@ enum StepBasic_SiPrefix {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class StepBasic_Source:
+	StepBasic_sMade = 0
+	StepBasic_sBought = 1
+	StepBasic_sNotKnown = 2
+
+class StepBasic_AheadOrBehind:
+	StepBasic_aobAhead = 0
+	StepBasic_aobExact = 1
+	StepBasic_aobBehind = 2
+
+class StepBasic_SiUnitName:
+	StepBasic_sunMetre = 0
+	StepBasic_sunGram = 1
+	StepBasic_sunSecond = 2
+	StepBasic_sunAmpere = 3
+	StepBasic_sunKelvin = 4
+	StepBasic_sunMole = 5
+	StepBasic_sunCandela = 6
+	StepBasic_sunRadian = 7
+	StepBasic_sunSteradian = 8
+	StepBasic_sunHertz = 9
+	StepBasic_sunNewton = 10
+	StepBasic_sunPascal = 11
+	StepBasic_sunJoule = 12
+	StepBasic_sunWatt = 13
+	StepBasic_sunCoulomb = 14
+	StepBasic_sunVolt = 15
+	StepBasic_sunFarad = 16
+	StepBasic_sunOhm = 17
+	StepBasic_sunSiemens = 18
+	StepBasic_sunWeber = 19
+	StepBasic_sunTesla = 20
+	StepBasic_sunHenry = 21
+	StepBasic_sunDegreeCelsius = 22
+	StepBasic_sunLumen = 23
+	StepBasic_sunLux = 24
+	StepBasic_sunBecquerel = 25
+	StepBasic_sunGray = 26
+	StepBasic_sunSievert = 27
+
+class StepBasic_SiPrefix:
+	StepBasic_spExa = 0
+	StepBasic_spPeta = 1
+	StepBasic_spTera = 2
+	StepBasic_spGiga = 3
+	StepBasic_spMega = 4
+	StepBasic_spKilo = 5
+	StepBasic_spHecto = 6
+	StepBasic_spDeca = 7
+	StepBasic_spDeci = 8
+	StepBasic_spCenti = 9
+	StepBasic_spMilli = 10
+	StepBasic_spMicro = 11
+	StepBasic_spNano = 12
+	StepBasic_spPico = 13
+	StepBasic_spFemto = 14
+	StepBasic_spAtto = 15
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(StepBasic_Action)

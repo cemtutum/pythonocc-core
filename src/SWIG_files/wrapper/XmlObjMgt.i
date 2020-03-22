@@ -58,8 +58,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_xmlobjmgt.html"
 %import gp.i
 %import TColStd.i
 %import Storage.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

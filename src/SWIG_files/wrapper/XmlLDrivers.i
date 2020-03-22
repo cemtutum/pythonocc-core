@@ -65,8 +65,18 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_xmlldrivers.html"
 %import PCDM.i
 %import CDM.i
 %import Storage.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(XmlLDrivers_DocumentRetrievalDriver)
@@ -203,23 +213,6 @@ None
 ") Read;
 		virtual void Read(const TCollection_ExtendedString & theFileName, const opencascade::handle<CDM_Document> & theNewDocument, const opencascade::handle<CDM_Application> & theApplication);
 
-		/****************** Read ******************/
-		%feature("compactdefaultargs") Read;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theIStream: Standard_IStream
-theStorageData: Storage_Data
-theDoc: CDM_Document
-theApplication: CDM_Application
-
-Returns
--------
-None
-") Read;
-		virtual void Read(Standard_IStream & theIStream, const opencascade::handle<Storage_Data> & theStorageData, const opencascade::handle<CDM_Document> & theDoc, const opencascade::handle<CDM_Application> & theApplication);
-
 		/****************** XmlLDrivers_DocumentRetrievalDriver ******************/
 		%feature("compactdefaultargs") XmlLDrivers_DocumentRetrievalDriver;
 		%feature("autodoc", "No available documentation.
@@ -274,21 +267,6 @@ Returns
 None
 ") Write;
 		virtual void Write(const opencascade::handle<CDM_Document> & theDocument, const TCollection_ExtendedString & theFileName);
-
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theDocument: CDM_Document
-theOStream: Standard_OStream
-
-Returns
--------
-None
-") Write;
-		virtual void Write(const opencascade::handle<CDM_Document> & theDocument, Standard_OStream & theOStream);
 
 		/****************** XmlLDrivers_DocumentStorageDriver ******************/
 		%feature("compactdefaultargs") XmlLDrivers_DocumentStorageDriver;

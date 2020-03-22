@@ -56,6 +56,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_math.html"
 %import TColStd.i
 %import Message.i
 %import gp.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum math_Status {
 	math_OK = 0,
@@ -66,6 +71,18 @@ enum math_Status {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class math_Status:
+	math_OK = 0
+	math_TooManyIterations = 1
+	math_FunctionError = 2
+	math_DirectionSearchError = 3
+	math_NotBracketed = 4
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */
@@ -2999,6 +3016,10 @@ None
 %extend math_GlobOptMin {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def isDone(self):
+		pass
 	}
 };
 
@@ -5091,6 +5112,10 @@ None
 %extend math_NewtonFunctionSetRoot {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def StateNumber(self):
+		pass
 	}
 };
 
@@ -5263,6 +5288,10 @@ None
 %extend math_NewtonMinimum {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def IsConvex(self):
+		pass
 	}
 };
 
@@ -7020,6 +7049,14 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class math_SingleTab:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

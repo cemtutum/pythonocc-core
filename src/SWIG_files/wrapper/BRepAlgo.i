@@ -85,6 +85,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepalgo.html"
 %import Adaptor3d.i
 %import gp.i
 %import Geom.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BRepAlgo_CheckStatus {
 	BRepAlgo_OK = 0,
@@ -92,6 +97,15 @@ enum BRepAlgo_CheckStatus {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BRepAlgo_CheckStatus:
+	BRepAlgo_OK = 0
+	BRepAlgo_NOK = 1
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BRepAlgo_AsDes)

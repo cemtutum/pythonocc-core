@@ -45,6 +45,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_cslib.html"
 #include<gp_module.hxx>
 #include<math_module.hxx>
 #include<TColStd_module.hxx>
+#include<Message_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -56,6 +57,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_cslib.html"
 %import gp.i
 %import math.i
 %import TColStd.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum CSLib_NormalStatus {
 	CSLib_Singular = 0,
@@ -80,6 +86,31 @@ enum CSLib_DerivativeStatus {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class CSLib_NormalStatus:
+	CSLib_Singular = 0
+	CSLib_Defined = 1
+	CSLib_InfinityOfSolutions = 2
+	CSLib_D1NuIsNull = 3
+	CSLib_D1NvIsNull = 4
+	CSLib_D1NIsNull = 5
+	CSLib_D1NuNvRatioIsNull = 6
+	CSLib_D1NvNuRatioIsNull = 7
+	CSLib_D1NuIsParallelD1Nv = 8
+
+class CSLib_DerivativeStatus:
+	CSLib_Done = 0
+	CSLib_D1uIsNull = 1
+	CSLib_D1vIsNull = 2
+	CSLib_D1IsNull = 3
+	CSLib_D1uD1vRatioIsNull = 4
+	CSLib_D1vD1uRatioIsNull = 5
+	CSLib_D1uIsParallelD1v = 6
+};
+/* end python proxy for enums */
 
 /* handles */
 /* end handles declaration */

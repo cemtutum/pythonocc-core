@@ -65,6 +65,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepextrema.html"
 %import gp.i
 %import Bnd.i
 %import BVH.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BRepExtrema_SupportType {
 	BRepExtrema_IsVertex = 0,
@@ -73,6 +78,16 @@ enum BRepExtrema_SupportType {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BRepExtrema_SupportType:
+	BRepExtrema_IsVertex = 0
+	BRepExtrema_IsOnEdge = 1
+	BRepExtrema_IsInFace = 2
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BRepExtrema_TriangleSet)
@@ -579,6 +594,16 @@ enum FilterResult {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class FilterResult:
+	NoCheck = 0
+	Overlap = 1
+	DoCheck = 2
+};
+/* end python proxy for enums */
 
 		/****************** PreCheckElements ******************/
 		%feature("compactdefaultargs") PreCheckElements;
@@ -2134,9 +2159,21 @@ float
 %extend BRepExtrema_SelfIntersection {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def OverlapTriangles(self):
+		pass
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class BRepExtrema_OverlapTool:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

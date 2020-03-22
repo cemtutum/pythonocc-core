@@ -61,6 +61,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stdselect.html"
 #include<TopTools_module.hxx>
 #include<Quantity_module.hxx>
 #include<TopTools_module.hxx>
+#include<Message_module.hxx>
+#include<Media_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -81,6 +83,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stdselect.html"
 %import gp.i
 %import TColgp.i
 %import Image.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum StdSelect_TypeOfResult {
 	StdSelect_TOR_SIMPLE = 0,
@@ -125,6 +132,47 @@ enum StdSelect_TypeOfSelectionImage {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class StdSelect_TypeOfResult:
+	StdSelect_TOR_SIMPLE = 0
+	StdSelect_TOR_MULTIPLE = 1
+
+class StdSelect_SensitivityMode:
+	StdSelect_SM_WINDOW = 0
+	StdSelect_SM_VIEW = 1
+
+class StdSelect_TypeOfFace:
+	StdSelect_AnyFace = 0
+	StdSelect_Plane = 1
+	StdSelect_Cylinder = 2
+	StdSelect_Sphere = 3
+	StdSelect_Torus = 4
+	StdSelect_Revol = 5
+	StdSelect_Cone = 6
+
+class StdSelect_TypeOfEdge:
+	StdSelect_AnyEdge = 0
+	StdSelect_Line = 1
+	StdSelect_Circle = 2
+
+class StdSelect_DisplayMode:
+	StdSelect_DM_Wireframe = 0
+	StdSelect_DM_Shading = 1
+	StdSelect_DM_HLR = 2
+
+class StdSelect_TypeOfSelectionImage:
+	StdSelect_TypeOfSelectionImage_NormalizedDepth = 0
+	StdSelect_TypeOfSelectionImage_NormalizedDepthInverted = 1
+	StdSelect_TypeOfSelectionImage_UnnormalizedDepth = 2
+	StdSelect_TypeOfSelectionImage_ColoredDetectedObject = 3
+	StdSelect_TypeOfSelectionImage_ColoredEntity = 4
+	StdSelect_TypeOfSelectionImage_ColoredOwner = 5
+	StdSelect_TypeOfSelectionImage_ColoredSelectionMode = 6
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(StdSelect_BRepOwner)

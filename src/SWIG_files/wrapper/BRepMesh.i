@@ -88,6 +88,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepmesh.html"
 %import Geom2d.i
 %import Geom.i
 %import IMeshData.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum BRepMesh_FactoryError {
 	BRepMesh_FE_NOERROR = 0,
@@ -107,6 +112,26 @@ enum BRepMesh_DegreeOfFreedom {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class BRepMesh_FactoryError:
+	BRepMesh_FE_NOERROR = 0
+	BRepMesh_FE_LIBRARYNOTFOUND = 1
+	BRepMesh_FE_FUNCTIONNOTFOUND = 2
+	BRepMesh_FE_CANNOTCREATEALGO = 3
+
+class BRepMesh_DegreeOfFreedom:
+	BRepMesh_Free = 0
+	BRepMesh_InVolume = 1
+	BRepMesh_OnSurface = 2
+	BRepMesh_OnCurve = 3
+	BRepMesh_Fixed = 4
+	BRepMesh_Frontier = 5
+	BRepMesh_Deleted = 6
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(BRepMesh_Classifier)
@@ -1440,6 +1465,22 @@ bool
 %extend BRepMesh_Delaun {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Frontier(self):
+		pass
+
+	@methodnotwrapped
+	def InternalEdges(self):
+		pass
+
+	@methodnotwrapped
+	def FreeEdges(self):
+		pass
+
+	@methodnotwrapped
+	def ProcessConstraints(self):
+		pass
 	}
 };
 
@@ -1827,6 +1868,19 @@ enum IntFlag {
 
 /* end public enums declaration */
 
+/* python proy classes for enums */
+%pythoncode {
+
+class IntFlag:
+	NoIntersection = 0
+	Cross = 1
+	EndPointTouch = 2
+	PointOnSegment = 3
+	Glued = 4
+	Same = 5
+};
+/* end python proxy for enums */
+
 		/****************** AddPoint ******************/
 		%feature("compactdefaultargs") AddPoint;
 		%feature("autodoc", "Adds point to already calculated points (or replaces existing). @param thepoint point to be added. @param theparam parameter on the curve corresponding to the given point. @param theisreplace if true replaces existing point lying within parameteric tolerance of the given point. returns index of new added point or found with parametric tolerance.
@@ -1975,6 +2029,18 @@ bool
 %extend BRepMesh_GeomTool {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def IntLinLin(self):
+		pass
+
+	@methodnotwrapped
+	def Normal(self):
+		pass
+
+	@methodnotwrapped
+	def IntSegSeg(self):
+		pass
 	}
 };
 
@@ -2182,6 +2248,14 @@ None
 %extend BRepMesh_MeshTool {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def DumpTriangles(self):
+		pass
+
+	@methodnotwrapped
+	def EraseTriangles(self):
+		pass
 	}
 };
 
@@ -4083,6 +4157,54 @@ None
 	}
 };
 
+/* python proxy for excluded classes */
+%pythoncode {
+@classnotwrapped
+class BRepMesh_WireInterferenceChecker:
+	pass
+
+@classnotwrapped
+class BRepMesh_EdgeTessellator:
+	pass
+
+@classnotwrapped
+class BRepMesh_EdgeTessellationExtractor:
+	pass
+
+@classnotwrapped
+class BRepMesh_EdgeParameterProvider:
+	pass
+
+@classnotwrapped
+class BRepMesh_FastDiscret:
+	pass
+
+@classnotwrapped
+class BRepMesh_CustomDelaunayBaseMeshAlgo:
+	pass
+
+@classnotwrapped
+class BRepMesh_NodeInsertionMeshAlgo:
+	pass
+
+@classnotwrapped
+class BRepMesh_ConstrainedBaseMeshAlgo:
+	pass
+
+@classnotwrapped
+class BRepMesh_CustomBaseMeshAlgo:
+	pass
+
+@classnotwrapped
+class BRepMesh_DelaunayDeflectionControlMeshAlgo:
+	pass
+
+@classnotwrapped
+class BRepMesh_DelaunayNodeInsertionMeshAlgo:
+	pass
+
+}
+/* end python proxy for excluded classes */
 /* harray1 classes */
 /* harray2 classes */
 /* hsequence classes */

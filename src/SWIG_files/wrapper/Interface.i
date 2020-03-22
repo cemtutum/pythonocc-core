@@ -45,6 +45,7 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_interface.html"
 #include<TColStd_module.hxx>
 #include<Message_module.hxx>
 #include<MoniTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
 #include<TCollection_module.hxx>
@@ -56,6 +57,11 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_interface.html"
 %import TColStd.i
 %import Message.i
 %import MoniTool.i
+
+%pythoncode {
+from OCC.Core.Exception import *
+};
+
 /* public enums */
 enum Interface_ParamType {
 	Interface_ParamMisc = 0,
@@ -91,6 +97,41 @@ enum Interface_CheckStatus {
 };
 
 /* end public enums declaration */
+
+/* python proy classes for enums */
+%pythoncode {
+
+class Interface_ParamType:
+	Interface_ParamMisc = 0
+	Interface_ParamInteger = 1
+	Interface_ParamReal = 2
+	Interface_ParamIdent = 3
+	Interface_ParamVoid = 4
+	Interface_ParamText = 5
+	Interface_ParamEnum = 6
+	Interface_ParamLogical = 7
+	Interface_ParamSub = 8
+	Interface_ParamHexa = 9
+	Interface_ParamBinary = 10
+
+class Interface_DataState:
+	Interface_StateOK = 0
+	Interface_LoadWarning = 1
+	Interface_LoadFail = 2
+	Interface_DataWarning = 3
+	Interface_DataFail = 4
+	Interface_StateUnloaded = 5
+	Interface_StateUnknown = 6
+
+class Interface_CheckStatus:
+	Interface_CheckOK = 0
+	Interface_CheckWarning = 1
+	Interface_CheckFail = 2
+	Interface_CheckAny = 3
+	Interface_CheckMessage = 4
+	Interface_CheckNoFail = 5
+};
+/* end python proxy for enums */
 
 /* handles */
 %wrap_handle(Interface_Check)
@@ -6719,24 +6760,6 @@ bool
 ") NDate;
 		static Standard_Boolean NDate(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
-		/****************** Print ******************/
-		%feature("compactdefaultargs") Print;
-		%feature("autodoc", "Prints a string on an output stream, as follows : accompagned with blanks, to give up to <max> charis at all, justified according just : -1 (d) : left 0 : center 1 : right maximum 76 characters.
-
-Parameters
-----------
-S: Standard_OStream
-val: char *
-max: int
-just: int,optional
-	default value is -1
-
-Returns
--------
-None
-") Print;
-		static void Print(Standard_OStream & S, const char * val, const Standard_Integer max, const Standard_Integer just = -1);
-
 
         %feature("autodoc", "1");
         %extend{
@@ -6856,22 +6879,6 @@ Returns
 char *
 ") Value;
 		const char * Value();
-
-		/****************** Write ******************/
-		%feature("compactdefaultargs") Write;
-		%feature("autodoc", "Writes the list of messages recorded to be translated, to a stream. writes all the list (default) or only keys which begin by <rootkey>. returns the count of written messages.
-
-Parameters
-----------
-S: Standard_OStream
-rootkey: char *,optional
-	default value is ""
-
-Returns
--------
-int
-") Write;
-		static Standard_Integer Write(Standard_OStream & S, const char * rootkey = "");
 
 };
 
