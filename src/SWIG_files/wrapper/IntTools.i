@@ -123,49 +123,6 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(IntTools_DataMapOfSurfaceSampleBox) NCollection_DataMap<IntTools_SurfaceRangeSample,Bnd_Box,IntTools_SurfaceRangeSampleMapHasher>;
-%template(IntTools_SequenceOfCommonPrts) NCollection_Sequence<IntTools_CommonPrt>;
-%template(IntTools_Array1OfRoots) NCollection_Array1<IntTools_Root>;
-
-%extend NCollection_Array1<IntTools_Root> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(IntTools_MapOfCurveSample) NCollection_Map<IntTools_CurveRangeSample,IntTools_CurveRangeSampleMapHasher>;
-%template(IntTools_SequenceOfCurves) NCollection_Sequence<IntTools_Curve>;
-%template(IntTools_ListOfSurfaceRangeSample) NCollection_List<IntTools_SurfaceRangeSample>;
-%template(IntTools_ListIteratorOfListOfSurfaceRangeSample) NCollection_TListIterator<IntTools_SurfaceRangeSample>;
-%template(IntTools_ListOfCurveRangeSample) NCollection_List<IntTools_CurveRangeSample>;
-%template(IntTools_ListIteratorOfListOfCurveRangeSample) NCollection_TListIterator<IntTools_CurveRangeSample>;
 %template(IntTools_Array1OfRange) NCollection_Array1<IntTools_Range>;
 
 %extend NCollection_Array1<IntTools_Range> {
@@ -201,37 +158,80 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
-%template(IntTools_ListOfBox) NCollection_List<Bnd_Box>;
+%template(IntTools_Array1OfRoots) NCollection_Array1<IntTools_Root>;
+
+%extend NCollection_Array1<IntTools_Root> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(IntTools_DataMapOfCurveSampleBox) NCollection_DataMap<IntTools_CurveRangeSample,Bnd_Box,IntTools_CurveRangeSampleMapHasher>;
+%template(IntTools_DataMapOfSurfaceSampleBox) NCollection_DataMap<IntTools_SurfaceRangeSample,Bnd_Box,IntTools_SurfaceRangeSampleMapHasher>;
 %template(IntTools_ListIteratorOfListOfBox) NCollection_TListIterator<Bnd_Box>;
+%template(IntTools_ListIteratorOfListOfCurveRangeSample) NCollection_TListIterator<IntTools_CurveRangeSample>;
+%template(IntTools_ListIteratorOfListOfSurfaceRangeSample) NCollection_TListIterator<IntTools_SurfaceRangeSample>;
+%template(IntTools_ListOfBox) NCollection_List<Bnd_Box>;
+%template(IntTools_ListOfCurveRangeSample) NCollection_List<IntTools_CurveRangeSample>;
+%template(IntTools_ListOfSurfaceRangeSample) NCollection_List<IntTools_SurfaceRangeSample>;
+%template(IntTools_MapOfCurveSample) NCollection_Map<IntTools_CurveRangeSample,IntTools_CurveRangeSampleMapHasher>;
 %template(IntTools_MapOfSurfaceSample) NCollection_Map<IntTools_SurfaceRangeSample,IntTools_SurfaceRangeSampleMapHasher>;
+%template(IntTools_SequenceOfCommonPrts) NCollection_Sequence<IntTools_CommonPrt>;
+%template(IntTools_SequenceOfCurves) NCollection_Sequence<IntTools_Curve>;
+%template(IntTools_SequenceOfPntOn2Faces) NCollection_Sequence<IntTools_PntOn2Faces>;
 %template(IntTools_SequenceOfRanges) NCollection_Sequence<IntTools_Range>;
 %template(IntTools_SequenceOfRoots) NCollection_Sequence<IntTools_Root>;
-%template(IntTools_SequenceOfPntOn2Faces) NCollection_Sequence<IntTools_PntOn2Faces>;
-%template(IntTools_DataMapOfCurveSampleBox) NCollection_DataMap<IntTools_CurveRangeSample,Bnd_Box,IntTools_CurveRangeSampleMapHasher>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<IntTools_SurfaceRangeSample, Bnd_Box, IntTools_SurfaceRangeSampleMapHasher> IntTools_DataMapOfSurfaceSampleBox;
-typedef NCollection_DataMap<IntTools_SurfaceRangeSample, Bnd_Box, IntTools_SurfaceRangeSampleMapHasher>::Iterator IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox;
-typedef NCollection_Sequence<IntTools_CommonPrt> IntTools_SequenceOfCommonPrts;
-typedef NCollection_Array1<IntTools_Root> IntTools_Array1OfRoots;
-typedef NCollection_Map<IntTools_CurveRangeSample, IntTools_CurveRangeSampleMapHasher> IntTools_MapOfCurveSample;
-typedef NCollection_Map<IntTools_CurveRangeSample, IntTools_CurveRangeSampleMapHasher>::Iterator IntTools_MapIteratorOfMapOfCurveSample;
-typedef NCollection_Sequence<IntTools_Curve> IntTools_SequenceOfCurves;
-typedef NCollection_List<IntTools_SurfaceRangeSample> IntTools_ListOfSurfaceRangeSample;
-typedef NCollection_List<IntTools_SurfaceRangeSample>::Iterator IntTools_ListIteratorOfListOfSurfaceRangeSample;
-typedef NCollection_List<IntTools_CurveRangeSample> IntTools_ListOfCurveRangeSample;
-typedef NCollection_List<IntTools_CurveRangeSample>::Iterator IntTools_ListIteratorOfListOfCurveRangeSample;
 typedef NCollection_Array1<IntTools_Range> IntTools_Array1OfRange;
-typedef NCollection_List<Bnd_Box> IntTools_ListOfBox;
+typedef NCollection_Array1<IntTools_Root> IntTools_Array1OfRoots;
+typedef NCollection_DataMap<IntTools_CurveRangeSample, Bnd_Box, IntTools_CurveRangeSampleMapHasher>::Iterator IntTools_DataMapIteratorOfDataMapOfCurveSampleBox;
+typedef NCollection_DataMap<IntTools_SurfaceRangeSample, Bnd_Box, IntTools_SurfaceRangeSampleMapHasher>::Iterator IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox;
+typedef NCollection_DataMap<IntTools_CurveRangeSample, Bnd_Box, IntTools_CurveRangeSampleMapHasher> IntTools_DataMapOfCurveSampleBox;
+typedef NCollection_DataMap<IntTools_SurfaceRangeSample, Bnd_Box, IntTools_SurfaceRangeSampleMapHasher> IntTools_DataMapOfSurfaceSampleBox;
 typedef NCollection_List<Bnd_Box>::Iterator IntTools_ListIteratorOfListOfBox;
-typedef NCollection_Map<IntTools_SurfaceRangeSample, IntTools_SurfaceRangeSampleMapHasher> IntTools_MapOfSurfaceSample;
+typedef NCollection_List<IntTools_CurveRangeSample>::Iterator IntTools_ListIteratorOfListOfCurveRangeSample;
+typedef NCollection_List<IntTools_SurfaceRangeSample>::Iterator IntTools_ListIteratorOfListOfSurfaceRangeSample;
+typedef NCollection_List<Bnd_Box> IntTools_ListOfBox;
+typedef NCollection_List<IntTools_CurveRangeSample> IntTools_ListOfCurveRangeSample;
+typedef NCollection_List<IntTools_SurfaceRangeSample> IntTools_ListOfSurfaceRangeSample;
+typedef NCollection_Map<IntTools_CurveRangeSample, IntTools_CurveRangeSampleMapHasher>::Iterator IntTools_MapIteratorOfMapOfCurveSample;
 typedef NCollection_Map<IntTools_SurfaceRangeSample, IntTools_SurfaceRangeSampleMapHasher>::Iterator IntTools_MapIteratorOfMapOfSurfaceSample;
+typedef NCollection_Map<IntTools_CurveRangeSample, IntTools_CurveRangeSampleMapHasher> IntTools_MapOfCurveSample;
+typedef NCollection_Map<IntTools_SurfaceRangeSample, IntTools_SurfaceRangeSampleMapHasher> IntTools_MapOfSurfaceSample;
+typedef NCollection_Sequence<IntTools_CommonPrt> IntTools_SequenceOfCommonPrts;
+typedef NCollection_Sequence<IntTools_Curve> IntTools_SequenceOfCurves;
+typedef NCollection_Sequence<IntTools_PntOn2Faces> IntTools_SequenceOfPntOn2Faces;
 typedef NCollection_Sequence<IntTools_Range> IntTools_SequenceOfRanges;
 typedef NCollection_Sequence<IntTools_Root> IntTools_SequenceOfRoots;
-typedef NCollection_Sequence<IntTools_PntOn2Faces> IntTools_SequenceOfPntOn2Faces;
-typedef NCollection_DataMap<IntTools_CurveRangeSample, Bnd_Box, IntTools_CurveRangeSampleMapHasher> IntTools_DataMapOfCurveSampleBox;
-typedef NCollection_DataMap<IntTools_CurveRangeSample, Bnd_Box, IntTools_CurveRangeSampleMapHasher>::Iterator IntTools_DataMapIteratorOfDataMapOfCurveSampleBox;
 /* end typedefs declaration */
 
 /*****************
@@ -365,16 +365,6 @@ None
 *********************************/
 class IntTools_BaseRangeSample {
 	public:
-		/****************** GetDepth ******************/
-		%feature("compactdefaultargs") GetDepth;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-int
-") GetDepth;
-		Standard_Integer GetDepth();
-
 		/****************** IntTools_BaseRangeSample ******************/
 		%feature("compactdefaultargs") IntTools_BaseRangeSample;
 		%feature("autodoc", "No available documentation.
@@ -398,6 +388,16 @@ Returns
 None
 ") IntTools_BaseRangeSample;
 		 IntTools_BaseRangeSample(const Standard_Integer theDepth);
+
+		/****************** GetDepth ******************/
+		%feature("compactdefaultargs") GetDepth;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") GetDepth;
+		Standard_Integer GetDepth();
 
 		/****************** SetDepth ******************/
 		%feature("compactdefaultargs") SetDepth;
@@ -427,71 +427,6 @@ None
 *************************************/
 class IntTools_BeanFaceIntersector {
 	public:
-		/****************** Context ******************/
-		%feature("compactdefaultargs") Context;
-		%feature("autodoc", "Gets the intersecton context.
-
-Returns
--------
-opencascade::handle<IntTools_Context>
-") Context;
-		const opencascade::handle<IntTools_Context> & Context();
-
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "Initializes the algorithm //! warning: the parts of the edge which are on the surface of the face and belong to the whole in the face (if there is) is considered as result.
-
-Parameters
-----------
-theEdge: TopoDS_Edge
-theFace: TopoDS_Face
-
-Returns
--------
-None
-") Init;
-		void Init(const TopoDS_Edge & theEdge, const TopoDS_Face & theFace);
-
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "Initializes the algorithm.
-
-Parameters
-----------
-theCurve: BRepAdaptor_Curve
-theSurface: BRepAdaptor_Surface
-theBeanTolerance: float
-theFaceTolerance: float
-
-Returns
--------
-None
-") Init;
-		void Init(const BRepAdaptor_Curve & theCurve, const BRepAdaptor_Surface & theSurface, const Standard_Real theBeanTolerance, const Standard_Real theFaceTolerance);
-
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "Initializes the algorithm theuminparameter, ... are used for optimization purposes.
-
-Parameters
-----------
-theCurve: BRepAdaptor_Curve
-theSurface: BRepAdaptor_Surface
-theFirstParOnCurve: float
-theLastParOnCurve: float
-theUMinParameter: float
-theUMaxParameter: float
-theVMinParameter: float
-theVMaxParameter: float
-theBeanTolerance: float
-theFaceTolerance: float
-
-Returns
--------
-None
-") Init;
-		void Init(const BRepAdaptor_Curve & theCurve, const BRepAdaptor_Surface & theSurface, const Standard_Real theFirstParOnCurve, const Standard_Real theLastParOnCurve, const Standard_Real theUMinParameter, const Standard_Real theUMaxParameter, const Standard_Real theVMinParameter, const Standard_Real theVMaxParameter, const Standard_Real theBeanTolerance, const Standard_Real theFaceTolerance);
-
 		/****************** IntTools_BeanFaceIntersector ******************/
 		%feature("compactdefaultargs") IntTools_BeanFaceIntersector;
 		%feature("autodoc", "No available documentation.
@@ -556,6 +491,71 @@ Returns
 None
 ") IntTools_BeanFaceIntersector;
 		 IntTools_BeanFaceIntersector(const BRepAdaptor_Curve & theCurve, const BRepAdaptor_Surface & theSurface, const Standard_Real theFirstParOnCurve, const Standard_Real theLastParOnCurve, const Standard_Real theUMinParameter, const Standard_Real theUMaxParameter, const Standard_Real theVMinParameter, const Standard_Real theVMaxParameter, const Standard_Real theBeanTolerance, const Standard_Real theFaceTolerance);
+
+		/****************** Context ******************/
+		%feature("compactdefaultargs") Context;
+		%feature("autodoc", "Gets the intersecton context.
+
+Returns
+-------
+opencascade::handle<IntTools_Context>
+") Context;
+		const opencascade::handle<IntTools_Context> & Context();
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "Initializes the algorithm //! warning: the parts of the edge which are on the surface of the face and belong to the whole in the face (if there is) is considered as result.
+
+Parameters
+----------
+theEdge: TopoDS_Edge
+theFace: TopoDS_Face
+
+Returns
+-------
+None
+") Init;
+		void Init(const TopoDS_Edge & theEdge, const TopoDS_Face & theFace);
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "Initializes the algorithm.
+
+Parameters
+----------
+theCurve: BRepAdaptor_Curve
+theSurface: BRepAdaptor_Surface
+theBeanTolerance: float
+theFaceTolerance: float
+
+Returns
+-------
+None
+") Init;
+		void Init(const BRepAdaptor_Curve & theCurve, const BRepAdaptor_Surface & theSurface, const Standard_Real theBeanTolerance, const Standard_Real theFaceTolerance);
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "Initializes the algorithm theuminparameter, ... are used for optimization purposes.
+
+Parameters
+----------
+theCurve: BRepAdaptor_Curve
+theSurface: BRepAdaptor_Surface
+theFirstParOnCurve: float
+theLastParOnCurve: float
+theUMinParameter: float
+theUMaxParameter: float
+theVMinParameter: float
+theVMaxParameter: float
+theBeanTolerance: float
+theFaceTolerance: float
+
+Returns
+-------
+None
+") Init;
+		void Init(const BRepAdaptor_Curve & theCurve, const BRepAdaptor_Surface & theSurface, const Standard_Real theFirstParOnCurve, const Standard_Real theLastParOnCurve, const Standard_Real theUMinParameter, const Standard_Real theUMaxParameter, const Standard_Real theVMinParameter, const Standard_Real theVMaxParameter, const Standard_Real theBeanTolerance, const Standard_Real theFaceTolerance);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -667,6 +667,30 @@ None
 ***************************/
 class IntTools_CommonPrt {
 	public:
+		/****************** IntTools_CommonPrt ******************/
+		%feature("compactdefaultargs") IntTools_CommonPrt;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") IntTools_CommonPrt;
+		 IntTools_CommonPrt();
+
+		/****************** IntTools_CommonPrt ******************/
+		%feature("compactdefaultargs") IntTools_CommonPrt;
+		%feature("autodoc", "Copy constructor.
+
+Parameters
+----------
+aCPrt: IntTools_CommonPrt
+
+Returns
+-------
+None
+") IntTools_CommonPrt;
+		 IntTools_CommonPrt(const IntTools_CommonPrt & aCPrt);
+
 		/****************** AllNullFlag ******************/
 		%feature("compactdefaultargs") AllNullFlag;
 		%feature("autodoc", "Modifier.
@@ -778,30 +802,6 @@ Returns
 TopoDS_Edge
 ") Edge2;
 		const TopoDS_Edge Edge2();
-
-		/****************** IntTools_CommonPrt ******************/
-		%feature("compactdefaultargs") IntTools_CommonPrt;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") IntTools_CommonPrt;
-		 IntTools_CommonPrt();
-
-		/****************** IntTools_CommonPrt ******************/
-		%feature("compactdefaultargs") IntTools_CommonPrt;
-		%feature("autodoc", "Copy constructor.
-
-Parameters
-----------
-aCPrt: IntTools_CommonPrt
-
-Returns
--------
-None
-") IntTools_CommonPrt;
-		 IntTools_CommonPrt(const IntTools_CommonPrt & aCPrt);
 
 		/****************** Range1 ******************/
 		%feature("compactdefaultargs") Range1;
@@ -1010,6 +1010,30 @@ float
 *************************/
 class IntTools_Context : public Standard_Transient {
 	public:
+		/****************** IntTools_Context ******************/
+		%feature("compactdefaultargs") IntTools_Context;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") IntTools_Context;
+		 IntTools_Context();
+
+		/****************** IntTools_Context ******************/
+		%feature("compactdefaultargs") IntTools_Context;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
+") IntTools_Context;
+		 IntTools_Context(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
+
 		/****************** BndBox ******************/
 		%feature("compactdefaultargs") BndBox;
 		%feature("autodoc", "No available documentation.
@@ -1108,30 +1132,6 @@ Returns
 Geom2dHatch_Hatcher
 ") Hatcher;
 		Geom2dHatch_Hatcher & Hatcher(const TopoDS_Face & aF);
-
-		/****************** IntTools_Context ******************/
-		%feature("compactdefaultargs") IntTools_Context;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") IntTools_Context;
-		 IntTools_Context();
-
-		/****************** IntTools_Context ******************/
-		%feature("compactdefaultargs") IntTools_Context;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theAllocator: NCollection_BaseAllocator
-
-Returns
--------
-None
-") IntTools_Context;
-		 IntTools_Context(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
 		/****************** IsInfiniteFace ******************/
 		%feature("compactdefaultargs") IsInfiniteFace;
@@ -1477,6 +1477,36 @@ None
 ***********************/
 class IntTools_Curve {
 	public:
+		/****************** IntTools_Curve ******************/
+		%feature("compactdefaultargs") IntTools_Curve;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") IntTools_Curve;
+		 IntTools_Curve();
+
+		/****************** IntTools_Curve ******************/
+		%feature("compactdefaultargs") IntTools_Curve;
+		%feature("autodoc", "Constructor taking 3d curve, two 2d curves and two tolerance values.
+
+Parameters
+----------
+the3dCurve3d: Geom_Curve
+the2dCurve1: Geom2d_Curve
+the2dCurve2: Geom2d_Curve
+theTolerance: float,optional
+	default value is 0.0
+theTangentialTolerance: float,optional
+	default value is 0.0
+
+Returns
+-------
+None
+") IntTools_Curve;
+		 IntTools_Curve(const opencascade::handle<Geom_Curve> & the3dCurve3d, const opencascade::handle<Geom2d_Curve> & the2dCurve1, const opencascade::handle<Geom2d_Curve> & the2dCurve2, const Standard_Real theTolerance = 0.0, const Standard_Real theTangentialTolerance = 0.0);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "If the 3d curve is bounded curve the method will return true and modify the output parameters with boundary parameters of the curve and corresponded 3d points. if the curve does not have bounds, the method will return false and the output parameters will stay untouched.
@@ -1538,36 +1568,6 @@ Returns
 bool
 ") HasBounds;
 		Standard_Boolean HasBounds();
-
-		/****************** IntTools_Curve ******************/
-		%feature("compactdefaultargs") IntTools_Curve;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") IntTools_Curve;
-		 IntTools_Curve();
-
-		/****************** IntTools_Curve ******************/
-		%feature("compactdefaultargs") IntTools_Curve;
-		%feature("autodoc", "Constructor taking 3d curve, two 2d curves and two tolerance values.
-
-Parameters
-----------
-the3dCurve3d: Geom_Curve
-the2dCurve1: Geom2d_Curve
-the2dCurve2: Geom2d_Curve
-theTolerance: float,optional
-	default value is 0.0
-theTangentialTolerance: float,optional
-	default value is 0.0
-
-Returns
--------
-None
-") IntTools_Curve;
-		 IntTools_Curve(const opencascade::handle<Geom_Curve> & the3dCurve3d, const opencascade::handle<Geom2d_Curve> & the2dCurve1, const opencascade::handle<Geom2d_Curve> & the2dCurve2, const Standard_Real theTolerance = 0.0, const Standard_Real theTangentialTolerance = 0.0);
 
 		/****************** SecondCurve2d ******************/
 		%feature("compactdefaultargs") SecondCurve2d;
@@ -1709,6 +1709,21 @@ GeomAbs_CurveType
 ****************************************/
 class IntTools_CurveRangeLocalizeData {
 	public:
+		/****************** IntTools_CurveRangeLocalizeData ******************/
+		%feature("compactdefaultargs") IntTools_CurveRangeLocalizeData;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theNbSample: int
+theMinRange: float
+
+Returns
+-------
+None
+") IntTools_CurveRangeLocalizeData;
+		 IntTools_CurveRangeLocalizeData(const Standard_Integer theNbSample, const Standard_Real theMinRange);
+
 		/****************** AddBox ******************/
 		%feature("compactdefaultargs") AddBox;
 		%feature("autodoc", "No available documentation.
@@ -1772,21 +1787,6 @@ Returns
 int
 ") GetNbSample;
 		Standard_Integer GetNbSample();
-
-		/****************** IntTools_CurveRangeLocalizeData ******************/
-		%feature("compactdefaultargs") IntTools_CurveRangeLocalizeData;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theNbSample: int
-theMinRange: float
-
-Returns
--------
-None
-") IntTools_CurveRangeLocalizeData;
-		 IntTools_CurveRangeLocalizeData(const Standard_Integer theNbSample, const Standard_Real theMinRange);
 
 		/****************** IsRangeOut ******************/
 		%feature("compactdefaultargs") IsRangeOut;
@@ -1874,26 +1874,6 @@ bool
 **************************/
 class IntTools_EdgeEdge {
 	public:
-		/****************** CommonParts ******************/
-		%feature("compactdefaultargs") CommonParts;
-		%feature("autodoc", "Returns common parts.
-
-Returns
--------
-IntTools_SequenceOfCommonPrts
-") CommonParts;
-		const IntTools_SequenceOfCommonPrts & CommonParts();
-
-		/****************** FuzzyValue ******************/
-		%feature("compactdefaultargs") FuzzyValue;
-		%feature("autodoc", "Returns fuzzy value.
-
-Returns
--------
-float
-") FuzzyValue;
-		Standard_Real FuzzyValue();
-
 		/****************** IntTools_EdgeEdge ******************/
 		%feature("compactdefaultargs") IntTools_EdgeEdge;
 		%feature("autodoc", "Empty contructor.
@@ -1937,6 +1917,26 @@ Returns
 None
 ") IntTools_EdgeEdge;
 		 IntTools_EdgeEdge(const TopoDS_Edge & theEdge1, const Standard_Real aT11, const Standard_Real aT12, const TopoDS_Edge & theEdge2, const Standard_Real aT21, const Standard_Real aT22);
+
+		/****************** CommonParts ******************/
+		%feature("compactdefaultargs") CommonParts;
+		%feature("autodoc", "Returns common parts.
+
+Returns
+-------
+IntTools_SequenceOfCommonPrts
+") CommonParts;
+		const IntTools_SequenceOfCommonPrts & CommonParts();
+
+		/****************** FuzzyValue ******************/
+		%feature("compactdefaultargs") FuzzyValue;
+		%feature("autodoc", "Returns fuzzy value.
+
+Returns
+-------
+float
+") FuzzyValue;
+		Standard_Real FuzzyValue();
 
 		/****************** IsCoincidenceCheckedQuickly ******************/
 		%feature("compactdefaultargs") IsCoincidenceCheckedQuickly;
@@ -2128,6 +2128,16 @@ None
 **************************/
 class IntTools_EdgeFace {
 	public:
+		/****************** IntTools_EdgeFace ******************/
+		%feature("compactdefaultargs") IntTools_EdgeFace;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") IntTools_EdgeFace;
+		 IntTools_EdgeFace();
+
 		/****************** CommonParts ******************/
 		%feature("compactdefaultargs") CommonParts;
 		%feature("autodoc", "Returns resulting common parts.
@@ -2187,16 +2197,6 @@ Returns
 float
 ") FuzzyValue;
 		Standard_Real FuzzyValue();
-
-		/****************** IntTools_EdgeFace ******************/
-		%feature("compactdefaultargs") IntTools_EdgeFace;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") IntTools_EdgeFace;
-		 IntTools_EdgeFace();
 
 		/****************** IsCoincidenceCheckedQuickly ******************/
 		%feature("compactdefaultargs") IsCoincidenceCheckedQuickly;
@@ -2351,31 +2351,6 @@ None
 **************************/
 class IntTools_FClass2d {
 	public:
-		/****************** Destroy ******************/
-		%feature("compactdefaultargs") Destroy;
-		%feature("autodoc", "Destructor.
-
-Returns
--------
-None
-") Destroy;
-		void Destroy();
-
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "Initializes algorithm by the face f and tolerance tol.
-
-Parameters
-----------
-F: TopoDS_Face
-Tol: float
-
-Returns
--------
-None
-") Init;
-		void Init(const TopoDS_Face & F, const Standard_Real Tol);
-
 		/****************** IntTools_FClass2d ******************/
 		%feature("compactdefaultargs") IntTools_FClass2d;
 		%feature("autodoc", "Empty constructor.
@@ -2400,6 +2375,31 @@ Returns
 None
 ") IntTools_FClass2d;
 		 IntTools_FClass2d(const TopoDS_Face & F, const Standard_Real Tol);
+
+		/****************** Destroy ******************/
+		%feature("compactdefaultargs") Destroy;
+		%feature("autodoc", "Destructor.
+
+Returns
+-------
+None
+") Destroy;
+		void Destroy();
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "Initializes algorithm by the face f and tolerance tol.
+
+Parameters
+----------
+F: TopoDS_Face
+Tol: float
+
+Returns
+-------
+None
+") Init;
+		void Init(const TopoDS_Face & F, const Standard_Real Tol);
 
 		/****************** IsHole ******************/
 		%feature("compactdefaultargs") IsHole;
@@ -2468,6 +2468,16 @@ TopAbs_State
 **************************/
 class IntTools_FaceFace {
 	public:
+		/****************** IntTools_FaceFace ******************/
+		%feature("compactdefaultargs") IntTools_FaceFace;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") IntTools_FaceFace;
+		 IntTools_FaceFace();
+
 		/****************** Context ******************/
 		%feature("compactdefaultargs") Context;
 		%feature("autodoc", "Gets the intersecton context.
@@ -2507,16 +2517,6 @@ Returns
 float
 ") FuzzyValue;
 		Standard_Real FuzzyValue();
-
-		/****************** IntTools_FaceFace ******************/
-		%feature("compactdefaultargs") IntTools_FaceFace;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") IntTools_FaceFace;
-		 IntTools_FaceFace();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -2661,6 +2661,47 @@ bool
 ********************************/
 class IntTools_MarkedRangeSet {
 	public:
+		/****************** IntTools_MarkedRangeSet ******************/
+		%feature("compactdefaultargs") IntTools_MarkedRangeSet;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") IntTools_MarkedRangeSet;
+		 IntTools_MarkedRangeSet();
+
+		/****************** IntTools_MarkedRangeSet ******************/
+		%feature("compactdefaultargs") IntTools_MarkedRangeSet;
+		%feature("autodoc", "Build set of ranges which consists of one range with boundary values thefirstboundary and thelastboundary.
+
+Parameters
+----------
+theFirstBoundary: float
+theLastBoundary: float
+theInitFlag: int
+
+Returns
+-------
+None
+") IntTools_MarkedRangeSet;
+		 IntTools_MarkedRangeSet(const Standard_Real theFirstBoundary, const Standard_Real theLastBoundary, const Standard_Integer theInitFlag);
+
+		/****************** IntTools_MarkedRangeSet ******************/
+		%feature("compactdefaultargs") IntTools_MarkedRangeSet;
+		%feature("autodoc", "Build set of ranges based on the array of progressive sorted values //! warning: the constructor do not check if the values of array are not sorted it should be checked before function invocation.
+
+Parameters
+----------
+theSortedArray: IntTools_CArray1OfReal
+theInitFlag: int
+
+Returns
+-------
+None
+") IntTools_MarkedRangeSet;
+		 IntTools_MarkedRangeSet(const IntTools_CArray1OfReal & theSortedArray, const Standard_Integer theInitFlag);
+
 		/****************** Flag ******************/
 		%feature("compactdefaultargs") Flag;
 		%feature("autodoc", "Returns flag of the range with index theindex.
@@ -2781,47 +2822,6 @@ Returns
 bool
 ") InsertRange;
 		Standard_Boolean InsertRange(const IntTools_Range & theRange, const Standard_Integer theFlag, const Standard_Integer theIndex);
-
-		/****************** IntTools_MarkedRangeSet ******************/
-		%feature("compactdefaultargs") IntTools_MarkedRangeSet;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") IntTools_MarkedRangeSet;
-		 IntTools_MarkedRangeSet();
-
-		/****************** IntTools_MarkedRangeSet ******************/
-		%feature("compactdefaultargs") IntTools_MarkedRangeSet;
-		%feature("autodoc", "Build set of ranges which consists of one range with boundary values thefirstboundary and thelastboundary.
-
-Parameters
-----------
-theFirstBoundary: float
-theLastBoundary: float
-theInitFlag: int
-
-Returns
--------
-None
-") IntTools_MarkedRangeSet;
-		 IntTools_MarkedRangeSet(const Standard_Real theFirstBoundary, const Standard_Real theLastBoundary, const Standard_Integer theInitFlag);
-
-		/****************** IntTools_MarkedRangeSet ******************/
-		%feature("compactdefaultargs") IntTools_MarkedRangeSet;
-		%feature("autodoc", "Build set of ranges based on the array of progressive sorted values //! warning: the constructor do not check if the values of array are not sorted it should be checked before function invocation.
-
-Parameters
-----------
-theSortedArray: IntTools_CArray1OfReal
-theInitFlag: int
-
-Returns
--------
-None
-") IntTools_MarkedRangeSet;
-		 IntTools_MarkedRangeSet(const IntTools_CArray1OfReal & theSortedArray, const Standard_Integer theInitFlag);
 
 		/****************** Length ******************/
 		%feature("compactdefaultargs") Length;
@@ -3018,6 +3018,16 @@ None
 ***************************/
 class IntTools_PntOnFace {
 	public:
+		/****************** IntTools_PntOnFace ******************/
+		%feature("compactdefaultargs") IntTools_PntOnFace;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") IntTools_PntOnFace;
+		 IntTools_PntOnFace();
+
 		/****************** Face ******************/
 		%feature("compactdefaultargs") Face;
 		%feature("autodoc", "Selector.
@@ -3044,16 +3054,6 @@ Returns
 None
 ") Init;
 		void Init(const TopoDS_Face & aF, const gp_Pnt & aP, const Standard_Real U, const Standard_Real V);
-
-		/****************** IntTools_PntOnFace ******************/
-		%feature("compactdefaultargs") IntTools_PntOnFace;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") IntTools_PntOnFace;
-		 IntTools_PntOnFace();
 
 		/****************** Parameters ******************/
 		%feature("compactdefaultargs") Parameters;
@@ -3165,16 +3165,6 @@ bool
 ***********************/
 class IntTools_Range {
 	public:
-		/****************** First ******************/
-		%feature("compactdefaultargs") First;
-		%feature("autodoc", "Selector.
-
-Returns
--------
-float
-") First;
-		Standard_Real First();
-
 		/****************** IntTools_Range ******************/
 		%feature("compactdefaultargs") IntTools_Range;
 		%feature("autodoc", "Empty constructor.
@@ -3199,6 +3189,16 @@ Returns
 None
 ") IntTools_Range;
 		 IntTools_Range(const Standard_Real aFirst, const Standard_Real aLast);
+
+		/****************** First ******************/
+		%feature("compactdefaultargs") First;
+		%feature("autodoc", "Selector.
+
+Returns
+-------
+float
+") First;
+		Standard_Real First();
 
 		/****************** Last ******************/
 		%feature("compactdefaultargs") Last;
@@ -3470,6 +3470,16 @@ int
 *****************************/
 class IntTools_ShrunkRange {
 	public:
+		/****************** IntTools_ShrunkRange ******************/
+		%feature("compactdefaultargs") IntTools_ShrunkRange;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") IntTools_ShrunkRange;
+		 IntTools_ShrunkRange();
+
 		/****************** BndBox ******************/
 		%feature("compactdefaultargs") BndBox;
 		%feature("autodoc", "No available documentation.
@@ -3499,16 +3509,6 @@ Returns
 TopoDS_Edge
 ") Edge;
 		const TopoDS_Edge Edge();
-
-		/****************** IntTools_ShrunkRange ******************/
-		%feature("compactdefaultargs") IntTools_ShrunkRange;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") IntTools_ShrunkRange;
-		 IntTools_ShrunkRange();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -3626,6 +3626,47 @@ None
 ******************************************/
 class IntTools_SurfaceRangeLocalizeData {
 	public:
+		/****************** IntTools_SurfaceRangeLocalizeData ******************/
+		%feature("compactdefaultargs") IntTools_SurfaceRangeLocalizeData;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") IntTools_SurfaceRangeLocalizeData;
+		 IntTools_SurfaceRangeLocalizeData();
+
+		/****************** IntTools_SurfaceRangeLocalizeData ******************/
+		%feature("compactdefaultargs") IntTools_SurfaceRangeLocalizeData;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theNbSampleU: int
+theNbSampleV: int
+theMinRangeU: float
+theMinRangeV: float
+
+Returns
+-------
+None
+") IntTools_SurfaceRangeLocalizeData;
+		 IntTools_SurfaceRangeLocalizeData(const Standard_Integer theNbSampleU, const Standard_Integer theNbSampleV, const Standard_Real theMinRangeU, const Standard_Real theMinRangeV);
+
+		/****************** IntTools_SurfaceRangeLocalizeData ******************/
+		%feature("compactdefaultargs") IntTools_SurfaceRangeLocalizeData;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Other: IntTools_SurfaceRangeLocalizeData
+
+Returns
+-------
+None
+") IntTools_SurfaceRangeLocalizeData;
+		 IntTools_SurfaceRangeLocalizeData(const IntTools_SurfaceRangeLocalizeData & Other);
+
 		/****************** AddBox ******************/
 		%feature("compactdefaultargs") AddBox;
 		%feature("autodoc", "No available documentation.
@@ -3870,47 +3911,6 @@ float
 ") GetVParamInFrame;
 		Standard_Real GetVParamInFrame(const Standard_Integer theIndex);
 
-		/****************** IntTools_SurfaceRangeLocalizeData ******************/
-		%feature("compactdefaultargs") IntTools_SurfaceRangeLocalizeData;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") IntTools_SurfaceRangeLocalizeData;
-		 IntTools_SurfaceRangeLocalizeData();
-
-		/****************** IntTools_SurfaceRangeLocalizeData ******************/
-		%feature("compactdefaultargs") IntTools_SurfaceRangeLocalizeData;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theNbSampleU: int
-theNbSampleV: int
-theMinRangeU: float
-theMinRangeV: float
-
-Returns
--------
-None
-") IntTools_SurfaceRangeLocalizeData;
-		 IntTools_SurfaceRangeLocalizeData(const Standard_Integer theNbSampleU, const Standard_Integer theNbSampleV, const Standard_Real theMinRangeU, const Standard_Real theMinRangeV);
-
-		/****************** IntTools_SurfaceRangeLocalizeData ******************/
-		%feature("compactdefaultargs") IntTools_SurfaceRangeLocalizeData;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Other: IntTools_SurfaceRangeLocalizeData
-
-Returns
--------
-None
-") IntTools_SurfaceRangeLocalizeData;
-		 IntTools_SurfaceRangeLocalizeData(const IntTools_SurfaceRangeLocalizeData & Other);
-
 		/****************** IsRangeOut ******************/
 		%feature("compactdefaultargs") IsRangeOut;
 		%feature("autodoc", "No available documentation.
@@ -4068,6 +4068,62 @@ None
 ************************************/
 class IntTools_SurfaceRangeSample {
 	public:
+		/****************** IntTools_SurfaceRangeSample ******************/
+		%feature("compactdefaultargs") IntTools_SurfaceRangeSample;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") IntTools_SurfaceRangeSample;
+		 IntTools_SurfaceRangeSample();
+
+		/****************** IntTools_SurfaceRangeSample ******************/
+		%feature("compactdefaultargs") IntTools_SurfaceRangeSample;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theIndexU: int
+theDepthU: int
+theIndexV: int
+theDepthV: int
+
+Returns
+-------
+None
+") IntTools_SurfaceRangeSample;
+		 IntTools_SurfaceRangeSample(const Standard_Integer theIndexU, const Standard_Integer theDepthU, const Standard_Integer theIndexV, const Standard_Integer theDepthV);
+
+		/****************** IntTools_SurfaceRangeSample ******************/
+		%feature("compactdefaultargs") IntTools_SurfaceRangeSample;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theRangeU: IntTools_CurveRangeSample
+theRangeV: IntTools_CurveRangeSample
+
+Returns
+-------
+None
+") IntTools_SurfaceRangeSample;
+		 IntTools_SurfaceRangeSample(const IntTools_CurveRangeSample & theRangeU, const IntTools_CurveRangeSample & theRangeV);
+
+		/****************** IntTools_SurfaceRangeSample ******************/
+		%feature("compactdefaultargs") IntTools_SurfaceRangeSample;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Other: IntTools_SurfaceRangeSample
+
+Returns
+-------
+None
+") IntTools_SurfaceRangeSample;
+		 IntTools_SurfaceRangeSample(const IntTools_SurfaceRangeSample & Other);
+
 		/****************** Assign ******************/
 		%feature("compactdefaultargs") Assign;
 		%feature("autodoc", "No available documentation.
@@ -4246,62 +4302,6 @@ Returns
 IntTools_CurveRangeSample
 ") GetSampleRangeV;
 		const IntTools_CurveRangeSample & GetSampleRangeV();
-
-		/****************** IntTools_SurfaceRangeSample ******************/
-		%feature("compactdefaultargs") IntTools_SurfaceRangeSample;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") IntTools_SurfaceRangeSample;
-		 IntTools_SurfaceRangeSample();
-
-		/****************** IntTools_SurfaceRangeSample ******************/
-		%feature("compactdefaultargs") IntTools_SurfaceRangeSample;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theIndexU: int
-theDepthU: int
-theIndexV: int
-theDepthV: int
-
-Returns
--------
-None
-") IntTools_SurfaceRangeSample;
-		 IntTools_SurfaceRangeSample(const Standard_Integer theIndexU, const Standard_Integer theDepthU, const Standard_Integer theIndexV, const Standard_Integer theDepthV);
-
-		/****************** IntTools_SurfaceRangeSample ******************/
-		%feature("compactdefaultargs") IntTools_SurfaceRangeSample;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theRangeU: IntTools_CurveRangeSample
-theRangeV: IntTools_CurveRangeSample
-
-Returns
--------
-None
-") IntTools_SurfaceRangeSample;
-		 IntTools_SurfaceRangeSample(const IntTools_CurveRangeSample & theRangeU, const IntTools_CurveRangeSample & theRangeV);
-
-		/****************** IntTools_SurfaceRangeSample ******************/
-		%feature("compactdefaultargs") IntTools_SurfaceRangeSample;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Other: IntTools_SurfaceRangeSample
-
-Returns
--------
-None
-") IntTools_SurfaceRangeSample;
-		 IntTools_SurfaceRangeSample(const IntTools_SurfaceRangeSample & Other);
 
 		/****************** IsEqual ******************/
 		%feature("compactdefaultargs") IsEqual;
@@ -4900,6 +4900,30 @@ None
 ***************************/
 class IntTools_TopolTool : public Adaptor3d_TopolTool {
 	public:
+		/****************** IntTools_TopolTool ******************/
+		%feature("compactdefaultargs") IntTools_TopolTool;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") IntTools_TopolTool;
+		 IntTools_TopolTool();
+
+		/****************** IntTools_TopolTool ******************/
+		%feature("compactdefaultargs") IntTools_TopolTool;
+		%feature("autodoc", "Initializes me by surface.
+
+Parameters
+----------
+theSurface: Adaptor3d_HSurface
+
+Returns
+-------
+None
+") IntTools_TopolTool;
+		 IntTools_TopolTool(const opencascade::handle<Adaptor3d_HSurface> & theSurface);
+
 		/****************** ComputeSamplePoints ******************/
 		%feature("compactdefaultargs") ComputeSamplePoints;
 		%feature("autodoc", "No available documentation.
@@ -4933,30 +4957,6 @@ Returns
 None
 ") Initialize;
 		virtual void Initialize(const opencascade::handle<Adaptor3d_HSurface> & theSurface);
-
-		/****************** IntTools_TopolTool ******************/
-		%feature("compactdefaultargs") IntTools_TopolTool;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") IntTools_TopolTool;
-		 IntTools_TopolTool();
-
-		/****************** IntTools_TopolTool ******************/
-		%feature("compactdefaultargs") IntTools_TopolTool;
-		%feature("autodoc", "Initializes me by surface.
-
-Parameters
-----------
-theSurface: Adaptor3d_HSurface
-
-Returns
--------
-None
-") IntTools_TopolTool;
-		 IntTools_TopolTool(const opencascade::handle<Adaptor3d_HSurface> & theSurface);
 
 		/****************** NbSamples ******************/
 		%feature("compactdefaultargs") NbSamples;
@@ -5092,6 +5092,30 @@ bool
 **********************************/
 class IntTools_CurveRangeSample : public IntTools_BaseRangeSample {
 	public:
+		/****************** IntTools_CurveRangeSample ******************/
+		%feature("compactdefaultargs") IntTools_CurveRangeSample;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") IntTools_CurveRangeSample;
+		 IntTools_CurveRangeSample();
+
+		/****************** IntTools_CurveRangeSample ******************/
+		%feature("compactdefaultargs") IntTools_CurveRangeSample;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theIndex: int
+
+Returns
+-------
+None
+") IntTools_CurveRangeSample;
+		 IntTools_CurveRangeSample(const Standard_Integer theIndex);
+
 		/****************** GetRange ******************/
 		%feature("compactdefaultargs") GetRange;
 		%feature("autodoc", "No available documentation.
@@ -5131,30 +5155,6 @@ Returns
 int
 ") GetRangeIndexDeeper;
 		Standard_Integer GetRangeIndexDeeper(const Standard_Integer theNbSample);
-
-		/****************** IntTools_CurveRangeSample ******************/
-		%feature("compactdefaultargs") IntTools_CurveRangeSample;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") IntTools_CurveRangeSample;
-		 IntTools_CurveRangeSample();
-
-		/****************** IntTools_CurveRangeSample ******************/
-		%feature("compactdefaultargs") IntTools_CurveRangeSample;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theIndex: int
-
-Returns
--------
-None
-") IntTools_CurveRangeSample;
-		 IntTools_CurveRangeSample(const Standard_Integer theIndex);
 
 		/****************** IsEqual ******************/
 		%feature("compactdefaultargs") IsEqual;

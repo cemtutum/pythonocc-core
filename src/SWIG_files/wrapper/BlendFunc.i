@@ -2001,20 +2001,6 @@ bool
 ***************************/
 class BlendFunc_ConstRad : public Blend_Function {
 	public:
-		/****************** AxeRot ******************/
-		%feature("compactdefaultargs") AxeRot;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Prm: float
-
-Returns
--------
-gp_Ax1
-") AxeRot;
-		gp_Ax1 AxeRot(const Standard_Real Prm);
-
 		/****************** BlendFunc_ConstRad ******************/
 		%feature("compactdefaultargs") BlendFunc_ConstRad;
 		%feature("autodoc", "No available documentation.
@@ -2030,6 +2016,20 @@ Returns
 None
 ") BlendFunc_ConstRad;
 		 BlendFunc_ConstRad(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
+
+		/****************** AxeRot ******************/
+		%feature("compactdefaultargs") AxeRot;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Prm: float
+
+Returns
+-------
+gp_Ax1
+") AxeRot;
+		gp_Ax1 AxeRot(const Standard_Real Prm);
 
 		/****************** Derivatives ******************/
 		%feature("compactdefaultargs") Derivatives;
@@ -4024,20 +4024,6 @@ bool
 ************************/
 class BlendFunc_Ruled : public Blend_Function {
 	public:
-		/****************** AxeRot ******************/
-		%feature("compactdefaultargs") AxeRot;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Prm: float
-
-Returns
--------
-gp_Ax1
-") AxeRot;
-		gp_Ax1 AxeRot(const Standard_Real Prm);
-
 		/****************** BlendFunc_Ruled ******************/
 		%feature("compactdefaultargs") BlendFunc_Ruled;
 		%feature("autodoc", "No available documentation.
@@ -4053,6 +4039,20 @@ Returns
 None
 ") BlendFunc_Ruled;
 		 BlendFunc_Ruled(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const opencascade::handle<Adaptor3d_HCurve> & C);
+
+		/****************** AxeRot ******************/
+		%feature("compactdefaultargs") AxeRot;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Prm: float
+
+Returns
+-------
+gp_Ax1
+") AxeRot;
+		gp_Ax1 AxeRot(const Standard_Real Prm);
 
 		/****************** Derivatives ******************/
 		%feature("compactdefaultargs") Derivatives;

@@ -1484,16 +1484,6 @@ Adaptor3d_Surface
 ****************************/
 class BRepAdaptor_Surface : public Adaptor3d_Surface {
 	public:
-		/****************** AxeOfRevolution ******************/
-		%feature("compactdefaultargs") AxeOfRevolution;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-gp_Ax1
-") AxeOfRevolution;
-		gp_Ax1 AxeOfRevolution();
-
 		/****************** BRepAdaptor_Surface ******************/
 		%feature("compactdefaultargs") BRepAdaptor_Surface;
 		%feature("autodoc", "Creates an undefined surface with no face loaded.
@@ -1519,6 +1509,16 @@ Returns
 None
 ") BRepAdaptor_Surface;
 		 BRepAdaptor_Surface(const TopoDS_Face & F, const Standard_Boolean R = Standard_True);
+
+		/****************** AxeOfRevolution ******************/
+		%feature("compactdefaultargs") AxeOfRevolution;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Ax1
+") AxeOfRevolution;
+		gp_Ax1 AxeOfRevolution();
 
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;

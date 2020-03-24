@@ -169,8 +169,8 @@ class PCDM_ReaderStatus:
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<opencascade::handle<PCDM_Document>> PCDM_SequenceOfDocument;
 typedef Storage_BaseDriver * PCDM_BaseDriverPointer;
+typedef NCollection_Sequence<opencascade::handle<PCDM_Document>> PCDM_SequenceOfDocument;
 typedef NCollection_Sequence<PCDM_Reference> PCDM_SequenceOfReference;
 /* end typedefs declaration */
 
@@ -487,26 +487,6 @@ None
 ***********************/
 class PCDM_Reference {
 	public:
-		/****************** DocumentVersion ******************/
-		%feature("compactdefaultargs") DocumentVersion;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-int
-") DocumentVersion;
-		Standard_Integer DocumentVersion();
-
-		/****************** FileName ******************/
-		%feature("compactdefaultargs") FileName;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TCollection_ExtendedString
-") FileName;
-		TCollection_ExtendedString FileName();
-
 		/****************** PCDM_Reference ******************/
 		%feature("compactdefaultargs") PCDM_Reference;
 		%feature("autodoc", "No available documentation.
@@ -533,6 +513,26 @@ None
 ") PCDM_Reference;
 		 PCDM_Reference(const Standard_Integer aReferenceIdentifier, const TCollection_ExtendedString & aFileName, const Standard_Integer aDocumentVersion);
 
+		/****************** DocumentVersion ******************/
+		%feature("compactdefaultargs") DocumentVersion;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") DocumentVersion;
+		Standard_Integer DocumentVersion();
+
+		/****************** FileName ******************/
+		%feature("compactdefaultargs") FileName;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_ExtendedString
+") FileName;
+		TCollection_ExtendedString FileName();
+
 		/****************** ReferenceIdentifier ******************/
 		%feature("compactdefaultargs") ReferenceIdentifier;
 		%feature("autodoc", "No available documentation.
@@ -557,6 +557,20 @@ int
 *******************************/
 class PCDM_ReferenceIterator : public Standard_Transient {
 	public:
+		/****************** PCDM_ReferenceIterator ******************/
+		%feature("compactdefaultargs") PCDM_ReferenceIterator;
+		%feature("autodoc", "Warning! the constructor does not initialization.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") PCDM_ReferenceIterator;
+		 PCDM_ReferenceIterator(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -587,20 +601,6 @@ Returns
 None
 ") LoadReferences;
 		void LoadReferences(const opencascade::handle<CDM_Document> & aDocument, const opencascade::handle<CDM_MetaData> & aMetaData, const opencascade::handle<CDM_Application> & anApplication, const Standard_Boolean UseStorageConfiguration);
-
-		/****************** PCDM_ReferenceIterator ******************/
-		%feature("compactdefaultargs") PCDM_ReferenceIterator;
-		%feature("autodoc", "Warning! the constructor does not initialization.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") PCDM_ReferenceIterator;
-		 PCDM_ReferenceIterator(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 

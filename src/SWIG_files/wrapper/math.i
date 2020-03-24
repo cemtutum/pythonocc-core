@@ -234,6 +234,26 @@ bool
 ******************/
 class math_BFGS {
 	public:
+		/****************** math_BFGS ******************/
+		%feature("compactdefaultargs") math_BFGS;
+		%feature("autodoc", "Initializes the computation of the minimum of a function with nbvariables. tolerance, zeps and nbiterations are described in the method perform. warning: a call to the perform method must be made after this initialization to effectively compute the minimum of the function f.
+
+Parameters
+----------
+NbVariables: int
+Tolerance: float,optional
+	default value is 1.0e-8
+NbIterations: int,optional
+	default value is 200
+ZEPS: float,optional
+	default value is 1.0e-12
+
+Returns
+-------
+None
+") math_BFGS;
+		 math_BFGS(const Standard_Integer NbVariables, const Standard_Real Tolerance = 1.0e-8, const Standard_Integer NbIterations = 200, const Standard_Real ZEPS = 1.0e-12);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -364,26 +384,6 @@ None
 ") SetBoundary;
 		void SetBoundary(const math_Vector & theLeftBorder, const math_Vector & theRightBorder);
 
-		/****************** math_BFGS ******************/
-		%feature("compactdefaultargs") math_BFGS;
-		%feature("autodoc", "Initializes the computation of the minimum of a function with nbvariables. tolerance, zeps and nbiterations are described in the method perform. warning: a call to the perform method must be made after this initialization to effectively compute the minimum of the function f.
-
-Parameters
-----------
-NbVariables: int
-Tolerance: float,optional
-	default value is 1.0e-8
-NbIterations: int,optional
-	default value is 200
-ZEPS: float,optional
-	default value is 1.0e-12
-
-Returns
--------
-None
-") math_BFGS;
-		 math_BFGS(const Standard_Integer NbVariables, const Standard_Real Tolerance = 1.0e-8, const Standard_Integer NbIterations = 200, const Standard_Real ZEPS = 1.0e-12);
-
 };
 
 
@@ -398,6 +398,20 @@ None
 **************************/
 class math_BissecNewton {
 	public:
+		/****************** math_BissecNewton ******************/
+		%feature("compactdefaultargs") math_BissecNewton;
+		%feature("autodoc", "Constructor. @param thextolerance - algorithm tolerance.
+
+Parameters
+----------
+theXTolerance: float
+
+Returns
+-------
+None
+") math_BissecNewton;
+		 math_BissecNewton(const Standard_Real theXTolerance);
+
 		/****************** Derivative ******************/
 		%feature("compactdefaultargs") Derivative;
 		%feature("autodoc", "Returns the value of the derivative at the root. exception notdone is raised if the minimum was not found.
@@ -478,20 +492,6 @@ float
 ") Value;
 		Standard_Real Value();
 
-		/****************** math_BissecNewton ******************/
-		%feature("compactdefaultargs") math_BissecNewton;
-		%feature("autodoc", "Constructor. @param thextolerance - algorithm tolerance.
-
-Parameters
-----------
-theXTolerance: float
-
-Returns
--------
-None
-") math_BissecNewton;
-		 math_BissecNewton(const Standard_Real theXTolerance);
-
 };
 
 
@@ -506,6 +506,72 @@ None
 ****************************/
 class math_BracketMinimum {
 	public:
+		/****************** math_BracketMinimum ******************/
+		%feature("compactdefaultargs") math_BracketMinimum;
+		%feature("autodoc", "Constructor preparing a and b parameters only. it does not perform the job.
+
+Parameters
+----------
+A: float
+B: float
+
+Returns
+-------
+None
+") math_BracketMinimum;
+		 math_BracketMinimum(const Standard_Real A, const Standard_Real B);
+
+		/****************** math_BracketMinimum ******************/
+		%feature("compactdefaultargs") math_BracketMinimum;
+		%feature("autodoc", "Given two initial values this class computes a bracketing triplet of abscissae ax, bx, cx (such that bx is between ax and cx, f(bx) is less than both f(bx) and f(cx)) the brent minimization is done on the function f.
+
+Parameters
+----------
+F: math_Function
+A: float
+B: float
+
+Returns
+-------
+None
+") math_BracketMinimum;
+		 math_BracketMinimum(math_Function & F, const Standard_Real A, const Standard_Real B);
+
+		/****************** math_BracketMinimum ******************/
+		%feature("compactdefaultargs") math_BracketMinimum;
+		%feature("autodoc", "Given two initial values this class computes a bracketing triplet of abscissae ax, bx, cx (such that bx is between ax and cx, f(bx) is less than both f(bx) and f(cx)) the brent minimization is done on the function f. this constructor has to be used if f(a) is known.
+
+Parameters
+----------
+F: math_Function
+A: float
+B: float
+FA: float
+
+Returns
+-------
+None
+") math_BracketMinimum;
+		 math_BracketMinimum(math_Function & F, const Standard_Real A, const Standard_Real B, const Standard_Real FA);
+
+		/****************** math_BracketMinimum ******************/
+		%feature("compactdefaultargs") math_BracketMinimum;
+		%feature("autodoc", "Given two initial values this class computes a bracketing triplet of abscissae ax, bx, cx (such that bx is between ax and cx, f(bx) is less than both f(bx) and f(cx)) the brent minimization is done on the function f. this constructor has to be used if f(a) and f(b) are known.
+
+Parameters
+----------
+F: math_Function
+A: float
+B: float
+FA: float
+FB: float
+
+Returns
+-------
+None
+") math_BracketMinimum;
+		 math_BracketMinimum(math_Function & F, const Standard_Real A, const Standard_Real B, const Standard_Real FA, const Standard_Real FB);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -613,72 +679,6 @@ None
 ") Values;
 		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
-		/****************** math_BracketMinimum ******************/
-		%feature("compactdefaultargs") math_BracketMinimum;
-		%feature("autodoc", "Constructor preparing a and b parameters only. it does not perform the job.
-
-Parameters
-----------
-A: float
-B: float
-
-Returns
--------
-None
-") math_BracketMinimum;
-		 math_BracketMinimum(const Standard_Real A, const Standard_Real B);
-
-		/****************** math_BracketMinimum ******************/
-		%feature("compactdefaultargs") math_BracketMinimum;
-		%feature("autodoc", "Given two initial values this class computes a bracketing triplet of abscissae ax, bx, cx (such that bx is between ax and cx, f(bx) is less than both f(bx) and f(cx)) the brent minimization is done on the function f.
-
-Parameters
-----------
-F: math_Function
-A: float
-B: float
-
-Returns
--------
-None
-") math_BracketMinimum;
-		 math_BracketMinimum(math_Function & F, const Standard_Real A, const Standard_Real B);
-
-		/****************** math_BracketMinimum ******************/
-		%feature("compactdefaultargs") math_BracketMinimum;
-		%feature("autodoc", "Given two initial values this class computes a bracketing triplet of abscissae ax, bx, cx (such that bx is between ax and cx, f(bx) is less than both f(bx) and f(cx)) the brent minimization is done on the function f. this constructor has to be used if f(a) is known.
-
-Parameters
-----------
-F: math_Function
-A: float
-B: float
-FA: float
-
-Returns
--------
-None
-") math_BracketMinimum;
-		 math_BracketMinimum(math_Function & F, const Standard_Real A, const Standard_Real B, const Standard_Real FA);
-
-		/****************** math_BracketMinimum ******************/
-		%feature("compactdefaultargs") math_BracketMinimum;
-		%feature("autodoc", "Given two initial values this class computes a bracketing triplet of abscissae ax, bx, cx (such that bx is between ax and cx, f(bx) is less than both f(bx) and f(cx)) the brent minimization is done on the function f. this constructor has to be used if f(a) and f(b) are known.
-
-Parameters
-----------
-F: math_Function
-A: float
-B: float
-FA: float
-FB: float
-
-Returns
--------
-None
-") math_BracketMinimum;
-		 math_BracketMinimum(math_Function & F, const Standard_Real A, const Standard_Real B, const Standard_Real FA, const Standard_Real FB);
-
 };
 
 
@@ -693,6 +693,27 @@ None
 ***************************/
 class math_BracketedRoot {
 	public:
+		/****************** math_BracketedRoot ******************/
+		%feature("compactdefaultargs") math_BracketedRoot;
+		%feature("autodoc", "The brent method is used to find the root of the function f between the bounds bound1 and bound2 on the function f. if f(bound1)*f(bound2) >0 the brent method fails. the tolerance required for the root is given by tolerance. the solution is found when : abs(xi - xi-1) <= tolerance; the maximum number of iterations allowed is given by nbiterations.
+
+Parameters
+----------
+F: math_Function
+Bound1: float
+Bound2: float
+Tolerance: float
+NbIterations: int,optional
+	default value is 100
+ZEPS: float,optional
+	default value is 1.0e-12
+
+Returns
+-------
+None
+") math_BracketedRoot;
+		 math_BracketedRoot(math_Function & F, const Standard_Real Bound1, const Standard_Real Bound2, const Standard_Real Tolerance, const Standard_Integer NbIterations = 100, const Standard_Real ZEPS = 1.0e-12);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -741,27 +762,6 @@ float
 ") Value;
 		Standard_Real Value();
 
-		/****************** math_BracketedRoot ******************/
-		%feature("compactdefaultargs") math_BracketedRoot;
-		%feature("autodoc", "The brent method is used to find the root of the function f between the bounds bound1 and bound2 on the function f. if f(bound1)*f(bound2) >0 the brent method fails. the tolerance required for the root is given by tolerance. the solution is found when : abs(xi - xi-1) <= tolerance; the maximum number of iterations allowed is given by nbiterations.
-
-Parameters
-----------
-F: math_Function
-Bound1: float
-Bound2: float
-Tolerance: float
-NbIterations: int,optional
-	default value is 100
-ZEPS: float,optional
-	default value is 1.0e-12
-
-Returns
--------
-None
-") math_BracketedRoot;
-		 math_BracketedRoot(math_Function & F, const Standard_Real Bound1, const Standard_Real Bound2, const Standard_Real Tolerance, const Standard_Integer NbIterations = 100, const Standard_Real ZEPS = 1.0e-12);
-
 };
 
 
@@ -776,6 +776,43 @@ None
 **************************/
 class math_BrentMinimum {
 	public:
+		/****************** math_BrentMinimum ******************/
+		%feature("compactdefaultargs") math_BrentMinimum;
+		%feature("autodoc", "This constructor should be used in a sub-class to initialize correctly all the fields of this class.
+
+Parameters
+----------
+TolX: float
+NbIterations: int,optional
+	default value is 100
+ZEPS: float,optional
+	default value is 1.0e-12
+
+Returns
+-------
+None
+") math_BrentMinimum;
+		 math_BrentMinimum(const Standard_Real TolX, const Standard_Integer NbIterations = 100, const Standard_Real ZEPS = 1.0e-12);
+
+		/****************** math_BrentMinimum ******************/
+		%feature("compactdefaultargs") math_BrentMinimum;
+		%feature("autodoc", "This constructor should be used in a sub-class to initialize correctly all the fields of this class. it has to be used if f(bx) is known.
+
+Parameters
+----------
+TolX: float
+Fbx: float
+NbIterations: int,optional
+	default value is 100
+ZEPS: float,optional
+	default value is 1.0e-12
+
+Returns
+-------
+None
+") math_BrentMinimum;
+		 math_BrentMinimum(const Standard_Real TolX, const Standard_Real Fbx, const Standard_Integer NbIterations = 100, const Standard_Real ZEPS = 1.0e-12);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -855,43 +892,6 @@ None
 ") Perform;
 		void Perform(math_Function & F, const Standard_Real Ax, const Standard_Real Bx, const Standard_Real Cx);
 
-		/****************** math_BrentMinimum ******************/
-		%feature("compactdefaultargs") math_BrentMinimum;
-		%feature("autodoc", "This constructor should be used in a sub-class to initialize correctly all the fields of this class.
-
-Parameters
-----------
-TolX: float
-NbIterations: int,optional
-	default value is 100
-ZEPS: float,optional
-	default value is 1.0e-12
-
-Returns
--------
-None
-") math_BrentMinimum;
-		 math_BrentMinimum(const Standard_Real TolX, const Standard_Integer NbIterations = 100, const Standard_Real ZEPS = 1.0e-12);
-
-		/****************** math_BrentMinimum ******************/
-		%feature("compactdefaultargs") math_BrentMinimum;
-		%feature("autodoc", "This constructor should be used in a sub-class to initialize correctly all the fields of this class. it has to be used if f(bx) is known.
-
-Parameters
-----------
-TolX: float
-Fbx: float
-NbIterations: int,optional
-	default value is 100
-ZEPS: float,optional
-	default value is 1.0e-12
-
-Returns
--------
-None
-") math_BrentMinimum;
-		 math_BrentMinimum(const Standard_Real TolX, const Standard_Real Fbx, const Standard_Integer NbIterations = 100, const Standard_Real ZEPS = 1.0e-12);
-
 };
 
 
@@ -906,6 +906,21 @@ None
 ******************************/
 class math_BullardGenerator {
 	public:
+		/****************** math_BullardGenerator ******************/
+		%feature("compactdefaultargs") math_BullardGenerator;
+		%feature("autodoc", "Creates new xorshift 64-bit rng.
+
+Parameters
+----------
+theSeed: unsigned int,optional
+	default value is 1
+
+Returns
+-------
+None
+") math_BullardGenerator;
+		 math_BullardGenerator(unsigned int theSeed = 1);
+
 		/****************** NextInt ******************/
 		%feature("compactdefaultargs") NextInt;
 		%feature("autodoc", "Generates new 64-bit integer value.
@@ -941,21 +956,6 @@ None
 ") SetSeed;
 		void SetSeed(unsigned int theSeed = 1);
 
-		/****************** math_BullardGenerator ******************/
-		%feature("compactdefaultargs") math_BullardGenerator;
-		%feature("autodoc", "Creates new xorshift 64-bit rng.
-
-Parameters
-----------
-theSeed: unsigned int,optional
-	default value is 1
-
-Returns
--------
-None
-") math_BullardGenerator;
-		 math_BullardGenerator(unsigned int theSeed = 1);
-
 };
 
 
@@ -970,6 +970,20 @@ None
 ******************************************/
 class math_ComputeGaussPointsAndWeights {
 	public:
+		/****************** math_ComputeGaussPointsAndWeights ******************/
+		%feature("compactdefaultargs") math_ComputeGaussPointsAndWeights;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Number: int
+
+Returns
+-------
+None
+") math_ComputeGaussPointsAndWeights;
+		 math_ComputeGaussPointsAndWeights(const Standard_Integer Number);
+
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "No available documentation.
@@ -999,20 +1013,6 @@ Returns
 math_Vector
 ") Weights;
 		math_Vector Weights();
-
-		/****************** math_ComputeGaussPointsAndWeights ******************/
-		%feature("compactdefaultargs") math_ComputeGaussPointsAndWeights;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Number: int
-
-Returns
--------
-None
-") math_ComputeGaussPointsAndWeights;
-		 math_ComputeGaussPointsAndWeights(const Standard_Integer Number);
 
 };
 
@@ -1028,6 +1028,20 @@ None
 ********************************************/
 class math_ComputeKronrodPointsAndWeights {
 	public:
+		/****************** math_ComputeKronrodPointsAndWeights ******************/
+		%feature("compactdefaultargs") math_ComputeKronrodPointsAndWeights;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Number: int
+
+Returns
+-------
+None
+") math_ComputeKronrodPointsAndWeights;
+		 math_ComputeKronrodPointsAndWeights(const Standard_Integer Number);
+
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "No available documentation.
@@ -1058,20 +1072,6 @@ math_Vector
 ") Weights;
 		math_Vector Weights();
 
-		/****************** math_ComputeKronrodPointsAndWeights ******************/
-		%feature("compactdefaultargs") math_ComputeKronrodPointsAndWeights;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Number: int
-
-Returns
--------
-None
-") math_ComputeKronrodPointsAndWeights;
-		 math_ComputeKronrodPointsAndWeights(const Standard_Integer Number);
-
 };
 
 
@@ -1086,6 +1086,22 @@ None
 *******************/
 class math_Crout {
 	public:
+		/****************** math_Crout ******************/
+		%feature("compactdefaultargs") math_Crout;
+		%feature("autodoc", "Given an input matrix a, this algorithm inverts a by the crout algorithm. the user can give only the inferior triangle for the implementation. a can be decomposed like this: a = l * d * t(l) where l is triangular inferior and d is diagonal. if one element of a is less than minpivot, a is considered as singular. exception notsquare is raised if a is not a square matrix.
+
+Parameters
+----------
+A: math_Matrix
+MinPivot: float,optional
+	default value is 1.0e-20
+
+Returns
+-------
+None
+") math_Crout;
+		 math_Crout(const math_Matrix & A, const Standard_Real MinPivot = 1.0e-20);
+
 		/****************** Determinant ******************/
 		%feature("compactdefaultargs") Determinant;
 		%feature("autodoc", "Returns the value of the determinant of the previously lu decomposed matrix a. zero is returned if the matrix a is considered as singular. exceptions stdfail_notdone if the algorithm fails (and isdone returns false).
@@ -1153,22 +1169,6 @@ None
 ") Solve;
 		void Solve(const math_Vector & B, math_Vector & X);
 
-		/****************** math_Crout ******************/
-		%feature("compactdefaultargs") math_Crout;
-		%feature("autodoc", "Given an input matrix a, this algorithm inverts a by the crout algorithm. the user can give only the inferior triangle for the implementation. a can be decomposed like this: a = l * d * t(l) where l is triangular inferior and d is diagonal. if one element of a is less than minpivot, a is considered as singular. exception notsquare is raised if a is not a square matrix.
-
-Parameters
-----------
-A: math_Matrix
-MinPivot: float,optional
-	default value is 1.0e-20
-
-Returns
--------
-None
-") math_Crout;
-		 math_Crout(const math_Matrix & A, const Standard_Real MinPivot = 1.0e-20);
-
 };
 
 
@@ -1183,58 +1183,6 @@ None
 ***********************************/
 class math_DirectPolynomialRoots {
 	public:
-
-        %feature("autodoc", "1");
-        %extend{
-            std::string DumpToString() {
-            std::stringstream s;
-            self->Dump(s);
-            return s.str();}
-        };
-		/****************** InfiniteRoots ******************/
-		%feature("compactdefaultargs") InfiniteRoots;
-		%feature("autodoc", "Returns true if there is an infinity of roots, otherwise returns false.
-
-Returns
--------
-bool
-") InfiniteRoots;
-		Standard_Boolean InfiniteRoots();
-
-		/****************** IsDone ******************/
-		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "Returns true if the computations are successful, otherwise returns false.
-
-Returns
--------
-bool
-") IsDone;
-		Standard_Boolean IsDone();
-
-		/****************** NbSolutions ******************/
-		%feature("compactdefaultargs") NbSolutions;
-		%feature("autodoc", "Returns the number of solutions. an exception is raised if there are an infinity of roots.
-
-Returns
--------
-int
-") NbSolutions;
-		Standard_Integer NbSolutions();
-
-		/****************** Value ******************/
-		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "Returns the value of the nieme root. an exception is raised if there are an infinity of roots. exception rangeerror is raised if nieme is < 1 or nieme > nbsolutions.
-
-Parameters
-----------
-Nieme: int
-
-Returns
--------
-float
-") Value;
-		Standard_Real Value(const Standard_Integer Nieme);
-
 		/****************** math_DirectPolynomialRoots ******************/
 		%feature("compactdefaultargs") math_DirectPolynomialRoots;
 		%feature("autodoc", "Computes all the real roots of the polynomial ax4 + bx3 + cx2 + dx + e using a direct method.
@@ -1301,6 +1249,58 @@ None
 ") math_DirectPolynomialRoots;
 		 math_DirectPolynomialRoots(const Standard_Real A, const Standard_Real B);
 
+
+        %feature("autodoc", "1");
+        %extend{
+            std::string DumpToString() {
+            std::stringstream s;
+            self->Dump(s);
+            return s.str();}
+        };
+		/****************** InfiniteRoots ******************/
+		%feature("compactdefaultargs") InfiniteRoots;
+		%feature("autodoc", "Returns true if there is an infinity of roots, otherwise returns false.
+
+Returns
+-------
+bool
+") InfiniteRoots;
+		Standard_Boolean InfiniteRoots();
+
+		/****************** IsDone ******************/
+		%feature("compactdefaultargs") IsDone;
+		%feature("autodoc", "Returns true if the computations are successful, otherwise returns false.
+
+Returns
+-------
+bool
+") IsDone;
+		Standard_Boolean IsDone();
+
+		/****************** NbSolutions ******************/
+		%feature("compactdefaultargs") NbSolutions;
+		%feature("autodoc", "Returns the number of solutions. an exception is raised if there are an infinity of roots.
+
+Returns
+-------
+int
+") NbSolutions;
+		Standard_Integer NbSolutions();
+
+		/****************** Value ******************/
+		%feature("compactdefaultargs") Value;
+		%feature("autodoc", "Returns the value of the nieme root. an exception is raised if there are an infinity of roots. exception rangeerror is raised if nieme is < 1 or nieme > nbsolutions.
+
+Parameters
+----------
+Nieme: int
+
+Returns
+-------
+float
+") Value;
+		Standard_Real Value(const Standard_Integer Nieme);
+
 };
 
 
@@ -1315,6 +1315,55 @@ None
 ***********************/
 class math_DoubleTab {
 	public:
+		/****************** math_DoubleTab ******************/
+		%feature("compactdefaultargs") math_DoubleTab;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+LowerRow: int
+UpperRow: int
+LowerCol: int
+UpperCol: int
+
+Returns
+-------
+None
+") math_DoubleTab;
+		 math_DoubleTab(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+
+		/****************** math_DoubleTab ******************/
+		%feature("compactdefaultargs") math_DoubleTab;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tab: Standard_Address
+LowerRow: int
+UpperRow: int
+LowerCol: int
+UpperCol: int
+
+Returns
+-------
+None
+") math_DoubleTab;
+		 math_DoubleTab(const Standard_Address Tab, const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+
+		/****************** math_DoubleTab ******************/
+		%feature("compactdefaultargs") math_DoubleTab;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Other: math_DoubleTab
+
+Returns
+-------
+None
+") math_DoubleTab;
+		 math_DoubleTab(const math_DoubleTab & Other);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "No available documentation.
@@ -1394,55 +1443,6 @@ None
             $self->Value(RowIndex,ColIndex)=value;
             }
         };
-		/****************** math_DoubleTab ******************/
-		%feature("compactdefaultargs") math_DoubleTab;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-LowerRow: int
-UpperRow: int
-LowerCol: int
-UpperCol: int
-
-Returns
--------
-None
-") math_DoubleTab;
-		 math_DoubleTab(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
-
-		/****************** math_DoubleTab ******************/
-		%feature("compactdefaultargs") math_DoubleTab;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Tab: Standard_Address
-LowerRow: int
-UpperRow: int
-LowerCol: int
-UpperCol: int
-
-Returns
--------
-None
-") math_DoubleTab;
-		 math_DoubleTab(const Standard_Address Tab, const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
-
-		/****************** math_DoubleTab ******************/
-		%feature("compactdefaultargs") math_DoubleTab;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Other: math_DoubleTab
-
-Returns
--------
-None
-") math_DoubleTab;
-		 math_DoubleTab(const math_DoubleTab & Other);
-
 };
 
 
@@ -1457,6 +1457,21 @@ None
 *********************************/
 class math_EigenValuesSearcher {
 	public:
+		/****************** math_EigenValuesSearcher ******************/
+		%feature("compactdefaultargs") math_EigenValuesSearcher;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Diagonal: TColStd_Array1OfReal
+Subdiagonal: TColStd_Array1OfReal
+
+Returns
+-------
+None
+") math_EigenValuesSearcher;
+		 math_EigenValuesSearcher(const TColStd_Array1OfReal & Diagonal, const TColStd_Array1OfReal & Subdiagonal);
+
 		/****************** Dimension ******************/
 		%feature("compactdefaultargs") Dimension;
 		%feature("autodoc", "Returns the dimension of matrix.
@@ -1505,21 +1520,6 @@ bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
-		/****************** math_EigenValuesSearcher ******************/
-		%feature("compactdefaultargs") math_EigenValuesSearcher;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Diagonal: TColStd_Array1OfReal
-Subdiagonal: TColStd_Array1OfReal
-
-Returns
--------
-None
-") math_EigenValuesSearcher;
-		 math_EigenValuesSearcher(const TColStd_Array1OfReal & Diagonal, const TColStd_Array1OfReal & Subdiagonal);
-
 };
 
 
@@ -1534,6 +1534,25 @@ None
 ******************/
 class math_FRPR {
 	public:
+		/****************** math_FRPR ******************/
+		%feature("compactdefaultargs") math_FRPR;
+		%feature("autodoc", "Initializes the computation of the minimum of f. warning: constructor does not perform computations.
+
+Parameters
+----------
+theFunction: math_MultipleVarFunctionWithGradient
+theTolerance: float
+theNbIterations: int,optional
+	default value is 200
+theZEPS: float,optional
+	default value is 1.0e-12
+
+Returns
+-------
+None
+") math_FRPR;
+		 math_FRPR(const math_MultipleVarFunctionWithGradient & theFunction, const Standard_Real theTolerance, const Standard_Integer theNbIterations = 200, const Standard_Real theZEPS = 1.0e-12);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -1649,25 +1668,6 @@ None
 ") Perform;
 		void Perform(math_MultipleVarFunctionWithGradient & theFunction, const math_Vector & theStartingPoint);
 
-		/****************** math_FRPR ******************/
-		%feature("compactdefaultargs") math_FRPR;
-		%feature("autodoc", "Initializes the computation of the minimum of f. warning: constructor does not perform computations.
-
-Parameters
-----------
-theFunction: math_MultipleVarFunctionWithGradient
-theTolerance: float
-theNbIterations: int,optional
-	default value is 200
-theZEPS: float,optional
-	default value is 1.0e-12
-
-Returns
--------
-None
-") math_FRPR;
-		 math_FRPR(const math_MultipleVarFunctionWithGradient & theFunction, const Standard_Real theTolerance, const Standard_Integer theNbIterations = 200, const Standard_Real theZEPS = 1.0e-12);
-
 };
 
 
@@ -1722,6 +1722,24 @@ bool
 ******************************/
 class math_FunctionAllRoots {
 	public:
+		/****************** math_FunctionAllRoots ******************/
+		%feature("compactdefaultargs") math_FunctionAllRoots;
+		%feature("autodoc", "The algorithm uses the sample to find intervals on which the function is null. an interval is found if, for at least two consecutive points of the sample, ui and ui+1, we get |f(ui)|<=epsnul and |f(ui+1)|<=epsnul. the real bounds of an interval are computed with the functionroots. algorithm. between two intervals, the roots of the function f are calculated using the functionroots algorithm.
+
+Parameters
+----------
+F: math_FunctionWithDerivative
+S: math_FunctionSample
+EpsX: float
+EpsF: float
+EpsNul: float
+
+Returns
+-------
+None
+") math_FunctionAllRoots;
+		 math_FunctionAllRoots(math_FunctionWithDerivative & F, const math_FunctionSample & S, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Real EpsNul);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -1820,24 +1838,6 @@ int
 ") NbPoints;
 		Standard_Integer NbPoints();
 
-		/****************** math_FunctionAllRoots ******************/
-		%feature("compactdefaultargs") math_FunctionAllRoots;
-		%feature("autodoc", "The algorithm uses the sample to find intervals on which the function is null. an interval is found if, for at least two consecutive points of the sample, ui and ui+1, we get |f(ui)|<=epsnul and |f(ui+1)|<=epsnul. the real bounds of an interval are computed with the functionroots. algorithm. between two intervals, the roots of the function f are calculated using the functionroots algorithm.
-
-Parameters
-----------
-F: math_FunctionWithDerivative
-S: math_FunctionSample
-EpsX: float
-EpsF: float
-EpsNul: float
-
-Returns
--------
-None
-") math_FunctionAllRoots;
-		 math_FunctionAllRoots(math_FunctionWithDerivative & F, const math_FunctionSample & S, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Real EpsNul);
-
 };
 
 
@@ -1852,6 +1852,44 @@ None
 **************************/
 class math_FunctionRoot {
 	public:
+		/****************** math_FunctionRoot ******************/
+		%feature("compactdefaultargs") math_FunctionRoot;
+		%feature("autodoc", "The newton-raphson method is done to find the root of the function f from the initial guess guess.the tolerance required on the root is given by tolerance. iterations are stopped if the expected solution does not stay in the range a..b. the solution is found when abs(xi - xi-1) <= tolerance; the maximum number of iterations allowed is given by nbiterations.
+
+Parameters
+----------
+F: math_FunctionWithDerivative
+Guess: float
+Tolerance: float
+NbIterations: int,optional
+	default value is 100
+
+Returns
+-------
+None
+") math_FunctionRoot;
+		 math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Integer NbIterations = 100);
+
+		/****************** math_FunctionRoot ******************/
+		%feature("compactdefaultargs") math_FunctionRoot;
+		%feature("autodoc", "The newton-raphson method is done to find the root of the function f from the initial guess guess. the tolerance required on the root is given by tolerance. iterations are stopped if the expected solution does not stay in the range a..b the solution is found when abs(xi - xi-1) <= tolerance; the maximum number of iterations allowed is given by nbiterations.
+
+Parameters
+----------
+F: math_FunctionWithDerivative
+Guess: float
+Tolerance: float
+A: float
+B: float
+NbIterations: int,optional
+	default value is 100
+
+Returns
+-------
+None
+") math_FunctionRoot;
+		 math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations = 100);
+
 		/****************** Derivative ******************/
 		%feature("compactdefaultargs") Derivative;
 		%feature("autodoc", "Returns the value of the derivative at the root. exception notdone is raised if the root was not found.
@@ -1910,44 +1948,6 @@ float
 ") Value;
 		Standard_Real Value();
 
-		/****************** math_FunctionRoot ******************/
-		%feature("compactdefaultargs") math_FunctionRoot;
-		%feature("autodoc", "The newton-raphson method is done to find the root of the function f from the initial guess guess.the tolerance required on the root is given by tolerance. iterations are stopped if the expected solution does not stay in the range a..b. the solution is found when abs(xi - xi-1) <= tolerance; the maximum number of iterations allowed is given by nbiterations.
-
-Parameters
-----------
-F: math_FunctionWithDerivative
-Guess: float
-Tolerance: float
-NbIterations: int,optional
-	default value is 100
-
-Returns
--------
-None
-") math_FunctionRoot;
-		 math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Integer NbIterations = 100);
-
-		/****************** math_FunctionRoot ******************/
-		%feature("compactdefaultargs") math_FunctionRoot;
-		%feature("autodoc", "The newton-raphson method is done to find the root of the function f from the initial guess guess. the tolerance required on the root is given by tolerance. iterations are stopped if the expected solution does not stay in the range a..b the solution is found when abs(xi - xi-1) <= tolerance; the maximum number of iterations allowed is given by nbiterations.
-
-Parameters
-----------
-F: math_FunctionWithDerivative
-Guess: float
-Tolerance: float
-A: float
-B: float
-NbIterations: int,optional
-	default value is 100
-
-Returns
--------
-None
-") math_FunctionRoot;
-		 math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations = 100);
-
 };
 
 
@@ -1962,6 +1962,31 @@ None
 ***************************/
 class math_FunctionRoots {
 	public:
+		/****************** math_FunctionRoots ******************/
+		%feature("compactdefaultargs") math_FunctionRoots;
+		%feature("autodoc", "Calculates all the real roots of a function f-k within the range a..b. whithout conditions on a and b a solution x is found when abs(xi - xi-1) <= epsx and abs(f(xi)-k) <= epsf. the function is considered as null between a and b if abs(f-k) <= epsnull within this range.
+
+Parameters
+----------
+F: math_FunctionWithDerivative
+A: float
+B: float
+NbSample: int
+EpsX: float,optional
+	default value is 0.0
+EpsF: float,optional
+	default value is 0.0
+EpsNull: float,optional
+	default value is 0.0
+K: float,optional
+	default value is 0.0
+
+Returns
+-------
+None
+") math_FunctionRoots;
+		 math_FunctionRoots(math_FunctionWithDerivative & F, const Standard_Real A, const Standard_Real B, const Standard_Integer NbSample, const Standard_Real EpsX = 0.0, const Standard_Real EpsF = 0.0, const Standard_Real EpsNull = 0.0, const Standard_Real K = 0.0);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -2028,31 +2053,6 @@ float
 ") Value;
 		Standard_Real Value(const Standard_Integer Nieme);
 
-		/****************** math_FunctionRoots ******************/
-		%feature("compactdefaultargs") math_FunctionRoots;
-		%feature("autodoc", "Calculates all the real roots of a function f-k within the range a..b. whithout conditions on a and b a solution x is found when abs(xi - xi-1) <= epsx and abs(f(xi)-k) <= epsf. the function is considered as null between a and b if abs(f-k) <= epsnull within this range.
-
-Parameters
-----------
-F: math_FunctionWithDerivative
-A: float
-B: float
-NbSample: int
-EpsX: float,optional
-	default value is 0.0
-EpsF: float,optional
-	default value is 0.0
-EpsNull: float,optional
-	default value is 0.0
-K: float,optional
-	default value is 0.0
-
-Returns
--------
-None
-") math_FunctionRoots;
-		 math_FunctionRoots(math_FunctionWithDerivative & F, const Standard_Real A, const Standard_Real B, const Standard_Integer NbSample, const Standard_Real EpsX = 0.0, const Standard_Real EpsF = 0.0, const Standard_Real EpsNull = 0.0, const Standard_Real K = 0.0);
-
 };
 
 
@@ -2067,6 +2067,22 @@ None
 ****************************/
 class math_FunctionSample {
 	public:
+		/****************** math_FunctionSample ******************/
+		%feature("compactdefaultargs") math_FunctionSample;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+A: float
+B: float
+N: int
+
+Returns
+-------
+None
+") math_FunctionSample;
+		 math_FunctionSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "Returns the bounds of parameters.
@@ -2105,22 +2121,6 @@ Returns
 int
 ") NbPoints;
 		Standard_Integer NbPoints();
-
-		/****************** math_FunctionSample ******************/
-		%feature("compactdefaultargs") math_FunctionSample;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-A: float
-B: float
-N: int
-
-Returns
--------
-None
-") math_FunctionSample;
-		 math_FunctionSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
 
 };
 
@@ -2196,6 +2196,39 @@ bool
 *****************************/
 class math_FunctionSetRoot {
 	public:
+		/****************** math_FunctionSetRoot ******************/
+		%feature("compactdefaultargs") math_FunctionSetRoot;
+		%feature("autodoc", "Is used in a sub-class to initialize correctly all the fields of this class. the range (1, f.nbvariables()) must be especially respected for all vectors and matrix declarations.
+
+Parameters
+----------
+F: math_FunctionSetWithDerivatives
+Tolerance: math_Vector
+NbIterations: int,optional
+	default value is 100
+
+Returns
+-------
+None
+") math_FunctionSetRoot;
+		 math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const math_Vector & Tolerance, const Standard_Integer NbIterations = 100);
+
+		/****************** math_FunctionSetRoot ******************/
+		%feature("compactdefaultargs") math_FunctionSetRoot;
+		%feature("autodoc", "Is used in a sub-class to initialize correctly all the fields of this class. the range (1, f.nbvariables()) must be especially respected for all vectors and matrix declarations. the method settolerance must be called after this constructor.
+
+Parameters
+----------
+F: math_FunctionSetWithDerivatives
+NbIterations: int,optional
+	default value is 100
+
+Returns
+-------
+None
+") math_FunctionSetRoot;
+		 math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const Standard_Integer NbIterations = 100);
+
 		/****************** Derivative ******************/
 		%feature("compactdefaultargs") Derivative;
 		%feature("autodoc", "Returns the matrix value of the derivative at the root. exception notdone is raised if the root was not found.
@@ -2380,39 +2413,6 @@ int
 ") StateNumber;
 		Standard_Integer StateNumber();
 
-		/****************** math_FunctionSetRoot ******************/
-		%feature("compactdefaultargs") math_FunctionSetRoot;
-		%feature("autodoc", "Is used in a sub-class to initialize correctly all the fields of this class. the range (1, f.nbvariables()) must be especially respected for all vectors and matrix declarations.
-
-Parameters
-----------
-F: math_FunctionSetWithDerivatives
-Tolerance: math_Vector
-NbIterations: int,optional
-	default value is 100
-
-Returns
--------
-None
-") math_FunctionSetRoot;
-		 math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const math_Vector & Tolerance, const Standard_Integer NbIterations = 100);
-
-		/****************** math_FunctionSetRoot ******************/
-		%feature("compactdefaultargs") math_FunctionSetRoot;
-		%feature("autodoc", "Is used in a sub-class to initialize correctly all the fields of this class. the range (1, f.nbvariables()) must be especially respected for all vectors and matrix declarations. the method settolerance must be called after this constructor.
-
-Parameters
-----------
-F: math_FunctionSetWithDerivatives
-NbIterations: int,optional
-	default value is 100
-
-Returns
--------
-None
-") math_FunctionSetRoot;
-		 math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const Standard_Integer NbIterations = 100);
-
 };
 
 
@@ -2427,6 +2427,24 @@ None
 *******************/
 class math_Gauss {
 	public:
+		/****************** math_Gauss ******************/
+		%feature("compactdefaultargs") math_Gauss;
+		%feature("autodoc", "Given an input n x n matrix a this constructor performs its lu decomposition with partial pivoting (interchange of rows). this lu decomposition is stored internally and may be used to do subsequent calculation. if the largest pivot found is less than minpivot the matrix a is considered as singular. exception notsquare is raised if a is not a square matrix.
+
+Parameters
+----------
+A: math_Matrix
+MinPivot: float,optional
+	default value is 1.0e-20
+aProgress: Message_ProgressIndicator,optional
+	default value is opencascade::handle<Message_ProgressIndicator>()
+
+Returns
+-------
+None
+") math_Gauss;
+		 math_Gauss(const math_Matrix & A, const Standard_Real MinPivot = 1.0e-20, const opencascade::handle<Message_ProgressIndicator> & aProgress = opencascade::handle<Message_ProgressIndicator>());
+
 		/****************** Determinant ******************/
 		%feature("compactdefaultargs") Determinant;
 		%feature("autodoc", "This routine returns the value of the determinant of the previously lu decomposed matrix a. exception notdone may be raised if the decomposition of a was not done successfully, zero is returned if the matrix a was considered as singular.
@@ -2498,24 +2516,6 @@ None
 ") Solve;
 		void Solve(math_Vector & B);
 
-		/****************** math_Gauss ******************/
-		%feature("compactdefaultargs") math_Gauss;
-		%feature("autodoc", "Given an input n x n matrix a this constructor performs its lu decomposition with partial pivoting (interchange of rows). this lu decomposition is stored internally and may be used to do subsequent calculation. if the largest pivot found is less than minpivot the matrix a is considered as singular. exception notsquare is raised if a is not a square matrix.
-
-Parameters
-----------
-A: math_Matrix
-MinPivot: float,optional
-	default value is 1.0e-20
-aProgress: Message_ProgressIndicator,optional
-	default value is opencascade::handle<Message_ProgressIndicator>()
-
-Returns
--------
-None
-") math_Gauss;
-		 math_Gauss(const math_Matrix & A, const Standard_Real MinPivot = 1.0e-20, const opencascade::handle<Message_ProgressIndicator> & aProgress = opencascade::handle<Message_ProgressIndicator>());
-
 };
 
 
@@ -2530,6 +2530,22 @@ None
 ******************************/
 class math_GaussLeastSquare {
 	public:
+		/****************** math_GaussLeastSquare ******************/
+		%feature("compactdefaultargs") math_GaussLeastSquare;
+		%feature("autodoc", "Given an input n x m matrix a with n >= m this constructor performs the lu decomposition with partial pivoting (interchange of rows) of the matrix aa = a.transposed() * a; this lu decomposition is stored internally and may be used to do subsequent calculation. if the largest pivot found is less than minpivot the matrix <a> is considered as singular.
+
+Parameters
+----------
+A: math_Matrix
+MinPivot: float,optional
+	default value is 1.0e-20
+
+Returns
+-------
+None
+") math_GaussLeastSquare;
+		 math_GaussLeastSquare(const math_Matrix & A, const Standard_Real MinPivot = 1.0e-20);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -2563,22 +2579,6 @@ None
 ") Solve;
 		void Solve(const math_Vector & B, math_Vector & X);
 
-		/****************** math_GaussLeastSquare ******************/
-		%feature("compactdefaultargs") math_GaussLeastSquare;
-		%feature("autodoc", "Given an input n x m matrix a with n >= m this constructor performs the lu decomposition with partial pivoting (interchange of rows) of the matrix aa = a.transposed() * a; this lu decomposition is stored internally and may be used to do subsequent calculation. if the largest pivot found is less than minpivot the matrix <a> is considered as singular.
-
-Parameters
-----------
-A: math_Matrix
-MinPivot: float,optional
-	default value is 1.0e-20
-
-Returns
--------
-None
-") math_GaussLeastSquare;
-		 math_GaussLeastSquare(const math_Matrix & A, const Standard_Real MinPivot = 1.0e-20);
-
 };
 
 
@@ -2593,6 +2593,23 @@ None
 **************************************/
 class math_GaussMultipleIntegration {
 	public:
+		/****************** math_GaussMultipleIntegration ******************/
+		%feature("compactdefaultargs") math_GaussMultipleIntegration;
+		%feature("autodoc", "The gauss-legendre integration with order = points of integration for each unknow, is done on the function f between the bounds lower and upper.
+
+Parameters
+----------
+F: math_MultipleVarFunction
+Lower: math_Vector
+Upper: math_Vector
+Order: math_IntegerVector
+
+Returns
+-------
+None
+") math_GaussMultipleIntegration;
+		 math_GaussMultipleIntegration(math_MultipleVarFunction & F, const math_Vector & Lower, const math_Vector & Upper, const math_IntegerVector & Order);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -2621,23 +2638,6 @@ float
 ") Value;
 		Standard_Real Value();
 
-		/****************** math_GaussMultipleIntegration ******************/
-		%feature("compactdefaultargs") math_GaussMultipleIntegration;
-		%feature("autodoc", "The gauss-legendre integration with order = points of integration for each unknow, is done on the function f between the bounds lower and upper.
-
-Parameters
-----------
-F: math_MultipleVarFunction
-Lower: math_Vector
-Upper: math_Vector
-Order: math_IntegerVector
-
-Returns
--------
-None
-") math_GaussMultipleIntegration;
-		 math_GaussMultipleIntegration(math_MultipleVarFunction & F, const math_Vector & Lower, const math_Vector & Upper, const math_IntegerVector & Order);
-
 };
 
 
@@ -2652,6 +2652,23 @@ None
 *********************************/
 class math_GaussSetIntegration {
 	public:
+		/****************** math_GaussSetIntegration ******************/
+		%feature("compactdefaultargs") math_GaussSetIntegration;
+		%feature("autodoc", "The gauss-legendre integration with order = points of integration for each unknow, is done on the function f between the bounds lower and upper.
+
+Parameters
+----------
+F: math_FunctionSet
+Lower: math_Vector
+Upper: math_Vector
+Order: math_IntegerVector
+
+Returns
+-------
+None
+") math_GaussSetIntegration;
+		 math_GaussSetIntegration(math_FunctionSet & F, const math_Vector & Lower, const math_Vector & Upper, const math_IntegerVector & Order);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -2680,23 +2697,6 @@ math_Vector
 ") Value;
 		const math_Vector & Value();
 
-		/****************** math_GaussSetIntegration ******************/
-		%feature("compactdefaultargs") math_GaussSetIntegration;
-		%feature("autodoc", "The gauss-legendre integration with order = points of integration for each unknow, is done on the function f between the bounds lower and upper.
-
-Parameters
-----------
-F: math_FunctionSet
-Lower: math_Vector
-Upper: math_Vector
-Order: math_IntegerVector
-
-Returns
--------
-None
-") math_GaussSetIntegration;
-		 math_GaussSetIntegration(math_FunctionSet & F, const math_Vector & Lower, const math_Vector & Upper, const math_IntegerVector & Order);
-
 };
 
 
@@ -2711,34 +2711,6 @@ None
 ************************************/
 class math_GaussSingleIntegration {
 	public:
-
-        %feature("autodoc", "1");
-        %extend{
-            std::string DumpToString() {
-            std::stringstream s;
-            self->Dump(s);
-            return s.str();}
-        };
-		/****************** IsDone ******************/
-		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "Returns true if all has been correctly done.
-
-Returns
--------
-bool
-") IsDone;
-		Standard_Boolean IsDone();
-
-		/****************** Value ******************/
-		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "Returns the value of the integral.
-
-Returns
--------
-float
-") Value;
-		Standard_Real Value();
-
 		/****************** math_GaussSingleIntegration ******************/
 		%feature("compactdefaultargs") math_GaussSingleIntegration;
 		%feature("autodoc", "No available documentation.
@@ -2784,6 +2756,34 @@ None
 ") math_GaussSingleIntegration;
 		 math_GaussSingleIntegration(math_Function & F, const Standard_Real Lower, const Standard_Real Upper, const Standard_Integer Order, const Standard_Real Tol);
 
+
+        %feature("autodoc", "1");
+        %extend{
+            std::string DumpToString() {
+            std::stringstream s;
+            self->Dump(s);
+            return s.str();}
+        };
+		/****************** IsDone ******************/
+		%feature("compactdefaultargs") IsDone;
+		%feature("autodoc", "Returns true if all has been correctly done.
+
+Returns
+-------
+bool
+") IsDone;
+		Standard_Boolean IsDone();
+
+		/****************** Value ******************/
+		%feature("compactdefaultargs") Value;
+		%feature("autodoc", "Returns the value of the integral.
+
+Returns
+-------
+float
+") Value;
+		Standard_Real Value();
+
 };
 
 
@@ -2799,6 +2799,28 @@ None
 class math_GlobOptMin {
 	public:
 		class NCollection_CellFilter_Inspector {};
+		/****************** math_GlobOptMin ******************/
+		%feature("compactdefaultargs") math_GlobOptMin;
+		%feature("autodoc", "Constructor. perform method is not called from it. @param thefunc - objective functional. @param thelowerborder - lower corner of the search box. @param theupperborder - upper corner of the search box. @param thec - lipschitz constant. @param thediscretizationtol - parameter space discretization tolerance. @param thesametol - functional value space indifference tolerance.
+
+Parameters
+----------
+theFunc: math_MultipleVarFunction *
+theLowerBorder: math_Vector
+theUpperBorder: math_Vector
+theC: float,optional
+	default value is 9
+theDiscretizationTol: float,optional
+	default value is 1.0e-2
+theSameTol: float,optional
+	default value is 1.0e-7
+
+Returns
+-------
+None
+") math_GlobOptMin;
+		 math_GlobOptMin(math_MultipleVarFunction * theFunc, const math_Vector & theLowerBorder, const math_Vector & theUpperBorder, const Standard_Real theC = 9, const Standard_Real theDiscretizationTol = 1.0e-2, const Standard_Real theSameTol = 1.0e-7);
+
 		/****************** GetContinuity ******************/
 		%feature("compactdefaultargs") GetContinuity;
 		%feature("autodoc", "No available documentation.
@@ -2988,28 +3010,6 @@ None
 ") SetTol;
 		void SetTol(const Standard_Real theDiscretizationTol, const Standard_Real theSameTol);
 
-		/****************** math_GlobOptMin ******************/
-		%feature("compactdefaultargs") math_GlobOptMin;
-		%feature("autodoc", "Constructor. perform method is not called from it. @param thefunc - objective functional. @param thelowerborder - lower corner of the search box. @param theupperborder - upper corner of the search box. @param thec - lipschitz constant. @param thediscretizationtol - parameter space discretization tolerance. @param thesametol - functional value space indifference tolerance.
-
-Parameters
-----------
-theFunc: math_MultipleVarFunction *
-theLowerBorder: math_Vector
-theUpperBorder: math_Vector
-theC: float,optional
-	default value is 9
-theDiscretizationTol: float,optional
-	default value is 1.0e-2
-theSameTol: float,optional
-	default value is 1.0e-7
-
-Returns
--------
-None
-") math_GlobOptMin;
-		 math_GlobOptMin(math_MultipleVarFunction * theFunc, const math_Vector & theLowerBorder, const math_Vector & theUpperBorder, const Standard_Real theC = 9, const Standard_Real theDiscretizationTol = 1.0e-2, const Standard_Real theSameTol = 1.0e-7);
-
 };
 
 
@@ -3028,50 +3028,6 @@ None
 *************************/
 class math_Householder {
 	public:
-		/****************** AllValues ******************/
-		%feature("compactdefaultargs") AllValues;
-		%feature("autodoc", "Returns the matrix sol of all the solutions of the system a.x = b. exception notdone is raised is the resolution has not be done.
-
-Returns
--------
-math_Matrix
-") AllValues;
-		const math_Matrix & AllValues();
-
-
-        %feature("autodoc", "1");
-        %extend{
-            std::string DumpToString() {
-            std::stringstream s;
-            self->Dump(s);
-            return s.str();}
-        };
-		/****************** IsDone ******************/
-		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "Returns true if the computations are successful, otherwise returns false.
-
-Returns
--------
-bool
-") IsDone;
-		Standard_Boolean IsDone();
-
-		/****************** Value ******************/
-		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "Given the integer index, this routine returns the corresponding least square solution sol. exception notdone is raised if the resolution has not be done. exception outofrange is raised if index <=0 or index is more than the number of columns of b.
-
-Parameters
-----------
-sol: math_Vector
-Index: int,optional
-	default value is 1
-
-Returns
--------
-None
-") Value;
-		void Value(math_Vector & sol, const Standard_Integer Index = 1);
-
 		/****************** math_Householder ******************/
 		%feature("compactdefaultargs") math_Householder;
 		%feature("autodoc", "Given an input matrix a with n>= m, given an input matrix b this constructor performs the least square resolution of the set of linear equations a.x = b for each column of b. if a column norm is less than eps, the resolution can't be done. exception dimensionerror is raised if the row number of b is different from the a row number.
@@ -3127,6 +3083,50 @@ None
 ") math_Householder;
 		 math_Householder(const math_Matrix & A, const math_Vector & B, const Standard_Real EPS = 1.0e-20);
 
+		/****************** AllValues ******************/
+		%feature("compactdefaultargs") AllValues;
+		%feature("autodoc", "Returns the matrix sol of all the solutions of the system a.x = b. exception notdone is raised is the resolution has not be done.
+
+Returns
+-------
+math_Matrix
+") AllValues;
+		const math_Matrix & AllValues();
+
+
+        %feature("autodoc", "1");
+        %extend{
+            std::string DumpToString() {
+            std::stringstream s;
+            self->Dump(s);
+            return s.str();}
+        };
+		/****************** IsDone ******************/
+		%feature("compactdefaultargs") IsDone;
+		%feature("autodoc", "Returns true if the computations are successful, otherwise returns false.
+
+Returns
+-------
+bool
+") IsDone;
+		Standard_Boolean IsDone();
+
+		/****************** Value ******************/
+		%feature("compactdefaultargs") Value;
+		%feature("autodoc", "Given the integer index, this routine returns the corresponding least square solution sol. exception notdone is raised if the resolution has not be done. exception outofrange is raised if index <=0 or index is more than the number of columns of b.
+
+Parameters
+----------
+sol: math_Vector
+Index: int,optional
+	default value is 1
+
+Returns
+-------
+None
+") Value;
+		void Value(math_Vector & sol, const Standard_Integer Index = 1);
+
 };
 
 
@@ -3141,6 +3141,67 @@ None
 ***************************/
 class math_IntegerVector {
 	public:
+		/****************** math_IntegerVector ******************/
+		%feature("compactdefaultargs") math_IntegerVector;
+		%feature("autodoc", "Contructs an integervector in the range [lower..upper].
+
+Parameters
+----------
+theFirst: int
+theLast: int
+
+Returns
+-------
+None
+") math_IntegerVector;
+		 math_IntegerVector(const Standard_Integer theFirst, const Standard_Integer theLast);
+
+		/****************** math_IntegerVector ******************/
+		%feature("compactdefaultargs") math_IntegerVector;
+		%feature("autodoc", "Contructs an integervector in the range [lower..upper] with all the elements set to theinitialvalue.
+
+Parameters
+----------
+theFirst: int
+theLast: int
+theInitialValue: int
+
+Returns
+-------
+None
+") math_IntegerVector;
+		 math_IntegerVector(const Standard_Integer theFirst, const Standard_Integer theLast, const Standard_Integer theInitialValue);
+
+		/****************** math_IntegerVector ******************/
+		%feature("compactdefaultargs") math_IntegerVector;
+		%feature("autodoc", "Constructs an integervector in the range [lower..upper] which share the 'c array' thetab.
+
+Parameters
+----------
+theTab: int *
+theFirst: int
+theLast: int
+
+Returns
+-------
+None
+") math_IntegerVector;
+		 math_IntegerVector(const Standard_Integer * theTab, const Standard_Integer theFirst, const Standard_Integer theLast);
+
+		/****************** math_IntegerVector ******************/
+		%feature("compactdefaultargs") math_IntegerVector;
+		%feature("autodoc", "Constructs a copy for initialization. an exception is raised if the lengths of the integervectors are different.
+
+Parameters
+----------
+theOther: math_IntegerVector
+
+Returns
+-------
+None
+") math_IntegerVector;
+		 math_IntegerVector(const math_IntegerVector & theOther);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the integervector 'theright' to an integervector. an exception is raised if the integervectors have not the same length. an exception is raised if the lengths are not equal.
@@ -3492,67 +3553,6 @@ int
             $self->Value(theNum)=value;
             }
         };
-		/****************** math_IntegerVector ******************/
-		%feature("compactdefaultargs") math_IntegerVector;
-		%feature("autodoc", "Contructs an integervector in the range [lower..upper].
-
-Parameters
-----------
-theFirst: int
-theLast: int
-
-Returns
--------
-None
-") math_IntegerVector;
-		 math_IntegerVector(const Standard_Integer theFirst, const Standard_Integer theLast);
-
-		/****************** math_IntegerVector ******************/
-		%feature("compactdefaultargs") math_IntegerVector;
-		%feature("autodoc", "Contructs an integervector in the range [lower..upper] with all the elements set to theinitialvalue.
-
-Parameters
-----------
-theFirst: int
-theLast: int
-theInitialValue: int
-
-Returns
--------
-None
-") math_IntegerVector;
-		 math_IntegerVector(const Standard_Integer theFirst, const Standard_Integer theLast, const Standard_Integer theInitialValue);
-
-		/****************** math_IntegerVector ******************/
-		%feature("compactdefaultargs") math_IntegerVector;
-		%feature("autodoc", "Constructs an integervector in the range [lower..upper] which share the 'c array' thetab.
-
-Parameters
-----------
-theTab: int *
-theFirst: int
-theLast: int
-
-Returns
--------
-None
-") math_IntegerVector;
-		 math_IntegerVector(const Standard_Integer * theTab, const Standard_Integer theFirst, const Standard_Integer theLast);
-
-		/****************** math_IntegerVector ******************/
-		%feature("compactdefaultargs") math_IntegerVector;
-		%feature("autodoc", "Constructs a copy for initialization. an exception is raised if the lengths of the integervectors are different.
-
-Parameters
-----------
-theOther: math_IntegerVector
-
-Returns
--------
-None
-") math_IntegerVector;
-		 math_IntegerVector(const math_IntegerVector & theOther);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -3666,6 +3666,20 @@ math_IntegerVector
 ********************/
 class math_Jacobi {
 	public:
+		/****************** math_Jacobi ******************/
+		%feature("compactdefaultargs") math_Jacobi;
+		%feature("autodoc", "Given a real n x n matrix a, this constructor computes all its eigenvalues and eigenvectors using the jacobi method. the exception notsquare is raised if the matrix is not square. no verification that the matrix a is really symmetric is done.
+
+Parameters
+----------
+A: math_Matrix
+
+Returns
+-------
+None
+") math_Jacobi;
+		 math_Jacobi(const math_Matrix & A);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -3733,20 +3747,6 @@ math_Matrix
 ") Vectors;
 		const math_Matrix & Vectors();
 
-		/****************** math_Jacobi ******************/
-		%feature("compactdefaultargs") math_Jacobi;
-		%feature("autodoc", "Given a real n x n matrix a, this constructor computes all its eigenvalues and eigenvectors using the jacobi method. the exception notsquare is raised if the matrix is not square. no verification that the matrix a is really symmetric is done.
-
-Parameters
-----------
-A: math_Matrix
-
-Returns
--------
-None
-") math_Jacobi;
-		 math_Jacobi(const math_Matrix & A);
-
 };
 
 
@@ -3761,6 +3761,52 @@ None
 **************************************/
 class math_KronrodSingleIntegration {
 	public:
+		/****************** math_KronrodSingleIntegration ******************/
+		%feature("compactdefaultargs") math_KronrodSingleIntegration;
+		%feature("autodoc", "An empty constructor.
+
+Returns
+-------
+None
+") math_KronrodSingleIntegration;
+		 math_KronrodSingleIntegration();
+
+		/****************** math_KronrodSingleIntegration ******************/
+		%feature("compactdefaultargs") math_KronrodSingleIntegration;
+		%feature("autodoc", "Constructor. takes the function, the lower and upper bound values, the initial number of kronrod points.
+
+Parameters
+----------
+theFunction: math_Function
+theLower: float
+theUpper: float
+theNbPnts: int
+
+Returns
+-------
+None
+") math_KronrodSingleIntegration;
+		 math_KronrodSingleIntegration(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts);
+
+		/****************** math_KronrodSingleIntegration ******************/
+		%feature("compactdefaultargs") math_KronrodSingleIntegration;
+		%feature("autodoc", "Constructor. takes the function, the lower and upper bound values, the initial number of kronrod points, the tolerance value and the maximal number of iterations as parameters.
+
+Parameters
+----------
+theFunction: math_Function
+theLower: float
+theUpper: float
+theNbPnts: int
+theTolerance: float
+theMaxNbIter: int
+
+Returns
+-------
+None
+") math_KronrodSingleIntegration;
+		 math_KronrodSingleIntegration(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts, const Standard_Real theTolerance, const Standard_Integer theMaxNbIter);
+
 		/****************** AbsolutError ******************/
 		%feature("compactdefaultargs") AbsolutError;
 		%feature("autodoc", "Returns the value of the relative error reached.
@@ -3879,52 +3925,6 @@ float
 ") Value;
 		Standard_Real Value();
 
-		/****************** math_KronrodSingleIntegration ******************/
-		%feature("compactdefaultargs") math_KronrodSingleIntegration;
-		%feature("autodoc", "An empty constructor.
-
-Returns
--------
-None
-") math_KronrodSingleIntegration;
-		 math_KronrodSingleIntegration();
-
-		/****************** math_KronrodSingleIntegration ******************/
-		%feature("compactdefaultargs") math_KronrodSingleIntegration;
-		%feature("autodoc", "Constructor. takes the function, the lower and upper bound values, the initial number of kronrod points.
-
-Parameters
-----------
-theFunction: math_Function
-theLower: float
-theUpper: float
-theNbPnts: int
-
-Returns
--------
-None
-") math_KronrodSingleIntegration;
-		 math_KronrodSingleIntegration(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts);
-
-		/****************** math_KronrodSingleIntegration ******************/
-		%feature("compactdefaultargs") math_KronrodSingleIntegration;
-		%feature("autodoc", "Constructor. takes the function, the lower and upper bound values, the initial number of kronrod points, the tolerance value and the maximal number of iterations as parameters.
-
-Parameters
-----------
-theFunction: math_Function
-theLower: float
-theUpper: float
-theNbPnts: int
-theTolerance: float
-theMaxNbIter: int
-
-Returns
--------
-None
-") math_KronrodSingleIntegration;
-		 math_KronrodSingleIntegration(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const Standard_Integer theNbPnts, const Standard_Real theTolerance, const Standard_Integer theMaxNbIter);
-
 };
 
 
@@ -3939,6 +3939,73 @@ None
 ********************/
 class math_Matrix {
 	public:
+		/****************** math_Matrix ******************/
+		%feature("compactdefaultargs") math_Matrix;
+		%feature("autodoc", "Constructs a non-initialized matrix of range [lowerrow..upperrow, lowercol..uppercol] for the constructed matrix: - lowerrow and upperrow are the indexes of the lower and upper bounds of a row, and - lowercol and uppercol are the indexes of the lower and upper bounds of a column.
+
+Parameters
+----------
+LowerRow: int
+UpperRow: int
+LowerCol: int
+UpperCol: int
+
+Returns
+-------
+None
+") math_Matrix;
+		 math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+
+		/****************** math_Matrix ******************/
+		%feature("compactdefaultargs") math_Matrix;
+		%feature("autodoc", "Constructs a non-initialized matrix of range [lowerrow..upperrow, lowercol..uppercol] whose values are all initialized with the value initialvalue.
+
+Parameters
+----------
+LowerRow: int
+UpperRow: int
+LowerCol: int
+UpperCol: int
+InitialValue: float
+
+Returns
+-------
+None
+") math_Matrix;
+		 math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol, const Standard_Real InitialValue);
+
+		/****************** math_Matrix ******************/
+		%feature("compactdefaultargs") math_Matrix;
+		%feature("autodoc", "Constructs a matrix of range [lowerrow..upperrow, lowercol..uppercol] sharing data with a 'c array' pointed by tab.
+
+Parameters
+----------
+Tab: Standard_Address
+LowerRow: int
+UpperRow: int
+LowerCol: int
+UpperCol: int
+
+Returns
+-------
+None
+") math_Matrix;
+		 math_Matrix(const Standard_Address Tab, const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+
+		/****************** math_Matrix ******************/
+		%feature("compactdefaultargs") math_Matrix;
+		%feature("autodoc", "Constructs a matrix for copy in initialization. an exception is raised if the matrixes have not the same dimensions.
+
+Parameters
+----------
+Other: math_Matrix
+
+Returns
+-------
+None
+") math_Matrix;
+		 math_Matrix(const math_Matrix & Other);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the matrix <right> to a matrix. an exception is raised if the dimensions are different. warning in order to save time when copying matrices, it is preferable to use operator += or the function add whenever possible.
@@ -4485,73 +4552,6 @@ int
             $self->Value(Row,Col)=value;
             }
         };
-		/****************** math_Matrix ******************/
-		%feature("compactdefaultargs") math_Matrix;
-		%feature("autodoc", "Constructs a non-initialized matrix of range [lowerrow..upperrow, lowercol..uppercol] for the constructed matrix: - lowerrow and upperrow are the indexes of the lower and upper bounds of a row, and - lowercol and uppercol are the indexes of the lower and upper bounds of a column.
-
-Parameters
-----------
-LowerRow: int
-UpperRow: int
-LowerCol: int
-UpperCol: int
-
-Returns
--------
-None
-") math_Matrix;
-		 math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
-
-		/****************** math_Matrix ******************/
-		%feature("compactdefaultargs") math_Matrix;
-		%feature("autodoc", "Constructs a non-initialized matrix of range [lowerrow..upperrow, lowercol..uppercol] whose values are all initialized with the value initialvalue.
-
-Parameters
-----------
-LowerRow: int
-UpperRow: int
-LowerCol: int
-UpperCol: int
-InitialValue: float
-
-Returns
--------
-None
-") math_Matrix;
-		 math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol, const Standard_Real InitialValue);
-
-		/****************** math_Matrix ******************/
-		%feature("compactdefaultargs") math_Matrix;
-		%feature("autodoc", "Constructs a matrix of range [lowerrow..upperrow, lowercol..uppercol] sharing data with a 'c array' pointed by tab.
-
-Parameters
-----------
-Tab: Standard_Address
-LowerRow: int
-UpperRow: int
-LowerCol: int
-UpperCol: int
-
-Returns
--------
-None
-") math_Matrix;
-		 math_Matrix(const Standard_Address Tab, const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
-
-		/****************** math_Matrix ******************/
-		%feature("compactdefaultargs") math_Matrix;
-		%feature("autodoc", "Constructs a matrix for copy in initialization. an exception is raised if the matrixes have not the same dimensions.
-
-Parameters
-----------
-Other: math_Matrix
-
-Returns
--------
-None
-") math_Matrix;
-		 math_Matrix(const math_Matrix & Other);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -4765,6 +4765,65 @@ bool
 ********************************/
 class math_NewtonFunctionRoot {
 	public:
+		/****************** math_NewtonFunctionRoot ******************/
+		%feature("compactdefaultargs") math_NewtonFunctionRoot;
+		%feature("autodoc", "The newton method is done to find the root of the function f from the initial guess guess. the tolerance required on the root is given by tolerance. the solution is found when : abs(xi - xi-1) <= epsx and abs(f(xi))<= epsf the maximum number of iterations allowed is given by nbiterations.
+
+Parameters
+----------
+F: math_FunctionWithDerivative
+Guess: float
+EpsX: float
+EpsF: float
+NbIterations: int,optional
+	default value is 100
+
+Returns
+-------
+None
+") math_NewtonFunctionRoot;
+		 math_NewtonFunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Integer NbIterations = 100);
+
+		/****************** math_NewtonFunctionRoot ******************/
+		%feature("compactdefaultargs") math_NewtonFunctionRoot;
+		%feature("autodoc", "The newton method is done to find the root of the function f from the initial guess guess. the solution must be inside the interval [a, b]. the tolerance required on the root is given by tolerance. the solution is found when : abs(xi - xi-1) <= epsx and abs(f(xi))<= epsf the maximum number of iterations allowed is given by nbiterations.
+
+Parameters
+----------
+F: math_FunctionWithDerivative
+Guess: float
+EpsX: float
+EpsF: float
+A: float
+B: float
+NbIterations: int,optional
+	default value is 100
+
+Returns
+-------
+None
+") math_NewtonFunctionRoot;
+		 math_NewtonFunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations = 100);
+
+		/****************** math_NewtonFunctionRoot ******************/
+		%feature("compactdefaultargs") math_NewtonFunctionRoot;
+		%feature("autodoc", "Is used in a sub-class to initialize correctly all the fields of this class.
+
+Parameters
+----------
+A: float
+B: float
+EpsX: float
+EpsF: float
+NbIterations: int,optional
+	default value is 100
+
+Returns
+-------
+None
+") math_NewtonFunctionRoot;
+		 math_NewtonFunctionRoot(const Standard_Real A, const Standard_Real B, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Integer NbIterations = 100);
+
 		/****************** Derivative ******************/
 		%feature("compactdefaultargs") Derivative;
 		%feature("autodoc", "Returns the value of the derivative at the root. exception notdone is raised if the root was not found.
@@ -4838,65 +4897,6 @@ float
 ") Value;
 		Standard_Real Value();
 
-		/****************** math_NewtonFunctionRoot ******************/
-		%feature("compactdefaultargs") math_NewtonFunctionRoot;
-		%feature("autodoc", "The newton method is done to find the root of the function f from the initial guess guess. the tolerance required on the root is given by tolerance. the solution is found when : abs(xi - xi-1) <= epsx and abs(f(xi))<= epsf the maximum number of iterations allowed is given by nbiterations.
-
-Parameters
-----------
-F: math_FunctionWithDerivative
-Guess: float
-EpsX: float
-EpsF: float
-NbIterations: int,optional
-	default value is 100
-
-Returns
--------
-None
-") math_NewtonFunctionRoot;
-		 math_NewtonFunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Integer NbIterations = 100);
-
-		/****************** math_NewtonFunctionRoot ******************/
-		%feature("compactdefaultargs") math_NewtonFunctionRoot;
-		%feature("autodoc", "The newton method is done to find the root of the function f from the initial guess guess. the solution must be inside the interval [a, b]. the tolerance required on the root is given by tolerance. the solution is found when : abs(xi - xi-1) <= epsx and abs(f(xi))<= epsf the maximum number of iterations allowed is given by nbiterations.
-
-Parameters
-----------
-F: math_FunctionWithDerivative
-Guess: float
-EpsX: float
-EpsF: float
-A: float
-B: float
-NbIterations: int,optional
-	default value is 100
-
-Returns
--------
-None
-") math_NewtonFunctionRoot;
-		 math_NewtonFunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations = 100);
-
-		/****************** math_NewtonFunctionRoot ******************/
-		%feature("compactdefaultargs") math_NewtonFunctionRoot;
-		%feature("autodoc", "Is used in a sub-class to initialize correctly all the fields of this class.
-
-Parameters
-----------
-A: float
-B: float
-EpsX: float
-EpsF: float
-NbIterations: int,optional
-	default value is 100
-
-Returns
--------
-None
-") math_NewtonFunctionRoot;
-		 math_NewtonFunctionRoot(const Standard_Real A, const Standard_Real B, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Integer NbIterations = 100);
-
 };
 
 
@@ -4911,6 +4911,41 @@ None
 ***********************************/
 class math_NewtonFunctionSetRoot {
 	public:
+		/****************** math_NewtonFunctionSetRoot ******************/
+		%feature("compactdefaultargs") math_NewtonFunctionSetRoot;
+		%feature("autodoc", "Initialize correctly all the fields of this class. the range (1, f.nbvariables()) must be especially respected for all vectors and matrix declarations.
+
+Parameters
+----------
+theFunction: math_FunctionSetWithDerivatives
+theXTolerance: math_Vector
+theFTolerance: float
+tehNbIterations: int,optional
+	default value is 100
+
+Returns
+-------
+None
+") math_NewtonFunctionSetRoot;
+		 math_NewtonFunctionSetRoot(math_FunctionSetWithDerivatives & theFunction, const math_Vector & theXTolerance, const Standard_Real theFTolerance, const Standard_Integer tehNbIterations = 100);
+
+		/****************** math_NewtonFunctionSetRoot ******************/
+		%feature("compactdefaultargs") math_NewtonFunctionSetRoot;
+		%feature("autodoc", "This constructor should be used in a sub-class to initialize correctly all the fields of this class. the range (1, f.nbvariables()) must be especially respected for all vectors and matrix declarations. the method settolerance must be called before performing the algorithm.
+
+Parameters
+----------
+theFunction: math_FunctionSetWithDerivatives
+theFTolerance: float
+theNbIterations: int,optional
+	default value is 100
+
+Returns
+-------
+None
+") math_NewtonFunctionSetRoot;
+		 math_NewtonFunctionSetRoot(math_FunctionSetWithDerivatives & theFunction, const Standard_Real theFTolerance, const Standard_Integer theNbIterations = 100);
+
 		/****************** Derivative ******************/
 		%feature("compactdefaultargs") Derivative;
 		%feature("autodoc", "Returns the matrix value of the derivative at the root. exception notdone is raised if the root was not found.
@@ -5071,41 +5106,6 @@ None
 ") SetTolerance;
 		void SetTolerance(const math_Vector & XTol);
 
-		/****************** math_NewtonFunctionSetRoot ******************/
-		%feature("compactdefaultargs") math_NewtonFunctionSetRoot;
-		%feature("autodoc", "Initialize correctly all the fields of this class. the range (1, f.nbvariables()) must be especially respected for all vectors and matrix declarations.
-
-Parameters
-----------
-theFunction: math_FunctionSetWithDerivatives
-theXTolerance: math_Vector
-theFTolerance: float
-tehNbIterations: int,optional
-	default value is 100
-
-Returns
--------
-None
-") math_NewtonFunctionSetRoot;
-		 math_NewtonFunctionSetRoot(math_FunctionSetWithDerivatives & theFunction, const math_Vector & theXTolerance, const Standard_Real theFTolerance, const Standard_Integer tehNbIterations = 100);
-
-		/****************** math_NewtonFunctionSetRoot ******************/
-		%feature("compactdefaultargs") math_NewtonFunctionSetRoot;
-		%feature("autodoc", "This constructor should be used in a sub-class to initialize correctly all the fields of this class. the range (1, f.nbvariables()) must be especially respected for all vectors and matrix declarations. the method settolerance must be called before performing the algorithm.
-
-Parameters
-----------
-theFunction: math_FunctionSetWithDerivatives
-theFTolerance: float
-theNbIterations: int,optional
-	default value is 100
-
-Returns
--------
-None
-") math_NewtonFunctionSetRoot;
-		 math_NewtonFunctionSetRoot(math_FunctionSetWithDerivatives & theFunction, const Standard_Real theFTolerance, const Standard_Integer theNbIterations = 100);
-
 };
 
 
@@ -5124,6 +5124,28 @@ None
 ***************************/
 class math_NewtonMinimum {
 	public:
+		/****************** math_NewtonMinimum ******************/
+		%feature("compactdefaultargs") math_NewtonMinimum;
+		%feature("autodoc", "The tolerance required on the solution is given by tolerance. iteration are stopped if (!withsingularity) and h(f(xi)) is not definite positive (if the smaller eigenvalue of h < convexity) or isconverged() returns true for 2 successives iterations. warning: this constructor does not perform computation.
+
+Parameters
+----------
+theFunction: math_MultipleVarFunctionWithHessian
+theTolerance: float,optional
+	default value is Precision::Confusion()
+theNbIterations: int,optional
+	default value is 40
+theConvexity: float,optional
+	default value is 1.0e-6
+theWithSingularity: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") math_NewtonMinimum;
+		 math_NewtonMinimum(const math_MultipleVarFunctionWithHessian & theFunction, const Standard_Real theTolerance = Precision::Confusion(), const Standard_Integer theNbIterations = 40, const Standard_Real theConvexity = 1.0e-6, const Standard_Boolean theWithSingularity = Standard_True);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -5260,28 +5282,6 @@ None
 ") SetBoundary;
 		void SetBoundary(const math_Vector & theLeftBorder, const math_Vector & theRightBorder);
 
-		/****************** math_NewtonMinimum ******************/
-		%feature("compactdefaultargs") math_NewtonMinimum;
-		%feature("autodoc", "The tolerance required on the solution is given by tolerance. iteration are stopped if (!withsingularity) and h(f(xi)) is not definite positive (if the smaller eigenvalue of h < convexity) or isconverged() returns true for 2 successives iterations. warning: this constructor does not perform computation.
-
-Parameters
-----------
-theFunction: math_MultipleVarFunctionWithHessian
-theTolerance: float,optional
-	default value is Precision::Confusion()
-theNbIterations: int,optional
-	default value is 40
-theConvexity: float,optional
-	default value is 1.0e-6
-theWithSingularity: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") math_NewtonMinimum;
-		 math_NewtonMinimum(const math_MultipleVarFunctionWithHessian & theFunction, const Standard_Real theTolerance = Precision::Confusion(), const Standard_Integer theNbIterations = 40, const Standard_Real theConvexity = 1.0e-6, const Standard_Boolean theWithSingularity = Standard_True);
-
 };
 
 
@@ -5300,6 +5300,27 @@ None
 *****************/
 class math_PSO {
 	public:
+		/****************** math_PSO ******************/
+		%feature("compactdefaultargs") math_PSO;
+		%feature("autodoc", "/** * constructor. * * @param thefunc defines the objective function. it should exist during all lifetime of class instance. * @param thelowborder defines lower border of search space. * @param theuppborder defines upper border of search space. * @param thesteps defines steps of regular grid, used for particle generation. this parameter used to define stop condition (terminalvelocity). * @param thenbparticles defines number of particles. * @param thenbiter defines maximum number of iterations. */.
+
+Parameters
+----------
+theFunc: math_MultipleVarFunction *
+theLowBorder: math_Vector
+theUppBorder: math_Vector
+theSteps: math_Vector
+theNbParticles: int,optional
+	default value is 32
+theNbIter: int,optional
+	default value is 100
+
+Returns
+-------
+None
+") math_PSO;
+		 math_PSO(math_MultipleVarFunction * theFunc, const math_Vector & theLowBorder, const math_Vector & theUppBorder, const math_Vector & theSteps, const Standard_Integer theNbParticles = 32, const Standard_Integer theNbIter = 100);
+
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Perform computations, particles array is constructed inside of this function.
@@ -5337,27 +5358,6 @@ None
 ") Perform;
 		void Perform(math_PSOParticlesPool & theParticles, Standard_Integer theNbParticles, Standard_Real &OutValue, math_Vector & theOutPnt, const Standard_Integer theNbIter = 100);
 
-		/****************** math_PSO ******************/
-		%feature("compactdefaultargs") math_PSO;
-		%feature("autodoc", "/** * constructor. * * @param thefunc defines the objective function. it should exist during all lifetime of class instance. * @param thelowborder defines lower border of search space. * @param theuppborder defines upper border of search space. * @param thesteps defines steps of regular grid, used for particle generation. this parameter used to define stop condition (terminalvelocity). * @param thenbparticles defines number of particles. * @param thenbiter defines maximum number of iterations. */.
-
-Parameters
-----------
-theFunc: math_MultipleVarFunction *
-theLowBorder: math_Vector
-theUppBorder: math_Vector
-theSteps: math_Vector
-theNbParticles: int,optional
-	default value is 32
-theNbIter: int,optional
-	default value is 100
-
-Returns
--------
-None
-") math_PSO;
-		 math_PSO(math_MultipleVarFunction * theFunc, const math_Vector & theLowBorder, const math_Vector & theUppBorder, const math_Vector & theSteps, const Standard_Integer theNbParticles = 32, const Standard_Integer theNbIter = 100);
-
 };
 
 
@@ -5372,6 +5372,21 @@ None
 ******************************/
 class math_PSOParticlesPool {
 	public:
+		/****************** math_PSOParticlesPool ******************/
+		%feature("compactdefaultargs") math_PSOParticlesPool;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theParticlesCount: int
+theDimensionCount: int
+
+Returns
+-------
+None
+") math_PSOParticlesPool;
+		 math_PSOParticlesPool(const Standard_Integer theParticlesCount, const Standard_Integer theDimensionCount);
+
 		/****************** GetBestParticle ******************/
 		%feature("compactdefaultargs") GetBestParticle;
 		%feature("autodoc", "No available documentation.
@@ -5406,21 +5421,6 @@ PSO_Particle *
 ") GetWorstParticle;
 		PSO_Particle * GetWorstParticle();
 
-		/****************** math_PSOParticlesPool ******************/
-		%feature("compactdefaultargs") math_PSOParticlesPool;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theParticlesCount: int
-theDimensionCount: int
-
-Returns
--------
-None
-") math_PSOParticlesPool;
-		 math_PSOParticlesPool(const Standard_Integer theParticlesCount, const Standard_Integer theDimensionCount);
-
 };
 
 
@@ -5435,6 +5435,25 @@ None
 ********************/
 class math_Powell {
 	public:
+		/****************** math_Powell ******************/
+		%feature("compactdefaultargs") math_Powell;
+		%feature("autodoc", "Constructor. initialize new entity.
+
+Parameters
+----------
+theFunction: math_MultipleVarFunction
+theTolerance: float
+theNbIterations: int,optional
+	default value is 200
+theZEPS: float,optional
+	default value is 1.0e-12
+
+Returns
+-------
+None
+") math_Powell;
+		 math_Powell(const math_MultipleVarFunction & theFunction, const Standard_Real theTolerance, const Standard_Integer theNbIterations = 200, const Standard_Real theZEPS = 1.0e-12);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -5527,25 +5546,6 @@ None
 ") Perform;
 		void Perform(math_MultipleVarFunction & theFunction, const math_Vector & theStartingPoint, const math_Matrix & theStartingDirections);
 
-		/****************** math_Powell ******************/
-		%feature("compactdefaultargs") math_Powell;
-		%feature("autodoc", "Constructor. initialize new entity.
-
-Parameters
-----------
-theFunction: math_MultipleVarFunction
-theTolerance: float
-theNbIterations: int,optional
-	default value is 200
-theZEPS: float,optional
-	default value is 1.0e-12
-
-Returns
--------
-None
-") math_Powell;
-		 math_Powell(const math_MultipleVarFunction & theFunction, const Standard_Real theTolerance, const Standard_Integer theNbIterations = 200, const Standard_Real theZEPS = 1.0e-12);
-
 };
 
 
@@ -5560,6 +5560,20 @@ None
 *****************/
 class math_SVD {
 	public:
+		/****************** math_SVD ******************/
+		%feature("compactdefaultargs") math_SVD;
+		%feature("autodoc", "Given as input an n x m matrix a with n < m, n = m or n > m this constructor performs the singular value decomposition.
+
+Parameters
+----------
+A: math_Matrix
+
+Returns
+-------
+None
+") math_SVD;
+		 math_SVD(const math_Matrix & A);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -5611,20 +5625,6 @@ None
 ") Solve;
 		void Solve(const math_Vector & B, math_Vector & X, const Standard_Real Eps = 1.0e-6);
 
-		/****************** math_SVD ******************/
-		%feature("compactdefaultargs") math_SVD;
-		%feature("autodoc", "Given as input an n x m matrix a with n < m, n = m or n > m this constructor performs the singular value decomposition.
-
-Parameters
-----------
-A: math_Matrix
-
-Returns
--------
-None
-") math_SVD;
-		 math_SVD(const math_Matrix & A);
-
 };
 
 
@@ -5639,58 +5639,6 @@ None
 ****************************************/
 class math_TrigonometricFunctionRoots {
 	public:
-
-        %feature("autodoc", "1");
-        %extend{
-            std::string DumpToString() {
-            std::stringstream s;
-            self->Dump(s);
-            return s.str();}
-        };
-		/****************** InfiniteRoots ******************/
-		%feature("compactdefaultargs") InfiniteRoots;
-		%feature("autodoc", "Returns true if there is an infinity of roots, otherwise returns false.
-
-Returns
--------
-bool
-") InfiniteRoots;
-		Standard_Boolean InfiniteRoots();
-
-		/****************** IsDone ******************/
-		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "Returns true if the computations are successful, otherwise returns false.
-
-Returns
--------
-bool
-") IsDone;
-		Standard_Boolean IsDone();
-
-		/****************** NbSolutions ******************/
-		%feature("compactdefaultargs") NbSolutions;
-		%feature("autodoc", "Returns the number of solutions found. an exception is raised if notdone. an exception is raised if there is an infinity of solutions.
-
-Returns
--------
-int
-") NbSolutions;
-		Standard_Integer NbSolutions();
-
-		/****************** Value ******************/
-		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "Returns the solution of range index. an exception is raised if notdone. an exception is raised if index>nbsolutions. an exception is raised if there is an infinity of solutions.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-float
-") Value;
-		Standard_Real Value(const Standard_Integer Index);
-
 		/****************** math_TrigonometricFunctionRoots ******************/
 		%feature("compactdefaultargs") math_TrigonometricFunctionRoots;
 		%feature("autodoc", "Given coefficients a, b, c, d , e, this constructor performs the resolution of the equation above. the solutions must be contained in [infbound, supbound]. infbound and supbound can be set by default to 0 and 2*pi.
@@ -5746,6 +5694,58 @@ None
 ") math_TrigonometricFunctionRoots;
 		 math_TrigonometricFunctionRoots(const Standard_Real C, const Standard_Real D, const Standard_Real E, const Standard_Real InfBound, const Standard_Real SupBound);
 
+
+        %feature("autodoc", "1");
+        %extend{
+            std::string DumpToString() {
+            std::stringstream s;
+            self->Dump(s);
+            return s.str();}
+        };
+		/****************** InfiniteRoots ******************/
+		%feature("compactdefaultargs") InfiniteRoots;
+		%feature("autodoc", "Returns true if there is an infinity of roots, otherwise returns false.
+
+Returns
+-------
+bool
+") InfiniteRoots;
+		Standard_Boolean InfiniteRoots();
+
+		/****************** IsDone ******************/
+		%feature("compactdefaultargs") IsDone;
+		%feature("autodoc", "Returns true if the computations are successful, otherwise returns false.
+
+Returns
+-------
+bool
+") IsDone;
+		Standard_Boolean IsDone();
+
+		/****************** NbSolutions ******************/
+		%feature("compactdefaultargs") NbSolutions;
+		%feature("autodoc", "Returns the number of solutions found. an exception is raised if notdone. an exception is raised if there is an infinity of solutions.
+
+Returns
+-------
+int
+") NbSolutions;
+		Standard_Integer NbSolutions();
+
+		/****************** Value ******************/
+		%feature("compactdefaultargs") Value;
+		%feature("autodoc", "Returns the solution of range index. an exception is raised if notdone. an exception is raised if index>nbsolutions. an exception is raised if there is an infinity of solutions.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
+") Value;
+		Standard_Real Value(const Standard_Integer Index);
+
 };
 
 
@@ -5760,6 +5760,52 @@ None
 *******************/
 class math_Uzawa {
 	public:
+		/****************** math_Uzawa ******************/
+		%feature("compactdefaultargs") math_Uzawa;
+		%feature("autodoc", "Given an input matrix cont, two input vectors secont and startingpoint, it solves cont*x = secont (only = equations) with a minimization of norme(x-x0). the maximun iterations number allowed is fixed to nbiterations. the tolerance epslic is fixed for the dual variable convergence. the tolerance epslix is used for the convergence of x. exception constuctionerror is raised if the line number of cont is different from the length of secont.
+
+Parameters
+----------
+Cont: math_Matrix
+Secont: math_Vector
+StartingPoint: math_Vector
+EpsLix: float,optional
+	default value is 1.0e-06
+EpsLic: float,optional
+	default value is 1.0e-06
+NbIterations: int,optional
+	default value is 500
+
+Returns
+-------
+None
+") math_Uzawa;
+		 math_Uzawa(const math_Matrix & Cont, const math_Vector & Secont, const math_Vector & StartingPoint, const Standard_Real EpsLix = 1.0e-06, const Standard_Real EpsLic = 1.0e-06, const Standard_Integer NbIterations = 500);
+
+		/****************** math_Uzawa ******************/
+		%feature("compactdefaultargs") math_Uzawa;
+		%feature("autodoc", "Given an input matrix cont, two input vectors secont and startingpoint, it solves cont*x = secont (the nce first equations are equal equations and the nci last equations are inequalities <) with a minimization of norme(x-x0). the maximun iterations number allowed is fixed to nbiterations. the tolerance epslic is fixed for the dual variable convergence. the tolerance epslix is used for the convergence of x. there are no conditions on nce and nci. exception constuctionerror is raised if the line number of cont is different from the length of secont and from nce + nci.
+
+Parameters
+----------
+Cont: math_Matrix
+Secont: math_Vector
+StartingPoint: math_Vector
+Nci: int
+Nce: int
+EpsLix: float,optional
+	default value is 1.0e-06
+EpsLic: float,optional
+	default value is 1.0e-06
+NbIterations: int,optional
+	default value is 500
+
+Returns
+-------
+None
+") math_Uzawa;
+		 math_Uzawa(const math_Matrix & Cont, const math_Vector & Secont, const math_Vector & StartingPoint, const Standard_Integer Nci, const Standard_Integer Nce, const Standard_Real EpsLix = 1.0e-06, const Standard_Real EpsLic = 1.0e-06, const Standard_Integer NbIterations = 500);
+
 		/****************** Duale ******************/
 		%feature("compactdefaultargs") Duale;
 		%feature("autodoc", "Returns the duale variables v of the systeme.
@@ -5842,52 +5888,6 @@ math_Vector
 ") Value;
 		const math_Vector & Value();
 
-		/****************** math_Uzawa ******************/
-		%feature("compactdefaultargs") math_Uzawa;
-		%feature("autodoc", "Given an input matrix cont, two input vectors secont and startingpoint, it solves cont*x = secont (only = equations) with a minimization of norme(x-x0). the maximun iterations number allowed is fixed to nbiterations. the tolerance epslic is fixed for the dual variable convergence. the tolerance epslix is used for the convergence of x. exception constuctionerror is raised if the line number of cont is different from the length of secont.
-
-Parameters
-----------
-Cont: math_Matrix
-Secont: math_Vector
-StartingPoint: math_Vector
-EpsLix: float,optional
-	default value is 1.0e-06
-EpsLic: float,optional
-	default value is 1.0e-06
-NbIterations: int,optional
-	default value is 500
-
-Returns
--------
-None
-") math_Uzawa;
-		 math_Uzawa(const math_Matrix & Cont, const math_Vector & Secont, const math_Vector & StartingPoint, const Standard_Real EpsLix = 1.0e-06, const Standard_Real EpsLic = 1.0e-06, const Standard_Integer NbIterations = 500);
-
-		/****************** math_Uzawa ******************/
-		%feature("compactdefaultargs") math_Uzawa;
-		%feature("autodoc", "Given an input matrix cont, two input vectors secont and startingpoint, it solves cont*x = secont (the nce first equations are equal equations and the nci last equations are inequalities <) with a minimization of norme(x-x0). the maximun iterations number allowed is fixed to nbiterations. the tolerance epslic is fixed for the dual variable convergence. the tolerance epslix is used for the convergence of x. there are no conditions on nce and nci. exception constuctionerror is raised if the line number of cont is different from the length of secont and from nce + nci.
-
-Parameters
-----------
-Cont: math_Matrix
-Secont: math_Vector
-StartingPoint: math_Vector
-Nci: int
-Nce: int
-EpsLix: float,optional
-	default value is 1.0e-06
-EpsLic: float,optional
-	default value is 1.0e-06
-NbIterations: int,optional
-	default value is 500
-
-Returns
--------
-None
-") math_Uzawa;
-		 math_Uzawa(const math_Matrix & Cont, const math_Vector & Secont, const math_Vector & StartingPoint, const Standard_Integer Nci, const Standard_Integer Nce, const Standard_Real EpsLix = 1.0e-06, const Standard_Real EpsLic = 1.0e-06, const Standard_Integer NbIterations = 500);
-
 };
 
 
@@ -5902,26 +5902,6 @@ None
 ****************************/
 class math_ValueAndWeight {
 	public:
-		/****************** Value ******************/
-		%feature("compactdefaultargs") Value;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-float
-") Value;
-		Standard_Real Value();
-
-		/****************** Weight ******************/
-		%feature("compactdefaultargs") Weight;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-float
-") Weight;
-		Standard_Real Weight();
-
 		/****************** math_ValueAndWeight ******************/
 		%feature("compactdefaultargs") math_ValueAndWeight;
 		%feature("autodoc", "No available documentation.
@@ -5947,6 +5927,26 @@ None
 ") math_ValueAndWeight;
 		 math_ValueAndWeight(Standard_Real theValue, Standard_Real theWeight);
 
+		/****************** Value ******************/
+		%feature("compactdefaultargs") Value;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
+") Value;
+		Standard_Real Value();
+
+		/****************** Weight ******************/
+		%feature("compactdefaultargs") Weight;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
+") Weight;
+		Standard_Real Weight();
+
 };
 
 
@@ -5961,6 +5961,95 @@ None
 ********************/
 class math_Vector {
 	public:
+		/****************** math_Vector ******************/
+		%feature("compactdefaultargs") math_Vector;
+		%feature("autodoc", "Contructs a non-initialized vector in the range [thelower..theupper] 'thelower' and 'theupper' are the indexes of the lower and upper bounds of the constructed vector.
+
+Parameters
+----------
+theLower: int
+theUpper: int
+
+Returns
+-------
+None
+") math_Vector;
+		 math_Vector(const Standard_Integer theLower, const Standard_Integer theUpper);
+
+		/****************** math_Vector ******************/
+		%feature("compactdefaultargs") math_Vector;
+		%feature("autodoc", "Contructs a vector in the range [thelower..theupper] whose values are all initialized with the value 'theinitialvalue'.
+
+Parameters
+----------
+theLower: int
+theUpper: int
+theInitialValue: float
+
+Returns
+-------
+None
+") math_Vector;
+		 math_Vector(const Standard_Integer theLower, const Standard_Integer theUpper, const Standard_Real theInitialValue);
+
+		/****************** math_Vector ******************/
+		%feature("compactdefaultargs") math_Vector;
+		%feature("autodoc", "Constructs a vector in the range [thelower..theupper] with the 'c array' thetab.
+
+Parameters
+----------
+theTab: float *
+theLower: int
+theUpper: int
+
+Returns
+-------
+None
+") math_Vector;
+		 math_Vector(const Standard_Real * theTab, const Standard_Integer theLower, const Standard_Integer theUpper);
+
+		/****************** math_Vector ******************/
+		%feature("compactdefaultargs") math_Vector;
+		%feature("autodoc", "Constructor for converting gp_xy to math_vector.
+
+Parameters
+----------
+Other: gp_XY
+
+Returns
+-------
+None
+") math_Vector;
+		 math_Vector(const gp_XY & Other);
+
+		/****************** math_Vector ******************/
+		%feature("compactdefaultargs") math_Vector;
+		%feature("autodoc", "Constructor for converting gp_xyz to math_vector.
+
+Parameters
+----------
+Other: gp_XYZ
+
+Returns
+-------
+None
+") math_Vector;
+		 math_Vector(const gp_XYZ & Other);
+
+		/****************** math_Vector ******************/
+		%feature("compactdefaultargs") math_Vector;
+		%feature("autodoc", "Constructs a copy for initialization. an exception is raised if the lengths of the vectors are different.
+
+Parameters
+----------
+theOther: math_Vector
+
+Returns
+-------
+None
+") math_Vector;
+		 math_Vector(const math_Vector & theOther);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the vector 'theright' to a vector. an exception is raised if the vectors have not the same length. warning in order to avoid time-consuming copying of vectors, it is preferable to use operator += or the function add whenever possible.
@@ -6434,95 +6523,6 @@ float
             $self->Value(theNum)=value;
             }
         };
-		/****************** math_Vector ******************/
-		%feature("compactdefaultargs") math_Vector;
-		%feature("autodoc", "Contructs a non-initialized vector in the range [thelower..theupper] 'thelower' and 'theupper' are the indexes of the lower and upper bounds of the constructed vector.
-
-Parameters
-----------
-theLower: int
-theUpper: int
-
-Returns
--------
-None
-") math_Vector;
-		 math_Vector(const Standard_Integer theLower, const Standard_Integer theUpper);
-
-		/****************** math_Vector ******************/
-		%feature("compactdefaultargs") math_Vector;
-		%feature("autodoc", "Contructs a vector in the range [thelower..theupper] whose values are all initialized with the value 'theinitialvalue'.
-
-Parameters
-----------
-theLower: int
-theUpper: int
-theInitialValue: float
-
-Returns
--------
-None
-") math_Vector;
-		 math_Vector(const Standard_Integer theLower, const Standard_Integer theUpper, const Standard_Real theInitialValue);
-
-		/****************** math_Vector ******************/
-		%feature("compactdefaultargs") math_Vector;
-		%feature("autodoc", "Constructs a vector in the range [thelower..theupper] with the 'c array' thetab.
-
-Parameters
-----------
-theTab: float *
-theLower: int
-theUpper: int
-
-Returns
--------
-None
-") math_Vector;
-		 math_Vector(const Standard_Real * theTab, const Standard_Integer theLower, const Standard_Integer theUpper);
-
-		/****************** math_Vector ******************/
-		%feature("compactdefaultargs") math_Vector;
-		%feature("autodoc", "Constructor for converting gp_xy to math_vector.
-
-Parameters
-----------
-Other: gp_XY
-
-Returns
--------
-None
-") math_Vector;
-		 math_Vector(const gp_XY & Other);
-
-		/****************** math_Vector ******************/
-		%feature("compactdefaultargs") math_Vector;
-		%feature("autodoc", "Constructor for converting gp_xyz to math_vector.
-
-Parameters
-----------
-Other: gp_XYZ
-
-Returns
--------
-None
-") math_Vector;
-		 math_Vector(const gp_XYZ & Other);
-
-		/****************** math_Vector ******************/
-		%feature("compactdefaultargs") math_Vector;
-		%feature("autodoc", "Constructs a copy for initialization. an exception is raised if the lengths of the vectors are different.
-
-Parameters
-----------
-theOther: math_Vector
-
-Returns
--------
-None
-") math_Vector;
-		 math_Vector(const math_Vector & theOther);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -6976,6 +6976,24 @@ bool
 *******************************************/
 class math_TrigonometricEquationFunction : public math_FunctionWithDerivative {
 	public:
+		/****************** math_TrigonometricEquationFunction ******************/
+		%feature("compactdefaultargs") math_TrigonometricEquationFunction;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+A: float
+B: float
+C: float
+D: float
+E: float
+
+Returns
+-------
+None
+") math_TrigonometricEquationFunction;
+		 math_TrigonometricEquationFunction(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Standard_Real E);
+
 		/****************** Derivative ******************/
 		%feature("compactdefaultargs") Derivative;
 		%feature("autodoc", "No available documentation.
@@ -7021,24 +7039,6 @@ Returns
 bool
 ") Values;
 		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-
-		/****************** math_TrigonometricEquationFunction ******************/
-		%feature("compactdefaultargs") math_TrigonometricEquationFunction;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-A: float
-B: float
-C: float
-D: float
-E: float
-
-Returns
--------
-None
-") math_TrigonometricEquationFunction;
-		 math_TrigonometricEquationFunction(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Standard_Real E);
 
 };
 

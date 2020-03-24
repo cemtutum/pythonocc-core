@@ -49,8 +49,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_shapecustom.html"
 #include<BRepTools_module.hxx>
 #include<ShapeExtend_module.hxx>
 #include<Message_module.hxx>
-#include<TopLoc_module.hxx>
 #include<gp_module.hxx>
+#include<TopLoc_module.hxx>
 #include<BRep_module.hxx>
 #include<Message_module.hxx>
 #include<Poly_module.hxx>
@@ -74,8 +74,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_shapecustom.html"
 %import BRepTools.i
 %import ShapeExtend.i
 %import Message.i
-%import TopLoc.i
 %import gp.i
+%import TopLoc.i
 
 %pythoncode {
 from OCC.Core.Exception import *
@@ -226,6 +226,30 @@ TopoDS_Shape
 **************************/
 class ShapeCustom_Curve {
 	public:
+		/****************** ShapeCustom_Curve ******************/
+		%feature("compactdefaultargs") ShapeCustom_Curve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeCustom_Curve;
+		 ShapeCustom_Curve();
+
+		/****************** ShapeCustom_Curve ******************/
+		%feature("compactdefaultargs") ShapeCustom_Curve;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Geom_Curve
+
+Returns
+-------
+None
+") ShapeCustom_Curve;
+		 ShapeCustom_Curve(const opencascade::handle<Geom_Curve> & C);
+
 		/****************** ConvertToPeriodic ******************/
 		%feature("compactdefaultargs") ConvertToPeriodic;
 		%feature("autodoc", "Tries to convert the curve to the periodic form returns the resulting curve works only if the curve is bspline and is closed with precision::confusion() else, or in case of failure, returns a null handle.
@@ -255,30 +279,6 @@ Returns
 None
 ") Init;
 		void Init(const opencascade::handle<Geom_Curve> & C);
-
-		/****************** ShapeCustom_Curve ******************/
-		%feature("compactdefaultargs") ShapeCustom_Curve;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeCustom_Curve;
-		 ShapeCustom_Curve();
-
-		/****************** ShapeCustom_Curve ******************/
-		%feature("compactdefaultargs") ShapeCustom_Curve;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-C: Geom_Curve
-
-Returns
--------
-None
-") ShapeCustom_Curve;
-		 ShapeCustom_Curve(const opencascade::handle<Geom_Curve> & C);
 
 };
 
@@ -417,6 +417,16 @@ None
 ******************************************/
 class ShapeCustom_RestrictionParameters : public Standard_Transient {
 	public:
+		/****************** ShapeCustom_RestrictionParameters ******************/
+		%feature("compactdefaultargs") ShapeCustom_RestrictionParameters;
+		%feature("autodoc", "Sets default parameters.
+
+Returns
+-------
+None
+") ShapeCustom_RestrictionParameters;
+		 ShapeCustom_RestrictionParameters();
+
 
         %feature("autodoc","1");
         %extend {
@@ -625,16 +635,6 @@ class ShapeCustom_RestrictionParameters : public Standard_Transient {
             $self->SegmentSurfaceMode()=value;
             }
         };
-		/****************** ShapeCustom_RestrictionParameters ******************/
-		%feature("compactdefaultargs") ShapeCustom_RestrictionParameters;
-		%feature("autodoc", "Sets default parameters.
-
-Returns
--------
-None
-") ShapeCustom_RestrictionParameters;
-		 ShapeCustom_RestrictionParameters();
-
 };
 
 
@@ -651,6 +651,30 @@ None
 ****************************/
 class ShapeCustom_Surface {
 	public:
+		/****************** ShapeCustom_Surface ******************/
+		%feature("compactdefaultargs") ShapeCustom_Surface;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeCustom_Surface;
+		 ShapeCustom_Surface();
+
+		/****************** ShapeCustom_Surface ******************/
+		%feature("compactdefaultargs") ShapeCustom_Surface;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: Geom_Surface
+
+Returns
+-------
+None
+") ShapeCustom_Surface;
+		 ShapeCustom_Surface(const opencascade::handle<Geom_Surface> & S);
+
 		/****************** ConvertToAnalytical ******************/
 		%feature("compactdefaultargs") ConvertToAnalytical;
 		%feature("autodoc", "Tries to convert the surface to an analytic form returns the result works only if the surface is bspline or bezier. else, or in case of failure, returns a null handle //! if <substitute> is true, the new surface replaces the actual one in <self> //! it works by analysing the case which can apply, creating the corresponding analytic surface, then checking coincidence warning: parameter laws are not kept, hence pcurves should be redone.
@@ -706,30 +730,6 @@ None
 ") Init;
 		void Init(const opencascade::handle<Geom_Surface> & S);
 
-		/****************** ShapeCustom_Surface ******************/
-		%feature("compactdefaultargs") ShapeCustom_Surface;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeCustom_Surface;
-		 ShapeCustom_Surface();
-
-		/****************** ShapeCustom_Surface ******************/
-		%feature("compactdefaultargs") ShapeCustom_Surface;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: Geom_Surface
-
-Returns
--------
-None
-") ShapeCustom_Surface;
-		 ShapeCustom_Surface(const opencascade::handle<Geom_Surface> & S);
-
 };
 
 
@@ -744,6 +744,20 @@ None
 *************************************/
 class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 	public:
+		/****************** ShapeCustom_TrsfModification ******************/
+		%feature("compactdefaultargs") ShapeCustom_TrsfModification;
+		%feature("autodoc", "Empty constructor.
+
+Parameters
+----------
+T: gp_Trsf
+
+Returns
+-------
+None
+") ShapeCustom_TrsfModification;
+		 ShapeCustom_TrsfModification(const gp_Trsf & T);
+
 		/****************** NewCurve ******************/
 		%feature("compactdefaultargs") NewCurve;
 		%feature("autodoc", "Calls inherited method. sets <tol> as actual tolerance of <e> multiplied with scale factor.
@@ -832,20 +846,6 @@ bool
 ") NewSurface;
 		Standard_Boolean NewSurface(const TopoDS_Face & F, opencascade::handle<Geom_Surface> & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean &OutValue, Standard_Boolean &OutValue);
 
-		/****************** ShapeCustom_TrsfModification ******************/
-		%feature("compactdefaultargs") ShapeCustom_TrsfModification;
-		%feature("autodoc", "Empty constructor.
-
-Parameters
-----------
-T: gp_Trsf
-
-Returns
--------
-None
-") ShapeCustom_TrsfModification;
-		 ShapeCustom_TrsfModification(const gp_Trsf & T);
-
 };
 
 
@@ -865,6 +865,16 @@ None
 *************************************/
 class ShapeCustom_ConvertToBSpline : public ShapeCustom_Modification {
 	public:
+		/****************** ShapeCustom_ConvertToBSpline ******************/
+		%feature("compactdefaultargs") ShapeCustom_ConvertToBSpline;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeCustom_ConvertToBSpline;
+		 ShapeCustom_ConvertToBSpline();
+
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
 		%feature("autodoc", "Returns the continuity of <newe> between <newf1> and <newf2>. //! <newe> is the new edge created from <e>. <newf1> (resp. <newf2>) is the new face created from <f1> (resp. <f2>).
@@ -1028,16 +1038,6 @@ None
 ") SetRevolutionMode;
 		void SetRevolutionMode(const Standard_Boolean revolMode);
 
-		/****************** ShapeCustom_ConvertToBSpline ******************/
-		%feature("compactdefaultargs") ShapeCustom_ConvertToBSpline;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeCustom_ConvertToBSpline;
-		 ShapeCustom_ConvertToBSpline();
-
 };
 
 
@@ -1057,6 +1057,16 @@ None
 ***************************************/
 class ShapeCustom_DirectModification : public ShapeCustom_Modification {
 	public:
+		/****************** ShapeCustom_DirectModification ******************/
+		%feature("compactdefaultargs") ShapeCustom_DirectModification;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeCustom_DirectModification;
+		 ShapeCustom_DirectModification();
+
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
 		%feature("autodoc", "Returns the continuity of <newe> between <newf1> and <newf2>. //! <newe> is the new edge created from <e>. <newf1> (resp. <newf2>) is the new face created from <f1> (resp. <f2>).
@@ -1163,16 +1173,6 @@ Returns
 bool
 ") NewSurface;
 		Standard_Boolean NewSurface(const TopoDS_Face & F, opencascade::handle<Geom_Surface> & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean &OutValue, Standard_Boolean &OutValue);
-
-		/****************** ShapeCustom_DirectModification ******************/
-		%feature("compactdefaultargs") ShapeCustom_DirectModification;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeCustom_DirectModification;
-		 ShapeCustom_DirectModification();
 
 };
 

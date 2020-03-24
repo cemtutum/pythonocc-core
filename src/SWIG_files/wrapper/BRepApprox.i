@@ -972,16 +972,6 @@ bool
 **********************************************************/
 class BRepApprox_MyBSplGradientOfTheComputeLineOfApprox {
 	public:
-		/****************** AverageError ******************/
-		%feature("compactdefaultargs") AverageError;
-		%feature("autodoc", "Returns the average error between the old and the new approximation.
-
-Returns
--------
-float
-") AverageError;
-		Standard_Real AverageError();
-
 		/****************** BRepApprox_MyBSplGradientOfTheComputeLineOfApprox ******************/
 		%feature("compactdefaultargs") BRepApprox_MyBSplGradientOfTheComputeLineOfApprox;
 		%feature("autodoc", "Tries to minimize the sum (square(||qui - bi*pi||)) where pui describe the approximating bspline curves'poles and qi the multiline points with a parameter ui. in this algorithm, the parameters ui are the unknowns. the tolerance required on this sum is given by tol. the desired degree of the resulting curve is deg.
@@ -1032,6 +1022,16 @@ Returns
 None
 ") BRepApprox_MyBSplGradientOfTheComputeLineOfApprox;
 		 BRepApprox_MyBSplGradientOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations, const Standard_Real lambda1, const Standard_Real lambda2);
+
+		/****************** AverageError ******************/
+		%feature("compactdefaultargs") AverageError;
+		%feature("autodoc", "Returns the average error between the old and the new approximation.
+
+Returns
+-------
+float
+") AverageError;
+		Standard_Real AverageError();
 
 		/****************** Error ******************/
 		%feature("compactdefaultargs") Error;
@@ -1101,16 +1101,6 @@ AppParCurves_MultiBSpCurve
 ************************************************************/
 class BRepApprox_MyGradientOfTheComputeLineBezierOfApprox {
 	public:
-		/****************** AverageError ******************/
-		%feature("compactdefaultargs") AverageError;
-		%feature("autodoc", "Returns the average error between the old and the new approximation.
-
-Returns
--------
-float
-") AverageError;
-		Standard_Real AverageError();
-
 		/****************** BRepApprox_MyGradientOfTheComputeLineBezierOfApprox ******************/
 		%feature("compactdefaultargs") BRepApprox_MyGradientOfTheComputeLineBezierOfApprox;
 		%feature("autodoc", "Tries to minimize the sum (square(||qui - bi*pi||)) where pui describe the approximating bezier curves'poles and qi the multiline points with a parameter ui. in this algorithm, the parameters ui are the unknowns. the tolerance required on this sum is given by tol. the desired degree of the resulting curve is deg.
@@ -1133,6 +1123,16 @@ Returns
 None
 ") BRepApprox_MyGradientOfTheComputeLineBezierOfApprox;
 		 BRepApprox_MyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations = 200);
+
+		/****************** AverageError ******************/
+		%feature("compactdefaultargs") AverageError;
+		%feature("autodoc", "Returns the average error between the old and the new approximation.
+
+Returns
+-------
+float
+") AverageError;
+		Standard_Real AverageError();
 
 		/****************** Error ******************/
 		%feature("compactdefaultargs") Error;
@@ -1202,16 +1202,6 @@ AppParCurves_MultiCurve
 *********************************************************/
 class BRepApprox_MyGradientbisOfTheComputeLineOfApprox {
 	public:
-		/****************** AverageError ******************/
-		%feature("compactdefaultargs") AverageError;
-		%feature("autodoc", "Returns the average error between the old and the new approximation.
-
-Returns
--------
-float
-") AverageError;
-		Standard_Real AverageError();
-
 		/****************** BRepApprox_MyGradientbisOfTheComputeLineOfApprox ******************/
 		%feature("compactdefaultargs") BRepApprox_MyGradientbisOfTheComputeLineOfApprox;
 		%feature("autodoc", "Tries to minimize the sum (square(||qui - bi*pi||)) where pui describe the approximating bezier curves'poles and qi the multiline points with a parameter ui. in this algorithm, the parameters ui are the unknowns. the tolerance required on this sum is given by tol. the desired degree of the resulting curve is deg.
@@ -1234,6 +1224,16 @@ Returns
 None
 ") BRepApprox_MyGradientbisOfTheComputeLineOfApprox;
 		 BRepApprox_MyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations = 200);
+
+		/****************** AverageError ******************/
+		%feature("compactdefaultargs") AverageError;
+		%feature("autodoc", "Returns the average error between the old and the new approximation.
+
+Returns
+-------
+float
+") AverageError;
+		Standard_Real AverageError();
 
 		/****************** Error ******************/
 		%feature("compactdefaultargs") Error;
@@ -3156,6 +3156,21 @@ AppParCurves_MultiBSpCurve
 **********************************************************************/
 class BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox : public math_FunctionSetWithDerivatives {
 	public:
+		/****************** BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox ******************/
+		%feature("compactdefaultargs") BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: BRepAdaptor_Surface
+S2: BRepAdaptor_Surface
+
+Returns
+-------
+None
+") BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox;
+		 BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox(const BRepAdaptor_Surface & S1, const BRepAdaptor_Surface & S2);
+
 		/****************** AuxillarSurface1 ******************/
 		%feature("compactdefaultargs") AuxillarSurface1;
 		%feature("autodoc", "No available documentation.
@@ -3175,21 +3190,6 @@ Returns
 BRepAdaptor_Surface
 ") AuxillarSurface2;
 		const BRepAdaptor_Surface & AuxillarSurface2();
-
-		/****************** BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox ******************/
-		%feature("compactdefaultargs") BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S1: BRepAdaptor_Surface
-S2: BRepAdaptor_Surface
-
-Returns
--------
-None
-") BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox;
-		 BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox(const BRepAdaptor_Surface & S1, const BRepAdaptor_Surface & S2);
 
 		/****************** ComputeParameters ******************/
 		%feature("compactdefaultargs") ComputeParameters;

@@ -263,6 +263,33 @@ None
 ************************/
 class TopExp_Explorer {
 	public:
+		/****************** TopExp_Explorer ******************/
+		%feature("compactdefaultargs") TopExp_Explorer;
+		%feature("autodoc", "Creates an empty explorer, becomes usefull after init.
+
+Returns
+-------
+None
+") TopExp_Explorer;
+		 TopExp_Explorer();
+
+		/****************** TopExp_Explorer ******************/
+		%feature("compactdefaultargs") TopExp_Explorer;
+		%feature("autodoc", "Creates an explorer on the shape <s>. //! <tofind> is the type of shapes to search. topabs_vertex, topabs_edge, ... //! <toavoid> is the type of shape to skip in the exploration. if <toavoid> is equal or less complex than <tofind> or if <toavoid> is shape it has no effect on the exploration.
+
+Parameters
+----------
+S: TopoDS_Shape
+ToFind: TopAbs_ShapeEnum
+ToAvoid: TopAbs_ShapeEnum,optional
+	default value is TopAbs_SHAPE
+
+Returns
+-------
+None
+") TopExp_Explorer;
+		 TopExp_Explorer(const TopoDS_Shape & S, const TopAbs_ShapeEnum ToFind, const TopAbs_ShapeEnum ToAvoid = TopAbs_SHAPE);
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears the content of the explorer. it will return false on more().
@@ -349,33 +376,6 @@ Returns
 None
 ") ReInit;
 		void ReInit();
-
-		/****************** TopExp_Explorer ******************/
-		%feature("compactdefaultargs") TopExp_Explorer;
-		%feature("autodoc", "Creates an empty explorer, becomes usefull after init.
-
-Returns
--------
-None
-") TopExp_Explorer;
-		 TopExp_Explorer();
-
-		/****************** TopExp_Explorer ******************/
-		%feature("compactdefaultargs") TopExp_Explorer;
-		%feature("autodoc", "Creates an explorer on the shape <s>. //! <tofind> is the type of shapes to search. topabs_vertex, topabs_edge, ... //! <toavoid> is the type of shape to skip in the exploration. if <toavoid> is equal or less complex than <tofind> or if <toavoid> is shape it has no effect on the exploration.
-
-Parameters
-----------
-S: TopoDS_Shape
-ToFind: TopAbs_ShapeEnum
-ToAvoid: TopAbs_ShapeEnum,optional
-	default value is TopAbs_SHAPE
-
-Returns
--------
-None
-") TopExp_Explorer;
-		 TopExp_Explorer(const TopoDS_Shape & S, const TopAbs_ShapeEnum ToFind, const TopAbs_ShapeEnum ToAvoid = TopAbs_SHAPE);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;

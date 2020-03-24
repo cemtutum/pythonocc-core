@@ -166,6 +166,16 @@ opencascade::handle<IFSelect_Signature>
 *****************************/
 class STEPEdit_EditContext : public IFSelect_Editor {
 	public:
+		/****************** STEPEdit_EditContext ******************/
+		%feature("compactdefaultargs") STEPEdit_EditContext;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPEdit_EditContext;
+		 STEPEdit_EditContext();
+
 		/****************** Apply ******************/
 		%feature("compactdefaultargs") Apply;
 		%feature("autodoc", "No available documentation.
@@ -221,16 +231,6 @@ Returns
 bool
 ") Recognize;
 		Standard_Boolean Recognize(const opencascade::handle<IFSelect_EditForm> & form);
-
-		/****************** STEPEdit_EditContext ******************/
-		%feature("compactdefaultargs") STEPEdit_EditContext;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPEdit_EditContext;
-		 STEPEdit_EditContext();
 
 		/****************** StringValue ******************/
 		%feature("compactdefaultargs") StringValue;
@@ -263,6 +263,16 @@ opencascade::handle<TCollection_HAsciiString>
 *************************/
 class STEPEdit_EditSDR : public IFSelect_Editor {
 	public:
+		/****************** STEPEdit_EditSDR ******************/
+		%feature("compactdefaultargs") STEPEdit_EditSDR;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPEdit_EditSDR;
+		 STEPEdit_EditSDR();
+
 		/****************** Apply ******************/
 		%feature("compactdefaultargs") Apply;
 		%feature("autodoc", "No available documentation.
@@ -318,16 +328,6 @@ Returns
 bool
 ") Recognize;
 		Standard_Boolean Recognize(const opencascade::handle<IFSelect_EditForm> & form);
-
-		/****************** STEPEdit_EditSDR ******************/
-		%feature("compactdefaultargs") STEPEdit_EditSDR;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPEdit_EditSDR;
-		 STEPEdit_EditSDR();
 
 		/****************** StringValue ******************/
 		%feature("compactdefaultargs") StringValue;

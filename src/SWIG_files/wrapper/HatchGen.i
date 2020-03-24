@@ -113,6 +113,46 @@ typedef NCollection_Sequence<HatchGen_PointOnHatching> HatchGen_PointsOnHatching
 ************************/
 class HatchGen_Domain {
 	public:
+		/****************** HatchGen_Domain ******************/
+		%feature("compactdefaultargs") HatchGen_Domain;
+		%feature("autodoc", "Creates an infinite domain.
+
+Returns
+-------
+None
+") HatchGen_Domain;
+		 HatchGen_Domain();
+
+		/****************** HatchGen_Domain ******************/
+		%feature("compactdefaultargs") HatchGen_Domain;
+		%feature("autodoc", "Creates a domain for the curve associated to a hatching.
+
+Parameters
+----------
+P1: HatchGen_PointOnHatching
+P2: HatchGen_PointOnHatching
+
+Returns
+-------
+None
+") HatchGen_Domain;
+		 HatchGen_Domain(const HatchGen_PointOnHatching & P1, const HatchGen_PointOnHatching & P2);
+
+		/****************** HatchGen_Domain ******************/
+		%feature("compactdefaultargs") HatchGen_Domain;
+		%feature("autodoc", "Creates a semi-infinite domain for the curve associated to a hatching. the `first' flag means that the given point is the first one.
+
+Parameters
+----------
+P: HatchGen_PointOnHatching
+First: bool
+
+Returns
+-------
+None
+") HatchGen_Domain;
+		 HatchGen_Domain(const HatchGen_PointOnHatching & P, const Standard_Boolean First);
+
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "Dump of the domain.
@@ -157,46 +197,6 @@ Returns
 bool
 ") HasSecondPoint;
 		Standard_Boolean HasSecondPoint();
-
-		/****************** HatchGen_Domain ******************/
-		%feature("compactdefaultargs") HatchGen_Domain;
-		%feature("autodoc", "Creates an infinite domain.
-
-Returns
--------
-None
-") HatchGen_Domain;
-		 HatchGen_Domain();
-
-		/****************** HatchGen_Domain ******************/
-		%feature("compactdefaultargs") HatchGen_Domain;
-		%feature("autodoc", "Creates a domain for the curve associated to a hatching.
-
-Parameters
-----------
-P1: HatchGen_PointOnHatching
-P2: HatchGen_PointOnHatching
-
-Returns
--------
-None
-") HatchGen_Domain;
-		 HatchGen_Domain(const HatchGen_PointOnHatching & P1, const HatchGen_PointOnHatching & P2);
-
-		/****************** HatchGen_Domain ******************/
-		%feature("compactdefaultargs") HatchGen_Domain;
-		%feature("autodoc", "Creates a semi-infinite domain for the curve associated to a hatching. the `first' flag means that the given point is the first one.
-
-Parameters
-----------
-P: HatchGen_PointOnHatching
-First: bool
-
-Returns
--------
-None
-") HatchGen_Domain;
-		 HatchGen_Domain(const HatchGen_PointOnHatching & P, const Standard_Boolean First);
 
 		/****************** SecondPoint ******************/
 		%feature("compactdefaultargs") SecondPoint;
@@ -496,21 +496,6 @@ TopAbs_State
 ********************************/
 class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 	public:
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "Dump of the point on element.
-
-Parameters
-----------
-Index: int,optional
-	default value is 0
-
-Returns
--------
-None
-") Dump;
-		void Dump(const Standard_Integer Index = 0);
-
 		/****************** HatchGen_PointOnElement ******************/
 		%feature("compactdefaultargs") HatchGen_PointOnElement;
 		%feature("autodoc", "---purpose; creates an empty point on element.
@@ -548,6 +533,21 @@ Returns
 None
 ") HatchGen_PointOnElement;
 		 HatchGen_PointOnElement(const IntRes2d_IntersectionPoint & Point);
+
+		/****************** Dump ******************/
+		%feature("compactdefaultargs") Dump;
+		%feature("autodoc", "Dump of the point on element.
+
+Parameters
+----------
+Index: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") Dump;
+		void Dump(const Standard_Integer Index = 0);
 
 		/****************** IntersectionType ******************/
 		%feature("compactdefaultargs") IntersectionType;
@@ -617,6 +617,44 @@ None
 *********************************/
 class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 	public:
+		/****************** HatchGen_PointOnHatching ******************/
+		%feature("compactdefaultargs") HatchGen_PointOnHatching;
+		%feature("autodoc", "Creates an empty point.
+
+Returns
+-------
+None
+") HatchGen_PointOnHatching;
+		 HatchGen_PointOnHatching();
+
+		/****************** HatchGen_PointOnHatching ******************/
+		%feature("compactdefaultargs") HatchGen_PointOnHatching;
+		%feature("autodoc", "Creates a point from an other.
+
+Parameters
+----------
+Point: HatchGen_PointOnHatching
+
+Returns
+-------
+None
+") HatchGen_PointOnHatching;
+		 HatchGen_PointOnHatching(const HatchGen_PointOnHatching & Point);
+
+		/****************** HatchGen_PointOnHatching ******************/
+		%feature("compactdefaultargs") HatchGen_PointOnHatching;
+		%feature("autodoc", "Creates a point from an intersection point.
+
+Parameters
+----------
+Point: IntRes2d_IntersectionPoint
+
+Returns
+-------
+None
+") HatchGen_PointOnHatching;
+		 HatchGen_PointOnHatching(const IntRes2d_IntersectionPoint & Point);
+
 		/****************** AddPoint ******************/
 		%feature("compactdefaultargs") AddPoint;
 		%feature("autodoc", "Adds a point on element to the point.
@@ -656,44 +694,6 @@ Returns
 None
 ") Dump;
 		void Dump(const Standard_Integer Index = 0);
-
-		/****************** HatchGen_PointOnHatching ******************/
-		%feature("compactdefaultargs") HatchGen_PointOnHatching;
-		%feature("autodoc", "Creates an empty point.
-
-Returns
--------
-None
-") HatchGen_PointOnHatching;
-		 HatchGen_PointOnHatching();
-
-		/****************** HatchGen_PointOnHatching ******************/
-		%feature("compactdefaultargs") HatchGen_PointOnHatching;
-		%feature("autodoc", "Creates a point from an other.
-
-Parameters
-----------
-Point: HatchGen_PointOnHatching
-
-Returns
--------
-None
-") HatchGen_PointOnHatching;
-		 HatchGen_PointOnHatching(const HatchGen_PointOnHatching & Point);
-
-		/****************** HatchGen_PointOnHatching ******************/
-		%feature("compactdefaultargs") HatchGen_PointOnHatching;
-		%feature("autodoc", "Creates a point from an intersection point.
-
-Parameters
-----------
-Point: IntRes2d_IntersectionPoint
-
-Returns
--------
-None
-") HatchGen_PointOnHatching;
-		 HatchGen_PointOnHatching(const IntRes2d_IntersectionPoint & Point);
 
 		/****************** IsEqual ******************/
 		%feature("compactdefaultargs") IsEqual;

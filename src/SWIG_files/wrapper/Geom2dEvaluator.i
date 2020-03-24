@@ -183,6 +183,36 @@ gp_Vec2d
 ************************************/
 class Geom2dEvaluator_OffsetCurve : public Geom2dEvaluator_Curve {
 	public:
+		/****************** Geom2dEvaluator_OffsetCurve ******************/
+		%feature("compactdefaultargs") Geom2dEvaluator_OffsetCurve;
+		%feature("autodoc", "Initialize evaluator by curve.
+
+Parameters
+----------
+theBase: Geom2d_Curve
+theOffset: float
+
+Returns
+-------
+None
+") Geom2dEvaluator_OffsetCurve;
+		 Geom2dEvaluator_OffsetCurve(const opencascade::handle<Geom2d_Curve> & theBase, const Standard_Real theOffset);
+
+		/****************** Geom2dEvaluator_OffsetCurve ******************/
+		%feature("compactdefaultargs") Geom2dEvaluator_OffsetCurve;
+		%feature("autodoc", "Initialize evaluator by curve adaptor.
+
+Parameters
+----------
+theBase: Geom2dAdaptor_HCurve
+theOffset: float
+
+Returns
+-------
+None
+") Geom2dEvaluator_OffsetCurve;
+		 Geom2dEvaluator_OffsetCurve(const opencascade::handle<Geom2dAdaptor_HCurve> & theBase, const Standard_Real theOffset);
+
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Value of curve.
@@ -263,36 +293,6 @@ Returns
 gp_Vec2d
 ") DN;
 		gp_Vec2d DN(const Standard_Real theU, const Standard_Integer theDeriv);
-
-		/****************** Geom2dEvaluator_OffsetCurve ******************/
-		%feature("compactdefaultargs") Geom2dEvaluator_OffsetCurve;
-		%feature("autodoc", "Initialize evaluator by curve.
-
-Parameters
-----------
-theBase: Geom2d_Curve
-theOffset: float
-
-Returns
--------
-None
-") Geom2dEvaluator_OffsetCurve;
-		 Geom2dEvaluator_OffsetCurve(const opencascade::handle<Geom2d_Curve> & theBase, const Standard_Real theOffset);
-
-		/****************** Geom2dEvaluator_OffsetCurve ******************/
-		%feature("compactdefaultargs") Geom2dEvaluator_OffsetCurve;
-		%feature("autodoc", "Initialize evaluator by curve adaptor.
-
-Parameters
-----------
-theBase: Geom2dAdaptor_HCurve
-theOffset: float
-
-Returns
--------
-None
-") Geom2dEvaluator_OffsetCurve;
-		 Geom2dEvaluator_OffsetCurve(const opencascade::handle<Geom2dAdaptor_HCurve> & theBase, const Standard_Real theOffset);
 
 		/****************** SetOffsetValue ******************/
 		%feature("compactdefaultargs") SetOffsetValue;

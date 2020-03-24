@@ -134,321 +134,6 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(StepAP214_Array1OfOrganizationItem) NCollection_Array1<StepAP214_OrganizationItem>;
-
-%extend NCollection_Array1<StepAP214_OrganizationItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP214_Array1OfDateAndTimeItem) NCollection_Array1<StepAP214_DateAndTimeItem>;
-
-%extend NCollection_Array1<StepAP214_DateAndTimeItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP214_Array1OfDateItem) NCollection_Array1<StepAP214_DateItem>;
-
-%extend NCollection_Array1<StepAP214_DateItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP214_Array1OfPresentedItemSelect) NCollection_Array1<StepAP214_PresentedItemSelect>;
-
-%extend NCollection_Array1<StepAP214_PresentedItemSelect> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP214_Array1OfDocumentReferenceItem) NCollection_Array1<StepAP214_DocumentReferenceItem>;
-
-%extend NCollection_Array1<StepAP214_DocumentReferenceItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP214_Array1OfSecurityClassificationItem) NCollection_Array1<StepAP214_SecurityClassificationItem>;
-
-%extend NCollection_Array1<StepAP214_SecurityClassificationItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP214_Array1OfPersonAndOrganizationItem) NCollection_Array1<StepAP214_PersonAndOrganizationItem>;
-
-%extend NCollection_Array1<StepAP214_PersonAndOrganizationItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP214_Array1OfAutoDesignGeneralOrgItem) NCollection_Array1<StepAP214_AutoDesignGeneralOrgItem>;
-
-%extend NCollection_Array1<StepAP214_AutoDesignGeneralOrgItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP214_Array1OfGroupItem) NCollection_Array1<StepAP214_GroupItem>;
-
-%extend NCollection_Array1<StepAP214_GroupItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
 %template(StepAP214_Array1OfApprovalItem) NCollection_Array1<StepAP214_ApprovalItem>;
 
 %extend NCollection_Array1<StepAP214_ApprovalItem> {
@@ -484,9 +169,44 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
-%template(StepAP214_Array1OfAutoDesignReferencingItem) NCollection_Array1<StepAP214_AutoDesignReferencingItem>;
+%template(StepAP214_Array1OfAutoDesignDateAndPersonItem) NCollection_Array1<StepAP214_AutoDesignDateAndPersonItem>;
 
-%extend NCollection_Array1<StepAP214_AutoDesignReferencingItem> {
+%extend NCollection_Array1<StepAP214_AutoDesignDateAndPersonItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP214_Array1OfAutoDesignDateAndTimeItem) NCollection_Array1<StepAP214_AutoDesignDateAndTimeItem>;
+
+%extend NCollection_Array1<StepAP214_AutoDesignDateAndTimeItem> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -554,9 +274,9 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
-%template(StepAP214_Array1OfExternalIdentificationItem) NCollection_Array1<StepAP214_ExternalIdentificationItem>;
+%template(StepAP214_Array1OfAutoDesignGeneralOrgItem) NCollection_Array1<StepAP214_AutoDesignGeneralOrgItem>;
 
-%extend NCollection_Array1<StepAP214_ExternalIdentificationItem> {
+%extend NCollection_Array1<StepAP214_AutoDesignGeneralOrgItem> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -659,9 +379,9 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
-%template(StepAP214_Array1OfAutoDesignDateAndTimeItem) NCollection_Array1<StepAP214_AutoDesignDateAndTimeItem>;
+%template(StepAP214_Array1OfAutoDesignReferencingItem) NCollection_Array1<StepAP214_AutoDesignReferencingItem>;
 
-%extend NCollection_Array1<StepAP214_AutoDesignDateAndTimeItem> {
+%extend NCollection_Array1<StepAP214_AutoDesignReferencingItem> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -694,9 +414,289 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
-%template(StepAP214_Array1OfAutoDesignDateAndPersonItem) NCollection_Array1<StepAP214_AutoDesignDateAndPersonItem>;
+%template(StepAP214_Array1OfDateAndTimeItem) NCollection_Array1<StepAP214_DateAndTimeItem>;
 
-%extend NCollection_Array1<StepAP214_AutoDesignDateAndPersonItem> {
+%extend NCollection_Array1<StepAP214_DateAndTimeItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP214_Array1OfDateItem) NCollection_Array1<StepAP214_DateItem>;
+
+%extend NCollection_Array1<StepAP214_DateItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP214_Array1OfDocumentReferenceItem) NCollection_Array1<StepAP214_DocumentReferenceItem>;
+
+%extend NCollection_Array1<StepAP214_DocumentReferenceItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP214_Array1OfExternalIdentificationItem) NCollection_Array1<StepAP214_ExternalIdentificationItem>;
+
+%extend NCollection_Array1<StepAP214_ExternalIdentificationItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP214_Array1OfGroupItem) NCollection_Array1<StepAP214_GroupItem>;
+
+%extend NCollection_Array1<StepAP214_GroupItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP214_Array1OfOrganizationItem) NCollection_Array1<StepAP214_OrganizationItem>;
+
+%extend NCollection_Array1<StepAP214_OrganizationItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP214_Array1OfPersonAndOrganizationItem) NCollection_Array1<StepAP214_PersonAndOrganizationItem>;
+
+%extend NCollection_Array1<StepAP214_PersonAndOrganizationItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP214_Array1OfPresentedItemSelect) NCollection_Array1<StepAP214_PresentedItemSelect>;
+
+%extend NCollection_Array1<StepAP214_PresentedItemSelect> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP214_Array1OfSecurityClassificationItem) NCollection_Array1<StepAP214_SecurityClassificationItem>;
+
+%extend NCollection_Array1<StepAP214_SecurityClassificationItem> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -732,23 +732,23 @@ from OCC.Core.Exception import *
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Array1<StepAP214_OrganizationItem> StepAP214_Array1OfOrganizationItem;
-typedef NCollection_Array1<StepAP214_DateAndTimeItem> StepAP214_Array1OfDateAndTimeItem;
-typedef NCollection_Array1<StepAP214_DateItem> StepAP214_Array1OfDateItem;
-typedef NCollection_Array1<StepAP214_PresentedItemSelect> StepAP214_Array1OfPresentedItemSelect;
-typedef NCollection_Array1<StepAP214_DocumentReferenceItem> StepAP214_Array1OfDocumentReferenceItem;
-typedef NCollection_Array1<StepAP214_SecurityClassificationItem> StepAP214_Array1OfSecurityClassificationItem;
-typedef NCollection_Array1<StepAP214_PersonAndOrganizationItem> StepAP214_Array1OfPersonAndOrganizationItem;
-typedef NCollection_Array1<StepAP214_AutoDesignGeneralOrgItem> StepAP214_Array1OfAutoDesignGeneralOrgItem;
-typedef NCollection_Array1<StepAP214_GroupItem> StepAP214_Array1OfGroupItem;
 typedef NCollection_Array1<StepAP214_ApprovalItem> StepAP214_Array1OfApprovalItem;
-typedef NCollection_Array1<StepAP214_AutoDesignReferencingItem> StepAP214_Array1OfAutoDesignReferencingItem;
+typedef NCollection_Array1<StepAP214_AutoDesignDateAndPersonItem> StepAP214_Array1OfAutoDesignDateAndPersonItem;
+typedef NCollection_Array1<StepAP214_AutoDesignDateAndTimeItem> StepAP214_Array1OfAutoDesignDateAndTimeItem;
 typedef NCollection_Array1<StepAP214_AutoDesignDatedItem> StepAP214_Array1OfAutoDesignDatedItem;
-typedef NCollection_Array1<StepAP214_ExternalIdentificationItem> StepAP214_Array1OfExternalIdentificationItem;
+typedef NCollection_Array1<StepAP214_AutoDesignGeneralOrgItem> StepAP214_Array1OfAutoDesignGeneralOrgItem;
 typedef NCollection_Array1<StepAP214_AutoDesignGroupedItem> StepAP214_Array1OfAutoDesignGroupedItem;
 typedef NCollection_Array1<StepAP214_AutoDesignPresentedItemSelect> StepAP214_Array1OfAutoDesignPresentedItemSelect;
-typedef NCollection_Array1<StepAP214_AutoDesignDateAndTimeItem> StepAP214_Array1OfAutoDesignDateAndTimeItem;
-typedef NCollection_Array1<StepAP214_AutoDesignDateAndPersonItem> StepAP214_Array1OfAutoDesignDateAndPersonItem;
+typedef NCollection_Array1<StepAP214_AutoDesignReferencingItem> StepAP214_Array1OfAutoDesignReferencingItem;
+typedef NCollection_Array1<StepAP214_DateAndTimeItem> StepAP214_Array1OfDateAndTimeItem;
+typedef NCollection_Array1<StepAP214_DateItem> StepAP214_Array1OfDateItem;
+typedef NCollection_Array1<StepAP214_DocumentReferenceItem> StepAP214_Array1OfDocumentReferenceItem;
+typedef NCollection_Array1<StepAP214_ExternalIdentificationItem> StepAP214_Array1OfExternalIdentificationItem;
+typedef NCollection_Array1<StepAP214_GroupItem> StepAP214_Array1OfGroupItem;
+typedef NCollection_Array1<StepAP214_OrganizationItem> StepAP214_Array1OfOrganizationItem;
+typedef NCollection_Array1<StepAP214_PersonAndOrganizationItem> StepAP214_Array1OfPersonAndOrganizationItem;
+typedef NCollection_Array1<StepAP214_PresentedItemSelect> StepAP214_Array1OfPresentedItemSelect;
+typedef NCollection_Array1<StepAP214_SecurityClassificationItem> StepAP214_Array1OfSecurityClassificationItem;
 /* end typedefs declaration */
 
 /******************
@@ -781,6 +781,16 @@ opencascade::handle<StepAP214_Protocol>
 ********************************************/
 class StepAP214_AppliedApprovalAssignment : public StepBasic_ApprovalAssignment {
 	public:
+		/****************** StepAP214_AppliedApprovalAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AppliedApprovalAssignment;
+		%feature("autodoc", "Returns a appliedapprovalassignment.
+
+Returns
+-------
+None
+") StepAP214_AppliedApprovalAssignment;
+		 StepAP214_AppliedApprovalAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -844,16 +854,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfApprovalItem> & aItems);
 
-		/****************** StepAP214_AppliedApprovalAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AppliedApprovalAssignment;
-		%feature("autodoc", "Returns a appliedapprovalassignment.
-
-Returns
--------
-None
-") StepAP214_AppliedApprovalAssignment;
-		 StepAP214_AppliedApprovalAssignment();
-
 };
 
 
@@ -870,6 +870,16 @@ None
 ***********************************************/
 class StepAP214_AppliedDateAndTimeAssignment : public StepBasic_DateAndTimeAssignment {
 	public:
+		/****************** StepAP214_AppliedDateAndTimeAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AppliedDateAndTimeAssignment;
+		%feature("autodoc", "Returns a applieddateandtimeassignment.
+
+Returns
+-------
+None
+") StepAP214_AppliedDateAndTimeAssignment;
+		 StepAP214_AppliedDateAndTimeAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -934,16 +944,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfDateAndTimeItem> & aItems);
 
-		/****************** StepAP214_AppliedDateAndTimeAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AppliedDateAndTimeAssignment;
-		%feature("autodoc", "Returns a applieddateandtimeassignment.
-
-Returns
--------
-None
-") StepAP214_AppliedDateAndTimeAssignment;
-		 StepAP214_AppliedDateAndTimeAssignment();
-
 };
 
 
@@ -960,6 +960,16 @@ None
 ****************************************/
 class StepAP214_AppliedDateAssignment : public StepBasic_DateAssignment {
 	public:
+		/****************** StepAP214_AppliedDateAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AppliedDateAssignment;
+		%feature("autodoc", "Returns a applieddateassignment.
+
+Returns
+-------
+None
+") StepAP214_AppliedDateAssignment;
+		 StepAP214_AppliedDateAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -1024,16 +1034,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfDateItem> & aItems);
 
-		/****************** StepAP214_AppliedDateAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AppliedDateAssignment;
-		%feature("autodoc", "Returns a applieddateassignment.
-
-Returns
--------
-None
-") StepAP214_AppliedDateAssignment;
-		 StepAP214_AppliedDateAssignment();
-
 };
 
 
@@ -1050,6 +1050,16 @@ None
 *******************************************/
 class StepAP214_AppliedDocumentReference : public StepBasic_DocumentReference {
 	public:
+		/****************** StepAP214_AppliedDocumentReference ******************/
+		%feature("compactdefaultargs") StepAP214_AppliedDocumentReference;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepAP214_AppliedDocumentReference;
+		 StepAP214_AppliedDocumentReference();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -1114,16 +1124,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfDocumentReferenceItem> & aItems);
 
-		/****************** StepAP214_AppliedDocumentReference ******************/
-		%feature("compactdefaultargs") StepAP214_AppliedDocumentReference;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepAP214_AppliedDocumentReference;
-		 StepAP214_AppliedDocumentReference();
-
 };
 
 
@@ -1140,6 +1140,16 @@ None
 **********************************************************/
 class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_ExternalIdentificationAssignment {
 	public:
+		/****************** StepAP214_AppliedExternalIdentificationAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AppliedExternalIdentificationAssignment;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP214_AppliedExternalIdentificationAssignment;
+		 StepAP214_AppliedExternalIdentificationAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -1181,16 +1191,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfExternalIdentificationItem> & Items);
 
-		/****************** StepAP214_AppliedExternalIdentificationAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AppliedExternalIdentificationAssignment;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP214_AppliedExternalIdentificationAssignment;
-		 StepAP214_AppliedExternalIdentificationAssignment();
-
 };
 
 
@@ -1207,6 +1207,16 @@ None
 *****************************************/
 class StepAP214_AppliedGroupAssignment : public StepBasic_GroupAssignment {
 	public:
+		/****************** StepAP214_AppliedGroupAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AppliedGroupAssignment;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP214_AppliedGroupAssignment;
+		 StepAP214_AppliedGroupAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -1246,16 +1256,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfGroupItem> & Items);
 
-		/****************** StepAP214_AppliedGroupAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AppliedGroupAssignment;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP214_AppliedGroupAssignment;
-		 StepAP214_AppliedGroupAssignment();
-
 };
 
 
@@ -1272,6 +1272,16 @@ None
 ************************************************/
 class StepAP214_AppliedOrganizationAssignment : public StepBasic_OrganizationAssignment {
 	public:
+		/****************** StepAP214_AppliedOrganizationAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AppliedOrganizationAssignment;
+		%feature("autodoc", "Returns a appliedorganizationassignment.
+
+Returns
+-------
+None
+") StepAP214_AppliedOrganizationAssignment;
+		 StepAP214_AppliedOrganizationAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -1336,16 +1346,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfOrganizationItem> & aItems);
 
-		/****************** StepAP214_AppliedOrganizationAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AppliedOrganizationAssignment;
-		%feature("autodoc", "Returns a appliedorganizationassignment.
-
-Returns
--------
-None
-") StepAP214_AppliedOrganizationAssignment;
-		 StepAP214_AppliedOrganizationAssignment();
-
 };
 
 
@@ -1362,6 +1362,16 @@ None
 *********************************************************/
 class StepAP214_AppliedPersonAndOrganizationAssignment : public StepBasic_PersonAndOrganizationAssignment {
 	public:
+		/****************** StepAP214_AppliedPersonAndOrganizationAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AppliedPersonAndOrganizationAssignment;
+		%feature("autodoc", "Returns a autodesigndateandpersonassignment.
+
+Returns
+-------
+None
+") StepAP214_AppliedPersonAndOrganizationAssignment;
+		 StepAP214_AppliedPersonAndOrganizationAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -1426,16 +1436,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfPersonAndOrganizationItem> & aItems);
 
-		/****************** StepAP214_AppliedPersonAndOrganizationAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AppliedPersonAndOrganizationAssignment;
-		%feature("autodoc", "Returns a autodesigndateandpersonassignment.
-
-Returns
--------
-None
-") StepAP214_AppliedPersonAndOrganizationAssignment;
-		 StepAP214_AppliedPersonAndOrganizationAssignment();
-
 };
 
 
@@ -1452,6 +1452,16 @@ None
 ***************************************/
 class StepAP214_AppliedPresentedItem : public StepVisual_PresentedItem {
 	public:
+		/****************** StepAP214_AppliedPresentedItem ******************/
+		%feature("compactdefaultargs") StepAP214_AppliedPresentedItem;
+		%feature("autodoc", "Returns a autodesignpresenteditem.
+
+Returns
+-------
+None
+") StepAP214_AppliedPresentedItem;
+		 StepAP214_AppliedPresentedItem();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -1514,16 +1524,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfPresentedItemSelect> & aItems);
 
-		/****************** StepAP214_AppliedPresentedItem ******************/
-		%feature("compactdefaultargs") StepAP214_AppliedPresentedItem;
-		%feature("autodoc", "Returns a autodesignpresenteditem.
-
-Returns
--------
-None
-") StepAP214_AppliedPresentedItem;
-		 StepAP214_AppliedPresentedItem();
-
 };
 
 
@@ -1540,6 +1540,16 @@ None
 **********************************************************/
 class StepAP214_AppliedSecurityClassificationAssignment : public StepBasic_SecurityClassificationAssignment {
 	public:
+		/****************** StepAP214_AppliedSecurityClassificationAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AppliedSecurityClassificationAssignment;
+		%feature("autodoc", "Returns a appliedsecurityclassificationassignment.
+
+Returns
+-------
+None
+") StepAP214_AppliedSecurityClassificationAssignment;
+		 StepAP214_AppliedSecurityClassificationAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -1603,16 +1613,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfSecurityClassificationItem> & aItems);
 
-		/****************** StepAP214_AppliedSecurityClassificationAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AppliedSecurityClassificationAssignment;
-		%feature("autodoc", "Returns a appliedsecurityclassificationassignment.
-
-Returns
--------
-None
-") StepAP214_AppliedSecurityClassificationAssignment;
-		 StepAP214_AppliedSecurityClassificationAssignment();
-
 };
 
 
@@ -1629,6 +1629,16 @@ None
 *******************************/
 class StepAP214_ApprovalItem : public StepData_SelectType {
 	public:
+		/****************** StepAP214_ApprovalItem ******************/
+		%feature("compactdefaultargs") StepAP214_ApprovalItem;
+		%feature("autodoc", "Returns a approvalitem selecttype.
+
+Returns
+-------
+None
+") StepAP214_ApprovalItem;
+		 StepAP214_ApprovalItem();
+
 		/****************** AssemblyComponentUsageSubstitute ******************/
 		%feature("compactdefaultargs") AssemblyComponentUsageSubstitute;
 		%feature("autodoc", "Returns value as a assemblycomponentusagesubstitute (null if another type).
@@ -1853,16 +1863,6 @@ opencascade::handle<StepShape_ShapeRepresentation>
 ") ShapeRepresentation;
 		virtual opencascade::handle<StepShape_ShapeRepresentation> ShapeRepresentation();
 
-		/****************** StepAP214_ApprovalItem ******************/
-		%feature("compactdefaultargs") StepAP214_ApprovalItem;
-		%feature("autodoc", "Returns a approvalitem selecttype.
-
-Returns
--------
-None
-") StepAP214_ApprovalItem;
-		 StepAP214_ApprovalItem();
-
 };
 
 
@@ -1877,6 +1877,16 @@ None
 ********************************************************/
 class StepAP214_AutoDesignActualDateAndTimeAssignment : public StepBasic_DateAndTimeAssignment {
 	public:
+		/****************** StepAP214_AutoDesignActualDateAndTimeAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignActualDateAndTimeAssignment;
+		%feature("autodoc", "Returns a autodesignactualdateandtimeassignment.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignActualDateAndTimeAssignment;
+		 StepAP214_AutoDesignActualDateAndTimeAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -1941,16 +1951,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndTimeItem> & aItems);
 
-		/****************** StepAP214_AutoDesignActualDateAndTimeAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignActualDateAndTimeAssignment;
-		%feature("autodoc", "Returns a autodesignactualdateandtimeassignment.
-
-Returns
--------
-None
-") StepAP214_AutoDesignActualDateAndTimeAssignment;
-		 StepAP214_AutoDesignActualDateAndTimeAssignment();
-
 };
 
 
@@ -1967,6 +1967,16 @@ None
 *************************************************/
 class StepAP214_AutoDesignActualDateAssignment : public StepBasic_DateAssignment {
 	public:
+		/****************** StepAP214_AutoDesignActualDateAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignActualDateAssignment;
+		%feature("autodoc", "Returns a autodesignactualdateassignment.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignActualDateAssignment;
+		 StepAP214_AutoDesignActualDateAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -2031,16 +2041,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignDatedItem> & aItems);
 
-		/****************** StepAP214_AutoDesignActualDateAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignActualDateAssignment;
-		%feature("autodoc", "Returns a autodesignactualdateassignment.
-
-Returns
--------
-None
-") StepAP214_AutoDesignActualDateAssignment;
-		 StepAP214_AutoDesignActualDateAssignment();
-
 };
 
 
@@ -2057,6 +2057,16 @@ None
 ***********************************************/
 class StepAP214_AutoDesignApprovalAssignment : public StepBasic_ApprovalAssignment {
 	public:
+		/****************** StepAP214_AutoDesignApprovalAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignApprovalAssignment;
+		%feature("autodoc", "Returns a autodesignapprovalassignment.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignApprovalAssignment;
+		 StepAP214_AutoDesignApprovalAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -2120,16 +2130,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem> & aItems);
 
-		/****************** StepAP214_AutoDesignApprovalAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignApprovalAssignment;
-		%feature("autodoc", "Returns a autodesignapprovalassignment.
-
-Returns
--------
-None
-") StepAP214_AutoDesignApprovalAssignment;
-		 StepAP214_AutoDesignApprovalAssignment();
-
 };
 
 
@@ -2146,6 +2146,16 @@ None
 ****************************************************/
 class StepAP214_AutoDesignDateAndPersonAssignment : public StepBasic_PersonAndOrganizationAssignment {
 	public:
+		/****************** StepAP214_AutoDesignDateAndPersonAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignDateAndPersonAssignment;
+		%feature("autodoc", "Returns a autodesigndateandpersonassignment.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignDateAndPersonAssignment;
+		 StepAP214_AutoDesignDateAndPersonAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -2210,16 +2220,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndPersonItem> & aItems);
 
-		/****************** StepAP214_AutoDesignDateAndPersonAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignDateAndPersonAssignment;
-		%feature("autodoc", "Returns a autodesigndateandpersonassignment.
-
-Returns
--------
-None
-") StepAP214_AutoDesignDateAndPersonAssignment;
-		 StepAP214_AutoDesignDateAndPersonAssignment();
-
 };
 
 
@@ -2236,6 +2236,16 @@ None
 **********************************************/
 class StepAP214_AutoDesignDateAndPersonItem : public StepData_SelectType {
 	public:
+		/****************** StepAP214_AutoDesignDateAndPersonItem ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignDateAndPersonItem;
+		%feature("autodoc", "Returns a autodesigndateandpersonitem selecttype.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignDateAndPersonItem;
+		 StepAP214_AutoDesignDateAndPersonItem();
+
 		/****************** AutoDesignDocumentReference ******************/
 		%feature("compactdefaultargs") AutoDesignDocumentReference;
 		%feature("autodoc", "No available documentation.
@@ -2340,16 +2350,6 @@ opencascade::handle<StepRepr_Representation>
 ") Representation;
 		opencascade::handle<StepRepr_Representation> Representation();
 
-		/****************** StepAP214_AutoDesignDateAndPersonItem ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignDateAndPersonItem;
-		%feature("autodoc", "Returns a autodesigndateandpersonitem selecttype.
-
-Returns
--------
-None
-") StepAP214_AutoDesignDateAndPersonItem;
-		 StepAP214_AutoDesignDateAndPersonItem();
-
 };
 
 
@@ -2364,6 +2364,16 @@ None
 ********************************************/
 class StepAP214_AutoDesignDateAndTimeItem : public StepData_SelectType {
 	public:
+		/****************** StepAP214_AutoDesignDateAndTimeItem ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignDateAndTimeItem;
+		%feature("autodoc", "Returns a autodesigndateandtimeitem selecttype.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignDateAndTimeItem;
+		 StepAP214_AutoDesignDateAndTimeItem();
+
 		/****************** ApprovalPersonOrganization ******************/
 		%feature("compactdefaultargs") ApprovalPersonOrganization;
 		%feature("autodoc", "Returns value as a approvalpersonorganization (null if another type).
@@ -2408,16 +2418,6 @@ opencascade::handle<StepBasic_ProductDefinitionEffectivity>
 ") ProductDefinitionEffectivity;
 		opencascade::handle<StepBasic_ProductDefinitionEffectivity> ProductDefinitionEffectivity();
 
-		/****************** StepAP214_AutoDesignDateAndTimeItem ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignDateAndTimeItem;
-		%feature("autodoc", "Returns a autodesigndateandtimeitem selecttype.
-
-Returns
--------
-None
-") StepAP214_AutoDesignDateAndTimeItem;
-		 StepAP214_AutoDesignDateAndTimeItem();
-
 };
 
 
@@ -2432,6 +2432,16 @@ None
 **************************************/
 class StepAP214_AutoDesignDatedItem : public StepData_SelectType {
 	public:
+		/****************** StepAP214_AutoDesignDatedItem ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignDatedItem;
+		%feature("autodoc", "Returns a autodesigndateditem selecttype.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignDatedItem;
+		 StepAP214_AutoDesignDatedItem();
+
 		/****************** ApprovalPersonOrganization ******************/
 		%feature("compactdefaultargs") ApprovalPersonOrganization;
 		%feature("autodoc", "Returns value as a approvalpersonorganization (null if another type).
@@ -2476,16 +2486,6 @@ opencascade::handle<StepBasic_ProductDefinitionEffectivity>
 ") ProductDefinitionEffectivity;
 		opencascade::handle<StepBasic_ProductDefinitionEffectivity> ProductDefinitionEffectivity();
 
-		/****************** StepAP214_AutoDesignDatedItem ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignDatedItem;
-		%feature("autodoc", "Returns a autodesigndateditem selecttype.
-
-Returns
--------
-None
-") StepAP214_AutoDesignDatedItem;
-		 StepAP214_AutoDesignDatedItem();
-
 };
 
 
@@ -2500,6 +2500,16 @@ None
 **********************************************/
 class StepAP214_AutoDesignDocumentReference : public StepBasic_DocumentReference {
 	public:
+		/****************** StepAP214_AutoDesignDocumentReference ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignDocumentReference;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignDocumentReference;
+		 StepAP214_AutoDesignDocumentReference();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -2564,16 +2574,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignReferencingItem> & aItems);
 
-		/****************** StepAP214_AutoDesignDocumentReference ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignDocumentReference;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepAP214_AutoDesignDocumentReference;
-		 StepAP214_AutoDesignDocumentReference();
-
 };
 
 
@@ -2590,6 +2590,16 @@ None
 *******************************************/
 class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 	public:
+		/****************** StepAP214_AutoDesignGeneralOrgItem ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignGeneralOrgItem;
+		%feature("autodoc", "Returns a autodesigngeneralorgitem selecttype.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignGeneralOrgItem;
+		 StepAP214_AutoDesignGeneralOrgItem();
+
 		/****************** AutoDesignDocumentReference ******************/
 		%feature("compactdefaultargs") AutoDesignDocumentReference;
 		%feature("autodoc", "No available documentation.
@@ -2684,16 +2694,6 @@ opencascade::handle<StepRepr_Representation>
 ") Representation;
 		opencascade::handle<StepRepr_Representation> Representation();
 
-		/****************** StepAP214_AutoDesignGeneralOrgItem ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignGeneralOrgItem;
-		%feature("autodoc", "Returns a autodesigngeneralorgitem selecttype.
-
-Returns
--------
-None
-") StepAP214_AutoDesignGeneralOrgItem;
-		 StepAP214_AutoDesignGeneralOrgItem();
-
 };
 
 
@@ -2708,6 +2708,16 @@ None
 ********************************************/
 class StepAP214_AutoDesignGroupAssignment : public StepBasic_GroupAssignment {
 	public:
+		/****************** StepAP214_AutoDesignGroupAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignGroupAssignment;
+		%feature("autodoc", "Returns a autodesigngroupassignment.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignGroupAssignment;
+		 StepAP214_AutoDesignGroupAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -2771,16 +2781,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignGroupedItem> & aItems);
 
-		/****************** StepAP214_AutoDesignGroupAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignGroupAssignment;
-		%feature("autodoc", "Returns a autodesigngroupassignment.
-
-Returns
--------
-None
-") StepAP214_AutoDesignGroupAssignment;
-		 StepAP214_AutoDesignGroupAssignment();
-
 };
 
 
@@ -2797,6 +2797,16 @@ None
 ****************************************/
 class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 	public:
+		/****************** StepAP214_AutoDesignGroupedItem ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignGroupedItem;
+		%feature("autodoc", "Returns a autodesigngroupeditem selecttype.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignGroupedItem;
+		 StepAP214_AutoDesignGroupedItem();
+
 		/****************** AdvancedBrepShapeRepresentation ******************/
 		%feature("compactdefaultargs") AdvancedBrepShapeRepresentation;
 		%feature("autodoc", "Returns value as a advancedbrepshaperepresentation (null if another type).
@@ -2911,16 +2921,6 @@ opencascade::handle<StepShape_ShapeRepresentation>
 ") ShapeRepresentation;
 		opencascade::handle<StepShape_ShapeRepresentation> ShapeRepresentation();
 
-		/****************** StepAP214_AutoDesignGroupedItem ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignGroupedItem;
-		%feature("autodoc", "Returns a autodesigngroupeditem selecttype.
-
-Returns
--------
-None
-") StepAP214_AutoDesignGroupedItem;
-		 StepAP214_AutoDesignGroupedItem();
-
 		/****************** TemplateInstance ******************/
 		%feature("compactdefaultargs") TemplateInstance;
 		%feature("autodoc", "Returns value as a templateinstance (null if another type).
@@ -2945,6 +2945,16 @@ opencascade::handle<StepVisual_TemplateInstance>
 *********************************************************/
 class StepAP214_AutoDesignNominalDateAndTimeAssignment : public StepBasic_DateAndTimeAssignment {
 	public:
+		/****************** StepAP214_AutoDesignNominalDateAndTimeAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignNominalDateAndTimeAssignment;
+		%feature("autodoc", "Returns a autodesignnominaldateandtimeassignment.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignNominalDateAndTimeAssignment;
+		 StepAP214_AutoDesignNominalDateAndTimeAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3009,16 +3019,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignDateAndTimeItem> & aItems);
 
-		/****************** StepAP214_AutoDesignNominalDateAndTimeAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignNominalDateAndTimeAssignment;
-		%feature("autodoc", "Returns a autodesignnominaldateandtimeassignment.
-
-Returns
--------
-None
-") StepAP214_AutoDesignNominalDateAndTimeAssignment;
-		 StepAP214_AutoDesignNominalDateAndTimeAssignment();
-
 };
 
 
@@ -3035,6 +3035,16 @@ None
 **************************************************/
 class StepAP214_AutoDesignNominalDateAssignment : public StepBasic_DateAssignment {
 	public:
+		/****************** StepAP214_AutoDesignNominalDateAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignNominalDateAssignment;
+		%feature("autodoc", "Returns a autodesignnominaldateassignment.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignNominalDateAssignment;
+		 StepAP214_AutoDesignNominalDateAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3099,16 +3109,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignDatedItem> & aItems);
 
-		/****************** StepAP214_AutoDesignNominalDateAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignNominalDateAssignment;
-		%feature("autodoc", "Returns a autodesignnominaldateassignment.
-
-Returns
--------
-None
-") StepAP214_AutoDesignNominalDateAssignment;
-		 StepAP214_AutoDesignNominalDateAssignment();
-
 };
 
 
@@ -3125,6 +3125,16 @@ None
 ***************************************************/
 class StepAP214_AutoDesignOrganizationAssignment : public StepBasic_OrganizationAssignment {
 	public:
+		/****************** StepAP214_AutoDesignOrganizationAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignOrganizationAssignment;
+		%feature("autodoc", "Returns a autodesignorganizationassignment.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignOrganizationAssignment;
+		 StepAP214_AutoDesignOrganizationAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3189,16 +3199,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem> & aItems);
 
-		/****************** StepAP214_AutoDesignOrganizationAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignOrganizationAssignment;
-		%feature("autodoc", "Returns a autodesignorganizationassignment.
-
-Returns
--------
-None
-") StepAP214_AutoDesignOrganizationAssignment;
-		 StepAP214_AutoDesignOrganizationAssignment();
-
 };
 
 
@@ -3215,6 +3215,16 @@ None
 ************************************************************/
 class StepAP214_AutoDesignPersonAndOrganizationAssignment : public StepBasic_PersonAndOrganizationAssignment {
 	public:
+		/****************** StepAP214_AutoDesignPersonAndOrganizationAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignPersonAndOrganizationAssignment;
+		%feature("autodoc", "Returns a autodesignpersonandorganizationassignment.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignPersonAndOrganizationAssignment;
+		 StepAP214_AutoDesignPersonAndOrganizationAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3279,16 +3289,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignGeneralOrgItem> & aItems);
 
-		/****************** StepAP214_AutoDesignPersonAndOrganizationAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignPersonAndOrganizationAssignment;
-		%feature("autodoc", "Returns a autodesignpersonandorganizationassignment.
-
-Returns
--------
-None
-") StepAP214_AutoDesignPersonAndOrganizationAssignment;
-		 StepAP214_AutoDesignPersonAndOrganizationAssignment();
-
 };
 
 
@@ -3305,6 +3305,16 @@ None
 ******************************************/
 class StepAP214_AutoDesignPresentedItem : public StepVisual_PresentedItem {
 	public:
+		/****************** StepAP214_AutoDesignPresentedItem ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignPresentedItem;
+		%feature("autodoc", "Returns a autodesignpresenteditem.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignPresentedItem;
+		 StepAP214_AutoDesignPresentedItem();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3367,16 +3377,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP214_HArray1OfAutoDesignPresentedItemSelect> & aItems);
 
-		/****************** StepAP214_AutoDesignPresentedItem ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignPresentedItem;
-		%feature("autodoc", "Returns a autodesignpresenteditem.
-
-Returns
--------
-None
-") StepAP214_AutoDesignPresentedItem;
-		 StepAP214_AutoDesignPresentedItem();
-
 };
 
 
@@ -3393,6 +3393,16 @@ None
 ************************************************/
 class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 	public:
+		/****************** StepAP214_AutoDesignPresentedItemSelect ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignPresentedItemSelect;
+		%feature("autodoc", "Returns a autodesignpresenteditemselect selecttype.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignPresentedItemSelect;
+		 StepAP214_AutoDesignPresentedItemSelect();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a autodesignpresenteditemselect kind entity that is : 1 -> productdefinition, 2 -> productdefinitionrelationship, 3 -> productdefinitionshape 4 -> representationrelationship 5 -> shapeaspect 6 -> documentrelationship, 0 else.
@@ -3467,16 +3477,6 @@ opencascade::handle<StepRepr_ShapeAspect>
 ") ShapeAspect;
 		opencascade::handle<StepRepr_ShapeAspect> ShapeAspect();
 
-		/****************** StepAP214_AutoDesignPresentedItemSelect ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignPresentedItemSelect;
-		%feature("autodoc", "Returns a autodesignpresenteditemselect selecttype.
-
-Returns
--------
-None
-") StepAP214_AutoDesignPresentedItemSelect;
-		 StepAP214_AutoDesignPresentedItemSelect();
-
 };
 
 
@@ -3491,6 +3491,16 @@ None
 ********************************************/
 class StepAP214_AutoDesignReferencingItem : public StepData_SelectType {
 	public:
+		/****************** StepAP214_AutoDesignReferencingItem ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignReferencingItem;
+		%feature("autodoc", "Returns a autodesignreferencingitem selecttype.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignReferencingItem;
+		 StepAP214_AutoDesignReferencingItem();
+
 		/****************** Approval ******************/
 		%feature("compactdefaultargs") Approval;
 		%feature("autodoc", "No available documentation.
@@ -3645,16 +3655,6 @@ opencascade::handle<StepRepr_ShapeAspect>
 ") ShapeAspect;
 		opencascade::handle<StepRepr_ShapeAspect> ShapeAspect();
 
-		/****************** StepAP214_AutoDesignReferencingItem ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignReferencingItem;
-		%feature("autodoc", "Returns a autodesignreferencingitem selecttype.
-
-Returns
--------
-None
-") StepAP214_AutoDesignReferencingItem;
-		 StepAP214_AutoDesignReferencingItem();
-
 };
 
 
@@ -3669,6 +3669,16 @@ None
 *************************************************************/
 class StepAP214_AutoDesignSecurityClassificationAssignment : public StepBasic_SecurityClassificationAssignment {
 	public:
+		/****************** StepAP214_AutoDesignSecurityClassificationAssignment ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignSecurityClassificationAssignment;
+		%feature("autodoc", "Returns a autodesignsecurityclassificationassignment.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignSecurityClassificationAssignment;
+		 StepAP214_AutoDesignSecurityClassificationAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3732,16 +3742,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepBasic_HArray1OfApproval> & aItems);
 
-		/****************** StepAP214_AutoDesignSecurityClassificationAssignment ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignSecurityClassificationAssignment;
-		%feature("autodoc", "Returns a autodesignsecurityclassificationassignment.
-
-Returns
--------
-None
-") StepAP214_AutoDesignSecurityClassificationAssignment;
-		 StepAP214_AutoDesignSecurityClassificationAssignment();
-
 };
 
 
@@ -3784,6 +3784,16 @@ None
 ****************************************/
 class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 	public:
+		/****************** StepAP214_DocumentReferenceItem ******************/
+		%feature("compactdefaultargs") StepAP214_DocumentReferenceItem;
+		%feature("autodoc", "Returns a documentreferenceitem selecttype.
+
+Returns
+-------
+None
+") StepAP214_DocumentReferenceItem;
+		 StepAP214_DocumentReferenceItem();
+
 		/****************** AppliedExternalIdentificationAssignment ******************/
 		%feature("compactdefaultargs") AppliedExternalIdentificationAssignment;
 		%feature("autodoc", "Returns value as a appliedexternalidentificationassignment (null if another type).
@@ -3998,16 +4008,6 @@ opencascade::handle<StepRepr_ShapeAspectRelationship>
 ") ShapeAspectRelationship;
 		opencascade::handle<StepRepr_ShapeAspectRelationship> ShapeAspectRelationship();
 
-		/****************** StepAP214_DocumentReferenceItem ******************/
-		%feature("compactdefaultargs") StepAP214_DocumentReferenceItem;
-		%feature("autodoc", "Returns a documentreferenceitem selecttype.
-
-Returns
--------
-None
-") StepAP214_DocumentReferenceItem;
-		 StepAP214_DocumentReferenceItem();
-
 };
 
 
@@ -4022,6 +4022,16 @@ None
 *********************************************/
 class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 	public:
+		/****************** StepAP214_ExternalIdentificationItem ******************/
+		%feature("compactdefaultargs") StepAP214_ExternalIdentificationItem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP214_ExternalIdentificationItem;
+		 StepAP214_ExternalIdentificationItem();
+
 		/****************** AppliedOrganizationAssignment ******************/
 		%feature("compactdefaultargs") AppliedOrganizationAssignment;
 		%feature("autodoc", "Returns value as appliedorganizationassignment (or null if another type).
@@ -4166,16 +4176,6 @@ opencascade::handle<StepBasic_SecurityClassification>
 ") SecurityClassification;
 		opencascade::handle<StepBasic_SecurityClassification> SecurityClassification();
 
-		/****************** StepAP214_ExternalIdentificationItem ******************/
-		%feature("compactdefaultargs") StepAP214_ExternalIdentificationItem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP214_ExternalIdentificationItem;
-		 StepAP214_ExternalIdentificationItem();
-
 		/****************** TrimmedCurve ******************/
 		%feature("compactdefaultargs") TrimmedCurve;
 		%feature("autodoc", "Returns value as trimmedcurve (or null if another type).
@@ -4210,6 +4210,16 @@ opencascade::handle<StepBasic_VersionedActionRequest>
 ***************************************************/
 class StepAP214_ExternallyDefinedGeneralProperty : public StepBasic_GeneralProperty {
 	public:
+		/****************** StepAP214_ExternallyDefinedGeneralProperty ******************/
+		%feature("compactdefaultargs") StepAP214_ExternallyDefinedGeneralProperty;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP214_ExternallyDefinedGeneralProperty;
+		 StepAP214_ExternallyDefinedGeneralProperty();
+
 		/****************** ExternallyDefinedItem ******************/
 		%feature("compactdefaultargs") ExternallyDefinedItem;
 		%feature("autodoc", "Returns data for supertype externallydefineditem.
@@ -4253,16 +4263,6 @@ None
 ") SetExternallyDefinedItem;
 		void SetExternallyDefinedItem(const opencascade::handle<StepBasic_ExternallyDefinedItem> & ExternallyDefinedItem);
 
-		/****************** StepAP214_ExternallyDefinedGeneralProperty ******************/
-		%feature("compactdefaultargs") StepAP214_ExternallyDefinedGeneralProperty;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP214_ExternallyDefinedGeneralProperty;
-		 StepAP214_ExternallyDefinedGeneralProperty();
-
 };
 
 
@@ -4279,6 +4279,16 @@ None
 ****************************/
 class StepAP214_GroupItem : public StepData_SelectType {
 	public:
+		/****************** StepAP214_GroupItem ******************/
+		%feature("compactdefaultargs") StepAP214_GroupItem;
+		%feature("autodoc", "Returns a groupitem selecttype.
+
+Returns
+-------
+None
+") StepAP214_GroupItem;
+		 StepAP214_GroupItem();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a groupitem kind entity that is : 1 -> geometricrepresentationitem 2 -> grouprelationship 3 -> mappeditem 4 -> productdefinition 5 -> productdefinitionformation 6 -> propertydefinitionrepresentation 7 -> representation 8 -> representationitem 9 -> representationrelationshipwithtransformation 10 -> shapeaspect 11 -> shapeaspectrelationship 12 -> shaperepresentationrelationship 13 -> styleditem 14 -> topologicalrepresentationitem 0 else.
@@ -4413,16 +4423,6 @@ opencascade::handle<StepRepr_ShapeRepresentationRelationship>
 ") ShapeRepresentationRelationship;
 		virtual opencascade::handle<StepRepr_ShapeRepresentationRelationship> ShapeRepresentationRelationship();
 
-		/****************** StepAP214_GroupItem ******************/
-		%feature("compactdefaultargs") StepAP214_GroupItem;
-		%feature("autodoc", "Returns a groupitem selecttype.
-
-Returns
--------
-None
-") StepAP214_GroupItem;
-		 StepAP214_GroupItem();
-
 		/****************** StyledItem ******************/
 		%feature("compactdefaultargs") StyledItem;
 		%feature("autodoc", "Returns value as a styleditem (null if another type).
@@ -4457,6 +4457,16 @@ opencascade::handle<StepShape_TopologicalRepresentationItem>
 **************************************/
 class StepAP214_PresentedItemSelect : public StepData_SelectType {
 	public:
+		/****************** StepAP214_PresentedItemSelect ******************/
+		%feature("compactdefaultargs") StepAP214_PresentedItemSelect;
+		%feature("autodoc", "Returns a presenteditemselect selecttype.
+
+Returns
+-------
+None
+") StepAP214_PresentedItemSelect;
+		 StepAP214_PresentedItemSelect();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a presenteditemselect kind entity that is : 1 -> productdefinition, 2 -> productdefinitionrelationship, 0 else.
@@ -4491,16 +4501,6 @@ opencascade::handle<StepBasic_ProductDefinitionRelationship>
 ") ProductDefinitionRelationship;
 		opencascade::handle<StepBasic_ProductDefinitionRelationship> ProductDefinitionRelationship();
 
-		/****************** StepAP214_PresentedItemSelect ******************/
-		%feature("compactdefaultargs") StepAP214_PresentedItemSelect;
-		%feature("autodoc", "Returns a presenteditemselect selecttype.
-
-Returns
--------
-None
-") StepAP214_PresentedItemSelect;
-		 StepAP214_PresentedItemSelect();
-
 };
 
 
@@ -4515,6 +4515,16 @@ None
 ***************************/
 class StepAP214_Protocol : public StepData_Protocol {
 	public:
+		/****************** StepAP214_Protocol ******************/
+		%feature("compactdefaultargs") StepAP214_Protocol;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepAP214_Protocol;
+		 StepAP214_Protocol();
+
 		/****************** NbResources ******************/
 		%feature("compactdefaultargs") NbResources;
 		%feature("autodoc", "Returns count of protocol used as resources (level one).
@@ -4549,16 +4559,6 @@ char *
 ") SchemaName;
 		virtual const char * SchemaName();
 
-		/****************** StepAP214_Protocol ******************/
-		%feature("compactdefaultargs") StepAP214_Protocol;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepAP214_Protocol;
-		 StepAP214_Protocol();
-
 		/****************** TypeNumber ******************/
 		%feature("compactdefaultargs") TypeNumber;
 		%feature("autodoc", "Returns a case number for each of the stepap214 entities.
@@ -4589,6 +4589,16 @@ int
 *******************************/
 class StepAP214_RepItemGroup : public StepBasic_Group {
 	public:
+		/****************** StepAP214_RepItemGroup ******************/
+		%feature("compactdefaultargs") StepAP214_RepItemGroup;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP214_RepItemGroup;
+		 StepAP214_RepItemGroup();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -4630,16 +4640,6 @@ None
 ") SetRepresentationItem;
 		void SetRepresentationItem(const opencascade::handle<StepRepr_RepresentationItem> & RepresentationItem);
 
-		/****************** StepAP214_RepItemGroup ******************/
-		%feature("compactdefaultargs") StepAP214_RepItemGroup;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP214_RepItemGroup;
-		 StepAP214_RepItemGroup();
-
 };
 
 
@@ -4656,6 +4656,16 @@ None
 *********************************************/
 class StepAP214_AutoDesignOrganizationItem : public StepAP214_AutoDesignGeneralOrgItem {
 	public:
+		/****************** StepAP214_AutoDesignOrganizationItem ******************/
+		%feature("compactdefaultargs") StepAP214_AutoDesignOrganizationItem;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepAP214_AutoDesignOrganizationItem;
+		 StepAP214_AutoDesignOrganizationItem();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "No available documentation.
@@ -4690,16 +4700,6 @@ opencascade::handle<StepBasic_PhysicallyModeledProductDefinition>
 ") PhysicallyModeledProductDefinition;
 		opencascade::handle<StepBasic_PhysicallyModeledProductDefinition> PhysicallyModeledProductDefinition();
 
-		/****************** StepAP214_AutoDesignOrganizationItem ******************/
-		%feature("compactdefaultargs") StepAP214_AutoDesignOrganizationItem;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepAP214_AutoDesignOrganizationItem;
-		 StepAP214_AutoDesignOrganizationItem();
-
 };
 
 
@@ -4714,6 +4714,16 @@ None
 **********************************/
 class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
 	public:
+		/****************** StepAP214_DateAndTimeItem ******************/
+		%feature("compactdefaultargs") StepAP214_DateAndTimeItem;
+		%feature("autodoc", "Returns a dateandtimeitem selecttype.
+
+Returns
+-------
+None
+") StepAP214_DateAndTimeItem;
+		 StepAP214_DateAndTimeItem();
+
 		/****************** AppliedOrganizationAssignment ******************/
 		%feature("compactdefaultargs") AppliedOrganizationAssignment;
 		%feature("autodoc", "Returns value as a appliedorganizationassignment (null if another type).
@@ -4758,16 +4768,6 @@ int
 ") CaseNum;
 		virtual Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
-		/****************** StepAP214_DateAndTimeItem ******************/
-		%feature("compactdefaultargs") StepAP214_DateAndTimeItem;
-		%feature("autodoc", "Returns a dateandtimeitem selecttype.
-
-Returns
--------
-None
-") StepAP214_DateAndTimeItem;
-		 StepAP214_DateAndTimeItem();
-
 };
 
 
@@ -4782,6 +4782,16 @@ None
 ***************************/
 class StepAP214_DateItem : public StepAP214_ApprovalItem {
 	public:
+		/****************** StepAP214_DateItem ******************/
+		%feature("compactdefaultargs") StepAP214_DateItem;
+		%feature("autodoc", "Returns a dateitem selecttype.
+
+Returns
+-------
+None
+") StepAP214_DateItem;
+		 StepAP214_DateItem();
+
 		/****************** AppliedOrganizationAssignment ******************/
 		%feature("compactdefaultargs") AppliedOrganizationAssignment;
 		%feature("autodoc", "Returns value as a appliedorganizationassignment (null if another type).
@@ -4836,16 +4846,6 @@ int
 ") CaseNum;
 		virtual Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
-		/****************** StepAP214_DateItem ******************/
-		%feature("compactdefaultargs") StepAP214_DateItem;
-		%feature("autodoc", "Returns a dateitem selecttype.
-
-Returns
--------
-None
-") StepAP214_DateItem;
-		 StepAP214_DateItem();
-
 };
 
 
@@ -4860,6 +4860,16 @@ None
 *****************************************/
 class StepAP214_ExternallyDefinedClass : public StepAP214_Class {
 	public:
+		/****************** StepAP214_ExternallyDefinedClass ******************/
+		%feature("compactdefaultargs") StepAP214_ExternallyDefinedClass;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP214_ExternallyDefinedClass;
+		 StepAP214_ExternallyDefinedClass();
+
 		/****************** ExternallyDefinedItem ******************/
 		%feature("compactdefaultargs") ExternallyDefinedItem;
 		%feature("autodoc", "Returns data for supertype externallydefineditem.
@@ -4902,16 +4912,6 @@ None
 ") SetExternallyDefinedItem;
 		void SetExternallyDefinedItem(const opencascade::handle<StepBasic_ExternallyDefinedItem> & ExternallyDefinedItem);
 
-		/****************** StepAP214_ExternallyDefinedClass ******************/
-		%feature("compactdefaultargs") StepAP214_ExternallyDefinedClass;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP214_ExternallyDefinedClass;
-		 StepAP214_ExternallyDefinedClass();
-
 };
 
 
@@ -4928,6 +4928,16 @@ None
 ***********************************/
 class StepAP214_OrganizationItem : public StepAP214_ApprovalItem {
 	public:
+		/****************** StepAP214_OrganizationItem ******************/
+		%feature("compactdefaultargs") StepAP214_OrganizationItem;
+		%feature("autodoc", "Returns a organizationitem selecttype.
+
+Returns
+-------
+None
+") StepAP214_OrganizationItem;
+		 StepAP214_OrganizationItem();
+
 		/****************** AppliedOrganizationAssignment ******************/
 		%feature("compactdefaultargs") AppliedOrganizationAssignment;
 		%feature("autodoc", "Returns value as a appliedorganizationassignment (null if another type).
@@ -4972,16 +4982,6 @@ int
 ") CaseNum;
 		virtual Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
-		/****************** StepAP214_OrganizationItem ******************/
-		%feature("compactdefaultargs") StepAP214_OrganizationItem;
-		%feature("autodoc", "Returns a organizationitem selecttype.
-
-Returns
--------
-None
-") StepAP214_OrganizationItem;
-		 StepAP214_OrganizationItem();
-
 };
 
 
@@ -4996,6 +4996,16 @@ None
 ********************************************/
 class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
 	public:
+		/****************** StepAP214_PersonAndOrganizationItem ******************/
+		%feature("compactdefaultargs") StepAP214_PersonAndOrganizationItem;
+		%feature("autodoc", "Returns a personandorganizationitem selecttype.
+
+Returns
+-------
+None
+") StepAP214_PersonAndOrganizationItem;
+		 StepAP214_PersonAndOrganizationItem();
+
 		/****************** AppliedOrganizationAssignment ******************/
 		%feature("compactdefaultargs") AppliedOrganizationAssignment;
 		%feature("autodoc", "Returns value as a appliedorganizationassignment (null if another type).
@@ -5040,16 +5050,6 @@ int
 ") CaseNum;
 		virtual Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
-		/****************** StepAP214_PersonAndOrganizationItem ******************/
-		%feature("compactdefaultargs") StepAP214_PersonAndOrganizationItem;
-		%feature("autodoc", "Returns a personandorganizationitem selecttype.
-
-Returns
--------
-None
-") StepAP214_PersonAndOrganizationItem;
-		 StepAP214_PersonAndOrganizationItem();
-
 };
 
 
@@ -5064,6 +5064,16 @@ None
 *********************************************/
 class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 	public:
+		/****************** StepAP214_SecurityClassificationItem ******************/
+		%feature("compactdefaultargs") StepAP214_SecurityClassificationItem;
+		%feature("autodoc", "Returns a securityclassificationitem selecttype.
+
+Returns
+-------
+None
+") StepAP214_SecurityClassificationItem;
+		 StepAP214_SecurityClassificationItem();
+
 		/****************** Action ******************/
 		%feature("compactdefaultargs") Action;
 		%feature("autodoc", "Returns value as a action (null if another type).
@@ -5167,16 +5177,6 @@ Returns
 opencascade::handle<StepRepr_ProductDefinitionUsage>
 ") ProductDefinitionUsage;
 		virtual opencascade::handle<StepRepr_ProductDefinitionUsage> ProductDefinitionUsage();
-
-		/****************** StepAP214_SecurityClassificationItem ******************/
-		%feature("compactdefaultargs") StepAP214_SecurityClassificationItem;
-		%feature("autodoc", "Returns a securityclassificationitem selecttype.
-
-Returns
--------
-None
-") StepAP214_SecurityClassificationItem;
-		 StepAP214_SecurityClassificationItem();
 
 		/****************** VersionedActionRequest ******************/
 		%feature("compactdefaultargs") VersionedActionRequest;

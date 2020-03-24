@@ -75,10 +75,79 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(TColGeom_Array2OfBezierSurface) NCollection_Array2<opencascade::handle<Geom_BezierSurface>>;
+%template(TColGeom_Array1OfBSplineCurve) NCollection_Array1<opencascade::handle<Geom_BSplineCurve>>;
+
+%extend NCollection_Array1<opencascade::handle<Geom_BSplineCurve>> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
 %template(TColGeom_Array1OfBezierCurve) NCollection_Array1<opencascade::handle<Geom_BezierCurve>>;
 
 %extend NCollection_Array1<opencascade::handle<Geom_BezierCurve>> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(TColGeom_Array1OfCurve) NCollection_Array1<opencascade::handle<Geom_Curve>>;
+
+%extend NCollection_Array1<opencascade::handle<Geom_Curve>> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -146,92 +215,23 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
+%template(TColGeom_Array2OfBezierSurface) NCollection_Array2<opencascade::handle<Geom_BezierSurface>>;
 %template(TColGeom_Array2OfSurface) NCollection_Array2<opencascade::handle<Geom_Surface>>;
 %template(TColGeom_SequenceOfBoundedCurve) NCollection_Sequence<opencascade::handle<Geom_BoundedCurve>>;
-%template(TColGeom_SequenceOfSurface) NCollection_Sequence<opencascade::handle<Geom_Surface>>;
-%template(TColGeom_Array1OfCurve) NCollection_Array1<opencascade::handle<Geom_Curve>>;
-
-%extend NCollection_Array1<opencascade::handle<Geom_Curve>> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
 %template(TColGeom_SequenceOfCurve) NCollection_Sequence<opencascade::handle<Geom_Curve>>;
-%template(TColGeom_Array1OfBSplineCurve) NCollection_Array1<opencascade::handle<Geom_BSplineCurve>>;
-
-%extend NCollection_Array1<opencascade::handle<Geom_BSplineCurve>> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
+%template(TColGeom_SequenceOfSurface) NCollection_Sequence<opencascade::handle<Geom_Surface>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Array2<opencascade::handle<Geom_BezierSurface>> TColGeom_Array2OfBezierSurface;
+typedef NCollection_Array1<opencascade::handle<Geom_BSplineCurve>> TColGeom_Array1OfBSplineCurve;
 typedef NCollection_Array1<opencascade::handle<Geom_BezierCurve>> TColGeom_Array1OfBezierCurve;
+typedef NCollection_Array1<opencascade::handle<Geom_Curve>> TColGeom_Array1OfCurve;
 typedef NCollection_Array1<opencascade::handle<Geom_Surface>> TColGeom_Array1OfSurface;
+typedef NCollection_Array2<opencascade::handle<Geom_BezierSurface>> TColGeom_Array2OfBezierSurface;
 typedef NCollection_Array2<opencascade::handle<Geom_Surface>> TColGeom_Array2OfSurface;
 typedef NCollection_Sequence<opencascade::handle<Geom_BoundedCurve>> TColGeom_SequenceOfBoundedCurve;
-typedef NCollection_Sequence<opencascade::handle<Geom_Surface>> TColGeom_SequenceOfSurface;
-typedef NCollection_Array1<opencascade::handle<Geom_Curve>> TColGeom_Array1OfCurve;
 typedef NCollection_Sequence<opencascade::handle<Geom_Curve>> TColGeom_SequenceOfCurve;
-typedef NCollection_Array1<opencascade::handle<Geom_BSplineCurve>> TColGeom_Array1OfBSplineCurve;
+typedef NCollection_Sequence<opencascade::handle<Geom_Surface>> TColGeom_SequenceOfSurface;
 /* end typedefs declaration */
 
 /* harray1 classes */

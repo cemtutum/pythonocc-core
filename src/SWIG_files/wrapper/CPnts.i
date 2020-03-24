@@ -87,23 +87,6 @@ typedef Standard_Real ( * CPnts_RealFunction ) ( const Standard_Real, const Stan
 ****************************/
 class CPnts_AbscissaPoint {
 	public:
-		/****************** AdvPerform ******************/
-		%feature("compactdefaultargs") AdvPerform;
-		%feature("autodoc", "Computes the point at the distance <abscissa> of the curve; performs more appropriate tolerance managment; to use this method in right way it is necessary to call empty consructor. then call method init with tolerance = resolution, then call advpermorm. u0 is the parameter of the point from which the distance is measured and ui is the starting value for the iterative process (should be close to the final solution).
-
-Parameters
-----------
-Abscissa: float
-U0: float
-Ui: float
-Resolution: float
-
-Returns
--------
-None
-") AdvPerform;
-		void AdvPerform(const Standard_Real Abscissa, const Standard_Real U0, const Standard_Real Ui, const Standard_Real Resolution);
-
 		/****************** CPnts_AbscissaPoint ******************/
 		%feature("compactdefaultargs") CPnts_AbscissaPoint;
 		%feature("autodoc", "No available documentation.
@@ -183,6 +166,23 @@ Returns
 None
 ") CPnts_AbscissaPoint;
 		 CPnts_AbscissaPoint(const Adaptor2d_Curve2d & C, const Standard_Real Abscissa, const Standard_Real U0, const Standard_Real Ui, const Standard_Real Resolution);
+
+		/****************** AdvPerform ******************/
+		%feature("compactdefaultargs") AdvPerform;
+		%feature("autodoc", "Computes the point at the distance <abscissa> of the curve; performs more appropriate tolerance managment; to use this method in right way it is necessary to call empty consructor. then call method init with tolerance = resolution, then call advpermorm. u0 is the parameter of the point from which the distance is measured and ui is the starting value for the iterative process (should be close to the final solution).
+
+Parameters
+----------
+Abscissa: float
+U0: float
+Ui: float
+Resolution: float
+
+Returns
+-------
+None
+") AdvPerform;
+		void AdvPerform(const Standard_Real Abscissa, const Standard_Real U0, const Standard_Real Ui, const Standard_Real Resolution);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;

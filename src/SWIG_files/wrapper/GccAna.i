@@ -41,8 +41,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_gccana.html"
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
-#include<gp_module.hxx>
 #include<GccEnt_module.hxx>
+#include<gp_module.hxx>
 #include<GccInt_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
@@ -51,8 +51,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_gccana.html"
 %};
 %import Standard.i
 %import NCollection.i
-%import gp.i
 %import GccEnt.i
+%import gp.i
 %import GccInt.i
 
 %pythoncode {
@@ -81,22 +81,6 @@ from OCC.Core.Exception import *
 ****************************/
 class GccAna_Circ2d2TanOn {
 	public:
-		/****************** CenterOn3 ******************/
-		%feature("compactdefaultargs") CenterOn3;
-		%feature("autodoc", "Returns the informations about the center (on the curv) of the result number index and the third argument. pararg is the intrinsic parameter of the point pntarg on the third argument. exceptions standard_outofrange if index is less than zero or greater than the number of solutions computed by this algorithm. stdfail_notdone if the construction fails.
-
-Parameters
-----------
-Index: int
-ParArg: float
-PntArg: gp_Pnt2d
-
-Returns
--------
-None
-") CenterOn3;
-		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntArg);
-
 		/****************** GccAna_Circ2d2TanOn ******************/
 		%feature("compactdefaultargs") GccAna_Circ2d2TanOn;
 		%feature("autodoc", "This method implements the algorithms used to create 2d circles tangent to two 2d circles and having the center on a 2d line.
@@ -300,6 +284,22 @@ Returns
 None
 ") GccAna_Circ2d2TanOn;
 		 GccAna_Circ2d2TanOn(const gp_Pnt2d & Point1, const gp_Pnt2d & Point2, const gp_Circ2d & OnCirc, const Standard_Real Tolerance);
+
+		/****************** CenterOn3 ******************/
+		%feature("compactdefaultargs") CenterOn3;
+		%feature("autodoc", "Returns the informations about the center (on the curv) of the result number index and the third argument. pararg is the intrinsic parameter of the point pntarg on the third argument. exceptions standard_outofrange if index is less than zero or greater than the number of solutions computed by this algorithm. stdfail_notdone if the construction fails.
+
+Parameters
+----------
+Index: int
+ParArg: float
+PntArg: gp_Pnt2d
+
+Returns
+-------
+None
+") CenterOn3;
+		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntArg);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -1186,22 +1186,6 @@ None
 ******************************/
 class GccAna_Circ2dTanOnRad {
 	public:
-		/****************** CenterOn3 ******************/
-		%feature("compactdefaultargs") CenterOn3;
-		%feature("autodoc", "Returns informations about the center (on the curv) of the result. pararg is the intrinsic parameter of the point on the argument curv. pntsol is the center point of the solution curv. raises notdone if the construction algorithm didn't succeed. it raises outofrange if index is greater than the number of solutions.
-
-Parameters
-----------
-Index: int
-ParArg: float
-PntSol: gp_Pnt2d
-
-Returns
--------
-None
-") CenterOn3;
-		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol);
-
 		/****************** GccAna_Circ2dTanOnRad ******************/
 		%feature("compactdefaultargs") GccAna_Circ2dTanOnRad;
 		%feature("autodoc", "This methods implements the algorithms used to create 2d circles tangent to a circle and centered on a 2d line with a given radius. tolerance is used to find solution in every limit cases. for example tolerance is used in the case of enclosedcirc when radius-r1+dist is greater tolerance (dist is the distance between the line and the location of the circ, r1 is the radius of the circ) because there is no solution. raises negativevalue in case of negativeradius.
@@ -1303,6 +1287,22 @@ Returns
 None
 ") GccAna_Circ2dTanOnRad;
 		 GccAna_Circ2dTanOnRad(const gp_Pnt2d & Point1, const gp_Circ2d & OnCirc, const Standard_Real Radius, const Standard_Real Tolerance);
+
+		/****************** CenterOn3 ******************/
+		%feature("compactdefaultargs") CenterOn3;
+		%feature("autodoc", "Returns informations about the center (on the curv) of the result. pararg is the intrinsic parameter of the point on the argument curv. pntsol is the center point of the solution curv. raises notdone if the construction algorithm didn't succeed. it raises outofrange if index is greater than the number of solutions.
+
+Parameters
+----------
+Index: int
+ParArg: float
+PntSol: gp_Pnt2d
+
+Returns
+-------
+None
+") CenterOn3;
+		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;

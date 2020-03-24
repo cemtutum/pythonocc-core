@@ -77,16 +77,6 @@ from OCC.Core.Exception import *
 *********************************/
 class IntAna2d_AnaIntersection {
 	public:
-		/****************** IdenticalElements ******************/
-		%feature("compactdefaultargs") IdenticalElements;
-		%feature("autodoc", "For the intersection between an element of gp and a conic known by an implicit equation, the result will be true if the element of gp verifies the implicit equation. for the intersection between two lin2d or two circ2d, the result will be true if the elements are identical. the function returns false in all the other cases.
-
-Returns
--------
-bool
-") IdenticalElements;
-		Standard_Boolean IdenticalElements();
-
 		/****************** IntAna2d_AnaIntersection ******************/
 		%feature("compactdefaultargs") IntAna2d_AnaIntersection;
 		%feature("autodoc", "Empty constructor. isdone returns false.
@@ -216,6 +206,16 @@ Returns
 None
 ") IntAna2d_AnaIntersection;
 		 IntAna2d_AnaIntersection(const gp_Hypr2d & H, const IntAna2d_Conic & C);
+
+		/****************** IdenticalElements ******************/
+		%feature("compactdefaultargs") IdenticalElements;
+		%feature("autodoc", "For the intersection between an element of gp and a conic known by an implicit equation, the result will be true if the element of gp verifies the implicit equation. for the intersection between two lin2d or two circ2d, the result will be true if the elements are identical. the function returns false in all the other cases.
+
+Returns
+-------
+bool
+") IdenticalElements;
+		Standard_Boolean IdenticalElements();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -405,40 +405,6 @@ IntAna2d_IntPoint
 ***********************/
 class IntAna2d_Conic {
 	public:
-		/****************** Coefficients ******************/
-		%feature("compactdefaultargs") Coefficients;
-		%feature("autodoc", "Returns the coefficients of the polynomial equation wich defines the conic: a.x**2 + b.y**2 + 2.c.x*y + 2.d.x + 2.e.y + f = 0.
-
-Parameters
-----------
-A: float
-B: float
-C: float
-D: float
-E: float
-F: float
-
-Returns
--------
-None
-") Coefficients;
-		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
-		/****************** Grad ******************/
-		%feature("compactdefaultargs") Grad;
-		%feature("autodoc", "Returns the value of the gradient of f at the point x,y.
-
-Parameters
-----------
-X: float
-Y: float
-
-Returns
--------
-gp_XY
-") Grad;
-		gp_XY Grad(const Standard_Real X, const Standard_Real Y);
-
 		/****************** IntAna2d_Conic ******************/
 		%feature("compactdefaultargs") IntAna2d_Conic;
 		%feature("autodoc", "No available documentation.
@@ -508,6 +474,40 @@ Returns
 None
 ") IntAna2d_Conic;
 		 IntAna2d_Conic(const gp_Elips2d & C);
+
+		/****************** Coefficients ******************/
+		%feature("compactdefaultargs") Coefficients;
+		%feature("autodoc", "Returns the coefficients of the polynomial equation wich defines the conic: a.x**2 + b.y**2 + 2.c.x*y + 2.d.x + 2.e.y + f = 0.
+
+Parameters
+----------
+A: float
+B: float
+C: float
+D: float
+E: float
+F: float
+
+Returns
+-------
+None
+") Coefficients;
+		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+
+		/****************** Grad ******************/
+		%feature("compactdefaultargs") Grad;
+		%feature("autodoc", "Returns the value of the gradient of f at the point x,y.
+
+Parameters
+----------
+X: float
+Y: float
+
+Returns
+-------
+gp_XY
+") Grad;
+		gp_XY Grad(const Standard_Real X, const Standard_Real Y);
 
 		/****************** NewCoefficients ******************/
 		%feature("compactdefaultargs") NewCoefficients;

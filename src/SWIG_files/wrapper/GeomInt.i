@@ -103,13 +103,13 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(GeomInt_VectorOfReal) NCollection_Vector<Standard_Real>;
 %template(GeomInt_SequenceOfParameterAndOrientation) NCollection_Sequence<GeomInt_ParameterAndOrientation>;
+%template(GeomInt_VectorOfReal) NCollection_Vector<Standard_Real>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Vector<Standard_Real> GeomInt_VectorOfReal;
 typedef NCollection_Sequence<GeomInt_ParameterAndOrientation> GeomInt_SequenceOfParameterAndOrientation;
+typedef NCollection_Vector<Standard_Real> GeomInt_VectorOfReal;
 /* end typedefs declaration */
 
 /****************
@@ -201,6 +201,27 @@ bool
 *************************************************************************/
 class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public math_MultipleVarFunctionWithGradient {
 	public:
+		/****************** GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox;
+		%feature("autodoc", "Initializes the fields of the function. the approximating curve has <nbpol> control points.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+FirstPoint: int
+LastPoint: int
+TheConstraints: AppParCurves_HArray1OfConstraintCouple
+Parameters: math_Vector
+Knots: TColStd_Array1OfReal
+Mults: TColStd_Array1OfInteger
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox;
+		 GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, const math_Vector & Parameters, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer NbPol);
+
 		/****************** CurveValue ******************/
 		%feature("compactdefaultargs") CurveValue;
 		%feature("autodoc", "Returns the multibspcurve approximating the set after computing the value f or grad(f).
@@ -260,27 +281,6 @@ Returns
 math_Matrix
 ") FunctionMatrix;
 		const math_Matrix & FunctionMatrix();
-
-		/****************** GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox;
-		%feature("autodoc", "Initializes the fields of the function. the approximating curve has <nbpol> control points.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-FirstPoint: int
-LastPoint: int
-TheConstraints: AppParCurves_HArray1OfConstraintCouple
-Parameters: math_Vector
-Knots: TColStd_Array1OfReal
-Mults: TColStd_Array1OfInteger
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox;
-		 GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, const math_Vector & Parameters, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer NbPol);
 
 		/****************** Gradient ******************/
 		%feature("compactdefaultargs") Gradient;
@@ -435,6 +435,88 @@ bool
 ****************************************************************************/
 class GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
 	public:
+		/****************** GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
+		%feature("autodoc", "Given a multiline, this algorithm computes the least square resolution using the householder-qr method. if the first and/or the last point is a constraint point, the value of the tangency or curvature is computed in the resolution. nbpol is the number of control points wanted for the approximating curves. the system to solve is the following: a x = b. where a is the bernstein matrix computed with the parameters, b the points coordinates and x the poles solutions. the matrix a is the same for each coordinate x, y and z and is also the same for each multiline point because they are approximated in parallel(so with the same parameter, only the vector b changes).
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+FirstPoint: int
+LastPoint: int
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+Parameters: math_Vector
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
+		 GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector & Parameters, const Standard_Integer NbPol);
+
+		/****************** GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
+		%feature("autodoc", "Initializes the fields of the object.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+FirstPoint: int
+LastPoint: int
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
+		 GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
+
+		/****************** GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
+		%feature("autodoc", "Given a multiline, this algorithm computes the least square resolution using the householder-qr method. if the first and/or the last point is a constraint point, the value of the tangency or curvature is computed in the resolution. deg is the degree wanted for the approximating curves. the system to solve is the following: a x = b. where a is the bspline functions matrix computed with <parameters>, b the points coordinates and x the poles solutions. the matrix a is the same for each coordinate x, y and z and is also the same for each multiline point because they are approximated in parallel(so with the same parameter, only the vector b changes).
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+Knots: TColStd_Array1OfReal
+Mults: TColStd_Array1OfInteger
+FirstPoint: int
+LastPoint: int
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+Parameters: math_Vector
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
+		 GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector & Parameters, const Standard_Integer NbPol);
+
+		/****************** GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
+		%feature("autodoc", "Initializes the fields of the object.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+Knots: TColStd_Array1OfReal
+Mults: TColStd_Array1OfInteger
+FirstPoint: int
+LastPoint: int
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
+		 GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
+
 		/****************** BSplineValue ******************/
 		%feature("compactdefaultargs") BSplineValue;
 		%feature("autodoc", "Returns the result of the approximation, i.e. all the curves. an exception is raised if notdone.
@@ -527,88 +609,6 @@ Returns
 math_Matrix
 ") FunctionMatrix;
 		const math_Matrix & FunctionMatrix();
-
-		/****************** GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
-		%feature("autodoc", "Given a multiline, this algorithm computes the least square resolution using the householder-qr method. if the first and/or the last point is a constraint point, the value of the tangency or curvature is computed in the resolution. nbpol is the number of control points wanted for the approximating curves. the system to solve is the following: a x = b. where a is the bernstein matrix computed with the parameters, b the points coordinates and x the poles solutions. the matrix a is the same for each coordinate x, y and z and is also the same for each multiline point because they are approximated in parallel(so with the same parameter, only the vector b changes).
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-FirstPoint: int
-LastPoint: int
-FirstCons: AppParCurves_Constraint
-LastCons: AppParCurves_Constraint
-Parameters: math_Vector
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
-		 GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector & Parameters, const Standard_Integer NbPol);
-
-		/****************** GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
-		%feature("autodoc", "Initializes the fields of the object.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-FirstPoint: int
-LastPoint: int
-FirstCons: AppParCurves_Constraint
-LastCons: AppParCurves_Constraint
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
-		 GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
-
-		/****************** GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
-		%feature("autodoc", "Given a multiline, this algorithm computes the least square resolution using the householder-qr method. if the first and/or the last point is a constraint point, the value of the tangency or curvature is computed in the resolution. deg is the degree wanted for the approximating curves. the system to solve is the following: a x = b. where a is the bspline functions matrix computed with <parameters>, b the points coordinates and x the poles solutions. the matrix a is the same for each coordinate x, y and z and is also the same for each multiline point because they are approximated in parallel(so with the same parameter, only the vector b changes).
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-Knots: TColStd_Array1OfReal
-Mults: TColStd_Array1OfInteger
-FirstPoint: int
-LastPoint: int
-FirstCons: AppParCurves_Constraint
-LastCons: AppParCurves_Constraint
-Parameters: math_Vector
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
-		 GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector & Parameters, const Standard_Integer NbPol);
-
-		/****************** GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
-		%feature("autodoc", "Initializes the fields of the object.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-Knots: TColStd_Array1OfReal
-Mults: TColStd_Array1OfInteger
-FirstPoint: int
-LastPoint: int
-FirstCons: AppParCurves_Constraint
-LastCons: AppParCurves_Constraint
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
-		 GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -838,6 +838,38 @@ bool
 **********************/
 class GeomInt_IntSS {
 	public:
+		/****************** GeomInt_IntSS ******************/
+		%feature("compactdefaultargs") GeomInt_IntSS;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomInt_IntSS;
+		 GeomInt_IntSS();
+
+		/****************** GeomInt_IntSS ******************/
+		%feature("compactdefaultargs") GeomInt_IntSS;
+		%feature("autodoc", "Performs general intersection of two surfaces just now.
+
+Parameters
+----------
+S1: Geom_Surface
+S2: Geom_Surface
+Tol: float
+Approx: bool,optional
+	default value is Standard_True
+ApproxS1: bool,optional
+	default value is Standard_False
+ApproxS2: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") GeomInt_IntSS;
+		 GeomInt_IntSS(const opencascade::handle<Geom_Surface> & S1, const opencascade::handle<Geom_Surface> & S2, const Standard_Real Tol, const Standard_Boolean Approx = Standard_True, const Standard_Boolean ApproxS1 = Standard_False, const Standard_Boolean ApproxS2 = Standard_False);
+
 		/****************** Boundary ******************/
 		%feature("compactdefaultargs") Boundary;
 		%feature("autodoc", "No available documentation.
@@ -870,38 +902,6 @@ Returns
 None
 ") BuildPCurves;
 		static void BuildPCurves(const Standard_Real f, const Standard_Real l, Standard_Real &OutValue, const opencascade::handle<Geom_Surface> & S, const opencascade::handle<Geom_Curve> & C, opencascade::handle<Geom2d_Curve> & C2d);
-
-		/****************** GeomInt_IntSS ******************/
-		%feature("compactdefaultargs") GeomInt_IntSS;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomInt_IntSS;
-		 GeomInt_IntSS();
-
-		/****************** GeomInt_IntSS ******************/
-		%feature("compactdefaultargs") GeomInt_IntSS;
-		%feature("autodoc", "Performs general intersection of two surfaces just now.
-
-Parameters
-----------
-S1: Geom_Surface
-S2: Geom_Surface
-Tol: float
-Approx: bool,optional
-	default value is Standard_True
-ApproxS1: bool,optional
-	default value is Standard_False
-ApproxS2: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") GeomInt_IntSS;
-		 GeomInt_IntSS(const opencascade::handle<Geom_Surface> & S1, const opencascade::handle<Geom_Surface> & S2, const Standard_Real Tol, const Standard_Boolean Approx = Standard_True, const Standard_Boolean ApproxS1 = Standard_False, const Standard_Boolean ApproxS2 = Standard_False);
 
 		/****************** HasLineOnS1 ******************/
 		%feature("compactdefaultargs") HasLineOnS1;
@@ -1432,30 +1432,6 @@ IntPatch_Point
 *********************************************************/
 class GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
 	public:
-		/****************** AverageError ******************/
-		%feature("compactdefaultargs") AverageError;
-		%feature("autodoc", "Returns the average error between the old and the new approximation.
-
-Returns
--------
-float
-") AverageError;
-		Standard_Real AverageError();
-
-		/****************** Error ******************/
-		%feature("compactdefaultargs") Error;
-		%feature("autodoc", "Returns the difference between the old and the new approximation. an exception is raised if notdone. an exception is raised if index<1 or index>nbparameters.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-float
-") Error;
-		Standard_Real Error(const Standard_Integer Index);
-
 		/****************** GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox ******************/
 		%feature("compactdefaultargs") GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox;
 		%feature("autodoc", "Tries to minimize the sum (square(||qui - bi*pi||)) where pui describe the approximating bspline curves'poles and qi the multiline points with a parameter ui. in this algorithm, the parameters ui are the unknowns. the tolerance required on this sum is given by tol. the desired degree of the resulting curve is deg.
@@ -1506,6 +1482,30 @@ Returns
 None
 ") GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox;
 		 GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, math_Vector & Parameters, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations, const Standard_Real lambda1, const Standard_Real lambda2);
+
+		/****************** AverageError ******************/
+		%feature("compactdefaultargs") AverageError;
+		%feature("autodoc", "Returns the average error between the old and the new approximation.
+
+Returns
+-------
+float
+") AverageError;
+		Standard_Real AverageError();
+
+		/****************** Error ******************/
+		%feature("compactdefaultargs") Error;
+		%feature("autodoc", "Returns the difference between the old and the new approximation. an exception is raised if notdone. an exception is raised if index<1 or index>nbparameters.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
+") Error;
+		Standard_Real Error(const Standard_Integer Index);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -1561,6 +1561,29 @@ AppParCurves_MultiBSpCurve
 ***********************************************************/
 class GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
 	public:
+		/****************** GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox;
+		%feature("autodoc", "Tries to minimize the sum (square(||qui - bi*pi||)) where pui describe the approximating bezier curves'poles and qi the multiline points with a parameter ui. in this algorithm, the parameters ui are the unknowns. the tolerance required on this sum is given by tol. the desired degree of the resulting curve is deg.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+FirstPoint: int
+LastPoint: int
+TheConstraints: AppParCurves_HArray1OfConstraintCouple
+Parameters: math_Vector
+Deg: int
+Tol3d: float
+Tol2d: float
+NbIterations: int,optional
+	default value is 200
+
+Returns
+-------
+None
+") GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox;
+		 GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations = 200);
+
 		/****************** AverageError ******************/
 		%feature("compactdefaultargs") AverageError;
 		%feature("autodoc", "Returns the average error between the old and the new approximation.
@@ -1584,29 +1607,6 @@ Returns
 float
 ") Error;
 		Standard_Real Error(const Standard_Integer Index);
-
-		/****************** GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox;
-		%feature("autodoc", "Tries to minimize the sum (square(||qui - bi*pi||)) where pui describe the approximating bezier curves'poles and qi the multiline points with a parameter ui. in this algorithm, the parameters ui are the unknowns. the tolerance required on this sum is given by tol. the desired degree of the resulting curve is deg.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-FirstPoint: int
-LastPoint: int
-TheConstraints: AppParCurves_HArray1OfConstraintCouple
-Parameters: math_Vector
-Deg: int
-Tol3d: float
-Tol2d: float
-NbIterations: int,optional
-	default value is 200
-
-Returns
--------
-None
-") GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox;
-		 GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations = 200);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -1662,6 +1662,29 @@ AppParCurves_MultiCurve
 ********************************************************/
 class GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
 	public:
+		/****************** GeomInt_MyGradientbisOfTheComputeLineOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_MyGradientbisOfTheComputeLineOfWLApprox;
+		%feature("autodoc", "Tries to minimize the sum (square(||qui - bi*pi||)) where pui describe the approximating bezier curves'poles and qi the multiline points with a parameter ui. in this algorithm, the parameters ui are the unknowns. the tolerance required on this sum is given by tol. the desired degree of the resulting curve is deg.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+FirstPoint: int
+LastPoint: int
+TheConstraints: AppParCurves_HArray1OfConstraintCouple
+Parameters: math_Vector
+Deg: int
+Tol3d: float
+Tol2d: float
+NbIterations: int,optional
+	default value is 200
+
+Returns
+-------
+None
+") GeomInt_MyGradientbisOfTheComputeLineOfWLApprox;
+		 GeomInt_MyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations = 200);
+
 		/****************** AverageError ******************/
 		%feature("compactdefaultargs") AverageError;
 		%feature("autodoc", "Returns the average error between the old and the new approximation.
@@ -1685,29 +1708,6 @@ Returns
 float
 ") Error;
 		Standard_Real Error(const Standard_Integer Index);
-
-		/****************** GeomInt_MyGradientbisOfTheComputeLineOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_MyGradientbisOfTheComputeLineOfWLApprox;
-		%feature("autodoc", "Tries to minimize the sum (square(||qui - bi*pi||)) where pui describe the approximating bezier curves'poles and qi the multiline points with a parameter ui. in this algorithm, the parameters ui are the unknowns. the tolerance required on this sum is given by tol. the desired degree of the resulting curve is deg.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-FirstPoint: int
-LastPoint: int
-TheConstraints: AppParCurves_HArray1OfConstraintCouple
-Parameters: math_Vector
-Deg: int
-Tol3d: float
-Tol2d: float
-NbIterations: int,optional
-	default value is 200
-
-Returns
--------
-None
-") GeomInt_MyGradientbisOfTheComputeLineOfWLApprox;
-		 GeomInt_MyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations = 200);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -1763,6 +1763,25 @@ AppParCurves_MultiCurve
 ************************************************************************/
 class GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox : public math_MultipleVarFunctionWithGradient {
 	public:
+		/****************** GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox;
+		%feature("autodoc", "Initializes the fields of the function. the approximating curve has the desired degree deg.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+FirstPoint: int
+LastPoint: int
+TheConstraints: AppParCurves_HArray1OfConstraintCouple
+Parameters: math_Vector
+Deg: int
+
+Returns
+-------
+None
+") GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox;
+		 GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, const math_Vector & Parameters, const Standard_Integer Deg);
+
 		/****************** CurveValue ******************/
 		%feature("compactdefaultargs") CurveValue;
 		%feature("autodoc", "Returns the multicurve approximating the set after computing the value f or grad(f).
@@ -1802,25 +1821,6 @@ Returns
 AppParCurves_Constraint
 ") FirstConstraint;
 		AppParCurves_Constraint FirstConstraint(const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, const Standard_Integer FirstPoint);
-
-		/****************** GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox;
-		%feature("autodoc", "Initializes the fields of the function. the approximating curve has the desired degree deg.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-FirstPoint: int
-LastPoint: int
-TheConstraints: AppParCurves_HArray1OfConstraintCouple
-Parameters: math_Vector
-Deg: int
-
-Returns
--------
-None
-") GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox;
-		 GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, const math_Vector & Parameters, const Standard_Integer Deg);
 
 		/****************** Gradient ******************/
 		%feature("compactdefaultargs") Gradient;
@@ -1937,6 +1937,25 @@ bool
 *********************************************************************/
 class GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox : public math_MultipleVarFunctionWithGradient {
 	public:
+		/****************** GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox;
+		%feature("autodoc", "Initializes the fields of the function. the approximating curve has the desired degree deg.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+FirstPoint: int
+LastPoint: int
+TheConstraints: AppParCurves_HArray1OfConstraintCouple
+Parameters: math_Vector
+Deg: int
+
+Returns
+-------
+None
+") GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox;
+		 GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, const math_Vector & Parameters, const Standard_Integer Deg);
+
 		/****************** CurveValue ******************/
 		%feature("compactdefaultargs") CurveValue;
 		%feature("autodoc", "Returns the multicurve approximating the set after computing the value f or grad(f).
@@ -1976,25 +1995,6 @@ Returns
 AppParCurves_Constraint
 ") FirstConstraint;
 		AppParCurves_Constraint FirstConstraint(const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, const Standard_Integer FirstPoint);
-
-		/****************** GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox;
-		%feature("autodoc", "Initializes the fields of the function. the approximating curve has the desired degree deg.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-FirstPoint: int
-LastPoint: int
-TheConstraints: AppParCurves_HArray1OfConstraintCouple
-Parameters: math_Vector
-Deg: int
-
-Returns
--------
-None
-") GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox;
-		 GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & TheConstraints, const math_Vector & Parameters, const Standard_Integer Deg);
 
 		/****************** Gradient ******************/
 		%feature("compactdefaultargs") Gradient;
@@ -2111,6 +2111,88 @@ bool
 ***************************************************************************/
 class GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
 	public:
+		/****************** GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
+		%feature("autodoc", "Given a multiline, this algorithm computes the least square resolution using the householder-qr method. if the first and/or the last point is a constraint point, the value of the tangency or curvature is computed in the resolution. nbpol is the number of control points wanted for the approximating curves. the system to solve is the following: a x = b. where a is the bernstein matrix computed with the parameters, b the points coordinates and x the poles solutions. the matrix a is the same for each coordinate x, y and z and is also the same for each multiline point because they are approximated in parallel(so with the same parameter, only the vector b changes).
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+FirstPoint: int
+LastPoint: int
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+Parameters: math_Vector
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
+		 GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector & Parameters, const Standard_Integer NbPol);
+
+		/****************** GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
+		%feature("autodoc", "Initializes the fields of the object.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+FirstPoint: int
+LastPoint: int
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
+		 GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
+
+		/****************** GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
+		%feature("autodoc", "Given a multiline, this algorithm computes the least square resolution using the householder-qr method. if the first and/or the last point is a constraint point, the value of the tangency or curvature is computed in the resolution. deg is the degree wanted for the approximating curves. the system to solve is the following: a x = b. where a is the bspline functions matrix computed with <parameters>, b the points coordinates and x the poles solutions. the matrix a is the same for each coordinate x, y and z and is also the same for each multiline point because they are approximated in parallel(so with the same parameter, only the vector b changes).
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+Knots: TColStd_Array1OfReal
+Mults: TColStd_Array1OfInteger
+FirstPoint: int
+LastPoint: int
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+Parameters: math_Vector
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
+		 GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector & Parameters, const Standard_Integer NbPol);
+
+		/****************** GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
+		%feature("autodoc", "Initializes the fields of the object.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+Knots: TColStd_Array1OfReal
+Mults: TColStd_Array1OfInteger
+FirstPoint: int
+LastPoint: int
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
+		 GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
+
 		/****************** BSplineValue ******************/
 		%feature("compactdefaultargs") BSplineValue;
 		%feature("autodoc", "Returns the result of the approximation, i.e. all the curves. an exception is raised if notdone.
@@ -2203,88 +2285,6 @@ Returns
 math_Matrix
 ") FunctionMatrix;
 		const math_Matrix & FunctionMatrix();
-
-		/****************** GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
-		%feature("autodoc", "Given a multiline, this algorithm computes the least square resolution using the householder-qr method. if the first and/or the last point is a constraint point, the value of the tangency or curvature is computed in the resolution. nbpol is the number of control points wanted for the approximating curves. the system to solve is the following: a x = b. where a is the bernstein matrix computed with the parameters, b the points coordinates and x the poles solutions. the matrix a is the same for each coordinate x, y and z and is also the same for each multiline point because they are approximated in parallel(so with the same parameter, only the vector b changes).
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-FirstPoint: int
-LastPoint: int
-FirstCons: AppParCurves_Constraint
-LastCons: AppParCurves_Constraint
-Parameters: math_Vector
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
-		 GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector & Parameters, const Standard_Integer NbPol);
-
-		/****************** GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
-		%feature("autodoc", "Initializes the fields of the object.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-FirstPoint: int
-LastPoint: int
-FirstCons: AppParCurves_Constraint
-LastCons: AppParCurves_Constraint
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
-		 GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
-
-		/****************** GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
-		%feature("autodoc", "Given a multiline, this algorithm computes the least square resolution using the householder-qr method. if the first and/or the last point is a constraint point, the value of the tangency or curvature is computed in the resolution. deg is the degree wanted for the approximating curves. the system to solve is the following: a x = b. where a is the bspline functions matrix computed with <parameters>, b the points coordinates and x the poles solutions. the matrix a is the same for each coordinate x, y and z and is also the same for each multiline point because they are approximated in parallel(so with the same parameter, only the vector b changes).
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-Knots: TColStd_Array1OfReal
-Mults: TColStd_Array1OfInteger
-FirstPoint: int
-LastPoint: int
-FirstCons: AppParCurves_Constraint
-LastCons: AppParCurves_Constraint
-Parameters: math_Vector
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
-		 GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector & Parameters, const Standard_Integer NbPol);
-
-		/****************** GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
-		%feature("autodoc", "Initializes the fields of the object.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-Knots: TColStd_Array1OfReal
-Mults: TColStd_Array1OfInteger
-FirstPoint: int
-LastPoint: int
-FirstCons: AppParCurves_Constraint
-LastCons: AppParCurves_Constraint
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
-		 GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -2418,6 +2418,88 @@ math_Matrix
 ************************************************************************/
 class GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
 	public:
+		/****************** GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
+		%feature("autodoc", "Given a multiline, this algorithm computes the least square resolution using the householder-qr method. if the first and/or the last point is a constraint point, the value of the tangency or curvature is computed in the resolution. nbpol is the number of control points wanted for the approximating curves. the system to solve is the following: a x = b. where a is the bernstein matrix computed with the parameters, b the points coordinates and x the poles solutions. the matrix a is the same for each coordinate x, y and z and is also the same for each multiline point because they are approximated in parallel(so with the same parameter, only the vector b changes).
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+FirstPoint: int
+LastPoint: int
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+Parameters: math_Vector
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
+		 GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector & Parameters, const Standard_Integer NbPol);
+
+		/****************** GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
+		%feature("autodoc", "Initializes the fields of the object.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+FirstPoint: int
+LastPoint: int
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
+		 GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
+
+		/****************** GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
+		%feature("autodoc", "Given a multiline, this algorithm computes the least square resolution using the householder-qr method. if the first and/or the last point is a constraint point, the value of the tangency or curvature is computed in the resolution. deg is the degree wanted for the approximating curves. the system to solve is the following: a x = b. where a is the bspline functions matrix computed with <parameters>, b the points coordinates and x the poles solutions. the matrix a is the same for each coordinate x, y and z and is also the same for each multiline point because they are approximated in parallel(so with the same parameter, only the vector b changes).
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+Knots: TColStd_Array1OfReal
+Mults: TColStd_Array1OfInteger
+FirstPoint: int
+LastPoint: int
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+Parameters: math_Vector
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
+		 GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector & Parameters, const Standard_Integer NbPol);
+
+		/****************** GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
+		%feature("autodoc", "Initializes the fields of the object.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+Knots: TColStd_Array1OfReal
+Mults: TColStd_Array1OfInteger
+FirstPoint: int
+LastPoint: int
+FirstCons: AppParCurves_Constraint
+LastCons: AppParCurves_Constraint
+NbPol: int
+
+Returns
+-------
+None
+") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
+		 GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
+
 		/****************** BSplineValue ******************/
 		%feature("compactdefaultargs") BSplineValue;
 		%feature("autodoc", "Returns the result of the approximation, i.e. all the curves. an exception is raised if notdone.
@@ -2510,88 +2592,6 @@ Returns
 math_Matrix
 ") FunctionMatrix;
 		const math_Matrix & FunctionMatrix();
-
-		/****************** GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
-		%feature("autodoc", "Given a multiline, this algorithm computes the least square resolution using the householder-qr method. if the first and/or the last point is a constraint point, the value of the tangency or curvature is computed in the resolution. nbpol is the number of control points wanted for the approximating curves. the system to solve is the following: a x = b. where a is the bernstein matrix computed with the parameters, b the points coordinates and x the poles solutions. the matrix a is the same for each coordinate x, y and z and is also the same for each multiline point because they are approximated in parallel(so with the same parameter, only the vector b changes).
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-FirstPoint: int
-LastPoint: int
-FirstCons: AppParCurves_Constraint
-LastCons: AppParCurves_Constraint
-Parameters: math_Vector
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
-		 GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector & Parameters, const Standard_Integer NbPol);
-
-		/****************** GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
-		%feature("autodoc", "Initializes the fields of the object.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-FirstPoint: int
-LastPoint: int
-FirstCons: AppParCurves_Constraint
-LastCons: AppParCurves_Constraint
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
-		 GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
-
-		/****************** GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
-		%feature("autodoc", "Given a multiline, this algorithm computes the least square resolution using the householder-qr method. if the first and/or the last point is a constraint point, the value of the tangency or curvature is computed in the resolution. deg is the degree wanted for the approximating curves. the system to solve is the following: a x = b. where a is the bspline functions matrix computed with <parameters>, b the points coordinates and x the poles solutions. the matrix a is the same for each coordinate x, y and z and is also the same for each multiline point because they are approximated in parallel(so with the same parameter, only the vector b changes).
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-Knots: TColStd_Array1OfReal
-Mults: TColStd_Array1OfInteger
-FirstPoint: int
-LastPoint: int
-FirstCons: AppParCurves_Constraint
-LastCons: AppParCurves_Constraint
-Parameters: math_Vector
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
-		 GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const math_Vector & Parameters, const Standard_Integer NbPol);
-
-		/****************** GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
-		%feature("autodoc", "Initializes the fields of the object.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-Knots: TColStd_Array1OfReal
-Mults: TColStd_Array1OfInteger
-FirstPoint: int
-LastPoint: int
-FirstCons: AppParCurves_Constraint
-LastCons: AppParCurves_Constraint
-NbPol: int
-
-Returns
--------
-None
-") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
-		 GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Mults, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer NbPol);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -2823,6 +2823,28 @@ None
 **************************************************************************/
 class GeomInt_ResConstraintOfMyGradientOfTheComputeLineBezierOfWLApprox {
 	public:
+		/****************** GeomInt_ResConstraintOfMyGradientOfTheComputeLineBezierOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ResConstraintOfMyGradientOfTheComputeLineBezierOfWLApprox;
+		%feature("autodoc", "Given a multiline ssp with constraints points, this algorithm finds the best curve solution to approximate it. the poles from scurv issued for example from the least squares are used as a guess solution for the uzawa algorithm. the tolerance used in the uzawa algorithms is tolerance. a is the bernstein matrix associated to the multiline and da is the derivative bernstein matrix.(they can come from an approximation with parleastsquare.) the multicurve is modified. new multipoles are given.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+SCurv: AppParCurves_MultiCurve
+FirstPoint: int
+LastPoint: int
+Constraints: AppParCurves_HArray1OfConstraintCouple
+Bern: math_Matrix
+DerivativeBern: math_Matrix
+Tolerance: float,optional
+	default value is 1.0e-10
+
+Returns
+-------
+None
+") GeomInt_ResConstraintOfMyGradientOfTheComputeLineBezierOfWLApprox;
+		 GeomInt_ResConstraintOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & Constraints, const math_Matrix & Bern, const math_Matrix & DerivativeBern, const Standard_Real Tolerance = 1.0e-10);
+
 		/****************** ConstraintDerivative ******************/
 		%feature("compactdefaultargs") ConstraintDerivative;
 		%feature("autodoc", "Returns the derivative of the constraint matrix.
@@ -2859,28 +2881,6 @@ Returns
 math_Vector
 ") Duale;
 		const math_Vector & Duale();
-
-		/****************** GeomInt_ResConstraintOfMyGradientOfTheComputeLineBezierOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ResConstraintOfMyGradientOfTheComputeLineBezierOfWLApprox;
-		%feature("autodoc", "Given a multiline ssp with constraints points, this algorithm finds the best curve solution to approximate it. the poles from scurv issued for example from the least squares are used as a guess solution for the uzawa algorithm. the tolerance used in the uzawa algorithms is tolerance. a is the bernstein matrix associated to the multiline and da is the derivative bernstein matrix.(they can come from an approximation with parleastsquare.) the multicurve is modified. new multipoles are given.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-SCurv: AppParCurves_MultiCurve
-FirstPoint: int
-LastPoint: int
-Constraints: AppParCurves_HArray1OfConstraintCouple
-Bern: math_Matrix
-DerivativeBern: math_Matrix
-Tolerance: float,optional
-	default value is 1.0e-10
-
-Returns
--------
-None
-") GeomInt_ResConstraintOfMyGradientOfTheComputeLineBezierOfWLApprox;
-		 GeomInt_ResConstraintOfMyGradientOfTheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & Constraints, const math_Matrix & Bern, const math_Matrix & DerivativeBern, const Standard_Real Tolerance = 1.0e-10);
 
 		/****************** InverseMatrix ******************/
 		%feature("compactdefaultargs") InverseMatrix;
@@ -2920,6 +2920,28 @@ bool
 ***********************************************************************/
 class GeomInt_ResConstraintOfMyGradientbisOfTheComputeLineOfWLApprox {
 	public:
+		/****************** GeomInt_ResConstraintOfMyGradientbisOfTheComputeLineOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ResConstraintOfMyGradientbisOfTheComputeLineOfWLApprox;
+		%feature("autodoc", "Given a multiline ssp with constraints points, this algorithm finds the best curve solution to approximate it. the poles from scurv issued for example from the least squares are used as a guess solution for the uzawa algorithm. the tolerance used in the uzawa algorithms is tolerance. a is the bernstein matrix associated to the multiline and da is the derivative bernstein matrix.(they can come from an approximation with parleastsquare.) the multicurve is modified. new multipoles are given.
+
+Parameters
+----------
+SSP: GeomInt_TheMultiLineOfWLApprox
+SCurv: AppParCurves_MultiCurve
+FirstPoint: int
+LastPoint: int
+Constraints: AppParCurves_HArray1OfConstraintCouple
+Bern: math_Matrix
+DerivativeBern: math_Matrix
+Tolerance: float,optional
+	default value is 1.0e-10
+
+Returns
+-------
+None
+") GeomInt_ResConstraintOfMyGradientbisOfTheComputeLineOfWLApprox;
+		 GeomInt_ResConstraintOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & Constraints, const math_Matrix & Bern, const math_Matrix & DerivativeBern, const Standard_Real Tolerance = 1.0e-10);
+
 		/****************** ConstraintDerivative ******************/
 		%feature("compactdefaultargs") ConstraintDerivative;
 		%feature("autodoc", "Returns the derivative of the constraint matrix.
@@ -2956,28 +2978,6 @@ Returns
 math_Vector
 ") Duale;
 		const math_Vector & Duale();
-
-		/****************** GeomInt_ResConstraintOfMyGradientbisOfTheComputeLineOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ResConstraintOfMyGradientbisOfTheComputeLineOfWLApprox;
-		%feature("autodoc", "Given a multiline ssp with constraints points, this algorithm finds the best curve solution to approximate it. the poles from scurv issued for example from the least squares are used as a guess solution for the uzawa algorithm. the tolerance used in the uzawa algorithms is tolerance. a is the bernstein matrix associated to the multiline and da is the derivative bernstein matrix.(they can come from an approximation with parleastsquare.) the multicurve is modified. new multipoles are given.
-
-Parameters
-----------
-SSP: GeomInt_TheMultiLineOfWLApprox
-SCurv: AppParCurves_MultiCurve
-FirstPoint: int
-LastPoint: int
-Constraints: AppParCurves_HArray1OfConstraintCouple
-Bern: math_Matrix
-DerivativeBern: math_Matrix
-Tolerance: float,optional
-	default value is 1.0e-10
-
-Returns
--------
-None
-") GeomInt_ResConstraintOfMyGradientbisOfTheComputeLineOfWLApprox;
-		 GeomInt_ResConstraintOfMyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox & SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const opencascade::handle<AppParCurves_HArray1OfConstraintCouple> & Constraints, const math_Matrix & Bern, const math_Matrix & DerivativeBern, const Standard_Real Tolerance = 1.0e-10);
 
 		/****************** InverseMatrix ******************/
 		%feature("compactdefaultargs") InverseMatrix;
@@ -3017,37 +3017,6 @@ bool
 ***********************************************/
 class GeomInt_TheComputeLineBezierOfWLApprox {
 	public:
-		/****************** ChangeValue ******************/
-		%feature("compactdefaultargs") ChangeValue;
-		%feature("autodoc", "Returns the result of the approximation.
-
-Parameters
-----------
-Index: int,optional
-	default value is 1
-
-Returns
--------
-AppParCurves_MultiCurve
-") ChangeValue;
-		AppParCurves_MultiCurve & ChangeValue(const Standard_Integer Index = 1);
-
-		/****************** Error ******************/
-		%feature("compactdefaultargs") Error;
-		%feature("autodoc", "Returns the tolerances 2d and 3d of the <index> multicurve.
-
-Parameters
-----------
-Index: int
-tol3d: float
-tol2d: float
-
-Returns
--------
-None
-") Error;
-		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue);
-
 		/****************** GeomInt_TheComputeLineBezierOfWLApprox ******************/
 		%feature("compactdefaultargs") GeomInt_TheComputeLineBezierOfWLApprox;
 		%feature("autodoc", "The multiline <line> will be approximated until tolerances will be reached. the approximation will be done from degreemin to degreemax with a cutting if the corresponding boolean is true. if <squares> is true, the computation will be done with no iteration at all.
@@ -3163,6 +3132,37 @@ Returns
 None
 ") GeomInt_TheComputeLineBezierOfWLApprox;
 		 GeomInt_TheComputeLineBezierOfWLApprox(const Standard_Integer degreemin = 4, const Standard_Integer degreemax = 8, const Standard_Real Tolerance3d = 1.0e-03, const Standard_Real Tolerance2d = 1.0e-06, const Standard_Integer NbIterations = 5, const Standard_Boolean cutting = Standard_True, const Approx_ParametrizationType parametrization = Approx_ChordLength, const Standard_Boolean Squares = Standard_False);
+
+		/****************** ChangeValue ******************/
+		%feature("compactdefaultargs") ChangeValue;
+		%feature("autodoc", "Returns the result of the approximation.
+
+Parameters
+----------
+Index: int,optional
+	default value is 1
+
+Returns
+-------
+AppParCurves_MultiCurve
+") ChangeValue;
+		AppParCurves_MultiCurve & ChangeValue(const Standard_Integer Index = 1);
+
+		/****************** Error ******************/
+		%feature("compactdefaultargs") Error;
+		%feature("autodoc", "Returns the tolerances 2d and 3d of the <index> multicurve.
+
+Parameters
+----------
+Index: int
+tol3d: float
+tol2d: float
+
+Returns
+-------
+None
+") Error;
+		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -3346,31 +3346,6 @@ AppParCurves_MultiCurve
 *****************************************/
 class GeomInt_TheComputeLineOfWLApprox {
 	public:
-		/****************** ChangeValue ******************/
-		%feature("compactdefaultargs") ChangeValue;
-		%feature("autodoc", "Returns the result of the approximation.
-
-Returns
--------
-AppParCurves_MultiBSpCurve
-") ChangeValue;
-		AppParCurves_MultiBSpCurve & ChangeValue();
-
-		/****************** Error ******************/
-		%feature("compactdefaultargs") Error;
-		%feature("autodoc", "Returns the tolerances 2d and 3d of the multibspcurve.
-
-Parameters
-----------
-tol3d: float
-tol2d: float
-
-Returns
--------
-None
-") Error;
-		void Error(Standard_Real &OutValue, Standard_Real &OutValue);
-
 		/****************** GeomInt_TheComputeLineOfWLApprox ******************/
 		%feature("compactdefaultargs") GeomInt_TheComputeLineOfWLApprox;
 		%feature("autodoc", "The multiline <line> will be approximated until tolerances will be reached. the approximation will be done from degreemin to degreemax with a cutting if the corresponding boolean is true. if <squares> is true, the computation will be done with no iteration at all. //! the multiplicities of the internal knots is set by default.
@@ -3486,6 +3461,31 @@ Returns
 None
 ") GeomInt_TheComputeLineOfWLApprox;
 		 GeomInt_TheComputeLineOfWLApprox(const Standard_Integer degreemin = 4, const Standard_Integer degreemax = 8, const Standard_Real Tolerance3d = 1.0e-03, const Standard_Real Tolerance2d = 1.0e-06, const Standard_Integer NbIterations = 5, const Standard_Boolean cutting = Standard_True, const Approx_ParametrizationType parametrization = Approx_ChordLength, const Standard_Boolean Squares = Standard_False);
+
+		/****************** ChangeValue ******************/
+		%feature("compactdefaultargs") ChangeValue;
+		%feature("autodoc", "Returns the result of the approximation.
+
+Returns
+-------
+AppParCurves_MultiBSpCurve
+") ChangeValue;
+		AppParCurves_MultiBSpCurve & ChangeValue();
+
+		/****************** Error ******************/
+		%feature("compactdefaultargs") Error;
+		%feature("autodoc", "Returns the tolerances 2d and 3d of the multibspcurve.
+
+Parameters
+----------
+tol3d: float
+tol2d: float
+
+Returns
+-------
+None
+") Error;
+		void Error(Standard_Real &OutValue, Standard_Real &OutValue);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -3714,6 +3714,21 @@ AppParCurves_MultiBSpCurve
 *********************************************************************/
 class GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox : public math_FunctionSetWithDerivatives {
 	public:
+		/****************** GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+
+Returns
+-------
+None
+") GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
+		 GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2);
+
 		/****************** AuxillarSurface1 ******************/
 		%feature("compactdefaultargs") AuxillarSurface1;
 		%feature("autodoc", "No available documentation.
@@ -3797,21 +3812,6 @@ Returns
 gp_Dir2d
 ") DirectionOnS2;
 		gp_Dir2d DirectionOnS2();
-
-		/****************** GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S1: Adaptor3d_HSurface
-S2: Adaptor3d_HSurface
-
-Returns
--------
-None
-") GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
-		 GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2);
 
 		/****************** IsTangent ******************/
 		%feature("compactdefaultargs") IsTangent;
@@ -3914,27 +3914,6 @@ bool
 **********************************************/
 class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 	public:
-		/****************** Compute ******************/
-		%feature("compactdefaultargs") Compute;
-		%feature("autodoc", "Returns true if tg,tguv1 tguv2 can be computed.
-
-Parameters
-----------
-u1: float
-v1: float
-u2: float
-v2: float
-Pt: gp_Pnt
-Tg: gp_Vec
-Tguv1: gp_Vec2d
-Tguv2: gp_Vec2d
-
-Returns
--------
-bool
-") Compute;
-		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
-
 		/****************** GeomInt_TheImpPrmSvSurfacesOfWLApprox ******************/
 		%feature("compactdefaultargs") GeomInt_TheImpPrmSvSurfacesOfWLApprox;
 		%feature("autodoc", "No available documentation.
@@ -3964,6 +3943,27 @@ Returns
 None
 ") GeomInt_TheImpPrmSvSurfacesOfWLApprox;
 		 GeomInt_TheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric & Surf1, const opencascade::handle<Adaptor3d_HSurface> & Surf2);
+
+		/****************** Compute ******************/
+		%feature("compactdefaultargs") Compute;
+		%feature("autodoc", "Returns true if tg,tguv1 tguv2 can be computed.
+
+Parameters
+----------
+u1: float
+v1: float
+u2: float
+v2: float
+Pt: gp_Pnt
+Tg: gp_Vec
+Tguv1: gp_Vec2d
+Tguv2: gp_Vec2d
+
+Returns
+-------
+bool
+") Compute;
+		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
 
 		/****************** Pnt ******************/
 		%feature("compactdefaultargs") Pnt;
@@ -4073,6 +4073,39 @@ bool
 ********************************************************/
 class GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
 	public:
+		/****************** GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
+		%feature("autodoc", "Compute the solution point with the close point.
+
+Parameters
+----------
+Param: TColStd_Array1OfReal
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+TolTangency: float
+
+Returns
+-------
+None
+") GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
+		 GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const TColStd_Array1OfReal & Param, const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const Standard_Real TolTangency);
+
+		/****************** GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
+		%feature("autodoc", "Initialize the parameters to compute the solution point it 's possible to write to optimize: intimp_int2s inter(s1,s2,func,toltangency); math_functionsetroot rsnld(inter.function()); while ...{ param(1)=... param(2)=... param(3)=... inter.perform(param,rsnld); }.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+TolTangency: float
+
+Returns
+-------
+None
+") GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
+		 GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const Standard_Real TolTangency);
+
 		/****************** ChangePoint ******************/
 		%feature("compactdefaultargs") ChangePoint;
 		%feature("autodoc", "Return the intersection point which is enable for changing.
@@ -4122,39 +4155,6 @@ Returns
 GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox
 ") Function;
 		GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox & Function();
-
-		/****************** GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
-		%feature("autodoc", "Compute the solution point with the close point.
-
-Parameters
-----------
-Param: TColStd_Array1OfReal
-S1: Adaptor3d_HSurface
-S2: Adaptor3d_HSurface
-TolTangency: float
-
-Returns
--------
-None
-") GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
-		 GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const TColStd_Array1OfReal & Param, const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const Standard_Real TolTangency);
-
-		/****************** GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
-		%feature("autodoc", "Initialize the parameters to compute the solution point it 's possible to write to optimize: intimp_int2s inter(s1,s2,func,toltangency); math_functionsetroot rsnld(inter.function()); while ...{ param(1)=... param(2)=... param(3)=... inter.perform(param,rsnld); }.
-
-Parameters
-----------
-S1: Adaptor3d_HSurface
-S2: Adaptor3d_HSurface
-TolTangency: float
-
-Returns
--------
-None
-") GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
-		 GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const Standard_Real TolTangency);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -4241,26 +4241,6 @@ IntSurf_PntOn2S
 ***************************************/
 class GeomInt_TheMultiLineOfWLApprox {
 	public:
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "Dump of the current multi-line.
-
-Returns
--------
-None
-") Dump;
-		void Dump();
-
-		/****************** FirstPoint ******************/
-		%feature("compactdefaultargs") FirstPoint;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-int
-") FirstPoint;
-		Standard_Integer FirstPoint();
-
 		/****************** GeomInt_TheMultiLineOfWLApprox ******************/
 		%feature("compactdefaultargs") GeomInt_TheMultiLineOfWLApprox;
 		%feature("autodoc", "No available documentation.
@@ -4331,6 +4311,26 @@ Returns
 None
 ") GeomInt_TheMultiLineOfWLApprox;
 		 GeomInt_TheMultiLineOfWLApprox(const opencascade::handle<IntPatch_WLine> & line, const Standard_Integer NbP3d, const Standard_Integer NbP2d, const Standard_Boolean ApproxU1V1, const Standard_Boolean ApproxU2V2, const Standard_Real xo, const Standard_Real yo, const Standard_Real zo, const Standard_Real u1o, const Standard_Real v1o, const Standard_Real u2o, const Standard_Real v2o, const Standard_Boolean P2DOnFirst, const Standard_Integer IndMin = 0, const Standard_Integer IndMax = 0);
+
+		/****************** Dump ******************/
+		%feature("compactdefaultargs") Dump;
+		%feature("autodoc", "Dump of the current multi-line.
+
+Returns
+-------
+None
+") Dump;
+		void Dump();
+
+		/****************** FirstPoint ******************/
+		%feature("compactdefaultargs") FirstPoint;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") FirstPoint;
+		Standard_Integer FirstPoint();
 
 		/****************** LastPoint ******************/
 		%feature("compactdefaultargs") LastPoint;
@@ -4793,6 +4793,21 @@ Approx_Status
 **********************************************/
 class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 	public:
+		/****************** GeomInt_ThePrmPrmSvSurfacesOfWLApprox ******************/
+		%feature("compactdefaultargs") GeomInt_ThePrmPrmSvSurfacesOfWLApprox;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Surf1: Adaptor3d_HSurface
+Surf2: Adaptor3d_HSurface
+
+Returns
+-------
+None
+") GeomInt_ThePrmPrmSvSurfacesOfWLApprox;
+		 GeomInt_ThePrmPrmSvSurfacesOfWLApprox(const opencascade::handle<Adaptor3d_HSurface> & Surf1, const opencascade::handle<Adaptor3d_HSurface> & Surf2);
+
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "Returns true if tg,tguv1 tguv2 can be computed.
@@ -4813,21 +4828,6 @@ Returns
 bool
 ") Compute;
 		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
-
-		/****************** GeomInt_ThePrmPrmSvSurfacesOfWLApprox ******************/
-		%feature("compactdefaultargs") GeomInt_ThePrmPrmSvSurfacesOfWLApprox;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Surf1: Adaptor3d_HSurface
-Surf2: Adaptor3d_HSurface
-
-Returns
--------
-None
-") GeomInt_ThePrmPrmSvSurfacesOfWLApprox;
-		 GeomInt_ThePrmPrmSvSurfacesOfWLApprox(const opencascade::handle<Adaptor3d_HSurface> & Surf1, const opencascade::handle<Adaptor3d_HSurface> & Surf2);
 
 		/****************** Pnt ******************/
 		%feature("compactdefaultargs") Pnt;
@@ -4933,41 +4933,6 @@ bool
 *************************************************************/
 class GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox : public math_FunctionSetWithDerivatives {
 	public:
-		/****************** Derivatives ******************/
-		%feature("compactdefaultargs") Derivatives;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-X: math_Vector
-D: math_Matrix
-
-Returns
--------
-bool
-") Derivatives;
-		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
-
-		/****************** Direction2d ******************/
-		%feature("compactdefaultargs") Direction2d;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-gp_Dir2d
-") Direction2d;
-		const gp_Dir2d Direction2d();
-
-		/****************** Direction3d ******************/
-		%feature("compactdefaultargs") Direction3d;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-gp_Vec
-") Direction3d;
-		const gp_Vec Direction3d();
-
 		/****************** GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox ******************/
 		%feature("compactdefaultargs") GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox;
 		%feature("autodoc", "No available documentation.
@@ -5006,6 +4971,41 @@ Returns
 None
 ") GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox;
 		 GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric & IS);
+
+		/****************** Derivatives ******************/
+		%feature("compactdefaultargs") Derivatives;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
+") Derivatives;
+		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
+
+		/****************** Direction2d ******************/
+		%feature("compactdefaultargs") Direction2d;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Dir2d
+") Direction2d;
+		const gp_Dir2d Direction2d();
+
+		/****************** Direction3d ******************/
+		%feature("compactdefaultargs") Direction3d;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Vec
+") Direction3d;
+		const gp_Vec Direction3d();
 
 		/****************** ISurface ******************/
 		%feature("compactdefaultargs") ISurface;

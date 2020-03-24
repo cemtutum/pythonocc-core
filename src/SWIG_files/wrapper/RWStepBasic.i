@@ -7004,6 +7004,16 @@ None
 *****************************/
 class RWStepBasic_RWSiUnit {
 	public:
+		/****************** RWStepBasic_RWSiUnit ******************/
+		%feature("compactdefaultargs") RWStepBasic_RWSiUnit;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepBasic_RWSiUnit;
+		 RWStepBasic_RWSiUnit();
+
 		/****************** DecodeName ******************/
 		%feature("compactdefaultargs") DecodeName;
 		%feature("autodoc", "No available documentation.
@@ -7061,16 +7071,6 @@ Returns
 TCollection_AsciiString
 ") EncodePrefix;
 		TCollection_AsciiString EncodePrefix(const StepBasic_SiPrefix aPrefix);
-
-		/****************** RWStepBasic_RWSiUnit ******************/
-		%feature("compactdefaultargs") RWStepBasic_RWSiUnit;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepBasic_RWSiUnit;
-		 RWStepBasic_RWSiUnit();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;

@@ -101,8 +101,8 @@ from OCC.Core.Exception import *
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<TopoDS_Shape, TColgp_SequenceOfPnt2d, TopTools_ShapeMapHasher> BRepTools_MapOfVertexPnt2d;
 typedef NCollection_DataMap<TopoDS_Shape, TColgp_SequenceOfPnt2d, TopTools_ShapeMapHasher>::Iterator BRepTools_DataMapIteratorOfMapOfVertexPnt2d;
+typedef NCollection_DataMap<TopoDS_Shape, TColgp_SequenceOfPnt2d, TopTools_ShapeMapHasher> BRepTools_MapOfVertexPnt2d;
 /* end typedefs declaration */
 
 /******************
@@ -1098,6 +1098,16 @@ None
 ************************/
 class BRepTools_Quilt {
 	public:
+		/****************** BRepTools_Quilt ******************/
+		%feature("compactdefaultargs") BRepTools_Quilt;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BRepTools_Quilt;
+		 BRepTools_Quilt();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add the faces of <s> to the quilt, the faces containing bounded edges are copied.
@@ -1111,16 +1121,6 @@ Returns
 None
 ") Add;
 		void Add(const TopoDS_Shape & S);
-
-		/****************** BRepTools_Quilt ******************/
-		%feature("compactdefaultargs") BRepTools_Quilt;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BRepTools_Quilt;
-		 BRepTools_Quilt();
 
 		/****************** Bind ******************/
 		%feature("compactdefaultargs") Bind;
@@ -1205,6 +1205,16 @@ TopoDS_Shape
 class BRepTools_ReShape : public Standard_Transient {
 	public:
 		class TReplacement {};
+		/****************** BRepTools_ReShape ******************/
+		%feature("compactdefaultargs") BRepTools_ReShape;
+		%feature("autodoc", "Returns an empty reshape.
+
+Returns
+-------
+None
+") BRepTools_ReShape;
+		 BRepTools_ReShape();
+
 		/****************** Apply ******************/
 		%feature("compactdefaultargs") Apply;
 		%feature("autodoc", "Applies the substitutions requests to a shape. //! <until> gives the level of type until which requests are taken into account. for subshapes of the type <until> no rebuild and futher exploring are done. //! note: each subshape can be replaced by shape of the same type or by shape containing only shapes of that type (for example, topods_edge can be replaced by topods_edge, topods_wire or topods_compound containing topods_edges). if incompatible shape type is encountered, it is ignored and flag fail1 is set in status.
@@ -1220,16 +1230,6 @@ Returns
 TopoDS_Shape
 ") Apply;
 		virtual TopoDS_Shape Apply(const TopoDS_Shape & shape, const TopAbs_ShapeEnum until = TopAbs_SHAPE);
-
-		/****************** BRepTools_ReShape ******************/
-		%feature("compactdefaultargs") BRepTools_ReShape;
-		%feature("autodoc", "Returns an empty reshape.
-
-Returns
--------
-None
-") BRepTools_ReShape;
-		 BRepTools_ReShape();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -1401,35 +1401,6 @@ TopoDS_Shape
 ***************************/
 class BRepTools_ShapeSet : public TopTools_ShapeSet {
 	public:
-		/****************** AddGeometry ******************/
-		%feature("compactdefaultargs") AddGeometry;
-		%feature("autodoc", "Stores the goemetry of <s>.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") AddGeometry;
-		virtual void AddGeometry(const TopoDS_Shape & S);
-
-		/****************** AddShapes ******************/
-		%feature("compactdefaultargs") AddShapes;
-		%feature("autodoc", "Inserts the shape <s2> in the shape <s1>. this method must be redefined to use the correct builder.
-
-Parameters
-----------
-S1: TopoDS_Shape
-S2: TopoDS_Shape
-
-Returns
--------
-None
-") AddShapes;
-		virtual void AddShapes(TopoDS_Shape & S1, const TopoDS_Shape & S2);
-
 		/****************** BRepTools_ShapeSet ******************/
 		%feature("compactdefaultargs") BRepTools_ShapeSet;
 		%feature("autodoc", "Builds an empty shapeset. parameter <iswithtriangles> is added for xml persistence.
@@ -1460,6 +1431,35 @@ Returns
 None
 ") BRepTools_ShapeSet;
 		 BRepTools_ShapeSet(const BRep_Builder & B, const Standard_Boolean isWithTriangles = Standard_True);
+
+		/****************** AddGeometry ******************/
+		%feature("compactdefaultargs") AddGeometry;
+		%feature("autodoc", "Stores the goemetry of <s>.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") AddGeometry;
+		virtual void AddGeometry(const TopoDS_Shape & S);
+
+		/****************** AddShapes ******************/
+		%feature("compactdefaultargs") AddShapes;
+		%feature("autodoc", "Inserts the shape <s2> in the shape <s1>. this method must be redefined to use the correct builder.
+
+Parameters
+----------
+S1: TopoDS_Shape
+S2: TopoDS_Shape
+
+Returns
+-------
+None
+") AddShapes;
+		virtual void AddShapes(TopoDS_Shape & S1, const TopoDS_Shape & S2);
 
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;

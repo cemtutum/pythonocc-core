@@ -46,8 +46,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_vrmlconverter.htm
 #include<Aspect_module.hxx>
 #include<TopoDS_module.hxx>
 #include<Vrml_module.hxx>
-#include<HLRAlgo_module.hxx>
 #include<TopTools_module.hxx>
+#include<HLRAlgo_module.hxx>
 #include<Poly_module.hxx>
 #include<TColgp_module.hxx>
 #include<BRepAdaptor_module.hxx>
@@ -76,8 +76,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_vrmlconverter.htm
 %import Aspect.i
 %import TopoDS.i
 %import Vrml.i
-%import HLRAlgo.i
 %import TopTools.i
+%import HLRAlgo.i
 %import Poly.i
 %import TColgp.i
 %import BRepAdaptor.i
@@ -166,6 +166,16 @@ class VrmlConverter_DeflectionCurve {
 *****************************/
 class VrmlConverter_Drawer : public Standard_Transient {
 	public:
+		/****************** VrmlConverter_Drawer ******************/
+		%feature("compactdefaultargs") VrmlConverter_Drawer;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") VrmlConverter_Drawer;
+		 VrmlConverter_Drawer();
+
 		/****************** DeviationCoefficient ******************/
 		%feature("compactdefaultargs") DeviationCoefficient;
 		%feature("autodoc", "No available documentation.
@@ -632,16 +642,6 @@ opencascade::handle<VrmlConverter_IsoAspect>
 ") VIsoAspect;
 		opencascade::handle<VrmlConverter_IsoAspect> VIsoAspect();
 
-		/****************** VrmlConverter_Drawer ******************/
-		%feature("compactdefaultargs") VrmlConverter_Drawer;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") VrmlConverter_Drawer;
-		 VrmlConverter_Drawer();
-
 		/****************** WireAspect ******************/
 		%feature("compactdefaultargs") WireAspect;
 		%feature("autodoc", "The default values are the same default values from vrml package. these attributes are used by the following algorithms: vrmlconverter_wfshape vrmlconverter_wfdeflectionshape.
@@ -692,54 +692,6 @@ class VrmlConverter_HLRShape {
 *********************************/
 class VrmlConverter_LineAspect : public Standard_Transient {
 	public:
-		/****************** HasMaterial ******************/
-		%feature("compactdefaultargs") HasMaterial;
-		%feature("autodoc", "Returns true if the materials is writing into ostream.
-
-Returns
--------
-bool
-") HasMaterial;
-		Standard_Boolean HasMaterial();
-
-		/****************** Material ******************/
-		%feature("compactdefaultargs") Material;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Vrml_Material>
-") Material;
-		opencascade::handle<Vrml_Material> Material();
-
-		/****************** SetHasMaterial ******************/
-		%feature("compactdefaultargs") SetHasMaterial;
-		%feature("autodoc", "Defines the necessary of writing own material from vrml into output ostream. by default false - the material is not writing into ostream, true - the material is writing.
-
-Parameters
-----------
-OnOff: bool
-
-Returns
--------
-None
-") SetHasMaterial;
-		void SetHasMaterial(const Standard_Boolean OnOff);
-
-		/****************** SetMaterial ******************/
-		%feature("compactdefaultargs") SetMaterial;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aMaterial: Vrml_Material
-
-Returns
--------
-None
-") SetMaterial;
-		void SetMaterial(const opencascade::handle<Vrml_Material> & aMaterial);
-
 		/****************** VrmlConverter_LineAspect ******************/
 		%feature("compactdefaultargs") VrmlConverter_LineAspect;
 		%feature("autodoc", "Create a default lineaspect. default value: hasmaterial = false - a line hasn't own material (color).
@@ -765,22 +717,6 @@ None
 ") VrmlConverter_LineAspect;
 		 VrmlConverter_LineAspect(const opencascade::handle<Vrml_Material> & aMaterial, const Standard_Boolean OnOff);
 
-};
-
-
-%make_alias(VrmlConverter_LineAspect)
-
-%extend VrmlConverter_LineAspect {
-	%pythoncode {
-	__repr__ = _dumps_object
-	}
-};
-
-/**********************************
-* class VrmlConverter_PointAspect *
-**********************************/
-class VrmlConverter_PointAspect : public Standard_Transient {
-	public:
 		/****************** HasMaterial ******************/
 		%feature("compactdefaultargs") HasMaterial;
 		%feature("autodoc", "Returns true if the materials is writing into ostream.
@@ -829,6 +765,22 @@ None
 ") SetMaterial;
 		void SetMaterial(const opencascade::handle<Vrml_Material> & aMaterial);
 
+};
+
+
+%make_alias(VrmlConverter_LineAspect)
+
+%extend VrmlConverter_LineAspect {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
+/**********************************
+* class VrmlConverter_PointAspect *
+**********************************/
+class VrmlConverter_PointAspect : public Standard_Transient {
+	public:
 		/****************** VrmlConverter_PointAspect ******************/
 		%feature("compactdefaultargs") VrmlConverter_PointAspect;
 		%feature("autodoc", "Create a default pointaspect. default value: hasmaterial = false - a line hasn't own material (color).
@@ -854,6 +806,54 @@ None
 ") VrmlConverter_PointAspect;
 		 VrmlConverter_PointAspect(const opencascade::handle<Vrml_Material> & aMaterial, const Standard_Boolean OnOff);
 
+		/****************** HasMaterial ******************/
+		%feature("compactdefaultargs") HasMaterial;
+		%feature("autodoc", "Returns true if the materials is writing into ostream.
+
+Returns
+-------
+bool
+") HasMaterial;
+		Standard_Boolean HasMaterial();
+
+		/****************** Material ******************/
+		%feature("compactdefaultargs") Material;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Vrml_Material>
+") Material;
+		opencascade::handle<Vrml_Material> Material();
+
+		/****************** SetHasMaterial ******************/
+		%feature("compactdefaultargs") SetHasMaterial;
+		%feature("autodoc", "Defines the necessary of writing own material from vrml into output ostream. by default false - the material is not writing into ostream, true - the material is writing.
+
+Parameters
+----------
+OnOff: bool
+
+Returns
+-------
+None
+") SetHasMaterial;
+		void SetHasMaterial(const Standard_Boolean OnOff);
+
+		/****************** SetMaterial ******************/
+		%feature("compactdefaultargs") SetMaterial;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aMaterial: Vrml_Material
+
+Returns
+-------
+None
+") SetMaterial;
+		void SetMaterial(const opencascade::handle<Vrml_Material> & aMaterial);
+
 };
 
 
@@ -870,6 +870,31 @@ None
 ********************************/
 class VrmlConverter_Projector : public Standard_Transient {
 	public:
+		/****************** VrmlConverter_Projector ******************/
+		%feature("compactdefaultargs") VrmlConverter_Projector;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Shapes: TopTools_Array1OfShape
+Focus: float
+DX: float
+DY: float
+DZ: float
+XUp: float
+YUp: float
+ZUp: float
+Camera: VrmlConverter_TypeOfCamera,optional
+	default value is VrmlConverter_NoCamera
+Light: VrmlConverter_TypeOfLight,optional
+	default value is VrmlConverter_NoLight
+
+Returns
+-------
+None
+") VrmlConverter_Projector;
+		 VrmlConverter_Projector(const TopTools_Array1OfShape & Shapes, const Standard_Real Focus, const Standard_Real DX, const Standard_Real DY, const Standard_Real DZ, const Standard_Real XUp, const Standard_Real YUp, const Standard_Real ZUp, const VrmlConverter_TypeOfCamera Camera = VrmlConverter_NoCamera, const VrmlConverter_TypeOfLight Light = VrmlConverter_NoLight);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -936,31 +961,6 @@ None
 ") SetLight;
 		void SetLight(const VrmlConverter_TypeOfLight aLight);
 
-		/****************** VrmlConverter_Projector ******************/
-		%feature("compactdefaultargs") VrmlConverter_Projector;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Shapes: TopTools_Array1OfShape
-Focus: float
-DX: float
-DY: float
-DZ: float
-XUp: float
-YUp: float
-ZUp: float
-Camera: VrmlConverter_TypeOfCamera,optional
-	default value is VrmlConverter_NoCamera
-Light: VrmlConverter_TypeOfLight,optional
-	default value is VrmlConverter_NoLight
-
-Returns
--------
-None
-") VrmlConverter_Projector;
-		 VrmlConverter_Projector(const TopTools_Array1OfShape & Shapes, const Standard_Real Focus, const Standard_Real DX, const Standard_Real DY, const Standard_Real DZ, const Standard_Real XUp, const Standard_Real YUp, const Standard_Real ZUp, const VrmlConverter_TypeOfCamera Camera = VrmlConverter_NoCamera, const VrmlConverter_TypeOfLight Light = VrmlConverter_NoLight);
-
 };
 
 
@@ -1007,6 +1007,16 @@ None
 ************************************/
 class VrmlConverter_ShadingAspect : public Standard_Transient {
 	public:
+		/****************** VrmlConverter_ShadingAspect ******************/
+		%feature("compactdefaultargs") VrmlConverter_ShadingAspect;
+		%feature("autodoc", "Create a default shadingaspect.
+
+Returns
+-------
+None
+") VrmlConverter_ShadingAspect;
+		 VrmlConverter_ShadingAspect();
+
 		/****************** FrontMaterial ******************/
 		%feature("compactdefaultargs") FrontMaterial;
 		%feature("autodoc", "No available documentation.
@@ -1103,16 +1113,6 @@ Vrml_ShapeHints
 ") ShapeHints;
 		Vrml_ShapeHints ShapeHints();
 
-		/****************** VrmlConverter_ShadingAspect ******************/
-		%feature("compactdefaultargs") VrmlConverter_ShadingAspect;
-		%feature("autodoc", "Create a default shadingaspect.
-
-Returns
--------
-None
-") VrmlConverter_ShadingAspect;
-		 VrmlConverter_ShadingAspect();
-
 };
 
 
@@ -1185,30 +1185,6 @@ class VrmlConverter_WFShape {
 ********************************/
 class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
 	public:
-		/****************** Number ******************/
-		%feature("compactdefaultargs") Number;
-		%feature("autodoc", "Returns the number of u or v isoparametric curves drawn for a single face.
-
-Returns
--------
-int
-") Number;
-		Standard_Integer Number();
-
-		/****************** SetNumber ******************/
-		%feature("compactdefaultargs") SetNumber;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aNumber: int
-
-Returns
--------
-None
-") SetNumber;
-		void SetNumber(const Standard_Integer aNumber);
-
 		/****************** VrmlConverter_IsoAspect ******************/
 		%feature("compactdefaultargs") VrmlConverter_IsoAspect;
 		%feature("autodoc", "Create a default isoaspect. default value: mynumber - 10.
@@ -1234,6 +1210,30 @@ Returns
 None
 ") VrmlConverter_IsoAspect;
 		 VrmlConverter_IsoAspect(const opencascade::handle<Vrml_Material> & aMaterial, const Standard_Boolean OnOff, const Standard_Integer aNumber);
+
+		/****************** Number ******************/
+		%feature("compactdefaultargs") Number;
+		%feature("autodoc", "Returns the number of u or v isoparametric curves drawn for a single face.
+
+Returns
+-------
+int
+") Number;
+		Standard_Integer Number();
+
+		/****************** SetNumber ******************/
+		%feature("compactdefaultargs") SetNumber;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aNumber: int
+
+Returns
+-------
+None
+") SetNumber;
+		void SetNumber(const Standard_Integer aNumber);
 
 };
 

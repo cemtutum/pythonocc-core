@@ -77,6 +77,37 @@ from OCC.Core.Exception import *
 ***********************/
 class Sweep_NumShape {
 	public:
+		/****************** Sweep_NumShape ******************/
+		%feature("compactdefaultargs") Sweep_NumShape;
+		%feature("autodoc", "Creates a dummy indexed edge.
+
+Returns
+-------
+None
+") Sweep_NumShape;
+		 Sweep_NumShape();
+
+		/****************** Sweep_NumShape ******************/
+		%feature("compactdefaultargs") Sweep_NumShape;
+		%feature("autodoc", "Creates a new simple indexed edge. //! for an edge : index is the number of vertices (0, 1 or 2),type is topabs_edge, closed is true if it is a closed edge, beginf is true if the edge is infinite at the begenning, endinf is true if the edge is infinite at the end. //! for a vertex : index is the index of the vertex in the edge (1 or 2), type is topabsvertex, all the other fields have no meanning.
+
+Parameters
+----------
+Index: int
+Type: TopAbs_ShapeEnum
+Closed: bool,optional
+	default value is Standard_False
+BegInf: bool,optional
+	default value is Standard_False
+EndInf: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Sweep_NumShape;
+		 Sweep_NumShape(const Standard_Integer Index, const TopAbs_ShapeEnum Type, const Standard_Boolean Closed = Standard_False, const Standard_Boolean BegInf = Standard_False, const Standard_Boolean EndInf = Standard_False);
+
 		/****************** BegInfinite ******************/
 		%feature("compactdefaultargs") BegInfinite;
 		%feature("autodoc", "No available documentation.
@@ -148,37 +179,6 @@ TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation();
 
-		/****************** Sweep_NumShape ******************/
-		%feature("compactdefaultargs") Sweep_NumShape;
-		%feature("autodoc", "Creates a dummy indexed edge.
-
-Returns
--------
-None
-") Sweep_NumShape;
-		 Sweep_NumShape();
-
-		/****************** Sweep_NumShape ******************/
-		%feature("compactdefaultargs") Sweep_NumShape;
-		%feature("autodoc", "Creates a new simple indexed edge. //! for an edge : index is the number of vertices (0, 1 or 2),type is topabs_edge, closed is true if it is a closed edge, beginf is true if the edge is infinite at the begenning, endinf is true if the edge is infinite at the end. //! for a vertex : index is the index of the vertex in the edge (1 or 2), type is topabsvertex, all the other fields have no meanning.
-
-Parameters
-----------
-Index: int
-Type: TopAbs_ShapeEnum
-Closed: bool,optional
-	default value is Standard_False
-BegInf: bool,optional
-	default value is Standard_False
-EndInf: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Sweep_NumShape;
-		 Sweep_NumShape(const Standard_Integer Index, const TopAbs_ShapeEnum Type, const Standard_Boolean Closed = Standard_False, const Standard_Boolean BegInf = Standard_False, const Standard_Boolean EndInf = Standard_False);
-
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "No available documentation.
@@ -203,6 +203,16 @@ TopAbs_ShapeEnum
 *******************************/
 class Sweep_NumShapeIterator {
 	public:
+		/****************** Sweep_NumShapeIterator ******************/
+		%feature("compactdefaultargs") Sweep_NumShapeIterator;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Sweep_NumShapeIterator;
+		 Sweep_NumShapeIterator();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Resest the numshapeiterator on sub-shapes of <ashape>.
@@ -247,16 +257,6 @@ TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation();
 
-		/****************** Sweep_NumShapeIterator ******************/
-		%feature("compactdefaultargs") Sweep_NumShapeIterator;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Sweep_NumShapeIterator;
-		 Sweep_NumShapeIterator();
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the current sub-shape.
@@ -281,6 +281,20 @@ Sweep_NumShape
 ***************************/
 class Sweep_NumShapeTool {
 	public:
+		/****************** Sweep_NumShapeTool ******************/
+		%feature("compactdefaultargs") Sweep_NumShapeTool;
+		%feature("autodoc", "Create a new numshapetool with <ashape>. the tool must prepare an indexation for all the subshapes of this shape.
+
+Parameters
+----------
+aShape: Sweep_NumShape
+
+Returns
+-------
+None
+") Sweep_NumShapeTool;
+		 Sweep_NumShapeTool(const Sweep_NumShape & aShape);
+
 		/****************** FirstVertex ******************/
 		%feature("compactdefaultargs") FirstVertex;
 		%feature("autodoc", "Returns the first vertex.
@@ -372,20 +386,6 @@ Returns
 Sweep_NumShape
 ") Shape;
 		Sweep_NumShape Shape(const Standard_Integer anIndex);
-
-		/****************** Sweep_NumShapeTool ******************/
-		%feature("compactdefaultargs") Sweep_NumShapeTool;
-		%feature("autodoc", "Create a new numshapetool with <ashape>. the tool must prepare an indexation for all the subshapes of this shape.
-
-Parameters
-----------
-aShape: Sweep_NumShape
-
-Returns
--------
-None
-") Sweep_NumShapeTool;
-		 Sweep_NumShapeTool(const Sweep_NumShape & aShape);
 
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;

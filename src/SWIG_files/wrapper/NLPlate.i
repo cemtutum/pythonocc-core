@@ -80,15 +80,15 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(NLPlate_StackOfPlate) NCollection_List<Plate_Plate>;
 %template(NLPlate_ListIteratorOfStackOfPlate) NCollection_TListIterator<Plate_Plate>;
 %template(NLPlate_SequenceOfHGPPConstraint) NCollection_Sequence<opencascade::handle<NLPlate_HGPPConstraint>>;
+%template(NLPlate_StackOfPlate) NCollection_List<Plate_Plate>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List<Plate_Plate> NLPlate_StackOfPlate;
 typedef NCollection_List<Plate_Plate>::Iterator NLPlate_ListIteratorOfStackOfPlate;
 typedef NCollection_Sequence<opencascade::handle<NLPlate_HGPPConstraint>> NLPlate_SequenceOfHGPPConstraint;
+typedef NCollection_List<Plate_Plate> NLPlate_StackOfPlate;
 /* end typedefs declaration */
 
 /*******************************
@@ -380,6 +380,20 @@ bool
 ************************/
 class NLPlate_NLPlate {
 	public:
+		/****************** NLPlate_NLPlate ******************/
+		%feature("compactdefaultargs") NLPlate_NLPlate;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+InitialSurface: Geom_Surface
+
+Returns
+-------
+None
+") NLPlate_NLPlate;
+		 NLPlate_NLPlate(const opencascade::handle<Geom_Surface> & InitialSurface);
+
 		/****************** ConstraintsSliding ******************/
 		%feature("compactdefaultargs") ConstraintsSliding;
 		%feature("autodoc", "No available documentation.
@@ -500,20 +514,6 @@ int
 ") MaxActiveConstraintOrder;
 		Standard_Integer MaxActiveConstraintOrder();
 
-		/****************** NLPlate_NLPlate ******************/
-		%feature("compactdefaultargs") NLPlate_NLPlate;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-InitialSurface: Geom_Surface
-
-Returns
--------
-None
-") NLPlate_NLPlate;
-		 NLPlate_NLPlate(const opencascade::handle<Geom_Surface> & InitialSurface);
-
 		/****************** Solve ******************/
 		%feature("compactdefaultargs") Solve;
 		%feature("autodoc", "No available documentation.
@@ -572,6 +572,21 @@ None
 *******************************/
 class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
 	public:
+		/****************** NLPlate_HPG0Constraint ******************/
+		%feature("compactdefaultargs") NLPlate_HPG0Constraint;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+UV: gp_XY
+Value: gp_XYZ
+
+Returns
+-------
+None
+") NLPlate_HPG0Constraint;
+		 NLPlate_HPG0Constraint(const gp_XY & UV, const gp_XYZ & Value);
+
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
 		%feature("autodoc", "No available documentation.
@@ -611,21 +626,6 @@ Returns
 bool
 ") IsG0;
 		virtual Standard_Boolean IsG0();
-
-		/****************** NLPlate_HPG0Constraint ******************/
-		%feature("compactdefaultargs") NLPlate_HPG0Constraint;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-UV: gp_XY
-Value: gp_XYZ
-
-Returns
--------
-None
-") NLPlate_HPG0Constraint;
-		 NLPlate_HPG0Constraint(const gp_XY & UV, const gp_XYZ & Value);
 
 		/****************** SetIncrementalLoadAllowed ******************/
 		%feature("compactdefaultargs") SetIncrementalLoadAllowed;
@@ -681,6 +681,21 @@ bool
 *******************************/
 class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
 	public:
+		/****************** NLPlate_HPG1Constraint ******************/
+		%feature("compactdefaultargs") NLPlate_HPG1Constraint;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+UV: gp_XY
+D1T: Plate_D1
+
+Returns
+-------
+None
+") NLPlate_HPG1Constraint;
+		 NLPlate_HPG1Constraint(const gp_XY & UV, const Plate_D1 & D1T);
+
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
 		%feature("autodoc", "No available documentation.
@@ -720,21 +735,6 @@ Returns
 bool
 ") IsG0;
 		virtual Standard_Boolean IsG0();
-
-		/****************** NLPlate_HPG1Constraint ******************/
-		%feature("compactdefaultargs") NLPlate_HPG1Constraint;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-UV: gp_XY
-D1T: Plate_D1
-
-Returns
--------
-None
-") NLPlate_HPG1Constraint;
-		 NLPlate_HPG1Constraint(const gp_XY & UV, const Plate_D1 & D1T);
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
@@ -791,6 +791,22 @@ None
 *********************************/
 class NLPlate_HPG0G1Constraint : public NLPlate_HPG0Constraint {
 	public:
+		/****************** NLPlate_HPG0G1Constraint ******************/
+		%feature("compactdefaultargs") NLPlate_HPG0G1Constraint;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+UV: gp_XY
+Value: gp_XYZ
+D1T: Plate_D1
+
+Returns
+-------
+None
+") NLPlate_HPG0G1Constraint;
+		 NLPlate_HPG0G1Constraint(const gp_XY & UV, const gp_XYZ & Value, const Plate_D1 & D1T);
+
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
 		%feature("autodoc", "No available documentation.
@@ -810,22 +826,6 @@ Returns
 Plate_D1
 ") G1Target;
 		virtual const Plate_D1 & G1Target();
-
-		/****************** NLPlate_HPG0G1Constraint ******************/
-		%feature("compactdefaultargs") NLPlate_HPG0G1Constraint;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-UV: gp_XY
-Value: gp_XYZ
-D1T: Plate_D1
-
-Returns
--------
-None
-") NLPlate_HPG0G1Constraint;
-		 NLPlate_HPG0G1Constraint(const gp_XY & UV, const gp_XYZ & Value, const Plate_D1 & D1T);
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
@@ -868,6 +868,22 @@ None
 *******************************/
 class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
 	public:
+		/****************** NLPlate_HPG2Constraint ******************/
+		%feature("compactdefaultargs") NLPlate_HPG2Constraint;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+UV: gp_XY
+D1T: Plate_D1
+D2T: Plate_D2
+
+Returns
+-------
+None
+") NLPlate_HPG2Constraint;
+		 NLPlate_HPG2Constraint(const gp_XY & UV, const Plate_D1 & D1T, const Plate_D2 & D2T);
+
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
 		%feature("autodoc", "No available documentation.
@@ -887,22 +903,6 @@ Returns
 Plate_D2
 ") G2Target;
 		virtual const Plate_D2 & G2Target();
-
-		/****************** NLPlate_HPG2Constraint ******************/
-		%feature("compactdefaultargs") NLPlate_HPG2Constraint;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-UV: gp_XY
-D1T: Plate_D1
-D2T: Plate_D2
-
-Returns
--------
-None
-") NLPlate_HPG2Constraint;
-		 NLPlate_HPG2Constraint(const gp_XY & UV, const Plate_D1 & D1T, const Plate_D2 & D2T);
 
 };
 
@@ -920,6 +920,23 @@ None
 *********************************/
 class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 	public:
+		/****************** NLPlate_HPG0G2Constraint ******************/
+		%feature("compactdefaultargs") NLPlate_HPG0G2Constraint;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+UV: gp_XY
+Value: gp_XYZ
+D1T: Plate_D1
+D2T: Plate_D2
+
+Returns
+-------
+None
+") NLPlate_HPG0G2Constraint;
+		 NLPlate_HPG0G2Constraint(const gp_XY & UV, const gp_XYZ & Value, const Plate_D1 & D1T, const Plate_D2 & D2T);
+
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
 		%feature("autodoc", "No available documentation.
@@ -940,23 +957,6 @@ Plate_D2
 ") G2Target;
 		virtual const Plate_D2 & G2Target();
 
-		/****************** NLPlate_HPG0G2Constraint ******************/
-		%feature("compactdefaultargs") NLPlate_HPG0G2Constraint;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-UV: gp_XY
-Value: gp_XYZ
-D1T: Plate_D1
-D2T: Plate_D2
-
-Returns
--------
-None
-") NLPlate_HPG0G2Constraint;
-		 NLPlate_HPG0G2Constraint(const gp_XY & UV, const gp_XYZ & Value, const Plate_D1 & D1T, const Plate_D2 & D2T);
-
 };
 
 
@@ -973,26 +973,6 @@ None
 *******************************/
 class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
 	public:
-		/****************** ActiveOrder ******************/
-		%feature("compactdefaultargs") ActiveOrder;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-int
-") ActiveOrder;
-		virtual Standard_Integer ActiveOrder();
-
-		/****************** G3Target ******************/
-		%feature("compactdefaultargs") G3Target;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-Plate_D3
-") G3Target;
-		virtual const Plate_D3 & G3Target();
-
 		/****************** NLPlate_HPG3Constraint ******************/
 		%feature("compactdefaultargs") NLPlate_HPG3Constraint;
 		%feature("autodoc", "No available documentation.
@@ -1010,22 +990,6 @@ None
 ") NLPlate_HPG3Constraint;
 		 NLPlate_HPG3Constraint(const gp_XY & UV, const Plate_D1 & D1T, const Plate_D2 & D2T, const Plate_D3 & D3T);
 
-};
-
-
-%make_alias(NLPlate_HPG3Constraint)
-
-%extend NLPlate_HPG3Constraint {
-	%pythoncode {
-	__repr__ = _dumps_object
-	}
-};
-
-/*********************************
-* class NLPlate_HPG0G3Constraint *
-*********************************/
-class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
-	public:
 		/****************** ActiveOrder ******************/
 		%feature("compactdefaultargs") ActiveOrder;
 		%feature("autodoc", "No available documentation.
@@ -1046,6 +1010,22 @@ Plate_D3
 ") G3Target;
 		virtual const Plate_D3 & G3Target();
 
+};
+
+
+%make_alias(NLPlate_HPG3Constraint)
+
+%extend NLPlate_HPG3Constraint {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
+/*********************************
+* class NLPlate_HPG0G3Constraint *
+*********************************/
+class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
+	public:
 		/****************** NLPlate_HPG0G3Constraint ******************/
 		%feature("compactdefaultargs") NLPlate_HPG0G3Constraint;
 		%feature("autodoc", "No available documentation.
@@ -1063,6 +1043,26 @@ Returns
 None
 ") NLPlate_HPG0G3Constraint;
 		 NLPlate_HPG0G3Constraint(const gp_XY & UV, const gp_XYZ & Value, const Plate_D1 & D1T, const Plate_D2 & D2T, const Plate_D3 & D3T);
+
+		/****************** ActiveOrder ******************/
+		%feature("compactdefaultargs") ActiveOrder;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") ActiveOrder;
+		virtual Standard_Integer ActiveOrder();
+
+		/****************** G3Target ******************/
+		%feature("compactdefaultargs") G3Target;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Plate_D3
+") G3Target;
+		virtual const Plate_D3 & G3Target();
 
 };
 

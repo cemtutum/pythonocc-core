@@ -76,13 +76,13 @@ from OCC.Core.Exception import *
 /* end templates declaration */
 
 /* typedefs */
-typedef Standard_Character * BinObjMgt_PChar;
-typedef TColStd_IndexedMapOfTransient BinObjMgt_SRelocationTable;
-typedef Standard_ShortReal * BinObjMgt_PShortReal;
-typedef Standard_Integer * BinObjMgt_PInteger;
-typedef Standard_ExtCharacter * BinObjMgt_PExtChar;
-typedef Standard_Real * BinObjMgt_PReal;
 typedef Standard_Byte * BinObjMgt_PByte;
+typedef Standard_Character * BinObjMgt_PChar;
+typedef Standard_ExtCharacter * BinObjMgt_PExtChar;
+typedef Standard_Integer * BinObjMgt_PInteger;
+typedef Standard_Real * BinObjMgt_PReal;
+typedef Standard_ShortReal * BinObjMgt_PShortReal;
+typedef TColStd_IndexedMapOfTransient BinObjMgt_SRelocationTable;
 /* end typedefs declaration */
 
 /*****************************

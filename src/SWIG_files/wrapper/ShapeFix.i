@@ -117,8 +117,8 @@ from OCC.Core.Exception import *
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<TopoDS_Shape, Bnd_Box2d, TopTools_ShapeMapHasher> ShapeFix_DataMapOfShapeBox2d;
 typedef NCollection_DataMap<TopoDS_Shape, Bnd_Box2d, TopTools_ShapeMapHasher>::Iterator ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d;
+typedef NCollection_DataMap<TopoDS_Shape, Bnd_Box2d, TopTools_ShapeMapHasher> ShapeFix_DataMapOfShapeBox2d;
 typedef NCollection_Sequence<ShapeFix_WireSegment> ShapeFix_SequenceOfWireSegment;
 /* end typedefs declaration */
 
@@ -225,6 +225,16 @@ bool
 **********************/
 class ShapeFix_Edge : public Standard_Transient {
 	public:
+		/****************** ShapeFix_Edge ******************/
+		%feature("compactdefaultargs") ShapeFix_Edge;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeFix_Edge;
+		 ShapeFix_Edge();
+
 		/****************** FixAddCurve3d ******************/
 		%feature("compactdefaultargs") FixAddCurve3d;
 		%feature("autodoc", "Tries to build 3d curve of the edge if missing use : it is to be called after fixremovecurve3d (if removed) or in any case when edge can have no 3d curve returns: true if 3d curve was added, else false status : ok : 3d curve exists fail1: breplib::buildcurve3d() has failed done1: 3d curve was added.
@@ -477,16 +487,6 @@ None
 ") SetContext;
 		void SetContext(const opencascade::handle<ShapeBuild_ReShape> & context);
 
-		/****************** ShapeFix_Edge ******************/
-		%feature("compactdefaultargs") ShapeFix_Edge;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeFix_Edge;
-		 ShapeFix_Edge();
-
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
 		%feature("autodoc", "Returns the status (in the form of true/false) of last fix.
@@ -521,6 +521,16 @@ bool
 *****************************/
 class ShapeFix_EdgeConnect {
 	public:
+		/****************** ShapeFix_EdgeConnect ******************/
+		%feature("compactdefaultargs") ShapeFix_EdgeConnect;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeFix_EdgeConnect;
+		 ShapeFix_EdgeConnect();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds information on connectivity between start vertex of second edge and end vertex of first edge, taking edges orientation into account.
@@ -570,16 +580,6 @@ None
 ") Clear;
 		void Clear();
 
-		/****************** ShapeFix_EdgeConnect ******************/
-		%feature("compactdefaultargs") ShapeFix_EdgeConnect;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeFix_EdgeConnect;
-		 ShapeFix_EdgeConnect();
-
 };
 
 
@@ -594,6 +594,31 @@ None
 *****************************/
 class ShapeFix_EdgeProjAux : public Standard_Transient {
 	public:
+		/****************** ShapeFix_EdgeProjAux ******************/
+		%feature("compactdefaultargs") ShapeFix_EdgeProjAux;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeFix_EdgeProjAux;
+		 ShapeFix_EdgeProjAux();
+
+		/****************** ShapeFix_EdgeProjAux ******************/
+		%feature("compactdefaultargs") ShapeFix_EdgeProjAux;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F: TopoDS_Face
+E: TopoDS_Edge
+
+Returns
+-------
+None
+") ShapeFix_EdgeProjAux;
+		 ShapeFix_EdgeProjAux(const TopoDS_Face & F, const TopoDS_Edge & E);
+
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "No available documentation.
@@ -677,31 +702,6 @@ float
 ") LastParam;
 		Standard_Real LastParam();
 
-		/****************** ShapeFix_EdgeProjAux ******************/
-		%feature("compactdefaultargs") ShapeFix_EdgeProjAux;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeFix_EdgeProjAux;
-		 ShapeFix_EdgeProjAux();
-
-		/****************** ShapeFix_EdgeProjAux ******************/
-		%feature("compactdefaultargs") ShapeFix_EdgeProjAux;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-F: TopoDS_Face
-E: TopoDS_Edge
-
-Returns
--------
-None
-") ShapeFix_EdgeProjAux;
-		 ShapeFix_EdgeProjAux(const TopoDS_Face & F, const TopoDS_Edge & E);
-
 };
 
 
@@ -718,6 +718,16 @@ None
 *****************************/
 class ShapeFix_FaceConnect {
 	public:
+		/****************** ShapeFix_FaceConnect ******************/
+		%feature("compactdefaultargs") ShapeFix_FaceConnect;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeFix_FaceConnect;
+		 ShapeFix_FaceConnect();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -759,16 +769,6 @@ None
 ") Clear;
 		void Clear();
 
-		/****************** ShapeFix_FaceConnect ******************/
-		%feature("compactdefaultargs") ShapeFix_FaceConnect;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeFix_FaceConnect;
-		 ShapeFix_FaceConnect();
-
 };
 
 
@@ -783,36 +783,6 @@ None
 ****************************/
 class ShapeFix_FreeBounds {
 	public:
-		/****************** GetClosedWires ******************/
-		%feature("compactdefaultargs") GetClosedWires;
-		%feature("autodoc", "Returns compound of closed wires out of free edges.
-
-Returns
--------
-TopoDS_Compound
-") GetClosedWires;
-		const TopoDS_Compound GetClosedWires();
-
-		/****************** GetOpenWires ******************/
-		%feature("compactdefaultargs") GetOpenWires;
-		%feature("autodoc", "Returns compound of open wires out of free edges.
-
-Returns
--------
-TopoDS_Compound
-") GetOpenWires;
-		const TopoDS_Compound GetOpenWires();
-
-		/****************** GetShape ******************/
-		%feature("compactdefaultargs") GetShape;
-		%feature("autodoc", "Returns modified source shape.
-
-Returns
--------
-TopoDS_Shape
-") GetShape;
-		const TopoDS_Shape GetShape();
-
 		/****************** ShapeFix_FreeBounds ******************/
 		%feature("compactdefaultargs") ShapeFix_FreeBounds;
 		%feature("autodoc", "Empty constructor.
@@ -858,6 +828,36 @@ None
 ") ShapeFix_FreeBounds;
 		 ShapeFix_FreeBounds(const TopoDS_Shape & shape, const Standard_Real closetoler, const Standard_Boolean splitclosed, const Standard_Boolean splitopen);
 
+		/****************** GetClosedWires ******************/
+		%feature("compactdefaultargs") GetClosedWires;
+		%feature("autodoc", "Returns compound of closed wires out of free edges.
+
+Returns
+-------
+TopoDS_Compound
+") GetClosedWires;
+		const TopoDS_Compound GetClosedWires();
+
+		/****************** GetOpenWires ******************/
+		%feature("compactdefaultargs") GetOpenWires;
+		%feature("autodoc", "Returns compound of open wires out of free edges.
+
+Returns
+-------
+TopoDS_Compound
+") GetOpenWires;
+		const TopoDS_Compound GetOpenWires();
+
+		/****************** GetShape ******************/
+		%feature("compactdefaultargs") GetShape;
+		%feature("autodoc", "Returns modified source shape.
+
+Returns
+-------
+TopoDS_Shape
+") GetShape;
+		const TopoDS_Shape GetShape();
+
 };
 
 
@@ -872,6 +872,23 @@ None
 **********************************/
 class ShapeFix_IntersectionTool {
 	public:
+		/****************** ShapeFix_IntersectionTool ******************/
+		%feature("compactdefaultargs") ShapeFix_IntersectionTool;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+context: ShapeBuild_ReShape
+preci: float
+maxtol: float,optional
+	default value is 1.0
+
+Returns
+-------
+None
+") ShapeFix_IntersectionTool;
+		 ShapeFix_IntersectionTool(const opencascade::handle<ShapeBuild_ReShape> & context, const Standard_Real preci, const Standard_Real maxtol = 1.0);
+
 		/****************** Context ******************/
 		%feature("compactdefaultargs") Context;
 		%feature("autodoc", "Returns context.
@@ -932,23 +949,6 @@ bool
 ") FixSelfIntersectWire;
 		Standard_Boolean FixSelfIntersectWire(opencascade::handle<ShapeExtend_WireData> & sewd, const TopoDS_Face & face, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
-		/****************** ShapeFix_IntersectionTool ******************/
-		%feature("compactdefaultargs") ShapeFix_IntersectionTool;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-context: ShapeBuild_ReShape
-preci: float
-maxtol: float,optional
-	default value is 1.0
-
-Returns
--------
-None
-") ShapeFix_IntersectionTool;
-		 ShapeFix_IntersectionTool(const opencascade::handle<ShapeBuild_ReShape> & context, const Standard_Real preci, const Standard_Real maxtol = 1.0);
-
 		/****************** SplitEdge ******************/
 		%feature("compactdefaultargs") SplitEdge;
 		%feature("autodoc", "Split edge on two new edges using new vertex 'vert' and 'param' - parameter for splitting the 'face' is necessary for pcurves and using transferparameterproj.
@@ -983,6 +983,16 @@ bool
 **********************/
 class ShapeFix_Root : public Standard_Transient {
 	public:
+		/****************** ShapeFix_Root ******************/
+		%feature("compactdefaultargs") ShapeFix_Root;
+		%feature("autodoc", "Empty constructor (no context is created).
+
+Returns
+-------
+None
+") ShapeFix_Root;
+		 ShapeFix_Root();
+
 		/****************** Context ******************/
 		%feature("compactdefaultargs") Context;
 		%feature("autodoc", "Returns context.
@@ -1222,16 +1232,6 @@ None
 ") SetPrecision;
 		virtual void SetPrecision(const Standard_Real preci);
 
-		/****************** ShapeFix_Root ******************/
-		%feature("compactdefaultargs") ShapeFix_Root;
-		%feature("autodoc", "Empty constructor (no context is created).
-
-Returns
--------
-None
-") ShapeFix_Root;
-		 ShapeFix_Root();
-
 };
 
 
@@ -1248,6 +1248,16 @@ None
 ********************************/
 class ShapeFix_ShapeTolerance {
 	public:
+		/****************** ShapeFix_ShapeTolerance ******************/
+		%feature("compactdefaultargs") ShapeFix_ShapeTolerance;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeFix_ShapeTolerance;
+		 ShapeFix_ShapeTolerance();
+
 		/****************** LimitTolerance ******************/
 		%feature("compactdefaultargs") LimitTolerance;
 		%feature("autodoc", "Limits tolerances in a shape as follows : tmin = tmax -> as settolerance (forces) tmin = 0 -> maximum tolerance will be <tmax> tmax = 0 or not given (more generally, tmax < tmin) -> <tmax> ignored, minimum will be <tmin> else, maximum will be <max> and minimum will be <min> styp = vertex : only vertices are set styp = edge : only edges are set styp = face : only faces are set styp = wire : to have edges and their vertices set styp = other value : all (vertices,edges,faces) are set returns true if at least one tolerance of the sub-shape has been modified.
@@ -1284,16 +1294,6 @@ None
 ") SetTolerance;
 		void SetTolerance(const TopoDS_Shape & shape, const Standard_Real preci, const TopAbs_ShapeEnum styp = TopAbs_SHAPE);
 
-		/****************** ShapeFix_ShapeTolerance ******************/
-		%feature("compactdefaultargs") ShapeFix_ShapeTolerance;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeFix_ShapeTolerance;
-		 ShapeFix_ShapeTolerance();
-
 };
 
 
@@ -1308,6 +1308,16 @@ None
 ***************************/
 class ShapeFix_SplitTool {
 	public:
+		/****************** ShapeFix_SplitTool ******************/
+		%feature("compactdefaultargs") ShapeFix_SplitTool;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeFix_SplitTool;
+		 ShapeFix_SplitTool();
+
 		/****************** CutEdge ******************/
 		%feature("compactdefaultargs") CutEdge;
 		%feature("autodoc", "Cut edge by parameters pend and cut.
@@ -1325,16 +1335,6 @@ Returns
 bool
 ") CutEdge;
 		Standard_Boolean CutEdge(const TopoDS_Edge & edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face & face, Standard_Boolean &OutValue);
-
-		/****************** ShapeFix_SplitTool ******************/
-		%feature("compactdefaultargs") ShapeFix_SplitTool;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeFix_SplitTool;
-		 ShapeFix_SplitTool();
 
 		/****************** SplitEdge ******************/
 		%feature("compactdefaultargs") SplitEdge;
@@ -1420,6 +1420,16 @@ bool
 ****************************/
 class ShapeFix_WireVertex {
 	public:
+		/****************** ShapeFix_WireVertex ******************/
+		%feature("compactdefaultargs") ShapeFix_WireVertex;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeFix_WireVertex;
+		 ShapeFix_WireVertex();
+
 		/****************** Analyzer ******************/
 		%feature("compactdefaultargs") Analyzer;
 		%feature("autodoc", "Returns internal analyzer.
@@ -1494,16 +1504,6 @@ None
 ") Init;
 		void Init(const ShapeAnalysis_WireVertex & sawv);
 
-		/****************** ShapeFix_WireVertex ******************/
-		%feature("compactdefaultargs") ShapeFix_WireVertex;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeFix_WireVertex;
-		 ShapeFix_WireVertex();
-
 		/****************** Wire ******************/
 		%feature("compactdefaultargs") Wire;
 		%feature("autodoc", "Returns resulting wire (fixed).
@@ -1538,6 +1538,16 @@ opencascade::handle<ShapeExtend_WireData>
 ******************************/
 class ShapeFix_ComposeShell : public ShapeFix_Root {
 	public:
+		/****************** ShapeFix_ComposeShell ******************/
+		%feature("compactdefaultargs") ShapeFix_ComposeShell;
+		%feature("autodoc", "Creates empty tool.
+
+Returns
+-------
+None
+") ShapeFix_ComposeShell;
+		 ShapeFix_ComposeShell();
+
 
         %feature("autodoc","1");
         %extend {
@@ -1627,16 +1637,6 @@ None
 ") SetTransferParamTool;
 		void SetTransferParamTool(const opencascade::handle<ShapeAnalysis_TransferParameters> & TransferParam);
 
-		/****************** ShapeFix_ComposeShell ******************/
-		%feature("compactdefaultargs") ShapeFix_ComposeShell;
-		%feature("autodoc", "Creates empty tool.
-
-Returns
--------
-None
-") ShapeFix_ComposeShell;
-		 ShapeFix_ComposeShell();
-
 		/****************** SplitEdges ******************/
 		%feature("compactdefaultargs") SplitEdges;
 		%feature("autodoc", "Splits edges in the original shape by grid. this is a part of perform() which does not produce any resulting shape; the only result is filled context where splittings are recorded. //! note: if edge is splitted, it is replaced by wire, and order of edges in the wire corresponds to forward orientation of the edge.
@@ -1677,6 +1677,30 @@ bool
 **********************/
 class ShapeFix_Face : public ShapeFix_Root {
 	public:
+		/****************** ShapeFix_Face ******************/
+		%feature("compactdefaultargs") ShapeFix_Face;
+		%feature("autodoc", "Creates an empty tool.
+
+Returns
+-------
+None
+") ShapeFix_Face;
+		 ShapeFix_Face();
+
+		/****************** ShapeFix_Face ******************/
+		%feature("compactdefaultargs") ShapeFix_Face;
+		%feature("autodoc", "Creates a tool and loads a face.
+
+Parameters
+----------
+face: TopoDS_Face
+
+Returns
+-------
+None
+") ShapeFix_Face;
+		 ShapeFix_Face(const TopoDS_Face & face);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add a wire to current face using brep_builder. wire is added without taking into account orientation of face (as if face were forward).
@@ -2104,30 +2128,6 @@ None
 ") SetPrecision;
 		virtual void SetPrecision(const Standard_Real preci);
 
-		/****************** ShapeFix_Face ******************/
-		%feature("compactdefaultargs") ShapeFix_Face;
-		%feature("autodoc", "Creates an empty tool.
-
-Returns
--------
-None
-") ShapeFix_Face;
-		 ShapeFix_Face();
-
-		/****************** ShapeFix_Face ******************/
-		%feature("compactdefaultargs") ShapeFix_Face;
-		%feature("autodoc", "Creates a tool and loads a face.
-
-Parameters
-----------
-face: TopoDS_Face
-
-Returns
--------
-None
-") ShapeFix_Face;
-		 ShapeFix_Face(const TopoDS_Face & face);
-
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
 		%feature("autodoc", "Returns the status of last call to perform() shapeextend_ok : face was ok, nothing done shapeextend_done1: some wires are fixed shapeextend_done2: orientation of wires fixed shapeextend_done3: missing seam added shapeextend_done4: small area wire removed shapeextend_done5: natural bounds added shapeextend_done8: face may be splited shapeextend_fail1: some fails during fixing wires shapeextend_fail2: cannot fix orientation of wires shapeextend_fail3: cannot add missing seam shapeextend_fail4: cannot remove small area wire.
@@ -2158,6 +2158,16 @@ bool
 ******************************/
 class ShapeFix_FixSmallFace : public ShapeFix_Root {
 	public:
+		/****************** ShapeFix_FixSmallFace ******************/
+		%feature("compactdefaultargs") ShapeFix_FixSmallFace;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeFix_FixSmallFace;
+		 ShapeFix_FixSmallFace();
+
 		/****************** ComputeSharedEdgeForStripFace ******************/
 		%feature("compactdefaultargs") ComputeSharedEdgeForStripFace;
 		%feature("autodoc", "Compute average edge for strip face.
@@ -2347,16 +2357,6 @@ TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
 
-		/****************** ShapeFix_FixSmallFace ******************/
-		%feature("compactdefaultargs") ShapeFix_FixSmallFace;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeFix_FixSmallFace;
-		 ShapeFix_FixSmallFace();
-
 		/****************** SplitOneFace ******************/
 		%feature("compactdefaultargs") SplitOneFace;
 		%feature("autodoc", "Compute data for face splitting.
@@ -2388,6 +2388,16 @@ bool
 *******************************/
 class ShapeFix_FixSmallSolid : public ShapeFix_Root {
 	public:
+		/****************** ShapeFix_FixSmallSolid ******************/
+		%feature("compactdefaultargs") ShapeFix_FixSmallSolid;
+		%feature("autodoc", "Construct.
+
+Returns
+-------
+None
+") ShapeFix_FixSmallSolid;
+		 ShapeFix_FixSmallSolid();
+
 		/****************** Merge ******************/
 		%feature("compactdefaultargs") Merge;
 		%feature("autodoc", "Merge small solids in the given shape to adjacent non-small ones.
@@ -2462,16 +2472,6 @@ None
 ") SetWidthFactorThreshold;
 		void SetWidthFactorThreshold(const Standard_Real theThreshold = -1.0);
 
-		/****************** ShapeFix_FixSmallSolid ******************/
-		%feature("compactdefaultargs") ShapeFix_FixSmallSolid;
-		%feature("autodoc", "Construct.
-
-Returns
--------
-None
-") ShapeFix_FixSmallSolid;
-		 ShapeFix_FixSmallSolid();
-
 };
 
 
@@ -2488,6 +2488,30 @@ None
 ***********************/
 class ShapeFix_Shape : public ShapeFix_Root {
 	public:
+		/****************** ShapeFix_Shape ******************/
+		%feature("compactdefaultargs") ShapeFix_Shape;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeFix_Shape;
+		 ShapeFix_Shape();
+
+		/****************** ShapeFix_Shape ******************/
+		%feature("compactdefaultargs") ShapeFix_Shape;
+		%feature("autodoc", "Initislises by shape.
+
+Parameters
+----------
+shape: TopoDS_Shape
+
+Returns
+-------
+None
+") ShapeFix_Shape;
+		 ShapeFix_Shape(const TopoDS_Shape & shape);
+
 		/****************** FixEdgeTool ******************/
 		%feature("compactdefaultargs") FixEdgeTool;
 		%feature("autodoc", "Returns tool for fixing edges.
@@ -2724,30 +2748,6 @@ TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
 
-		/****************** ShapeFix_Shape ******************/
-		%feature("compactdefaultargs") ShapeFix_Shape;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeFix_Shape;
-		 ShapeFix_Shape();
-
-		/****************** ShapeFix_Shape ******************/
-		%feature("compactdefaultargs") ShapeFix_Shape;
-		%feature("autodoc", "Initislises by shape.
-
-Parameters
-----------
-shape: TopoDS_Shape
-
-Returns
--------
-None
-") ShapeFix_Shape;
-		 ShapeFix_Shape(const TopoDS_Shape & shape);
-
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
 		%feature("autodoc", "Returns the status of the last fix. this can be a combination of the following flags: shapeextend_done1: some free edges were fixed shapeextend_done2: some free wires were fixed shapeextend_done3: some free faces were fixed shapeextend_done4: some free shells were fixed shapeextend_done5: some free solids were fixed shapeextend_done6: shapes in compound(s) were fixed.
@@ -2778,6 +2778,30 @@ bool
 ***********************/
 class ShapeFix_Shell : public ShapeFix_Root {
 	public:
+		/****************** ShapeFix_Shell ******************/
+		%feature("compactdefaultargs") ShapeFix_Shell;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeFix_Shell;
+		 ShapeFix_Shell();
+
+		/****************** ShapeFix_Shell ******************/
+		%feature("compactdefaultargs") ShapeFix_Shell;
+		%feature("autodoc", "Initializes by shell.
+
+Parameters
+----------
+shape: TopoDS_Shell
+
+Returns
+-------
+None
+") ShapeFix_Shell;
+		 ShapeFix_Shell(const TopoDS_Shell & shape);
+
 		/****************** ErrorFaces ******************/
 		%feature("compactdefaultargs") ErrorFaces;
 		%feature("autodoc", "Returns not oriented subset of faces.
@@ -2961,30 +2985,6 @@ TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
 
-		/****************** ShapeFix_Shell ******************/
-		%feature("compactdefaultargs") ShapeFix_Shell;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeFix_Shell;
-		 ShapeFix_Shell();
-
-		/****************** ShapeFix_Shell ******************/
-		%feature("compactdefaultargs") ShapeFix_Shell;
-		%feature("autodoc", "Initializes by shell.
-
-Parameters
-----------
-shape: TopoDS_Shell
-
-Returns
--------
-None
-") ShapeFix_Shell;
-		 ShapeFix_Shell(const TopoDS_Shell & shape);
-
 		/****************** Shell ******************/
 		%feature("compactdefaultargs") Shell;
 		%feature("autodoc", "Returns fixed shell (or subset of oriented faces).
@@ -3025,6 +3025,30 @@ bool
 ***********************/
 class ShapeFix_Solid : public ShapeFix_Root {
 	public:
+		/****************** ShapeFix_Solid ******************/
+		%feature("compactdefaultargs") ShapeFix_Solid;
+		%feature("autodoc", "Empty constructor;.
+
+Returns
+-------
+None
+") ShapeFix_Solid;
+		 ShapeFix_Solid();
+
+		/****************** ShapeFix_Solid ******************/
+		%feature("compactdefaultargs") ShapeFix_Solid;
+		%feature("autodoc", "Initializes by solid.
+
+Parameters
+----------
+solid: TopoDS_Solid
+
+Returns
+-------
+None
+") ShapeFix_Solid;
+		 ShapeFix_Solid(const TopoDS_Solid & solid);
+
 
         %feature("autodoc","1");
         %extend {
@@ -3169,30 +3193,6 @@ TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
 
-		/****************** ShapeFix_Solid ******************/
-		%feature("compactdefaultargs") ShapeFix_Solid;
-		%feature("autodoc", "Empty constructor;.
-
-Returns
--------
-None
-") ShapeFix_Solid;
-		 ShapeFix_Solid();
-
-		/****************** ShapeFix_Solid ******************/
-		%feature("compactdefaultargs") ShapeFix_Solid;
-		%feature("autodoc", "Initializes by solid.
-
-Parameters
-----------
-solid: TopoDS_Solid
-
-Returns
--------
-None
-") ShapeFix_Solid;
-		 ShapeFix_Solid(const TopoDS_Solid & solid);
-
 		/****************** Solid ******************/
 		%feature("compactdefaultargs") Solid;
 		%feature("autodoc", "Returns resulting solid.
@@ -3247,6 +3247,16 @@ bool
 ***********************************/
 class ShapeFix_SplitCommonVertex : public ShapeFix_Root {
 	public:
+		/****************** ShapeFix_SplitCommonVertex ******************/
+		%feature("compactdefaultargs") ShapeFix_SplitCommonVertex;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeFix_SplitCommonVertex;
+		 ShapeFix_SplitCommonVertex();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3281,16 +3291,6 @@ TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
 
-		/****************** ShapeFix_SplitCommonVertex ******************/
-		%feature("compactdefaultargs") ShapeFix_SplitCommonVertex;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeFix_SplitCommonVertex;
-		 ShapeFix_SplitCommonVertex();
-
 };
 
 
@@ -3307,6 +3307,32 @@ None
 **********************/
 class ShapeFix_Wire : public ShapeFix_Root {
 	public:
+		/****************** ShapeFix_Wire ******************/
+		%feature("compactdefaultargs") ShapeFix_Wire;
+		%feature("autodoc", "Empty constructor, creates clear object with default flags.
+
+Returns
+-------
+None
+") ShapeFix_Wire;
+		 ShapeFix_Wire();
+
+		/****************** ShapeFix_Wire ******************/
+		%feature("compactdefaultargs") ShapeFix_Wire;
+		%feature("autodoc", "Create new object with default flags and prepare it for use (loads analyzer with all the data for the wire and face).
+
+Parameters
+----------
+wire: TopoDS_Wire
+face: TopoDS_Face
+prec: float
+
+Returns
+-------
+None
+") ShapeFix_Wire;
+		 ShapeFix_Wire(const TopoDS_Wire & wire, const TopoDS_Face & face, const Standard_Real prec);
+
 		/****************** Analyzer ******************/
 		%feature("compactdefaultargs") Analyzer;
 		%feature("autodoc", "Returns field analyzer (working tool).
@@ -4203,32 +4229,6 @@ None
 ") SetSurface;
 		void SetSurface(const opencascade::handle<Geom_Surface> & surf, const TopLoc_Location & loc);
 
-		/****************** ShapeFix_Wire ******************/
-		%feature("compactdefaultargs") ShapeFix_Wire;
-		%feature("autodoc", "Empty constructor, creates clear object with default flags.
-
-Returns
--------
-None
-") ShapeFix_Wire;
-		 ShapeFix_Wire();
-
-		/****************** ShapeFix_Wire ******************/
-		%feature("compactdefaultargs") ShapeFix_Wire;
-		%feature("autodoc", "Create new object with default flags and prepare it for use (loads analyzer with all the data for the wire and face).
-
-Parameters
-----------
-wire: TopoDS_Wire
-face: TopoDS_Face
-prec: float
-
-Returns
--------
-None
-") ShapeFix_Wire;
-		 ShapeFix_Wire(const TopoDS_Wire & wire, const TopoDS_Face & face, const Standard_Real prec);
-
 		/****************** StatusClosed ******************/
 		%feature("compactdefaultargs") StatusClosed;
 		%feature("autodoc", "No available documentation.
@@ -4453,6 +4453,30 @@ opencascade::handle<ShapeExtend_WireData>
 ***************************/
 class ShapeFix_Wireframe : public ShapeFix_Root {
 	public:
+		/****************** ShapeFix_Wireframe ******************/
+		%feature("compactdefaultargs") ShapeFix_Wireframe;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeFix_Wireframe;
+		 ShapeFix_Wireframe();
+
+		/****************** ShapeFix_Wireframe ******************/
+		%feature("compactdefaultargs") ShapeFix_Wireframe;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+shape: TopoDS_Shape
+
+Returns
+-------
+None
+") ShapeFix_Wireframe;
+		 ShapeFix_Wireframe(const TopoDS_Shape & shape);
+
 		/****************** CheckSmallEdges ******************/
 		%feature("compactdefaultargs") CheckSmallEdges;
 		%feature("autodoc", "Auxiliary tool for fixsmalledges which checks for small edges and fills the maps. returns true if at least one small edge has been found.
@@ -4581,30 +4605,6 @@ Returns
 TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
-
-		/****************** ShapeFix_Wireframe ******************/
-		%feature("compactdefaultargs") ShapeFix_Wireframe;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeFix_Wireframe;
-		 ShapeFix_Wireframe();
-
-		/****************** ShapeFix_Wireframe ******************/
-		%feature("compactdefaultargs") ShapeFix_Wireframe;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-shape: TopoDS_Shape
-
-Returns
--------
-None
-") ShapeFix_Wireframe;
-		 ShapeFix_Wireframe(const TopoDS_Shape & shape);
 
 		/****************** StatusSmallEdges ******************/
 		%feature("compactdefaultargs") StatusSmallEdges;

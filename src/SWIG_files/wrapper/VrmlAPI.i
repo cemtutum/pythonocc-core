@@ -145,6 +145,16 @@ bool
 ***********************/
 class VrmlAPI_Writer {
 	public:
+		/****************** VrmlAPI_Writer ******************/
+		%feature("compactdefaultargs") VrmlAPI_Writer;
+		%feature("autodoc", "Creates a writer object with default parameters.
+
+Returns
+-------
+None
+") VrmlAPI_Writer;
+		 VrmlAPI_Writer();
+
 		/****************** Drawer ******************/
 		%feature("compactdefaultargs") Drawer;
 		%feature("autodoc", "Returns drawer object.
@@ -372,16 +382,6 @@ Returns
 None
 ") SetTransparencyToMaterial;
 		void SetTransparencyToMaterial(opencascade::handle<Vrml_Material> & aMaterial, const Standard_Real aTransparency);
-
-		/****************** VrmlAPI_Writer ******************/
-		%feature("compactdefaultargs") VrmlAPI_Writer;
-		%feature("autodoc", "Creates a writer object with default parameters.
-
-Returns
--------
-None
-") VrmlAPI_Writer;
-		 VrmlAPI_Writer();
 
 		/****************** Write ******************/
 		%feature("compactdefaultargs") Write;

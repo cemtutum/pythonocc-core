@@ -127,18 +127,18 @@ class TFunction_ExecutionStatus:
     }
 };
 %template(TFunction_DataMapOfGUIDDriver) NCollection_DataMap<Standard_GUID,opencascade::handle<TFunction_Driver>,Standard_GUID>;
-%template(TFunction_DoubleMapOfIntegerLabel) NCollection_DoubleMap<Standard_Integer,TDF_Label,TColStd_MapIntegerHasher,TDF_LabelMapHasher>;
 %template(TFunction_DataMapOfLabelListOfLabel) NCollection_DataMap<TDF_Label,TDF_LabelList,TDF_LabelMapHasher>;
+%template(TFunction_DoubleMapOfIntegerLabel) NCollection_DoubleMap<Standard_Integer,TDF_Label,TColStd_MapIntegerHasher,TDF_LabelMapHasher>;
 /* end templates declaration */
 
 /* typedefs */
 typedef NCollection_Array1<TFunction_DataMapOfGUIDDriver> TFunction_Array1OfDataMapOfGUIDDriver;
-typedef NCollection_DataMap<Standard_GUID, opencascade::handle<TFunction_Driver>, Standard_GUID> TFunction_DataMapOfGUIDDriver;
 typedef NCollection_DataMap<Standard_GUID, opencascade::handle<TFunction_Driver>, Standard_GUID>::Iterator TFunction_DataMapIteratorOfDataMapOfGUIDDriver;
-typedef NCollection_DoubleMap<Standard_Integer, TDF_Label, TColStd_MapIntegerHasher, TDF_LabelMapHasher> TFunction_DoubleMapOfIntegerLabel;
-typedef NCollection_DoubleMap<Standard_Integer, TDF_Label, TColStd_MapIntegerHasher, TDF_LabelMapHasher>::Iterator TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel;
-typedef NCollection_DataMap<TDF_Label, TDF_LabelList, TDF_LabelMapHasher> TFunction_DataMapOfLabelListOfLabel;
 typedef NCollection_DataMap<TDF_Label, TDF_LabelList, TDF_LabelMapHasher>::Iterator TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel;
+typedef NCollection_DataMap<Standard_GUID, opencascade::handle<TFunction_Driver>, Standard_GUID> TFunction_DataMapOfGUIDDriver;
+typedef NCollection_DataMap<TDF_Label, TDF_LabelList, TDF_LabelMapHasher> TFunction_DataMapOfLabelListOfLabel;
+typedef NCollection_DoubleMap<Standard_Integer, TDF_Label, TColStd_MapIntegerHasher, TDF_LabelMapHasher>::Iterator TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel;
+typedef NCollection_DoubleMap<Standard_Integer, TDF_Label, TColStd_MapIntegerHasher, TDF_LabelMapHasher> TFunction_DoubleMapOfIntegerLabel;
 /* end typedefs declaration */
 
 /*************************
@@ -257,6 +257,16 @@ None
 ******************************/
 class TFunction_DriverTable : public Standard_Transient {
 	public:
+		/****************** TFunction_DriverTable ******************/
+		%feature("compactdefaultargs") TFunction_DriverTable;
+		%feature("autodoc", "Default constructor.
+
+Returns
+-------
+None
+") TFunction_DriverTable;
+		 TFunction_DriverTable();
+
 		/****************** AddDriver ******************/
 		%feature("compactdefaultargs") AddDriver;
 		%feature("autodoc", "Returns true if the driver has been added successfully to the driver table.
@@ -351,16 +361,6 @@ bool
 ") RemoveDriver;
 		Standard_Boolean RemoveDriver(const Standard_GUID & guid, const Standard_Integer thread = 0);
 
-		/****************** TFunction_DriverTable ******************/
-		%feature("compactdefaultargs") TFunction_DriverTable;
-		%feature("autodoc", "Default constructor.
-
-Returns
--------
-None
-") TFunction_DriverTable;
-		 TFunction_DriverTable();
-
 };
 
 
@@ -377,6 +377,16 @@ None
 ***************************/
 class TFunction_Function : public TDF_Attribute {
 	public:
+		/****************** TFunction_Function ******************/
+		%feature("compactdefaultargs") TFunction_Function;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TFunction_Function;
+		 TFunction_Function();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -546,16 +556,6 @@ None
 ") SetFailure;
 		void SetFailure(const Standard_Integer mode = 0);
 
-		/****************** TFunction_Function ******************/
-		%feature("compactdefaultargs") TFunction_Function;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TFunction_Function;
-		 TFunction_Function();
-
 };
 
 
@@ -572,6 +572,16 @@ None
 ****************************/
 class TFunction_GraphNode : public TDF_Attribute {
 	public:
+		/****************** TFunction_GraphNode ******************/
+		%feature("compactdefaultargs") TFunction_GraphNode;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TFunction_GraphNode;
+		 TFunction_GraphNode();
+
 		/****************** AddNext ******************/
 		%feature("compactdefaultargs") AddNext;
 		%feature("autodoc", "Defines a reference to the function as a next one.
@@ -843,16 +853,6 @@ None
 ") SetStatus;
 		void SetStatus(const TFunction_ExecutionStatus status);
 
-		/****************** TFunction_GraphNode ******************/
-		%feature("compactdefaultargs") TFunction_GraphNode;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TFunction_GraphNode;
-		 TFunction_GraphNode();
-
 };
 
 
@@ -869,6 +869,30 @@ None
 ****************************/
 class TFunction_IFunction {
 	public:
+		/****************** TFunction_IFunction ******************/
+		%feature("compactdefaultargs") TFunction_IFunction;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TFunction_IFunction;
+		 TFunction_IFunction();
+
+		/****************** TFunction_IFunction ******************/
+		%feature("compactdefaultargs") TFunction_IFunction;
+		%feature("autodoc", "A constructor. initializes the interface by the label of function.
+
+Parameters
+----------
+L: TDF_Label
+
+Returns
+-------
+None
+") TFunction_IFunction;
+		 TFunction_IFunction(const TDF_Label & L);
+
 		/****************** Arguments ******************/
 		%feature("compactdefaultargs") Arguments;
 		%feature("autodoc", "The method fills-in the list by labels, where the arguments of the function are located.
@@ -1047,30 +1071,6 @@ None
 ") SetStatus;
 		void SetStatus(const TFunction_ExecutionStatus status);
 
-		/****************** TFunction_IFunction ******************/
-		%feature("compactdefaultargs") TFunction_IFunction;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TFunction_IFunction;
-		 TFunction_IFunction();
-
-		/****************** TFunction_IFunction ******************/
-		%feature("compactdefaultargs") TFunction_IFunction;
-		%feature("autodoc", "A constructor. initializes the interface by the label of function.
-
-Parameters
-----------
-L: TDF_Label
-
-Returns
--------
-None
-") TFunction_IFunction;
-		 TFunction_IFunction(const TDF_Label & L);
-
 		/****************** UpdateDependencies ******************/
 		%feature("compactdefaultargs") UpdateDependencies;
 		%feature("autodoc", "Updates dependencies for all functions of the scope. it returns false in case of an error. an empty constructor.
@@ -1109,6 +1109,30 @@ bool
 ***************************/
 class TFunction_Iterator {
 	public:
+		/****************** TFunction_Iterator ******************/
+		%feature("compactdefaultargs") TFunction_Iterator;
+		%feature("autodoc", "An empty constructor.
+
+Returns
+-------
+None
+") TFunction_Iterator;
+		 TFunction_Iterator();
+
+		/****************** TFunction_Iterator ******************/
+		%feature("compactdefaultargs") TFunction_Iterator;
+		%feature("autodoc", "A constructor. initializes the iterator.
+
+Parameters
+----------
+Access: TDF_Label
+
+Returns
+-------
+None
+") TFunction_Iterator;
+		 TFunction_Iterator(const TDF_Label & Access);
+
 		/****************** Current ******************/
 		%feature("compactdefaultargs") Current;
 		%feature("autodoc", "Returns the current list of functions. if the iterator uses the execution status, the returned list contains only the functions with 'not executed' status.
@@ -1224,30 +1248,6 @@ None
 ") SetUsageOfExecutionStatus;
 		void SetUsageOfExecutionStatus(const Standard_Boolean usage);
 
-		/****************** TFunction_Iterator ******************/
-		%feature("compactdefaultargs") TFunction_Iterator;
-		%feature("autodoc", "An empty constructor.
-
-Returns
--------
-None
-") TFunction_Iterator;
-		 TFunction_Iterator();
-
-		/****************** TFunction_Iterator ******************/
-		%feature("compactdefaultargs") TFunction_Iterator;
-		%feature("autodoc", "A constructor. initializes the iterator.
-
-Parameters
-----------
-Access: TDF_Label
-
-Returns
--------
-None
-") TFunction_Iterator;
-		 TFunction_Iterator(const TDF_Label & Access);
-
 };
 
 
@@ -1262,6 +1262,16 @@ None
 **************************/
 class TFunction_Logbook : public TDF_Attribute {
 	public:
+		/****************** TFunction_Logbook ******************/
+		%feature("compactdefaultargs") TFunction_Logbook;
+		%feature("autodoc", "Constructor (empty).
+
+Returns
+-------
+None
+") TFunction_Logbook;
+		 TFunction_Logbook();
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears this logbook to its default, empty state.
@@ -1507,16 +1517,6 @@ None
 ") SetValid;
 		void SetValid(const TDF_LabelMap & Ls);
 
-		/****************** TFunction_Logbook ******************/
-		%feature("compactdefaultargs") TFunction_Logbook;
-		%feature("autodoc", "Constructor (empty).
-
-Returns
--------
-None
-") TFunction_Logbook;
-		 TFunction_Logbook();
-
 };
 
 
@@ -1533,6 +1533,16 @@ None
 ************************/
 class TFunction_Scope : public TDF_Attribute {
 	public:
+		/****************** TFunction_Scope ******************/
+		%feature("compactdefaultargs") TFunction_Scope;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TFunction_Scope;
+		 TFunction_Scope();
+
 		/****************** AddFunction ******************/
 		%feature("compactdefaultargs") AddFunction;
 		%feature("autodoc", "Adds a function to the scope of functions.
@@ -1775,16 +1785,6 @@ Returns
 None
 ") SetFreeID;
 		void SetFreeID(const Standard_Integer ID);
-
-		/****************** TFunction_Scope ******************/
-		%feature("compactdefaultargs") TFunction_Scope;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TFunction_Scope;
-		 TFunction_Scope();
 
 };
 

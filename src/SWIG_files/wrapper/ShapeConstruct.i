@@ -394,26 +394,6 @@ bool
 *****************************************/
 class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
 	public:
-		/****************** Build ******************/
-		%feature("compactdefaultargs") Build;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Build;
-		virtual void Build();
-
-		/****************** IsDone ******************/
-		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-bool
-") IsDone;
-		virtual Standard_Boolean IsDone();
-
 		/****************** ShapeConstruct_MakeTriangulation ******************/
 		%feature("compactdefaultargs") ShapeConstruct_MakeTriangulation;
 		%feature("autodoc", "No available documentation.
@@ -446,6 +426,26 @@ None
 ") ShapeConstruct_MakeTriangulation;
 		 ShapeConstruct_MakeTriangulation(const TopoDS_Wire & wire, const Standard_Real prec = 0.0);
 
+		/****************** Build ******************/
+		%feature("compactdefaultargs") Build;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Build;
+		virtual void Build();
+
+		/****************** IsDone ******************/
+		%feature("compactdefaultargs") IsDone;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
+") IsDone;
+		virtual Standard_Boolean IsDone();
+
 };
 
 
@@ -460,6 +460,16 @@ None
 *********************************************/
 class ShapeConstruct_ProjectCurveOnSurface : public Standard_Transient {
 	public:
+		/****************** ShapeConstruct_ProjectCurveOnSurface ******************/
+		%feature("compactdefaultargs") ShapeConstruct_ProjectCurveOnSurface;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeConstruct_ProjectCurveOnSurface;
+		 ShapeConstruct_ProjectCurveOnSurface();
+
 
         %feature("autodoc","1");
         %extend {
@@ -601,16 +611,6 @@ Returns
 None
 ") SetSurface;
 		void SetSurface(const opencascade::handle<ShapeAnalysis_Surface> & surf);
-
-		/****************** ShapeConstruct_ProjectCurveOnSurface ******************/
-		%feature("compactdefaultargs") ShapeConstruct_ProjectCurveOnSurface;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeConstruct_ProjectCurveOnSurface;
-		 ShapeConstruct_ProjectCurveOnSurface();
 
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;

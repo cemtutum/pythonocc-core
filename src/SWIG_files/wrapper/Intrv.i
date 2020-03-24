@@ -108,6 +108,48 @@ typedef NCollection_Sequence<Intrv_Interval> Intrv_SequenceOfInterval;
 ***********************/
 class Intrv_Interval {
 	public:
+		/****************** Intrv_Interval ******************/
+		%feature("compactdefaultargs") Intrv_Interval;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Intrv_Interval;
+		 Intrv_Interval();
+
+		/****************** Intrv_Interval ******************/
+		%feature("compactdefaultargs") Intrv_Interval;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Start: float
+End: float
+
+Returns
+-------
+None
+") Intrv_Interval;
+		 Intrv_Interval(const Standard_Real Start, const Standard_Real End);
+
+		/****************** Intrv_Interval ******************/
+		%feature("compactdefaultargs") Intrv_Interval;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Start: float
+TolStart: Standard_ShortReal
+End: float
+TolEnd: Standard_ShortReal
+
+Returns
+-------
+None
+") Intrv_Interval;
+		 Intrv_Interval(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "No available documentation.
@@ -194,48 +236,6 @@ Returns
 None
 ") FuseAtStart;
 		void FuseAtStart(const Standard_Real Start, const Standard_ShortReal TolStart);
-
-		/****************** Intrv_Interval ******************/
-		%feature("compactdefaultargs") Intrv_Interval;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Intrv_Interval;
-		 Intrv_Interval();
-
-		/****************** Intrv_Interval ******************/
-		%feature("compactdefaultargs") Intrv_Interval;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Start: float
-End: float
-
-Returns
--------
-None
-") Intrv_Interval;
-		 Intrv_Interval(const Standard_Real Start, const Standard_Real End);
-
-		/****************** Intrv_Interval ******************/
-		%feature("compactdefaultargs") Intrv_Interval;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Start: float
-TolStart: Standard_ShortReal
-End: float
-TolEnd: Standard_ShortReal
-
-Returns
--------
-None
-") Intrv_Interval;
-		 Intrv_Interval(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
 
 		/****************** IsAfter ******************/
 		%feature("compactdefaultargs") IsAfter;
@@ -517,34 +517,6 @@ Standard_ShortReal
 ************************/
 class Intrv_Intervals {
 	public:
-		/****************** Intersect ******************/
-		%feature("compactdefaultargs") Intersect;
-		%feature("autodoc", "Intersects the intervals with the interval <tool>.
-
-Parameters
-----------
-Tool: Intrv_Interval
-
-Returns
--------
-None
-") Intersect;
-		void Intersect(const Intrv_Interval & Tool);
-
-		/****************** Intersect ******************/
-		%feature("compactdefaultargs") Intersect;
-		%feature("autodoc", "Intersects the intervals with the intervals in the sequence <tool>.
-
-Parameters
-----------
-Tool: Intrv_Intervals
-
-Returns
--------
-None
-") Intersect;
-		void Intersect(const Intrv_Intervals & Tool);
-
 		/****************** Intrv_Intervals ******************/
 		%feature("compactdefaultargs") Intrv_Intervals;
 		%feature("autodoc", "Creates a void sequence of intervals.
@@ -582,6 +554,34 @@ Returns
 None
 ") Intrv_Intervals;
 		 Intrv_Intervals(const Intrv_Intervals & Int);
+
+		/****************** Intersect ******************/
+		%feature("compactdefaultargs") Intersect;
+		%feature("autodoc", "Intersects the intervals with the interval <tool>.
+
+Parameters
+----------
+Tool: Intrv_Interval
+
+Returns
+-------
+None
+") Intersect;
+		void Intersect(const Intrv_Interval & Tool);
+
+		/****************** Intersect ******************/
+		%feature("compactdefaultargs") Intersect;
+		%feature("autodoc", "Intersects the intervals with the intervals in the sequence <tool>.
+
+Parameters
+----------
+Tool: Intrv_Intervals
+
+Returns
+-------
+None
+") Intersect;
+		void Intersect(const Intrv_Intervals & Tool);
 
 		/****************** NbIntervals ******************/
 		%feature("compactdefaultargs") NbIntervals;

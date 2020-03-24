@@ -293,44 +293,9 @@ class StepDimTol_GeometricToleranceModifier:
 /* end handles declaration */
 
 /* templates */
-%template(StepDimTol_Array1OfToleranceZoneTarget) NCollection_Array1<StepDimTol_ToleranceZoneTarget>;
+%template(StepDimTol_Array1OfDatumReference) NCollection_Array1<opencascade::handle<StepDimTol_DatumReference>>;
 
-%extend NCollection_Array1<StepDimTol_ToleranceZoneTarget> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepDimTol_Array1OfGeometricToleranceModifier) NCollection_Array1<StepDimTol_GeometricToleranceModifier>;
-
-%extend NCollection_Array1<StepDimTol_GeometricToleranceModifier> {
+%extend NCollection_Array1<opencascade::handle<StepDimTol_DatumReference>> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -433,41 +398,6 @@ class StepDimTol_GeometricToleranceModifier:
     __next__ = next
     }
 };
-%template(StepDimTol_Array1OfDatumSystemOrReference) NCollection_Array1<StepDimTol_DatumSystemOrReference>;
-
-%extend NCollection_Array1<StepDimTol_DatumSystemOrReference> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
 %template(StepDimTol_Array1OfDatumReferenceModifier) NCollection_Array1<StepDimTol_DatumReferenceModifier>;
 
 %extend NCollection_Array1<StepDimTol_DatumReferenceModifier> {
@@ -503,9 +433,79 @@ class StepDimTol_GeometricToleranceModifier:
     __next__ = next
     }
 };
-%template(StepDimTol_Array1OfDatumReference) NCollection_Array1<opencascade::handle<StepDimTol_DatumReference>>;
+%template(StepDimTol_Array1OfDatumSystemOrReference) NCollection_Array1<StepDimTol_DatumSystemOrReference>;
 
-%extend NCollection_Array1<opencascade::handle<StepDimTol_DatumReference>> {
+%extend NCollection_Array1<StepDimTol_DatumSystemOrReference> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepDimTol_Array1OfGeometricToleranceModifier) NCollection_Array1<StepDimTol_GeometricToleranceModifier>;
+
+%extend NCollection_Array1<StepDimTol_GeometricToleranceModifier> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepDimTol_Array1OfToleranceZoneTarget) NCollection_Array1<StepDimTol_ToleranceZoneTarget>;
+
+%extend NCollection_Array1<StepDimTol_ToleranceZoneTarget> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -541,13 +541,13 @@ class StepDimTol_GeometricToleranceModifier:
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Array1<StepDimTol_ToleranceZoneTarget> StepDimTol_Array1OfToleranceZoneTarget;
-typedef NCollection_Array1<StepDimTol_GeometricToleranceModifier> StepDimTol_Array1OfGeometricToleranceModifier;
+typedef NCollection_Array1<opencascade::handle<StepDimTol_DatumReference>> StepDimTol_Array1OfDatumReference;
 typedef NCollection_Array1<opencascade::handle<StepDimTol_DatumReferenceCompartment>> StepDimTol_Array1OfDatumReferenceCompartment;
 typedef NCollection_Array1<opencascade::handle<StepDimTol_DatumReferenceElement>> StepDimTol_Array1OfDatumReferenceElement;
-typedef NCollection_Array1<StepDimTol_DatumSystemOrReference> StepDimTol_Array1OfDatumSystemOrReference;
 typedef NCollection_Array1<StepDimTol_DatumReferenceModifier> StepDimTol_Array1OfDatumReferenceModifier;
-typedef NCollection_Array1<opencascade::handle<StepDimTol_DatumReference>> StepDimTol_Array1OfDatumReference;
+typedef NCollection_Array1<StepDimTol_DatumSystemOrReference> StepDimTol_Array1OfDatumSystemOrReference;
+typedef NCollection_Array1<StepDimTol_GeometricToleranceModifier> StepDimTol_Array1OfGeometricToleranceModifier;
+typedef NCollection_Array1<StepDimTol_ToleranceZoneTarget> StepDimTol_Array1OfToleranceZoneTarget;
 /* end typedefs declaration */
 
 /*******************************
@@ -555,6 +555,16 @@ typedef NCollection_Array1<opencascade::handle<StepDimTol_DatumReference>> StepD
 *******************************/
 class StepDimTol_CommonDatum : public StepRepr_CompositeShapeAspect {
 	public:
+		/****************** StepDimTol_CommonDatum ******************/
+		%feature("compactdefaultargs") StepDimTol_CommonDatum;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_CommonDatum;
+		 StepDimTol_CommonDatum();
+
 		/****************** Datum ******************/
 		%feature("compactdefaultargs") Datum;
 		%feature("autodoc", "Returns data for supertype datum.
@@ -601,16 +611,6 @@ None
 ") SetDatum;
 		void SetDatum(const opencascade::handle<StepDimTol_Datum> & theDatum);
 
-		/****************** StepDimTol_CommonDatum ******************/
-		%feature("compactdefaultargs") StepDimTol_CommonDatum;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_CommonDatum;
-		 StepDimTol_CommonDatum();
-
 };
 
 
@@ -627,6 +627,16 @@ None
 *************************/
 class StepDimTol_Datum : public StepRepr_ShapeAspect {
 	public:
+		/****************** StepDimTol_Datum ******************/
+		%feature("compactdefaultargs") StepDimTol_Datum;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_Datum;
+		 StepDimTol_Datum();
+
 		/****************** Identification ******************/
 		%feature("compactdefaultargs") Identification;
 		%feature("autodoc", "Returns field identification.
@@ -668,16 +678,6 @@ Returns
 None
 ") SetIdentification;
 		void SetIdentification(const opencascade::handle<TCollection_HAsciiString> & theIdentification);
-
-		/****************** StepDimTol_Datum ******************/
-		%feature("compactdefaultargs") StepDimTol_Datum;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_Datum;
-		 StepDimTol_Datum();
 
 };
 
@@ -721,6 +721,16 @@ None
 **************************************/
 class StepDimTol_DatumOrCommonDatum : public StepData_SelectType {
 	public:
+		/****************** StepDimTol_DatumOrCommonDatum ******************/
+		%feature("compactdefaultargs") StepDimTol_DatumOrCommonDatum;
+		%feature("autodoc", "Returns a datumorcommondatum select type.
+
+Returns
+-------
+None
+") StepDimTol_DatumOrCommonDatum;
+		 StepDimTol_DatumOrCommonDatum();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a datumorcommondatum kind entity that is : 1 -> datum 2 -> commondatumlist 0 else.
@@ -755,16 +765,6 @@ opencascade::handle<StepDimTol_Datum>
 ") Datum;
 		opencascade::handle<StepDimTol_Datum> Datum();
 
-		/****************** StepDimTol_DatumOrCommonDatum ******************/
-		%feature("compactdefaultargs") StepDimTol_DatumOrCommonDatum;
-		%feature("autodoc", "Returns a datumorcommondatum select type.
-
-Returns
--------
-None
-") StepDimTol_DatumOrCommonDatum;
-		 StepDimTol_DatumOrCommonDatum();
-
 };
 
 
@@ -779,6 +779,16 @@ None
 **********************************/
 class StepDimTol_DatumReference : public Standard_Transient {
 	public:
+		/****************** StepDimTol_DatumReference ******************/
+		%feature("compactdefaultargs") StepDimTol_DatumReference;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_DatumReference;
+		 StepDimTol_DatumReference();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -842,16 +852,6 @@ None
 ") SetReferencedDatum;
 		void SetReferencedDatum(const opencascade::handle<StepDimTol_Datum> & theReferencedDatum);
 
-		/****************** StepDimTol_DatumReference ******************/
-		%feature("compactdefaultargs") StepDimTol_DatumReference;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_DatumReference;
-		 StepDimTol_DatumReference();
-
 };
 
 
@@ -868,6 +868,16 @@ None
 ******************************************/
 class StepDimTol_DatumReferenceModifier : public StepData_SelectType {
 	public:
+		/****************** StepDimTol_DatumReferenceModifier ******************/
+		%feature("compactdefaultargs") StepDimTol_DatumReferenceModifier;
+		%feature("autodoc", "Returns a datumreferencemodifier select type.
+
+Returns
+-------
+None
+") StepDimTol_DatumReferenceModifier;
+		 StepDimTol_DatumReferenceModifier();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a datumreferencemodifier kind entity that is : 1 -> datumreferencemodifierwithvalue 2 -> simpledatumreferencemodifiermember 0 else.
@@ -902,16 +912,6 @@ opencascade::handle<StepDimTol_SimpleDatumReferenceModifierMember>
 ") SimpleDatumReferenceModifierMember;
 		opencascade::handle<StepDimTol_SimpleDatumReferenceModifierMember> SimpleDatumReferenceModifierMember();
 
-		/****************** StepDimTol_DatumReferenceModifier ******************/
-		%feature("compactdefaultargs") StepDimTol_DatumReferenceModifier;
-		%feature("autodoc", "Returns a datumreferencemodifier select type.
-
-Returns
--------
-None
-") StepDimTol_DatumReferenceModifier;
-		 StepDimTol_DatumReferenceModifier();
-
 };
 
 
@@ -926,6 +926,16 @@ None
 ***************************************************/
 class StepDimTol_DatumReferenceModifierWithValue : public Standard_Transient {
 	public:
+		/****************** StepDimTol_DatumReferenceModifierWithValue ******************/
+		%feature("compactdefaultargs") StepDimTol_DatumReferenceModifierWithValue;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_DatumReferenceModifierWithValue;
+		 StepDimTol_DatumReferenceModifierWithValue();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -989,16 +999,6 @@ None
 ") SetModifierValue;
 		void SetModifierValue(const opencascade::handle<StepBasic_LengthMeasureWithUnit> & theModifierValue);
 
-		/****************** StepDimTol_DatumReferenceModifierWithValue ******************/
-		%feature("compactdefaultargs") StepDimTol_DatumReferenceModifierWithValue;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_DatumReferenceModifierWithValue;
-		 StepDimTol_DatumReferenceModifierWithValue();
-
 };
 
 
@@ -1015,6 +1015,16 @@ None
 *******************************/
 class StepDimTol_DatumSystem : public StepRepr_ShapeAspect {
 	public:
+		/****************** StepDimTol_DatumSystem ******************/
+		%feature("compactdefaultargs") StepDimTol_DatumSystem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_DatumSystem;
+		 StepDimTol_DatumSystem();
+
 		/****************** Constituents ******************/
 		%feature("compactdefaultargs") Constituents;
 		%feature("autodoc", "Returns field constituents.
@@ -1096,16 +1106,6 @@ None
 ") SetConstituents;
 		void SetConstituents(const opencascade::handle<StepDimTol_HArray1OfDatumReferenceCompartment> & theConstituents);
 
-		/****************** StepDimTol_DatumSystem ******************/
-		%feature("compactdefaultargs") StepDimTol_DatumSystem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_DatumSystem;
-		 StepDimTol_DatumSystem();
-
 };
 
 
@@ -1122,6 +1122,16 @@ None
 ******************************************/
 class StepDimTol_DatumSystemOrReference : public StepData_SelectType {
 	public:
+		/****************** StepDimTol_DatumSystemOrReference ******************/
+		%feature("compactdefaultargs") StepDimTol_DatumSystemOrReference;
+		%feature("autodoc", "Returns a datumsystemorreference select type.
+
+Returns
+-------
+None
+") StepDimTol_DatumSystemOrReference;
+		 StepDimTol_DatumSystemOrReference();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a datumsystemorreference kind entity that is : 1 -> datumsystem 2 -> datumreference 0 else.
@@ -1156,16 +1166,6 @@ opencascade::handle<StepDimTol_DatumSystem>
 ") DatumSystem;
 		opencascade::handle<StepDimTol_DatumSystem> DatumSystem();
 
-		/****************** StepDimTol_DatumSystemOrReference ******************/
-		%feature("compactdefaultargs") StepDimTol_DatumSystemOrReference;
-		%feature("autodoc", "Returns a datumsystemorreference select type.
-
-Returns
--------
-None
-") StepDimTol_DatumSystemOrReference;
-		 StepDimTol_DatumSystemOrReference();
-
 };
 
 
@@ -1180,6 +1180,16 @@ None
 *******************************/
 class StepDimTol_DatumTarget : public StepRepr_ShapeAspect {
 	public:
+		/****************** StepDimTol_DatumTarget ******************/
+		%feature("compactdefaultargs") StepDimTol_DatumTarget;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_DatumTarget;
+		 StepDimTol_DatumTarget();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -1212,16 +1222,6 @@ None
 ") SetTargetId;
 		void SetTargetId(const opencascade::handle<TCollection_HAsciiString> & theTargetId);
 
-		/****************** StepDimTol_DatumTarget ******************/
-		%feature("compactdefaultargs") StepDimTol_DatumTarget;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_DatumTarget;
-		 StepDimTol_DatumTarget();
-
 		/****************** TargetId ******************/
 		%feature("compactdefaultargs") TargetId;
 		%feature("autodoc", "Returns field targetid.
@@ -1248,6 +1248,16 @@ opencascade::handle<TCollection_HAsciiString>
 *****************************************/
 class StepDimTol_GeneralDatumReference : public StepRepr_ShapeAspect {
 	public:
+		/****************** StepDimTol_GeneralDatumReference ******************/
+		%feature("compactdefaultargs") StepDimTol_GeneralDatumReference;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_GeneralDatumReference;
+		 StepDimTol_GeneralDatumReference();
+
 		/****************** Base ******************/
 		%feature("compactdefaultargs") Base;
 		%feature("autodoc", "Returns field base.
@@ -1365,16 +1375,6 @@ None
 ") SetModifiers;
 		void SetModifiers(const opencascade::handle<StepDimTol_HArray1OfDatumReferenceModifier> & theModifiers);
 
-		/****************** StepDimTol_GeneralDatumReference ******************/
-		%feature("compactdefaultargs") StepDimTol_GeneralDatumReference;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_GeneralDatumReference;
-		 StepDimTol_GeneralDatumReference();
-
 };
 
 
@@ -1391,6 +1391,16 @@ None
 **************************************/
 class StepDimTol_GeometricTolerance : public Standard_Transient {
 	public:
+		/****************** StepDimTol_GeometricTolerance ******************/
+		%feature("compactdefaultargs") StepDimTol_GeometricTolerance;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_GeometricTolerance;
+		 StepDimTol_GeometricTolerance();
+
 		/****************** Description ******************/
 		%feature("compactdefaultargs") Description;
 		%feature("autodoc", "Returns field description.
@@ -1525,16 +1535,6 @@ None
 ") SetTolerancedShapeAspect;
 		void SetTolerancedShapeAspect(const StepDimTol_GeometricToleranceTarget & theTolerancedShapeAspect);
 
-		/****************** StepDimTol_GeometricTolerance ******************/
-		%feature("compactdefaultargs") StepDimTol_GeometricTolerance;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_GeometricTolerance;
-		 StepDimTol_GeometricTolerance();
-
 		/****************** TolerancedShapeAspect ******************/
 		%feature("compactdefaultargs") TolerancedShapeAspect;
 		%feature("autodoc", "Returns field tolerancedshapeaspect note: in ap214(203) type of this attribute can be only steprepr_shapeaspect.
@@ -1561,6 +1561,16 @@ StepDimTol_GeometricToleranceTarget
 **************************************************/
 class StepDimTol_GeometricToleranceRelationship : public Standard_Transient {
 	public:
+		/****************** StepDimTol_GeometricToleranceRelationship ******************/
+		%feature("compactdefaultargs") StepDimTol_GeometricToleranceRelationship;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_GeometricToleranceRelationship;
+		 StepDimTol_GeometricToleranceRelationship();
+
 		/****************** Description ******************/
 		%feature("compactdefaultargs") Description;
 		%feature("autodoc", "Returns field description.
@@ -1674,16 +1684,6 @@ None
 ") SetRelatingGeometricTolerance;
 		void SetRelatingGeometricTolerance(const opencascade::handle<StepDimTol_GeometricTolerance> & theRelatingGeometricTolerance);
 
-		/****************** StepDimTol_GeometricToleranceRelationship ******************/
-		%feature("compactdefaultargs") StepDimTol_GeometricToleranceRelationship;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_GeometricToleranceRelationship;
-		 StepDimTol_GeometricToleranceRelationship();
-
 };
 
 
@@ -1700,6 +1700,16 @@ None
 ********************************************/
 class StepDimTol_GeometricToleranceTarget : public StepData_SelectType {
 	public:
+		/****************** StepDimTol_GeometricToleranceTarget ******************/
+		%feature("compactdefaultargs") StepDimTol_GeometricToleranceTarget;
+		%feature("autodoc", "Returns a geometrictolerancetarget select type.
+
+Returns
+-------
+None
+") StepDimTol_GeometricToleranceTarget;
+		 StepDimTol_GeometricToleranceTarget();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a geometrictolerancetarget kind entity that is : 1 -> dimensionallocation 2 -> dimensionalsize 3 -> productdefinitionshape 4 -> shapeaspect 0 else.
@@ -1754,16 +1764,6 @@ opencascade::handle<StepRepr_ShapeAspect>
 ") ShapeAspect;
 		opencascade::handle<StepRepr_ShapeAspect> ShapeAspect();
 
-		/****************** StepDimTol_GeometricToleranceTarget ******************/
-		%feature("compactdefaultargs") StepDimTol_GeometricToleranceTarget;
-		%feature("autodoc", "Returns a geometrictolerancetarget select type.
-
-Returns
--------
-None
-") StepDimTol_GeometricToleranceTarget;
-		 StepDimTol_GeometricToleranceTarget();
-
 };
 
 
@@ -1778,6 +1778,16 @@ None
 *****************************************/
 class StepDimTol_RunoutZoneOrientation : public Standard_Transient {
 	public:
+		/****************** StepDimTol_RunoutZoneOrientation ******************/
+		%feature("compactdefaultargs") StepDimTol_RunoutZoneOrientation;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepDimTol_RunoutZoneOrientation;
+		 StepDimTol_RunoutZoneOrientation();
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Returns field angle.
@@ -1816,16 +1826,6 @@ None
 ") SetAngle;
 		void SetAngle(const opencascade::handle<StepBasic_PlaneAngleMeasureWithUnit> & theAngle);
 
-		/****************** StepDimTol_RunoutZoneOrientation ******************/
-		%feature("compactdefaultargs") StepDimTol_RunoutZoneOrientation;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepDimTol_RunoutZoneOrientation;
-		 StepDimTol_RunoutZoneOrientation();
-
 };
 
 
@@ -1842,6 +1842,16 @@ None
 ****************************************/
 class StepDimTol_ShapeToleranceSelect : public StepData_SelectType {
 	public:
+		/****************** StepDimTol_ShapeToleranceSelect ******************/
+		%feature("compactdefaultargs") StepDimTol_ShapeToleranceSelect;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_ShapeToleranceSelect;
+		 StepDimTol_ShapeToleranceSelect();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of shapetoleranceselect select type 1 -> geometrictolerance from stepdimtol 2 -> plusminustolerance from stepshape 0 else.
@@ -1876,16 +1886,6 @@ opencascade::handle<StepShape_PlusMinusTolerance>
 ") PlusMinusTolerance;
 		opencascade::handle<StepShape_PlusMinusTolerance> PlusMinusTolerance();
 
-		/****************** StepDimTol_ShapeToleranceSelect ******************/
-		%feature("compactdefaultargs") StepDimTol_ShapeToleranceSelect;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_ShapeToleranceSelect;
-		 StepDimTol_ShapeToleranceSelect();
-
 };
 
 
@@ -1900,6 +1900,16 @@ None
 ******************************************************/
 class StepDimTol_SimpleDatumReferenceModifierMember : public StepData_SelectInt {
 	public:
+		/****************** StepDimTol_SimpleDatumReferenceModifierMember ******************/
+		%feature("compactdefaultargs") StepDimTol_SimpleDatumReferenceModifierMember;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepDimTol_SimpleDatumReferenceModifierMember;
+		 StepDimTol_SimpleDatumReferenceModifierMember();
+
 		/****************** EnumText ******************/
 		%feature("compactdefaultargs") EnumText;
 		%feature("autodoc", "No available documentation.
@@ -1983,16 +1993,6 @@ None
 ") SetValue;
 		void SetValue(const StepDimTol_SimpleDatumReferenceModifier theValue);
 
-		/****************** StepDimTol_SimpleDatumReferenceModifierMember ******************/
-		%feature("compactdefaultargs") StepDimTol_SimpleDatumReferenceModifierMember;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepDimTol_SimpleDatumReferenceModifierMember;
-		 StepDimTol_SimpleDatumReferenceModifierMember();
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -2019,6 +2019,16 @@ StepDimTol_SimpleDatumReferenceModifier
 *********************************/
 class StepDimTol_ToleranceZone : public StepRepr_ShapeAspect {
 	public:
+		/****************** StepDimTol_ToleranceZone ******************/
+		%feature("compactdefaultargs") StepDimTol_ToleranceZone;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_ToleranceZone;
+		 StepDimTol_ToleranceZone();
+
 		/****************** DefiningTolerance ******************/
 		%feature("compactdefaultargs") DefiningTolerance;
 		%feature("autodoc", "Returns field definingtolerance.
@@ -2125,16 +2135,6 @@ None
 ") SetForm;
 		void SetForm(const opencascade::handle<StepDimTol_ToleranceZoneForm> & theForm);
 
-		/****************** StepDimTol_ToleranceZone ******************/
-		%feature("compactdefaultargs") StepDimTol_ToleranceZone;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_ToleranceZone;
-		 StepDimTol_ToleranceZone();
-
 };
 
 
@@ -2151,6 +2151,16 @@ None
 *******************************************/
 class StepDimTol_ToleranceZoneDefinition : public Standard_Transient {
 	public:
+		/****************** StepDimTol_ToleranceZoneDefinition ******************/
+		%feature("compactdefaultargs") StepDimTol_ToleranceZoneDefinition;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_ToleranceZoneDefinition;
+		 StepDimTol_ToleranceZoneDefinition();
+
 		/****************** Boundaries ******************/
 		%feature("compactdefaultargs") Boundaries;
 		%feature("autodoc", "Returns field boundaries.
@@ -2243,16 +2253,6 @@ None
 ") SetZone;
 		void SetZone(const opencascade::handle<StepDimTol_ToleranceZone> & theZone);
 
-		/****************** StepDimTol_ToleranceZoneDefinition ******************/
-		%feature("compactdefaultargs") StepDimTol_ToleranceZoneDefinition;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_ToleranceZoneDefinition;
-		 StepDimTol_ToleranceZoneDefinition();
-
 		/****************** Zone ******************/
 		%feature("compactdefaultargs") Zone;
 		%feature("autodoc", "Returns field zone.
@@ -2279,6 +2279,16 @@ opencascade::handle<StepDimTol_ToleranceZone>
 *************************************/
 class StepDimTol_ToleranceZoneForm : public Standard_Transient {
 	public:
+		/****************** StepDimTol_ToleranceZoneForm ******************/
+		%feature("compactdefaultargs") StepDimTol_ToleranceZoneForm;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepDimTol_ToleranceZoneForm;
+		 StepDimTol_ToleranceZoneForm();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Init all field own and inherited.
@@ -2317,16 +2327,6 @@ None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & theName);
 
-		/****************** StepDimTol_ToleranceZoneForm ******************/
-		%feature("compactdefaultargs") StepDimTol_ToleranceZoneForm;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepDimTol_ToleranceZoneForm;
-		 StepDimTol_ToleranceZoneForm();
-
 };
 
 
@@ -2343,6 +2343,16 @@ None
 ***************************************/
 class StepDimTol_ToleranceZoneTarget : public StepData_SelectType {
 	public:
+		/****************** StepDimTol_ToleranceZoneTarget ******************/
+		%feature("compactdefaultargs") StepDimTol_ToleranceZoneTarget;
+		%feature("autodoc", "Returns a tolerancezonetarget select type.
+
+Returns
+-------
+None
+") StepDimTol_ToleranceZoneTarget;
+		 StepDimTol_ToleranceZoneTarget();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a tolerancezonetarget kind entity that is : 1 -> dimensionallocation 2 -> dimensionalsize 3 -> geometrictolerance 4 -> generaldatumreference 0 else.
@@ -2396,16 +2406,6 @@ Returns
 opencascade::handle<StepDimTol_GeometricTolerance>
 ") GeometricTolerance;
 		opencascade::handle<StepDimTol_GeometricTolerance> GeometricTolerance();
-
-		/****************** StepDimTol_ToleranceZoneTarget ******************/
-		%feature("compactdefaultargs") StepDimTol_ToleranceZoneTarget;
-		%feature("autodoc", "Returns a tolerancezonetarget select type.
-
-Returns
--------
-None
-") StepDimTol_ToleranceZoneTarget;
-		 StepDimTol_ToleranceZoneTarget();
 
 };
 
@@ -2525,6 +2525,16 @@ None
 ********************************************/
 class StepDimTol_GeoTolAndGeoTolWthDatRef : public StepDimTol_GeometricTolerance {
 	public:
+		/****************** StepDimTol_GeoTolAndGeoTolWthDatRef ******************/
+		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthDatRef;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepDimTol_GeoTolAndGeoTolWthDatRef;
+		 StepDimTol_GeoTolAndGeoTolWthDatRef();
+
 		/****************** GetGeometricToleranceWithDatumReference ******************/
 		%feature("compactdefaultargs") GetGeometricToleranceWithDatumReference;
 		%feature("autodoc", "No available documentation.
@@ -2611,16 +2621,6 @@ None
 ") SetGeometricToleranceWithDatumReference;
 		void SetGeometricToleranceWithDatumReference(const opencascade::handle<StepDimTol_GeometricToleranceWithDatumReference> & theGTWDR);
 
-		/****************** StepDimTol_GeoTolAndGeoTolWthDatRef ******************/
-		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthDatRef;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepDimTol_GeoTolAndGeoTolWthDatRef;
-		 StepDimTol_GeoTolAndGeoTolWthDatRef();
-
 };
 
 
@@ -2637,6 +2637,16 @@ None
 ***********************************************************/
 class StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMod : public StepDimTol_GeometricTolerance {
 	public:
+		/****************** StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMod ******************/
+		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMod;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMod;
+		 StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMod();
+
 		/****************** GetGeometricToleranceWithDatumReference ******************/
 		%feature("compactdefaultargs") GetGeometricToleranceWithDatumReference;
 		%feature("autodoc", "No available documentation.
@@ -2749,16 +2759,6 @@ None
 ") SetGeometricToleranceWithModifiers;
 		void SetGeometricToleranceWithModifiers(const opencascade::handle<StepDimTol_GeometricToleranceWithModifiers> & theGTWM);
 
-		/****************** StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMod ******************/
-		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMod;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMod;
-		 StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMod();
-
 };
 
 
@@ -2775,6 +2775,16 @@ None
 *****************************************************************/
 class StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public StepDimTol_GeometricTolerance {
 	public:
+		/****************** StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol ******************/
+		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
+		 StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol();
+
 		/****************** GetGeometricToleranceWithDatumReference ******************/
 		%feature("compactdefaultargs") GetGeometricToleranceWithDatumReference;
 		%feature("autodoc", "No available documentation.
@@ -2885,16 +2895,6 @@ None
 ") SetPositionTolerance;
 		void SetPositionTolerance(const opencascade::handle<StepDimTol_PositionTolerance> & aPT);
 
-		/****************** StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol ******************/
-		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
-		 StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol();
-
 };
 
 
@@ -2911,6 +2911,16 @@ None
 *****************************************/
 class StepDimTol_GeoTolAndGeoTolWthMod : public StepDimTol_GeometricTolerance {
 	public:
+		/****************** StepDimTol_GeoTolAndGeoTolWthMod ******************/
+		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthMod;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepDimTol_GeoTolAndGeoTolWthMod;
+		 StepDimTol_GeoTolAndGeoTolWthMod();
+
 		/****************** GetGeometricToleranceWithModifiers ******************/
 		%feature("compactdefaultargs") GetGeometricToleranceWithModifiers;
 		%feature("autodoc", "No available documentation.
@@ -2997,16 +3007,6 @@ None
 ") SetGeometricToleranceWithModifiers;
 		void SetGeometricToleranceWithModifiers(const opencascade::handle<StepDimTol_GeometricToleranceWithModifiers> & theGTWM);
 
-		/****************** StepDimTol_GeoTolAndGeoTolWthMod ******************/
-		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthMod;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepDimTol_GeoTolAndGeoTolWthMod;
-		 StepDimTol_GeoTolAndGeoTolWthMod();
-
 };
 
 
@@ -3023,6 +3023,16 @@ None
 ********************************************************/
 class StepDimTol_GeometricToleranceWithDatumReference : public StepDimTol_GeometricTolerance {
 	public:
+		/****************** StepDimTol_GeometricToleranceWithDatumReference ******************/
+		%feature("compactdefaultargs") StepDimTol_GeometricToleranceWithDatumReference;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_GeometricToleranceWithDatumReference;
+		 StepDimTol_GeometricToleranceWithDatumReference();
+
 		/****************** DatumSystem ******************/
 		%feature("compactdefaultargs") DatumSystem;
 		%feature("autodoc", "Returns field datumsystem ap214.
@@ -3107,16 +3117,6 @@ None
 ") SetDatumSystem;
 		void SetDatumSystem(const opencascade::handle<StepDimTol_HArray1OfDatumSystemOrReference> & theDatumSystem);
 
-		/****************** StepDimTol_GeometricToleranceWithDatumReference ******************/
-		%feature("compactdefaultargs") StepDimTol_GeometricToleranceWithDatumReference;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_GeometricToleranceWithDatumReference;
-		 StepDimTol_GeometricToleranceWithDatumReference();
-
 };
 
 
@@ -3133,6 +3133,16 @@ None
 *****************************************************/
 class StepDimTol_GeometricToleranceWithDefinedUnit : public StepDimTol_GeometricTolerance {
 	public:
+		/****************** StepDimTol_GeometricToleranceWithDefinedUnit ******************/
+		%feature("compactdefaultargs") StepDimTol_GeometricToleranceWithDefinedUnit;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_GeometricToleranceWithDefinedUnit;
+		 StepDimTol_GeometricToleranceWithDefinedUnit();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited) ap214.
@@ -3183,16 +3193,6 @@ None
 ") SetUnitSize;
 		void SetUnitSize(const opencascade::handle<StepBasic_LengthMeasureWithUnit> & theUnitSize);
 
-		/****************** StepDimTol_GeometricToleranceWithDefinedUnit ******************/
-		%feature("compactdefaultargs") StepDimTol_GeometricToleranceWithDefinedUnit;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_GeometricToleranceWithDefinedUnit;
-		 StepDimTol_GeometricToleranceWithDefinedUnit();
-
 		/****************** UnitSize ******************/
 		%feature("compactdefaultargs") UnitSize;
 		%feature("autodoc", "Returns field unitsize.
@@ -3219,6 +3219,16 @@ opencascade::handle<StepBasic_LengthMeasureWithUnit>
 ***************************************************/
 class StepDimTol_GeometricToleranceWithModifiers : public StepDimTol_GeometricTolerance {
 	public:
+		/****************** StepDimTol_GeometricToleranceWithModifiers ******************/
+		%feature("compactdefaultargs") StepDimTol_GeometricToleranceWithModifiers;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_GeometricToleranceWithModifiers;
+		 StepDimTol_GeometricToleranceWithModifiers();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -3300,16 +3310,6 @@ None
 ") SetModifiers;
 		void SetModifiers(const opencascade::handle<StepDimTol_HArray1OfGeometricToleranceModifier> & theModifiers);
 
-		/****************** StepDimTol_GeometricToleranceWithModifiers ******************/
-		%feature("compactdefaultargs") StepDimTol_GeometricToleranceWithModifiers;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_GeometricToleranceWithModifiers;
-		 StepDimTol_GeometricToleranceWithModifiers();
-
 };
 
 
@@ -3352,6 +3352,16 @@ None
 **********************************************/
 class StepDimTol_ModifiedGeometricTolerance : public StepDimTol_GeometricTolerance {
 	public:
+		/****************** StepDimTol_ModifiedGeometricTolerance ******************/
+		%feature("compactdefaultargs") StepDimTol_ModifiedGeometricTolerance;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_ModifiedGeometricTolerance;
+		 StepDimTol_ModifiedGeometricTolerance();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited) ap214.
@@ -3411,16 +3421,6 @@ Returns
 None
 ") SetModifier;
 		void SetModifier(const StepDimTol_LimitCondition theModifier);
-
-		/****************** StepDimTol_ModifiedGeometricTolerance ******************/
-		%feature("compactdefaultargs") StepDimTol_ModifiedGeometricTolerance;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_ModifiedGeometricTolerance;
-		 StepDimTol_ModifiedGeometricTolerance();
 
 };
 
@@ -3516,6 +3516,16 @@ None
 *******************************************/
 class StepDimTol_ProjectedZoneDefinition : public StepDimTol_ToleranceZoneDefinition {
 	public:
+		/****************** StepDimTol_ProjectedZoneDefinition ******************/
+		%feature("compactdefaultargs") StepDimTol_ProjectedZoneDefinition;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_ProjectedZoneDefinition;
+		 StepDimTol_ProjectedZoneDefinition();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -3581,16 +3591,6 @@ None
 ") SetProjectionLength;
 		void SetProjectionLength(const opencascade::handle<StepBasic_LengthMeasureWithUnit> & theProjectionLength);
 
-		/****************** StepDimTol_ProjectedZoneDefinition ******************/
-		%feature("compactdefaultargs") StepDimTol_ProjectedZoneDefinition;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_ProjectedZoneDefinition;
-		 StepDimTol_ProjectedZoneDefinition();
-
 };
 
 
@@ -3633,6 +3633,16 @@ None
 ****************************************/
 class StepDimTol_RunoutZoneDefinition : public StepDimTol_ToleranceZoneDefinition {
 	public:
+		/****************** StepDimTol_RunoutZoneDefinition ******************/
+		%feature("compactdefaultargs") StepDimTol_RunoutZoneDefinition;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_RunoutZoneDefinition;
+		 StepDimTol_RunoutZoneDefinition();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -3672,16 +3682,6 @@ Returns
 None
 ") SetOrientation;
 		void SetOrientation(const opencascade::handle<StepDimTol_RunoutZoneOrientation> & theOrientation);
-
-		/****************** StepDimTol_RunoutZoneDefinition ******************/
-		%feature("compactdefaultargs") StepDimTol_RunoutZoneDefinition;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_RunoutZoneDefinition;
-		 StepDimTol_RunoutZoneDefinition();
 
 };
 
@@ -3751,6 +3751,16 @@ None
 *******************************************************/
 class StepDimTol_UnequallyDisposedGeometricTolerance : public StepDimTol_GeometricTolerance {
 	public:
+		/****************** StepDimTol_UnequallyDisposedGeometricTolerance ******************/
+		%feature("compactdefaultargs") StepDimTol_UnequallyDisposedGeometricTolerance;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_UnequallyDisposedGeometricTolerance;
+		 StepDimTol_UnequallyDisposedGeometricTolerance();
+
 		/****************** Displacement ******************/
 		%feature("compactdefaultargs") Displacement;
 		%feature("autodoc", "Returns field displacement.
@@ -3792,16 +3802,6 @@ Returns
 None
 ") SetDisplacement;
 		void SetDisplacement(const opencascade::handle<StepBasic_LengthMeasureWithUnit> & theDisplacement);
-
-		/****************** StepDimTol_UnequallyDisposedGeometricTolerance ******************/
-		%feature("compactdefaultargs") StepDimTol_UnequallyDisposedGeometricTolerance;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_UnequallyDisposedGeometricTolerance;
-		 StepDimTol_UnequallyDisposedGeometricTolerance();
 
 };
 
@@ -3923,6 +3923,16 @@ None
 **************************************************************/
 class StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMaxTol : public StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMod {
 	public:
+		/****************** StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMaxTol ******************/
+		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMaxTol;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMaxTol;
+		 StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMaxTol();
+
 		/****************** GetMaxTolerance ******************/
 		%feature("compactdefaultargs") GetMaxTolerance;
 		%feature("autodoc", "No available documentation.
@@ -3989,16 +3999,6 @@ None
 ") SetMaxTolerance;
 		void SetMaxTolerance(opencascade::handle<StepBasic_LengthMeasureWithUnit> & theMaxTol);
 
-		/****************** StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMaxTol ******************/
-		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMaxTol;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMaxTol;
-		 StepDimTol_GeoTolAndGeoTolWthDatRefAndGeoTolWthMaxTol();
-
 };
 
 
@@ -4015,6 +4015,16 @@ None
 ************************************************************/
 class StepDimTol_GeoTolAndGeoTolWthDatRefAndUneqDisGeoTol : public StepDimTol_GeoTolAndGeoTolWthDatRef {
 	public:
+		/****************** StepDimTol_GeoTolAndGeoTolWthDatRefAndUneqDisGeoTol ******************/
+		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthDatRefAndUneqDisGeoTol;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepDimTol_GeoTolAndGeoTolWthDatRefAndUneqDisGeoTol;
+		 StepDimTol_GeoTolAndGeoTolWthDatRefAndUneqDisGeoTol();
+
 		/****************** GetUnequallyDisposedGeometricTolerance ******************/
 		%feature("compactdefaultargs") GetUnequallyDisposedGeometricTolerance;
 		%feature("autodoc", "No available documentation.
@@ -4079,16 +4089,6 @@ None
 ") SetUnequallyDisposedGeometricTolerance;
 		void SetUnequallyDisposedGeometricTolerance(const opencascade::handle<StepDimTol_UnequallyDisposedGeometricTolerance> & theUDGT);
 
-		/****************** StepDimTol_GeoTolAndGeoTolWthDatRefAndUneqDisGeoTol ******************/
-		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthDatRefAndUneqDisGeoTol;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepDimTol_GeoTolAndGeoTolWthDatRefAndUneqDisGeoTol;
-		 StepDimTol_GeoTolAndGeoTolWthDatRefAndUneqDisGeoTol();
-
 };
 
 
@@ -4105,6 +4105,16 @@ None
 ********************************************/
 class StepDimTol_GeoTolAndGeoTolWthMaxTol : public StepDimTol_GeoTolAndGeoTolWthMod {
 	public:
+		/****************** StepDimTol_GeoTolAndGeoTolWthMaxTol ******************/
+		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthMaxTol;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepDimTol_GeoTolAndGeoTolWthMaxTol;
+		 StepDimTol_GeoTolAndGeoTolWthMaxTol();
+
 		/****************** GetMaxTolerance ******************/
 		%feature("compactdefaultargs") GetMaxTolerance;
 		%feature("autodoc", "No available documentation.
@@ -4169,16 +4179,6 @@ None
 ") SetMaxTolerance;
 		void SetMaxTolerance(opencascade::handle<StepBasic_LengthMeasureWithUnit> & theMaxTol);
 
-		/****************** StepDimTol_GeoTolAndGeoTolWthMaxTol ******************/
-		%feature("compactdefaultargs") StepDimTol_GeoTolAndGeoTolWthMaxTol;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepDimTol_GeoTolAndGeoTolWthMaxTol;
-		 StepDimTol_GeoTolAndGeoTolWthMaxTol();
-
 };
 
 
@@ -4195,6 +4195,16 @@ None
 *********************************************************/
 class StepDimTol_GeometricToleranceWithDefinedAreaUnit : public StepDimTol_GeometricToleranceWithDefinedUnit {
 	public:
+		/****************** StepDimTol_GeometricToleranceWithDefinedAreaUnit ******************/
+		%feature("compactdefaultargs") StepDimTol_GeometricToleranceWithDefinedAreaUnit;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_GeometricToleranceWithDefinedAreaUnit;
+		 StepDimTol_GeometricToleranceWithDefinedAreaUnit();
+
 		/****************** AreaType ******************/
 		%feature("compactdefaultargs") AreaType;
 		%feature("autodoc", "Returns field areatype.
@@ -4274,16 +4284,6 @@ None
 ") SetSecondUnitSize;
 		void SetSecondUnitSize(const opencascade::handle<StepBasic_LengthMeasureWithUnit> & theSecondUnitSize);
 
-		/****************** StepDimTol_GeometricToleranceWithDefinedAreaUnit ******************/
-		%feature("compactdefaultargs") StepDimTol_GeometricToleranceWithDefinedAreaUnit;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_GeometricToleranceWithDefinedAreaUnit;
-		 StepDimTol_GeometricToleranceWithDefinedAreaUnit();
-
 };
 
 
@@ -4300,6 +4300,16 @@ None
 **********************************************************/
 class StepDimTol_GeometricToleranceWithMaximumTolerance : public StepDimTol_GeometricToleranceWithModifiers {
 	public:
+		/****************** StepDimTol_GeometricToleranceWithMaximumTolerance ******************/
+		%feature("compactdefaultargs") StepDimTol_GeometricToleranceWithMaximumTolerance;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepDimTol_GeometricToleranceWithMaximumTolerance;
+		 StepDimTol_GeometricToleranceWithMaximumTolerance();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -4342,16 +4352,6 @@ Returns
 None
 ") SetMaximumUpperTolerance;
 		void SetMaximumUpperTolerance(const opencascade::handle<StepBasic_LengthMeasureWithUnit> & theMaximumUpperTolerance);
-
-		/****************** StepDimTol_GeometricToleranceWithMaximumTolerance ******************/
-		%feature("compactdefaultargs") StepDimTol_GeometricToleranceWithMaximumTolerance;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepDimTol_GeometricToleranceWithMaximumTolerance;
-		 StepDimTol_GeometricToleranceWithMaximumTolerance();
 
 };
 

@@ -92,28 +92,28 @@ from OCC.Core.Exception import *
 /* end python proxy for enums */
 
 /* templates */
-%template(NCollection_Utf8String) NCollection_UtfString<Standard_Utf8Char>;
-%template(NCollection_Utf16String) NCollection_UtfString<Standard_Utf16Char>;
-%template(NCollection_Utf32String) NCollection_UtfString<Standard_Utf32Char>;
-%template(NCollection_UtfWideString) NCollection_UtfString<Standard_WideChar>;
-%template(NCollection_Utf8Iter) NCollection_UtfIterator<Standard_Utf8Char>;
 %template(NCollection_Utf16Iter) NCollection_UtfIterator<Standard_Utf16Char>;
+%template(NCollection_Utf16String) NCollection_UtfString<Standard_Utf16Char>;
 %template(NCollection_Utf32Iter) NCollection_UtfIterator<Standard_Utf32Char>;
+%template(NCollection_Utf32String) NCollection_UtfString<Standard_Utf32Char>;
+%template(NCollection_Utf8Iter) NCollection_UtfIterator<Standard_Utf8Char>;
+%template(NCollection_Utf8String) NCollection_UtfString<Standard_Utf8Char>;
 %template(NCollection_UtfWideIter) NCollection_UtfIterator<Standard_WideChar>;
+%template(NCollection_UtfWideString) NCollection_UtfString<Standard_WideChar>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_UtfString<Standard_Utf8Char> NCollection_Utf8String;
-typedef NCollection_UtfString<Standard_Utf16Char> NCollection_Utf16String;
-typedef NCollection_UtfString<Standard_Utf32Char> NCollection_Utf32String;
-typedef NCollection_UtfString<Standard_WideChar> NCollection_UtfWideString;
 typedef void ( * NCollection_DelMapNode ) ( NCollection_ListNode *, opencascade::handle<NCollection_BaseAllocator>& theAl );
-typedef NCollection_UtfIterator<Standard_Utf8Char> NCollection_Utf8Iter;
-typedef NCollection_UtfIterator<Standard_Utf16Char> NCollection_Utf16Iter;
-typedef NCollection_UtfIterator<Standard_Utf32Char> NCollection_Utf32Iter;
-typedef NCollection_UtfIterator<Standard_WideChar> NCollection_UtfWideIter;
-typedef size_t Standard_Size;
 typedef NCollection_Utf8String NCollection_String;
+typedef NCollection_UtfIterator<Standard_Utf16Char> NCollection_Utf16Iter;
+typedef NCollection_UtfString<Standard_Utf16Char> NCollection_Utf16String;
+typedef NCollection_UtfIterator<Standard_Utf32Char> NCollection_Utf32Iter;
+typedef NCollection_UtfString<Standard_Utf32Char> NCollection_Utf32String;
+typedef NCollection_UtfIterator<Standard_Utf8Char> NCollection_Utf8Iter;
+typedef NCollection_UtfString<Standard_Utf8Char> NCollection_Utf8String;
+typedef NCollection_UtfIterator<Standard_WideChar> NCollection_UtfWideIter;
+typedef NCollection_UtfString<Standard_WideChar> NCollection_UtfWideString;
+typedef size_t Standard_Size;
 /* end typedefs declaration */
 
 /***************************
@@ -179,16 +179,6 @@ typedef void * pointer;
 typedef const void * const_pointer;
 typedef void value_type;
 		class rebind {};
-		/****************** Allocator ******************/
-		%feature("compactdefaultargs") Allocator;
-		%feature("autodoc", "/*! returns an object specified in the constructor.*/.
-
-Returns
--------
-opencascade::handle<NCollection_BaseAllocator>
-") Allocator;
-		const opencascade::handle<NCollection_BaseAllocator> & Allocator();
-
 		/****************** NCollection_StdAllocator ******************/
 		%feature("compactdefaultargs") NCollection_StdAllocator;
 		%feature("autodoc", "/*! creates an object using default open cascade allocation mechanism, i.e. which uses standard::allocate() and standard::free() underneath. */.
@@ -226,6 +216,16 @@ Returns
 None
 ") NCollection_StdAllocator;
 		 NCollection_StdAllocator(const NCollection_StdAllocator & X);
+
+		/****************** Allocator ******************/
+		%feature("compactdefaultargs") Allocator;
+		%feature("autodoc", "/*! returns an object specified in the constructor.*/.
+
+Returns
+-------
+opencascade::handle<NCollection_BaseAllocator>
+") Allocator;
+		const opencascade::handle<NCollection_BaseAllocator> & Allocator();
 
 };
 

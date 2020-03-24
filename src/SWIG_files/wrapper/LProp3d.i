@@ -41,8 +41,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_lprop3d.html"
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
-#include<gp_module.hxx>
 #include<Adaptor3d_module.hxx>
+#include<gp_module.hxx>
 #include<Adaptor2d_module.hxx>
 #include<Geom2d_module.hxx>
 #include<Geom_module.hxx>
@@ -54,8 +54,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_lprop3d.html"
 %};
 %import Standard.i
 %import NCollection.i
-%import gp.i
 %import Adaptor3d.i
+%import gp.i
 
 %pythoncode {
 from OCC.Core.Exception import *
@@ -83,6 +83,54 @@ from OCC.Core.Exception import *
 ************************/
 class LProp3d_CLProps {
 	public:
+		/****************** LProp3d_CLProps ******************/
+		%feature("compactdefaultargs") LProp3d_CLProps;
+		%feature("autodoc", "Initializes the local properties of the curve <c> the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, 2 or 3). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
+
+Parameters
+----------
+C: Adaptor3d_HCurve
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") LProp3d_CLProps;
+		 LProp3d_CLProps(const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** LProp3d_CLProps ******************/
+		%feature("compactdefaultargs") LProp3d_CLProps;
+		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u>. all the computations done will be related to <c> and <u>.
+
+Parameters
+----------
+C: Adaptor3d_HCurve
+U: float
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") LProp3d_CLProps;
+		 LProp3d_CLProps(const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** LProp3d_CLProps ******************/
+		%feature("compactdefaultargs") LProp3d_CLProps;
+		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u> and the curve is set with setcurve. the curve can have a empty constructor all the computations done will be related to <c> and <u> when the functions 'set' will be done.
+
+Parameters
+----------
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") LProp3d_CLProps;
+		 LProp3d_CLProps(const Standard_Integer N, const Standard_Real Resolution);
+
 		/****************** CentreOfCurvature ******************/
 		%feature("compactdefaultargs") CentreOfCurvature;
 		%feature("autodoc", "Returns the centre of curvature <p>.
@@ -146,54 +194,6 @@ Returns
 bool
 ") IsTangentDefined;
 		Standard_Boolean IsTangentDefined();
-
-		/****************** LProp3d_CLProps ******************/
-		%feature("compactdefaultargs") LProp3d_CLProps;
-		%feature("autodoc", "Initializes the local properties of the curve <c> the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, 2 or 3). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
-
-Parameters
-----------
-C: Adaptor3d_HCurve
-N: int
-Resolution: float
-
-Returns
--------
-None
-") LProp3d_CLProps;
-		 LProp3d_CLProps(const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** LProp3d_CLProps ******************/
-		%feature("compactdefaultargs") LProp3d_CLProps;
-		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u>. all the computations done will be related to <c> and <u>.
-
-Parameters
-----------
-C: Adaptor3d_HCurve
-U: float
-N: int
-Resolution: float
-
-Returns
--------
-None
-") LProp3d_CLProps;
-		 LProp3d_CLProps(const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** LProp3d_CLProps ******************/
-		%feature("compactdefaultargs") LProp3d_CLProps;
-		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u> and the curve is set with setcurve. the curve can have a empty constructor all the computations done will be related to <c> and <u> when the functions 'set' will be done.
-
-Parameters
-----------
-N: int
-Resolution: float
-
-Returns
--------
-None
-") LProp3d_CLProps;
-		 LProp3d_CLProps(const Standard_Integer N, const Standard_Real Resolution);
 
 		/****************** Normal ******************/
 		%feature("compactdefaultargs") Normal;
@@ -401,6 +401,55 @@ None
 ************************/
 class LProp3d_SLProps {
 	public:
+		/****************** LProp3d_SLProps ******************/
+		%feature("compactdefaultargs") LProp3d_SLProps;
+		%feature("autodoc", "Initializes the local properties of the surface <s> for the parameter values (<u>, <v>). the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, or 2). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
+
+Parameters
+----------
+S: Adaptor3d_HSurface
+U: float
+V: float
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") LProp3d_SLProps;
+		 LProp3d_SLProps(const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real U, const Standard_Real V, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** LProp3d_SLProps ******************/
+		%feature("compactdefaultargs") LProp3d_SLProps;
+		%feature("autodoc", "Idem as previous constructor but without setting the value of parameters <u> and <v>.
+
+Parameters
+----------
+S: Adaptor3d_HSurface
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") LProp3d_SLProps;
+		 LProp3d_SLProps(const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** LProp3d_SLProps ******************/
+		%feature("compactdefaultargs") LProp3d_SLProps;
+		%feature("autodoc", "Idem as previous constructor but without setting the value of parameters <u> and <v> and the surface. the surface can have an empty constructor.
+
+Parameters
+----------
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") LProp3d_SLProps;
+		 LProp3d_SLProps(const Standard_Integer N, const Standard_Real Resolution);
+
 		/****************** CurvatureDirections ******************/
 		%feature("compactdefaultargs") CurvatureDirections;
 		%feature("autodoc", "Returns the direction of the maximum and minimum curvature <maxd> and <mind>.
@@ -525,55 +574,6 @@ Returns
 bool
 ") IsUmbilic;
 		Standard_Boolean IsUmbilic();
-
-		/****************** LProp3d_SLProps ******************/
-		%feature("compactdefaultargs") LProp3d_SLProps;
-		%feature("autodoc", "Initializes the local properties of the surface <s> for the parameter values (<u>, <v>). the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, or 2). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
-
-Parameters
-----------
-S: Adaptor3d_HSurface
-U: float
-V: float
-N: int
-Resolution: float
-
-Returns
--------
-None
-") LProp3d_SLProps;
-		 LProp3d_SLProps(const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real U, const Standard_Real V, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** LProp3d_SLProps ******************/
-		%feature("compactdefaultargs") LProp3d_SLProps;
-		%feature("autodoc", "Idem as previous constructor but without setting the value of parameters <u> and <v>.
-
-Parameters
-----------
-S: Adaptor3d_HSurface
-N: int
-Resolution: float
-
-Returns
--------
-None
-") LProp3d_SLProps;
-		 LProp3d_SLProps(const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** LProp3d_SLProps ******************/
-		%feature("compactdefaultargs") LProp3d_SLProps;
-		%feature("autodoc", "Idem as previous constructor but without setting the value of parameters <u> and <v> and the surface. the surface can have an empty constructor.
-
-Parameters
-----------
-N: int
-Resolution: float
-
-Returns
--------
-None
-") LProp3d_SLProps;
-		 LProp3d_SLProps(const Standard_Integer N, const Standard_Real Resolution);
 
 		/****************** MaxCurvature ******************/
 		%feature("compactdefaultargs") MaxCurvature;

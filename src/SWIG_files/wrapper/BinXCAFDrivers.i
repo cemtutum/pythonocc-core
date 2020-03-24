@@ -147,6 +147,16 @@ opencascade::handle<Standard_Transient>
 ***********************************************/
 class BinXCAFDrivers_DocumentRetrievalDriver : public BinDrivers_DocumentRetrievalDriver {
 	public:
+		/****************** BinXCAFDrivers_DocumentRetrievalDriver ******************/
+		%feature("compactdefaultargs") BinXCAFDrivers_DocumentRetrievalDriver;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") BinXCAFDrivers_DocumentRetrievalDriver;
+		 BinXCAFDrivers_DocumentRetrievalDriver();
+
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "No available documentation.
@@ -160,16 +170,6 @@ Returns
 opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
-
-		/****************** BinXCAFDrivers_DocumentRetrievalDriver ******************/
-		%feature("compactdefaultargs") BinXCAFDrivers_DocumentRetrievalDriver;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") BinXCAFDrivers_DocumentRetrievalDriver;
-		 BinXCAFDrivers_DocumentRetrievalDriver();
 
 };
 
@@ -187,6 +187,16 @@ None
 *********************************************/
 class BinXCAFDrivers_DocumentStorageDriver : public BinDrivers_DocumentStorageDriver {
 	public:
+		/****************** BinXCAFDrivers_DocumentStorageDriver ******************/
+		%feature("compactdefaultargs") BinXCAFDrivers_DocumentStorageDriver;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") BinXCAFDrivers_DocumentStorageDriver;
+		 BinXCAFDrivers_DocumentStorageDriver();
+
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "No available documentation.
@@ -200,16 +210,6 @@ Returns
 opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
-
-		/****************** BinXCAFDrivers_DocumentStorageDriver ******************/
-		%feature("compactdefaultargs") BinXCAFDrivers_DocumentStorageDriver;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") BinXCAFDrivers_DocumentStorageDriver;
-		 BinXCAFDrivers_DocumentStorageDriver();
 
 };
 

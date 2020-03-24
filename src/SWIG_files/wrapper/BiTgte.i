@@ -501,26 +501,6 @@ opencascade::handle<Geom_Surface>
 ***************************/
 class BiTgte_CurveOnEdge : public Adaptor3d_Curve {
 	public:
-		/****************** BSpline ******************/
-		%feature("compactdefaultargs") BSpline;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Geom_BSplineCurve>
-") BSpline;
-		opencascade::handle<Geom_BSplineCurve> BSpline();
-
-		/****************** Bezier ******************/
-		%feature("compactdefaultargs") Bezier;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Geom_BezierCurve>
-") Bezier;
-		opencascade::handle<Geom_BezierCurve> Bezier();
-
 		/****************** BiTgte_CurveOnEdge ******************/
 		%feature("compactdefaultargs") BiTgte_CurveOnEdge;
 		%feature("autodoc", "No available documentation.
@@ -545,6 +525,26 @@ Returns
 None
 ") BiTgte_CurveOnEdge;
 		 BiTgte_CurveOnEdge(const TopoDS_Edge & EonF, const TopoDS_Edge & Edge);
+
+		/****************** BSpline ******************/
+		%feature("compactdefaultargs") BSpline;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
+") BSpline;
+		opencascade::handle<Geom_BSplineCurve> BSpline();
+
+		/****************** Bezier ******************/
+		%feature("compactdefaultargs") Bezier;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BezierCurve>
+") Bezier;
+		opencascade::handle<Geom_BezierCurve> Bezier();
 
 		/****************** Circle ******************/
 		%feature("compactdefaultargs") Circle;
@@ -889,26 +889,6 @@ gp_Pnt
 *****************************/
 class BiTgte_CurveOnVertex : public Adaptor3d_Curve {
 	public:
-		/****************** BSpline ******************/
-		%feature("compactdefaultargs") BSpline;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Geom_BSplineCurve>
-") BSpline;
-		opencascade::handle<Geom_BSplineCurve> BSpline();
-
-		/****************** Bezier ******************/
-		%feature("compactdefaultargs") Bezier;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Geom_BezierCurve>
-") Bezier;
-		opencascade::handle<Geom_BezierCurve> Bezier();
-
 		/****************** BiTgte_CurveOnVertex ******************/
 		%feature("compactdefaultargs") BiTgte_CurveOnVertex;
 		%feature("autodoc", "No available documentation.
@@ -933,6 +913,26 @@ Returns
 None
 ") BiTgte_CurveOnVertex;
 		 BiTgte_CurveOnVertex(const TopoDS_Edge & EonF, const TopoDS_Vertex & V);
+
+		/****************** BSpline ******************/
+		%feature("compactdefaultargs") BSpline;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
+") BSpline;
+		opencascade::handle<Geom_BSplineCurve> BSpline();
+
+		/****************** Bezier ******************/
+		%feature("compactdefaultargs") Bezier;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BezierCurve>
+") Bezier;
+		opencascade::handle<Geom_BezierCurve> Bezier();
 
 		/****************** Circle ******************/
 		%feature("compactdefaultargs") Circle;

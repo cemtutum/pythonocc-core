@@ -92,18 +92,18 @@ from OCC.Core.Exception import *
 
 /* templates */
 %template(HLRTopoBRep_DataMapOfShapeFaceData) NCollection_DataMap<TopoDS_Shape,HLRTopoBRep_FaceData,TopTools_ShapeMapHasher>;
-%template(HLRTopoBRep_ListOfVData) NCollection_List<HLRTopoBRep_VData>;
 %template(HLRTopoBRep_ListIteratorOfListOfVData) NCollection_TListIterator<HLRTopoBRep_VData>;
+%template(HLRTopoBRep_ListOfVData) NCollection_List<HLRTopoBRep_VData>;
 %template(HLRTopoBRep_MapOfShapeListOfVData) NCollection_DataMap<TopoDS_Shape,HLRTopoBRep_ListOfVData,TopTools_ShapeMapHasher>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<TopoDS_Shape, HLRTopoBRep_FaceData, TopTools_ShapeMapHasher> HLRTopoBRep_DataMapOfShapeFaceData;
 typedef NCollection_DataMap<TopoDS_Shape, HLRTopoBRep_FaceData, TopTools_ShapeMapHasher>::Iterator HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData;
-typedef NCollection_List<HLRTopoBRep_VData> HLRTopoBRep_ListOfVData;
-typedef NCollection_List<HLRTopoBRep_VData>::Iterator HLRTopoBRep_ListIteratorOfListOfVData;
-typedef NCollection_DataMap<TopoDS_Shape, HLRTopoBRep_ListOfVData, TopTools_ShapeMapHasher> HLRTopoBRep_MapOfShapeListOfVData;
 typedef NCollection_DataMap<TopoDS_Shape, HLRTopoBRep_ListOfVData, TopTools_ShapeMapHasher>::Iterator HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData;
+typedef NCollection_DataMap<TopoDS_Shape, HLRTopoBRep_FaceData, TopTools_ShapeMapHasher> HLRTopoBRep_DataMapOfShapeFaceData;
+typedef NCollection_List<HLRTopoBRep_VData>::Iterator HLRTopoBRep_ListIteratorOfListOfVData;
+typedef NCollection_List<HLRTopoBRep_VData> HLRTopoBRep_ListOfVData;
+typedef NCollection_DataMap<TopoDS_Shape, HLRTopoBRep_ListOfVData, TopTools_ShapeMapHasher> HLRTopoBRep_MapOfShapeListOfVData;
 /* end typedefs declaration */
 
 /*****************************
@@ -143,6 +143,16 @@ None
 *************************/
 class HLRTopoBRep_Data {
 	public:
+		/****************** HLRTopoBRep_Data ******************/
+		%feature("compactdefaultargs") HLRTopoBRep_Data;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") HLRTopoBRep_Data;
+		 HLRTopoBRep_Data();
+
 		/****************** AddIntL ******************/
 		%feature("compactdefaultargs") AddIntL;
 		%feature("autodoc", "No available documentation.
@@ -399,16 +409,6 @@ TopTools_ListOfShape
 ") FaceOutL;
 		const TopTools_ListOfShape & FaceOutL(const TopoDS_Face & F);
 
-		/****************** HLRTopoBRep_Data ******************/
-		%feature("compactdefaultargs") HLRTopoBRep_Data;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") HLRTopoBRep_Data;
-		 HLRTopoBRep_Data();
-
 		/****************** InitEdge ******************/
 		%feature("compactdefaultargs") InitEdge;
 		%feature("autodoc", "No available documentation.
@@ -624,6 +624,16 @@ TopoDS_Vertex
 *****************************/
 class HLRTopoBRep_FaceData {
 	public:
+		/****************** HLRTopoBRep_FaceData ******************/
+		%feature("compactdefaultargs") HLRTopoBRep_FaceData;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") HLRTopoBRep_FaceData;
+		 HLRTopoBRep_FaceData();
+
 		/****************** AddIntL ******************/
 		%feature("compactdefaultargs") AddIntL;
 		%feature("autodoc", "No available documentation.
@@ -683,16 +693,6 @@ Returns
 TopTools_ListOfShape
 ") FaceOutL;
 		const TopTools_ListOfShape & FaceOutL();
-
-		/****************** HLRTopoBRep_FaceData ******************/
-		%feature("compactdefaultargs") HLRTopoBRep_FaceData;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") HLRTopoBRep_FaceData;
-		 HLRTopoBRep_FaceData();
 
 };
 
@@ -778,32 +778,6 @@ None
 *****************************/
 class HLRTopoBRep_OutLiner : public Standard_Transient {
 	public:
-		/****************** DataStructure ******************/
-		%feature("compactdefaultargs") DataStructure;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-HLRTopoBRep_Data
-") DataStructure;
-		HLRTopoBRep_Data & DataStructure();
-
-		/****************** Fill ******************/
-		%feature("compactdefaultargs") Fill;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-P: HLRAlgo_Projector
-MST: BRepTopAdaptor_MapOfShapeTool
-nbIso: int
-
-Returns
--------
-None
-") Fill;
-		void Fill(const HLRAlgo_Projector & P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
-
 		/****************** HLRTopoBRep_OutLiner ******************/
 		%feature("compactdefaultargs") HLRTopoBRep_OutLiner;
 		%feature("autodoc", "No available documentation.
@@ -842,6 +816,32 @@ Returns
 None
 ") HLRTopoBRep_OutLiner;
 		 HLRTopoBRep_OutLiner(const TopoDS_Shape & OriS, const TopoDS_Shape & OutS);
+
+		/****************** DataStructure ******************/
+		%feature("compactdefaultargs") DataStructure;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRTopoBRep_Data
+") DataStructure;
+		HLRTopoBRep_Data & DataStructure();
+
+		/****************** Fill ******************/
+		%feature("compactdefaultargs") Fill;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: HLRAlgo_Projector
+MST: BRepTopAdaptor_MapOfShapeTool
+nbIso: int
+
+Returns
+-------
+None
+") Fill;
+		void Fill(const HLRAlgo_Projector & P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
 
 		/****************** OriginalShape ******************/
 		%feature("compactdefaultargs") OriginalShape;

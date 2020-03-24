@@ -268,16 +268,6 @@ TopoDS_Shape
 ********************************/
 class BRepAlgoAPI_BuilderAlgo : public BRepAlgoAPI_Algo {
 	public:
-		/****************** Arguments ******************/
-		%feature("compactdefaultargs") Arguments;
-		%feature("autodoc", "Gets the arguments.
-
-Returns
--------
-TopTools_ListOfShape
-") Arguments;
-		const TopTools_ListOfShape & Arguments();
-
 		/****************** BRepAlgoAPI_BuilderAlgo ******************/
 		%feature("compactdefaultargs") BRepAlgoAPI_BuilderAlgo;
 		%feature("autodoc", "Empty constructor.
@@ -301,6 +291,16 @@ Returns
 None
 ") BRepAlgoAPI_BuilderAlgo;
 		 BRepAlgoAPI_BuilderAlgo(const BOPAlgo_PaveFiller & thePF);
+
+		/****************** Arguments ******************/
+		%feature("compactdefaultargs") Arguments;
+		%feature("autodoc", "Gets the arguments.
+
+Returns
+-------
+TopTools_ListOfShape
+") Arguments;
+		const TopTools_ListOfShape & Arguments();
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
@@ -567,6 +567,16 @@ None
 ********************************/
 class BRepAlgoAPI_Defeaturing : public BRepAlgoAPI_Algo {
 	public:
+		/****************** BRepAlgoAPI_Defeaturing ******************/
+		%feature("compactdefaultargs") BRepAlgoAPI_Defeaturing;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") BRepAlgoAPI_Defeaturing;
+		 BRepAlgoAPI_Defeaturing();
+
 		/****************** AddFaceToRemove ******************/
 		%feature("compactdefaultargs") AddFaceToRemove;
 		%feature("autodoc", "Adds the features to remove from the input shape. @param theface [in] the shape to extract the faces for removal.
@@ -594,16 +604,6 @@ Returns
 None
 ") AddFacesToRemove;
 		void AddFacesToRemove(const TopTools_ListOfShape & theFaces);
-
-		/****************** BRepAlgoAPI_Defeaturing ******************/
-		%feature("compactdefaultargs") BRepAlgoAPI_Defeaturing;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") BRepAlgoAPI_Defeaturing;
-		 BRepAlgoAPI_Defeaturing();
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
@@ -1166,20 +1166,6 @@ None
 ****************************/
 class BRepAlgoAPI_Section : public BRepAlgoAPI_BooleanOperation {
 	public:
-		/****************** Approximation ******************/
-		%feature("compactdefaultargs") Approximation;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-B: bool
-
-Returns
--------
-None
-") Approximation;
-		void Approximation(const Standard_Boolean B);
-
 		/****************** BRepAlgoAPI_Section ******************/
 		%feature("compactdefaultargs") BRepAlgoAPI_Section;
 		%feature("autodoc", "Empty constructor.
@@ -1306,6 +1292,20 @@ Returns
 None
 ") BRepAlgoAPI_Section;
 		 BRepAlgoAPI_Section(const opencascade::handle<Geom_Surface> & Sf1, const opencascade::handle<Geom_Surface> & Sf2, const Standard_Boolean PerformNow = Standard_True);
+
+		/****************** Approximation ******************/
+		%feature("compactdefaultargs") Approximation;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
+") Approximation;
+		void Approximation(const Standard_Boolean B);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;

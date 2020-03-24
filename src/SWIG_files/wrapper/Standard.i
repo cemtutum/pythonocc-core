@@ -78,41 +78,41 @@ class Standard_HandlerStatus:
 /* end templates declaration */
 
 /* typedefs */
-typedef Standard_Character * Standard_PCharacter;
-typedef Standard_ErrorHandler * Standard_PErrorHandler;
-typedef GUID Standard_UUID;
+typedef void * Standard_Address;
+typedef bool Standard_Boolean;
+typedef unsigned char Standard_Byte;
+typedef const Standard_Character * Standard_CString;
+typedef char Standard_Character;
+typedef Standard_ErrorHandler::Callback Standard_ErrorHandlerCallback;
+typedef char16_t Standard_ExtCharacter;
+typedef const Standard_ExtCharacter * Standard_ExtString;
 typedef std::istream Standard_IStream;
-typedef std::stringstream Standard_SStream;
-typedef Standard_ExtCharacter * Standard_PExtCharacter;
+typedef int Standard_Integer;
 typedef std::ostream Standard_OStream;
 typedef Standard_Byte * Standard_PByte;
-typedef unsigned __int8 uint8_t;
-typedef unsigned __int16 uint16_t;
-typedef unsigned __int32 uint32_t;
-typedef unsigned __int64 uint64_t;
-typedef signed __int8 int8_t;
+typedef Standard_Character * Standard_PCharacter;
+typedef Standard_ErrorHandler * Standard_PErrorHandler;
+typedef Standard_ExtCharacter * Standard_PExtCharacter;
+typedef double Standard_Real;
+typedef std::stringstream Standard_SStream;
+typedef float Standard_ShortReal;
+typedef size_t Standard_Size;
+typedef Standard_Size Standard_ThreadId;
+typedef std::time_t Standard_Time;
+typedef GUID Standard_UUID;
+typedef char16_t Standard_Utf16Char;
+typedef char32_t Standard_Utf32Char;
+typedef char Standard_Utf8Char;
+typedef unsigned char Standard_Utf8UChar;
+typedef wchar_t Standard_WideChar;
 typedef signed __int16 int16_t;
 typedef signed __int32 int32_t;
 typedef signed __int64 int64_t;
-typedef int Standard_Integer;
-typedef double Standard_Real;
-typedef bool Standard_Boolean;
-typedef float Standard_ShortReal;
-typedef char Standard_Character;
-typedef unsigned char Standard_Byte;
-typedef void * Standard_Address;
-typedef size_t Standard_Size;
-typedef std::time_t Standard_Time;
-typedef char Standard_Utf8Char;
-typedef unsigned char Standard_Utf8UChar;
-typedef char16_t Standard_ExtCharacter;
-typedef char16_t Standard_Utf16Char;
-typedef char32_t Standard_Utf32Char;
-typedef wchar_t Standard_WideChar;
-typedef const Standard_Character * Standard_CString;
-typedef const Standard_ExtCharacter * Standard_ExtString;
-typedef Standard_Size Standard_ThreadId;
-typedef Standard_ErrorHandler::Callback Standard_ErrorHandlerCallback;
+typedef signed __int8 int8_t;
+typedef unsigned __int16 uint16_t;
+typedef unsigned __int32 uint32_t;
+typedef unsigned __int64 uint64_t;
+typedef unsigned __int8 uint8_t;
 /* end typedefs declaration */
 
 /*************
@@ -200,21 +200,6 @@ Standard_Address
 ***********************************/
 class Standard_ArrayStreamBuffer : public std::streambuf {
 	public:
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "(re)-initialize the stream. passed pointer is stored as is (memory is not copied nor released with destructor). @param thebegin pointer to the beggining of pre-allocated buffer @param thesize length of pre-allocated buffer.
-
-Parameters
-----------
-theBegin: char *
-theSize: size_t
-
-Returns
--------
-None
-") Init;
-		virtual void Init(const char * theBegin, const size_t theSize);
-
 		/****************** Standard_ArrayStreamBuffer ******************/
 		%feature("compactdefaultargs") Standard_ArrayStreamBuffer;
 		%feature("autodoc", "Main constructor. passed pointer is stored as is (memory is not copied nor released with destructor). @param thebegin pointer to the beggining of pre-allocated buffer @param thesize length of pre-allocated buffer.
@@ -229,6 +214,21 @@ Returns
 None
 ") Standard_ArrayStreamBuffer;
 		 Standard_ArrayStreamBuffer(const char * theBegin, const size_t theSize);
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "(re)-initialize the stream. passed pointer is stored as is (memory is not copied nor released with destructor). @param thebegin pointer to the beggining of pre-allocated buffer @param thesize length of pre-allocated buffer.
+
+Parameters
+----------
+theBegin: char *
+theSize: size_t
+
+Returns
+-------
+None
+") Init;
+		virtual void Init(const char * theBegin, const size_t theSize);
 
 		/****************** xsgetn ******************/
 		%feature("compactdefaultargs") xsgetn;
@@ -259,6 +259,20 @@ std::streamsize
 ***************************/
 class Standard_Condition {
 	public:
+		/****************** Standard_Condition ******************/
+		%feature("compactdefaultargs") Standard_Condition;
+		%feature("autodoc", "Default constructor. @param theisset initial flag state.
+
+Parameters
+----------
+theIsSet: bool
+
+Returns
+-------
+None
+") Standard_Condition;
+		 Standard_Condition(bool theIsSet);
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "Do not wait for signal - just test it state. returns true if get event.
@@ -298,20 +312,6 @@ Returns
 None
 ") Set;
 		void Set();
-
-		/****************** Standard_Condition ******************/
-		%feature("compactdefaultargs") Standard_Condition;
-		%feature("autodoc", "Default constructor. @param theisset initial flag state.
-
-Parameters
-----------
-theIsSet: bool
-
-Returns
--------
-None
-") Standard_Condition;
-		 Standard_Condition(bool theIsSet);
 
 		/****************** Wait ******************/
 		%feature("compactdefaultargs") Wait;
@@ -356,6 +356,16 @@ bool
 class Standard_ErrorHandler {
 	public:
 		class Callback {};
+		/****************** Standard_ErrorHandler ******************/
+		%feature("compactdefaultargs") Standard_ErrorHandler;
+		%feature("autodoc", "Create a errorhandler (to be used with try{}catch(){}). it uses the 'setjmp' and 'longjmp' routines.
+
+Returns
+-------
+None
+") Standard_ErrorHandler;
+		 Standard_ErrorHandler();
+
 		/****************** Catches ******************/
 		%feature("compactdefaultargs") Catches;
 		%feature("autodoc", "Returns 'true' if the caught exception has the same type or inherits from 'atype'.
@@ -400,16 +410,6 @@ bool
 ") IsInTryBlock;
 		static Standard_Boolean IsInTryBlock();
 
-		/****************** Label ******************/
-		%feature("compactdefaultargs") Label;
-		%feature("autodoc", "Returns label for jump.
-
-Returns
--------
-Standard_JmpBuf
-") Label;
-		Standard_JmpBuf & Label();
-
 		/****************** LastCaughtError ******************/
 		%feature("compactdefaultargs") LastCaughtError;
 		%feature("autodoc", "Returns the caught exception.
@@ -419,16 +419,6 @@ Returns
 opencascade::handle<Standard_Failure>
 ") LastCaughtError;
 		static opencascade::handle<Standard_Failure> LastCaughtError();
-
-		/****************** Standard_ErrorHandler ******************/
-		%feature("compactdefaultargs") Standard_ErrorHandler;
-		%feature("autodoc", "Create a errorhandler (to be used with try{}catch(){}). it uses the 'setjmp' and 'longjmp' routines.
-
-Returns
--------
-None
-") Standard_ErrorHandler;
-		 Standard_ErrorHandler();
 
 		/****************** Unlink ******************/
 		%feature("compactdefaultargs") Unlink;
@@ -446,6 +436,10 @@ None
 %extend Standard_ErrorHandler {
 	%pythoncode {
 	__repr__ = _dumps_object
+
+	@methodnotwrapped
+	def Label(self):
+		pass
 	}
 };
 
@@ -454,6 +448,95 @@ None
 **********************/
 class Standard_GUID {
 	public:
+		/****************** Standard_GUID ******************/
+		%feature("compactdefaultargs") Standard_GUID;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Standard_GUID;
+		 Standard_GUID();
+
+		/****************** Standard_GUID ******************/
+		%feature("compactdefaultargs") Standard_GUID;
+		%feature("autodoc", "Build a guid from an ascii string with the following format: length : 36 char '00000000-0000-0000-0000-000000000000'.
+
+Parameters
+----------
+aGuid: char *
+
+Returns
+-------
+None
+") Standard_GUID;
+		 Standard_GUID(const char * aGuid);
+
+		/****************** Standard_GUID ******************/
+		%feature("compactdefaultargs") Standard_GUID;
+		%feature("autodoc", "Build a guid from an unicode string with the following format: //! '00000000-0000-0000-0000-000000000000'.
+
+Parameters
+----------
+aGuid: Standard_ExtString
+
+Returns
+-------
+None
+") Standard_GUID;
+		 Standard_GUID(const Standard_ExtString aGuid);
+
+		/****************** Standard_GUID ******************/
+		%feature("compactdefaultargs") Standard_GUID;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+a32b: int
+a16b1: Standard_ExtCharacter
+a16b2: Standard_ExtCharacter
+a16b3: Standard_ExtCharacter
+a8b1: Standard_Byte
+a8b2: Standard_Byte
+a8b3: Standard_Byte
+a8b4: Standard_Byte
+a8b5: Standard_Byte
+a8b6: Standard_Byte
+
+Returns
+-------
+None
+") Standard_GUID;
+		 Standard_GUID(const Standard_Integer a32b, const Standard_ExtCharacter a16b1, const Standard_ExtCharacter a16b2, const Standard_ExtCharacter a16b3, const Standard_Byte a8b1, const Standard_Byte a8b2, const Standard_Byte a8b3, const Standard_Byte a8b4, const Standard_Byte a8b5, const Standard_Byte a8b6);
+
+		/****************** Standard_GUID ******************/
+		%feature("compactdefaultargs") Standard_GUID;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aGuid: Standard_UUID
+
+Returns
+-------
+None
+") Standard_GUID;
+		 Standard_GUID(const Standard_UUID & aGuid);
+
+		/****************** Standard_GUID ******************/
+		%feature("compactdefaultargs") Standard_GUID;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aGuid: Standard_GUID
+
+Returns
+-------
+None
+") Standard_GUID;
+		 Standard_GUID(const Standard_GUID & aGuid);
+
 		/****************** Assign ******************/
 		%feature("compactdefaultargs") Assign;
 		%feature("autodoc", "No available documentation.
@@ -576,95 +659,6 @@ bool
             self->ShallowDump(s);
             return s.str();}
         };
-		/****************** Standard_GUID ******************/
-		%feature("compactdefaultargs") Standard_GUID;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Standard_GUID;
-		 Standard_GUID();
-
-		/****************** Standard_GUID ******************/
-		%feature("compactdefaultargs") Standard_GUID;
-		%feature("autodoc", "Build a guid from an ascii string with the following format: length : 36 char '00000000-0000-0000-0000-000000000000'.
-
-Parameters
-----------
-aGuid: char *
-
-Returns
--------
-None
-") Standard_GUID;
-		 Standard_GUID(const char * aGuid);
-
-		/****************** Standard_GUID ******************/
-		%feature("compactdefaultargs") Standard_GUID;
-		%feature("autodoc", "Build a guid from an unicode string with the following format: //! '00000000-0000-0000-0000-000000000000'.
-
-Parameters
-----------
-aGuid: Standard_ExtString
-
-Returns
--------
-None
-") Standard_GUID;
-		 Standard_GUID(const Standard_ExtString aGuid);
-
-		/****************** Standard_GUID ******************/
-		%feature("compactdefaultargs") Standard_GUID;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-a32b: int
-a16b1: Standard_ExtCharacter
-a16b2: Standard_ExtCharacter
-a16b3: Standard_ExtCharacter
-a8b1: Standard_Byte
-a8b2: Standard_Byte
-a8b3: Standard_Byte
-a8b4: Standard_Byte
-a8b5: Standard_Byte
-a8b6: Standard_Byte
-
-Returns
--------
-None
-") Standard_GUID;
-		 Standard_GUID(const Standard_Integer a32b, const Standard_ExtCharacter a16b1, const Standard_ExtCharacter a16b2, const Standard_ExtCharacter a16b3, const Standard_Byte a8b1, const Standard_Byte a8b2, const Standard_Byte a8b3, const Standard_Byte a8b4, const Standard_Byte a8b5, const Standard_Byte a8b6);
-
-		/****************** Standard_GUID ******************/
-		%feature("compactdefaultargs") Standard_GUID;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aGuid: Standard_UUID
-
-Returns
--------
-None
-") Standard_GUID;
-		 Standard_GUID(const Standard_UUID & aGuid);
-
-		/****************** Standard_GUID ******************/
-		%feature("compactdefaultargs") Standard_GUID;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aGuid: Standard_GUID
-
-Returns
--------
-None
-") Standard_GUID;
-		 Standard_GUID(const Standard_GUID & aGuid);
-
 		/****************** ToCString ******************/
 		%feature("compactdefaultargs") ToCString;
 		%feature("autodoc", "Translate the guid into ascii string the astrguid is allocated by user. the guid have the following format: //! '00000000-0000-0000-0000-000000000000'.
@@ -852,6 +846,30 @@ None
 class Standard_Transient {
 	public:
 typedef void base_type;
+		/****************** Standard_Transient ******************/
+		%feature("compactdefaultargs") Standard_Transient;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Standard_Transient;
+		 Standard_Transient();
+
+		/****************** Standard_Transient ******************/
+		%feature("compactdefaultargs") Standard_Transient;
+		%feature("autodoc", "Copy constructor -- does nothing.
+
+Parameters
+----------
+&: Standard_Transient
+
+Returns
+-------
+None
+") Standard_Transient;
+		 Standard_Transient(const Standard_Transient &);
+
 		/****************** DecrementRefCounter ******************/
 		%feature("compactdefaultargs") DecrementRefCounter;
 		%feature("autodoc", "Decrements the reference counter of this object; returns the decremented value.
@@ -958,30 +976,6 @@ bool
 ") IsKind;
 		Standard_Boolean IsKind(const char * theTypeName);
 
-		/****************** Standard_Transient ******************/
-		%feature("compactdefaultargs") Standard_Transient;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Standard_Transient;
-		 Standard_Transient();
-
-		/****************** Standard_Transient ******************/
-		%feature("compactdefaultargs") Standard_Transient;
-		%feature("autodoc", "Copy constructor -- does nothing.
-
-Parameters
-----------
-&: Standard_Transient
-
-Returns
--------
-None
-") Standard_Transient;
-		 Standard_Transient(const Standard_Transient &);
-
 		/****************** This ******************/
 		%feature("compactdefaultargs") This;
 		%feature("autodoc", "Returns non-const pointer to this object (like const_cast). for protection against creating handle to objects allocated in stack or call from constructor, it will raise exception standard_programerror if reference counter is zero.
@@ -1079,6 +1073,29 @@ char *
 *************************/
 class Standard_MMgrOpt : public Standard_MMgrRoot {
 	public:
+		/****************** Standard_MMgrOpt ******************/
+		%feature("compactdefaultargs") Standard_MMgrOpt;
+		%feature("autodoc", "Constructor. if aclear is true, the allocated emmory will be nullified. for description of other parameters, see description of the class above.
+
+Parameters
+----------
+aClear: bool,optional
+	default value is Standard_True
+aMMap: bool,optional
+	default value is Standard_True
+aCellSize: Standard_Size,optional
+	default value is 200
+aNbPages: int,optional
+	default value is 10000
+aThreshold: Standard_Size,optional
+	default value is 40000
+
+Returns
+-------
+None
+") Standard_MMgrOpt;
+		 Standard_MMgrOpt(const Standard_Boolean aClear = Standard_True, const Standard_Boolean aMMap = Standard_True, const Standard_Size aCellSize = 200, const Standard_Integer aNbPages = 10000, const Standard_Size aThreshold = 40000);
+
 		/****************** Allocate ******************/
 		%feature("compactdefaultargs") Allocate;
 		%feature("autodoc", "Allocate asize bytes; see class description above.
@@ -1136,29 +1153,6 @@ Standard_Address
 ") Reallocate;
 		virtual Standard_Address Reallocate(Standard_Address thePtr, const Standard_Size theSize);
 
-		/****************** Standard_MMgrOpt ******************/
-		%feature("compactdefaultargs") Standard_MMgrOpt;
-		%feature("autodoc", "Constructor. if aclear is true, the allocated emmory will be nullified. for description of other parameters, see description of the class above.
-
-Parameters
-----------
-aClear: bool,optional
-	default value is Standard_True
-aMMap: bool,optional
-	default value is Standard_True
-aCellSize: Standard_Size,optional
-	default value is 200
-aNbPages: int,optional
-	default value is 10000
-aThreshold: Standard_Size,optional
-	default value is 40000
-
-Returns
--------
-None
-") Standard_MMgrOpt;
-		 Standard_MMgrOpt(const Standard_Boolean aClear = Standard_True, const Standard_Boolean aMMap = Standard_True, const Standard_Size aCellSize = 200, const Standard_Integer aNbPages = 10000, const Standard_Size aThreshold = 40000);
-
 };
 
 
@@ -1177,6 +1171,21 @@ None
 *************************/
 class Standard_MMgrRaw : public Standard_MMgrRoot {
 	public:
+		/****************** Standard_MMgrRaw ******************/
+		%feature("compactdefaultargs") Standard_MMgrRaw;
+		%feature("autodoc", "Constructor; if aclear is true, the memory will be nullified upon allocation.
+
+Parameters
+----------
+aClear: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Standard_MMgrRaw;
+		 Standard_MMgrRaw(const Standard_Boolean aClear = Standard_False);
+
 		/****************** Allocate ******************/
 		%feature("compactdefaultargs") Allocate;
 		%feature("autodoc", "Allocate asize bytes .
@@ -1220,21 +1229,6 @@ Standard_Address
 ") Reallocate;
 		virtual Standard_Address Reallocate(Standard_Address thePtr, const Standard_Size theSize);
 
-		/****************** Standard_MMgrRaw ******************/
-		%feature("compactdefaultargs") Standard_MMgrRaw;
-		%feature("autodoc", "Constructor; if aclear is true, the memory will be nullified upon allocation.
-
-Parameters
-----------
-aClear: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Standard_MMgrRaw;
-		 Standard_MMgrRaw(const Standard_Boolean aClear = Standard_False);
-
 };
 
 
@@ -1249,6 +1243,21 @@ None
 ******************************/
 class Standard_MMgrTBBalloc : public Standard_MMgrRoot {
 	public:
+		/****************** Standard_MMgrTBBalloc ******************/
+		%feature("compactdefaultargs") Standard_MMgrTBBalloc;
+		%feature("autodoc", "Constructor; if aclear is true, the memory will be nullified upon allocation.
+
+Parameters
+----------
+aClear: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Standard_MMgrTBBalloc;
+		 Standard_MMgrTBBalloc(const Standard_Boolean aClear = Standard_False);
+
 		/****************** Allocate ******************/
 		%feature("compactdefaultargs") Allocate;
 		%feature("autodoc", "Allocate asize bytes .
@@ -1292,21 +1301,6 @@ Standard_Address
 ") Reallocate;
 		virtual Standard_Address Reallocate(Standard_Address thePtr, const Standard_Size theSize);
 
-		/****************** Standard_MMgrTBBalloc ******************/
-		%feature("compactdefaultargs") Standard_MMgrTBBalloc;
-		%feature("autodoc", "Constructor; if aclear is true, the memory will be nullified upon allocation.
-
-Parameters
-----------
-aClear: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Standard_MMgrTBBalloc;
-		 Standard_MMgrTBBalloc(const Standard_Boolean aClear = Standard_False);
-
 };
 
 
@@ -1324,6 +1318,21 @@ None
 *****************************/
 class Standard_OutOfMemory : public Standard_ProgramError {
 	public:
+		/****************** Standard_OutOfMemory ******************/
+		%feature("compactdefaultargs") Standard_OutOfMemory;
+		%feature("autodoc", "Constructor is kept public for backward compatibility.
+
+Parameters
+----------
+theMessage: char *,optional
+	default value is 0
+
+Returns
+-------
+None
+") Standard_OutOfMemory;
+		 Standard_OutOfMemory(const char * theMessage = 0);
+
 		/****************** GetMessageString ******************/
 		%feature("compactdefaultargs") GetMessageString;
 		%feature("autodoc", "Returns error message.
@@ -1391,21 +1400,6 @@ Returns
 None
 ") SetMessageString;
 		void SetMessageString(const char * aMessage);
-
-		/****************** Standard_OutOfMemory ******************/
-		%feature("compactdefaultargs") Standard_OutOfMemory;
-		%feature("autodoc", "Constructor is kept public for backward compatibility.
-
-Parameters
-----------
-theMessage: char *,optional
-	default value is 0
-
-Returns
--------
-None
-") Standard_OutOfMemory;
-		 Standard_OutOfMemory(const char * theMessage = 0);
 
 };
 
@@ -1488,6 +1482,10 @@ class Standard_Mutex:
 
 @classnotwrapped
 class Standard_ReadLineBuffer:
+	pass
+
+@classnotwrapped
+class Standard_ProgramError:
 	pass
 
 @classnotwrapped

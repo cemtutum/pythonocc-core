@@ -305,6 +305,38 @@ gp_Vec
 **********************************/
 class GeomEvaluator_OffsetCurve : public GeomEvaluator_Curve {
 	public:
+		/****************** GeomEvaluator_OffsetCurve ******************/
+		%feature("compactdefaultargs") GeomEvaluator_OffsetCurve;
+		%feature("autodoc", "Initialize evaluator by curve.
+
+Parameters
+----------
+theBase: Geom_Curve
+theOffset: float
+theDirection: gp_Dir
+
+Returns
+-------
+None
+") GeomEvaluator_OffsetCurve;
+		 GeomEvaluator_OffsetCurve(const opencascade::handle<Geom_Curve> & theBase, const Standard_Real theOffset, const gp_Dir & theDirection);
+
+		/****************** GeomEvaluator_OffsetCurve ******************/
+		%feature("compactdefaultargs") GeomEvaluator_OffsetCurve;
+		%feature("autodoc", "Initialize evaluator by curve adaptor.
+
+Parameters
+----------
+theBase: GeomAdaptor_HCurve
+theOffset: float
+theDirection: gp_Dir
+
+Returns
+-------
+None
+") GeomEvaluator_OffsetCurve;
+		 GeomEvaluator_OffsetCurve(const opencascade::handle<GeomAdaptor_HCurve> & theBase, const Standard_Real theOffset, const gp_Dir & theDirection);
+
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Value of curve.
@@ -386,38 +418,6 @@ gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real theU, const Standard_Integer theDeriv);
 
-		/****************** GeomEvaluator_OffsetCurve ******************/
-		%feature("compactdefaultargs") GeomEvaluator_OffsetCurve;
-		%feature("autodoc", "Initialize evaluator by curve.
-
-Parameters
-----------
-theBase: Geom_Curve
-theOffset: float
-theDirection: gp_Dir
-
-Returns
--------
-None
-") GeomEvaluator_OffsetCurve;
-		 GeomEvaluator_OffsetCurve(const opencascade::handle<Geom_Curve> & theBase, const Standard_Real theOffset, const gp_Dir & theDirection);
-
-		/****************** GeomEvaluator_OffsetCurve ******************/
-		%feature("compactdefaultargs") GeomEvaluator_OffsetCurve;
-		%feature("autodoc", "Initialize evaluator by curve adaptor.
-
-Parameters
-----------
-theBase: GeomAdaptor_HCurve
-theOffset: float
-theDirection: gp_Dir
-
-Returns
--------
-None
-") GeomEvaluator_OffsetCurve;
-		 GeomEvaluator_OffsetCurve(const opencascade::handle<GeomAdaptor_HCurve> & theBase, const Standard_Real theOffset, const gp_Dir & theDirection);
-
 		/****************** SetOffsetDirection ******************/
 		%feature("compactdefaultargs") SetOffsetDirection;
 		%feature("autodoc", "No available documentation.
@@ -462,103 +462,6 @@ None
 ************************************/
 class GeomEvaluator_OffsetSurface : public GeomEvaluator_Surface {
 	public:
-		/****************** D0 ******************/
-		%feature("compactdefaultargs") D0;
-		%feature("autodoc", "Value of surface.
-
-Parameters
-----------
-theU: float
-theV: float
-theValue: gp_Pnt
-
-Returns
--------
-None
-") D0;
-		void D0(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue);
-
-		/****************** D1 ******************/
-		%feature("compactdefaultargs") D1;
-		%feature("autodoc", "Value and first derivatives of surface.
-
-Parameters
-----------
-theU: float
-theV: float
-theValue: gp_Pnt
-theD1U: gp_Vec
-theD1V: gp_Vec
-
-Returns
--------
-None
-") D1;
-		void D1(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V);
-
-		/****************** D2 ******************/
-		%feature("compactdefaultargs") D2;
-		%feature("autodoc", "Value, first and second derivatives of surface.
-
-Parameters
-----------
-theU: float
-theV: float
-theValue: gp_Pnt
-theD1U: gp_Vec
-theD1V: gp_Vec
-theD2U: gp_Vec
-theD2V: gp_Vec
-theD2UV: gp_Vec
-
-Returns
--------
-None
-") D2;
-		void D2(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V, gp_Vec & theD2U, gp_Vec & theD2V, gp_Vec & theD2UV);
-
-		/****************** D3 ******************/
-		%feature("compactdefaultargs") D3;
-		%feature("autodoc", "Value, first, second and third derivatives of surface.
-
-Parameters
-----------
-theU: float
-theV: float
-theValue: gp_Pnt
-theD1U: gp_Vec
-theD1V: gp_Vec
-theD2U: gp_Vec
-theD2V: gp_Vec
-theD2UV: gp_Vec
-theD3U: gp_Vec
-theD3V: gp_Vec
-theD3UUV: gp_Vec
-theD3UVV: gp_Vec
-
-Returns
--------
-None
-") D3;
-		void D3(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V, gp_Vec & theD2U, gp_Vec & theD2V, gp_Vec & theD2UV, gp_Vec & theD3U, gp_Vec & theD3V, gp_Vec & theD3UUV, gp_Vec & theD3UVV);
-
-		/****************** DN ******************/
-		%feature("compactdefaultargs") DN;
-		%feature("autodoc", "Calculates n-th derivatives of surface, where n = thederu + thederv. //! raises if n < 1 or thederu < 0 or thederv < 0.
-
-Parameters
-----------
-theU: float
-theV: float
-theDerU: int
-theDerV: int
-
-Returns
--------
-gp_Vec
-") DN;
-		gp_Vec DN(const Standard_Real theU, const Standard_Real theV, const Standard_Integer theDerU, const Standard_Integer theDerV);
-
 		/****************** GeomEvaluator_OffsetSurface ******************/
 		%feature("compactdefaultargs") GeomEvaluator_OffsetSurface;
 		%feature("autodoc", "Initialize evaluator by surface.
@@ -593,36 +496,6 @@ None
 ") GeomEvaluator_OffsetSurface;
 		 GeomEvaluator_OffsetSurface(const opencascade::handle<GeomAdaptor_HSurface> & theBase, const Standard_Real theOffset, const opencascade::handle<Geom_OsculatingSurface> & theOscSurf = opencascade::handle<Geom_OsculatingSurface>());
 
-		/****************** SetOffsetValue ******************/
-		%feature("compactdefaultargs") SetOffsetValue;
-		%feature("autodoc", "Change the offset value.
-
-Parameters
-----------
-theOffset: float
-
-Returns
--------
-None
-") SetOffsetValue;
-		void SetOffsetValue(Standard_Real theOffset);
-
-};
-
-
-%make_alias(GeomEvaluator_OffsetSurface)
-
-%extend GeomEvaluator_OffsetSurface {
-	%pythoncode {
-	__repr__ = _dumps_object
-	}
-};
-
-/*****************************************
-* class GeomEvaluator_SurfaceOfExtrusion *
-*****************************************/
-class GeomEvaluator_SurfaceOfExtrusion : public GeomEvaluator_Surface {
-	public:
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Value of surface.
@@ -720,6 +593,36 @@ gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real theU, const Standard_Real theV, const Standard_Integer theDerU, const Standard_Integer theDerV);
 
+		/****************** SetOffsetValue ******************/
+		%feature("compactdefaultargs") SetOffsetValue;
+		%feature("autodoc", "Change the offset value.
+
+Parameters
+----------
+theOffset: float
+
+Returns
+-------
+None
+") SetOffsetValue;
+		void SetOffsetValue(Standard_Real theOffset);
+
+};
+
+
+%make_alias(GeomEvaluator_OffsetSurface)
+
+%extend GeomEvaluator_OffsetSurface {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
+/*****************************************
+* class GeomEvaluator_SurfaceOfExtrusion *
+*****************************************/
+class GeomEvaluator_SurfaceOfExtrusion : public GeomEvaluator_Surface {
+	public:
 		/****************** GeomEvaluator_SurfaceOfExtrusion ******************/
 		%feature("compactdefaultargs") GeomEvaluator_SurfaceOfExtrusion;
 		%feature("autodoc", "Initialize evaluator by surface.
@@ -749,6 +652,103 @@ Returns
 None
 ") GeomEvaluator_SurfaceOfExtrusion;
 		 GeomEvaluator_SurfaceOfExtrusion(const opencascade::handle<Adaptor3d_HCurve> & theBase, const gp_Dir & theExtrusionDir);
+
+		/****************** D0 ******************/
+		%feature("compactdefaultargs") D0;
+		%feature("autodoc", "Value of surface.
+
+Parameters
+----------
+theU: float
+theV: float
+theValue: gp_Pnt
+
+Returns
+-------
+None
+") D0;
+		void D0(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue);
+
+		/****************** D1 ******************/
+		%feature("compactdefaultargs") D1;
+		%feature("autodoc", "Value and first derivatives of surface.
+
+Parameters
+----------
+theU: float
+theV: float
+theValue: gp_Pnt
+theD1U: gp_Vec
+theD1V: gp_Vec
+
+Returns
+-------
+None
+") D1;
+		void D1(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V);
+
+		/****************** D2 ******************/
+		%feature("compactdefaultargs") D2;
+		%feature("autodoc", "Value, first and second derivatives of surface.
+
+Parameters
+----------
+theU: float
+theV: float
+theValue: gp_Pnt
+theD1U: gp_Vec
+theD1V: gp_Vec
+theD2U: gp_Vec
+theD2V: gp_Vec
+theD2UV: gp_Vec
+
+Returns
+-------
+None
+") D2;
+		void D2(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V, gp_Vec & theD2U, gp_Vec & theD2V, gp_Vec & theD2UV);
+
+		/****************** D3 ******************/
+		%feature("compactdefaultargs") D3;
+		%feature("autodoc", "Value, first, second and third derivatives of surface.
+
+Parameters
+----------
+theU: float
+theV: float
+theValue: gp_Pnt
+theD1U: gp_Vec
+theD1V: gp_Vec
+theD2U: gp_Vec
+theD2V: gp_Vec
+theD2UV: gp_Vec
+theD3U: gp_Vec
+theD3V: gp_Vec
+theD3UUV: gp_Vec
+theD3UVV: gp_Vec
+
+Returns
+-------
+None
+") D3;
+		void D3(const Standard_Real theU, const Standard_Real theV, gp_Pnt & theValue, gp_Vec & theD1U, gp_Vec & theD1V, gp_Vec & theD2U, gp_Vec & theD2V, gp_Vec & theD2UV, gp_Vec & theD3U, gp_Vec & theD3V, gp_Vec & theD3UUV, gp_Vec & theD3UVV);
+
+		/****************** DN ******************/
+		%feature("compactdefaultargs") DN;
+		%feature("autodoc", "Calculates n-th derivatives of surface, where n = thederu + thederv. //! raises if n < 1 or thederu < 0 or thederv < 0.
+
+Parameters
+----------
+theU: float
+theV: float
+theDerU: int
+theDerV: int
+
+Returns
+-------
+gp_Vec
+") DN;
+		gp_Vec DN(const Standard_Real theU, const Standard_Real theV, const Standard_Integer theDerU, const Standard_Integer theDerV);
 
 		/****************** SetDirection ******************/
 		%feature("compactdefaultargs") SetDirection;
@@ -780,6 +780,38 @@ None
 ******************************************/
 class GeomEvaluator_SurfaceOfRevolution : public GeomEvaluator_Surface {
 	public:
+		/****************** GeomEvaluator_SurfaceOfRevolution ******************/
+		%feature("compactdefaultargs") GeomEvaluator_SurfaceOfRevolution;
+		%feature("autodoc", "Initialize evaluator by revolved curve, the axis of revolution and the location.
+
+Parameters
+----------
+theBase: Geom_Curve
+theRevolDir: gp_Dir
+theRevolLoc: gp_Pnt
+
+Returns
+-------
+None
+") GeomEvaluator_SurfaceOfRevolution;
+		 GeomEvaluator_SurfaceOfRevolution(const opencascade::handle<Geom_Curve> & theBase, const gp_Dir & theRevolDir, const gp_Pnt & theRevolLoc);
+
+		/****************** GeomEvaluator_SurfaceOfRevolution ******************/
+		%feature("compactdefaultargs") GeomEvaluator_SurfaceOfRevolution;
+		%feature("autodoc", "Initialize evaluator by adaptor of the revolved curve, the axis of revolution and the location.
+
+Parameters
+----------
+theBase: Adaptor3d_HCurve
+theRevolDir: gp_Dir
+theRevolLoc: gp_Pnt
+
+Returns
+-------
+None
+") GeomEvaluator_SurfaceOfRevolution;
+		 GeomEvaluator_SurfaceOfRevolution(const opencascade::handle<Adaptor3d_HCurve> & theBase, const gp_Dir & theRevolDir, const gp_Pnt & theRevolLoc);
+
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Value of surface.
@@ -876,38 +908,6 @@ Returns
 gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real theU, const Standard_Real theV, const Standard_Integer theDerU, const Standard_Integer theDerV);
-
-		/****************** GeomEvaluator_SurfaceOfRevolution ******************/
-		%feature("compactdefaultargs") GeomEvaluator_SurfaceOfRevolution;
-		%feature("autodoc", "Initialize evaluator by revolved curve, the axis of revolution and the location.
-
-Parameters
-----------
-theBase: Geom_Curve
-theRevolDir: gp_Dir
-theRevolLoc: gp_Pnt
-
-Returns
--------
-None
-") GeomEvaluator_SurfaceOfRevolution;
-		 GeomEvaluator_SurfaceOfRevolution(const opencascade::handle<Geom_Curve> & theBase, const gp_Dir & theRevolDir, const gp_Pnt & theRevolLoc);
-
-		/****************** GeomEvaluator_SurfaceOfRevolution ******************/
-		%feature("compactdefaultargs") GeomEvaluator_SurfaceOfRevolution;
-		%feature("autodoc", "Initialize evaluator by adaptor of the revolved curve, the axis of revolution and the location.
-
-Parameters
-----------
-theBase: Adaptor3d_HCurve
-theRevolDir: gp_Dir
-theRevolLoc: gp_Pnt
-
-Returns
--------
-None
-") GeomEvaluator_SurfaceOfRevolution;
-		 GeomEvaluator_SurfaceOfRevolution(const opencascade::handle<Adaptor3d_HCurve> & theBase, const gp_Dir & theRevolDir, const gp_Pnt & theRevolLoc);
 
 		/****************** SetAxis ******************/
 		%feature("compactdefaultargs") SetAxis;

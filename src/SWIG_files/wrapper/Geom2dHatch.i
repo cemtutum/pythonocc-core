@@ -41,8 +41,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geom2dhatch.html"
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
-#include<Geom2dAdaptor_module.hxx>
 #include<gp_module.hxx>
+#include<Geom2dAdaptor_module.hxx>
 #include<IntRes2d_module.hxx>
 #include<TopAbs_module.hxx>
 #include<Geom2d_module.hxx>
@@ -64,8 +64,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geom2dhatch.html"
 %};
 %import Standard.i
 %import NCollection.i
-%import Geom2dAdaptor.i
 %import gp.i
+%import Geom2dAdaptor.i
 %import IntRes2d.i
 %import TopAbs.i
 %import Geom2d.i
@@ -88,19 +88,6 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(Geom2dHatch_MapOfElements) NCollection_DataMap<Standard_Integer,Geom2dHatch_Element,TColStd_MapIntegerHasher>;
-
-%extend NCollection_DataMap<Standard_Integer,Geom2dHatch_Element,TColStd_MapIntegerHasher> {
-    PyObject* Keys() {
-        PyObject *l=PyList_New(0);
-        for (Geom2dHatch_MapOfElements::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
-          PyObject *o = PyLong_FromLong(anIt1.Key());
-          PyList_Append(l, o);
-          Py_DECREF(o);
-        }
-    return l;
-    }
-};
 %template(Geom2dHatch_Hatchings) NCollection_DataMap<Standard_Integer,Geom2dHatch_Hatching,TColStd_MapIntegerHasher>;
 
 %extend NCollection_DataMap<Standard_Integer,Geom2dHatch_Hatching,TColStd_MapIntegerHasher> {
@@ -114,13 +101,26 @@ from OCC.Core.Exception import *
     return l;
     }
 };
+%template(Geom2dHatch_MapOfElements) NCollection_DataMap<Standard_Integer,Geom2dHatch_Element,TColStd_MapIntegerHasher>;
+
+%extend NCollection_DataMap<Standard_Integer,Geom2dHatch_Element,TColStd_MapIntegerHasher> {
+    PyObject* Keys() {
+        PyObject *l=PyList_New(0);
+        for (Geom2dHatch_MapOfElements::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
+          PyObject *o = PyLong_FromLong(anIt1.Key());
+          PyList_Append(l, o);
+          Py_DECREF(o);
+        }
+    return l;
+    }
+};
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<Standard_Integer, Geom2dHatch_Element, TColStd_MapIntegerHasher> Geom2dHatch_MapOfElements;
+typedef NCollection_DataMap<Standard_Integer, Geom2dHatch_Hatching, TColStd_MapIntegerHasher>::Iterator Geom2dHatch_DataMapIteratorOfHatchings;
 typedef NCollection_DataMap<Standard_Integer, Geom2dHatch_Element, TColStd_MapIntegerHasher>::Iterator Geom2dHatch_DataMapIteratorOfMapOfElements;
 typedef NCollection_DataMap<Standard_Integer, Geom2dHatch_Hatching, TColStd_MapIntegerHasher> Geom2dHatch_Hatchings;
-typedef NCollection_DataMap<Standard_Integer, Geom2dHatch_Hatching, TColStd_MapIntegerHasher>::Iterator Geom2dHatch_DataMapIteratorOfHatchings;
+typedef NCollection_DataMap<Standard_Integer, Geom2dHatch_Element, TColStd_MapIntegerHasher> Geom2dHatch_MapOfElements;
 /* end typedefs declaration */
 
 /*******************************
@@ -128,26 +128,6 @@ typedef NCollection_DataMap<Standard_Integer, Geom2dHatch_Hatching, TColStd_MapI
 *******************************/
 class Geom2dHatch_Classifier {
 	public:
-		/****************** Edge ******************/
-		%feature("compactdefaultargs") Edge;
-		%feature("autodoc", "Returns the edge used to determine the classification. when the state is on this is the edge containing the point.
-
-Returns
--------
-Geom2dAdaptor_Curve
-") Edge;
-		const Geom2dAdaptor_Curve & Edge();
-
-		/****************** EdgeParameter ******************/
-		%feature("compactdefaultargs") EdgeParameter;
-		%feature("autodoc", "Returns the parameter on edge() used to determine the classification.
-
-Returns
--------
-float
-") EdgeParameter;
-		Standard_Real EdgeParameter();
-
 		/****************** Geom2dHatch_Classifier ******************/
 		%feature("compactdefaultargs") Geom2dHatch_Classifier;
 		%feature("autodoc", "Empty constructor, undefined algorithm.
@@ -173,6 +153,26 @@ Returns
 None
 ") Geom2dHatch_Classifier;
 		 Geom2dHatch_Classifier(Geom2dHatch_Elements & F, const gp_Pnt2d & P, const Standard_Real Tol);
+
+		/****************** Edge ******************/
+		%feature("compactdefaultargs") Edge;
+		%feature("autodoc", "Returns the edge used to determine the classification. when the state is on this is the edge containing the point.
+
+Returns
+-------
+Geom2dAdaptor_Curve
+") Edge;
+		const Geom2dAdaptor_Curve & Edge();
+
+		/****************** EdgeParameter ******************/
+		%feature("compactdefaultargs") EdgeParameter;
+		%feature("autodoc", "Returns the parameter on edge() used to determine the classification.
+
+Returns
+-------
+float
+") EdgeParameter;
+		Standard_Real EdgeParameter();
 
 		/****************** NoWires ******************/
 		%feature("compactdefaultargs") NoWires;
@@ -244,26 +244,6 @@ TopAbs_State
 ****************************/
 class Geom2dHatch_Element {
 	public:
-		/****************** ChangeCurve ******************/
-		%feature("compactdefaultargs") ChangeCurve;
-		%feature("autodoc", "Returns the curve associated to the element.
-
-Returns
--------
-Geom2dAdaptor_Curve
-") ChangeCurve;
-		Geom2dAdaptor_Curve & ChangeCurve();
-
-		/****************** Curve ******************/
-		%feature("compactdefaultargs") Curve;
-		%feature("autodoc", "Returns the curve associated to the element.
-
-Returns
--------
-Geom2dAdaptor_Curve
-") Curve;
-		const Geom2dAdaptor_Curve & Curve();
-
 		/****************** Geom2dHatch_Element ******************/
 		%feature("compactdefaultargs") Geom2dHatch_Element;
 		%feature("autodoc", "No available documentation.
@@ -304,6 +284,26 @@ None
 ") Geom2dHatch_Element;
 		 Geom2dHatch_Element(const Geom2dAdaptor_Curve & Curve, const TopAbs_Orientation Orientation = TopAbs_FORWARD);
 
+		/****************** ChangeCurve ******************/
+		%feature("compactdefaultargs") ChangeCurve;
+		%feature("autodoc", "Returns the curve associated to the element.
+
+Returns
+-------
+Geom2dAdaptor_Curve
+") ChangeCurve;
+		Geom2dAdaptor_Curve & ChangeCurve();
+
+		/****************** Curve ******************/
+		%feature("compactdefaultargs") Curve;
+		%feature("autodoc", "Returns the curve associated to the element.
+
+Returns
+-------
+Geom2dAdaptor_Curve
+") Curve;
+		const Geom2dAdaptor_Curve & Curve();
+
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
 		%feature("autodoc", "Sets the orientation of the element.
@@ -342,6 +342,30 @@ TopAbs_Orientation
 *****************************/
 class Geom2dHatch_Elements {
 	public:
+		/****************** Geom2dHatch_Elements ******************/
+		%feature("compactdefaultargs") Geom2dHatch_Elements;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Geom2dHatch_Elements;
+		 Geom2dHatch_Elements();
+
+		/****************** Geom2dHatch_Elements ******************/
+		%feature("compactdefaultargs") Geom2dHatch_Elements;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Other: Geom2dHatch_Elements
+
+Returns
+-------
+None
+") Geom2dHatch_Elements;
+		 Geom2dHatch_Elements(const Geom2dHatch_Elements & Other);
+
 		/****************** Bind ******************/
 		%feature("compactdefaultargs") Bind;
 		%feature("autodoc", "No available documentation.
@@ -423,30 +447,6 @@ Returns
 Geom2dHatch_Element
 ") Find;
 		const Geom2dHatch_Element & Find(const Standard_Integer K);
-
-		/****************** Geom2dHatch_Elements ******************/
-		%feature("compactdefaultargs") Geom2dHatch_Elements;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Geom2dHatch_Elements;
-		 Geom2dHatch_Elements();
-
-		/****************** Geom2dHatch_Elements ******************/
-		%feature("compactdefaultargs") Geom2dHatch_Elements;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Other: Geom2dHatch_Elements
-
-Returns
--------
-None
-") Geom2dHatch_Elements;
-		 Geom2dHatch_Elements(const Geom2dHatch_Elements & Other);
 
 		/****************** InitEdges ******************/
 		%feature("compactdefaultargs") InitEdges;
@@ -626,6 +626,16 @@ bool
 *****************************************/
 class Geom2dHatch_FClass2dOfClassifier {
 	public:
+		/****************** Geom2dHatch_FClass2dOfClassifier ******************/
+		%feature("compactdefaultargs") Geom2dHatch_FClass2dOfClassifier;
+		%feature("autodoc", "Creates an undefined classifier.
+
+Returns
+-------
+None
+") Geom2dHatch_FClass2dOfClassifier;
+		 Geom2dHatch_FClass2dOfClassifier();
+
 		/****************** ClosestIntersection ******************/
 		%feature("compactdefaultargs") ClosestIntersection;
 		%feature("autodoc", "Returns 0 if the last compared edge had no relevant intersection. else returns the index of this intersection in the last intersection algorithm.
@@ -650,16 +660,6 @@ Returns
 None
 ") Compare;
 		void Compare(const Geom2dAdaptor_Curve & E, const TopAbs_Orientation Or);
-
-		/****************** Geom2dHatch_FClass2dOfClassifier ******************/
-		%feature("compactdefaultargs") Geom2dHatch_FClass2dOfClassifier;
-		%feature("autodoc", "Creates an undefined classifier.
-
-Returns
--------
-None
-") Geom2dHatch_FClass2dOfClassifier;
-		 Geom2dHatch_FClass2dOfClassifier();
 
 		/****************** Intersector ******************/
 		%feature("compactdefaultargs") Intersector;
@@ -731,6 +731,26 @@ TopAbs_State
 ****************************/
 class Geom2dHatch_Hatcher {
 	public:
+		/****************** Geom2dHatch_Hatcher ******************/
+		%feature("compactdefaultargs") Geom2dHatch_Hatcher;
+		%feature("autodoc", "Returns an empty hatcher.
+
+Parameters
+----------
+Intersector: Geom2dHatch_Intersector
+Confusion2d: float
+Confusion3d: float
+KeepPnt: bool,optional
+	default value is Standard_False
+KeepSeg: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Geom2dHatch_Hatcher;
+		 Geom2dHatch_Hatcher(const Geom2dHatch_Intersector & Intersector, const Standard_Real Confusion2d, const Standard_Real Confusion3d, const Standard_Boolean KeepPnt = Standard_False, const Standard_Boolean KeepSeg = Standard_False);
+
 		/****************** AddElement ******************/
 		%feature("compactdefaultargs") AddElement;
 		%feature("autodoc", "Adds an element to the hatcher and returns its index.
@@ -927,26 +947,6 @@ Returns
 Geom2dAdaptor_Curve
 ") ElementCurve;
 		const Geom2dAdaptor_Curve & ElementCurve(const Standard_Integer IndE);
-
-		/****************** Geom2dHatch_Hatcher ******************/
-		%feature("compactdefaultargs") Geom2dHatch_Hatcher;
-		%feature("autodoc", "Returns an empty hatcher.
-
-Parameters
-----------
-Intersector: Geom2dHatch_Intersector
-Confusion2d: float
-Confusion3d: float
-KeepPnt: bool,optional
-	default value is Standard_False
-KeepSeg: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Geom2dHatch_Hatcher;
-		 Geom2dHatch_Hatcher(const Geom2dHatch_Intersector & Intersector, const Standard_Real Confusion2d, const Standard_Real Confusion3d, const Standard_Boolean KeepPnt = Standard_False, const Standard_Boolean KeepSeg = Standard_False);
 
 		/****************** HatchingCurve ******************/
 		%feature("compactdefaultargs") HatchingCurve;
@@ -1203,6 +1203,30 @@ bool
 *****************************/
 class Geom2dHatch_Hatching {
 	public:
+		/****************** Geom2dHatch_Hatching ******************/
+		%feature("compactdefaultargs") Geom2dHatch_Hatching;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Geom2dHatch_Hatching;
+		 Geom2dHatch_Hatching();
+
+		/****************** Geom2dHatch_Hatching ******************/
+		%feature("compactdefaultargs") Geom2dHatch_Hatching;
+		%feature("autodoc", "Creates a hatching.
+
+Parameters
+----------
+Curve: Geom2dAdaptor_Curve
+
+Returns
+-------
+None
+") Geom2dHatch_Hatching;
+		 Geom2dHatch_Hatching(const Geom2dAdaptor_Curve & Curve);
+
 		/****************** AddDomain ******************/
 		%feature("compactdefaultargs") AddDomain;
 		%feature("autodoc", "Adds a domain to the hatching.
@@ -1309,30 +1333,6 @@ Returns
 HatchGen_Domain
 ") Domain;
 		const HatchGen_Domain & Domain(const Standard_Integer Index);
-
-		/****************** Geom2dHatch_Hatching ******************/
-		%feature("compactdefaultargs") Geom2dHatch_Hatching;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Geom2dHatch_Hatching;
-		 Geom2dHatch_Hatching();
-
-		/****************** Geom2dHatch_Hatching ******************/
-		%feature("compactdefaultargs") Geom2dHatch_Hatching;
-		%feature("autodoc", "Creates a hatching.
-
-Parameters
-----------
-Curve: Geom2dAdaptor_Curve
-
-Returns
--------
-None
-") Geom2dHatch_Hatching;
-		 Geom2dHatch_Hatching(const Geom2dAdaptor_Curve & Curve);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -1506,16 +1506,6 @@ bool
 ********************************/
 class Geom2dHatch_Intersector : public Geom2dInt_GInter {
 	public:
-		/****************** ConfusionTolerance ******************/
-		%feature("compactdefaultargs") ConfusionTolerance;
-		%feature("autodoc", "Returns the confusion tolerance of the intersector.
-
-Returns
--------
-float
-") ConfusionTolerance;
-		Standard_Real ConfusionTolerance();
-
 		/****************** Geom2dHatch_Intersector ******************/
 		%feature("compactdefaultargs") Geom2dHatch_Intersector;
 		%feature("autodoc", "Creates an intersector.
@@ -1540,6 +1530,16 @@ Returns
 None
 ") Geom2dHatch_Intersector;
 		 Geom2dHatch_Intersector();
+
+		/****************** ConfusionTolerance ******************/
+		%feature("compactdefaultargs") ConfusionTolerance;
+		%feature("autodoc", "Returns the confusion tolerance of the intersector.
+
+Returns
+-------
+float
+") ConfusionTolerance;
+		Standard_Real ConfusionTolerance();
 
 		/****************** Intersect ******************/
 		%feature("compactdefaultargs") Intersect;

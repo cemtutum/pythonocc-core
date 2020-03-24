@@ -127,8 +127,6 @@ class Extrema_ElementType:
 /* end handles declaration */
 
 /* templates */
-%template(Extrema_SequenceOfPOnSurf) NCollection_Sequence<Extrema_POnSurf>;
-%template(Extrema_Array2OfPOnSurfParams) NCollection_Array2<Extrema_POnSurfParams>;
 %template(Extrema_Array1OfPOnCurv) NCollection_Array1<Extrema_POnCurv>;
 
 %extend NCollection_Array1<Extrema_POnCurv> {
@@ -164,8 +162,6 @@ class Extrema_ElementType:
     __next__ = next
     }
 };
-%template(Extrema_Array2OfPOnSurf) NCollection_Array2<Extrema_POnSurf>;
-%template(Extrema_Array2OfPOnCurv2d) NCollection_Array2<Extrema_POnCurv2d>;
 %template(Extrema_Array1OfPOnCurv2d) NCollection_Array1<Extrema_POnCurv2d>;
 
 %extend NCollection_Array1<Extrema_POnCurv2d> {
@@ -201,11 +197,6 @@ class Extrema_ElementType:
     __next__ = next
     }
 };
-%template(Extrema_SequenceOfPOnCurv) NCollection_Sequence<Extrema_POnCurv>;
-%template(Extrema_SequenceOfPOnCurv2d) NCollection_Sequence<Extrema_POnCurv2d>;
-%template(Extrema_UBTreeOfSphere) NCollection_UBTree<Standard_Integer,Bnd_Sphere>;
-%template(Extrema_UBTreeFillerOfSphere) NCollection_UBTreeFiller<Standard_Integer,Bnd_Sphere>;
-%template(Extrema_Array2OfPOnCurv) NCollection_Array2<Extrema_POnCurv>;
 %template(Extrema_Array1OfPOnSurf) NCollection_Array1<Extrema_POnSurf>;
 
 %extend NCollection_Array1<Extrema_POnSurf> {
@@ -241,22 +232,31 @@ class Extrema_ElementType:
     __next__ = next
     }
 };
+%template(Extrema_Array2OfPOnCurv) NCollection_Array2<Extrema_POnCurv>;
+%template(Extrema_Array2OfPOnCurv2d) NCollection_Array2<Extrema_POnCurv2d>;
+%template(Extrema_Array2OfPOnSurf) NCollection_Array2<Extrema_POnSurf>;
+%template(Extrema_Array2OfPOnSurfParams) NCollection_Array2<Extrema_POnSurfParams>;
+%template(Extrema_SequenceOfPOnCurv) NCollection_Sequence<Extrema_POnCurv>;
+%template(Extrema_SequenceOfPOnCurv2d) NCollection_Sequence<Extrema_POnCurv2d>;
+%template(Extrema_SequenceOfPOnSurf) NCollection_Sequence<Extrema_POnSurf>;
+%template(Extrema_UBTreeFillerOfSphere) NCollection_UBTreeFiller<Standard_Integer,Bnd_Sphere>;
+%template(Extrema_UBTreeOfSphere) NCollection_UBTree<Standard_Integer,Bnd_Sphere>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<Extrema_POnSurf> Extrema_SequenceOfPOnSurf;
-typedef NCollection_Array2<Extrema_POnSurfParams> Extrema_Array2OfPOnSurfParams;
 typedef NCollection_Array1<Extrema_POnCurv> Extrema_Array1OfPOnCurv;
-typedef NCollection_Array2<Extrema_POnSurf> Extrema_Array2OfPOnSurf;
-typedef NCollection_Array2<Extrema_POnCurv2d> Extrema_Array2OfPOnCurv2d;
 typedef NCollection_Array1<Extrema_POnCurv2d> Extrema_Array1OfPOnCurv2d;
+typedef NCollection_Array1<Extrema_POnSurf> Extrema_Array1OfPOnSurf;
+typedef NCollection_Array2<Extrema_POnCurv> Extrema_Array2OfPOnCurv;
+typedef NCollection_Array2<Extrema_POnCurv2d> Extrema_Array2OfPOnCurv2d;
+typedef NCollection_Array2<Extrema_POnSurf> Extrema_Array2OfPOnSurf;
+typedef NCollection_Array2<Extrema_POnSurfParams> Extrema_Array2OfPOnSurfParams;
+typedef NCollection_Handle<Extrema_UBTreeOfSphere> Extrema_HUBTreeOfSphere;
 typedef NCollection_Sequence<Extrema_POnCurv> Extrema_SequenceOfPOnCurv;
 typedef NCollection_Sequence<Extrema_POnCurv2d> Extrema_SequenceOfPOnCurv2d;
-typedef NCollection_UBTree<Standard_Integer, Bnd_Sphere> Extrema_UBTreeOfSphere;
+typedef NCollection_Sequence<Extrema_POnSurf> Extrema_SequenceOfPOnSurf;
 typedef NCollection_UBTreeFiller<Standard_Integer, Bnd_Sphere> Extrema_UBTreeFillerOfSphere;
-typedef NCollection_Handle<Extrema_UBTreeOfSphere> Extrema_HUBTreeOfSphere;
-typedef NCollection_Array2<Extrema_POnCurv> Extrema_Array2OfPOnCurv;
-typedef NCollection_Array1<Extrema_POnSurf> Extrema_Array1OfPOnSurf;
+typedef NCollection_UBTree<Standard_Integer, Bnd_Sphere> Extrema_UBTreeOfSphere;
 /* end typedefs declaration */
 
 /*******************************
@@ -264,35 +264,6 @@ typedef NCollection_Array1<Extrema_POnSurf> Extrema_Array1OfPOnSurf;
 *******************************/
 class Extrema_CCLocFOfLocECC : public math_FunctionSetWithDerivatives {
 	public:
-		/****************** CurvePtr ******************/
-		%feature("compactdefaultargs") CurvePtr;
-		%feature("autodoc", "Returns a pointer to the curve specified in the constructor or in setcurve() method.
-
-Parameters
-----------
-theRank: int
-
-Returns
--------
-Standard_Address
-") CurvePtr;
-		Standard_Address CurvePtr(const Standard_Integer theRank);
-
-		/****************** Derivatives ******************/
-		%feature("compactdefaultargs") Derivatives;
-		%feature("autodoc", "Calculate fi'(u,v).
-
-Parameters
-----------
-UV: math_Vector
-DF: math_Matrix
-
-Returns
--------
-bool
-") Derivatives;
-		Standard_Boolean Derivatives(const math_Vector & UV, math_Matrix & DF);
-
 		/****************** Extrema_CCLocFOfLocECC ******************/
 		%feature("compactdefaultargs") Extrema_CCLocFOfLocECC;
 		%feature("autodoc", "No available documentation.
@@ -324,6 +295,35 @@ Returns
 None
 ") Extrema_CCLocFOfLocECC;
 		 Extrema_CCLocFOfLocECC(const Adaptor3d_Curve & C1, const Adaptor3d_Curve & C2, const Standard_Real thetol = 1.0e-10);
+
+		/****************** CurvePtr ******************/
+		%feature("compactdefaultargs") CurvePtr;
+		%feature("autodoc", "Returns a pointer to the curve specified in the constructor or in setcurve() method.
+
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+Standard_Address
+") CurvePtr;
+		Standard_Address CurvePtr(const Standard_Integer theRank);
+
+		/****************** Derivatives ******************/
+		%feature("compactdefaultargs") Derivatives;
+		%feature("autodoc", "Calculate fi'(u,v).
+
+Parameters
+----------
+UV: math_Vector
+DF: math_Matrix
+
+Returns
+-------
+bool
+") Derivatives;
+		Standard_Boolean Derivatives(const math_Vector & UV, math_Matrix & DF);
 
 		/****************** GetStateNumber ******************/
 		%feature("compactdefaultargs") GetStateNumber;
@@ -508,35 +508,6 @@ bool
 *********************************/
 class Extrema_CCLocFOfLocECC2d : public math_FunctionSetWithDerivatives {
 	public:
-		/****************** CurvePtr ******************/
-		%feature("compactdefaultargs") CurvePtr;
-		%feature("autodoc", "Returns a pointer to the curve specified in the constructor or in setcurve() method.
-
-Parameters
-----------
-theRank: int
-
-Returns
--------
-Standard_Address
-") CurvePtr;
-		Standard_Address CurvePtr(const Standard_Integer theRank);
-
-		/****************** Derivatives ******************/
-		%feature("compactdefaultargs") Derivatives;
-		%feature("autodoc", "Calculate fi'(u,v).
-
-Parameters
-----------
-UV: math_Vector
-DF: math_Matrix
-
-Returns
--------
-bool
-") Derivatives;
-		Standard_Boolean Derivatives(const math_Vector & UV, math_Matrix & DF);
-
 		/****************** Extrema_CCLocFOfLocECC2d ******************/
 		%feature("compactdefaultargs") Extrema_CCLocFOfLocECC2d;
 		%feature("autodoc", "No available documentation.
@@ -568,6 +539,35 @@ Returns
 None
 ") Extrema_CCLocFOfLocECC2d;
 		 Extrema_CCLocFOfLocECC2d(const Adaptor2d_Curve2d & C1, const Adaptor2d_Curve2d & C2, const Standard_Real thetol = 1.0e-10);
+
+		/****************** CurvePtr ******************/
+		%feature("compactdefaultargs") CurvePtr;
+		%feature("autodoc", "Returns a pointer to the curve specified in the constructor or in setcurve() method.
+
+Parameters
+----------
+theRank: int
+
+Returns
+-------
+Standard_Address
+") CurvePtr;
+		Standard_Address CurvePtr(const Standard_Integer theRank);
+
+		/****************** Derivatives ******************/
+		%feature("compactdefaultargs") Derivatives;
+		%feature("autodoc", "Calculate fi'(u,v).
+
+Parameters
+----------
+UV: math_Vector
+DF: math_Matrix
+
+Returns
+-------
+bool
+") Derivatives;
+		Standard_Boolean Derivatives(const math_Vector & UV, math_Matrix & DF);
 
 		/****************** GetStateNumber ******************/
 		%feature("compactdefaultargs") GetStateNumber;
@@ -6592,21 +6592,6 @@ float
 **************************/
 class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
 	public:
-		/****************** Derivatives ******************/
-		%feature("compactdefaultargs") Derivatives;
-		%feature("autodoc", "Calculation of fi'(u,v).
-
-Parameters
-----------
-UV: math_Vector
-DF: math_Matrix
-
-Returns
--------
-bool
-") Derivatives;
-		Standard_Boolean Derivatives(const math_Vector & UV, math_Matrix & DF);
-
 		/****************** Extrema_FuncExtCS ******************/
 		%feature("compactdefaultargs") Extrema_FuncExtCS;
 		%feature("autodoc", "No available documentation.
@@ -6631,6 +6616,21 @@ Returns
 None
 ") Extrema_FuncExtCS;
 		 Extrema_FuncExtCS(const Adaptor3d_Curve & C, const Adaptor3d_Surface & S);
+
+		/****************** Derivatives ******************/
+		%feature("compactdefaultargs") Derivatives;
+		%feature("autodoc", "Calculation of fi'(u,v).
+
+Parameters
+----------
+UV: math_Vector
+DF: math_Matrix
+
+Returns
+-------
+bool
+") Derivatives;
+		Standard_Boolean Derivatives(const math_Vector & UV, math_Matrix & DF);
 
 		/****************** GetStateNumber ******************/
 		%feature("compactdefaultargs") GetStateNumber;
@@ -6774,21 +6774,6 @@ bool
 **************************/
 class Extrema_FuncExtSS : public math_FunctionSetWithDerivatives {
 	public:
-		/****************** Derivatives ******************/
-		%feature("compactdefaultargs") Derivatives;
-		%feature("autodoc", "Calculate fi'(u,v).
-
-Parameters
-----------
-UV: math_Vector
-DF: math_Matrix
-
-Returns
--------
-bool
-") Derivatives;
-		Standard_Boolean Derivatives(const math_Vector & UV, math_Matrix & DF);
-
 		/****************** Extrema_FuncExtSS ******************/
 		%feature("compactdefaultargs") Extrema_FuncExtSS;
 		%feature("autodoc", "No available documentation.
@@ -6813,6 +6798,21 @@ Returns
 None
 ") Extrema_FuncExtSS;
 		 Extrema_FuncExtSS(const Adaptor3d_Surface & S1, const Adaptor3d_Surface & S2);
+
+		/****************** Derivatives ******************/
+		%feature("compactdefaultargs") Derivatives;
+		%feature("autodoc", "Calculate fi'(u,v).
+
+Parameters
+----------
+UV: math_Vector
+DF: math_Matrix
+
+Returns
+-------
+bool
+") Derivatives;
+		Standard_Boolean Derivatives(const math_Vector & UV, math_Matrix & DF);
 
 		/****************** GetStateNumber ******************/
 		%feature("compactdefaultargs") GetStateNumber;
@@ -7041,21 +7041,6 @@ bool
 ***************************/
 class Extrema_FuncPSNorm : public math_FunctionSetWithDerivatives {
 	public:
-		/****************** Derivatives ******************/
-		%feature("compactdefaultargs") Derivatives;
-		%feature("autodoc", "Calculate fi'(u,v).
-
-Parameters
-----------
-UV: math_Vector
-DF: math_Matrix
-
-Returns
--------
-bool
-") Derivatives;
-		Standard_Boolean Derivatives(const math_Vector & UV, math_Matrix & DF);
-
 		/****************** Extrema_FuncPSNorm ******************/
 		%feature("compactdefaultargs") Extrema_FuncPSNorm;
 		%feature("autodoc", "No available documentation.
@@ -7080,6 +7065,21 @@ Returns
 None
 ") Extrema_FuncPSNorm;
 		 Extrema_FuncPSNorm(const gp_Pnt & P, const Adaptor3d_Surface & S);
+
+		/****************** Derivatives ******************/
+		%feature("compactdefaultargs") Derivatives;
+		%feature("autodoc", "Calculate fi'(u,v).
+
+Parameters
+----------
+UV: math_Vector
+DF: math_Matrix
+
+Returns
+-------
+bool
+") Derivatives;
+		Standard_Boolean Derivatives(const math_Vector & UV, math_Matrix & DF);
 
 		/****************** GetStateNumber ******************/
 		%feature("compactdefaultargs") GetStateNumber;
@@ -9308,21 +9308,6 @@ float
 ********************************************/
 class Extrema_PCFOfEPCOfELPCOfLocateExtPC : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Calculation of f'(u).
-
-Parameters
-----------
-U: float
-DF: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-
 		/****************** Extrema_PCFOfEPCOfELPCOfLocateExtPC ******************/
 		%feature("compactdefaultargs") Extrema_PCFOfEPCOfELPCOfLocateExtPC;
 		%feature("autodoc", "No available documentation.
@@ -9347,6 +9332,21 @@ Returns
 None
 ") Extrema_PCFOfEPCOfELPCOfLocateExtPC;
 		 Extrema_PCFOfEPCOfELPCOfLocateExtPC(const gp_Pnt & P, const Adaptor3d_Curve & C);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Calculation of f'(u).
+
+Parameters
+----------
+U: float
+DF: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
 
 		/****************** GetStateNumber ******************/
 		%feature("compactdefaultargs") GetStateNumber;
@@ -9508,21 +9508,6 @@ bool
 **********************************************/
 class Extrema_PCFOfEPCOfELPCOfLocateExtPC2d : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Calculation of f'(u).
-
-Parameters
-----------
-U: float
-DF: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-
 		/****************** Extrema_PCFOfEPCOfELPCOfLocateExtPC2d ******************/
 		%feature("compactdefaultargs") Extrema_PCFOfEPCOfELPCOfLocateExtPC2d;
 		%feature("autodoc", "No available documentation.
@@ -9547,6 +9532,21 @@ Returns
 None
 ") Extrema_PCFOfEPCOfELPCOfLocateExtPC2d;
 		 Extrema_PCFOfEPCOfELPCOfLocateExtPC2d(const gp_Pnt2d & P, const Adaptor2d_Curve2d & C);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Calculation of f'(u).
+
+Parameters
+----------
+U: float
+DF: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
 
 		/****************** GetStateNumber ******************/
 		%feature("compactdefaultargs") GetStateNumber;
@@ -9708,21 +9708,6 @@ bool
 ********************************/
 class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Calculation of f'(u).
-
-Parameters
-----------
-U: float
-DF: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-
 		/****************** Extrema_PCFOfEPCOfExtPC ******************/
 		%feature("compactdefaultargs") Extrema_PCFOfEPCOfExtPC;
 		%feature("autodoc", "No available documentation.
@@ -9747,6 +9732,21 @@ Returns
 None
 ") Extrema_PCFOfEPCOfExtPC;
 		 Extrema_PCFOfEPCOfExtPC(const gp_Pnt & P, const Adaptor3d_Curve & C);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Calculation of f'(u).
+
+Parameters
+----------
+U: float
+DF: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
 
 		/****************** GetStateNumber ******************/
 		%feature("compactdefaultargs") GetStateNumber;
@@ -9908,21 +9908,6 @@ bool
 **********************************/
 class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Calculation of f'(u).
-
-Parameters
-----------
-U: float
-DF: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-
 		/****************** Extrema_PCFOfEPCOfExtPC2d ******************/
 		%feature("compactdefaultargs") Extrema_PCFOfEPCOfExtPC2d;
 		%feature("autodoc", "No available documentation.
@@ -9947,6 +9932,21 @@ Returns
 None
 ") Extrema_PCFOfEPCOfExtPC2d;
 		 Extrema_PCFOfEPCOfExtPC2d(const gp_Pnt2d & P, const Adaptor2d_Curve2d & C);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Calculation of f'(u).
+
+Parameters
+----------
+U: float
+DF: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
 
 		/****************** GetStateNumber ******************/
 		%feature("compactdefaultargs") GetStateNumber;
@@ -10108,21 +10108,6 @@ bool
 ********************************************/
 class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Calculation of f'(u).
-
-Parameters
-----------
-U: float
-DF: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-
 		/****************** Extrema_PCLocFOfLocEPCOfLocateExtPC ******************/
 		%feature("compactdefaultargs") Extrema_PCLocFOfLocEPCOfLocateExtPC;
 		%feature("autodoc", "No available documentation.
@@ -10147,6 +10132,21 @@ Returns
 None
 ") Extrema_PCLocFOfLocEPCOfLocateExtPC;
 		 Extrema_PCLocFOfLocEPCOfLocateExtPC(const gp_Pnt & P, const Adaptor3d_Curve & C);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Calculation of f'(u).
+
+Parameters
+----------
+U: float
+DF: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
 
 		/****************** GetStateNumber ******************/
 		%feature("compactdefaultargs") GetStateNumber;
@@ -10308,21 +10308,6 @@ bool
 **********************************************/
 class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Calculation of f'(u).
-
-Parameters
-----------
-U: float
-DF: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-
 		/****************** Extrema_PCLocFOfLocEPCOfLocateExtPC2d ******************/
 		%feature("compactdefaultargs") Extrema_PCLocFOfLocEPCOfLocateExtPC2d;
 		%feature("autodoc", "No available documentation.
@@ -10347,6 +10332,21 @@ Returns
 None
 ") Extrema_PCLocFOfLocEPCOfLocateExtPC2d;
 		 Extrema_PCLocFOfLocEPCOfLocateExtPC2d(const gp_Pnt2d & P, const Adaptor2d_Curve2d & C);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Calculation of f'(u).
+
+Parameters
+----------
+U: float
+DF: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
 
 		/****************** GetStateNumber ******************/
 		%feature("compactdefaultargs") GetStateNumber;

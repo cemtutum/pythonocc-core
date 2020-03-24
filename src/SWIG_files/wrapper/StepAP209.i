@@ -42,13 +42,13 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepap209.html"
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
 #include<STEPConstruct_module.hxx>
+#include<XSControl_module.hxx>
 #include<StepData_module.hxx>
 #include<StepBasic_module.hxx>
 #include<StepFEA_module.hxx>
 #include<StepRepr_module.hxx>
 #include<StepElement_module.hxx>
 #include<StepShape_module.hxx>
-#include<XSControl_module.hxx>
 #include<Message_module.hxx>
 #include<StepBasic_module.hxx>
 #include<StepGeom_module.hxx>
@@ -74,13 +74,13 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepap209.html"
 %import Standard.i
 %import NCollection.i
 %import STEPConstruct.i
+%import XSControl.i
 %import StepData.i
 %import StepBasic.i
 %import StepFEA.i
 %import StepRepr.i
 %import StepElement.i
 %import StepShape.i
-%import XSControl.i
 
 %pythoncode {
 from OCC.Core.Exception import *
@@ -108,6 +108,30 @@ from OCC.Core.Exception import *
 ****************************/
 class StepAP209_Construct : public STEPConstruct_Tool {
 	public:
+		/****************** StepAP209_Construct ******************/
+		%feature("compactdefaultargs") StepAP209_Construct;
+		%feature("autodoc", "Creates an empty tool.
+
+Returns
+-------
+None
+") StepAP209_Construct;
+		 StepAP209_Construct();
+
+		/****************** StepAP209_Construct ******************/
+		%feature("compactdefaultargs") StepAP209_Construct;
+		%feature("autodoc", "Creates a tool and initializes it.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+
+Returns
+-------
+None
+") StepAP209_Construct;
+		 StepAP209_Construct(const opencascade::handle<XSControl_WorkSession> & WS);
+
 		/****************** CreateAP203Structure ******************/
 		%feature("compactdefaultargs") CreateAP203Structure;
 		%feature("autodoc", "Create ap203 structure from existing ap209 structure.
@@ -470,30 +494,6 @@ Returns
 bool
 ") ReplaceCcDesingToApplied;
 		Standard_Boolean ReplaceCcDesingToApplied();
-
-		/****************** StepAP209_Construct ******************/
-		%feature("compactdefaultargs") StepAP209_Construct;
-		%feature("autodoc", "Creates an empty tool.
-
-Returns
--------
-None
-") StepAP209_Construct;
-		 StepAP209_Construct();
-
-		/****************** StepAP209_Construct ******************/
-		%feature("compactdefaultargs") StepAP209_Construct;
-		%feature("autodoc", "Creates a tool and initializes it.
-
-Parameters
-----------
-WS: XSControl_WorkSession
-
-Returns
--------
-None
-") StepAP209_Construct;
-		 StepAP209_Construct(const opencascade::handle<XSControl_WorkSession> & WS);
 
 };
 

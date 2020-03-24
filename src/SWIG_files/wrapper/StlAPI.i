@@ -155,6 +155,16 @@ bool
 **********************/
 class StlAPI_Writer {
 	public:
+		/****************** StlAPI_Writer ******************/
+		%feature("compactdefaultargs") StlAPI_Writer;
+		%feature("autodoc", "Creates a writer object with default parameters: asciimode.
+
+Returns
+-------
+None
+") StlAPI_Writer;
+		 StlAPI_Writer();
+
 
         %feature("autodoc","1");
         %extend {
@@ -168,16 +178,6 @@ class StlAPI_Writer {
             $self->ASCIIMode()=value;
             }
         };
-		/****************** StlAPI_Writer ******************/
-		%feature("compactdefaultargs") StlAPI_Writer;
-		%feature("autodoc", "Creates a writer object with default parameters: asciimode.
-
-Returns
--------
-None
-") StlAPI_Writer;
-		 StlAPI_Writer();
-
 		/****************** Write ******************/
 		%feature("compactdefaultargs") Write;
 		%feature("autodoc", "Converts a given shape to stl format and writes it to file with a given filename. eturn the error state.

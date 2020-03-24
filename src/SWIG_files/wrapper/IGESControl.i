@@ -185,6 +185,21 @@ None
 *******************************/
 class IGESControl_Controller : public XSControl_Controller {
 	public:
+		/****************** IGESControl_Controller ******************/
+		%feature("compactdefaultargs") IGESControl_Controller;
+		%feature("autodoc", "Initializes the use of iges norm (the first time) and returns a controller for iges-5.1 if <modefnes> is true, sets it to internal fnes format.
+
+Parameters
+----------
+modefnes: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") IGESControl_Controller;
+		 IGESControl_Controller(const Standard_Boolean modefnes = Standard_False);
+
 		/****************** ActorRead ******************/
 		%feature("compactdefaultargs") ActorRead;
 		%feature("autodoc", "Returns the actor for read attached to the pair (norm,appli) it is an actor from igestobrep, adapted from an igesmodel : unit, tolerances.
@@ -212,21 +227,6 @@ Returns
 None
 ") Customise;
 		virtual void Customise(opencascade::handle<XSControl_WorkSession> & WS);
-
-		/****************** IGESControl_Controller ******************/
-		%feature("compactdefaultargs") IGESControl_Controller;
-		%feature("autodoc", "Initializes the use of iges norm (the first time) and returns a controller for iges-5.1 if <modefnes> is true, sets it to internal fnes format.
-
-Parameters
-----------
-modefnes: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") IGESControl_Controller;
-		 IGESControl_Controller(const Standard_Boolean modefnes = Standard_False);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -282,23 +282,6 @@ IFSelect_ReturnStatus
 *********************************/
 class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
 	public:
-		/****************** Check ******************/
-		%feature("compactdefaultargs") Check;
-		%feature("autodoc", "Checks result of translation of iges boundary entities (types 141, 142 or 508). checks consistency of 2d and 3d representations and keeps only one if they are inconsistent. checks the closure of resulting wire and if it is not closed, checks 2d and 3d representation and updates the resulting wire to contain only closed representation.
-
-Parameters
-----------
-result: bool
-checkclosure: bool
-okCurve3d: bool
-okCurve2d: bool
-
-Returns
--------
-None
-") Check;
-		virtual void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
-
 		/****************** IGESControl_IGESBoundary ******************/
 		%feature("compactdefaultargs") IGESControl_IGESBoundary;
 		%feature("autodoc", "Creates an object and calls inherited constuctor.
@@ -323,6 +306,23 @@ None
 ") IGESControl_IGESBoundary;
 		 IGESControl_IGESBoundary(const IGESToBRep_CurveAndSurface & CS);
 
+		/****************** Check ******************/
+		%feature("compactdefaultargs") Check;
+		%feature("autodoc", "Checks result of translation of iges boundary entities (types 141, 142 or 508). checks consistency of 2d and 3d representations and keeps only one if they are inconsistent. checks the closure of resulting wire and if it is not closed, checks 2d and 3d representation and updates the resulting wire to contain only closed representation.
+
+Parameters
+----------
+result: bool
+checkclosure: bool
+okCurve3d: bool
+okCurve2d: bool
+
+Returns
+-------
+None
+") Check;
+		virtual void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
+
 };
 
 
@@ -339,16 +339,6 @@ None
 ***************************/
 class IGESControl_Reader : public XSControl_Reader {
 	public:
-		/****************** GetReadVisible ******************/
-		%feature("compactdefaultargs") GetReadVisible;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-bool
-") GetReadVisible;
-		Standard_Boolean GetReadVisible();
-
 		/****************** IGESControl_Reader ******************/
 		%feature("compactdefaultargs") IGESControl_Reader;
 		%feature("autodoc", "Creates a reader from scratch.
@@ -374,6 +364,16 @@ Returns
 None
 ") IGESControl_Reader;
 		 IGESControl_Reader(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
+
+		/****************** GetReadVisible ******************/
+		%feature("compactdefaultargs") GetReadVisible;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
+") GetReadVisible;
+		Standard_Boolean GetReadVisible();
 
 		/****************** IGESModel ******************/
 		%feature("compactdefaultargs") IGESModel;
@@ -438,16 +438,6 @@ None
 **********************************/
 class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 	public:
-		/****************** IGESBoundary ******************/
-		%feature("compactdefaultargs") IGESBoundary;
-		%feature("autodoc", "Returns igescontrol_igesboundary.
-
-Returns
--------
-opencascade::handle<IGESToBRep_IGESBoundary>
-") IGESBoundary;
-		virtual opencascade::handle<IGESToBRep_IGESBoundary> IGESBoundary();
-
 		/****************** IGESControl_ToolContainer ******************/
 		%feature("compactdefaultargs") IGESControl_ToolContainer;
 		%feature("autodoc", "Empty constructor.
@@ -457,6 +447,16 @@ Returns
 None
 ") IGESControl_ToolContainer;
 		 IGESControl_ToolContainer();
+
+		/****************** IGESBoundary ******************/
+		%feature("compactdefaultargs") IGESBoundary;
+		%feature("autodoc", "Returns igescontrol_igesboundary.
+
+Returns
+-------
+opencascade::handle<IGESToBRep_IGESBoundary>
+") IGESBoundary;
+		virtual opencascade::handle<IGESToBRep_IGESBoundary> IGESBoundary();
 
 };
 
@@ -474,6 +474,48 @@ None
 ***************************/
 class IGESControl_Writer {
 	public:
+		/****************** IGESControl_Writer ******************/
+		%feature("compactdefaultargs") IGESControl_Writer;
+		%feature("autodoc", "Creates a writer object with the default unit (millimeters) and write mode (face). igescontrol_writer (const standard_cstring unit, const standard_integer modecr = 0);.
+
+Returns
+-------
+None
+") IGESControl_Writer;
+		 IGESControl_Writer();
+
+		/****************** IGESControl_Writer ******************/
+		%feature("compactdefaultargs") IGESControl_Writer;
+		%feature("autodoc", "Creates a writer with given values for units and for write mode. unit may be any unit that is accepted by the iges standard. by default, it is the millimeter. modecr defines the write mode and may be: - 0: faces (default) - 1: brep.
+
+Parameters
+----------
+unit: char *
+modecr: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") IGESControl_Writer;
+		 IGESControl_Writer(const char * unit, const Standard_Integer modecr = 0);
+
+		/****************** IGESControl_Writer ******************/
+		%feature("compactdefaultargs") IGESControl_Writer;
+		%feature("autodoc", "Creates a writer object with the prepared iges model model in write mode. modecr defines the write mode and may be: - 0: faces (default) - 1: brep.
+
+Parameters
+----------
+model: IGESData_IGESModel
+modecr: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") IGESControl_Writer;
+		 IGESControl_Writer(const opencascade::handle<IGESData_IGESModel> & model, const Standard_Integer modecr = 0);
+
 		/****************** AddEntity ******************/
 		%feature("compactdefaultargs") AddEntity;
 		%feature("autodoc", "Adds an iges entity (and the ones it references) to the model.
@@ -525,48 +567,6 @@ Returns
 None
 ") ComputeModel;
 		void ComputeModel();
-
-		/****************** IGESControl_Writer ******************/
-		%feature("compactdefaultargs") IGESControl_Writer;
-		%feature("autodoc", "Creates a writer object with the default unit (millimeters) and write mode (face). igescontrol_writer (const standard_cstring unit, const standard_integer modecr = 0);.
-
-Returns
--------
-None
-") IGESControl_Writer;
-		 IGESControl_Writer();
-
-		/****************** IGESControl_Writer ******************/
-		%feature("compactdefaultargs") IGESControl_Writer;
-		%feature("autodoc", "Creates a writer with given values for units and for write mode. unit may be any unit that is accepted by the iges standard. by default, it is the millimeter. modecr defines the write mode and may be: - 0: faces (default) - 1: brep.
-
-Parameters
-----------
-unit: char *
-modecr: int,optional
-	default value is 0
-
-Returns
--------
-None
-") IGESControl_Writer;
-		 IGESControl_Writer(const char * unit, const Standard_Integer modecr = 0);
-
-		/****************** IGESControl_Writer ******************/
-		%feature("compactdefaultargs") IGESControl_Writer;
-		%feature("autodoc", "Creates a writer object with the prepared iges model model in write mode. modecr defines the write mode and may be: - 0: faces (default) - 1: brep.
-
-Parameters
-----------
-model: IGESData_IGESModel
-modecr: int,optional
-	default value is 0
-
-Returns
--------
-None
-") IGESControl_Writer;
-		 IGESControl_Writer(const opencascade::handle<IGESData_IGESModel> & model, const Standard_Integer modecr = 0);
 
 		/****************** Model ******************/
 		%feature("compactdefaultargs") Model;

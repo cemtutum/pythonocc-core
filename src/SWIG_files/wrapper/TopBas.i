@@ -68,13 +68,13 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(TopBas_ListOfTestInterference) NCollection_List<TopBas_TestInterference>;
 %template(TopBas_ListIteratorOfListOfTestInterference) NCollection_TListIterator<TopBas_TestInterference>;
+%template(TopBas_ListOfTestInterference) NCollection_List<TopBas_TestInterference>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List<TopBas_TestInterference> TopBas_ListOfTestInterference;
 typedef NCollection_List<TopBas_TestInterference>::Iterator TopBas_ListIteratorOfListOfTestInterference;
+typedef NCollection_List<TopBas_TestInterference> TopBas_ListOfTestInterference;
 /* end typedefs declaration */
 
 /********************************
@@ -82,6 +82,34 @@ typedef NCollection_List<TopBas_TestInterference>::Iterator TopBas_ListIteratorO
 ********************************/
 class TopBas_TestInterference {
 	public:
+		/****************** TopBas_TestInterference ******************/
+		%feature("compactdefaultargs") TopBas_TestInterference;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopBas_TestInterference;
+		 TopBas_TestInterference();
+
+		/****************** TopBas_TestInterference ******************/
+		%feature("compactdefaultargs") TopBas_TestInterference;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Inters: float
+Bound: int
+Orient: TopAbs_Orientation
+Trans: TopAbs_Orientation
+BTrans: TopAbs_Orientation
+
+Returns
+-------
+None
+") TopBas_TestInterference;
+		 TopBas_TestInterference(const Standard_Real & Inters, const Standard_Integer & Bound, const TopAbs_Orientation Orient, const TopAbs_Orientation Trans, const TopAbs_Orientation BTrans);
+
 		/****************** Boundary ******************/
 		%feature("compactdefaultargs") Boundary;
 		%feature("autodoc", "No available documentation.
@@ -203,34 +231,6 @@ Returns
 TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation();
-
-		/****************** TopBas_TestInterference ******************/
-		%feature("compactdefaultargs") TopBas_TestInterference;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopBas_TestInterference;
-		 TopBas_TestInterference();
-
-		/****************** TopBas_TestInterference ******************/
-		%feature("compactdefaultargs") TopBas_TestInterference;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Inters: float
-Bound: int
-Orient: TopAbs_Orientation
-Trans: TopAbs_Orientation
-BTrans: TopAbs_Orientation
-
-Returns
--------
-None
-") TopBas_TestInterference;
-		 TopBas_TestInterference(const Standard_Real & Inters, const Standard_Integer & Bound, const TopAbs_Orientation Orient, const TopAbs_Orientation Trans, const TopAbs_Orientation BTrans);
 
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;

@@ -535,6 +535,20 @@ int
 ***************************/
 class BRepMeshData_Model : public IMeshData_Model {
 	public:
+		/****************** BRepMeshData_Model ******************/
+		%feature("compactdefaultargs") BRepMeshData_Model;
+		%feature("autodoc", "Constructor. initializes empty model.
+
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+None
+") BRepMeshData_Model;
+		 BRepMeshData_Model(const TopoDS_Shape & theShape);
+
 		/****************** AddEdge ******************/
 		%feature("compactdefaultargs") AddEdge;
 		%feature("autodoc", "Adds new edge to shape model.
@@ -562,20 +576,6 @@ Returns
 IMeshData::IFaceHandle
 ") AddFace;
 		virtual const IMeshData::IFaceHandle & AddFace(const TopoDS_Face & theFace);
-
-		/****************** BRepMeshData_Model ******************/
-		%feature("compactdefaultargs") BRepMeshData_Model;
-		%feature("autodoc", "Constructor. initializes empty model.
-
-Parameters
-----------
-theShape: TopoDS_Shape
-
-Returns
--------
-None
-") BRepMeshData_Model;
-		 BRepMeshData_Model(const TopoDS_Shape & theShape);
 
 		/****************** EdgesNb ******************/
 		%feature("compactdefaultargs") EdgesNb;

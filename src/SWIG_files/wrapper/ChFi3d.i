@@ -726,6 +726,22 @@ bool
 *************************/
 class ChFi3d_ChBuilder : public ChFi3d_Builder {
 	public:
+		/****************** ChFi3d_ChBuilder ******************/
+		%feature("compactdefaultargs") ChFi3d_ChBuilder;
+		%feature("autodoc", "Initializes the builder with the shape <s> for the computation of chamfers.
+
+Parameters
+----------
+S: TopoDS_Shape
+Ta: float,optional
+	default value is 1.0e-2
+
+Returns
+-------
+None
+") ChFi3d_ChBuilder;
+		 ChFi3d_ChBuilder(const TopoDS_Shape & S, const Standard_Real Ta = 1.0e-2);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Initializes a contour with the edge <e> as first (the next are found by propagation ). the two distances (parameters of the chamfer) must be set after. if the edge <e> has more than 2 adjacent faces.
@@ -788,22 +804,6 @@ Returns
 None
 ") AddDA;
 		void AddDA(const Standard_Real Dis, const Standard_Real Angle, const TopoDS_Edge & E, const TopoDS_Face & F);
-
-		/****************** ChFi3d_ChBuilder ******************/
-		%feature("compactdefaultargs") ChFi3d_ChBuilder;
-		%feature("autodoc", "Initializes the builder with the shape <s> for the computation of chamfers.
-
-Parameters
-----------
-S: TopoDS_Shape
-Ta: float,optional
-	default value is 1.0e-2
-
-Returns
--------
-None
-") ChFi3d_ChBuilder;
-		 ChFi3d_ChBuilder(const TopoDS_Shape & S, const Standard_Real Ta = 1.0e-2);
 
 		/****************** Dists ******************/
 		%feature("compactdefaultargs") Dists;
@@ -1282,6 +1282,24 @@ None
 **************************/
 class ChFi3d_FilBuilder : public ChFi3d_Builder {
 	public:
+		/****************** ChFi3d_FilBuilder ******************/
+		%feature("compactdefaultargs") ChFi3d_FilBuilder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+FShape: ChFi3d_FilletShape,optional
+	default value is ChFi3d_Rational
+Ta: float,optional
+	default value is 1.0e-2
+
+Returns
+-------
+None
+") ChFi3d_FilBuilder;
+		 ChFi3d_FilBuilder(const TopoDS_Shape & S, const ChFi3d_FilletShape FShape = ChFi3d_Rational, const Standard_Real Ta = 1.0e-2);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Initialisation of a contour with the first edge (the following are found by propagation). attention, you need to start with setradius.
@@ -1310,24 +1328,6 @@ Returns
 None
 ") Add;
 		void Add(const Standard_Real Radius, const TopoDS_Edge & E);
-
-		/****************** ChFi3d_FilBuilder ******************/
-		%feature("compactdefaultargs") ChFi3d_FilBuilder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-FShape: ChFi3d_FilletShape,optional
-	default value is ChFi3d_Rational
-Ta: float,optional
-	default value is 1.0e-2
-
-Returns
--------
-None
-") ChFi3d_FilBuilder;
-		 ChFi3d_FilBuilder(const TopoDS_Shape & S, const ChFi3d_FilletShape FShape = ChFi3d_Rational, const Standard_Real Ta = 1.0e-2);
 
 		/****************** GetBounds ******************/
 		%feature("compactdefaultargs") GetBounds;

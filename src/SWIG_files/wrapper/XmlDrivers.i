@@ -150,6 +150,16 @@ opencascade::handle<Standard_Transient>
 *******************************************/
 class XmlDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrievalDriver {
 	public:
+		/****************** XmlDrivers_DocumentRetrievalDriver ******************/
+		%feature("compactdefaultargs") XmlDrivers_DocumentRetrievalDriver;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XmlDrivers_DocumentRetrievalDriver;
+		 XmlDrivers_DocumentRetrievalDriver();
+
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "No available documentation.
@@ -193,16 +203,6 @@ None
 ") ShapeSetCleaning;
 		virtual void ShapeSetCleaning(const opencascade::handle<XmlMDF_ADriver> & theDriver);
 
-		/****************** XmlDrivers_DocumentRetrievalDriver ******************/
-		%feature("compactdefaultargs") XmlDrivers_DocumentRetrievalDriver;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XmlDrivers_DocumentRetrievalDriver;
-		 XmlDrivers_DocumentRetrievalDriver();
-
 };
 
 
@@ -219,6 +219,20 @@ None
 *****************************************/
 class XmlDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageDriver {
 	public:
+		/****************** XmlDrivers_DocumentStorageDriver ******************/
+		%feature("compactdefaultargs") XmlDrivers_DocumentStorageDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theCopyright: TCollection_ExtendedString
+
+Returns
+-------
+None
+") XmlDrivers_DocumentStorageDriver;
+		 XmlDrivers_DocumentStorageDriver(const TCollection_ExtendedString & theCopyright);
+
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "No available documentation.
@@ -246,20 +260,6 @@ Returns
 bool
 ") WriteShapeSection;
 		virtual Standard_Boolean WriteShapeSection(XmlObjMgt_Element & thePDoc);
-
-		/****************** XmlDrivers_DocumentStorageDriver ******************/
-		%feature("compactdefaultargs") XmlDrivers_DocumentStorageDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theCopyright: TCollection_ExtendedString
-
-Returns
--------
-None
-") XmlDrivers_DocumentStorageDriver;
-		 XmlDrivers_DocumentStorageDriver(const TCollection_ExtendedString & theCopyright);
 
 };
 

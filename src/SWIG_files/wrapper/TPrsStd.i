@@ -110,8 +110,8 @@ from OCC.Core.Exception import *
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<Standard_GUID, opencascade::handle<TPrsStd_Driver>, Standard_GUID> TPrsStd_DataMapOfGUIDDriver;
 typedef NCollection_DataMap<Standard_GUID, opencascade::handle<TPrsStd_Driver>, Standard_GUID>::Iterator TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver;
+typedef NCollection_DataMap<Standard_GUID, opencascade::handle<TPrsStd_Driver>, Standard_GUID> TPrsStd_DataMapOfGUIDDriver;
 /* end typedefs declaration */
 
 /********************************
@@ -512,6 +512,16 @@ bool
 ****************************/
 class TPrsStd_DriverTable : public Standard_Transient {
 	public:
+		/****************** TPrsStd_DriverTable ******************/
+		%feature("compactdefaultargs") TPrsStd_DriverTable;
+		%feature("autodoc", "Default constructor.
+
+Returns
+-------
+None
+") TPrsStd_DriverTable;
+		 TPrsStd_DriverTable();
+
 		/****************** AddDriver ******************/
 		%feature("compactdefaultargs") AddDriver;
 		%feature("autodoc", "Returns true if the driver has been added successfully to the driver table.
@@ -585,16 +595,6 @@ Returns
 bool
 ") RemoveDriver;
 		Standard_Boolean RemoveDriver(const Standard_GUID & guid);
-
-		/****************** TPrsStd_DriverTable ******************/
-		%feature("compactdefaultargs") TPrsStd_DriverTable;
-		%feature("autodoc", "Default constructor.
-
-Returns
--------
-None
-") TPrsStd_DriverTable;
-		 TPrsStd_DriverTable();
 
 };
 

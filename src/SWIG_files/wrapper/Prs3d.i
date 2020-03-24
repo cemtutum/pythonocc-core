@@ -282,10 +282,10 @@ class Prs3d_DimensionArrowOrientation:
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List<opencascade::handle<TColgp_HSequenceOfPnt>> Prs3d_NListOfSequenceOfPnt;
 typedef Prs3d_Drawer Graphic3d_HighlightStyle;
-typedef Graphic3d_Structure Prs3d_Presentation;
 typedef Prs3d_NListOfSequenceOfPnt::Iterator Prs3d_NListIteratorOfListOfSequenceOfPnt;
+typedef NCollection_List<opencascade::handle<TColgp_HSequenceOfPnt>> Prs3d_NListOfSequenceOfPnt;
+typedef Graphic3d_Structure Prs3d_Presentation;
 /* end typedefs declaration */
 
 /**************
@@ -390,26 +390,6 @@ class Prs3d_BasicAspect : public Standard_Transient {
 *****************************/
 class Prs3d_DimensionUnits {
 	public:
-		/****************** GetAngleUnits ******************/
-		%feature("compactdefaultargs") GetAngleUnits;
-		%feature("autodoc", "Returns angle units.
-
-Returns
--------
-TCollection_AsciiString
-") GetAngleUnits;
-		const TCollection_AsciiString & GetAngleUnits();
-
-		/****************** GetLengthUnits ******************/
-		%feature("compactdefaultargs") GetLengthUnits;
-		%feature("autodoc", "Returns length units.
-
-Returns
--------
-TCollection_AsciiString
-") GetLengthUnits;
-		const TCollection_AsciiString & GetLengthUnits();
-
 		/****************** Prs3d_DimensionUnits ******************/
 		%feature("compactdefaultargs") Prs3d_DimensionUnits;
 		%feature("autodoc", "Default constructor. sets meters as default length units and radians as default angle units.
@@ -433,6 +413,26 @@ Returns
 None
 ") Prs3d_DimensionUnits;
 		 Prs3d_DimensionUnits(const Prs3d_DimensionUnits & theUnits);
+
+		/****************** GetAngleUnits ******************/
+		%feature("compactdefaultargs") GetAngleUnits;
+		%feature("autodoc", "Returns angle units.
+
+Returns
+-------
+TCollection_AsciiString
+") GetAngleUnits;
+		const TCollection_AsciiString & GetAngleUnits();
+
+		/****************** GetLengthUnits ******************/
+		%feature("compactdefaultargs") GetLengthUnits;
+		%feature("autodoc", "Returns length units.
+
+Returns
+-------
+TCollection_AsciiString
+") GetLengthUnits;
+		const TCollection_AsciiString & GetLengthUnits();
 
 		/****************** SetAngleUnits ******************/
 		%feature("compactdefaultargs") SetAngleUnits;
@@ -476,6 +476,16 @@ None
 *********************/
 class Prs3d_Drawer : public Graphic3d_PresentationAttributes {
 	public:
+		/****************** Prs3d_Drawer ******************/
+		%feature("compactdefaultargs") Prs3d_Drawer;
+		%feature("autodoc", "Default constructor.
+
+Returns
+-------
+None
+") Prs3d_Drawer;
+		 Prs3d_Drawer();
+
 		/****************** ArrowAspect ******************/
 		%feature("compactdefaultargs") ArrowAspect;
 		%feature("autodoc", "Returns the attributes for display of arrows.
@@ -1287,16 +1297,6 @@ Returns
 float
 ") PreviousHLRDeviationCoefficient;
 		Standard_Real PreviousHLRDeviationCoefficient();
-
-		/****************** Prs3d_Drawer ******************/
-		%feature("compactdefaultargs") Prs3d_Drawer;
-		%feature("autodoc", "Default constructor.
-
-Returns
--------
-None
-") Prs3d_Drawer;
-		 Prs3d_Drawer();
 
 		/****************** SectionAspect ******************/
 		%feature("compactdefaultargs") SectionAspect;
@@ -2220,6 +2220,21 @@ bool
 *********************************/
 class Prs3d_PresentationShadow : public Graphic3d_Structure {
 	public:
+		/****************** Prs3d_PresentationShadow ******************/
+		%feature("compactdefaultargs") Prs3d_PresentationShadow;
+		%feature("autodoc", "Constructs a shadow of existing presentation object.
+
+Parameters
+----------
+theViewer: Graphic3d_StructureManager
+thePrs: Graphic3d_Structure
+
+Returns
+-------
+None
+") Prs3d_PresentationShadow;
+		 Prs3d_PresentationShadow(const opencascade::handle<Graphic3d_StructureManager> & theViewer, const opencascade::handle<Graphic3d_Structure> & thePrs);
+
 		/****************** CalculateBoundBox ******************/
 		%feature("compactdefaultargs") CalculateBoundBox;
 		%feature("autodoc", "Do nothing - axis-aligned bounding box should be initialized from parent structure.
@@ -2250,21 +2265,6 @@ int
 ") ParentId;
 		Standard_Integer ParentId();
 
-		/****************** Prs3d_PresentationShadow ******************/
-		%feature("compactdefaultargs") Prs3d_PresentationShadow;
-		%feature("autodoc", "Constructs a shadow of existing presentation object.
-
-Parameters
-----------
-theViewer: Graphic3d_StructureManager
-thePrs: Graphic3d_Structure
-
-Returns
--------
-None
-") Prs3d_PresentationShadow;
-		 Prs3d_PresentationShadow(const opencascade::handle<Graphic3d_StructureManager> & theViewer, const opencascade::handle<Graphic3d_Structure> & thePrs);
-
 };
 
 
@@ -2281,16 +2281,6 @@ None
 ************************/
 class Prs3d_Projector : public Standard_Transient {
 	public:
-		/****************** Projector ******************/
-		%feature("compactdefaultargs") Projector;
-		%feature("autodoc", "Returns a projector object for use in a hidden line removal algorithm.
-
-Returns
--------
-HLRAlgo_Projector
-") Projector;
-		HLRAlgo_Projector Projector();
-
 		/****************** Prs3d_Projector ******************/
 		%feature("compactdefaultargs") Prs3d_Projector;
 		%feature("autodoc", "No available documentation.
@@ -2328,6 +2318,16 @@ Returns
 None
 ") Prs3d_Projector;
 		 Prs3d_Projector(const Standard_Boolean Pers, const Standard_Real Focus, const Standard_Real DX, const Standard_Real DY, const Standard_Real DZ, const Standard_Real XAt, const Standard_Real YAt, const Standard_Real ZAt, const Standard_Real XUp, const Standard_Real YUp, const Standard_Real ZUp);
+
+		/****************** Projector ******************/
+		%feature("compactdefaultargs") Projector;
+		%feature("autodoc", "Returns a projector object for use in a hidden line removal algorithm.
+
+Returns
+-------
+HLRAlgo_Projector
+") Projector;
+		HLRAlgo_Projector Projector();
 
 };
 
@@ -2387,6 +2387,22 @@ opencascade::handle<Graphic3d_Group>
 ************************/
 class Prs3d_ShapeTool {
 	public:
+		/****************** Prs3d_ShapeTool ******************/
+		%feature("compactdefaultargs") Prs3d_ShapeTool;
+		%feature("autodoc", "Constructs the tool and initializes it using theshape and theallvertices (optional) arguments. by default, only isolated and internal vertices are considered, however if theallvertices argument is equal to true, all shape's vertices are taken into account.
+
+Parameters
+----------
+theShape: TopoDS_Shape
+theAllVertices: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Prs3d_ShapeTool;
+		 Prs3d_ShapeTool(const TopoDS_Shape & theShape, const Standard_Boolean theAllVertices = Standard_False);
+
 		/****************** CurrentTriangulation ******************/
 		%feature("compactdefaultargs") CurrentTriangulation;
 		%feature("autodoc", "No available documentation.
@@ -2635,22 +2651,6 @@ None
 ") PolygonOnTriangulation;
 		void PolygonOnTriangulation(opencascade::handle<Poly_PolygonOnTriangulation> & Indices, opencascade::handle<Poly_Triangulation> & T, TopLoc_Location & l);
 
-		/****************** Prs3d_ShapeTool ******************/
-		%feature("compactdefaultargs") Prs3d_ShapeTool;
-		%feature("autodoc", "Constructs the tool and initializes it using theshape and theallvertices (optional) arguments. by default, only isolated and internal vertices are considered, however if theallvertices argument is equal to true, all shape's vertices are taken into account.
-
-Parameters
-----------
-theShape: TopoDS_Shape
-theAllVertices: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Prs3d_ShapeTool;
-		 Prs3d_ShapeTool(const TopoDS_Shape & theShape, const Standard_Boolean theAllVertices = Standard_False);
-
 };
 
 
@@ -2813,44 +2813,6 @@ opencascade::handle<Graphic3d_ArrayOfTriangles>
 **************************/
 class Prs3d_ArrowAspect : public Prs3d_BasicAspect {
 	public:
-		/****************** Angle ******************/
-		%feature("compactdefaultargs") Angle;
-		%feature("autodoc", "Returns the current value of the angle used when drawing an arrow.
-
-Returns
--------
-float
-") Angle;
-		Standard_Real Angle();
-
-		/****************** Aspect ******************/
-		%feature("compactdefaultargs") Aspect;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Graphic3d_AspectLine3d>
-") Aspect;
-		const opencascade::handle<Graphic3d_AspectLine3d> & Aspect();
-
-
-            %feature("autodoc", "1");
-            %extend{
-                std::string DumpJsonToString(int depth=-1) {
-                std::stringstream s;
-                self->DumpJson(s, depth);
-                return s.str();}
-            };
-		/****************** Length ******************/
-		%feature("compactdefaultargs") Length;
-		%feature("autodoc", "Returns the current value of the length used when drawing an arrow.
-
-Returns
--------
-float
-") Length;
-		Standard_Real Length();
-
 		/****************** Prs3d_ArrowAspect ******************/
 		%feature("compactdefaultargs") Prs3d_ArrowAspect;
 		%feature("autodoc", "Constructs an empty framework for displaying arrows in representations of lengths. the lengths displayed are either on their own or in chamfers, fillets, diameters and radii.
@@ -2889,6 +2851,44 @@ Returns
 None
 ") Prs3d_ArrowAspect;
 		 Prs3d_ArrowAspect(const opencascade::handle<Graphic3d_AspectLine3d> & theAspect);
+
+		/****************** Angle ******************/
+		%feature("compactdefaultargs") Angle;
+		%feature("autodoc", "Returns the current value of the angle used when drawing an arrow.
+
+Returns
+-------
+float
+") Angle;
+		Standard_Real Angle();
+
+		/****************** Aspect ******************/
+		%feature("compactdefaultargs") Aspect;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Graphic3d_AspectLine3d>
+") Aspect;
+		const opencascade::handle<Graphic3d_AspectLine3d> & Aspect();
+
+
+            %feature("autodoc", "1");
+            %extend{
+                std::string DumpJsonToString(int depth=-1) {
+                std::stringstream s;
+                self->DumpJson(s, depth);
+                return s.str();}
+            };
+		/****************** Length ******************/
+		%feature("compactdefaultargs") Length;
+		%feature("autodoc", "Returns the current value of the length used when drawing an arrow.
+
+Returns
+-------
+float
+") Length;
+		Standard_Real Length();
 
 		/****************** SetAngle ******************/
 		%feature("compactdefaultargs") SetAngle;
@@ -2962,6 +2962,16 @@ None
 **************************/
 class Prs3d_DatumAspect : public Prs3d_BasicAspect {
 	public:
+		/****************** Prs3d_DatumAspect ******************/
+		%feature("compactdefaultargs") Prs3d_DatumAspect;
+		%feature("autodoc", "An empty framework to define the display of datums.
+
+Returns
+-------
+None
+") Prs3d_DatumAspect;
+		 Prs3d_DatumAspect();
+
 		/****************** ArrowAspect ******************/
 		%feature("compactdefaultargs") ArrowAspect;
 		%feature("autodoc", "Returns the arrow aspect of presentation.
@@ -3109,16 +3119,6 @@ Returns
 opencascade::handle<Prs3d_PointAspect>
 ") PointAspect;
 		const opencascade::handle<Prs3d_PointAspect> & PointAspect();
-
-		/****************** Prs3d_DatumAspect ******************/
-		%feature("compactdefaultargs") Prs3d_DatumAspect;
-		%feature("autodoc", "An empty framework to define the display of datums.
-
-Returns
--------
-None
-") Prs3d_DatumAspect;
-		 Prs3d_DatumAspect();
 
 		/****************** SecondAxisAspect ******************/
 		%feature("compactdefaultargs") SecondAxisAspect;
@@ -3377,6 +3377,16 @@ bool
 ******************************/
 class Prs3d_DimensionAspect : public Prs3d_BasicAspect {
 	public:
+		/****************** Prs3d_DimensionAspect ******************/
+		%feature("compactdefaultargs") Prs3d_DimensionAspect;
+		%feature("autodoc", "Constructs an empty framework to define the display of dimensions.
+
+Returns
+-------
+None
+") Prs3d_DimensionAspect;
+		 Prs3d_DimensionAspect();
+
 		/****************** ArrowAspect ******************/
 		%feature("compactdefaultargs") ArrowAspect;
 		%feature("autodoc", "Returns the settings for displaying arrows.
@@ -3530,16 +3540,6 @@ Returns
 None
 ") MakeUnitsDisplayed;
 		void MakeUnitsDisplayed(const Standard_Boolean theIsDisplayed);
-
-		/****************** Prs3d_DimensionAspect ******************/
-		%feature("compactdefaultargs") Prs3d_DimensionAspect;
-		%feature("autodoc", "Constructs an empty framework to define the display of dimensions.
-
-Returns
--------
-None
-") Prs3d_DimensionAspect;
-		 Prs3d_DimensionAspect();
 
 		/****************** SetArrowAspect ******************/
 		%feature("compactdefaultargs") SetArrowAspect;
@@ -3737,24 +3737,6 @@ TCollection_AsciiString
 *************************/
 class Prs3d_LineAspect : public Prs3d_BasicAspect {
 	public:
-		/****************** Aspect ******************/
-		%feature("compactdefaultargs") Aspect;
-		%feature("autodoc", "Returns the line aspect. this is defined as the set of color, type and thickness attributes.
-
-Returns
--------
-opencascade::handle<Graphic3d_AspectLine3d>
-") Aspect;
-		const opencascade::handle<Graphic3d_AspectLine3d> & Aspect();
-
-
-            %feature("autodoc", "1");
-            %extend{
-                std::string DumpJsonToString(int depth=-1) {
-                std::stringstream s;
-                self->DumpJson(s, depth);
-                return s.str();}
-            };
 		/****************** Prs3d_LineAspect ******************/
 		%feature("compactdefaultargs") Prs3d_LineAspect;
 		%feature("autodoc", "Constructs a framework for line aspect defined by - the color acolor - the type of line atype and - the line thickness awidth. type of line refers to whether the line is solid or dotted, for example.
@@ -3785,6 +3767,24 @@ None
 ") Prs3d_LineAspect;
 		 Prs3d_LineAspect(const opencascade::handle<Graphic3d_AspectLine3d> & theAspect);
 
+		/****************** Aspect ******************/
+		%feature("compactdefaultargs") Aspect;
+		%feature("autodoc", "Returns the line aspect. this is defined as the set of color, type and thickness attributes.
+
+Returns
+-------
+opencascade::handle<Graphic3d_AspectLine3d>
+") Aspect;
+		const opencascade::handle<Graphic3d_AspectLine3d> & Aspect();
+
+
+            %feature("autodoc", "1");
+            %extend{
+                std::string DumpJsonToString(int depth=-1) {
+                std::stringstream s;
+                self->DumpJson(s, depth);
+                return s.str();}
+            };
 		/****************** SetAspect ******************/
 		%feature("compactdefaultargs") SetAspect;
 		%feature("autodoc", "No available documentation.
@@ -3857,6 +3857,16 @@ None
 **************************/
 class Prs3d_PlaneAspect : public Prs3d_BasicAspect {
 	public:
+		/****************** Prs3d_PlaneAspect ******************/
+		%feature("compactdefaultargs") Prs3d_PlaneAspect;
+		%feature("autodoc", "Constructs an empty framework for the display of planes.
+
+Returns
+-------
+None
+") Prs3d_PlaneAspect;
+		 Prs3d_PlaneAspect();
+
 		/****************** ArrowAspect ******************/
 		%feature("compactdefaultargs") ArrowAspect;
 		%feature("autodoc", "Returns the settings for displaying an arrow.
@@ -3994,16 +4004,6 @@ Returns
 float
 ") PlaneYLength;
 		Standard_Real PlaneYLength();
-
-		/****************** Prs3d_PlaneAspect ******************/
-		%feature("compactdefaultargs") Prs3d_PlaneAspect;
-		%feature("autodoc", "Constructs an empty framework for the display of planes.
-
-Returns
--------
-None
-") Prs3d_PlaneAspect;
-		 Prs3d_PlaneAspect();
 
 		/****************** SetArrowsAngle ******************/
 		%feature("compactdefaultargs") SetArrowsAngle;
@@ -4151,49 +4151,6 @@ None
 **************************/
 class Prs3d_PointAspect : public Prs3d_BasicAspect {
 	public:
-		/****************** Aspect ******************/
-		%feature("compactdefaultargs") Aspect;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Graphic3d_AspectMarker3d>
-") Aspect;
-		const opencascade::handle<Graphic3d_AspectMarker3d> & Aspect();
-
-
-            %feature("autodoc", "1");
-            %extend{
-                std::string DumpJsonToString(int depth=-1) {
-                std::stringstream s;
-                self->DumpJson(s, depth);
-                return s.str();}
-            };
-		/****************** GetTexture ******************/
-		%feature("compactdefaultargs") GetTexture;
-		%feature("autodoc", "Returns marker's texture.
-
-Returns
--------
-opencascade::handle<Graphic3d_MarkerImage>
-") GetTexture;
-		const opencascade::handle<Graphic3d_MarkerImage> & GetTexture();
-
-		/****************** GetTextureSize ******************/
-		%feature("compactdefaultargs") GetTextureSize;
-		%feature("autodoc", "Returns marker's texture size.
-
-Parameters
-----------
-theWidth: int
-theHeight: int
-
-Returns
--------
-None
-") GetTextureSize;
-		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
-
 		/****************** Prs3d_PointAspect ******************/
 		%feature("compactdefaultargs") Prs3d_PointAspect;
 		%feature("autodoc", "No available documentation.
@@ -4240,6 +4197,49 @@ Returns
 None
 ") Prs3d_PointAspect;
 		 Prs3d_PointAspect(const opencascade::handle<Graphic3d_AspectMarker3d> & theAspect);
+
+		/****************** Aspect ******************/
+		%feature("compactdefaultargs") Aspect;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Graphic3d_AspectMarker3d>
+") Aspect;
+		const opencascade::handle<Graphic3d_AspectMarker3d> & Aspect();
+
+
+            %feature("autodoc", "1");
+            %extend{
+                std::string DumpJsonToString(int depth=-1) {
+                std::stringstream s;
+                self->DumpJson(s, depth);
+                return s.str();}
+            };
+		/****************** GetTexture ******************/
+		%feature("compactdefaultargs") GetTexture;
+		%feature("autodoc", "Returns marker's texture.
+
+Returns
+-------
+opencascade::handle<Graphic3d_MarkerImage>
+") GetTexture;
+		const opencascade::handle<Graphic3d_MarkerImage> & GetTexture();
+
+		/****************** GetTextureSize ******************/
+		%feature("compactdefaultargs") GetTextureSize;
+		%feature("autodoc", "Returns marker's texture size.
+
+Parameters
+----------
+theWidth: int
+theHeight: int
+
+Returns
+-------
+None
+") GetTextureSize;
+		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** SetAspect ******************/
 		%feature("compactdefaultargs") SetAspect;
@@ -4313,6 +4313,30 @@ None
 ****************************/
 class Prs3d_ShadingAspect : public Prs3d_BasicAspect {
 	public:
+		/****************** Prs3d_ShadingAspect ******************/
+		%feature("compactdefaultargs") Prs3d_ShadingAspect;
+		%feature("autodoc", "Constructs an empty framework to display shading.
+
+Returns
+-------
+None
+") Prs3d_ShadingAspect;
+		 Prs3d_ShadingAspect();
+
+		/****************** Prs3d_ShadingAspect ******************/
+		%feature("compactdefaultargs") Prs3d_ShadingAspect;
+		%feature("autodoc", "Constructor with initialization.
+
+Parameters
+----------
+theAspect: Graphic3d_AspectFillArea3d
+
+Returns
+-------
+None
+") Prs3d_ShadingAspect;
+		 Prs3d_ShadingAspect(const opencascade::handle<Graphic3d_AspectFillArea3d> & theAspect);
+
 		/****************** Aspect ******************/
 		%feature("compactdefaultargs") Aspect;
 		%feature("autodoc", "Returns the polygons aspect properties.
@@ -4360,30 +4384,6 @@ Returns
 Graphic3d_MaterialAspect
 ") Material;
 		const Graphic3d_MaterialAspect & Material(const Aspect_TypeOfFacingModel aModel = Aspect_TOFM_FRONT_SIDE);
-
-		/****************** Prs3d_ShadingAspect ******************/
-		%feature("compactdefaultargs") Prs3d_ShadingAspect;
-		%feature("autodoc", "Constructs an empty framework to display shading.
-
-Returns
--------
-None
-") Prs3d_ShadingAspect;
-		 Prs3d_ShadingAspect();
-
-		/****************** Prs3d_ShadingAspect ******************/
-		%feature("compactdefaultargs") Prs3d_ShadingAspect;
-		%feature("autodoc", "Constructor with initialization.
-
-Parameters
-----------
-theAspect: Graphic3d_AspectFillArea3d
-
-Returns
--------
-None
-") Prs3d_ShadingAspect;
-		 Prs3d_ShadingAspect(const opencascade::handle<Graphic3d_AspectFillArea3d> & theAspect);
 
 		/****************** SetAspect ******************/
 		%feature("compactdefaultargs") SetAspect;
@@ -4581,6 +4581,30 @@ None
 *************************/
 class Prs3d_TextAspect : public Prs3d_BasicAspect {
 	public:
+		/****************** Prs3d_TextAspect ******************/
+		%feature("compactdefaultargs") Prs3d_TextAspect;
+		%feature("autodoc", "Constructs an empty framework for defining display attributes of text.
+
+Returns
+-------
+None
+") Prs3d_TextAspect;
+		 Prs3d_TextAspect();
+
+		/****************** Prs3d_TextAspect ******************/
+		%feature("compactdefaultargs") Prs3d_TextAspect;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theAspect: Graphic3d_AspectText3d
+
+Returns
+-------
+None
+") Prs3d_TextAspect;
+		 Prs3d_TextAspect(const opencascade::handle<Graphic3d_AspectText3d> & theAspect);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Returns the angle.
@@ -4638,30 +4662,6 @@ Returns
 Graphic3d_TextPath
 ") Orientation;
 		Graphic3d_TextPath Orientation();
-
-		/****************** Prs3d_TextAspect ******************/
-		%feature("compactdefaultargs") Prs3d_TextAspect;
-		%feature("autodoc", "Constructs an empty framework for defining display attributes of text.
-
-Returns
--------
-None
-") Prs3d_TextAspect;
-		 Prs3d_TextAspect();
-
-		/****************** Prs3d_TextAspect ******************/
-		%feature("compactdefaultargs") Prs3d_TextAspect;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theAspect: Graphic3d_AspectText3d
-
-Returns
--------
-None
-") Prs3d_TextAspect;
-		 Prs3d_TextAspect(const opencascade::handle<Graphic3d_AspectText3d> & theAspect);
 
 		/****************** SetAngle ******************/
 		%feature("compactdefaultargs") SetAngle;
@@ -4801,6 +4801,24 @@ Graphic3d_VerticalTextAlignment
 ***************************/
 class Prs3d_ToolCylinder : public Prs3d_ToolQuadric {
 	public:
+		/****************** Prs3d_ToolCylinder ******************/
+		%feature("compactdefaultargs") Prs3d_ToolCylinder;
+		%feature("autodoc", "Initializes the algorithm.
+
+Parameters
+----------
+theBottomRad: float
+theTopRad: float
+theHeight: float
+theNbSlices: int
+theNbStacks: int
+
+Returns
+-------
+None
+") Prs3d_ToolCylinder;
+		 Prs3d_ToolCylinder(const Standard_Real theBottomRad, const Standard_Real theTopRad, const Standard_Real theHeight, const Standard_Integer theNbSlices, const Standard_Integer theNbStacks);
+
 		/****************** Create ******************/
 		%feature("compactdefaultargs") Create;
 		%feature("autodoc", "Generate primitives for 3d quadric surface and return a filled array.
@@ -4820,24 +4838,6 @@ opencascade::handle<Graphic3d_ArrayOfTriangles>
 ") Create;
 		static opencascade::handle<Graphic3d_ArrayOfTriangles> Create(const Standard_Real theBottomRad, const Standard_Real theTopRad, const Standard_Real theHeight, const Standard_Integer theNbSlices, const Standard_Integer theNbStacks, const gp_Trsf & theTrsf);
 
-		/****************** Prs3d_ToolCylinder ******************/
-		%feature("compactdefaultargs") Prs3d_ToolCylinder;
-		%feature("autodoc", "Initializes the algorithm.
-
-Parameters
-----------
-theBottomRad: float
-theTopRad: float
-theHeight: float
-theNbSlices: int
-theNbStacks: int
-
-Returns
--------
-None
-") Prs3d_ToolCylinder;
-		 Prs3d_ToolCylinder(const Standard_Real theBottomRad, const Standard_Real theTopRad, const Standard_Real theHeight, const Standard_Integer theNbSlices, const Standard_Integer theNbStacks);
-
 };
 
 
@@ -4852,6 +4852,23 @@ None
 ***********************/
 class Prs3d_ToolDisk : public Prs3d_ToolQuadric {
 	public:
+		/****************** Prs3d_ToolDisk ******************/
+		%feature("compactdefaultargs") Prs3d_ToolDisk;
+		%feature("autodoc", "Initializes the algorithm.
+
+Parameters
+----------
+theInnerRadius: float
+theOuterRadius: float
+theNbSlices: int
+theNbStacks: int
+
+Returns
+-------
+None
+") Prs3d_ToolDisk;
+		 Prs3d_ToolDisk(const Standard_Real theInnerRadius, const Standard_Real theOuterRadius, const Standard_Integer theNbSlices, const Standard_Integer theNbStacks);
+
 		/****************** Create ******************/
 		%feature("compactdefaultargs") Create;
 		%feature("autodoc", "Generate primitives for 3d quadric surface and return a filled array.
@@ -4869,23 +4886,6 @@ Returns
 opencascade::handle<Graphic3d_ArrayOfTriangles>
 ") Create;
 		static opencascade::handle<Graphic3d_ArrayOfTriangles> Create(const Standard_Real theInnerRadius, const Standard_Real theOuterRadius, const Standard_Integer theNbSlices, const Standard_Integer theNbStacks, const gp_Trsf & theTrsf);
-
-		/****************** Prs3d_ToolDisk ******************/
-		%feature("compactdefaultargs") Prs3d_ToolDisk;
-		%feature("autodoc", "Initializes the algorithm.
-
-Parameters
-----------
-theInnerRadius: float
-theOuterRadius: float
-theNbSlices: int
-theNbStacks: int
-
-Returns
--------
-None
-") Prs3d_ToolDisk;
-		 Prs3d_ToolDisk(const Standard_Real theInnerRadius, const Standard_Real theOuterRadius, const Standard_Integer theNbSlices, const Standard_Integer theNbStacks);
 
 		/****************** SetAngleRange ******************/
 		%feature("compactdefaultargs") SetAngleRange;
@@ -4916,23 +4916,6 @@ None
 *************************/
 class Prs3d_ToolSector : public Prs3d_ToolQuadric {
 	public:
-		/****************** Create ******************/
-		%feature("compactdefaultargs") Create;
-		%feature("autodoc", "Generate primitives for 3d quadric surface and return a filled array.
-
-Parameters
-----------
-theRadius: float
-theNbSlices: int
-theNbStacks: int
-theTrsf: gp_Trsf
-
-Returns
--------
-opencascade::handle<Graphic3d_ArrayOfTriangles>
-") Create;
-		static opencascade::handle<Graphic3d_ArrayOfTriangles> Create(const Standard_Real theRadius, const Standard_Integer theNbSlices, const Standard_Integer theNbStacks, const gp_Trsf & theTrsf);
-
 		/****************** Prs3d_ToolSector ******************/
 		%feature("compactdefaultargs") Prs3d_ToolSector;
 		%feature("autodoc", "Initializes the algorithm.
@@ -4949,20 +4932,6 @@ None
 ") Prs3d_ToolSector;
 		 Prs3d_ToolSector(const Standard_Real theRadius, const Standard_Integer theNbSlices, const Standard_Integer theNbStacks);
 
-};
-
-
-%extend Prs3d_ToolSector {
-	%pythoncode {
-	__repr__ = _dumps_object
-	}
-};
-
-/*************************
-* class Prs3d_ToolSphere *
-*************************/
-class Prs3d_ToolSphere : public Prs3d_ToolQuadric {
-	public:
 		/****************** Create ******************/
 		%feature("compactdefaultargs") Create;
 		%feature("autodoc", "Generate primitives for 3d quadric surface and return a filled array.
@@ -4980,6 +4949,20 @@ opencascade::handle<Graphic3d_ArrayOfTriangles>
 ") Create;
 		static opencascade::handle<Graphic3d_ArrayOfTriangles> Create(const Standard_Real theRadius, const Standard_Integer theNbSlices, const Standard_Integer theNbStacks, const gp_Trsf & theTrsf);
 
+};
+
+
+%extend Prs3d_ToolSector {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
+/*************************
+* class Prs3d_ToolSphere *
+*************************/
+class Prs3d_ToolSphere : public Prs3d_ToolQuadric {
+	public:
 		/****************** Prs3d_ToolSphere ******************/
 		%feature("compactdefaultargs") Prs3d_ToolSphere;
 		%feature("autodoc", "Initializes the algorithm.
@@ -4996,6 +4979,23 @@ None
 ") Prs3d_ToolSphere;
 		 Prs3d_ToolSphere(const Standard_Real theRadius, const Standard_Integer theNbSlices, const Standard_Integer theNbStacks);
 
+		/****************** Create ******************/
+		%feature("compactdefaultargs") Create;
+		%feature("autodoc", "Generate primitives for 3d quadric surface and return a filled array.
+
+Parameters
+----------
+theRadius: float
+theNbSlices: int
+theNbStacks: int
+theTrsf: gp_Trsf
+
+Returns
+-------
+opencascade::handle<Graphic3d_ArrayOfTriangles>
+") Create;
+		static opencascade::handle<Graphic3d_ArrayOfTriangles> Create(const Standard_Real theRadius, const Standard_Integer theNbSlices, const Standard_Integer theNbStacks, const gp_Trsf & theTrsf);
+
 };
 
 
@@ -5010,16 +5010,6 @@ None
 ************************/
 class Prs3d_IsoAspect : public Prs3d_LineAspect {
 	public:
-		/****************** Number ******************/
-		%feature("compactdefaultargs") Number;
-		%feature("autodoc", "Returns the number of u or v isoparametric curves drawn for a single face.
-
-Returns
--------
-int
-") Number;
-		Standard_Integer Number();
-
 		/****************** Prs3d_IsoAspect ******************/
 		%feature("compactdefaultargs") Prs3d_IsoAspect;
 		%feature("autodoc", "Constructs a framework to define display attributes of isoparameters. these include: - the color attribute acolor - the type of line atype - the width value awidth - anumber, the number of isoparameters to be displayed.
@@ -5036,6 +5026,16 @@ Returns
 None
 ") Prs3d_IsoAspect;
 		 Prs3d_IsoAspect(const Quantity_Color & theColor, const Aspect_TypeOfLine theType, const Standard_Real theWidth, const Standard_Integer theNumber);
+
+		/****************** Number ******************/
+		%feature("compactdefaultargs") Number;
+		%feature("autodoc", "Returns the number of u or v isoparametric curves drawn for a single face.
+
+Returns
+-------
+int
+") Number;
+		Standard_Integer Number();
 
 		/****************** SetNumber ******************/
 		%feature("compactdefaultargs") SetNumber;

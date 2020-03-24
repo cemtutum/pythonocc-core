@@ -366,24 +366,6 @@ opencascade::handle<Geom_BSplineSurface>
 ********************************/
 class GeomConvert_ApproxCurve {
 	public:
-		/****************** Curve ******************/
-		%feature("compactdefaultargs") Curve;
-		%feature("autodoc", "Returns the bspline curve resulting from the approximation algorithm.
-
-Returns
--------
-opencascade::handle<Geom_BSplineCurve>
-") Curve;
-		opencascade::handle<Geom_BSplineCurve> Curve();
-
-
-        %feature("autodoc", "1");
-        %extend{
-            std::string DumpToString() {
-            std::stringstream s;
-            self->Dump(s);
-            return s.str();}
-        };
 		/****************** GeomConvert_ApproxCurve ******************/
 		%feature("compactdefaultargs") GeomConvert_ApproxCurve;
 		%feature("autodoc", "Constructs a curve approximation framework defined by - - the conic curve, - the tolerance value tol3d, - the degree of continuity order, - the maximum number of segments maxsegments allowed in the resulting bspline curve, and - the highest degree maxdeg which the polynomial defining the bspline curve may have.
@@ -420,6 +402,24 @@ None
 ") GeomConvert_ApproxCurve;
 		 GeomConvert_ApproxCurve(const opencascade::handle<Adaptor3d_HCurve> & Curve, const Standard_Real Tol3d, const GeomAbs_Shape Order, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
 
+		/****************** Curve ******************/
+		%feature("compactdefaultargs") Curve;
+		%feature("autodoc", "Returns the bspline curve resulting from the approximation algorithm.
+
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
+") Curve;
+		opencascade::handle<Geom_BSplineCurve> Curve();
+
+
+        %feature("autodoc", "1");
+        %extend{
+            std::string DumpToString() {
+            std::stringstream s;
+            self->Dump(s);
+            return s.str();}
+        };
 		/****************** HasResult ******************/
 		%feature("compactdefaultargs") HasResult;
 		%feature("autodoc", "Returns standard_true if the approximation did come out with a result that is not necessarely within the required tolerance.
@@ -464,14 +464,6 @@ float
 **********************************/
 class GeomConvert_ApproxSurface {
 	public:
-
-        %feature("autodoc", "1");
-        %extend{
-            std::string DumpToString() {
-            std::stringstream s;
-            self->Dump(s);
-            return s.str();}
-        };
 		/****************** GeomConvert_ApproxSurface ******************/
 		%feature("compactdefaultargs") GeomConvert_ApproxSurface;
 		%feature("autodoc", "Constructs a surface approximation framework defined by - the conic surf - the tolerance value tol3d - the degree of continuity ucontinuity, vcontinuity in the directions of the u and v parameters - the highest degree maxdegu, maxdegv which the polynomial defining the bspline curve may have in the directions of the u and v parameters - the maximum number of segments maxsegments allowed in the resulting bspline curve - the index of precision preciscode.
@@ -514,6 +506,14 @@ None
 ") GeomConvert_ApproxSurface;
 		 GeomConvert_ApproxSurface(const opencascade::handle<Adaptor3d_HSurface> & Surf, const Standard_Real Tol3d, const GeomAbs_Shape UContinuity, const GeomAbs_Shape VContinuity, const Standard_Integer MaxDegU, const Standard_Integer MaxDegV, const Standard_Integer MaxSegments, const Standard_Integer PrecisCode);
 
+
+        %feature("autodoc", "1");
+        %extend{
+            std::string DumpToString() {
+            std::stringstream s;
+            self->Dump(s);
+            return s.str();}
+        };
 		/****************** HasResult ******************/
 		%feature("compactdefaultargs") HasResult;
 		%feature("autodoc", "Returns true if the approximation did come out with a result that is not necessarily within the required tolerance or a result that is not recognized with the wished continuities.
@@ -635,34 +635,6 @@ None
 **********************************************/
 class GeomConvert_BSplineCurveToBezierCurve {
 	public:
-		/****************** Arc ******************/
-		%feature("compactdefaultargs") Arc;
-		%feature("autodoc", "Constructs and returns the bezier curve of index index to the table of adjacent bezier arcs computed by this algorithm. this bezier curve has the same orientation as the bspline curve analyzed in this framework. exceptions standard_outofrange if index is less than 1 or greater than the number of adjacent bezier arcs computed by this algorithm.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-opencascade::handle<Geom_BezierCurve>
-") Arc;
-		opencascade::handle<Geom_BezierCurve> Arc(const Standard_Integer Index);
-
-		/****************** Arcs ******************/
-		%feature("compactdefaultargs") Arcs;
-		%feature("autodoc", "Constructs all the bezier curves whose data is computed by this algorithm and loads these curves into the curves table. the bezier curves have the same orientation as the bspline curve analyzed in this framework. exceptions standard_dimensionerror if the curves array was not created with the following bounds: - 1 , and - the number of adjacent bezier arcs computed by this algorithm (as given by the function nbarcs).
-
-Parameters
-----------
-Curves: TColGeom_Array1OfBezierCurve
-
-Returns
--------
-None
-") Arcs;
-		void Arcs(TColGeom_Array1OfBezierCurve & Curves);
-
 		/****************** GeomConvert_BSplineCurveToBezierCurve ******************/
 		%feature("compactdefaultargs") GeomConvert_BSplineCurveToBezierCurve;
 		%feature("autodoc", "Computes all the data needed to convert the bspline curve basiscurve into a series of adjacent bezier arcs.
@@ -693,6 +665,34 @@ Returns
 None
 ") GeomConvert_BSplineCurveToBezierCurve;
 		 GeomConvert_BSplineCurveToBezierCurve(const opencascade::handle<Geom_BSplineCurve> & BasisCurve, const Standard_Real U1, const Standard_Real U2, const Standard_Real ParametricTolerance);
+
+		/****************** Arc ******************/
+		%feature("compactdefaultargs") Arc;
+		%feature("autodoc", "Constructs and returns the bezier curve of index index to the table of adjacent bezier arcs computed by this algorithm. this bezier curve has the same orientation as the bspline curve analyzed in this framework. exceptions standard_outofrange if index is less than 1 or greater than the number of adjacent bezier arcs computed by this algorithm.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom_BezierCurve>
+") Arc;
+		opencascade::handle<Geom_BezierCurve> Arc(const Standard_Integer Index);
+
+		/****************** Arcs ******************/
+		%feature("compactdefaultargs") Arcs;
+		%feature("autodoc", "Constructs all the bezier curves whose data is computed by this algorithm and loads these curves into the curves table. the bezier curves have the same orientation as the bspline curve analyzed in this framework. exceptions standard_dimensionerror if the curves array was not created with the following bounds: - 1 , and - the number of adjacent bezier arcs computed by this algorithm (as given by the function nbarcs).
+
+Parameters
+----------
+Curves: TColGeom_Array1OfBezierCurve
+
+Returns
+-------
+None
+") Arcs;
+		void Arcs(TColGeom_Array1OfBezierCurve & Curves);
 
 		/****************** Knots ******************/
 		%feature("compactdefaultargs") Knots;
@@ -1136,37 +1136,6 @@ opencascade::handle<TColStd_HArray1OfInteger>
 ********************************************/
 class GeomConvert_CompCurveToBSplineCurve {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Append a curve in the bspline return false if the curve is not g0 with the bsplinecurve. tolerance is used to check continuity and decrease multiplicity at the common knot until minm if minm = 0, the common knot can be removed //! withratio defines whether the resulting curve should have a uniform parameterization. setting withratio to standard_false may greatly decrease the speed of algorithms like cpnts_abscissapoint::advperform when applied to the resulting curve.
-
-Parameters
-----------
-NewCurve: Geom_BoundedCurve
-Tolerance: float
-After: bool,optional
-	default value is Standard_False
-WithRatio: bool,optional
-	default value is Standard_True
-MinM: int,optional
-	default value is 0
-
-Returns
--------
-bool
-") Add;
-		Standard_Boolean Add(const opencascade::handle<Geom_BoundedCurve> & NewCurve, const Standard_Real Tolerance, const Standard_Boolean After = Standard_False, const Standard_Boolean WithRatio = Standard_True, const Standard_Integer MinM = 0);
-
-		/****************** BSplineCurve ******************/
-		%feature("compactdefaultargs") BSplineCurve;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Geom_BSplineCurve>
-") BSplineCurve;
-		opencascade::handle<Geom_BSplineCurve> BSplineCurve();
-
 		/****************** GeomConvert_CompCurveToBSplineCurve ******************/
 		%feature("compactdefaultargs") GeomConvert_CompCurveToBSplineCurve;
 		%feature("autodoc", "Initialize the algorithme - parameterisation is used to convert.
@@ -1197,6 +1166,37 @@ Returns
 None
 ") GeomConvert_CompCurveToBSplineCurve;
 		 GeomConvert_CompCurveToBSplineCurve(const opencascade::handle<Geom_BoundedCurve> & BasisCurve, const Convert_ParameterisationType Parameterisation = Convert_TgtThetaOver2);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Append a curve in the bspline return false if the curve is not g0 with the bsplinecurve. tolerance is used to check continuity and decrease multiplicity at the common knot until minm if minm = 0, the common knot can be removed //! withratio defines whether the resulting curve should have a uniform parameterization. setting withratio to standard_false may greatly decrease the speed of algorithms like cpnts_abscissapoint::advperform when applied to the resulting curve.
+
+Parameters
+----------
+NewCurve: Geom_BoundedCurve
+Tolerance: float
+After: bool,optional
+	default value is Standard_False
+WithRatio: bool,optional
+	default value is Standard_True
+MinM: int,optional
+	default value is 0
+
+Returns
+-------
+bool
+") Add;
+		Standard_Boolean Add(const opencascade::handle<Geom_BoundedCurve> & NewCurve, const Standard_Real Tolerance, const Standard_Boolean After = Standard_False, const Standard_Boolean WithRatio = Standard_True, const Standard_Integer MinM = 0);
+
+		/****************** BSplineCurve ******************/
+		%feature("compactdefaultargs") BSplineCurve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
+") BSplineCurve;
+		opencascade::handle<Geom_BSplineCurve> BSplineCurve();
 
 };
 

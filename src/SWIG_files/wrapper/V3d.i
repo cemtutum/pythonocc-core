@@ -298,18 +298,18 @@ class V3d_TypeOfPickLight:
 /* end templates declaration */
 
 /* typedefs */
-typedef V3d_Viewer * V3d_ViewerPointer;
+typedef Handle_Graphic3d_CLight Handle_V3d_Light;
+typedef Standard_Real V3d_Coordinate;
+typedef Graphic3d_CLight V3d_Light;
 typedef NCollection_List<opencascade::handle<Graphic3d_CLight>> V3d_ListOfLight;
 typedef V3d_ListOfLight::Iterator V3d_ListOfLightIterator;
-typedef V3d_View * V3d_ViewPointer;
-typedef Graphic3d_TypeOfLightSource V3d_TypeOfLight;
 typedef NCollection_List<opencascade::handle<V3d_View>> V3d_ListOfView;
 typedef V3d_ListOfView::Iterator V3d_ListOfViewIterator;
 typedef Standard_Real V3d_Parameter;
+typedef Graphic3d_TypeOfLightSource V3d_TypeOfLight;
 typedef Graphic3d_TypeOfShadingModel V3d_TypeOfShadingModel;
-typedef Standard_Real V3d_Coordinate;
-typedef Graphic3d_CLight V3d_Light;
-typedef Handle_Graphic3d_CLight Handle_V3d_Light;
+typedef V3d_View * V3d_ViewPointer;
+typedef V3d_Viewer * V3d_ViewerPointer;
 /* end typedefs declaration */
 
 /************
@@ -494,6 +494,22 @@ None
 *************************/
 class V3d_CircularGrid : public Aspect_CircularGrid {
 	public:
+		/****************** V3d_CircularGrid ******************/
+		%feature("compactdefaultargs") V3d_CircularGrid;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aViewer: V3d_ViewerPointer
+aColor: Quantity_Color
+aTenthColor: Quantity_Color
+
+Returns
+-------
+None
+") V3d_CircularGrid;
+		 V3d_CircularGrid(const V3d_ViewerPointer & aViewer, const Quantity_Color & aColor, const Quantity_Color & aTenthColor);
+
 		/****************** Display ******************/
 		%feature("compactdefaultargs") Display;
 		%feature("autodoc", "No available documentation.
@@ -569,22 +585,6 @@ None
 ") SetGraphicValues;
 		void SetGraphicValues(const Standard_Real Radius, const Standard_Real OffSet);
 
-		/****************** V3d_CircularGrid ******************/
-		%feature("compactdefaultargs") V3d_CircularGrid;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aViewer: V3d_ViewerPointer
-aColor: Quantity_Color
-aTenthColor: Quantity_Color
-
-Returns
--------
-None
-") V3d_CircularGrid;
-		 V3d_CircularGrid(const V3d_ViewerPointer & aViewer, const Quantity_Color & aColor, const Quantity_Color & aTenthColor);
-
 };
 
 
@@ -631,6 +631,27 @@ None
 ******************/
 class V3d_Plane : public Standard_Transient {
 	public:
+		/****************** V3d_Plane ******************/
+		%feature("compactdefaultargs") V3d_Plane;
+		%feature("autodoc", "Creates a clipping plane from plane coefficients.
+
+Parameters
+----------
+theA: float,optional
+	default value is 0.0
+theB: float,optional
+	default value is 0.0
+theC: float,optional
+	default value is 1.0
+theD: float,optional
+	default value is 0.0
+
+Returns
+-------
+None
+") V3d_Plane;
+		 V3d_Plane(const Standard_Real theA = 0.0, const Standard_Real theB = 0.0, const Standard_Real theC = 1.0, const Standard_Real theD = 0.0);
+
 		/****************** ClipPlane ******************/
 		%feature("compactdefaultargs") ClipPlane;
 		%feature("autodoc", "Use this method to pass clipping plane implementation for standard clipping workflow. returns clipping plane implementation handle.
@@ -711,27 +732,6 @@ None
 ") SetPlane;
 		void SetPlane(const Standard_Real theA, const Standard_Real theB, const Standard_Real theC, const Standard_Real theD);
 
-		/****************** V3d_Plane ******************/
-		%feature("compactdefaultargs") V3d_Plane;
-		%feature("autodoc", "Creates a clipping plane from plane coefficients.
-
-Parameters
-----------
-theA: float,optional
-	default value is 0.0
-theB: float,optional
-	default value is 0.0
-theC: float,optional
-	default value is 1.0
-theD: float,optional
-	default value is 0.0
-
-Returns
--------
-None
-") V3d_Plane;
-		 V3d_Plane(const Standard_Real theA = 0.0, const Standard_Real theB = 0.0, const Standard_Real theC = 1.0, const Standard_Real theD = 0.0);
-
 };
 
 
@@ -765,6 +765,22 @@ class V3d_PositionLight : public Graphic3d_CLight {
 ****************************/
 class V3d_RectangularGrid : public Aspect_RectangularGrid {
 	public:
+		/****************** V3d_RectangularGrid ******************/
+		%feature("compactdefaultargs") V3d_RectangularGrid;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aViewer: V3d_ViewerPointer
+aColor: Quantity_Color
+aTenthColor: Quantity_Color
+
+Returns
+-------
+None
+") V3d_RectangularGrid;
+		 V3d_RectangularGrid(const V3d_ViewerPointer & aViewer, const Quantity_Color & aColor, const Quantity_Color & aTenthColor);
+
 		/****************** Display ******************/
 		%feature("compactdefaultargs") Display;
 		%feature("autodoc", "No available documentation.
@@ -842,22 +858,6 @@ None
 ") SetGraphicValues;
 		void SetGraphicValues(const Standard_Real XSize, const Standard_Real YSize, const Standard_Real OffSet);
 
-		/****************** V3d_RectangularGrid ******************/
-		%feature("compactdefaultargs") V3d_RectangularGrid;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aViewer: V3d_ViewerPointer
-aColor: Quantity_Color
-aTenthColor: Quantity_Color
-
-Returns
--------
-None
-") V3d_RectangularGrid;
-		 V3d_RectangularGrid(const V3d_ViewerPointer & aViewer, const Quantity_Color & aColor, const Quantity_Color & aTenthColor);
-
 };
 
 
@@ -874,6 +874,16 @@ None
 **********************/
 class V3d_Trihedron : public Standard_Transient {
 	public:
+		/****************** V3d_Trihedron ******************/
+		%feature("compactdefaultargs") V3d_Trihedron;
+		%feature("autodoc", "Creates a default trihedron.
+
+Returns
+-------
+None
+") V3d_Trihedron;
+		 V3d_Trihedron();
+
 		/****************** Display ******************/
 		%feature("compactdefaultargs") Display;
 		%feature("autodoc", "Display trihedron.
@@ -1012,16 +1022,6 @@ None
 ") SetWireframe;
 		void SetWireframe(const Standard_Boolean theAsWireframe);
 
-		/****************** V3d_Trihedron ******************/
-		%feature("compactdefaultargs") V3d_Trihedron;
-		%feature("autodoc", "Creates a default trihedron.
-
-Returns
--------
-None
-") V3d_Trihedron;
-		 V3d_Trihedron();
-
 };
 
 
@@ -1038,6 +1038,37 @@ None
 *****************/
 class V3d_View : public Standard_Transient {
 	public:
+		/****************** V3d_View ******************/
+		%feature("compactdefaultargs") V3d_View;
+		%feature("autodoc", "Initializes the view.
+
+Parameters
+----------
+theViewer: V3d_Viewer
+theType: V3d_TypeOfView,optional
+	default value is V3d_ORTHOGRAPHIC
+
+Returns
+-------
+None
+") V3d_View;
+		 V3d_View(const opencascade::handle<V3d_Viewer> & theViewer, const V3d_TypeOfView theType = V3d_ORTHOGRAPHIC);
+
+		/****************** V3d_View ******************/
+		%feature("compactdefaultargs") V3d_View;
+		%feature("autodoc", "Initializes the view by copying.
+
+Parameters
+----------
+theViewer: V3d_Viewer
+theView: V3d_View
+
+Returns
+-------
+None
+") V3d_View;
+		 V3d_View(const opencascade::handle<V3d_Viewer> & theViewer, const opencascade::handle<V3d_View> & theView);
+
 		/****************** ActiveLight ******************/
 		%feature("compactdefaultargs") ActiveLight;
 		%feature("autodoc", "No available documentation.
@@ -3161,37 +3192,6 @@ None
 ") UpdateLights;
 		void UpdateLights();
 
-		/****************** V3d_View ******************/
-		%feature("compactdefaultargs") V3d_View;
-		%feature("autodoc", "Initializes the view.
-
-Parameters
-----------
-theViewer: V3d_Viewer
-theType: V3d_TypeOfView,optional
-	default value is V3d_ORTHOGRAPHIC
-
-Returns
--------
-None
-") V3d_View;
-		 V3d_View(const opencascade::handle<V3d_Viewer> & theViewer, const V3d_TypeOfView theType = V3d_ORTHOGRAPHIC);
-
-		/****************** V3d_View ******************/
-		%feature("compactdefaultargs") V3d_View;
-		%feature("autodoc", "Initializes the view by copying.
-
-Parameters
-----------
-theViewer: V3d_Viewer
-theView: V3d_View
-
-Returns
--------
-None
-") V3d_View;
-		 V3d_View(const opencascade::handle<V3d_Viewer> & theViewer, const opencascade::handle<V3d_View> & theView);
-
 		/****************** View ******************/
 		%feature("compactdefaultargs") View;
 		%feature("autodoc", "Returns the associated graphic3d view.
@@ -3370,6 +3370,51 @@ None
 *******************/
 class V3d_Viewer : public Standard_Transient {
 	public:
+		/****************** V3d_Viewer ******************/
+		%feature("compactdefaultargs") V3d_Viewer;
+		%feature("autodoc", "Create a viewer with the given graphic driver and with default parameters: - view orientation: v3d_xposynegzpos - view background: quantity_noc_gray30 - shading model: v3d_gouraud.
+
+Parameters
+----------
+theDriver: Graphic3d_GraphicDriver
+
+Returns
+-------
+None
+") V3d_Viewer;
+		 V3d_Viewer(const opencascade::handle<Graphic3d_GraphicDriver> & theDriver);
+
+		/****************** V3d_Viewer ******************/
+		%feature("compactdefaultargs") V3d_Viewer;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theDriver: Graphic3d_GraphicDriver
+theName: Standard_ExtString
+theDomain: char *,optional
+	default value is ""
+theViewSize: float,optional
+	default value is 1000.0
+theViewProj: V3d_TypeOfOrientation,optional
+	default value is V3d_XposYnegZpos
+theViewBackground: Quantity_Color,optional
+	default value is Quantity_NOC_GRAY30
+theVisualization: V3d_TypeOfVisualization,optional
+	default value is V3d_ZBUFFER
+theShadingModel: Graphic3d_TypeOfShadingModel,optional
+	default value is Graphic3d_TOSM_VERTEX
+theComputedMode: bool,optional
+	default value is Standard_True
+theDefaultComputedMode: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") V3d_Viewer;
+		 V3d_Viewer(const opencascade::handle<Graphic3d_GraphicDriver> & theDriver, const Standard_ExtString theName, const char * theDomain = "", const Standard_Real theViewSize = 1000.0, const V3d_TypeOfOrientation theViewProj = V3d_XposYnegZpos, const Quantity_Color & theViewBackground = Quantity_NOC_GRAY30, const V3d_TypeOfVisualization theVisualization = V3d_ZBUFFER, const Graphic3d_TypeOfShadingModel theShadingModel = Graphic3d_TOSM_VERTEX, const Standard_Boolean theComputedMode = Standard_True, const Standard_Boolean theDefaultComputedMode = Standard_True);
+
 		/****************** ActivateGrid ******************/
 		%feature("compactdefaultargs") ActivateGrid;
 		%feature("autodoc", "Activates the grid in all views of <self>.
@@ -4538,51 +4583,6 @@ None
 ") UpdateLights;
 		void UpdateLights();
 
-		/****************** V3d_Viewer ******************/
-		%feature("compactdefaultargs") V3d_Viewer;
-		%feature("autodoc", "Create a viewer with the given graphic driver and with default parameters: - view orientation: v3d_xposynegzpos - view background: quantity_noc_gray30 - shading model: v3d_gouraud.
-
-Parameters
-----------
-theDriver: Graphic3d_GraphicDriver
-
-Returns
--------
-None
-") V3d_Viewer;
-		 V3d_Viewer(const opencascade::handle<Graphic3d_GraphicDriver> & theDriver);
-
-		/****************** V3d_Viewer ******************/
-		%feature("compactdefaultargs") V3d_Viewer;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theDriver: Graphic3d_GraphicDriver
-theName: Standard_ExtString
-theDomain: char *,optional
-	default value is ""
-theViewSize: float,optional
-	default value is 1000.0
-theViewProj: V3d_TypeOfOrientation,optional
-	default value is V3d_XposYnegZpos
-theViewBackground: Quantity_Color,optional
-	default value is Quantity_NOC_GRAY30
-theVisualization: V3d_TypeOfVisualization,optional
-	default value is V3d_ZBUFFER
-theShadingModel: Graphic3d_TypeOfShadingModel,optional
-	default value is Graphic3d_TOSM_VERTEX
-theComputedMode: bool,optional
-	default value is Standard_True
-theDefaultComputedMode: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") V3d_Viewer;
-		 V3d_Viewer(const opencascade::handle<Graphic3d_GraphicDriver> & theDriver, const Standard_ExtString theName, const char * theDomain = "", const Standard_Real theViewSize = 1000.0, const V3d_TypeOfOrientation theViewProj = V3d_XposYnegZpos, const Quantity_Color & theViewBackground = Quantity_NOC_GRAY30, const V3d_TypeOfVisualization theVisualization = V3d_ZBUFFER, const Graphic3d_TypeOfShadingModel theShadingModel = Graphic3d_TOSM_VERTEX, const Standard_Boolean theComputedMode = Standard_True, const Standard_Boolean theDefaultComputedMode = Standard_True);
-
 		/****************** ZLayerSettings ******************/
 		%feature("compactdefaultargs") ZLayerSettings;
 		%feature("autodoc", "Returns the settings of a single z layer.
@@ -4617,20 +4617,6 @@ Graphic3d_ZLayerSettings
 *****************************/
 class V3d_DirectionalLight : public V3d_PositionLight {
 	public:
-		/****************** SetDirection ******************/
-		%feature("compactdefaultargs") SetDirection;
-		%feature("autodoc", "Defines the direction of the light source by a predefined orientation.
-
-Parameters
-----------
-theDirection: V3d_TypeOfOrientation
-
-Returns
--------
-None
-") SetDirection;
-		void SetDirection(V3d_TypeOfOrientation theDirection);
-
 		/****************** V3d_DirectionalLight ******************/
 		%feature("compactdefaultargs") V3d_DirectionalLight;
 		%feature("autodoc", "Creates a directional light source in the viewer.
@@ -4712,6 +4698,20 @@ None
 ") V3d_DirectionalLight;
 		 V3d_DirectionalLight(const opencascade::handle<V3d_Viewer> & theViewer, const Standard_Real theXt, const Standard_Real theYt, const Standard_Real theZt, const Standard_Real theXp, const Standard_Real theYp, const Standard_Real theZp, const Quantity_Color & theColor = Quantity_NOC_WHITE, const Standard_Boolean theIsHeadlight = Standard_False);
 
+		/****************** SetDirection ******************/
+		%feature("compactdefaultargs") SetDirection;
+		%feature("autodoc", "Defines the direction of the light source by a predefined orientation.
+
+Parameters
+----------
+theDirection: V3d_TypeOfOrientation
+
+Returns
+-------
+None
+") SetDirection;
+		void SetDirection(V3d_TypeOfOrientation theDirection);
+
 };
 
 
@@ -4783,20 +4783,6 @@ None
 **********************/
 class V3d_SpotLight : public V3d_PositionLight {
 	public:
-		/****************** SetDirection ******************/
-		%feature("compactdefaultargs") SetDirection;
-		%feature("autodoc", "Defines the direction of the light source according to a predefined directional vector.
-
-Parameters
-----------
-theOrientation: V3d_TypeOfOrientation
-
-Returns
--------
-None
-") SetDirection;
-		void SetDirection(V3d_TypeOfOrientation theOrientation);
-
 		/****************** V3d_SpotLight ******************/
 		%feature("compactdefaultargs") V3d_SpotLight;
 		%feature("autodoc", "Creates a light source of the spot type in the viewer with default attenuation factors (1.0, 0.0), concentration factor 1.0 and spot angle 30 degrees.
@@ -4890,6 +4876,20 @@ Returns
 None
 ") V3d_SpotLight;
 		 V3d_SpotLight(const opencascade::handle<V3d_Viewer> & theViewer, const Standard_Real theXt, const Standard_Real theYt, const Standard_Real theZt, const Standard_Real theXp, const Standard_Real theYp, const Standard_Real theZp, const Quantity_Color & theColor = Quantity_NOC_WHITE, const Standard_Real theConstAttenuation = 1.0, const Standard_Real theLinearAttenuation = 0.0, const Standard_Real theConcentration = 1.0, const Standard_Real theAngle = 0.523599);
+
+		/****************** SetDirection ******************/
+		%feature("compactdefaultargs") SetDirection;
+		%feature("autodoc", "Defines the direction of the light source according to a predefined directional vector.
+
+Parameters
+----------
+theOrientation: V3d_TypeOfOrientation
+
+Returns
+-------
+None
+") SetDirection;
+		void SetDirection(V3d_TypeOfOrientation theOrientation);
 
 };
 

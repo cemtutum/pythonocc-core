@@ -381,16 +381,6 @@ opencascade::handle<Geom_Geometry>
 *******************************/
 class Geom_OsculatingSurface : public Standard_Transient {
 	public:
-		/****************** BasisSurface ******************/
-		%feature("compactdefaultargs") BasisSurface;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Geom_Surface>
-") BasisSurface;
-		opencascade::handle<Geom_Surface> BasisSurface();
-
 		/****************** Geom_OsculatingSurface ******************/
 		%feature("compactdefaultargs") Geom_OsculatingSurface;
 		%feature("autodoc", "No available documentation.
@@ -415,6 +405,16 @@ Returns
 None
 ") Geom_OsculatingSurface;
 		 Geom_OsculatingSurface(const opencascade::handle<Geom_Surface> & BS, const Standard_Real Tol);
+
+		/****************** BasisSurface ******************/
+		%feature("compactdefaultargs") BasisSurface;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_Surface>
+") BasisSurface;
+		opencascade::handle<Geom_Surface> BasisSurface();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -491,26 +491,6 @@ bool
 ****************************/
 class Geom_Transformation : public Standard_Transient {
 	public:
-		/****************** Copy ******************/
-		%feature("compactdefaultargs") Copy;
-		%feature("autodoc", "Creates a new object which is a copy of this transformation.
-
-Returns
--------
-opencascade::handle<Geom_Transformation>
-") Copy;
-		opencascade::handle<Geom_Transformation> Copy();
-
-		/****************** Form ******************/
-		%feature("compactdefaultargs") Form;
-		%feature("autodoc", "Returns the nature of this transformation as a value of the gp_trsfform enumeration.
-
-Returns
--------
-gp_TrsfForm
-") Form;
-		gp_TrsfForm Form();
-
 		/****************** Geom_Transformation ******************/
 		%feature("compactdefaultargs") Geom_Transformation;
 		%feature("autodoc", "Creates an identity transformation.
@@ -534,6 +514,26 @@ Returns
 None
 ") Geom_Transformation;
 		 Geom_Transformation(const gp_Trsf & T);
+
+		/****************** Copy ******************/
+		%feature("compactdefaultargs") Copy;
+		%feature("autodoc", "Creates a new object which is a copy of this transformation.
+
+Returns
+-------
+opencascade::handle<Geom_Transformation>
+") Copy;
+		opencascade::handle<Geom_Transformation> Copy();
+
+		/****************** Form ******************/
+		%feature("compactdefaultargs") Form;
+		%feature("autodoc", "Returns the nature of this transformation as a value of the gp_trsfform enumeration.
+
+Returns
+-------
+gp_TrsfForm
+") Form;
+		gp_TrsfForm Form();
 
 		/****************** Invert ******************/
 		%feature("compactdefaultargs") Invert;
@@ -1898,26 +1898,6 @@ float
 ****************************/
 class Geom_Axis1Placement : public Geom_AxisPlacement {
 	public:
-		/****************** Ax1 ******************/
-		%feature("compactdefaultargs") Ax1;
-		%feature("autodoc", "Returns a non transient copy of <self>.
-
-Returns
--------
-gp_Ax1
-") Ax1;
-		const gp_Ax1 Ax1();
-
-		/****************** Copy ******************/
-		%feature("compactdefaultargs") Copy;
-		%feature("autodoc", "Creates a new object, which is a copy of this axis.
-
-Returns
--------
-opencascade::handle<Geom_Geometry>
-") Copy;
-		opencascade::handle<Geom_Geometry> Copy();
-
 		/****************** Geom_Axis1Placement ******************/
 		%feature("compactdefaultargs") Geom_Axis1Placement;
 		%feature("autodoc", "Returns a transient copy of a1.
@@ -1946,6 +1926,26 @@ Returns
 None
 ") Geom_Axis1Placement;
 		 Geom_Axis1Placement(const gp_Pnt & P, const gp_Dir & V);
+
+		/****************** Ax1 ******************/
+		%feature("compactdefaultargs") Ax1;
+		%feature("autodoc", "Returns a non transient copy of <self>.
+
+Returns
+-------
+gp_Ax1
+") Ax1;
+		const gp_Ax1 Ax1();
+
+		/****************** Copy ******************/
+		%feature("compactdefaultargs") Copy;
+		%feature("autodoc", "Creates a new object, which is a copy of this axis.
+
+Returns
+-------
+opencascade::handle<Geom_Geometry>
+") Copy;
+		opencascade::handle<Geom_Geometry> Copy();
 
 		/****************** Reverse ******************/
 		%feature("compactdefaultargs") Reverse;
@@ -2011,26 +2011,6 @@ None
 ****************************/
 class Geom_Axis2Placement : public Geom_AxisPlacement {
 	public:
-		/****************** Ax2 ******************/
-		%feature("compactdefaultargs") Ax2;
-		%feature("autodoc", "Returns a non transient copy of <self>.
-
-Returns
--------
-gp_Ax2
-") Ax2;
-		gp_Ax2 Ax2();
-
-		/****************** Copy ******************/
-		%feature("compactdefaultargs") Copy;
-		%feature("autodoc", "Creates a new object which is a copy of this coordinate system.
-
-Returns
--------
-opencascade::handle<Geom_Geometry>
-") Copy;
-		opencascade::handle<Geom_Geometry> Copy();
-
 		/****************** Geom_Axis2Placement ******************/
 		%feature("compactdefaultargs") Geom_Axis2Placement;
 		%feature("autodoc", "Returns a transient copy of a2.
@@ -2060,6 +2040,26 @@ Returns
 None
 ") Geom_Axis2Placement;
 		 Geom_Axis2Placement(const gp_Pnt & P, const gp_Dir & N, const gp_Dir & Vx);
+
+		/****************** Ax2 ******************/
+		%feature("compactdefaultargs") Ax2;
+		%feature("autodoc", "Returns a non transient copy of <self>.
+
+Returns
+-------
+gp_Ax2
+") Ax2;
+		gp_Ax2 Ax2();
+
+		/****************** Copy ******************/
+		%feature("compactdefaultargs") Copy;
+		%feature("autodoc", "Creates a new object which is a copy of this coordinate system.
+
+Returns
+-------
+opencascade::handle<Geom_Geometry>
+") Copy;
+		opencascade::handle<Geom_Geometry> Copy();
 
 		/****************** SetAx2 ******************/
 		%feature("compactdefaultargs") SetAx2;
@@ -2221,32 +2221,6 @@ class Geom_BoundedSurface : public Geom_Surface {
 ****************************/
 class Geom_CartesianPoint : public Geom_Point {
 	public:
-		/****************** Coord ******************/
-		%feature("compactdefaultargs") Coord;
-		%feature("autodoc", "Returns the coordinates of <self>.
-
-Parameters
-----------
-X: float
-Y: float
-Z: float
-
-Returns
--------
-None
-") Coord;
-		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
-		/****************** Copy ******************/
-		%feature("compactdefaultargs") Copy;
-		%feature("autodoc", "Creates a new object which is a copy of this point.
-
-Returns
--------
-opencascade::handle<Geom_Geometry>
-") Copy;
-		opencascade::handle<Geom_Geometry> Copy();
-
 		/****************** Geom_CartesianPoint ******************/
 		%feature("compactdefaultargs") Geom_CartesianPoint;
 		%feature("autodoc", "Returns a transient copy of p.
@@ -2276,6 +2250,32 @@ Returns
 None
 ") Geom_CartesianPoint;
 		 Geom_CartesianPoint(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
+
+		/****************** Coord ******************/
+		%feature("compactdefaultargs") Coord;
+		%feature("autodoc", "Returns the coordinates of <self>.
+
+Parameters
+----------
+X: float
+Y: float
+Z: float
+
+Returns
+-------
+None
+") Coord;
+		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+
+		/****************** Copy ******************/
+		%feature("compactdefaultargs") Copy;
+		%feature("autodoc", "Creates a new object which is a copy of this point.
+
+Returns
+-------
+opencascade::handle<Geom_Geometry>
+") Copy;
+		opencascade::handle<Geom_Geometry> Copy();
 
 		/****************** Pnt ******************/
 		%feature("compactdefaultargs") Pnt;
@@ -2586,6 +2586,36 @@ gp_Ax1
 ***********************/
 class Geom_Direction : public Geom_Vector {
 	public:
+		/****************** Geom_Direction ******************/
+		%feature("compactdefaultargs") Geom_Direction;
+		%feature("autodoc", "Creates a unit vector with it 3 cartesian coordinates. //! raised if sqrt( x*x + y*y + z*z) <= resolution from gp.
+
+Parameters
+----------
+X: float
+Y: float
+Z: float
+
+Returns
+-------
+None
+") Geom_Direction;
+		 Geom_Direction(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
+
+		/****************** Geom_Direction ******************/
+		%feature("compactdefaultargs") Geom_Direction;
+		%feature("autodoc", "Creates a transient copy of <self>.
+
+Parameters
+----------
+V: gp_Dir
+
+Returns
+-------
+None
+") Geom_Direction;
+		 Geom_Direction(const gp_Dir & V);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "Creates a new object which is a copy of this unit vector.
@@ -2663,36 +2693,6 @@ Returns
 gp_Dir
 ") Dir;
 		gp_Dir Dir();
-
-		/****************** Geom_Direction ******************/
-		%feature("compactdefaultargs") Geom_Direction;
-		%feature("autodoc", "Creates a unit vector with it 3 cartesian coordinates. //! raised if sqrt( x*x + y*y + z*z) <= resolution from gp.
-
-Parameters
-----------
-X: float
-Y: float
-Z: float
-
-Returns
--------
-None
-") Geom_Direction;
-		 Geom_Direction(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
-
-		/****************** Geom_Direction ******************/
-		%feature("compactdefaultargs") Geom_Direction;
-		%feature("autodoc", "Creates a transient copy of <self>.
-
-Parameters
-----------
-V: gp_Dir
-
-Returns
--------
-None
-") Geom_Direction;
-		 Geom_Direction(const gp_Dir & V);
 
 		/****************** Magnitude ******************/
 		%feature("compactdefaultargs") Magnitude;
@@ -2991,6 +2991,49 @@ float
 ******************/
 class Geom_Line : public Geom_Curve {
 	public:
+		/****************** Geom_Line ******************/
+		%feature("compactdefaultargs") Geom_Line;
+		%feature("autodoc", "Creates a line located in 3d space with the axis placement a1. the location of a1 is the origin of the line.
+
+Parameters
+----------
+A1: gp_Ax1
+
+Returns
+-------
+None
+") Geom_Line;
+		 Geom_Line(const gp_Ax1 & A1);
+
+		/****************** Geom_Line ******************/
+		%feature("compactdefaultargs") Geom_Line;
+		%feature("autodoc", "Creates a line from a non transient line from package gp.
+
+Parameters
+----------
+L: gp_Lin
+
+Returns
+-------
+None
+") Geom_Line;
+		 Geom_Line(const gp_Lin & L);
+
+		/****************** Geom_Line ******************/
+		%feature("compactdefaultargs") Geom_Line;
+		%feature("autodoc", "Constructs a line passing through point p and parallel to vector v (p and v are, respectively, the origin and the unit vector of the positioning axis of the line).
+
+Parameters
+----------
+P: gp_Pnt
+V: gp_Dir
+
+Returns
+-------
+None
+") Geom_Line;
+		 Geom_Line(const gp_Pnt & P, const gp_Dir & V);
+
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
 		%feature("autodoc", "Returns geomabs_cn, which is the global continuity of any line.
@@ -3101,49 +3144,6 @@ Returns
 float
 ") FirstParameter;
 		Standard_Real FirstParameter();
-
-		/****************** Geom_Line ******************/
-		%feature("compactdefaultargs") Geom_Line;
-		%feature("autodoc", "Creates a line located in 3d space with the axis placement a1. the location of a1 is the origin of the line.
-
-Parameters
-----------
-A1: gp_Ax1
-
-Returns
--------
-None
-") Geom_Line;
-		 Geom_Line(const gp_Ax1 & A1);
-
-		/****************** Geom_Line ******************/
-		%feature("compactdefaultargs") Geom_Line;
-		%feature("autodoc", "Creates a line from a non transient line from package gp.
-
-Parameters
-----------
-L: gp_Lin
-
-Returns
--------
-None
-") Geom_Line;
-		 Geom_Line(const gp_Lin & L);
-
-		/****************** Geom_Line ******************/
-		%feature("compactdefaultargs") Geom_Line;
-		%feature("autodoc", "Constructs a line passing through point p and parallel to vector v (p and v are, respectively, the origin and the unit vector of the positioning axis of the line).
-
-Parameters
-----------
-P: gp_Pnt
-V: gp_Dir
-
-Returns
--------
-None
-") Geom_Line;
-		 Geom_Line(const gp_Pnt & P, const gp_Dir & V);
 
 		/****************** IsCN ******************/
 		%feature("compactdefaultargs") IsCN;
@@ -3348,6 +3348,24 @@ float
 *************************/
 class Geom_OffsetCurve : public Geom_Curve {
 	public:
+		/****************** Geom_OffsetCurve ******************/
+		%feature("compactdefaultargs") Geom_OffsetCurve;
+		%feature("autodoc", "C is the basis curve, offset is the distance between <self> and the basis curve at any point. v defines the fixed reference direction (offset direction). if p is a point on the basis curve and t the first derivative with non zero length at this point, the corresponding point on the offset curve is in the direction of the vector-product n = v ^ t where n is a unitary vector. if isnotcheckc0 = true checking if basis curve has c0-continuity is not made. warnings : in this package the entities are not shared. the offsetcurve is built with a copy of the curve c. so when c is modified the offsetcurve is not modified //! raised if the basis curve c is not at least c1. warnings : no check is done to know if ||v^t|| != 0.0 at any point.
+
+Parameters
+----------
+C: Geom_Curve
+Offset: float
+V: gp_Dir
+isNotCheckC0: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Geom_OffsetCurve;
+		 Geom_OffsetCurve(const opencascade::handle<Geom_Curve> & C, const Standard_Real Offset, const gp_Dir & V, const Standard_Boolean isNotCheckC0 = Standard_False);
+
 		/****************** BasisCurve ******************/
 		%feature("compactdefaultargs") BasisCurve;
 		%feature("autodoc", "Returns the basis curve of this offset curve. note: the basis curve can be an offset curve.
@@ -3478,24 +3496,6 @@ Returns
 float
 ") FirstParameter;
 		Standard_Real FirstParameter();
-
-		/****************** Geom_OffsetCurve ******************/
-		%feature("compactdefaultargs") Geom_OffsetCurve;
-		%feature("autodoc", "C is the basis curve, offset is the distance between <self> and the basis curve at any point. v defines the fixed reference direction (offset direction). if p is a point on the basis curve and t the first derivative with non zero length at this point, the corresponding point on the offset curve is in the direction of the vector-product n = v ^ t where n is a unitary vector. if isnotcheckc0 = true checking if basis curve has c0-continuity is not made. warnings : in this package the entities are not shared. the offsetcurve is built with a copy of the curve c. so when c is modified the offsetcurve is not modified //! raised if the basis curve c is not at least c1. warnings : no check is done to know if ||v^t|| != 0.0 at any point.
-
-Parameters
-----------
-C: Geom_Curve
-Offset: float
-V: gp_Dir
-isNotCheckC0: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Geom_OffsetCurve;
-		 Geom_OffsetCurve(const opencascade::handle<Geom_Curve> & C, const Standard_Real Offset, const gp_Dir & V, const Standard_Boolean isNotCheckC0 = Standard_False);
 
 		/****************** GetBasisCurveContinuity ******************/
 		%feature("compactdefaultargs") GetBasisCurveContinuity;
@@ -3698,6 +3698,23 @@ float
 ***************************/
 class Geom_OffsetSurface : public Geom_Surface {
 	public:
+		/****************** Geom_OffsetSurface ******************/
+		%feature("compactdefaultargs") Geom_OffsetSurface;
+		%feature("autodoc", "Constructs a surface offset from the basis surface s, where offset is the distance between the offset surface and the basis surface at any point. a point on the offset surface is built by measuring the offset value along a normal vector at a point on s. this normal vector is given by the cross product d1u^d1v, where d1u and d1v are the vectors tangential to the basis surface in the u and v parametric directions at this point. the side of s on which the offset value is measured is indicated by this normal vector if offset is positive, or is the inverse sense if offset is negative. if isnotcheckc0 = true checking if basis surface has c0-continuity is not made. warnings : - the offset surface is built with a copy of the surface s. therefore, when s is modified the offset surface is not modified. - no check is made at the time of construction to detect points on s with multiple possible normal directions. raised if s is not at least c1. warnings : no check is done to verify that a unique normal direction is defined at any point of the basis surface s.
+
+Parameters
+----------
+S: Geom_Surface
+Offset: float
+isNotCheckC0: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Geom_OffsetSurface;
+		 Geom_OffsetSurface(const opencascade::handle<Geom_Surface> & S, const Standard_Real Offset, const Standard_Boolean isNotCheckC0 = Standard_False);
+
 		/****************** BasisSurface ******************/
 		%feature("compactdefaultargs") BasisSurface;
 		%feature("autodoc", "Returns the basis surface of this offset surface. note: the basis surface can be an offset surface.
@@ -3841,23 +3858,6 @@ Returns
 gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-
-		/****************** Geom_OffsetSurface ******************/
-		%feature("compactdefaultargs") Geom_OffsetSurface;
-		%feature("autodoc", "Constructs a surface offset from the basis surface s, where offset is the distance between the offset surface and the basis surface at any point. a point on the offset surface is built by measuring the offset value along a normal vector at a point on s. this normal vector is given by the cross product d1u^d1v, where d1u and d1v are the vectors tangential to the basis surface in the u and v parametric directions at this point. the side of s on which the offset value is measured is indicated by this normal vector if offset is positive, or is the inverse sense if offset is negative. if isnotcheckc0 = true checking if basis surface has c0-continuity is not made. warnings : - the offset surface is built with a copy of the surface s. therefore, when s is modified the offset surface is not modified. - no check is made at the time of construction to detect points on s with multiple possible normal directions. raised if s is not at least c1. warnings : no check is done to verify that a unique normal direction is defined at any point of the basis surface s.
-
-Parameters
-----------
-S: Geom_Surface
-Offset: float
-isNotCheckC0: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Geom_OffsetSurface;
-		 Geom_OffsetSurface(const opencascade::handle<Geom_Surface> & S, const Standard_Real Offset, const Standard_Boolean isNotCheckC0 = Standard_False);
 
 		/****************** GetBasisSurfContinuity ******************/
 		%feature("compactdefaultargs") GetBasisSurfContinuity;
@@ -4234,6 +4234,51 @@ gp_Dir
 *********************************/
 class Geom_VectorWithMagnitude : public Geom_Vector {
 	public:
+		/****************** Geom_VectorWithMagnitude ******************/
+		%feature("compactdefaultargs") Geom_VectorWithMagnitude;
+		%feature("autodoc", "Creates a transient copy of v.
+
+Parameters
+----------
+V: gp_Vec
+
+Returns
+-------
+None
+") Geom_VectorWithMagnitude;
+		 Geom_VectorWithMagnitude(const gp_Vec & V);
+
+		/****************** Geom_VectorWithMagnitude ******************/
+		%feature("compactdefaultargs") Geom_VectorWithMagnitude;
+		%feature("autodoc", "Creates a vector with three cartesian coordinates.
+
+Parameters
+----------
+X: float
+Y: float
+Z: float
+
+Returns
+-------
+None
+") Geom_VectorWithMagnitude;
+		 Geom_VectorWithMagnitude(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
+
+		/****************** Geom_VectorWithMagnitude ******************/
+		%feature("compactdefaultargs") Geom_VectorWithMagnitude;
+		%feature("autodoc", "Creates a vector from the point p1 to the point p2. the magnitude of the vector is the distance between p1 and p2.
+
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+
+Returns
+-------
+None
+") Geom_VectorWithMagnitude;
+		 Geom_VectorWithMagnitude(const gp_Pnt & P1, const gp_Pnt & P2);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the vector other to <self>.
@@ -4357,51 +4402,6 @@ Returns
 opencascade::handle<Geom_VectorWithMagnitude>
 ") Divided;
 		opencascade::handle<Geom_VectorWithMagnitude> Divided(const Standard_Real Scalar);
-
-		/****************** Geom_VectorWithMagnitude ******************/
-		%feature("compactdefaultargs") Geom_VectorWithMagnitude;
-		%feature("autodoc", "Creates a transient copy of v.
-
-Parameters
-----------
-V: gp_Vec
-
-Returns
--------
-None
-") Geom_VectorWithMagnitude;
-		 Geom_VectorWithMagnitude(const gp_Vec & V);
-
-		/****************** Geom_VectorWithMagnitude ******************/
-		%feature("compactdefaultargs") Geom_VectorWithMagnitude;
-		%feature("autodoc", "Creates a vector with three cartesian coordinates.
-
-Parameters
-----------
-X: float
-Y: float
-Z: float
-
-Returns
--------
-None
-") Geom_VectorWithMagnitude;
-		 Geom_VectorWithMagnitude(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
-
-		/****************** Geom_VectorWithMagnitude ******************/
-		%feature("compactdefaultargs") Geom_VectorWithMagnitude;
-		%feature("autodoc", "Creates a vector from the point p1 to the point p2. the magnitude of the vector is the distance between p1 and p2.
-
-Parameters
-----------
-P1: gp_Pnt
-P2: gp_Pnt
-
-Returns
--------
-None
-") Geom_VectorWithMagnitude;
-		 Geom_VectorWithMagnitude(const gp_Pnt & P1, const gp_Pnt & P2);
 
 		/****************** Magnitude ******************/
 		%feature("compactdefaultargs") Magnitude;
@@ -4601,6 +4601,47 @@ None
 **************************/
 class Geom_BSplineCurve : public Geom_BoundedCurve {
 	public:
+		/****************** Geom_BSplineCurve ******************/
+		%feature("compactdefaultargs") Geom_BSplineCurve;
+		%feature("autodoc", "Creates a non-rational b_spline curve on the basis <knots, multiplicities> of degree <degree>.
+
+Parameters
+----------
+Poles: TColgp_Array1OfPnt
+Knots: TColStd_Array1OfReal
+Multiplicities: TColStd_Array1OfInteger
+Degree: int
+Periodic: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Geom_BSplineCurve;
+		 Geom_BSplineCurve(const TColgp_Array1OfPnt & Poles, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Multiplicities, const Standard_Integer Degree, const Standard_Boolean Periodic = Standard_False);
+
+		/****************** Geom_BSplineCurve ******************/
+		%feature("compactdefaultargs") Geom_BSplineCurve;
+		%feature("autodoc", "Creates a rational b_spline curve on the basis <knots, multiplicities> of degree <degree>. raises constructionerror subject to the following conditions 0 < degree <= maxdegree. //! weights.length() == poles.length() //! knots.length() == mults.length() >= 2 //! knots(i) < knots(i+1) (knots are increasing) //! 1 <= mults(i) <= degree //! on a non periodic curve the first and last multiplicities may be degree+1 (this is even recommanded if you want the curve to start and finish on the first and last pole). //! on a periodic curve the first and the last multicities must be the same. //! on non-periodic curves //! poles.length() == sum(mults(i)) - degree - 1 >= 2 //! on periodic curves //! poles.length() == sum(mults(i)) except the first or last.
+
+Parameters
+----------
+Poles: TColgp_Array1OfPnt
+Weights: TColStd_Array1OfReal
+Knots: TColStd_Array1OfReal
+Multiplicities: TColStd_Array1OfInteger
+Degree: int
+Periodic: bool,optional
+	default value is Standard_False
+CheckRational: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") Geom_BSplineCurve;
+		 Geom_BSplineCurve(const TColgp_Array1OfPnt & Poles, const TColStd_Array1OfReal & Weights, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Multiplicities, const Standard_Integer Degree, const Standard_Boolean Periodic = Standard_False, const Standard_Boolean CheckRational = Standard_True);
+
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
 		%feature("autodoc", "Returns the global continuity of the curve : c0 : only geometric continuity, c1 : continuity of the first derivative all along the curve, c2 : continuity of the second derivative all along the curve, c3 : continuity of the third derivative all along the curve, cn : the order of continuity is infinite. for a b-spline curve of degree d if a knot ui has a multiplicity p the b-spline curve is only cd-p continuous at ui. so the global continuity of the curve can't be greater than cd-p where p is the maximum multiplicity of the interior knots. in the interior of a knot span the curve is infinitely continuously differentiable.
@@ -4741,47 +4782,6 @@ Returns
 int
 ") FirstUKnotIndex;
 		Standard_Integer FirstUKnotIndex();
-
-		/****************** Geom_BSplineCurve ******************/
-		%feature("compactdefaultargs") Geom_BSplineCurve;
-		%feature("autodoc", "Creates a non-rational b_spline curve on the basis <knots, multiplicities> of degree <degree>.
-
-Parameters
-----------
-Poles: TColgp_Array1OfPnt
-Knots: TColStd_Array1OfReal
-Multiplicities: TColStd_Array1OfInteger
-Degree: int
-Periodic: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Geom_BSplineCurve;
-		 Geom_BSplineCurve(const TColgp_Array1OfPnt & Poles, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Multiplicities, const Standard_Integer Degree, const Standard_Boolean Periodic = Standard_False);
-
-		/****************** Geom_BSplineCurve ******************/
-		%feature("compactdefaultargs") Geom_BSplineCurve;
-		%feature("autodoc", "Creates a rational b_spline curve on the basis <knots, multiplicities> of degree <degree>. raises constructionerror subject to the following conditions 0 < degree <= maxdegree. //! weights.length() == poles.length() //! knots.length() == mults.length() >= 2 //! knots(i) < knots(i+1) (knots are increasing) //! 1 <= mults(i) <= degree //! on a non periodic curve the first and last multiplicities may be degree+1 (this is even recommanded if you want the curve to start and finish on the first and last pole). //! on a periodic curve the first and the last multicities must be the same. //! on non-periodic curves //! poles.length() == sum(mults(i)) - degree - 1 >= 2 //! on periodic curves //! poles.length() == sum(mults(i)) except the first or last.
-
-Parameters
-----------
-Poles: TColgp_Array1OfPnt
-Weights: TColStd_Array1OfReal
-Knots: TColStd_Array1OfReal
-Multiplicities: TColStd_Array1OfInteger
-Degree: int
-Periodic: bool,optional
-	default value is Standard_False
-CheckRational: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Geom_BSplineCurve;
-		 Geom_BSplineCurve(const TColgp_Array1OfPnt & Poles, const TColStd_Array1OfReal & Weights, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Multiplicities, const Standard_Integer Degree, const Standard_Boolean Periodic = Standard_False, const Standard_Boolean CheckRational = Standard_True);
 
 		/****************** IncreaseDegree ******************/
 		%feature("compactdefaultargs") IncreaseDegree;
@@ -5625,6 +5625,55 @@ TColStd_Array1OfReal *
 ****************************/
 class Geom_BSplineSurface : public Geom_BoundedSurface {
 	public:
+		/****************** Geom_BSplineSurface ******************/
+		%feature("compactdefaultargs") Geom_BSplineSurface;
+		%feature("autodoc", "Creates a non-rational b-spline surface (weights default value is 1.). the following conditions must be verified. 0 < udegree <= maxdegree. uknots.length() == umults.length() >= 2 uknots(i) < uknots(i+1) (knots are increasing) 1 <= umults(i) <= udegree on a non uperiodic surface the first and last umultiplicities may be udegree+1 (this is even recommanded if you want the curve to start and finish on the first and last pole). on a uperiodic surface the first and the last umultiplicities must be the same. on non-uperiodic surfaces poles.collength() == sum(umults(i)) - udegree - 1 >= 2 on uperiodic surfaces poles.collength() == sum(umults(i)) except the first or last the previous conditions for u holds also for v, with the rowlength of the poles.
+
+Parameters
+----------
+Poles: TColgp_Array2OfPnt
+UKnots: TColStd_Array1OfReal
+VKnots: TColStd_Array1OfReal
+UMults: TColStd_Array1OfInteger
+VMults: TColStd_Array1OfInteger
+UDegree: int
+VDegree: int
+UPeriodic: bool,optional
+	default value is Standard_False
+VPeriodic: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Geom_BSplineSurface;
+		 Geom_BSplineSurface(const TColgp_Array2OfPnt & Poles, const TColStd_Array1OfReal & UKnots, const TColStd_Array1OfReal & VKnots, const TColStd_Array1OfInteger & UMults, const TColStd_Array1OfInteger & VMults, const Standard_Integer UDegree, const Standard_Integer VDegree, const Standard_Boolean UPeriodic = Standard_False, const Standard_Boolean VPeriodic = Standard_False);
+
+		/****************** Geom_BSplineSurface ******************/
+		%feature("compactdefaultargs") Geom_BSplineSurface;
+		%feature("autodoc", "Creates a non-rational b-spline surface (weights default value is 1.). //! the following conditions must be verified. 0 < udegree <= maxdegree. //! uknots.length() == umults.length() >= 2 //! uknots(i) < uknots(i+1) (knots are increasing) 1 <= umults(i) <= udegree //! on a non uperiodic surface the first and last umultiplicities may be udegree+1 (this is even recommanded if you want the curve to start and finish on the first and last pole). //! on a uperiodic surface the first and the last umultiplicities must be the same. //! on non-uperiodic surfaces //! poles.collength() == sum(umults(i)) - udegree - 1 >= 2 //! on uperiodic surfaces //! poles.collength() == sum(umults(i)) except the first or last //! the previous conditions for u holds also for v, with the rowlength of the poles.
+
+Parameters
+----------
+Poles: TColgp_Array2OfPnt
+Weights: TColStd_Array2OfReal
+UKnots: TColStd_Array1OfReal
+VKnots: TColStd_Array1OfReal
+UMults: TColStd_Array1OfInteger
+VMults: TColStd_Array1OfInteger
+UDegree: int
+VDegree: int
+UPeriodic: bool,optional
+	default value is Standard_False
+VPeriodic: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Geom_BSplineSurface;
+		 Geom_BSplineSurface(const TColgp_Array2OfPnt & Poles, const TColStd_Array2OfReal & Weights, const TColStd_Array1OfReal & UKnots, const TColStd_Array1OfReal & VKnots, const TColStd_Array1OfInteger & UMults, const TColStd_Array1OfInteger & VMults, const Standard_Integer UDegree, const Standard_Integer VDegree, const Standard_Boolean UPeriodic = Standard_False, const Standard_Boolean VPeriodic = Standard_False);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "Returns the parametric bounds of the surface. warnings : these parametric values are the bounds of the array of knots uknots and vknots only if the first knots and the last knots have a multiplicity equal to udegree + 1 or vdegree + 1.
@@ -5809,55 +5858,6 @@ Returns
 int
 ") FirstVKnotIndex;
 		Standard_Integer FirstVKnotIndex();
-
-		/****************** Geom_BSplineSurface ******************/
-		%feature("compactdefaultargs") Geom_BSplineSurface;
-		%feature("autodoc", "Creates a non-rational b-spline surface (weights default value is 1.). the following conditions must be verified. 0 < udegree <= maxdegree. uknots.length() == umults.length() >= 2 uknots(i) < uknots(i+1) (knots are increasing) 1 <= umults(i) <= udegree on a non uperiodic surface the first and last umultiplicities may be udegree+1 (this is even recommanded if you want the curve to start and finish on the first and last pole). on a uperiodic surface the first and the last umultiplicities must be the same. on non-uperiodic surfaces poles.collength() == sum(umults(i)) - udegree - 1 >= 2 on uperiodic surfaces poles.collength() == sum(umults(i)) except the first or last the previous conditions for u holds also for v, with the rowlength of the poles.
-
-Parameters
-----------
-Poles: TColgp_Array2OfPnt
-UKnots: TColStd_Array1OfReal
-VKnots: TColStd_Array1OfReal
-UMults: TColStd_Array1OfInteger
-VMults: TColStd_Array1OfInteger
-UDegree: int
-VDegree: int
-UPeriodic: bool,optional
-	default value is Standard_False
-VPeriodic: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Geom_BSplineSurface;
-		 Geom_BSplineSurface(const TColgp_Array2OfPnt & Poles, const TColStd_Array1OfReal & UKnots, const TColStd_Array1OfReal & VKnots, const TColStd_Array1OfInteger & UMults, const TColStd_Array1OfInteger & VMults, const Standard_Integer UDegree, const Standard_Integer VDegree, const Standard_Boolean UPeriodic = Standard_False, const Standard_Boolean VPeriodic = Standard_False);
-
-		/****************** Geom_BSplineSurface ******************/
-		%feature("compactdefaultargs") Geom_BSplineSurface;
-		%feature("autodoc", "Creates a non-rational b-spline surface (weights default value is 1.). //! the following conditions must be verified. 0 < udegree <= maxdegree. //! uknots.length() == umults.length() >= 2 //! uknots(i) < uknots(i+1) (knots are increasing) 1 <= umults(i) <= udegree //! on a non uperiodic surface the first and last umultiplicities may be udegree+1 (this is even recommanded if you want the curve to start and finish on the first and last pole). //! on a uperiodic surface the first and the last umultiplicities must be the same. //! on non-uperiodic surfaces //! poles.collength() == sum(umults(i)) - udegree - 1 >= 2 //! on uperiodic surfaces //! poles.collength() == sum(umults(i)) except the first or last //! the previous conditions for u holds also for v, with the rowlength of the poles.
-
-Parameters
-----------
-Poles: TColgp_Array2OfPnt
-Weights: TColStd_Array2OfReal
-UKnots: TColStd_Array1OfReal
-VKnots: TColStd_Array1OfReal
-UMults: TColStd_Array1OfInteger
-VMults: TColStd_Array1OfInteger
-UDegree: int
-VDegree: int
-UPeriodic: bool,optional
-	default value is Standard_False
-VPeriodic: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Geom_BSplineSurface;
-		 Geom_BSplineSurface(const TColgp_Array2OfPnt & Poles, const TColStd_Array2OfReal & Weights, const TColStd_Array1OfReal & UKnots, const TColStd_Array1OfReal & VKnots, const TColStd_Array1OfInteger & UMults, const TColStd_Array1OfInteger & VMults, const Standard_Integer UDegree, const Standard_Integer VDegree, const Standard_Boolean UPeriodic = Standard_False, const Standard_Boolean VPeriodic = Standard_False);
 
 		/****************** IncreaseDegree ******************/
 		%feature("compactdefaultargs") IncreaseDegree;
@@ -7235,6 +7235,35 @@ TColStd_Array2OfReal *
 *************************/
 class Geom_BezierCurve : public Geom_BoundedCurve {
 	public:
+		/****************** Geom_BezierCurve ******************/
+		%feature("compactdefaultargs") Geom_BezierCurve;
+		%feature("autodoc", "Creates a non rational bezier curve with a set of poles curvepoles. the weights are defaulted to all being 1. raises constructionerror if the number of poles is greater than maxdegree + 1 or lower than 2.
+
+Parameters
+----------
+CurvePoles: TColgp_Array1OfPnt
+
+Returns
+-------
+None
+") Geom_BezierCurve;
+		 Geom_BezierCurve(const TColgp_Array1OfPnt & CurvePoles);
+
+		/****************** Geom_BezierCurve ******************/
+		%feature("compactdefaultargs") Geom_BezierCurve;
+		%feature("autodoc", "Creates a rational bezier curve with the set of poles curvepoles and the set of weights poleweights . if all the weights are identical the curve is considered as non rational. raises constructionerror if the number of poles is greater than maxdegree + 1 or lower than 2 or curvepoles and curveweights have not the same length or one weight value is lower or equal to resolution from package gp.
+
+Parameters
+----------
+CurvePoles: TColgp_Array1OfPnt
+PoleWeights: TColStd_Array1OfReal
+
+Returns
+-------
+None
+") Geom_BezierCurve;
+		 Geom_BezierCurve(const TColgp_Array1OfPnt & CurvePoles, const TColStd_Array1OfReal & PoleWeights);
+
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
 		%feature("autodoc", "A bezier curve is cn.
@@ -7365,35 +7394,6 @@ Returns
 float
 ") FirstParameter;
 		Standard_Real FirstParameter();
-
-		/****************** Geom_BezierCurve ******************/
-		%feature("compactdefaultargs") Geom_BezierCurve;
-		%feature("autodoc", "Creates a non rational bezier curve with a set of poles curvepoles. the weights are defaulted to all being 1. raises constructionerror if the number of poles is greater than maxdegree + 1 or lower than 2.
-
-Parameters
-----------
-CurvePoles: TColgp_Array1OfPnt
-
-Returns
--------
-None
-") Geom_BezierCurve;
-		 Geom_BezierCurve(const TColgp_Array1OfPnt & CurvePoles);
-
-		/****************** Geom_BezierCurve ******************/
-		%feature("compactdefaultargs") Geom_BezierCurve;
-		%feature("autodoc", "Creates a rational bezier curve with the set of poles curvepoles and the set of weights poleweights . if all the weights are identical the curve is considered as non rational. raises constructionerror if the number of poles is greater than maxdegree + 1 or lower than 2 or curvepoles and curveweights have not the same length or one weight value is lower or equal to resolution from package gp.
-
-Parameters
-----------
-CurvePoles: TColgp_Array1OfPnt
-PoleWeights: TColStd_Array1OfReal
-
-Returns
--------
-None
-") Geom_BezierCurve;
-		 Geom_BezierCurve(const TColgp_Array1OfPnt & CurvePoles, const TColStd_Array1OfReal & PoleWeights);
 
 		/****************** Increase ******************/
 		%feature("compactdefaultargs") Increase;
@@ -7775,6 +7775,35 @@ TColStd_Array1OfReal *
 ***************************/
 class Geom_BezierSurface : public Geom_BoundedSurface {
 	public:
+		/****************** Geom_BezierSurface ******************/
+		%feature("compactdefaultargs") Geom_BezierSurface;
+		%feature("autodoc", "Creates a non-rational bezier surface with a set of poles. control points representation : spoles(uorigin,vorigin) ...................spoles(uorigin,vend) .  . .  . spoles(uend, vorigin) .....................spoles(uend, vend) for the double array the row indice corresponds to the parametric u direction and the columns indice corresponds to the parametric v direction. the weights are defaulted to all being 1. //! raised if the number of poles of the surface is lower than 2 or greater than maxdegree + 1 in one of the two directions u or v.
+
+Parameters
+----------
+SurfacePoles: TColgp_Array2OfPnt
+
+Returns
+-------
+None
+") Geom_BezierSurface;
+		 Geom_BezierSurface(const TColgp_Array2OfPnt & SurfacePoles);
+
+		/****************** Geom_BezierSurface ******************/
+		%feature("compactdefaultargs") Geom_BezierSurface;
+		%feature("autodoc", "---purpose creates a rational bezier surface with a set of poles and a set of weights. for the double array the row indice corresponds to the parametric u direction and the columns indice corresponds to the parametric v direction. if all the weights are identical the surface is considered as non-rational (the tolerance criterion is resolution from package gp). //! raised if surfacepoles and poleweights have not the same rowlength or have not the same collength. raised if poleweights (i, j) <= resolution from gp; raised if the number of poles of the surface is lower than 2 or greater than maxdegree + 1 in one of the two directions u or v.
+
+Parameters
+----------
+SurfacePoles: TColgp_Array2OfPnt
+PoleWeights: TColStd_Array2OfReal
+
+Returns
+-------
+None
+") Geom_BezierSurface;
+		 Geom_BezierSurface(const TColgp_Array2OfPnt & SurfacePoles, const TColStd_Array2OfReal & PoleWeights);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "Returns the parametric bounds u1, u2, v1 and v2 of this bezier surface. in the case of a bezier surface, this function returns u1 = 0, v1 = 0, u2 = 1, v2 = 1.
@@ -7918,35 +7947,6 @@ Returns
 None
 ") ExchangeUV;
 		void ExchangeUV();
-
-		/****************** Geom_BezierSurface ******************/
-		%feature("compactdefaultargs") Geom_BezierSurface;
-		%feature("autodoc", "Creates a non-rational bezier surface with a set of poles. control points representation : spoles(uorigin,vorigin) ...................spoles(uorigin,vend) .  . .  . spoles(uend, vorigin) .....................spoles(uend, vend) for the double array the row indice corresponds to the parametric u direction and the columns indice corresponds to the parametric v direction. the weights are defaulted to all being 1. //! raised if the number of poles of the surface is lower than 2 or greater than maxdegree + 1 in one of the two directions u or v.
-
-Parameters
-----------
-SurfacePoles: TColgp_Array2OfPnt
-
-Returns
--------
-None
-") Geom_BezierSurface;
-		 Geom_BezierSurface(const TColgp_Array2OfPnt & SurfacePoles);
-
-		/****************** Geom_BezierSurface ******************/
-		%feature("compactdefaultargs") Geom_BezierSurface;
-		%feature("autodoc", "---purpose creates a rational bezier surface with a set of poles and a set of weights. for the double array the row indice corresponds to the parametric u direction and the columns indice corresponds to the parametric v direction. if all the weights are identical the surface is considered as non-rational (the tolerance criterion is resolution from package gp). //! raised if surfacepoles and poleweights have not the same rowlength or have not the same collength. raised if poleweights (i, j) <= resolution from gp; raised if the number of poles of the surface is lower than 2 or greater than maxdegree + 1 in one of the two directions u or v.
-
-Parameters
-----------
-SurfacePoles: TColgp_Array2OfPnt
-PoleWeights: TColStd_Array2OfReal
-
-Returns
--------
-None
-") Geom_BezierSurface;
-		 Geom_BezierSurface(const TColgp_Array2OfPnt & SurfacePoles, const TColStd_Array2OfReal & PoleWeights);
 
 		/****************** Increase ******************/
 		%feature("compactdefaultargs") Increase;
@@ -8611,6 +8611,35 @@ TColStd_Array2OfReal *
 ********************/
 class Geom_Circle : public Geom_Conic {
 	public:
+		/****************** Geom_Circle ******************/
+		%feature("compactdefaultargs") Geom_Circle;
+		%feature("autodoc", "Constructs a circle by conversion of the gp_circ circle c.
+
+Parameters
+----------
+C: gp_Circ
+
+Returns
+-------
+None
+") Geom_Circle;
+		 Geom_Circle(const gp_Circ & C);
+
+		/****************** Geom_Circle ******************/
+		%feature("compactdefaultargs") Geom_Circle;
+		%feature("autodoc", "Constructs a circle of radius radius, where a2 locates the circle and defines its orientation in 3d space such that: - the center of the circle is the origin of a2, - the origin, 'x direction' and 'y direction' of a2 define the plane of the circle, - a2 is the local coordinate system of the circle. note: it is possible to create a circle where radius is equal to 0.0. raised if radius < 0.
+
+Parameters
+----------
+A2: gp_Ax2
+Radius: float
+
+Returns
+-------
+None
+") Geom_Circle;
+		 Geom_Circle(const gp_Ax2 & A2, const Standard_Real Radius);
+
 		/****************** Circ ******************/
 		%feature("compactdefaultargs") Circ;
 		%feature("autodoc", "Returns the non transient circle from gp with the same geometric properties as <self>.
@@ -8732,35 +8761,6 @@ float
 ") FirstParameter;
 		Standard_Real FirstParameter();
 
-		/****************** Geom_Circle ******************/
-		%feature("compactdefaultargs") Geom_Circle;
-		%feature("autodoc", "Constructs a circle by conversion of the gp_circ circle c.
-
-Parameters
-----------
-C: gp_Circ
-
-Returns
--------
-None
-") Geom_Circle;
-		 Geom_Circle(const gp_Circ & C);
-
-		/****************** Geom_Circle ******************/
-		%feature("compactdefaultargs") Geom_Circle;
-		%feature("autodoc", "Constructs a circle of radius radius, where a2 locates the circle and defines its orientation in 3d space such that: - the center of the circle is the origin of a2, - the origin, 'x direction' and 'y direction' of a2 define the plane of the circle, - a2 is the local coordinate system of the circle. note: it is possible to create a circle where radius is equal to 0.0. raised if radius < 0.
-
-Parameters
-----------
-A2: gp_Ax2
-Radius: float
-
-Returns
--------
-None
-") Geom_Circle;
-		 Geom_Circle(const gp_Ax2 & A2, const Standard_Real Radius);
-
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
 		%feature("autodoc", "Returns true.
@@ -8873,6 +8873,36 @@ None
 ****************************/
 class Geom_ConicalSurface : public Geom_ElementarySurface {
 	public:
+		/****************** Geom_ConicalSurface ******************/
+		%feature("compactdefaultargs") Geom_ConicalSurface;
+		%feature("autodoc", "A3 defines the local coordinate system of the conical surface. ang is the conical surface semi-angle. its absolute value is in range ]0, pi/2[. radius is the radius of the circle viso in the placement plane of the conical surface defined with 'xaxis' and 'yaxis'. the 'zdirection' of a3 defines the direction of the surface's axis of symmetry. if the location point of a3 is the apex of the surface radius = 0 . at the creation the parametrization of the surface is defined such that the normal vector (n = d1u ^ d1v) is oriented towards the 'outside region' of the surface. //! raised if radius < 0.0 or abs(ang) < resolution from gp or abs(ang) >= pi/2 - resolution.
+
+Parameters
+----------
+A3: gp_Ax3
+Ang: float
+Radius: float
+
+Returns
+-------
+None
+") Geom_ConicalSurface;
+		 Geom_ConicalSurface(const gp_Ax3 & A3, const Standard_Real Ang, const Standard_Real Radius);
+
+		/****************** Geom_ConicalSurface ******************/
+		%feature("compactdefaultargs") Geom_ConicalSurface;
+		%feature("autodoc", "Creates a conicalsurface from a non transient cone from package gp.
+
+Parameters
+----------
+C: gp_Cone
+
+Returns
+-------
+None
+") Geom_ConicalSurface;
+		 Geom_ConicalSurface(const gp_Cone & C);
+
 		/****************** Apex ******************/
 		%feature("compactdefaultargs") Apex;
 		%feature("autodoc", "Computes the apex of this cone. it is on the negative side of the axis of revolution of this cone if the half-angle at the apex is positive, and on the positive side of the 'main axis' if the half-angle is negative.
@@ -9039,36 +9069,6 @@ Returns
 gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-
-		/****************** Geom_ConicalSurface ******************/
-		%feature("compactdefaultargs") Geom_ConicalSurface;
-		%feature("autodoc", "A3 defines the local coordinate system of the conical surface. ang is the conical surface semi-angle. its absolute value is in range ]0, pi/2[. radius is the radius of the circle viso in the placement plane of the conical surface defined with 'xaxis' and 'yaxis'. the 'zdirection' of a3 defines the direction of the surface's axis of symmetry. if the location point of a3 is the apex of the surface radius = 0 . at the creation the parametrization of the surface is defined such that the normal vector (n = d1u ^ d1v) is oriented towards the 'outside region' of the surface. //! raised if radius < 0.0 or abs(ang) < resolution from gp or abs(ang) >= pi/2 - resolution.
-
-Parameters
-----------
-A3: gp_Ax3
-Ang: float
-Radius: float
-
-Returns
--------
-None
-") Geom_ConicalSurface;
-		 Geom_ConicalSurface(const gp_Ax3 & A3, const Standard_Real Ang, const Standard_Real Radius);
-
-		/****************** Geom_ConicalSurface ******************/
-		%feature("compactdefaultargs") Geom_ConicalSurface;
-		%feature("autodoc", "Creates a conicalsurface from a non transient cone from package gp.
-
-Parameters
-----------
-C: gp_Cone
-
-Returns
--------
-None
-") Geom_ConicalSurface;
-		 Geom_ConicalSurface(const gp_Cone & C);
 
 		/****************** IsUClosed ******************/
 		%feature("compactdefaultargs") IsUClosed;
@@ -9298,6 +9298,35 @@ float
 ********************************/
 class Geom_CylindricalSurface : public Geom_ElementarySurface {
 	public:
+		/****************** Geom_CylindricalSurface ******************/
+		%feature("compactdefaultargs") Geom_CylindricalSurface;
+		%feature("autodoc", "A3 defines the local coordinate system of the cylindrical surface. the 'zdirection' of a3 defines the direction of the surface's axis of symmetry. at the creation the parametrization of the surface is defined such that the normal vector (n = d1u ^ d1v) is oriented towards the 'outside region' of the surface. warnings : it is not forbidden to create a cylindrical surface with radius = 0.0 raised if radius < 0.0.
+
+Parameters
+----------
+A3: gp_Ax3
+Radius: float
+
+Returns
+-------
+None
+") Geom_CylindricalSurface;
+		 Geom_CylindricalSurface(const gp_Ax3 & A3, const Standard_Real Radius);
+
+		/****************** Geom_CylindricalSurface ******************/
+		%feature("compactdefaultargs") Geom_CylindricalSurface;
+		%feature("autodoc", "Creates a cylindricalsurface from a non transient cylinder from package gp.
+
+Parameters
+----------
+C: gp_Cylinder
+
+Returns
+-------
+None
+") Geom_CylindricalSurface;
+		 Geom_CylindricalSurface(const gp_Cylinder & C);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "The cylindricalsurface is infinite in the v direction so v1 = realfirst, v2 = reallast from package standard. u1 = 0 and u2 = 2*pi.
@@ -9454,35 +9483,6 @@ Returns
 gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-
-		/****************** Geom_CylindricalSurface ******************/
-		%feature("compactdefaultargs") Geom_CylindricalSurface;
-		%feature("autodoc", "A3 defines the local coordinate system of the cylindrical surface. the 'zdirection' of a3 defines the direction of the surface's axis of symmetry. at the creation the parametrization of the surface is defined such that the normal vector (n = d1u ^ d1v) is oriented towards the 'outside region' of the surface. warnings : it is not forbidden to create a cylindrical surface with radius = 0.0 raised if radius < 0.0.
-
-Parameters
-----------
-A3: gp_Ax3
-Radius: float
-
-Returns
--------
-None
-") Geom_CylindricalSurface;
-		 Geom_CylindricalSurface(const gp_Ax3 & A3, const Standard_Real Radius);
-
-		/****************** Geom_CylindricalSurface ******************/
-		%feature("compactdefaultargs") Geom_CylindricalSurface;
-		%feature("autodoc", "Creates a cylindricalsurface from a non transient cylinder from package gp.
-
-Parameters
-----------
-C: gp_Cylinder
-
-Returns
--------
-None
-") Geom_CylindricalSurface;
-		 Geom_CylindricalSurface(const gp_Cylinder & C);
 
 		/****************** IsUClosed ******************/
 		%feature("compactdefaultargs") IsUClosed;
@@ -9678,6 +9678,36 @@ float
 *********************/
 class Geom_Ellipse : public Geom_Conic {
 	public:
+		/****************** Geom_Ellipse ******************/
+		%feature("compactdefaultargs") Geom_Ellipse;
+		%feature("autodoc", "Constructs an ellipse by conversion of the gp_elips ellipse e.
+
+Parameters
+----------
+E: gp_Elips
+
+Returns
+-------
+None
+") Geom_Ellipse;
+		 Geom_Ellipse(const gp_Elips & E);
+
+		/****************** Geom_Ellipse ******************/
+		%feature("compactdefaultargs") Geom_Ellipse;
+		%feature("autodoc", "Constructs an ellipse defined by its major and minor radii, majorradius and minorradius, where a2 locates the ellipse and defines its orientation in 3d space such that: - the center of the ellipse is the origin of a2, - the 'x direction' of a2 defines the major axis of the ellipse, i.e. the major radius majorradius is measured along this axis, - the 'y direction' of a2 defines the minor axis of the ellipse, i.e. the minor radius minorradius is measured along this axis, - a2 is the local coordinate system of the ellipse. exceptions standard_constructionerror if: - majorradius is less than minorradius, or - minorradius is less than 0. warning the geom package does not prevent the construction of an ellipse where majorradius and minorradius are equal.
+
+Parameters
+----------
+A2: gp_Ax2
+MajorRadius: float
+MinorRadius: float
+
+Returns
+-------
+None
+") Geom_Ellipse;
+		 Geom_Ellipse(const gp_Ax2 & A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "Creates a new object which is a copy of this ellipse.
@@ -9849,36 +9879,6 @@ gp_Pnt
 ") Focus2;
 		gp_Pnt Focus2();
 
-		/****************** Geom_Ellipse ******************/
-		%feature("compactdefaultargs") Geom_Ellipse;
-		%feature("autodoc", "Constructs an ellipse by conversion of the gp_elips ellipse e.
-
-Parameters
-----------
-E: gp_Elips
-
-Returns
--------
-None
-") Geom_Ellipse;
-		 Geom_Ellipse(const gp_Elips & E);
-
-		/****************** Geom_Ellipse ******************/
-		%feature("compactdefaultargs") Geom_Ellipse;
-		%feature("autodoc", "Constructs an ellipse defined by its major and minor radii, majorradius and minorradius, where a2 locates the ellipse and defines its orientation in 3d space such that: - the center of the ellipse is the origin of a2, - the 'x direction' of a2 defines the major axis of the ellipse, i.e. the major radius majorradius is measured along this axis, - the 'y direction' of a2 defines the minor axis of the ellipse, i.e. the minor radius minorradius is measured along this axis, - a2 is the local coordinate system of the ellipse. exceptions standard_constructionerror if: - majorradius is less than minorradius, or - minorradius is less than 0. warning the geom package does not prevent the construction of an ellipse where majorradius and minorradius are equal.
-
-Parameters
-----------
-A2: gp_Ax2
-MajorRadius: float
-MinorRadius: float
-
-Returns
--------
-None
-") Geom_Ellipse;
-		 Geom_Ellipse(const gp_Ax2 & A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
 		%feature("autodoc", "Return true.
@@ -10025,6 +10025,36 @@ None
 ***********************/
 class Geom_Hyperbola : public Geom_Conic {
 	public:
+		/****************** Geom_Hyperbola ******************/
+		%feature("compactdefaultargs") Geom_Hyperbola;
+		%feature("autodoc", "Constructs a hyperbola by conversion of the gp_hypr hyperbola h.
+
+Parameters
+----------
+H: gp_Hypr
+
+Returns
+-------
+None
+") Geom_Hyperbola;
+		 Geom_Hyperbola(const gp_Hypr & H);
+
+		/****************** Geom_Hyperbola ******************/
+		%feature("compactdefaultargs") Geom_Hyperbola;
+		%feature("autodoc", "Constructs a hyperbola defined by its major and minor radii, majorradius and minorradius, where a2 locates the hyperbola and defines its orientation in 3d space such that: - the center of the hyperbola is the origin of a2, - the 'x direction' of a2 defines the major axis of the hyperbola, i.e. the major radius majorradius is measured along this axis, - the 'y direction' of a2 defines the minor axis of the hyperbola, i.e. the minor radius minorradius is measured along this axis, - a2 is the local coordinate system of the hyperbola. exceptions standard_constructionerror if: - majorradius is less than 0.0, - minorradius is less than 0.0.
+
+Parameters
+----------
+A2: gp_Ax2
+MajorRadius: float
+MinorRadius: float
+
+Returns
+-------
+None
+") Geom_Hyperbola;
+		 Geom_Hyperbola(const gp_Ax2 & A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+
 		/****************** Asymptote1 ******************/
 		%feature("compactdefaultargs") Asymptote1;
 		%feature("autodoc", "In the local coordinate system of the hyperbola the equation of the hyperbola is (x*x)/(a*a) - (y*y)/(b*b) = 1.0 and the equation of the first asymptote is y = (b/a)*x. raises constructionerror if majorradius = 0.0.
@@ -10226,36 +10256,6 @@ gp_Pnt
 ") Focus2;
 		gp_Pnt Focus2();
 
-		/****************** Geom_Hyperbola ******************/
-		%feature("compactdefaultargs") Geom_Hyperbola;
-		%feature("autodoc", "Constructs a hyperbola by conversion of the gp_hypr hyperbola h.
-
-Parameters
-----------
-H: gp_Hypr
-
-Returns
--------
-None
-") Geom_Hyperbola;
-		 Geom_Hyperbola(const gp_Hypr & H);
-
-		/****************** Geom_Hyperbola ******************/
-		%feature("compactdefaultargs") Geom_Hyperbola;
-		%feature("autodoc", "Constructs a hyperbola defined by its major and minor radii, majorradius and minorradius, where a2 locates the hyperbola and defines its orientation in 3d space such that: - the center of the hyperbola is the origin of a2, - the 'x direction' of a2 defines the major axis of the hyperbola, i.e. the major radius majorradius is measured along this axis, - the 'y direction' of a2 defines the minor axis of the hyperbola, i.e. the minor radius minorradius is measured along this axis, - a2 is the local coordinate system of the hyperbola. exceptions standard_constructionerror if: - majorradius is less than 0.0, - minorradius is less than 0.0.
-
-Parameters
-----------
-A2: gp_Ax2
-MajorRadius: float
-MinorRadius: float
-
-Returns
--------
-None
-") Geom_Hyperbola;
-		 Geom_Hyperbola(const gp_Ax2 & A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-
 		/****************** Hypr ******************/
 		%feature("compactdefaultargs") Hypr;
 		%feature("autodoc", "Returns the non transient parabola from gp with the same geometric properties as <self>.
@@ -10422,6 +10422,50 @@ None
 **********************/
 class Geom_Parabola : public Geom_Conic {
 	public:
+		/****************** Geom_Parabola ******************/
+		%feature("compactdefaultargs") Geom_Parabola;
+		%feature("autodoc", "Creates a parabola from a non transient one.
+
+Parameters
+----------
+Prb: gp_Parab
+
+Returns
+-------
+None
+") Geom_Parabola;
+		 Geom_Parabola(const gp_Parab & Prb);
+
+		/****************** Geom_Parabola ******************/
+		%feature("compactdefaultargs") Geom_Parabola;
+		%feature("autodoc", "Creates a parabola with its local coordinate system 'a2' and it's focal length 'focal'. the xdirection of a2 defines the axis of symmetry of the parabola. the ydirection of a2 is parallel to the directrix of the parabola. the location point of a2 is the vertex of the parabola raised if focal < 0.0.
+
+Parameters
+----------
+A2: gp_Ax2
+Focal: float
+
+Returns
+-------
+None
+") Geom_Parabola;
+		 Geom_Parabola(const gp_Ax2 & A2, const Standard_Real Focal);
+
+		/****************** Geom_Parabola ******************/
+		%feature("compactdefaultargs") Geom_Parabola;
+		%feature("autodoc", "D is the directrix of the parabola and f the focus point. the symmetry axis (xaxis) of the parabola is normal to the directrix and pass through the focus point f, but its location point is the vertex of the parabola. the yaxis of the parabola is parallel to d and its location point is the vertex of the parabola. the normal to the plane of the parabola is the cross product between the xaxis and the yaxis.
+
+Parameters
+----------
+D: gp_Ax1
+F: gp_Pnt
+
+Returns
+-------
+None
+") Geom_Parabola;
+		 Geom_Parabola(const gp_Ax1 & D, const gp_Pnt & F);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "Creates a new object which is a copy of this parabola.
@@ -10562,50 +10606,6 @@ Returns
 gp_Pnt
 ") Focus;
 		gp_Pnt Focus();
-
-		/****************** Geom_Parabola ******************/
-		%feature("compactdefaultargs") Geom_Parabola;
-		%feature("autodoc", "Creates a parabola from a non transient one.
-
-Parameters
-----------
-Prb: gp_Parab
-
-Returns
--------
-None
-") Geom_Parabola;
-		 Geom_Parabola(const gp_Parab & Prb);
-
-		/****************** Geom_Parabola ******************/
-		%feature("compactdefaultargs") Geom_Parabola;
-		%feature("autodoc", "Creates a parabola with its local coordinate system 'a2' and it's focal length 'focal'. the xdirection of a2 defines the axis of symmetry of the parabola. the ydirection of a2 is parallel to the directrix of the parabola. the location point of a2 is the vertex of the parabola raised if focal < 0.0.
-
-Parameters
-----------
-A2: gp_Ax2
-Focal: float
-
-Returns
--------
-None
-") Geom_Parabola;
-		 Geom_Parabola(const gp_Ax2 & A2, const Standard_Real Focal);
-
-		/****************** Geom_Parabola ******************/
-		%feature("compactdefaultargs") Geom_Parabola;
-		%feature("autodoc", "D is the directrix of the parabola and f the focus point. the symmetry axis (xaxis) of the parabola is normal to the directrix and pass through the focus point f, but its location point is the vertex of the parabola. the yaxis of the parabola is parallel to d and its location point is the vertex of the parabola. the normal to the plane of the parabola is the cross product between the xaxis and the yaxis.
-
-Parameters
-----------
-D: gp_Ax1
-F: gp_Pnt
-
-Returns
--------
-None
-") Geom_Parabola;
-		 Geom_Parabola(const gp_Ax1 & D, const gp_Pnt & F);
 
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
@@ -10758,6 +10758,66 @@ float
 *******************/
 class Geom_Plane : public Geom_ElementarySurface {
 	public:
+		/****************** Geom_Plane ******************/
+		%feature("compactdefaultargs") Geom_Plane;
+		%feature("autodoc", "Creates a plane located in 3d space with an axis placement three axis. the 'zdirection' of 'a3' is the direction normal to the plane. the 'location' point of 'a3' is the origin of the plane. the 'xdirection' and 'ydirection' of 'a3' define the directions of the u isoparametric and v isoparametric curves.
+
+Parameters
+----------
+A3: gp_Ax3
+
+Returns
+-------
+None
+") Geom_Plane;
+		 Geom_Plane(const gp_Ax3 & A3);
+
+		/****************** Geom_Plane ******************/
+		%feature("compactdefaultargs") Geom_Plane;
+		%feature("autodoc", "Creates a plane from a non transient plane from package gp.
+
+Parameters
+----------
+Pl: gp_Pln
+
+Returns
+-------
+None
+") Geom_Plane;
+		 Geom_Plane(const gp_Pln & Pl);
+
+		/****************** Geom_Plane ******************/
+		%feature("compactdefaultargs") Geom_Plane;
+		%feature("autodoc", "P is the 'location' point or origin of the plane. v is the direction normal to the plane.
+
+Parameters
+----------
+P: gp_Pnt
+V: gp_Dir
+
+Returns
+-------
+None
+") Geom_Plane;
+		 Geom_Plane(const gp_Pnt & P, const gp_Dir & V);
+
+		/****************** Geom_Plane ******************/
+		%feature("compactdefaultargs") Geom_Plane;
+		%feature("autodoc", "Creates a plane from its cartesian equation : ax + by + cz + d = 0.0 //! raised if sqrt (a*a + b*b + c*c) <= resolution from gp.
+
+Parameters
+----------
+A: float
+B: float
+C: float
+D: float
+
+Returns
+-------
+None
+") Geom_Plane;
+		 Geom_Plane(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "Returns the parametric bounds u1, u2, v1 and v2 of this plane. because a plane is an infinite surface, the following is always true: - u1 = v1 = standard_real::realfirst() - u2 = v2 = standard_real::reallast().
@@ -10898,66 +10958,6 @@ Returns
 gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-
-		/****************** Geom_Plane ******************/
-		%feature("compactdefaultargs") Geom_Plane;
-		%feature("autodoc", "Creates a plane located in 3d space with an axis placement three axis. the 'zdirection' of 'a3' is the direction normal to the plane. the 'location' point of 'a3' is the origin of the plane. the 'xdirection' and 'ydirection' of 'a3' define the directions of the u isoparametric and v isoparametric curves.
-
-Parameters
-----------
-A3: gp_Ax3
-
-Returns
--------
-None
-") Geom_Plane;
-		 Geom_Plane(const gp_Ax3 & A3);
-
-		/****************** Geom_Plane ******************/
-		%feature("compactdefaultargs") Geom_Plane;
-		%feature("autodoc", "Creates a plane from a non transient plane from package gp.
-
-Parameters
-----------
-Pl: gp_Pln
-
-Returns
--------
-None
-") Geom_Plane;
-		 Geom_Plane(const gp_Pln & Pl);
-
-		/****************** Geom_Plane ******************/
-		%feature("compactdefaultargs") Geom_Plane;
-		%feature("autodoc", "P is the 'location' point or origin of the plane. v is the direction normal to the plane.
-
-Parameters
-----------
-P: gp_Pnt
-V: gp_Dir
-
-Returns
--------
-None
-") Geom_Plane;
-		 Geom_Plane(const gp_Pnt & P, const gp_Dir & V);
-
-		/****************** Geom_Plane ******************/
-		%feature("compactdefaultargs") Geom_Plane;
-		%feature("autodoc", "Creates a plane from its cartesian equation : ax + by + cz + d = 0.0 //! raised if sqrt (a*a + b*b + c*c) <= resolution from gp.
-
-Parameters
-----------
-A: float
-B: float
-C: float
-D: float
-
-Returns
--------
-None
-") Geom_Plane;
-		 Geom_Plane(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
 
 		/****************** IsUClosed ******************/
 		%feature("compactdefaultargs") IsUClosed;
@@ -11159,6 +11159,47 @@ float
 ***************************************/
 class Geom_RectangularTrimmedSurface : public Geom_BoundedSurface {
 	public:
+		/****************** Geom_RectangularTrimmedSurface ******************/
+		%feature("compactdefaultargs") Geom_RectangularTrimmedSurface;
+		%feature("autodoc", "The u parametric direction of the surface is oriented from u1 to u2. the v parametric direction of the surface is oriented from v1 to v2. these two directions define the orientation of the surface (normal). if the surface is not periodic usense and vsense are not used for the construction. if the surface s is periodic in one direction usense and vsense give the available part of the surface. by default in this case the surface has the same orientation as the basis surface s. the returned surface is not closed and not periodic. constructionerror raised if s is not periodic in the udirection and u1 or u2 are out of the bounds of s. s is not periodic in the vdirection and v1 or v2 are out of the bounds of s. u1 = u2 or v1 = v2.
+
+Parameters
+----------
+S: Geom_Surface
+U1: float
+U2: float
+V1: float
+V2: float
+USense: bool,optional
+	default value is Standard_True
+VSense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") Geom_RectangularTrimmedSurface;
+		 Geom_RectangularTrimmedSurface(const opencascade::handle<Geom_Surface> & S, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Boolean USense = Standard_True, const Standard_Boolean VSense = Standard_True);
+
+		/****************** Geom_RectangularTrimmedSurface ******************/
+		%feature("compactdefaultargs") Geom_RectangularTrimmedSurface;
+		%feature("autodoc", "The basis surface s is only trim in one parametric direction. if utrim = true the surface is trimmed in the u parametric direction else the surface is trimmed in the v parametric direction. in the considered parametric direction the resulting surface is oriented from param1 to param2. if s is periodic sense gives the available part of the surface. by default the trimmed surface has the same orientation as the basis surface s in the considered parametric direction (sense = true). if the basis surface s is closed or periodic in the parametric direction opposite to the trimming direction the trimmed surface has the same characteristics as the surface s in this direction. warnings : in this package the entities are not shared. the rectangulartrimmedsurface is built with a copy of the surface s. so when s is modified the rectangulartrimmedsurface is not modified raised if s is not periodic in the considered parametric direction and param1 or param2 are out of the bounds of s. param1 = param2.
+
+Parameters
+----------
+S: Geom_Surface
+Param1: float
+Param2: float
+UTrim: bool
+Sense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") Geom_RectangularTrimmedSurface;
+		 Geom_RectangularTrimmedSurface(const opencascade::handle<Geom_Surface> & S, const Standard_Real Param1, const Standard_Real Param2, const Standard_Boolean UTrim, const Standard_Boolean Sense = Standard_True);
+
 		/****************** BasisSurface ******************/
 		%feature("compactdefaultargs") BasisSurface;
 		%feature("autodoc", "Returns the basis surface of <self>.
@@ -11302,47 +11343,6 @@ Returns
 gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-
-		/****************** Geom_RectangularTrimmedSurface ******************/
-		%feature("compactdefaultargs") Geom_RectangularTrimmedSurface;
-		%feature("autodoc", "The u parametric direction of the surface is oriented from u1 to u2. the v parametric direction of the surface is oriented from v1 to v2. these two directions define the orientation of the surface (normal). if the surface is not periodic usense and vsense are not used for the construction. if the surface s is periodic in one direction usense and vsense give the available part of the surface. by default in this case the surface has the same orientation as the basis surface s. the returned surface is not closed and not periodic. constructionerror raised if s is not periodic in the udirection and u1 or u2 are out of the bounds of s. s is not periodic in the vdirection and v1 or v2 are out of the bounds of s. u1 = u2 or v1 = v2.
-
-Parameters
-----------
-S: Geom_Surface
-U1: float
-U2: float
-V1: float
-V2: float
-USense: bool,optional
-	default value is Standard_True
-VSense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Geom_RectangularTrimmedSurface;
-		 Geom_RectangularTrimmedSurface(const opencascade::handle<Geom_Surface> & S, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Boolean USense = Standard_True, const Standard_Boolean VSense = Standard_True);
-
-		/****************** Geom_RectangularTrimmedSurface ******************/
-		%feature("compactdefaultargs") Geom_RectangularTrimmedSurface;
-		%feature("autodoc", "The basis surface s is only trim in one parametric direction. if utrim = true the surface is trimmed in the u parametric direction else the surface is trimmed in the v parametric direction. in the considered parametric direction the resulting surface is oriented from param1 to param2. if s is periodic sense gives the available part of the surface. by default the trimmed surface has the same orientation as the basis surface s in the considered parametric direction (sense = true). if the basis surface s is closed or periodic in the parametric direction opposite to the trimming direction the trimmed surface has the same characteristics as the surface s in this direction. warnings : in this package the entities are not shared. the rectangulartrimmedsurface is built with a copy of the surface s. so when s is modified the rectangulartrimmedsurface is not modified raised if s is not periodic in the considered parametric direction and param1 or param2 are out of the bounds of s. param1 = param2.
-
-Parameters
-----------
-S: Geom_Surface
-Param1: float
-Param2: float
-UTrim: bool
-Sense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Geom_RectangularTrimmedSurface;
-		 Geom_RectangularTrimmedSurface(const opencascade::handle<Geom_Surface> & S, const Standard_Real Param1, const Standard_Real Param2, const Standard_Boolean UTrim, const Standard_Boolean Sense = Standard_True);
 
 		/****************** IsCNu ******************/
 		%feature("compactdefaultargs") IsCNu;
@@ -11607,6 +11607,35 @@ float
 ******************************/
 class Geom_SphericalSurface : public Geom_ElementarySurface {
 	public:
+		/****************** Geom_SphericalSurface ******************/
+		%feature("compactdefaultargs") Geom_SphericalSurface;
+		%feature("autodoc", "A3 is the local coordinate system of the surface. at the creation the parametrization of the surface is defined such as the normal vector (n = d1u ^ d1v) is directed away from the center of the sphere. the direction of increasing parametric value v is defined by the rotation around the 'ydirection' of a2 in the trigonometric sense and the orientation of increasing parametric value u is defined by the rotation around the main direction of a2 in the trigonometric sense. warnings : it is not forbidden to create a spherical surface with radius = 0.0 raised if radius < 0.0.
+
+Parameters
+----------
+A3: gp_Ax3
+Radius: float
+
+Returns
+-------
+None
+") Geom_SphericalSurface;
+		 Geom_SphericalSurface(const gp_Ax3 & A3, const Standard_Real Radius);
+
+		/****************** Geom_SphericalSurface ******************/
+		%feature("compactdefaultargs") Geom_SphericalSurface;
+		%feature("autodoc", "Creates a sphericalsurface from a non persistent sphere from package gp.
+
+Parameters
+----------
+S: gp_Sphere
+
+Returns
+-------
+None
+") Geom_SphericalSurface;
+		 Geom_SphericalSurface(const gp_Sphere & S);
+
 		/****************** Area ******************/
 		%feature("compactdefaultargs") Area;
 		%feature("autodoc", "Computes the aera of the spherical surface.
@@ -11763,35 +11792,6 @@ Returns
 gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-
-		/****************** Geom_SphericalSurface ******************/
-		%feature("compactdefaultargs") Geom_SphericalSurface;
-		%feature("autodoc", "A3 is the local coordinate system of the surface. at the creation the parametrization of the surface is defined such as the normal vector (n = d1u ^ d1v) is directed away from the center of the sphere. the direction of increasing parametric value v is defined by the rotation around the 'ydirection' of a2 in the trigonometric sense and the orientation of increasing parametric value u is defined by the rotation around the main direction of a2 in the trigonometric sense. warnings : it is not forbidden to create a spherical surface with radius = 0.0 raised if radius < 0.0.
-
-Parameters
-----------
-A3: gp_Ax3
-Radius: float
-
-Returns
--------
-None
-") Geom_SphericalSurface;
-		 Geom_SphericalSurface(const gp_Ax3 & A3, const Standard_Real Radius);
-
-		/****************** Geom_SphericalSurface ******************/
-		%feature("compactdefaultargs") Geom_SphericalSurface;
-		%feature("autodoc", "Creates a sphericalsurface from a non persistent sphere from package gp.
-
-Parameters
-----------
-S: gp_Sphere
-
-Returns
--------
-None
-") Geom_SphericalSurface;
-		 Geom_SphericalSurface(const gp_Sphere & S);
 
 		/****************** IsUClosed ******************/
 		%feature("compactdefaultargs") IsUClosed;
@@ -11977,6 +11977,21 @@ float
 **************************************/
 class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
 	public:
+		/****************** Geom_SurfaceOfLinearExtrusion ******************/
+		%feature("compactdefaultargs") Geom_SurfaceOfLinearExtrusion;
+		%feature("autodoc", "V is the direction of extrusion. c is the extruded curve. the form of a surfaceoflinearextrusion can be : . ruled surface (ruledform), . a cylindrical surface if the extruded curve is a circle or a trimmed circle (cylindricalform), . a plane surface if the extruded curve is a line (planarform). warnings : degenerated surface cases are not detected. for example if the curve c is a line and v is parallel to the direction of this line.
+
+Parameters
+----------
+C: Geom_Curve
+V: gp_Dir
+
+Returns
+-------
+None
+") Geom_SurfaceOfLinearExtrusion;
+		 Geom_SurfaceOfLinearExtrusion(const opencascade::handle<Geom_Curve> & C, const gp_Dir & V);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "Returns the parametric bounds u1, u2, v1 and v2 of this surface of linear extrusion. a surface of linear extrusion is infinite in the v parametric direction, so: - v1 = standard_real::realfirst() - v2 = standard_real::reallast().
@@ -12100,21 +12115,6 @@ Returns
 gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-
-		/****************** Geom_SurfaceOfLinearExtrusion ******************/
-		%feature("compactdefaultargs") Geom_SurfaceOfLinearExtrusion;
-		%feature("autodoc", "V is the direction of extrusion. c is the extruded curve. the form of a surfaceoflinearextrusion can be : . ruled surface (ruledform), . a cylindrical surface if the extruded curve is a circle or a trimmed circle (cylindricalform), . a plane surface if the extruded curve is a line (planarform). warnings : degenerated surface cases are not detected. for example if the curve c is a line and v is parallel to the direction of this line.
-
-Parameters
-----------
-C: Geom_Curve
-V: gp_Dir
-
-Returns
--------
-None
-") Geom_SurfaceOfLinearExtrusion;
-		 Geom_SurfaceOfLinearExtrusion(const opencascade::handle<Geom_Curve> & C, const gp_Dir & V);
 
 		/****************** IsCNu ******************/
 		%feature("compactdefaultargs") IsCNu;
@@ -12348,6 +12348,21 @@ float
 *********************************/
 class Geom_SurfaceOfRevolution : public Geom_SweptSurface {
 	public:
+		/****************** Geom_SurfaceOfRevolution ******************/
+		%feature("compactdefaultargs") Geom_SurfaceOfRevolution;
+		%feature("autodoc", "C : is the meridian or the referenced curve. a1 is the axis of revolution. the form of a surfaceofrevolution can be : . a general revolution surface (revolutionform), . a conical surface if the meridian is a line or a trimmed line (conicalform), . a cylindrical surface if the meridian is a line or a trimmed line parallel to the revolution axis (cylindricalform), . a planar surface if the meridian is a line perpendicular to the revolution axis of the surface (planarform). . a spherical surface, . a toroidal surface, . a quadric surface. warnings : it is not checked that the curve c is planar and that the surface axis is in the plane of the curve. it is not checked that the revolved curve c doesn't self-intersects.
+
+Parameters
+----------
+C: Geom_Curve
+A1: gp_Ax1
+
+Returns
+-------
+None
+") Geom_SurfaceOfRevolution;
+		 Geom_SurfaceOfRevolution(const opencascade::handle<Geom_Curve> & C, const gp_Ax1 & A1);
+
 		/****************** Axis ******************/
 		%feature("compactdefaultargs") Axis;
 		%feature("autodoc", "Returns the revolution axis of the surface.
@@ -12481,21 +12496,6 @@ Returns
 gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-
-		/****************** Geom_SurfaceOfRevolution ******************/
-		%feature("compactdefaultargs") Geom_SurfaceOfRevolution;
-		%feature("autodoc", "C : is the meridian or the referenced curve. a1 is the axis of revolution. the form of a surfaceofrevolution can be : . a general revolution surface (revolutionform), . a conical surface if the meridian is a line or a trimmed line (conicalform), . a cylindrical surface if the meridian is a line or a trimmed line parallel to the revolution axis (cylindricalform), . a planar surface if the meridian is a line perpendicular to the revolution axis of the surface (planarform). . a spherical surface, . a toroidal surface, . a quadric surface. warnings : it is not checked that the curve c is planar and that the surface axis is in the plane of the curve. it is not checked that the revolved curve c doesn't self-intersects.
-
-Parameters
-----------
-C: Geom_Curve
-A1: gp_Ax1
-
-Returns
--------
-None
-") Geom_SurfaceOfRevolution;
-		 Geom_SurfaceOfRevolution(const opencascade::handle<Geom_Curve> & C, const gp_Ax1 & A1);
 
 		/****************** IsCNu ******************/
 		%feature("compactdefaultargs") IsCNu;
@@ -12777,6 +12777,36 @@ float
 *****************************/
 class Geom_ToroidalSurface : public Geom_ElementarySurface {
 	public:
+		/****************** Geom_ToroidalSurface ******************/
+		%feature("compactdefaultargs") Geom_ToroidalSurface;
+		%feature("autodoc", "A3 is the local coordinate system of the surface. the orientation of increasing v parametric value is defined by the rotation around the main axis (zaxis) in the trigonometric sense. the parametrization of the surface in the u direction is defined such as the normal vector (n = d1u ^ d1v) is oriented towards the 'outside region' of the surface. warnings : it is not forbidden to create a toroidal surface with majorradius = minorradius = 0.0 //! raised if minorradius < 0.0 or if majorradius < 0.0.
+
+Parameters
+----------
+A3: gp_Ax3
+MajorRadius: float
+MinorRadius: float
+
+Returns
+-------
+None
+") Geom_ToroidalSurface;
+		 Geom_ToroidalSurface(const gp_Ax3 & A3, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+
+		/****************** Geom_ToroidalSurface ******************/
+		%feature("compactdefaultargs") Geom_ToroidalSurface;
+		%feature("autodoc", "Creates a toroidalsurface from a non transient torus from package gp.
+
+Parameters
+----------
+T: gp_Torus
+
+Returns
+-------
+None
+") Geom_ToroidalSurface;
+		 Geom_ToroidalSurface(const gp_Torus & T);
+
 		/****************** Area ******************/
 		%feature("compactdefaultargs") Area;
 		%feature("autodoc", "Computes the aera of the surface.
@@ -12924,36 +12954,6 @@ Returns
 gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-
-		/****************** Geom_ToroidalSurface ******************/
-		%feature("compactdefaultargs") Geom_ToroidalSurface;
-		%feature("autodoc", "A3 is the local coordinate system of the surface. the orientation of increasing v parametric value is defined by the rotation around the main axis (zaxis) in the trigonometric sense. the parametrization of the surface in the u direction is defined such as the normal vector (n = d1u ^ d1v) is oriented towards the 'outside region' of the surface. warnings : it is not forbidden to create a toroidal surface with majorradius = minorradius = 0.0 //! raised if minorradius < 0.0 or if majorradius < 0.0.
-
-Parameters
-----------
-A3: gp_Ax3
-MajorRadius: float
-MinorRadius: float
-
-Returns
--------
-None
-") Geom_ToroidalSurface;
-		 Geom_ToroidalSurface(const gp_Ax3 & A3, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-
-		/****************** Geom_ToroidalSurface ******************/
-		%feature("compactdefaultargs") Geom_ToroidalSurface;
-		%feature("autodoc", "Creates a toroidalsurface from a non transient torus from package gp.
-
-Parameters
-----------
-T: gp_Torus
-
-Returns
--------
-None
-") Geom_ToroidalSurface;
-		 Geom_ToroidalSurface(const gp_Torus & T);
 
 		/****************** IsUClosed ******************/
 		%feature("compactdefaultargs") IsUClosed;
@@ -13163,6 +13163,26 @@ float
 **************************/
 class Geom_TrimmedCurve : public Geom_BoundedCurve {
 	public:
+		/****************** Geom_TrimmedCurve ******************/
+		%feature("compactdefaultargs") Geom_TrimmedCurve;
+		%feature("autodoc", "Constructs a trimmed curve from the basis curve c which is limited between parameter values u1 and u2. note: - u1 can be greater or less than u2; in both cases, the returned curve is oriented from u1 to u2. - if the basis curve c is periodic, there is an ambiguity because two parts are available. in this case, the trimmed curve has the same orientation as the basis curve if sense is true (default value) or the opposite orientation if sense is false. - if the curve is closed but not periodic, it is not possible to keep the part of the curve which includes the junction point (except if the junction point is at the beginning or at the end of the trimmed curve). if you tried to do this, you could alter the fundamental characteristics of the basis curve, which are used, for example, to compute the derivatives of the trimmed curve. the rules for a closed curve are therefore the same as those for an open curve. warning: the trimmed curve is built from a copy of curve c. therefore, when c is modified, the trimmed curve is not modified. - if the basis curve is periodic and theadjustperiodic is true, the bounds of the trimmed curve may be different from u1 and u2 if the parametric origin of the basis curve is within the arc of the trimmed curve. in this case, the modified parameter will be equal to u1 or u2 plus or minus the period. when theadjustperiodic is false, parameters u1 and u2 will be the same, without adjustment into the first period. exceptions standard_constructionerror if: - c is not periodic and u1 or u2 is outside the bounds of c, or - u1 is equal to u2.
+
+Parameters
+----------
+C: Geom_Curve
+U1: float
+U2: float
+Sense: bool,optional
+	default value is Standard_True
+theAdjustPeriodic: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") Geom_TrimmedCurve;
+		 Geom_TrimmedCurve(const opencascade::handle<Geom_Curve> & C, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean Sense = Standard_True, const Standard_Boolean theAdjustPeriodic = Standard_True);
+
 		/****************** BasisCurve ******************/
 		%feature("compactdefaultargs") BasisCurve;
 		%feature("autodoc", "Returns the basis curve. warning this function does not return a constant reference. consequently, any modification of the returned value directly modifies the trimmed curve.
@@ -13293,26 +13313,6 @@ Returns
 float
 ") FirstParameter;
 		Standard_Real FirstParameter();
-
-		/****************** Geom_TrimmedCurve ******************/
-		%feature("compactdefaultargs") Geom_TrimmedCurve;
-		%feature("autodoc", "Constructs a trimmed curve from the basis curve c which is limited between parameter values u1 and u2. note: - u1 can be greater or less than u2; in both cases, the returned curve is oriented from u1 to u2. - if the basis curve c is periodic, there is an ambiguity because two parts are available. in this case, the trimmed curve has the same orientation as the basis curve if sense is true (default value) or the opposite orientation if sense is false. - if the curve is closed but not periodic, it is not possible to keep the part of the curve which includes the junction point (except if the junction point is at the beginning or at the end of the trimmed curve). if you tried to do this, you could alter the fundamental characteristics of the basis curve, which are used, for example, to compute the derivatives of the trimmed curve. the rules for a closed curve are therefore the same as those for an open curve. warning: the trimmed curve is built from a copy of curve c. therefore, when c is modified, the trimmed curve is not modified. - if the basis curve is periodic and theadjustperiodic is true, the bounds of the trimmed curve may be different from u1 and u2 if the parametric origin of the basis curve is within the arc of the trimmed curve. in this case, the modified parameter will be equal to u1 or u2 plus or minus the period. when theadjustperiodic is false, parameters u1 and u2 will be the same, without adjustment into the first period. exceptions standard_constructionerror if: - c is not periodic and u1 or u2 is outside the bounds of c, or - u1 is equal to u2.
-
-Parameters
-----------
-C: Geom_Curve
-U1: float
-U2: float
-Sense: bool,optional
-	default value is Standard_True
-theAdjustPeriodic: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Geom_TrimmedCurve;
-		 Geom_TrimmedCurve(const opencascade::handle<Geom_Curve> & C, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean Sense = Standard_True, const Standard_Boolean theAdjustPeriodic = Standard_True);
 
 		/****************** IsCN ******************/
 		%feature("compactdefaultargs") IsCN;

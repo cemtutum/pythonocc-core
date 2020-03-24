@@ -170,6 +170,32 @@ bool
 *****************************/
 class ShapeProcess_Context : public Standard_Transient {
 	public:
+		/****************** ShapeProcess_Context ******************/
+		%feature("compactdefaultargs") ShapeProcess_Context;
+		%feature("autodoc", "Creates an empty tool.
+
+Returns
+-------
+None
+") ShapeProcess_Context;
+		 ShapeProcess_Context();
+
+		/****************** ShapeProcess_Context ******************/
+		%feature("compactdefaultargs") ShapeProcess_Context;
+		%feature("autodoc", "Creates a new tool and initialises by name of resource file and (if specified) starting scope calls method init().
+
+Parameters
+----------
+file: char *
+scope: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") ShapeProcess_Context;
+		 ShapeProcess_Context(const char * file, const char * scope = "");
+
 		/****************** BooleanVal ******************/
 		%feature("compactdefaultargs") BooleanVal;
 		%feature("autodoc", "No available documentation.
@@ -405,32 +431,6 @@ None
 ") SetTraceLevel;
 		void SetTraceLevel(const Standard_Integer tracelev);
 
-		/****************** ShapeProcess_Context ******************/
-		%feature("compactdefaultargs") ShapeProcess_Context;
-		%feature("autodoc", "Creates an empty tool.
-
-Returns
--------
-None
-") ShapeProcess_Context;
-		 ShapeProcess_Context();
-
-		/****************** ShapeProcess_Context ******************/
-		%feature("compactdefaultargs") ShapeProcess_Context;
-		%feature("autodoc", "Creates a new tool and initialises by name of resource file and (if specified) starting scope calls method init().
-
-Parameters
-----------
-file: char *
-scope: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") ShapeProcess_Context;
-		 ShapeProcess_Context(const char * file, const char * scope = "");
-
 		/****************** StringVal ******************/
 		%feature("compactdefaultargs") StringVal;
 		%feature("autodoc", "Get value of parameter as being of specific type if parameter is not defined or does not have expected type, returns default value as specified.
@@ -558,6 +558,39 @@ bool
 **********************************/
 class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 	public:
+		/****************** ShapeProcess_ShapeContext ******************/
+		%feature("compactdefaultargs") ShapeProcess_ShapeContext;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+file: char *
+seq: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") ShapeProcess_ShapeContext;
+		 ShapeProcess_ShapeContext(const char * file, const char * seq = "");
+
+		/****************** ShapeProcess_ShapeContext ******************/
+		%feature("compactdefaultargs") ShapeProcess_ShapeContext;
+		%feature("autodoc", "Initializes a tool by resource file and shape to be processed.
+
+Parameters
+----------
+S: TopoDS_Shape
+file: char *
+seq: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") ShapeProcess_ShapeContext;
+		 ShapeProcess_ShapeContext(const TopoDS_Shape & S, const char * file, const char * seq = "");
+
 		/****************** AddMessage ******************/
 		%feature("compactdefaultargs") AddMessage;
 		%feature("autodoc", "Record a message for shape s shape s should be one of subshapes of original shape (or whole one), but not one of intermediate shapes records only if message() is not null.
@@ -803,39 +836,6 @@ TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
 
-		/****************** ShapeProcess_ShapeContext ******************/
-		%feature("compactdefaultargs") ShapeProcess_ShapeContext;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-file: char *
-seq: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") ShapeProcess_ShapeContext;
-		 ShapeProcess_ShapeContext(const char * file, const char * seq = "");
-
-		/****************** ShapeProcess_ShapeContext ******************/
-		%feature("compactdefaultargs") ShapeProcess_ShapeContext;
-		%feature("autodoc", "Initializes a tool by resource file and shape to be processed.
-
-Parameters
-----------
-S: TopoDS_Shape
-file: char *
-seq: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") ShapeProcess_ShapeContext;
-		 ShapeProcess_ShapeContext(const TopoDS_Shape & S, const char * file, const char * seq = "");
-
 };
 
 
@@ -852,20 +852,6 @@ None
 *******************************/
 class ShapeProcess_UOperator : public ShapeProcess_Operator {
 	public:
-		/****************** Perform ******************/
-		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "Performs operation and records changes in the context.
-
-Parameters
-----------
-context: ShapeProcess_Context
-
-Returns
--------
-bool
-") Perform;
-		virtual Standard_Boolean Perform(const opencascade::handle<ShapeProcess_Context> & context);
-
 		/****************** ShapeProcess_UOperator ******************/
 		%feature("compactdefaultargs") ShapeProcess_UOperator;
 		%feature("autodoc", "Creates operator with implementation defined as operfunc (static function).
@@ -879,6 +865,20 @@ Returns
 None
 ") ShapeProcess_UOperator;
 		 ShapeProcess_UOperator(const ShapeProcess_OperFunc func);
+
+		/****************** Perform ******************/
+		%feature("compactdefaultargs") Perform;
+		%feature("autodoc", "Performs operation and records changes in the context.
+
+Parameters
+----------
+context: ShapeProcess_Context
+
+Returns
+-------
+bool
+") Perform;
+		virtual Standard_Boolean Perform(const opencascade::handle<ShapeProcess_Context> & context);
 
 };
 

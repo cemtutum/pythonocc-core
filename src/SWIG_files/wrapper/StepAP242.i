@@ -101,6 +101,16 @@ from OCC.Core.Exception import *
 ******************************/
 class StepAP242_IdAttribute : public Standard_Transient {
 	public:
+		/****************** StepAP242_IdAttribute ******************/
+		%feature("compactdefaultargs") StepAP242_IdAttribute;
+		%feature("autodoc", "Returns a idattribute.
+
+Returns
+-------
+None
+") StepAP242_IdAttribute;
+		 StepAP242_IdAttribute();
+
 		/****************** AttributeValue ******************/
 		%feature("compactdefaultargs") AttributeValue;
 		%feature("autodoc", "Returns field attributevalue.
@@ -164,16 +174,6 @@ None
 ") SetIdentifiedItem;
 		void SetIdentifiedItem(const StepAP242_IdAttributeSelect & theIdentifiedItem);
 
-		/****************** StepAP242_IdAttribute ******************/
-		%feature("compactdefaultargs") StepAP242_IdAttribute;
-		%feature("autodoc", "Returns a idattribute.
-
-Returns
--------
-None
-") StepAP242_IdAttribute;
-		 StepAP242_IdAttribute();
-
 };
 
 
@@ -190,6 +190,16 @@ None
 ************************************/
 class StepAP242_IdAttributeSelect : public StepData_SelectType {
 	public:
+		/****************** StepAP242_IdAttributeSelect ******************/
+		%feature("compactdefaultargs") StepAP242_IdAttributeSelect;
+		%feature("autodoc", "Returns a idattributeselect select type.
+
+Returns
+-------
+None
+") StepAP242_IdAttributeSelect;
+		 StepAP242_IdAttributeSelect();
+
 		/****************** Action ******************/
 		%feature("compactdefaultargs") Action;
 		%feature("autodoc", "Returns value as a action (null if another type).
@@ -314,16 +324,6 @@ opencascade::handle<StepRepr_ShapeAspectRelationship>
 ") ShapeAspectRelationship;
 		opencascade::handle<StepRepr_ShapeAspectRelationship> ShapeAspectRelationship();
 
-		/****************** StepAP242_IdAttributeSelect ******************/
-		%feature("compactdefaultargs") StepAP242_IdAttributeSelect;
-		%feature("autodoc", "Returns a idattributeselect select type.
-
-Returns
--------
-None
-") StepAP242_IdAttributeSelect;
-		 StepAP242_IdAttributeSelect();
-
 };
 
 
@@ -338,6 +338,16 @@ None
 ****************************************************/
 class StepAP242_ItemIdentifiedRepresentationUsage : public Standard_Transient {
 	public:
+		/****************** StepAP242_ItemIdentifiedRepresentationUsage ******************/
+		%feature("compactdefaultargs") StepAP242_ItemIdentifiedRepresentationUsage;
+		%feature("autodoc", "Returns a itemidentifiedrepresentationusage.
+
+Returns
+-------
+None
+") StepAP242_ItemIdentifiedRepresentationUsage;
+		 StepAP242_ItemIdentifiedRepresentationUsage();
+
 		/****************** Definition ******************/
 		%feature("compactdefaultargs") Definition;
 		%feature("autodoc", "Returns field definition.
@@ -505,16 +515,6 @@ None
 ") SetUsedRepresentation;
 		void SetUsedRepresentation(const opencascade::handle<StepRepr_Representation> & theUsedRepresentation);
 
-		/****************** StepAP242_ItemIdentifiedRepresentationUsage ******************/
-		%feature("compactdefaultargs") StepAP242_ItemIdentifiedRepresentationUsage;
-		%feature("autodoc", "Returns a itemidentifiedrepresentationusage.
-
-Returns
--------
-None
-") StepAP242_ItemIdentifiedRepresentationUsage;
-		 StepAP242_ItemIdentifiedRepresentationUsage();
-
 		/****************** UsedRepresentation ******************/
 		%feature("compactdefaultargs") UsedRepresentation;
 		%feature("autodoc", "Retuns field usedrepresentation.
@@ -541,6 +541,16 @@ opencascade::handle<StepRepr_Representation>
 **************************************************************/
 class StepAP242_ItemIdentifiedRepresentationUsageDefinition : public StepData_SelectType {
 	public:
+		/****************** StepAP242_ItemIdentifiedRepresentationUsageDefinition ******************/
+		%feature("compactdefaultargs") StepAP242_ItemIdentifiedRepresentationUsageDefinition;
+		%feature("autodoc", "Returns a itemidentifiedrepresentationusagedefinition select type.
+
+Returns
+-------
+None
+") StepAP242_ItemIdentifiedRepresentationUsageDefinition;
+		 StepAP242_ItemIdentifiedRepresentationUsageDefinition();
+
 		/****************** AppliedApprovalAssignment ******************/
 		%feature("compactdefaultargs") AppliedApprovalAssignment;
 		%feature("autodoc", "Returns value as a appliedapprovalassignment (null if another type).
@@ -724,16 +734,6 @@ Returns
 opencascade::handle<StepRepr_ShapeAspectRelationship>
 ") ShapeAspectRelationship;
 		opencascade::handle<StepRepr_ShapeAspectRelationship> ShapeAspectRelationship();
-
-		/****************** StepAP242_ItemIdentifiedRepresentationUsageDefinition ******************/
-		%feature("compactdefaultargs") StepAP242_ItemIdentifiedRepresentationUsageDefinition;
-		%feature("autodoc", "Returns a itemidentifiedrepresentationusagedefinition select type.
-
-Returns
--------
-None
-") StepAP242_ItemIdentifiedRepresentationUsageDefinition;
-		 StepAP242_ItemIdentifiedRepresentationUsageDefinition();
 
 };
 

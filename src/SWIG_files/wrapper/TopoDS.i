@@ -81,13 +81,13 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(TopoDS_ListOfShape) NCollection_List<TopoDS_Shape>;
 %template(TopoDS_ListIteratorOfListOfShape) NCollection_TListIterator<TopoDS_Shape>;
+%template(TopoDS_ListOfShape) NCollection_List<TopoDS_Shape>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List<TopoDS_Shape> TopoDS_ListOfShape;
 typedef NCollection_List<TopoDS_Shape>::Iterator TopoDS_ListIteratorOfListOfShape;
+typedef NCollection_List<TopoDS_Shape> TopoDS_ListOfShape;
 /* end typedefs declaration */
 
 /***************
@@ -334,6 +334,20 @@ TopoDS_Wire
 ******************************/
 class TopoDS_AlertWithShape : public Message_Alert {
 	public:
+		/****************** TopoDS_AlertWithShape ******************/
+		%feature("compactdefaultargs") TopoDS_AlertWithShape;
+		%feature("autodoc", "Constructor with shape argument.
+
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+None
+") TopoDS_AlertWithShape;
+		 TopoDS_AlertWithShape(const TopoDS_Shape & theShape);
+
 		/****************** GetShape ******************/
 		%feature("compactdefaultargs") GetShape;
 		%feature("autodoc", "Returns contained shape.
@@ -381,20 +395,6 @@ Returns
 bool
 ") SupportsMerge;
 		virtual Standard_Boolean SupportsMerge();
-
-		/****************** TopoDS_AlertWithShape ******************/
-		%feature("compactdefaultargs") TopoDS_AlertWithShape;
-		%feature("autodoc", "Constructor with shape argument.
-
-Parameters
-----------
-theShape: TopoDS_Shape
-
-Returns
--------
-None
-") TopoDS_AlertWithShape;
-		 TopoDS_AlertWithShape(const TopoDS_Shape & theShape);
 
 };
 
@@ -524,6 +524,30 @@ None
 **********************/
 class TopoDS_HShape : public Standard_Transient {
 	public:
+		/****************** TopoDS_HShape ******************/
+		%feature("compactdefaultargs") TopoDS_HShape;
+		%feature("autodoc", "Constructs an empty shape object.
+
+Returns
+-------
+None
+") TopoDS_HShape;
+		 TopoDS_HShape();
+
+		/****************** TopoDS_HShape ******************/
+		%feature("compactdefaultargs") TopoDS_HShape;
+		%feature("autodoc", "Constructs a shape object defined by the shape ashape.
+
+Parameters
+----------
+aShape: TopoDS_Shape
+
+Returns
+-------
+None
+") TopoDS_HShape;
+		 TopoDS_HShape(const TopoDS_Shape & aShape);
+
 		/****************** ChangeShape ******************/
 		%feature("compactdefaultargs") ChangeShape;
 		%feature("autodoc", "Exchanges the topods_shape object defining this shape for another one referencing the same underlying shape accesses the list of shapes within the underlying shape referenced by the topods_shape object. returns a reference to a topods_shape based on this shape. the topods_shape can be modified.
@@ -558,30 +582,6 @@ TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
 
-		/****************** TopoDS_HShape ******************/
-		%feature("compactdefaultargs") TopoDS_HShape;
-		%feature("autodoc", "Constructs an empty shape object.
-
-Returns
--------
-None
-") TopoDS_HShape;
-		 TopoDS_HShape();
-
-		/****************** TopoDS_HShape ******************/
-		%feature("compactdefaultargs") TopoDS_HShape;
-		%feature("autodoc", "Constructs a shape object defined by the shape ashape.
-
-Parameters
-----------
-aShape: TopoDS_Shape
-
-Returns
--------
-None
-") TopoDS_HShape;
-		 TopoDS_HShape(const TopoDS_Shape & aShape);
-
 };
 
 
@@ -598,6 +598,34 @@ None
 ************************/
 class TopoDS_Iterator {
 	public:
+		/****************** TopoDS_Iterator ******************/
+		%feature("compactdefaultargs") TopoDS_Iterator;
+		%feature("autodoc", "Creates an empty iterator.
+
+Returns
+-------
+None
+") TopoDS_Iterator;
+		 TopoDS_Iterator();
+
+		/****************** TopoDS_Iterator ******************/
+		%feature("compactdefaultargs") TopoDS_Iterator;
+		%feature("autodoc", "Creates an iterator on <s> sub-shapes. note: - if cumori is true, the function composes all sub-shapes with the orientation of s. - if cumloc is true, the function multiplies all sub-shapes by the location of s, i.e. it applies to each sub-shape the transformation that is associated with s.
+
+Parameters
+----------
+S: TopoDS_Shape
+cumOri: bool,optional
+	default value is Standard_True
+cumLoc: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") TopoDS_Iterator;
+		 TopoDS_Iterator(const TopoDS_Shape & S, const Standard_Boolean cumOri = Standard_True, const Standard_Boolean cumLoc = Standard_True);
+
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initializes this iterator with shape s. note: - if cumori is true, the function composes all sub-shapes with the orientation of s. - if cumloc is true, the function multiplies all sub-shapes by the location of s, i.e. it applies to each sub-shape the transformation that is associated with s.
@@ -636,34 +664,6 @@ None
 ") Next;
 		void Next();
 
-		/****************** TopoDS_Iterator ******************/
-		%feature("compactdefaultargs") TopoDS_Iterator;
-		%feature("autodoc", "Creates an empty iterator.
-
-Returns
--------
-None
-") TopoDS_Iterator;
-		 TopoDS_Iterator();
-
-		/****************** TopoDS_Iterator ******************/
-		%feature("compactdefaultargs") TopoDS_Iterator;
-		%feature("autodoc", "Creates an iterator on <s> sub-shapes. note: - if cumori is true, the function composes all sub-shapes with the orientation of s. - if cumloc is true, the function multiplies all sub-shapes by the location of s, i.e. it applies to each sub-shape the transformation that is associated with s.
-
-Parameters
-----------
-S: TopoDS_Shape
-cumOri: bool,optional
-	default value is Standard_True
-cumLoc: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") TopoDS_Iterator;
-		 TopoDS_Iterator(const TopoDS_Shape & S, const Standard_Boolean cumOri = Standard_True, const Standard_Boolean cumLoc = Standard_True);
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the current sub-shape in the shape which this iterator is scanning. exceptions standard_nosuchobject if there is no current sub-shape.
@@ -690,6 +690,16 @@ class TopoDS_Shape {
 	public:
 		%feature("autodoc", "1");
 		TopoDS_Shape(const TopoDS_Shape arg0);
+		/****************** TopoDS_Shape ******************/
+		%feature("compactdefaultargs") TopoDS_Shape;
+		%feature("autodoc", "Creates a null shape referring to nothing.
+
+Returns
+-------
+None
+") TopoDS_Shape;
+		 TopoDS_Shape();
+
 		/****************** Checked ******************/
 		%feature("compactdefaultargs") Checked;
 		%feature("autodoc", "Returns the checked flag.
@@ -1222,16 +1232,6 @@ None
 ") TShape;
 		void TShape(const opencascade::handle<TopoDS_TShape> & theTShape);
 
-		/****************** TopoDS_Shape ******************/
-		%feature("compactdefaultargs") TopoDS_Shape;
-		%feature("autodoc", "Creates a null shape referring to nothing.
-
-Returns
--------
-None
-") TopoDS_Shape;
-		 TopoDS_Shape();
-
 
             %extend{
                 bool __ne_wrapper__(const TopoDS_Shape other) {
@@ -1685,6 +1685,16 @@ None
 **************************/
 class TopoDS_TCompSolid : public TopoDS_TShape {
 	public:
+		/****************** TopoDS_TCompSolid ******************/
+		%feature("compactdefaultargs") TopoDS_TCompSolid;
+		%feature("autodoc", "Creates an empty tcompsolid.
+
+Returns
+-------
+None
+") TopoDS_TCompSolid;
+		 TopoDS_TCompSolid();
+
 		/****************** EmptyCopy ******************/
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns an empty tcompsolid.
@@ -1705,16 +1715,6 @@ TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
-		/****************** TopoDS_TCompSolid ******************/
-		%feature("compactdefaultargs") TopoDS_TCompSolid;
-		%feature("autodoc", "Creates an empty tcompsolid.
-
-Returns
--------
-None
-") TopoDS_TCompSolid;
-		 TopoDS_TCompSolid();
-
 };
 
 
@@ -1731,6 +1731,16 @@ None
 *************************/
 class TopoDS_TCompound : public TopoDS_TShape {
 	public:
+		/****************** TopoDS_TCompound ******************/
+		%feature("compactdefaultargs") TopoDS_TCompound;
+		%feature("autodoc", "Creates an empty tcompound.
+
+Returns
+-------
+None
+") TopoDS_TCompound;
+		 TopoDS_TCompound();
+
 		/****************** EmptyCopy ******************/
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns an empty tcompound.
@@ -1750,16 +1760,6 @@ Returns
 TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
-
-		/****************** TopoDS_TCompound ******************/
-		%feature("compactdefaultargs") TopoDS_TCompound;
-		%feature("autodoc", "Creates an empty tcompound.
-
-Returns
--------
-None
-") TopoDS_TCompound;
-		 TopoDS_TCompound();
 
 };
 
@@ -1804,6 +1804,16 @@ TopAbs_ShapeEnum
 *********************/
 class TopoDS_TFace : public TopoDS_TShape {
 	public:
+		/****************** TopoDS_TFace ******************/
+		%feature("compactdefaultargs") TopoDS_TFace;
+		%feature("autodoc", "Creates an empty tface.
+
+Returns
+-------
+None
+") TopoDS_TFace;
+		 TopoDS_TFace();
+
 		/****************** EmptyCopy ******************/
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns an empty tface.
@@ -1824,16 +1834,6 @@ TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
-		/****************** TopoDS_TFace ******************/
-		%feature("compactdefaultargs") TopoDS_TFace;
-		%feature("autodoc", "Creates an empty tface.
-
-Returns
--------
-None
-") TopoDS_TFace;
-		 TopoDS_TFace();
-
 };
 
 
@@ -1850,6 +1850,16 @@ None
 **********************/
 class TopoDS_TShell : public TopoDS_TShape {
 	public:
+		/****************** TopoDS_TShell ******************/
+		%feature("compactdefaultargs") TopoDS_TShell;
+		%feature("autodoc", "Creates an empty tshell.
+
+Returns
+-------
+None
+") TopoDS_TShell;
+		 TopoDS_TShell();
+
 		/****************** EmptyCopy ******************/
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns an empty tshell.
@@ -1870,16 +1880,6 @@ TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
 
-		/****************** TopoDS_TShell ******************/
-		%feature("compactdefaultargs") TopoDS_TShell;
-		%feature("autodoc", "Creates an empty tshell.
-
-Returns
--------
-None
-") TopoDS_TShell;
-		 TopoDS_TShell();
-
 };
 
 
@@ -1896,6 +1896,16 @@ None
 **********************/
 class TopoDS_TSolid : public TopoDS_TShape {
 	public:
+		/****************** TopoDS_TSolid ******************/
+		%feature("compactdefaultargs") TopoDS_TSolid;
+		%feature("autodoc", "Creates an empty tsolid.
+
+Returns
+-------
+None
+") TopoDS_TSolid;
+		 TopoDS_TSolid();
+
 		/****************** EmptyCopy ******************/
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns an empty tsolid.
@@ -1915,16 +1925,6 @@ Returns
 TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
-
-		/****************** TopoDS_TSolid ******************/
-		%feature("compactdefaultargs") TopoDS_TSolid;
-		%feature("autodoc", "Creates an empty tsolid.
-
-Returns
--------
-None
-") TopoDS_TSolid;
-		 TopoDS_TSolid();
 
 };
 
@@ -1969,6 +1969,16 @@ TopAbs_ShapeEnum
 *********************/
 class TopoDS_TWire : public TopoDS_TShape {
 	public:
+		/****************** TopoDS_TWire ******************/
+		%feature("compactdefaultargs") TopoDS_TWire;
+		%feature("autodoc", "Creates an empty twire.
+
+Returns
+-------
+None
+") TopoDS_TWire;
+		 TopoDS_TWire();
+
 		/****************** EmptyCopy ******************/
 		%feature("compactdefaultargs") EmptyCopy;
 		%feature("autodoc", "Returns an empty twire.
@@ -1988,16 +1998,6 @@ Returns
 TopAbs_ShapeEnum
 ") ShapeType;
 		TopAbs_ShapeEnum ShapeType();
-
-		/****************** TopoDS_TWire ******************/
-		%feature("compactdefaultargs") TopoDS_TWire;
-		%feature("autodoc", "Creates an empty twire.
-
-Returns
--------
-None
-") TopoDS_TWire;
-		 TopoDS_TWire();
 
 };
 

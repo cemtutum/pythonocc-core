@@ -56,8 +56,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepfill.html"
 #include<AppCont_module.hxx>
 #include<BRepMAT2d_module.hxx>
 #include<Law_module.hxx>
-#include<TColgp_module.hxx>
 #include<Bisector_module.hxx>
+#include<TColgp_module.hxx>
 #include<FEmTool_module.hxx>
 #include<TColGeom2d_module.hxx>
 #include<PLib_module.hxx>
@@ -95,8 +95,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepfill.html"
 %import AppCont.i
 %import BRepMAT2d.i
 %import Law.i
-%import TColgp.i
 %import Bisector.i
+%import TColgp.i
 
 %pythoncode {
 from OCC.Core.Exception import *
@@ -146,42 +146,42 @@ class BRepFill_TransitionStyle:
 /* end handles declaration */
 
 /* templates */
-%template(BRepFill_IndexedDataMapOfOrientedShapeListOfShape) NCollection_IndexedDataMap<TopoDS_Shape,TopTools_ListOfShape,TopTools_OrientedShapeMapHasher>;
-%template(BRepFill_DataMapOfShapeHArray2OfShape) NCollection_DataMap<TopoDS_Shape,opencascade::handle<TopTools_HArray2OfShape>,TopTools_ShapeMapHasher>;
-%template(BRepFill_ListOfOffsetWire) NCollection_List<BRepFill_OffsetWire>;
-%template(BRepFill_ListIteratorOfListOfOffsetWire) NCollection_TListIterator<BRepFill_OffsetWire>;
-%template(BRepFill_DataMapOfShapeSequenceOfPnt) NCollection_DataMap<TopoDS_Shape,TColgp_SequenceOfPnt,TopTools_ShapeMapHasher>;
 %template(BRepFill_DataMapOfNodeDataMapOfShapeShape) NCollection_DataMap<opencascade::handle<MAT_Node>,TopTools_DataMapOfShapeShape,TColStd_MapTransientHasher>;
-%template(BRepFill_DataMapOfShapeDataMapOfShapeListOfShape) NCollection_DataMap<TopoDS_Shape,TopTools_DataMapOfShapeListOfShape,TopTools_ShapeMapHasher>;
-%template(BRepFill_SequenceOfSection) NCollection_Sequence<BRepFill_Section>;
-%template(BRepFill_DataMapOfOrientedShapeListOfShape) NCollection_DataMap<TopoDS_Shape,TopTools_ListOfShape,TopTools_OrientedShapeMapHasher>;
 %template(BRepFill_DataMapOfNodeShape) NCollection_DataMap<opencascade::handle<MAT_Node>,TopoDS_Shape,TColStd_MapTransientHasher>;
-%template(BRepFill_SequenceOfFaceAndOrder) NCollection_Sequence<BRepFill_FaceAndOrder>;
+%template(BRepFill_DataMapOfOrientedShapeListOfShape) NCollection_DataMap<TopoDS_Shape,TopTools_ListOfShape,TopTools_OrientedShapeMapHasher>;
+%template(BRepFill_DataMapOfShapeDataMapOfShapeListOfShape) NCollection_DataMap<TopoDS_Shape,TopTools_DataMapOfShapeListOfShape,TopTools_ShapeMapHasher>;
+%template(BRepFill_DataMapOfShapeHArray2OfShape) NCollection_DataMap<TopoDS_Shape,opencascade::handle<TopTools_HArray2OfShape>,TopTools_ShapeMapHasher>;
+%template(BRepFill_DataMapOfShapeSequenceOfPnt) NCollection_DataMap<TopoDS_Shape,TColgp_SequenceOfPnt,TopTools_ShapeMapHasher>;
 %template(BRepFill_DataMapOfShapeSequenceOfReal) NCollection_DataMap<TopoDS_Shape,TColStd_SequenceOfReal,TopTools_ShapeMapHasher>;
+%template(BRepFill_IndexedDataMapOfOrientedShapeListOfShape) NCollection_IndexedDataMap<TopoDS_Shape,TopTools_ListOfShape,TopTools_OrientedShapeMapHasher>;
+%template(BRepFill_ListIteratorOfListOfOffsetWire) NCollection_TListIterator<BRepFill_OffsetWire>;
+%template(BRepFill_ListOfOffsetWire) NCollection_List<BRepFill_OffsetWire>;
 %template(BRepFill_SequenceOfEdgeFaceAndOrder) NCollection_Sequence<BRepFill_EdgeFaceAndOrder>;
+%template(BRepFill_SequenceOfFaceAndOrder) NCollection_Sequence<BRepFill_FaceAndOrder>;
+%template(BRepFill_SequenceOfSection) NCollection_Sequence<BRepFill_Section>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_IndexedDataMap<TopoDS_Shape, TopTools_ListOfShape, TopTools_OrientedShapeMapHasher> BRepFill_IndexedDataMapOfOrientedShapeListOfShape;
-typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<TopTools_HArray2OfShape>, TopTools_ShapeMapHasher> BRepFill_DataMapOfShapeHArray2OfShape;
-typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<TopTools_HArray2OfShape>, TopTools_ShapeMapHasher>::Iterator BRepFill_DataMapIteratorOfDataMapOfShapeHArray2OfShape;
-typedef NCollection_List<BRepFill_OffsetWire> BRepFill_ListOfOffsetWire;
-typedef NCollection_List<BRepFill_OffsetWire>::Iterator BRepFill_ListIteratorOfListOfOffsetWire;
-typedef NCollection_DataMap<TopoDS_Shape, TColgp_SequenceOfPnt, TopTools_ShapeMapHasher> BRepFill_DataMapOfShapeSequenceOfPnt;
-typedef NCollection_DataMap<TopoDS_Shape, TColgp_SequenceOfPnt, TopTools_ShapeMapHasher>::Iterator BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt;
-typedef NCollection_DataMap<opencascade::handle<MAT_Node>, TopTools_DataMapOfShapeShape, TColStd_MapTransientHasher> BRepFill_DataMapOfNodeDataMapOfShapeShape;
 typedef NCollection_DataMap<opencascade::handle<MAT_Node>, TopTools_DataMapOfShapeShape, TColStd_MapTransientHasher>::Iterator BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape;
-typedef NCollection_DataMap<TopoDS_Shape, TopTools_DataMapOfShapeListOfShape, TopTools_ShapeMapHasher> BRepFill_DataMapOfShapeDataMapOfShapeListOfShape;
-typedef NCollection_DataMap<TopoDS_Shape, TopTools_DataMapOfShapeListOfShape, TopTools_ShapeMapHasher>::Iterator BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape;
-typedef NCollection_Sequence<BRepFill_Section> BRepFill_SequenceOfSection;
-typedef NCollection_DataMap<TopoDS_Shape, TopTools_ListOfShape, TopTools_OrientedShapeMapHasher> BRepFill_DataMapOfOrientedShapeListOfShape;
-typedef NCollection_DataMap<TopoDS_Shape, TopTools_ListOfShape, TopTools_OrientedShapeMapHasher>::Iterator BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape;
-typedef NCollection_DataMap<opencascade::handle<MAT_Node>, TopoDS_Shape, TColStd_MapTransientHasher> BRepFill_DataMapOfNodeShape;
 typedef NCollection_DataMap<opencascade::handle<MAT_Node>, TopoDS_Shape, TColStd_MapTransientHasher>::Iterator BRepFill_DataMapIteratorOfDataMapOfNodeShape;
-typedef NCollection_Sequence<BRepFill_FaceAndOrder> BRepFill_SequenceOfFaceAndOrder;
-typedef NCollection_DataMap<TopoDS_Shape, TColStd_SequenceOfReal, TopTools_ShapeMapHasher> BRepFill_DataMapOfShapeSequenceOfReal;
+typedef NCollection_DataMap<TopoDS_Shape, TopTools_ListOfShape, TopTools_OrientedShapeMapHasher>::Iterator BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape;
+typedef NCollection_DataMap<TopoDS_Shape, TopTools_DataMapOfShapeListOfShape, TopTools_ShapeMapHasher>::Iterator BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape;
+typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<TopTools_HArray2OfShape>, TopTools_ShapeMapHasher>::Iterator BRepFill_DataMapIteratorOfDataMapOfShapeHArray2OfShape;
+typedef NCollection_DataMap<TopoDS_Shape, TColgp_SequenceOfPnt, TopTools_ShapeMapHasher>::Iterator BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt;
 typedef NCollection_DataMap<TopoDS_Shape, TColStd_SequenceOfReal, TopTools_ShapeMapHasher>::Iterator BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal;
+typedef NCollection_DataMap<opencascade::handle<MAT_Node>, TopTools_DataMapOfShapeShape, TColStd_MapTransientHasher> BRepFill_DataMapOfNodeDataMapOfShapeShape;
+typedef NCollection_DataMap<opencascade::handle<MAT_Node>, TopoDS_Shape, TColStd_MapTransientHasher> BRepFill_DataMapOfNodeShape;
+typedef NCollection_DataMap<TopoDS_Shape, TopTools_ListOfShape, TopTools_OrientedShapeMapHasher> BRepFill_DataMapOfOrientedShapeListOfShape;
+typedef NCollection_DataMap<TopoDS_Shape, TopTools_DataMapOfShapeListOfShape, TopTools_ShapeMapHasher> BRepFill_DataMapOfShapeDataMapOfShapeListOfShape;
+typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<TopTools_HArray2OfShape>, TopTools_ShapeMapHasher> BRepFill_DataMapOfShapeHArray2OfShape;
+typedef NCollection_DataMap<TopoDS_Shape, TColgp_SequenceOfPnt, TopTools_ShapeMapHasher> BRepFill_DataMapOfShapeSequenceOfPnt;
+typedef NCollection_DataMap<TopoDS_Shape, TColStd_SequenceOfReal, TopTools_ShapeMapHasher> BRepFill_DataMapOfShapeSequenceOfReal;
+typedef NCollection_IndexedDataMap<TopoDS_Shape, TopTools_ListOfShape, TopTools_OrientedShapeMapHasher> BRepFill_IndexedDataMapOfOrientedShapeListOfShape;
+typedef NCollection_List<BRepFill_OffsetWire>::Iterator BRepFill_ListIteratorOfListOfOffsetWire;
+typedef NCollection_List<BRepFill_OffsetWire> BRepFill_ListOfOffsetWire;
 typedef NCollection_Sequence<BRepFill_EdgeFaceAndOrder> BRepFill_SequenceOfEdgeFaceAndOrder;
+typedef NCollection_Sequence<BRepFill_FaceAndOrder> BRepFill_SequenceOfFaceAndOrder;
+typedef NCollection_Sequence<BRepFill_Section> BRepFill_SequenceOfSection;
 /* end typedefs declaration */
 
 /*****************
@@ -1309,6 +1309,39 @@ None
 *************************/
 class BRepFill_Filling {
 	public:
+		/****************** BRepFill_Filling ******************/
+		%feature("compactdefaultargs") BRepFill_Filling;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+Degree: int,optional
+	default value is 3
+NbPtsOnCur: int,optional
+	default value is 15
+NbIter: int,optional
+	default value is 2
+Anisotropie: bool,optional
+	default value is Standard_False
+Tol2d: float,optional
+	default value is 0.00001
+Tol3d: float,optional
+	default value is 0.0001
+TolAng: float,optional
+	default value is 0.01
+TolCurv: float,optional
+	default value is 0.1
+MaxDeg: int,optional
+	default value is 8
+MaxSegments: int,optional
+	default value is 9
+
+Returns
+-------
+None
+") BRepFill_Filling;
+		 BRepFill_Filling(const Standard_Integer Degree = 3, const Standard_Integer NbPtsOnCur = 15, const Standard_Integer NbIter = 2, const Standard_Boolean Anisotropie = Standard_False, const Standard_Real Tol2d = 0.00001, const Standard_Real Tol3d = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1, const Standard_Integer MaxDeg = 8, const Standard_Integer MaxSegments = 9);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a new constraint which also defines an edge of the wire of the face order: order of the constraint: geomabs_c0 : the surface has to pass by 3d representation of the edge geomabs_g1 : the surface has to pass by 3d representation of the edge and to respect tangency with the first face of the edge geomabs_g2 : the surface has to pass by 3d representation of the edge and to respect tangency and curvature with the first face of the edge.
@@ -1389,39 +1422,6 @@ Returns
 int
 ") Add;
 		Standard_Integer Add(const Standard_Real U, const Standard_Real V, const TopoDS_Face & Support, const GeomAbs_Shape Order);
-
-		/****************** BRepFill_Filling ******************/
-		%feature("compactdefaultargs") BRepFill_Filling;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-Degree: int,optional
-	default value is 3
-NbPtsOnCur: int,optional
-	default value is 15
-NbIter: int,optional
-	default value is 2
-Anisotropie: bool,optional
-	default value is Standard_False
-Tol2d: float,optional
-	default value is 0.00001
-Tol3d: float,optional
-	default value is 0.0001
-TolAng: float,optional
-	default value is 0.01
-TolCurv: float,optional
-	default value is 0.1
-MaxDeg: int,optional
-	default value is 8
-MaxSegments: int,optional
-	default value is 9
-
-Returns
--------
-None
-") BRepFill_Filling;
-		 BRepFill_Filling(const Standard_Integer Degree = 3, const Standard_Integer NbPtsOnCur = 15, const Standard_Integer NbIter = 2, const Standard_Boolean Anisotropie = Standard_False, const Standard_Real Tol2d = 0.00001, const Standard_Real Tol3d = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1, const Standard_Integer MaxDeg = 8, const Standard_Integer MaxSegments = 9);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
@@ -1626,6 +1626,16 @@ None
 ***************************/
 class BRepFill_Generator {
 	public:
+		/****************** BRepFill_Generator ******************/
+		%feature("compactdefaultargs") BRepFill_Generator;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BRepFill_Generator;
+		 BRepFill_Generator();
+
 		/****************** AddWire ******************/
 		%feature("compactdefaultargs") AddWire;
 		%feature("autodoc", "No available documentation.
@@ -1639,16 +1649,6 @@ Returns
 None
 ") AddWire;
 		void AddWire(const TopoDS_Wire & Wire);
-
-		/****************** BRepFill_Generator ******************/
-		%feature("compactdefaultargs") BRepFill_Generator;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BRepFill_Generator;
-		 BRepFill_Generator();
 
 		/****************** Generated ******************/
 		%feature("compactdefaultargs") Generated;
@@ -2159,20 +2159,6 @@ gp_Pnt2d
 *********************************/
 class BRepFill_OffsetAncestors {
 	public:
-		/****************** Ancestor ******************/
-		%feature("compactdefaultargs") Ancestor;
-		%feature("autodoc", "May return a null shape if s1 is not a subshape of <paral>; if perform is not done.
-
-Parameters
-----------
-S1: TopoDS_Edge
-
-Returns
--------
-TopoDS_Shape
-") Ancestor;
-		const TopoDS_Shape Ancestor(const TopoDS_Edge & S1);
-
 		/****************** BRepFill_OffsetAncestors ******************/
 		%feature("compactdefaultargs") BRepFill_OffsetAncestors;
 		%feature("autodoc", "No available documentation.
@@ -2196,6 +2182,20 @@ Returns
 None
 ") BRepFill_OffsetAncestors;
 		 BRepFill_OffsetAncestors(BRepFill_OffsetWire & Paral);
+
+		/****************** Ancestor ******************/
+		%feature("compactdefaultargs") Ancestor;
+		%feature("autodoc", "May return a null shape if s1 is not a subshape of <paral>; if perform is not done.
+
+Parameters
+----------
+S1: TopoDS_Edge
+
+Returns
+-------
+TopoDS_Shape
+") Ancestor;
+		const TopoDS_Shape Ancestor(const TopoDS_Edge & S1);
 
 		/****************** HasAncestor ******************/
 		%feature("compactdefaultargs") HasAncestor;
@@ -2595,6 +2595,20 @@ TopoDS_Shape
 ***************************/
 class BRepFill_PipeShell : public Standard_Transient {
 	public:
+		/****************** BRepFill_PipeShell ******************/
+		%feature("compactdefaultargs") BRepFill_PipeShell;
+		%feature("autodoc", "Set an sweep's mode if no mode are setted, the mode use in makepipe is used.
+
+Parameters
+----------
+Spine: TopoDS_Wire
+
+Returns
+-------
+None
+") BRepFill_PipeShell;
+		 BRepFill_PipeShell(const TopoDS_Wire & Spine);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Set an section. the corespondance with the spine, will be automaticaly performed.
@@ -2631,20 +2645,6 @@ Returns
 None
 ") Add;
 		void Add(const TopoDS_Shape & Profile, const TopoDS_Vertex & Location, const Standard_Boolean WithContact = Standard_False, const Standard_Boolean WithCorrection = Standard_False);
-
-		/****************** BRepFill_PipeShell ******************/
-		%feature("compactdefaultargs") BRepFill_PipeShell;
-		%feature("autodoc", "Set an sweep's mode if no mode are setted, the mode use in makepipe is used.
-
-Parameters
-----------
-Spine: TopoDS_Wire
-
-Returns
--------
-None
-") BRepFill_PipeShell;
-		 BRepFill_PipeShell(const TopoDS_Wire & Spine);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
@@ -3352,16 +3352,6 @@ float
 **********************************/
 class BRepFill_SectionPlacement {
 	public:
-		/****************** AbscissaOnPath ******************/
-		%feature("compactdefaultargs") AbscissaOnPath;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-float
-") AbscissaOnPath;
-		Standard_Real AbscissaOnPath();
-
 		/****************** BRepFill_SectionPlacement ******************/
 		%feature("compactdefaultargs") BRepFill_SectionPlacement;
 		%feature("autodoc", "Automatic placement.
@@ -3400,6 +3390,16 @@ Returns
 None
 ") BRepFill_SectionPlacement;
 		 BRepFill_SectionPlacement(const opencascade::handle<BRepFill_LocationLaw> & Law, const TopoDS_Shape & Section, const TopoDS_Shape & Vertex, const Standard_Boolean WithContact = Standard_False, const Standard_Boolean WithCorrection = Standard_False);
+
+		/****************** AbscissaOnPath ******************/
+		%feature("compactdefaultargs") AbscissaOnPath;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
+") AbscissaOnPath;
+		Standard_Real AbscissaOnPath();
 
 		/****************** Transformation ******************/
 		%feature("compactdefaultargs") Transformation;
@@ -3621,23 +3621,6 @@ TopoDS_Shape
 ******************************/
 class BRepFill_TrimEdgeTool {
 	public:
-		/****************** AddOrConfuse ******************/
-		%feature("compactdefaultargs") AddOrConfuse;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Start: bool
-Edge1: TopoDS_Edge
-Edge2: TopoDS_Edge
-Params: TColgp_SequenceOfPnt
-
-Returns
--------
-None
-") AddOrConfuse;
-		void AddOrConfuse(const Standard_Boolean Start, const TopoDS_Edge & Edge1, const TopoDS_Edge & Edge2, TColgp_SequenceOfPnt & Params);
-
 		/****************** BRepFill_TrimEdgeTool ******************/
 		%feature("compactdefaultargs") BRepFill_TrimEdgeTool;
 		%feature("autodoc", "No available documentation.
@@ -3664,6 +3647,23 @@ Returns
 None
 ") BRepFill_TrimEdgeTool;
 		 BRepFill_TrimEdgeTool(const Bisector_Bisec & Bisec, const opencascade::handle<Geom2d_Geometry> & S1, const opencascade::handle<Geom2d_Geometry> & S2, const Standard_Real Offset);
+
+		/****************** AddOrConfuse ******************/
+		%feature("compactdefaultargs") AddOrConfuse;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Start: bool
+Edge1: TopoDS_Edge
+Edge2: TopoDS_Edge
+Params: TColgp_SequenceOfPnt
+
+Returns
+-------
+None
+") AddOrConfuse;
+		void AddOrConfuse(const Standard_Boolean Start, const TopoDS_Edge & Edge1, const TopoDS_Edge & Edge2, TColgp_SequenceOfPnt & Params);
 
 		/****************** IntersectWith ******************/
 		%feature("compactdefaultargs") IntersectWith;
@@ -3715,6 +3715,22 @@ bool
 *********************************/
 class BRepFill_TrimShellCorner {
 	public:
+		/****************** BRepFill_TrimShellCorner ******************/
+		%feature("compactdefaultargs") BRepFill_TrimShellCorner;
+		%feature("autodoc", "Constructor: takes faces to intersect, type of transition (it can be rightcorner or roundcorner) and axis of bisector plane.
+
+Parameters
+----------
+theFaces: TopTools_HArray2OfShape
+theTransition: BRepFill_TransitionStyle
+theAxeOfBisPlane: gp_Ax2
+
+Returns
+-------
+None
+") BRepFill_TrimShellCorner;
+		 BRepFill_TrimShellCorner(const opencascade::handle<TopTools_HArray2OfShape> & theFaces, const BRepFill_TransitionStyle theTransition, const gp_Ax2 & theAxeOfBisPlane);
+
 		/****************** AddBounds ******************/
 		%feature("compactdefaultargs") AddBounds;
 		%feature("autodoc", "No available documentation.
@@ -3757,22 +3773,6 @@ Returns
 None
 ") AddVEdges;
 		void AddVEdges(const opencascade::handle<TopTools_HArray2OfShape> & theVEdges, const Standard_Integer theIndex);
-
-		/****************** BRepFill_TrimShellCorner ******************/
-		%feature("compactdefaultargs") BRepFill_TrimShellCorner;
-		%feature("autodoc", "Constructor: takes faces to intersect, type of transition (it can be rightcorner or roundcorner) and axis of bisector plane.
-
-Parameters
-----------
-theFaces: TopTools_HArray2OfShape
-theTransition: BRepFill_TransitionStyle
-theAxeOfBisPlane: gp_Ax2
-
-Returns
--------
-None
-") BRepFill_TrimShellCorner;
-		 BRepFill_TrimShellCorner(const opencascade::handle<TopTools_HArray2OfShape> & theFaces, const BRepFill_TransitionStyle theTransition, const gp_Ax2 & theAxeOfBisPlane);
 
 		/****************** HasSection ******************/
 		%feature("compactdefaultargs") HasSection;

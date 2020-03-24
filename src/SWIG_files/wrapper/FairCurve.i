@@ -41,8 +41,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_faircurve.html"
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
-#include<Geom2d_module.hxx>
 #include<gp_module.hxx>
+#include<Geom2d_module.hxx>
 #include<math_module.hxx>
 #include<TColgp_module.hxx>
 #include<TColStd_module.hxx>
@@ -54,8 +54,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_faircurve.html"
 %};
 %import Standard.i
 %import NCollection.i
-%import Geom2d.i
 %import gp.i
+%import Geom2d.i
 %import math.i
 %import TColgp.i
 %import TColStd.i
@@ -99,6 +99,24 @@ class FairCurve_AnalysisCode:
 *************************/
 class FairCurve_Batten {
 	public:
+		/****************** FairCurve_Batten ******************/
+		%feature("compactdefaultargs") FairCurve_Batten;
+		%feature("autodoc", "Constructor with the two points and the geometrical characteristics of the batten (elastic beam) height is the height of the deformation, and slope is the slope value, initialized at 0. the user can then supply the desired slope value by the method, setslope. other parameters are initialized as follow : - freesliding = false - constraintorder1 = 1 - constraintorder2 = 1 - angle1 = 0 - angle2 = 0 - slidingfactor = 1 exceptions negativevalue if height is less than or equal to 0. nullvalue if the distance between p1 and p2 is less than or equal to the tolerance value for distance in precision::confusion: p1.isequal(p2, precision::confusion()). the function gp_pnt2d::isequal tests to see if this is the case.
+
+Parameters
+----------
+P1: gp_Pnt2d
+P2: gp_Pnt2d
+Height: float
+Slope: float,optional
+	default value is 0
+
+Returns
+-------
+None
+") FairCurve_Batten;
+		 FairCurve_Batten(const gp_Pnt2d & P1, const gp_Pnt2d & P2, const Standard_Real Height, const Standard_Real Slope = 0);
+
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "Performs the algorithm, using the arguments code, nbiterations and tolerance and computes the curve with respect to the constraints. code will have one of the following values: - ok - notconverged - infinitesliding - nullheight the parameters tolerance and nbiterations control how precise the computation is, and how long it will take.
@@ -135,24 +153,6 @@ opencascade::handle<Geom2d_BSplineCurve>
             self->Dump(s);
             return s.str();}
         };
-		/****************** FairCurve_Batten ******************/
-		%feature("compactdefaultargs") FairCurve_Batten;
-		%feature("autodoc", "Constructor with the two points and the geometrical characteristics of the batten (elastic beam) height is the height of the deformation, and slope is the slope value, initialized at 0. the user can then supply the desired slope value by the method, setslope. other parameters are initialized as follow : - freesliding = false - constraintorder1 = 1 - constraintorder2 = 1 - angle1 = 0 - angle2 = 0 - slidingfactor = 1 exceptions negativevalue if height is less than or equal to 0. nullvalue if the distance between p1 and p2 is less than or equal to the tolerance value for distance in precision::confusion: p1.isequal(p2, precision::confusion()). the function gp_pnt2d::isequal tests to see if this is the case.
-
-Parameters
-----------
-P1: gp_Pnt2d
-P2: gp_Pnt2d
-Height: float
-Slope: float,optional
-	default value is 0
-
-Returns
--------
-None
-") FairCurve_Batten;
-		 FairCurve_Batten(const gp_Pnt2d & P1, const gp_Pnt2d & P2, const Standard_Real Height, const Standard_Real Slope = 0);
-
 		/****************** GetAngle1 ******************/
 		%feature("compactdefaultargs") GetAngle1;
 		%feature("autodoc", "Returns the established first angle.
@@ -1030,6 +1030,26 @@ bool
 ***********************************/
 class FairCurve_MinimalVariation : public FairCurve_Batten {
 	public:
+		/****************** FairCurve_MinimalVariation ******************/
+		%feature("compactdefaultargs") FairCurve_MinimalVariation;
+		%feature("autodoc", "Constructs the two contact points p1 and p2 and the geometrical characteristics of the batten (elastic beam) these include the real number values for height of deformation height, slope value slope, and kind of energy physicalratio. the kinds of energy include: - jerk (0) - sagging (1). note that the default setting for physical ration is in faircurve_batten other parameters are initialized as follow : - freesliding = false - constraintorder1 = 1 - constraintorder2 = 1 - angle1 = 0 - angle2 = 0 - curvature1 = 0 - curvature2 = 0 - slidingfactor = 1 warning if physicalratio equals 1, you cannot impose constraints on curvature. exceptions negativevalue if height is less than or equal to 0. nullvalue if the distance between p1 and p2 is less than or equal to the tolerance value for distance in precision::confusion: p1.isequal(p2, precision::confusion()). the function gp_pnt2d::isequal tests to see if this is the case. definition of the geometricals constraints.
+
+Parameters
+----------
+P1: gp_Pnt2d
+P2: gp_Pnt2d
+Heigth: float
+Slope: float,optional
+	default value is 0
+PhysicalRatio: float,optional
+	default value is 0
+
+Returns
+-------
+None
+") FairCurve_MinimalVariation;
+		 FairCurve_MinimalVariation(const gp_Pnt2d & P1, const gp_Pnt2d & P2, const Standard_Real Heigth, const Standard_Real Slope = 0, const Standard_Real PhysicalRatio = 0);
+
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "Computes the curve with respect to the constraints, nbiterations and tolerance. the tolerance setting allows you to control the precision of computation, and the maximum number of iterations allows you to set a limit on computation time.
@@ -1056,26 +1076,6 @@ bool
             self->Dump(s);
             return s.str();}
         };
-		/****************** FairCurve_MinimalVariation ******************/
-		%feature("compactdefaultargs") FairCurve_MinimalVariation;
-		%feature("autodoc", "Constructs the two contact points p1 and p2 and the geometrical characteristics of the batten (elastic beam) these include the real number values for height of deformation height, slope value slope, and kind of energy physicalratio. the kinds of energy include: - jerk (0) - sagging (1). note that the default setting for physical ration is in faircurve_batten other parameters are initialized as follow : - freesliding = false - constraintorder1 = 1 - constraintorder2 = 1 - angle1 = 0 - angle2 = 0 - curvature1 = 0 - curvature2 = 0 - slidingfactor = 1 warning if physicalratio equals 1, you cannot impose constraints on curvature. exceptions negativevalue if height is less than or equal to 0. nullvalue if the distance between p1 and p2 is less than or equal to the tolerance value for distance in precision::confusion: p1.isequal(p2, precision::confusion()). the function gp_pnt2d::isequal tests to see if this is the case. definition of the geometricals constraints.
-
-Parameters
-----------
-P1: gp_Pnt2d
-P2: gp_Pnt2d
-Heigth: float
-Slope: float,optional
-	default value is 0
-PhysicalRatio: float,optional
-	default value is 0
-
-Returns
--------
-None
-") FairCurve_MinimalVariation;
-		 FairCurve_MinimalVariation(const gp_Pnt2d & P1, const gp_Pnt2d & P2, const Standard_Real Heigth, const Standard_Real Slope = 0, const Standard_Real PhysicalRatio = 0);
-
 		/****************** GetCurvature1 ******************/
 		%feature("compactdefaultargs") GetCurvature1;
 		%feature("autodoc", "Returns the first established curvature.

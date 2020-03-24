@@ -41,10 +41,10 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_intcurvesface.htm
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
+#include<TopoDS_module.hxx>
 #include<Bnd_module.hxx>
 #include<gp_module.hxx>
 #include<TopAbs_module.hxx>
-#include<TopoDS_module.hxx>
 #include<Adaptor3d_module.hxx>
 #include<GeomAbs_module.hxx>
 #include<IntCurveSurface_module.hxx>
@@ -61,10 +61,10 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_intcurvesface.htm
 %};
 %import Standard.i
 %import NCollection.i
+%import TopoDS.i
 %import Bnd.i
 %import gp.i
 %import TopAbs.i
-%import TopoDS.i
 %import Adaptor3d.i
 %import GeomAbs.i
 %import IntCurveSurface.i
@@ -95,6 +95,25 @@ from OCC.Core.Exception import *
 **********************************/
 class IntCurvesFace_Intersector {
 	public:
+		/****************** IntCurvesFace_Intersector ******************/
+		%feature("compactdefaultargs") IntCurvesFace_Intersector;
+		%feature("autodoc", "Load a face. //! the tolerance <tol> is used to determine if the first point of the segment is near the face. in that case, the parameter of the intersection point on the line can be a negative value (greater than -tol). if arestr = true uv bounding box of face is used to restrict it's underlined surface, otherwise surface is not restricted. if usebtoler = false then the 2d-point of intersection is classified with null-tolerance (relative to face); otherwise it's using maximium between input tolerance(atol) and tolerances of face bounds (edges).
+
+Parameters
+----------
+F: TopoDS_Face
+aTol: float
+aRestr: bool,optional
+	default value is Standard_True
+UseBToler: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") IntCurvesFace_Intersector;
+		 IntCurvesFace_Intersector(const TopoDS_Face & F, const Standard_Real aTol, const Standard_Boolean aRestr = Standard_True, const Standard_Boolean UseBToler = Standard_True);
+
 		/****************** Bounding ******************/
 		%feature("compactdefaultargs") Bounding;
 		%feature("autodoc", "No available documentation.
@@ -148,25 +167,6 @@ Returns
 bool
 ") GetUseBoundToler;
 		Standard_Boolean GetUseBoundToler();
-
-		/****************** IntCurvesFace_Intersector ******************/
-		%feature("compactdefaultargs") IntCurvesFace_Intersector;
-		%feature("autodoc", "Load a face. //! the tolerance <tol> is used to determine if the first point of the segment is near the face. in that case, the parameter of the intersection point on the line can be a negative value (greater than -tol). if arestr = true uv bounding box of face is used to restrict it's underlined surface, otherwise surface is not restricted. if usebtoler = false then the 2d-point of intersection is classified with null-tolerance (relative to face); otherwise it's using maximium between input tolerance(atol) and tolerances of face bounds (edges).
-
-Parameters
-----------
-F: TopoDS_Face
-aTol: float
-aRestr: bool,optional
-	default value is Standard_True
-UseBToler: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") IntCurvesFace_Intersector;
-		 IntCurvesFace_Intersector(const TopoDS_Face & F, const Standard_Real aTol, const Standard_Boolean aRestr = Standard_True, const Standard_Boolean UseBToler = Standard_True);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -352,6 +352,16 @@ float
 ***************************************/
 class IntCurvesFace_ShapeIntersector {
 	public:
+		/****************** IntCurvesFace_ShapeIntersector ******************/
+		%feature("compactdefaultargs") IntCurvesFace_ShapeIntersector;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") IntCurvesFace_ShapeIntersector;
+		 IntCurvesFace_ShapeIntersector();
+
 		/****************** Destroy ******************/
 		%feature("compactdefaultargs") Destroy;
 		%feature("autodoc", "No available documentation.
@@ -375,16 +385,6 @@ Returns
 TopoDS_Face
 ") Face;
 		const TopoDS_Face Face(const Standard_Integer I);
-
-		/****************** IntCurvesFace_ShapeIntersector ******************/
-		%feature("compactdefaultargs") IntCurvesFace_ShapeIntersector;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") IntCurvesFace_ShapeIntersector;
-		 IntCurvesFace_ShapeIntersector();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;

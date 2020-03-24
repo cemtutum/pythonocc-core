@@ -75,21 +75,21 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(IntPolyh_SeqOfStartPoints) NCollection_Sequence<IntPolyh_StartPoint>;
 %template(IntPolyh_ListOfCouples) NCollection_List<IntPolyh_Couple>;
+%template(IntPolyh_SeqOfStartPoints) NCollection_Sequence<IntPolyh_StartPoint>;
 /* end templates declaration */
 
 /* typedefs */
-typedef IntPolyh_Array<IntPolyh_Triangle> IntPolyh_ArrayOfTriangles;
-typedef NCollection_Sequence<IntPolyh_StartPoint> IntPolyh_SeqOfStartPoints;
 typedef IntPolyh_Array<IntPolyh_Edge> IntPolyh_ArrayOfEdges;
-typedef IntPolyh_MaillageAffinage * IntPolyh_PMaillageAffinage;
-typedef IntPolyh_Array<IntPolyh_StartPoint> IntPolyh_ArrayOfTangentZones;
 typedef IntPolyh_Array<IntPolyh_PointNormal> IntPolyh_ArrayOfPointNormal;
-typedef IntPolyh_Array<IntPolyh_SectionLine> IntPolyh_ArrayOfSectionLines;
-typedef NCollection_List<IntPolyh_Couple> IntPolyh_ListOfCouples;
-typedef IntPolyh_ListOfCouples::Iterator IntPolyh_ListIteratorOfListOfCouples;
 typedef IntPolyh_Array<IntPolyh_Point> IntPolyh_ArrayOfPoints;
+typedef IntPolyh_Array<IntPolyh_SectionLine> IntPolyh_ArrayOfSectionLines;
+typedef IntPolyh_Array<IntPolyh_StartPoint> IntPolyh_ArrayOfTangentZones;
+typedef IntPolyh_Array<IntPolyh_Triangle> IntPolyh_ArrayOfTriangles;
+typedef IntPolyh_ListOfCouples::Iterator IntPolyh_ListIteratorOfListOfCouples;
+typedef NCollection_List<IntPolyh_Couple> IntPolyh_ListOfCouples;
+typedef IntPolyh_MaillageAffinage * IntPolyh_PMaillageAffinage;
+typedef NCollection_Sequence<IntPolyh_StartPoint> IntPolyh_SeqOfStartPoints;
 /* end typedefs declaration */
 
 /***********************
@@ -100,6 +100,33 @@ typedef IntPolyh_Array<IntPolyh_Point> IntPolyh_ArrayOfPoints;
 ************************/
 class IntPolyh_Couple {
 	public:
+		/****************** IntPolyh_Couple ******************/
+		%feature("compactdefaultargs") IntPolyh_Couple;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") IntPolyh_Couple;
+		 IntPolyh_Couple();
+
+		/****************** IntPolyh_Couple ******************/
+		%feature("compactdefaultargs") IntPolyh_Couple;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+theTriangle1: int
+theTriangle2: int
+theAngle: float,optional
+	default value is -2.0
+
+Returns
+-------
+None
+") IntPolyh_Couple;
+		 IntPolyh_Couple(const Standard_Integer theTriangle1, const Standard_Integer theTriangle2, const Standard_Real theAngle = -2.0);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Returns the angle.
@@ -153,33 +180,6 @@ int
             return $self->HashCode(2147483647);
             }
         };
-
-		/****************** IntPolyh_Couple ******************/
-		%feature("compactdefaultargs") IntPolyh_Couple;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") IntPolyh_Couple;
-		 IntPolyh_Couple();
-
-		/****************** IntPolyh_Couple ******************/
-		%feature("compactdefaultargs") IntPolyh_Couple;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-theTriangle1: int
-theTriangle2: int
-theAngle: float,optional
-	default value is -2.0
-
-Returns
--------
-None
-") IntPolyh_Couple;
-		 IntPolyh_Couple(const Standard_Integer theTriangle1, const Standard_Integer theTriangle2, const Standard_Real theAngle = -2.0);
 
 		/****************** IsAnalyzed ******************/
 		%feature("compactdefaultargs") IsAnalyzed;
@@ -316,6 +316,33 @@ bool
 **********************/
 class IntPolyh_Edge {
 	public:
+		/****************** IntPolyh_Edge ******************/
+		%feature("compactdefaultargs") IntPolyh_Edge;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") IntPolyh_Edge;
+		 IntPolyh_Edge();
+
+		/****************** IntPolyh_Edge ******************/
+		%feature("compactdefaultargs") IntPolyh_Edge;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+thePoint1: int
+thePoint2: int
+theTriangle1: int
+theTriangle2: int
+
+Returns
+-------
+None
+") IntPolyh_Edge;
+		 IntPolyh_Edge(const Standard_Integer thePoint1, const Standard_Integer thePoint2, const Standard_Integer theTriangle1, const Standard_Integer theTriangle2);
+
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "No available documentation.
@@ -349,33 +376,6 @@ Returns
 int
 ") FirstTriangle;
 		Standard_Integer FirstTriangle();
-
-		/****************** IntPolyh_Edge ******************/
-		%feature("compactdefaultargs") IntPolyh_Edge;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") IntPolyh_Edge;
-		 IntPolyh_Edge();
-
-		/****************** IntPolyh_Edge ******************/
-		%feature("compactdefaultargs") IntPolyh_Edge;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-thePoint1: int
-thePoint2: int
-theTriangle1: int
-theTriangle2: int
-
-Returns
--------
-None
-") IntPolyh_Edge;
-		 IntPolyh_Edge(const Standard_Integer thePoint1, const Standard_Integer thePoint2, const Standard_Integer theTriangle1, const Standard_Integer theTriangle2);
 
 		/****************** SecondPoint ******************/
 		%feature("compactdefaultargs") SecondPoint;
@@ -467,51 +467,6 @@ None
 ******************************/
 class IntPolyh_Intersection {
 	public:
-		/****************** GetLinePoint ******************/
-		%feature("compactdefaultargs") GetLinePoint;
-		%feature("autodoc", "Gets the parameters of the point in section line.
-
-Parameters
-----------
-IndexLine: int
-IndexPoint: int
-x: float
-y: float
-z: float
-u1: float
-v1: float
-u2: float
-v2: float
-incidence: float
-
-Returns
--------
-None
-") GetLinePoint;
-		void GetLinePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
-		/****************** GetTangentZonePoint ******************/
-		%feature("compactdefaultargs") GetTangentZonePoint;
-		%feature("autodoc", "Gets the parameters of the point in tangent zone.
-
-Parameters
-----------
-IndexLine: int
-IndexPoint: int
-x: float
-y: float
-z: float
-u1: float
-v1: float
-u2: float
-v2: float
-
-Returns
--------
-None
-") GetTangentZonePoint;
-		void GetTangentZonePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
 		/****************** IntPolyh_Intersection ******************/
 		%feature("compactdefaultargs") IntPolyh_Intersection;
 		%feature("autodoc", "Constructor for intersection of two surfaces with default parameters. performs intersection.
@@ -564,6 +519,51 @@ Returns
 None
 ") IntPolyh_Intersection;
 		 IntPolyh_Intersection(const opencascade::handle<Adaptor3d_HSurface> & theS1, const TColStd_Array1OfReal & theUPars1, const TColStd_Array1OfReal & theVPars1, const opencascade::handle<Adaptor3d_HSurface> & theS2, const TColStd_Array1OfReal & theUPars2, const TColStd_Array1OfReal & theVPars2);
+
+		/****************** GetLinePoint ******************/
+		%feature("compactdefaultargs") GetLinePoint;
+		%feature("autodoc", "Gets the parameters of the point in section line.
+
+Parameters
+----------
+IndexLine: int
+IndexPoint: int
+x: float
+y: float
+z: float
+u1: float
+v1: float
+u2: float
+v2: float
+incidence: float
+
+Returns
+-------
+None
+") GetLinePoint;
+		void GetLinePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+
+		/****************** GetTangentZonePoint ******************/
+		%feature("compactdefaultargs") GetTangentZonePoint;
+		%feature("autodoc", "Gets the parameters of the point in tangent zone.
+
+Parameters
+----------
+IndexLine: int
+IndexPoint: int
+x: float
+y: float
+z: float
+u1: float
+v1: float
+u2: float
+v2: float
+
+Returns
+-------
+None
+") GetTangentZonePoint;
+		void GetTangentZonePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -640,6 +640,34 @@ int
 ***********************/
 class IntPolyh_Point {
 	public:
+		/****************** IntPolyh_Point ******************/
+		%feature("compactdefaultargs") IntPolyh_Point;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") IntPolyh_Point;
+		 IntPolyh_Point();
+
+		/****************** IntPolyh_Point ******************/
+		%feature("compactdefaultargs") IntPolyh_Point;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+x: float
+y: float
+z: float
+u: float
+v: float
+
+Returns
+-------
+None
+") IntPolyh_Point;
+		 IntPolyh_Point(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real u, const Standard_Real v);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Addition.
@@ -744,34 +772,6 @@ Returns
 None
 ") Equal;
 		void Equal(const IntPolyh_Point & Pt);
-
-		/****************** IntPolyh_Point ******************/
-		%feature("compactdefaultargs") IntPolyh_Point;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") IntPolyh_Point;
-		 IntPolyh_Point();
-
-		/****************** IntPolyh_Point ******************/
-		%feature("compactdefaultargs") IntPolyh_Point;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-x: float
-y: float
-z: float
-u: float
-v: float
-
-Returns
--------
-None
-") IntPolyh_Point;
-		 IntPolyh_Point(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real u, const Standard_Real v);
 
 		/****************** Middle ******************/
 		%feature("compactdefaultargs") Middle;
@@ -1105,6 +1105,30 @@ class IntPolyh_PointNormal {
 *****************************/
 class IntPolyh_SectionLine {
 	public:
+		/****************** IntPolyh_SectionLine ******************/
+		%feature("compactdefaultargs") IntPolyh_SectionLine;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") IntPolyh_SectionLine;
+		 IntPolyh_SectionLine();
+
+		/****************** IntPolyh_SectionLine ******************/
+		%feature("compactdefaultargs") IntPolyh_SectionLine;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+nn: int
+
+Returns
+-------
+None
+") IntPolyh_SectionLine;
+		 IntPolyh_SectionLine(const Standard_Integer nn);
+
 		/****************** ChangeValue ******************/
 		%feature("compactdefaultargs") ChangeValue;
 		%feature("autodoc", "No available documentation.
@@ -1187,30 +1211,6 @@ None
 ") Init;
 		void Init(const Standard_Integer nn);
 
-		/****************** IntPolyh_SectionLine ******************/
-		%feature("compactdefaultargs") IntPolyh_SectionLine;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") IntPolyh_SectionLine;
-		 IntPolyh_SectionLine();
-
-		/****************** IntPolyh_SectionLine ******************/
-		%feature("compactdefaultargs") IntPolyh_SectionLine;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-nn: int
-
-Returns
--------
-None
-") IntPolyh_SectionLine;
-		 IntPolyh_SectionLine(const Standard_Integer nn);
-
 		/****************** NbStartPoints ******************/
 		%feature("compactdefaultargs") NbStartPoints;
 		%feature("autodoc", "No available documentation.
@@ -1263,6 +1263,43 @@ IntPolyh_StartPoint
 ****************************/
 class IntPolyh_StartPoint {
 	public:
+		/****************** IntPolyh_StartPoint ******************/
+		%feature("compactdefaultargs") IntPolyh_StartPoint;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") IntPolyh_StartPoint;
+		 IntPolyh_StartPoint();
+
+		/****************** IntPolyh_StartPoint ******************/
+		%feature("compactdefaultargs") IntPolyh_StartPoint;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+xx: float
+yy: float
+zz: float
+uu1: float
+vv1: float
+uu2: float
+vv2: float
+T1: int
+E1: int
+LAM1: float
+T2: int
+E2: int
+LAM2: float
+List: int
+
+Returns
+-------
+None
+") IntPolyh_StartPoint;
+		 IntPolyh_StartPoint(const Standard_Real xx, const Standard_Real yy, const Standard_Real zz, const Standard_Real uu1, const Standard_Real vv1, const Standard_Real uu2, const Standard_Real vv2, const Standard_Integer T1, const Standard_Integer E1, const Standard_Real LAM1, const Standard_Integer T2, const Standard_Integer E2, const Standard_Real LAM2, const Standard_Integer List);
+
 		/****************** ChainList ******************/
 		%feature("compactdefaultargs") ChainList;
 		%feature("autodoc", "No available documentation.
@@ -1357,43 +1394,6 @@ Returns
 int
 ") GetEdgePoints;
 		Standard_Integer GetEdgePoints(const IntPolyh_Triangle & Triangle, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-
-		/****************** IntPolyh_StartPoint ******************/
-		%feature("compactdefaultargs") IntPolyh_StartPoint;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") IntPolyh_StartPoint;
-		 IntPolyh_StartPoint();
-
-		/****************** IntPolyh_StartPoint ******************/
-		%feature("compactdefaultargs") IntPolyh_StartPoint;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-xx: float
-yy: float
-zz: float
-uu1: float
-vv1: float
-uu2: float
-vv2: float
-T1: int
-E1: int
-LAM1: float
-T2: int
-E2: int
-LAM2: float
-List: int
-
-Returns
--------
-None
-") IntPolyh_StartPoint;
-		 IntPolyh_StartPoint(const Standard_Real xx, const Standard_Real yy, const Standard_Real zz, const Standard_Real uu1, const Standard_Real vv1, const Standard_Real uu2, const Standard_Real vv2, const Standard_Integer T1, const Standard_Integer E1, const Standard_Real LAM1, const Standard_Integer T2, const Standard_Integer E2, const Standard_Real LAM2, const Standard_Integer List);
 
 		/****************** Lambda1 ******************/
 		%feature("compactdefaultargs") Lambda1;
@@ -1746,6 +1746,32 @@ None
 **************************/
 class IntPolyh_Triangle {
 	public:
+		/****************** IntPolyh_Triangle ******************/
+		%feature("compactdefaultargs") IntPolyh_Triangle;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") IntPolyh_Triangle;
+		 IntPolyh_Triangle();
+
+		/****************** IntPolyh_Triangle ******************/
+		%feature("compactdefaultargs") IntPolyh_Triangle;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+thePoint1: int
+thePoint2: int
+thePoint3: int
+
+Returns
+-------
+None
+") IntPolyh_Triangle;
+		 IntPolyh_Triangle(const Standard_Integer thePoint1, const Standard_Integer thePoint2, const Standard_Integer thePoint3);
+
 		/****************** BoundingBox ******************/
 		%feature("compactdefaultargs") BoundingBox;
 		%feature("autodoc", "Returns the bounding box of the triangle.
@@ -1882,32 +1908,6 @@ Returns
 bool
 ") HasIntersection;
 		Standard_Boolean HasIntersection();
-
-		/****************** IntPolyh_Triangle ******************/
-		%feature("compactdefaultargs") IntPolyh_Triangle;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") IntPolyh_Triangle;
-		 IntPolyh_Triangle();
-
-		/****************** IntPolyh_Triangle ******************/
-		%feature("compactdefaultargs") IntPolyh_Triangle;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-thePoint1: int
-thePoint2: int
-thePoint3: int
-
-Returns
--------
-None
-") IntPolyh_Triangle;
-		 IntPolyh_Triangle(const Standard_Integer thePoint1, const Standard_Integer thePoint2, const Standard_Integer thePoint3);
 
 		/****************** IsDegenerated ******************/
 		%feature("compactdefaultargs") IsDegenerated;

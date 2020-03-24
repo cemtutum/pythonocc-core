@@ -41,9 +41,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_filletsurf.html"
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
-#include<Geom_module.hxx>
 #include<TopoDS_module.hxx>
 #include<TopTools_module.hxx>
+#include<Geom_module.hxx>
 #include<Geom2d_module.hxx>
 #include<ChFi3d_module.hxx>
 #include<TopoDS_module.hxx>
@@ -73,9 +73,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_filletsurf.html"
 %};
 %import Standard.i
 %import NCollection.i
-%import Geom.i
 %import TopoDS.i
 %import TopTools.i
+%import Geom.i
 %import Geom2d.i
 %import ChFi3d.i
 
@@ -144,6 +144,28 @@ class FilletSurf_ErrorTypeStatus:
 ***************************/
 class FilletSurf_Builder {
 	public:
+		/****************** FilletSurf_Builder ******************/
+		%feature("compactdefaultargs") FilletSurf_Builder;
+		%feature("autodoc", "Initialize of the informations necessary for the computation of the fillet on the shape s from a list of edges e and a radius r. //! ta is the angular tolerance tapp3d is the 3d approximation tolerance tapp2d is the 2d approximation tolerance.
+
+Parameters
+----------
+S: TopoDS_Shape
+E: TopTools_ListOfShape
+R: float
+Ta: float,optional
+	default value is 1.0e-2
+Tapp3d: float,optional
+	default value is 1.0e-4
+Tapp2d: float,optional
+	default value is 1.0e-5
+
+Returns
+-------
+None
+") FilletSurf_Builder;
+		 FilletSurf_Builder(const TopoDS_Shape & S, const TopTools_ListOfShape & E, const Standard_Real R, const Standard_Real Ta = 1.0e-2, const Standard_Real Tapp3d = 1.0e-4, const Standard_Real Tapp2d = 1.0e-5);
+
 		/****************** CurveOnFace1 ******************/
 		%feature("compactdefaultargs") CurveOnFace1;
 		%feature("autodoc", "Gives the 3d curve of surfacefillet(index) on supportface1(index).
@@ -181,28 +203,6 @@ Returns
 FilletSurf_StatusType
 ") EndSectionStatus;
 		FilletSurf_StatusType EndSectionStatus();
-
-		/****************** FilletSurf_Builder ******************/
-		%feature("compactdefaultargs") FilletSurf_Builder;
-		%feature("autodoc", "Initialize of the informations necessary for the computation of the fillet on the shape s from a list of edges e and a radius r. //! ta is the angular tolerance tapp3d is the 3d approximation tolerance tapp2d is the 2d approximation tolerance.
-
-Parameters
-----------
-S: TopoDS_Shape
-E: TopTools_ListOfShape
-R: float
-Ta: float,optional
-	default value is 1.0e-2
-Tapp3d: float,optional
-	default value is 1.0e-4
-Tapp2d: float,optional
-	default value is 1.0e-5
-
-Returns
--------
-None
-") FilletSurf_Builder;
-		 FilletSurf_Builder(const TopoDS_Shape & S, const TopTools_ListOfShape & E, const Standard_Real R, const Standard_Real Ta = 1.0e-2, const Standard_Real Tapp3d = 1.0e-4, const Standard_Real Tapp2d = 1.0e-5);
 
 		/****************** FirstParameter ******************/
 		%feature("compactdefaultargs") FirstParameter;
@@ -440,6 +440,28 @@ float
 ***********************************/
 class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 	public:
+		/****************** FilletSurf_InternalBuilder ******************/
+		%feature("compactdefaultargs") FilletSurf_InternalBuilder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+FShape: ChFi3d_FilletShape,optional
+	default value is ChFi3d_Polynomial
+Ta: float,optional
+	default value is 1.0e-2
+Tapp3d: float,optional
+	default value is 1.0e-4
+Tapp2d: float,optional
+	default value is 1.0e-5
+
+Returns
+-------
+None
+") FilletSurf_InternalBuilder;
+		 FilletSurf_InternalBuilder(const TopoDS_Shape & S, const ChFi3d_FilletShape FShape = ChFi3d_Polynomial, const Standard_Real Ta = 1.0e-2, const Standard_Real Tapp3d = 1.0e-4, const Standard_Real Tapp2d = 1.0e-5);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Initializes the contour with a list of edges 0 : no problem 1 : empty list 2 : the edges are not g1 3 : two connected faces on a same support are not g1 4 : the edge is not on shape 5 : notsharpedge: the edge is not sharp.
@@ -502,28 +524,6 @@ Returns
 FilletSurf_StatusType
 ") EndSectionStatus;
 		FilletSurf_StatusType EndSectionStatus();
-
-		/****************** FilletSurf_InternalBuilder ******************/
-		%feature("compactdefaultargs") FilletSurf_InternalBuilder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-FShape: ChFi3d_FilletShape,optional
-	default value is ChFi3d_Polynomial
-Ta: float,optional
-	default value is 1.0e-2
-Tapp3d: float,optional
-	default value is 1.0e-4
-Tapp2d: float,optional
-	default value is 1.0e-5
-
-Returns
--------
-None
-") FilletSurf_InternalBuilder;
-		 FilletSurf_InternalBuilder(const TopoDS_Shape & S, const ChFi3d_FilletShape FShape = ChFi3d_Polynomial, const Standard_Real Ta = 1.0e-2, const Standard_Real Tapp3d = 1.0e-4, const Standard_Real Tapp2d = 1.0e-5);
 
 		/****************** FirstParameter ******************/
 		%feature("compactdefaultargs") FirstParameter;

@@ -1192,16 +1192,6 @@ None
 ****************************/
 class BRepGProp_TFunction : public math_Function {
 	public:
-		/****************** AbsolutError ******************/
-		%feature("compactdefaultargs") AbsolutError;
-		%feature("autodoc", "Returns the absolut reached error of all values computation since the last call of getstatenumber method.
-
-Returns
--------
-float
-") AbsolutError;
-		Standard_Real AbsolutError();
-
 		/****************** BRepGProp_TFunction ******************/
 		%feature("compactdefaultargs") BRepGProp_TFunction;
 		%feature("autodoc", "Constructor. initializes the function with the face, the location point, the flag isbypoint, the coefficients thecoeff that have different meaning depending on the value of isbypoint. the last two parameters are theumin - the lower bound of the inner integral. this value is fixed for any integral. and the value of tolerance of inner integral computation. if isbypoint is equal to standard_true, the number of the coefficients is equal to 3 and they represent x, y and z coordinates (thecoeff[0], thecoeff[1] and thecoeff[2] correspondingly) of the shift if the inertia is computed with respect to the point different then the location. if isbypoint is equal to standard_false, the number of the coefficients is 4 and they represent the compbination of plane parameters and shift values.
@@ -1220,6 +1210,16 @@ Returns
 None
 ") BRepGProp_TFunction;
 		 BRepGProp_TFunction(const BRepGProp_Face & theSurface, const gp_Pnt & theVertex, const Standard_Boolean IsByPoint, const Standard_Address theCoeffs, const Standard_Real theUMin, const Standard_Real theTolerance);
+
+		/****************** AbsolutError ******************/
+		%feature("compactdefaultargs") AbsolutError;
+		%feature("autodoc", "Returns the absolut reached error of all values computation since the last call of getstatenumber method.
+
+Returns
+-------
+float
+") AbsolutError;
+		Standard_Real AbsolutError();
 
 		/****************** ErrorReached ******************/
 		%feature("compactdefaultargs") ErrorReached;

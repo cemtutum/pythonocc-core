@@ -101,114 +101,9 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(StepAP203_Array1OfPersonOrganizationItem) NCollection_Array1<StepAP203_PersonOrganizationItem>;
+%template(StepAP203_Array1OfApprovedItem) NCollection_Array1<StepAP203_ApprovedItem>;
 
-%extend NCollection_Array1<StepAP203_PersonOrganizationItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP203_Array1OfChangeRequestItem) NCollection_Array1<StepAP203_ChangeRequestItem>;
-
-%extend NCollection_Array1<StepAP203_ChangeRequestItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP203_Array1OfDateTimeItem) NCollection_Array1<StepAP203_DateTimeItem>;
-
-%extend NCollection_Array1<StepAP203_DateTimeItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP203_Array1OfStartRequestItem) NCollection_Array1<StepAP203_StartRequestItem>;
-
-%extend NCollection_Array1<StepAP203_StartRequestItem> {
+%extend NCollection_Array1<StepAP203_ApprovedItem> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -276,114 +171,9 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
-%template(StepAP203_Array1OfWorkItem) NCollection_Array1<StepAP203_WorkItem>;
+%template(StepAP203_Array1OfChangeRequestItem) NCollection_Array1<StepAP203_ChangeRequestItem>;
 
-%extend NCollection_Array1<StepAP203_WorkItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP203_Array1OfSpecifiedItem) NCollection_Array1<StepAP203_SpecifiedItem>;
-
-%extend NCollection_Array1<StepAP203_SpecifiedItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP203_Array1OfApprovedItem) NCollection_Array1<StepAP203_ApprovedItem>;
-
-%extend NCollection_Array1<StepAP203_ApprovedItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepAP203_Array1OfContractedItem) NCollection_Array1<StepAP203_ContractedItem>;
-
-%extend NCollection_Array1<StepAP203_ContractedItem> {
+%extend NCollection_Array1<StepAP203_ChangeRequestItem> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -451,19 +241,229 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
+%template(StepAP203_Array1OfContractedItem) NCollection_Array1<StepAP203_ContractedItem>;
+
+%extend NCollection_Array1<StepAP203_ContractedItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP203_Array1OfDateTimeItem) NCollection_Array1<StepAP203_DateTimeItem>;
+
+%extend NCollection_Array1<StepAP203_DateTimeItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP203_Array1OfPersonOrganizationItem) NCollection_Array1<StepAP203_PersonOrganizationItem>;
+
+%extend NCollection_Array1<StepAP203_PersonOrganizationItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP203_Array1OfSpecifiedItem) NCollection_Array1<StepAP203_SpecifiedItem>;
+
+%extend NCollection_Array1<StepAP203_SpecifiedItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP203_Array1OfStartRequestItem) NCollection_Array1<StepAP203_StartRequestItem>;
+
+%extend NCollection_Array1<StepAP203_StartRequestItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepAP203_Array1OfWorkItem) NCollection_Array1<StepAP203_WorkItem>;
+
+%extend NCollection_Array1<StepAP203_WorkItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Array1<StepAP203_PersonOrganizationItem> StepAP203_Array1OfPersonOrganizationItem;
-typedef NCollection_Array1<StepAP203_ChangeRequestItem> StepAP203_Array1OfChangeRequestItem;
-typedef NCollection_Array1<StepAP203_DateTimeItem> StepAP203_Array1OfDateTimeItem;
-typedef NCollection_Array1<StepAP203_StartRequestItem> StepAP203_Array1OfStartRequestItem;
-typedef NCollection_Array1<StepAP203_CertifiedItem> StepAP203_Array1OfCertifiedItem;
-typedef NCollection_Array1<StepAP203_WorkItem> StepAP203_Array1OfWorkItem;
-typedef NCollection_Array1<StepAP203_SpecifiedItem> StepAP203_Array1OfSpecifiedItem;
 typedef NCollection_Array1<StepAP203_ApprovedItem> StepAP203_Array1OfApprovedItem;
-typedef NCollection_Array1<StepAP203_ContractedItem> StepAP203_Array1OfContractedItem;
+typedef NCollection_Array1<StepAP203_CertifiedItem> StepAP203_Array1OfCertifiedItem;
+typedef NCollection_Array1<StepAP203_ChangeRequestItem> StepAP203_Array1OfChangeRequestItem;
 typedef NCollection_Array1<StepAP203_ClassifiedItem> StepAP203_Array1OfClassifiedItem;
+typedef NCollection_Array1<StepAP203_ContractedItem> StepAP203_Array1OfContractedItem;
+typedef NCollection_Array1<StepAP203_DateTimeItem> StepAP203_Array1OfDateTimeItem;
+typedef NCollection_Array1<StepAP203_PersonOrganizationItem> StepAP203_Array1OfPersonOrganizationItem;
+typedef NCollection_Array1<StepAP203_SpecifiedItem> StepAP203_Array1OfSpecifiedItem;
+typedef NCollection_Array1<StepAP203_StartRequestItem> StepAP203_Array1OfStartRequestItem;
+typedef NCollection_Array1<StepAP203_WorkItem> StepAP203_Array1OfWorkItem;
 /* end typedefs declaration */
 
 /*******************************
@@ -471,6 +471,16 @@ typedef NCollection_Array1<StepAP203_ClassifiedItem> StepAP203_Array1OfClassifie
 *******************************/
 class StepAP203_ApprovedItem : public StepData_SelectType {
 	public:
+		/****************** StepAP203_ApprovedItem ******************/
+		%feature("compactdefaultargs") StepAP203_ApprovedItem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_ApprovedItem;
+		 StepAP203_ApprovedItem();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of approveditem select type 1 -> productdefinitionformation from stepbasic 2 -> productdefinition from stepbasic 3 -> configurationeffectivity from steprepr 4 -> configurationitem from steprepr 5 -> securityclassification from stepbasic 6 -> changerequest from stepap203 7 -> change from stepap203 8 -> startrequest from stepap203 9 -> startwork from stepap203 10 -> certification from stepbasic 11 -> contract from stepbasic 0 else.
@@ -595,16 +605,6 @@ opencascade::handle<StepAP203_StartWork>
 ") StartWork;
 		opencascade::handle<StepAP203_StartWork> StartWork();
 
-		/****************** StepAP203_ApprovedItem ******************/
-		%feature("compactdefaultargs") StepAP203_ApprovedItem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_ApprovedItem;
-		 StepAP203_ApprovedItem();
-
 };
 
 
@@ -619,6 +619,16 @@ None
 ***********************************/
 class StepAP203_CcDesignApproval : public StepBasic_ApprovalAssignment {
 	public:
+		/****************** StepAP203_CcDesignApproval ******************/
+		%feature("compactdefaultargs") StepAP203_CcDesignApproval;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_CcDesignApproval;
+		 StepAP203_CcDesignApproval();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -658,16 +668,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP203_HArray1OfApprovedItem> & Items);
 
-		/****************** StepAP203_CcDesignApproval ******************/
-		%feature("compactdefaultargs") StepAP203_CcDesignApproval;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_CcDesignApproval;
-		 StepAP203_CcDesignApproval();
-
 };
 
 
@@ -684,6 +684,16 @@ None
 ****************************************/
 class StepAP203_CcDesignCertification : public StepBasic_CertificationAssignment {
 	public:
+		/****************** StepAP203_CcDesignCertification ******************/
+		%feature("compactdefaultargs") StepAP203_CcDesignCertification;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_CcDesignCertification;
+		 StepAP203_CcDesignCertification();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -723,16 +733,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP203_HArray1OfCertifiedItem> & Items);
 
-		/****************** StepAP203_CcDesignCertification ******************/
-		%feature("compactdefaultargs") StepAP203_CcDesignCertification;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_CcDesignCertification;
-		 StepAP203_CcDesignCertification();
-
 };
 
 
@@ -749,6 +749,16 @@ None
 ***********************************/
 class StepAP203_CcDesignContract : public StepBasic_ContractAssignment {
 	public:
+		/****************** StepAP203_CcDesignContract ******************/
+		%feature("compactdefaultargs") StepAP203_CcDesignContract;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_CcDesignContract;
+		 StepAP203_CcDesignContract();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -788,16 +798,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP203_HArray1OfContractedItem> & Items);
 
-		/****************** StepAP203_CcDesignContract ******************/
-		%feature("compactdefaultargs") StepAP203_CcDesignContract;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_CcDesignContract;
-		 StepAP203_CcDesignContract();
-
 };
 
 
@@ -814,6 +814,16 @@ None
 ************************************************/
 class StepAP203_CcDesignDateAndTimeAssignment : public StepBasic_DateAndTimeAssignment {
 	public:
+		/****************** StepAP203_CcDesignDateAndTimeAssignment ******************/
+		%feature("compactdefaultargs") StepAP203_CcDesignDateAndTimeAssignment;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_CcDesignDateAndTimeAssignment;
+		 StepAP203_CcDesignDateAndTimeAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -854,16 +864,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP203_HArray1OfDateTimeItem> & Items);
 
-		/****************** StepAP203_CcDesignDateAndTimeAssignment ******************/
-		%feature("compactdefaultargs") StepAP203_CcDesignDateAndTimeAssignment;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_CcDesignDateAndTimeAssignment;
-		 StepAP203_CcDesignDateAndTimeAssignment();
-
 };
 
 
@@ -880,6 +880,16 @@ None
 **********************************************************/
 class StepAP203_CcDesignPersonAndOrganizationAssignment : public StepBasic_PersonAndOrganizationAssignment {
 	public:
+		/****************** StepAP203_CcDesignPersonAndOrganizationAssignment ******************/
+		%feature("compactdefaultargs") StepAP203_CcDesignPersonAndOrganizationAssignment;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_CcDesignPersonAndOrganizationAssignment;
+		 StepAP203_CcDesignPersonAndOrganizationAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -920,16 +930,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP203_HArray1OfPersonOrganizationItem> & Items);
 
-		/****************** StepAP203_CcDesignPersonAndOrganizationAssignment ******************/
-		%feature("compactdefaultargs") StepAP203_CcDesignPersonAndOrganizationAssignment;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_CcDesignPersonAndOrganizationAssignment;
-		 StepAP203_CcDesignPersonAndOrganizationAssignment();
-
 };
 
 
@@ -946,6 +946,16 @@ None
 *************************************************/
 class StepAP203_CcDesignSecurityClassification : public StepBasic_SecurityClassificationAssignment {
 	public:
+		/****************** StepAP203_CcDesignSecurityClassification ******************/
+		%feature("compactdefaultargs") StepAP203_CcDesignSecurityClassification;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_CcDesignSecurityClassification;
+		 StepAP203_CcDesignSecurityClassification();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -985,16 +995,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP203_HArray1OfClassifiedItem> & Items);
 
-		/****************** StepAP203_CcDesignSecurityClassification ******************/
-		%feature("compactdefaultargs") StepAP203_CcDesignSecurityClassification;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_CcDesignSecurityClassification;
-		 StepAP203_CcDesignSecurityClassification();
-
 };
 
 
@@ -1011,6 +1011,16 @@ None
 *************************************************/
 class StepAP203_CcDesignSpecificationReference : public StepBasic_DocumentReference {
 	public:
+		/****************** StepAP203_CcDesignSpecificationReference ******************/
+		%feature("compactdefaultargs") StepAP203_CcDesignSpecificationReference;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_CcDesignSpecificationReference;
+		 StepAP203_CcDesignSpecificationReference();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -1051,16 +1061,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP203_HArray1OfSpecifiedItem> & Items);
 
-		/****************** StepAP203_CcDesignSpecificationReference ******************/
-		%feature("compactdefaultargs") StepAP203_CcDesignSpecificationReference;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_CcDesignSpecificationReference;
-		 StepAP203_CcDesignSpecificationReference();
-
 };
 
 
@@ -1077,6 +1077,16 @@ None
 ********************************/
 class StepAP203_CertifiedItem : public StepData_SelectType {
 	public:
+		/****************** StepAP203_CertifiedItem ******************/
+		%feature("compactdefaultargs") StepAP203_CertifiedItem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_CertifiedItem;
+		 StepAP203_CertifiedItem();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of certifieditem select type 1 -> suppliedpartrelationship from steprepr 0 else.
@@ -1090,16 +1100,6 @@ Returns
 int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
-
-		/****************** StepAP203_CertifiedItem ******************/
-		%feature("compactdefaultargs") StepAP203_CertifiedItem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_CertifiedItem;
-		 StepAP203_CertifiedItem();
 
 		/****************** SuppliedPartRelationship ******************/
 		%feature("compactdefaultargs") SuppliedPartRelationship;
@@ -1125,6 +1125,16 @@ opencascade::handle<StepRepr_SuppliedPartRelationship>
 *************************/
 class StepAP203_Change : public StepBasic_ActionAssignment {
 	public:
+		/****************** StepAP203_Change ******************/
+		%feature("compactdefaultargs") StepAP203_Change;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_Change;
+		 StepAP203_Change();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -1164,16 +1174,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP203_HArray1OfWorkItem> & Items);
 
-		/****************** StepAP203_Change ******************/
-		%feature("compactdefaultargs") StepAP203_Change;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_Change;
-		 StepAP203_Change();
-
 };
 
 
@@ -1190,6 +1190,16 @@ None
 ********************************/
 class StepAP203_ChangeRequest : public StepBasic_ActionRequestAssignment {
 	public:
+		/****************** StepAP203_ChangeRequest ******************/
+		%feature("compactdefaultargs") StepAP203_ChangeRequest;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_ChangeRequest;
+		 StepAP203_ChangeRequest();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -1229,16 +1239,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP203_HArray1OfChangeRequestItem> & Items);
 
-		/****************** StepAP203_ChangeRequest ******************/
-		%feature("compactdefaultargs") StepAP203_ChangeRequest;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_ChangeRequest;
-		 StepAP203_ChangeRequest();
-
 };
 
 
@@ -1255,6 +1255,16 @@ None
 ************************************/
 class StepAP203_ChangeRequestItem : public StepData_SelectType {
 	public:
+		/****************** StepAP203_ChangeRequestItem ******************/
+		%feature("compactdefaultargs") StepAP203_ChangeRequestItem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_ChangeRequestItem;
+		 StepAP203_ChangeRequestItem();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of changerequestitem select type 1 -> productdefinitionformation from stepbasic 0 else.
@@ -1279,16 +1289,6 @@ opencascade::handle<StepBasic_ProductDefinitionFormation>
 ") ProductDefinitionFormation;
 		opencascade::handle<StepBasic_ProductDefinitionFormation> ProductDefinitionFormation();
 
-		/****************** StepAP203_ChangeRequestItem ******************/
-		%feature("compactdefaultargs") StepAP203_ChangeRequestItem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_ChangeRequestItem;
-		 StepAP203_ChangeRequestItem();
-
 };
 
 
@@ -1303,6 +1303,16 @@ None
 *********************************/
 class StepAP203_ClassifiedItem : public StepData_SelectType {
 	public:
+		/****************** StepAP203_ClassifiedItem ******************/
+		%feature("compactdefaultargs") StepAP203_ClassifiedItem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_ClassifiedItem;
+		 StepAP203_ClassifiedItem();
+
 		/****************** AssemblyComponentUsage ******************/
 		%feature("compactdefaultargs") AssemblyComponentUsage;
 		%feature("autodoc", "Returns value as assemblycomponentusage (or null if another type).
@@ -1337,16 +1347,6 @@ opencascade::handle<StepBasic_ProductDefinitionFormation>
 ") ProductDefinitionFormation;
 		opencascade::handle<StepBasic_ProductDefinitionFormation> ProductDefinitionFormation();
 
-		/****************** StepAP203_ClassifiedItem ******************/
-		%feature("compactdefaultargs") StepAP203_ClassifiedItem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_ClassifiedItem;
-		 StepAP203_ClassifiedItem();
-
 };
 
 
@@ -1361,6 +1361,16 @@ None
 *********************************/
 class StepAP203_ContractedItem : public StepData_SelectType {
 	public:
+		/****************** StepAP203_ContractedItem ******************/
+		%feature("compactdefaultargs") StepAP203_ContractedItem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_ContractedItem;
+		 StepAP203_ContractedItem();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of contracteditem select type 1 -> productdefinitionformation from stepbasic 0 else.
@@ -1385,16 +1395,6 @@ opencascade::handle<StepBasic_ProductDefinitionFormation>
 ") ProductDefinitionFormation;
 		opencascade::handle<StepBasic_ProductDefinitionFormation> ProductDefinitionFormation();
 
-		/****************** StepAP203_ContractedItem ******************/
-		%feature("compactdefaultargs") StepAP203_ContractedItem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_ContractedItem;
-		 StepAP203_ContractedItem();
-
 };
 
 
@@ -1409,6 +1409,16 @@ None
 *******************************/
 class StepAP203_DateTimeItem : public StepData_SelectType {
 	public:
+		/****************** StepAP203_DateTimeItem ******************/
+		%feature("compactdefaultargs") StepAP203_DateTimeItem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_DateTimeItem;
+		 StepAP203_DateTimeItem();
+
 		/****************** ApprovalPersonOrganization ******************/
 		%feature("compactdefaultargs") ApprovalPersonOrganization;
 		%feature("autodoc", "Returns value as approvalpersonorganization (or null if another type).
@@ -1513,16 +1523,6 @@ opencascade::handle<StepAP203_StartWork>
 ") StartWork;
 		opencascade::handle<StepAP203_StartWork> StartWork();
 
-		/****************** StepAP203_DateTimeItem ******************/
-		%feature("compactdefaultargs") StepAP203_DateTimeItem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_DateTimeItem;
-		 StepAP203_DateTimeItem();
-
 };
 
 
@@ -1537,6 +1537,16 @@ None
 *****************************************/
 class StepAP203_PersonOrganizationItem : public StepData_SelectType {
 	public:
+		/****************** StepAP203_PersonOrganizationItem ******************/
+		%feature("compactdefaultargs") StepAP203_PersonOrganizationItem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_PersonOrganizationItem;
+		 StepAP203_PersonOrganizationItem();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of personorganizationitem select type 1 -> change from stepap203 2 -> startwork from stepap203 3 -> changerequest from stepap203 4 -> startrequest from stepap203 5 -> configurationitem from steprepr 6 -> product from stepbasic 7 -> productdefinitionformation from stepbasic 8 -> productdefinition from stepbasic 9 -> contract from stepbasic 10 -> securityclassification from stepbasic 0 else.
@@ -1651,16 +1661,6 @@ opencascade::handle<StepAP203_StartWork>
 ") StartWork;
 		opencascade::handle<StepAP203_StartWork> StartWork();
 
-		/****************** StepAP203_PersonOrganizationItem ******************/
-		%feature("compactdefaultargs") StepAP203_PersonOrganizationItem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_PersonOrganizationItem;
-		 StepAP203_PersonOrganizationItem();
-
 };
 
 
@@ -1675,6 +1675,16 @@ None
 ********************************/
 class StepAP203_SpecifiedItem : public StepData_SelectType {
 	public:
+		/****************** StepAP203_SpecifiedItem ******************/
+		%feature("compactdefaultargs") StepAP203_SpecifiedItem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_SpecifiedItem;
+		 StepAP203_SpecifiedItem();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of specifieditem select type 1 -> productdefinition from stepbasic 2 -> shapeaspect from steprepr 0 else.
@@ -1709,16 +1719,6 @@ opencascade::handle<StepRepr_ShapeAspect>
 ") ShapeAspect;
 		opencascade::handle<StepRepr_ShapeAspect> ShapeAspect();
 
-		/****************** StepAP203_SpecifiedItem ******************/
-		%feature("compactdefaultargs") StepAP203_SpecifiedItem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_SpecifiedItem;
-		 StepAP203_SpecifiedItem();
-
 };
 
 
@@ -1733,6 +1733,16 @@ None
 *******************************/
 class StepAP203_StartRequest : public StepBasic_ActionRequestAssignment {
 	public:
+		/****************** StepAP203_StartRequest ******************/
+		%feature("compactdefaultargs") StepAP203_StartRequest;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_StartRequest;
+		 StepAP203_StartRequest();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -1772,16 +1782,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP203_HArray1OfStartRequestItem> & Items);
 
-		/****************** StepAP203_StartRequest ******************/
-		%feature("compactdefaultargs") StepAP203_StartRequest;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_StartRequest;
-		 StepAP203_StartRequest();
-
 };
 
 
@@ -1798,6 +1798,16 @@ None
 ***********************************/
 class StepAP203_StartRequestItem : public StepData_SelectType {
 	public:
+		/****************** StepAP203_StartRequestItem ******************/
+		%feature("compactdefaultargs") StepAP203_StartRequestItem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_StartRequestItem;
+		 StepAP203_StartRequestItem();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of startrequestitem select type 1 -> productdefinitionformation from stepbasic 0 else.
@@ -1822,16 +1832,6 @@ opencascade::handle<StepBasic_ProductDefinitionFormation>
 ") ProductDefinitionFormation;
 		opencascade::handle<StepBasic_ProductDefinitionFormation> ProductDefinitionFormation();
 
-		/****************** StepAP203_StartRequestItem ******************/
-		%feature("compactdefaultargs") StepAP203_StartRequestItem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_StartRequestItem;
-		 StepAP203_StartRequestItem();
-
 };
 
 
@@ -1846,6 +1846,16 @@ None
 ****************************/
 class StepAP203_StartWork : public StepBasic_ActionAssignment {
 	public:
+		/****************** StepAP203_StartWork ******************/
+		%feature("compactdefaultargs") StepAP203_StartWork;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_StartWork;
+		 StepAP203_StartWork();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -1885,16 +1895,6 @@ None
 ") SetItems;
 		void SetItems(const opencascade::handle<StepAP203_HArray1OfWorkItem> & Items);
 
-		/****************** StepAP203_StartWork ******************/
-		%feature("compactdefaultargs") StepAP203_StartWork;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_StartWork;
-		 StepAP203_StartWork();
-
 };
 
 
@@ -1911,6 +1911,16 @@ None
 ***************************/
 class StepAP203_WorkItem : public StepData_SelectType {
 	public:
+		/****************** StepAP203_WorkItem ******************/
+		%feature("compactdefaultargs") StepAP203_WorkItem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepAP203_WorkItem;
+		 StepAP203_WorkItem();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of workitem select type 1 -> productdefinitionformation from stepbasic 0 else.
@@ -1934,16 +1944,6 @@ Returns
 opencascade::handle<StepBasic_ProductDefinitionFormation>
 ") ProductDefinitionFormation;
 		opencascade::handle<StepBasic_ProductDefinitionFormation> ProductDefinitionFormation();
-
-		/****************** StepAP203_WorkItem ******************/
-		%feature("compactdefaultargs") StepAP203_WorkItem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepAP203_WorkItem;
-		 StepAP203_WorkItem();
 
 };
 

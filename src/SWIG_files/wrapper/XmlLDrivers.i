@@ -173,6 +173,16 @@ int
 ********************************************/
 class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	public:
+		/****************** XmlLDrivers_DocumentRetrievalDriver ******************/
+		%feature("compactdefaultargs") XmlLDrivers_DocumentRetrievalDriver;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XmlLDrivers_DocumentRetrievalDriver;
+		 XmlLDrivers_DocumentRetrievalDriver();
+
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "No available documentation.
@@ -213,16 +223,6 @@ None
 ") Read;
 		virtual void Read(const TCollection_ExtendedString & theFileName, const opencascade::handle<CDM_Document> & theNewDocument, const opencascade::handle<CDM_Application> & theApplication);
 
-		/****************** XmlLDrivers_DocumentRetrievalDriver ******************/
-		%feature("compactdefaultargs") XmlLDrivers_DocumentRetrievalDriver;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XmlLDrivers_DocumentRetrievalDriver;
-		 XmlLDrivers_DocumentRetrievalDriver();
-
 };
 
 
@@ -239,6 +239,20 @@ None
 ******************************************/
 class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 	public:
+		/****************** XmlLDrivers_DocumentStorageDriver ******************/
+		%feature("compactdefaultargs") XmlLDrivers_DocumentStorageDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theCopyright: TCollection_ExtendedString
+
+Returns
+-------
+None
+") XmlLDrivers_DocumentStorageDriver;
+		 XmlLDrivers_DocumentStorageDriver(const TCollection_ExtendedString & theCopyright);
+
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "No available documentation.
@@ -268,20 +282,6 @@ None
 ") Write;
 		virtual void Write(const opencascade::handle<CDM_Document> & theDocument, const TCollection_ExtendedString & theFileName);
 
-		/****************** XmlLDrivers_DocumentStorageDriver ******************/
-		%feature("compactdefaultargs") XmlLDrivers_DocumentStorageDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theCopyright: TCollection_ExtendedString
-
-Returns
--------
-None
-") XmlLDrivers_DocumentStorageDriver;
-		 XmlLDrivers_DocumentStorageDriver(const TCollection_ExtendedString & theCopyright);
-
 };
 
 
@@ -298,26 +298,6 @@ None
 *********************************/
 class XmlLDrivers_NamespaceDef {
 	public:
-		/****************** Prefix ******************/
-		%feature("compactdefaultargs") Prefix;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TCollection_AsciiString
-") Prefix;
-		const TCollection_AsciiString & Prefix();
-
-		/****************** URI ******************/
-		%feature("compactdefaultargs") URI;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TCollection_AsciiString
-") URI;
-		const TCollection_AsciiString & URI();
-
 		/****************** XmlLDrivers_NamespaceDef ******************/
 		%feature("compactdefaultargs") XmlLDrivers_NamespaceDef;
 		%feature("autodoc", "No available documentation.
@@ -342,6 +322,26 @@ Returns
 None
 ") XmlLDrivers_NamespaceDef;
 		 XmlLDrivers_NamespaceDef(const TCollection_AsciiString & thePrefix, const TCollection_AsciiString & theURI);
+
+		/****************** Prefix ******************/
+		%feature("compactdefaultargs") Prefix;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_AsciiString
+") Prefix;
+		const TCollection_AsciiString & Prefix();
+
+		/****************** URI ******************/
+		%feature("compactdefaultargs") URI;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_AsciiString
+") URI;
+		const TCollection_AsciiString & URI();
 
 };
 

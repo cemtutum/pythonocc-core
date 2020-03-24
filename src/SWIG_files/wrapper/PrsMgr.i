@@ -118,15 +118,15 @@ class PrsMgr_TypeOfPresentation3d:
 /* end templates declaration */
 
 /* typedefs */
+typedef Handle_PrsMgr_Presentation Handle_PrsMgr_Presentation3d;
+typedef Handle_PrsMgr_PresentationManager Handle_PrsMgr_PresentationManager3d;
+typedef Graphic3d_Structure Prs3d_Presentation;
 typedef NCollection_List<opencascade::handle<PrsMgr_PresentableObject>> PrsMgr_ListOfPresentableObjects;
 typedef NCollection_List<opencascade::handle<PrsMgr_PresentableObject>>::Iterator PrsMgr_ListOfPresentableObjectsIter;
-typedef PrsMgr_Presentation PrsMgr_Presentation3d;
-typedef Handle_PrsMgr_Presentation Handle_PrsMgr_Presentation3d;
-typedef PrsMgr_PresentationManager PrsMgr_PresentationManager3d;
-typedef Handle_PrsMgr_PresentationManager Handle_PrsMgr_PresentationManager3d;
 typedef NCollection_List<opencascade::handle<Prs3d_Presentation>> PrsMgr_ListOfPresentations;
+typedef PrsMgr_Presentation PrsMgr_Presentation3d;
+typedef PrsMgr_PresentationManager PrsMgr_PresentationManager3d;
 typedef NCollection_Sequence<opencascade::handle<PrsMgr_Presentation>> PrsMgr_Presentations;
-typedef Graphic3d_Structure Prs3d_Presentation;
 /* end typedefs declaration */
 
 /*********************************
@@ -1316,6 +1316,20 @@ None
 ***********************************/
 class PrsMgr_PresentationManager : public Standard_Transient {
 	public:
+		/****************** PrsMgr_PresentationManager ******************/
+		%feature("compactdefaultargs") PrsMgr_PresentationManager;
+		%feature("autodoc", "Creates a framework to manage displays and graphic entities with the 3d view thestructuremanager.
+
+Parameters
+----------
+theStructureManager: Graphic3d_StructureManager
+
+Returns
+-------
+None
+") PrsMgr_PresentationManager;
+		 PrsMgr_PresentationManager(const opencascade::handle<Graphic3d_StructureManager> & theStructureManager);
+
 		/****************** AddToImmediateList ******************/
 		%feature("compactdefaultargs") AddToImmediateList;
 		%feature("autodoc", "Stores theprs in the transient list of presentations to be displayed in immediate mode. will be taken in account in endimmediatedraw method.
@@ -1558,20 +1572,6 @@ Returns
 opencascade::handle<PrsMgr_Presentation>
 ") Presentation;
 		opencascade::handle<PrsMgr_Presentation> Presentation(const opencascade::handle<PrsMgr_PresentableObject> & thePrsObject, const Standard_Integer theMode = 0, const Standard_Boolean theToCreate = Standard_False, const opencascade::handle<PrsMgr_PresentableObject> & theSelObj = NULL);
-
-		/****************** PrsMgr_PresentationManager ******************/
-		%feature("compactdefaultargs") PrsMgr_PresentationManager;
-		%feature("autodoc", "Creates a framework to manage displays and graphic entities with the 3d view thestructuremanager.
-
-Parameters
-----------
-theStructureManager: Graphic3d_StructureManager
-
-Returns
--------
-None
-") PrsMgr_PresentationManager;
-		 PrsMgr_PresentationManager(const opencascade::handle<Graphic3d_StructureManager> & theStructureManager);
 
 		/****************** RedrawImmediate ******************/
 		%feature("compactdefaultargs") RedrawImmediate;

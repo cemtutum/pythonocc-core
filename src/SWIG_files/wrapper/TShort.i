@@ -69,8 +69,6 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(TShort_SequenceOfShortReal) NCollection_Sequence<Standard_ShortReal>;
-%template(TShort_Array2OfShortReal) NCollection_Array2<Standard_ShortReal>;
 %template(TShort_Array1OfShortReal) NCollection_Array1<Standard_ShortReal>;
 
 %extend NCollection_Array1<Standard_ShortReal> {
@@ -106,12 +104,14 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
+%template(TShort_Array2OfShortReal) NCollection_Array2<Standard_ShortReal>;
+%template(TShort_SequenceOfShortReal) NCollection_Sequence<Standard_ShortReal>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<Standard_ShortReal> TShort_SequenceOfShortReal;
-typedef NCollection_Array2<Standard_ShortReal> TShort_Array2OfShortReal;
 typedef NCollection_Array1<Standard_ShortReal> TShort_Array1OfShortReal;
+typedef NCollection_Array2<Standard_ShortReal> TShort_Array2OfShortReal;
+typedef NCollection_Sequence<Standard_ShortReal> TShort_SequenceOfShortReal;
 /* end typedefs declaration */
 
 /* harray1 classes */

@@ -79,7 +79,6 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(Poly_ListOfTriangulation) NCollection_List<opencascade::handle<Poly_Triangulation>>;
 %template(Poly_Array1OfTriangle) NCollection_Array1<Poly_Triangle>;
 
 %extend NCollection_Array1<Poly_Triangle> {
@@ -115,14 +114,15 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
+%template(Poly_ListOfTriangulation) NCollection_List<opencascade::handle<Poly_Triangulation>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List<opencascade::handle<Poly_Triangulation>> Poly_ListOfTriangulation;
 typedef NCollection_Array1<Poly_Triangle> Poly_Array1OfTriangle;
-typedef NCollection_Vector<Poly_CoherentTriangle>::Iterator Poly_BaseIteratorOfCoherentTriangle;
-typedef NCollection_Vector<Poly_CoherentNode>::Iterator Poly_BaseIteratorOfCoherentNode;
 typedef NCollection_Vector<Poly_CoherentLink>::Iterator Poly_BaseIteratorOfCoherentLink;
+typedef NCollection_Vector<Poly_CoherentNode>::Iterator Poly_BaseIteratorOfCoherentNode;
+typedef NCollection_Vector<Poly_CoherentTriangle>::Iterator Poly_BaseIteratorOfCoherentTriangle;
+typedef NCollection_List<opencascade::handle<Poly_Triangulation>> Poly_ListOfTriangulation;
 /* end typedefs declaration */
 
 /*************
@@ -216,6 +216,46 @@ float
 **************************/
 class Poly_CoherentLink {
 	public:
+		/****************** Poly_CoherentLink ******************/
+		%feature("compactdefaultargs") Poly_CoherentLink;
+		%feature("autodoc", "/** * empty constructor. */.
+
+Returns
+-------
+None
+") Poly_CoherentLink;
+		 Poly_CoherentLink();
+
+		/****************** Poly_CoherentLink ******************/
+		%feature("compactdefaultargs") Poly_CoherentLink;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+iNode0: int
+iNode1: int
+
+Returns
+-------
+None
+") Poly_CoherentLink;
+		 Poly_CoherentLink(const Standard_Integer iNode0, const Standard_Integer iNode1);
+
+		/****************** Poly_CoherentLink ******************/
+		%feature("compactdefaultargs") Poly_CoherentLink;
+		%feature("autodoc", "/** * constructor, takes a triangle and a side. a link is created always such * that mynode[0] < mynode[1]. unlike the previous constructor, this one * assigns the 'opposite node' fields. this constructor is used when a * link is inserted into a poly_coherenttriangulation structure. * @param thetri * triangle containing the link that is created * @param iside * can be 0, 1 or 2. index of the node */.
+
+Parameters
+----------
+theTri: Poly_CoherentTriangle
+iSide: int
+
+Returns
+-------
+None
+") Poly_CoherentLink;
+		 Poly_CoherentLink(const Poly_CoherentTriangle & theTri, Standard_Integer iSide);
+
 		/****************** GetAttribute ******************/
 		%feature("compactdefaultargs") GetAttribute;
 		%feature("autodoc", "/** * query the attribute of the link. */.
@@ -274,46 +314,6 @@ int
 ") OppositeNode;
 		Standard_Integer OppositeNode(const Standard_Integer ind);
 
-		/****************** Poly_CoherentLink ******************/
-		%feature("compactdefaultargs") Poly_CoherentLink;
-		%feature("autodoc", "/** * empty constructor. */.
-
-Returns
--------
-None
-") Poly_CoherentLink;
-		 Poly_CoherentLink();
-
-		/****************** Poly_CoherentLink ******************/
-		%feature("compactdefaultargs") Poly_CoherentLink;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-iNode0: int
-iNode1: int
-
-Returns
--------
-None
-") Poly_CoherentLink;
-		 Poly_CoherentLink(const Standard_Integer iNode0, const Standard_Integer iNode1);
-
-		/****************** Poly_CoherentLink ******************/
-		%feature("compactdefaultargs") Poly_CoherentLink;
-		%feature("autodoc", "/** * constructor, takes a triangle and a side. a link is created always such * that mynode[0] < mynode[1]. unlike the previous constructor, this one * assigns the 'opposite node' fields. this constructor is used when a * link is inserted into a poly_coherenttriangulation structure. * @param thetri * triangle containing the link that is created * @param iside * can be 0, 1 or 2. index of the node */.
-
-Parameters
-----------
-theTri: Poly_CoherentTriangle
-iSide: int
-
-Returns
--------
-None
-") Poly_CoherentLink;
-		 Poly_CoherentLink(const Poly_CoherentTriangle & theTri, Standard_Integer iSide);
-
 		/****************** SetAttribute ******************/
 		%feature("compactdefaultargs") SetAttribute;
 		%feature("autodoc", "/** * set the attribute of the link. */.
@@ -342,6 +342,30 @@ None
 **************************/
 class Poly_CoherentNode : public gp_XYZ {
 	public:
+		/****************** Poly_CoherentNode ******************/
+		%feature("compactdefaultargs") Poly_CoherentNode;
+		%feature("autodoc", "/** * empty constructor. */.
+
+Returns
+-------
+None
+") Poly_CoherentNode;
+		 Poly_CoherentNode();
+
+		/****************** Poly_CoherentNode ******************/
+		%feature("compactdefaultargs") Poly_CoherentNode;
+		%feature("autodoc", "/** * constructor. */.
+
+Parameters
+----------
+thePnt: gp_XYZ
+
+Returns
+-------
+None
+") Poly_CoherentNode;
+		 Poly_CoherentNode(const gp_XYZ & thePnt);
+
 		/****************** AddTriangle ******************/
 		%feature("compactdefaultargs") AddTriangle;
 		%feature("autodoc", "/** * connect a triangle to this node. */.
@@ -439,30 +463,6 @@ bool
 ") IsFreeNode;
 		Standard_Boolean IsFreeNode();
 
-		/****************** Poly_CoherentNode ******************/
-		%feature("compactdefaultargs") Poly_CoherentNode;
-		%feature("autodoc", "/** * empty constructor. */.
-
-Returns
--------
-None
-") Poly_CoherentNode;
-		 Poly_CoherentNode();
-
-		/****************** Poly_CoherentNode ******************/
-		%feature("compactdefaultargs") Poly_CoherentNode;
-		%feature("autodoc", "/** * constructor. */.
-
-Parameters
-----------
-thePnt: gp_XYZ
-
-Returns
--------
-None
-") Poly_CoherentNode;
-		 Poly_CoherentNode(const gp_XYZ & thePnt);
-
 		/****************** RemoveTriangle ******************/
 		%feature("compactdefaultargs") RemoveTriangle;
 		%feature("autodoc", "/** * disconnect a triangle from this node. */.
@@ -548,6 +548,32 @@ Poly_CoherentTriPtr::Iterator
 ******************************/
 class Poly_CoherentTriangle {
 	public:
+		/****************** Poly_CoherentTriangle ******************/
+		%feature("compactdefaultargs") Poly_CoherentTriangle;
+		%feature("autodoc", "/** * empty constructor. */.
+
+Returns
+-------
+None
+") Poly_CoherentTriangle;
+		 Poly_CoherentTriangle();
+
+		/****************** Poly_CoherentTriangle ******************/
+		%feature("compactdefaultargs") Poly_CoherentTriangle;
+		%feature("autodoc", "/** * constructor. */.
+
+Parameters
+----------
+iNode0: int
+iNode1: int
+iNode2: int
+
+Returns
+-------
+None
+") Poly_CoherentTriangle;
+		 Poly_CoherentTriangle(const Standard_Integer iNode0, const Standard_Integer iNode1, const Standard_Integer iNode2);
+
 		/****************** FindConnection ******************/
 		%feature("compactdefaultargs") FindConnection;
 		%feature("autodoc", "/** * retuns the index of the connection with the given triangle, or -1 if not * found. */.
@@ -638,32 +664,6 @@ int
 ") Node;
 		Standard_Integer Node(const Standard_Integer ind);
 
-		/****************** Poly_CoherentTriangle ******************/
-		%feature("compactdefaultargs") Poly_CoherentTriangle;
-		%feature("autodoc", "/** * empty constructor. */.
-
-Returns
--------
-None
-") Poly_CoherentTriangle;
-		 Poly_CoherentTriangle();
-
-		/****************** Poly_CoherentTriangle ******************/
-		%feature("compactdefaultargs") Poly_CoherentTriangle;
-		%feature("autodoc", "/** * constructor. */.
-
-Parameters
-----------
-iNode0: int
-iNode1: int
-iNode2: int
-
-Returns
--------
-None
-") Poly_CoherentTriangle;
-		 Poly_CoherentTriangle(const Standard_Integer iNode0, const Standard_Integer iNode1, const Standard_Integer iNode2);
-
 		/****************** RemoveConnection ******************/
 		%feature("compactdefaultargs") RemoveConnection;
 		%feature("autodoc", "/** * remove the connection with the given index. * @param iconn * can be 0, 1 or 2 - index of the node that is opposite to the connection * (shared link). */.
@@ -738,6 +738,30 @@ bool
 *********************/
 class Poly_Connect {
 	public:
+		/****************** Poly_Connect ******************/
+		%feature("compactdefaultargs") Poly_Connect;
+		%feature("autodoc", "Constructs an uninitialized algorithm.
+
+Returns
+-------
+None
+") Poly_Connect;
+		 Poly_Connect();
+
+		/****************** Poly_Connect ******************/
+		%feature("compactdefaultargs") Poly_Connect;
+		%feature("autodoc", "Constructs an algorithm to explore the adjacency data of nodes or triangles for the triangulation t.
+
+Parameters
+----------
+theTriangulation: Poly_Triangulation
+
+Returns
+-------
+None
+") Poly_Connect;
+		 Poly_Connect(const opencascade::handle<Poly_Triangulation> & theTriangulation);
+
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initializes an iterator to search for all the triangles containing the node referenced at index n in the nodes table, for the triangulation analyzed by this tool. the iterator is managed by the following functions: - more, which checks if there are still elements in the iterator - next, which positions the iterator on the next element - value, which returns the current element. the use of such an iterator provides direct access to the triangles around a particular node, i.e. it avoids iterating on all the component triangles of a triangulation. example poly_connect c(tr); for (c.initialize(n1);c.more();c.next()) { t = c.value(); }.
@@ -802,30 +826,6 @@ Returns
 None
 ") Nodes;
 		void Nodes(const Standard_Integer T, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-
-		/****************** Poly_Connect ******************/
-		%feature("compactdefaultargs") Poly_Connect;
-		%feature("autodoc", "Constructs an uninitialized algorithm.
-
-Returns
--------
-None
-") Poly_Connect;
-		 Poly_Connect();
-
-		/****************** Poly_Connect ******************/
-		%feature("compactdefaultargs") Poly_Connect;
-		%feature("autodoc", "Constructs an algorithm to explore the adjacency data of nodes or triangles for the triangulation t.
-
-Parameters
-----------
-theTriangulation: Poly_Triangulation
-
-Returns
--------
-None
-") Poly_Connect;
-		 Poly_Connect(const opencascade::handle<Poly_Triangulation> & theTriangulation);
 
 		/****************** Triangle ******************/
 		%feature("compactdefaultargs") Triangle;
@@ -895,6 +895,20 @@ int
 ***********************/
 class Poly_Polygon2D : public Standard_Transient {
 	public:
+		/****************** Poly_Polygon2D ******************/
+		%feature("compactdefaultargs") Poly_Polygon2D;
+		%feature("autodoc", "Constructs a 2d polygon defined by the table of points, <nodes>.
+
+Parameters
+----------
+Nodes: TColgp_Array1OfPnt2d
+
+Returns
+-------
+None
+") Poly_Polygon2D;
+		 Poly_Polygon2D(const TColgp_Array1OfPnt2d & Nodes);
+
 		/****************** Deflection ******************/
 		%feature("compactdefaultargs") Deflection;
 		%feature("autodoc", "Returns the deflection of this polygon. deflection is used in cases where the polygon is an approximate representation of a curve. deflection represents the maximum distance permitted between any point on the curve and the corresponding point on the polygon. by default the deflection value is equal to 0. an algorithm using this 2d polygon with a deflection value equal to 0 considers that it is working with a true polygon and not with an approximate representation of a curve. the deflection function is used to modify the deflection value of this polygon. the deflection value can be used by any algorithm working with 2d polygons. for example: - an algorithm may use a unique deflection value for all its polygons. in this case it is not necessary to use the deflection function. - or an algorithm may want to attach a different deflection to each polygon. in this case, the deflection function is used to set a value on each polygon, and later to fetch the value.
@@ -939,20 +953,6 @@ TColgp_Array1OfPnt2d
 ") Nodes;
 		const TColgp_Array1OfPnt2d & Nodes();
 
-		/****************** Poly_Polygon2D ******************/
-		%feature("compactdefaultargs") Poly_Polygon2D;
-		%feature("autodoc", "Constructs a 2d polygon defined by the table of points, <nodes>.
-
-Parameters
-----------
-Nodes: TColgp_Array1OfPnt2d
-
-Returns
--------
-None
-") Poly_Polygon2D;
-		 Poly_Polygon2D(const TColgp_Array1OfPnt2d & Nodes);
-
 };
 
 
@@ -969,6 +969,35 @@ None
 ***********************/
 class Poly_Polygon3D : public Standard_Transient {
 	public:
+		/****************** Poly_Polygon3D ******************/
+		%feature("compactdefaultargs") Poly_Polygon3D;
+		%feature("autodoc", "Onstructs a 3d polygon defined by the table of points, nodes.
+
+Parameters
+----------
+Nodes: TColgp_Array1OfPnt
+
+Returns
+-------
+None
+") Poly_Polygon3D;
+		 Poly_Polygon3D(const TColgp_Array1OfPnt & Nodes);
+
+		/****************** Poly_Polygon3D ******************/
+		%feature("compactdefaultargs") Poly_Polygon3D;
+		%feature("autodoc", "Constructs a 3d polygon defined by the table of points, nodes, and the parallel table of parameters, parameters, where each value of the table parameters is the parameter of the corresponding point on the curve approximated by the constructed polygon. warning both the nodes and parameters tables must have the same bounds. this property is not checked at construction time.
+
+Parameters
+----------
+Nodes: TColgp_Array1OfPnt
+Parameters: TColStd_Array1OfReal
+
+Returns
+-------
+None
+") Poly_Polygon3D;
+		 Poly_Polygon3D(const TColgp_Array1OfPnt & Nodes, const TColStd_Array1OfReal & Parameters);
+
 		/****************** ChangeParameters ******************/
 		%feature("compactdefaultargs") ChangeParameters;
 		%feature("autodoc", "Returns the table of the parameters associated with each node in this polygon. changeparameters function returnes the array as shared. therefore if the table is selected by reference you can, by simply modifying it, directly modify the data structure of this polygon.
@@ -1053,35 +1082,6 @@ TColStd_Array1OfReal
 ") Parameters;
 		const TColStd_Array1OfReal & Parameters();
 
-		/****************** Poly_Polygon3D ******************/
-		%feature("compactdefaultargs") Poly_Polygon3D;
-		%feature("autodoc", "Onstructs a 3d polygon defined by the table of points, nodes.
-
-Parameters
-----------
-Nodes: TColgp_Array1OfPnt
-
-Returns
--------
-None
-") Poly_Polygon3D;
-		 Poly_Polygon3D(const TColgp_Array1OfPnt & Nodes);
-
-		/****************** Poly_Polygon3D ******************/
-		%feature("compactdefaultargs") Poly_Polygon3D;
-		%feature("autodoc", "Constructs a 3d polygon defined by the table of points, nodes, and the parallel table of parameters, parameters, where each value of the table parameters is the parameter of the corresponding point on the curve approximated by the constructed polygon. warning both the nodes and parameters tables must have the same bounds. this property is not checked at construction time.
-
-Parameters
-----------
-Nodes: TColgp_Array1OfPnt
-Parameters: TColStd_Array1OfReal
-
-Returns
--------
-None
-") Poly_Polygon3D;
-		 Poly_Polygon3D(const TColgp_Array1OfPnt & Nodes, const TColStd_Array1OfReal & Parameters);
-
 };
 
 
@@ -1098,6 +1098,35 @@ None
 ************************************/
 class Poly_PolygonOnTriangulation : public Standard_Transient {
 	public:
+		/****************** Poly_PolygonOnTriangulation ******************/
+		%feature("compactdefaultargs") Poly_PolygonOnTriangulation;
+		%feature("autodoc", "Constructs a 3d polygon on the triangulation of a shape, defined by the table of nodes, <nodes>.
+
+Parameters
+----------
+Nodes: TColStd_Array1OfInteger
+
+Returns
+-------
+None
+") Poly_PolygonOnTriangulation;
+		 Poly_PolygonOnTriangulation(const TColStd_Array1OfInteger & Nodes);
+
+		/****************** Poly_PolygonOnTriangulation ******************/
+		%feature("compactdefaultargs") Poly_PolygonOnTriangulation;
+		%feature("autodoc", "Constructs a 3d polygon on the triangulation of a shape, defined by: - the table of nodes, nodes, and the table of parameters, <parameters>. where: - a node value is an index in the table of nodes specific to an existing triangulation of a shape - and a parameter value is the value of the parameter of the corresponding point on the curve approximated by the constructed polygon. warning the tables nodes and parameters must be the same size. this property is not checked at construction time.
+
+Parameters
+----------
+Nodes: TColStd_Array1OfInteger
+Parameters: TColStd_Array1OfReal
+
+Returns
+-------
+None
+") Poly_PolygonOnTriangulation;
+		 Poly_PolygonOnTriangulation(const TColStd_Array1OfInteger & Nodes, const TColStd_Array1OfReal & Parameters);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "Creates a copy of current polygon.
@@ -1172,35 +1201,6 @@ opencascade::handle<TColStd_HArray1OfReal>
 ") Parameters;
 		opencascade::handle<TColStd_HArray1OfReal> Parameters();
 
-		/****************** Poly_PolygonOnTriangulation ******************/
-		%feature("compactdefaultargs") Poly_PolygonOnTriangulation;
-		%feature("autodoc", "Constructs a 3d polygon on the triangulation of a shape, defined by the table of nodes, <nodes>.
-
-Parameters
-----------
-Nodes: TColStd_Array1OfInteger
-
-Returns
--------
-None
-") Poly_PolygonOnTriangulation;
-		 Poly_PolygonOnTriangulation(const TColStd_Array1OfInteger & Nodes);
-
-		/****************** Poly_PolygonOnTriangulation ******************/
-		%feature("compactdefaultargs") Poly_PolygonOnTriangulation;
-		%feature("autodoc", "Constructs a 3d polygon on the triangulation of a shape, defined by: - the table of nodes, nodes, and the table of parameters, <parameters>. where: - a node value is an index in the table of nodes specific to an existing triangulation of a shape - and a parameter value is the value of the parameter of the corresponding point on the curve approximated by the constructed polygon. warning the tables nodes and parameters must be the same size. this property is not checked at construction time.
-
-Parameters
-----------
-Nodes: TColStd_Array1OfInteger
-Parameters: TColStd_Array1OfReal
-
-Returns
--------
-None
-") Poly_PolygonOnTriangulation;
-		 Poly_PolygonOnTriangulation(const TColStd_Array1OfInteger & Nodes, const TColStd_Array1OfReal & Parameters);
-
 };
 
 
@@ -1217,6 +1217,32 @@ None
 **********************/
 class Poly_Triangle {
 	public:
+		/****************** Poly_Triangle ******************/
+		%feature("compactdefaultargs") Poly_Triangle;
+		%feature("autodoc", "Constructs a triangle and sets all indices to zero.
+
+Returns
+-------
+None
+") Poly_Triangle;
+		 Poly_Triangle();
+
+		/****************** Poly_Triangle ******************/
+		%feature("compactdefaultargs") Poly_Triangle;
+		%feature("autodoc", "Constructs a triangle and sets its three indices to n1, n2 and n3 respectively, where these node values are indices in the table of nodes specific to an existing triangulation of a shape.
+
+Parameters
+----------
+N1: int
+N2: int
+N3: int
+
+Returns
+-------
+None
+") Poly_Triangle;
+		 Poly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
+
 
         %feature("autodoc","1");
         %extend {
@@ -1245,32 +1271,6 @@ Returns
 None
 ") Get;
 		void Get(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-
-		/****************** Poly_Triangle ******************/
-		%feature("compactdefaultargs") Poly_Triangle;
-		%feature("autodoc", "Constructs a triangle and sets all indices to zero.
-
-Returns
--------
-None
-") Poly_Triangle;
-		 Poly_Triangle();
-
-		/****************** Poly_Triangle ******************/
-		%feature("compactdefaultargs") Poly_Triangle;
-		%feature("autodoc", "Constructs a triangle and sets its three indices to n1, n2 and n3 respectively, where these node values are indices in the table of nodes specific to an existing triangulation of a shape.
-
-Parameters
-----------
-N1: int
-N2: int
-N3: int
-
-Returns
--------
-None
-") Poly_Triangle;
-		 Poly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
@@ -1331,6 +1331,67 @@ int
 ***************************/
 class Poly_Triangulation : public Standard_Transient {
 	public:
+		/****************** Poly_Triangulation ******************/
+		%feature("compactdefaultargs") Poly_Triangulation;
+		%feature("autodoc", "Constructs a triangulation from a set of triangles. the triangulation is initialized without a triangle or a node, but capable of containing nbnodes nodes, and nbtriangles triangles. here the uvnodes flag indicates whether 2d nodes will be associated with 3d ones, (i.e. to enable a 2d representation).
+
+Parameters
+----------
+nbNodes: int
+nbTriangles: int
+UVNodes: bool
+
+Returns
+-------
+None
+") Poly_Triangulation;
+		 Poly_Triangulation(const Standard_Integer nbNodes, const Standard_Integer nbTriangles, const Standard_Boolean UVNodes);
+
+		/****************** Poly_Triangulation ******************/
+		%feature("compactdefaultargs") Poly_Triangulation;
+		%feature("autodoc", "Constructs a triangulation from a set of triangles. the triangulation is initialized with 3d points from nodes and triangles from triangles.
+
+Parameters
+----------
+Nodes: TColgp_Array1OfPnt
+Triangles: Poly_Array1OfTriangle
+
+Returns
+-------
+None
+") Poly_Triangulation;
+		 Poly_Triangulation(const TColgp_Array1OfPnt & Nodes, const Poly_Array1OfTriangle & Triangles);
+
+		/****************** Poly_Triangulation ******************/
+		%feature("compactdefaultargs") Poly_Triangulation;
+		%feature("autodoc", "Constructs a triangulation from a set of triangles. the triangulation is initialized with 3d points from nodes, 2d points from uvnodes and triangles from triangles, where coordinates of a 2d point from uvnodes are the (u, v) parameters of the corresponding 3d point from nodes on the surface approximated by the constructed triangulation.
+
+Parameters
+----------
+Nodes: TColgp_Array1OfPnt
+UVNodes: TColgp_Array1OfPnt2d
+Triangles: Poly_Array1OfTriangle
+
+Returns
+-------
+None
+") Poly_Triangulation;
+		 Poly_Triangulation(const TColgp_Array1OfPnt & Nodes, const TColgp_Array1OfPnt2d & UVNodes, const Poly_Array1OfTriangle & Triangles);
+
+		/****************** Poly_Triangulation ******************/
+		%feature("compactdefaultargs") Poly_Triangulation;
+		%feature("autodoc", "Copy constructor for triangulation.
+
+Parameters
+----------
+theTriangulation: Poly_Triangulation
+
+Returns
+-------
+None
+") Poly_Triangulation;
+		 Poly_Triangulation(const opencascade::handle<Poly_Triangulation> & theTriangulation);
+
 		/****************** ChangeNode ******************/
 		%feature("compactdefaultargs") ChangeNode;
 		%feature("autodoc", "Give access to the node at the given index. raises standard_outofrange exception if theindex is less than 1 or greater than nbnodes.
@@ -1534,67 +1595,6 @@ Returns
 TShort_Array1OfShortReal
 ") Normals;
 		const TShort_Array1OfShortReal & Normals();
-
-		/****************** Poly_Triangulation ******************/
-		%feature("compactdefaultargs") Poly_Triangulation;
-		%feature("autodoc", "Constructs a triangulation from a set of triangles. the triangulation is initialized without a triangle or a node, but capable of containing nbnodes nodes, and nbtriangles triangles. here the uvnodes flag indicates whether 2d nodes will be associated with 3d ones, (i.e. to enable a 2d representation).
-
-Parameters
-----------
-nbNodes: int
-nbTriangles: int
-UVNodes: bool
-
-Returns
--------
-None
-") Poly_Triangulation;
-		 Poly_Triangulation(const Standard_Integer nbNodes, const Standard_Integer nbTriangles, const Standard_Boolean UVNodes);
-
-		/****************** Poly_Triangulation ******************/
-		%feature("compactdefaultargs") Poly_Triangulation;
-		%feature("autodoc", "Constructs a triangulation from a set of triangles. the triangulation is initialized with 3d points from nodes and triangles from triangles.
-
-Parameters
-----------
-Nodes: TColgp_Array1OfPnt
-Triangles: Poly_Array1OfTriangle
-
-Returns
--------
-None
-") Poly_Triangulation;
-		 Poly_Triangulation(const TColgp_Array1OfPnt & Nodes, const Poly_Array1OfTriangle & Triangles);
-
-		/****************** Poly_Triangulation ******************/
-		%feature("compactdefaultargs") Poly_Triangulation;
-		%feature("autodoc", "Constructs a triangulation from a set of triangles. the triangulation is initialized with 3d points from nodes, 2d points from uvnodes and triangles from triangles, where coordinates of a 2d point from uvnodes are the (u, v) parameters of the corresponding 3d point from nodes on the surface approximated by the constructed triangulation.
-
-Parameters
-----------
-Nodes: TColgp_Array1OfPnt
-UVNodes: TColgp_Array1OfPnt2d
-Triangles: Poly_Array1OfTriangle
-
-Returns
--------
-None
-") Poly_Triangulation;
-		 Poly_Triangulation(const TColgp_Array1OfPnt & Nodes, const TColgp_Array1OfPnt2d & UVNodes, const Poly_Array1OfTriangle & Triangles);
-
-		/****************** Poly_Triangulation ******************/
-		%feature("compactdefaultargs") Poly_Triangulation;
-		%feature("autodoc", "Copy constructor for triangulation.
-
-Parameters
-----------
-theTriangulation: Poly_Triangulation
-
-Returns
--------
-None
-") Poly_Triangulation;
-		 Poly_Triangulation(const opencascade::handle<Poly_Triangulation> & theTriangulation);
 
 		/****************** RemoveUVNodes ******************/
 		%feature("compactdefaultargs") RemoveUVNodes;

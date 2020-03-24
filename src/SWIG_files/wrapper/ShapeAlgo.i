@@ -151,6 +151,16 @@ None
 ********************************/
 class ShapeAlgo_ToolContainer : public Standard_Transient {
 	public:
+		/****************** ShapeAlgo_ToolContainer ******************/
+		%feature("compactdefaultargs") ShapeAlgo_ToolContainer;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeAlgo_ToolContainer;
+		 ShapeAlgo_ToolContainer();
+
 		/****************** EdgeProjAux ******************/
 		%feature("compactdefaultargs") EdgeProjAux;
 		%feature("autodoc", "Returns shapefix_edgeprojaux.
@@ -170,16 +180,6 @@ Returns
 opencascade::handle<ShapeFix_Shape>
 ") FixShape;
 		virtual opencascade::handle<ShapeFix_Shape> FixShape();
-
-		/****************** ShapeAlgo_ToolContainer ******************/
-		%feature("compactdefaultargs") ShapeAlgo_ToolContainer;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeAlgo_ToolContainer;
-		 ShapeAlgo_ToolContainer();
 
 };
 

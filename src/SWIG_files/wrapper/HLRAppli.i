@@ -41,8 +41,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_hlrappli.html"
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
-#include<HLRBRep_module.hxx>
 #include<TopoDS_module.hxx>
+#include<HLRBRep_module.hxx>
 #include<Adaptor2d_module.hxx>
 #include<Geom2dAdaptor_module.hxx>
 #include<GeomAdaptor_module.hxx>
@@ -67,8 +67,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_hlrappli.html"
 %};
 %import Standard.i
 %import NCollection.i
-%import HLRBRep.i
 %import TopoDS.i
+%import HLRBRep.i
 
 %pythoncode {
 from OCC.Core.Exception import *
@@ -96,6 +96,20 @@ from OCC.Core.Exception import *
 ******************************/
 class HLRAppli_ReflectLines {
 	public:
+		/****************** HLRAppli_ReflectLines ******************/
+		%feature("compactdefaultargs") HLRAppli_ReflectLines;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+aShape: TopoDS_Shape
+
+Returns
+-------
+None
+") HLRAppli_ReflectLines;
+		 HLRAppli_ReflectLines(const TopoDS_Shape & aShape);
+
 		/****************** GetCompoundOf3dEdges ******************/
 		%feature("compactdefaultargs") GetCompoundOf3dEdges;
 		%feature("autodoc", "Returns resulting compound of lines of specified type and visibility represented by edges in 3d or 2d.
@@ -121,20 +135,6 @@ Returns
 TopoDS_Shape
 ") GetResult;
 		TopoDS_Shape GetResult();
-
-		/****************** HLRAppli_ReflectLines ******************/
-		%feature("compactdefaultargs") HLRAppli_ReflectLines;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-aShape: TopoDS_Shape
-
-Returns
--------
-None
-") HLRAppli_ReflectLines;
-		 HLRAppli_ReflectLines(const TopoDS_Shape & aShape);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;

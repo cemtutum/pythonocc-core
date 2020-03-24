@@ -87,81 +87,6 @@ from OCC.Core.Exception import *
 ****************************/
 class IntCurve_IConicTool {
 	public:
-		/****************** D1 ******************/
-		%feature("compactdefaultargs") D1;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-U: float
-P: gp_Pnt2d
-T: gp_Vec2d
-
-Returns
--------
-None
-") D1;
-		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
-
-		/****************** D2 ******************/
-		%feature("compactdefaultargs") D2;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-U: float
-P: gp_Pnt2d
-T: gp_Vec2d
-N: gp_Vec2d
-
-Returns
--------
-None
-") D2;
-		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
-
-		/****************** Distance ******************/
-		%feature("compactdefaultargs") Distance;
-		%feature("autodoc", "Computes the value of the signed distance between the point p and the implicit curve.
-
-Parameters
-----------
-P: gp_Pnt2d
-
-Returns
--------
-float
-") Distance;
-		Standard_Real Distance(const gp_Pnt2d & P);
-
-		/****************** FindParameter ******************/
-		%feature("compactdefaultargs") FindParameter;
-		%feature("autodoc", "Returns the parameter u of the point on the implicit curve corresponding to the point p. the correspondance between p and the point p(u) on the implicit curve must be coherent with the way of determination of the signed distance.
-
-Parameters
-----------
-P: gp_Pnt2d
-
-Returns
--------
-float
-") FindParameter;
-		Standard_Real FindParameter(const gp_Pnt2d & P);
-
-		/****************** GradDistance ******************/
-		%feature("compactdefaultargs") GradDistance;
-		%feature("autodoc", "Computes the gradient of the signed distance between a point and the implicit curve, at the point p.
-
-Parameters
-----------
-P: gp_Pnt2d
-
-Returns
--------
-gp_Vec2d
-") GradDistance;
-		gp_Vec2d GradDistance(const gp_Pnt2d & P);
-
 		/****************** IntCurve_IConicTool ******************/
 		%feature("compactdefaultargs") IntCurve_IConicTool;
 		%feature("autodoc", "No available documentation.
@@ -255,6 +180,81 @@ Returns
 None
 ") IntCurve_IConicTool;
 		 IntCurve_IConicTool(const gp_Hypr2d & H);
+
+		/****************** D1 ******************/
+		%feature("compactdefaultargs") D1;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+U: float
+P: gp_Pnt2d
+T: gp_Vec2d
+
+Returns
+-------
+None
+") D1;
+		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
+
+		/****************** D2 ******************/
+		%feature("compactdefaultargs") D2;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+U: float
+P: gp_Pnt2d
+T: gp_Vec2d
+N: gp_Vec2d
+
+Returns
+-------
+None
+") D2;
+		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
+
+		/****************** Distance ******************/
+		%feature("compactdefaultargs") Distance;
+		%feature("autodoc", "Computes the value of the signed distance between the point p and the implicit curve.
+
+Parameters
+----------
+P: gp_Pnt2d
+
+Returns
+-------
+float
+") Distance;
+		Standard_Real Distance(const gp_Pnt2d & P);
+
+		/****************** FindParameter ******************/
+		%feature("compactdefaultargs") FindParameter;
+		%feature("autodoc", "Returns the parameter u of the point on the implicit curve corresponding to the point p. the correspondance between p and the point p(u) on the implicit curve must be coherent with the way of determination of the signed distance.
+
+Parameters
+----------
+P: gp_Pnt2d
+
+Returns
+-------
+float
+") FindParameter;
+		Standard_Real FindParameter(const gp_Pnt2d & P);
+
+		/****************** GradDistance ******************/
+		%feature("compactdefaultargs") GradDistance;
+		%feature("autodoc", "Computes the gradient of the signed distance between a point and the implicit curve, at the point p.
+
+Parameters
+----------
+P: gp_Pnt2d
+
+Returns
+-------
+gp_Vec2d
+") GradDistance;
+		gp_Vec2d GradDistance(const gp_Pnt2d & P);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -878,6 +878,35 @@ None
 *************************************/
 class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 	public:
+		/****************** IntCurve_IntImpConicParConic ******************/
+		%feature("compactdefaultargs") IntCurve_IntImpConicParConic;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") IntCurve_IntImpConicParConic;
+		 IntCurve_IntImpConicParConic();
+
+		/****************** IntCurve_IntImpConicParConic ******************/
+		%feature("compactdefaultargs") IntCurve_IntImpConicParConic;
+		%feature("autodoc", "Intersection between an implicit curve and a parametrised curve. the exception constructionerror is raised if the domain of the parametrised curve does not verify hasfirstpoint and haslastpoint return true.
+
+Parameters
+----------
+ITool: IntCurve_IConicTool
+Dom1: IntRes2d_Domain
+PCurve: IntCurve_PConic
+Dom2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
+") IntCurve_IntImpConicParConic;
+		 IntCurve_IntImpConicParConic(const IntCurve_IConicTool & ITool, const IntRes2d_Domain & Dom1, const IntCurve_PConic & PCurve, const IntRes2d_Domain & Dom2, const Standard_Real TolConf, const Standard_Real Tol);
+
 		/****************** And_Domaine_Objet1_Intersections ******************/
 		%feature("compactdefaultargs") And_Domaine_Objet1_Intersections;
 		%feature("autodoc", "No available documentation.
@@ -939,35 +968,6 @@ float
 ") FindV;
 		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool & TheImpTool, const IntCurve_PConic & ParCurve, const IntRes2d_Domain & TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance);
 
-		/****************** IntCurve_IntImpConicParConic ******************/
-		%feature("compactdefaultargs") IntCurve_IntImpConicParConic;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") IntCurve_IntImpConicParConic;
-		 IntCurve_IntImpConicParConic();
-
-		/****************** IntCurve_IntImpConicParConic ******************/
-		%feature("compactdefaultargs") IntCurve_IntImpConicParConic;
-		%feature("autodoc", "Intersection between an implicit curve and a parametrised curve. the exception constructionerror is raised if the domain of the parametrised curve does not verify hasfirstpoint and haslastpoint return true.
-
-Parameters
-----------
-ITool: IntCurve_IConicTool
-Dom1: IntRes2d_Domain
-PCurve: IntCurve_PConic
-Dom2: IntRes2d_Domain
-TolConf: float
-Tol: float
-
-Returns
--------
-None
-") IntCurve_IntImpConicParConic;
-		 IntCurve_IntImpConicParConic(const IntCurve_IConicTool & ITool, const IntRes2d_Domain & Dom1, const IntCurve_PConic & PCurve, const IntRes2d_Domain & Dom2, const Standard_Real TolConf, const Standard_Real Tol);
-
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "Intersection between an implicit curve and a parametrised curve. the exception constructionerror is raised if the domain of the parametrised curve does not verify hasfirstpoint and haslastpoint return true.
@@ -1001,21 +1001,6 @@ None
 ***************************************************/
 class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Computes the derivative of the previous function at parameter param.
-
-Parameters
-----------
-Param: float
-D: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-
 		/****************** IntCurve_MyImpParToolOfIntImpConicParConic ******************/
 		%feature("compactdefaultargs") IntCurve_MyImpParToolOfIntImpConicParConic;
 		%feature("autodoc", "Constructor of the class.
@@ -1030,6 +1015,21 @@ Returns
 None
 ") IntCurve_MyImpParToolOfIntImpConicParConic;
 		 IntCurve_MyImpParToolOfIntImpConicParConic(const IntCurve_IConicTool & IT, const IntCurve_PConic & PC);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Computes the derivative of the previous function at parameter param.
+
+Parameters
+----------
+Param: float
+D: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -1076,36 +1076,6 @@ bool
 ************************/
 class IntCurve_PConic {
 	public:
-		/****************** Accuracy ******************/
-		%feature("compactdefaultargs") Accuracy;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-int
-") Accuracy;
-		Standard_Integer Accuracy();
-
-		/****************** Axis2 ******************/
-		%feature("compactdefaultargs") Axis2;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-gp_Ax22d
-") Axis2;
-		const gp_Ax22d Axis2();
-
-		/****************** EpsX ******************/
-		%feature("compactdefaultargs") EpsX;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-float
-") EpsX;
-		Standard_Real EpsX();
-
 		/****************** IntCurve_PConic ******************/
 		%feature("compactdefaultargs") IntCurve_PConic;
 		%feature("autodoc", "No available documentation.
@@ -1189,6 +1159,36 @@ Returns
 None
 ") IntCurve_PConic;
 		 IntCurve_PConic(const gp_Lin2d & L);
+
+		/****************** Accuracy ******************/
+		%feature("compactdefaultargs") Accuracy;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") Accuracy;
+		Standard_Integer Accuracy();
+
+		/****************** Axis2 ******************/
+		%feature("compactdefaultargs") Axis2;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Ax22d
+") Axis2;
+		const gp_Ax22d Axis2();
+
+		/****************** EpsX ******************/
+		%feature("compactdefaultargs") EpsX;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
+") EpsX;
+		Standard_Real EpsX();
 
 		/****************** Param1 ******************/
 		%feature("compactdefaultargs") Param1;

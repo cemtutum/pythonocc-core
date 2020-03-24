@@ -114,42 +114,6 @@ class Approx_ParametrizationType:
 /* end handles declaration */
 
 /* templates */
-%template(Approx_SequenceOfHArray1OfReal) NCollection_Sequence<opencascade::handle<TColStd_HArray1OfReal>>;
-%template(Approx_Array1OfGTrsf2d) NCollection_Array1<gp_GTrsf2d>;
-
-%extend NCollection_Array1<gp_GTrsf2d> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
 %template(Approx_Array1OfAdHSurface) NCollection_Array1<opencascade::handle<Adaptor3d_HSurface>>;
 
 %extend NCollection_Array1<opencascade::handle<Adaptor3d_HSurface>> {
@@ -185,12 +149,48 @@ class Approx_ParametrizationType:
     __next__ = next
     }
 };
+%template(Approx_Array1OfGTrsf2d) NCollection_Array1<gp_GTrsf2d>;
+
+%extend NCollection_Array1<gp_GTrsf2d> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(Approx_SequenceOfHArray1OfReal) NCollection_Sequence<opencascade::handle<TColStd_HArray1OfReal>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<opencascade::handle<TColStd_HArray1OfReal>> Approx_SequenceOfHArray1OfReal;
-typedef NCollection_Array1<gp_GTrsf2d> Approx_Array1OfGTrsf2d;
 typedef NCollection_Array1<opencascade::handle<Adaptor3d_HSurface>> Approx_Array1OfAdHSurface;
+typedef NCollection_Array1<gp_GTrsf2d> Approx_Array1OfGTrsf2d;
+typedef NCollection_Sequence<opencascade::handle<TColStd_HArray1OfReal>> Approx_SequenceOfHArray1OfReal;
 /* end typedefs declaration */
 
 /***********************
@@ -1356,6 +1356,16 @@ AppParCurves_MultiCurve
 *********************************/
 class Approx_MCurvesToBSpCurve {
 	public:
+		/****************** Approx_MCurvesToBSpCurve ******************/
+		%feature("compactdefaultargs") Approx_MCurvesToBSpCurve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Approx_MCurvesToBSpCurve;
+		 Approx_MCurvesToBSpCurve();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "No available documentation.
@@ -1369,16 +1379,6 @@ Returns
 None
 ") Append;
 		void Append(const AppParCurves_MultiCurve & MC);
-
-		/****************** Approx_MCurvesToBSpCurve ******************/
-		%feature("compactdefaultargs") Approx_MCurvesToBSpCurve;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Approx_MCurvesToBSpCurve;
-		 Approx_MCurvesToBSpCurve();
 
 		/****************** ChangeValue ******************/
 		%feature("compactdefaultargs") ChangeValue;

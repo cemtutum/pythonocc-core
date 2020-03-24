@@ -382,6 +382,30 @@ opencascade::handle<Standard_Transient>
 ***********************************/
 class TransferBRep_BinderOfShape : public Transfer_Binder {
 	public:
+		/****************** TransferBRep_BinderOfShape ******************/
+		%feature("compactdefaultargs") TransferBRep_BinderOfShape;
+		%feature("autodoc", "Normal standard constructor, creates an empty binderofshape.
+
+Returns
+-------
+None
+") TransferBRep_BinderOfShape;
+		 TransferBRep_BinderOfShape();
+
+		/****************** TransferBRep_BinderOfShape ******************/
+		%feature("compactdefaultargs") TransferBRep_BinderOfShape;
+		%feature("autodoc", "Constructor which in the same time defines the result returns true if a starting object is bound with several results : here, returns allways false but it can have next results.
+
+Parameters
+----------
+res: TopoDS_Shape
+
+Returns
+-------
+None
+") TransferBRep_BinderOfShape;
+		 TransferBRep_BinderOfShape(const TopoDS_Shape & res);
+
 		/****************** CResult ******************/
 		%feature("compactdefaultargs") CResult;
 		%feature("autodoc", "Returns the defined result, if there is one, and allows to change it (avoids result + setresult). admits that result can be not yet defined warning : a call to cresult causes result to be known as defined.
@@ -436,30 +460,6 @@ None
 ") SetResult;
 		void SetResult(const TopoDS_Shape & res);
 
-		/****************** TransferBRep_BinderOfShape ******************/
-		%feature("compactdefaultargs") TransferBRep_BinderOfShape;
-		%feature("autodoc", "Normal standard constructor, creates an empty binderofshape.
-
-Returns
--------
-None
-") TransferBRep_BinderOfShape;
-		 TransferBRep_BinderOfShape();
-
-		/****************** TransferBRep_BinderOfShape ******************/
-		%feature("compactdefaultargs") TransferBRep_BinderOfShape;
-		%feature("autodoc", "Constructor which in the same time defines the result returns true if a starting object is bound with several results : here, returns allways false but it can have next results.
-
-Parameters
-----------
-res: TopoDS_Shape
-
-Returns
--------
-None
-") TransferBRep_BinderOfShape;
-		 TransferBRep_BinderOfShape(const TopoDS_Shape & res);
-
 };
 
 
@@ -476,20 +476,6 @@ None
 *****************************************/
 class TransferBRep_OrientedShapeMapper : public Transfer_Finder {
 	public:
-		/****************** Equates ******************/
-		%feature("compactdefaultargs") Equates;
-		%feature("autodoc", "Specific testof equallity : defined as false if <other> has not the same true type, else contents are compared (by c++ operator ==).
-
-Parameters
-----------
-other: Transfer_Finder
-
-Returns
--------
-bool
-") Equates;
-		Standard_Boolean Equates(const opencascade::handle<Transfer_Finder> & other);
-
 		/****************** TransferBRep_OrientedShapeMapper ******************/
 		%feature("compactdefaultargs") TransferBRep_OrientedShapeMapper;
 		%feature("autodoc", "Creates a mapper with a value. this value can then not be changed. it is used by the hasher to compute the hashcode, which will then be stored for an immediate reading.
@@ -503,6 +489,20 @@ Returns
 None
 ") TransferBRep_OrientedShapeMapper;
 		 TransferBRep_OrientedShapeMapper(const TopoDS_Shape & akey);
+
+		/****************** Equates ******************/
+		%feature("compactdefaultargs") Equates;
+		%feature("autodoc", "Specific testof equallity : defined as false if <other> has not the same true type, else contents are compared (by c++ operator ==).
+
+Parameters
+----------
+other: Transfer_Finder
+
+Returns
+-------
+bool
+") Equates;
+		Standard_Boolean Equates(const opencascade::handle<Transfer_Finder> & other);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -550,6 +550,16 @@ char *
 ****************************/
 class TransferBRep_Reader {
 	public:
+		/****************** TransferBRep_Reader ******************/
+		%feature("compactdefaultargs") TransferBRep_Reader;
+		%feature("autodoc", "Initializes a non-specialised reader. typically, for each norm or protocol, is will be required to define a specific create to load a file and transfer it.
+
+Returns
+-------
+None
+") TransferBRep_Reader;
+		 TransferBRep_Reader();
+
 		/****************** Actor ******************/
 		%feature("compactdefaultargs") Actor;
 		%feature("autodoc", "Returns the recorded actor.
@@ -860,16 +870,6 @@ bool
 ") Transfer;
 		virtual Standard_Boolean Transfer(const Standard_Integer num);
 
-		/****************** TransferBRep_Reader ******************/
-		%feature("compactdefaultargs") TransferBRep_Reader;
-		%feature("autodoc", "Initializes a non-specialised reader. typically, for each norm or protocol, is will be required to define a specific create to load a file and transfer it.
-
-Returns
--------
-None
-") TransferBRep_Reader;
-		 TransferBRep_Reader();
-
 		/****************** TransferList ******************/
 		%feature("compactdefaultargs") TransferList;
 		%feature("autodoc", "Transfers a list of entities (only the ones also in the model) remark : former result is cleared.
@@ -985,6 +985,30 @@ char *
 *************************************/
 class TransferBRep_ShapeListBinder : public Transfer_Binder {
 	public:
+		/****************** TransferBRep_ShapeListBinder ******************/
+		%feature("compactdefaultargs") TransferBRep_ShapeListBinder;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TransferBRep_ShapeListBinder;
+		 TransferBRep_ShapeListBinder();
+
+		/****************** TransferBRep_ShapeListBinder ******************/
+		%feature("compactdefaultargs") TransferBRep_ShapeListBinder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+list: TopTools_HSequenceOfShape
+
+Returns
+-------
+None
+") TransferBRep_ShapeListBinder;
+		 TransferBRep_ShapeListBinder(const opencascade::handle<TopTools_HSequenceOfShape> & list);
+
 		/****************** AddResult ******************/
 		%feature("compactdefaultargs") AddResult;
 		%feature("autodoc", "Adds an item to the result list.
@@ -1176,30 +1200,6 @@ TopoDS_Solid
 ") Solid;
 		TopoDS_Solid Solid(const Standard_Integer num);
 
-		/****************** TransferBRep_ShapeListBinder ******************/
-		%feature("compactdefaultargs") TransferBRep_ShapeListBinder;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TransferBRep_ShapeListBinder;
-		 TransferBRep_ShapeListBinder();
-
-		/****************** TransferBRep_ShapeListBinder ******************/
-		%feature("compactdefaultargs") TransferBRep_ShapeListBinder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-list: TopTools_HSequenceOfShape
-
-Returns
--------
-None
-") TransferBRep_ShapeListBinder;
-		 TransferBRep_ShapeListBinder(const opencascade::handle<TopTools_HSequenceOfShape> & list);
-
 		/****************** Vertex ******************/
 		%feature("compactdefaultargs") Vertex;
 		%feature("autodoc", "No available documentation.
@@ -1244,20 +1244,6 @@ TopoDS_Wire
 *********************************/
 class TransferBRep_ShapeMapper : public Transfer_Finder {
 	public:
-		/****************** Equates ******************/
-		%feature("compactdefaultargs") Equates;
-		%feature("autodoc", "Specific testof equallity : defined as false if <other> has not the same true type, else contents are compared (by c++ operator ==).
-
-Parameters
-----------
-other: Transfer_Finder
-
-Returns
--------
-bool
-") Equates;
-		Standard_Boolean Equates(const opencascade::handle<Transfer_Finder> & other);
-
 		/****************** TransferBRep_ShapeMapper ******************/
 		%feature("compactdefaultargs") TransferBRep_ShapeMapper;
 		%feature("autodoc", "Creates a mapper with a value. this value can then not be changed. it is used by the hasher to compute the hashcode, which will then be stored for an immediate reading.
@@ -1271,6 +1257,20 @@ Returns
 None
 ") TransferBRep_ShapeMapper;
 		 TransferBRep_ShapeMapper(const TopoDS_Shape & akey);
+
+		/****************** Equates ******************/
+		%feature("compactdefaultargs") Equates;
+		%feature("autodoc", "Specific testof equallity : defined as false if <other> has not the same true type, else contents are compared (by c++ operator ==).
+
+Parameters
+----------
+other: Transfer_Finder
+
+Returns
+-------
+bool
+") Equates;
+		Standard_Boolean Equates(const opencascade::handle<Transfer_Finder> & other);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -1318,6 +1318,16 @@ char *
 ****************************************/
 class TransferBRep_TransferResultInfo : public Standard_Transient {
 	public:
+		/****************** TransferBRep_TransferResultInfo ******************/
+		%feature("compactdefaultargs") TransferBRep_TransferResultInfo;
+		%feature("autodoc", "Creates object with all fields nullified.
+
+Returns
+-------
+None
+") TransferBRep_TransferResultInfo;
+		 TransferBRep_TransferResultInfo();
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Resets all the fields.
@@ -1432,16 +1442,6 @@ None
             $self->ResultWarningFail()=value;
             }
         };
-		/****************** TransferBRep_TransferResultInfo ******************/
-		%feature("compactdefaultargs") TransferBRep_TransferResultInfo;
-		%feature("autodoc", "Creates object with all fields nullified.
-
-Returns
--------
-None
-") TransferBRep_TransferResultInfo;
-		 TransferBRep_TransferResultInfo();
-
 };
 
 
@@ -1458,6 +1458,30 @@ None
 *********************************/
 class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
 	public:
+		/****************** TransferBRep_ShapeBinder ******************/
+		%feature("compactdefaultargs") TransferBRep_ShapeBinder;
+		%feature("autodoc", "Creates an empty shapebinder.
+
+Returns
+-------
+None
+") TransferBRep_ShapeBinder;
+		 TransferBRep_ShapeBinder();
+
+		/****************** TransferBRep_ShapeBinder ******************/
+		%feature("compactdefaultargs") TransferBRep_ShapeBinder;
+		%feature("autodoc", "Creates a shapebinder with a result.
+
+Parameters
+----------
+res: TopoDS_Shape
+
+Returns
+-------
+None
+") TransferBRep_ShapeBinder;
+		 TransferBRep_ShapeBinder(const TopoDS_Shape & res);
+
 		/****************** CompSolid ******************/
 		%feature("compactdefaultargs") CompSolid;
 		%feature("autodoc", "No available documentation.
@@ -1527,30 +1551,6 @@ Returns
 TopoDS_Solid
 ") Solid;
 		TopoDS_Solid Solid();
-
-		/****************** TransferBRep_ShapeBinder ******************/
-		%feature("compactdefaultargs") TransferBRep_ShapeBinder;
-		%feature("autodoc", "Creates an empty shapebinder.
-
-Returns
--------
-None
-") TransferBRep_ShapeBinder;
-		 TransferBRep_ShapeBinder();
-
-		/****************** TransferBRep_ShapeBinder ******************/
-		%feature("compactdefaultargs") TransferBRep_ShapeBinder;
-		%feature("autodoc", "Creates a shapebinder with a result.
-
-Parameters
-----------
-res: TopoDS_Shape
-
-Returns
--------
-None
-") TransferBRep_ShapeBinder;
-		 TransferBRep_ShapeBinder(const TopoDS_Shape & res);
 
 		/****************** Vertex ******************/
 		%feature("compactdefaultargs") Vertex;

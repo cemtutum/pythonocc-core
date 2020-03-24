@@ -43,9 +43,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stdselect.html"
 #include<NCollection_module.hxx>
 #include<SelectMgr_module.hxx>
 #include<Prs3d_module.hxx>
+#include<TopoDS_module.hxx>
 #include<PrsMgr_module.hxx>
 #include<TopLoc_module.hxx>
-#include<TopoDS_module.hxx>
 #include<V3d_module.hxx>
 #include<Select3D_module.hxx>
 #include<TopAbs_module.hxx>
@@ -72,9 +72,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stdselect.html"
 %import NCollection.i
 %import SelectMgr.i
 %import Prs3d.i
+%import TopoDS.i
 %import PrsMgr.i
 %import TopLoc.i
-%import TopoDS.i
 %import V3d.i
 %import Select3D.i
 %import TopAbs.i
@@ -227,6 +227,57 @@ None
 ****************************/
 class StdSelect_BRepOwner : public SelectMgr_EntityOwner {
 	public:
+		/****************** StdSelect_BRepOwner ******************/
+		%feature("compactdefaultargs") StdSelect_BRepOwner;
+		%feature("autodoc", "Constructs an owner specification framework defined by the priority apriority.
+
+Parameters
+----------
+aPriority: int
+
+Returns
+-------
+None
+") StdSelect_BRepOwner;
+		 StdSelect_BRepOwner(const Standard_Integer aPriority);
+
+		/****************** StdSelect_BRepOwner ******************/
+		%feature("compactdefaultargs") StdSelect_BRepOwner;
+		%feature("autodoc", "Constructs an owner specification framework defined by the shape ashape and the priority apriority. ashape and apriority are stored in this framework. if more than one owner are detected during dynamic selection, the one with the highest priority is the one stored.
+
+Parameters
+----------
+aShape: TopoDS_Shape
+aPriority: int,optional
+	default value is 0
+ComesFromDecomposition: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") StdSelect_BRepOwner;
+		 StdSelect_BRepOwner(const TopoDS_Shape & aShape, const Standard_Integer aPriority = 0, const Standard_Boolean ComesFromDecomposition = Standard_False);
+
+		/****************** StdSelect_BRepOwner ******************/
+		%feature("compactdefaultargs") StdSelect_BRepOwner;
+		%feature("autodoc", "Constructs an owner specification framework defined by the shape ashape, the selectable object theorigin and the priority apriority. ashape, theorigin and apriority are stored in this framework. if more than one owner are detected during dynamic selection, the one with the highest priority is the one stored.
+
+Parameters
+----------
+aShape: TopoDS_Shape
+theOrigin: SelectMgr_SelectableObject
+aPriority: int,optional
+	default value is 0
+FromDecomposition: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") StdSelect_BRepOwner;
+		 StdSelect_BRepOwner(const TopoDS_Shape & aShape, const opencascade::handle<SelectMgr_SelectableObject> & theOrigin, const Standard_Integer aPriority = 0, const Standard_Boolean FromDecomposition = Standard_False);
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears the presentation manager object apm of all shapes with the selection mode amode.
@@ -353,57 +404,6 @@ Returns
 TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
-
-		/****************** StdSelect_BRepOwner ******************/
-		%feature("compactdefaultargs") StdSelect_BRepOwner;
-		%feature("autodoc", "Constructs an owner specification framework defined by the priority apriority.
-
-Parameters
-----------
-aPriority: int
-
-Returns
--------
-None
-") StdSelect_BRepOwner;
-		 StdSelect_BRepOwner(const Standard_Integer aPriority);
-
-		/****************** StdSelect_BRepOwner ******************/
-		%feature("compactdefaultargs") StdSelect_BRepOwner;
-		%feature("autodoc", "Constructs an owner specification framework defined by the shape ashape and the priority apriority. ashape and apriority are stored in this framework. if more than one owner are detected during dynamic selection, the one with the highest priority is the one stored.
-
-Parameters
-----------
-aShape: TopoDS_Shape
-aPriority: int,optional
-	default value is 0
-ComesFromDecomposition: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") StdSelect_BRepOwner;
-		 StdSelect_BRepOwner(const TopoDS_Shape & aShape, const Standard_Integer aPriority = 0, const Standard_Boolean ComesFromDecomposition = Standard_False);
-
-		/****************** StdSelect_BRepOwner ******************/
-		%feature("compactdefaultargs") StdSelect_BRepOwner;
-		%feature("autodoc", "Constructs an owner specification framework defined by the shape ashape, the selectable object theorigin and the priority apriority. ashape, theorigin and apriority are stored in this framework. if more than one owner are detected during dynamic selection, the one with the highest priority is the one stored.
-
-Parameters
-----------
-aShape: TopoDS_Shape
-theOrigin: SelectMgr_SelectableObject
-aPriority: int,optional
-	default value is 0
-FromDecomposition: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") StdSelect_BRepOwner;
-		 StdSelect_BRepOwner(const TopoDS_Shape & aShape, const opencascade::handle<SelectMgr_SelectableObject> & theOrigin, const Standard_Integer aPriority = 0, const Standard_Boolean FromDecomposition = Standard_False);
 
 		/****************** Unhilight ******************/
 		%feature("compactdefaultargs") Unhilight;
@@ -616,6 +616,20 @@ None
 *****************************/
 class StdSelect_EdgeFilter : public SelectMgr_Filter {
 	public:
+		/****************** StdSelect_EdgeFilter ******************/
+		%feature("compactdefaultargs") StdSelect_EdgeFilter;
+		%feature("autodoc", "Constructs an edge filter object defined by the type of edge edge.
+
+Parameters
+----------
+Edge: StdSelect_TypeOfEdge
+
+Returns
+-------
+None
+") StdSelect_EdgeFilter;
+		 StdSelect_EdgeFilter(const StdSelect_TypeOfEdge Edge);
+
 		/****************** ActsOn ******************/
 		%feature("compactdefaultargs") ActsOn;
 		%feature("autodoc", "No available documentation.
@@ -658,20 +672,6 @@ None
 ") SetType;
 		void SetType(const StdSelect_TypeOfEdge aNewType);
 
-		/****************** StdSelect_EdgeFilter ******************/
-		%feature("compactdefaultargs") StdSelect_EdgeFilter;
-		%feature("autodoc", "Constructs an edge filter object defined by the type of edge edge.
-
-Parameters
-----------
-Edge: StdSelect_TypeOfEdge
-
-Returns
--------
-None
-") StdSelect_EdgeFilter;
-		 StdSelect_EdgeFilter(const StdSelect_TypeOfEdge Edge);
-
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Returns the type of edge to be highlighted in selection.
@@ -698,6 +698,20 @@ StdSelect_TypeOfEdge
 *****************************/
 class StdSelect_FaceFilter : public SelectMgr_Filter {
 	public:
+		/****************** StdSelect_FaceFilter ******************/
+		%feature("compactdefaultargs") StdSelect_FaceFilter;
+		%feature("autodoc", "Constructs a face filter object defined by the type of face atypeofface.
+
+Parameters
+----------
+aTypeOfFace: StdSelect_TypeOfFace
+
+Returns
+-------
+None
+") StdSelect_FaceFilter;
+		 StdSelect_FaceFilter(const StdSelect_TypeOfFace aTypeOfFace);
+
 		/****************** ActsOn ******************/
 		%feature("compactdefaultargs") ActsOn;
 		%feature("autodoc", "No available documentation.
@@ -740,20 +754,6 @@ None
 ") SetType;
 		void SetType(const StdSelect_TypeOfFace aNewType);
 
-		/****************** StdSelect_FaceFilter ******************/
-		%feature("compactdefaultargs") StdSelect_FaceFilter;
-		%feature("autodoc", "Constructs a face filter object defined by the type of face atypeofface.
-
-Parameters
-----------
-aTypeOfFace: StdSelect_TypeOfFace
-
-Returns
--------
-None
-") StdSelect_FaceFilter;
-		 StdSelect_FaceFilter(const StdSelect_TypeOfFace aTypeOfFace);
-
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Returns the type of face to be highlighted in selection.
@@ -780,16 +780,6 @@ StdSelect_TypeOfFace
 **********************/
 class StdSelect_Prs : public Prs3d_Presentation {
 	public:
-		/****************** Manager ******************/
-		%feature("compactdefaultargs") Manager;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Graphic3d_StructureManager>
-") Manager;
-		const opencascade::handle<Graphic3d_StructureManager> & Manager();
-
 		/****************** StdSelect_Prs ******************/
 		%feature("compactdefaultargs") StdSelect_Prs;
 		%feature("autodoc", "No available documentation.
@@ -803,6 +793,16 @@ Returns
 None
 ") StdSelect_Prs;
 		 StdSelect_Prs(const opencascade::handle<Graphic3d_StructureManager> & aStructureManager);
+
+		/****************** Manager ******************/
+		%feature("compactdefaultargs") Manager;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Graphic3d_StructureManager>
+") Manager;
+		const opencascade::handle<Graphic3d_StructureManager> & Manager();
 
 };
 
@@ -820,6 +820,22 @@ None
 ************************/
 class StdSelect_Shape : public PrsMgr_PresentableObject {
 	public:
+		/****************** StdSelect_Shape ******************/
+		%feature("compactdefaultargs") StdSelect_Shape;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theShape: TopoDS_Shape
+theDrawer: Prs3d_Drawer,optional
+	default value is opencascade::handle<Prs3d_Drawer>()
+
+Returns
+-------
+None
+") StdSelect_Shape;
+		 StdSelect_Shape(const TopoDS_Shape & theShape, const opencascade::handle<Prs3d_Drawer> & theDrawer = opencascade::handle<Prs3d_Drawer>());
+
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "No available documentation.
@@ -877,22 +893,6 @@ None
 ") Shape;
 		void Shape(const TopoDS_Shape & theShape);
 
-		/****************** StdSelect_Shape ******************/
-		%feature("compactdefaultargs") StdSelect_Shape;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theShape: TopoDS_Shape
-theDrawer: Prs3d_Drawer,optional
-	default value is opencascade::handle<Prs3d_Drawer>()
-
-Returns
--------
-None
-") StdSelect_Shape;
-		 StdSelect_Shape(const TopoDS_Shape & theShape, const opencascade::handle<Prs3d_Drawer> & theDrawer = opencascade::handle<Prs3d_Drawer>());
-
 };
 
 
@@ -909,6 +909,20 @@ None
 **********************************/
 class StdSelect_ShapeTypeFilter : public SelectMgr_Filter {
 	public:
+		/****************** StdSelect_ShapeTypeFilter ******************/
+		%feature("compactdefaultargs") StdSelect_ShapeTypeFilter;
+		%feature("autodoc", "Constructs a filter object defined by the shape type atype.
+
+Parameters
+----------
+aType: TopAbs_ShapeEnum
+
+Returns
+-------
+None
+") StdSelect_ShapeTypeFilter;
+		 StdSelect_ShapeTypeFilter(const TopAbs_ShapeEnum aType);
+
 		/****************** ActsOn ******************/
 		%feature("compactdefaultargs") ActsOn;
 		%feature("autodoc", "No available documentation.
@@ -937,20 +951,6 @@ bool
 ") IsOk;
 		virtual Standard_Boolean IsOk(const opencascade::handle<SelectMgr_EntityOwner> & anobj);
 
-		/****************** StdSelect_ShapeTypeFilter ******************/
-		%feature("compactdefaultargs") StdSelect_ShapeTypeFilter;
-		%feature("autodoc", "Constructs a filter object defined by the shape type atype.
-
-Parameters
-----------
-aType: TopAbs_ShapeEnum
-
-Returns
--------
-None
-") StdSelect_ShapeTypeFilter;
-		 StdSelect_ShapeTypeFilter(const TopAbs_ShapeEnum aType);
-
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Returns the type of shape selected by the filter.
@@ -977,6 +977,16 @@ TopAbs_ShapeEnum
 ***********************************/
 class StdSelect_ViewerSelector3d : public SelectMgr_ViewerSelector {
 	public:
+		/****************** StdSelect_ViewerSelector3d ******************/
+		%feature("compactdefaultargs") StdSelect_ViewerSelector3d;
+		%feature("autodoc", "Constructs an empty 3d selector object.
+
+Returns
+-------
+None
+") StdSelect_ViewerSelector3d;
+		 StdSelect_ViewerSelector3d();
+
 		/****************** ClearSensitive ******************/
 		%feature("compactdefaultargs") ClearSensitive;
 		%feature("autodoc", "No available documentation.
@@ -1095,16 +1105,6 @@ Returns
 None
 ") SetPixelTolerance;
 		void SetPixelTolerance(const Standard_Integer theTolerance);
-
-		/****************** StdSelect_ViewerSelector3d ******************/
-		%feature("compactdefaultargs") StdSelect_ViewerSelector3d;
-		%feature("autodoc", "Constructs an empty 3d selector object.
-
-Returns
--------
-None
-") StdSelect_ViewerSelector3d;
-		 StdSelect_ViewerSelector3d();
 
 		/****************** ToPixMap ******************/
 		%feature("compactdefaultargs") ToPixMap;

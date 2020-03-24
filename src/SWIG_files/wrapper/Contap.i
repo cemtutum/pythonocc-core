@@ -114,19 +114,19 @@ class Contap_TFunction:
 /* end handles declaration */
 
 /* templates */
-%template(Contap_TheSequenceOfPoint) NCollection_Sequence<Contap_Point>;
-%template(Contap_SequenceOfSegmentOfTheSearch) NCollection_Sequence<Contap_TheSegmentOfTheSearch>;
-%template(Contap_TheSequenceOfLine) NCollection_Sequence<Contap_Line>;
 %template(Contap_SequenceOfIWLineOfTheIWalking) NCollection_Sequence<opencascade::handle<Contap_TheIWLineOfTheIWalking>>;
 %template(Contap_SequenceOfPathPointOfTheSearch) NCollection_Sequence<Contap_ThePathPointOfTheSearch>;
+%template(Contap_SequenceOfSegmentOfTheSearch) NCollection_Sequence<Contap_TheSegmentOfTheSearch>;
+%template(Contap_TheSequenceOfLine) NCollection_Sequence<Contap_Line>;
+%template(Contap_TheSequenceOfPoint) NCollection_Sequence<Contap_Point>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<Contap_Point> Contap_TheSequenceOfPoint;
-typedef NCollection_Sequence<Contap_TheSegmentOfTheSearch> Contap_SequenceOfSegmentOfTheSearch;
-typedef NCollection_Sequence<Contap_Line> Contap_TheSequenceOfLine;
 typedef NCollection_Sequence<opencascade::handle<Contap_TheIWLineOfTheIWalking>> Contap_SequenceOfIWLineOfTheIWalking;
 typedef NCollection_Sequence<Contap_ThePathPointOfTheSearch> Contap_SequenceOfPathPointOfTheSearch;
+typedef NCollection_Sequence<Contap_TheSegmentOfTheSearch> Contap_SequenceOfSegmentOfTheSearch;
+typedef NCollection_Sequence<Contap_Line> Contap_TheSequenceOfLine;
+typedef NCollection_Sequence<Contap_Point> Contap_TheSequenceOfPoint;
 /* end typedefs declaration */
 
 /***************************
@@ -354,16 +354,6 @@ bool
 ***********************/
 class Contap_ContAna {
 	public:
-		/****************** Circle ******************/
-		%feature("compactdefaultargs") Circle;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-gp_Circ
-") Circle;
-		gp_Circ Circle();
-
 		/****************** Contap_ContAna ******************/
 		%feature("compactdefaultargs") Contap_ContAna;
 		%feature("autodoc", "No available documentation.
@@ -373,6 +363,16 @@ Returns
 None
 ") Contap_ContAna;
 		 Contap_ContAna();
+
+		/****************** Circle ******************/
+		%feature("compactdefaultargs") Circle;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_Circ
+") Circle;
+		gp_Circ Circle();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -1511,6 +1511,16 @@ gp_Pnt2d
 ********************/
 class Contap_Line {
 	public:
+		/****************** Contap_Line ******************/
+		%feature("compactdefaultargs") Contap_Line;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Contap_Line;
+		 Contap_Line();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -1568,16 +1578,6 @@ Returns
 None
 ") Clear;
 		void Clear();
-
-		/****************** Contap_Line ******************/
-		%feature("compactdefaultargs") Contap_Line;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Contap_Line;
-		 Contap_Line();
 
 		/****************** Line ******************/
 		%feature("compactdefaultargs") Line;
@@ -1761,16 +1761,6 @@ Contap_Point
 *********************/
 class Contap_Point {
 	public:
-		/****************** Arc ******************/
-		%feature("compactdefaultargs") Arc;
-		%feature("autodoc", "Returns the arc of restriction containing the vertex.
-
-Returns
--------
-opencascade::handle<Adaptor2d_HCurve2d>
-") Arc;
-		const opencascade::handle<Adaptor2d_HCurve2d> & Arc();
-
 		/****************** Contap_Point ******************/
 		%feature("compactdefaultargs") Contap_Point;
 		%feature("autodoc", "Empty constructor.
@@ -1796,6 +1786,16 @@ Returns
 None
 ") Contap_Point;
 		 Contap_Point(const gp_Pnt & Pt, const Standard_Real U, const Standard_Real V);
+
+		/****************** Arc ******************/
+		%feature("compactdefaultargs") Arc;
+		%feature("autodoc", "Returns the arc of restriction containing the vertex.
+
+Returns
+-------
+opencascade::handle<Adaptor2d_HCurve2d>
+") Arc;
+		const opencascade::handle<Adaptor2d_HCurve2d> & Arc();
 
 		/****************** IsInternal ******************/
 		%feature("compactdefaultargs") IsInternal;
@@ -2007,16 +2007,6 @@ opencascade::handle<Adaptor3d_HVertex>
 ****************************/
 class Contap_SurfFunction : public math_FunctionSetWithDerivatives {
 	public:
-		/****************** Angle ******************/
-		%feature("compactdefaultargs") Angle;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-float
-") Angle;
-		Standard_Real Angle();
-
 		/****************** Contap_SurfFunction ******************/
 		%feature("compactdefaultargs") Contap_SurfFunction;
 		%feature("autodoc", "No available documentation.
@@ -2026,6 +2016,16 @@ Returns
 None
 ") Contap_SurfFunction;
 		 Contap_SurfFunction();
+
+		/****************** Angle ******************/
+		%feature("compactdefaultargs") Angle;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
+") Angle;
+		Standard_Real Angle();
 
 		/****************** Derivatives ******************/
 		%feature("compactdefaultargs") Derivatives;
@@ -2375,6 +2375,21 @@ None
 **************************************/
 class Contap_TheIWLineOfTheIWalking : public Standard_Transient {
 	public:
+		/****************** Contap_TheIWLineOfTheIWalking ******************/
+		%feature("compactdefaultargs") Contap_TheIWLineOfTheIWalking;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theAllocator: IntSurf_Allocator,optional
+	default value is 0
+
+Returns
+-------
+None
+") Contap_TheIWLineOfTheIWalking;
+		 Contap_TheIWLineOfTheIWalking(const IntSurf_Allocator & theAllocator = 0);
+
 		/****************** AddIndexPassing ******************/
 		%feature("compactdefaultargs") AddIndexPassing;
 		%feature("autodoc", "Associer a l 'indice du point sur la ligne l'indice du point passant dans l'iterateur de depart.
@@ -2480,21 +2495,6 @@ Returns
 None
 ") AddStatusLast;
 		void AddStatusLast(const Standard_Boolean HasLast, const Standard_Integer Index, const IntSurf_PathPoint & P);
-
-		/****************** Contap_TheIWLineOfTheIWalking ******************/
-		%feature("compactdefaultargs") Contap_TheIWLineOfTheIWalking;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theAllocator: IntSurf_Allocator,optional
-	default value is 0
-
-Returns
--------
-None
-") Contap_TheIWLineOfTheIWalking;
-		 Contap_TheIWLineOfTheIWalking(const IntSurf_Allocator & theAllocator = 0);
 
 		/****************** Cut ******************/
 		%feature("compactdefaultargs") Cut;
@@ -2886,16 +2886,6 @@ opencascade::handle<Contap_TheIWLineOfTheIWalking>
 ***************************************/
 class Contap_ThePathPointOfTheSearch {
 	public:
-		/****************** Arc ******************/
-		%feature("compactdefaultargs") Arc;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Adaptor2d_HCurve2d>
-") Arc;
-		const opencascade::handle<Adaptor2d_HCurve2d> & Arc();
-
 		/****************** Contap_ThePathPointOfTheSearch ******************/
 		%feature("compactdefaultargs") Contap_ThePathPointOfTheSearch;
 		%feature("autodoc", "No available documentation.
@@ -2940,6 +2930,16 @@ Returns
 None
 ") Contap_ThePathPointOfTheSearch;
 		 Contap_ThePathPointOfTheSearch(const gp_Pnt & P, const Standard_Real Tol, const opencascade::handle<Adaptor2d_HCurve2d> & A, const Standard_Real Parameter);
+
+		/****************** Arc ******************/
+		%feature("compactdefaultargs") Arc;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Adaptor2d_HCurve2d>
+") Arc;
+		const opencascade::handle<Adaptor2d_HCurve2d> & Arc();
 
 		/****************** IsNew ******************/
 		%feature("compactdefaultargs") IsNew;
@@ -3040,16 +3040,6 @@ opencascade::handle<Adaptor3d_HVertex>
 *************************/
 class Contap_TheSearch {
 	public:
-		/****************** AllArcSolution ******************/
-		%feature("compactdefaultargs") AllArcSolution;
-		%feature("autodoc", "Returns true if all arc of the arcs are solution (inside the surface). an exception is raised if isdone returns false.
-
-Returns
--------
-bool
-") AllArcSolution;
-		Standard_Boolean AllArcSolution();
-
 		/****************** Contap_TheSearch ******************/
 		%feature("compactdefaultargs") Contap_TheSearch;
 		%feature("autodoc", "Empty constructor.
@@ -3059,6 +3049,16 @@ Returns
 None
 ") Contap_TheSearch;
 		 Contap_TheSearch();
+
+		/****************** AllArcSolution ******************/
+		%feature("compactdefaultargs") AllArcSolution;
+		%feature("autodoc", "Returns true if all arc of the arcs are solution (inside the surface). an exception is raised if isdone returns false.
+
+Returns
+-------
+bool
+") AllArcSolution;
+		Standard_Boolean AllArcSolution();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;

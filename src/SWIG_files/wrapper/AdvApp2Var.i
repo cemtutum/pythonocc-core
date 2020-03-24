@@ -100,38 +100,15 @@ class AdvApp2Var_CriterionType:
 /* end handles declaration */
 
 /* templates */
-%template(AdvApp2Var_SequenceOfPatch) NCollection_Sequence<AdvApp2Var_Patch>;
 %template(AdvApp2Var_SequenceOfNode) NCollection_Sequence<AdvApp2Var_Node>;
+%template(AdvApp2Var_SequenceOfPatch) NCollection_Sequence<AdvApp2Var_Patch>;
 %template(AdvApp2Var_SequenceOfStrip) NCollection_Sequence<AdvApp2Var_Strip>;
 %template(AdvApp2Var_Strip) NCollection_Sequence<AdvApp2Var_Iso>;
 /* end templates declaration */
 
 /* typedefs */
-typedef int integer;
-typedef double doublereal;
-typedef unsigned long uinteger;
-typedef char * address;
-typedef short int shortint;
-typedef float real;
-typedef long int logical;
-typedef short int shortlogical;
-typedef char logical1;
-typedef char integer1;
-typedef long long longint;
-typedef unsigned long long ulongint;
-typedef long int flag;
-typedef long int ftnlen;
-typedef long int ftnint;
-typedef union Multitype Multitype;
-typedef struct Vardesc Vardesc;
-typedef struct Namelist Namelist;
-typedef int ( * S_fp ) ( );
-typedef VOID C_f;
-typedef VOID H_f;
-typedef VOID Z_f;
-typedef doublereal E_f;
-typedef NCollection_Sequence<AdvApp2Var_Patch> AdvApp2Var_SequenceOfPatch;
 typedef NCollection_Sequence<AdvApp2Var_Node> AdvApp2Var_SequenceOfNode;
+typedef NCollection_Sequence<AdvApp2Var_Patch> AdvApp2Var_SequenceOfPatch;
 typedef NCollection_Sequence<AdvApp2Var_Strip> AdvApp2Var_SequenceOfStrip;
 typedef NCollection_Sequence<AdvApp2Var_Iso> AdvApp2Var_Strip;
 /* end typedefs declaration */
@@ -2555,35 +2532,6 @@ int
 *************************/
 class AdvApp2Var_Patch {
 	public:
-		/****************** AddConstraints ******************/
-		%feature("compactdefaultargs") AddConstraints;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Conditions: AdvApp2Var_Context
-Constraints: AdvApp2Var_Framework
-
-Returns
--------
-None
-") AddConstraints;
-		void AddConstraints(const AdvApp2Var_Context & Conditions, const AdvApp2Var_Framework & Constraints);
-
-		/****************** AddErrors ******************/
-		%feature("compactdefaultargs") AddErrors;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Constraints: AdvApp2Var_Framework
-
-Returns
--------
-None
-") AddErrors;
-		void AddErrors(const AdvApp2Var_Framework & Constraints);
-
 		/****************** AdvApp2Var_Patch ******************/
 		%feature("compactdefaultargs") AdvApp2Var_Patch;
 		%feature("autodoc", "No available documentation.
@@ -2612,6 +2560,35 @@ Returns
 None
 ") AdvApp2Var_Patch;
 		 AdvApp2Var_Patch(const Standard_Real U0, const Standard_Real U1, const Standard_Real V0, const Standard_Real V1, const Standard_Integer iu, const Standard_Integer iv);
+
+		/****************** AddConstraints ******************/
+		%feature("compactdefaultargs") AddConstraints;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Conditions: AdvApp2Var_Context
+Constraints: AdvApp2Var_Framework
+
+Returns
+-------
+None
+") AddConstraints;
+		void AddConstraints(const AdvApp2Var_Context & Conditions, const AdvApp2Var_Framework & Constraints);
+
+		/****************** AddErrors ******************/
+		%feature("compactdefaultargs") AddErrors;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Constraints: AdvApp2Var_Framework
+
+Returns
+-------
+None
+") AddErrors;
+		void AddErrors(const AdvApp2Var_Framework & Constraints);
 
 		/****************** AverageErrors ******************/
 		%feature("compactdefaultargs") AverageErrors;
@@ -3282,36 +3259,6 @@ None
 	}
 };
 
-/******************
-* class Multitype *
-******************/
-/*****************
-* class Namelist *
-*****************/
-/****************
-* class Vardesc *
-****************/
-/**************
-* class alist *
-**************/
-/***************
-* class cilist *
-***************/
-/***************
-* class cllist *
-***************/
-/****************
-* class complex *
-****************/
-/**********************
-* class doublecomplex *
-**********************/
-/****************
-* class icilist *
-****************/
-/***************
-* class inlist *
-***************/
 /*******************
 * class maovpar_1_ *
 *******************/
@@ -3345,9 +3292,6 @@ None
 /*******************
 * class mmjcobi_1_ *
 *******************/
-/**************
-* class olist *
-**************/
 /* python proxy for excluded classes */
 %pythoncode {
 @classnotwrapped

@@ -100,15 +100,15 @@ class Draft_ErrorStatus:
 /* end handles declaration */
 
 /* templates */
+%template(Draft_IndexedDataMapOfEdgeEdgeInfo) NCollection_IndexedDataMap<TopoDS_Edge,Draft_EdgeInfo,TopTools_ShapeMapHasher>;
 %template(Draft_IndexedDataMapOfFaceFaceInfo) NCollection_IndexedDataMap<TopoDS_Face,Draft_FaceInfo,TopTools_ShapeMapHasher>;
 %template(Draft_IndexedDataMapOfVertexVertexInfo) NCollection_IndexedDataMap<TopoDS_Vertex,Draft_VertexInfo,TopTools_ShapeMapHasher>;
-%template(Draft_IndexedDataMapOfEdgeEdgeInfo) NCollection_IndexedDataMap<TopoDS_Edge,Draft_EdgeInfo,TopTools_ShapeMapHasher>;
 /* end templates declaration */
 
 /* typedefs */
+typedef NCollection_IndexedDataMap<TopoDS_Edge, Draft_EdgeInfo, TopTools_ShapeMapHasher> Draft_IndexedDataMapOfEdgeEdgeInfo;
 typedef NCollection_IndexedDataMap<TopoDS_Face, Draft_FaceInfo, TopTools_ShapeMapHasher> Draft_IndexedDataMapOfFaceFaceInfo;
 typedef NCollection_IndexedDataMap<TopoDS_Vertex, Draft_VertexInfo, TopTools_ShapeMapHasher> Draft_IndexedDataMapOfVertexVertexInfo;
-typedef NCollection_IndexedDataMap<TopoDS_Edge, Draft_EdgeInfo, TopTools_ShapeMapHasher> Draft_IndexedDataMapOfEdgeEdgeInfo;
 /* end typedefs declaration */
 
 /**************
@@ -146,6 +146,30 @@ float
 ***********************/
 class Draft_EdgeInfo {
 	public:
+		/****************** Draft_EdgeInfo ******************/
+		%feature("compactdefaultargs") Draft_EdgeInfo;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Draft_EdgeInfo;
+		 Draft_EdgeInfo();
+
+		/****************** Draft_EdgeInfo ******************/
+		%feature("compactdefaultargs") Draft_EdgeInfo;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HasNewGeometry: bool
+
+Returns
+-------
+None
+") Draft_EdgeInfo;
+		 Draft_EdgeInfo(const Standard_Boolean HasNewGeometry);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -189,30 +213,6 @@ Returns
 opencascade::handle<Geom2d_Curve>
 ") ChangeSecondPC;
 		opencascade::handle<Geom2d_Curve> & ChangeSecondPC();
-
-		/****************** Draft_EdgeInfo ******************/
-		%feature("compactdefaultargs") Draft_EdgeInfo;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Draft_EdgeInfo;
-		 Draft_EdgeInfo();
-
-		/****************** Draft_EdgeInfo ******************/
-		%feature("compactdefaultargs") Draft_EdgeInfo;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-HasNewGeometry: bool
-
-Returns
--------
-None
-") Draft_EdgeInfo;
-		 Draft_EdgeInfo(const Standard_Boolean HasNewGeometry);
 
 		/****************** FirstFace ******************/
 		%feature("compactdefaultargs") FirstFace;
@@ -378,6 +378,31 @@ float
 ***********************/
 class Draft_FaceInfo {
 	public:
+		/****************** Draft_FaceInfo ******************/
+		%feature("compactdefaultargs") Draft_FaceInfo;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Draft_FaceInfo;
+		 Draft_FaceInfo();
+
+		/****************** Draft_FaceInfo ******************/
+		%feature("compactdefaultargs") Draft_FaceInfo;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: Geom_Surface
+HasNewGeometry: bool
+
+Returns
+-------
+None
+") Draft_FaceInfo;
+		 Draft_FaceInfo(const opencascade::handle<Geom_Surface> & S, const Standard_Boolean HasNewGeometry);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -421,31 +446,6 @@ Returns
 opencascade::handle<Geom_Curve>
 ") Curve;
 		const opencascade::handle<Geom_Curve> & Curve();
-
-		/****************** Draft_FaceInfo ******************/
-		%feature("compactdefaultargs") Draft_FaceInfo;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Draft_FaceInfo;
-		 Draft_FaceInfo();
-
-		/****************** Draft_FaceInfo ******************/
-		%feature("compactdefaultargs") Draft_FaceInfo;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: Geom_Surface
-HasNewGeometry: bool
-
-Returns
--------
-None
-") Draft_FaceInfo;
-		 Draft_FaceInfo(const opencascade::handle<Geom_Surface> & S, const Standard_Boolean HasNewGeometry);
 
 		/****************** FirstFace ******************/
 		%feature("compactdefaultargs") FirstFace;
@@ -525,6 +525,20 @@ TopoDS_Face
 ***************************/
 class Draft_Modification : public BRepTools_Modification {
 	public:
+		/****************** Draft_Modification ******************/
+		%feature("compactdefaultargs") Draft_Modification;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") Draft_Modification;
+		 Draft_Modification(const TopoDS_Shape & S);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the face f and propagates the draft modification to its neighbour faces if they are tangent. if an error occurs, will return false and problematicshape will return the 'bad' face.
@@ -586,20 +600,6 @@ Returns
 GeomAbs_Shape
 ") Continuity;
 		GeomAbs_Shape Continuity(const TopoDS_Edge & E, const TopoDS_Face & F1, const TopoDS_Face & F2, const TopoDS_Edge & NewE, const TopoDS_Face & NewF1, const TopoDS_Face & NewF2);
-
-		/****************** Draft_Modification ******************/
-		%feature("compactdefaultargs") Draft_Modification;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") Draft_Modification;
-		 Draft_Modification(const TopoDS_Shape & S);
 
 		/****************** Error ******************/
 		%feature("compactdefaultargs") Error;
@@ -783,6 +783,16 @@ None
 *************************/
 class Draft_VertexInfo {
 	public:
+		/****************** Draft_VertexInfo ******************/
+		%feature("compactdefaultargs") Draft_VertexInfo;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Draft_VertexInfo;
+		 Draft_VertexInfo();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -820,16 +830,6 @@ gp_Pnt
             $self->ChangeParameter(E)=value;
             }
         };
-		/****************** Draft_VertexInfo ******************/
-		%feature("compactdefaultargs") Draft_VertexInfo;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Draft_VertexInfo;
-		 Draft_VertexInfo();
-
 		/****************** Edge ******************/
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "No available documentation.

@@ -136,6 +136,54 @@ GeomAbs_Shape
 **************************/
 class GeomLProp_CLProps {
 	public:
+		/****************** GeomLProp_CLProps ******************/
+		%feature("compactdefaultargs") GeomLProp_CLProps;
+		%feature("autodoc", "Initializes the local properties of the curve <c> the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, 2 or 3). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
+
+Parameters
+----------
+C: Geom_Curve
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") GeomLProp_CLProps;
+		 GeomLProp_CLProps(const opencascade::handle<Geom_Curve> & C, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** GeomLProp_CLProps ******************/
+		%feature("compactdefaultargs") GeomLProp_CLProps;
+		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u>. all the computations done will be related to <c> and <u>.
+
+Parameters
+----------
+C: Geom_Curve
+U: float
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") GeomLProp_CLProps;
+		 GeomLProp_CLProps(const opencascade::handle<Geom_Curve> & C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** GeomLProp_CLProps ******************/
+		%feature("compactdefaultargs") GeomLProp_CLProps;
+		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u> and the curve is set with setcurve. the curve can have a empty constructor all the computations done will be related to <c> and <u> when the functions 'set' will be done.
+
+Parameters
+----------
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") GeomLProp_CLProps;
+		 GeomLProp_CLProps(const Standard_Integer N, const Standard_Real Resolution);
+
 		/****************** CentreOfCurvature ******************/
 		%feature("compactdefaultargs") CentreOfCurvature;
 		%feature("autodoc", "Returns the centre of curvature <p>.
@@ -189,54 +237,6 @@ Returns
 gp_Vec
 ") D3;
 		const gp_Vec D3();
-
-		/****************** GeomLProp_CLProps ******************/
-		%feature("compactdefaultargs") GeomLProp_CLProps;
-		%feature("autodoc", "Initializes the local properties of the curve <c> the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, 2 or 3). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
-
-Parameters
-----------
-C: Geom_Curve
-N: int
-Resolution: float
-
-Returns
--------
-None
-") GeomLProp_CLProps;
-		 GeomLProp_CLProps(const opencascade::handle<Geom_Curve> & C, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** GeomLProp_CLProps ******************/
-		%feature("compactdefaultargs") GeomLProp_CLProps;
-		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u>. all the computations done will be related to <c> and <u>.
-
-Parameters
-----------
-C: Geom_Curve
-U: float
-N: int
-Resolution: float
-
-Returns
--------
-None
-") GeomLProp_CLProps;
-		 GeomLProp_CLProps(const opencascade::handle<Geom_Curve> & C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** GeomLProp_CLProps ******************/
-		%feature("compactdefaultargs") GeomLProp_CLProps;
-		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u> and the curve is set with setcurve. the curve can have a empty constructor all the computations done will be related to <c> and <u> when the functions 'set' will be done.
-
-Parameters
-----------
-N: int
-Resolution: float
-
-Returns
--------
-None
-") GeomLProp_CLProps;
-		 GeomLProp_CLProps(const Standard_Integer N, const Standard_Real Resolution);
 
 		/****************** IsTangentDefined ******************/
 		%feature("compactdefaultargs") IsTangentDefined;
@@ -454,6 +454,55 @@ None
 **************************/
 class GeomLProp_SLProps {
 	public:
+		/****************** GeomLProp_SLProps ******************/
+		%feature("compactdefaultargs") GeomLProp_SLProps;
+		%feature("autodoc", "Initializes the local properties of the surface <s> for the parameter values (<u>, <v>). the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, or 2). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
+
+Parameters
+----------
+S: Geom_Surface
+U: float
+V: float
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") GeomLProp_SLProps;
+		 GeomLProp_SLProps(const opencascade::handle<Geom_Surface> & S, const Standard_Real U, const Standard_Real V, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** GeomLProp_SLProps ******************/
+		%feature("compactdefaultargs") GeomLProp_SLProps;
+		%feature("autodoc", "Idem as previous constructor but without setting the value of parameters <u> and <v>.
+
+Parameters
+----------
+S: Geom_Surface
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") GeomLProp_SLProps;
+		 GeomLProp_SLProps(const opencascade::handle<Geom_Surface> & S, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** GeomLProp_SLProps ******************/
+		%feature("compactdefaultargs") GeomLProp_SLProps;
+		%feature("autodoc", "Idem as previous constructor but without setting the value of parameters <u> and <v> and the surface. the surface can have an empty constructor.
+
+Parameters
+----------
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") GeomLProp_SLProps;
+		 GeomLProp_SLProps(const Standard_Integer N, const Standard_Real Resolution);
+
 		/****************** CurvatureDirections ******************/
 		%feature("compactdefaultargs") CurvatureDirections;
 		%feature("autodoc", "Returns the direction of the maximum and minimum curvature <maxd> and <mind>.
@@ -528,55 +577,6 @@ Returns
 float
 ") GaussianCurvature;
 		Standard_Real GaussianCurvature();
-
-		/****************** GeomLProp_SLProps ******************/
-		%feature("compactdefaultargs") GeomLProp_SLProps;
-		%feature("autodoc", "Initializes the local properties of the surface <s> for the parameter values (<u>, <v>). the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, or 2). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
-
-Parameters
-----------
-S: Geom_Surface
-U: float
-V: float
-N: int
-Resolution: float
-
-Returns
--------
-None
-") GeomLProp_SLProps;
-		 GeomLProp_SLProps(const opencascade::handle<Geom_Surface> & S, const Standard_Real U, const Standard_Real V, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** GeomLProp_SLProps ******************/
-		%feature("compactdefaultargs") GeomLProp_SLProps;
-		%feature("autodoc", "Idem as previous constructor but without setting the value of parameters <u> and <v>.
-
-Parameters
-----------
-S: Geom_Surface
-N: int
-Resolution: float
-
-Returns
--------
-None
-") GeomLProp_SLProps;
-		 GeomLProp_SLProps(const opencascade::handle<Geom_Surface> & S, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** GeomLProp_SLProps ******************/
-		%feature("compactdefaultargs") GeomLProp_SLProps;
-		%feature("autodoc", "Idem as previous constructor but without setting the value of parameters <u> and <v> and the surface. the surface can have an empty constructor.
-
-Parameters
-----------
-N: int
-Resolution: float
-
-Returns
--------
-None
-") GeomLProp_SLProps;
-		 GeomLProp_SLProps(const Standard_Integer N, const Standard_Real Resolution);
 
 		/****************** IsCurvatureDefined ******************/
 		%feature("compactdefaultargs") IsCurvatureDefined;

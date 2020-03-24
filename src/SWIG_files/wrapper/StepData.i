@@ -400,64 +400,6 @@ opencascade::handle<StepData_Described>
 **************************/
 class StepData_EnumTool {
 	public:
-		/****************** AddDefinition ******************/
-		%feature("compactdefaultargs") AddDefinition;
-		%feature("autodoc", "Processes a definition, splits it according blanks if any empty definitions are ignored a null definition can be input by given '$' :the corresponding position is attached to 'null/undefined' value (as one particular item of the enumeration list) see also isset.
-
-Parameters
-----------
-term: char *
-
-Returns
--------
-None
-") AddDefinition;
-		void AddDefinition(const char * term);
-
-		/****************** IsSet ******************/
-		%feature("compactdefaultargs") IsSet;
-		%feature("autodoc", "Returns true if at least one definition has been entered after creation time (i.e. by adddefinition only) //! this allows to build a static description by a first pass : static stepdata_enumtool myenumtool('e0' ...); ... if (!myenumtool.isset()) { for further inits myenumtool.adddefinition('e21'); ... }.
-
-Returns
--------
-bool
-") IsSet;
-		Standard_Boolean IsSet();
-
-		/****************** MaxValue ******************/
-		%feature("compactdefaultargs") MaxValue;
-		%feature("autodoc", "Returns the maximum integer for a suitable value remark : while values begin at zero, maxvalue is the count of recorded values minus one.
-
-Returns
--------
-int
-") MaxValue;
-		Standard_Integer MaxValue();
-
-		/****************** NullValue ******************/
-		%feature("compactdefaultargs") NullValue;
-		%feature("autodoc", "Returns the value attached to 'null/undefined value' if none is specified or if optional has been set to false, returns -1 null value has been specified by definition '$'.
-
-Returns
--------
-int
-") NullValue;
-		Standard_Integer NullValue();
-
-		/****************** Optional ******************/
-		%feature("compactdefaultargs") Optional;
-		%feature("autodoc", "Sets or unsets the enumtool to accept undefined value (for optional field). ignored if no null value is defined (by '$') can be changed during execution (to read each field), default is true (if a null value is defined).
-
-Parameters
-----------
-mode: bool
-
-Returns
--------
-None
-") Optional;
-		void Optional(const Standard_Boolean mode);
-
 		/****************** StepData_EnumTool ******************/
 		%feature("compactdefaultargs") StepData_EnumTool;
 		%feature("autodoc", "Creates an enumtool with definitions given by e0 .. e<max> each definition string can bring one term, or several separated by blanks. each term corresponds to one value of the enumeration, if dots are not presents they are added //! such a static constructor allows to build a static description as : static stepdata_enumtool myenumtool('e0','e1'...); then use it without having to initialise it //! a null definition can be input by given '$' :the corresponding position is attached to 'null/undefined' value (as one particular item of the enumeration list).
@@ -551,6 +493,64 @@ None
 ") StepData_EnumTool;
 		 StepData_EnumTool(const char * e0 = "", const char * e1 = "", const char * e2 = "", const char * e3 = "", const char * e4 = "", const char * e5 = "", const char * e6 = "", const char * e7 = "", const char * e8 = "", const char * e9 = "", const char * e10 = "", const char * e11 = "", const char * e12 = "", const char * e13 = "", const char * e14 = "", const char * e15 = "", const char * e16 = "", const char * e17 = "", const char * e18 = "", const char * e19 = "", const char * e20 = "", const char * e21 = "", const char * e22 = "", const char * e23 = "", const char * e24 = "", const char * e25 = "", const char * e26 = "", const char * e27 = "", const char * e28 = "", const char * e29 = "", const char * e30 = "", const char * e31 = "", const char * e32 = "", const char * e33 = "", const char * e34 = "", const char * e35 = "", const char * e36 = "", const char * e37 = "", const char * e38 = "", const char * e39 = "");
 
+		/****************** AddDefinition ******************/
+		%feature("compactdefaultargs") AddDefinition;
+		%feature("autodoc", "Processes a definition, splits it according blanks if any empty definitions are ignored a null definition can be input by given '$' :the corresponding position is attached to 'null/undefined' value (as one particular item of the enumeration list) see also isset.
+
+Parameters
+----------
+term: char *
+
+Returns
+-------
+None
+") AddDefinition;
+		void AddDefinition(const char * term);
+
+		/****************** IsSet ******************/
+		%feature("compactdefaultargs") IsSet;
+		%feature("autodoc", "Returns true if at least one definition has been entered after creation time (i.e. by adddefinition only) //! this allows to build a static description by a first pass : static stepdata_enumtool myenumtool('e0' ...); ... if (!myenumtool.isset()) { for further inits myenumtool.adddefinition('e21'); ... }.
+
+Returns
+-------
+bool
+") IsSet;
+		Standard_Boolean IsSet();
+
+		/****************** MaxValue ******************/
+		%feature("compactdefaultargs") MaxValue;
+		%feature("autodoc", "Returns the maximum integer for a suitable value remark : while values begin at zero, maxvalue is the count of recorded values minus one.
+
+Returns
+-------
+int
+") MaxValue;
+		Standard_Integer MaxValue();
+
+		/****************** NullValue ******************/
+		%feature("compactdefaultargs") NullValue;
+		%feature("autodoc", "Returns the value attached to 'null/undefined value' if none is specified or if optional has been set to false, returns -1 null value has been specified by definition '$'.
+
+Returns
+-------
+int
+") NullValue;
+		Standard_Integer NullValue();
+
+		/****************** Optional ******************/
+		%feature("compactdefaultargs") Optional;
+		%feature("autodoc", "Sets or unsets the enumtool to accept undefined value (for optional field). ignored if no null value is defined (by '$') can be changed during execution (to read each field), default is true (if a null value is defined).
+
+Parameters
+----------
+mode: bool
+
+Returns
+-------
+None
+") Optional;
+		void Optional(const Standard_Boolean mode);
+
 		/****************** Text ******************/
 		%feature("compactdefaultargs") Text;
 		%feature("autodoc", "Returns the text which corresponds to a given numeric value it is limited by dots if num is out of range, returns an empty string.
@@ -607,6 +607,32 @@ int
 ***********************/
 class StepData_Field {
 	public:
+		/****************** StepData_Field ******************/
+		%feature("compactdefaultargs") StepData_Field;
+		%feature("autodoc", "Creates a field, empty ('no value defined').
+
+Returns
+-------
+None
+") StepData_Field;
+		 StepData_Field();
+
+		/****************** StepData_Field ******************/
+		%feature("compactdefaultargs") StepData_Field;
+		%feature("autodoc", "Creates a field from another one. if <copy> is true, handled data (select,string,list, not entities) are copied.
+
+Parameters
+----------
+other: StepData_Field
+copy: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") StepData_Field;
+		 StepData_Field(const StepData_Field & other, const Standard_Boolean copy = Standard_False);
+
 		/****************** Arity ******************/
 		%feature("compactdefaultargs") Arity;
 		%feature("autodoc", "No available documentation.
@@ -1194,32 +1220,6 @@ None
 ") SetString;
 		void SetString(const Standard_Integer num, const char * val);
 
-		/****************** StepData_Field ******************/
-		%feature("compactdefaultargs") StepData_Field;
-		%feature("autodoc", "Creates a field, empty ('no value defined').
-
-Returns
--------
-None
-") StepData_Field;
-		 StepData_Field();
-
-		/****************** StepData_Field ******************/
-		%feature("compactdefaultargs") StepData_Field;
-		%feature("autodoc", "Creates a field from another one. if <copy> is true, handled data (select,string,list, not entities) are copied.
-
-Parameters
-----------
-other: StepData_Field
-copy: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") StepData_Field;
-		 StepData_Field(const StepData_Field & other, const Standard_Boolean copy = Standard_False);
-
 		/****************** String ******************/
 		%feature("compactdefaultargs") String;
 		%feature("autodoc", "No available documentation.
@@ -1261,6 +1261,16 @@ opencascade::handle<Standard_Transient>
 ***************************/
 class StepData_FieldList {
 	public:
+		/****************** StepData_FieldList ******************/
+		%feature("compactdefaultargs") StepData_FieldList;
+		%feature("autodoc", "Creates a fieldlist of 0 field.
+
+Returns
+-------
+None
+") StepData_FieldList;
+		 StepData_FieldList();
+
 		/****************** CField ******************/
 		%feature("compactdefaultargs") CField;
 		%feature("autodoc", "Returns the field n0 <num> between 1 and nbfields, in order to modify its content.
@@ -1312,16 +1322,6 @@ Returns
 int
 ") NbFields;
 		virtual Standard_Integer NbFields();
-
-		/****************** StepData_FieldList ******************/
-		%feature("compactdefaultargs") StepData_FieldList;
-		%feature("autodoc", "Creates a fieldlist of 0 field.
-
-Returns
--------
-None
-") StepData_FieldList;
-		 StepData_FieldList();
 
 };
 
@@ -1463,6 +1463,16 @@ None
 ***************************************/
 class StepData_GlobalNodeOfWriterLib : public Standard_Transient {
 	public:
+		/****************** StepData_GlobalNodeOfWriterLib ******************/
+		%feature("compactdefaultargs") StepData_GlobalNodeOfWriterLib;
+		%feature("autodoc", "Creates an empty globalnode, with no next.
+
+Returns
+-------
+None
+") StepData_GlobalNodeOfWriterLib;
+		 StepData_GlobalNodeOfWriterLib();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a module bound with a protocol to the list : does nothing if already in the list, that is, same type (exact match) and same state (that is, isequal is not required) once added, stores its attached protocol in correspondance.
@@ -1508,16 +1518,6 @@ opencascade::handle<StepData_Protocol>
 ") Protocol;
 		const opencascade::handle<StepData_Protocol> & Protocol();
 
-		/****************** StepData_GlobalNodeOfWriterLib ******************/
-		%feature("compactdefaultargs") StepData_GlobalNodeOfWriterLib;
-		%feature("autodoc", "Creates an empty globalnode, with no next.
-
-Returns
--------
-None
-") StepData_GlobalNodeOfWriterLib;
-		 StepData_GlobalNodeOfWriterLib();
-
 };
 
 
@@ -1534,6 +1534,16 @@ None
 *********************************/
 class StepData_NodeOfWriterLib : public Standard_Transient {
 	public:
+		/****************** StepData_NodeOfWriterLib ******************/
+		%feature("compactdefaultargs") StepData_NodeOfWriterLib;
+		%feature("autodoc", "Creates an empty node, with no next.
+
+Returns
+-------
+None
+") StepData_NodeOfWriterLib;
+		 StepData_NodeOfWriterLib();
+
 		/****************** AddNode ******************/
 		%feature("compactdefaultargs") AddNode;
 		%feature("autodoc", "Adds a couple (module,protocol), that is, stores it into itself if not yet done, else creates a next node to do it.
@@ -1578,16 +1588,6 @@ opencascade::handle<StepData_Protocol>
 ") Protocol;
 		const opencascade::handle<StepData_Protocol> & Protocol();
 
-		/****************** StepData_NodeOfWriterLib ******************/
-		%feature("compactdefaultargs") StepData_NodeOfWriterLib;
-		%feature("autodoc", "Creates an empty node, with no next.
-
-Returns
--------
-None
-") StepData_NodeOfWriterLib;
-		 StepData_NodeOfWriterLib();
-
 };
 
 
@@ -1604,6 +1604,16 @@ None
 ************************/
 class StepData_PDescr : public Standard_Transient {
 	public:
+		/****************** StepData_PDescr ******************/
+		%feature("compactdefaultargs") StepData_PDescr;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepData_PDescr;
+		 StepData_PDescr();
+
 		/****************** AddArity ******************/
 		%feature("compactdefaultargs") AddArity;
 		%feature("autodoc", "Adds an arity count to <self>, by default 1 1 : a simple field passes to a list/array etc or a list to a list of list 2 : a simple field passes to a list of list.
@@ -2112,16 +2122,6 @@ opencascade::handle<StepData_PDescr>
 ") Simple;
 		opencascade::handle<StepData_PDescr> Simple();
 
-		/****************** StepData_PDescr ******************/
-		%feature("compactdefaultargs") StepData_PDescr;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepData_PDescr;
-		 StepData_PDescr();
-
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Returns the type to match (iskind), for a cdl entity (else, null handle).
@@ -2148,6 +2148,16 @@ opencascade::handle<Standard_Type>
 **************************/
 class StepData_Protocol : public Interface_Protocol {
 	public:
+		/****************** StepData_Protocol ******************/
+		%feature("compactdefaultargs") StepData_Protocol;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepData_Protocol;
+		 StepData_Protocol();
+
 		/****************** AddBasicDescr ******************/
 		%feature("compactdefaultargs") AddBasicDescr;
 		%feature("autodoc", "Records an esdescr, intended to build complex descriptions.
@@ -2395,16 +2405,6 @@ char *
 ") SchemaName;
 		virtual const char * SchemaName();
 
-		/****************** StepData_Protocol ******************/
-		%feature("compactdefaultargs") StepData_Protocol;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepData_Protocol;
-		 StepData_Protocol();
-
 		/****************** TypeNumber ******************/
 		%feature("compactdefaultargs") TypeNumber;
 		%feature("autodoc", "Returns a case number, specific of each recognized type here, only unknown entity is recognized.
@@ -2614,6 +2614,16 @@ None
 ******************************/
 class StepData_SelectMember : public Standard_Transient {
 	public:
+		/****************** StepData_SelectMember ******************/
+		%feature("compactdefaultargs") StepData_SelectMember;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepData_SelectMember;
+		 StepData_SelectMember();
+
 		/****************** Boolean ******************/
 		%feature("compactdefaultargs") Boolean;
 		%feature("autodoc", "No available documentation.
@@ -2880,16 +2890,6 @@ Returns
 None
 ") SetString;
 		virtual void SetString(const char * val);
-
-		/****************** StepData_SelectMember ******************/
-		%feature("compactdefaultargs") StepData_SelectMember;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepData_SelectMember;
-		 StepData_SelectMember();
 
 		/****************** String ******************/
 		%feature("compactdefaultargs") String;
@@ -3216,6 +3216,23 @@ opencascade::handle<Standard_Transient>
 ****************************/
 class StepData_StepDumper {
 	public:
+		/****************** StepData_StepDumper ******************/
+		%feature("compactdefaultargs") StepData_StepDumper;
+		%feature("autodoc", "Creates a stepdumper, able to work on a given stepmodel (which defines the total scope for dumping entities) and a given protocol from step (which defines the authorized types to be dumped) <mode> commands what is to be displayed (number or label) 0 for number (and corresponding labels are displayed apart) 1 for label (and corresponding numbers are displayed apart) 2 for label without anymore.
+
+Parameters
+----------
+amodel: StepData_StepModel
+protocol: StepData_Protocol
+mode: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") StepData_StepDumper;
+		 StepData_StepDumper(const opencascade::handle<StepData_StepModel> & amodel, const opencascade::handle<StepData_Protocol> & protocol, const Standard_Integer mode = 0);
+
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "Dumps a entity on an messenger. returns true if sucess, false, if the entity to dump has not been recognized by the protocol. <level> can have one of these values : - 0 : prints the type only, as known in step files (steptype) if <ent> has not been regognized by the protocol, or if its type is complex, the steptype is replaced by the display of the cdl type. complex type are well processed by level 1. - 1 : dumps the entity, completely (whatever it has simple or complex type) but alone. - 2 : dumps the entity completely, plus the item its refers to at first level (a header message designates the starting entity of the dump) <lists shared and implied> - 3 : dumps the entity and its refered items at any levels //! for levels 1,2,3, the numbers displayed (form #nnn) are the numbers of the corresponding entities in the model.
@@ -3248,23 +3265,6 @@ bool
 ") Dump;
 		Standard_Boolean Dump(const opencascade::handle<Message_Messenger> & S, const Standard_Integer num, const Standard_Integer level);
 
-		/****************** StepData_StepDumper ******************/
-		%feature("compactdefaultargs") StepData_StepDumper;
-		%feature("autodoc", "Creates a stepdumper, able to work on a given stepmodel (which defines the total scope for dumping entities) and a given protocol from step (which defines the authorized types to be dumped) <mode> commands what is to be displayed (number or label) 0 for number (and corresponding labels are displayed apart) 1 for label (and corresponding numbers are displayed apart) 2 for label without anymore.
-
-Parameters
-----------
-amodel: StepData_StepModel
-protocol: StepData_Protocol
-mode: int,optional
-	default value is 0
-
-Returns
--------
-None
-") StepData_StepDumper;
-		 StepData_StepDumper(const opencascade::handle<StepData_StepModel> & amodel, const opencascade::handle<StepData_Protocol> & protocol, const Standard_Integer mode = 0);
-
 		/****************** StepWriter ******************/
 		%feature("compactdefaultargs") StepWriter;
 		%feature("autodoc", "Gives an access to the tool which is used to work : this allow to acts on some parameters : floating format, scopes ...
@@ -3289,6 +3289,16 @@ StepData_StepWriter
 ***************************/
 class StepData_StepModel : public Interface_InterfaceModel {
 	public:
+		/****************** StepData_StepModel ******************/
+		%feature("compactdefaultargs") StepData_StepModel;
+		%feature("autodoc", "Creates an empty step model with an empty header.
+
+Returns
+-------
+None
+") StepData_StepModel;
+		 StepData_StepModel();
+
 		/****************** AddHeaderEntity ******************/
 		%feature("compactdefaultargs") AddHeaderEntity;
 		%feature("autodoc", "Adds an entity to the header.
@@ -3459,16 +3469,6 @@ None
 ") SetIdentLabel;
 		void SetIdentLabel(const opencascade::handle<Standard_Transient> & ent, const Standard_Integer ident);
 
-		/****************** StepData_StepModel ******************/
-		%feature("compactdefaultargs") StepData_StepModel;
-		%feature("autodoc", "Creates an empty step model with an empty header.
-
-Returns
--------
-None
-") StepData_StepModel;
-		 StepData_StepModel();
-
 		/****************** StringLabel ******************/
 		%feature("compactdefaultargs") StringLabel;
 		%feature("autodoc", "Returns a string with the label attached to a given entity, same form as for printlabel.
@@ -3513,6 +3513,22 @@ None
 ********************************/
 class StepData_StepReaderData : public Interface_FileReaderData {
 	public:
+		/****************** StepData_StepReaderData ******************/
+		%feature("compactdefaultargs") StepData_StepReaderData;
+		%feature("autodoc", "Creates stepreaderdata correctly dimensionned (necessary at creation time, because it contains arrays) nbheader is nb of records for header, nbtotal for header+data and nbpar gives the total count of parameters.
+
+Parameters
+----------
+nbheader: int
+nbtotal: int
+nbpar: int
+
+Returns
+-------
+None
+") StepData_StepReaderData;
+		 StepData_StepReaderData(const Standard_Integer nbheader, const Standard_Integer nbtotal, const Standard_Integer nbpar);
+
 		/****************** AddStepParam ******************/
 		%feature("compactdefaultargs") AddStepParam;
 		%feature("autodoc", "Fills the fields of a parameter of a record. this is a variant of addparam, adapted to step (optimized for specific values).
@@ -4079,22 +4095,6 @@ None
 ") SetRecord;
 		void SetRecord(const Standard_Integer num, const char * ident, const char * type, const Standard_Integer nbpar);
 
-		/****************** StepData_StepReaderData ******************/
-		%feature("compactdefaultargs") StepData_StepReaderData;
-		%feature("autodoc", "Creates stepreaderdata correctly dimensionned (necessary at creation time, because it contains arrays) nbheader is nb of records for header, nbtotal for header+data and nbpar gives the total count of parameters.
-
-Parameters
-----------
-nbheader: int
-nbtotal: int
-nbpar: int
-
-Returns
--------
-None
-") StepData_StepReaderData;
-		 StepData_StepReaderData(const Standard_Integer nbheader, const Standard_Integer nbtotal, const Standard_Integer nbpar);
-
 		/****************** SubListNumber ******************/
 		%feature("compactdefaultargs") SubListNumber;
 		%feature("autodoc", "Returns sublist numero designated by a parameter (nump) in a record (num), or zero if the parameter does not exist or is not a sublist address. zero too if aslast is true and nump is not for the last parameter.
@@ -4135,6 +4135,21 @@ int
 ********************************/
 class StepData_StepReaderTool : public Interface_FileReaderTool {
 	public:
+		/****************** StepData_StepReaderTool ******************/
+		%feature("compactdefaultargs") StepData_StepReaderTool;
+		%feature("autodoc", "Creates stepreadertool to work with a stepreaderdata according to a step protocol. defines the readerlib at this time.
+
+Parameters
+----------
+reader: StepData_StepReaderData
+protocol: StepData_Protocol
+
+Returns
+-------
+None
+") StepData_StepReaderTool;
+		 StepData_StepReaderTool(const opencascade::handle<StepData_StepReaderData> & reader, const opencascade::handle<StepData_Protocol> & protocol);
+
 		/****************** AnalyseRecord ******************/
 		%feature("compactdefaultargs") AnalyseRecord;
 		%feature("autodoc", "Fills an entity, given record no; works by using a readerlib to load each entity, which must be a transient actually, returned value is true if no fail, false else.
@@ -4240,21 +4255,6 @@ bool
 ") Recognize;
 		Standard_Boolean Recognize(const Standard_Integer num, opencascade::handle<Interface_Check> & ach, opencascade::handle<Standard_Transient> & ent);
 
-		/****************** StepData_StepReaderTool ******************/
-		%feature("compactdefaultargs") StepData_StepReaderTool;
-		%feature("autodoc", "Creates stepreadertool to work with a stepreaderdata according to a step protocol. defines the readerlib at this time.
-
-Parameters
-----------
-reader: StepData_StepReaderData
-protocol: StepData_Protocol
-
-Returns
--------
-None
-") StepData_StepReaderTool;
-		 StepData_StepReaderTool(const opencascade::handle<StepData_StepReaderData> & reader, const opencascade::handle<StepData_Protocol> & protocol);
-
 };
 
 
@@ -4269,6 +4269,20 @@ None
 ****************************/
 class StepData_StepWriter {
 	public:
+		/****************** StepData_StepWriter ******************/
+		%feature("compactdefaultargs") StepData_StepWriter;
+		%feature("autodoc", "Creates an empty stepwriter from a stepmodel. the stepmodel provides the number of entities, as identifiers for file.
+
+Parameters
+----------
+amodel: StepData_StepModel
+
+Returns
+-------
+None
+") StepData_StepWriter;
+		 StepData_StepWriter(const opencascade::handle<StepData_StepModel> & amodel);
+
 		/****************** AddParam ******************/
 		%feature("compactdefaultargs") AddParam;
 		%feature("autodoc", "Prepares adding a parameter (that is, adds ',' except for first one); normally for internal use; can be used to send a totally empty parameter (with no litteral value).
@@ -4859,20 +4873,6 @@ None
 ") StartEntity;
 		void StartEntity(const TCollection_AsciiString & atype);
 
-		/****************** StepData_StepWriter ******************/
-		%feature("compactdefaultargs") StepData_StepWriter;
-		%feature("autodoc", "Creates an empty stepwriter from a stepmodel. the stepmodel provides the number of entities, as identifiers for file.
-
-Parameters
-----------
-amodel: StepData_StepModel
-
-Returns
--------
-None
-") StepData_StepWriter;
-		 StepData_StepWriter(const opencascade::handle<StepData_StepModel> & amodel);
-
 
         %feature("autodoc","1");
         %extend {
@@ -4903,6 +4903,30 @@ None
 ***************************/
 class StepData_WriterLib {
 	public:
+		/****************** StepData_WriterLib ******************/
+		%feature("compactdefaultargs") StepData_WriterLib;
+		%feature("autodoc", "Creates a library which complies with a protocol, that is : same class (criterium isinstance) this creation gets the modules from the global set, those which are bound to the given protocol and its resources.
+
+Parameters
+----------
+aprotocol: StepData_Protocol
+
+Returns
+-------
+None
+") StepData_WriterLib;
+		 StepData_WriterLib(const opencascade::handle<StepData_Protocol> & aprotocol);
+
+		/****************** StepData_WriterLib ******************/
+		%feature("compactdefaultargs") StepData_WriterLib;
+		%feature("autodoc", "Creates an empty library : it will later by filled by method addprotocol.
+
+Returns
+-------
+None
+") StepData_WriterLib;
+		 StepData_WriterLib();
+
 		/****************** AddProtocol ******************/
 		%feature("compactdefaultargs") AddProtocol;
 		%feature("autodoc", "Adds a couple (module-protocol) to the library, given the class of a protocol. takes resources into account. (if <aprotocol> is not of type theprotocol, it is not added).
@@ -5018,30 +5042,6 @@ None
 ") Start;
 		void Start();
 
-		/****************** StepData_WriterLib ******************/
-		%feature("compactdefaultargs") StepData_WriterLib;
-		%feature("autodoc", "Creates a library which complies with a protocol, that is : same class (criterium isinstance) this creation gets the modules from the global set, those which are bound to the given protocol and its resources.
-
-Parameters
-----------
-aprotocol: StepData_Protocol
-
-Returns
--------
-None
-") StepData_WriterLib;
-		 StepData_WriterLib(const opencascade::handle<StepData_Protocol> & aprotocol);
-
-		/****************** StepData_WriterLib ******************/
-		%feature("compactdefaultargs") StepData_WriterLib;
-		%feature("autodoc", "Creates an empty library : it will later by filled by method addprotocol.
-
-Returns
--------
-None
-") StepData_WriterLib;
-		 StepData_WriterLib();
-
 };
 
 
@@ -5056,6 +5056,16 @@ None
 ********************************/
 class StepData_DefaultGeneral : public StepData_GeneralModule {
 	public:
+		/****************** StepData_DefaultGeneral ******************/
+		%feature("compactdefaultargs") StepData_DefaultGeneral;
+		%feature("autodoc", "Creates a default general module.
+
+Returns
+-------
+None
+") StepData_DefaultGeneral;
+		 StepData_DefaultGeneral();
+
 		/****************** CheckCase ******************/
 		%feature("compactdefaultargs") CheckCase;
 		%feature("autodoc", "Specific checking of an entity <ent>.
@@ -5121,16 +5131,6 @@ bool
 ") NewVoid;
 		Standard_Boolean NewVoid(const Standard_Integer CN, opencascade::handle<Standard_Transient> & entto);
 
-		/****************** StepData_DefaultGeneral ******************/
-		%feature("compactdefaultargs") StepData_DefaultGeneral;
-		%feature("autodoc", "Creates a default general module.
-
-Returns
--------
-None
-") StepData_DefaultGeneral;
-		 StepData_DefaultGeneral();
-
 };
 
 
@@ -5147,6 +5147,16 @@ None
 *************************/
 class StepData_ECDescr : public StepData_EDescr {
 	public:
+		/****************** StepData_ECDescr ******************/
+		%feature("compactdefaultargs") StepData_ECDescr;
+		%feature("autodoc", "Creates an ecdescr, empty.
+
+Returns
+-------
+None
+") StepData_ECDescr;
+		 StepData_ECDescr();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a member warning : members are added in alphabetic order.
@@ -5219,16 +5229,6 @@ opencascade::handle<StepData_Described>
 ") NewEntity;
 		opencascade::handle<StepData_Described> NewEntity();
 
-		/****************** StepData_ECDescr ******************/
-		%feature("compactdefaultargs") StepData_ECDescr;
-		%feature("autodoc", "Creates an ecdescr, empty.
-
-Returns
--------
-None
-") StepData_ECDescr;
-		 StepData_ECDescr();
-
 		/****************** TypeList ******************/
 		%feature("compactdefaultargs") TypeList;
 		%feature("autodoc", "Returns the ordered list of types.
@@ -5255,6 +5255,20 @@ opencascade::handle<TColStd_HSequenceOfAsciiString>
 *************************/
 class StepData_ESDescr : public StepData_EDescr {
 	public:
+		/****************** StepData_ESDescr ******************/
+		%feature("compactdefaultargs") StepData_ESDescr;
+		%feature("autodoc", "Creates an esdescr with a type name.
+
+Parameters
+----------
+name: char *
+
+Returns
+-------
+None
+") StepData_ESDescr;
+		 StepData_ESDescr(const char * name);
+
 		/****************** Base ******************/
 		%feature("compactdefaultargs") Base;
 		%feature("autodoc", "Returns the basic esdescr, null if <self> is not derived.
@@ -5437,20 +5451,6 @@ None
 ") SetSuper;
 		void SetSuper(const opencascade::handle<StepData_ESDescr> & super);
 
-		/****************** StepData_ESDescr ******************/
-		%feature("compactdefaultargs") StepData_ESDescr;
-		%feature("autodoc", "Creates an esdescr with a type name.
-
-Parameters
-----------
-name: char *
-
-Returns
--------
-None
-") StepData_ESDescr;
-		 StepData_ESDescr(const char * name);
-
 		/****************** StepType ******************/
 		%feature("compactdefaultargs") StepType;
 		%feature("autodoc", "Returns the type name as an asciistring.
@@ -5497,6 +5497,16 @@ char *
 ****************************/
 class StepData_FieldList1 : public StepData_FieldList {
 	public:
+		/****************** StepData_FieldList1 ******************/
+		%feature("compactdefaultargs") StepData_FieldList1;
+		%feature("autodoc", "Creates a fieldlist of 1 field.
+
+Returns
+-------
+None
+") StepData_FieldList1;
+		 StepData_FieldList1();
+
 		/****************** CField ******************/
 		%feature("compactdefaultargs") CField;
 		%feature("autodoc", "Returns the field n0 <num> between 1 and nbfields, in order to modify its content.
@@ -5535,16 +5545,6 @@ int
 ") NbFields;
 		virtual Standard_Integer NbFields();
 
-		/****************** StepData_FieldList1 ******************/
-		%feature("compactdefaultargs") StepData_FieldList1;
-		%feature("autodoc", "Creates a fieldlist of 1 field.
-
-Returns
--------
-None
-") StepData_FieldList1;
-		 StepData_FieldList1();
-
 };
 
 
@@ -5559,6 +5559,20 @@ None
 ****************************/
 class StepData_FieldListD : public StepData_FieldList {
 	public:
+		/****************** StepData_FieldListD ******************/
+		%feature("compactdefaultargs") StepData_FieldListD;
+		%feature("autodoc", "Creates a fieldlistd of <nb> fields.
+
+Parameters
+----------
+nb: int
+
+Returns
+-------
+None
+") StepData_FieldListD;
+		 StepData_FieldListD(const Standard_Integer nb);
+
 		/****************** CField ******************/
 		%feature("compactdefaultargs") CField;
 		%feature("autodoc", "Returns the field n0 <num> between 1 and nbfields, in order to modify its content.
@@ -5611,20 +5625,6 @@ None
 ") SetNb;
 		void SetNb(const Standard_Integer nb);
 
-		/****************** StepData_FieldListD ******************/
-		%feature("compactdefaultargs") StepData_FieldListD;
-		%feature("autodoc", "Creates a fieldlistd of <nb> fields.
-
-Parameters
-----------
-nb: int
-
-Returns
--------
-None
-") StepData_FieldListD;
-		 StepData_FieldListD(const Standard_Integer nb);
-
 };
 
 
@@ -5639,6 +5639,20 @@ None
 ****************************/
 class StepData_FieldListN : public StepData_FieldList {
 	public:
+		/****************** StepData_FieldListN ******************/
+		%feature("compactdefaultargs") StepData_FieldListN;
+		%feature("autodoc", "Creates a fieldlistn of <nb> fields.
+
+Parameters
+----------
+nb: int
+
+Returns
+-------
+None
+") StepData_FieldListN;
+		 StepData_FieldListN(const Standard_Integer nb);
+
 		/****************** CField ******************/
 		%feature("compactdefaultargs") CField;
 		%feature("autodoc", "Returns the field n0 <num> between 1 and nbfields, in order to modify its content.
@@ -5677,20 +5691,6 @@ int
 ") NbFields;
 		virtual Standard_Integer NbFields();
 
-		/****************** StepData_FieldListN ******************/
-		%feature("compactdefaultargs") StepData_FieldListN;
-		%feature("autodoc", "Creates a fieldlistn of <nb> fields.
-
-Parameters
-----------
-nb: int
-
-Returns
--------
-None
-") StepData_FieldListN;
-		 StepData_FieldListN(const Standard_Integer nb);
-
 };
 
 
@@ -5705,6 +5705,16 @@ None
 ******************************/
 class StepData_FileProtocol : public StepData_Protocol {
 	public:
+		/****************** StepData_FileProtocol ******************/
+		%feature("compactdefaultargs") StepData_FileProtocol;
+		%feature("autodoc", "Creates an empty fileprotocol.
+
+Returns
+-------
+None
+") StepData_FileProtocol;
+		 StepData_FileProtocol();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a protocol to the definition list of the fileprotocol but ensures that each class of protocol is present only once in this list.
@@ -5768,16 +5778,6 @@ char *
 ") SchemaName;
 		virtual const char * SchemaName();
 
-		/****************** StepData_FileProtocol ******************/
-		%feature("compactdefaultargs") StepData_FileProtocol;
-		%feature("autodoc", "Creates an empty fileprotocol.
-
-Returns
--------
-None
-") StepData_FileProtocol;
-		 StepData_FileProtocol();
-
 		/****************** TypeNumber ******************/
 		%feature("compactdefaultargs") TypeNumber;
 		%feature("autodoc", "Returns a case number, specific of each recognized type here, no type at all is recognized properly : all types are recognized by the resources.
@@ -5808,6 +5808,20 @@ int
 **********************/
 class StepData_Plex : public StepData_Described {
 	public:
+		/****************** StepData_Plex ******************/
+		%feature("compactdefaultargs") StepData_Plex;
+		%feature("autodoc", "Creates a plex (empty). the complete creation is made by the ecdescr itself, by calling add.
+
+Parameters
+----------
+descr: StepData_ECDescr
+
+Returns
+-------
+None
+") StepData_Plex;
+		 StepData_Plex(const opencascade::handle<StepData_ECDescr> & descr);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a member to <self>.
@@ -5964,20 +5978,6 @@ None
 ") Shared;
 		void Shared(Interface_EntityIterator & list);
 
-		/****************** StepData_Plex ******************/
-		%feature("compactdefaultargs") StepData_Plex;
-		%feature("autodoc", "Creates a plex (empty). the complete creation is made by the ecdescr itself, by calling add.
-
-Parameters
-----------
-descr: StepData_ECDescr
-
-Returns
--------
-None
-") StepData_Plex;
-		 StepData_Plex(const opencascade::handle<StepData_ECDescr> & descr);
-
 		/****************** TypeList ******************/
 		%feature("compactdefaultargs") TypeList;
 		%feature("autodoc", "Returns the actual list of members types.
@@ -6004,6 +6004,16 @@ opencascade::handle<TColStd_HSequenceOfAsciiString>
 ***************************/
 class StepData_SelectInt : public StepData_SelectMember {
 	public:
+		/****************** StepData_SelectInt ******************/
+		%feature("compactdefaultargs") StepData_SelectInt;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepData_SelectInt;
+		 StepData_SelectInt();
+
 		/****************** Int ******************/
 		%feature("compactdefaultargs") Int;
 		%feature("autodoc", "No available documentation.
@@ -6052,16 +6062,6 @@ None
 ") SetKind;
 		virtual void SetKind(const Standard_Integer kind);
 
-		/****************** StepData_SelectInt ******************/
-		%feature("compactdefaultargs") StepData_SelectInt;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepData_SelectInt;
-		 StepData_SelectInt();
-
 };
 
 
@@ -6078,6 +6078,16 @@ None
 *****************************/
 class StepData_SelectNamed : public StepData_SelectMember {
 	public:
+		/****************** StepData_SelectNamed ******************/
+		%feature("compactdefaultargs") StepData_SelectNamed;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepData_SelectNamed;
+		 StepData_SelectNamed();
+
 		/****************** CField ******************/
 		%feature("compactdefaultargs") CField;
 		%feature("autodoc", "No available documentation.
@@ -6218,16 +6228,6 @@ None
 ") SetString;
 		virtual void SetString(const char * val);
 
-		/****************** StepData_SelectNamed ******************/
-		%feature("compactdefaultargs") StepData_SelectNamed;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepData_SelectNamed;
-		 StepData_SelectNamed();
-
 		/****************** String ******************/
 		%feature("compactdefaultargs") String;
 		%feature("autodoc", "No available documentation.
@@ -6254,6 +6254,16 @@ char *
 ****************************/
 class StepData_SelectReal : public StepData_SelectMember {
 	public:
+		/****************** StepData_SelectReal ******************/
+		%feature("compactdefaultargs") StepData_SelectReal;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepData_SelectReal;
+		 StepData_SelectReal();
+
 		/****************** Kind ******************/
 		%feature("compactdefaultargs") Kind;
 		%feature("autodoc", "No available documentation.
@@ -6288,16 +6298,6 @@ None
 ") SetReal;
 		virtual void SetReal(const Standard_Real val);
 
-		/****************** StepData_SelectReal ******************/
-		%feature("compactdefaultargs") StepData_SelectReal;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepData_SelectReal;
-		 StepData_SelectReal();
-
 };
 
 
@@ -6314,6 +6314,20 @@ None
 ************************/
 class StepData_Simple : public StepData_Described {
 	public:
+		/****************** StepData_Simple ******************/
+		%feature("compactdefaultargs") StepData_Simple;
+		%feature("autodoc", "Creates a simple entity.
+
+Parameters
+----------
+descr: StepData_ESDescr
+
+Returns
+-------
+None
+") StepData_Simple;
+		 StepData_Simple(const opencascade::handle<StepData_ESDescr> & descr);
+
 		/****************** As ******************/
 		%feature("compactdefaultargs") As;
 		%feature("autodoc", "Returns a simple entity which matches with a type in <self> : for a simple entity : me if it matches, else a null handle for a complex entity : the member which matches, else null.
@@ -6490,20 +6504,6 @@ None
 ") Shared;
 		void Shared(Interface_EntityIterator & list);
 
-		/****************** StepData_Simple ******************/
-		%feature("compactdefaultargs") StepData_Simple;
-		%feature("autodoc", "Creates a simple entity.
-
-Parameters
-----------
-descr: StepData_ESDescr
-
-Returns
--------
-None
-") StepData_Simple;
-		 StepData_Simple(const opencascade::handle<StepData_ESDescr> & descr);
-
 		/****************** StepType ******************/
 		%feature("compactdefaultargs") StepType;
 		%feature("autodoc", "Returns the recorded steptype (typename of its esdescr).
@@ -6530,6 +6530,16 @@ char *
 *******************************/
 class StepData_SelectArrReal : public StepData_SelectNamed {
 	public:
+		/****************** StepData_SelectArrReal ******************/
+		%feature("compactdefaultargs") StepData_SelectArrReal;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepData_SelectArrReal;
+		 StepData_SelectArrReal();
+
 		/****************** ArrReal ******************/
 		%feature("compactdefaultargs") ArrReal;
 		%feature("autodoc", "No available documentation.
@@ -6563,16 +6573,6 @@ Returns
 None
 ") SetArrReal;
 		void SetArrReal(const opencascade::handle<TColStd_HArray1OfReal> & arr);
-
-		/****************** StepData_SelectArrReal ******************/
-		%feature("compactdefaultargs") StepData_SelectArrReal;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepData_SelectArrReal;
-		 StepData_SelectArrReal();
 
 };
 

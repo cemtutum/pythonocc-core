@@ -533,6 +533,22 @@ opencascade::handle<Geom_Curve>
 ************************************/
 class GeomLib_Check2dBSplineCurve {
 	public:
+		/****************** GeomLib_Check2dBSplineCurve ******************/
+		%feature("compactdefaultargs") GeomLib_Check2dBSplineCurve;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Curve: Geom2d_BSplineCurve
+Tolerance: float
+AngularTolerance: float
+
+Returns
+-------
+None
+") GeomLib_Check2dBSplineCurve;
+		 GeomLib_Check2dBSplineCurve(const opencascade::handle<Geom2d_BSplineCurve> & Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
+
 		/****************** FixTangent ******************/
 		%feature("compactdefaultargs") FixTangent;
 		%feature("autodoc", "No available documentation.
@@ -562,22 +578,6 @@ Returns
 opencascade::handle<Geom2d_BSplineCurve>
 ") FixedTangent;
 		opencascade::handle<Geom2d_BSplineCurve> FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-
-		/****************** GeomLib_Check2dBSplineCurve ******************/
-		%feature("compactdefaultargs") GeomLib_Check2dBSplineCurve;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Curve: Geom2d_BSplineCurve
-Tolerance: float
-AngularTolerance: float
-
-Returns
--------
-None
-") GeomLib_Check2dBSplineCurve;
-		 GeomLib_Check2dBSplineCurve(const opencascade::handle<Geom2d_BSplineCurve> & Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -618,6 +618,22 @@ None
 **********************************/
 class GeomLib_CheckBSplineCurve {
 	public:
+		/****************** GeomLib_CheckBSplineCurve ******************/
+		%feature("compactdefaultargs") GeomLib_CheckBSplineCurve;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Curve: Geom_BSplineCurve
+Tolerance: float
+AngularTolerance: float
+
+Returns
+-------
+None
+") GeomLib_CheckBSplineCurve;
+		 GeomLib_CheckBSplineCurve(const opencascade::handle<Geom_BSplineCurve> & Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
+
 		/****************** FixTangent ******************/
 		%feature("compactdefaultargs") FixTangent;
 		%feature("autodoc", "No available documentation.
@@ -647,22 +663,6 @@ Returns
 opencascade::handle<Geom_BSplineCurve>
 ") FixedTangent;
 		opencascade::handle<Geom_BSplineCurve> FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-
-		/****************** GeomLib_CheckBSplineCurve ******************/
-		%feature("compactdefaultargs") GeomLib_CheckBSplineCurve;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Curve: Geom_BSplineCurve
-Tolerance: float
-AngularTolerance: float
-
-Returns
--------
-None
-") GeomLib_CheckBSplineCurve;
-		 GeomLib_CheckBSplineCurve(const opencascade::handle<Geom_BSplineCurve> & Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -703,26 +703,6 @@ None
 ************************************/
 class GeomLib_CheckCurveOnSurface {
 	public:
-		/****************** Curve ******************/
-		%feature("compactdefaultargs") Curve;
-		%feature("autodoc", "Returns my3dcurve.
-
-Returns
--------
-opencascade::handle<Geom_Curve>
-") Curve;
-		const opencascade::handle<Geom_Curve> & Curve();
-
-		/****************** ErrorStatus ******************/
-		%feature("compactdefaultargs") ErrorStatus;
-		%feature("autodoc", "Returns error status the possible values are: 0 - ok; 1 - null curve or surface or 2d curve; 2 - invalid parametric range; 3 - error in calculations.
-
-Returns
--------
-int
-") ErrorStatus;
-		Standard_Integer ErrorStatus();
-
 		/****************** GeomLib_CheckCurveOnSurface ******************/
 		%feature("compactdefaultargs") GeomLib_CheckCurveOnSurface;
 		%feature("autodoc", "Default contructor.
@@ -751,6 +731,26 @@ Returns
 None
 ") GeomLib_CheckCurveOnSurface;
 		 GeomLib_CheckCurveOnSurface(const opencascade::handle<Geom_Curve> & theCurve, const opencascade::handle<Geom_Surface> & theSurface, const Standard_Real theFirst, const Standard_Real theLast, const Standard_Real theTolRange = Precision::PConfusion());
+
+		/****************** Curve ******************/
+		%feature("compactdefaultargs") Curve;
+		%feature("autodoc", "Returns my3dcurve.
+
+Returns
+-------
+opencascade::handle<Geom_Curve>
+") Curve;
+		const opencascade::handle<Geom_Curve> & Curve();
+
+		/****************** ErrorStatus ******************/
+		%feature("compactdefaultargs") ErrorStatus;
+		%feature("autodoc", "Returns error status the possible values are: 0 - ok; 1 - null curve or surface or 2d curve; 2 - invalid parametric range; 3 - error in calculations.
+
+Returns
+-------
+int
+") ErrorStatus;
+		Standard_Integer ErrorStatus();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -910,6 +910,23 @@ float
 ****************************/
 class GeomLib_Interpolate {
 	public:
+		/****************** GeomLib_Interpolate ******************/
+		%feature("compactdefaultargs") GeomLib_Interpolate;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Degree: int
+NumPoints: int
+Points: TColgp_Array1OfPnt
+Parameters: TColStd_Array1OfReal
+
+Returns
+-------
+None
+") GeomLib_Interpolate;
+		 GeomLib_Interpolate(const Standard_Integer Degree, const Standard_Integer NumPoints, const TColgp_Array1OfPnt & Points, const TColStd_Array1OfReal & Parameters);
+
 		/****************** Curve ******************/
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Returns the interpolated curve of the requested degree.
@@ -929,23 +946,6 @@ Returns
 GeomLib_InterpolationErrors
 ") Error;
 		GeomLib_InterpolationErrors Error();
-
-		/****************** GeomLib_Interpolate ******************/
-		%feature("compactdefaultargs") GeomLib_Interpolate;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Degree: int
-NumPoints: int
-Points: TColgp_Array1OfPnt
-Parameters: TColStd_Array1OfReal
-
-Returns
--------
-None
-") GeomLib_Interpolate;
-		 GeomLib_Interpolate(const Standard_Integer Degree, const Standard_Integer NumPoints, const TColgp_Array1OfPnt & Points, const TColStd_Array1OfReal & Parameters);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -1065,6 +1065,20 @@ float
 ************************************/
 class GeomLib_MakeCurvefromApprox {
 	public:
+		/****************** GeomLib_MakeCurvefromApprox ******************/
+		%feature("compactdefaultargs") GeomLib_MakeCurvefromApprox;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Approx: AdvApprox_ApproxAFunction
+
+Returns
+-------
+None
+") GeomLib_MakeCurvefromApprox;
+		 GeomLib_MakeCurvefromApprox(const AdvApprox_ApproxAFunction & Approx);
+
 		/****************** Curve ******************/
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Returns a polynomial curve whose poles correspond to the index3d 3d space if index3d not in the range [1,nb3dspaces] if the approx is not done.
@@ -1138,20 +1152,6 @@ opencascade::handle<Geom2d_BSplineCurve>
 ") Curve2dFromTwo1d;
 		opencascade::handle<Geom2d_BSplineCurve> Curve2dFromTwo1d(const Standard_Integer Index1d, const Standard_Integer Index2d);
 
-		/****************** GeomLib_MakeCurvefromApprox ******************/
-		%feature("compactdefaultargs") GeomLib_MakeCurvefromApprox;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Approx: AdvApprox_ApproxAFunction
-
-Returns
--------
-None
-") GeomLib_MakeCurvefromApprox;
-		 GeomLib_MakeCurvefromApprox(const AdvApprox_ApproxAFunction & Approx);
-
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "No available documentation.
@@ -1206,6 +1206,20 @@ int
 *************************/
 class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 	public:
+		/****************** GeomLib_PolyFunc ******************/
+		%feature("compactdefaultargs") GeomLib_PolyFunc;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Coeffs: math_Vector
+
+Returns
+-------
+None
+") GeomLib_PolyFunc;
+		 GeomLib_PolyFunc(const math_Vector & Coeffs);
+
 		/****************** Derivative ******************/
 		%feature("compactdefaultargs") Derivative;
 		%feature("autodoc", "Computes the derivative <d> of the function for the variable <x>. returns true if the calculation were successfully done, false otherwise.
@@ -1220,20 +1234,6 @@ Returns
 bool
 ") Derivative;
 		virtual Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-
-		/****************** GeomLib_PolyFunc ******************/
-		%feature("compactdefaultargs") GeomLib_PolyFunc;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Coeffs: math_Vector
-
-Returns
--------
-None
-") GeomLib_PolyFunc;
-		 GeomLib_PolyFunc(const math_Vector & Coeffs);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;

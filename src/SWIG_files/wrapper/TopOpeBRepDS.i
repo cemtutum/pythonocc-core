@@ -44,8 +44,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topopebrepds.html
 #include<Geom_module.hxx>
 #include<TopAbs_module.hxx>
 #include<TCollection_module.hxx>
-#include<TopoDS_module.hxx>
 #include<TopOpeBRepTool_module.hxx>
+#include<TopoDS_module.hxx>
 #include<Geom2d_module.hxx>
 #include<TopTools_module.hxx>
 #include<gp_module.hxx>
@@ -75,8 +75,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topopebrepds.html
 %import Geom.i
 %import TopAbs.i
 %import TCollection.i
-%import TopoDS.i
 %import TopOpeBRepTool.i
+%import TopoDS.i
 %import Geom2d.i
 %import TopTools.i
 %import gp.i
@@ -159,55 +159,6 @@ class TopOpeBRepDS_Kind:
 /* end handles declaration */
 
 /* templates */
-%template(TopOpeBRepDS_IndexedDataMapOfVertexPoint) NCollection_IndexedDataMap<TopoDS_Shape,TopOpeBRepDS_Point,TopTools_ShapeMapHasher>;
-%template(TopOpeBRepDS_MapOfSurface) NCollection_DataMap<Standard_Integer,TopOpeBRepDS_SurfaceData,TColStd_MapIntegerHasher>;
-
-%extend NCollection_DataMap<Standard_Integer,TopOpeBRepDS_SurfaceData,TColStd_MapIntegerHasher> {
-    PyObject* Keys() {
-        PyObject *l=PyList_New(0);
-        for (TopOpeBRepDS_MapOfSurface::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
-          PyObject *o = PyLong_FromLong(anIt1.Key());
-          PyList_Append(l, o);
-          Py_DECREF(o);
-        }
-    return l;
-    }
-};
-%template(TopOpeBRepDS_MapOfShapeData) NCollection_IndexedDataMap<TopoDS_Shape,TopOpeBRepDS_ShapeData,TopTools_ShapeMapHasher>;
-%template(TopOpeBRepDS_DataMapOfIntegerListOfInterference) NCollection_DataMap<Standard_Integer,TopOpeBRepDS_ListOfInterference,TColStd_MapIntegerHasher>;
-
-%extend NCollection_DataMap<Standard_Integer,TopOpeBRepDS_ListOfInterference,TColStd_MapIntegerHasher> {
-    PyObject* Keys() {
-        PyObject *l=PyList_New(0);
-        for (TopOpeBRepDS_DataMapOfIntegerListOfInterference::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
-          PyObject *o = PyLong_FromLong(anIt1.Key());
-          PyList_Append(l, o);
-          Py_DECREF(o);
-        }
-    return l;
-    }
-};
-%template(TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State) NCollection_DataMap<TopoDS_Shape,TopOpeBRepDS_ListOfShapeOn1State,TopTools_ShapeMapHasher>;
-%template(TopOpeBRepDS_DataMapOfCheckStatus) NCollection_DataMap<Standard_Integer,TopOpeBRepDS_CheckStatus,TColStd_MapIntegerHasher>;
-
-%extend NCollection_DataMap<Standard_Integer,TopOpeBRepDS_CheckStatus,TColStd_MapIntegerHasher> {
-    PyObject* Keys() {
-        PyObject *l=PyList_New(0);
-        for (TopOpeBRepDS_DataMapOfCheckStatus::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
-          PyObject *o = PyLong_FromLong(anIt1.Key());
-          PyList_Append(l, o);
-          Py_DECREF(o);
-        }
-    return l;
-    }
-};
-%template(TopOpeBRepDS_DataMapOfShapeState) NCollection_DataMap<TopoDS_Shape,TopAbs_State,TopTools_ShapeMapHasher>;
-%template(TopOpeBRepDS_IndexedDataMapOfShapeWithState) NCollection_IndexedDataMap<TopoDS_Shape,TopOpeBRepDS_ShapeWithState,TopTools_ShapeMapHasher>;
-%template(TopOpeBRepDS_DataMapOfInterferenceListOfInterference) NCollection_DataMap<opencascade::handle<TopOpeBRepDS_Interference>,TopOpeBRepDS_ListOfInterference,TColStd_MapTransientHasher>;
-%template(TopOpeBRepDS_ListOfInterference) NCollection_List<opencascade::handle<TopOpeBRepDS_Interference>>;
-%template(TopOpeBRepDS_ListIteratorOfListOfInterference) NCollection_TListIterator<opencascade::handle<TopOpeBRepDS_Interference>>;
-%template(TopOpeBRepDS_ShapeSurface) NCollection_DataMap<TopoDS_Shape,opencascade::handle<Geom_Surface>,TopTools_ShapeMapHasher>;
-%template(TopOpeBRepDS_DataMapOfInterferenceShape) NCollection_DataMap<opencascade::handle<TopOpeBRepDS_Interference>,TopoDS_Shape,TColStd_MapTransientHasher>;
 %template(TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference) NCollection_Array1<TopOpeBRepDS_DataMapOfIntegerListOfInterference>;
 
 %extend NCollection_Array1<TopOpeBRepDS_DataMapOfIntegerListOfInterference> {
@@ -243,6 +194,54 @@ class TopOpeBRepDS_Kind:
     __next__ = next
     }
 };
+%template(TopOpeBRepDS_DataMapOfCheckStatus) NCollection_DataMap<Standard_Integer,TopOpeBRepDS_CheckStatus,TColStd_MapIntegerHasher>;
+
+%extend NCollection_DataMap<Standard_Integer,TopOpeBRepDS_CheckStatus,TColStd_MapIntegerHasher> {
+    PyObject* Keys() {
+        PyObject *l=PyList_New(0);
+        for (TopOpeBRepDS_DataMapOfCheckStatus::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
+          PyObject *o = PyLong_FromLong(anIt1.Key());
+          PyList_Append(l, o);
+          Py_DECREF(o);
+        }
+    return l;
+    }
+};
+%template(TopOpeBRepDS_DataMapOfIntegerListOfInterference) NCollection_DataMap<Standard_Integer,TopOpeBRepDS_ListOfInterference,TColStd_MapIntegerHasher>;
+
+%extend NCollection_DataMap<Standard_Integer,TopOpeBRepDS_ListOfInterference,TColStd_MapIntegerHasher> {
+    PyObject* Keys() {
+        PyObject *l=PyList_New(0);
+        for (TopOpeBRepDS_DataMapOfIntegerListOfInterference::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
+          PyObject *o = PyLong_FromLong(anIt1.Key());
+          PyList_Append(l, o);
+          Py_DECREF(o);
+        }
+    return l;
+    }
+};
+%template(TopOpeBRepDS_DataMapOfInterferenceListOfInterference) NCollection_DataMap<opencascade::handle<TopOpeBRepDS_Interference>,TopOpeBRepDS_ListOfInterference,TColStd_MapTransientHasher>;
+%template(TopOpeBRepDS_DataMapOfInterferenceShape) NCollection_DataMap<opencascade::handle<TopOpeBRepDS_Interference>,TopoDS_Shape,TColStd_MapTransientHasher>;
+%template(TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State) NCollection_DataMap<TopoDS_Shape,TopOpeBRepDS_ListOfShapeOn1State,TopTools_ShapeMapHasher>;
+%template(TopOpeBRepDS_DataMapOfShapeState) NCollection_DataMap<TopoDS_Shape,TopAbs_State,TopTools_ShapeMapHasher>;
+%template(TopOpeBRepDS_DoubleMapOfIntegerShape) NCollection_DoubleMap<Standard_Integer,TopoDS_Shape,TColStd_MapIntegerHasher,TopTools_ShapeMapHasher>;
+%template(TopOpeBRepDS_IndexedDataMapOfShapeWithState) NCollection_IndexedDataMap<TopoDS_Shape,TopOpeBRepDS_ShapeWithState,TopTools_ShapeMapHasher>;
+%template(TopOpeBRepDS_IndexedDataMapOfVertexPoint) NCollection_IndexedDataMap<TopoDS_Shape,TopOpeBRepDS_Point,TopTools_ShapeMapHasher>;
+%template(TopOpeBRepDS_ListIteratorOfListOfInterference) NCollection_TListIterator<opencascade::handle<TopOpeBRepDS_Interference>>;
+%template(TopOpeBRepDS_ListOfInterference) NCollection_List<opencascade::handle<TopOpeBRepDS_Interference>>;
+%template(TopOpeBRepDS_MapOfCurve) NCollection_DataMap<Standard_Integer,TopOpeBRepDS_CurveData,TColStd_MapIntegerHasher>;
+
+%extend NCollection_DataMap<Standard_Integer,TopOpeBRepDS_CurveData,TColStd_MapIntegerHasher> {
+    PyObject* Keys() {
+        PyObject *l=PyList_New(0);
+        for (TopOpeBRepDS_MapOfCurve::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
+          PyObject *o = PyLong_FromLong(anIt1.Key());
+          PyList_Append(l, o);
+          Py_DECREF(o);
+        }
+    return l;
+    }
+};
 %template(TopOpeBRepDS_MapOfIntegerShapeData) NCollection_DataMap<Standard_Integer,TopOpeBRepDS_ShapeData,TColStd_MapIntegerHasher>;
 
 %extend NCollection_DataMap<Standard_Integer,TopOpeBRepDS_ShapeData,TColStd_MapIntegerHasher> {
@@ -269,12 +268,13 @@ class TopOpeBRepDS_Kind:
     return l;
     }
 };
-%template(TopOpeBRepDS_MapOfCurve) NCollection_DataMap<Standard_Integer,TopOpeBRepDS_CurveData,TColStd_MapIntegerHasher>;
+%template(TopOpeBRepDS_MapOfShapeData) NCollection_IndexedDataMap<TopoDS_Shape,TopOpeBRepDS_ShapeData,TopTools_ShapeMapHasher>;
+%template(TopOpeBRepDS_MapOfSurface) NCollection_DataMap<Standard_Integer,TopOpeBRepDS_SurfaceData,TColStd_MapIntegerHasher>;
 
-%extend NCollection_DataMap<Standard_Integer,TopOpeBRepDS_CurveData,TColStd_MapIntegerHasher> {
+%extend NCollection_DataMap<Standard_Integer,TopOpeBRepDS_SurfaceData,TColStd_MapIntegerHasher> {
     PyObject* Keys() {
         PyObject *l=PyList_New(0);
-        for (TopOpeBRepDS_MapOfCurve::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
+        for (TopOpeBRepDS_MapOfSurface::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
           PyObject *o = PyLong_FromLong(anIt1.Key());
           PyList_Append(l, o);
           Py_DECREF(o);
@@ -282,41 +282,41 @@ class TopOpeBRepDS_Kind:
     return l;
     }
 };
-%template(TopOpeBRepDS_DoubleMapOfIntegerShape) NCollection_DoubleMap<Standard_Integer,TopoDS_Shape,TColStd_MapIntegerHasher,TopTools_ShapeMapHasher>;
+%template(TopOpeBRepDS_ShapeSurface) NCollection_DataMap<TopoDS_Shape,opencascade::handle<Geom_Surface>,TopTools_ShapeMapHasher>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_IndexedDataMap<TopoDS_Shape, TopOpeBRepDS_Point, TopTools_ShapeMapHasher> TopOpeBRepDS_IndexedDataMapOfVertexPoint;
-typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_SurfaceData, TColStd_MapIntegerHasher> TopOpeBRepDS_MapOfSurface;
-typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_SurfaceData, TColStd_MapIntegerHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfMapOfSurface;
-typedef NCollection_IndexedDataMap<TopoDS_Shape, TopOpeBRepDS_ShapeData, TopTools_ShapeMapHasher> TopOpeBRepDS_MapOfShapeData;
-typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_ListOfInterference, TColStd_MapIntegerHasher> TopOpeBRepDS_DataMapOfIntegerListOfInterference;
-typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_ListOfInterference, TColStd_MapIntegerHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference;
-typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepDS_ListOfShapeOn1State, TopTools_ShapeMapHasher> TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State;
-typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepDS_ListOfShapeOn1State, TopTools_ShapeMapHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State;
-typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_CheckStatus, TColStd_MapIntegerHasher> TopOpeBRepDS_DataMapOfCheckStatus;
-typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_CheckStatus, TColStd_MapIntegerHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus;
-typedef NCollection_DataMap<TopoDS_Shape, TopAbs_State, TopTools_ShapeMapHasher> TopOpeBRepDS_DataMapOfShapeState;
-typedef NCollection_DataMap<TopoDS_Shape, TopAbs_State, TopTools_ShapeMapHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState;
-typedef NCollection_IndexedDataMap<TopoDS_Shape, TopOpeBRepDS_ShapeWithState, TopTools_ShapeMapHasher> TopOpeBRepDS_IndexedDataMapOfShapeWithState;
-typedef NCollection_DataMap<opencascade::handle<TopOpeBRepDS_Interference>, TopOpeBRepDS_ListOfInterference, TColStd_MapTransientHasher> TopOpeBRepDS_DataMapOfInterferenceListOfInterference;
-typedef NCollection_DataMap<opencascade::handle<TopOpeBRepDS_Interference>, TopOpeBRepDS_ListOfInterference, TColStd_MapTransientHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference;
-typedef NCollection_List<opencascade::handle<TopOpeBRepDS_Interference>> TopOpeBRepDS_ListOfInterference;
-typedef NCollection_List<opencascade::handle<TopOpeBRepDS_Interference>>::Iterator TopOpeBRepDS_ListIteratorOfListOfInterference;
-typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<Geom_Surface>, TopTools_ShapeMapHasher> TopOpeBRepDS_ShapeSurface;
-typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<Geom_Surface>, TopTools_ShapeMapHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfShapeSurface;
-typedef NCollection_DataMap<opencascade::handle<TopOpeBRepDS_Interference>, TopoDS_Shape, TColStd_MapTransientHasher> TopOpeBRepDS_DataMapOfInterferenceShape;
-typedef NCollection_DataMap<opencascade::handle<TopOpeBRepDS_Interference>, TopoDS_Shape, TColStd_MapTransientHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape;
 typedef NCollection_Array1<TopOpeBRepDS_DataMapOfIntegerListOfInterference> TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference;
-typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_ShapeData, TColStd_MapIntegerHasher> TopOpeBRepDS_MapOfIntegerShapeData;
-typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_ShapeData, TColStd_MapIntegerHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData;
-typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_PointData, TColStd_MapIntegerHasher> TopOpeBRepDS_MapOfPoint;
-typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_PointData, TColStd_MapIntegerHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfMapOfPoint;
-typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_CurveData, TColStd_MapIntegerHasher> TopOpeBRepDS_MapOfCurve;
+typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_CheckStatus, TColStd_MapIntegerHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus;
+typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_ListOfInterference, TColStd_MapIntegerHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference;
+typedef NCollection_DataMap<opencascade::handle<TopOpeBRepDS_Interference>, TopOpeBRepDS_ListOfInterference, TColStd_MapTransientHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference;
+typedef NCollection_DataMap<opencascade::handle<TopOpeBRepDS_Interference>, TopoDS_Shape, TColStd_MapTransientHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape;
+typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepDS_ListOfShapeOn1State, TopTools_ShapeMapHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State;
+typedef NCollection_DataMap<TopoDS_Shape, TopAbs_State, TopTools_ShapeMapHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState;
 typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_CurveData, TColStd_MapIntegerHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfMapOfCurve;
-typedef TopOpeBRepDS_DataStructure * TopOpeBRepDS_PDataStructure;
-typedef NCollection_DoubleMap<Standard_Integer, TopoDS_Shape, TColStd_MapIntegerHasher, TopTools_ShapeMapHasher> TopOpeBRepDS_DoubleMapOfIntegerShape;
+typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_ShapeData, TColStd_MapIntegerHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData;
+typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_PointData, TColStd_MapIntegerHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfMapOfPoint;
+typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_SurfaceData, TColStd_MapIntegerHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfMapOfSurface;
+typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<Geom_Surface>, TopTools_ShapeMapHasher>::Iterator TopOpeBRepDS_DataMapIteratorOfShapeSurface;
+typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_CheckStatus, TColStd_MapIntegerHasher> TopOpeBRepDS_DataMapOfCheckStatus;
+typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_ListOfInterference, TColStd_MapIntegerHasher> TopOpeBRepDS_DataMapOfIntegerListOfInterference;
+typedef NCollection_DataMap<opencascade::handle<TopOpeBRepDS_Interference>, TopOpeBRepDS_ListOfInterference, TColStd_MapTransientHasher> TopOpeBRepDS_DataMapOfInterferenceListOfInterference;
+typedef NCollection_DataMap<opencascade::handle<TopOpeBRepDS_Interference>, TopoDS_Shape, TColStd_MapTransientHasher> TopOpeBRepDS_DataMapOfInterferenceShape;
+typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepDS_ListOfShapeOn1State, TopTools_ShapeMapHasher> TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State;
+typedef NCollection_DataMap<TopoDS_Shape, TopAbs_State, TopTools_ShapeMapHasher> TopOpeBRepDS_DataMapOfShapeState;
 typedef NCollection_DoubleMap<Standard_Integer, TopoDS_Shape, TColStd_MapIntegerHasher, TopTools_ShapeMapHasher>::Iterator TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape;
+typedef NCollection_DoubleMap<Standard_Integer, TopoDS_Shape, TColStd_MapIntegerHasher, TopTools_ShapeMapHasher> TopOpeBRepDS_DoubleMapOfIntegerShape;
+typedef NCollection_IndexedDataMap<TopoDS_Shape, TopOpeBRepDS_ShapeWithState, TopTools_ShapeMapHasher> TopOpeBRepDS_IndexedDataMapOfShapeWithState;
+typedef NCollection_IndexedDataMap<TopoDS_Shape, TopOpeBRepDS_Point, TopTools_ShapeMapHasher> TopOpeBRepDS_IndexedDataMapOfVertexPoint;
+typedef NCollection_List<opencascade::handle<TopOpeBRepDS_Interference>>::Iterator TopOpeBRepDS_ListIteratorOfListOfInterference;
+typedef NCollection_List<opencascade::handle<TopOpeBRepDS_Interference>> TopOpeBRepDS_ListOfInterference;
+typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_CurveData, TColStd_MapIntegerHasher> TopOpeBRepDS_MapOfCurve;
+typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_ShapeData, TColStd_MapIntegerHasher> TopOpeBRepDS_MapOfIntegerShapeData;
+typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_PointData, TColStd_MapIntegerHasher> TopOpeBRepDS_MapOfPoint;
+typedef NCollection_IndexedDataMap<TopoDS_Shape, TopOpeBRepDS_ShapeData, TopTools_ShapeMapHasher> TopOpeBRepDS_MapOfShapeData;
+typedef NCollection_DataMap<Standard_Integer, TopOpeBRepDS_SurfaceData, TColStd_MapIntegerHasher> TopOpeBRepDS_MapOfSurface;
+typedef TopOpeBRepDS_DataStructure * TopOpeBRepDS_PDataStructure;
+typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<Geom_Surface>, TopTools_ShapeMapHasher> TopOpeBRepDS_ShapeSurface;
 /* end typedefs declaration */
 
 /*********************
@@ -499,6 +499,16 @@ TopOpeBRepDS_Kind
 *********************************/
 class TopOpeBRepDS_Association : public Standard_Transient {
 	public:
+		/****************** TopOpeBRepDS_Association ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Association;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_Association;
+		 TopOpeBRepDS_Association();
+
 		/****************** AreAssociated ******************/
 		%feature("compactdefaultargs") AreAssociated;
 		%feature("autodoc", "No available documentation.
@@ -572,16 +582,6 @@ bool
 ") HasAssociation;
 		Standard_Boolean HasAssociation(const opencascade::handle<TopOpeBRepDS_Interference> & I);
 
-		/****************** TopOpeBRepDS_Association ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Association;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_Association;
-		 TopOpeBRepDS_Association();
-
 };
 
 
@@ -598,6 +598,44 @@ None
 *******************************/
 class TopOpeBRepDS_BuildTool {
 	public:
+		/****************** TopOpeBRepDS_BuildTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_BuildTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_BuildTool;
+		 TopOpeBRepDS_BuildTool();
+
+		/****************** TopOpeBRepDS_BuildTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_BuildTool;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+OutCurveType: TopOpeBRepTool_OutCurveType
+
+Returns
+-------
+None
+") TopOpeBRepDS_BuildTool;
+		 TopOpeBRepDS_BuildTool(const TopOpeBRepTool_OutCurveType OutCurveType);
+
+		/****************** TopOpeBRepDS_BuildTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_BuildTool;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+GT: TopOpeBRepTool_GeomTool
+
+Returns
+-------
+None
+") TopOpeBRepDS_BuildTool;
+		 TopOpeBRepDS_BuildTool(const TopOpeBRepTool_GeomTool & GT);
+
 		/****************** AddEdgeVertex ******************/
 		%feature("compactdefaultargs") AddEdgeVertex;
 		%feature("autodoc", "No available documentation.
@@ -1136,44 +1174,6 @@ None
 ") RecomputeCurves;
 		void RecomputeCurves(const TopOpeBRepDS_Curve & C, const TopoDS_Edge & oldE, TopoDS_Edge & E, Standard_Integer &OutValue, const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
 
-		/****************** TopOpeBRepDS_BuildTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_BuildTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_BuildTool;
-		 TopOpeBRepDS_BuildTool();
-
-		/****************** TopOpeBRepDS_BuildTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_BuildTool;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-OutCurveType: TopOpeBRepTool_OutCurveType
-
-Returns
--------
-None
-") TopOpeBRepDS_BuildTool;
-		 TopOpeBRepDS_BuildTool(const TopOpeBRepTool_OutCurveType OutCurveType);
-
-		/****************** TopOpeBRepDS_BuildTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_BuildTool;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-GT: TopOpeBRepTool_GeomTool
-
-Returns
--------
-None
-") TopOpeBRepDS_BuildTool;
-		 TopOpeBRepDS_BuildTool(const TopOpeBRepTool_GeomTool & GT);
-
 		/****************** Translate ******************/
 		%feature("compactdefaultargs") Translate;
 		%feature("autodoc", "No available documentation.
@@ -1281,6 +1281,30 @@ None
 ***************************/
 class TopOpeBRepDS_Check : public Standard_Transient {
 	public:
+		/****************** TopOpeBRepDS_Check ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Check;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_Check;
+		 TopOpeBRepDS_Check();
+
+		/****************** TopOpeBRepDS_Check ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Check;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HDS: TopOpeBRepDS_HDataStructure
+
+Returns
+-------
+None
+") TopOpeBRepDS_Check;
+		 TopOpeBRepDS_Check(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
+
 		/****************** ChangeHDS ******************/
 		%feature("compactdefaultargs") ChangeHDS;
 		%feature("autodoc", "No available documentation.
@@ -1382,30 +1406,6 @@ bool
             self->PrintIntg(s);
             return s.str();}
         };
-		/****************** TopOpeBRepDS_Check ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Check;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_Check;
-		 TopOpeBRepDS_Check();
-
-		/****************** TopOpeBRepDS_Check ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Check;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-HDS: TopOpeBRepDS_HDataStructure
-
-Returns
--------
-None
-") TopOpeBRepDS_Check;
-		 TopOpeBRepDS_Check(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
-
 };
 
 
@@ -1422,6 +1422,33 @@ None
 ***************************/
 class TopOpeBRepDS_Curve {
 	public:
+		/****************** TopOpeBRepDS_Curve ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Curve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_Curve;
+		 TopOpeBRepDS_Curve();
+
+		/****************** TopOpeBRepDS_Curve ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Curve;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: Geom_Curve
+T: float
+IsWalk: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") TopOpeBRepDS_Curve;
+		 TopOpeBRepDS_Curve(const opencascade::handle<Geom_Curve> & P, const Standard_Real T, const Standard_Boolean IsWalk = Standard_False);
+
 		/****************** ChangeCurve ******************/
 		%feature("compactdefaultargs") ChangeCurve;
 		%feature("autodoc", "No available documentation.
@@ -1791,33 +1818,6 @@ float
 ") Tolerance;
 		Standard_Real Tolerance();
 
-		/****************** TopOpeBRepDS_Curve ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Curve;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_Curve;
-		 TopOpeBRepDS_Curve();
-
-		/****************** TopOpeBRepDS_Curve ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Curve;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-P: Geom_Curve
-T: float
-IsWalk: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") TopOpeBRepDS_Curve;
-		 TopOpeBRepDS_Curve(const opencascade::handle<Geom_Curve> & P, const Standard_Real T, const Standard_Boolean IsWalk = Standard_False);
-
 };
 
 
@@ -1832,6 +1832,32 @@ None
 ***********************************/
 class TopOpeBRepDS_CurveExplorer {
 	public:
+		/****************** TopOpeBRepDS_CurveExplorer ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_CurveExplorer;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_CurveExplorer;
+		 TopOpeBRepDS_CurveExplorer();
+
+		/****************** TopOpeBRepDS_CurveExplorer ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_CurveExplorer;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+DS: TopOpeBRepDS_DataStructure
+FindOnlyKeep: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") TopOpeBRepDS_CurveExplorer;
+		 TopOpeBRepDS_CurveExplorer(const TopOpeBRepDS_DataStructure & DS, const Standard_Boolean FindOnlyKeep = Standard_True);
+
 		/****************** Curve ******************/
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "No available documentation.
@@ -1940,32 +1966,6 @@ None
 ") Next;
 		void Next();
 
-		/****************** TopOpeBRepDS_CurveExplorer ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_CurveExplorer;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_CurveExplorer;
-		 TopOpeBRepDS_CurveExplorer();
-
-		/****************** TopOpeBRepDS_CurveExplorer ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_CurveExplorer;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-DS: TopOpeBRepDS_DataStructure
-FindOnlyKeep: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") TopOpeBRepDS_CurveExplorer;
-		 TopOpeBRepDS_CurveExplorer(const TopOpeBRepDS_DataStructure & DS, const Standard_Boolean FindOnlyKeep = Standard_True);
-
 };
 
 
@@ -1980,6 +1980,16 @@ None
 ***********************************/
 class TopOpeBRepDS_DataStructure {
 	public:
+		/****************** TopOpeBRepDS_DataStructure ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_DataStructure;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_DataStructure;
+		 TopOpeBRepDS_DataStructure();
+
 		/****************** AddCurve ******************/
 		%feature("compactdefaultargs") AddCurve;
 		%feature("autodoc", "Insert a new curve. returns the index.
@@ -3311,16 +3321,6 @@ TopOpeBRepDS_ListOfInterference
 ") SurfaceInterferences;
 		const TopOpeBRepDS_ListOfInterference & SurfaceInterferences(const Standard_Integer I);
 
-		/****************** TopOpeBRepDS_DataStructure ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_DataStructure;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_DataStructure;
-		 TopOpeBRepDS_DataStructure();
-
 		/****************** UnfillShapesSameDomain ******************/
 		%feature("compactdefaultargs") UnfillShapesSameDomain;
 		%feature("autodoc", "No available documentation.
@@ -3350,6 +3350,20 @@ None
 ****************************/
 class TopOpeBRepDS_Dumper {
 	public:
+		/****************** TopOpeBRepDS_Dumper ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Dumper;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HDS: TopOpeBRepDS_HDataStructure
+
+Returns
+-------
+None
+") TopOpeBRepDS_Dumper;
+		 TopOpeBRepDS_Dumper(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
+
 		/****************** SDumpRefOri ******************/
 		%feature("compactdefaultargs") SDumpRefOri;
 		%feature("autodoc", "No available documentation.
@@ -3439,20 +3453,6 @@ TCollection_AsciiString
 ") SPrintShapeRefOri;
 		TCollection_AsciiString SPrintShapeRefOri(const TopTools_ListOfShape & L, const TCollection_AsciiString & B = "");
 
-		/****************** TopOpeBRepDS_Dumper ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Dumper;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-HDS: TopOpeBRepDS_HDataStructure
-
-Returns
--------
-None
-") TopOpeBRepDS_Dumper;
-		 TopOpeBRepDS_Dumper(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
-
 };
 
 
@@ -3471,6 +3471,20 @@ None
 *************************/
 class TopOpeBRepDS_EIR {
 	public:
+		/****************** TopOpeBRepDS_EIR ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_EIR;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HDS: TopOpeBRepDS_HDataStructure
+
+Returns
+-------
+None
+") TopOpeBRepDS_EIR;
+		 TopOpeBRepDS_EIR(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
+
 		/****************** ProcessEdgeInterferences ******************/
 		%feature("compactdefaultargs") ProcessEdgeInterferences;
 		%feature("autodoc", "No available documentation.
@@ -3495,20 +3509,6 @@ None
 ") ProcessEdgeInterferences;
 		void ProcessEdgeInterferences(const Standard_Integer I);
 
-		/****************** TopOpeBRepDS_EIR ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_EIR;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-HDS: TopOpeBRepDS_HDataStructure
-
-Returns
--------
-None
-") TopOpeBRepDS_EIR;
-		 TopOpeBRepDS_EIR(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
-
 };
 
 
@@ -3523,6 +3523,16 @@ None
 ********************************************/
 class TopOpeBRepDS_Edge3dInterferenceTool {
 	public:
+		/****************** TopOpeBRepDS_Edge3dInterferenceTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Edge3dInterferenceTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_Edge3dInterferenceTool;
+		 TopOpeBRepDS_Edge3dInterferenceTool();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -3572,16 +3582,6 @@ None
 ") InitPointVertex;
 		void InitPointVertex(const Standard_Integer IsVertex, const TopoDS_Shape & VonOO);
 
-		/****************** TopOpeBRepDS_Edge3dInterferenceTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Edge3dInterferenceTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_Edge3dInterferenceTool;
-		 TopOpeBRepDS_Edge3dInterferenceTool();
-
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
 		%feature("autodoc", "No available documentation.
@@ -3610,6 +3610,16 @@ None
 ******************************************/
 class TopOpeBRepDS_EdgeInterferenceTool {
 	public:
+		/****************** TopOpeBRepDS_EdgeInterferenceTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_EdgeInterferenceTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_EdgeInterferenceTool;
+		 TopOpeBRepDS_EdgeInterferenceTool();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -3657,16 +3667,6 @@ None
 ") Init;
 		void Init(const TopoDS_Shape & E, const opencascade::handle<TopOpeBRepDS_Interference> & I);
 
-		/****************** TopOpeBRepDS_EdgeInterferenceTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_EdgeInterferenceTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_EdgeInterferenceTool;
-		 TopOpeBRepDS_EdgeInterferenceTool();
-
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
 		%feature("autodoc", "No available documentation.
@@ -3695,6 +3695,34 @@ None
 ******************************/
 class TopOpeBRepDS_Explorer {
 	public:
+		/****************** TopOpeBRepDS_Explorer ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Explorer;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_Explorer;
+		 TopOpeBRepDS_Explorer();
+
+		/****************** TopOpeBRepDS_Explorer ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Explorer;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HDS: TopOpeBRepDS_HDataStructure
+T: TopAbs_ShapeEnum,optional
+	default value is TopAbs_SHAPE
+findkeep: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") TopOpeBRepDS_Explorer;
+		 TopOpeBRepDS_Explorer(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS, const TopAbs_ShapeEnum T = TopAbs_SHAPE, const Standard_Boolean findkeep = Standard_True);
+
 		/****************** Current ******************/
 		%feature("compactdefaultargs") Current;
 		%feature("autodoc", "No available documentation.
@@ -3773,34 +3801,6 @@ None
 ") Next;
 		void Next();
 
-		/****************** TopOpeBRepDS_Explorer ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Explorer;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_Explorer;
-		 TopOpeBRepDS_Explorer();
-
-		/****************** TopOpeBRepDS_Explorer ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Explorer;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-HDS: TopOpeBRepDS_HDataStructure
-T: TopAbs_ShapeEnum,optional
-	default value is TopAbs_SHAPE
-findkeep: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") TopOpeBRepDS_Explorer;
-		 TopOpeBRepDS_Explorer(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS, const TopAbs_ShapeEnum T = TopAbs_SHAPE, const Standard_Boolean findkeep = Standard_True);
-
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "No available documentation.
@@ -3835,6 +3835,20 @@ TopoDS_Vertex
 *************************/
 class TopOpeBRepDS_FIR {
 	public:
+		/****************** TopOpeBRepDS_FIR ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_FIR;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HDS: TopOpeBRepDS_HDataStructure
+
+Returns
+-------
+None
+") TopOpeBRepDS_FIR;
+		 TopOpeBRepDS_FIR(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
+
 		/****************** ProcessFaceInterferences ******************/
 		%feature("compactdefaultargs") ProcessFaceInterferences;
 		%feature("autodoc", "No available documentation.
@@ -3864,20 +3878,6 @@ None
 ") ProcessFaceInterferences;
 		void ProcessFaceInterferences(const Standard_Integer I, const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State & M);
 
-		/****************** TopOpeBRepDS_FIR ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_FIR;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-HDS: TopOpeBRepDS_HDataStructure
-
-Returns
--------
-None
-") TopOpeBRepDS_FIR;
-		 TopOpeBRepDS_FIR(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
-
 };
 
 
@@ -3892,6 +3892,20 @@ None
 ******************************************/
 class TopOpeBRepDS_FaceInterferenceTool {
 	public:
+		/****************** TopOpeBRepDS_FaceInterferenceTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_FaceInterferenceTool;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: TopOpeBRepDS_PDataStructure
+
+Returns
+-------
+None
+") TopOpeBRepDS_FaceInterferenceTool;
+		 TopOpeBRepDS_FaceInterferenceTool(const TopOpeBRepDS_PDataStructure & P);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Eisnew = true if e is a new edge built on edge i->geometry() false if e is shape <=> i->geometry().
@@ -3983,20 +3997,6 @@ None
 ") SetEdgePntPar;
 		void SetEdgePntPar(const gp_Pnt & P, const Standard_Real par);
 
-		/****************** TopOpeBRepDS_FaceInterferenceTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_FaceInterferenceTool;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-P: TopOpeBRepDS_PDataStructure
-
-Returns
--------
-None
-") TopOpeBRepDS_FaceInterferenceTool;
-		 TopOpeBRepDS_FaceInterferenceTool(const TopOpeBRepDS_PDataStructure & P);
-
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
 		%feature("autodoc", "No available documentation.
@@ -4025,6 +4025,22 @@ None
 ****************************/
 class TopOpeBRepDS_Filter {
 	public:
+		/****************** TopOpeBRepDS_Filter ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Filter;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HDS: TopOpeBRepDS_HDataStructure
+pClassif: TopOpeBRepTool_PShapeClassifier,optional
+	default value is 0
+
+Returns
+-------
+None
+") TopOpeBRepDS_Filter;
+		 TopOpeBRepDS_Filter(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS, const TopOpeBRepTool_PShapeClassifier & pClassif = 0);
+
 		/****************** ProcessCurveInterferences ******************/
 		%feature("compactdefaultargs") ProcessCurveInterferences;
 		%feature("autodoc", "No available documentation.
@@ -4112,22 +4128,6 @@ None
 ") ProcessInterferences;
 		void ProcessInterferences();
 
-		/****************** TopOpeBRepDS_Filter ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Filter;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-HDS: TopOpeBRepDS_HDataStructure
-pClassif: TopOpeBRepTool_PShapeClassifier,optional
-	default value is 0
-
-Returns
--------
-None
-") TopOpeBRepDS_Filter;
-		 TopOpeBRepDS_Filter(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS, const TopOpeBRepTool_PShapeClassifier & pClassif = 0);
-
 };
 
 
@@ -4142,6 +4142,20 @@ None
 *******************************/
 class TopOpeBRepDS_GapFiller {
 	public:
+		/****************** TopOpeBRepDS_GapFiller ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_GapFiller;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HDS: TopOpeBRepDS_HDataStructure
+
+Returns
+-------
+None
+") TopOpeBRepDS_GapFiller;
+		 TopOpeBRepDS_GapFiller(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
+
 		/****************** AddPointsOnConnexShape ******************/
 		%feature("compactdefaultargs") AddPointsOnConnexShape;
 		%feature("autodoc", "Methodes pour reduire la liste des points qui peuvent correspondre a une point donne.
@@ -4312,20 +4326,6 @@ None
 ") ReBuildGeom;
 		void ReBuildGeom(const opencascade::handle<TopOpeBRepDS_Interference> & I1, TColStd_MapOfInteger & Done);
 
-		/****************** TopOpeBRepDS_GapFiller ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_GapFiller;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-HDS: TopOpeBRepDS_HDataStructure
-
-Returns
--------
-None
-") TopOpeBRepDS_GapFiller;
-		 TopOpeBRepDS_GapFiller(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
-
 };
 
 
@@ -4340,6 +4340,30 @@ None
 *****************************/
 class TopOpeBRepDS_GapTool : public Standard_Transient {
 	public:
+		/****************** TopOpeBRepDS_GapTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_GapTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_GapTool;
+		 TopOpeBRepDS_GapTool();
+
+		/****************** TopOpeBRepDS_GapTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_GapTool;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HDS: TopOpeBRepDS_HDataStructure
+
+Returns
+-------
+None
+") TopOpeBRepDS_GapTool;
+		 TopOpeBRepDS_GapTool(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
+
 		/****************** ChangeSameInterferences ******************/
 		%feature("compactdefaultargs") ChangeSameInterferences;
 		%feature("autodoc", "No available documentation.
@@ -4489,30 +4513,6 @@ None
 ") SetPoint;
 		void SetPoint(const opencascade::handle<TopOpeBRepDS_Interference> & I, const Standard_Integer IndexPoint);
 
-		/****************** TopOpeBRepDS_GapTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_GapTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_GapTool;
-		 TopOpeBRepDS_GapTool();
-
-		/****************** TopOpeBRepDS_GapTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_GapTool;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-HDS: TopOpeBRepDS_HDataStructure
-
-Returns
--------
-None
-") TopOpeBRepDS_GapTool;
-		 TopOpeBRepDS_GapTool(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
-
 };
 
 
@@ -4529,6 +4529,30 @@ None
 **********************************/
 class TopOpeBRepDS_GeometryData {
 	public:
+		/****************** TopOpeBRepDS_GeometryData ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_GeometryData;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_GeometryData;
+		 TopOpeBRepDS_GeometryData();
+
+		/****************** TopOpeBRepDS_GeometryData ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_GeometryData;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Other: TopOpeBRepDS_GeometryData
+
+Returns
+-------
+None
+") TopOpeBRepDS_GeometryData;
+		 TopOpeBRepDS_GeometryData(const TopOpeBRepDS_GeometryData & Other);
+
 		/****************** AddInterference ******************/
 		%feature("compactdefaultargs") AddInterference;
 		%feature("autodoc", "No available documentation.
@@ -4577,30 +4601,6 @@ TopOpeBRepDS_ListOfInterference
 ") Interferences;
 		const TopOpeBRepDS_ListOfInterference & Interferences();
 
-		/****************** TopOpeBRepDS_GeometryData ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_GeometryData;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_GeometryData;
-		 TopOpeBRepDS_GeometryData();
-
-		/****************** TopOpeBRepDS_GeometryData ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_GeometryData;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Other: TopOpeBRepDS_GeometryData
-
-Returns
--------
-None
-") TopOpeBRepDS_GeometryData;
-		 TopOpeBRepDS_GeometryData(const TopOpeBRepDS_GeometryData & Other);
-
 };
 
 
@@ -4618,6 +4618,48 @@ None
 **********************************/
 class TopOpeBRepDS_Interference : public Standard_Transient {
 	public:
+		/****************** TopOpeBRepDS_Interference ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Interference;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_Interference;
+		 TopOpeBRepDS_Interference();
+
+		/****************** TopOpeBRepDS_Interference ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Interference;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Transition: TopOpeBRepDS_Transition
+SupportType: TopOpeBRepDS_Kind
+Support: int
+GeometryType: TopOpeBRepDS_Kind
+Geometry: int
+
+Returns
+-------
+None
+") TopOpeBRepDS_Interference;
+		 TopOpeBRepDS_Interference(const TopOpeBRepDS_Transition & Transition, const TopOpeBRepDS_Kind SupportType, const Standard_Integer Support, const TopOpeBRepDS_Kind GeometryType, const Standard_Integer Geometry);
+
+		/****************** TopOpeBRepDS_Interference ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Interference;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I: TopOpeBRepDS_Interference
+
+Returns
+-------
+None
+") TopOpeBRepDS_Interference;
+		 TopOpeBRepDS_Interference(const opencascade::handle<TopOpeBRepDS_Interference> & I);
+
 		/****************** ChangeTransition ******************/
 		%feature("compactdefaultargs") ChangeTransition;
 		%feature("autodoc", "No available documentation.
@@ -4783,48 +4825,6 @@ None
 ") SupportType;
 		void SupportType(const TopOpeBRepDS_Kind ST);
 
-		/****************** TopOpeBRepDS_Interference ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Interference;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_Interference;
-		 TopOpeBRepDS_Interference();
-
-		/****************** TopOpeBRepDS_Interference ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Interference;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Transition: TopOpeBRepDS_Transition
-SupportType: TopOpeBRepDS_Kind
-Support: int
-GeometryType: TopOpeBRepDS_Kind
-Geometry: int
-
-Returns
--------
-None
-") TopOpeBRepDS_Interference;
-		 TopOpeBRepDS_Interference(const TopOpeBRepDS_Transition & Transition, const TopOpeBRepDS_Kind SupportType, const Standard_Integer Support, const TopOpeBRepDS_Kind GeometryType, const Standard_Integer Geometry);
-
-		/****************** TopOpeBRepDS_Interference ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Interference;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-I: TopOpeBRepDS_Interference
-
-Returns
--------
-None
-") TopOpeBRepDS_Interference;
-		 TopOpeBRepDS_Interference(const opencascade::handle<TopOpeBRepDS_Interference> & I);
-
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
 		%feature("autodoc", "No available documentation.
@@ -4865,6 +4865,30 @@ None
 ******************************************/
 class TopOpeBRepDS_InterferenceIterator {
 	public:
+		/****************** TopOpeBRepDS_InterferenceIterator ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_InterferenceIterator;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_InterferenceIterator;
+		 TopOpeBRepDS_InterferenceIterator();
+
+		/****************** TopOpeBRepDS_InterferenceIterator ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_InterferenceIterator;
+		%feature("autodoc", "Creates an iterator on the interference of list <l>.
+
+Parameters
+----------
+L: TopOpeBRepDS_ListOfInterference
+
+Returns
+-------
+None
+") TopOpeBRepDS_InterferenceIterator;
+		 TopOpeBRepDS_InterferenceIterator(const TopOpeBRepDS_ListOfInterference & L);
+
 		/****************** ChangeIterator ******************/
 		%feature("compactdefaultargs") ChangeIterator;
 		%feature("autodoc", "No available documentation.
@@ -4988,30 +5012,6 @@ Returns
 None
 ") SupportKind;
 		void SupportKind(const TopOpeBRepDS_Kind ST);
-
-		/****************** TopOpeBRepDS_InterferenceIterator ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_InterferenceIterator;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_InterferenceIterator;
-		 TopOpeBRepDS_InterferenceIterator();
-
-		/****************** TopOpeBRepDS_InterferenceIterator ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_InterferenceIterator;
-		%feature("autodoc", "Creates an iterator on the interference of list <l>.
-
-Parameters
-----------
-L: TopOpeBRepDS_ListOfInterference
-
-Returns
--------
-None
-") TopOpeBRepDS_InterferenceIterator;
-		 TopOpeBRepDS_InterferenceIterator(const TopOpeBRepDS_ListOfInterference & L);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -5202,6 +5202,16 @@ None
 *****************************************/
 class TopOpeBRepDS_ListOfShapeOn1State {
 	public:
+		/****************** TopOpeBRepDS_ListOfShapeOn1State ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_ListOfShapeOn1State;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_ListOfShapeOn1State;
+		 TopOpeBRepDS_ListOfShapeOn1State();
+
 		/****************** ChangeListOnState ******************/
 		%feature("compactdefaultargs") ChangeListOnState;
 		%feature("autodoc", "No available documentation.
@@ -5257,16 +5267,6 @@ None
 ") Split;
 		void Split(const Standard_Boolean B = Standard_True);
 
-		/****************** TopOpeBRepDS_ListOfShapeOn1State ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_ListOfShapeOn1State;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_ListOfShapeOn1State;
-		 TopOpeBRepDS_ListOfShapeOn1State();
-
 };
 
 
@@ -5281,6 +5281,16 @@ None
 ****************************/
 class TopOpeBRepDS_Marker : public Standard_Transient {
 	public:
+		/****************** TopOpeBRepDS_Marker ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Marker;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_Marker;
+		 TopOpeBRepDS_Marker();
+
 		/****************** Allocate ******************/
 		%feature("compactdefaultargs") Allocate;
 		%feature("autodoc", "No available documentation.
@@ -5350,16 +5360,6 @@ None
 ") Set;
 		void Set(const Standard_Boolean b, const Standard_Integer n, const Standard_Address a);
 
-		/****************** TopOpeBRepDS_Marker ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Marker;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_Marker;
-		 TopOpeBRepDS_Marker();
-
 };
 
 
@@ -5376,6 +5376,45 @@ None
 ***************************/
 class TopOpeBRepDS_Point {
 	public:
+		/****************** TopOpeBRepDS_Point ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Point;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_Point;
+		 TopOpeBRepDS_Point();
+
+		/****************** TopOpeBRepDS_Point ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Point;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Pnt
+T: float
+
+Returns
+-------
+None
+") TopOpeBRepDS_Point;
+		 TopOpeBRepDS_Point(const gp_Pnt & P, const Standard_Real T);
+
+		/****************** TopOpeBRepDS_Point ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Point;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") TopOpeBRepDS_Point;
+		 TopOpeBRepDS_Point(const TopoDS_Shape & S);
+
 		/****************** ChangeKeep ******************/
 		%feature("compactdefaultargs") ChangeKeep;
 		%feature("autodoc", "No available documentation.
@@ -5458,45 +5497,6 @@ None
 ") Tolerance;
 		void Tolerance(const Standard_Real Tol);
 
-		/****************** TopOpeBRepDS_Point ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Point;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_Point;
-		 TopOpeBRepDS_Point();
-
-		/****************** TopOpeBRepDS_Point ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Point;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-P: gp_Pnt
-T: float
-
-Returns
--------
-None
-") TopOpeBRepDS_Point;
-		 TopOpeBRepDS_Point(const gp_Pnt & P, const Standard_Real T);
-
-		/****************** TopOpeBRepDS_Point ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Point;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") TopOpeBRepDS_Point;
-		 TopOpeBRepDS_Point(const TopoDS_Shape & S);
-
 };
 
 
@@ -5511,6 +5511,32 @@ None
 ***********************************/
 class TopOpeBRepDS_PointExplorer {
 	public:
+		/****************** TopOpeBRepDS_PointExplorer ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_PointExplorer;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_PointExplorer;
+		 TopOpeBRepDS_PointExplorer();
+
+		/****************** TopOpeBRepDS_PointExplorer ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_PointExplorer;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+DS: TopOpeBRepDS_DataStructure
+FindOnlyKeep: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") TopOpeBRepDS_PointExplorer;
+		 TopOpeBRepDS_PointExplorer(const TopOpeBRepDS_DataStructure & DS, const Standard_Boolean FindOnlyKeep = Standard_True);
+
 		/****************** Index ******************/
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "No available documentation.
@@ -5619,32 +5645,6 @@ TopOpeBRepDS_Point
 ") Point;
 		const TopOpeBRepDS_Point & Point(const Standard_Integer I);
 
-		/****************** TopOpeBRepDS_PointExplorer ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_PointExplorer;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_PointExplorer;
-		 TopOpeBRepDS_PointExplorer();
-
-		/****************** TopOpeBRepDS_PointExplorer ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_PointExplorer;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-DS: TopOpeBRepDS_DataStructure
-FindOnlyKeep: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") TopOpeBRepDS_PointExplorer;
-		 TopOpeBRepDS_PointExplorer(const TopOpeBRepDS_DataStructure & DS, const Standard_Boolean FindOnlyKeep = Standard_True);
-
 };
 
 
@@ -5659,6 +5659,20 @@ None
 *****************************/
 class TopOpeBRepDS_Reducer {
 	public:
+		/****************** TopOpeBRepDS_Reducer ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Reducer;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HDS: TopOpeBRepDS_HDataStructure
+
+Returns
+-------
+None
+") TopOpeBRepDS_Reducer;
+		 TopOpeBRepDS_Reducer(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
+
 		/****************** ProcessEdgeInterferences ******************/
 		%feature("compactdefaultargs") ProcessEdgeInterferences;
 		%feature("autodoc", "No available documentation.
@@ -5683,20 +5697,6 @@ None
 ") ProcessFaceInterferences;
 		void ProcessFaceInterferences(const TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State & M);
 
-		/****************** TopOpeBRepDS_Reducer ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Reducer;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-HDS: TopOpeBRepDS_HDataStructure
-
-Returns
--------
-None
-") TopOpeBRepDS_Reducer;
-		 TopOpeBRepDS_Reducer(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
-
 };
 
 
@@ -5711,6 +5711,16 @@ None
 *******************************/
 class TopOpeBRepDS_ShapeData {
 	public:
+		/****************** TopOpeBRepDS_ShapeData ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_ShapeData;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_ShapeData;
+		 TopOpeBRepDS_ShapeData();
+
 		/****************** ChangeInterferences ******************/
 		%feature("compactdefaultargs") ChangeInterferences;
 		%feature("autodoc", "No available documentation.
@@ -5755,16 +5765,6 @@ bool
 ") Keep;
 		Standard_Boolean Keep();
 
-		/****************** TopOpeBRepDS_ShapeData ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_ShapeData;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_ShapeData;
-		 TopOpeBRepDS_ShapeData();
-
 };
 
 
@@ -5779,6 +5779,16 @@ None
 ************************************/
 class TopOpeBRepDS_ShapeWithState {
 	public:
+		/****************** TopOpeBRepDS_ShapeWithState ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_ShapeWithState;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_ShapeWithState;
+		 TopOpeBRepDS_ShapeWithState();
+
 		/****************** AddPart ******************/
 		%feature("compactdefaultargs") AddPart;
 		%feature("autodoc", "No available documentation.
@@ -5871,16 +5881,6 @@ TopAbs_State
 ") State;
 		TopAbs_State State();
 
-		/****************** TopOpeBRepDS_ShapeWithState ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_ShapeWithState;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_ShapeWithState;
-		 TopOpeBRepDS_ShapeWithState();
-
 };
 
 
@@ -5895,6 +5895,45 @@ None
 *****************************/
 class TopOpeBRepDS_Surface {
 	public:
+		/****************** TopOpeBRepDS_Surface ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Surface;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_Surface;
+		 TopOpeBRepDS_Surface();
+
+		/****************** TopOpeBRepDS_Surface ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Surface;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: Geom_Surface
+T: float
+
+Returns
+-------
+None
+") TopOpeBRepDS_Surface;
+		 TopOpeBRepDS_Surface(const opencascade::handle<Geom_Surface> & P, const Standard_Real T);
+
+		/****************** TopOpeBRepDS_Surface ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Surface;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Other: TopOpeBRepDS_Surface
+
+Returns
+-------
+None
+") TopOpeBRepDS_Surface;
+		 TopOpeBRepDS_Surface(const TopOpeBRepDS_Surface & Other);
+
 		/****************** Assign ******************/
 		%feature("compactdefaultargs") Assign;
 		%feature("autodoc", "No available documentation.
@@ -5967,45 +6006,6 @@ None
 ") Tolerance;
 		void Tolerance(Standard_Real theTol);
 
-		/****************** TopOpeBRepDS_Surface ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Surface;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_Surface;
-		 TopOpeBRepDS_Surface();
-
-		/****************** TopOpeBRepDS_Surface ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Surface;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-P: Geom_Surface
-T: float
-
-Returns
--------
-None
-") TopOpeBRepDS_Surface;
-		 TopOpeBRepDS_Surface(const opencascade::handle<Geom_Surface> & P, const Standard_Real T);
-
-		/****************** TopOpeBRepDS_Surface ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Surface;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Other: TopOpeBRepDS_Surface
-
-Returns
--------
-None
-") TopOpeBRepDS_Surface;
-		 TopOpeBRepDS_Surface(const TopOpeBRepDS_Surface & Other);
-
 };
 
 
@@ -6020,6 +6020,32 @@ None
 *************************************/
 class TopOpeBRepDS_SurfaceExplorer {
 	public:
+		/****************** TopOpeBRepDS_SurfaceExplorer ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_SurfaceExplorer;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_SurfaceExplorer;
+		 TopOpeBRepDS_SurfaceExplorer();
+
+		/****************** TopOpeBRepDS_SurfaceExplorer ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_SurfaceExplorer;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+DS: TopOpeBRepDS_DataStructure
+FindOnlyKeep: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") TopOpeBRepDS_SurfaceExplorer;
+		 TopOpeBRepDS_SurfaceExplorer(const TopOpeBRepDS_DataStructure & DS, const Standard_Boolean FindOnlyKeep = Standard_True);
+
 		/****************** Index ******************/
 		%feature("compactdefaultargs") Index;
 		%feature("autodoc", "No available documentation.
@@ -6128,32 +6154,6 @@ TopOpeBRepDS_Surface
 ") Surface;
 		const TopOpeBRepDS_Surface & Surface(const Standard_Integer I);
 
-		/****************** TopOpeBRepDS_SurfaceExplorer ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_SurfaceExplorer;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_SurfaceExplorer;
-		 TopOpeBRepDS_SurfaceExplorer();
-
-		/****************** TopOpeBRepDS_SurfaceExplorer ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_SurfaceExplorer;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-DS: TopOpeBRepDS_DataStructure
-FindOnlyKeep: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") TopOpeBRepDS_SurfaceExplorer;
-		 TopOpeBRepDS_SurfaceExplorer(const TopOpeBRepDS_DataStructure & DS, const Standard_Boolean FindOnlyKeep = Standard_True);
-
 };
 
 
@@ -6168,6 +6168,16 @@ None
 *************************/
 class TopOpeBRepDS_TKI {
 	public:
+		/****************** TopOpeBRepDS_TKI ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_TKI;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_TKI;
+		 TopOpeBRepDS_TKI();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -6359,16 +6369,6 @@ None
 ") Next;
 		void Next();
 
-		/****************** TopOpeBRepDS_TKI ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_TKI;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_TKI;
-		 TopOpeBRepDS_TKI();
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -6497,6 +6497,49 @@ bool
 ********************************/
 class TopOpeBRepDS_Transition {
 	public:
+		/****************** TopOpeBRepDS_Transition ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Transition;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepDS_Transition;
+		 TopOpeBRepDS_Transition();
+
+		/****************** TopOpeBRepDS_Transition ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Transition;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+StateBefore: TopAbs_State
+StateAfter: TopAbs_State
+ShapeBefore: TopAbs_ShapeEnum,optional
+	default value is TopAbs_FACE
+ShapeAfter: TopAbs_ShapeEnum,optional
+	default value is TopAbs_FACE
+
+Returns
+-------
+None
+") TopOpeBRepDS_Transition;
+		 TopOpeBRepDS_Transition(const TopAbs_State StateBefore, const TopAbs_State StateAfter, const TopAbs_ShapeEnum ShapeBefore = TopAbs_FACE, const TopAbs_ShapeEnum ShapeAfter = TopAbs_FACE);
+
+		/****************** TopOpeBRepDS_Transition ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_Transition;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+O: TopAbs_Orientation
+
+Returns
+-------
+None
+") TopOpeBRepDS_Transition;
+		 TopOpeBRepDS_Transition(const TopAbs_Orientation O);
+
 		/****************** After ******************/
 		%feature("compactdefaultargs") After;
 		%feature("autodoc", "No available documentation.
@@ -6786,49 +6829,6 @@ None
 ") StateBefore;
 		void StateBefore(const TopAbs_State S);
 
-		/****************** TopOpeBRepDS_Transition ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Transition;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepDS_Transition;
-		 TopOpeBRepDS_Transition();
-
-		/****************** TopOpeBRepDS_Transition ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Transition;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-StateBefore: TopAbs_State
-StateAfter: TopAbs_State
-ShapeBefore: TopAbs_ShapeEnum,optional
-	default value is TopAbs_FACE
-ShapeAfter: TopAbs_ShapeEnum,optional
-	default value is TopAbs_FACE
-
-Returns
--------
-None
-") TopOpeBRepDS_Transition;
-		 TopOpeBRepDS_Transition(const TopAbs_State StateBefore, const TopAbs_State StateAfter, const TopAbs_ShapeEnum ShapeBefore = TopAbs_FACE, const TopAbs_ShapeEnum ShapeAfter = TopAbs_FACE);
-
-		/****************** TopOpeBRepDS_Transition ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_Transition;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-O: TopAbs_Orientation
-
-Returns
--------
-None
-") TopOpeBRepDS_Transition;
-		 TopOpeBRepDS_Transition(const TopAbs_Orientation O);
-
 };
 
 
@@ -6881,6 +6881,20 @@ None
 ***********************************/
 class TopOpeBRepDS_CurveIterator : public TopOpeBRepDS_InterferenceIterator {
 	public:
+		/****************** TopOpeBRepDS_CurveIterator ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_CurveIterator;
+		%feature("autodoc", "Creates an iterator on the curves on surface described by the interferences in <l>.
+
+Parameters
+----------
+L: TopOpeBRepDS_ListOfInterference
+
+Returns
+-------
+None
+") TopOpeBRepDS_CurveIterator;
+		 TopOpeBRepDS_CurveIterator(const TopOpeBRepDS_ListOfInterference & L);
+
 		/****************** Current ******************/
 		%feature("compactdefaultargs") Current;
 		%feature("autodoc", "Index of the curve in the data structure.
@@ -6929,20 +6943,6 @@ opencascade::handle<Geom2d_Curve>
 ") PCurve;
 		const opencascade::handle<Geom2d_Curve> & PCurve();
 
-		/****************** TopOpeBRepDS_CurveIterator ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_CurveIterator;
-		%feature("autodoc", "Creates an iterator on the curves on surface described by the interferences in <l>.
-
-Parameters
-----------
-L: TopOpeBRepDS_ListOfInterference
-
-Returns
--------
-None
-") TopOpeBRepDS_CurveIterator;
-		 TopOpeBRepDS_CurveIterator(const TopOpeBRepDS_ListOfInterference & L);
-
 };
 
 
@@ -6957,6 +6957,25 @@ None
 ********************************************/
 class TopOpeBRepDS_CurvePointInterference : public TopOpeBRepDS_Interference {
 	public:
+		/****************** TopOpeBRepDS_CurvePointInterference ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_CurvePointInterference;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+T: TopOpeBRepDS_Transition
+ST: TopOpeBRepDS_Kind
+S: int
+GT: TopOpeBRepDS_Kind
+G: int
+P: float
+
+Returns
+-------
+None
+") TopOpeBRepDS_CurvePointInterference;
+		 TopOpeBRepDS_CurvePointInterference(const TopOpeBRepDS_Transition & T, const TopOpeBRepDS_Kind ST, const Standard_Integer S, const TopOpeBRepDS_Kind GT, const Standard_Integer G, const Standard_Real P);
+
 		/****************** Parameter ******************/
 		%feature("compactdefaultargs") Parameter;
 		%feature("autodoc", "No available documentation.
@@ -6981,25 +7000,6 @@ None
 ") Parameter;
 		void Parameter(const Standard_Real P);
 
-		/****************** TopOpeBRepDS_CurvePointInterference ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_CurvePointInterference;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-T: TopOpeBRepDS_Transition
-ST: TopOpeBRepDS_Kind
-S: int
-GT: TopOpeBRepDS_Kind
-G: int
-P: float
-
-Returns
--------
-None
-") TopOpeBRepDS_CurvePointInterference;
-		 TopOpeBRepDS_CurvePointInterference(const TopOpeBRepDS_Transition & T, const TopOpeBRepDS_Kind ST, const Standard_Integer S, const TopOpeBRepDS_Kind GT, const Standard_Integer G, const Standard_Real P);
-
 };
 
 
@@ -7016,36 +7016,6 @@ None
 *******************************/
 class TopOpeBRepDS_PointData : public TopOpeBRepDS_GeometryData {
 	public:
-		/****************** GetShapes ******************/
-		%feature("compactdefaultargs") GetShapes;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-I1: int
-I2: int
-
-Returns
--------
-None
-") GetShapes;
-		void GetShapes(Standard_Integer &OutValue, Standard_Integer &OutValue);
-
-		/****************** SetShapes ******************/
-		%feature("compactdefaultargs") SetShapes;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-I1: int
-I2: int
-
-Returns
--------
-None
-") SetShapes;
-		void SetShapes(const Standard_Integer I1, const Standard_Integer I2);
-
 		/****************** TopOpeBRepDS_PointData ******************/
 		%feature("compactdefaultargs") TopOpeBRepDS_PointData;
 		%feature("autodoc", "No available documentation.
@@ -7086,6 +7056,36 @@ None
 ") TopOpeBRepDS_PointData;
 		 TopOpeBRepDS_PointData(const TopOpeBRepDS_Point & P, const Standard_Integer I1, const Standard_Integer I2);
 
+		/****************** GetShapes ******************/
+		%feature("compactdefaultargs") GetShapes;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I1: int
+I2: int
+
+Returns
+-------
+None
+") GetShapes;
+		void GetShapes(Standard_Integer &OutValue, Standard_Integer &OutValue);
+
+		/****************** SetShapes ******************/
+		%feature("compactdefaultargs") SetShapes;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I1: int
+I2: int
+
+Returns
+-------
+None
+") SetShapes;
+		void SetShapes(const Standard_Integer I1, const Standard_Integer I2);
+
 };
 
 
@@ -7100,6 +7100,20 @@ None
 ***********************************/
 class TopOpeBRepDS_PointIterator : public TopOpeBRepDS_InterferenceIterator {
 	public:
+		/****************** TopOpeBRepDS_PointIterator ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_PointIterator;
+		%feature("autodoc", "Creates an iterator on the points on curves described by the interferences in <l>.
+
+Parameters
+----------
+L: TopOpeBRepDS_ListOfInterference
+
+Returns
+-------
+None
+") TopOpeBRepDS_PointIterator;
+		 TopOpeBRepDS_PointIterator(const TopOpeBRepDS_ListOfInterference & L);
+
 		/****************** Current ******************/
 		%feature("compactdefaultargs") Current;
 		%feature("autodoc", "Index of the point in the data structure.
@@ -7198,20 +7212,6 @@ int
 ") Support;
 		Standard_Integer Support();
 
-		/****************** TopOpeBRepDS_PointIterator ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_PointIterator;
-		%feature("autodoc", "Creates an iterator on the points on curves described by the interferences in <l>.
-
-Parameters
-----------
-L: TopOpeBRepDS_ListOfInterference
-
-Returns
--------
-None
-") TopOpeBRepDS_PointIterator;
-		 TopOpeBRepDS_PointIterator(const TopOpeBRepDS_ListOfInterference & L);
-
 };
 
 
@@ -7226,6 +7226,26 @@ None
 ********************************************/
 class TopOpeBRepDS_ShapeShapeInterference : public TopOpeBRepDS_Interference {
 	public:
+		/****************** TopOpeBRepDS_ShapeShapeInterference ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_ShapeShapeInterference;
+		%feature("autodoc", "A shape interfers on shape <g> with shape <s>. examples : create a shapeshapeinterference describing : vertex v of edge e1 found on edge e2 : st,s,gt,g = topopebrepds_edge,e2,topopebrepds_vertex,v //! create a shapeshapeinterference describing vertex v of edge e found on face f : st,s,gt,g = topopebrepds_face,f,topopebrepds_vertex,v //! <gbound> indicates if shape <g> is a bound of shape <s>. //! <scc> : unsh_geometry : <s> and <ancestor> have any types, <s> and <ancestor> don't share the same geometry same_oriented : <s> and <ancestor> have identical types, <s> and <ancestor> orientations are identical. diff_oriented : <s> and <ancestor> have identical types, <s> and <ancestor> orientations are different.
+
+Parameters
+----------
+T: TopOpeBRepDS_Transition
+ST: TopOpeBRepDS_Kind
+S: int
+GT: TopOpeBRepDS_Kind
+G: int
+GBound: bool
+C: TopOpeBRepDS_Config
+
+Returns
+-------
+None
+") TopOpeBRepDS_ShapeShapeInterference;
+		 TopOpeBRepDS_ShapeShapeInterference(const TopOpeBRepDS_Transition & T, const TopOpeBRepDS_Kind ST, const Standard_Integer S, const TopOpeBRepDS_Kind GT, const Standard_Integer G, const Standard_Boolean GBound, const TopOpeBRepDS_Config C);
+
 		/****************** Config ******************/
 		%feature("compactdefaultargs") Config;
 		%feature("autodoc", "No available documentation.
@@ -7259,26 +7279,6 @@ Returns
 None
 ") SetGBound;
 		void SetGBound(const Standard_Boolean b);
-
-		/****************** TopOpeBRepDS_ShapeShapeInterference ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_ShapeShapeInterference;
-		%feature("autodoc", "A shape interfers on shape <g> with shape <s>. examples : create a shapeshapeinterference describing : vertex v of edge e1 found on edge e2 : st,s,gt,g = topopebrepds_edge,e2,topopebrepds_vertex,v //! create a shapeshapeinterference describing vertex v of edge e found on face f : st,s,gt,g = topopebrepds_face,f,topopebrepds_vertex,v //! <gbound> indicates if shape <g> is a bound of shape <s>. //! <scc> : unsh_geometry : <s> and <ancestor> have any types, <s> and <ancestor> don't share the same geometry same_oriented : <s> and <ancestor> have identical types, <s> and <ancestor> orientations are identical. diff_oriented : <s> and <ancestor> have identical types, <s> and <ancestor> orientations are different.
-
-Parameters
-----------
-T: TopOpeBRepDS_Transition
-ST: TopOpeBRepDS_Kind
-S: int
-GT: TopOpeBRepDS_Kind
-G: int
-GBound: bool
-C: TopOpeBRepDS_Config
-
-Returns
--------
-None
-") TopOpeBRepDS_ShapeShapeInterference;
-		 TopOpeBRepDS_ShapeShapeInterference(const TopOpeBRepDS_Transition & T, const TopOpeBRepDS_Kind ST, const Standard_Integer S, const TopOpeBRepDS_Kind GT, const Standard_Integer G, const Standard_Boolean GBound, const TopOpeBRepDS_Config C);
 
 };
 
@@ -7330,30 +7330,6 @@ None
 **********************************************/
 class TopOpeBRepDS_SurfaceCurveInterference : public TopOpeBRepDS_Interference {
 	public:
-		/****************** PCurve ******************/
-		%feature("compactdefaultargs") PCurve;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Geom2d_Curve>
-") PCurve;
-		const opencascade::handle<Geom2d_Curve> & PCurve();
-
-		/****************** PCurve ******************/
-		%feature("compactdefaultargs") PCurve;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-PC: Geom2d_Curve
-
-Returns
--------
-None
-") PCurve;
-		void PCurve(const opencascade::handle<Geom2d_Curve> & PC);
-
 		/****************** TopOpeBRepDS_SurfaceCurveInterference ******************/
 		%feature("compactdefaultargs") TopOpeBRepDS_SurfaceCurveInterference;
 		%feature("autodoc", "No available documentation.
@@ -7396,6 +7372,30 @@ Returns
 None
 ") TopOpeBRepDS_SurfaceCurveInterference;
 		 TopOpeBRepDS_SurfaceCurveInterference(const opencascade::handle<TopOpeBRepDS_Interference> & I);
+
+		/****************** PCurve ******************/
+		%feature("compactdefaultargs") PCurve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom2d_Curve>
+") PCurve;
+		const opencascade::handle<Geom2d_Curve> & PCurve();
+
+		/****************** PCurve ******************/
+		%feature("compactdefaultargs") PCurve;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+PC: Geom2d_Curve
+
+Returns
+-------
+None
+") PCurve;
+		void PCurve(const opencascade::handle<Geom2d_Curve> & PC);
 
 };
 
@@ -7451,6 +7451,20 @@ None
 *************************************/
 class TopOpeBRepDS_SurfaceIterator : public TopOpeBRepDS_InterferenceIterator {
 	public:
+		/****************** TopOpeBRepDS_SurfaceIterator ******************/
+		%feature("compactdefaultargs") TopOpeBRepDS_SurfaceIterator;
+		%feature("autodoc", "Creates an iterator on the surfaces on solid described by the interferences in <l>.
+
+Parameters
+----------
+L: TopOpeBRepDS_ListOfInterference
+
+Returns
+-------
+None
+") TopOpeBRepDS_SurfaceIterator;
+		 TopOpeBRepDS_SurfaceIterator(const TopOpeBRepDS_ListOfInterference & L);
+
 		/****************** Current ******************/
 		%feature("compactdefaultargs") Current;
 		%feature("autodoc", "Index of the surface in the data structure.
@@ -7475,20 +7489,6 @@ TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation(const TopAbs_State S);
 
-		/****************** TopOpeBRepDS_SurfaceIterator ******************/
-		%feature("compactdefaultargs") TopOpeBRepDS_SurfaceIterator;
-		%feature("autodoc", "Creates an iterator on the surfaces on solid described by the interferences in <l>.
-
-Parameters
-----------
-L: TopOpeBRepDS_ListOfInterference
-
-Returns
--------
-None
-") TopOpeBRepDS_SurfaceIterator;
-		 TopOpeBRepDS_SurfaceIterator(const TopOpeBRepDS_ListOfInterference & L);
-
 };
 
 
@@ -7503,30 +7503,6 @@ None
 ********************************************/
 class TopOpeBRepDS_EdgeVertexInterference : public TopOpeBRepDS_ShapeShapeInterference {
 	public:
-		/****************** Parameter ******************/
-		%feature("compactdefaultargs") Parameter;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-float
-") Parameter;
-		Standard_Real Parameter();
-
-		/****************** Parameter ******************/
-		%feature("compactdefaultargs") Parameter;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-P: float
-
-Returns
--------
-None
-") Parameter;
-		void Parameter(const Standard_Real P);
-
 		/****************** TopOpeBRepDS_EdgeVertexInterference ******************/
 		%feature("compactdefaultargs") TopOpeBRepDS_EdgeVertexInterference;
 		%feature("autodoc", "Create an interference of vertex <g> on a crossed edge e. //! if support type <st> == edge : <s> is edge e face : <s> is the face with bound e. <t> is the transition along the edge, crossing the crossed edge. e is the crossed edge. <gisbound> indicates if <g> is a bound of the edge. <p> is the parameter of <g> on the edge. //! interference is stored in the list of interfs of the edge.
@@ -7565,6 +7541,30 @@ Returns
 None
 ") TopOpeBRepDS_EdgeVertexInterference;
 		 TopOpeBRepDS_EdgeVertexInterference(const TopOpeBRepDS_Transition & T, const Standard_Integer S, const Standard_Integer G, const Standard_Boolean GIsBound, const TopOpeBRepDS_Config C, const Standard_Real P);
+
+		/****************** Parameter ******************/
+		%feature("compactdefaultargs") Parameter;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+float
+") Parameter;
+		Standard_Real Parameter();
+
+		/****************** Parameter ******************/
+		%feature("compactdefaultargs") Parameter;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: float
+
+Returns
+-------
+None
+") Parameter;
+		void Parameter(const Standard_Real P);
 
 };
 

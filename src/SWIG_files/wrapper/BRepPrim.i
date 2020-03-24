@@ -41,8 +41,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepprim.html"
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
-#include<TopoDS_module.hxx>
 #include<BRep_module.hxx>
+#include<TopoDS_module.hxx>
 #include<gp_module.hxx>
 #include<Geom_module.hxx>
 #include<Geom2d_module.hxx>
@@ -57,8 +57,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepprim.html"
 %};
 %import Standard.i
 %import NCollection.i
-%import TopoDS.i
 %import BRep.i
+%import TopoDS.i
 %import gp.i
 %import Geom.i
 %import Geom2d.i
@@ -106,6 +106,30 @@ class BRepPrim_Direction:
 *************************/
 class BRepPrim_Builder {
 	public:
+		/****************** BRepPrim_Builder ******************/
+		%feature("compactdefaultargs") BRepPrim_Builder;
+		%feature("autodoc", "Creates an empty, useless builder. necesseray for compilation.
+
+Returns
+-------
+None
+") BRepPrim_Builder;
+		 BRepPrim_Builder();
+
+		/****************** BRepPrim_Builder ******************/
+		%feature("compactdefaultargs") BRepPrim_Builder;
+		%feature("autodoc", "Creates from a builder.
+
+Parameters
+----------
+B: BRep_Builder
+
+Returns
+-------
+None
+") BRepPrim_Builder;
+		 BRepPrim_Builder(const BRep_Builder & B);
+
 		/****************** AddEdgeVertex ******************/
 		%feature("compactdefaultargs") AddEdgeVertex;
 		%feature("autodoc", "Adds the vertex <v> in the edge <e>. <p> is the parameter of the vertex on the edge. if direct is false the vertex is reversed.
@@ -185,30 +209,6 @@ Returns
 None
 ") AddWireEdge;
 		void AddWireEdge(TopoDS_Wire & W, const TopoDS_Edge & E, const Standard_Boolean direct);
-
-		/****************** BRepPrim_Builder ******************/
-		%feature("compactdefaultargs") BRepPrim_Builder;
-		%feature("autodoc", "Creates an empty, useless builder. necesseray for compilation.
-
-Returns
--------
-None
-") BRepPrim_Builder;
-		 BRepPrim_Builder();
-
-		/****************** BRepPrim_Builder ******************/
-		%feature("compactdefaultargs") BRepPrim_Builder;
-		%feature("autodoc", "Creates from a builder.
-
-Parameters
-----------
-B: BRep_Builder
-
-Returns
--------
-None
-") BRepPrim_Builder;
-		 BRepPrim_Builder(const BRep_Builder & B);
 
 		/****************** Builder ******************/
 		%feature("compactdefaultargs") Builder;
@@ -602,16 +602,6 @@ TopoDS_Vertex
 ************************/
 class BRepPrim_GWedge {
 	public:
-		/****************** Axes ******************/
-		%feature("compactdefaultargs") Axes;
-		%feature("autodoc", "Returns the coordinates system from <self>.
-
-Returns
--------
-gp_Ax2
-") Axes;
-		gp_Ax2 Axes();
-
 		/****************** BRepPrim_GWedge ******************/
 		%feature("compactdefaultargs") BRepPrim_GWedge;
 		%feature("autodoc", "Creates a gwedge algorithm. <axes> is the axis system for the primitive. //! xmin, ymin, zmin are set to 0 xmax, ymax, zmax are set to dx, dy, dz z2min = zmin z2max = zmax x2min = xmin x2max = xmax the result is a box dx,dy,dz should be positive.
@@ -673,6 +663,16 @@ Returns
 None
 ") BRepPrim_GWedge;
 		 BRepPrim_GWedge(const BRepPrim_Builder & B, const gp_Ax2 & Axes, const Standard_Real xmin, const Standard_Real ymin, const Standard_Real zmin, const Standard_Real z2min, const Standard_Real x2min, const Standard_Real xmax, const Standard_Real ymax, const Standard_Real zmax, const Standard_Real z2max, const Standard_Real x2max);
+
+		/****************** Axes ******************/
+		%feature("compactdefaultargs") Axes;
+		%feature("autodoc", "Returns the coordinates system from <self>.
+
+Returns
+-------
+gp_Ax2
+") Axes;
+		gp_Ax2 Axes();
 
 		/****************** Close ******************/
 		%feature("compactdefaultargs") Close;

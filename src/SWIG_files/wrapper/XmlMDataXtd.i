@@ -149,6 +149,20 @@ None
 *******************************/
 class XmlMDataXtd_AxisDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDataXtd_AxisDriver ******************/
+		%feature("compactdefaultargs") XmlMDataXtd_AxisDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDataXtd_AxisDriver;
+		 XmlMDataXtd_AxisDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -190,20 +204,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDataXtd_AxisDriver ******************/
-		%feature("compactdefaultargs") XmlMDataXtd_AxisDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDataXtd_AxisDriver;
-		 XmlMDataXtd_AxisDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 
@@ -221,6 +221,20 @@ None
 *************************************/
 class XmlMDataXtd_ConstraintDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDataXtd_ConstraintDriver ******************/
+		%feature("compactdefaultargs") XmlMDataXtd_ConstraintDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDataXtd_ConstraintDriver;
+		 XmlMDataXtd_ConstraintDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -262,20 +276,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDataXtd_ConstraintDriver ******************/
-		%feature("compactdefaultargs") XmlMDataXtd_ConstraintDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDataXtd_ConstraintDriver;
-		 XmlMDataXtd_ConstraintDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 
@@ -293,6 +293,20 @@ None
 ***********************************/
 class XmlMDataXtd_GeometryDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDataXtd_GeometryDriver ******************/
+		%feature("compactdefaultargs") XmlMDataXtd_GeometryDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDataXtd_GeometryDriver;
+		 XmlMDataXtd_GeometryDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -334,20 +348,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDataXtd_GeometryDriver ******************/
-		%feature("compactdefaultargs") XmlMDataXtd_GeometryDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDataXtd_GeometryDriver;
-		 XmlMDataXtd_GeometryDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 
@@ -365,6 +365,20 @@ None
 *************************************/
 class XmlMDataXtd_PatternStdDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDataXtd_PatternStdDriver ******************/
+		%feature("compactdefaultargs") XmlMDataXtd_PatternStdDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDataXtd_PatternStdDriver;
+		 XmlMDataXtd_PatternStdDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -406,20 +420,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDataXtd_PatternStdDriver ******************/
-		%feature("compactdefaultargs") XmlMDataXtd_PatternStdDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDataXtd_PatternStdDriver;
-		 XmlMDataXtd_PatternStdDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 
@@ -437,6 +437,20 @@ None
 ************************************/
 class XmlMDataXtd_PlacementDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDataXtd_PlacementDriver ******************/
+		%feature("compactdefaultargs") XmlMDataXtd_PlacementDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDataXtd_PlacementDriver;
+		 XmlMDataXtd_PlacementDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -478,20 +492,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDataXtd_PlacementDriver ******************/
-		%feature("compactdefaultargs") XmlMDataXtd_PlacementDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDataXtd_PlacementDriver;
-		 XmlMDataXtd_PlacementDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 
@@ -509,6 +509,20 @@ None
 ********************************/
 class XmlMDataXtd_PlaneDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDataXtd_PlaneDriver ******************/
+		%feature("compactdefaultargs") XmlMDataXtd_PlaneDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDataXtd_PlaneDriver;
+		 XmlMDataXtd_PlaneDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -550,20 +564,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDataXtd_PlaneDriver ******************/
-		%feature("compactdefaultargs") XmlMDataXtd_PlaneDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDataXtd_PlaneDriver;
-		 XmlMDataXtd_PlaneDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 
@@ -581,6 +581,20 @@ None
 ********************************/
 class XmlMDataXtd_PointDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDataXtd_PointDriver ******************/
+		%feature("compactdefaultargs") XmlMDataXtd_PointDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDataXtd_PointDriver;
+		 XmlMDataXtd_PointDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -622,20 +636,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDataXtd_PointDriver ******************/
-		%feature("compactdefaultargs") XmlMDataXtd_PointDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDataXtd_PointDriver;
-		 XmlMDataXtd_PointDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 
@@ -653,6 +653,20 @@ None
 ***********************************/
 class XmlMDataXtd_PositionDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDataXtd_PositionDriver ******************/
+		%feature("compactdefaultargs") XmlMDataXtd_PositionDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDataXtd_PositionDriver;
+		 XmlMDataXtd_PositionDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -694,20 +708,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDataXtd_PositionDriver ******************/
-		%feature("compactdefaultargs") XmlMDataXtd_PositionDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDataXtd_PositionDriver;
-		 XmlMDataXtd_PositionDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 
@@ -725,6 +725,20 @@ None
 ***************************************/
 class XmlMDataXtd_PresentationDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDataXtd_PresentationDriver ******************/
+		%feature("compactdefaultargs") XmlMDataXtd_PresentationDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDataXtd_PresentationDriver;
+		 XmlMDataXtd_PresentationDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -766,20 +780,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDataXtd_PresentationDriver ******************/
-		%feature("compactdefaultargs") XmlMDataXtd_PresentationDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDataXtd_PresentationDriver;
-		 XmlMDataXtd_PresentationDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 
@@ -797,6 +797,20 @@ None
 ********************************/
 class XmlMDataXtd_ShapeDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDataXtd_ShapeDriver ******************/
+		%feature("compactdefaultargs") XmlMDataXtd_ShapeDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDataXtd_ShapeDriver;
+		 XmlMDataXtd_ShapeDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -838,20 +852,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDataXtd_ShapeDriver ******************/
-		%feature("compactdefaultargs") XmlMDataXtd_ShapeDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDataXtd_ShapeDriver;
-		 XmlMDataXtd_ShapeDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 
@@ -869,6 +869,20 @@ None
 ****************************************/
 class XmlMDataXtd_TriangulationDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDataXtd_TriangulationDriver ******************/
+		%feature("compactdefaultargs") XmlMDataXtd_TriangulationDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDataXtd_TriangulationDriver;
+		 XmlMDataXtd_TriangulationDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -910,20 +924,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDataXtd_TriangulationDriver ******************/
-		%feature("compactdefaultargs") XmlMDataXtd_TriangulationDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDataXtd_TriangulationDriver;
-		 XmlMDataXtd_TriangulationDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 

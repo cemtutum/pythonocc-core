@@ -94,8 +94,6 @@ class BRepExtrema_SupportType:
 /* end handles declaration */
 
 /* templates */
-%template(BRepExtrema_SeqOfSolution) NCollection_Sequence<BRepExtrema_SolutionElem>;
-%template(BRepExtrema_ShapeList) NCollection_Vector<TopoDS_Face>;
 %template(BRepExtrema_MapOfIntegerPackedMapOfInteger) NCollection_DataMap<Standard_Integer,TColStd_PackedMapOfInteger>;
 
 %extend NCollection_DataMap<Standard_Integer,TColStd_PackedMapOfInteger> {
@@ -109,12 +107,14 @@ class BRepExtrema_SupportType:
     return l;
     }
 };
+%template(BRepExtrema_SeqOfSolution) NCollection_Sequence<BRepExtrema_SolutionElem>;
+%template(BRepExtrema_ShapeList) NCollection_Vector<TopoDS_Face>;
 /* end templates declaration */
 
 /* typedefs */
+typedef NCollection_DataMap<Standard_Integer, TColStd_PackedMapOfInteger> BRepExtrema_MapOfIntegerPackedMapOfInteger;
 typedef NCollection_Sequence<BRepExtrema_SolutionElem> BRepExtrema_SeqOfSolution;
 typedef NCollection_Vector<TopoDS_Face> BRepExtrema_ShapeList;
-typedef NCollection_DataMap<Standard_Integer, TColStd_PackedMapOfInteger> BRepExtrema_MapOfIntegerPackedMapOfInteger;
 /* end typedefs declaration */
 
 /***********************************

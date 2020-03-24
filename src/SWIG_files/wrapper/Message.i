@@ -367,21 +367,21 @@ class Message_StatusType:
 /* end handles declaration */
 
 /* templates */
-%template(Message_ListOfMsg) NCollection_List<Message_Msg>;
 %template(Message_ListIteratorOfListOfMsg) NCollection_TListIterator<Message_Msg>;
+%template(Message_ListOfAlert) NCollection_List<opencascade::handle<Message_Alert>>;
+%template(Message_ListOfMsg) NCollection_List<Message_Msg>;
 %template(Message_SequenceOfPrinters) NCollection_Sequence<opencascade::handle<Message_Printer>>;
 %template(Message_SequenceOfProgressScale) NCollection_Sequence<Message_ProgressScale>;
-%template(Message_ListOfAlert) NCollection_List<opencascade::handle<Message_Alert>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List<Message_Msg> Message_ListOfMsg;
-typedef NCollection_List<Message_Msg>::Iterator Message_ListIteratorOfListOfMsg;
-typedef NCollection_Sequence<opencascade::handle<Message_Printer>> Message_SequenceOfPrinters;
-typedef NCollection_Sequence<Message_ProgressScale> Message_SequenceOfProgressScale;
 typedef NCollection_Array1<NCollection_Handle<Message_Msg>> Message_ArrayOfMsg;
 typedef NCollection_Handle<Message_ArrayOfMsg> Message_HArrayOfMsg;
+typedef NCollection_List<Message_Msg>::Iterator Message_ListIteratorOfListOfMsg;
 typedef NCollection_List<opencascade::handle<Message_Alert>> Message_ListOfAlert;
+typedef NCollection_List<Message_Msg> Message_ListOfMsg;
+typedef NCollection_Sequence<opencascade::handle<Message_Printer>> Message_SequenceOfPrinters;
+typedef NCollection_Sequence<Message_ProgressScale> Message_SequenceOfProgressScale;
 /* end typedefs declaration */
 
 /****************
@@ -480,6 +480,16 @@ bool
 **************************/
 class Message_Algorithm : public Standard_Transient {
 	public:
+		/****************** Message_Algorithm ******************/
+		%feature("compactdefaultargs") Message_Algorithm;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Message_Algorithm;
+		 Message_Algorithm();
+
 		/****************** AddStatus ******************/
 		%feature("compactdefaultargs") AddStatus;
 		%feature("autodoc", "Add statuses to this algorithm from other algorithm (including messages).
@@ -576,16 +586,6 @@ Returns
 Message_ExecStatus
 ") GetStatus;
 		const Message_ExecStatus & GetStatus();
-
-		/****************** Message_Algorithm ******************/
-		%feature("compactdefaultargs") Message_Algorithm;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Message_Algorithm;
-		 Message_Algorithm();
 
 		/****************** PrepareReport ******************/
 		%feature("compactdefaultargs") PrepareReport;
@@ -832,6 +832,30 @@ class StatusRange:
 };
 /* end python proxy for enums */
 
+		/****************** Message_ExecStatus ******************/
+		%feature("compactdefaultargs") Message_ExecStatus;
+		%feature("autodoc", "Create empty execution status.
+
+Returns
+-------
+None
+") Message_ExecStatus;
+		 Message_ExecStatus();
+
+		/****************** Message_ExecStatus ******************/
+		%feature("compactdefaultargs") Message_ExecStatus;
+		%feature("autodoc", "Initialise the execution status.
+
+Parameters
+----------
+status: Message_Status
+
+Returns
+-------
+None
+") Message_ExecStatus;
+		 Message_ExecStatus(Message_Status status);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add statuses to me from theother execution status.
@@ -992,30 +1016,6 @@ int
 ") LocalStatusIndex;
 		static Standard_Integer LocalStatusIndex(Message_Status status);
 
-		/****************** Message_ExecStatus ******************/
-		%feature("compactdefaultargs") Message_ExecStatus;
-		%feature("autodoc", "Create empty execution status.
-
-Returns
--------
-None
-") Message_ExecStatus;
-		 Message_ExecStatus();
-
-		/****************** Message_ExecStatus ******************/
-		%feature("compactdefaultargs") Message_ExecStatus;
-		%feature("autodoc", "Initialise the execution status.
-
-Parameters
-----------
-status: Message_Status
-
-Returns
--------
-None
-") Message_ExecStatus;
-		 Message_ExecStatus(Message_Status status);
-
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
 		%feature("autodoc", "Sets a status flag.
@@ -1126,30 +1126,6 @@ Message_StatusType
 **************************/
 class Message_Messenger : public Standard_Transient {
 	public:
-		/****************** AddPrinter ******************/
-		%feature("compactdefaultargs") AddPrinter;
-		%feature("autodoc", "Add a printer to the messenger. the printer will be added only if it is not yet in the list. returns true if printer has been added.
-
-Parameters
-----------
-thePrinter: Message_Printer
-
-Returns
--------
-bool
-") AddPrinter;
-		Standard_Boolean AddPrinter(const opencascade::handle<Message_Printer> & thePrinter);
-
-		/****************** ChangePrinters ******************/
-		%feature("compactdefaultargs") ChangePrinters;
-		%feature("autodoc", "Returns sequence of printers the sequence can be modified.
-
-Returns
--------
-Message_SequenceOfPrinters
-") ChangePrinters;
-		Message_SequenceOfPrinters & ChangePrinters();
-
 		/****************** Message_Messenger ******************/
 		%feature("compactdefaultargs") Message_Messenger;
 		%feature("autodoc", "Empty constructor; initializes by single printer directed to std::cout. note: the default messenger is not empty but directed to cout in order to protect against possibility to forget defining printers. if printing to cout is not needed, clear messenger by getprinters().clear().
@@ -1173,6 +1149,30 @@ Returns
 None
 ") Message_Messenger;
 		 Message_Messenger(const opencascade::handle<Message_Printer> & thePrinter);
+
+		/****************** AddPrinter ******************/
+		%feature("compactdefaultargs") AddPrinter;
+		%feature("autodoc", "Add a printer to the messenger. the printer will be added only if it is not yet in the list. returns true if printer has been added.
+
+Parameters
+----------
+thePrinter: Message_Printer
+
+Returns
+-------
+bool
+") AddPrinter;
+		Standard_Boolean AddPrinter(const opencascade::handle<Message_Printer> & thePrinter);
+
+		/****************** ChangePrinters ******************/
+		%feature("compactdefaultargs") ChangePrinters;
+		%feature("autodoc", "Returns sequence of printers the sequence can be modified.
+
+Returns
+-------
+Message_SequenceOfPrinters
+") ChangePrinters;
+		Message_SequenceOfPrinters & ChangePrinters();
 
 		/****************** Printers ******************/
 		%feature("compactdefaultargs") Printers;
@@ -1282,6 +1282,58 @@ None
 ********************/
 class Message_Msg {
 	public:
+		/****************** Message_Msg ******************/
+		%feature("compactdefaultargs") Message_Msg;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Message_Msg;
+		 Message_Msg();
+
+		/****************** Message_Msg ******************/
+		%feature("compactdefaultargs") Message_Msg;
+		%feature("autodoc", "Copy constructor.
+
+Parameters
+----------
+theMsg: Message_Msg
+
+Returns
+-------
+None
+") Message_Msg;
+		 Message_Msg(const Message_Msg & theMsg);
+
+		/****************** Message_Msg ******************/
+		%feature("compactdefaultargs") Message_Msg;
+		%feature("autodoc", "Create a message using a corresponding entry in message_msgfile.
+
+Parameters
+----------
+theKey: char *
+
+Returns
+-------
+None
+") Message_Msg;
+		 Message_Msg(const char * theKey);
+
+		/****************** Message_Msg ******************/
+		%feature("compactdefaultargs") Message_Msg;
+		%feature("autodoc", "Create a message using a corresponding entry in message_msgfile.
+
+Parameters
+----------
+theKey: TCollection_ExtendedString
+
+Returns
+-------
+None
+") Message_Msg;
+		 Message_Msg(const TCollection_ExtendedString & theKey);
+
 		/****************** Arg ******************/
 		%feature("compactdefaultargs") Arg;
 		%feature("autodoc", "Set a value for %..s conversion.
@@ -1399,58 +1451,6 @@ Returns
 bool
 ") IsEdited;
 		Standard_Boolean IsEdited();
-
-		/****************** Message_Msg ******************/
-		%feature("compactdefaultargs") Message_Msg;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Message_Msg;
-		 Message_Msg();
-
-		/****************** Message_Msg ******************/
-		%feature("compactdefaultargs") Message_Msg;
-		%feature("autodoc", "Copy constructor.
-
-Parameters
-----------
-theMsg: Message_Msg
-
-Returns
--------
-None
-") Message_Msg;
-		 Message_Msg(const Message_Msg & theMsg);
-
-		/****************** Message_Msg ******************/
-		%feature("compactdefaultargs") Message_Msg;
-		%feature("autodoc", "Create a message using a corresponding entry in message_msgfile.
-
-Parameters
-----------
-theKey: char *
-
-Returns
--------
-None
-") Message_Msg;
-		 Message_Msg(const char * theKey);
-
-		/****************** Message_Msg ******************/
-		%feature("compactdefaultargs") Message_Msg;
-		%feature("autodoc", "Create a message using a corresponding entry in message_msgfile.
-
-Parameters
-----------
-theKey: TCollection_ExtendedString
-
-Returns
--------
-None
-") Message_Msg;
-		 Message_Msg(const TCollection_ExtendedString & theKey);
 
 		/****************** Original ******************/
 		%feature("compactdefaultargs") Original;
@@ -2097,6 +2097,16 @@ bool
 ******************************/
 class Message_ProgressScale {
 	public:
+		/****************** Message_ProgressScale ******************/
+		%feature("compactdefaultargs") Message_ProgressScale;
+		%feature("autodoc", "Creates scale ranged from 0 to 100 with step 1.
+
+Returns
+-------
+None
+") Message_ProgressScale;
+		 Message_ProgressScale();
+
 		/****************** BaseToLocal ******************/
 		%feature("compactdefaultargs") BaseToLocal;
 		%feature("autodoc", "Convert value from this scale to base one and back.
@@ -2194,16 +2204,6 @@ Returns
 float
 ") LocalToBase;
 		Standard_Real LocalToBase(const Standard_Real val);
-
-		/****************** Message_ProgressScale ******************/
-		%feature("compactdefaultargs") Message_ProgressScale;
-		%feature("autodoc", "Creates scale ranged from 0 to 100 with step 1.
-
-Returns
--------
-None
-") Message_ProgressScale;
-		 Message_ProgressScale();
 
 		/****************** SetInfinite ******************/
 		%feature("compactdefaultargs") SetInfinite;
@@ -2486,6 +2486,16 @@ None
 ***********************/
 class Message_Report : public Standard_Transient {
 	public:
+		/****************** Message_Report ******************/
+		%feature("compactdefaultargs") Message_Report;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Message_Report;
+		 Message_Report();
+
 		/****************** AddAlert ******************/
 		%feature("compactdefaultargs") AddAlert;
 		%feature("autodoc", "Add alert with specified gravity. this method is thread-safe, i.e. alerts can be added from parallel threads safely.
@@ -2619,16 +2629,6 @@ None
 ") Merge;
 		void Merge(const opencascade::handle<Message_Report> & theOther, Message_Gravity theGravity);
 
-		/****************** Message_Report ******************/
-		%feature("compactdefaultargs") Message_Report;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Message_Report;
-		 Message_Report();
-
 		/****************** SendMessages ******************/
 		%feature("compactdefaultargs") SendMessages;
 		%feature("autodoc", "Sends all collected alerts to messenger.
@@ -2674,36 +2674,6 @@ None
 *******************************/
 class Message_PrinterOStream : public Message_Printer {
 	public:
-		/****************** Close ******************/
-		%feature("compactdefaultargs") Close;
-		%feature("autodoc", "Flushes the output stream and destroys it if it has been specified externally with option dofree (or if it is internal file stream).
-
-Returns
--------
-None
-") Close;
-		void Close();
-
-		/****************** GetStream ******************/
-		%feature("compactdefaultargs") GetStream;
-		%feature("autodoc", "Returns reference to the output stream.
-
-Returns
--------
-Standard_OStream
-") GetStream;
-		Standard_OStream & GetStream();
-
-		/****************** GetUseUtf8 ******************/
-		%feature("compactdefaultargs") GetUseUtf8;
-		%feature("autodoc", "Returns option to convert non-ascii symbols to utf8 encoding.
-
-Returns
--------
-bool
-") GetUseUtf8;
-		Standard_Boolean GetUseUtf8();
-
 		/****************** Message_PrinterOStream ******************/
 		%feature("compactdefaultargs") Message_PrinterOStream;
 		%feature("autodoc", "Empty constructor, defaulting to cout.
@@ -2735,6 +2705,36 @@ Returns
 None
 ") Message_PrinterOStream;
 		 Message_PrinterOStream(const char * theFileName, const Standard_Boolean theDoAppend, const Message_Gravity theTraceLevel = Message_Info);
+
+		/****************** Close ******************/
+		%feature("compactdefaultargs") Close;
+		%feature("autodoc", "Flushes the output stream and destroys it if it has been specified externally with option dofree (or if it is internal file stream).
+
+Returns
+-------
+None
+") Close;
+		void Close();
+
+		/****************** GetStream ******************/
+		%feature("compactdefaultargs") GetStream;
+		%feature("autodoc", "Returns reference to the output stream.
+
+Returns
+-------
+Standard_OStream
+") GetStream;
+		Standard_OStream & GetStream();
+
+		/****************** GetUseUtf8 ******************/
+		%feature("compactdefaultargs") GetUseUtf8;
+		%feature("autodoc", "Returns option to convert non-ascii symbols to utf8 encoding.
+
+Returns
+-------
+bool
+") GetUseUtf8;
+		Standard_Boolean GetUseUtf8();
 
 		/****************** Send ******************/
 		%feature("compactdefaultargs") Send;

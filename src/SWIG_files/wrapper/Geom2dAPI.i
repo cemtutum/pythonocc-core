@@ -41,8 +41,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geom2dapi.html"
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
-#include<Extrema_module.hxx>
 #include<Geom2d_module.hxx>
+#include<Extrema_module.hxx>
 #include<gp_module.hxx>
 #include<Geom2dInt_module.hxx>
 #include<TColgp_module.hxx>
@@ -63,8 +63,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geom2dapi.html"
 %};
 %import Standard.i
 %import NCollection.i
-%import Extrema.i
 %import Geom2d.i
+%import Extrema.i
 %import gp.i
 %import Geom2dInt.i
 %import TColgp.i
@@ -98,6 +98,25 @@ from OCC.Core.Exception import *
 ************************************/
 class Geom2dAPI_ExtremaCurveCurve {
 	public:
+		/****************** Geom2dAPI_ExtremaCurveCurve ******************/
+		%feature("compactdefaultargs") Geom2dAPI_ExtremaCurveCurve;
+		%feature("autodoc", "Computes the extrema between - the portion of the curve c1 limited by the two points of parameter (u1min,u1max), and - the portion of the curve c2 limited by the two points of parameter (u2min,u2max). warning use the function nbextrema to obtain the number of solutions. if this algorithm fails, nbextrema returns 0.
+
+Parameters
+----------
+C1: Geom2d_Curve
+C2: Geom2d_Curve
+U1min: float
+U1max: float
+U2min: float
+U2max: float
+
+Returns
+-------
+None
+") Geom2dAPI_ExtremaCurveCurve;
+		 Geom2dAPI_ExtremaCurveCurve(const opencascade::handle<Geom2d_Curve> & C1, const opencascade::handle<Geom2d_Curve> & C2, const Standard_Real U1min, const Standard_Real U1max, const Standard_Real U2min, const Standard_Real U2max);
+
 		/****************** Distance ******************/
 		%feature("compactdefaultargs") Distance;
 		%feature("autodoc", "Computes the distance between the end points of the extremum of index index computed by this algorithm. exceptions standard_outofrange if index is not in the range [ 1,nbextrema ], where nbextrema is the number of extrema computed by this algorithm.
@@ -121,25 +140,6 @@ Returns
 Extrema_ExtCC2d
 ") Extrema;
 		const Extrema_ExtCC2d & Extrema();
-
-		/****************** Geom2dAPI_ExtremaCurveCurve ******************/
-		%feature("compactdefaultargs") Geom2dAPI_ExtremaCurveCurve;
-		%feature("autodoc", "Computes the extrema between - the portion of the curve c1 limited by the two points of parameter (u1min,u1max), and - the portion of the curve c2 limited by the two points of parameter (u2min,u2max). warning use the function nbextrema to obtain the number of solutions. if this algorithm fails, nbextrema returns 0.
-
-Parameters
-----------
-C1: Geom2d_Curve
-C2: Geom2d_Curve
-U1min: float
-U1max: float
-U2min: float
-U2max: float
-
-Returns
--------
-None
-") Geom2dAPI_ExtremaCurveCurve;
-		 Geom2dAPI_ExtremaCurveCurve(const opencascade::handle<Geom2d_Curve> & C1, const opencascade::handle<Geom2d_Curve> & C2, const Standard_Real U1min, const Standard_Real U1max, const Standard_Real U2min, const Standard_Real U2max);
 
 		/****************** LowerDistance ******************/
 		%feature("compactdefaultargs") LowerDistance;
@@ -387,16 +387,6 @@ None
 ******************************/
 class Geom2dAPI_Interpolate {
 	public:
-		/****************** Curve ******************/
-		%feature("compactdefaultargs") Curve;
-		%feature("autodoc", "Returns the computed bspline curve. raises stdfail_notdone if the interpolation fails.
-
-Returns
--------
-opencascade::handle<Geom2d_BSplineCurve>
-") Curve;
-		const opencascade::handle<Geom2d_BSplineCurve> & Curve();
-
 		/****************** Geom2dAPI_Interpolate ******************/
 		%feature("compactdefaultargs") Geom2dAPI_Interpolate;
 		%feature("autodoc", "Tolerance is to check if the points are not too close to one an other it is also used to check if the tangent vector is not too small. there should be at least 2 points if periodicflag is true then the curve will be periodic.
@@ -429,6 +419,16 @@ Returns
 None
 ") Geom2dAPI_Interpolate;
 		 Geom2dAPI_Interpolate(const opencascade::handle<TColgp_HArray1OfPnt2d> & Points, const opencascade::handle<TColStd_HArray1OfReal> & Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+
+		/****************** Curve ******************/
+		%feature("compactdefaultargs") Curve;
+		%feature("autodoc", "Returns the computed bspline curve. raises stdfail_notdone if the interpolation fails.
+
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
+") Curve;
+		const opencascade::handle<Geom2d_BSplineCurve> & Curve();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -502,16 +502,6 @@ None
 **********************************/
 class Geom2dAPI_PointsToBSpline {
 	public:
-		/****************** Curve ******************/
-		%feature("compactdefaultargs") Curve;
-		%feature("autodoc", "Returns the approximate bspline curve.
-
-Returns
--------
-opencascade::handle<Geom2d_BSplineCurve>
-") Curve;
-		const opencascade::handle<Geom2d_BSplineCurve> & Curve();
-
 		/****************** Geom2dAPI_PointsToBSpline ******************/
 		%feature("compactdefaultargs") Geom2dAPI_PointsToBSpline;
 		%feature("autodoc", "Constructs an empty approximation algorithm. use an init function to define and build the bspline curve.
@@ -636,6 +626,16 @@ Returns
 None
 ") Geom2dAPI_PointsToBSpline;
 		 Geom2dAPI_PointsToBSpline(const TColgp_Array1OfPnt2d & Points, const Standard_Real Weight1, const Standard_Real Weight2, const Standard_Real Weight3, const Standard_Integer DegMax = 8, const GeomAbs_Shape Continuity = GeomAbs_C2, const Standard_Real Tol3D = 1.0e-3);
+
+		/****************** Curve ******************/
+		%feature("compactdefaultargs") Curve;
+		%feature("autodoc", "Returns the approximate bspline curve.
+
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
+") Curve;
+		const opencascade::handle<Geom2d_BSplineCurve> & Curve();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -776,30 +776,6 @@ bool
 **************************************/
 class Geom2dAPI_ProjectPointOnCurve {
 	public:
-		/****************** Distance ******************/
-		%feature("compactdefaultargs") Distance;
-		%feature("autodoc", "Computes the distance between the point and its computed orthogonal projection on the curve. index is a number of computed projected point. exceptions standard_outofrange if index is not in the range [ 1,nbpoints ], where nbpoints is the number of solution points.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-float
-") Distance;
-		Standard_Real Distance(const Standard_Integer Index);
-
-		/****************** Extrema ******************/
-		%feature("compactdefaultargs") Extrema;
-		%feature("autodoc", "Return the algorithmic object from extrema.
-
-Returns
--------
-Extrema_ExtPC2d
-") Extrema;
-		const Extrema_ExtPC2d & Extrema();
-
 		/****************** Geom2dAPI_ProjectPointOnCurve ******************/
 		%feature("compactdefaultargs") Geom2dAPI_ProjectPointOnCurve;
 		%feature("autodoc", "Constructs an empty projector algorithm. use an init function to define the point and the curve on which it is going to work.
@@ -841,6 +817,30 @@ Returns
 None
 ") Geom2dAPI_ProjectPointOnCurve;
 		 Geom2dAPI_ProjectPointOnCurve(const gp_Pnt2d & P, const opencascade::handle<Geom2d_Curve> & Curve, const Standard_Real Umin, const Standard_Real Usup);
+
+		/****************** Distance ******************/
+		%feature("compactdefaultargs") Distance;
+		%feature("autodoc", "Computes the distance between the point and its computed orthogonal projection on the curve. index is a number of computed projected point. exceptions standard_outofrange if index is not in the range [ 1,nbpoints ], where nbpoints is the number of solution points.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
+") Distance;
+		Standard_Real Distance(const Standard_Integer Index);
+
+		/****************** Extrema ******************/
+		%feature("compactdefaultargs") Extrema;
+		%feature("autodoc", "Return the algorithmic object from extrema.
+
+Returns
+-------
+Extrema_ExtPC2d
+") Extrema;
+		const Extrema_ExtPC2d & Extrema();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;

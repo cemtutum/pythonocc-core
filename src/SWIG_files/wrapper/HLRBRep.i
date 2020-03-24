@@ -42,8 +42,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_hlrbrep.html"
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
 #include<TopoDS_module.hxx>
-#include<TopAbs_module.hxx>
 #include<HLRAlgo_module.hxx>
+#include<TopAbs_module.hxx>
 #include<BRepAdaptor_module.hxx>
 #include<Geom_module.hxx>
 #include<gp_module.hxx>
@@ -78,8 +78,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_hlrbrep.html"
 %import Standard.i
 %import NCollection.i
 %import TopoDS.i
-%import TopAbs.i
 %import HLRAlgo.i
+%import TopAbs.i
 %import BRepAdaptor.i
 %import Geom.i
 %import gp.i
@@ -138,9 +138,6 @@ class HLRBRep_TypeOfResultingEdge:
 /* end handles declaration */
 
 /* templates */
-%template(HLRBRep_ListOfBPoint) NCollection_List<HLRBRep_BiPoint>;
-%template(HLRBRep_ListIteratorOfListOfBPoint) NCollection_TListIterator<HLRBRep_BiPoint>;
-%template(HLRBRep_SeqOfShapeBounds) NCollection_Sequence<HLRBRep_ShapeBounds>;
 %template(HLRBRep_Array1OfEData) NCollection_Array1<HLRBRep_EdgeData>;
 
 %extend NCollection_Array1<HLRBRep_EdgeData> {
@@ -211,18 +208,21 @@ class HLRBRep_TypeOfResultingEdge:
     __next__ = next
     }
 };
-%template(HLRBRep_ListOfBPnt2D) NCollection_List<HLRBRep_BiPnt2D>;
 %template(HLRBRep_ListIteratorOfListOfBPnt2D) NCollection_TListIterator<HLRBRep_BiPnt2D>;
+%template(HLRBRep_ListIteratorOfListOfBPoint) NCollection_TListIterator<HLRBRep_BiPoint>;
+%template(HLRBRep_ListOfBPnt2D) NCollection_List<HLRBRep_BiPnt2D>;
+%template(HLRBRep_ListOfBPoint) NCollection_List<HLRBRep_BiPoint>;
+%template(HLRBRep_SeqOfShapeBounds) NCollection_Sequence<HLRBRep_ShapeBounds>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List<HLRBRep_BiPoint> HLRBRep_ListOfBPoint;
-typedef NCollection_List<HLRBRep_BiPoint>::Iterator HLRBRep_ListIteratorOfListOfBPoint;
-typedef NCollection_Sequence<HLRBRep_ShapeBounds> HLRBRep_SeqOfShapeBounds;
 typedef NCollection_Array1<HLRBRep_EdgeData> HLRBRep_Array1OfEData;
 typedef NCollection_Array1<HLRBRep_FaceData> HLRBRep_Array1OfFData;
-typedef NCollection_List<HLRBRep_BiPnt2D> HLRBRep_ListOfBPnt2D;
 typedef NCollection_List<HLRBRep_BiPnt2D>::Iterator HLRBRep_ListIteratorOfListOfBPnt2D;
+typedef NCollection_List<HLRBRep_BiPoint>::Iterator HLRBRep_ListIteratorOfListOfBPoint;
+typedef NCollection_List<HLRBRep_BiPnt2D> HLRBRep_ListOfBPnt2D;
+typedef NCollection_List<HLRBRep_BiPoint> HLRBRep_ListOfBPoint;
+typedef NCollection_Sequence<HLRBRep_ShapeBounds> HLRBRep_SeqOfShapeBounds;
 /* end typedefs declaration */
 
 /****************
@@ -293,6 +293,26 @@ None
 **************************/
 class HLRBRep_AreaLimit : public Standard_Transient {
 	public:
+		/****************** HLRBRep_AreaLimit ******************/
+		%feature("compactdefaultargs") HLRBRep_AreaLimit;
+		%feature("autodoc", "The previous and next field are set to null.
+
+Parameters
+----------
+V: HLRAlgo_Intersection
+Boundary: bool
+Interference: bool
+StateBefore: TopAbs_State
+StateAfter: TopAbs_State
+EdgeBefore: TopAbs_State
+EdgeAfter: TopAbs_State
+
+Returns
+-------
+None
+") HLRBRep_AreaLimit;
+		 HLRBRep_AreaLimit(const HLRAlgo_Intersection & V, const Standard_Boolean Boundary, const Standard_Boolean Interference, const TopAbs_State StateBefore, const TopAbs_State StateAfter, const TopAbs_State EdgeBefore, const TopAbs_State EdgeAfter);
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "No available documentation.
@@ -350,26 +370,6 @@ Returns
 TopAbs_State
 ") EdgeBefore;
 		TopAbs_State EdgeBefore();
-
-		/****************** HLRBRep_AreaLimit ******************/
-		%feature("compactdefaultargs") HLRBRep_AreaLimit;
-		%feature("autodoc", "The previous and next field are set to null.
-
-Parameters
-----------
-V: HLRAlgo_Intersection
-Boundary: bool
-Interference: bool
-StateBefore: TopAbs_State
-StateAfter: TopAbs_State
-EdgeBefore: TopAbs_State
-EdgeAfter: TopAbs_State
-
-Returns
--------
-None
-") HLRBRep_AreaLimit;
-		 HLRBRep_AreaLimit(const HLRAlgo_Intersection & V, const Standard_Boolean Boundary, const Standard_Boolean Interference, const TopAbs_State StateBefore, const TopAbs_State StateAfter, const TopAbs_State EdgeBefore, const TopAbs_State EdgeAfter);
 
 		/****************** IsBoundary ******************/
 		%feature("compactdefaultargs") IsBoundary;
@@ -1370,31 +1370,6 @@ None
 ***********************/
 class HLRBRep_CInter : public IntRes2d_Intersection {
 	public:
-		/****************** ComputeDomain ******************/
-		%feature("compactdefaultargs") ComputeDomain;
-		%feature("autodoc", "Create a domain from a curve.
-
-Parameters
-----------
-C1: Standard_Address
-TolDomain: float
-
-Returns
--------
-IntRes2d_Domain
-") ComputeDomain;
-		IntRes2d_Domain ComputeDomain(const Standard_Address & C1, const Standard_Real TolDomain);
-
-		/****************** GetMinNbSamples ******************/
-		%feature("compactdefaultargs") GetMinNbSamples;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-int
-") GetMinNbSamples;
-		Standard_Integer GetMinNbSamples();
-
 		/****************** HLRBRep_CInter ******************/
 		%feature("compactdefaultargs") HLRBRep_CInter;
 		%feature("autodoc", "Empty constructor.
@@ -1509,6 +1484,31 @@ Returns
 None
 ") HLRBRep_CInter;
 		 HLRBRep_CInter(const Standard_Address & C1, const IntRes2d_Domain & D1, const Standard_Address & C2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
+
+		/****************** ComputeDomain ******************/
+		%feature("compactdefaultargs") ComputeDomain;
+		%feature("autodoc", "Create a domain from a curve.
+
+Parameters
+----------
+C1: Standard_Address
+TolDomain: float
+
+Returns
+-------
+IntRes2d_Domain
+") ComputeDomain;
+		IntRes2d_Domain ComputeDomain(const Standard_Address & C1, const Standard_Real TolDomain);
+
+		/****************** GetMinNbSamples ******************/
+		%feature("compactdefaultargs") GetMinNbSamples;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") GetMinNbSamples;
+		Standard_Integer GetMinNbSamples();
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
@@ -1643,6 +1643,54 @@ None
 ************************/
 class HLRBRep_CLProps {
 	public:
+		/****************** HLRBRep_CLProps ******************/
+		%feature("compactdefaultargs") HLRBRep_CLProps;
+		%feature("autodoc", "Initializes the local properties of the curve <c> the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, 2 or 3). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
+
+Parameters
+----------
+C: HLRBRep_Curve *
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") HLRBRep_CLProps;
+		 HLRBRep_CLProps(const HLRBRep_Curve * & C, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** HLRBRep_CLProps ******************/
+		%feature("compactdefaultargs") HLRBRep_CLProps;
+		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u>. all the computations done will be related to <c> and <u>.
+
+Parameters
+----------
+C: HLRBRep_Curve *
+U: float
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") HLRBRep_CLProps;
+		 HLRBRep_CLProps(const HLRBRep_Curve * & C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** HLRBRep_CLProps ******************/
+		%feature("compactdefaultargs") HLRBRep_CLProps;
+		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u> and the curve is set with setcurve. the curve can have a empty constructor all the computations done will be related to <c> and <u> when the functions 'set' will be done.
+
+Parameters
+----------
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") HLRBRep_CLProps;
+		 HLRBRep_CLProps(const Standard_Integer N, const Standard_Real Resolution);
+
 		/****************** CentreOfCurvature ******************/
 		%feature("compactdefaultargs") CentreOfCurvature;
 		%feature("autodoc", "Returns the centre of curvature <p>.
@@ -1696,54 +1744,6 @@ Returns
 gp_Vec2d
 ") D3;
 		const gp_Vec2d D3();
-
-		/****************** HLRBRep_CLProps ******************/
-		%feature("compactdefaultargs") HLRBRep_CLProps;
-		%feature("autodoc", "Initializes the local properties of the curve <c> the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, 2 or 3). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
-
-Parameters
-----------
-C: HLRBRep_Curve *
-N: int
-Resolution: float
-
-Returns
--------
-None
-") HLRBRep_CLProps;
-		 HLRBRep_CLProps(const HLRBRep_Curve * & C, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** HLRBRep_CLProps ******************/
-		%feature("compactdefaultargs") HLRBRep_CLProps;
-		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u>. all the computations done will be related to <c> and <u>.
-
-Parameters
-----------
-C: HLRBRep_Curve *
-U: float
-N: int
-Resolution: float
-
-Returns
--------
-None
-") HLRBRep_CLProps;
-		 HLRBRep_CLProps(const HLRBRep_Curve * & C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** HLRBRep_CLProps ******************/
-		%feature("compactdefaultargs") HLRBRep_CLProps;
-		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u> and the curve is set with setcurve. the curve can have a empty constructor all the computations done will be related to <c> and <u> when the functions 'set' will be done.
-
-Parameters
-----------
-N: int
-Resolution: float
-
-Returns
--------
-None
-") HLRBRep_CLProps;
-		 HLRBRep_CLProps(const Standard_Integer N, const Standard_Real Resolution);
 
 		/****************** IsTangentDefined ******************/
 		%feature("compactdefaultargs") IsTangentDefined;
@@ -1961,6 +1961,16 @@ None
 **********************/
 class HLRBRep_Curve {
 	public:
+		/****************** HLRBRep_Curve ******************/
+		%feature("compactdefaultargs") HLRBRep_Curve;
+		%feature("autodoc", "Creates an undefined curve.
+
+Returns
+-------
+None
+") HLRBRep_Curve;
+		 HLRBRep_Curve();
+
 		/****************** Circle ******************/
 		%feature("compactdefaultargs") Circle;
 		%feature("autodoc", "No available documentation.
@@ -2166,16 +2176,6 @@ Returns
 GeomAbs_CurveType
 ") GetType;
 		GeomAbs_CurveType GetType();
-
-		/****************** HLRBRep_Curve ******************/
-		%feature("compactdefaultargs") HLRBRep_Curve;
-		%feature("autodoc", "Creates an undefined curve.
-
-Returns
--------
-None
-") HLRBRep_Curve;
-		 HLRBRep_Curve();
 
 		/****************** Hyperbola ******************/
 		%feature("compactdefaultargs") Hyperbola;
@@ -2997,6 +2997,22 @@ gp_Pnt2d
 *********************/
 class HLRBRep_Data : public Standard_Transient {
 	public:
+		/****************** HLRBRep_Data ******************/
+		%feature("compactdefaultargs") HLRBRep_Data;
+		%feature("autodoc", "Create an empty data structure of <nv> vertices, <ne> edges and <nf> faces.
+
+Parameters
+----------
+NV: int
+NE: int
+NF: int
+
+Returns
+-------
+None
+") HLRBRep_Data;
+		 HLRBRep_Data(const Standard_Integer NV, const Standard_Integer NE, const Standard_Integer NF);
+
 		/****************** AboveInterference ******************/
 		%feature("compactdefaultargs") AboveInterference;
 		%feature("autodoc", "Returns true if the rejected interference is above the face.
@@ -3131,22 +3147,6 @@ Returns
 TopTools_IndexedMapOfShape
 ") FaceMap;
 		TopTools_IndexedMapOfShape & FaceMap();
-
-		/****************** HLRBRep_Data ******************/
-		%feature("compactdefaultargs") HLRBRep_Data;
-		%feature("autodoc", "Create an empty data structure of <nv> vertices, <ne> edges and <nf> faces.
-
-Parameters
-----------
-NV: int
-NE: int
-NF: int
-
-Returns
--------
-None
-") HLRBRep_Data;
-		 HLRBRep_Data(const Standard_Integer NV, const Standard_Integer NE, const Standard_Integer NF);
 
 		/****************** HidingStartLevel ******************/
 		%feature("compactdefaultargs") HidingStartLevel;
@@ -3464,6 +3464,20 @@ None
 ****************************/
 class HLRBRep_EdgeBuilder {
 	public:
+		/****************** HLRBRep_EdgeBuilder ******************/
+		%feature("compactdefaultargs") HLRBRep_EdgeBuilder;
+		%feature("autodoc", "Creates an edgebuilder algorithm. <vlist> describes the edge and the interferences. arealimits are created from the vertices. builds(in) is automatically called.
+
+Parameters
+----------
+VList: HLRBRep_VertexList
+
+Returns
+-------
+None
+") HLRBRep_EdgeBuilder;
+		 HLRBRep_EdgeBuilder(HLRBRep_VertexList & VList);
+
 		/****************** AreaEdgeState ******************/
 		%feature("compactdefaultargs") AreaEdgeState;
 		%feature("autodoc", "Returns the edge state of the current area.
@@ -3517,20 +3531,6 @@ Returns
 None
 ") Destroy;
 		void Destroy();
-
-		/****************** HLRBRep_EdgeBuilder ******************/
-		%feature("compactdefaultargs") HLRBRep_EdgeBuilder;
-		%feature("autodoc", "Creates an edgebuilder algorithm. <vlist> describes the edge and the interferences. arealimits are created from the vertices. builds(in) is automatically called.
-
-Parameters
-----------
-VList: HLRBRep_VertexList
-
-Returns
--------
-None
-") HLRBRep_EdgeBuilder;
-		 HLRBRep_EdgeBuilder(HLRBRep_VertexList & VList);
 
 		/****************** HasArea ******************/
 		%feature("compactdefaultargs") HasArea;
@@ -3676,6 +3676,16 @@ opencascade::handle<HLRBRep_AreaLimit>
 *************************/
 class HLRBRep_EdgeData {
 	public:
+		/****************** HLRBRep_EdgeData ******************/
+		%feature("compactdefaultargs") HLRBRep_EdgeData;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") HLRBRep_EdgeData;
+		 HLRBRep_EdgeData();
+
 		/****************** AutoIntersectionDone ******************/
 		%feature("compactdefaultargs") AutoIntersectionDone;
 		%feature("autodoc", "No available documentation.
@@ -3777,16 +3787,6 @@ Returns
 HLRBRep_Curve
 ") Geometry;
 		const HLRBRep_Curve & Geometry();
-
-		/****************** HLRBRep_EdgeData ******************/
-		%feature("compactdefaultargs") HLRBRep_EdgeData;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") HLRBRep_EdgeData;
-		 HLRBRep_EdgeData();
 
 		/****************** HideCount ******************/
 		%feature("compactdefaultargs") HideCount;
@@ -4278,6 +4278,20 @@ None
 *************************************/
 class HLRBRep_EdgeInterferenceTool {
 	public:
+		/****************** HLRBRep_EdgeInterferenceTool ******************/
+		%feature("compactdefaultargs") HLRBRep_EdgeInterferenceTool;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+DS: HLRBRep_Data
+
+Returns
+-------
+None
+") HLRBRep_EdgeInterferenceTool;
+		 HLRBRep_EdgeInterferenceTool(const opencascade::handle<HLRBRep_Data> & DS);
+
 		/****************** CurrentOrientation ******************/
 		%feature("compactdefaultargs") CurrentOrientation;
 		%feature("autodoc", "No available documentation.
@@ -4324,20 +4338,6 @@ Returns
 None
 ") EdgeGeometry;
 		void EdgeGeometry(const Standard_Real Param, gp_Dir & Tgt, gp_Dir & Nrm, Standard_Real &OutValue);
-
-		/****************** HLRBRep_EdgeInterferenceTool ******************/
-		%feature("compactdefaultargs") HLRBRep_EdgeInterferenceTool;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-DS: HLRBRep_Data
-
-Returns
--------
-None
-") HLRBRep_EdgeInterferenceTool;
-		 HLRBRep_EdgeInterferenceTool(const opencascade::handle<HLRBRep_Data> & DS);
 
 		/****************** InitVertices ******************/
 		%feature("compactdefaultargs") InitVertices;
@@ -4463,16 +4463,6 @@ bool
 *******************************************************************/
 class HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter {
 	public:
-		/****************** AnErrorOccurred ******************/
-		%feature("compactdefaultargs") AnErrorOccurred;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-bool
-") AnErrorOccurred;
-		Standard_Boolean AnErrorOccurred();
-
 		/****************** HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter ******************/
 		%feature("compactdefaultargs") HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter;
 		%feature("autodoc", "No available documentation.
@@ -4488,6 +4478,16 @@ Returns
 None
 ") HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter;
 		 HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter(const Standard_Address & C1, const Standard_Address & C2, const Standard_Real Tol);
+
+		/****************** AnErrorOccurred ******************/
+		%feature("compactdefaultargs") AnErrorOccurred;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
+") AnErrorOccurred;
+		Standard_Boolean AnErrorOccurred();
 
 		/****************** NbRoots ******************/
 		%feature("compactdefaultargs") NbRoots;
@@ -4566,6 +4566,16 @@ None
 *************************/
 class HLRBRep_FaceData {
 	public:
+		/****************** HLRBRep_FaceData ******************/
+		%feature("compactdefaultargs") HLRBRep_FaceData;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") HLRBRep_FaceData;
+		 HLRBRep_FaceData();
+
 		/****************** Back ******************/
 		%feature("compactdefaultargs") Back;
 		%feature("autodoc", "No available documentation.
@@ -4695,16 +4705,6 @@ Returns
 HLRBRep_Surface
 ") Geometry;
 		HLRBRep_Surface & Geometry();
-
-		/****************** HLRBRep_FaceData ******************/
-		%feature("compactdefaultargs") HLRBRep_FaceData;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") HLRBRep_FaceData;
-		 HLRBRep_FaceData();
 
 		/****************** Hiding ******************/
 		%feature("compactdefaultargs") Hiding;
@@ -5033,6 +5033,16 @@ None
 *****************************/
 class HLRBRep_FaceIterator {
 	public:
+		/****************** HLRBRep_FaceIterator ******************/
+		%feature("compactdefaultargs") HLRBRep_FaceIterator;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") HLRBRep_FaceIterator;
+		 HLRBRep_FaceIterator();
+
 		/****************** BeginningOfWire ******************/
 		%feature("compactdefaultargs") BeginningOfWire;
 		%feature("autodoc", "Returns true if the current edge is the first of a wire.
@@ -5072,16 +5082,6 @@ Returns
 bool
 ") EndOfWire;
 		Standard_Boolean EndOfWire();
-
-		/****************** HLRBRep_FaceIterator ******************/
-		%feature("compactdefaultargs") HLRBRep_FaceIterator;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") HLRBRep_FaceIterator;
-		 HLRBRep_FaceIterator();
 
 		/****************** InitEdge ******************/
 		%feature("compactdefaultargs") InitEdge;
@@ -5191,6 +5191,20 @@ opencascade::handle<HLRAlgo_EdgesBlock>
 ***************************/
 class HLRBRep_HLRToShape {
 	public:
+		/****************** HLRBRep_HLRToShape ******************/
+		%feature("compactdefaultargs") HLRBRep_HLRToShape;
+		%feature("autodoc", "Constructs a framework for filtering the results of the hlrbrep_algo algorithm, a. use the extraction filters to obtain the results you want for a.
+
+Parameters
+----------
+A: HLRBRep_Algo
+
+Returns
+-------
+None
+") HLRBRep_HLRToShape;
+		 HLRBRep_HLRToShape(const opencascade::handle<HLRBRep_Algo> & A);
+
 		/****************** CompoundOfEdges ******************/
 		%feature("compactdefaultargs") CompoundOfEdges;
 		%feature("autodoc", "Returns compound of resulting edges of required type and visibility, taking into account the kind of space (2d or 3d).
@@ -5247,20 +5261,6 @@ Returns
 TopoDS_Shape
 ") HCompound;
 		TopoDS_Shape HCompound(const TopoDS_Shape & S);
-
-		/****************** HLRBRep_HLRToShape ******************/
-		%feature("compactdefaultargs") HLRBRep_HLRToShape;
-		%feature("autodoc", "Constructs a framework for filtering the results of the hlrbrep_algo algorithm, a. use the extraction filters to obtain the results you want for a.
-
-Parameters
-----------
-A: HLRBRep_Algo
-
-Returns
--------
-None
-") HLRBRep_HLRToShape;
-		 HLRBRep_HLRToShape(const opencascade::handle<HLRBRep_Algo> & A);
 
 		/****************** IsoLineHCompound ******************/
 		%feature("compactdefaultargs") IsoLineHCompound;
@@ -5879,6 +5879,30 @@ None
 *****************************/
 class HLRBRep_InternalAlgo : public Standard_Transient {
 	public:
+		/****************** HLRBRep_InternalAlgo ******************/
+		%feature("compactdefaultargs") HLRBRep_InternalAlgo;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") HLRBRep_InternalAlgo;
+		 HLRBRep_InternalAlgo();
+
+		/****************** HLRBRep_InternalAlgo ******************/
+		%feature("compactdefaultargs") HLRBRep_InternalAlgo;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+A: HLRBRep_InternalAlgo
+
+Returns
+-------
+None
+") HLRBRep_InternalAlgo;
+		 HLRBRep_InternalAlgo(const opencascade::handle<HLRBRep_InternalAlgo> & A);
+
 		/****************** DataStructure ******************/
 		%feature("compactdefaultargs") DataStructure;
 		%feature("autodoc", "No available documentation.
@@ -5912,30 +5936,6 @@ Returns
 bool
 ") Debug;
 		Standard_Boolean Debug();
-
-		/****************** HLRBRep_InternalAlgo ******************/
-		%feature("compactdefaultargs") HLRBRep_InternalAlgo;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") HLRBRep_InternalAlgo;
-		 HLRBRep_InternalAlgo();
-
-		/****************** HLRBRep_InternalAlgo ******************/
-		%feature("compactdefaultargs") HLRBRep_InternalAlgo;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-A: HLRBRep_InternalAlgo
-
-Returns
--------
-None
-") HLRBRep_InternalAlgo;
-		 HLRBRep_InternalAlgo(const opencascade::handle<HLRBRep_InternalAlgo> & A);
 
 		/****************** Hide ******************/
 		%feature("compactdefaultargs") Hide;
@@ -6256,6 +6256,16 @@ None
 ****************************/
 class HLRBRep_Intersector {
 	public:
+		/****************** HLRBRep_Intersector ******************/
+		%feature("compactdefaultargs") HLRBRep_Intersector;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") HLRBRep_Intersector;
+		 HLRBRep_Intersector();
+
 		/****************** CSPoint ******************/
 		%feature("compactdefaultargs") CSPoint;
 		%feature("autodoc", "No available documentation.
@@ -6293,16 +6303,6 @@ Returns
 None
 ") Destroy;
 		void Destroy();
-
-		/****************** HLRBRep_Intersector ******************/
-		%feature("compactdefaultargs") HLRBRep_Intersector;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") HLRBRep_Intersector;
-		 HLRBRep_Intersector();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -6997,21 +6997,6 @@ gp_Pnt
 ***********************************************************************/
 class HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Computes the derivative of the previous function at parameter param.
-
-Parameters
-----------
-Param: float
-D: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-
 		/****************** HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter ******************/
 		%feature("compactdefaultargs") HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter;
 		%feature("autodoc", "Constructor of the class.
@@ -7026,6 +7011,21 @@ Returns
 None
 ") HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter;
 		 HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter(const IntCurve_IConicTool & IT, const Standard_Address & PC);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Computes the derivative of the previous function at parameter param.
+
+Parameters
+----------
+Param: float
+D: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -7072,31 +7072,6 @@ bool
 ************************************************************/
 class HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Calculation of f'(u).
-
-Parameters
-----------
-U: float
-DF: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-
-		/****************** GetStateNumber ******************/
-		%feature("compactdefaultargs") GetStateNumber;
-		%feature("autodoc", "Save the found extremum.
-
-Returns
--------
-int
-") GetStateNumber;
-		virtual Standard_Integer GetStateNumber();
-
 		/****************** HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter ******************/
 		%feature("compactdefaultargs") HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
 		%feature("autodoc", "No available documentation.
@@ -7121,6 +7096,31 @@ Returns
 None
 ") HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
 		 HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter(const gp_Pnt2d & P, const Standard_Address & C);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Calculation of f'(u).
+
+Parameters
+----------
+U: float
+DF: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
+
+		/****************** GetStateNumber ******************/
+		%feature("compactdefaultargs") GetStateNumber;
+		%feature("autodoc", "Save the found extremum.
+
+Returns
+-------
+int
+") GetStateNumber;
+		virtual Standard_Integer GetStateNumber();
 
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
@@ -7272,6 +7272,44 @@ bool
 *************************/
 class HLRBRep_PolyAlgo : public Standard_Transient {
 	public:
+		/****************** HLRBRep_PolyAlgo ******************/
+		%feature("compactdefaultargs") HLRBRep_PolyAlgo;
+		%feature("autodoc", "Constructs an empty framework for the calculation of the visible and hidden lines of a shape in a projection. use the functions: - projector to define the point of view - load to select the shape or shapes to be visualized - update to compute the visible and hidden lines of the shape. warning the shape or shapes to be visualized must have already been triangulated.
+
+Returns
+-------
+None
+") HLRBRep_PolyAlgo;
+		 HLRBRep_PolyAlgo();
+
+		/****************** HLRBRep_PolyAlgo ******************/
+		%feature("compactdefaultargs") HLRBRep_PolyAlgo;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+A: HLRBRep_PolyAlgo
+
+Returns
+-------
+None
+") HLRBRep_PolyAlgo;
+		 HLRBRep_PolyAlgo(const opencascade::handle<HLRBRep_PolyAlgo> & A);
+
+		/****************** HLRBRep_PolyAlgo ******************/
+		%feature("compactdefaultargs") HLRBRep_PolyAlgo;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") HLRBRep_PolyAlgo;
+		 HLRBRep_PolyAlgo(const TopoDS_Shape & S);
+
 		/****************** Algo ******************/
 		%feature("compactdefaultargs") Algo;
 		%feature("autodoc", "No available documentation.
@@ -7329,44 +7367,6 @@ Returns
 None
 ") Debug;
 		void Debug(const Standard_Boolean B);
-
-		/****************** HLRBRep_PolyAlgo ******************/
-		%feature("compactdefaultargs") HLRBRep_PolyAlgo;
-		%feature("autodoc", "Constructs an empty framework for the calculation of the visible and hidden lines of a shape in a projection. use the functions: - projector to define the point of view - load to select the shape or shapes to be visualized - update to compute the visible and hidden lines of the shape. warning the shape or shapes to be visualized must have already been triangulated.
-
-Returns
--------
-None
-") HLRBRep_PolyAlgo;
-		 HLRBRep_PolyAlgo();
-
-		/****************** HLRBRep_PolyAlgo ******************/
-		%feature("compactdefaultargs") HLRBRep_PolyAlgo;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-A: HLRBRep_PolyAlgo
-
-Returns
--------
-None
-") HLRBRep_PolyAlgo;
-		 HLRBRep_PolyAlgo(const opencascade::handle<HLRBRep_PolyAlgo> & A);
-
-		/****************** HLRBRep_PolyAlgo ******************/
-		%feature("compactdefaultargs") HLRBRep_PolyAlgo;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") HLRBRep_PolyAlgo;
-		 HLRBRep_PolyAlgo(const TopoDS_Shape & S);
 
 		/****************** Hide ******************/
 		%feature("compactdefaultargs") Hide;
@@ -7643,6 +7643,16 @@ None
 *******************************/
 class HLRBRep_PolyHLRToShape {
 	public:
+		/****************** HLRBRep_PolyHLRToShape ******************/
+		%feature("compactdefaultargs") HLRBRep_PolyHLRToShape;
+		%feature("autodoc", "Constructs a framework for filtering the results of the hlrbrep_algo algorithm, a. use the extraction filters to obtain the results you want for a.
+
+Returns
+-------
+None
+") HLRBRep_PolyHLRToShape;
+		 HLRBRep_PolyHLRToShape();
+
 		/****************** HCompound ******************/
 		%feature("compactdefaultargs") HCompound;
 		%feature("autodoc", "No available documentation.
@@ -7666,16 +7676,6 @@ Returns
 TopoDS_Shape
 ") HCompound;
 		TopoDS_Shape HCompound(const TopoDS_Shape & S);
-
-		/****************** HLRBRep_PolyHLRToShape ******************/
-		%feature("compactdefaultargs") HLRBRep_PolyHLRToShape;
-		%feature("autodoc", "Constructs a framework for filtering the results of the hlrbrep_algo algorithm, a. use the extraction filters to obtain the results you want for a.
-
-Returns
--------
-None
-") HLRBRep_PolyHLRToShape;
-		 HLRBRep_PolyHLRToShape();
 
 		/****************** Hide ******************/
 		%feature("compactdefaultargs") Hide;
@@ -7893,6 +7893,55 @@ TopoDS_Shape
 ************************/
 class HLRBRep_SLProps {
 	public:
+		/****************** HLRBRep_SLProps ******************/
+		%feature("compactdefaultargs") HLRBRep_SLProps;
+		%feature("autodoc", "Initializes the local properties of the surface <s> for the parameter values (<u>, <v>). the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, or 2). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
+
+Parameters
+----------
+S: Standard_Address
+U: float
+V: float
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") HLRBRep_SLProps;
+		 HLRBRep_SLProps(const Standard_Address & S, const Standard_Real U, const Standard_Real V, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** HLRBRep_SLProps ******************/
+		%feature("compactdefaultargs") HLRBRep_SLProps;
+		%feature("autodoc", "Idem as previous constructor but without setting the value of parameters <u> and <v>.
+
+Parameters
+----------
+S: Standard_Address
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") HLRBRep_SLProps;
+		 HLRBRep_SLProps(const Standard_Address & S, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** HLRBRep_SLProps ******************/
+		%feature("compactdefaultargs") HLRBRep_SLProps;
+		%feature("autodoc", "Idem as previous constructor but without setting the value of parameters <u> and <v> and the surface. the surface can have an empty constructor.
+
+Parameters
+----------
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") HLRBRep_SLProps;
+		 HLRBRep_SLProps(const Standard_Integer N, const Standard_Real Resolution);
+
 		/****************** CurvatureDirections ******************/
 		%feature("compactdefaultargs") CurvatureDirections;
 		%feature("autodoc", "Returns the direction of the maximum and minimum curvature <maxd> and <mind>.
@@ -7967,55 +8016,6 @@ Returns
 float
 ") GaussianCurvature;
 		Standard_Real GaussianCurvature();
-
-		/****************** HLRBRep_SLProps ******************/
-		%feature("compactdefaultargs") HLRBRep_SLProps;
-		%feature("autodoc", "Initializes the local properties of the surface <s> for the parameter values (<u>, <v>). the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, or 2). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
-
-Parameters
-----------
-S: Standard_Address
-U: float
-V: float
-N: int
-Resolution: float
-
-Returns
--------
-None
-") HLRBRep_SLProps;
-		 HLRBRep_SLProps(const Standard_Address & S, const Standard_Real U, const Standard_Real V, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** HLRBRep_SLProps ******************/
-		%feature("compactdefaultargs") HLRBRep_SLProps;
-		%feature("autodoc", "Idem as previous constructor but without setting the value of parameters <u> and <v>.
-
-Parameters
-----------
-S: Standard_Address
-N: int
-Resolution: float
-
-Returns
--------
-None
-") HLRBRep_SLProps;
-		 HLRBRep_SLProps(const Standard_Address & S, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** HLRBRep_SLProps ******************/
-		%feature("compactdefaultargs") HLRBRep_SLProps;
-		%feature("autodoc", "Idem as previous constructor but without setting the value of parameters <u> and <v> and the surface. the surface can have an empty constructor.
-
-Parameters
-----------
-N: int
-Resolution: float
-
-Returns
--------
-None
-") HLRBRep_SLProps;
-		 HLRBRep_SLProps(const Standard_Integer N, const Standard_Real Resolution);
 
 		/****************** IsCurvatureDefined ******************/
 		%feature("compactdefaultargs") IsCurvatureDefined;
@@ -8310,25 +8310,6 @@ None
 ****************************/
 class HLRBRep_ShapeBounds {
 	public:
-		/****************** Bounds ******************/
-		%feature("compactdefaultargs") Bounds;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-V1: int
-V2: int
-E1: int
-E2: int
-F1: int
-F2: int
-
-Returns
--------
-None
-") Bounds;
-		void Bounds(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-
 		/****************** HLRBRep_ShapeBounds ******************/
 		%feature("compactdefaultargs") HLRBRep_ShapeBounds;
 		%feature("autodoc", "No available documentation.
@@ -8381,6 +8362,25 @@ Returns
 None
 ") HLRBRep_ShapeBounds;
 		 HLRBRep_ShapeBounds(const opencascade::handle<HLRTopoBRep_OutLiner> & S, const Standard_Integer nbIso, const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer E1, const Standard_Integer E2, const Standard_Integer F1, const Standard_Integer F2);
+
+		/****************** Bounds ******************/
+		%feature("compactdefaultargs") Bounds;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+V1: int
+V2: int
+E1: int
+E2: int
+F1: int
+F2: int
+
+Returns
+-------
+None
+") Bounds;
+		void Bounds(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** MinMax ******************/
 		%feature("compactdefaultargs") MinMax;
@@ -9199,6 +9199,21 @@ gp_Pnt
 ******************************************/
 class HLRBRep_TheCSFunctionOfInterCSurf : public math_FunctionSetWithDerivatives {
 	public:
+		/****************** HLRBRep_TheCSFunctionOfInterCSurf ******************/
+		%feature("compactdefaultargs") HLRBRep_TheCSFunctionOfInterCSurf;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: Standard_Address
+C: gp_Lin
+
+Returns
+-------
+None
+") HLRBRep_TheCSFunctionOfInterCSurf;
+		 HLRBRep_TheCSFunctionOfInterCSurf(const Standard_Address & S, const gp_Lin & C);
+
 		/****************** AuxillarCurve ******************/
 		%feature("compactdefaultargs") AuxillarCurve;
 		%feature("autodoc", "No available documentation.
@@ -9233,21 +9248,6 @@ Returns
 bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
-
-		/****************** HLRBRep_TheCSFunctionOfInterCSurf ******************/
-		%feature("compactdefaultargs") HLRBRep_TheCSFunctionOfInterCSurf;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: Standard_Address
-C: gp_Lin
-
-Returns
--------
-None
-") HLRBRep_TheCSFunctionOfInterCSurf;
-		 HLRBRep_TheCSFunctionOfInterCSurf(const Standard_Address & S, const gp_Lin & C);
 
 		/****************** NbEquations ******************/
 		%feature("compactdefaultargs") NbEquations;
@@ -9337,21 +9337,6 @@ bool
 ******************************************************************/
 class HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter : public math_FunctionSetWithDerivatives {
 	public:
-		/****************** Derivatives ******************/
-		%feature("compactdefaultargs") Derivatives;
-		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
-
-Parameters
-----------
-X: math_Vector
-D: math_Matrix
-
-Returns
--------
-bool
-") Derivatives;
-		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
-
 		/****************** HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter ******************/
 		%feature("compactdefaultargs") HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter;
 		%feature("autodoc", "No available documentation.
@@ -9366,6 +9351,21 @@ Returns
 None
 ") HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter;
 		 HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter(const Standard_Address & curve1, const Standard_Address & curve2);
+
+		/****************** Derivatives ******************/
+		%feature("compactdefaultargs") Derivatives;
+		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
+
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
+") Derivatives;
+		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** NbEquations ******************/
 		%feature("compactdefaultargs") NbEquations;
@@ -9432,16 +9432,6 @@ bool
 ***********************************/
 class HLRBRep_TheExactInterCSurf {
 	public:
-		/****************** Function ******************/
-		%feature("compactdefaultargs") Function;
-		%feature("autodoc", "Return the math function which is used to compute the intersection.
-
-Returns
--------
-HLRBRep_TheCSFunctionOfInterCSurf
-") Function;
-		HLRBRep_TheCSFunctionOfInterCSurf & Function();
-
 		/****************** HLRBRep_TheExactInterCSurf ******************/
 		%feature("compactdefaultargs") HLRBRep_TheExactInterCSurf;
 		%feature("autodoc", "Compute the solution point with the close point margincoef is the coefficient for extension of uv bounds. ex., ufirst -= margincoef*(ulast-ufirst).
@@ -9476,6 +9466,16 @@ Returns
 None
 ") HLRBRep_TheExactInterCSurf;
 		 HLRBRep_TheExactInterCSurf(const HLRBRep_TheCSFunctionOfInterCSurf & F, const Standard_Real TolTangency);
+
+		/****************** Function ******************/
+		%feature("compactdefaultargs") Function;
+		%feature("autodoc", "Return the math function which is used to compute the intersection.
+
+Returns
+-------
+HLRBRep_TheCSFunctionOfInterCSurf
+") Function;
+		HLRBRep_TheCSFunctionOfInterCSurf & Function();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -9783,16 +9783,6 @@ None
 *******************************************/
 class HLRBRep_TheIntPCurvePCurveOfCInter : public IntRes2d_Intersection {
 	public:
-		/****************** GetMinNbSamples ******************/
-		%feature("compactdefaultargs") GetMinNbSamples;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-int
-") GetMinNbSamples;
-		Standard_Integer GetMinNbSamples();
-
 		/****************** HLRBRep_TheIntPCurvePCurveOfCInter ******************/
 		%feature("compactdefaultargs") HLRBRep_TheIntPCurvePCurveOfCInter;
 		%feature("autodoc", "No available documentation.
@@ -9802,6 +9792,16 @@ Returns
 None
 ") HLRBRep_TheIntPCurvePCurveOfCInter;
 		 HLRBRep_TheIntPCurvePCurveOfCInter();
+
+		/****************** GetMinNbSamples ******************/
+		%feature("compactdefaultargs") GetMinNbSamples;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") GetMinNbSamples;
+		Standard_Integer GetMinNbSamples();
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
@@ -10108,6 +10108,35 @@ None
 *********************************************************/
 class HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter : public IntRes2d_Intersection {
 	public:
+		/****************** HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter ******************/
+		%feature("compactdefaultargs") HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
+		 HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter();
+
+		/****************** HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter ******************/
+		%feature("compactdefaultargs") HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
+		%feature("autodoc", "Intersection between an implicit curve and a parametrised curve. the exception constructionerror is raised if the domain of the parametrised curve does not verify hasfirstpoint and haslastpoint return true.
+
+Parameters
+----------
+ITool: IntCurve_IConicTool
+Dom1: IntRes2d_Domain
+PCurve: Standard_Address
+Dom2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
+") HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
+		 HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter(const IntCurve_IConicTool & ITool, const IntRes2d_Domain & Dom1, const Standard_Address & PCurve, const IntRes2d_Domain & Dom2, const Standard_Real TolConf, const Standard_Real Tol);
+
 		/****************** And_Domaine_Objet1_Intersections ******************/
 		%feature("compactdefaultargs") And_Domaine_Objet1_Intersections;
 		%feature("autodoc", "No available documentation.
@@ -10168,35 +10197,6 @@ Returns
 float
 ") FindV;
 		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool & TheImpTool, const Standard_Address & ParCurve, const IntRes2d_Domain & TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance);
-
-		/****************** HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter ******************/
-		%feature("compactdefaultargs") HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
-		 HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter();
-
-		/****************** HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter ******************/
-		%feature("compactdefaultargs") HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
-		%feature("autodoc", "Intersection between an implicit curve and a parametrised curve. the exception constructionerror is raised if the domain of the parametrised curve does not verify hasfirstpoint and haslastpoint return true.
-
-Parameters
-----------
-ITool: IntCurve_IConicTool
-Dom1: IntRes2d_Domain
-PCurve: Standard_Address
-Dom2: IntRes2d_Domain
-TolConf: float
-Tol: float
-
-Returns
--------
-None
-") HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
-		 HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter(const IntCurve_IConicTool & ITool, const IntRes2d_Domain & Dom1, const Standard_Address & PCurve, const IntRes2d_Domain & Dom2, const Standard_Real TolConf, const Standard_Real Tol);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
@@ -10363,6 +10363,23 @@ float
 *********************************************************/
 class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter : public Intf_Polygon2d {
 	public:
+		/****************** HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter ******************/
+		%feature("compactdefaultargs") HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter;
+		%feature("autodoc", "Compute a polygon on the domain of the curve.
+
+Parameters
+----------
+Curve: Standard_Address
+NbPnt: int
+Domain: IntRes2d_Domain
+Tol: float
+
+Returns
+-------
+None
+") HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter;
+		 HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter(const Standard_Address & Curve, const Standard_Integer NbPnt, const IntRes2d_Domain & Domain, const Standard_Real Tol);
+
 		/****************** ApproxParamOnCurve ******************/
 		%feature("compactdefaultargs") ApproxParamOnCurve;
 		%feature("autodoc", "Give an approximation of the parameter on the curve according to the discretization of the curve.
@@ -10466,23 +10483,6 @@ None
 ") Dump;
 		void Dump();
 
-		/****************** HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter ******************/
-		%feature("compactdefaultargs") HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter;
-		%feature("autodoc", "Compute a polygon on the domain of the curve.
-
-Parameters
-----------
-Curve: Standard_Address
-NbPnt: int
-Domain: IntRes2d_Domain
-Tol: float
-
-Returns
--------
-None
-") HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter;
-		 HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter(const Standard_Address & Curve, const Standard_Integer NbPnt, const IntRes2d_Domain & Domain, const Standard_Real Tol);
-
 		/****************** InfParameter ******************/
 		%feature("compactdefaultargs") InfParameter;
 		%feature("autodoc", "Returns the parameter (on the curve) of the first point of the polygon.
@@ -10557,6 +10557,53 @@ float
 ***************************************/
 class HLRBRep_ThePolygonOfInterCSurf {
 	public:
+		/****************** HLRBRep_ThePolygonOfInterCSurf ******************/
+		%feature("compactdefaultargs") HLRBRep_ThePolygonOfInterCSurf;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Curve: gp_Lin
+NbPnt: int
+
+Returns
+-------
+None
+") HLRBRep_ThePolygonOfInterCSurf;
+		 HLRBRep_ThePolygonOfInterCSurf(const gp_Lin & Curve, const Standard_Integer NbPnt);
+
+		/****************** HLRBRep_ThePolygonOfInterCSurf ******************/
+		%feature("compactdefaultargs") HLRBRep_ThePolygonOfInterCSurf;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Curve: gp_Lin
+U1: float
+U2: float
+NbPnt: int
+
+Returns
+-------
+None
+") HLRBRep_ThePolygonOfInterCSurf;
+		 HLRBRep_ThePolygonOfInterCSurf(const gp_Lin & Curve, const Standard_Real U1, const Standard_Real U2, const Standard_Integer NbPnt);
+
+		/****************** HLRBRep_ThePolygonOfInterCSurf ******************/
+		%feature("compactdefaultargs") HLRBRep_ThePolygonOfInterCSurf;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Curve: gp_Lin
+Upars: TColStd_Array1OfReal
+
+Returns
+-------
+None
+") HLRBRep_ThePolygonOfInterCSurf;
+		 HLRBRep_ThePolygonOfInterCSurf(const gp_Lin & Curve, const TColStd_Array1OfReal & Upars);
+
 		/****************** ApproxParamOnCurve ******************/
 		%feature("compactdefaultargs") ApproxParamOnCurve;
 		%feature("autodoc", "Give an approximation of the parameter on the curve according to the discretization of the curve.
@@ -10653,53 +10700,6 @@ Returns
 gp_Pnt
 ") EndOfSeg;
 		const gp_Pnt EndOfSeg(const Standard_Integer Index);
-
-		/****************** HLRBRep_ThePolygonOfInterCSurf ******************/
-		%feature("compactdefaultargs") HLRBRep_ThePolygonOfInterCSurf;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Curve: gp_Lin
-NbPnt: int
-
-Returns
--------
-None
-") HLRBRep_ThePolygonOfInterCSurf;
-		 HLRBRep_ThePolygonOfInterCSurf(const gp_Lin & Curve, const Standard_Integer NbPnt);
-
-		/****************** HLRBRep_ThePolygonOfInterCSurf ******************/
-		%feature("compactdefaultargs") HLRBRep_ThePolygonOfInterCSurf;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Curve: gp_Lin
-U1: float
-U2: float
-NbPnt: int
-
-Returns
--------
-None
-") HLRBRep_ThePolygonOfInterCSurf;
-		 HLRBRep_ThePolygonOfInterCSurf(const gp_Lin & Curve, const Standard_Real U1, const Standard_Real U2, const Standard_Integer NbPnt);
-
-		/****************** HLRBRep_ThePolygonOfInterCSurf ******************/
-		%feature("compactdefaultargs") HLRBRep_ThePolygonOfInterCSurf;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Curve: gp_Lin
-Upars: TColStd_Array1OfReal
-
-Returns
--------
-None
-") HLRBRep_ThePolygonOfInterCSurf;
-		 HLRBRep_ThePolygonOfInterCSurf(const gp_Lin & Curve, const TColStd_Array1OfReal & Upars);
 
 		/****************** InfParameter ******************/
 		%feature("compactdefaultargs") InfParameter;
@@ -11179,21 +11179,6 @@ float
 ************************************************************/
 class HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Computes the derivative of the previous function at parameter param. derivative always returns true.
-
-Parameters
-----------
-Param: float
-D: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-
 		/****************** HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf ******************/
 		%feature("compactdefaultargs") HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf;
 		%feature("autodoc", "Create the function.
@@ -11208,6 +11193,21 @@ Returns
 None
 ") HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf;
 		 HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf(const IntSurf_Quadric & Q, const gp_Lin & C);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Computes the derivative of the previous function at parameter param. derivative always returns true.
+
+Parameters
+----------
+Param: float
+D: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -11254,6 +11254,21 @@ bool
 ***************************/
 class HLRBRep_VertexList {
 	public:
+		/****************** HLRBRep_VertexList ******************/
+		%feature("compactdefaultargs") HLRBRep_VertexList;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+T: HLRBRep_EdgeInterferenceTool
+I: HLRAlgo_ListIteratorOfInterferenceList
+
+Returns
+-------
+None
+") HLRBRep_VertexList;
+		 HLRBRep_VertexList(const HLRBRep_EdgeInterferenceTool & T, const HLRAlgo_ListIteratorOfInterferenceList & I);
+
 		/****************** BoundaryTransition ******************/
 		%feature("compactdefaultargs") BoundaryTransition;
 		%feature("autodoc", "Returns the transition of the current vertex relative to the boundary if it is an interference.
@@ -11273,21 +11288,6 @@ Returns
 HLRAlgo_Intersection
 ") Current;
 		const HLRAlgo_Intersection & Current();
-
-		/****************** HLRBRep_VertexList ******************/
-		%feature("compactdefaultargs") HLRBRep_VertexList;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-T: HLRBRep_EdgeInterferenceTool
-I: HLRAlgo_ListIteratorOfInterferenceList
-
-Returns
--------
-None
-") HLRBRep_VertexList;
-		 HLRBRep_VertexList(const HLRBRep_EdgeInterferenceTool & T, const HLRAlgo_ListIteratorOfInterferenceList & I);
 
 		/****************** IsBoundary ******************/
 		%feature("compactdefaultargs") IsBoundary;
@@ -11373,6 +11373,30 @@ TopAbs_Orientation
 *********************/
 class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 	public:
+		/****************** HLRBRep_Algo ******************/
+		%feature("compactdefaultargs") HLRBRep_Algo;
+		%feature("autodoc", "Constructs an empty framework for the calculation of visible and hidden lines of a shape in a projection. use the function: - projector to define the point of view - add to select the shape or shapes to be visualized - update to compute the outlines of the shape, and - hide to compute the visible and hidden lines of the shape.
+
+Returns
+-------
+None
+") HLRBRep_Algo;
+		 HLRBRep_Algo();
+
+		/****************** HLRBRep_Algo ******************/
+		%feature("compactdefaultargs") HLRBRep_Algo;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+A: HLRBRep_Algo
+
+Returns
+-------
+None
+") HLRBRep_Algo;
+		 HLRBRep_Algo(const opencascade::handle<HLRBRep_Algo> & A);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add the shape <s>.
@@ -11405,30 +11429,6 @@ Returns
 None
 ") Add;
 		void Add(const TopoDS_Shape & S, const Standard_Integer nbIso = 0);
-
-		/****************** HLRBRep_Algo ******************/
-		%feature("compactdefaultargs") HLRBRep_Algo;
-		%feature("autodoc", "Constructs an empty framework for the calculation of visible and hidden lines of a shape in a projection. use the function: - projector to define the point of view - add to select the shape or shapes to be visualized - update to compute the outlines of the shape, and - hide to compute the visible and hidden lines of the shape.
-
-Returns
--------
-None
-") HLRBRep_Algo;
-		 HLRBRep_Algo();
-
-		/****************** HLRBRep_Algo ******************/
-		%feature("compactdefaultargs") HLRBRep_Algo;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-A: HLRBRep_Algo
-
-Returns
--------
-None
-") HLRBRep_Algo;
-		 HLRBRep_Algo(const opencascade::handle<HLRBRep_Algo> & A);
 
 		/****************** Index ******************/
 		%feature("compactdefaultargs") Index;

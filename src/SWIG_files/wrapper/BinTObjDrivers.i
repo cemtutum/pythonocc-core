@@ -157,6 +157,16 @@ opencascade::handle<Standard_Transient>
 ***********************************************/
 class BinTObjDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalDriver {
 	public:
+		/****************** BinTObjDrivers_DocumentRetrievalDriver ******************/
+		%feature("compactdefaultargs") BinTObjDrivers_DocumentRetrievalDriver;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BinTObjDrivers_DocumentRetrievalDriver;
+		 BinTObjDrivers_DocumentRetrievalDriver();
+
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "No available documentation.
@@ -170,16 +180,6 @@ Returns
 opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
-
-		/****************** BinTObjDrivers_DocumentRetrievalDriver ******************/
-		%feature("compactdefaultargs") BinTObjDrivers_DocumentRetrievalDriver;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BinTObjDrivers_DocumentRetrievalDriver;
-		 BinTObjDrivers_DocumentRetrievalDriver();
 
 };
 
@@ -197,6 +197,16 @@ None
 *********************************************/
 class BinTObjDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDriver {
 	public:
+		/****************** BinTObjDrivers_DocumentStorageDriver ******************/
+		%feature("compactdefaultargs") BinTObjDrivers_DocumentStorageDriver;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BinTObjDrivers_DocumentStorageDriver;
+		 BinTObjDrivers_DocumentStorageDriver();
+
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "No available documentation.
@@ -210,16 +220,6 @@ Returns
 opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
-
-		/****************** BinTObjDrivers_DocumentStorageDriver ******************/
-		%feature("compactdefaultargs") BinTObjDrivers_DocumentStorageDriver;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BinTObjDrivers_DocumentStorageDriver;
-		 BinTObjDrivers_DocumentStorageDriver();
 
 };
 

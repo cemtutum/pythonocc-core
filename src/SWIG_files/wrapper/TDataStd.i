@@ -121,8 +121,11 @@ class TDataStd_RealEnum:
 /* end handles declaration */
 
 /* templates */
-%template(TDataStd_DataMapOfStringHArray1OfInteger) NCollection_DataMap<TCollection_ExtendedString,opencascade::handle<TColStd_HArray1OfInteger>,TCollection_ExtendedString>;
 %template(TDataStd_DataMapOfStringByte) NCollection_DataMap<TCollection_ExtendedString,Standard_Byte,TCollection_ExtendedString>;
+%template(TDataStd_DataMapOfStringHArray1OfInteger) NCollection_DataMap<TCollection_ExtendedString,opencascade::handle<TColStd_HArray1OfInteger>,TCollection_ExtendedString>;
+%template(TDataStd_DataMapOfStringHArray1OfReal) NCollection_DataMap<TCollection_ExtendedString,opencascade::handle<TColStd_HArray1OfReal>,TCollection_ExtendedString>;
+%template(TDataStd_DataMapOfStringReal) NCollection_DataMap<TCollection_ExtendedString,Standard_Real,TCollection_ExtendedString>;
+%template(TDataStd_DataMapOfStringString) NCollection_DataMap<TCollection_ExtendedString,TCollection_ExtendedString,TCollection_ExtendedString>;
 %template(TDataStd_LabelArray1) NCollection_Array1<TDF_Label>;
 
 %extend NCollection_Array1<TDF_Label> {
@@ -158,32 +161,29 @@ class TDataStd_RealEnum:
     __next__ = next
     }
 };
-%template(TDataStd_DataMapOfStringString) NCollection_DataMap<TCollection_ExtendedString,TCollection_ExtendedString,TCollection_ExtendedString>;
-%template(TDataStd_ListOfExtendedString) NCollection_List<TCollection_ExtendedString>;
+%template(TDataStd_ListIteratorOfListOfByte) NCollection_TListIterator<Standard_Byte>;
 %template(TDataStd_ListIteratorOfListOfExtendedString) NCollection_TListIterator<TCollection_ExtendedString>;
 %template(TDataStd_ListOfByte) NCollection_List<Standard_Byte>;
-%template(TDataStd_ListIteratorOfListOfByte) NCollection_TListIterator<Standard_Byte>;
-%template(TDataStd_DataMapOfStringHArray1OfReal) NCollection_DataMap<TCollection_ExtendedString,opencascade::handle<TColStd_HArray1OfReal>,TCollection_ExtendedString>;
-%template(TDataStd_DataMapOfStringReal) NCollection_DataMap<TCollection_ExtendedString,Standard_Real,TCollection_ExtendedString>;
+%template(TDataStd_ListOfExtendedString) NCollection_List<TCollection_ExtendedString>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<TCollection_ExtendedString, opencascade::handle<TColStd_HArray1OfInteger>, TCollection_ExtendedString> TDataStd_DataMapOfStringHArray1OfInteger;
-typedef NCollection_DataMap<TCollection_ExtendedString, opencascade::handle<TColStd_HArray1OfInteger>, TCollection_ExtendedString>::Iterator TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger;
-typedef NCollection_DataMap<TCollection_ExtendedString, Standard_Byte, TCollection_ExtendedString> TDataStd_DataMapOfStringByte;
 typedef NCollection_DataMap<TCollection_ExtendedString, Standard_Byte, TCollection_ExtendedString>::Iterator TDataStd_DataMapIteratorOfDataMapOfStringByte;
-typedef NCollection_Array1<TDF_Label> TDataStd_LabelArray1;
-typedef NCollection_DataMap<TCollection_ExtendedString, TCollection_ExtendedString, TCollection_ExtendedString> TDataStd_DataMapOfStringString;
+typedef NCollection_DataMap<TCollection_ExtendedString, opencascade::handle<TColStd_HArray1OfInteger>, TCollection_ExtendedString>::Iterator TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger;
+typedef NCollection_DataMap<TCollection_ExtendedString, opencascade::handle<TColStd_HArray1OfReal>, TCollection_ExtendedString>::Iterator TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal;
+typedef NCollection_DataMap<TCollection_ExtendedString, Standard_Real, TCollection_ExtendedString>::Iterator TDataStd_DataMapIteratorOfDataMapOfStringReal;
 typedef NCollection_DataMap<TCollection_ExtendedString, TCollection_ExtendedString, TCollection_ExtendedString>::Iterator TDataStd_DataMapIteratorOfDataMapOfStringString;
-typedef NCollection_List<TCollection_ExtendedString> TDataStd_ListOfExtendedString;
+typedef NCollection_DataMap<TCollection_ExtendedString, Standard_Byte, TCollection_ExtendedString> TDataStd_DataMapOfStringByte;
+typedef NCollection_DataMap<TCollection_ExtendedString, opencascade::handle<TColStd_HArray1OfInteger>, TCollection_ExtendedString> TDataStd_DataMapOfStringHArray1OfInteger;
+typedef NCollection_DataMap<TCollection_ExtendedString, opencascade::handle<TColStd_HArray1OfReal>, TCollection_ExtendedString> TDataStd_DataMapOfStringHArray1OfReal;
+typedef NCollection_DataMap<TCollection_ExtendedString, Standard_Real, TCollection_ExtendedString> TDataStd_DataMapOfStringReal;
+typedef NCollection_DataMap<TCollection_ExtendedString, TCollection_ExtendedString, TCollection_ExtendedString> TDataStd_DataMapOfStringString;
+typedef NCollection_Array1<TDF_Label> TDataStd_LabelArray1;
+typedef NCollection_List<Standard_Byte>::Iterator TDataStd_ListIteratorOfListOfByte;
 typedef NCollection_List<TCollection_ExtendedString>::Iterator TDataStd_ListIteratorOfListOfExtendedString;
 typedef NCollection_List<Standard_Byte> TDataStd_ListOfByte;
-typedef NCollection_List<Standard_Byte>::Iterator TDataStd_ListIteratorOfListOfByte;
+typedef NCollection_List<TCollection_ExtendedString> TDataStd_ListOfExtendedString;
 typedef TDataStd_TreeNode * TDataStd_PtrTreeNode;
-typedef NCollection_DataMap<TCollection_ExtendedString, opencascade::handle<TColStd_HArray1OfReal>, TCollection_ExtendedString> TDataStd_DataMapOfStringHArray1OfReal;
-typedef NCollection_DataMap<TCollection_ExtendedString, opencascade::handle<TColStd_HArray1OfReal>, TCollection_ExtendedString>::Iterator TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal;
-typedef NCollection_DataMap<TCollection_ExtendedString, Standard_Real, TCollection_ExtendedString> TDataStd_DataMapOfStringReal;
-typedef NCollection_DataMap<TCollection_ExtendedString, Standard_Real, TCollection_ExtendedString>::Iterator TDataStd_DataMapIteratorOfDataMapOfStringReal;
 /* end typedefs declaration */
 
 /*****************
@@ -220,6 +220,16 @@ None
 *****************************/
 class TDataStd_AsciiString : public TDF_Attribute {
 	public:
+		/****************** TDataStd_AsciiString ******************/
+		%feature("compactdefaultargs") TDataStd_AsciiString;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_AsciiString;
+		 TDataStd_AsciiString();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -376,16 +386,6 @@ None
 ") SetID;
 		void SetID();
 
-		/****************** TDataStd_AsciiString ******************/
-		%feature("compactdefaultargs") TDataStd_AsciiString;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_AsciiString;
-		 TDataStd_AsciiString();
-
 };
 
 
@@ -402,6 +402,16 @@ None
 ******************************/
 class TDataStd_BooleanArray : public TDF_Attribute {
 	public:
+		/****************** TDataStd_BooleanArray ******************/
+		%feature("compactdefaultargs") TDataStd_BooleanArray;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_BooleanArray;
+		 TDataStd_BooleanArray();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -600,16 +610,6 @@ None
 ") SetValue;
 		void SetValue(const Standard_Integer index, const Standard_Boolean value);
 
-		/****************** TDataStd_BooleanArray ******************/
-		%feature("compactdefaultargs") TDataStd_BooleanArray;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_BooleanArray;
-		 TDataStd_BooleanArray();
-
 		/****************** Upper ******************/
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Returns the upper boundary of the array.
@@ -650,6 +650,16 @@ bool
 *****************************/
 class TDataStd_BooleanList : public TDF_Attribute {
 	public:
+		/****************** TDataStd_BooleanList ******************/
+		%feature("compactdefaultargs") TDataStd_BooleanList;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_BooleanList;
+		 TDataStd_BooleanList();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "No available documentation.
@@ -902,16 +912,6 @@ None
 ") SetID;
 		void SetID();
 
-		/****************** TDataStd_BooleanList ******************/
-		%feature("compactdefaultargs") TDataStd_BooleanList;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_BooleanList;
-		 TDataStd_BooleanList();
-
 };
 
 
@@ -928,6 +928,16 @@ None
 ***************************/
 class TDataStd_ByteArray : public TDF_Attribute {
 	public:
+		/****************** TDataStd_ByteArray ******************/
+		%feature("compactdefaultargs") TDataStd_ByteArray;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_ByteArray;
+		 TDataStd_ByteArray();
+
 		/****************** ChangeArray ******************/
 		%feature("compactdefaultargs") ChangeArray;
 		%feature("autodoc", "Sets the inner array <myvalue> of the attribute to <newarray>. if value of <newarray> differs from <myvalue>, backup performed and myvalue refers to new instance of harray1ofinteger that holds <newarray> values. if <ischeckitems> equal true each item of <newarray> will be checked with each item of <myvalue> for coincidence (to avoid backup).
@@ -1170,16 +1180,6 @@ None
 ") SetValue;
 		void SetValue(const Standard_Integer index, const Standard_Byte value);
 
-		/****************** TDataStd_ByteArray ******************/
-		%feature("compactdefaultargs") TDataStd_ByteArray;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_ByteArray;
-		 TDataStd_ByteArray();
-
 		/****************** Upper ******************/
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Returns the upper boundary of the array.
@@ -1220,6 +1220,32 @@ Standard_Byte
 ***********************************/
 class TDataStd_ChildNodeIterator {
 	public:
+		/****************** TDataStd_ChildNodeIterator ******************/
+		%feature("compactdefaultargs") TDataStd_ChildNodeIterator;
+		%feature("autodoc", "Creates an empty iterator.
+
+Returns
+-------
+None
+") TDataStd_ChildNodeIterator;
+		 TDataStd_ChildNodeIterator();
+
+		/****************** TDataStd_ChildNodeIterator ******************/
+		%feature("compactdefaultargs") TDataStd_ChildNodeIterator;
+		%feature("autodoc", "Iterates on the childstepren of the given step. if <alllevels> option is set to true, it explores not only the first, but all the sub step levels.
+
+Parameters
+----------
+aTreeNode: TDataStd_TreeNode
+allLevels: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") TDataStd_ChildNodeIterator;
+		 TDataStd_ChildNodeIterator(const opencascade::handle<TDataStd_TreeNode> & aTreeNode, const Standard_Boolean allLevels = Standard_False);
+
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initializes the iteration on the children step of the given step. if <alllevels> option is set to true, it explores not only the first, but all the sub step levels.
@@ -1266,32 +1292,6 @@ None
 ") NextBrother;
 		void NextBrother();
 
-		/****************** TDataStd_ChildNodeIterator ******************/
-		%feature("compactdefaultargs") TDataStd_ChildNodeIterator;
-		%feature("autodoc", "Creates an empty iterator.
-
-Returns
--------
-None
-") TDataStd_ChildNodeIterator;
-		 TDataStd_ChildNodeIterator();
-
-		/****************** TDataStd_ChildNodeIterator ******************/
-		%feature("compactdefaultargs") TDataStd_ChildNodeIterator;
-		%feature("autodoc", "Iterates on the childstepren of the given step. if <alllevels> option is set to true, it explores not only the first, but all the sub step levels.
-
-Parameters
-----------
-aTreeNode: TDataStd_TreeNode
-allLevels: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") TDataStd_ChildNodeIterator;
-		 TDataStd_ChildNodeIterator(const opencascade::handle<TDataStd_TreeNode> & aTreeNode, const Standard_Boolean allLevels = Standard_False);
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the current item; a null step if there is no one.
@@ -1316,6 +1316,16 @@ opencascade::handle<TDataStd_TreeNode>
 *************************/
 class TDataStd_Comment : public TDF_Attribute {
 	public:
+		/****************** TDataStd_Comment ******************/
+		%feature("compactdefaultargs") TDataStd_Comment;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_Comment;
+		 TDataStd_Comment();
+
 		/****************** AfterRetrieval ******************/
 		%feature("compactdefaultargs") AfterRetrieval;
 		%feature("autodoc", "No available documentation.
@@ -1451,16 +1461,6 @@ None
 ") Set;
 		void Set(const TCollection_ExtendedString & S);
 
-		/****************** TDataStd_Comment ******************/
-		%feature("compactdefaultargs") TDataStd_Comment;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_Comment;
-		 TDataStd_Comment();
-
 };
 
 
@@ -1477,6 +1477,16 @@ None
 *************************/
 class TDataStd_Current : public TDF_Attribute {
 	public:
+		/****************** TDataStd_Current ******************/
+		%feature("compactdefaultargs") TDataStd_Current;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_Current;
+		 TDataStd_Current();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -1610,16 +1620,6 @@ None
 ") SetLabel;
 		void SetLabel(const TDF_Label & current);
 
-		/****************** TDataStd_Current ******************/
-		%feature("compactdefaultargs") TDataStd_Current;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_Current;
-		 TDataStd_Current();
-
 };
 
 
@@ -1636,16 +1636,6 @@ None
 ************************************************/
 class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 	public:
-		/****************** Apply ******************/
-		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "Applies the delta to the attribute.
-
-Returns
--------
-None
-") Apply;
-		virtual void Apply();
-
 		/****************** TDataStd_DeltaOnModificationOfByteArray ******************/
 		%feature("compactdefaultargs") TDataStd_DeltaOnModificationOfByteArray;
 		%feature("autodoc", "Initializes a tdf_deltaonmodification.
@@ -1659,6 +1649,16 @@ Returns
 None
 ") TDataStd_DeltaOnModificationOfByteArray;
 		 TDataStd_DeltaOnModificationOfByteArray(const opencascade::handle<TDataStd_ByteArray> & Arr);
+
+		/****************** Apply ******************/
+		%feature("compactdefaultargs") Apply;
+		%feature("autodoc", "Applies the delta to the attribute.
+
+Returns
+-------
+None
+") Apply;
+		virtual void Apply();
 
 };
 
@@ -1676,16 +1676,6 @@ None
 *****************************************************/
 class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModification {
 	public:
-		/****************** Apply ******************/
-		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "Applies the delta to the attribute.
-
-Returns
--------
-None
-") Apply;
-		virtual void Apply();
-
 		/****************** TDataStd_DeltaOnModificationOfExtStringArray ******************/
 		%feature("compactdefaultargs") TDataStd_DeltaOnModificationOfExtStringArray;
 		%feature("autodoc", "Initializes a tdf_deltaonmodification.
@@ -1699,6 +1689,16 @@ Returns
 None
 ") TDataStd_DeltaOnModificationOfExtStringArray;
 		 TDataStd_DeltaOnModificationOfExtStringArray(const opencascade::handle<TDataStd_ExtStringArray> & Arr);
+
+		/****************** Apply ******************/
+		%feature("compactdefaultargs") Apply;
+		%feature("autodoc", "Applies the delta to the attribute.
+
+Returns
+-------
+None
+") Apply;
+		virtual void Apply();
 
 };
 
@@ -1716,16 +1716,6 @@ None
 ***********************************************/
 class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 	public:
-		/****************** Apply ******************/
-		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "Applies the delta to the attribute.
-
-Returns
--------
-None
-") Apply;
-		virtual void Apply();
-
 		/****************** TDataStd_DeltaOnModificationOfIntArray ******************/
 		%feature("compactdefaultargs") TDataStd_DeltaOnModificationOfIntArray;
 		%feature("autodoc", "Initializes a tdf_deltaonmodification.
@@ -1739,6 +1729,16 @@ Returns
 None
 ") TDataStd_DeltaOnModificationOfIntArray;
 		 TDataStd_DeltaOnModificationOfIntArray(const opencascade::handle<TDataStd_IntegerArray> & Arr);
+
+		/****************** Apply ******************/
+		%feature("compactdefaultargs") Apply;
+		%feature("autodoc", "Applies the delta to the attribute.
+
+Returns
+-------
+None
+") Apply;
+		virtual void Apply();
 
 };
 
@@ -1756,16 +1756,6 @@ None
 ***************************************************/
 class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModification {
 	public:
-		/****************** Apply ******************/
-		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "Applies the delta to the attribute.
-
-Returns
--------
-None
-") Apply;
-		virtual void Apply();
-
 		/****************** TDataStd_DeltaOnModificationOfIntPackedMap ******************/
 		%feature("compactdefaultargs") TDataStd_DeltaOnModificationOfIntPackedMap;
 		%feature("autodoc", "Initializes a tdf_deltaonmodification.
@@ -1779,6 +1769,16 @@ Returns
 None
 ") TDataStd_DeltaOnModificationOfIntPackedMap;
 		 TDataStd_DeltaOnModificationOfIntPackedMap(const opencascade::handle<TDataStd_IntPackedMap> & Arr);
+
+		/****************** Apply ******************/
+		%feature("compactdefaultargs") Apply;
+		%feature("autodoc", "Applies the delta to the attribute.
+
+Returns
+-------
+None
+") Apply;
+		virtual void Apply();
 
 };
 
@@ -1796,16 +1796,6 @@ None
 ************************************************/
 class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 	public:
-		/****************** Apply ******************/
-		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "Applies the delta to the attribute.
-
-Returns
--------
-None
-") Apply;
-		virtual void Apply();
-
 		/****************** TDataStd_DeltaOnModificationOfRealArray ******************/
 		%feature("compactdefaultargs") TDataStd_DeltaOnModificationOfRealArray;
 		%feature("autodoc", "Initializes a tdf_deltaonmodification.
@@ -1819,6 +1809,16 @@ Returns
 None
 ") TDataStd_DeltaOnModificationOfRealArray;
 		 TDataStd_DeltaOnModificationOfRealArray(const opencascade::handle<TDataStd_RealArray> & Arr);
+
+		/****************** Apply ******************/
+		%feature("compactdefaultargs") Apply;
+		%feature("autodoc", "Applies the delta to the attribute.
+
+Returns
+-------
+None
+") Apply;
+		virtual void Apply();
 
 };
 
@@ -1836,6 +1836,16 @@ None
 ***************************/
 class TDataStd_Directory : public TDF_Attribute {
 	public:
+		/****************** TDataStd_Directory ******************/
+		%feature("compactdefaultargs") TDataStd_Directory;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_Directory;
+		 TDataStd_Directory();
+
 		/****************** AddDirectory ******************/
 		%feature("compactdefaultargs") AddDirectory;
 		%feature("autodoc", "Creates a new sub-label and sets the sub-directory dir on that label.
@@ -1974,16 +1984,6 @@ None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & with);
 
-		/****************** TDataStd_Directory ******************/
-		%feature("compactdefaultargs") TDataStd_Directory;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_Directory;
-		 TDataStd_Directory();
-
 };
 
 
@@ -2000,6 +2000,16 @@ None
 ****************************/
 class TDataStd_Expression : public TDF_Attribute {
 	public:
+		/****************** TDataStd_Expression ******************/
+		%feature("compactdefaultargs") TDataStd_Expression;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_Expression;
+		 TDataStd_Expression();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -2125,16 +2135,6 @@ None
 ") SetExpression;
 		void SetExpression(const TCollection_ExtendedString & E);
 
-		/****************** TDataStd_Expression ******************/
-		%feature("compactdefaultargs") TDataStd_Expression;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_Expression;
-		 TDataStd_Expression();
-
 };
 
 
@@ -2151,6 +2151,16 @@ None
 ********************************/
 class TDataStd_ExtStringArray : public TDF_Attribute {
 	public:
+		/****************** TDataStd_ExtStringArray ******************/
+		%feature("compactdefaultargs") TDataStd_ExtStringArray;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_ExtStringArray;
+		 TDataStd_ExtStringArray();
+
 		/****************** Array ******************/
 		%feature("compactdefaultargs") Array;
 		%feature("autodoc", "Return the inner array of the extstringarray attribute.
@@ -2393,16 +2403,6 @@ None
 ") SetValue;
 		void SetValue(const Standard_Integer Index, const TCollection_ExtendedString & Value);
 
-		/****************** TDataStd_ExtStringArray ******************/
-		%feature("compactdefaultargs") TDataStd_ExtStringArray;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_ExtStringArray;
-		 TDataStd_ExtStringArray();
-
 		/****************** Upper ******************/
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Return the upper bound.
@@ -2443,6 +2443,16 @@ TCollection_ExtendedString
 *******************************/
 class TDataStd_ExtStringList : public TDF_Attribute {
 	public:
+		/****************** TDataStd_ExtStringList ******************/
+		%feature("compactdefaultargs") TDataStd_ExtStringList;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_ExtStringList;
+		 TDataStd_ExtStringList();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "No available documentation.
@@ -2739,16 +2749,6 @@ None
 ") SetID;
 		void SetID();
 
-		/****************** TDataStd_ExtStringList ******************/
-		%feature("compactdefaultargs") TDataStd_ExtStringList;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_ExtStringList;
-		 TDataStd_ExtStringList();
-
 };
 
 
@@ -2765,26 +2765,6 @@ None
 **************************************/
 class TDataStd_HDataMapOfStringByte : public Standard_Transient {
 	public:
-		/****************** ChangeMap ******************/
-		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TDataStd_DataMapOfStringByte
-") ChangeMap;
-		TDataStd_DataMapOfStringByte & ChangeMap();
-
-		/****************** Map ******************/
-		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TDataStd_DataMapOfStringByte
-") Map;
-		const TDataStd_DataMapOfStringByte & Map();
-
 		/****************** TDataStd_HDataMapOfStringByte ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringByte;
 		%feature("autodoc", "No available documentation.
@@ -2814,6 +2794,26 @@ None
 ") TDataStd_HDataMapOfStringByte;
 		 TDataStd_HDataMapOfStringByte(const TDataStd_DataMapOfStringByte & theOther);
 
+		/****************** ChangeMap ******************/
+		%feature("compactdefaultargs") ChangeMap;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringByte
+") ChangeMap;
+		TDataStd_DataMapOfStringByte & ChangeMap();
+
+		/****************** Map ******************/
+		%feature("compactdefaultargs") Map;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringByte
+") Map;
+		const TDataStd_DataMapOfStringByte & Map();
+
 };
 
 
@@ -2830,26 +2830,6 @@ None
 **************************************************/
 class TDataStd_HDataMapOfStringHArray1OfInteger : public Standard_Transient {
 	public:
-		/****************** ChangeMap ******************/
-		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TDataStd_DataMapOfStringHArray1OfInteger
-") ChangeMap;
-		TDataStd_DataMapOfStringHArray1OfInteger & ChangeMap();
-
-		/****************** Map ******************/
-		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TDataStd_DataMapOfStringHArray1OfInteger
-") Map;
-		const TDataStd_DataMapOfStringHArray1OfInteger & Map();
-
 		/****************** TDataStd_HDataMapOfStringHArray1OfInteger ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringHArray1OfInteger;
 		%feature("autodoc", "No available documentation.
@@ -2879,6 +2859,26 @@ None
 ") TDataStd_HDataMapOfStringHArray1OfInteger;
 		 TDataStd_HDataMapOfStringHArray1OfInteger(const TDataStd_DataMapOfStringHArray1OfInteger & theOther);
 
+		/****************** ChangeMap ******************/
+		%feature("compactdefaultargs") ChangeMap;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringHArray1OfInteger
+") ChangeMap;
+		TDataStd_DataMapOfStringHArray1OfInteger & ChangeMap();
+
+		/****************** Map ******************/
+		%feature("compactdefaultargs") Map;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringHArray1OfInteger
+") Map;
+		const TDataStd_DataMapOfStringHArray1OfInteger & Map();
+
 };
 
 
@@ -2895,26 +2895,6 @@ None
 ***********************************************/
 class TDataStd_HDataMapOfStringHArray1OfReal : public Standard_Transient {
 	public:
-		/****************** ChangeMap ******************/
-		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TDataStd_DataMapOfStringHArray1OfReal
-") ChangeMap;
-		TDataStd_DataMapOfStringHArray1OfReal & ChangeMap();
-
-		/****************** Map ******************/
-		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TDataStd_DataMapOfStringHArray1OfReal
-") Map;
-		const TDataStd_DataMapOfStringHArray1OfReal & Map();
-
 		/****************** TDataStd_HDataMapOfStringHArray1OfReal ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringHArray1OfReal;
 		%feature("autodoc", "No available documentation.
@@ -2944,6 +2924,26 @@ None
 ") TDataStd_HDataMapOfStringHArray1OfReal;
 		 TDataStd_HDataMapOfStringHArray1OfReal(const TDataStd_DataMapOfStringHArray1OfReal & theOther);
 
+		/****************** ChangeMap ******************/
+		%feature("compactdefaultargs") ChangeMap;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringHArray1OfReal
+") ChangeMap;
+		TDataStd_DataMapOfStringHArray1OfReal & ChangeMap();
+
+		/****************** Map ******************/
+		%feature("compactdefaultargs") Map;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringHArray1OfReal
+") Map;
+		const TDataStd_DataMapOfStringHArray1OfReal & Map();
+
 };
 
 
@@ -2960,26 +2960,6 @@ None
 *****************************************/
 class TDataStd_HDataMapOfStringInteger : public Standard_Transient {
 	public:
-		/****************** ChangeMap ******************/
-		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TColStd_DataMapOfStringInteger
-") ChangeMap;
-		TColStd_DataMapOfStringInteger & ChangeMap();
-
-		/****************** Map ******************/
-		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TColStd_DataMapOfStringInteger
-") Map;
-		const TColStd_DataMapOfStringInteger & Map();
-
 		/****************** TDataStd_HDataMapOfStringInteger ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringInteger;
 		%feature("autodoc", "No available documentation.
@@ -3009,6 +2989,26 @@ None
 ") TDataStd_HDataMapOfStringInteger;
 		 TDataStd_HDataMapOfStringInteger(const TColStd_DataMapOfStringInteger & theOther);
 
+		/****************** ChangeMap ******************/
+		%feature("compactdefaultargs") ChangeMap;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_DataMapOfStringInteger
+") ChangeMap;
+		TColStd_DataMapOfStringInteger & ChangeMap();
+
+		/****************** Map ******************/
+		%feature("compactdefaultargs") Map;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_DataMapOfStringInteger
+") Map;
+		const TColStd_DataMapOfStringInteger & Map();
+
 };
 
 
@@ -3025,26 +3025,6 @@ None
 **************************************/
 class TDataStd_HDataMapOfStringReal : public Standard_Transient {
 	public:
-		/****************** ChangeMap ******************/
-		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TDataStd_DataMapOfStringReal
-") ChangeMap;
-		TDataStd_DataMapOfStringReal & ChangeMap();
-
-		/****************** Map ******************/
-		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TDataStd_DataMapOfStringReal
-") Map;
-		const TDataStd_DataMapOfStringReal & Map();
-
 		/****************** TDataStd_HDataMapOfStringReal ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringReal;
 		%feature("autodoc", "No available documentation.
@@ -3074,6 +3054,26 @@ None
 ") TDataStd_HDataMapOfStringReal;
 		 TDataStd_HDataMapOfStringReal(const TDataStd_DataMapOfStringReal & theOther);
 
+		/****************** ChangeMap ******************/
+		%feature("compactdefaultargs") ChangeMap;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringReal
+") ChangeMap;
+		TDataStd_DataMapOfStringReal & ChangeMap();
+
+		/****************** Map ******************/
+		%feature("compactdefaultargs") Map;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringReal
+") Map;
+		const TDataStd_DataMapOfStringReal & Map();
+
 };
 
 
@@ -3090,26 +3090,6 @@ None
 ****************************************/
 class TDataStd_HDataMapOfStringString : public Standard_Transient {
 	public:
-		/****************** ChangeMap ******************/
-		%feature("compactdefaultargs") ChangeMap;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TDataStd_DataMapOfStringString
-") ChangeMap;
-		TDataStd_DataMapOfStringString & ChangeMap();
-
-		/****************** Map ******************/
-		%feature("compactdefaultargs") Map;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TDataStd_DataMapOfStringString
-") Map;
-		const TDataStd_DataMapOfStringString & Map();
-
 		/****************** TDataStd_HDataMapOfStringString ******************/
 		%feature("compactdefaultargs") TDataStd_HDataMapOfStringString;
 		%feature("autodoc", "No available documentation.
@@ -3139,6 +3119,26 @@ None
 ") TDataStd_HDataMapOfStringString;
 		 TDataStd_HDataMapOfStringString(const TDataStd_DataMapOfStringString & theOther);
 
+		/****************** ChangeMap ******************/
+		%feature("compactdefaultargs") ChangeMap;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringString
+") ChangeMap;
+		TDataStd_DataMapOfStringString & ChangeMap();
+
+		/****************** Map ******************/
+		%feature("compactdefaultargs") Map;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TDataStd_DataMapOfStringString
+") Map;
+		const TDataStd_DataMapOfStringString & Map();
+
 };
 
 
@@ -3155,6 +3155,16 @@ None
 ******************************/
 class TDataStd_IntPackedMap : public TDF_Attribute {
 	public:
+		/****************** TDataStd_IntPackedMap ******************/
+		%feature("compactdefaultargs") TDataStd_IntPackedMap;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_IntPackedMap;
+		 TDataStd_IntPackedMap();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -3396,16 +3406,6 @@ None
 ") SetDelta;
 		void SetDelta(const Standard_Boolean isDelta);
 
-		/****************** TDataStd_IntPackedMap ******************/
-		%feature("compactdefaultargs") TDataStd_IntPackedMap;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_IntPackedMap;
-		 TDataStd_IntPackedMap();
-
 };
 
 
@@ -3422,6 +3422,16 @@ None
 *************************/
 class TDataStd_Integer : public TDF_Attribute {
 	public:
+		/****************** TDataStd_Integer ******************/
+		%feature("compactdefaultargs") TDataStd_Integer;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_Integer;
+		 TDataStd_Integer();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -3578,16 +3588,6 @@ None
 ") SetID;
 		void SetID();
 
-		/****************** TDataStd_Integer ******************/
-		%feature("compactdefaultargs") TDataStd_Integer;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_Integer;
-		 TDataStd_Integer();
-
 };
 
 
@@ -3604,6 +3604,16 @@ None
 ******************************/
 class TDataStd_IntegerArray : public TDF_Attribute {
 	public:
+		/****************** TDataStd_IntegerArray ******************/
+		%feature("compactdefaultargs") TDataStd_IntegerArray;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_IntegerArray;
+		 TDataStd_IntegerArray();
+
 		/****************** Array ******************/
 		%feature("compactdefaultargs") Array;
 		%feature("autodoc", "Return the inner array of the integerarray attribute.
@@ -3846,16 +3856,6 @@ None
 ") SetValue;
 		void SetValue(const Standard_Integer Index, const Standard_Integer Value);
 
-		/****************** TDataStd_IntegerArray ******************/
-		%feature("compactdefaultargs") TDataStd_IntegerArray;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_IntegerArray;
-		 TDataStd_IntegerArray();
-
 		/****************** Upper ******************/
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Return the upper boundary of this array of integers.
@@ -3896,6 +3896,16 @@ int
 *****************************/
 class TDataStd_IntegerList : public TDF_Attribute {
 	public:
+		/****************** TDataStd_IntegerList ******************/
+		%feature("compactdefaultargs") TDataStd_IntegerList;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_IntegerList;
+		 TDataStd_IntegerList();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "No available documentation.
@@ -4192,16 +4202,6 @@ None
 ") SetID;
 		void SetID();
 
-		/****************** TDataStd_IntegerList ******************/
-		%feature("compactdefaultargs") TDataStd_IntegerList;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_IntegerList;
-		 TDataStd_IntegerList();
-
 };
 
 
@@ -4218,6 +4218,16 @@ None
 **********************/
 class TDataStd_Name : public TDF_Attribute {
 	public:
+		/****************** TDataStd_Name ******************/
+		%feature("compactdefaultargs") TDataStd_Name;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_Name;
+		 TDataStd_Name();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -4364,16 +4374,6 @@ None
 ") SetID;
 		void SetID();
 
-		/****************** TDataStd_Name ******************/
-		%feature("compactdefaultargs") TDataStd_Name;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_Name;
-		 TDataStd_Name();
-
 };
 
 
@@ -4390,6 +4390,16 @@ None
 ***************************/
 class TDataStd_NamedData : public TDF_Attribute {
 	public:
+		/****************** TDataStd_NamedData ******************/
+		%feature("compactdefaultargs") TDataStd_NamedData;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_NamedData;
+		 TDataStd_NamedData();
+
 		/****************** ChangeArraysOfIntegers ******************/
 		%feature("compactdefaultargs") ChangeArraysOfIntegers;
 		%feature("autodoc", "Replace the container content by new content of the <thearraysofintegers>.
@@ -4933,16 +4943,6 @@ None
 ") SetString;
 		void SetString(const TCollection_ExtendedString & theName, const TCollection_ExtendedString & theString);
 
-		/****************** TDataStd_NamedData ******************/
-		%feature("compactdefaultargs") TDataStd_NamedData;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_NamedData;
-		 TDataStd_NamedData();
-
 };
 
 
@@ -4959,6 +4959,16 @@ None
 **************************/
 class TDataStd_NoteBook : public TDF_Attribute {
 	public:
+		/****************** TDataStd_NoteBook ******************/
+		%feature("compactdefaultargs") TDataStd_NoteBook;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_NoteBook;
+		 TDataStd_NoteBook();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Tool to create an integer attribute from <value>, insert it in a new son label of <self>. the real attribute is returned.
@@ -5087,16 +5097,6 @@ None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & with);
 
-		/****************** TDataStd_NoteBook ******************/
-		%feature("compactdefaultargs") TDataStd_NoteBook;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_NoteBook;
-		 TDataStd_NoteBook();
-
 };
 
 
@@ -5113,6 +5113,16 @@ None
 **********************/
 class TDataStd_Real : public TDF_Attribute {
 	public:
+		/****************** TDataStd_Real ******************/
+		%feature("compactdefaultargs") TDataStd_Real;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_Real;
+		 TDataStd_Real();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -5293,16 +5303,6 @@ None
 ") SetID;
 		void SetID();
 
-		/****************** TDataStd_Real ******************/
-		%feature("compactdefaultargs") TDataStd_Real;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_Real;
-		 TDataStd_Real();
-
 };
 
 
@@ -5319,6 +5319,16 @@ None
 ***************************/
 class TDataStd_RealArray : public TDF_Attribute {
 	public:
+		/****************** TDataStd_RealArray ******************/
+		%feature("compactdefaultargs") TDataStd_RealArray;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_RealArray;
+		 TDataStd_RealArray();
+
 		/****************** Array ******************/
 		%feature("compactdefaultargs") Array;
 		%feature("autodoc", "Returns the handle of this array of reals.
@@ -5561,16 +5571,6 @@ None
 ") SetValue;
 		void SetValue(const Standard_Integer Index, const Standard_Real Value);
 
-		/****************** TDataStd_RealArray ******************/
-		%feature("compactdefaultargs") TDataStd_RealArray;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_RealArray;
-		 TDataStd_RealArray();
-
 		/****************** Upper ******************/
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Returns the upper boundary of the array.
@@ -5611,6 +5611,16 @@ float
 **************************/
 class TDataStd_RealList : public TDF_Attribute {
 	public:
+		/****************** TDataStd_RealList ******************/
+		%feature("compactdefaultargs") TDataStd_RealList;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_RealList;
+		 TDataStd_RealList();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "No available documentation.
@@ -5907,16 +5917,6 @@ None
 ") SetID;
 		void SetID();
 
-		/****************** TDataStd_RealList ******************/
-		%feature("compactdefaultargs") TDataStd_RealList;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_RealList;
-		 TDataStd_RealList();
-
 };
 
 
@@ -5933,6 +5933,16 @@ None
 ********************************/
 class TDataStd_ReferenceArray : public TDF_Attribute {
 	public:
+		/****************** TDataStd_ReferenceArray ******************/
+		%feature("compactdefaultargs") TDataStd_ReferenceArray;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_ReferenceArray;
+		 TDataStd_ReferenceArray();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -6147,16 +6157,6 @@ None
 ") SetValue;
 		void SetValue(const Standard_Integer index, const TDF_Label & value);
 
-		/****************** TDataStd_ReferenceArray ******************/
-		%feature("compactdefaultargs") TDataStd_ReferenceArray;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_ReferenceArray;
-		 TDataStd_ReferenceArray();
-
 		/****************** Upper ******************/
 		%feature("compactdefaultargs") Upper;
 		%feature("autodoc", "Returns the upper boundary of the array.
@@ -6197,6 +6197,16 @@ TDF_Label
 *******************************/
 class TDataStd_ReferenceList : public TDF_Attribute {
 	public:
+		/****************** TDataStd_ReferenceList ******************/
+		%feature("compactdefaultargs") TDataStd_ReferenceList;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_ReferenceList;
+		 TDataStd_ReferenceList();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "No available documentation.
@@ -6507,16 +6517,6 @@ None
 ") SetID;
 		void SetID();
 
-		/****************** TDataStd_ReferenceList ******************/
-		%feature("compactdefaultargs") TDataStd_ReferenceList;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_ReferenceList;
-		 TDataStd_ReferenceList();
-
 };
 
 
@@ -6533,6 +6533,16 @@ None
 **************************/
 class TDataStd_Relation : public TDF_Attribute {
 	public:
+		/****************** TDataStd_Relation ******************/
+		%feature("compactdefaultargs") TDataStd_Relation;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_Relation;
+		 TDataStd_Relation();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -6658,16 +6668,6 @@ None
 ") SetRelation;
 		void SetRelation(const TCollection_ExtendedString & E);
 
-		/****************** TDataStd_Relation ******************/
-		%feature("compactdefaultargs") TDataStd_Relation;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_Relation;
-		 TDataStd_Relation();
-
 };
 
 
@@ -6684,6 +6684,16 @@ None
 **********************/
 class TDataStd_Tick : public TDF_Attribute {
 	public:
+		/****************** TDataStd_Tick ******************/
+		%feature("compactdefaultargs") TDataStd_Tick;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_Tick;
+		 TDataStd_Tick();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -6765,16 +6775,6 @@ opencascade::handle<TDataStd_Tick>
 ") Set;
 		static opencascade::handle<TDataStd_Tick> Set(const TDF_Label & label);
 
-		/****************** TDataStd_Tick ******************/
-		%feature("compactdefaultargs") TDataStd_Tick;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_Tick;
-		 TDataStd_Tick();
-
 };
 
 
@@ -6791,6 +6791,16 @@ None
 **************************/
 class TDataStd_TreeNode : public TDF_Attribute {
 	public:
+		/****************** TDataStd_TreeNode ******************/
+		%feature("compactdefaultargs") TDataStd_TreeNode;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_TreeNode;
+		 TDataStd_TreeNode();
+
 		/****************** AfterAddition ******************/
 		%feature("compactdefaultargs") AfterAddition;
 		%feature("autodoc", "Connect the treenode to its father child list.
@@ -7339,16 +7349,6 @@ None
 ") SetTreeID;
 		void SetTreeID(const Standard_GUID & explicitID);
 
-		/****************** TDataStd_TreeNode ******************/
-		%feature("compactdefaultargs") TDataStd_TreeNode;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_TreeNode;
-		 TDataStd_TreeNode();
-
 };
 
 
@@ -7365,6 +7365,16 @@ None
 ****************************/
 class TDataStd_UAttribute : public TDF_Attribute {
 	public:
+		/****************** TDataStd_UAttribute ******************/
+		%feature("compactdefaultargs") TDataStd_UAttribute;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_UAttribute;
+		 TDataStd_UAttribute();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -7465,16 +7475,6 @@ None
 ") SetID;
 		void SetID(const Standard_GUID & LocalID);
 
-		/****************** TDataStd_UAttribute ******************/
-		%feature("compactdefaultargs") TDataStd_UAttribute;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_UAttribute;
-		 TDataStd_UAttribute();
-
 };
 
 
@@ -7491,6 +7491,16 @@ None
 **************************/
 class TDataStd_Variable : public TDF_Attribute {
 	public:
+		/****************** TDataStd_Variable ******************/
+		%feature("compactdefaultargs") TDataStd_Variable;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataStd_Variable;
+		 TDataStd_Variable();
+
 		/****************** Assign ******************/
 		%feature("compactdefaultargs") Assign;
 		%feature("autodoc", "Create(if doesn't exist) and returns the assigned expression attribute. fill it after.
@@ -7742,16 +7752,6 @@ Returns
 None
 ") Set;
 		void Set(const Standard_Real value, const TDataStd_RealEnum dimension);
-
-		/****************** TDataStd_Variable ******************/
-		%feature("compactdefaultargs") TDataStd_Variable;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataStd_Variable;
-		 TDataStd_Variable();
 
 		/****************** Unit ******************/
 		%feature("compactdefaultargs") Unit;

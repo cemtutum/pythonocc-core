@@ -1043,6 +1043,30 @@ TopTools_ListOfShape
 ****************************/
 class BRepFeat_SplitShape : public BRepBuilderAPI_MakeShape {
 	public:
+		/****************** BRepFeat_SplitShape ******************/
+		%feature("compactdefaultargs") BRepFeat_SplitShape;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") BRepFeat_SplitShape;
+		 BRepFeat_SplitShape();
+
+		/****************** BRepFeat_SplitShape ******************/
+		%feature("compactdefaultargs") BRepFeat_SplitShape;
+		%feature("autodoc", "Creates the process with the shape <s>.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") BRepFeat_SplitShape;
+		 BRepFeat_SplitShape(const TopoDS_Shape & S);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add splitting edges or wires for whole initial shape withot additional specification edge->face, edge->edge this method puts edge on the corresponding faces from initial shape.
@@ -1116,30 +1140,6 @@ Returns
 None
 ") Add;
 		void Add(const TopoDS_Edge & E, const TopoDS_Edge & EOn);
-
-		/****************** BRepFeat_SplitShape ******************/
-		%feature("compactdefaultargs") BRepFeat_SplitShape;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") BRepFeat_SplitShape;
-		 BRepFeat_SplitShape();
-
-		/****************** BRepFeat_SplitShape ******************/
-		%feature("compactdefaultargs") BRepFeat_SplitShape;
-		%feature("autodoc", "Creates the process with the shape <s>.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") BRepFeat_SplitShape;
-		 BRepFeat_SplitShape(const TopoDS_Shape & S);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
@@ -1395,21 +1395,6 @@ BRepFeat_Status
 ****************************/
 class BRepFeat_MakeDPrism : public BRepFeat_Form {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Indicates that the edge <e> will slide on the face <onface>. raises constructionerror if the face does not belong to the basis shape, or the edge to the prismed shape.
-
-Parameters
-----------
-E: TopoDS_Edge
-OnFace: TopoDS_Face
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Edge & E, const TopoDS_Face & OnFace);
-
 		/****************** BRepFeat_MakeDPrism ******************/
 		%feature("compactdefaultargs") BRepFeat_MakeDPrism;
 		%feature("autodoc", "A face pbase is selected in the shape sbase to serve as the basis for the draft prism. the draft will be defined by the angle angle and fuse offers a choice between: - removing matter with a boolean cut using the setting 0 - adding matter with boolean fusion using the setting 1. the sketch face skface serves to determine the type of operation. if it is inside the basis shape, a local operation such as glueing can be performed. initializes the draft prism class.
@@ -1438,6 +1423,21 @@ Returns
 None
 ") BRepFeat_MakeDPrism;
 		 BRepFeat_MakeDPrism();
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Indicates that the edge <e> will slide on the face <onface>. raises constructionerror if the face does not belong to the basis shape, or the edge to the prismed shape.
+
+Parameters
+----------
+E: TopoDS_Edge
+OnFace: TopoDS_Face
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Edge & E, const TopoDS_Face & OnFace);
 
 		/****************** BarycCurve ******************/
 		%feature("compactdefaultargs") BarycCurve;
@@ -1622,21 +1622,6 @@ TopTools_ListOfShape
 ********************************/
 class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Indicates that the edge <e> will slide on the face <onface>. raises constructionerror if the face does not belong to the basis shape, or the edge to the prismed shape.
-
-Parameters
-----------
-E: TopoDS_Edge
-OnFace: TopoDS_Face
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Edge & E, const TopoDS_Face & OnFace);
-
 		/****************** BRepFeat_MakeLinearForm ******************/
 		%feature("compactdefaultargs") BRepFeat_MakeLinearForm;
 		%feature("autodoc", "Initializes the linear form class.
@@ -1666,6 +1651,21 @@ Returns
 None
 ") BRepFeat_MakeLinearForm;
 		 BRepFeat_MakeLinearForm(const TopoDS_Shape & Sbase, const TopoDS_Wire & W, const opencascade::handle<Geom_Plane> & P, const gp_Vec & Direction, const gp_Vec & Direction1, const Standard_Integer Fuse, const Standard_Boolean Modify);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Indicates that the edge <e> will slide on the face <onface>. raises constructionerror if the face does not belong to the basis shape, or the edge to the prismed shape.
+
+Parameters
+----------
+E: TopoDS_Edge
+OnFace: TopoDS_Face
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Edge & E, const TopoDS_Face & OnFace);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -1733,21 +1733,6 @@ bool
 **************************/
 class BRepFeat_MakePipe : public BRepFeat_Form {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Indicates that the edge <e> will slide on the face <onface>. raises constructionerror if the face does not belong to the basis shape, or the edge to the prismed shape.
-
-Parameters
-----------
-E: TopoDS_Edge
-OnFace: TopoDS_Face
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Edge & E, const TopoDS_Face & OnFace);
-
 		/****************** BRepFeat_MakePipe ******************/
 		%feature("compactdefaultargs") BRepFeat_MakePipe;
 		%feature("autodoc", "Initializes the pipe class.
@@ -1776,6 +1761,21 @@ Returns
 None
 ") BRepFeat_MakePipe;
 		 BRepFeat_MakePipe(const TopoDS_Shape & Sbase, const TopoDS_Shape & Pbase, const TopoDS_Face & Skface, const TopoDS_Wire & Spine, const Standard_Integer Fuse, const Standard_Boolean Modify);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Indicates that the edge <e> will slide on the face <onface>. raises constructionerror if the face does not belong to the basis shape, or the edge to the prismed shape.
+
+Parameters
+----------
+E: TopoDS_Edge
+OnFace: TopoDS_Face
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Edge & E, const TopoDS_Face & OnFace);
 
 		/****************** BarycCurve ******************/
 		%feature("compactdefaultargs") BarycCurve;
@@ -1873,21 +1873,6 @@ None
 ***************************/
 class BRepFeat_MakePrism : public BRepFeat_Form {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Indicates that the edge <e> will slide on the face <onface>. raises constructionerror if the face does not belong to the basis shape, or the edge to the prismed shape.
-
-Parameters
-----------
-E: TopoDS_Edge
-OnFace: TopoDS_Face
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Edge & E, const TopoDS_Face & OnFace);
-
 		/****************** BRepFeat_MakePrism ******************/
 		%feature("compactdefaultargs") BRepFeat_MakePrism;
 		%feature("autodoc", "Builds a prism by projecting a wire along the face of a shape. initializes the prism class.
@@ -1916,6 +1901,21 @@ Returns
 None
 ") BRepFeat_MakePrism;
 		 BRepFeat_MakePrism(const TopoDS_Shape & Sbase, const TopoDS_Shape & Pbase, const TopoDS_Face & Skface, const gp_Dir & Direction, const Standard_Integer Fuse, const Standard_Boolean Modify);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Indicates that the edge <e> will slide on the face <onface>. raises constructionerror if the face does not belong to the basis shape, or the edge to the prismed shape.
+
+Parameters
+----------
+E: TopoDS_Edge
+OnFace: TopoDS_Face
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Edge & E, const TopoDS_Face & OnFace);
 
 		/****************** BarycCurve ******************/
 		%feature("compactdefaultargs") BarycCurve;
@@ -2066,21 +2066,6 @@ None
 ***************************/
 class BRepFeat_MakeRevol : public BRepFeat_Form {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Indicates that the edge <e> will slide on the face <onface>. raises constructionerror if the face does not belong to the basis shape, or the edge to the prismed shape.
-
-Parameters
-----------
-E: TopoDS_Edge
-OnFace: TopoDS_Face
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Edge & E, const TopoDS_Face & OnFace);
-
 		/****************** BRepFeat_MakeRevol ******************/
 		%feature("compactdefaultargs") BRepFeat_MakeRevol;
 		%feature("autodoc", "Initializes the revolved shell class.
@@ -2109,6 +2094,21 @@ Returns
 None
 ") BRepFeat_MakeRevol;
 		 BRepFeat_MakeRevol(const TopoDS_Shape & Sbase, const TopoDS_Shape & Pbase, const TopoDS_Face & Skface, const gp_Ax1 & Axis, const Standard_Integer Fuse, const Standard_Boolean Modify);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Indicates that the edge <e> will slide on the face <onface>. raises constructionerror if the face does not belong to the basis shape, or the edge to the prismed shape.
+
+Parameters
+----------
+E: TopoDS_Edge
+OnFace: TopoDS_Face
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Edge & E, const TopoDS_Face & OnFace);
 
 		/****************** BarycCurve ******************/
 		%feature("compactdefaultargs") BarycCurve;
@@ -2235,21 +2235,6 @@ None
 ************************************/
 class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Indicates that the edge <e> will slide on the face <onface>. raises constructionerror if the face does not belong to the basis shape, or the edge to the prismed shape.
-
-Parameters
-----------
-E: TopoDS_Edge
-OnFace: TopoDS_Face
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Edge & E, const TopoDS_Face & OnFace);
-
 		/****************** BRepFeat_MakeRevolutionForm ******************/
 		%feature("compactdefaultargs") BRepFeat_MakeRevolutionForm;
 		%feature("autodoc", "Initializes the linear form class.
@@ -2280,6 +2265,21 @@ Returns
 None
 ") BRepFeat_MakeRevolutionForm;
 		 BRepFeat_MakeRevolutionForm(const TopoDS_Shape & Sbase, const TopoDS_Wire & W, const opencascade::handle<Geom_Plane> & Plane, const gp_Ax1 & Axis, const Standard_Real Height1, const Standard_Real Height2, const Standard_Integer Fuse, Standard_Boolean &OutValue);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Indicates that the edge <e> will slide on the face <onface>. raises constructionerror if the face does not belong to the basis shape, or the edge to the prismed shape.
+
+Parameters
+----------
+E: TopoDS_Edge
+OnFace: TopoDS_Face
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Edge & E, const TopoDS_Face & OnFace);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;

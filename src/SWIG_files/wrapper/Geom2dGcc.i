@@ -42,8 +42,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geom2dgcc.html"
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
 #include<Geom2dAdaptor_module.hxx>
-#include<gp_module.hxx>
 #include<Geom2d_module.hxx>
+#include<gp_module.hxx>
 #include<GccAna_module.hxx>
 #include<GccEnt_module.hxx>
 #include<math_module.hxx>
@@ -58,8 +58,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geom2dgcc.html"
 %import Standard.i
 %import NCollection.i
 %import Geom2dAdaptor.i
-%import gp.i
 %import Geom2d.i
+%import gp.i
 %import GccAna.i
 %import GccEnt.i
 %import math.i
@@ -216,22 +216,6 @@ Geom2dGcc_QualifiedCurve
 *******************************/
 class Geom2dGcc_Circ2d2TanOn {
 	public:
-		/****************** CenterOn3 ******************/
-		%feature("compactdefaultargs") CenterOn3;
-		%feature("autodoc", "Returns the center pntsol of the solution of index index computed by this algorithm. pararg is the parameter of the point pntsol on the third argument. exceptions standard_outofrange if index is less than zero or greater than the number of solutions computed by this algorithm. stdfail_notdone if the construction fails.
-
-Parameters
-----------
-Index: int
-ParArg: float
-PntSol: gp_Pnt2d
-
-Returns
--------
-None
-") CenterOn3;
-		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol);
-
 		/****************** Geom2dGcc_Circ2d2TanOn ******************/
 		%feature("compactdefaultargs") Geom2dGcc_Circ2d2TanOn;
 		%feature("autodoc", "This method implements the algorithms used to create 2d circles tangent to two curves and having the center on a 2d curve. param1 is the initial guess on the first curve qualifiedcurv. param1 is the initial guess on the second curve qualifiedcurv. paramon is the initial guess on the center curve oncurv. tolerance is used for the limit cases.
@@ -287,6 +271,22 @@ Returns
 None
 ") Geom2dGcc_Circ2d2TanOn;
 		 Geom2dGcc_Circ2d2TanOn(const opencascade::handle<Geom2d_Point> & Point1, const opencascade::handle<Geom2d_Point> & Point2, const Geom2dAdaptor_Curve & OnCurve, const Standard_Real Tolerance);
+
+		/****************** CenterOn3 ******************/
+		%feature("compactdefaultargs") CenterOn3;
+		%feature("autodoc", "Returns the center pntsol of the solution of index index computed by this algorithm. pararg is the parameter of the point pntsol on the third argument. exceptions standard_outofrange if index is less than zero or greater than the number of solutions computed by this algorithm. stdfail_notdone if the construction fails.
+
+Parameters
+----------
+Index: int
+ParArg: float
+PntSol: gp_Pnt2d
+
+Returns
+-------
+None
+") CenterOn3;
+		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -442,22 +442,6 @@ None
 **********************************/
 class Geom2dGcc_Circ2d2TanOnGeo {
 	public:
-		/****************** CenterOn3 ******************/
-		%feature("compactdefaultargs") CenterOn3;
-		%feature("autodoc", "Returns informations about the center (on the curv) of the result. pararg is the intrinsic parameter of the point on the argument curv. pntsol is the center point of the solution curv. it raises notdone if the construction algorithm didn't succeed. it raises outofrange if index is greater than the number of solutions.
-
-Parameters
-----------
-Index: int
-ParArg: float
-PntSol: gp_Pnt2d
-
-Returns
--------
-None
-") CenterOn3;
-		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol);
-
 		/****************** Geom2dGcc_Circ2d2TanOnGeo ******************/
 		%feature("compactdefaultargs") Geom2dGcc_Circ2d2TanOnGeo;
 		%feature("autodoc", "This method implements the algorithms used to create 2d circles tangent to two 2d circles and having the center on a curve.
@@ -559,6 +543,22 @@ Returns
 None
 ") Geom2dGcc_Circ2d2TanOnGeo;
 		 Geom2dGcc_Circ2d2TanOnGeo(const gp_Pnt2d & Point1, const gp_Pnt2d & Point2, const Geom2dAdaptor_Curve & OnCurv, const Standard_Real Tolerance);
+
+		/****************** CenterOn3 ******************/
+		%feature("compactdefaultargs") CenterOn3;
+		%feature("autodoc", "Returns informations about the center (on the curv) of the result. pararg is the intrinsic parameter of the point on the argument curv. pntsol is the center point of the solution curv. it raises notdone if the construction algorithm didn't succeed. it raises outofrange if index is greater than the number of solutions.
+
+Parameters
+----------
+Index: int
+ParArg: float
+PntSol: gp_Pnt2d
+
+Returns
+-------
+None
+") CenterOn3;
+		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -686,21 +686,6 @@ None
 ***********************************/
 class Geom2dGcc_Circ2d2TanOnIter {
 	public:
-		/****************** CenterOn3 ******************/
-		%feature("compactdefaultargs") CenterOn3;
-		%feature("autodoc", "Returns information about the center (on the curv) of the result and the third argument. it raises notdone if the construction algorithm didn't succeed.
-
-Parameters
-----------
-ParArg: float
-PntSol: gp_Pnt2d
-
-Returns
--------
-None
-") CenterOn3;
-		void CenterOn3(Standard_Real &OutValue, gp_Pnt2d & PntSol);
-
 		/****************** Geom2dGcc_Circ2d2TanOnIter ******************/
 		%feature("compactdefaultargs") Geom2dGcc_Circ2d2TanOnIter;
 		%feature("autodoc", "This method implements the algorithms used to create 2d circles tangent to a 2d circle and a curve and having the center on a 2d line. param2 is the initial guess on the curve qualifiedcurv. tolerance is used for the limit cases.
@@ -937,6 +922,21 @@ Returns
 None
 ") Geom2dGcc_Circ2d2TanOnIter;
 		 Geom2dGcc_Circ2d2TanOnIter(const Geom2dGcc_QCurve & Qualified1, const Geom2dGcc_QCurve & Qualified2, const Geom2dAdaptor_Curve & OnCurve, const Standard_Real Param1, const Standard_Real Param2, const Standard_Real ParamOn, const Standard_Real Tolerance);
+
+		/****************** CenterOn3 ******************/
+		%feature("compactdefaultargs") CenterOn3;
+		%feature("autodoc", "Returns information about the center (on the curv) of the result and the third argument. it raises notdone if the construction algorithm didn't succeed.
+
+Parameters
+----------
+ParArg: float
+PntSol: gp_Pnt2d
+
+Returns
+-------
+None
+") CenterOn3;
+		void CenterOn3(Standard_Real &OutValue, gp_Pnt2d & PntSol);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -2216,22 +2216,6 @@ None
 *********************************/
 class Geom2dGcc_Circ2dTanOnRad {
 	public:
-		/****************** CenterOn3 ******************/
-		%feature("compactdefaultargs") CenterOn3;
-		%feature("autodoc", "Returns the center pntsol on the second argument (i.e. line or circle) of the solution of index index computed by this algorithm. pararg is the intrinsic parameter of the point on the argument curv. pntsol is the center point of the solution curv. pntarg is the projection of pntsol on the argument curv. exceptions: standard_outofrange if index is less than zero or greater than the number of solutions computed by this algorithm. stdfail_notdone if the construction fails.
-
-Parameters
-----------
-Index: int
-ParArg: float
-PntSol: gp_Pnt2d
-
-Returns
--------
-None
-") CenterOn3;
-		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol);
-
 		/****************** Geom2dGcc_Circ2dTanOnRad ******************/
 		%feature("compactdefaultargs") Geom2dGcc_Circ2dTanOnRad;
 		%feature("autodoc", "Constructs one or more 2d circles of radius radius, centered on the 2d curve oncurv and: - tangential to the curve qualified1.
@@ -2265,6 +2249,22 @@ Returns
 None
 ") Geom2dGcc_Circ2dTanOnRad;
 		 Geom2dGcc_Circ2dTanOnRad(const opencascade::handle<Geom2d_Point> & Point1, const Geom2dAdaptor_Curve & OnCurv, const Standard_Real Radius, const Standard_Real Tolerance);
+
+		/****************** CenterOn3 ******************/
+		%feature("compactdefaultargs") CenterOn3;
+		%feature("autodoc", "Returns the center pntsol on the second argument (i.e. line or circle) of the solution of index index computed by this algorithm. pararg is the intrinsic parameter of the point on the argument curv. pntsol is the center point of the solution curv. pntarg is the projection of pntsol on the argument curv. exceptions: standard_outofrange if index is less than zero or greater than the number of solutions computed by this algorithm. stdfail_notdone if the construction fails.
+
+Parameters
+----------
+Index: int
+ParArg: float
+PntSol: gp_Pnt2d
+
+Returns
+-------
+None
+") CenterOn3;
+		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -2388,22 +2388,6 @@ None
 ************************************/
 class Geom2dGcc_Circ2dTanOnRadGeo {
 	public:
-		/****************** CenterOn3 ******************/
-		%feature("compactdefaultargs") CenterOn3;
-		%feature("autodoc", "Returns informations about the center (on the curv) of the result. pararg is the intrinsic parameter of the point on the argument curv. pntsol is the center point of the solution curv. it raises notdone if the construction algorithm didn't succeed. it raises outofrange if index is greater than the number of solutions.
-
-Parameters
-----------
-Index: int
-ParArg: float
-PntSol: gp_Pnt2d
-
-Returns
--------
-None
-") CenterOn3;
-		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol);
-
 		/****************** Geom2dGcc_Circ2dTanOnRadGeo ******************/
 		%feature("compactdefaultargs") Geom2dGcc_Circ2dTanOnRadGeo;
 		%feature("autodoc", "This methods implements the algorithms used to create 2d circles tangent to a curve and centered on a 2d line with a given radius. tolerance is used to find solution in every limit cases. raises negativevalue in case of negativeradius.
@@ -2505,6 +2489,22 @@ Returns
 None
 ") Geom2dGcc_Circ2dTanOnRadGeo;
 		 Geom2dGcc_Circ2dTanOnRadGeo(const gp_Pnt2d & Point1, const Geom2dAdaptor_Curve & OnCurv, const Standard_Real Radius, const Standard_Real Tolerance);
+
+		/****************** CenterOn3 ******************/
+		%feature("compactdefaultargs") CenterOn3;
+		%feature("autodoc", "Returns informations about the center (on the curv) of the result. pararg is the intrinsic parameter of the point on the argument curv. pntsol is the center point of the solution curv. it raises notdone if the construction algorithm didn't succeed. it raises outofrange if index is greater than the number of solutions.
+
+Parameters
+----------
+Index: int
+ParArg: float
+PntSol: gp_Pnt2d
+
+Returns
+-------
+None
+") CenterOn3;
+		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -2740,21 +2740,6 @@ gp_Pnt2d
 ***********************************/
 class Geom2dGcc_FunctionTanCirCu : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Computes the derivative of the function f for the variable x. it returns true if the computation is successfully done, false otherwise.
-
-Parameters
-----------
-X: float
-Deriv: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-
 		/****************** Geom2dGcc_FunctionTanCirCu ******************/
 		%feature("compactdefaultargs") Geom2dGcc_FunctionTanCirCu;
 		%feature("autodoc", "No available documentation.
@@ -2769,6 +2754,21 @@ Returns
 None
 ") Geom2dGcc_FunctionTanCirCu;
 		 Geom2dGcc_FunctionTanCirCu(const gp_Circ2d & Circ, const Geom2dAdaptor_Curve & Curv);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Computes the derivative of the function f for the variable x. it returns true if the computation is successfully done, false otherwise.
+
+Parameters
+----------
+X: float
+Deriv: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -2815,21 +2815,6 @@ bool
 **********************************/
 class Geom2dGcc_FunctionTanCuCu : public math_FunctionSetWithDerivatives {
 	public:
-		/****************** Derivatives ******************/
-		%feature("compactdefaultargs") Derivatives;
-		%feature("autodoc", "Computes the derivative of the function f for the variable x. it returns true if the computation is successfully done, false otherwise.
-
-Parameters
-----------
-X: math_Vector
-Deriv: math_Matrix
-
-Returns
--------
-bool
-") Derivatives;
-		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & Deriv);
-
 		/****************** Geom2dGcc_FunctionTanCuCu ******************/
 		%feature("compactdefaultargs") Geom2dGcc_FunctionTanCuCu;
 		%feature("autodoc", "No available documentation.
@@ -2859,6 +2844,21 @@ Returns
 None
 ") Geom2dGcc_FunctionTanCuCu;
 		 Geom2dGcc_FunctionTanCuCu(const gp_Circ2d & Circ1, const Geom2dAdaptor_Curve & Curv2);
+
+		/****************** Derivatives ******************/
+		%feature("compactdefaultargs") Derivatives;
+		%feature("autodoc", "Computes the derivative of the function f for the variable x. it returns true if the computation is successfully done, false otherwise.
+
+Parameters
+----------
+X: math_Vector
+Deriv: math_Matrix
+
+Returns
+-------
+bool
+") Derivatives;
+		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & Deriv);
 
 		/****************** InitDerivative ******************/
 		%feature("compactdefaultargs") InitDerivative;
@@ -2948,21 +2948,6 @@ bool
 **************************************/
 class Geom2dGcc_FunctionTanCuCuOnCu : public math_FunctionSetWithDerivatives {
 	public:
-		/****************** Derivatives ******************/
-		%feature("compactdefaultargs") Derivatives;
-		%feature("autodoc", "Returns the values of the derivatives for the variable <x>.
-
-Parameters
-----------
-X: math_Vector
-D: math_Matrix
-
-Returns
--------
-bool
-") Derivatives;
-		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
-
 		/****************** Geom2dGcc_FunctionTanCuCuOnCu ******************/
 		%feature("compactdefaultargs") Geom2dGcc_FunctionTanCuCuOnCu;
 		%feature("autodoc", "No available documentation.
@@ -3167,6 +3152,21 @@ None
 ") Geom2dGcc_FunctionTanCuCuOnCu;
 		 Geom2dGcc_FunctionTanCuCuOnCu(const Geom2dAdaptor_Curve & C1, const gp_Pnt2d & P1, const Geom2dAdaptor_Curve & OnCu, const Standard_Real Rad);
 
+		/****************** Derivatives ******************/
+		%feature("compactdefaultargs") Derivatives;
+		%feature("autodoc", "Returns the values of the derivatives for the variable <x>.
+
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
+") Derivatives;
+		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
+
 		/****************** InitDerivative ******************/
 		%feature("compactdefaultargs") InitDerivative;
 		%feature("autodoc", "No available documentation.
@@ -3255,21 +3255,6 @@ bool
 ***********************************/
 class Geom2dGcc_FunctionTanCuPnt : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Computes the derivative of the function f for the variable x. it returns true if the computation is successfully done, false otherwise.
-
-Parameters
-----------
-X: float
-Deriv: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-
 		/****************** Geom2dGcc_FunctionTanCuPnt ******************/
 		%feature("compactdefaultargs") Geom2dGcc_FunctionTanCuPnt;
 		%feature("autodoc", "No available documentation.
@@ -3284,6 +3269,21 @@ Returns
 None
 ") Geom2dGcc_FunctionTanCuPnt;
 		 Geom2dGcc_FunctionTanCuPnt(const Geom2dAdaptor_Curve & C, const gp_Pnt2d & Point);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Computes the derivative of the function f for the variable x. it returns true if the computation is successfully done, false otherwise.
+
+Parameters
+----------
+X: float
+Deriv: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -3330,21 +3330,6 @@ bool
 *********************************/
 class Geom2dGcc_FunctionTanObl : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Computes the derivative of the function f for the variable x. it returns true if the computation is successfully done, false otherwise.
-
-Parameters
-----------
-X: float
-Deriv: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-
 		/****************** Geom2dGcc_FunctionTanObl ******************/
 		%feature("compactdefaultargs") Geom2dGcc_FunctionTanObl;
 		%feature("autodoc", "No available documentation.
@@ -3359,6 +3344,21 @@ Returns
 None
 ") Geom2dGcc_FunctionTanObl;
 		 Geom2dGcc_FunctionTanObl(const Geom2dAdaptor_Curve & Curve, const gp_Dir2d & Dir);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Computes the derivative of the function f for the variable x. it returns true if the computation is successfully done, false otherwise.
+
+Parameters
+----------
+X: float
+Deriv: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;

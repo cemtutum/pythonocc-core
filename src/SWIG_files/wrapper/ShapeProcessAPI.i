@@ -97,6 +97,22 @@ from OCC.Core.Exception import *
 **************************************/
 class ShapeProcessAPI_ApplySequence {
 	public:
+		/****************** ShapeProcessAPI_ApplySequence ******************/
+		%feature("compactdefaultargs") ShapeProcessAPI_ApplySequence;
+		%feature("autodoc", "Creates an object and loads resource file and sequence of operators given by their names.
+
+Parameters
+----------
+rscName: char *
+seqName: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") ShapeProcessAPI_ApplySequence;
+		 ShapeProcessAPI_ApplySequence(const char * rscName, const char * seqName = "");
+
 		/****************** ClearMap ******************/
 		%feature("compactdefaultargs") ClearMap;
 		%feature("autodoc", "Clears mymap with accumulated history.
@@ -154,22 +170,6 @@ Returns
 None
 ") PrintPreparationResult;
 		void PrintPreparationResult();
-
-		/****************** ShapeProcessAPI_ApplySequence ******************/
-		%feature("compactdefaultargs") ShapeProcessAPI_ApplySequence;
-		%feature("autodoc", "Creates an object and loads resource file and sequence of operators given by their names.
-
-Parameters
-----------
-rscName: char *
-seqName: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") ShapeProcessAPI_ApplySequence;
-		 ShapeProcessAPI_ApplySequence(const char * rscName, const char * seqName = "");
 
 };
 

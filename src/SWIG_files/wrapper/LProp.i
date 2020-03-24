@@ -144,6 +144,16 @@ None
 ************************/
 class LProp_CurAndInf {
 	public:
+		/****************** LProp_CurAndInf ******************/
+		%feature("compactdefaultargs") LProp_CurAndInf;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") LProp_CurAndInf;
+		 LProp_CurAndInf();
+
 		/****************** AddExtCur ******************/
 		%feature("compactdefaultargs") AddExtCur;
 		%feature("autodoc", "No available documentation.
@@ -192,16 +202,6 @@ Returns
 bool
 ") IsEmpty;
 		Standard_Boolean IsEmpty();
-
-		/****************** LProp_CurAndInf ******************/
-		%feature("compactdefaultargs") LProp_CurAndInf;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") LProp_CurAndInf;
-		 LProp_CurAndInf();
 
 		/****************** NbPoints ******************/
 		%feature("compactdefaultargs") NbPoints;

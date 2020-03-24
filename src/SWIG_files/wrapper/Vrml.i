@@ -268,6 +268,33 @@ class Vrml {
 ***********************/
 class Vrml_AsciiText : public Standard_Transient {
 	public:
+		/****************** Vrml_AsciiText ******************/
+		%feature("compactdefaultargs") Vrml_AsciiText;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_AsciiText;
+		 Vrml_AsciiText();
+
+		/****************** Vrml_AsciiText ******************/
+		%feature("compactdefaultargs") Vrml_AsciiText;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aString: TColStd_HArray1OfAsciiString
+aSpacing: float
+aJustification: Vrml_AsciiTextJustification
+aWidth: float
+
+Returns
+-------
+None
+") Vrml_AsciiText;
+		 Vrml_AsciiText(const opencascade::handle<TColStd_HArray1OfAsciiString> & aString, const Standard_Real aSpacing, const Vrml_AsciiTextJustification aJustification, const Standard_Real aWidth);
+
 		/****************** Justification ******************/
 		%feature("compactdefaultargs") Justification;
 		%feature("autodoc", "No available documentation.
@@ -362,33 +389,6 @@ opencascade::handle<TColStd_HArray1OfAsciiString>
 ") String;
 		opencascade::handle<TColStd_HArray1OfAsciiString> String();
 
-		/****************** Vrml_AsciiText ******************/
-		%feature("compactdefaultargs") Vrml_AsciiText;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_AsciiText;
-		 Vrml_AsciiText();
-
-		/****************** Vrml_AsciiText ******************/
-		%feature("compactdefaultargs") Vrml_AsciiText;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aString: TColStd_HArray1OfAsciiString
-aSpacing: float
-aJustification: Vrml_AsciiTextJustification
-aWidth: float
-
-Returns
--------
-None
-") Vrml_AsciiText;
-		 Vrml_AsciiText(const opencascade::handle<TColStd_HArray1OfAsciiString> & aString, const Standard_Real aSpacing, const Vrml_AsciiTextJustification aJustification, const Standard_Real aWidth);
-
 		/****************** Width ******************/
 		%feature("compactdefaultargs") Width;
 		%feature("autodoc", "No available documentation.
@@ -415,6 +415,25 @@ float
 ******************/
 class Vrml_Cone {
 	public:
+		/****************** Vrml_Cone ******************/
+		%feature("compactdefaultargs") Vrml_Cone;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aParts: Vrml_ConeParts,optional
+	default value is Vrml_ConeALL
+aBottomRadius: float,optional
+	default value is 1
+aHeight: float,optional
+	default value is 2
+
+Returns
+-------
+None
+") Vrml_Cone;
+		 Vrml_Cone(const Vrml_ConeParts aParts = Vrml_ConeALL, const Standard_Real aBottomRadius = 1, const Standard_Real aHeight = 2);
+
 		/****************** BottomRadius ******************/
 		%feature("compactdefaultargs") BottomRadius;
 		%feature("autodoc", "No available documentation.
@@ -495,25 +514,6 @@ None
 ") SetParts;
 		void SetParts(const Vrml_ConeParts aParts);
 
-		/****************** Vrml_Cone ******************/
-		%feature("compactdefaultargs") Vrml_Cone;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aParts: Vrml_ConeParts,optional
-	default value is Vrml_ConeALL
-aBottomRadius: float,optional
-	default value is 1
-aHeight: float,optional
-	default value is 2
-
-Returns
--------
-None
-") Vrml_Cone;
-		 Vrml_Cone(const Vrml_ConeParts aParts = Vrml_ConeALL, const Standard_Real aBottomRadius = 1, const Standard_Real aHeight = 2);
-
 };
 
 
@@ -528,6 +528,30 @@ None
 *************************/
 class Vrml_Coordinate3 : public Standard_Transient {
 	public:
+		/****************** Vrml_Coordinate3 ******************/
+		%feature("compactdefaultargs") Vrml_Coordinate3;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPoint: TColgp_HArray1OfVec
+
+Returns
+-------
+None
+") Vrml_Coordinate3;
+		 Vrml_Coordinate3(const opencascade::handle<TColgp_HArray1OfVec> & aPoint);
+
+		/****************** Vrml_Coordinate3 ******************/
+		%feature("compactdefaultargs") Vrml_Coordinate3;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_Coordinate3;
+		 Vrml_Coordinate3();
+
 		/****************** Point ******************/
 		%feature("compactdefaultargs") Point;
 		%feature("autodoc", "No available documentation.
@@ -560,30 +584,6 @@ None
 ") SetPoint;
 		void SetPoint(const opencascade::handle<TColgp_HArray1OfVec> & aPoint);
 
-		/****************** Vrml_Coordinate3 ******************/
-		%feature("compactdefaultargs") Vrml_Coordinate3;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aPoint: TColgp_HArray1OfVec
-
-Returns
--------
-None
-") Vrml_Coordinate3;
-		 Vrml_Coordinate3(const opencascade::handle<TColgp_HArray1OfVec> & aPoint);
-
-		/****************** Vrml_Coordinate3 ******************/
-		%feature("compactdefaultargs") Vrml_Coordinate3;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_Coordinate3;
-		 Vrml_Coordinate3();
-
 };
 
 
@@ -600,6 +600,25 @@ None
 ******************/
 class Vrml_Cube {
 	public:
+		/****************** Vrml_Cube ******************/
+		%feature("compactdefaultargs") Vrml_Cube;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aWidth: float,optional
+	default value is 2
+aHeight: float,optional
+	default value is 2
+aDepth: float,optional
+	default value is 2
+
+Returns
+-------
+None
+") Vrml_Cube;
+		 Vrml_Cube(const Standard_Real aWidth = 2, const Standard_Real aHeight = 2, const Standard_Real aDepth = 2);
+
 		/****************** Depth ******************/
 		%feature("compactdefaultargs") Depth;
 		%feature("autodoc", "No available documentation.
@@ -670,25 +689,6 @@ None
 ") SetWidth;
 		void SetWidth(const Standard_Real aWidth);
 
-		/****************** Vrml_Cube ******************/
-		%feature("compactdefaultargs") Vrml_Cube;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aWidth: float,optional
-	default value is 2
-aHeight: float,optional
-	default value is 2
-aDepth: float,optional
-	default value is 2
-
-Returns
--------
-None
-") Vrml_Cube;
-		 Vrml_Cube(const Standard_Real aWidth = 2, const Standard_Real aHeight = 2, const Standard_Real aDepth = 2);
-
 		/****************** Width ******************/
 		%feature("compactdefaultargs") Width;
 		%feature("autodoc", "No available documentation.
@@ -713,6 +713,25 @@ float
 **********************/
 class Vrml_Cylinder {
 	public:
+		/****************** Vrml_Cylinder ******************/
+		%feature("compactdefaultargs") Vrml_Cylinder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aParts: Vrml_CylinderParts,optional
+	default value is Vrml_CylinderALL
+aRadius: float,optional
+	default value is 1
+aHeight: float,optional
+	default value is 2
+
+Returns
+-------
+None
+") Vrml_Cylinder;
+		 Vrml_Cylinder(const Vrml_CylinderParts aParts = Vrml_CylinderALL, const Standard_Real aRadius = 1, const Standard_Real aHeight = 2);
+
 		/****************** Height ******************/
 		%feature("compactdefaultargs") Height;
 		%feature("autodoc", "No available documentation.
@@ -793,25 +812,6 @@ None
 ") SetRadius;
 		void SetRadius(const Standard_Real aRadius);
 
-		/****************** Vrml_Cylinder ******************/
-		%feature("compactdefaultargs") Vrml_Cylinder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aParts: Vrml_CylinderParts,optional
-	default value is Vrml_CylinderALL
-aRadius: float,optional
-	default value is 1
-aHeight: float,optional
-	default value is 2
-
-Returns
--------
-None
-") Vrml_Cylinder;
-		 Vrml_Cylinder(const Vrml_CylinderParts aParts = Vrml_CylinderALL, const Standard_Real aRadius = 1, const Standard_Real aHeight = 2);
-
 };
 
 
@@ -826,6 +826,33 @@ None
 ******************************/
 class Vrml_DirectionalLight {
 	public:
+		/****************** Vrml_DirectionalLight ******************/
+		%feature("compactdefaultargs") Vrml_DirectionalLight;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_DirectionalLight;
+		 Vrml_DirectionalLight();
+
+		/****************** Vrml_DirectionalLight ******************/
+		%feature("compactdefaultargs") Vrml_DirectionalLight;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aOnOff: bool
+aIntensity: float
+aColor: Quantity_Color
+aDirection: gp_Vec
+
+Returns
+-------
+None
+") Vrml_DirectionalLight;
+		 Vrml_DirectionalLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color & aColor, const gp_Vec & aDirection);
+
 		/****************** Color ******************/
 		%feature("compactdefaultargs") Color;
 		%feature("autodoc", "No available documentation.
@@ -930,33 +957,6 @@ None
 ") SetOnOff;
 		void SetOnOff(const Standard_Boolean aOnOff);
 
-		/****************** Vrml_DirectionalLight ******************/
-		%feature("compactdefaultargs") Vrml_DirectionalLight;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_DirectionalLight;
-		 Vrml_DirectionalLight();
-
-		/****************** Vrml_DirectionalLight ******************/
-		%feature("compactdefaultargs") Vrml_DirectionalLight;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aOnOff: bool
-aIntensity: float
-aColor: Quantity_Color
-aDirection: gp_Vec
-
-Returns
--------
-None
-") Vrml_DirectionalLight;
-		 Vrml_DirectionalLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color & aColor, const gp_Vec & aDirection);
-
 };
 
 
@@ -971,6 +971,25 @@ None
 ***********************/
 class Vrml_FontStyle {
 	public:
+		/****************** Vrml_FontStyle ******************/
+		%feature("compactdefaultargs") Vrml_FontStyle;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aSize: float,optional
+	default value is 10
+aFamily: Vrml_FontStyleFamily,optional
+	default value is Vrml_SERIF
+aStyle: Vrml_FontStyleStyle,optional
+	default value is Vrml_NONE
+
+Returns
+-------
+None
+") Vrml_FontStyle;
+		 Vrml_FontStyle(const Standard_Real aSize = 10, const Vrml_FontStyleFamily aFamily = Vrml_SERIF, const Vrml_FontStyleStyle aStyle = Vrml_NONE);
+
 		/****************** Family ******************/
 		%feature("compactdefaultargs") Family;
 		%feature("autodoc", "No available documentation.
@@ -1051,25 +1070,6 @@ Vrml_FontStyleStyle
 ") Style;
 		Vrml_FontStyleStyle Style();
 
-		/****************** Vrml_FontStyle ******************/
-		%feature("compactdefaultargs") Vrml_FontStyle;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aSize: float,optional
-	default value is 10
-aFamily: Vrml_FontStyleFamily,optional
-	default value is Vrml_SERIF
-aStyle: Vrml_FontStyleStyle,optional
-	default value is Vrml_NONE
-
-Returns
--------
-None
-") Vrml_FontStyle;
-		 Vrml_FontStyle(const Standard_Real aSize = 10, const Vrml_FontStyleFamily aFamily = Vrml_SERIF, const Vrml_FontStyleStyle aStyle = Vrml_NONE);
-
 };
 
 
@@ -1084,14 +1084,6 @@ None
 *******************/
 class Vrml_Group {
 	public:
-
-        %feature("autodoc", "1");
-        %extend{
-            std::string PrintToString() {
-            std::stringstream s;
-            self->Print(s);
-            return s.str();}
-        };
 		/****************** Vrml_Group ******************/
 		%feature("compactdefaultargs") Vrml_Group;
 		%feature("autodoc", "No available documentation.
@@ -1102,6 +1094,14 @@ None
 ") Vrml_Group;
 		 Vrml_Group();
 
+
+        %feature("autodoc", "1");
+        %extend{
+            std::string PrintToString() {
+            std::stringstream s;
+            self->Print(s);
+            return s.str();}
+        };
 };
 
 
@@ -1116,110 +1116,6 @@ None
 ****************************/
 class Vrml_IndexedFaceSet : public Standard_Transient {
 	public:
-		/****************** CoordIndex ******************/
-		%feature("compactdefaultargs") CoordIndex;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<TColStd_HArray1OfInteger>
-") CoordIndex;
-		opencascade::handle<TColStd_HArray1OfInteger> CoordIndex();
-
-		/****************** MaterialIndex ******************/
-		%feature("compactdefaultargs") MaterialIndex;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<TColStd_HArray1OfInteger>
-") MaterialIndex;
-		opencascade::handle<TColStd_HArray1OfInteger> MaterialIndex();
-
-		/****************** NormalIndex ******************/
-		%feature("compactdefaultargs") NormalIndex;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<TColStd_HArray1OfInteger>
-") NormalIndex;
-		opencascade::handle<TColStd_HArray1OfInteger> NormalIndex();
-
-
-        %feature("autodoc", "1");
-        %extend{
-            std::string PrintToString() {
-            std::stringstream s;
-            self->Print(s);
-            return s.str();}
-        };
-		/****************** SetCoordIndex ******************/
-		%feature("compactdefaultargs") SetCoordIndex;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aCoordIndex: TColStd_HArray1OfInteger
-
-Returns
--------
-None
-") SetCoordIndex;
-		void SetCoordIndex(const opencascade::handle<TColStd_HArray1OfInteger> & aCoordIndex);
-
-		/****************** SetMaterialIndex ******************/
-		%feature("compactdefaultargs") SetMaterialIndex;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aMaterialIndex: TColStd_HArray1OfInteger
-
-Returns
--------
-None
-") SetMaterialIndex;
-		void SetMaterialIndex(const opencascade::handle<TColStd_HArray1OfInteger> & aMaterialIndex);
-
-		/****************** SetNormalIndex ******************/
-		%feature("compactdefaultargs") SetNormalIndex;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aNormalIndex: TColStd_HArray1OfInteger
-
-Returns
--------
-None
-") SetNormalIndex;
-		void SetNormalIndex(const opencascade::handle<TColStd_HArray1OfInteger> & aNormalIndex);
-
-		/****************** SetTextureCoordIndex ******************/
-		%feature("compactdefaultargs") SetTextureCoordIndex;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aTextureCoordIndex: TColStd_HArray1OfInteger
-
-Returns
--------
-None
-") SetTextureCoordIndex;
-		void SetTextureCoordIndex(const opencascade::handle<TColStd_HArray1OfInteger> & aTextureCoordIndex);
-
-		/****************** TextureCoordIndex ******************/
-		%feature("compactdefaultargs") TextureCoordIndex;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<TColStd_HArray1OfInteger>
-") TextureCoordIndex;
-		opencascade::handle<TColStd_HArray1OfInteger> TextureCoordIndex();
-
 		/****************** Vrml_IndexedFaceSet ******************/
 		%feature("compactdefaultargs") Vrml_IndexedFaceSet;
 		%feature("autodoc", "No available documentation.
@@ -1247,22 +1143,6 @@ None
 ") Vrml_IndexedFaceSet;
 		 Vrml_IndexedFaceSet();
 
-};
-
-
-%make_alias(Vrml_IndexedFaceSet)
-
-%extend Vrml_IndexedFaceSet {
-	%pythoncode {
-	__repr__ = _dumps_object
-	}
-};
-
-/****************************
-* class Vrml_IndexedLineSet *
-****************************/
-class Vrml_IndexedLineSet : public Standard_Transient {
-	public:
 		/****************** CoordIndex ******************/
 		%feature("compactdefaultargs") CoordIndex;
 		%feature("autodoc", "No available documentation.
@@ -1367,6 +1247,22 @@ opencascade::handle<TColStd_HArray1OfInteger>
 ") TextureCoordIndex;
 		opencascade::handle<TColStd_HArray1OfInteger> TextureCoordIndex();
 
+};
+
+
+%make_alias(Vrml_IndexedFaceSet)
+
+%extend Vrml_IndexedFaceSet {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
+/****************************
+* class Vrml_IndexedLineSet *
+****************************/
+class Vrml_IndexedLineSet : public Standard_Transient {
+	public:
 		/****************** Vrml_IndexedLineSet ******************/
 		%feature("compactdefaultargs") Vrml_IndexedLineSet;
 		%feature("autodoc", "No available documentation.
@@ -1394,6 +1290,110 @@ None
 ") Vrml_IndexedLineSet;
 		 Vrml_IndexedLineSet();
 
+		/****************** CoordIndex ******************/
+		%feature("compactdefaultargs") CoordIndex;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfInteger>
+") CoordIndex;
+		opencascade::handle<TColStd_HArray1OfInteger> CoordIndex();
+
+		/****************** MaterialIndex ******************/
+		%feature("compactdefaultargs") MaterialIndex;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfInteger>
+") MaterialIndex;
+		opencascade::handle<TColStd_HArray1OfInteger> MaterialIndex();
+
+		/****************** NormalIndex ******************/
+		%feature("compactdefaultargs") NormalIndex;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfInteger>
+") NormalIndex;
+		opencascade::handle<TColStd_HArray1OfInteger> NormalIndex();
+
+
+        %feature("autodoc", "1");
+        %extend{
+            std::string PrintToString() {
+            std::stringstream s;
+            self->Print(s);
+            return s.str();}
+        };
+		/****************** SetCoordIndex ******************/
+		%feature("compactdefaultargs") SetCoordIndex;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aCoordIndex: TColStd_HArray1OfInteger
+
+Returns
+-------
+None
+") SetCoordIndex;
+		void SetCoordIndex(const opencascade::handle<TColStd_HArray1OfInteger> & aCoordIndex);
+
+		/****************** SetMaterialIndex ******************/
+		%feature("compactdefaultargs") SetMaterialIndex;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aMaterialIndex: TColStd_HArray1OfInteger
+
+Returns
+-------
+None
+") SetMaterialIndex;
+		void SetMaterialIndex(const opencascade::handle<TColStd_HArray1OfInteger> & aMaterialIndex);
+
+		/****************** SetNormalIndex ******************/
+		%feature("compactdefaultargs") SetNormalIndex;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aNormalIndex: TColStd_HArray1OfInteger
+
+Returns
+-------
+None
+") SetNormalIndex;
+		void SetNormalIndex(const opencascade::handle<TColStd_HArray1OfInteger> & aNormalIndex);
+
+		/****************** SetTextureCoordIndex ******************/
+		%feature("compactdefaultargs") SetTextureCoordIndex;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aTextureCoordIndex: TColStd_HArray1OfInteger
+
+Returns
+-------
+None
+") SetTextureCoordIndex;
+		void SetTextureCoordIndex(const opencascade::handle<TColStd_HArray1OfInteger> & aTextureCoordIndex);
+
+		/****************** TextureCoordIndex ******************/
+		%feature("compactdefaultargs") TextureCoordIndex;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray1OfInteger>
+") TextureCoordIndex;
+		opencascade::handle<TColStd_HArray1OfInteger> TextureCoordIndex();
+
 };
 
 
@@ -1410,6 +1410,21 @@ None
 ******************/
 class Vrml_Info {
 	public:
+		/****************** Vrml_Info ******************/
+		%feature("compactdefaultargs") Vrml_Info;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aString: TCollection_AsciiString,optional
+	default value is '<Undefinedinfo>'
+
+Returns
+-------
+None
+") Vrml_Info;
+		 Vrml_Info(const TCollection_AsciiString & aString = "<Undefinedinfo>");
+
 
         %feature("autodoc", "1");
         %extend{
@@ -1442,21 +1457,6 @@ TCollection_AsciiString
 ") String;
 		TCollection_AsciiString String();
 
-		/****************** Vrml_Info ******************/
-		%feature("compactdefaultargs") Vrml_Info;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aString: TCollection_AsciiString,optional
-	default value is '<Undefinedinfo>'
-
-Returns
--------
-None
-") Vrml_Info;
-		 Vrml_Info(const TCollection_AsciiString & aString = "<Undefinedinfo>");
-
 };
 
 
@@ -1471,6 +1471,20 @@ None
 ************************/
 class Vrml_Instancing {
 	public:
+		/****************** Vrml_Instancing ******************/
+		%feature("compactdefaultargs") Vrml_Instancing;
+		%feature("autodoc", "Adds 'def <myname>' in anostream (vrml file).
+
+Parameters
+----------
+aString: TCollection_AsciiString
+
+Returns
+-------
+None
+") Vrml_Instancing;
+		 Vrml_Instancing(const TCollection_AsciiString & aString);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -1487,20 +1501,6 @@ class Vrml_Instancing {
             self->USE(s);
             return s.str();}
         };
-		/****************** Vrml_Instancing ******************/
-		%feature("compactdefaultargs") Vrml_Instancing;
-		%feature("autodoc", "Adds 'def <myname>' in anostream (vrml file).
-
-Parameters
-----------
-aString: TCollection_AsciiString
-
-Returns
--------
-None
-") Vrml_Instancing;
-		 Vrml_Instancing(const TCollection_AsciiString & aString);
-
 };
 
 
@@ -1515,6 +1515,31 @@ None
 *****************/
 class Vrml_LOD : public Standard_Transient {
 	public:
+		/****************** Vrml_LOD ******************/
+		%feature("compactdefaultargs") Vrml_LOD;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_LOD;
+		 Vrml_LOD();
+
+		/****************** Vrml_LOD ******************/
+		%feature("compactdefaultargs") Vrml_LOD;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aRange: TColStd_HArray1OfReal
+aCenter: gp_Vec
+
+Returns
+-------
+None
+") Vrml_LOD;
+		 Vrml_LOD(const opencascade::handle<TColStd_HArray1OfReal> & aRange, const gp_Vec & aCenter);
+
 		/****************** Center ******************/
 		%feature("compactdefaultargs") Center;
 		%feature("autodoc", "No available documentation.
@@ -1571,31 +1596,6 @@ None
 ") SetRange;
 		void SetRange(const opencascade::handle<TColStd_HArray1OfReal> & aRange);
 
-		/****************** Vrml_LOD ******************/
-		%feature("compactdefaultargs") Vrml_LOD;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_LOD;
-		 Vrml_LOD();
-
-		/****************** Vrml_LOD ******************/
-		%feature("compactdefaultargs") Vrml_LOD;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aRange: TColStd_HArray1OfReal
-aCenter: gp_Vec
-
-Returns
--------
-None
-") Vrml_LOD;
-		 Vrml_LOD(const opencascade::handle<TColStd_HArray1OfReal> & aRange, const gp_Vec & aCenter);
-
 };
 
 
@@ -1612,6 +1612,35 @@ None
 **********************/
 class Vrml_Material : public Standard_Transient {
 	public:
+		/****************** Vrml_Material ******************/
+		%feature("compactdefaultargs") Vrml_Material;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aAmbientColor: Quantity_HArray1OfColor
+aDiffuseColor: Quantity_HArray1OfColor
+aSpecularColor: Quantity_HArray1OfColor
+aEmissiveColor: Quantity_HArray1OfColor
+aShininess: TColStd_HArray1OfReal
+aTransparency: TColStd_HArray1OfReal
+
+Returns
+-------
+None
+") Vrml_Material;
+		 Vrml_Material(const opencascade::handle<Quantity_HArray1OfColor> & aAmbientColor, const opencascade::handle<Quantity_HArray1OfColor> & aDiffuseColor, const opencascade::handle<Quantity_HArray1OfColor> & aSpecularColor, const opencascade::handle<Quantity_HArray1OfColor> & aEmissiveColor, const opencascade::handle<TColStd_HArray1OfReal> & aShininess, const opencascade::handle<TColStd_HArray1OfReal> & aTransparency);
+
+		/****************** Vrml_Material ******************/
+		%feature("compactdefaultargs") Vrml_Material;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_Material;
+		 Vrml_Material();
+
 		/****************** AmbientColor ******************/
 		%feature("compactdefaultargs") AmbientColor;
 		%feature("autodoc", "No available documentation.
@@ -1764,35 +1793,6 @@ opencascade::handle<TColStd_HArray1OfReal>
 ") Transparency;
 		opencascade::handle<TColStd_HArray1OfReal> Transparency();
 
-		/****************** Vrml_Material ******************/
-		%feature("compactdefaultargs") Vrml_Material;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aAmbientColor: Quantity_HArray1OfColor
-aDiffuseColor: Quantity_HArray1OfColor
-aSpecularColor: Quantity_HArray1OfColor
-aEmissiveColor: Quantity_HArray1OfColor
-aShininess: TColStd_HArray1OfReal
-aTransparency: TColStd_HArray1OfReal
-
-Returns
--------
-None
-") Vrml_Material;
-		 Vrml_Material(const opencascade::handle<Quantity_HArray1OfColor> & aAmbientColor, const opencascade::handle<Quantity_HArray1OfColor> & aDiffuseColor, const opencascade::handle<Quantity_HArray1OfColor> & aSpecularColor, const opencascade::handle<Quantity_HArray1OfColor> & aEmissiveColor, const opencascade::handle<TColStd_HArray1OfReal> & aShininess, const opencascade::handle<TColStd_HArray1OfReal> & aTransparency);
-
-		/****************** Vrml_Material ******************/
-		%feature("compactdefaultargs") Vrml_Material;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_Material;
-		 Vrml_Material();
-
 };
 
 
@@ -1809,6 +1809,30 @@ None
 *****************************/
 class Vrml_MaterialBinding {
 	public:
+		/****************** Vrml_MaterialBinding ******************/
+		%feature("compactdefaultargs") Vrml_MaterialBinding;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aValue: Vrml_MaterialBindingAndNormalBinding
+
+Returns
+-------
+None
+") Vrml_MaterialBinding;
+		 Vrml_MaterialBinding(const Vrml_MaterialBindingAndNormalBinding aValue);
+
+		/****************** Vrml_MaterialBinding ******************/
+		%feature("compactdefaultargs") Vrml_MaterialBinding;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_MaterialBinding;
+		 Vrml_MaterialBinding();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -1841,30 +1865,6 @@ Vrml_MaterialBindingAndNormalBinding
 ") Value;
 		Vrml_MaterialBindingAndNormalBinding Value();
 
-		/****************** Vrml_MaterialBinding ******************/
-		%feature("compactdefaultargs") Vrml_MaterialBinding;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aValue: Vrml_MaterialBindingAndNormalBinding
-
-Returns
--------
-None
-") Vrml_MaterialBinding;
-		 Vrml_MaterialBinding(const Vrml_MaterialBindingAndNormalBinding aValue);
-
-		/****************** Vrml_MaterialBinding ******************/
-		%feature("compactdefaultargs") Vrml_MaterialBinding;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_MaterialBinding;
-		 Vrml_MaterialBinding();
-
 };
 
 
@@ -1879,6 +1879,30 @@ None
 *****************************/
 class Vrml_MatrixTransform {
 	public:
+		/****************** Vrml_MatrixTransform ******************/
+		%feature("compactdefaultargs") Vrml_MatrixTransform;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_MatrixTransform;
+		 Vrml_MatrixTransform();
+
+		/****************** Vrml_MatrixTransform ******************/
+		%feature("compactdefaultargs") Vrml_MatrixTransform;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aMatrix: gp_Trsf
+
+Returns
+-------
+None
+") Vrml_MatrixTransform;
+		 Vrml_MatrixTransform(const gp_Trsf & aMatrix);
+
 		/****************** Matrix ******************/
 		%feature("compactdefaultargs") Matrix;
 		%feature("autodoc", "No available documentation.
@@ -1911,30 +1935,6 @@ None
 ") SetMatrix;
 		void SetMatrix(const gp_Trsf & aMatrix);
 
-		/****************** Vrml_MatrixTransform ******************/
-		%feature("compactdefaultargs") Vrml_MatrixTransform;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_MatrixTransform;
-		 Vrml_MatrixTransform();
-
-		/****************** Vrml_MatrixTransform ******************/
-		%feature("compactdefaultargs") Vrml_MatrixTransform;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aMatrix: gp_Trsf
-
-Returns
--------
-None
-") Vrml_MatrixTransform;
-		 Vrml_MatrixTransform(const gp_Trsf & aMatrix);
-
 };
 
 
@@ -1949,6 +1949,30 @@ None
 ********************/
 class Vrml_Normal : public Standard_Transient {
 	public:
+		/****************** Vrml_Normal ******************/
+		%feature("compactdefaultargs") Vrml_Normal;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aVector: TColgp_HArray1OfVec
+
+Returns
+-------
+None
+") Vrml_Normal;
+		 Vrml_Normal(const opencascade::handle<TColgp_HArray1OfVec> & aVector);
+
+		/****************** Vrml_Normal ******************/
+		%feature("compactdefaultargs") Vrml_Normal;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_Normal;
+		 Vrml_Normal();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -1981,30 +2005,6 @@ opencascade::handle<TColgp_HArray1OfVec>
 ") Vector;
 		opencascade::handle<TColgp_HArray1OfVec> Vector();
 
-		/****************** Vrml_Normal ******************/
-		%feature("compactdefaultargs") Vrml_Normal;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aVector: TColgp_HArray1OfVec
-
-Returns
--------
-None
-") Vrml_Normal;
-		 Vrml_Normal(const opencascade::handle<TColgp_HArray1OfVec> & aVector);
-
-		/****************** Vrml_Normal ******************/
-		%feature("compactdefaultargs") Vrml_Normal;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_Normal;
-		 Vrml_Normal();
-
 };
 
 
@@ -2021,6 +2021,30 @@ None
 ***************************/
 class Vrml_NormalBinding {
 	public:
+		/****************** Vrml_NormalBinding ******************/
+		%feature("compactdefaultargs") Vrml_NormalBinding;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aValue: Vrml_MaterialBindingAndNormalBinding
+
+Returns
+-------
+None
+") Vrml_NormalBinding;
+		 Vrml_NormalBinding(const Vrml_MaterialBindingAndNormalBinding aValue);
+
+		/****************** Vrml_NormalBinding ******************/
+		%feature("compactdefaultargs") Vrml_NormalBinding;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_NormalBinding;
+		 Vrml_NormalBinding();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -2053,30 +2077,6 @@ Vrml_MaterialBindingAndNormalBinding
 ") Value;
 		Vrml_MaterialBindingAndNormalBinding Value();
 
-		/****************** Vrml_NormalBinding ******************/
-		%feature("compactdefaultargs") Vrml_NormalBinding;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aValue: Vrml_MaterialBindingAndNormalBinding
-
-Returns
--------
-None
-") Vrml_NormalBinding;
-		 Vrml_NormalBinding(const Vrml_MaterialBindingAndNormalBinding aValue);
-
-		/****************** Vrml_NormalBinding ******************/
-		%feature("compactdefaultargs") Vrml_NormalBinding;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_NormalBinding;
-		 Vrml_NormalBinding();
-
 };
 
 
@@ -2091,6 +2091,33 @@ None
 ********************************/
 class Vrml_OrthographicCamera {
 	public:
+		/****************** Vrml_OrthographicCamera ******************/
+		%feature("compactdefaultargs") Vrml_OrthographicCamera;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_OrthographicCamera;
+		 Vrml_OrthographicCamera();
+
+		/****************** Vrml_OrthographicCamera ******************/
+		%feature("compactdefaultargs") Vrml_OrthographicCamera;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPosition: gp_Vec
+aOrientation: Vrml_SFRotation
+aFocalDistance: float
+aHeight: float
+
+Returns
+-------
+None
+") Vrml_OrthographicCamera;
+		 Vrml_OrthographicCamera(const gp_Vec & aPosition, const Vrml_SFRotation & aOrientation, const Standard_Real aFocalDistance, const Standard_Real aHeight);
+
 		/****************** FocalDistance ******************/
 		%feature("compactdefaultargs") FocalDistance;
 		%feature("autodoc", "No available documentation.
@@ -2195,33 +2222,6 @@ None
 ") SetPosition;
 		void SetPosition(const gp_Vec & aPosition);
 
-		/****************** Vrml_OrthographicCamera ******************/
-		%feature("compactdefaultargs") Vrml_OrthographicCamera;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_OrthographicCamera;
-		 Vrml_OrthographicCamera();
-
-		/****************** Vrml_OrthographicCamera ******************/
-		%feature("compactdefaultargs") Vrml_OrthographicCamera;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aPosition: gp_Vec
-aOrientation: Vrml_SFRotation
-aFocalDistance: float
-aHeight: float
-
-Returns
--------
-None
-") Vrml_OrthographicCamera;
-		 Vrml_OrthographicCamera(const gp_Vec & aPosition, const Vrml_SFRotation & aOrientation, const Standard_Real aFocalDistance, const Standard_Real aHeight);
-
 };
 
 
@@ -2236,6 +2236,33 @@ None
 *******************************/
 class Vrml_PerspectiveCamera {
 	public:
+		/****************** Vrml_PerspectiveCamera ******************/
+		%feature("compactdefaultargs") Vrml_PerspectiveCamera;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_PerspectiveCamera;
+		 Vrml_PerspectiveCamera();
+
+		/****************** Vrml_PerspectiveCamera ******************/
+		%feature("compactdefaultargs") Vrml_PerspectiveCamera;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPosition: gp_Vec
+aOrientation: Vrml_SFRotation
+aFocalDistance: float
+aHeightAngle: float
+
+Returns
+-------
+None
+") Vrml_PerspectiveCamera;
+		 Vrml_PerspectiveCamera(const gp_Vec & aPosition, const Vrml_SFRotation & aOrientation, const Standard_Real aFocalDistance, const Standard_Real aHeightAngle);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "No available documentation.
@@ -2340,33 +2367,6 @@ None
 ") SetPosition;
 		void SetPosition(const gp_Vec & aPosition);
 
-		/****************** Vrml_PerspectiveCamera ******************/
-		%feature("compactdefaultargs") Vrml_PerspectiveCamera;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_PerspectiveCamera;
-		 Vrml_PerspectiveCamera();
-
-		/****************** Vrml_PerspectiveCamera ******************/
-		%feature("compactdefaultargs") Vrml_PerspectiveCamera;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aPosition: gp_Vec
-aOrientation: Vrml_SFRotation
-aFocalDistance: float
-aHeightAngle: float
-
-Returns
--------
-None
-") Vrml_PerspectiveCamera;
-		 Vrml_PerspectiveCamera(const gp_Vec & aPosition, const Vrml_SFRotation & aOrientation, const Standard_Real aFocalDistance, const Standard_Real aHeightAngle);
-
 };
 
 
@@ -2381,6 +2381,33 @@ None
 ************************/
 class Vrml_PointLight {
 	public:
+		/****************** Vrml_PointLight ******************/
+		%feature("compactdefaultargs") Vrml_PointLight;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_PointLight;
+		 Vrml_PointLight();
+
+		/****************** Vrml_PointLight ******************/
+		%feature("compactdefaultargs") Vrml_PointLight;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aOnOff: bool
+aIntensity: float
+aColor: Quantity_Color
+aLocation: gp_Vec
+
+Returns
+-------
+None
+") Vrml_PointLight;
+		 Vrml_PointLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color & aColor, const gp_Vec & aLocation);
+
 		/****************** Color ******************/
 		%feature("compactdefaultargs") Color;
 		%feature("autodoc", "No available documentation.
@@ -2485,33 +2512,6 @@ None
 ") SetOnOff;
 		void SetOnOff(const Standard_Boolean aOnOff);
 
-		/****************** Vrml_PointLight ******************/
-		%feature("compactdefaultargs") Vrml_PointLight;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_PointLight;
-		 Vrml_PointLight();
-
-		/****************** Vrml_PointLight ******************/
-		%feature("compactdefaultargs") Vrml_PointLight;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aOnOff: bool
-aIntensity: float
-aColor: Quantity_Color
-aLocation: gp_Vec
-
-Returns
--------
-None
-") Vrml_PointLight;
-		 Vrml_PointLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color & aColor, const gp_Vec & aLocation);
-
 };
 
 
@@ -2526,6 +2526,23 @@ None
 **********************/
 class Vrml_PointSet {
 	public:
+		/****************** Vrml_PointSet ******************/
+		%feature("compactdefaultargs") Vrml_PointSet;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aStartIndex: int,optional
+	default value is 0
+aNumPoints: int,optional
+	default value is -1
+
+Returns
+-------
+None
+") Vrml_PointSet;
+		 Vrml_PointSet(const Standard_Integer aStartIndex = 0, const Standard_Integer aNumPoints = -1);
+
 		/****************** NumPoints ******************/
 		%feature("compactdefaultargs") NumPoints;
 		%feature("autodoc", "No available documentation.
@@ -2582,23 +2599,6 @@ int
 ") StartIndex;
 		Standard_Integer StartIndex();
 
-		/****************** Vrml_PointSet ******************/
-		%feature("compactdefaultargs") Vrml_PointSet;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aStartIndex: int,optional
-	default value is 0
-aNumPoints: int,optional
-	default value is -1
-
-Returns
--------
-None
-") Vrml_PointSet;
-		 Vrml_PointSet(const Standard_Integer aStartIndex = 0, const Standard_Integer aNumPoints = -1);
-
 };
 
 
@@ -2613,6 +2613,30 @@ None
 **********************/
 class Vrml_Rotation {
 	public:
+		/****************** Vrml_Rotation ******************/
+		%feature("compactdefaultargs") Vrml_Rotation;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_Rotation;
+		 Vrml_Rotation();
+
+		/****************** Vrml_Rotation ******************/
+		%feature("compactdefaultargs") Vrml_Rotation;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aRotation: Vrml_SFRotation
+
+Returns
+-------
+None
+") Vrml_Rotation;
+		 Vrml_Rotation(const Vrml_SFRotation & aRotation);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -2645,30 +2669,6 @@ None
 ") SetRotation;
 		void SetRotation(const Vrml_SFRotation & aRotation);
 
-		/****************** Vrml_Rotation ******************/
-		%feature("compactdefaultargs") Vrml_Rotation;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_Rotation;
-		 Vrml_Rotation();
-
-		/****************** Vrml_Rotation ******************/
-		%feature("compactdefaultargs") Vrml_Rotation;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aRotation: Vrml_SFRotation
-
-Returns
--------
-None
-") Vrml_Rotation;
-		 Vrml_Rotation(const Vrml_SFRotation & aRotation);
-
 };
 
 
@@ -2683,6 +2683,33 @@ None
 *********************/
 class Vrml_SFImage : public Standard_Transient {
 	public:
+		/****************** Vrml_SFImage ******************/
+		%feature("compactdefaultargs") Vrml_SFImage;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_SFImage;
+		 Vrml_SFImage();
+
+		/****************** Vrml_SFImage ******************/
+		%feature("compactdefaultargs") Vrml_SFImage;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aWidth: int
+aHeight: int
+aNumber: Vrml_SFImageNumber
+anArray: TColStd_HArray1OfInteger
+
+Returns
+-------
+None
+") Vrml_SFImage;
+		 Vrml_SFImage(const Standard_Integer aWidth, const Standard_Integer aHeight, const Vrml_SFImageNumber aNumber, const opencascade::handle<TColStd_HArray1OfInteger> & anArray);
+
 		/****************** Array ******************/
 		%feature("compactdefaultargs") Array;
 		%feature("autodoc", "No available documentation.
@@ -2779,33 +2806,6 @@ None
 ") SetWidth;
 		void SetWidth(const Standard_Integer aWidth);
 
-		/****************** Vrml_SFImage ******************/
-		%feature("compactdefaultargs") Vrml_SFImage;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_SFImage;
-		 Vrml_SFImage();
-
-		/****************** Vrml_SFImage ******************/
-		%feature("compactdefaultargs") Vrml_SFImage;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aWidth: int
-aHeight: int
-aNumber: Vrml_SFImageNumber
-anArray: TColStd_HArray1OfInteger
-
-Returns
--------
-None
-") Vrml_SFImage;
-		 Vrml_SFImage(const Standard_Integer aWidth, const Standard_Integer aHeight, const Vrml_SFImageNumber aNumber, const opencascade::handle<TColStd_HArray1OfInteger> & anArray);
-
 		/****************** Width ******************/
 		%feature("compactdefaultargs") Width;
 		%feature("autodoc", "No available documentation.
@@ -2832,6 +2832,33 @@ int
 ************************/
 class Vrml_SFRotation {
 	public:
+		/****************** Vrml_SFRotation ******************/
+		%feature("compactdefaultargs") Vrml_SFRotation;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_SFRotation;
+		 Vrml_SFRotation();
+
+		/****************** Vrml_SFRotation ******************/
+		%feature("compactdefaultargs") Vrml_SFRotation;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aRotationX: float
+aRotationY: float
+aRotationZ: float
+anAngle: float
+
+Returns
+-------
+None
+") Vrml_SFRotation;
+		 Vrml_SFRotation(const Standard_Real aRotationX, const Standard_Real aRotationY, const Standard_Real aRotationZ, const Standard_Real anAngle);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "No available documentation.
@@ -2928,33 +2955,6 @@ None
 ") SetRotationZ;
 		void SetRotationZ(const Standard_Real aRotationZ);
 
-		/****************** Vrml_SFRotation ******************/
-		%feature("compactdefaultargs") Vrml_SFRotation;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_SFRotation;
-		 Vrml_SFRotation();
-
-		/****************** Vrml_SFRotation ******************/
-		%feature("compactdefaultargs") Vrml_SFRotation;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aRotationX: float
-aRotationY: float
-aRotationZ: float
-anAngle: float
-
-Returns
--------
-None
-") Vrml_SFRotation;
-		 Vrml_SFRotation(const Standard_Real aRotationX, const Standard_Real aRotationY, const Standard_Real aRotationZ, const Standard_Real anAngle);
-
 };
 
 
@@ -2969,6 +2969,30 @@ None
 *******************/
 class Vrml_Scale {
 	public:
+		/****************** Vrml_Scale ******************/
+		%feature("compactdefaultargs") Vrml_Scale;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_Scale;
+		 Vrml_Scale();
+
+		/****************** Vrml_Scale ******************/
+		%feature("compactdefaultargs") Vrml_Scale;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aScaleFactor: gp_Vec
+
+Returns
+-------
+None
+") Vrml_Scale;
+		 Vrml_Scale(const gp_Vec & aScaleFactor);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -3001,30 +3025,6 @@ None
 ") SetScaleFactor;
 		void SetScaleFactor(const gp_Vec & aScaleFactor);
 
-		/****************** Vrml_Scale ******************/
-		%feature("compactdefaultargs") Vrml_Scale;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_Scale;
-		 Vrml_Scale();
-
-		/****************** Vrml_Scale ******************/
-		%feature("compactdefaultargs") Vrml_Scale;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aScaleFactor: gp_Vec
-
-Returns
--------
-None
-") Vrml_Scale;
-		 Vrml_Scale(const gp_Vec & aScaleFactor);
-
 };
 
 
@@ -3039,6 +3039,30 @@ None
 ***********************/
 class Vrml_Separator {
 	public:
+		/****************** Vrml_Separator ******************/
+		%feature("compactdefaultargs") Vrml_Separator;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aRenderCulling: Vrml_SeparatorRenderCulling
+
+Returns
+-------
+None
+") Vrml_Separator;
+		 Vrml_Separator(const Vrml_SeparatorRenderCulling aRenderCulling);
+
+		/****************** Vrml_Separator ******************/
+		%feature("compactdefaultargs") Vrml_Separator;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_Separator;
+		 Vrml_Separator();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -3071,30 +3095,6 @@ None
 ") SetRenderCulling;
 		void SetRenderCulling(const Vrml_SeparatorRenderCulling aRenderCulling);
 
-		/****************** Vrml_Separator ******************/
-		%feature("compactdefaultargs") Vrml_Separator;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aRenderCulling: Vrml_SeparatorRenderCulling
-
-Returns
--------
-None
-") Vrml_Separator;
-		 Vrml_Separator(const Vrml_SeparatorRenderCulling aRenderCulling);
-
-		/****************** Vrml_Separator ******************/
-		%feature("compactdefaultargs") Vrml_Separator;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_Separator;
-		 Vrml_Separator();
-
 };
 
 
@@ -3109,6 +3109,27 @@ None
 ************************/
 class Vrml_ShapeHints {
 	public:
+		/****************** Vrml_ShapeHints ******************/
+		%feature("compactdefaultargs") Vrml_ShapeHints;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aVertexOrdering: Vrml_VertexOrdering,optional
+	default value is Vrml_UNKNOWN_ORDERING
+aShapeType: Vrml_ShapeType,optional
+	default value is Vrml_UNKNOWN_SHAPE_TYPE
+aFaceType: Vrml_FaceType,optional
+	default value is Vrml_CONVEX
+aAngle: float,optional
+	default value is 0.5
+
+Returns
+-------
+None
+") Vrml_ShapeHints;
+		 Vrml_ShapeHints(const Vrml_VertexOrdering aVertexOrdering = Vrml_UNKNOWN_ORDERING, const Vrml_ShapeType aShapeType = Vrml_UNKNOWN_SHAPE_TYPE, const Vrml_FaceType aFaceType = Vrml_CONVEX, const Standard_Real aAngle = 0.5);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "No available documentation.
@@ -3213,27 +3234,6 @@ Vrml_VertexOrdering
 ") VertexOrdering;
 		Vrml_VertexOrdering VertexOrdering();
 
-		/****************** Vrml_ShapeHints ******************/
-		%feature("compactdefaultargs") Vrml_ShapeHints;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aVertexOrdering: Vrml_VertexOrdering,optional
-	default value is Vrml_UNKNOWN_ORDERING
-aShapeType: Vrml_ShapeType,optional
-	default value is Vrml_UNKNOWN_SHAPE_TYPE
-aFaceType: Vrml_FaceType,optional
-	default value is Vrml_CONVEX
-aAngle: float,optional
-	default value is 0.5
-
-Returns
--------
-None
-") Vrml_ShapeHints;
-		 Vrml_ShapeHints(const Vrml_VertexOrdering aVertexOrdering = Vrml_UNKNOWN_ORDERING, const Vrml_ShapeType aShapeType = Vrml_UNKNOWN_SHAPE_TYPE, const Vrml_FaceType aFaceType = Vrml_CONVEX, const Standard_Real aAngle = 0.5);
-
 };
 
 
@@ -3248,6 +3248,21 @@ None
 ********************/
 class Vrml_Sphere {
 	public:
+		/****************** Vrml_Sphere ******************/
+		%feature("compactdefaultargs") Vrml_Sphere;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aRadius: float,optional
+	default value is 1
+
+Returns
+-------
+None
+") Vrml_Sphere;
+		 Vrml_Sphere(const Standard_Real aRadius = 1);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -3280,21 +3295,6 @@ None
 ") SetRadius;
 		void SetRadius(const Standard_Real aRadius);
 
-		/****************** Vrml_Sphere ******************/
-		%feature("compactdefaultargs") Vrml_Sphere;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aRadius: float,optional
-	default value is 1
-
-Returns
--------
-None
-") Vrml_Sphere;
-		 Vrml_Sphere(const Standard_Real aRadius = 1);
-
 };
 
 
@@ -3309,6 +3309,36 @@ None
 ***********************/
 class Vrml_SpotLight {
 	public:
+		/****************** Vrml_SpotLight ******************/
+		%feature("compactdefaultargs") Vrml_SpotLight;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_SpotLight;
+		 Vrml_SpotLight();
+
+		/****************** Vrml_SpotLight ******************/
+		%feature("compactdefaultargs") Vrml_SpotLight;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aOnOff: bool
+aIntensity: float
+aColor: Quantity_Color
+aLocation: gp_Vec
+aDirection: gp_Vec
+aDropOffRate: float
+aCutOffAngle: float
+
+Returns
+-------
+None
+") Vrml_SpotLight;
+		 Vrml_SpotLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color & aColor, const gp_Vec & aLocation, const gp_Vec & aDirection, const Standard_Real aDropOffRate, const Standard_Real aCutOffAngle);
+
 		/****************** Color ******************/
 		%feature("compactdefaultargs") Color;
 		%feature("autodoc", "No available documentation.
@@ -3485,36 +3515,6 @@ None
 ") SetOnOff;
 		void SetOnOff(const Standard_Boolean anOnOff);
 
-		/****************** Vrml_SpotLight ******************/
-		%feature("compactdefaultargs") Vrml_SpotLight;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_SpotLight;
-		 Vrml_SpotLight();
-
-		/****************** Vrml_SpotLight ******************/
-		%feature("compactdefaultargs") Vrml_SpotLight;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aOnOff: bool
-aIntensity: float
-aColor: Quantity_Color
-aLocation: gp_Vec
-aDirection: gp_Vec
-aDropOffRate: float
-aCutOffAngle: float
-
-Returns
--------
-None
-") Vrml_SpotLight;
-		 Vrml_SpotLight(const Standard_Boolean aOnOff, const Standard_Real aIntensity, const Quantity_Color & aColor, const gp_Vec & aLocation, const gp_Vec & aDirection, const Standard_Real aDropOffRate, const Standard_Real aCutOffAngle);
-
 };
 
 
@@ -3529,6 +3529,21 @@ None
 ********************/
 class Vrml_Switch {
 	public:
+		/****************** Vrml_Switch ******************/
+		%feature("compactdefaultargs") Vrml_Switch;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aWhichChild: int,optional
+	default value is -1
+
+Returns
+-------
+None
+") Vrml_Switch;
+		 Vrml_Switch(const Standard_Integer aWhichChild = -1);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -3550,21 +3565,6 @@ Returns
 None
 ") SetWhichChild;
 		void SetWhichChild(const Standard_Integer aWhichChild);
-
-		/****************** Vrml_Switch ******************/
-		%feature("compactdefaultargs") Vrml_Switch;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aWhichChild: int,optional
-	default value is -1
-
-Returns
--------
-None
-") Vrml_Switch;
-		 Vrml_Switch(const Standard_Integer aWhichChild = -1);
 
 		/****************** WhichChild ******************/
 		%feature("compactdefaultargs") WhichChild;
@@ -3590,6 +3590,33 @@ int
 **********************/
 class Vrml_Texture2 {
 	public:
+		/****************** Vrml_Texture2 ******************/
+		%feature("compactdefaultargs") Vrml_Texture2;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_Texture2;
+		 Vrml_Texture2();
+
+		/****************** Vrml_Texture2 ******************/
+		%feature("compactdefaultargs") Vrml_Texture2;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aFilename: TCollection_AsciiString
+aImage: Vrml_SFImage
+aWrapS: Vrml_Texture2Wrap
+aWrapT: Vrml_Texture2Wrap
+
+Returns
+-------
+None
+") Vrml_Texture2;
+		 Vrml_Texture2(const TCollection_AsciiString & aFilename, const opencascade::handle<Vrml_SFImage> & aImage, const Vrml_Texture2Wrap aWrapS, const Vrml_Texture2Wrap aWrapT);
+
 		/****************** Filename ******************/
 		%feature("compactdefaultargs") Filename;
 		%feature("autodoc", "No available documentation.
@@ -3674,33 +3701,6 @@ None
 ") SetWrapT;
 		void SetWrapT(const Vrml_Texture2Wrap aWrapT);
 
-		/****************** Vrml_Texture2 ******************/
-		%feature("compactdefaultargs") Vrml_Texture2;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_Texture2;
-		 Vrml_Texture2();
-
-		/****************** Vrml_Texture2 ******************/
-		%feature("compactdefaultargs") Vrml_Texture2;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aFilename: TCollection_AsciiString
-aImage: Vrml_SFImage
-aWrapS: Vrml_Texture2Wrap
-aWrapT: Vrml_Texture2Wrap
-
-Returns
--------
-None
-") Vrml_Texture2;
-		 Vrml_Texture2(const TCollection_AsciiString & aFilename, const opencascade::handle<Vrml_SFImage> & aImage, const Vrml_Texture2Wrap aWrapS, const Vrml_Texture2Wrap aWrapT);
-
 		/****************** WrapS ******************/
 		%feature("compactdefaultargs") WrapS;
 		%feature("autodoc", "No available documentation.
@@ -3735,6 +3735,33 @@ Vrml_Texture2Wrap
 *******************************/
 class Vrml_Texture2Transform {
 	public:
+		/****************** Vrml_Texture2Transform ******************/
+		%feature("compactdefaultargs") Vrml_Texture2Transform;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_Texture2Transform;
+		 Vrml_Texture2Transform();
+
+		/****************** Vrml_Texture2Transform ******************/
+		%feature("compactdefaultargs") Vrml_Texture2Transform;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aTranslation: gp_Vec2d
+aRotation: float
+aScaleFactor: gp_Vec2d
+aCenter: gp_Vec2d
+
+Returns
+-------
+None
+") Vrml_Texture2Transform;
+		 Vrml_Texture2Transform(const gp_Vec2d & aTranslation, const Standard_Real aRotation, const gp_Vec2d & aScaleFactor, const gp_Vec2d & aCenter);
+
 		/****************** Center ******************/
 		%feature("compactdefaultargs") Center;
 		%feature("autodoc", "No available documentation.
@@ -3839,33 +3866,6 @@ gp_Vec2d
 ") Translation;
 		gp_Vec2d Translation();
 
-		/****************** Vrml_Texture2Transform ******************/
-		%feature("compactdefaultargs") Vrml_Texture2Transform;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_Texture2Transform;
-		 Vrml_Texture2Transform();
-
-		/****************** Vrml_Texture2Transform ******************/
-		%feature("compactdefaultargs") Vrml_Texture2Transform;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aTranslation: gp_Vec2d
-aRotation: float
-aScaleFactor: gp_Vec2d
-aCenter: gp_Vec2d
-
-Returns
--------
-None
-") Vrml_Texture2Transform;
-		 Vrml_Texture2Transform(const gp_Vec2d & aTranslation, const Standard_Real aRotation, const gp_Vec2d & aScaleFactor, const gp_Vec2d & aCenter);
-
 };
 
 
@@ -3880,6 +3880,30 @@ None
 ********************************/
 class Vrml_TextureCoordinate2 : public Standard_Transient {
 	public:
+		/****************** Vrml_TextureCoordinate2 ******************/
+		%feature("compactdefaultargs") Vrml_TextureCoordinate2;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_TextureCoordinate2;
+		 Vrml_TextureCoordinate2();
+
+		/****************** Vrml_TextureCoordinate2 ******************/
+		%feature("compactdefaultargs") Vrml_TextureCoordinate2;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aPoint: TColgp_HArray1OfVec2d
+
+Returns
+-------
+None
+") Vrml_TextureCoordinate2;
+		 Vrml_TextureCoordinate2(const opencascade::handle<TColgp_HArray1OfVec2d> & aPoint);
+
 		/****************** Point ******************/
 		%feature("compactdefaultargs") Point;
 		%feature("autodoc", "No available documentation.
@@ -3912,30 +3936,6 @@ None
 ") SetPoint;
 		void SetPoint(const opencascade::handle<TColgp_HArray1OfVec2d> & aPoint);
 
-		/****************** Vrml_TextureCoordinate2 ******************/
-		%feature("compactdefaultargs") Vrml_TextureCoordinate2;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_TextureCoordinate2;
-		 Vrml_TextureCoordinate2();
-
-		/****************** Vrml_TextureCoordinate2 ******************/
-		%feature("compactdefaultargs") Vrml_TextureCoordinate2;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aPoint: TColgp_HArray1OfVec2d
-
-Returns
--------
-None
-") Vrml_TextureCoordinate2;
-		 Vrml_TextureCoordinate2(const opencascade::handle<TColgp_HArray1OfVec2d> & aPoint);
-
 };
 
 
@@ -3952,6 +3952,34 @@ None
 ***********************/
 class Vrml_Transform {
 	public:
+		/****************** Vrml_Transform ******************/
+		%feature("compactdefaultargs") Vrml_Transform;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_Transform;
+		 Vrml_Transform();
+
+		/****************** Vrml_Transform ******************/
+		%feature("compactdefaultargs") Vrml_Transform;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aTranslation: gp_Vec
+aRotation: Vrml_SFRotation
+aScaleFactor: gp_Vec
+aScaleOrientation: Vrml_SFRotation
+aCenter: gp_Vec
+
+Returns
+-------
+None
+") Vrml_Transform;
+		 Vrml_Transform(const gp_Vec & aTranslation, const Vrml_SFRotation & aRotation, const gp_Vec & aScaleFactor, const Vrml_SFRotation & aScaleOrientation, const gp_Vec & aCenter);
+
 		/****************** Center ******************/
 		%feature("compactdefaultargs") Center;
 		%feature("autodoc", "No available documentation.
@@ -4080,34 +4108,6 @@ gp_Vec
 ") Translation;
 		gp_Vec Translation();
 
-		/****************** Vrml_Transform ******************/
-		%feature("compactdefaultargs") Vrml_Transform;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_Transform;
-		 Vrml_Transform();
-
-		/****************** Vrml_Transform ******************/
-		%feature("compactdefaultargs") Vrml_Transform;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aTranslation: gp_Vec
-aRotation: Vrml_SFRotation
-aScaleFactor: gp_Vec
-aScaleOrientation: Vrml_SFRotation
-aCenter: gp_Vec
-
-Returns
--------
-None
-") Vrml_Transform;
-		 Vrml_Transform(const gp_Vec & aTranslation, const Vrml_SFRotation & aRotation, const gp_Vec & aScaleFactor, const Vrml_SFRotation & aScaleOrientation, const gp_Vec & aCenter);
-
 };
 
 
@@ -4122,14 +4122,6 @@ None
 ********************************/
 class Vrml_TransformSeparator {
 	public:
-
-        %feature("autodoc", "1");
-        %extend{
-            std::string PrintToString() {
-            std::stringstream s;
-            self->Print(s);
-            return s.str();}
-        };
 		/****************** Vrml_TransformSeparator ******************/
 		%feature("compactdefaultargs") Vrml_TransformSeparator;
 		%feature("autodoc", "No available documentation.
@@ -4140,6 +4132,14 @@ None
 ") Vrml_TransformSeparator;
 		 Vrml_TransformSeparator();
 
+
+        %feature("autodoc", "1");
+        %extend{
+            std::string PrintToString() {
+            std::stringstream s;
+            self->Print(s);
+            return s.str();}
+        };
 };
 
 
@@ -4154,6 +4154,30 @@ None
 *************************/
 class Vrml_Translation {
 	public:
+		/****************** Vrml_Translation ******************/
+		%feature("compactdefaultargs") Vrml_Translation;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_Translation;
+		 Vrml_Translation();
+
+		/****************** Vrml_Translation ******************/
+		%feature("compactdefaultargs") Vrml_Translation;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aTranslation: gp_Vec
+
+Returns
+-------
+None
+") Vrml_Translation;
+		 Vrml_Translation(const gp_Vec & aTranslation);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -4186,30 +4210,6 @@ gp_Vec
 ") Translation;
 		gp_Vec Translation();
 
-		/****************** Vrml_Translation ******************/
-		%feature("compactdefaultargs") Vrml_Translation;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_Translation;
-		 Vrml_Translation();
-
-		/****************** Vrml_Translation ******************/
-		%feature("compactdefaultargs") Vrml_Translation;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aTranslation: gp_Vec
-
-Returns
--------
-None
-") Vrml_Translation;
-		 Vrml_Translation(const gp_Vec & aTranslation);
-
 };
 
 
@@ -4224,6 +4224,25 @@ None
 ***********************/
 class Vrml_WWWAnchor {
 	public:
+		/****************** Vrml_WWWAnchor ******************/
+		%feature("compactdefaultargs") Vrml_WWWAnchor;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_AsciiString,optional
+	default value is ""
+aDescription: TCollection_AsciiString,optional
+	default value is ""
+aMap: Vrml_WWWAnchorMap,optional
+	default value is Vrml_MAP_NONE
+
+Returns
+-------
+None
+") Vrml_WWWAnchor;
+		 Vrml_WWWAnchor(const TCollection_AsciiString & aName = "", const TCollection_AsciiString & aDescription = "", const Vrml_WWWAnchorMap aMap = Vrml_MAP_NONE);
+
 		/****************** Description ******************/
 		%feature("compactdefaultargs") Description;
 		%feature("autodoc", "No available documentation.
@@ -4304,25 +4323,6 @@ None
 ") SetName;
 		void SetName(const TCollection_AsciiString & aName);
 
-		/****************** Vrml_WWWAnchor ******************/
-		%feature("compactdefaultargs") Vrml_WWWAnchor;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aName: TCollection_AsciiString,optional
-	default value is ""
-aDescription: TCollection_AsciiString,optional
-	default value is ""
-aMap: Vrml_WWWAnchorMap,optional
-	default value is Vrml_MAP_NONE
-
-Returns
--------
-None
-") Vrml_WWWAnchor;
-		 Vrml_WWWAnchor(const TCollection_AsciiString & aName = "", const TCollection_AsciiString & aDescription = "", const Vrml_WWWAnchorMap aMap = Vrml_MAP_NONE);
-
 };
 
 
@@ -4337,6 +4337,32 @@ None
 ***********************/
 class Vrml_WWWInline {
 	public:
+		/****************** Vrml_WWWInline ******************/
+		%feature("compactdefaultargs") Vrml_WWWInline;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Vrml_WWWInline;
+		 Vrml_WWWInline();
+
+		/****************** Vrml_WWWInline ******************/
+		%feature("compactdefaultargs") Vrml_WWWInline;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: TCollection_AsciiString
+aBboxSize: gp_Vec
+aBboxCenter: gp_Vec
+
+Returns
+-------
+None
+") Vrml_WWWInline;
+		 Vrml_WWWInline(const TCollection_AsciiString & aName, const gp_Vec & aBboxSize, const gp_Vec & aBboxCenter);
+
 		/****************** BboxCenter ******************/
 		%feature("compactdefaultargs") BboxCenter;
 		%feature("autodoc", "No available documentation.
@@ -4416,32 +4442,6 @@ Returns
 None
 ") SetName;
 		void SetName(const TCollection_AsciiString & aName);
-
-		/****************** Vrml_WWWInline ******************/
-		%feature("compactdefaultargs") Vrml_WWWInline;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Vrml_WWWInline;
-		 Vrml_WWWInline();
-
-		/****************** Vrml_WWWInline ******************/
-		%feature("compactdefaultargs") Vrml_WWWInline;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aName: TCollection_AsciiString
-aBboxSize: gp_Vec
-aBboxCenter: gp_Vec
-
-Returns
--------
-None
-") Vrml_WWWInline;
-		 Vrml_WWWInline(const TCollection_AsciiString & aName, const gp_Vec & aBboxSize, const gp_Vec & aBboxCenter);
 
 };
 

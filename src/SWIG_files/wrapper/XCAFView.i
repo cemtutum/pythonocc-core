@@ -91,6 +91,30 @@ class XCAFView_ProjectionType:
 ************************/
 class XCAFView_Object : public Standard_Transient {
 	public:
+		/****************** XCAFView_Object ******************/
+		%feature("compactdefaultargs") XCAFView_Object;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFView_Object;
+		 XCAFView_Object();
+
+		/****************** XCAFView_Object ******************/
+		%feature("compactdefaultargs") XCAFView_Object;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theObj: XCAFView_Object
+
+Returns
+-------
+None
+") XCAFView_Object;
+		 XCAFView_Object(const opencascade::handle<XCAFView_Object> & theObj);
+
 		/****************** BackPlaneDistance ******************/
 		%feature("compactdefaultargs") BackPlaneDistance;
 		%feature("autodoc", "No available documentation.
@@ -471,30 +495,6 @@ Returns
 float
 ") WindowVerticalSize;
 		Standard_Real WindowVerticalSize();
-
-		/****************** XCAFView_Object ******************/
-		%feature("compactdefaultargs") XCAFView_Object;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFView_Object;
-		 XCAFView_Object();
-
-		/****************** XCAFView_Object ******************/
-		%feature("compactdefaultargs") XCAFView_Object;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theObj: XCAFView_Object
-
-Returns
--------
-None
-") XCAFView_Object;
-		 XCAFView_Object(const opencascade::handle<XCAFView_Object> & theObj);
 
 		/****************** ZoomFactor ******************/
 		%feature("compactdefaultargs") ZoomFactor;

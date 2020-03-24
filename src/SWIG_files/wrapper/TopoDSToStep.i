@@ -44,8 +44,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topodstostep.html
 #include<Transfer_module.hxx>
 #include<TopoDS_module.hxx>
 #include<TCollection_module.hxx>
-#include<StepShape_module.hxx>
 #include<MoniTool_module.hxx>
+#include<StepShape_module.hxx>
 #include<TColStd_module.hxx>
 #include<Message_module.hxx>
 #include<StepBasic_module.hxx>
@@ -65,8 +65,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topodstostep.html
 %import Transfer.i
 %import TopoDS.i
 %import TCollection.i
-%import StepShape.i
 %import MoniTool.i
+%import StepShape.i
 %import TColStd.i
 
 %pythoncode {
@@ -345,6 +345,31 @@ bool
 **************************/
 class TopoDSToStep_Tool {
 	public:
+		/****************** TopoDSToStep_Tool ******************/
+		%feature("compactdefaultargs") TopoDSToStep_Tool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopoDSToStep_Tool;
+		 TopoDSToStep_Tool();
+
+		/****************** TopoDSToStep_Tool ******************/
+		%feature("compactdefaultargs") TopoDSToStep_Tool;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+M: MoniTool_DataMapOfShapeTransient
+FacetedContext: bool
+
+Returns
+-------
+None
+") TopoDSToStep_Tool;
+		 TopoDSToStep_Tool(const MoniTool_DataMapOfShapeTransient & M, const Standard_Boolean FacetedContext);
+
 		/****************** Bind ******************/
 		%feature("compactdefaultargs") Bind;
 		%feature("autodoc", "No available documentation.
@@ -587,31 +612,6 @@ bool
 ") SurfaceReversed;
 		Standard_Boolean SurfaceReversed();
 
-		/****************** TopoDSToStep_Tool ******************/
-		%feature("compactdefaultargs") TopoDSToStep_Tool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopoDSToStep_Tool;
-		 TopoDSToStep_Tool();
-
-		/****************** TopoDSToStep_Tool ******************/
-		%feature("compactdefaultargs") TopoDSToStep_Tool;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-M: MoniTool_DataMapOfShapeTransient
-FacetedContext: bool
-
-Returns
--------
-None
-") TopoDSToStep_Tool;
-		 TopoDSToStep_Tool(const MoniTool_DataMapOfShapeTransient & M, const Standard_Boolean FacetedContext);
-
 };
 
 
@@ -626,32 +626,6 @@ None
 *****************************/
 class TopoDSToStep_Builder : public TopoDSToStep_Root {
 	public:
-		/****************** Error ******************/
-		%feature("compactdefaultargs") Error;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TopoDSToStep_BuilderError
-") Error;
-		TopoDSToStep_BuilderError Error();
-
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-T: TopoDSToStep_Tool
-FP: Transfer_FinderProcess
-
-Returns
--------
-None
-") Init;
-		void Init(const TopoDS_Shape & S, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
-
 		/****************** TopoDSToStep_Builder ******************/
 		%feature("compactdefaultargs") TopoDSToStep_Builder;
 		%feature("autodoc", "No available documentation.
@@ -677,6 +651,32 @@ Returns
 None
 ") TopoDSToStep_Builder;
 		 TopoDSToStep_Builder(const TopoDS_Shape & S, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
+
+		/****************** Error ******************/
+		%feature("compactdefaultargs") Error;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDSToStep_BuilderError
+") Error;
+		TopoDSToStep_BuilderError Error();
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+T: TopoDSToStep_Tool
+FP: Transfer_FinderProcess
+
+Returns
+-------
+None
+") Init;
+		void Init(const TopoDS_Shape & S, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -996,32 +996,6 @@ opencascade::handle<StepShape_ShellBasedSurfaceModel>
 **********************************/
 class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
 	public:
-		/****************** Error ******************/
-		%feature("compactdefaultargs") Error;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TopoDSToStep_MakeEdgeError
-") Error;
-		TopoDSToStep_MakeEdgeError Error();
-
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-E: TopoDS_Edge
-T: TopoDSToStep_Tool
-FP: Transfer_FinderProcess
-
-Returns
--------
-None
-") Init;
-		void Init(const TopoDS_Edge & E, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
-
 		/****************** TopoDSToStep_MakeStepEdge ******************/
 		%feature("compactdefaultargs") TopoDSToStep_MakeStepEdge;
 		%feature("autodoc", "No available documentation.
@@ -1048,6 +1022,32 @@ None
 ") TopoDSToStep_MakeStepEdge;
 		 TopoDSToStep_MakeStepEdge(const TopoDS_Edge & E, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
 
+		/****************** Error ******************/
+		%feature("compactdefaultargs") Error;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDSToStep_MakeEdgeError
+") Error;
+		TopoDSToStep_MakeEdgeError Error();
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: TopoDS_Edge
+T: TopoDSToStep_Tool
+FP: Transfer_FinderProcess
+
+Returns
+-------
+None
+") Init;
+		void Init(const TopoDS_Edge & E, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
+
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -1072,32 +1072,6 @@ opencascade::handle<StepShape_TopologicalRepresentationItem>
 **********************************/
 class TopoDSToStep_MakeStepFace : public TopoDSToStep_Root {
 	public:
-		/****************** Error ******************/
-		%feature("compactdefaultargs") Error;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TopoDSToStep_MakeFaceError
-") Error;
-		TopoDSToStep_MakeFaceError Error();
-
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-F: TopoDS_Face
-T: TopoDSToStep_Tool
-FP: Transfer_FinderProcess
-
-Returns
--------
-None
-") Init;
-		void Init(const TopoDS_Face & F, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
-
 		/****************** TopoDSToStep_MakeStepFace ******************/
 		%feature("compactdefaultargs") TopoDSToStep_MakeStepFace;
 		%feature("autodoc", "No available documentation.
@@ -1124,6 +1098,32 @@ None
 ") TopoDSToStep_MakeStepFace;
 		 TopoDSToStep_MakeStepFace(const TopoDS_Face & F, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
 
+		/****************** Error ******************/
+		%feature("compactdefaultargs") Error;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDSToStep_MakeFaceError
+") Error;
+		TopoDSToStep_MakeFaceError Error();
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+F: TopoDS_Face
+T: TopoDSToStep_Tool
+FP: Transfer_FinderProcess
+
+Returns
+-------
+None
+") Init;
+		void Init(const TopoDS_Face & F, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
+
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -1148,32 +1148,6 @@ opencascade::handle<StepShape_TopologicalRepresentationItem>
 ************************************/
 class TopoDSToStep_MakeStepVertex : public TopoDSToStep_Root {
 	public:
-		/****************** Error ******************/
-		%feature("compactdefaultargs") Error;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TopoDSToStep_MakeVertexError
-") Error;
-		TopoDSToStep_MakeVertexError Error();
-
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-V: TopoDS_Vertex
-T: TopoDSToStep_Tool
-FP: Transfer_FinderProcess
-
-Returns
--------
-None
-") Init;
-		void Init(const TopoDS_Vertex & V, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
-
 		/****************** TopoDSToStep_MakeStepVertex ******************/
 		%feature("compactdefaultargs") TopoDSToStep_MakeStepVertex;
 		%feature("autodoc", "No available documentation.
@@ -1200,6 +1174,32 @@ None
 ") TopoDSToStep_MakeStepVertex;
 		 TopoDSToStep_MakeStepVertex(const TopoDS_Vertex & V, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
 
+		/****************** Error ******************/
+		%feature("compactdefaultargs") Error;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDSToStep_MakeVertexError
+") Error;
+		TopoDSToStep_MakeVertexError Error();
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+V: TopoDS_Vertex
+T: TopoDSToStep_Tool
+FP: Transfer_FinderProcess
+
+Returns
+-------
+None
+") Init;
+		void Init(const TopoDS_Vertex & V, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
+
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -1224,32 +1224,6 @@ opencascade::handle<StepShape_TopologicalRepresentationItem>
 **********************************/
 class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
 	public:
-		/****************** Error ******************/
-		%feature("compactdefaultargs") Error;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TopoDSToStep_MakeWireError
-") Error;
-		TopoDSToStep_MakeWireError Error();
-
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-W: TopoDS_Wire
-T: TopoDSToStep_Tool
-FP: Transfer_FinderProcess
-
-Returns
--------
-None
-") Init;
-		void Init(const TopoDS_Wire & W, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
-
 		/****************** TopoDSToStep_MakeStepWire ******************/
 		%feature("compactdefaultargs") TopoDSToStep_MakeStepWire;
 		%feature("autodoc", "No available documentation.
@@ -1276,6 +1250,32 @@ None
 ") TopoDSToStep_MakeStepWire;
 		 TopoDSToStep_MakeStepWire(const TopoDS_Wire & W, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
 
+		/****************** Error ******************/
+		%feature("compactdefaultargs") Error;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDSToStep_MakeWireError
+") Error;
+		TopoDSToStep_MakeWireError Error();
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+W: TopoDS_Wire
+T: TopoDSToStep_Tool
+FP: Transfer_FinderProcess
+
+Returns
+-------
+None
+") Init;
+		void Init(const TopoDS_Wire & W, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
+
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -1300,6 +1300,32 @@ opencascade::handle<StepShape_TopologicalRepresentationItem>
 **************************************/
 class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
 	public:
+		/****************** TopoDSToStep_WireframeBuilder ******************/
+		%feature("compactdefaultargs") TopoDSToStep_WireframeBuilder;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopoDSToStep_WireframeBuilder;
+		 TopoDSToStep_WireframeBuilder();
+
+		/****************** TopoDSToStep_WireframeBuilder ******************/
+		%feature("compactdefaultargs") TopoDSToStep_WireframeBuilder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+T: TopoDSToStep_Tool
+FP: Transfer_FinderProcess
+
+Returns
+-------
+None
+") TopoDSToStep_WireframeBuilder;
+		 TopoDSToStep_WireframeBuilder(const TopoDS_Shape & S, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
+
 		/****************** Error ******************/
 		%feature("compactdefaultargs") Error;
 		%feature("autodoc", "No available documentation.
@@ -1374,32 +1400,6 @@ Returns
 None
 ") Init;
 		void Init(const TopoDS_Shape & S, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
-
-		/****************** TopoDSToStep_WireframeBuilder ******************/
-		%feature("compactdefaultargs") TopoDSToStep_WireframeBuilder;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopoDSToStep_WireframeBuilder;
-		 TopoDSToStep_WireframeBuilder();
-
-		/****************** TopoDSToStep_WireframeBuilder ******************/
-		%feature("compactdefaultargs") TopoDSToStep_WireframeBuilder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-T: TopoDSToStep_Tool
-FP: Transfer_FinderProcess
-
-Returns
--------
-None
-") TopoDSToStep_WireframeBuilder;
-		 TopoDSToStep_WireframeBuilder(const TopoDS_Shape & S, TopoDSToStep_Tool & T, const opencascade::handle<Transfer_FinderProcess> & FP);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;

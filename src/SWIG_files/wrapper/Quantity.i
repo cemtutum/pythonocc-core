@@ -1296,87 +1296,87 @@ class Quantity_PhysicalQuantity:
 /* end templates declaration */
 
 /* typedefs */
-typedef Standard_Real Quantity_ElectricPotential;
-typedef Standard_Real Quantity_Resistivity;
 typedef Standard_Real Quantity_AbsorbedDose;
-typedef Standard_Real Quantity_ElectricFieldStrength;
-typedef Standard_Real Quantity_MolarMass;
-typedef Standard_Real Quantity_Velocity;
-typedef Standard_Real Quantity_Admittance;
-typedef Standard_Real Quantity_MagneticFieldStrength;
-typedef Standard_Real Quantity_Momentum;
-typedef Standard_Real Quantity_Content;
+typedef Standard_Real Quantity_Acceleration;
 typedef Standard_Real Quantity_AcousticIntensity;
-typedef Standard_Real Quantity_DoseEquivalent;
-typedef Standard_Real Quantity_Rate;
 typedef Standard_Real Quantity_Activity;
-typedef Standard_Real Quantity_Normality;
-typedef Standard_Real Quantity_Impedance;
-typedef Standard_Real Quantity_Energy;
-typedef Standard_Real Quantity_SoundIntensity;
-typedef Standard_Real Quantity_Luminance;
-typedef Standard_Real Quantity_CoefficientOfExpansion;
-typedef Standard_Real Quantity_Illuminance;
-typedef Standard_Real Quantity_Capacitance;
-typedef Standard_Real Quantity_Weight;
-typedef Standard_Real Quantity_Ratio;
-typedef Standard_Real Quantity_MolarConcentration;
-typedef Standard_Real Quantity_Quotient;
-typedef Standard_Real Quantity_Factor;
-typedef Standard_Real Quantity_MassFlow;
-typedef Standard_Real Quantity_Consumption;
-typedef Standard_Real Quantity_Entropy;
-typedef NCollection_Array1<Quantity_Color> Quantity_Array1OfColor;
-typedef Standard_Real Quantity_Concentration;
-typedef Standard_Real Quantity_Pressure;
-typedef Standard_Real Quantity_Resistance;
-typedef Standard_Real Quantity_Frequency;
-typedef Standard_Real Quantity_ThermalConductivity;
-typedef Standard_Real Quantity_Length;
-typedef Standard_Real Quantity_Inductance;
-typedef Standard_Real Quantity_Torque;
-typedef Standard_Real Quantity_Mass;
-typedef Standard_Real Quantity_SurfaceTension;
-typedef Standard_Real Quantity_KineticMoment;
-typedef Standard_Real Quantity_Work;
-typedef Standard_Real Quantity_Speed;
-typedef Standard_Real Quantity_Index;
-typedef Standard_Real Quantity_Power;
-typedef NCollection_Array2<Quantity_Color> Quantity_Array2OfColor;
-typedef Standard_Real Quantity_MomentOfInertia;
-typedef Standard_Real Quantity_Molarity;
-typedef Standard_Real Quantity_ElectricCharge;
-typedef Standard_Real Quantity_ElectricCapacitance;
-typedef Standard_Real Quantity_Scalaire;
-typedef Standard_Real Quantity_Density;
-typedef Standard_Real Quantity_MolarVolume;
-typedef Standard_Real Quantity_MomentOfAForce;
-typedef Standard_Real Quantity_AngularVelocity;
-typedef Standard_Real Quantity_LuminousIntensity;
-typedef Standard_Real Quantity_Volume;
-typedef Standard_Real Quantity_ElectricCurrent;
-typedef Standard_Real Quantity_Reluctance;
-typedef Standard_Real Quantity_Parameter;
-typedef Standard_Real Quantity_Coefficient;
-typedef Standard_Real Quantity_Area;
-typedef Standard_Real Quantity_SolidAngle;
+typedef Standard_Real Quantity_Admittance;
 typedef Standard_Real Quantity_AmountOfSubstance;
+typedef Standard_Real Quantity_AngularVelocity;
+typedef Standard_Real Quantity_Area;
+typedef NCollection_Array1<Quantity_Color> Quantity_Array1OfColor;
+typedef NCollection_Array2<Quantity_Color> Quantity_Array2OfColor;
+typedef Standard_Real Quantity_Capacitance;
+typedef Standard_Real Quantity_Coefficient;
+typedef Standard_Real Quantity_CoefficientOfExpansion;
+typedef Standard_Real Quantity_Concentration;
+typedef Standard_Real Quantity_Conductivity;
+typedef Standard_Real Quantity_Constant;
+typedef Standard_Real Quantity_Consumption;
+typedef Standard_Real Quantity_Content;
+typedef Standard_Real Quantity_Density;
+typedef Standard_Real Quantity_DoseEquivalent;
+typedef Standard_Real Quantity_ElectricCapacitance;
+typedef Standard_Real Quantity_ElectricCharge;
+typedef Standard_Real Quantity_ElectricCurrent;
+typedef Standard_Real Quantity_ElectricFieldStrength;
+typedef Standard_Real Quantity_ElectricPotential;
+typedef Standard_Real Quantity_Energy;
+typedef Standard_Real Quantity_Enthalpy;
+typedef Standard_Real Quantity_Entropy;
+typedef Standard_Real Quantity_Factor;
+typedef Standard_Real Quantity_Force;
+typedef Standard_Real Quantity_Frequency;
+typedef Standard_Real Quantity_Illuminance;
+typedef Standard_Real Quantity_Impedance;
+typedef Standard_Real Quantity_Index;
+typedef Standard_Real Quantity_Inductance;
+typedef Standard_Real Quantity_KinematicViscosity;
+typedef Standard_Real Quantity_KineticMoment;
+typedef Standard_Real Quantity_Length;
+typedef Standard_Real Quantity_Luminance;
 typedef Standard_Real Quantity_LuminousEfficacity;
 typedef Standard_Real Quantity_LuminousExposition;
-typedef Standard_Real Quantity_MagneticFlux;
-typedef Standard_Real Quantity_Conductivity;
-typedef Standard_Real Quantity_Enthalpy;
-typedef Standard_Real Quantity_Force;
-typedef Standard_Real Quantity_PlaneAngle;
-typedef Standard_Real Quantity_Acceleration;
-typedef Standard_Real Quantity_KinematicViscosity;
-typedef Standard_Real Quantity_MagneticFluxDensity;
-typedef Standard_Real Quantity_Temperature;
 typedef Standard_Real Quantity_LuminousFlux;
-typedef Standard_Real Quantity_Viscosity;
+typedef Standard_Real Quantity_LuminousIntensity;
+typedef Standard_Real Quantity_MagneticFieldStrength;
+typedef Standard_Real Quantity_MagneticFlux;
+typedef Standard_Real Quantity_MagneticFluxDensity;
+typedef Standard_Real Quantity_Mass;
+typedef Standard_Real Quantity_MassFlow;
+typedef Standard_Real Quantity_MolarConcentration;
+typedef Standard_Real Quantity_MolarMass;
+typedef Standard_Real Quantity_MolarVolume;
+typedef Standard_Real Quantity_Molarity;
+typedef Standard_Real Quantity_MomentOfAForce;
+typedef Standard_Real Quantity_MomentOfInertia;
+typedef Standard_Real Quantity_Momentum;
+typedef Standard_Real Quantity_Normality;
+typedef Standard_Real Quantity_Parameter;
+typedef Standard_Real Quantity_PlaneAngle;
+typedef Standard_Real Quantity_Power;
+typedef Standard_Real Quantity_Pressure;
+typedef Standard_Real Quantity_Quotient;
+typedef Standard_Real Quantity_Rate;
+typedef Standard_Real Quantity_Ratio;
+typedef Standard_Real Quantity_Reluctance;
+typedef Standard_Real Quantity_Resistance;
+typedef Standard_Real Quantity_Resistivity;
+typedef Standard_Real Quantity_Scalaire;
+typedef Standard_Real Quantity_SolidAngle;
+typedef Standard_Real Quantity_SoundIntensity;
 typedef Standard_Real Quantity_SpecificHeatCapacity;
+typedef Standard_Real Quantity_Speed;
+typedef Standard_Real Quantity_SurfaceTension;
+typedef Standard_Real Quantity_Temperature;
+typedef Standard_Real Quantity_ThermalConductivity;
+typedef Standard_Real Quantity_Torque;
+typedef Standard_Real Quantity_Velocity;
+typedef Standard_Real Quantity_Viscosity;
+typedef Standard_Real Quantity_Volume;
 typedef Standard_Real Quantity_VolumeFlow;
-typedef Standard_Real Quantity_Constant;
+typedef Standard_Real Quantity_Weight;
+typedef Standard_Real Quantity_Work;
 /* end typedefs declaration */
 
 /***********************
@@ -1384,6 +1384,61 @@ typedef Standard_Real Quantity_Constant;
 ***********************/
 class Quantity_Color {
 	public:
+		/****************** Quantity_Color ******************/
+		%feature("compactdefaultargs") Quantity_Color;
+		%feature("autodoc", "Creates quantity_noc_yellow color.
+
+Returns
+-------
+None
+") Quantity_Color;
+		 Quantity_Color();
+
+		/****************** Quantity_Color ******************/
+		%feature("compactdefaultargs") Quantity_Color;
+		%feature("autodoc", "Creates the color from enumeration value.
+
+Parameters
+----------
+AName: Quantity_NameOfColor
+
+Returns
+-------
+None
+") Quantity_Color;
+		 Quantity_Color(const Quantity_NameOfColor AName);
+
+		/****************** Quantity_Color ******************/
+		%feature("compactdefaultargs") Quantity_Color;
+		%feature("autodoc", "Creates a color according to the definition system thetype. quantity_toc_rgb: - ther1 the value of red within range [0.0; 1.0] - ther2 the value of green within range [0.0; 1.0] - ther3 the value of blue within range [0.0; 1.0] //! quantity_toc_hls: - ther1 is the hue (h) angle in degrees within range [0.0; 360.0], 0.0 being red. value -1.0 is a special value reserved for grayscale color (s should be 0.0). - ther2 is the lightness (l) within range [0.0; 1.0] - ther3 is the saturation (s) within range [0.0; 1.0].
+
+Parameters
+----------
+theR1: float
+theR2: float
+theR3: float
+theType: Quantity_TypeOfColor
+
+Returns
+-------
+None
+") Quantity_Color;
+		 Quantity_Color(const Standard_Real theR1, const Standard_Real theR2, const Standard_Real theR3, const Quantity_TypeOfColor theType);
+
+		/****************** Quantity_Color ******************/
+		%feature("compactdefaultargs") Quantity_Color;
+		%feature("autodoc", "Define color from rgb values.
+
+Parameters
+----------
+theRgb: NCollection_Vec3<float>
+
+Returns
+-------
+None
+") Quantity_Color;
+		 Quantity_Color(const NCollection_Vec3<float> & theRgb);
+
 		/****************** Argb2color ******************/
 		%feature("compactdefaultargs") Argb2color;
 		%feature("autodoc", "Convert integer argb value to color. alpha bits are ignored.
@@ -1664,61 +1719,6 @@ Quantity_NameOfColor
 ") Name;
 		static Quantity_NameOfColor Name(const Standard_Real R, const Standard_Real G, const Standard_Real B);
 
-		/****************** Quantity_Color ******************/
-		%feature("compactdefaultargs") Quantity_Color;
-		%feature("autodoc", "Creates quantity_noc_yellow color.
-
-Returns
--------
-None
-") Quantity_Color;
-		 Quantity_Color();
-
-		/****************** Quantity_Color ******************/
-		%feature("compactdefaultargs") Quantity_Color;
-		%feature("autodoc", "Creates the color from enumeration value.
-
-Parameters
-----------
-AName: Quantity_NameOfColor
-
-Returns
--------
-None
-") Quantity_Color;
-		 Quantity_Color(const Quantity_NameOfColor AName);
-
-		/****************** Quantity_Color ******************/
-		%feature("compactdefaultargs") Quantity_Color;
-		%feature("autodoc", "Creates a color according to the definition system thetype. quantity_toc_rgb: - ther1 the value of red within range [0.0; 1.0] - ther2 the value of green within range [0.0; 1.0] - ther3 the value of blue within range [0.0; 1.0] //! quantity_toc_hls: - ther1 is the hue (h) angle in degrees within range [0.0; 360.0], 0.0 being red. value -1.0 is a special value reserved for grayscale color (s should be 0.0). - ther2 is the lightness (l) within range [0.0; 1.0] - ther3 is the saturation (s) within range [0.0; 1.0].
-
-Parameters
-----------
-theR1: float
-theR2: float
-theR3: float
-theType: Quantity_TypeOfColor
-
-Returns
--------
-None
-") Quantity_Color;
-		 Quantity_Color(const Standard_Real theR1, const Standard_Real theR2, const Standard_Real theR3, const Quantity_TypeOfColor theType);
-
-		/****************** Quantity_Color ******************/
-		%feature("compactdefaultargs") Quantity_Color;
-		%feature("autodoc", "Define color from rgb values.
-
-Parameters
-----------
-theRgb: NCollection_Vec3<float>
-
-Returns
--------
-None
-") Quantity_Color;
-		 Quantity_Color(const NCollection_Vec3<float> & theRgb);
-
 		/****************** Red ******************/
 		%feature("compactdefaultargs") Red;
 		%feature("autodoc", "Returns the red component (quantity of red) of the color within range [0.0; 1.0].
@@ -1944,6 +1944,76 @@ bool
 ***************************/
 class Quantity_ColorRGBA {
 	public:
+		/****************** Quantity_ColorRGBA ******************/
+		%feature("compactdefaultargs") Quantity_ColorRGBA;
+		%feature("autodoc", "Creates a color with the default value.
+
+Returns
+-------
+None
+") Quantity_ColorRGBA;
+		 Quantity_ColorRGBA();
+
+		/****************** Quantity_ColorRGBA ******************/
+		%feature("compactdefaultargs") Quantity_ColorRGBA;
+		%feature("autodoc", "Creates the color with specified rgb value.
+
+Parameters
+----------
+theRgb: Quantity_Color
+
+Returns
+-------
+None
+") Quantity_ColorRGBA;
+		 Quantity_ColorRGBA(const Quantity_Color & theRgb);
+
+		/****************** Quantity_ColorRGBA ******************/
+		%feature("compactdefaultargs") Quantity_ColorRGBA;
+		%feature("autodoc", "Creates the color with specified rgba values.
+
+Parameters
+----------
+theRgb: Quantity_Color
+theAlpha: float
+
+Returns
+-------
+None
+") Quantity_ColorRGBA;
+		 Quantity_ColorRGBA(const Quantity_Color & theRgb, float theAlpha);
+
+		/****************** Quantity_ColorRGBA ******************/
+		%feature("compactdefaultargs") Quantity_ColorRGBA;
+		%feature("autodoc", "Creates the color from rgba vector.
+
+Parameters
+----------
+theRgba: NCollection_Vec4<float>
+
+Returns
+-------
+None
+") Quantity_ColorRGBA;
+		 Quantity_ColorRGBA(const NCollection_Vec4<float> & theRgba);
+
+		/****************** Quantity_ColorRGBA ******************/
+		%feature("compactdefaultargs") Quantity_ColorRGBA;
+		%feature("autodoc", "Creates the color from rgba values.
+
+Parameters
+----------
+theRed: float
+theGreen: float
+theBlue: float
+theAlpha: float
+
+Returns
+-------
+None
+") Quantity_ColorRGBA;
+		 Quantity_ColorRGBA(float theRed, float theGreen, float theBlue, float theAlpha);
+
 		/****************** Alpha ******************/
 		%feature("compactdefaultargs") Alpha;
 		%feature("autodoc", "Return alpha value (1.0 means opaque, 0.0 means fully transparent).
@@ -2057,76 +2127,6 @@ Returns
 bool
 ") IsEqual;
 		bool IsEqual(const Quantity_ColorRGBA & theOther);
-
-		/****************** Quantity_ColorRGBA ******************/
-		%feature("compactdefaultargs") Quantity_ColorRGBA;
-		%feature("autodoc", "Creates a color with the default value.
-
-Returns
--------
-None
-") Quantity_ColorRGBA;
-		 Quantity_ColorRGBA();
-
-		/****************** Quantity_ColorRGBA ******************/
-		%feature("compactdefaultargs") Quantity_ColorRGBA;
-		%feature("autodoc", "Creates the color with specified rgb value.
-
-Parameters
-----------
-theRgb: Quantity_Color
-
-Returns
--------
-None
-") Quantity_ColorRGBA;
-		 Quantity_ColorRGBA(const Quantity_Color & theRgb);
-
-		/****************** Quantity_ColorRGBA ******************/
-		%feature("compactdefaultargs") Quantity_ColorRGBA;
-		%feature("autodoc", "Creates the color with specified rgba values.
-
-Parameters
-----------
-theRgb: Quantity_Color
-theAlpha: float
-
-Returns
--------
-None
-") Quantity_ColorRGBA;
-		 Quantity_ColorRGBA(const Quantity_Color & theRgb, float theAlpha);
-
-		/****************** Quantity_ColorRGBA ******************/
-		%feature("compactdefaultargs") Quantity_ColorRGBA;
-		%feature("autodoc", "Creates the color from rgba vector.
-
-Parameters
-----------
-theRgba: NCollection_Vec4<float>
-
-Returns
--------
-None
-") Quantity_ColorRGBA;
-		 Quantity_ColorRGBA(const NCollection_Vec4<float> & theRgba);
-
-		/****************** Quantity_ColorRGBA ******************/
-		%feature("compactdefaultargs") Quantity_ColorRGBA;
-		%feature("autodoc", "Creates the color from rgba values.
-
-Parameters
-----------
-theRed: float
-theGreen: float
-theBlue: float
-theAlpha: float
-
-Returns
--------
-None
-") Quantity_ColorRGBA;
-		 Quantity_ColorRGBA(float theRed, float theGreen, float theBlue, float theAlpha);
 
 		/****************** SetAlpha ******************/
 		%feature("compactdefaultargs") SetAlpha;
@@ -2259,6 +2259,39 @@ bool
 **********************/
 class Quantity_Date {
 	public:
+		/****************** Quantity_Date ******************/
+		%feature("compactdefaultargs") Quantity_Date;
+		%feature("autodoc", "Constructs a default date (00:00 gmt, january 1, 1979 (zero hour)); use the function setvalues to define the required date; or.
+
+Returns
+-------
+None
+") Quantity_Date;
+		 Quantity_Date();
+
+		/****************** Quantity_Date ******************/
+		%feature("compactdefaultargs") Quantity_Date;
+		%feature("autodoc", "Constructs a date from the year yyyy, the month mm, the day dd, the hour hh, the minute mn, the second ss, the millisecond mis (defaulted to 0) and the microsecond mics (defaulted to 0).. with: 1 <= mm <= 12 1 <= dd <= max number of days of <mm> 1979 <= yyyy 0 <= hh <= 23 0 <= mn <= 59 0 <= ss <= 59 0 <= mis <= 999 0 <= mics <= 999 exceptions quantity_datedefinitionerror if mm, dd, hh, mn, ss, mis and mics are not the components of the valid date.
+
+Parameters
+----------
+mm: int
+dd: int
+yyyy: int
+hh: int
+mn: int
+ss: int
+mis: int,optional
+	default value is 0
+mics: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") Quantity_Date;
+		 Quantity_Date(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yyyy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis = 0, const Standard_Integer mics = 0);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a period to a date and returns the new date.
@@ -2426,39 +2459,6 @@ int
 ") Month;
 		Standard_Integer Month();
 
-		/****************** Quantity_Date ******************/
-		%feature("compactdefaultargs") Quantity_Date;
-		%feature("autodoc", "Constructs a default date (00:00 gmt, january 1, 1979 (zero hour)); use the function setvalues to define the required date; or.
-
-Returns
--------
-None
-") Quantity_Date;
-		 Quantity_Date();
-
-		/****************** Quantity_Date ******************/
-		%feature("compactdefaultargs") Quantity_Date;
-		%feature("autodoc", "Constructs a date from the year yyyy, the month mm, the day dd, the hour hh, the minute mn, the second ss, the millisecond mis (defaulted to 0) and the microsecond mics (defaulted to 0).. with: 1 <= mm <= 12 1 <= dd <= max number of days of <mm> 1979 <= yyyy 0 <= hh <= 23 0 <= mn <= 59 0 <= ss <= 59 0 <= mis <= 999 0 <= mics <= 999 exceptions quantity_datedefinitionerror if mm, dd, hh, mn, ss, mis and mics are not the components of the valid date.
-
-Parameters
-----------
-mm: int
-dd: int
-yyyy: int
-hh: int
-mn: int
-ss: int
-mis: int,optional
-	default value is 0
-mics: int,optional
-	default value is 0
-
-Returns
--------
-None
-") Quantity_Date;
-		 Quantity_Date(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yyyy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis = 0, const Standard_Integer mics = 0);
-
 		/****************** Second ******************/
 		%feature("compactdefaultargs") Second;
 		%feature("autodoc", "Returns seconde of a date.
@@ -2593,6 +2593,43 @@ Quantity_Date
 ************************/
 class Quantity_Period {
 	public:
+		/****************** Quantity_Period ******************/
+		%feature("compactdefaultargs") Quantity_Period;
+		%feature("autodoc", "Creates a period with: 0 <= dd 0 <= hh 0 <= mn 0 <= ss 0 <= mis 0 <= mics.
+
+Parameters
+----------
+dd: int
+hh: int
+mn: int
+ss: int
+mis: int,optional
+	default value is 0
+mics: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") Quantity_Period;
+		 Quantity_Period(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis = 0, const Standard_Integer mics = 0);
+
+		/****************** Quantity_Period ******************/
+		%feature("compactdefaultargs") Quantity_Period;
+		%feature("autodoc", "Creates a period with a number of seconds and microseconds. exceptions quantity_perioddefinitionerror: - if the number of seconds expressed either by: - dd days, hh hours, mn minutes and ss seconds, or - ss is less than 0. - if the number of microseconds expressed either by: - mis milliseconds and mics microseconds, or - mics is less than 0.
+
+Parameters
+----------
+ss: int
+mics: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") Quantity_Period;
+		 Quantity_Period(const Standard_Integer ss, const Standard_Integer mics = 0);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds one period to another one.
@@ -2685,43 +2722,6 @@ Returns
 bool
 ") IsValid;
 		static Standard_Boolean IsValid(const Standard_Integer ss, const Standard_Integer mics = 0);
-
-		/****************** Quantity_Period ******************/
-		%feature("compactdefaultargs") Quantity_Period;
-		%feature("autodoc", "Creates a period with: 0 <= dd 0 <= hh 0 <= mn 0 <= ss 0 <= mis 0 <= mics.
-
-Parameters
-----------
-dd: int
-hh: int
-mn: int
-ss: int
-mis: int,optional
-	default value is 0
-mics: int,optional
-	default value is 0
-
-Returns
--------
-None
-") Quantity_Period;
-		 Quantity_Period(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis = 0, const Standard_Integer mics = 0);
-
-		/****************** Quantity_Period ******************/
-		%feature("compactdefaultargs") Quantity_Period;
-		%feature("autodoc", "Creates a period with a number of seconds and microseconds. exceptions quantity_perioddefinitionerror: - if the number of seconds expressed either by: - dd days, hh hours, mn minutes and ss seconds, or - ss is less than 0. - if the number of microseconds expressed either by: - mis milliseconds and mics microseconds, or - mics is less than 0.
-
-Parameters
-----------
-ss: int
-mics: int,optional
-	default value is 0
-
-Returns
--------
-None
-") Quantity_Period;
-		 Quantity_Period(const Standard_Integer ss, const Standard_Integer mics = 0);
 
 		/****************** SetValues ******************/
 		%feature("compactdefaultargs") SetValues;

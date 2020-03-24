@@ -116,13 +116,9 @@ class HLRAlgo_PolyMask:
 /* end handles declaration */
 
 /* templates */
-%template(HLRAlgo_InterferenceList) NCollection_List<HLRAlgo_Interference>;
-%template(HLRAlgo_ListIteratorOfInterferenceList) NCollection_TListIterator<HLRAlgo_Interference>;
-%template(HLRAlgo_ListOfBPoint) NCollection_List<HLRAlgo_BiPoint>;
-%template(HLRAlgo_ListIteratorOfListOfBPoint) NCollection_TListIterator<HLRAlgo_BiPoint>;
-%template(HLRAlgo_Array1OfTData) NCollection_Array1<HLRAlgo_TriangleData>;
+%template(HLRAlgo_Array1OfPINod) NCollection_Array1<opencascade::handle<HLRAlgo_PolyInternalNode>>;
 
-%extend NCollection_Array1<HLRAlgo_TriangleData> {
+%extend NCollection_Array1<opencascade::handle<HLRAlgo_PolyInternalNode>> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -190,9 +186,9 @@ class HLRAlgo_PolyMask:
     __next__ = next
     }
 };
-%template(HLRAlgo_Array1OfPINod) NCollection_Array1<opencascade::handle<HLRAlgo_PolyInternalNode>>;
+%template(HLRAlgo_Array1OfTData) NCollection_Array1<HLRAlgo_TriangleData>;
 
-%extend NCollection_Array1<opencascade::handle<HLRAlgo_PolyInternalNode>> {
+%extend NCollection_Array1<HLRAlgo_TriangleData> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -225,16 +221,20 @@ class HLRAlgo_PolyMask:
     __next__ = next
     }
 };
+%template(HLRAlgo_InterferenceList) NCollection_List<HLRAlgo_Interference>;
+%template(HLRAlgo_ListIteratorOfInterferenceList) NCollection_TListIterator<HLRAlgo_Interference>;
+%template(HLRAlgo_ListIteratorOfListOfBPoint) NCollection_TListIterator<HLRAlgo_BiPoint>;
+%template(HLRAlgo_ListOfBPoint) NCollection_List<HLRAlgo_BiPoint>;
 /* end templates declaration */
 
 /* typedefs */
+typedef NCollection_Array1<opencascade::handle<HLRAlgo_PolyInternalNode>> HLRAlgo_Array1OfPINod;
+typedef NCollection_Array1<HLRAlgo_PolyInternalSegment> HLRAlgo_Array1OfPISeg;
+typedef NCollection_Array1<HLRAlgo_TriangleData> HLRAlgo_Array1OfTData;
 typedef NCollection_List<HLRAlgo_Interference> HLRAlgo_InterferenceList;
 typedef NCollection_List<HLRAlgo_Interference>::Iterator HLRAlgo_ListIteratorOfInterferenceList;
-typedef NCollection_List<HLRAlgo_BiPoint> HLRAlgo_ListOfBPoint;
 typedef NCollection_List<HLRAlgo_BiPoint>::Iterator HLRAlgo_ListIteratorOfListOfBPoint;
-typedef NCollection_Array1<HLRAlgo_TriangleData> HLRAlgo_Array1OfTData;
-typedef NCollection_Array1<HLRAlgo_PolyInternalSegment> HLRAlgo_Array1OfPISeg;
-typedef NCollection_Array1<opencascade::handle<HLRAlgo_PolyInternalNode>> HLRAlgo_Array1OfPINod;
+typedef NCollection_List<HLRAlgo_BiPoint> HLRAlgo_ListOfBPoint;
 /* end typedefs declaration */
 
 /****************
@@ -941,6 +941,33 @@ None
 ***************************/
 class HLRAlgo_EdgeStatus {
 	public:
+		/****************** HLRAlgo_EdgeStatus ******************/
+		%feature("compactdefaultargs") HLRAlgo_EdgeStatus;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") HLRAlgo_EdgeStatus;
+		 HLRAlgo_EdgeStatus();
+
+		/****************** HLRAlgo_EdgeStatus ******************/
+		%feature("compactdefaultargs") HLRAlgo_EdgeStatus;
+		%feature("autodoc", "Creates a new edgestatus. default visible. the edge is bounded by the interval <start>, <end> with the tolerances <tolstart>, <tolend>.
+
+Parameters
+----------
+Start: float
+TolStart: Standard_ShortReal
+End: float
+TolEnd: Standard_ShortReal
+
+Returns
+-------
+None
+") HLRAlgo_EdgeStatus;
+		 HLRAlgo_EdgeStatus(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
+
 		/****************** AllHidden ******************/
 		%feature("compactdefaultargs") AllHidden;
 		%feature("autodoc", "No available documentation.
@@ -1005,33 +1032,6 @@ Returns
 None
 ") Bounds;
 		void Bounds(Standard_Real &OutValue, Standard_ShortReal & theTolStart, Standard_Real &OutValue, Standard_ShortReal & theTolEnd);
-
-		/****************** HLRAlgo_EdgeStatus ******************/
-		%feature("compactdefaultargs") HLRAlgo_EdgeStatus;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") HLRAlgo_EdgeStatus;
-		 HLRAlgo_EdgeStatus();
-
-		/****************** HLRAlgo_EdgeStatus ******************/
-		%feature("compactdefaultargs") HLRAlgo_EdgeStatus;
-		%feature("autodoc", "Creates a new edgestatus. default visible. the edge is bounded by the interval <start>, <end> with the tolerances <tolstart>, <tolend>.
-
-Parameters
-----------
-Start: float
-TolStart: Standard_ShortReal
-End: float
-TolEnd: Standard_ShortReal
-
-Returns
--------
-None
-") HLRAlgo_EdgeStatus;
-		 HLRAlgo_EdgeStatus(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
 
 		/****************** Hide ******************/
 		%feature("compactdefaultargs") Hide;
@@ -1132,6 +1132,20 @@ None
 class HLRAlgo_EdgesBlock : public Standard_Transient {
 	public:
 		class MinMaxIndices {};
+		/****************** HLRAlgo_EdgesBlock ******************/
+		%feature("compactdefaultargs") HLRAlgo_EdgesBlock;
+		%feature("autodoc", "Create a block of edges for a wire.
+
+Parameters
+----------
+NbEdges: int
+
+Returns
+-------
+None
+") HLRAlgo_EdgesBlock;
+		 HLRAlgo_EdgesBlock(const Standard_Integer NbEdges);
+
 		/****************** Double ******************/
 		%feature("compactdefaultargs") Double;
 		%feature("autodoc", "No available documentation.
@@ -1189,20 +1203,6 @@ Returns
 int
 ") Edge;
 		Standard_Integer Edge(const Standard_Integer I);
-
-		/****************** HLRAlgo_EdgesBlock ******************/
-		%feature("compactdefaultargs") HLRAlgo_EdgesBlock;
-		%feature("autodoc", "Create a block of edges for a wire.
-
-Parameters
-----------
-NbEdges: int
-
-Returns
--------
-None
-") HLRAlgo_EdgesBlock;
-		 HLRAlgo_EdgesBlock(const Standard_Integer NbEdges);
 
 		/****************** Internal ******************/
 		%feature("compactdefaultargs") Internal;
@@ -1360,6 +1360,34 @@ None
 *****************************/
 class HLRAlgo_Interference {
 	public:
+		/****************** HLRAlgo_Interference ******************/
+		%feature("compactdefaultargs") HLRAlgo_Interference;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") HLRAlgo_Interference;
+		 HLRAlgo_Interference();
+
+		/****************** HLRAlgo_Interference ******************/
+		%feature("compactdefaultargs") HLRAlgo_Interference;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Inters: HLRAlgo_Intersection
+Bound: HLRAlgo_Coincidence
+Orient: TopAbs_Orientation
+Trans: TopAbs_Orientation
+BTrans: TopAbs_Orientation
+
+Returns
+-------
+None
+") HLRAlgo_Interference;
+		 HLRAlgo_Interference(const HLRAlgo_Intersection & Inters, const HLRAlgo_Coincidence & Bound, const TopAbs_Orientation Orient, const TopAbs_Orientation Trans, const TopAbs_Orientation BTrans);
+
 		/****************** Boundary ******************/
 		%feature("compactdefaultargs") Boundary;
 		%feature("autodoc", "No available documentation.
@@ -1427,34 +1455,6 @@ Returns
 HLRAlgo_Intersection
 ") ChangeIntersection;
 		HLRAlgo_Intersection & ChangeIntersection();
-
-		/****************** HLRAlgo_Interference ******************/
-		%feature("compactdefaultargs") HLRAlgo_Interference;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") HLRAlgo_Interference;
-		 HLRAlgo_Interference();
-
-		/****************** HLRAlgo_Interference ******************/
-		%feature("compactdefaultargs") HLRAlgo_Interference;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Inters: HLRAlgo_Intersection
-Bound: HLRAlgo_Coincidence
-Orient: TopAbs_Orientation
-Trans: TopAbs_Orientation
-BTrans: TopAbs_Orientation
-
-Returns
--------
-None
-") HLRAlgo_Interference;
-		 HLRAlgo_Interference(const HLRAlgo_Intersection & Inters, const HLRAlgo_Coincidence & Bound, const TopAbs_Orientation Orient, const TopAbs_Orientation Trans, const TopAbs_Orientation BTrans);
 
 		/****************** Intersection ******************/
 		%feature("compactdefaultargs") Intersection;
@@ -1754,16 +1754,6 @@ Standard_ShortReal
 *************************/
 class HLRAlgo_PolyAlgo : public Standard_Transient {
 	public:
-		/****************** Clear ******************/
-		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Clear;
-		void Clear();
-
 		/****************** HLRAlgo_PolyAlgo ******************/
 		%feature("compactdefaultargs") HLRAlgo_PolyAlgo;
 		%feature("autodoc", "No available documentation.
@@ -1773,6 +1763,16 @@ Returns
 None
 ") HLRAlgo_PolyAlgo;
 		 HLRAlgo_PolyAlgo();
+
+		/****************** Clear ******************/
+		%feature("compactdefaultargs") Clear;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Clear;
+		void Clear();
 
 		/****************** Hide ******************/
 		%feature("compactdefaultargs") Hide;
@@ -1924,6 +1924,16 @@ class HLRAlgo_PolyData : public Standard_Transient {
 		class FaceIndices {};
 		class Triangle {};
 		class Box {};
+		/****************** HLRAlgo_PolyData ******************/
+		%feature("compactdefaultargs") HLRAlgo_PolyData;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") HLRAlgo_PolyData;
+		 HLRAlgo_PolyData();
+
 		/****************** FaceIndex ******************/
 		%feature("compactdefaultargs") FaceIndex;
 		%feature("autodoc", "No available documentation.
@@ -1947,16 +1957,6 @@ Returns
 int
 ") FaceIndex;
 		Standard_Integer FaceIndex();
-
-		/****************** HLRAlgo_PolyData ******************/
-		%feature("compactdefaultargs") HLRAlgo_PolyData;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") HLRAlgo_PolyData;
-		 HLRAlgo_PolyData();
 
 		/****************** HNodes ******************/
 		%feature("compactdefaultargs") HNodes;
@@ -2068,6 +2068,21 @@ HLRAlgo_Array1OfTData
 *********************************/
 class HLRAlgo_PolyInternalData : public Standard_Transient {
 	public:
+		/****************** HLRAlgo_PolyInternalData ******************/
+		%feature("compactdefaultargs") HLRAlgo_PolyInternalData;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+nbNod: int
+nbTri: int
+
+Returns
+-------
+None
+") HLRAlgo_PolyInternalData;
+		 HLRAlgo_PolyInternalData(const Standard_Integer nbNod, const Standard_Integer nbTri);
+
 		/****************** AddNode ******************/
 		%feature("compactdefaultargs") AddNode;
 		%feature("autodoc", "No available documentation.
@@ -2128,21 +2143,6 @@ Returns
 None
 ") Dump;
 		void Dump();
-
-		/****************** HLRAlgo_PolyInternalData ******************/
-		%feature("compactdefaultargs") HLRAlgo_PolyInternalData;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-nbNod: int
-nbTri: int
-
-Returns
--------
-None
-") HLRAlgo_PolyInternalData;
-		 HLRAlgo_PolyInternalData(const Standard_Integer nbNod, const Standard_Integer nbTri);
 
 		/****************** IncPINod ******************/
 		%feature("compactdefaultargs") IncPINod;
@@ -2391,16 +2391,6 @@ None
 class HLRAlgo_PolyShellData : public Standard_Transient {
 	public:
 		class ShellIndices {};
-		/****************** Edges ******************/
-		%feature("compactdefaultargs") Edges;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-HLRAlgo_ListOfBPoint
-") Edges;
-		HLRAlgo_ListOfBPoint & Edges();
-
 		/****************** HLRAlgo_PolyShellData ******************/
 		%feature("compactdefaultargs") HLRAlgo_PolyShellData;
 		%feature("autodoc", "No available documentation.
@@ -2414,6 +2404,16 @@ Returns
 None
 ") HLRAlgo_PolyShellData;
 		 HLRAlgo_PolyShellData(const Standard_Integer nbFace);
+
+		/****************** Edges ******************/
+		%feature("compactdefaultargs") Edges;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+HLRAlgo_ListOfBPoint
+") Edges;
+		HLRAlgo_ListOfBPoint & Edges();
 
 		/****************** Hiding ******************/
 		%feature("compactdefaultargs") Hiding;
@@ -2493,42 +2493,6 @@ None
 **************************/
 class HLRAlgo_Projector {
 	public:
-		/****************** Directions ******************/
-		%feature("compactdefaultargs") Directions;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-D1: gp_Vec2d
-D2: gp_Vec2d
-D3: gp_Vec2d
-
-Returns
--------
-None
-") Directions;
-		void Directions(gp_Vec2d & D1, gp_Vec2d & D2, gp_Vec2d & D3);
-
-		/****************** Focus ******************/
-		%feature("compactdefaultargs") Focus;
-		%feature("autodoc", "Returns the focal length.
-
-Returns
--------
-float
-") Focus;
-		Standard_Real Focus();
-
-		/****************** FullTransformation ******************/
-		%feature("compactdefaultargs") FullTransformation;
-		%feature("autodoc", "Returns the original transformation.
-
-Returns
--------
-gp_Trsf
-") FullTransformation;
-		const gp_Trsf FullTransformation();
-
 		/****************** HLRAlgo_Projector ******************/
 		%feature("compactdefaultargs") HLRAlgo_Projector;
 		%feature("autodoc", "No available documentation.
@@ -2602,6 +2566,42 @@ Returns
 None
 ") HLRAlgo_Projector;
 		 HLRAlgo_Projector(const gp_Trsf & T, const Standard_Boolean Persp, const Standard_Real Focus, const gp_Vec2d & v1, const gp_Vec2d & v2, const gp_Vec2d & v3);
+
+		/****************** Directions ******************/
+		%feature("compactdefaultargs") Directions;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+D1: gp_Vec2d
+D2: gp_Vec2d
+D3: gp_Vec2d
+
+Returns
+-------
+None
+") Directions;
+		void Directions(gp_Vec2d & D1, gp_Vec2d & D2, gp_Vec2d & D3);
+
+		/****************** Focus ******************/
+		%feature("compactdefaultargs") Focus;
+		%feature("autodoc", "Returns the focal length.
+
+Returns
+-------
+float
+") Focus;
+		Standard_Real Focus();
+
+		/****************** FullTransformation ******************/
+		%feature("compactdefaultargs") FullTransformation;
+		%feature("autodoc", "Returns the original transformation.
+
+Returns
+-------
+gp_Trsf
+") FullTransformation;
+		const gp_Trsf FullTransformation();
 
 		/****************** InvertedTransformation ******************/
 		%feature("compactdefaultargs") InvertedTransformation;

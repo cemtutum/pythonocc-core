@@ -42,9 +42,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepselections.ht
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
 #include<StepShape_module.hxx>
+#include<Interface_module.hxx>
 #include<StepRepr_module.hxx>
 #include<StepBasic_module.hxx>
-#include<Interface_module.hxx>
 #include<IFSelect_module.hxx>
 #include<TCollection_module.hxx>
 #include<XSControl_module.hxx>
@@ -68,9 +68,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepselections.ht
 %import Standard.i
 %import NCollection.i
 %import StepShape.i
+%import Interface.i
 %import StepRepr.i
 %import StepBasic.i
-%import Interface.i
 %import IFSelect.i
 %import TCollection.i
 %import XSControl.i
@@ -100,13 +100,13 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(STEPSelections_SequenceOfAssemblyLink) NCollection_Sequence<opencascade::handle<STEPSelections_AssemblyLink>>;
 %template(STEPSelections_SequenceOfAssemblyComponent) NCollection_Sequence<opencascade::handle<STEPSelections_AssemblyComponent>>;
+%template(STEPSelections_SequenceOfAssemblyLink) NCollection_Sequence<opencascade::handle<STEPSelections_AssemblyLink>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<opencascade::handle<STEPSelections_AssemblyLink>> STEPSelections_SequenceOfAssemblyLink;
 typedef NCollection_Sequence<opencascade::handle<STEPSelections_AssemblyComponent>> STEPSelections_SequenceOfAssemblyComponent;
+typedef NCollection_Sequence<opencascade::handle<STEPSelections_AssemblyLink>> STEPSelections_SequenceOfAssemblyLink;
 /* end typedefs declaration */
 
 /*****************************************
@@ -114,26 +114,6 @@ typedef NCollection_Sequence<opencascade::handle<STEPSelections_AssemblyComponen
 *****************************************/
 class STEPSelections_AssemblyComponent : public Standard_Transient {
 	public:
-		/****************** GetList ******************/
-		%feature("compactdefaultargs") GetList;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<STEPSelections_HSequenceOfAssemblyLink>
-") GetList;
-		opencascade::handle<STEPSelections_HSequenceOfAssemblyLink> GetList();
-
-		/****************** GetSDR ******************/
-		%feature("compactdefaultargs") GetSDR;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<StepShape_ShapeDefinitionRepresentation>
-") GetSDR;
-		opencascade::handle<StepShape_ShapeDefinitionRepresentation> GetSDR();
-
 		/****************** STEPSelections_AssemblyComponent ******************/
 		%feature("compactdefaultargs") STEPSelections_AssemblyComponent;
 		%feature("autodoc", "No available documentation.
@@ -158,6 +138,26 @@ Returns
 None
 ") STEPSelections_AssemblyComponent;
 		 STEPSelections_AssemblyComponent(const opencascade::handle<StepShape_ShapeDefinitionRepresentation> & sdr, const opencascade::handle<STEPSelections_HSequenceOfAssemblyLink> & list);
+
+		/****************** GetList ******************/
+		%feature("compactdefaultargs") GetList;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<STEPSelections_HSequenceOfAssemblyLink>
+") GetList;
+		opencascade::handle<STEPSelections_HSequenceOfAssemblyLink> GetList();
+
+		/****************** GetSDR ******************/
+		%feature("compactdefaultargs") GetSDR;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<StepShape_ShapeDefinitionRepresentation>
+") GetSDR;
+		opencascade::handle<StepShape_ShapeDefinitionRepresentation> GetSDR();
 
 		/****************** SetList ******************/
 		%feature("compactdefaultargs") SetList;
@@ -203,6 +203,20 @@ None
 ****************************************/
 class STEPSelections_AssemblyExplorer {
 	public:
+		/****************** STEPSelections_AssemblyExplorer ******************/
+		%feature("compactdefaultargs") STEPSelections_AssemblyExplorer;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+G: Interface_Graph
+
+Returns
+-------
+None
+") STEPSelections_AssemblyExplorer;
+		 STEPSelections_AssemblyExplorer(const Interface_Graph & G);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -292,20 +306,6 @@ opencascade::handle<STEPSelections_AssemblyComponent>
 ") Root;
 		opencascade::handle<STEPSelections_AssemblyComponent> Root(const Standard_Integer rank = 1);
 
-		/****************** STEPSelections_AssemblyExplorer ******************/
-		%feature("compactdefaultargs") STEPSelections_AssemblyExplorer;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-G: Interface_Graph
-
-Returns
--------
-None
-") STEPSelections_AssemblyExplorer;
-		 STEPSelections_AssemblyExplorer(const Interface_Graph & G);
-
 };
 
 
@@ -320,6 +320,32 @@ None
 ************************************/
 class STEPSelections_AssemblyLink : public Standard_Transient {
 	public:
+		/****************** STEPSelections_AssemblyLink ******************/
+		%feature("compactdefaultargs") STEPSelections_AssemblyLink;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPSelections_AssemblyLink;
+		 STEPSelections_AssemblyLink();
+
+		/****************** STEPSelections_AssemblyLink ******************/
+		%feature("compactdefaultargs") STEPSelections_AssemblyLink;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+nauo: StepRepr_NextAssemblyUsageOccurrence
+item: Standard_Transient
+part: STEPSelections_AssemblyComponent
+
+Returns
+-------
+None
+") STEPSelections_AssemblyLink;
+		 STEPSelections_AssemblyLink(const opencascade::handle<StepRepr_NextAssemblyUsageOccurrence> & nauo, const opencascade::handle<Standard_Transient> & item, const opencascade::handle<STEPSelections_AssemblyComponent> & part);
+
 		/****************** GetComponent ******************/
 		%feature("compactdefaultargs") GetComponent;
 		%feature("autodoc", "No available documentation.
@@ -349,32 +375,6 @@ Returns
 opencascade::handle<StepRepr_NextAssemblyUsageOccurrence>
 ") GetNAUO;
 		opencascade::handle<StepRepr_NextAssemblyUsageOccurrence> GetNAUO();
-
-		/****************** STEPSelections_AssemblyLink ******************/
-		%feature("compactdefaultargs") STEPSelections_AssemblyLink;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPSelections_AssemblyLink;
-		 STEPSelections_AssemblyLink();
-
-		/****************** STEPSelections_AssemblyLink ******************/
-		%feature("compactdefaultargs") STEPSelections_AssemblyLink;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-nauo: StepRepr_NextAssemblyUsageOccurrence
-item: Standard_Transient
-part: STEPSelections_AssemblyComponent
-
-Returns
--------
-None
-") STEPSelections_AssemblyLink;
-		 STEPSelections_AssemblyLink(const opencascade::handle<StepRepr_NextAssemblyUsageOccurrence> & nauo, const opencascade::handle<Standard_Transient> & item, const opencascade::handle<STEPSelections_AssemblyComponent> & part);
 
 		/****************** SetComponent ******************/
 		%feature("compactdefaultargs") SetComponent;
@@ -434,6 +434,16 @@ None
 *******************************/
 class STEPSelections_Counter {
 	public:
+		/****************** STEPSelections_Counter ******************/
+		%feature("compactdefaultargs") STEPSelections_Counter;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPSelections_Counter;
+		 STEPSelections_Counter();
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "No available documentation.
@@ -559,16 +569,6 @@ int
 ") NbSourceWires;
 		Standard_Integer NbSourceWires();
 
-		/****************** STEPSelections_Counter ******************/
-		%feature("compactdefaultargs") STEPSelections_Counter;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPSelections_Counter;
-		 STEPSelections_Counter();
-
 };
 
 
@@ -591,6 +591,16 @@ None
 **************************************/
 class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 	public:
+		/****************** STEPSelections_SelectAssembly ******************/
+		%feature("compactdefaultargs") STEPSelections_SelectAssembly;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPSelections_SelectAssembly;
+		 STEPSelections_SelectAssembly();
+
 		/****************** Explore ******************/
 		%feature("compactdefaultargs") Explore;
 		%feature("autodoc", "Explores an entity, to take its faces works recursively.
@@ -618,16 +628,6 @@ TCollection_AsciiString
 ") ExploreLabel;
 		TCollection_AsciiString ExploreLabel();
 
-		/****************** STEPSelections_SelectAssembly ******************/
-		%feature("compactdefaultargs") STEPSelections_SelectAssembly;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPSelections_SelectAssembly;
-		 STEPSelections_SelectAssembly();
-
 };
 
 
@@ -644,6 +644,16 @@ None
 *************************************/
 class STEPSelections_SelectDerived : public StepSelect_StepType {
 	public:
+		/****************** STEPSelections_SelectDerived ******************/
+		%feature("compactdefaultargs") STEPSelections_SelectDerived;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPSelections_SelectDerived;
+		 STEPSelections_SelectDerived();
+
 		/****************** Matches ******************/
 		%feature("compactdefaultargs") Matches;
 		%feature("autodoc", "No available documentation.
@@ -661,16 +671,6 @@ bool
 ") Matches;
 		virtual Standard_Boolean Matches(const opencascade::handle<Standard_Transient> & ent, const opencascade::handle<Interface_InterfaceModel> & model, const TCollection_AsciiString & text, const Standard_Boolean exact);
 
-		/****************** STEPSelections_SelectDerived ******************/
-		%feature("compactdefaultargs") STEPSelections_SelectDerived;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPSelections_SelectDerived;
-		 STEPSelections_SelectDerived();
-
 };
 
 
@@ -687,6 +687,16 @@ None
 ***********************************/
 class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
 	public:
+		/****************** STEPSelections_SelectFaces ******************/
+		%feature("compactdefaultargs") STEPSelections_SelectFaces;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPSelections_SelectFaces;
+		 STEPSelections_SelectFaces();
+
 		/****************** Explore ******************/
 		%feature("compactdefaultargs") Explore;
 		%feature("autodoc", "Explores an entity, to take its faces works recursively.
@@ -714,16 +724,6 @@ TCollection_AsciiString
 ") ExploreLabel;
 		TCollection_AsciiString ExploreLabel();
 
-		/****************** STEPSelections_SelectFaces ******************/
-		%feature("compactdefaultargs") STEPSelections_SelectFaces;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPSelections_SelectFaces;
-		 STEPSelections_SelectFaces();
-
 };
 
 
@@ -740,20 +740,6 @@ None
 *****************************************/
 class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
 	public:
-		/****************** RootResult ******************/
-		%feature("compactdefaultargs") RootResult;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-G: Interface_Graph
-
-Returns
--------
-Interface_EntityIterator
-") RootResult;
-		virtual Interface_EntityIterator RootResult(const Interface_Graph & G);
-
 		/****************** STEPSelections_SelectForTransfer ******************/
 		%feature("compactdefaultargs") STEPSelections_SelectForTransfer;
 		%feature("autodoc", "No available documentation.
@@ -778,6 +764,20 @@ None
 ") STEPSelections_SelectForTransfer;
 		 STEPSelections_SelectForTransfer(const opencascade::handle<XSControl_TransferReader> & TR);
 
+		/****************** RootResult ******************/
+		%feature("compactdefaultargs") RootResult;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+G: Interface_Graph
+
+Returns
+-------
+Interface_EntityIterator
+") RootResult;
+		virtual Interface_EntityIterator RootResult(const Interface_Graph & G);
+
 };
 
 
@@ -794,6 +794,16 @@ None
 **************************************/
 class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 	public:
+		/****************** STEPSelections_SelectGSCurves ******************/
+		%feature("compactdefaultargs") STEPSelections_SelectGSCurves;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPSelections_SelectGSCurves;
+		 STEPSelections_SelectGSCurves();
+
 		/****************** Explore ******************/
 		%feature("compactdefaultargs") Explore;
 		%feature("autodoc", "No available documentation.
@@ -821,16 +831,6 @@ TCollection_AsciiString
 ") ExploreLabel;
 		TCollection_AsciiString ExploreLabel();
 
-		/****************** STEPSelections_SelectGSCurves ******************/
-		%feature("compactdefaultargs") STEPSelections_SelectGSCurves;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPSelections_SelectGSCurves;
-		 STEPSelections_SelectGSCurves();
-
 };
 
 
@@ -847,6 +847,16 @@ None
 ***************************************/
 class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 	public:
+		/****************** STEPSelections_SelectInstances ******************/
+		%feature("compactdefaultargs") STEPSelections_SelectInstances;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPSelections_SelectInstances;
+		 STEPSelections_SelectInstances();
+
 		/****************** Explore ******************/
 		%feature("compactdefaultargs") Explore;
 		%feature("autodoc", "No available documentation.
@@ -887,16 +897,6 @@ Returns
 Interface_EntityIterator
 ") RootResult;
 		Interface_EntityIterator RootResult(const Interface_Graph & G);
-
-		/****************** STEPSelections_SelectInstances ******************/
-		%feature("compactdefaultargs") STEPSelections_SelectInstances;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPSelections_SelectInstances;
-		 STEPSelections_SelectInstances();
 
 };
 

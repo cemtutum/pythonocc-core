@@ -109,6 +109,21 @@ class IntWalk_StatusDeflection:
 **************************************/
 class IntWalk_TheFunctionOfTheInt2S : public math_FunctionSetWithDerivatives {
 	public:
+		/****************** IntWalk_TheFunctionOfTheInt2S ******************/
+		%feature("compactdefaultargs") IntWalk_TheFunctionOfTheInt2S;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+
+Returns
+-------
+None
+") IntWalk_TheFunctionOfTheInt2S;
+		 IntWalk_TheFunctionOfTheInt2S(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2);
+
 		/****************** AuxillarSurface1 ******************/
 		%feature("compactdefaultargs") AuxillarSurface1;
 		%feature("autodoc", "No available documentation.
@@ -192,21 +207,6 @@ Returns
 gp_Dir2d
 ") DirectionOnS2;
 		gp_Dir2d DirectionOnS2();
-
-		/****************** IntWalk_TheFunctionOfTheInt2S ******************/
-		%feature("compactdefaultargs") IntWalk_TheFunctionOfTheInt2S;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S1: Adaptor3d_HSurface
-S2: Adaptor3d_HSurface
-
-Returns
--------
-None
-") IntWalk_TheFunctionOfTheInt2S;
-		 IntWalk_TheFunctionOfTheInt2S(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2);
 
 		/****************** IsTangent ******************/
 		%feature("compactdefaultargs") IsTangent;
@@ -309,6 +309,39 @@ bool
 *************************/
 class IntWalk_TheInt2S {
 	public:
+		/****************** IntWalk_TheInt2S ******************/
+		%feature("compactdefaultargs") IntWalk_TheInt2S;
+		%feature("autodoc", "Compute the solution point with the close point.
+
+Parameters
+----------
+Param: TColStd_Array1OfReal
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+TolTangency: float
+
+Returns
+-------
+None
+") IntWalk_TheInt2S;
+		 IntWalk_TheInt2S(const TColStd_Array1OfReal & Param, const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const Standard_Real TolTangency);
+
+		/****************** IntWalk_TheInt2S ******************/
+		%feature("compactdefaultargs") IntWalk_TheInt2S;
+		%feature("autodoc", "Initialize the parameters to compute the solution point it 's possible to write to optimize: intimp_int2s inter(s1,s2,func,toltangency); math_functionsetroot rsnld(inter.function()); while ...{ param(1)=... param(2)=... param(3)=... inter.perform(param,rsnld); }.
+
+Parameters
+----------
+S1: Adaptor3d_HSurface
+S2: Adaptor3d_HSurface
+TolTangency: float
+
+Returns
+-------
+None
+") IntWalk_TheInt2S;
+		 IntWalk_TheInt2S(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const Standard_Real TolTangency);
+
 		/****************** ChangePoint ******************/
 		%feature("compactdefaultargs") ChangePoint;
 		%feature("autodoc", "Return the intersection point which is enable for changing.
@@ -358,39 +391,6 @@ Returns
 IntWalk_TheFunctionOfTheInt2S
 ") Function;
 		IntWalk_TheFunctionOfTheInt2S & Function();
-
-		/****************** IntWalk_TheInt2S ******************/
-		%feature("compactdefaultargs") IntWalk_TheInt2S;
-		%feature("autodoc", "Compute the solution point with the close point.
-
-Parameters
-----------
-Param: TColStd_Array1OfReal
-S1: Adaptor3d_HSurface
-S2: Adaptor3d_HSurface
-TolTangency: float
-
-Returns
--------
-None
-") IntWalk_TheInt2S;
-		 IntWalk_TheInt2S(const TColStd_Array1OfReal & Param, const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const Standard_Real TolTangency);
-
-		/****************** IntWalk_TheInt2S ******************/
-		%feature("compactdefaultargs") IntWalk_TheInt2S;
-		%feature("autodoc", "Initialize the parameters to compute the solution point it 's possible to write to optimize: intimp_int2s inter(s1,s2,func,toltangency); math_functionsetroot rsnld(inter.function()); while ...{ param(1)=... param(2)=... param(3)=... inter.perform(param,rsnld); }.
-
-Parameters
-----------
-S1: Adaptor3d_HSurface
-S2: Adaptor3d_HSurface
-TolTangency: float
-
-Returns
--------
-None
-") IntWalk_TheInt2S;
-		 IntWalk_TheInt2S(const opencascade::handle<Adaptor3d_HSurface> & S1, const opencascade::handle<Adaptor3d_HSurface> & S2, const Standard_Real TolTangency);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;

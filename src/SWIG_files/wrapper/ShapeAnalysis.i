@@ -103,16 +103,16 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(ShapeAnalysis_SequenceOfFreeBounds) NCollection_Sequence<opencascade::handle<ShapeAnalysis_FreeBoundData>>;
-%template(ShapeAnalysis_DataMapOfShapeListOfReal) NCollection_DataMap<TopoDS_Shape,TColStd_ListOfReal,TopTools_ShapeMapHasher>;
 %template(ShapeAnalysis_BoxBndTree) NCollection_UBTree<Standard_Integer,Bnd_Box>;
+%template(ShapeAnalysis_DataMapOfShapeListOfReal) NCollection_DataMap<TopoDS_Shape,TColStd_ListOfReal,TopTools_ShapeMapHasher>;
+%template(ShapeAnalysis_SequenceOfFreeBounds) NCollection_Sequence<opencascade::handle<ShapeAnalysis_FreeBoundData>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<opencascade::handle<ShapeAnalysis_FreeBoundData>> ShapeAnalysis_SequenceOfFreeBounds;
-typedef NCollection_DataMap<TopoDS_Shape, TColStd_ListOfReal, TopTools_ShapeMapHasher> ShapeAnalysis_DataMapOfShapeListOfReal;
-typedef NCollection_DataMap<TopoDS_Shape, TColStd_ListOfReal, TopTools_ShapeMapHasher>::Iterator ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal;
 typedef NCollection_UBTree<Standard_Integer, Bnd_Box> ShapeAnalysis_BoxBndTree;
+typedef NCollection_DataMap<TopoDS_Shape, TColStd_ListOfReal, TopTools_ShapeMapHasher>::Iterator ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal;
+typedef NCollection_DataMap<TopoDS_Shape, TColStd_ListOfReal, TopTools_ShapeMapHasher> ShapeAnalysis_DataMapOfShapeListOfReal;
+typedef NCollection_Sequence<opencascade::handle<ShapeAnalysis_FreeBoundData>> ShapeAnalysis_SequenceOfFreeBounds;
 /* end typedefs declaration */
 
 /**********************
@@ -258,6 +258,16 @@ float
 *************************************/
 class ShapeAnalysis_CheckSmallFace {
 	public:
+		/****************** ShapeAnalysis_CheckSmallFace ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_CheckSmallFace;
+		%feature("autodoc", "Creates an empty tool checks a shape i.e. each of its faces, records checks as diagnostics in the <infos> //! if <infos> has not been set before, no check is done //! for faces which are in a shell, topological data are recorded to allow recovering connectivities after fixing or removing the small faces or parts of faces enchains various checks on a face inshell : to compute more informations, relevant to topology.
+
+Returns
+-------
+None
+") ShapeAnalysis_CheckSmallFace;
+		 ShapeAnalysis_CheckSmallFace();
+
 		/****************** CheckPin ******************/
 		%feature("compactdefaultargs") CheckPin;
 		%feature("autodoc", "Checks if a face has a pin, which can be edited no singularity : no pin, returns 0 if there is a pin, checked topics, with returned value : - 0 : nothing to do more - 1 : 'smooth', i.e. not a really sharp pin -> diagnostic 'smoothpin' - 2 : stretched pin, i.e. is possible to relimit the face by another vertex, so that this vertex still gives a pin -> diagnostic 'stretchedpin' with location of vertex (pnt).
@@ -476,16 +486,6 @@ Returns
 None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real tol);
-
-		/****************** ShapeAnalysis_CheckSmallFace ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_CheckSmallFace;
-		%feature("autodoc", "Creates an empty tool checks a shape i.e. each of its faces, records checks as diagnostics in the <infos> //! if <infos> has not been set before, no check is done //! for faces which are in a shell, topological data are recorded to allow recovering connectivities after fixing or removing the small faces or parts of faces enchains various checks on a face inshell : to compute more informations, relevant to topology.
-
-Returns
--------
-None
-") ShapeAnalysis_CheckSmallFace;
-		 ShapeAnalysis_CheckSmallFace();
 
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
@@ -922,6 +922,16 @@ bool
 ***************************/
 class ShapeAnalysis_Edge {
 	public:
+		/****************** ShapeAnalysis_Edge ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_Edge;
+		%feature("autodoc", "Empty constructor; initialises status to ok.
+
+Returns
+-------
+None
+") ShapeAnalysis_Edge;
+		 ShapeAnalysis_Edge();
+
 		/****************** BoundUV ******************/
 		%feature("compactdefaultargs") BoundUV;
 		%feature("autodoc", "No available documentation.
@@ -1384,16 +1394,6 @@ bool
 ") PCurve;
 		Standard_Boolean PCurve(const TopoDS_Edge & edge, const opencascade::handle<Geom_Surface> & surface, const TopLoc_Location & location, opencascade::handle<Geom2d_Curve> & C2d, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean orient = Standard_True);
 
-		/****************** ShapeAnalysis_Edge ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_Edge;
-		%feature("autodoc", "Empty constructor; initialises status to ok.
-
-Returns
--------
-None
-") ShapeAnalysis_Edge;
-		 ShapeAnalysis_Edge();
-
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
 		%feature("autodoc", "Returns the status (in the form of true/false) of last check.
@@ -1422,6 +1422,30 @@ bool
 ************************************/
 class ShapeAnalysis_FreeBoundData : public Standard_Transient {
 	public:
+		/****************** ShapeAnalysis_FreeBoundData ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_FreeBoundData;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeAnalysis_FreeBoundData;
+		 ShapeAnalysis_FreeBoundData();
+
+		/****************** ShapeAnalysis_FreeBoundData ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_FreeBoundData;
+		%feature("autodoc", "Creates object with contour given in the form of topods_wire.
+
+Parameters
+----------
+freebound: TopoDS_Wire
+
+Returns
+-------
+None
+") ShapeAnalysis_FreeBoundData;
+		 ShapeAnalysis_FreeBoundData(const TopoDS_Wire & freebound);
+
 		/****************** AddNotch ******************/
 		%feature("compactdefaultargs") AddNotch;
 		%feature("autodoc", "Adds notch on the contour with its maximum width.
@@ -1619,30 +1643,6 @@ None
 ") SetWidth;
 		void SetWidth(const Standard_Real width);
 
-		/****************** ShapeAnalysis_FreeBoundData ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_FreeBoundData;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeAnalysis_FreeBoundData;
-		 ShapeAnalysis_FreeBoundData();
-
-		/****************** ShapeAnalysis_FreeBoundData ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_FreeBoundData;
-		%feature("autodoc", "Creates object with contour given in the form of topods_wire.
-
-Parameters
-----------
-freebound: TopoDS_Wire
-
-Returns
--------
-None
-") ShapeAnalysis_FreeBoundData;
-		 ShapeAnalysis_FreeBoundData(const TopoDS_Wire & freebound);
-
 		/****************** Width ******************/
 		%feature("compactdefaultargs") Width;
 		%feature("autodoc", "Returns average width of the contour.
@@ -1669,6 +1669,55 @@ float
 *********************************/
 class ShapeAnalysis_FreeBounds {
 	public:
+		/****************** ShapeAnalysis_FreeBounds ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_FreeBounds;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeAnalysis_FreeBounds;
+		 ShapeAnalysis_FreeBounds();
+
+		/****************** ShapeAnalysis_FreeBounds ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_FreeBounds;
+		%feature("autodoc", "Builds forecasting free bounds of the <shape>. <shape> should be a compound of faces. this constructor is to be used for forecasting free edges with help of sewing analyzer brepalgo_sewing which is called with tolerance <toler>. free edges are connected into wires only when their ends are at distance less than <toler>. if <splitclosed> is true extracts closed sub-wires out of built closed wires. if <splitopen> is true extracts closed sub-wires out of built open wires.
+
+Parameters
+----------
+shape: TopoDS_Shape
+toler: float
+splitclosed: bool,optional
+	default value is Standard_False
+splitopen: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") ShapeAnalysis_FreeBounds;
+		 ShapeAnalysis_FreeBounds(const TopoDS_Shape & shape, const Standard_Real toler, const Standard_Boolean splitclosed = Standard_False, const Standard_Boolean splitopen = Standard_True);
+
+		/****************** ShapeAnalysis_FreeBounds ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_FreeBounds;
+		%feature("autodoc", "Builds actual free bounds of the <shape>. <shape> should be a compound of shells. this constructor is to be used for getting free edges (ones referenced by the only face) with help of analyzer shapeanalysis_shell. free edges are connected into wires only when they share the same vertex. if <splitclosed> is true extracts closed sub-wires out of built closed wires. if <splitopen> is true extracts closed sub-wires out of built open wires.
+
+Parameters
+----------
+shape: TopoDS_Shape
+splitclosed: bool,optional
+	default value is Standard_False
+splitopen: bool,optional
+	default value is Standard_True
+checkinternaledges: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") ShapeAnalysis_FreeBounds;
+		 ShapeAnalysis_FreeBounds(const TopoDS_Shape & shape, const Standard_Boolean splitclosed = Standard_False, const Standard_Boolean splitopen = Standard_True, const Standard_Boolean checkinternaledges = Standard_False);
+
 		/****************** ConnectEdgesToWires ******************/
 		%feature("compactdefaultargs") ConnectEdgesToWires;
 		%feature("autodoc", "Builds sequnce of <wires> out of sequence of not sorted <edges>. tries to build wires of maximum length. building a wire is stopped when no edges can be connected to it at its head or at its tail. //! orientation of the edge can change when connecting. if <shared> is true connection is performed only when adjacent edges share the same vertex. if <shared> is false connection is performed only when ends of adjacent edges are at distance less than <toler>.
@@ -1757,55 +1806,6 @@ TopoDS_Compound
 ") GetOpenWires;
 		const TopoDS_Compound GetOpenWires();
 
-		/****************** ShapeAnalysis_FreeBounds ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_FreeBounds;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeAnalysis_FreeBounds;
-		 ShapeAnalysis_FreeBounds();
-
-		/****************** ShapeAnalysis_FreeBounds ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_FreeBounds;
-		%feature("autodoc", "Builds forecasting free bounds of the <shape>. <shape> should be a compound of faces. this constructor is to be used for forecasting free edges with help of sewing analyzer brepalgo_sewing which is called with tolerance <toler>. free edges are connected into wires only when their ends are at distance less than <toler>. if <splitclosed> is true extracts closed sub-wires out of built closed wires. if <splitopen> is true extracts closed sub-wires out of built open wires.
-
-Parameters
-----------
-shape: TopoDS_Shape
-toler: float
-splitclosed: bool,optional
-	default value is Standard_False
-splitopen: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") ShapeAnalysis_FreeBounds;
-		 ShapeAnalysis_FreeBounds(const TopoDS_Shape & shape, const Standard_Real toler, const Standard_Boolean splitclosed = Standard_False, const Standard_Boolean splitopen = Standard_True);
-
-		/****************** ShapeAnalysis_FreeBounds ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_FreeBounds;
-		%feature("autodoc", "Builds actual free bounds of the <shape>. <shape> should be a compound of shells. this constructor is to be used for getting free edges (ones referenced by the only face) with help of analyzer shapeanalysis_shell. free edges are connected into wires only when they share the same vertex. if <splitclosed> is true extracts closed sub-wires out of built closed wires. if <splitopen> is true extracts closed sub-wires out of built open wires.
-
-Parameters
-----------
-shape: TopoDS_Shape
-splitclosed: bool,optional
-	default value is Standard_False
-splitopen: bool,optional
-	default value is Standard_True
-checkinternaledges: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") ShapeAnalysis_FreeBounds;
-		 ShapeAnalysis_FreeBounds(const TopoDS_Shape & shape, const Standard_Boolean splitclosed = Standard_False, const Standard_Boolean splitopen = Standard_True, const Standard_Boolean checkinternaledges = Standard_False);
-
 		/****************** SplitWires ******************/
 		%feature("compactdefaultargs") SplitWires;
 		%feature("autodoc", "Extracts closed sub-wires out of <wires> and adds them to <closed>, open wires remained after extraction are put into <open>. if <shared> is true extraction is performed only when edges share the same vertex. if <shared> is false connection is performed only when ends of the edges are at distance less than <toler>.
@@ -1838,6 +1838,53 @@ None
 *******************************************/
 class ShapeAnalysis_FreeBoundsProperties {
 	public:
+		/****************** ShapeAnalysis_FreeBoundsProperties ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_FreeBoundsProperties;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeAnalysis_FreeBoundsProperties;
+		 ShapeAnalysis_FreeBoundsProperties();
+
+		/****************** ShapeAnalysis_FreeBoundsProperties ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_FreeBoundsProperties;
+		%feature("autodoc", "Creates the object and calls corresponding init. <shape> should be a compound of faces.
+
+Parameters
+----------
+shape: TopoDS_Shape
+tolerance: float
+splitclosed: bool,optional
+	default value is Standard_False
+splitopen: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") ShapeAnalysis_FreeBoundsProperties;
+		 ShapeAnalysis_FreeBoundsProperties(const TopoDS_Shape & shape, const Standard_Real tolerance, const Standard_Boolean splitclosed = Standard_False, const Standard_Boolean splitopen = Standard_False);
+
+		/****************** ShapeAnalysis_FreeBoundsProperties ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_FreeBoundsProperties;
+		%feature("autodoc", "Creates the object and calls corresponding init. <shape> should be a compound of shells.
+
+Parameters
+----------
+shape: TopoDS_Shape
+splitclosed: bool,optional
+	default value is Standard_False
+splitopen: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") ShapeAnalysis_FreeBoundsProperties;
+		 ShapeAnalysis_FreeBoundsProperties(const TopoDS_Shape & shape, const Standard_Boolean splitclosed = Standard_False, const Standard_Boolean splitopen = Standard_False);
+
 		/****************** CheckContours ******************/
 		%feature("compactdefaultargs") CheckContours;
 		%feature("autodoc", "No available documentation.
@@ -2074,53 +2121,6 @@ TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
 
-		/****************** ShapeAnalysis_FreeBoundsProperties ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_FreeBoundsProperties;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeAnalysis_FreeBoundsProperties;
-		 ShapeAnalysis_FreeBoundsProperties();
-
-		/****************** ShapeAnalysis_FreeBoundsProperties ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_FreeBoundsProperties;
-		%feature("autodoc", "Creates the object and calls corresponding init. <shape> should be a compound of faces.
-
-Parameters
-----------
-shape: TopoDS_Shape
-tolerance: float
-splitclosed: bool,optional
-	default value is Standard_False
-splitopen: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") ShapeAnalysis_FreeBoundsProperties;
-		 ShapeAnalysis_FreeBoundsProperties(const TopoDS_Shape & shape, const Standard_Real tolerance, const Standard_Boolean splitclosed = Standard_False, const Standard_Boolean splitopen = Standard_False);
-
-		/****************** ShapeAnalysis_FreeBoundsProperties ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_FreeBoundsProperties;
-		%feature("autodoc", "Creates the object and calls corresponding init. <shape> should be a compound of shells.
-
-Parameters
-----------
-shape: TopoDS_Shape
-splitclosed: bool,optional
-	default value is Standard_False
-splitopen: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") ShapeAnalysis_FreeBoundsProperties;
-		 ShapeAnalysis_FreeBoundsProperties(const TopoDS_Shape & shape, const Standard_Boolean splitclosed = Standard_False, const Standard_Boolean splitopen = Standard_False);
-
 		/****************** Tolerance ******************/
 		%feature("compactdefaultargs") Tolerance;
 		%feature("autodoc", "Returns tolerance.
@@ -2192,6 +2192,16 @@ bool
 ************************************/
 class ShapeAnalysis_ShapeContents {
 	public:
+		/****************** ShapeAnalysis_ShapeContents ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_ShapeContents;
+		%feature("autodoc", "Initialize fields and call clearflags().
+
+Returns
+-------
+None
+") ShapeAnalysis_ShapeContents;
+		 ShapeAnalysis_ShapeContents();
+
 		/****************** BigSplineSec ******************/
 		%feature("compactdefaultargs") BigSplineSec;
 		%feature("autodoc", "No available documentation.
@@ -2674,16 +2684,6 @@ None
 ") Perform;
 		void Perform(const TopoDS_Shape & shape);
 
-		/****************** ShapeAnalysis_ShapeContents ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_ShapeContents;
-		%feature("autodoc", "Initialize fields and call clearflags().
-
-Returns
--------
-None
-") ShapeAnalysis_ShapeContents;
-		 ShapeAnalysis_ShapeContents();
-
 		/****************** Trimmed2dSec ******************/
 		%feature("compactdefaultargs") Trimmed2dSec;
 		%feature("autodoc", "No available documentation.
@@ -2718,6 +2718,16 @@ opencascade::handle<TopTools_HSequenceOfShape>
 *************************************/
 class ShapeAnalysis_ShapeTolerance {
 	public:
+		/****************** ShapeAnalysis_ShapeTolerance ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_ShapeTolerance;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeAnalysis_ShapeTolerance;
+		 ShapeAnalysis_ShapeTolerance();
+
 		/****************** AddTolerance ******************/
 		%feature("compactdefaultargs") AddTolerance;
 		%feature("autodoc", "Adds data on new shape to compute cumulated tolerance (prepares three computations : maximal, average, minimal).
@@ -2792,16 +2802,6 @@ Returns
 opencascade::handle<TopTools_HSequenceOfShape>
 ") OverTolerance;
 		opencascade::handle<TopTools_HSequenceOfShape> OverTolerance(const TopoDS_Shape & shape, const Standard_Real value, const TopAbs_ShapeEnum type = TopAbs_SHAPE);
-
-		/****************** ShapeAnalysis_ShapeTolerance ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_ShapeTolerance;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeAnalysis_ShapeTolerance;
-		 ShapeAnalysis_ShapeTolerance();
 
 		/****************** Tolerance ******************/
 		%feature("compactdefaultargs") Tolerance;
@@ -2978,6 +2978,20 @@ int
 ******************************/
 class ShapeAnalysis_Surface : public Standard_Transient {
 	public:
+		/****************** ShapeAnalysis_Surface ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_Surface;
+		%feature("autodoc", "Creates an analyzer object on the basis of existing surface.
+
+Parameters
+----------
+S: Geom_Surface
+
+Returns
+-------
+None
+") ShapeAnalysis_Surface;
+		 ShapeAnalysis_Surface(const opencascade::handle<Geom_Surface> & S);
+
 		/****************** Adaptor3d ******************/
 		%feature("compactdefaultargs") Adaptor3d;
 		%feature("autodoc", "Returns the adaptor. creates it if not yet done.
@@ -3274,20 +3288,6 @@ None
 ") SetDomain;
 		void SetDomain(const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2);
 
-		/****************** ShapeAnalysis_Surface ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_Surface;
-		%feature("autodoc", "Creates an analyzer object on the basis of existing surface.
-
-Parameters
-----------
-S: Geom_Surface
-
-Returns
--------
-None
-") ShapeAnalysis_Surface;
-		 ShapeAnalysis_Surface(const opencascade::handle<Geom_Surface> & S);
-
 		/****************** Singularity ******************/
 		%feature("compactdefaultargs") Singularity;
 		%feature("autodoc", "Returns the characteristics of the singularity specified by its rank number <num>. that means, that it is not neccessary for <num> to be in the range [1, nbsingularities] but must be not greater than possible (see computesingularities). the returned characteristics are: preci: the smallest precision with which the iso-line is considered as degenerated, p3d: 3d point of singularity (middle point of the surface iso-line), firstp2d and lastp2d: first and last 2d points of the iso-line in parametrical surface, firstpar and lastpar: first and last parameters of the iso-line in parametrical surface, uisodeg: if the degenerated iso-line is u-iso (true) or v-iso (false). returns false if <num> is out of range, else returns true.
@@ -3454,6 +3454,31 @@ gp_Pnt2d
 *****************************************/
 class ShapeAnalysis_TransferParameters : public Standard_Transient {
 	public:
+		/****************** ShapeAnalysis_TransferParameters ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_TransferParameters;
+		%feature("autodoc", "Creates empty tool with myshift = 0 and myscale = 1.
+
+Returns
+-------
+None
+") ShapeAnalysis_TransferParameters;
+		 ShapeAnalysis_TransferParameters();
+
+		/****************** ShapeAnalysis_TransferParameters ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_TransferParameters;
+		%feature("autodoc", "Creates a tool and initializes it with edge and face.
+
+Parameters
+----------
+E: TopoDS_Edge
+F: TopoDS_Face
+
+Returns
+-------
+None
+") ShapeAnalysis_TransferParameters;
+		 ShapeAnalysis_TransferParameters(const TopoDS_Edge & E, const TopoDS_Face & F);
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize a tool with edge and face.
@@ -3523,31 +3548,6 @@ None
 ") SetMaxTolerance;
 		void SetMaxTolerance(const Standard_Real maxtol);
 
-		/****************** ShapeAnalysis_TransferParameters ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_TransferParameters;
-		%feature("autodoc", "Creates empty tool with myshift = 0 and myscale = 1.
-
-Returns
--------
-None
-") ShapeAnalysis_TransferParameters;
-		 ShapeAnalysis_TransferParameters();
-
-		/****************** ShapeAnalysis_TransferParameters ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_TransferParameters;
-		%feature("autodoc", "Creates a tool and initializes it with edge and face.
-
-Parameters
-----------
-E: TopoDS_Edge
-F: TopoDS_Face
-
-Returns
--------
-None
-") ShapeAnalysis_TransferParameters;
-		 ShapeAnalysis_TransferParameters(const TopoDS_Edge & E, const TopoDS_Face & F);
-
 		/****************** TransferRange ******************/
 		%feature("compactdefaultargs") TransferRange;
 		%feature("autodoc", "Recomputes range of curves from newedge. if is2d equals true parameters are recomputed by curve2d else by curve3d.
@@ -3581,6 +3581,48 @@ None
 ***************************/
 class ShapeAnalysis_Wire : public Standard_Transient {
 	public:
+		/****************** ShapeAnalysis_Wire ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_Wire;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeAnalysis_Wire;
+		 ShapeAnalysis_Wire();
+
+		/****************** ShapeAnalysis_Wire ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_Wire;
+		%feature("autodoc", "Creates object with standard topods_wire, face and precision.
+
+Parameters
+----------
+wire: TopoDS_Wire
+face: TopoDS_Face
+precision: float
+
+Returns
+-------
+None
+") ShapeAnalysis_Wire;
+		 ShapeAnalysis_Wire(const TopoDS_Wire & wire, const TopoDS_Face & face, const Standard_Real precision);
+
+		/****************** ShapeAnalysis_Wire ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_Wire;
+		%feature("autodoc", "Creates the object with wiredata object, face and precision.
+
+Parameters
+----------
+sbwd: ShapeExtend_WireData
+face: TopoDS_Face
+precision: float
+
+Returns
+-------
+None
+") ShapeAnalysis_Wire;
+		 ShapeAnalysis_Wire(const opencascade::handle<ShapeExtend_WireData> & sbwd, const TopoDS_Face & face, const Standard_Real precision);
+
 		/****************** CheckClosed ******************/
 		%feature("compactdefaultargs") CheckClosed;
 		%feature("autodoc", "Checks if wire is closed, performs checkconnected, checkdegenerated and checklacking for the first and the last edges returns: true if at least one check returned true status: fail1 or done1: see checkconnected fail2 or done2: see checkdegenerated.
@@ -4360,48 +4402,6 @@ None
 ") SetSurface;
 		void SetSurface(const opencascade::handle<Geom_Surface> & surface, const TopLoc_Location & location);
 
-		/****************** ShapeAnalysis_Wire ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_Wire;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeAnalysis_Wire;
-		 ShapeAnalysis_Wire();
-
-		/****************** ShapeAnalysis_Wire ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_Wire;
-		%feature("autodoc", "Creates object with standard topods_wire, face and precision.
-
-Parameters
-----------
-wire: TopoDS_Wire
-face: TopoDS_Face
-precision: float
-
-Returns
--------
-None
-") ShapeAnalysis_Wire;
-		 ShapeAnalysis_Wire(const TopoDS_Wire & wire, const TopoDS_Face & face, const Standard_Real precision);
-
-		/****************** ShapeAnalysis_Wire ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_Wire;
-		%feature("autodoc", "Creates the object with wiredata object, face and precision.
-
-Parameters
-----------
-sbwd: ShapeExtend_WireData
-face: TopoDS_Face
-precision: float
-
-Returns
--------
-None
-") ShapeAnalysis_Wire;
-		 ShapeAnalysis_Wire(const opencascade::handle<ShapeExtend_WireData> & sbwd, const TopoDS_Face & face, const Standard_Real precision);
-
 		/****************** StatusClosed ******************/
 		%feature("compactdefaultargs") StatusClosed;
 		%feature("autodoc", "No available documentation.
@@ -4606,6 +4606,31 @@ opencascade::handle<ShapeExtend_WireData>
 ********************************/
 class ShapeAnalysis_WireOrder {
 	public:
+		/****************** ShapeAnalysis_WireOrder ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_WireOrder;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeAnalysis_WireOrder;
+		 ShapeAnalysis_WireOrder();
+
+		/****************** ShapeAnalysis_WireOrder ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_WireOrder;
+		%feature("autodoc", "Creates a wireorder in 3d (if mode3d is true) or 2d (if false) with a tolerance.
+
+Parameters
+----------
+mode3d: bool
+tol: float
+
+Returns
+-------
+None
+") ShapeAnalysis_WireOrder;
+		 ShapeAnalysis_WireOrder(const Standard_Boolean mode3d, const Standard_Real tol);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a couple of points 3d (start,end).
@@ -4818,31 +4843,6 @@ None
 ") SetMode;
 		void SetMode(const Standard_Boolean mode3d, const Standard_Real tol);
 
-		/****************** ShapeAnalysis_WireOrder ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_WireOrder;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeAnalysis_WireOrder;
-		 ShapeAnalysis_WireOrder();
-
-		/****************** ShapeAnalysis_WireOrder ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_WireOrder;
-		%feature("autodoc", "Creates a wireorder in 3d (if mode3d is true) or 2d (if false) with a tolerance.
-
-Parameters
-----------
-mode3d: bool
-tol: float
-
-Returns
--------
-None
-") ShapeAnalysis_WireOrder;
-		 ShapeAnalysis_WireOrder(const Standard_Boolean mode3d, const Standard_Real tol);
-
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
 		%feature("autodoc", "Returns the status of the order (0 if not done) : 0 : all edges are direct and in sequence 1 : all edges are direct but some are not in sequence 2 : in addition, unresolved gaps remain -1 : some edges are reversed, but no gap remain -2 : some edges are reversed and some gaps remain -10 : could not be resolved, failure on reorder gap : regarding starting <tol>.
@@ -4909,6 +4909,16 @@ None
 *********************************/
 class ShapeAnalysis_WireVertex {
 	public:
+		/****************** ShapeAnalysis_WireVertex ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_WireVertex;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeAnalysis_WireVertex;
+		 ShapeAnalysis_WireVertex();
+
 		/****************** Analyze ******************/
 		%feature("compactdefaultargs") Analyze;
 		%feature("autodoc", "No available documentation.
@@ -5189,16 +5199,6 @@ None
 ") SetStart;
 		void SetStart(const Standard_Integer num, const gp_XYZ & pos, const Standard_Real upre);
 
-		/****************** ShapeAnalysis_WireVertex ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_WireVertex;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeAnalysis_WireVertex;
-		 ShapeAnalysis_WireVertex();
-
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
 		%feature("autodoc", "Returns the recorded status for a vertex more detail by method data.
@@ -5268,6 +5268,31 @@ opencascade::handle<ShapeExtend_WireData>
 *********************************************/
 class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParameters {
 	public:
+		/****************** ShapeAnalysis_TransferParametersProj ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_TransferParametersProj;
+		%feature("autodoc", "Creats empty constructor.
+
+Returns
+-------
+None
+") ShapeAnalysis_TransferParametersProj;
+		 ShapeAnalysis_TransferParametersProj();
+
+		/****************** ShapeAnalysis_TransferParametersProj ******************/
+		%feature("compactdefaultargs") ShapeAnalysis_TransferParametersProj;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: TopoDS_Edge
+F: TopoDS_Face
+
+Returns
+-------
+None
+") ShapeAnalysis_TransferParametersProj;
+		 ShapeAnalysis_TransferParametersProj(const TopoDS_Edge & E, const TopoDS_Face & F);
+
 		/****************** CopyNMVertex ******************/
 		%feature("compactdefaultargs") CopyNMVertex;
 		%feature("autodoc", "Make a copy of non-manifold vertex thevert (i.e. create new tvertex and replace pointrepresentations for this vertex from fromedge to toedge. other representations were copied).
@@ -5367,31 +5392,6 @@ Returns
 float
 ") Perform;
 		virtual Standard_Real Perform(const Standard_Real Param, const Standard_Boolean To2d);
-
-		/****************** ShapeAnalysis_TransferParametersProj ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_TransferParametersProj;
-		%feature("autodoc", "Creats empty constructor.
-
-Returns
--------
-None
-") ShapeAnalysis_TransferParametersProj;
-		 ShapeAnalysis_TransferParametersProj();
-
-		/****************** ShapeAnalysis_TransferParametersProj ******************/
-		%feature("compactdefaultargs") ShapeAnalysis_TransferParametersProj;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-E: TopoDS_Edge
-F: TopoDS_Face
-
-Returns
--------
-None
-") ShapeAnalysis_TransferParametersProj;
-		 ShapeAnalysis_TransferParametersProj(const TopoDS_Edge & E, const TopoDS_Face & F);
 
 		/****************** TransferRange ******************/
 		%feature("compactdefaultargs") TransferRange;

@@ -69,16 +69,16 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(TopLoc_MapOfLocation) NCollection_Map<TopLoc_Location,TopLoc_MapLocationHasher>;
 %template(TopLoc_IndexedMapOfLocation) NCollection_IndexedMap<TopLoc_Location,TopLoc_MapLocationHasher>;
 %template(TopLoc_MapLocationHasher) NCollection_DefaultHasher<TopLoc_Location>;
+%template(TopLoc_MapOfLocation) NCollection_Map<TopLoc_Location,TopLoc_MapLocationHasher>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Map<TopLoc_Location, TopLoc_MapLocationHasher> TopLoc_MapOfLocation;
-typedef NCollection_Map<TopLoc_Location, TopLoc_MapLocationHasher>::Iterator TopLoc_MapIteratorOfMapOfLocation;
 typedef NCollection_IndexedMap<TopLoc_Location, TopLoc_MapLocationHasher> TopLoc_IndexedMapOfLocation;
+typedef NCollection_Map<TopLoc_Location, TopLoc_MapLocationHasher>::Iterator TopLoc_MapIteratorOfMapOfLocation;
 typedef NCollection_DefaultHasher<TopLoc_Location> TopLoc_MapLocationHasher;
+typedef NCollection_Map<TopLoc_Location, TopLoc_MapLocationHasher> TopLoc_MapOfLocation;
 /* end typedefs declaration */
 
 /***********************
@@ -86,22 +86,6 @@ typedef NCollection_DefaultHasher<TopLoc_Location> TopLoc_MapLocationHasher;
 ***********************/
 class TopLoc_Datum3D : public Standard_Transient {
 	public:
-
-            %feature("autodoc", "1");
-            %extend{
-                std::string DumpJsonToString(int depth=-1) {
-                std::stringstream s;
-                self->DumpJson(s, depth);
-                return s.str();}
-            };
-
-        %feature("autodoc", "1");
-        %extend{
-            std::string ShallowDumpToString() {
-            std::stringstream s;
-            self->ShallowDump(s);
-            return s.str();}
-        };
 		/****************** TopLoc_Datum3D ******************/
 		%feature("compactdefaultargs") TopLoc_Datum3D;
 		%feature("autodoc", "Constructs a default datum3d.
@@ -126,6 +110,22 @@ None
 ") TopLoc_Datum3D;
 		 TopLoc_Datum3D(const gp_Trsf & T);
 
+
+            %feature("autodoc", "1");
+            %extend{
+                std::string DumpJsonToString(int depth=-1) {
+                std::stringstream s;
+                self->DumpJson(s, depth);
+                return s.str();}
+            };
+
+        %feature("autodoc", "1");
+        %extend{
+            std::string ShallowDumpToString() {
+            std::stringstream s;
+            self->ShallowDump(s);
+            return s.str();}
+        };
 		/****************** Transformation ******************/
 		%feature("compactdefaultargs") Transformation;
 		%feature("autodoc", "Returns a gp_trsf which, when applied to this datum, produces the default datum.
@@ -152,14 +152,6 @@ gp_Trsf
 ****************************/
 class TopLoc_ItemLocation {
 	public:
-
-            %feature("autodoc", "1");
-            %extend{
-                std::string DumpJsonToString(int depth=-1) {
-                std::stringstream s;
-                self->DumpJson(s, depth);
-                return s.str();}
-            };
 		/****************** TopLoc_ItemLocation ******************/
 		%feature("compactdefaultargs") TopLoc_ItemLocation;
 		%feature("autodoc", "Sets the elementary datum to <d> sets the exponent to <p>.
@@ -175,6 +167,14 @@ None
 ") TopLoc_ItemLocation;
 		 TopLoc_ItemLocation(const opencascade::handle<TopLoc_Datum3D> & D, const Standard_Integer P);
 
+
+            %feature("autodoc", "1");
+            %extend{
+                std::string DumpJsonToString(int depth=-1) {
+                std::stringstream s;
+                self->DumpJson(s, depth);
+                return s.str();}
+            };
 };
 
 
@@ -189,6 +189,44 @@ None
 ************************/
 class TopLoc_Location {
 	public:
+		/****************** TopLoc_Location ******************/
+		%feature("compactdefaultargs") TopLoc_Location;
+		%feature("autodoc", "Constructs an empty local coordinate system object. note: a location constructed from a default datum is said to be 'empty'.
+
+Returns
+-------
+None
+") TopLoc_Location;
+		 TopLoc_Location();
+
+		/****************** TopLoc_Location ******************/
+		%feature("compactdefaultargs") TopLoc_Location;
+		%feature("autodoc", "Constructs the local coordinate system object defined by the transformation t. t invokes in turn, a toploc_datum3d object.
+
+Parameters
+----------
+T: gp_Trsf
+
+Returns
+-------
+None
+") TopLoc_Location;
+		 TopLoc_Location(const gp_Trsf & T);
+
+		/****************** TopLoc_Location ******************/
+		%feature("compactdefaultargs") TopLoc_Location;
+		%feature("autodoc", "Constructs the local coordinate system object defined by the 3d datum d. exceptions standard_constructionerror if the transformation t does not represent a 3d coordinate system.
+
+Parameters
+----------
+D: TopLoc_Datum3D
+
+Returns
+-------
+None
+") TopLoc_Location;
+		 TopLoc_Location(const opencascade::handle<TopLoc_Datum3D> & D);
+
 		/****************** Divided ******************/
 		%feature("compactdefaultargs") Divided;
 		%feature("autodoc", "Returns <self> / <other>.
@@ -369,44 +407,6 @@ TopLoc_Location
             self->ShallowDump(s);
             return s.str();}
         };
-		/****************** TopLoc_Location ******************/
-		%feature("compactdefaultargs") TopLoc_Location;
-		%feature("autodoc", "Constructs an empty local coordinate system object. note: a location constructed from a default datum is said to be 'empty'.
-
-Returns
--------
-None
-") TopLoc_Location;
-		 TopLoc_Location();
-
-		/****************** TopLoc_Location ******************/
-		%feature("compactdefaultargs") TopLoc_Location;
-		%feature("autodoc", "Constructs the local coordinate system object defined by the transformation t. t invokes in turn, a toploc_datum3d object.
-
-Parameters
-----------
-T: gp_Trsf
-
-Returns
--------
-None
-") TopLoc_Location;
-		 TopLoc_Location(const gp_Trsf & T);
-
-		/****************** TopLoc_Location ******************/
-		%feature("compactdefaultargs") TopLoc_Location;
-		%feature("autodoc", "Constructs the local coordinate system object defined by the 3d datum d. exceptions standard_constructionerror if the transformation t does not represent a 3d coordinate system.
-
-Parameters
-----------
-D: TopLoc_Datum3D
-
-Returns
--------
-None
-") TopLoc_Location;
-		 TopLoc_Location(const opencascade::handle<TopLoc_Datum3D> & D);
-
 		/****************** Transformation ******************/
 		%feature("compactdefaultargs") Transformation;
 		%feature("autodoc", "Returns the transformation associated to the coordinate system.
@@ -487,16 +487,6 @@ TopLoc_Location
 ***************************************/
 class TopLoc_SListNodeOfItemLocation : public Standard_Transient {
 	public:
-		/****************** Tail ******************/
-		%feature("compactdefaultargs") Tail;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TopLoc_SListOfItemLocation
-") Tail;
-		TopLoc_SListOfItemLocation & Tail();
-
 		/****************** TopLoc_SListNodeOfItemLocation ******************/
 		%feature("compactdefaultargs") TopLoc_SListNodeOfItemLocation;
 		%feature("autodoc", "No available documentation.
@@ -511,6 +501,16 @@ Returns
 None
 ") TopLoc_SListNodeOfItemLocation;
 		 TopLoc_SListNodeOfItemLocation(const TopLoc_ItemLocation & I, const TopLoc_SListOfItemLocation & aTail);
+
+		/****************** Tail ******************/
+		%feature("compactdefaultargs") Tail;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopLoc_SListOfItemLocation
+") Tail;
+		TopLoc_SListOfItemLocation & Tail();
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -542,6 +542,59 @@ TopLoc_ItemLocation
 ***********************************/
 class TopLoc_SListOfItemLocation {
 	public:
+		/****************** TopLoc_SListOfItemLocation ******************/
+		%feature("compactdefaultargs") TopLoc_SListOfItemLocation;
+		%feature("autodoc", "Creates an empty list.
+
+Returns
+-------
+None
+") TopLoc_SListOfItemLocation;
+		 TopLoc_SListOfItemLocation();
+
+		/****************** TopLoc_SListOfItemLocation ******************/
+		%feature("compactdefaultargs") TopLoc_SListOfItemLocation;
+		%feature("autodoc", "Creates a list with <anitem> as value and <atail> as tail.
+
+Parameters
+----------
+anItem: TopLoc_ItemLocation
+aTail: TopLoc_SListOfItemLocation
+
+Returns
+-------
+None
+") TopLoc_SListOfItemLocation;
+		 TopLoc_SListOfItemLocation(const TopLoc_ItemLocation & anItem, const TopLoc_SListOfItemLocation & aTail);
+
+		/****************** TopLoc_SListOfItemLocation ******************/
+		%feature("compactdefaultargs") TopLoc_SListOfItemLocation;
+		%feature("autodoc", "Creates a list from an other one. the lists are shared.
+
+Parameters
+----------
+Other: TopLoc_SListOfItemLocation
+
+Returns
+-------
+None
+") TopLoc_SListOfItemLocation;
+		 TopLoc_SListOfItemLocation(const TopLoc_SListOfItemLocation & Other);
+
+		/****************** TopLoc_SListOfItemLocation ******************/
+		%feature("compactdefaultargs") TopLoc_SListOfItemLocation;
+		%feature("autodoc", "Move constructor.
+
+Parameters
+----------
+theOther: TopLoc_SListOfItemLocation
+
+Returns
+-------
+None
+") TopLoc_SListOfItemLocation;
+		 TopLoc_SListOfItemLocation(TopLoc_SListOfItemLocation & theOther);
+
 		/****************** Assign ******************/
 		%feature("compactdefaultargs") Assign;
 		%feature("autodoc", "Sets a list from an other one. the lists are shared. the list itself is returned.
@@ -629,59 +682,6 @@ Returns
 None
 ") ToTail;
 		void ToTail();
-
-		/****************** TopLoc_SListOfItemLocation ******************/
-		%feature("compactdefaultargs") TopLoc_SListOfItemLocation;
-		%feature("autodoc", "Creates an empty list.
-
-Returns
--------
-None
-") TopLoc_SListOfItemLocation;
-		 TopLoc_SListOfItemLocation();
-
-		/****************** TopLoc_SListOfItemLocation ******************/
-		%feature("compactdefaultargs") TopLoc_SListOfItemLocation;
-		%feature("autodoc", "Creates a list with <anitem> as value and <atail> as tail.
-
-Parameters
-----------
-anItem: TopLoc_ItemLocation
-aTail: TopLoc_SListOfItemLocation
-
-Returns
--------
-None
-") TopLoc_SListOfItemLocation;
-		 TopLoc_SListOfItemLocation(const TopLoc_ItemLocation & anItem, const TopLoc_SListOfItemLocation & aTail);
-
-		/****************** TopLoc_SListOfItemLocation ******************/
-		%feature("compactdefaultargs") TopLoc_SListOfItemLocation;
-		%feature("autodoc", "Creates a list from an other one. the lists are shared.
-
-Parameters
-----------
-Other: TopLoc_SListOfItemLocation
-
-Returns
--------
-None
-") TopLoc_SListOfItemLocation;
-		 TopLoc_SListOfItemLocation(const TopLoc_SListOfItemLocation & Other);
-
-		/****************** TopLoc_SListOfItemLocation ******************/
-		%feature("compactdefaultargs") TopLoc_SListOfItemLocation;
-		%feature("autodoc", "Move constructor.
-
-Parameters
-----------
-theOther: TopLoc_SListOfItemLocation
-
-Returns
--------
-None
-") TopLoc_SListOfItemLocation;
-		 TopLoc_SListOfItemLocation(TopLoc_SListOfItemLocation & theOther);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;

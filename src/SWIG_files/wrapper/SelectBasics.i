@@ -120,6 +120,32 @@ int
 ********************************/
 class SelectBasics_PickResult {
 	public:
+		/****************** SelectBasics_PickResult ******************/
+		%feature("compactdefaultargs") SelectBasics_PickResult;
+		%feature("autodoc", "Empty constructor defining an invalid result.
+
+Returns
+-------
+None
+") SelectBasics_PickResult;
+		 SelectBasics_PickResult();
+
+		/****************** SelectBasics_PickResult ******************/
+		%feature("compactdefaultargs") SelectBasics_PickResult;
+		%feature("autodoc", "Constructor with initialization.
+
+Parameters
+----------
+theDepth: float
+theDistToCenter: float
+theObjPickedPnt: gp_Pnt
+
+Returns
+-------
+None
+") SelectBasics_PickResult;
+		 SelectBasics_PickResult(Standard_Real theDepth, Standard_Real theDistToCenter, const gp_Pnt & theObjPickedPnt);
+
 		/****************** Depth ******************/
 		%feature("compactdefaultargs") Depth;
 		%feature("autodoc", "Return depth along picking ray.
@@ -194,32 +220,6 @@ Returns
 gp_Pnt
 ") PickedPoint;
 		const gp_Pnt PickedPoint();
-
-		/****************** SelectBasics_PickResult ******************/
-		%feature("compactdefaultargs") SelectBasics_PickResult;
-		%feature("autodoc", "Empty constructor defining an invalid result.
-
-Returns
--------
-None
-") SelectBasics_PickResult;
-		 SelectBasics_PickResult();
-
-		/****************** SelectBasics_PickResult ******************/
-		%feature("compactdefaultargs") SelectBasics_PickResult;
-		%feature("autodoc", "Constructor with initialization.
-
-Parameters
-----------
-theDepth: float
-theDistToCenter: float
-theObjPickedPnt: gp_Pnt
-
-Returns
--------
-None
-") SelectBasics_PickResult;
-		 SelectBasics_PickResult(Standard_Real theDepth, Standard_Real theDistToCenter, const gp_Pnt & theObjPickedPnt);
 
 		/****************** SetDepth ******************/
 		%feature("compactdefaultargs") SetDepth;

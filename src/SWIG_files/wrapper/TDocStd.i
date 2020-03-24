@@ -96,11 +96,11 @@ from OCC.Core.Exception import *
 /* end templates declaration */
 
 /* typedefs */
-typedef TDocStd_XLink * TDocStd_XLinkPtr;
-typedef NCollection_DataMap<TDF_Label, TDF_IDMap, TDF_LabelMapHasher> TDocStd_LabelIDMapDataMap;
 typedef NCollection_DataMap<TDF_Label, TDF_IDMap, TDF_LabelMapHasher>::Iterator TDocStd_DataMapIteratorOfLabelIDMapDataMap;
+typedef NCollection_DataMap<TDF_Label, TDF_IDMap, TDF_LabelMapHasher> TDocStd_LabelIDMapDataMap;
 typedef NCollection_Sequence<opencascade::handle<TDocStd_ApplicationDelta>> TDocStd_SequenceOfApplicationDelta;
 typedef NCollection_Sequence<opencascade::handle<TDocStd_Document>> TDocStd_SequenceOfDocument;
+typedef TDocStd_XLink * TDocStd_XLinkPtr;
 /* end typedefs declaration */
 
 /****************
@@ -137,6 +137,16 @@ None
 ****************************/
 class TDocStd_Application : public CDF_Application {
 	public:
+		/****************** TDocStd_Application ******************/
+		%feature("compactdefaultargs") TDocStd_Application;
+		%feature("autodoc", "Constructs the new instance and registers it in cdm_session.
+
+Returns
+-------
+None
+") TDocStd_Application;
+		 TDocStd_Application();
+
 		/****************** Close ******************/
 		%feature("compactdefaultargs") Close;
 		%feature("autodoc", "Close the given document. the document is not any more handled by the applicative session.
@@ -408,16 +418,6 @@ PCDM_StoreStatus
 ") SaveAs;
 		PCDM_StoreStatus SaveAs(const opencascade::handle<TDocStd_Document> & aDoc, const TCollection_ExtendedString & path, TCollection_ExtendedString & theStatusMessage);
 
-		/****************** TDocStd_Application ******************/
-		%feature("compactdefaultargs") TDocStd_Application;
-		%feature("autodoc", "Constructs the new instance and registers it in cdm_session.
-
-Returns
--------
-None
-") TDocStd_Application;
-		 TDocStd_Application();
-
 		/****************** WritingFormats ******************/
 		%feature("compactdefaultargs") WritingFormats;
 		%feature("autodoc", "Returns the sequence of writing formats supported by the application. //! @param theformats - sequence of writing formats. output parameter.
@@ -448,6 +448,16 @@ None
 *********************************/
 class TDocStd_ApplicationDelta : public Standard_Transient {
 	public:
+		/****************** TDocStd_ApplicationDelta ******************/
+		%feature("compactdefaultargs") TDocStd_ApplicationDelta;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDocStd_ApplicationDelta;
+		 TDocStd_ApplicationDelta();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -489,16 +499,6 @@ Returns
 None
 ") SetName;
 		void SetName(const TCollection_ExtendedString & theName);
-
-		/****************** TDocStd_ApplicationDelta ******************/
-		%feature("compactdefaultargs") TDocStd_ApplicationDelta;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDocStd_ApplicationDelta;
-		 TDocStd_ApplicationDelta();
 
 };
 
@@ -542,6 +542,16 @@ None
 ************************/
 class TDocStd_Context {
 	public:
+		/****************** TDocStd_Context ******************/
+		%feature("compactdefaultargs") TDocStd_Context;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDocStd_Context;
+		 TDocStd_Context();
+
 		/****************** ModifiedReferences ******************/
 		%feature("compactdefaultargs") ModifiedReferences;
 		%feature("autodoc", "No available documentation.
@@ -566,16 +576,6 @@ None
 ") SetModifiedReferences;
 		void SetModifiedReferences(const Standard_Boolean Mod);
 
-		/****************** TDocStd_Context ******************/
-		%feature("compactdefaultargs") TDocStd_Context;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDocStd_Context;
-		 TDocStd_Context();
-
 };
 
 
@@ -590,6 +590,20 @@ None
 *************************/
 class TDocStd_Document : public CDM_Document {
 	public:
+		/****************** TDocStd_Document ******************/
+		%feature("compactdefaultargs") TDocStd_Document;
+		%feature("autodoc", "Constructs a document object defined by the string astorageformat.
+
+Parameters
+----------
+astorageformat: TCollection_ExtendedString
+
+Returns
+-------
+None
+") TDocStd_Document;
+		 TDocStd_Document(const TCollection_ExtendedString & astorageformat);
+
 		/****************** AbortCommand ******************/
 		%feature("compactdefaultargs") AbortCommand;
 		%feature("autodoc", "Abort the command transaction. does nothing if there is no command transaction open.
@@ -1057,20 +1071,6 @@ TCollection_ExtendedString
 ") StorageFormat;
 		virtual TCollection_ExtendedString StorageFormat();
 
-		/****************** TDocStd_Document ******************/
-		%feature("compactdefaultargs") TDocStd_Document;
-		%feature("autodoc", "Constructs a document object defined by the string astorageformat.
-
-Parameters
-----------
-astorageformat: TCollection_ExtendedString
-
-Returns
--------
-None
-") TDocStd_Document;
-		 TDocStd_Document(const TCollection_ExtendedString & astorageformat);
-
 		/****************** Undo ******************/
 		%feature("compactdefaultargs") Undo;
 		%feature("autodoc", "Will undo one step, returns false if no undo was done (undos == 0). otherwise, true is returned and one step in the list of undoes is undone.
@@ -1127,6 +1127,16 @@ None
 *************************/
 class TDocStd_Modified : public TDF_Attribute {
 	public:
+		/****************** TDocStd_Modified ******************/
+		%feature("compactdefaultargs") TDocStd_Modified;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDocStd_Modified;
+		 TDocStd_Modified();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -1336,16 +1346,6 @@ None
 ") Restore;
 		void Restore(const opencascade::handle<TDF_Attribute> & With);
 
-		/****************** TDocStd_Modified ******************/
-		%feature("compactdefaultargs") TDocStd_Modified;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDocStd_Modified;
-		 TDocStd_Modified();
-
 };
 
 
@@ -1362,6 +1362,16 @@ None
 ****************************************/
 class TDocStd_MultiTransactionManager : public Standard_Transient {
 	public:
+		/****************** TDocStd_MultiTransactionManager ******************/
+		%feature("compactdefaultargs") TDocStd_MultiTransactionManager;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") TDocStd_MultiTransactionManager;
+		 TDocStd_MultiTransactionManager();
+
 		/****************** AbortCommand ******************/
 		%feature("compactdefaultargs") AbortCommand;
 		%feature("autodoc", "Unsets the flag of started manager transaction and aborts transaction in each document.
@@ -1595,16 +1605,6 @@ None
 ") SetUndoLimit;
 		void SetUndoLimit(const Standard_Integer theLimit);
 
-		/****************** TDocStd_MultiTransactionManager ******************/
-		%feature("compactdefaultargs") TDocStd_MultiTransactionManager;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") TDocStd_MultiTransactionManager;
-		 TDocStd_MultiTransactionManager();
-
 		/****************** Undo ******************/
 		%feature("compactdefaultargs") Undo;
 		%feature("autodoc", "Undoes the current transaction of the manager. it calls the undo () method of the document being on top of the manager list of undos (list.first()) and moves the list item to the top of the list of manager redos (list.prepend(item)).
@@ -1631,6 +1631,16 @@ None
 **********************/
 class TDocStd_Owner : public TDF_Attribute {
 	public:
+		/****************** TDocStd_Owner ******************/
+		%feature("compactdefaultargs") TDocStd_Owner;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDocStd_Owner;
+		 TDocStd_Owner();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -1751,16 +1761,6 @@ None
 ") SetDocument;
 		void SetDocument(const opencascade::handle<TDocStd_Document> & document);
 
-		/****************** TDocStd_Owner ******************/
-		%feature("compactdefaultargs") TDocStd_Owner;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDocStd_Owner;
-		 TDocStd_Owner();
-
 };
 
 
@@ -1777,6 +1777,20 @@ None
 ***************************/
 class TDocStd_PathParser {
 	public:
+		/****************** TDocStd_PathParser ******************/
+		%feature("compactdefaultargs") TDocStd_PathParser;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+path: TCollection_ExtendedString
+
+Returns
+-------
+None
+") TDocStd_PathParser;
+		 TDocStd_PathParser(const TCollection_ExtendedString & path);
+
 		/****************** Extension ******************/
 		%feature("compactdefaultargs") Extension;
 		%feature("autodoc", "No available documentation.
@@ -1827,20 +1841,6 @@ TCollection_ExtendedString
 ") Path;
 		TCollection_ExtendedString Path();
 
-		/****************** TDocStd_PathParser ******************/
-		%feature("compactdefaultargs") TDocStd_PathParser;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-path: TCollection_ExtendedString
-
-Returns
--------
-None
-") TDocStd_PathParser;
-		 TDocStd_PathParser(const TCollection_ExtendedString & path);
-
 		/****************** Trek ******************/
 		%feature("compactdefaultargs") Trek;
 		%feature("autodoc", "No available documentation.
@@ -1865,6 +1865,16 @@ TCollection_ExtendedString
 **********************/
 class TDocStd_XLink : public TDF_Attribute {
 	public:
+		/****************** TDocStd_XLink ******************/
+		%feature("compactdefaultargs") TDocStd_XLink;
+		%feature("autodoc", "Initializes fields.
+
+Returns
+-------
+None
+") TDocStd_XLink;
+		 TDocStd_XLink();
+
 		/****************** AfterAddition ******************/
 		%feature("compactdefaultargs") AfterAddition;
 		%feature("autodoc", "Updates the xlinkroot attribute by adding <self> to its list.
@@ -2070,16 +2080,6 @@ opencascade::handle<TDocStd_XLink>
 ") Set;
 		static opencascade::handle<TDocStd_XLink> Set(const TDF_Label & atLabel);
 
-		/****************** TDocStd_XLink ******************/
-		%feature("compactdefaultargs") TDocStd_XLink;
-		%feature("autodoc", "Initializes fields.
-
-Returns
--------
-None
-") TDocStd_XLink;
-		 TDocStd_XLink();
-
 		/****************** Update ******************/
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Updates the data referenced in this external link attribute.
@@ -2106,6 +2106,30 @@ opencascade::handle<TDF_Reference>
 ******************************/
 class TDocStd_XLinkIterator {
 	public:
+		/****************** TDocStd_XLinkIterator ******************/
+		%feature("compactdefaultargs") TDocStd_XLinkIterator;
+		%feature("autodoc", "Returns an empty iterator;.
+
+Returns
+-------
+None
+") TDocStd_XLinkIterator;
+		 TDocStd_XLinkIterator();
+
+		/****************** TDocStd_XLinkIterator ******************/
+		%feature("compactdefaultargs") TDocStd_XLinkIterator;
+		%feature("autodoc", "Creates an iterator on reference of <d>.
+
+Parameters
+----------
+D: TDocStd_Document
+
+Returns
+-------
+None
+") TDocStd_XLinkIterator;
+		 TDocStd_XLinkIterator(const opencascade::handle<TDocStd_Document> & D);
+
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Restarts an iteration with <d>.
@@ -2139,30 +2163,6 @@ Returns
 None
 ") Next;
 		void Next();
-
-		/****************** TDocStd_XLinkIterator ******************/
-		%feature("compactdefaultargs") TDocStd_XLinkIterator;
-		%feature("autodoc", "Returns an empty iterator;.
-
-Returns
--------
-None
-") TDocStd_XLinkIterator;
-		 TDocStd_XLinkIterator();
-
-		/****************** TDocStd_XLinkIterator ******************/
-		%feature("compactdefaultargs") TDocStd_XLinkIterator;
-		%feature("autodoc", "Creates an iterator on reference of <d>.
-
-Parameters
-----------
-D: TDocStd_Document
-
-Returns
--------
-None
-") TDocStd_XLinkIterator;
-		 TDocStd_XLinkIterator(const opencascade::handle<TDocStd_Document> & D);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -2324,6 +2324,16 @@ opencascade::handle<TDocStd_XLinkRoot>
 **************************/
 class TDocStd_XLinkTool {
 	public:
+		/****************** TDocStd_XLinkTool ******************/
+		%feature("compactdefaultargs") TDocStd_XLinkTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDocStd_XLinkTool;
+		 TDocStd_XLinkTool();
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "Copy the content of <fromsource> under <intarget>. noone link is registred. noone check is done. example opencascade::handle<tdocstd_document> doc, xdoc; tdf_label l, xl; tdocstd_xlinktool xlinktool; xlinktool.copy(l,xl); exceptions: standard_domainerror if the contents of fromsource are not entirely in the scope of this label, in other words, are not self-contained. !!! ==> warning: if the document manages shapes use the next way: tdocstd_xlinktool xlinktool; xlinktool.copy(l,xl); toptools_datamapofshapeshape m; tnaming::changeshapes(target,m);.
@@ -2383,16 +2393,6 @@ Returns
 opencascade::handle<TDF_RelocationTable>
 ") RelocationTable;
 		opencascade::handle<TDF_RelocationTable> RelocationTable();
-
-		/****************** TDocStd_XLinkTool ******************/
-		%feature("compactdefaultargs") TDocStd_XLinkTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDocStd_XLinkTool;
-		 TDocStd_XLinkTool();
 
 		/****************** UpdateLink ******************/
 		%feature("compactdefaultargs") UpdateLink;

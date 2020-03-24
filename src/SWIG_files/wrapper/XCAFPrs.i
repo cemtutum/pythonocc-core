@@ -46,8 +46,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_xcafprs.html"
 #include<Quantity_module.hxx>
 #include<AIS_module.hxx>
 #include<Graphic3d_module.hxx>
-#include<TCollection_module.hxx>
 #include<TDocStd_module.hxx>
+#include<TCollection_module.hxx>
 #include<TopoDS_module.hxx>
 #include<TPrsStd_module.hxx>
 #include<TopTools_module.hxx>
@@ -88,8 +88,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_xcafprs.html"
 %import Quantity.i
 %import AIS.i
 %import Graphic3d.i
-%import TCollection.i
 %import TDocStd.i
+%import TCollection.i
 %import TopoDS.i
 %import TPrsStd.i
 
@@ -123,13 +123,13 @@ enum  {
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<XCAFPrs_Style, TopoDS_Shape, XCAFPrs_Style> XCAFPrs_DataMapOfStyleShape;
 typedef NCollection_DataMap<XCAFPrs_Style, TopoDS_Shape, XCAFPrs_Style>::Iterator XCAFPrs_DataMapIteratorOfDataMapOfStyleShape;
-typedef NCollection_DataMap<XCAFPrs_Style, opencascade::handle<Standard_Transient>, XCAFPrs_Style> XCAFPrs_DataMapOfStyleTransient;
 typedef NCollection_DataMap<XCAFPrs_Style, opencascade::handle<Standard_Transient>, XCAFPrs_Style>::Iterator XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient;
+typedef NCollection_IndexedDataMap<TopoDS_Shape, XCAFPrs_Style, TopTools_ShapeMapHasher>::Iterator XCAFPrs_DataMapIteratorOfIndexedDataMapOfShapeStyle;
+typedef NCollection_DataMap<XCAFPrs_Style, TopoDS_Shape, XCAFPrs_Style> XCAFPrs_DataMapOfStyleShape;
+typedef NCollection_DataMap<XCAFPrs_Style, opencascade::handle<Standard_Transient>, XCAFPrs_Style> XCAFPrs_DataMapOfStyleTransient;
 typedef Standard_Integer XCAFPrs_DocumentExplorerFlags;
 typedef NCollection_IndexedDataMap<TopoDS_Shape, XCAFPrs_Style, TopTools_ShapeMapHasher> XCAFPrs_IndexedDataMapOfShapeStyle;
-typedef NCollection_IndexedDataMap<TopoDS_Shape, XCAFPrs_Style, TopTools_ShapeMapHasher>::Iterator XCAFPrs_DataMapIteratorOfIndexedDataMapOfShapeStyle;
 /* end typedefs declaration */
 
 /****************
@@ -194,6 +194,20 @@ None
 **************************/
 class XCAFPrs_AISObject : public AIS_ColoredShape {
 	public:
+		/****************** XCAFPrs_AISObject ******************/
+		%feature("compactdefaultargs") XCAFPrs_AISObject;
+		%feature("autodoc", "Creates an object to visualise the shape label.
+
+Parameters
+----------
+theLabel: TDF_Label
+
+Returns
+-------
+None
+") XCAFPrs_AISObject;
+		 XCAFPrs_AISObject(const TDF_Label & theLabel);
+
 		/****************** DispatchStyles ******************/
 		%feature("compactdefaultargs") DispatchStyles;
 		%feature("autodoc", "Fetch the shape from associated label and fill the map of sub-shapes styles. by default, this method is called implicitly within first ::compute(). application might call this method explicitly to manipulate styles afterwards. @param thetosyncstyles flag indicating if method ::compute() should call this method again on first compute or re-compute.
@@ -247,20 +261,6 @@ None
 ") SetMaterial;
 		virtual void SetMaterial(const Graphic3d_MaterialAspect & theMaterial);
 
-		/****************** XCAFPrs_AISObject ******************/
-		%feature("compactdefaultargs") XCAFPrs_AISObject;
-		%feature("autodoc", "Creates an object to visualise the shape label.
-
-Parameters
-----------
-theLabel: TDF_Label
-
-Returns
--------
-None
-") XCAFPrs_AISObject;
-		 XCAFPrs_AISObject(const TDF_Label & theLabel);
-
 };
 
 
@@ -277,6 +277,51 @@ None
 *********************************/
 class XCAFPrs_DocumentExplorer {
 	public:
+		/****************** XCAFPrs_DocumentExplorer ******************/
+		%feature("compactdefaultargs") XCAFPrs_DocumentExplorer;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") XCAFPrs_DocumentExplorer;
+		 XCAFPrs_DocumentExplorer();
+
+		/****************** XCAFPrs_DocumentExplorer ******************/
+		%feature("compactdefaultargs") XCAFPrs_DocumentExplorer;
+		%feature("autodoc", "Constructor for exploring the whole document. @param thedocument document to explore @param theflags iteration flags @param thedefstyle default style for nodes with undefined style.
+
+Parameters
+----------
+theDocument: TDocStd_Document
+theFlags: int
+theDefStyle: XCAFPrs_Style,optional
+	default value is XCAFPrs_Style()
+
+Returns
+-------
+None
+") XCAFPrs_DocumentExplorer;
+		 XCAFPrs_DocumentExplorer(const opencascade::handle<TDocStd_Document> & theDocument, int theFlags, const XCAFPrs_Style & theDefStyle = XCAFPrs_Style());
+
+		/****************** XCAFPrs_DocumentExplorer ******************/
+		%feature("compactdefaultargs") XCAFPrs_DocumentExplorer;
+		%feature("autodoc", "Constructor for exploring specified list of root shapes in the document. @param thedocument document to explore @param theroots root labels to explore within specified document @param theflags iteration flags @param thedefstyle default style for nodes with undefined style.
+
+Parameters
+----------
+theDocument: TDocStd_Document
+theRoots: TDF_LabelSequence
+theFlags: int
+theDefStyle: XCAFPrs_Style,optional
+	default value is XCAFPrs_Style()
+
+Returns
+-------
+None
+") XCAFPrs_DocumentExplorer;
+		 XCAFPrs_DocumentExplorer(const opencascade::handle<TDocStd_Document> & theDocument, const TDF_LabelSequence & theRoots, int theFlags, const XCAFPrs_Style & theDefStyle = XCAFPrs_Style());
+
 		/****************** ChangeCurrent ******************/
 		%feature("compactdefaultargs") ChangeCurrent;
 		%feature("autodoc", "Return current position.
@@ -440,51 +485,6 @@ None
 ") Next;
 		void Next();
 
-		/****************** XCAFPrs_DocumentExplorer ******************/
-		%feature("compactdefaultargs") XCAFPrs_DocumentExplorer;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") XCAFPrs_DocumentExplorer;
-		 XCAFPrs_DocumentExplorer();
-
-		/****************** XCAFPrs_DocumentExplorer ******************/
-		%feature("compactdefaultargs") XCAFPrs_DocumentExplorer;
-		%feature("autodoc", "Constructor for exploring the whole document. @param thedocument document to explore @param theflags iteration flags @param thedefstyle default style for nodes with undefined style.
-
-Parameters
-----------
-theDocument: TDocStd_Document
-theFlags: int
-theDefStyle: XCAFPrs_Style,optional
-	default value is XCAFPrs_Style()
-
-Returns
--------
-None
-") XCAFPrs_DocumentExplorer;
-		 XCAFPrs_DocumentExplorer(const opencascade::handle<TDocStd_Document> & theDocument, int theFlags, const XCAFPrs_Style & theDefStyle = XCAFPrs_Style());
-
-		/****************** XCAFPrs_DocumentExplorer ******************/
-		%feature("compactdefaultargs") XCAFPrs_DocumentExplorer;
-		%feature("autodoc", "Constructor for exploring specified list of root shapes in the document. @param thedocument document to explore @param theroots root labels to explore within specified document @param theflags iteration flags @param thedefstyle default style for nodes with undefined style.
-
-Parameters
-----------
-theDocument: TDocStd_Document
-theRoots: TDF_LabelSequence
-theFlags: int
-theDefStyle: XCAFPrs_Style,optional
-	default value is XCAFPrs_Style()
-
-Returns
--------
-None
-") XCAFPrs_DocumentExplorer;
-		 XCAFPrs_DocumentExplorer(const opencascade::handle<TDocStd_Document> & theDocument, const TDF_LabelSequence & theRoots, int theFlags, const XCAFPrs_Style & theDefStyle = XCAFPrs_Style());
-
 };
 
 
@@ -499,6 +499,20 @@ None
 ***********************************/
 class XCAFPrs_DocumentIdIterator {
 	public:
+		/****************** XCAFPrs_DocumentIdIterator ******************/
+		%feature("compactdefaultargs") XCAFPrs_DocumentIdIterator;
+		%feature("autodoc", "Main constructor.
+
+Parameters
+----------
+thePath: TCollection_AsciiString
+
+Returns
+-------
+None
+") XCAFPrs_DocumentIdIterator;
+		 XCAFPrs_DocumentIdIterator(const TCollection_AsciiString & thePath);
+
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Return true if iterator points to a value.
@@ -528,20 +542,6 @@ Returns
 TCollection_AsciiString
 ") Value;
 		const TCollection_AsciiString & Value();
-
-		/****************** XCAFPrs_DocumentIdIterator ******************/
-		%feature("compactdefaultargs") XCAFPrs_DocumentIdIterator;
-		%feature("autodoc", "Main constructor.
-
-Parameters
-----------
-thePath: TCollection_AsciiString
-
-Returns
--------
-None
-") XCAFPrs_DocumentIdIterator;
-		 XCAFPrs_DocumentIdIterator(const TCollection_AsciiString & thePath);
 
 };
 
@@ -630,6 +630,16 @@ bool
 **********************/
 class XCAFPrs_Style {
 	public:
+		/****************** XCAFPrs_Style ******************/
+		%feature("compactdefaultargs") XCAFPrs_Style;
+		%feature("autodoc", "Empty constructor - colors are unset, visibility is true.
+
+Returns
+-------
+None
+") XCAFPrs_Style;
+		 XCAFPrs_Style();
+
 
             %feature("autodoc", "1");
             %extend{
@@ -817,16 +827,6 @@ Returns
 None
 ") UnSetColorSurf;
 		void UnSetColorSurf();
-
-		/****************** XCAFPrs_Style ******************/
-		%feature("compactdefaultargs") XCAFPrs_Style;
-		%feature("autodoc", "Empty constructor - colors are unset, visibility is true.
-
-Returns
--------
-None
-") XCAFPrs_Style;
-		 XCAFPrs_Style();
 
 
             %extend{

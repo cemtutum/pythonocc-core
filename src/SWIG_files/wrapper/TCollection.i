@@ -119,6 +119,205 @@ int
 ********************************/
 class TCollection_AsciiString {
 	public:
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Initializes a asciistring to an empty asciistring.
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString();
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Initializes a asciistring with a cstring.
+
+Parameters
+----------
+message: char *
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(const char * message);
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Initializes a asciistring with a cstring.
+
+Parameters
+----------
+message: char *
+aLen: int
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(const char * message, const Standard_Integer aLen);
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Initializes a asciistring with a single character.
+
+Parameters
+----------
+aChar: Standard_Character
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(const Standard_Character aChar);
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Initializes an asciistring with <length> space allocated. and filled with <filler>. this is usefull for buffers.
+
+Parameters
+----------
+length: int
+filler: Standard_Character
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(const Standard_Integer length, const Standard_Character filler);
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Initializes an asciistring with an integer value.
+
+Parameters
+----------
+value: int
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(const Standard_Integer value);
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Initializes an asciistring with a real value.
+
+Parameters
+----------
+value: float
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(const Standard_Real value);
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Initializes a asciistring with another asciistring.
+
+Parameters
+----------
+astring: TCollection_AsciiString
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(const TCollection_AsciiString & astring);
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Move constructor.
+
+Parameters
+----------
+theOther: TCollection_AsciiString
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(TCollection_AsciiString & theOther);
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Initializes a asciistring with copy of another asciistring concatenated with the message character.
+
+Parameters
+----------
+astring: TCollection_AsciiString
+message: Standard_Character
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(const TCollection_AsciiString & astring, const Standard_Character message);
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Initializes a asciistring with copy of another asciistring concatenated with the message string.
+
+Parameters
+----------
+astring: TCollection_AsciiString
+message: char *
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(const TCollection_AsciiString & astring, const char * message);
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Initializes a asciistring with copy of another asciistring concatenated with the message string.
+
+Parameters
+----------
+astring: TCollection_AsciiString
+message: TCollection_AsciiString
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(const TCollection_AsciiString & astring, const TCollection_AsciiString & message);
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Creation by converting an extended string to an ascii string. if replacenonascii is non-null charecter, it will be used in place of any non-ascii character found in the source string. otherwise, creates utf-8 unicode string.
+
+Parameters
+----------
+astring: TCollection_ExtendedString
+replaceNonAscii: Standard_Character,optional
+	default value is 0
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(const TCollection_ExtendedString & astring, const Standard_Character replaceNonAscii = 0);
+
+		/****************** TCollection_AsciiString ******************/
+		%feature("compactdefaultargs") TCollection_AsciiString;
+		%feature("autodoc", "Initialize utf-8 unicode string from wide-char string considering it as unicode string (the size of wide char is a platform-dependent - e.g. on windows wchar_t is utf-16). //! this constructor is unavailable if application is built with deprecated msvc option '-zc:wchar_t-', since occt itself is never built with this option.
+
+Parameters
+----------
+theStringUtf: Standard_WideChar *
+
+Returns
+-------
+None
+") TCollection_AsciiString;
+		 TCollection_AsciiString(const Standard_WideChar * theStringUtf);
+
 		/****************** AssignCat ******************/
 		%feature("compactdefaultargs") AssignCat;
 		%feature("autodoc", "Appends <other> to me. this is an unary operator.
@@ -1028,205 +1227,6 @@ None
 ") Swap;
 		void Swap(TCollection_AsciiString & theOther);
 
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Initializes a asciistring to an empty asciistring.
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString();
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Initializes a asciistring with a cstring.
-
-Parameters
-----------
-message: char *
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(const char * message);
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Initializes a asciistring with a cstring.
-
-Parameters
-----------
-message: char *
-aLen: int
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(const char * message, const Standard_Integer aLen);
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Initializes a asciistring with a single character.
-
-Parameters
-----------
-aChar: Standard_Character
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(const Standard_Character aChar);
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Initializes an asciistring with <length> space allocated. and filled with <filler>. this is usefull for buffers.
-
-Parameters
-----------
-length: int
-filler: Standard_Character
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(const Standard_Integer length, const Standard_Character filler);
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Initializes an asciistring with an integer value.
-
-Parameters
-----------
-value: int
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(const Standard_Integer value);
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Initializes an asciistring with a real value.
-
-Parameters
-----------
-value: float
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(const Standard_Real value);
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Initializes a asciistring with another asciistring.
-
-Parameters
-----------
-astring: TCollection_AsciiString
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(const TCollection_AsciiString & astring);
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Move constructor.
-
-Parameters
-----------
-theOther: TCollection_AsciiString
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(TCollection_AsciiString & theOther);
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Initializes a asciistring with copy of another asciistring concatenated with the message character.
-
-Parameters
-----------
-astring: TCollection_AsciiString
-message: Standard_Character
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(const TCollection_AsciiString & astring, const Standard_Character message);
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Initializes a asciistring with copy of another asciistring concatenated with the message string.
-
-Parameters
-----------
-astring: TCollection_AsciiString
-message: char *
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(const TCollection_AsciiString & astring, const char * message);
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Initializes a asciistring with copy of another asciistring concatenated with the message string.
-
-Parameters
-----------
-astring: TCollection_AsciiString
-message: TCollection_AsciiString
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(const TCollection_AsciiString & astring, const TCollection_AsciiString & message);
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Creation by converting an extended string to an ascii string. if replacenonascii is non-null charecter, it will be used in place of any non-ascii character found in the source string. otherwise, creates utf-8 unicode string.
-
-Parameters
-----------
-astring: TCollection_ExtendedString
-replaceNonAscii: Standard_Character,optional
-	default value is 0
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(const TCollection_ExtendedString & astring, const Standard_Character replaceNonAscii = 0);
-
-		/****************** TCollection_AsciiString ******************/
-		%feature("compactdefaultargs") TCollection_AsciiString;
-		%feature("autodoc", "Initialize utf-8 unicode string from wide-char string considering it as unicode string (the size of wide char is a platform-dependent - e.g. on windows wchar_t is utf-16). //! this constructor is unavailable if application is built with deprecated msvc option '-zc:wchar_t-', since occt itself is never built with this option.
-
-Parameters
-----------
-theStringUtf: Standard_WideChar *
-
-Returns
--------
-None
-") TCollection_AsciiString;
-		 TCollection_AsciiString(const Standard_WideChar * theStringUtf);
-
 		/****************** ToCString ******************/
 		%feature("compactdefaultargs") ToCString;
 		%feature("autodoc", "Returns pointer to asciistring (char *). this is useful for some casual manipulations. warning: because this 'char *' is 'const', you can't modify its contents.
@@ -1655,6 +1655,173 @@ None
 ***********************************/
 class TCollection_ExtendedString {
 	public:
+		/****************** TCollection_ExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_ExtendedString;
+		%feature("autodoc", "Initializes a extendedstring to an empty extendedstring.
+
+Returns
+-------
+None
+") TCollection_ExtendedString;
+		 TCollection_ExtendedString();
+
+		/****************** TCollection_ExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_ExtendedString;
+		%feature("autodoc", "Creation by converting a cstring to an extended string. if <ismultibyte> is true then the string is treated as having utf-8 coding. if it is not a utf-8 then <ismultibyte> is ignored and each character is copied to extcharacter.
+
+Parameters
+----------
+astring: char *
+isMultiByte: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") TCollection_ExtendedString;
+		 TCollection_ExtendedString(const char * astring, const Standard_Boolean isMultiByte = Standard_False);
+
+		/****************** TCollection_ExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_ExtendedString;
+		%feature("autodoc", "Creation by converting an extstring to an extended string.
+
+Parameters
+----------
+astring: Standard_ExtString
+
+Returns
+-------
+None
+") TCollection_ExtendedString;
+		 TCollection_ExtendedString(const Standard_ExtString astring);
+
+		/****************** TCollection_ExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_ExtendedString;
+		%feature("autodoc", "Initialize from wide-char string considering it as unicode string (the size of wide char is a platform-dependent - e.g. on windows wchar_t is utf-16). //! this constructor is unavailable if application is built with deprecated msvc option '-zc:wchar_t-', since occt itself is never built with this option.
+
+Parameters
+----------
+theStringUtf: Standard_WideChar *
+
+Returns
+-------
+None
+") TCollection_ExtendedString;
+		 TCollection_ExtendedString(const Standard_WideChar * theStringUtf);
+
+		/****************** TCollection_ExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_ExtendedString;
+		%feature("autodoc", "Initializes a asciistring with a single character.
+
+Parameters
+----------
+aChar: Standard_Character
+
+Returns
+-------
+None
+") TCollection_ExtendedString;
+		 TCollection_ExtendedString(const Standard_Character aChar);
+
+		/****************** TCollection_ExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_ExtendedString;
+		%feature("autodoc", "Initializes a extendedstring with a single character.
+
+Parameters
+----------
+aChar: Standard_ExtCharacter
+
+Returns
+-------
+None
+") TCollection_ExtendedString;
+		 TCollection_ExtendedString(const Standard_ExtCharacter aChar);
+
+		/****************** TCollection_ExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_ExtendedString;
+		%feature("autodoc", "Initializes a extendedstring with <length> space allocated. and filled with <filler>.this is useful for buffers.
+
+Parameters
+----------
+length: int
+filler: Standard_ExtCharacter
+
+Returns
+-------
+None
+") TCollection_ExtendedString;
+		 TCollection_ExtendedString(const Standard_Integer length, const Standard_ExtCharacter filler);
+
+		/****************** TCollection_ExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_ExtendedString;
+		%feature("autodoc", "Initializes an extendedstring with an integer value.
+
+Parameters
+----------
+value: int
+
+Returns
+-------
+None
+") TCollection_ExtendedString;
+		 TCollection_ExtendedString(const Standard_Integer value);
+
+		/****************** TCollection_ExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_ExtendedString;
+		%feature("autodoc", "Initializes an extendedstring with a real value.
+
+Parameters
+----------
+value: float
+
+Returns
+-------
+None
+") TCollection_ExtendedString;
+		 TCollection_ExtendedString(const Standard_Real value);
+
+		/****************** TCollection_ExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_ExtendedString;
+		%feature("autodoc", "Initializes a extendedstring with another extendedstring.
+
+Parameters
+----------
+astring: TCollection_ExtendedString
+
+Returns
+-------
+None
+") TCollection_ExtendedString;
+		 TCollection_ExtendedString(const TCollection_ExtendedString & astring);
+
+		/****************** TCollection_ExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_ExtendedString;
+		%feature("autodoc", "Move constructor.
+
+Parameters
+----------
+theOther: TCollection_ExtendedString
+
+Returns
+-------
+None
+") TCollection_ExtendedString;
+		 TCollection_ExtendedString(TCollection_ExtendedString & theOther);
+
+		/****************** TCollection_ExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_ExtendedString;
+		%feature("autodoc", "Creation by converting an ascii string to an extended string. the string is treated as having utf-8 coding. if it is not a utf-8 then each character is copied to extcharacter.
+
+Parameters
+----------
+astring: TCollection_AsciiString
+
+Returns
+-------
+None
+") TCollection_ExtendedString;
+		 TCollection_ExtendedString(const TCollection_AsciiString & astring);
+
 		/****************** AssignCat ******************/
 		%feature("compactdefaultargs") AssignCat;
 		%feature("autodoc", "Appends the other extended string to this extended string. note that this method is an alias of operator +=. example: astring += anotherstring.
@@ -2086,173 +2253,6 @@ None
 ") Swap;
 		void Swap(TCollection_ExtendedString & theOther);
 
-		/****************** TCollection_ExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_ExtendedString;
-		%feature("autodoc", "Initializes a extendedstring to an empty extendedstring.
-
-Returns
--------
-None
-") TCollection_ExtendedString;
-		 TCollection_ExtendedString();
-
-		/****************** TCollection_ExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_ExtendedString;
-		%feature("autodoc", "Creation by converting a cstring to an extended string. if <ismultibyte> is true then the string is treated as having utf-8 coding. if it is not a utf-8 then <ismultibyte> is ignored and each character is copied to extcharacter.
-
-Parameters
-----------
-astring: char *
-isMultiByte: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") TCollection_ExtendedString;
-		 TCollection_ExtendedString(const char * astring, const Standard_Boolean isMultiByte = Standard_False);
-
-		/****************** TCollection_ExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_ExtendedString;
-		%feature("autodoc", "Creation by converting an extstring to an extended string.
-
-Parameters
-----------
-astring: Standard_ExtString
-
-Returns
--------
-None
-") TCollection_ExtendedString;
-		 TCollection_ExtendedString(const Standard_ExtString astring);
-
-		/****************** TCollection_ExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_ExtendedString;
-		%feature("autodoc", "Initialize from wide-char string considering it as unicode string (the size of wide char is a platform-dependent - e.g. on windows wchar_t is utf-16). //! this constructor is unavailable if application is built with deprecated msvc option '-zc:wchar_t-', since occt itself is never built with this option.
-
-Parameters
-----------
-theStringUtf: Standard_WideChar *
-
-Returns
--------
-None
-") TCollection_ExtendedString;
-		 TCollection_ExtendedString(const Standard_WideChar * theStringUtf);
-
-		/****************** TCollection_ExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_ExtendedString;
-		%feature("autodoc", "Initializes a asciistring with a single character.
-
-Parameters
-----------
-aChar: Standard_Character
-
-Returns
--------
-None
-") TCollection_ExtendedString;
-		 TCollection_ExtendedString(const Standard_Character aChar);
-
-		/****************** TCollection_ExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_ExtendedString;
-		%feature("autodoc", "Initializes a extendedstring with a single character.
-
-Parameters
-----------
-aChar: Standard_ExtCharacter
-
-Returns
--------
-None
-") TCollection_ExtendedString;
-		 TCollection_ExtendedString(const Standard_ExtCharacter aChar);
-
-		/****************** TCollection_ExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_ExtendedString;
-		%feature("autodoc", "Initializes a extendedstring with <length> space allocated. and filled with <filler>.this is useful for buffers.
-
-Parameters
-----------
-length: int
-filler: Standard_ExtCharacter
-
-Returns
--------
-None
-") TCollection_ExtendedString;
-		 TCollection_ExtendedString(const Standard_Integer length, const Standard_ExtCharacter filler);
-
-		/****************** TCollection_ExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_ExtendedString;
-		%feature("autodoc", "Initializes an extendedstring with an integer value.
-
-Parameters
-----------
-value: int
-
-Returns
--------
-None
-") TCollection_ExtendedString;
-		 TCollection_ExtendedString(const Standard_Integer value);
-
-		/****************** TCollection_ExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_ExtendedString;
-		%feature("autodoc", "Initializes an extendedstring with a real value.
-
-Parameters
-----------
-value: float
-
-Returns
--------
-None
-") TCollection_ExtendedString;
-		 TCollection_ExtendedString(const Standard_Real value);
-
-		/****************** TCollection_ExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_ExtendedString;
-		%feature("autodoc", "Initializes a extendedstring with another extendedstring.
-
-Parameters
-----------
-astring: TCollection_ExtendedString
-
-Returns
--------
-None
-") TCollection_ExtendedString;
-		 TCollection_ExtendedString(const TCollection_ExtendedString & astring);
-
-		/****************** TCollection_ExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_ExtendedString;
-		%feature("autodoc", "Move constructor.
-
-Parameters
-----------
-theOther: TCollection_ExtendedString
-
-Returns
--------
-None
-") TCollection_ExtendedString;
-		 TCollection_ExtendedString(TCollection_ExtendedString & theOther);
-
-		/****************** TCollection_ExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_ExtendedString;
-		%feature("autodoc", "Creation by converting an ascii string to an extended string. the string is treated as having utf-8 coding. if it is not a utf-8 then each character is copied to extcharacter.
-
-Parameters
-----------
-astring: TCollection_AsciiString
-
-Returns
--------
-None
-") TCollection_ExtendedString;
-		 TCollection_ExtendedString(const TCollection_AsciiString & astring);
-
 		/****************** ToExtString ******************/
 		%feature("compactdefaultargs") ToExtString;
 		%feature("autodoc", "Returns pointer to extstring.
@@ -2420,6 +2420,130 @@ TCollection_ExtendedString
 *********************************/
 class TCollection_HAsciiString : public Standard_Transient {
 	public:
+		/****************** TCollection_HAsciiString ******************/
+		%feature("compactdefaultargs") TCollection_HAsciiString;
+		%feature("autodoc", "Initializes a hasciistring to an empty asciistring.
+
+Returns
+-------
+None
+") TCollection_HAsciiString;
+		 TCollection_HAsciiString();
+
+		/****************** TCollection_HAsciiString ******************/
+		%feature("compactdefaultargs") TCollection_HAsciiString;
+		%feature("autodoc", "Initializes a hasciistring with a cstring.
+
+Parameters
+----------
+message: char *
+
+Returns
+-------
+None
+") TCollection_HAsciiString;
+		 TCollection_HAsciiString(const char * message);
+
+		/****************** TCollection_HAsciiString ******************/
+		%feature("compactdefaultargs") TCollection_HAsciiString;
+		%feature("autodoc", "Initializes a hasciistring with a single character.
+
+Parameters
+----------
+aChar: Standard_Character
+
+Returns
+-------
+None
+") TCollection_HAsciiString;
+		 TCollection_HAsciiString(const Standard_Character aChar);
+
+		/****************** TCollection_HAsciiString ******************/
+		%feature("compactdefaultargs") TCollection_HAsciiString;
+		%feature("autodoc", "Initializes a hasciistring with <length> space allocated. and filled with <filler>.this is useful for buffers.
+
+Parameters
+----------
+length: int
+filler: Standard_Character
+
+Returns
+-------
+None
+") TCollection_HAsciiString;
+		 TCollection_HAsciiString(const Standard_Integer length, const Standard_Character filler);
+
+		/****************** TCollection_HAsciiString ******************/
+		%feature("compactdefaultargs") TCollection_HAsciiString;
+		%feature("autodoc", "Initializes a hasciistring with an integer value.
+
+Parameters
+----------
+value: int
+
+Returns
+-------
+None
+") TCollection_HAsciiString;
+		 TCollection_HAsciiString(const Standard_Integer value);
+
+		/****************** TCollection_HAsciiString ******************/
+		%feature("compactdefaultargs") TCollection_HAsciiString;
+		%feature("autodoc", "Initializes a hasciistring with a real value.
+
+Parameters
+----------
+value: float
+
+Returns
+-------
+None
+") TCollection_HAsciiString;
+		 TCollection_HAsciiString(const Standard_Real value);
+
+		/****************** TCollection_HAsciiString ******************/
+		%feature("compactdefaultargs") TCollection_HAsciiString;
+		%feature("autodoc", "Initializes a hasciistring with a hasciistring.
+
+Parameters
+----------
+aString: TCollection_AsciiString
+
+Returns
+-------
+None
+") TCollection_HAsciiString;
+		 TCollection_HAsciiString(const TCollection_AsciiString & aString);
+
+		/****************** TCollection_HAsciiString ******************/
+		%feature("compactdefaultargs") TCollection_HAsciiString;
+		%feature("autodoc", "Initializes a hasciistring with a hasciistring.
+
+Parameters
+----------
+aString: TCollection_HAsciiString
+
+Returns
+-------
+None
+") TCollection_HAsciiString;
+		 TCollection_HAsciiString(const opencascade::handle<TCollection_HAsciiString> & aString);
+
+		/****************** TCollection_HAsciiString ******************/
+		%feature("compactdefaultargs") TCollection_HAsciiString;
+		%feature("autodoc", "Initializes a hasciistring with a hasciistring. if replacenonascii is non-null charecter, it will be used in place of any non-ascii character found in the source string. otherwise, raises outofrange exception if at least one character in the source string is not in the 'ascii range'.
+
+Parameters
+----------
+aString: TCollection_HExtendedString
+replaceNonAscii: Standard_Character
+
+Returns
+-------
+None
+") TCollection_HAsciiString;
+		 TCollection_HAsciiString(const opencascade::handle<TCollection_HExtendedString> & aString, const Standard_Character replaceNonAscii);
+
 		/****************** AssignCat ******************/
 		%feature("compactdefaultargs") AssignCat;
 		%feature("autodoc", "Appends <other> to me.
@@ -3090,130 +3214,6 @@ opencascade::handle<TCollection_HAsciiString>
 ") SubString;
 		opencascade::handle<TCollection_HAsciiString> SubString(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
-		/****************** TCollection_HAsciiString ******************/
-		%feature("compactdefaultargs") TCollection_HAsciiString;
-		%feature("autodoc", "Initializes a hasciistring to an empty asciistring.
-
-Returns
--------
-None
-") TCollection_HAsciiString;
-		 TCollection_HAsciiString();
-
-		/****************** TCollection_HAsciiString ******************/
-		%feature("compactdefaultargs") TCollection_HAsciiString;
-		%feature("autodoc", "Initializes a hasciistring with a cstring.
-
-Parameters
-----------
-message: char *
-
-Returns
--------
-None
-") TCollection_HAsciiString;
-		 TCollection_HAsciiString(const char * message);
-
-		/****************** TCollection_HAsciiString ******************/
-		%feature("compactdefaultargs") TCollection_HAsciiString;
-		%feature("autodoc", "Initializes a hasciistring with a single character.
-
-Parameters
-----------
-aChar: Standard_Character
-
-Returns
--------
-None
-") TCollection_HAsciiString;
-		 TCollection_HAsciiString(const Standard_Character aChar);
-
-		/****************** TCollection_HAsciiString ******************/
-		%feature("compactdefaultargs") TCollection_HAsciiString;
-		%feature("autodoc", "Initializes a hasciistring with <length> space allocated. and filled with <filler>.this is useful for buffers.
-
-Parameters
-----------
-length: int
-filler: Standard_Character
-
-Returns
--------
-None
-") TCollection_HAsciiString;
-		 TCollection_HAsciiString(const Standard_Integer length, const Standard_Character filler);
-
-		/****************** TCollection_HAsciiString ******************/
-		%feature("compactdefaultargs") TCollection_HAsciiString;
-		%feature("autodoc", "Initializes a hasciistring with an integer value.
-
-Parameters
-----------
-value: int
-
-Returns
--------
-None
-") TCollection_HAsciiString;
-		 TCollection_HAsciiString(const Standard_Integer value);
-
-		/****************** TCollection_HAsciiString ******************/
-		%feature("compactdefaultargs") TCollection_HAsciiString;
-		%feature("autodoc", "Initializes a hasciistring with a real value.
-
-Parameters
-----------
-value: float
-
-Returns
--------
-None
-") TCollection_HAsciiString;
-		 TCollection_HAsciiString(const Standard_Real value);
-
-		/****************** TCollection_HAsciiString ******************/
-		%feature("compactdefaultargs") TCollection_HAsciiString;
-		%feature("autodoc", "Initializes a hasciistring with a hasciistring.
-
-Parameters
-----------
-aString: TCollection_AsciiString
-
-Returns
--------
-None
-") TCollection_HAsciiString;
-		 TCollection_HAsciiString(const TCollection_AsciiString & aString);
-
-		/****************** TCollection_HAsciiString ******************/
-		%feature("compactdefaultargs") TCollection_HAsciiString;
-		%feature("autodoc", "Initializes a hasciistring with a hasciistring.
-
-Parameters
-----------
-aString: TCollection_HAsciiString
-
-Returns
--------
-None
-") TCollection_HAsciiString;
-		 TCollection_HAsciiString(const opencascade::handle<TCollection_HAsciiString> & aString);
-
-		/****************** TCollection_HAsciiString ******************/
-		%feature("compactdefaultargs") TCollection_HAsciiString;
-		%feature("autodoc", "Initializes a hasciistring with a hasciistring. if replacenonascii is non-null charecter, it will be used in place of any non-ascii character found in the source string. otherwise, raises outofrange exception if at least one character in the source string is not in the 'ascii range'.
-
-Parameters
-----------
-aString: TCollection_HExtendedString
-replaceNonAscii: Standard_Character
-
-Returns
--------
-None
-") TCollection_HAsciiString;
-		 TCollection_HAsciiString(const opencascade::handle<TCollection_HExtendedString> & aString, const Standard_Character replaceNonAscii);
-
 		/****************** ToCString ******************/
 		%feature("compactdefaultargs") ToCString;
 		%feature("autodoc", "Returns pointer to string (char *) this is useful for some casual manipulations because this 'char *' is 'const', you can't modify its contents.
@@ -3305,6 +3305,115 @@ Standard_Character
 ************************************/
 class TCollection_HExtendedString : public Standard_Transient {
 	public:
+		/****************** TCollection_HExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_HExtendedString;
+		%feature("autodoc", "Initializes a hextendedstring to an empty extendedstring.
+
+Returns
+-------
+None
+") TCollection_HExtendedString;
+		 TCollection_HExtendedString();
+
+		/****************** TCollection_HExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_HExtendedString;
+		%feature("autodoc", "Initializes a hextendedstring with a cstring.
+
+Parameters
+----------
+message: char *
+
+Returns
+-------
+None
+") TCollection_HExtendedString;
+		 TCollection_HExtendedString(const char * message);
+
+		/****************** TCollection_HExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_HExtendedString;
+		%feature("autodoc", "Initializes a hextendedstring with an extstring.
+
+Parameters
+----------
+message: Standard_ExtString
+
+Returns
+-------
+None
+") TCollection_HExtendedString;
+		 TCollection_HExtendedString(const Standard_ExtString message);
+
+		/****************** TCollection_HExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_HExtendedString;
+		%feature("autodoc", "Initializes a hextendedstring with a single character.
+
+Parameters
+----------
+aChar: Standard_ExtCharacter
+
+Returns
+-------
+None
+") TCollection_HExtendedString;
+		 TCollection_HExtendedString(const Standard_ExtCharacter aChar);
+
+		/****************** TCollection_HExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_HExtendedString;
+		%feature("autodoc", "Initializes a hextendedstring with <length> space allocated. and filled with <filler>.this is usefull for buffers.
+
+Parameters
+----------
+length: int
+filler: Standard_ExtCharacter
+
+Returns
+-------
+None
+") TCollection_HExtendedString;
+		 TCollection_HExtendedString(const Standard_Integer length, const Standard_ExtCharacter filler);
+
+		/****************** TCollection_HExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_HExtendedString;
+		%feature("autodoc", "Initializes a hextendedstring with a hextendedstring.
+
+Parameters
+----------
+aString: TCollection_ExtendedString
+
+Returns
+-------
+None
+") TCollection_HExtendedString;
+		 TCollection_HExtendedString(const TCollection_ExtendedString & aString);
+
+		/****************** TCollection_HExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_HExtendedString;
+		%feature("autodoc", "Initializes a hextendedstring with an hasciistring.
+
+Parameters
+----------
+aString: TCollection_HAsciiString
+
+Returns
+-------
+None
+") TCollection_HExtendedString;
+		 TCollection_HExtendedString(const opencascade::handle<TCollection_HAsciiString> & aString);
+
+		/****************** TCollection_HExtendedString ******************/
+		%feature("compactdefaultargs") TCollection_HExtendedString;
+		%feature("autodoc", "Initializes a hextendedstring with a hextendedstring.
+
+Parameters
+----------
+aString: TCollection_HExtendedString
+
+Returns
+-------
+None
+") TCollection_HExtendedString;
+		 TCollection_HExtendedString(const opencascade::handle<TCollection_HExtendedString> & aString);
+
 		/****************** AssignCat ******************/
 		%feature("compactdefaultargs") AssignCat;
 		%feature("autodoc", "Appends <other> to me.
@@ -3580,115 +3689,6 @@ TCollection_ExtendedString
 ") String;
 		const TCollection_ExtendedString & String();
 
-		/****************** TCollection_HExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_HExtendedString;
-		%feature("autodoc", "Initializes a hextendedstring to an empty extendedstring.
-
-Returns
--------
-None
-") TCollection_HExtendedString;
-		 TCollection_HExtendedString();
-
-		/****************** TCollection_HExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_HExtendedString;
-		%feature("autodoc", "Initializes a hextendedstring with a cstring.
-
-Parameters
-----------
-message: char *
-
-Returns
--------
-None
-") TCollection_HExtendedString;
-		 TCollection_HExtendedString(const char * message);
-
-		/****************** TCollection_HExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_HExtendedString;
-		%feature("autodoc", "Initializes a hextendedstring with an extstring.
-
-Parameters
-----------
-message: Standard_ExtString
-
-Returns
--------
-None
-") TCollection_HExtendedString;
-		 TCollection_HExtendedString(const Standard_ExtString message);
-
-		/****************** TCollection_HExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_HExtendedString;
-		%feature("autodoc", "Initializes a hextendedstring with a single character.
-
-Parameters
-----------
-aChar: Standard_ExtCharacter
-
-Returns
--------
-None
-") TCollection_HExtendedString;
-		 TCollection_HExtendedString(const Standard_ExtCharacter aChar);
-
-		/****************** TCollection_HExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_HExtendedString;
-		%feature("autodoc", "Initializes a hextendedstring with <length> space allocated. and filled with <filler>.this is usefull for buffers.
-
-Parameters
-----------
-length: int
-filler: Standard_ExtCharacter
-
-Returns
--------
-None
-") TCollection_HExtendedString;
-		 TCollection_HExtendedString(const Standard_Integer length, const Standard_ExtCharacter filler);
-
-		/****************** TCollection_HExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_HExtendedString;
-		%feature("autodoc", "Initializes a hextendedstring with a hextendedstring.
-
-Parameters
-----------
-aString: TCollection_ExtendedString
-
-Returns
--------
-None
-") TCollection_HExtendedString;
-		 TCollection_HExtendedString(const TCollection_ExtendedString & aString);
-
-		/****************** TCollection_HExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_HExtendedString;
-		%feature("autodoc", "Initializes a hextendedstring with an hasciistring.
-
-Parameters
-----------
-aString: TCollection_HAsciiString
-
-Returns
--------
-None
-") TCollection_HExtendedString;
-		 TCollection_HExtendedString(const opencascade::handle<TCollection_HAsciiString> & aString);
-
-		/****************** TCollection_HExtendedString ******************/
-		%feature("compactdefaultargs") TCollection_HExtendedString;
-		%feature("autodoc", "Initializes a hextendedstring with a hextendedstring.
-
-Parameters
-----------
-aString: TCollection_HExtendedString
-
-Returns
--------
-None
-") TCollection_HExtendedString;
-		 TCollection_HExtendedString(const opencascade::handle<TCollection_HExtendedString> & aString);
-
 		/****************** ToExtString ******************/
 		%feature("compactdefaultargs") ToExtString;
 		%feature("autodoc", "Returns pointer to extstring.
@@ -3759,16 +3759,6 @@ Standard_ExtCharacter
 ****************************/
 class TCollection_MapNode : public Standard_Transient {
 	public:
-		/****************** Next ******************/
-		%feature("compactdefaultargs") Next;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TCollection_MapNodePtr
-") Next;
-		TCollection_MapNodePtr & Next();
-
 		/****************** TCollection_MapNode ******************/
 		%feature("compactdefaultargs") TCollection_MapNode;
 		%feature("autodoc", "No available documentation.
@@ -3782,6 +3772,16 @@ Returns
 None
 ") TCollection_MapNode;
 		 TCollection_MapNode(const TCollection_MapNodePtr & n);
+
+		/****************** Next ******************/
+		%feature("compactdefaultargs") Next;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TCollection_MapNodePtr
+") Next;
+		TCollection_MapNodePtr & Next();
 
 };
 
@@ -3799,6 +3799,21 @@ None
 ****************************/
 class TCollection_SeqNode : public Standard_Transient {
 	public:
+		/****************** TCollection_SeqNode ******************/
+		%feature("compactdefaultargs") TCollection_SeqNode;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+n: TCollection_SeqNodePtr
+p: TCollection_SeqNodePtr
+
+Returns
+-------
+None
+") TCollection_SeqNode;
+		 TCollection_SeqNode(const TCollection_SeqNodePtr & n, const TCollection_SeqNodePtr & p);
+
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
 		%feature("autodoc", "No available documentation.
@@ -3818,21 +3833,6 @@ Returns
 TCollection_SeqNodePtr
 ") Previous;
 		TCollection_SeqNodePtr & Previous();
-
-		/****************** TCollection_SeqNode ******************/
-		%feature("compactdefaultargs") TCollection_SeqNode;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-n: TCollection_SeqNodePtr
-p: TCollection_SeqNodePtr
-
-Returns
--------
-None
-") TCollection_SeqNode;
-		 TCollection_SeqNode(const TCollection_SeqNodePtr & n, const TCollection_SeqNodePtr & p);
 
 };
 

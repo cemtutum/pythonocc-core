@@ -80,14 +80,14 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(Units_TksSequence) NCollection_Sequence<opencascade::handle<Units_Token>>;
 %template(Units_QtsSequence) NCollection_Sequence<opencascade::handle<Units_Quantity>>;
+%template(Units_TksSequence) NCollection_Sequence<opencascade::handle<Units_Token>>;
 %template(Units_UtsSequence) NCollection_Sequence<opencascade::handle<Units_Unit>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<opencascade::handle<Units_Token>> Units_TksSequence;
 typedef NCollection_Sequence<opencascade::handle<Units_Quantity>> Units_QtsSequence;
+typedef NCollection_Sequence<opencascade::handle<Units_Token>> Units_TksSequence;
 typedef NCollection_Sequence<opencascade::handle<Units_Unit>> Units_UtsSequence;
 /* end typedefs declaration */
 
@@ -312,6 +312,74 @@ None
 ***********************/
 class Units_Explorer {
 	public:
+		/****************** Units_Explorer ******************/
+		%feature("compactdefaultargs") Units_Explorer;
+		%feature("autodoc", "Empty contructor of the class.
+
+Returns
+-------
+None
+") Units_Explorer;
+		 Units_Explorer();
+
+		/****************** Units_Explorer ******************/
+		%feature("compactdefaultargs") Units_Explorer;
+		%feature("autodoc", "Creates a new instance of the class, initialized with the unitssystem <aunitssystem>.
+
+Parameters
+----------
+aunitssystem: Units_UnitsSystem
+
+Returns
+-------
+None
+") Units_Explorer;
+		 Units_Explorer(const opencascade::handle<Units_UnitsSystem> & aunitssystem);
+
+		/****************** Units_Explorer ******************/
+		%feature("compactdefaultargs") Units_Explorer;
+		%feature("autodoc", "Creates a new instance of the class, initialized with the unitsdictionary <aunitsdictionary>.
+
+Parameters
+----------
+aunitsdictionary: Units_UnitsDictionary
+
+Returns
+-------
+None
+") Units_Explorer;
+		 Units_Explorer(const opencascade::handle<Units_UnitsDictionary> & aunitsdictionary);
+
+		/****************** Units_Explorer ******************/
+		%feature("compactdefaultargs") Units_Explorer;
+		%feature("autodoc", "Creates a new instance of the class, initialized with the unitssystem <aunitssystem> and positioned at the quantity <aquantity>.
+
+Parameters
+----------
+aunitssystem: Units_UnitsSystem
+aquantity: char *
+
+Returns
+-------
+None
+") Units_Explorer;
+		 Units_Explorer(const opencascade::handle<Units_UnitsSystem> & aunitssystem, const char * aquantity);
+
+		/****************** Units_Explorer ******************/
+		%feature("compactdefaultargs") Units_Explorer;
+		%feature("autodoc", "Creates a new instance of the class, initialized with the unitsdictionary <aunitsdictionary> and positioned at the quantity <aquantity>.
+
+Parameters
+----------
+aunitsdictionary: Units_UnitsDictionary
+aquantity: char *
+
+Returns
+-------
+None
+") Units_Explorer;
+		 Units_Explorer(const opencascade::handle<Units_UnitsDictionary> & aunitsdictionary, const char * aquantity);
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initializes the instance of the class with the unitssystem <aunitssystem>.
@@ -440,74 +508,6 @@ TCollection_AsciiString
 ") Unit;
 		TCollection_AsciiString Unit();
 
-		/****************** Units_Explorer ******************/
-		%feature("compactdefaultargs") Units_Explorer;
-		%feature("autodoc", "Empty contructor of the class.
-
-Returns
--------
-None
-") Units_Explorer;
-		 Units_Explorer();
-
-		/****************** Units_Explorer ******************/
-		%feature("compactdefaultargs") Units_Explorer;
-		%feature("autodoc", "Creates a new instance of the class, initialized with the unitssystem <aunitssystem>.
-
-Parameters
-----------
-aunitssystem: Units_UnitsSystem
-
-Returns
--------
-None
-") Units_Explorer;
-		 Units_Explorer(const opencascade::handle<Units_UnitsSystem> & aunitssystem);
-
-		/****************** Units_Explorer ******************/
-		%feature("compactdefaultargs") Units_Explorer;
-		%feature("autodoc", "Creates a new instance of the class, initialized with the unitsdictionary <aunitsdictionary>.
-
-Parameters
-----------
-aunitsdictionary: Units_UnitsDictionary
-
-Returns
--------
-None
-") Units_Explorer;
-		 Units_Explorer(const opencascade::handle<Units_UnitsDictionary> & aunitsdictionary);
-
-		/****************** Units_Explorer ******************/
-		%feature("compactdefaultargs") Units_Explorer;
-		%feature("autodoc", "Creates a new instance of the class, initialized with the unitssystem <aunitssystem> and positioned at the quantity <aquantity>.
-
-Parameters
-----------
-aunitssystem: Units_UnitsSystem
-aquantity: char *
-
-Returns
--------
-None
-") Units_Explorer;
-		 Units_Explorer(const opencascade::handle<Units_UnitsSystem> & aunitssystem, const char * aquantity);
-
-		/****************** Units_Explorer ******************/
-		%feature("compactdefaultargs") Units_Explorer;
-		%feature("autodoc", "Creates a new instance of the class, initialized with the unitsdictionary <aunitsdictionary> and positioned at the quantity <aquantity>.
-
-Parameters
-----------
-aunitsdictionary: Units_UnitsDictionary
-aquantity: char *
-
-Returns
--------
-None
-") Units_Explorer;
-		 Units_Explorer(const opencascade::handle<Units_UnitsDictionary> & aunitsdictionary, const char * aquantity);
-
 };
 
 
@@ -522,6 +522,16 @@ None
 **********************/
 class Units_Lexicon : public Standard_Transient {
 	public:
+		/****************** Units_Lexicon ******************/
+		%feature("compactdefaultargs") Units_Lexicon;
+		%feature("autodoc", "Creates an empty instance of lexicon.
+
+Returns
+-------
+None
+") Units_Lexicon;
+		 Units_Lexicon();
+
 		/****************** AddToken ******************/
 		%feature("compactdefaultargs") AddToken;
 		%feature("autodoc", "Adds to the lexicon a new token with <aword>, <amean>, <avalue> as arguments. if there is already a token with the field <theword> equal to <aword>, the existing token is updated.
@@ -568,16 +578,6 @@ opencascade::handle<Units_TokensSequence>
 ") Sequence;
 		opencascade::handle<Units_TokensSequence> Sequence();
 
-		/****************** Units_Lexicon ******************/
-		%feature("compactdefaultargs") Units_Lexicon;
-		%feature("autodoc", "Creates an empty instance of lexicon.
-
-Returns
--------
-None
-") Units_Lexicon;
-		 Units_Lexicon();
-
 };
 
 
@@ -594,6 +594,46 @@ None
 **************************/
 class Units_Measurement {
 	public:
+		/****************** Units_Measurement ******************/
+		%feature("compactdefaultargs") Units_Measurement;
+		%feature("autodoc", "It is the empty constructor of the class.
+
+Returns
+-------
+None
+") Units_Measurement;
+		 Units_Measurement();
+
+		/****************** Units_Measurement ******************/
+		%feature("compactdefaultargs") Units_Measurement;
+		%feature("autodoc", "Returns an instance of this class. <avalue> defines the measurement, and <atoken> the token which defines the unit used.
+
+Parameters
+----------
+avalue: float
+atoken: Units_Token
+
+Returns
+-------
+None
+") Units_Measurement;
+		 Units_Measurement(const Standard_Real avalue, const opencascade::handle<Units_Token> & atoken);
+
+		/****************** Units_Measurement ******************/
+		%feature("compactdefaultargs") Units_Measurement;
+		%feature("autodoc", "Returns an instance of this class. <avalue> defines the measurement, and <aunit> the unit used, described in natural language.
+
+Parameters
+----------
+avalue: float
+aunit: char *
+
+Returns
+-------
+None
+") Units_Measurement;
+		 Units_Measurement(const Standard_Real avalue, const char * aunit);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Returns (if it is possible) a measurement which is the addition of <self> and <ameasurement>. the chosen returned unit is the unit of <self>.
@@ -766,46 +806,6 @@ opencascade::handle<Units_Token>
 ") Token;
 		opencascade::handle<Units_Token> Token();
 
-		/****************** Units_Measurement ******************/
-		%feature("compactdefaultargs") Units_Measurement;
-		%feature("autodoc", "It is the empty constructor of the class.
-
-Returns
--------
-None
-") Units_Measurement;
-		 Units_Measurement();
-
-		/****************** Units_Measurement ******************/
-		%feature("compactdefaultargs") Units_Measurement;
-		%feature("autodoc", "Returns an instance of this class. <avalue> defines the measurement, and <atoken> the token which defines the unit used.
-
-Parameters
-----------
-avalue: float
-atoken: Units_Token
-
-Returns
--------
-None
-") Units_Measurement;
-		 Units_Measurement(const Standard_Real avalue, const opencascade::handle<Units_Token> & atoken);
-
-		/****************** Units_Measurement ******************/
-		%feature("compactdefaultargs") Units_Measurement;
-		%feature("autodoc", "Returns an instance of this class. <avalue> defines the measurement, and <aunit> the unit used, described in natural language.
-
-Parameters
-----------
-avalue: float
-aunit: char *
-
-Returns
--------
-None
-") Units_Measurement;
-		 Units_Measurement(const Standard_Real avalue, const char * aunit);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -907,6 +907,21 @@ Units_Measurement
 ***********************/
 class Units_Sentence {
 	public:
+		/****************** Units_Sentence ******************/
+		%feature("compactdefaultargs") Units_Sentence;
+		%feature("autodoc", "Creates and returns a sentence, by analyzing the string <astring> with the lexicon <alexicon>.
+
+Parameters
+----------
+alexicon: Units_Lexicon
+astring: char *
+
+Returns
+-------
+None
+") Units_Sentence;
+		 Units_Sentence(const opencascade::handle<Units_Lexicon> & alexicon, const char * astring);
+
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "Useful for debugging.
@@ -971,21 +986,6 @@ None
 ") SetConstants;
 		void SetConstants();
 
-		/****************** Units_Sentence ******************/
-		%feature("compactdefaultargs") Units_Sentence;
-		%feature("autodoc", "Creates and returns a sentence, by analyzing the string <astring> with the lexicon <alexicon>.
-
-Parameters
-----------
-alexicon: Units_Lexicon
-astring: char *
-
-Returns
--------
-None
-") Units_Sentence;
-		 Units_Sentence(const opencascade::handle<Units_Lexicon> & alexicon, const char * astring);
-
 };
 
 
@@ -1000,6 +1000,92 @@ None
 ********************/
 class Units_Token : public Standard_Transient {
 	public:
+		/****************** Units_Token ******************/
+		%feature("compactdefaultargs") Units_Token;
+		%feature("autodoc", "Creates and returns a empty token.
+
+Returns
+-------
+None
+") Units_Token;
+		 Units_Token();
+
+		/****************** Units_Token ******************/
+		%feature("compactdefaultargs") Units_Token;
+		%feature("autodoc", "Creates and returns a token. <aword> is a string containing the available word.
+
+Parameters
+----------
+aword: char *
+
+Returns
+-------
+None
+") Units_Token;
+		 Units_Token(const char * aword);
+
+		/****************** Units_Token ******************/
+		%feature("compactdefaultargs") Units_Token;
+		%feature("autodoc", "Creates and returns a token. <atoken> is copied in the returned token.
+
+Parameters
+----------
+atoken: Units_Token
+
+Returns
+-------
+None
+") Units_Token;
+		 Units_Token(const opencascade::handle<Units_Token> & atoken);
+
+		/****************** Units_Token ******************/
+		%feature("compactdefaultargs") Units_Token;
+		%feature("autodoc", "Creates and returns a token. <aword> is a string containing the available word and <amean> gives the signification of the token.
+
+Parameters
+----------
+aword: char *
+amean: char *
+
+Returns
+-------
+None
+") Units_Token;
+		 Units_Token(const char * aword, const char * amean);
+
+		/****************** Units_Token ******************/
+		%feature("compactdefaultargs") Units_Token;
+		%feature("autodoc", "Creates and returns a token. <aword> is a string containing the available word, <amean> gives the signification of the token and <avalue> is the numeric value of the dimension.
+
+Parameters
+----------
+aword: char *
+amean: char *
+avalue: float
+
+Returns
+-------
+None
+") Units_Token;
+		 Units_Token(const char * aword, const char * amean, const Standard_Real avalue);
+
+		/****************** Units_Token ******************/
+		%feature("compactdefaultargs") Units_Token;
+		%feature("autodoc", "Creates and returns a token. <aword> is a string containing the available word, <amean> gives the signification of the token, <avalue> is the numeric value of the dimension, and <adimensions> is the dimension of the given word <aword>.
+
+Parameters
+----------
+aword: char *
+amean: char *
+avalue: float
+adimension: Units_Dimensions
+
+Returns
+-------
+None
+") Units_Token;
+		 Units_Token(const char * aword, const char * amean, const Standard_Real avalue, const opencascade::handle<Units_Dimensions> & adimension);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -1321,92 +1407,6 @@ opencascade::handle<Units_Token>
 ") Subtract;
 		opencascade::handle<Units_Token> Subtract(const opencascade::handle<Units_Token> & atoken);
 
-		/****************** Units_Token ******************/
-		%feature("compactdefaultargs") Units_Token;
-		%feature("autodoc", "Creates and returns a empty token.
-
-Returns
--------
-None
-") Units_Token;
-		 Units_Token();
-
-		/****************** Units_Token ******************/
-		%feature("compactdefaultargs") Units_Token;
-		%feature("autodoc", "Creates and returns a token. <aword> is a string containing the available word.
-
-Parameters
-----------
-aword: char *
-
-Returns
--------
-None
-") Units_Token;
-		 Units_Token(const char * aword);
-
-		/****************** Units_Token ******************/
-		%feature("compactdefaultargs") Units_Token;
-		%feature("autodoc", "Creates and returns a token. <atoken> is copied in the returned token.
-
-Parameters
-----------
-atoken: Units_Token
-
-Returns
--------
-None
-") Units_Token;
-		 Units_Token(const opencascade::handle<Units_Token> & atoken);
-
-		/****************** Units_Token ******************/
-		%feature("compactdefaultargs") Units_Token;
-		%feature("autodoc", "Creates and returns a token. <aword> is a string containing the available word and <amean> gives the signification of the token.
-
-Parameters
-----------
-aword: char *
-amean: char *
-
-Returns
--------
-None
-") Units_Token;
-		 Units_Token(const char * aword, const char * amean);
-
-		/****************** Units_Token ******************/
-		%feature("compactdefaultargs") Units_Token;
-		%feature("autodoc", "Creates and returns a token. <aword> is a string containing the available word, <amean> gives the signification of the token and <avalue> is the numeric value of the dimension.
-
-Parameters
-----------
-aword: char *
-amean: char *
-avalue: float
-
-Returns
--------
-None
-") Units_Token;
-		 Units_Token(const char * aword, const char * amean, const Standard_Real avalue);
-
-		/****************** Units_Token ******************/
-		%feature("compactdefaultargs") Units_Token;
-		%feature("autodoc", "Creates and returns a token. <aword> is a string containing the available word, <amean> gives the signification of the token, <avalue> is the numeric value of the dimension, and <adimensions> is the dimension of the given word <aword>.
-
-Parameters
-----------
-aword: char *
-amean: char *
-avalue: float
-adimension: Units_Dimensions
-
-Returns
--------
-None
-") Units_Token;
-		 Units_Token(const char * aword, const char * amean, const Standard_Real avalue, const opencascade::handle<Units_Dimensions> & adimension);
-
 		/****************** Update ******************/
 		%feature("compactdefaultargs") Update;
 		%feature("autodoc", "Updates the token <self> with the additional signification <amean> by concatenation of the two strings <themean> and <amean>. if the two significations are the same , an information message is written in the output device.
@@ -1485,6 +1485,52 @@ None
 *******************/
 class Units_Unit : public Standard_Transient {
 	public:
+		/****************** Units_Unit ******************/
+		%feature("compactdefaultargs") Units_Unit;
+		%feature("autodoc", "Creates and returns a unit. <aname> is the name of the unit, <asymbol> is the usual abbreviation of the unit, and <avalue> is the value in relation to the international system of units.
+
+Parameters
+----------
+aname: char *
+asymbol: char *
+avalue: float
+aquantity: Units_Quantity
+
+Returns
+-------
+None
+") Units_Unit;
+		 Units_Unit(const char * aname, const char * asymbol, const Standard_Real avalue, const opencascade::handle<Units_Quantity> & aquantity);
+
+		/****************** Units_Unit ******************/
+		%feature("compactdefaultargs") Units_Unit;
+		%feature("autodoc", "Creates and returns a unit. <aname> is the name of the unit, <asymbol> is the usual abbreviation of the unit.
+
+Parameters
+----------
+aname: char *
+asymbol: char *
+
+Returns
+-------
+None
+") Units_Unit;
+		 Units_Unit(const char * aname, const char * asymbol);
+
+		/****************** Units_Unit ******************/
+		%feature("compactdefaultargs") Units_Unit;
+		%feature("autodoc", "Creates and returns a unit. <aname> is the name of the unit.
+
+Parameters
+----------
+aname: char *
+
+Returns
+-------
+None
+") Units_Unit;
+		 Units_Unit(const char * aname);
+
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "Useful for debugging.
@@ -1582,52 +1628,6 @@ opencascade::handle<Units_Token>
 ") Token;
 		virtual opencascade::handle<Units_Token> Token();
 
-		/****************** Units_Unit ******************/
-		%feature("compactdefaultargs") Units_Unit;
-		%feature("autodoc", "Creates and returns a unit. <aname> is the name of the unit, <asymbol> is the usual abbreviation of the unit, and <avalue> is the value in relation to the international system of units.
-
-Parameters
-----------
-aname: char *
-asymbol: char *
-avalue: float
-aquantity: Units_Quantity
-
-Returns
--------
-None
-") Units_Unit;
-		 Units_Unit(const char * aname, const char * asymbol, const Standard_Real avalue, const opencascade::handle<Units_Quantity> & aquantity);
-
-		/****************** Units_Unit ******************/
-		%feature("compactdefaultargs") Units_Unit;
-		%feature("autodoc", "Creates and returns a unit. <aname> is the name of the unit, <asymbol> is the usual abbreviation of the unit.
-
-Parameters
-----------
-aname: char *
-asymbol: char *
-
-Returns
--------
-None
-") Units_Unit;
-		 Units_Unit(const char * aname, const char * asymbol);
-
-		/****************** Units_Unit ******************/
-		%feature("compactdefaultargs") Units_Unit;
-		%feature("autodoc", "Creates and returns a unit. <aname> is the name of the unit.
-
-Parameters
-----------
-aname: char *
-
-Returns
--------
-None
-") Units_Unit;
-		 Units_Unit(const char * aname);
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the value in relation with the international system of units.
@@ -1668,6 +1668,16 @@ None
 ******************************/
 class Units_UnitsDictionary : public Standard_Transient {
 	public:
+		/****************** Units_UnitsDictionary ******************/
+		%feature("compactdefaultargs") Units_UnitsDictionary;
+		%feature("autodoc", "Returns an empty instance of unitsdictionary.
+
+Returns
+-------
+None
+") Units_UnitsDictionary;
+		 Units_UnitsDictionary();
+
 		/****************** ActiveUnit ******************/
 		%feature("compactdefaultargs") ActiveUnit;
 		%feature("autodoc", "Returns for <aquantity> the active unit.
@@ -1730,16 +1740,6 @@ opencascade::handle<Units_QuantitiesSequence>
 ") Sequence;
 		opencascade::handle<Units_QuantitiesSequence> Sequence();
 
-		/****************** Units_UnitsDictionary ******************/
-		%feature("compactdefaultargs") Units_UnitsDictionary;
-		%feature("autodoc", "Returns an empty instance of unitsdictionary.
-
-Returns
--------
-None
-") Units_UnitsDictionary;
-		 Units_UnitsDictionary();
-
 };
 
 
@@ -1756,6 +1756,32 @@ None
 **************************/
 class Units_UnitsSystem : public Standard_Transient {
 	public:
+		/****************** Units_UnitsSystem ******************/
+		%feature("compactdefaultargs") Units_UnitsSystem;
+		%feature("autodoc", "Returns an instance of unitssystem initialized to the s.i. units system.
+
+Returns
+-------
+None
+") Units_UnitsSystem;
+		 Units_UnitsSystem();
+
+		/****************** Units_UnitsSystem ******************/
+		%feature("compactdefaultargs") Units_UnitsSystem;
+		%feature("autodoc", "Returns an instance of unitssystem initialized to the s.i. units system upgraded by the base system units decription file. attempts to find the four following files: $csf_`aname`defaults/.aname $csf_`aname`sitedefaults/.aname $csf_`aname`groupdefaults/.aname $csf_`aname`userdefaults/.aname see : resource_manager for the description of this file.
+
+Parameters
+----------
+aName: char *
+Verbose: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Units_UnitsSystem;
+		 Units_UnitsSystem(const char * aName, const Standard_Boolean Verbose = Standard_False);
+
 		/****************** Activate ******************/
 		%feature("compactdefaultargs") Activate;
 		%feature("autodoc", "Specifies for <aquantity> the unit <aunit> used.
@@ -1911,32 +1937,6 @@ None
 ") Specify;
 		void Specify(const char * aquantity, const char * aunit);
 
-		/****************** Units_UnitsSystem ******************/
-		%feature("compactdefaultargs") Units_UnitsSystem;
-		%feature("autodoc", "Returns an instance of unitssystem initialized to the s.i. units system.
-
-Returns
--------
-None
-") Units_UnitsSystem;
-		 Units_UnitsSystem();
-
-		/****************** Units_UnitsSystem ******************/
-		%feature("compactdefaultargs") Units_UnitsSystem;
-		%feature("autodoc", "Returns an instance of unitssystem initialized to the s.i. units system upgraded by the base system units decription file. attempts to find the four following files: $csf_`aname`defaults/.aname $csf_`aname`sitedefaults/.aname $csf_`aname`groupdefaults/.aname $csf_`aname`userdefaults/.aname see : resource_manager for the description of this file.
-
-Parameters
-----------
-aName: char *
-Verbose: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Units_UnitsSystem;
-		 Units_UnitsSystem(const char * aName, const Standard_Boolean Verbose = Standard_False);
-
 };
 
 
@@ -1981,6 +1981,24 @@ None
 ***************************/
 class Units_ShiftedToken : public Units_Token {
 	public:
+		/****************** Units_ShiftedToken ******************/
+		%feature("compactdefaultargs") Units_ShiftedToken;
+		%feature("autodoc", "Creates and returns a shifted token. <aword> is a string containing the available word, <amean> gives the signification of the token, <avalue> is the numeric value of the dimension, <amove> is the gap, and <adimensions> is the dimension of the given word <aword>.
+
+Parameters
+----------
+aword: char *
+amean: char *
+avalue: float
+amove: float
+adimensions: Units_Dimensions
+
+Returns
+-------
+None
+") Units_ShiftedToken;
+		 Units_ShiftedToken(const char * aword, const char * amean, const Standard_Real avalue, const Standard_Real amove, const opencascade::handle<Units_Dimensions> & adimensions);
+
 		/****************** Creates ******************/
 		%feature("compactdefaultargs") Creates;
 		%feature("autodoc", "Creates and returns a token, which is a shiftedtoken.
@@ -2044,24 +2062,6 @@ float
 ") Multiplied;
 		virtual Standard_Real Multiplied(const Standard_Real avalue);
 
-		/****************** Units_ShiftedToken ******************/
-		%feature("compactdefaultargs") Units_ShiftedToken;
-		%feature("autodoc", "Creates and returns a shifted token. <aword> is a string containing the available word, <amean> gives the signification of the token, <avalue> is the numeric value of the dimension, <amove> is the gap, and <adimensions> is the dimension of the given word <aword>.
-
-Parameters
-----------
-aword: char *
-amean: char *
-avalue: float
-amove: float
-adimensions: Units_Dimensions
-
-Returns
--------
-None
-") Units_ShiftedToken;
-		 Units_ShiftedToken(const char * aword, const char * amean, const Standard_Real avalue, const Standard_Real amove, const opencascade::handle<Units_Dimensions> & adimensions);
-
 };
 
 
@@ -2078,6 +2078,53 @@ None
 **************************/
 class Units_ShiftedUnit : public Units_Unit {
 	public:
+		/****************** Units_ShiftedUnit ******************/
+		%feature("compactdefaultargs") Units_ShiftedUnit;
+		%feature("autodoc", "Creates and returns a shifted unit. <aname> is the name of the unit, <asymbol> is the usual abbreviation of the unit, <avalue> is the value in relation to the international system of units, and <amove> is the gap in relation to another unit. //! for example celcius dregee of temperature is an instance of shiftedunit with <avalue> equal to 1. and <amove> equal to 273.15.
+
+Parameters
+----------
+aname: char *
+asymbol: char *
+avalue: float
+amove: float
+aquantity: Units_Quantity
+
+Returns
+-------
+None
+") Units_ShiftedUnit;
+		 Units_ShiftedUnit(const char * aname, const char * asymbol, const Standard_Real avalue, const Standard_Real amove, const opencascade::handle<Units_Quantity> & aquantity);
+
+		/****************** Units_ShiftedUnit ******************/
+		%feature("compactdefaultargs") Units_ShiftedUnit;
+		%feature("autodoc", "Creates and returns a unit. <aname> is the name of the unit, <asymbol> is the usual abbreviation of the unit.
+
+Parameters
+----------
+aname: char *
+asymbol: char *
+
+Returns
+-------
+None
+") Units_ShiftedUnit;
+		 Units_ShiftedUnit(const char * aname, const char * asymbol);
+
+		/****************** Units_ShiftedUnit ******************/
+		%feature("compactdefaultargs") Units_ShiftedUnit;
+		%feature("autodoc", "Creates and returns a unit. <aname> is the name of the unit.
+
+Parameters
+----------
+aname: char *
+
+Returns
+-------
+None
+") Units_ShiftedUnit;
+		 Units_ShiftedUnit(const char * aname);
+
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "No available documentation.
@@ -2127,53 +2174,6 @@ opencascade::handle<Units_Token>
 ") Token;
 		virtual opencascade::handle<Units_Token> Token();
 
-		/****************** Units_ShiftedUnit ******************/
-		%feature("compactdefaultargs") Units_ShiftedUnit;
-		%feature("autodoc", "Creates and returns a shifted unit. <aname> is the name of the unit, <asymbol> is the usual abbreviation of the unit, <avalue> is the value in relation to the international system of units, and <amove> is the gap in relation to another unit. //! for example celcius dregee of temperature is an instance of shiftedunit with <avalue> equal to 1. and <amove> equal to 273.15.
-
-Parameters
-----------
-aname: char *
-asymbol: char *
-avalue: float
-amove: float
-aquantity: Units_Quantity
-
-Returns
--------
-None
-") Units_ShiftedUnit;
-		 Units_ShiftedUnit(const char * aname, const char * asymbol, const Standard_Real avalue, const Standard_Real amove, const opencascade::handle<Units_Quantity> & aquantity);
-
-		/****************** Units_ShiftedUnit ******************/
-		%feature("compactdefaultargs") Units_ShiftedUnit;
-		%feature("autodoc", "Creates and returns a unit. <aname> is the name of the unit, <asymbol> is the usual abbreviation of the unit.
-
-Parameters
-----------
-aname: char *
-asymbol: char *
-
-Returns
--------
-None
-") Units_ShiftedUnit;
-		 Units_ShiftedUnit(const char * aname, const char * asymbol);
-
-		/****************** Units_ShiftedUnit ******************/
-		%feature("compactdefaultargs") Units_ShiftedUnit;
-		%feature("autodoc", "Creates and returns a unit. <aname> is the name of the unit.
-
-Parameters
-----------
-aname: char *
-
-Returns
--------
-None
-") Units_ShiftedUnit;
-		 Units_ShiftedUnit(const char * aname);
-
 };
 
 
@@ -2190,30 +2190,6 @@ None
 ***************************/
 class Units_UnitSentence : public Units_Sentence {
 	public:
-		/****************** Analyse ******************/
-		%feature("compactdefaultargs") Analyse;
-		%feature("autodoc", "Analyzes the sequence of tokens created by the constructor to find the true significance of each token.
-
-Returns
--------
-None
-") Analyse;
-		void Analyse();
-
-		/****************** SetUnits ******************/
-		%feature("compactdefaultargs") SetUnits;
-		%feature("autodoc", "For each token which represents a unit, finds in the sequence of physical quantities all the characteristics of the unit found.
-
-Parameters
-----------
-aquantitiessequence: Units_QuantitiesSequence
-
-Returns
--------
-None
-") SetUnits;
-		void SetUnits(const opencascade::handle<Units_QuantitiesSequence> & aquantitiessequence);
-
 		/****************** Units_UnitSentence ******************/
 		%feature("compactdefaultargs") Units_UnitSentence;
 		%feature("autodoc", "Creates and returns a unitsentence. the string <astring> describes in natural language the unit or the composed unit to be analysed.
@@ -2243,6 +2219,30 @@ None
 ") Units_UnitSentence;
 		 Units_UnitSentence(const char * astring, const opencascade::handle<Units_QuantitiesSequence> & aquantitiessequence);
 
+		/****************** Analyse ******************/
+		%feature("compactdefaultargs") Analyse;
+		%feature("autodoc", "Analyzes the sequence of tokens created by the constructor to find the true significance of each token.
+
+Returns
+-------
+None
+") Analyse;
+		void Analyse();
+
+		/****************** SetUnits ******************/
+		%feature("compactdefaultargs") SetUnits;
+		%feature("autodoc", "For each token which represents a unit, finds in the sequence of physical quantities all the characteristics of the unit found.
+
+Parameters
+----------
+aquantitiessequence: Units_QuantitiesSequence
+
+Returns
+-------
+None
+") SetUnits;
+		void SetUnits(const opencascade::handle<Units_QuantitiesSequence> & aquantitiessequence);
+
 };
 
 
@@ -2257,6 +2257,16 @@ None
 ***************************/
 class Units_UnitsLexicon : public Units_Lexicon {
 	public:
+		/****************** Units_UnitsLexicon ******************/
+		%feature("compactdefaultargs") Units_UnitsLexicon;
+		%feature("autodoc", "Returns an empty instance of unitslexicon.
+
+Returns
+-------
+None
+") Units_UnitsLexicon;
+		 Units_UnitsLexicon();
+
 		/****************** Creates ******************/
 		%feature("compactdefaultargs") Creates;
 		%feature("autodoc", "Reads the files <afilename1> and <afilename2> to create a sequence of tokens stored in <thesequenceoftokens>.
@@ -2281,16 +2291,6 @@ Returns
 None
 ") Dump;
 		virtual void Dump();
-
-		/****************** Units_UnitsLexicon ******************/
-		%feature("compactdefaultargs") Units_UnitsLexicon;
-		%feature("autodoc", "Returns an empty instance of unitslexicon.
-
-Returns
--------
-None
-") Units_UnitsLexicon;
-		 Units_UnitsLexicon();
 
 };
 

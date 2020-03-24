@@ -1002,71 +1002,6 @@ class Graphic3d_NameOfTextureEnv:
 /* end handles declaration */
 
 /* templates */
-%template(Graphic3d_IndexedMapOfStructure) NCollection_IndexedMap<const Graphic3d_CStructure *>;
-%template(Graphic3d_ArrayOfIndexedMapOfStructure) NCollection_Array1<Graphic3d_IndexedMapOfStructure>;
-
-%extend NCollection_Array1<Graphic3d_IndexedMapOfStructure> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(Graphic3d_CameraLerp) NCollection_Lerp<opencascade::handle<Graphic3d_Camera>>;
-%template(Graphic3d_SequenceOfGroup) NCollection_Sequence<opencascade::handle<Graphic3d_Group>>;
-%template(Graphic3d_Mat4) NCollection_Mat4<Standard_ShortReal>;
-%template(Graphic3d_IndexedMapOfView) NCollection_IndexedMap<Graphic3d_CView*>;
-%template(Graphic3d_BndBox4f) BVH_Box<Standard_ShortReal,4>;
-%template(Graphic3d_SequenceOfStructure) NCollection_Sequence<opencascade::handle<Graphic3d_Structure>>;
-%template(Graphic3d_Vec2) NCollection_Vec2<Standard_ShortReal>;
-%template(Graphic3d_Vec2d) NCollection_Vec2<Standard_Real>;
-%template(Graphic3d_Vec2i) NCollection_Vec2<Standard_Integer>;
-%template(Graphic3d_Vec2ub) NCollection_Vec2<Standard_Byte>;
-%template(Graphic3d_Vec2b) NCollection_Vec2<Standard_Character>;
-%template(Graphic3d_ShaderObjectList) NCollection_Sequence<opencascade::handle<Graphic3d_ShaderObject>>;
-%template(Graphic3d_ShaderVariableList) NCollection_Sequence<opencascade::handle<Graphic3d_ShaderVariable>>;
-%template(Graphic3d_ShaderAttributeList) NCollection_Sequence<opencascade::handle<Graphic3d_ShaderAttribute>>;
-%template(Graphic3d_MapOfAspectsToAspects) NCollection_DataMap<opencascade::handle<Graphic3d_Aspects>,opencascade::handle<Graphic3d_Aspects>>;
-%template(Graphic3d_Vec4) NCollection_Vec4<Standard_ShortReal>;
-%template(Graphic3d_Vec4d) NCollection_Vec4<Standard_Real>;
-%template(Graphic3d_Vec4i) NCollection_Vec4<Standard_Integer>;
-%template(Graphic3d_Vec4ub) NCollection_Vec4<Standard_Byte>;
-%template(Graphic3d_Vec4b) NCollection_Vec4<Standard_Character>;
-%template(Graphic3d_BndBox4d) BVH_Box<Standard_Real,4>;
-%template(Graphic3d_MapOfStructure) NCollection_Map<opencascade::handle<Graphic3d_Structure>>;
-%template(Graphic3d_Vec3) NCollection_Vec3<Standard_ShortReal>;
-%template(Graphic3d_Vec3d) NCollection_Vec3<Standard_Real>;
-%template(Graphic3d_Vec3i) NCollection_Vec3<Standard_Integer>;
-%template(Graphic3d_Vec3ub) NCollection_Vec3<Standard_Byte>;
-%template(Graphic3d_Vec3b) NCollection_Vec3<Standard_Character>;
-%template(Graphic3d_MapOfZLayerSettings) NCollection_DataMap<Graphic3d_ZLayerId,Graphic3d_ZLayerSettings>;
-%template(Graphic3d_BndBox3d) BVH_Box<Standard_Real,3>;
 %template(Graphic3d_Array1OfAttribute) NCollection_Array1<Graphic3d_Attribute>;
 
 %extend NCollection_Array1<Graphic3d_Attribute> {
@@ -1102,56 +1037,121 @@ class Graphic3d_NameOfTextureEnv:
     __next__ = next
     }
 };
+%template(Graphic3d_ArrayOfIndexedMapOfStructure) NCollection_Array1<Graphic3d_IndexedMapOfStructure>;
+
+%extend NCollection_Array1<Graphic3d_IndexedMapOfStructure> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(Graphic3d_BndBox3d) BVH_Box<Standard_Real,3>;
+%template(Graphic3d_BndBox4d) BVH_Box<Standard_Real,4>;
+%template(Graphic3d_BndBox4f) BVH_Box<Standard_ShortReal,4>;
+%template(Graphic3d_CameraLerp) NCollection_Lerp<opencascade::handle<Graphic3d_Camera>>;
+%template(Graphic3d_IndexedMapOfStructure) NCollection_IndexedMap<const Graphic3d_CStructure *>;
+%template(Graphic3d_IndexedMapOfView) NCollection_IndexedMap<Graphic3d_CView*>;
+%template(Graphic3d_MapOfAspectsToAspects) NCollection_DataMap<opencascade::handle<Graphic3d_Aspects>,opencascade::handle<Graphic3d_Aspects>>;
+%template(Graphic3d_MapOfStructure) NCollection_Map<opencascade::handle<Graphic3d_Structure>>;
+%template(Graphic3d_MapOfZLayerSettings) NCollection_DataMap<Graphic3d_ZLayerId,Graphic3d_ZLayerSettings>;
+%template(Graphic3d_Mat4) NCollection_Mat4<Standard_ShortReal>;
 %template(Graphic3d_Mat4d) NCollection_Mat4<Standard_Real>;
+%template(Graphic3d_SequenceOfGroup) NCollection_Sequence<opencascade::handle<Graphic3d_Group>>;
+%template(Graphic3d_SequenceOfStructure) NCollection_Sequence<opencascade::handle<Graphic3d_Structure>>;
+%template(Graphic3d_ShaderAttributeList) NCollection_Sequence<opencascade::handle<Graphic3d_ShaderAttribute>>;
+%template(Graphic3d_ShaderObjectList) NCollection_Sequence<opencascade::handle<Graphic3d_ShaderObject>>;
+%template(Graphic3d_ShaderVariableList) NCollection_Sequence<opencascade::handle<Graphic3d_ShaderVariable>>;
+%template(Graphic3d_Vec2) NCollection_Vec2<Standard_ShortReal>;
+%template(Graphic3d_Vec2b) NCollection_Vec2<Standard_Character>;
+%template(Graphic3d_Vec2d) NCollection_Vec2<Standard_Real>;
+%template(Graphic3d_Vec2i) NCollection_Vec2<Standard_Integer>;
+%template(Graphic3d_Vec2ub) NCollection_Vec2<Standard_Byte>;
+%template(Graphic3d_Vec3) NCollection_Vec3<Standard_ShortReal>;
+%template(Graphic3d_Vec3b) NCollection_Vec3<Standard_Character>;
+%template(Graphic3d_Vec3d) NCollection_Vec3<Standard_Real>;
+%template(Graphic3d_Vec3i) NCollection_Vec3<Standard_Integer>;
+%template(Graphic3d_Vec3ub) NCollection_Vec3<Standard_Byte>;
+%template(Graphic3d_Vec4) NCollection_Vec4<Standard_ShortReal>;
+%template(Graphic3d_Vec4b) NCollection_Vec4<Standard_Character>;
+%template(Graphic3d_Vec4d) NCollection_Vec4<Standard_Real>;
+%template(Graphic3d_Vec4i) NCollection_Vec4<Standard_Integer>;
+%template(Graphic3d_Vec4ub) NCollection_Vec4<Standard_Byte>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_IndexedMap<const Graphic3d_CStructure *> Graphic3d_IndexedMapOfStructure;
+typedef NCollection_Array1<Graphic3d_Attribute> Graphic3d_Array1OfAttribute;
+typedef Standard_Integer Graphic3d_ArrayFlags;
 typedef NCollection_Array1<Graphic3d_IndexedMapOfStructure> Graphic3d_ArrayOfIndexedMapOfStructure;
-typedef Graphic3d_MapOfStructure::Iterator Graphic3d_MapIteratorOfMapOfStructure;
-typedef NCollection_Lerp<opencascade::handle<Graphic3d_Camera>> Graphic3d_CameraLerp;
-typedef NCollection_Sequence<opencascade::handle<Graphic3d_Group>> Graphic3d_SequenceOfGroup;
-typedef NCollection_Mat4<Standard_ShortReal> Graphic3d_Mat4;
-typedef NCollection_IndexedMap<Graphic3d_CView *> Graphic3d_IndexedMapOfView;
+typedef BVH_Box<Standard_Real, 3> Graphic3d_BndBox3d;
+typedef BVH_Box<Standard_Real, 4> Graphic3d_BndBox4d;
 typedef BVH_Box<Standard_ShortReal, 4> Graphic3d_BndBox4f;
+typedef NCollection_Lerp<opencascade::handle<Graphic3d_Camera>> Graphic3d_CameraLerp;
+typedef NCollection_IndexedMap<const Graphic3d_CStructure *> Graphic3d_IndexedMapOfStructure;
+typedef NCollection_IndexedMap<Graphic3d_CView *> Graphic3d_IndexedMapOfView;
+typedef Graphic3d_MapOfStructure::Iterator Graphic3d_MapIteratorOfMapOfStructure;
+typedef NCollection_DataMap<opencascade::handle<Graphic3d_Aspects>, opencascade::handle<Graphic3d_Aspects>> Graphic3d_MapOfAspectsToAspects;
+typedef NCollection_Map<opencascade::handle<Graphic3d_Structure>> Graphic3d_MapOfStructure;
+typedef NCollection_DataMap<Graphic3d_ZLayerId, Graphic3d_ZLayerSettings> Graphic3d_MapOfZLayerSettings;
+typedef NCollection_Mat4<Standard_ShortReal> Graphic3d_Mat4;
+typedef NCollection_Mat4<Standard_Real> Graphic3d_Mat4d;
+typedef NCollection_Shared<NCollection_Map<const Standard_Transient *>> Graphic3d_NMapOfTransient;
+typedef NCollection_Sequence<opencascade::handle<Graphic3d_Group>> Graphic3d_SequenceOfGroup;
 typedef NCollection_Sequence<opencascade::handle<Graphic3d_Structure>> Graphic3d_SequenceOfStructure;
+typedef NCollection_Sequence<opencascade::handle<Graphic3d_ShaderAttribute>> Graphic3d_ShaderAttributeList;
+typedef NCollection_Sequence<opencascade::handle<Graphic3d_ShaderObject>> Graphic3d_ShaderObjectList;
+typedef NCollection_Sequence<opencascade::handle<Graphic3d_ShaderVariable>> Graphic3d_ShaderVariableList;
+typedef Graphic3d_UniformValue<Standard_ShortReal> Graphic3d_UniformFloat;
+typedef Graphic3d_UniformValue<Standard_Integer> Graphic3d_UniformInt;
+typedef Graphic3d_UniformValue<Graphic3d_Vec2> Graphic3d_UniformVec2;
+typedef Graphic3d_UniformValue<Graphic3d_Vec2i> Graphic3d_UniformVec2i;
+typedef Graphic3d_UniformValue<Graphic3d_Vec3> Graphic3d_UniformVec3;
+typedef Graphic3d_UniformValue<Graphic3d_Vec3i> Graphic3d_UniformVec3i;
+typedef Graphic3d_UniformValue<Graphic3d_Vec4> Graphic3d_UniformVec4;
+typedef Graphic3d_UniformValue<Graphic3d_Vec4i> Graphic3d_UniformVec4i;
 typedef NCollection_Vec2<Standard_ShortReal> Graphic3d_Vec2;
+typedef NCollection_Vec2<Standard_Character> Graphic3d_Vec2b;
 typedef NCollection_Vec2<Standard_Real> Graphic3d_Vec2d;
 typedef NCollection_Vec2<Standard_Integer> Graphic3d_Vec2i;
 typedef NCollection_Vec2<Standard_Byte> Graphic3d_Vec2ub;
-typedef NCollection_Vec2<Standard_Character> Graphic3d_Vec2b;
-typedef NCollection_Sequence<opencascade::handle<Graphic3d_ShaderObject>> Graphic3d_ShaderObjectList;
-typedef NCollection_Sequence<opencascade::handle<Graphic3d_ShaderVariable>> Graphic3d_ShaderVariableList;
-typedef NCollection_Sequence<opencascade::handle<Graphic3d_ShaderAttribute>> Graphic3d_ShaderAttributeList;
-typedef NCollection_Shared<Standard_Mutex> Media_HMutex;
-typedef NCollection_DataMap<opencascade::handle<Graphic3d_Aspects>, opencascade::handle<Graphic3d_Aspects>> Graphic3d_MapOfAspectsToAspects;
-typedef NCollection_Vec4<Standard_ShortReal> Graphic3d_Vec4;
-typedef NCollection_Vec4<Standard_Real> Graphic3d_Vec4d;
-typedef NCollection_Vec4<Standard_Integer> Graphic3d_Vec4i;
-typedef NCollection_Vec4<Standard_Byte> Graphic3d_Vec4ub;
-typedef NCollection_Vec4<Standard_Character> Graphic3d_Vec4b;
-typedef Standard_Integer Graphic3d_ArrayFlags;
-typedef BVH_Box<Standard_Real, 4> Graphic3d_BndBox4d;
-typedef NCollection_Map<opencascade::handle<Graphic3d_Structure>> Graphic3d_MapOfStructure;
 typedef NCollection_Vec3<Standard_ShortReal> Graphic3d_Vec3;
+typedef NCollection_Vec3<Standard_Character> Graphic3d_Vec3b;
 typedef NCollection_Vec3<Standard_Real> Graphic3d_Vec3d;
 typedef NCollection_Vec3<Standard_Integer> Graphic3d_Vec3i;
 typedef NCollection_Vec3<Standard_Byte> Graphic3d_Vec3ub;
-typedef NCollection_Vec3<Standard_Character> Graphic3d_Vec3b;
+typedef NCollection_Vec4<Standard_ShortReal> Graphic3d_Vec4;
+typedef NCollection_Vec4<Standard_Character> Graphic3d_Vec4b;
+typedef NCollection_Vec4<Standard_Real> Graphic3d_Vec4d;
+typedef NCollection_Vec4<Standard_Integer> Graphic3d_Vec4i;
+typedef NCollection_Vec4<Standard_Byte> Graphic3d_Vec4ub;
 typedef Standard_Integer Graphic3d_ZLayerId;
-typedef NCollection_DataMap<Graphic3d_ZLayerId, Graphic3d_ZLayerSettings> Graphic3d_MapOfZLayerSettings;
-typedef Graphic3d_UniformValue<Standard_Integer> Graphic3d_UniformInt;
-typedef Graphic3d_UniformValue<Graphic3d_Vec2i> Graphic3d_UniformVec2i;
-typedef Graphic3d_UniformValue<Graphic3d_Vec3i> Graphic3d_UniformVec3i;
-typedef Graphic3d_UniformValue<Graphic3d_Vec4i> Graphic3d_UniformVec4i;
-typedef Graphic3d_UniformValue<Standard_ShortReal> Graphic3d_UniformFloat;
-typedef Graphic3d_UniformValue<Graphic3d_Vec2> Graphic3d_UniformVec2;
-typedef Graphic3d_UniformValue<Graphic3d_Vec3> Graphic3d_UniformVec3;
-typedef Graphic3d_UniformValue<Graphic3d_Vec4> Graphic3d_UniformVec4;
-typedef BVH_Box<Standard_Real, 3> Graphic3d_BndBox3d;
-typedef NCollection_Array1<Graphic3d_Attribute> Graphic3d_Array1OfAttribute;
-typedef NCollection_Mat4<Standard_Real> Graphic3d_Mat4d;
-typedef NCollection_Shared<NCollection_Map<const Standard_Transient *>> Graphic3d_NMapOfTransient;
+typedef NCollection_Shared<Standard_Mutex> Media_HMutex;
 /* end typedefs declaration */
 
 /************************************
@@ -2343,6 +2343,16 @@ None
 **************************/
 class Graphic3d_Aspects : public Standard_Transient {
 	public:
+		/****************** Graphic3d_Aspects ******************/
+		%feature("compactdefaultargs") Graphic3d_Aspects;
+		%feature("autodoc", "Creates a context table for drawing primitives defined with the following default values:.
+
+Returns
+-------
+None
+") Graphic3d_Aspects;
+		 Graphic3d_Aspects();
+
 		/****************** AllowBackFace ******************/
 		%feature("compactdefaultargs") AllowBackFace;
 		%feature("autodoc", "Allows the display of back-facing filled polygons.
@@ -2540,16 +2550,6 @@ Returns
 Graphic3d_MaterialAspect
 ") FrontMaterial;
 		const Graphic3d_MaterialAspect & FrontMaterial();
-
-		/****************** Graphic3d_Aspects ******************/
-		%feature("compactdefaultargs") Graphic3d_Aspects;
-		%feature("autodoc", "Creates a context table for drawing primitives defined with the following default values:.
-
-Returns
--------
-None
-") Graphic3d_Aspects;
-		 Graphic3d_Aspects();
 
 		/****************** HatchStyle ******************/
 		%feature("compactdefaultargs") HatchStyle;
@@ -3543,16 +3543,6 @@ int
 *****************************/
 class Graphic3d_AxisAspect {
 	public:
-		/****************** Color ******************/
-		%feature("compactdefaultargs") Color;
-		%feature("autodoc", "Color of axis and values.
-
-Returns
--------
-Quantity_Color
-") Color;
-		const Quantity_Color & Color();
-
 		/****************** Graphic3d_AxisAspect ******************/
 		%feature("compactdefaultargs") Graphic3d_AxisAspect;
 		%feature("autodoc", "No available documentation.
@@ -3585,6 +3575,16 @@ Returns
 None
 ") Graphic3d_AxisAspect;
 		 Graphic3d_AxisAspect(const TCollection_ExtendedString theName = "", const Quantity_Color theNameColor = Quantity_NOC_BLACK, const Quantity_Color theColor = Quantity_NOC_BLACK, const Standard_Integer theValuesOffset = 10, const Standard_Integer theNameOffset = 30, const Standard_Integer theTickmarksNumber = 5, const Standard_Integer theTickmarksLength = 10, const Standard_Boolean theToDrawName = Standard_True, const Standard_Boolean theToDrawValues = Standard_True, const Standard_Boolean theToDrawTickmarks = Standard_True);
+
+		/****************** Color ******************/
+		%feature("compactdefaultargs") Color;
+		%feature("autodoc", "Color of axis and values.
+
+Returns
+-------
+Quantity_Color
+") Color;
+		const Quantity_Color & Color();
 
 		/****************** Name ******************/
 		%feature("compactdefaultargs") Name;
@@ -3838,6 +3838,16 @@ class Graphic3d_BSDF {
 		Graphic3d_Vec4 Absorption;
 		Graphic3d_Fresnel FresnelCoat;
 		Graphic3d_Fresnel FresnelBase;
+		/****************** Graphic3d_BSDF ******************/
+		%feature("compactdefaultargs") Graphic3d_BSDF;
+		%feature("autodoc", "Creates uninitialized bsdf.
+
+Returns
+-------
+None
+") Graphic3d_BSDF;
+		 Graphic3d_BSDF();
+
 		/****************** CreateDiffuse ******************/
 		%feature("compactdefaultargs") CreateDiffuse;
 		%feature("autodoc", "Creates bsdf describing diffuse (lambertian) surface.
@@ -3900,16 +3910,6 @@ Returns
 Graphic3d_BSDF
 ") CreateTransparent;
 		static Graphic3d_BSDF CreateTransparent(const Graphic3d_Vec3 & theWeight, const Graphic3d_Vec3 & theAbsorptionColor, const Standard_ShortReal theAbsorptionCoeff);
-
-		/****************** Graphic3d_BSDF ******************/
-		%feature("compactdefaultargs") Graphic3d_BSDF;
-		%feature("autodoc", "Creates uninitialized bsdf.
-
-Returns
--------
-None
-") Graphic3d_BSDF;
-		 Graphic3d_BSDF();
 
 		/****************** Normalize ******************/
 		%feature("compactdefaultargs") Normalize;
@@ -4003,16 +4003,6 @@ class Graphic3d_BufferRange {
 	public:
 		int Start;
 		int Length;
-		/****************** Clear ******************/
-		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "Clear the range.
-
-Returns
--------
-None
-") Clear;
-		void Clear();
-
 		/****************** Graphic3d_BufferRange ******************/
 		%feature("compactdefaultargs") Graphic3d_BufferRange;
 		%feature("autodoc", "Empty constructor.
@@ -4037,6 +4027,16 @@ Returns
 None
 ") Graphic3d_BufferRange;
 		 Graphic3d_BufferRange(Standard_Integer theStart, Standard_Integer theLength);
+
+		/****************** Clear ******************/
+		%feature("compactdefaultargs") Clear;
+		%feature("autodoc", "Clear the range.
+
+Returns
+-------
+None
+") Clear;
+		void Clear();
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
@@ -4188,6 +4188,20 @@ None
 *************************/
 class Graphic3d_CLight : public Standard_Transient {
 	public:
+		/****************** Graphic3d_CLight ******************/
+		%feature("compactdefaultargs") Graphic3d_CLight;
+		%feature("autodoc", "Empty constructor, which should be followed by light source properties configuration.
+
+Parameters
+----------
+theType: Graphic3d_TypeOfLightSource
+
+Returns
+-------
+None
+") Graphic3d_CLight;
+		 Graphic3d_CLight(Graphic3d_TypeOfLightSource theType);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Returns an angle in radians of the cone created by the spot; 30 degrees by default.
@@ -4278,20 +4292,6 @@ Returns
 TCollection_AsciiString
 ") GetId;
 		const TCollection_AsciiString & GetId();
-
-		/****************** Graphic3d_CLight ******************/
-		%feature("compactdefaultargs") Graphic3d_CLight;
-		%feature("autodoc", "Empty constructor, which should be followed by light source properties configuration.
-
-Parameters
-----------
-theType: Graphic3d_TypeOfLightSource
-
-Returns
--------
-None
-") Graphic3d_CLight;
-		 Graphic3d_CLight(Graphic3d_TypeOfLightSource theType);
 
 		/****************** Headlight ******************/
 		%feature("compactdefaultargs") Headlight;
@@ -5131,6 +5131,30 @@ class IODType:
 };
 /* end python proxy for enums */
 
+		/****************** Graphic3d_Camera ******************/
+		%feature("compactdefaultargs") Graphic3d_Camera;
+		%feature("autodoc", "Default constructor. initializes camera with the following properties: eye (0, 0, -2); center (0, 0, 0); up (0, 1, 0); type (orthographic); fovy (45); scale (1000); isstereo(false); znear (0.001); zfar (3000.0); aspect(1); zfocus(1.0); zfocustype(relative); iod(0.05); iodtype(relative).
+
+Returns
+-------
+None
+") Graphic3d_Camera;
+		 Graphic3d_Camera();
+
+		/****************** Graphic3d_Camera ******************/
+		%feature("compactdefaultargs") Graphic3d_Camera;
+		%feature("autodoc", "Copy constructor. @param theother [in] the camera to copy from.
+
+Parameters
+----------
+theOther: Graphic3d_Camera
+
+Returns
+-------
+None
+") Graphic3d_Camera;
+		 Graphic3d_Camera(const opencascade::handle<Graphic3d_Camera> & theOther);
+
 		/****************** Aspect ******************/
 		%feature("compactdefaultargs") Aspect;
 		%feature("autodoc", "Get camera display ratio. returns display ratio.
@@ -5341,30 +5365,6 @@ Returns
 Graphic3d_Camera::IODType
 ") GetIODType;
 		Graphic3d_Camera::IODType GetIODType();
-
-		/****************** Graphic3d_Camera ******************/
-		%feature("compactdefaultargs") Graphic3d_Camera;
-		%feature("autodoc", "Default constructor. initializes camera with the following properties: eye (0, 0, -2); center (0, 0, 0); up (0, 1, 0); type (orthographic); fovy (45); scale (1000); isstereo(false); znear (0.001); zfar (3000.0); aspect(1); zfocus(1.0); zfocustype(relative); iod(0.05); iodtype(relative).
-
-Returns
--------
-None
-") Graphic3d_Camera;
-		 Graphic3d_Camera();
-
-		/****************** Graphic3d_Camera ******************/
-		%feature("compactdefaultargs") Graphic3d_Camera;
-		%feature("autodoc", "Copy constructor. @param theother [in] the camera to copy from.
-
-Parameters
-----------
-theOther: Graphic3d_Camera
-
-Returns
--------
-None
-") Graphic3d_Camera;
-		 Graphic3d_Camera(const opencascade::handle<Graphic3d_Camera> & theOther);
 
 		/****************** IOD ******************/
 		%feature("compactdefaultargs") IOD;
@@ -5988,16 +5988,6 @@ class Graphic3d_CameraTile {
 		Graphic3d_Vec2i TileSize;
 		Graphic3d_Vec2i Offset;
 		bool IsTopDown;
-		/****************** Cropped ******************/
-		%feature("compactdefaultargs") Cropped;
-		%feature("autodoc", "Return the copy cropped by total size.
-
-Returns
--------
-Graphic3d_CameraTile
-") Cropped;
-		Graphic3d_CameraTile Cropped();
-
 		/****************** Graphic3d_CameraTile ******************/
 		%feature("compactdefaultargs") Graphic3d_CameraTile;
 		%feature("autodoc", "Default constructor. initializes the empty tile of zero size and lower-left offset orientation. such tile is considered uninitialized (invalid).
@@ -6007,6 +5997,16 @@ Returns
 None
 ") Graphic3d_CameraTile;
 		 Graphic3d_CameraTile();
+
+		/****************** Cropped ******************/
+		%feature("compactdefaultargs") Cropped;
+		%feature("autodoc", "Return the copy cropped by total size.
+
+Returns
+-------
+Graphic3d_CameraTile
+") Cropped;
+		Graphic3d_CameraTile Cropped();
 
 		/****************** IsValid ******************/
 		%feature("compactdefaultargs") IsValid;
@@ -6057,6 +6057,58 @@ Graphic3d_Vec2i
 class Graphic3d_ClipPlane : public Standard_Transient {
 	public:
 typedef Graphic3d_Vec4d Equation;
+		/****************** Graphic3d_ClipPlane ******************/
+		%feature("compactdefaultargs") Graphic3d_ClipPlane;
+		%feature("autodoc", "Default constructor. initializes clip plane container with the following properties: - equation (0.0, 0.0, 1.0, 0) - ison (true), - iscapping (false), - material (graphic3d_nom_default), - texture (null), - hatchstyle (aspect_hs_horizontal), - ishatchon (false).
+
+Returns
+-------
+None
+") Graphic3d_ClipPlane;
+		 Graphic3d_ClipPlane();
+
+		/****************** Graphic3d_ClipPlane ******************/
+		%feature("compactdefaultargs") Graphic3d_ClipPlane;
+		%feature("autodoc", "Copy constructor. @param theother [in] the copied plane.
+
+Parameters
+----------
+theOther: Graphic3d_ClipPlane
+
+Returns
+-------
+None
+") Graphic3d_ClipPlane;
+		 Graphic3d_ClipPlane(const Graphic3d_ClipPlane & theOther);
+
+		/****************** Graphic3d_ClipPlane ******************/
+		%feature("compactdefaultargs") Graphic3d_ClipPlane;
+		%feature("autodoc", "Construct clip plane for the passed equation. by default the plane is on, capping is turned off. @param theequation [in] the plane equation.
+
+Parameters
+----------
+theEquation: Graphic3d_Vec4d
+
+Returns
+-------
+None
+") Graphic3d_ClipPlane;
+		 Graphic3d_ClipPlane(const Graphic3d_Vec4d & theEquation);
+
+		/****************** Graphic3d_ClipPlane ******************/
+		%feature("compactdefaultargs") Graphic3d_ClipPlane;
+		%feature("autodoc", "Construct clip plane from the passed geometrical definition. by default the plane is on, capping is turned off. @param theplane [in] the plane.
+
+Parameters
+----------
+thePlane: gp_Pln
+
+Returns
+-------
+None
+") Graphic3d_ClipPlane;
+		 Graphic3d_ClipPlane(const gp_Pln & thePlane);
+
 		/****************** CappingAspect ******************/
 		%feature("compactdefaultargs") CappingAspect;
 		%feature("autodoc", "Return capping aspect. returns capping surface rendering aspect.
@@ -6166,58 +6218,6 @@ Returns
 TCollection_AsciiString
 ") GetId;
 		const TCollection_AsciiString & GetId();
-
-		/****************** Graphic3d_ClipPlane ******************/
-		%feature("compactdefaultargs") Graphic3d_ClipPlane;
-		%feature("autodoc", "Default constructor. initializes clip plane container with the following properties: - equation (0.0, 0.0, 1.0, 0) - ison (true), - iscapping (false), - material (graphic3d_nom_default), - texture (null), - hatchstyle (aspect_hs_horizontal), - ishatchon (false).
-
-Returns
--------
-None
-") Graphic3d_ClipPlane;
-		 Graphic3d_ClipPlane();
-
-		/****************** Graphic3d_ClipPlane ******************/
-		%feature("compactdefaultargs") Graphic3d_ClipPlane;
-		%feature("autodoc", "Copy constructor. @param theother [in] the copied plane.
-
-Parameters
-----------
-theOther: Graphic3d_ClipPlane
-
-Returns
--------
-None
-") Graphic3d_ClipPlane;
-		 Graphic3d_ClipPlane(const Graphic3d_ClipPlane & theOther);
-
-		/****************** Graphic3d_ClipPlane ******************/
-		%feature("compactdefaultargs") Graphic3d_ClipPlane;
-		%feature("autodoc", "Construct clip plane for the passed equation. by default the plane is on, capping is turned off. @param theequation [in] the plane equation.
-
-Parameters
-----------
-theEquation: Graphic3d_Vec4d
-
-Returns
--------
-None
-") Graphic3d_ClipPlane;
-		 Graphic3d_ClipPlane(const Graphic3d_Vec4d & theEquation);
-
-		/****************** Graphic3d_ClipPlane ******************/
-		%feature("compactdefaultargs") Graphic3d_ClipPlane;
-		%feature("autodoc", "Construct clip plane from the passed geometrical definition. by default the plane is on, capping is turned off. @param theplane [in] the plane.
-
-Parameters
-----------
-thePlane: gp_Pln
-
-Returns
--------
-None
-") Graphic3d_ClipPlane;
-		 Graphic3d_ClipPlane(const gp_Pln & thePlane);
 
 		/****************** IsBoxFullInHalfspace ******************/
 		%feature("compactdefaultargs") IsBoxFullInHalfspace;
@@ -6712,6 +6712,16 @@ class Graphic3d_CullingTool {
 	public:
 		class CullingContext {};
 		class Plane {};
+		/****************** Graphic3d_CullingTool ******************/
+		%feature("compactdefaultargs") Graphic3d_CullingTool;
+		%feature("autodoc", "Creates an empty selector object with parallel projection type by default.
+
+Returns
+-------
+None
+") Graphic3d_CullingTool;
+		 Graphic3d_CullingTool();
+
 		/****************** CacheClipPtsProjections ******************/
 		%feature("compactdefaultargs") CacheClipPtsProjections;
 		%feature("autodoc", "Caches view volume's vertices projections along its normals and aabbs dimensions. must be called at the beginning of each bvh tree traverse loop.
@@ -6731,16 +6741,6 @@ Returns
 opencascade::handle<Graphic3d_Camera>
 ") Camera;
 		const opencascade::handle<Graphic3d_Camera> & Camera();
-
-		/****************** Graphic3d_CullingTool ******************/
-		%feature("compactdefaultargs") Graphic3d_CullingTool;
-		%feature("autodoc", "Creates an empty selector object with parallel projection type by default.
-
-Returns
--------
-None
-") Graphic3d_CullingTool;
-		 Graphic3d_CullingTool();
 
 		/****************** IsCulled ******************/
 		%feature("compactdefaultargs") IsCulled;
@@ -7178,6 +7178,16 @@ float
 *********************************/
 class Graphic3d_FrameStatsData {
 	public:
+		/****************** Graphic3d_FrameStatsData ******************/
+		%feature("compactdefaultargs") Graphic3d_FrameStatsData;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Graphic3d_FrameStatsData;
+		 Graphic3d_FrameStatsData();
+
 		/****************** CounterValue ******************/
 		%feature("compactdefaultargs") CounterValue;
 		%feature("autodoc", "Get counter value.
@@ -7226,16 +7236,6 @@ float
 ") FrameRateCpu;
 		Standard_Real FrameRateCpu();
 
-		/****************** Graphic3d_FrameStatsData ******************/
-		%feature("compactdefaultargs") Graphic3d_FrameStatsData;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Graphic3d_FrameStatsData;
-		 Graphic3d_FrameStatsData();
-
 		/****************** Reset ******************/
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Reset data.
@@ -7274,6 +7274,16 @@ float
 **************************/
 class Graphic3d_Fresnel {
 	public:
+		/****************** Graphic3d_Fresnel ******************/
+		%feature("compactdefaultargs") Graphic3d_Fresnel;
+		%feature("autodoc", "Creates uninitialized fresnel factor.
+
+Returns
+-------
+None
+") Graphic3d_Fresnel;
+		 Graphic3d_Fresnel();
+
 		/****************** CreateConductor ******************/
 		%feature("compactdefaultargs") CreateConductor;
 		%feature("autodoc", "Creates fresnel factor for physical-based conductor model.
@@ -7356,16 +7366,6 @@ Graphic3d_FresnelModel
 ") FresnelType;
 		Graphic3d_FresnelModel FresnelType();
 
-		/****************** Graphic3d_Fresnel ******************/
-		%feature("compactdefaultargs") Graphic3d_Fresnel;
-		%feature("autodoc", "Creates uninitialized fresnel factor.
-
-Returns
--------
-None
-") Graphic3d_Fresnel;
-		 Graphic3d_Fresnel();
-
 		/****************** Serialize ******************/
 		%feature("compactdefaultargs") Serialize;
 		%feature("autodoc", "Returns serialized representation of fresnel factor.
@@ -7405,6 +7405,39 @@ Graphic3d_Vec4
 class Graphic3d_GraduatedTrihedron {
 	public:
 		Graphic3d_CView * PtrView;
+		/****************** Graphic3d_GraduatedTrihedron ******************/
+		%feature("compactdefaultargs") Graphic3d_GraduatedTrihedron;
+		%feature("autodoc", "Default constructor constructs the default graduated trihedron with grid, x, y, z axes, and tickmarks.
+
+Parameters
+----------
+theNamesFont: TCollection_AsciiString,optional
+	default value is 'Arial'
+theNamesStyle: Font_FontAspect,optional
+	default value is Font_FA_Bold
+theNamesSize: int,optional
+	default value is 12
+theValuesFont: TCollection_AsciiString,optional
+	default value is 'Arial'
+theValuesStyle: Font_FontAspect,optional
+	default value is Font_FA_Regular
+theValuesSize: int,optional
+	default value is 12
+theArrowsLength: Standard_ShortReal,optional
+	default value is 30.0f
+theGridColor: Quantity_Color,optional
+	default value is Quantity_NOC_WHITE
+theToDrawGrid: bool,optional
+	default value is Standard_True
+theToDrawAxes: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") Graphic3d_GraduatedTrihedron;
+		 Graphic3d_GraduatedTrihedron(const TCollection_AsciiString & theNamesFont = "Arial", const Font_FontAspect & theNamesStyle = Font_FA_Bold, const Standard_Integer theNamesSize = 12, const TCollection_AsciiString & theValuesFont = "Arial", const Font_FontAspect & theValuesStyle = Font_FA_Regular, const Standard_Integer theValuesSize = 12, const Standard_ShortReal theArrowsLength = 30.0f, const Quantity_Color theGridColor = Quantity_NOC_WHITE, const Standard_Boolean theToDrawGrid = Standard_True, const Standard_Boolean theToDrawAxes = Standard_True);
+
 		/****************** ArrowsLength ******************/
 		%feature("compactdefaultargs") ArrowsLength;
 		%feature("autodoc", "No available documentation.
@@ -7472,39 +7505,6 @@ Returns
 Graphic3d_AxisAspect
 ") ChangeZAxisAspect;
 		Graphic3d_AxisAspect & ChangeZAxisAspect();
-
-		/****************** Graphic3d_GraduatedTrihedron ******************/
-		%feature("compactdefaultargs") Graphic3d_GraduatedTrihedron;
-		%feature("autodoc", "Default constructor constructs the default graduated trihedron with grid, x, y, z axes, and tickmarks.
-
-Parameters
-----------
-theNamesFont: TCollection_AsciiString,optional
-	default value is 'Arial'
-theNamesStyle: Font_FontAspect,optional
-	default value is Font_FA_Bold
-theNamesSize: int,optional
-	default value is 12
-theValuesFont: TCollection_AsciiString,optional
-	default value is 'Arial'
-theValuesStyle: Font_FontAspect,optional
-	default value is Font_FA_Regular
-theValuesSize: int,optional
-	default value is 12
-theArrowsLength: Standard_ShortReal,optional
-	default value is 30.0f
-theGridColor: Quantity_Color,optional
-	default value is Quantity_NOC_WHITE
-theToDrawGrid: bool,optional
-	default value is Standard_True
-theToDrawAxes: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Graphic3d_GraduatedTrihedron;
-		 Graphic3d_GraduatedTrihedron(const TCollection_AsciiString & theNamesFont = "Arial", const Font_FontAspect & theNamesStyle = Font_FA_Bold, const Standard_Integer theNamesSize = 12, const TCollection_AsciiString & theValuesFont = "Arial", const Font_FontAspect & theValuesStyle = Font_FA_Regular, const Standard_Integer theValuesSize = 12, const Standard_ShortReal theArrowsLength = 30.0f, const Quantity_Color theGridColor = Quantity_NOC_WHITE, const Standard_Boolean theToDrawGrid = Standard_True, const Standard_Boolean theToDrawAxes = Standard_True);
 
 		/****************** GridColor ******************/
 		%feature("compactdefaultargs") GridColor;
@@ -8913,6 +8913,16 @@ class IterationFilter:
 };
 /* end python proxy for enums */
 
+		/****************** Graphic3d_LightSet ******************/
+		%feature("compactdefaultargs") Graphic3d_LightSet;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Graphic3d_LightSet;
+		 Graphic3d_LightSet();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Append new light source.
@@ -8960,16 +8970,6 @@ Returns
 int
 ") Extent;
 		Standard_Integer Extent();
-
-		/****************** Graphic3d_LightSet ******************/
-		%feature("compactdefaultargs") Graphic3d_LightSet;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Graphic3d_LightSet;
-		 Graphic3d_LightSet();
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
@@ -9123,6 +9123,36 @@ opencascade::handle<Graphic3d_CLight>
 ******************************/
 class Graphic3d_MarkerImage : public Standard_Transient {
 	public:
+		/****************** Graphic3d_MarkerImage ******************/
+		%feature("compactdefaultargs") Graphic3d_MarkerImage;
+		%feature("autodoc", "@param theimage - source image.
+
+Parameters
+----------
+theImage: Image_PixMap
+
+Returns
+-------
+None
+") Graphic3d_MarkerImage;
+		 Graphic3d_MarkerImage(const opencascade::handle<Image_PixMap> & theImage);
+
+		/****************** Graphic3d_MarkerImage ******************/
+		%feature("compactdefaultargs") Graphic3d_MarkerImage;
+		%feature("autodoc", "Creates marker image from array of bytes (method for compatibility with old markers definition). @param thebitmap - source bitmap stored as array of bytes @param thewidth - number of bits in a row @param theheight - number of bits in a column.
+
+Parameters
+----------
+theBitMap: TColStd_HArray1OfByte
+theWidth: int
+theHeight: int
+
+Returns
+-------
+None
+") Graphic3d_MarkerImage;
+		 Graphic3d_MarkerImage(const opencascade::handle<TColStd_HArray1OfByte> & theBitMap, const Standard_Integer & theWidth, const Standard_Integer & theHeight);
+
 		/****************** GetBitMapArray ******************/
 		%feature("compactdefaultargs") GetBitMapArray;
 		%feature("autodoc", "@param thealphavalue pixels in the image that have alpha value greater than  or equal to this parameter will be stored in bitmap as '1',  others will be stored as '0' returns marker image as array of bytes. if an instance of the class has been initialized with image, it will be converted to bitmap based on the parameter thealphavalue.
@@ -9193,36 +9223,6 @@ None
 ") GetTextureSize;
 		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
 
-		/****************** Graphic3d_MarkerImage ******************/
-		%feature("compactdefaultargs") Graphic3d_MarkerImage;
-		%feature("autodoc", "@param theimage - source image.
-
-Parameters
-----------
-theImage: Image_PixMap
-
-Returns
--------
-None
-") Graphic3d_MarkerImage;
-		 Graphic3d_MarkerImage(const opencascade::handle<Image_PixMap> & theImage);
-
-		/****************** Graphic3d_MarkerImage ******************/
-		%feature("compactdefaultargs") Graphic3d_MarkerImage;
-		%feature("autodoc", "Creates marker image from array of bytes (method for compatibility with old markers definition). @param thebitmap - source bitmap stored as array of bytes @param thewidth - number of bits in a row @param theheight - number of bits in a column.
-
-Parameters
-----------
-theBitMap: TColStd_HArray1OfByte
-theWidth: int
-theHeight: int
-
-Returns
--------
-None
-") Graphic3d_MarkerImage;
-		 Graphic3d_MarkerImage(const opencascade::handle<TColStd_HArray1OfByte> & theBitMap, const Standard_Integer & theWidth, const Standard_Integer & theHeight);
-
 };
 
 
@@ -9239,6 +9239,30 @@ None
 *********************************/
 class Graphic3d_MaterialAspect {
 	public:
+		/****************** Graphic3d_MaterialAspect ******************/
+		%feature("compactdefaultargs") Graphic3d_MaterialAspect;
+		%feature("autodoc", "Creates a material from default values.
+
+Returns
+-------
+None
+") Graphic3d_MaterialAspect;
+		 Graphic3d_MaterialAspect();
+
+		/****************** Graphic3d_MaterialAspect ******************/
+		%feature("compactdefaultargs") Graphic3d_MaterialAspect;
+		%feature("autodoc", "Creates a generic material.
+
+Parameters
+----------
+theName: Graphic3d_NameOfMaterial
+
+Returns
+-------
+None
+") Graphic3d_MaterialAspect;
+		 Graphic3d_MaterialAspect(const Graphic3d_NameOfMaterial theName);
+
 		/****************** Alpha ******************/
 		%feature("compactdefaultargs") Alpha;
 		%feature("autodoc", "Returns the alpha coefficient of the surface (1.0 - transparency); 1.0 means opaque.
@@ -9298,30 +9322,6 @@ Returns
 Quantity_Color
 ") EmissiveColor;
 		const Quantity_Color & EmissiveColor();
-
-		/****************** Graphic3d_MaterialAspect ******************/
-		%feature("compactdefaultargs") Graphic3d_MaterialAspect;
-		%feature("autodoc", "Creates a material from default values.
-
-Returns
--------
-None
-") Graphic3d_MaterialAspect;
-		 Graphic3d_MaterialAspect();
-
-		/****************** Graphic3d_MaterialAspect ******************/
-		%feature("compactdefaultargs") Graphic3d_MaterialAspect;
-		%feature("autodoc", "Creates a generic material.
-
-Parameters
-----------
-theName: Graphic3d_NameOfMaterial
-
-Returns
--------
-None
-") Graphic3d_MaterialAspect;
-		 Graphic3d_MaterialAspect(const Graphic3d_NameOfMaterial theName);
 
 		/****************** IncreaseShine ******************/
 		%feature("compactdefaultargs") IncreaseShine;
@@ -9787,14 +9787,6 @@ class Graphic3d_PolygonOffset {
 		Aspect_PolygonOffsetMode Mode;
 		Standard_ShortReal Factor;
 		Standard_ShortReal Units;
-
-            %feature("autodoc", "1");
-            %extend{
-                std::string DumpJsonToString(int depth=-1) {
-                std::stringstream s;
-                self->DumpJson(s, depth);
-                return s.str();}
-            };
 		/****************** Graphic3d_PolygonOffset ******************/
 		%feature("compactdefaultargs") Graphic3d_PolygonOffset;
 		%feature("autodoc", "Empty constructor.
@@ -9805,6 +9797,14 @@ None
 ") Graphic3d_PolygonOffset;
 		 Graphic3d_PolygonOffset();
 
+
+            %feature("autodoc", "1");
+            %extend{
+                std::string DumpJsonToString(int depth=-1) {
+                std::stringstream s;
+                self->DumpJson(s, depth);
+                return s.str();}
+            };
 
             %extend{
                 bool __eq_wrapper__(const Graphic3d_PolygonOffset other) {
@@ -9833,6 +9833,16 @@ None
 *****************************************/
 class Graphic3d_PresentationAttributes : public Standard_Transient {
 	public:
+		/****************** Graphic3d_PresentationAttributes ******************/
+		%feature("compactdefaultargs") Graphic3d_PresentationAttributes;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Graphic3d_PresentationAttributes;
+		 Graphic3d_PresentationAttributes();
+
 		/****************** BasicFillAreaAspect ******************/
 		%feature("compactdefaultargs") BasicFillAreaAspect;
 		%feature("autodoc", "Return basic presentation fill area aspect, null by default. when set, might be used instead of color() property.
@@ -9872,16 +9882,6 @@ Returns
 int
 ") DisplayMode;
 		Standard_Integer DisplayMode();
-
-		/****************** Graphic3d_PresentationAttributes ******************/
-		%feature("compactdefaultargs") Graphic3d_PresentationAttributes;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Graphic3d_PresentationAttributes;
-		 Graphic3d_PresentationAttributes();
 
 		/****************** Method ******************/
 		%feature("compactdefaultargs") Method;
@@ -10168,6 +10168,16 @@ Standard_ShortReal
 class Graphic3d_SequenceOfHClipPlane : public Standard_Transient {
 	public:
 		class Iterator {};
+		/****************** Graphic3d_SequenceOfHClipPlane ******************/
+		%feature("compactdefaultargs") Graphic3d_SequenceOfHClipPlane;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Graphic3d_SequenceOfHClipPlane;
+		 Graphic3d_SequenceOfHClipPlane();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Append a plane. returns true if new item has been added (false if item already existed).
@@ -10201,16 +10211,6 @@ Returns
 opencascade::handle<Graphic3d_ClipPlane>
 ") First;
 		const opencascade::handle<Graphic3d_ClipPlane> & First();
-
-		/****************** Graphic3d_SequenceOfHClipPlane ******************/
-		%feature("compactdefaultargs") Graphic3d_SequenceOfHClipPlane;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Graphic3d_SequenceOfHClipPlane;
-		 Graphic3d_SequenceOfHClipPlane();
 
 		/****************** IsEmpty ******************/
 		%feature("compactdefaultargs") IsEmpty;
@@ -10448,6 +10448,16 @@ Graphic3d_TypeOfShaderObject
 ********************************/
 class Graphic3d_ShaderProgram : public Standard_Transient {
 	public:
+		/****************** Graphic3d_ShaderProgram ******************/
+		%feature("compactdefaultargs") Graphic3d_ShaderProgram;
+		%feature("autodoc", "Creates new empty program object.
+
+Returns
+-------
+None
+") Graphic3d_ShaderProgram;
+		 Graphic3d_ShaderProgram();
+
 		/****************** AppendToHeader ******************/
 		%feature("compactdefaultargs") AppendToHeader;
 		%feature("autodoc", "Append line to glsl header.
@@ -10509,16 +10519,6 @@ Returns
 TCollection_AsciiString
 ") GetId;
 		const TCollection_AsciiString & GetId();
-
-		/****************** Graphic3d_ShaderProgram ******************/
-		%feature("compactdefaultargs") Graphic3d_ShaderProgram;
-		%feature("autodoc", "Creates new empty program object.
-
-Returns
--------
-None
-") Graphic3d_ShaderProgram;
-		 Graphic3d_ShaderProgram();
 
 		/****************** HasAlphaTest ******************/
 		%feature("compactdefaultargs") HasAlphaTest;
@@ -10957,6 +10957,22 @@ Graphic3d_ValueInterface *
 ****************************/
 class Graphic3d_Structure : public Standard_Transient {
 	public:
+		/****************** Graphic3d_Structure ******************/
+		%feature("compactdefaultargs") Graphic3d_Structure;
+		%feature("autodoc", "Creates a graphic object in the manager themanager. it will appear in all the views of the visualiser. the structure is not displayed when it is created. @param themanager structure manager holding this structure @param thelinkprs another structure for creating a shadow (linked) structure.
+
+Parameters
+----------
+theManager: Graphic3d_StructureManager
+theLinkPrs: Graphic3d_Structure,optional
+	default value is opencascade::handle<Graphic3d_Structure>()
+
+Returns
+-------
+None
+") Graphic3d_Structure;
+		 Graphic3d_Structure(const opencascade::handle<Graphic3d_StructureManager> & theManager, const opencascade::handle<Graphic3d_Structure> & theLinkPrs = opencascade::handle<Graphic3d_Structure>());
+
 		/****************** AcceptConnection ******************/
 		%feature("compactdefaultargs") AcceptConnection;
 		%feature("autodoc", "Returns standard_true if the connection is possible between <astructure1> and <astructure2> without a creation of a cycle. //! it's not possible to call the method astructure1->connect (astructure2, typeofconnection) if - the set of all ancestors of <astructure1> contains <astructure1> and if the typeofconnection == toc_descendant - the set of all descendants of <astructure1> contains <astructure2> and if the typeofconnection == toc_ancestor.
@@ -11244,22 +11260,6 @@ Returns
 Graphic3d_ZLayerId
 ") GetZLayer;
 		Graphic3d_ZLayerId GetZLayer();
-
-		/****************** Graphic3d_Structure ******************/
-		%feature("compactdefaultargs") Graphic3d_Structure;
-		%feature("autodoc", "Creates a graphic object in the manager themanager. it will appear in all the views of the visualiser. the structure is not displayed when it is created. @param themanager structure manager holding this structure @param thelinkprs another structure for creating a shadow (linked) structure.
-
-Parameters
-----------
-theManager: Graphic3d_StructureManager
-theLinkPrs: Graphic3d_Structure,optional
-	default value is opencascade::handle<Graphic3d_Structure>()
-
-Returns
--------
-None
-") Graphic3d_Structure;
-		 Graphic3d_Structure(const opencascade::handle<Graphic3d_StructureManager> & theManager, const opencascade::handle<Graphic3d_Structure> & theLinkPrs = opencascade::handle<Graphic3d_Structure>());
 
 		/****************** GraphicClear ******************/
 		%feature("compactdefaultargs") GraphicClear;
@@ -11899,6 +11899,20 @@ Graphic3d_TypeOfStructure
 ***********************************/
 class Graphic3d_StructureManager : public Standard_Transient {
 	public:
+		/****************** Graphic3d_StructureManager ******************/
+		%feature("compactdefaultargs") Graphic3d_StructureManager;
+		%feature("autodoc", "Initializes the viewmanager. currently creating of more than 100 viewer instances is not supported and leads to initializationerror and initialization failure. this limitation might be addressed in some future occt releases. warning: raises initialisationerror if the initialization of the viewmanager failed.
+
+Parameters
+----------
+theDriver: Graphic3d_GraphicDriver
+
+Returns
+-------
+None
+") Graphic3d_StructureManager;
+		 Graphic3d_StructureManager(const opencascade::handle<Graphic3d_GraphicDriver> & theDriver);
+
 		/****************** ChangeDisplayPriority ******************/
 		%feature("compactdefaultargs") ChangeDisplayPriority;
 		%feature("autodoc", "Changes the display priority of the structure <astructure>.
@@ -12036,20 +12050,6 @@ Returns
 None
 ") Erase;
 		virtual void Erase(const opencascade::handle<Graphic3d_Structure> & theStructure);
-
-		/****************** Graphic3d_StructureManager ******************/
-		%feature("compactdefaultargs") Graphic3d_StructureManager;
-		%feature("autodoc", "Initializes the viewmanager. currently creating of more than 100 viewer instances is not supported and leads to initializationerror and initialization failure. this limitation might be addressed in some future occt releases. warning: raises initialisationerror if the initialization of the viewmanager failed.
-
-Parameters
-----------
-theDriver: Graphic3d_GraphicDriver
-
-Returns
--------
-None
-") Graphic3d_StructureManager;
-		 Graphic3d_StructureManager(const opencascade::handle<Graphic3d_GraphicDriver> & theDriver);
 
 		/****************** GraphicDriver ******************/
 		%feature("compactdefaultargs") GraphicDriver;
@@ -12582,6 +12582,16 @@ Graphic3d_VerticalTextAlignment
 ********************************/
 class Graphic3d_TextureParams : public Standard_Transient {
 	public:
+		/****************** Graphic3d_TextureParams ******************/
+		%feature("compactdefaultargs") Graphic3d_TextureParams;
+		%feature("autodoc", "Default constructor.
+
+Returns
+-------
+None
+") Graphic3d_TextureParams;
+		 Graphic3d_TextureParams();
+
 		/****************** AnisoFilter ******************/
 		%feature("compactdefaultargs") AnisoFilter;
 		%feature("autodoc", "Returns level of anisontropy texture filter. default value is graphic3d_lota_off.
@@ -12631,16 +12641,6 @@ Returns
 Graphic3d_Vec4
 ") GenPlaneT;
 		const Graphic3d_Vec4 & GenPlaneT();
-
-		/****************** Graphic3d_TextureParams ******************/
-		%feature("compactdefaultargs") Graphic3d_TextureParams;
-		%feature("autodoc", "Default constructor.
-
-Returns
--------
-None
-") Graphic3d_TextureParams;
-		 Graphic3d_TextureParams();
 
 		/****************** IsModulate ******************/
 		%feature("compactdefaultargs") IsModulate;
@@ -13129,52 +13129,6 @@ Standard_Size
 class Graphic3d_Vertex {
 	public:
 		float xyz[3];
-		/****************** Coord ******************/
-		%feature("compactdefaultargs") Coord;
-		%feature("autodoc", "Returns the coordinates.
-
-Parameters
-----------
-theX: Standard_ShortReal
-theY: Standard_ShortReal
-theZ: Standard_ShortReal
-
-Returns
--------
-None
-") Coord;
-		void Coord(Standard_ShortReal & theX, Standard_ShortReal & theY, Standard_ShortReal & theZ);
-
-		/****************** Coord ******************/
-		%feature("compactdefaultargs") Coord;
-		%feature("autodoc", "Returns the coordinates.
-
-Parameters
-----------
-theX: float
-theY: float
-theZ: float
-
-Returns
--------
-None
-") Coord;
-		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
-		/****************** Distance ******************/
-		%feature("compactdefaultargs") Distance;
-		%feature("autodoc", "Returns the distance between two points.
-
-Parameters
-----------
-theOther: Graphic3d_Vertex
-
-Returns
--------
-Standard_ShortReal
-") Distance;
-		Standard_ShortReal Distance(const Graphic3d_Vertex & theOther);
-
 		/****************** Graphic3d_Vertex ******************/
 		%feature("compactdefaultargs") Graphic3d_Vertex;
 		%feature("autodoc", "Creates a point with 0.0, 0.0, 0.0 coordinates.
@@ -13230,6 +13184,52 @@ Returns
 None
 ") Graphic3d_Vertex;
 		 Graphic3d_Vertex(const Standard_Real theX, const Standard_Real theY, const Standard_Real theZ);
+
+		/****************** Coord ******************/
+		%feature("compactdefaultargs") Coord;
+		%feature("autodoc", "Returns the coordinates.
+
+Parameters
+----------
+theX: Standard_ShortReal
+theY: Standard_ShortReal
+theZ: Standard_ShortReal
+
+Returns
+-------
+None
+") Coord;
+		void Coord(Standard_ShortReal & theX, Standard_ShortReal & theY, Standard_ShortReal & theZ);
+
+		/****************** Coord ******************/
+		%feature("compactdefaultargs") Coord;
+		%feature("autodoc", "Returns the coordinates.
+
+Parameters
+----------
+theX: float
+theY: float
+theZ: float
+
+Returns
+-------
+None
+") Coord;
+		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+
+		/****************** Distance ******************/
+		%feature("compactdefaultargs") Distance;
+		%feature("autodoc", "Returns the distance between two points.
+
+Parameters
+----------
+theOther: Graphic3d_Vertex
+
+Returns
+-------
+Standard_ShortReal
+") Distance;
+		Standard_ShortReal Distance(const Graphic3d_Vertex & theOther);
 
 		/****************** SetCoord ******************/
 		%feature("compactdefaultargs") SetCoord;
@@ -13559,6 +13559,16 @@ Standard_Size
 *********************************/
 class Graphic3d_ZLayerSettings {
 	public:
+		/****************** Graphic3d_ZLayerSettings ******************/
+		%feature("compactdefaultargs") Graphic3d_ZLayerSettings;
+		%feature("autodoc", "Default settings.
+
+Returns
+-------
+None
+") Graphic3d_ZLayerSettings;
+		 Graphic3d_ZLayerSettings();
+
 		/****************** ChangePolygonOffset ******************/
 		%feature("compactdefaultargs") ChangePolygonOffset;
 		%feature("autodoc", "Modify glpolygonoffset() arguments.
@@ -13616,16 +13626,6 @@ Returns
 None
 ") EnableSetting;
 		void EnableSetting(const Graphic3d_ZLayerSetting theSetting);
-
-		/****************** Graphic3d_ZLayerSettings ******************/
-		%feature("compactdefaultargs") Graphic3d_ZLayerSettings;
-		%feature("autodoc", "Default settings.
-
-Returns
--------
-None
-") Graphic3d_ZLayerSettings;
-		 Graphic3d_ZLayerSettings();
 
 		/****************** HasCullingDistance ******************/
 		%feature("compactdefaultargs") HasCullingDistance;
@@ -14504,16 +14504,6 @@ None
 ***********************************/
 class Graphic3d_AspectFillArea3d : public Graphic3d_Aspects {
 	public:
-		/****************** Edge ******************/
-		%feature("compactdefaultargs") Edge;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-bool
-") Edge;
-		bool Edge();
-
 		/****************** Graphic3d_AspectFillArea3d ******************/
 		%feature("compactdefaultargs") Graphic3d_AspectFillArea3d;
 		%feature("autodoc", "Creates a context table for fill area primitives defined with the following default values: //! interiorstyle : aspect_is_empty interiorcolor : quantity_noc_cyan1 edgecolor : quantity_noc_white edgelinetype : aspect_tol_solid edgewidth : 1.0 frontmaterial : nom_brass backmaterial : nom_brass hatchstyle : aspect_hs_solid //! display of back-facing filled polygons. no distinction between external and internal faces of fillareas. the edges are not drawn. polygon offset parameters: mode = aspect_pom_none, factor = 1., units = 0.
@@ -14543,6 +14533,16 @@ Returns
 None
 ") Graphic3d_AspectFillArea3d;
 		 Graphic3d_AspectFillArea3d(const Aspect_InteriorStyle theInterior, const Quantity_Color & theInteriorColor, const Quantity_Color & theEdgeColor, const Aspect_TypeOfLine theEdgeLineType, const Standard_Real theEdgeWidth, const Graphic3d_MaterialAspect & theFrontMaterial, const Graphic3d_MaterialAspect & theBackMaterial);
+
+		/****************** Edge ******************/
+		%feature("compactdefaultargs") Edge;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
+") Edge;
+		bool Edge();
 
 };
 
@@ -14664,31 +14664,6 @@ Standard_ShortReal
 *********************************/
 class Graphic3d_AspectMarker3d : public Graphic3d_Aspects {
 	public:
-		/****************** GetMarkerImage ******************/
-		%feature("compactdefaultargs") GetMarkerImage;
-		%feature("autodoc", "Returns marker's image texture. could be null handle if marker aspect has been initialized as default type of marker.
-
-Returns
--------
-opencascade::handle<Graphic3d_MarkerImage>
-") GetMarkerImage;
-		const opencascade::handle<Graphic3d_MarkerImage> & GetMarkerImage();
-
-		/****************** GetTextureSize ******************/
-		%feature("compactdefaultargs") GetTextureSize;
-		%feature("autodoc", "Returns marker's texture size.
-
-Parameters
-----------
-theWidth: int
-theHeight: int
-
-Returns
--------
-None
-") GetTextureSize;
-		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
-
 		/****************** Graphic3d_AspectMarker3d ******************/
 		%feature("compactdefaultargs") Graphic3d_AspectMarker3d;
 		%feature("autodoc", "Creates a context table for marker primitives defined with the following default values: //! marker type : tom_x color : yellow scale factor: 1.0.
@@ -14745,6 +14720,31 @@ Returns
 None
 ") Graphic3d_AspectMarker3d;
 		 Graphic3d_AspectMarker3d(const opencascade::handle<Image_PixMap> & theTextureImage);
+
+		/****************** GetMarkerImage ******************/
+		%feature("compactdefaultargs") GetMarkerImage;
+		%feature("autodoc", "Returns marker's image texture. could be null handle if marker aspect has been initialized as default type of marker.
+
+Returns
+-------
+opencascade::handle<Graphic3d_MarkerImage>
+") GetMarkerImage;
+		const opencascade::handle<Graphic3d_MarkerImage> & GetMarkerImage();
+
+		/****************** GetTextureSize ******************/
+		%feature("compactdefaultargs") GetTextureSize;
+		%feature("autodoc", "Returns marker's texture size.
+
+Parameters
+----------
+theWidth: int
+theHeight: int
+
+Returns
+-------
+None
+") GetTextureSize;
+		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 		/****************** Scale ******************/
 		%feature("compactdefaultargs") Scale;
@@ -14840,6 +14840,37 @@ Aspect_TypeOfMarker
 *******************************/
 class Graphic3d_AspectText3d : public Graphic3d_Aspects {
 	public:
+		/****************** Graphic3d_AspectText3d ******************/
+		%feature("compactdefaultargs") Graphic3d_AspectText3d;
+		%feature("autodoc", "Creates a context table for text primitives defined with the following default values: color : quantity_noc_yellow font : font_nof_ascii_mono the style : aspect_tost_normal the display type : aspect_todt_normal.
+
+Returns
+-------
+None
+") Graphic3d_AspectText3d;
+		 Graphic3d_AspectText3d();
+
+		/****************** Graphic3d_AspectText3d ******************/
+		%feature("compactdefaultargs") Graphic3d_AspectText3d;
+		%feature("autodoc", "Creates a context table for text primitives defined with the specified values. @param thecolor [in] text color @param thefont [in] font family name or alias like font_nof_ascii_mono @param theexpansionfactor [in] deprecated parameter, has no effect @param thespace [in] deprecated parameter, has no effect @param thestyle [in] font style @param thedisplaytype [in] display mode.
+
+Parameters
+----------
+theColor: Quantity_Color
+theFont: char *
+theExpansionFactor: float
+theSpace: float
+theStyle: Aspect_TypeOfStyleText,optional
+	default value is Aspect_TOST_NORMAL
+theDisplayType: Aspect_TypeOfDisplayText,optional
+	default value is Aspect_TODT_NORMAL
+
+Returns
+-------
+None
+") Graphic3d_AspectText3d;
+		 Graphic3d_AspectText3d(const Quantity_Color & theColor, const char * theFont, Standard_Real theExpansionFactor, Standard_Real theSpace, Aspect_TypeOfStyleText theStyle = Aspect_TOST_NORMAL, Aspect_TypeOfDisplayText theDisplayType = Aspect_TODT_NORMAL);
+
 		/****************** Color ******************/
 		%feature("compactdefaultargs") Color;
 		%feature("autodoc", "Return the text color.
@@ -14909,37 +14940,6 @@ Returns
 bool
 ") GetTextZoomable;
 		bool GetTextZoomable();
-
-		/****************** Graphic3d_AspectText3d ******************/
-		%feature("compactdefaultargs") Graphic3d_AspectText3d;
-		%feature("autodoc", "Creates a context table for text primitives defined with the following default values: color : quantity_noc_yellow font : font_nof_ascii_mono the style : aspect_tost_normal the display type : aspect_todt_normal.
-
-Returns
--------
-None
-") Graphic3d_AspectText3d;
-		 Graphic3d_AspectText3d();
-
-		/****************** Graphic3d_AspectText3d ******************/
-		%feature("compactdefaultargs") Graphic3d_AspectText3d;
-		%feature("autodoc", "Creates a context table for text primitives defined with the specified values. @param thecolor [in] text color @param thefont [in] font family name or alias like font_nof_ascii_mono @param theexpansionfactor [in] deprecated parameter, has no effect @param thespace [in] deprecated parameter, has no effect @param thestyle [in] font style @param thedisplaytype [in] display mode.
-
-Parameters
-----------
-theColor: Quantity_Color
-theFont: char *
-theExpansionFactor: float
-theSpace: float
-theStyle: Aspect_TypeOfStyleText,optional
-	default value is Aspect_TOST_NORMAL
-theDisplayType: Aspect_TypeOfDisplayText,optional
-	default value is Aspect_TODT_NORMAL
-
-Returns
--------
-None
-") Graphic3d_AspectText3d;
-		 Graphic3d_AspectText3d(const Quantity_Color & theColor, const char * theFont, Standard_Real theExpansionFactor, Standard_Real theSpace, Aspect_TypeOfStyleText theStyle = Aspect_TOST_NORMAL, Aspect_TypeOfDisplayText theDisplayType = Aspect_TODT_NORMAL);
 
 		/****************** SetColor ******************/
 		%feature("compactdefaultargs") SetColor;
@@ -16270,6 +16270,16 @@ int
 ************************************/
 class Graphic3d_FrameStatsDataTmp : public Graphic3d_FrameStatsData {
 	public:
+		/****************** Graphic3d_FrameStatsDataTmp ******************/
+		%feature("compactdefaultargs") Graphic3d_FrameStatsDataTmp;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Graphic3d_FrameStatsDataTmp;
+		 Graphic3d_FrameStatsDataTmp();
+
 		/****************** ChangeCounterValue ******************/
 		%feature("compactdefaultargs") ChangeCounterValue;
 		%feature("autodoc", "Get counter value.
@@ -16352,16 +16362,6 @@ None
 ") FlushTimers;
 		void FlushTimers(Standard_Size theNbFrames, bool theIsFinal);
 
-		/****************** Graphic3d_FrameStatsDataTmp ******************/
-		%feature("compactdefaultargs") Graphic3d_FrameStatsDataTmp;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Graphic3d_FrameStatsDataTmp;
-		 Graphic3d_FrameStatsDataTmp();
-
 		/****************** Reset ******************/
 		%feature("compactdefaultargs") Reset;
 		%feature("autodoc", "Reset data.
@@ -16389,6 +16389,16 @@ None
 **********************************/
 class Graphic3d_MediaTextureSet : public Graphic3d_TextureSet, public Media_IFrameQueue {
 	public:
+		/****************** Graphic3d_MediaTextureSet ******************/
+		%feature("compactdefaultargs") Graphic3d_MediaTextureSet;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Graphic3d_MediaTextureSet;
+		 Graphic3d_MediaTextureSet();
+
 		/****************** Duration ******************/
 		%feature("compactdefaultargs") Duration;
 		%feature("autodoc", "Return duration in seconds.
@@ -16408,16 +16418,6 @@ Returns
 Graphic3d_Vec2i
 ") FrameSize;
 		Graphic3d_Vec2i FrameSize();
-
-		/****************** Graphic3d_MediaTextureSet ******************/
-		%feature("compactdefaultargs") Graphic3d_MediaTextureSet;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Graphic3d_MediaTextureSet;
-		 Graphic3d_MediaTextureSet();
 
 		/****************** Input ******************/
 		%feature("compactdefaultargs") Input;
@@ -17101,16 +17101,6 @@ TCollection_AsciiString
 **********************************/
 class Graphic3d_CubeMapSeparate : public Graphic3d_CubeMap {
 	public:
-		/****************** GetImage ******************/
-		%feature("compactdefaultargs") GetImage;
-		%feature("autodoc", "Returns null.
-
-Returns
--------
-opencascade::handle<Image_PixMap>
-") GetImage;
-		virtual opencascade::handle<Image_PixMap> GetImage();
-
 		/****************** Graphic3d_CubeMapSeparate ******************/
 		%feature("compactdefaultargs") Graphic3d_CubeMapSeparate;
 		%feature("autodoc", "Initializes cubemap to be loaded from file. @thepaths - array of paths to separate image files (has to have size equal 6).
@@ -17138,6 +17128,16 @@ Returns
 None
 ") Graphic3d_CubeMapSeparate;
 		 Graphic3d_CubeMapSeparate(const NCollection_Array1<opencascade::handle<Image_PixMap> > & theImages);
+
+		/****************** GetImage ******************/
+		%feature("compactdefaultargs") GetImage;
+		%feature("autodoc", "Returns null.
+
+Returns
+-------
+opencascade::handle<Image_PixMap>
+") GetImage;
+		virtual opencascade::handle<Image_PixMap> GetImage();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -17175,6 +17175,22 @@ opencascade::handle<Image_PixMap>
 *******************************/
 class Graphic3d_MediaTexture : public Graphic3d_Texture2D {
 	public:
+		/****************** Graphic3d_MediaTexture ******************/
+		%feature("compactdefaultargs") Graphic3d_MediaTexture;
+		%feature("autodoc", "Main constructor.
+
+Parameters
+----------
+theMutex: Media_HMutex
+thePlane: int,optional
+	default value is -1
+
+Returns
+-------
+None
+") Graphic3d_MediaTexture;
+		 Graphic3d_MediaTexture(const opencascade::handle<Media_HMutex> & theMutex, Standard_Integer thePlane = -1);
+
 		/****************** Frame ******************/
 		%feature("compactdefaultargs") Frame;
 		%feature("autodoc", "Return the frame.
@@ -17204,22 +17220,6 @@ Returns
 opencascade::handle<Image_PixMap>
 ") GetImage;
 		virtual opencascade::handle<Image_PixMap> GetImage();
-
-		/****************** Graphic3d_MediaTexture ******************/
-		%feature("compactdefaultargs") Graphic3d_MediaTexture;
-		%feature("autodoc", "Main constructor.
-
-Parameters
-----------
-theMutex: Media_HMutex
-thePlane: int,optional
-	default value is -1
-
-Returns
--------
-None
-") Graphic3d_MediaTexture;
-		 Graphic3d_MediaTexture(const opencascade::handle<Media_HMutex> & theMutex, Standard_Integer thePlane = -1);
 
 		/****************** SetFrame ******************/
 		%feature("compactdefaultargs") SetFrame;

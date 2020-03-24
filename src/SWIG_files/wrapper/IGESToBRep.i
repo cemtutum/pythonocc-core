@@ -266,16 +266,6 @@ bool
 *************************/
 class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 	public:
-		/****************** GetContinuity ******************/
-		%feature("compactdefaultargs") GetContinuity;
-		%feature("autodoc", "Return 'thecontinuity'.
-
-Returns
--------
-int
-") GetContinuity;
-		Standard_Integer GetContinuity();
-
 		/****************** IGESToBRep_Actor ******************/
 		%feature("compactdefaultargs") IGESToBRep_Actor;
 		%feature("autodoc", "No available documentation.
@@ -285,6 +275,16 @@ Returns
 None
 ") IGESToBRep_Actor;
 		 IGESToBRep_Actor();
+
+		/****************** GetContinuity ******************/
+		%feature("compactdefaultargs") GetContinuity;
+		%feature("autodoc", "Return 'thecontinuity'.
+
+Returns
+-------
+int
+") GetContinuity;
+		Standard_Integer GetContinuity();
 
 		/****************** Recognize ******************/
 		%feature("compactdefaultargs") Recognize;
@@ -420,6 +420,49 @@ opencascade::handle<IGESToBRep_ToolContainer>
 ***********************************/
 class IGESToBRep_CurveAndSurface {
 	public:
+		/****************** IGESToBRep_CurveAndSurface ******************/
+		%feature("compactdefaultargs") IGESToBRep_CurveAndSurface;
+		%feature("autodoc", "Creates a tool curveandsurface ready to run, with epsilons set to 1.e-04, mymodetopo to true, the optimization of the continuity to false.
+
+Returns
+-------
+None
+") IGESToBRep_CurveAndSurface;
+		 IGESToBRep_CurveAndSurface();
+
+		/****************** IGESToBRep_CurveAndSurface ******************/
+		%feature("compactdefaultargs") IGESToBRep_CurveAndSurface;
+		%feature("autodoc", "Creates a tool curveandsurface ready to run and sets its fields as cs's.
+
+Parameters
+----------
+CS: IGESToBRep_CurveAndSurface
+
+Returns
+-------
+None
+") IGESToBRep_CurveAndSurface;
+		 IGESToBRep_CurveAndSurface(const IGESToBRep_CurveAndSurface & CS);
+
+		/****************** IGESToBRep_CurveAndSurface ******************/
+		%feature("compactdefaultargs") IGESToBRep_CurveAndSurface;
+		%feature("autodoc", "Creates a tool curveandsurface ready to run.
+
+Parameters
+----------
+eps: float
+epsGeom: float
+epsCoeff: float
+mode: bool
+modeapprox: bool
+optimized: bool
+
+Returns
+-------
+None
+") IGESToBRep_CurveAndSurface;
+		 IGESToBRep_CurveAndSurface(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
+
 		/****************** AddShapeResult ******************/
 		%feature("compactdefaultargs") AddShapeResult;
 		%feature("autodoc", "Set in 'mymap' the result of the transfer of the entity of the igesentity start ( type vertexlist or edgelist).
@@ -617,49 +660,6 @@ Returns
 bool
 ") HasShapeResult;
 		Standard_Boolean HasShapeResult(const opencascade::handle<IGESData_IGESEntity> & start);
-
-		/****************** IGESToBRep_CurveAndSurface ******************/
-		%feature("compactdefaultargs") IGESToBRep_CurveAndSurface;
-		%feature("autodoc", "Creates a tool curveandsurface ready to run, with epsilons set to 1.e-04, mymodetopo to true, the optimization of the continuity to false.
-
-Returns
--------
-None
-") IGESToBRep_CurveAndSurface;
-		 IGESToBRep_CurveAndSurface();
-
-		/****************** IGESToBRep_CurveAndSurface ******************/
-		%feature("compactdefaultargs") IGESToBRep_CurveAndSurface;
-		%feature("autodoc", "Creates a tool curveandsurface ready to run and sets its fields as cs's.
-
-Parameters
-----------
-CS: IGESToBRep_CurveAndSurface
-
-Returns
--------
-None
-") IGESToBRep_CurveAndSurface;
-		 IGESToBRep_CurveAndSurface(const IGESToBRep_CurveAndSurface & CS);
-
-		/****************** IGESToBRep_CurveAndSurface ******************/
-		%feature("compactdefaultargs") IGESToBRep_CurveAndSurface;
-		%feature("autodoc", "Creates a tool curveandsurface ready to run.
-
-Parameters
-----------
-eps: float
-epsGeom: float
-epsCoeff: float
-mode: bool
-modeapprox: bool
-optimized: bool
-
-Returns
--------
-None
-") IGESToBRep_CurveAndSurface;
-		 IGESToBRep_CurveAndSurface(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -989,23 +989,6 @@ None
 ********************************/
 class IGESToBRep_IGESBoundary : public Standard_Transient {
 	public:
-		/****************** Check ******************/
-		%feature("compactdefaultargs") Check;
-		%feature("autodoc", "Checks result of translation of iges boundary entities (types 141, 142 or 508). checks consistency of 2d and 3d representations and keeps only one if they are inconsistent. <result>: result of translation (returned by transfer), <checkclosure>: false for 142 without parent 144 entity, otherwise true, <okcurve3d>, <okcurve2d>: those returned by transfer.
-
-Parameters
-----------
-result: bool
-checkclosure: bool
-okCurve3d: bool
-okCurve2d: bool
-
-Returns
--------
-None
-") Check;
-		virtual void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
-
 		/****************** IGESToBRep_IGESBoundary ******************/
 		%feature("compactdefaultargs") IGESToBRep_IGESBoundary;
 		%feature("autodoc", "Empty constructor.
@@ -1029,6 +1012,23 @@ Returns
 None
 ") IGESToBRep_IGESBoundary;
 		 IGESToBRep_IGESBoundary(const IGESToBRep_CurveAndSurface & CS);
+
+		/****************** Check ******************/
+		%feature("compactdefaultargs") Check;
+		%feature("autodoc", "Checks result of translation of iges boundary entities (types 141, 142 or 508). checks consistency of 2d and 3d representations and keeps only one if they are inconsistent. <result>: result of translation (returned by transfer), <checkclosure>: false for 142 without parent 144 entity, otherwise true, <okcurve3d>, <okcurve2d>: those returned by transfer.
+
+Parameters
+----------
+result: bool
+checkclosure: bool
+okCurve3d: bool
+okCurve2d: bool
+
+Returns
+-------
+None
+") Check;
+		virtual void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -1136,6 +1136,16 @@ opencascade::handle<ShapeExtend_WireData>
 **************************/
 class IGESToBRep_Reader {
 	public:
+		/****************** IGESToBRep_Reader ******************/
+		%feature("compactdefaultargs") IGESToBRep_Reader;
+		%feature("autodoc", "Creates a reader.
+
+Returns
+-------
+None
+") IGESToBRep_Reader;
+		 IGESToBRep_Reader();
+
 		/****************** Actor ******************/
 		%feature("compactdefaultargs") Actor;
 		%feature("autodoc", "Returns 'theactor'.
@@ -1169,16 +1179,6 @@ Returns
 None
 ") Clear;
 		void Clear();
-
-		/****************** IGESToBRep_Reader ******************/
-		%feature("compactdefaultargs") IGESToBRep_Reader;
-		%feature("autodoc", "Creates a reader.
-
-Returns
--------
-None
-") IGESToBRep_Reader;
-		 IGESToBRep_Reader();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -1340,16 +1340,6 @@ float
 *********************************/
 class IGESToBRep_ToolContainer : public Standard_Transient {
 	public:
-		/****************** IGESBoundary ******************/
-		%feature("compactdefaultargs") IGESBoundary;
-		%feature("autodoc", "Returns igestobrep_igesboundary.
-
-Returns
--------
-opencascade::handle<IGESToBRep_IGESBoundary>
-") IGESBoundary;
-		virtual opencascade::handle<IGESToBRep_IGESBoundary> IGESBoundary();
-
 		/****************** IGESToBRep_ToolContainer ******************/
 		%feature("compactdefaultargs") IGESToBRep_ToolContainer;
 		%feature("autodoc", "Empty constructor.
@@ -1359,6 +1349,16 @@ Returns
 None
 ") IGESToBRep_ToolContainer;
 		 IGESToBRep_ToolContainer();
+
+		/****************** IGESBoundary ******************/
+		%feature("compactdefaultargs") IGESBoundary;
+		%feature("autodoc", "Returns igestobrep_igesboundary.
+
+Returns
+-------
+opencascade::handle<IGESToBRep_IGESBoundary>
+") IGESBoundary;
+		virtual opencascade::handle<IGESToBRep_IGESBoundary> IGESBoundary();
 
 };
 
@@ -1972,6 +1972,63 @@ opencascade::handle<Geom_ToroidalSurface>
 *****************************/
 class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 	public:
+		/****************** IGESToBRep_TopoCurve ******************/
+		%feature("compactdefaultargs") IGESToBRep_TopoCurve;
+		%feature("autodoc", "Creates a tool topocurve ready to run, with epsilons set to 1.e-04, themodetopo to true, the optimization of the continuity to false.
+
+Returns
+-------
+None
+") IGESToBRep_TopoCurve;
+		 IGESToBRep_TopoCurve();
+
+		/****************** IGESToBRep_TopoCurve ******************/
+		%feature("compactdefaultargs") IGESToBRep_TopoCurve;
+		%feature("autodoc", "Creates a tool topocurve ready to run and sets its fields as cs's.
+
+Parameters
+----------
+CS: IGESToBRep_CurveAndSurface
+
+Returns
+-------
+None
+") IGESToBRep_TopoCurve;
+		 IGESToBRep_TopoCurve(const IGESToBRep_CurveAndSurface & CS);
+
+		/****************** IGESToBRep_TopoCurve ******************/
+		%feature("compactdefaultargs") IGESToBRep_TopoCurve;
+		%feature("autodoc", "Creates a tool topocurve ready to run and sets its fields as cs's.
+
+Parameters
+----------
+CS: IGESToBRep_TopoCurve
+
+Returns
+-------
+None
+") IGESToBRep_TopoCurve;
+		 IGESToBRep_TopoCurve(const IGESToBRep_TopoCurve & CS);
+
+		/****************** IGESToBRep_TopoCurve ******************/
+		%feature("compactdefaultargs") IGESToBRep_TopoCurve;
+		%feature("autodoc", "Creates a tool topocurve ready to run.
+
+Parameters
+----------
+eps: float
+epsGeom: float
+epsCoeff: float
+mode: bool
+modeapprox: bool
+optimized: bool
+
+Returns
+-------
+None
+") IGESToBRep_TopoCurve;
+		 IGESToBRep_TopoCurve(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
+
 		/****************** Approx2dBSplineCurve ******************/
 		%feature("compactdefaultargs") Approx2dBSplineCurve;
 		%feature("autodoc", "No available documentation.
@@ -2039,63 +2096,6 @@ Returns
 opencascade::handle<Geom2d_Curve>
 ") Curve2d;
 		opencascade::handle<Geom2d_Curve> Curve2d(const Standard_Integer num = 1);
-
-		/****************** IGESToBRep_TopoCurve ******************/
-		%feature("compactdefaultargs") IGESToBRep_TopoCurve;
-		%feature("autodoc", "Creates a tool topocurve ready to run, with epsilons set to 1.e-04, themodetopo to true, the optimization of the continuity to false.
-
-Returns
--------
-None
-") IGESToBRep_TopoCurve;
-		 IGESToBRep_TopoCurve();
-
-		/****************** IGESToBRep_TopoCurve ******************/
-		%feature("compactdefaultargs") IGESToBRep_TopoCurve;
-		%feature("autodoc", "Creates a tool topocurve ready to run and sets its fields as cs's.
-
-Parameters
-----------
-CS: IGESToBRep_CurveAndSurface
-
-Returns
--------
-None
-") IGESToBRep_TopoCurve;
-		 IGESToBRep_TopoCurve(const IGESToBRep_CurveAndSurface & CS);
-
-		/****************** IGESToBRep_TopoCurve ******************/
-		%feature("compactdefaultargs") IGESToBRep_TopoCurve;
-		%feature("autodoc", "Creates a tool topocurve ready to run and sets its fields as cs's.
-
-Parameters
-----------
-CS: IGESToBRep_TopoCurve
-
-Returns
--------
-None
-") IGESToBRep_TopoCurve;
-		 IGESToBRep_TopoCurve(const IGESToBRep_TopoCurve & CS);
-
-		/****************** IGESToBRep_TopoCurve ******************/
-		%feature("compactdefaultargs") IGESToBRep_TopoCurve;
-		%feature("autodoc", "Creates a tool topocurve ready to run.
-
-Parameters
-----------
-eps: float
-epsGeom: float
-epsCoeff: float
-mode: bool
-modeapprox: bool
-optimized: bool
-
-Returns
--------
-None
-") IGESToBRep_TopoCurve;
-		 IGESToBRep_TopoCurve(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
 
 		/****************** NbCurves ******************/
 		%feature("compactdefaultargs") NbCurves;

@@ -81,16 +81,16 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(BinMDF_TypeIdMap) NCollection_DoubleMap<opencascade::handle<Standard_Type>,Standard_Integer,TColStd_MapTransientHasher,TColStd_MapIntegerHasher>;
 %template(BinMDF_TypeADriverMap) NCollection_DataMap<opencascade::handle<Standard_Type>,opencascade::handle<BinMDF_ADriver>,TColStd_MapTransientHasher>;
+%template(BinMDF_TypeIdMap) NCollection_DoubleMap<opencascade::handle<Standard_Type>,Standard_Integer,TColStd_MapTransientHasher,TColStd_MapIntegerHasher>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DoubleMap<opencascade::handle<Standard_Type>, Standard_Integer, TColStd_MapTransientHasher, TColStd_MapIntegerHasher> BinMDF_TypeIdMap;
-typedef NCollection_DoubleMap<opencascade::handle<Standard_Type>, Standard_Integer, TColStd_MapTransientHasher, TColStd_MapIntegerHasher>::Iterator BinMDF_DoubleMapIteratorOfTypeIdMap;
-typedef NCollection_DataMap<opencascade::handle<Standard_Type>, opencascade::handle<BinMDF_ADriver>, TColStd_MapTransientHasher> BinMDF_TypeADriverMap;
 typedef NCollection_DataMap<opencascade::handle<Standard_Type>, opencascade::handle<BinMDF_ADriver>, TColStd_MapTransientHasher>::Iterator BinMDF_DataMapIteratorOfTypeADriverMap;
+typedef NCollection_DoubleMap<opencascade::handle<Standard_Type>, Standard_Integer, TColStd_MapTransientHasher, TColStd_MapIntegerHasher>::Iterator BinMDF_DoubleMapIteratorOfTypeIdMap;
 typedef TColStd_DataMapOfAsciiStringInteger BinMDF_StringIdMap;
+typedef NCollection_DataMap<opencascade::handle<Standard_Type>, opencascade::handle<BinMDF_ADriver>, TColStd_MapTransientHasher> BinMDF_TypeADriverMap;
+typedef NCollection_DoubleMap<opencascade::handle<Standard_Type>, Standard_Integer, TColStd_MapTransientHasher, TColStd_MapIntegerHasher> BinMDF_TypeIdMap;
 /* end typedefs declaration */
 
 /***************
@@ -207,6 +207,16 @@ TCollection_AsciiString
 ****************************/
 class BinMDF_ADriverTable : public Standard_Transient {
 	public:
+		/****************** BinMDF_ADriverTable ******************/
+		%feature("compactdefaultargs") BinMDF_ADriverTable;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") BinMDF_ADriverTable;
+		 BinMDF_ADriverTable();
+
 		/****************** AddDriver ******************/
 		%feature("compactdefaultargs") AddDriver;
 		%feature("autodoc", "Adds a translation driver <thedriver>.
@@ -248,16 +258,6 @@ Returns
 None
 ") AssignIds;
 		void AssignIds(const TColStd_SequenceOfAsciiString & theTypeNames);
-
-		/****************** BinMDF_ADriverTable ******************/
-		%feature("compactdefaultargs") BinMDF_ADriverTable;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") BinMDF_ADriverTable;
-		 BinMDF_ADriverTable();
 
 		/****************** GetDriver ******************/
 		%feature("compactdefaultargs") GetDriver;

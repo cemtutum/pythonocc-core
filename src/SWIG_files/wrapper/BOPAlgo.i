@@ -159,14 +159,14 @@ class BOPAlgo_GlueEnum:
 /* end templates declaration */
 
 /* typedefs */
-typedef BOPAlgo_Builder * BOPAlgo_PBuilder;
-typedef BOPAlgo_WireEdgeSet * BOPAlgo_PWireEdgeSet;
-typedef BOPAlgo_PaveFiller * BOPAlgo_PPaveFiller;
-typedef NCollection_List<BOPAlgo_CheckResult> BOPAlgo_ListOfCheckResult;
 typedef BOPAlgo_ListOfCheckResult::Iterator BOPAlgo_ListIteratorOfListOfCheckResult;
-typedef BOPAlgo_Section * BOPAlgo_PSection;
+typedef NCollection_List<BOPAlgo_CheckResult> BOPAlgo_ListOfCheckResult;
 typedef BOPAlgo_ArgumentAnalyzer * BOPAlgo_PArgumentAnalyzer;
 typedef BOPAlgo_BOP * BOPAlgo_PBOP;
+typedef BOPAlgo_Builder * BOPAlgo_PBuilder;
+typedef BOPAlgo_PaveFiller * BOPAlgo_PPaveFiller;
+typedef BOPAlgo_Section * BOPAlgo_PSection;
+typedef BOPAlgo_WireEdgeSet * BOPAlgo_PWireEdgeSet;
 /* end typedefs declaration */
 
 /****************************
@@ -174,6 +174,16 @@ typedef BOPAlgo_BOP * BOPAlgo_PBOP;
 ****************************/
 class BOPAlgo_CheckResult {
 	public:
+		/****************** BOPAlgo_CheckResult ******************/
+		%feature("compactdefaultargs") BOPAlgo_CheckResult;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") BOPAlgo_CheckResult;
+		 BOPAlgo_CheckResult();
+
 		/****************** AddFaultyShape1 ******************/
 		%feature("compactdefaultargs") AddFaultyShape1;
 		%feature("autodoc", "Adds faulty sub-shapes from object to a list.
@@ -201,16 +211,6 @@ Returns
 None
 ") AddFaultyShape2;
 		void AddFaultyShape2(const TopoDS_Shape & TheShape);
-
-		/****************** BOPAlgo_CheckResult ******************/
-		%feature("compactdefaultargs") BOPAlgo_CheckResult;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") BOPAlgo_CheckResult;
-		 BOPAlgo_CheckResult();
 
 		/****************** GetCheckStatus ******************/
 		%feature("compactdefaultargs") GetCheckStatus;
@@ -414,6 +414,30 @@ None
 ************************/
 class BOPAlgo_Options {
 	public:
+		/****************** BOPAlgo_Options ******************/
+		%feature("compactdefaultargs") BOPAlgo_Options;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") BOPAlgo_Options;
+		 BOPAlgo_Options();
+
+		/****************** BOPAlgo_Options ******************/
+		%feature("compactdefaultargs") BOPAlgo_Options;
+		%feature("autodoc", "Constructor with allocator.
+
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
+") BOPAlgo_Options;
+		 BOPAlgo_Options(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
+
 		/****************** AddError ******************/
 		%feature("compactdefaultargs") AddError;
 		%feature("autodoc", "Adds the alert as error (fail).
@@ -451,30 +475,6 @@ Returns
 opencascade::handle<NCollection_BaseAllocator>
 ") Allocator;
 		const opencascade::handle<NCollection_BaseAllocator> & Allocator();
-
-		/****************** BOPAlgo_Options ******************/
-		%feature("compactdefaultargs") BOPAlgo_Options;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") BOPAlgo_Options;
-		 BOPAlgo_Options();
-
-		/****************** BOPAlgo_Options ******************/
-		%feature("compactdefaultargs") BOPAlgo_Options;
-		%feature("autodoc", "Constructor with allocator.
-
-Parameters
-----------
-theAllocator: NCollection_BaseAllocator
-
-Returns
--------
-None
-") BOPAlgo_Options;
-		 BOPAlgo_Options(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -694,30 +694,6 @@ bool
 *********************************/
 class BOPAlgo_SectionAttribute {
 	public:
-		/****************** Approximation ******************/
-		%feature("compactdefaultargs") Approximation;
-		%feature("autodoc", "Sets the approximation flag.
-
-Parameters
-----------
-theApprox: bool
-
-Returns
--------
-None
-") Approximation;
-		void Approximation(const Standard_Boolean theApprox);
-
-		/****************** Approximation ******************/
-		%feature("compactdefaultargs") Approximation;
-		%feature("autodoc", "Returns the approximation flag.
-
-Returns
--------
-bool
-") Approximation;
-		Standard_Boolean Approximation();
-
 		/****************** BOPAlgo_SectionAttribute ******************/
 		%feature("compactdefaultargs") BOPAlgo_SectionAttribute;
 		%feature("autodoc", "Default constructor.
@@ -743,6 +719,30 @@ Returns
 None
 ") BOPAlgo_SectionAttribute;
 		 BOPAlgo_SectionAttribute(const Standard_Boolean theAproximation, const Standard_Boolean thePCurveOnS1, const Standard_Boolean thePCurveOnS2);
+
+		/****************** Approximation ******************/
+		%feature("compactdefaultargs") Approximation;
+		%feature("autodoc", "Sets the approximation flag.
+
+Parameters
+----------
+theApprox: bool
+
+Returns
+-------
+None
+") Approximation;
+		void Approximation(const Standard_Boolean theApprox);
+
+		/****************** Approximation ******************/
+		%feature("compactdefaultargs") Approximation;
+		%feature("autodoc", "Returns the approximation flag.
+
+Returns
+-------
+bool
+") Approximation;
+		Standard_Boolean Approximation();
 
 		/****************** PCurveOnS1 ******************/
 		%feature("compactdefaultargs") PCurveOnS1;
@@ -987,6 +987,30 @@ bool
 ****************************/
 class BOPAlgo_WireEdgeSet {
 	public:
+		/****************** BOPAlgo_WireEdgeSet ******************/
+		%feature("compactdefaultargs") BOPAlgo_WireEdgeSet;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BOPAlgo_WireEdgeSet;
+		 BOPAlgo_WireEdgeSet();
+
+		/****************** BOPAlgo_WireEdgeSet ******************/
+		%feature("compactdefaultargs") BOPAlgo_WireEdgeSet;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
+") BOPAlgo_WireEdgeSet;
+		 BOPAlgo_WireEdgeSet(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
+
 		/****************** AddShape ******************/
 		%feature("compactdefaultargs") AddShape;
 		%feature("autodoc", "No available documentation.
@@ -1014,30 +1038,6 @@ Returns
 None
 ") AddStartElement;
 		void AddStartElement(const TopoDS_Shape & sS);
-
-		/****************** BOPAlgo_WireEdgeSet ******************/
-		%feature("compactdefaultargs") BOPAlgo_WireEdgeSet;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BOPAlgo_WireEdgeSet;
-		 BOPAlgo_WireEdgeSet();
-
-		/****************** BOPAlgo_WireEdgeSet ******************/
-		%feature("compactdefaultargs") BOPAlgo_WireEdgeSet;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theAllocator: NCollection_BaseAllocator
-
-Returns
--------
-None
-") BOPAlgo_WireEdgeSet;
-		 BOPAlgo_WireEdgeSet(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -1133,6 +1133,16 @@ None
 ******************************/
 class BOPAlgo_MakeConnected : public BOPAlgo_Options {
 	public:
+		/****************** BOPAlgo_MakeConnected ******************/
+		%feature("compactdefaultargs") BOPAlgo_MakeConnected;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") BOPAlgo_MakeConnected;
+		 BOPAlgo_MakeConnected();
+
 		/****************** AddArgument ******************/
 		%feature("compactdefaultargs") AddArgument;
 		%feature("autodoc", "Adds the shape to the arguments. @param thes [in] one of the argument shapes.
@@ -1156,16 +1166,6 @@ Returns
 TopTools_ListOfShape
 ") Arguments;
 		const TopTools_ListOfShape & Arguments();
-
-		/****************** BOPAlgo_MakeConnected ******************/
-		%feature("compactdefaultargs") BOPAlgo_MakeConnected;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") BOPAlgo_MakeConnected;
-		 BOPAlgo_MakeConnected();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -1864,6 +1864,16 @@ TopoDS_Shape
 *********************************/
 class BOPAlgo_ArgumentAnalyzer : public BOPAlgo_Algo {
 	public:
+		/****************** BOPAlgo_ArgumentAnalyzer ******************/
+		%feature("compactdefaultargs") BOPAlgo_ArgumentAnalyzer;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") BOPAlgo_ArgumentAnalyzer;
+		 BOPAlgo_ArgumentAnalyzer();
+
 
         %feature("autodoc","1");
         %extend {
@@ -1877,16 +1887,6 @@ class BOPAlgo_ArgumentAnalyzer : public BOPAlgo_Algo {
             $self->ArgumentTypeMode()=value;
             }
         };
-		/****************** BOPAlgo_ArgumentAnalyzer ******************/
-		%feature("compactdefaultargs") BOPAlgo_ArgumentAnalyzer;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") BOPAlgo_ArgumentAnalyzer;
-		 BOPAlgo_ArgumentAnalyzer();
-
 
         %feature("autodoc","1");
         %extend {
@@ -2335,30 +2335,6 @@ TopoDS_Shape
 ***************************/
 class BOPAlgo_PaveFiller : public BOPAlgo_Algo {
 	public:
-		/****************** AddArgument ******************/
-		%feature("compactdefaultargs") AddArgument;
-		%feature("autodoc", "Adds the argument for operation.
-
-Parameters
-----------
-theShape: TopoDS_Shape
-
-Returns
--------
-None
-") AddArgument;
-		void AddArgument(const TopoDS_Shape & theShape);
-
-		/****************** Arguments ******************/
-		%feature("compactdefaultargs") Arguments;
-		%feature("autodoc", "Returns the list of arguments.
-
-Returns
--------
-TopTools_ListOfShape
-") Arguments;
-		const TopTools_ListOfShape & Arguments();
-
 		/****************** BOPAlgo_PaveFiller ******************/
 		%feature("compactdefaultargs") BOPAlgo_PaveFiller;
 		%feature("autodoc", "No available documentation.
@@ -2382,6 +2358,30 @@ Returns
 None
 ") BOPAlgo_PaveFiller;
 		 BOPAlgo_PaveFiller(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
+
+		/****************** AddArgument ******************/
+		%feature("compactdefaultargs") AddArgument;
+		%feature("autodoc", "Adds the argument for operation.
+
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+None
+") AddArgument;
+		void AddArgument(const TopoDS_Shape & theShape);
+
+		/****************** Arguments ******************/
+		%feature("compactdefaultargs") Arguments;
+		%feature("autodoc", "Returns the list of arguments.
+
+Returns
+-------
+TopTools_ListOfShape
+") Arguments;
+		const TopTools_ListOfShape & Arguments();
 
 		/****************** Context ******************/
 		%feature("compactdefaultargs") Context;
@@ -2541,20 +2541,6 @@ None
 ******************************/
 class BOPAlgo_ShellSplitter : public BOPAlgo_Algo {
 	public:
-		/****************** AddStartElement ******************/
-		%feature("compactdefaultargs") AddStartElement;
-		%feature("autodoc", "Adds a face <thes> to process.
-
-Parameters
-----------
-theS: TopoDS_Shape
-
-Returns
--------
-None
-") AddStartElement;
-		void AddStartElement(const TopoDS_Shape & theS);
-
 		/****************** BOPAlgo_ShellSplitter ******************/
 		%feature("compactdefaultargs") BOPAlgo_ShellSplitter;
 		%feature("autodoc", "Empty constructor.
@@ -2578,6 +2564,20 @@ Returns
 None
 ") BOPAlgo_ShellSplitter;
 		 BOPAlgo_ShellSplitter(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
+
+		/****************** AddStartElement ******************/
+		%feature("compactdefaultargs") AddStartElement;
+		%feature("autodoc", "Adds a face <thes> to process.
+
+Parameters
+----------
+theS: TopoDS_Shape
+
+Returns
+-------
+None
+") AddStartElement;
+		void AddStartElement(const TopoDS_Shape & theS);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
@@ -2764,30 +2764,6 @@ BOPAlgo_WireEdgeSet
 ************************/
 class BOPAlgo_Builder : public BOPAlgo_BuilderShape {
 	public:
-		/****************** AddArgument ******************/
-		%feature("compactdefaultargs") AddArgument;
-		%feature("autodoc", "Adds the argument to the operation.
-
-Parameters
-----------
-theShape: TopoDS_Shape
-
-Returns
--------
-None
-") AddArgument;
-		virtual void AddArgument(const TopoDS_Shape & theShape);
-
-		/****************** Arguments ******************/
-		%feature("compactdefaultargs") Arguments;
-		%feature("autodoc", "Returns the list of arguments.
-
-Returns
--------
-TopTools_ListOfShape
-") Arguments;
-		const TopTools_ListOfShape & Arguments();
-
 		/****************** BOPAlgo_Builder ******************/
 		%feature("compactdefaultargs") BOPAlgo_Builder;
 		%feature("autodoc", "Empty constructor.
@@ -2811,6 +2787,30 @@ Returns
 None
 ") BOPAlgo_Builder;
 		 BOPAlgo_Builder(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
+
+		/****************** AddArgument ******************/
+		%feature("compactdefaultargs") AddArgument;
+		%feature("autodoc", "Adds the argument to the operation.
+
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+None
+") AddArgument;
+		virtual void AddArgument(const TopoDS_Shape & theShape);
+
+		/****************** Arguments ******************/
+		%feature("compactdefaultargs") Arguments;
+		%feature("autodoc", "Returns the list of arguments.
+
+Returns
+-------
+TopTools_ListOfShape
+") Arguments;
+		const TopTools_ListOfShape & Arguments();
 
 		/****************** BuildBOP ******************/
 		%feature("compactdefaultargs") BuildBOP;
@@ -3231,6 +3231,16 @@ None
 *******************************/
 class BOPAlgo_RemoveFeatures : public BOPAlgo_BuilderShape {
 	public:
+		/****************** BOPAlgo_RemoveFeatures ******************/
+		%feature("compactdefaultargs") BOPAlgo_RemoveFeatures;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") BOPAlgo_RemoveFeatures;
+		 BOPAlgo_RemoveFeatures();
+
 		/****************** AddFaceToRemove ******************/
 		%feature("compactdefaultargs") AddFaceToRemove;
 		%feature("autodoc", "Adds the face to remove from the input shape. @param theface [in] the shape to extract the faces for removal.
@@ -3258,16 +3268,6 @@ Returns
 None
 ") AddFacesToRemove;
 		void AddFacesToRemove(const TopTools_ListOfShape & theFaces);
-
-		/****************** BOPAlgo_RemoveFeatures ******************/
-		%feature("compactdefaultargs") BOPAlgo_RemoveFeatures;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") BOPAlgo_RemoveFeatures;
-		 BOPAlgo_RemoveFeatures();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -3337,6 +3337,30 @@ None
 *****************************/
 class BOPAlgo_CellsBuilder : public BOPAlgo_Builder {
 	public:
+		/****************** BOPAlgo_CellsBuilder ******************/
+		%feature("compactdefaultargs") BOPAlgo_CellsBuilder;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BOPAlgo_CellsBuilder;
+		 BOPAlgo_CellsBuilder();
+
+		/****************** BOPAlgo_CellsBuilder ******************/
+		%feature("compactdefaultargs") BOPAlgo_CellsBuilder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
+") BOPAlgo_CellsBuilder;
+		 BOPAlgo_CellsBuilder(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
+
 		/****************** AddAllToResult ******************/
 		%feature("compactdefaultargs") AddAllToResult;
 		%feature("autodoc", "Add all split parts to result. <thematerial> defines the removal of internal boundaries; <theupdate> parameter defines whether to remove boundaries now or not.
@@ -3372,30 +3396,6 @@ Returns
 None
 ") AddToResult;
 		void AddToResult(const TopTools_ListOfShape & theLSToTake, const TopTools_ListOfShape & theLSToAvoid, const Standard_Integer theMaterial = 0, const Standard_Boolean theUpdate = Standard_False);
-
-		/****************** BOPAlgo_CellsBuilder ******************/
-		%feature("compactdefaultargs") BOPAlgo_CellsBuilder;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BOPAlgo_CellsBuilder;
-		 BOPAlgo_CellsBuilder();
-
-		/****************** BOPAlgo_CellsBuilder ******************/
-		%feature("compactdefaultargs") BOPAlgo_CellsBuilder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theAllocator: NCollection_BaseAllocator
-
-Returns
--------
-None
-") BOPAlgo_CellsBuilder;
-		 BOPAlgo_CellsBuilder(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -3640,20 +3640,6 @@ None
 ******************************/
 class BOPAlgo_ToolsProvider : public BOPAlgo_Builder {
 	public:
-		/****************** AddTool ******************/
-		%feature("compactdefaultargs") AddTool;
-		%feature("autodoc", "Adds tool argument of the operation.
-
-Parameters
-----------
-theShape: TopoDS_Shape
-
-Returns
--------
-None
-") AddTool;
-		virtual void AddTool(const TopoDS_Shape & theShape);
-
 		/****************** BOPAlgo_ToolsProvider ******************/
 		%feature("compactdefaultargs") BOPAlgo_ToolsProvider;
 		%feature("autodoc", "Empty constructor.
@@ -3677,6 +3663,20 @@ Returns
 None
 ") BOPAlgo_ToolsProvider;
 		 BOPAlgo_ToolsProvider(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
+
+		/****************** AddTool ******************/
+		%feature("compactdefaultargs") AddTool;
+		%feature("autodoc", "Adds tool argument of the operation.
+
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+None
+") AddTool;
+		virtual void AddTool(const TopoDS_Shape & theShape);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;

@@ -115,19 +115,19 @@ class MoniTool_ValueType:
 
 /* templates */
 %template(MoniTool_DataMapOfShapeTransient) NCollection_DataMap<TopoDS_Shape,opencascade::handle<Standard_Transient>,TopTools_ShapeMapHasher>;
-%template(MoniTool_SequenceOfElement) NCollection_Sequence<opencascade::handle<MoniTool_Element>>;
 %template(MoniTool_DataMapOfTimer) NCollection_DataMap<Standard_CString,opencascade::handle<MoniTool_Timer>,MoniTool_MTHasher>;
 %template(MoniTool_IndexedDataMapOfShapeTransient) NCollection_IndexedDataMap<TopoDS_Shape,opencascade::handle<Standard_Transient>,TopTools_ShapeMapHasher>;
+%template(MoniTool_SequenceOfElement) NCollection_Sequence<opencascade::handle<MoniTool_Element>>;
 /* end templates declaration */
 
 /* typedefs */
 typedef Standard_Boolean ( * MoniTool_ValueSatisfies ) ( const opencascade::handle<TCollection_HAsciiString>& val );
-typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<Standard_Transient>, TopTools_ShapeMapHasher> MoniTool_DataMapOfShapeTransient;
 typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<Standard_Transient>, TopTools_ShapeMapHasher>::Iterator MoniTool_DataMapIteratorOfDataMapOfShapeTransient;
-typedef NCollection_Sequence<opencascade::handle<MoniTool_Element>> MoniTool_SequenceOfElement;
-typedef NCollection_DataMap<Standard_CString, opencascade::handle<MoniTool_Timer>, MoniTool_MTHasher> MoniTool_DataMapOfTimer;
 typedef NCollection_DataMap<Standard_CString, opencascade::handle<MoniTool_Timer>, MoniTool_MTHasher>::Iterator MoniTool_DataMapIteratorOfDataMapOfTimer;
+typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<Standard_Transient>, TopTools_ShapeMapHasher> MoniTool_DataMapOfShapeTransient;
+typedef NCollection_DataMap<Standard_CString, opencascade::handle<MoniTool_Timer>, MoniTool_MTHasher> MoniTool_DataMapOfTimer;
 typedef NCollection_IndexedDataMap<TopoDS_Shape, opencascade::handle<Standard_Transient>, TopTools_ShapeMapHasher> MoniTool_IndexedDataMapOfShapeTransient;
+typedef NCollection_Sequence<opencascade::handle<MoniTool_Element>> MoniTool_SequenceOfElement;
 /* end typedefs declaration */
 
 /**************************
@@ -135,6 +135,30 @@ typedef NCollection_IndexedDataMap<TopoDS_Shape, opencascade::handle<Standard_Tr
 **************************/
 class MoniTool_AttrList {
 	public:
+		/****************** MoniTool_AttrList ******************/
+		%feature("compactdefaultargs") MoniTool_AttrList;
+		%feature("autodoc", "Creates an attrlist, empty.
+
+Returns
+-------
+None
+") MoniTool_AttrList;
+		 MoniTool_AttrList();
+
+		/****************** MoniTool_AttrList ******************/
+		%feature("compactdefaultargs") MoniTool_AttrList;
+		%feature("autodoc", "Creates an attrlist from another one, definitions are shared (calls sameattributes).
+
+Parameters
+----------
+other: MoniTool_AttrList
+
+Returns
+-------
+None
+") MoniTool_AttrList;
+		 MoniTool_AttrList(const MoniTool_AttrList & other);
+
 		/****************** AttrList ******************/
 		%feature("compactdefaultargs") AttrList;
 		%feature("autodoc", "Returns the exhaustive list of attributes.
@@ -266,30 +290,6 @@ int
 ") IntegerAttribute;
 		Standard_Integer IntegerAttribute(const char * name);
 
-		/****************** MoniTool_AttrList ******************/
-		%feature("compactdefaultargs") MoniTool_AttrList;
-		%feature("autodoc", "Creates an attrlist, empty.
-
-Returns
--------
-None
-") MoniTool_AttrList;
-		 MoniTool_AttrList();
-
-		/****************** MoniTool_AttrList ******************/
-		%feature("compactdefaultargs") MoniTool_AttrList;
-		%feature("autodoc", "Creates an attrlist from another one, definitions are shared (calls sameattributes).
-
-Parameters
-----------
-other: MoniTool_AttrList
-
-Returns
--------
-None
-") MoniTool_AttrList;
-		 MoniTool_AttrList(const MoniTool_AttrList & other);
-
 		/****************** RealAttribute ******************/
 		%feature("compactdefaultargs") RealAttribute;
 		%feature("autodoc", "Returns a real attribute from its name. 0.0 if not recorded.
@@ -420,6 +420,23 @@ char *
 **************************/
 class MoniTool_CaseData : public Standard_Transient {
 	public:
+		/****************** MoniTool_CaseData ******************/
+		%feature("compactdefaultargs") MoniTool_CaseData;
+		%feature("autodoc", "Creates a casedata with a caseid and a name (by default not defined).
+
+Parameters
+----------
+caseid: char *,optional
+	default value is ""
+name: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") MoniTool_CaseData;
+		 MoniTool_CaseData(const char * caseid = "", const char * name = "");
+
 		/****************** AddAny ******************/
 		%feature("compactdefaultargs") AddAny;
 		%feature("autodoc", "Adds a transient, with no more meaning.
@@ -785,23 +802,6 @@ Returns
 bool
 ") LargeCPU;
 		Standard_Boolean LargeCPU(const Standard_Real maxCPU, const Standard_Real lastCPU, const Standard_Real curCPU = 0);
-
-		/****************** MoniTool_CaseData ******************/
-		%feature("compactdefaultargs") MoniTool_CaseData;
-		%feature("autodoc", "Creates a casedata with a caseid and a name (by default not defined).
-
-Parameters
-----------
-caseid: char *,optional
-	default value is ""
-name: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") MoniTool_CaseData;
-		 MoniTool_CaseData(const char * caseid = "", const char * name = "");
 
 		/****************** Msg ******************/
 		%feature("compactdefaultargs") Msg;
@@ -1273,19 +1273,6 @@ char *
 ************************/
 class MoniTool_IntVal : public Standard_Transient {
 	public:
-
-        %feature("autodoc","1");
-        %extend {
-            Standard_Integer GetCValue() {
-            return (Standard_Integer) $self->CValue();
-            }
-        };
-        %feature("autodoc","1");
-        %extend {
-            void SetCValue(Standard_Integer value) {
-            $self->CValue()=value;
-            }
-        };
 		/****************** MoniTool_IntVal ******************/
 		%feature("compactdefaultargs") MoniTool_IntVal;
 		%feature("autodoc", "No available documentation.
@@ -1301,6 +1288,19 @@ None
 ") MoniTool_IntVal;
 		 MoniTool_IntVal(const Standard_Integer val = 0);
 
+
+        %feature("autodoc","1");
+        %extend {
+            Standard_Integer GetCValue() {
+            return (Standard_Integer) $self->CValue();
+            }
+        };
+        %feature("autodoc","1");
+        %extend {
+            void SetCValue(Standard_Integer value) {
+            $self->CValue()=value;
+            }
+        };
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -1371,19 +1371,6 @@ bool
 *************************/
 class MoniTool_RealVal : public Standard_Transient {
 	public:
-
-        %feature("autodoc","1");
-        %extend {
-            Standard_Real GetCValue() {
-            return (Standard_Real) $self->CValue();
-            }
-        };
-        %feature("autodoc","1");
-        %extend {
-            void SetCValue(Standard_Real value) {
-            $self->CValue()=value;
-            }
-        };
 		/****************** MoniTool_RealVal ******************/
 		%feature("compactdefaultargs") MoniTool_RealVal;
 		%feature("autodoc", "No available documentation.
@@ -1399,6 +1386,19 @@ None
 ") MoniTool_RealVal;
 		 MoniTool_RealVal(const Standard_Real val = 0.0);
 
+
+        %feature("autodoc","1");
+        %extend {
+            Standard_Real GetCValue() {
+            return (Standard_Real) $self->CValue();
+            }
+        };
+        %feature("autodoc","1");
+        %extend {
+            void SetCValue(Standard_Real value) {
+            $self->CValue()=value;
+            }
+        };
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -1481,6 +1481,35 @@ TCollection_AsciiString
 **********************/
 class MoniTool_Stat {
 	public:
+		/****************** MoniTool_Stat ******************/
+		%feature("compactdefaultargs") MoniTool_Stat;
+		%feature("autodoc", "Creates a stat form. at start, one default phase is defined, with one default step. then, it suffises to start with a count of items (and cycles if several) then record items, to have a queryable report.
+
+Parameters
+----------
+title: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") MoniTool_Stat;
+		 MoniTool_Stat(const char * title = "");
+
+		/****************** MoniTool_Stat ******************/
+		%feature("compactdefaultargs") MoniTool_Stat;
+		%feature("autodoc", "Used when starting.
+
+Parameters
+----------
+other: MoniTool_Stat
+
+Returns
+-------
+None
+") MoniTool_Stat;
+		 MoniTool_Stat(const MoniTool_Stat & other);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Directly addes items.
@@ -1555,35 +1584,6 @@ int
 ") Level;
 		Standard_Integer Level();
 
-		/****************** MoniTool_Stat ******************/
-		%feature("compactdefaultargs") MoniTool_Stat;
-		%feature("autodoc", "Creates a stat form. at start, one default phase is defined, with one default step. then, it suffises to start with a count of items (and cycles if several) then record items, to have a queryable report.
-
-Parameters
-----------
-title: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") MoniTool_Stat;
-		 MoniTool_Stat(const char * title = "");
-
-		/****************** MoniTool_Stat ******************/
-		%feature("compactdefaultargs") MoniTool_Stat;
-		%feature("autodoc", "Used when starting.
-
-Parameters
-----------
-other: MoniTool_Stat
-
-Returns
--------
-None
-") MoniTool_Stat;
-		 MoniTool_Stat(const MoniTool_Stat & other);
-
 		/****************** Open ******************/
 		%feature("compactdefaultargs") Open;
 		%feature("autodoc", "Opens a new counter with a starting count of items.
@@ -1643,6 +1643,16 @@ float
 ***********************/
 class MoniTool_Timer : public Standard_Transient {
 	public:
+		/****************** MoniTool_Timer ******************/
+		%feature("compactdefaultargs") MoniTool_Timer;
+		%feature("autodoc", "Create timer in empty state.
+
+Returns
+-------
+None
+") MoniTool_Timer;
+		 MoniTool_Timer();
+
 		/****************** Amend ******************/
 		%feature("compactdefaultargs") Amend;
 		%feature("autodoc", "Return value of accumulated amendment on cpu time.
@@ -1745,16 +1755,6 @@ Returns
 int
 ") IsRunning;
 		Standard_Integer IsRunning();
-
-		/****************** MoniTool_Timer ******************/
-		%feature("compactdefaultargs") MoniTool_Timer;
-		%feature("autodoc", "Create timer in empty state.
-
-Returns
--------
-None
-") MoniTool_Timer;
-		 MoniTool_Timer();
 
 		/****************** Reset ******************/
 		%feature("compactdefaultargs") Reset;
@@ -1926,6 +1926,38 @@ opencascade::handle<MoniTool_Timer>
 ****************************/
 class MoniTool_TypedValue : public Standard_Transient {
 	public:
+		/****************** MoniTool_TypedValue ******************/
+		%feature("compactdefaultargs") MoniTool_TypedValue;
+		%feature("autodoc", "Creates a typedvalue, with a name //! type gives the type of the parameter, default is free text also available : integer, real, enum, entity (i.e. object) more precise specifications, titles, can be given to the typedvalue once created //! init gives an initial value. if it is not given, the typedvalue begins as 'not set', its value is empty.
+
+Parameters
+----------
+name: char *
+type: MoniTool_ValueType,optional
+	default value is MoniTool_ValueText
+init: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") MoniTool_TypedValue;
+		 MoniTool_TypedValue(const char * name, const MoniTool_ValueType type = MoniTool_ValueText, const char * init = "");
+
+		/****************** MoniTool_TypedValue ******************/
+		%feature("compactdefaultargs") MoniTool_TypedValue;
+		%feature("autodoc", "Creates a typedvalue from another one, by duplication.
+
+Parameters
+----------
+other: MoniTool_TypedValue
+
+Returns
+-------
+None
+") MoniTool_TypedValue;
+		 MoniTool_TypedValue(const opencascade::handle<MoniTool_TypedValue> & other);
+
 		/****************** AddDef ******************/
 		%feature("compactdefaultargs") AddDef;
 		%feature("autodoc", "Completes the definition of a typedvalue by command <initext>, once created with its type returns true if done, false if could not be interpreted <initext> may be : imin ival : minimum value for an integer imax ival : maximum value for an integer rmin rval : minimum value for a real rmax rval : maximum value for a real unit name : name of unit ematch i : enum from integer value i, match required enum i : enum from integer value i, match not required eval text : add an enumerative value (increments max by 1) eval : add a non-authorised enum value (to be skipped) tmax l : maximum length for a text.
@@ -2236,38 +2268,6 @@ Returns
 int
 ") MaxLength;
 		Standard_Integer MaxLength();
-
-		/****************** MoniTool_TypedValue ******************/
-		%feature("compactdefaultargs") MoniTool_TypedValue;
-		%feature("autodoc", "Creates a typedvalue, with a name //! type gives the type of the parameter, default is free text also available : integer, real, enum, entity (i.e. object) more precise specifications, titles, can be given to the typedvalue once created //! init gives an initial value. if it is not given, the typedvalue begins as 'not set', its value is empty.
-
-Parameters
-----------
-name: char *
-type: MoniTool_ValueType,optional
-	default value is MoniTool_ValueText
-init: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") MoniTool_TypedValue;
-		 MoniTool_TypedValue(const char * name, const MoniTool_ValueType type = MoniTool_ValueText, const char * init = "");
-
-		/****************** MoniTool_TypedValue ******************/
-		%feature("compactdefaultargs") MoniTool_TypedValue;
-		%feature("autodoc", "Creates a typedvalue from another one, by duplication.
-
-Parameters
-----------
-other: MoniTool_TypedValue
-
-Returns
--------
-None
-") MoniTool_TypedValue;
-		 MoniTool_TypedValue(const opencascade::handle<MoniTool_TypedValue> & other);
 
 		/****************** Name ******************/
 		%feature("compactdefaultargs") Name;
@@ -2703,20 +2703,6 @@ TCollection_AsciiString
 *******************************/
 class MoniTool_TransientElem : public MoniTool_Element {
 	public:
-		/****************** Equates ******************/
-		%feature("compactdefaultargs") Equates;
-		%feature("autodoc", "Specific testof equallity : defined as false if <other> has not the same true type, else contents are compared (by c++ operator ==).
-
-Parameters
-----------
-other: MoniTool_Element
-
-Returns
--------
-bool
-") Equates;
-		Standard_Boolean Equates(const opencascade::handle<MoniTool_Element> & other);
-
 		/****************** MoniTool_TransientElem ******************/
 		%feature("compactdefaultargs") MoniTool_TransientElem;
 		%feature("autodoc", "Creates a transientelem with a value. this value can then not be changed. it is used by the hasher to compute the hashcode, which will then be stored for an immediate reading.
@@ -2730,6 +2716,20 @@ Returns
 None
 ") MoniTool_TransientElem;
 		 MoniTool_TransientElem(const opencascade::handle<Standard_Transient> & akey);
+
+		/****************** Equates ******************/
+		%feature("compactdefaultargs") Equates;
+		%feature("autodoc", "Specific testof equallity : defined as false if <other> has not the same true type, else contents are compared (by c++ operator ==).
+
+Parameters
+----------
+other: MoniTool_Element
+
+Returns
+-------
+bool
+") Equates;
+		Standard_Boolean Equates(const opencascade::handle<MoniTool_Element> & other);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;

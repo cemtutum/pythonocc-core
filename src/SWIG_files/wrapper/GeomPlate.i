@@ -45,8 +45,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geomplate.html"
 #include<gp_module.hxx>
 #include<TColgp_module.hxx>
 #include<Geom_module.hxx>
-#include<TColGeom2d_module.hxx>
 #include<TColStd_module.hxx>
+#include<TColGeom2d_module.hxx>
 #include<Message_module.hxx>
 #include<Geom2d_module.hxx>
 #include<GeomLProp_module.hxx>
@@ -67,8 +67,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geomplate.html"
 %import gp.i
 %import TColgp.i
 %import Geom.i
-%import TColGeom2d.i
 %import TColStd.i
+%import TColGeom2d.i
 %import Message.i
 %import Geom2d.i
 %import GeomLProp.i
@@ -101,7 +101,6 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(GeomPlate_SequenceOfAij) NCollection_Sequence<GeomPlate_Aij>;
 %template(GeomPlate_Array1OfHCurve) NCollection_Array1<opencascade::handle<Adaptor3d_HCurve>>;
 
 %extend NCollection_Array1<opencascade::handle<Adaptor3d_HCurve>> {
@@ -172,16 +171,17 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
-%template(GeomPlate_SequenceOfPointConstraint) NCollection_Sequence<opencascade::handle<GeomPlate_PointConstraint>>;
+%template(GeomPlate_SequenceOfAij) NCollection_Sequence<GeomPlate_Aij>;
 %template(GeomPlate_SequenceOfCurveConstraint) NCollection_Sequence<opencascade::handle<GeomPlate_CurveConstraint>>;
+%template(GeomPlate_SequenceOfPointConstraint) NCollection_Sequence<opencascade::handle<GeomPlate_PointConstraint>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<GeomPlate_Aij> GeomPlate_SequenceOfAij;
 typedef NCollection_Array1<opencascade::handle<Adaptor3d_HCurve>> GeomPlate_Array1OfHCurve;
 typedef NCollection_Array1<TColStd_SequenceOfReal> GeomPlate_Array1OfSequenceOfReal;
-typedef NCollection_Sequence<opencascade::handle<GeomPlate_PointConstraint>> GeomPlate_SequenceOfPointConstraint;
+typedef NCollection_Sequence<GeomPlate_Aij> GeomPlate_SequenceOfAij;
 typedef NCollection_Sequence<opencascade::handle<GeomPlate_CurveConstraint>> GeomPlate_SequenceOfCurveConstraint;
+typedef NCollection_Sequence<opencascade::handle<GeomPlate_PointConstraint>> GeomPlate_SequenceOfPointConstraint;
 /* end typedefs declaration */
 
 /**********************
@@ -351,6 +351,94 @@ opencascade::handle<Geom_Plane>
 ************************************/
 class GeomPlate_BuildPlateSurface {
 	public:
+		/****************** GeomPlate_BuildPlateSurface ******************/
+		%feature("compactdefaultargs") GeomPlate_BuildPlateSurface;
+		%feature("autodoc", "Constructor compatible with the old version with this constructor the constraint are given in a array of curve on surface the array nbpoints contains the number of points for each constraint. the array tang contains the order of constraint for each constraint: the possible values for this order has to be -1 , 0 , 1 , 2 . order i means constraint gi. nbiter is the maximum number of iteration to optimise the number of points for resolution degree is the degree of resolution for plate tol2d is the tolerance used to test if two points of different constraint are identical in the parametric space of the initial surface tol3d is used to test if two identical points in the 2d space are identical in 3d space tolang is used to compare the angle between normal of two identical points in the 2d space raises constructionerror;.
+
+Parameters
+----------
+NPoints: TColStd_HArray1OfInteger
+TabCurve: GeomPlate_HArray1OfHCurve
+Tang: TColStd_HArray1OfInteger
+Degree: int
+NbIter: int,optional
+	default value is 3
+Tol2d: float,optional
+	default value is 0.00001
+Tol3d: float,optional
+	default value is 0.0001
+TolAng: float,optional
+	default value is 0.01
+TolCurv: float,optional
+	default value is 0.1
+Anisotropie: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") GeomPlate_BuildPlateSurface;
+		 GeomPlate_BuildPlateSurface(const opencascade::handle<TColStd_HArray1OfInteger> & NPoints, const opencascade::handle<GeomPlate_HArray1OfHCurve> & TabCurve, const opencascade::handle<TColStd_HArray1OfInteger> & Tang, const Standard_Integer Degree, const Standard_Integer NbIter = 3, const Standard_Real Tol2d = 0.00001, const Standard_Real Tol3d = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1, const Standard_Boolean Anisotropie = Standard_False);
+
+		/****************** GeomPlate_BuildPlateSurface ******************/
+		%feature("compactdefaultargs") GeomPlate_BuildPlateSurface;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Surf: Geom_Surface
+Degree: int,optional
+	default value is 3
+NbPtsOnCur: int,optional
+	default value is 10
+NbIter: int,optional
+	default value is 3
+Tol2d: float,optional
+	default value is 0.00001
+Tol3d: float,optional
+	default value is 0.0001
+TolAng: float,optional
+	default value is 0.01
+TolCurv: float,optional
+	default value is 0.1
+Anisotropie: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") GeomPlate_BuildPlateSurface;
+		 GeomPlate_BuildPlateSurface(const opencascade::handle<Geom_Surface> & Surf, const Standard_Integer Degree = 3, const Standard_Integer NbPtsOnCur = 10, const Standard_Integer NbIter = 3, const Standard_Real Tol2d = 0.00001, const Standard_Real Tol3d = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1, const Standard_Boolean Anisotropie = Standard_False);
+
+		/****************** GeomPlate_BuildPlateSurface ******************/
+		%feature("compactdefaultargs") GeomPlate_BuildPlateSurface;
+		%feature("autodoc", "Initializes the buildplatesurface framework for deforming plate surfaces using curve and point constraints. you use the first constructor if you have an initial surface to work with at construction time. if not, you use the second. you can add one later by using the method loadinitsurface. if no initial surface is loaded, one will automatically be computed. the curve and point constraints will be defined by using the method add. before the call to the algorithm, the curve constraints will be transformed into sequences of discrete points. each curve defined as a constraint will be given the value of nbptsoncur as the average number of points on it. several arguments serve to improve performance of the algorithm. nbiter, for example, expresses the number of iterations allowed and is used to control the duration of computation. to optimize resolution, degree will have the default value of 3. the surface generated must respect several tolerance values: - 2d tolerance given by tol2d, with a default value of 0.00001 - 3d tolerance expressed by tol3d, with a default value of 0.0001 - angular tolerance given by tolang, with a default value of 0.01, defining the greatest angle allowed between the constraint and the target surface. exceptions standard_constructionerror if nbiter is less than 1 or degree is less than 3.
+
+Parameters
+----------
+Degree: int,optional
+	default value is 3
+NbPtsOnCur: int,optional
+	default value is 10
+NbIter: int,optional
+	default value is 3
+Tol2d: float,optional
+	default value is 0.00001
+Tol3d: float,optional
+	default value is 0.0001
+TolAng: float,optional
+	default value is 0.01
+TolCurv: float,optional
+	default value is 0.1
+Anisotropie: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") GeomPlate_BuildPlateSurface;
+		 GeomPlate_BuildPlateSurface(const Standard_Integer Degree = 3, const Standard_Integer NbPtsOnCur = 10, const Standard_Integer NbIter = 3, const Standard_Real Tol2d = 0.00001, const Standard_Real Tol3d = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1, const Standard_Boolean Anisotropie = Standard_False);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the linear constraint cont.
@@ -506,94 +594,6 @@ float
 ") G2Error;
 		Standard_Real G2Error(const Standard_Integer Index);
 
-		/****************** GeomPlate_BuildPlateSurface ******************/
-		%feature("compactdefaultargs") GeomPlate_BuildPlateSurface;
-		%feature("autodoc", "Constructor compatible with the old version with this constructor the constraint are given in a array of curve on surface the array nbpoints contains the number of points for each constraint. the array tang contains the order of constraint for each constraint: the possible values for this order has to be -1 , 0 , 1 , 2 . order i means constraint gi. nbiter is the maximum number of iteration to optimise the number of points for resolution degree is the degree of resolution for plate tol2d is the tolerance used to test if two points of different constraint are identical in the parametric space of the initial surface tol3d is used to test if two identical points in the 2d space are identical in 3d space tolang is used to compare the angle between normal of two identical points in the 2d space raises constructionerror;.
-
-Parameters
-----------
-NPoints: TColStd_HArray1OfInteger
-TabCurve: GeomPlate_HArray1OfHCurve
-Tang: TColStd_HArray1OfInteger
-Degree: int
-NbIter: int,optional
-	default value is 3
-Tol2d: float,optional
-	default value is 0.00001
-Tol3d: float,optional
-	default value is 0.0001
-TolAng: float,optional
-	default value is 0.01
-TolCurv: float,optional
-	default value is 0.1
-Anisotropie: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") GeomPlate_BuildPlateSurface;
-		 GeomPlate_BuildPlateSurface(const opencascade::handle<TColStd_HArray1OfInteger> & NPoints, const opencascade::handle<GeomPlate_HArray1OfHCurve> & TabCurve, const opencascade::handle<TColStd_HArray1OfInteger> & Tang, const Standard_Integer Degree, const Standard_Integer NbIter = 3, const Standard_Real Tol2d = 0.00001, const Standard_Real Tol3d = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1, const Standard_Boolean Anisotropie = Standard_False);
-
-		/****************** GeomPlate_BuildPlateSurface ******************/
-		%feature("compactdefaultargs") GeomPlate_BuildPlateSurface;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Surf: Geom_Surface
-Degree: int,optional
-	default value is 3
-NbPtsOnCur: int,optional
-	default value is 10
-NbIter: int,optional
-	default value is 3
-Tol2d: float,optional
-	default value is 0.00001
-Tol3d: float,optional
-	default value is 0.0001
-TolAng: float,optional
-	default value is 0.01
-TolCurv: float,optional
-	default value is 0.1
-Anisotropie: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") GeomPlate_BuildPlateSurface;
-		 GeomPlate_BuildPlateSurface(const opencascade::handle<Geom_Surface> & Surf, const Standard_Integer Degree = 3, const Standard_Integer NbPtsOnCur = 10, const Standard_Integer NbIter = 3, const Standard_Real Tol2d = 0.00001, const Standard_Real Tol3d = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1, const Standard_Boolean Anisotropie = Standard_False);
-
-		/****************** GeomPlate_BuildPlateSurface ******************/
-		%feature("compactdefaultargs") GeomPlate_BuildPlateSurface;
-		%feature("autodoc", "Initializes the buildplatesurface framework for deforming plate surfaces using curve and point constraints. you use the first constructor if you have an initial surface to work with at construction time. if not, you use the second. you can add one later by using the method loadinitsurface. if no initial surface is loaded, one will automatically be computed. the curve and point constraints will be defined by using the method add. before the call to the algorithm, the curve constraints will be transformed into sequences of discrete points. each curve defined as a constraint will be given the value of nbptsoncur as the average number of points on it. several arguments serve to improve performance of the algorithm. nbiter, for example, expresses the number of iterations allowed and is used to control the duration of computation. to optimize resolution, degree will have the default value of 3. the surface generated must respect several tolerance values: - 2d tolerance given by tol2d, with a default value of 0.00001 - 3d tolerance expressed by tol3d, with a default value of 0.0001 - angular tolerance given by tolang, with a default value of 0.01, defining the greatest angle allowed between the constraint and the target surface. exceptions standard_constructionerror if nbiter is less than 1 or degree is less than 3.
-
-Parameters
-----------
-Degree: int,optional
-	default value is 3
-NbPtsOnCur: int,optional
-	default value is 10
-NbIter: int,optional
-	default value is 3
-Tol2d: float,optional
-	default value is 0.00001
-Tol3d: float,optional
-	default value is 0.0001
-TolAng: float,optional
-	default value is 0.01
-TolCurv: float,optional
-	default value is 0.1
-Anisotropie: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") GeomPlate_BuildPlateSurface;
-		 GeomPlate_BuildPlateSurface(const Standard_Integer Degree = 3, const Standard_Integer NbPtsOnCur = 10, const Standard_Integer NbIter = 3, const Standard_Real Tol2d = 0.00001, const Standard_Real Tol3d = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1, const Standard_Boolean Anisotropie = Standard_False);
-
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Resets all constraints.
@@ -725,6 +725,39 @@ opencascade::handle<GeomPlate_Surface>
 **********************************/
 class GeomPlate_CurveConstraint : public Standard_Transient {
 	public:
+		/****************** GeomPlate_CurveConstraint ******************/
+		%feature("compactdefaultargs") GeomPlate_CurveConstraint;
+		%feature("autodoc", "Initializes an empty curve constraint object.
+
+Returns
+-------
+None
+") GeomPlate_CurveConstraint;
+		 GeomPlate_CurveConstraint();
+
+		/****************** GeomPlate_CurveConstraint ******************/
+		%feature("compactdefaultargs") GeomPlate_CurveConstraint;
+		%feature("autodoc", "Create a constraint order is the order of the constraint. the possible values for order are -1,0,1,2. order i means constraints gi npt is the number of points associated with the constraint. toldist is the maximum error to satisfy for g0 constraints tolang is the maximum error to satisfy for g1 constraints tolcurv is the maximum error to satisfy for g2 constraints these errors can be replaced by laws of criterion. raises constructionerror if order is not -1 , 0, 1, 2.
+
+Parameters
+----------
+Boundary: Adaptor3d_HCurve
+Order: int
+NPt: int,optional
+	default value is 10
+TolDist: float,optional
+	default value is 0.0001
+TolAng: float,optional
+	default value is 0.01
+TolCurv: float,optional
+	default value is 0.1
+
+Returns
+-------
+None
+") GeomPlate_CurveConstraint;
+		 GeomPlate_CurveConstraint(const opencascade::handle<Adaptor3d_HCurve> & Boundary, const Standard_Integer Order, const Standard_Integer NPt = 10, const Standard_Real TolDist = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1);
+
 		/****************** Curve2dOnSurf ******************/
 		%feature("compactdefaultargs") Curve2dOnSurf;
 		%feature("autodoc", "Returns a 2d curve associated the surface resulting of the constraints.
@@ -848,39 +881,6 @@ Returns
 float
 ") G2Criterion;
 		Standard_Real G2Criterion(const Standard_Real U);
-
-		/****************** GeomPlate_CurveConstraint ******************/
-		%feature("compactdefaultargs") GeomPlate_CurveConstraint;
-		%feature("autodoc", "Initializes an empty curve constraint object.
-
-Returns
--------
-None
-") GeomPlate_CurveConstraint;
-		 GeomPlate_CurveConstraint();
-
-		/****************** GeomPlate_CurveConstraint ******************/
-		%feature("compactdefaultargs") GeomPlate_CurveConstraint;
-		%feature("autodoc", "Create a constraint order is the order of the constraint. the possible values for order are -1,0,1,2. order i means constraints gi npt is the number of points associated with the constraint. toldist is the maximum error to satisfy for g0 constraints tolang is the maximum error to satisfy for g1 constraints tolcurv is the maximum error to satisfy for g2 constraints these errors can be replaced by laws of criterion. raises constructionerror if order is not -1 , 0, 1, 2.
-
-Parameters
-----------
-Boundary: Adaptor3d_HCurve
-Order: int
-NPt: int,optional
-	default value is 10
-TolDist: float,optional
-	default value is 0.0001
-TolAng: float,optional
-	default value is 0.01
-TolCurv: float,optional
-	default value is 0.1
-
-Returns
--------
-None
-") GeomPlate_CurveConstraint;
-		 GeomPlate_CurveConstraint(const opencascade::handle<Adaptor3d_HCurve> & Boundary, const Standard_Integer Order, const Standard_Integer NPt = 10, const Standard_Real TolDist = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1);
 
 		/****************** LPropSurf ******************/
 		%feature("compactdefaultargs") LPropSurf;
@@ -1062,26 +1062,6 @@ None
 *****************************/
 class GeomPlate_MakeApprox {
 	public:
-		/****************** ApproxError ******************/
-		%feature("compactdefaultargs") ApproxError;
-		%feature("autodoc", "Returns the error in computation of the approximation surface. this is the distance between the entire target bspline surface and the entire original surface generated by buildplatesurface and converted by geomplate_surface.
-
-Returns
--------
-float
-") ApproxError;
-		Standard_Real ApproxError();
-
-		/****************** CriterionError ******************/
-		%feature("compactdefaultargs") CriterionError;
-		%feature("autodoc", "Returns the criterion error in computation of the approximation surface. this is estimated relative to the curve and point constraints only.
-
-Returns
--------
-float
-") CriterionError;
-		Standard_Real CriterionError();
-
 		/****************** GeomPlate_MakeApprox ******************/
 		%feature("compactdefaultargs") GeomPlate_MakeApprox;
 		%feature("autodoc", "Converts surfplate into a geom_bsplinesurface with n bezier pieces (n<=nbmax) of degree <= dgmax and an approximation error < tol3d if possible the criterion critplate is satisfied if possible.
@@ -1127,6 +1107,26 @@ Returns
 None
 ") GeomPlate_MakeApprox;
 		 GeomPlate_MakeApprox(const opencascade::handle<GeomPlate_Surface> & SurfPlate, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const Standard_Real dmax, const Standard_Integer CritOrder = 0, const GeomAbs_Shape Continuity = GeomAbs_C1, const Standard_Real EnlargeCoeff = 1.1);
+
+		/****************** ApproxError ******************/
+		%feature("compactdefaultargs") ApproxError;
+		%feature("autodoc", "Returns the error in computation of the approximation surface. this is the distance between the entire target bspline surface and the entire original surface generated by buildplatesurface and converted by geomplate_surface.
+
+Returns
+-------
+float
+") ApproxError;
+		Standard_Real ApproxError();
+
+		/****************** CriterionError ******************/
+		%feature("compactdefaultargs") CriterionError;
+		%feature("autodoc", "Returns the criterion error in computation of the approximation surface. this is estimated relative to the curve and point constraints only.
+
+Returns
+-------
+float
+") CriterionError;
+		Standard_Real CriterionError();
 
 		/****************** Surface ******************/
 		%feature("compactdefaultargs") Surface;
@@ -1278,6 +1278,46 @@ None
 **********************************/
 class GeomPlate_PointConstraint : public Standard_Transient {
 	public:
+		/****************** GeomPlate_PointConstraint ******************/
+		%feature("compactdefaultargs") GeomPlate_PointConstraint;
+		%feature("autodoc", "Constructs a point constraint object defined by pt, a 3d point order gives the order of constraint, one of: - -1 i.e. none, or 0 i.e.g0 when assigned to pt - -1 i.e. none, 0 i.e. g0, 1 i.e. g1, 2 i.e. g2 when assigned to u, v and surf. in this constructor, only toldist is given. distance tolerance represents the greatest distance allowed between the constraint and the target surface. angular tolerance represents the largest angle allowed between the constraint and the target surface. curvature tolerance represents the greatest difference in curvature allowed between the constraint and the target surface. raises constructionerror if order is not 0 or -1.
+
+Parameters
+----------
+Pt: gp_Pnt
+Order: int
+TolDist: float,optional
+	default value is 0.0001
+
+Returns
+-------
+None
+") GeomPlate_PointConstraint;
+		 GeomPlate_PointConstraint(const gp_Pnt & Pt, const Standard_Integer Order, const Standard_Real TolDist = 0.0001);
+
+		/****************** GeomPlate_PointConstraint ******************/
+		%feature("compactdefaultargs") GeomPlate_PointConstraint;
+		%feature("autodoc", "Constructs a point constraint object defined by the intersection point of u and v on the surface surf. order gives the order of constraint, one of: - -1 i.e. none, or 0 i.e.g0 when assigned to pt - -1 i.e. none, 0 i.e. g0, 1 i.e. g1, 2 i.e. g2 when assigned to u, v and surf. in this constructor the surface to be generated must respect several tolerance values only: - the distance tolerance toldist - the angular tolerance tolang - the curvature tolerance, tolcurv. distance tolerance represents the greatest distance allowed between the constraint and the target surface. angular tolerance represents the largest angle allowed between the constraint and the target surface. curvature tolerance represents the greatest difference in curvature allowed between the constraint and the target surface.creates a punctual constraint.
+
+Parameters
+----------
+U: float
+V: float
+Surf: Geom_Surface
+Order: int
+TolDist: float,optional
+	default value is 0.0001
+TolAng: float,optional
+	default value is 0.01
+TolCurv: float,optional
+	default value is 0.1
+
+Returns
+-------
+None
+") GeomPlate_PointConstraint;
+		 GeomPlate_PointConstraint(const Standard_Real U, const Standard_Real V, const opencascade::handle<Geom_Surface> & Surf, const Standard_Integer Order, const Standard_Real TolDist = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1);
+
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "No available documentation.
@@ -1356,46 +1396,6 @@ Returns
 float
 ") G2Criterion;
 		Standard_Real G2Criterion();
-
-		/****************** GeomPlate_PointConstraint ******************/
-		%feature("compactdefaultargs") GeomPlate_PointConstraint;
-		%feature("autodoc", "Constructs a point constraint object defined by pt, a 3d point order gives the order of constraint, one of: - -1 i.e. none, or 0 i.e.g0 when assigned to pt - -1 i.e. none, 0 i.e. g0, 1 i.e. g1, 2 i.e. g2 when assigned to u, v and surf. in this constructor, only toldist is given. distance tolerance represents the greatest distance allowed between the constraint and the target surface. angular tolerance represents the largest angle allowed between the constraint and the target surface. curvature tolerance represents the greatest difference in curvature allowed between the constraint and the target surface. raises constructionerror if order is not 0 or -1.
-
-Parameters
-----------
-Pt: gp_Pnt
-Order: int
-TolDist: float,optional
-	default value is 0.0001
-
-Returns
--------
-None
-") GeomPlate_PointConstraint;
-		 GeomPlate_PointConstraint(const gp_Pnt & Pt, const Standard_Integer Order, const Standard_Real TolDist = 0.0001);
-
-		/****************** GeomPlate_PointConstraint ******************/
-		%feature("compactdefaultargs") GeomPlate_PointConstraint;
-		%feature("autodoc", "Constructs a point constraint object defined by the intersection point of u and v on the surface surf. order gives the order of constraint, one of: - -1 i.e. none, or 0 i.e.g0 when assigned to pt - -1 i.e. none, 0 i.e. g0, 1 i.e. g1, 2 i.e. g2 when assigned to u, v and surf. in this constructor the surface to be generated must respect several tolerance values only: - the distance tolerance toldist - the angular tolerance tolang - the curvature tolerance, tolcurv. distance tolerance represents the greatest distance allowed between the constraint and the target surface. angular tolerance represents the largest angle allowed between the constraint and the target surface. curvature tolerance represents the greatest difference in curvature allowed between the constraint and the target surface.creates a punctual constraint.
-
-Parameters
-----------
-U: float
-V: float
-Surf: Geom_Surface
-Order: int
-TolDist: float,optional
-	default value is 0.0001
-TolAng: float,optional
-	default value is 0.01
-TolCurv: float,optional
-	default value is 0.1
-
-Returns
--------
-None
-") GeomPlate_PointConstraint;
-		 GeomPlate_PointConstraint(const Standard_Real U, const Standard_Real V, const opencascade::handle<Geom_Surface> & Surf, const Standard_Integer Order, const Standard_Real TolDist = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1);
 
 		/****************** HasPnt2dOnSurf ******************/
 		%feature("compactdefaultargs") HasPnt2dOnSurf;
@@ -1523,6 +1523,21 @@ None
 **************************/
 class GeomPlate_Surface : public Geom_Surface {
 	public:
+		/****************** GeomPlate_Surface ******************/
+		%feature("compactdefaultargs") GeomPlate_Surface;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Surfinit: Geom_Surface
+Surfinter: Plate_Plate
+
+Returns
+-------
+None
+") GeomPlate_Surface;
+		 GeomPlate_Surface(const opencascade::handle<Geom_Surface> & Surfinit, const Plate_Plate & Surfinter);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "No available documentation.
@@ -1680,21 +1695,6 @@ Returns
 gp_Vec
 ") DN;
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
-
-		/****************** GeomPlate_Surface ******************/
-		%feature("compactdefaultargs") GeomPlate_Surface;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Surfinit: Geom_Surface
-Surfinter: Plate_Plate
-
-Returns
--------
-None
-") GeomPlate_Surface;
-		 GeomPlate_Surface(const opencascade::handle<Geom_Surface> & Surfinit, const Plate_Plate & Surfinter);
 
 		/****************** IsCNu ******************/
 		%feature("compactdefaultargs") IsCNu;

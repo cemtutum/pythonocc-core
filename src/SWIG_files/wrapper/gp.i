@@ -333,6 +333,31 @@ gp_Ax2
 ***************/
 class gp_Ax1 {
 	public:
+		/****************** gp_Ax1 ******************/
+		%feature("compactdefaultargs") gp_Ax1;
+		%feature("autodoc", "Creates an axis object representing z axis of the reference co-ordinate system.
+
+Returns
+-------
+None
+") gp_Ax1;
+		 gp_Ax1();
+
+		/****************** gp_Ax1 ******************/
+		%feature("compactdefaultargs") gp_Ax1;
+		%feature("autodoc", "P is the location point and v is the direction of <self>.
+
+Parameters
+----------
+P: gp_Pnt
+V: gp_Dir
+
+Returns
+-------
+None
+") gp_Ax1;
+		 gp_Ax1(const gp_Pnt & P, const gp_Dir & V);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Computes the angular value, in radians, between <self>.direction() and <other>.direction(). returns the angle between 0 and 2*pi radians.
@@ -706,31 +731,6 @@ gp_Ax1
 ") Translated;
 		gp_Ax1 Translated(const gp_Pnt & P1, const gp_Pnt & P2);
 
-		/****************** gp_Ax1 ******************/
-		%feature("compactdefaultargs") gp_Ax1;
-		%feature("autodoc", "Creates an axis object representing z axis of the reference co-ordinate system.
-
-Returns
--------
-None
-") gp_Ax1;
-		 gp_Ax1();
-
-		/****************** gp_Ax1 ******************/
-		%feature("compactdefaultargs") gp_Ax1;
-		%feature("autodoc", "P is the location point and v is the direction of <self>.
-
-Parameters
-----------
-P: gp_Pnt
-V: gp_Dir
-
-Returns
--------
-None
-") gp_Ax1;
-		 gp_Ax1(const gp_Pnt & P, const gp_Dir & V);
-
 };
 
 
@@ -745,6 +745,47 @@ None
 ***************/
 class gp_Ax2 {
 	public:
+		/****************** gp_Ax2 ******************/
+		%feature("compactdefaultargs") gp_Ax2;
+		%feature("autodoc", "Creates an object corresponding to the reference coordinate system (oxyz).
+
+Returns
+-------
+None
+") gp_Ax2;
+		 gp_Ax2();
+
+		/****************** gp_Ax2 ******************/
+		%feature("compactdefaultargs") gp_Ax2;
+		%feature("autodoc", "Creates an axis placement with an origin p such that: - n is the direction, and - the 'x direction' is normal to n, in the plane defined by the vectors (n, vx): 'x direction' = (n ^ vx) ^ n, exception: raises constructionerror if n and vx are parallel (same or opposite orientation).
+
+Parameters
+----------
+P: gp_Pnt
+N: gp_Dir
+Vx: gp_Dir
+
+Returns
+-------
+None
+") gp_Ax2;
+		 gp_Ax2(const gp_Pnt & P, const gp_Dir & N, const gp_Dir & Vx);
+
+		/****************** gp_Ax2 ******************/
+		%feature("compactdefaultargs") gp_Ax2;
+		%feature("autodoc", "Creates - a coordinate system with an origin p, where v gives the 'main direction' (here, 'x direction' and 'y direction' are defined automatically).
+
+Parameters
+----------
+P: gp_Pnt
+V: gp_Dir
+
+Returns
+-------
+None
+") gp_Ax2;
+		 gp_Ax2(const gp_Pnt & P, const gp_Dir & V);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Computes the angular value, in radians, between the main direction of <self> and the main direction of <other>. returns the angle between 0 and pi in radians.
@@ -1141,47 +1182,6 @@ gp_Dir
 ") YDirection;
 		const gp_Dir YDirection();
 
-		/****************** gp_Ax2 ******************/
-		%feature("compactdefaultargs") gp_Ax2;
-		%feature("autodoc", "Creates an object corresponding to the reference coordinate system (oxyz).
-
-Returns
--------
-None
-") gp_Ax2;
-		 gp_Ax2();
-
-		/****************** gp_Ax2 ******************/
-		%feature("compactdefaultargs") gp_Ax2;
-		%feature("autodoc", "Creates an axis placement with an origin p such that: - n is the direction, and - the 'x direction' is normal to n, in the plane defined by the vectors (n, vx): 'x direction' = (n ^ vx) ^ n, exception: raises constructionerror if n and vx are parallel (same or opposite orientation).
-
-Parameters
-----------
-P: gp_Pnt
-N: gp_Dir
-Vx: gp_Dir
-
-Returns
--------
-None
-") gp_Ax2;
-		 gp_Ax2(const gp_Pnt & P, const gp_Dir & N, const gp_Dir & Vx);
-
-		/****************** gp_Ax2 ******************/
-		%feature("compactdefaultargs") gp_Ax2;
-		%feature("autodoc", "Creates - a coordinate system with an origin p, where v gives the 'main direction' (here, 'x direction' and 'y direction' are defined automatically).
-
-Parameters
-----------
-P: gp_Pnt
-V: gp_Dir
-
-Returns
--------
-None
-") gp_Ax2;
-		 gp_Ax2(const gp_Pnt & P, const gp_Dir & V);
-
 };
 
 
@@ -1196,6 +1196,65 @@ None
 *****************/
 class gp_Ax22d {
 	public:
+		/****************** gp_Ax22d ******************/
+		%feature("compactdefaultargs") gp_Ax22d;
+		%feature("autodoc", "Creates an object representing the reference co-ordinate system (oxy).
+
+Returns
+-------
+None
+") gp_Ax22d;
+		 gp_Ax22d();
+
+		/****************** gp_Ax22d ******************/
+		%feature("compactdefaultargs") gp_Ax22d;
+		%feature("autodoc", "Creates a coordinate system with origin p and where: - vx is the 'x direction', and - the 'y direction' is orthogonal to vx and oriented so that the cross products vx^'y direction' and vx^vy have the same sign. raises constructionerror if vx and vy are parallel (same or opposite orientation).
+
+Parameters
+----------
+P: gp_Pnt2d
+Vx: gp_Dir2d
+Vy: gp_Dir2d
+
+Returns
+-------
+None
+") gp_Ax22d;
+		 gp_Ax22d(const gp_Pnt2d & P, const gp_Dir2d & Vx, const gp_Dir2d & Vy);
+
+		/****************** gp_Ax22d ******************/
+		%feature("compactdefaultargs") gp_Ax22d;
+		%feature("autodoc", "Creates - a coordinate system with origin p and 'x direction' v, which is: - right-handed if sense is true (default value), or - left-handed if sense is false.
+
+Parameters
+----------
+P: gp_Pnt2d
+V: gp_Dir2d
+Sense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") gp_Ax22d;
+		 gp_Ax22d(const gp_Pnt2d & P, const gp_Dir2d & V, const Standard_Boolean Sense = Standard_True);
+
+		/****************** gp_Ax22d ******************/
+		%feature("compactdefaultargs") gp_Ax22d;
+		%feature("autodoc", "Creates - a coordinate system where its origin is the origin of a and its 'x direction' is the unit vector of a, which is: - right-handed if sense is true (default value), or - left-handed if sense is false.
+
+Parameters
+----------
+A: gp_Ax2d
+Sense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") gp_Ax22d;
+		 gp_Ax22d(const gp_Ax2d & A, const Standard_Boolean Sense = Standard_True);
+
 		/****************** Location ******************/
 		%feature("compactdefaultargs") Location;
 		%feature("autodoc", "Returns the 'location' point (origin) of <self>.
@@ -1532,65 +1591,6 @@ gp_Dir2d
 ") YDirection;
 		const gp_Dir2d YDirection();
 
-		/****************** gp_Ax22d ******************/
-		%feature("compactdefaultargs") gp_Ax22d;
-		%feature("autodoc", "Creates an object representing the reference co-ordinate system (oxy).
-
-Returns
--------
-None
-") gp_Ax22d;
-		 gp_Ax22d();
-
-		/****************** gp_Ax22d ******************/
-		%feature("compactdefaultargs") gp_Ax22d;
-		%feature("autodoc", "Creates a coordinate system with origin p and where: - vx is the 'x direction', and - the 'y direction' is orthogonal to vx and oriented so that the cross products vx^'y direction' and vx^vy have the same sign. raises constructionerror if vx and vy are parallel (same or opposite orientation).
-
-Parameters
-----------
-P: gp_Pnt2d
-Vx: gp_Dir2d
-Vy: gp_Dir2d
-
-Returns
--------
-None
-") gp_Ax22d;
-		 gp_Ax22d(const gp_Pnt2d & P, const gp_Dir2d & Vx, const gp_Dir2d & Vy);
-
-		/****************** gp_Ax22d ******************/
-		%feature("compactdefaultargs") gp_Ax22d;
-		%feature("autodoc", "Creates - a coordinate system with origin p and 'x direction' v, which is: - right-handed if sense is true (default value), or - left-handed if sense is false.
-
-Parameters
-----------
-P: gp_Pnt2d
-V: gp_Dir2d
-Sense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") gp_Ax22d;
-		 gp_Ax22d(const gp_Pnt2d & P, const gp_Dir2d & V, const Standard_Boolean Sense = Standard_True);
-
-		/****************** gp_Ax22d ******************/
-		%feature("compactdefaultargs") gp_Ax22d;
-		%feature("autodoc", "Creates - a coordinate system where its origin is the origin of a and its 'x direction' is the unit vector of a, which is: - right-handed if sense is true (default value), or - left-handed if sense is false.
-
-Parameters
-----------
-A: gp_Ax2d
-Sense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") gp_Ax22d;
-		 gp_Ax22d(const gp_Ax2d & A, const Standard_Boolean Sense = Standard_True);
-
 };
 
 
@@ -1605,6 +1605,31 @@ None
 ****************/
 class gp_Ax2d {
 	public:
+		/****************** gp_Ax2d ******************/
+		%feature("compactdefaultargs") gp_Ax2d;
+		%feature("autodoc", "Creates an axis object representing x axis of the reference co-ordinate system.
+
+Returns
+-------
+None
+") gp_Ax2d;
+		 gp_Ax2d();
+
+		/****************** gp_Ax2d ******************/
+		%feature("compactdefaultargs") gp_Ax2d;
+		%feature("autodoc", "Creates an ax2d. <p> is the 'location' point of the axis placement and v is the 'direction' of the axis placement.
+
+Parameters
+----------
+P: gp_Pnt2d
+V: gp_Dir2d
+
+Returns
+-------
+None
+") gp_Ax2d;
+		 gp_Ax2d(const gp_Pnt2d & P, const gp_Dir2d & V);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Computes the angle, in radians, between this axis and the axis other. the value of the angle is between -pi and pi.
@@ -1950,31 +1975,6 @@ gp_Ax2d
 ") Translated;
 		gp_Ax2d Translated(const gp_Pnt2d & P1, const gp_Pnt2d & P2);
 
-		/****************** gp_Ax2d ******************/
-		%feature("compactdefaultargs") gp_Ax2d;
-		%feature("autodoc", "Creates an axis object representing x axis of the reference co-ordinate system.
-
-Returns
--------
-None
-") gp_Ax2d;
-		 gp_Ax2d();
-
-		/****************** gp_Ax2d ******************/
-		%feature("compactdefaultargs") gp_Ax2d;
-		%feature("autodoc", "Creates an ax2d. <p> is the 'location' point of the axis placement and v is the 'direction' of the axis placement.
-
-Parameters
-----------
-P: gp_Pnt2d
-V: gp_Dir2d
-
-Returns
--------
-None
-") gp_Ax2d;
-		 gp_Ax2d(const gp_Pnt2d & P, const gp_Dir2d & V);
-
 };
 
 
@@ -1989,6 +1989,61 @@ None
 ***************/
 class gp_Ax3 {
 	public:
+		/****************** gp_Ax3 ******************/
+		%feature("compactdefaultargs") gp_Ax3;
+		%feature("autodoc", "Creates an object corresponding to the reference coordinate system (oxyz).
+
+Returns
+-------
+None
+") gp_Ax3;
+		 gp_Ax3();
+
+		/****************** gp_Ax3 ******************/
+		%feature("compactdefaultargs") gp_Ax3;
+		%feature("autodoc", "Creates a coordinate system from a right-handed coordinate system.
+
+Parameters
+----------
+A: gp_Ax2
+
+Returns
+-------
+None
+") gp_Ax3;
+		 gp_Ax3(const gp_Ax2 & A);
+
+		/****************** gp_Ax3 ******************/
+		%feature("compactdefaultargs") gp_Ax3;
+		%feature("autodoc", "Creates a right handed axis placement with the 'location' point p and two directions, n gives the 'direction' and vx gives the 'xdirection'. raises constructionerror if n and vx are parallel (same or opposite orientation).
+
+Parameters
+----------
+P: gp_Pnt
+N: gp_Dir
+Vx: gp_Dir
+
+Returns
+-------
+None
+") gp_Ax3;
+		 gp_Ax3(const gp_Pnt & P, const gp_Dir & N, const gp_Dir & Vx);
+
+		/****************** gp_Ax3 ******************/
+		%feature("compactdefaultargs") gp_Ax3;
+		%feature("autodoc", "Creates an axis placement with the 'location' point <p> and the normal direction <v>.
+
+Parameters
+----------
+P: gp_Pnt
+V: gp_Dir
+
+Returns
+-------
+None
+") gp_Ax3;
+		 gp_Ax3(const gp_Pnt & P, const gp_Dir & V);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Computes the angular value between the main direction of <self> and the main direction of <other>. returns the angle between 0 and pi in radians.
@@ -2435,61 +2490,6 @@ None
 ") ZReverse;
 		void ZReverse();
 
-		/****************** gp_Ax3 ******************/
-		%feature("compactdefaultargs") gp_Ax3;
-		%feature("autodoc", "Creates an object corresponding to the reference coordinate system (oxyz).
-
-Returns
--------
-None
-") gp_Ax3;
-		 gp_Ax3();
-
-		/****************** gp_Ax3 ******************/
-		%feature("compactdefaultargs") gp_Ax3;
-		%feature("autodoc", "Creates a coordinate system from a right-handed coordinate system.
-
-Parameters
-----------
-A: gp_Ax2
-
-Returns
--------
-None
-") gp_Ax3;
-		 gp_Ax3(const gp_Ax2 & A);
-
-		/****************** gp_Ax3 ******************/
-		%feature("compactdefaultargs") gp_Ax3;
-		%feature("autodoc", "Creates a right handed axis placement with the 'location' point p and two directions, n gives the 'direction' and vx gives the 'xdirection'. raises constructionerror if n and vx are parallel (same or opposite orientation).
-
-Parameters
-----------
-P: gp_Pnt
-N: gp_Dir
-Vx: gp_Dir
-
-Returns
--------
-None
-") gp_Ax3;
-		 gp_Ax3(const gp_Pnt & P, const gp_Dir & N, const gp_Dir & Vx);
-
-		/****************** gp_Ax3 ******************/
-		%feature("compactdefaultargs") gp_Ax3;
-		%feature("autodoc", "Creates an axis placement with the 'location' point <p> and the normal direction <v>.
-
-Parameters
-----------
-P: gp_Pnt
-V: gp_Dir
-
-Returns
--------
-None
-") gp_Ax3;
-		 gp_Ax3(const gp_Pnt & P, const gp_Dir & V);
-
 };
 
 
@@ -2504,6 +2504,31 @@ None
 ****************/
 class gp_Circ {
 	public:
+		/****************** gp_Circ ******************/
+		%feature("compactdefaultargs") gp_Circ;
+		%feature("autodoc", "Creates an indefinite circle.
+
+Returns
+-------
+None
+") gp_Circ;
+		 gp_Circ();
+
+		/****************** gp_Circ ******************/
+		%feature("compactdefaultargs") gp_Circ;
+		%feature("autodoc", "A2 locates the circle and gives its orientation in 3d space. warnings : it is not forbidden to create a circle with radius = 0.0 raises constructionerror if radius < 0.0.
+
+Parameters
+----------
+A2: gp_Ax2
+Radius: float
+
+Returns
+-------
+None
+") gp_Circ;
+		 gp_Circ(const gp_Ax2 & A2, const Standard_Real Radius);
+
 		/****************** Area ******************/
 		%feature("compactdefaultargs") Area;
 		%feature("autodoc", "Computes the area of the circle.
@@ -2913,31 +2938,6 @@ gp_Ax1
 ") YAxis;
 		gp_Ax1 YAxis();
 
-		/****************** gp_Circ ******************/
-		%feature("compactdefaultargs") gp_Circ;
-		%feature("autodoc", "Creates an indefinite circle.
-
-Returns
--------
-None
-") gp_Circ;
-		 gp_Circ();
-
-		/****************** gp_Circ ******************/
-		%feature("compactdefaultargs") gp_Circ;
-		%feature("autodoc", "A2 locates the circle and gives its orientation in 3d space. warnings : it is not forbidden to create a circle with radius = 0.0 raises constructionerror if radius < 0.0.
-
-Parameters
-----------
-A2: gp_Ax2
-Radius: float
-
-Returns
--------
-None
-") gp_Circ;
-		 gp_Circ(const gp_Ax2 & A2, const Standard_Real Radius);
-
 };
 
 
@@ -2952,6 +2952,48 @@ None
 ******************/
 class gp_Circ2d {
 	public:
+		/****************** gp_Circ2d ******************/
+		%feature("compactdefaultargs") gp_Circ2d;
+		%feature("autodoc", "Creates an indefinite circle.
+
+Returns
+-------
+None
+") gp_Circ2d;
+		 gp_Circ2d();
+
+		/****************** gp_Circ2d ******************/
+		%feature("compactdefaultargs") gp_Circ2d;
+		%feature("autodoc", "The location point of xaxis is the center of the circle. warnings : it is not forbidden to create a circle with radius = 0.0 raises constructionerror if radius < 0.0. raised if radius < 0.0.
+
+Parameters
+----------
+XAxis: gp_Ax2d
+Radius: float
+Sense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") gp_Circ2d;
+		 gp_Circ2d(const gp_Ax2d & XAxis, const Standard_Real Radius, const Standard_Boolean Sense = Standard_True);
+
+		/****************** gp_Circ2d ******************/
+		%feature("compactdefaultargs") gp_Circ2d;
+		%feature("autodoc", "Axis defines the xaxis and yaxis of the circle which defines the origin and the sense of parametrization. the location point of axis is the center of the circle. warnings : it is not forbidden to create a circle with radius = 0.0 raises constructionerror if radius < 0.0. raised if radius < 0.0.
+
+Parameters
+----------
+Axis: gp_Ax22d
+Radius: float
+
+Returns
+-------
+None
+") gp_Circ2d;
+		 gp_Circ2d(const gp_Ax22d & Axis, const Standard_Real Radius);
+
 		/****************** Area ******************/
 		%feature("compactdefaultargs") Area;
 		%feature("autodoc", "Computes the area of the circle.
@@ -3396,48 +3438,6 @@ gp_Ax2d
 ") YAxis;
 		gp_Ax2d YAxis();
 
-		/****************** gp_Circ2d ******************/
-		%feature("compactdefaultargs") gp_Circ2d;
-		%feature("autodoc", "Creates an indefinite circle.
-
-Returns
--------
-None
-") gp_Circ2d;
-		 gp_Circ2d();
-
-		/****************** gp_Circ2d ******************/
-		%feature("compactdefaultargs") gp_Circ2d;
-		%feature("autodoc", "The location point of xaxis is the center of the circle. warnings : it is not forbidden to create a circle with radius = 0.0 raises constructionerror if radius < 0.0. raised if radius < 0.0.
-
-Parameters
-----------
-XAxis: gp_Ax2d
-Radius: float
-Sense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") gp_Circ2d;
-		 gp_Circ2d(const gp_Ax2d & XAxis, const Standard_Real Radius, const Standard_Boolean Sense = Standard_True);
-
-		/****************** gp_Circ2d ******************/
-		%feature("compactdefaultargs") gp_Circ2d;
-		%feature("autodoc", "Axis defines the xaxis and yaxis of the circle which defines the origin and the sense of parametrization. the location point of axis is the center of the circle. warnings : it is not forbidden to create a circle with radius = 0.0 raises constructionerror if radius < 0.0. raised if radius < 0.0.
-
-Parameters
-----------
-Axis: gp_Ax22d
-Radius: float
-
-Returns
--------
-None
-") gp_Circ2d;
-		 gp_Circ2d(const gp_Ax22d & Axis, const Standard_Real Radius);
-
 };
 
 
@@ -3452,6 +3452,32 @@ None
 ****************/
 class gp_Cone {
 	public:
+		/****************** gp_Cone ******************/
+		%feature("compactdefaultargs") gp_Cone;
+		%feature("autodoc", "Creates an indefinite cone.
+
+Returns
+-------
+None
+") gp_Cone;
+		 gp_Cone();
+
+		/****************** gp_Cone ******************/
+		%feature("compactdefaultargs") gp_Cone;
+		%feature("autodoc", "Creates an infinite conical surface. a3 locates the cone in the space and defines the reference plane of the surface. ang is the conical surface semi-angle. its absolute value is in range ]0, pi/2[. radius is the radius of the circle in the reference plane of the cone. raises constructionerror * if radius is lower than 0.0 * abs(ang) < resolution from gp or abs(ang) >= (pi/2) - resolution.
+
+Parameters
+----------
+A3: gp_Ax3
+Ang: float
+Radius: float
+
+Returns
+-------
+None
+") gp_Cone;
+		 gp_Cone(const gp_Ax3 & A3, const Standard_Real Ang, const Standard_Real Radius);
+
 		/****************** Apex ******************/
 		%feature("compactdefaultargs") Apex;
 		%feature("autodoc", "Computes the cone's top. the apex of the cone is on the negative side of the symmetry axis of the cone.
@@ -3885,32 +3911,6 @@ gp_Ax1
 ") YAxis;
 		gp_Ax1 YAxis();
 
-		/****************** gp_Cone ******************/
-		%feature("compactdefaultargs") gp_Cone;
-		%feature("autodoc", "Creates an indefinite cone.
-
-Returns
--------
-None
-") gp_Cone;
-		 gp_Cone();
-
-		/****************** gp_Cone ******************/
-		%feature("compactdefaultargs") gp_Cone;
-		%feature("autodoc", "Creates an infinite conical surface. a3 locates the cone in the space and defines the reference plane of the surface. ang is the conical surface semi-angle. its absolute value is in range ]0, pi/2[. radius is the radius of the circle in the reference plane of the cone. raises constructionerror * if radius is lower than 0.0 * abs(ang) < resolution from gp or abs(ang) >= (pi/2) - resolution.
-
-Parameters
-----------
-A3: gp_Ax3
-Ang: float
-Radius: float
-
-Returns
--------
-None
-") gp_Cone;
-		 gp_Cone(const gp_Ax3 & A3, const Standard_Real Ang, const Standard_Real Radius);
-
 };
 
 
@@ -3925,6 +3925,31 @@ None
 ********************/
 class gp_Cylinder {
 	public:
+		/****************** gp_Cylinder ******************/
+		%feature("compactdefaultargs") gp_Cylinder;
+		%feature("autodoc", "Creates a indefinite cylinder.
+
+Returns
+-------
+None
+") gp_Cylinder;
+		 gp_Cylinder();
+
+		/****************** gp_Cylinder ******************/
+		%feature("compactdefaultargs") gp_Cylinder;
+		%feature("autodoc", "Creates a cylinder of radius radius, whose axis is the 'main axis' of a3. a3 is the local coordinate system of the cylinder. raises constructionerrord if r < 0.0.
+
+Parameters
+----------
+A3: gp_Ax3
+Radius: float
+
+Returns
+-------
+None
+") gp_Cylinder;
+		 gp_Cylinder(const gp_Ax3 & A3, const Standard_Real Radius);
+
 		/****************** Axis ******************/
 		%feature("compactdefaultargs") Axis;
 		%feature("autodoc", "Returns the symmetry axis of the cylinder.
@@ -4324,31 +4349,6 @@ gp_Ax1
 ") YAxis;
 		gp_Ax1 YAxis();
 
-		/****************** gp_Cylinder ******************/
-		%feature("compactdefaultargs") gp_Cylinder;
-		%feature("autodoc", "Creates a indefinite cylinder.
-
-Returns
--------
-None
-") gp_Cylinder;
-		 gp_Cylinder();
-
-		/****************** gp_Cylinder ******************/
-		%feature("compactdefaultargs") gp_Cylinder;
-		%feature("autodoc", "Creates a cylinder of radius radius, whose axis is the 'main axis' of a3. a3 is the local coordinate system of the cylinder. raises constructionerrord if r < 0.0.
-
-Parameters
-----------
-A3: gp_Ax3
-Radius: float
-
-Returns
--------
-None
-") gp_Cylinder;
-		 gp_Cylinder(const gp_Ax3 & A3, const Standard_Real Radius);
-
 };
 
 
@@ -4363,6 +4363,60 @@ None
 ***************/
 class gp_Dir {
 	public:
+		/****************** gp_Dir ******************/
+		%feature("compactdefaultargs") gp_Dir;
+		%feature("autodoc", "Creates a direction corresponding to x axis.
+
+Returns
+-------
+None
+") gp_Dir;
+		 gp_Dir();
+
+		/****************** gp_Dir ******************/
+		%feature("compactdefaultargs") gp_Dir;
+		%feature("autodoc", "Normalizes the vector v and creates a direction. raises constructionerror if v.magnitude() <= resolution.
+
+Parameters
+----------
+V: gp_Vec
+
+Returns
+-------
+None
+") gp_Dir;
+		 gp_Dir(const gp_Vec & V);
+
+		/****************** gp_Dir ******************/
+		%feature("compactdefaultargs") gp_Dir;
+		%feature("autodoc", "Creates a direction from a triplet of coordinates. raises constructionerror if coord.modulus() <= resolution from gp.
+
+Parameters
+----------
+Coord: gp_XYZ
+
+Returns
+-------
+None
+") gp_Dir;
+		 gp_Dir(const gp_XYZ & Coord);
+
+		/****************** gp_Dir ******************/
+		%feature("compactdefaultargs") gp_Dir;
+		%feature("autodoc", "Creates a direction with its 3 cartesian coordinates. raises constructionerror if sqrt(xv*xv + yv*yv + zv*zv) <= resolution modification of the direction's coordinates if sqrt (x*x + y*y + z*z) <= resolution from gp where x, y ,z are the new coordinates it is not possible to construct the direction and the method raises the exception constructionerror.
+
+Parameters
+----------
+Xv: float
+Yv: float
+Zv: float
+
+Returns
+-------
+None
+") gp_Dir;
+		 gp_Dir(const Standard_Real Xv, const Standard_Real Yv, const Standard_Real Zv);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Computes the angular value in radians between <self> and <other>. this value is always positive in 3d space. returns the angle in the range [0, pi].
@@ -4858,60 +4912,6 @@ float
 ") Z;
 		Standard_Real Z();
 
-		/****************** gp_Dir ******************/
-		%feature("compactdefaultargs") gp_Dir;
-		%feature("autodoc", "Creates a direction corresponding to x axis.
-
-Returns
--------
-None
-") gp_Dir;
-		 gp_Dir();
-
-		/****************** gp_Dir ******************/
-		%feature("compactdefaultargs") gp_Dir;
-		%feature("autodoc", "Normalizes the vector v and creates a direction. raises constructionerror if v.magnitude() <= resolution.
-
-Parameters
-----------
-V: gp_Vec
-
-Returns
--------
-None
-") gp_Dir;
-		 gp_Dir(const gp_Vec & V);
-
-		/****************** gp_Dir ******************/
-		%feature("compactdefaultargs") gp_Dir;
-		%feature("autodoc", "Creates a direction from a triplet of coordinates. raises constructionerror if coord.modulus() <= resolution from gp.
-
-Parameters
-----------
-Coord: gp_XYZ
-
-Returns
--------
-None
-") gp_Dir;
-		 gp_Dir(const gp_XYZ & Coord);
-
-		/****************** gp_Dir ******************/
-		%feature("compactdefaultargs") gp_Dir;
-		%feature("autodoc", "Creates a direction with its 3 cartesian coordinates. raises constructionerror if sqrt(xv*xv + yv*yv + zv*zv) <= resolution modification of the direction's coordinates if sqrt (x*x + y*y + z*z) <= resolution from gp where x, y ,z are the new coordinates it is not possible to construct the direction and the method raises the exception constructionerror.
-
-Parameters
-----------
-Xv: float
-Yv: float
-Zv: float
-
-Returns
--------
-None
-") gp_Dir;
-		 gp_Dir(const Standard_Real Xv, const Standard_Real Yv, const Standard_Real Zv);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -4950,6 +4950,59 @@ gp_Dir
 *****************/
 class gp_Dir2d {
 	public:
+		/****************** gp_Dir2d ******************/
+		%feature("compactdefaultargs") gp_Dir2d;
+		%feature("autodoc", "Creates a direction corresponding to x axis.
+
+Returns
+-------
+None
+") gp_Dir2d;
+		 gp_Dir2d();
+
+		/****************** gp_Dir2d ******************/
+		%feature("compactdefaultargs") gp_Dir2d;
+		%feature("autodoc", "Normalizes the vector v and creates a direction. raises constructionerror if v.magnitude() <= resolution from gp.
+
+Parameters
+----------
+V: gp_Vec2d
+
+Returns
+-------
+None
+") gp_Dir2d;
+		 gp_Dir2d(const gp_Vec2d & V);
+
+		/****************** gp_Dir2d ******************/
+		%feature("compactdefaultargs") gp_Dir2d;
+		%feature("autodoc", "Creates a direction from a doublet of coordinates. raises constructionerror if coord.modulus() <= resolution from gp.
+
+Parameters
+----------
+Coord: gp_XY
+
+Returns
+-------
+None
+") gp_Dir2d;
+		 gp_Dir2d(const gp_XY & Coord);
+
+		/****************** gp_Dir2d ******************/
+		%feature("compactdefaultargs") gp_Dir2d;
+		%feature("autodoc", "Creates a direction with its 2 cartesian coordinates. raises constructionerror if sqrt(xv*xv + yv*yv) <= resolution from gp.
+
+Parameters
+----------
+Xv: float
+Yv: float
+
+Returns
+-------
+None
+") gp_Dir2d;
+		 gp_Dir2d(const Standard_Real Xv, const Standard_Real Yv);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Computes the angular value in radians between <self> and <other>. returns the angle in the range [-pi, pi].
@@ -5315,59 +5368,6 @@ float
 ") Y;
 		Standard_Real Y();
 
-		/****************** gp_Dir2d ******************/
-		%feature("compactdefaultargs") gp_Dir2d;
-		%feature("autodoc", "Creates a direction corresponding to x axis.
-
-Returns
--------
-None
-") gp_Dir2d;
-		 gp_Dir2d();
-
-		/****************** gp_Dir2d ******************/
-		%feature("compactdefaultargs") gp_Dir2d;
-		%feature("autodoc", "Normalizes the vector v and creates a direction. raises constructionerror if v.magnitude() <= resolution from gp.
-
-Parameters
-----------
-V: gp_Vec2d
-
-Returns
--------
-None
-") gp_Dir2d;
-		 gp_Dir2d(const gp_Vec2d & V);
-
-		/****************** gp_Dir2d ******************/
-		%feature("compactdefaultargs") gp_Dir2d;
-		%feature("autodoc", "Creates a direction from a doublet of coordinates. raises constructionerror if coord.modulus() <= resolution from gp.
-
-Parameters
-----------
-Coord: gp_XY
-
-Returns
--------
-None
-") gp_Dir2d;
-		 gp_Dir2d(const gp_XY & Coord);
-
-		/****************** gp_Dir2d ******************/
-		%feature("compactdefaultargs") gp_Dir2d;
-		%feature("autodoc", "Creates a direction with its 2 cartesian coordinates. raises constructionerror if sqrt(xv*xv + yv*yv) <= resolution from gp.
-
-Parameters
-----------
-Xv: float
-Yv: float
-
-Returns
--------
-None
-") gp_Dir2d;
-		 gp_Dir2d(const Standard_Real Xv, const Standard_Real Yv);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -5406,6 +5406,32 @@ gp_Dir2d
 *****************/
 class gp_Elips {
 	public:
+		/****************** gp_Elips ******************/
+		%feature("compactdefaultargs") gp_Elips;
+		%feature("autodoc", "Creates an indefinite ellipse.
+
+Returns
+-------
+None
+") gp_Elips;
+		 gp_Elips();
+
+		/****************** gp_Elips ******************/
+		%feature("compactdefaultargs") gp_Elips;
+		%feature("autodoc", "The major radius of the ellipse is on the 'xaxis' and the minor radius is on the 'yaxis' of the ellipse. the 'xaxis' is defined with the 'xdirection' of a2 and the 'yaxis' is defined with the 'ydirection' of a2. warnings : it is not forbidden to create an ellipse with majorradius = minorradius. raises constructionerror if majorradius < minorradius or minorradius < 0.
+
+Parameters
+----------
+A2: gp_Ax2
+MajorRadius: float
+MinorRadius: float
+
+Returns
+-------
+None
+") gp_Elips;
+		 gp_Elips(const gp_Ax2 & A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+
 		/****************** Area ******************/
 		%feature("compactdefaultargs") Area;
 		%feature("autodoc", "Computes the area of the ellipse.
@@ -5856,32 +5882,6 @@ gp_Ax1
 ") YAxis;
 		gp_Ax1 YAxis();
 
-		/****************** gp_Elips ******************/
-		%feature("compactdefaultargs") gp_Elips;
-		%feature("autodoc", "Creates an indefinite ellipse.
-
-Returns
--------
-None
-") gp_Elips;
-		 gp_Elips();
-
-		/****************** gp_Elips ******************/
-		%feature("compactdefaultargs") gp_Elips;
-		%feature("autodoc", "The major radius of the ellipse is on the 'xaxis' and the minor radius is on the 'yaxis' of the ellipse. the 'xaxis' is defined with the 'xdirection' of a2 and the 'yaxis' is defined with the 'ydirection' of a2. warnings : it is not forbidden to create an ellipse with majorradius = minorradius. raises constructionerror if majorradius < minorradius or minorradius < 0.
-
-Parameters
-----------
-A2: gp_Ax2
-MajorRadius: float
-MinorRadius: float
-
-Returns
--------
-None
-") gp_Elips;
-		 gp_Elips(const gp_Ax2 & A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-
 };
 
 
@@ -5896,6 +5896,50 @@ None
 *******************/
 class gp_Elips2d {
 	public:
+		/****************** gp_Elips2d ******************/
+		%feature("compactdefaultargs") gp_Elips2d;
+		%feature("autodoc", "Creates an indefinite ellipse.
+
+Returns
+-------
+None
+") gp_Elips2d;
+		 gp_Elips2d();
+
+		/****************** gp_Elips2d ******************/
+		%feature("compactdefaultargs") gp_Elips2d;
+		%feature("autodoc", "Creates an ellipse with the major axis, the major and the minor radius. the location of the majoraxis is the center of the ellipse. the sense of parametrization is given by sense. warnings : it is possible to create an ellipse with majorradius = minorradius. raises constructionerror if majorradius < minorradius or minorradius < 0.0.
+
+Parameters
+----------
+MajorAxis: gp_Ax2d
+MajorRadius: float
+MinorRadius: float
+Sense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") gp_Elips2d;
+		 gp_Elips2d(const gp_Ax2d & MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense = Standard_True);
+
+		/****************** gp_Elips2d ******************/
+		%feature("compactdefaultargs") gp_Elips2d;
+		%feature("autodoc", "Creates an ellipse with radii majorradius and minorradius, positioned in the plane by coordinate system a where: - the origin of a is the center of the ellipse, - the 'x direction' of a defines the major axis of the ellipse, that is, the major radius majorradius is measured along this axis, and - the 'y direction' of a defines the minor axis of the ellipse, that is, the minor radius minorradius is measured along this axis, and - the orientation (direct or indirect sense) of a gives the orientation of the ellipse. warnings : it is possible to create an ellipse with majorradius = minorradius. raises constructionerror if majorradius < minorradius or minorradius < 0.0.
+
+Parameters
+----------
+A: gp_Ax22d
+MajorRadius: float
+MinorRadius: float
+
+Returns
+-------
+None
+") gp_Elips2d;
+		 gp_Elips2d(const gp_Ax22d & A, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+
 		/****************** Area ******************/
 		%feature("compactdefaultargs") Area;
 		%feature("autodoc", "Computes the area of the ellipse.
@@ -6371,50 +6415,6 @@ gp_Ax2d
 ") YAxis;
 		gp_Ax2d YAxis();
 
-		/****************** gp_Elips2d ******************/
-		%feature("compactdefaultargs") gp_Elips2d;
-		%feature("autodoc", "Creates an indefinite ellipse.
-
-Returns
--------
-None
-") gp_Elips2d;
-		 gp_Elips2d();
-
-		/****************** gp_Elips2d ******************/
-		%feature("compactdefaultargs") gp_Elips2d;
-		%feature("autodoc", "Creates an ellipse with the major axis, the major and the minor radius. the location of the majoraxis is the center of the ellipse. the sense of parametrization is given by sense. warnings : it is possible to create an ellipse with majorradius = minorradius. raises constructionerror if majorradius < minorradius or minorradius < 0.0.
-
-Parameters
-----------
-MajorAxis: gp_Ax2d
-MajorRadius: float
-MinorRadius: float
-Sense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") gp_Elips2d;
-		 gp_Elips2d(const gp_Ax2d & MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense = Standard_True);
-
-		/****************** gp_Elips2d ******************/
-		%feature("compactdefaultargs") gp_Elips2d;
-		%feature("autodoc", "Creates an ellipse with radii majorradius and minorradius, positioned in the plane by coordinate system a where: - the origin of a is the center of the ellipse, - the 'x direction' of a defines the major axis of the ellipse, that is, the major radius majorradius is measured along this axis, and - the 'y direction' of a defines the minor axis of the ellipse, that is, the minor radius minorradius is measured along this axis, and - the orientation (direct or indirect sense) of a gives the orientation of the ellipse. warnings : it is possible to create an ellipse with majorradius = minorradius. raises constructionerror if majorradius < minorradius or minorradius < 0.0.
-
-Parameters
-----------
-A: gp_Ax22d
-MajorRadius: float
-MinorRadius: float
-
-Returns
--------
-None
-") gp_Elips2d;
-		 gp_Elips2d(const gp_Ax22d & A, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-
 };
 
 
@@ -6429,6 +6429,45 @@ None
 *****************/
 class gp_GTrsf {
 	public:
+		/****************** gp_GTrsf ******************/
+		%feature("compactdefaultargs") gp_GTrsf;
+		%feature("autodoc", "Returns the identity transformation.
+
+Returns
+-------
+None
+") gp_GTrsf;
+		 gp_GTrsf();
+
+		/****************** gp_GTrsf ******************/
+		%feature("compactdefaultargs") gp_GTrsf;
+		%feature("autodoc", "Converts the gp_trsf transformation t into a general transformation, i.e. returns a gtrsf with the same matrix of coefficients as the trsf t.
+
+Parameters
+----------
+T: gp_Trsf
+
+Returns
+-------
+None
+") gp_GTrsf;
+		 gp_GTrsf(const gp_Trsf & T);
+
+		/****************** gp_GTrsf ******************/
+		%feature("compactdefaultargs") gp_GTrsf;
+		%feature("autodoc", "Creates a transformation based on the matrix m and the vector v where m defines the vectorial part of the transformation, and v the translation part, or.
+
+Parameters
+----------
+M: gp_Mat
+V: gp_XYZ
+
+Returns
+-------
+None
+") gp_GTrsf;
+		 gp_GTrsf(const gp_Mat & M, const gp_XYZ & V);
+
 		/****************** Form ******************/
 		%feature("compactdefaultargs") Form;
 		%feature("autodoc", "Returns the nature of the transformation. it can be an identity transformation, a rotation, a translation, a mirror transformation (relative to a point, an axis or a plane), a scaling transformation, a compound transformation or some other type of transformation.
@@ -6722,45 +6761,6 @@ gp_Mat
 ") VectorialPart;
 		const gp_Mat VectorialPart();
 
-		/****************** gp_GTrsf ******************/
-		%feature("compactdefaultargs") gp_GTrsf;
-		%feature("autodoc", "Returns the identity transformation.
-
-Returns
--------
-None
-") gp_GTrsf;
-		 gp_GTrsf();
-
-		/****************** gp_GTrsf ******************/
-		%feature("compactdefaultargs") gp_GTrsf;
-		%feature("autodoc", "Converts the gp_trsf transformation t into a general transformation, i.e. returns a gtrsf with the same matrix of coefficients as the trsf t.
-
-Parameters
-----------
-T: gp_Trsf
-
-Returns
--------
-None
-") gp_GTrsf;
-		 gp_GTrsf(const gp_Trsf & T);
-
-		/****************** gp_GTrsf ******************/
-		%feature("compactdefaultargs") gp_GTrsf;
-		%feature("autodoc", "Creates a transformation based on the matrix m and the vector v where m defines the vectorial part of the transformation, and v the translation part, or.
-
-Parameters
-----------
-M: gp_Mat
-V: gp_XYZ
-
-Returns
--------
-None
-") gp_GTrsf;
-		 gp_GTrsf(const gp_Mat & M, const gp_XYZ & V);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -6800,6 +6800,45 @@ gp_GTrsf
 *******************/
 class gp_GTrsf2d {
 	public:
+		/****************** gp_GTrsf2d ******************/
+		%feature("compactdefaultargs") gp_GTrsf2d;
+		%feature("autodoc", "Returns identity transformation.
+
+Returns
+-------
+None
+") gp_GTrsf2d;
+		 gp_GTrsf2d();
+
+		/****************** gp_GTrsf2d ******************/
+		%feature("compactdefaultargs") gp_GTrsf2d;
+		%feature("autodoc", "Converts the gp_trsf2d transformation t into a general transformation.
+
+Parameters
+----------
+T: gp_Trsf2d
+
+Returns
+-------
+None
+") gp_GTrsf2d;
+		 gp_GTrsf2d(const gp_Trsf2d & T);
+
+		/****************** gp_GTrsf2d ******************/
+		%feature("compactdefaultargs") gp_GTrsf2d;
+		%feature("autodoc", "Creates a transformation based on the matrix m and the vector v where m defines the vectorial part of the transformation, and v the translation part.
+
+Parameters
+----------
+M: gp_Mat2d
+V: gp_XY
+
+Returns
+-------
+None
+") gp_GTrsf2d;
+		 gp_GTrsf2d(const gp_Mat2d & M, const gp_XY & V);
+
 		/****************** Form ******************/
 		%feature("compactdefaultargs") Form;
 		%feature("autodoc", "Returns the nature of the transformation. it can be an identity transformation, a rotation, a translation, a mirror transformation (relative to a point or axis), a scaling transformation, a compound transformation or some other type of transformation.
@@ -7081,45 +7120,6 @@ gp_Mat2d
 ") VectorialPart;
 		const gp_Mat2d VectorialPart();
 
-		/****************** gp_GTrsf2d ******************/
-		%feature("compactdefaultargs") gp_GTrsf2d;
-		%feature("autodoc", "Returns identity transformation.
-
-Returns
--------
-None
-") gp_GTrsf2d;
-		 gp_GTrsf2d();
-
-		/****************** gp_GTrsf2d ******************/
-		%feature("compactdefaultargs") gp_GTrsf2d;
-		%feature("autodoc", "Converts the gp_trsf2d transformation t into a general transformation.
-
-Parameters
-----------
-T: gp_Trsf2d
-
-Returns
--------
-None
-") gp_GTrsf2d;
-		 gp_GTrsf2d(const gp_Trsf2d & T);
-
-		/****************** gp_GTrsf2d ******************/
-		%feature("compactdefaultargs") gp_GTrsf2d;
-		%feature("autodoc", "Creates a transformation based on the matrix m and the vector v where m defines the vectorial part of the transformation, and v the translation part.
-
-Parameters
-----------
-M: gp_Mat2d
-V: gp_XY
-
-Returns
--------
-None
-") gp_GTrsf2d;
-		 gp_GTrsf2d(const gp_Mat2d & M, const gp_XY & V);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -7159,6 +7159,32 @@ gp_GTrsf2d
 ****************/
 class gp_Hypr {
 	public:
+		/****************** gp_Hypr ******************/
+		%feature("compactdefaultargs") gp_Hypr;
+		%feature("autodoc", "Creates of an indefinite hyperbola.
+
+Returns
+-------
+None
+") gp_Hypr;
+		 gp_Hypr();
+
+		/****************** gp_Hypr ******************/
+		%feature("compactdefaultargs") gp_Hypr;
+		%feature("autodoc", "Creates a hyperbola with radii majorradius and minorradius, positioned in the space by the coordinate system a2 such that: - the origin of a2 is the center of the hyperbola, - the 'x direction' of a2 defines the major axis of the hyperbola, that is, the major radius majorradius is measured along this axis, and - the 'y direction' of a2 defines the minor axis of the hyperbola, that is, the minor radius minorradius is measured along this axis. note: this class does not prevent the creation of a hyperbola where: - majoraxis is equal to minoraxis, or - majoraxis is less than minoraxis. exceptions standard_constructionerror if majoraxis or minoraxis is negative. raises constructionerror if majorradius < 0.0 or minorradius < 0.0 raised if majorradius < 0.0 or minorradius < 0.0.
+
+Parameters
+----------
+A2: gp_Ax2
+MajorRadius: float
+MinorRadius: float
+
+Returns
+-------
+None
+") gp_Hypr;
+		 gp_Hypr(const gp_Ax2 & A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+
 		/****************** Asymptote1 ******************/
 		%feature("compactdefaultargs") Asymptote1;
 		%feature("autodoc", "In the local coordinate system of the hyperbola the equation of the hyperbola is (x*x)/(a*a) - (y*y)/(b*b) = 1.0 and the equation of the first asymptote is y = (b/a)*x where a is the major radius and b is the minor radius. raises constructionerror if majorradius = 0.0.
@@ -7649,32 +7675,6 @@ gp_Ax1
 ") YAxis;
 		gp_Ax1 YAxis();
 
-		/****************** gp_Hypr ******************/
-		%feature("compactdefaultargs") gp_Hypr;
-		%feature("autodoc", "Creates of an indefinite hyperbola.
-
-Returns
--------
-None
-") gp_Hypr;
-		 gp_Hypr();
-
-		/****************** gp_Hypr ******************/
-		%feature("compactdefaultargs") gp_Hypr;
-		%feature("autodoc", "Creates a hyperbola with radii majorradius and minorradius, positioned in the space by the coordinate system a2 such that: - the origin of a2 is the center of the hyperbola, - the 'x direction' of a2 defines the major axis of the hyperbola, that is, the major radius majorradius is measured along this axis, and - the 'y direction' of a2 defines the minor axis of the hyperbola, that is, the minor radius minorradius is measured along this axis. note: this class does not prevent the creation of a hyperbola where: - majoraxis is equal to minoraxis, or - majoraxis is less than minoraxis. exceptions standard_constructionerror if majoraxis or minoraxis is negative. raises constructionerror if majorradius < 0.0 or minorradius < 0.0 raised if majorradius < 0.0 or minorradius < 0.0.
-
-Parameters
-----------
-A2: gp_Ax2
-MajorRadius: float
-MinorRadius: float
-
-Returns
--------
-None
-") gp_Hypr;
-		 gp_Hypr(const gp_Ax2 & A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-
 };
 
 
@@ -7689,6 +7689,50 @@ None
 ******************/
 class gp_Hypr2d {
 	public:
+		/****************** gp_Hypr2d ******************/
+		%feature("compactdefaultargs") gp_Hypr2d;
+		%feature("autodoc", "Creates of an indefinite hyperbola.
+
+Returns
+-------
+None
+") gp_Hypr2d;
+		 gp_Hypr2d();
+
+		/****************** gp_Hypr2d ******************/
+		%feature("compactdefaultargs") gp_Hypr2d;
+		%feature("autodoc", "Creates a hyperbola with radii majorradius and minorradius, centered on the origin of majoraxis and where the unit vector of majoraxis is the 'x direction' of the local coordinate system of the hyperbola. this coordinate system is direct if sense is true (the default value), and indirect if sense is false. warnings : it is yet possible to create an hyperbola with majorradius <= minorradius. raises constructionerror if majorradius < 0.0 or minorradius < 0.0.
+
+Parameters
+----------
+MajorAxis: gp_Ax2d
+MajorRadius: float
+MinorRadius: float
+Sense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") gp_Hypr2d;
+		 gp_Hypr2d(const gp_Ax2d & MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense = Standard_True);
+
+		/****************** gp_Hypr2d ******************/
+		%feature("compactdefaultargs") gp_Hypr2d;
+		%feature("autodoc", "A hyperbola with radii majorradius and minorradius, positioned in the plane by coordinate system a where: - the origin of a is the center of the hyperbola, - the 'x direction' of a defines the major axis of the hyperbola, that is, the major radius majorradius is measured along this axis, and - the 'y direction' of a defines the minor axis of the hyperbola, that is, the minor radius minorradius is measured along this axis, and - the orientation (direct or indirect sense) of a gives the implicit orientation of the hyperbola. warnings : it is yet possible to create an hyperbola with majorradius <= minorradius. raises constructionerror if majorradius < 0.0 or minorradius < 0.0.
+
+Parameters
+----------
+A: gp_Ax22d
+MajorRadius: float
+MinorRadius: float
+
+Returns
+-------
+None
+") gp_Hypr2d;
+		 gp_Hypr2d(const gp_Ax22d & A, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+
 		/****************** Asymptote1 ******************/
 		%feature("compactdefaultargs") Asymptote1;
 		%feature("autodoc", "In the local coordinate system of the hyperbola the equation of the hyperbola is (x*x)/(a*a) - (y*y)/(b*b) = 1.0 and the equation of the first asymptote is y = (b/a)*x where a is the major radius of the hyperbola and b the minor radius of the hyperbola. raises constructionerror if majorradius = 0.0.
@@ -8204,50 +8248,6 @@ gp_Ax2d
 ") YAxis;
 		gp_Ax2d YAxis();
 
-		/****************** gp_Hypr2d ******************/
-		%feature("compactdefaultargs") gp_Hypr2d;
-		%feature("autodoc", "Creates of an indefinite hyperbola.
-
-Returns
--------
-None
-") gp_Hypr2d;
-		 gp_Hypr2d();
-
-		/****************** gp_Hypr2d ******************/
-		%feature("compactdefaultargs") gp_Hypr2d;
-		%feature("autodoc", "Creates a hyperbola with radii majorradius and minorradius, centered on the origin of majoraxis and where the unit vector of majoraxis is the 'x direction' of the local coordinate system of the hyperbola. this coordinate system is direct if sense is true (the default value), and indirect if sense is false. warnings : it is yet possible to create an hyperbola with majorradius <= minorradius. raises constructionerror if majorradius < 0.0 or minorradius < 0.0.
-
-Parameters
-----------
-MajorAxis: gp_Ax2d
-MajorRadius: float
-MinorRadius: float
-Sense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") gp_Hypr2d;
-		 gp_Hypr2d(const gp_Ax2d & MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense = Standard_True);
-
-		/****************** gp_Hypr2d ******************/
-		%feature("compactdefaultargs") gp_Hypr2d;
-		%feature("autodoc", "A hyperbola with radii majorradius and minorradius, positioned in the plane by coordinate system a where: - the origin of a is the center of the hyperbola, - the 'x direction' of a defines the major axis of the hyperbola, that is, the major radius majorradius is measured along this axis, and - the 'y direction' of a defines the minor axis of the hyperbola, that is, the minor radius minorradius is measured along this axis, and - the orientation (direct or indirect sense) of a gives the implicit orientation of the hyperbola. warnings : it is yet possible to create an hyperbola with majorradius <= minorradius. raises constructionerror if majorradius < 0.0 or minorradius < 0.0.
-
-Parameters
-----------
-A: gp_Ax22d
-MajorRadius: float
-MinorRadius: float
-
-Returns
--------
-None
-") gp_Hypr2d;
-		 gp_Hypr2d(const gp_Ax22d & A, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-
 };
 
 
@@ -8262,6 +8262,45 @@ None
 ***************/
 class gp_Lin {
 	public:
+		/****************** gp_Lin ******************/
+		%feature("compactdefaultargs") gp_Lin;
+		%feature("autodoc", "Creates a line corresponding to z axis of the reference coordinate system.
+
+Returns
+-------
+None
+") gp_Lin;
+		 gp_Lin();
+
+		/****************** gp_Lin ******************/
+		%feature("compactdefaultargs") gp_Lin;
+		%feature("autodoc", "Creates a line defined by axis a1.
+
+Parameters
+----------
+A1: gp_Ax1
+
+Returns
+-------
+None
+") gp_Lin;
+		 gp_Lin(const gp_Ax1 & A1);
+
+		/****************** gp_Lin ******************/
+		%feature("compactdefaultargs") gp_Lin;
+		%feature("autodoc", "Creates a line passing through point p and parallel to vector v (p and v are, respectively, the origin and the unit vector of the positioning axis of the line).
+
+Parameters
+----------
+P: gp_Pnt
+V: gp_Dir
+
+Returns
+-------
+None
+") gp_Lin;
+		 gp_Lin(const gp_Pnt & P, const gp_Dir & V);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Computes the angle between two lines in radians.
@@ -8683,45 +8722,6 @@ gp_Lin
 ") Translated;
 		gp_Lin Translated(const gp_Pnt & P1, const gp_Pnt & P2);
 
-		/****************** gp_Lin ******************/
-		%feature("compactdefaultargs") gp_Lin;
-		%feature("autodoc", "Creates a line corresponding to z axis of the reference coordinate system.
-
-Returns
--------
-None
-") gp_Lin;
-		 gp_Lin();
-
-		/****************** gp_Lin ******************/
-		%feature("compactdefaultargs") gp_Lin;
-		%feature("autodoc", "Creates a line defined by axis a1.
-
-Parameters
-----------
-A1: gp_Ax1
-
-Returns
--------
-None
-") gp_Lin;
-		 gp_Lin(const gp_Ax1 & A1);
-
-		/****************** gp_Lin ******************/
-		%feature("compactdefaultargs") gp_Lin;
-		%feature("autodoc", "Creates a line passing through point p and parallel to vector v (p and v are, respectively, the origin and the unit vector of the positioning axis of the line).
-
-Parameters
-----------
-P: gp_Pnt
-V: gp_Dir
-
-Returns
--------
-None
-") gp_Lin;
-		 gp_Lin(const gp_Pnt & P, const gp_Dir & V);
-
 };
 
 
@@ -8736,6 +8736,61 @@ None
 *****************/
 class gp_Lin2d {
 	public:
+		/****************** gp_Lin2d ******************/
+		%feature("compactdefaultargs") gp_Lin2d;
+		%feature("autodoc", "Creates a line corresponding to x axis of the reference coordinate system.
+
+Returns
+-------
+None
+") gp_Lin2d;
+		 gp_Lin2d();
+
+		/****************** gp_Lin2d ******************/
+		%feature("compactdefaultargs") gp_Lin2d;
+		%feature("autodoc", "Creates a line located with a.
+
+Parameters
+----------
+A: gp_Ax2d
+
+Returns
+-------
+None
+") gp_Lin2d;
+		 gp_Lin2d(const gp_Ax2d & A);
+
+		/****************** gp_Lin2d ******************/
+		%feature("compactdefaultargs") gp_Lin2d;
+		%feature("autodoc", "<p> is the location point (origin) of the line and <v> is the direction of the line.
+
+Parameters
+----------
+P: gp_Pnt2d
+V: gp_Dir2d
+
+Returns
+-------
+None
+") gp_Lin2d;
+		 gp_Lin2d(const gp_Pnt2d & P, const gp_Dir2d & V);
+
+		/****************** gp_Lin2d ******************/
+		%feature("compactdefaultargs") gp_Lin2d;
+		%feature("autodoc", "Creates the line from the equation a*x + b*y + c = 0.0 raises constructionerror if sqrt(a*a + b*b) <= resolution from gp. raised if sqrt(a*a + b*b) <= resolution from gp.
+
+Parameters
+----------
+A: float
+B: float
+C: float
+
+Returns
+-------
+None
+") gp_Lin2d;
+		 gp_Lin2d(const Standard_Real A, const Standard_Real B, const Standard_Real C);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Computes the angle between two lines in radians.
@@ -9145,61 +9200,6 @@ gp_Lin2d
 ") Translated;
 		gp_Lin2d Translated(const gp_Pnt2d & P1, const gp_Pnt2d & P2);
 
-		/****************** gp_Lin2d ******************/
-		%feature("compactdefaultargs") gp_Lin2d;
-		%feature("autodoc", "Creates a line corresponding to x axis of the reference coordinate system.
-
-Returns
--------
-None
-") gp_Lin2d;
-		 gp_Lin2d();
-
-		/****************** gp_Lin2d ******************/
-		%feature("compactdefaultargs") gp_Lin2d;
-		%feature("autodoc", "Creates a line located with a.
-
-Parameters
-----------
-A: gp_Ax2d
-
-Returns
--------
-None
-") gp_Lin2d;
-		 gp_Lin2d(const gp_Ax2d & A);
-
-		/****************** gp_Lin2d ******************/
-		%feature("compactdefaultargs") gp_Lin2d;
-		%feature("autodoc", "<p> is the location point (origin) of the line and <v> is the direction of the line.
-
-Parameters
-----------
-P: gp_Pnt2d
-V: gp_Dir2d
-
-Returns
--------
-None
-") gp_Lin2d;
-		 gp_Lin2d(const gp_Pnt2d & P, const gp_Dir2d & V);
-
-		/****************** gp_Lin2d ******************/
-		%feature("compactdefaultargs") gp_Lin2d;
-		%feature("autodoc", "Creates the line from the equation a*x + b*y + c = 0.0 raises constructionerror if sqrt(a*a + b*b) <= resolution from gp. raised if sqrt(a*a + b*b) <= resolution from gp.
-
-Parameters
-----------
-A: float
-B: float
-C: float
-
-Returns
--------
-None
-") gp_Lin2d;
-		 gp_Lin2d(const Standard_Real A, const Standard_Real B, const Standard_Real C);
-
 };
 
 
@@ -9214,6 +9214,54 @@ None
 ***************/
 class gp_Mat {
 	public:
+		/****************** gp_Mat ******************/
+		%feature("compactdefaultargs") gp_Mat;
+		%feature("autodoc", "Creates a matrix with null coefficients.
+
+Returns
+-------
+None
+") gp_Mat;
+		 gp_Mat();
+
+		/****************** gp_Mat ******************/
+		%feature("compactdefaultargs") gp_Mat;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+a11: float
+a12: float
+a13: float
+a21: float
+a22: float
+a23: float
+a31: float
+a32: float
+a33: float
+
+Returns
+-------
+None
+") gp_Mat;
+		 gp_Mat(const Standard_Real a11, const Standard_Real a12, const Standard_Real a13, const Standard_Real a21, const Standard_Real a22, const Standard_Real a23, const Standard_Real a31, const Standard_Real a32, const Standard_Real a33);
+
+		/****************** gp_Mat ******************/
+		%feature("compactdefaultargs") gp_Mat;
+		%feature("autodoc", "Creates a matrix. col1, col2, col3 are the 3 columns of the matrix.
+
+Parameters
+----------
+Col1: gp_XYZ
+Col2: gp_XYZ
+Col3: gp_XYZ
+
+Returns
+-------
+None
+") gp_Mat;
+		 gp_Mat(const gp_XYZ & Col1, const gp_XYZ & Col2, const gp_XYZ & Col3);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -9691,54 +9739,6 @@ float
 ") Value;
 		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col);
 
-		/****************** gp_Mat ******************/
-		%feature("compactdefaultargs") gp_Mat;
-		%feature("autodoc", "Creates a matrix with null coefficients.
-
-Returns
--------
-None
-") gp_Mat;
-		 gp_Mat();
-
-		/****************** gp_Mat ******************/
-		%feature("compactdefaultargs") gp_Mat;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-a11: float
-a12: float
-a13: float
-a21: float
-a22: float
-a23: float
-a31: float
-a32: float
-a33: float
-
-Returns
--------
-None
-") gp_Mat;
-		 gp_Mat(const Standard_Real a11, const Standard_Real a12, const Standard_Real a13, const Standard_Real a21, const Standard_Real a22, const Standard_Real a23, const Standard_Real a31, const Standard_Real a32, const Standard_Real a33);
-
-		/****************** gp_Mat ******************/
-		%feature("compactdefaultargs") gp_Mat;
-		%feature("autodoc", "Creates a matrix. col1, col2, col3 are the 3 columns of the matrix.
-
-Parameters
-----------
-Col1: gp_XYZ
-Col2: gp_XYZ
-Col3: gp_XYZ
-
-Returns
--------
-None
-") gp_Mat;
-		 gp_Mat(const gp_XYZ & Col1, const gp_XYZ & Col2, const gp_XYZ & Col3);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -9878,6 +9878,31 @@ gp_Mat
 *****************/
 class gp_Mat2d {
 	public:
+		/****************** gp_Mat2d ******************/
+		%feature("compactdefaultargs") gp_Mat2d;
+		%feature("autodoc", "Creates a matrix with null coefficients.
+
+Returns
+-------
+None
+") gp_Mat2d;
+		 gp_Mat2d();
+
+		/****************** gp_Mat2d ******************/
+		%feature("compactdefaultargs") gp_Mat2d;
+		%feature("autodoc", "Col1, col2 are the 2 columns of the matrix.
+
+Parameters
+----------
+Col1: gp_XY
+Col2: gp_XY
+
+Returns
+-------
+None
+") gp_Mat2d;
+		 gp_Mat2d(const gp_XY & Col1, const gp_XY & Col2);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -10315,31 +10340,6 @@ float
 ") Value;
 		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col);
 
-		/****************** gp_Mat2d ******************/
-		%feature("compactdefaultargs") gp_Mat2d;
-		%feature("autodoc", "Creates a matrix with null coefficients.
-
-Returns
--------
-None
-") gp_Mat2d;
-		 gp_Mat2d();
-
-		/****************** gp_Mat2d ******************/
-		%feature("compactdefaultargs") gp_Mat2d;
-		%feature("autodoc", "Col1, col2 are the 2 columns of the matrix.
-
-Parameters
-----------
-Col1: gp_XY
-Col2: gp_XY
-
-Returns
--------
-None
-") gp_Mat2d;
-		 gp_Mat2d(const gp_XY & Col1, const gp_XY & Col2);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -10468,6 +10468,46 @@ gp_Mat2d
 *****************/
 class gp_Parab {
 	public:
+		/****************** gp_Parab ******************/
+		%feature("compactdefaultargs") gp_Parab;
+		%feature("autodoc", "Creates an indefinite parabola.
+
+Returns
+-------
+None
+") gp_Parab;
+		 gp_Parab();
+
+		/****************** gp_Parab ******************/
+		%feature("compactdefaultargs") gp_Parab;
+		%feature("autodoc", "Creates a parabola with its local coordinate system 'a2' and it's focal length 'focal'. the xdirection of a2 defines the axis of symmetry of the parabola. the ydirection of a2 is parallel to the directrix of the parabola. the location point of a2 is the vertex of the parabola raises constructionerror if focal < 0.0 raised if focal < 0.0.
+
+Parameters
+----------
+A2: gp_Ax2
+Focal: float
+
+Returns
+-------
+None
+") gp_Parab;
+		 gp_Parab(const gp_Ax2 & A2, const Standard_Real Focal);
+
+		/****************** gp_Parab ******************/
+		%feature("compactdefaultargs") gp_Parab;
+		%feature("autodoc", "D is the directrix of the parabola and f the focus point. the symmetry axis (xaxis) of the parabola is normal to the directrix and pass through the focus point f, but its location point is the vertex of the parabola. the yaxis of the parabola is parallel to d and its location point is the vertex of the parabola. the normal to the plane of the parabola is the cross product between the xaxis and the yaxis.
+
+Parameters
+----------
+D: gp_Ax1
+F: gp_Pnt
+
+Returns
+-------
+None
+") gp_Parab;
+		 gp_Parab(const gp_Ax1 & D, const gp_Pnt & F);
+
 		/****************** Axis ******************/
 		%feature("compactdefaultargs") Axis;
 		%feature("autodoc", "Returns the main axis of the parabola. it is the axis normal to the plane of the parabola passing through the vertex of the parabola.
@@ -10844,46 +10884,6 @@ gp_Ax1
 ") YAxis;
 		gp_Ax1 YAxis();
 
-		/****************** gp_Parab ******************/
-		%feature("compactdefaultargs") gp_Parab;
-		%feature("autodoc", "Creates an indefinite parabola.
-
-Returns
--------
-None
-") gp_Parab;
-		 gp_Parab();
-
-		/****************** gp_Parab ******************/
-		%feature("compactdefaultargs") gp_Parab;
-		%feature("autodoc", "Creates a parabola with its local coordinate system 'a2' and it's focal length 'focal'. the xdirection of a2 defines the axis of symmetry of the parabola. the ydirection of a2 is parallel to the directrix of the parabola. the location point of a2 is the vertex of the parabola raises constructionerror if focal < 0.0 raised if focal < 0.0.
-
-Parameters
-----------
-A2: gp_Ax2
-Focal: float
-
-Returns
--------
-None
-") gp_Parab;
-		 gp_Parab(const gp_Ax2 & A2, const Standard_Real Focal);
-
-		/****************** gp_Parab ******************/
-		%feature("compactdefaultargs") gp_Parab;
-		%feature("autodoc", "D is the directrix of the parabola and f the focus point. the symmetry axis (xaxis) of the parabola is normal to the directrix and pass through the focus point f, but its location point is the vertex of the parabola. the yaxis of the parabola is parallel to d and its location point is the vertex of the parabola. the normal to the plane of the parabola is the cross product between the xaxis and the yaxis.
-
-Parameters
-----------
-D: gp_Ax1
-F: gp_Pnt
-
-Returns
--------
-None
-") gp_Parab;
-		 gp_Parab(const gp_Ax1 & D, const gp_Pnt & F);
-
 };
 
 
@@ -10898,6 +10898,65 @@ None
 *******************/
 class gp_Parab2d {
 	public:
+		/****************** gp_Parab2d ******************/
+		%feature("compactdefaultargs") gp_Parab2d;
+		%feature("autodoc", "Creates an indefinite parabola.
+
+Returns
+-------
+None
+") gp_Parab2d;
+		 gp_Parab2d();
+
+		/****************** gp_Parab2d ******************/
+		%feature("compactdefaultargs") gp_Parab2d;
+		%feature("autodoc", "Creates a parabola with its vertex point, its axis of symmetry ('xaxis') and its focal length. the sense of parametrization is given by thesense. if thesense == true (by default) then right-handed coordinate system is used, otherwise - left-handed. warnings : it is possible to have focallength = 0. in this case, the parabola looks like a line, which is parallel to the symmetry-axis. raises constructionerror if focallength < 0.0.
+
+Parameters
+----------
+theMirrorAxis: gp_Ax2d
+theFocalLength: float
+theSense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") gp_Parab2d;
+		 gp_Parab2d(const gp_Ax2d & theMirrorAxis, const Standard_Real theFocalLength, const Standard_Boolean theSense = Standard_True);
+
+		/****************** gp_Parab2d ******************/
+		%feature("compactdefaultargs") gp_Parab2d;
+		%feature("autodoc", "Creates a parabola with its vertex point, its axis of symmetry ('xaxis'), correspond y-axis and its focal length. warnings : it is possible to have focallength = 0. in this case, the parabola looks like a line, which is parallel to the symmetry-axis. raises constructionerror if focal < 0.0.
+
+Parameters
+----------
+theAxes: gp_Ax22d
+theFocalLength: float
+
+Returns
+-------
+None
+") gp_Parab2d;
+		 gp_Parab2d(const gp_Ax22d & theAxes, const Standard_Real theFocalLength);
+
+		/****************** gp_Parab2d ******************/
+		%feature("compactdefaultargs") gp_Parab2d;
+		%feature("autodoc", "Creates a parabola with the directrix and the focus point. y-axis of the parabola (in user coordinate system - ucs) is the direction of thedirectrix. x-axis always directs from thedirectrix to thefocus point and always comes through thefocus. apex of the parabola is a middle point between the thefocus and the intersection point of thedirectrix and the x-axis. warnings : it is possible to have focallength = 0 (when thefocus lies in thedirectrix). in this case, x-direction of the parabola is defined by thesense parameter. if thesense == true (by default) then right-handed coordinate system is used, otherwise - left-handed. result parabola will look like a line, which is perpendicular to the directrix.
+
+Parameters
+----------
+theDirectrix: gp_Ax2d
+theFocus: gp_Pnt2d
+theSense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") gp_Parab2d;
+		 gp_Parab2d(const gp_Ax2d & theDirectrix, const gp_Pnt2d & theFocus, const Standard_Boolean theSense = Standard_True);
+
 		/****************** Axis ******************/
 		%feature("compactdefaultargs") Axis;
 		%feature("autodoc", "Returns the local coordinate system of the parabola. the 'location' point of this axis is the vertex of the parabola.
@@ -11275,65 +11334,6 @@ gp_Parab2d
 ") Translated;
 		gp_Parab2d Translated(const gp_Pnt2d & P1, const gp_Pnt2d & P2);
 
-		/****************** gp_Parab2d ******************/
-		%feature("compactdefaultargs") gp_Parab2d;
-		%feature("autodoc", "Creates an indefinite parabola.
-
-Returns
--------
-None
-") gp_Parab2d;
-		 gp_Parab2d();
-
-		/****************** gp_Parab2d ******************/
-		%feature("compactdefaultargs") gp_Parab2d;
-		%feature("autodoc", "Creates a parabola with its vertex point, its axis of symmetry ('xaxis') and its focal length. the sense of parametrization is given by thesense. if thesense == true (by default) then right-handed coordinate system is used, otherwise - left-handed. warnings : it is possible to have focallength = 0. in this case, the parabola looks like a line, which is parallel to the symmetry-axis. raises constructionerror if focallength < 0.0.
-
-Parameters
-----------
-theMirrorAxis: gp_Ax2d
-theFocalLength: float
-theSense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") gp_Parab2d;
-		 gp_Parab2d(const gp_Ax2d & theMirrorAxis, const Standard_Real theFocalLength, const Standard_Boolean theSense = Standard_True);
-
-		/****************** gp_Parab2d ******************/
-		%feature("compactdefaultargs") gp_Parab2d;
-		%feature("autodoc", "Creates a parabola with its vertex point, its axis of symmetry ('xaxis'), correspond y-axis and its focal length. warnings : it is possible to have focallength = 0. in this case, the parabola looks like a line, which is parallel to the symmetry-axis. raises constructionerror if focal < 0.0.
-
-Parameters
-----------
-theAxes: gp_Ax22d
-theFocalLength: float
-
-Returns
--------
-None
-") gp_Parab2d;
-		 gp_Parab2d(const gp_Ax22d & theAxes, const Standard_Real theFocalLength);
-
-		/****************** gp_Parab2d ******************/
-		%feature("compactdefaultargs") gp_Parab2d;
-		%feature("autodoc", "Creates a parabola with the directrix and the focus point. y-axis of the parabola (in user coordinate system - ucs) is the direction of thedirectrix. x-axis always directs from thedirectrix to thefocus point and always comes through thefocus. apex of the parabola is a middle point between the thefocus and the intersection point of thedirectrix and the x-axis. warnings : it is possible to have focallength = 0 (when thefocus lies in thedirectrix). in this case, x-direction of the parabola is defined by thesense parameter. if thesense == true (by default) then right-handed coordinate system is used, otherwise - left-handed. result parabola will look like a line, which is perpendicular to the directrix.
-
-Parameters
-----------
-theDirectrix: gp_Ax2d
-theFocus: gp_Pnt2d
-theSense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") gp_Parab2d;
-		 gp_Parab2d(const gp_Ax2d & theDirectrix, const gp_Pnt2d & theFocus, const Standard_Boolean theSense = Standard_True);
-
 };
 
 
@@ -11348,6 +11348,62 @@ None
 ***************/
 class gp_Pln {
 	public:
+		/****************** gp_Pln ******************/
+		%feature("compactdefaultargs") gp_Pln;
+		%feature("autodoc", "Creates a plane coincident with oxy plane of the reference coordinate system.
+
+Returns
+-------
+None
+") gp_Pln;
+		 gp_Pln();
+
+		/****************** gp_Pln ******************/
+		%feature("compactdefaultargs") gp_Pln;
+		%feature("autodoc", "The coordinate system of the plane is defined with the axis placement a3. the 'direction' of a3 defines the normal to the plane. the 'location' of a3 defines the location (origin) of the plane. the 'xdirection' and 'ydirection' of a3 define the 'xaxis' and the 'yaxis' of the plane used to parametrize the plane.
+
+Parameters
+----------
+A3: gp_Ax3
+
+Returns
+-------
+None
+") gp_Pln;
+		 gp_Pln(const gp_Ax3 & A3);
+
+		/****************** gp_Pln ******************/
+		%feature("compactdefaultargs") gp_Pln;
+		%feature("autodoc", "Creates a plane with the 'location' point <p> and the normal direction <v>.
+
+Parameters
+----------
+P: gp_Pnt
+V: gp_Dir
+
+Returns
+-------
+None
+") gp_Pln;
+		 gp_Pln(const gp_Pnt & P, const gp_Dir & V);
+
+		/****************** gp_Pln ******************/
+		%feature("compactdefaultargs") gp_Pln;
+		%feature("autodoc", "Creates a plane from its cartesian equation : a * x + b * y + c * z + d = 0.0 raises constructionerror if sqrt (a*a + b*b + c*c) <= resolution from gp.
+
+Parameters
+----------
+A: float
+B: float
+C: float
+D: float
+
+Returns
+-------
+None
+") gp_Pln;
+		 gp_Pln(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
+
 		/****************** Axis ******************/
 		%feature("compactdefaultargs") Axis;
 		%feature("autodoc", "Returns the plane's normal axis.
@@ -11832,62 +11888,6 @@ gp_Ax1
 ") YAxis;
 		gp_Ax1 YAxis();
 
-		/****************** gp_Pln ******************/
-		%feature("compactdefaultargs") gp_Pln;
-		%feature("autodoc", "Creates a plane coincident with oxy plane of the reference coordinate system.
-
-Returns
--------
-None
-") gp_Pln;
-		 gp_Pln();
-
-		/****************** gp_Pln ******************/
-		%feature("compactdefaultargs") gp_Pln;
-		%feature("autodoc", "The coordinate system of the plane is defined with the axis placement a3. the 'direction' of a3 defines the normal to the plane. the 'location' of a3 defines the location (origin) of the plane. the 'xdirection' and 'ydirection' of a3 define the 'xaxis' and the 'yaxis' of the plane used to parametrize the plane.
-
-Parameters
-----------
-A3: gp_Ax3
-
-Returns
--------
-None
-") gp_Pln;
-		 gp_Pln(const gp_Ax3 & A3);
-
-		/****************** gp_Pln ******************/
-		%feature("compactdefaultargs") gp_Pln;
-		%feature("autodoc", "Creates a plane with the 'location' point <p> and the normal direction <v>.
-
-Parameters
-----------
-P: gp_Pnt
-V: gp_Dir
-
-Returns
--------
-None
-") gp_Pln;
-		 gp_Pln(const gp_Pnt & P, const gp_Dir & V);
-
-		/****************** gp_Pln ******************/
-		%feature("compactdefaultargs") gp_Pln;
-		%feature("autodoc", "Creates a plane from its cartesian equation : a * x + b * y + c * z + d = 0.0 raises constructionerror if sqrt (a*a + b*b + c*c) <= resolution from gp.
-
-Parameters
-----------
-A: float
-B: float
-C: float
-D: float
-
-Returns
--------
-None
-") gp_Pln;
-		 gp_Pln(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
-
 };
 
 
@@ -11902,6 +11902,46 @@ None
 ***************/
 class gp_Pnt {
 	public:
+		/****************** gp_Pnt ******************/
+		%feature("compactdefaultargs") gp_Pnt;
+		%feature("autodoc", "Creates a point with zero coordinates.
+
+Returns
+-------
+None
+") gp_Pnt;
+		 gp_Pnt();
+
+		/****************** gp_Pnt ******************/
+		%feature("compactdefaultargs") gp_Pnt;
+		%feature("autodoc", "Creates a point from a xyz object.
+
+Parameters
+----------
+Coord: gp_XYZ
+
+Returns
+-------
+None
+") gp_Pnt;
+		 gp_Pnt(const gp_XYZ & Coord);
+
+		/****************** gp_Pnt ******************/
+		%feature("compactdefaultargs") gp_Pnt;
+		%feature("autodoc", "Creates a point with its 3 cartesian's coordinates : xp, yp, zp.
+
+Parameters
+----------
+Xp: float
+Yp: float
+Zp: float
+
+Returns
+-------
+None
+") gp_Pnt;
+		 gp_Pnt(const Standard_Real Xp, const Standard_Real Yp, const Standard_Real Zp);
+
 		/****************** BaryCenter ******************/
 		%feature("compactdefaultargs") BaryCenter;
 		%feature("autodoc", "Assigns the result of the following expression to this point (alpha*this + beta*p) / (alpha + beta).
@@ -12368,46 +12408,6 @@ float
 ") Z;
 		Standard_Real Z();
 
-		/****************** gp_Pnt ******************/
-		%feature("compactdefaultargs") gp_Pnt;
-		%feature("autodoc", "Creates a point with zero coordinates.
-
-Returns
--------
-None
-") gp_Pnt;
-		 gp_Pnt();
-
-		/****************** gp_Pnt ******************/
-		%feature("compactdefaultargs") gp_Pnt;
-		%feature("autodoc", "Creates a point from a xyz object.
-
-Parameters
-----------
-Coord: gp_XYZ
-
-Returns
--------
-None
-") gp_Pnt;
-		 gp_Pnt(const gp_XYZ & Coord);
-
-		/****************** gp_Pnt ******************/
-		%feature("compactdefaultargs") gp_Pnt;
-		%feature("autodoc", "Creates a point with its 3 cartesian's coordinates : xp, yp, zp.
-
-Parameters
-----------
-Xp: float
-Yp: float
-Zp: float
-
-Returns
--------
-None
-") gp_Pnt;
-		 gp_Pnt(const Standard_Real Xp, const Standard_Real Yp, const Standard_Real Zp);
-
 };
 
 
@@ -12422,6 +12422,45 @@ None
 *****************/
 class gp_Pnt2d {
 	public:
+		/****************** gp_Pnt2d ******************/
+		%feature("compactdefaultargs") gp_Pnt2d;
+		%feature("autodoc", "Creates a point with zero coordinates.
+
+Returns
+-------
+None
+") gp_Pnt2d;
+		 gp_Pnt2d();
+
+		/****************** gp_Pnt2d ******************/
+		%feature("compactdefaultargs") gp_Pnt2d;
+		%feature("autodoc", "Creates a point with a doublet of coordinates.
+
+Parameters
+----------
+Coord: gp_XY
+
+Returns
+-------
+None
+") gp_Pnt2d;
+		 gp_Pnt2d(const gp_XY & Coord);
+
+		/****************** gp_Pnt2d ******************/
+		%feature("compactdefaultargs") gp_Pnt2d;
+		%feature("autodoc", "Creates a point with its 2 cartesian's coordinates : xp, yp.
+
+Parameters
+----------
+Xp: float
+Yp: float
+
+Returns
+-------
+None
+") gp_Pnt2d;
+		 gp_Pnt2d(const Standard_Real Xp, const Standard_Real Yp);
+
 		/****************** ChangeCoord ******************/
 		%feature("compactdefaultargs") ChangeCoord;
 		%feature("autodoc", "Returns the coordinates of this point. note: this syntax allows direct modification of the returned value.
@@ -12818,45 +12857,6 @@ float
 ") Y;
 		Standard_Real Y();
 
-		/****************** gp_Pnt2d ******************/
-		%feature("compactdefaultargs") gp_Pnt2d;
-		%feature("autodoc", "Creates a point with zero coordinates.
-
-Returns
--------
-None
-") gp_Pnt2d;
-		 gp_Pnt2d();
-
-		/****************** gp_Pnt2d ******************/
-		%feature("compactdefaultargs") gp_Pnt2d;
-		%feature("autodoc", "Creates a point with a doublet of coordinates.
-
-Parameters
-----------
-Coord: gp_XY
-
-Returns
--------
-None
-") gp_Pnt2d;
-		 gp_Pnt2d(const gp_XY & Coord);
-
-		/****************** gp_Pnt2d ******************/
-		%feature("compactdefaultargs") gp_Pnt2d;
-		%feature("autodoc", "Creates a point with its 2 cartesian's coordinates : xp, yp.
-
-Parameters
-----------
-Xp: float
-Yp: float
-
-Returns
--------
-None
-") gp_Pnt2d;
-		 gp_Pnt2d(const Standard_Real Xp, const Standard_Real Yp);
-
 };
 
 
@@ -12871,6 +12871,107 @@ None
 **********************/
 class gp_Quaternion {
 	public:
+		/****************** gp_Quaternion ******************/
+		%feature("compactdefaultargs") gp_Quaternion;
+		%feature("autodoc", "Creates an identity quaternion.
+
+Returns
+-------
+None
+") gp_Quaternion;
+		 gp_Quaternion();
+
+		/****************** gp_Quaternion ******************/
+		%feature("compactdefaultargs") gp_Quaternion;
+		%feature("autodoc", "Creates quaternion directly from component values.
+
+Parameters
+----------
+x: float
+y: float
+z: float
+w: float
+
+Returns
+-------
+None
+") gp_Quaternion;
+		 gp_Quaternion(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real w);
+
+		/****************** gp_Quaternion ******************/
+		%feature("compactdefaultargs") gp_Quaternion;
+		%feature("autodoc", "Creates copy of another quaternion.
+
+Parameters
+----------
+theToCopy: gp_Quaternion
+
+Returns
+-------
+None
+") gp_Quaternion;
+		 gp_Quaternion(const gp_Quaternion & theToCopy);
+
+		/****************** gp_Quaternion ******************/
+		%feature("compactdefaultargs") gp_Quaternion;
+		%feature("autodoc", "Creates quaternion representing shortest-arc rotation operator producing vector thevecto from vector thevecfrom.
+
+Parameters
+----------
+theVecFrom: gp_Vec
+theVecTo: gp_Vec
+
+Returns
+-------
+None
+") gp_Quaternion;
+		 gp_Quaternion(const gp_Vec & theVecFrom, const gp_Vec & theVecTo);
+
+		/****************** gp_Quaternion ******************/
+		%feature("compactdefaultargs") gp_Quaternion;
+		%feature("autodoc", "Creates quaternion representing shortest-arc rotation operator producing vector thevecto from vector thevecfrom. additional vector thehelpcrossvec defines preferred direction for rotation and is used when thevecto and thevecfrom are directed oppositely.
+
+Parameters
+----------
+theVecFrom: gp_Vec
+theVecTo: gp_Vec
+theHelpCrossVec: gp_Vec
+
+Returns
+-------
+None
+") gp_Quaternion;
+		 gp_Quaternion(const gp_Vec & theVecFrom, const gp_Vec & theVecTo, const gp_Vec & theHelpCrossVec);
+
+		/****************** gp_Quaternion ******************/
+		%feature("compactdefaultargs") gp_Quaternion;
+		%feature("autodoc", "Creates quaternion representing rotation on angle theangle around vector theaxis.
+
+Parameters
+----------
+theAxis: gp_Vec
+theAngle: float
+
+Returns
+-------
+None
+") gp_Quaternion;
+		 gp_Quaternion(const gp_Vec & theAxis, const Standard_Real theAngle);
+
+		/****************** gp_Quaternion ******************/
+		%feature("compactdefaultargs") gp_Quaternion;
+		%feature("autodoc", "Creates quaternion from rotation matrix 3*3 (which should be orthonormal skew-symmetric matrix).
+
+Parameters
+----------
+theMat: gp_Mat
+
+Returns
+-------
+None
+") gp_Quaternion;
+		 gp_Quaternion(const gp_Mat & theMat);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds componnets of other quaternion; result is 'rotations mix'.
@@ -13335,107 +13436,6 @@ float
 ") Z;
 		Standard_Real Z();
 
-		/****************** gp_Quaternion ******************/
-		%feature("compactdefaultargs") gp_Quaternion;
-		%feature("autodoc", "Creates an identity quaternion.
-
-Returns
--------
-None
-") gp_Quaternion;
-		 gp_Quaternion();
-
-		/****************** gp_Quaternion ******************/
-		%feature("compactdefaultargs") gp_Quaternion;
-		%feature("autodoc", "Creates quaternion directly from component values.
-
-Parameters
-----------
-x: float
-y: float
-z: float
-w: float
-
-Returns
--------
-None
-") gp_Quaternion;
-		 gp_Quaternion(const Standard_Real x, const Standard_Real y, const Standard_Real z, const Standard_Real w);
-
-		/****************** gp_Quaternion ******************/
-		%feature("compactdefaultargs") gp_Quaternion;
-		%feature("autodoc", "Creates copy of another quaternion.
-
-Parameters
-----------
-theToCopy: gp_Quaternion
-
-Returns
--------
-None
-") gp_Quaternion;
-		 gp_Quaternion(const gp_Quaternion & theToCopy);
-
-		/****************** gp_Quaternion ******************/
-		%feature("compactdefaultargs") gp_Quaternion;
-		%feature("autodoc", "Creates quaternion representing shortest-arc rotation operator producing vector thevecto from vector thevecfrom.
-
-Parameters
-----------
-theVecFrom: gp_Vec
-theVecTo: gp_Vec
-
-Returns
--------
-None
-") gp_Quaternion;
-		 gp_Quaternion(const gp_Vec & theVecFrom, const gp_Vec & theVecTo);
-
-		/****************** gp_Quaternion ******************/
-		%feature("compactdefaultargs") gp_Quaternion;
-		%feature("autodoc", "Creates quaternion representing shortest-arc rotation operator producing vector thevecto from vector thevecfrom. additional vector thehelpcrossvec defines preferred direction for rotation and is used when thevecto and thevecfrom are directed oppositely.
-
-Parameters
-----------
-theVecFrom: gp_Vec
-theVecTo: gp_Vec
-theHelpCrossVec: gp_Vec
-
-Returns
--------
-None
-") gp_Quaternion;
-		 gp_Quaternion(const gp_Vec & theVecFrom, const gp_Vec & theVecTo, const gp_Vec & theHelpCrossVec);
-
-		/****************** gp_Quaternion ******************/
-		%feature("compactdefaultargs") gp_Quaternion;
-		%feature("autodoc", "Creates quaternion representing rotation on angle theangle around vector theaxis.
-
-Parameters
-----------
-theAxis: gp_Vec
-theAngle: float
-
-Returns
--------
-None
-") gp_Quaternion;
-		 gp_Quaternion(const gp_Vec & theAxis, const Standard_Real theAngle);
-
-		/****************** gp_Quaternion ******************/
-		%feature("compactdefaultargs") gp_Quaternion;
-		%feature("autodoc", "Creates quaternion from rotation matrix 3*3 (which should be orthonormal skew-symmetric matrix).
-
-Parameters
-----------
-theMat: gp_Mat
-
-Returns
--------
-None
-") gp_Quaternion;
-		 gp_Quaternion(const gp_Mat & theMat);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -13574,67 +13574,6 @@ gp_Quaternion
 ***************************/
 class gp_QuaternionNLerp {
 	public:
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "Initialize the tool with start and end values.
-
-Parameters
-----------
-theQStart: gp_Quaternion
-theQEnd: gp_Quaternion
-
-Returns
--------
-None
-") Init;
-		void Init(const gp_Quaternion & theQStart, const gp_Quaternion & theQEnd);
-
-		/****************** InitFromUnit ******************/
-		%feature("compactdefaultargs") InitFromUnit;
-		%feature("autodoc", "Initialize the tool with start and end unit quaternions.
-
-Parameters
-----------
-theQStart: gp_Quaternion
-theQEnd: gp_Quaternion
-
-Returns
--------
-None
-") InitFromUnit;
-		void InitFromUnit(const gp_Quaternion & theQStart, const gp_Quaternion & theQEnd);
-
-		/****************** Interpolate ******************/
-		%feature("compactdefaultargs") Interpolate;
-		%feature("autodoc", "Compute interpolated quaternion between two quaternions. @param thestart first quaternion @param theend second quaternion @param thet normalized interpolation coefficient within 0..1 range, with 0 pointing to thestart and 1 to theend.
-
-Parameters
-----------
-theQStart: gp_Quaternion
-theQEnd: gp_Quaternion
-theT: float
-
-Returns
--------
-gp_Quaternion
-") Interpolate;
-		static gp_Quaternion Interpolate(const gp_Quaternion & theQStart, const gp_Quaternion & theQEnd, Standard_Real theT);
-
-		/****************** Interpolate ******************/
-		%feature("compactdefaultargs") Interpolate;
-		%feature("autodoc", "Set interpolated quaternion for thet position (from 0.0 to 1.0).
-
-Parameters
-----------
-theT: float
-theResultQ: gp_Quaternion
-
-Returns
--------
-None
-") Interpolate;
-		void Interpolate(Standard_Real theT, gp_Quaternion & theResultQ);
-
 		/****************** gp_QuaternionNLerp ******************/
 		%feature("compactdefaultargs") gp_QuaternionNLerp;
 		%feature("autodoc", "Empty constructor,.
@@ -13660,20 +13599,6 @@ None
 ") gp_QuaternionNLerp;
 		 gp_QuaternionNLerp(const gp_Quaternion & theQStart, const gp_Quaternion & theQEnd);
 
-};
-
-
-%extend gp_QuaternionNLerp {
-	%pythoncode {
-	__repr__ = _dumps_object
-	}
-};
-
-/***************************
-* class gp_QuaternionSLerp *
-***************************/
-class gp_QuaternionSLerp {
-	public:
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize the tool with start and end values.
@@ -13735,6 +13660,20 @@ None
 ") Interpolate;
 		void Interpolate(Standard_Real theT, gp_Quaternion & theResultQ);
 
+};
+
+
+%extend gp_QuaternionNLerp {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
+/***************************
+* class gp_QuaternionSLerp *
+***************************/
+class gp_QuaternionSLerp {
+	public:
 		/****************** gp_QuaternionSLerp ******************/
 		%feature("compactdefaultargs") gp_QuaternionSLerp;
 		%feature("autodoc", "Empty constructor,.
@@ -13760,6 +13699,67 @@ None
 ") gp_QuaternionSLerp;
 		 gp_QuaternionSLerp(const gp_Quaternion & theQStart, const gp_Quaternion & theQEnd);
 
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "Initialize the tool with start and end values.
+
+Parameters
+----------
+theQStart: gp_Quaternion
+theQEnd: gp_Quaternion
+
+Returns
+-------
+None
+") Init;
+		void Init(const gp_Quaternion & theQStart, const gp_Quaternion & theQEnd);
+
+		/****************** InitFromUnit ******************/
+		%feature("compactdefaultargs") InitFromUnit;
+		%feature("autodoc", "Initialize the tool with start and end unit quaternions.
+
+Parameters
+----------
+theQStart: gp_Quaternion
+theQEnd: gp_Quaternion
+
+Returns
+-------
+None
+") InitFromUnit;
+		void InitFromUnit(const gp_Quaternion & theQStart, const gp_Quaternion & theQEnd);
+
+		/****************** Interpolate ******************/
+		%feature("compactdefaultargs") Interpolate;
+		%feature("autodoc", "Compute interpolated quaternion between two quaternions. @param thestart first quaternion @param theend second quaternion @param thet normalized interpolation coefficient within 0..1 range, with 0 pointing to thestart and 1 to theend.
+
+Parameters
+----------
+theQStart: gp_Quaternion
+theQEnd: gp_Quaternion
+theT: float
+
+Returns
+-------
+gp_Quaternion
+") Interpolate;
+		static gp_Quaternion Interpolate(const gp_Quaternion & theQStart, const gp_Quaternion & theQEnd, Standard_Real theT);
+
+		/****************** Interpolate ******************/
+		%feature("compactdefaultargs") Interpolate;
+		%feature("autodoc", "Set interpolated quaternion for thet position (from 0.0 to 1.0).
+
+Parameters
+----------
+theT: float
+theResultQ: gp_Quaternion
+
+Returns
+-------
+None
+") Interpolate;
+		void Interpolate(Standard_Real theT, gp_Quaternion & theResultQ);
+
 };
 
 
@@ -13774,6 +13774,31 @@ None
 ******************/
 class gp_Sphere {
 	public:
+		/****************** gp_Sphere ******************/
+		%feature("compactdefaultargs") gp_Sphere;
+		%feature("autodoc", "Creates an indefinite sphere.
+
+Returns
+-------
+None
+") gp_Sphere;
+		 gp_Sphere();
+
+		/****************** gp_Sphere ******************/
+		%feature("compactdefaultargs") gp_Sphere;
+		%feature("autodoc", "Constructs a sphere with radius radius, centered on the origin of a3. a3 is the local coordinate system of the sphere. warnings : it is not forbidden to create a sphere with null radius. raises constructionerror if radius < 0.0.
+
+Parameters
+----------
+A3: gp_Ax3
+Radius: float
+
+Returns
+-------
+None
+") gp_Sphere;
+		 gp_Sphere(const gp_Ax3 & A3, const Standard_Real Radius);
+
 		/****************** Area ******************/
 		%feature("compactdefaultargs") Area;
 		%feature("autodoc", "Computes the aera of the sphere.
@@ -14169,31 +14194,6 @@ gp_Ax1
 ") YAxis;
 		gp_Ax1 YAxis();
 
-		/****************** gp_Sphere ******************/
-		%feature("compactdefaultargs") gp_Sphere;
-		%feature("autodoc", "Creates an indefinite sphere.
-
-Returns
--------
-None
-") gp_Sphere;
-		 gp_Sphere();
-
-		/****************** gp_Sphere ******************/
-		%feature("compactdefaultargs") gp_Sphere;
-		%feature("autodoc", "Constructs a sphere with radius radius, centered on the origin of a3. a3 is the local coordinate system of the sphere. warnings : it is not forbidden to create a sphere with null radius. raises constructionerror if radius < 0.0.
-
-Parameters
-----------
-A3: gp_Ax3
-Radius: float
-
-Returns
--------
-None
-") gp_Sphere;
-		 gp_Sphere(const gp_Ax3 & A3, const Standard_Real Radius);
-
 };
 
 
@@ -14208,6 +14208,32 @@ None
 *****************/
 class gp_Torus {
 	public:
+		/****************** gp_Torus ******************/
+		%feature("compactdefaultargs") gp_Torus;
+		%feature("autodoc", "Creates an indefinite torus.
+
+Returns
+-------
+None
+") gp_Torus;
+		 gp_Torus();
+
+		/****************** gp_Torus ******************/
+		%feature("compactdefaultargs") gp_Torus;
+		%feature("autodoc", "A torus centered on the origin of coordinate system a3, with major radius majorradius and minor radius minorradius, and with the reference plane defined by the origin, the 'x direction' and the 'y direction' of a3. warnings : it is not forbidden to create a torus with majorradius = minorradius = 0.0 raises constructionerror if minorradius < 0.0 or if majorradius < 0.0.
+
+Parameters
+----------
+A3: gp_Ax3
+MajorRadius: float
+MinorRadius: float
+
+Returns
+-------
+None
+") gp_Torus;
+		 gp_Torus(const gp_Ax3 & A3, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+
 		/****************** Area ******************/
 		%feature("compactdefaultargs") Area;
 		%feature("autodoc", "Computes the area of the torus.
@@ -14628,32 +14654,6 @@ gp_Ax1
 ") YAxis;
 		gp_Ax1 YAxis();
 
-		/****************** gp_Torus ******************/
-		%feature("compactdefaultargs") gp_Torus;
-		%feature("autodoc", "Creates an indefinite torus.
-
-Returns
--------
-None
-") gp_Torus;
-		 gp_Torus();
-
-		/****************** gp_Torus ******************/
-		%feature("compactdefaultargs") gp_Torus;
-		%feature("autodoc", "A torus centered on the origin of coordinate system a3, with major radius majorradius and minor radius minorradius, and with the reference plane defined by the origin, the 'x direction' and the 'y direction' of a3. warnings : it is not forbidden to create a torus with majorradius = minorradius = 0.0 raises constructionerror if minorradius < 0.0 or if majorradius < 0.0.
-
-Parameters
-----------
-A3: gp_Ax3
-MajorRadius: float
-MinorRadius: float
-
-Returns
--------
-None
-") gp_Torus;
-		 gp_Torus(const gp_Ax3 & A3, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-
 };
 
 
@@ -14672,6 +14672,30 @@ None
 ****************/
 class gp_Trsf {
 	public:
+		/****************** gp_Trsf ******************/
+		%feature("compactdefaultargs") gp_Trsf;
+		%feature("autodoc", "Returns the identity transformation.
+
+Returns
+-------
+None
+") gp_Trsf;
+		 gp_Trsf();
+
+		/****************** gp_Trsf ******************/
+		%feature("compactdefaultargs") gp_Trsf;
+		%feature("autodoc", "Creates a 3d transformation from the 2d transformation t. the resulting transformation has a homogeneous vectorial part, v3, and a translation part, t3, built from t: a11 a12 0 a13 v3 = a21 a22 0 t3 = a23 0 0 1. 0 it also has the same scale factor as t. this guarantees (by projection) that the transformation which would be performed by t in a plane (2d space) is performed by the resulting transformation in the xoy plane of the 3d space, (i.e. in the plane defined by the origin (0., 0., 0.) and the vectors dx (1., 0., 0.), and dy (0., 1., 0.)). the scale factor is applied to the entire space.
+
+Parameters
+----------
+T: gp_Trsf2d
+
+Returns
+-------
+None
+") gp_Trsf;
+		 gp_Trsf(const gp_Trsf2d & T);
+
 
             %feature("autodoc", "1");
             %extend{
@@ -15141,30 +15165,6 @@ gp_Mat
 ") VectorialPart;
 		gp_Mat VectorialPart();
 
-		/****************** gp_Trsf ******************/
-		%feature("compactdefaultargs") gp_Trsf;
-		%feature("autodoc", "Returns the identity transformation.
-
-Returns
--------
-None
-") gp_Trsf;
-		 gp_Trsf();
-
-		/****************** gp_Trsf ******************/
-		%feature("compactdefaultargs") gp_Trsf;
-		%feature("autodoc", "Creates a 3d transformation from the 2d transformation t. the resulting transformation has a homogeneous vectorial part, v3, and a translation part, t3, built from t: a11 a12 0 a13 v3 = a21 a22 0 t3 = a23 0 0 1. 0 it also has the same scale factor as t. this guarantees (by projection) that the transformation which would be performed by t in a plane (2d space) is performed by the resulting transformation in the xoy plane of the 3d space, (i.e. in the plane defined by the origin (0., 0., 0.) and the vectors dx (1., 0., 0.), and dy (0., 1., 0.)). the scale factor is applied to the entire space.
-
-Parameters
-----------
-T: gp_Trsf2d
-
-Returns
--------
-None
-") gp_Trsf;
-		 gp_Trsf(const gp_Trsf2d & T);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -15208,6 +15208,30 @@ gp_Trsf
 ******************/
 class gp_Trsf2d {
 	public:
+		/****************** gp_Trsf2d ******************/
+		%feature("compactdefaultargs") gp_Trsf2d;
+		%feature("autodoc", "Returns identity transformation.
+
+Returns
+-------
+None
+") gp_Trsf2d;
+		 gp_Trsf2d();
+
+		/****************** gp_Trsf2d ******************/
+		%feature("compactdefaultargs") gp_Trsf2d;
+		%feature("autodoc", "Creates a 2d transformation in the xy plane from a 3d transformation .
+
+Parameters
+----------
+T: gp_Trsf
+
+Returns
+-------
+None
+") gp_Trsf2d;
+		 gp_Trsf2d(const gp_Trsf & T);
+
 		/****************** Form ******************/
 		%feature("compactdefaultargs") Form;
 		%feature("autodoc", "Returns the nature of the transformation. it can be an identity transformation, a rotation, a translation, a mirror (relative to a point or an axis), a scaling transformation, or a compound transformation.
@@ -15575,30 +15599,6 @@ gp_Mat2d
 ") VectorialPart;
 		gp_Mat2d VectorialPart();
 
-		/****************** gp_Trsf2d ******************/
-		%feature("compactdefaultargs") gp_Trsf2d;
-		%feature("autodoc", "Returns identity transformation.
-
-Returns
--------
-None
-") gp_Trsf2d;
-		 gp_Trsf2d();
-
-		/****************** gp_Trsf2d ******************/
-		%feature("compactdefaultargs") gp_Trsf2d;
-		%feature("autodoc", "Creates a 2d transformation in the xy plane from a 3d transformation .
-
-Parameters
-----------
-T: gp_Trsf
-
-Returns
--------
-None
-") gp_Trsf2d;
-		 gp_Trsf2d(const gp_Trsf & T);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -15638,6 +15638,75 @@ gp_Trsf2d
 ***************/
 class gp_Vec {
 	public:
+		/****************** gp_Vec ******************/
+		%feature("compactdefaultargs") gp_Vec;
+		%feature("autodoc", "Creates a zero vector.
+
+Returns
+-------
+None
+") gp_Vec;
+		 gp_Vec();
+
+		/****************** gp_Vec ******************/
+		%feature("compactdefaultargs") gp_Vec;
+		%feature("autodoc", "Creates a unitary vector from a direction v.
+
+Parameters
+----------
+V: gp_Dir
+
+Returns
+-------
+None
+") gp_Vec;
+		 gp_Vec(const gp_Dir & V);
+
+		/****************** gp_Vec ******************/
+		%feature("compactdefaultargs") gp_Vec;
+		%feature("autodoc", "Creates a vector with a triplet of coordinates.
+
+Parameters
+----------
+Coord: gp_XYZ
+
+Returns
+-------
+None
+") gp_Vec;
+		 gp_Vec(const gp_XYZ & Coord);
+
+		/****************** gp_Vec ******************/
+		%feature("compactdefaultargs") gp_Vec;
+		%feature("autodoc", "Creates a point with its three cartesian coordinates.
+
+Parameters
+----------
+Xv: float
+Yv: float
+Zv: float
+
+Returns
+-------
+None
+") gp_Vec;
+		 gp_Vec(const Standard_Real Xv, const Standard_Real Yv, const Standard_Real Zv);
+
+		/****************** gp_Vec ******************/
+		%feature("compactdefaultargs") gp_Vec;
+		%feature("autodoc", "Creates a vector from two points. the length of the vector is the distance between p1 and p2.
+
+Parameters
+----------
+P1: gp_Pnt
+P2: gp_Pnt
+
+Returns
+-------
+None
+") gp_Vec;
+		 gp_Vec(const gp_Pnt & P1, const gp_Pnt & P2);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds two vectors.
@@ -16447,75 +16516,6 @@ float
 ") Z;
 		Standard_Real Z();
 
-		/****************** gp_Vec ******************/
-		%feature("compactdefaultargs") gp_Vec;
-		%feature("autodoc", "Creates a zero vector.
-
-Returns
--------
-None
-") gp_Vec;
-		 gp_Vec();
-
-		/****************** gp_Vec ******************/
-		%feature("compactdefaultargs") gp_Vec;
-		%feature("autodoc", "Creates a unitary vector from a direction v.
-
-Parameters
-----------
-V: gp_Dir
-
-Returns
--------
-None
-") gp_Vec;
-		 gp_Vec(const gp_Dir & V);
-
-		/****************** gp_Vec ******************/
-		%feature("compactdefaultargs") gp_Vec;
-		%feature("autodoc", "Creates a vector with a triplet of coordinates.
-
-Parameters
-----------
-Coord: gp_XYZ
-
-Returns
--------
-None
-") gp_Vec;
-		 gp_Vec(const gp_XYZ & Coord);
-
-		/****************** gp_Vec ******************/
-		%feature("compactdefaultargs") gp_Vec;
-		%feature("autodoc", "Creates a point with its three cartesian coordinates.
-
-Parameters
-----------
-Xv: float
-Yv: float
-Zv: float
-
-Returns
--------
-None
-") gp_Vec;
-		 gp_Vec(const Standard_Real Xv, const Standard_Real Yv, const Standard_Real Zv);
-
-		/****************** gp_Vec ******************/
-		%feature("compactdefaultargs") gp_Vec;
-		%feature("autodoc", "Creates a vector from two points. the length of the vector is the distance between p1 and p2.
-
-Parameters
-----------
-P1: gp_Pnt
-P2: gp_Pnt
-
-Returns
--------
-None
-") gp_Vec;
-		 gp_Vec(const gp_Pnt & P1, const gp_Pnt & P2);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -16654,6 +16654,74 @@ gp_Vec
 *****************/
 class gp_Vec2d {
 	public:
+		/****************** gp_Vec2d ******************/
+		%feature("compactdefaultargs") gp_Vec2d;
+		%feature("autodoc", "Creates a zero vector.
+
+Returns
+-------
+None
+") gp_Vec2d;
+		 gp_Vec2d();
+
+		/****************** gp_Vec2d ******************/
+		%feature("compactdefaultargs") gp_Vec2d;
+		%feature("autodoc", "Creates a unitary vector from a direction v.
+
+Parameters
+----------
+V: gp_Dir2d
+
+Returns
+-------
+None
+") gp_Vec2d;
+		 gp_Vec2d(const gp_Dir2d & V);
+
+		/****************** gp_Vec2d ******************/
+		%feature("compactdefaultargs") gp_Vec2d;
+		%feature("autodoc", "Creates a vector with a doublet of coordinates.
+
+Parameters
+----------
+Coord: gp_XY
+
+Returns
+-------
+None
+") gp_Vec2d;
+		 gp_Vec2d(const gp_XY & Coord);
+
+		/****************** gp_Vec2d ******************/
+		%feature("compactdefaultargs") gp_Vec2d;
+		%feature("autodoc", "Creates a point with its two cartesian coordinates.
+
+Parameters
+----------
+Xv: float
+Yv: float
+
+Returns
+-------
+None
+") gp_Vec2d;
+		 gp_Vec2d(const Standard_Real Xv, const Standard_Real Yv);
+
+		/****************** gp_Vec2d ******************/
+		%feature("compactdefaultargs") gp_Vec2d;
+		%feature("autodoc", "Creates a vector from two points. the length of the vector is the distance between p1 and p2.
+
+Parameters
+----------
+P1: gp_Pnt2d
+P2: gp_Pnt2d
+
+Returns
+-------
+None
+") gp_Vec2d;
+		 gp_Vec2d(const gp_Pnt2d & P1, const gp_Pnt2d & P2);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -17304,74 +17372,6 @@ float
 ") Y;
 		Standard_Real Y();
 
-		/****************** gp_Vec2d ******************/
-		%feature("compactdefaultargs") gp_Vec2d;
-		%feature("autodoc", "Creates a zero vector.
-
-Returns
--------
-None
-") gp_Vec2d;
-		 gp_Vec2d();
-
-		/****************** gp_Vec2d ******************/
-		%feature("compactdefaultargs") gp_Vec2d;
-		%feature("autodoc", "Creates a unitary vector from a direction v.
-
-Parameters
-----------
-V: gp_Dir2d
-
-Returns
--------
-None
-") gp_Vec2d;
-		 gp_Vec2d(const gp_Dir2d & V);
-
-		/****************** gp_Vec2d ******************/
-		%feature("compactdefaultargs") gp_Vec2d;
-		%feature("autodoc", "Creates a vector with a doublet of coordinates.
-
-Parameters
-----------
-Coord: gp_XY
-
-Returns
--------
-None
-") gp_Vec2d;
-		 gp_Vec2d(const gp_XY & Coord);
-
-		/****************** gp_Vec2d ******************/
-		%feature("compactdefaultargs") gp_Vec2d;
-		%feature("autodoc", "Creates a point with its two cartesian coordinates.
-
-Parameters
-----------
-Xv: float
-Yv: float
-
-Returns
--------
-None
-") gp_Vec2d;
-		 gp_Vec2d(const Standard_Real Xv, const Standard_Real Yv);
-
-		/****************** gp_Vec2d ******************/
-		%feature("compactdefaultargs") gp_Vec2d;
-		%feature("autodoc", "Creates a vector from two points. the length of the vector is the distance between p1 and p2.
-
-Parameters
-----------
-P1: gp_Pnt2d
-P2: gp_Pnt2d
-
-Returns
--------
-None
-") gp_Vec2d;
-		 gp_Vec2d(const gp_Pnt2d & P1, const gp_Pnt2d & P2);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -17510,6 +17510,31 @@ gp_Vec2d
 **************/
 class gp_XY {
 	public:
+		/****************** gp_XY ******************/
+		%feature("compactdefaultargs") gp_XY;
+		%feature("autodoc", "Creates xy object with zero coordinates (0,0).
+
+Returns
+-------
+None
+") gp_XY;
+		 gp_XY();
+
+		/****************** gp_XY ******************/
+		%feature("compactdefaultargs") gp_XY;
+		%feature("autodoc", "A number pair defined by the xy coordinates.
+
+Parameters
+----------
+X: float
+Y: float
+
+Returns
+-------
+None
+") gp_XY;
+		 gp_XY(const Standard_Real X, const Standard_Real Y);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Computes the sum of this number pair and number pair other <self>.x() = <self>.x() + other.x() <self>.y() = <self>.y() + other.y().
@@ -17995,31 +18020,6 @@ float
 ") Y;
 		Standard_Real Y();
 
-		/****************** gp_XY ******************/
-		%feature("compactdefaultargs") gp_XY;
-		%feature("autodoc", "Creates xy object with zero coordinates (0,0).
-
-Returns
--------
-None
-") gp_XY;
-		 gp_XY();
-
-		/****************** gp_XY ******************/
-		%feature("compactdefaultargs") gp_XY;
-		%feature("autodoc", "A number pair defined by the xy coordinates.
-
-Parameters
-----------
-X: float
-Y: float
-
-Returns
--------
-None
-") gp_XY;
-		 gp_XY(const Standard_Real X, const Standard_Real Y);
-
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;
 		%feature("autodoc", "No available documentation.
@@ -18194,6 +18194,32 @@ gp_XY
 ***************/
 class gp_XYZ {
 	public:
+		/****************** gp_XYZ ******************/
+		%feature("compactdefaultargs") gp_XYZ;
+		%feature("autodoc", "Creates an xyz object with zero co-ordinates (0,0,0).
+
+Returns
+-------
+None
+") gp_XYZ;
+		 gp_XYZ();
+
+		/****************** gp_XYZ ******************/
+		%feature("compactdefaultargs") gp_XYZ;
+		%feature("autodoc", "Creates an xyz with given coordinates.
+
+Parameters
+----------
+X: float
+Y: float
+Z: float
+
+Returns
+-------
+None
+") gp_XYZ;
+		 gp_XYZ(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "<self>.x() = <self>.x() + other.x() <self>.y() = <self>.y() + other.y() <self>.z() = <self>.z() + other.z().
@@ -18830,32 +18856,6 @@ Returns
 float
 ") Z;
 		Standard_Real Z();
-
-		/****************** gp_XYZ ******************/
-		%feature("compactdefaultargs") gp_XYZ;
-		%feature("autodoc", "Creates an xyz object with zero co-ordinates (0,0,0).
-
-Returns
--------
-None
-") gp_XYZ;
-		 gp_XYZ();
-
-		/****************** gp_XYZ ******************/
-		%feature("compactdefaultargs") gp_XYZ;
-		%feature("autodoc", "Creates an xyz with given coordinates.
-
-Parameters
-----------
-X: float
-Y: float
-Z: float
-
-Returns
--------
-None
-") gp_XYZ;
-		 gp_XYZ(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
 
 		/****************** operator * ******************/
 		%feature("compactdefaultargs") operator *;

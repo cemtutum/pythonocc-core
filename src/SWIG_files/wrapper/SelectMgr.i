@@ -179,34 +179,34 @@ class SelectMgr_PickingStrategy:
     return l;
     }
 };
+%template(SelectMgr_IndexedDataMapOfOwnerCriterion) NCollection_IndexedDataMap<opencascade::handle<SelectMgr_EntityOwner>,SelectMgr_SortCriterion,TColStd_MapTransientHasher>;
+%template(SelectMgr_IndexedMapOfHSensitive) NCollection_IndexedMap<opencascade::handle<SelectMgr_SensitiveEntity>>;
+%template(SelectMgr_ListIteratorOfListOfFilter) NCollection_TListIterator<opencascade::handle<SelectMgr_Filter>>;
+%template(SelectMgr_ListOfFilter) NCollection_List<opencascade::handle<SelectMgr_Filter>>;
+%template(SelectMgr_Mat4) NCollection_Mat4<Standard_Real>;
 %template(SelectMgr_SequenceOfFilter) NCollection_Sequence<opencascade::handle<SelectMgr_Filter>>;
+%template(SelectMgr_SequenceOfOwner) NCollection_Sequence<opencascade::handle<SelectMgr_EntityOwner>>;
 %template(SelectMgr_SequenceOfSelection) NCollection_Sequence<opencascade::handle<SelectMgr_Selection>>;
 %template(SelectMgr_Vec3) NCollection_Vec3<Standard_Real>;
 %template(SelectMgr_Vec4) NCollection_Vec4<Standard_Real>;
-%template(SelectMgr_Mat4) NCollection_Mat4<Standard_Real>;
-%template(SelectMgr_IndexedDataMapOfOwnerCriterion) NCollection_IndexedDataMap<opencascade::handle<SelectMgr_EntityOwner>,SelectMgr_SortCriterion,TColStd_MapTransientHasher>;
-%template(SelectMgr_ListOfFilter) NCollection_List<opencascade::handle<SelectMgr_Filter>>;
-%template(SelectMgr_ListIteratorOfListOfFilter) NCollection_TListIterator<opencascade::handle<SelectMgr_Filter>>;
-%template(SelectMgr_IndexedMapOfHSensitive) NCollection_IndexedMap<opencascade::handle<SelectMgr_SensitiveEntity>>;
-%template(SelectMgr_SequenceOfOwner) NCollection_Sequence<opencascade::handle<SelectMgr_EntityOwner>>;
 /* end templates declaration */
 
 /* typedefs */
 typedef SelectMgr_EntityOwner SelectBasics_EntityOwner;
-typedef NCollection_DataMap<opencascade::handle<SelectMgr_SelectableObject>, opencascade::handle<SelectMgr_SensitiveEntitySet>>::Iterator SelectMgr_MapOfObjectSensitivesIterator;
 typedef NCollection_DataMap<Standard_Integer, SelectMgr_SelectingVolumeManager> SelectMgr_FrustumCache;
-typedef NCollection_Sequence<opencascade::handle<SelectMgr_Filter>> SelectMgr_SequenceOfFilter;
+typedef NCollection_IndexedDataMap<opencascade::handle<SelectMgr_EntityOwner>, SelectMgr_SortCriterion, TColStd_MapTransientHasher> SelectMgr_IndexedDataMapOfOwnerCriterion;
+typedef NCollection_IndexedMap<opencascade::handle<SelectMgr_SensitiveEntity>> SelectMgr_IndexedMapOfHSensitive;
+typedef NCollection_Shared<NCollection_IndexedMap<opencascade::handle<SelectMgr_EntityOwner>>> SelectMgr_IndexedMapOfOwner;
+typedef NCollection_List<opencascade::handle<SelectMgr_Filter>>::Iterator SelectMgr_ListIteratorOfListOfFilter;
+typedef NCollection_List<opencascade::handle<SelectMgr_Filter>> SelectMgr_ListOfFilter;
+typedef NCollection_DataMap<opencascade::handle<SelectMgr_SelectableObject>, opencascade::handle<SelectMgr_SensitiveEntitySet>>::Iterator SelectMgr_MapOfObjectSensitivesIterator;
+typedef NCollection_Mat4<Standard_Real> SelectMgr_Mat4;
 typedef SelectMgr_SelectableObject * SelectMgr_SOPtr;
+typedef NCollection_Sequence<opencascade::handle<SelectMgr_Filter>> SelectMgr_SequenceOfFilter;
+typedef NCollection_Sequence<opencascade::handle<SelectMgr_EntityOwner>> SelectMgr_SequenceOfOwner;
 typedef NCollection_Sequence<opencascade::handle<SelectMgr_Selection>> SelectMgr_SequenceOfSelection;
 typedef NCollection_Vec3<Standard_Real> SelectMgr_Vec3;
 typedef NCollection_Vec4<Standard_Real> SelectMgr_Vec4;
-typedef NCollection_Mat4<Standard_Real> SelectMgr_Mat4;
-typedef NCollection_IndexedDataMap<opencascade::handle<SelectMgr_EntityOwner>, SelectMgr_SortCriterion, TColStd_MapTransientHasher> SelectMgr_IndexedDataMapOfOwnerCriterion;
-typedef NCollection_List<opencascade::handle<SelectMgr_Filter>> SelectMgr_ListOfFilter;
-typedef NCollection_List<opencascade::handle<SelectMgr_Filter>>::Iterator SelectMgr_ListIteratorOfListOfFilter;
-typedef NCollection_IndexedMap<opencascade::handle<SelectMgr_SensitiveEntity>> SelectMgr_IndexedMapOfHSensitive;
-typedef NCollection_Shared<NCollection_IndexedMap<opencascade::handle<SelectMgr_EntityOwner>>> SelectMgr_IndexedMapOfOwner;
-typedef NCollection_Sequence<opencascade::handle<SelectMgr_EntityOwner>> SelectMgr_SequenceOfOwner;
 /* end typedefs declaration */
 
 /******************************
@@ -217,6 +217,53 @@ typedef NCollection_Sequence<opencascade::handle<SelectMgr_EntityOwner>> SelectM
 ******************************/
 class SelectMgr_EntityOwner : public Standard_Transient {
 	public:
+		/****************** SelectMgr_EntityOwner ******************/
+		%feature("compactdefaultargs") SelectMgr_EntityOwner;
+		%feature("autodoc", "Initializes the selection priority apriority.
+
+Parameters
+----------
+aPriority: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") SelectMgr_EntityOwner;
+		 SelectMgr_EntityOwner(const Standard_Integer aPriority = 0);
+
+		/****************** SelectMgr_EntityOwner ******************/
+		%feature("compactdefaultargs") SelectMgr_EntityOwner;
+		%feature("autodoc", "Constructs a framework with the selectable object anso being attributed the selection priority apriority.
+
+Parameters
+----------
+aSO: SelectMgr_SelectableObject
+aPriority: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") SelectMgr_EntityOwner;
+		 SelectMgr_EntityOwner(const opencascade::handle<SelectMgr_SelectableObject> & aSO, const Standard_Integer aPriority = 0);
+
+		/****************** SelectMgr_EntityOwner ******************/
+		%feature("compactdefaultargs") SelectMgr_EntityOwner;
+		%feature("autodoc", "Constructs a framework from existing one anso being attributed the selection priority apriority.
+
+Parameters
+----------
+theOwner: SelectMgr_EntityOwner
+aPriority: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") SelectMgr_EntityOwner;
+		 SelectMgr_EntityOwner(const opencascade::handle<SelectMgr_EntityOwner> & theOwner, const Standard_Integer aPriority = 0);
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears the owners matching the value of the selection mode amode from the presentation manager object apm.
@@ -384,53 +431,6 @@ Returns
 int
 ") Priority;
 		Standard_Integer Priority();
-
-		/****************** SelectMgr_EntityOwner ******************/
-		%feature("compactdefaultargs") SelectMgr_EntityOwner;
-		%feature("autodoc", "Initializes the selection priority apriority.
-
-Parameters
-----------
-aPriority: int,optional
-	default value is 0
-
-Returns
--------
-None
-") SelectMgr_EntityOwner;
-		 SelectMgr_EntityOwner(const Standard_Integer aPriority = 0);
-
-		/****************** SelectMgr_EntityOwner ******************/
-		%feature("compactdefaultargs") SelectMgr_EntityOwner;
-		%feature("autodoc", "Constructs a framework with the selectable object anso being attributed the selection priority apriority.
-
-Parameters
-----------
-aSO: SelectMgr_SelectableObject
-aPriority: int,optional
-	default value is 0
-
-Returns
--------
-None
-") SelectMgr_EntityOwner;
-		 SelectMgr_EntityOwner(const opencascade::handle<SelectMgr_SelectableObject> & aSO, const Standard_Integer aPriority = 0);
-
-		/****************** SelectMgr_EntityOwner ******************/
-		%feature("compactdefaultargs") SelectMgr_EntityOwner;
-		%feature("autodoc", "Constructs a framework from existing one anso being attributed the selection priority apriority.
-
-Parameters
-----------
-theOwner: SelectMgr_EntityOwner
-aPriority: int,optional
-	default value is 0
-
-Returns
--------
-None
-") SelectMgr_EntityOwner;
-		 SelectMgr_EntityOwner(const opencascade::handle<SelectMgr_EntityOwner> & theOwner, const Standard_Integer aPriority = 0);
 
 		/****************** Selectable ******************/
 		%feature("compactdefaultargs") Selectable;
@@ -1112,6 +1112,16 @@ class BVHSubset:
 };
 /* end python proxy for enums */
 
+		/****************** SelectMgr_SelectableObjectSet ******************/
+		%feature("compactdefaultargs") SelectMgr_SelectableObjectSet;
+		%feature("autodoc", "Creates new empty objects set and initializes bvh tree builders for each subset.
+
+Returns
+-------
+None
+") SelectMgr_SelectableObjectSet;
+		 SelectMgr_SelectableObjectSet();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Adds the new selectable object to the set. the selectable object is placed into one of the predefined subsets depending on its persistence type. after adding an object, this method marks the corresponding bvh tree for rebuild. returns true if selectable object is added, otherwise returns false (selectable object is already in the set).
@@ -1231,16 +1241,6 @@ bool
 ") Remove;
 		Standard_Boolean Remove(const opencascade::handle<SelectMgr_SelectableObject> & theObject);
 
-		/****************** SelectMgr_SelectableObjectSet ******************/
-		%feature("compactdefaultargs") SelectMgr_SelectableObjectSet;
-		%feature("autodoc", "Creates new empty objects set and initializes bvh tree builders for each subset.
-
-Returns
--------
-None
-") SelectMgr_SelectableObjectSet;
-		 SelectMgr_SelectableObjectSet();
-
 		/****************** UpdateBVH ******************/
 		%feature("compactdefaultargs") UpdateBVH;
 		%feature("autodoc", "Updates outdated bvh trees and remembers the last state of the camera view-projection matrices and viewport (window) dimensions.
@@ -1274,6 +1274,21 @@ None
 *****************************************/
 class SelectMgr_SelectingVolumeManager : public SelectBasics_SelectingVolumeManager {
 	public:
+		/****************** SelectMgr_SelectingVolumeManager ******************/
+		%feature("compactdefaultargs") SelectMgr_SelectingVolumeManager;
+		%feature("autodoc", "Creates instances of all available selecting volume types.
+
+Parameters
+----------
+theToAllocateFrustums: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") SelectMgr_SelectingVolumeManager;
+		 SelectMgr_SelectingVolumeManager(Standard_Boolean theToAllocateFrustums = Standard_True);
+
 		/****************** AllowOverlapDetection ******************/
 		%feature("compactdefaultargs") AllowOverlapDetection;
 		%feature("autodoc", "Is used for rectangular selection only if theistoallow is false, only fully included sensitives will be detected, otherwise the algorithm will mark both included and overlapped entities as matched.
@@ -1608,21 +1623,6 @@ SelectMgr_SelectingVolumeManager
 ") ScaleAndTransform;
 		virtual SelectMgr_SelectingVolumeManager ScaleAndTransform(const Standard_Integer theScaleFactor, const gp_GTrsf & theTrsf, const opencascade::handle<SelectMgr_FrustumBuilder> & theBuilder = NULL);
 
-		/****************** SelectMgr_SelectingVolumeManager ******************/
-		%feature("compactdefaultargs") SelectMgr_SelectingVolumeManager;
-		%feature("autodoc", "Creates instances of all available selecting volume types.
-
-Parameters
-----------
-theToAllocateFrustums: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") SelectMgr_SelectingVolumeManager;
-		 SelectMgr_SelectingVolumeManager(Standard_Boolean theToAllocateFrustums = Standard_True);
-
 		/****************** SetActiveSelectionType ******************/
 		%feature("compactdefaultargs") SetActiveSelectionType;
 		%feature("autodoc", "No available documentation.
@@ -1831,6 +1831,21 @@ Graphic3d_WorldViewProjState
 ****************************/
 class SelectMgr_Selection : public Standard_Transient {
 	public:
+		/****************** SelectMgr_Selection ******************/
+		%feature("compactdefaultargs") SelectMgr_Selection;
+		%feature("autodoc", "Constructs a selection object defined by the selection mode idmode. the default setting 0 is the selection mode for a shape in its entirety.
+
+Parameters
+----------
+theModeIdx: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") SelectMgr_Selection;
+		 SelectMgr_Selection(const Standard_Integer theModeIdx = 0);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the sensitive primitive to the list of stored entities in this object. raises nullobject if the primitive is a null handle.
@@ -1955,21 +1970,6 @@ None
 ") Next;
 		void Next();
 
-		/****************** SelectMgr_Selection ******************/
-		%feature("compactdefaultargs") SelectMgr_Selection;
-		%feature("autodoc", "Constructs a selection object defined by the selection mode idmode. the default setting 0 is the selection mode for a shape in its entirety.
-
-Parameters
-----------
-theModeIdx: int,optional
-	default value is 0
-
-Returns
--------
-None
-") SelectMgr_Selection;
-		 SelectMgr_Selection(const Standard_Integer theModeIdx = 0);
-
 		/****************** Sensitive ******************/
 		%feature("compactdefaultargs") Sensitive;
 		%feature("autodoc", "Returns any sensitive primitive in this framework.
@@ -2072,6 +2072,20 @@ None
 ***********************************/
 class SelectMgr_SelectionManager : public Standard_Transient {
 	public:
+		/****************** SelectMgr_SelectionManager ******************/
+		%feature("compactdefaultargs") SelectMgr_SelectionManager;
+		%feature("autodoc", "Constructs an empty selection manager object.
+
+Parameters
+----------
+theSelector: SelectMgr_ViewerSelector
+
+Returns
+-------
+None
+") SelectMgr_SelectionManager;
+		 SelectMgr_SelectionManager(const opencascade::handle<SelectMgr_ViewerSelector> & theSelector);
+
 		/****************** Activate ******************/
 		%feature("compactdefaultargs") Activate;
 		%feature("autodoc", "Activates the selection mode themode in the selector theselector for the selectable object anobject. by default, themode is equal to 0. if theselector is set to default (null), the selection with the mode themode will be activated in all the viewers available.
@@ -2214,20 +2228,6 @@ None
 ") RestoreSelectionStructures;
 		void RestoreSelectionStructures(const opencascade::handle<SelectMgr_SelectableObject> & theObj, const Standard_Integer theMode = -1);
 
-		/****************** SelectMgr_SelectionManager ******************/
-		%feature("compactdefaultargs") SelectMgr_SelectionManager;
-		%feature("autodoc", "Constructs an empty selection manager object.
-
-Parameters
-----------
-theSelector: SelectMgr_ViewerSelector
-
-Returns
--------
-None
-") SelectMgr_SelectionManager;
-		 SelectMgr_SelectionManager(const opencascade::handle<SelectMgr_ViewerSelector> & theSelector);
-
 		/****************** Selector ******************/
 		%feature("compactdefaultargs") Selector;
 		%feature("autodoc", "Return the selector.
@@ -2331,6 +2331,20 @@ None
 **********************************/
 class SelectMgr_SensitiveEntity : public Standard_Transient {
 	public:
+		/****************** SelectMgr_SensitiveEntity ******************/
+		%feature("compactdefaultargs") SelectMgr_SensitiveEntity;
+		%feature("autodoc", "Creates new inactive for selection object with base entity theentity.
+
+Parameters
+----------
+theEntity: Select3D_SensitiveEntity
+
+Returns
+-------
+None
+") SelectMgr_SensitiveEntity;
+		 SelectMgr_SensitiveEntity(const opencascade::handle<Select3D_SensitiveEntity> & theEntity);
+
 		/****************** BaseSensitive ******************/
 		%feature("compactdefaultargs") BaseSensitive;
 		%feature("autodoc", "Returns related instance of selectbasics class.
@@ -2371,20 +2385,6 @@ None
 ") ResetSelectionActiveStatus;
 		void ResetSelectionActiveStatus();
 
-		/****************** SelectMgr_SensitiveEntity ******************/
-		%feature("compactdefaultargs") SelectMgr_SensitiveEntity;
-		%feature("autodoc", "Creates new inactive for selection object with base entity theentity.
-
-Parameters
-----------
-theEntity: Select3D_SensitiveEntity
-
-Returns
--------
-None
-") SelectMgr_SensitiveEntity;
-		 SelectMgr_SensitiveEntity(const opencascade::handle<Select3D_SensitiveEntity> & theEntity);
-
 		/****************** SetActiveForSelection ******************/
 		%feature("compactdefaultargs") SetActiveForSelection;
 		%feature("autodoc", "Marks entity as active for selection.
@@ -2423,6 +2423,16 @@ class SelectMgr_SortCriterion {
 		int ZLayerPosition;
 		int NbOwnerMatches;
 		bool ToPreferClosest;
+		/****************** SelectMgr_SortCriterion ******************/
+		%feature("compactdefaultargs") SelectMgr_SortCriterion;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") SelectMgr_SortCriterion;
+		 SelectMgr_SortCriterion();
+
 		/****************** IsGreater ******************/
 		%feature("compactdefaultargs") IsGreater;
 		%feature("autodoc", "Compare with another item.
@@ -2451,16 +2461,6 @@ bool
 ") IsLower;
 		bool IsLower(const SelectMgr_SortCriterion & theOther);
 
-		/****************** SelectMgr_SortCriterion ******************/
-		%feature("compactdefaultargs") SelectMgr_SortCriterion;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") SelectMgr_SortCriterion;
-		 SelectMgr_SortCriterion();
-
 };
 
 
@@ -2478,6 +2478,16 @@ None
 ********************************/
 class SelectMgr_ViewClipRange {
 	public:
+		/****************** SelectMgr_ViewClipRange ******************/
+		%feature("compactdefaultargs") SelectMgr_ViewClipRange;
+		%feature("autodoc", "Creates an empty clip range.
+
+Returns
+-------
+None
+") SelectMgr_ViewClipRange;
+		 SelectMgr_ViewClipRange();
+
 		/****************** AddClipSubRange ******************/
 		%feature("compactdefaultargs") AddClipSubRange;
 		%feature("autodoc", "Adds a clipping sub-range (for clipping chains).
@@ -2553,16 +2563,6 @@ Returns
 bool
 ") IsClipped;
 		Standard_Boolean IsClipped(const Standard_Real theDepth);
-
-		/****************** SelectMgr_ViewClipRange ******************/
-		%feature("compactdefaultargs") SelectMgr_ViewClipRange;
-		%feature("autodoc", "Creates an empty clip range.
-
-Returns
--------
-None
-") SelectMgr_ViewClipRange;
-		 SelectMgr_ViewClipRange();
 
 		/****************** SetVoid ******************/
 		%feature("compactdefaultargs") SetVoid;
@@ -2706,6 +2706,16 @@ SelectMgr_ListOfFilter
 ****************************/
 class SelectMgr_AndFilter : public SelectMgr_CompositionFilter {
 	public:
+		/****************** SelectMgr_AndFilter ******************/
+		%feature("compactdefaultargs") SelectMgr_AndFilter;
+		%feature("autodoc", "Constructs an empty selection filter object for two or more types of entity.
+
+Returns
+-------
+None
+") SelectMgr_AndFilter;
+		 SelectMgr_AndFilter();
+
 		/****************** IsOk ******************/
 		%feature("compactdefaultargs") IsOk;
 		%feature("autodoc", "No available documentation.
@@ -2719,16 +2729,6 @@ Returns
 bool
 ") IsOk;
 		Standard_Boolean IsOk(const opencascade::handle<SelectMgr_EntityOwner> & anobj);
-
-		/****************** SelectMgr_AndFilter ******************/
-		%feature("compactdefaultargs") SelectMgr_AndFilter;
-		%feature("autodoc", "Constructs an empty selection filter object for two or more types of entity.
-
-Returns
--------
-None
-") SelectMgr_AndFilter;
-		 SelectMgr_AndFilter();
 
 };
 
@@ -2746,6 +2746,16 @@ None
 ***************************/
 class SelectMgr_OrFilter : public SelectMgr_CompositionFilter {
 	public:
+		/****************** SelectMgr_OrFilter ******************/
+		%feature("compactdefaultargs") SelectMgr_OrFilter;
+		%feature("autodoc", "Constructs an empty or selection filter.
+
+Returns
+-------
+None
+") SelectMgr_OrFilter;
+		 SelectMgr_OrFilter();
+
 		/****************** IsOk ******************/
 		%feature("compactdefaultargs") IsOk;
 		%feature("autodoc", "No available documentation.
@@ -2759,16 +2769,6 @@ Returns
 bool
 ") IsOk;
 		Standard_Boolean IsOk(const opencascade::handle<SelectMgr_EntityOwner> & anobj);
-
-		/****************** SelectMgr_OrFilter ******************/
-		%feature("compactdefaultargs") SelectMgr_OrFilter;
-		%feature("autodoc", "Constructs an empty or selection filter.
-
-Returns
--------
-None
-") SelectMgr_OrFilter;
-		 SelectMgr_OrFilter();
 
 		/****************** SetDisabledObjects ******************/
 		%feature("compactdefaultargs") SetDisabledObjects;

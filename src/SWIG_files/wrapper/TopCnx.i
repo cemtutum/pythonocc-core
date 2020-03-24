@@ -79,6 +79,16 @@ from OCC.Core.Exception import *
 **********************************/
 class TopCnx_EdgeFaceTransition {
 	public:
+		/****************** TopCnx_EdgeFaceTransition ******************/
+		%feature("compactdefaultargs") TopCnx_EdgeFaceTransition;
+		%feature("autodoc", "Creates an empty algorithm.
+
+Returns
+-------
+None
+") TopCnx_EdgeFaceTransition;
+		 TopCnx_EdgeFaceTransition();
+
 		/****************** AddInterference ******************/
 		%feature("compactdefaultargs") AddInterference;
 		%feature("autodoc", "Add a curve element to the boundary. or is the orientation of the interference on the boundary curve. tr is the transition of the interference. btr is the boundary transition of the interference.
@@ -138,16 +148,6 @@ Returns
 None
 ") Reset;
 		void Reset(const gp_Dir & Tgt);
-
-		/****************** TopCnx_EdgeFaceTransition ******************/
-		%feature("compactdefaultargs") TopCnx_EdgeFaceTransition;
-		%feature("autodoc", "Creates an empty algorithm.
-
-Returns
--------
-None
-") TopCnx_EdgeFaceTransition;
-		 TopCnx_EdgeFaceTransition();
 
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;

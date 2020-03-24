@@ -657,6 +657,16 @@ None
 ************************************/
 class RWStepShape_RWBrepWithVoids {
 	public:
+		/****************** RWStepShape_RWBrepWithVoids ******************/
+		%feature("compactdefaultargs") RWStepShape_RWBrepWithVoids;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepShape_RWBrepWithVoids;
+		 RWStepShape_RWBrepWithVoids();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -672,16 +682,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepShape_BrepWithVoids> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepShape_RWBrepWithVoids ******************/
-		%feature("compactdefaultargs") RWStepShape_RWBrepWithVoids;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepShape_RWBrepWithVoids;
-		 RWStepShape_RWBrepWithVoids();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;
@@ -2022,6 +2022,16 @@ None
 ********************************/
 class RWStepShape_RWEdgeCurve {
 	public:
+		/****************** RWStepShape_RWEdgeCurve ******************/
+		%feature("compactdefaultargs") RWStepShape_RWEdgeCurve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepShape_RWEdgeCurve;
+		 RWStepShape_RWEdgeCurve();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -2037,16 +2047,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepShape_EdgeCurve> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepShape_RWEdgeCurve ******************/
-		%feature("compactdefaultargs") RWStepShape_RWEdgeCurve;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepShape_RWEdgeCurve;
-		 RWStepShape_RWEdgeCurve();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;
@@ -2109,6 +2109,16 @@ None
 *******************************/
 class RWStepShape_RWEdgeLoop {
 	public:
+		/****************** RWStepShape_RWEdgeLoop ******************/
+		%feature("compactdefaultargs") RWStepShape_RWEdgeLoop;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepShape_RWEdgeLoop;
+		 RWStepShape_RWEdgeLoop();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -2124,16 +2134,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepShape_EdgeLoop> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepShape_RWEdgeLoop ******************/
-		%feature("compactdefaultargs") RWStepShape_RWEdgeLoop;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepShape_RWEdgeLoop;
-		 RWStepShape_RWEdgeLoop();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;
@@ -2480,6 +2480,16 @@ None
 ********************************/
 class RWStepShape_RWFaceBound {
 	public:
+		/****************** RWStepShape_RWFaceBound ******************/
+		%feature("compactdefaultargs") RWStepShape_RWFaceBound;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepShape_RWFaceBound;
+		 RWStepShape_RWFaceBound();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -2495,16 +2505,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepShape_FaceBound> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepShape_RWFaceBound ******************/
-		%feature("compactdefaultargs") RWStepShape_RWFaceBound;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepShape_RWFaceBound;
-		 RWStepShape_RWFaceBound();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;

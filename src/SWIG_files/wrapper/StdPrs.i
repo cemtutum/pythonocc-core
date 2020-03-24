@@ -49,8 +49,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stdprs.html"
 #include<Adaptor3d_module.hxx>
 #include<TColgp_module.hxx>
 #include<TopoDS_module.hxx>
-#include<BRepAdaptor_module.hxx>
 #include<HLRAlgo_module.hxx>
+#include<BRepAdaptor_module.hxx>
 #include<TColStd_module.hxx>
 #include<Poly_module.hxx>
 #include<TopLoc_module.hxx>
@@ -87,8 +87,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stdprs.html"
 %import Adaptor3d.i
 %import TColgp.i
 %import TopoDS.i
-%import BRepAdaptor.i
 %import HLRAlgo.i
+%import BRepAdaptor.i
 %import TColStd.i
 %import Poly.i
 %import TopLoc.i
@@ -498,6 +498,21 @@ None
 ****************************/
 class StdPrs_HLRToolShape {
 	public:
+		/****************** StdPrs_HLRToolShape ******************/
+		%feature("compactdefaultargs") StdPrs_HLRToolShape;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+TheShape: TopoDS_Shape
+TheProjector: HLRAlgo_Projector
+
+Returns
+-------
+None
+") StdPrs_HLRToolShape;
+		 StdPrs_HLRToolShape(const TopoDS_Shape & TheShape, const HLRAlgo_Projector & TheProjector);
+
 		/****************** Hidden ******************/
 		%feature("compactdefaultargs") Hidden;
 		%feature("autodoc", "No available documentation.
@@ -591,21 +606,6 @@ Returns
 None
 ") NextVisible;
 		void NextVisible();
-
-		/****************** StdPrs_HLRToolShape ******************/
-		%feature("compactdefaultargs") StdPrs_HLRToolShape;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-TheShape: TopoDS_Shape
-TheProjector: HLRAlgo_Projector
-
-Returns
--------
-None
-") StdPrs_HLRToolShape;
-		 StdPrs_HLRToolShape(const TopoDS_Shape & TheShape, const HLRAlgo_Projector & TheProjector);
 
 		/****************** Visible ******************/
 		%feature("compactdefaultargs") Visible;
@@ -1148,6 +1148,30 @@ None
 *************************/
 class StdPrs_ToolRFace {
 	public:
+		/****************** StdPrs_ToolRFace ******************/
+		%feature("compactdefaultargs") StdPrs_ToolRFace;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StdPrs_ToolRFace;
+		 StdPrs_ToolRFace();
+
+		/****************** StdPrs_ToolRFace ******************/
+		%feature("compactdefaultargs") StdPrs_ToolRFace;
+		%feature("autodoc", "Constructor with initialization.
+
+Parameters
+----------
+aSurface: BRepAdaptor_HSurface
+
+Returns
+-------
+None
+") StdPrs_ToolRFace;
+		 StdPrs_ToolRFace(const opencascade::handle<BRepAdaptor_HSurface> & aSurface);
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Move iterator to the first element.
@@ -1207,30 +1231,6 @@ Returns
 TopAbs_Orientation
 ") Orientation;
 		TopAbs_Orientation Orientation();
-
-		/****************** StdPrs_ToolRFace ******************/
-		%feature("compactdefaultargs") StdPrs_ToolRFace;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StdPrs_ToolRFace;
-		 StdPrs_ToolRFace();
-
-		/****************** StdPrs_ToolRFace ******************/
-		%feature("compactdefaultargs") StdPrs_ToolRFace;
-		%feature("autodoc", "Constructor with initialization.
-
-Parameters
-----------
-aSurface: BRepAdaptor_HSurface
-
-Returns
--------
-None
-") StdPrs_ToolRFace;
-		 StdPrs_ToolRFace(const opencascade::handle<BRepAdaptor_HSurface> & aSurface);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;

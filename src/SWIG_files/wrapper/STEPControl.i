@@ -131,6 +131,16 @@ class STEPControl_StepModelType:
 ******************************/
 class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 	public:
+		/****************** STEPControl_ActorRead ******************/
+		%feature("compactdefaultargs") STEPControl_ActorRead;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPControl_ActorRead;
+		 STEPControl_ActorRead();
+
 		/****************** ComputeSRRWT ******************/
 		%feature("compactdefaultargs") ComputeSRRWT;
 		%feature("autodoc", "Computes transformation defined by given representation_relationship_with_transformation.
@@ -205,16 +215,6 @@ None
 ") ResetUnits;
 		void ResetUnits();
 
-		/****************** STEPControl_ActorRead ******************/
-		%feature("compactdefaultargs") STEPControl_ActorRead;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPControl_ActorRead;
-		 STEPControl_ActorRead();
-
 		/****************** Transfer ******************/
 		%feature("compactdefaultargs") Transfer;
 		%feature("autodoc", "No available documentation.
@@ -263,6 +263,16 @@ opencascade::handle<Transfer_Binder>
 *******************************/
 class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 	public:
+		/****************** STEPControl_ActorWrite ******************/
+		%feature("compactdefaultargs") STEPControl_ActorWrite;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPControl_ActorWrite;
+		 STEPControl_ActorWrite();
+
 		/****************** GroupMode ******************/
 		%feature("compactdefaultargs") GroupMode;
 		%feature("autodoc", "No available documentation.
@@ -310,16 +320,6 @@ Returns
 bool
 ") Recognize;
 		virtual Standard_Boolean Recognize(const opencascade::handle<Transfer_Finder> & start);
-
-		/****************** STEPControl_ActorWrite ******************/
-		%feature("compactdefaultargs") STEPControl_ActorWrite;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPControl_ActorWrite;
-		 STEPControl_ActorWrite();
 
 		/****************** SetGroupMode ******************/
 		%feature("compactdefaultargs") SetGroupMode;
@@ -451,6 +451,16 @@ opencascade::handle<Transfer_Binder>
 *******************************/
 class STEPControl_Controller : public XSControl_Controller {
 	public:
+		/****************** STEPControl_Controller ******************/
+		%feature("compactdefaultargs") STEPControl_Controller;
+		%feature("autodoc", "Initializes the use of step norm (the first time) and returns a controller.
+
+Returns
+-------
+None
+") STEPControl_Controller;
+		 STEPControl_Controller();
+
 		/****************** Customise ******************/
 		%feature("compactdefaultargs") Customise;
 		%feature("autodoc", "No available documentation.
@@ -484,16 +494,6 @@ Returns
 opencascade::handle<Interface_InterfaceModel>
 ") NewModel;
 		opencascade::handle<Interface_InterfaceModel> NewModel();
-
-		/****************** STEPControl_Controller ******************/
-		%feature("compactdefaultargs") STEPControl_Controller;
-		%feature("autodoc", "Initializes the use of step norm (the first time) and returns a controller.
-
-Returns
--------
-None
-") STEPControl_Controller;
-		 STEPControl_Controller();
 
 		/****************** TransferWriteShape ******************/
 		%feature("compactdefaultargs") TransferWriteShape;
@@ -529,32 +529,6 @@ IFSelect_ReturnStatus
 ***************************/
 class STEPControl_Reader : public XSControl_Reader {
 	public:
-		/****************** FileUnits ******************/
-		%feature("compactdefaultargs") FileUnits;
-		%feature("autodoc", "Returns sequence of all unit names for shape representations found in file.
-
-Parameters
-----------
-theUnitLengthNames: TColStd_SequenceOfAsciiString
-theUnitAngleNames: TColStd_SequenceOfAsciiString
-theUnitSolidAngleNames: TColStd_SequenceOfAsciiString
-
-Returns
--------
-None
-") FileUnits;
-		void FileUnits(TColStd_SequenceOfAsciiString & theUnitLengthNames, TColStd_SequenceOfAsciiString & theUnitAngleNames, TColStd_SequenceOfAsciiString & theUnitSolidAngleNames);
-
-		/****************** NbRootsForTransfer ******************/
-		%feature("compactdefaultargs") NbRootsForTransfer;
-		%feature("autodoc", "Determines the list of root entities from model which are candidate for a transfer to a shape (type of entities is product).
-
-Returns
--------
-int
-") NbRootsForTransfer;
-		virtual Standard_Integer NbRootsForTransfer();
-
 		/****************** STEPControl_Reader ******************/
 		%feature("compactdefaultargs") STEPControl_Reader;
 		%feature("autodoc", "Creates a reader object with an empty step model.
@@ -580,6 +554,32 @@ Returns
 None
 ") STEPControl_Reader;
 		 STEPControl_Reader(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
+
+		/****************** FileUnits ******************/
+		%feature("compactdefaultargs") FileUnits;
+		%feature("autodoc", "Returns sequence of all unit names for shape representations found in file.
+
+Parameters
+----------
+theUnitLengthNames: TColStd_SequenceOfAsciiString
+theUnitAngleNames: TColStd_SequenceOfAsciiString
+theUnitSolidAngleNames: TColStd_SequenceOfAsciiString
+
+Returns
+-------
+None
+") FileUnits;
+		void FileUnits(TColStd_SequenceOfAsciiString & theUnitLengthNames, TColStd_SequenceOfAsciiString & theUnitAngleNames, TColStd_SequenceOfAsciiString & theUnitSolidAngleNames);
+
+		/****************** NbRootsForTransfer ******************/
+		%feature("compactdefaultargs") NbRootsForTransfer;
+		%feature("autodoc", "Determines the list of root entities from model which are candidate for a transfer to a shape (type of entities is product).
+
+Returns
+-------
+int
+") NbRootsForTransfer;
+		virtual Standard_Integer NbRootsForTransfer();
 
 		/****************** StepModel ******************/
 		%feature("compactdefaultargs") StepModel;
@@ -620,6 +620,32 @@ bool
 ***************************/
 class STEPControl_Writer {
 	public:
+		/****************** STEPControl_Writer ******************/
+		%feature("compactdefaultargs") STEPControl_Writer;
+		%feature("autodoc", "Creates a writer from scratch.
+
+Returns
+-------
+None
+") STEPControl_Writer;
+		 STEPControl_Writer();
+
+		/****************** STEPControl_Writer ******************/
+		%feature("compactdefaultargs") STEPControl_Writer;
+		%feature("autodoc", "Creates a writer from an already existing session if <scratch> is true (d), clears already recorded data.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") STEPControl_Writer;
+		 STEPControl_Writer(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
+
 		/****************** Model ******************/
 		%feature("compactdefaultargs") Model;
 		%feature("autodoc", "Returns the produced model. produces a new one if not yet done or if <newone> is true this method allows for instance to edit product or header data before writing.
@@ -650,32 +676,6 @@ Returns
 None
 ") PrintStatsTransfer;
 		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode = 0);
-
-		/****************** STEPControl_Writer ******************/
-		%feature("compactdefaultargs") STEPControl_Writer;
-		%feature("autodoc", "Creates a writer from scratch.
-
-Returns
--------
-None
-") STEPControl_Writer;
-		 STEPControl_Writer();
-
-		/****************** STEPControl_Writer ******************/
-		%feature("compactdefaultargs") STEPControl_Writer;
-		%feature("autodoc", "Creates a writer from an already existing session if <scratch> is true (d), clears already recorded data.
-
-Parameters
-----------
-WS: XSControl_WorkSession
-scratch: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") STEPControl_Writer;
-		 STEPControl_Writer(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
 
 		/****************** SetTolerance ******************/
 		%feature("compactdefaultargs") SetTolerance;

@@ -99,6 +99,16 @@ from OCC.Core.Exception import *
 ***************************/
 class IMeshTools_Context : public IMeshData_Shape {
 	public:
+		/****************** IMeshTools_Context ******************/
+		%feature("compactdefaultargs") IMeshTools_Context;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") IMeshTools_Context;
+		 IMeshTools_Context();
+
 		/****************** BuildModel ******************/
 		%feature("compactdefaultargs") BuildModel;
 		%feature("autodoc", "Builds model using assined model builder. returns true on success, false elsewhere.
@@ -208,16 +218,6 @@ Returns
 bool
 ") HealModel;
 		virtual Standard_Boolean HealModel();
-
-		/****************** IMeshTools_Context ******************/
-		%feature("compactdefaultargs") IMeshTools_Context;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") IMeshTools_Context;
-		 IMeshTools_Context();
 
 		/****************** PostProcessModel ******************/
 		%feature("compactdefaultargs") PostProcessModel;
@@ -600,20 +600,6 @@ float
 *********************************/
 class IMeshTools_ShapeExplorer : public IMeshData_Shape {
 	public:
-		/****************** Accept ******************/
-		%feature("compactdefaultargs") Accept;
-		%feature("autodoc", "Starts exploring of a shape.
-
-Parameters
-----------
-theVisitor: Handle ( IMeshTools_ShapeVisitor )
-
-Returns
--------
-None
-") Accept;
-		virtual void Accept(const Handle ( IMeshTools_ShapeVisitor ) & theVisitor);
-
 		/****************** IMeshTools_ShapeExplorer ******************/
 		%feature("compactdefaultargs") IMeshTools_ShapeExplorer;
 		%feature("autodoc", "Constructor.
@@ -627,6 +613,20 @@ Returns
 None
 ") IMeshTools_ShapeExplorer;
 		 IMeshTools_ShapeExplorer(const TopoDS_Shape & theShape);
+
+		/****************** Accept ******************/
+		%feature("compactdefaultargs") Accept;
+		%feature("autodoc", "Starts exploring of a shape.
+
+Parameters
+----------
+theVisitor: Handle ( IMeshTools_ShapeVisitor )
+
+Returns
+-------
+None
+") Accept;
+		virtual void Accept(const Handle ( IMeshTools_ShapeVisitor ) & theVisitor);
 
 };
 

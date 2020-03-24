@@ -172,6 +172,16 @@ TCollection_AsciiString
 ********************************************/
 class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	public:
+		/****************** BinLDrivers_DocumentRetrievalDriver ******************/
+		%feature("compactdefaultargs") BinLDrivers_DocumentRetrievalDriver;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") BinLDrivers_DocumentRetrievalDriver;
+		 BinLDrivers_DocumentRetrievalDriver();
+
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "No available documentation.
@@ -185,16 +195,6 @@ Returns
 opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
-
-		/****************** BinLDrivers_DocumentRetrievalDriver ******************/
-		%feature("compactdefaultargs") BinLDrivers_DocumentRetrievalDriver;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") BinLDrivers_DocumentRetrievalDriver;
-		 BinLDrivers_DocumentRetrievalDriver();
 
 		/****************** CreateDocument ******************/
 		%feature("compactdefaultargs") CreateDocument;
@@ -353,6 +353,16 @@ None
 ******************************************/
 class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 	public:
+		/****************** BinLDrivers_DocumentStorageDriver ******************/
+		%feature("compactdefaultargs") BinLDrivers_DocumentStorageDriver;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") BinLDrivers_DocumentStorageDriver;
+		 BinLDrivers_DocumentStorageDriver();
+
 		/****************** AddSection ******************/
 		%feature("compactdefaultargs") AddSection;
 		%feature("autodoc", "Create a section that should be written after the ocaf data.
@@ -382,16 +392,6 @@ Returns
 opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
-
-		/****************** BinLDrivers_DocumentStorageDriver ******************/
-		%feature("compactdefaultargs") BinLDrivers_DocumentStorageDriver;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") BinLDrivers_DocumentStorageDriver;
-		 BinLDrivers_DocumentStorageDriver();
 
 		/****************** Write ******************/
 		%feature("compactdefaultargs") Write;

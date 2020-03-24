@@ -373,6 +373,16 @@ None
 *******************************************/
 class RWStepGeom_RWBSplineCurveWithKnots {
 	public:
+		/****************** RWStepGeom_RWBSplineCurveWithKnots ******************/
+		%feature("compactdefaultargs") RWStepGeom_RWBSplineCurveWithKnots;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepGeom_RWBSplineCurveWithKnots;
+		 RWStepGeom_RWBSplineCurveWithKnots();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -388,16 +398,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepGeom_BSplineCurveWithKnots> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepGeom_RWBSplineCurveWithKnots ******************/
-		%feature("compactdefaultargs") RWStepGeom_RWBSplineCurveWithKnots;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepGeom_RWBSplineCurveWithKnots;
-		 RWStepGeom_RWBSplineCurveWithKnots();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;
@@ -460,6 +460,16 @@ None
 ******************************************************************/
 class RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve {
 	public:
+		/****************** RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve ******************/
+		%feature("compactdefaultargs") RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve;
+		 RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -475,16 +485,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve ******************/
-		%feature("compactdefaultargs") RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve;
-		 RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;
@@ -618,6 +618,16 @@ None
 *********************************************/
 class RWStepGeom_RWBSplineSurfaceWithKnots {
 	public:
+		/****************** RWStepGeom_RWBSplineSurfaceWithKnots ******************/
+		%feature("compactdefaultargs") RWStepGeom_RWBSplineSurfaceWithKnots;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepGeom_RWBSplineSurfaceWithKnots;
+		 RWStepGeom_RWBSplineSurfaceWithKnots();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -633,16 +643,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepGeom_BSplineSurfaceWithKnots> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepGeom_RWBSplineSurfaceWithKnots ******************/
-		%feature("compactdefaultargs") RWStepGeom_RWBSplineSurfaceWithKnots;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepGeom_RWBSplineSurfaceWithKnots;
-		 RWStepGeom_RWBSplineSurfaceWithKnots();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;
@@ -705,6 +705,16 @@ None
 **********************************************************************/
 class RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface {
 	public:
+		/****************** RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface ******************/
+		%feature("compactdefaultargs") RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface;
+		 RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -720,16 +730,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface ******************/
-		%feature("compactdefaultargs") RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface;
-		 RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;
@@ -2294,6 +2294,16 @@ None
 *******************************/
 class RWStepGeom_RWDirection {
 	public:
+		/****************** RWStepGeom_RWDirection ******************/
+		%feature("compactdefaultargs") RWStepGeom_RWDirection;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepGeom_RWDirection;
+		 RWStepGeom_RWDirection();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -2309,16 +2319,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepGeom_Direction> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepGeom_RWDirection ******************/
-		%feature("compactdefaultargs") RWStepGeom_RWDirection;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepGeom_RWDirection;
-		 RWStepGeom_RWDirection();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;
@@ -2437,6 +2437,16 @@ None
 *****************************/
 class RWStepGeom_RWEllipse {
 	public:
+		/****************** RWStepGeom_RWEllipse ******************/
+		%feature("compactdefaultargs") RWStepGeom_RWEllipse;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepGeom_RWEllipse;
+		 RWStepGeom_RWEllipse();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -2452,16 +2462,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepGeom_Ellipse> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepGeom_RWEllipse ******************/
-		%feature("compactdefaultargs") RWStepGeom_RWEllipse;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepGeom_RWEllipse;
-		 RWStepGeom_RWEllipse();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;
@@ -4325,6 +4325,16 @@ None
 ******************************************/
 class RWStepGeom_RWRationalBSplineCurve {
 	public:
+		/****************** RWStepGeom_RWRationalBSplineCurve ******************/
+		%feature("compactdefaultargs") RWStepGeom_RWRationalBSplineCurve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepGeom_RWRationalBSplineCurve;
+		 RWStepGeom_RWRationalBSplineCurve();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -4340,16 +4350,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepGeom_RationalBSplineCurve> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepGeom_RWRationalBSplineCurve ******************/
-		%feature("compactdefaultargs") RWStepGeom_RWRationalBSplineCurve;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepGeom_RWRationalBSplineCurve;
-		 RWStepGeom_RWRationalBSplineCurve();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;
@@ -4412,6 +4412,16 @@ None
 ********************************************/
 class RWStepGeom_RWRationalBSplineSurface {
 	public:
+		/****************** RWStepGeom_RWRationalBSplineSurface ******************/
+		%feature("compactdefaultargs") RWStepGeom_RWRationalBSplineSurface;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepGeom_RWRationalBSplineSurface;
+		 RWStepGeom_RWRationalBSplineSurface();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -4427,16 +4437,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepGeom_RationalBSplineSurface> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepGeom_RWRationalBSplineSurface ******************/
-		%feature("compactdefaultargs") RWStepGeom_RWRationalBSplineSurface;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepGeom_RWRationalBSplineSurface;
-		 RWStepGeom_RWRationalBSplineSurface();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;
@@ -5407,6 +5407,16 @@ None
 *************************************/
 class RWStepGeom_RWToroidalSurface {
 	public:
+		/****************** RWStepGeom_RWToroidalSurface ******************/
+		%feature("compactdefaultargs") RWStepGeom_RWToroidalSurface;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepGeom_RWToroidalSurface;
+		 RWStepGeom_RWToroidalSurface();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -5422,16 +5432,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepGeom_ToroidalSurface> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepGeom_RWToroidalSurface ******************/
-		%feature("compactdefaultargs") RWStepGeom_RWToroidalSurface;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepGeom_RWToroidalSurface;
-		 RWStepGeom_RWToroidalSurface();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;
@@ -5849,6 +5849,16 @@ None
 ****************************/
 class RWStepGeom_RWVector {
 	public:
+		/****************** RWStepGeom_RWVector ******************/
+		%feature("compactdefaultargs") RWStepGeom_RWVector;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepGeom_RWVector;
+		 RWStepGeom_RWVector();
+
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;
 		%feature("autodoc", "No available documentation.
@@ -5864,16 +5874,6 @@ Returns
 None
 ") Check;
 		void Check(const opencascade::handle<StepGeom_Vector> & ent, const Interface_ShareTool & shares, opencascade::handle<Interface_Check> & ach);
-
-		/****************** RWStepGeom_RWVector ******************/
-		%feature("compactdefaultargs") RWStepGeom_RWVector;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepGeom_RWVector;
-		 RWStepGeom_RWVector();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;

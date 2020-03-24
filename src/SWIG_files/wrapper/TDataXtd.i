@@ -252,6 +252,16 @@ None
 **********************/
 class TDataXtd_Axis : public TDF_Attribute {
 	public:
+		/****************** TDataXtd_Axis ******************/
+		%feature("compactdefaultargs") TDataXtd_Axis;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataXtd_Axis;
+		 TDataXtd_Axis();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -348,16 +358,6 @@ opencascade::handle<TDataXtd_Axis>
 ") Set;
 		static opencascade::handle<TDataXtd_Axis> Set(const TDF_Label & label, const gp_Lin & L);
 
-		/****************** TDataXtd_Axis ******************/
-		%feature("compactdefaultargs") TDataXtd_Axis;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataXtd_Axis;
-		 TDataXtd_Axis();
-
 };
 
 
@@ -374,6 +374,16 @@ None
 ****************************/
 class TDataXtd_Constraint : public TDF_Attribute {
 	public:
+		/****************** TDataXtd_Constraint ******************/
+		%feature("compactdefaultargs") TDataXtd_Constraint;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataXtd_Constraint;
+		 TDataXtd_Constraint();
+
 		/****************** ClearGeometries ******************/
 		%feature("compactdefaultargs") ClearGeometries;
 		%feature("autodoc", "Removes the geometries involved in the constraint or dimension from the array of topological attributes where they are stored.
@@ -739,16 +749,6 @@ None
 ") SetValue;
 		void SetValue(const opencascade::handle<TDataStd_Real> & V);
 
-		/****************** TDataXtd_Constraint ******************/
-		%feature("compactdefaultargs") TDataXtd_Constraint;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataXtd_Constraint;
-		 TDataXtd_Constraint();
-
 		/****************** Verified ******************/
 		%feature("compactdefaultargs") Verified;
 		%feature("autodoc", "Returns true if this constraint attribute is valid. by default, true is returned. when the value of a dimension is changed or when a geometry is moved, false is returned until the solver sets it back to true.
@@ -789,6 +789,16 @@ None
 **************************/
 class TDataXtd_Geometry : public TDF_Attribute {
 	public:
+		/****************** TDataXtd_Geometry ******************/
+		%feature("compactdefaultargs") TDataXtd_Geometry;
+		%feature("autodoc", "This and the next methods are used to retrieve underlying geometry of the namedshape, even if noone geometry attribute is associated . if not found or not compliant geometry return false.
+
+Returns
+-------
+None
+") TDataXtd_Geometry;
+		 TDataXtd_Geometry();
+
 		/****************** Axis ******************/
 		%feature("compactdefaultargs") Axis;
 		%feature("autodoc", "Returns the axis attribute defined by the label l and the axis g.
@@ -1104,16 +1114,6 @@ None
 ") SetType;
 		void SetType(const TDataXtd_GeometryEnum T);
 
-		/****************** TDataXtd_Geometry ******************/
-		%feature("compactdefaultargs") TDataXtd_Geometry;
-		%feature("autodoc", "This and the next methods are used to retrieve underlying geometry of the namedshape, even if noone geometry attribute is associated . if not found or not compliant geometry return false.
-
-Returns
--------
-None
-") TDataXtd_Geometry;
-		 TDataXtd_Geometry();
-
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "Returns the label l used to define the type of geometric construction for the geometry attribute.
@@ -1229,6 +1229,16 @@ Standard_GUID
 ***************************/
 class TDataXtd_Placement : public TDF_Attribute {
 	public:
+		/****************** TDataXtd_Placement ******************/
+		%feature("compactdefaultargs") TDataXtd_Placement;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataXtd_Placement;
+		 TDataXtd_Placement();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -1310,16 +1320,6 @@ opencascade::handle<TDataXtd_Placement>
 ") Set;
 		static opencascade::handle<TDataXtd_Placement> Set(const TDF_Label & label);
 
-		/****************** TDataXtd_Placement ******************/
-		%feature("compactdefaultargs") TDataXtd_Placement;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataXtd_Placement;
-		 TDataXtd_Placement();
-
 };
 
 
@@ -1336,6 +1336,16 @@ None
 ***********************/
 class TDataXtd_Plane : public TDF_Attribute {
 	public:
+		/****************** TDataXtd_Plane ******************/
+		%feature("compactdefaultargs") TDataXtd_Plane;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataXtd_Plane;
+		 TDataXtd_Plane();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -1432,16 +1442,6 @@ opencascade::handle<TDataXtd_Plane>
 ") Set;
 		static opencascade::handle<TDataXtd_Plane> Set(const TDF_Label & label, const gp_Pln & P);
 
-		/****************** TDataXtd_Plane ******************/
-		%feature("compactdefaultargs") TDataXtd_Plane;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataXtd_Plane;
-		 TDataXtd_Plane();
-
 };
 
 
@@ -1458,6 +1458,16 @@ None
 ***********************/
 class TDataXtd_Point : public TDF_Attribute {
 	public:
+		/****************** TDataXtd_Point ******************/
+		%feature("compactdefaultargs") TDataXtd_Point;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataXtd_Point;
+		 TDataXtd_Point();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -1554,16 +1564,6 @@ opencascade::handle<TDataXtd_Point>
 ") Set;
 		static opencascade::handle<TDataXtd_Point> Set(const TDF_Label & label, const gp_Pnt & P);
 
-		/****************** TDataXtd_Point ******************/
-		%feature("compactdefaultargs") TDataXtd_Point;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataXtd_Point;
-		 TDataXtd_Point();
-
 };
 
 
@@ -1580,6 +1580,16 @@ None
 **************************/
 class TDataXtd_Position : public TDF_Attribute {
 	public:
+		/****************** TDataXtd_Position ******************/
+		%feature("compactdefaultargs") TDataXtd_Position;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataXtd_Position;
+		 TDataXtd_Position();
+
 		/****************** Get ******************/
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "Search label <alabel) for the tdataxtd_position attribute and get its position if found returns true.
@@ -1707,16 +1717,6 @@ None
 ") SetPosition;
 		void SetPosition(const gp_Pnt & aPos);
 
-		/****************** TDataXtd_Position ******************/
-		%feature("compactdefaultargs") TDataXtd_Position;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataXtd_Position;
-		 TDataXtd_Position();
-
 };
 
 
@@ -1733,6 +1733,16 @@ None
 ******************************/
 class TDataXtd_Presentation : public TDF_Attribute {
 	public:
+		/****************** TDataXtd_Presentation ******************/
+		%feature("compactdefaultargs") TDataXtd_Presentation;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") TDataXtd_Presentation;
+		 TDataXtd_Presentation();
+
 		/****************** AddSelectionMode ******************/
 		%feature("compactdefaultargs") AddSelectionMode;
 		%feature("autodoc", "No available documentation.
@@ -2082,16 +2092,6 @@ None
 ") SetWidth;
 		void SetWidth(const Standard_Real theWidth);
 
-		/****************** TDataXtd_Presentation ******************/
-		%feature("compactdefaultargs") TDataXtd_Presentation;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") TDataXtd_Presentation;
-		 TDataXtd_Presentation();
-
 		/****************** Transparency ******************/
 		%feature("compactdefaultargs") Transparency;
 		%feature("autodoc", "No available documentation.
@@ -2202,6 +2202,16 @@ float
 ***********************/
 class TDataXtd_Shape : public TDF_Attribute {
 	public:
+		/****************** TDataXtd_Shape ******************/
+		%feature("compactdefaultargs") TDataXtd_Shape;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataXtd_Shape;
+		 TDataXtd_Shape();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -2341,16 +2351,6 @@ opencascade::handle<TDataXtd_Shape>
 ") Set;
 		static opencascade::handle<TDataXtd_Shape> Set(const TDF_Label & label, const TopoDS_Shape & shape);
 
-		/****************** TDataXtd_Shape ******************/
-		%feature("compactdefaultargs") TDataXtd_Shape;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataXtd_Shape;
-		 TDataXtd_Shape();
-
 };
 
 
@@ -2367,6 +2367,16 @@ None
 *******************************/
 class TDataXtd_Triangulation : public TDF_Attribute {
 	public:
+		/****************** TDataXtd_Triangulation ******************/
+		%feature("compactdefaultargs") TDataXtd_Triangulation;
+		%feature("autodoc", "A constructor. don't use it directly, use please the static method set(), which returns the attribute attached to a label.
+
+Returns
+-------
+None
+") TDataXtd_Triangulation;
+		 TDataXtd_Triangulation();
+
 		/****************** Deflection ******************/
 		%feature("compactdefaultargs") Deflection;
 		%feature("autodoc", "Returns the deflection of this triangulation.
@@ -2663,16 +2673,6 @@ None
 ") SetUVNode;
 		void SetUVNode(const Standard_Integer theIndex, const gp_Pnt2d & theUVNode);
 
-		/****************** TDataXtd_Triangulation ******************/
-		%feature("compactdefaultargs") TDataXtd_Triangulation;
-		%feature("autodoc", "A constructor. don't use it directly, use please the static method set(), which returns the attribute attached to a label.
-
-Returns
--------
-None
-") TDataXtd_Triangulation;
-		 TDataXtd_Triangulation();
-
 		/****************** Triangle ******************/
 		%feature("compactdefaultargs") Triangle;
 		%feature("autodoc", "Returns triangle at the given index. raises standard_outofrange exception if theindex is less than 1 or greater than nbtriangles.
@@ -2717,6 +2717,16 @@ gp_Pnt2d
 ****************************/
 class TDataXtd_PatternStd : public TDataXtd_Pattern {
 	public:
+		/****************** TDataXtd_PatternStd ******************/
+		%feature("compactdefaultargs") TDataXtd_PatternStd;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDataXtd_PatternStd;
+		 TDataXtd_PatternStd();
+
 		/****************** Axis1 ******************/
 		%feature("compactdefaultargs") Axis1;
 		%feature("autodoc", "No available documentation.
@@ -3027,16 +3037,6 @@ Returns
 int
 ") Signature;
 		Standard_Integer Signature();
-
-		/****************** TDataXtd_PatternStd ******************/
-		%feature("compactdefaultargs") TDataXtd_PatternStd;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDataXtd_PatternStd;
-		 TDataXtd_PatternStd();
 
 		/****************** Value1 ******************/
 		%feature("compactdefaultargs") Value1;

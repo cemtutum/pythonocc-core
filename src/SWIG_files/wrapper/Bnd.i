@@ -76,41 +76,6 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(Bnd_Array1OfSphere) NCollection_Array1<Bnd_Sphere>;
-
-%extend NCollection_Array1<Bnd_Sphere> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
 %template(Bnd_Array1OfBox) NCollection_Array1<Bnd_Box>;
 
 %extend NCollection_Array1<Bnd_Box> {
@@ -181,13 +146,48 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
+%template(Bnd_Array1OfSphere) NCollection_Array1<Bnd_Sphere>;
+
+%extend NCollection_Array1<Bnd_Sphere> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
 %template(Bnd_SeqOfBox) NCollection_Sequence<Bnd_Box>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Array1<Bnd_Sphere> Bnd_Array1OfSphere;
 typedef NCollection_Array1<Bnd_Box> Bnd_Array1OfBox;
 typedef NCollection_Array1<Bnd_Box2d> Bnd_Array1OfBox2d;
+typedef NCollection_Array1<Bnd_Sphere> Bnd_Array1OfSphere;
 typedef NCollection_Sequence<Bnd_Box> Bnd_SeqOfBox;
 /* end typedefs declaration */
 
@@ -196,6 +196,31 @@ typedef NCollection_Sequence<Bnd_Box> Bnd_SeqOfBox;
 ****************/
 class Bnd_B2d {
 	public:
+		/****************** Bnd_B2d ******************/
+		%feature("compactdefaultargs") Bnd_B2d;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Bnd_B2d;
+		 Bnd_B2d();
+
+		/****************** Bnd_B2d ******************/
+		%feature("compactdefaultargs") Bnd_B2d;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+theCenter: gp_XY
+theHSize: gp_XY
+
+Returns
+-------
+None
+") Bnd_B2d;
+		 Bnd_B2d(const gp_XY & theCenter, const gp_XY & theHSize);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Update the box by a point.
@@ -237,31 +262,6 @@ Returns
 None
 ") Add;
 		void Add(const Bnd_B2d & theBox);
-
-		/****************** Bnd_B2d ******************/
-		%feature("compactdefaultargs") Bnd_B2d;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Bnd_B2d;
-		 Bnd_B2d();
-
-		/****************** Bnd_B2d ******************/
-		%feature("compactdefaultargs") Bnd_B2d;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-theCenter: gp_XY
-theHSize: gp_XY
-
-Returns
--------
-None
-") Bnd_B2d;
-		 Bnd_B2d(const gp_XY & theCenter, const gp_XY & theHSize);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -515,6 +515,31 @@ Bnd_B2d
 ****************/
 class Bnd_B2f {
 	public:
+		/****************** Bnd_B2f ******************/
+		%feature("compactdefaultargs") Bnd_B2f;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Bnd_B2f;
+		 Bnd_B2f();
+
+		/****************** Bnd_B2f ******************/
+		%feature("compactdefaultargs") Bnd_B2f;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+theCenter: gp_XY
+theHSize: gp_XY
+
+Returns
+-------
+None
+") Bnd_B2f;
+		 Bnd_B2f(const gp_XY & theCenter, const gp_XY & theHSize);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Update the box by a point.
@@ -556,31 +581,6 @@ Returns
 None
 ") Add;
 		void Add(const Bnd_B2f & theBox);
-
-		/****************** Bnd_B2f ******************/
-		%feature("compactdefaultargs") Bnd_B2f;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Bnd_B2f;
-		 Bnd_B2f();
-
-		/****************** Bnd_B2f ******************/
-		%feature("compactdefaultargs") Bnd_B2f;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-theCenter: gp_XY
-theHSize: gp_XY
-
-Returns
--------
-None
-") Bnd_B2f;
-		 Bnd_B2f(const gp_XY & theCenter, const gp_XY & theHSize);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -834,6 +834,31 @@ Bnd_B2f
 ****************/
 class Bnd_B3d {
 	public:
+		/****************** Bnd_B3d ******************/
+		%feature("compactdefaultargs") Bnd_B3d;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Bnd_B3d;
+		 Bnd_B3d();
+
+		/****************** Bnd_B3d ******************/
+		%feature("compactdefaultargs") Bnd_B3d;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+theCenter: gp_XYZ
+theHSize: gp_XYZ
+
+Returns
+-------
+None
+") Bnd_B3d;
+		 Bnd_B3d(const gp_XYZ & theCenter, const gp_XYZ & theHSize);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Update the box by a point.
@@ -875,31 +900,6 @@ Returns
 None
 ") Add;
 		void Add(const Bnd_B3d & theBox);
-
-		/****************** Bnd_B3d ******************/
-		%feature("compactdefaultargs") Bnd_B3d;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Bnd_B3d;
-		 Bnd_B3d();
-
-		/****************** Bnd_B3d ******************/
-		%feature("compactdefaultargs") Bnd_B3d;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-theCenter: gp_XYZ
-theHSize: gp_XYZ
-
-Returns
--------
-None
-") Bnd_B3d;
-		 Bnd_B3d(const gp_XYZ & theCenter, const gp_XYZ & theHSize);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -1156,6 +1156,31 @@ Bnd_B3d
 ****************/
 class Bnd_B3f {
 	public:
+		/****************** Bnd_B3f ******************/
+		%feature("compactdefaultargs") Bnd_B3f;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Bnd_B3f;
+		 Bnd_B3f();
+
+		/****************** Bnd_B3f ******************/
+		%feature("compactdefaultargs") Bnd_B3f;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+theCenter: gp_XYZ
+theHSize: gp_XYZ
+
+Returns
+-------
+None
+") Bnd_B3f;
+		 Bnd_B3f(const gp_XYZ & theCenter, const gp_XYZ & theHSize);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Update the box by a point.
@@ -1197,31 +1222,6 @@ Returns
 None
 ") Add;
 		void Add(const Bnd_B3f & theBox);
-
-		/****************** Bnd_B3f ******************/
-		%feature("compactdefaultargs") Bnd_B3f;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Bnd_B3f;
-		 Bnd_B3f();
-
-		/****************** Bnd_B3f ******************/
-		%feature("compactdefaultargs") Bnd_B3f;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-theCenter: gp_XYZ
-theHSize: gp_XYZ
-
-Returns
--------
-None
-") Bnd_B3f;
-		 Bnd_B3f(const gp_XYZ & theCenter, const gp_XYZ & theHSize);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -1478,6 +1478,16 @@ Bnd_B3f
 *************************/
 class Bnd_BoundSortBox {
 	public:
+		/****************** Bnd_BoundSortBox ******************/
+		%feature("compactdefaultargs") Bnd_BoundSortBox;
+		%feature("autodoc", "Constructs an empty comparison algorithm for bounding boxes. the bounding boxes are then defined using the initialize function.
+
+Returns
+-------
+None
+") Bnd_BoundSortBox;
+		 Bnd_BoundSortBox();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the bounding box thebox at position boxindex in the array of boxes to be sorted by this comparison algorithm. this function is used only in conjunction with the third syntax described in the synopsis of initialize. //! exceptions: //! - standard_outofrange if boxindex is not in the range [ 1,nbcomponents ] where nbcomponents is the maximum number of bounding boxes declared for this comparison algorithm at initialization. //! - standard_multiplydefined if a box already exists at position boxindex in the array of boxes to be sorted by this comparison algorithm.
@@ -1492,16 +1502,6 @@ Returns
 None
 ") Add;
 		void Add(const Bnd_Box & theBox, const Standard_Integer boxIndex);
-
-		/****************** Bnd_BoundSortBox ******************/
-		%feature("compactdefaultargs") Bnd_BoundSortBox;
-		%feature("autodoc", "Constructs an empty comparison algorithm for bounding boxes. the bounding boxes are then defined using the initialize function.
-
-Returns
--------
-None
-") Bnd_BoundSortBox;
-		 Bnd_BoundSortBox();
 
 		/****************** Compare ******************/
 		%feature("compactdefaultargs") Compare;
@@ -1609,6 +1609,16 @@ None
 ***************************/
 class Bnd_BoundSortBox2d {
 	public:
+		/****************** Bnd_BoundSortBox2d ******************/
+		%feature("compactdefaultargs") Bnd_BoundSortBox2d;
+		%feature("autodoc", "Constructs an empty comparison algorithm for 2d bounding boxes. the bounding boxes are then defined using the initialize function.
+
+Returns
+-------
+None
+") Bnd_BoundSortBox2d;
+		 Bnd_BoundSortBox2d();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the 2d bounding box thebox at position boxindex in the array of boxes to be sorted by this comparison algorithm. this function is used only in conjunction with the third syntax described in the synopsis of initialize. exceptions - standard_outofrange if boxindex is not in the range [ 1,nbcomponents ] where nbcomponents is the maximum number of bounding boxes declared for this comparison algorithm at initialization. - standard_multiplydefined if a box still exists at position boxindex in the array of boxes to be sorted by this comparison algorithm.
@@ -1623,16 +1633,6 @@ Returns
 None
 ") Add;
 		void Add(const Bnd_Box2d & theBox, const Standard_Integer boxIndex);
-
-		/****************** Bnd_BoundSortBox2d ******************/
-		%feature("compactdefaultargs") Bnd_BoundSortBox2d;
-		%feature("autodoc", "Constructs an empty comparison algorithm for 2d bounding boxes. the bounding boxes are then defined using the initialize function.
-
-Returns
--------
-None
-") Bnd_BoundSortBox2d;
-		 Bnd_BoundSortBox2d();
 
 		/****************** Compare ******************/
 		%feature("compactdefaultargs") Compare;
@@ -1716,6 +1716,31 @@ None
 ****************/
 class Bnd_Box {
 	public:
+		/****************** Bnd_Box ******************/
+		%feature("compactdefaultargs") Bnd_Box;
+		%feature("autodoc", "Creates an empty box. the constructed box is qualified void. its gap is null.
+
+Returns
+-------
+None
+") Bnd_Box;
+		 Bnd_Box();
+
+		/****************** Bnd_Box ******************/
+		%feature("compactdefaultargs") Bnd_Box;
+		%feature("autodoc", "Creates a bounding box, it contains: - minimum/maximum point of bouning box, the constructed box is qualified void. its gap is null.
+
+Parameters
+----------
+theMin: gp_Pnt
+theMax: gp_Pnt
+
+Returns
+-------
+None
+") Bnd_Box;
+		 Bnd_Box(const gp_Pnt theMin, const gp_Pnt theMax);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the box <other> to <self>.
@@ -1772,31 +1797,6 @@ Returns
 None
 ") Add;
 		void Add(const gp_Dir & D);
-
-		/****************** Bnd_Box ******************/
-		%feature("compactdefaultargs") Bnd_Box;
-		%feature("autodoc", "Creates an empty box. the constructed box is qualified void. its gap is null.
-
-Returns
--------
-None
-") Bnd_Box;
-		 Bnd_Box();
-
-		/****************** Bnd_Box ******************/
-		%feature("compactdefaultargs") Bnd_Box;
-		%feature("autodoc", "Creates a bounding box, it contains: - minimum/maximum point of bouning box, the constructed box is qualified void. its gap is null.
-
-Parameters
-----------
-theMin: gp_Pnt
-theMax: gp_Pnt
-
-Returns
--------
-None
-") Bnd_Box;
-		 Bnd_Box(const gp_Pnt theMin, const gp_Pnt theMax);
 
 		/****************** CornerMax ******************/
 		%feature("compactdefaultargs") CornerMax;
@@ -2358,6 +2358,16 @@ None
 ******************/
 class Bnd_Box2d {
 	public:
+		/****************** Bnd_Box2d ******************/
+		%feature("compactdefaultargs") Bnd_Box2d;
+		%feature("autodoc", "Creates an empty 2d bounding box. the constructed box is qualified void. its gap is null.
+
+Returns
+-------
+None
+") Bnd_Box2d;
+		 Bnd_Box2d();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the 2d box <other> to <self>.
@@ -2414,16 +2424,6 @@ Returns
 None
 ") Add;
 		void Add(const gp_Dir2d & D);
-
-		/****************** Bnd_Box2d ******************/
-		%feature("compactdefaultargs") Bnd_Box2d;
-		%feature("autodoc", "Creates an empty 2d bounding box. the constructed box is qualified void. its gap is null.
-
-Returns
--------
-None
-") Bnd_Box2d;
-		 Bnd_Box2d();
 
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
@@ -2768,34 +2768,6 @@ None
 ****************/
 class Bnd_OBB {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Rebuilds this in order to include all previous objects (which it was created from) and theother.
-
-Parameters
-----------
-theOther: Bnd_OBB
-
-Returns
--------
-None
-") Add;
-		void Add(const Bnd_OBB & theOther);
-
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Rebuilds this in order to include all previous objects (which it was created from) and thep.
-
-Parameters
-----------
-theP: gp_Pnt
-
-Returns
--------
-None
-") Add;
-		void Add(const gp_Pnt & theP);
-
 		/****************** Bnd_OBB ******************/
 		%feature("compactdefaultargs") Bnd_OBB;
 		%feature("autodoc", "Empty constructor.
@@ -2839,6 +2811,34 @@ Returns
 None
 ") Bnd_OBB;
 		 Bnd_OBB(const Bnd_Box & theBox);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Rebuilds this in order to include all previous objects (which it was created from) and theother.
+
+Parameters
+----------
+theOther: Bnd_OBB
+
+Returns
+-------
+None
+") Add;
+		void Add(const Bnd_OBB & theOther);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Rebuilds this in order to include all previous objects (which it was created from) and thep.
+
+Parameters
+----------
+theP: gp_Pnt
+
+Returns
+-------
+None
+") Add;
+		void Add(const gp_Pnt & theP);
 
 		/****************** Center ******************/
 		%feature("compactdefaultargs") Center;
@@ -3143,6 +3143,31 @@ float
 ******************/
 class Bnd_Range {
 	public:
+		/****************** Bnd_Range ******************/
+		%feature("compactdefaultargs") Bnd_Range;
+		%feature("autodoc", "Default constructor. creates void range.
+
+Returns
+-------
+None
+") Bnd_Range;
+		 Bnd_Range();
+
+		/****************** Bnd_Range ******************/
+		%feature("compactdefaultargs") Bnd_Range;
+		%feature("autodoc", "Constructor. never creates void range.
+
+Parameters
+----------
+theMin: float
+theMax: float
+
+Returns
+-------
+None
+") Bnd_Range;
+		 Bnd_Range(const Standard_Real theMin, const Standard_Real theMax);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Extends <this> to include theparameter.
@@ -3170,31 +3195,6 @@ Returns
 None
 ") Add;
 		void Add(const Bnd_Range & theRange);
-
-		/****************** Bnd_Range ******************/
-		%feature("compactdefaultargs") Bnd_Range;
-		%feature("autodoc", "Default constructor. creates void range.
-
-Returns
--------
-None
-") Bnd_Range;
-		 Bnd_Range();
-
-		/****************** Bnd_Range ******************/
-		%feature("compactdefaultargs") Bnd_Range;
-		%feature("autodoc", "Constructor. never creates void range.
-
-Parameters
-----------
-theMin: float
-theMax: float
-
-Returns
--------
-None
-") Bnd_Range;
-		 Bnd_Range(const Standard_Real theMin, const Standard_Real theMax);
 
 		/****************** Common ******************/
 		%feature("compactdefaultargs") Common;
@@ -3479,20 +3479,6 @@ bool
 *******************/
 class Bnd_Sphere {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theOther: Bnd_Sphere
-
-Returns
--------
-None
-") Add;
-		void Add(const Bnd_Sphere & theOther);
-
 		/****************** Bnd_Sphere ******************/
 		%feature("compactdefaultargs") Bnd_Sphere;
 		%feature("autodoc", "Empty constructor.
@@ -3519,6 +3505,20 @@ Returns
 None
 ") Bnd_Sphere;
 		 Bnd_Sphere(const gp_XYZ & theCntr, const Standard_Real theRad, const Standard_Integer theU, const Standard_Integer theV);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theOther: Bnd_Sphere
+
+Returns
+-------
+None
+") Add;
+		void Add(const Bnd_Sphere & theOther);
 
 		/****************** Center ******************/
 		%feature("compactdefaultargs") Center;

@@ -100,23 +100,23 @@ class IntSurf_TypeTrans:
 /* end handles declaration */
 
 /* templates */
-%template(IntSurf_SequenceOfPathPoint) NCollection_Sequence<IntSurf_PathPoint>;
-%template(IntSurf_SequenceOfInteriorPoint) NCollection_Sequence<IntSurf_InteriorPoint>;
 %template(IntSurf_Allocator) opencascade::handle<NCollection_BaseAllocator>;
-%template(IntSurf_SequenceOfCouple) NCollection_Sequence<IntSurf_Couple>;
-%template(IntSurf_SequenceOfPntOn2S) NCollection_Sequence<IntSurf_PntOn2S>;
-%template(IntSurf_ListOfPntOn2S) NCollection_List<IntSurf_PntOn2S>;
 %template(IntSurf_ListIteratorOfListOfPntOn2S) NCollection_TListIterator<IntSurf_PntOn2S>;
+%template(IntSurf_ListOfPntOn2S) NCollection_List<IntSurf_PntOn2S>;
+%template(IntSurf_SequenceOfCouple) NCollection_Sequence<IntSurf_Couple>;
+%template(IntSurf_SequenceOfInteriorPoint) NCollection_Sequence<IntSurf_InteriorPoint>;
+%template(IntSurf_SequenceOfPathPoint) NCollection_Sequence<IntSurf_PathPoint>;
+%template(IntSurf_SequenceOfPntOn2S) NCollection_Sequence<IntSurf_PntOn2S>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<IntSurf_PathPoint> IntSurf_SequenceOfPathPoint;
-typedef NCollection_Sequence<IntSurf_InteriorPoint> IntSurf_SequenceOfInteriorPoint;
 typedef opencascade::handle<NCollection_BaseAllocator> IntSurf_Allocator;
-typedef NCollection_Sequence<IntSurf_Couple> IntSurf_SequenceOfCouple;
-typedef NCollection_Sequence<IntSurf_PntOn2S> IntSurf_SequenceOfPntOn2S;
-typedef NCollection_List<IntSurf_PntOn2S> IntSurf_ListOfPntOn2S;
 typedef NCollection_List<IntSurf_PntOn2S>::Iterator IntSurf_ListIteratorOfListOfPntOn2S;
+typedef NCollection_List<IntSurf_PntOn2S> IntSurf_ListOfPntOn2S;
+typedef NCollection_Sequence<IntSurf_Couple> IntSurf_SequenceOfCouple;
+typedef NCollection_Sequence<IntSurf_InteriorPoint> IntSurf_SequenceOfInteriorPoint;
+typedef NCollection_Sequence<IntSurf_PathPoint> IntSurf_SequenceOfPathPoint;
+typedef NCollection_Sequence<IntSurf_PntOn2S> IntSurf_SequenceOfPntOn2S;
 /* end typedefs declaration */
 
 /****************
@@ -173,16 +173,6 @@ None
 ***********************/
 class IntSurf_Couple {
 	public:
-		/****************** First ******************/
-		%feature("compactdefaultargs") First;
-		%feature("autodoc", "Returns the first element.
-
-Returns
--------
-int
-") First;
-		Standard_Integer First();
-
 		/****************** IntSurf_Couple ******************/
 		%feature("compactdefaultargs") IntSurf_Couple;
 		%feature("autodoc", "No available documentation.
@@ -208,6 +198,16 @@ None
 ") IntSurf_Couple;
 		 IntSurf_Couple(const Standard_Integer Index1, const Standard_Integer Index2);
 
+		/****************** First ******************/
+		%feature("compactdefaultargs") First;
+		%feature("autodoc", "Returns the first element.
+
+Returns
+-------
+int
+") First;
+		Standard_Integer First();
+
 		/****************** Second ******************/
 		%feature("compactdefaultargs") Second;
 		%feature("autodoc", "Returns the second element.
@@ -232,26 +232,6 @@ int
 ******************************/
 class IntSurf_InteriorPoint {
 	public:
-		/****************** Direction ******************/
-		%feature("compactdefaultargs") Direction;
-		%feature("autodoc", "Returns the tangent at the intersection in 3d space associated to the interior point.
-
-Returns
--------
-gp_Vec
-") Direction;
-		const gp_Vec Direction();
-
-		/****************** Direction2d ******************/
-		%feature("compactdefaultargs") Direction2d;
-		%feature("autodoc", "Returns the tangent at the intersection in the parametric space of the parametric surface.
-
-Returns
--------
-gp_Vec2d
-") Direction2d;
-		const gp_Vec2d Direction2d();
-
 		/****************** IntSurf_InteriorPoint ******************/
 		%feature("compactdefaultargs") IntSurf_InteriorPoint;
 		%feature("autodoc", "No available documentation.
@@ -279,6 +259,26 @@ Returns
 None
 ") IntSurf_InteriorPoint;
 		 IntSurf_InteriorPoint(const gp_Pnt & P, const Standard_Real U, const Standard_Real V, const gp_Vec & Direc, const gp_Vec2d & Direc2d);
+
+		/****************** Direction ******************/
+		%feature("compactdefaultargs") Direction;
+		%feature("autodoc", "Returns the tangent at the intersection in 3d space associated to the interior point.
+
+Returns
+-------
+gp_Vec
+") Direction;
+		const gp_Vec Direction();
+
+		/****************** Direction2d ******************/
+		%feature("compactdefaultargs") Direction2d;
+		%feature("autodoc", "Returns the tangent at the intersection in the parametric space of the parametric surface.
+
+Returns
+-------
+gp_Vec2d
+") Direction2d;
+		const gp_Vec2d Direction2d();
 
 		/****************** Parameters ******************/
 		%feature("compactdefaultargs") Parameters;
@@ -429,6 +429,21 @@ gp_Pnt
 *************************/
 class IntSurf_LineOn2S : public Standard_Transient {
 	public:
+		/****************** IntSurf_LineOn2S ******************/
+		%feature("compactdefaultargs") IntSurf_LineOn2S;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theAllocator: IntSurf_Allocator,optional
+	default value is 0
+
+Returns
+-------
+None
+") IntSurf_LineOn2S;
+		 IntSurf_LineOn2S(const IntSurf_Allocator & theAllocator = 0);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a point in the line.
@@ -467,21 +482,6 @@ Returns
 None
 ") InsertBefore;
 		void InsertBefore(const Standard_Integer I, const IntSurf_PntOn2S & P);
-
-		/****************** IntSurf_LineOn2S ******************/
-		%feature("compactdefaultargs") IntSurf_LineOn2S;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theAllocator: IntSurf_Allocator,optional
-	default value is 0
-
-Returns
--------
-None
-") IntSurf_LineOn2S;
-		 IntSurf_LineOn2S(const IntSurf_Allocator & theAllocator = 0);
 
 		/****************** IsOutBox ******************/
 		%feature("compactdefaultargs") IsOutBox;
@@ -635,6 +635,32 @@ None
 **************************/
 class IntSurf_PathPoint {
 	public:
+		/****************** IntSurf_PathPoint ******************/
+		%feature("compactdefaultargs") IntSurf_PathPoint;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") IntSurf_PathPoint;
+		 IntSurf_PathPoint();
+
+		/****************** IntSurf_PathPoint ******************/
+		%feature("compactdefaultargs") IntSurf_PathPoint;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Pnt
+U: float
+V: float
+
+Returns
+-------
+None
+") IntSurf_PathPoint;
+		 IntSurf_PathPoint(const gp_Pnt & P, const Standard_Real U, const Standard_Real V);
+
 		/****************** AddUV ******************/
 		%feature("compactdefaultargs") AddUV;
 		%feature("autodoc", "No available documentation.
@@ -669,32 +695,6 @@ Returns
 gp_Vec
 ") Direction3d;
 		const gp_Vec Direction3d();
-
-		/****************** IntSurf_PathPoint ******************/
-		%feature("compactdefaultargs") IntSurf_PathPoint;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") IntSurf_PathPoint;
-		 IntSurf_PathPoint();
-
-		/****************** IntSurf_PathPoint ******************/
-		%feature("compactdefaultargs") IntSurf_PathPoint;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-P: gp_Pnt
-U: float
-V: float
-
-Returns
--------
-None
-") IntSurf_PathPoint;
-		 IntSurf_PathPoint(const gp_Pnt & P, const Standard_Real U, const Standard_Real V);
 
 		/****************** IsPassingPnt ******************/
 		%feature("compactdefaultargs") IsPassingPnt;
@@ -1182,6 +1182,86 @@ gp_Pnt2d
 ************************/
 class IntSurf_Quadric {
 	public:
+		/****************** IntSurf_Quadric ******************/
+		%feature("compactdefaultargs") IntSurf_Quadric;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") IntSurf_Quadric;
+		 IntSurf_Quadric();
+
+		/****************** IntSurf_Quadric ******************/
+		%feature("compactdefaultargs") IntSurf_Quadric;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Pln
+
+Returns
+-------
+None
+") IntSurf_Quadric;
+		 IntSurf_Quadric(const gp_Pln & P);
+
+		/****************** IntSurf_Quadric ******************/
+		%feature("compactdefaultargs") IntSurf_Quadric;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Cylinder
+
+Returns
+-------
+None
+") IntSurf_Quadric;
+		 IntSurf_Quadric(const gp_Cylinder & C);
+
+		/****************** IntSurf_Quadric ******************/
+		%feature("compactdefaultargs") IntSurf_Quadric;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: gp_Sphere
+
+Returns
+-------
+None
+") IntSurf_Quadric;
+		 IntSurf_Quadric(const gp_Sphere & S);
+
+		/****************** IntSurf_Quadric ******************/
+		%feature("compactdefaultargs") IntSurf_Quadric;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: gp_Cone
+
+Returns
+-------
+None
+") IntSurf_Quadric;
+		 IntSurf_Quadric(const gp_Cone & C);
+
+		/****************** IntSurf_Quadric ******************/
+		%feature("compactdefaultargs") IntSurf_Quadric;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+T: gp_Torus
+
+Returns
+-------
+None
+") IntSurf_Quadric;
+		 IntSurf_Quadric(const gp_Torus & T);
+
 		/****************** Cone ******************/
 		%feature("compactdefaultargs") Cone;
 		%feature("autodoc", "No available documentation.
@@ -1264,86 +1344,6 @@ Returns
 gp_Vec
 ") Gradient;
 		gp_Vec Gradient(const gp_Pnt & P);
-
-		/****************** IntSurf_Quadric ******************/
-		%feature("compactdefaultargs") IntSurf_Quadric;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") IntSurf_Quadric;
-		 IntSurf_Quadric();
-
-		/****************** IntSurf_Quadric ******************/
-		%feature("compactdefaultargs") IntSurf_Quadric;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-P: gp_Pln
-
-Returns
--------
-None
-") IntSurf_Quadric;
-		 IntSurf_Quadric(const gp_Pln & P);
-
-		/****************** IntSurf_Quadric ******************/
-		%feature("compactdefaultargs") IntSurf_Quadric;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-C: gp_Cylinder
-
-Returns
--------
-None
-") IntSurf_Quadric;
-		 IntSurf_Quadric(const gp_Cylinder & C);
-
-		/****************** IntSurf_Quadric ******************/
-		%feature("compactdefaultargs") IntSurf_Quadric;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: gp_Sphere
-
-Returns
--------
-None
-") IntSurf_Quadric;
-		 IntSurf_Quadric(const gp_Sphere & S);
-
-		/****************** IntSurf_Quadric ******************/
-		%feature("compactdefaultargs") IntSurf_Quadric;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-C: gp_Cone
-
-Returns
--------
-None
-") IntSurf_Quadric;
-		 IntSurf_Quadric(const gp_Cone & C);
-
-		/****************** IntSurf_Quadric ******************/
-		%feature("compactdefaultargs") IntSurf_Quadric;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-T: gp_Torus
-
-Returns
--------
-None
-") IntSurf_Quadric;
-		 IntSurf_Quadric(const gp_Torus & T);
 
 		/****************** Normale ******************/
 		%feature("compactdefaultargs") Normale;

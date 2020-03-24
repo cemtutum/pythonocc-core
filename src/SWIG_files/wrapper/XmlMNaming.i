@@ -124,6 +124,20 @@ None
 ************************************/
 class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMNaming_NamedShapeDriver ******************/
+		%feature("compactdefaultargs") XmlMNaming_NamedShapeDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMNaming_NamedShapeDriver;
+		 XmlMNaming_NamedShapeDriver(const opencascade::handle<Message_Messenger> & aMessageDriver);
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clear myshapeset.
@@ -214,20 +228,6 @@ None
 ") WriteShapeSection;
 		void WriteShapeSection(XmlObjMgt_Element & anElement);
 
-		/****************** XmlMNaming_NamedShapeDriver ******************/
-		%feature("compactdefaultargs") XmlMNaming_NamedShapeDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMNaming_NamedShapeDriver;
-		 XmlMNaming_NamedShapeDriver(const opencascade::handle<Message_Messenger> & aMessageDriver);
-
 };
 
 
@@ -244,6 +244,20 @@ None
 ********************************/
 class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMNaming_NamingDriver ******************/
+		%feature("compactdefaultargs") XmlMNaming_NamingDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMNaming_NamingDriver;
+		 XmlMNaming_NamingDriver(const opencascade::handle<Message_Messenger> & aMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -286,20 +300,6 @@ None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & theSource, XmlObjMgt_Persistent & theTarget, XmlObjMgt_SRelocationTable & theRelocTable);
 
-		/****************** XmlMNaming_NamingDriver ******************/
-		%feature("compactdefaultargs") XmlMNaming_NamingDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMNaming_NamingDriver;
-		 XmlMNaming_NamingDriver(const opencascade::handle<Message_Messenger> & aMessageDriver);
-
 };
 
 
@@ -316,6 +316,34 @@ None
 **************************/
 class XmlMNaming_Shape1 {
 	public:
+		/****************** XmlMNaming_Shape1 ******************/
+		%feature("compactdefaultargs") XmlMNaming_Shape1;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Doc: XmlObjMgt_Document
+
+Returns
+-------
+None
+") XmlMNaming_Shape1;
+		 XmlMNaming_Shape1(XmlObjMgt_Document & Doc);
+
+		/****************** XmlMNaming_Shape1 ******************/
+		%feature("compactdefaultargs") XmlMNaming_Shape1;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+E: XmlObjMgt_Element
+
+Returns
+-------
+None
+") XmlMNaming_Shape1;
+		 XmlMNaming_Shape1(const XmlObjMgt_Element & E);
+
 		/****************** Element ******************/
 		%feature("compactdefaultargs") Element;
 		%feature("autodoc", "Return myelement.
@@ -395,34 +423,6 @@ Returns
 int
 ") TShapeId;
 		Standard_Integer TShapeId();
-
-		/****************** XmlMNaming_Shape1 ******************/
-		%feature("compactdefaultargs") XmlMNaming_Shape1;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Doc: XmlObjMgt_Document
-
-Returns
--------
-None
-") XmlMNaming_Shape1;
-		 XmlMNaming_Shape1(XmlObjMgt_Document & Doc);
-
-		/****************** XmlMNaming_Shape1 ******************/
-		%feature("compactdefaultargs") XmlMNaming_Shape1;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-E: XmlObjMgt_Element
-
-Returns
--------
-None
-") XmlMNaming_Shape1;
-		 XmlMNaming_Shape1(const XmlObjMgt_Element & E);
 
 };
 

@@ -83,16 +83,16 @@ from OCC.Core.Exception import *
 
 /* templates */
 %template(FEmTool_AssemblyTable) NCollection_Array2<opencascade::handle<TColStd_HArray1OfInteger>>;
-%template(FEmTool_SeqOfLinConstr) NCollection_Sequence<FEmTool_ListOfVectors>;
-%template(FEmTool_ListOfVectors) NCollection_List<opencascade::handle<TColStd_HArray1OfReal>>;
 %template(FEmTool_ListIteratorOfListOfVectors) NCollection_TListIterator<opencascade::handle<TColStd_HArray1OfReal>>;
+%template(FEmTool_ListOfVectors) NCollection_List<opencascade::handle<TColStd_HArray1OfReal>>;
+%template(FEmTool_SeqOfLinConstr) NCollection_Sequence<FEmTool_ListOfVectors>;
 /* end templates declaration */
 
 /* typedefs */
 typedef NCollection_Array2<opencascade::handle<TColStd_HArray1OfInteger>> FEmTool_AssemblyTable;
-typedef NCollection_Sequence<FEmTool_ListOfVectors> FEmTool_SeqOfLinConstr;
-typedef NCollection_List<opencascade::handle<TColStd_HArray1OfReal>> FEmTool_ListOfVectors;
 typedef NCollection_List<opencascade::handle<TColStd_HArray1OfReal>>::Iterator FEmTool_ListIteratorOfListOfVectors;
+typedef NCollection_List<opencascade::handle<TColStd_HArray1OfReal>> FEmTool_ListOfVectors;
+typedef NCollection_Sequence<FEmTool_ListOfVectors> FEmTool_SeqOfLinConstr;
 /* end typedefs declaration */
 
 /*************************
@@ -100,6 +100,21 @@ typedef NCollection_List<opencascade::handle<TColStd_HArray1OfReal>>::Iterator F
 *************************/
 class FEmTool_Assembly {
 	public:
+		/****************** FEmTool_Assembly ******************/
+		%feature("compactdefaultargs") FEmTool_Assembly;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Dependence: TColStd_Array2OfInteger
+Table: FEmTool_HAssemblyTable
+
+Returns
+-------
+None
+") FEmTool_Assembly;
+		 FEmTool_Assembly(const TColStd_Array2OfInteger & Dependence, const opencascade::handle<FEmTool_HAssemblyTable> & Table);
+
 		/****************** AddConstraint ******************/
 		%feature("compactdefaultargs") AddConstraint;
 		%feature("autodoc", "No available documentation.
@@ -150,21 +165,6 @@ Returns
 None
 ") AddVector;
 		void AddVector(const Standard_Integer Element, const Standard_Integer Dimension, const math_Vector & Vec);
-
-		/****************** FEmTool_Assembly ******************/
-		%feature("compactdefaultargs") FEmTool_Assembly;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Dependence: TColStd_Array2OfInteger
-Table: FEmTool_HAssemblyTable
-
-Returns
--------
-None
-") FEmTool_Assembly;
-		 FEmTool_Assembly(const TColStd_Array2OfInteger & Dependence, const opencascade::handle<FEmTool_HAssemblyTable> & Table);
 
 		/****************** GetAssemblyTable ******************/
 		%feature("compactdefaultargs") GetAssemblyTable;
@@ -268,6 +268,23 @@ bool
 **********************/
 class FEmTool_Curve : public Standard_Transient {
 	public:
+		/****************** FEmTool_Curve ******************/
+		%feature("compactdefaultargs") FEmTool_Curve;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Dimension: int
+NbElements: int
+TheBase: PLib_Base
+Tolerance: float
+
+Returns
+-------
+None
+") FEmTool_Curve;
+		 FEmTool_Curve(const Standard_Integer Dimension, const Standard_Integer NbElements, const opencascade::handle<PLib_Base> & TheBase, const Standard_Real Tolerance);
+
 		/****************** Base ******************/
 		%feature("compactdefaultargs") Base;
 		%feature("autodoc", "No available documentation.
@@ -346,23 +363,6 @@ Returns
 int
 ") Dimension;
 		Standard_Integer Dimension();
-
-		/****************** FEmTool_Curve ******************/
-		%feature("compactdefaultargs") FEmTool_Curve;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Dimension: int
-NbElements: int
-TheBase: PLib_Base
-Tolerance: float
-
-Returns
--------
-None
-") FEmTool_Curve;
-		 FEmTool_Curve(const Standard_Integer Dimension, const Standard_Integer NbElements, const opencascade::handle<PLib_Base> & TheBase, const Standard_Real Tolerance);
 
 		/****************** GetElement ******************/
 		%feature("compactdefaultargs") GetElement;
@@ -790,16 +790,6 @@ None
 ******************************/
 class FEmTool_LinearFlexion : public FEmTool_ElementaryCriterion {
 	public:
-		/****************** DependenceTable ******************/
-		%feature("compactdefaultargs") DependenceTable;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<TColStd_HArray2OfInteger>
-") DependenceTable;
-		virtual opencascade::handle<TColStd_HArray2OfInteger> DependenceTable();
-
 		/****************** FEmTool_LinearFlexion ******************/
 		%feature("compactdefaultargs") FEmTool_LinearFlexion;
 		%feature("autodoc", "No available documentation.
@@ -814,6 +804,16 @@ Returns
 None
 ") FEmTool_LinearFlexion;
 		 FEmTool_LinearFlexion(const Standard_Integer WorkDegree, const GeomAbs_Shape ConstraintOrder);
+
+		/****************** DependenceTable ******************/
+		%feature("compactdefaultargs") DependenceTable;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray2OfInteger>
+") DependenceTable;
+		virtual opencascade::handle<TColStd_HArray2OfInteger> DependenceTable();
 
 		/****************** Gradient ******************/
 		%feature("compactdefaultargs") Gradient;
@@ -872,16 +872,6 @@ float
 ***************************/
 class FEmTool_LinearJerk : public FEmTool_ElementaryCriterion {
 	public:
-		/****************** DependenceTable ******************/
-		%feature("compactdefaultargs") DependenceTable;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<TColStd_HArray2OfInteger>
-") DependenceTable;
-		virtual opencascade::handle<TColStd_HArray2OfInteger> DependenceTable();
-
 		/****************** FEmTool_LinearJerk ******************/
 		%feature("compactdefaultargs") FEmTool_LinearJerk;
 		%feature("autodoc", "No available documentation.
@@ -896,6 +886,16 @@ Returns
 None
 ") FEmTool_LinearJerk;
 		 FEmTool_LinearJerk(const Standard_Integer WorkDegree, const GeomAbs_Shape ConstraintOrder);
+
+		/****************** DependenceTable ******************/
+		%feature("compactdefaultargs") DependenceTable;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray2OfInteger>
+") DependenceTable;
+		virtual opencascade::handle<TColStd_HArray2OfInteger> DependenceTable();
 
 		/****************** Gradient ******************/
 		%feature("compactdefaultargs") Gradient;
@@ -954,16 +954,6 @@ float
 ******************************/
 class FEmTool_LinearTension : public FEmTool_ElementaryCriterion {
 	public:
-		/****************** DependenceTable ******************/
-		%feature("compactdefaultargs") DependenceTable;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<TColStd_HArray2OfInteger>
-") DependenceTable;
-		virtual opencascade::handle<TColStd_HArray2OfInteger> DependenceTable();
-
 		/****************** FEmTool_LinearTension ******************/
 		%feature("compactdefaultargs") FEmTool_LinearTension;
 		%feature("autodoc", "No available documentation.
@@ -978,6 +968,16 @@ Returns
 None
 ") FEmTool_LinearTension;
 		 FEmTool_LinearTension(const Standard_Integer WorkDegree, const GeomAbs_Shape ConstraintOrder);
+
+		/****************** DependenceTable ******************/
+		%feature("compactdefaultargs") DependenceTable;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<TColStd_HArray2OfInteger>
+") DependenceTable;
+		virtual opencascade::handle<TColStd_HArray2OfInteger> DependenceTable();
 
 		/****************** Gradient ******************/
 		%feature("compactdefaultargs") Gradient;
@@ -1036,6 +1036,20 @@ float
 ******************************/
 class FEmTool_ProfileMatrix : public FEmTool_SparseMatrix {
 	public:
+		/****************** FEmTool_ProfileMatrix ******************/
+		%feature("compactdefaultargs") FEmTool_ProfileMatrix;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+FirstIndexes: TColStd_Array1OfInteger
+
+Returns
+-------
+None
+") FEmTool_ProfileMatrix;
+		 FEmTool_ProfileMatrix(const TColStd_Array1OfInteger & FirstIndexes);
+
 
         %feature("autodoc","1");
         %extend {
@@ -1068,20 +1082,6 @@ Returns
 bool
 ") Decompose;
 		Standard_Boolean Decompose();
-
-		/****************** FEmTool_ProfileMatrix ******************/
-		%feature("compactdefaultargs") FEmTool_ProfileMatrix;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-FirstIndexes: TColStd_Array1OfInteger
-
-Returns
--------
-None
-") FEmTool_ProfileMatrix;
-		 FEmTool_ProfileMatrix(const TColStd_Array1OfInteger & FirstIndexes);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;

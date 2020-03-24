@@ -41,8 +41,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topopebreptool.ht
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
-#include<TopTools_module.hxx>
 #include<BRepClass3d_module.hxx>
+#include<TopTools_module.hxx>
 #include<TopoDS_module.hxx>
 #include<TopAbs_module.hxx>
 #include<Bnd_module.hxx>
@@ -79,8 +79,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topopebreptool.ht
 %};
 %import Standard.i
 %import NCollection.i
-%import TopTools.i
 %import BRepClass3d.i
+%import TopTools.i
 %import TopoDS.i
 %import TopAbs.i
 %import Bnd.i
@@ -124,31 +124,31 @@ class TopOpeBRepTool_OutCurveType:
 /* end handles declaration */
 
 /* templates */
-%template(TopOpeBRepTool_IndexedDataMapOfShapeconnexity) NCollection_IndexedDataMap<TopoDS_Shape,TopOpeBRepTool_connexity,TopTools_ShapeMapHasher>;
-%template(TopOpeBRepTool_DataMapOfShapeface) NCollection_DataMap<TopoDS_Shape,TopOpeBRepTool_face,TopTools_ShapeMapHasher>;
 %template(TopOpeBRepTool_DataMapOfOrientedShapeC2DF) NCollection_DataMap<TopoDS_Shape,TopOpeBRepTool_C2DF,TopTools_OrientedShapeMapHasher>;
 %template(TopOpeBRepTool_DataMapOfShapeListOfC2DF) NCollection_DataMap<TopoDS_Shape,TopOpeBRepTool_ListOfC2DF,TopTools_ShapeMapHasher>;
+%template(TopOpeBRepTool_DataMapOfShapeface) NCollection_DataMap<TopoDS_Shape,TopOpeBRepTool_face,TopTools_ShapeMapHasher>;
 %template(TopOpeBRepTool_IndexedDataMapOfShapeBox) NCollection_IndexedDataMap<TopoDS_Shape,Bnd_Box,TopTools_OrientedShapeMapHasher>;
 %template(TopOpeBRepTool_IndexedDataMapOfShapeBox2d) NCollection_IndexedDataMap<TopoDS_Shape,Bnd_Box2d,TopTools_OrientedShapeMapHasher>;
-%template(TopOpeBRepTool_ListOfC2DF) NCollection_List<TopOpeBRepTool_C2DF>;
+%template(TopOpeBRepTool_IndexedDataMapOfShapeconnexity) NCollection_IndexedDataMap<TopoDS_Shape,TopOpeBRepTool_connexity,TopTools_ShapeMapHasher>;
 %template(TopOpeBRepTool_ListIteratorOfListOfC2DF) NCollection_TListIterator<TopOpeBRepTool_C2DF>;
+%template(TopOpeBRepTool_ListOfC2DF) NCollection_List<TopOpeBRepTool_C2DF>;
 /* end templates declaration */
 
 /* typedefs */
-typedef TopOpeBRepTool_ShapeClassifier * TopOpeBRepTool_PShapeClassifier;
-typedef TopTools_ListOfShape * TopOpeBRepTool_Plos;
-typedef NCollection_IndexedDataMap<TopoDS_Shape, TopOpeBRepTool_connexity, TopTools_ShapeMapHasher> TopOpeBRepTool_IndexedDataMapOfShapeconnexity;
-typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepTool_face, TopTools_ShapeMapHasher> TopOpeBRepTool_DataMapOfShapeface;
+typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepTool_C2DF, TopTools_OrientedShapeMapHasher>::Iterator TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF;
+typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepTool_ListOfC2DF, TopTools_ShapeMapHasher>::Iterator TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF;
 typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepTool_face, TopTools_ShapeMapHasher>::Iterator TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface;
 typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepTool_C2DF, TopTools_OrientedShapeMapHasher> TopOpeBRepTool_DataMapOfOrientedShapeC2DF;
-typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepTool_C2DF, TopTools_OrientedShapeMapHasher>::Iterator TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF;
-typedef BRepClass3d_SolidClassifier * TopOpeBRepTool_PSoClassif;
 typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepTool_ListOfC2DF, TopTools_ShapeMapHasher> TopOpeBRepTool_DataMapOfShapeListOfC2DF;
-typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepTool_ListOfC2DF, TopTools_ShapeMapHasher>::Iterator TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF;
+typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepTool_face, TopTools_ShapeMapHasher> TopOpeBRepTool_DataMapOfShapeface;
 typedef NCollection_IndexedDataMap<TopoDS_Shape, Bnd_Box, TopTools_OrientedShapeMapHasher> TopOpeBRepTool_IndexedDataMapOfShapeBox;
 typedef NCollection_IndexedDataMap<TopoDS_Shape, Bnd_Box2d, TopTools_OrientedShapeMapHasher> TopOpeBRepTool_IndexedDataMapOfShapeBox2d;
-typedef NCollection_List<TopOpeBRepTool_C2DF> TopOpeBRepTool_ListOfC2DF;
+typedef NCollection_IndexedDataMap<TopoDS_Shape, TopOpeBRepTool_connexity, TopTools_ShapeMapHasher> TopOpeBRepTool_IndexedDataMapOfShapeconnexity;
 typedef NCollection_List<TopOpeBRepTool_C2DF>::Iterator TopOpeBRepTool_ListIteratorOfListOfC2DF;
+typedef NCollection_List<TopOpeBRepTool_C2DF> TopOpeBRepTool_ListOfC2DF;
+typedef TopOpeBRepTool_ShapeClassifier * TopOpeBRepTool_PShapeClassifier;
+typedef BRepClass3d_SolidClassifier * TopOpeBRepTool_PSoClassif;
+typedef TopTools_ListOfShape * TopOpeBRepTool_Plos;
 /* end typedefs declaration */
 
 /***************
@@ -335,6 +335,30 @@ None
 *******************************/
 class TopOpeBRepTool_BoxSort {
 	public:
+		/****************** TopOpeBRepTool_BoxSort ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_BoxSort;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepTool_BoxSort;
+		 TopOpeBRepTool_BoxSort();
+
+		/****************** TopOpeBRepTool_BoxSort ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_BoxSort;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+T: TopOpeBRepTool_HBoxTool
+
+Returns
+-------
+None
+") TopOpeBRepTool_BoxSort;
+		 TopOpeBRepTool_BoxSort(const opencascade::handle<TopOpeBRepTool_HBoxTool> & T);
+
 		/****************** AddBoxes ******************/
 		%feature("compactdefaultargs") AddBoxes;
 		%feature("autodoc", "No available documentation.
@@ -504,30 +528,6 @@ None
 ") SetHBoxTool;
 		void SetHBoxTool(const opencascade::handle<TopOpeBRepTool_HBoxTool> & T);
 
-		/****************** TopOpeBRepTool_BoxSort ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_BoxSort;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepTool_BoxSort;
-		 TopOpeBRepTool_BoxSort();
-
-		/****************** TopOpeBRepTool_BoxSort ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_BoxSort;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-T: TopOpeBRepTool_HBoxTool
-
-Returns
--------
-None
-") TopOpeBRepTool_BoxSort;
-		 TopOpeBRepTool_BoxSort(const opencascade::handle<TopOpeBRepTool_HBoxTool> & T);
-
 		/****************** TouchedShape ******************/
 		%feature("compactdefaultargs") TouchedShape;
 		%feature("autodoc", "No available documentation.
@@ -556,6 +556,34 @@ TopoDS_Shape
 ****************************/
 class TopOpeBRepTool_C2DF {
 	public:
+		/****************** TopOpeBRepTool_C2DF ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_C2DF;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepTool_C2DF;
+		 TopOpeBRepTool_C2DF();
+
+		/****************** TopOpeBRepTool_C2DF ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_C2DF;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+PC: Geom2d_Curve
+f2d: float
+l2d: float
+tol: float
+F: TopoDS_Face
+
+Returns
+-------
+None
+") TopOpeBRepTool_C2DF;
+		 TopOpeBRepTool_C2DF(const opencascade::handle<Geom2d_Curve> & PC, const Standard_Real f2d, const Standard_Real l2d, const Standard_Real tol, const TopoDS_Face & F);
+
 		/****************** Face ******************/
 		%feature("compactdefaultargs") Face;
 		%feature("autodoc", "No available documentation.
@@ -641,34 +669,6 @@ None
 ") SetPC;
 		void SetPC(const opencascade::handle<Geom2d_Curve> & PC, const Standard_Real f2d, const Standard_Real l2d, const Standard_Real tol);
 
-		/****************** TopOpeBRepTool_C2DF ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_C2DF;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepTool_C2DF;
-		 TopOpeBRepTool_C2DF();
-
-		/****************** TopOpeBRepTool_C2DF ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_C2DF;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-PC: Geom2d_Curve
-f2d: float
-l2d: float
-tol: float
-F: TopoDS_Face
-
-Returns
--------
-None
-") TopOpeBRepTool_C2DF;
-		 TopOpeBRepTool_C2DF(const opencascade::handle<Geom2d_Curve> & PC, const Standard_Real f2d, const Standard_Real l2d, const Standard_Real tol, const TopoDS_Face & F);
-
 };
 
 
@@ -683,6 +683,16 @@ None
 ******************************/
 class TopOpeBRepTool_CLASSI {
 	public:
+		/****************** TopOpeBRepTool_CLASSI ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_CLASSI;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepTool_CLASSI;
+		 TopOpeBRepTool_CLASSI();
+
 		/****************** Add2d ******************/
 		%feature("compactdefaultargs") Add2d;
 		%feature("autodoc", "No available documentation.
@@ -799,16 +809,6 @@ None
 ") Init2d;
 		void Init2d(const TopoDS_Face & Fref);
 
-		/****************** TopOpeBRepTool_CLASSI ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_CLASSI;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepTool_CLASSI;
-		 TopOpeBRepTool_CLASSI();
-
 };
 
 
@@ -823,6 +823,30 @@ None
 *******************************/
 class TopOpeBRepTool_CORRISO {
 	public:
+		/****************** TopOpeBRepTool_CORRISO ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_CORRISO;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepTool_CORRISO;
+		 TopOpeBRepTool_CORRISO();
+
+		/****************** TopOpeBRepTool_CORRISO ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_CORRISO;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+FRef: TopoDS_Face
+
+Returns
+-------
+None
+") TopOpeBRepTool_CORRISO;
+		 TopOpeBRepTool_CORRISO(const TopoDS_Face & FRef);
+
 		/****************** AddNewConnexity ******************/
 		%feature("compactdefaultargs") AddNewConnexity;
 		%feature("autodoc", "No available documentation.
@@ -1095,30 +1119,6 @@ float
 ") Tol;
 		Standard_Real Tol(const Standard_Integer I, const Standard_Real tol3d);
 
-		/****************** TopOpeBRepTool_CORRISO ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_CORRISO;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepTool_CORRISO;
-		 TopOpeBRepTool_CORRISO();
-
-		/****************** TopOpeBRepTool_CORRISO ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_CORRISO;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-FRef: TopoDS_Face
-
-Returns
--------
-None
-") TopOpeBRepTool_CORRISO;
-		 TopOpeBRepTool_CORRISO(const TopoDS_Face & FRef);
-
 		/****************** TrslUV ******************/
 		%feature("compactdefaultargs") TrslUV;
 		%feature("autodoc", "No available documentation.
@@ -1173,6 +1173,44 @@ bool
 *********************************/
 class TopOpeBRepTool_CurveTool {
 	public:
+		/****************** TopOpeBRepTool_CurveTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_CurveTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepTool_CurveTool;
+		 TopOpeBRepTool_CurveTool();
+
+		/****************** TopOpeBRepTool_CurveTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_CurveTool;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+OCT: TopOpeBRepTool_OutCurveType
+
+Returns
+-------
+None
+") TopOpeBRepTool_CurveTool;
+		 TopOpeBRepTool_CurveTool(const TopOpeBRepTool_OutCurveType OCT);
+
+		/****************** TopOpeBRepTool_CurveTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_CurveTool;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+GT: TopOpeBRepTool_GeomTool
+
+Returns
+-------
+None
+") TopOpeBRepTool_CurveTool;
+		 TopOpeBRepTool_CurveTool(const TopOpeBRepTool_GeomTool & GT);
+
 		/****************** ChangeGeomTool ******************/
 		%feature("compactdefaultargs") ChangeGeomTool;
 		%feature("autodoc", "No available documentation.
@@ -1295,44 +1333,6 @@ None
 ") SetGeomTool;
 		void SetGeomTool(const TopOpeBRepTool_GeomTool & GT);
 
-		/****************** TopOpeBRepTool_CurveTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_CurveTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepTool_CurveTool;
-		 TopOpeBRepTool_CurveTool();
-
-		/****************** TopOpeBRepTool_CurveTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_CurveTool;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-OCT: TopOpeBRepTool_OutCurveType
-
-Returns
--------
-None
-") TopOpeBRepTool_CurveTool;
-		 TopOpeBRepTool_CurveTool(const TopOpeBRepTool_OutCurveType OCT);
-
-		/****************** TopOpeBRepTool_CurveTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_CurveTool;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-GT: TopOpeBRepTool_GeomTool
-
-Returns
--------
-None
-") TopOpeBRepTool_CurveTool;
-		 TopOpeBRepTool_CurveTool(const TopOpeBRepTool_GeomTool & GT);
-
 };
 
 
@@ -1347,6 +1347,22 @@ None
 *********************************/
 class TopOpeBRepTool_FuseEdges {
 	public:
+		/****************** TopOpeBRepTool_FuseEdges ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_FuseEdges;
+		%feature("autodoc", "Initialise members and build construction of map of ancestors.
+
+Parameters
+----------
+theShape: TopoDS_Shape
+PerformNow: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") TopOpeBRepTool_FuseEdges;
+		 TopOpeBRepTool_FuseEdges(const TopoDS_Shape & theShape, const Standard_Boolean PerformNow = Standard_False);
+
 		/****************** AvoidEdges ******************/
 		%feature("compactdefaultargs") AvoidEdges;
 		%feature("autodoc", "Set edges to avoid being fused.
@@ -1433,22 +1449,6 @@ TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
 
-		/****************** TopOpeBRepTool_FuseEdges ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_FuseEdges;
-		%feature("autodoc", "Initialise members and build construction of map of ancestors.
-
-Parameters
-----------
-theShape: TopoDS_Shape
-PerformNow: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") TopOpeBRepTool_FuseEdges;
-		 TopOpeBRepTool_FuseEdges(const TopoDS_Shape & theShape, const Standard_Boolean PerformNow = Standard_False);
-
 };
 
 
@@ -1463,6 +1463,27 @@ None
 ********************************/
 class TopOpeBRepTool_GeomTool {
 	public:
+		/****************** TopOpeBRepTool_GeomTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_GeomTool;
+		%feature("autodoc", "Boolean flags <compc3d>, <comppc1>, <comppc2> indicate whether the corresponding result curves <c3d>, <pc1>, <pc2> of makecurves method must or not be computed from an intersection line <l>. when the line <l> is a walking one, <typec3d> is the kind of the 3d curve <c3d> to compute : - bspline1 to compute a bspline of degree 1 on the walking points of <l>, - approx to build an approximation curve on the walking points of <l>.
+
+Parameters
+----------
+TypeC3D: TopOpeBRepTool_OutCurveType,optional
+	default value is TopOpeBRepTool_BSPLINE1
+CompC3D: bool,optional
+	default value is Standard_True
+CompPC1: bool,optional
+	default value is Standard_True
+CompPC2: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") TopOpeBRepTool_GeomTool;
+		 TopOpeBRepTool_GeomTool(const TopOpeBRepTool_OutCurveType TypeC3D = TopOpeBRepTool_BSPLINE1, const Standard_Boolean CompC3D = Standard_True, const Standard_Boolean CompPC1 = Standard_True, const Standard_Boolean CompPC2 = Standard_True);
+
 		/****************** CompC3D ******************/
 		%feature("compactdefaultargs") CompC3D;
 		%feature("autodoc", "No available documentation.
@@ -1634,27 +1655,6 @@ None
 ") SetTolerances;
 		void SetTolerances(const Standard_Real tol3d, const Standard_Real tol2d);
 
-		/****************** TopOpeBRepTool_GeomTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_GeomTool;
-		%feature("autodoc", "Boolean flags <compc3d>, <comppc1>, <comppc2> indicate whether the corresponding result curves <c3d>, <pc1>, <pc2> of makecurves method must or not be computed from an intersection line <l>. when the line <l> is a walking one, <typec3d> is the kind of the 3d curve <c3d> to compute : - bspline1 to compute a bspline of degree 1 on the walking points of <l>, - approx to build an approximation curve on the walking points of <l>.
-
-Parameters
-----------
-TypeC3D: TopOpeBRepTool_OutCurveType,optional
-	default value is TopOpeBRepTool_BSPLINE1
-CompC3D: bool,optional
-	default value is Standard_True
-CompPC1: bool,optional
-	default value is Standard_True
-CompPC2: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") TopOpeBRepTool_GeomTool;
-		 TopOpeBRepTool_GeomTool(const TopOpeBRepTool_OutCurveType TypeC3D = TopOpeBRepTool_BSPLINE1, const Standard_Boolean CompC3D = Standard_True, const Standard_Boolean CompPC1 = Standard_True, const Standard_Boolean CompPC2 = Standard_True);
-
 		/****************** TypeC3D ******************/
 		%feature("compactdefaultargs") TypeC3D;
 		%feature("autodoc", "No available documentation.
@@ -1679,6 +1679,16 @@ TopOpeBRepTool_OutCurveType
 ********************************/
 class TopOpeBRepTool_HBoxTool : public Standard_Transient {
 	public:
+		/****************** TopOpeBRepTool_HBoxTool ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_HBoxTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepTool_HBoxTool;
+		 TopOpeBRepTool_HBoxTool();
+
 		/****************** AddBox ******************/
 		%feature("compactdefaultargs") AddBox;
 		%feature("autodoc", "No available documentation.
@@ -1864,16 +1874,6 @@ TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape(const Standard_Integer I);
 
-		/****************** TopOpeBRepTool_HBoxTool ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_HBoxTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepTool_HBoxTool;
-		 TopOpeBRepTool_HBoxTool();
-
 };
 
 
@@ -1890,6 +1890,22 @@ None
 ******************************************/
 class TopOpeBRepTool_PurgeInternalEdges {
 	public:
+		/****************** TopOpeBRepTool_PurgeInternalEdges ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_PurgeInternalEdges;
+		%feature("autodoc", "Initialize members and begin exploration of shape depending of the value of performnow.
+
+Parameters
+----------
+theShape: TopoDS_Shape
+PerformNow: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") TopOpeBRepTool_PurgeInternalEdges;
+		 TopOpeBRepTool_PurgeInternalEdges(const TopoDS_Shape & theShape, const Standard_Boolean PerformNow = Standard_True);
+
 		/****************** Faces ******************/
 		%feature("compactdefaultargs") Faces;
 		%feature("autodoc", "Returns the list internal edges associated with the faces of the myshape. if performnow was false when created, then call the private perform method that do the main job.
@@ -1944,22 +1960,6 @@ TopoDS_Shape
 ") Shape;
 		TopoDS_Shape Shape();
 
-		/****************** TopOpeBRepTool_PurgeInternalEdges ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_PurgeInternalEdges;
-		%feature("autodoc", "Initialize members and begin exploration of shape depending of the value of performnow.
-
-Parameters
-----------
-theShape: TopoDS_Shape
-PerformNow: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") TopOpeBRepTool_PurgeInternalEdges;
-		 TopOpeBRepTool_PurgeInternalEdges(const TopoDS_Shape & theShape, const Standard_Boolean PerformNow = Standard_True);
-
 };
 
 
@@ -1974,6 +1974,16 @@ None
 *****************************/
 class TopOpeBRepTool_REGUS {
 	public:
+		/****************** TopOpeBRepTool_REGUS ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_REGUS;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepTool_REGUS;
+		 TopOpeBRepTool_REGUS();
+
 		/****************** GetFsplits ******************/
 		%feature("compactdefaultargs") GetFsplits;
 		%feature("autodoc", "No available documentation.
@@ -2135,16 +2145,6 @@ bool
 ") SplitFaces;
 		Standard_Boolean SplitFaces();
 
-		/****************** TopOpeBRepTool_REGUS ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_REGUS;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepTool_REGUS;
-		 TopOpeBRepTool_REGUS();
-
 		/****************** WireToFace ******************/
 		%feature("compactdefaultargs") WireToFace;
 		%feature("autodoc", "No available documentation.
@@ -2175,6 +2175,20 @@ bool
 *****************************/
 class TopOpeBRepTool_REGUW {
 	public:
+		/****************** TopOpeBRepTool_REGUW ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_REGUW;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+FRef: TopoDS_Face
+
+Returns
+-------
+None
+") TopOpeBRepTool_REGUW;
+		 TopOpeBRepTool_REGUW(const TopoDS_Face & FRef);
+
 		/****************** AddNewConnexity ******************/
 		%feature("compactdefaultargs") AddNewConnexity;
 		%feature("autodoc", "No available documentation.
@@ -2417,20 +2431,6 @@ bool
 ") SplitEds;
 		Standard_Boolean SplitEds();
 
-		/****************** TopOpeBRepTool_REGUW ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_REGUW;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-FRef: TopoDS_Face
-
-Returns
--------
-None
-") TopOpeBRepTool_REGUW;
-		 TopOpeBRepTool_REGUW(const TopoDS_Face & FRef);
-
 		/****************** UpdateMultiple ******************/
 		%feature("compactdefaultargs") UpdateMultiple;
 		%feature("autodoc", "No available documentation.
@@ -2462,6 +2462,30 @@ bool
 ***************************************/
 class TopOpeBRepTool_ShapeClassifier {
 	public:
+		/****************** TopOpeBRepTool_ShapeClassifier ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_ShapeClassifier;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepTool_ShapeClassifier;
+		 TopOpeBRepTool_ShapeClassifier();
+
+		/****************** TopOpeBRepTool_ShapeClassifier ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_ShapeClassifier;
+		%feature("autodoc", "Sref is the reference shape. stateshapeshape(s) calls will classify s with sref.
+
+Parameters
+----------
+SRef: TopoDS_Shape
+
+Returns
+-------
+None
+") TopOpeBRepTool_ShapeClassifier;
+		 TopOpeBRepTool_ShapeClassifier(const TopoDS_Shape & SRef);
+
 		/****************** ChangeSolidClassifier ******************/
 		%feature("compactdefaultargs") ChangeSolidClassifier;
 		%feature("autodoc", "No available documentation.
@@ -2667,30 +2691,6 @@ TopAbs_State
 ") StateShapeShape;
 		TopAbs_State StateShapeShape(const TopoDS_Shape & S, const TopTools_ListOfShape & LAvoidS, const TopoDS_Shape & SRef);
 
-		/****************** TopOpeBRepTool_ShapeClassifier ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_ShapeClassifier;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepTool_ShapeClassifier;
-		 TopOpeBRepTool_ShapeClassifier();
-
-		/****************** TopOpeBRepTool_ShapeClassifier ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_ShapeClassifier;
-		%feature("autodoc", "Sref is the reference shape. stateshapeshape(s) calls will classify s with sref.
-
-Parameters
-----------
-SRef: TopoDS_Shape
-
-Returns
--------
-None
-") TopOpeBRepTool_ShapeClassifier;
-		 TopOpeBRepTool_ShapeClassifier(const TopoDS_Shape & SRef);
-
 };
 
 
@@ -2705,6 +2705,33 @@ None
 *************************************/
 class TopOpeBRepTool_ShapeExplorer : public TopExp_Explorer {
 	public:
+		/****************** TopOpeBRepTool_ShapeExplorer ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_ShapeExplorer;
+		%feature("autodoc", "Creates an empty explorer, becomes usefull after init.
+
+Returns
+-------
+None
+") TopOpeBRepTool_ShapeExplorer;
+		 TopOpeBRepTool_ShapeExplorer();
+
+		/****************** TopOpeBRepTool_ShapeExplorer ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_ShapeExplorer;
+		%feature("autodoc", "Creates an explorer on the shape <s>. //! <tofind> is the type of shapes to search. topabs_vertex, topabs_edge, ... //! <toavoid> is the type of shape to skip in the exploration. if <toavoid> is equal or less complex than <tofind> or if <toavoid> is shape it has no effect on the exploration.
+
+Parameters
+----------
+S: TopoDS_Shape
+ToFind: TopAbs_ShapeEnum
+ToAvoid: TopAbs_ShapeEnum,optional
+	default value is TopAbs_SHAPE
+
+Returns
+-------
+None
+") TopOpeBRepTool_ShapeExplorer;
+		 TopOpeBRepTool_ShapeExplorer(const TopoDS_Shape & S, const TopAbs_ShapeEnum ToFind, const TopAbs_ShapeEnum ToAvoid = TopAbs_SHAPE);
+
 
         %feature("autodoc", "1");
         %extend{
@@ -2749,33 +2776,6 @@ Returns
 None
 ") Next;
 		void Next();
-
-		/****************** TopOpeBRepTool_ShapeExplorer ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_ShapeExplorer;
-		%feature("autodoc", "Creates an empty explorer, becomes usefull after init.
-
-Returns
--------
-None
-") TopOpeBRepTool_ShapeExplorer;
-		 TopOpeBRepTool_ShapeExplorer();
-
-		/****************** TopOpeBRepTool_ShapeExplorer ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_ShapeExplorer;
-		%feature("autodoc", "Creates an explorer on the shape <s>. //! <tofind> is the type of shapes to search. topabs_vertex, topabs_edge, ... //! <toavoid> is the type of shape to skip in the exploration. if <toavoid> is equal or less complex than <tofind> or if <toavoid> is shape it has no effect on the exploration.
-
-Parameters
-----------
-S: TopoDS_Shape
-ToFind: TopAbs_ShapeEnum
-ToAvoid: TopAbs_ShapeEnum,optional
-	default value is TopAbs_SHAPE
-
-Returns
--------
-None
-") TopOpeBRepTool_ShapeExplorer;
-		 TopOpeBRepTool_ShapeExplorer(const TopoDS_Shape & S, const TopAbs_ShapeEnum ToFind, const TopAbs_ShapeEnum ToAvoid = TopAbs_SHAPE);
 
 };
 
@@ -3147,6 +3147,16 @@ None
 ***************************************/
 class TopOpeBRepTool_SolidClassifier {
 	public:
+		/****************** TopOpeBRepTool_SolidClassifier ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_SolidClassifier;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepTool_SolidClassifier;
+		 TopOpeBRepTool_SolidClassifier();
+
 		/****************** Classify ******************/
 		%feature("compactdefaultargs") Classify;
 		%feature("autodoc", "Compute the position of point <p> regarding with the geometric domain of the solid <s>.
@@ -3226,16 +3236,6 @@ Returns
 TopAbs_State
 ") State;
 		TopAbs_State State();
-
-		/****************** TopOpeBRepTool_SolidClassifier ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_SolidClassifier;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepTool_SolidClassifier;
-		 TopOpeBRepTool_SolidClassifier();
 
 };
 
@@ -4147,6 +4147,30 @@ bool
 *********************************/
 class TopOpeBRepTool_connexity {
 	public:
+		/****************** TopOpeBRepTool_connexity ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_connexity;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepTool_connexity;
+		 TopOpeBRepTool_connexity();
+
+		/****************** TopOpeBRepTool_connexity ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_connexity;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Key: TopoDS_Shape
+
+Returns
+-------
+None
+") TopOpeBRepTool_connexity;
+		 TopOpeBRepTool_connexity(const TopoDS_Shape & Key);
+
 		/****************** AddItem ******************/
 		%feature("compactdefaultargs") AddItem;
 		%feature("autodoc", "No available documentation.
@@ -4307,30 +4331,6 @@ None
 ") SetKey;
 		void SetKey(const TopoDS_Shape & Key);
 
-		/****************** TopOpeBRepTool_connexity ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_connexity;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepTool_connexity;
-		 TopOpeBRepTool_connexity();
-
-		/****************** TopOpeBRepTool_connexity ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_connexity;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Key: TopoDS_Shape
-
-Returns
--------
-None
-") TopOpeBRepTool_connexity;
-		 TopOpeBRepTool_connexity(const TopoDS_Shape & Key);
-
 };
 
 
@@ -4345,6 +4345,16 @@ None
 ****************************/
 class TopOpeBRepTool_face {
 	public:
+		/****************** TopOpeBRepTool_face ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_face;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepTool_face;
+		 TopOpeBRepTool_face();
+
 		/****************** Ffinite ******************/
 		%feature("compactdefaultargs") Ffinite;
 		%feature("autodoc", "No available documentation.
@@ -4400,16 +4410,6 @@ TopoDS_Face
 ") RealF;
 		TopoDS_Face RealF();
 
-		/****************** TopOpeBRepTool_face ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_face;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepTool_face;
-		 TopOpeBRepTool_face();
-
 		/****************** W ******************/
 		%feature("compactdefaultargs") W;
 		%feature("autodoc", "No available documentation.
@@ -4434,6 +4434,16 @@ TopoDS_Wire
 **************************************/
 class TopOpeBRepTool_makeTransition {
 	public:
+		/****************** TopOpeBRepTool_makeTransition ******************/
+		%feature("compactdefaultargs") TopOpeBRepTool_makeTransition;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepTool_makeTransition;
+		 TopOpeBRepTool_makeTransition();
+
 		/****************** Getfactor ******************/
 		%feature("compactdefaultargs") Getfactor;
 		%feature("autodoc", "No available documentation.
@@ -4572,16 +4582,6 @@ Returns
 None
 ") Setfactor;
 		void Setfactor(const Standard_Real factor);
-
-		/****************** TopOpeBRepTool_makeTransition ******************/
-		%feature("compactdefaultargs") TopOpeBRepTool_makeTransition;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepTool_makeTransition;
-		 TopOpeBRepTool_makeTransition();
 
 };
 

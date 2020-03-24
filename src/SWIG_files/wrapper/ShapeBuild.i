@@ -450,6 +450,16 @@ opencascade::handle<Geom2d_Curve>
 ***************************/
 class ShapeBuild_ReShape : public BRepTools_ReShape {
 	public:
+		/****************** ShapeBuild_ReShape ******************/
+		%feature("compactdefaultargs") ShapeBuild_ReShape;
+		%feature("autodoc", "Returns an empty reshape.
+
+Returns
+-------
+None
+") ShapeBuild_ReShape;
+		 ShapeBuild_ReShape();
+
 		/****************** Apply ******************/
 		%feature("compactdefaultargs") Apply;
 		%feature("autodoc", "Applies the substitutions requests to a shape //! <until> gives the level of type until which requests are taken into account. for subshapes of the type <until> no rebuild and futher exploring are done. actually, not implemented below topabs_face //! <buildmode> says how to do on a solid,shell ... if one of its sub-shapes has been changed: 0: at least one replace or remove -> compound, else as such 1: at least one remove (replace are ignored) -> compound 2: replace and remove are both ignored if replace/remove are ignored or absent, the result as same type as the starting shape.
@@ -481,16 +491,6 @@ Returns
 TopoDS_Shape
 ") Apply;
 		virtual TopoDS_Shape Apply(const TopoDS_Shape & shape, const TopAbs_ShapeEnum until = TopAbs_SHAPE);
-
-		/****************** ShapeBuild_ReShape ******************/
-		%feature("compactdefaultargs") ShapeBuild_ReShape;
-		%feature("autodoc", "Returns an empty reshape.
-
-Returns
--------
-None
-") ShapeBuild_ReShape;
-		 ShapeBuild_ReShape();
 
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;

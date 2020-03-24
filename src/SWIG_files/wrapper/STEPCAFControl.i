@@ -124,27 +124,27 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(STEPCAFControl_DataMapOfPDExternFile) NCollection_DataMap<opencascade::handle<StepBasic_ProductDefinition>,opencascade::handle<STEPCAFControl_ExternFile>,TColStd_MapTransientHasher>;
-%template(STEPCAFControl_DataMapOfShapeSDR) NCollection_DataMap<TopoDS_Shape,opencascade::handle<StepShape_ShapeDefinitionRepresentation>,TopTools_ShapeMapHasher>;
-%template(STEPCAFControl_DataMapOfShapePD) NCollection_DataMap<TopoDS_Shape,opencascade::handle<StepBasic_ProductDefinition>,TopTools_ShapeMapHasher>;
 %template(STEPCAFControl_DataMapOfLabelExternFile) NCollection_DataMap<TDF_Label,opencascade::handle<STEPCAFControl_ExternFile>,TDF_LabelMapHasher>;
-%template(STEPCAFControl_DataMapOfSDRExternFile) NCollection_DataMap<opencascade::handle<StepShape_ShapeDefinitionRepresentation>,opencascade::handle<STEPCAFControl_ExternFile>,TColStd_MapTransientHasher>;
 %template(STEPCAFControl_DataMapOfLabelShape) NCollection_DataMap<TDF_Label,TopoDS_Shape,TDF_LabelMapHasher>;
+%template(STEPCAFControl_DataMapOfPDExternFile) NCollection_DataMap<opencascade::handle<StepBasic_ProductDefinition>,opencascade::handle<STEPCAFControl_ExternFile>,TColStd_MapTransientHasher>;
+%template(STEPCAFControl_DataMapOfSDRExternFile) NCollection_DataMap<opencascade::handle<StepShape_ShapeDefinitionRepresentation>,opencascade::handle<STEPCAFControl_ExternFile>,TColStd_MapTransientHasher>;
+%template(STEPCAFControl_DataMapOfShapePD) NCollection_DataMap<TopoDS_Shape,opencascade::handle<StepBasic_ProductDefinition>,TopTools_ShapeMapHasher>;
+%template(STEPCAFControl_DataMapOfShapeSDR) NCollection_DataMap<TopoDS_Shape,opencascade::handle<StepShape_ShapeDefinitionRepresentation>,TopTools_ShapeMapHasher>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<opencascade::handle<StepBasic_ProductDefinition>, opencascade::handle<STEPCAFControl_ExternFile>, TColStd_MapTransientHasher> STEPCAFControl_DataMapOfPDExternFile;
-typedef NCollection_DataMap<opencascade::handle<StepBasic_ProductDefinition>, opencascade::handle<STEPCAFControl_ExternFile>, TColStd_MapTransientHasher>::Iterator STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile;
-typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<StepShape_ShapeDefinitionRepresentation>, TopTools_ShapeMapHasher> STEPCAFControl_DataMapOfShapeSDR;
-typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<StepShape_ShapeDefinitionRepresentation>, TopTools_ShapeMapHasher>::Iterator STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR;
-typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<StepBasic_ProductDefinition>, TopTools_ShapeMapHasher> STEPCAFControl_DataMapOfShapePD;
-typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<StepBasic_ProductDefinition>, TopTools_ShapeMapHasher>::Iterator STEPCAFControl_DataMapIteratorOfDataMapOfShapePD;
-typedef NCollection_DataMap<TDF_Label, opencascade::handle<STEPCAFControl_ExternFile>, TDF_LabelMapHasher> STEPCAFControl_DataMapOfLabelExternFile;
 typedef NCollection_DataMap<TDF_Label, opencascade::handle<STEPCAFControl_ExternFile>, TDF_LabelMapHasher>::Iterator STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile;
-typedef NCollection_DataMap<opencascade::handle<StepShape_ShapeDefinitionRepresentation>, opencascade::handle<STEPCAFControl_ExternFile>, TColStd_MapTransientHasher> STEPCAFControl_DataMapOfSDRExternFile;
-typedef NCollection_DataMap<opencascade::handle<StepShape_ShapeDefinitionRepresentation>, opencascade::handle<STEPCAFControl_ExternFile>, TColStd_MapTransientHasher>::Iterator STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile;
-typedef NCollection_DataMap<TDF_Label, TopoDS_Shape, TDF_LabelMapHasher> STEPCAFControl_DataMapOfLabelShape;
 typedef NCollection_DataMap<TDF_Label, TopoDS_Shape, TDF_LabelMapHasher>::Iterator STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape;
+typedef NCollection_DataMap<opencascade::handle<StepBasic_ProductDefinition>, opencascade::handle<STEPCAFControl_ExternFile>, TColStd_MapTransientHasher>::Iterator STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile;
+typedef NCollection_DataMap<opencascade::handle<StepShape_ShapeDefinitionRepresentation>, opencascade::handle<STEPCAFControl_ExternFile>, TColStd_MapTransientHasher>::Iterator STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile;
+typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<StepBasic_ProductDefinition>, TopTools_ShapeMapHasher>::Iterator STEPCAFControl_DataMapIteratorOfDataMapOfShapePD;
+typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<StepShape_ShapeDefinitionRepresentation>, TopTools_ShapeMapHasher>::Iterator STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR;
+typedef NCollection_DataMap<TDF_Label, opencascade::handle<STEPCAFControl_ExternFile>, TDF_LabelMapHasher> STEPCAFControl_DataMapOfLabelExternFile;
+typedef NCollection_DataMap<TDF_Label, TopoDS_Shape, TDF_LabelMapHasher> STEPCAFControl_DataMapOfLabelShape;
+typedef NCollection_DataMap<opencascade::handle<StepBasic_ProductDefinition>, opencascade::handle<STEPCAFControl_ExternFile>, TColStd_MapTransientHasher> STEPCAFControl_DataMapOfPDExternFile;
+typedef NCollection_DataMap<opencascade::handle<StepShape_ShapeDefinitionRepresentation>, opencascade::handle<STEPCAFControl_ExternFile>, TColStd_MapTransientHasher> STEPCAFControl_DataMapOfSDRExternFile;
+typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<StepBasic_ProductDefinition>, TopTools_ShapeMapHasher> STEPCAFControl_DataMapOfShapePD;
+typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<StepShape_ShapeDefinitionRepresentation>, TopTools_ShapeMapHasher> STEPCAFControl_DataMapOfShapeSDR;
 /* end typedefs declaration */
 
 /**********************************
@@ -152,6 +152,16 @@ typedef NCollection_DataMap<TDF_Label, TopoDS_Shape, TDF_LabelMapHasher>::Iterat
 **********************************/
 class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
 	public:
+		/****************** STEPCAFControl_ActorWrite ******************/
+		%feature("compactdefaultargs") STEPCAFControl_ActorWrite;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPCAFControl_ActorWrite;
+		 STEPCAFControl_ActorWrite();
+
 		/****************** ClearMap ******************/
 		%feature("compactdefaultargs") ClearMap;
 		%feature("autodoc", "Clears map of shapes registered as assemblies.
@@ -190,16 +200,6 @@ None
 ") RegisterAssembly;
 		void RegisterAssembly(const TopoDS_Shape & S);
 
-		/****************** STEPCAFControl_ActorWrite ******************/
-		%feature("compactdefaultargs") STEPCAFControl_ActorWrite;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPCAFControl_ActorWrite;
-		 STEPCAFControl_ActorWrite();
-
 		/****************** SetStdMode ******************/
 		%feature("compactdefaultargs") SetStdMode;
 		%feature("autodoc", "Set standard mode of work in standard mode actor (default) behaves exactly as its ancestor, also map is cleared.
@@ -231,16 +231,6 @@ None
 **********************************/
 class STEPCAFControl_Controller : public STEPControl_Controller {
 	public:
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "Standard initialisation. it creates a controller for step-xcaf and records it to various names, available to select it later returns true when done, false if could not be done.
-
-Returns
--------
-bool
-") Init;
-		static Standard_Boolean Init();
-
 		/****************** STEPCAFControl_Controller ******************/
 		%feature("compactdefaultargs") STEPCAFControl_Controller;
 		%feature("autodoc", "Initializes the use of step norm (the first time).
@@ -250,6 +240,16 @@ Returns
 None
 ") STEPCAFControl_Controller;
 		 STEPCAFControl_Controller();
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "Standard initialisation. it creates a controller for step-xcaf and records it to various names, available to select it later returns true when done, false if could not be done.
+
+Returns
+-------
+bool
+") Init;
+		static Standard_Boolean Init();
 
 };
 
@@ -267,6 +267,16 @@ None
 **********************************/
 class STEPCAFControl_ExternFile : public Standard_Transient {
 	public:
+		/****************** STEPCAFControl_ExternFile ******************/
+		%feature("compactdefaultargs") STEPCAFControl_ExternFile;
+		%feature("autodoc", "Creates an empty structure.
+
+Returns
+-------
+None
+") STEPCAFControl_ExternFile;
+		 STEPCAFControl_ExternFile();
+
 		/****************** GetLabel ******************/
 		%feature("compactdefaultargs") GetLabel;
 		%feature("autodoc", "No available documentation.
@@ -326,16 +336,6 @@ Returns
 IFSelect_ReturnStatus
 ") GetWriteStatus;
 		IFSelect_ReturnStatus GetWriteStatus();
-
-		/****************** STEPCAFControl_ExternFile ******************/
-		%feature("compactdefaultargs") STEPCAFControl_ExternFile;
-		%feature("autodoc", "Creates an empty structure.
-
-Returns
--------
-None
-") STEPCAFControl_ExternFile;
-		 STEPCAFControl_ExternFile();
 
 		/****************** SetLabel ******************/
 		%feature("compactdefaultargs") SetLabel;
@@ -437,6 +437,16 @@ None
 ***********************************/
 class STEPCAFControl_GDTProperty {
 	public:
+		/****************** STEPCAFControl_GDTProperty ******************/
+		%feature("compactdefaultargs") STEPCAFControl_GDTProperty;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPCAFControl_GDTProperty;
+		 STEPCAFControl_GDTProperty();
+
 		/****************** GetDatumRefModifiers ******************/
 		%feature("compactdefaultargs") GetDatumRefModifiers;
 		%feature("autodoc", "No available documentation.
@@ -730,16 +740,6 @@ bool
 ") IsDimensionalSize;
 		static Standard_Boolean IsDimensionalSize(const XCAFDimTolObjects_DimensionType theType);
 
-		/****************** STEPCAFControl_GDTProperty ******************/
-		%feature("compactdefaultargs") STEPCAFControl_GDTProperty;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPCAFControl_GDTProperty;
-		 STEPCAFControl_GDTProperty();
-
 };
 
 
@@ -754,6 +754,32 @@ None
 ******************************/
 class STEPCAFControl_Reader {
 	public:
+		/****************** STEPCAFControl_Reader ******************/
+		%feature("compactdefaultargs") STEPCAFControl_Reader;
+		%feature("autodoc", "Creates a reader with an empty step model and sets colormode, layermode, namemode and propsmode to standard_true.
+
+Returns
+-------
+None
+") STEPCAFControl_Reader;
+		 STEPCAFControl_Reader();
+
+		/****************** STEPCAFControl_Reader ******************/
+		%feature("compactdefaultargs") STEPCAFControl_Reader;
+		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for step.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") STEPCAFControl_Reader;
+		 STEPCAFControl_Reader(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
+
 		/****************** ChangeReader ******************/
 		%feature("compactdefaultargs") ChangeReader;
 		%feature("autodoc", "Returns basic reader.
@@ -966,32 +992,6 @@ STEPControl_Reader
 ") Reader;
 		const STEPControl_Reader & Reader();
 
-		/****************** STEPCAFControl_Reader ******************/
-		%feature("compactdefaultargs") STEPCAFControl_Reader;
-		%feature("autodoc", "Creates a reader with an empty step model and sets colormode, layermode, namemode and propsmode to standard_true.
-
-Returns
--------
-None
-") STEPCAFControl_Reader;
-		 STEPCAFControl_Reader();
-
-		/****************** STEPCAFControl_Reader ******************/
-		%feature("compactdefaultargs") STEPCAFControl_Reader;
-		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for step.
-
-Parameters
-----------
-WS: XSControl_WorkSession
-scratch: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") STEPCAFControl_Reader;
-		 STEPCAFControl_Reader(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
-
 		/****************** SetColorMode ******************/
 		%feature("compactdefaultargs") SetColorMode;
 		%feature("autodoc", "Set colormode for indicate read colors or not.
@@ -1171,6 +1171,32 @@ bool
 ******************************/
 class STEPCAFControl_Writer {
 	public:
+		/****************** STEPCAFControl_Writer ******************/
+		%feature("compactdefaultargs") STEPCAFControl_Writer;
+		%feature("autodoc", "Creates a writer with an empty step model and sets colormode, layermode, namemode and propsmode to standard_true.
+
+Returns
+-------
+None
+") STEPCAFControl_Writer;
+		 STEPCAFControl_Writer();
+
+		/****************** STEPCAFControl_Writer ******************/
+		%feature("compactdefaultargs") STEPCAFControl_Writer;
+		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for step clears the internal data structures.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") STEPCAFControl_Writer;
+		 STEPCAFControl_Writer(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
+
 		/****************** ChangeWriter ******************/
 		%feature("compactdefaultargs") ChangeWriter;
 		%feature("autodoc", "Returns basic reader for root file.
@@ -1336,32 +1362,6 @@ Returns
 bool
 ") Perform;
 		Standard_Boolean Perform(const opencascade::handle<TDocStd_Document> & doc, const char * filename);
-
-		/****************** STEPCAFControl_Writer ******************/
-		%feature("compactdefaultargs") STEPCAFControl_Writer;
-		%feature("autodoc", "Creates a writer with an empty step model and sets colormode, layermode, namemode and propsmode to standard_true.
-
-Returns
--------
-None
-") STEPCAFControl_Writer;
-		 STEPCAFControl_Writer();
-
-		/****************** STEPCAFControl_Writer ******************/
-		%feature("compactdefaultargs") STEPCAFControl_Writer;
-		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for step clears the internal data structures.
-
-Parameters
-----------
-WS: XSControl_WorkSession
-scratch: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") STEPCAFControl_Writer;
-		 STEPCAFControl_Writer(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
 
 		/****************** SetColorMode ******************/
 		%feature("compactdefaultargs") SetColorMode;

@@ -164,41 +164,6 @@ class IGESData_DefType:
 /* end handles declaration */
 
 /* templates */
-%template(IGESData_Array1OfIGESEntity) NCollection_Array1<opencascade::handle<IGESData_IGESEntity>>;
-
-%extend NCollection_Array1<opencascade::handle<IGESData_IGESEntity>> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
 %template(IGESData_Array1OfDirPart) NCollection_Array1<IGESData_DirPart>;
 
 %extend NCollection_Array1<IGESData_DirPart> {
@@ -234,11 +199,46 @@ class IGESData_DefType:
     __next__ = next
     }
 };
+%template(IGESData_Array1OfIGESEntity) NCollection_Array1<opencascade::handle<IGESData_IGESEntity>>;
+
+%extend NCollection_Array1<opencascade::handle<IGESData_IGESEntity>> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Array1<opencascade::handle<IGESData_IGESEntity>> IGESData_Array1OfIGESEntity;
 typedef NCollection_Array1<IGESData_DirPart> IGESData_Array1OfDirPart;
+typedef NCollection_Array1<opencascade::handle<IGESData_IGESEntity>> IGESData_Array1OfIGESEntity;
 /* end typedefs declaration */
 
 /*****************
@@ -281,6 +281,45 @@ opencascade::handle<IGESData_Protocol>
 *****************************/
 class IGESData_BasicEditor {
 	public:
+		/****************** IGESData_BasicEditor ******************/
+		%feature("compactdefaultargs") IGESData_BasicEditor;
+		%feature("autodoc", "Creates an empty basic editor which should be initialized via init() method.
+
+Returns
+-------
+None
+") IGESData_BasicEditor;
+		 IGESData_BasicEditor();
+
+		/****************** IGESData_BasicEditor ******************/
+		%feature("compactdefaultargs") IGESData_BasicEditor;
+		%feature("autodoc", "Creates a basic editor, with a new igesmodel, ready to run.
+
+Parameters
+----------
+protocol: IGESData_Protocol
+
+Returns
+-------
+None
+") IGESData_BasicEditor;
+		 IGESData_BasicEditor(const opencascade::handle<IGESData_Protocol> & protocol);
+
+		/****************** IGESData_BasicEditor ******************/
+		%feature("compactdefaultargs") IGESData_BasicEditor;
+		%feature("autodoc", "Creates a basic editor for iges data, ready to run.
+
+Parameters
+----------
+model: IGESData_IGESModel
+protocol: IGESData_Protocol
+
+Returns
+-------
+None
+") IGESData_BasicEditor;
+		 IGESData_BasicEditor(const opencascade::handle<IGESData_IGESModel> & model, const opencascade::handle<IGESData_Protocol> & protocol);
+
 		/****************** ApplyUnit ******************/
 		%feature("compactdefaultargs") ApplyUnit;
 		%feature("autodoc", "Applies unit value to convert header data : resolution, maxcoord, maxlineweight applies unit only once after setunit... has been called, if <enforce> is given as true. it can be called just before writing the model to a file, i.e. when definitive values are finally known.
@@ -353,45 +392,6 @@ Returns
 char *
 ") DraftingName;
 		static const char * DraftingName(const Standard_Integer flag);
-
-		/****************** IGESData_BasicEditor ******************/
-		%feature("compactdefaultargs") IGESData_BasicEditor;
-		%feature("autodoc", "Creates an empty basic editor which should be initialized via init() method.
-
-Returns
--------
-None
-") IGESData_BasicEditor;
-		 IGESData_BasicEditor();
-
-		/****************** IGESData_BasicEditor ******************/
-		%feature("compactdefaultargs") IGESData_BasicEditor;
-		%feature("autodoc", "Creates a basic editor, with a new igesmodel, ready to run.
-
-Parameters
-----------
-protocol: IGESData_Protocol
-
-Returns
--------
-None
-") IGESData_BasicEditor;
-		 IGESData_BasicEditor(const opencascade::handle<IGESData_Protocol> & protocol);
-
-		/****************** IGESData_BasicEditor ******************/
-		%feature("compactdefaultargs") IGESData_BasicEditor;
-		%feature("autodoc", "Creates a basic editor for iges data, ready to run.
-
-Parameters
-----------
-model: IGESData_IGESModel
-protocol: IGESData_Protocol
-
-Returns
--------
-None
-") IGESData_BasicEditor;
-		 IGESData_BasicEditor(const opencascade::handle<IGESData_IGESModel> & model, const opencascade::handle<IGESData_Protocol> & protocol);
 
 		/****************** IGESVersionMax ******************/
 		%feature("compactdefaultargs") IGESVersionMax;
@@ -554,16 +554,6 @@ int
 ***************************/
 class IGESData_DefSwitch {
 	public:
-		/****************** DefType ******************/
-		%feature("compactdefaultargs") DefType;
-		%feature("autodoc", "Returns deftype status (void,reference,rank).
-
-Returns
--------
-IGESData_DefType
-") DefType;
-		IGESData_DefType DefType();
-
 		/****************** IGESData_DefSwitch ******************/
 		%feature("compactdefaultargs") IGESData_DefSwitch;
 		%feature("autodoc", "Creates a defswitch as void.
@@ -573,6 +563,16 @@ Returns
 None
 ") IGESData_DefSwitch;
 		 IGESData_DefSwitch();
+
+		/****************** DefType ******************/
+		%feature("compactdefaultargs") DefType;
+		%feature("autodoc", "Returns deftype status (void,reference,rank).
+
+Returns
+-------
+IGESData_DefType
+") DefType;
+		IGESData_DefType DefType();
 
 		/****************** SetRank ******************/
 		%feature("compactdefaultargs") SetRank;
@@ -632,6 +632,61 @@ int
 ****************************/
 class IGESData_DirChecker {
 	public:
+		/****************** IGESData_DirChecker ******************/
+		%feature("compactdefaultargs") IGESData_DirChecker;
+		%feature("autodoc", "Returns a dirchecker, with no criterium at all to be checked.
+
+Returns
+-------
+None
+") IGESData_DirChecker;
+		 IGESData_DirChecker();
+
+		/****************** IGESData_DirChecker ******************/
+		%feature("compactdefaultargs") IGESData_DirChecker;
+		%feature("autodoc", "Returns a dirchecker, with no criterium except required type.
+
+Parameters
+----------
+atype: int
+
+Returns
+-------
+None
+") IGESData_DirChecker;
+		 IGESData_DirChecker(const Standard_Integer atype);
+
+		/****************** IGESData_DirChecker ******************/
+		%feature("compactdefaultargs") IGESData_DirChecker;
+		%feature("autodoc", "Returns a dirchecker, with no criterium except required values for type and form numbers.
+
+Parameters
+----------
+atype: int
+aform: int
+
+Returns
+-------
+None
+") IGESData_DirChecker;
+		 IGESData_DirChecker(const Standard_Integer atype, const Standard_Integer aform);
+
+		/****************** IGESData_DirChecker ******************/
+		%feature("compactdefaultargs") IGESData_DirChecker;
+		%feature("autodoc", "Returns a dirchecker, with no criterium except required values for type number (atype), and required range for form number (which must be between aform1 and aform2 included).
+
+Parameters
+----------
+atype: int
+aform1: int
+aform2: int
+
+Returns
+-------
+None
+") IGESData_DirChecker;
+		 IGESData_DirChecker(const Standard_Integer atype, const Standard_Integer aform1, const Standard_Integer aform2);
+
 		/****************** BlankStatusIgnored ******************/
 		%feature("compactdefaultargs") BlankStatusIgnored;
 		%feature("autodoc", "Sets blank status to be ignored (should not be defined, or its value should be 0).
@@ -752,61 +807,6 @@ Returns
 None
 ") HierarchyStatusRequired;
 		void HierarchyStatusRequired(const Standard_Integer val);
-
-		/****************** IGESData_DirChecker ******************/
-		%feature("compactdefaultargs") IGESData_DirChecker;
-		%feature("autodoc", "Returns a dirchecker, with no criterium at all to be checked.
-
-Returns
--------
-None
-") IGESData_DirChecker;
-		 IGESData_DirChecker();
-
-		/****************** IGESData_DirChecker ******************/
-		%feature("compactdefaultargs") IGESData_DirChecker;
-		%feature("autodoc", "Returns a dirchecker, with no criterium except required type.
-
-Parameters
-----------
-atype: int
-
-Returns
--------
-None
-") IGESData_DirChecker;
-		 IGESData_DirChecker(const Standard_Integer atype);
-
-		/****************** IGESData_DirChecker ******************/
-		%feature("compactdefaultargs") IGESData_DirChecker;
-		%feature("autodoc", "Returns a dirchecker, with no criterium except required values for type and form numbers.
-
-Parameters
-----------
-atype: int
-aform: int
-
-Returns
--------
-None
-") IGESData_DirChecker;
-		 IGESData_DirChecker(const Standard_Integer atype, const Standard_Integer aform);
-
-		/****************** IGESData_DirChecker ******************/
-		%feature("compactdefaultargs") IGESData_DirChecker;
-		%feature("autodoc", "Returns a dirchecker, with no criterium except required values for type number (atype), and required range for form number (which must be between aform1 and aform2 included).
-
-Parameters
-----------
-atype: int
-aform1: int
-aform2: int
-
-Returns
--------
-None
-") IGESData_DirChecker;
-		 IGESData_DirChecker(const Standard_Integer atype, const Standard_Integer aform1, const Standard_Integer aform2);
 
 		/****************** IsSet ******************/
 		%feature("compactdefaultargs") IsSet;
@@ -1365,6 +1365,16 @@ None
 *****************************************/
 class IGESData_GlobalNodeOfSpecificLib : public Standard_Transient {
 	public:
+		/****************** IGESData_GlobalNodeOfSpecificLib ******************/
+		%feature("compactdefaultargs") IGESData_GlobalNodeOfSpecificLib;
+		%feature("autodoc", "Creates an empty globalnode, with no next.
+
+Returns
+-------
+None
+") IGESData_GlobalNodeOfSpecificLib;
+		 IGESData_GlobalNodeOfSpecificLib();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a module bound with a protocol to the list : does nothing if already in the list, that is, same type (exact match) and same state (that is, isequal is not required) once added, stores its attached protocol in correspondance.
@@ -1379,16 +1389,6 @@ Returns
 None
 ") Add;
 		void Add(const opencascade::handle<IGESData_SpecificModule> & amodule, const opencascade::handle<IGESData_Protocol> & aprotocol);
-
-		/****************** IGESData_GlobalNodeOfSpecificLib ******************/
-		%feature("compactdefaultargs") IGESData_GlobalNodeOfSpecificLib;
-		%feature("autodoc", "Creates an empty globalnode, with no next.
-
-Returns
--------
-None
-") IGESData_GlobalNodeOfSpecificLib;
-		 IGESData_GlobalNodeOfSpecificLib();
 
 		/****************** Module ******************/
 		%feature("compactdefaultargs") Module;
@@ -1436,6 +1436,16 @@ opencascade::handle<IGESData_Protocol>
 ***************************************/
 class IGESData_GlobalNodeOfWriterLib : public Standard_Transient {
 	public:
+		/****************** IGESData_GlobalNodeOfWriterLib ******************/
+		%feature("compactdefaultargs") IGESData_GlobalNodeOfWriterLib;
+		%feature("autodoc", "Creates an empty globalnode, with no next.
+
+Returns
+-------
+None
+") IGESData_GlobalNodeOfWriterLib;
+		 IGESData_GlobalNodeOfWriterLib();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a module bound with a protocol to the list : does nothing if already in the list, that is, same type (exact match) and same state (that is, isequal is not required) once added, stores its attached protocol in correspondance.
@@ -1450,16 +1460,6 @@ Returns
 None
 ") Add;
 		void Add(const opencascade::handle<IGESData_ReadWriteModule> & amodule, const opencascade::handle<IGESData_Protocol> & aprotocol);
-
-		/****************** IGESData_GlobalNodeOfWriterLib ******************/
-		%feature("compactdefaultargs") IGESData_GlobalNodeOfWriterLib;
-		%feature("autodoc", "Creates an empty globalnode, with no next.
-
-Returns
--------
-None
-") IGESData_GlobalNodeOfWriterLib;
-		 IGESData_GlobalNodeOfWriterLib();
 
 		/****************** Module ******************/
 		%feature("compactdefaultargs") Module;
@@ -1507,6 +1507,16 @@ opencascade::handle<IGESData_Protocol>
 *******************************/
 class IGESData_GlobalSection {
 	public:
+		/****************** IGESData_GlobalSection ******************/
+		%feature("compactdefaultargs") IGESData_GlobalSection;
+		%feature("autodoc", "Creates an empty globalsection, ready to be filled, warning : no default value is provided.
+
+Returns
+-------
+None
+") IGESData_GlobalSection;
+		 IGESData_GlobalSection();
+
 		/****************** ApplicationProtocol ******************/
 		%feature("compactdefaultargs") ApplicationProtocol;
 		%feature("autodoc", "No available documentation.
@@ -1616,16 +1626,6 @@ Returns
 bool
 ") HasMaxCoord;
 		Standard_Boolean HasMaxCoord();
-
-		/****************** IGESData_GlobalSection ******************/
-		%feature("compactdefaultargs") IGESData_GlobalSection;
-		%feature("autodoc", "Creates an empty globalsection, ready to be filled, warning : no default value is provided.
-
-Returns
--------
-None
-") IGESData_GlobalSection;
-		 IGESData_GlobalSection();
 
 		/****************** IGESVersion ******************/
 		%feature("compactdefaultargs") IGESVersion;
@@ -2321,6 +2321,21 @@ float
 ****************************/
 class IGESData_IGESDumper {
 	public:
+		/****************** IGESData_IGESDumper ******************/
+		%feature("compactdefaultargs") IGESData_IGESDumper;
+		%feature("autodoc", "Returns an igesdumper ready to work. the igesmodel provides the numbering of entities : as for any interfacemodel, it gives each entity a number; but for igesentities, the 'number of directory entry' according to the definition of iges files, is also usefull.
+
+Parameters
+----------
+model: IGESData_IGESModel
+protocol: IGESData_Protocol
+
+Returns
+-------
+None
+") IGESData_IGESDumper;
+		 IGESData_IGESDumper(const opencascade::handle<IGESData_IGESModel> & model, const opencascade::handle<IGESData_Protocol> & protocol);
+
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "No available documentation.
@@ -2338,21 +2353,6 @@ Returns
 None
 ") Dump;
 		void Dump(const opencascade::handle<IGESData_IGESEntity> & ent, const opencascade::handle<Message_Messenger> & S, const Standard_Integer own, const Standard_Integer attached = -1);
-
-		/****************** IGESData_IGESDumper ******************/
-		%feature("compactdefaultargs") IGESData_IGESDumper;
-		%feature("autodoc", "Returns an igesdumper ready to work. the igesmodel provides the numbering of entities : as for any interfacemodel, it gives each entity a number; but for igesentities, the 'number of directory entry' according to the definition of iges files, is also usefull.
-
-Parameters
-----------
-model: IGESData_IGESModel
-protocol: IGESData_Protocol
-
-Returns
--------
-None
-") IGESData_IGESDumper;
-		 IGESData_IGESDumper(const opencascade::handle<IGESData_IGESModel> & model, const opencascade::handle<IGESData_Protocol> & protocol);
 
 		/****************** OwnDump ******************/
 		%feature("compactdefaultargs") OwnDump;
@@ -3180,6 +3180,16 @@ opencascade::handle<IGESData_ViewKindEntity>
 ***************************/
 class IGESData_IGESModel : public Interface_InterfaceModel {
 	public:
+		/****************** IGESData_IGESModel ******************/
+		%feature("compactdefaultargs") IGESData_IGESModel;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") IGESData_IGESModel;
+		 IGESData_IGESModel();
+
 		/****************** AddStartLine ******************/
 		%feature("compactdefaultargs") AddStartLine;
 		%feature("autodoc", "Adds a new string to the existing start section at the end if atnum is 0 or not given, or before atnumth line.
@@ -3308,16 +3318,6 @@ Returns
 IGESData_GlobalSection
 ") GlobalSection;
 		const IGESData_GlobalSection & GlobalSection();
-
-		/****************** IGESData_IGESModel ******************/
-		%feature("compactdefaultargs") IGESData_IGESModel;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") IGESData_IGESModel;
-		 IGESData_IGESModel();
 
 		/****************** NbStartLines ******************/
 		%feature("compactdefaultargs") NbStartLines;
@@ -3496,6 +3496,21 @@ None
 ********************************/
 class IGESData_IGESReaderData : public Interface_FileReaderData {
 	public:
+		/****************** IGESData_IGESReaderData ******************/
+		%feature("compactdefaultargs") IGESData_IGESReaderData;
+		%feature("autodoc", "Creates igesreaderdata correctly dimensionned (for arrays) <nbe> count of entities, that is, half nb of directory lines <nbp> : count of parameters.
+
+Parameters
+----------
+nbe: int
+nbp: int
+
+Returns
+-------
+None
+") IGESData_IGESReaderData;
+		 IGESData_IGESReaderData(const Standard_Integer nbe, const Standard_Integer nbp);
+
 		/****************** AddGlobal ******************/
 		%feature("compactdefaultargs") AddGlobal;
 		%feature("autodoc", "Adds a parameter to global section's parameter list.
@@ -3632,21 +3647,6 @@ IGESData_GlobalSection
 ") GlobalSection;
 		const IGESData_GlobalSection & GlobalSection();
 
-		/****************** IGESData_IGESReaderData ******************/
-		%feature("compactdefaultargs") IGESData_IGESReaderData;
-		%feature("autodoc", "Creates igesreaderdata correctly dimensionned (for arrays) <nbe> count of entities, that is, half nb of directory lines <nbp> : count of parameters.
-
-Parameters
-----------
-nbe: int
-nbp: int
-
-Returns
--------
-None
-") IGESData_IGESReaderData;
-		 IGESData_IGESReaderData(const Standard_Integer nbe, const Standard_Integer nbp);
-
 		/****************** NbEntities ******************/
 		%feature("compactdefaultargs") NbEntities;
 		%feature("autodoc", "Returns count of recorded entities (i.e. size of directory).
@@ -3752,6 +3752,21 @@ opencascade::handle<TColStd_HSequenceOfHAsciiString>
 ********************************/
 class IGESData_IGESReaderTool : public Interface_FileReaderTool {
 	public:
+		/****************** IGESData_IGESReaderTool ******************/
+		%feature("compactdefaultargs") IGESData_IGESReaderTool;
+		%feature("autodoc", "Creates igesreadertool to work with an igesreaderdata and an iges protocol. actually, no lib is used.
+
+Parameters
+----------
+reader: IGESData_IGESReaderData
+protocol: IGESData_Protocol
+
+Returns
+-------
+None
+") IGESData_IGESReaderTool;
+		 IGESData_IGESReaderTool(const opencascade::handle<IGESData_IGESReaderData> & reader, const opencascade::handle<IGESData_Protocol> & protocol);
+
 		/****************** AnalyseRecord ******************/
 		%feature("compactdefaultargs") AnalyseRecord;
 		%feature("autodoc", "Fills an entity, given record no; works by calling readdirpart then readparams (with help of a paramreader), then if required readprops and readassocs, from igesentity returns true if no fail has been recorded.
@@ -3795,21 +3810,6 @@ Returns
 None
 ") EndRead;
 		virtual void EndRead(const opencascade::handle<Interface_InterfaceModel> & amodel);
-
-		/****************** IGESData_IGESReaderTool ******************/
-		%feature("compactdefaultargs") IGESData_IGESReaderTool;
-		%feature("autodoc", "Creates igesreadertool to work with an igesreaderdata and an iges protocol. actually, no lib is used.
-
-Parameters
-----------
-reader: IGESData_IGESReaderData
-protocol: IGESData_Protocol
-
-Returns
--------
-None
-") IGESData_IGESReaderTool;
-		 IGESData_IGESReaderTool(const opencascade::handle<IGESData_IGESReaderData> & reader, const opencascade::handle<IGESData_Protocol> & protocol);
 
 		/****************** Prepare ******************/
 		%feature("compactdefaultargs") Prepare;
@@ -3920,16 +3920,6 @@ bool
 **************************/
 class IGESData_IGESType {
 	public:
-		/****************** Form ******************/
-		%feature("compactdefaultargs") Form;
-		%feature("autodoc", "Returns 'form' data.
-
-Returns
--------
-int
-") Form;
-		Standard_Integer Form();
-
 		/****************** IGESData_IGESType ******************/
 		%feature("compactdefaultargs") IGESData_IGESType;
 		%feature("autodoc", "No available documentation.
@@ -3954,6 +3944,16 @@ Returns
 None
 ") IGESData_IGESType;
 		 IGESData_IGESType(const Standard_Integer atype, const Standard_Integer aform);
+
+		/****************** Form ******************/
+		%feature("compactdefaultargs") Form;
+		%feature("autodoc", "Returns 'form' data.
+
+Returns
+-------
+int
+") Form;
+		Standard_Integer Form();
 
 		/****************** IsEqual ******************/
 		%feature("compactdefaultargs") IsEqual;
@@ -4017,6 +4017,44 @@ int
 ****************************/
 class IGESData_IGESWriter {
 	public:
+		/****************** IGESData_IGESWriter ******************/
+		%feature("compactdefaultargs") IGESData_IGESWriter;
+		%feature("autodoc", "Creates an igeswriter, empty ready to work (see the methods sendmodel and print).
+
+Parameters
+----------
+amodel: IGESData_IGESModel
+
+Returns
+-------
+None
+") IGESData_IGESWriter;
+		 IGESData_IGESWriter(const opencascade::handle<IGESData_IGESModel> & amodel);
+
+		/****************** IGESData_IGESWriter ******************/
+		%feature("compactdefaultargs") IGESData_IGESWriter;
+		%feature("autodoc", "Default constructor (not used) to satisfy the compiler.
+
+Returns
+-------
+None
+") IGESData_IGESWriter;
+		 IGESData_IGESWriter();
+
+		/****************** IGESData_IGESWriter ******************/
+		%feature("compactdefaultargs") IGESData_IGESWriter;
+		%feature("autodoc", "Constructor by copy (not used) to satisfy the compiler.
+
+Parameters
+----------
+other: IGESData_IGESWriter
+
+Returns
+-------
+None
+") IGESData_IGESWriter;
+		 IGESData_IGESWriter(const IGESData_IGESWriter & other);
+
 		/****************** Associativities ******************/
 		%feature("compactdefaultargs") Associativities;
 		%feature("autodoc", "Sends associativity list, as complement of parameters list error if not in sections dp or stage not 'associativity'.
@@ -4064,44 +4102,6 @@ Returns
 Interface_FloatWriter
 ") FloatWriter;
 		Interface_FloatWriter & FloatWriter();
-
-		/****************** IGESData_IGESWriter ******************/
-		%feature("compactdefaultargs") IGESData_IGESWriter;
-		%feature("autodoc", "Creates an igeswriter, empty ready to work (see the methods sendmodel and print).
-
-Parameters
-----------
-amodel: IGESData_IGESModel
-
-Returns
--------
-None
-") IGESData_IGESWriter;
-		 IGESData_IGESWriter(const opencascade::handle<IGESData_IGESModel> & amodel);
-
-		/****************** IGESData_IGESWriter ******************/
-		%feature("compactdefaultargs") IGESData_IGESWriter;
-		%feature("autodoc", "Default constructor (not used) to satisfy the compiler.
-
-Returns
--------
-None
-") IGESData_IGESWriter;
-		 IGESData_IGESWriter();
-
-		/****************** IGESData_IGESWriter ******************/
-		%feature("compactdefaultargs") IGESData_IGESWriter;
-		%feature("autodoc", "Constructor by copy (not used) to satisfy the compiler.
-
-Parameters
-----------
-other: IGESData_IGESWriter
-
-Returns
--------
-None
-") IGESData_IGESWriter;
-		 IGESData_IGESWriter(const IGESData_IGESWriter & other);
 
 		/****************** OwnParams ******************/
 		%feature("compactdefaultargs") OwnParams;
@@ -4294,6 +4294,16 @@ None
 ***********************************/
 class IGESData_NodeOfSpecificLib : public Standard_Transient {
 	public:
+		/****************** IGESData_NodeOfSpecificLib ******************/
+		%feature("compactdefaultargs") IGESData_NodeOfSpecificLib;
+		%feature("autodoc", "Creates an empty node, with no next.
+
+Returns
+-------
+None
+") IGESData_NodeOfSpecificLib;
+		 IGESData_NodeOfSpecificLib();
+
 		/****************** AddNode ******************/
 		%feature("compactdefaultargs") AddNode;
 		%feature("autodoc", "Adds a couple (module,protocol), that is, stores it into itself if not yet done, else creates a next node to do it.
@@ -4307,16 +4317,6 @@ Returns
 None
 ") AddNode;
 		void AddNode(const opencascade::handle<IGESData_GlobalNodeOfSpecificLib> & anode);
-
-		/****************** IGESData_NodeOfSpecificLib ******************/
-		%feature("compactdefaultargs") IGESData_NodeOfSpecificLib;
-		%feature("autodoc", "Creates an empty node, with no next.
-
-Returns
--------
-None
-") IGESData_NodeOfSpecificLib;
-		 IGESData_NodeOfSpecificLib();
 
 		/****************** Module ******************/
 		%feature("compactdefaultargs") Module;
@@ -4364,6 +4364,16 @@ opencascade::handle<IGESData_Protocol>
 *********************************/
 class IGESData_NodeOfWriterLib : public Standard_Transient {
 	public:
+		/****************** IGESData_NodeOfWriterLib ******************/
+		%feature("compactdefaultargs") IGESData_NodeOfWriterLib;
+		%feature("autodoc", "Creates an empty node, with no next.
+
+Returns
+-------
+None
+") IGESData_NodeOfWriterLib;
+		 IGESData_NodeOfWriterLib();
+
 		/****************** AddNode ******************/
 		%feature("compactdefaultargs") AddNode;
 		%feature("autodoc", "Adds a couple (module,protocol), that is, stores it into itself if not yet done, else creates a next node to do it.
@@ -4377,16 +4387,6 @@ Returns
 None
 ") AddNode;
 		void AddNode(const opencascade::handle<IGESData_GlobalNodeOfWriterLib> & anode);
-
-		/****************** IGESData_NodeOfWriterLib ******************/
-		%feature("compactdefaultargs") IGESData_NodeOfWriterLib;
-		%feature("autodoc", "Creates an empty node, with no next.
-
-Returns
--------
-None
-") IGESData_NodeOfWriterLib;
-		 IGESData_NodeOfWriterLib();
 
 		/****************** Module ******************/
 		%feature("compactdefaultargs") Module;
@@ -4434,26 +4434,6 @@ opencascade::handle<IGESData_Protocol>
 *****************************/
 class IGESData_ParamCursor {
 	public:
-		/****************** Advance ******************/
-		%feature("compactdefaultargs") Advance;
-		%feature("autodoc", "Returns true if advance command has been set.
-
-Returns
--------
-bool
-") Advance;
-		Standard_Boolean Advance();
-
-		/****************** Count ******************/
-		%feature("compactdefaultargs") Count;
-		%feature("autodoc", "Returns required count of items to be read.
-
-Returns
--------
-int
-") Count;
-		Standard_Integer Count();
-
 		/****************** IGESData_ParamCursor ******************/
 		%feature("compactdefaultargs") IGESData_ParamCursor;
 		%feature("autodoc", "Creates a cursor to read a precise parameter of paramreader, identified by its number, then set current number to 'num + 1' (this constructor allows to simply give a number to a method read... from paramreader, which will be translated into a paramcursor by compiler).
@@ -4484,6 +4464,26 @@ Returns
 None
 ") IGESData_ParamCursor;
 		 IGESData_ParamCursor(const Standard_Integer num, const Standard_Integer nb, const Standard_Integer size = 1);
+
+		/****************** Advance ******************/
+		%feature("compactdefaultargs") Advance;
+		%feature("autodoc", "Returns true if advance command has been set.
+
+Returns
+-------
+bool
+") Advance;
+		Standard_Boolean Advance();
+
+		/****************** Count ******************/
+		%feature("compactdefaultargs") Count;
+		%feature("autodoc", "Returns required count of items to be read.
+
+Returns
+-------
+int
+") Count;
+		Standard_Integer Count();
 
 		/****************** ItemSize ******************/
 		%feature("compactdefaultargs") ItemSize;
@@ -4624,6 +4624,27 @@ int
 *****************************/
 class IGESData_ParamReader {
 	public:
+		/****************** IGESData_ParamReader ******************/
+		%feature("compactdefaultargs") IGESData_ParamReader;
+		%feature("autodoc", "Prepares a paramreader, stage 'own', current param = 1 it considers a part of the list, from <base> (excluded) for <nbpar> parameters; <nbpar> = 0 commands to take list length. default is (1 to skip type).
+
+Parameters
+----------
+list: Interface_ParamList
+ach: Interface_Check
+base: int,optional
+	default value is 1
+nbpar: int,optional
+	default value is 0
+num: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") IGESData_ParamReader;
+		 IGESData_ParamReader(const opencascade::handle<Interface_ParamList> & list, const opencascade::handle<Interface_Check> & ach, const Standard_Integer base = 1, const Standard_Integer nbpar = 0, const Standard_Integer num = 0);
+
 		/****************** AddFail ******************/
 		%feature("compactdefaultargs") AddFail;
 		%feature("autodoc", "No available documentation.
@@ -4791,27 +4812,6 @@ Returns
 bool
 ") HasFailed;
 		Standard_Boolean HasFailed();
-
-		/****************** IGESData_ParamReader ******************/
-		%feature("compactdefaultargs") IGESData_ParamReader;
-		%feature("autodoc", "Prepares a paramreader, stage 'own', current param = 1 it considers a part of the list, from <base> (excluded) for <nbpar> parameters; <nbpar> = 0 commands to take list length. default is (1 to skip type).
-
-Parameters
-----------
-list: Interface_ParamList
-ach: Interface_Check
-base: int,optional
-	default value is 1
-nbpar: int,optional
-	default value is 0
-num: int,optional
-	default value is 0
-
-Returns
--------
-None
-") IGESData_ParamReader;
-		 IGESData_ParamReader(const opencascade::handle<Interface_ParamList> & list, const opencascade::handle<Interface_Check> & ach, const Standard_Integer base = 1, const Standard_Integer nbpar = 0, const Standard_Integer num = 0);
 
 		/****************** IsCheckEmpty ******************/
 		%feature("compactdefaultargs") IsCheckEmpty;
@@ -5663,30 +5663,6 @@ None
 *****************************/
 class IGESData_SpecificLib {
 	public:
-		/****************** AddProtocol ******************/
-		%feature("compactdefaultargs") AddProtocol;
-		%feature("autodoc", "Adds a couple (module-protocol) to the library, given the class of a protocol. takes resources into account. (if <aprotocol> is not of type theprotocol, it is not added).
-
-Parameters
-----------
-aprotocol: Standard_Transient
-
-Returns
--------
-None
-") AddProtocol;
-		void AddProtocol(const opencascade::handle<Standard_Transient> & aprotocol);
-
-		/****************** Clear ******************/
-		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "Clears the list of modules of a library (can be used to redefine the order of modules before action : clear then refill the library by calls to addprotocol).
-
-Returns
--------
-None
-") Clear;
-		void Clear();
-
 		/****************** IGESData_SpecificLib ******************/
 		%feature("compactdefaultargs") IGESData_SpecificLib;
 		%feature("autodoc", "Creates a library which complies with a protocol, that is : same class (criterium isinstance) this creation gets the modules from the global set, those which are bound to the given protocol and its resources.
@@ -5710,6 +5686,30 @@ Returns
 None
 ") IGESData_SpecificLib;
 		 IGESData_SpecificLib();
+
+		/****************** AddProtocol ******************/
+		%feature("compactdefaultargs") AddProtocol;
+		%feature("autodoc", "Adds a couple (module-protocol) to the library, given the class of a protocol. takes resources into account. (if <aprotocol> is not of type theprotocol, it is not added).
+
+Parameters
+----------
+aprotocol: Standard_Transient
+
+Returns
+-------
+None
+") AddProtocol;
+		void AddProtocol(const opencascade::handle<Standard_Transient> & aprotocol);
+
+		/****************** Clear ******************/
+		%feature("compactdefaultargs") Clear;
+		%feature("autodoc", "Clears the list of modules of a library (can be used to redefine the order of modules before action : clear then refill the library by calls to addprotocol).
+
+Returns
+-------
+None
+") Clear;
+		void Clear();
 
 		/****************** Module ******************/
 		%feature("compactdefaultargs") Module;
@@ -5866,6 +5866,21 @@ None
 ******************************/
 class IGESData_ToolLocation : public Standard_Transient {
 	public:
+		/****************** IGESData_ToolLocation ******************/
+		%feature("compactdefaultargs") IGESData_ToolLocation;
+		%feature("autodoc", "Creates a toollocation on a given model, filled with the help of a protocol (which allows to known entities referenced by other ones).
+
+Parameters
+----------
+amodel: IGESData_IGESModel
+protocol: IGESData_Protocol
+
+Returns
+-------
+None
+") IGESData_ToolLocation;
+		 IGESData_ToolLocation(const opencascade::handle<IGESData_IGESModel> & amodel, const opencascade::handle<IGESData_Protocol> & protocol);
+
 		/****************** AnalyseLocation ******************/
 		%feature("compactdefaultargs") AnalyseLocation;
 		%feature("autodoc", "Analysis a location given as a gtrsf, by trying to convert it to a trsf (i.e. to a true location of which effect is described by an isometry or a similarity) works with the precision given by default or by setprecision calls convertlocation (see below).
@@ -5968,21 +5983,6 @@ Returns
 bool
 ") HasTransf;
 		Standard_Boolean HasTransf(const opencascade::handle<IGESData_IGESEntity> & ent);
-
-		/****************** IGESData_ToolLocation ******************/
-		%feature("compactdefaultargs") IGESData_ToolLocation;
-		%feature("autodoc", "Creates a toollocation on a given model, filled with the help of a protocol (which allows to known entities referenced by other ones).
-
-Parameters
-----------
-amodel: IGESData_IGESModel
-protocol: IGESData_Protocol
-
-Returns
--------
-None
-") IGESData_ToolLocation;
-		 IGESData_ToolLocation(const opencascade::handle<IGESData_IGESModel> & amodel, const opencascade::handle<IGESData_Protocol> & protocol);
 
 		/****************** IsAmbiguous ******************/
 		%feature("compactdefaultargs") IsAmbiguous;
@@ -6152,30 +6152,6 @@ None
 ***************************/
 class IGESData_WriterLib {
 	public:
-		/****************** AddProtocol ******************/
-		%feature("compactdefaultargs") AddProtocol;
-		%feature("autodoc", "Adds a couple (module-protocol) to the library, given the class of a protocol. takes resources into account. (if <aprotocol> is not of type theprotocol, it is not added).
-
-Parameters
-----------
-aprotocol: Standard_Transient
-
-Returns
--------
-None
-") AddProtocol;
-		void AddProtocol(const opencascade::handle<Standard_Transient> & aprotocol);
-
-		/****************** Clear ******************/
-		%feature("compactdefaultargs") Clear;
-		%feature("autodoc", "Clears the list of modules of a library (can be used to redefine the order of modules before action : clear then refill the library by calls to addprotocol).
-
-Returns
--------
-None
-") Clear;
-		void Clear();
-
 		/****************** IGESData_WriterLib ******************/
 		%feature("compactdefaultargs") IGESData_WriterLib;
 		%feature("autodoc", "Creates a library which complies with a protocol, that is : same class (criterium isinstance) this creation gets the modules from the global set, those which are bound to the given protocol and its resources.
@@ -6199,6 +6175,30 @@ Returns
 None
 ") IGESData_WriterLib;
 		 IGESData_WriterLib();
+
+		/****************** AddProtocol ******************/
+		%feature("compactdefaultargs") AddProtocol;
+		%feature("autodoc", "Adds a couple (module-protocol) to the library, given the class of a protocol. takes resources into account. (if <aprotocol> is not of type theprotocol, it is not added).
+
+Parameters
+----------
+aprotocol: Standard_Transient
+
+Returns
+-------
+None
+") AddProtocol;
+		void AddProtocol(const opencascade::handle<Standard_Transient> & aprotocol);
+
+		/****************** Clear ******************/
+		%feature("compactdefaultargs") Clear;
+		%feature("autodoc", "Clears the list of modules of a library (can be used to redefine the order of modules before action : clear then refill the library by calls to addprotocol).
+
+Returns
+-------
+None
+") Clear;
+		void Clear();
 
 		/****************** Module ******************/
 		%feature("compactdefaultargs") Module;
@@ -6321,6 +6321,16 @@ class IGESData_ColorEntity : public IGESData_IGESEntity {
 ********************************/
 class IGESData_DefaultGeneral : public IGESData_GeneralModule {
 	public:
+		/****************** IGESData_DefaultGeneral ******************/
+		%feature("compactdefaultargs") IGESData_DefaultGeneral;
+		%feature("autodoc", "Creates a defaultgeneral and puts it into generallib, bound with a protocol from igesdata.
+
+Returns
+-------
+None
+") IGESData_DefaultGeneral;
+		 IGESData_DefaultGeneral();
+
 		/****************** DirChecker ******************/
 		%feature("compactdefaultargs") DirChecker;
 		%feature("autodoc", "Returns a dirchecker, specific for each type of entity here, returns an empty dirchecker (no constraint to check).
@@ -6335,16 +6345,6 @@ Returns
 IGESData_DirChecker
 ") DirChecker;
 		IGESData_DirChecker DirChecker(const Standard_Integer CN, const opencascade::handle<IGESData_IGESEntity> & ent);
-
-		/****************** IGESData_DefaultGeneral ******************/
-		%feature("compactdefaultargs") IGESData_DefaultGeneral;
-		%feature("autodoc", "Creates a defaultgeneral and puts it into generallib, bound with a protocol from igesdata.
-
-Returns
--------
-None
-") IGESData_DefaultGeneral;
-		 IGESData_DefaultGeneral();
 
 		/****************** NewVoid ******************/
 		%feature("compactdefaultargs") NewVoid;
@@ -6471,6 +6471,16 @@ None
 ******************************/
 class IGESData_FileProtocol : public IGESData_Protocol {
 	public:
+		/****************** IGESData_FileProtocol ******************/
+		%feature("compactdefaultargs") IGESData_FileProtocol;
+		%feature("autodoc", "Returns an empty fileprotocol.
+
+Returns
+-------
+None
+") IGESData_FileProtocol;
+		 IGESData_FileProtocol();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a resource.
@@ -6484,16 +6494,6 @@ Returns
 None
 ") Add;
 		void Add(const opencascade::handle<IGESData_Protocol> & protocol);
-
-		/****************** IGESData_FileProtocol ******************/
-		%feature("compactdefaultargs") IGESData_FileProtocol;
-		%feature("autodoc", "Returns an empty fileprotocol.
-
-Returns
--------
-None
-") IGESData_FileProtocol;
-		 IGESData_FileProtocol();
 
 		/****************** NbResources ******************/
 		%feature("compactdefaultargs") NbResources;
@@ -6727,6 +6727,16 @@ gp_GTrsf
 *********************************/
 class IGESData_UndefinedEntity : public IGESData_IGESEntity {
 	public:
+		/****************** IGESData_UndefinedEntity ******************/
+		%feature("compactdefaultargs") IGESData_UndefinedEntity;
+		%feature("autodoc", "Creates an unknown entity.
+
+Returns
+-------
+None
+") IGESData_UndefinedEntity;
+		 IGESData_UndefinedEntity();
+
 		/****************** ChangeableContent ******************/
 		%feature("compactdefaultargs") ChangeableContent;
 		%feature("autodoc", "Returns own data as an undefinedcontent, in order to touch it.
@@ -6796,16 +6806,6 @@ Returns
 bool
 ") HasSubScriptNumber;
 		virtual Standard_Boolean HasSubScriptNumber();
-
-		/****************** IGESData_UndefinedEntity ******************/
-		%feature("compactdefaultargs") IGESData_UndefinedEntity;
-		%feature("autodoc", "Creates an unknown entity.
-
-Returns
--------
-None
-") IGESData_UndefinedEntity;
-		 IGESData_UndefinedEntity();
 
 		/****************** IsOKDirPart ******************/
 		%feature("compactdefaultargs") IsOKDirPart;
@@ -6963,6 +6963,16 @@ opencascade::handle<IGESData_ViewKindEntity>
 **********************************/
 class IGESData_FreeFormatEntity : public IGESData_UndefinedEntity {
 	public:
+		/****************** IGESData_FreeFormatEntity ******************/
+		%feature("compactdefaultargs") IGESData_FreeFormatEntity;
+		%feature("autodoc", "Creates a completely empty freeformatentity.
+
+Returns
+-------
+None
+") IGESData_FreeFormatEntity;
+		 IGESData_FreeFormatEntity();
+
 		/****************** AddEntities ******************/
 		%feature("compactdefaultargs") AddEntities;
 		%feature("autodoc", "Adds a set of entities, given as a harray1ofigesentity causes creation of : an integer parameter which gives count of entities, then the list of entities of the array error if an entity is not an igesentity all these entities will be interpreted as 'positive pointers' by igeswriter.
@@ -7047,16 +7057,6 @@ Returns
 None
 ") ClearNegativePointers;
 		void ClearNegativePointers();
-
-		/****************** IGESData_FreeFormatEntity ******************/
-		%feature("compactdefaultargs") IGESData_FreeFormatEntity;
-		%feature("autodoc", "Creates a completely empty freeformatentity.
-
-Returns
--------
-None
-") IGESData_FreeFormatEntity;
-		 IGESData_FreeFormatEntity();
 
 		/****************** IsNegativePointer ******************/
 		%feature("compactdefaultargs") IsNegativePointer;

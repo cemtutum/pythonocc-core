@@ -116,6 +116,46 @@ opencascade::handle<Geom2d_Curve>
 ****************************/
 class Geom2dAdaptor_Curve : public Adaptor2d_Curve2d {
 	public:
+		/****************** Geom2dAdaptor_Curve ******************/
+		%feature("compactdefaultargs") Geom2dAdaptor_Curve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Geom2dAdaptor_Curve;
+		 Geom2dAdaptor_Curve();
+
+		/****************** Geom2dAdaptor_Curve ******************/
+		%feature("compactdefaultargs") Geom2dAdaptor_Curve;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Geom2d_Curve
+
+Returns
+-------
+None
+") Geom2dAdaptor_Curve;
+		 Geom2dAdaptor_Curve(const opencascade::handle<Geom2d_Curve> & C);
+
+		/****************** Geom2dAdaptor_Curve ******************/
+		%feature("compactdefaultargs") Geom2dAdaptor_Curve;
+		%feature("autodoc", "Constructionerror is raised if ufirst>ulast.
+
+Parameters
+----------
+C: Geom2d_Curve
+UFirst: float
+ULast: float
+
+Returns
+-------
+None
+") Geom2dAdaptor_Curve;
+		 Geom2dAdaptor_Curve(const opencascade::handle<Geom2d_Curve> & C, const Standard_Real UFirst, const Standard_Real ULast);
+
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "No available documentation.
@@ -276,46 +316,6 @@ Returns
 float
 ") FirstParameter;
 		Standard_Real FirstParameter();
-
-		/****************** Geom2dAdaptor_Curve ******************/
-		%feature("compactdefaultargs") Geom2dAdaptor_Curve;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Geom2dAdaptor_Curve;
-		 Geom2dAdaptor_Curve();
-
-		/****************** Geom2dAdaptor_Curve ******************/
-		%feature("compactdefaultargs") Geom2dAdaptor_Curve;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-C: Geom2d_Curve
-
-Returns
--------
-None
-") Geom2dAdaptor_Curve;
-		 Geom2dAdaptor_Curve(const opencascade::handle<Geom2d_Curve> & C);
-
-		/****************** Geom2dAdaptor_Curve ******************/
-		%feature("compactdefaultargs") Geom2dAdaptor_Curve;
-		%feature("autodoc", "Constructionerror is raised if ufirst>ulast.
-
-Parameters
-----------
-C: Geom2d_Curve
-UFirst: float
-ULast: float
-
-Returns
--------
-None
-") Geom2dAdaptor_Curve;
-		 Geom2dAdaptor_Curve(const opencascade::handle<Geom2d_Curve> & C, const Standard_Real UFirst, const Standard_Real ULast);
 
 		/****************** GetType ******************/
 		%feature("compactdefaultargs") GetType;
@@ -564,26 +564,6 @@ gp_Pnt2d
 ******************************/
 class Geom2dAdaptor_GHCurve : public Adaptor2d_HCurve2d {
 	public:
-		/****************** ChangeCurve2d ******************/
-		%feature("compactdefaultargs") ChangeCurve2d;
-		%feature("autodoc", "Returns the curve used to create the genhcurve.
-
-Returns
--------
-Geom2dAdaptor_Curve
-") ChangeCurve2d;
-		Geom2dAdaptor_Curve & ChangeCurve2d();
-
-		/****************** Curve2d ******************/
-		%feature("compactdefaultargs") Curve2d;
-		%feature("autodoc", "Returns the curve used to create the genhcurve2d. this is redefined from hcurve2d, cannot be inline.
-
-Returns
--------
-Adaptor2d_Curve2d
-") Curve2d;
-		const Adaptor2d_Curve2d & Curve2d();
-
 		/****************** Geom2dAdaptor_GHCurve ******************/
 		%feature("compactdefaultargs") Geom2dAdaptor_GHCurve;
 		%feature("autodoc", "Creates an empty genhcurve2d.
@@ -607,6 +587,26 @@ Returns
 None
 ") Geom2dAdaptor_GHCurve;
 		 Geom2dAdaptor_GHCurve(const Geom2dAdaptor_Curve & C);
+
+		/****************** ChangeCurve2d ******************/
+		%feature("compactdefaultargs") ChangeCurve2d;
+		%feature("autodoc", "Returns the curve used to create the genhcurve.
+
+Returns
+-------
+Geom2dAdaptor_Curve
+") ChangeCurve2d;
+		Geom2dAdaptor_Curve & ChangeCurve2d();
+
+		/****************** Curve2d ******************/
+		%feature("compactdefaultargs") Curve2d;
+		%feature("autodoc", "Returns the curve used to create the genhcurve2d. this is redefined from hcurve2d, cannot be inline.
+
+Returns
+-------
+Adaptor2d_Curve2d
+") Curve2d;
+		const Adaptor2d_Curve2d & Curve2d();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;

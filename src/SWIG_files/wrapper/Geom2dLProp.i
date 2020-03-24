@@ -41,8 +41,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geom2dlprop.html"
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
-#include<gp_module.hxx>
 #include<Geom2d_module.hxx>
+#include<gp_module.hxx>
 #include<LProp_module.hxx>
 #include<math_module.hxx>
 #include<Message_module.hxx>
@@ -53,8 +53,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_geom2dlprop.html"
 %};
 %import Standard.i
 %import NCollection.i
-%import gp.i
 %import Geom2d.i
+%import gp.i
 %import LProp.i
 %import math.i
 
@@ -84,6 +84,54 @@ from OCC.Core.Exception import *
 ******************************/
 class Geom2dLProp_CLProps2d {
 	public:
+		/****************** Geom2dLProp_CLProps2d ******************/
+		%feature("compactdefaultargs") Geom2dLProp_CLProps2d;
+		%feature("autodoc", "Initializes the local properties of the curve <c> the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, 2 or 3). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
+
+Parameters
+----------
+C: Geom2d_Curve
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") Geom2dLProp_CLProps2d;
+		 Geom2dLProp_CLProps2d(const opencascade::handle<Geom2d_Curve> & C, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** Geom2dLProp_CLProps2d ******************/
+		%feature("compactdefaultargs") Geom2dLProp_CLProps2d;
+		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u>. all the computations done will be related to <c> and <u>.
+
+Parameters
+----------
+C: Geom2d_Curve
+U: float
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") Geom2dLProp_CLProps2d;
+		 Geom2dLProp_CLProps2d(const opencascade::handle<Geom2d_Curve> & C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
+
+		/****************** Geom2dLProp_CLProps2d ******************/
+		%feature("compactdefaultargs") Geom2dLProp_CLProps2d;
+		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u> and the curve is set with setcurve. the curve can have a empty constructor all the computations done will be related to <c> and <u> when the functions 'set' will be done.
+
+Parameters
+----------
+N: int
+Resolution: float
+
+Returns
+-------
+None
+") Geom2dLProp_CLProps2d;
+		 Geom2dLProp_CLProps2d(const Standard_Integer N, const Standard_Real Resolution);
+
 		/****************** CentreOfCurvature ******************/
 		%feature("compactdefaultargs") CentreOfCurvature;
 		%feature("autodoc", "Returns the centre of curvature <p>.
@@ -137,54 +185,6 @@ Returns
 gp_Vec2d
 ") D3;
 		const gp_Vec2d D3();
-
-		/****************** Geom2dLProp_CLProps2d ******************/
-		%feature("compactdefaultargs") Geom2dLProp_CLProps2d;
-		%feature("autodoc", "Initializes the local properties of the curve <c> the current point and the derivatives are computed at the same time, which allows an optimization of the computation time. <n> indicates the maximum number of derivations to be done (0, 1, 2 or 3). for example, to compute only the tangent, n should be equal to 1. <resolution> is the linear tolerance (it is used to test if a vector is null).
-
-Parameters
-----------
-C: Geom2d_Curve
-N: int
-Resolution: float
-
-Returns
--------
-None
-") Geom2dLProp_CLProps2d;
-		 Geom2dLProp_CLProps2d(const opencascade::handle<Geom2d_Curve> & C, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** Geom2dLProp_CLProps2d ******************/
-		%feature("compactdefaultargs") Geom2dLProp_CLProps2d;
-		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u>. all the computations done will be related to <c> and <u>.
-
-Parameters
-----------
-C: Geom2d_Curve
-U: float
-N: int
-Resolution: float
-
-Returns
--------
-None
-") Geom2dLProp_CLProps2d;
-		 Geom2dLProp_CLProps2d(const opencascade::handle<Geom2d_Curve> & C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
-
-		/****************** Geom2dLProp_CLProps2d ******************/
-		%feature("compactdefaultargs") Geom2dLProp_CLProps2d;
-		%feature("autodoc", "Same as previous constructor but here the parameter is set to the value <u> and the curve is set with setcurve. the curve can have a empty constructor all the computations done will be related to <c> and <u> when the functions 'set' will be done.
-
-Parameters
-----------
-N: int
-Resolution: float
-
-Returns
--------
-None
-") Geom2dLProp_CLProps2d;
-		 Geom2dLProp_CLProps2d(const Standard_Integer N, const Standard_Real Resolution);
 
 		/****************** IsTangentDefined ******************/
 		%feature("compactdefaultargs") IsTangentDefined;
@@ -478,21 +478,6 @@ None
 *******************************/
 class Geom2dLProp_FuncCurExt : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Returns the derivative for the variable <x>.
-
-Parameters
-----------
-X: float
-D: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-
 		/****************** Geom2dLProp_FuncCurExt ******************/
 		%feature("compactdefaultargs") Geom2dLProp_FuncCurExt;
 		%feature("autodoc", "No available documentation.
@@ -507,6 +492,21 @@ Returns
 None
 ") Geom2dLProp_FuncCurExt;
 		 Geom2dLProp_FuncCurExt(const opencascade::handle<Geom2d_Curve> & C, const Standard_Real Tol);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Returns the derivative for the variable <x>.
+
+Parameters
+----------
+X: float
+D: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
 
 		/****************** IsMinKC ******************/
 		%feature("compactdefaultargs") IsMinKC;
@@ -567,6 +567,20 @@ bool
 *******************************/
 class Geom2dLProp_FuncCurNul : public math_FunctionWithDerivative {
 	public:
+		/****************** Geom2dLProp_FuncCurNul ******************/
+		%feature("compactdefaultargs") Geom2dLProp_FuncCurNul;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Geom2d_Curve
+
+Returns
+-------
+None
+") Geom2dLProp_FuncCurNul;
+		 Geom2dLProp_FuncCurNul(const opencascade::handle<Geom2d_Curve> & C);
+
 		/****************** Derivative ******************/
 		%feature("compactdefaultargs") Derivative;
 		%feature("autodoc", "Returns the derivative for the variable <x>.
@@ -581,20 +595,6 @@ Returns
 bool
 ") Derivative;
 		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-
-		/****************** Geom2dLProp_FuncCurNul ******************/
-		%feature("compactdefaultargs") Geom2dLProp_FuncCurNul;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-C: Geom2d_Curve
-
-Returns
--------
-None
-") Geom2dLProp_FuncCurNul;
-		 Geom2dLProp_FuncCurNul(const opencascade::handle<Geom2d_Curve> & C);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;

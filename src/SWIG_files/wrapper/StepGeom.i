@@ -267,6 +267,111 @@ class StepGeom_TransitionCode:
 /* end handles declaration */
 
 /* templates */
+%template(StepGeom_Array1OfBoundaryCurve) NCollection_Array1<opencascade::handle<StepGeom_BoundaryCurve>>;
+
+%extend NCollection_Array1<opencascade::handle<StepGeom_BoundaryCurve>> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepGeom_Array1OfCartesianPoint) NCollection_Array1<opencascade::handle<StepGeom_CartesianPoint>>;
+
+%extend NCollection_Array1<opencascade::handle<StepGeom_CartesianPoint>> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepGeom_Array1OfCompositeCurveSegment) NCollection_Array1<opencascade::handle<StepGeom_CompositeCurveSegment>>;
+
+%extend NCollection_Array1<opencascade::handle<StepGeom_CompositeCurveSegment>> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
 %template(StepGeom_Array1OfCurve) NCollection_Array1<opencascade::handle<StepGeom_Curve>>;
 
 %extend NCollection_Array1<opencascade::handle<StepGeom_Curve>> {
@@ -337,81 +442,9 @@ class StepGeom_TransitionCode:
     __next__ = next
     }
 };
-%template(StepGeom_Array1OfBoundaryCurve) NCollection_Array1<opencascade::handle<StepGeom_BoundaryCurve>>;
-
-%extend NCollection_Array1<opencascade::handle<StepGeom_BoundaryCurve>> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepGeom_Array2OfCartesianPoint) NCollection_Array2<opencascade::handle<StepGeom_CartesianPoint>>;
-%template(StepGeom_Array2OfSurfacePatch) NCollection_Array2<opencascade::handle<StepGeom_SurfacePatch>>;
 %template(StepGeom_Array1OfSurfaceBoundary) NCollection_Array1<StepGeom_SurfaceBoundary>;
 
 %extend NCollection_Array1<StepGeom_SurfaceBoundary> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepGeom_Array1OfCompositeCurveSegment) NCollection_Array1<opencascade::handle<StepGeom_CompositeCurveSegment>>;
-
-%extend NCollection_Array1<opencascade::handle<StepGeom_CompositeCurveSegment>> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -479,53 +512,20 @@ class StepGeom_TransitionCode:
     __next__ = next
     }
 };
-%template(StepGeom_Array1OfCartesianPoint) NCollection_Array1<opencascade::handle<StepGeom_CartesianPoint>>;
-
-%extend NCollection_Array1<opencascade::handle<StepGeom_CartesianPoint>> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
+%template(StepGeom_Array2OfCartesianPoint) NCollection_Array2<opencascade::handle<StepGeom_CartesianPoint>>;
+%template(StepGeom_Array2OfSurfacePatch) NCollection_Array2<opencascade::handle<StepGeom_SurfacePatch>>;
 /* end templates declaration */
 
 /* typedefs */
+typedef NCollection_Array1<opencascade::handle<StepGeom_BoundaryCurve>> StepGeom_Array1OfBoundaryCurve;
+typedef NCollection_Array1<opencascade::handle<StepGeom_CartesianPoint>> StepGeom_Array1OfCartesianPoint;
+typedef NCollection_Array1<opencascade::handle<StepGeom_CompositeCurveSegment>> StepGeom_Array1OfCompositeCurveSegment;
 typedef NCollection_Array1<opencascade::handle<StepGeom_Curve>> StepGeom_Array1OfCurve;
 typedef NCollection_Array1<StepGeom_PcurveOrSurface> StepGeom_Array1OfPcurveOrSurface;
-typedef NCollection_Array1<opencascade::handle<StepGeom_BoundaryCurve>> StepGeom_Array1OfBoundaryCurve;
+typedef NCollection_Array1<StepGeom_SurfaceBoundary> StepGeom_Array1OfSurfaceBoundary;
+typedef NCollection_Array1<StepGeom_TrimmingSelect> StepGeom_Array1OfTrimmingSelect;
 typedef NCollection_Array2<opencascade::handle<StepGeom_CartesianPoint>> StepGeom_Array2OfCartesianPoint;
 typedef NCollection_Array2<opencascade::handle<StepGeom_SurfacePatch>> StepGeom_Array2OfSurfacePatch;
-typedef NCollection_Array1<StepGeom_SurfaceBoundary> StepGeom_Array1OfSurfaceBoundary;
-typedef NCollection_Array1<opencascade::handle<StepGeom_CompositeCurveSegment>> StepGeom_Array1OfCompositeCurveSegment;
-typedef NCollection_Array1<StepGeom_TrimmingSelect> StepGeom_Array1OfTrimmingSelect;
-typedef NCollection_Array1<opencascade::handle<StepGeom_CartesianPoint>> StepGeom_Array1OfCartesianPoint;
 /* end typedefs declaration */
 
 /********************************
@@ -533,6 +533,16 @@ typedef NCollection_Array1<opencascade::handle<StepGeom_CartesianPoint>> StepGeo
 ********************************/
 class StepGeom_Axis2Placement : public StepData_SelectType {
 	public:
+		/****************** StepGeom_Axis2Placement ******************/
+		%feature("compactdefaultargs") StepGeom_Axis2Placement;
+		%feature("autodoc", "Returns a axis2placement selecttype.
+
+Returns
+-------
+None
+") StepGeom_Axis2Placement;
+		 StepGeom_Axis2Placement();
+
 		/****************** Axis2Placement2d ******************/
 		%feature("compactdefaultargs") Axis2Placement2d;
 		%feature("autodoc", "Returns value as a axis2placement2d (null if another type).
@@ -567,16 +577,6 @@ int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
-		/****************** StepGeom_Axis2Placement ******************/
-		%feature("compactdefaultargs") StepGeom_Axis2Placement;
-		%feature("autodoc", "Returns a axis2placement selecttype.
-
-Returns
--------
-None
-") StepGeom_Axis2Placement;
-		 StepGeom_Axis2Placement();
-
 };
 
 
@@ -591,6 +591,16 @@ None
 ***************************************/
 class StepGeom_CompositeCurveSegment : public Standard_Transient {
 	public:
+		/****************** StepGeom_CompositeCurveSegment ******************/
+		%feature("compactdefaultargs") StepGeom_CompositeCurveSegment;
+		%feature("autodoc", "Returns a compositecurvesegment.
+
+Returns
+-------
+None
+") StepGeom_CompositeCurveSegment;
+		 StepGeom_CompositeCurveSegment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -669,16 +679,6 @@ None
 ") SetTransition;
 		void SetTransition(const StepGeom_TransitionCode aTransition);
 
-		/****************** StepGeom_CompositeCurveSegment ******************/
-		%feature("compactdefaultargs") StepGeom_CompositeCurveSegment;
-		%feature("autodoc", "Returns a compositecurvesegment.
-
-Returns
--------
-None
-") StepGeom_CompositeCurveSegment;
-		 StepGeom_CompositeCurveSegment();
-
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
 		%feature("autodoc", "No available documentation.
@@ -705,6 +705,16 @@ StepGeom_TransitionCode
 ********************************/
 class StepGeom_CurveOnSurface : public StepData_SelectType {
 	public:
+		/****************** StepGeom_CurveOnSurface ******************/
+		%feature("compactdefaultargs") StepGeom_CurveOnSurface;
+		%feature("autodoc", "Returns a curveonsurface selecttype.
+
+Returns
+-------
+None
+") StepGeom_CurveOnSurface;
+		 StepGeom_CurveOnSurface();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a curveonsurface kind entity that is : 1 -> pcurve 2 -> surfacecurve 3 -> compositecurveonsurface 0 else.
@@ -739,16 +749,6 @@ opencascade::handle<StepGeom_Pcurve>
 ") Pcurve;
 		opencascade::handle<StepGeom_Pcurve> Pcurve();
 
-		/****************** StepGeom_CurveOnSurface ******************/
-		%feature("compactdefaultargs") StepGeom_CurveOnSurface;
-		%feature("autodoc", "Returns a curveonsurface selecttype.
-
-Returns
--------
-None
-") StepGeom_CurveOnSurface;
-		 StepGeom_CurveOnSurface();
-
 		/****************** SurfaceCurve ******************/
 		%feature("compactdefaultargs") SurfaceCurve;
 		%feature("autodoc", "Returns value as a surfacecurve (null if another type).
@@ -773,6 +773,16 @@ opencascade::handle<StepGeom_SurfaceCurve>
 *************************************************************************/
 class StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : public StepRepr_RepresentationContext {
 	public:
+		/****************** StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx ******************/
+		%feature("compactdefaultargs") StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx;
+		 StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx();
+
 		/****************** CoordinateSpaceDimension ******************/
 		%feature("compactdefaultargs") CoordinateSpaceDimension;
 		%feature("autodoc", "No available documentation.
@@ -953,16 +963,6 @@ None
 ") SetUnits;
 		void SetUnits(const opencascade::handle<StepBasic_HArray1OfNamedUnit> & aUnits);
 
-		/****************** StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx ******************/
-		%feature("compactdefaultargs") StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx;
-		 StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx();
-
 		/****************** Uncertainty ******************/
 		%feature("compactdefaultargs") Uncertainty;
 		%feature("autodoc", "No available documentation.
@@ -1027,6 +1027,16 @@ opencascade::handle<StepBasic_NamedUnit>
 ************************************************/
 class StepGeom_GeometricRepresentationContext : public StepRepr_RepresentationContext {
 	public:
+		/****************** StepGeom_GeometricRepresentationContext ******************/
+		%feature("compactdefaultargs") StepGeom_GeometricRepresentationContext;
+		%feature("autodoc", "Returns a geometricrepresentationcontext.
+
+Returns
+-------
+None
+") StepGeom_GeometricRepresentationContext;
+		 StepGeom_GeometricRepresentationContext();
+
 		/****************** CoordinateSpaceDimension ******************/
 		%feature("compactdefaultargs") CoordinateSpaceDimension;
 		%feature("autodoc", "No available documentation.
@@ -1067,16 +1077,6 @@ None
 ") SetCoordinateSpaceDimension;
 		void SetCoordinateSpaceDimension(const Standard_Integer aCoordinateSpaceDimension);
 
-		/****************** StepGeom_GeometricRepresentationContext ******************/
-		%feature("compactdefaultargs") StepGeom_GeometricRepresentationContext;
-		%feature("autodoc", "Returns a geometricrepresentationcontext.
-
-Returns
--------
-None
-") StepGeom_GeometricRepresentationContext;
-		 StepGeom_GeometricRepresentationContext();
-
 };
 
 
@@ -1093,6 +1093,16 @@ None
 ****************************************************************************/
 class StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext : public StepRepr_RepresentationContext {
 	public:
+		/****************** StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext ******************/
+		%feature("compactdefaultargs") StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext;
+		%feature("autodoc", "Returns a geometricrepresentationcontextandglobalunitassignedcontext.
+
+Returns
+-------
+None
+") StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext;
+		 StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext();
+
 		/****************** CoordinateSpaceDimension ******************/
 		%feature("compactdefaultargs") CoordinateSpaceDimension;
 		%feature("autodoc", "No available documentation.
@@ -1223,16 +1233,6 @@ None
 ") SetUnits;
 		void SetUnits(const opencascade::handle<StepBasic_HArray1OfNamedUnit> & aUnits);
 
-		/****************** StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext ******************/
-		%feature("compactdefaultargs") StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext;
-		%feature("autodoc", "Returns a geometricrepresentationcontextandglobalunitassignedcontext.
-
-Returns
--------
-None
-") StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext;
-		 StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext();
-
 		/****************** Units ******************/
 		%feature("compactdefaultargs") Units;
 		%feature("autodoc", "No available documentation.
@@ -1273,6 +1273,16 @@ opencascade::handle<StepBasic_NamedUnit>
 **********************************************************************************/
 class StepGeom_GeometricRepresentationContextAndParametricRepresentationContext : public StepRepr_RepresentationContext {
 	public:
+		/****************** StepGeom_GeometricRepresentationContextAndParametricRepresentationContext ******************/
+		%feature("compactdefaultargs") StepGeom_GeometricRepresentationContextAndParametricRepresentationContext;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepGeom_GeometricRepresentationContextAndParametricRepresentationContext;
+		 StepGeom_GeometricRepresentationContextAndParametricRepresentationContext();
+
 		/****************** CoordinateSpaceDimension ******************/
 		%feature("compactdefaultargs") CoordinateSpaceDimension;
 		%feature("autodoc", "No available documentation.
@@ -1378,16 +1388,6 @@ None
 ") SetParametricRepresentationContext;
 		void SetParametricRepresentationContext(const opencascade::handle<StepRepr_ParametricRepresentationContext> & aParametricRepresentationContext);
 
-		/****************** StepGeom_GeometricRepresentationContextAndParametricRepresentationContext ******************/
-		%feature("compactdefaultargs") StepGeom_GeometricRepresentationContextAndParametricRepresentationContext;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepGeom_GeometricRepresentationContextAndParametricRepresentationContext;
-		 StepGeom_GeometricRepresentationContextAndParametricRepresentationContext();
-
 };
 
 
@@ -1430,6 +1430,16 @@ None
 *********************************/
 class StepGeom_PcurveOrSurface : public StepData_SelectType {
 	public:
+		/****************** StepGeom_PcurveOrSurface ******************/
+		%feature("compactdefaultargs") StepGeom_PcurveOrSurface;
+		%feature("autodoc", "Returns a pcurveorsurface selecttype.
+
+Returns
+-------
+None
+") StepGeom_PcurveOrSurface;
+		 StepGeom_PcurveOrSurface();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a pcurveorsurface kind entity that is : 1 -> pcurve 2 -> surface 0 else.
@@ -1453,16 +1463,6 @@ Returns
 opencascade::handle<StepGeom_Pcurve>
 ") Pcurve;
 		opencascade::handle<StepGeom_Pcurve> Pcurve();
-
-		/****************** StepGeom_PcurveOrSurface ******************/
-		%feature("compactdefaultargs") StepGeom_PcurveOrSurface;
-		%feature("autodoc", "Returns a pcurveorsurface selecttype.
-
-Returns
--------
-None
-") StepGeom_PcurveOrSurface;
-		 StepGeom_PcurveOrSurface();
 
 		/****************** Surface ******************/
 		%feature("compactdefaultargs") Surface;
@@ -1488,6 +1488,16 @@ opencascade::handle<StepGeom_Surface>
 *********************************/
 class StepGeom_SurfaceBoundary : public StepData_SelectType {
 	public:
+		/****************** StepGeom_SurfaceBoundary ******************/
+		%feature("compactdefaultargs") StepGeom_SurfaceBoundary;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepGeom_SurfaceBoundary;
+		 StepGeom_SurfaceBoundary();
+
 		/****************** BoundaryCurve ******************/
 		%feature("compactdefaultargs") BoundaryCurve;
 		%feature("autodoc", "Returns value as boundarycurve (or null if another type).
@@ -1522,16 +1532,6 @@ opencascade::handle<StepGeom_DegeneratePcurve>
 ") DegeneratePcurve;
 		opencascade::handle<StepGeom_DegeneratePcurve> DegeneratePcurve();
 
-		/****************** StepGeom_SurfaceBoundary ******************/
-		%feature("compactdefaultargs") StepGeom_SurfaceBoundary;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepGeom_SurfaceBoundary;
-		 StepGeom_SurfaceBoundary();
-
 };
 
 
@@ -1546,6 +1546,16 @@ None
 ******************************/
 class StepGeom_SurfacePatch : public Standard_Transient {
 	public:
+		/****************** StepGeom_SurfacePatch ******************/
+		%feature("compactdefaultargs") StepGeom_SurfacePatch;
+		%feature("autodoc", "Returns a surfacepatch.
+
+Returns
+-------
+None
+") StepGeom_SurfacePatch;
+		 StepGeom_SurfacePatch();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -1644,16 +1654,6 @@ None
 ") SetVTransition;
 		void SetVTransition(const StepGeom_TransitionCode aVTransition);
 
-		/****************** StepGeom_SurfacePatch ******************/
-		%feature("compactdefaultargs") StepGeom_SurfacePatch;
-		%feature("autodoc", "Returns a surfacepatch.
-
-Returns
--------
-None
-") StepGeom_SurfacePatch;
-		 StepGeom_SurfacePatch();
-
 		/****************** USense ******************/
 		%feature("compactdefaultargs") USense;
 		%feature("autodoc", "No available documentation.
@@ -1710,6 +1710,16 @@ StepGeom_TransitionCode
 ********************************/
 class StepGeom_TrimmingMember : public StepData_SelectReal {
 	public:
+		/****************** StepGeom_TrimmingMember ******************/
+		%feature("compactdefaultargs") StepGeom_TrimmingMember;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepGeom_TrimmingMember;
+		 StepGeom_TrimmingMember();
+
 		/****************** HasName ******************/
 		%feature("compactdefaultargs") HasName;
 		%feature("autodoc", "No available documentation.
@@ -1744,16 +1754,6 @@ bool
 ") SetName;
 		virtual Standard_Boolean SetName(const char * name);
 
-		/****************** StepGeom_TrimmingMember ******************/
-		%feature("compactdefaultargs") StepGeom_TrimmingMember;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepGeom_TrimmingMember;
-		 StepGeom_TrimmingMember();
-
 };
 
 
@@ -1770,6 +1770,16 @@ None
 ********************************/
 class StepGeom_TrimmingSelect : public StepData_SelectType {
 	public:
+		/****************** StepGeom_TrimmingSelect ******************/
+		%feature("compactdefaultargs") StepGeom_TrimmingSelect;
+		%feature("autodoc", "Returns a trimmingselect selecttype.
+
+Returns
+-------
+None
+") StepGeom_TrimmingSelect;
+		 StepGeom_TrimmingSelect();
+
 		/****************** CartesianPoint ******************/
 		%feature("compactdefaultargs") CartesianPoint;
 		%feature("autodoc", "Returns value as a cartesianpoint (null if another type).
@@ -1842,16 +1852,6 @@ None
 ") SetParameterValue;
 		void SetParameterValue(const Standard_Real aParameterValue);
 
-		/****************** StepGeom_TrimmingSelect ******************/
-		%feature("compactdefaultargs") StepGeom_TrimmingSelect;
-		%feature("autodoc", "Returns a trimmingselect selecttype.
-
-Returns
--------
-None
-") StepGeom_TrimmingSelect;
-		 StepGeom_TrimmingSelect();
-
 };
 
 
@@ -1866,6 +1866,16 @@ None
 ***********************************/
 class StepGeom_VectorOrDirection : public StepData_SelectType {
 	public:
+		/****************** StepGeom_VectorOrDirection ******************/
+		%feature("compactdefaultargs") StepGeom_VectorOrDirection;
+		%feature("autodoc", "Returns a vectorordirection selecttype.
+
+Returns
+-------
+None
+") StepGeom_VectorOrDirection;
+		 StepGeom_VectorOrDirection();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a vectorordirection kind entity that is : 1 -> vector 2 -> direction 0 else.
@@ -1889,16 +1899,6 @@ Returns
 opencascade::handle<StepGeom_Direction>
 ") Direction;
 		opencascade::handle<StepGeom_Direction> Direction();
-
-		/****************** StepGeom_VectorOrDirection ******************/
-		%feature("compactdefaultargs") StepGeom_VectorOrDirection;
-		%feature("autodoc", "Returns a vectorordirection selecttype.
-
-Returns
--------
-None
-") StepGeom_VectorOrDirection;
-		 StepGeom_VectorOrDirection();
 
 		/****************** Vector ******************/
 		%feature("compactdefaultargs") Vector;
@@ -1924,6 +1924,16 @@ opencascade::handle<StepGeom_Vector>
 *************************************************/
 class StepGeom_CartesianTransformationOperator : public StepGeom_GeometricRepresentationItem {
 	public:
+		/****************** StepGeom_CartesianTransformationOperator ******************/
+		%feature("compactdefaultargs") StepGeom_CartesianTransformationOperator;
+		%feature("autodoc", "Returns a cartesiantransformationoperator.
+
+Returns
+-------
+None
+") StepGeom_CartesianTransformationOperator;
+		 StepGeom_CartesianTransformationOperator();
+
 		/****************** Axis1 ******************/
 		%feature("compactdefaultargs") Axis1;
 		%feature("autodoc", "No available documentation.
@@ -2071,16 +2081,6 @@ None
 ") SetScale;
 		void SetScale(const Standard_Real aScale);
 
-		/****************** StepGeom_CartesianTransformationOperator ******************/
-		%feature("compactdefaultargs") StepGeom_CartesianTransformationOperator;
-		%feature("autodoc", "Returns a cartesiantransformationoperator.
-
-Returns
--------
-None
-") StepGeom_CartesianTransformationOperator;
-		 StepGeom_CartesianTransformationOperator();
-
 		/****************** UnSetAxis1 ******************/
 		%feature("compactdefaultargs") UnSetAxis1;
 		%feature("autodoc", "No available documentation.
@@ -2153,6 +2153,16 @@ None
 ***************************/
 class StepGeom_Direction : public StepGeom_GeometricRepresentationItem {
 	public:
+		/****************** StepGeom_Direction ******************/
+		%feature("compactdefaultargs") StepGeom_Direction;
+		%feature("autodoc", "Returns a direction.
+
+Returns
+-------
+None
+") StepGeom_Direction;
+		 StepGeom_Direction();
+
 		/****************** DirectionRatios ******************/
 		%feature("compactdefaultargs") DirectionRatios;
 		%feature("autodoc", "No available documentation.
@@ -2216,16 +2226,6 @@ None
 ") SetDirectionRatios;
 		void SetDirectionRatios(const opencascade::handle<TColStd_HArray1OfReal> & aDirectionRatios);
 
-		/****************** StepGeom_Direction ******************/
-		%feature("compactdefaultargs") StepGeom_Direction;
-		%feature("autodoc", "Returns a direction.
-
-Returns
--------
-None
-") StepGeom_Direction;
-		 StepGeom_Direction();
-
 };
 
 
@@ -2242,6 +2242,16 @@ None
 ***************************/
 class StepGeom_Placement : public StepGeom_GeometricRepresentationItem {
 	public:
+		/****************** StepGeom_Placement ******************/
+		%feature("compactdefaultargs") StepGeom_Placement;
+		%feature("autodoc", "Returns a placement.
+
+Returns
+-------
+None
+") StepGeom_Placement;
+		 StepGeom_Placement();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -2280,16 +2290,6 @@ Returns
 None
 ") SetLocation;
 		void SetLocation(const opencascade::handle<StepGeom_CartesianPoint> & aLocation);
-
-		/****************** StepGeom_Placement ******************/
-		%feature("compactdefaultargs") StepGeom_Placement;
-		%feature("autodoc", "Returns a placement.
-
-Returns
--------
-None
-") StepGeom_Placement;
-		 StepGeom_Placement();
 
 };
 
@@ -2333,6 +2333,16 @@ None
 *****************************************************/
 class StepGeom_ReparametrisedCompositeCurveSegment : public StepGeom_CompositeCurveSegment {
 	public:
+		/****************** StepGeom_ReparametrisedCompositeCurveSegment ******************/
+		%feature("compactdefaultargs") StepGeom_ReparametrisedCompositeCurveSegment;
+		%feature("autodoc", "Returns a reparametrisedcompositecurvesegment.
+
+Returns
+-------
+None
+") StepGeom_ReparametrisedCompositeCurveSegment;
+		 StepGeom_ReparametrisedCompositeCurveSegment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -2373,16 +2383,6 @@ Returns
 None
 ") SetParamLength;
 		void SetParamLength(const Standard_Real aParamLength);
-
-		/****************** StepGeom_ReparametrisedCompositeCurveSegment ******************/
-		%feature("compactdefaultargs") StepGeom_ReparametrisedCompositeCurveSegment;
-		%feature("autodoc", "Returns a reparametrisedcompositecurvesegment.
-
-Returns
--------
-None
-") StepGeom_ReparametrisedCompositeCurveSegment;
-		 StepGeom_ReparametrisedCompositeCurveSegment();
 
 };
 
@@ -2426,6 +2426,16 @@ None
 ************************/
 class StepGeom_Vector : public StepGeom_GeometricRepresentationItem {
 	public:
+		/****************** StepGeom_Vector ******************/
+		%feature("compactdefaultargs") StepGeom_Vector;
+		%feature("autodoc", "Returns a vector.
+
+Returns
+-------
+None
+") StepGeom_Vector;
+		 StepGeom_Vector();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -2490,16 +2500,6 @@ None
 ") SetOrientation;
 		void SetOrientation(const opencascade::handle<StepGeom_Direction> & aOrientation);
 
-		/****************** StepGeom_Vector ******************/
-		%feature("compactdefaultargs") StepGeom_Vector;
-		%feature("autodoc", "Returns a vector.
-
-Returns
--------
-None
-") StepGeom_Vector;
-		 StepGeom_Vector();
-
 };
 
 
@@ -2516,6 +2516,16 @@ None
 ********************************/
 class StepGeom_Axis1Placement : public StepGeom_Placement {
 	public:
+		/****************** StepGeom_Axis1Placement ******************/
+		%feature("compactdefaultargs") StepGeom_Axis1Placement;
+		%feature("autodoc", "Returns a axis1placement.
+
+Returns
+-------
+None
+") StepGeom_Axis1Placement;
+		 StepGeom_Axis1Placement();
+
 		/****************** Axis ******************/
 		%feature("compactdefaultargs") Axis;
 		%feature("autodoc", "No available documentation.
@@ -2567,16 +2577,6 @@ None
 ") SetAxis;
 		void SetAxis(const opencascade::handle<StepGeom_Direction> & aAxis);
 
-		/****************** StepGeom_Axis1Placement ******************/
-		%feature("compactdefaultargs") StepGeom_Axis1Placement;
-		%feature("autodoc", "Returns a axis1placement.
-
-Returns
--------
-None
-") StepGeom_Axis1Placement;
-		 StepGeom_Axis1Placement();
-
 		/****************** UnSetAxis ******************/
 		%feature("compactdefaultargs") UnSetAxis;
 		%feature("autodoc", "No available documentation.
@@ -2603,6 +2603,16 @@ None
 **********************************/
 class StepGeom_Axis2Placement2d : public StepGeom_Placement {
 	public:
+		/****************** StepGeom_Axis2Placement2d ******************/
+		%feature("compactdefaultargs") StepGeom_Axis2Placement2d;
+		%feature("autodoc", "Returns a axis2placement2d.
+
+Returns
+-------
+None
+") StepGeom_Axis2Placement2d;
+		 StepGeom_Axis2Placement2d();
+
 		/****************** HasRefDirection ******************/
 		%feature("compactdefaultargs") HasRefDirection;
 		%feature("autodoc", "No available documentation.
@@ -2654,16 +2664,6 @@ None
 ") SetRefDirection;
 		void SetRefDirection(const opencascade::handle<StepGeom_Direction> & aRefDirection);
 
-		/****************** StepGeom_Axis2Placement2d ******************/
-		%feature("compactdefaultargs") StepGeom_Axis2Placement2d;
-		%feature("autodoc", "Returns a axis2placement2d.
-
-Returns
--------
-None
-") StepGeom_Axis2Placement2d;
-		 StepGeom_Axis2Placement2d();
-
 		/****************** UnSetRefDirection ******************/
 		%feature("compactdefaultargs") UnSetRefDirection;
 		%feature("autodoc", "No available documentation.
@@ -2690,6 +2690,16 @@ None
 **********************************/
 class StepGeom_Axis2Placement3d : public StepGeom_Placement {
 	public:
+		/****************** StepGeom_Axis2Placement3d ******************/
+		%feature("compactdefaultargs") StepGeom_Axis2Placement3d;
+		%feature("autodoc", "Returns a axis2placement3d.
+
+Returns
+-------
+None
+") StepGeom_Axis2Placement3d;
+		 StepGeom_Axis2Placement3d();
+
 		/****************** Axis ******************/
 		%feature("compactdefaultargs") Axis;
 		%feature("autodoc", "No available documentation.
@@ -2776,16 +2786,6 @@ Returns
 None
 ") SetRefDirection;
 		void SetRefDirection(const opencascade::handle<StepGeom_Direction> & aRefDirection);
-
-		/****************** StepGeom_Axis2Placement3d ******************/
-		%feature("compactdefaultargs") StepGeom_Axis2Placement3d;
-		%feature("autodoc", "Returns a axis2placement3d.
-
-Returns
--------
-None
-") StepGeom_Axis2Placement3d;
-		 StepGeom_Axis2Placement3d();
 
 		/****************** UnSetAxis ******************/
 		%feature("compactdefaultargs") UnSetAxis;
@@ -2875,6 +2875,16 @@ None
 ********************************/
 class StepGeom_CartesianPoint : public StepGeom_Point {
 	public:
+		/****************** StepGeom_CartesianPoint ******************/
+		%feature("compactdefaultargs") StepGeom_CartesianPoint;
+		%feature("autodoc", "Returns a cartesianpoint.
+
+Returns
+-------
+None
+") StepGeom_CartesianPoint;
+		 StepGeom_CartesianPoint();
+
 		/****************** Coordinates ******************/
 		%feature("compactdefaultargs") Coordinates;
 		%feature("autodoc", "No available documentation.
@@ -2971,16 +2981,6 @@ None
 ") SetCoordinates;
 		void SetCoordinates(const opencascade::handle<TColStd_HArray1OfReal> & aCoordinates);
 
-		/****************** StepGeom_CartesianPoint ******************/
-		%feature("compactdefaultargs") StepGeom_CartesianPoint;
-		%feature("autodoc", "Returns a cartesianpoint.
-
-Returns
--------
-None
-") StepGeom_CartesianPoint;
-		 StepGeom_CartesianPoint();
-
 };
 
 
@@ -3023,6 +3023,16 @@ None
 ***************************************************/
 class StepGeom_CartesianTransformationOperator3d : public StepGeom_CartesianTransformationOperator {
 	public:
+		/****************** StepGeom_CartesianTransformationOperator3d ******************/
+		%feature("compactdefaultargs") StepGeom_CartesianTransformationOperator3d;
+		%feature("autodoc", "Returns a cartesiantransformationoperator3d.
+
+Returns
+-------
+None
+") StepGeom_CartesianTransformationOperator3d;
+		 StepGeom_CartesianTransformationOperator3d();
+
 		/****************** Axis3 ******************/
 		%feature("compactdefaultargs") Axis3;
 		%feature("autodoc", "No available documentation.
@@ -3080,16 +3090,6 @@ None
 ") SetAxis3;
 		void SetAxis3(const opencascade::handle<StepGeom_Direction> & aAxis3);
 
-		/****************** StepGeom_CartesianTransformationOperator3d ******************/
-		%feature("compactdefaultargs") StepGeom_CartesianTransformationOperator3d;
-		%feature("autodoc", "Returns a cartesiantransformationoperator3d.
-
-Returns
--------
-None
-") StepGeom_CartesianTransformationOperator3d;
-		 StepGeom_CartesianTransformationOperator3d();
-
 		/****************** UnSetAxis3 ******************/
 		%feature("compactdefaultargs") UnSetAxis3;
 		%feature("autodoc", "No available documentation.
@@ -3116,6 +3116,16 @@ None
 ***********************/
 class StepGeom_Conic : public StepGeom_Curve {
 	public:
+		/****************** StepGeom_Conic ******************/
+		%feature("compactdefaultargs") StepGeom_Conic;
+		%feature("autodoc", "Returns a conic.
+
+Returns
+-------
+None
+") StepGeom_Conic;
+		 StepGeom_Conic();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3155,16 +3165,6 @@ None
 ") SetPosition;
 		void SetPosition(const StepGeom_Axis2Placement & aPosition);
 
-		/****************** StepGeom_Conic ******************/
-		%feature("compactdefaultargs") StepGeom_Conic;
-		%feature("autodoc", "Returns a conic.
-
-Returns
--------
-None
-") StepGeom_Conic;
-		 StepGeom_Conic();
-
 };
 
 
@@ -3181,6 +3181,16 @@ None
 ******************************/
 class StepGeom_CurveReplica : public StepGeom_Curve {
 	public:
+		/****************** StepGeom_CurveReplica ******************/
+		%feature("compactdefaultargs") StepGeom_CurveReplica;
+		%feature("autodoc", "Returns a curvereplica.
+
+Returns
+-------
+None
+") StepGeom_CurveReplica;
+		 StepGeom_CurveReplica();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3235,16 +3245,6 @@ None
 ") SetTransformation;
 		void SetTransformation(const opencascade::handle<StepGeom_CartesianTransformationOperator> & aTransformation);
 
-		/****************** StepGeom_CurveReplica ******************/
-		%feature("compactdefaultargs") StepGeom_CurveReplica;
-		%feature("autodoc", "Returns a curvereplica.
-
-Returns
--------
-None
-") StepGeom_CurveReplica;
-		 StepGeom_CurveReplica();
-
 		/****************** Transformation ******************/
 		%feature("compactdefaultargs") Transformation;
 		%feature("autodoc", "No available documentation.
@@ -3271,6 +3271,16 @@ opencascade::handle<StepGeom_CartesianTransformationOperator>
 **********************************/
 class StepGeom_DegeneratePcurve : public StepGeom_Point {
 	public:
+		/****************** StepGeom_DegeneratePcurve ******************/
+		%feature("compactdefaultargs") StepGeom_DegeneratePcurve;
+		%feature("autodoc", "Returns a degeneratepcurve.
+
+Returns
+-------
+None
+") StepGeom_DegeneratePcurve;
+		 StepGeom_DegeneratePcurve();
+
 		/****************** BasisSurface ******************/
 		%feature("compactdefaultargs") BasisSurface;
 		%feature("autodoc", "No available documentation.
@@ -3335,16 +3345,6 @@ None
 ") SetReferenceToCurve;
 		void SetReferenceToCurve(const opencascade::handle<StepRepr_DefinitionalRepresentation> & aReferenceToCurve);
 
-		/****************** StepGeom_DegeneratePcurve ******************/
-		%feature("compactdefaultargs") StepGeom_DegeneratePcurve;
-		%feature("autodoc", "Returns a degeneratepcurve.
-
-Returns
--------
-None
-") StepGeom_DegeneratePcurve;
-		 StepGeom_DegeneratePcurve();
-
 };
 
 
@@ -3361,6 +3361,16 @@ None
 ***********************************/
 class StepGeom_ElementarySurface : public StepGeom_Surface {
 	public:
+		/****************** StepGeom_ElementarySurface ******************/
+		%feature("compactdefaultargs") StepGeom_ElementarySurface;
+		%feature("autodoc", "Returns a elementarysurface.
+
+Returns
+-------
+None
+") StepGeom_ElementarySurface;
+		 StepGeom_ElementarySurface();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3400,16 +3410,6 @@ None
 ") SetPosition;
 		void SetPosition(const opencascade::handle<StepGeom_Axis2Placement3d> & aPosition);
 
-		/****************** StepGeom_ElementarySurface ******************/
-		%feature("compactdefaultargs") StepGeom_ElementarySurface;
-		%feature("autodoc", "Returns a elementarysurface.
-
-Returns
--------
-None
-") StepGeom_ElementarySurface;
-		 StepGeom_ElementarySurface();
-
 };
 
 
@@ -3426,6 +3426,16 @@ None
 **********************/
 class StepGeom_Line : public StepGeom_Curve {
 	public:
+		/****************** StepGeom_Line ******************/
+		%feature("compactdefaultargs") StepGeom_Line;
+		%feature("autodoc", "Returns a line.
+
+Returns
+-------
+None
+") StepGeom_Line;
+		 StepGeom_Line();
+
 		/****************** Dir ******************/
 		%feature("compactdefaultargs") Dir;
 		%feature("autodoc", "No available documentation.
@@ -3490,16 +3500,6 @@ None
 ") SetPnt;
 		void SetPnt(const opencascade::handle<StepGeom_CartesianPoint> & aPnt);
 
-		/****************** StepGeom_Line ******************/
-		%feature("compactdefaultargs") StepGeom_Line;
-		%feature("autodoc", "Returns a line.
-
-Returns
--------
-None
-") StepGeom_Line;
-		 StepGeom_Line();
-
 };
 
 
@@ -3516,6 +3516,16 @@ None
 *******************************/
 class StepGeom_OffsetCurve3d : public StepGeom_Curve {
 	public:
+		/****************** StepGeom_OffsetCurve3d ******************/
+		%feature("compactdefaultargs") StepGeom_OffsetCurve3d;
+		%feature("autodoc", "Returns a offsetcurve3d.
+
+Returns
+-------
+None
+") StepGeom_OffsetCurve3d;
+		 StepGeom_OffsetCurve3d();
+
 		/****************** BasisCurve ******************/
 		%feature("compactdefaultargs") BasisCurve;
 		%feature("autodoc", "No available documentation.
@@ -3630,16 +3640,6 @@ None
 ") SetSelfIntersect;
 		void SetSelfIntersect(const StepData_Logical aSelfIntersect);
 
-		/****************** StepGeom_OffsetCurve3d ******************/
-		%feature("compactdefaultargs") StepGeom_OffsetCurve3d;
-		%feature("autodoc", "Returns a offsetcurve3d.
-
-Returns
--------
-None
-") StepGeom_OffsetCurve3d;
-		 StepGeom_OffsetCurve3d();
-
 };
 
 
@@ -3656,6 +3656,16 @@ None
 *******************************/
 class StepGeom_OffsetSurface : public StepGeom_Surface {
 	public:
+		/****************** StepGeom_OffsetSurface ******************/
+		%feature("compactdefaultargs") StepGeom_OffsetSurface;
+		%feature("autodoc", "Returns a offsetsurface.
+
+Returns
+-------
+None
+") StepGeom_OffsetSurface;
+		 StepGeom_OffsetSurface();
+
 		/****************** BasisSurface ******************/
 		%feature("compactdefaultargs") BasisSurface;
 		%feature("autodoc", "No available documentation.
@@ -3745,16 +3755,6 @@ None
 ") SetSelfIntersect;
 		void SetSelfIntersect(const StepData_Logical aSelfIntersect);
 
-		/****************** StepGeom_OffsetSurface ******************/
-		%feature("compactdefaultargs") StepGeom_OffsetSurface;
-		%feature("autodoc", "Returns a offsetsurface.
-
-Returns
--------
-None
-") StepGeom_OffsetSurface;
-		 StepGeom_OffsetSurface();
-
 };
 
 
@@ -3771,6 +3771,16 @@ None
 *********************************/
 class StepGeom_OrientedSurface : public StepGeom_Surface {
 	public:
+		/****************** StepGeom_OrientedSurface ******************/
+		%feature("compactdefaultargs") StepGeom_OrientedSurface;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepGeom_OrientedSurface;
+		 StepGeom_OrientedSurface();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -3810,16 +3820,6 @@ None
 ") SetOrientation;
 		void SetOrientation(const Standard_Boolean Orientation);
 
-		/****************** StepGeom_OrientedSurface ******************/
-		%feature("compactdefaultargs") StepGeom_OrientedSurface;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepGeom_OrientedSurface;
-		 StepGeom_OrientedSurface();
-
 };
 
 
@@ -3836,6 +3836,16 @@ None
 ************************/
 class StepGeom_Pcurve : public StepGeom_Curve {
 	public:
+		/****************** StepGeom_Pcurve ******************/
+		%feature("compactdefaultargs") StepGeom_Pcurve;
+		%feature("autodoc", "Returns a pcurve.
+
+Returns
+-------
+None
+") StepGeom_Pcurve;
+		 StepGeom_Pcurve();
+
 		/****************** BasisSurface ******************/
 		%feature("compactdefaultargs") BasisSurface;
 		%feature("autodoc", "No available documentation.
@@ -3900,16 +3910,6 @@ None
 ") SetReferenceToCurve;
 		void SetReferenceToCurve(const opencascade::handle<StepRepr_DefinitionalRepresentation> & aReferenceToCurve);
 
-		/****************** StepGeom_Pcurve ******************/
-		%feature("compactdefaultargs") StepGeom_Pcurve;
-		%feature("autodoc", "Returns a pcurve.
-
-Returns
--------
-None
-") StepGeom_Pcurve;
-		 StepGeom_Pcurve();
-
 };
 
 
@@ -3926,6 +3926,16 @@ None
 ******************************/
 class StepGeom_PointOnCurve : public StepGeom_Point {
 	public:
+		/****************** StepGeom_PointOnCurve ******************/
+		%feature("compactdefaultargs") StepGeom_PointOnCurve;
+		%feature("autodoc", "Returns a pointoncurve.
+
+Returns
+-------
+None
+") StepGeom_PointOnCurve;
+		 StepGeom_PointOnCurve();
+
 		/****************** BasisCurve ******************/
 		%feature("compactdefaultargs") BasisCurve;
 		%feature("autodoc", "No available documentation.
@@ -3990,16 +4000,6 @@ None
 ") SetPointParameter;
 		void SetPointParameter(const Standard_Real aPointParameter);
 
-		/****************** StepGeom_PointOnCurve ******************/
-		%feature("compactdefaultargs") StepGeom_PointOnCurve;
-		%feature("autodoc", "Returns a pointoncurve.
-
-Returns
--------
-None
-") StepGeom_PointOnCurve;
-		 StepGeom_PointOnCurve();
-
 };
 
 
@@ -4016,6 +4016,16 @@ None
 ********************************/
 class StepGeom_PointOnSurface : public StepGeom_Point {
 	public:
+		/****************** StepGeom_PointOnSurface ******************/
+		%feature("compactdefaultargs") StepGeom_PointOnSurface;
+		%feature("autodoc", "Returns a pointonsurface.
+
+Returns
+-------
+None
+") StepGeom_PointOnSurface;
+		 StepGeom_PointOnSurface();
+
 		/****************** BasisSurface ******************/
 		%feature("compactdefaultargs") BasisSurface;
 		%feature("autodoc", "No available documentation.
@@ -4105,16 +4115,6 @@ None
 ") SetPointParameterV;
 		void SetPointParameterV(const Standard_Real aPointParameterV);
 
-		/****************** StepGeom_PointOnSurface ******************/
-		%feature("compactdefaultargs") StepGeom_PointOnSurface;
-		%feature("autodoc", "Returns a pointonsurface.
-
-Returns
--------
-None
-") StepGeom_PointOnSurface;
-		 StepGeom_PointOnSurface();
-
 };
 
 
@@ -4131,6 +4131,16 @@ None
 ******************************/
 class StepGeom_PointReplica : public StepGeom_Point {
 	public:
+		/****************** StepGeom_PointReplica ******************/
+		%feature("compactdefaultargs") StepGeom_PointReplica;
+		%feature("autodoc", "Returns a pointreplica.
+
+Returns
+-------
+None
+") StepGeom_PointReplica;
+		 StepGeom_PointReplica();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -4185,16 +4195,6 @@ None
 ") SetTransformation;
 		void SetTransformation(const opencascade::handle<StepGeom_CartesianTransformationOperator> & aTransformation);
 
-		/****************** StepGeom_PointReplica ******************/
-		%feature("compactdefaultargs") StepGeom_PointReplica;
-		%feature("autodoc", "Returns a pointreplica.
-
-Returns
--------
-None
-") StepGeom_PointReplica;
-		 StepGeom_PointReplica();
-
 		/****************** Transformation ******************/
 		%feature("compactdefaultargs") Transformation;
 		%feature("autodoc", "No available documentation.
@@ -4221,6 +4221,16 @@ opencascade::handle<StepGeom_CartesianTransformationOperator>
 ******************************/
 class StepGeom_SurfaceCurve : public StepGeom_Curve {
 	public:
+		/****************** StepGeom_SurfaceCurve ******************/
+		%feature("compactdefaultargs") StepGeom_SurfaceCurve;
+		%feature("autodoc", "Returns a surfacecurve.
+
+Returns
+-------
+None
+") StepGeom_SurfaceCurve;
+		 StepGeom_SurfaceCurve();
+
 		/****************** AssociatedGeometry ******************/
 		%feature("compactdefaultargs") AssociatedGeometry;
 		%feature("autodoc", "No available documentation.
@@ -4334,16 +4344,6 @@ None
 ") SetMasterRepresentation;
 		void SetMasterRepresentation(const StepGeom_PreferredSurfaceCurveRepresentation aMasterRepresentation);
 
-		/****************** StepGeom_SurfaceCurve ******************/
-		%feature("compactdefaultargs") StepGeom_SurfaceCurve;
-		%feature("autodoc", "Returns a surfacecurve.
-
-Returns
--------
-None
-") StepGeom_SurfaceCurve;
-		 StepGeom_SurfaceCurve();
-
 };
 
 
@@ -4360,6 +4360,16 @@ None
 ********************************/
 class StepGeom_SurfaceReplica : public StepGeom_Surface {
 	public:
+		/****************** StepGeom_SurfaceReplica ******************/
+		%feature("compactdefaultargs") StepGeom_SurfaceReplica;
+		%feature("autodoc", "Returns a surfacereplica.
+
+Returns
+-------
+None
+") StepGeom_SurfaceReplica;
+		 StepGeom_SurfaceReplica();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -4414,16 +4424,6 @@ None
 ") SetTransformation;
 		void SetTransformation(const opencascade::handle<StepGeom_CartesianTransformationOperator3d> & aTransformation);
 
-		/****************** StepGeom_SurfaceReplica ******************/
-		%feature("compactdefaultargs") StepGeom_SurfaceReplica;
-		%feature("autodoc", "Returns a surfacereplica.
-
-Returns
--------
-None
-") StepGeom_SurfaceReplica;
-		 StepGeom_SurfaceReplica();
-
 		/****************** Transformation ******************/
 		%feature("compactdefaultargs") Transformation;
 		%feature("autodoc", "No available documentation.
@@ -4450,6 +4450,16 @@ opencascade::handle<StepGeom_CartesianTransformationOperator3d>
 ******************************/
 class StepGeom_SweptSurface : public StepGeom_Surface {
 	public:
+		/****************** StepGeom_SweptSurface ******************/
+		%feature("compactdefaultargs") StepGeom_SweptSurface;
+		%feature("autodoc", "Returns a sweptsurface.
+
+Returns
+-------
+None
+") StepGeom_SweptSurface;
+		 StepGeom_SweptSurface();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -4479,16 +4489,6 @@ None
 ") SetSweptCurve;
 		void SetSweptCurve(const opencascade::handle<StepGeom_Curve> & aSweptCurve);
 
-		/****************** StepGeom_SweptSurface ******************/
-		%feature("compactdefaultargs") StepGeom_SweptSurface;
-		%feature("autodoc", "Returns a sweptsurface.
-
-Returns
--------
-None
-") StepGeom_SweptSurface;
-		 StepGeom_SweptSurface();
-
 		/****************** SweptCurve ******************/
 		%feature("compactdefaultargs") SweptCurve;
 		%feature("autodoc", "No available documentation.
@@ -4515,6 +4515,16 @@ opencascade::handle<StepGeom_Curve>
 ******************************/
 class StepGeom_BSplineCurve : public StepGeom_BoundedCurve {
 	public:
+		/****************** StepGeom_BSplineCurve ******************/
+		%feature("compactdefaultargs") StepGeom_BSplineCurve;
+		%feature("autodoc", "Returns a bsplinecurve.
+
+Returns
+-------
+None
+") StepGeom_BSplineCurve;
+		 StepGeom_BSplineCurve();
+
 		/****************** ClosedCurve ******************/
 		%feature("compactdefaultargs") ClosedCurve;
 		%feature("autodoc", "No available documentation.
@@ -4678,16 +4688,6 @@ None
 ") SetSelfIntersect;
 		void SetSelfIntersect(const StepData_Logical aSelfIntersect);
 
-		/****************** StepGeom_BSplineCurve ******************/
-		%feature("compactdefaultargs") StepGeom_BSplineCurve;
-		%feature("autodoc", "Returns a bsplinecurve.
-
-Returns
--------
-None
-") StepGeom_BSplineCurve;
-		 StepGeom_BSplineCurve();
-
 };
 
 
@@ -4704,6 +4704,16 @@ None
 ********************************/
 class StepGeom_BSplineSurface : public StepGeom_BoundedSurface {
 	public:
+		/****************** StepGeom_BSplineSurface ******************/
+		%feature("compactdefaultargs") StepGeom_BSplineSurface;
+		%feature("autodoc", "Returns a bsplinesurface.
+
+Returns
+-------
+None
+") StepGeom_BSplineSurface;
+		 StepGeom_BSplineSurface();
+
 		/****************** ControlPointsList ******************/
 		%feature("compactdefaultargs") ControlPointsList;
 		%feature("autodoc", "No available documentation.
@@ -4878,16 +4888,6 @@ None
 ") SetVDegree;
 		void SetVDegree(const Standard_Integer aVDegree);
 
-		/****************** StepGeom_BSplineSurface ******************/
-		%feature("compactdefaultargs") StepGeom_BSplineSurface;
-		%feature("autodoc", "Returns a bsplinesurface.
-
-Returns
--------
-None
-") StepGeom_BSplineSurface;
-		 StepGeom_BSplineSurface();
-
 		/****************** SurfaceForm ******************/
 		%feature("compactdefaultargs") SurfaceForm;
 		%feature("autodoc", "No available documentation.
@@ -4954,6 +4954,16 @@ int
 ************************/
 class StepGeom_Circle : public StepGeom_Conic {
 	public:
+		/****************** StepGeom_Circle ******************/
+		%feature("compactdefaultargs") StepGeom_Circle;
+		%feature("autodoc", "Returns a circle.
+
+Returns
+-------
+None
+") StepGeom_Circle;
+		 StepGeom_Circle();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -4994,16 +5004,6 @@ None
 ") SetRadius;
 		void SetRadius(const Standard_Real aRadius);
 
-		/****************** StepGeom_Circle ******************/
-		%feature("compactdefaultargs") StepGeom_Circle;
-		%feature("autodoc", "Returns a circle.
-
-Returns
--------
-None
-") StepGeom_Circle;
-		 StepGeom_Circle();
-
 };
 
 
@@ -5020,6 +5020,16 @@ None
 ********************************/
 class StepGeom_CompositeCurve : public StepGeom_BoundedCurve {
 	public:
+		/****************** StepGeom_CompositeCurve ******************/
+		%feature("compactdefaultargs") StepGeom_CompositeCurve;
+		%feature("autodoc", "Returns a compositecurve.
+
+Returns
+-------
+None
+") StepGeom_CompositeCurve;
+		 StepGeom_CompositeCurve();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -5108,16 +5118,6 @@ None
 ") SetSelfIntersect;
 		void SetSelfIntersect(const StepData_Logical aSelfIntersect);
 
-		/****************** StepGeom_CompositeCurve ******************/
-		%feature("compactdefaultargs") StepGeom_CompositeCurve;
-		%feature("autodoc", "Returns a compositecurve.
-
-Returns
--------
-None
-") StepGeom_CompositeCurve;
-		 StepGeom_CompositeCurve();
-
 };
 
 
@@ -5134,6 +5134,16 @@ None
 ********************************/
 class StepGeom_ConicalSurface : public StepGeom_ElementarySurface {
 	public:
+		/****************** StepGeom_ConicalSurface ******************/
+		%feature("compactdefaultargs") StepGeom_ConicalSurface;
+		%feature("autodoc", "Returns a conicalsurface.
+
+Returns
+-------
+None
+") StepGeom_ConicalSurface;
+		 StepGeom_ConicalSurface();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -5199,16 +5209,6 @@ None
 ") SetSemiAngle;
 		void SetSemiAngle(const Standard_Real aSemiAngle);
 
-		/****************** StepGeom_ConicalSurface ******************/
-		%feature("compactdefaultargs") StepGeom_ConicalSurface;
-		%feature("autodoc", "Returns a conicalsurface.
-
-Returns
--------
-None
-") StepGeom_ConicalSurface;
-		 StepGeom_ConicalSurface();
-
 };
 
 
@@ -5225,6 +5225,16 @@ None
 *************************************/
 class StepGeom_CurveBoundedSurface : public StepGeom_BoundedSurface {
 	public:
+		/****************** StepGeom_CurveBoundedSurface ******************/
+		%feature("compactdefaultargs") StepGeom_CurveBoundedSurface;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepGeom_CurveBoundedSurface;
+		 StepGeom_CurveBoundedSurface();
+
 		/****************** BasisSurface ******************/
 		%feature("compactdefaultargs") BasisSurface;
 		%feature("autodoc", "Returns field basissurface.
@@ -5314,16 +5324,6 @@ None
 ") SetImplicitOuter;
 		void SetImplicitOuter(const Standard_Boolean ImplicitOuter);
 
-		/****************** StepGeom_CurveBoundedSurface ******************/
-		%feature("compactdefaultargs") StepGeom_CurveBoundedSurface;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepGeom_CurveBoundedSurface;
-		 StepGeom_CurveBoundedSurface();
-
 };
 
 
@@ -5340,6 +5340,16 @@ None
 ************************************/
 class StepGeom_CylindricalSurface : public StepGeom_ElementarySurface {
 	public:
+		/****************** StepGeom_CylindricalSurface ******************/
+		%feature("compactdefaultargs") StepGeom_CylindricalSurface;
+		%feature("autodoc", "Returns a cylindricalsurface.
+
+Returns
+-------
+None
+") StepGeom_CylindricalSurface;
+		 StepGeom_CylindricalSurface();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -5380,16 +5390,6 @@ None
 ") SetRadius;
 		void SetRadius(const Standard_Real aRadius);
 
-		/****************** StepGeom_CylindricalSurface ******************/
-		%feature("compactdefaultargs") StepGeom_CylindricalSurface;
-		%feature("autodoc", "Returns a cylindricalsurface.
-
-Returns
--------
-None
-") StepGeom_CylindricalSurface;
-		 StepGeom_CylindricalSurface();
-
 };
 
 
@@ -5406,6 +5406,16 @@ None
 *************************/
 class StepGeom_Ellipse : public StepGeom_Conic {
 	public:
+		/****************** StepGeom_Ellipse ******************/
+		%feature("compactdefaultargs") StepGeom_Ellipse;
+		%feature("autodoc", "Returns a ellipse.
+
+Returns
+-------
+None
+") StepGeom_Ellipse;
+		 StepGeom_Ellipse();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -5471,16 +5481,6 @@ None
 ") SetSemiAxis2;
 		void SetSemiAxis2(const Standard_Real aSemiAxis2);
 
-		/****************** StepGeom_Ellipse ******************/
-		%feature("compactdefaultargs") StepGeom_Ellipse;
-		%feature("autodoc", "Returns a ellipse.
-
-Returns
--------
-None
-") StepGeom_Ellipse;
-		 StepGeom_Ellipse();
-
 };
 
 
@@ -5497,6 +5497,16 @@ None
 *******************************************/
 class StepGeom_EvaluatedDegeneratePcurve : public StepGeom_DegeneratePcurve {
 	public:
+		/****************** StepGeom_EvaluatedDegeneratePcurve ******************/
+		%feature("compactdefaultargs") StepGeom_EvaluatedDegeneratePcurve;
+		%feature("autodoc", "Returns a evaluateddegeneratepcurve.
+
+Returns
+-------
+None
+") StepGeom_EvaluatedDegeneratePcurve;
+		 StepGeom_EvaluatedDegeneratePcurve();
+
 		/****************** EquivalentPoint ******************/
 		%feature("compactdefaultargs") EquivalentPoint;
 		%feature("autodoc", "No available documentation.
@@ -5538,16 +5548,6 @@ None
 ") SetEquivalentPoint;
 		void SetEquivalentPoint(const opencascade::handle<StepGeom_CartesianPoint> & aEquivalentPoint);
 
-		/****************** StepGeom_EvaluatedDegeneratePcurve ******************/
-		%feature("compactdefaultargs") StepGeom_EvaluatedDegeneratePcurve;
-		%feature("autodoc", "Returns a evaluateddegeneratepcurve.
-
-Returns
--------
-None
-") StepGeom_EvaluatedDegeneratePcurve;
-		 StepGeom_EvaluatedDegeneratePcurve();
-
 };
 
 
@@ -5564,6 +5564,16 @@ None
 ***************************/
 class StepGeom_Hyperbola : public StepGeom_Conic {
 	public:
+		/****************** StepGeom_Hyperbola ******************/
+		%feature("compactdefaultargs") StepGeom_Hyperbola;
+		%feature("autodoc", "Returns a hyperbola.
+
+Returns
+-------
+None
+") StepGeom_Hyperbola;
+		 StepGeom_Hyperbola();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -5629,16 +5639,6 @@ None
 ") SetSemiImagAxis;
 		void SetSemiImagAxis(const Standard_Real aSemiImagAxis);
 
-		/****************** StepGeom_Hyperbola ******************/
-		%feature("compactdefaultargs") StepGeom_Hyperbola;
-		%feature("autodoc", "Returns a hyperbola.
-
-Returns
--------
-None
-") StepGeom_Hyperbola;
-		 StepGeom_Hyperbola();
-
 };
 
 
@@ -5681,6 +5681,16 @@ None
 **************************/
 class StepGeom_Parabola : public StepGeom_Conic {
 	public:
+		/****************** StepGeom_Parabola ******************/
+		%feature("compactdefaultargs") StepGeom_Parabola;
+		%feature("autodoc", "Returns a parabola.
+
+Returns
+-------
+None
+") StepGeom_Parabola;
+		 StepGeom_Parabola();
+
 		/****************** FocalDist ******************/
 		%feature("compactdefaultargs") FocalDist;
 		%feature("autodoc", "No available documentation.
@@ -5720,16 +5730,6 @@ Returns
 None
 ") SetFocalDist;
 		void SetFocalDist(const Standard_Real aFocalDist);
-
-		/****************** StepGeom_Parabola ******************/
-		%feature("compactdefaultargs") StepGeom_Parabola;
-		%feature("autodoc", "Returns a parabola.
-
-Returns
--------
-None
-") StepGeom_Parabola;
-		 StepGeom_Parabola();
 
 };
 
@@ -5773,6 +5773,16 @@ None
 **************************/
 class StepGeom_Polyline : public StepGeom_BoundedCurve {
 	public:
+		/****************** StepGeom_Polyline ******************/
+		%feature("compactdefaultargs") StepGeom_Polyline;
+		%feature("autodoc", "Returns a polyline.
+
+Returns
+-------
+None
+") StepGeom_Polyline;
+		 StepGeom_Polyline();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -5836,16 +5846,6 @@ None
 ") SetPoints;
 		void SetPoints(const opencascade::handle<StepGeom_HArray1OfCartesianPoint> & aPoints);
 
-		/****************** StepGeom_Polyline ******************/
-		%feature("compactdefaultargs") StepGeom_Polyline;
-		%feature("autodoc", "Returns a polyline.
-
-Returns
--------
-None
-") StepGeom_Polyline;
-		 StepGeom_Polyline();
-
 };
 
 
@@ -5862,6 +5862,16 @@ None
 *********************************************/
 class StepGeom_RectangularCompositeSurface : public StepGeom_BoundedSurface {
 	public:
+		/****************** StepGeom_RectangularCompositeSurface ******************/
+		%feature("compactdefaultargs") StepGeom_RectangularCompositeSurface;
+		%feature("autodoc", "Returns a rectangularcompositesurface.
+
+Returns
+-------
+None
+") StepGeom_RectangularCompositeSurface;
+		 StepGeom_RectangularCompositeSurface();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -5936,16 +5946,6 @@ None
 ") SetSegments;
 		void SetSegments(const opencascade::handle<StepGeom_HArray2OfSurfacePatch> & aSegments);
 
-		/****************** StepGeom_RectangularCompositeSurface ******************/
-		%feature("compactdefaultargs") StepGeom_RectangularCompositeSurface;
-		%feature("autodoc", "Returns a rectangularcompositesurface.
-
-Returns
--------
-None
-") StepGeom_RectangularCompositeSurface;
-		 StepGeom_RectangularCompositeSurface();
-
 };
 
 
@@ -5962,6 +5962,16 @@ None
 *******************************************/
 class StepGeom_RectangularTrimmedSurface : public StepGeom_BoundedSurface {
 	public:
+		/****************** StepGeom_RectangularTrimmedSurface ******************/
+		%feature("compactdefaultargs") StepGeom_RectangularTrimmedSurface;
+		%feature("autodoc", "Returns a rectangulartrimmedsurface.
+
+Returns
+-------
+None
+") StepGeom_RectangularTrimmedSurface;
+		 StepGeom_RectangularTrimmedSurface();
+
 		/****************** BasisSurface ******************/
 		%feature("compactdefaultargs") BasisSurface;
 		%feature("autodoc", "No available documentation.
@@ -6091,16 +6101,6 @@ None
 ") SetVsense;
 		void SetVsense(const Standard_Boolean aVsense);
 
-		/****************** StepGeom_RectangularTrimmedSurface ******************/
-		%feature("compactdefaultargs") StepGeom_RectangularTrimmedSurface;
-		%feature("autodoc", "Returns a rectangulartrimmedsurface.
-
-Returns
--------
-None
-") StepGeom_RectangularTrimmedSurface;
-		 StepGeom_RectangularTrimmedSurface();
-
 		/****************** U1 ******************/
 		%feature("compactdefaultargs") U1;
 		%feature("autodoc", "No available documentation.
@@ -6203,6 +6203,16 @@ None
 **********************************/
 class StepGeom_SphericalSurface : public StepGeom_ElementarySurface {
 	public:
+		/****************** StepGeom_SphericalSurface ******************/
+		%feature("compactdefaultargs") StepGeom_SphericalSurface;
+		%feature("autodoc", "Returns a sphericalsurface.
+
+Returns
+-------
+None
+") StepGeom_SphericalSurface;
+		 StepGeom_SphericalSurface();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -6243,16 +6253,6 @@ None
 ") SetRadius;
 		void SetRadius(const Standard_Real aRadius);
 
-		/****************** StepGeom_SphericalSurface ******************/
-		%feature("compactdefaultargs") StepGeom_SphericalSurface;
-		%feature("autodoc", "Returns a sphericalsurface.
-
-Returns
--------
-None
-") StepGeom_SphericalSurface;
-		 StepGeom_SphericalSurface();
-
 };
 
 
@@ -6269,16 +6269,6 @@ None
 *********************************************/
 class StepGeom_SurfaceCurveAndBoundedCurve : public StepGeom_SurfaceCurve {
 	public:
-		/****************** BoundedCurve ******************/
-		%feature("compactdefaultargs") BoundedCurve;
-		%feature("autodoc", "Returns field boundedcurve.
-
-Returns
--------
-opencascade::handle<StepGeom_BoundedCurve>
-") BoundedCurve;
-		opencascade::handle<StepGeom_BoundedCurve> & BoundedCurve();
-
 		/****************** StepGeom_SurfaceCurveAndBoundedCurve ******************/
 		%feature("compactdefaultargs") StepGeom_SurfaceCurveAndBoundedCurve;
 		%feature("autodoc", "Creates empty object.
@@ -6288,6 +6278,16 @@ Returns
 None
 ") StepGeom_SurfaceCurveAndBoundedCurve;
 		 StepGeom_SurfaceCurveAndBoundedCurve();
+
+		/****************** BoundedCurve ******************/
+		%feature("compactdefaultargs") BoundedCurve;
+		%feature("autodoc", "Returns field boundedcurve.
+
+Returns
+-------
+opencascade::handle<StepGeom_BoundedCurve>
+") BoundedCurve;
+		opencascade::handle<StepGeom_BoundedCurve> & BoundedCurve();
 
 };
 
@@ -6305,6 +6305,16 @@ None
 ******************************************/
 class StepGeom_SurfaceOfLinearExtrusion : public StepGeom_SweptSurface {
 	public:
+		/****************** StepGeom_SurfaceOfLinearExtrusion ******************/
+		%feature("compactdefaultargs") StepGeom_SurfaceOfLinearExtrusion;
+		%feature("autodoc", "Returns a surfaceoflinearextrusion.
+
+Returns
+-------
+None
+") StepGeom_SurfaceOfLinearExtrusion;
+		 StepGeom_SurfaceOfLinearExtrusion();
+
 		/****************** ExtrusionAxis ******************/
 		%feature("compactdefaultargs") ExtrusionAxis;
 		%feature("autodoc", "No available documentation.
@@ -6345,16 +6355,6 @@ None
 ") SetExtrusionAxis;
 		void SetExtrusionAxis(const opencascade::handle<StepGeom_Vector> & aExtrusionAxis);
 
-		/****************** StepGeom_SurfaceOfLinearExtrusion ******************/
-		%feature("compactdefaultargs") StepGeom_SurfaceOfLinearExtrusion;
-		%feature("autodoc", "Returns a surfaceoflinearextrusion.
-
-Returns
--------
-None
-") StepGeom_SurfaceOfLinearExtrusion;
-		 StepGeom_SurfaceOfLinearExtrusion();
-
 };
 
 
@@ -6371,6 +6371,16 @@ None
 *************************************/
 class StepGeom_SurfaceOfRevolution : public StepGeom_SweptSurface {
 	public:
+		/****************** StepGeom_SurfaceOfRevolution ******************/
+		%feature("compactdefaultargs") StepGeom_SurfaceOfRevolution;
+		%feature("autodoc", "Returns a surfaceofrevolution.
+
+Returns
+-------
+None
+") StepGeom_SurfaceOfRevolution;
+		 StepGeom_SurfaceOfRevolution();
+
 		/****************** AxisPosition ******************/
 		%feature("compactdefaultargs") AxisPosition;
 		%feature("autodoc", "No available documentation.
@@ -6411,16 +6421,6 @@ None
 ") SetAxisPosition;
 		void SetAxisPosition(const opencascade::handle<StepGeom_Axis1Placement> & aAxisPosition);
 
-		/****************** StepGeom_SurfaceOfRevolution ******************/
-		%feature("compactdefaultargs") StepGeom_SurfaceOfRevolution;
-		%feature("autodoc", "Returns a surfaceofrevolution.
-
-Returns
--------
-None
-") StepGeom_SurfaceOfRevolution;
-		 StepGeom_SurfaceOfRevolution();
-
 };
 
 
@@ -6437,6 +6437,16 @@ None
 *********************************/
 class StepGeom_ToroidalSurface : public StepGeom_ElementarySurface {
 	public:
+		/****************** StepGeom_ToroidalSurface ******************/
+		%feature("compactdefaultargs") StepGeom_ToroidalSurface;
+		%feature("autodoc", "Returns a toroidalsurface.
+
+Returns
+-------
+None
+") StepGeom_ToroidalSurface;
+		 StepGeom_ToroidalSurface();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -6502,16 +6512,6 @@ None
 ") SetMinorRadius;
 		void SetMinorRadius(const Standard_Real aMinorRadius);
 
-		/****************** StepGeom_ToroidalSurface ******************/
-		%feature("compactdefaultargs") StepGeom_ToroidalSurface;
-		%feature("autodoc", "Returns a toroidalsurface.
-
-Returns
--------
-None
-") StepGeom_ToroidalSurface;
-		 StepGeom_ToroidalSurface();
-
 };
 
 
@@ -6528,6 +6528,16 @@ None
 ******************************/
 class StepGeom_TrimmedCurve : public StepGeom_BoundedCurve {
 	public:
+		/****************** StepGeom_TrimmedCurve ******************/
+		%feature("compactdefaultargs") StepGeom_TrimmedCurve;
+		%feature("autodoc", "Returns a trimmedcurve.
+
+Returns
+-------
+None
+") StepGeom_TrimmedCurve;
+		 StepGeom_TrimmedCurve();
+
 		/****************** BasisCurve ******************/
 		%feature("compactdefaultargs") BasisCurve;
 		%feature("autodoc", "No available documentation.
@@ -6667,16 +6677,6 @@ None
 ") SetTrim2;
 		void SetTrim2(const opencascade::handle<StepGeom_HArray1OfTrimmingSelect> & aTrim2);
 
-		/****************** StepGeom_TrimmedCurve ******************/
-		%feature("compactdefaultargs") StepGeom_TrimmedCurve;
-		%feature("autodoc", "Returns a trimmedcurve.
-
-Returns
--------
-None
-") StepGeom_TrimmedCurve;
-		 StepGeom_TrimmedCurve();
-
 		/****************** Trim1 ******************/
 		%feature("compactdefaultargs") Trim1;
 		%feature("autodoc", "No available documentation.
@@ -6741,6 +6741,16 @@ StepGeom_TrimmingSelect
 ***************************************/
 class StepGeom_BSplineCurveWithKnots : public StepGeom_BSplineCurve {
 	public:
+		/****************** StepGeom_BSplineCurveWithKnots ******************/
+		%feature("compactdefaultargs") StepGeom_BSplineCurveWithKnots;
+		%feature("autodoc", "Returns a bsplinecurvewithknots.
+
+Returns
+-------
+None
+") StepGeom_BSplineCurveWithKnots;
+		 StepGeom_BSplineCurveWithKnots();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -6883,16 +6893,6 @@ None
 ") SetKnots;
 		void SetKnots(const opencascade::handle<TColStd_HArray1OfReal> & aKnots);
 
-		/****************** StepGeom_BSplineCurveWithKnots ******************/
-		%feature("compactdefaultargs") StepGeom_BSplineCurveWithKnots;
-		%feature("autodoc", "Returns a bsplinecurvewithknots.
-
-Returns
--------
-None
-") StepGeom_BSplineCurveWithKnots;
-		 StepGeom_BSplineCurveWithKnots();
-
 };
 
 
@@ -6909,6 +6909,16 @@ None
 **************************************************************/
 class StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public StepGeom_BSplineCurve {
 	public:
+		/****************** StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve ******************/
+		%feature("compactdefaultargs") StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve;
+		%feature("autodoc", "Returns a bsplinecurvewithknotsandrationalbsplinecurve.
+
+Returns
+-------
+None
+") StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve;
+		 StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve();
+
 		/****************** BSplineCurveWithKnots ******************/
 		%feature("compactdefaultargs") BSplineCurveWithKnots;
 		%feature("autodoc", "No available documentation.
@@ -7145,16 +7155,6 @@ None
 ") SetWeightsData;
 		void SetWeightsData(const opencascade::handle<TColStd_HArray1OfReal> & aWeightsData);
 
-		/****************** StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve ******************/
-		%feature("compactdefaultargs") StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve;
-		%feature("autodoc", "Returns a bsplinecurvewithknotsandrationalbsplinecurve.
-
-Returns
--------
-None
-") StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve;
-		 StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve();
-
 		/****************** WeightsData ******************/
 		%feature("compactdefaultargs") WeightsData;
 		%feature("autodoc", "No available documentation.
@@ -7195,6 +7195,16 @@ float
 *****************************************/
 class StepGeom_BSplineSurfaceWithKnots : public StepGeom_BSplineSurface {
 	public:
+		/****************** StepGeom_BSplineSurfaceWithKnots ******************/
+		%feature("compactdefaultargs") StepGeom_BSplineSurfaceWithKnots;
+		%feature("autodoc", "Returns a bsplinesurfacewithknots.
+
+Returns
+-------
+None
+") StepGeom_BSplineSurfaceWithKnots;
+		 StepGeom_BSplineSurfaceWithKnots();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -7341,16 +7351,6 @@ None
 ") SetVMultiplicities;
 		void SetVMultiplicities(const opencascade::handle<TColStd_HArray1OfInteger> & aVMultiplicities);
 
-		/****************** StepGeom_BSplineSurfaceWithKnots ******************/
-		%feature("compactdefaultargs") StepGeom_BSplineSurfaceWithKnots;
-		%feature("autodoc", "Returns a bsplinesurfacewithknots.
-
-Returns
--------
-None
-") StepGeom_BSplineSurfaceWithKnots;
-		 StepGeom_BSplineSurfaceWithKnots();
-
 		/****************** UKnots ******************/
 		%feature("compactdefaultargs") UKnots;
 		%feature("autodoc", "No available documentation.
@@ -7463,6 +7463,16 @@ int
 ******************************************************************/
 class StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public StepGeom_BSplineSurface {
 	public:
+		/****************** StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface ******************/
+		%feature("compactdefaultargs") StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface;
+		%feature("autodoc", "Returns a bsplinesurfacewithknotsandrationalbsplinesurface.
+
+Returns
+-------
+None
+") StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface;
+		 StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface();
+
 		/****************** BSplineSurfaceWithKnots ******************/
 		%feature("compactdefaultargs") BSplineSurfaceWithKnots;
 		%feature("autodoc", "No available documentation.
@@ -7715,16 +7725,6 @@ None
 ") SetWeightsData;
 		void SetWeightsData(const opencascade::handle<TColStd_HArray2OfReal> & aWeightsData);
 
-		/****************** StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface ******************/
-		%feature("compactdefaultargs") StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface;
-		%feature("autodoc", "Returns a bsplinesurfacewithknotsandrationalbsplinesurface.
-
-Returns
--------
-None
-") StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface;
-		 StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface();
-
 		/****************** UKnots ******************/
 		%feature("compactdefaultargs") UKnots;
 		%feature("autodoc", "No available documentation.
@@ -7888,6 +7888,16 @@ None
 ****************************************************/
 class StepGeom_BezierCurveAndRationalBSplineCurve : public StepGeom_BSplineCurve {
 	public:
+		/****************** StepGeom_BezierCurveAndRationalBSplineCurve ******************/
+		%feature("compactdefaultargs") StepGeom_BezierCurveAndRationalBSplineCurve;
+		%feature("autodoc", "Returns a beziercurveandrationalbsplinecurve.
+
+Returns
+-------
+None
+") StepGeom_BezierCurveAndRationalBSplineCurve;
+		 StepGeom_BezierCurveAndRationalBSplineCurve();
+
 		/****************** BezierCurve ******************/
 		%feature("compactdefaultargs") BezierCurve;
 		%feature("autodoc", "No available documentation.
@@ -8001,16 +8011,6 @@ None
 ") SetWeightsData;
 		void SetWeightsData(const opencascade::handle<TColStd_HArray1OfReal> & aWeightsData);
 
-		/****************** StepGeom_BezierCurveAndRationalBSplineCurve ******************/
-		%feature("compactdefaultargs") StepGeom_BezierCurveAndRationalBSplineCurve;
-		%feature("autodoc", "Returns a beziercurveandrationalbsplinecurve.
-
-Returns
--------
-None
-") StepGeom_BezierCurveAndRationalBSplineCurve;
-		 StepGeom_BezierCurveAndRationalBSplineCurve();
-
 		/****************** WeightsData ******************/
 		%feature("compactdefaultargs") WeightsData;
 		%feature("autodoc", "No available documentation.
@@ -8077,6 +8077,16 @@ None
 ********************************************************/
 class StepGeom_BezierSurfaceAndRationalBSplineSurface : public StepGeom_BSplineSurface {
 	public:
+		/****************** StepGeom_BezierSurfaceAndRationalBSplineSurface ******************/
+		%feature("compactdefaultargs") StepGeom_BezierSurfaceAndRationalBSplineSurface;
+		%feature("autodoc", "Returns a beziersurfaceandrationalbsplinesurface.
+
+Returns
+-------
+None
+") StepGeom_BezierSurfaceAndRationalBSplineSurface;
+		 StepGeom_BezierSurfaceAndRationalBSplineSurface();
+
 		/****************** BezierSurface ******************/
 		%feature("compactdefaultargs") BezierSurface;
 		%feature("autodoc", "No available documentation.
@@ -8204,16 +8214,6 @@ None
 ") SetWeightsData;
 		void SetWeightsData(const opencascade::handle<TColStd_HArray2OfReal> & aWeightsData);
 
-		/****************** StepGeom_BezierSurfaceAndRationalBSplineSurface ******************/
-		%feature("compactdefaultargs") StepGeom_BezierSurfaceAndRationalBSplineSurface;
-		%feature("autodoc", "Returns a beziersurfaceandrationalbsplinesurface.
-
-Returns
--------
-None
-") StepGeom_BezierSurfaceAndRationalBSplineSurface;
-		 StepGeom_BezierSurfaceAndRationalBSplineSurface();
-
 		/****************** WeightsData ******************/
 		%feature("compactdefaultargs") WeightsData;
 		%feature("autodoc", "No available documentation.
@@ -8281,6 +8281,16 @@ None
 *******************************************/
 class StepGeom_DegenerateToroidalSurface : public StepGeom_ToroidalSurface {
 	public:
+		/****************** StepGeom_DegenerateToroidalSurface ******************/
+		%feature("compactdefaultargs") StepGeom_DegenerateToroidalSurface;
+		%feature("autodoc", "Returns a degeneratetoroidalsurface.
+
+Returns
+-------
+None
+") StepGeom_DegenerateToroidalSurface;
+		 StepGeom_DegenerateToroidalSurface();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -8322,16 +8332,6 @@ Returns
 None
 ") SetSelectOuter;
 		void SetSelectOuter(const Standard_Boolean aSelectOuter);
-
-		/****************** StepGeom_DegenerateToroidalSurface ******************/
-		%feature("compactdefaultargs") StepGeom_DegenerateToroidalSurface;
-		%feature("autodoc", "Returns a degeneratetoroidalsurface.
-
-Returns
--------
-None
-") StepGeom_DegenerateToroidalSurface;
-		 StepGeom_DegenerateToroidalSurface();
 
 };
 
@@ -8375,6 +8375,16 @@ None
 **********************************************************/
 class StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public StepGeom_BSplineCurve {
 	public:
+		/****************** StepGeom_QuasiUniformCurveAndRationalBSplineCurve ******************/
+		%feature("compactdefaultargs") StepGeom_QuasiUniformCurveAndRationalBSplineCurve;
+		%feature("autodoc", "Returns a quasiuniformcurveandrationalbsplinecurve.
+
+Returns
+-------
+None
+") StepGeom_QuasiUniformCurveAndRationalBSplineCurve;
+		 StepGeom_QuasiUniformCurveAndRationalBSplineCurve();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -8488,16 +8498,6 @@ None
 ") SetWeightsData;
 		void SetWeightsData(const opencascade::handle<TColStd_HArray1OfReal> & aWeightsData);
 
-		/****************** StepGeom_QuasiUniformCurveAndRationalBSplineCurve ******************/
-		%feature("compactdefaultargs") StepGeom_QuasiUniformCurveAndRationalBSplineCurve;
-		%feature("autodoc", "Returns a quasiuniformcurveandrationalbsplinecurve.
-
-Returns
--------
-None
-") StepGeom_QuasiUniformCurveAndRationalBSplineCurve;
-		 StepGeom_QuasiUniformCurveAndRationalBSplineCurve();
-
 		/****************** WeightsData ******************/
 		%feature("compactdefaultargs") WeightsData;
 		%feature("autodoc", "No available documentation.
@@ -8564,6 +8564,16 @@ None
 **************************************************************/
 class StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface : public StepGeom_BSplineSurface {
 	public:
+		/****************** StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface ******************/
+		%feature("compactdefaultargs") StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface;
+		%feature("autodoc", "Returns a quasiuniformsurfaceandrationalbsplinesurface.
+
+Returns
+-------
+None
+") StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface;
+		 StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -8691,16 +8701,6 @@ None
 ") SetWeightsData;
 		void SetWeightsData(const opencascade::handle<TColStd_HArray2OfReal> & aWeightsData);
 
-		/****************** StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface ******************/
-		%feature("compactdefaultargs") StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface;
-		%feature("autodoc", "Returns a quasiuniformsurfaceandrationalbsplinesurface.
-
-Returns
--------
-None
-") StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface;
-		 StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface();
-
 		/****************** WeightsData ******************/
 		%feature("compactdefaultargs") WeightsData;
 		%feature("autodoc", "No available documentation.
@@ -8742,6 +8742,16 @@ float
 **************************************/
 class StepGeom_RationalBSplineCurve : public StepGeom_BSplineCurve {
 	public:
+		/****************** StepGeom_RationalBSplineCurve ******************/
+		%feature("compactdefaultargs") StepGeom_RationalBSplineCurve;
+		%feature("autodoc", "Returns a rationalbsplinecurve.
+
+Returns
+-------
+None
+") StepGeom_RationalBSplineCurve;
+		 StepGeom_RationalBSplineCurve();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -8786,16 +8796,6 @@ None
 ") SetWeightsData;
 		void SetWeightsData(const opencascade::handle<TColStd_HArray1OfReal> & aWeightsData);
 
-		/****************** StepGeom_RationalBSplineCurve ******************/
-		%feature("compactdefaultargs") StepGeom_RationalBSplineCurve;
-		%feature("autodoc", "Returns a rationalbsplinecurve.
-
-Returns
--------
-None
-") StepGeom_RationalBSplineCurve;
-		 StepGeom_RationalBSplineCurve();
-
 		/****************** WeightsData ******************/
 		%feature("compactdefaultargs") WeightsData;
 		%feature("autodoc", "No available documentation.
@@ -8836,6 +8836,16 @@ float
 ****************************************/
 class StepGeom_RationalBSplineSurface : public StepGeom_BSplineSurface {
 	public:
+		/****************** StepGeom_RationalBSplineSurface ******************/
+		%feature("compactdefaultargs") StepGeom_RationalBSplineSurface;
+		%feature("autodoc", "Returns a rationalbsplinesurface.
+
+Returns
+-------
+None
+") StepGeom_RationalBSplineSurface;
+		 StepGeom_RationalBSplineSurface();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -8891,16 +8901,6 @@ Returns
 None
 ") SetWeightsData;
 		void SetWeightsData(const opencascade::handle<TColStd_HArray2OfReal> & aWeightsData);
-
-		/****************** StepGeom_RationalBSplineSurface ******************/
-		%feature("compactdefaultargs") StepGeom_RationalBSplineSurface;
-		%feature("autodoc", "Returns a rationalbsplinesurface.
-
-Returns
--------
-None
-") StepGeom_RationalBSplineSurface;
-		 StepGeom_RationalBSplineSurface();
 
 		/****************** WeightsData ******************/
 		%feature("compactdefaultargs") WeightsData;
@@ -8969,6 +8969,16 @@ None
 *****************************************************/
 class StepGeom_UniformCurveAndRationalBSplineCurve : public StepGeom_BSplineCurve {
 	public:
+		/****************** StepGeom_UniformCurveAndRationalBSplineCurve ******************/
+		%feature("compactdefaultargs") StepGeom_UniformCurveAndRationalBSplineCurve;
+		%feature("autodoc", "Returns a uniformcurveandrationalbsplinecurve.
+
+Returns
+-------
+None
+") StepGeom_UniformCurveAndRationalBSplineCurve;
+		 StepGeom_UniformCurveAndRationalBSplineCurve();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -9072,16 +9082,6 @@ None
 ") SetWeightsData;
 		void SetWeightsData(const opencascade::handle<TColStd_HArray1OfReal> & aWeightsData);
 
-		/****************** StepGeom_UniformCurveAndRationalBSplineCurve ******************/
-		%feature("compactdefaultargs") StepGeom_UniformCurveAndRationalBSplineCurve;
-		%feature("autodoc", "Returns a uniformcurveandrationalbsplinecurve.
-
-Returns
--------
-None
-") StepGeom_UniformCurveAndRationalBSplineCurve;
-		 StepGeom_UniformCurveAndRationalBSplineCurve();
-
 		/****************** UniformCurve ******************/
 		%feature("compactdefaultargs") UniformCurve;
 		%feature("autodoc", "No available documentation.
@@ -9158,6 +9158,16 @@ None
 *********************************************************/
 class StepGeom_UniformSurfaceAndRationalBSplineSurface : public StepGeom_BSplineSurface {
 	public:
+		/****************** StepGeom_UniformSurfaceAndRationalBSplineSurface ******************/
+		%feature("compactdefaultargs") StepGeom_UniformSurfaceAndRationalBSplineSurface;
+		%feature("autodoc", "Returns a uniformsurfaceandrationalbsplinesurface.
+
+Returns
+-------
+None
+") StepGeom_UniformSurfaceAndRationalBSplineSurface;
+		 StepGeom_UniformSurfaceAndRationalBSplineSurface();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -9274,16 +9284,6 @@ Returns
 None
 ") SetWeightsData;
 		void SetWeightsData(const opencascade::handle<TColStd_HArray2OfReal> & aWeightsData);
-
-		/****************** StepGeom_UniformSurfaceAndRationalBSplineSurface ******************/
-		%feature("compactdefaultargs") StepGeom_UniformSurfaceAndRationalBSplineSurface;
-		%feature("autodoc", "Returns a uniformsurfaceandrationalbsplinesurface.
-
-Returns
--------
-None
-") StepGeom_UniformSurfaceAndRationalBSplineSurface;
-		 StepGeom_UniformSurfaceAndRationalBSplineSurface();
 
 		/****************** UniformSurface ******************/
 		%feature("compactdefaultargs") UniformSurface;

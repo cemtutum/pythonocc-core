@@ -107,18 +107,47 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(BOPDS_VectorOfInterfZZ) NCollection_Vector<BOPDS_InterfZZ>;
-%template(BOPDS_IndexedDataMapOfShapeCoupleOfPaveBlocks) NCollection_IndexedDataMap<TopoDS_Shape,BOPDS_CoupleOfPaveBlocks,TopTools_ShapeMapHasher>;
-%template(BOPDS_VectorOfInterfVV) NCollection_Vector<BOPDS_InterfVV>;
-%template(BOPDS_VectorOfIndexRange) NCollection_Vector<BOPDS_IndexRange>;
-%template(BOPDS_VectorOfFaceInfo) NCollection_Vector<BOPDS_FaceInfo>;
-%template(BOPDS_VectorOfCurve) NCollection_Vector<BOPDS_Curve>;
-%template(BOPDS_IndexedMapOfPaveBlock) NCollection_IndexedMap<opencascade::handle<BOPDS_PaveBlock>,TColStd_MapTransientHasher>;
-%template(BOPDS_VectorOfInterfVF) NCollection_Vector<BOPDS_InterfVF>;
-%template(BOPDS_MapOfPave) NCollection_Map<BOPDS_Pave,BOPDS_PaveMapHasher>;
-%template(BOPDS_VectorOfInterfFZ) NCollection_Vector<BOPDS_InterfFZ>;
+%template(BOPDS_DataMapOfIntegerListOfPaveBlock) NCollection_DataMap<Standard_Integer,BOPDS_ListOfPaveBlock,TColStd_MapIntegerHasher>;
+
+%extend NCollection_DataMap<Standard_Integer,BOPDS_ListOfPaveBlock,TColStd_MapIntegerHasher> {
+    PyObject* Keys() {
+        PyObject *l=PyList_New(0);
+        for (BOPDS_DataMapOfIntegerListOfPaveBlock::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
+          PyObject *o = PyLong_FromLong(anIt1.Key());
+          PyList_Append(l, o);
+          Py_DECREF(o);
+        }
+    return l;
+    }
+};
+%template(BOPDS_DataMapOfPaveBlockListOfInteger) NCollection_DataMap<opencascade::handle<BOPDS_PaveBlock>,TColStd_ListOfInteger,TColStd_MapTransientHasher>;
+%template(BOPDS_DataMapOfPaveBlockListOfPaveBlock) NCollection_DataMap<opencascade::handle<BOPDS_PaveBlock>,BOPDS_ListOfPaveBlock,TColStd_MapTransientHasher>;
+%template(BOPDS_DataMapOfShapeCoupleOfPaveBlocks) NCollection_DataMap<TopoDS_Shape,BOPDS_CoupleOfPaveBlocks,TopTools_ShapeMapHasher>;
 %template(BOPDS_IndexedDataMapOfPaveBlockListOfInteger) NCollection_IndexedDataMap<opencascade::handle<BOPDS_PaveBlock>,TColStd_ListOfInteger,TColStd_MapTransientHasher>;
-%template(BOPDS_VectorOfPoint) NCollection_Vector<BOPDS_Point>;
+%template(BOPDS_IndexedDataMapOfPaveBlockListOfPaveBlock) NCollection_IndexedDataMap<opencascade::handle<BOPDS_PaveBlock>,BOPDS_ListOfPaveBlock,TColStd_MapTransientHasher>;
+%template(BOPDS_IndexedDataMapOfShapeCoupleOfPaveBlocks) NCollection_IndexedDataMap<TopoDS_Shape,BOPDS_CoupleOfPaveBlocks,TopTools_ShapeMapHasher>;
+%template(BOPDS_IndexedMapOfPaveBlock) NCollection_IndexedMap<opencascade::handle<BOPDS_PaveBlock>,TColStd_MapTransientHasher>;
+%template(BOPDS_ListOfPave) NCollection_List<BOPDS_Pave>;
+%template(BOPDS_ListOfPaveBlock) NCollection_List<opencascade::handle<BOPDS_PaveBlock>>;
+%template(BOPDS_MapOfCommonBlock) NCollection_Map<opencascade::handle<BOPDS_CommonBlock>,TColStd_MapTransientHasher>;
+%template(BOPDS_MapOfPair) NCollection_Map<BOPDS_Pair,BOPDS_PairMapHasher>;
+%template(BOPDS_MapOfPave) NCollection_Map<BOPDS_Pave,BOPDS_PaveMapHasher>;
+%template(BOPDS_MapOfPaveBlock) NCollection_Map<opencascade::handle<BOPDS_PaveBlock>,TColStd_MapTransientHasher>;
+%template(BOPDS_VectorOfCurve) NCollection_Vector<BOPDS_Curve>;
+%template(BOPDS_VectorOfFaceInfo) NCollection_Vector<BOPDS_FaceInfo>;
+%template(BOPDS_VectorOfIndexRange) NCollection_Vector<BOPDS_IndexRange>;
+%template(BOPDS_VectorOfInterfEE) NCollection_Vector<BOPDS_InterfEE>;
+%template(BOPDS_VectorOfInterfEF) NCollection_Vector<BOPDS_InterfEF>;
+%template(BOPDS_VectorOfInterfEZ) NCollection_Vector<BOPDS_InterfEZ>;
+%template(BOPDS_VectorOfInterfFF) NCollection_Vector<BOPDS_InterfFF>;
+%template(BOPDS_VectorOfInterfFZ) NCollection_Vector<BOPDS_InterfFZ>;
+%template(BOPDS_VectorOfInterfVE) NCollection_Vector<BOPDS_InterfVE>;
+%template(BOPDS_VectorOfInterfVF) NCollection_Vector<BOPDS_InterfVF>;
+%template(BOPDS_VectorOfInterfVV) NCollection_Vector<BOPDS_InterfVV>;
+%template(BOPDS_VectorOfInterfVZ) NCollection_Vector<BOPDS_InterfVZ>;
+%template(BOPDS_VectorOfInterfZZ) NCollection_Vector<BOPDS_InterfZZ>;
+%template(BOPDS_VectorOfListOfPaveBlock) NCollection_Vector<BOPDS_ListOfPaveBlock>;
+%template(BOPDS_VectorOfPair) NCollection_Vector<BOPDS_Pair>;
 %template(BOPDS_VectorOfPave) NCollection_Array1<BOPDS_Pave>;
 
 %extend NCollection_Array1<BOPDS_Pave> {
@@ -154,87 +183,58 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
-%template(BOPDS_VectorOfInterfEZ) NCollection_Vector<BOPDS_InterfEZ>;
-%template(BOPDS_DataMapOfPaveBlockListOfPaveBlock) NCollection_DataMap<opencascade::handle<BOPDS_PaveBlock>,BOPDS_ListOfPaveBlock,TColStd_MapTransientHasher>;
-%template(BOPDS_MapOfCommonBlock) NCollection_Map<opencascade::handle<BOPDS_CommonBlock>,TColStd_MapTransientHasher>;
-%template(BOPDS_VectorOfInterfFF) NCollection_Vector<BOPDS_InterfFF>;
-%template(BOPDS_ListOfPave) NCollection_List<BOPDS_Pave>;
-%template(BOPDS_DataMapOfPaveBlockListOfInteger) NCollection_DataMap<opencascade::handle<BOPDS_PaveBlock>,TColStd_ListOfInteger,TColStd_MapTransientHasher>;
-%template(BOPDS_DataMapOfShapeCoupleOfPaveBlocks) NCollection_DataMap<TopoDS_Shape,BOPDS_CoupleOfPaveBlocks,TopTools_ShapeMapHasher>;
-%template(BOPDS_VectorOfVectorOfPair) NCollection_Vector<BOPDS_VectorOfPair>;
-%template(BOPDS_VectorOfListOfPaveBlock) NCollection_Vector<BOPDS_ListOfPaveBlock>;
-%template(BOPDS_VectorOfInterfEE) NCollection_Vector<BOPDS_InterfEE>;
+%template(BOPDS_VectorOfPoint) NCollection_Vector<BOPDS_Point>;
 %template(BOPDS_VectorOfShapeInfo) NCollection_Vector<BOPDS_ShapeInfo>;
-%template(BOPDS_VectorOfInterfVZ) NCollection_Vector<BOPDS_InterfVZ>;
-%template(BOPDS_VectorOfPair) NCollection_Vector<BOPDS_Pair>;
-%template(BOPDS_VectorOfInterfEF) NCollection_Vector<BOPDS_InterfEF>;
-%template(BOPDS_VectorOfInterfVE) NCollection_Vector<BOPDS_InterfVE>;
-%template(BOPDS_DataMapOfIntegerListOfPaveBlock) NCollection_DataMap<Standard_Integer,BOPDS_ListOfPaveBlock,TColStd_MapIntegerHasher>;
-
-%extend NCollection_DataMap<Standard_Integer,BOPDS_ListOfPaveBlock,TColStd_MapIntegerHasher> {
-    PyObject* Keys() {
-        PyObject *l=PyList_New(0);
-        for (BOPDS_DataMapOfIntegerListOfPaveBlock::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
-          PyObject *o = PyLong_FromLong(anIt1.Key());
-          PyList_Append(l, o);
-          Py_DECREF(o);
-        }
-    return l;
-    }
-};
-%template(BOPDS_MapOfPair) NCollection_Map<BOPDS_Pair,BOPDS_PairMapHasher>;
-%template(BOPDS_IndexedDataMapOfPaveBlockListOfPaveBlock) NCollection_IndexedDataMap<opencascade::handle<BOPDS_PaveBlock>,BOPDS_ListOfPaveBlock,TColStd_MapTransientHasher>;
-%template(BOPDS_ListOfPaveBlock) NCollection_List<opencascade::handle<BOPDS_PaveBlock>>;
-%template(BOPDS_MapOfPaveBlock) NCollection_Map<opencascade::handle<BOPDS_PaveBlock>,TColStd_MapTransientHasher>;
+%template(BOPDS_VectorOfVectorOfPair) NCollection_Vector<BOPDS_VectorOfPair>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Vector<BOPDS_InterfZZ> BOPDS_VectorOfInterfZZ;
-typedef NCollection_IndexedDataMap<TopoDS_Shape, BOPDS_CoupleOfPaveBlocks, TopTools_ShapeMapHasher> BOPDS_IndexedDataMapOfShapeCoupleOfPaveBlocks;
-typedef NCollection_Vector<BOPDS_InterfVV> BOPDS_VectorOfInterfVV;
-typedef NCollection_Vector<BOPDS_IndexRange> BOPDS_VectorOfIndexRange;
-typedef BOPDS_IteratorSI * BOPDS_PIteratorSI;
-typedef NCollection_Vector<BOPDS_FaceInfo> BOPDS_VectorOfFaceInfo;
-typedef NCollection_Vector<BOPDS_Curve> BOPDS_VectorOfCurve;
-typedef NCollection_IndexedMap<opencascade::handle<BOPDS_PaveBlock>, TColStd_MapTransientHasher> BOPDS_IndexedMapOfPaveBlock;
-typedef NCollection_Vector<BOPDS_InterfVF> BOPDS_VectorOfInterfVF;
 typedef BOPDS_DataMapOfPaveBlockCommonBlock::Iterator BOPDS_DataMapIteratorOfDataMapOfPaveBlockCommonBlock;
-typedef NCollection_Map<BOPDS_Pave, BOPDS_PaveMapHasher> BOPDS_MapOfPave;
-typedef BOPDS_MapOfPave::Iterator BOPDS_MapIteratorOfMapOfPave;
-typedef NCollection_Vector<BOPDS_InterfFZ> BOPDS_VectorOfInterfFZ;
-typedef NCollection_IndexedDataMap<opencascade::handle<BOPDS_PaveBlock>, TColStd_ListOfInteger, TColStd_MapTransientHasher> BOPDS_IndexedDataMapOfPaveBlockListOfInteger;
-typedef NCollection_Vector<BOPDS_Point> BOPDS_VectorOfPoint;
-typedef NCollection_Array1<BOPDS_Pave> BOPDS_VectorOfPave;
-typedef BOPDS_DS * BOPDS_PDS;
-typedef NCollection_Vector<BOPDS_InterfEZ> BOPDS_VectorOfInterfEZ;
-typedef NCollection_DataMap<opencascade::handle<BOPDS_PaveBlock>, BOPDS_ListOfPaveBlock, TColStd_MapTransientHasher> BOPDS_DataMapOfPaveBlockListOfPaveBlock;
-typedef BOPDS_DataMapOfPaveBlockListOfPaveBlock::Iterator BOPDS_DataMapIteratorOfDataMapOfPaveBlockListOfPaveBlock;
-typedef NCollection_Map<opencascade::handle<BOPDS_CommonBlock>, TColStd_MapTransientHasher> BOPDS_MapOfCommonBlock;
-typedef BOPDS_MapOfCommonBlock::Iterator BOPDS_MapIteratorOfMapOfCommonBlock;
-typedef NCollection_Vector<BOPDS_InterfFF> BOPDS_VectorOfInterfFF;
-typedef NCollection_List<BOPDS_Pave> BOPDS_ListOfPave;
-typedef BOPDS_ListOfPave::Iterator BOPDS_ListIteratorOfListOfPave;
-typedef NCollection_DataMap<opencascade::handle<BOPDS_PaveBlock>, TColStd_ListOfInteger, TColStd_MapTransientHasher> BOPDS_DataMapOfPaveBlockListOfInteger;
 typedef BOPDS_DataMapOfPaveBlockListOfInteger::Iterator BOPDS_DataMapIteratorOfDataMapOfPaveBlockListOfInteger;
-typedef NCollection_DataMap<TopoDS_Shape, BOPDS_CoupleOfPaveBlocks, TopTools_ShapeMapHasher> BOPDS_DataMapOfShapeCoupleOfPaveBlocks;
+typedef BOPDS_DataMapOfPaveBlockListOfPaveBlock::Iterator BOPDS_DataMapIteratorOfDataMapOfPaveBlockListOfPaveBlock;
 typedef BOPDS_DataMapOfShapeCoupleOfPaveBlocks::Iterator BOPDS_DataMapIteratorOfDataMapOfShapeCoupleOfPaveBlocks;
-typedef NCollection_Vector<BOPDS_VectorOfPair> BOPDS_VectorOfVectorOfPair;
-typedef NCollection_Vector<BOPDS_ListOfPaveBlock> BOPDS_VectorOfListOfPaveBlock;
-typedef NCollection_Vector<BOPDS_InterfEE> BOPDS_VectorOfInterfEE;
-typedef NCollection_Vector<BOPDS_ShapeInfo> BOPDS_VectorOfShapeInfo;
-typedef NCollection_Vector<BOPDS_InterfVZ> BOPDS_VectorOfInterfVZ;
-typedef NCollection_Vector<BOPDS_Pair> BOPDS_VectorOfPair;
-typedef BOPDS_Iterator * BOPDS_PIterator;
-typedef NCollection_Vector<BOPDS_InterfEF> BOPDS_VectorOfInterfEF;
-typedef NCollection_Vector<BOPDS_InterfVE> BOPDS_VectorOfInterfVE;
 typedef NCollection_DataMap<Standard_Integer, BOPDS_ListOfPaveBlock, TColStd_MapIntegerHasher> BOPDS_DataMapOfIntegerListOfPaveBlock;
-typedef NCollection_Map<BOPDS_Pair, BOPDS_PairMapHasher> BOPDS_MapOfPair;
-typedef BOPDS_MapOfPair::Iterator BOPDS_MapIteratorOfMapOfPair;
+typedef NCollection_DataMap<opencascade::handle<BOPDS_PaveBlock>, TColStd_ListOfInteger, TColStd_MapTransientHasher> BOPDS_DataMapOfPaveBlockListOfInteger;
+typedef NCollection_DataMap<opencascade::handle<BOPDS_PaveBlock>, BOPDS_ListOfPaveBlock, TColStd_MapTransientHasher> BOPDS_DataMapOfPaveBlockListOfPaveBlock;
+typedef NCollection_DataMap<TopoDS_Shape, BOPDS_CoupleOfPaveBlocks, TopTools_ShapeMapHasher> BOPDS_DataMapOfShapeCoupleOfPaveBlocks;
+typedef NCollection_IndexedDataMap<opencascade::handle<BOPDS_PaveBlock>, TColStd_ListOfInteger, TColStd_MapTransientHasher> BOPDS_IndexedDataMapOfPaveBlockListOfInteger;
 typedef NCollection_IndexedDataMap<opencascade::handle<BOPDS_PaveBlock>, BOPDS_ListOfPaveBlock, TColStd_MapTransientHasher> BOPDS_IndexedDataMapOfPaveBlockListOfPaveBlock;
-typedef NCollection_List<opencascade::handle<BOPDS_PaveBlock>> BOPDS_ListOfPaveBlock;
+typedef NCollection_IndexedDataMap<TopoDS_Shape, BOPDS_CoupleOfPaveBlocks, TopTools_ShapeMapHasher> BOPDS_IndexedDataMapOfShapeCoupleOfPaveBlocks;
+typedef NCollection_IndexedMap<opencascade::handle<BOPDS_PaveBlock>, TColStd_MapTransientHasher> BOPDS_IndexedMapOfPaveBlock;
+typedef BOPDS_ListOfPave::Iterator BOPDS_ListIteratorOfListOfPave;
 typedef BOPDS_ListOfPaveBlock::Iterator BOPDS_ListIteratorOfListOfPaveBlock;
-typedef NCollection_Map<opencascade::handle<BOPDS_PaveBlock>, TColStd_MapTransientHasher> BOPDS_MapOfPaveBlock;
+typedef NCollection_List<BOPDS_Pave> BOPDS_ListOfPave;
+typedef NCollection_List<opencascade::handle<BOPDS_PaveBlock>> BOPDS_ListOfPaveBlock;
+typedef BOPDS_MapOfCommonBlock::Iterator BOPDS_MapIteratorOfMapOfCommonBlock;
+typedef BOPDS_MapOfPair::Iterator BOPDS_MapIteratorOfMapOfPair;
+typedef BOPDS_MapOfPave::Iterator BOPDS_MapIteratorOfMapOfPave;
 typedef BOPDS_MapOfPaveBlock::Iterator BOPDS_MapIteratorOfMapOfPaveBlock;
+typedef NCollection_Map<opencascade::handle<BOPDS_CommonBlock>, TColStd_MapTransientHasher> BOPDS_MapOfCommonBlock;
+typedef NCollection_Map<BOPDS_Pair, BOPDS_PairMapHasher> BOPDS_MapOfPair;
+typedef NCollection_Map<BOPDS_Pave, BOPDS_PaveMapHasher> BOPDS_MapOfPave;
+typedef NCollection_Map<opencascade::handle<BOPDS_PaveBlock>, TColStd_MapTransientHasher> BOPDS_MapOfPaveBlock;
+typedef BOPDS_DS * BOPDS_PDS;
+typedef BOPDS_Iterator * BOPDS_PIterator;
+typedef BOPDS_IteratorSI * BOPDS_PIteratorSI;
+typedef NCollection_Vector<BOPDS_Curve> BOPDS_VectorOfCurve;
+typedef NCollection_Vector<BOPDS_FaceInfo> BOPDS_VectorOfFaceInfo;
+typedef NCollection_Vector<BOPDS_IndexRange> BOPDS_VectorOfIndexRange;
+typedef NCollection_Vector<BOPDS_InterfEE> BOPDS_VectorOfInterfEE;
+typedef NCollection_Vector<BOPDS_InterfEF> BOPDS_VectorOfInterfEF;
+typedef NCollection_Vector<BOPDS_InterfEZ> BOPDS_VectorOfInterfEZ;
+typedef NCollection_Vector<BOPDS_InterfFF> BOPDS_VectorOfInterfFF;
+typedef NCollection_Vector<BOPDS_InterfFZ> BOPDS_VectorOfInterfFZ;
+typedef NCollection_Vector<BOPDS_InterfVE> BOPDS_VectorOfInterfVE;
+typedef NCollection_Vector<BOPDS_InterfVF> BOPDS_VectorOfInterfVF;
+typedef NCollection_Vector<BOPDS_InterfVV> BOPDS_VectorOfInterfVV;
+typedef NCollection_Vector<BOPDS_InterfVZ> BOPDS_VectorOfInterfVZ;
+typedef NCollection_Vector<BOPDS_InterfZZ> BOPDS_VectorOfInterfZZ;
+typedef NCollection_Vector<BOPDS_ListOfPaveBlock> BOPDS_VectorOfListOfPaveBlock;
+typedef NCollection_Vector<BOPDS_Pair> BOPDS_VectorOfPair;
+typedef NCollection_Array1<BOPDS_Pave> BOPDS_VectorOfPave;
+typedef NCollection_Vector<BOPDS_Point> BOPDS_VectorOfPoint;
+typedef NCollection_Vector<BOPDS_ShapeInfo> BOPDS_VectorOfShapeInfo;
+typedef NCollection_Vector<BOPDS_VectorOfPair> BOPDS_VectorOfVectorOfPair;
 /* end typedefs declaration */
 
 /**************************
@@ -242,6 +242,30 @@ typedef BOPDS_MapOfPaveBlock::Iterator BOPDS_MapIteratorOfMapOfPaveBlock;
 **************************/
 class BOPDS_CommonBlock : public Standard_Transient {
 	public:
+		/****************** BOPDS_CommonBlock ******************/
+		%feature("compactdefaultargs") BOPDS_CommonBlock;
+		%feature("autodoc", "Empty contructor.
+
+Returns
+-------
+None
+") BOPDS_CommonBlock;
+		 BOPDS_CommonBlock();
+
+		/****************** BOPDS_CommonBlock ******************/
+		%feature("compactdefaultargs") BOPDS_CommonBlock;
+		%feature("autodoc", "Contructor <theallocator> - the allocator to manage the memory.
+
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
+") BOPDS_CommonBlock;
+		 BOPDS_CommonBlock(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
+
 		/****************** AddFace ******************/
 		%feature("compactdefaultargs") AddFace;
 		%feature("autodoc", "Modifier adds the index of the face <af> to the list of indices of faces of the common block.
@@ -283,30 +307,6 @@ Returns
 None
 ") AppendFaces;
 		void AppendFaces(TColStd_ListOfInteger & aLF);
-
-		/****************** BOPDS_CommonBlock ******************/
-		%feature("compactdefaultargs") BOPDS_CommonBlock;
-		%feature("autodoc", "Empty contructor.
-
-Returns
--------
-None
-") BOPDS_CommonBlock;
-		 BOPDS_CommonBlock();
-
-		/****************** BOPDS_CommonBlock ******************/
-		%feature("compactdefaultargs") BOPDS_CommonBlock;
-		%feature("autodoc", "Contructor <theallocator> - the allocator to manage the memory.
-
-Parameters
-----------
-theAllocator: NCollection_BaseAllocator
-
-Returns
--------
-None
-") BOPDS_CommonBlock;
-		 BOPDS_CommonBlock(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
 		/****************** Contains ******************/
 		%feature("compactdefaultargs") Contains;
@@ -705,10 +705,6 @@ float
 %extend BOPDS_CoupleOfPaveBlocks {
 	%pythoncode {
 	__repr__ = _dumps_object
-
-	@methodnotwrapped
-	def Handle(self):
-		pass
 	}
 };
 
@@ -931,6 +927,30 @@ float
 *****************/
 class BOPDS_DS {
 	public:
+		/****************** BOPDS_DS ******************/
+		%feature("compactdefaultargs") BOPDS_DS;
+		%feature("autodoc", "Empty contructor.
+
+Returns
+-------
+None
+") BOPDS_DS;
+		 BOPDS_DS();
+
+		/****************** BOPDS_DS ******************/
+		%feature("compactdefaultargs") BOPDS_DS;
+		%feature("autodoc", "Contructor theallocator - the allocator to manage the memory.
+
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
+") BOPDS_DS;
+		 BOPDS_DS(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
+
 		/****************** AddInterf ******************/
 		%feature("compactdefaultargs") AddInterf;
 		%feature("autodoc", "Modifier adds the information about an interference between shapes with indices thei1, thei2 to the summary table of interferences.
@@ -1023,30 +1043,6 @@ Returns
 TopTools_ListOfShape
 ") Arguments;
 		const TopTools_ListOfShape & Arguments();
-
-		/****************** BOPDS_DS ******************/
-		%feature("compactdefaultargs") BOPDS_DS;
-		%feature("autodoc", "Empty contructor.
-
-Returns
--------
-None
-") BOPDS_DS;
-		 BOPDS_DS();
-
-		/****************** BOPDS_DS ******************/
-		%feature("compactdefaultargs") BOPDS_DS;
-		%feature("autodoc", "Contructor theallocator - the allocator to manage the memory.
-
-Parameters
-----------
-theAllocator: NCollection_BaseAllocator
-
-Returns
--------
-None
-") BOPDS_DS;
-		 BOPDS_DS(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
 		/****************** BuildBndBoxSolid ******************/
 		%feature("compactdefaultargs") BuildBndBoxSolid;
@@ -2742,6 +2738,30 @@ None
 ************************/
 class BOPDS_PaveBlock : public Standard_Transient {
 	public:
+		/****************** BOPDS_PaveBlock ******************/
+		%feature("compactdefaultargs") BOPDS_PaveBlock;
+		%feature("autodoc", "Empty contructor.
+
+Returns
+-------
+None
+") BOPDS_PaveBlock;
+		 BOPDS_PaveBlock();
+
+		/****************** BOPDS_PaveBlock ******************/
+		%feature("compactdefaultargs") BOPDS_PaveBlock;
+		%feature("autodoc", "Contructor <theallocator> - the allocator to manage the memory.
+
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
+") BOPDS_PaveBlock;
+		 BOPDS_PaveBlock(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
+
 		/****************** AppendExtPave ******************/
 		%feature("compactdefaultargs") AppendExtPave;
 		%feature("autodoc", "Modifier appends extra paves <thepave>.
@@ -2769,30 +2789,6 @@ Returns
 None
 ") AppendExtPave1;
 		void AppendExtPave1(const BOPDS_Pave & thePave);
-
-		/****************** BOPDS_PaveBlock ******************/
-		%feature("compactdefaultargs") BOPDS_PaveBlock;
-		%feature("autodoc", "Empty contructor.
-
-Returns
--------
-None
-") BOPDS_PaveBlock;
-		 BOPDS_PaveBlock();
-
-		/****************** BOPDS_PaveBlock ******************/
-		%feature("compactdefaultargs") BOPDS_PaveBlock;
-		%feature("autodoc", "Contructor <theallocator> - the allocator to manage the memory.
-
-Parameters
-----------
-theAllocator: NCollection_BaseAllocator
-
-Returns
--------
-None
-") BOPDS_PaveBlock;
-		 BOPDS_PaveBlock(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
 		/****************** ChangeExtPaves ******************/
 		%feature("compactdefaultargs") ChangeExtPaves;

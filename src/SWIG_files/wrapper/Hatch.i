@@ -92,6 +92,22 @@ typedef NCollection_Sequence<Hatch_Parameter> Hatch_SequenceOfParameter;
 **********************/
 class Hatch_Hatcher {
 	public:
+		/****************** Hatch_Hatcher ******************/
+		%feature("compactdefaultargs") Hatch_Hatcher;
+		%feature("autodoc", "Returns a empty hatcher. <tol> is the tolerance for intersections.
+
+Parameters
+----------
+Tol: float
+Oriented: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") Hatch_Hatcher;
+		 Hatch_Hatcher(const Standard_Real Tol, const Standard_Boolean Oriented = Standard_True);
+
 		/****************** AddLine ******************/
 		%feature("compactdefaultargs") AddLine;
 		%feature("autodoc", "Add a line <l> to be trimmed. <t> the type is only kept from information. it is not used in the computation.
@@ -196,22 +212,6 @@ Returns
 None
 ") EndIndex;
 		void EndIndex(const Standard_Integer I, const Standard_Integer J, Standard_Integer &OutValue, Standard_Real &OutValue);
-
-		/****************** Hatch_Hatcher ******************/
-		%feature("compactdefaultargs") Hatch_Hatcher;
-		%feature("autodoc", "Returns a empty hatcher. <tol> is the tolerance for intersections.
-
-Parameters
-----------
-Tol: float
-Oriented: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Hatch_Hatcher;
-		 Hatch_Hatcher(const Standard_Real Tol, const Standard_Boolean Oriented = Standard_True);
 
 		/****************** IsXLine ******************/
 		%feature("compactdefaultargs") IsXLine;
@@ -424,24 +424,6 @@ None
 *******************/
 class Hatch_Line {
 	public:
-		/****************** AddIntersection ******************/
-		%feature("compactdefaultargs") AddIntersection;
-		%feature("autodoc", "Insert a new intersection in the sorted list.
-
-Parameters
-----------
-Par1: float
-Start: bool
-Index: int
-Par2: float
-theToler: float
-
-Returns
--------
-None
-") AddIntersection;
-		void AddIntersection(const Standard_Real Par1, const Standard_Boolean Start, const Standard_Integer Index, const Standard_Real Par2, const Standard_Real theToler);
-
 		/****************** Hatch_Line ******************/
 		%feature("compactdefaultargs") Hatch_Line;
 		%feature("autodoc", "No available documentation.
@@ -466,6 +448,24 @@ Returns
 None
 ") Hatch_Line;
 		 Hatch_Line(const gp_Lin2d & L, const Hatch_LineForm T);
+
+		/****************** AddIntersection ******************/
+		%feature("compactdefaultargs") AddIntersection;
+		%feature("autodoc", "Insert a new intersection in the sorted list.
+
+Parameters
+----------
+Par1: float
+Start: bool
+Index: int
+Par2: float
+theToler: float
+
+Returns
+-------
+None
+") AddIntersection;
+		void AddIntersection(const Standard_Real Par1, const Standard_Boolean Start, const Standard_Integer Index, const Standard_Real Par2, const Standard_Real theToler);
 
 };
 

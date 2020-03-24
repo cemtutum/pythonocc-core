@@ -102,13 +102,13 @@ class IntRes2d_TypeTrans:
 /* end handles declaration */
 
 /* templates */
-%template(IntRes2d_SequenceOfIntersectionSegment) NCollection_Sequence<IntRes2d_IntersectionSegment>;
 %template(IntRes2d_SequenceOfIntersectionPoint) NCollection_Sequence<IntRes2d_IntersectionPoint>;
+%template(IntRes2d_SequenceOfIntersectionSegment) NCollection_Sequence<IntRes2d_IntersectionSegment>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<IntRes2d_IntersectionSegment> IntRes2d_SequenceOfIntersectionSegment;
 typedef NCollection_Sequence<IntRes2d_IntersectionPoint> IntRes2d_SequenceOfIntersectionPoint;
+typedef NCollection_Sequence<IntRes2d_IntersectionSegment> IntRes2d_SequenceOfIntersectionSegment;
 /* end typedefs declaration */
 
 /************************
@@ -116,6 +116,52 @@ typedef NCollection_Sequence<IntRes2d_IntersectionPoint> IntRes2d_SequenceOfInte
 ************************/
 class IntRes2d_Domain {
 	public:
+		/****************** IntRes2d_Domain ******************/
+		%feature("compactdefaultargs") IntRes2d_Domain;
+		%feature("autodoc", "Creates an infinite domain (hasfirstpoint = false and haslastpoint = false).
+
+Returns
+-------
+None
+") IntRes2d_Domain;
+		 IntRes2d_Domain();
+
+		/****************** IntRes2d_Domain ******************/
+		%feature("compactdefaultargs") IntRes2d_Domain;
+		%feature("autodoc", "Creates a bounded domain.
+
+Parameters
+----------
+Pnt1: gp_Pnt2d
+Par1: float
+Tol1: float
+Pnt2: gp_Pnt2d
+Par2: float
+Tol2: float
+
+Returns
+-------
+None
+") IntRes2d_Domain;
+		 IntRes2d_Domain(const gp_Pnt2d & Pnt1, const Standard_Real Par1, const Standard_Real Tol1, const gp_Pnt2d & Pnt2, const Standard_Real Par2, const Standard_Real Tol2);
+
+		/****************** IntRes2d_Domain ******************/
+		%feature("compactdefaultargs") IntRes2d_Domain;
+		%feature("autodoc", "Creates a semi-infinite domain. if first is set to true, the given point is the first point of the domain, otherwise it is the last point.
+
+Parameters
+----------
+Pnt: gp_Pnt2d
+Par: float
+Tol: float
+First: bool
+
+Returns
+-------
+None
+") IntRes2d_Domain;
+		 IntRes2d_Domain(const gp_Pnt2d & Pnt, const Standard_Real Par, const Standard_Real Tol, const Standard_Boolean First);
+
 		/****************** EquivalentParameters ******************/
 		%feature("compactdefaultargs") EquivalentParameters;
 		%feature("autodoc", "Returns equivalent parameters if the domain is closed. otherwise, the exception domainerror is raised.
@@ -180,52 +226,6 @@ Returns
 bool
 ") HasLastPoint;
 		Standard_Boolean HasLastPoint();
-
-		/****************** IntRes2d_Domain ******************/
-		%feature("compactdefaultargs") IntRes2d_Domain;
-		%feature("autodoc", "Creates an infinite domain (hasfirstpoint = false and haslastpoint = false).
-
-Returns
--------
-None
-") IntRes2d_Domain;
-		 IntRes2d_Domain();
-
-		/****************** IntRes2d_Domain ******************/
-		%feature("compactdefaultargs") IntRes2d_Domain;
-		%feature("autodoc", "Creates a bounded domain.
-
-Parameters
-----------
-Pnt1: gp_Pnt2d
-Par1: float
-Tol1: float
-Pnt2: gp_Pnt2d
-Par2: float
-Tol2: float
-
-Returns
--------
-None
-") IntRes2d_Domain;
-		 IntRes2d_Domain(const gp_Pnt2d & Pnt1, const Standard_Real Par1, const Standard_Real Tol1, const gp_Pnt2d & Pnt2, const Standard_Real Par2, const Standard_Real Tol2);
-
-		/****************** IntRes2d_Domain ******************/
-		%feature("compactdefaultargs") IntRes2d_Domain;
-		%feature("autodoc", "Creates a semi-infinite domain. if first is set to true, the given point is the first point of the domain, otherwise it is the last point.
-
-Parameters
-----------
-Pnt: gp_Pnt2d
-Par: float
-Tol: float
-First: bool
-
-Returns
--------
-None
-") IntRes2d_Domain;
-		 IntRes2d_Domain(const gp_Pnt2d & Pnt, const Standard_Real Par, const Standard_Real Tol, const Standard_Boolean First);
 
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
@@ -552,36 +552,6 @@ gp_Pnt2d
 *************************************/
 class IntRes2d_IntersectionSegment {
 	public:
-		/****************** FirstPoint ******************/
-		%feature("compactdefaultargs") FirstPoint;
-		%feature("autodoc", "Returns the first point of the segment as an intersectionpoint (with a transition). the exception domainerror is raised if hasfirstpoint returns false.
-
-Returns
--------
-IntRes2d_IntersectionPoint
-") FirstPoint;
-		const IntRes2d_IntersectionPoint & FirstPoint();
-
-		/****************** HasFirstPoint ******************/
-		%feature("compactdefaultargs") HasFirstPoint;
-		%feature("autodoc", "Returns true if the segment is limited by a first point. this point defines the lowest parameter admitted on the first curve for the segment. if isopposite returns false, it defines the lowest parameter on the second curve, otherwise, it is the highest parameter on the second curve.
-
-Returns
--------
-bool
-") HasFirstPoint;
-		Standard_Boolean HasFirstPoint();
-
-		/****************** HasLastPoint ******************/
-		%feature("compactdefaultargs") HasLastPoint;
-		%feature("autodoc", "Returns true if the segment is limited by a last point. this point defines the highest parameter admitted on the first curve for the segment. if isopposite returns false, it defines the highest parameter on the second curve, otherwise, it is the lowest parameter on the second curve.
-
-Returns
--------
-bool
-") HasLastPoint;
-		Standard_Boolean HasLastPoint();
-
 		/****************** IntRes2d_IntersectionSegment ******************/
 		%feature("compactdefaultargs") IntRes2d_IntersectionSegment;
 		%feature("autodoc", "Empty constructor.
@@ -639,6 +609,36 @@ Returns
 None
 ") IntRes2d_IntersectionSegment;
 		 IntRes2d_IntersectionSegment(const Standard_Boolean Oppos);
+
+		/****************** FirstPoint ******************/
+		%feature("compactdefaultargs") FirstPoint;
+		%feature("autodoc", "Returns the first point of the segment as an intersectionpoint (with a transition). the exception domainerror is raised if hasfirstpoint returns false.
+
+Returns
+-------
+IntRes2d_IntersectionPoint
+") FirstPoint;
+		const IntRes2d_IntersectionPoint & FirstPoint();
+
+		/****************** HasFirstPoint ******************/
+		%feature("compactdefaultargs") HasFirstPoint;
+		%feature("autodoc", "Returns true if the segment is limited by a first point. this point defines the lowest parameter admitted on the first curve for the segment. if isopposite returns false, it defines the lowest parameter on the second curve, otherwise, it is the highest parameter on the second curve.
+
+Returns
+-------
+bool
+") HasFirstPoint;
+		Standard_Boolean HasFirstPoint();
+
+		/****************** HasLastPoint ******************/
+		%feature("compactdefaultargs") HasLastPoint;
+		%feature("autodoc", "Returns true if the segment is limited by a last point. this point defines the highest parameter admitted on the first curve for the segment. if isopposite returns false, it defines the highest parameter on the second curve, otherwise, it is the lowest parameter on the second curve.
+
+Returns
+-------
+bool
+") HasLastPoint;
+		Standard_Boolean HasLastPoint();
 
 		/****************** IsOpposite ******************/
 		%feature("compactdefaultargs") IsOpposite;

@@ -81,6 +81,16 @@ typedef NCollection_Array2<TopAbs_Orientation> TopTrans_Array2OfOrientation;
 *********************************/
 class TopTrans_CurveTransition {
 	public:
+		/****************** TopTrans_CurveTransition ******************/
+		%feature("compactdefaultargs") TopTrans_CurveTransition;
+		%feature("autodoc", "Create an empty curve transition.
+
+Returns
+-------
+None
+") TopTrans_CurveTransition;
+		 TopTrans_CurveTransition();
+
 		/****************** Compare ******************/
 		%feature("compactdefaultargs") Compare;
 		%feature("autodoc", "Add a curve element to the boundary. if or is reversed the curve is before the intersection, else if or is forward the curv is after the intersection and if or is internal the intersection is in the middle of the curv.
@@ -150,16 +160,6 @@ TopAbs_State
 ") StateBefore;
 		TopAbs_State StateBefore();
 
-		/****************** TopTrans_CurveTransition ******************/
-		%feature("compactdefaultargs") TopTrans_CurveTransition;
-		%feature("autodoc", "Create an empty curve transition.
-
-Returns
--------
-None
-") TopTrans_CurveTransition;
-		 TopTrans_CurveTransition();
-
 };
 
 
@@ -174,6 +174,16 @@ None
 ***********************************/
 class TopTrans_SurfaceTransition {
 	public:
+		/****************** TopTrans_SurfaceTransition ******************/
+		%feature("compactdefaultargs") TopTrans_SurfaceTransition;
+		%feature("autodoc", "Create an empty surface transition.
+
+Returns
+-------
+None
+") TopTrans_SurfaceTransition;
+		 TopTrans_SurfaceTransition();
+
 		/****************** Compare ******************/
 		%feature("compactdefaultargs") Compare;
 		%feature("autodoc", "Add a face element to the boundary. //! - s defines topological orientation for the face : s forward means: along the intersection curve on the reference surface, transition states while crossing the face are out,in. s reversed means states are in,out. s internal means states are in,in. //! - o defines curve's position on face : o forward means the face is before the intersection o reversed means the face is after o internal means the curve intersection is in the face. prequesitory : norm oriented outside 'geometric matter'.
@@ -293,16 +303,6 @@ Returns
 TopAbs_State
 ") StateBefore;
 		TopAbs_State StateBefore();
-
-		/****************** TopTrans_SurfaceTransition ******************/
-		%feature("compactdefaultargs") TopTrans_SurfaceTransition;
-		%feature("autodoc", "Create an empty surface transition.
-
-Returns
--------
-None
-") TopTrans_SurfaceTransition;
-		 TopTrans_SurfaceTransition();
 
 };
 

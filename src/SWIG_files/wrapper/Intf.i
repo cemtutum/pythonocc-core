@@ -82,9 +82,6 @@ class Intf_PIType:
 /* end handles declaration */
 
 /* templates */
-%template(Intf_SeqOfSectionLine) NCollection_Sequence<Intf_SectionLine>;
-%template(Intf_SeqOfTangentZone) NCollection_Sequence<Intf_TangentZone>;
-%template(Intf_SeqOfSectionPoint) NCollection_Sequence<Intf_SectionPoint>;
 %template(Intf_Array1OfLin) NCollection_Array1<gp_Lin>;
 
 %extend NCollection_Array1<gp_Lin> {
@@ -120,13 +117,16 @@ class Intf_PIType:
     __next__ = next
     }
 };
+%template(Intf_SeqOfSectionLine) NCollection_Sequence<Intf_SectionLine>;
+%template(Intf_SeqOfSectionPoint) NCollection_Sequence<Intf_SectionPoint>;
+%template(Intf_SeqOfTangentZone) NCollection_Sequence<Intf_TangentZone>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<Intf_SectionLine> Intf_SeqOfSectionLine;
-typedef NCollection_Sequence<Intf_TangentZone> Intf_SeqOfTangentZone;
-typedef NCollection_Sequence<Intf_SectionPoint> Intf_SeqOfSectionPoint;
 typedef NCollection_Array1<gp_Lin> Intf_Array1OfLin;
+typedef NCollection_Sequence<Intf_SectionLine> Intf_SeqOfSectionLine;
+typedef NCollection_Sequence<Intf_SectionPoint> Intf_SeqOfSectionPoint;
+typedef NCollection_Sequence<Intf_TangentZone> Intf_SeqOfTangentZone;
 /* end typedefs declaration */
 
 /*************
@@ -406,6 +406,30 @@ None
 *************************/
 class Intf_SectionLine {
 	public:
+		/****************** Intf_SectionLine ******************/
+		%feature("compactdefaultargs") Intf_SectionLine;
+		%feature("autodoc", "Constructs an empty sectionline.
+
+Returns
+-------
+None
+") Intf_SectionLine;
+		 Intf_SectionLine();
+
+		/****************** Intf_SectionLine ******************/
+		%feature("compactdefaultargs") Intf_SectionLine;
+		%feature("autodoc", "Copies a sectionline.
+
+Parameters
+----------
+Other: Intf_SectionLine
+
+Returns
+-------
+None
+") Intf_SectionLine;
+		 Intf_SectionLine(const Intf_SectionLine & Other);
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Adds a point at the end of the sectionline.
@@ -485,30 +509,6 @@ Returns
 Intf_SectionPoint
 ") GetPoint;
 		const Intf_SectionPoint & GetPoint(const Standard_Integer Index);
-
-		/****************** Intf_SectionLine ******************/
-		%feature("compactdefaultargs") Intf_SectionLine;
-		%feature("autodoc", "Constructs an empty sectionline.
-
-Returns
--------
-None
-") Intf_SectionLine;
-		 Intf_SectionLine();
-
-		/****************** Intf_SectionLine ******************/
-		%feature("compactdefaultargs") Intf_SectionLine;
-		%feature("autodoc", "Copies a sectionline.
-
-Parameters
-----------
-Other: Intf_SectionLine
-
-Returns
--------
-None
-") Intf_SectionLine;
-		 Intf_SectionLine(const Intf_SectionLine & Other);
 
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
@@ -624,6 +624,60 @@ None
 **************************/
 class Intf_SectionPoint {
 	public:
+		/****************** Intf_SectionPoint ******************/
+		%feature("compactdefaultargs") Intf_SectionPoint;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Intf_SectionPoint;
+		 Intf_SectionPoint();
+
+		/****************** Intf_SectionPoint ******************/
+		%feature("compactdefaultargs") Intf_SectionPoint;
+		%feature("autodoc", "Builds a sectionpoint with the respective dimensions (vertex edge or face) of the concerned arguments and their addresses in the topological structure.
+
+Parameters
+----------
+Where: gp_Pnt
+DimeO: Intf_PIType
+AddrO1: int
+AddrO2: int
+ParamO: float
+DimeT: Intf_PIType
+AddrT1: int
+AddrT2: int
+ParamT: float
+Incid: float
+
+Returns
+-------
+None
+") Intf_SectionPoint;
+		 Intf_SectionPoint(const gp_Pnt & Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Integer AddrO2, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Integer AddrT2, const Standard_Real ParamT, const Standard_Real Incid);
+
+		/****************** Intf_SectionPoint ******************/
+		%feature("compactdefaultargs") Intf_SectionPoint;
+		%feature("autodoc", "Builds a sectionpoint 2d with the respective dimensions (vertex or edge) of the concerned arguments and their addresses in the topological structure.
+
+Parameters
+----------
+Where: gp_Pnt2d
+DimeO: Intf_PIType
+AddrO1: int
+ParamO: float
+DimeT: Intf_PIType
+AddrT1: int
+ParamT: float
+Incid: float
+
+Returns
+-------
+None
+") Intf_SectionPoint;
+		 Intf_SectionPoint(const gp_Pnt2d & Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Real ParamT, const Standard_Real Incid);
+
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "No available documentation.
@@ -713,60 +767,6 @@ Returns
 None
 ") InfoSecond;
 		void InfoSecond(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Real &OutValue);
-
-		/****************** Intf_SectionPoint ******************/
-		%feature("compactdefaultargs") Intf_SectionPoint;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Intf_SectionPoint;
-		 Intf_SectionPoint();
-
-		/****************** Intf_SectionPoint ******************/
-		%feature("compactdefaultargs") Intf_SectionPoint;
-		%feature("autodoc", "Builds a sectionpoint with the respective dimensions (vertex edge or face) of the concerned arguments and their addresses in the topological structure.
-
-Parameters
-----------
-Where: gp_Pnt
-DimeO: Intf_PIType
-AddrO1: int
-AddrO2: int
-ParamO: float
-DimeT: Intf_PIType
-AddrT1: int
-AddrT2: int
-ParamT: float
-Incid: float
-
-Returns
--------
-None
-") Intf_SectionPoint;
-		 Intf_SectionPoint(const gp_Pnt & Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Integer AddrO2, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Integer AddrT2, const Standard_Real ParamT, const Standard_Real Incid);
-
-		/****************** Intf_SectionPoint ******************/
-		%feature("compactdefaultargs") Intf_SectionPoint;
-		%feature("autodoc", "Builds a sectionpoint 2d with the respective dimensions (vertex or edge) of the concerned arguments and their addresses in the topological structure.
-
-Parameters
-----------
-Where: gp_Pnt2d
-DimeO: Intf_PIType
-AddrO1: int
-ParamO: float
-DimeT: Intf_PIType
-AddrT1: int
-ParamT: float
-Incid: float
-
-Returns
--------
-None
-") Intf_SectionPoint;
-		 Intf_SectionPoint(const gp_Pnt2d & Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Real ParamT, const Standard_Real Incid);
 
 		/****************** IsEqual ******************/
 		%feature("compactdefaultargs") IsEqual;
@@ -888,6 +888,30 @@ Intf_PIType
 *************************/
 class Intf_TangentZone {
 	public:
+		/****************** Intf_TangentZone ******************/
+		%feature("compactdefaultargs") Intf_TangentZone;
+		%feature("autodoc", "Builds an empty tangent zone.
+
+Returns
+-------
+None
+") Intf_TangentZone;
+		 Intf_TangentZone();
+
+		/****************** Intf_TangentZone ******************/
+		%feature("compactdefaultargs") Intf_TangentZone;
+		%feature("autodoc", "Copies a tangent zone.
+
+Parameters
+----------
+Other: Intf_TangentZone
+
+Returns
+-------
+None
+") Intf_TangentZone;
+		 Intf_TangentZone(const Intf_TangentZone & Other);
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Adds a sectionpoint to the tangentzone.
@@ -1050,30 +1074,6 @@ None
 ") InsertBefore;
 		void InsertBefore(const Standard_Integer Index, const Intf_SectionPoint & Pi);
 
-		/****************** Intf_TangentZone ******************/
-		%feature("compactdefaultargs") Intf_TangentZone;
-		%feature("autodoc", "Builds an empty tangent zone.
-
-Returns
--------
-None
-") Intf_TangentZone;
-		 Intf_TangentZone();
-
-		/****************** Intf_TangentZone ******************/
-		%feature("compactdefaultargs") Intf_TangentZone;
-		%feature("autodoc", "Copies a tangent zone.
-
-Parameters
-----------
-Other: Intf_TangentZone
-
-Returns
--------
-None
-") Intf_TangentZone;
-		 Intf_TangentZone(const Intf_TangentZone & Other);
-
 		/****************** IsEqual ******************/
 		%feature("compactdefaultargs") IsEqual;
 		%feature("autodoc", "Compares two tangentzones.
@@ -1184,6 +1184,16 @@ bool
 ******************/
 class Intf_Tool {
 	public:
+		/****************** Intf_Tool ******************/
+		%feature("compactdefaultargs") Intf_Tool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Intf_Tool;
+		 Intf_Tool();
+
 		/****************** BeginParam ******************/
 		%feature("compactdefaultargs") BeginParam;
 		%feature("autodoc", "No available documentation.
@@ -1243,16 +1253,6 @@ Returns
 None
 ") HyprBox;
 		void HyprBox(const gp_Hypr & theHypr, const Bnd_Box & bounding, Bnd_Box & boxHypr);
-
-		/****************** Intf_Tool ******************/
-		%feature("compactdefaultargs") Intf_Tool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Intf_Tool;
-		 Intf_Tool();
 
 		/****************** Lin2dBox ******************/
 		%feature("compactdefaultargs") Lin2dBox;

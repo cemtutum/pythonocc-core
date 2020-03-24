@@ -141,30 +141,6 @@ opencascade::handle<Geom_Curve>
 **********************************/
 class GeomAPI_ExtremaCurveCurve {
 	public:
-		/****************** Distance ******************/
-		%feature("compactdefaultargs") Distance;
-		%feature("autodoc", "Computes the distance between the end points of the extremum of index index computed by this algorithm. exceptions standard_outofrange if index is not in the range [ 1,nbextrema ], where nbextrema is the number of extrema computed by this algorithm.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-float
-") Distance;
-		Standard_Real Distance(const Standard_Integer Index);
-
-		/****************** Extrema ******************/
-		%feature("compactdefaultargs") Extrema;
-		%feature("autodoc", "Return the algorithmic object from extrema.
-
-Returns
--------
-Extrema_ExtCC
-") Extrema;
-		const Extrema_ExtCC & Extrema();
-
 		/****************** GeomAPI_ExtremaCurveCurve ******************/
 		%feature("compactdefaultargs") GeomAPI_ExtremaCurveCurve;
 		%feature("autodoc", "Constructs an empty algorithm for computing extrema between two curves. use an init function to define the curves on which it is going to work.
@@ -208,6 +184,30 @@ Returns
 None
 ") GeomAPI_ExtremaCurveCurve;
 		 GeomAPI_ExtremaCurveCurve(const opencascade::handle<Geom_Curve> & C1, const opencascade::handle<Geom_Curve> & C2, const Standard_Real U1min, const Standard_Real U1max, const Standard_Real U2min, const Standard_Real U2max);
+
+		/****************** Distance ******************/
+		%feature("compactdefaultargs") Distance;
+		%feature("autodoc", "Computes the distance between the end points of the extremum of index index computed by this algorithm. exceptions standard_outofrange if index is not in the range [ 1,nbextrema ], where nbextrema is the number of extrema computed by this algorithm.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
+") Distance;
+		Standard_Real Distance(const Standard_Integer Index);
+
+		/****************** Extrema ******************/
+		%feature("compactdefaultargs") Extrema;
+		%feature("autodoc", "Return the algorithmic object from extrema.
+
+Returns
+-------
+Extrema_ExtCC
+") Extrema;
+		const Extrema_ExtCC & Extrema();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -379,30 +379,6 @@ bool
 ************************************/
 class GeomAPI_ExtremaCurveSurface {
 	public:
-		/****************** Distance ******************/
-		%feature("compactdefaultargs") Distance;
-		%feature("autodoc", "Computes the distance between the end points of the extremum of index index computed by this algorithm. exceptions standard_outofrange if index is not in the range [ 1,nbextrema ], where nbextrema is the number of extrema computed by this algorithm.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-float
-") Distance;
-		Standard_Real Distance(const Standard_Integer Index);
-
-		/****************** Extrema ******************/
-		%feature("compactdefaultargs") Extrema;
-		%feature("autodoc", "Returns the algorithmic object from extrema.
-
-Returns
--------
-Extrema_ExtCS
-") Extrema;
-		const Extrema_ExtCS & Extrema();
-
 		/****************** GeomAPI_ExtremaCurveSurface ******************/
 		%feature("compactdefaultargs") GeomAPI_ExtremaCurveSurface;
 		%feature("autodoc", "Constructs an empty algorithm for computing extrema between a curve and a surface. use an init function to define the curve and the surface on which it is going to work.
@@ -448,6 +424,30 @@ Returns
 None
 ") GeomAPI_ExtremaCurveSurface;
 		 GeomAPI_ExtremaCurveSurface(const opencascade::handle<Geom_Curve> & Curve, const opencascade::handle<Geom_Surface> & Surface, const Standard_Real Wmin, const Standard_Real Wmax, const Standard_Real Umin, const Standard_Real Umax, const Standard_Real Vmin, const Standard_Real Vmax);
+
+		/****************** Distance ******************/
+		%feature("compactdefaultargs") Distance;
+		%feature("autodoc", "Computes the distance between the end points of the extremum of index index computed by this algorithm. exceptions standard_outofrange if index is not in the range [ 1,nbextrema ], where nbextrema is the number of extrema computed by this algorithm.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
+") Distance;
+		Standard_Real Distance(const Standard_Integer Index);
+
+		/****************** Extrema ******************/
+		%feature("compactdefaultargs") Extrema;
+		%feature("autodoc", "Returns the algorithmic object from extrema.
+
+Returns
+-------
+Extrema_ExtCS
+") Extrema;
+		const Extrema_ExtCS & Extrema();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -583,30 +583,6 @@ None
 **************************************/
 class GeomAPI_ExtremaSurfaceSurface {
 	public:
-		/****************** Distance ******************/
-		%feature("compactdefaultargs") Distance;
-		%feature("autodoc", "Computes the distance between the end points of the extremum of index index computed by this algorithm. exceptions standard_outofrange if index is not in the range [ 1,nbextrema ], where nbextrema is the number of extrema computed by this algorithm.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-float
-") Distance;
-		Standard_Real Distance(const Standard_Integer Index);
-
-		/****************** Extrema ******************/
-		%feature("compactdefaultargs") Extrema;
-		%feature("autodoc", "Return the algorithmic object from extrema.
-
-Returns
--------
-Extrema_ExtSS
-") Extrema;
-		const Extrema_ExtSS & Extrema();
-
 		/****************** GeomAPI_ExtremaSurfaceSurface ******************/
 		%feature("compactdefaultargs") GeomAPI_ExtremaSurfaceSurface;
 		%feature("autodoc", "Constructs an empty algorithm for computing extrema between two surfaces. use an init function to define the surfaces on which it is going to work.
@@ -654,6 +630,30 @@ Returns
 None
 ") GeomAPI_ExtremaSurfaceSurface;
 		 GeomAPI_ExtremaSurfaceSurface(const opencascade::handle<Geom_Surface> & S1, const opencascade::handle<Geom_Surface> & S2, const Standard_Real U1min, const Standard_Real U1max, const Standard_Real V1min, const Standard_Real V1max, const Standard_Real U2min, const Standard_Real U2max, const Standard_Real V2min, const Standard_Real V2max);
+
+		/****************** Distance ******************/
+		%feature("compactdefaultargs") Distance;
+		%feature("autodoc", "Computes the distance between the end points of the extremum of index index computed by this algorithm. exceptions standard_outofrange if index is not in the range [ 1,nbextrema ], where nbextrema is the number of extrema computed by this algorithm.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
+") Distance;
+		Standard_Real Distance(const Standard_Integer Index);
+
+		/****************** Extrema ******************/
+		%feature("compactdefaultargs") Extrema;
+		%feature("autodoc", "Return the algorithmic object from extrema.
+
+Returns
+-------
+Extrema_ExtSS
+") Extrema;
+		const Extrema_ExtSS & Extrema();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -1030,16 +1030,6 @@ None
 ****************************/
 class GeomAPI_Interpolate {
 	public:
-		/****************** Curve ******************/
-		%feature("compactdefaultargs") Curve;
-		%feature("autodoc", "Returns the computed bspline curve. raises stdfail_notdone if the interpolation fails.
-
-Returns
--------
-opencascade::handle<Geom_BSplineCurve>
-") Curve;
-		const opencascade::handle<Geom_BSplineCurve> & Curve();
-
 		/****************** GeomAPI_Interpolate ******************/
 		%feature("compactdefaultargs") GeomAPI_Interpolate;
 		%feature("autodoc", "Initializes an algorithm for constructing a constrained bspline curve passing through the points of the table points. tangential vectors can then be assigned, using the function load. if periodicflag is true, the constrained bspline curve will be periodic and closed. in this case, the junction point is the first point of the table points. the tolerance value tolerance is used to check that: - points are not too close to each other, or - tangential vectors (defined using the function load) are not too small. the resulting bspline curve will be 'c2' continuous, except where a tangency constraint is defined on a point through which the curve passes (by using the load function). in this case, it will be only 'c1' continuous. once all the constraints are defined, use the function perform to compute the curve. warning - there must be at least 2 points in the table points. - if periodicflag is false, there must be as many parameters in the array parameters as there are points in the array points. - if periodicflag is true, there must be one more parameter in the table parameters: this is used to give the parameter on the resulting bspline curve of the junction point of the curve (which is also the first point of the table points). exceptions - standard_constructionerror if the distance between two consecutive points in the table points is less than or equal to tolerance. - standard_outofrange if: - there are less than two points in the table points, or - conditions relating to the respective number of elements in the parallel tables points and parameters are not respected.
@@ -1072,6 +1062,16 @@ Returns
 None
 ") GeomAPI_Interpolate;
 		 GeomAPI_Interpolate(const opencascade::handle<TColgp_HArray1OfPnt> & Points, const opencascade::handle<TColStd_HArray1OfReal> & Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+
+		/****************** Curve ******************/
+		%feature("compactdefaultargs") Curve;
+		%feature("autodoc", "Returns the computed bspline curve. raises stdfail_notdone if the interpolation fails.
+
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
+") Curve;
+		const opencascade::handle<Geom_BSplineCurve> & Curve();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -1145,16 +1145,6 @@ None
 ********************************/
 class GeomAPI_PointsToBSpline {
 	public:
-		/****************** Curve ******************/
-		%feature("compactdefaultargs") Curve;
-		%feature("autodoc", "Returns the computed bspline curve. raises stdfail_notdone if the curve is not built.
-
-Returns
--------
-opencascade::handle<Geom_BSplineCurve>
-") Curve;
-		const opencascade::handle<Geom_BSplineCurve> & Curve();
-
 		/****************** GeomAPI_PointsToBSpline ******************/
 		%feature("compactdefaultargs") GeomAPI_PointsToBSpline;
 		%feature("autodoc", "Constructs an empty approximation algorithm. use an init function to define and build the bspline curve.
@@ -1255,6 +1245,16 @@ Returns
 None
 ") GeomAPI_PointsToBSpline;
 		 GeomAPI_PointsToBSpline(const TColgp_Array1OfPnt & Points, const Standard_Real Weight1, const Standard_Real Weight2, const Standard_Real Weight3, const Standard_Integer DegMax = 8, const GeomAbs_Shape Continuity = GeomAbs_C2, const Standard_Real Tol3D = 1.0e-3);
+
+		/****************** Curve ******************/
+		%feature("compactdefaultargs") Curve;
+		%feature("autodoc", "Returns the computed bspline curve. raises stdfail_notdone if the curve is not built.
+
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
+") Curve;
+		const opencascade::handle<Geom_BSplineCurve> & Curve();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -1656,30 +1656,6 @@ opencascade::handle<Geom_BSplineSurface>
 ************************************/
 class GeomAPI_ProjectPointOnCurve {
 	public:
-		/****************** Distance ******************/
-		%feature("compactdefaultargs") Distance;
-		%feature("autodoc", "Computes the distance between the point and its orthogonal projection on the curve. index is a number of a computed point. exceptions standard_outofrange if index is not in the range [ 1,nbpoints ], where nbpoints is the number of solution points.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-float
-") Distance;
-		Standard_Real Distance(const Standard_Integer Index);
-
-		/****************** Extrema ******************/
-		%feature("compactdefaultargs") Extrema;
-		%feature("autodoc", "Return the algorithmic object from extrema.
-
-Returns
--------
-Extrema_ExtPC
-") Extrema;
-		const Extrema_ExtPC & Extrema();
-
 		/****************** GeomAPI_ProjectPointOnCurve ******************/
 		%feature("compactdefaultargs") GeomAPI_ProjectPointOnCurve;
 		%feature("autodoc", "Creates an empty object. use an init function for further initialization.
@@ -1721,6 +1697,30 @@ Returns
 None
 ") GeomAPI_ProjectPointOnCurve;
 		 GeomAPI_ProjectPointOnCurve(const gp_Pnt & P, const opencascade::handle<Geom_Curve> & Curve, const Standard_Real Umin, const Standard_Real Usup);
+
+		/****************** Distance ******************/
+		%feature("compactdefaultargs") Distance;
+		%feature("autodoc", "Computes the distance between the point and its orthogonal projection on the curve. index is a number of a computed point. exceptions standard_outofrange if index is not in the range [ 1,nbpoints ], where nbpoints is the number of solution points.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
+") Distance;
+		Standard_Real Distance(const Standard_Integer Index);
+
+		/****************** Extrema ******************/
+		%feature("compactdefaultargs") Extrema;
+		%feature("autodoc", "Return the algorithmic object from extrema.
+
+Returns
+-------
+Extrema_ExtPC
+") Extrema;
+		const Extrema_ExtPC & Extrema();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -1881,30 +1881,6 @@ gp_Pnt
 ***********************************/
 class GeomAPI_ProjectPointOnSurf {
 	public:
-		/****************** Distance ******************/
-		%feature("compactdefaultargs") Distance;
-		%feature("autodoc", "Computes the distance between the point and its orthogonal projection on the surface. index is a number of a computed point. exceptions standard_outofrange if index is not in the range [ 1,nbpoints ], where nbpoints is the number of solution points.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-float
-") Distance;
-		Standard_Real Distance(const Standard_Integer Index);
-
-		/****************** Extrema ******************/
-		%feature("compactdefaultargs") Extrema;
-		%feature("autodoc", "Return the algorithmic object from extrema.
-
-Returns
--------
-Extrema_ExtPS
-") Extrema;
-		const Extrema_ExtPS & Extrema();
-
 		/****************** GeomAPI_ProjectPointOnSurf ******************/
 		%feature("compactdefaultargs") GeomAPI_ProjectPointOnSurf;
 		%feature("autodoc", "Creates an empty object. use the init function for further initialization.
@@ -1992,6 +1968,30 @@ Returns
 None
 ") GeomAPI_ProjectPointOnSurf;
 		 GeomAPI_ProjectPointOnSurf(const gp_Pnt & P, const opencascade::handle<Geom_Surface> & Surface, const Standard_Real Umin, const Standard_Real Usup, const Standard_Real Vmin, const Standard_Real Vsup, const Extrema_ExtAlgo Algo = Extrema_ExtAlgo_Grad);
+
+		/****************** Distance ******************/
+		%feature("compactdefaultargs") Distance;
+		%feature("autodoc", "Computes the distance between the point and its orthogonal projection on the surface. index is a number of a computed point. exceptions standard_outofrange if index is not in the range [ 1,nbpoints ], where nbpoints is the number of solution points.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+float
+") Distance;
+		Standard_Real Distance(const Standard_Integer Index);
+
+		/****************** Extrema ******************/
+		%feature("compactdefaultargs") Extrema;
+		%feature("autodoc", "Return the algorithmic object from extrema.
+
+Returns
+-------
+Extrema_ExtPS
+") Extrema;
+		const Extrema_ExtPS & Extrema();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;

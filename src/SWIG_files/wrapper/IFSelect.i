@@ -224,20 +224,20 @@ class IFSelect_PrintCount:
 /* end handles declaration */
 
 /* templates */
-%template(IFSelect_TSeqOfSelection) NCollection_Sequence<opencascade::handle<IFSelect_Selection>>;
-%template(IFSelect_SequenceOfGeneralModifier) NCollection_Sequence<opencascade::handle<IFSelect_GeneralModifier>>;
-%template(IFSelect_TSeqOfDispatch) NCollection_Sequence<opencascade::handle<IFSelect_Dispatch>>;
 %template(IFSelect_SequenceOfAppliedModifiers) NCollection_Sequence<opencascade::handle<IFSelect_AppliedModifiers>>;
+%template(IFSelect_SequenceOfGeneralModifier) NCollection_Sequence<opencascade::handle<IFSelect_GeneralModifier>>;
 %template(IFSelect_SequenceOfInterfaceModel) NCollection_Sequence<opencascade::handle<Interface_InterfaceModel>>;
+%template(IFSelect_TSeqOfDispatch) NCollection_Sequence<opencascade::handle<IFSelect_Dispatch>>;
+%template(IFSelect_TSeqOfSelection) NCollection_Sequence<opencascade::handle<IFSelect_Selection>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<opencascade::handle<IFSelect_Selection>> IFSelect_TSeqOfSelection;
-typedef NCollection_Sequence<opencascade::handle<IFSelect_GeneralModifier>> IFSelect_SequenceOfGeneralModifier;
-typedef NCollection_Sequence<opencascade::handle<IFSelect_Dispatch>> IFSelect_TSeqOfDispatch;
-typedef NCollection_Sequence<opencascade::handle<IFSelect_AppliedModifiers>> IFSelect_SequenceOfAppliedModifiers;
 typedef IFSelect_ReturnStatus ( * IFSelect_ActFunc ) ( const opencascade::handle<IFSelect_SessionPilot>& );
+typedef NCollection_Sequence<opencascade::handle<IFSelect_AppliedModifiers>> IFSelect_SequenceOfAppliedModifiers;
+typedef NCollection_Sequence<opencascade::handle<IFSelect_GeneralModifier>> IFSelect_SequenceOfGeneralModifier;
 typedef NCollection_Sequence<opencascade::handle<Interface_InterfaceModel>> IFSelect_SequenceOfInterfaceModel;
+typedef NCollection_Sequence<opencascade::handle<IFSelect_Dispatch>> IFSelect_TSeqOfDispatch;
+typedef NCollection_Sequence<opencascade::handle<IFSelect_Selection>> IFSelect_TSeqOfSelection;
 /* end typedefs declaration */
 
 /*****************
@@ -480,6 +480,21 @@ None
 **********************************/
 class IFSelect_AppliedModifiers : public Standard_Transient {
 	public:
+		/****************** IFSelect_AppliedModifiers ******************/
+		%feature("compactdefaultargs") IFSelect_AppliedModifiers;
+		%feature("autodoc", "Creates an appliedmodifiers, ready to record up to <nbmax> modifiers, on a model of <nbent> entities.
+
+Parameters
+----------
+nbmax: int
+nbent: int
+
+Returns
+-------
+None
+") IFSelect_AppliedModifiers;
+		 IFSelect_AppliedModifiers(const Standard_Integer nbmax, const Standard_Integer nbent);
+
 		/****************** AddModif ******************/
 		%feature("compactdefaultargs") AddModif;
 		%feature("autodoc", "Records a modifier. by default, it is to apply on all a produced file. further calls to addnum will restrict this. returns true if done, false if too many modifiers are already recorded.
@@ -517,21 +532,6 @@ Returns
 int
 ") Count;
 		Standard_Integer Count();
-
-		/****************** IFSelect_AppliedModifiers ******************/
-		%feature("compactdefaultargs") IFSelect_AppliedModifiers;
-		%feature("autodoc", "Creates an appliedmodifiers, ready to record up to <nbmax> modifiers, on a model of <nbent> entities.
-
-Parameters
-----------
-nbmax: int
-nbent: int
-
-Returns
--------
-None
-") IFSelect_AppliedModifiers;
-		 IFSelect_AppliedModifiers(const Standard_Integer nbmax, const Standard_Integer nbent);
 
 		/****************** IsForAll ******************/
 		%feature("compactdefaultargs") IsForAll;
@@ -599,6 +599,39 @@ int
 ******************************/
 class IFSelect_ContextModif {
 	public:
+		/****************** IFSelect_ContextModif ******************/
+		%feature("compactdefaultargs") IFSelect_ContextModif;
+		%feature("autodoc", "Prepares a contextmodif with these informations : - the graph established from original model (target passed directly to modifier) - the copytool which detains the copycontrol, which maps starting (in original) and result (in target) entities - an optional file name (for file output) //! such a contextmodif is considered to be applied on all transferred entities (no filter active).
+
+Parameters
+----------
+graph: Interface_Graph
+TC: Interface_CopyTool
+filename: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") IFSelect_ContextModif;
+		 IFSelect_ContextModif(const Interface_Graph & graph, const Interface_CopyTool & TC, const char * filename = "");
+
+		/****************** IFSelect_ContextModif ******************/
+		%feature("compactdefaultargs") IFSelect_ContextModif;
+		%feature("autodoc", "Prepares a contextmodif with these informations : - the graph established from original model (target passed directly to modifier) - an optional file name (for file output) here, no copycontrol, hence all entities are considered equal as starting and result //! such a contextmodif is considered to be applied on all transferred entities (no filter active).
+
+Parameters
+----------
+graph: Interface_Graph
+filename: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") IFSelect_ContextModif;
+		 IFSelect_ContextModif(const Interface_Graph & graph, const char * filename = "");
+
 		/****************** AddCheck ******************/
 		%feature("compactdefaultargs") AddCheck;
 		%feature("autodoc", "Adds a check to the checklist. if it is empty, nothing is done if it concerns an entity from the original model (by setentity) to which another check is attached, it is merged to it. else, it is added or merged as to globalcheck.
@@ -715,39 +748,6 @@ Returns
 bool
 ") HasFileName;
 		Standard_Boolean HasFileName();
-
-		/****************** IFSelect_ContextModif ******************/
-		%feature("compactdefaultargs") IFSelect_ContextModif;
-		%feature("autodoc", "Prepares a contextmodif with these informations : - the graph established from original model (target passed directly to modifier) - the copytool which detains the copycontrol, which maps starting (in original) and result (in target) entities - an optional file name (for file output) //! such a contextmodif is considered to be applied on all transferred entities (no filter active).
-
-Parameters
-----------
-graph: Interface_Graph
-TC: Interface_CopyTool
-filename: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") IFSelect_ContextModif;
-		 IFSelect_ContextModif(const Interface_Graph & graph, const Interface_CopyTool & TC, const char * filename = "");
-
-		/****************** IFSelect_ContextModif ******************/
-		%feature("compactdefaultargs") IFSelect_ContextModif;
-		%feature("autodoc", "Prepares a contextmodif with these informations : - the graph established from original model (target passed directly to modifier) - an optional file name (for file output) here, no copycontrol, hence all entities are considered equal as starting and result //! such a contextmodif is considered to be applied on all transferred entities (no filter active).
-
-Parameters
-----------
-graph: Interface_Graph
-filename: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") IFSelect_ContextModif;
-		 IFSelect_ContextModif(const Interface_Graph & graph, const char * filename = "");
 
 		/****************** IsForAll ******************/
 		%feature("compactdefaultargs") IsForAll;
@@ -982,6 +982,40 @@ opencascade::handle<Standard_Transient>
 ******************************/
 class IFSelect_ContextWrite {
 	public:
+		/****************** IFSelect_ContextWrite ******************/
+		%feature("compactdefaultargs") IFSelect_ContextWrite;
+		%feature("autodoc", "Prepares a contextwrite with these informations : - the model which is to be written - the protocol to be used - the filename - an object appliedmodifiers to work. it gives a list of filemodifiers to be ran, and for each one it can give a restricted list of entities (in the model), else all the model is considered.
+
+Parameters
+----------
+model: Interface_InterfaceModel
+proto: Interface_Protocol
+applieds: IFSelect_AppliedModifiers
+filename: char *
+
+Returns
+-------
+None
+") IFSelect_ContextWrite;
+		 IFSelect_ContextWrite(const opencascade::handle<Interface_InterfaceModel> & model, const opencascade::handle<Interface_Protocol> & proto, const opencascade::handle<IFSelect_AppliedModifiers> & applieds, const char * filename);
+
+		/****************** IFSelect_ContextWrite ******************/
+		%feature("compactdefaultargs") IFSelect_ContextWrite;
+		%feature("autodoc", "Same as above but with an already computed graph.
+
+Parameters
+----------
+hgraph: Interface_HGraph
+proto: Interface_Protocol
+applieds: IFSelect_AppliedModifiers
+filename: char *
+
+Returns
+-------
+None
+") IFSelect_ContextWrite;
+		 IFSelect_ContextWrite(const opencascade::handle<Interface_HGraph> & hgraph, const opencascade::handle<Interface_Protocol> & proto, const opencascade::handle<IFSelect_AppliedModifiers> & applieds, const char * filename);
+
 		/****************** AddCheck ******************/
 		%feature("compactdefaultargs") AddCheck;
 		%feature("autodoc", "Adds a check to the checklist. if it is empty, nothing is done if it concerns an entity from the model (by setentity) to which another check is attached, it is merged to it. else, it is added or merged as to globalcheck.
@@ -1108,40 +1142,6 @@ Returns
 Interface_Graph
 ") Graph;
 		const Interface_Graph & Graph();
-
-		/****************** IFSelect_ContextWrite ******************/
-		%feature("compactdefaultargs") IFSelect_ContextWrite;
-		%feature("autodoc", "Prepares a contextwrite with these informations : - the model which is to be written - the protocol to be used - the filename - an object appliedmodifiers to work. it gives a list of filemodifiers to be ran, and for each one it can give a restricted list of entities (in the model), else all the model is considered.
-
-Parameters
-----------
-model: Interface_InterfaceModel
-proto: Interface_Protocol
-applieds: IFSelect_AppliedModifiers
-filename: char *
-
-Returns
--------
-None
-") IFSelect_ContextWrite;
-		 IFSelect_ContextWrite(const opencascade::handle<Interface_InterfaceModel> & model, const opencascade::handle<Interface_Protocol> & proto, const opencascade::handle<IFSelect_AppliedModifiers> & applieds, const char * filename);
-
-		/****************** IFSelect_ContextWrite ******************/
-		%feature("compactdefaultargs") IFSelect_ContextWrite;
-		%feature("autodoc", "Same as above but with an already computed graph.
-
-Parameters
-----------
-hgraph: Interface_HGraph
-proto: Interface_Protocol
-applieds: IFSelect_AppliedModifiers
-filename: char *
-
-Returns
--------
-None
-") IFSelect_ContextWrite;
-		 IFSelect_ContextWrite(const opencascade::handle<Interface_HGraph> & hgraph, const opencascade::handle<Interface_Protocol> & proto, const opencascade::handle<IFSelect_AppliedModifiers> & applieds, const char * filename);
 
 		/****************** IsForAll ******************/
 		%feature("compactdefaultargs") IsForAll;
@@ -1448,6 +1448,43 @@ None
 **************************/
 class IFSelect_EditForm : public Standard_Transient {
 	public:
+		/****************** IFSelect_EditForm ******************/
+		%feature("compactdefaultargs") IFSelect_EditForm;
+		%feature("autodoc", "Creates a complete editform from an editor a specific label can be given.
+
+Parameters
+----------
+editor: IFSelect_Editor
+readonly: bool
+undoable: bool
+label: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") IFSelect_EditForm;
+		 IFSelect_EditForm(const opencascade::handle<IFSelect_Editor> & editor, const Standard_Boolean readonly, const Standard_Boolean undoable, const char * label = "");
+
+		/****************** IFSelect_EditForm ******************/
+		%feature("compactdefaultargs") IFSelect_EditForm;
+		%feature("autodoc", "Creates an extracted editform from an editor, limited to the values identified in <nums> a specific label can be given.
+
+Parameters
+----------
+editor: IFSelect_Editor
+nums: TColStd_SequenceOfInteger
+readonly: bool
+undoable: bool
+label: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") IFSelect_EditForm;
+		 IFSelect_EditForm(const opencascade::handle<IFSelect_Editor> & editor, const TColStd_SequenceOfInteger & nums, const Standard_Boolean readonly, const Standard_Boolean undoable, const char * label = "");
+
 		/****************** Apply ******************/
 		%feature("compactdefaultargs") Apply;
 		%feature("autodoc", "Applies modifications to own data calls applydata then clears status according editkeepstatus.
@@ -1558,43 +1595,6 @@ Returns
 opencascade::handle<Standard_Transient>
 ") Entity;
 		opencascade::handle<Standard_Transient> Entity();
-
-		/****************** IFSelect_EditForm ******************/
-		%feature("compactdefaultargs") IFSelect_EditForm;
-		%feature("autodoc", "Creates a complete editform from an editor a specific label can be given.
-
-Parameters
-----------
-editor: IFSelect_Editor
-readonly: bool
-undoable: bool
-label: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") IFSelect_EditForm;
-		 IFSelect_EditForm(const opencascade::handle<IFSelect_Editor> & editor, const Standard_Boolean readonly, const Standard_Boolean undoable, const char * label = "");
-
-		/****************** IFSelect_EditForm ******************/
-		%feature("compactdefaultargs") IFSelect_EditForm;
-		%feature("autodoc", "Creates an extracted editform from an editor, limited to the values identified in <nums> a specific label can be given.
-
-Parameters
-----------
-editor: IFSelect_Editor
-nums: TColStd_SequenceOfInteger
-readonly: bool
-undoable: bool
-label: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") IFSelect_EditForm;
-		 IFSelect_EditForm(const opencascade::handle<IFSelect_Editor> & editor, const TColStd_SequenceOfInteger & nums, const Standard_Boolean readonly, const Standard_Boolean undoable, const char * label = "");
 
 		/****************** IsComplete ******************/
 		%feature("compactdefaultargs") IsComplete;
@@ -2685,6 +2685,32 @@ int
 ****************************/
 class IFSelect_ListEditor : public Standard_Transient {
 	public:
+		/****************** IFSelect_ListEditor ******************/
+		%feature("compactdefaultargs") IFSelect_ListEditor;
+		%feature("autodoc", "Creates a listeditor with absolutely no constraint.
+
+Returns
+-------
+None
+") IFSelect_ListEditor;
+		 IFSelect_ListEditor();
+
+		/****************** IFSelect_ListEditor ******************/
+		%feature("compactdefaultargs") IFSelect_ListEditor;
+		%feature("autodoc", "Creates a listeditor, for which items of the list to edit are defined by <def>, and <max> describes max length : 0 (d) means no limit value > 0 means : no more the <max> items are allowed.
+
+Parameters
+----------
+def: Interface_TypedValue
+max: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") IFSelect_ListEditor;
+		 IFSelect_ListEditor(const opencascade::handle<Interface_TypedValue> & def, const Standard_Integer max = 0);
+
 		/****************** AddValue ******************/
 		%feature("compactdefaultargs") AddValue;
 		%feature("autodoc", "Adds a new item. by default appends (at the end of the list) can insert before a given rank <num>, if positive returns true when done. false if maxlength may be overpassed or if <val> does not satisfy the definition.
@@ -2720,32 +2746,6 @@ Returns
 opencascade::handle<TColStd_HSequenceOfHAsciiString>
 ") EditedValues;
 		opencascade::handle<TColStd_HSequenceOfHAsciiString> EditedValues();
-
-		/****************** IFSelect_ListEditor ******************/
-		%feature("compactdefaultargs") IFSelect_ListEditor;
-		%feature("autodoc", "Creates a listeditor with absolutely no constraint.
-
-Returns
--------
-None
-") IFSelect_ListEditor;
-		 IFSelect_ListEditor();
-
-		/****************** IFSelect_ListEditor ******************/
-		%feature("compactdefaultargs") IFSelect_ListEditor;
-		%feature("autodoc", "Creates a listeditor, for which items of the list to edit are defined by <def>, and <max> describes max length : 0 (d) means no limit value > 0 means : no more the <max> items are allowed.
-
-Parameters
-----------
-def: Interface_TypedValue
-max: int,optional
-	default value is 0
-
-Returns
--------
-None
-") IFSelect_ListEditor;
-		 IFSelect_ListEditor(const opencascade::handle<Interface_TypedValue> & def, const Standard_Integer max = 0);
 
 		/****************** IsAdded ******************/
 		%feature("compactdefaultargs") IsAdded;
@@ -2940,6 +2940,16 @@ opencascade::handle<TCollection_HAsciiString>
 *****************************/
 class IFSelect_ModelCopier : public Standard_Transient {
 	public:
+		/****************** IFSelect_ModelCopier ******************/
+		%feature("compactdefaultargs") IFSelect_ModelCopier;
+		%feature("autodoc", "Creates an empty modelcopier.
+
+Returns
+-------
+None
+") IFSelect_ModelCopier;
+		 IFSelect_ModelCopier();
+
 		/****************** AddFile ******************/
 		%feature("compactdefaultargs") AddFile;
 		%feature("autodoc", "Records a new file to be sent, as a couple (name as asciistring, content as interfacemodel) returns true if done, false if <filename> is already attached to another file.
@@ -3096,16 +3106,6 @@ Returns
 TCollection_AsciiString
 ") FileName;
 		TCollection_AsciiString FileName(const Standard_Integer num);
-
-		/****************** IFSelect_ModelCopier ******************/
-		%feature("compactdefaultargs") IFSelect_ModelCopier;
-		%feature("autodoc", "Creates an empty modelcopier.
-
-Returns
--------
-None
-") IFSelect_ModelCopier;
-		 IFSelect_ModelCopier();
 
 		/****************** NameFile ******************/
 		%feature("compactdefaultargs") NameFile;
@@ -3267,6 +3267,20 @@ None
 ****************************/
 class IFSelect_PacketList : public Standard_Transient {
 	public:
+		/****************** IFSelect_PacketList ******************/
+		%feature("compactdefaultargs") IFSelect_PacketList;
+		%feature("autodoc", "Creates a packlist, empty, ready to receive entities from a given model.
+
+Parameters
+----------
+model: Interface_InterfaceModel
+
+Returns
+-------
+None
+") IFSelect_PacketList;
+		 IFSelect_PacketList(const opencascade::handle<Interface_InterfaceModel> & model);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds an entity from the model into the current packet for add.
@@ -3343,20 +3357,6 @@ Returns
 int
 ") HighestDuplicationCount;
 		Standard_Integer HighestDuplicationCount();
-
-		/****************** IFSelect_PacketList ******************/
-		%feature("compactdefaultargs") IFSelect_PacketList;
-		%feature("autodoc", "Creates a packlist, empty, ready to receive entities from a given model.
-
-Parameters
-----------
-model: Interface_InterfaceModel
-
-Returns
--------
-None
-") IFSelect_PacketList;
-		 IFSelect_PacketList(const opencascade::handle<Interface_InterfaceModel> & model);
 
 		/****************** Model ******************/
 		%feature("compactdefaultargs") Model;
@@ -3530,6 +3530,30 @@ Interface_EntityIterator
 ***********************************/
 class IFSelect_SelectionIterator {
 	public:
+		/****************** IFSelect_SelectionIterator ******************/
+		%feature("compactdefaultargs") IFSelect_SelectionIterator;
+		%feature("autodoc", "Creates an empty iterator, ready to be filled.
+
+Returns
+-------
+None
+") IFSelect_SelectionIterator;
+		 IFSelect_SelectionIterator();
+
+		/****************** IFSelect_SelectionIterator ******************/
+		%feature("compactdefaultargs") IFSelect_SelectionIterator;
+		%feature("autodoc", "Creates an iterator from a selection : it lists the selections from which <sel> depends (given by its method filliterator).
+
+Parameters
+----------
+sel: IFSelect_Selection
+
+Returns
+-------
+None
+") IFSelect_SelectionIterator;
+		 IFSelect_SelectionIterator(const opencascade::handle<IFSelect_Selection> & sel);
+
 		/****************** AddFromIter ******************/
 		%feature("compactdefaultargs") AddFromIter;
 		%feature("autodoc", "Adds to an iterator the content of another one (each selection is present only once in the result).
@@ -3571,30 +3595,6 @@ Returns
 None
 ") AddList;
 		void AddList(const IFSelect_TSeqOfSelection & list);
-
-		/****************** IFSelect_SelectionIterator ******************/
-		%feature("compactdefaultargs") IFSelect_SelectionIterator;
-		%feature("autodoc", "Creates an empty iterator, ready to be filled.
-
-Returns
--------
-None
-") IFSelect_SelectionIterator;
-		 IFSelect_SelectionIterator();
-
-		/****************** IFSelect_SelectionIterator ******************/
-		%feature("compactdefaultargs") IFSelect_SelectionIterator;
-		%feature("autodoc", "Creates an iterator from a selection : it lists the selections from which <sel> depends (given by its method filliterator).
-
-Parameters
-----------
-sel: IFSelect_Selection
-
-Returns
--------
-None
-") IFSelect_SelectionIterator;
-		 IFSelect_SelectionIterator(const opencascade::handle<IFSelect_Selection> & sel);
 
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
@@ -3708,6 +3708,35 @@ bool
 *****************************/
 class IFSelect_SessionFile {
 	public:
+		/****************** IFSelect_SessionFile ******************/
+		%feature("compactdefaultargs") IFSelect_SessionFile;
+		%feature("autodoc", "Creates a sessionfile, ready to read files in order to load them into a given worksession. the following read operations must then be called. it is also possible to perform a write, which produces a complete file of all the content of the worksession.
+
+Parameters
+----------
+WS: IFSelect_WorkSession
+
+Returns
+-------
+None
+") IFSelect_SessionFile;
+		 IFSelect_SessionFile(const opencascade::handle<IFSelect_WorkSession> & WS);
+
+		/****************** IFSelect_SessionFile ******************/
+		%feature("compactdefaultargs") IFSelect_SessionFile;
+		%feature("autodoc", "Creates a sessionfile which writes the content of a worksession to a file (directly calls write) then, isdone aknowledges on the result of the operation. but such a sessionfile may not read a file to a worksession.
+
+Parameters
+----------
+WS: IFSelect_WorkSession
+filename: char *
+
+Returns
+-------
+None
+") IFSelect_SessionFile;
+		 IFSelect_SessionFile(const opencascade::handle<IFSelect_WorkSession> & WS, const char * filename);
+
 		/****************** AddItem ******************/
 		%feature("compactdefaultargs") AddItem;
 		%feature("autodoc", "Adds an item to the worksession, taken as name the first item of the read line. if this name is not a name but a number or if this name is already recorded in the worksession, it adds the item but with no name. then the name is recorded in order to be used by the method itemvalue <active> commands to make <item> active or not in the session.
@@ -3757,35 +3786,6 @@ Returns
 None
 ") Destroy;
 		void Destroy();
-
-		/****************** IFSelect_SessionFile ******************/
-		%feature("compactdefaultargs") IFSelect_SessionFile;
-		%feature("autodoc", "Creates a sessionfile, ready to read files in order to load them into a given worksession. the following read operations must then be called. it is also possible to perform a write, which produces a complete file of all the content of the worksession.
-
-Parameters
-----------
-WS: IFSelect_WorkSession
-
-Returns
--------
-None
-") IFSelect_SessionFile;
-		 IFSelect_SessionFile(const opencascade::handle<IFSelect_WorkSession> & WS);
-
-		/****************** IFSelect_SessionFile ******************/
-		%feature("compactdefaultargs") IFSelect_SessionFile;
-		%feature("autodoc", "Creates a sessionfile which writes the content of a worksession to a file (directly calls write) then, isdone aknowledges on the result of the operation. but such a sessionfile may not read a file to a worksession.
-
-Parameters
-----------
-WS: IFSelect_WorkSession
-filename: char *
-
-Returns
--------
-None
-") IFSelect_SessionFile;
-		 IFSelect_SessionFile(const opencascade::handle<IFSelect_WorkSession> & WS, const char * filename);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -4194,6 +4194,16 @@ int
 **************************/
 class IFSelect_ShareOut : public Standard_Transient {
 	public:
+		/****************** IFSelect_ShareOut ******************/
+		%feature("compactdefaultargs") IFSelect_ShareOut;
+		%feature("autodoc", "Creates an empty shareout.
+
+Returns
+-------
+None
+") IFSelect_ShareOut;
+		 IFSelect_ShareOut();
+
 		/****************** AddDispatch ******************/
 		%feature("compactdefaultargs") AddDispatch;
 		%feature("autodoc", "Adds a dispatch to the list.
@@ -4393,16 +4403,6 @@ Returns
 bool
 ") HasRootName;
 		Standard_Boolean HasRootName(const Standard_Integer num);
-
-		/****************** IFSelect_ShareOut ******************/
-		%feature("compactdefaultargs") IFSelect_ShareOut;
-		%feature("autodoc", "Creates an empty shareout.
-
-Returns
--------
-None
-") IFSelect_ShareOut;
-		 IFSelect_ShareOut();
 
 		/****************** LastRun ******************/
 		%feature("compactdefaultargs") LastRun;
@@ -4634,56 +4634,6 @@ bool
 ********************************/
 class IFSelect_ShareOutResult {
 	public:
-		/****************** Dispatch ******************/
-		%feature("compactdefaultargs") Dispatch;
-		%feature("autodoc", "Returns the current dispatch.
-
-Returns
--------
-opencascade::handle<IFSelect_Dispatch>
-") Dispatch;
-		opencascade::handle<IFSelect_Dispatch> Dispatch();
-
-		/****************** DispatchRank ******************/
-		%feature("compactdefaultargs") DispatchRank;
-		%feature("autodoc", "Returns the rank of the current dispatch in the shareout returns zero if there is none (iteration finished).
-
-Returns
--------
-int
-") DispatchRank;
-		Standard_Integer DispatchRank();
-
-		/****************** Evaluate ******************/
-		%feature("compactdefaultargs") Evaluate;
-		%feature("autodoc", "Evaluates the result of a shareout : determines entities to be forgotten by the shareout, entities to be transferred several times (duplicated), prepares an iteration on the packets to be produced called the first time anyone question is asked, or after a call to reset. works by calling the method prepare.
-
-Returns
--------
-None
-") Evaluate;
-		void Evaluate();
-
-		/****************** FileName ******************/
-		%feature("compactdefaultargs") FileName;
-		%feature("autodoc", "Returns the file name which corresponds to current packet (computed by shareout) if current packet has no associated name (see shareout), the returned value is null.
-
-Returns
--------
-TCollection_AsciiString
-") FileName;
-		TCollection_AsciiString FileName();
-
-		/****************** Graph ******************/
-		%feature("compactdefaultargs") Graph;
-		%feature("autodoc", "Returns the graph used to create theshareoutresult.
-
-Returns
--------
-Interface_Graph
-") Graph;
-		const Interface_Graph & Graph();
-
 		/****************** IFSelect_ShareOutResult ******************/
 		%feature("compactdefaultargs") IFSelect_ShareOutResult;
 		%feature("autodoc", "Creates a shareoutresult from a shareout, to work on a model (without any more precision; uses active protocol).
@@ -4743,6 +4693,56 @@ Returns
 None
 ") IFSelect_ShareOutResult;
 		 IFSelect_ShareOutResult(const opencascade::handle<IFSelect_Dispatch> & disp, const Interface_Graph & G);
+
+		/****************** Dispatch ******************/
+		%feature("compactdefaultargs") Dispatch;
+		%feature("autodoc", "Returns the current dispatch.
+
+Returns
+-------
+opencascade::handle<IFSelect_Dispatch>
+") Dispatch;
+		opencascade::handle<IFSelect_Dispatch> Dispatch();
+
+		/****************** DispatchRank ******************/
+		%feature("compactdefaultargs") DispatchRank;
+		%feature("autodoc", "Returns the rank of the current dispatch in the shareout returns zero if there is none (iteration finished).
+
+Returns
+-------
+int
+") DispatchRank;
+		Standard_Integer DispatchRank();
+
+		/****************** Evaluate ******************/
+		%feature("compactdefaultargs") Evaluate;
+		%feature("autodoc", "Evaluates the result of a shareout : determines entities to be forgotten by the shareout, entities to be transferred several times (duplicated), prepares an iteration on the packets to be produced called the first time anyone question is asked, or after a call to reset. works by calling the method prepare.
+
+Returns
+-------
+None
+") Evaluate;
+		void Evaluate();
+
+		/****************** FileName ******************/
+		%feature("compactdefaultargs") FileName;
+		%feature("autodoc", "Returns the file name which corresponds to current packet (computed by shareout) if current packet has no associated name (see shareout), the returned value is null.
+
+Returns
+-------
+TCollection_AsciiString
+") FileName;
+		TCollection_AsciiString FileName();
+
+		/****************** Graph ******************/
+		%feature("compactdefaultargs") Graph;
+		%feature("autodoc", "Returns the graph used to create theshareoutresult.
+
+Returns
+-------
+Interface_Graph
+") Graph;
+		const Interface_Graph & Graph();
 
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
@@ -5020,6 +5020,21 @@ None
 *******************************/
 class IFSelect_SignatureList : public Standard_Transient {
 	public:
+		/****************** IFSelect_SignatureList ******************/
+		%feature("compactdefaultargs") IFSelect_SignatureList;
+		%feature("autodoc", "Creates a signaturelist. if <withlist> is true, entities will be not only counted per signature, but also listed.
+
+Parameters
+----------
+withlist: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") IFSelect_SignatureList;
+		 IFSelect_SignatureList(const Standard_Boolean withlist = Standard_False);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds an entity with its signature, i.e. : - counts an item more for <sign> - if record-list status is set, records the entity accepts a null entity (the signature is then for the global model). but if the string is empty, counts a null item. //! if signonly mode is set, this work is replaced by just setting lastvalue.
@@ -5068,21 +5083,6 @@ Returns
 bool
 ") HasEntities;
 		Standard_Boolean HasEntities();
-
-		/****************** IFSelect_SignatureList ******************/
-		%feature("compactdefaultargs") IFSelect_SignatureList;
-		%feature("autodoc", "Creates a signaturelist. if <withlist> is true, entities will be not only counted per signature, but also listed.
-
-Parameters
-----------
-withlist: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") IFSelect_SignatureList;
-		 IFSelect_SignatureList(const Standard_Boolean withlist = Standard_False);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -5493,6 +5493,16 @@ bool
 *****************************/
 class IFSelect_WorkSession : public Standard_Transient {
 	public:
+		/****************** IFSelect_WorkSession ******************/
+		%feature("compactdefaultargs") IFSelect_WorkSession;
+		%feature("autodoc", "Creates a work session it provides default, empty shareout and modelcopier, which can be replaced (if required, should be done just after creation).
+
+Returns
+-------
+None
+") IFSelect_WorkSession;
+		 IFSelect_WorkSession();
+
 		/****************** AddItem ******************/
 		%feature("compactdefaultargs") AddItem;
 		%feature("autodoc", "Adds an item and returns its attached ident. does nothing if <item> is already recorded (and returns its attached ident) <active> if true commands call to setactive (see below) remark : the determined ident is used if <item> is a dispatch, to fill the shareout.
@@ -6219,16 +6229,6 @@ Returns
 bool
 ") HasName;
 		Standard_Boolean HasName(const opencascade::handle<Standard_Transient> & item);
-
-		/****************** IFSelect_WorkSession ******************/
-		%feature("compactdefaultargs") IFSelect_WorkSession;
-		%feature("autodoc", "Creates a work session it provides default, empty shareout and modelcopier, which can be replaced (if required, should be done just after creation).
-
-Returns
--------
-None
-") IFSelect_WorkSession;
-		 IFSelect_WorkSession();
 
 		/****************** IntParam ******************/
 		%feature("compactdefaultargs") IntParam;
@@ -7769,6 +7769,22 @@ IFSelect_ReturnStatus
 *********************/
 class IFSelect_Act : public IFSelect_Activator {
 	public:
+		/****************** IFSelect_Act ******************/
+		%feature("compactdefaultargs") IFSelect_Act;
+		%feature("autodoc", "Creates an act with a name, help and a function mode (add or addset) is given when recording.
+
+Parameters
+----------
+name: char *
+help: char *
+func: IFSelect_ActFunc
+
+Returns
+-------
+None
+") IFSelect_Act;
+		 IFSelect_Act(const char * name, const char * help, const IFSelect_ActFunc func);
+
 		/****************** AddFSet ******************/
 		%feature("compactdefaultargs") AddFSet;
 		%feature("autodoc", "Adds a function with its name and help : creates an act then records it as function for xset (i.e. to create control item).
@@ -7829,22 +7845,6 @@ Returns
 char *
 ") Help;
 		const char * Help(const Standard_Integer number);
-
-		/****************** IFSelect_Act ******************/
-		%feature("compactdefaultargs") IFSelect_Act;
-		%feature("autodoc", "Creates an act with a name, help and a function mode (add or addset) is given when recording.
-
-Parameters
-----------
-name: char *
-help: char *
-func: IFSelect_ActFunc
-
-Returns
--------
-None
-") IFSelect_Act;
-		 IFSelect_Act(const char * name, const char * help, const IFSelect_ActFunc func);
 
 		/****************** SetGroup ******************/
 		%feature("compactdefaultargs") SetGroup;
@@ -7935,6 +7935,21 @@ bool
 ******************************/
 class IFSelect_CheckCounter : public IFSelect_SignatureList {
 	public:
+		/****************** IFSelect_CheckCounter ******************/
+		%feature("compactdefaultargs") IFSelect_CheckCounter;
+		%feature("autodoc", "Creates a checkcounter, empty ready to work.
+
+Parameters
+----------
+withlist: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") IFSelect_CheckCounter;
+		 IFSelect_CheckCounter(const Standard_Boolean withlist = Standard_False);
+
 		/****************** Analyse ******************/
 		%feature("compactdefaultargs") Analyse;
 		%feature("autodoc", "Analyses a checkiterator according a model (which detains the entities for which the checkiterator has messages), i.e. counts messages for entities if <original> is true, does not consider final messages but those before interpretation (such as inserting variables : integers, reals, strings) if <failsonly> is true, only fails are considered remark : global messages are recorded with a null entity.
@@ -7953,21 +7968,6 @@ Returns
 None
 ") Analyse;
 		void Analyse(const Interface_CheckIterator & list, const opencascade::handle<Interface_InterfaceModel> & model, const Standard_Boolean original = Standard_False, const Standard_Boolean failsonly = Standard_False);
-
-		/****************** IFSelect_CheckCounter ******************/
-		%feature("compactdefaultargs") IFSelect_CheckCounter;
-		%feature("autodoc", "Creates a checkcounter, empty ready to work.
-
-Parameters
-----------
-withlist: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") IFSelect_CheckCounter;
-		 IFSelect_CheckCounter(const Standard_Boolean withlist = Standard_False);
 
 		/****************** SetSignature ******************/
 		%feature("compactdefaultargs") SetSignature;
@@ -8075,6 +8075,16 @@ None
 ******************************/
 class IFSelect_DispPerCount : public IFSelect_Dispatch {
 	public:
+		/****************** IFSelect_DispPerCount ******************/
+		%feature("compactdefaultargs") IFSelect_DispPerCount;
+		%feature("autodoc", "Creates a disppercount with no count (default value 1).
+
+Returns
+-------
+None
+") IFSelect_DispPerCount;
+		 IFSelect_DispPerCount();
+
 		/****************** Count ******************/
 		%feature("compactdefaultargs") Count;
 		%feature("autodoc", "Returns the count parameter used for splitting.
@@ -8094,16 +8104,6 @@ Returns
 int
 ") CountValue;
 		Standard_Integer CountValue();
-
-		/****************** IFSelect_DispPerCount ******************/
-		%feature("compactdefaultargs") IFSelect_DispPerCount;
-		%feature("autodoc", "Creates a disppercount with no count (default value 1).
-
-Returns
--------
-None
-") IFSelect_DispPerCount;
-		 IFSelect_DispPerCount();
 
 		/****************** Label ******************/
 		%feature("compactdefaultargs") Label;
@@ -8175,6 +8175,16 @@ None
 ******************************/
 class IFSelect_DispPerFiles : public IFSelect_Dispatch {
 	public:
+		/****************** IFSelect_DispPerFiles ******************/
+		%feature("compactdefaultargs") IFSelect_DispPerFiles;
+		%feature("autodoc", "Creates a dispperfiles with no count (default value 1 file).
+
+Returns
+-------
+None
+") IFSelect_DispPerFiles;
+		 IFSelect_DispPerFiles();
+
 		/****************** Count ******************/
 		%feature("compactdefaultargs") Count;
 		%feature("autodoc", "Returns the count parameter used for splitting.
@@ -8194,16 +8204,6 @@ Returns
 int
 ") CountValue;
 		Standard_Integer CountValue();
-
-		/****************** IFSelect_DispPerFiles ******************/
-		%feature("compactdefaultargs") IFSelect_DispPerFiles;
-		%feature("autodoc", "Creates a dispperfiles with no count (default value 1 file).
-
-Returns
--------
-None
-") IFSelect_DispPerFiles;
-		 IFSelect_DispPerFiles();
 
 		/****************** Label ******************/
 		%feature("compactdefaultargs") Label;
@@ -8475,6 +8475,23 @@ None
 *****************************/
 class IFSelect_ParamEditor : public IFSelect_Editor {
 	public:
+		/****************** IFSelect_ParamEditor ******************/
+		%feature("compactdefaultargs") IFSelect_ParamEditor;
+		%feature("autodoc", "Creates a parameditor, empty, with a maximum count of params (default is 100) and a label, by default it will be 'param editor'.
+
+Parameters
+----------
+nbmax: int,optional
+	default value is 100
+label: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") IFSelect_ParamEditor;
+		 IFSelect_ParamEditor(const Standard_Integer nbmax = 100, const char * label = "");
+
 		/****************** AddConstantText ******************/
 		%feature("compactdefaultargs") AddConstantText;
 		%feature("autodoc", "Adds a constant text, it will be read only by default, its long name equates its shortname.
@@ -8523,23 +8540,6 @@ Returns
 bool
 ") Apply;
 		Standard_Boolean Apply(const opencascade::handle<IFSelect_EditForm> & form, const opencascade::handle<Standard_Transient> & ent, const opencascade::handle<Interface_InterfaceModel> & model);
-
-		/****************** IFSelect_ParamEditor ******************/
-		%feature("compactdefaultargs") IFSelect_ParamEditor;
-		%feature("autodoc", "Creates a parameditor, empty, with a maximum count of params (default is 100) and a label, by default it will be 'param editor'.
-
-Parameters
-----------
-nbmax: int,optional
-	default value is 100
-label: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") IFSelect_ParamEditor;
-		 IFSelect_ParamEditor(const Standard_Integer nbmax = 100, const char * label = "");
 
 		/****************** Label ******************/
 		%feature("compactdefaultargs") Label;
@@ -8960,6 +8960,21 @@ None
 ******************************/
 class IFSelect_SessionPilot : public IFSelect_Activator {
 	public:
+		/****************** IFSelect_SessionPilot ******************/
+		%feature("compactdefaultargs") IFSelect_SessionPilot;
+		%feature("autodoc", "Creates an empty sessionpilot, with a prompt which will be displayed on querying commands. if not precised (''), this prompt is set to 'test-xstep>'.
+
+Parameters
+----------
+prompt: char *,optional
+	default value is ""
+
+Returns
+-------
+None
+") IFSelect_SessionPilot;
+		 IFSelect_SessionPilot(const char * prompt = "");
+
 		/****************** Arg ******************/
 		%feature("compactdefaultargs") Arg;
 		%feature("autodoc", "Returns a word given its rank, as a cstring. as for word, begins at 0 (the command name), etc...
@@ -9096,21 +9111,6 @@ Returns
 char *
 ") Help;
 		const char * Help(const Standard_Integer number);
-
-		/****************** IFSelect_SessionPilot ******************/
-		%feature("compactdefaultargs") IFSelect_SessionPilot;
-		%feature("autodoc", "Creates an empty sessionpilot, with a prompt which will be displayed on querying commands. if not precised (''), this prompt is set to 'test-xstep>'.
-
-Parameters
-----------
-prompt: char *,optional
-	default value is ""
-
-Returns
--------
-None
-") IFSelect_SessionPilot;
-		 IFSelect_SessionPilot(const char * prompt = "");
 
 		/****************** Library ******************/
 		%feature("compactdefaultargs") Library;
@@ -9366,6 +9366,41 @@ char *
 *****************************/
 class IFSelect_SignCounter : public IFSelect_SignatureList {
 	public:
+		/****************** IFSelect_SignCounter ******************/
+		%feature("compactdefaultargs") IFSelect_SignCounter;
+		%feature("autodoc", "Creates a signcounter, without proper signature if <withmap> is true (default), added entities are counted only if they are not yet recorded in the map map control can be set off if the input garantees uniqueness of data <withlist> is transmitted to signaturelist (option to list entities, not only to count them).
+
+Parameters
+----------
+withmap: bool,optional
+	default value is Standard_True
+withlist: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") IFSelect_SignCounter;
+		 IFSelect_SignCounter(const Standard_Boolean withmap = Standard_True, const Standard_Boolean withlist = Standard_False);
+
+		/****************** IFSelect_SignCounter ******************/
+		%feature("compactdefaultargs") IFSelect_SignCounter;
+		%feature("autodoc", "Creates a signcounter, with a predefined signature other arguments as for create without signature.
+
+Parameters
+----------
+matcher: IFSelect_Signature
+withmap: bool,optional
+	default value is Standard_True
+withlist: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") IFSelect_SignCounter;
+		 IFSelect_SignCounter(const opencascade::handle<IFSelect_Signature> & matcher, const Standard_Boolean withmap = Standard_True, const Standard_Boolean withlist = Standard_False);
+
 		/****************** AddEntity ******************/
 		%feature("compactdefaultargs") AddEntity;
 		%feature("autodoc", "Adds an entity by considering its signature, which is given by call to method addsign returns true if added, false if already in the map (and map control status set).
@@ -9486,41 +9521,6 @@ char *
 ") ComputedSign;
 		const char * ComputedSign(const opencascade::handle<Standard_Transient> & ent, const Interface_Graph & G);
 
-		/****************** IFSelect_SignCounter ******************/
-		%feature("compactdefaultargs") IFSelect_SignCounter;
-		%feature("autodoc", "Creates a signcounter, without proper signature if <withmap> is true (default), added entities are counted only if they are not yet recorded in the map map control can be set off if the input garantees uniqueness of data <withlist> is transmitted to signaturelist (option to list entities, not only to count them).
-
-Parameters
-----------
-withmap: bool,optional
-	default value is Standard_True
-withlist: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") IFSelect_SignCounter;
-		 IFSelect_SignCounter(const Standard_Boolean withmap = Standard_True, const Standard_Boolean withlist = Standard_False);
-
-		/****************** IFSelect_SignCounter ******************/
-		%feature("compactdefaultargs") IFSelect_SignCounter;
-		%feature("autodoc", "Creates a signcounter, with a predefined signature other arguments as for create without signature.
-
-Parameters
-----------
-matcher: IFSelect_Signature
-withmap: bool,optional
-	default value is Standard_True
-withlist: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") IFSelect_SignCounter;
-		 IFSelect_SignCounter(const opencascade::handle<IFSelect_Signature> & matcher, const Standard_Boolean withmap = Standard_True, const Standard_Boolean withlist = Standard_False);
-
 		/****************** SelMode ******************/
 		%feature("compactdefaultargs") SelMode;
 		%feature("autodoc", "Returns the mode of working with the selection.
@@ -9624,6 +9624,20 @@ opencascade::handle<IFSelect_Signature>
 ******************************/
 class IFSelect_SignMultiple : public IFSelect_Signature {
 	public:
+		/****************** IFSelect_SignMultiple ******************/
+		%feature("compactdefaultargs") IFSelect_SignMultiple;
+		%feature("autodoc", "Creates an empty signmultiple with a name this name should take expected tabulations into account.
+
+Parameters
+----------
+name: char *
+
+Returns
+-------
+None
+") IFSelect_SignMultiple;
+		 IFSelect_SignMultiple(const char * name);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a signature. width, if given, gives the tabulation if <maxi> is true, it is a forced tabulation (overlength is replaced by a final dot) if <maxi> is false, just 3 blanks follow an overlength.
@@ -9641,20 +9655,6 @@ Returns
 None
 ") Add;
 		void Add(const opencascade::handle<IFSelect_Signature> & subsign, const Standard_Integer width = 0, const Standard_Boolean maxi = Standard_False);
-
-		/****************** IFSelect_SignMultiple ******************/
-		%feature("compactdefaultargs") IFSelect_SignMultiple;
-		%feature("autodoc", "Creates an empty signmultiple with a name this name should take expected tabulations into account.
-
-Parameters
-----------
-name: char *
-
-Returns
--------
-None
-") IFSelect_SignMultiple;
-		 IFSelect_SignMultiple(const char * name);
 
 		/****************** Matches ******************/
 		%feature("compactdefaultargs") Matches;
@@ -9750,6 +9750,16 @@ char *
 ******************************/
 class IFSelect_SignValidity : public IFSelect_Signature {
 	public:
+		/****************** IFSelect_SignValidity ******************/
+		%feature("compactdefaultargs") IFSelect_SignValidity;
+		%feature("autodoc", "Returns a signvalidity.
+
+Returns
+-------
+None
+") IFSelect_SignValidity;
+		 IFSelect_SignValidity();
+
 		/****************** CVal ******************/
 		%feature("compactdefaultargs") CVal;
 		%feature("autodoc", "Returns the signature for a transient object, as a validity deducted from data (reports) stored in the model. class method, can be called by any one.
@@ -9764,16 +9774,6 @@ Returns
 char *
 ") CVal;
 		static const char * CVal(const opencascade::handle<Standard_Transient> & ent, const opencascade::handle<Interface_InterfaceModel> & model);
-
-		/****************** IFSelect_SignValidity ******************/
-		%feature("compactdefaultargs") IFSelect_SignValidity;
-		%feature("autodoc", "Returns a signvalidity.
-
-Returns
--------
-None
-") IFSelect_SignValidity;
-		 IFSelect_SignValidity();
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -9806,6 +9806,16 @@ char *
 ***********************************/
 class IFSelect_TransformStandard : public IFSelect_Transformer {
 	public:
+		/****************** IFSelect_TransformStandard ******************/
+		%feature("compactdefaultargs") IFSelect_TransformStandard;
+		%feature("autodoc", "Creates a transformstandard, option standardcopy, no modifier.
+
+Returns
+-------
+None
+") IFSelect_TransformStandard;
+		 IFSelect_TransformStandard();
+
 		/****************** AddModifier ******************/
 		%feature("compactdefaultargs") AddModifier;
 		%feature("autodoc", "Adds a modifier to the list : - <atnum> = 0 (default) : at the end of the list - <atnum> > 0 : at rank <atnum> returns true if done, false if <atnum> is out of range.
@@ -9865,16 +9875,6 @@ Returns
 bool
 ") CopyOption;
 		Standard_Boolean CopyOption();
-
-		/****************** IFSelect_TransformStandard ******************/
-		%feature("compactdefaultargs") IFSelect_TransformStandard;
-		%feature("autodoc", "Creates a transformstandard, option standardcopy, no modifier.
-
-Returns
--------
-None
-") IFSelect_TransformStandard;
-		 IFSelect_TransformStandard();
 
 		/****************** Label ******************/
 		%feature("compactdefaultargs") Label;
@@ -10070,6 +10070,23 @@ bool
 ******************************/
 class IFSelect_GraphCounter : public IFSelect_SignCounter {
 	public:
+		/****************** IFSelect_GraphCounter ******************/
+		%feature("compactdefaultargs") IFSelect_GraphCounter;
+		%feature("autodoc", "Creates a graphcounter, without applied selection.
+
+Parameters
+----------
+withmap: bool,optional
+	default value is Standard_True
+withlist: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") IFSelect_GraphCounter;
+		 IFSelect_GraphCounter(const Standard_Boolean withmap = Standard_True, const Standard_Boolean withlist = Standard_False);
+
 		/****************** AddWithGraph ******************/
 		%feature("compactdefaultargs") AddWithGraph;
 		%feature("autodoc", "Adds a list of entities in the context given by the graph default takes the count of entities selected by the applied selection, when it is given each entity of the list can be redefined.
@@ -10094,23 +10111,6 @@ Returns
 opencascade::handle<IFSelect_SelectDeduct>
 ") Applied;
 		opencascade::handle<IFSelect_SelectDeduct> Applied();
-
-		/****************** IFSelect_GraphCounter ******************/
-		%feature("compactdefaultargs") IFSelect_GraphCounter;
-		%feature("autodoc", "Creates a graphcounter, without applied selection.
-
-Parameters
-----------
-withmap: bool,optional
-	default value is Standard_True
-withlist: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") IFSelect_GraphCounter;
-		 IFSelect_GraphCounter(const Standard_Boolean withmap = Standard_True, const Standard_Boolean withlist = Standard_False);
 
 		/****************** SetApplied ******************/
 		%feature("compactdefaultargs") SetApplied;
@@ -10142,16 +10142,6 @@ None
 *******************************/
 class IFSelect_ModifEditForm : public IFSelect_Modifier {
 	public:
-		/****************** EditForm ******************/
-		%feature("compactdefaultargs") EditForm;
-		%feature("autodoc", "Returns the editform.
-
-Returns
--------
-opencascade::handle<IFSelect_EditForm>
-") EditForm;
-		opencascade::handle<IFSelect_EditForm> EditForm();
-
 		/****************** IFSelect_ModifEditForm ******************/
 		%feature("compactdefaultargs") IFSelect_ModifEditForm;
 		%feature("autodoc", "Creates a modifeditform. it may not change the graph.
@@ -10165,6 +10155,16 @@ Returns
 None
 ") IFSelect_ModifEditForm;
 		 IFSelect_ModifEditForm(const opencascade::handle<IFSelect_EditForm> & editform);
+
+		/****************** EditForm ******************/
+		%feature("compactdefaultargs") EditForm;
+		%feature("autodoc", "Returns the editform.
+
+Returns
+-------
+opencascade::handle<IFSelect_EditForm>
+") EditForm;
+		opencascade::handle<IFSelect_EditForm> EditForm();
 
 		/****************** Label ******************/
 		%feature("compactdefaultargs") Label;
@@ -10839,6 +10839,16 @@ Interface_EntityIterator
 *************************************/
 class IFSelect_SelectModelEntities : public IFSelect_SelectBase {
 	public:
+		/****************** IFSelect_SelectModelEntities ******************/
+		%feature("compactdefaultargs") IFSelect_SelectModelEntities;
+		%feature("autodoc", "Creates a selectmodelroot.
+
+Returns
+-------
+None
+") IFSelect_SelectModelEntities;
+		 IFSelect_SelectModelEntities();
+
 		/****************** CompleteResult ******************/
 		%feature("compactdefaultargs") CompleteResult;
 		%feature("autodoc", "The complete list of entities (including shared ones) ... is exactly identical to rootresults in this case.
@@ -10852,16 +10862,6 @@ Returns
 Interface_EntityIterator
 ") CompleteResult;
 		virtual Interface_EntityIterator CompleteResult(const Interface_Graph & G);
-
-		/****************** IFSelect_SelectModelEntities ******************/
-		%feature("compactdefaultargs") IFSelect_SelectModelEntities;
-		%feature("autodoc", "Creates a selectmodelroot.
-
-Returns
--------
-None
-") IFSelect_SelectModelEntities;
-		 IFSelect_SelectModelEntities();
 
 		/****************** Label ******************/
 		%feature("compactdefaultargs") Label;
@@ -10953,6 +10953,16 @@ Interface_EntityIterator
 *******************************/
 class IFSelect_SelectPointed : public IFSelect_SelectBase {
 	public:
+		/****************** IFSelect_SelectPointed ******************/
+		%feature("compactdefaultargs") IFSelect_SelectPointed;
+		%feature("autodoc", "Creates a selectpointed.
+
+Returns
+-------
+None
+") IFSelect_SelectPointed;
+		 IFSelect_SelectPointed();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds an item. returns true if done, false if <item> is already in the selected list.
@@ -10990,16 +11000,6 @@ Returns
 None
 ") Clear;
 		void Clear();
-
-		/****************** IFSelect_SelectPointed ******************/
-		%feature("compactdefaultargs") IFSelect_SelectPointed;
-		%feature("autodoc", "Creates a selectpointed.
-
-Returns
--------
-None
-") IFSelect_SelectPointed;
-		 IFSelect_SelectPointed();
 
 		/****************** IsSet ******************/
 		%feature("compactdefaultargs") IsSet;
@@ -11301,6 +11301,16 @@ Interface_EntityIterator
 *****************************/
 class IFSelect_SelectSuite : public IFSelect_SelectDeduct {
 	public:
+		/****************** IFSelect_SelectSuite ******************/
+		%feature("compactdefaultargs") IFSelect_SelectSuite;
+		%feature("autodoc", "Creates an empty selectsuite.
+
+Returns
+-------
+None
+") IFSelect_SelectSuite;
+		 IFSelect_SelectSuite();
+
 		/****************** AddInput ******************/
 		%feature("compactdefaultargs") AddInput;
 		%feature("autodoc", "Adds an input selection. i.e. : if <item> is a selectdeduct, adds it as previous, not as input else, sets it as input returns true when done returns false and refuses to work if input is already defined.
@@ -11342,16 +11352,6 @@ Returns
 None
 ") AddPrevious;
 		void AddPrevious(const opencascade::handle<IFSelect_SelectDeduct> & item);
-
-		/****************** IFSelect_SelectSuite ******************/
-		%feature("compactdefaultargs") IFSelect_SelectSuite;
-		%feature("autodoc", "Creates an empty selectsuite.
-
-Returns
--------
-None
-") IFSelect_SelectSuite;
-		 IFSelect_SelectSuite();
 
 		/****************** Item ******************/
 		%feature("compactdefaultargs") Item;
@@ -11572,16 +11572,6 @@ opencascade::handle<Standard_Type>
 *************************************/
 class IFSelect_SelectErrorEntities : public IFSelect_SelectExtract {
 	public:
-		/****************** ExtractLabel ******************/
-		%feature("compactdefaultargs") ExtractLabel;
-		%feature("autodoc", "Returns a text defining the criterium : 'error entities'.
-
-Returns
--------
-TCollection_AsciiString
-") ExtractLabel;
-		TCollection_AsciiString ExtractLabel();
-
 		/****************** IFSelect_SelectErrorEntities ******************/
 		%feature("compactdefaultargs") IFSelect_SelectErrorEntities;
 		%feature("autodoc", "Creates a selecterrorentities.
@@ -11591,6 +11581,16 @@ Returns
 None
 ") IFSelect_SelectErrorEntities;
 		 IFSelect_SelectErrorEntities();
+
+		/****************** ExtractLabel ******************/
+		%feature("compactdefaultargs") ExtractLabel;
+		%feature("autodoc", "Returns a text defining the criterium : 'error entities'.
+
+Returns
+-------
+TCollection_AsciiString
+") ExtractLabel;
+		TCollection_AsciiString ExtractLabel();
 
 		/****************** Sort ******************/
 		%feature("compactdefaultargs") Sort;
@@ -11624,6 +11624,20 @@ bool
 ****************************/
 class IFSelect_SelectFlag : public IFSelect_SelectExtract {
 	public:
+		/****************** IFSelect_SelectFlag ******************/
+		%feature("compactdefaultargs") IFSelect_SelectFlag;
+		%feature("autodoc", "Creates a select flag, to query a flag designated by its name.
+
+Parameters
+----------
+flagname: char *
+
+Returns
+-------
+None
+") IFSelect_SelectFlag;
+		 IFSelect_SelectFlag(const char * flagname);
+
 		/****************** ExtractLabel ******************/
 		%feature("compactdefaultargs") ExtractLabel;
 		%feature("autodoc", "Returns a text defining the criterium, includes the flag name.
@@ -11643,20 +11657,6 @@ Returns
 char *
 ") FlagName;
 		const char * FlagName();
-
-		/****************** IFSelect_SelectFlag ******************/
-		%feature("compactdefaultargs") IFSelect_SelectFlag;
-		%feature("autodoc", "Creates a select flag, to query a flag designated by its name.
-
-Parameters
-----------
-flagname: char *
-
-Returns
--------
-None
-") IFSelect_SelectFlag;
-		 IFSelect_SelectFlag(const char * flagname);
 
 		/****************** RootResult ******************/
 		%feature("compactdefaultargs") RootResult;
@@ -11753,6 +11753,16 @@ opencascade::handle<Standard_Transient>
 *****************************/
 class IFSelect_SelectRange : public IFSelect_SelectExtract {
 	public:
+		/****************** IFSelect_SelectRange ******************/
+		%feature("compactdefaultargs") IFSelect_SelectRange;
+		%feature("autodoc", "Creates a selectrange. default is take all the input list.
+
+Returns
+-------
+None
+") IFSelect_SelectRange;
+		 IFSelect_SelectRange();
+
 		/****************** ExtractLabel ******************/
 		%feature("compactdefaultargs") ExtractLabel;
 		%feature("autodoc", "Returns a text defining the criterium : following cases, ' from .. until ..' or 'from ..' or 'until ..' or 'rank no ..'.
@@ -11782,16 +11792,6 @@ Returns
 bool
 ") HasUpper;
 		Standard_Boolean HasUpper();
-
-		/****************** IFSelect_SelectRange ******************/
-		%feature("compactdefaultargs") IFSelect_SelectRange;
-		%feature("autodoc", "Creates a selectrange. default is take all the input list.
-
-Returns
--------
-None
-") IFSelect_SelectRange;
-		 IFSelect_SelectRange();
 
 		/****************** Lower ******************/
 		%feature("compactdefaultargs") Lower;
@@ -11922,16 +11922,6 @@ int
 *********************************/
 class IFSelect_SelectRootComps : public IFSelect_SelectExtract {
 	public:
-		/****************** ExtractLabel ******************/
-		%feature("compactdefaultargs") ExtractLabel;
-		%feature("autodoc", "Returns a text defining the criterium : 'local root componants'.
-
-Returns
--------
-TCollection_AsciiString
-") ExtractLabel;
-		TCollection_AsciiString ExtractLabel();
-
 		/****************** IFSelect_SelectRootComps ******************/
 		%feature("compactdefaultargs") IFSelect_SelectRootComps;
 		%feature("autodoc", "Creates a selectrootcomps.
@@ -11941,6 +11931,16 @@ Returns
 None
 ") IFSelect_SelectRootComps;
 		 IFSelect_SelectRootComps();
+
+		/****************** ExtractLabel ******************/
+		%feature("compactdefaultargs") ExtractLabel;
+		%feature("autodoc", "Returns a text defining the criterium : 'local root componants'.
+
+Returns
+-------
+TCollection_AsciiString
+") ExtractLabel;
+		TCollection_AsciiString ExtractLabel();
 
 		/****************** RootResult ******************/
 		%feature("compactdefaultargs") RootResult;
@@ -11988,16 +11988,6 @@ bool
 *****************************/
 class IFSelect_SelectRoots : public IFSelect_SelectExtract {
 	public:
-		/****************** ExtractLabel ******************/
-		%feature("compactdefaultargs") ExtractLabel;
-		%feature("autodoc", "Returns a text defining the criterium : 'local root entities'.
-
-Returns
--------
-TCollection_AsciiString
-") ExtractLabel;
-		TCollection_AsciiString ExtractLabel();
-
 		/****************** IFSelect_SelectRoots ******************/
 		%feature("compactdefaultargs") IFSelect_SelectRoots;
 		%feature("autodoc", "Creates a selectroots.
@@ -12007,6 +11997,16 @@ Returns
 None
 ") IFSelect_SelectRoots;
 		 IFSelect_SelectRoots();
+
+		/****************** ExtractLabel ******************/
+		%feature("compactdefaultargs") ExtractLabel;
+		%feature("autodoc", "Returns a text defining the criterium : 'local root entities'.
+
+Returns
+-------
+TCollection_AsciiString
+") ExtractLabel;
+		TCollection_AsciiString ExtractLabel();
 
 		/****************** RootResult ******************/
 		%feature("compactdefaultargs") RootResult;
@@ -12054,6 +12054,23 @@ bool
 ****************************/
 class IFSelect_SelectSent : public IFSelect_SelectExtract {
 	public:
+		/****************** IFSelect_SelectSent ******************/
+		%feature("compactdefaultargs") IFSelect_SelectSent;
+		%feature("autodoc", "Creates a selectsent : sentcount = 0 -> remaining (non-sent) entities sentcount = 1, atleast = true (d) -> sent (at least once) sentcount = 2, atleast = true -> duplicated (sent least twice) etc... sentcount = 1, atleast = false -> sent just once (non-dupl.d) sentcount = 2, atleast = false -> sent just twice etc...
+
+Parameters
+----------
+sentcount: int,optional
+	default value is 1
+atleast: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") IFSelect_SelectSent;
+		 IFSelect_SelectSent(const Standard_Integer sentcount = 1, const Standard_Boolean atleast = Standard_True);
+
 		/****************** AtLeast ******************/
 		%feature("compactdefaultargs") AtLeast;
 		%feature("autodoc", "Returns the <atleast> status, true for sending at least the sending count, false for sending exactly the sending count remark : if sentcount is 0, atleast is ignored.
@@ -12073,23 +12090,6 @@ Returns
 TCollection_AsciiString
 ") ExtractLabel;
 		TCollection_AsciiString ExtractLabel();
-
-		/****************** IFSelect_SelectSent ******************/
-		%feature("compactdefaultargs") IFSelect_SelectSent;
-		%feature("autodoc", "Creates a selectsent : sentcount = 0 -> remaining (non-sent) entities sentcount = 1, atleast = true (d) -> sent (at least once) sentcount = 2, atleast = true -> duplicated (sent least twice) etc... sentcount = 1, atleast = false -> sent just once (non-dupl.d) sentcount = 2, atleast = false -> sent just twice etc...
-
-Parameters
-----------
-sentcount: int,optional
-	default value is 1
-atleast: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") IFSelect_SelectSent;
-		 IFSelect_SelectSent(const Standard_Integer sentcount = 1, const Standard_Boolean atleast = Standard_True);
 
 		/****************** RootResult ******************/
 		%feature("compactdefaultargs") RootResult;
@@ -12147,26 +12147,6 @@ bool
 *********************************/
 class IFSelect_SelectSignature : public IFSelect_SelectExtract {
 	public:
-		/****************** Counter ******************/
-		%feature("compactdefaultargs") Counter;
-		%feature("autodoc", "Returns the used signcounter. can be used as alternative for signature.
-
-Returns
--------
-opencascade::handle<IFSelect_SignCounter>
-") Counter;
-		opencascade::handle<IFSelect_SignCounter> Counter();
-
-		/****************** ExtractLabel ******************/
-		%feature("compactdefaultargs") ExtractLabel;
-		%feature("autodoc", "Returns a text defining the criterium. (it refers to the text and exact flag to be matched, and is qualified by the name provided by the signature).
-
-Returns
--------
-TCollection_AsciiString
-") ExtractLabel;
-		TCollection_AsciiString ExtractLabel();
-
 		/****************** IFSelect_SelectSignature ******************/
 		%feature("compactdefaultargs") IFSelect_SelectSignature;
 		%feature("autodoc", "Creates a selectsignature with its signature and its text to match. <exact> if true requires exact match, if false requires <signtext> to be contained in the signature of the entity (default is 'exact').
@@ -12217,6 +12197,26 @@ Returns
 None
 ") IFSelect_SelectSignature;
 		 IFSelect_SelectSignature(const opencascade::handle<IFSelect_SignCounter> & matcher, const char * signtext, const Standard_Boolean exact = Standard_True);
+
+		/****************** Counter ******************/
+		%feature("compactdefaultargs") Counter;
+		%feature("autodoc", "Returns the used signcounter. can be used as alternative for signature.
+
+Returns
+-------
+opencascade::handle<IFSelect_SignCounter>
+") Counter;
+		opencascade::handle<IFSelect_SignCounter> Counter();
+
+		/****************** ExtractLabel ******************/
+		%feature("compactdefaultargs") ExtractLabel;
+		%feature("autodoc", "Returns a text defining the criterium. (it refers to the text and exact flag to be matched, and is qualified by the name provided by the signature).
+
+Returns
+-------
+TCollection_AsciiString
+") ExtractLabel;
+		TCollection_AsciiString ExtractLabel();
 
 		/****************** IsExact ******************/
 		%feature("compactdefaultargs") IsExact;
@@ -12296,6 +12296,25 @@ bool
 ************************************/
 class IFSelect_SelectSignedShared : public IFSelect_SelectExplore {
 	public:
+		/****************** IFSelect_SelectSignedShared ******************/
+		%feature("compactdefaultargs") IFSelect_SelectSignedShared;
+		%feature("autodoc", "Creates a selectsignedshared, defaulted for any level with a given signature and text to match.
+
+Parameters
+----------
+matcher: IFSelect_Signature
+signtext: char *
+exact: bool,optional
+	default value is Standard_True
+level: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") IFSelect_SelectSignedShared;
+		 IFSelect_SelectSignedShared(const opencascade::handle<IFSelect_Signature> & matcher, const char * signtext, const Standard_Boolean exact = Standard_True, const Standard_Integer level = 0);
+
 		/****************** Explore ******************/
 		%feature("compactdefaultargs") Explore;
 		%feature("autodoc", "Explores an entity : its shared entities <ent> to take if it matches the signature at level max, filters the result. else gives all shareds.
@@ -12322,25 +12341,6 @@ Returns
 TCollection_AsciiString
 ") ExploreLabel;
 		TCollection_AsciiString ExploreLabel();
-
-		/****************** IFSelect_SelectSignedShared ******************/
-		%feature("compactdefaultargs") IFSelect_SelectSignedShared;
-		%feature("autodoc", "Creates a selectsignedshared, defaulted for any level with a given signature and text to match.
-
-Parameters
-----------
-matcher: IFSelect_Signature
-signtext: char *
-exact: bool,optional
-	default value is Standard_True
-level: int,optional
-	default value is 0
-
-Returns
--------
-None
-") IFSelect_SelectSignedShared;
-		 IFSelect_SelectSignedShared(const opencascade::handle<IFSelect_Signature> & matcher, const char * signtext, const Standard_Boolean exact = Standard_True, const Standard_Integer level = 0);
 
 		/****************** IsExact ******************/
 		%feature("compactdefaultargs") IsExact;
@@ -12388,6 +12388,25 @@ TCollection_AsciiString
 *************************************/
 class IFSelect_SelectSignedSharing : public IFSelect_SelectExplore {
 	public:
+		/****************** IFSelect_SelectSignedSharing ******************/
+		%feature("compactdefaultargs") IFSelect_SelectSignedSharing;
+		%feature("autodoc", "Creates a selectsignedsharing, defaulted for any level with a given signature and text to match.
+
+Parameters
+----------
+matcher: IFSelect_Signature
+signtext: char *
+exact: bool,optional
+	default value is Standard_True
+level: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") IFSelect_SelectSignedSharing;
+		 IFSelect_SelectSignedSharing(const opencascade::handle<IFSelect_Signature> & matcher, const char * signtext, const Standard_Boolean exact = Standard_True, const Standard_Integer level = 0);
+
 		/****************** Explore ******************/
 		%feature("compactdefaultargs") Explore;
 		%feature("autodoc", "Explores an entity : its sharing entities <ent> to take if it matches the signature at level max, filters the result. else gives all sharings.
@@ -12414,25 +12433,6 @@ Returns
 TCollection_AsciiString
 ") ExploreLabel;
 		TCollection_AsciiString ExploreLabel();
-
-		/****************** IFSelect_SelectSignedSharing ******************/
-		%feature("compactdefaultargs") IFSelect_SelectSignedSharing;
-		%feature("autodoc", "Creates a selectsignedsharing, defaulted for any level with a given signature and text to match.
-
-Parameters
-----------
-matcher: IFSelect_Signature
-signtext: char *
-exact: bool,optional
-	default value is Standard_True
-level: int,optional
-	default value is 0
-
-Returns
--------
-None
-") IFSelect_SelectSignedSharing;
-		 IFSelect_SelectSignedSharing(const opencascade::handle<IFSelect_Signature> & matcher, const char * signtext, const Standard_Boolean exact = Standard_True, const Standard_Integer level = 0);
 
 		/****************** IsExact ******************/
 		%feature("compactdefaultargs") IsExact;
@@ -12480,16 +12480,6 @@ TCollection_AsciiString
 ***************************************/
 class IFSelect_SelectUnknownEntities : public IFSelect_SelectExtract {
 	public:
-		/****************** ExtractLabel ******************/
-		%feature("compactdefaultargs") ExtractLabel;
-		%feature("autodoc", "Returns a text defining the criterium : 'recognized entities'.
-
-Returns
--------
-TCollection_AsciiString
-") ExtractLabel;
-		TCollection_AsciiString ExtractLabel();
-
 		/****************** IFSelect_SelectUnknownEntities ******************/
 		%feature("compactdefaultargs") IFSelect_SelectUnknownEntities;
 		%feature("autodoc", "Creates a selectunknownentities.
@@ -12499,6 +12489,16 @@ Returns
 None
 ") IFSelect_SelectUnknownEntities;
 		 IFSelect_SelectUnknownEntities();
+
+		/****************** ExtractLabel ******************/
+		%feature("compactdefaultargs") ExtractLabel;
+		%feature("autodoc", "Returns a text defining the criterium : 'recognized entities'.
+
+Returns
+-------
+TCollection_AsciiString
+") ExtractLabel;
+		TCollection_AsciiString ExtractLabel();
 
 		/****************** Sort ******************/
 		%feature("compactdefaultargs") Sort;
@@ -12558,16 +12558,6 @@ None
 ****************************/
 class IFSelect_SelectType : public IFSelect_SelectAnyType {
 	public:
-		/****************** ExtractLabel ******************/
-		%feature("compactdefaultargs") ExtractLabel;
-		%feature("autodoc", "Returns a text defining the criterium. (should by gotten from type of entity used for instantiation).
-
-Returns
--------
-TCollection_AsciiString
-") ExtractLabel;
-		TCollection_AsciiString ExtractLabel();
-
 		/****************** IFSelect_SelectType ******************/
 		%feature("compactdefaultargs") IFSelect_SelectType;
 		%feature("autodoc", "Creates a selecttype. default is no filter.
@@ -12591,6 +12581,16 @@ Returns
 None
 ") IFSelect_SelectType;
 		 IFSelect_SelectType(const opencascade::handle<Standard_Type> & atype);
+
+		/****************** ExtractLabel ******************/
+		%feature("compactdefaultargs") ExtractLabel;
+		%feature("autodoc", "Returns a text defining the criterium. (should by gotten from type of entity used for instantiation).
+
+Returns
+-------
+TCollection_AsciiString
+") ExtractLabel;
+		TCollection_AsciiString ExtractLabel();
 
 		/****************** SetType ******************/
 		%feature("compactdefaultargs") SetType;

@@ -134,6 +134,16 @@ opencascade::handle<Standard_Transient>
 ***********************************************/
 class XmlXCAFDrivers_DocumentRetrievalDriver : public XmlDrivers_DocumentRetrievalDriver {
 	public:
+		/****************** XmlXCAFDrivers_DocumentRetrievalDriver ******************/
+		%feature("compactdefaultargs") XmlXCAFDrivers_DocumentRetrievalDriver;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XmlXCAFDrivers_DocumentRetrievalDriver;
+		 XmlXCAFDrivers_DocumentRetrievalDriver();
+
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "No available documentation.
@@ -147,16 +157,6 @@ Returns
 opencascade::handle<XmlMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<XmlMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
-
-		/****************** XmlXCAFDrivers_DocumentRetrievalDriver ******************/
-		%feature("compactdefaultargs") XmlXCAFDrivers_DocumentRetrievalDriver;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XmlXCAFDrivers_DocumentRetrievalDriver;
-		 XmlXCAFDrivers_DocumentRetrievalDriver();
 
 };
 
@@ -174,20 +174,6 @@ None
 *********************************************/
 class XmlXCAFDrivers_DocumentStorageDriver : public XmlDrivers_DocumentStorageDriver {
 	public:
-		/****************** AttributeDrivers ******************/
-		%feature("compactdefaultargs") AttributeDrivers;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMsgDriver: Message_Messenger
-
-Returns
--------
-opencascade::handle<XmlMDF_ADriverTable>
-") AttributeDrivers;
-		virtual opencascade::handle<XmlMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
-
 		/****************** XmlXCAFDrivers_DocumentStorageDriver ******************/
 		%feature("compactdefaultargs") XmlXCAFDrivers_DocumentStorageDriver;
 		%feature("autodoc", "No available documentation.
@@ -201,6 +187,20 @@ Returns
 None
 ") XmlXCAFDrivers_DocumentStorageDriver;
 		 XmlXCAFDrivers_DocumentStorageDriver(const TCollection_ExtendedString & theCopyright);
+
+		/****************** AttributeDrivers ******************/
+		%feature("compactdefaultargs") AttributeDrivers;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMsgDriver: Message_Messenger
+
+Returns
+-------
+opencascade::handle<XmlMDF_ADriverTable>
+") AttributeDrivers;
+		virtual opencascade::handle<XmlMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
 
 };
 

@@ -139,6 +139,46 @@ opencascade::handle<Geom_Surface>
 **************************/
 class GeomAdaptor_Curve : public Adaptor3d_Curve {
 	public:
+		/****************** GeomAdaptor_Curve ******************/
+		%feature("compactdefaultargs") GeomAdaptor_Curve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomAdaptor_Curve;
+		 GeomAdaptor_Curve();
+
+		/****************** GeomAdaptor_Curve ******************/
+		%feature("compactdefaultargs") GeomAdaptor_Curve;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Geom_Curve
+
+Returns
+-------
+None
+") GeomAdaptor_Curve;
+		 GeomAdaptor_Curve(const opencascade::handle<Geom_Curve> & C);
+
+		/****************** GeomAdaptor_Curve ******************/
+		%feature("compactdefaultargs") GeomAdaptor_Curve;
+		%feature("autodoc", "Constructionerror is raised if ufirst>ulast.
+
+Parameters
+----------
+C: Geom_Curve
+UFirst: float
+ULast: float
+
+Returns
+-------
+None
+") GeomAdaptor_Curve;
+		 GeomAdaptor_Curve(const opencascade::handle<Geom_Curve> & C, const Standard_Real UFirst, const Standard_Real ULast);
+
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "This will not make a copy of the bspline curve : if you want to modify the curve please make a copy yourself also it will not trim the surface to myfirst/last.
@@ -299,46 +339,6 @@ Returns
 float
 ") FirstParameter;
 		Standard_Real FirstParameter();
-
-		/****************** GeomAdaptor_Curve ******************/
-		%feature("compactdefaultargs") GeomAdaptor_Curve;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomAdaptor_Curve;
-		 GeomAdaptor_Curve();
-
-		/****************** GeomAdaptor_Curve ******************/
-		%feature("compactdefaultargs") GeomAdaptor_Curve;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-C: Geom_Curve
-
-Returns
--------
-None
-") GeomAdaptor_Curve;
-		 GeomAdaptor_Curve(const opencascade::handle<Geom_Curve> & C);
-
-		/****************** GeomAdaptor_Curve ******************/
-		%feature("compactdefaultargs") GeomAdaptor_Curve;
-		%feature("autodoc", "Constructionerror is raised if ufirst>ulast.
-
-Parameters
-----------
-C: Geom_Curve
-UFirst: float
-ULast: float
-
-Returns
--------
-None
-") GeomAdaptor_Curve;
-		 GeomAdaptor_Curve(const opencascade::handle<Geom_Curve> & C, const Standard_Real UFirst, const Standard_Real ULast);
 
 		/****************** GetType ******************/
 		%feature("compactdefaultargs") GetType;
@@ -587,26 +587,6 @@ gp_Pnt
 ****************************/
 class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 	public:
-		/****************** ChangeCurve ******************/
-		%feature("compactdefaultargs") ChangeCurve;
-		%feature("autodoc", "Returns the curve used to create the genhcurve.
-
-Returns
--------
-GeomAdaptor_Curve
-") ChangeCurve;
-		GeomAdaptor_Curve & ChangeCurve();
-
-		/****************** Curve ******************/
-		%feature("compactdefaultargs") Curve;
-		%feature("autodoc", "Returns the curve used to create the genhcurve. this is redefined from hcurve, cannot be inline.
-
-Returns
--------
-Adaptor3d_Curve
-") Curve;
-		const Adaptor3d_Curve & Curve();
-
 		/****************** GeomAdaptor_GHCurve ******************/
 		%feature("compactdefaultargs") GeomAdaptor_GHCurve;
 		%feature("autodoc", "Creates an empty genhcurve.
@@ -630,6 +610,26 @@ Returns
 None
 ") GeomAdaptor_GHCurve;
 		 GeomAdaptor_GHCurve(const GeomAdaptor_Curve & C);
+
+		/****************** ChangeCurve ******************/
+		%feature("compactdefaultargs") ChangeCurve;
+		%feature("autodoc", "Returns the curve used to create the genhcurve.
+
+Returns
+-------
+GeomAdaptor_Curve
+") ChangeCurve;
+		GeomAdaptor_Curve & ChangeCurve();
+
+		/****************** Curve ******************/
+		%feature("compactdefaultargs") Curve;
+		%feature("autodoc", "Returns the curve used to create the genhcurve. this is redefined from hcurve, cannot be inline.
+
+Returns
+-------
+Adaptor3d_Curve
+") Curve;
+		const Adaptor3d_Curve & Curve();
 
 		/****************** GetCurve ******************/
 		%feature("compactdefaultargs") GetCurve;
@@ -671,16 +671,6 @@ None
 ******************************/
 class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
 	public:
-		/****************** ChangeSurface ******************/
-		%feature("compactdefaultargs") ChangeSurface;
-		%feature("autodoc", "Returns the surface used to create the genhsurface.
-
-Returns
--------
-GeomAdaptor_Surface
-") ChangeSurface;
-		GeomAdaptor_Surface & ChangeSurface();
-
 		/****************** GeomAdaptor_GHSurface ******************/
 		%feature("compactdefaultargs") GeomAdaptor_GHSurface;
 		%feature("autodoc", "Creates an empty genhsurface.
@@ -704,6 +694,16 @@ Returns
 None
 ") GeomAdaptor_GHSurface;
 		 GeomAdaptor_GHSurface(const GeomAdaptor_Surface & S);
+
+		/****************** ChangeSurface ******************/
+		%feature("compactdefaultargs") ChangeSurface;
+		%feature("autodoc", "Returns the surface used to create the genhsurface.
+
+Returns
+-------
+GeomAdaptor_Surface
+") ChangeSurface;
+		GeomAdaptor_Surface & ChangeSurface();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
@@ -745,16 +745,6 @@ Adaptor3d_Surface
 **********************************************/
 class GeomAdaptor_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 	public:
-		/****************** ChangeSurface ******************/
-		%feature("compactdefaultargs") ChangeSurface;
-		%feature("autodoc", "Returns the surface used to create the genhsurface.
-
-Returns
--------
-GeomAdaptor_SurfaceOfLinearExtrusion
-") ChangeSurface;
-		GeomAdaptor_SurfaceOfLinearExtrusion & ChangeSurface();
-
 		/****************** GeomAdaptor_HSurfaceOfLinearExtrusion ******************/
 		%feature("compactdefaultargs") GeomAdaptor_HSurfaceOfLinearExtrusion;
 		%feature("autodoc", "Creates an empty genhsurface.
@@ -778,6 +768,16 @@ Returns
 None
 ") GeomAdaptor_HSurfaceOfLinearExtrusion;
 		 GeomAdaptor_HSurfaceOfLinearExtrusion(const GeomAdaptor_SurfaceOfLinearExtrusion & S);
+
+		/****************** ChangeSurface ******************/
+		%feature("compactdefaultargs") ChangeSurface;
+		%feature("autodoc", "Returns the surface used to create the genhsurface.
+
+Returns
+-------
+GeomAdaptor_SurfaceOfLinearExtrusion
+") ChangeSurface;
+		GeomAdaptor_SurfaceOfLinearExtrusion & ChangeSurface();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
@@ -819,16 +819,6 @@ Adaptor3d_Surface
 *****************************************/
 class GeomAdaptor_HSurfaceOfRevolution : public Adaptor3d_HSurface {
 	public:
-		/****************** ChangeSurface ******************/
-		%feature("compactdefaultargs") ChangeSurface;
-		%feature("autodoc", "Returns the surface used to create the genhsurface.
-
-Returns
--------
-GeomAdaptor_SurfaceOfRevolution
-") ChangeSurface;
-		GeomAdaptor_SurfaceOfRevolution & ChangeSurface();
-
 		/****************** GeomAdaptor_HSurfaceOfRevolution ******************/
 		%feature("compactdefaultargs") GeomAdaptor_HSurfaceOfRevolution;
 		%feature("autodoc", "Creates an empty genhsurface.
@@ -852,6 +842,16 @@ Returns
 None
 ") GeomAdaptor_HSurfaceOfRevolution;
 		 GeomAdaptor_HSurfaceOfRevolution(const GeomAdaptor_SurfaceOfRevolution & S);
+
+		/****************** ChangeSurface ******************/
+		%feature("compactdefaultargs") ChangeSurface;
+		%feature("autodoc", "Returns the surface used to create the genhsurface.
+
+Returns
+-------
+GeomAdaptor_SurfaceOfRevolution
+") ChangeSurface;
+		GeomAdaptor_SurfaceOfRevolution & ChangeSurface();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
@@ -893,6 +893,52 @@ Adaptor3d_Surface
 ****************************/
 class GeomAdaptor_Surface : public Adaptor3d_Surface {
 	public:
+		/****************** GeomAdaptor_Surface ******************/
+		%feature("compactdefaultargs") GeomAdaptor_Surface;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomAdaptor_Surface;
+		 GeomAdaptor_Surface();
+
+		/****************** GeomAdaptor_Surface ******************/
+		%feature("compactdefaultargs") GeomAdaptor_Surface;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: Geom_Surface
+
+Returns
+-------
+None
+") GeomAdaptor_Surface;
+		 GeomAdaptor_Surface(const opencascade::handle<Geom_Surface> & S);
+
+		/****************** GeomAdaptor_Surface ******************/
+		%feature("compactdefaultargs") GeomAdaptor_Surface;
+		%feature("autodoc", "Constructionerror is raised if ufirst>ulast or vfirst>vlast.
+
+Parameters
+----------
+S: Geom_Surface
+UFirst: float
+ULast: float
+VFirst: float
+VLast: float
+TolU: float,optional
+	default value is 0.0
+TolV: float,optional
+	default value is 0.0
+
+Returns
+-------
+None
+") GeomAdaptor_Surface;
+		 GeomAdaptor_Surface(const opencascade::handle<Geom_Surface> & S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU = 0.0, const Standard_Real TolV = 0.0);
+
 		/****************** AxeOfRevolution ******************/
 		%feature("compactdefaultargs") AxeOfRevolution;
 		%feature("autodoc", "No available documentation.
@@ -1089,52 +1135,6 @@ Returns
 float
 ") FirstVParameter;
 		Standard_Real FirstVParameter();
-
-		/****************** GeomAdaptor_Surface ******************/
-		%feature("compactdefaultargs") GeomAdaptor_Surface;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomAdaptor_Surface;
-		 GeomAdaptor_Surface();
-
-		/****************** GeomAdaptor_Surface ******************/
-		%feature("compactdefaultargs") GeomAdaptor_Surface;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: Geom_Surface
-
-Returns
--------
-None
-") GeomAdaptor_Surface;
-		 GeomAdaptor_Surface(const opencascade::handle<Geom_Surface> & S);
-
-		/****************** GeomAdaptor_Surface ******************/
-		%feature("compactdefaultargs") GeomAdaptor_Surface;
-		%feature("autodoc", "Constructionerror is raised if ufirst>ulast or vfirst>vlast.
-
-Parameters
-----------
-S: Geom_Surface
-UFirst: float
-ULast: float
-VFirst: float
-VLast: float
-TolU: float,optional
-	default value is 0.0
-TolV: float,optional
-	default value is 0.0
-
-Returns
--------
-None
-") GeomAdaptor_Surface;
-		 GeomAdaptor_Surface(const opencascade::handle<Geom_Surface> & S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast, const Standard_Real TolU = 0.0, const Standard_Real TolV = 0.0);
 
 		/****************** GetType ******************/
 		%feature("compactdefaultargs") GetType;
@@ -1705,6 +1705,45 @@ None
 *********************************************/
 class GeomAdaptor_SurfaceOfLinearExtrusion : public GeomAdaptor_Surface {
 	public:
+		/****************** GeomAdaptor_SurfaceOfLinearExtrusion ******************/
+		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfLinearExtrusion;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomAdaptor_SurfaceOfLinearExtrusion;
+		 GeomAdaptor_SurfaceOfLinearExtrusion();
+
+		/****************** GeomAdaptor_SurfaceOfLinearExtrusion ******************/
+		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfLinearExtrusion;
+		%feature("autodoc", "The curve is loaded.
+
+Parameters
+----------
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
+") GeomAdaptor_SurfaceOfLinearExtrusion;
+		 GeomAdaptor_SurfaceOfLinearExtrusion(const opencascade::handle<Adaptor3d_HCurve> & C);
+
+		/****************** GeomAdaptor_SurfaceOfLinearExtrusion ******************/
+		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfLinearExtrusion;
+		%feature("autodoc", "Thew curve and the direction are loaded.
+
+Parameters
+----------
+C: Adaptor3d_HCurve
+V: gp_Dir
+
+Returns
+-------
+None
+") GeomAdaptor_SurfaceOfLinearExtrusion;
+		 GeomAdaptor_SurfaceOfLinearExtrusion(const opencascade::handle<Adaptor3d_HCurve> & C, const gp_Dir & V);
+
 		/****************** AxeOfRevolution ******************/
 		%feature("compactdefaultargs") AxeOfRevolution;
 		%feature("autodoc", "No available documentation.
@@ -1794,45 +1833,6 @@ Returns
 float
 ") FirstVParameter;
 		Standard_Real FirstVParameter();
-
-		/****************** GeomAdaptor_SurfaceOfLinearExtrusion ******************/
-		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfLinearExtrusion;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomAdaptor_SurfaceOfLinearExtrusion;
-		 GeomAdaptor_SurfaceOfLinearExtrusion();
-
-		/****************** GeomAdaptor_SurfaceOfLinearExtrusion ******************/
-		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfLinearExtrusion;
-		%feature("autodoc", "The curve is loaded.
-
-Parameters
-----------
-C: Adaptor3d_HCurve
-
-Returns
--------
-None
-") GeomAdaptor_SurfaceOfLinearExtrusion;
-		 GeomAdaptor_SurfaceOfLinearExtrusion(const opencascade::handle<Adaptor3d_HCurve> & C);
-
-		/****************** GeomAdaptor_SurfaceOfLinearExtrusion ******************/
-		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfLinearExtrusion;
-		%feature("autodoc", "Thew curve and the direction are loaded.
-
-Parameters
-----------
-C: Adaptor3d_HCurve
-V: gp_Dir
-
-Returns
--------
-None
-") GeomAdaptor_SurfaceOfLinearExtrusion;
-		 GeomAdaptor_SurfaceOfLinearExtrusion(const opencascade::handle<Adaptor3d_HCurve> & C, const gp_Dir & V);
 
 		/****************** GetType ******************/
 		%feature("compactdefaultargs") GetType;
@@ -2174,6 +2174,45 @@ opencascade::handle<Adaptor3d_HSurface>
 ****************************************/
 class GeomAdaptor_SurfaceOfRevolution : public GeomAdaptor_Surface {
 	public:
+		/****************** GeomAdaptor_SurfaceOfRevolution ******************/
+		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfRevolution;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomAdaptor_SurfaceOfRevolution;
+		 GeomAdaptor_SurfaceOfRevolution();
+
+		/****************** GeomAdaptor_SurfaceOfRevolution ******************/
+		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfRevolution;
+		%feature("autodoc", "The curve is loaded.
+
+Parameters
+----------
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
+") GeomAdaptor_SurfaceOfRevolution;
+		 GeomAdaptor_SurfaceOfRevolution(const opencascade::handle<Adaptor3d_HCurve> & C);
+
+		/****************** GeomAdaptor_SurfaceOfRevolution ******************/
+		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfRevolution;
+		%feature("autodoc", "The curve and the direction are loaded.
+
+Parameters
+----------
+C: Adaptor3d_HCurve
+V: gp_Ax1
+
+Returns
+-------
+None
+") GeomAdaptor_SurfaceOfRevolution;
+		 GeomAdaptor_SurfaceOfRevolution(const opencascade::handle<Adaptor3d_HCurve> & C, const gp_Ax1 & V);
+
 		/****************** AxeOfRevolution ******************/
 		%feature("compactdefaultargs") AxeOfRevolution;
 		%feature("autodoc", "No available documentation.
@@ -2263,45 +2302,6 @@ Returns
 float
 ") FirstVParameter;
 		Standard_Real FirstVParameter();
-
-		/****************** GeomAdaptor_SurfaceOfRevolution ******************/
-		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfRevolution;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomAdaptor_SurfaceOfRevolution;
-		 GeomAdaptor_SurfaceOfRevolution();
-
-		/****************** GeomAdaptor_SurfaceOfRevolution ******************/
-		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfRevolution;
-		%feature("autodoc", "The curve is loaded.
-
-Parameters
-----------
-C: Adaptor3d_HCurve
-
-Returns
--------
-None
-") GeomAdaptor_SurfaceOfRevolution;
-		 GeomAdaptor_SurfaceOfRevolution(const opencascade::handle<Adaptor3d_HCurve> & C);
-
-		/****************** GeomAdaptor_SurfaceOfRevolution ******************/
-		%feature("compactdefaultargs") GeomAdaptor_SurfaceOfRevolution;
-		%feature("autodoc", "The curve and the direction are loaded.
-
-Parameters
-----------
-C: Adaptor3d_HCurve
-V: gp_Ax1
-
-Returns
--------
-None
-") GeomAdaptor_SurfaceOfRevolution;
-		 GeomAdaptor_SurfaceOfRevolution(const opencascade::handle<Adaptor3d_HCurve> & C, const gp_Ax1 & V);
 
 		/****************** GetType ******************/
 		%feature("compactdefaultargs") GetType;

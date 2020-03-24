@@ -1023,20 +1023,6 @@ float
 **************************/
 class BRepLib_FuseEdges {
 	public:
-		/****************** AvoidEdges ******************/
-		%feature("compactdefaultargs") AvoidEdges;
-		%feature("autodoc", "Set edges to avoid being fused.
-
-Parameters
-----------
-theMapEdg: TopTools_IndexedMapOfShape
-
-Returns
--------
-None
-") AvoidEdges;
-		void AvoidEdges(const TopTools_IndexedMapOfShape & theMapEdg);
-
 		/****************** BRepLib_FuseEdges ******************/
 		%feature("compactdefaultargs") BRepLib_FuseEdges;
 		%feature("autodoc", "Initialise members and build construction of map of ancestors.
@@ -1052,6 +1038,20 @@ Returns
 None
 ") BRepLib_FuseEdges;
 		 BRepLib_FuseEdges(const TopoDS_Shape & theShape, const Standard_Boolean PerformNow = Standard_False);
+
+		/****************** AvoidEdges ******************/
+		%feature("compactdefaultargs") AvoidEdges;
+		%feature("autodoc", "Set edges to avoid being fused.
+
+Parameters
+----------
+theMapEdg: TopTools_IndexedMapOfShape
+
+Returns
+-------
+None
+") AvoidEdges;
+		void AvoidEdges(const TopTools_IndexedMapOfShape & theMapEdg);
 
 		/****************** Edges ******************/
 		%feature("compactdefaultargs") Edges;
@@ -2667,20 +2667,6 @@ TopoDS_Vertex
 *************************/
 class BRepLib_MakeFace : public BRepLib_MakeShape {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Adds the wire <w> in the current face.
-
-Parameters
-----------
-W: TopoDS_Wire
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Wire & W);
-
 		/****************** BRepLib_MakeFace ******************/
 		%feature("compactdefaultargs") BRepLib_MakeFace;
 		%feature("autodoc", "Not done.
@@ -3032,6 +3018,20 @@ None
 ") BRepLib_MakeFace;
 		 BRepLib_MakeFace(const TopoDS_Face & F, const TopoDS_Wire & W);
 
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Adds the wire <w> in the current face.
+
+Parameters
+----------
+W: TopoDS_Wire
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Wire & W);
+
 		/****************** Error ******************/
 		%feature("compactdefaultargs") Error;
 		%feature("autodoc", "No available documentation.
@@ -3131,44 +3131,6 @@ bool
 ****************************/
 class BRepLib_MakePolygon : public BRepLib_MakeShape {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-P: gp_Pnt
-
-Returns
--------
-None
-") Add;
-		void Add(const gp_Pnt & P);
-
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-V: TopoDS_Vertex
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Vertex & V);
-
-		/****************** Added ******************/
-		%feature("compactdefaultargs") Added;
-		%feature("autodoc", "Returns true if the last vertex or point was succesfully added.
-
-Returns
--------
-bool
-") Added;
-		Standard_Boolean Added();
-
 		/****************** BRepLib_MakePolygon ******************/
 		%feature("compactdefaultargs") BRepLib_MakePolygon;
 		%feature("autodoc", "Creates an empty makepolygon.
@@ -3282,6 +3244,44 @@ Returns
 None
 ") BRepLib_MakePolygon;
 		 BRepLib_MakePolygon(const TopoDS_Vertex & V1, const TopoDS_Vertex & V2, const TopoDS_Vertex & V3, const TopoDS_Vertex & V4, const Standard_Boolean Close = Standard_False);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Pnt
+
+Returns
+-------
+None
+") Add;
+		void Add(const gp_Pnt & P);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+V: TopoDS_Vertex
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Vertex & V);
+
+		/****************** Added ******************/
+		%feature("compactdefaultargs") Added;
+		%feature("autodoc", "Returns true if the last vertex or point was succesfully added.
+
+Returns
+-------
+bool
+") Added;
+		Standard_Boolean Added();
 
 		/****************** Close ******************/
 		%feature("compactdefaultargs") Close;
@@ -3447,20 +3447,6 @@ TopoDS_Shell
 **************************/
 class BRepLib_MakeSolid : public BRepLib_MakeShape {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Add the shell to the current solid.
-
-Parameters
-----------
-S: TopoDS_Shell
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Shell & S);
-
 		/****************** BRepLib_MakeSolid ******************/
 		%feature("compactdefaultargs") BRepLib_MakeSolid;
 		%feature("autodoc", "Solid covers whole space.
@@ -3559,6 +3545,20 @@ None
 ") BRepLib_MakeSolid;
 		 BRepLib_MakeSolid(const TopoDS_Solid & So, const TopoDS_Shell & S);
 
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Add the shell to the current solid.
+
+Parameters
+----------
+S: TopoDS_Shell
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Shell & S);
+
 		/****************** FaceStatus ******************/
 		%feature("compactdefaultargs") FaceStatus;
 		%feature("autodoc", "Returns the status of the face after the shape creation.
@@ -3636,48 +3636,6 @@ TopoDS_Vertex
 class BRepLib_MakeWire : public BRepLib_MakeShape {
 	public:
 		class BRepLib_BndBoxVertexSelector {};
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Add the edge <e> to the current wire.
-
-Parameters
-----------
-E: TopoDS_Edge
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Edge & E);
-
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Add the edges of <w> to the current wire.
-
-Parameters
-----------
-W: TopoDS_Wire
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Wire & W);
-
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Add the edges of <l> to the current wire. the edges are not to be consecutive. but they are to be all connected geometrically or topologically.
-
-Parameters
-----------
-L: TopTools_ListOfShape
-
-Returns
--------
-None
-") Add;
-		void Add(const TopTools_ListOfShape & L);
-
 		/****************** BRepLib_MakeWire ******************/
 		%feature("compactdefaultargs") BRepLib_MakeWire;
 		%feature("autodoc", "Notdone makewire.
@@ -3778,6 +3736,48 @@ Returns
 None
 ") BRepLib_MakeWire;
 		 BRepLib_MakeWire(const TopoDS_Wire & W, const TopoDS_Edge & E);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Add the edge <e> to the current wire.
+
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Edge & E);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Add the edges of <w> to the current wire.
+
+Parameters
+----------
+W: TopoDS_Wire
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Wire & W);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Add the edges of <l> to the current wire. the edges are not to be consecutive. but they are to be all connected geometrically or topologically.
+
+Parameters
+----------
+L: TopTools_ListOfShape
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopTools_ListOfShape & L);
 
 		/****************** Edge ******************/
 		%feature("compactdefaultargs") Edge;

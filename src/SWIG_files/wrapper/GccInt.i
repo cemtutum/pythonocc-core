@@ -188,6 +188,20 @@ gp_Pnt2d
 *********************/
 class GccInt_BCirc : public GccInt_Bisec {
 	public:
+		/****************** GccInt_BCirc ******************/
+		%feature("compactdefaultargs") GccInt_BCirc;
+		%feature("autodoc", "Constructs a bisecting curve whose geometry is the 2d circle circ.
+
+Parameters
+----------
+Circ: gp_Circ2d
+
+Returns
+-------
+None
+") GccInt_BCirc;
+		 GccInt_BCirc(const gp_Circ2d & Circ);
+
 		/****************** ArcType ******************/
 		%feature("compactdefaultargs") ArcType;
 		%feature("autodoc", "Returns gccint_cir, which is the type of any gccint_bcirc bisecting curve.
@@ -208,20 +222,6 @@ gp_Circ2d
 ") Circle;
 		virtual gp_Circ2d Circle();
 
-		/****************** GccInt_BCirc ******************/
-		%feature("compactdefaultargs") GccInt_BCirc;
-		%feature("autodoc", "Constructs a bisecting curve whose geometry is the 2d circle circ.
-
-Parameters
-----------
-Circ: gp_Circ2d
-
-Returns
--------
-None
-") GccInt_BCirc;
-		 GccInt_BCirc(const gp_Circ2d & Circ);
-
 };
 
 
@@ -238,6 +238,20 @@ None
 **********************/
 class GccInt_BElips : public GccInt_Bisec {
 	public:
+		/****************** GccInt_BElips ******************/
+		%feature("compactdefaultargs") GccInt_BElips;
+		%feature("autodoc", "Constructs a bisecting curve whose geometry is the 2d ellipse ellipse.
+
+Parameters
+----------
+Ellipse: gp_Elips2d
+
+Returns
+-------
+None
+") GccInt_BElips;
+		 GccInt_BElips(const gp_Elips2d & Ellipse);
+
 		/****************** ArcType ******************/
 		%feature("compactdefaultargs") ArcType;
 		%feature("autodoc", "Returns gccint_ell, which is the type of any gccint_belips bisecting curve.
@@ -258,20 +272,6 @@ gp_Elips2d
 ") Ellipse;
 		virtual gp_Elips2d Ellipse();
 
-		/****************** GccInt_BElips ******************/
-		%feature("compactdefaultargs") GccInt_BElips;
-		%feature("autodoc", "Constructs a bisecting curve whose geometry is the 2d ellipse ellipse.
-
-Parameters
-----------
-Ellipse: gp_Elips2d
-
-Returns
--------
-None
-") GccInt_BElips;
-		 GccInt_BElips(const gp_Elips2d & Ellipse);
-
 };
 
 
@@ -288,16 +288,6 @@ None
 **********************/
 class GccInt_BHyper : public GccInt_Bisec {
 	public:
-		/****************** ArcType ******************/
-		%feature("compactdefaultargs") ArcType;
-		%feature("autodoc", "Returns gccint_hpr, which is the type of any gccint_bhyper bisecting curve.
-
-Returns
--------
-GccInt_IType
-") ArcType;
-		GccInt_IType ArcType();
-
 		/****************** GccInt_BHyper ******************/
 		%feature("compactdefaultargs") GccInt_BHyper;
 		%feature("autodoc", "Constructs a bisecting curve whose geometry is the 2d hyperbola hyper.
@@ -311,6 +301,16 @@ Returns
 None
 ") GccInt_BHyper;
 		 GccInt_BHyper(const gp_Hypr2d & Hyper);
+
+		/****************** ArcType ******************/
+		%feature("compactdefaultargs") ArcType;
+		%feature("autodoc", "Returns gccint_hpr, which is the type of any gccint_bhyper bisecting curve.
+
+Returns
+-------
+GccInt_IType
+") ArcType;
+		GccInt_IType ArcType();
 
 		/****************** Hyperbola ******************/
 		%feature("compactdefaultargs") Hyperbola;
@@ -338,16 +338,6 @@ gp_Hypr2d
 *********************/
 class GccInt_BLine : public GccInt_Bisec {
 	public:
-		/****************** ArcType ******************/
-		%feature("compactdefaultargs") ArcType;
-		%feature("autodoc", "Returns gccint_lin, which is the type of any gccint_bline bisecting line.
-
-Returns
--------
-GccInt_IType
-") ArcType;
-		GccInt_IType ArcType();
-
 		/****************** GccInt_BLine ******************/
 		%feature("compactdefaultargs") GccInt_BLine;
 		%feature("autodoc", "Constructs a bisecting line whose geometry is the 2d line line.
@@ -361,6 +351,16 @@ Returns
 None
 ") GccInt_BLine;
 		 GccInt_BLine(const gp_Lin2d & Line);
+
+		/****************** ArcType ******************/
+		%feature("compactdefaultargs") ArcType;
+		%feature("autodoc", "Returns gccint_lin, which is the type of any gccint_bline bisecting line.
+
+Returns
+-------
+GccInt_IType
+") ArcType;
+		GccInt_IType ArcType();
 
 		/****************** Line ******************/
 		%feature("compactdefaultargs") Line;
@@ -388,16 +388,6 @@ gp_Lin2d
 **********************/
 class GccInt_BParab : public GccInt_Bisec {
 	public:
-		/****************** ArcType ******************/
-		%feature("compactdefaultargs") ArcType;
-		%feature("autodoc", "Returns gccint_par, which is the type of any gccint_bparab bisecting curve.
-
-Returns
--------
-GccInt_IType
-") ArcType;
-		GccInt_IType ArcType();
-
 		/****************** GccInt_BParab ******************/
 		%feature("compactdefaultargs") GccInt_BParab;
 		%feature("autodoc", "Constructs a bisecting curve whose geometry is the 2d parabola parab.
@@ -411,6 +401,16 @@ Returns
 None
 ") GccInt_BParab;
 		 GccInt_BParab(const gp_Parab2d & Parab);
+
+		/****************** ArcType ******************/
+		%feature("compactdefaultargs") ArcType;
+		%feature("autodoc", "Returns gccint_par, which is the type of any gccint_bparab bisecting curve.
+
+Returns
+-------
+GccInt_IType
+") ArcType;
+		GccInt_IType ArcType();
 
 		/****************** Parabola ******************/
 		%feature("compactdefaultargs") Parabola;
@@ -438,16 +438,6 @@ gp_Parab2d
 **********************/
 class GccInt_BPoint : public GccInt_Bisec {
 	public:
-		/****************** ArcType ******************/
-		%feature("compactdefaultargs") ArcType;
-		%feature("autodoc", "Returns gccint_pnt, which is the type of any gccint_bpoint bisecting object.
-
-Returns
--------
-GccInt_IType
-") ArcType;
-		GccInt_IType ArcType();
-
 		/****************** GccInt_BPoint ******************/
 		%feature("compactdefaultargs") GccInt_BPoint;
 		%feature("autodoc", "Constructs a bisecting object whose geometry is the 2d point point.
@@ -461,6 +451,16 @@ Returns
 None
 ") GccInt_BPoint;
 		 GccInt_BPoint(const gp_Pnt2d & Point);
+
+		/****************** ArcType ******************/
+		%feature("compactdefaultargs") ArcType;
+		%feature("autodoc", "Returns gccint_pnt, which is the type of any gccint_bpoint bisecting object.
+
+Returns
+-------
+GccInt_IType
+") ArcType;
+		GccInt_IType ArcType();
 
 		/****************** Point ******************/
 		%feature("compactdefaultargs") Point;

@@ -47,9 +47,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepfilletapi.htm
 #include<TopTools_module.hxx>
 #include<ChFi2d_module.hxx>
 #include<TopOpeBRepBuild_module.hxx>
+#include<ChFi3d_module.hxx>
 #include<Law_module.hxx>
 #include<TColgp_module.hxx>
-#include<ChFi3d_module.hxx>
 #include<Geom_module.hxx>
 #include<GeomAbs_module.hxx>
 #include<Adaptor3d_module.hxx>
@@ -89,9 +89,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepfilletapi.htm
 %import TopTools.i
 %import ChFi2d.i
 %import TopOpeBRepBuild.i
+%import ChFi3d.i
 %import Law.i
 %import TColgp.i
-%import ChFi3d.i
 %import Geom.i
 %import GeomAbs.i
 
@@ -384,6 +384,30 @@ None
 ***********************************/
 class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 	public:
+		/****************** BRepFilletAPI_MakeFillet2d ******************/
+		%feature("compactdefaultargs") BRepFilletAPI_MakeFillet2d;
+		%feature("autodoc", "Initializes an empty algorithm for computing fillets and chamfers. the face on which the fillets and chamfers are built is defined using the init function. the vertices on which fillets or chamfers are built are defined using the addfillet or addchamfer function. warning the status of the initialization, as given by the status function, can be one of the following: - chfi2d_ready if the initialization is correct, - chfi2d_notplanar if f is not planar, - chfi2d_noface if f is a null face.
+
+Returns
+-------
+None
+") BRepFilletAPI_MakeFillet2d;
+		 BRepFilletAPI_MakeFillet2d();
+
+		/****************** BRepFilletAPI_MakeFillet2d ******************/
+		%feature("compactdefaultargs") BRepFilletAPI_MakeFillet2d;
+		%feature("autodoc", "Initializes an algorithm for computing fillets and chamfers on the face f. the vertices on which fillets or chamfers are built are defined using the addfillet or addchamfer function. warning the status of the initialization, as given by the status function, can be one of the following: - chfi2d_ready if the initialization is correct, - chfi2d_notplanar if f is not planar, - chfi2d_noface if f is a null face.
+
+Parameters
+----------
+F: TopoDS_Face
+
+Returns
+-------
+None
+") BRepFilletAPI_MakeFillet2d;
+		 BRepFilletAPI_MakeFillet2d(const TopoDS_Face & F);
+
 		/****************** AddChamfer ******************/
 		%feature("compactdefaultargs") AddChamfer;
 		%feature("autodoc", "Adds a chamfer on the face modified by this algorithm between the two adjacent edges e1 and e2, where the extremities of the chamfer are on e1 and e2 at distances d1 and d2 respectively in cases where the edges are not rectilinear, distances are measured using the curvilinear abscissa of the edges and the angle is measured with respect to the tangent at the corresponding point. the angle ang is given in radians. this function returns the chamfer and builds the resulting face.
@@ -432,30 +456,6 @@ Returns
 TopoDS_Edge
 ") AddFillet;
 		TopoDS_Edge AddFillet(const TopoDS_Vertex & V, const Standard_Real Radius);
-
-		/****************** BRepFilletAPI_MakeFillet2d ******************/
-		%feature("compactdefaultargs") BRepFilletAPI_MakeFillet2d;
-		%feature("autodoc", "Initializes an empty algorithm for computing fillets and chamfers. the face on which the fillets and chamfers are built is defined using the init function. the vertices on which fillets or chamfers are built are defined using the addfillet or addchamfer function. warning the status of the initialization, as given by the status function, can be one of the following: - chfi2d_ready if the initialization is correct, - chfi2d_notplanar if f is not planar, - chfi2d_noface if f is a null face.
-
-Returns
--------
-None
-") BRepFilletAPI_MakeFillet2d;
-		 BRepFilletAPI_MakeFillet2d();
-
-		/****************** BRepFilletAPI_MakeFillet2d ******************/
-		%feature("compactdefaultargs") BRepFilletAPI_MakeFillet2d;
-		%feature("autodoc", "Initializes an algorithm for computing fillets and chamfers on the face f. the vertices on which fillets or chamfers are built are defined using the addfillet or addchamfer function. warning the status of the initialization, as given by the status function, can be one of the following: - chfi2d_ready if the initialization is correct, - chfi2d_notplanar if f is not planar, - chfi2d_noface if f is a null face.
-
-Parameters
-----------
-F: TopoDS_Face
-
-Returns
--------
-None
-") BRepFilletAPI_MakeFillet2d;
-		 BRepFilletAPI_MakeFillet2d(const TopoDS_Face & F);
 
 		/****************** BasisEdge ******************/
 		%feature("compactdefaultargs") BasisEdge;
@@ -732,6 +732,20 @@ ChFi2d_ConstructionError
 **********************************/
 class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 	public:
+		/****************** BRepFilletAPI_MakeChamfer ******************/
+		%feature("compactdefaultargs") BRepFilletAPI_MakeChamfer;
+		%feature("autodoc", "Initializes an algorithm for computing chamfers on the shape s. the edges on which chamfers are built are defined using the add function.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") BRepFilletAPI_MakeChamfer;
+		 BRepFilletAPI_MakeChamfer(const TopoDS_Shape & S);
+
 		/****************** Abscissa ******************/
 		%feature("compactdefaultargs") Abscissa;
 		%feature("autodoc", "Returns the curvilinear abscissa of the vertex v on the contour of index ic in the internal data structure of this algorithm. warning returns -1. if: - ic is outside the bounds of the table of contours, or - v is not on the contour of index ic.
@@ -809,20 +823,6 @@ Returns
 None
 ") AddDA;
 		void AddDA(const Standard_Real Dis, const Standard_Real Angle, const TopoDS_Edge & E, const TopoDS_Face & F);
-
-		/****************** BRepFilletAPI_MakeChamfer ******************/
-		%feature("compactdefaultargs") BRepFilletAPI_MakeChamfer;
-		%feature("autodoc", "Initializes an algorithm for computing chamfers on the shape s. the edges on which chamfers are built are defined using the add function.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") BRepFilletAPI_MakeChamfer;
-		 BRepFilletAPI_MakeChamfer(const TopoDS_Shape & S);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
@@ -1272,6 +1272,22 @@ None
 *********************************/
 class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 	public:
+		/****************** BRepFilletAPI_MakeFillet ******************/
+		%feature("compactdefaultargs") BRepFilletAPI_MakeFillet;
+		%feature("autodoc", "Initializes the computation of the fillets. <fshape> sets the type of fillet surface. the default value is chfi3d_rational (classical nurbs representation of circles). chfi3d_quasiangular corresponds to a nurbs representation of circles which parameterisation matches the circle one. chfi3d_polynomial corresponds to a polynomial representation of circles.
+
+Parameters
+----------
+S: TopoDS_Shape
+FShape: ChFi3d_FilletShape,optional
+	default value is ChFi3d_Rational
+
+Returns
+-------
+None
+") BRepFilletAPI_MakeFillet;
+		 BRepFilletAPI_MakeFillet(const TopoDS_Shape & S, const ChFi3d_FilletShape FShape = ChFi3d_Rational);
+
 		/****************** Abscissa ******************/
 		%feature("compactdefaultargs") Abscissa;
 		%feature("autodoc", "Returns the curvilinear abscissa of the vertex v on the contour of index ic in the internal data structure of this algorithm. warning returns -1. if: - ic is outside the bounds of the table of contours, or - v is not on the contour of index ic.
@@ -1361,22 +1377,6 @@ Returns
 None
 ") Add;
 		void Add(const TColgp_Array1OfPnt2d & UandR, const TopoDS_Edge & E);
-
-		/****************** BRepFilletAPI_MakeFillet ******************/
-		%feature("compactdefaultargs") BRepFilletAPI_MakeFillet;
-		%feature("autodoc", "Initializes the computation of the fillets. <fshape> sets the type of fillet surface. the default value is chfi3d_rational (classical nurbs representation of circles). chfi3d_quasiangular corresponds to a nurbs representation of circles which parameterisation matches the circle one. chfi3d_polynomial corresponds to a polynomial representation of circles.
-
-Parameters
-----------
-S: TopoDS_Shape
-FShape: ChFi3d_FilletShape,optional
-	default value is ChFi3d_Rational
-
-Returns
--------
-None
-") BRepFilletAPI_MakeFillet;
-		 BRepFilletAPI_MakeFillet(const TopoDS_Shape & S, const ChFi3d_FilletShape FShape = ChFi3d_Rational);
 
 		/****************** BadShape ******************/
 		%feature("compactdefaultargs") BadShape;

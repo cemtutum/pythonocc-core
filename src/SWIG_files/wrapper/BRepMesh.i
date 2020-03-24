@@ -761,6 +761,22 @@ bool
 ***************************************/
 class BRepMesh_DataStructureOfDelaun : public Standard_Transient {
 	public:
+		/****************** BRepMesh_DataStructureOfDelaun ******************/
+		%feature("compactdefaultargs") BRepMesh_DataStructureOfDelaun;
+		%feature("autodoc", "Constructor. @param theallocator memory allocator to be used by internal structures. @param thereservednodesize presumed number of nodes in this mesh.
+
+Parameters
+----------
+theAllocator: NCollection_IncAllocator
+theReservedNodeSize: int,optional
+	default value is 100
+
+Returns
+-------
+None
+") BRepMesh_DataStructureOfDelaun;
+		 BRepMesh_DataStructureOfDelaun(const opencascade::handle<NCollection_IncAllocator> & theAllocator, const Standard_Integer theReservedNodeSize = 100);
+
 		/****************** AddElement ******************/
 		%feature("compactdefaultargs") AddElement;
 		%feature("autodoc", "Adds element to the mesh if it is not already in the mesh. @param theelement element to be added to the mesh. returns index of the element in the structure.
@@ -814,22 +830,6 @@ Returns
 opencascade::handle<NCollection_IncAllocator>
 ") Allocator;
 		const opencascade::handle<NCollection_IncAllocator> & Allocator();
-
-		/****************** BRepMesh_DataStructureOfDelaun ******************/
-		%feature("compactdefaultargs") BRepMesh_DataStructureOfDelaun;
-		%feature("autodoc", "Constructor. @param theallocator memory allocator to be used by internal structures. @param thereservednodesize presumed number of nodes in this mesh.
-
-Parameters
-----------
-theAllocator: NCollection_IncAllocator
-theReservedNodeSize: int,optional
-	default value is 100
-
-Returns
--------
-None
-") BRepMesh_DataStructureOfDelaun;
-		 BRepMesh_DataStructureOfDelaun(const opencascade::handle<NCollection_IncAllocator> & theAllocator, const Standard_Integer theReservedNodeSize = 100);
 
 		/****************** ClearDeleted ******************/
 		%feature("compactdefaultargs") ClearDeleted;
@@ -1231,20 +1231,6 @@ None
 ************************/
 class BRepMesh_Delaun {
 	public:
-		/****************** AddVertices ******************/
-		%feature("compactdefaultargs") AddVertices;
-		%feature("autodoc", "Adds some vertices into the triangulation.
-
-Parameters
-----------
-theVerticesIndices: IMeshData::VectorOfInteger
-
-Returns
--------
-None
-") AddVertices;
-		void AddVertices(IMeshData::VectorOfInteger & theVerticesIndices);
-
 		/****************** BRepMesh_Delaun ******************/
 		%feature("compactdefaultargs") BRepMesh_Delaun;
 		%feature("autodoc", "Creates instance of triangulator, but do not run the algorithm automatically.
@@ -1322,6 +1308,20 @@ Returns
 None
 ") BRepMesh_Delaun;
 		 BRepMesh_Delaun(const Handle ( BRepMesh_DataStructureOfDelaun ) & theOldMesh, IMeshData::VectorOfInteger & theVertexIndices, const Standard_Integer theCellsCountU, const Standard_Integer theCellsCountV);
+
+		/****************** AddVertices ******************/
+		%feature("compactdefaultargs") AddVertices;
+		%feature("autodoc", "Adds some vertices into the triangulation.
+
+Parameters
+----------
+theVerticesIndices: IMeshData::VectorOfInteger
+
+Returns
+-------
+None
+") AddVertices;
+		void AddVertices(IMeshData::VectorOfInteger & theVerticesIndices);
 
 		/****************** Circles ******************/
 		%feature("compactdefaultargs") Circles;
@@ -1881,23 +1881,6 @@ class IntFlag:
 };
 /* end python proxy for enums */
 
-		/****************** AddPoint ******************/
-		%feature("compactdefaultargs") AddPoint;
-		%feature("autodoc", "Adds point to already calculated points (or replaces existing). @param thepoint point to be added. @param theparam parameter on the curve corresponding to the given point. @param theisreplace if true replaces existing point lying within parameteric tolerance of the given point. returns index of new added point or found with parametric tolerance.
-
-Parameters
-----------
-thePoint: gp_Pnt
-theParam: float
-theIsReplace: bool,optional
-	default value is Standard_True
-
-Returns
--------
-int
-") AddPoint;
-		Standard_Integer AddPoint(const gp_Pnt & thePoint, const Standard_Real theParam, const Standard_Boolean theIsReplace = Standard_True);
-
 		/****************** BRepMesh_GeomTool ******************/
 		%feature("compactdefaultargs") BRepMesh_GeomTool;
 		%feature("autodoc", "Constructor. initiates discretization of the given geometric curve. @param thecurve curve to be discretized. @param thefirstparam first parameter of the curve. @param thelastparam last parameter of the curve. @param thelindeflection linear deflection. @param theangdeflection angular deflection. @param theminpointsnb minimum nuber of points to be produced.
@@ -1943,6 +1926,23 @@ Returns
 None
 ") BRepMesh_GeomTool;
 		 BRepMesh_GeomTool(const opencascade::handle<BRepAdaptor_HSurface> & theSurface, const GeomAbs_IsoType theIsoType, const Standard_Real theParamIso, const Standard_Real theFirstParam, const Standard_Real theLastParam, const Standard_Real theLinDeflection, const Standard_Real theAngDeflection, const Standard_Integer theMinPointsNb = 2, const Standard_Real theMinSize = Precision::Confusion());
+
+		/****************** AddPoint ******************/
+		%feature("compactdefaultargs") AddPoint;
+		%feature("autodoc", "Adds point to already calculated points (or replaces existing). @param thepoint point to be added. @param theparam parameter on the curve corresponding to the given point. @param theisreplace if true replaces existing point lying within parameteric tolerance of the given point. returns index of new added point or found with parametric tolerance.
+
+Parameters
+----------
+thePoint: gp_Pnt
+theParam: float
+theIsReplace: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+int
+") AddPoint;
+		Standard_Integer AddPoint(const gp_Pnt & thePoint, const Standard_Real theParam, const Standard_Boolean theIsReplace = Standard_True);
 
 		/****************** CellsCount ******************/
 		%feature("compactdefaultargs") CellsCount;
@@ -2089,6 +2089,20 @@ opencascade::handle<IMeshTools_MeshAlgo>
 class BRepMesh_MeshTool : public Standard_Transient {
 	public:
 		class NodeClassifier {};
+		/****************** BRepMesh_MeshTool ******************/
+		%feature("compactdefaultargs") BRepMesh_MeshTool;
+		%feature("autodoc", "Constructor. initializes tool by the given data structure.
+
+Parameters
+----------
+theStructure: BRepMesh_DataStructureOfDelaun
+
+Returns
+-------
+None
+") BRepMesh_MeshTool;
+		 BRepMesh_MeshTool(const opencascade::handle<BRepMesh_DataStructureOfDelaun> & theStructure);
+
 		/****************** AddAndLegalizeTriangle ******************/
 		%feature("compactdefaultargs") AddAndLegalizeTriangle;
 		%feature("autodoc", "Adds new triangle with specified nodes to mesh. legalizes triangle in case if it violates circle criteria.
@@ -2138,20 +2152,6 @@ Returns
 None
 ") AddTriangle;
 		void AddTriangle(const Standard_Integer thePoint1, const Standard_Integer thePoint2, const Standard_Integer thePoint3, Standard_Integer ( & theEdges )[3]);
-
-		/****************** BRepMesh_MeshTool ******************/
-		%feature("compactdefaultargs") BRepMesh_MeshTool;
-		%feature("autodoc", "Constructor. initializes tool by the given data structure.
-
-Parameters
-----------
-theStructure: BRepMesh_DataStructureOfDelaun
-
-Returns
--------
-None
-") BRepMesh_MeshTool;
-		 BRepMesh_MeshTool(const opencascade::handle<BRepMesh_DataStructureOfDelaun> & theStructure);
 
 		/****************** CleanFrontierLinks ******************/
 		%feature("compactdefaultargs") CleanFrontierLinks;
@@ -2470,6 +2470,16 @@ int
 *****************************/
 class BRepMesh_PairOfIndex {
 	public:
+		/****************** BRepMesh_PairOfIndex ******************/
+		%feature("compactdefaultargs") BRepMesh_PairOfIndex;
+		%feature("autodoc", "Default constructor.
+
+Returns
+-------
+None
+") BRepMesh_PairOfIndex;
+		 BRepMesh_PairOfIndex();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Appends index to the pair.
@@ -2483,16 +2493,6 @@ Returns
 None
 ") Append;
 		void Append(const Standard_Integer theIndex);
-
-		/****************** BRepMesh_PairOfIndex ******************/
-		%feature("compactdefaultargs") BRepMesh_PairOfIndex;
-		%feature("autodoc", "Default constructor.
-
-Returns
--------
-None
-") BRepMesh_PairOfIndex;
-		 BRepMesh_PairOfIndex();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -2615,16 +2615,6 @@ None
 *************************************************/
 class BRepMesh_SelectorOfDataStructureOfDelaun : public Standard_Transient {
 	public:
-		/****************** AddNeighbours ******************/
-		%feature("compactdefaultargs") AddNeighbours;
-		%feature("autodoc", "Adds a level of neighbours by edge the selector.
-
-Returns
--------
-None
-") AddNeighbours;
-		void AddNeighbours();
-
 		/****************** BRepMesh_SelectorOfDataStructureOfDelaun ******************/
 		%feature("compactdefaultargs") BRepMesh_SelectorOfDataStructureOfDelaun;
 		%feature("autodoc", "Default constructor.
@@ -2648,6 +2638,16 @@ Returns
 None
 ") BRepMesh_SelectorOfDataStructureOfDelaun;
 		 BRepMesh_SelectorOfDataStructureOfDelaun(const opencascade::handle<BRepMesh_DataStructureOfDelaun> & theMesh);
+
+		/****************** AddNeighbours ******************/
+		%feature("compactdefaultargs") AddNeighbours;
+		%feature("autodoc", "Adds a level of neighbours by edge the selector.
+
+Returns
+-------
+None
+") AddNeighbours;
+		void AddNeighbours();
 
 		/****************** Elements ******************/
 		%feature("compactdefaultargs") Elements;
@@ -3451,20 +3451,6 @@ None
 class BRepMesh_VertexInspector : public NCollection_CellFilter_InspectorXY {
 	public:
 typedef Standard_Integer Target;
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Registers the given vertex. @param thevertex vertex to be registered.
-
-Parameters
-----------
-theVertex: BRepMesh_Vertex
-
-Returns
--------
-int
-") Add;
-		Standard_Integer Add(const BRepMesh_Vertex & theVertex);
-
 		/****************** BRepMesh_VertexInspector ******************/
 		%feature("compactdefaultargs") BRepMesh_VertexInspector;
 		%feature("autodoc", "Constructor. @param theallocator memory allocator to be used by internal collections.
@@ -3478,6 +3464,20 @@ Returns
 None
 ") BRepMesh_VertexInspector;
 		 BRepMesh_VertexInspector(const opencascade::handle<NCollection_IncAllocator> & theAllocator);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Registers the given vertex. @param thevertex vertex to be registered.
+
+Parameters
+----------
+theVertex: BRepMesh_Vertex
+
+Returns
+-------
+int
+") Add;
+		Standard_Integer Add(const BRepMesh_Vertex & theVertex);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -3633,6 +3633,20 @@ None
 ****************************/
 class BRepMesh_VertexTool : public Standard_Transient {
 	public:
+		/****************** BRepMesh_VertexTool ******************/
+		%feature("compactdefaultargs") BRepMesh_VertexTool;
+		%feature("autodoc", "Constructor. @param theallocator memory allocator to be used by internal collections.
+
+Parameters
+----------
+theAllocator: NCollection_IncAllocator
+
+Returns
+-------
+None
+") BRepMesh_VertexTool;
+		 BRepMesh_VertexTool(const opencascade::handle<NCollection_IncAllocator> & theAllocator);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds vertex with empty data to the tool. @param thevertex node to be added to the mesh. @param isforceadd adds the given node to structure without checking on coincidence with other nodes. returns index of the node in the structure.
@@ -3647,20 +3661,6 @@ Returns
 int
 ") Add;
 		Standard_Integer Add(const BRepMesh_Vertex & theVertex, const Standard_Boolean isForceAdd);
-
-		/****************** BRepMesh_VertexTool ******************/
-		%feature("compactdefaultargs") BRepMesh_VertexTool;
-		%feature("autodoc", "Constructor. @param theallocator memory allocator to be used by internal collections.
-
-Parameters
-----------
-theAllocator: NCollection_IncAllocator
-
-Returns
--------
-None
-") BRepMesh_VertexTool;
-		 BRepMesh_VertexTool(const opencascade::handle<NCollection_IncAllocator> & theAllocator);
 
 		/****************** DeleteVertex ******************/
 		%feature("compactdefaultargs") DeleteVertex;

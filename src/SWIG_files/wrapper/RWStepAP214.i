@@ -120,6 +120,16 @@ None
 **********************************/
 class RWStepAP214_GeneralModule : public StepData_GeneralModule {
 	public:
+		/****************** RWStepAP214_GeneralModule ******************/
+		%feature("compactdefaultargs") RWStepAP214_GeneralModule;
+		%feature("autodoc", "Creates a generalmodule.
+
+Returns
+-------
+None
+") RWStepAP214_GeneralModule;
+		 RWStepAP214_GeneralModule();
+
 		/****************** CategoryNumber ******************/
 		%feature("compactdefaultargs") CategoryNumber;
 		%feature("autodoc", "No available documentation.
@@ -216,16 +226,6 @@ Returns
 bool
 ") NewVoid;
 		Standard_Boolean NewVoid(const Standard_Integer CN, opencascade::handle<Standard_Transient> & ent);
-
-		/****************** RWStepAP214_GeneralModule ******************/
-		%feature("compactdefaultargs") RWStepAP214_GeneralModule;
-		%feature("autodoc", "Creates a generalmodule.
-
-Returns
--------
-None
-") RWStepAP214_GeneralModule;
-		 RWStepAP214_GeneralModule();
 
 };
 
@@ -2089,6 +2089,16 @@ None
 ************************************/
 class RWStepAP214_ReadWriteModule : public StepData_ReadWriteModule {
 	public:
+		/****************** RWStepAP214_ReadWriteModule ******************/
+		%feature("compactdefaultargs") RWStepAP214_ReadWriteModule;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") RWStepAP214_ReadWriteModule;
+		 RWStepAP214_ReadWriteModule();
+
 		/****************** CaseStep ******************/
 		%feature("compactdefaultargs") CaseStep;
 		%feature("autodoc", "Associates a positive case number to each type of stepap214 entity, given as a string defined in the express form.
@@ -2145,16 +2155,6 @@ Returns
 bool
 ") IsComplex;
 		virtual Standard_Boolean IsComplex(const Standard_Integer CN);
-
-		/****************** RWStepAP214_ReadWriteModule ******************/
-		%feature("compactdefaultargs") RWStepAP214_ReadWriteModule;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") RWStepAP214_ReadWriteModule;
-		 RWStepAP214_ReadWriteModule();
 
 		/****************** ReadStep ******************/
 		%feature("compactdefaultargs") ReadStep;

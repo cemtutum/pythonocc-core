@@ -140,8 +140,8 @@ class XCAFDoc_ColorType:
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<TopoDS_Shape, TDF_Label, TopTools_ShapeMapHasher> XCAFDoc_DataMapOfShapeLabel;
 typedef NCollection_DataMap<TopoDS_Shape, TDF_Label, TopTools_ShapeMapHasher>::Iterator XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel;
+typedef NCollection_DataMap<TopoDS_Shape, TDF_Label, TopTools_ShapeMapHasher> XCAFDoc_DataMapOfShapeLabel;
 typedef NCollection_Sequence<opencascade::handle<XCAFDoc_GraphNode>> XCAFDoc_GraphNodeSequence;
 typedef TCollection_AsciiString XCAFDoc_PartId;
 /* end typedefs declaration */
@@ -400,6 +400,16 @@ Standard_GUID
 *********************/
 class XCAFDoc_Area : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_Area ******************/
+		%feature("compactdefaultargs") XCAFDoc_Area;
+		%feature("autodoc", "Class methods =============.
+
+Returns
+-------
+None
+") XCAFDoc_Area;
+		 XCAFDoc_Area();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -521,16 +531,6 @@ opencascade::handle<XCAFDoc_Area>
 ") Set;
 		static opencascade::handle<XCAFDoc_Area> Set(const TDF_Label & label, const Standard_Real area);
 
-		/****************** XCAFDoc_Area ******************/
-		%feature("compactdefaultargs") XCAFDoc_Area;
-		%feature("autodoc", "Class methods =============.
-
-Returns
--------
-None
-") XCAFDoc_Area;
-		 XCAFDoc_Area();
-
 };
 
 
@@ -548,6 +548,44 @@ None
 class XCAFDoc_AssemblyItemId {
 	public:
 		class Hasher {};
+		/****************** XCAFDoc_AssemblyItemId ******************/
+		%feature("compactdefaultargs") XCAFDoc_AssemblyItemId;
+		%feature("autodoc", "Constructs an empty item id.
+
+Returns
+-------
+None
+") XCAFDoc_AssemblyItemId;
+		 XCAFDoc_AssemblyItemId();
+
+		/****************** XCAFDoc_AssemblyItemId ******************/
+		%feature("compactdefaultargs") XCAFDoc_AssemblyItemId;
+		%feature("autodoc", "Constructs an item id from a list of strings, where every string is a label entry. \param [in] thepath - list of label entries.
+
+Parameters
+----------
+thePath: TColStd_ListOfAsciiString
+
+Returns
+-------
+None
+") XCAFDoc_AssemblyItemId;
+		 XCAFDoc_AssemblyItemId(const TColStd_ListOfAsciiString & thePath);
+
+		/****************** XCAFDoc_AssemblyItemId ******************/
+		%feature("compactdefaultargs") XCAFDoc_AssemblyItemId;
+		%feature("autodoc", "Constructs an item id from a formatted path, where label entries are separated by '/' symbol. \param [in] thestring - formatted full path.
+
+Parameters
+----------
+theString: TCollection_AsciiString
+
+Returns
+-------
+None
+") XCAFDoc_AssemblyItemId;
+		 XCAFDoc_AssemblyItemId(const TCollection_AsciiString & theString);
+
 		/****************** GetPath ******************/
 		%feature("compactdefaultargs") GetPath;
 		%feature("autodoc", "Returns the full path as a list of label entries.
@@ -658,44 +696,6 @@ TCollection_AsciiString
 ") ToString;
 		TCollection_AsciiString ToString();
 
-		/****************** XCAFDoc_AssemblyItemId ******************/
-		%feature("compactdefaultargs") XCAFDoc_AssemblyItemId;
-		%feature("autodoc", "Constructs an empty item id.
-
-Returns
--------
-None
-") XCAFDoc_AssemblyItemId;
-		 XCAFDoc_AssemblyItemId();
-
-		/****************** XCAFDoc_AssemblyItemId ******************/
-		%feature("compactdefaultargs") XCAFDoc_AssemblyItemId;
-		%feature("autodoc", "Constructs an item id from a list of strings, where every string is a label entry. \param [in] thepath - list of label entries.
-
-Parameters
-----------
-thePath: TColStd_ListOfAsciiString
-
-Returns
--------
-None
-") XCAFDoc_AssemblyItemId;
-		 XCAFDoc_AssemblyItemId(const TColStd_ListOfAsciiString & thePath);
-
-		/****************** XCAFDoc_AssemblyItemId ******************/
-		%feature("compactdefaultargs") XCAFDoc_AssemblyItemId;
-		%feature("autodoc", "Constructs an item id from a formatted path, where label entries are separated by '/' symbol. \param [in] thestring - formatted full path.
-
-Parameters
-----------
-theString: TCollection_AsciiString
-
-Returns
--------
-None
-") XCAFDoc_AssemblyItemId;
-		 XCAFDoc_AssemblyItemId(const TCollection_AsciiString & theString);
-
 };
 
 
@@ -710,6 +710,16 @@ None
 ********************************/
 class XCAFDoc_AssemblyItemRef : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_AssemblyItemRef ******************/
+		%feature("compactdefaultargs") XCAFDoc_AssemblyItemRef;
+		%feature("autodoc", "Creates an empty reference attribute.
+
+Returns
+-------
+None
+") XCAFDoc_AssemblyItemRef;
+		 XCAFDoc_AssemblyItemRef();
+
 		/****************** ClearExtraRef ******************/
 		%feature("compactdefaultargs") ClearExtraRef;
 		%feature("autodoc", "Reverts the reference to empty state.
@@ -988,16 +998,6 @@ None
 ") SetSubshapeIndex;
 		void SetSubshapeIndex(Standard_Integer theShapeIndex);
 
-		/****************** XCAFDoc_AssemblyItemRef ******************/
-		%feature("compactdefaultargs") XCAFDoc_AssemblyItemRef;
-		%feature("autodoc", "Creates an empty reference attribute.
-
-Returns
--------
-None
-") XCAFDoc_AssemblyItemRef;
-		 XCAFDoc_AssemblyItemRef();
-
 };
 
 
@@ -1014,6 +1014,16 @@ None
 *************************/
 class XCAFDoc_Centroid : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_Centroid ******************/
+		%feature("compactdefaultargs") XCAFDoc_Centroid;
+		%feature("autodoc", "Class methods =============.
+
+Returns
+-------
+None
+") XCAFDoc_Centroid;
+		 XCAFDoc_Centroid();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -1135,16 +1145,6 @@ None
 ") Set;
 		void Set(const gp_Pnt & pnt);
 
-		/****************** XCAFDoc_Centroid ******************/
-		%feature("compactdefaultargs") XCAFDoc_Centroid;
-		%feature("autodoc", "Class methods =============.
-
-Returns
--------
-None
-") XCAFDoc_Centroid;
-		 XCAFDoc_Centroid();
-
 };
 
 
@@ -1161,6 +1161,16 @@ None
 **********************************/
 class XCAFDoc_ClippingPlaneTool : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_ClippingPlaneTool ******************/
+		%feature("compactdefaultargs") XCAFDoc_ClippingPlaneTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_ClippingPlaneTool;
+		 XCAFDoc_ClippingPlaneTool();
+
 		/****************** AddClippingPlane ******************/
 		%feature("compactdefaultargs") AddClippingPlane;
 		%feature("autodoc", "Adds a clipping plane definition to a clippingplane table and returns its label (returns existing label if the same clipping plane is already defined).
@@ -1442,16 +1452,6 @@ None
 ") UpdateClippingPlane;
 		void UpdateClippingPlane(const TDF_Label & theLabelL, const gp_Pln thePlane, const TCollection_ExtendedString theName);
 
-		/****************** XCAFDoc_ClippingPlaneTool ******************/
-		%feature("compactdefaultargs") XCAFDoc_ClippingPlaneTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_ClippingPlaneTool;
-		 XCAFDoc_ClippingPlaneTool();
-
 };
 
 
@@ -1468,6 +1468,16 @@ None
 **********************/
 class XCAFDoc_Color : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_Color ******************/
+		%feature("compactdefaultargs") XCAFDoc_Color;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_Color;
+		 XCAFDoc_Color();
+
 		/****************** GetAlpha ******************/
 		%feature("compactdefaultargs") GetAlpha;
 		%feature("autodoc", "No available documentation.
@@ -1707,16 +1717,6 @@ None
 ") Set;
 		void Set(const Standard_Real R, const Standard_Real G, const Standard_Real B, const Standard_Real alpha = 1.0);
 
-		/****************** XCAFDoc_Color ******************/
-		%feature("compactdefaultargs") XCAFDoc_Color;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_Color;
-		 XCAFDoc_Color();
-
 };
 
 
@@ -1733,6 +1733,16 @@ None
 **************************/
 class XCAFDoc_ColorTool : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_ColorTool ******************/
+		%feature("compactdefaultargs") XCAFDoc_ColorTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_ColorTool;
+		 XCAFDoc_ColorTool();
+
 		/****************** AddColor ******************/
 		%feature("compactdefaultargs") AddColor;
 		%feature("autodoc", "Adds a color definition to a colortable and returns its label (returns existing label if the same color is already defined).
@@ -2388,16 +2398,6 @@ bool
 ") UnSetColor;
 		Standard_Boolean UnSetColor(const TopoDS_Shape & S, const XCAFDoc_ColorType type);
 
-		/****************** XCAFDoc_ColorTool ******************/
-		%feature("compactdefaultargs") XCAFDoc_ColorTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_ColorTool;
-		 XCAFDoc_ColorTool();
-
 };
 
 
@@ -2414,6 +2414,16 @@ None
 **********************/
 class XCAFDoc_Datum : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_Datum ******************/
+		%feature("compactdefaultargs") XCAFDoc_Datum;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_Datum;
+		 XCAFDoc_Datum();
+
 		/****************** GetDescription ******************/
 		%feature("compactdefaultargs") GetDescription;
 		%feature("autodoc", "No available documentation.
@@ -2574,16 +2584,6 @@ None
 ") SetObject;
 		void SetObject(const opencascade::handle<XCAFDimTolObjects_DatumObject> & theDatumObject);
 
-		/****************** XCAFDoc_Datum ******************/
-		%feature("compactdefaultargs") XCAFDoc_Datum;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_Datum;
-		 XCAFDoc_Datum();
-
 };
 
 
@@ -2600,6 +2600,16 @@ None
 ***********************/
 class XCAFDoc_DimTol : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_DimTol ******************/
+		%feature("compactdefaultargs") XCAFDoc_DimTol;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_DimTol;
+		 XCAFDoc_DimTol();
+
 		/****************** GetDescription ******************/
 		%feature("compactdefaultargs") GetDescription;
 		%feature("autodoc", "No available documentation.
@@ -2734,16 +2744,6 @@ None
 ") Set;
 		void Set(const Standard_Integer kind, const opencascade::handle<TColStd_HArray1OfReal> & aVal, const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<TCollection_HAsciiString> & aDescription);
 
-		/****************** XCAFDoc_DimTol ******************/
-		%feature("compactdefaultargs") XCAFDoc_DimTol;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_DimTol;
-		 XCAFDoc_DimTol();
-
 };
 
 
@@ -2763,6 +2763,16 @@ None
 **************************/
 class XCAFDoc_Dimension : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_Dimension ******************/
+		%feature("compactdefaultargs") XCAFDoc_Dimension;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_Dimension;
+		 XCAFDoc_Dimension();
+
 		/****************** GetID ******************/
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "No available documentation.
@@ -2860,16 +2870,6 @@ None
 ") SetObject;
 		void SetObject(const opencascade::handle<XCAFDimTolObjects_DimensionObject> & theDimensionObject);
 
-		/****************** XCAFDoc_Dimension ******************/
-		%feature("compactdefaultargs") XCAFDoc_Dimension;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_Dimension;
-		 XCAFDoc_Dimension();
-
 };
 
 
@@ -2886,6 +2886,16 @@ None
 *****************************/
 class XCAFDoc_DocumentTool : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_DocumentTool ******************/
+		%feature("compactdefaultargs") XCAFDoc_DocumentTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_DocumentTool;
+		 XCAFDoc_DocumentTool();
+
 		/****************** ClippingPlaneTool ******************/
 		%feature("compactdefaultargs") ClippingPlaneTool;
 		%feature("autodoc", "Creates (if it does not exist) clippingplanetool attribute on clippingplaneslabel().
@@ -3223,16 +3233,6 @@ TDF_Label
 ") ViewsLabel;
 		static TDF_Label ViewsLabel(const TDF_Label & acces);
 
-		/****************** XCAFDoc_DocumentTool ******************/
-		%feature("compactdefaultargs") XCAFDoc_DocumentTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_DocumentTool;
-		 XCAFDoc_DocumentTool();
-
 };
 
 
@@ -3299,6 +3299,16 @@ bool
 **************************/
 class XCAFDoc_GraphNode : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_GraphNode ******************/
+		%feature("compactdefaultargs") XCAFDoc_GraphNode;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_GraphNode;
+		 XCAFDoc_GraphNode();
+
 		/****************** BeforeForget ******************/
 		%feature("compactdefaultargs") BeforeForget;
 		%feature("autodoc", "No available documentation.
@@ -3636,16 +3646,6 @@ None
 ") UnSetFather;
 		void UnSetFather(const Standard_Integer Findex);
 
-		/****************** XCAFDoc_GraphNode ******************/
-		%feature("compactdefaultargs") XCAFDoc_GraphNode;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_GraphNode;
-		 XCAFDoc_GraphNode();
-
 };
 
 
@@ -3662,6 +3662,16 @@ None
 **************************/
 class XCAFDoc_LayerTool : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_LayerTool ******************/
+		%feature("compactdefaultargs") XCAFDoc_LayerTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_LayerTool;
+		 XCAFDoc_LayerTool();
+
 		/****************** AddLayer ******************/
 		%feature("compactdefaultargs") AddLayer;
 		%feature("autodoc", "Adds a layer definition to a layertable and returns its label (returns existing label if the same layer is already defined).
@@ -4204,16 +4214,6 @@ bool
 ") UnSetOneLayer;
 		Standard_Boolean UnSetOneLayer(const TopoDS_Shape & Sh, const TDF_Label & aLayerL);
 
-		/****************** XCAFDoc_LayerTool ******************/
-		%feature("compactdefaultargs") XCAFDoc_LayerTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_LayerTool;
-		 XCAFDoc_LayerTool();
-
 };
 
 
@@ -4230,6 +4230,16 @@ None
 *************************/
 class XCAFDoc_Location : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_Location ******************/
+		%feature("compactdefaultargs") XCAFDoc_Location;
+		%feature("autodoc", "Class methods =============.
+
+Returns
+-------
+None
+") XCAFDoc_Location;
+		 XCAFDoc_Location();
+
 		/****************** Get ******************/
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "Returns true if there is a reference on the same label.
@@ -4328,16 +4338,6 @@ None
 ") Set;
 		void Set(const TopLoc_Location & Loc);
 
-		/****************** XCAFDoc_Location ******************/
-		%feature("compactdefaultargs") XCAFDoc_Location;
-		%feature("autodoc", "Class methods =============.
-
-Returns
--------
-None
-") XCAFDoc_Location;
-		 XCAFDoc_Location();
-
 };
 
 
@@ -4354,6 +4354,16 @@ None
 *************************/
 class XCAFDoc_Material : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_Material ******************/
+		%feature("compactdefaultargs") XCAFDoc_Material;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_Material;
+		 XCAFDoc_Material();
+
 		/****************** GetDensName ******************/
 		%feature("compactdefaultargs") GetDensName;
 		%feature("autodoc", "No available documentation.
@@ -4500,16 +4510,6 @@ None
 ") Set;
 		void Set(const opencascade::handle<TCollection_HAsciiString> & aName, const opencascade::handle<TCollection_HAsciiString> & aDescription, const Standard_Real aDensity, const opencascade::handle<TCollection_HAsciiString> & aDensName, const opencascade::handle<TCollection_HAsciiString> & aDensValType);
 
-		/****************** XCAFDoc_Material ******************/
-		%feature("compactdefaultargs") XCAFDoc_Material;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_Material;
-		 XCAFDoc_Material();
-
 };
 
 
@@ -4526,6 +4526,16 @@ None
 *****************************/
 class XCAFDoc_MaterialTool : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_MaterialTool ******************/
+		%feature("compactdefaultargs") XCAFDoc_MaterialTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_MaterialTool;
+		 XCAFDoc_MaterialTool();
+
 		/****************** AddMaterial ******************/
 		%feature("compactdefaultargs") AddMaterial;
 		%feature("autodoc", "Adds a material definition to a table and returns its label.
@@ -4732,16 +4742,6 @@ opencascade::handle<XCAFDoc_ShapeTool>
 ") ShapeTool;
 		const opencascade::handle<XCAFDoc_ShapeTool> & ShapeTool();
 
-		/****************** XCAFDoc_MaterialTool ******************/
-		%feature("compactdefaultargs") XCAFDoc_MaterialTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_MaterialTool;
-		 XCAFDoc_MaterialTool();
-
 };
 
 
@@ -4909,6 +4909,16 @@ TCollection_ExtendedString
 **************************/
 class XCAFDoc_NotesTool : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_NotesTool ******************/
+		%feature("compactdefaultargs") XCAFDoc_NotesTool;
+		%feature("autodoc", "Creates an empty notes tool.
+
+Returns
+-------
+None
+") XCAFDoc_NotesTool;
+		 XCAFDoc_NotesTool();
+
 		/****************** AddNote ******************/
 		%feature("compactdefaultargs") AddNote;
 		%feature("autodoc", "Adds the given note to the assembly item. \param [in] thenotelabel - note label. \param [in] theitemid - assembly item id. eturn a handle to the assembly reference attribute.
@@ -5675,16 +5685,6 @@ opencascade::handle<XCAFDoc_NotesTool>
 ") Set;
 		static opencascade::handle<XCAFDoc_NotesTool> Set(const TDF_Label & theLabel);
 
-		/****************** XCAFDoc_NotesTool ******************/
-		%feature("compactdefaultargs") XCAFDoc_NotesTool;
-		%feature("autodoc", "Creates an empty notes tool.
-
-Returns
--------
-None
-") XCAFDoc_NotesTool;
-		 XCAFDoc_NotesTool();
-
 };
 
 
@@ -5701,6 +5701,16 @@ None
 *****************************/
 class XCAFDoc_ShapeMapTool : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_ShapeMapTool ******************/
+		%feature("compactdefaultargs") XCAFDoc_ShapeMapTool;
+		%feature("autodoc", "Creates an empty tool.
+
+Returns
+-------
+None
+") XCAFDoc_ShapeMapTool;
+		 XCAFDoc_ShapeMapTool();
+
 		/****************** GetID ******************/
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "No available documentation.
@@ -5812,16 +5822,6 @@ None
 ") SetShape;
 		void SetShape(const TopoDS_Shape & S);
 
-		/****************** XCAFDoc_ShapeMapTool ******************/
-		%feature("compactdefaultargs") XCAFDoc_ShapeMapTool;
-		%feature("autodoc", "Creates an empty tool.
-
-Returns
--------
-None
-") XCAFDoc_ShapeMapTool;
-		 XCAFDoc_ShapeMapTool();
-
 };
 
 
@@ -5838,6 +5838,16 @@ None
 **************************/
 class XCAFDoc_ShapeTool : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_ShapeTool ******************/
+		%feature("compactdefaultargs") XCAFDoc_ShapeTool;
+		%feature("autodoc", "Creates an empty tool creates a tool to work with a document <doc> attaches to label xcafdoc::labelshapes().
+
+Returns
+-------
+None
+") XCAFDoc_ShapeTool;
+		 XCAFDoc_ShapeTool();
+
 		/****************** AddComponent ******************/
 		%feature("compactdefaultargs") AddComponent;
 		%feature("autodoc", "Adds a component given by its label and location to the assembly note: assembly must be isassembly() or issimpleshape().
@@ -6807,16 +6817,6 @@ None
 ") UpdateAssemblies;
 		void UpdateAssemblies();
 
-		/****************** XCAFDoc_ShapeTool ******************/
-		%feature("compactdefaultargs") XCAFDoc_ShapeTool;
-		%feature("autodoc", "Creates an empty tool creates a tool to work with a document <doc> attaches to label xcafdoc::labelshapes().
-
-Returns
--------
-None
-") XCAFDoc_ShapeTool;
-		 XCAFDoc_ShapeTool();
-
 };
 
 
@@ -6833,6 +6833,16 @@ None
 *********************/
 class XCAFDoc_View : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_View ******************/
+		%feature("compactdefaultargs") XCAFDoc_View;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_View;
+		 XCAFDoc_View();
+
 		/****************** GetID ******************/
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "No available documentation.
@@ -6930,16 +6940,6 @@ None
 ") SetObject;
 		void SetObject(const opencascade::handle<XCAFView_Object> & theViewObject);
 
-		/****************** XCAFDoc_View ******************/
-		%feature("compactdefaultargs") XCAFDoc_View;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_View;
-		 XCAFDoc_View();
-
 };
 
 
@@ -6956,6 +6956,16 @@ None
 *************************/
 class XCAFDoc_ViewTool : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_ViewTool ******************/
+		%feature("compactdefaultargs") XCAFDoc_ViewTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XCAFDoc_ViewTool;
+		 XCAFDoc_ViewTool();
+
 		/****************** AddView ******************/
 		%feature("compactdefaultargs") AddView;
 		%feature("autodoc", "Adds a view definition to a view table and returns its label.
@@ -7350,16 +7360,6 @@ None
 ") Unlock;
 		void Unlock(const TDF_Label & theViewL);
 
-		/****************** XCAFDoc_ViewTool ******************/
-		%feature("compactdefaultargs") XCAFDoc_ViewTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XCAFDoc_ViewTool;
-		 XCAFDoc_ViewTool();
-
 };
 
 
@@ -7376,6 +7376,16 @@ None
 ***********************/
 class XCAFDoc_Volume : public TDF_Attribute {
 	public:
+		/****************** XCAFDoc_Volume ******************/
+		%feature("compactdefaultargs") XCAFDoc_Volume;
+		%feature("autodoc", "Class methods =============.
+
+Returns
+-------
+None
+") XCAFDoc_Volume;
+		 XCAFDoc_Volume();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -7497,16 +7507,6 @@ opencascade::handle<XCAFDoc_Volume>
 ") Set;
 		static opencascade::handle<XCAFDoc_Volume> Set(const TDF_Label & label, const Standard_Real vol);
 
-		/****************** XCAFDoc_Volume ******************/
-		%feature("compactdefaultargs") XCAFDoc_Volume;
-		%feature("autodoc", "Class methods =============.
-
-Returns
--------
-None
-") XCAFDoc_Volume;
-		 XCAFDoc_Volume();
-
 };
 
 
@@ -7523,6 +7523,16 @@ None
 ****************************/
 class XCAFDoc_NoteBinData : public XCAFDoc_Note {
 	public:
+		/****************** XCAFDoc_NoteBinData ******************/
+		%feature("compactdefaultargs") XCAFDoc_NoteBinData;
+		%feature("autodoc", "Creates an empty binary data note.
+
+Returns
+-------
+None
+") XCAFDoc_NoteBinData;
+		 XCAFDoc_NoteBinData();
+
 		/****************** Data ******************/
 		%feature("compactdefaultargs") Data;
 		%feature("autodoc", "Returns byte data array.
@@ -7714,16 +7724,6 @@ TCollection_ExtendedString
 ") Title;
 		const TCollection_ExtendedString & Title();
 
-		/****************** XCAFDoc_NoteBinData ******************/
-		%feature("compactdefaultargs") XCAFDoc_NoteBinData;
-		%feature("autodoc", "Creates an empty binary data note.
-
-Returns
--------
-None
-") XCAFDoc_NoteBinData;
-		 XCAFDoc_NoteBinData();
-
 };
 
 
@@ -7740,6 +7740,16 @@ None
 ****************************/
 class XCAFDoc_NoteComment : public XCAFDoc_Note {
 	public:
+		/****************** XCAFDoc_NoteComment ******************/
+		%feature("compactdefaultargs") XCAFDoc_NoteComment;
+		%feature("autodoc", "Creates an empty comment note.
+
+Returns
+-------
+None
+") XCAFDoc_NoteComment;
+		 XCAFDoc_NoteComment();
+
 		/****************** Comment ******************/
 		%feature("compactdefaultargs") Comment;
 		%feature("autodoc", "Returns the comment text.
@@ -7862,16 +7872,6 @@ None
 ") Set;
 		void Set(const TCollection_ExtendedString & theComment);
 
-		/****************** XCAFDoc_NoteComment ******************/
-		%feature("compactdefaultargs") XCAFDoc_NoteComment;
-		%feature("autodoc", "Creates an empty comment note.
-
-Returns
--------
-None
-") XCAFDoc_NoteComment;
-		 XCAFDoc_NoteComment();
-
 };
 
 
@@ -7888,6 +7888,16 @@ None
 ****************************/
 class XCAFDoc_NoteBalloon : public XCAFDoc_NoteComment {
 	public:
+		/****************** XCAFDoc_NoteBalloon ******************/
+		%feature("compactdefaultargs") XCAFDoc_NoteBalloon;
+		%feature("autodoc", "Creates an empty comment note.
+
+Returns
+-------
+None
+") XCAFDoc_NoteBalloon;
+		 XCAFDoc_NoteBalloon();
+
 		/****************** Get ******************/
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "Finds a reference attribute on the given label and returns it, if it is found.
@@ -7948,16 +7958,6 @@ Returns
 opencascade::handle<XCAFDoc_NoteBalloon>
 ") Set;
 		static opencascade::handle<XCAFDoc_NoteBalloon> Set(const TDF_Label & theLabel, const TCollection_ExtendedString & theUserName, const TCollection_ExtendedString & theTimeStamp, const TCollection_ExtendedString & theComment);
-
-		/****************** XCAFDoc_NoteBalloon ******************/
-		%feature("compactdefaultargs") XCAFDoc_NoteBalloon;
-		%feature("autodoc", "Creates an empty comment note.
-
-Returns
--------
-None
-") XCAFDoc_NoteBalloon;
-		 XCAFDoc_NoteBalloon();
 
 };
 

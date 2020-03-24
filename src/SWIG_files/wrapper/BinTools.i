@@ -133,6 +133,16 @@ bool
 ****************************/
 class BinTools_Curve2dSet {
 	public:
+		/****************** BinTools_Curve2dSet ******************/
+		%feature("compactdefaultargs") BinTools_Curve2dSet;
+		%feature("autodoc", "Returns an empty set of curves.
+
+Returns
+-------
+None
+") BinTools_Curve2dSet;
+		 BinTools_Curve2dSet();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Incorporate a new curve in the set and returns its index.
@@ -146,16 +156,6 @@ Returns
 int
 ") Add;
 		Standard_Integer Add(const opencascade::handle<Geom2d_Curve> & C);
-
-		/****************** BinTools_Curve2dSet ******************/
-		%feature("compactdefaultargs") BinTools_Curve2dSet;
-		%feature("autodoc", "Returns an empty set of curves.
-
-Returns
--------
-None
-") BinTools_Curve2dSet;
-		 BinTools_Curve2dSet();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -228,6 +228,16 @@ int
 **************************/
 class BinTools_CurveSet {
 	public:
+		/****************** BinTools_CurveSet ******************/
+		%feature("compactdefaultargs") BinTools_CurveSet;
+		%feature("autodoc", "Returns an empty set of curves.
+
+Returns
+-------
+None
+") BinTools_CurveSet;
+		 BinTools_CurveSet();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Incorporate a new curve in the set and returns its index.
@@ -241,16 +251,6 @@ Returns
 int
 ") Add;
 		Standard_Integer Add(const opencascade::handle<Geom_Curve> & C);
-
-		/****************** BinTools_CurveSet ******************/
-		%feature("compactdefaultargs") BinTools_CurveSet;
-		%feature("autodoc", "Returns an empty set of curves.
-
-Returns
--------
-None
-") BinTools_CurveSet;
-		 BinTools_CurveSet();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -319,6 +319,16 @@ int
 *****************************/
 class BinTools_LocationSet {
 	public:
+		/****************** BinTools_LocationSet ******************/
+		%feature("compactdefaultargs") BinTools_LocationSet;
+		%feature("autodoc", "Returns an empty set of locations.
+
+Returns
+-------
+None
+") BinTools_LocationSet;
+		 BinTools_LocationSet();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Incorporate a new location in the set and returns its index.
@@ -332,16 +342,6 @@ Returns
 int
 ") Add;
 		Standard_Integer Add(const TopLoc_Location & L);
-
-		/****************** BinTools_LocationSet ******************/
-		%feature("compactdefaultargs") BinTools_LocationSet;
-		%feature("autodoc", "Returns an empty set of locations.
-
-Returns
--------
-None
-") BinTools_LocationSet;
-		 BinTools_LocationSet();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -420,6 +420,21 @@ int
 **************************/
 class BinTools_ShapeSet {
 	public:
+		/****************** BinTools_ShapeSet ******************/
+		%feature("compactdefaultargs") BinTools_ShapeSet;
+		%feature("autodoc", "Builds an empty shapeset. parameter <iswithtriangles> is added for xml persistence.
+
+Parameters
+----------
+isWithTriangles: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") BinTools_ShapeSet;
+		 BinTools_ShapeSet(const Standard_Boolean isWithTriangles = Standard_False);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Stores <s> and its sub-shape. returns the index of <s>. the method addgeometry is called on each sub-shape.
@@ -462,21 +477,6 @@ Returns
 None
 ") AddShapes;
 		virtual void AddShapes(TopoDS_Shape & S1, const TopoDS_Shape & S2);
-
-		/****************** BinTools_ShapeSet ******************/
-		%feature("compactdefaultargs") BinTools_ShapeSet;
-		%feature("autodoc", "Builds an empty shapeset. parameter <iswithtriangles> is added for xml persistence.
-
-Parameters
-----------
-isWithTriangles: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") BinTools_ShapeSet;
-		 BinTools_ShapeSet(const Standard_Boolean isWithTriangles = Standard_False);
 
 		/****************** ChangeLocations ******************/
 		%feature("compactdefaultargs") ChangeLocations;
@@ -683,6 +683,16 @@ TopoDS_Shape
 ****************************/
 class BinTools_SurfaceSet {
 	public:
+		/****************** BinTools_SurfaceSet ******************/
+		%feature("compactdefaultargs") BinTools_SurfaceSet;
+		%feature("autodoc", "Returns an empty set of surfaces.
+
+Returns
+-------
+None
+") BinTools_SurfaceSet;
+		 BinTools_SurfaceSet();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Incorporate a new surface in the set and returns its index.
@@ -696,16 +706,6 @@ Returns
 int
 ") Add;
 		Standard_Integer Add(const opencascade::handle<Geom_Surface> & S);
-
-		/****************** BinTools_SurfaceSet ******************/
-		%feature("compactdefaultargs") BinTools_SurfaceSet;
-		%feature("autodoc", "Returns an empty set of surfaces.
-
-Returns
--------
-None
-") BinTools_SurfaceSet;
-		 BinTools_SurfaceSet();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;

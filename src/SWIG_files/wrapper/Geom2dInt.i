@@ -100,16 +100,6 @@ from OCC.Core.Exception import *
 *********************************************************************/
 class Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
 	public:
-		/****************** AnErrorOccurred ******************/
-		%feature("compactdefaultargs") AnErrorOccurred;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-bool
-") AnErrorOccurred;
-		Standard_Boolean AnErrorOccurred();
-
 		/****************** Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter ******************/
 		%feature("compactdefaultargs") Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter;
 		%feature("autodoc", "No available documentation.
@@ -125,6 +115,16 @@ Returns
 None
 ") Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter;
 		 Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d & C1, const Adaptor2d_Curve2d & C2, const Standard_Real Tol);
+
+		/****************** AnErrorOccurred ******************/
+		%feature("compactdefaultargs") AnErrorOccurred;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
+") AnErrorOccurred;
+		Standard_Boolean AnErrorOccurred();
 
 		/****************** NbRoots ******************/
 		%feature("compactdefaultargs") NbRoots;
@@ -203,21 +203,6 @@ None
 *************************/
 class Geom2dInt_GInter : public IntRes2d_Intersection {
 	public:
-		/****************** ComputeDomain ******************/
-		%feature("compactdefaultargs") ComputeDomain;
-		%feature("autodoc", "Create a domain from a curve.
-
-Parameters
-----------
-C1: Adaptor2d_Curve2d
-TolDomain: float
-
-Returns
--------
-IntRes2d_Domain
-") ComputeDomain;
-		IntRes2d_Domain ComputeDomain(const Adaptor2d_Curve2d & C1, const Standard_Real TolDomain);
-
 		/****************** Geom2dInt_GInter ******************/
 		%feature("compactdefaultargs") Geom2dInt_GInter;
 		%feature("autodoc", "Empty constructor.
@@ -332,6 +317,21 @@ Returns
 None
 ") Geom2dInt_GInter;
 		 Geom2dInt_GInter(const Adaptor2d_Curve2d & C1, const IntRes2d_Domain & D1, const Adaptor2d_Curve2d & C2, const IntRes2d_Domain & D2, const Standard_Real TolConf, const Standard_Real Tol);
+
+		/****************** ComputeDomain ******************/
+		%feature("compactdefaultargs") ComputeDomain;
+		%feature("autodoc", "Create a domain from a curve.
+
+Parameters
+----------
+C1: Adaptor2d_Curve2d
+TolDomain: float
+
+Returns
+-------
+IntRes2d_Domain
+") ComputeDomain;
+		IntRes2d_Domain ComputeDomain(const Adaptor2d_Curve2d & C1, const Standard_Real TolDomain);
 
 		/****************** GetMinNbSamples ******************/
 		%feature("compactdefaultargs") GetMinNbSamples;
@@ -1041,21 +1041,6 @@ None
 *************************************************************************/
 class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Computes the derivative of the previous function at parameter param.
-
-Parameters
-----------
-Param: float
-D: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-
 		/****************** Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter ******************/
 		%feature("compactdefaultargs") Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter;
 		%feature("autodoc", "Constructor of the class.
@@ -1070,6 +1055,21 @@ Returns
 None
 ") Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter;
 		 Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter(const IntCurve_IConicTool & IT, const Adaptor2d_Curve2d & PC);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Computes the derivative of the previous function at parameter param.
+
+Parameters
+----------
+Param: float
+D: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -1116,21 +1116,6 @@ bool
 **************************************************************/
 class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Calculation of f'(u).
-
-Parameters
-----------
-U: float
-DF: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-
 		/****************** Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter ******************/
 		%feature("compactdefaultargs") Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
 		%feature("autodoc", "No available documentation.
@@ -1155,6 +1140,21 @@ Returns
 None
 ") Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
 		 Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d & P, const Adaptor2d_Curve2d & C);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Calculation of f'(u).
+
+Parameters
+----------
+U: float
+DF: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
 
 		/****************** GetStateNumber ******************/
 		%feature("compactdefaultargs") GetStateNumber;
@@ -1334,21 +1334,6 @@ class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
 ********************************************************************/
 class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_FunctionSetWithDerivatives {
 	public:
-		/****************** Derivatives ******************/
-		%feature("compactdefaultargs") Derivatives;
-		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
-
-Parameters
-----------
-X: math_Vector
-D: math_Matrix
-
-Returns
--------
-bool
-") Derivatives;
-		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
-
 		/****************** Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter ******************/
 		%feature("compactdefaultargs") Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter;
 		%feature("autodoc", "No available documentation.
@@ -1363,6 +1348,21 @@ Returns
 None
 ") Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter;
 		 Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d & curve1, const Adaptor2d_Curve2d & curve2);
+
+		/****************** Derivatives ******************/
+		%feature("compactdefaultargs") Derivatives;
+		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
+
+Parameters
+----------
+X: math_Vector
+D: math_Matrix
+
+Returns
+-------
+bool
+") Derivatives;
+		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
 		/****************** NbEquations ******************/
 		%feature("compactdefaultargs") NbEquations;
@@ -1727,6 +1727,35 @@ None
 ***********************************************************/
 class Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter : public IntRes2d_Intersection {
 	public:
+		/****************** Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter ******************/
+		%feature("compactdefaultargs") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
+		 Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter();
+
+		/****************** Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter ******************/
+		%feature("compactdefaultargs") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
+		%feature("autodoc", "Intersection between an implicit curve and a parametrised curve. the exception constructionerror is raised if the domain of the parametrised curve does not verify hasfirstpoint and haslastpoint return true.
+
+Parameters
+----------
+ITool: IntCurve_IConicTool
+Dom1: IntRes2d_Domain
+PCurve: Adaptor2d_Curve2d
+Dom2: IntRes2d_Domain
+TolConf: float
+Tol: float
+
+Returns
+-------
+None
+") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
+		 Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter(const IntCurve_IConicTool & ITool, const IntRes2d_Domain & Dom1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & Dom2, const Standard_Real TolConf, const Standard_Real Tol);
+
 		/****************** And_Domaine_Objet1_Intersections ******************/
 		%feature("compactdefaultargs") And_Domaine_Objet1_Intersections;
 		%feature("autodoc", "No available documentation.
@@ -1787,35 +1816,6 @@ Returns
 float
 ") FindV;
 		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool & TheImpTool, const Adaptor2d_Curve2d & ParCurve, const IntRes2d_Domain & TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance);
-
-		/****************** Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter ******************/
-		%feature("compactdefaultargs") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
-		 Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter();
-
-		/****************** Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter ******************/
-		%feature("compactdefaultargs") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
-		%feature("autodoc", "Intersection between an implicit curve and a parametrised curve. the exception constructionerror is raised if the domain of the parametrised curve does not verify hasfirstpoint and haslastpoint return true.
-
-Parameters
-----------
-ITool: IntCurve_IConicTool
-Dom1: IntRes2d_Domain
-PCurve: Adaptor2d_Curve2d
-Dom2: IntRes2d_Domain
-TolConf: float
-Tol: float
-
-Returns
--------
-None
-") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
-		 Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter(const IntCurve_IConicTool & ITool, const IntRes2d_Domain & Dom1, const Adaptor2d_Curve2d & PCurve, const IntRes2d_Domain & Dom2, const Standard_Real TolConf, const Standard_Real Tol);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
@@ -1982,6 +1982,23 @@ float
 ***********************************************************/
 class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter : public Intf_Polygon2d {
 	public:
+		/****************** Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter ******************/
+		%feature("compactdefaultargs") Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter;
+		%feature("autodoc", "Compute a polygon on the domain of the curve.
+
+Parameters
+----------
+Curve: Adaptor2d_Curve2d
+NbPnt: int
+Domain: IntRes2d_Domain
+Tol: float
+
+Returns
+-------
+None
+") Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter;
+		 Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d & Curve, const Standard_Integer NbPnt, const IntRes2d_Domain & Domain, const Standard_Real Tol);
+
 		/****************** ApproxParamOnCurve ******************/
 		%feature("compactdefaultargs") ApproxParamOnCurve;
 		%feature("autodoc", "Give an approximation of the parameter on the curve according to the discretization of the curve.
@@ -2084,23 +2101,6 @@ Returns
 None
 ") Dump;
 		void Dump();
-
-		/****************** Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter ******************/
-		%feature("compactdefaultargs") Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter;
-		%feature("autodoc", "Compute a polygon on the domain of the curve.
-
-Parameters
-----------
-Curve: Adaptor2d_Curve2d
-NbPnt: int
-Domain: IntRes2d_Domain
-Tol: float
-
-Returns
--------
-None
-") Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter;
-		 Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d & Curve, const Standard_Integer NbPnt, const IntRes2d_Domain & Domain, const Standard_Real Tol);
 
 		/****************** InfParameter ******************/
 		%feature("compactdefaultargs") InfParameter;

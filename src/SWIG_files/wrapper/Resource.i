@@ -98,10 +98,10 @@ class Resource_FormatType:
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<TCollection_AsciiString, TCollection_AsciiString, TCollection_AsciiString> Resource_DataMapOfAsciiStringAsciiString;
 typedef NCollection_DataMap<TCollection_AsciiString, TCollection_AsciiString, TCollection_AsciiString>::Iterator Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString;
-typedef NCollection_DataMap<TCollection_AsciiString, TCollection_ExtendedString, TCollection_AsciiString> Resource_DataMapOfAsciiStringExtendedString;
 typedef NCollection_DataMap<TCollection_AsciiString, TCollection_ExtendedString, TCollection_AsciiString>::Iterator Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString;
+typedef NCollection_DataMap<TCollection_AsciiString, TCollection_AsciiString, TCollection_AsciiString> Resource_DataMapOfAsciiStringAsciiString;
+typedef NCollection_DataMap<TCollection_AsciiString, TCollection_ExtendedString, TCollection_AsciiString> Resource_DataMapOfAsciiStringExtendedString;
 /* end typedefs declaration */
 
 /********************************
@@ -109,6 +109,16 @@ typedef NCollection_DataMap<TCollection_AsciiString, TCollection_ExtendedString,
 ********************************/
 class Resource_LexicalCompare {
 	public:
+		/****************** Resource_LexicalCompare ******************/
+		%feature("compactdefaultargs") Resource_LexicalCompare;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Resource_LexicalCompare;
+		 Resource_LexicalCompare();
+
 		/****************** IsLower ******************/
 		%feature("compactdefaultargs") IsLower;
 		%feature("autodoc", "Returns true if <left> is lower than <right>.
@@ -124,16 +134,6 @@ bool
 ") IsLower;
 		Standard_Boolean IsLower(const TCollection_AsciiString & Left, const TCollection_AsciiString & Right);
 
-		/****************** Resource_LexicalCompare ******************/
-		%feature("compactdefaultargs") Resource_LexicalCompare;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Resource_LexicalCompare;
-		 Resource_LexicalCompare();
-
 };
 
 
@@ -148,6 +148,40 @@ None
 *************************/
 class Resource_Manager : public Standard_Transient {
 	public:
+		/****************** Resource_Manager ******************/
+		%feature("compactdefaultargs") Resource_Manager;
+		%feature("autodoc", "Create a resource manager. attempts to find the two following files: $csf_`aname`defaults/aname $csf_`aname`userdefaults/aname and load them respectively into a reference and a user resource structure. //! if csf_resourceverbose defined, seeked files will be printed. //! file syntax the syntax of a resource file is a sequence of resource lines terminated by newline characters or end of file. the syntax of an individual resource line is:.
+
+Parameters
+----------
+aName: char *
+Verbose: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Resource_Manager;
+		 Resource_Manager(const char * aName, const Standard_Boolean Verbose = Standard_False);
+
+		/****************** Resource_Manager ******************/
+		%feature("compactdefaultargs") Resource_Manager;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aName: char *
+aDefaultsDirectory: TCollection_AsciiString
+anUserDefaultsDirectory: TCollection_AsciiString
+Verbose: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Resource_Manager;
+		 Resource_Manager(const char * aName, TCollection_AsciiString & aDefaultsDirectory, TCollection_AsciiString & anUserDefaultsDirectory, const Standard_Boolean Verbose = Standard_False);
+
 		/****************** ExtValue ******************/
 		%feature("compactdefaultargs") ExtValue;
 		%feature("autodoc", "Gets the value of an extstring resource according to its instance and its type.
@@ -219,40 +253,6 @@ Returns
 float
 ") Real;
 		virtual Standard_Real Real(const char * aResourceName);
-
-		/****************** Resource_Manager ******************/
-		%feature("compactdefaultargs") Resource_Manager;
-		%feature("autodoc", "Create a resource manager. attempts to find the two following files: $csf_`aname`defaults/aname $csf_`aname`userdefaults/aname and load them respectively into a reference and a user resource structure. //! if csf_resourceverbose defined, seeked files will be printed. //! file syntax the syntax of a resource file is a sequence of resource lines terminated by newline characters or end of file. the syntax of an individual resource line is:.
-
-Parameters
-----------
-aName: char *
-Verbose: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Resource_Manager;
-		 Resource_Manager(const char * aName, const Standard_Boolean Verbose = Standard_False);
-
-		/****************** Resource_Manager ******************/
-		%feature("compactdefaultargs") Resource_Manager;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aName: char *
-aDefaultsDirectory: TCollection_AsciiString
-anUserDefaultsDirectory: TCollection_AsciiString
-Verbose: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Resource_Manager;
-		 Resource_Manager(const char * aName, TCollection_AsciiString & aDefaultsDirectory, TCollection_AsciiString & anUserDefaultsDirectory, const Standard_Boolean Verbose = Standard_False);
 
 		/****************** Save ******************/
 		%feature("compactdefaultargs") Save;

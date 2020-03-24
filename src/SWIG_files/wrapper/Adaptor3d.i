@@ -91,9 +91,9 @@ from OCC.Core.Exception import *
 /* end templates declaration */
 
 /* typedefs */
+typedef Adaptor3d_CurveOnSurface * Adaptor3d_CurveOnSurfacePtr;
 typedef Adaptor3d_Curve * Adaptor3d_CurvePtr;
 typedef Adaptor3d_Surface * Adaptor3d_SurfacePtr;
-typedef Adaptor3d_CurveOnSurface * Adaptor3d_CurveOnSurfacePtr;
 /* end typedefs declaration */
 
 /************************

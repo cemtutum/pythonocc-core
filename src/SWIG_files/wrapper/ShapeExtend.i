@@ -148,15 +148,15 @@ class ShapeExtend_Parametrisation:
 /* end handles declaration */
 
 /* templates */
-%template(ShapeExtend_DataMapOfTransientListOfMsg) NCollection_DataMap<opencascade::handle<Standard_Transient>,Message_ListOfMsg,TColStd_MapTransientHasher>;
 %template(ShapeExtend_DataMapOfShapeListOfMsg) NCollection_DataMap<TopoDS_Shape,Message_ListOfMsg,TopTools_ShapeMapHasher>;
+%template(ShapeExtend_DataMapOfTransientListOfMsg) NCollection_DataMap<opencascade::handle<Standard_Transient>,Message_ListOfMsg,TColStd_MapTransientHasher>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<opencascade::handle<Standard_Transient>, Message_ListOfMsg, TColStd_MapTransientHasher> ShapeExtend_DataMapOfTransientListOfMsg;
+typedef NCollection_DataMap<TopoDS_Shape, Message_ListOfMsg, TopTools_ShapeMapHasher>::Iterator ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg;
 typedef NCollection_DataMap<opencascade::handle<Standard_Transient>, Message_ListOfMsg, TColStd_MapTransientHasher>::Iterator ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg;
 typedef NCollection_DataMap<TopoDS_Shape, Message_ListOfMsg, TopTools_ShapeMapHasher> ShapeExtend_DataMapOfShapeListOfMsg;
-typedef NCollection_DataMap<TopoDS_Shape, Message_ListOfMsg, TopTools_ShapeMapHasher>::Iterator ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg;
+typedef NCollection_DataMap<opencascade::handle<Standard_Transient>, Message_ListOfMsg, TColStd_MapTransientHasher> ShapeExtend_DataMapOfTransientListOfMsg;
 /* end typedefs declaration */
 
 /********************
@@ -218,6 +218,16 @@ None
 ****************************************/
 class ShapeExtend_BasicMsgRegistrator : public Standard_Transient {
 	public:
+		/****************** ShapeExtend_BasicMsgRegistrator ******************/
+		%feature("compactdefaultargs") ShapeExtend_BasicMsgRegistrator;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeExtend_BasicMsgRegistrator;
+		 ShapeExtend_BasicMsgRegistrator();
+
 		/****************** Send ******************/
 		%feature("compactdefaultargs") Send;
 		%feature("autodoc", "Sends a message to be attached to the object. object can be of any type interpreted by redefined msgregistrator.
@@ -264,16 +274,6 @@ Returns
 None
 ") Send;
 		virtual void Send(const Message_Msg & message, const Message_Gravity gravity);
-
-		/****************** ShapeExtend_BasicMsgRegistrator ******************/
-		%feature("compactdefaultargs") ShapeExtend_BasicMsgRegistrator;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeExtend_BasicMsgRegistrator;
-		 ShapeExtend_BasicMsgRegistrator();
 
 };
 
@@ -563,6 +563,48 @@ None
 *************************************/
 class ShapeExtend_CompositeSurface : public Geom_Surface {
 	public:
+		/****************** ShapeExtend_CompositeSurface ******************/
+		%feature("compactdefaultargs") ShapeExtend_CompositeSurface;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeExtend_CompositeSurface;
+		 ShapeExtend_CompositeSurface();
+
+		/****************** ShapeExtend_CompositeSurface ******************/
+		%feature("compactdefaultargs") ShapeExtend_CompositeSurface;
+		%feature("autodoc", "Initializes by a grid of surfaces (calls init()).
+
+Parameters
+----------
+GridSurf: TColGeom_HArray2OfSurface
+param: ShapeExtend_Parametrisation,optional
+	default value is ShapeExtend_Natural
+
+Returns
+-------
+None
+") ShapeExtend_CompositeSurface;
+		 ShapeExtend_CompositeSurface(const opencascade::handle<TColGeom_HArray2OfSurface> & GridSurf, const ShapeExtend_Parametrisation param = ShapeExtend_Natural);
+
+		/****************** ShapeExtend_CompositeSurface ******************/
+		%feature("compactdefaultargs") ShapeExtend_CompositeSurface;
+		%feature("autodoc", "Initializes by a grid of surfaces (calls init()).
+
+Parameters
+----------
+GridSurf: TColGeom_HArray2OfSurface
+UJoints: TColStd_Array1OfReal
+VJoints: TColStd_Array1OfReal
+
+Returns
+-------
+None
+") ShapeExtend_CompositeSurface;
+		 ShapeExtend_CompositeSurface(const opencascade::handle<TColGeom_HArray2OfSurface> & GridSurf, const TColStd_Array1OfReal & UJoints, const TColStd_Array1OfReal & VJoints);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "Returns the parametric bounds of grid.
@@ -1049,48 +1091,6 @@ bool
 ") SetVJointValues;
 		Standard_Boolean SetVJointValues(const TColStd_Array1OfReal & VJoints);
 
-		/****************** ShapeExtend_CompositeSurface ******************/
-		%feature("compactdefaultargs") ShapeExtend_CompositeSurface;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeExtend_CompositeSurface;
-		 ShapeExtend_CompositeSurface();
-
-		/****************** ShapeExtend_CompositeSurface ******************/
-		%feature("compactdefaultargs") ShapeExtend_CompositeSurface;
-		%feature("autodoc", "Initializes by a grid of surfaces (calls init()).
-
-Parameters
-----------
-GridSurf: TColGeom_HArray2OfSurface
-param: ShapeExtend_Parametrisation,optional
-	default value is ShapeExtend_Natural
-
-Returns
--------
-None
-") ShapeExtend_CompositeSurface;
-		 ShapeExtend_CompositeSurface(const opencascade::handle<TColGeom_HArray2OfSurface> & GridSurf, const ShapeExtend_Parametrisation param = ShapeExtend_Natural);
-
-		/****************** ShapeExtend_CompositeSurface ******************/
-		%feature("compactdefaultargs") ShapeExtend_CompositeSurface;
-		%feature("autodoc", "Initializes by a grid of surfaces (calls init()).
-
-Parameters
-----------
-GridSurf: TColGeom_HArray2OfSurface
-UJoints: TColStd_Array1OfReal
-VJoints: TColStd_Array1OfReal
-
-Returns
--------
-None
-") ShapeExtend_CompositeSurface;
-		 ShapeExtend_CompositeSurface(const opencascade::handle<TColGeom_HArray2OfSurface> & GridSurf, const TColStd_Array1OfReal & UJoints, const TColStd_Array1OfReal & VJoints);
-
 		/****************** Transform ******************/
 		%feature("compactdefaultargs") Transform;
 		%feature("autodoc", "Applies transformation to all the patches.
@@ -1323,6 +1323,16 @@ gp_Pnt
 *****************************/
 class ShapeExtend_Explorer {
 	public:
+		/****************** ShapeExtend_Explorer ******************/
+		%feature("compactdefaultargs") ShapeExtend_Explorer;
+		%feature("autodoc", "Creates an object explorer.
+
+Returns
+-------
+None
+") ShapeExtend_Explorer;
+		 ShapeExtend_Explorer();
+
 		/****************** CompoundFromSeq ******************/
 		%feature("compactdefaultargs") CompoundFromSeq;
 		%feature("autodoc", "Converts a sequence of shapes to a compound.
@@ -1405,16 +1415,6 @@ opencascade::handle<TopTools_HSequenceOfShape>
 ") SeqFromList;
 		opencascade::handle<TopTools_HSequenceOfShape> SeqFromList(const TopTools_ListOfShape & lisval);
 
-		/****************** ShapeExtend_Explorer ******************/
-		%feature("compactdefaultargs") ShapeExtend_Explorer;
-		%feature("autodoc", "Creates an object explorer.
-
-Returns
--------
-None
-") ShapeExtend_Explorer;
-		 ShapeExtend_Explorer();
-
 		/****************** ShapeType ******************/
 		%feature("compactdefaultargs") ShapeType;
 		%feature("autodoc", "Returns the type of a shape: true type if <compound> is false if <compound> is true and <shape> is a compound, iterates on its items. if all are of the same type, returns this type. else, returns compound. if it is empty, returns shape for a null shape, returns shape.
@@ -1461,6 +1461,34 @@ TopoDS_Shape
 *****************************/
 class ShapeExtend_WireData : public Standard_Transient {
 	public:
+		/****************** ShapeExtend_WireData ******************/
+		%feature("compactdefaultargs") ShapeExtend_WireData;
+		%feature("autodoc", "Empty constructor, creates empty wire with no edges.
+
+Returns
+-------
+None
+") ShapeExtend_WireData;
+		 ShapeExtend_WireData();
+
+		/****************** ShapeExtend_WireData ******************/
+		%feature("compactdefaultargs") ShapeExtend_WireData;
+		%feature("autodoc", "Constructor initializing the data from topods_wire. calls init(wire,chained).
+
+Parameters
+----------
+wire: TopoDS_Wire
+chained: bool,optional
+	default value is Standard_True
+theManifoldMode: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") ShapeExtend_WireData;
+		 ShapeExtend_WireData(const TopoDS_Wire & wire, const Standard_Boolean chained = Standard_True, const Standard_Boolean theManifoldMode = Standard_True);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds an edge to a wire, being defined (not yet ended) this is the plain, basic, function to add an edge <num> = 0 (d): appends at end <num> = 1: preprends at start else, insert before <num> remark : null edge is simply ignored.
@@ -1805,34 +1833,6 @@ None
 ") SetLast;
 		void SetLast(const Standard_Integer num);
 
-		/****************** ShapeExtend_WireData ******************/
-		%feature("compactdefaultargs") ShapeExtend_WireData;
-		%feature("autodoc", "Empty constructor, creates empty wire with no edges.
-
-Returns
--------
-None
-") ShapeExtend_WireData;
-		 ShapeExtend_WireData();
-
-		/****************** ShapeExtend_WireData ******************/
-		%feature("compactdefaultargs") ShapeExtend_WireData;
-		%feature("autodoc", "Constructor initializing the data from topods_wire. calls init(wire,chained).
-
-Parameters
-----------
-wire: TopoDS_Wire
-chained: bool,optional
-	default value is Standard_True
-theManifoldMode: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") ShapeExtend_WireData;
-		 ShapeExtend_WireData(const TopoDS_Wire & wire, const Standard_Boolean chained = Standard_True, const Standard_Boolean theManifoldMode = Standard_True);
-
 		/****************** Wire ******************/
 		%feature("compactdefaultargs") Wire;
 		%feature("autodoc", "Makes topods_wire using brep_builder (just creates the topods_wire object and adds all edges into it). this method should be called when the wire is correct (for example, after successful fixes by shapefix_wire) and adjacent edges share common vertices. in case if adjacent edges do not share the same vertices the resulting topods_wire will be invalid.
@@ -1869,6 +1869,16 @@ TopoDS_Wire
 ***********************************/
 class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
 	public:
+		/****************** ShapeExtend_MsgRegistrator ******************/
+		%feature("compactdefaultargs") ShapeExtend_MsgRegistrator;
+		%feature("autodoc", "Creates an object.
+
+Returns
+-------
+None
+") ShapeExtend_MsgRegistrator;
+		 ShapeExtend_MsgRegistrator();
+
 		/****************** MapShape ******************/
 		%feature("compactdefaultargs") MapShape;
 		%feature("autodoc", "Returns a map of shapes and message list.
@@ -1920,16 +1930,6 @@ Returns
 None
 ") Send;
 		virtual void Send(const TopoDS_Shape & shape, const Message_Msg & message, const Message_Gravity gravity);
-
-		/****************** ShapeExtend_MsgRegistrator ******************/
-		%feature("compactdefaultargs") ShapeExtend_MsgRegistrator;
-		%feature("autodoc", "Creates an object.
-
-Returns
--------
-None
-") ShapeExtend_MsgRegistrator;
-		 ShapeExtend_MsgRegistrator();
 
 };
 

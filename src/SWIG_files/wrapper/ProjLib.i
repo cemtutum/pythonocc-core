@@ -387,6 +387,51 @@ gp_Lin2d
 ***********************************/
 class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 	public:
+		/****************** ProjLib_CompProjectedCurve ******************/
+		%feature("compactdefaultargs") ProjLib_CompProjectedCurve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ProjLib_CompProjectedCurve;
+		 ProjLib_CompProjectedCurve();
+
+		/****************** ProjLib_CompProjectedCurve ******************/
+		%feature("compactdefaultargs") ProjLib_CompProjectedCurve;
+		%feature("autodoc", "Try to find all solutions.
+
+Parameters
+----------
+S: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+TolU: float
+TolV: float
+
+Returns
+-------
+None
+") ProjLib_CompProjectedCurve;
+		 ProjLib_CompProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Real TolU, const Standard_Real TolV);
+
+		/****************** ProjLib_CompProjectedCurve ******************/
+		%feature("compactdefaultargs") ProjLib_CompProjectedCurve;
+		%feature("autodoc", "This constructor tries to optimize the search using the assumption that maximum distance between surface and curve less or equal then maxdist. if maxdist < 0 then algorithm works as above.
+
+Parameters
+----------
+S: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+TolU: float
+TolV: float
+MaxDist: float
+
+Returns
+-------
+None
+") ProjLib_CompProjectedCurve;
+		 ProjLib_CompProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Real TolU, const Standard_Real TolV, const Standard_Real MaxDist);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "Returns the bounds of the continuous part corresponding to index.
@@ -677,51 +722,6 @@ int
 ") NbIntervals;
 		Standard_Integer NbIntervals(const GeomAbs_Shape S);
 
-		/****************** ProjLib_CompProjectedCurve ******************/
-		%feature("compactdefaultargs") ProjLib_CompProjectedCurve;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ProjLib_CompProjectedCurve;
-		 ProjLib_CompProjectedCurve();
-
-		/****************** ProjLib_CompProjectedCurve ******************/
-		%feature("compactdefaultargs") ProjLib_CompProjectedCurve;
-		%feature("autodoc", "Try to find all solutions.
-
-Parameters
-----------
-S: Adaptor3d_HSurface
-C: Adaptor3d_HCurve
-TolU: float
-TolV: float
-
-Returns
--------
-None
-") ProjLib_CompProjectedCurve;
-		 ProjLib_CompProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Real TolU, const Standard_Real TolV);
-
-		/****************** ProjLib_CompProjectedCurve ******************/
-		%feature("compactdefaultargs") ProjLib_CompProjectedCurve;
-		%feature("autodoc", "This constructor tries to optimize the search using the assumption that maximum distance between surface and curve less or equal then maxdist. if maxdist < 0 then algorithm works as above.
-
-Parameters
-----------
-S: Adaptor3d_HSurface
-C: Adaptor3d_HCurve
-TolU: float
-TolV: float
-MaxDist: float
-
-Returns
--------
-None
-") ProjLib_CompProjectedCurve;
-		 ProjLib_CompProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Real TolU, const Standard_Real TolV, const Standard_Real MaxDist);
-
 		/****************** Trim ******************/
 		%feature("compactdefaultargs") Trim;
 		%feature("autodoc", "Returns a curve equivalent of <self> between parameters <first> and <last>. <tol> is used to test for 2d points confusion. if <first> >= <last>.
@@ -766,6 +766,32 @@ gp_Pnt2d
 ******************************/
 class ProjLib_ComputeApprox {
 	public:
+		/****************** ProjLib_ComputeApprox ******************/
+		%feature("compactdefaultargs") ProjLib_ComputeApprox;
+		%feature("autodoc", "Empty constructor, it only sets some initial values for class fields.
+
+Returns
+-------
+None
+") ProjLib_ComputeApprox;
+		 ProjLib_ComputeApprox();
+
+		/****************** ProjLib_ComputeApprox ******************/
+		%feature("compactdefaultargs") ProjLib_ComputeApprox;
+		%feature("autodoc", "<tol> is the tolerance with which the approximation is performed. other parameters for approximation have default values.
+
+Parameters
+----------
+C: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+Tol: float
+
+Returns
+-------
+None
+") ProjLib_ComputeApprox;
+		 ProjLib_ComputeApprox(const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real Tol);
+
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "No available documentation.
@@ -800,32 +826,6 @@ Returns
 None
 ") Perform;
 		void Perform(const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S);
-
-		/****************** ProjLib_ComputeApprox ******************/
-		%feature("compactdefaultargs") ProjLib_ComputeApprox;
-		%feature("autodoc", "Empty constructor, it only sets some initial values for class fields.
-
-Returns
--------
-None
-") ProjLib_ComputeApprox;
-		 ProjLib_ComputeApprox();
-
-		/****************** ProjLib_ComputeApprox ******************/
-		%feature("compactdefaultargs") ProjLib_ComputeApprox;
-		%feature("autodoc", "<tol> is the tolerance with which the approximation is performed. other parameters for approximation have default values.
-
-Parameters
-----------
-C: Adaptor3d_HCurve
-S: Adaptor3d_HSurface
-Tol: float
-
-Returns
--------
-None
-") ProjLib_ComputeApprox;
-		 ProjLib_ComputeApprox(const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real Tol);
 
 		/****************** SetBndPnt ******************/
 		%feature("compactdefaultargs") SetBndPnt;
@@ -908,6 +908,68 @@ float
 ********************************************/
 class ProjLib_ComputeApproxOnPolarSurface {
 	public:
+		/****************** ProjLib_ComputeApproxOnPolarSurface ******************/
+		%feature("compactdefaultargs") ProjLib_ComputeApproxOnPolarSurface;
+		%feature("autodoc", "Empty constructor, it only sets some initial values for class fields.
+
+Returns
+-------
+None
+") ProjLib_ComputeApproxOnPolarSurface;
+		 ProjLib_ComputeApproxOnPolarSurface();
+
+		/****************** ProjLib_ComputeApproxOnPolarSurface ******************/
+		%feature("compactdefaultargs") ProjLib_ComputeApproxOnPolarSurface;
+		%feature("autodoc", "Constructor, which performs projecting.
+
+Parameters
+----------
+C: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+Tol: float,optional
+	default value is 1.0e-4
+
+Returns
+-------
+None
+") ProjLib_ComputeApproxOnPolarSurface;
+		 ProjLib_ComputeApproxOnPolarSurface(const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real Tol = 1.0e-4);
+
+		/****************** ProjLib_ComputeApproxOnPolarSurface ******************/
+		%feature("compactdefaultargs") ProjLib_ComputeApproxOnPolarSurface;
+		%feature("autodoc", "Constructor, which performs projecting, using initial curve 2d initcurve2d, which is any rough approximation of result curve. parameter tol is 3d tolerance of approximation.
+
+Parameters
+----------
+InitCurve2d: Adaptor2d_HCurve2d
+C: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+Tol: float
+
+Returns
+-------
+None
+") ProjLib_ComputeApproxOnPolarSurface;
+		 ProjLib_ComputeApproxOnPolarSurface(const opencascade::handle<Adaptor2d_HCurve2d> & InitCurve2d, const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real Tol);
+
+		/****************** ProjLib_ComputeApproxOnPolarSurface ******************/
+		%feature("compactdefaultargs") ProjLib_ComputeApproxOnPolarSurface;
+		%feature("autodoc", "Constructor, which performs projecting, using two initial curves 2d: initcurve2d and initcurve2dbis that are any rough approximations of result curves. this constructor is used to get two pcurves for seem edge. parameter tol is 3d tolerance of approximation.
+
+Parameters
+----------
+InitCurve2d: Adaptor2d_HCurve2d
+InitCurve2dBis: Adaptor2d_HCurve2d
+C: Adaptor3d_HCurve
+S: Adaptor3d_HSurface
+Tol: float
+
+Returns
+-------
+None
+") ProjLib_ComputeApproxOnPolarSurface;
+		 ProjLib_ComputeApproxOnPolarSurface(const opencascade::handle<Adaptor2d_HCurve2d> & InitCurve2d, const opencascade::handle<Adaptor2d_HCurve2d> & InitCurve2dBis, const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real Tol);
+
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "Returns result curve 2d.
@@ -983,68 +1045,6 @@ Returns
 opencascade::handle<Geom2d_BSplineCurve>
 ") Perform;
 		opencascade::handle<Geom2d_BSplineCurve> Perform(const opencascade::handle<Adaptor2d_HCurve2d> & InitCurve2d, const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S);
-
-		/****************** ProjLib_ComputeApproxOnPolarSurface ******************/
-		%feature("compactdefaultargs") ProjLib_ComputeApproxOnPolarSurface;
-		%feature("autodoc", "Empty constructor, it only sets some initial values for class fields.
-
-Returns
--------
-None
-") ProjLib_ComputeApproxOnPolarSurface;
-		 ProjLib_ComputeApproxOnPolarSurface();
-
-		/****************** ProjLib_ComputeApproxOnPolarSurface ******************/
-		%feature("compactdefaultargs") ProjLib_ComputeApproxOnPolarSurface;
-		%feature("autodoc", "Constructor, which performs projecting.
-
-Parameters
-----------
-C: Adaptor3d_HCurve
-S: Adaptor3d_HSurface
-Tol: float,optional
-	default value is 1.0e-4
-
-Returns
--------
-None
-") ProjLib_ComputeApproxOnPolarSurface;
-		 ProjLib_ComputeApproxOnPolarSurface(const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real Tol = 1.0e-4);
-
-		/****************** ProjLib_ComputeApproxOnPolarSurface ******************/
-		%feature("compactdefaultargs") ProjLib_ComputeApproxOnPolarSurface;
-		%feature("autodoc", "Constructor, which performs projecting, using initial curve 2d initcurve2d, which is any rough approximation of result curve. parameter tol is 3d tolerance of approximation.
-
-Parameters
-----------
-InitCurve2d: Adaptor2d_HCurve2d
-C: Adaptor3d_HCurve
-S: Adaptor3d_HSurface
-Tol: float
-
-Returns
--------
-None
-") ProjLib_ComputeApproxOnPolarSurface;
-		 ProjLib_ComputeApproxOnPolarSurface(const opencascade::handle<Adaptor2d_HCurve2d> & InitCurve2d, const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real Tol);
-
-		/****************** ProjLib_ComputeApproxOnPolarSurface ******************/
-		%feature("compactdefaultargs") ProjLib_ComputeApproxOnPolarSurface;
-		%feature("autodoc", "Constructor, which performs projecting, using two initial curves 2d: initcurve2d and initcurve2dbis that are any rough approximations of result curves. this constructor is used to get two pcurves for seem edge. parameter tol is 3d tolerance of approximation.
-
-Parameters
-----------
-InitCurve2d: Adaptor2d_HCurve2d
-InitCurve2dBis: Adaptor2d_HCurve2d
-C: Adaptor3d_HCurve
-S: Adaptor3d_HSurface
-Tol: float
-
-Returns
--------
-None
-") ProjLib_ComputeApproxOnPolarSurface;
-		 ProjLib_ComputeApproxOnPolarSurface(const opencascade::handle<Adaptor2d_HCurve2d> & InitCurve2d, const opencascade::handle<Adaptor2d_HCurve2d> & InitCurve2dBis, const opencascade::handle<Adaptor3d_HCurve> & C, const opencascade::handle<Adaptor3d_HSurface> & S, const Standard_Real Tol);
 
 		/****************** ProjectUsingInitialCurve2d ******************/
 		%feature("compactdefaultargs") ProjectUsingInitialCurve2d;
@@ -1157,26 +1157,6 @@ float
 ************************************/
 class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 	public:
-		/****************** ChangeCurve2d ******************/
-		%feature("compactdefaultargs") ChangeCurve2d;
-		%feature("autodoc", "Returns the curve used to create the genhcurve.
-
-Returns
--------
-ProjLib_CompProjectedCurve
-") ChangeCurve2d;
-		ProjLib_CompProjectedCurve & ChangeCurve2d();
-
-		/****************** Curve2d ******************/
-		%feature("compactdefaultargs") Curve2d;
-		%feature("autodoc", "Returns the curve used to create the genhcurve2d. this is redefined from hcurve2d, cannot be inline.
-
-Returns
--------
-Adaptor2d_Curve2d
-") Curve2d;
-		const Adaptor2d_Curve2d & Curve2d();
-
 		/****************** ProjLib_HCompProjectedCurve ******************/
 		%feature("compactdefaultargs") ProjLib_HCompProjectedCurve;
 		%feature("autodoc", "Creates an empty genhcurve2d.
@@ -1200,6 +1180,26 @@ Returns
 None
 ") ProjLib_HCompProjectedCurve;
 		 ProjLib_HCompProjectedCurve(const ProjLib_CompProjectedCurve & C);
+
+		/****************** ChangeCurve2d ******************/
+		%feature("compactdefaultargs") ChangeCurve2d;
+		%feature("autodoc", "Returns the curve used to create the genhcurve.
+
+Returns
+-------
+ProjLib_CompProjectedCurve
+") ChangeCurve2d;
+		ProjLib_CompProjectedCurve & ChangeCurve2d();
+
+		/****************** Curve2d ******************/
+		%feature("compactdefaultargs") Curve2d;
+		%feature("autodoc", "Returns the curve used to create the genhcurve2d. this is redefined from hcurve2d, cannot be inline.
+
+Returns
+-------
+Adaptor2d_Curve2d
+") Curve2d;
+		const Adaptor2d_Curve2d & Curve2d();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
@@ -1231,26 +1231,6 @@ None
 ********************************/
 class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 	public:
-		/****************** ChangeCurve2d ******************/
-		%feature("compactdefaultargs") ChangeCurve2d;
-		%feature("autodoc", "Returns the curve used to create the genhcurve.
-
-Returns
--------
-ProjLib_ProjectedCurve
-") ChangeCurve2d;
-		ProjLib_ProjectedCurve & ChangeCurve2d();
-
-		/****************** Curve2d ******************/
-		%feature("compactdefaultargs") Curve2d;
-		%feature("autodoc", "Returns the curve used to create the genhcurve2d. this is redefined from hcurve2d, cannot be inline.
-
-Returns
--------
-Adaptor2d_Curve2d
-") Curve2d;
-		const Adaptor2d_Curve2d & Curve2d();
-
 		/****************** ProjLib_HProjectedCurve ******************/
 		%feature("compactdefaultargs") ProjLib_HProjectedCurve;
 		%feature("autodoc", "Creates an empty genhcurve2d.
@@ -1274,6 +1254,26 @@ Returns
 None
 ") ProjLib_HProjectedCurve;
 		 ProjLib_HProjectedCurve(const ProjLib_ProjectedCurve & C);
+
+		/****************** ChangeCurve2d ******************/
+		%feature("compactdefaultargs") ChangeCurve2d;
+		%feature("autodoc", "Returns the curve used to create the genhcurve.
+
+Returns
+-------
+ProjLib_ProjectedCurve
+") ChangeCurve2d;
+		ProjLib_ProjectedCurve & ChangeCurve2d();
+
+		/****************** Curve2d ******************/
+		%feature("compactdefaultargs") Curve2d;
+		%feature("autodoc", "Returns the curve used to create the genhcurve2d. this is redefined from hcurve2d, cannot be inline.
+
+Returns
+-------
+Adaptor2d_Curve2d
+") Curve2d;
+		const Adaptor2d_Curve2d & Curve2d();
 
 		/****************** Set ******************/
 		%feature("compactdefaultargs") Set;
@@ -1305,6 +1305,23 @@ None
 ************************/
 class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 	public:
+		/****************** ProjLib_PrjFunc ******************/
+		%feature("compactdefaultargs") ProjLib_PrjFunc;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor3d_CurvePtr
+FixVal: float
+S: Adaptor3d_SurfacePtr
+Fix: int
+
+Returns
+-------
+None
+") ProjLib_PrjFunc;
+		 ProjLib_PrjFunc(const Adaptor3d_CurvePtr & C, const Standard_Real FixVal, const Adaptor3d_SurfacePtr & S, const Standard_Integer Fix);
+
 		/****************** Derivatives ******************/
 		%feature("compactdefaultargs") Derivatives;
 		%feature("autodoc", "Returns the values <d> of the derivatives for the variable <x>. returns true if the computation was done successfully, false otherwise.
@@ -1339,23 +1356,6 @@ Returns
 int
 ") NbVariables;
 		Standard_Integer NbVariables();
-
-		/****************** ProjLib_PrjFunc ******************/
-		%feature("compactdefaultargs") ProjLib_PrjFunc;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-C: Adaptor3d_CurvePtr
-FixVal: float
-S: Adaptor3d_SurfacePtr
-Fix: int
-
-Returns
--------
-None
-") ProjLib_PrjFunc;
-		 ProjLib_PrjFunc(const Adaptor3d_CurvePtr & C, const Standard_Real FixVal, const Adaptor3d_SurfacePtr & S, const Standard_Integer Fix);
 
 		/****************** Solution ******************/
 		%feature("compactdefaultargs") Solution;
@@ -1412,6 +1412,22 @@ bool
 ***************************/
 class ProjLib_PrjResolve {
 	public:
+		/****************** ProjLib_PrjResolve ******************/
+		%feature("compactdefaultargs") ProjLib_PrjResolve;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Adaptor3d_Curve
+S: Adaptor3d_Surface
+Fix: int
+
+Returns
+-------
+None
+") ProjLib_PrjResolve;
+		 ProjLib_PrjResolve(const Adaptor3d_Curve & C, const Adaptor3d_Surface & S, const Standard_Integer Fix);
+
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
 		%feature("autodoc", "Returns true if the distance is found.
@@ -1445,22 +1461,6 @@ None
 ") Perform;
 		void Perform(const Standard_Real t, const Standard_Real U, const Standard_Real V, const gp_Pnt2d & Tol, const gp_Pnt2d & Inf, const gp_Pnt2d & Sup, const Standard_Real FTol = -1, const Standard_Boolean StrictInside = Standard_False);
 
-		/****************** ProjLib_PrjResolve ******************/
-		%feature("compactdefaultargs") ProjLib_PrjResolve;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-C: Adaptor3d_Curve
-S: Adaptor3d_Surface
-Fix: int
-
-Returns
--------
-None
-") ProjLib_PrjResolve;
-		 ProjLib_PrjResolve(const Adaptor3d_Curve & C, const Adaptor3d_Surface & S, const Standard_Integer Fix);
-
 		/****************** Solution ******************/
 		%feature("compactdefaultargs") Solution;
 		%feature("autodoc", "Returns the point of the extremum distance.
@@ -1485,6 +1485,45 @@ gp_Pnt2d
 *******************************/
 class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 	public:
+		/****************** ProjLib_ProjectOnPlane ******************/
+		%feature("compactdefaultargs") ProjLib_ProjectOnPlane;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ProjLib_ProjectOnPlane;
+		 ProjLib_ProjectOnPlane();
+
+		/****************** ProjLib_ProjectOnPlane ******************/
+		%feature("compactdefaultargs") ProjLib_ProjectOnPlane;
+		%feature("autodoc", "The projection will be normal to the plane defined by the ax3 <pl>.
+
+Parameters
+----------
+Pl: gp_Ax3
+
+Returns
+-------
+None
+") ProjLib_ProjectOnPlane;
+		 ProjLib_ProjectOnPlane(const gp_Ax3 & Pl);
+
+		/****************** ProjLib_ProjectOnPlane ******************/
+		%feature("compactdefaultargs") ProjLib_ProjectOnPlane;
+		%feature("autodoc", "The projection will be along the direction <d> on the plane defined by the ax3 <pl>. raises if the direction <d> is parallel to the plane <pl>.
+
+Parameters
+----------
+Pl: gp_Ax3
+D: gp_Dir
+
+Returns
+-------
+None
+") ProjLib_ProjectOnPlane;
+		 ProjLib_ProjectOnPlane(const gp_Ax3 & Pl, const gp_Dir & D);
+
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "Warning ! this will not make a copy of the bspline curve : if you want to modify the curve please make a copy yourself also it will not trim the surface to myfirst/last.
@@ -1832,45 +1871,6 @@ float
 ") Period;
 		Standard_Real Period();
 
-		/****************** ProjLib_ProjectOnPlane ******************/
-		%feature("compactdefaultargs") ProjLib_ProjectOnPlane;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ProjLib_ProjectOnPlane;
-		 ProjLib_ProjectOnPlane();
-
-		/****************** ProjLib_ProjectOnPlane ******************/
-		%feature("compactdefaultargs") ProjLib_ProjectOnPlane;
-		%feature("autodoc", "The projection will be normal to the plane defined by the ax3 <pl>.
-
-Parameters
-----------
-Pl: gp_Ax3
-
-Returns
--------
-None
-") ProjLib_ProjectOnPlane;
-		 ProjLib_ProjectOnPlane(const gp_Ax3 & Pl);
-
-		/****************** ProjLib_ProjectOnPlane ******************/
-		%feature("compactdefaultargs") ProjLib_ProjectOnPlane;
-		%feature("autodoc", "The projection will be along the direction <d> on the plane defined by the ax3 <pl>. raises if the direction <d> is parallel to the plane <pl>.
-
-Parameters
-----------
-Pl: gp_Ax3
-D: gp_Dir
-
-Returns
--------
-None
-") ProjLib_ProjectOnPlane;
-		 ProjLib_ProjectOnPlane(const gp_Ax3 & Pl, const gp_Dir & D);
-
 		/****************** Resolution ******************/
 		%feature("compactdefaultargs") Resolution;
 		%feature("autodoc", "Returns the parametric resolution corresponding to the real space resolution <r3d>.
@@ -1929,26 +1929,6 @@ gp_Pnt
 *********************************/
 class ProjLib_ProjectOnSurface {
 	public:
-		/****************** BSpline ******************/
-		%feature("compactdefaultargs") BSpline;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Geom_BSplineCurve>
-") BSpline;
-		opencascade::handle<Geom_BSplineCurve> BSpline();
-
-		/****************** IsDone ******************/
-		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-bool
-") IsDone;
-		Standard_Boolean IsDone();
-
 		/****************** ProjLib_ProjectOnSurface ******************/
 		%feature("compactdefaultargs") ProjLib_ProjectOnSurface;
 		%feature("autodoc", "Create an empty projector.
@@ -1973,6 +1953,26 @@ None
 ") ProjLib_ProjectOnSurface;
 		 ProjLib_ProjectOnSurface(const opencascade::handle<Adaptor3d_HSurface> & S);
 
+		/****************** BSpline ******************/
+		%feature("compactdefaultargs") BSpline;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom_BSplineCurve>
+") BSpline;
+		opencascade::handle<Geom_BSplineCurve> BSpline();
+
+		/****************** IsDone ******************/
+		%feature("compactdefaultargs") IsDone;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
+") IsDone;
+		Standard_Boolean IsDone();
+
 };
 
 
@@ -1991,6 +1991,61 @@ None
 *******************************/
 class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 	public:
+		/****************** ProjLib_ProjectedCurve ******************/
+		%feature("compactdefaultargs") ProjLib_ProjectedCurve;
+		%feature("autodoc", "Empty constructor, it only sets some initial values for class fields.
+
+Returns
+-------
+None
+") ProjLib_ProjectedCurve;
+		 ProjLib_ProjectedCurve();
+
+		/****************** ProjLib_ProjectedCurve ******************/
+		%feature("compactdefaultargs") ProjLib_ProjectedCurve;
+		%feature("autodoc", "Constructor with initialisation field mysurface.
+
+Parameters
+----------
+S: Adaptor3d_HSurface
+
+Returns
+-------
+None
+") ProjLib_ProjectedCurve;
+		 ProjLib_ProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S);
+
+		/****************** ProjLib_ProjectedCurve ******************/
+		%feature("compactdefaultargs") ProjLib_ProjectedCurve;
+		%feature("autodoc", "Constructor, which performs projecting. if projecting uses approximation, default parameters are used, in particular, 3d tolerance of approximation is precision::confusion().
+
+Parameters
+----------
+S: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
+") ProjLib_ProjectedCurve;
+		 ProjLib_ProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C);
+
+		/****************** ProjLib_ProjectedCurve ******************/
+		%feature("compactdefaultargs") ProjLib_ProjectedCurve;
+		%feature("autodoc", "Constructor, which performs projecting. if projecting uses approximation, 3d tolerance is tol, default parameters are used, .
+
+Parameters
+----------
+S: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+Tol: float
+
+Returns
+-------
+None
+") ProjLib_ProjectedCurve;
+		 ProjLib_ProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Real Tol);
+
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "Warning ! this will not make a copy of the bspline curve - if you want to modify the curve please make a copy yourself also it will not trim the surface to myfirst/last.
@@ -2325,61 +2380,6 @@ float
 ") Period;
 		Standard_Real Period();
 
-		/****************** ProjLib_ProjectedCurve ******************/
-		%feature("compactdefaultargs") ProjLib_ProjectedCurve;
-		%feature("autodoc", "Empty constructor, it only sets some initial values for class fields.
-
-Returns
--------
-None
-") ProjLib_ProjectedCurve;
-		 ProjLib_ProjectedCurve();
-
-		/****************** ProjLib_ProjectedCurve ******************/
-		%feature("compactdefaultargs") ProjLib_ProjectedCurve;
-		%feature("autodoc", "Constructor with initialisation field mysurface.
-
-Parameters
-----------
-S: Adaptor3d_HSurface
-
-Returns
--------
-None
-") ProjLib_ProjectedCurve;
-		 ProjLib_ProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S);
-
-		/****************** ProjLib_ProjectedCurve ******************/
-		%feature("compactdefaultargs") ProjLib_ProjectedCurve;
-		%feature("autodoc", "Constructor, which performs projecting. if projecting uses approximation, default parameters are used, in particular, 3d tolerance of approximation is precision::confusion().
-
-Parameters
-----------
-S: Adaptor3d_HSurface
-C: Adaptor3d_HCurve
-
-Returns
--------
-None
-") ProjLib_ProjectedCurve;
-		 ProjLib_ProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C);
-
-		/****************** ProjLib_ProjectedCurve ******************/
-		%feature("compactdefaultargs") ProjLib_ProjectedCurve;
-		%feature("autodoc", "Constructor, which performs projecting. if projecting uses approximation, 3d tolerance is tol, default parameters are used, .
-
-Parameters
-----------
-S: Adaptor3d_HSurface
-C: Adaptor3d_HCurve
-Tol: float
-
-Returns
--------
-None
-") ProjLib_ProjectedCurve;
-		 ProjLib_ProjectedCurve(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C, const Standard_Real Tol);
-
 		/****************** Resolution ******************/
 		%feature("compactdefaultargs") Resolution;
 		%feature("autodoc", "Returns the parametric resolution corresponding to the real space resolution <r3d>.
@@ -2499,6 +2499,16 @@ gp_Pnt2d
 **************************/
 class ProjLib_Projector {
 	public:
+		/****************** ProjLib_Projector ******************/
+		%feature("compactdefaultargs") ProjLib_Projector;
+		%feature("autodoc", "Sets the type to othercurve.
+
+Returns
+-------
+None
+") ProjLib_Projector;
+		 ProjLib_Projector();
+
 		/****************** BSpline ******************/
 		%feature("compactdefaultargs") BSpline;
 		%feature("autodoc", "No available documentation.
@@ -2608,16 +2618,6 @@ Returns
 gp_Parab2d
 ") Parabola;
 		const gp_Parab2d Parabola();
-
-		/****************** ProjLib_Projector ******************/
-		%feature("compactdefaultargs") ProjLib_Projector;
-		%feature("autodoc", "Sets the type to othercurve.
-
-Returns
--------
-None
-") ProjLib_Projector;
-		 ProjLib_Projector();
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
@@ -2789,20 +2789,6 @@ None
 *********************/
 class ProjLib_Cone : public ProjLib_Projector {
 	public:
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Co: gp_Cone
-
-Returns
--------
-None
-") Init;
-		void Init(const gp_Cone & Co);
-
 		/****************** ProjLib_Cone ******************/
 		%feature("compactdefaultargs") ProjLib_Cone;
 		%feature("autodoc", "Undefined projection.
@@ -2856,6 +2842,20 @@ Returns
 None
 ") ProjLib_Cone;
 		 ProjLib_Cone(const gp_Cone & Co, const gp_Circ & C);
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Co: gp_Cone
+
+Returns
+-------
+None
+") Init;
+		void Init(const gp_Cone & Co);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
@@ -2941,20 +2941,6 @@ None
 *************************/
 class ProjLib_Cylinder : public ProjLib_Projector {
 	public:
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Cyl: gp_Cylinder
-
-Returns
--------
-None
-") Init;
-		void Init(const gp_Cylinder & Cyl);
-
 		/****************** ProjLib_Cylinder ******************/
 		%feature("compactdefaultargs") ProjLib_Cylinder;
 		%feature("autodoc", "Undefined projection.
@@ -3023,6 +3009,20 @@ Returns
 None
 ") ProjLib_Cylinder;
 		 ProjLib_Cylinder(const gp_Cylinder & Cyl, const gp_Elips & E);
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Cyl: gp_Cylinder
+
+Returns
+-------
+None
+") Init;
+		void Init(const gp_Cylinder & Cyl);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
@@ -3108,20 +3108,6 @@ None
 **********************/
 class ProjLib_Plane : public ProjLib_Projector {
 	public:
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Pl: gp_Pln
-
-Returns
--------
-None
-") Init;
-		void Init(const gp_Pln & Pl);
-
 		/****************** ProjLib_Plane ******************/
 		%feature("compactdefaultargs") ProjLib_Plane;
 		%feature("autodoc", "Undefined projection.
@@ -3221,6 +3207,20 @@ None
 ") ProjLib_Plane;
 		 ProjLib_Plane(const gp_Pln & Pl, const gp_Hypr & H);
 
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Pl: gp_Pln
+
+Returns
+-------
+None
+") Init;
+		void Init(const gp_Pln & Pl);
+
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
 		%feature("autodoc", "No available documentation.
@@ -3305,20 +3305,6 @@ None
 ***********************/
 class ProjLib_Sphere : public ProjLib_Projector {
 	public:
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Sp: gp_Sphere
-
-Returns
--------
-None
-") Init;
-		void Init(const gp_Sphere & Sp);
-
 		/****************** ProjLib_Sphere ******************/
 		%feature("compactdefaultargs") ProjLib_Sphere;
 		%feature("autodoc", "Undefined projection.
@@ -3357,6 +3343,20 @@ Returns
 None
 ") ProjLib_Sphere;
 		 ProjLib_Sphere(const gp_Sphere & Sp, const gp_Circ & C);
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sp: gp_Sphere
+
+Returns
+-------
+None
+") Init;
+		void Init(const gp_Sphere & Sp);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;
@@ -3456,20 +3456,6 @@ None
 **********************/
 class ProjLib_Torus : public ProjLib_Projector {
 	public:
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-To: gp_Torus
-
-Returns
--------
-None
-") Init;
-		void Init(const gp_Torus & To);
-
 		/****************** ProjLib_Torus ******************/
 		%feature("compactdefaultargs") ProjLib_Torus;
 		%feature("autodoc", "Undefined projection.
@@ -3508,6 +3494,20 @@ Returns
 None
 ") ProjLib_Torus;
 		 ProjLib_Torus(const gp_Torus & To, const gp_Circ & C);
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+To: gp_Torus
+
+Returns
+-------
+None
+") Init;
+		void Init(const gp_Torus & To);
 
 		/****************** Project ******************/
 		%feature("compactdefaultargs") Project;

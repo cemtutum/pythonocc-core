@@ -93,9 +93,6 @@ enum  {
 /* end handles declaration */
 
 /* templates */
-%template(TDF_AttributeList) NCollection_List<opencascade::handle<TDF_Attribute>>;
-%template(TDF_ListIteratorOfAttributeList) NCollection_TListIterator<opencascade::handle<TDF_Attribute>>;
-%template(TDF_GUIDProgIDMap) NCollection_DoubleMap<Standard_GUID,TCollection_ExtendedString,Standard_GUID,TCollection_ExtendedString>;
 %template(TDF_AttributeArray1) NCollection_Array1<opencascade::handle<TDF_Attribute>>;
 
 %extend NCollection_Array1<opencascade::handle<TDF_Attribute>> {
@@ -131,65 +128,68 @@ enum  {
     __next__ = next
     }
 };
-%template(TDF_AttributeMap) NCollection_Map<opencascade::handle<TDF_Attribute>,TColStd_MapTransientHasher>;
-%template(TDF_IDList) NCollection_List<Standard_GUID>;
-%template(TDF_ListIteratorOfIDList) NCollection_TListIterator<Standard_GUID>;
-%template(TDF_LabelSequence) NCollection_Sequence<TDF_Label>;
-%template(TDF_AttributeDeltaList) NCollection_List<opencascade::handle<TDF_AttributeDelta>>;
-%template(TDF_ListIteratorOfAttributeDeltaList) NCollection_TListIterator<opencascade::handle<TDF_AttributeDelta>>;
-%template(TDF_LabelDoubleMap) NCollection_DoubleMap<TDF_Label,TDF_Label,TDF_LabelMapHasher,TDF_LabelMapHasher>;
-%template(TDF_HAllocator) opencascade::handle<NCollection_BaseAllocator>;
-%template(TDF_LabelMap) NCollection_Map<TDF_Label,TDF_LabelMapHasher>;
-%template(TDF_AttributeIndexedMap) NCollection_IndexedMap<opencascade::handle<TDF_Attribute>,TColStd_MapTransientHasher>;
-%template(TDF_AttributeDoubleMap) NCollection_DoubleMap<opencascade::handle<TDF_Attribute>,opencascade::handle<TDF_Attribute>,TColStd_MapTransientHasher,TColStd_MapTransientHasher>;
 %template(TDF_AttributeDataMap) NCollection_DataMap<opencascade::handle<TDF_Attribute>,opencascade::handle<TDF_Attribute>,TColStd_MapTransientHasher>;
+%template(TDF_AttributeDeltaList) NCollection_List<opencascade::handle<TDF_AttributeDelta>>;
+%template(TDF_AttributeDoubleMap) NCollection_DoubleMap<opencascade::handle<TDF_Attribute>,opencascade::handle<TDF_Attribute>,TColStd_MapTransientHasher,TColStd_MapTransientHasher>;
+%template(TDF_AttributeIndexedMap) NCollection_IndexedMap<opencascade::handle<TDF_Attribute>,TColStd_MapTransientHasher>;
+%template(TDF_AttributeList) NCollection_List<opencascade::handle<TDF_Attribute>>;
+%template(TDF_AttributeMap) NCollection_Map<opencascade::handle<TDF_Attribute>,TColStd_MapTransientHasher>;
+%template(TDF_AttributeSequence) NCollection_Sequence<opencascade::handle<TDF_Attribute>>;
+%template(TDF_DeltaList) NCollection_List<opencascade::handle<TDF_Delta>>;
+%template(TDF_GUIDProgIDMap) NCollection_DoubleMap<Standard_GUID,TCollection_ExtendedString,Standard_GUID,TCollection_ExtendedString>;
+%template(TDF_HAllocator) opencascade::handle<NCollection_BaseAllocator>;
+%template(TDF_IDList) NCollection_List<Standard_GUID>;
 %template(TDF_IDMap) NCollection_Map<Standard_GUID,Standard_GUID>;
 %template(TDF_LabelDataMap) NCollection_DataMap<TDF_Label,TDF_Label,TDF_LabelMapHasher>;
-%template(TDF_DeltaList) NCollection_List<opencascade::handle<TDF_Delta>>;
-%template(TDF_ListIteratorOfDeltaList) NCollection_TListIterator<opencascade::handle<TDF_Delta>>;
+%template(TDF_LabelDoubleMap) NCollection_DoubleMap<TDF_Label,TDF_Label,TDF_LabelMapHasher,TDF_LabelMapHasher>;
 %template(TDF_LabelIndexedMap) NCollection_IndexedMap<TDF_Label,TDF_LabelMapHasher>;
 %template(TDF_LabelIntegerMap) NCollection_DataMap<TDF_Label,Standard_Integer,TDF_LabelMapHasher>;
 %template(TDF_LabelList) NCollection_List<TDF_Label>;
+%template(TDF_LabelMap) NCollection_Map<TDF_Label,TDF_LabelMapHasher>;
+%template(TDF_LabelSequence) NCollection_Sequence<TDF_Label>;
+%template(TDF_ListIteratorOfAttributeDeltaList) NCollection_TListIterator<opencascade::handle<TDF_AttributeDelta>>;
+%template(TDF_ListIteratorOfAttributeList) NCollection_TListIterator<opencascade::handle<TDF_Attribute>>;
+%template(TDF_ListIteratorOfDeltaList) NCollection_TListIterator<opencascade::handle<TDF_Delta>>;
+%template(TDF_ListIteratorOfIDList) NCollection_TListIterator<Standard_GUID>;
 %template(TDF_ListIteratorOfLabelList) NCollection_TListIterator<TDF_Label>;
-%template(TDF_AttributeSequence) NCollection_Sequence<opencascade::handle<TDF_Attribute>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List<opencascade::handle<TDF_Attribute>> TDF_AttributeList;
-typedef NCollection_List<opencascade::handle<TDF_Attribute>>::Iterator TDF_ListIteratorOfAttributeList;
-typedef NCollection_DoubleMap<Standard_GUID, TCollection_ExtendedString, Standard_GUID, TCollection_ExtendedString> TDF_GUIDProgIDMap;
-typedef NCollection_DoubleMap<Standard_GUID, TCollection_ExtendedString, Standard_GUID, TCollection_ExtendedString>::Iterator TDF_DoubleMapIteratorOfGUIDProgIDMap;
 typedef NCollection_Array1<opencascade::handle<TDF_Attribute>> TDF_AttributeArray1;
-typedef NCollection_Map<opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher> TDF_AttributeMap;
-typedef NCollection_Map<opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher>::Iterator TDF_MapIteratorOfAttributeMap;
-typedef NCollection_List<Standard_GUID> TDF_IDList;
-typedef NCollection_List<Standard_GUID>::Iterator TDF_ListIteratorOfIDList;
-typedef NCollection_Sequence<TDF_Label> TDF_LabelSequence;
-typedef NCollection_List<opencascade::handle<TDF_AttributeDelta>> TDF_AttributeDeltaList;
-typedef NCollection_List<opencascade::handle<TDF_AttributeDelta>>::Iterator TDF_ListIteratorOfAttributeDeltaList;
-typedef NCollection_DoubleMap<TDF_Label, TDF_Label, TDF_LabelMapHasher, TDF_LabelMapHasher> TDF_LabelDoubleMap;
-typedef NCollection_DoubleMap<TDF_Label, TDF_Label, TDF_LabelMapHasher, TDF_LabelMapHasher>::Iterator TDF_DoubleMapIteratorOfLabelDoubleMap;
-typedef TDF_LabelNode * TDF_LabelNodePtr;
-typedef opencascade::handle<NCollection_BaseAllocator> TDF_HAllocator;
-typedef NCollection_Map<TDF_Label, TDF_LabelMapHasher> TDF_LabelMap;
-typedef NCollection_Map<TDF_Label, TDF_LabelMapHasher>::Iterator TDF_MapIteratorOfLabelMap;
-typedef NCollection_IndexedMap<opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher> TDF_AttributeIndexedMap;
-typedef NCollection_DoubleMap<opencascade::handle<TDF_Attribute>, opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher, TColStd_MapTransientHasher> TDF_AttributeDoubleMap;
-typedef NCollection_DoubleMap<opencascade::handle<TDF_Attribute>, opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher, TColStd_MapTransientHasher>::Iterator TDF_DoubleMapIteratorOfAttributeDoubleMap;
 typedef NCollection_DataMap<opencascade::handle<TDF_Attribute>, opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher> TDF_AttributeDataMap;
+typedef NCollection_List<opencascade::handle<TDF_AttributeDelta>> TDF_AttributeDeltaList;
+typedef NCollection_DoubleMap<opencascade::handle<TDF_Attribute>, opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher, TColStd_MapTransientHasher> TDF_AttributeDoubleMap;
+typedef NCollection_IndexedMap<opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher> TDF_AttributeIndexedMap;
+typedef NCollection_List<opencascade::handle<TDF_Attribute>> TDF_AttributeList;
+typedef NCollection_Map<opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher> TDF_AttributeMap;
+typedef NCollection_Sequence<opencascade::handle<TDF_Attribute>> TDF_AttributeSequence;
 typedef NCollection_DataMap<opencascade::handle<TDF_Attribute>, opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher>::Iterator TDF_DataMapIteratorOfAttributeDataMap;
-typedef NCollection_Map<Standard_GUID, Standard_GUID> TDF_IDMap;
-typedef NCollection_Map<Standard_GUID, Standard_GUID>::Iterator TDF_MapIteratorOfIDMap;
-typedef NCollection_DataMap<TDF_Label, TDF_Label, TDF_LabelMapHasher> TDF_LabelDataMap;
 typedef NCollection_DataMap<TDF_Label, TDF_Label, TDF_LabelMapHasher>::Iterator TDF_DataMapIteratorOfLabelDataMap;
+typedef NCollection_DataMap<TDF_Label, Standard_Integer, TDF_LabelMapHasher>::Iterator TDF_DataMapIteratorOfLabelIntegerMap;
 typedef NCollection_List<opencascade::handle<TDF_Delta>> TDF_DeltaList;
-typedef NCollection_List<opencascade::handle<TDF_Delta>>::Iterator TDF_ListIteratorOfDeltaList;
+typedef NCollection_DoubleMap<opencascade::handle<TDF_Attribute>, opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher, TColStd_MapTransientHasher>::Iterator TDF_DoubleMapIteratorOfAttributeDoubleMap;
+typedef NCollection_DoubleMap<Standard_GUID, TCollection_ExtendedString, Standard_GUID, TCollection_ExtendedString>::Iterator TDF_DoubleMapIteratorOfGUIDProgIDMap;
+typedef NCollection_DoubleMap<TDF_Label, TDF_Label, TDF_LabelMapHasher, TDF_LabelMapHasher>::Iterator TDF_DoubleMapIteratorOfLabelDoubleMap;
+typedef NCollection_DoubleMap<Standard_GUID, TCollection_ExtendedString, Standard_GUID, TCollection_ExtendedString> TDF_GUIDProgIDMap;
+typedef opencascade::handle<NCollection_BaseAllocator> TDF_HAllocator;
+typedef NCollection_List<Standard_GUID> TDF_IDList;
+typedef NCollection_Map<Standard_GUID, Standard_GUID> TDF_IDMap;
+typedef NCollection_DataMap<TDF_Label, TDF_Label, TDF_LabelMapHasher> TDF_LabelDataMap;
+typedef NCollection_DoubleMap<TDF_Label, TDF_Label, TDF_LabelMapHasher, TDF_LabelMapHasher> TDF_LabelDoubleMap;
 typedef NCollection_IndexedMap<TDF_Label, TDF_LabelMapHasher> TDF_LabelIndexedMap;
 typedef NCollection_DataMap<TDF_Label, Standard_Integer, TDF_LabelMapHasher> TDF_LabelIntegerMap;
-typedef NCollection_DataMap<TDF_Label, Standard_Integer, TDF_LabelMapHasher>::Iterator TDF_DataMapIteratorOfLabelIntegerMap;
 typedef NCollection_List<TDF_Label> TDF_LabelList;
+typedef NCollection_Map<TDF_Label, TDF_LabelMapHasher> TDF_LabelMap;
+typedef TDF_LabelNode * TDF_LabelNodePtr;
+typedef NCollection_Sequence<TDF_Label> TDF_LabelSequence;
+typedef NCollection_List<opencascade::handle<TDF_AttributeDelta>>::Iterator TDF_ListIteratorOfAttributeDeltaList;
+typedef NCollection_List<opencascade::handle<TDF_Attribute>>::Iterator TDF_ListIteratorOfAttributeList;
+typedef NCollection_List<opencascade::handle<TDF_Delta>>::Iterator TDF_ListIteratorOfDeltaList;
+typedef NCollection_List<Standard_GUID>::Iterator TDF_ListIteratorOfIDList;
 typedef NCollection_List<TDF_Label>::Iterator TDF_ListIteratorOfLabelList;
-typedef NCollection_Sequence<opencascade::handle<TDF_Attribute>> TDF_AttributeSequence;
+typedef NCollection_Map<opencascade::handle<TDF_Attribute>, TColStd_MapTransientHasher>::Iterator TDF_MapIteratorOfAttributeMap;
+typedef NCollection_Map<Standard_GUID, Standard_GUID>::Iterator TDF_MapIteratorOfIDMap;
+typedef NCollection_Map<TDF_Label, TDF_LabelMapHasher>::Iterator TDF_MapIteratorOfLabelMap;
 /* end typedefs declaration */
 
 /************
@@ -795,6 +795,48 @@ TDF_Label
 ******************************/
 class TDF_AttributeIterator {
 	public:
+		/****************** TDF_AttributeIterator ******************/
+		%feature("compactdefaultargs") TDF_AttributeIterator;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDF_AttributeIterator;
+		 TDF_AttributeIterator();
+
+		/****************** TDF_AttributeIterator ******************/
+		%feature("compactdefaultargs") TDF_AttributeIterator;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aLabel: TDF_Label
+withoutForgotten: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") TDF_AttributeIterator;
+		 TDF_AttributeIterator(const TDF_Label & aLabel, const Standard_Boolean withoutForgotten = Standard_True);
+
+		/****************** TDF_AttributeIterator ******************/
+		%feature("compactdefaultargs") TDF_AttributeIterator;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aLabelNode: TDF_LabelNodePtr
+withoutForgotten: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") TDF_AttributeIterator;
+		 TDF_AttributeIterator(const TDF_LabelNodePtr aLabelNode, const Standard_Boolean withoutForgotten = Standard_True);
+
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "No available documentation.
@@ -841,48 +883,6 @@ TDF_Attribute *
 ") PtrValue;
 		const TDF_Attribute * PtrValue();
 
-		/****************** TDF_AttributeIterator ******************/
-		%feature("compactdefaultargs") TDF_AttributeIterator;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDF_AttributeIterator;
-		 TDF_AttributeIterator();
-
-		/****************** TDF_AttributeIterator ******************/
-		%feature("compactdefaultargs") TDF_AttributeIterator;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aLabel: TDF_Label
-withoutForgotten: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") TDF_AttributeIterator;
-		 TDF_AttributeIterator(const TDF_Label & aLabel, const Standard_Boolean withoutForgotten = Standard_True);
-
-		/****************** TDF_AttributeIterator ******************/
-		%feature("compactdefaultargs") TDF_AttributeIterator;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aLabelNode: TDF_LabelNodePtr
-withoutForgotten: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") TDF_AttributeIterator;
-		 TDF_AttributeIterator(const TDF_LabelNodePtr aLabelNode, const Standard_Boolean withoutForgotten = Standard_True);
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -907,6 +907,33 @@ opencascade::handle<TDF_Attribute>
 ****************************/
 class TDF_ChildIDIterator {
 	public:
+		/****************** TDF_ChildIDIterator ******************/
+		%feature("compactdefaultargs") TDF_ChildIDIterator;
+		%feature("autodoc", "Creates an empty iterator.
+
+Returns
+-------
+None
+") TDF_ChildIDIterator;
+		 TDF_ChildIDIterator();
+
+		/****************** TDF_ChildIDIterator ******************/
+		%feature("compactdefaultargs") TDF_ChildIDIterator;
+		%feature("autodoc", "Iterates on the children of the given label. if <alllevels> option is set to true, it explores not only the first, but all the sub label levels.
+
+Parameters
+----------
+aLabel: TDF_Label
+anID: Standard_GUID
+allLevels: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") TDF_ChildIDIterator;
+		 TDF_ChildIDIterator(const TDF_Label & aLabel, const Standard_GUID & anID, const Standard_Boolean allLevels = Standard_False);
+
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initializes the iteration on the children of the given label. if <alllevels> option is set to true, it explores not only the first, but all the sub label levels.
@@ -954,33 +981,6 @@ None
 ") NextBrother;
 		void NextBrother();
 
-		/****************** TDF_ChildIDIterator ******************/
-		%feature("compactdefaultargs") TDF_ChildIDIterator;
-		%feature("autodoc", "Creates an empty iterator.
-
-Returns
--------
-None
-") TDF_ChildIDIterator;
-		 TDF_ChildIDIterator();
-
-		/****************** TDF_ChildIDIterator ******************/
-		%feature("compactdefaultargs") TDF_ChildIDIterator;
-		%feature("autodoc", "Iterates on the children of the given label. if <alllevels> option is set to true, it explores not only the first, but all the sub label levels.
-
-Parameters
-----------
-aLabel: TDF_Label
-anID: Standard_GUID
-allLevels: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") TDF_ChildIDIterator;
-		 TDF_ChildIDIterator(const TDF_Label & aLabel, const Standard_GUID & anID, const Standard_Boolean allLevels = Standard_False);
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the current item; a null handle if there is none.
@@ -1005,6 +1005,32 @@ opencascade::handle<TDF_Attribute>
 **************************/
 class TDF_ChildIterator {
 	public:
+		/****************** TDF_ChildIterator ******************/
+		%feature("compactdefaultargs") TDF_ChildIterator;
+		%feature("autodoc", "Creates an empty iterator object to explore the children of a label.
+
+Returns
+-------
+None
+") TDF_ChildIterator;
+		 TDF_ChildIterator();
+
+		/****************** TDF_ChildIterator ******************/
+		%feature("compactdefaultargs") TDF_ChildIterator;
+		%feature("autodoc", "Constructs the iterator object defined by the label alabel. iterates on the children of the given label. if <alllevels> option is set to true, it explores not only the first, but all the sub label levels.
+
+Parameters
+----------
+aLabel: TDF_Label
+allLevels: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") TDF_ChildIterator;
+		 TDF_ChildIterator(const TDF_Label & aLabel, const Standard_Boolean allLevels = Standard_False);
+
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
 		%feature("autodoc", "Initializes the iteration on the children of the given label. if <alllevels> option is set to true, it explores not only the first, but all the sub label levels. if alllevels is false, only the first level of child labels is explored. in the example below, the label is iterated using initialize, more and next and its child labels dumped using tdf_tool::entry. example void dumpchildren(const tdf_label& alabel) { tdf_childiterator it; tcollection_asciistring es; for (it.initialize(alabel,standard_true); it.more(); it.next()){ tdf_tool::entry(it.value(),es); std::cout << as.tocstring() << std::endl; } }.
@@ -1051,32 +1077,6 @@ None
 ") NextBrother;
 		void NextBrother();
 
-		/****************** TDF_ChildIterator ******************/
-		%feature("compactdefaultargs") TDF_ChildIterator;
-		%feature("autodoc", "Creates an empty iterator object to explore the children of a label.
-
-Returns
--------
-None
-") TDF_ChildIterator;
-		 TDF_ChildIterator();
-
-		/****************** TDF_ChildIterator ******************/
-		%feature("compactdefaultargs") TDF_ChildIterator;
-		%feature("autodoc", "Constructs the iterator object defined by the label alabel. iterates on the children of the given label. if <alllevels> option is set to true, it explores not only the first, but all the sub label levels.
-
-Parameters
-----------
-aLabel: TDF_Label
-allLevels: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") TDF_ChildIterator;
-		 TDF_ChildIterator(const TDF_Label & aLabel, const Standard_Boolean allLevels = Standard_False);
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "Returns the current label; or, if there is none, a null label.
@@ -1101,6 +1101,21 @@ TDF_Label
 ************************/
 class TDF_ClosureMode {
 	public:
+		/****************** TDF_ClosureMode ******************/
+		%feature("compactdefaultargs") TDF_ClosureMode;
+		%feature("autodoc", "Creates an objet with all modes set to <amode>.
+
+Parameters
+----------
+aMode: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") TDF_ClosureMode;
+		 TDF_ClosureMode(const Standard_Boolean aMode = Standard_True);
+
 		/****************** Descendants ******************/
 		%feature("compactdefaultargs") Descendants;
 		%feature("autodoc", "Sets the mode 'descendants' to <astatus>. //! 'descendants' mode means we add to the data set the children labels of each user given label. we do not do that with the labels found applying uptofirstlevel option.
@@ -1148,21 +1163,6 @@ Returns
 bool
 ") References;
 		Standard_Boolean References();
-
-		/****************** TDF_ClosureMode ******************/
-		%feature("compactdefaultargs") TDF_ClosureMode;
-		%feature("autodoc", "Creates an objet with all modes set to <amode>.
-
-Parameters
-----------
-aMode: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") TDF_ClosureMode;
-		 TDF_ClosureMode(const Standard_Boolean aMode = Standard_True);
 
 };
 
@@ -1338,6 +1338,31 @@ bool
 **********************/
 class TDF_CopyLabel {
 	public:
+		/****************** TDF_CopyLabel ******************/
+		%feature("compactdefaultargs") TDF_CopyLabel;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") TDF_CopyLabel;
+		 TDF_CopyLabel();
+
+		/****************** TDF_CopyLabel ******************/
+		%feature("compactdefaultargs") TDF_CopyLabel;
+		%feature("autodoc", "Copytool.
+
+Parameters
+----------
+aSource: TDF_Label
+aTarget: TDF_Label
+
+Returns
+-------
+None
+") TDF_CopyLabel;
+		 TDF_CopyLabel(const TDF_Label & aSource, const TDF_Label & aTarget);
+
 		/****************** ExternalReferences ******************/
 		%feature("compactdefaultargs") ExternalReferences;
 		%feature("autodoc", "Check external references and if exist fills the aexternals map.
@@ -1416,31 +1441,6 @@ Returns
 opencascade::handle<TDF_RelocationTable>
 ") RelocationTable;
 		const opencascade::handle<TDF_RelocationTable> & RelocationTable();
-
-		/****************** TDF_CopyLabel ******************/
-		%feature("compactdefaultargs") TDF_CopyLabel;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") TDF_CopyLabel;
-		 TDF_CopyLabel();
-
-		/****************** TDF_CopyLabel ******************/
-		%feature("compactdefaultargs") TDF_CopyLabel;
-		%feature("autodoc", "Copytool.
-
-Parameters
-----------
-aSource: TDF_Label
-aTarget: TDF_Label
-
-Returns
--------
-None
-") TDF_CopyLabel;
-		 TDF_CopyLabel(const TDF_Label & aSource, const TDF_Label & aTarget);
 
 		/****************** UseFilter ******************/
 		%feature("compactdefaultargs") UseFilter;
@@ -1533,6 +1533,16 @@ None
 *****************/
 class TDF_Data : public Standard_Transient {
 	public:
+		/****************** TDF_Data ******************/
+		%feature("compactdefaultargs") TDF_Data;
+		%feature("autodoc", "A new and empty data structure.
+
+Returns
+-------
+None
+") TDF_Data;
+		 TDF_Data();
+
 		/****************** AllowModification ******************/
 		%feature("compactdefaultargs") AllowModification;
 		%feature("autodoc", "Sets modification mode.
@@ -1619,16 +1629,6 @@ TDF_Label
 ") Root;
 		const TDF_Label Root();
 
-		/****************** TDF_Data ******************/
-		%feature("compactdefaultargs") TDF_Data;
-		%feature("autodoc", "A new and empty data structure.
-
-Returns
--------
-None
-") TDF_Data;
-		 TDF_Data();
-
 		/****************** Time ******************/
 		%feature("compactdefaultargs") Time;
 		%feature("autodoc", "Returns the current tick. it is incremented each commit.
@@ -1681,6 +1681,16 @@ opencascade::handle<TDF_Delta>
 ********************/
 class TDF_DataSet : public Standard_Transient {
 	public:
+		/****************** TDF_DataSet ******************/
+		%feature("compactdefaultargs") TDF_DataSet;
+		%feature("autodoc", "Creates an empty dataset object.
+
+Returns
+-------
+None
+") TDF_DataSet;
+		 TDF_DataSet();
+
 		/****************** AddAttribute ******************/
 		%feature("compactdefaultargs") AddAttribute;
 		%feature("autodoc", "Adds <anattribute> into the current data set.
@@ -1809,16 +1819,6 @@ TDF_LabelList
 ") Roots;
 		TDF_LabelList & Roots();
 
-		/****************** TDF_DataSet ******************/
-		%feature("compactdefaultargs") TDF_DataSet;
-		%feature("autodoc", "Creates an empty dataset object.
-
-Returns
--------
-None
-") TDF_DataSet;
-		 TDF_DataSet();
-
 };
 
 
@@ -1835,6 +1835,16 @@ None
 ******************/
 class TDF_Delta : public Standard_Transient {
 	public:
+		/****************** TDF_Delta ******************/
+		%feature("compactdefaultargs") TDF_Delta;
+		%feature("autodoc", "Creates a delta.
+
+Returns
+-------
+None
+") TDF_Delta;
+		 TDF_Delta();
+
 		/****************** AttributeDeltas ******************/
 		%feature("compactdefaultargs") AttributeDeltas;
 		%feature("autodoc", "Returns the field <myattdeltalist>.
@@ -1935,16 +1945,6 @@ None
 ") SetName;
 		void SetName(const TCollection_ExtendedString & theName);
 
-		/****************** TDF_Delta ******************/
-		%feature("compactdefaultargs") TDF_Delta;
-		%feature("autodoc", "Creates a delta.
-
-Returns
--------
-None
-") TDF_Delta;
-		 TDF_Delta();
-
 };
 
 
@@ -1961,6 +1961,21 @@ None
 *********************/
 class TDF_IDFilter {
 	public:
+		/****************** TDF_IDFilter ******************/
+		%feature("compactdefaultargs") TDF_IDFilter;
+		%feature("autodoc", "Creates an id/attribute filter based on an id list. the default mode is 'ignore all but...'. //! this filter has 2 working mode: keep and ignore. //! ignore/exclusive mode: all ids are ignored except these set to be kept, using keep(). of course, it is possible set an kept id to be ignored using ignore(). //! keep/inclusive mode: all ids are kept except these set to be ignored, using ignore(). of course, it is possible set an ignored id to be kept using keep().
+
+Parameters
+----------
+ignoreMode: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") TDF_IDFilter;
+		 TDF_IDFilter(const Standard_Boolean ignoreMode = Standard_True);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "Copies into <self> the contents of <fromfilter>. <self> is cleared before copy.
@@ -2133,21 +2148,6 @@ None
 ") Keep;
 		void Keep(const TDF_IDList & anIDList);
 
-		/****************** TDF_IDFilter ******************/
-		%feature("compactdefaultargs") TDF_IDFilter;
-		%feature("autodoc", "Creates an id/attribute filter based on an id list. the default mode is 'ignore all but...'. //! this filter has 2 working mode: keep and ignore. //! ignore/exclusive mode: all ids are ignored except these set to be kept, using keep(). of course, it is possible set an kept id to be ignored using ignore(). //! keep/inclusive mode: all ids are kept except these set to be ignored, using ignore(). of course, it is possible set an ignored id to be kept using keep().
-
-Parameters
-----------
-ignoreMode: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") TDF_IDFilter;
-		 TDF_IDFilter(const Standard_Boolean ignoreMode = Standard_True);
-
 };
 
 
@@ -2162,6 +2162,16 @@ None
 ******************/
 class TDF_Label {
 	public:
+		/****************** TDF_Label ******************/
+		%feature("compactdefaultargs") TDF_Label;
+		%feature("autodoc", "Constructs an empty label object.
+
+Returns
+-------
+None
+") TDF_Label;
+		 TDF_Label();
+
 		/****************** AddAttribute ******************/
 		%feature("compactdefaultargs") AddAttribute;
 		%feature("autodoc", "Adds an attribute to the current label. raises if there is already one.
@@ -2546,16 +2556,6 @@ TDF_Label
 ") Root;
 		const TDF_Label Root();
 
-		/****************** TDF_Label ******************/
-		%feature("compactdefaultargs") TDF_Label;
-		%feature("autodoc", "Constructs an empty label object.
-
-Returns
--------
-None
-") TDF_Label;
-		 TDF_Label();
-
 		/****************** Tag ******************/
 		%feature("compactdefaultargs") Tag;
 		%feature("autodoc", "Returns the tag of the label. this is the integer assigned randomly to a label in a data framework. this integer is used to identify this label in an entry.
@@ -2678,6 +2678,21 @@ bool
 ****************************/
 class TDF_RelocationTable : public Standard_Transient {
 	public:
+		/****************** TDF_RelocationTable ******************/
+		%feature("compactdefaultargs") TDF_RelocationTable;
+		%feature("autodoc", "Creates an relocation table. <selfrelocate> says if a value without explicit relocation is its own relocation.
+
+Parameters
+----------
+selfRelocate: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") TDF_RelocationTable;
+		 TDF_RelocationTable(const Standard_Boolean selfRelocate = Standard_False);
+
 		/****************** AfterRelocate ******************/
 		%feature("compactdefaultargs") AfterRelocate;
 		%feature("autodoc", "No available documentation.
@@ -2845,21 +2860,6 @@ Returns
 None
 ") SetTransientRelocation;
 		void SetTransientRelocation(const opencascade::handle<Standard_Transient> & aSourceTransient, const opencascade::handle<Standard_Transient> & aTargetTransient);
-
-		/****************** TDF_RelocationTable ******************/
-		%feature("compactdefaultargs") TDF_RelocationTable;
-		%feature("autodoc", "Creates an relocation table. <selfrelocate> says if a value without explicit relocation is its own relocation.
-
-Parameters
-----------
-selfRelocate: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") TDF_RelocationTable;
-		 TDF_RelocationTable(const Standard_Boolean selfRelocate = Standard_False);
 
 		/****************** TargetAttributeMap ******************/
 		%feature("compactdefaultargs") TargetAttributeMap;
@@ -3213,6 +3213,37 @@ None
 ************************/
 class TDF_Transaction {
 	public:
+		/****************** TDF_Transaction ******************/
+		%feature("compactdefaultargs") TDF_Transaction;
+		%feature("autodoc", "Creates an empty transaction context, unable to be opened.
+
+Parameters
+----------
+aName: TCollection_AsciiString,optional
+	default value is ""
+
+Returns
+-------
+None
+") TDF_Transaction;
+		 TDF_Transaction(const TCollection_AsciiString & aName = "");
+
+		/****************** TDF_Transaction ******************/
+		%feature("compactdefaultargs") TDF_Transaction;
+		%feature("autodoc", "Creates a transaction context on <adf>, ready to be opened.
+
+Parameters
+----------
+aDF: TDF_Data
+aName: TCollection_AsciiString,optional
+	default value is ""
+
+Returns
+-------
+None
+") TDF_Transaction;
+		 TDF_Transaction(const opencascade::handle<TDF_Data> & aDF, const TCollection_AsciiString & aName = "");
+
 		/****************** Abort ******************/
 		%feature("compactdefaultargs") Abort;
 		%feature("autodoc", "Aborts the transactions until and including the current opened one.
@@ -3292,37 +3323,6 @@ int
 ") Open;
 		Standard_Integer Open();
 
-		/****************** TDF_Transaction ******************/
-		%feature("compactdefaultargs") TDF_Transaction;
-		%feature("autodoc", "Creates an empty transaction context, unable to be opened.
-
-Parameters
-----------
-aName: TCollection_AsciiString,optional
-	default value is ""
-
-Returns
--------
-None
-") TDF_Transaction;
-		 TDF_Transaction(const TCollection_AsciiString & aName = "");
-
-		/****************** TDF_Transaction ******************/
-		%feature("compactdefaultargs") TDF_Transaction;
-		%feature("autodoc", "Creates a transaction context on <adf>, ready to be opened.
-
-Parameters
-----------
-aDF: TDF_Data
-aName: TCollection_AsciiString,optional
-	default value is ""
-
-Returns
--------
-None
-") TDF_Transaction;
-		 TDF_Transaction(const opencascade::handle<TDF_Data> & aDF, const TCollection_AsciiString & aName = "");
-
 		/****************** Transaction ******************/
 		%feature("compactdefaultargs") Transaction;
 		%feature("autodoc", "Returns the number of the transaction opened by <self>.
@@ -3347,16 +3347,6 @@ int
 ****************************/
 class TDF_DeltaOnAddition : public TDF_AttributeDelta {
 	public:
-		/****************** Apply ******************/
-		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "Applies the delta to the attribute.
-
-Returns
--------
-None
-") Apply;
-		void Apply();
-
 		/****************** TDF_DeltaOnAddition ******************/
 		%feature("compactdefaultargs") TDF_DeltaOnAddition;
 		%feature("autodoc", "Creates a tdf_deltaonaddition.
@@ -3370,6 +3360,16 @@ Returns
 None
 ") TDF_DeltaOnAddition;
 		 TDF_DeltaOnAddition(const opencascade::handle<TDF_Attribute> & anAtt);
+
+		/****************** Apply ******************/
+		%feature("compactdefaultargs") Apply;
+		%feature("autodoc", "Applies the delta to the attribute.
+
+Returns
+-------
+None
+") Apply;
+		void Apply();
 
 };
 
@@ -3387,16 +3387,6 @@ None
 **************************/
 class TDF_DeltaOnForget : public TDF_AttributeDelta {
 	public:
-		/****************** Apply ******************/
-		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "Applies the delta to the attribute.
-
-Returns
--------
-None
-") Apply;
-		void Apply();
-
 		/****************** TDF_DeltaOnForget ******************/
 		%feature("compactdefaultargs") TDF_DeltaOnForget;
 		%feature("autodoc", "Creates a tdf_deltaonforget.
@@ -3410,6 +3400,16 @@ Returns
 None
 ") TDF_DeltaOnForget;
 		 TDF_DeltaOnForget(const opencascade::handle<TDF_Attribute> & anAtt);
+
+		/****************** Apply ******************/
+		%feature("compactdefaultargs") Apply;
+		%feature("autodoc", "Applies the delta to the attribute.
+
+Returns
+-------
+None
+") Apply;
+		void Apply();
 
 };
 
@@ -3471,16 +3471,6 @@ class TDF_DeltaOnRemoval : public TDF_AttributeDelta {
 **************************/
 class TDF_DeltaOnResume : public TDF_AttributeDelta {
 	public:
-		/****************** Apply ******************/
-		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "Applies the delta to the attribute.
-
-Returns
--------
-None
-") Apply;
-		void Apply();
-
 		/****************** TDF_DeltaOnResume ******************/
 		%feature("compactdefaultargs") TDF_DeltaOnResume;
 		%feature("autodoc", "Creates a tdf_deltaonresume.
@@ -3494,6 +3484,16 @@ Returns
 None
 ") TDF_DeltaOnResume;
 		 TDF_DeltaOnResume(const opencascade::handle<TDF_Attribute> & anAtt);
+
+		/****************** Apply ******************/
+		%feature("compactdefaultargs") Apply;
+		%feature("autodoc", "Applies the delta to the attribute.
+
+Returns
+-------
+None
+") Apply;
+		void Apply();
 
 };
 
@@ -3511,6 +3511,16 @@ None
 **********************/
 class TDF_Reference : public TDF_Attribute {
 	public:
+		/****************** TDF_Reference ******************/
+		%feature("compactdefaultargs") TDF_Reference;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDF_Reference;
+		 TDF_Reference();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -3631,16 +3641,6 @@ None
 ") Set;
 		void Set(const TDF_Label & Origin);
 
-		/****************** TDF_Reference ******************/
-		%feature("compactdefaultargs") TDF_Reference;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDF_Reference;
-		 TDF_Reference();
-
 };
 
 
@@ -3657,6 +3657,16 @@ None
 **********************/
 class TDF_TagSource : public TDF_Attribute {
 	public:
+		/****************** TDF_TagSource ******************/
+		%feature("compactdefaultargs") TDF_TagSource;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TDF_TagSource;
+		 TDF_TagSource();
+
 		/****************** Get ******************/
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "No available documentation.
@@ -3788,16 +3798,6 @@ None
 ") Set;
 		void Set(const Standard_Integer T);
 
-		/****************** TDF_TagSource ******************/
-		%feature("compactdefaultargs") TDF_TagSource;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TDF_TagSource;
-		 TDF_TagSource();
-
 };
 
 
@@ -3814,16 +3814,6 @@ None
 ***************************************/
 class TDF_DefaultDeltaOnModification : public TDF_DeltaOnModification {
 	public:
-		/****************** Apply ******************/
-		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "Applies the delta to the attribute.
-
-Returns
--------
-None
-") Apply;
-		virtual void Apply();
-
 		/****************** TDF_DefaultDeltaOnModification ******************/
 		%feature("compactdefaultargs") TDF_DefaultDeltaOnModification;
 		%feature("autodoc", "Creates a tdf_defaultdeltaonmodification. <anattribute> must be the backup copy.
@@ -3837,6 +3827,16 @@ Returns
 None
 ") TDF_DefaultDeltaOnModification;
 		 TDF_DefaultDeltaOnModification(const opencascade::handle<TDF_Attribute> & anAttribute);
+
+		/****************** Apply ******************/
+		%feature("compactdefaultargs") Apply;
+		%feature("autodoc", "Applies the delta to the attribute.
+
+Returns
+-------
+None
+") Apply;
+		virtual void Apply();
 
 };
 
@@ -3854,16 +3854,6 @@ None
 **********************************/
 class TDF_DefaultDeltaOnRemoval : public TDF_DeltaOnRemoval {
 	public:
-		/****************** Apply ******************/
-		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "Applies the delta to the attribute.
-
-Returns
--------
-None
-") Apply;
-		virtual void Apply();
-
 		/****************** TDF_DefaultDeltaOnRemoval ******************/
 		%feature("compactdefaultargs") TDF_DefaultDeltaOnRemoval;
 		%feature("autodoc", "Creates a tdf_defaultdeltaonremoval.
@@ -3877,6 +3867,16 @@ Returns
 None
 ") TDF_DefaultDeltaOnRemoval;
 		 TDF_DefaultDeltaOnRemoval(const opencascade::handle<TDF_Attribute> & anAttribute);
+
+		/****************** Apply ******************/
+		%feature("compactdefaultargs") Apply;
+		%feature("autodoc", "Applies the delta to the attribute.
+
+Returns
+-------
+None
+") Apply;
+		virtual void Apply();
 
 };
 

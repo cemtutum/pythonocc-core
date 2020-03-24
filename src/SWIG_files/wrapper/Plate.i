@@ -109,16 +109,16 @@ from OCC.Core.Exception import *
     __next__ = next
     }
 };
-%template(Plate_SequenceOfPinpointConstraint) NCollection_Sequence<Plate_PinpointConstraint>;
-%template(Plate_SequenceOfLinearXYZConstraint) NCollection_Sequence<Plate_LinearXYZConstraint>;
 %template(Plate_SequenceOfLinearScalarConstraint) NCollection_Sequence<Plate_LinearScalarConstraint>;
+%template(Plate_SequenceOfLinearXYZConstraint) NCollection_Sequence<Plate_LinearXYZConstraint>;
+%template(Plate_SequenceOfPinpointConstraint) NCollection_Sequence<Plate_PinpointConstraint>;
 /* end templates declaration */
 
 /* typedefs */
 typedef NCollection_Array1<Plate_PinpointConstraint> Plate_Array1OfPinpointConstraint;
-typedef NCollection_Sequence<Plate_PinpointConstraint> Plate_SequenceOfPinpointConstraint;
-typedef NCollection_Sequence<Plate_LinearXYZConstraint> Plate_SequenceOfLinearXYZConstraint;
 typedef NCollection_Sequence<Plate_LinearScalarConstraint> Plate_SequenceOfLinearScalarConstraint;
+typedef NCollection_Sequence<Plate_LinearXYZConstraint> Plate_SequenceOfLinearXYZConstraint;
+typedef NCollection_Sequence<Plate_PinpointConstraint> Plate_SequenceOfPinpointConstraint;
 /* end typedefs declaration */
 
 /*****************
@@ -126,26 +126,6 @@ typedef NCollection_Sequence<Plate_LinearScalarConstraint> Plate_SequenceOfLinea
 *****************/
 class Plate_D1 {
 	public:
-		/****************** DU ******************/
-		%feature("compactdefaultargs") DU;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-gp_XYZ
-") DU;
-		const gp_XYZ DU();
-
-		/****************** DV ******************/
-		%feature("compactdefaultargs") DV;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-gp_XYZ
-") DV;
-		const gp_XYZ DV();
-
 		/****************** Plate_D1 ******************/
 		%feature("compactdefaultargs") Plate_D1;
 		%feature("autodoc", "No available documentation.
@@ -174,6 +154,26 @@ Returns
 None
 ") Plate_D1;
 		 Plate_D1(const Plate_D1 & ref);
+
+		/****************** DU ******************/
+		%feature("compactdefaultargs") DU;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_XYZ
+") DU;
+		const gp_XYZ DU();
+
+		/****************** DV ******************/
+		%feature("compactdefaultargs") DV;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+gp_XYZ
+") DV;
+		const gp_XYZ DV();
 
 };
 
@@ -278,34 +278,6 @@ None
 *********************************/
 class Plate_FreeGtoCConstraint {
 	public:
-		/****************** GetPPC ******************/
-		%feature("compactdefaultargs") GetPPC;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-Plate_PinpointConstraint
-") GetPPC;
-		const Plate_PinpointConstraint & GetPPC(const Standard_Integer Index);
-
-		/****************** LSC ******************/
-		%feature("compactdefaultargs") LSC;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-Plate_LinearScalarConstraint
-") LSC;
-		const Plate_LinearScalarConstraint & LSC(const Standard_Integer Index);
-
 		/****************** Plate_FreeGtoCConstraint ******************/
 		%feature("compactdefaultargs") Plate_FreeGtoCConstraint;
 		%feature("autodoc", "No available documentation.
@@ -372,6 +344,34 @@ None
 ") Plate_FreeGtoCConstraint;
 		 Plate_FreeGtoCConstraint(const gp_XY & point2d, const Plate_D1 & D1S, const Plate_D1 & D1T, const Plate_D2 & D2S, const Plate_D2 & D2T, const Plate_D3 & D3S, const Plate_D3 & D3T, const Standard_Real IncrementalLoad = 1.0, const Standard_Integer orientation = 0);
 
+		/****************** GetPPC ******************/
+		%feature("compactdefaultargs") GetPPC;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+Plate_PinpointConstraint
+") GetPPC;
+		const Plate_PinpointConstraint & GetPPC(const Standard_Integer Index);
+
+		/****************** LSC ******************/
+		%feature("compactdefaultargs") LSC;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+Plate_LinearScalarConstraint
+") LSC;
+		const Plate_LinearScalarConstraint & LSC(const Standard_Integer Index);
+
 		/****************** nb_LSC ******************/
 		%feature("compactdefaultargs") nb_LSC;
 		%feature("autodoc", "No available documentation.
@@ -406,16 +406,6 @@ int
 ******************************************/
 class Plate_GlobalTranslationConstraint {
 	public:
-		/****************** LXYZC ******************/
-		%feature("compactdefaultargs") LXYZC;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-Plate_LinearXYZConstraint
-") LXYZC;
-		const Plate_LinearXYZConstraint & LXYZC();
-
 		/****************** Plate_GlobalTranslationConstraint ******************/
 		%feature("compactdefaultargs") Plate_GlobalTranslationConstraint;
 		%feature("autodoc", "No available documentation.
@@ -429,6 +419,16 @@ Returns
 None
 ") Plate_GlobalTranslationConstraint;
 		 Plate_GlobalTranslationConstraint(const TColgp_SequenceOfXY & SOfXY);
+
+		/****************** LXYZC ******************/
+		%feature("compactdefaultargs") LXYZC;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Plate_LinearXYZConstraint
+") LXYZC;
+		const Plate_LinearXYZConstraint & LXYZC();
 
 };
 
@@ -444,30 +444,6 @@ None
 *****************************/
 class Plate_GtoCConstraint {
 	public:
-		/****************** D1SurfInit ******************/
-		%feature("compactdefaultargs") D1SurfInit;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-Plate_D1
-") D1SurfInit;
-		const Plate_D1 & D1SurfInit();
-
-		/****************** GetPPC ******************/
-		%feature("compactdefaultargs") GetPPC;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-Plate_PinpointConstraint
-") GetPPC;
-		const Plate_PinpointConstraint & GetPPC(const Standard_Integer Index);
-
 		/****************** Plate_GtoCConstraint ******************/
 		%feature("compactdefaultargs") Plate_GtoCConstraint;
 		%feature("autodoc", "No available documentation.
@@ -593,6 +569,30 @@ None
 ") Plate_GtoCConstraint;
 		 Plate_GtoCConstraint(const gp_XY & point2d, const Plate_D1 & D1S, const Plate_D1 & D1T, const Plate_D2 & D2S, const Plate_D2 & D2T, const Plate_D3 & D3S, const Plate_D3 & D3T, const gp_XYZ & nP);
 
+		/****************** D1SurfInit ******************/
+		%feature("compactdefaultargs") D1SurfInit;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Plate_D1
+") D1SurfInit;
+		const Plate_D1 & D1SurfInit();
+
+		/****************** GetPPC ******************/
+		%feature("compactdefaultargs") GetPPC;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+Plate_PinpointConstraint
+") GetPPC;
+		const Plate_PinpointConstraint & GetPPC(const Standard_Integer Index);
+
 		/****************** nb_PPC ******************/
 		%feature("compactdefaultargs") nb_PPC;
 		%feature("autodoc", "No available documentation.
@@ -617,16 +617,6 @@ int
 *****************************/
 class Plate_LineConstraint {
 	public:
-		/****************** LSC ******************/
-		%feature("compactdefaultargs") LSC;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-Plate_LinearScalarConstraint
-") LSC;
-		const Plate_LinearScalarConstraint & LSC();
-
 		/****************** Plate_LineConstraint ******************/
 		%feature("compactdefaultargs") Plate_LineConstraint;
 		%feature("autodoc", "No available documentation.
@@ -646,6 +636,16 @@ None
 ") Plate_LineConstraint;
 		 Plate_LineConstraint(const gp_XY & point2d, const gp_Lin & lin, const Standard_Integer iu = 0, const Standard_Integer iv = 0);
 
+		/****************** LSC ******************/
+		%feature("compactdefaultargs") LSC;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Plate_LinearScalarConstraint
+") LSC;
+		const Plate_LinearScalarConstraint & LSC();
+
 };
 
 
@@ -660,26 +660,6 @@ None
 *************************************/
 class Plate_LinearScalarConstraint {
 	public:
-		/****************** Coeff ******************/
-		%feature("compactdefaultargs") Coeff;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TColgp_Array2OfXYZ
-") Coeff;
-		const TColgp_Array2OfXYZ & Coeff();
-
-		/****************** GetPPC ******************/
-		%feature("compactdefaultargs") GetPPC;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-Plate_Array1OfPinpointConstraint
-") GetPPC;
-		const Plate_Array1OfPinpointConstraint & GetPPC();
-
 		/****************** Plate_LinearScalarConstraint ******************/
 		%feature("compactdefaultargs") Plate_LinearScalarConstraint;
 		%feature("autodoc", "No available documentation.
@@ -750,6 +730,26 @@ None
 ") Plate_LinearScalarConstraint;
 		 Plate_LinearScalarConstraint(const Standard_Integer ColLen, const Standard_Integer RowLen);
 
+		/****************** Coeff ******************/
+		%feature("compactdefaultargs") Coeff;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColgp_Array2OfXYZ
+") Coeff;
+		const TColgp_Array2OfXYZ & Coeff();
+
+		/****************** GetPPC ******************/
+		%feature("compactdefaultargs") GetPPC;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Plate_Array1OfPinpointConstraint
+") GetPPC;
+		const Plate_Array1OfPinpointConstraint & GetPPC();
+
 		/****************** SetCoeff ******************/
 		%feature("compactdefaultargs") SetCoeff;
 		%feature("autodoc", "Sets the coeff of index (row,col) to value raise if row (respectively col) is greater than the row (respectively column) length of coeff.
@@ -795,26 +795,6 @@ None
 **********************************/
 class Plate_LinearXYZConstraint {
 	public:
-		/****************** Coeff ******************/
-		%feature("compactdefaultargs") Coeff;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TColStd_Array2OfReal
-") Coeff;
-		const TColStd_Array2OfReal & Coeff();
-
-		/****************** GetPPC ******************/
-		%feature("compactdefaultargs") GetPPC;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-Plate_Array1OfPinpointConstraint
-") GetPPC;
-		const Plate_Array1OfPinpointConstraint & GetPPC();
-
 		/****************** Plate_LinearXYZConstraint ******************/
 		%feature("compactdefaultargs") Plate_LinearXYZConstraint;
 		%feature("autodoc", "No available documentation.
@@ -870,6 +850,26 @@ None
 ") Plate_LinearXYZConstraint;
 		 Plate_LinearXYZConstraint(const Standard_Integer ColLen, const Standard_Integer RowLen);
 
+		/****************** Coeff ******************/
+		%feature("compactdefaultargs") Coeff;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TColStd_Array2OfReal
+") Coeff;
+		const TColStd_Array2OfReal & Coeff();
+
+		/****************** GetPPC ******************/
+		%feature("compactdefaultargs") GetPPC;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Plate_Array1OfPinpointConstraint
+") GetPPC;
+		const Plate_Array1OfPinpointConstraint & GetPPC();
+
 		/****************** SetCoeff ******************/
 		%feature("compactdefaultargs") SetCoeff;
 		%feature("autodoc", "Sets the coeff of index (row,col) to value raise if row (respectively col) is greater than the row (respectively column) length of coeff.
@@ -915,26 +915,6 @@ None
 *********************************/
 class Plate_PinpointConstraint {
 	public:
-		/****************** Idu ******************/
-		%feature("compactdefaultargs") Idu;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-int
-") Idu;
-		const Standard_Integer & Idu();
-
-		/****************** Idv ******************/
-		%feature("compactdefaultargs") Idv;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-int
-") Idv;
-		const Standard_Integer & Idv();
-
 		/****************** Plate_PinpointConstraint ******************/
 		%feature("compactdefaultargs") Plate_PinpointConstraint;
 		%feature("autodoc", "No available documentation.
@@ -963,6 +943,26 @@ Returns
 None
 ") Plate_PinpointConstraint;
 		 Plate_PinpointConstraint(const gp_XY & point2d, const gp_XYZ & ImposedValue, const Standard_Integer iu = 0, const Standard_Integer iv = 0);
+
+		/****************** Idu ******************/
+		%feature("compactdefaultargs") Idu;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") Idu;
+		const Standard_Integer & Idu();
+
+		/****************** Idv ******************/
+		%feature("compactdefaultargs") Idv;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") Idv;
+		const Standard_Integer & Idv();
 
 		/****************** Pnt2d ******************/
 		%feature("compactdefaultargs") Pnt2d;
@@ -998,16 +998,6 @@ gp_XYZ
 ******************************/
 class Plate_PlaneConstraint {
 	public:
-		/****************** LSC ******************/
-		%feature("compactdefaultargs") LSC;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-Plate_LinearScalarConstraint
-") LSC;
-		const Plate_LinearScalarConstraint & LSC();
-
 		/****************** Plate_PlaneConstraint ******************/
 		%feature("compactdefaultargs") Plate_PlaneConstraint;
 		%feature("autodoc", "No available documentation.
@@ -1027,6 +1017,16 @@ None
 ") Plate_PlaneConstraint;
 		 Plate_PlaneConstraint(const gp_XY & point2d, const gp_Pln & pln, const Standard_Integer iu = 0, const Standard_Integer iv = 0);
 
+		/****************** LSC ******************/
+		%feature("compactdefaultargs") LSC;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Plate_LinearScalarConstraint
+") LSC;
+		const Plate_LinearScalarConstraint & LSC();
+
 };
 
 
@@ -1041,6 +1041,30 @@ None
 ********************/
 class Plate_Plate {
 	public:
+		/****************** Plate_Plate ******************/
+		%feature("compactdefaultargs") Plate_Plate;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Plate_Plate;
+		 Plate_Plate();
+
+		/****************** Plate_Plate ******************/
+		%feature("compactdefaultargs") Plate_Plate;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Ref: Plate_Plate
+
+Returns
+-------
+None
+") Plate_Plate;
+		 Plate_Plate(const Plate_Plate & Ref);
+
 		/****************** CoefPol ******************/
 		%feature("compactdefaultargs") CoefPol;
 		%feature("autodoc", "No available documentation.
@@ -1255,30 +1279,6 @@ None
 ") Load;
 		void Load(const Plate_FreeGtoCConstraint & FGtoCConst);
 
-		/****************** Plate_Plate ******************/
-		%feature("compactdefaultargs") Plate_Plate;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Plate_Plate;
-		 Plate_Plate();
-
-		/****************** Plate_Plate ******************/
-		%feature("compactdefaultargs") Plate_Plate;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Ref: Plate_Plate
-
-Returns
--------
-None
-") Plate_Plate;
-		 Plate_Plate(const Plate_Plate & Ref);
-
 		/****************** SetPolynomialPartOnly ******************/
 		%feature("compactdefaultargs") SetPolynomialPartOnly;
 		%feature("autodoc", "No available documentation.
@@ -1368,16 +1368,6 @@ None
 *************************************/
 class Plate_SampledCurveConstraint {
 	public:
-		/****************** LXYZC ******************/
-		%feature("compactdefaultargs") LXYZC;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-Plate_LinearXYZConstraint
-") LXYZC;
-		const Plate_LinearXYZConstraint & LXYZC();
-
 		/****************** Plate_SampledCurveConstraint ******************/
 		%feature("compactdefaultargs") Plate_SampledCurveConstraint;
 		%feature("autodoc", "No available documentation.
@@ -1392,6 +1382,16 @@ Returns
 None
 ") Plate_SampledCurveConstraint;
 		 Plate_SampledCurveConstraint(const Plate_SequenceOfPinpointConstraint & SOPPC, const Standard_Integer n);
+
+		/****************** LXYZC ******************/
+		%feature("compactdefaultargs") LXYZC;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Plate_LinearXYZConstraint
+") LXYZC;
+		const Plate_LinearXYZConstraint & LXYZC();
 
 };
 

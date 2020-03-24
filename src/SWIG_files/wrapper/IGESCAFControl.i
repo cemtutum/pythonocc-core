@@ -149,6 +149,32 @@ int
 ******************************/
 class IGESCAFControl_Reader : public IGESControl_Reader {
 	public:
+		/****************** IGESCAFControl_Reader ******************/
+		%feature("compactdefaultargs") IGESCAFControl_Reader;
+		%feature("autodoc", "Creates a reader with an empty iges model and sets colormode, layermode and namemode to standard_true.
+
+Returns
+-------
+None
+") IGESCAFControl_Reader;
+		 IGESCAFControl_Reader();
+
+		/****************** IGESCAFControl_Reader ******************/
+		%feature("compactdefaultargs") IGESCAFControl_Reader;
+		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for iges.
+
+Parameters
+----------
+theWS: XSControl_WorkSession
+FromScratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") IGESCAFControl_Reader;
+		 IGESCAFControl_Reader(const opencascade::handle<XSControl_WorkSession> & theWS, const Standard_Boolean FromScratch = Standard_True);
+
 		/****************** GetColorMode ******************/
 		%feature("compactdefaultargs") GetColorMode;
 		%feature("autodoc", "No available documentation.
@@ -178,32 +204,6 @@ Returns
 bool
 ") GetNameMode;
 		Standard_Boolean GetNameMode();
-
-		/****************** IGESCAFControl_Reader ******************/
-		%feature("compactdefaultargs") IGESCAFControl_Reader;
-		%feature("autodoc", "Creates a reader with an empty iges model and sets colormode, layermode and namemode to standard_true.
-
-Returns
--------
-None
-") IGESCAFControl_Reader;
-		 IGESCAFControl_Reader();
-
-		/****************** IGESCAFControl_Reader ******************/
-		%feature("compactdefaultargs") IGESCAFControl_Reader;
-		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for iges.
-
-Parameters
-----------
-theWS: XSControl_WorkSession
-FromScratch: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") IGESCAFControl_Reader;
-		 IGESCAFControl_Reader(const opencascade::handle<XSControl_WorkSession> & theWS, const Standard_Boolean FromScratch = Standard_True);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
@@ -305,6 +305,32 @@ bool
 ******************************/
 class IGESCAFControl_Writer : public IGESControl_Writer {
 	public:
+		/****************** IGESCAFControl_Writer ******************/
+		%feature("compactdefaultargs") IGESCAFControl_Writer;
+		%feature("autodoc", "Creates a writer with an empty iges model and sets colormode, layermode and namemode to standard_true.
+
+Returns
+-------
+None
+") IGESCAFControl_Writer;
+		 IGESCAFControl_Writer();
+
+		/****************** IGESCAFControl_Writer ******************/
+		%feature("compactdefaultargs") IGESCAFControl_Writer;
+		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for iges.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") IGESCAFControl_Writer;
+		 IGESCAFControl_Writer(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
+
 		/****************** GetColorMode ******************/
 		%feature("compactdefaultargs") GetColorMode;
 		%feature("autodoc", "No available documentation.
@@ -334,32 +360,6 @@ Returns
 bool
 ") GetNameMode;
 		Standard_Boolean GetNameMode();
-
-		/****************** IGESCAFControl_Writer ******************/
-		%feature("compactdefaultargs") IGESCAFControl_Writer;
-		%feature("autodoc", "Creates a writer with an empty iges model and sets colormode, layermode and namemode to standard_true.
-
-Returns
--------
-None
-") IGESCAFControl_Writer;
-		 IGESCAFControl_Writer();
-
-		/****************** IGESCAFControl_Writer ******************/
-		%feature("compactdefaultargs") IGESCAFControl_Writer;
-		%feature("autodoc", "Creates a reader tool and attaches it to an already existing session clears the session if it was not yet set for iges.
-
-Parameters
-----------
-WS: XSControl_WorkSession
-scratch: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") IGESCAFControl_Writer;
-		 IGESCAFControl_Writer(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;

@@ -81,12 +81,15 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(MAT2d_DataMapOfIntegerSequenceOfConnexion) NCollection_DataMap<Standard_Integer,MAT2d_SequenceOfConnexion,TColStd_MapIntegerHasher>;
+%template(MAT2d_Array2OfConnexion) NCollection_Array2<opencascade::handle<MAT2d_Connexion>>;
+%template(MAT2d_DataMapOfBiIntInteger) NCollection_DataMap<MAT2d_BiInt,Standard_Integer,MAT2d_MapBiIntHasher>;
+%template(MAT2d_DataMapOfBiIntSequenceOfInteger) NCollection_DataMap<MAT2d_BiInt,TColStd_SequenceOfInteger,MAT2d_MapBiIntHasher>;
+%template(MAT2d_DataMapOfIntegerBisec) NCollection_DataMap<Standard_Integer,Bisector_Bisec,TColStd_MapIntegerHasher>;
 
-%extend NCollection_DataMap<Standard_Integer,MAT2d_SequenceOfConnexion,TColStd_MapIntegerHasher> {
+%extend NCollection_DataMap<Standard_Integer,Bisector_Bisec,TColStd_MapIntegerHasher> {
     PyObject* Keys() {
         PyObject *l=PyList_New(0);
-        for (MAT2d_DataMapOfIntegerSequenceOfConnexion::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
+        for (MAT2d_DataMapOfIntegerBisec::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
           PyObject *o = PyLong_FromLong(anIt1.Key());
           PyList_Append(l, o);
           Py_DECREF(o);
@@ -120,6 +123,19 @@ from OCC.Core.Exception import *
     return l;
     }
 };
+%template(MAT2d_DataMapOfIntegerSequenceOfConnexion) NCollection_DataMap<Standard_Integer,MAT2d_SequenceOfConnexion,TColStd_MapIntegerHasher>;
+
+%extend NCollection_DataMap<Standard_Integer,MAT2d_SequenceOfConnexion,TColStd_MapIntegerHasher> {
+    PyObject* Keys() {
+        PyObject *l=PyList_New(0);
+        for (MAT2d_DataMapOfIntegerSequenceOfConnexion::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
+          PyObject *o = PyLong_FromLong(anIt1.Key());
+          PyList_Append(l, o);
+          Py_DECREF(o);
+        }
+    return l;
+    }
+};
 %template(MAT2d_DataMapOfIntegerVec2d) NCollection_DataMap<Standard_Integer,gp_Vec2d,TColStd_MapIntegerHasher>;
 
 %extend NCollection_DataMap<Standard_Integer,gp_Vec2d,TColStd_MapIntegerHasher> {
@@ -133,46 +149,30 @@ from OCC.Core.Exception import *
     return l;
     }
 };
-%template(MAT2d_DataMapOfIntegerBisec) NCollection_DataMap<Standard_Integer,Bisector_Bisec,TColStd_MapIntegerHasher>;
-
-%extend NCollection_DataMap<Standard_Integer,Bisector_Bisec,TColStd_MapIntegerHasher> {
-    PyObject* Keys() {
-        PyObject *l=PyList_New(0);
-        for (MAT2d_DataMapOfIntegerBisec::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
-          PyObject *o = PyLong_FromLong(anIt1.Key());
-          PyList_Append(l, o);
-          Py_DECREF(o);
-        }
-    return l;
-    }
-};
-%template(MAT2d_Array2OfConnexion) NCollection_Array2<opencascade::handle<MAT2d_Connexion>>;
+%template(MAT2d_SequenceOfConnexion) NCollection_Sequence<opencascade::handle<MAT2d_Connexion>>;
 %template(MAT2d_SequenceOfSequenceOfCurve) NCollection_Sequence<TColGeom2d_SequenceOfCurve>;
 %template(MAT2d_SequenceOfSequenceOfGeometry) NCollection_Sequence<TColGeom2d_SequenceOfGeometry>;
-%template(MAT2d_SequenceOfConnexion) NCollection_Sequence<opencascade::handle<MAT2d_Connexion>>;
-%template(MAT2d_DataMapOfBiIntSequenceOfInteger) NCollection_DataMap<MAT2d_BiInt,TColStd_SequenceOfInteger,MAT2d_MapBiIntHasher>;
-%template(MAT2d_DataMapOfBiIntInteger) NCollection_DataMap<MAT2d_BiInt,Standard_Integer,MAT2d_MapBiIntHasher>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<Standard_Integer, MAT2d_SequenceOfConnexion, TColStd_MapIntegerHasher> MAT2d_DataMapOfIntegerSequenceOfConnexion;
-typedef NCollection_DataMap<Standard_Integer, MAT2d_SequenceOfConnexion, TColStd_MapIntegerHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion;
-typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT2d_Connexion>, TColStd_MapIntegerHasher> MAT2d_DataMapOfIntegerConnexion;
-typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT2d_Connexion>, TColStd_MapIntegerHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion;
-typedef NCollection_DataMap<Standard_Integer, gp_Pnt2d, TColStd_MapIntegerHasher> MAT2d_DataMapOfIntegerPnt2d;
-typedef NCollection_DataMap<Standard_Integer, gp_Pnt2d, TColStd_MapIntegerHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d;
-typedef NCollection_DataMap<Standard_Integer, gp_Vec2d, TColStd_MapIntegerHasher> MAT2d_DataMapOfIntegerVec2d;
-typedef NCollection_DataMap<Standard_Integer, gp_Vec2d, TColStd_MapIntegerHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d;
-typedef NCollection_DataMap<Standard_Integer, Bisector_Bisec, TColStd_MapIntegerHasher> MAT2d_DataMapOfIntegerBisec;
-typedef NCollection_DataMap<Standard_Integer, Bisector_Bisec, TColStd_MapIntegerHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfIntegerBisec;
 typedef NCollection_Array2<opencascade::handle<MAT2d_Connexion>> MAT2d_Array2OfConnexion;
+typedef NCollection_DataMap<MAT2d_BiInt, Standard_Integer, MAT2d_MapBiIntHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfBiIntInteger;
+typedef NCollection_DataMap<MAT2d_BiInt, TColStd_SequenceOfInteger, MAT2d_MapBiIntHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger;
+typedef NCollection_DataMap<Standard_Integer, Bisector_Bisec, TColStd_MapIntegerHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfIntegerBisec;
+typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT2d_Connexion>, TColStd_MapIntegerHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion;
+typedef NCollection_DataMap<Standard_Integer, gp_Pnt2d, TColStd_MapIntegerHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d;
+typedef NCollection_DataMap<Standard_Integer, MAT2d_SequenceOfConnexion, TColStd_MapIntegerHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion;
+typedef NCollection_DataMap<Standard_Integer, gp_Vec2d, TColStd_MapIntegerHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d;
+typedef NCollection_DataMap<MAT2d_BiInt, Standard_Integer, MAT2d_MapBiIntHasher> MAT2d_DataMapOfBiIntInteger;
+typedef NCollection_DataMap<MAT2d_BiInt, TColStd_SequenceOfInteger, MAT2d_MapBiIntHasher> MAT2d_DataMapOfBiIntSequenceOfInteger;
+typedef NCollection_DataMap<Standard_Integer, Bisector_Bisec, TColStd_MapIntegerHasher> MAT2d_DataMapOfIntegerBisec;
+typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT2d_Connexion>, TColStd_MapIntegerHasher> MAT2d_DataMapOfIntegerConnexion;
+typedef NCollection_DataMap<Standard_Integer, gp_Pnt2d, TColStd_MapIntegerHasher> MAT2d_DataMapOfIntegerPnt2d;
+typedef NCollection_DataMap<Standard_Integer, MAT2d_SequenceOfConnexion, TColStd_MapIntegerHasher> MAT2d_DataMapOfIntegerSequenceOfConnexion;
+typedef NCollection_DataMap<Standard_Integer, gp_Vec2d, TColStd_MapIntegerHasher> MAT2d_DataMapOfIntegerVec2d;
+typedef NCollection_Sequence<opencascade::handle<MAT2d_Connexion>> MAT2d_SequenceOfConnexion;
 typedef NCollection_Sequence<TColGeom2d_SequenceOfCurve> MAT2d_SequenceOfSequenceOfCurve;
 typedef NCollection_Sequence<TColGeom2d_SequenceOfGeometry> MAT2d_SequenceOfSequenceOfGeometry;
-typedef NCollection_Sequence<opencascade::handle<MAT2d_Connexion>> MAT2d_SequenceOfConnexion;
-typedef NCollection_DataMap<MAT2d_BiInt, TColStd_SequenceOfInteger, MAT2d_MapBiIntHasher> MAT2d_DataMapOfBiIntSequenceOfInteger;
-typedef NCollection_DataMap<MAT2d_BiInt, TColStd_SequenceOfInteger, MAT2d_MapBiIntHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger;
-typedef NCollection_DataMap<MAT2d_BiInt, Standard_Integer, MAT2d_MapBiIntHasher> MAT2d_DataMapOfBiIntInteger;
-typedef NCollection_DataMap<MAT2d_BiInt, Standard_Integer, MAT2d_MapBiIntHasher>::Iterator MAT2d_DataMapIteratorOfDataMapOfBiIntInteger;
 /* end typedefs declaration */
 
 /********************
@@ -180,6 +180,21 @@ typedef NCollection_DataMap<MAT2d_BiInt, Standard_Integer, MAT2d_MapBiIntHasher>
 ********************/
 class MAT2d_BiInt {
 	public:
+		/****************** MAT2d_BiInt ******************/
+		%feature("compactdefaultargs") MAT2d_BiInt;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+I1: int
+I2: int
+
+Returns
+-------
+None
+") MAT2d_BiInt;
+		 MAT2d_BiInt(const Standard_Integer I1, const Standard_Integer I2);
+
 		/****************** FirstIndex ******************/
 		%feature("compactdefaultargs") FirstIndex;
 		%feature("autodoc", "No available documentation.
@@ -217,21 +232,6 @@ Returns
 bool
 ") IsEqual;
 		Standard_Boolean IsEqual(const MAT2d_BiInt & B);
-
-		/****************** MAT2d_BiInt ******************/
-		%feature("compactdefaultargs") MAT2d_BiInt;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-I1: int
-I2: int
-
-Returns
--------
-None
-") MAT2d_BiInt;
-		 MAT2d_BiInt(const Standard_Integer I1, const Standard_Integer I2);
 
 		/****************** SecondIndex ******************/
 		%feature("compactdefaultargs") SecondIndex;
@@ -285,6 +285,23 @@ None
 **********************/
 class MAT2d_Circuit : public Standard_Transient {
 	public:
+		/****************** MAT2d_Circuit ******************/
+		%feature("compactdefaultargs") MAT2d_Circuit;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aJoinType: GeomAbs_JoinType,optional
+	default value is GeomAbs_Arc
+IsOpenResult: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") MAT2d_Circuit;
+		 MAT2d_Circuit(const GeomAbs_JoinType aJoinType = GeomAbs_Arc, const Standard_Boolean IsOpenResult = Standard_False);
+
 		/****************** Connexion ******************/
 		%feature("compactdefaultargs") Connexion;
 		%feature("autodoc", "Returns the connexion on the item <index> in me.
@@ -326,23 +343,6 @@ Returns
 int
 ") LineLength;
 		Standard_Integer LineLength(const Standard_Integer IndexLine);
-
-		/****************** MAT2d_Circuit ******************/
-		%feature("compactdefaultargs") MAT2d_Circuit;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aJoinType: GeomAbs_JoinType,optional
-	default value is GeomAbs_Arc
-IsOpenResult: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") MAT2d_Circuit;
-		 MAT2d_Circuit(const GeomAbs_JoinType aJoinType = GeomAbs_Arc, const Standard_Boolean IsOpenResult = Standard_False);
 
 		/****************** NumberOfItems ******************/
 		%feature("compactdefaultargs") NumberOfItems;
@@ -416,6 +416,38 @@ opencascade::handle<Geom2d_Geometry>
 ************************/
 class MAT2d_Connexion : public Standard_Transient {
 	public:
+		/****************** MAT2d_Connexion ******************/
+		%feature("compactdefaultargs") MAT2d_Connexion;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") MAT2d_Connexion;
+		 MAT2d_Connexion();
+
+		/****************** MAT2d_Connexion ******************/
+		%feature("compactdefaultargs") MAT2d_Connexion;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+LineA: int
+LineB: int
+ItemA: int
+ItemB: int
+Distance: float
+ParameterOnA: float
+ParameterOnB: float
+PointA: gp_Pnt2d
+PointB: gp_Pnt2d
+
+Returns
+-------
+None
+") MAT2d_Connexion;
+		 MAT2d_Connexion(const Standard_Integer LineA, const Standard_Integer LineB, const Standard_Integer ItemA, const Standard_Integer ItemB, const Standard_Real Distance, const Standard_Real ParameterOnA, const Standard_Real ParameterOnB, const gp_Pnt2d & PointA, const gp_Pnt2d & PointB);
+
 		/****************** Distance ******************/
 		%feature("compactdefaultargs") Distance;
 		%feature("autodoc", "Returns the distance between the two points.
@@ -567,38 +599,6 @@ Returns
 bool
 ") IsAfter;
 		Standard_Boolean IsAfter(const opencascade::handle<MAT2d_Connexion> & aConnexion, const Standard_Real aSense);
-
-		/****************** MAT2d_Connexion ******************/
-		%feature("compactdefaultargs") MAT2d_Connexion;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") MAT2d_Connexion;
-		 MAT2d_Connexion();
-
-		/****************** MAT2d_Connexion ******************/
-		%feature("compactdefaultargs") MAT2d_Connexion;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-LineA: int
-LineB: int
-ItemA: int
-ItemB: int
-Distance: float
-ParameterOnA: float
-ParameterOnB: float
-PointA: gp_Pnt2d
-PointB: gp_Pnt2d
-
-Returns
--------
-None
-") MAT2d_Connexion;
-		 MAT2d_Connexion(const Standard_Integer LineA, const Standard_Integer LineB, const Standard_Integer ItemA, const Standard_Integer ItemB, const Standard_Real Distance, const Standard_Real ParameterOnA, const Standard_Real ParameterOnB, const gp_Pnt2d & PointA, const gp_Pnt2d & PointB);
 
 		/****************** ParameterOnFirst ******************/
 		%feature("compactdefaultargs") ParameterOnFirst;
@@ -769,6 +769,21 @@ bool
 ********************/
 class MAT2d_Mat2d {
 	public:
+		/****************** MAT2d_Mat2d ******************/
+		%feature("compactdefaultargs") MAT2d_Mat2d;
+		%feature("autodoc", "Empty construtor.
+
+Parameters
+----------
+IsOpenResult: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") MAT2d_Mat2d;
+		 MAT2d_Mat2d(const Standard_Boolean IsOpenResult = Standard_False);
+
 		/****************** Bisector ******************/
 		%feature("compactdefaultargs") Bisector;
 		%feature("autodoc", "Returns the current root.
@@ -827,21 +842,6 @@ bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
-		/****************** MAT2d_Mat2d ******************/
-		%feature("compactdefaultargs") MAT2d_Mat2d;
-		%feature("autodoc", "Empty construtor.
-
-Parameters
-----------
-IsOpenResult: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") MAT2d_Mat2d;
-		 MAT2d_Mat2d(const Standard_Boolean IsOpenResult = Standard_False);
-
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Return false if there is no more roots.
@@ -896,6 +896,16 @@ bool
 ***********************/
 class MAT2d_MiniPath {
 	public:
+		/****************** MAT2d_MiniPath ******************/
+		%feature("compactdefaultargs") MAT2d_MiniPath;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") MAT2d_MiniPath;
+		 MAT2d_MiniPath();
+
 		/****************** ConnexionsFrom ******************/
 		%feature("compactdefaultargs") ConnexionsFrom;
 		%feature("autodoc", "Returns the connexions which start on line designed by <index>.
@@ -952,16 +962,6 @@ bool
 ") IsRoot;
 		Standard_Boolean IsRoot(const Standard_Integer Index);
 
-		/****************** MAT2d_MiniPath ******************/
-		%feature("compactdefaultargs") MAT2d_MiniPath;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") MAT2d_MiniPath;
-		 MAT2d_MiniPath();
-
 		/****************** Path ******************/
 		%feature("compactdefaultargs") Path;
 		%feature("autodoc", "Returns the sequence of connexions corresponding to the path.
@@ -1012,6 +1012,16 @@ None
 *********************/
 class MAT2d_Tool2d {
 	public:
+		/****************** MAT2d_Tool2d ******************/
+		%feature("compactdefaultargs") MAT2d_Tool2d;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") MAT2d_Tool2d;
+		 MAT2d_Tool2d();
+
 		/****************** BisecFusion ******************/
 		%feature("compactdefaultargs") BisecFusion;
 		%feature("autodoc", "No available documentation.
@@ -1196,16 +1206,6 @@ Returns
 float
 ") IntersectBisector;
 		Standard_Real IntersectBisector(const opencascade::handle<MAT_Bisector> & bisectorone, const opencascade::handle<MAT_Bisector> & bisectortwo, Standard_Integer &OutValue);
-
-		/****************** MAT2d_Tool2d ******************/
-		%feature("compactdefaultargs") MAT2d_Tool2d;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") MAT2d_Tool2d;
-		 MAT2d_Tool2d();
 
 		/****************** NumberOfItems ******************/
 		%feature("compactdefaultargs") NumberOfItems;

@@ -121,24 +121,24 @@ from OCC.Core.Exception import *
 /* end templates declaration */
 
 /* typedefs */
-typedef BlendFunc_ConstThroatWithPenetrationInv BRepBlend_ConstThroatWithPenetrationInv;
-typedef BlendFunc_ConstRad BRepBlend_ConstRad;
-typedef BlendFunc_ConstThroatWithPenetration BRepBlend_ConstThroatWithPenetration;
-typedef BlendFunc_EvolRad BRepBlend_EvolRad;
-typedef BlendFunc_Chamfer BRepBlend_Chamfer;
-typedef BlendFunc_Ruled BRepBlend_Ruled;
-typedef BlendFunc_ConstRadInv BRepBlend_ConstRadInv;
-typedef BlendFunc_ChamfInv BRepBlend_ChamfInv;
-typedef BlendFunc_RuledInv BRepBlend_RuledInv;
-typedef BlendFunc_ChAsymInv BRepBlend_ChAsymInv;
-typedef BlendFunc_EvolRadInv BRepBlend_EvolRadInv;
-typedef NCollection_Sequence<opencascade::handle<BRepBlend_Line>> BRepBlend_SequenceOfLine;
-typedef BlendFunc_ChAsym BRepBlend_ChAsym;
 typedef BlendFunc_CSCircular BRepBlend_CSCircular;
 typedef BlendFunc_CSConstRad BRepBlend_CSConstRad;
-typedef BlendFunc_ConstThroatInv BRepBlend_ConstThroatInv;
-typedef NCollection_Sequence<BRepBlend_PointOnRst> BRepBlend_SequenceOfPointOnRst;
+typedef BlendFunc_ChAsym BRepBlend_ChAsym;
+typedef BlendFunc_ChAsymInv BRepBlend_ChAsymInv;
+typedef BlendFunc_ChamfInv BRepBlend_ChamfInv;
+typedef BlendFunc_Chamfer BRepBlend_Chamfer;
+typedef BlendFunc_ConstRad BRepBlend_ConstRad;
+typedef BlendFunc_ConstRadInv BRepBlend_ConstRadInv;
 typedef BlendFunc_ConstThroat BRepBlend_ConstThroat;
+typedef BlendFunc_ConstThroatInv BRepBlend_ConstThroatInv;
+typedef BlendFunc_ConstThroatWithPenetration BRepBlend_ConstThroatWithPenetration;
+typedef BlendFunc_ConstThroatWithPenetrationInv BRepBlend_ConstThroatWithPenetrationInv;
+typedef BlendFunc_EvolRad BRepBlend_EvolRad;
+typedef BlendFunc_EvolRadInv BRepBlend_EvolRadInv;
+typedef BlendFunc_Ruled BRepBlend_Ruled;
+typedef BlendFunc_RuledInv BRepBlend_RuledInv;
+typedef NCollection_Sequence<opencascade::handle<BRepBlend_Line>> BRepBlend_SequenceOfLine;
+typedef NCollection_Sequence<BRepBlend_PointOnRst> BRepBlend_SequenceOfPointOnRst;
 /* end typedefs declaration */
 
 /******************************
@@ -1438,23 +1438,6 @@ bool
 ****************************/
 class BRepBlend_Extremity {
 	public:
-		/****************** AddArc ******************/
-		%feature("compactdefaultargs") AddArc;
-		%feature("autodoc", "Sets the values of a point which is on the arc a, at parameter param.
-
-Parameters
-----------
-A: Adaptor2d_HCurve2d
-Param: float
-TLine: IntSurf_Transition
-TArc: IntSurf_Transition
-
-Returns
--------
-None
-") AddArc;
-		void AddArc(const opencascade::handle<Adaptor2d_HCurve2d> & A, const Standard_Real Param, const IntSurf_Transition & TLine, const IntSurf_Transition & TArc);
-
 		/****************** BRepBlend_Extremity ******************/
 		%feature("compactdefaultargs") BRepBlend_Extremity;
 		%feature("autodoc", "No available documentation.
@@ -1518,6 +1501,23 @@ Returns
 None
 ") BRepBlend_Extremity;
 		 BRepBlend_Extremity(const gp_Pnt & P, const Standard_Real W, const Standard_Real Param, const Standard_Real Tol);
+
+		/****************** AddArc ******************/
+		%feature("compactdefaultargs") AddArc;
+		%feature("autodoc", "Sets the values of a point which is on the arc a, at parameter param.
+
+Parameters
+----------
+A: Adaptor2d_HCurve2d
+Param: float
+TLine: IntSurf_Transition
+TArc: IntSurf_Transition
+
+Returns
+-------
+None
+") AddArc;
+		void AddArc(const opencascade::handle<Adaptor2d_HCurve2d> & A, const Standard_Real Param, const IntSurf_Transition & TLine, const IntSurf_Transition & TArc);
 
 		/****************** HasTangent ******************/
 		%feature("compactdefaultargs") HasTangent;
@@ -1734,6 +1734,16 @@ opencascade::handle<Adaptor3d_HVertex>
 ***********************/
 class BRepBlend_Line : public Standard_Transient {
 	public:
+		/****************** BRepBlend_Line ******************/
+		%feature("compactdefaultargs") BRepBlend_Line;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BRepBlend_Line;
+		 BRepBlend_Line();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Adds a point in the line.
@@ -1747,16 +1757,6 @@ Returns
 None
 ") Append;
 		void Append(const Blend_Point & P);
-
-		/****************** BRepBlend_Line ******************/
-		%feature("compactdefaultargs") BRepBlend_Line;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BRepBlend_Line;
-		 BRepBlend_Line();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -1981,16 +1981,6 @@ IntSurf_TypeTrans
 *****************************/
 class BRepBlend_PointOnRst {
 	public:
-		/****************** Arc ******************/
-		%feature("compactdefaultargs") Arc;
-		%feature("autodoc", "Returns the arc of restriction containing the vertex.
-
-Returns
--------
-opencascade::handle<Adaptor2d_HCurve2d>
-") Arc;
-		const opencascade::handle<Adaptor2d_HCurve2d> & Arc();
-
 		/****************** BRepBlend_PointOnRst ******************/
 		%feature("compactdefaultargs") BRepBlend_PointOnRst;
 		%feature("autodoc", "Empty constructor.
@@ -2017,6 +2007,16 @@ Returns
 None
 ") BRepBlend_PointOnRst;
 		 BRepBlend_PointOnRst(const opencascade::handle<Adaptor2d_HCurve2d> & A, const Standard_Real Param, const IntSurf_Transition & TLine, const IntSurf_Transition & TArc);
+
+		/****************** Arc ******************/
+		%feature("compactdefaultargs") Arc;
+		%feature("autodoc", "Returns the arc of restriction containing the vertex.
+
+Returns
+-------
+opencascade::handle<Adaptor2d_HCurve2d>
+") Arc;
+		const opencascade::handle<Adaptor2d_HCurve2d> & Arc();
 
 		/****************** ParameterOnArc ******************/
 		%feature("compactdefaultargs") ParameterOnArc;
@@ -5205,24 +5205,6 @@ bool
 *************************************/
 class BRepBlend_SurfRstLineBuilder {
 	public:
-		/****************** ArcToRecadre ******************/
-		%feature("compactdefaultargs") ArcToRecadre;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Sol: math_Vector
-PrevIndex: int
-pt2d: gp_Pnt2d
-lastpt2d: gp_Pnt2d
-ponarc: float
-
-Returns
--------
-int
-") ArcToRecadre;
-		Standard_Integer ArcToRecadre(const math_Vector & Sol, const Standard_Integer PrevIndex, gp_Pnt2d & pt2d, gp_Pnt2d & lastpt2d, Standard_Real &OutValue);
-
 		/****************** BRepBlend_SurfRstLineBuilder ******************/
 		%feature("compactdefaultargs") BRepBlend_SurfRstLineBuilder;
 		%feature("autodoc", "No available documentation.
@@ -5240,6 +5222,24 @@ Returns
 None
 ") BRepBlend_SurfRstLineBuilder;
 		 BRepBlend_SurfRstLineBuilder(const opencascade::handle<Adaptor3d_HSurface> & Surf1, const opencascade::handle<Adaptor3d_TopolTool> & Domain1, const opencascade::handle<Adaptor3d_HSurface> & Surf2, const opencascade::handle<Adaptor2d_HCurve2d> & Rst, const opencascade::handle<Adaptor3d_TopolTool> & Domain2);
+
+		/****************** ArcToRecadre ******************/
+		%feature("compactdefaultargs") ArcToRecadre;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sol: math_Vector
+PrevIndex: int
+pt2d: gp_Pnt2d
+lastpt2d: gp_Pnt2d
+ponarc: float
+
+Returns
+-------
+int
+") ArcToRecadre;
+		Standard_Integer ArcToRecadre(const math_Vector & Sol, const Standard_Integer PrevIndex, gp_Pnt2d & pt2d, gp_Pnt2d & lastpt2d, Standard_Real &OutValue);
 
 		/****************** Complete ******************/
 		%feature("compactdefaultargs") Complete;
@@ -5366,20 +5366,6 @@ bool
 **************************/
 class BRepBlend_Walking {
 	public:
-		/****************** AddSingularPoint ******************/
-		%feature("compactdefaultargs") AddSingularPoint;
-		%feature("autodoc", "To define singular points computed before walking.
-
-Parameters
-----------
-P: Blend_Point
-
-Returns
--------
-None
-") AddSingularPoint;
-		void AddSingularPoint(const Blend_Point & P);
-
 		/****************** BRepBlend_Walking ******************/
 		%feature("compactdefaultargs") BRepBlend_Walking;
 		%feature("autodoc", "No available documentation.
@@ -5397,6 +5383,20 @@ Returns
 None
 ") BRepBlend_Walking;
 		 BRepBlend_Walking(const opencascade::handle<Adaptor3d_HSurface> & Surf1, const opencascade::handle<Adaptor3d_HSurface> & Surf2, const opencascade::handle<Adaptor3d_TopolTool> & Domain1, const opencascade::handle<Adaptor3d_TopolTool> & Domain2, const opencascade::handle<ChFiDS_HElSpine> & HGuide);
+
+		/****************** AddSingularPoint ******************/
+		%feature("compactdefaultargs") AddSingularPoint;
+		%feature("autodoc", "To define singular points computed before walking.
+
+Parameters
+----------
+P: Blend_Point
+
+Returns
+-------
+None
+") AddSingularPoint;
+		void AddSingularPoint(const Blend_Point & P);
 
 		/****************** Check ******************/
 		%feature("compactdefaultargs") Check;

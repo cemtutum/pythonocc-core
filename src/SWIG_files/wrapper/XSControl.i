@@ -154,6 +154,30 @@ opencascade::handle<XSControl_Vars>
 **********************************/
 class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 	public:
+		/****************** XSControl_ConnectedShapes ******************/
+		%feature("compactdefaultargs") XSControl_ConnectedShapes;
+		%feature("autodoc", "Creates a selection connectedshapes. it remains to be set a transferreader.
+
+Returns
+-------
+None
+") XSControl_ConnectedShapes;
+		 XSControl_ConnectedShapes();
+
+		/****************** XSControl_ConnectedShapes ******************/
+		%feature("compactdefaultargs") XSControl_ConnectedShapes;
+		%feature("autodoc", "Creates a selection connectedshapes, which will work with the current transferprocess brought by the transferreader.
+
+Parameters
+----------
+TR: XSControl_TransferReader
+
+Returns
+-------
+None
+") XSControl_ConnectedShapes;
+		 XSControl_ConnectedShapes(const opencascade::handle<XSControl_TransferReader> & TR);
+
 		/****************** AdjacentEntities ******************/
 		%feature("compactdefaultargs") AdjacentEntities;
 		%feature("autodoc", "This functions considers a shape from a transfer and performs the search function explained above.
@@ -210,30 +234,6 @@ Returns
 None
 ") SetReader;
 		void SetReader(const opencascade::handle<XSControl_TransferReader> & TR);
-
-		/****************** XSControl_ConnectedShapes ******************/
-		%feature("compactdefaultargs") XSControl_ConnectedShapes;
-		%feature("autodoc", "Creates a selection connectedshapes. it remains to be set a transferreader.
-
-Returns
--------
-None
-") XSControl_ConnectedShapes;
-		 XSControl_ConnectedShapes();
-
-		/****************** XSControl_ConnectedShapes ******************/
-		%feature("compactdefaultargs") XSControl_ConnectedShapes;
-		%feature("autodoc", "Creates a selection connectedshapes, which will work with the current transferprocess brought by the transferreader.
-
-Parameters
-----------
-TR: XSControl_TransferReader
-
-Returns
--------
-None
-") XSControl_ConnectedShapes;
-		 XSControl_ConnectedShapes(const opencascade::handle<XSControl_TransferReader> & TR);
 
 };
 
@@ -679,6 +679,46 @@ None
 *************************/
 class XSControl_Reader {
 	public:
+		/****************** XSControl_Reader ******************/
+		%feature("compactdefaultargs") XSControl_Reader;
+		%feature("autodoc", "Creates a reader from scratch (creates an empty worksession) a worksession or a controller must be provided before running.
+
+Returns
+-------
+None
+") XSControl_Reader;
+		 XSControl_Reader();
+
+		/****************** XSControl_Reader ******************/
+		%feature("compactdefaultargs") XSControl_Reader;
+		%feature("autodoc", "Creates a reader from scratch, with a norm name which identifies a controller.
+
+Parameters
+----------
+norm: char *
+
+Returns
+-------
+None
+") XSControl_Reader;
+		 XSControl_Reader(const char * norm);
+
+		/****************** XSControl_Reader ******************/
+		%feature("compactdefaultargs") XSControl_Reader;
+		%feature("autodoc", "Creates a reader from an already existing session, with a controller already set virtual destructor.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") XSControl_Reader;
+		 XSControl_Reader(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
+
 		/****************** ClearShapes ******************/
 		%feature("compactdefaultargs") ClearShapes;
 		%feature("autodoc", "Clears the list of shapes that may have accumulated in calls to transferone or transferroot.c.
@@ -975,46 +1015,6 @@ opencascade::handle<XSControl_WorkSession>
 ") WS;
 		opencascade::handle<XSControl_WorkSession> WS();
 
-		/****************** XSControl_Reader ******************/
-		%feature("compactdefaultargs") XSControl_Reader;
-		%feature("autodoc", "Creates a reader from scratch (creates an empty worksession) a worksession or a controller must be provided before running.
-
-Returns
--------
-None
-") XSControl_Reader;
-		 XSControl_Reader();
-
-		/****************** XSControl_Reader ******************/
-		%feature("compactdefaultargs") XSControl_Reader;
-		%feature("autodoc", "Creates a reader from scratch, with a norm name which identifies a controller.
-
-Parameters
-----------
-norm: char *
-
-Returns
--------
-None
-") XSControl_Reader;
-		 XSControl_Reader(const char * norm);
-
-		/****************** XSControl_Reader ******************/
-		%feature("compactdefaultargs") XSControl_Reader;
-		%feature("autodoc", "Creates a reader from an already existing session, with a controller already set virtual destructor.
-
-Parameters
-----------
-WS: XSControl_WorkSession
-scratch: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") XSControl_Reader;
-		 XSControl_Reader(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
-
 };
 
 
@@ -1029,6 +1029,30 @@ None
 ************************************/
 class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
 	public:
+		/****************** XSControl_SelectForTransfer ******************/
+		%feature("compactdefaultargs") XSControl_SelectForTransfer;
+		%feature("autodoc", "Creates a selectfortransfer, non initialised it sorts nothing, unless an actor has been defined.
+
+Returns
+-------
+None
+") XSControl_SelectForTransfer;
+		 XSControl_SelectForTransfer();
+
+		/****************** XSControl_SelectForTransfer ******************/
+		%feature("compactdefaultargs") XSControl_SelectForTransfer;
+		%feature("autodoc", "Creates a selectfortransfer, which will work with the currently defined actor brought by the transferreader.
+
+Parameters
+----------
+TR: XSControl_TransferReader
+
+Returns
+-------
+None
+") XSControl_SelectForTransfer;
+		 XSControl_SelectForTransfer(const opencascade::handle<XSControl_TransferReader> & TR);
+
 		/****************** Actor ******************/
 		%feature("compactdefaultargs") Actor;
 		%feature("autodoc", "Returns the actor used as precised one. returns a null handle for a creation from a transferreader without any further setting.
@@ -1103,30 +1127,6 @@ bool
 ") Sort;
 		Standard_Boolean Sort(const Standard_Integer rank, const opencascade::handle<Standard_Transient> & ent, const opencascade::handle<Interface_InterfaceModel> & model);
 
-		/****************** XSControl_SelectForTransfer ******************/
-		%feature("compactdefaultargs") XSControl_SelectForTransfer;
-		%feature("autodoc", "Creates a selectfortransfer, non initialised it sorts nothing, unless an actor has been defined.
-
-Returns
--------
-None
-") XSControl_SelectForTransfer;
-		 XSControl_SelectForTransfer();
-
-		/****************** XSControl_SelectForTransfer ******************/
-		%feature("compactdefaultargs") XSControl_SelectForTransfer;
-		%feature("autodoc", "Creates a selectfortransfer, which will work with the currently defined actor brought by the transferreader.
-
-Parameters
-----------
-TR: XSControl_TransferReader
-
-Returns
--------
-None
-") XSControl_SelectForTransfer;
-		 XSControl_SelectForTransfer(const opencascade::handle<XSControl_TransferReader> & TR);
-
 };
 
 
@@ -1143,6 +1143,30 @@ None
 *************************************/
 class XSControl_SignTransferStatus : public IFSelect_Signature {
 	public:
+		/****************** XSControl_SignTransferStatus ******************/
+		%feature("compactdefaultargs") XSControl_SignTransferStatus;
+		%feature("autodoc", "Creates a signtransferstatus, not initialised it gives nothing (empty string).
+
+Returns
+-------
+None
+") XSControl_SignTransferStatus;
+		 XSControl_SignTransferStatus();
+
+		/****************** XSControl_SignTransferStatus ******************/
+		%feature("compactdefaultargs") XSControl_SignTransferStatus;
+		%feature("autodoc", "Creates a signtransferstatus, which will work on the current transientprocess brought by the transferreader (its mapreader).
+
+Parameters
+----------
+TR: XSControl_TransferReader
+
+Returns
+-------
+None
+") XSControl_SignTransferStatus;
+		 XSControl_SignTransferStatus(const opencascade::handle<XSControl_TransferReader> & TR);
+
 		/****************** Map ******************/
 		%feature("compactdefaultargs") Map;
 		%feature("autodoc", "Returns the transientprocess used as precised one returns a null handle for a creation from a transferreader without any further setting.
@@ -1206,30 +1230,6 @@ char *
 ") Value;
 		const char * Value(const opencascade::handle<Standard_Transient> & ent, const opencascade::handle<Interface_InterfaceModel> & model);
 
-		/****************** XSControl_SignTransferStatus ******************/
-		%feature("compactdefaultargs") XSControl_SignTransferStatus;
-		%feature("autodoc", "Creates a signtransferstatus, not initialised it gives nothing (empty string).
-
-Returns
--------
-None
-") XSControl_SignTransferStatus;
-		 XSControl_SignTransferStatus();
-
-		/****************** XSControl_SignTransferStatus ******************/
-		%feature("compactdefaultargs") XSControl_SignTransferStatus;
-		%feature("autodoc", "Creates a signtransferstatus, which will work on the current transientprocess brought by the transferreader (its mapreader).
-
-Parameters
-----------
-TR: XSControl_TransferReader
-
-Returns
--------
-None
-") XSControl_SignTransferStatus;
-		 XSControl_SignTransferStatus(const opencascade::handle<XSControl_TransferReader> & TR);
-
 };
 
 
@@ -1246,6 +1246,16 @@ None
 *********************************/
 class XSControl_TransferReader : public Standard_Transient {
 	public:
+		/****************** XSControl_TransferReader ******************/
+		%feature("compactdefaultargs") XSControl_TransferReader;
+		%feature("autodoc", "Creates a transferreader, empty.
+
+Returns
+-------
+None
+") XSControl_TransferReader;
+		 XSControl_TransferReader();
+
 		/****************** Actor ******************/
 		%feature("compactdefaultargs") Actor;
 		%feature("autodoc", "Returns the actor, determined by the controller, or if this one is unknown, directly set. once it has been defined, it can then be edited.
@@ -1890,16 +1900,6 @@ opencascade::handle<Standard_Transient>
 ") TransientResult;
 		opencascade::handle<Standard_Transient> TransientResult(const opencascade::handle<Standard_Transient> & theEnt);
 
-		/****************** XSControl_TransferReader ******************/
-		%feature("compactdefaultargs") XSControl_TransferReader;
-		%feature("autodoc", "Creates a transferreader, empty.
-
-Returns
--------
-None
-") XSControl_TransferReader;
-		 XSControl_TransferReader();
-
 };
 
 
@@ -1916,6 +1916,16 @@ None
 *********************************/
 class XSControl_TransferWriter : public Standard_Transient {
 	public:
+		/****************** XSControl_TransferWriter ******************/
+		%feature("compactdefaultargs") XSControl_TransferWriter;
+		%feature("autodoc", "Creates a transferwriter, empty, ready to run with an empty finderprocess (but no controller, etc).
+
+Returns
+-------
+None
+") XSControl_TransferWriter;
+		 XSControl_TransferWriter();
+
 		/****************** CheckList ******************/
 		%feature("compactdefaultargs") CheckList;
 		%feature("autodoc", "Returns the check-list of last transfer (write), i.e. the check-list currently recorded in the finderprocess.
@@ -2100,16 +2110,6 @@ IFSelect_ReturnStatus
 ") TransferWriteTransient;
 		IFSelect_ReturnStatus TransferWriteTransient(const opencascade::handle<Interface_InterfaceModel> & theModel, const opencascade::handle<Standard_Transient> & theObj);
 
-		/****************** XSControl_TransferWriter ******************/
-		%feature("compactdefaultargs") XSControl_TransferWriter;
-		%feature("autodoc", "Creates a transferwriter, empty, ready to run with an empty finderprocess (but no controller, etc).
-
-Returns
--------
-None
-") XSControl_TransferWriter;
-		 XSControl_TransferWriter();
-
 };
 
 
@@ -2126,6 +2126,16 @@ None
 ************************/
 class XSControl_Utils {
 	public:
+		/****************** XSControl_Utils ******************/
+		%feature("compactdefaultargs") XSControl_Utils;
+		%feature("autodoc", "The only use of this, is to allow a frontal to get one distinct 'utils' set per separate engine.
+
+Returns
+-------
+None
+") XSControl_Utils;
+		 XSControl_Utils();
+
 		/****************** AppendCStr ******************/
 		%feature("compactdefaultargs") AppendCStr;
 		%feature("autodoc", "No available documentation.
@@ -2673,16 +2683,6 @@ char *
 ") TypeName;
 		const char * TypeName(const opencascade::handle<Standard_Transient> & item, const Standard_Boolean nopk = Standard_False);
 
-		/****************** XSControl_Utils ******************/
-		%feature("compactdefaultargs") XSControl_Utils;
-		%feature("autodoc", "The only use of this, is to allow a frontal to get one distinct 'utils' set per separate engine.
-
-Returns
--------
-None
-") XSControl_Utils;
-		 XSControl_Utils();
-
 };
 
 
@@ -2697,6 +2697,16 @@ None
 ***********************/
 class XSControl_Vars : public Standard_Transient {
 	public:
+		/****************** XSControl_Vars ******************/
+		%feature("compactdefaultargs") XSControl_Vars;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XSControl_Vars;
+		 XSControl_Vars();
+
 		/****************** Get ******************/
 		%feature("compactdefaultargs") Get;
 		%feature("autodoc", "No available documentation.
@@ -2871,16 +2881,6 @@ None
 ") SetShape;
 		virtual void SetShape(const char * name, const TopoDS_Shape & val);
 
-		/****************** XSControl_Vars ******************/
-		%feature("compactdefaultargs") XSControl_Vars;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XSControl_Vars;
-		 XSControl_Vars();
-
 };
 
 
@@ -2897,6 +2897,16 @@ None
 ******************************/
 class XSControl_WorkSession : public IFSelect_WorkSession {
 	public:
+		/****************** XSControl_WorkSession ******************/
+		%feature("compactdefaultargs") XSControl_WorkSession;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") XSControl_WorkSession;
+		 XSControl_WorkSession();
+
 		/****************** ClearContext ******************/
 		%feature("compactdefaultargs") ClearContext;
 		%feature("autodoc", "Clears the whole current context (nullifies it).
@@ -3199,16 +3209,6 @@ opencascade::handle<XSControl_Vars>
 ") Vars;
 		const opencascade::handle<XSControl_Vars> & Vars();
 
-		/****************** XSControl_WorkSession ******************/
-		%feature("compactdefaultargs") XSControl_WorkSession;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") XSControl_WorkSession;
-		 XSControl_WorkSession();
-
 };
 
 
@@ -3225,6 +3225,46 @@ None
 *************************/
 class XSControl_Writer {
 	public:
+		/****************** XSControl_Writer ******************/
+		%feature("compactdefaultargs") XSControl_Writer;
+		%feature("autodoc", "Creates a writer from scratch.
+
+Returns
+-------
+None
+") XSControl_Writer;
+		 XSControl_Writer();
+
+		/****************** XSControl_Writer ******************/
+		%feature("compactdefaultargs") XSControl_Writer;
+		%feature("autodoc", "Creates a writer from scratch, with a norm name which identifie a controller.
+
+Parameters
+----------
+norm: char *
+
+Returns
+-------
+None
+") XSControl_Writer;
+		 XSControl_Writer(const char * norm);
+
+		/****************** XSControl_Writer ******************/
+		%feature("compactdefaultargs") XSControl_Writer;
+		%feature("autodoc", "Creates a writer from an already existing session if <scratch> is true (d), clears already recorded data.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+scratch: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") XSControl_Writer;
+		 XSControl_Writer(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
+
 		/****************** Model ******************/
 		%feature("compactdefaultargs") Model;
 		%feature("autodoc", "Returns the produced model. produces a new one if not yet done or if <newone> is true this method allows for instance to edit product or header data before writing.
@@ -3325,46 +3365,6 @@ Returns
 IFSelect_ReturnStatus
 ") WriteFile;
 		IFSelect_ReturnStatus WriteFile(const char * filename);
-
-		/****************** XSControl_Writer ******************/
-		%feature("compactdefaultargs") XSControl_Writer;
-		%feature("autodoc", "Creates a writer from scratch.
-
-Returns
--------
-None
-") XSControl_Writer;
-		 XSControl_Writer();
-
-		/****************** XSControl_Writer ******************/
-		%feature("compactdefaultargs") XSControl_Writer;
-		%feature("autodoc", "Creates a writer from scratch, with a norm name which identifie a controller.
-
-Parameters
-----------
-norm: char *
-
-Returns
--------
-None
-") XSControl_Writer;
-		 XSControl_Writer(const char * norm);
-
-		/****************** XSControl_Writer ******************/
-		%feature("compactdefaultargs") XSControl_Writer;
-		%feature("autodoc", "Creates a writer from an already existing session if <scratch> is true (d), clears already recorded data.
-
-Parameters
-----------
-WS: XSControl_WorkSession
-scratch: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") XSControl_Writer;
-		 XSControl_Writer(const opencascade::handle<XSControl_WorkSession> & WS, const Standard_Boolean scratch = Standard_True);
 
 };
 

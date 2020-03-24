@@ -50,9 +50,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepconstruct.htm
 #include<StepAP203_module.hxx>
 #include<Interface_module.hxx>
 #include<StepGeom_module.hxx>
+#include<StepData_module.hxx>
 #include<TCollection_module.hxx>
 #include<TColStd_module.hxx>
-#include<StepData_module.hxx>
 #include<gp_module.hxx>
 #include<XSControl_module.hxx>
 #include<StepVisual_module.hxx>
@@ -82,9 +82,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_stepconstruct.htm
 %import StepAP203.i
 %import Interface.i
 %import StepGeom.i
+%import StepData.i
 %import TCollection.i
 %import TColStd.i
-%import StepData.i
 %import gp.i
 %import XSControl.i
 %import StepVisual.i
@@ -111,10 +111,10 @@ from OCC.Core.Exception import *
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<TCollection_AsciiString, opencascade::handle<Standard_Transient>, TCollection_AsciiString> STEPConstruct_DataMapOfAsciiStringTransient;
 typedef NCollection_DataMap<TCollection_AsciiString, opencascade::handle<Standard_Transient>, TCollection_AsciiString>::Iterator STEPConstruct_DataMapIteratorOfDataMapOfAsciiStringTransient;
-typedef NCollection_DataMap<gp_Pnt, opencascade::handle<Standard_Transient>, STEPConstruct_PointHasher> STEPConstruct_DataMapOfPointTransient;
 typedef NCollection_DataMap<gp_Pnt, opencascade::handle<Standard_Transient>, STEPConstruct_PointHasher>::Iterator STEPConstruct_DataMapIteratorOfDataMapOfPointTransient;
+typedef NCollection_DataMap<TCollection_AsciiString, opencascade::handle<Standard_Transient>, TCollection_AsciiString> STEPConstruct_DataMapOfAsciiStringTransient;
+typedef NCollection_DataMap<gp_Pnt, opencascade::handle<Standard_Transient>, STEPConstruct_PointHasher> STEPConstruct_DataMapOfPointTransient;
 /* end typedefs declaration */
 
 /**********************
@@ -199,6 +199,16 @@ TopoDS_Shape
 ***********************************/
 class STEPConstruct_AP203Context {
 	public:
+		/****************** STEPConstruct_AP203Context ******************/
+		%feature("compactdefaultargs") STEPConstruct_AP203Context;
+		%feature("autodoc", "Creates tool and fills constant fields.
+
+Returns
+-------
+None
+") STEPConstruct_AP203Context;
+		 STEPConstruct_AP203Context();
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Clears all fields describing entities specific to each part.
@@ -515,16 +525,6 @@ opencascade::handle<StepBasic_PersonAndOrganizationRole>
 ") RoleDesignSupplier;
 		opencascade::handle<StepBasic_PersonAndOrganizationRole> RoleDesignSupplier();
 
-		/****************** STEPConstruct_AP203Context ******************/
-		%feature("compactdefaultargs") STEPConstruct_AP203Context;
-		%feature("autodoc", "Creates tool and fills constant fields.
-
-Returns
--------
-None
-") STEPConstruct_AP203Context;
-		 STEPConstruct_AP203Context();
-
 		/****************** SetDefaultApproval ******************/
 		%feature("compactdefaultargs") SetDefaultApproval;
 		%feature("autodoc", "Sets default approval.
@@ -595,6 +595,16 @@ None
 *******************************/
 class STEPConstruct_Assembly {
 	public:
+		/****************** STEPConstruct_Assembly ******************/
+		%feature("compactdefaultargs") STEPConstruct_Assembly;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPConstruct_Assembly;
+		 STEPConstruct_Assembly();
+
 		/****************** CheckSRRReversesNAUO ******************/
 		%feature("compactdefaultargs") CheckSRRReversesNAUO;
 		%feature("autodoc", "Checks whether srr's definition of assembly and component contradicts with nauo definition or not, according to model schema (ap214 or ap203).
@@ -667,16 +677,6 @@ None
 ") MakeRelationship;
 		void MakeRelationship();
 
-		/****************** STEPConstruct_Assembly ******************/
-		%feature("compactdefaultargs") STEPConstruct_Assembly;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPConstruct_Assembly;
-		 STEPConstruct_Assembly();
-
 };
 
 
@@ -691,6 +691,30 @@ None
 **********************************/
 class STEPConstruct_ContextTool {
 	public:
+		/****************** STEPConstruct_ContextTool ******************/
+		%feature("compactdefaultargs") STEPConstruct_ContextTool;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPConstruct_ContextTool;
+		 STEPConstruct_ContextTool();
+
+		/****************** STEPConstruct_ContextTool ******************/
+		%feature("compactdefaultargs") STEPConstruct_ContextTool;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aStepModel: StepData_StepModel
+
+Returns
+-------
+None
+") STEPConstruct_ContextTool;
+		 STEPConstruct_ContextTool(const opencascade::handle<StepData_StepModel> & aStepModel);
+
 		/****************** AP203Context ******************/
 		%feature("compactdefaultargs") AP203Context;
 		%feature("autodoc", "Returns tool which maintains context specific for ap203.
@@ -904,30 +928,6 @@ None
 ") PrevLevel;
 		void PrevLevel();
 
-		/****************** STEPConstruct_ContextTool ******************/
-		%feature("compactdefaultargs") STEPConstruct_ContextTool;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPConstruct_ContextTool;
-		 STEPConstruct_ContextTool();
-
-		/****************** STEPConstruct_ContextTool ******************/
-		%feature("compactdefaultargs") STEPConstruct_ContextTool;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aStepModel: StepData_StepModel
-
-Returns
--------
-None
-") STEPConstruct_ContextTool;
-		 STEPConstruct_ContextTool(const opencascade::handle<StepData_StepModel> & aStepModel);
-
 		/****************** SetACname ******************/
 		%feature("compactdefaultargs") SetACname;
 		%feature("autodoc", "No available documentation.
@@ -1040,6 +1040,16 @@ None
 ***************************/
 class STEPConstruct_Part {
 	public:
+		/****************** STEPConstruct_Part ******************/
+		%feature("compactdefaultargs") STEPConstruct_Part;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") STEPConstruct_Part;
+		 STEPConstruct_Part();
+
 		/****************** AC ******************/
 		%feature("compactdefaultargs") AC;
 		%feature("autodoc", "No available documentation.
@@ -1330,16 +1340,6 @@ opencascade::handle<StepShape_ShapeRepresentation>
 ") SRValue;
 		opencascade::handle<StepShape_ShapeRepresentation> SRValue();
 
-		/****************** STEPConstruct_Part ******************/
-		%feature("compactdefaultargs") STEPConstruct_Part;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") STEPConstruct_Part;
-		 STEPConstruct_Part();
-
 		/****************** SetACapplication ******************/
 		%feature("compactdefaultargs") SetACapplication;
 		%feature("autodoc", "No available documentation.
@@ -1608,6 +1608,30 @@ bool
 ***************************/
 class STEPConstruct_Tool {
 	public:
+		/****************** STEPConstruct_Tool ******************/
+		%feature("compactdefaultargs") STEPConstruct_Tool;
+		%feature("autodoc", "Creates an empty tool.
+
+Returns
+-------
+None
+") STEPConstruct_Tool;
+		 STEPConstruct_Tool();
+
+		/****************** STEPConstruct_Tool ******************/
+		%feature("compactdefaultargs") STEPConstruct_Tool;
+		%feature("autodoc", "Creates a tool and loads it with worksession.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+
+Returns
+-------
+None
+") STEPConstruct_Tool;
+		 STEPConstruct_Tool(const opencascade::handle<XSControl_WorkSession> & WS);
+
 		/****************** FinderProcess ******************/
 		%feature("compactdefaultargs") FinderProcess;
 		%feature("autodoc", "Returns finderprocess (writing; null if not loaded).
@@ -1643,30 +1667,6 @@ opencascade::handle<Interface_InterfaceModel>
 ") Model;
 		opencascade::handle<Interface_InterfaceModel> Model();
 
-		/****************** STEPConstruct_Tool ******************/
-		%feature("compactdefaultargs") STEPConstruct_Tool;
-		%feature("autodoc", "Creates an empty tool.
-
-Returns
--------
-None
-") STEPConstruct_Tool;
-		 STEPConstruct_Tool();
-
-		/****************** STEPConstruct_Tool ******************/
-		%feature("compactdefaultargs") STEPConstruct_Tool;
-		%feature("autodoc", "Creates a tool and loads it with worksession.
-
-Parameters
-----------
-WS: XSControl_WorkSession
-
-Returns
--------
-None
-") STEPConstruct_Tool;
-		 STEPConstruct_Tool(const opencascade::handle<XSControl_WorkSession> & WS);
-
 		/****************** TransientProcess ******************/
 		%feature("compactdefaultargs") TransientProcess;
 		%feature("autodoc", "Returns transientprocess (reading; null if not loaded).
@@ -1701,6 +1701,16 @@ opencascade::handle<XSControl_WorkSession>
 **********************************/
 class STEPConstruct_UnitContext {
 	public:
+		/****************** STEPConstruct_UnitContext ******************/
+		%feature("compactdefaultargs") STEPConstruct_UnitContext;
+		%feature("autodoc", "Creates empty tool.
+
+Returns
+-------
+None
+") STEPConstruct_UnitContext;
+		 STEPConstruct_UnitContext();
+
 		/****************** AreaDone ******************/
 		%feature("compactdefaultargs") AreaDone;
 		%feature("autodoc", "Returns true if areafactor is computed.
@@ -1851,16 +1861,6 @@ float
 ") PlaneAngleFactor;
 		Standard_Real PlaneAngleFactor();
 
-		/****************** STEPConstruct_UnitContext ******************/
-		%feature("compactdefaultargs") STEPConstruct_UnitContext;
-		%feature("autodoc", "Creates empty tool.
-
-Returns
--------
-None
-") STEPConstruct_UnitContext;
-		 STEPConstruct_UnitContext();
-
 		/****************** SolidAngleDone ******************/
 		%feature("compactdefaultargs") SolidAngleDone;
 		%feature("autodoc", "Returns true if computefactors has calculated a solidanglefactor.
@@ -1949,6 +1949,30 @@ float
 *********************************/
 class STEPConstruct_ExternRefs : public STEPConstruct_Tool {
 	public:
+		/****************** STEPConstruct_ExternRefs ******************/
+		%feature("compactdefaultargs") STEPConstruct_ExternRefs;
+		%feature("autodoc", "Creates an empty tool.
+
+Returns
+-------
+None
+") STEPConstruct_ExternRefs;
+		 STEPConstruct_ExternRefs();
+
+		/****************** STEPConstruct_ExternRefs ******************/
+		%feature("compactdefaultargs") STEPConstruct_ExternRefs;
+		%feature("autodoc", "Creates a tool and initializes it.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+
+Returns
+-------
+None
+") STEPConstruct_ExternRefs;
+		 STEPConstruct_ExternRefs(const opencascade::handle<XSControl_WorkSession> & WS);
+
 		/****************** AddExternRef ******************/
 		%feature("compactdefaultargs") AddExternRef;
 		%feature("autodoc", "Create a new external reference with specified attributes attached to a given sdr <format> can be null string, in that case this information is not written. else, it can be 'step ap214' or 'step ap203' returns index of a new extern ref.
@@ -2061,30 +2085,6 @@ opencascade::handle<StepBasic_ProductDefinition>
 ") ProdDef;
 		opencascade::handle<StepBasic_ProductDefinition> ProdDef(const Standard_Integer num);
 
-		/****************** STEPConstruct_ExternRefs ******************/
-		%feature("compactdefaultargs") STEPConstruct_ExternRefs;
-		%feature("autodoc", "Creates an empty tool.
-
-Returns
--------
-None
-") STEPConstruct_ExternRefs;
-		 STEPConstruct_ExternRefs();
-
-		/****************** STEPConstruct_ExternRefs ******************/
-		%feature("compactdefaultargs") STEPConstruct_ExternRefs;
-		%feature("autodoc", "Creates a tool and initializes it.
-
-Parameters
-----------
-WS: XSControl_WorkSession
-
-Returns
--------
-None
-") STEPConstruct_ExternRefs;
-		 STEPConstruct_ExternRefs(const opencascade::handle<XSControl_WorkSession> & WS);
-
 		/****************** SetAP214APD ******************/
 		%feature("compactdefaultargs") SetAP214APD;
 		%feature("autodoc", "Set the applicationprotocoldefinition of the pdm schema.
@@ -2137,6 +2137,30 @@ None
 *****************************/
 class STEPConstruct_Styles : public STEPConstruct_Tool {
 	public:
+		/****************** STEPConstruct_Styles ******************/
+		%feature("compactdefaultargs") STEPConstruct_Styles;
+		%feature("autodoc", "Creates an empty tool.
+
+Returns
+-------
+None
+") STEPConstruct_Styles;
+		 STEPConstruct_Styles();
+
+		/****************** STEPConstruct_Styles ******************/
+		%feature("compactdefaultargs") STEPConstruct_Styles;
+		%feature("autodoc", "Creates a tool and initializes it.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+
+Returns
+-------
+None
+") STEPConstruct_Styles;
+		 STEPConstruct_Styles(const opencascade::handle<XSControl_WorkSession> & WS);
+
 		/****************** AddStyle ******************/
 		%feature("compactdefaultargs") AddStyle;
 		%feature("autodoc", "Adds a style to a sequence.
@@ -2382,30 +2406,6 @@ int
 ") NbStyles;
 		Standard_Integer NbStyles();
 
-		/****************** STEPConstruct_Styles ******************/
-		%feature("compactdefaultargs") STEPConstruct_Styles;
-		%feature("autodoc", "Creates an empty tool.
-
-Returns
--------
-None
-") STEPConstruct_Styles;
-		 STEPConstruct_Styles();
-
-		/****************** STEPConstruct_Styles ******************/
-		%feature("compactdefaultargs") STEPConstruct_Styles;
-		%feature("autodoc", "Creates a tool and initializes it.
-
-Parameters
-----------
-WS: XSControl_WorkSession
-
-Returns
--------
-None
-") STEPConstruct_Styles;
-		 STEPConstruct_Styles(const opencascade::handle<XSControl_WorkSession> & WS);
-
 		/****************** Style ******************/
 		%feature("compactdefaultargs") Style;
 		%feature("autodoc", "Returns style with given index.
@@ -2434,6 +2434,30 @@ opencascade::handle<StepVisual_StyledItem>
 **************************************/
 class STEPConstruct_ValidationProps : public STEPConstruct_Tool {
 	public:
+		/****************** STEPConstruct_ValidationProps ******************/
+		%feature("compactdefaultargs") STEPConstruct_ValidationProps;
+		%feature("autodoc", "Creates an empty tool.
+
+Returns
+-------
+None
+") STEPConstruct_ValidationProps;
+		 STEPConstruct_ValidationProps();
+
+		/****************** STEPConstruct_ValidationProps ******************/
+		%feature("compactdefaultargs") STEPConstruct_ValidationProps;
+		%feature("autodoc", "Creates a tool and loads it with worksession.
+
+Parameters
+----------
+WS: XSControl_WorkSession
+
+Returns
+-------
+None
+") STEPConstruct_ValidationProps;
+		 STEPConstruct_ValidationProps(const opencascade::handle<XSControl_WorkSession> & WS);
+
 		/****************** AddArea ******************/
 		%feature("compactdefaultargs") AddArea;
 		%feature("autodoc", "Adds surface area property for given shape (already mapped). returns true if success, false in case of fail.
@@ -2649,30 +2673,6 @@ Returns
 bool
 ") LoadProps;
 		Standard_Boolean LoadProps(TColStd_SequenceOfTransient & seq);
-
-		/****************** STEPConstruct_ValidationProps ******************/
-		%feature("compactdefaultargs") STEPConstruct_ValidationProps;
-		%feature("autodoc", "Creates an empty tool.
-
-Returns
--------
-None
-") STEPConstruct_ValidationProps;
-		 STEPConstruct_ValidationProps();
-
-		/****************** STEPConstruct_ValidationProps ******************/
-		%feature("compactdefaultargs") STEPConstruct_ValidationProps;
-		%feature("autodoc", "Creates a tool and loads it with worksession.
-
-Parameters
-----------
-WS: XSControl_WorkSession
-
-Returns
--------
-None
-") STEPConstruct_ValidationProps;
-		 STEPConstruct_ValidationProps(const opencascade::handle<XSControl_WorkSession> & WS);
 
 		/****************** SetAssemblyShape ******************/
 		%feature("compactdefaultargs") SetAssemblyShape;

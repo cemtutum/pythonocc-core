@@ -201,13 +201,9 @@ class StepFEA_UnspecifiedValue:
 /* end handles declaration */
 
 /* templates */
-%template(StepFEA_SequenceOfElementRepresentation) NCollection_Sequence<opencascade::handle<StepFEA_ElementRepresentation>>;
-%template(StepFEA_SequenceOfCurve3dElementProperty) NCollection_Sequence<opencascade::handle<StepFEA_Curve3dElementProperty>>;
-%template(StepFEA_SequenceOfNodeRepresentation) NCollection_Sequence<opencascade::handle<StepFEA_NodeRepresentation>>;
-%template(StepFEA_SequenceOfElementGeometricRelationship) NCollection_Sequence<opencascade::handle<StepFEA_ElementGeometricRelationship>>;
-%template(StepFEA_Array1OfDegreeOfFreedom) NCollection_Array1<StepFEA_DegreeOfFreedom>;
+%template(StepFEA_Array1OfCurveElementEndOffset) NCollection_Array1<opencascade::handle<StepFEA_CurveElementEndOffset>>;
 
-%extend NCollection_Array1<StepFEA_DegreeOfFreedom> {
+%extend NCollection_Array1<opencascade::handle<StepFEA_CurveElementEndOffset>> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -310,9 +306,9 @@ class StepFEA_UnspecifiedValue:
     __next__ = next
     }
 };
-%template(StepFEA_Array1OfNodeRepresentation) NCollection_Array1<opencascade::handle<StepFEA_NodeRepresentation>>;
+%template(StepFEA_Array1OfDegreeOfFreedom) NCollection_Array1<StepFEA_DegreeOfFreedom>;
 
-%extend NCollection_Array1<opencascade::handle<StepFEA_NodeRepresentation>> {
+%extend NCollection_Array1<StepFEA_DegreeOfFreedom> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -380,9 +376,9 @@ class StepFEA_UnspecifiedValue:
     __next__ = next
     }
 };
-%template(StepFEA_Array1OfCurveElementEndOffset) NCollection_Array1<opencascade::handle<StepFEA_CurveElementEndOffset>>;
+%template(StepFEA_Array1OfNodeRepresentation) NCollection_Array1<opencascade::handle<StepFEA_NodeRepresentation>>;
 
-%extend NCollection_Array1<opencascade::handle<StepFEA_CurveElementEndOffset>> {
+%extend NCollection_Array1<opencascade::handle<StepFEA_NodeRepresentation>> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -415,19 +411,23 @@ class StepFEA_UnspecifiedValue:
     __next__ = next
     }
 };
+%template(StepFEA_SequenceOfCurve3dElementProperty) NCollection_Sequence<opencascade::handle<StepFEA_Curve3dElementProperty>>;
+%template(StepFEA_SequenceOfElementGeometricRelationship) NCollection_Sequence<opencascade::handle<StepFEA_ElementGeometricRelationship>>;
+%template(StepFEA_SequenceOfElementRepresentation) NCollection_Sequence<opencascade::handle<StepFEA_ElementRepresentation>>;
+%template(StepFEA_SequenceOfNodeRepresentation) NCollection_Sequence<opencascade::handle<StepFEA_NodeRepresentation>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<opencascade::handle<StepFEA_ElementRepresentation>> StepFEA_SequenceOfElementRepresentation;
-typedef NCollection_Sequence<opencascade::handle<StepFEA_Curve3dElementProperty>> StepFEA_SequenceOfCurve3dElementProperty;
-typedef NCollection_Sequence<opencascade::handle<StepFEA_NodeRepresentation>> StepFEA_SequenceOfNodeRepresentation;
-typedef NCollection_Sequence<opencascade::handle<StepFEA_ElementGeometricRelationship>> StepFEA_SequenceOfElementGeometricRelationship;
-typedef NCollection_Array1<StepFEA_DegreeOfFreedom> StepFEA_Array1OfDegreeOfFreedom;
+typedef NCollection_Array1<opencascade::handle<StepFEA_CurveElementEndOffset>> StepFEA_Array1OfCurveElementEndOffset;
 typedef NCollection_Array1<opencascade::handle<StepFEA_CurveElementEndRelease>> StepFEA_Array1OfCurveElementEndRelease;
 typedef NCollection_Array1<opencascade::handle<StepFEA_CurveElementInterval>> StepFEA_Array1OfCurveElementInterval;
-typedef NCollection_Array1<opencascade::handle<StepFEA_NodeRepresentation>> StepFEA_Array1OfNodeRepresentation;
+typedef NCollection_Array1<StepFEA_DegreeOfFreedom> StepFEA_Array1OfDegreeOfFreedom;
 typedef NCollection_Array1<opencascade::handle<StepFEA_ElementRepresentation>> StepFEA_Array1OfElementRepresentation;
-typedef NCollection_Array1<opencascade::handle<StepFEA_CurveElementEndOffset>> StepFEA_Array1OfCurveElementEndOffset;
+typedef NCollection_Array1<opencascade::handle<StepFEA_NodeRepresentation>> StepFEA_Array1OfNodeRepresentation;
+typedef NCollection_Sequence<opencascade::handle<StepFEA_Curve3dElementProperty>> StepFEA_SequenceOfCurve3dElementProperty;
+typedef NCollection_Sequence<opencascade::handle<StepFEA_ElementGeometricRelationship>> StepFEA_SequenceOfElementGeometricRelationship;
+typedef NCollection_Sequence<opencascade::handle<StepFEA_ElementRepresentation>> StepFEA_SequenceOfElementRepresentation;
+typedef NCollection_Sequence<opencascade::handle<StepFEA_NodeRepresentation>> StepFEA_SequenceOfNodeRepresentation;
 /* end typedefs declaration */
 
 /***************************************
@@ -435,6 +435,16 @@ typedef NCollection_Array1<opencascade::handle<StepFEA_CurveElementEndOffset>> S
 ***************************************/
 class StepFEA_Curve3dElementProperty : public Standard_Transient {
 	public:
+		/****************** StepFEA_Curve3dElementProperty ******************/
+		%feature("compactdefaultargs") StepFEA_Curve3dElementProperty;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_Curve3dElementProperty;
+		 StepFEA_Curve3dElementProperty();
+
 		/****************** Description ******************/
 		%feature("compactdefaultargs") Description;
 		%feature("autodoc", "Returns field description.
@@ -573,16 +583,6 @@ None
 ") SetPropertyId;
 		void SetPropertyId(const opencascade::handle<TCollection_HAsciiString> & PropertyId);
 
-		/****************** StepFEA_Curve3dElementProperty ******************/
-		%feature("compactdefaultargs") StepFEA_Curve3dElementProperty;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_Curve3dElementProperty;
-		 StepFEA_Curve3dElementProperty();
-
 };
 
 
@@ -599,6 +599,16 @@ None
 ************************************************/
 class StepFEA_CurveElementEndCoordinateSystem : public StepData_SelectType {
 	public:
+		/****************** StepFEA_CurveElementEndCoordinateSystem ******************/
+		%feature("compactdefaultargs") StepFEA_CurveElementEndCoordinateSystem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_CurveElementEndCoordinateSystem;
+		 StepFEA_CurveElementEndCoordinateSystem();
+
 		/****************** AlignedCurve3dElementCoordinateSystem ******************/
 		%feature("compactdefaultargs") AlignedCurve3dElementCoordinateSystem;
 		%feature("autodoc", "Returns value as alignedcurve3delementcoordinatesystem (or null if another type).
@@ -643,16 +653,6 @@ opencascade::handle<StepFEA_ParametricCurve3dElementCoordinateSystem>
 ") ParametricCurve3dElementCoordinateSystem;
 		opencascade::handle<StepFEA_ParametricCurve3dElementCoordinateSystem> ParametricCurve3dElementCoordinateSystem();
 
-		/****************** StepFEA_CurveElementEndCoordinateSystem ******************/
-		%feature("compactdefaultargs") StepFEA_CurveElementEndCoordinateSystem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_CurveElementEndCoordinateSystem;
-		 StepFEA_CurveElementEndCoordinateSystem();
-
 };
 
 
@@ -667,6 +667,16 @@ None
 **************************************/
 class StepFEA_CurveElementEndOffset : public Standard_Transient {
 	public:
+		/****************** StepFEA_CurveElementEndOffset ******************/
+		%feature("compactdefaultargs") StepFEA_CurveElementEndOffset;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_CurveElementEndOffset;
+		 StepFEA_CurveElementEndOffset();
+
 		/****************** CoordinateSystem ******************/
 		%feature("compactdefaultargs") CoordinateSystem;
 		%feature("autodoc", "Returns field coordinatesystem.
@@ -730,16 +740,6 @@ None
 ") SetOffsetVector;
 		void SetOffsetVector(const opencascade::handle<TColStd_HArray1OfReal> & OffsetVector);
 
-		/****************** StepFEA_CurveElementEndOffset ******************/
-		%feature("compactdefaultargs") StepFEA_CurveElementEndOffset;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_CurveElementEndOffset;
-		 StepFEA_CurveElementEndOffset();
-
 };
 
 
@@ -756,6 +756,16 @@ None
 ***************************************/
 class StepFEA_CurveElementEndRelease : public Standard_Transient {
 	public:
+		/****************** StepFEA_CurveElementEndRelease ******************/
+		%feature("compactdefaultargs") StepFEA_CurveElementEndRelease;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_CurveElementEndRelease;
+		 StepFEA_CurveElementEndRelease();
+
 		/****************** CoordinateSystem ******************/
 		%feature("compactdefaultargs") CoordinateSystem;
 		%feature("autodoc", "Returns field coordinatesystem.
@@ -819,16 +829,6 @@ None
 ") SetReleases;
 		void SetReleases(const opencascade::handle<StepElement_HArray1OfCurveElementEndReleasePacket> & Releases);
 
-		/****************** StepFEA_CurveElementEndRelease ******************/
-		%feature("compactdefaultargs") StepFEA_CurveElementEndRelease;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_CurveElementEndRelease;
-		 StepFEA_CurveElementEndRelease();
-
 };
 
 
@@ -845,6 +845,16 @@ None
 *************************************/
 class StepFEA_CurveElementInterval : public Standard_Transient {
 	public:
+		/****************** StepFEA_CurveElementInterval ******************/
+		%feature("compactdefaultargs") StepFEA_CurveElementInterval;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_CurveElementInterval;
+		 StepFEA_CurveElementInterval();
+
 		/****************** EuAngles ******************/
 		%feature("compactdefaultargs") EuAngles;
 		%feature("autodoc", "Returns field euangles.
@@ -908,16 +918,6 @@ None
 ") SetFinishPosition;
 		void SetFinishPosition(const opencascade::handle<StepFEA_CurveElementLocation> & FinishPosition);
 
-		/****************** StepFEA_CurveElementInterval ******************/
-		%feature("compactdefaultargs") StepFEA_CurveElementInterval;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_CurveElementInterval;
-		 StepFEA_CurveElementInterval();
-
 };
 
 
@@ -934,6 +934,16 @@ None
 *************************************/
 class StepFEA_CurveElementLocation : public Standard_Transient {
 	public:
+		/****************** StepFEA_CurveElementLocation ******************/
+		%feature("compactdefaultargs") StepFEA_CurveElementLocation;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_CurveElementLocation;
+		 StepFEA_CurveElementLocation();
+
 		/****************** Coordinate ******************/
 		%feature("compactdefaultargs") Coordinate;
 		%feature("autodoc", "Returns field coordinate.
@@ -972,16 +982,6 @@ None
 ") SetCoordinate;
 		void SetCoordinate(const opencascade::handle<StepFEA_FeaParametricPoint> & Coordinate);
 
-		/****************** StepFEA_CurveElementLocation ******************/
-		%feature("compactdefaultargs") StepFEA_CurveElementLocation;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_CurveElementLocation;
-		 StepFEA_CurveElementLocation();
-
 };
 
 
@@ -998,6 +998,16 @@ None
 ********************************/
 class StepFEA_DegreeOfFreedom : public StepData_SelectType {
 	public:
+		/****************** StepFEA_DegreeOfFreedom ******************/
+		%feature("compactdefaultargs") StepFEA_DegreeOfFreedom;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_DegreeOfFreedom;
+		 StepFEA_DegreeOfFreedom();
+
 		/****************** ApplicationDefinedDegreeOfFreedom ******************/
 		%feature("compactdefaultargs") ApplicationDefinedDegreeOfFreedom;
 		%feature("autodoc", "Returns value as applicationdefineddegreeoffreedom (or null if another type).
@@ -1084,16 +1094,6 @@ None
 ") SetEnumeratedDegreeOfFreedom;
 		void SetEnumeratedDegreeOfFreedom(const StepFEA_EnumeratedDegreeOfFreedom aVal);
 
-		/****************** StepFEA_DegreeOfFreedom ******************/
-		%feature("compactdefaultargs") StepFEA_DegreeOfFreedom;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_DegreeOfFreedom;
-		 StepFEA_DegreeOfFreedom();
-
 };
 
 
@@ -1108,6 +1108,16 @@ None
 **************************************/
 class StepFEA_DegreeOfFreedomMember : public StepData_SelectNamed {
 	public:
+		/****************** StepFEA_DegreeOfFreedomMember ******************/
+		%feature("compactdefaultargs") StepFEA_DegreeOfFreedomMember;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_DegreeOfFreedomMember;
+		 StepFEA_DegreeOfFreedomMember();
+
 		/****************** HasName ******************/
 		%feature("compactdefaultargs") HasName;
 		%feature("autodoc", "Returns true if has name.
@@ -1156,16 +1166,6 @@ bool
 ") SetName;
 		virtual Standard_Boolean SetName(const char * name);
 
-		/****************** StepFEA_DegreeOfFreedomMember ******************/
-		%feature("compactdefaultargs") StepFEA_DegreeOfFreedomMember;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_DegreeOfFreedomMember;
-		 StepFEA_DegreeOfFreedomMember();
-
 };
 
 
@@ -1182,6 +1182,16 @@ None
 *********************************************/
 class StepFEA_ElementGeometricRelationship : public Standard_Transient {
 	public:
+		/****************** StepFEA_ElementGeometricRelationship ******************/
+		%feature("compactdefaultargs") StepFEA_ElementGeometricRelationship;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_ElementGeometricRelationship;
+		 StepFEA_ElementGeometricRelationship();
+
 		/****************** Aspect ******************/
 		%feature("compactdefaultargs") Aspect;
 		%feature("autodoc", "Returns field aspect.
@@ -1270,16 +1280,6 @@ None
 ") SetItem;
 		void SetItem(const opencascade::handle<StepElement_AnalysisItemWithinRepresentation> & Item);
 
-		/****************** StepFEA_ElementGeometricRelationship ******************/
-		%feature("compactdefaultargs") StepFEA_ElementGeometricRelationship;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_ElementGeometricRelationship;
-		 StepFEA_ElementGeometricRelationship();
-
 };
 
 
@@ -1296,6 +1296,16 @@ None
 **************************************/
 class StepFEA_ElementOrElementGroup : public StepData_SelectType {
 	public:
+		/****************** StepFEA_ElementOrElementGroup ******************/
+		%feature("compactdefaultargs") StepFEA_ElementOrElementGroup;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_ElementOrElementGroup;
+		 StepFEA_ElementOrElementGroup();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a kind of elementorelementgroup select type 1 -> elementrepresentation from stepfea 2 -> elementgroup from stepfea 0 else.
@@ -1330,16 +1340,6 @@ opencascade::handle<StepFEA_ElementRepresentation>
 ") ElementRepresentation;
 		opencascade::handle<StepFEA_ElementRepresentation> ElementRepresentation();
 
-		/****************** StepFEA_ElementOrElementGroup ******************/
-		%feature("compactdefaultargs") StepFEA_ElementOrElementGroup;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_ElementOrElementGroup;
-		 StepFEA_ElementOrElementGroup();
-
 };
 
 
@@ -1354,6 +1354,16 @@ None
 **************************************/
 class StepFEA_ElementRepresentation : public StepRepr_Representation {
 	public:
+		/****************** StepFEA_ElementRepresentation ******************/
+		%feature("compactdefaultargs") StepFEA_ElementRepresentation;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_ElementRepresentation;
+		 StepFEA_ElementRepresentation();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -1395,16 +1405,6 @@ None
 ") SetNodeList;
 		void SetNodeList(const opencascade::handle<StepFEA_HArray1OfNodeRepresentation> & NodeList);
 
-		/****************** StepFEA_ElementRepresentation ******************/
-		%feature("compactdefaultargs") StepFEA_ElementRepresentation;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_ElementRepresentation;
-		 StepFEA_ElementRepresentation();
-
 };
 
 
@@ -1421,6 +1421,16 @@ None
 ************************************/
 class StepFEA_FeaAxis2Placement3d : public StepGeom_Axis2Placement3d {
 	public:
+		/****************** StepFEA_FeaAxis2Placement3d ******************/
+		%feature("compactdefaultargs") StepFEA_FeaAxis2Placement3d;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaAxis2Placement3d;
+		 StepFEA_FeaAxis2Placement3d();
+
 		/****************** Description ******************/
 		%feature("compactdefaultargs") Description;
 		%feature("autodoc", "Returns field description.
@@ -1480,16 +1490,6 @@ None
 ") SetSystemType;
 		void SetSystemType(const StepFEA_CoordinateSystemType SystemType);
 
-		/****************** StepFEA_FeaAxis2Placement3d ******************/
-		%feature("compactdefaultargs") StepFEA_FeaAxis2Placement3d;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaAxis2Placement3d;
-		 StepFEA_FeaAxis2Placement3d();
-
 		/****************** SystemType ******************/
 		%feature("compactdefaultargs") SystemType;
 		%feature("autodoc", "Returns field systemtype.
@@ -1516,6 +1516,16 @@ StepFEA_CoordinateSystemType
 *****************************************************/
 class StepFEA_FeaCurveSectionGeometricRelationship : public Standard_Transient {
 	public:
+		/****************** StepFEA_FeaCurveSectionGeometricRelationship ******************/
+		%feature("compactdefaultargs") StepFEA_FeaCurveSectionGeometricRelationship;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaCurveSectionGeometricRelationship;
+		 StepFEA_FeaCurveSectionGeometricRelationship();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -1579,16 +1589,6 @@ None
 ") SetSectionRef;
 		void SetSectionRef(const opencascade::handle<StepElement_CurveElementSectionDefinition> & SectionRef);
 
-		/****************** StepFEA_FeaCurveSectionGeometricRelationship ******************/
-		%feature("compactdefaultargs") StepFEA_FeaCurveSectionGeometricRelationship;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaCurveSectionGeometricRelationship;
-		 StepFEA_FeaCurveSectionGeometricRelationship();
-
 };
 
 
@@ -1605,6 +1605,16 @@ None
 *************************/
 class StepFEA_FeaGroup : public StepBasic_Group {
 	public:
+		/****************** StepFEA_FeaGroup ******************/
+		%feature("compactdefaultargs") StepFEA_FeaGroup;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaGroup;
+		 StepFEA_FeaGroup();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -1644,16 +1654,6 @@ Returns
 None
 ") SetModelRef;
 		void SetModelRef(const opencascade::handle<StepFEA_FeaModel> & ModelRef);
-
-		/****************** StepFEA_FeaGroup ******************/
-		%feature("compactdefaultargs") StepFEA_FeaGroup;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaGroup;
-		 StepFEA_FeaGroup();
 
 };
 
@@ -1723,6 +1723,16 @@ None
 *************************/
 class StepFEA_FeaModel : public StepRepr_Representation {
 	public:
+		/****************** StepFEA_FeaModel ******************/
+		%feature("compactdefaultargs") StepFEA_FeaModel;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaModel;
+		 StepFEA_FeaModel();
+
 		/****************** AnalysisType ******************/
 		%feature("compactdefaultargs") AnalysisType;
 		%feature("autodoc", "Returns field analysistype.
@@ -1839,16 +1849,6 @@ None
 ") SetIntendedAnalysisCode;
 		void SetIntendedAnalysisCode(const opencascade::handle<TColStd_HArray1OfAsciiString> & IntendedAnalysisCode);
 
-		/****************** StepFEA_FeaModel ******************/
-		%feature("compactdefaultargs") StepFEA_FeaModel;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaModel;
-		 StepFEA_FeaModel();
-
 };
 
 
@@ -1891,6 +1891,16 @@ None
 ***********************************/
 class StepFEA_FeaParametricPoint : public StepGeom_Point {
 	public:
+		/****************** StepFEA_FeaParametricPoint ******************/
+		%feature("compactdefaultargs") StepFEA_FeaParametricPoint;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaParametricPoint;
+		 StepFEA_FeaParametricPoint();
+
 		/****************** Coordinates ******************/
 		%feature("compactdefaultargs") Coordinates;
 		%feature("autodoc", "Returns field coordinates.
@@ -1929,16 +1939,6 @@ Returns
 None
 ") SetCoordinates;
 		void SetCoordinates(const opencascade::handle<TColStd_HArray1OfReal> & Coordinates);
-
-		/****************** StepFEA_FeaParametricPoint ******************/
-		%feature("compactdefaultargs") StepFEA_FeaParametricPoint;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaParametricPoint;
-		 StepFEA_FeaParametricPoint();
 
 };
 
@@ -1982,6 +1982,16 @@ None
 *******************************************************/
 class StepFEA_FeaSurfaceSectionGeometricRelationship : public Standard_Transient {
 	public:
+		/****************** StepFEA_FeaSurfaceSectionGeometricRelationship ******************/
+		%feature("compactdefaultargs") StepFEA_FeaSurfaceSectionGeometricRelationship;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaSurfaceSectionGeometricRelationship;
+		 StepFEA_FeaSurfaceSectionGeometricRelationship();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -2045,16 +2055,6 @@ None
 ") SetSectionRef;
 		void SetSectionRef(const opencascade::handle<StepElement_SurfaceSection> & SectionRef);
 
-		/****************** StepFEA_FeaSurfaceSectionGeometricRelationship ******************/
-		%feature("compactdefaultargs") StepFEA_FeaSurfaceSectionGeometricRelationship;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaSurfaceSectionGeometricRelationship;
-		 StepFEA_FeaSurfaceSectionGeometricRelationship();
-
 };
 
 
@@ -2071,6 +2071,16 @@ None
 **************************************/
 class StepFEA_FreedomAndCoefficient : public Standard_Transient {
 	public:
+		/****************** StepFEA_FreedomAndCoefficient ******************/
+		%feature("compactdefaultargs") StepFEA_FreedomAndCoefficient;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FreedomAndCoefficient;
+		 StepFEA_FreedomAndCoefficient();
+
 		/****************** A ******************/
 		%feature("compactdefaultargs") A;
 		%feature("autodoc", "Returns field a.
@@ -2134,16 +2144,6 @@ None
 ") SetFreedom;
 		void SetFreedom(const StepFEA_DegreeOfFreedom & Freedom);
 
-		/****************** StepFEA_FreedomAndCoefficient ******************/
-		%feature("compactdefaultargs") StepFEA_FreedomAndCoefficient;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FreedomAndCoefficient;
-		 StepFEA_FreedomAndCoefficient();
-
 };
 
 
@@ -2160,6 +2160,16 @@ None
 *****************************/
 class StepFEA_FreedomsList : public Standard_Transient {
 	public:
+		/****************** StepFEA_FreedomsList ******************/
+		%feature("compactdefaultargs") StepFEA_FreedomsList;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FreedomsList;
+		 StepFEA_FreedomsList();
+
 		/****************** Freedoms ******************/
 		%feature("compactdefaultargs") Freedoms;
 		%feature("autodoc", "Returns field freedoms.
@@ -2197,16 +2207,6 @@ Returns
 None
 ") SetFreedoms;
 		void SetFreedoms(const opencascade::handle<StepFEA_HArray1OfDegreeOfFreedom> & Freedoms);
-
-		/****************** StepFEA_FreedomsList ******************/
-		%feature("compactdefaultargs") StepFEA_FreedomsList;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FreedomsList;
-		 StepFEA_FreedomsList();
 
 };
 
@@ -2250,6 +2250,16 @@ None
 ***********************************/
 class StepFEA_NodeRepresentation : public StepRepr_Representation {
 	public:
+		/****************** StepFEA_NodeRepresentation ******************/
+		%feature("compactdefaultargs") StepFEA_NodeRepresentation;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_NodeRepresentation;
+		 StepFEA_NodeRepresentation();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -2291,16 +2301,6 @@ None
 ") SetModelRef;
 		void SetModelRef(const opencascade::handle<StepFEA_FeaModel> & ModelRef);
 
-		/****************** StepFEA_NodeRepresentation ******************/
-		%feature("compactdefaultargs") StepFEA_NodeRepresentation;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_NodeRepresentation;
-		 StepFEA_NodeRepresentation();
-
 };
 
 
@@ -2317,6 +2317,16 @@ None
 ************************/
 class StepFEA_NodeSet : public StepGeom_GeometricRepresentationItem {
 	public:
+		/****************** StepFEA_NodeSet ******************/
+		%feature("compactdefaultargs") StepFEA_NodeSet;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_NodeSet;
+		 StepFEA_NodeSet();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -2356,16 +2366,6 @@ None
 ") SetNodes;
 		void SetNodes(const opencascade::handle<StepFEA_HArray1OfNodeRepresentation> & Nodes);
 
-		/****************** StepFEA_NodeSet ******************/
-		%feature("compactdefaultargs") StepFEA_NodeSet;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_NodeSet;
-		 StepFEA_NodeSet();
-
 };
 
 
@@ -2382,6 +2382,16 @@ None
 ***********************************/
 class StepFEA_SymmetricTensor22d : public StepData_SelectType {
 	public:
+		/****************** StepFEA_SymmetricTensor22d ******************/
+		%feature("compactdefaultargs") StepFEA_SymmetricTensor22d;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_SymmetricTensor22d;
+		 StepFEA_SymmetricTensor22d();
+
 		/****************** AnisotropicSymmetricTensor22d ******************/
 		%feature("compactdefaultargs") AnisotropicSymmetricTensor22d;
 		%feature("autodoc", "Returns value as anisotropicsymmetrictensor22d (or null if another type).
@@ -2406,16 +2416,6 @@ int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
-		/****************** StepFEA_SymmetricTensor22d ******************/
-		%feature("compactdefaultargs") StepFEA_SymmetricTensor22d;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_SymmetricTensor22d;
-		 StepFEA_SymmetricTensor22d();
-
 };
 
 
@@ -2430,6 +2430,16 @@ None
 ***********************************/
 class StepFEA_SymmetricTensor23d : public StepData_SelectType {
 	public:
+		/****************** StepFEA_SymmetricTensor23d ******************/
+		%feature("compactdefaultargs") StepFEA_SymmetricTensor23d;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_SymmetricTensor23d;
+		 StepFEA_SymmetricTensor23d();
+
 		/****************** AnisotropicSymmetricTensor23d ******************/
 		%feature("compactdefaultargs") AnisotropicSymmetricTensor23d;
 		%feature("autodoc", "Returns value as anisotropicsymmetrictensor23d (or null if another type).
@@ -2540,16 +2550,6 @@ None
 ") SetOrthotropicSymmetricTensor23d;
 		void SetOrthotropicSymmetricTensor23d(const opencascade::handle<TColStd_HArray1OfReal> & aVal);
 
-		/****************** StepFEA_SymmetricTensor23d ******************/
-		%feature("compactdefaultargs") StepFEA_SymmetricTensor23d;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_SymmetricTensor23d;
-		 StepFEA_SymmetricTensor23d();
-
 };
 
 
@@ -2564,6 +2564,16 @@ None
 *****************************************/
 class StepFEA_SymmetricTensor23dMember : public StepData_SelectArrReal {
 	public:
+		/****************** StepFEA_SymmetricTensor23dMember ******************/
+		%feature("compactdefaultargs") StepFEA_SymmetricTensor23dMember;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_SymmetricTensor23dMember;
+		 StepFEA_SymmetricTensor23dMember();
+
 		/****************** HasName ******************/
 		%feature("compactdefaultargs") HasName;
 		%feature("autodoc", "Returns true if has name.
@@ -2612,16 +2622,6 @@ bool
 ") SetName;
 		virtual Standard_Boolean SetName(const char * name);
 
-		/****************** StepFEA_SymmetricTensor23dMember ******************/
-		%feature("compactdefaultargs") StepFEA_SymmetricTensor23dMember;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_SymmetricTensor23dMember;
-		 StepFEA_SymmetricTensor23dMember();
-
 };
 
 
@@ -2638,6 +2638,16 @@ None
 ***********************************/
 class StepFEA_SymmetricTensor42d : public StepData_SelectType {
 	public:
+		/****************** StepFEA_SymmetricTensor42d ******************/
+		%feature("compactdefaultargs") StepFEA_SymmetricTensor42d;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_SymmetricTensor42d;
+		 StepFEA_SymmetricTensor42d();
+
 		/****************** AnisotropicSymmetricTensor42d ******************/
 		%feature("compactdefaultargs") AnisotropicSymmetricTensor42d;
 		%feature("autodoc", "Returns value as anisotropicsymmetrictensor42d (or null if another type).
@@ -2662,16 +2672,6 @@ int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
 
-		/****************** StepFEA_SymmetricTensor42d ******************/
-		%feature("compactdefaultargs") StepFEA_SymmetricTensor42d;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_SymmetricTensor42d;
-		 StepFEA_SymmetricTensor42d();
-
 };
 
 
@@ -2686,6 +2686,16 @@ None
 ***********************************/
 class StepFEA_SymmetricTensor43d : public StepData_SelectType {
 	public:
+		/****************** StepFEA_SymmetricTensor43d ******************/
+		%feature("compactdefaultargs") StepFEA_SymmetricTensor43d;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_SymmetricTensor43d;
+		 StepFEA_SymmetricTensor43d();
+
 		/****************** AnisotropicSymmetricTensor43d ******************/
 		%feature("compactdefaultargs") AnisotropicSymmetricTensor43d;
 		%feature("autodoc", "Returns value as anisotropicsymmetrictensor43d (or null if another type).
@@ -2784,16 +2794,6 @@ opencascade::handle<StepData_SelectMember>
 ") NewMember;
 		virtual opencascade::handle<StepData_SelectMember> NewMember();
 
-		/****************** StepFEA_SymmetricTensor43d ******************/
-		%feature("compactdefaultargs") StepFEA_SymmetricTensor43d;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_SymmetricTensor43d;
-		 StepFEA_SymmetricTensor43d();
-
 };
 
 
@@ -2812,6 +2812,16 @@ None
 *****************************************/
 class StepFEA_SymmetricTensor43dMember : public StepData_SelectArrReal {
 	public:
+		/****************** StepFEA_SymmetricTensor43dMember ******************/
+		%feature("compactdefaultargs") StepFEA_SymmetricTensor43dMember;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_SymmetricTensor43dMember;
+		 StepFEA_SymmetricTensor43dMember();
+
 		/****************** HasName ******************/
 		%feature("compactdefaultargs") HasName;
 		%feature("autodoc", "Returns true if has name.
@@ -2860,16 +2870,6 @@ bool
 ") SetName;
 		virtual Standard_Boolean SetName(const char * name);
 
-		/****************** StepFEA_SymmetricTensor43dMember ******************/
-		%feature("compactdefaultargs") StepFEA_SymmetricTensor43dMember;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_SymmetricTensor43dMember;
-		 StepFEA_SymmetricTensor43dMember();
-
 };
 
 
@@ -2886,6 +2886,16 @@ None
 ******************************************************/
 class StepFEA_AlignedCurve3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
 	public:
+		/****************** StepFEA_AlignedCurve3dElementCoordinateSystem ******************/
+		%feature("compactdefaultargs") StepFEA_AlignedCurve3dElementCoordinateSystem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_AlignedCurve3dElementCoordinateSystem;
+		 StepFEA_AlignedCurve3dElementCoordinateSystem();
+
 		/****************** CoordinateSystem ******************/
 		%feature("compactdefaultargs") CoordinateSystem;
 		%feature("autodoc", "Returns field coordinatesystem.
@@ -2924,16 +2934,6 @@ Returns
 None
 ") SetCoordinateSystem;
 		void SetCoordinateSystem(const opencascade::handle<StepFEA_FeaAxis2Placement3d> & CoordinateSystem);
-
-		/****************** StepFEA_AlignedCurve3dElementCoordinateSystem ******************/
-		%feature("compactdefaultargs") StepFEA_AlignedCurve3dElementCoordinateSystem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_AlignedCurve3dElementCoordinateSystem;
-		 StepFEA_AlignedCurve3dElementCoordinateSystem();
 
 };
 
@@ -2951,6 +2951,16 @@ None
 ********************************************************/
 class StepFEA_AlignedSurface3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
 	public:
+		/****************** StepFEA_AlignedSurface3dElementCoordinateSystem ******************/
+		%feature("compactdefaultargs") StepFEA_AlignedSurface3dElementCoordinateSystem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_AlignedSurface3dElementCoordinateSystem;
+		 StepFEA_AlignedSurface3dElementCoordinateSystem();
+
 		/****************** CoordinateSystem ******************/
 		%feature("compactdefaultargs") CoordinateSystem;
 		%feature("autodoc", "Returns field coordinatesystem.
@@ -2989,16 +2999,6 @@ Returns
 None
 ") SetCoordinateSystem;
 		void SetCoordinateSystem(const opencascade::handle<StepFEA_FeaAxis2Placement3d> & CoordinateSystem);
-
-		/****************** StepFEA_AlignedSurface3dElementCoordinateSystem ******************/
-		%feature("compactdefaultargs") StepFEA_AlignedSurface3dElementCoordinateSystem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_AlignedSurface3dElementCoordinateSystem;
-		 StepFEA_AlignedSurface3dElementCoordinateSystem();
 
 };
 
@@ -3016,6 +3016,16 @@ None
 *********************************************************/
 class StepFEA_ArbitraryVolume3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
 	public:
+		/****************** StepFEA_ArbitraryVolume3dElementCoordinateSystem ******************/
+		%feature("compactdefaultargs") StepFEA_ArbitraryVolume3dElementCoordinateSystem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_ArbitraryVolume3dElementCoordinateSystem;
+		 StepFEA_ArbitraryVolume3dElementCoordinateSystem();
+
 		/****************** CoordinateSystem ******************/
 		%feature("compactdefaultargs") CoordinateSystem;
 		%feature("autodoc", "Returns field coordinatesystem.
@@ -3055,16 +3065,6 @@ None
 ") SetCoordinateSystem;
 		void SetCoordinateSystem(const opencascade::handle<StepFEA_FeaAxis2Placement3d> & CoordinateSystem);
 
-		/****************** StepFEA_ArbitraryVolume3dElementCoordinateSystem ******************/
-		%feature("compactdefaultargs") StepFEA_ArbitraryVolume3dElementCoordinateSystem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_ArbitraryVolume3dElementCoordinateSystem;
-		 StepFEA_ArbitraryVolume3dElementCoordinateSystem();
-
 };
 
 
@@ -3081,6 +3081,16 @@ None
 *********************************************************/
 class StepFEA_ConstantSurface3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
 	public:
+		/****************** StepFEA_ConstantSurface3dElementCoordinateSystem ******************/
+		%feature("compactdefaultargs") StepFEA_ConstantSurface3dElementCoordinateSystem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_ConstantSurface3dElementCoordinateSystem;
+		 StepFEA_ConstantSurface3dElementCoordinateSystem();
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Returns field angle.
@@ -3145,16 +3155,6 @@ None
 ") SetAxis;
 		void SetAxis(const Standard_Integer Axis);
 
-		/****************** StepFEA_ConstantSurface3dElementCoordinateSystem ******************/
-		%feature("compactdefaultargs") StepFEA_ConstantSurface3dElementCoordinateSystem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_ConstantSurface3dElementCoordinateSystem;
-		 StepFEA_ConstantSurface3dElementCoordinateSystem();
-
 };
 
 
@@ -3171,6 +3171,16 @@ None
 *********************************************/
 class StepFEA_Curve3dElementRepresentation : public StepFEA_ElementRepresentation {
 	public:
+		/****************** StepFEA_Curve3dElementRepresentation ******************/
+		%feature("compactdefaultargs") StepFEA_Curve3dElementRepresentation;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_Curve3dElementRepresentation;
+		 StepFEA_Curve3dElementRepresentation();
+
 		/****************** ElementDescriptor ******************/
 		%feature("compactdefaultargs") ElementDescriptor;
 		%feature("autodoc", "Returns field elementdescriptor.
@@ -3288,16 +3298,6 @@ None
 ") SetProperty;
 		void SetProperty(const opencascade::handle<StepFEA_Curve3dElementProperty> & Property);
 
-		/****************** StepFEA_Curve3dElementRepresentation ******************/
-		%feature("compactdefaultargs") StepFEA_Curve3dElementRepresentation;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_Curve3dElementRepresentation;
-		 StepFEA_Curve3dElementRepresentation();
-
 };
 
 
@@ -3314,6 +3314,16 @@ None
 *********************************************/
 class StepFEA_CurveElementIntervalConstant : public StepFEA_CurveElementInterval {
 	public:
+		/****************** StepFEA_CurveElementIntervalConstant ******************/
+		%feature("compactdefaultargs") StepFEA_CurveElementIntervalConstant;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_CurveElementIntervalConstant;
+		 StepFEA_CurveElementIntervalConstant();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -3354,16 +3364,6 @@ None
 ") SetSection;
 		void SetSection(const opencascade::handle<StepElement_CurveElementSectionDefinition> & Section);
 
-		/****************** StepFEA_CurveElementIntervalConstant ******************/
-		%feature("compactdefaultargs") StepFEA_CurveElementIntervalConstant;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_CurveElementIntervalConstant;
-		 StepFEA_CurveElementIntervalConstant();
-
 };
 
 
@@ -3380,6 +3380,16 @@ None
 ****************************************************/
 class StepFEA_CurveElementIntervalLinearlyVarying : public StepFEA_CurveElementInterval {
 	public:
+		/****************** StepFEA_CurveElementIntervalLinearlyVarying ******************/
+		%feature("compactdefaultargs") StepFEA_CurveElementIntervalLinearlyVarying;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_CurveElementIntervalLinearlyVarying;
+		 StepFEA_CurveElementIntervalLinearlyVarying();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -3419,16 +3429,6 @@ Returns
 None
 ") SetSections;
 		void SetSections(const opencascade::handle<StepElement_HArray1OfCurveElementSectionDefinition> & Sections);
-
-		/****************** StepFEA_CurveElementIntervalLinearlyVarying ******************/
-		%feature("compactdefaultargs") StepFEA_CurveElementIntervalLinearlyVarying;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_CurveElementIntervalLinearlyVarying;
-		 StepFEA_CurveElementIntervalLinearlyVarying();
 
 };
 
@@ -3472,6 +3472,16 @@ None
 *****************************/
 class StepFEA_ElementGroup : public StepFEA_FeaGroup {
 	public:
+		/****************** StepFEA_ElementGroup ******************/
+		%feature("compactdefaultargs") StepFEA_ElementGroup;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_ElementGroup;
+		 StepFEA_ElementGroup();
+
 		/****************** Elements ******************/
 		%feature("compactdefaultargs") Elements;
 		%feature("autodoc", "Returns field elements.
@@ -3513,16 +3523,6 @@ None
 ") SetElements;
 		void SetElements(const opencascade::handle<StepFEA_HArray1OfElementRepresentation> & Elements);
 
-		/****************** StepFEA_ElementGroup ******************/
-		%feature("compactdefaultargs") StepFEA_ElementGroup;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_ElementGroup;
-		 StepFEA_ElementGroup();
-
 };
 
 
@@ -3539,6 +3539,16 @@ None
 *******************************/
 class StepFEA_FeaAreaDensity : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
+		/****************** StepFEA_FeaAreaDensity ******************/
+		%feature("compactdefaultargs") StepFEA_FeaAreaDensity;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaAreaDensity;
+		 StepFEA_FeaAreaDensity();
+
 		/****************** FeaConstant ******************/
 		%feature("compactdefaultargs") FeaConstant;
 		%feature("autodoc", "Returns field feaconstant.
@@ -3578,16 +3588,6 @@ None
 ") SetFeaConstant;
 		void SetFeaConstant(const Standard_Real FeaConstant);
 
-		/****************** StepFEA_FeaAreaDensity ******************/
-		%feature("compactdefaultargs") StepFEA_FeaAreaDensity;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaAreaDensity;
-		 StepFEA_FeaAreaDensity();
-
 };
 
 
@@ -3604,6 +3604,16 @@ None
 ************************************/
 class StepFEA_FeaLinearElasticity : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
+		/****************** StepFEA_FeaLinearElasticity ******************/
+		%feature("compactdefaultargs") StepFEA_FeaLinearElasticity;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaLinearElasticity;
+		 StepFEA_FeaLinearElasticity();
+
 		/****************** FeaConstants ******************/
 		%feature("compactdefaultargs") FeaConstants;
 		%feature("autodoc", "Returns field feaconstants.
@@ -3643,16 +3653,6 @@ None
 ") SetFeaConstants;
 		void SetFeaConstants(const StepFEA_SymmetricTensor43d & FeaConstants);
 
-		/****************** StepFEA_FeaLinearElasticity ******************/
-		%feature("compactdefaultargs") StepFEA_FeaLinearElasticity;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaLinearElasticity;
-		 StepFEA_FeaLinearElasticity();
-
 };
 
 
@@ -3669,6 +3669,16 @@ None
 *******************************/
 class StepFEA_FeaMassDensity : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
+		/****************** StepFEA_FeaMassDensity ******************/
+		%feature("compactdefaultargs") StepFEA_FeaMassDensity;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaMassDensity;
+		 StepFEA_FeaMassDensity();
+
 		/****************** FeaConstant ******************/
 		%feature("compactdefaultargs") FeaConstant;
 		%feature("autodoc", "Returns field feaconstant.
@@ -3707,16 +3717,6 @@ Returns
 None
 ") SetFeaConstant;
 		void SetFeaConstant(const Standard_Real FeaConstant);
-
-		/****************** StepFEA_FeaMassDensity ******************/
-		%feature("compactdefaultargs") StepFEA_FeaMassDensity;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaMassDensity;
-		 StepFEA_FeaMassDensity();
 
 };
 
@@ -3760,6 +3760,16 @@ None
 **************************************/
 class StepFEA_FeaMoistureAbsorption : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
+		/****************** StepFEA_FeaMoistureAbsorption ******************/
+		%feature("compactdefaultargs") StepFEA_FeaMoistureAbsorption;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaMoistureAbsorption;
+		 StepFEA_FeaMoistureAbsorption();
+
 		/****************** FeaConstants ******************/
 		%feature("compactdefaultargs") FeaConstants;
 		%feature("autodoc", "Returns field feaconstants.
@@ -3799,16 +3809,6 @@ None
 ") SetFeaConstants;
 		void SetFeaConstants(const StepFEA_SymmetricTensor23d & FeaConstants);
 
-		/****************** StepFEA_FeaMoistureAbsorption ******************/
-		%feature("compactdefaultargs") StepFEA_FeaMoistureAbsorption;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaMoistureAbsorption;
-		 StepFEA_FeaMoistureAbsorption();
-
 };
 
 
@@ -3825,6 +3825,16 @@ None
 *************************************************************/
 class StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
+		/****************** StepFEA_FeaSecantCoefficientOfLinearThermalExpansion ******************/
+		%feature("compactdefaultargs") StepFEA_FeaSecantCoefficientOfLinearThermalExpansion;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaSecantCoefficientOfLinearThermalExpansion;
+		 StepFEA_FeaSecantCoefficientOfLinearThermalExpansion();
+
 		/****************** FeaConstants ******************/
 		%feature("compactdefaultargs") FeaConstants;
 		%feature("autodoc", "Returns field feaconstants.
@@ -3889,16 +3899,6 @@ None
 ") SetReferenceTemperature;
 		void SetReferenceTemperature(const Standard_Real ReferenceTemperature);
 
-		/****************** StepFEA_FeaSecantCoefficientOfLinearThermalExpansion ******************/
-		%feature("compactdefaultargs") StepFEA_FeaSecantCoefficientOfLinearThermalExpansion;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaSecantCoefficientOfLinearThermalExpansion;
-		 StepFEA_FeaSecantCoefficientOfLinearThermalExpansion();
-
 };
 
 
@@ -3915,6 +3915,16 @@ None
 *****************************************/
 class StepFEA_FeaShellBendingStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
+		/****************** StepFEA_FeaShellBendingStiffness ******************/
+		%feature("compactdefaultargs") StepFEA_FeaShellBendingStiffness;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaShellBendingStiffness;
+		 StepFEA_FeaShellBendingStiffness();
+
 		/****************** FeaConstants ******************/
 		%feature("compactdefaultargs") FeaConstants;
 		%feature("autodoc", "Returns field feaconstants.
@@ -3953,16 +3963,6 @@ Returns
 None
 ") SetFeaConstants;
 		void SetFeaConstants(const StepFEA_SymmetricTensor42d & FeaConstants);
-
-		/****************** StepFEA_FeaShellBendingStiffness ******************/
-		%feature("compactdefaultargs") StepFEA_FeaShellBendingStiffness;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaShellBendingStiffness;
-		 StepFEA_FeaShellBendingStiffness();
 
 };
 
@@ -3980,6 +3980,16 @@ None
 *********************************************************/
 class StepFEA_FeaShellMembraneBendingCouplingStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
+		/****************** StepFEA_FeaShellMembraneBendingCouplingStiffness ******************/
+		%feature("compactdefaultargs") StepFEA_FeaShellMembraneBendingCouplingStiffness;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaShellMembraneBendingCouplingStiffness;
+		 StepFEA_FeaShellMembraneBendingCouplingStiffness();
+
 		/****************** FeaConstants ******************/
 		%feature("compactdefaultargs") FeaConstants;
 		%feature("autodoc", "Returns field feaconstants.
@@ -4018,16 +4028,6 @@ Returns
 None
 ") SetFeaConstants;
 		void SetFeaConstants(const StepFEA_SymmetricTensor42d & FeaConstants);
-
-		/****************** StepFEA_FeaShellMembraneBendingCouplingStiffness ******************/
-		%feature("compactdefaultargs") StepFEA_FeaShellMembraneBendingCouplingStiffness;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaShellMembraneBendingCouplingStiffness;
-		 StepFEA_FeaShellMembraneBendingCouplingStiffness();
 
 };
 
@@ -4045,6 +4045,16 @@ None
 ******************************************/
 class StepFEA_FeaShellMembraneStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
+		/****************** StepFEA_FeaShellMembraneStiffness ******************/
+		%feature("compactdefaultargs") StepFEA_FeaShellMembraneStiffness;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaShellMembraneStiffness;
+		 StepFEA_FeaShellMembraneStiffness();
+
 		/****************** FeaConstants ******************/
 		%feature("compactdefaultargs") FeaConstants;
 		%feature("autodoc", "Returns field feaconstants.
@@ -4084,16 +4094,6 @@ None
 ") SetFeaConstants;
 		void SetFeaConstants(const StepFEA_SymmetricTensor42d & FeaConstants);
 
-		/****************** StepFEA_FeaShellMembraneStiffness ******************/
-		%feature("compactdefaultargs") StepFEA_FeaShellMembraneStiffness;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaShellMembraneStiffness;
-		 StepFEA_FeaShellMembraneStiffness();
-
 };
 
 
@@ -4110,6 +4110,16 @@ None
 ***************************************/
 class StepFEA_FeaShellShearStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
+		/****************** StepFEA_FeaShellShearStiffness ******************/
+		%feature("compactdefaultargs") StepFEA_FeaShellShearStiffness;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaShellShearStiffness;
+		 StepFEA_FeaShellShearStiffness();
+
 		/****************** FeaConstants ******************/
 		%feature("compactdefaultargs") FeaConstants;
 		%feature("autodoc", "Returns field feaconstants.
@@ -4149,16 +4159,6 @@ None
 ") SetFeaConstants;
 		void SetFeaConstants(const StepFEA_SymmetricTensor22d & FeaConstants);
 
-		/****************** StepFEA_FeaShellShearStiffness ******************/
-		%feature("compactdefaultargs") StepFEA_FeaShellShearStiffness;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaShellShearStiffness;
-		 StepFEA_FeaShellShearStiffness();
-
 };
 
 
@@ -4175,6 +4175,16 @@ None
 *****************************************************************/
 class StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
+		/****************** StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion ******************/
+		%feature("compactdefaultargs") StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion;
+		 StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion();
+
 		/****************** FeaConstants ******************/
 		%feature("compactdefaultargs") FeaConstants;
 		%feature("autodoc", "Returns field feaconstants.
@@ -4213,16 +4223,6 @@ Returns
 None
 ") SetFeaConstants;
 		void SetFeaConstants(const StepFEA_SymmetricTensor23d & FeaConstants);
-
-		/****************** StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion ******************/
-		%feature("compactdefaultargs") StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion;
-		 StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion();
 
 };
 
@@ -4292,6 +4292,16 @@ None
 **************************/
 class StepFEA_NodeGroup : public StepFEA_FeaGroup {
 	public:
+		/****************** StepFEA_NodeGroup ******************/
+		%feature("compactdefaultargs") StepFEA_NodeGroup;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_NodeGroup;
+		 StepFEA_NodeGroup();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -4333,16 +4343,6 @@ None
 ") SetNodes;
 		void SetNodes(const opencascade::handle<StepFEA_HArray1OfNodeRepresentation> & Nodes);
 
-		/****************** StepFEA_NodeGroup ******************/
-		%feature("compactdefaultargs") StepFEA_NodeGroup;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_NodeGroup;
-		 StepFEA_NodeGroup();
-
 };
 
 
@@ -4359,6 +4359,16 @@ None
 ************************************************************/
 class StepFEA_ParametricCurve3dElementCoordinateDirection : public StepFEA_FeaRepresentationItem {
 	public:
+		/****************** StepFEA_ParametricCurve3dElementCoordinateDirection ******************/
+		%feature("compactdefaultargs") StepFEA_ParametricCurve3dElementCoordinateDirection;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_ParametricCurve3dElementCoordinateDirection;
+		 StepFEA_ParametricCurve3dElementCoordinateDirection();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all fields (own and inherited).
@@ -4398,16 +4408,6 @@ None
 ") SetOrientation;
 		void SetOrientation(const opencascade::handle<StepGeom_Direction> & Orientation);
 
-		/****************** StepFEA_ParametricCurve3dElementCoordinateDirection ******************/
-		%feature("compactdefaultargs") StepFEA_ParametricCurve3dElementCoordinateDirection;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_ParametricCurve3dElementCoordinateDirection;
-		 StepFEA_ParametricCurve3dElementCoordinateDirection();
-
 };
 
 
@@ -4424,6 +4424,16 @@ None
 *********************************************************/
 class StepFEA_ParametricCurve3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
 	public:
+		/****************** StepFEA_ParametricCurve3dElementCoordinateSystem ******************/
+		%feature("compactdefaultargs") StepFEA_ParametricCurve3dElementCoordinateSystem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_ParametricCurve3dElementCoordinateSystem;
+		 StepFEA_ParametricCurve3dElementCoordinateSystem();
+
 		/****************** Direction ******************/
 		%feature("compactdefaultargs") Direction;
 		%feature("autodoc", "Returns field direction.
@@ -4463,16 +4473,6 @@ None
 ") SetDirection;
 		void SetDirection(const opencascade::handle<StepFEA_ParametricCurve3dElementCoordinateDirection> & Direction);
 
-		/****************** StepFEA_ParametricCurve3dElementCoordinateSystem ******************/
-		%feature("compactdefaultargs") StepFEA_ParametricCurve3dElementCoordinateSystem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_ParametricCurve3dElementCoordinateSystem;
-		 StepFEA_ParametricCurve3dElementCoordinateSystem();
-
 };
 
 
@@ -4489,6 +4489,16 @@ None
 ***********************************************************/
 class StepFEA_ParametricSurface3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
 	public:
+		/****************** StepFEA_ParametricSurface3dElementCoordinateSystem ******************/
+		%feature("compactdefaultargs") StepFEA_ParametricSurface3dElementCoordinateSystem;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_ParametricSurface3dElementCoordinateSystem;
+		 StepFEA_ParametricSurface3dElementCoordinateSystem();
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Returns field angle.
@@ -4553,16 +4563,6 @@ None
 ") SetAxis;
 		void SetAxis(const Standard_Integer Axis);
 
-		/****************** StepFEA_ParametricSurface3dElementCoordinateSystem ******************/
-		%feature("compactdefaultargs") StepFEA_ParametricSurface3dElementCoordinateSystem;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_ParametricSurface3dElementCoordinateSystem;
-		 StepFEA_ParametricSurface3dElementCoordinateSystem();
-
 };
 
 
@@ -4579,6 +4579,16 @@ None
 ***********************************************/
 class StepFEA_Surface3dElementRepresentation : public StepFEA_ElementRepresentation {
 	public:
+		/****************** StepFEA_Surface3dElementRepresentation ******************/
+		%feature("compactdefaultargs") StepFEA_Surface3dElementRepresentation;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_Surface3dElementRepresentation;
+		 StepFEA_Surface3dElementRepresentation();
+
 		/****************** ElementDescriptor ******************/
 		%feature("compactdefaultargs") ElementDescriptor;
 		%feature("autodoc", "Returns field elementdescriptor.
@@ -4696,16 +4706,6 @@ None
 ") SetProperty;
 		void SetProperty(const opencascade::handle<StepElement_SurfaceElementProperty> & Property);
 
-		/****************** StepFEA_Surface3dElementRepresentation ******************/
-		%feature("compactdefaultargs") StepFEA_Surface3dElementRepresentation;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_Surface3dElementRepresentation;
-		 StepFEA_Surface3dElementRepresentation();
-
 };
 
 
@@ -4722,6 +4722,16 @@ None
 **********************************************/
 class StepFEA_Volume3dElementRepresentation : public StepFEA_ElementRepresentation {
 	public:
+		/****************** StepFEA_Volume3dElementRepresentation ******************/
+		%feature("compactdefaultargs") StepFEA_Volume3dElementRepresentation;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") StepFEA_Volume3dElementRepresentation;
+		 StepFEA_Volume3dElementRepresentation();
+
 		/****************** ElementDescriptor ******************/
 		%feature("compactdefaultargs") ElementDescriptor;
 		%feature("autodoc", "Returns field elementdescriptor.
@@ -4813,16 +4823,6 @@ Returns
 None
 ") SetModelRef;
 		void SetModelRef(const opencascade::handle<StepFEA_FeaModel3d> & ModelRef);
-
-		/****************** StepFEA_Volume3dElementRepresentation ******************/
-		%feature("compactdefaultargs") StepFEA_Volume3dElementRepresentation;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") StepFEA_Volume3dElementRepresentation;
-		 StepFEA_Volume3dElementRepresentation();
 
 };
 

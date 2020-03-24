@@ -81,6 +81,30 @@ from OCC.Core.Exception import *
 ***********************************/
 class XCAFNoteObjects_NoteObject : public Standard_Transient {
 	public:
+		/****************** XCAFNoteObjects_NoteObject ******************/
+		%feature("compactdefaultargs") XCAFNoteObjects_NoteObject;
+		%feature("autodoc", "Empty object.
+
+Returns
+-------
+None
+") XCAFNoteObjects_NoteObject;
+		 XCAFNoteObjects_NoteObject();
+
+		/****************** XCAFNoteObjects_NoteObject ******************/
+		%feature("compactdefaultargs") XCAFNoteObjects_NoteObject;
+		%feature("autodoc", "Copy constructor.
+
+Parameters
+----------
+theObj: XCAFNoteObjects_NoteObject
+
+Returns
+-------
+None
+") XCAFNoteObjects_NoteObject;
+		 XCAFNoteObjects_NoteObject(const opencascade::handle<XCAFNoteObjects_NoteObject> & theObj);
+
 		/****************** GetPlane ******************/
 		%feature("compactdefaultargs") GetPlane;
 		%feature("autodoc", "Returns a right-handed coordinate system of the plane.
@@ -216,30 +240,6 @@ Returns
 None
 ") SetPresentation;
 		void SetPresentation(const TopoDS_Shape & thePresentation);
-
-		/****************** XCAFNoteObjects_NoteObject ******************/
-		%feature("compactdefaultargs") XCAFNoteObjects_NoteObject;
-		%feature("autodoc", "Empty object.
-
-Returns
--------
-None
-") XCAFNoteObjects_NoteObject;
-		 XCAFNoteObjects_NoteObject();
-
-		/****************** XCAFNoteObjects_NoteObject ******************/
-		%feature("compactdefaultargs") XCAFNoteObjects_NoteObject;
-		%feature("autodoc", "Copy constructor.
-
-Parameters
-----------
-theObj: XCAFNoteObjects_NoteObject
-
-Returns
--------
-None
-") XCAFNoteObjects_NoteObject;
-		 XCAFNoteObjects_NoteObject(const opencascade::handle<XCAFNoteObjects_NoteObject> & theObj);
 
 };
 

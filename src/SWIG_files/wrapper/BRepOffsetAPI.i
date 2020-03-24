@@ -137,8 +137,8 @@ from OCC.Core.Exception import *
 
 /* typedefs */
 typedef NCollection_Sequence<TColStd_SequenceOfReal> BRepOffsetAPI_SequenceOfSequenceOfReal;
-typedef BRepBuilderAPI_Sewing BRepOffsetAPI_Sewing;
 typedef NCollection_Sequence<TopTools_SequenceOfShape> BRepOffsetAPI_SequenceOfSequenceOfShape;
+typedef BRepBuilderAPI_Sewing BRepOffsetAPI_Sewing;
 /* end typedefs declaration */
 
 /*********************************
@@ -146,6 +146,30 @@ typedef NCollection_Sequence<TopTools_SequenceOfShape> BRepOffsetAPI_SequenceOfS
 *********************************/
 class BRepOffsetAPI_DraftAngle : public BRepBuilderAPI_ModifyShape {
 	public:
+		/****************** BRepOffsetAPI_DraftAngle ******************/
+		%feature("compactdefaultargs") BRepOffsetAPI_DraftAngle;
+		%feature("autodoc", "Constructs an empty algorithm to perform taper-adding transformations on faces of a shape. use the init function to define the shape to be tapered.
+
+Returns
+-------
+None
+") BRepOffsetAPI_DraftAngle;
+		 BRepOffsetAPI_DraftAngle();
+
+		/****************** BRepOffsetAPI_DraftAngle ******************/
+		%feature("compactdefaultargs") BRepOffsetAPI_DraftAngle;
+		%feature("autodoc", "Initializes an algorithm to perform taper-adding transformations on faces of the shape s. s will be referred to as the initial shape of the algorithm.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") BRepOffsetAPI_DraftAngle;
+		 BRepOffsetAPI_DraftAngle(const TopoDS_Shape & S);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the face f, the direction direction, the angle angle, the plane neutralplane, and the flag flag to the framework created at construction time, and with this data, defines the taper-adding transformation. f is a face, which belongs to the initial shape of this algorithm or to the shape loaded by the function init. only planar, cylindrical or conical faces can be tapered: - if the face f is planar, it is tapered by inclining it through the angle angle about the line of intersection between the plane neutralplane and f. direction indicates the side of neutralplane from which matter is removed if angle is positive or added if angle is negative. - if f is cylindrical or conical, it is transformed in the same way on a single face, resulting in a conical face if f is cylindrical, and a conical or cylindrical face if it is already conical. the taper-adding transformation is propagated from the face f along the series of planar, cylindrical or conical faces containing f, which are tangential to one another. use the function adddone to check if this taper-adding transformation is successful. warning nothing is done if: - the face f does not belong to the initial shape of this algorithm, or - the face f is not planar, cylindrical or conical. exceptions - standard_nullobject if the initial shape is not defined, i.e. if this algorithm has not been initialized with the non-empty constructor or the init function. - standard_constructionerror if the previous call to add has failed. the function adddone ought to have been used to check for this, and the function remove to cancel the results of the unsuccessful taper-adding transformation and to retrieve the previous shape.
@@ -174,30 +198,6 @@ Returns
 bool
 ") AddDone;
 		Standard_Boolean AddDone();
-
-		/****************** BRepOffsetAPI_DraftAngle ******************/
-		%feature("compactdefaultargs") BRepOffsetAPI_DraftAngle;
-		%feature("autodoc", "Constructs an empty algorithm to perform taper-adding transformations on faces of a shape. use the init function to define the shape to be tapered.
-
-Returns
--------
-None
-") BRepOffsetAPI_DraftAngle;
-		 BRepOffsetAPI_DraftAngle();
-
-		/****************** BRepOffsetAPI_DraftAngle ******************/
-		%feature("compactdefaultargs") BRepOffsetAPI_DraftAngle;
-		%feature("autodoc", "Initializes an algorithm to perform taper-adding transformations on faces of the shape s. s will be referred to as the initial shape of the algorithm.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") BRepOffsetAPI_DraftAngle;
-		 BRepOffsetAPI_DraftAngle(const TopoDS_Shape & S);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
@@ -357,20 +357,6 @@ Draft_ErrorStatus
 *****************************************/
 class BRepOffsetAPI_FindContigousEdges {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Adds the shape shape to the list of shapes to be checked by this algorithm. once all the shapes to be checked have been added, use the function perform to find the contiguous edges and the function contigousedge to return these edges.
-
-Parameters
-----------
-shape: TopoDS_Shape
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Shape & shape);
-
 		/****************** BRepOffsetAPI_FindContigousEdges ******************/
 		%feature("compactdefaultargs") BRepOffsetAPI_FindContigousEdges;
 		%feature("autodoc", "Initializes an algorithm for identifying contiguous edges on shapes with tolerance as the tolerance of contiguity (defaulted to 1.0e-6). this tolerance value is used to determine whether two edges or sections of edges are coincident. use the function add to define the shapes to be checked. set option to false. this argument (defaulted to true) will serve in subsequent software releases for performing an analysis of degenerated shapes.
@@ -387,6 +373,20 @@ Returns
 None
 ") BRepOffsetAPI_FindContigousEdges;
 		 BRepOffsetAPI_FindContigousEdges(const Standard_Real tolerance = 1.0e-06, const Standard_Boolean option = Standard_True);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Adds the shape shape to the list of shapes to be checked by this algorithm. once all the shapes to be checked have been added, use the function perform to find the contiguous edges and the function contigousedge to return these edges.
+
+Parameters
+----------
+shape: TopoDS_Shape
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Shape & shape);
 
 		/****************** ContigousEdge ******************/
 		%feature("compactdefaultargs") ContigousEdge;
@@ -801,6 +801,39 @@ TopoDS_Shape
 **********************************/
 class BRepOffsetAPI_MakeFilling : public BRepBuilderAPI_MakeShape {
 	public:
+		/****************** BRepOffsetAPI_MakeFilling ******************/
+		%feature("compactdefaultargs") BRepOffsetAPI_MakeFilling;
+		%feature("autodoc", "Constructs a wire filling object defined by - the energy minimizing criterion degree - the number of points on the curve nbpntsoncur - the number of iterations nbiter - the boolean anisotropie - the 2d tolerance tol2d - the 3d tolerance tol3d - the angular tolerance tolang - the tolerance for curvature tolcur - the highest polynomial degree maxdeg - the greatest number of segments maxseg. if the boolean anistropie is true, the algorithm's performance is better in cases where the ratio of the length u and the length v indicate a great difference between the two. in other words, when the surface is, for example, extremely long.
+
+Parameters
+----------
+Degree: int,optional
+	default value is 3
+NbPtsOnCur: int,optional
+	default value is 15
+NbIter: int,optional
+	default value is 2
+Anisotropie: bool,optional
+	default value is Standard_False
+Tol2d: float,optional
+	default value is 0.00001
+Tol3d: float,optional
+	default value is 0.0001
+TolAng: float,optional
+	default value is 0.01
+TolCurv: float,optional
+	default value is 0.1
+MaxDeg: int,optional
+	default value is 8
+MaxSegments: int,optional
+	default value is 9
+
+Returns
+-------
+None
+") BRepOffsetAPI_MakeFilling;
+		 BRepOffsetAPI_MakeFilling(const Standard_Integer Degree = 3, const Standard_Integer NbPtsOnCur = 15, const Standard_Integer NbIter = 2, const Standard_Boolean Anisotropie = Standard_False, const Standard_Real Tol2d = 0.00001, const Standard_Real Tol3d = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1, const Standard_Integer MaxDeg = 8, const Standard_Integer MaxSegments = 9);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a new constraint which also defines an edge of the wire of the face order: order of the constraint: geomabs_c0 : the surface has to pass by 3d representation of the edge geomabs_g1 : the surface has to pass by 3d representation of the edge and to respect tangency with the first face of the edge geomabs_g2 : the surface has to pass by 3d representation of the edge and to respect tangency and curvature with the first face of the edge. raises constructionerror if the edge has no representation on a face and order is geomabs_g1 or geomabs_g2.
@@ -881,39 +914,6 @@ Returns
 int
 ") Add;
 		Standard_Integer Add(const Standard_Real U, const Standard_Real V, const TopoDS_Face & Support, const GeomAbs_Shape Order);
-
-		/****************** BRepOffsetAPI_MakeFilling ******************/
-		%feature("compactdefaultargs") BRepOffsetAPI_MakeFilling;
-		%feature("autodoc", "Constructs a wire filling object defined by - the energy minimizing criterion degree - the number of points on the curve nbpntsoncur - the number of iterations nbiter - the boolean anisotropie - the 2d tolerance tol2d - the 3d tolerance tol3d - the angular tolerance tolang - the tolerance for curvature tolcur - the highest polynomial degree maxdeg - the greatest number of segments maxseg. if the boolean anistropie is true, the algorithm's performance is better in cases where the ratio of the length u and the length v indicate a great difference between the two. in other words, when the surface is, for example, extremely long.
-
-Parameters
-----------
-Degree: int,optional
-	default value is 3
-NbPtsOnCur: int,optional
-	default value is 15
-NbIter: int,optional
-	default value is 2
-Anisotropie: bool,optional
-	default value is Standard_False
-Tol2d: float,optional
-	default value is 0.00001
-Tol3d: float,optional
-	default value is 0.0001
-TolAng: float,optional
-	default value is 0.01
-TolCurv: float,optional
-	default value is 0.1
-MaxDeg: int,optional
-	default value is 8
-MaxSegments: int,optional
-	default value is 9
-
-Returns
--------
-None
-") BRepOffsetAPI_MakeFilling;
-		 BRepOffsetAPI_MakeFilling(const Standard_Integer Degree = 3, const Standard_Integer NbPtsOnCur = 15, const Standard_Integer NbIter = 2, const Standard_Boolean Anisotropie = Standard_False, const Standard_Real Tol2d = 0.00001, const Standard_Real Tol3d = 0.0001, const Standard_Real TolAng = 0.01, const Standard_Real TolCurv = 0.1, const Standard_Integer MaxDeg = 8, const Standard_Integer MaxSegments = 9);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
@@ -1108,20 +1108,6 @@ None
 *********************************/
 class BRepOffsetAPI_MakeOffset : public BRepBuilderAPI_MakeShape {
 	public:
-		/****************** AddWire ******************/
-		%feature("compactdefaultargs") AddWire;
-		%feature("autodoc", "Initializes the algorithm to construct parallels to the wire spine.
-
-Parameters
-----------
-Spine: TopoDS_Wire
-
-Returns
--------
-None
-") AddWire;
-		void AddWire(const TopoDS_Wire & Spine);
-
 		/****************** BRepOffsetAPI_MakeOffset ******************/
 		%feature("compactdefaultargs") BRepOffsetAPI_MakeOffset;
 		%feature("autodoc", "Constructs an algorithm for creating an empty offset.
@@ -1167,6 +1153,20 @@ Returns
 None
 ") BRepOffsetAPI_MakeOffset;
 		 BRepOffsetAPI_MakeOffset(const TopoDS_Wire & Spine, const GeomAbs_JoinType Join = GeomAbs_Arc, const Standard_Boolean IsOpenResult = Standard_False);
+
+		/****************** AddWire ******************/
+		%feature("compactdefaultargs") AddWire;
+		%feature("autodoc", "Initializes the algorithm to construct parallels to the wire spine.
+
+Parameters
+----------
+Spine: TopoDS_Wire
+
+Returns
+-------
+None
+") AddWire;
+		void AddWire(const TopoDS_Wire & Spine);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
@@ -1532,6 +1532,20 @@ BRepFill_Pipe
 ************************************/
 class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 	public:
+		/****************** BRepOffsetAPI_MakePipeShell ******************/
+		%feature("compactdefaultargs") BRepOffsetAPI_MakePipeShell;
+		%feature("autodoc", "Constructs the shell-generating framework defined by the wire spine. sets an sweep's mode if no mode are setted, the mode use in makepipe is used.
+
+Parameters
+----------
+Spine: TopoDS_Wire
+
+Returns
+-------
+None
+") BRepOffsetAPI_MakePipeShell;
+		 BRepOffsetAPI_MakePipeShell(const TopoDS_Wire & Spine);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the section profile to this framework. first and last sections may be punctual, so the shape profile may be both wire and vertex. correspondent point on spine is computed automatically. if withcontact is true, the section is translated to be in contact with the spine. if withcorrection is true, the section is rotated to be orthogonal to the spine?s tangent in the correspondent point. this option has no sense if the section is punctual (profile is of type topods_vertex).
@@ -1568,20 +1582,6 @@ Returns
 None
 ") Add;
 		void Add(const TopoDS_Shape & Profile, const TopoDS_Vertex & Location, const Standard_Boolean WithContact = Standard_False, const Standard_Boolean WithCorrection = Standard_False);
-
-		/****************** BRepOffsetAPI_MakePipeShell ******************/
-		%feature("compactdefaultargs") BRepOffsetAPI_MakePipeShell;
-		%feature("autodoc", "Constructs the shell-generating framework defined by the wire spine. sets an sweep's mode if no mode are setted, the mode use in makepipe is used.
-
-Parameters
-----------
-Spine: TopoDS_Wire
-
-Returns
--------
-None
-") BRepOffsetAPI_MakePipeShell;
-		 BRepOffsetAPI_MakePipeShell(const TopoDS_Wire & Spine);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
@@ -1973,6 +1973,30 @@ None
 ***************************************/
 class BRepOffsetAPI_NormalProjection : public BRepBuilderAPI_MakeShape {
 	public:
+		/****************** BRepOffsetAPI_NormalProjection ******************/
+		%feature("compactdefaultargs") BRepOffsetAPI_NormalProjection;
+		%feature("autodoc", "Constructs an empty framework to define projection on a shape according to the normal from each point to be projected to the shape.
+
+Returns
+-------
+None
+") BRepOffsetAPI_NormalProjection;
+		 BRepOffsetAPI_NormalProjection();
+
+		/****************** BRepOffsetAPI_NormalProjection ******************/
+		%feature("compactdefaultargs") BRepOffsetAPI_NormalProjection;
+		%feature("autodoc", "Constructs a framework to define projection onto the basis shape s according to the normal from each point to be projected from the shape added to this framework by add. default parameters of the algorithm: tol3d = 1.e-04, tol2d =sqr(tol3d) , internalcontinuity = geomabs_c2, maxdegree = 14, maxseg = 16.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") BRepOffsetAPI_NormalProjection;
+		 BRepOffsetAPI_NormalProjection(const TopoDS_Shape & S);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the shape toproj to the framework for calculation of the projection by compute3d. toproj is an edge or a wire and will be projected onto the basis shape. exceptions standard_constructionerror if toproj is not added.
@@ -2000,30 +2024,6 @@ Returns
 TopoDS_Shape
 ") Ancestor;
 		const TopoDS_Shape Ancestor(const TopoDS_Edge & E);
-
-		/****************** BRepOffsetAPI_NormalProjection ******************/
-		%feature("compactdefaultargs") BRepOffsetAPI_NormalProjection;
-		%feature("autodoc", "Constructs an empty framework to define projection on a shape according to the normal from each point to be projected to the shape.
-
-Returns
--------
-None
-") BRepOffsetAPI_NormalProjection;
-		 BRepOffsetAPI_NormalProjection();
-
-		/****************** BRepOffsetAPI_NormalProjection ******************/
-		%feature("compactdefaultargs") BRepOffsetAPI_NormalProjection;
-		%feature("autodoc", "Constructs a framework to define projection onto the basis shape s according to the normal from each point to be projected from the shape added to this framework by add. default parameters of the algorithm: tol3d = 1.e-04, tol2d =sqr(tol3d) , internalcontinuity = geomabs_c2, maxdegree = 14, maxseg = 16.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") BRepOffsetAPI_NormalProjection;
-		 BRepOffsetAPI_NormalProjection(const TopoDS_Shape & S);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
@@ -2187,6 +2187,25 @@ None
 ***********************************/
 class BRepOffsetAPI_ThruSections : public BRepBuilderAPI_MakeShape {
 	public:
+		/****************** BRepOffsetAPI_ThruSections ******************/
+		%feature("compactdefaultargs") BRepOffsetAPI_ThruSections;
+		%feature("autodoc", "Initializes an algorithm for building a shell or a solid passing through a set of sections, where: - issolid is set to true if the construction algorithm is required to build a solid or to false if it is required to build a shell (the default value), - ruled is set to true if the faces generated between the edges of two consecutive wires are ruled surfaces or to false (the default value) if they are smoothed out by approximation, - pres3d defines the precision criterion used by the approximation algorithm; the default value is 1.0e-6. use addwire and addvertex to define the successive sections of the shell or solid to be built.
+
+Parameters
+----------
+isSolid: bool,optional
+	default value is Standard_False
+ruled: bool,optional
+	default value is Standard_False
+pres3d: float,optional
+	default value is 1.0e-06
+
+Returns
+-------
+None
+") BRepOffsetAPI_ThruSections;
+		 BRepOffsetAPI_ThruSections(const Standard_Boolean isSolid = Standard_False, const Standard_Boolean ruled = Standard_False, const Standard_Real pres3d = 1.0e-06);
+
 		/****************** AddVertex ******************/
 		%feature("compactdefaultargs") AddVertex;
 		%feature("autodoc", "Adds the vertex vertex (punctual section) to the set of sections through which the shell or solid is built. a vertex may be added to the set of sections only as first or last section. at least one wire must be added to the set of sections by the method addwire. use the build function to construct the shape.
@@ -2214,25 +2233,6 @@ Returns
 None
 ") AddWire;
 		void AddWire(const TopoDS_Wire & wire);
-
-		/****************** BRepOffsetAPI_ThruSections ******************/
-		%feature("compactdefaultargs") BRepOffsetAPI_ThruSections;
-		%feature("autodoc", "Initializes an algorithm for building a shell or a solid passing through a set of sections, where: - issolid is set to true if the construction algorithm is required to build a solid or to false if it is required to build a shell (the default value), - ruled is set to true if the faces generated between the edges of two consecutive wires are ruled surfaces or to false (the default value) if they are smoothed out by approximation, - pres3d defines the precision criterion used by the approximation algorithm; the default value is 1.0e-6. use addwire and addvertex to define the successive sections of the shell or solid to be built.
-
-Parameters
-----------
-isSolid: bool,optional
-	default value is Standard_False
-ruled: bool,optional
-	default value is Standard_False
-pres3d: float,optional
-	default value is 1.0e-06
-
-Returns
--------
-None
-") BRepOffsetAPI_ThruSections;
-		 BRepOffsetAPI_ThruSections(const Standard_Boolean isSolid = Standard_False, const Standard_Boolean ruled = Standard_False, const Standard_Real pres3d = 1.0e-06);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;

@@ -192,9 +192,9 @@ class BRepBuilderAPI_ShellError:
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Vector<gp_XYZ> VectorOfPoint;
-typedef NCollection_CellFilter<BRepBuilderAPI_VertexInspector> BRepBuilderAPI_CellFilter;
 typedef NCollection_UBTree<Standard_Integer, Bnd_Box> BRepBuilderAPI_BndBoxTree;
+typedef NCollection_CellFilter<BRepBuilderAPI_VertexInspector> BRepBuilderAPI_CellFilter;
+typedef NCollection_Vector<gp_XYZ> VectorOfPoint;
 /* end typedefs declaration */
 
 /***********************
@@ -265,6 +265,16 @@ float
 *******************************/
 class BRepBuilderAPI_Collect {
 	public:
+		/****************** BRepBuilderAPI_Collect ******************/
+		%feature("compactdefaultargs") BRepBuilderAPI_Collect;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BRepBuilderAPI_Collect;
+		 BRepBuilderAPI_Collect();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -309,16 +319,6 @@ Returns
 None
 ") AddModif;
 		void AddModif(const TopoDS_Shape & S, const TopoDS_Shape & Mod);
-
-		/****************** BRepBuilderAPI_Collect ******************/
-		%feature("compactdefaultargs") BRepBuilderAPI_Collect;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BRepBuilderAPI_Collect;
-		 BRepBuilderAPI_Collect();
 
 		/****************** Filter ******************/
 		%feature("compactdefaultargs") Filter;
@@ -439,6 +439,21 @@ class FS_Statuses:
 };
 /* end python proxy for enums */
 
+		/****************** BRepBuilderAPI_FastSewing ******************/
+		%feature("compactdefaultargs") BRepBuilderAPI_FastSewing;
+		%feature("autodoc", "Creates an object with tolerance of connexity.
+
+Parameters
+----------
+theTolerance: float,optional
+	default value is 1.0e-06
+
+Returns
+-------
+None
+") BRepBuilderAPI_FastSewing;
+		 BRepBuilderAPI_FastSewing(const Standard_Real theTolerance = 1.0e-06);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds faces of a shape.
@@ -466,21 +481,6 @@ Returns
 bool
 ") Add;
 		Standard_Boolean Add(const opencascade::handle<Geom_Surface> & theSurface);
-
-		/****************** BRepBuilderAPI_FastSewing ******************/
-		%feature("compactdefaultargs") BRepBuilderAPI_FastSewing;
-		%feature("autodoc", "Creates an object with tolerance of connexity.
-
-Parameters
-----------
-theTolerance: float,optional
-	default value is 1.0e-06
-
-Returns
--------
-None
-") BRepBuilderAPI_FastSewing;
-		 BRepBuilderAPI_FastSewing(const Standard_Real theTolerance = 1.0e-06);
 
 		/****************** GetResult ******************/
 		%feature("compactdefaultargs") GetResult;
@@ -622,20 +622,6 @@ opencascade::handle<Geom_Plane>
 ******************************/
 class BRepBuilderAPI_Sewing : public Standard_Transient {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Defines the shapes to be sewed or controlled.
-
-Parameters
-----------
-shape: TopoDS_Shape
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Shape & shape);
-
 		/****************** BRepBuilderAPI_Sewing ******************/
 		%feature("compactdefaultargs") BRepBuilderAPI_Sewing;
 		%feature("autodoc", "Creates an object with tolerance of connexity option for sewing (if false only control) option for analysis of degenerated shapes option for cutting of free edges. option for non manifold processing.
@@ -658,6 +644,20 @@ Returns
 None
 ") BRepBuilderAPI_Sewing;
 		 BRepBuilderAPI_Sewing(const Standard_Real tolerance = 1.0e-06, const Standard_Boolean option1 = Standard_True, const Standard_Boolean option2 = Standard_True, const Standard_Boolean option3 = Standard_True, const Standard_Boolean option4 = Standard_False);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Defines the shapes to be sewed or controlled.
+
+Parameters
+----------
+shape: TopoDS_Shape
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Shape & shape);
 
 		/****************** ContigousEdge ******************/
 		%feature("compactdefaultargs") ContigousEdge;
@@ -1212,20 +1212,6 @@ TopoDS_Face
 class BRepBuilderAPI_VertexInspector : public NCollection_CellFilter_InspectorXYZ {
 	public:
 typedef Standard_Integer Target;
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Keep the points used for comparison.
-
-Parameters
-----------
-thePnt: gp_XYZ
-
-Returns
--------
-None
-") Add;
-		void Add(const gp_XYZ & thePnt);
-
 		/****************** BRepBuilderAPI_VertexInspector ******************/
 		%feature("compactdefaultargs") BRepBuilderAPI_VertexInspector;
 		%feature("autodoc", "Constructor; remembers the tolerance.
@@ -1239,6 +1225,20 @@ Returns
 None
 ") BRepBuilderAPI_VertexInspector;
 		 BRepBuilderAPI_VertexInspector(const Standard_Real theTol);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Keep the points used for comparison.
+
+Parameters
+----------
+thePnt: gp_XYZ
+
+Returns
+-------
+None
+") Add;
+		void Add(const gp_XYZ & thePnt);
 
 		/****************** ClearResList ******************/
 		%feature("compactdefaultargs") ClearResList;
@@ -1302,6 +1302,16 @@ None
 ******************************************/
 class BRepBuilderAPI_BndBoxTreeSelector : public BRepBuilderAPI_BndBoxTree::Selector {
 	public:
+		/****************** BRepBuilderAPI_BndBoxTreeSelector ******************/
+		%feature("compactdefaultargs") BRepBuilderAPI_BndBoxTreeSelector;
+		%feature("autodoc", "Constructor; calls the base class constructor.
+
+Returns
+-------
+None
+") BRepBuilderAPI_BndBoxTreeSelector;
+		 BRepBuilderAPI_BndBoxTreeSelector();
+
 		/****************** Accept ******************/
 		%feature("compactdefaultargs") Accept;
 		%feature("autodoc", "Implementation of acceptance method this method is called when the bounding box intersect with the current. it stores the object - the index of box in the list of accepted objects. returns true, because the object is accepted.
@@ -1315,16 +1325,6 @@ Returns
 bool
 ") Accept;
 		Standard_Boolean Accept(const Standard_Integer & theObj);
-
-		/****************** BRepBuilderAPI_BndBoxTreeSelector ******************/
-		%feature("compactdefaultargs") BRepBuilderAPI_BndBoxTreeSelector;
-		%feature("autodoc", "Constructor; calls the base class constructor.
-
-Returns
--------
-None
-") BRepBuilderAPI_BndBoxTreeSelector;
-		 BRepBuilderAPI_BndBoxTreeSelector();
 
 		/****************** ClearResList ******************/
 		%feature("compactdefaultargs") ClearResList;
@@ -2883,20 +2883,6 @@ TopoDS_Vertex
 ********************************/
 class BRepBuilderAPI_MakeFace : public BRepBuilderAPI_MakeShape {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Adds the wire w to the constructed face as a hole. warning w must not cross the other bounds of the face, and all the bounds must define only one area on the surface. (be careful, however, as this is not checked.) example // a cylinder gp_cylinder c = ..; // a wire topods_wire w = ...; brepbuilderapi_makeface mf(c); mf.add(w); topods_face f = mf;.
-
-Parameters
-----------
-W: TopoDS_Wire
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Wire & W);
-
 		/****************** BRepBuilderAPI_MakeFace ******************/
 		%feature("compactdefaultargs") BRepBuilderAPI_MakeFace;
 		%feature("autodoc", "Not done.
@@ -3248,6 +3234,20 @@ None
 ") BRepBuilderAPI_MakeFace;
 		 BRepBuilderAPI_MakeFace(const TopoDS_Face & F, const TopoDS_Wire & W);
 
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Adds the wire w to the constructed face as a hole. warning w must not cross the other bounds of the face, and all the bounds must define only one area on the surface. (be careful, however, as this is not checked.) example // a cylinder gp_cylinder c = ..; // a wire topods_wire w = ...; brepbuilderapi_makeface mf(c); mf.add(w); topods_face f = mf;.
+
+Parameters
+----------
+W: TopoDS_Wire
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Wire & W);
+
 		/****************** Error ******************/
 		%feature("compactdefaultargs") Error;
 		%feature("autodoc", "Returns the construction status brepbuilderapi_facedone if the face is built, or - another value of the brepbuilderapi_faceerror enumeration indicating why the construction failed, in particular when the given parameters are outside the bounds of the surface.
@@ -3341,44 +3341,6 @@ bool
 ***********************************/
 class BRepBuilderAPI_MakePolygon : public BRepBuilderAPI_MakeShape {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-P: gp_Pnt
-
-Returns
--------
-None
-") Add;
-		void Add(const gp_Pnt & P);
-
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Adds the point p or the vertex v at the end of the polygonal wire under construction. a vertex is automatically created on the point p. warning - when p or v is coincident to the previous vertex, no edge is built. the method added can be used to test for this. neither p nor v is checked to verify that it is coincident with another vertex than the last one, of the polygonal wire under construction. it is also possible to add vertices on a closed polygon (built for example by using a constructor which declares the polygon closed, or after the use of the close function). consequently, be careful using this function: you might create: - a polygonal wire with two consecutive coincident edges, or - a non manifold polygonal wire. - p or v is not checked to verify if it is coincident with another vertex but the last one, of the polygonal wire under construction. it is also possible to add vertices on a closed polygon (built for example by using a constructor which declares the polygon closed, or after the use of the close function). consequently, be careful when using this function: you might create: - a polygonal wire with two consecutive coincident edges, or - a non-manifold polygonal wire.
-
-Parameters
-----------
-V: TopoDS_Vertex
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Vertex & V);
-
-		/****************** Added ******************/
-		%feature("compactdefaultargs") Added;
-		%feature("autodoc", "Returns true if the last vertex added to the constructed polygonal wire is not coincident with the previous one.
-
-Returns
--------
-bool
-") Added;
-		Standard_Boolean Added();
-
 		/****************** BRepBuilderAPI_MakePolygon ******************/
 		%feature("compactdefaultargs") BRepBuilderAPI_MakePolygon;
 		%feature("autodoc", "Initializes an empty polygonal wire, to which points or vertices are added using the add function. as soon as the polygonal wire under construction contains vertices, it can be consulted using the wire function.
@@ -3492,6 +3454,44 @@ Returns
 None
 ") BRepBuilderAPI_MakePolygon;
 		 BRepBuilderAPI_MakePolygon(const TopoDS_Vertex & V1, const TopoDS_Vertex & V2, const TopoDS_Vertex & V3, const TopoDS_Vertex & V4, const Standard_Boolean Close = Standard_False);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Pnt
+
+Returns
+-------
+None
+") Add;
+		void Add(const gp_Pnt & P);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Adds the point p or the vertex v at the end of the polygonal wire under construction. a vertex is automatically created on the point p. warning - when p or v is coincident to the previous vertex, no edge is built. the method added can be used to test for this. neither p nor v is checked to verify that it is coincident with another vertex than the last one, of the polygonal wire under construction. it is also possible to add vertices on a closed polygon (built for example by using a constructor which declares the polygon closed, or after the use of the close function). consequently, be careful using this function: you might create: - a polygonal wire with two consecutive coincident edges, or - a non manifold polygonal wire. - p or v is not checked to verify if it is coincident with another vertex but the last one, of the polygonal wire under construction. it is also possible to add vertices on a closed polygon (built for example by using a constructor which declares the polygon closed, or after the use of the close function). consequently, be careful when using this function: you might create: - a polygonal wire with two consecutive coincident edges, or - a non-manifold polygonal wire.
+
+Parameters
+----------
+V: TopoDS_Vertex
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Vertex & V);
+
+		/****************** Added ******************/
+		%feature("compactdefaultargs") Added;
+		%feature("autodoc", "Returns true if the last vertex added to the constructed polygonal wire is not coincident with the previous one.
+
+Returns
+-------
+bool
+") Added;
+		Standard_Boolean Added();
 
 		/****************** Close ******************/
 		%feature("compactdefaultargs") Close;
@@ -3677,20 +3677,6 @@ TopoDS_Shell
 *********************************/
 class BRepBuilderAPI_MakeSolid : public BRepBuilderAPI_MakeShape {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Adds the shell to the current solid. warning no check is done to verify the conditions of coherence of the resulting solid. in particular, s must not intersect other shells of the solid under construction. besides, after all shells have been added, one of these shells should constitute the outside skin of the solid. it may be closed (a finite solid) or open (an infinite solid). other shells form hollows (cavities) in these previous ones. each must bound a closed volume.
-
-Parameters
-----------
-S: TopoDS_Shell
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Shell & S);
-
 		/****************** BRepBuilderAPI_MakeSolid ******************/
 		%feature("compactdefaultargs") BRepBuilderAPI_MakeSolid;
 		%feature("autodoc", "Initializes the construction of a solid. an empty solid is considered to cover the whole space. the add function is used to define shells to bound it.
@@ -3789,6 +3775,20 @@ None
 ") BRepBuilderAPI_MakeSolid;
 		 BRepBuilderAPI_MakeSolid(const TopoDS_Solid & So, const TopoDS_Shell & S);
 
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Adds the shell to the current solid. warning no check is done to verify the conditions of coherence of the resulting solid. in particular, s must not intersect other shells of the solid under construction. besides, after all shells have been added, one of these shells should constitute the outside skin of the solid. it may be closed (a finite solid) or open (an infinite solid). other shells form hollows (cavities) in these previous ones. each must bound a closed volume.
+
+Parameters
+----------
+S: TopoDS_Shell
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Shell & S);
+
 		/****************** IsDeleted ******************/
 		%feature("compactdefaultargs") IsDeleted;
 		%feature("autodoc", "No available documentation.
@@ -3875,48 +3875,6 @@ TopoDS_Vertex
 ********************************/
 class BRepBuilderAPI_MakeWire : public BRepBuilderAPI_MakeShape {
 	public:
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Adds the edge e to the wire under construction. e must be connectable to the wire under construction, and, unless it is the first edge of the wire, must satisfy the following condition: one of its vertices must be geometrically coincident with one of the vertices of the wire (provided that the highest tolerance factor is assigned to the two vertices). it could also be the same vertex. warning if e is not connectable to the wire under construction it is not added. the function error will return brepbuilderapi_disconnectedwire, the function isdone will return false and the function wire will raise an error, until a new connectable edge is added.
-
-Parameters
-----------
-E: TopoDS_Edge
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Edge & E);
-
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Add the edges of <w> to the current wire.
-
-Parameters
-----------
-W: TopoDS_Wire
-
-Returns
--------
-None
-") Add;
-		void Add(const TopoDS_Wire & W);
-
-		/****************** Add ******************/
-		%feature("compactdefaultargs") Add;
-		%feature("autodoc", "Adds the edges of <l> to the current wire. the edges are not to be consecutive. but they are to be all connected geometrically or topologically. if some of them are not connected the status give disconnectedwire but the 'maker' is done() and you can get the partial result. (ie connected to the first edgeof the list <l>).
-
-Parameters
-----------
-L: TopTools_ListOfShape
-
-Returns
--------
-None
-") Add;
-		void Add(const TopTools_ListOfShape & L);
-
 		/****************** BRepBuilderAPI_MakeWire ******************/
 		%feature("compactdefaultargs") BRepBuilderAPI_MakeWire;
 		%feature("autodoc", "Constructs an empty wire framework, to which edges are added using the add function. as soon as the wire contains one edge, it can return with the use of the function wire. warning the function error will return brepbuilderapi_emptywire if it is called before at least one edge is added to the wire under construction.
@@ -4017,6 +3975,48 @@ Returns
 None
 ") BRepBuilderAPI_MakeWire;
 		 BRepBuilderAPI_MakeWire(const TopoDS_Wire & W, const TopoDS_Edge & E);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Adds the edge e to the wire under construction. e must be connectable to the wire under construction, and, unless it is the first edge of the wire, must satisfy the following condition: one of its vertices must be geometrically coincident with one of the vertices of the wire (provided that the highest tolerance factor is assigned to the two vertices). it could also be the same vertex. warning if e is not connectable to the wire under construction it is not added. the function error will return brepbuilderapi_disconnectedwire, the function isdone will return false and the function wire will raise an error, until a new connectable edge is added.
+
+Parameters
+----------
+E: TopoDS_Edge
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Edge & E);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Add the edges of <w> to the current wire.
+
+Parameters
+----------
+W: TopoDS_Wire
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopoDS_Wire & W);
+
+		/****************** Add ******************/
+		%feature("compactdefaultargs") Add;
+		%feature("autodoc", "Adds the edges of <l> to the current wire. the edges are not to be consecutive. but they are to be all connected geometrically or topologically. if some of them are not connected the status give disconnectedwire but the 'maker' is done() and you can get the partial result. (ie connected to the first edgeof the list <l>).
+
+Parameters
+----------
+L: TopTools_ListOfShape
+
+Returns
+-------
+None
+") Add;
+		void Add(const TopTools_ListOfShape & L);
 
 		/****************** Edge ******************/
 		%feature("compactdefaultargs") Edge;

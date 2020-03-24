@@ -93,6 +93,16 @@ from OCC.Core.Exception import *
 *************************/
 class Media_BufferPool : public Standard_Transient {
 	public:
+		/****************** Media_BufferPool ******************/
+		%feature("compactdefaultargs") Media_BufferPool;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Media_BufferPool;
+		 Media_BufferPool();
+
 		/****************** BufferSize ******************/
 		%feature("compactdefaultargs") BufferSize;
 		%feature("autodoc", "Return buffer size within the pool.
@@ -127,16 +137,6 @@ bool
 ") Init;
 		bool Init(int theBufferSize);
 
-		/****************** Media_BufferPool ******************/
-		%feature("compactdefaultargs") Media_BufferPool;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Media_BufferPool;
-		 Media_BufferPool();
-
 		/****************** Release ******************/
 		%feature("compactdefaultargs") Release;
 		%feature("autodoc", "Release the pool (reference-counted buffer will be released when needed).
@@ -163,6 +163,16 @@ None
 ***************************/
 class Media_CodecContext : public Standard_Transient {
 	public:
+		/****************** Media_CodecContext ******************/
+		%feature("compactdefaultargs") Media_CodecContext;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") Media_CodecContext;
+		 Media_CodecContext();
+
 		/****************** CanProcessPacket ******************/
 		%feature("compactdefaultargs") CanProcessPacket;
 		%feature("autodoc", "Return true if packet belongs to this stream.
@@ -241,16 +251,6 @@ bool
 ") Init;
 		bool Init(const AVStream & theStream, double thePtsStartBase, int theNbThreads, int theCodecId);
 
-		/****************** Media_CodecContext ******************/
-		%feature("compactdefaultargs") Media_CodecContext;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") Media_CodecContext;
-		 Media_CodecContext();
-
 		/****************** ReceiveFrame ******************/
 		%feature("compactdefaultargs") ReceiveFrame;
 		%feature("autodoc", "Avcodec_receive_frame() wrapper.
@@ -325,6 +325,16 @@ int
 ****************************/
 class Media_FormatContext : public Standard_Transient {
 	public:
+		/****************** Media_FormatContext ******************/
+		%feature("compactdefaultargs") Media_FormatContext;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") Media_FormatContext;
+		 Media_FormatContext();
+
 		/****************** Close ******************/
 		%feature("compactdefaultargs") Close;
 		%feature("autodoc", "Close input.
@@ -411,16 +421,6 @@ Returns
 double
 ") FormatUnitsToSeconds;
 		static double FormatUnitsToSeconds(int64_t theTimeUnits);
-
-		/****************** Media_FormatContext ******************/
-		%feature("compactdefaultargs") Media_FormatContext;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") Media_FormatContext;
-		 Media_FormatContext();
 
 		/****************** NbSteams ******************/
 		%feature("compactdefaultargs") NbSteams;
@@ -621,6 +621,16 @@ double
 ********************/
 class Media_Frame : public Standard_Transient {
 	public:
+		/****************** Media_Frame ******************/
+		%feature("compactdefaultargs") Media_Frame;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Media_Frame;
+		 Media_Frame();
+
 		/****************** BestEffortTimestamp ******************/
 		%feature("compactdefaultargs") BestEffortTimestamp;
 		%feature("autodoc", "Returns frame timestamp estimated using various heuristics, in stream time base.
@@ -746,16 +756,6 @@ Returns
 int
 ") LineSize;
 		int LineSize(int thePlaneId);
-
-		/****************** Media_Frame ******************/
-		%feature("compactdefaultargs") Media_Frame;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Media_Frame;
-		 Media_Frame();
 
 		/****************** PixelAspectRatio ******************/
 		%feature("compactdefaultargs") PixelAspectRatio;
@@ -943,6 +943,16 @@ None
 *********************/
 class Media_Packet : public Standard_Transient {
 	public:
+		/****************** Media_Packet ******************/
+		%feature("compactdefaultargs") Media_Packet;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Media_Packet;
+		 Media_Packet();
+
 		/****************** ChangeData ******************/
 		%feature("compactdefaultargs") ChangeData;
 		%feature("autodoc", "Return data.
@@ -1012,16 +1022,6 @@ Returns
 bool
 ") IsKeyFrame;
 		bool IsKeyFrame();
-
-		/****************** Media_Packet ******************/
-		%feature("compactdefaultargs") Media_Packet;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Media_Packet;
-		 Media_Packet();
 
 		/****************** Packet ******************/
 		%feature("compactdefaultargs") Packet;
@@ -1113,6 +1113,20 @@ None
 ****************************/
 class Media_PlayerContext : public Standard_Transient {
 	public:
+		/****************** Media_PlayerContext ******************/
+		%feature("compactdefaultargs") Media_PlayerContext;
+		%feature("autodoc", "Main constructor. note that frame queue is stored as pointer, and it is expected that this context is stored as a class field of frame queue.
+
+Parameters
+----------
+theFrameQueue: Media_IFrameQueue *
+
+Returns
+-------
+None
+") Media_PlayerContext;
+		 Media_PlayerContext(Media_IFrameQueue * theFrameQueue);
+
 		/****************** DumpFirstFrame ******************/
 		%feature("compactdefaultargs") DumpFirstFrame;
 		%feature("autodoc", "Dump first video frame. @param thesrcvideo [in] path to the video @param themediainfo [out] video description.
@@ -1145,20 +1159,6 @@ Returns
 bool
 ") DumpFirstFrame;
 		static bool DumpFirstFrame(const TCollection_AsciiString & theSrcVideo, const TCollection_AsciiString & theOutImage, TCollection_AsciiString & theMediaInfo, int theMaxSize = 0);
-
-		/****************** Media_PlayerContext ******************/
-		%feature("compactdefaultargs") Media_PlayerContext;
-		%feature("autodoc", "Main constructor. note that frame queue is stored as pointer, and it is expected that this context is stored as a class field of frame queue.
-
-Parameters
-----------
-theFrameQueue: Media_IFrameQueue *
-
-Returns
--------
-None
-") Media_PlayerContext;
-		 Media_PlayerContext(Media_IFrameQueue * theFrameQueue);
 
 		/****************** Pause ******************/
 		%feature("compactdefaultargs") Pause;
@@ -1281,6 +1281,16 @@ bool
 *********************/
 class Media_Scaler : public Standard_Transient {
 	public:
+		/****************** Media_Scaler ******************/
+		%feature("compactdefaultargs") Media_Scaler;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Media_Scaler;
+		 Media_Scaler();
+
 		/****************** Convert ******************/
 		%feature("compactdefaultargs") Convert;
 		%feature("autodoc", "Convert one frame to another.
@@ -1323,16 +1333,6 @@ bool
 ") IsValid;
 		bool IsValid();
 
-		/****************** Media_Scaler ******************/
-		%feature("compactdefaultargs") Media_Scaler;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Media_Scaler;
-		 Media_Scaler();
-
 		/****************** Release ******************/
 		%feature("compactdefaultargs") Release;
 		%feature("autodoc", "Sws_freecontext() wrapper.
@@ -1359,6 +1359,16 @@ None
 ********************/
 class Media_Timer : public Standard_Transient {
 	public:
+		/****************** Media_Timer ******************/
+		%feature("compactdefaultargs") Media_Timer;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") Media_Timer;
+		 Media_Timer();
+
 		/****************** ElapsedTime ******************/
 		%feature("compactdefaultargs") ElapsedTime;
 		%feature("autodoc", "Return elapsed time in seconds.
@@ -1378,16 +1388,6 @@ Returns
 bool
 ") IsStarted;
 		Standard_Boolean IsStarted();
-
-		/****************** Media_Timer ******************/
-		%feature("compactdefaultargs") Media_Timer;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") Media_Timer;
-		 Media_Timer();
 
 		/****************** Pause ******************/
 		%feature("compactdefaultargs") Pause;

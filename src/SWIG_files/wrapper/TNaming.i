@@ -133,41 +133,41 @@ class TNaming_NameType:
 /* end handles declaration */
 
 /* templates */
-%template(TNaming_DataMapOfShapePtrRefShape) NCollection_DataMap<TopoDS_Shape,TNaming_PtrRefShape,TopTools_ShapeMapHasher>;
-%template(TNaming_ListOfIndexedDataMapOfShapeListOfShape) NCollection_List<TopTools_IndexedDataMapOfShapeListOfShape>;
-%template(TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape) NCollection_TListIterator<TopTools_IndexedDataMapOfShapeListOfShape>;
-%template(TNaming_NamedShapeHasher) NCollection_DefaultHasher<opencascade::handle<TNaming_NamedShape>>;
-%template(TNaming_MapOfShape) NCollection_Map<TopoDS_Shape>;
 %template(TNaming_DataMapOfShapeMapOfShape) NCollection_DataMap<TopoDS_Shape,TNaming_MapOfShape>;
-%template(TNaming_MapOfNamedShape) NCollection_Map<opencascade::handle<TNaming_NamedShape>,TNaming_NamedShapeHasher>;
-%template(TNaming_ListOfNamedShape) NCollection_List<opencascade::handle<TNaming_NamedShape>>;
-%template(TNaming_ListIteratorOfListOfNamedShape) NCollection_TListIterator<opencascade::handle<TNaming_NamedShape>>;
+%template(TNaming_DataMapOfShapePtrRefShape) NCollection_DataMap<TopoDS_Shape,TNaming_PtrRefShape,TopTools_ShapeMapHasher>;
 %template(TNaming_DataMapOfShapeShapesSet) NCollection_DataMap<TopoDS_Shape,TNaming_ShapesSet,TopTools_ShapeMapHasher>;
-%template(TNaming_ListOfMapOfShape) NCollection_List<TopTools_MapOfShape>;
+%template(TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape) NCollection_TListIterator<TopTools_IndexedDataMapOfShapeListOfShape>;
 %template(TNaming_ListIteratorOfListOfMapOfShape) NCollection_TListIterator<TopTools_MapOfShape>;
+%template(TNaming_ListIteratorOfListOfNamedShape) NCollection_TListIterator<opencascade::handle<TNaming_NamedShape>>;
+%template(TNaming_ListOfIndexedDataMapOfShapeListOfShape) NCollection_List<TopTools_IndexedDataMapOfShapeListOfShape>;
+%template(TNaming_ListOfMapOfShape) NCollection_List<TopTools_MapOfShape>;
+%template(TNaming_ListOfNamedShape) NCollection_List<opencascade::handle<TNaming_NamedShape>>;
+%template(TNaming_MapOfNamedShape) NCollection_Map<opencascade::handle<TNaming_NamedShape>,TNaming_NamedShapeHasher>;
+%template(TNaming_MapOfShape) NCollection_Map<TopoDS_Shape>;
+%template(TNaming_NamedShapeHasher) NCollection_DefaultHasher<opencascade::handle<TNaming_NamedShape>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<TopoDS_Shape, TNaming_PtrRefShape, TopTools_ShapeMapHasher> TNaming_DataMapOfShapePtrRefShape;
-typedef NCollection_DataMap<TopoDS_Shape, TNaming_PtrRefShape, TopTools_ShapeMapHasher>::Iterator TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape;
-typedef NCollection_List<TopTools_IndexedDataMapOfShapeListOfShape> TNaming_ListOfIndexedDataMapOfShapeListOfShape;
-typedef NCollection_List<TopTools_IndexedDataMapOfShapeListOfShape>::Iterator TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape;
-typedef TNaming_NamedShape * TNaming_PtrAttribute;
-typedef NCollection_DefaultHasher<opencascade::handle<TNaming_NamedShape>> TNaming_NamedShapeHasher;
-typedef NCollection_Map<TopoDS_Shape> TNaming_MapOfShape;
-typedef TNaming_MapOfShape::Iterator TNaming_MapIteratorOfMapOfShape;
-typedef NCollection_DataMap<TopoDS_Shape, TNaming_MapOfShape> TNaming_DataMapOfShapeMapOfShape;
 typedef TNaming_DataMapOfShapeMapOfShape::Iterator TNaming_DataMapIteratorOfDataMapOfShapeMapOfShape;
-typedef TNaming_RefShape * TNaming_PtrRefShape;
-typedef NCollection_Map<opencascade::handle<TNaming_NamedShape>, TNaming_NamedShapeHasher> TNaming_MapOfNamedShape;
-typedef NCollection_Map<opencascade::handle<TNaming_NamedShape>, TNaming_NamedShapeHasher>::Iterator TNaming_MapIteratorOfMapOfNamedShape;
-typedef NCollection_List<opencascade::handle<TNaming_NamedShape>> TNaming_ListOfNamedShape;
-typedef NCollection_List<opencascade::handle<TNaming_NamedShape>>::Iterator TNaming_ListIteratorOfListOfNamedShape;
-typedef NCollection_DataMap<TopoDS_Shape, TNaming_ShapesSet, TopTools_ShapeMapHasher> TNaming_DataMapOfShapeShapesSet;
+typedef NCollection_DataMap<TopoDS_Shape, TNaming_PtrRefShape, TopTools_ShapeMapHasher>::Iterator TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape;
 typedef NCollection_DataMap<TopoDS_Shape, TNaming_ShapesSet, TopTools_ShapeMapHasher>::Iterator TNaming_DataMapIteratorOfDataMapOfShapeShapesSet;
-typedef NCollection_List<TopTools_MapOfShape> TNaming_ListOfMapOfShape;
+typedef NCollection_DataMap<TopoDS_Shape, TNaming_MapOfShape> TNaming_DataMapOfShapeMapOfShape;
+typedef NCollection_DataMap<TopoDS_Shape, TNaming_PtrRefShape, TopTools_ShapeMapHasher> TNaming_DataMapOfShapePtrRefShape;
+typedef NCollection_DataMap<TopoDS_Shape, TNaming_ShapesSet, TopTools_ShapeMapHasher> TNaming_DataMapOfShapeShapesSet;
+typedef NCollection_List<TopTools_IndexedDataMapOfShapeListOfShape>::Iterator TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape;
 typedef NCollection_List<TopTools_MapOfShape>::Iterator TNaming_ListIteratorOfListOfMapOfShape;
+typedef NCollection_List<opencascade::handle<TNaming_NamedShape>>::Iterator TNaming_ListIteratorOfListOfNamedShape;
+typedef NCollection_List<TopTools_IndexedDataMapOfShapeListOfShape> TNaming_ListOfIndexedDataMapOfShapeListOfShape;
+typedef NCollection_List<TopTools_MapOfShape> TNaming_ListOfMapOfShape;
+typedef NCollection_List<opencascade::handle<TNaming_NamedShape>> TNaming_ListOfNamedShape;
+typedef NCollection_Map<opencascade::handle<TNaming_NamedShape>, TNaming_NamedShapeHasher>::Iterator TNaming_MapIteratorOfMapOfNamedShape;
+typedef TNaming_MapOfShape::Iterator TNaming_MapIteratorOfMapOfShape;
+typedef NCollection_Map<opencascade::handle<TNaming_NamedShape>, TNaming_NamedShapeHasher> TNaming_MapOfNamedShape;
+typedef NCollection_Map<TopoDS_Shape> TNaming_MapOfShape;
+typedef NCollection_DefaultHasher<opencascade::handle<TNaming_NamedShape>> TNaming_NamedShapeHasher;
+typedef TNaming_NamedShape * TNaming_PtrAttribute;
 typedef TNaming_Node * TNaming_PtrNode;
+typedef TNaming_RefShape * TNaming_PtrRefShape;
 /* end typedefs declaration */
 
 /****************
@@ -405,6 +405,20 @@ None
 ************************/
 class TNaming_Builder {
 	public:
+		/****************** TNaming_Builder ******************/
+		%feature("compactdefaultargs") TNaming_Builder;
+		%feature("autodoc", "Create an builder. warning: before addition copies the current value, and clear.
+
+Parameters
+----------
+aLabel: TDF_Label
+
+Returns
+-------
+None
+") TNaming_Builder;
+		 TNaming_Builder(const TDF_Label & aLabel);
+
 		/****************** Delete ******************/
 		%feature("compactdefaultargs") Delete;
 		%feature("autodoc", "Records the shape oldshape which was deleted from the current label. as an example, consider the case of a face removed by a boolean operation.
@@ -488,20 +502,6 @@ None
 ") Select;
 		void Select(const TopoDS_Shape & aShape, const TopoDS_Shape & inShape);
 
-		/****************** TNaming_Builder ******************/
-		%feature("compactdefaultargs") TNaming_Builder;
-		%feature("autodoc", "Create an builder. warning: before addition copies the current value, and clear.
-
-Parameters
-----------
-aLabel: TDF_Label
-
-Returns
--------
-None
-") TNaming_Builder;
-		 TNaming_Builder(const TDF_Label & aLabel);
-
 };
 
 
@@ -578,16 +578,6 @@ TopLoc_Location
 ************************************/
 class TNaming_DeltaOnModification : public TDF_DeltaOnModification {
 	public:
-		/****************** Apply ******************/
-		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "Applies the delta to the attribute.
-
-Returns
--------
-None
-") Apply;
-		virtual void Apply();
-
 		/****************** TNaming_DeltaOnModification ******************/
 		%feature("compactdefaultargs") TNaming_DeltaOnModification;
 		%feature("autodoc", "Initializes a tdf_deltaonmodification.
@@ -601,6 +591,16 @@ Returns
 None
 ") TNaming_DeltaOnModification;
 		 TNaming_DeltaOnModification(const opencascade::handle<TNaming_NamedShape> & NS);
+
+		/****************** Apply ******************/
+		%feature("compactdefaultargs") Apply;
+		%feature("autodoc", "Applies the delta to the attribute.
+
+Returns
+-------
+None
+") Apply;
+		virtual void Apply();
 
 };
 
@@ -618,16 +618,6 @@ None
 *******************************/
 class TNaming_DeltaOnRemoval : public TDF_DeltaOnRemoval {
 	public:
-		/****************** Apply ******************/
-		%feature("compactdefaultargs") Apply;
-		%feature("autodoc", "Applies the delta to the attribute.
-
-Returns
--------
-None
-") Apply;
-		virtual void Apply();
-
 		/****************** TNaming_DeltaOnRemoval ******************/
 		%feature("compactdefaultargs") TNaming_DeltaOnRemoval;
 		%feature("autodoc", "Initializes a tdf_deltaonmodification.
@@ -641,6 +631,16 @@ Returns
 None
 ") TNaming_DeltaOnRemoval;
 		 TNaming_DeltaOnRemoval(const opencascade::handle<TNaming_NamedShape> & NS);
+
+		/****************** Apply ******************/
+		%feature("compactdefaultargs") Apply;
+		%feature("autodoc", "Applies the delta to the attribute.
+
+Returns
+-------
+None
+") Apply;
+		virtual void Apply();
 
 };
 
@@ -658,6 +658,40 @@ None
 ***************************/
 class TNaming_Identifier {
 	public:
+		/****************** TNaming_Identifier ******************/
+		%feature("compactdefaultargs") TNaming_Identifier;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Lab: TDF_Label
+S: TopoDS_Shape
+Context: TopoDS_Shape
+Geom: bool
+
+Returns
+-------
+None
+") TNaming_Identifier;
+		 TNaming_Identifier(const TDF_Label & Lab, const TopoDS_Shape & S, const TopoDS_Shape & Context, const Standard_Boolean Geom);
+
+		/****************** TNaming_Identifier ******************/
+		%feature("compactdefaultargs") TNaming_Identifier;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Lab: TDF_Label
+S: TopoDS_Shape
+ContextNS: TNaming_NamedShape
+Geom: bool
+
+Returns
+-------
+None
+") TNaming_Identifier;
+		 TNaming_Identifier(const TDF_Label & Lab, const TopoDS_Shape & S, const opencascade::handle<TNaming_NamedShape> & ContextNS, const Standard_Boolean Geom);
+
 		/****************** AncestorIdentification ******************/
 		%feature("compactdefaultargs") AncestorIdentification;
 		%feature("autodoc", "No available documentation.
@@ -828,40 +862,6 @@ TopoDS_Shape
 ") ShapeContext;
 		TopoDS_Shape ShapeContext();
 
-		/****************** TNaming_Identifier ******************/
-		%feature("compactdefaultargs") TNaming_Identifier;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Lab: TDF_Label
-S: TopoDS_Shape
-Context: TopoDS_Shape
-Geom: bool
-
-Returns
--------
-None
-") TNaming_Identifier;
-		 TNaming_Identifier(const TDF_Label & Lab, const TopoDS_Shape & S, const TopoDS_Shape & Context, const Standard_Boolean Geom);
-
-		/****************** TNaming_Identifier ******************/
-		%feature("compactdefaultargs") TNaming_Identifier;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Lab: TDF_Label
-S: TopoDS_Shape
-ContextNS: TNaming_NamedShape
-Geom: bool
-
-Returns
--------
-None
-") TNaming_Identifier;
-		 TNaming_Identifier(const TDF_Label & Lab, const TopoDS_Shape & S, const opencascade::handle<TNaming_NamedShape> & ContextNS, const Standard_Boolean Geom);
-
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "No available documentation.
@@ -886,6 +886,49 @@ TNaming_NameType
 *************************/
 class TNaming_Iterator {
 	public:
+		/****************** TNaming_Iterator ******************/
+		%feature("compactdefaultargs") TNaming_Iterator;
+		%feature("autodoc", "Iterates on all the history records in <anatt>.
+
+Parameters
+----------
+anAtt: TNaming_NamedShape
+
+Returns
+-------
+None
+") TNaming_Iterator;
+		 TNaming_Iterator(const opencascade::handle<TNaming_NamedShape> & anAtt);
+
+		/****************** TNaming_Iterator ******************/
+		%feature("compactdefaultargs") TNaming_Iterator;
+		%feature("autodoc", "Iterates on all the history records in the current transaction.
+
+Parameters
+----------
+aLabel: TDF_Label
+
+Returns
+-------
+None
+") TNaming_Iterator;
+		 TNaming_Iterator(const TDF_Label & aLabel);
+
+		/****************** TNaming_Iterator ******************/
+		%feature("compactdefaultargs") TNaming_Iterator;
+		%feature("autodoc", "Iterates on all the history records in the transaction <atrans>.
+
+Parameters
+----------
+aLabel: TDF_Label
+aTrans: int
+
+Returns
+-------
+None
+") TNaming_Iterator;
+		 TNaming_Iterator(const TDF_Label & aLabel, const Standard_Integer aTrans);
+
 		/****************** Evolution ******************/
 		%feature("compactdefaultargs") Evolution;
 		%feature("autodoc", "No available documentation.
@@ -946,49 +989,6 @@ TopoDS_Shape
 ") OldShape;
 		const TopoDS_Shape OldShape();
 
-		/****************** TNaming_Iterator ******************/
-		%feature("compactdefaultargs") TNaming_Iterator;
-		%feature("autodoc", "Iterates on all the history records in <anatt>.
-
-Parameters
-----------
-anAtt: TNaming_NamedShape
-
-Returns
--------
-None
-") TNaming_Iterator;
-		 TNaming_Iterator(const opencascade::handle<TNaming_NamedShape> & anAtt);
-
-		/****************** TNaming_Iterator ******************/
-		%feature("compactdefaultargs") TNaming_Iterator;
-		%feature("autodoc", "Iterates on all the history records in the current transaction.
-
-Parameters
-----------
-aLabel: TDF_Label
-
-Returns
--------
-None
-") TNaming_Iterator;
-		 TNaming_Iterator(const TDF_Label & aLabel);
-
-		/****************** TNaming_Iterator ******************/
-		%feature("compactdefaultargs") TNaming_Iterator;
-		%feature("autodoc", "Iterates on all the history records in the transaction <atrans>.
-
-Parameters
-----------
-aLabel: TDF_Label
-aTrans: int
-
-Returns
--------
-None
-") TNaming_Iterator;
-		 TNaming_Iterator(const TDF_Label & aLabel, const Standard_Integer aTrans);
-
 };
 
 
@@ -1003,6 +1003,30 @@ None
 ************************************/
 class TNaming_IteratorOnShapesSet {
 	public:
+		/****************** TNaming_IteratorOnShapesSet ******************/
+		%feature("compactdefaultargs") TNaming_IteratorOnShapesSet;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TNaming_IteratorOnShapesSet;
+		 TNaming_IteratorOnShapesSet();
+
+		/****************** TNaming_IteratorOnShapesSet ******************/
+		%feature("compactdefaultargs") TNaming_IteratorOnShapesSet;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TNaming_ShapesSet
+
+Returns
+-------
+None
+") TNaming_IteratorOnShapesSet;
+		 TNaming_IteratorOnShapesSet(const TNaming_ShapesSet & S);
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize the iteration.
@@ -1037,30 +1061,6 @@ None
 ") Next;
 		void Next();
 
-		/****************** TNaming_IteratorOnShapesSet ******************/
-		%feature("compactdefaultargs") TNaming_IteratorOnShapesSet;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TNaming_IteratorOnShapesSet;
-		 TNaming_IteratorOnShapesSet();
-
-		/****************** TNaming_IteratorOnShapesSet ******************/
-		%feature("compactdefaultargs") TNaming_IteratorOnShapesSet;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TNaming_ShapesSet
-
-Returns
--------
-None
-") TNaming_IteratorOnShapesSet;
-		 TNaming_IteratorOnShapesSet(const TNaming_ShapesSet & S);
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -1085,6 +1085,16 @@ TopoDS_Shape
 **************************/
 class TNaming_Localizer {
 	public:
+		/****************** TNaming_Localizer ******************/
+		%feature("compactdefaultargs") TNaming_Localizer;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TNaming_Localizer;
+		 TNaming_Localizer();
+
 		/****************** Ancestors ******************/
 		%feature("compactdefaultargs") Ancestors;
 		%feature("autodoc", "No available documentation.
@@ -1244,16 +1254,6 @@ TopTools_MapOfShape
 ") SubShapes;
 		const TopTools_MapOfShape & SubShapes(const TopoDS_Shape & S, const TopAbs_ShapeEnum Type);
 
-		/****************** TNaming_Localizer ******************/
-		%feature("compactdefaultargs") TNaming_Localizer;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TNaming_Localizer;
-		 TNaming_Localizer();
-
 };
 
 
@@ -1268,6 +1268,16 @@ None
 *********************/
 class TNaming_Name {
 	public:
+		/****************** TNaming_Name ******************/
+		%feature("compactdefaultargs") TNaming_Name;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TNaming_Name;
+		 TNaming_Name();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "No available documentation.
@@ -1466,16 +1476,6 @@ opencascade::handle<TNaming_NamedShape>
 ") StopNamedShape;
 		opencascade::handle<TNaming_NamedShape> StopNamedShape();
 
-		/****************** TNaming_Name ******************/
-		%feature("compactdefaultargs") TNaming_Name;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TNaming_Name;
-		 TNaming_Name();
-
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "No available documentation.
@@ -1514,6 +1514,16 @@ TNaming_NameType
 ***************************/
 class TNaming_NamedShape : public TDF_Attribute {
 	public:
+		/****************** TNaming_NamedShape ******************/
+		%feature("compactdefaultargs") TNaming_NamedShape;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TNaming_NamedShape;
+		 TNaming_NamedShape();
+
 		/****************** AfterUndo ******************/
 		%feature("compactdefaultargs") AfterUndo;
 		%feature("autodoc", "Something to do after applying <anattdelta>.
@@ -1739,16 +1749,6 @@ None
 ") SetVersion;
 		void SetVersion(const Standard_Integer version);
 
-		/****************** TNaming_NamedShape ******************/
-		%feature("compactdefaultargs") TNaming_NamedShape;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TNaming_NamedShape;
-		 TNaming_NamedShape();
-
 		/****************** Version ******************/
 		%feature("compactdefaultargs") Version;
 		%feature("autodoc", "Returns the version of the attribute.
@@ -1775,6 +1775,16 @@ int
 ***********************/
 class TNaming_Naming : public TDF_Attribute {
 	public:
+		/****************** TNaming_Naming ******************/
+		%feature("compactdefaultargs") TNaming_Naming;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TNaming_Naming;
+		 TNaming_Naming();
+
 		/****************** ChangeName ******************/
 		%feature("compactdefaultargs") ChangeName;
 		%feature("autodoc", "No available documentation.
@@ -1950,16 +1960,6 @@ bool
 ") Solve;
 		Standard_Boolean Solve(TDF_LabelMap & scope);
 
-		/****************** TNaming_Naming ******************/
-		%feature("compactdefaultargs") TNaming_Naming;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TNaming_Naming;
-		 TNaming_Naming();
-
 };
 
 
@@ -2040,6 +2040,65 @@ None
 *********************************/
 class TNaming_NewShapeIterator {
 	public:
+		/****************** TNaming_NewShapeIterator ******************/
+		%feature("compactdefaultargs") TNaming_NewShapeIterator;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aShape: TopoDS_Shape
+Transaction: int
+access: TDF_Label
+
+Returns
+-------
+None
+") TNaming_NewShapeIterator;
+		 TNaming_NewShapeIterator(const TopoDS_Shape & aShape, const Standard_Integer Transaction, const TDF_Label & access);
+
+		/****************** TNaming_NewShapeIterator ******************/
+		%feature("compactdefaultargs") TNaming_NewShapeIterator;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aShape: TopoDS_Shape
+access: TDF_Label
+
+Returns
+-------
+None
+") TNaming_NewShapeIterator;
+		 TNaming_NewShapeIterator(const TopoDS_Shape & aShape, const TDF_Label & access);
+
+		/****************** TNaming_NewShapeIterator ******************/
+		%feature("compactdefaultargs") TNaming_NewShapeIterator;
+		%feature("autodoc", "Iterates from the current shape in <aniterator>.
+
+Parameters
+----------
+anIterator: TNaming_NewShapeIterator
+
+Returns
+-------
+None
+") TNaming_NewShapeIterator;
+		 TNaming_NewShapeIterator(const TNaming_NewShapeIterator & anIterator);
+
+		/****************** TNaming_NewShapeIterator ******************/
+		%feature("compactdefaultargs") TNaming_NewShapeIterator;
+		%feature("autodoc", "Iterates from the current shape in <aniterator>.
+
+Parameters
+----------
+anIterator: TNaming_Iterator
+
+Returns
+-------
+None
+") TNaming_NewShapeIterator;
+		 TNaming_NewShapeIterator(const TNaming_Iterator & anIterator);
+
 		/****************** IsModification ******************/
 		%feature("compactdefaultargs") IsModification;
 		%feature("autodoc", "True if the new shape is a modification (split, fuse,etc...) of the old shape.
@@ -2100,65 +2159,6 @@ TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
 
-		/****************** TNaming_NewShapeIterator ******************/
-		%feature("compactdefaultargs") TNaming_NewShapeIterator;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aShape: TopoDS_Shape
-Transaction: int
-access: TDF_Label
-
-Returns
--------
-None
-") TNaming_NewShapeIterator;
-		 TNaming_NewShapeIterator(const TopoDS_Shape & aShape, const Standard_Integer Transaction, const TDF_Label & access);
-
-		/****************** TNaming_NewShapeIterator ******************/
-		%feature("compactdefaultargs") TNaming_NewShapeIterator;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aShape: TopoDS_Shape
-access: TDF_Label
-
-Returns
--------
-None
-") TNaming_NewShapeIterator;
-		 TNaming_NewShapeIterator(const TopoDS_Shape & aShape, const TDF_Label & access);
-
-		/****************** TNaming_NewShapeIterator ******************/
-		%feature("compactdefaultargs") TNaming_NewShapeIterator;
-		%feature("autodoc", "Iterates from the current shape in <aniterator>.
-
-Parameters
-----------
-anIterator: TNaming_NewShapeIterator
-
-Returns
--------
-None
-") TNaming_NewShapeIterator;
-		 TNaming_NewShapeIterator(const TNaming_NewShapeIterator & anIterator);
-
-		/****************** TNaming_NewShapeIterator ******************/
-		%feature("compactdefaultargs") TNaming_NewShapeIterator;
-		%feature("autodoc", "Iterates from the current shape in <aniterator>.
-
-Parameters
-----------
-anIterator: TNaming_Iterator
-
-Returns
--------
-None
-") TNaming_NewShapeIterator;
-		 TNaming_NewShapeIterator(const TNaming_Iterator & anIterator);
-
 };
 
 
@@ -2173,6 +2173,65 @@ None
 *********************************/
 class TNaming_OldShapeIterator {
 	public:
+		/****************** TNaming_OldShapeIterator ******************/
+		%feature("compactdefaultargs") TNaming_OldShapeIterator;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aShape: TopoDS_Shape
+Transaction: int
+access: TDF_Label
+
+Returns
+-------
+None
+") TNaming_OldShapeIterator;
+		 TNaming_OldShapeIterator(const TopoDS_Shape & aShape, const Standard_Integer Transaction, const TDF_Label & access);
+
+		/****************** TNaming_OldShapeIterator ******************/
+		%feature("compactdefaultargs") TNaming_OldShapeIterator;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aShape: TopoDS_Shape
+access: TDF_Label
+
+Returns
+-------
+None
+") TNaming_OldShapeIterator;
+		 TNaming_OldShapeIterator(const TopoDS_Shape & aShape, const TDF_Label & access);
+
+		/****************** TNaming_OldShapeIterator ******************/
+		%feature("compactdefaultargs") TNaming_OldShapeIterator;
+		%feature("autodoc", "Iterates from the current shape in <aniterator>.
+
+Parameters
+----------
+anIterator: TNaming_OldShapeIterator
+
+Returns
+-------
+None
+") TNaming_OldShapeIterator;
+		 TNaming_OldShapeIterator(const TNaming_OldShapeIterator & anIterator);
+
+		/****************** TNaming_OldShapeIterator ******************/
+		%feature("compactdefaultargs") TNaming_OldShapeIterator;
+		%feature("autodoc", "Iterates from the current shape in <aniterator>.
+
+Parameters
+----------
+anIterator: TNaming_Iterator
+
+Returns
+-------
+None
+") TNaming_OldShapeIterator;
+		 TNaming_OldShapeIterator(const TNaming_Iterator & anIterator);
+
 		/****************** IsModification ******************/
 		%feature("compactdefaultargs") IsModification;
 		%feature("autodoc", "True if the new shape is a modification (split, fuse,etc...) of the old shape.
@@ -2233,65 +2292,6 @@ TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
 
-		/****************** TNaming_OldShapeIterator ******************/
-		%feature("compactdefaultargs") TNaming_OldShapeIterator;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aShape: TopoDS_Shape
-Transaction: int
-access: TDF_Label
-
-Returns
--------
-None
-") TNaming_OldShapeIterator;
-		 TNaming_OldShapeIterator(const TopoDS_Shape & aShape, const Standard_Integer Transaction, const TDF_Label & access);
-
-		/****************** TNaming_OldShapeIterator ******************/
-		%feature("compactdefaultargs") TNaming_OldShapeIterator;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aShape: TopoDS_Shape
-access: TDF_Label
-
-Returns
--------
-None
-") TNaming_OldShapeIterator;
-		 TNaming_OldShapeIterator(const TopoDS_Shape & aShape, const TDF_Label & access);
-
-		/****************** TNaming_OldShapeIterator ******************/
-		%feature("compactdefaultargs") TNaming_OldShapeIterator;
-		%feature("autodoc", "Iterates from the current shape in <aniterator>.
-
-Parameters
-----------
-anIterator: TNaming_OldShapeIterator
-
-Returns
--------
-None
-") TNaming_OldShapeIterator;
-		 TNaming_OldShapeIterator(const TNaming_OldShapeIterator & anIterator);
-
-		/****************** TNaming_OldShapeIterator ******************/
-		%feature("compactdefaultargs") TNaming_OldShapeIterator;
-		%feature("autodoc", "Iterates from the current shape in <aniterator>.
-
-Parameters
-----------
-anIterator: TNaming_Iterator
-
-Returns
--------
-None
-") TNaming_OldShapeIterator;
-		 TNaming_OldShapeIterator(const TNaming_Iterator & anIterator);
-
 };
 
 
@@ -2306,6 +2306,30 @@ None
 *************************/
 class TNaming_RefShape {
 	public:
+		/****************** TNaming_RefShape ******************/
+		%feature("compactdefaultargs") TNaming_RefShape;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TNaming_RefShape;
+		 TNaming_RefShape();
+
+		/****************** TNaming_RefShape ******************/
+		%feature("compactdefaultargs") TNaming_RefShape;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") TNaming_RefShape;
+		 TNaming_RefShape(const TopoDS_Shape & S);
+
 		/****************** FirstUse ******************/
 		%feature("compactdefaultargs") FirstUse;
 		%feature("autodoc", "No available documentation.
@@ -2374,30 +2398,6 @@ TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
 
-		/****************** TNaming_RefShape ******************/
-		%feature("compactdefaultargs") TNaming_RefShape;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TNaming_RefShape;
-		 TNaming_RefShape();
-
-		/****************** TNaming_RefShape ******************/
-		%feature("compactdefaultargs") TNaming_RefShape;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") TNaming_RefShape;
-		 TNaming_RefShape(const TopoDS_Shape & S);
-
 };
 
 
@@ -2412,6 +2412,21 @@ None
 **********************************/
 class TNaming_SameShapeIterator {
 	public:
+		/****************** TNaming_SameShapeIterator ******************/
+		%feature("compactdefaultargs") TNaming_SameShapeIterator;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aShape: TopoDS_Shape
+access: TDF_Label
+
+Returns
+-------
+None
+") TNaming_SameShapeIterator;
+		 TNaming_SameShapeIterator(const TopoDS_Shape & aShape, const TDF_Label & access);
+
 		/****************** Label ******************/
 		%feature("compactdefaultargs") Label;
 		%feature("autodoc", "No available documentation.
@@ -2442,21 +2457,6 @@ None
 ") Next;
 		void Next();
 
-		/****************** TNaming_SameShapeIterator ******************/
-		%feature("compactdefaultargs") TNaming_SameShapeIterator;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aShape: TopoDS_Shape
-access: TDF_Label
-
-Returns
--------
-None
-") TNaming_SameShapeIterator;
-		 TNaming_SameShapeIterator(const TopoDS_Shape & aShape, const TDF_Label & access);
-
 };
 
 
@@ -2471,6 +2471,44 @@ None
 **********************/
 class TNaming_Scope {
 	public:
+		/****************** TNaming_Scope ******************/
+		%feature("compactdefaultargs") TNaming_Scope;
+		%feature("autodoc", "Withvalid = false.
+
+Returns
+-------
+None
+") TNaming_Scope;
+		 TNaming_Scope();
+
+		/****************** TNaming_Scope ******************/
+		%feature("compactdefaultargs") TNaming_Scope;
+		%feature("autodoc", "If <withvalid> the scope is defined by the map. if not on the whole framework.
+
+Parameters
+----------
+WithValid: bool
+
+Returns
+-------
+None
+") TNaming_Scope;
+		 TNaming_Scope(const Standard_Boolean WithValid);
+
+		/****************** TNaming_Scope ******************/
+		%feature("compactdefaultargs") TNaming_Scope;
+		%feature("autodoc", "Create a scope with a map. withvalid = true.
+
+Parameters
+----------
+valid: TDF_LabelMap
+
+Returns
+-------
+None
+") TNaming_Scope;
+		 TNaming_Scope(TDF_LabelMap & valid);
+
 		/****************** ChangeValid ******************/
 		%feature("compactdefaultargs") ChangeValid;
 		%feature("autodoc", "No available documentation.
@@ -2528,44 +2566,6 @@ Returns
 bool
 ") IsValid;
 		Standard_Boolean IsValid(const TDF_Label & L);
-
-		/****************** TNaming_Scope ******************/
-		%feature("compactdefaultargs") TNaming_Scope;
-		%feature("autodoc", "Withvalid = false.
-
-Returns
--------
-None
-") TNaming_Scope;
-		 TNaming_Scope();
-
-		/****************** TNaming_Scope ******************/
-		%feature("compactdefaultargs") TNaming_Scope;
-		%feature("autodoc", "If <withvalid> the scope is defined by the map. if not on the whole framework.
-
-Parameters
-----------
-WithValid: bool
-
-Returns
--------
-None
-") TNaming_Scope;
-		 TNaming_Scope(const Standard_Boolean WithValid);
-
-		/****************** TNaming_Scope ******************/
-		%feature("compactdefaultargs") TNaming_Scope;
-		%feature("autodoc", "Create a scope with a map. withvalid = true.
-
-Parameters
-----------
-valid: TDF_LabelMap
-
-Returns
--------
-None
-") TNaming_Scope;
-		 TNaming_Scope(TDF_LabelMap & valid);
 
 		/****************** Unvalid ******************/
 		%feature("compactdefaultargs") Unvalid;
@@ -2665,6 +2665,20 @@ None
 *************************/
 class TNaming_Selector {
 	public:
+		/****************** TNaming_Selector ******************/
+		%feature("compactdefaultargs") TNaming_Selector;
+		%feature("autodoc", "Create a selector on this label to select a shape. ==================.
+
+Parameters
+----------
+aLabel: TDF_Label
+
+Returns
+-------
+None
+") TNaming_Selector;
+		 TNaming_Selector(const TDF_Label & aLabel);
+
 		/****************** Arguments ******************/
 		%feature("compactdefaultargs") Arguments;
 		%feature("autodoc", "Returns the attribute list args. this list contains the named shape on which the topological naming was built.
@@ -2758,20 +2772,6 @@ bool
 ") Solve;
 		Standard_Boolean Solve(TDF_LabelMap & Valid);
 
-		/****************** TNaming_Selector ******************/
-		%feature("compactdefaultargs") TNaming_Selector;
-		%feature("autodoc", "Create a selector on this label to select a shape. ==================.
-
-Parameters
-----------
-aLabel: TDF_Label
-
-Returns
--------
-None
-") TNaming_Selector;
-		 TNaming_Selector(const TDF_Label & aLabel);
-
 };
 
 
@@ -2786,6 +2786,32 @@ None
 **************************/
 class TNaming_ShapesSet {
 	public:
+		/****************** TNaming_ShapesSet ******************/
+		%feature("compactdefaultargs") TNaming_ShapesSet;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TNaming_ShapesSet;
+		 TNaming_ShapesSet();
+
+		/****************** TNaming_ShapesSet ******************/
+		%feature("compactdefaultargs") TNaming_ShapesSet;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+Type: TopAbs_ShapeEnum,optional
+	default value is TopAbs_SHAPE
+
+Returns
+-------
+None
+") TNaming_ShapesSet;
+		 TNaming_ShapesSet(const TopoDS_Shape & S, const TopAbs_ShapeEnum Type = TopAbs_SHAPE);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the shape <s>.
@@ -2919,32 +2945,6 @@ Returns
 None
 ") Remove;
 		void Remove(const TNaming_ShapesSet & Shapes);
-
-		/****************** TNaming_ShapesSet ******************/
-		%feature("compactdefaultargs") TNaming_ShapesSet;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TNaming_ShapesSet;
-		 TNaming_ShapesSet();
-
-		/****************** TNaming_ShapesSet ******************/
-		%feature("compactdefaultargs") TNaming_ShapesSet;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-Type: TopAbs_ShapeEnum,optional
-	default value is TopAbs_SHAPE
-
-Returns
--------
-None
-") TNaming_ShapesSet;
-		 TNaming_ShapesSet(const TopoDS_Shape & S, const TopAbs_ShapeEnum Type = TopAbs_SHAPE);
 
 };
 
@@ -3392,6 +3392,16 @@ None
 ***************************/
 class TNaming_Translator {
 	public:
+		/****************** TNaming_Translator ******************/
+		%feature("compactdefaultargs") TNaming_Translator;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TNaming_Translator;
+		 TNaming_Translator();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -3464,16 +3474,6 @@ Returns
 None
 ") Perform;
 		void Perform();
-
-		/****************** TNaming_Translator ******************/
-		%feature("compactdefaultargs") TNaming_Translator;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TNaming_Translator;
-		 TNaming_Translator();
 
 };
 

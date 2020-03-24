@@ -223,6 +223,45 @@ opencascade::handle<Law_BSpline>
 ********************/
 class Law_BSpline : public Standard_Transient {
 	public:
+		/****************** Law_BSpline ******************/
+		%feature("compactdefaultargs") Law_BSpline;
+		%feature("autodoc", "Creates a non-rational b_spline curve on the basis <knots, multiplicities> of degree <degree>.
+
+Parameters
+----------
+Poles: TColStd_Array1OfReal
+Knots: TColStd_Array1OfReal
+Multiplicities: TColStd_Array1OfInteger
+Degree: int
+Periodic: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Law_BSpline;
+		 Law_BSpline(const TColStd_Array1OfReal & Poles, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Multiplicities, const Standard_Integer Degree, const Standard_Boolean Periodic = Standard_False);
+
+		/****************** Law_BSpline ******************/
+		%feature("compactdefaultargs") Law_BSpline;
+		%feature("autodoc", "Creates a rational b_spline curve on the basis <knots, multiplicities> of degree <degree>.
+
+Parameters
+----------
+Poles: TColStd_Array1OfReal
+Weights: TColStd_Array1OfReal
+Knots: TColStd_Array1OfReal
+Multiplicities: TColStd_Array1OfInteger
+Degree: int
+Periodic: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Law_BSpline;
+		 Law_BSpline(const TColStd_Array1OfReal & Poles, const TColStd_Array1OfReal & Weights, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Multiplicities, const Standard_Integer Degree, const Standard_Boolean Periodic = Standard_False);
+
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
 		%feature("autodoc", "Returns the global continuity of the curve : c0 : only geometric continuity, c1 : continuity of the first derivative all along the curve, c2 : continuity of the second derivative all along the curve, c3 : continuity of the third derivative all along the curve, cn : the order of continuity is infinite. for a b-spline curve of degree d if a knot ui has a multiplicity p the b-spline curve is only cd-p continuous at ui. so the global continuity of the curve can't be greater than cd-p where p is the maximum multiplicity of the interior knots. in the interior of a knot span the curve is infinitely continuously differentiable.
@@ -579,45 +618,6 @@ Returns
 int
 ") LastUKnotIndex;
 		Standard_Integer LastUKnotIndex();
-
-		/****************** Law_BSpline ******************/
-		%feature("compactdefaultargs") Law_BSpline;
-		%feature("autodoc", "Creates a non-rational b_spline curve on the basis <knots, multiplicities> of degree <degree>.
-
-Parameters
-----------
-Poles: TColStd_Array1OfReal
-Knots: TColStd_Array1OfReal
-Multiplicities: TColStd_Array1OfInteger
-Degree: int
-Periodic: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Law_BSpline;
-		 Law_BSpline(const TColStd_Array1OfReal & Poles, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Multiplicities, const Standard_Integer Degree, const Standard_Boolean Periodic = Standard_False);
-
-		/****************** Law_BSpline ******************/
-		%feature("compactdefaultargs") Law_BSpline;
-		%feature("autodoc", "Creates a rational b_spline curve on the basis <knots, multiplicities> of degree <degree>.
-
-Parameters
-----------
-Poles: TColStd_Array1OfReal
-Weights: TColStd_Array1OfReal
-Knots: TColStd_Array1OfReal
-Multiplicities: TColStd_Array1OfInteger
-Degree: int
-Periodic: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Law_BSpline;
-		 Law_BSpline(const TColStd_Array1OfReal & Poles, const TColStd_Array1OfReal & Weights, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Multiplicities, const Standard_Integer Degree, const Standard_Boolean Periodic = Standard_False);
 
 		/****************** LocalD0 ******************/
 		%feature("compactdefaultargs") LocalD0;
@@ -1329,26 +1329,6 @@ float
 ************************/
 class Law_Interpolate {
 	public:
-		/****************** Curve ******************/
-		%feature("compactdefaultargs") Curve;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Law_BSpline>
-") Curve;
-		const opencascade::handle<Law_BSpline> & Curve();
-
-		/****************** IsDone ******************/
-		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-bool
-") IsDone;
-		Standard_Boolean IsDone();
-
 		/****************** Law_Interpolate ******************/
 		%feature("compactdefaultargs") Law_Interpolate;
 		%feature("autodoc", "Tolerance is to check if the points are not too close to one an other. it is also used to check if the tangent vector is not too small. there should be at least 2 points. if periodicflag is true then the curve will be periodic be periodic.
@@ -1381,6 +1361,26 @@ Returns
 None
 ") Law_Interpolate;
 		 Law_Interpolate(const opencascade::handle<TColStd_HArray1OfReal> & Points, const opencascade::handle<TColStd_HArray1OfReal> & Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+
+		/****************** Curve ******************/
+		%feature("compactdefaultargs") Curve;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Law_BSpline>
+") Curve;
+		const opencascade::handle<Law_BSpline> & Curve();
+
+		/****************** IsDone ******************/
+		%feature("compactdefaultargs") IsDone;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
+") IsDone;
+		Standard_Boolean IsDone();
 
 		/****************** Load ******************/
 		%feature("compactdefaultargs") Load;
@@ -1440,6 +1440,32 @@ None
 ********************/
 class Law_BSpFunc : public Law_Function {
 	public:
+		/****************** Law_BSpFunc ******************/
+		%feature("compactdefaultargs") Law_BSpFunc;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Law_BSpFunc;
+		 Law_BSpFunc();
+
+		/****************** Law_BSpFunc ******************/
+		%feature("compactdefaultargs") Law_BSpFunc;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+C: Law_BSpline
+First: float
+Last: float
+
+Returns
+-------
+None
+") Law_BSpFunc;
+		 Law_BSpFunc(const opencascade::handle<Law_BSpline> & C, const Standard_Real First, const Standard_Real Last);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "No available documentation.
@@ -1523,32 +1549,6 @@ None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
-		/****************** Law_BSpFunc ******************/
-		%feature("compactdefaultargs") Law_BSpFunc;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Law_BSpFunc;
-		 Law_BSpFunc();
-
-		/****************** Law_BSpFunc ******************/
-		%feature("compactdefaultargs") Law_BSpFunc;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-C: Law_BSpline
-First: float
-Last: float
-
-Returns
--------
-None
-") Law_BSpFunc;
-		 Law_BSpFunc(const opencascade::handle<Law_BSpline> & C, const Standard_Real First, const Standard_Real Last);
-
 		/****************** NbIntervals ******************/
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals for continuity <s>. may be one if continuity(me) >= <s>.
@@ -1623,6 +1623,32 @@ float
 **********************/
 class Law_Composite : public Law_Function {
 	public:
+		/****************** Law_Composite ******************/
+		%feature("compactdefaultargs") Law_Composite;
+		%feature("autodoc", "Construct an empty law.
+
+Returns
+-------
+None
+") Law_Composite;
+		 Law_Composite();
+
+		/****************** Law_Composite ******************/
+		%feature("compactdefaultargs") Law_Composite;
+		%feature("autodoc", "Construct an empty, trimed law.
+
+Parameters
+----------
+First: float
+Last: float
+Tol: float
+
+Returns
+-------
+None
+") Law_Composite;
+		 Law_Composite(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "Returns the parametric bounds of the function.
@@ -1730,32 +1756,6 @@ bool
 ") IsPeriodic;
 		Standard_Boolean IsPeriodic();
 
-		/****************** Law_Composite ******************/
-		%feature("compactdefaultargs") Law_Composite;
-		%feature("autodoc", "Construct an empty law.
-
-Returns
--------
-None
-") Law_Composite;
-		 Law_Composite();
-
-		/****************** Law_Composite ******************/
-		%feature("compactdefaultargs") Law_Composite;
-		%feature("autodoc", "Construct an empty, trimed law.
-
-Parameters
-----------
-First: float
-Last: float
-Tol: float
-
-Returns
--------
-None
-") Law_Composite;
-		 Law_Composite(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
-
 		/****************** NbIntervals ******************/
 		%feature("compactdefaultargs") NbIntervals;
 		%feature("autodoc", "Returns the number of intervals for continuity <s>. may be one if continuity(me) >= <s>.
@@ -1826,6 +1826,16 @@ float
 *********************/
 class Law_Constant : public Law_Function {
 	public:
+		/****************** Law_Constant ******************/
+		%feature("compactdefaultargs") Law_Constant;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Law_Constant;
+		 Law_Constant();
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "Returns the parametric bounds of the function.
@@ -1898,16 +1908,6 @@ Returns
 None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
-
-		/****************** Law_Constant ******************/
-		%feature("compactdefaultargs") Law_Constant;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Law_Constant;
-		 Law_Constant();
 
 		/****************** NbIntervals ******************/
 		%feature("compactdefaultargs") NbIntervals;
@@ -1985,6 +1985,16 @@ float
 *******************/
 class Law_Linear : public Law_Function {
 	public:
+		/****************** Law_Linear ******************/
+		%feature("compactdefaultargs") Law_Linear;
+		%feature("autodoc", "Constructs an empty linear evolution law.
+
+Returns
+-------
+None
+") Law_Linear;
+		 Law_Linear();
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "Returns the parametric bounds of the function.
@@ -2057,16 +2067,6 @@ Returns
 None
 ") Intervals;
 		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
-
-		/****************** Law_Linear ******************/
-		%feature("compactdefaultargs") Law_Linear;
-		%feature("autodoc", "Constructs an empty linear evolution law.
-
-Returns
--------
-None
-") Law_Linear;
-		 Law_Linear();
 
 		/****************** NbIntervals ******************/
 		%feature("compactdefaultargs") NbIntervals;

@@ -199,21 +199,21 @@ class BRepOffset_Status:
 
 /* templates */
 %template(BRepOffset_DataMapOfShapeListOfInterval) NCollection_DataMap<TopoDS_Shape,BRepOffset_ListOfInterval,TopTools_ShapeMapHasher>;
-%template(BRepOffset_ListOfInterval) NCollection_List<BRepOffset_Interval>;
-%template(BRepOffset_ListIteratorOfListOfInterval) NCollection_TListIterator<BRepOffset_Interval>;
-%template(BRepOffset_DataMapOfShapeOffset) NCollection_DataMap<TopoDS_Shape,BRepOffset_Offset,TopTools_ShapeMapHasher>;
 %template(BRepOffset_DataMapOfShapeMapOfShape) NCollection_DataMap<TopoDS_Shape,TopTools_MapOfShape,TopTools_ShapeMapHasher>;
+%template(BRepOffset_DataMapOfShapeOffset) NCollection_DataMap<TopoDS_Shape,BRepOffset_Offset,TopTools_ShapeMapHasher>;
+%template(BRepOffset_ListIteratorOfListOfInterval) NCollection_TListIterator<BRepOffset_Interval>;
+%template(BRepOffset_ListOfInterval) NCollection_List<BRepOffset_Interval>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<TopoDS_Shape, BRepOffset_ListOfInterval, TopTools_ShapeMapHasher> BRepOffset_DataMapOfShapeListOfInterval;
 typedef NCollection_DataMap<TopoDS_Shape, BRepOffset_ListOfInterval, TopTools_ShapeMapHasher>::Iterator BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval;
-typedef NCollection_List<BRepOffset_Interval> BRepOffset_ListOfInterval;
-typedef NCollection_List<BRepOffset_Interval>::Iterator BRepOffset_ListIteratorOfListOfInterval;
-typedef NCollection_DataMap<TopoDS_Shape, BRepOffset_Offset, TopTools_ShapeMapHasher> BRepOffset_DataMapOfShapeOffset;
-typedef NCollection_DataMap<TopoDS_Shape, BRepOffset_Offset, TopTools_ShapeMapHasher>::Iterator BRepOffset_DataMapIteratorOfDataMapOfShapeOffset;
-typedef NCollection_DataMap<TopoDS_Shape, TopTools_MapOfShape, TopTools_ShapeMapHasher> BRepOffset_DataMapOfShapeMapOfShape;
 typedef NCollection_DataMap<TopoDS_Shape, TopTools_MapOfShape, TopTools_ShapeMapHasher>::Iterator BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape;
+typedef NCollection_DataMap<TopoDS_Shape, BRepOffset_Offset, TopTools_ShapeMapHasher>::Iterator BRepOffset_DataMapIteratorOfDataMapOfShapeOffset;
+typedef NCollection_DataMap<TopoDS_Shape, BRepOffset_ListOfInterval, TopTools_ShapeMapHasher> BRepOffset_DataMapOfShapeListOfInterval;
+typedef NCollection_DataMap<TopoDS_Shape, TopTools_MapOfShape, TopTools_ShapeMapHasher> BRepOffset_DataMapOfShapeMapOfShape;
+typedef NCollection_DataMap<TopoDS_Shape, BRepOffset_Offset, TopTools_ShapeMapHasher> BRepOffset_DataMapOfShapeOffset;
+typedef NCollection_List<BRepOffset_Interval>::Iterator BRepOffset_ListIteratorOfListOfInterval;
+typedef NCollection_List<BRepOffset_Interval> BRepOffset_ListOfInterval;
 /* end typedefs declaration */
 
 /*******************
@@ -270,6 +270,31 @@ opencascade::handle<Geom_Surface>
 ***************************/
 class BRepOffset_Analyse {
 	public:
+		/****************** BRepOffset_Analyse ******************/
+		%feature("compactdefaultargs") BRepOffset_Analyse;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BRepOffset_Analyse;
+		 BRepOffset_Analyse();
+
+		/****************** BRepOffset_Analyse ******************/
+		%feature("compactdefaultargs") BRepOffset_Analyse;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+Angle: float
+
+Returns
+-------
+None
+") BRepOffset_Analyse;
+		 BRepOffset_Analyse(const TopoDS_Shape & S, const Standard_Real Angle);
+
 		/****************** AddFaces ******************/
 		%feature("compactdefaultargs") AddFaces;
 		%feature("autodoc", "Add in <co> the faces of the shell containing <face> where all the connex edges are of type <side>.
@@ -318,31 +343,6 @@ Returns
 TopTools_ListOfShape
 ") Ancestors;
 		const TopTools_ListOfShape & Ancestors(const TopoDS_Shape & S);
-
-		/****************** BRepOffset_Analyse ******************/
-		%feature("compactdefaultargs") BRepOffset_Analyse;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BRepOffset_Analyse;
-		 BRepOffset_Analyse();
-
-		/****************** BRepOffset_Analyse ******************/
-		%feature("compactdefaultargs") BRepOffset_Analyse;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-Angle: float
-
-Returns
--------
-None
-") BRepOffset_Analyse;
-		 BRepOffset_Analyse(const TopoDS_Shape & S, const Standard_Real Angle);
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -606,6 +606,22 @@ None
 ***************************/
 class BRepOffset_Inter3d {
 	public:
+		/****************** BRepOffset_Inter3d ******************/
+		%feature("compactdefaultargs") BRepOffset_Inter3d;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+AsDes: BRepAlgo_AsDes
+Side: TopAbs_State
+Tol: float
+
+Returns
+-------
+None
+") BRepOffset_Inter3d;
+		 BRepOffset_Inter3d(const opencascade::handle<BRepAlgo_AsDes> & AsDes, const TopAbs_State Side, const Standard_Real Tol);
+
 		/****************** AddCommonEdges ******************/
 		%feature("compactdefaultargs") AddCommonEdges;
 		%feature("autodoc", "No available documentation.
@@ -629,22 +645,6 @@ Returns
 opencascade::handle<BRepAlgo_AsDes>
 ") AsDes;
 		opencascade::handle<BRepAlgo_AsDes> AsDes();
-
-		/****************** BRepOffset_Inter3d ******************/
-		%feature("compactdefaultargs") BRepOffset_Inter3d;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-AsDes: BRepAlgo_AsDes
-Side: TopAbs_State
-Tol: float
-
-Returns
--------
-None
-") BRepOffset_Inter3d;
-		 BRepOffset_Inter3d(const opencascade::handle<BRepAlgo_AsDes> & AsDes, const TopAbs_State Side, const Standard_Real Tol);
 
 		/****************** CompletInt ******************/
 		%feature("compactdefaultargs") CompletInt;
@@ -1005,20 +1005,6 @@ None
 ******************************/
 class BRepOffset_MakeOffset {
 	public:
-		/****************** AddFace ******************/
-		%feature("compactdefaultargs") AddFace;
-		%feature("autodoc", "Add closing faces, <f> has to be in the initial shape s.
-
-Parameters
-----------
-F: TopoDS_Face
-
-Returns
--------
-None
-") AddFace;
-		void AddFace(const TopoDS_Face & F);
-
 		/****************** BRepOffset_MakeOffset ******************/
 		%feature("compactdefaultargs") BRepOffset_MakeOffset;
 		%feature("autodoc", "No available documentation.
@@ -1056,6 +1042,20 @@ Returns
 None
 ") BRepOffset_MakeOffset;
 		 BRepOffset_MakeOffset(const TopoDS_Shape & S, const Standard_Real Offset, const Standard_Real Tol, const BRepOffset_Mode Mode = BRepOffset_Skin, const Standard_Boolean Intersection = Standard_False, const Standard_Boolean SelfInter = Standard_False, const GeomAbs_JoinType Join = GeomAbs_Arc, const Standard_Boolean Thickening = Standard_False, const Standard_Boolean RemoveIntEdges = Standard_False);
+
+		/****************** AddFace ******************/
+		%feature("compactdefaultargs") AddFace;
+		%feature("autodoc", "Add closing faces, <f> has to be in the initial shape s.
+
+Parameters
+----------
+F: TopoDS_Face
+
+Returns
+-------
+None
+") AddFace;
+		void AddFace(const TopoDS_Face & F);
 
 		/****************** CheckInputData ******************/
 		%feature("compactdefaultargs") CheckInputData;

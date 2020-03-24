@@ -404,6 +404,16 @@ opencascade::handle<PCDM_StorageDriver>
 **********************/
 class CDF_Directory : public Standard_Transient {
 	public:
+		/****************** CDF_Directory ******************/
+		%feature("compactdefaultargs") CDF_Directory;
+		%feature("autodoc", "Creates an empty directory.
+
+Returns
+-------
+None
+") CDF_Directory;
+		 CDF_Directory();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds a document into the directory.
@@ -417,16 +427,6 @@ Returns
 None
 ") Add;
 		void Add(const opencascade::handle<CDM_Document> & aDocument);
-
-		/****************** CDF_Directory ******************/
-		%feature("compactdefaultargs") CDF_Directory;
-		%feature("autodoc", "Creates an empty directory.
-
-Returns
--------
-None
-") CDF_Directory;
-		 CDF_Directory();
 
 		/****************** Contains ******************/
 		%feature("compactdefaultargs") Contains;
@@ -961,16 +961,6 @@ None
 ******************/
 class CDF_Store {
 	public:
-		/****************** AssociatedStatusText ******************/
-		%feature("compactdefaultargs") AssociatedStatusText;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-Standard_ExtString
-") AssociatedStatusText;
-		Standard_ExtString AssociatedStatusText();
-
 		/****************** CDF_Store ******************/
 		%feature("compactdefaultargs") CDF_Store;
 		%feature("autodoc", "Creates a store list from the document of the current selection.
@@ -984,6 +974,16 @@ Returns
 None
 ") CDF_Store;
 		 CDF_Store(const opencascade::handle<CDM_Document> & aDocument);
+
+		/****************** AssociatedStatusText ******************/
+		%feature("compactdefaultargs") AssociatedStatusText;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+Standard_ExtString
+") AssociatedStatusText;
+		Standard_ExtString AssociatedStatusText();
 
 		/****************** Comment ******************/
 		%feature("compactdefaultargs") Comment;
@@ -1436,6 +1436,16 @@ opencascade::handle<CDM_Document>
 ***********************/
 class CDF_FWOSDriver : public CDF_MetaDataDriver {
 	public:
+		/****************** CDF_FWOSDriver ******************/
+		%feature("compactdefaultargs") CDF_FWOSDriver;
+		%feature("autodoc", "Initializes the metadatadriver with its specific name.
+
+Returns
+-------
+None
+") CDF_FWOSDriver;
+		 CDF_FWOSDriver();
+
 		/****************** BuildFileName ******************/
 		%feature("compactdefaultargs") BuildFileName;
 		%feature("autodoc", "No available documentation.
@@ -1449,16 +1459,6 @@ Returns
 TCollection_ExtendedString
 ") BuildFileName;
 		TCollection_ExtendedString BuildFileName(const opencascade::handle<CDM_Document> & aDocument);
-
-		/****************** CDF_FWOSDriver ******************/
-		%feature("compactdefaultargs") CDF_FWOSDriver;
-		%feature("autodoc", "Initializes the metadatadriver with its specific name.
-
-Returns
--------
-None
-") CDF_FWOSDriver;
-		 CDF_FWOSDriver();
 
 		/****************** DefaultFolder ******************/
 		%feature("compactdefaultargs") DefaultFolder;

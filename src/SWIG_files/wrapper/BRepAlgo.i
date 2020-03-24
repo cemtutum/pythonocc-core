@@ -215,6 +215,16 @@ bool
 ***********************/
 class BRepAlgo_AsDes : public Standard_Transient {
 	public:
+		/****************** BRepAlgo_AsDes ******************/
+		%feature("compactdefaultargs") BRepAlgo_AsDes;
+		%feature("autodoc", "Creates an empty asdes.
+
+Returns
+-------
+None
+") BRepAlgo_AsDes;
+		 BRepAlgo_AsDes();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Stores <ss> as a futur subshape of <s>.
@@ -258,16 +268,6 @@ Returns
 TopTools_ListOfShape
 ") Ascendant;
 		const TopTools_ListOfShape & Ascendant(const TopoDS_Shape & S);
-
-		/****************** BRepAlgo_AsDes ******************/
-		%feature("compactdefaultargs") BRepAlgo_AsDes;
-		%feature("autodoc", "Creates an empty asdes.
-
-Returns
--------
-None
-") BRepAlgo_AsDes;
-		 BRepAlgo_AsDes();
 
 		/****************** ChangeDescendant ******************/
 		%feature("compactdefaultargs") ChangeDescendant;
@@ -494,6 +494,16 @@ TopoDS_Shape
 ********************************/
 class BRepAlgo_FaceRestrictor {
 	public:
+		/****************** BRepAlgo_FaceRestrictor ******************/
+		%feature("compactdefaultargs") BRepAlgo_FaceRestrictor;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BRepAlgo_FaceRestrictor;
+		 BRepAlgo_FaceRestrictor();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add the wire <w> to the set of wires. //! warning: the wires must be closed. //! the edges of <w> can be modified if they have not pcurves on the surface <s> of <f>. in this case if <proj> is false the first pcurve of the edge is positionned on <s>. if <proj> is true ,the pcurve on <s> is the projection of the curve 3d on <f>.
@@ -507,16 +517,6 @@ Returns
 None
 ") Add;
 		void Add(TopoDS_Wire & W);
-
-		/****************** BRepAlgo_FaceRestrictor ******************/
-		%feature("compactdefaultargs") BRepAlgo_FaceRestrictor;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BRepAlgo_FaceRestrictor;
-		 BRepAlgo_FaceRestrictor();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -610,6 +610,16 @@ None
 ***********************/
 class BRepAlgo_Image {
 	public:
+		/****************** BRepAlgo_Image ******************/
+		%feature("compactdefaultargs") BRepAlgo_Image;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BRepAlgo_Image;
+		 BRepAlgo_Image();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add <news> to the image of <olds>.
@@ -639,16 +649,6 @@ Returns
 None
 ") Add;
 		void Add(const TopoDS_Shape & OldS, const TopTools_ListOfShape & NewS);
-
-		/****************** BRepAlgo_Image ******************/
-		%feature("compactdefaultargs") BRepAlgo_Image;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BRepAlgo_Image;
-		 BRepAlgo_Image();
 
 		/****************** Bind ******************/
 		%feature("compactdefaultargs") Bind;
@@ -852,6 +852,16 @@ None
 **********************/
 class BRepAlgo_Loop {
 	public:
+		/****************** BRepAlgo_Loop ******************/
+		%feature("compactdefaultargs") BRepAlgo_Loop;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BRepAlgo_Loop;
+		 BRepAlgo_Loop();
+
 		/****************** AddConstEdge ******************/
 		%feature("compactdefaultargs") AddConstEdge;
 		%feature("autodoc", "Add <e> as const edge, e can be in the result.
@@ -894,16 +904,6 @@ Returns
 None
 ") AddEdge;
 		void AddEdge(TopoDS_Edge & E, const TopTools_ListOfShape & LV);
-
-		/****************** BRepAlgo_Loop ******************/
-		%feature("compactdefaultargs") BRepAlgo_Loop;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BRepAlgo_Loop;
-		 BRepAlgo_Loop();
 
 		/****************** CutEdge ******************/
 		%feature("compactdefaultargs") CutEdge;
@@ -1031,6 +1031,30 @@ None
 **********************************/
 class BRepAlgo_NormalProjection {
 	public:
+		/****************** BRepAlgo_NormalProjection ******************/
+		%feature("compactdefaultargs") BRepAlgo_NormalProjection;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BRepAlgo_NormalProjection;
+		 BRepAlgo_NormalProjection();
+
+		/****************** BRepAlgo_NormalProjection ******************/
+		%feature("compactdefaultargs") BRepAlgo_NormalProjection;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") BRepAlgo_NormalProjection;
+		 BRepAlgo_NormalProjection(const TopoDS_Shape & S);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add an edge or a wire to the list of shape to project.
@@ -1058,30 +1082,6 @@ Returns
 TopoDS_Shape
 ") Ancestor;
 		const TopoDS_Shape Ancestor(const TopoDS_Edge & E);
-
-		/****************** BRepAlgo_NormalProjection ******************/
-		%feature("compactdefaultargs") BRepAlgo_NormalProjection;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BRepAlgo_NormalProjection;
-		 BRepAlgo_NormalProjection();
-
-		/****************** BRepAlgo_NormalProjection ******************/
-		%feature("compactdefaultargs") BRepAlgo_NormalProjection;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") BRepAlgo_NormalProjection;
-		 BRepAlgo_NormalProjection(const TopoDS_Shape & S);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
@@ -1385,20 +1385,6 @@ None
 *************************/
 class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 	public:
-		/****************** Approximation ******************/
-		%feature("compactdefaultargs") Approximation;
-		%feature("autodoc", "Defines an option for computation of further intersections. this computation will be performed by the function build in this framework. by default, the underlying 3d geometry attached to each elementary edge of the result of a computed intersection is: - analytic where possible, provided the corresponding geometry corresponds to a type of analytic curve defined in the geom package; for example the intersection of a cylindrical shape with a plane gives an ellipse or a circle; - or elsewhere, given as a succession of points grouped together in a bspline curve of degree 1. if approx equals true, when further computations are performed in this framework with the function build, these edges will have an attached 3d geometry which is a bspline approximation of the computed set of points. note that as a result, approximations will be computed on edges built only on new intersection lines.
-
-Parameters
-----------
-B: bool
-
-Returns
--------
-None
-") Approximation;
-		void Approximation(const Standard_Boolean B);
-
 		/****************** BRepAlgo_Section ******************/
 		%feature("compactdefaultargs") BRepAlgo_Section;
 		%feature("autodoc", "No available documentation.
@@ -1483,6 +1469,20 @@ Returns
 None
 ") BRepAlgo_Section;
 		 BRepAlgo_Section(const opencascade::handle<Geom_Surface> & Sf1, const opencascade::handle<Geom_Surface> & Sf2, const Standard_Boolean PerformNow = Standard_True);
+
+		/****************** Approximation ******************/
+		%feature("compactdefaultargs") Approximation;
+		%feature("autodoc", "Defines an option for computation of further intersections. this computation will be performed by the function build in this framework. by default, the underlying 3d geometry attached to each elementary edge of the result of a computed intersection is: - analytic where possible, provided the corresponding geometry corresponds to a type of analytic curve defined in the geom package; for example the intersection of a cylindrical shape with a plane gives an ellipse or a circle; - or elsewhere, given as a succession of points grouped together in a bspline curve of degree 1. if approx equals true, when further computations are performed in this framework with the function build, these edges will have an attached 3d geometry which is a bspline approximation of the computed set of points. note that as a result, approximations will be computed on edges built only on new intersection lines.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
+") Approximation;
+		void Approximation(const Standard_Boolean B);
 
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;

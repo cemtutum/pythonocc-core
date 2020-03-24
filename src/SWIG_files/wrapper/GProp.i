@@ -155,6 +155,30 @@ None
 *********************/
 class GProp_GProps {
 	public:
+		/****************** GProp_GProps ******************/
+		%feature("compactdefaultargs") GProp_GProps;
+		%feature("autodoc", "The origin (0, 0, 0) of the absolute cartesian coordinate system is used to compute the global properties.
+
+Returns
+-------
+None
+") GProp_GProps;
+		 GProp_GProps();
+
+		/****************** GProp_GProps ******************/
+		%feature("compactdefaultargs") GProp_GProps;
+		%feature("autodoc", "The point systemlocation is used to compute the gobal properties of the system. for more accuracy it is better to define this point closed to the location of the system. for example it could be a point around the centre of mass of the system. this point is referred to as the reference point for this framework. for greater accuracy it is better for the reference point to be close to the location of the system. it can, for example, be a point near the center of mass of the system. at initialization, the framework is empty; i.e. it retains no dimensional information such as mass, or inertia. however, it is now able to bring together global properties of various other systems, whose global properties have already been computed using another framework. to do this, use the function add to define the components of the system. use it once per component of the system, and then use the interrogation functions available to access the computed values.
+
+Parameters
+----------
+SystemLocation: gp_Pnt
+
+Returns
+-------
+None
+") GProp_GProps;
+		 GProp_GProps(const gp_Pnt & SystemLocation);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Either - initializes the global properties retained by this framework from those retained by the framework item, or - brings together the global properties still retained by this framework with those retained by the framework item. the value density, which is 1.0 by default, is used as the density of the system analysed by item. sometimes the density will have already been given at the time of construction of the framework item. this may be the case for example, if item is a gprop_pgprops framework built to compute the global properties of a set of points ; or another gprop_gprops object which already retains composite global properties. in these cases the real density was perhaps already taken into account at the time of construction of item. note that this is not checked: if the density of parts of the system is taken into account two or more times, results of the computation will be false. notes : - the point relative to which the inertia of item is computed (i.e. the reference point of item) may be different from the reference point in this framework. huygens' theorem is applied automatically to transfer inertia values to the reference point in this framework. - the function add is used once per component of the system. after that, you use the interrogation functions available to access values computed for the system. - the system whose global properties are already brought together by this framework is referred to as the current system. however, the current system is not retained by this framework, which maintains only its global properties. exceptions standard_domainerror if density is less than or equal to gp::resolution().
@@ -180,30 +204,6 @@ Returns
 gp_Pnt
 ") CentreOfMass;
 		gp_Pnt CentreOfMass();
-
-		/****************** GProp_GProps ******************/
-		%feature("compactdefaultargs") GProp_GProps;
-		%feature("autodoc", "The origin (0, 0, 0) of the absolute cartesian coordinate system is used to compute the global properties.
-
-Returns
--------
-None
-") GProp_GProps;
-		 GProp_GProps();
-
-		/****************** GProp_GProps ******************/
-		%feature("compactdefaultargs") GProp_GProps;
-		%feature("autodoc", "The point systemlocation is used to compute the gobal properties of the system. for more accuracy it is better to define this point closed to the location of the system. for example it could be a point around the centre of mass of the system. this point is referred to as the reference point for this framework. for greater accuracy it is better for the reference point to be close to the location of the system. it can, for example, be a point near the center of mass of the system. at initialization, the framework is empty; i.e. it retains no dimensional information such as mass, or inertia. however, it is now able to bring together global properties of various other systems, whose global properties have already been computed using another framework. to do this, use the function add to define the components of the system. use it once per component of the system, and then use the interrogation functions available to access the computed values.
-
-Parameters
-----------
-SystemLocation: gp_Pnt
-
-Returns
--------
-None
-") GProp_GProps;
-		 GProp_GProps(const gp_Pnt & SystemLocation);
 
 		/****************** Mass ******************/
 		%feature("compactdefaultargs") Mass;
@@ -293,6 +293,21 @@ None
 ************************/
 class GProp_PEquation {
 	public:
+		/****************** GProp_PEquation ******************/
+		%feature("compactdefaultargs") GProp_PEquation;
+		%feature("autodoc", "Constructs a framework to analyze the collection of points pnts and computes: - the mean point if the points in question are considered to be coincident within the precision tol, or - the mean line if they are considered to be collinear within the precision tol, or - the mean plane if they are considered to be coplanar within the precision tol, or - the minimal box which contains all the points. use : - the functions ispoint, islinear, isplanar and isspace to find the result of the analysis, and - the function point, line, plane or box to access the computed result.
+
+Parameters
+----------
+Pnts: TColgp_Array1OfPnt
+Tol: float
+
+Returns
+-------
+None
+") GProp_PEquation;
+		 GProp_PEquation(const TColgp_Array1OfPnt & Pnts, const Standard_Real Tol);
+
 		/****************** Box ******************/
 		%feature("compactdefaultargs") Box;
 		%feature("autodoc", "Returns the definition of the smallest box which contains all the points analyzed by this framework if, according to the given precision value, the points are considered to be neither coincident, nor collinear and nor coplanar. this box is centered on the barycenter p of the collection of points. its sides are parallel to the three vectors v1, v2 and v3, the length of which is the length of the box in the corresponding direction. note: vectors v1, v2 and v3 are parallel to the three axes of principal inertia of the system composed of the collection of points where each point is of equal mass. exceptions standard_nosuchobject if, according to the given precision, the points analyzed by this framework are considered to be coincident, collinear or coplanar.
@@ -309,21 +324,6 @@ Returns
 None
 ") Box;
 		void Box(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
-
-		/****************** GProp_PEquation ******************/
-		%feature("compactdefaultargs") GProp_PEquation;
-		%feature("autodoc", "Constructs a framework to analyze the collection of points pnts and computes: - the mean point if the points in question are considered to be coincident within the precision tol, or - the mean line if they are considered to be collinear within the precision tol, or - the mean plane if they are considered to be coplanar within the precision tol, or - the minimal box which contains all the points. use : - the functions ispoint, islinear, isplanar and isspace to find the result of the analysis, and - the function point, line, plane or box to access the computed result.
-
-Parameters
-----------
-Pnts: TColgp_Array1OfPnt
-Tol: float
-
-Returns
--------
-None
-") GProp_PEquation;
-		 GProp_PEquation(const TColgp_Array1OfPnt & Pnts, const Standard_Real Tol);
 
 		/****************** IsLinear ******************/
 		%feature("compactdefaultargs") IsLinear;
@@ -409,16 +409,6 @@ gp_Pnt
 *****************************/
 class GProp_PrincipalProps {
 	public:
-		/****************** FirstAxisOfInertia ******************/
-		%feature("compactdefaultargs") FirstAxisOfInertia;
-		%feature("autodoc", "Returns the first axis of inertia. //! if the system has a point of symmetry there is an infinity of solutions. it is not possible to defines the three axis of inertia.
-
-Returns
--------
-gp_Vec
-") FirstAxisOfInertia;
-		const gp_Vec FirstAxisOfInertia();
-
 		/****************** GProp_PrincipalProps ******************/
 		%feature("compactdefaultargs") GProp_PrincipalProps;
 		%feature("autodoc", "Creates an undefined principalprops.
@@ -428,6 +418,16 @@ Returns
 None
 ") GProp_PrincipalProps;
 		 GProp_PrincipalProps();
+
+		/****************** FirstAxisOfInertia ******************/
+		%feature("compactdefaultargs") FirstAxisOfInertia;
+		%feature("autodoc", "Returns the first axis of inertia. //! if the system has a point of symmetry there is an infinity of solutions. it is not possible to defines the three axis of inertia.
+
+Returns
+-------
+gp_Vec
+") FirstAxisOfInertia;
+		const gp_Vec FirstAxisOfInertia();
 
 		/****************** HasSymmetryAxis ******************/
 		%feature("compactdefaultargs") HasSymmetryAxis;
@@ -662,6 +662,74 @@ None
 **********************/
 class GProp_PGProps : public GProp_GProps {
 	public:
+		/****************** GProp_PGProps ******************/
+		%feature("compactdefaultargs") GProp_PGProps;
+		%feature("autodoc", "Initializes a framework to compute global properties on a set of points. the point relative to which the inertia of the system is computed will be the origin (0, 0, 0) of the absolute cartesian coordinate system. at initialization, the framework is empty, i.e. it retains no dimensional information such as mass and inertia. it is, however, now able to keep global properties of a set of points while new points are added using the addpoint function. the set of points whose global properties are brought together by this framework will then be referred to as the current system. the current system is, however, not kept by this framework, which only keeps that system's global properties. note that the current system may be more complex than a set of points.
+
+Returns
+-------
+None
+") GProp_PGProps;
+		 GProp_PGProps();
+
+		/****************** GProp_PGProps ******************/
+		%feature("compactdefaultargs") GProp_PGProps;
+		%feature("autodoc", "Computes the global properties of the system of points pnts. the density of the points are defaulted to all being 1.
+
+Parameters
+----------
+Pnts: TColgp_Array1OfPnt
+
+Returns
+-------
+None
+") GProp_PGProps;
+		 GProp_PGProps(const TColgp_Array1OfPnt & Pnts);
+
+		/****************** GProp_PGProps ******************/
+		%feature("compactdefaultargs") GProp_PGProps;
+		%feature("autodoc", "Computes the global properties of the system of points pnts. the density of the points are defaulted to all being 1.
+
+Parameters
+----------
+Pnts: TColgp_Array2OfPnt
+
+Returns
+-------
+None
+") GProp_PGProps;
+		 GProp_PGProps(const TColgp_Array2OfPnt & Pnts);
+
+		/****************** GProp_PGProps ******************/
+		%feature("compactdefaultargs") GProp_PGProps;
+		%feature("autodoc", "Computes the global properties of the system of points pnts. a density is associated with each point. //! raises if a density is lower or equal to resolution from package gp. //! raises if the length of pnts and the length of density is not the same.
+
+Parameters
+----------
+Pnts: TColgp_Array1OfPnt
+Density: TColStd_Array1OfReal
+
+Returns
+-------
+None
+") GProp_PGProps;
+		 GProp_PGProps(const TColgp_Array1OfPnt & Pnts, const TColStd_Array1OfReal & Density);
+
+		/****************** GProp_PGProps ******************/
+		%feature("compactdefaultargs") GProp_PGProps;
+		%feature("autodoc", "Computes the global properties of the system of points pnts. a density is associated with each point. //! raised if a density is lower or equal to resolution from package gp. //! raised if the length of pnts and the length of density is not the same.
+
+Parameters
+----------
+Pnts: TColgp_Array2OfPnt
+Density: TColStd_Array2OfReal
+
+Returns
+-------
+None
+") GProp_PGProps;
+		 GProp_PGProps(const TColgp_Array2OfPnt & Pnts, const TColStd_Array2OfReal & Density);
+
 		/****************** AddPoint ******************/
 		%feature("compactdefaultargs") AddPoint;
 		%feature("autodoc", "Brings together the global properties already retained by this framework with those induced by the point pnt. pnt may be the first point of the current system. a point mass is attached to the point pnt, it is either equal to 1. or to density.
@@ -752,74 +820,6 @@ Returns
 None
 ") Barycentre;
 		static void Barycentre(const TColgp_Array2OfPnt & Pnts, const TColStd_Array2OfReal & Density, Standard_Real &OutValue, gp_Pnt & G);
-
-		/****************** GProp_PGProps ******************/
-		%feature("compactdefaultargs") GProp_PGProps;
-		%feature("autodoc", "Initializes a framework to compute global properties on a set of points. the point relative to which the inertia of the system is computed will be the origin (0, 0, 0) of the absolute cartesian coordinate system. at initialization, the framework is empty, i.e. it retains no dimensional information such as mass and inertia. it is, however, now able to keep global properties of a set of points while new points are added using the addpoint function. the set of points whose global properties are brought together by this framework will then be referred to as the current system. the current system is, however, not kept by this framework, which only keeps that system's global properties. note that the current system may be more complex than a set of points.
-
-Returns
--------
-None
-") GProp_PGProps;
-		 GProp_PGProps();
-
-		/****************** GProp_PGProps ******************/
-		%feature("compactdefaultargs") GProp_PGProps;
-		%feature("autodoc", "Computes the global properties of the system of points pnts. the density of the points are defaulted to all being 1.
-
-Parameters
-----------
-Pnts: TColgp_Array1OfPnt
-
-Returns
--------
-None
-") GProp_PGProps;
-		 GProp_PGProps(const TColgp_Array1OfPnt & Pnts);
-
-		/****************** GProp_PGProps ******************/
-		%feature("compactdefaultargs") GProp_PGProps;
-		%feature("autodoc", "Computes the global properties of the system of points pnts. the density of the points are defaulted to all being 1.
-
-Parameters
-----------
-Pnts: TColgp_Array2OfPnt
-
-Returns
--------
-None
-") GProp_PGProps;
-		 GProp_PGProps(const TColgp_Array2OfPnt & Pnts);
-
-		/****************** GProp_PGProps ******************/
-		%feature("compactdefaultargs") GProp_PGProps;
-		%feature("autodoc", "Computes the global properties of the system of points pnts. a density is associated with each point. //! raises if a density is lower or equal to resolution from package gp. //! raises if the length of pnts and the length of density is not the same.
-
-Parameters
-----------
-Pnts: TColgp_Array1OfPnt
-Density: TColStd_Array1OfReal
-
-Returns
--------
-None
-") GProp_PGProps;
-		 GProp_PGProps(const TColgp_Array1OfPnt & Pnts, const TColStd_Array1OfReal & Density);
-
-		/****************** GProp_PGProps ******************/
-		%feature("compactdefaultargs") GProp_PGProps;
-		%feature("autodoc", "Computes the global properties of the system of points pnts. a density is associated with each point. //! raised if a density is lower or equal to resolution from package gp. //! raised if the length of pnts and the length of density is not the same.
-
-Parameters
-----------
-Pnts: TColgp_Array2OfPnt
-Density: TColStd_Array2OfReal
-
-Returns
--------
-None
-") GProp_PGProps;
-		 GProp_PGProps(const TColgp_Array2OfPnt & Pnts, const TColStd_Array2OfReal & Density);
 
 };
 

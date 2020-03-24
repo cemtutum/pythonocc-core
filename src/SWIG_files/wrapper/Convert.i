@@ -96,9 +96,9 @@ class Convert_ParameterisationType:
 /* end templates declaration */
 
 /* typedefs */
+typedef void Convert_CosAndSinEvalFunction ( Standard_Real, const Standard_Integer, const TColgp_Array1OfPnt2d &, const TColStd_Array1OfReal &, const TColStd_Array1OfInteger *, Standard_Real Result [ 2 ] );
 typedef NCollection_Sequence<opencascade::handle<TColgp_HArray1OfPnt>> Convert_SequenceOfArray1OfPoles;
 typedef TColgp_SequenceOfArray1OfPnt2d Convert_SequenceOfArray1OfPoles2d;
-typedef void Convert_CosAndSinEvalFunction ( Standard_Real, const Standard_Integer, const TColgp_Array1OfPnt2d &, const TColStd_Array1OfReal &, const TColStd_Array1OfInteger *, Standard_Real Result [ 2 ] );
 /* end typedefs declaration */
 
 /***************************************************
@@ -106,20 +106,6 @@ typedef void Convert_CosAndSinEvalFunction ( Standard_Real, const Standard_Integ
 ***************************************************/
 class Convert_CompBezierCurves2dToBSplineCurve2d {
 	public:
-		/****************** AddCurve ******************/
-		%feature("compactdefaultargs") AddCurve;
-		%feature("autodoc", "Adds the bezier curve defined by the table of poles poles, to the sequence (still contained in this framework) of adjacent bezier curves to be converted into a bspline curve. only polynomial (i.e. non-rational) bezier curves are converted using this framework. if this is not the first call to the function (i.e. if this framework still contains data in its sequence of bezier curves), the degree of continuity of the bspline curve will be increased at the time of computation at the first point of the added bezier curve (i.e. the first point of the poles table). this will be the case if the tangent vector of the curve at this point is parallel to the tangent vector at the end point of the preceding bezier curve in the sequence of bezier curves still contained in this framework. an angular tolerance given at the time of construction of this framework, will be used to check the parallelism of the two tangent vectors. this checking procedure, and all the relative computations will be performed by the function perform. when the sequence of adjacent bezier curves is complete, use the following functions: - perform to compute the data needed to build the bspline curve, - and the available consultation functions to access the computed data. this data may be used to construct the bspline curve. warning the sequence of bezier curves treated by this framework is automatically initialized with the first bezier curve when the function is first called. during subsequent use of this function, ensure that the first point of the added bezier curve (i.e. the first point of the poles table) is coincident with the last point of the sequence (i.e. the last point of the preceding bezier curve in the sequence) of bezier curves still contained in this framework. an error may occur at the time of computation if this condition is not satisfied. particular care must be taken with respect to the above, as this condition is not checked either when defining the sequence of bezier curves or at the time of computation.
-
-Parameters
-----------
-Poles: TColgp_Array1OfPnt2d
-
-Returns
--------
-None
-") AddCurve;
-		void AddCurve(const TColgp_Array1OfPnt2d & Poles);
-
 		/****************** Convert_CompBezierCurves2dToBSplineCurve2d ******************/
 		%feature("compactdefaultargs") Convert_CompBezierCurves2dToBSplineCurve2d;
 		%feature("autodoc", "Constructs a framework for converting a sequence of adjacent non-rational bezier curves into a bspline curve. knots will be created on the computed bspline curve at each junction point of two consecutive bezier curves. the degree of continuity of the bspline curve will be increased at the junction point of two consecutive bezier curves if their tangent vectors at this point are parallel. angulartolerance (given in radians, and defaulted to 1.0 e-4) will be used to check the parallelism of the two tangent vectors. use the following functions: - addcurve to define in sequence the adjacent bezier curves to be converted, - perform to compute the data needed to build the bspline curve, - and the available consultation functions to access the computed data. this data may be used to construct the bspline curve.
@@ -134,6 +120,20 @@ Returns
 None
 ") Convert_CompBezierCurves2dToBSplineCurve2d;
 		 Convert_CompBezierCurves2dToBSplineCurve2d(const Standard_Real AngularTolerance = 1.0e-4);
+
+		/****************** AddCurve ******************/
+		%feature("compactdefaultargs") AddCurve;
+		%feature("autodoc", "Adds the bezier curve defined by the table of poles poles, to the sequence (still contained in this framework) of adjacent bezier curves to be converted into a bspline curve. only polynomial (i.e. non-rational) bezier curves are converted using this framework. if this is not the first call to the function (i.e. if this framework still contains data in its sequence of bezier curves), the degree of continuity of the bspline curve will be increased at the time of computation at the first point of the added bezier curve (i.e. the first point of the poles table). this will be the case if the tangent vector of the curve at this point is parallel to the tangent vector at the end point of the preceding bezier curve in the sequence of bezier curves still contained in this framework. an angular tolerance given at the time of construction of this framework, will be used to check the parallelism of the two tangent vectors. this checking procedure, and all the relative computations will be performed by the function perform. when the sequence of adjacent bezier curves is complete, use the following functions: - perform to compute the data needed to build the bspline curve, - and the available consultation functions to access the computed data. this data may be used to construct the bspline curve. warning the sequence of bezier curves treated by this framework is automatically initialized with the first bezier curve when the function is first called. during subsequent use of this function, ensure that the first point of the added bezier curve (i.e. the first point of the poles table) is coincident with the last point of the sequence (i.e. the last point of the preceding bezier curve in the sequence) of bezier curves still contained in this framework. an error may occur at the time of computation if this condition is not satisfied. particular care must be taken with respect to the above, as this condition is not checked either when defining the sequence of bezier curves or at the time of computation.
+
+Parameters
+----------
+Poles: TColgp_Array1OfPnt2d
+
+Returns
+-------
+None
+") AddCurve;
+		void AddCurve(const TColgp_Array1OfPnt2d & Poles);
 
 		/****************** Degree ******************/
 		%feature("compactdefaultargs") Degree;
@@ -218,20 +218,6 @@ None
 ***********************************************/
 class Convert_CompBezierCurvesToBSplineCurve {
 	public:
-		/****************** AddCurve ******************/
-		%feature("compactdefaultargs") AddCurve;
-		%feature("autodoc", "Adds the bezier curve defined by the table of poles poles, to the sequence (still contained in this framework) of adjacent bezier curves to be converted into a bspline curve. only polynomial (i.e. non-rational) bezier curves are converted using this framework. if this is not the first call to the function (i.e. if this framework still contains data in its bezier curve sequence), the degree of continuity of the bspline curve will be increased at the time of computation at the first point of the added bezier curve (i.e. the first point of the poles table). this will be the case if the tangent vector of the curve at this point is parallel to the tangent vector at the end point of the preceding bezier curve in the bezier curve sequence still contained in this framework. an angular tolerance given at the time of construction of this framework will be used to check the parallelism of the two tangent vectors. this checking procedure and all related computations will be performed by the perform function. when the adjacent bezier curve sequence is complete, use the following functions: - perform to compute the data needed to build the bspline curve, - and the available consultation functions to access the computed data. this data may be used to construct the bspline curve. warning the bezier curve sequence treated by this framework is automatically initialized with the first bezier curve when the function is first called. during subsequent use of this function, ensure that the first point of the added bezier curve (i.e. the first point of the poles table) is coincident with the last point of the bezier curve sequence (i.e. the last point of the preceding bezier curve in the sequence) still contained in this framework. an error may occur at the time of computation if this condition is not satisfied. particular care must be taken with respect to the above, as this condition is not checked either when defining the bezier curve sequence or at the time of computation.
-
-Parameters
-----------
-Poles: TColgp_Array1OfPnt
-
-Returns
--------
-None
-") AddCurve;
-		void AddCurve(const TColgp_Array1OfPnt & Poles);
-
 		/****************** Convert_CompBezierCurvesToBSplineCurve ******************/
 		%feature("compactdefaultargs") Convert_CompBezierCurvesToBSplineCurve;
 		%feature("autodoc", "Constructs a framework for converting a sequence of adjacent non-rational bezier curves into a bspline curve. knots will be created on the computed bspline curve at each junction point of two consecutive bezier curves. the degree of continuity of the bspline curve will be increased at the junction point of two consecutive bezier curves if their tangent vectors at this point are parallel. angulartolerance (given in radians, and defaulted to 1.0 e-4) will be used to check the parallelism of the two tangent vectors. use the following functions: - addcurve to define in sequence the adjacent bezier curves to be converted, - perform to compute the data needed to build the bspline curve, - and the available consultation functions to access the computed data. this data may be used to construct the bspline curve.
@@ -246,6 +232,20 @@ Returns
 None
 ") Convert_CompBezierCurvesToBSplineCurve;
 		 Convert_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance = 1.0e-4);
+
+		/****************** AddCurve ******************/
+		%feature("compactdefaultargs") AddCurve;
+		%feature("autodoc", "Adds the bezier curve defined by the table of poles poles, to the sequence (still contained in this framework) of adjacent bezier curves to be converted into a bspline curve. only polynomial (i.e. non-rational) bezier curves are converted using this framework. if this is not the first call to the function (i.e. if this framework still contains data in its bezier curve sequence), the degree of continuity of the bspline curve will be increased at the time of computation at the first point of the added bezier curve (i.e. the first point of the poles table). this will be the case if the tangent vector of the curve at this point is parallel to the tangent vector at the end point of the preceding bezier curve in the bezier curve sequence still contained in this framework. an angular tolerance given at the time of construction of this framework will be used to check the parallelism of the two tangent vectors. this checking procedure and all related computations will be performed by the perform function. when the adjacent bezier curve sequence is complete, use the following functions: - perform to compute the data needed to build the bspline curve, - and the available consultation functions to access the computed data. this data may be used to construct the bspline curve. warning the bezier curve sequence treated by this framework is automatically initialized with the first bezier curve when the function is first called. during subsequent use of this function, ensure that the first point of the added bezier curve (i.e. the first point of the poles table) is coincident with the last point of the bezier curve sequence (i.e. the last point of the preceding bezier curve in the sequence) still contained in this framework. an error may occur at the time of computation if this condition is not satisfied. particular care must be taken with respect to the above, as this condition is not checked either when defining the bezier curve sequence or at the time of computation.
+
+Parameters
+----------
+Poles: TColgp_Array1OfPnt
+
+Returns
+-------
+None
+") AddCurve;
+		void AddCurve(const TColgp_Array1OfPnt & Poles);
 
 		/****************** Degree ******************/
 		%feature("compactdefaultargs") Degree;

@@ -94,13 +94,13 @@ class IntAna_ResultType:
 /* end handles declaration */
 
 /* templates */
-%template(IntAna_ListOfCurve) NCollection_List<IntAna_Curve>;
 %template(IntAna_ListIteratorOfListOfCurve) NCollection_TListIterator<IntAna_Curve>;
+%template(IntAna_ListOfCurve) NCollection_List<IntAna_Curve>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List<IntAna_Curve> IntAna_ListOfCurve;
 typedef NCollection_List<IntAna_Curve>::Iterator IntAna_ListIteratorOfListOfCurve;
+typedef NCollection_List<IntAna_Curve> IntAna_ListOfCurve;
 /* end typedefs declaration */
 
 /*********************
@@ -108,6 +108,16 @@ typedef NCollection_List<IntAna_Curve>::Iterator IntAna_ListIteratorOfListOfCurv
 *********************/
 class IntAna_Curve {
 	public:
+		/****************** IntAna_Curve ******************/
+		%feature("compactdefaultargs") IntAna_Curve;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") IntAna_Curve;
+		 IntAna_Curve();
+
 		/****************** D1u ******************/
 		%feature("compactdefaultargs") D1u;
 		%feature("autodoc", "Returns the point and the first derivative at parameter theta on the curve.
@@ -153,16 +163,6 @@ Returns
 None
 ") FindParameter;
 		void FindParameter(const gp_Pnt & P, TColStd_ListOfReal & theParams);
-
-		/****************** IntAna_Curve ******************/
-		%feature("compactdefaultargs") IntAna_Curve;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") IntAna_Curve;
-		 IntAna_Curve();
 
 		/****************** IsConstant ******************/
 		%feature("compactdefaultargs") IsConstant;
@@ -951,6 +951,48 @@ gp_Pnt
 ***************************/
 class IntAna_IntQuadQuad {
 	public:
+		/****************** IntAna_IntQuadQuad ******************/
+		%feature("compactdefaultargs") IntAna_IntQuadQuad;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") IntAna_IntQuadQuad;
+		 IntAna_IntQuadQuad();
+
+		/****************** IntAna_IntQuadQuad ******************/
+		%feature("compactdefaultargs") IntAna_IntQuadQuad;
+		%feature("autodoc", "Creates the intersection between a cylinder and a quadric . tol est a definir plus precisemment.
+
+Parameters
+----------
+C: gp_Cylinder
+Q: IntAna_Quadric
+Tol: float
+
+Returns
+-------
+None
+") IntAna_IntQuadQuad;
+		 IntAna_IntQuadQuad(const gp_Cylinder & C, const IntAna_Quadric & Q, const Standard_Real Tol);
+
+		/****************** IntAna_IntQuadQuad ******************/
+		%feature("compactdefaultargs") IntAna_IntQuadQuad;
+		%feature("autodoc", "Creates the intersection between a cone and a quadric. tol est a definir plus precisemment.
+
+Parameters
+----------
+C: gp_Cone
+Q: IntAna_Quadric
+Tol: float
+
+Returns
+-------
+None
+") IntAna_IntQuadQuad;
+		 IntAna_IntQuadQuad(const gp_Cone & C, const IntAna_Quadric & Q, const Standard_Real Tol);
+
 		/****************** Curve ******************/
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "Returns the curve of range n.
@@ -1002,48 +1044,6 @@ Returns
 bool
 ") IdenticalElements;
 		Standard_Boolean IdenticalElements();
-
-		/****************** IntAna_IntQuadQuad ******************/
-		%feature("compactdefaultargs") IntAna_IntQuadQuad;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") IntAna_IntQuadQuad;
-		 IntAna_IntQuadQuad();
-
-		/****************** IntAna_IntQuadQuad ******************/
-		%feature("compactdefaultargs") IntAna_IntQuadQuad;
-		%feature("autodoc", "Creates the intersection between a cylinder and a quadric . tol est a definir plus precisemment.
-
-Parameters
-----------
-C: gp_Cylinder
-Q: IntAna_Quadric
-Tol: float
-
-Returns
--------
-None
-") IntAna_IntQuadQuad;
-		 IntAna_IntQuadQuad(const gp_Cylinder & C, const IntAna_Quadric & Q, const Standard_Real Tol);
-
-		/****************** IntAna_IntQuadQuad ******************/
-		%feature("compactdefaultargs") IntAna_IntQuadQuad;
-		%feature("autodoc", "Creates the intersection between a cone and a quadric. tol est a definir plus precisemment.
-
-Parameters
-----------
-C: gp_Cone
-Q: IntAna_Quadric
-Tol: float
-
-Returns
--------
-None
-") IntAna_IntQuadQuad;
-		 IntAna_IntQuadQuad(const gp_Cone & C, const IntAna_Quadric & Q, const Standard_Real Tol);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -1181,58 +1181,6 @@ int
 ***************************/
 class IntAna_QuadQuadGeo {
 	public:
-		/****************** Circle ******************/
-		%feature("compactdefaultargs") Circle;
-		%feature("autodoc", "Returns the circle solution of range num.
-
-Parameters
-----------
-Num: int
-
-Returns
--------
-gp_Circ
-") Circle;
-		gp_Circ Circle(const Standard_Integer Num);
-
-		/****************** Ellipse ******************/
-		%feature("compactdefaultargs") Ellipse;
-		%feature("autodoc", "Returns the ellipse solution of range num.
-
-Parameters
-----------
-Num: int
-
-Returns
--------
-gp_Elips
-") Ellipse;
-		gp_Elips Ellipse(const Standard_Integer Num);
-
-		/****************** HasCommonGen ******************/
-		%feature("compactdefaultargs") HasCommonGen;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-bool
-") HasCommonGen;
-		Standard_Boolean HasCommonGen();
-
-		/****************** Hyperbola ******************/
-		%feature("compactdefaultargs") Hyperbola;
-		%feature("autodoc", "Returns the hyperbola solution of range num.
-
-Parameters
-----------
-Num: int
-
-Returns
--------
-gp_Hypr
-") Hyperbola;
-		gp_Hypr Hyperbola(const Standard_Integer Num);
-
 		/****************** IntAna_QuadQuadGeo ******************/
 		%feature("compactdefaultargs") IntAna_QuadQuadGeo;
 		%feature("autodoc", "Empty constructor.
@@ -1486,6 +1434,58 @@ Returns
 None
 ") IntAna_QuadQuadGeo;
 		 IntAna_QuadQuadGeo(const gp_Torus & Tor1, const gp_Torus & Tor2, const Standard_Real Tol);
+
+		/****************** Circle ******************/
+		%feature("compactdefaultargs") Circle;
+		%feature("autodoc", "Returns the circle solution of range num.
+
+Parameters
+----------
+Num: int
+
+Returns
+-------
+gp_Circ
+") Circle;
+		gp_Circ Circle(const Standard_Integer Num);
+
+		/****************** Ellipse ******************/
+		%feature("compactdefaultargs") Ellipse;
+		%feature("autodoc", "Returns the ellipse solution of range num.
+
+Parameters
+----------
+Num: int
+
+Returns
+-------
+gp_Elips
+") Ellipse;
+		gp_Elips Ellipse(const Standard_Integer Num);
+
+		/****************** HasCommonGen ******************/
+		%feature("compactdefaultargs") HasCommonGen;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
+") HasCommonGen;
+		Standard_Boolean HasCommonGen();
+
+		/****************** Hyperbola ******************/
+		%feature("compactdefaultargs") Hyperbola;
+		%feature("autodoc", "Returns the hyperbola solution of range num.
+
+Parameters
+----------
+Num: int
+
+Returns
+-------
+gp_Hypr
+") Hyperbola;
+		gp_Hypr Hyperbola(const Standard_Integer Num);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -1827,29 +1827,6 @@ IntAna_ResultType
 ***********************/
 class IntAna_Quadric {
 	public:
-		/****************** Coefficients ******************/
-		%feature("compactdefaultargs") Coefficients;
-		%feature("autodoc", "Returns the coefficients of the polynomial equation which define the quadric: xcxx x**2 + xcyy y**2 + xczz z**2 + 2 ( xcxy x y + xcxz x z + xcyz y z ) + 2 ( xcx x + xcy y + xcz z ) + xccte.
-
-Parameters
-----------
-xCXX: float
-xCYY: float
-xCZZ: float
-xCXY: float
-xCXZ: float
-xCYZ: float
-xCX: float
-xCY: float
-xCZ: float
-xCCte: float
-
-Returns
--------
-None
-") Coefficients;
-		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
 		/****************** IntAna_Quadric ******************/
 		%feature("compactdefaultargs") IntAna_Quadric;
 		%feature("autodoc", "Empty constructor.
@@ -1915,6 +1892,29 @@ Returns
 None
 ") IntAna_Quadric;
 		 IntAna_Quadric(const gp_Cone & Cone);
+
+		/****************** Coefficients ******************/
+		%feature("compactdefaultargs") Coefficients;
+		%feature("autodoc", "Returns the coefficients of the polynomial equation which define the quadric: xcxx x**2 + xcyy y**2 + xczz z**2 + 2 ( xcxy x y + xcxz x z + xcyz y z ) + 2 ( xcx x + xcy y + xcz z ) + xccte.
+
+Parameters
+----------
+xCXX: float
+xCYY: float
+xCZZ: float
+xCXY: float
+xCXZ: float
+xCYZ: float
+xCX: float
+xCY: float
+xCZ: float
+xCCte: float
+
+Returns
+-------
+None
+") Coefficients;
+		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 		/****************** NewCoefficients ******************/
 		%feature("compactdefaultargs") NewCoefficients;

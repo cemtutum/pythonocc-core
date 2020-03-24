@@ -714,16 +714,6 @@ float
 **************************************/
 class GCPnts_QuasiUniformDeflection {
 	public:
-		/****************** Deflection ******************/
-		%feature("compactdefaultargs") Deflection;
-		%feature("autodoc", "Returns the deflection between the curve and the polygon resulting from the points of the distribution computed by this algorithm. this is the value given to the algorithm at the time of construction (or initialization). exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
-
-Returns
--------
-float
-") Deflection;
-		Standard_Real Deflection();
-
 		/****************** GCPnts_QuasiUniformDeflection ******************/
 		%feature("compactdefaultargs") GCPnts_QuasiUniformDeflection;
 		%feature("autodoc", "Constructs an empty algorithm. to define the problem to be solved, use the function initialize.
@@ -805,6 +795,16 @@ Returns
 None
 ") GCPnts_QuasiUniformDeflection;
 		 GCPnts_QuasiUniformDeflection(const Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const GeomAbs_Shape Continuity = GeomAbs_C1);
+
+		/****************** Deflection ******************/
+		%feature("compactdefaultargs") Deflection;
+		%feature("autodoc", "Returns the deflection between the curve and the polygon resulting from the points of the distribution computed by this algorithm. this is the value given to the algorithm at the time of construction (or initialization). exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
+
+Returns
+-------
+float
+") Deflection;
+		Standard_Real Deflection();
 
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
@@ -940,40 +940,6 @@ gp_Pnt
 ************************************/
 class GCPnts_TangentialDeflection {
 	public:
-		/****************** AddPoint ******************/
-		%feature("compactdefaultargs") AddPoint;
-		%feature("autodoc", "Add point to already calculated points (or replace existing) returns index of new added point or founded with parametric tolerance (replaced if theisreplace is true).
-
-Parameters
-----------
-thePnt: gp_Pnt
-theParam: float
-theIsReplace: bool,optional
-	default value is Standard_True
-
-Returns
--------
-int
-") AddPoint;
-		Standard_Integer AddPoint(const gp_Pnt & thePnt, const Standard_Real theParam, const Standard_Boolean theIsReplace = Standard_True);
-
-		/****************** ArcAngularStep ******************/
-		%feature("compactdefaultargs") ArcAngularStep;
-		%feature("autodoc", "Computes angular step for the arc using the given parameters.
-
-Parameters
-----------
-theRadius: float
-theLinearDeflection: float
-theAngularDeflection: float
-theMinLength: float
-
-Returns
--------
-float
-") ArcAngularStep;
-		static Standard_Real ArcAngularStep(const Standard_Real theRadius, const Standard_Real theLinearDeflection, const Standard_Real theAngularDeflection, const Standard_Real theMinLength);
-
 		/****************** GCPnts_TangentialDeflection ******************/
 		%feature("compactdefaultargs") GCPnts_TangentialDeflection;
 		%feature("autodoc", "No available documentation.
@@ -1075,6 +1041,40 @@ Returns
 None
 ") GCPnts_TangentialDeflection;
 		 GCPnts_TangentialDeflection(const Adaptor2d_Curve2d & C, const Standard_Real FirstParameter, const Standard_Real LastParameter, const Standard_Real AngularDeflection, const Standard_Real CurvatureDeflection, const Standard_Integer MinimumOfPoints = 2, const Standard_Real UTol = 1.0e-9, const Standard_Real theMinLen = 1.0e-7);
+
+		/****************** AddPoint ******************/
+		%feature("compactdefaultargs") AddPoint;
+		%feature("autodoc", "Add point to already calculated points (or replace existing) returns index of new added point or founded with parametric tolerance (replaced if theisreplace is true).
+
+Parameters
+----------
+thePnt: gp_Pnt
+theParam: float
+theIsReplace: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+int
+") AddPoint;
+		Standard_Integer AddPoint(const gp_Pnt & thePnt, const Standard_Real theParam, const Standard_Boolean theIsReplace = Standard_True);
+
+		/****************** ArcAngularStep ******************/
+		%feature("compactdefaultargs") ArcAngularStep;
+		%feature("autodoc", "Computes angular step for the arc using the given parameters.
+
+Parameters
+----------
+theRadius: float
+theLinearDeflection: float
+theAngularDeflection: float
+theMinLength: float
+
+Returns
+-------
+float
+") ArcAngularStep;
+		static Standard_Real ArcAngularStep(const Standard_Real theRadius, const Standard_Real theLinearDeflection, const Standard_Real theAngularDeflection, const Standard_Real theMinLength);
 
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
@@ -1220,16 +1220,6 @@ gp_Pnt
 *******************************/
 class GCPnts_UniformAbscissa {
 	public:
-		/****************** Abscissa ******************/
-		%feature("compactdefaultargs") Abscissa;
-		%feature("autodoc", "Returne the current abscissa ie the distance between two consecutive points.
-
-Returns
--------
-float
-") Abscissa;
-		Standard_Real Abscissa();
-
 		/****************** GCPnts_UniformAbscissa ******************/
 		%feature("compactdefaultargs") GCPnts_UniformAbscissa;
 		%feature("autodoc", "Creation of a indefinite uniformabscissa.
@@ -1383,6 +1373,16 @@ Returns
 None
 ") GCPnts_UniformAbscissa;
 		 GCPnts_UniformAbscissa(const Adaptor2d_Curve2d & C, const Standard_Integer NbPoints, const Standard_Real U1, const Standard_Real U2, const Standard_Real Toler = -1);
+
+		/****************** Abscissa ******************/
+		%feature("compactdefaultargs") Abscissa;
+		%feature("autodoc", "Returne the current abscissa ie the distance between two consecutive points.
+
+Returns
+-------
+float
+") Abscissa;
+		Standard_Real Abscissa();
 
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;
@@ -1576,16 +1576,6 @@ float
 *********************************/
 class GCPnts_UniformDeflection {
 	public:
-		/****************** Deflection ******************/
-		%feature("compactdefaultargs") Deflection;
-		%feature("autodoc", "Returns the deflection between the curve and the polygon resulting from the points of the distribution computed by this algorithm. this value is the one given to the algorithm at the time of construction (or initialization). exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
-
-Returns
--------
-float
-") Deflection;
-		Standard_Real Deflection();
-
 		/****************** GCPnts_UniformDeflection ******************/
 		%feature("compactdefaultargs") GCPnts_UniformDeflection;
 		%feature("autodoc", "Constructs an empty algorithm. to define the problem to be solved, use the function initialize.
@@ -1667,6 +1657,16 @@ Returns
 None
 ") GCPnts_UniformDeflection;
 		 GCPnts_UniformDeflection(const Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl = Standard_True);
+
+		/****************** Deflection ******************/
+		%feature("compactdefaultargs") Deflection;
+		%feature("autodoc", "Returns the deflection between the curve and the polygon resulting from the points of the distribution computed by this algorithm. this value is the one given to the algorithm at the time of construction (or initialization). exceptions stdfail_notdone if this algorithm has not been initialized, or if the computation was not successful.
+
+Returns
+-------
+float
+") Deflection;
+		Standard_Real Deflection();
 
 		/****************** Initialize ******************/
 		%feature("compactdefaultargs") Initialize;

@@ -158,7 +158,13 @@ class ChFiDS_ErrorStatus:
 /* end handles declaration */
 
 /* templates */
-%template(ChFiDS_SequenceOfSpine) NCollection_Sequence<opencascade::handle<ChFiDS_Spine>>;
+%template(ChFiDS_IndexedDataMapOfVertexListOfStripe) NCollection_IndexedDataMap<TopoDS_Vertex,ChFiDS_ListOfStripe,TopTools_ShapeMapHasher>;
+%template(ChFiDS_ListIteratorOfListOfHElSpine) NCollection_TListIterator<opencascade::handle<ChFiDS_HElSpine>>;
+%template(ChFiDS_ListIteratorOfListOfStripe) NCollection_TListIterator<opencascade::handle<ChFiDS_Stripe>>;
+%template(ChFiDS_ListIteratorOfRegularities) NCollection_TListIterator<ChFiDS_Regul>;
+%template(ChFiDS_ListOfHElSpine) NCollection_List<opencascade::handle<ChFiDS_HElSpine>>;
+%template(ChFiDS_ListOfStripe) NCollection_List<opencascade::handle<ChFiDS_Stripe>>;
+%template(ChFiDS_Regularities) NCollection_List<ChFiDS_Regul>;
 %template(ChFiDS_SecArray1) NCollection_Array1<ChFiDS_CircSection>;
 
 %extend NCollection_Array1<ChFiDS_CircSection> {
@@ -194,6 +200,7 @@ class ChFiDS_ErrorStatus:
     __next__ = next
     }
 };
+%template(ChFiDS_SequenceOfSpine) NCollection_Sequence<opencascade::handle<ChFiDS_Spine>>;
 %template(ChFiDS_SequenceOfSurfData) NCollection_Sequence<opencascade::handle<ChFiDS_SurfData>>;
 %template(ChFiDS_StripeArray1) NCollection_Array1<opencascade::handle<ChFiDS_Stripe>>;
 
@@ -230,27 +237,20 @@ class ChFiDS_ErrorStatus:
     __next__ = next
     }
 };
-%template(ChFiDS_ListOfHElSpine) NCollection_List<opencascade::handle<ChFiDS_HElSpine>>;
-%template(ChFiDS_ListIteratorOfListOfHElSpine) NCollection_TListIterator<opencascade::handle<ChFiDS_HElSpine>>;
-%template(ChFiDS_IndexedDataMapOfVertexListOfStripe) NCollection_IndexedDataMap<TopoDS_Vertex,ChFiDS_ListOfStripe,TopTools_ShapeMapHasher>;
-%template(ChFiDS_ListOfStripe) NCollection_List<opencascade::handle<ChFiDS_Stripe>>;
-%template(ChFiDS_ListIteratorOfListOfStripe) NCollection_TListIterator<opencascade::handle<ChFiDS_Stripe>>;
-%template(ChFiDS_Regularities) NCollection_List<ChFiDS_Regul>;
-%template(ChFiDS_ListIteratorOfRegularities) NCollection_TListIterator<ChFiDS_Regul>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<opencascade::handle<ChFiDS_Spine>> ChFiDS_SequenceOfSpine;
+typedef NCollection_IndexedDataMap<TopoDS_Vertex, ChFiDS_ListOfStripe, TopTools_ShapeMapHasher> ChFiDS_IndexedDataMapOfVertexListOfStripe;
+typedef NCollection_List<opencascade::handle<ChFiDS_HElSpine>>::Iterator ChFiDS_ListIteratorOfListOfHElSpine;
+typedef NCollection_List<opencascade::handle<ChFiDS_Stripe>>::Iterator ChFiDS_ListIteratorOfListOfStripe;
+typedef NCollection_List<ChFiDS_Regul>::Iterator ChFiDS_ListIteratorOfRegularities;
+typedef NCollection_List<opencascade::handle<ChFiDS_HElSpine>> ChFiDS_ListOfHElSpine;
+typedef NCollection_List<opencascade::handle<ChFiDS_Stripe>> ChFiDS_ListOfStripe;
+typedef NCollection_List<ChFiDS_Regul> ChFiDS_Regularities;
 typedef NCollection_Array1<ChFiDS_CircSection> ChFiDS_SecArray1;
+typedef NCollection_Sequence<opencascade::handle<ChFiDS_Spine>> ChFiDS_SequenceOfSpine;
 typedef NCollection_Sequence<opencascade::handle<ChFiDS_SurfData>> ChFiDS_SequenceOfSurfData;
 typedef NCollection_Array1<opencascade::handle<ChFiDS_Stripe>> ChFiDS_StripeArray1;
-typedef NCollection_List<opencascade::handle<ChFiDS_HElSpine>> ChFiDS_ListOfHElSpine;
-typedef NCollection_List<opencascade::handle<ChFiDS_HElSpine>>::Iterator ChFiDS_ListIteratorOfListOfHElSpine;
-typedef NCollection_IndexedDataMap<TopoDS_Vertex, ChFiDS_ListOfStripe, TopTools_ShapeMapHasher> ChFiDS_IndexedDataMapOfVertexListOfStripe;
-typedef NCollection_List<opencascade::handle<ChFiDS_Stripe>> ChFiDS_ListOfStripe;
-typedef NCollection_List<opencascade::handle<ChFiDS_Stripe>>::Iterator ChFiDS_ListIteratorOfListOfStripe;
-typedef NCollection_List<ChFiDS_Regul> ChFiDS_Regularities;
-typedef NCollection_List<ChFiDS_Regul>::Iterator ChFiDS_ListIteratorOfRegularities;
 /* end typedefs declaration */
 
 /***************************
@@ -346,16 +346,6 @@ None
 ***************************/
 class ChFiDS_CommonPoint {
 	public:
-		/****************** Arc ******************/
-		%feature("compactdefaultargs") Arc;
-		%feature("autodoc", "Returns the arc of restriction containing the vertex.
-
-Returns
--------
-TopoDS_Edge
-") Arc;
-		const TopoDS_Edge Arc();
-
 		/****************** ChFiDS_CommonPoint ******************/
 		%feature("compactdefaultargs") ChFiDS_CommonPoint;
 		%feature("autodoc", "Empty constructor.
@@ -365,6 +355,16 @@ Returns
 None
 ") ChFiDS_CommonPoint;
 		 ChFiDS_CommonPoint();
+
+		/****************** Arc ******************/
+		%feature("compactdefaultargs") Arc;
+		%feature("autodoc", "Returns the arc of restriction containing the vertex.
+
+Returns
+-------
+TopoDS_Edge
+") Arc;
+		const TopoDS_Edge Arc();
 
 		/****************** HasVector ******************/
 		%feature("compactdefaultargs") HasVector;
@@ -577,6 +577,16 @@ TopoDS_Vertex
 ***********************/
 class ChFiDS_ElSpine : public Adaptor3d_Curve {
 	public:
+		/****************** ChFiDS_ElSpine ******************/
+		%feature("compactdefaultargs") ChFiDS_ElSpine;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ChFiDS_ElSpine;
+		 ChFiDS_ElSpine();
+
 		/****************** AddVertexWithTangent ******************/
 		%feature("compactdefaultargs") AddVertexWithTangent;
 		%feature("autodoc", "No available documentation.
@@ -610,16 +620,6 @@ Returns
 opencascade::handle<Geom_BezierCurve>
 ") Bezier;
 		opencascade::handle<Geom_BezierCurve> Bezier();
-
-		/****************** ChFiDS_ElSpine ******************/
-		%feature("compactdefaultargs") ChFiDS_ElSpine;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ChFiDS_ElSpine;
-		 ChFiDS_ElSpine();
 
 		/****************** ChangeNext ******************/
 		%feature("compactdefaultargs") ChangeNext;
@@ -1610,6 +1610,30 @@ None
 *********************/
 class ChFiDS_Spine : public Standard_Transient {
 	public:
+		/****************** ChFiDS_Spine ******************/
+		%feature("compactdefaultargs") ChFiDS_Spine;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ChFiDS_Spine;
+		 ChFiDS_Spine();
+
+		/****************** ChFiDS_Spine ******************/
+		%feature("compactdefaultargs") ChFiDS_Spine;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tol: float
+
+Returns
+-------
+None
+") ChFiDS_Spine;
+		 ChFiDS_Spine(const Standard_Real Tol);
+
 		/****************** Absc ******************/
 		%feature("compactdefaultargs") Absc;
 		%feature("autodoc", "No available documentation.
@@ -1680,30 +1704,6 @@ Returns
 None
 ") AppendOffsetElSpine;
 		virtual void AppendOffsetElSpine(const opencascade::handle<ChFiDS_HElSpine> & Els);
-
-		/****************** ChFiDS_Spine ******************/
-		%feature("compactdefaultargs") ChFiDS_Spine;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ChFiDS_Spine;
-		 ChFiDS_Spine();
-
-		/****************** ChFiDS_Spine ******************/
-		%feature("compactdefaultargs") ChFiDS_Spine;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Tol: float
-
-Returns
--------
-None
-") ChFiDS_Spine;
-		 ChFiDS_Spine(const Standard_Real Tol);
 
 		/****************** ChangeElSpines ******************/
 		%feature("compactdefaultargs") ChangeElSpines;
@@ -3173,6 +3173,16 @@ opencascade::handle<ChFiDS_Spine>
 *************************/
 class ChFiDS_StripeMap {
 	public:
+		/****************** ChFiDS_StripeMap ******************/
+		%feature("compactdefaultargs") ChFiDS_StripeMap;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ChFiDS_StripeMap;
+		 ChFiDS_StripeMap();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -3187,16 +3197,6 @@ Returns
 None
 ") Add;
 		void Add(const TopoDS_Vertex & V, const opencascade::handle<ChFiDS_Stripe> & F);
-
-		/****************** ChFiDS_StripeMap ******************/
-		%feature("compactdefaultargs") ChFiDS_StripeMap;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ChFiDS_StripeMap;
-		 ChFiDS_StripeMap();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -4073,20 +4073,6 @@ None
 ************************/
 class ChFiDS_FilSpine : public ChFiDS_Spine {
 	public:
-		/****************** AppendElSpine ******************/
-		%feature("compactdefaultargs") AppendElSpine;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Els: ChFiDS_HElSpine
-
-Returns
--------
-None
-") AppendElSpine;
-		virtual void AppendElSpine(const opencascade::handle<ChFiDS_HElSpine> & Els);
-
 		/****************** ChFiDS_FilSpine ******************/
 		%feature("compactdefaultargs") ChFiDS_FilSpine;
 		%feature("autodoc", "No available documentation.
@@ -4110,6 +4096,20 @@ Returns
 None
 ") ChFiDS_FilSpine;
 		 ChFiDS_FilSpine(const Standard_Real Tol);
+
+		/****************** AppendElSpine ******************/
+		%feature("compactdefaultargs") AppendElSpine;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Els: ChFiDS_HElSpine
+
+Returns
+-------
+None
+") AppendElSpine;
+		virtual void AppendElSpine(const opencascade::handle<ChFiDS_HElSpine> & Els);
 
 		/****************** ChangeLaw ******************/
 		%feature("compactdefaultargs") ChangeLaw;

@@ -111,7 +111,6 @@ class MAT_Side:
     return l;
     }
 };
-%template(MAT_SequenceOfBasicElt) NCollection_Sequence<opencascade::handle<MAT_BasicElt>>;
 %template(MAT_DataMapOfIntegerBisector) NCollection_DataMap<Standard_Integer,opencascade::handle<MAT_Bisector>,TColStd_MapIntegerHasher>;
 
 %extend NCollection_DataMap<Standard_Integer,opencascade::handle<MAT_Bisector>,TColStd_MapIntegerHasher> {
@@ -125,7 +124,6 @@ class MAT_Side:
     return l;
     }
 };
-%template(MAT_SequenceOfArc) NCollection_Sequence<opencascade::handle<MAT_Arc>>;
 %template(MAT_DataMapOfIntegerNode) NCollection_DataMap<Standard_Integer,opencascade::handle<MAT_Node>,TColStd_MapIntegerHasher>;
 
 %extend NCollection_DataMap<Standard_Integer,opencascade::handle<MAT_Node>,TColStd_MapIntegerHasher> {
@@ -139,19 +137,21 @@ class MAT_Side:
     return l;
     }
 };
+%template(MAT_SequenceOfArc) NCollection_Sequence<opencascade::handle<MAT_Arc>>;
+%template(MAT_SequenceOfBasicElt) NCollection_Sequence<opencascade::handle<MAT_BasicElt>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_Arc>, TColStd_MapIntegerHasher> MAT_DataMapOfIntegerArc;
 typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_Arc>, TColStd_MapIntegerHasher>::Iterator MAT_DataMapIteratorOfDataMapOfIntegerArc;
-typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_BasicElt>, TColStd_MapIntegerHasher> MAT_DataMapOfIntegerBasicElt;
 typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_BasicElt>, TColStd_MapIntegerHasher>::Iterator MAT_DataMapIteratorOfDataMapOfIntegerBasicElt;
-typedef NCollection_Sequence<opencascade::handle<MAT_BasicElt>> MAT_SequenceOfBasicElt;
-typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_Bisector>, TColStd_MapIntegerHasher> MAT_DataMapOfIntegerBisector;
 typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_Bisector>, TColStd_MapIntegerHasher>::Iterator MAT_DataMapIteratorOfDataMapOfIntegerBisector;
-typedef NCollection_Sequence<opencascade::handle<MAT_Arc>> MAT_SequenceOfArc;
-typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_Node>, TColStd_MapIntegerHasher> MAT_DataMapOfIntegerNode;
 typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_Node>, TColStd_MapIntegerHasher>::Iterator MAT_DataMapIteratorOfDataMapOfIntegerNode;
+typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_Arc>, TColStd_MapIntegerHasher> MAT_DataMapOfIntegerArc;
+typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_BasicElt>, TColStd_MapIntegerHasher> MAT_DataMapOfIntegerBasicElt;
+typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_Bisector>, TColStd_MapIntegerHasher> MAT_DataMapOfIntegerBisector;
+typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_Node>, TColStd_MapIntegerHasher> MAT_DataMapOfIntegerNode;
+typedef NCollection_Sequence<opencascade::handle<MAT_Arc>> MAT_SequenceOfArc;
+typedef NCollection_Sequence<opencascade::handle<MAT_BasicElt>> MAT_SequenceOfBasicElt;
 /* end typedefs declaration */
 
 /****************
@@ -159,6 +159,23 @@ typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MAT_Node>, TCo
 ****************/
 class MAT_Arc : public Standard_Transient {
 	public:
+		/****************** MAT_Arc ******************/
+		%feature("compactdefaultargs") MAT_Arc;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ArcIndex: int
+GeomIndex: int
+FirstElement: MAT_BasicElt
+SecondElement: MAT_BasicElt
+
+Returns
+-------
+None
+") MAT_Arc;
+		 MAT_Arc(const Standard_Integer ArcIndex, const Standard_Integer GeomIndex, const opencascade::handle<MAT_BasicElt> & FirstElement, const opencascade::handle<MAT_BasicElt> & SecondElement);
+
 		/****************** FirstElement ******************/
 		%feature("compactdefaultargs") FirstElement;
 		%feature("autodoc", "Returns one of the basicelt equidistant from <self>.
@@ -213,23 +230,6 @@ Returns
 int
 ") Index;
 		Standard_Integer Index();
-
-		/****************** MAT_Arc ******************/
-		%feature("compactdefaultargs") MAT_Arc;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-ArcIndex: int
-GeomIndex: int
-FirstElement: MAT_BasicElt
-SecondElement: MAT_BasicElt
-
-Returns
--------
-None
-") MAT_Arc;
-		 MAT_Arc(const Standard_Integer ArcIndex, const Standard_Integer GeomIndex, const opencascade::handle<MAT_BasicElt> & FirstElement, const opencascade::handle<MAT_BasicElt> & SecondElement);
 
 		/****************** Neighbour ******************/
 		%feature("compactdefaultargs") Neighbour;
@@ -426,6 +426,20 @@ opencascade::handle<MAT_Node>
 *********************/
 class MAT_BasicElt : public Standard_Transient {
 	public:
+		/****************** MAT_BasicElt ******************/
+		%feature("compactdefaultargs") MAT_BasicElt;
+		%feature("autodoc", "Constructor, <aninteger> is the <index> of <self>.
+
+Parameters
+----------
+anInteger: int
+
+Returns
+-------
+None
+") MAT_BasicElt;
+		 MAT_BasicElt(const Standard_Integer anInteger);
+
 		/****************** EndArc ******************/
 		%feature("compactdefaultargs") EndArc;
 		%feature("autodoc", "Return <endarcleft> or <endarcright> corresponding to <aside>.
@@ -455,20 +469,6 @@ Returns
 int
 ") Index;
 		Standard_Integer Index();
-
-		/****************** MAT_BasicElt ******************/
-		%feature("compactdefaultargs") MAT_BasicElt;
-		%feature("autodoc", "Constructor, <aninteger> is the <index> of <self>.
-
-Parameters
-----------
-anInteger: int
-
-Returns
--------
-None
-") MAT_BasicElt;
-		 MAT_BasicElt(const Standard_Integer anInteger);
 
 		/****************** SetEndArc ******************/
 		%feature("compactdefaultargs") SetEndArc;
@@ -552,6 +552,16 @@ opencascade::handle<MAT_Arc>
 *********************/
 class MAT_Bisector : public Standard_Transient {
 	public:
+		/****************** MAT_Bisector ******************/
+		%feature("compactdefaultargs") MAT_Bisector;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") MAT_Bisector;
+		 MAT_Bisector();
+
 		/****************** AddBisector ******************/
 		%feature("compactdefaultargs") AddBisector;
 		%feature("autodoc", "No available documentation.
@@ -803,16 +813,6 @@ opencascade::handle<MAT_ListOfBisector>
 ") List;
 		opencascade::handle<MAT_ListOfBisector> List();
 
-		/****************** MAT_Bisector ******************/
-		%feature("compactdefaultargs") MAT_Bisector;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") MAT_Bisector;
-		 MAT_Bisector();
-
 		/****************** SecondEdge ******************/
 		%feature("compactdefaultargs") SecondEdge;
 		%feature("autodoc", "No available documentation.
@@ -925,6 +925,16 @@ float
 *****************/
 class MAT_Edge : public Standard_Transient {
 	public:
+		/****************** MAT_Edge ******************/
+		%feature("compactdefaultargs") MAT_Edge;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") MAT_Edge;
+		 MAT_Edge();
+
 		/****************** Distance ******************/
 		%feature("compactdefaultargs") Distance;
 		%feature("autodoc", "No available documentation.
@@ -1036,16 +1046,6 @@ int
 ") IntersectionPoint;
 		Standard_Integer IntersectionPoint();
 
-		/****************** MAT_Edge ******************/
-		%feature("compactdefaultargs") MAT_Edge;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") MAT_Edge;
-		 MAT_Edge();
-
 		/****************** SecondBisector ******************/
 		%feature("compactdefaultargs") SecondBisector;
 		%feature("autodoc", "No available documentation.
@@ -1086,6 +1086,16 @@ opencascade::handle<MAT_Bisector>
 ******************/
 class MAT_Graph : public Standard_Transient {
 	public:
+		/****************** MAT_Graph ******************/
+		%feature("compactdefaultargs") MAT_Graph;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") MAT_Graph;
+		 MAT_Graph();
+
 		/****************** Arc ******************/
 		%feature("compactdefaultargs") Arc;
 		%feature("autodoc", "Return the arc of index <index> in <thearcs>.
@@ -1183,16 +1193,6 @@ None
 ") FusionOfBasicElts;
 		void FusionOfBasicElts(const Standard_Integer IndexElt1, const Standard_Integer IndexElt2, Standard_Boolean &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
-		/****************** MAT_Graph ******************/
-		%feature("compactdefaultargs") MAT_Graph;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") MAT_Graph;
-		 MAT_Graph();
-
 		/****************** Node ******************/
 		%feature("compactdefaultargs") Node;
 		%feature("autodoc", "Return the node of index <index> in <thenodes>.
@@ -1280,6 +1280,16 @@ None
 ***************************/
 class MAT_ListOfBisector : public Standard_Transient {
 	public:
+		/****************** MAT_ListOfBisector ******************/
+		%feature("compactdefaultargs") MAT_ListOfBisector;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") MAT_ListOfBisector;
+		 MAT_ListOfBisector();
+
 		/****************** BackAdd ******************/
 		%feature("compactdefaultargs") BackAdd;
 		%feature("autodoc", "No available documentation.
@@ -1473,16 +1483,6 @@ None
 ") Loop;
 		void Loop();
 
-		/****************** MAT_ListOfBisector ******************/
-		%feature("compactdefaultargs") MAT_ListOfBisector;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") MAT_ListOfBisector;
-		 MAT_ListOfBisector();
-
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "No available documentation.
@@ -1579,6 +1579,16 @@ None
 ***********************/
 class MAT_ListOfEdge : public Standard_Transient {
 	public:
+		/****************** MAT_ListOfEdge ******************/
+		%feature("compactdefaultargs") MAT_ListOfEdge;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") MAT_ListOfEdge;
+		 MAT_ListOfEdge();
+
 		/****************** BackAdd ******************/
 		%feature("compactdefaultargs") BackAdd;
 		%feature("autodoc", "No available documentation.
@@ -1772,16 +1782,6 @@ None
 ") Loop;
 		void Loop();
 
-		/****************** MAT_ListOfEdge ******************/
-		%feature("compactdefaultargs") MAT_ListOfEdge;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") MAT_ListOfEdge;
-		 MAT_ListOfEdge();
-
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "No available documentation.
@@ -1878,6 +1878,22 @@ None
 *****************/
 class MAT_Node : public Standard_Transient {
 	public:
+		/****************** MAT_Node ******************/
+		%feature("compactdefaultargs") MAT_Node;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+GeomIndex: int
+LinkedArc: MAT_Arc
+Distance: float
+
+Returns
+-------
+None
+") MAT_Node;
+		 MAT_Node(const Standard_Integer GeomIndex, const opencascade::handle<MAT_Arc> & LinkedArc, const Standard_Real Distance);
+
 		/****************** Distance ******************/
 		%feature("compactdefaultargs") Distance;
 		%feature("autodoc", "No available documentation.
@@ -1931,22 +1947,6 @@ Returns
 None
 ") LinkedArcs;
 		void LinkedArcs(MAT_SequenceOfArc & S);
-
-		/****************** MAT_Node ******************/
-		%feature("compactdefaultargs") MAT_Node;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-GeomIndex: int
-LinkedArc: MAT_Arc
-Distance: float
-
-Returns
--------
-None
-") MAT_Node;
-		 MAT_Node(const Standard_Integer GeomIndex, const opencascade::handle<MAT_Arc> & LinkedArc, const Standard_Real Distance);
 
 		/****************** NearElts ******************/
 		%feature("compactdefaultargs") NearElts;
@@ -2026,26 +2026,6 @@ None
 **************************************/
 class MAT_TListNodeOfListOfBisector : public Standard_Transient {
 	public:
-		/****************** Dummy ******************/
-		%feature("compactdefaultargs") Dummy;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Dummy;
-		void Dummy();
-
-		/****************** GetItem ******************/
-		%feature("compactdefaultargs") GetItem;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<MAT_Bisector>
-") GetItem;
-		opencascade::handle<MAT_Bisector> GetItem();
-
 		/****************** MAT_TListNodeOfListOfBisector ******************/
 		%feature("compactdefaultargs") MAT_TListNodeOfListOfBisector;
 		%feature("autodoc", "No available documentation.
@@ -2069,6 +2049,26 @@ Returns
 None
 ") MAT_TListNodeOfListOfBisector;
 		 MAT_TListNodeOfListOfBisector(const opencascade::handle<MAT_Bisector> & anitem);
+
+		/****************** Dummy ******************/
+		%feature("compactdefaultargs") Dummy;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Dummy;
+		void Dummy();
+
+		/****************** GetItem ******************/
+		%feature("compactdefaultargs") GetItem;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Bisector>
+") GetItem;
+		opencascade::handle<MAT_Bisector> GetItem();
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
@@ -2148,26 +2148,6 @@ None
 **********************************/
 class MAT_TListNodeOfListOfEdge : public Standard_Transient {
 	public:
-		/****************** Dummy ******************/
-		%feature("compactdefaultargs") Dummy;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Dummy;
-		void Dummy();
-
-		/****************** GetItem ******************/
-		%feature("compactdefaultargs") GetItem;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<MAT_Edge>
-") GetItem;
-		opencascade::handle<MAT_Edge> GetItem();
-
 		/****************** MAT_TListNodeOfListOfEdge ******************/
 		%feature("compactdefaultargs") MAT_TListNodeOfListOfEdge;
 		%feature("autodoc", "No available documentation.
@@ -2191,6 +2171,26 @@ Returns
 None
 ") MAT_TListNodeOfListOfEdge;
 		 MAT_TListNodeOfListOfEdge(const opencascade::handle<MAT_Edge> & anitem);
+
+		/****************** Dummy ******************/
+		%feature("compactdefaultargs") Dummy;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Dummy;
+		void Dummy();
+
+		/****************** GetItem ******************/
+		%feature("compactdefaultargs") GetItem;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<MAT_Edge>
+") GetItem;
+		opencascade::handle<MAT_Edge> GetItem();
 
 		/****************** Next ******************/
 		%feature("compactdefaultargs") Next;
@@ -2270,30 +2270,6 @@ None
 *****************/
 class MAT_Zone : public Standard_Transient {
 	public:
-		/****************** ArcOnFrontier ******************/
-		%feature("compactdefaultargs") ArcOnFrontier;
-		%feature("autodoc", "Return the arc number <index> on the frontier. of <self>.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-opencascade::handle<MAT_Arc>
-") ArcOnFrontier;
-		opencascade::handle<MAT_Arc> ArcOnFrontier(const Standard_Integer Index);
-
-		/****************** Limited ******************/
-		%feature("compactdefaultargs") Limited;
-		%feature("autodoc", "Return true if <self> is limited.
-
-Returns
--------
-bool
-") Limited;
-		Standard_Boolean Limited();
-
 		/****************** MAT_Zone ******************/
 		%feature("compactdefaultargs") MAT_Zone;
 		%feature("autodoc", "No available documentation.
@@ -2317,6 +2293,30 @@ Returns
 None
 ") MAT_Zone;
 		 MAT_Zone(const opencascade::handle<MAT_BasicElt> & aBasicElt);
+
+		/****************** ArcOnFrontier ******************/
+		%feature("compactdefaultargs") ArcOnFrontier;
+		%feature("autodoc", "Return the arc number <index> on the frontier. of <self>.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<MAT_Arc>
+") ArcOnFrontier;
+		opencascade::handle<MAT_Arc> ArcOnFrontier(const Standard_Integer Index);
+
+		/****************** Limited ******************/
+		%feature("compactdefaultargs") Limited;
+		%feature("autodoc", "Return true if <self> is limited.
+
+Returns
+-------
+bool
+") Limited;
+		Standard_Boolean Limited();
 
 		/****************** NoEmptyZone ******************/
 		%feature("compactdefaultargs") NoEmptyZone;

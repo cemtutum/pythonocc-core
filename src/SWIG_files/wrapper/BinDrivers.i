@@ -170,6 +170,16 @@ TCollection_AsciiString
 *******************************************/
 class BinDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalDriver {
 	public:
+		/****************** BinDrivers_DocumentRetrievalDriver ******************/
+		%feature("compactdefaultargs") BinDrivers_DocumentRetrievalDriver;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") BinDrivers_DocumentRetrievalDriver;
+		 BinDrivers_DocumentRetrievalDriver();
+
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "No available documentation.
@@ -183,16 +193,6 @@ Returns
 opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
-
-		/****************** BinDrivers_DocumentRetrievalDriver ******************/
-		%feature("compactdefaultargs") BinDrivers_DocumentRetrievalDriver;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") BinDrivers_DocumentRetrievalDriver;
-		 BinDrivers_DocumentRetrievalDriver();
 
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
@@ -220,6 +220,16 @@ None
 *****************************************/
 class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDriver {
 	public:
+		/****************** BinDrivers_DocumentStorageDriver ******************/
+		%feature("compactdefaultargs") BinDrivers_DocumentStorageDriver;
+		%feature("autodoc", "Constructor.
+
+Returns
+-------
+None
+") BinDrivers_DocumentStorageDriver;
+		 BinDrivers_DocumentStorageDriver();
+
 		/****************** AttributeDrivers ******************/
 		%feature("compactdefaultargs") AttributeDrivers;
 		%feature("autodoc", "No available documentation.
@@ -233,16 +243,6 @@ Returns
 opencascade::handle<BinMDF_ADriverTable>
 ") AttributeDrivers;
 		virtual opencascade::handle<BinMDF_ADriverTable> AttributeDrivers(const opencascade::handle<Message_Messenger> & theMsgDriver);
-
-		/****************** BinDrivers_DocumentStorageDriver ******************/
-		%feature("compactdefaultargs") BinDrivers_DocumentStorageDriver;
-		%feature("autodoc", "Constructor.
-
-Returns
--------
-None
-") BinDrivers_DocumentStorageDriver;
-		 BinDrivers_DocumentStorageDriver();
 
 		/****************** IsWithTriangles ******************/
 		%feature("compactdefaultargs") IsWithTriangles;

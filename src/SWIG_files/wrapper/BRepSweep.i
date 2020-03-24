@@ -41,9 +41,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepsweep.html"
 //Dependencies
 #include<Standard_module.hxx>
 #include<NCollection_module.hxx>
+#include<BRep_module.hxx>
 #include<TopoDS_module.hxx>
 #include<TopAbs_module.hxx>
-#include<BRep_module.hxx>
 #include<Sweep_module.hxx>
 #include<gp_module.hxx>
 #include<TopLoc_module.hxx>
@@ -59,9 +59,9 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_brepsweep.html"
 %};
 %import Standard.i
 %import NCollection.i
+%import BRep.i
 %import TopoDS.i
 %import TopAbs.i
-%import BRep.i
 %import Sweep.i
 %import gp.i
 %import TopLoc.i
@@ -92,6 +92,20 @@ from OCC.Core.Exception import *
 **************************/
 class BRepSweep_Builder {
 	public:
+		/****************** BRepSweep_Builder ******************/
+		%feature("compactdefaultargs") BRepSweep_Builder;
+		%feature("autodoc", "Creates a builder.
+
+Parameters
+----------
+aBuilder: BRep_Builder
+
+Returns
+-------
+None
+") BRepSweep_Builder;
+		 BRepSweep_Builder(const BRep_Builder & aBuilder);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the shape 1 in the shape 2, set to <orient> orientation.
@@ -122,20 +136,6 @@ Returns
 None
 ") Add;
 		void Add(TopoDS_Shape & aShape1, const TopoDS_Shape & aShape2);
-
-		/****************** BRepSweep_Builder ******************/
-		%feature("compactdefaultargs") BRepSweep_Builder;
-		%feature("autodoc", "Creates a builder.
-
-Parameters
-----------
-aBuilder: BRep_Builder
-
-Returns
--------
-None
-") BRepSweep_Builder;
-		 BRepSweep_Builder(const BRep_Builder & aBuilder);
 
 		/****************** Builder ******************/
 		%feature("compactdefaultargs") Builder;
@@ -911,26 +911,6 @@ gp_Vec
 ************************/
 class BRepSweep_Revol {
 	public:
-		/****************** Angle ******************/
-		%feature("compactdefaultargs") Angle;
-		%feature("autodoc", "Returns the angle.
-
-Returns
--------
-float
-") Angle;
-		Standard_Real Angle();
-
-		/****************** Axe ******************/
-		%feature("compactdefaultargs") Axe;
-		%feature("autodoc", "Returns the axis.
-
-Returns
--------
-gp_Ax1
-") Axe;
-		gp_Ax1 Axe();
-
 		/****************** BRepSweep_Revol ******************/
 		%feature("compactdefaultargs") BRepSweep_Revol;
 		%feature("autodoc", "Builds the revol of meridian s axis a and angle d. if c is true s is copied.
@@ -965,6 +945,26 @@ Returns
 None
 ") BRepSweep_Revol;
 		 BRepSweep_Revol(const TopoDS_Shape & S, const gp_Ax1 & A, const Standard_Boolean C = Standard_False);
+
+		/****************** Angle ******************/
+		%feature("compactdefaultargs") Angle;
+		%feature("autodoc", "Returns the angle.
+
+Returns
+-------
+float
+") Angle;
+		Standard_Real Angle();
+
+		/****************** Axe ******************/
+		%feature("compactdefaultargs") Axe;
+		%feature("autodoc", "Returns the axis.
+
+Returns
+-------
+gp_Ax1
+") Axe;
+		gp_Ax1 Axe();
 
 		/****************** FirstShape ******************/
 		%feature("compactdefaultargs") FirstShape;
@@ -1484,6 +1484,25 @@ None
 ***************************/
 class BRepSweep_Rotation : public BRepSweep_Trsf {
 	public:
+		/****************** BRepSweep_Rotation ******************/
+		%feature("compactdefaultargs") BRepSweep_Rotation;
+		%feature("autodoc", "Creates a topology by rotating <s> around a with the angle d.
+
+Parameters
+----------
+S: TopoDS_Shape
+N: Sweep_NumShape
+L: TopLoc_Location
+A: gp_Ax1
+D: float
+C: bool
+
+Returns
+-------
+None
+") BRepSweep_Rotation;
+		 BRepSweep_Rotation(const TopoDS_Shape & S, const Sweep_NumShape & N, const TopLoc_Location & L, const gp_Ax1 & A, const Standard_Real D, const Standard_Boolean C);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Returns the angle.
@@ -1503,25 +1522,6 @@ Returns
 gp_Ax1
 ") Axe;
 		gp_Ax1 Axe();
-
-		/****************** BRepSweep_Rotation ******************/
-		%feature("compactdefaultargs") BRepSweep_Rotation;
-		%feature("autodoc", "Creates a topology by rotating <s> around a with the angle d.
-
-Parameters
-----------
-S: TopoDS_Shape
-N: Sweep_NumShape
-L: TopLoc_Location
-A: gp_Ax1
-D: float
-C: bool
-
-Returns
--------
-None
-") BRepSweep_Rotation;
-		 BRepSweep_Rotation(const TopoDS_Shape & S, const Sweep_NumShape & N, const TopLoc_Location & L, const gp_Ax1 & A, const Standard_Real D, const Standard_Boolean C);
 
 		/****************** DirectSolid ******************/
 		%feature("compactdefaultargs") DirectSolid;

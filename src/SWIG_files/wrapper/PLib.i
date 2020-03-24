@@ -842,6 +842,31 @@ int
 ************************************/
 class PLib_DoubleJacobiPolynomial {
 	public:
+		/****************** PLib_DoubleJacobiPolynomial ******************/
+		%feature("compactdefaultargs") PLib_DoubleJacobiPolynomial;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") PLib_DoubleJacobiPolynomial;
+		 PLib_DoubleJacobiPolynomial();
+
+		/****************** PLib_DoubleJacobiPolynomial ******************/
+		%feature("compactdefaultargs") PLib_DoubleJacobiPolynomial;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+JacPolU: PLib_JacobiPolynomial
+JacPolV: PLib_JacobiPolynomial
+
+Returns
+-------
+None
+") PLib_DoubleJacobiPolynomial;
+		 PLib_DoubleJacobiPolynomial(const opencascade::handle<PLib_JacobiPolynomial> & JacPolU, const opencascade::handle<PLib_JacobiPolynomial> & JacPolV);
+
 		/****************** AverageError ******************/
 		%feature("compactdefaultargs") AverageError;
 		%feature("autodoc", "No available documentation.
@@ -916,31 +941,6 @@ Returns
 float
 ") MaxErrorV;
 		Standard_Real MaxErrorV(const Standard_Integer Dimension, const Standard_Integer DegreeU, const Standard_Integer DegreeV, const Standard_Integer dJacCoeff, const TColStd_Array1OfReal & JacCoeff);
-
-		/****************** PLib_DoubleJacobiPolynomial ******************/
-		%feature("compactdefaultargs") PLib_DoubleJacobiPolynomial;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") PLib_DoubleJacobiPolynomial;
-		 PLib_DoubleJacobiPolynomial();
-
-		/****************** PLib_DoubleJacobiPolynomial ******************/
-		%feature("compactdefaultargs") PLib_DoubleJacobiPolynomial;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-JacPolU: PLib_JacobiPolynomial
-JacPolV: PLib_JacobiPolynomial
-
-Returns
--------
-None
-") PLib_DoubleJacobiPolynomial;
-		 PLib_DoubleJacobiPolynomial(const opencascade::handle<PLib_JacobiPolynomial> & JacPolU, const opencascade::handle<PLib_JacobiPolynomial> & JacPolV);
 
 		/****************** ReduceDegree ******************/
 		%feature("compactdefaultargs") ReduceDegree;
@@ -1038,6 +1038,21 @@ None
 **************************/
 class PLib_HermitJacobi : public PLib_Base {
 	public:
+		/****************** PLib_HermitJacobi ******************/
+		%feature("compactdefaultargs") PLib_HermitJacobi;
+		%feature("autodoc", "Initialize the polynomial class degree has to be <= 30 constraintorder has to be geomabs_c0 geomabs_c1 geomabs_c2.
+
+Parameters
+----------
+WorkDegree: int
+ConstraintOrder: GeomAbs_Shape
+
+Returns
+-------
+None
+") PLib_HermitJacobi;
+		 PLib_HermitJacobi(const Standard_Integer WorkDegree, const GeomAbs_Shape ConstraintOrder);
+
 		/****************** AverageError ******************/
 		%feature("compactdefaultargs") AverageError;
 		%feature("autodoc", "No available documentation.
@@ -1146,21 +1161,6 @@ int
 ") NivConstr;
 		Standard_Integer NivConstr();
 
-		/****************** PLib_HermitJacobi ******************/
-		%feature("compactdefaultargs") PLib_HermitJacobi;
-		%feature("autodoc", "Initialize the polynomial class degree has to be <= 30 constraintorder has to be geomabs_c0 geomabs_c1 geomabs_c2.
-
-Parameters
-----------
-WorkDegree: int
-ConstraintOrder: GeomAbs_Shape
-
-Returns
--------
-None
-") PLib_HermitJacobi;
-		 PLib_HermitJacobi(const Standard_Integer WorkDegree, const GeomAbs_Shape ConstraintOrder);
-
 		/****************** ReduceDegree ******************/
 		%feature("compactdefaultargs") ReduceDegree;
 		%feature("autodoc", "Compute newdegree <= maxdegree so that maxerror is lower than tol. maxerror can be greater than tol if it is not possible to find a newdegree <= maxdegree. in this case newdegree = maxdegree.
@@ -1223,6 +1223,21 @@ int
 ******************************/
 class PLib_JacobiPolynomial : public PLib_Base {
 	public:
+		/****************** PLib_JacobiPolynomial ******************/
+		%feature("compactdefaultargs") PLib_JacobiPolynomial;
+		%feature("autodoc", "Initialize the polynomial class degree has to be <= 30 constraintorder has to be geomabs_c0 geomabs_c1 geomabs_c2.
+
+Parameters
+----------
+WorkDegree: int
+ConstraintOrder: GeomAbs_Shape
+
+Returns
+-------
+None
+") PLib_JacobiPolynomial;
+		 PLib_JacobiPolynomial(const Standard_Integer WorkDegree, const GeomAbs_Shape ConstraintOrder);
+
 		/****************** AverageError ******************/
 		%feature("compactdefaultargs") AverageError;
 		%feature("autodoc", "No available documentation.
@@ -1344,21 +1359,6 @@ Returns
 int
 ") NivConstr;
 		Standard_Integer NivConstr();
-
-		/****************** PLib_JacobiPolynomial ******************/
-		%feature("compactdefaultargs") PLib_JacobiPolynomial;
-		%feature("autodoc", "Initialize the polynomial class degree has to be <= 30 constraintorder has to be geomabs_c0 geomabs_c1 geomabs_c2.
-
-Parameters
-----------
-WorkDegree: int
-ConstraintOrder: GeomAbs_Shape
-
-Returns
--------
-None
-") PLib_JacobiPolynomial;
-		 PLib_JacobiPolynomial(const Standard_Integer WorkDegree, const GeomAbs_Shape ConstraintOrder);
 
 		/****************** Points ******************/
 		%feature("compactdefaultargs") Points;

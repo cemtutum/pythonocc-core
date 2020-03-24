@@ -190,6 +190,16 @@ bool
 *************************************/
 class ShapeUpgrade_RemoveLocations : public Standard_Transient {
 	public:
+		/****************** ShapeUpgrade_RemoveLocations ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_RemoveLocations;
+		%feature("autodoc", "Empy constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_RemoveLocations;
+		 ShapeUpgrade_RemoveLocations();
+
 		/****************** GetResult ******************/
 		%feature("compactdefaultargs") GetResult;
 		%feature("autodoc", "Returns shape with removed locatins.
@@ -252,16 +262,6 @@ None
 ") SetRemoveLevel;
 		void SetRemoveLevel(const TopAbs_ShapeEnum theLevel);
 
-		/****************** ShapeUpgrade_RemoveLocations ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_RemoveLocations;
-		%feature("autodoc", "Empy constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_RemoveLocations;
-		 ShapeUpgrade_RemoveLocations();
-
 };
 
 
@@ -278,6 +278,30 @@ None
 *********************************/
 class ShapeUpgrade_ShapeDivide {
 	public:
+		/****************** ShapeUpgrade_ShapeDivide ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivide;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeUpgrade_ShapeDivide;
+		 ShapeUpgrade_ShapeDivide();
+
+		/****************** ShapeUpgrade_ShapeDivide ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivide;
+		%feature("autodoc", "Initialize by a shape.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") ShapeUpgrade_ShapeDivide;
+		 ShapeUpgrade_ShapeDivide(const TopoDS_Shape & S);
+
 		/****************** GetContext ******************/
 		%feature("compactdefaultargs") GetContext;
 		%feature("autodoc", "Returns context with all the modifications made during last call(s) to perform() recorded.
@@ -466,30 +490,6 @@ None
 ") SetSurfaceSegmentMode;
 		void SetSurfaceSegmentMode(const Standard_Boolean Segment);
 
-		/****************** ShapeUpgrade_ShapeDivide ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivide;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeUpgrade_ShapeDivide;
-		 ShapeUpgrade_ShapeDivide();
-
-		/****************** ShapeUpgrade_ShapeDivide ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivide;
-		%feature("autodoc", "Initialize by a shape.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") ShapeUpgrade_ShapeDivide;
-		 ShapeUpgrade_ShapeDivide(const TopoDS_Shape & S);
-
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
 		%feature("autodoc", "Queries the status of last call to perform ok : no splitting was done (or no call to perform) done1: some edges were splitted done2: surface was splitted fail1: some errors occured.
@@ -518,6 +518,16 @@ bool
 *********************************/
 class ShapeUpgrade_ShellSewing {
 	public:
+		/****************** ShapeUpgrade_ShellSewing ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ShellSewing;
+		%feature("autodoc", "Creates a shellsewing, empty.
+
+Returns
+-------
+None
+") ShapeUpgrade_ShellSewing;
+		 ShapeUpgrade_ShellSewing();
+
 		/****************** ApplySewing ******************/
 		%feature("compactdefaultargs") ApplySewing;
 		%feature("autodoc", "Builds a new shape from a former one, by calling sewing from brepbuilderapi. rebuilt solids are oriented to be 'not infinite' //! if <tol> is not given (i.e. value 0. by default), it is computed as the mean tolerance recorded in <shape> //! if no shell has been sewed, this method returns the input shape.
@@ -534,16 +544,6 @@ TopoDS_Shape
 ") ApplySewing;
 		TopoDS_Shape ApplySewing(const TopoDS_Shape & shape, const Standard_Real tol = 0.0);
 
-		/****************** ShapeUpgrade_ShellSewing ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ShellSewing;
-		%feature("autodoc", "Creates a shellsewing, empty.
-
-Returns
--------
-None
-") ShapeUpgrade_ShellSewing;
-		 ShapeUpgrade_ShellSewing();
-
 };
 
 
@@ -558,6 +558,16 @@ None
 ********************************/
 class ShapeUpgrade_SplitCurve : public Standard_Transient {
 	public:
+		/****************** ShapeUpgrade_SplitCurve ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_SplitCurve;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_SplitCurve;
+		 ShapeUpgrade_SplitCurve();
+
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "If segment is true, the result is composed with segments of the curve bounded by the splitvalues. if segment is false, the result is composed with trimmed curves all based on the same complete curve.
@@ -626,16 +636,6 @@ None
 ") SetSplitValues;
 		void SetSplitValues(const opencascade::handle<TColStd_HSequenceOfReal> & SplitValues);
 
-		/****************** ShapeUpgrade_SplitCurve ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_SplitCurve;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_SplitCurve;
-		 ShapeUpgrade_SplitCurve();
-
 		/****************** SplitValues ******************/
 		%feature("compactdefaultargs") SplitValues;
 		%feature("autodoc", "Returns all the splitting values including the first and last parameters of the input curve merges input split values and new ones into myglobalknots.
@@ -676,6 +676,16 @@ bool
 **********************************/
 class ShapeUpgrade_SplitSurface : public Standard_Transient {
 	public:
+		/****************** ShapeUpgrade_SplitSurface ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_SplitSurface;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_SplitSurface;
+		 ShapeUpgrade_SplitSurface();
+
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Performs splitting of the supporting surface. if resulting surface is b-spline and segment is true, the result is composed with segments of the surface bounded by the u and v splitvalues (method geom_bsplinesurface::segment is used). if segment is false, the result is composed with geom_rectangulartrimmedsurface all based on the same complete surface. fields mynbresultingrow and mynbresultingcol must be set to specify the size of resulting grid of surfaces.
@@ -790,16 +800,6 @@ None
 ") SetVSplitValues;
 		void SetVSplitValues(const opencascade::handle<TColStd_HSequenceOfReal> & VValues);
 
-		/****************** ShapeUpgrade_SplitSurface ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_SplitSurface;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_SplitSurface;
-		 ShapeUpgrade_SplitSurface();
-
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
 		%feature("autodoc", "Returns the status ok - no splitting is needed done1 - splitting required and gives more than one patch done2 - splitting is required, but gives only single patch (initial) done3 - geometric form of the surface or parametrisation is modified.
@@ -850,6 +850,16 @@ opencascade::handle<TColStd_HSequenceOfReal>
 **************************/
 class ShapeUpgrade_Tool : public Standard_Transient {
 	public:
+		/****************** ShapeUpgrade_Tool ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_Tool;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_Tool;
+		 ShapeUpgrade_Tool();
+
 		/****************** Context ******************/
 		%feature("compactdefaultargs") Context;
 		%feature("autodoc", "Returns context.
@@ -974,16 +984,6 @@ None
 ") SetPrecision;
 		void SetPrecision(const Standard_Real preci);
 
-		/****************** ShapeUpgrade_Tool ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_Tool;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_Tool;
-		 ShapeUpgrade_Tool();
-
 };
 
 
@@ -1000,6 +1000,36 @@ None
 *************************************/
 class ShapeUpgrade_UnifySameDomain : public Standard_Transient {
 	public:
+		/****************** ShapeUpgrade_UnifySameDomain ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_UnifySameDomain;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_UnifySameDomain;
+		 ShapeUpgrade_UnifySameDomain();
+
+		/****************** ShapeUpgrade_UnifySameDomain ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_UnifySameDomain;
+		%feature("autodoc", "Constructor defining input shape and necessary flags. it does not perform unification.
+
+Parameters
+----------
+aShape: TopoDS_Shape
+UnifyEdges: bool,optional
+	default value is Standard_True
+UnifyFaces: bool,optional
+	default value is Standard_True
+ConcatBSplines: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") ShapeUpgrade_UnifySameDomain;
+		 ShapeUpgrade_UnifySameDomain(const TopoDS_Shape & aShape, const Standard_Boolean UnifyEdges = Standard_True, const Standard_Boolean UnifyFaces = Standard_True, const Standard_Boolean ConcatBSplines = Standard_False);
+
 		/****************** AllowInternalEdges ******************/
 		%feature("compactdefaultargs") AllowInternalEdges;
 		%feature("autodoc", "Sets the flag defining whether it is allowed to create internal edges inside merged faces in the case of non-manifold topology. without this flag merging through multi connected edge is forbidden. default value is false.
@@ -1144,36 +1174,6 @@ TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
 
-		/****************** ShapeUpgrade_UnifySameDomain ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_UnifySameDomain;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_UnifySameDomain;
-		 ShapeUpgrade_UnifySameDomain();
-
-		/****************** ShapeUpgrade_UnifySameDomain ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_UnifySameDomain;
-		%feature("autodoc", "Constructor defining input shape and necessary flags. it does not perform unification.
-
-Parameters
-----------
-aShape: TopoDS_Shape
-UnifyEdges: bool,optional
-	default value is Standard_True
-UnifyFaces: bool,optional
-	default value is Standard_True
-ConcatBSplines: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") ShapeUpgrade_UnifySameDomain;
-		 ShapeUpgrade_UnifySameDomain(const TopoDS_Shape & aShape, const Standard_Boolean UnifyEdges = Standard_True, const Standard_Boolean UnifyFaces = Standard_True, const Standard_Boolean ConcatBSplines = Standard_False);
-
 };
 
 
@@ -1190,6 +1190,16 @@ None
 *************************************************/
 class ShapeUpgrade_ConvertSurfaceToBezierBasis : public ShapeUpgrade_SplitSurface {
 	public:
+		/****************** ShapeUpgrade_ConvertSurfaceToBezierBasis ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ConvertSurfaceToBezierBasis;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_ConvertSurfaceToBezierBasis;
+		 ShapeUpgrade_ConvertSurfaceToBezierBasis();
+
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Splits a list of beziers computed by compute method according the split values and splitting parameters.
@@ -1324,16 +1334,6 @@ None
 ") SetRevolutionMode;
 		void SetRevolutionMode(const Standard_Boolean mode);
 
-		/****************** ShapeUpgrade_ConvertSurfaceToBezierBasis ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ConvertSurfaceToBezierBasis;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_ConvertSurfaceToBezierBasis;
-		 ShapeUpgrade_ConvertSurfaceToBezierBasis();
-
 };
 
 
@@ -1350,6 +1350,16 @@ None
 ********************************/
 class ShapeUpgrade_EdgeDivide : public ShapeUpgrade_Tool {
 	public:
+		/****************** ShapeUpgrade_EdgeDivide ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_EdgeDivide;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_EdgeDivide;
+		 ShapeUpgrade_EdgeDivide();
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "No available documentation.
@@ -1476,16 +1486,6 @@ None
 ") SetSplitCurve3dTool;
 		void SetSplitCurve3dTool(const opencascade::handle<ShapeUpgrade_SplitCurve3d> & splitCurve3dTool);
 
-		/****************** ShapeUpgrade_EdgeDivide ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_EdgeDivide;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_EdgeDivide;
-		 ShapeUpgrade_EdgeDivide();
-
 };
 
 
@@ -1502,6 +1502,30 @@ None
 ********************************/
 class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
 	public:
+		/****************** ShapeUpgrade_FaceDivide ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_FaceDivide;
+		%feature("autodoc", "Creates empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_FaceDivide;
+		 ShapeUpgrade_FaceDivide();
+
+		/****************** ShapeUpgrade_FaceDivide ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_FaceDivide;
+		%feature("autodoc", "Initialize by a face.
+
+Parameters
+----------
+F: TopoDS_Face
+
+Returns
+-------
+None
+") ShapeUpgrade_FaceDivide;
+		 ShapeUpgrade_FaceDivide(const TopoDS_Face & F);
+
 		/****************** GetSplitSurfaceTool ******************/
 		%feature("compactdefaultargs") GetSplitSurfaceTool;
 		%feature("autodoc", "Returns the tool for splitting surfaces. this tool must be already initialized.
@@ -1598,30 +1622,6 @@ None
 ") SetWireDivideTool;
 		void SetWireDivideTool(const opencascade::handle<ShapeUpgrade_WireDivide> & wireDivideTool);
 
-		/****************** ShapeUpgrade_FaceDivide ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_FaceDivide;
-		%feature("autodoc", "Creates empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_FaceDivide;
-		 ShapeUpgrade_FaceDivide();
-
-		/****************** ShapeUpgrade_FaceDivide ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_FaceDivide;
-		%feature("autodoc", "Initialize by a face.
-
-Parameters
-----------
-F: TopoDS_Face
-
-Returns
--------
-None
-") ShapeUpgrade_FaceDivide;
-		 ShapeUpgrade_FaceDivide(const TopoDS_Face & F);
-
 		/****************** SplitCurves ******************/
 		%feature("compactdefaultargs") SplitCurves;
 		%feature("autodoc", "Performs splitting of curves of all the edges in the shape and divides these edges.
@@ -1672,6 +1672,16 @@ bool
 ************************************/
 class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
 	public:
+		/****************** ShapeUpgrade_FixSmallCurves ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_FixSmallCurves;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeUpgrade_FixSmallCurves;
+		 ShapeUpgrade_FixSmallCurves();
+
 		/****************** Approx ******************/
 		%feature("compactdefaultargs") Approx;
 		%feature("autodoc", "No available documentation.
@@ -1733,16 +1743,6 @@ None
 ") SetSplitCurve3dTool;
 		void SetSplitCurve3dTool(const opencascade::handle<ShapeUpgrade_SplitCurve3d> & splitCurve3dTool);
 
-		/****************** ShapeUpgrade_FixSmallCurves ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_FixSmallCurves;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeUpgrade_FixSmallCurves;
-		 ShapeUpgrade_FixSmallCurves();
-
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
 		%feature("autodoc", "Queries the status of last call to perform ok : done1: done2: fail1:.
@@ -1773,6 +1773,30 @@ bool
 *****************************************/
 class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 	public:
+		/****************** ShapeUpgrade_RemoveInternalWires ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_RemoveInternalWires;
+		%feature("autodoc", "Creates empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_RemoveInternalWires;
+		 ShapeUpgrade_RemoveInternalWires();
+
+		/****************** ShapeUpgrade_RemoveInternalWires ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_RemoveInternalWires;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theShape: TopoDS_Shape
+
+Returns
+-------
+None
+") ShapeUpgrade_RemoveInternalWires;
+		 ShapeUpgrade_RemoveInternalWires(const TopoDS_Shape & theShape);
+
 		/****************** GetResult ******************/
 		%feature("compactdefaultargs") GetResult;
 		%feature("autodoc", "Get result shape.
@@ -1867,30 +1891,6 @@ TopTools_SequenceOfShape
 ") RemovedWires;
 		const TopTools_SequenceOfShape & RemovedWires();
 
-		/****************** ShapeUpgrade_RemoveInternalWires ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_RemoveInternalWires;
-		%feature("autodoc", "Creates empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_RemoveInternalWires;
-		 ShapeUpgrade_RemoveInternalWires();
-
-		/****************** ShapeUpgrade_RemoveInternalWires ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_RemoveInternalWires;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theShape: TopoDS_Shape
-
-Returns
--------
-None
-") ShapeUpgrade_RemoveInternalWires;
-		 ShapeUpgrade_RemoveInternalWires(const TopoDS_Shape & theShape);
-
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
 		%feature("autodoc", "Queries status of last call to perform() : ok - nothing was done :done1 - internal wires were removed :done2 - small faces were removed. :fail1 - initial shape is not specified :fail2 - specified sub-shape is not belonged to inotial shape.
@@ -1921,6 +1921,30 @@ bool
 ******************************************/
 class ShapeUpgrade_ShapeConvertToBezier : public ShapeUpgrade_ShapeDivide {
 	public:
+		/****************** ShapeUpgrade_ShapeConvertToBezier ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ShapeConvertToBezier;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_ShapeConvertToBezier;
+		 ShapeUpgrade_ShapeConvertToBezier();
+
+		/****************** ShapeUpgrade_ShapeConvertToBezier ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ShapeConvertToBezier;
+		%feature("autodoc", "Initialize by a shape.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") ShapeUpgrade_ShapeConvertToBezier;
+		 ShapeUpgrade_ShapeConvertToBezier(const TopoDS_Shape & S);
+
 		/****************** Get2dConversion ******************/
 		%feature("compactdefaultargs") Get2dConversion;
 		%feature("autodoc", "Returns the 2d conversion mode.
@@ -2176,30 +2200,6 @@ None
 ") SetSurfaceConversion;
 		void SetSurfaceConversion(const Standard_Boolean mode);
 
-		/****************** ShapeUpgrade_ShapeConvertToBezier ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ShapeConvertToBezier;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_ShapeConvertToBezier;
-		 ShapeUpgrade_ShapeConvertToBezier();
-
-		/****************** ShapeUpgrade_ShapeConvertToBezier ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ShapeConvertToBezier;
-		%feature("autodoc", "Initialize by a shape.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") ShapeUpgrade_ShapeConvertToBezier;
-		 ShapeUpgrade_ShapeConvertToBezier(const TopoDS_Shape & S);
-
 };
 
 
@@ -2214,6 +2214,35 @@ None
 **************************************/
 class ShapeUpgrade_ShapeDivideAngle : public ShapeUpgrade_ShapeDivide {
 	public:
+		/****************** ShapeUpgrade_ShapeDivideAngle ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivideAngle;
+		%feature("autodoc", "Empty constructor.
+
+Parameters
+----------
+MaxAngle: float
+
+Returns
+-------
+None
+") ShapeUpgrade_ShapeDivideAngle;
+		 ShapeUpgrade_ShapeDivideAngle(const Standard_Real MaxAngle);
+
+		/****************** ShapeUpgrade_ShapeDivideAngle ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivideAngle;
+		%feature("autodoc", "Initialize by a shape.
+
+Parameters
+----------
+MaxAngle: float
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") ShapeUpgrade_ShapeDivideAngle;
+		 ShapeUpgrade_ShapeDivideAngle(const Standard_Real MaxAngle, const TopoDS_Shape & S);
+
 		/****************** InitTool ******************/
 		%feature("compactdefaultargs") InitTool;
 		%feature("autodoc", "Resets tool for splitting face with given angle.
@@ -2252,35 +2281,6 @@ None
 ") SetMaxAngle;
 		void SetMaxAngle(const Standard_Real MaxAngle);
 
-		/****************** ShapeUpgrade_ShapeDivideAngle ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivideAngle;
-		%feature("autodoc", "Empty constructor.
-
-Parameters
-----------
-MaxAngle: float
-
-Returns
--------
-None
-") ShapeUpgrade_ShapeDivideAngle;
-		 ShapeUpgrade_ShapeDivideAngle(const Standard_Real MaxAngle);
-
-		/****************** ShapeUpgrade_ShapeDivideAngle ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivideAngle;
-		%feature("autodoc", "Initialize by a shape.
-
-Parameters
-----------
-MaxAngle: float
-S: TopoDS_Shape
-
-Returns
--------
-None
-") ShapeUpgrade_ShapeDivideAngle;
-		 ShapeUpgrade_ShapeDivideAngle(const Standard_Real MaxAngle, const TopoDS_Shape & S);
-
 };
 
 
@@ -2295,19 +2295,6 @@ None
 *************************************/
 class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
 	public:
-
-        %feature("autodoc","1");
-        %extend {
-            Standard_Real GetMaxArea() {
-            return (Standard_Real) $self->MaxArea();
-            }
-        };
-        %feature("autodoc","1");
-        %extend {
-            void SetMaxArea(Standard_Real value) {
-            $self->MaxArea()=value;
-            }
-        };
 		/****************** ShapeUpgrade_ShapeDivideArea ******************/
 		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivideArea;
 		%feature("autodoc", "No available documentation.
@@ -2332,6 +2319,19 @@ None
 ") ShapeUpgrade_ShapeDivideArea;
 		 ShapeUpgrade_ShapeDivideArea(const TopoDS_Shape & S);
 
+
+        %feature("autodoc","1");
+        %extend {
+            Standard_Real GetMaxArea() {
+            return (Standard_Real) $self->MaxArea();
+            }
+        };
+        %feature("autodoc","1");
+        %extend {
+            void SetMaxArea(Standard_Real value) {
+            $self->MaxArea()=value;
+            }
+        };
 };
 
 
@@ -2346,20 +2346,6 @@ None
 ***************************************/
 class ShapeUpgrade_ShapeDivideClosed : public ShapeUpgrade_ShapeDivide {
 	public:
-		/****************** SetNbSplitPoints ******************/
-		%feature("compactdefaultargs") SetNbSplitPoints;
-		%feature("autodoc", "Sets the number of cuts applied to divide closed faces. the number of resulting faces will be num+1.
-
-Parameters
-----------
-num: int
-
-Returns
--------
-None
-") SetNbSplitPoints;
-		void SetNbSplitPoints(const Standard_Integer num);
-
 		/****************** ShapeUpgrade_ShapeDivideClosed ******************/
 		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivideClosed;
 		%feature("autodoc", "Initialises tool with shape and default parameter.
@@ -2373,6 +2359,20 @@ Returns
 None
 ") ShapeUpgrade_ShapeDivideClosed;
 		 ShapeUpgrade_ShapeDivideClosed(const TopoDS_Shape & S);
+
+		/****************** SetNbSplitPoints ******************/
+		%feature("compactdefaultargs") SetNbSplitPoints;
+		%feature("autodoc", "Sets the number of cuts applied to divide closed faces. the number of resulting faces will be num+1.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+None
+") SetNbSplitPoints;
+		void SetNbSplitPoints(const Standard_Integer num);
 
 };
 
@@ -2388,20 +2388,6 @@ None
 ********************************************/
 class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
 	public:
-		/****************** SetNbSplitPoints ******************/
-		%feature("compactdefaultargs") SetNbSplitPoints;
-		%feature("autodoc", "Sets the number of cuts applied to divide closed edges. the number of resulting faces will be num+1.
-
-Parameters
-----------
-num: int
-
-Returns
--------
-None
-") SetNbSplitPoints;
-		void SetNbSplitPoints(const Standard_Integer num);
-
 		/****************** ShapeUpgrade_ShapeDivideClosedEdges ******************/
 		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivideClosedEdges;
 		%feature("autodoc", "Initialises tool with shape and default parameter.
@@ -2415,6 +2401,20 @@ Returns
 None
 ") ShapeUpgrade_ShapeDivideClosedEdges;
 		 ShapeUpgrade_ShapeDivideClosedEdges(const TopoDS_Shape & S);
+
+		/****************** SetNbSplitPoints ******************/
+		%feature("compactdefaultargs") SetNbSplitPoints;
+		%feature("autodoc", "Sets the number of cuts applied to divide closed edges. the number of resulting faces will be num+1.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+None
+") SetNbSplitPoints;
+		void SetNbSplitPoints(const Standard_Integer num);
 
 };
 
@@ -2430,6 +2430,30 @@ None
 *******************************************/
 class ShapeUpgrade_ShapeDivideContinuity : public ShapeUpgrade_ShapeDivide {
 	public:
+		/****************** ShapeUpgrade_ShapeDivideContinuity ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivideContinuity;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeUpgrade_ShapeDivideContinuity;
+		 ShapeUpgrade_ShapeDivideContinuity();
+
+		/****************** ShapeUpgrade_ShapeDivideContinuity ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivideContinuity;
+		%feature("autodoc", "Initialize by a shape.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") ShapeUpgrade_ShapeDivideContinuity;
+		 ShapeUpgrade_ShapeDivideContinuity(const TopoDS_Shape & S);
+
 		/****************** SetBoundaryCriterion ******************/
 		%feature("compactdefaultargs") SetBoundaryCriterion;
 		%feature("autodoc", "Defines a criterion of continuity for the boundary (all the wires) //! the possible values are c0, g1, c1, g2, c2, c3, cn the default is c1 to respect the cas.cade shape validity. g1 and g2 are not authorized.
@@ -2503,30 +2527,6 @@ None
 ") SetTolerance2d;
 		void SetTolerance2d(const Standard_Real Tol);
 
-		/****************** ShapeUpgrade_ShapeDivideContinuity ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivideContinuity;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeUpgrade_ShapeDivideContinuity;
-		 ShapeUpgrade_ShapeDivideContinuity();
-
-		/****************** ShapeUpgrade_ShapeDivideContinuity ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ShapeDivideContinuity;
-		%feature("autodoc", "Initialize by a shape.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") ShapeUpgrade_ShapeDivideContinuity;
-		 ShapeUpgrade_ShapeDivideContinuity(const TopoDS_Shape & S);
-
 };
 
 
@@ -2541,6 +2541,16 @@ None
 **********************************/
 class ShapeUpgrade_SplitCurve2d : public ShapeUpgrade_SplitCurve {
 	public:
+		/****************** ShapeUpgrade_SplitCurve2d ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_SplitCurve2d;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_SplitCurve2d;
+		 ShapeUpgrade_SplitCurve2d();
+
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "If segment is true, the result is composed with segments of the curve bounded by the splitvalues. if segment is false, the result is composed with trimmed curves all based on the same complete curve.
@@ -2595,16 +2605,6 @@ None
 ") Init;
 		void Init(const opencascade::handle<Geom2d_Curve> & C, const Standard_Real First, const Standard_Real Last);
 
-		/****************** ShapeUpgrade_SplitCurve2d ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_SplitCurve2d;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_SplitCurve2d;
-		 ShapeUpgrade_SplitCurve2d();
-
 };
 
 
@@ -2621,6 +2621,16 @@ None
 **********************************/
 class ShapeUpgrade_SplitCurve3d : public ShapeUpgrade_SplitCurve {
 	public:
+		/****************** ShapeUpgrade_SplitCurve3d ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_SplitCurve3d;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_SplitCurve3d;
+		 ShapeUpgrade_SplitCurve3d();
+
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "If segment is true, the result is composed with segments of the curve bounded by the splitvalues. if segment is false, the result is composed with trimmed curves all based on the same complete curve.
@@ -2675,16 +2685,6 @@ None
 ") Init;
 		void Init(const opencascade::handle<Geom_Curve> & C, const Standard_Real First, const Standard_Real Last);
 
-		/****************** ShapeUpgrade_SplitCurve3d ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_SplitCurve3d;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_SplitCurve3d;
-		 ShapeUpgrade_SplitCurve3d();
-
 };
 
 
@@ -2701,6 +2701,20 @@ None
 ***************************************/
 class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
 	public:
+		/****************** ShapeUpgrade_SplitSurfaceAngle ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_SplitSurfaceAngle;
+		%feature("autodoc", "Empty constructor.
+
+Parameters
+----------
+MaxAngle: float
+
+Returns
+-------
+None
+") ShapeUpgrade_SplitSurfaceAngle;
+		 ShapeUpgrade_SplitSurfaceAngle(const Standard_Real MaxAngle);
+
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "Performs splitting of the supporting surface(s). first defines splitting values, then calls inherited method.
@@ -2739,20 +2753,6 @@ None
 ") SetMaxAngle;
 		void SetMaxAngle(const Standard_Real MaxAngle);
 
-		/****************** ShapeUpgrade_SplitSurfaceAngle ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_SplitSurfaceAngle;
-		%feature("autodoc", "Empty constructor.
-
-Parameters
-----------
-MaxAngle: float
-
-Returns
--------
-None
-") ShapeUpgrade_SplitSurfaceAngle;
-		 ShapeUpgrade_SplitSurfaceAngle(const Standard_Real MaxAngle);
-
 };
 
 
@@ -2769,6 +2769,16 @@ None
 **************************************/
 class ShapeUpgrade_SplitSurfaceArea : public ShapeUpgrade_SplitSurface {
 	public:
+		/****************** ShapeUpgrade_SplitSurfaceArea ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_SplitSurfaceArea;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_SplitSurfaceArea;
+		 ShapeUpgrade_SplitSurfaceArea();
+
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "No available documentation.
@@ -2797,16 +2807,6 @@ None
             $self->NbParts()=value;
             }
         };
-		/****************** ShapeUpgrade_SplitSurfaceArea ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_SplitSurfaceArea;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_SplitSurfaceArea;
-		 ShapeUpgrade_SplitSurfaceArea();
-
 };
 
 
@@ -2823,6 +2823,16 @@ None
 ********************************************/
 class ShapeUpgrade_SplitSurfaceContinuity : public ShapeUpgrade_SplitSurface {
 	public:
+		/****************** ShapeUpgrade_SplitSurfaceContinuity ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_SplitSurfaceContinuity;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_SplitSurfaceContinuity;
+		 ShapeUpgrade_SplitSurfaceContinuity();
+
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "No available documentation.
@@ -2865,16 +2875,6 @@ None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real Tol);
 
-		/****************** ShapeUpgrade_SplitSurfaceContinuity ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_SplitSurfaceContinuity;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_SplitSurfaceContinuity;
-		 ShapeUpgrade_SplitSurfaceContinuity();
-
 };
 
 
@@ -2891,6 +2891,16 @@ None
 ********************************/
 class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 	public:
+		/****************** ShapeUpgrade_WireDivide ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_WireDivide;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_WireDivide;
+		 ShapeUpgrade_WireDivide();
+
 		/****************** GetEdgeDivideTool ******************/
 		%feature("compactdefaultargs") GetEdgeDivideTool;
 		%feature("autodoc", "Returns tool for splitting edges.
@@ -3116,16 +3126,6 @@ None
 ") SetTransferParamTool;
 		void SetTransferParamTool(const opencascade::handle<ShapeAnalysis_TransferParameters> & TransferParam);
 
-		/****************** ShapeUpgrade_WireDivide ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_WireDivide;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_WireDivide;
-		 ShapeUpgrade_WireDivide();
-
 		/****************** Status ******************/
 		%feature("compactdefaultargs") Status;
 		%feature("autodoc", "Queries status of last call to perform() ok - no edges were splitted, wire left untouched done1 - some edges were splitted fail1 - some edges have no 3d curve (skipped) fail2 - some edges have no pcurve (skipped).
@@ -3166,6 +3166,16 @@ TopoDS_Wire
 **************************************/
 class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 	public:
+		/****************** ShapeUpgrade_ClosedEdgeDivide ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ClosedEdgeDivide;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_ClosedEdgeDivide;
+		 ShapeUpgrade_ClosedEdgeDivide();
+
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "No available documentation.
@@ -3179,16 +3189,6 @@ Returns
 bool
 ") Compute;
 		virtual Standard_Boolean Compute(const TopoDS_Edge & anEdge);
-
-		/****************** ShapeUpgrade_ClosedEdgeDivide ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ClosedEdgeDivide;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_ClosedEdgeDivide;
-		 ShapeUpgrade_ClosedEdgeDivide();
 
 };
 
@@ -3206,30 +3206,6 @@ None
 **************************************/
 class ShapeUpgrade_ClosedFaceDivide : public ShapeUpgrade_FaceDivide {
 	public:
-		/****************** GetNbSplitPoints ******************/
-		%feature("compactdefaultargs") GetNbSplitPoints;
-		%feature("autodoc", "Returns the number of splitting points.
-
-Returns
--------
-int
-") GetNbSplitPoints;
-		Standard_Integer GetNbSplitPoints();
-
-		/****************** SetNbSplitPoints ******************/
-		%feature("compactdefaultargs") SetNbSplitPoints;
-		%feature("autodoc", "Sets the number of cutting lines by which closed face will be splitted. the resulting faces will be num+1.
-
-Parameters
-----------
-num: int
-
-Returns
--------
-None
-") SetNbSplitPoints;
-		void SetNbSplitPoints(const Standard_Integer num);
-
 		/****************** ShapeUpgrade_ClosedFaceDivide ******************/
 		%feature("compactdefaultargs") ShapeUpgrade_ClosedFaceDivide;
 		%feature("autodoc", "Creates empty constructor.
@@ -3253,6 +3229,30 @@ Returns
 None
 ") ShapeUpgrade_ClosedFaceDivide;
 		 ShapeUpgrade_ClosedFaceDivide(const TopoDS_Face & F);
+
+		/****************** GetNbSplitPoints ******************/
+		%feature("compactdefaultargs") GetNbSplitPoints;
+		%feature("autodoc", "Returns the number of splitting points.
+
+Returns
+-------
+int
+") GetNbSplitPoints;
+		Standard_Integer GetNbSplitPoints();
+
+		/****************** SetNbSplitPoints ******************/
+		%feature("compactdefaultargs") SetNbSplitPoints;
+		%feature("autodoc", "Sets the number of cutting lines by which closed face will be splitted. the resulting faces will be num+1.
+
+Parameters
+----------
+num: int
+
+Returns
+-------
+None
+") SetNbSplitPoints;
+		void SetNbSplitPoints(const Standard_Integer num);
 
 		/****************** SplitSurface ******************/
 		%feature("compactdefaultargs") SplitSurface;
@@ -3280,6 +3280,16 @@ bool
 ********************************************/
 class ShapeUpgrade_ConvertCurve2dToBezier : public ShapeUpgrade_SplitCurve2d {
 	public:
+		/****************** ShapeUpgrade_ConvertCurve2dToBezier ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ConvertCurve2dToBezier;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_ConvertCurve2dToBezier;
+		 ShapeUpgrade_ConvertCurve2dToBezier();
+
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Splits a list of beziers computed by compute method according the split values and splitting parameters.
@@ -3303,16 +3313,6 @@ Returns
 None
 ") Compute;
 		virtual void Compute();
-
-		/****************** ShapeUpgrade_ConvertCurve2dToBezier ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ConvertCurve2dToBezier;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_ConvertCurve2dToBezier;
-		 ShapeUpgrade_ConvertCurve2dToBezier();
 
 		/****************** SplitParams ******************/
 		%feature("compactdefaultargs") SplitParams;
@@ -3340,6 +3340,16 @@ opencascade::handle<TColStd_HSequenceOfReal>
 ********************************************/
 class ShapeUpgrade_ConvertCurve3dToBezier : public ShapeUpgrade_SplitCurve3d {
 	public:
+		/****************** ShapeUpgrade_ConvertCurve3dToBezier ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_ConvertCurve3dToBezier;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_ConvertCurve3dToBezier;
+		 ShapeUpgrade_ConvertCurve3dToBezier();
+
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Splits a list of beziers computed by compute method according the split values and splitting parameters.
@@ -3436,16 +3446,6 @@ None
 ") SetLineMode;
 		void SetLineMode(const Standard_Boolean mode);
 
-		/****************** ShapeUpgrade_ConvertCurve3dToBezier ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_ConvertCurve3dToBezier;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_ConvertCurve3dToBezier;
-		 ShapeUpgrade_ConvertCurve3dToBezier();
-
 		/****************** SplitParams ******************/
 		%feature("compactdefaultargs") SplitParams;
 		%feature("autodoc", "Returns the list of splitted parameters in original curve parametrisation.
@@ -3472,29 +3472,6 @@ opencascade::handle<TColStd_HSequenceOfReal>
 ************************************/
 class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
 	public:
-
-        %feature("autodoc","1");
-        %extend {
-            Standard_Real GetMaxArea() {
-            return (Standard_Real) $self->MaxArea();
-            }
-        };
-        %feature("autodoc","1");
-        %extend {
-            void SetMaxArea(Standard_Real value) {
-            $self->MaxArea()=value;
-            }
-        };
-		/****************** Perform ******************/
-		%feature("compactdefaultargs") Perform;
-		%feature("autodoc", "Performs splitting and computes the resulting shell the context is used to keep track of former splittings.
-
-Returns
--------
-bool
-") Perform;
-		virtual Standard_Boolean Perform();
-
 		/****************** ShapeUpgrade_FaceDivideArea ******************/
 		%feature("compactdefaultargs") ShapeUpgrade_FaceDivideArea;
 		%feature("autodoc", "Creates empty constructor.
@@ -3519,6 +3496,29 @@ None
 ") ShapeUpgrade_FaceDivideArea;
 		 ShapeUpgrade_FaceDivideArea(const TopoDS_Face & F);
 
+
+        %feature("autodoc","1");
+        %extend {
+            Standard_Real GetMaxArea() {
+            return (Standard_Real) $self->MaxArea();
+            }
+        };
+        %feature("autodoc","1");
+        %extend {
+            void SetMaxArea(Standard_Real value) {
+            $self->MaxArea()=value;
+            }
+        };
+		/****************** Perform ******************/
+		%feature("compactdefaultargs") Perform;
+		%feature("autodoc", "Performs splitting and computes the resulting shell the context is used to keep track of former splittings.
+
+Returns
+-------
+bool
+") Perform;
+		virtual Standard_Boolean Perform();
+
 };
 
 
@@ -3535,6 +3535,16 @@ None
 ******************************************/
 class ShapeUpgrade_FixSmallBezierCurves : public ShapeUpgrade_FixSmallCurves {
 	public:
+		/****************** ShapeUpgrade_FixSmallBezierCurves ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_FixSmallBezierCurves;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ShapeUpgrade_FixSmallBezierCurves;
+		 ShapeUpgrade_FixSmallBezierCurves();
+
 		/****************** Approx ******************/
 		%feature("compactdefaultargs") Approx;
 		%feature("autodoc", "No available documentation.
@@ -3553,16 +3563,6 @@ bool
 ") Approx;
 		virtual Standard_Boolean Approx(opencascade::handle<Geom_Curve> & Curve3d, opencascade::handle<Geom2d_Curve> & Curve2d, opencascade::handle<Geom2d_Curve> & Curve2dR, Standard_Real &OutValue, Standard_Real &OutValue);
 
-		/****************** ShapeUpgrade_FixSmallBezierCurves ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_FixSmallBezierCurves;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ShapeUpgrade_FixSmallBezierCurves;
-		 ShapeUpgrade_FixSmallBezierCurves();
-
 };
 
 
@@ -3579,6 +3579,16 @@ None
 ********************************************/
 class ShapeUpgrade_SplitCurve2dContinuity : public ShapeUpgrade_SplitCurve2d {
 	public:
+		/****************** ShapeUpgrade_SplitCurve2dContinuity ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_SplitCurve2dContinuity;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_SplitCurve2dContinuity;
+		 ShapeUpgrade_SplitCurve2dContinuity();
+
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "Calculates points for correction/splitting of the curve.
@@ -3617,16 +3627,6 @@ None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real Tol);
 
-		/****************** ShapeUpgrade_SplitCurve2dContinuity ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_SplitCurve2dContinuity;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_SplitCurve2dContinuity;
-		 ShapeUpgrade_SplitCurve2dContinuity();
-
 };
 
 
@@ -3643,6 +3643,16 @@ None
 ********************************************/
 class ShapeUpgrade_SplitCurve3dContinuity : public ShapeUpgrade_SplitCurve3d {
 	public:
+		/****************** ShapeUpgrade_SplitCurve3dContinuity ******************/
+		%feature("compactdefaultargs") ShapeUpgrade_SplitCurve3dContinuity;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") ShapeUpgrade_SplitCurve3dContinuity;
+		 ShapeUpgrade_SplitCurve3dContinuity();
+
 		/****************** Compute ******************/
 		%feature("compactdefaultargs") Compute;
 		%feature("autodoc", "Calculates points for correction/splitting of the curve.
@@ -3690,16 +3700,6 @@ Returns
 None
 ") SetTolerance;
 		void SetTolerance(const Standard_Real Tol);
-
-		/****************** ShapeUpgrade_SplitCurve3dContinuity ******************/
-		%feature("compactdefaultargs") ShapeUpgrade_SplitCurve3dContinuity;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") ShapeUpgrade_SplitCurve3dContinuity;
-		 ShapeUpgrade_SplitCurve3dContinuity();
 
 };
 

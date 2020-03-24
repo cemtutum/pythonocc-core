@@ -95,26 +95,26 @@ from OCC.Core.Exception import *
 /* end handles declaration */
 
 /* templates */
-%template(BOPTools_ListOfConnexityBlock) NCollection_List<BOPTools_ConnexityBlock>;
-%template(BOPTools_MapOfSet) NCollection_Map<BOPTools_Set,BOPTools_SetMapHasher>;
-%template(BOPTools_ListOfCoupleOfShape) NCollection_List<BOPTools_CoupleOfShape>;
 %template(BOPTools_IndexedDataMapOfSetShape) NCollection_IndexedDataMap<BOPTools_Set,TopoDS_Shape,BOPTools_SetMapHasher>;
+%template(BOPTools_ListOfConnexityBlock) NCollection_List<BOPTools_ConnexityBlock>;
+%template(BOPTools_ListOfCoupleOfShape) NCollection_List<BOPTools_CoupleOfShape>;
+%template(BOPTools_MapOfSet) NCollection_Map<BOPTools_Set,BOPTools_SetMapHasher>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_List<BOPTools_ConnexityBlock> BOPTools_ListOfConnexityBlock;
-typedef BOPTools_ListOfConnexityBlock::Iterator BOPTools_ListIteratorOfListOfConnexityBlock;
+typedef BOPTools_PairSelector<2> BOPTools_Box2dPairSelector;
 typedef BOPTools_BoxSet<Standard_Real, 2, Standard_Integer> BOPTools_Box2dTree;
 typedef BOPTools_BoxSelector<2> BOPTools_Box2dTreeSelector;
-typedef BOPTools_PairSelector<2> BOPTools_Box2dPairSelector;
+typedef BOPTools_PairSelector<3> BOPTools_BoxPairSelector;
 typedef BOPTools_BoxSet<Standard_Real, 3, Standard_Integer> BOPTools_BoxTree;
 typedef BOPTools_BoxSelector<3> BOPTools_BoxTreeSelector;
-typedef BOPTools_PairSelector<3> BOPTools_BoxPairSelector;
-typedef NCollection_Map<BOPTools_Set, BOPTools_SetMapHasher> BOPTools_MapOfSet;
-typedef BOPTools_MapOfSet::Iterator BOPTools_MapIteratorOfMapOfSet;
-typedef NCollection_List<BOPTools_CoupleOfShape> BOPTools_ListOfCoupleOfShape;
-typedef BOPTools_ListOfCoupleOfShape::Iterator BOPTools_ListIteratorOfListOfCoupleOfShape;
 typedef NCollection_IndexedDataMap<BOPTools_Set, TopoDS_Shape, BOPTools_SetMapHasher> BOPTools_IndexedDataMapOfSetShape;
+typedef BOPTools_ListOfConnexityBlock::Iterator BOPTools_ListIteratorOfListOfConnexityBlock;
+typedef BOPTools_ListOfCoupleOfShape::Iterator BOPTools_ListIteratorOfListOfCoupleOfShape;
+typedef NCollection_List<BOPTools_ConnexityBlock> BOPTools_ListOfConnexityBlock;
+typedef NCollection_List<BOPTools_CoupleOfShape> BOPTools_ListOfCoupleOfShape;
+typedef BOPTools_MapOfSet::Iterator BOPTools_MapIteratorOfMapOfSet;
+typedef NCollection_Map<BOPTools_Set, BOPTools_SetMapHasher> BOPTools_MapOfSet;
 /* end typedefs declaration */
 
 /***************************
@@ -1871,6 +1871,30 @@ TopoDS_Shape
 *********************/
 class BOPTools_Set {
 	public:
+		/****************** BOPTools_Set ******************/
+		%feature("compactdefaultargs") BOPTools_Set;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") BOPTools_Set;
+		 BOPTools_Set();
+
+		/****************** BOPTools_Set ******************/
+		%feature("compactdefaultargs") BOPTools_Set;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theAllocator: NCollection_BaseAllocator
+
+Returns
+-------
+None
+") BOPTools_Set;
+		 BOPTools_Set(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "No available documentation.
@@ -1899,30 +1923,6 @@ Returns
 BOPTools_Set
 ") Assign;
 		BOPTools_Set & Assign(const BOPTools_Set & Other);
-
-		/****************** BOPTools_Set ******************/
-		%feature("compactdefaultargs") BOPTools_Set;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") BOPTools_Set;
-		 BOPTools_Set();
-
-		/****************** BOPTools_Set ******************/
-		%feature("compactdefaultargs") BOPTools_Set;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theAllocator: NCollection_BaseAllocator
-
-Returns
--------
-None
-") BOPTools_Set;
-		 BOPTools_Set(const opencascade::handle<NCollection_BaseAllocator> & theAllocator);
 
 		/****************** HashCode ******************/
 		%feature("compactdefaultargs") HashCode;

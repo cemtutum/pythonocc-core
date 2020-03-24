@@ -109,23 +109,23 @@ class TObj_DeletingMode:
 /* end handles declaration */
 
 /* templates */
-%template(TObj_TIntSparseArray_VecOfData) NCollection_SparseArray<Standard_Integer>;
-%template(TObj_TIntSparseArray_MapOfData) NCollection_SparseArray<Standard_Integer>;
 %template(TObj_DataMapOfNameLabel) NCollection_DataMap<opencascade::handle<TCollection_HExtendedString>,TDF_Label>;
 %template(TObj_DataMapOfObjectHSequenceOcafObjects) NCollection_DataMap<opencascade::handle<TObj_Object>,opencascade::handle<TObj_HSequenceOfObject>>;
 %template(TObj_DataMapOfStringPointer) NCollection_DataMap<TCollection_AsciiString,Standard_Address>;
 %template(TObj_SequenceOfIterator) NCollection_Sequence<opencascade::handle<TObj_ObjectIterator>>;
 %template(TObj_SequenceOfObject) NCollection_Sequence<opencascade::handle<TObj_Object>>;
+%template(TObj_TIntSparseArray_MapOfData) NCollection_SparseArray<Standard_Integer>;
+%template(TObj_TIntSparseArray_VecOfData) NCollection_SparseArray<Standard_Integer>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_SparseArray<Standard_Integer> TObj_TIntSparseArray_VecOfData;
-typedef NCollection_SparseArray<Standard_Integer> TObj_TIntSparseArray_MapOfData;
 typedef NCollection_DataMap<opencascade::handle<TCollection_HExtendedString>, TDF_Label> TObj_DataMapOfNameLabel;
 typedef NCollection_DataMap<opencascade::handle<TObj_Object>, opencascade::handle<TObj_HSequenceOfObject>> TObj_DataMapOfObjectHSequenceOcafObjects;
 typedef NCollection_DataMap<TCollection_AsciiString, Standard_Address> TObj_DataMapOfStringPointer;
 typedef NCollection_Sequence<opencascade::handle<TObj_ObjectIterator>> TObj_SequenceOfIterator;
 typedef NCollection_Sequence<opencascade::handle<TObj_Object>> TObj_SequenceOfObject;
+typedef NCollection_SparseArray<Standard_Integer> TObj_TIntSparseArray_MapOfData;
+typedef NCollection_SparseArray<Standard_Integer> TObj_TIntSparseArray_VecOfData;
 /* end typedefs declaration */
 
 /*************************
@@ -426,6 +426,20 @@ None
 ************************/
 class TObj_CheckModel : public Message_Algorithm {
 	public:
+		/****************** TObj_CheckModel ******************/
+		%feature("compactdefaultargs") TObj_CheckModel;
+		%feature("autodoc", "Initialize checker by model.
+
+Parameters
+----------
+theModel: TObj_Model
+
+Returns
+-------
+None
+") TObj_CheckModel;
+		 TObj_CheckModel(const opencascade::handle<TObj_Model> & theModel);
+
 		/****************** GetModel ******************/
 		%feature("compactdefaultargs") GetModel;
 		%feature("autodoc", "Returns the checked model.
@@ -469,20 +483,6 @@ Returns
 None
 ") SetToFix;
 		void SetToFix(const Standard_Boolean theToFix);
-
-		/****************** TObj_CheckModel ******************/
-		%feature("compactdefaultargs") TObj_CheckModel;
-		%feature("autodoc", "Initialize checker by model.
-
-Parameters
-----------
-theModel: TObj_Model
-
-Returns
--------
-None
-") TObj_CheckModel;
-		 TObj_CheckModel(const opencascade::handle<TObj_Model> & theModel);
 
 };
 
@@ -1727,6 +1727,16 @@ opencascade::handle<TObj_Object>
 class TObj_TIntSparseArray : public TDF_Attribute {
 	public:
 typedef TObj_TIntSparseArray_VecOfData ::ConstIterator Iterator;
+		/****************** TObj_TIntSparseArray ******************/
+		%feature("compactdefaultargs") TObj_TIntSparseArray;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") TObj_TIntSparseArray;
+		 TObj_TIntSparseArray();
+
 		/****************** AfterUndo ******************/
 		%feature("compactdefaultargs") AfterUndo;
 		%feature("autodoc", "Clears my modification delta; called after application of thedelta.
@@ -1932,16 +1942,6 @@ Standard_Size
 ") Size;
 		Standard_Size Size();
 
-		/****************** TObj_TIntSparseArray ******************/
-		%feature("compactdefaultargs") TObj_TIntSparseArray;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") TObj_TIntSparseArray;
-		 TObj_TIntSparseArray();
-
 		/****************** UnsetValue ******************/
 		%feature("compactdefaultargs") UnsetValue;
 		%feature("autodoc", "Unsets the value with the given id. raises an exception if theid is not positive.
@@ -1986,6 +1986,16 @@ int
 ********************/
 class TObj_TModel : public TDF_Attribute {
 	public:
+		/****************** TObj_TModel ******************/
+		%feature("compactdefaultargs") TObj_TModel;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") TObj_TModel;
+		 TObj_TModel();
+
 		/****************** GetID ******************/
 		%feature("compactdefaultargs") GetID;
 		%feature("autodoc", "This method is used in implementation of id().
@@ -2069,16 +2079,6 @@ None
 ") Set;
 		void Set(const opencascade::handle<TObj_Model> & theModel);
 
-		/****************** TObj_TModel ******************/
-		%feature("compactdefaultargs") TObj_TModel;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") TObj_TModel;
-		 TObj_TModel();
-
 };
 
 
@@ -2095,6 +2095,16 @@ None
 ****************************/
 class TObj_TNameContainer : public TDF_Attribute {
 	public:
+		/****************** TObj_TNameContainer ******************/
+		%feature("compactdefaultargs") TObj_TNameContainer;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") TObj_TNameContainer;
+		 TObj_TNameContainer();
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Remove all names registered in container.
@@ -2245,16 +2255,6 @@ None
 ") Set;
 		void Set(const TObj_DataMapOfNameLabel & theElem);
 
-		/****************** TObj_TNameContainer ******************/
-		%feature("compactdefaultargs") TObj_TNameContainer;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") TObj_TNameContainer;
-		 TObj_TNameContainer();
-
 };
 
 
@@ -2271,6 +2271,16 @@ None
 *********************/
 class TObj_TObject : public TDF_Attribute {
 	public:
+		/****************** TObj_TObject ******************/
+		%feature("compactdefaultargs") TObj_TObject;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") TObj_TObject;
+		 TObj_TObject();
+
 		/****************** AfterUndo ******************/
 		%feature("compactdefaultargs") AfterUndo;
 		%feature("autodoc", "Tell tobj_object to rise from the dead, i.e. (myelem->isalive() == true) after that.
@@ -2394,16 +2404,6 @@ None
 ") Set;
 		void Set(const opencascade::handle<TObj_Object> & theElem);
 
-		/****************** TObj_TObject ******************/
-		%feature("compactdefaultargs") TObj_TObject;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") TObj_TObject;
-		 TObj_TObject();
-
 };
 
 
@@ -2420,6 +2420,16 @@ None
 ************************/
 class TObj_TReference : public TDF_Attribute {
 	public:
+		/****************** TObj_TReference ******************/
+		%feature("compactdefaultargs") TObj_TReference;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") TObj_TReference;
+		 TObj_TReference();
+
 		/****************** AfterResume ******************/
 		%feature("compactdefaultargs") AfterResume;
 		%feature("autodoc", "Check if back reference exists for reference.
@@ -2622,16 +2632,6 @@ None
 ") Set;
 		void Set(const TDF_Label & theLabel, const TDF_Label & theMasterLabel);
 
-		/****************** TObj_TReference ******************/
-		%feature("compactdefaultargs") TObj_TReference;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") TObj_TReference;
-		 TObj_TReference();
-
 };
 
 
@@ -2648,6 +2648,16 @@ None
 ******************/
 class TObj_TXYZ : public TDF_Attribute {
 	public:
+		/****************** TObj_TXYZ ******************/
+		%feature("compactdefaultargs") TObj_TXYZ;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") TObj_TXYZ;
+		 TObj_TXYZ();
+
 
         %feature("autodoc", "1");
         %extend{
@@ -2754,16 +2764,6 @@ None
 ") Set;
 		void Set(const gp_XYZ & theXYZ);
 
-		/****************** TObj_TXYZ ******************/
-		%feature("compactdefaultargs") TObj_TXYZ;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") TObj_TXYZ;
-		 TObj_TXYZ();
-
 };
 
 
@@ -2837,6 +2837,20 @@ opencascade::handle<TObj_Object>
 ***************************/
 class TObj_ModelIterator : public TObj_ObjectIterator {
 	public:
+		/****************** TObj_ModelIterator ******************/
+		%feature("compactdefaultargs") TObj_ModelIterator;
+		%feature("autodoc", "/** * constructor */ creates iterator and initialize it by model`s label.
+
+Parameters
+----------
+theModel: TObj_Model
+
+Returns
+-------
+None
+") TObj_ModelIterator;
+		 TObj_ModelIterator(const opencascade::handle<TObj_Model> & theModel);
+
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Returns true if iteration is not finished and method value() will give the object.
@@ -2856,20 +2870,6 @@ Returns
 None
 ") Next;
 		virtual void Next();
-
-		/****************** TObj_ModelIterator ******************/
-		%feature("compactdefaultargs") TObj_ModelIterator;
-		%feature("autodoc", "/** * constructor */ creates iterator and initialize it by model`s label.
-
-Parameters
-----------
-theModel: TObj_Model
-
-Returns
--------
-None
-") TObj_ModelIterator;
-		 TObj_ModelIterator(const opencascade::handle<TObj_Model> & theModel);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -3049,6 +3049,22 @@ bool
 ******************************/
 class TObj_SequenceIterator : public TObj_ObjectIterator {
 	public:
+		/****************** TObj_SequenceIterator ******************/
+		%feature("compactdefaultargs") TObj_SequenceIterator;
+		%feature("autodoc", "Creates an iterator an initialize it by sequence of objects.
+
+Parameters
+----------
+theObjects: TObj_HSequenceOfObject
+theType: Standard_Type,optional
+	default value is NULL
+
+Returns
+-------
+None
+") TObj_SequenceIterator;
+		 TObj_SequenceIterator(const opencascade::handle<TObj_HSequenceOfObject> & theObjects, const opencascade::handle<Standard_Type> & theType = NULL);
+
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
 		%feature("autodoc", "Returns true if there is a current item in the iteration.
@@ -3068,22 +3084,6 @@ Returns
 None
 ") Next;
 		virtual void Next();
-
-		/****************** TObj_SequenceIterator ******************/
-		%feature("compactdefaultargs") TObj_SequenceIterator;
-		%feature("autodoc", "Creates an iterator an initialize it by sequence of objects.
-
-Parameters
-----------
-theObjects: TObj_HSequenceOfObject
-theType: Standard_Type,optional
-	default value is NULL
-
-Returns
--------
-None
-") TObj_SequenceIterator;
-		 TObj_SequenceIterator(const opencascade::handle<TObj_HSequenceOfObject> & theObjects, const opencascade::handle<Standard_Type> & theType = NULL);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -3111,16 +3111,6 @@ opencascade::handle<TObj_Object>
 *****************************/
 class TObj_HiddenPartition : public TObj_Partition {
 	public:
-		/****************** GetTypeFlags ******************/
-		%feature("compactdefaultargs") GetTypeFlags;
-		%feature("autodoc", "Returns all flags of father except visible.
-
-Returns
--------
-int
-") GetTypeFlags;
-		virtual Standard_Integer GetTypeFlags();
-
 		/****************** TObj_HiddenPartition ******************/
 		%feature("compactdefaultargs") TObj_HiddenPartition;
 		%feature("autodoc", "Constructor.
@@ -3134,6 +3124,16 @@ Returns
 None
 ") TObj_HiddenPartition;
 		 TObj_HiddenPartition(const TDF_Label & theLabel);
+
+		/****************** GetTypeFlags ******************/
+		%feature("compactdefaultargs") GetTypeFlags;
+		%feature("autodoc", "Returns all flags of father except visible.
+
+Returns
+-------
+int
+") GetTypeFlags;
+		virtual Standard_Integer GetTypeFlags();
 
 };
 

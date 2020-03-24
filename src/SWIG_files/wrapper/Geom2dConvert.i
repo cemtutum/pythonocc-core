@@ -261,24 +261,6 @@ opencascade::handle<Geom2d_BSplineCurve>
 **********************************/
 class Geom2dConvert_ApproxCurve {
 	public:
-		/****************** Curve ******************/
-		%feature("compactdefaultargs") Curve;
-		%feature("autodoc", "Returns the 2d bspline curve resulting from the approximation algorithm.
-
-Returns
--------
-opencascade::handle<Geom2d_BSplineCurve>
-") Curve;
-		opencascade::handle<Geom2d_BSplineCurve> Curve();
-
-
-        %feature("autodoc", "1");
-        %extend{
-            std::string DumpToString() {
-            std::stringstream s;
-            self->Dump(s);
-            return s.str();}
-        };
 		/****************** Geom2dConvert_ApproxCurve ******************/
 		%feature("compactdefaultargs") Geom2dConvert_ApproxCurve;
 		%feature("autodoc", "Constructs an approximation framework defined by - the 2d conic curve - the tolerance value tol2d - the degree of continuity order - the maximum number of segments allowed maxsegments - the highest degree maxdegree which the polynomial defining the bspline is allowed to have.
@@ -315,6 +297,24 @@ None
 ") Geom2dConvert_ApproxCurve;
 		 Geom2dConvert_ApproxCurve(const opencascade::handle<Adaptor2d_HCurve2d> & Curve, const Standard_Real Tol2d, const GeomAbs_Shape Order, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
 
+		/****************** Curve ******************/
+		%feature("compactdefaultargs") Curve;
+		%feature("autodoc", "Returns the 2d bspline curve resulting from the approximation algorithm.
+
+Returns
+-------
+opencascade::handle<Geom2d_BSplineCurve>
+") Curve;
+		opencascade::handle<Geom2d_BSplineCurve> Curve();
+
+
+        %feature("autodoc", "1");
+        %extend{
+            std::string DumpToString() {
+            std::stringstream s;
+            self->Dump(s);
+            return s.str();}
+        };
 		/****************** HasResult ******************/
 		%feature("compactdefaultargs") HasResult;
 		%feature("autodoc", "Returns standard_true if the approximation did come out with a result that is not necessarely within the required tolerance.
@@ -426,34 +426,6 @@ None
 ************************************************/
 class Geom2dConvert_BSplineCurveToBezierCurve {
 	public:
-		/****************** Arc ******************/
-		%feature("compactdefaultargs") Arc;
-		%feature("autodoc", "Constructs and returns the bezier curve of index index to the table of adjacent bezier arcs computed by this algorithm. this bezier curve has the same orientation as the bspline curve analyzed in this framework. exceptions standard_outofrange if index is less than 1 or greater than the number of adjacent bezier arcs computed by this algorithm.
-
-Parameters
-----------
-Index: int
-
-Returns
--------
-opencascade::handle<Geom2d_BezierCurve>
-") Arc;
-		opencascade::handle<Geom2d_BezierCurve> Arc(const Standard_Integer Index);
-
-		/****************** Arcs ******************/
-		%feature("compactdefaultargs") Arcs;
-		%feature("autodoc", "Constructs all the bezier curves whose data is computed by this algorithm and loads these curves into the curves table. the bezier curves have the same orientation as the bspline curve analyzed in this framework. exceptions standard_dimensionerror if the curves array was not created with the following bounds: - 1 , and - the number of adjacent bezier arcs computed by this algorithm (as given by the function nbarcs).
-
-Parameters
-----------
-Curves: TColGeom2d_Array1OfBezierCurve
-
-Returns
--------
-None
-") Arcs;
-		void Arcs(TColGeom2d_Array1OfBezierCurve & Curves);
-
 		/****************** Geom2dConvert_BSplineCurveToBezierCurve ******************/
 		%feature("compactdefaultargs") Geom2dConvert_BSplineCurveToBezierCurve;
 		%feature("autodoc", "Computes all the data needed to convert - the bspline curve basiscurve, into a series of adjacent bezier arcs. the result consists of a series of basiscurve arcs limited by points corresponding to knot values of the curve. use the available interrogation functions to ascertain the number of computed bezier arcs, and then to construct each individual bezier curve (or all bezier curves). note: parametrictolerance is not used.
@@ -484,6 +456,34 @@ Returns
 None
 ") Geom2dConvert_BSplineCurveToBezierCurve;
 		 Geom2dConvert_BSplineCurveToBezierCurve(const opencascade::handle<Geom2d_BSplineCurve> & BasisCurve, const Standard_Real U1, const Standard_Real U2, const Standard_Real ParametricTolerance);
+
+		/****************** Arc ******************/
+		%feature("compactdefaultargs") Arc;
+		%feature("autodoc", "Constructs and returns the bezier curve of index index to the table of adjacent bezier arcs computed by this algorithm. this bezier curve has the same orientation as the bspline curve analyzed in this framework. exceptions standard_outofrange if index is less than 1 or greater than the number of adjacent bezier arcs computed by this algorithm.
+
+Parameters
+----------
+Index: int
+
+Returns
+-------
+opencascade::handle<Geom2d_BezierCurve>
+") Arc;
+		opencascade::handle<Geom2d_BezierCurve> Arc(const Standard_Integer Index);
+
+		/****************** Arcs ******************/
+		%feature("compactdefaultargs") Arcs;
+		%feature("autodoc", "Constructs all the bezier curves whose data is computed by this algorithm and loads these curves into the curves table. the bezier curves have the same orientation as the bspline curve analyzed in this framework. exceptions standard_dimensionerror if the curves array was not created with the following bounds: - 1 , and - the number of adjacent bezier arcs computed by this algorithm (as given by the function nbarcs).
+
+Parameters
+----------
+Curves: TColGeom2d_Array1OfBezierCurve
+
+Returns
+-------
+None
+") Arcs;
+		void Arcs(TColGeom2d_Array1OfBezierCurve & Curves);
 
 		/****************** Knots ******************/
 		%feature("compactdefaultargs") Knots;
@@ -523,6 +523,37 @@ int
 **********************************************/
 class Geom2dConvert_CompCurveToBSplineCurve {
 	public:
+		/****************** Geom2dConvert_CompCurveToBSplineCurve ******************/
+		%feature("compactdefaultargs") Geom2dConvert_CompCurveToBSplineCurve;
+		%feature("autodoc", "Initialize the algorithme - parameterisation is used to convert.
+
+Parameters
+----------
+Parameterisation: Convert_ParameterisationType,optional
+	default value is Convert_TgtThetaOver2
+
+Returns
+-------
+None
+") Geom2dConvert_CompCurveToBSplineCurve;
+		 Geom2dConvert_CompCurveToBSplineCurve(const Convert_ParameterisationType Parameterisation = Convert_TgtThetaOver2);
+
+		/****************** Geom2dConvert_CompCurveToBSplineCurve ******************/
+		%feature("compactdefaultargs") Geom2dConvert_CompCurveToBSplineCurve;
+		%feature("autodoc", "Initialize the algorithme with one curve - parameterisation is used to convert.
+
+Parameters
+----------
+BasisCurve: Geom2d_BoundedCurve
+Parameterisation: Convert_ParameterisationType,optional
+	default value is Convert_TgtThetaOver2
+
+Returns
+-------
+None
+") Geom2dConvert_CompCurveToBSplineCurve;
+		 Geom2dConvert_CompCurveToBSplineCurve(const opencascade::handle<Geom2d_BoundedCurve> & BasisCurve, const Convert_ParameterisationType Parameterisation = Convert_TgtThetaOver2);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Append a curve in the bspline return false if the curve is not g0 with the bsplinecurve. tolerance is used to check continuity and decrease multiplicty at the common knot after is usefull if basiscurve is a closed curve .
@@ -559,37 +590,6 @@ Returns
 None
 ") Clear;
 		void Clear();
-
-		/****************** Geom2dConvert_CompCurveToBSplineCurve ******************/
-		%feature("compactdefaultargs") Geom2dConvert_CompCurveToBSplineCurve;
-		%feature("autodoc", "Initialize the algorithme - parameterisation is used to convert.
-
-Parameters
-----------
-Parameterisation: Convert_ParameterisationType,optional
-	default value is Convert_TgtThetaOver2
-
-Returns
--------
-None
-") Geom2dConvert_CompCurveToBSplineCurve;
-		 Geom2dConvert_CompCurveToBSplineCurve(const Convert_ParameterisationType Parameterisation = Convert_TgtThetaOver2);
-
-		/****************** Geom2dConvert_CompCurveToBSplineCurve ******************/
-		%feature("compactdefaultargs") Geom2dConvert_CompCurveToBSplineCurve;
-		%feature("autodoc", "Initialize the algorithme with one curve - parameterisation is used to convert.
-
-Parameters
-----------
-BasisCurve: Geom2d_BoundedCurve
-Parameterisation: Convert_ParameterisationType,optional
-	default value is Convert_TgtThetaOver2
-
-Returns
--------
-None
-") Geom2dConvert_CompCurveToBSplineCurve;
-		 Geom2dConvert_CompCurveToBSplineCurve(const opencascade::handle<Geom2d_BoundedCurve> & BasisCurve, const Convert_ParameterisationType Parameterisation = Convert_TgtThetaOver2);
 
 };
 

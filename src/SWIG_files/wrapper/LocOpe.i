@@ -108,17 +108,17 @@ class LocOpe_Operation:
 /* end handles declaration */
 
 /* templates */
-%template(LocOpe_SequenceOfLin) NCollection_Sequence<gp_Lin>;
 %template(LocOpe_DataMapOfShapePnt) NCollection_DataMap<TopoDS_Shape,gp_Pnt,TopTools_ShapeMapHasher>;
 %template(LocOpe_SequenceOfCirc) NCollection_Sequence<gp_Circ>;
+%template(LocOpe_SequenceOfLin) NCollection_Sequence<gp_Lin>;
 %template(LocOpe_SequenceOfPntFace) NCollection_Sequence<LocOpe_PntFace>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<gp_Lin> LocOpe_SequenceOfLin;
-typedef NCollection_DataMap<TopoDS_Shape, gp_Pnt, TopTools_ShapeMapHasher> LocOpe_DataMapOfShapePnt;
 typedef NCollection_DataMap<TopoDS_Shape, gp_Pnt, TopTools_ShapeMapHasher>::Iterator LocOpe_DataMapIteratorOfDataMapOfShapePnt;
+typedef NCollection_DataMap<TopoDS_Shape, gp_Pnt, TopTools_ShapeMapHasher> LocOpe_DataMapOfShapePnt;
 typedef NCollection_Sequence<gp_Circ> LocOpe_SequenceOfCirc;
+typedef NCollection_Sequence<gp_Lin> LocOpe_SequenceOfLin;
 typedef NCollection_Sequence<LocOpe_PntFace> LocOpe_SequenceOfPntFace;
 /* end typedefs declaration */
 
@@ -265,16 +265,6 @@ TopoDS_Shape
 **************************/
 class LocOpe_BuildWires {
 	public:
-		/****************** IsDone ******************/
-		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-bool
-") IsDone;
-		Standard_Boolean IsDone();
-
 		/****************** LocOpe_BuildWires ******************/
 		%feature("compactdefaultargs") LocOpe_BuildWires;
 		%feature("autodoc", "No available documentation.
@@ -299,6 +289,16 @@ Returns
 None
 ") LocOpe_BuildWires;
 		 LocOpe_BuildWires(const TopTools_ListOfShape & Ledges, const opencascade::handle<LocOpe_WiresOnShape> & PW);
+
+		/****************** IsDone ******************/
+		%feature("compactdefaultargs") IsDone;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+bool
+") IsDone;
+		Standard_Boolean IsDone();
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
@@ -339,6 +339,30 @@ TopTools_ListOfShape
 *****************************/
 class LocOpe_CSIntersector {
 	public:
+		/****************** LocOpe_CSIntersector ******************/
+		%feature("compactdefaultargs") LocOpe_CSIntersector;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") LocOpe_CSIntersector;
+		 LocOpe_CSIntersector();
+
+		/****************** LocOpe_CSIntersector ******************/
+		%feature("compactdefaultargs") LocOpe_CSIntersector;
+		%feature("autodoc", "Creates and performs the intersection betwwen <ax1> and <s>.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") LocOpe_CSIntersector;
+		 LocOpe_CSIntersector(const TopoDS_Shape & S);
+
 		/****************** Destroy ******************/
 		%feature("compactdefaultargs") Destroy;
 		%feature("autodoc", "No available documentation.
@@ -372,30 +396,6 @@ Returns
 bool
 ") IsDone;
 		Standard_Boolean IsDone();
-
-		/****************** LocOpe_CSIntersector ******************/
-		%feature("compactdefaultargs") LocOpe_CSIntersector;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") LocOpe_CSIntersector;
-		 LocOpe_CSIntersector();
-
-		/****************** LocOpe_CSIntersector ******************/
-		%feature("compactdefaultargs") LocOpe_CSIntersector;
-		%feature("autodoc", "Creates and performs the intersection betwwen <ax1> and <s>.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") LocOpe_CSIntersector;
-		 LocOpe_CSIntersector(const TopoDS_Shape & S);
 
 		/****************** LocalizeAfter ******************/
 		%feature("compactdefaultargs") LocalizeAfter;
@@ -558,46 +558,6 @@ LocOpe_PntFace
 *************************************/
 class LocOpe_CurveShapeIntersector {
 	public:
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "Performs the intersection between <ax1 and <s>.
-
-Parameters
-----------
-Axis: gp_Ax1
-S: TopoDS_Shape
-
-Returns
--------
-None
-") Init;
-		void Init(const gp_Ax1 & Axis, const TopoDS_Shape & S);
-
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "Performs the intersection between <ax1 and <s>.
-
-Parameters
-----------
-C: gp_Circ
-S: TopoDS_Shape
-
-Returns
--------
-None
-") Init;
-		void Init(const gp_Circ & C, const TopoDS_Shape & S);
-
-		/****************** IsDone ******************/
-		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "Returns <standard_true> if the intersection has been done.
-
-Returns
--------
-bool
-") IsDone;
-		Standard_Boolean IsDone();
-
 		/****************** LocOpe_CurveShapeIntersector ******************/
 		%feature("compactdefaultargs") LocOpe_CurveShapeIntersector;
 		%feature("autodoc", "Empty constructor.
@@ -637,6 +597,46 @@ Returns
 None
 ") LocOpe_CurveShapeIntersector;
 		 LocOpe_CurveShapeIntersector(const gp_Circ & C, const TopoDS_Shape & S);
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "Performs the intersection between <ax1 and <s>.
+
+Parameters
+----------
+Axis: gp_Ax1
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") Init;
+		void Init(const gp_Ax1 & Axis, const TopoDS_Shape & S);
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "Performs the intersection between <ax1 and <s>.
+
+Parameters
+----------
+C: gp_Circ
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") Init;
+		void Init(const gp_Circ & C, const TopoDS_Shape & S);
+
+		/****************** IsDone ******************/
+		%feature("compactdefaultargs") IsDone;
+		%feature("autodoc", "Returns <standard_true> if the intersection has been done.
+
+Returns
+-------
+bool
+") IsDone;
+		Standard_Boolean IsDone();
 
 		/****************** LocalizeAfter ******************/
 		%feature("compactdefaultargs") LocalizeAfter;
@@ -744,6 +744,39 @@ LocOpe_PntFace
 **********************/
 class LocOpe_DPrism {
 	public:
+		/****************** LocOpe_DPrism ******************/
+		%feature("compactdefaultargs") LocOpe_DPrism;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Spine: TopoDS_Face
+Height1: float
+Height2: float
+Angle: float
+
+Returns
+-------
+None
+") LocOpe_DPrism;
+		 LocOpe_DPrism(const TopoDS_Face & Spine, const Standard_Real Height1, const Standard_Real Height2, const Standard_Real Angle);
+
+		/****************** LocOpe_DPrism ******************/
+		%feature("compactdefaultargs") LocOpe_DPrism;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Spine: TopoDS_Face
+Height: float
+Angle: float
+
+Returns
+-------
+None
+") LocOpe_DPrism;
+		 LocOpe_DPrism(const TopoDS_Face & Spine, const Standard_Real Height, const Standard_Real Angle);
+
 		/****************** BarycCurve ******************/
 		%feature("compactdefaultargs") BarycCurve;
 		%feature("autodoc", "No available documentation.
@@ -797,39 +830,6 @@ Returns
 TopoDS_Shape
 ") LastShape;
 		const TopoDS_Shape LastShape();
-
-		/****************** LocOpe_DPrism ******************/
-		%feature("compactdefaultargs") LocOpe_DPrism;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Spine: TopoDS_Face
-Height1: float
-Height2: float
-Angle: float
-
-Returns
--------
-None
-") LocOpe_DPrism;
-		 LocOpe_DPrism(const TopoDS_Face & Spine, const Standard_Real Height1, const Standard_Real Height2, const Standard_Real Angle);
-
-		/****************** LocOpe_DPrism ******************/
-		%feature("compactdefaultargs") LocOpe_DPrism;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Spine: TopoDS_Face
-Height: float
-Angle: float
-
-Returns
--------
-None
-") LocOpe_DPrism;
-		 LocOpe_DPrism(const TopoDS_Face & Spine, const Standard_Real Height, const Standard_Real Angle);
 
 		/****************** Profile ******************/
 		%feature("compactdefaultargs") Profile;
@@ -889,6 +889,31 @@ TopoDS_Shape
 *************************/
 class LocOpe_FindEdges {
 	public:
+		/****************** LocOpe_FindEdges ******************/
+		%feature("compactdefaultargs") LocOpe_FindEdges;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") LocOpe_FindEdges;
+		 LocOpe_FindEdges();
+
+		/****************** LocOpe_FindEdges ******************/
+		%feature("compactdefaultargs") LocOpe_FindEdges;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+FFrom: TopoDS_Shape
+FTo: TopoDS_Shape
+
+Returns
+-------
+None
+") LocOpe_FindEdges;
+		 LocOpe_FindEdges(const TopoDS_Shape & FFrom, const TopoDS_Shape & FTo);
+
 		/****************** EdgeFrom ******************/
 		%feature("compactdefaultargs") EdgeFrom;
 		%feature("autodoc", "No available documentation.
@@ -918,31 +943,6 @@ Returns
 None
 ") InitIterator;
 		void InitIterator();
-
-		/****************** LocOpe_FindEdges ******************/
-		%feature("compactdefaultargs") LocOpe_FindEdges;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") LocOpe_FindEdges;
-		 LocOpe_FindEdges();
-
-		/****************** LocOpe_FindEdges ******************/
-		%feature("compactdefaultargs") LocOpe_FindEdges;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-FFrom: TopoDS_Shape
-FTo: TopoDS_Shape
-
-Returns
--------
-None
-") LocOpe_FindEdges;
-		 LocOpe_FindEdges(const TopoDS_Shape & FFrom, const TopoDS_Shape & FTo);
 
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
@@ -993,26 +993,6 @@ None
 *******************************/
 class LocOpe_FindEdgesInFace {
 	public:
-		/****************** Edge ******************/
-		%feature("compactdefaultargs") Edge;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TopoDS_Edge
-") Edge;
-		const TopoDS_Edge Edge();
-
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Init;
-		void Init();
-
 		/****************** LocOpe_FindEdgesInFace ******************/
 		%feature("compactdefaultargs") LocOpe_FindEdgesInFace;
 		%feature("autodoc", "No available documentation.
@@ -1037,6 +1017,26 @@ Returns
 None
 ") LocOpe_FindEdgesInFace;
 		 LocOpe_FindEdgesInFace(const TopoDS_Shape & S, const TopoDS_Face & F);
+
+		/****************** Edge ******************/
+		%feature("compactdefaultargs") Edge;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDS_Edge
+") Edge;
+		const TopoDS_Edge Edge();
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Init;
+		void Init();
 
 		/****************** More ******************/
 		%feature("compactdefaultargs") More;
@@ -1152,6 +1152,30 @@ TopTools_ListOfShape
 *************************/
 class LocOpe_Generator {
 	public:
+		/****************** LocOpe_Generator ******************/
+		%feature("compactdefaultargs") LocOpe_Generator;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") LocOpe_Generator;
+		 LocOpe_Generator();
+
+		/****************** LocOpe_Generator ******************/
+		%feature("compactdefaultargs") LocOpe_Generator;
+		%feature("autodoc", "Creates the algorithm on the shape <s>.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") LocOpe_Generator;
+		 LocOpe_Generator(const TopoDS_Shape & S);
+
 		/****************** DescendantFace ******************/
 		%feature("compactdefaultargs") DescendantFace;
 		%feature("autodoc", "Returns the descendant face of <f>. <f> may belong to the original shape or to the 'generated' shape. the returned face may be a null shape (when <f> disappears).
@@ -1189,30 +1213,6 @@ Returns
 bool
 ") IsDone;
 		Standard_Boolean IsDone();
-
-		/****************** LocOpe_Generator ******************/
-		%feature("compactdefaultargs") LocOpe_Generator;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") LocOpe_Generator;
-		 LocOpe_Generator();
-
-		/****************** LocOpe_Generator ******************/
-		%feature("compactdefaultargs") LocOpe_Generator;
-		%feature("autodoc", "Creates the algorithm on the shape <s>.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") LocOpe_Generator;
-		 LocOpe_Generator(const TopoDS_Shape & S);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
@@ -1262,6 +1262,31 @@ TopoDS_Shape
 *********************/
 class LocOpe_Gluer {
 	public:
+		/****************** LocOpe_Gluer ******************/
+		%feature("compactdefaultargs") LocOpe_Gluer;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") LocOpe_Gluer;
+		 LocOpe_Gluer();
+
+		/****************** LocOpe_Gluer ******************/
+		%feature("compactdefaultargs") LocOpe_Gluer;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Sbase: TopoDS_Shape
+Snew: TopoDS_Shape
+
+Returns
+-------
+None
+") LocOpe_Gluer;
+		 LocOpe_Gluer(const TopoDS_Shape & Sbase, const TopoDS_Shape & Snew);
+
 		/****************** BasisShape ******************/
 		%feature("compactdefaultargs") BasisShape;
 		%feature("autodoc", "No available documentation.
@@ -1361,31 +1386,6 @@ bool
 ") IsDone;
 		Standard_Boolean IsDone();
 
-		/****************** LocOpe_Gluer ******************/
-		%feature("compactdefaultargs") LocOpe_Gluer;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") LocOpe_Gluer;
-		 LocOpe_Gluer();
-
-		/****************** LocOpe_Gluer ******************/
-		%feature("compactdefaultargs") LocOpe_Gluer;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Sbase: TopoDS_Shape
-Snew: TopoDS_Shape
-
-Returns
--------
-None
-") LocOpe_Gluer;
-		 LocOpe_Gluer(const TopoDS_Shape & Sbase, const TopoDS_Shape & Snew);
-
 		/****************** OpeType ******************/
 		%feature("compactdefaultargs") OpeType;
 		%feature("autodoc", "No available documentation.
@@ -1440,26 +1440,6 @@ TopTools_ListOfShape
 **************************/
 class LocOpe_LinearForm {
 	public:
-		/****************** FirstShape ******************/
-		%feature("compactdefaultargs") FirstShape;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TopoDS_Shape
-") FirstShape;
-		const TopoDS_Shape FirstShape();
-
-		/****************** LastShape ******************/
-		%feature("compactdefaultargs") LastShape;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TopoDS_Shape
-") LastShape;
-		const TopoDS_Shape LastShape();
-
 		/****************** LocOpe_LinearForm ******************/
 		%feature("compactdefaultargs") LocOpe_LinearForm;
 		%feature("autodoc", "No available documentation.
@@ -1504,6 +1484,26 @@ Returns
 None
 ") LocOpe_LinearForm;
 		 LocOpe_LinearForm(const TopoDS_Shape & Base, const gp_Vec & V, const gp_Vec & Vectra, const gp_Pnt & Pnt1, const gp_Pnt & Pnt2);
+
+		/****************** FirstShape ******************/
+		%feature("compactdefaultargs") FirstShape;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDS_Shape
+") FirstShape;
+		const TopoDS_Shape FirstShape();
+
+		/****************** LastShape ******************/
+		%feature("compactdefaultargs") LastShape;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDS_Shape
+") LastShape;
+		const TopoDS_Shape LastShape();
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
@@ -1578,6 +1578,21 @@ TopTools_ListOfShape
 ********************/
 class LocOpe_Pipe {
 	public:
+		/****************** LocOpe_Pipe ******************/
+		%feature("compactdefaultargs") LocOpe_Pipe;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Spine: TopoDS_Wire
+Profile: TopoDS_Shape
+
+Returns
+-------
+None
+") LocOpe_Pipe;
+		 LocOpe_Pipe(const TopoDS_Wire & Spine, const TopoDS_Shape & Profile);
+
 		/****************** BarycCurve ******************/
 		%feature("compactdefaultargs") BarycCurve;
 		%feature("autodoc", "No available documentation.
@@ -1621,21 +1636,6 @@ Returns
 TopoDS_Shape
 ") LastShape;
 		const TopoDS_Shape LastShape();
-
-		/****************** LocOpe_Pipe ******************/
-		%feature("compactdefaultargs") LocOpe_Pipe;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Spine: TopoDS_Wire
-Profile: TopoDS_Shape
-
-Returns
--------
-None
-") LocOpe_Pipe;
-		 LocOpe_Pipe(const TopoDS_Wire & Spine, const TopoDS_Shape & Profile);
 
 		/****************** Profile ******************/
 		%feature("compactdefaultargs") Profile;
@@ -1695,26 +1695,6 @@ TopoDS_Shape
 ***********************/
 class LocOpe_PntFace {
 	public:
-		/****************** ChangeOrientation ******************/
-		%feature("compactdefaultargs") ChangeOrientation;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TopAbs_Orientation
-") ChangeOrientation;
-		TopAbs_Orientation & ChangeOrientation();
-
-		/****************** Face ******************/
-		%feature("compactdefaultargs") Face;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-TopoDS_Face
-") Face;
-		const TopoDS_Face Face();
-
 		/****************** LocOpe_PntFace ******************/
 		%feature("compactdefaultargs") LocOpe_PntFace;
 		%feature("autodoc", "Empty constructor. useful only for the list.
@@ -1743,6 +1723,26 @@ Returns
 None
 ") LocOpe_PntFace;
 		 LocOpe_PntFace(const gp_Pnt & P, const TopoDS_Face & F, const TopAbs_Orientation Or, const Standard_Real Param, const Standard_Real UPar, const Standard_Real VPar);
+
+		/****************** ChangeOrientation ******************/
+		%feature("compactdefaultargs") ChangeOrientation;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopAbs_Orientation
+") ChangeOrientation;
+		TopAbs_Orientation & ChangeOrientation();
+
+		/****************** Face ******************/
+		%feature("compactdefaultargs") Face;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+TopoDS_Face
+") Face;
+		const TopoDS_Face Face();
 
 		/****************** Orientation ******************/
 		%feature("compactdefaultargs") Orientation;
@@ -1808,6 +1808,47 @@ float
 *********************/
 class LocOpe_Prism {
 	public:
+		/****************** LocOpe_Prism ******************/
+		%feature("compactdefaultargs") LocOpe_Prism;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") LocOpe_Prism;
+		 LocOpe_Prism();
+
+		/****************** LocOpe_Prism ******************/
+		%feature("compactdefaultargs") LocOpe_Prism;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Base: TopoDS_Shape
+V: gp_Vec
+
+Returns
+-------
+None
+") LocOpe_Prism;
+		 LocOpe_Prism(const TopoDS_Shape & Base, const gp_Vec & V);
+
+		/****************** LocOpe_Prism ******************/
+		%feature("compactdefaultargs") LocOpe_Prism;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Base: TopoDS_Shape
+V: gp_Vec
+Vectra: gp_Vec
+
+Returns
+-------
+None
+") LocOpe_Prism;
+		 LocOpe_Prism(const TopoDS_Shape & Base, const gp_Vec & V, const gp_Vec & Vectra);
+
 		/****************** BarycCurve ******************/
 		%feature("compactdefaultargs") BarycCurve;
 		%feature("autodoc", "No available documentation.
@@ -1851,47 +1892,6 @@ Returns
 TopoDS_Shape
 ") LastShape;
 		const TopoDS_Shape LastShape();
-
-		/****************** LocOpe_Prism ******************/
-		%feature("compactdefaultargs") LocOpe_Prism;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") LocOpe_Prism;
-		 LocOpe_Prism();
-
-		/****************** LocOpe_Prism ******************/
-		%feature("compactdefaultargs") LocOpe_Prism;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Base: TopoDS_Shape
-V: gp_Vec
-
-Returns
--------
-None
-") LocOpe_Prism;
-		 LocOpe_Prism(const TopoDS_Shape & Base, const gp_Vec & V);
-
-		/****************** LocOpe_Prism ******************/
-		%feature("compactdefaultargs") LocOpe_Prism;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Base: TopoDS_Shape
-V: gp_Vec
-Vectra: gp_Vec
-
-Returns
--------
-None
-") LocOpe_Prism;
-		 LocOpe_Prism(const TopoDS_Shape & Base, const gp_Vec & V, const gp_Vec & Vectra);
 
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
@@ -1968,30 +1968,6 @@ TopTools_ListOfShape
 ***************************/
 class LocOpe_SplitDrafts {
 	public:
-		/****************** Init ******************/
-		%feature("compactdefaultargs") Init;
-		%feature("autodoc", "Initializes the algoritm with the shape <s>.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") Init;
-		void Init(const TopoDS_Shape & S);
-
-		/****************** IsDone ******************/
-		%feature("compactdefaultargs") IsDone;
-		%feature("autodoc", "Returns <standard_true> if the modification has been succesfully performed.
-
-Returns
--------
-bool
-") IsDone;
-		Standard_Boolean IsDone();
-
 		/****************** LocOpe_SplitDrafts ******************/
 		%feature("compactdefaultargs") LocOpe_SplitDrafts;
 		%feature("autodoc", "Empty constructor.
@@ -2015,6 +1991,30 @@ Returns
 None
 ") LocOpe_SplitDrafts;
 		 LocOpe_SplitDrafts(const TopoDS_Shape & S);
+
+		/****************** Init ******************/
+		%feature("compactdefaultargs") Init;
+		%feature("autodoc", "Initializes the algoritm with the shape <s>.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") Init;
+		void Init(const TopoDS_Shape & S);
+
+		/****************** IsDone ******************/
+		%feature("compactdefaultargs") IsDone;
+		%feature("autodoc", "Returns <standard_true> if the modification has been succesfully performed.
+
+Returns
+-------
+bool
+") IsDone;
+		Standard_Boolean IsDone();
 
 		/****************** OriginalShape ******************/
 		%feature("compactdefaultargs") OriginalShape;
@@ -2107,6 +2107,30 @@ TopTools_ListOfShape
 **************************/
 class LocOpe_SplitShape {
 	public:
+		/****************** LocOpe_SplitShape ******************/
+		%feature("compactdefaultargs") LocOpe_SplitShape;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") LocOpe_SplitShape;
+		 LocOpe_SplitShape();
+
+		/****************** LocOpe_SplitShape ******************/
+		%feature("compactdefaultargs") LocOpe_SplitShape;
+		%feature("autodoc", "Creates the process with the shape <s>.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") LocOpe_SplitShape;
+		 LocOpe_SplitShape(const TopoDS_Shape & S);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the vertex <v> on the edge <e>, at parameter <p>.
@@ -2210,30 +2234,6 @@ TopTools_ListOfShape
 ") LeftOf;
 		const TopTools_ListOfShape & LeftOf(const TopoDS_Wire & W, const TopoDS_Face & F);
 
-		/****************** LocOpe_SplitShape ******************/
-		%feature("compactdefaultargs") LocOpe_SplitShape;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") LocOpe_SplitShape;
-		 LocOpe_SplitShape();
-
-		/****************** LocOpe_SplitShape ******************/
-		%feature("compactdefaultargs") LocOpe_SplitShape;
-		%feature("autodoc", "Creates the process with the shape <s>.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") LocOpe_SplitShape;
-		 LocOpe_SplitShape(const TopoDS_Shape & S);
-
 		/****************** Shape ******************/
 		%feature("compactdefaultargs") Shape;
 		%feature("autodoc", "Returns the 'original' shape.
@@ -2258,6 +2258,30 @@ TopoDS_Shape
 ***********************/
 class LocOpe_Spliter {
 	public:
+		/****************** LocOpe_Spliter ******************/
+		%feature("compactdefaultargs") LocOpe_Spliter;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") LocOpe_Spliter;
+		 LocOpe_Spliter();
+
+		/****************** LocOpe_Spliter ******************/
+		%feature("compactdefaultargs") LocOpe_Spliter;
+		%feature("autodoc", "Creates the algorithm on the shape <s>.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") LocOpe_Spliter;
+		 LocOpe_Spliter(const TopoDS_Shape & S);
+
 		/****************** DescendantShapes ******************/
 		%feature("compactdefaultargs") DescendantShapes;
 		%feature("autodoc", "Returns the list of descendant shapes of <s>.
@@ -2316,30 +2340,6 @@ TopTools_ListOfShape
 ") Left;
 		const TopTools_ListOfShape & Left();
 
-		/****************** LocOpe_Spliter ******************/
-		%feature("compactdefaultargs") LocOpe_Spliter;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") LocOpe_Spliter;
-		 LocOpe_Spliter();
-
-		/****************** LocOpe_Spliter ******************/
-		%feature("compactdefaultargs") LocOpe_Spliter;
-		%feature("autodoc", "Creates the algorithm on the shape <s>.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") LocOpe_Spliter;
-		 LocOpe_Spliter(const TopoDS_Shape & S);
-
 		/****************** Perform ******************/
 		%feature("compactdefaultargs") Perform;
 		%feature("autodoc", "No available documentation.
@@ -2388,6 +2388,20 @@ TopoDS_Shape
 ****************************/
 class LocOpe_WiresOnShape : public Standard_Transient {
 	public:
+		/****************** LocOpe_WiresOnShape ******************/
+		%feature("compactdefaultargs") LocOpe_WiresOnShape;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") LocOpe_WiresOnShape;
+		 LocOpe_WiresOnShape(const TopoDS_Shape & S);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Add splitting edges or wires for whole initial shape withot additional specification edge->face, edge->edge this method puts edge on the corresponding faces from initial shape.
@@ -2530,20 +2544,6 @@ bool
 ") IsFaceWithSection;
 		Standard_Boolean IsFaceWithSection(const TopoDS_Shape & aFace);
 
-		/****************** LocOpe_WiresOnShape ******************/
-		%feature("compactdefaultargs") LocOpe_WiresOnShape;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") LocOpe_WiresOnShape;
-		 LocOpe_WiresOnShape(const TopoDS_Shape & S);
-
 		/****************** MoreEdge ******************/
 		%feature("compactdefaultargs") MoreEdge;
 		%feature("autodoc", "No available documentation.
@@ -2666,6 +2666,30 @@ None
 **************************/
 class LocOpe_GluedShape : public LocOpe_GeneratedShape {
 	public:
+		/****************** LocOpe_GluedShape ******************/
+		%feature("compactdefaultargs") LocOpe_GluedShape;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") LocOpe_GluedShape;
+		 LocOpe_GluedShape();
+
+		/****************** LocOpe_GluedShape ******************/
+		%feature("compactdefaultargs") LocOpe_GluedShape;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") LocOpe_GluedShape;
+		 LocOpe_GluedShape(const TopoDS_Shape & S);
+
 		/****************** Generated ******************/
 		%feature("compactdefaultargs") Generated;
 		%feature("autodoc", "Returns the edge created by the vertex <v>. if none, must return a null shape.
@@ -2731,30 +2755,6 @@ Returns
 None
 ") Init;
 		void Init(const TopoDS_Shape & S);
-
-		/****************** LocOpe_GluedShape ******************/
-		%feature("compactdefaultargs") LocOpe_GluedShape;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") LocOpe_GluedShape;
-		 LocOpe_GluedShape();
-
-		/****************** LocOpe_GluedShape ******************/
-		%feature("compactdefaultargs") LocOpe_GluedShape;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") LocOpe_GluedShape;
-		 LocOpe_GluedShape(const TopoDS_Shape & S);
 
 		/****************** OrientedFaces ******************/
 		%feature("compactdefaultargs") OrientedFaces;

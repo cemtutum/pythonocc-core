@@ -83,10 +83,10 @@ from OCC.Core.Exception import *
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<TCollection_AsciiString, opencascade::handle<XmlMDF_ADriver>, TCollection_AsciiString> XmlMDF_MapOfDriver;
 typedef NCollection_DataMap<TCollection_AsciiString, opencascade::handle<XmlMDF_ADriver>, TCollection_AsciiString>::Iterator XmlMDF_DataMapIteratorOfMapOfDriver;
-typedef NCollection_DataMap<opencascade::handle<Standard_Type>, opencascade::handle<XmlMDF_ADriver>, TColStd_MapTransientHasher> XmlMDF_TypeADriverMap;
 typedef NCollection_DataMap<opencascade::handle<Standard_Type>, opencascade::handle<XmlMDF_ADriver>, TColStd_MapTransientHasher>::Iterator XmlMDF_DataMapIteratorOfTypeADriverMap;
+typedef NCollection_DataMap<TCollection_AsciiString, opencascade::handle<XmlMDF_ADriver>, TCollection_AsciiString> XmlMDF_MapOfDriver;
+typedef NCollection_DataMap<opencascade::handle<Standard_Type>, opencascade::handle<XmlMDF_ADriver>, TColStd_MapTransientHasher> XmlMDF_TypeADriverMap;
 /* end typedefs declaration */
 
 /***************
@@ -247,6 +247,16 @@ int
 ****************************/
 class XmlMDF_ADriverTable : public Standard_Transient {
 	public:
+		/****************** XmlMDF_ADriverTable ******************/
+		%feature("compactdefaultargs") XmlMDF_ADriverTable;
+		%feature("autodoc", "Creates a mutable adrivertable from xmlmdf.
+
+Returns
+-------
+None
+") XmlMDF_ADriverTable;
+		 XmlMDF_ADriverTable();
+
 		/****************** AddDriver ******************/
 		%feature("compactdefaultargs") AddDriver;
 		%feature("autodoc", "Sets a translation driver: <adriver>.
@@ -286,16 +296,6 @@ XmlMDF_TypeADriverMap
 ") GetDrivers;
 		const XmlMDF_TypeADriverMap & GetDrivers();
 
-		/****************** XmlMDF_ADriverTable ******************/
-		%feature("compactdefaultargs") XmlMDF_ADriverTable;
-		%feature("autodoc", "Creates a mutable adrivertable from xmlmdf.
-
-Returns
--------
-None
-") XmlMDF_ADriverTable;
-		 XmlMDF_ADriverTable();
-
 };
 
 
@@ -312,6 +312,20 @@ None
 *******************************/
 class XmlMDF_ReferenceDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDF_ReferenceDriver ******************/
+		%feature("compactdefaultargs") XmlMDF_ReferenceDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDF_ReferenceDriver;
+		 XmlMDF_ReferenceDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -353,20 +367,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDF_ReferenceDriver ******************/
-		%feature("compactdefaultargs") XmlMDF_ReferenceDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDF_ReferenceDriver;
-		 XmlMDF_ReferenceDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 
@@ -384,6 +384,20 @@ None
 *******************************/
 class XmlMDF_TagSourceDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDF_TagSourceDriver ******************/
+		%feature("compactdefaultargs") XmlMDF_TagSourceDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDF_TagSourceDriver;
+		 XmlMDF_TagSourceDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -425,20 +439,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDF_TagSourceDriver ******************/
-		%feature("compactdefaultargs") XmlMDF_TagSourceDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDF_TagSourceDriver;
-		 XmlMDF_TagSourceDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 

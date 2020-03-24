@@ -781,6 +781,16 @@ gp_Pnt2d
 *************************/
 class Bisector_PolyBis {
 	public:
+		/****************** Bisector_PolyBis ******************/
+		%feature("compactdefaultargs") Bisector_PolyBis;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") Bisector_PolyBis;
+		 Bisector_PolyBis();
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "No available documentation.
@@ -794,16 +804,6 @@ Returns
 None
 ") Append;
 		void Append(const Bisector_PointOnBis & Point);
-
-		/****************** Bisector_PolyBis ******************/
-		%feature("compactdefaultargs") Bisector_PolyBis;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") Bisector_PolyBis;
-		 Bisector_PolyBis();
 
 		/****************** First ******************/
 		%feature("compactdefaultargs") First;

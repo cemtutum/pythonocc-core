@@ -332,26 +332,6 @@ opencascade::handle<Geom2d_Geometry>
 ******************************/
 class Geom2d_Transformation : public Standard_Transient {
 	public:
-		/****************** Copy ******************/
-		%feature("compactdefaultargs") Copy;
-		%feature("autodoc", "Creates a new object, which is a copy of this transformation.
-
-Returns
--------
-opencascade::handle<Geom2d_Transformation>
-") Copy;
-		opencascade::handle<Geom2d_Transformation> Copy();
-
-		/****************** Form ******************/
-		%feature("compactdefaultargs") Form;
-		%feature("autodoc", "Returns the nature of this transformation as a value of the gp_trsfform enumeration. returns the nature of the transformation. it can be identity, rotation, translation, pntmirror, ax1mirror, scale, compoundtrsf.
-
-Returns
--------
-gp_TrsfForm
-") Form;
-		gp_TrsfForm Form();
-
 		/****************** Geom2d_Transformation ******************/
 		%feature("compactdefaultargs") Geom2d_Transformation;
 		%feature("autodoc", "Creates an identity transformation.
@@ -375,6 +355,26 @@ Returns
 None
 ") Geom2d_Transformation;
 		 Geom2d_Transformation(const gp_Trsf2d & T);
+
+		/****************** Copy ******************/
+		%feature("compactdefaultargs") Copy;
+		%feature("autodoc", "Creates a new object, which is a copy of this transformation.
+
+Returns
+-------
+opencascade::handle<Geom2d_Transformation>
+") Copy;
+		opencascade::handle<Geom2d_Transformation> Copy();
+
+		/****************** Form ******************/
+		%feature("compactdefaultargs") Form;
+		%feature("autodoc", "Returns the nature of this transformation as a value of the gp_trsfform enumeration. returns the nature of the transformation. it can be identity, rotation, translation, pntmirror, ax1mirror, scale, compoundtrsf.
+
+Returns
+-------
+gp_TrsfForm
+") Form;
+		gp_TrsfForm Form();
 
 		/****************** Invert ******************/
 		%feature("compactdefaultargs") Invert;
@@ -697,6 +697,35 @@ opencascade::handle<Geom2d_Transformation>
 *****************************/
 class Geom2d_AxisPlacement : public Geom2d_Geometry {
 	public:
+		/****************** Geom2d_AxisPlacement ******************/
+		%feature("compactdefaultargs") Geom2d_AxisPlacement;
+		%feature("autodoc", "Constructs an axis by conversion of the gp_ax2d axis a.
+
+Parameters
+----------
+A: gp_Ax2d
+
+Returns
+-------
+None
+") Geom2d_AxisPlacement;
+		 Geom2d_AxisPlacement(const gp_Ax2d & A);
+
+		/****************** Geom2d_AxisPlacement ******************/
+		%feature("compactdefaultargs") Geom2d_AxisPlacement;
+		%feature("autodoc", "Constructs an axis from a given origin p and unit vector v.
+
+Parameters
+----------
+P: gp_Pnt2d
+V: gp_Dir2d
+
+Returns
+-------
+None
+") Geom2d_AxisPlacement;
+		 Geom2d_AxisPlacement(const gp_Pnt2d & P, const gp_Dir2d & V);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "Computes the angle between the 'direction' of two axis placement in radians. the result is comprised between -pi and pi.
@@ -740,35 +769,6 @@ Returns
 gp_Dir2d
 ") Direction;
 		gp_Dir2d Direction();
-
-		/****************** Geom2d_AxisPlacement ******************/
-		%feature("compactdefaultargs") Geom2d_AxisPlacement;
-		%feature("autodoc", "Constructs an axis by conversion of the gp_ax2d axis a.
-
-Parameters
-----------
-A: gp_Ax2d
-
-Returns
--------
-None
-") Geom2d_AxisPlacement;
-		 Geom2d_AxisPlacement(const gp_Ax2d & A);
-
-		/****************** Geom2d_AxisPlacement ******************/
-		%feature("compactdefaultargs") Geom2d_AxisPlacement;
-		%feature("autodoc", "Constructs an axis from a given origin p and unit vector v.
-
-Parameters
-----------
-P: gp_Pnt2d
-V: gp_Dir2d
-
-Returns
--------
-None
-") Geom2d_AxisPlacement;
-		 Geom2d_AxisPlacement(const gp_Pnt2d & P, const gp_Dir2d & V);
 
 		/****************** Location ******************/
 		%feature("compactdefaultargs") Location;
@@ -1392,31 +1392,6 @@ gp_Pnt2d
 ******************************/
 class Geom2d_CartesianPoint : public Geom2d_Point {
 	public:
-		/****************** Coord ******************/
-		%feature("compactdefaultargs") Coord;
-		%feature("autodoc", "Returns the coordinates of <self>.
-
-Parameters
-----------
-X: float
-Y: float
-
-Returns
--------
-None
-") Coord;
-		void Coord(Standard_Real &OutValue, Standard_Real &OutValue);
-
-		/****************** Copy ******************/
-		%feature("compactdefaultargs") Copy;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-opencascade::handle<Geom2d_Geometry>
-") Copy;
-		opencascade::handle<Geom2d_Geometry> Copy();
-
 		/****************** Geom2d_CartesianPoint ******************/
 		%feature("compactdefaultargs") Geom2d_CartesianPoint;
 		%feature("autodoc", "Returns a persistent copy of p.
@@ -1445,6 +1420,31 @@ Returns
 None
 ") Geom2d_CartesianPoint;
 		 Geom2d_CartesianPoint(const Standard_Real X, const Standard_Real Y);
+
+		/****************** Coord ******************/
+		%feature("compactdefaultargs") Coord;
+		%feature("autodoc", "Returns the coordinates of <self>.
+
+Parameters
+----------
+X: float
+Y: float
+
+Returns
+-------
+None
+") Coord;
+		void Coord(Standard_Real &OutValue, Standard_Real &OutValue);
+
+		/****************** Copy ******************/
+		%feature("compactdefaultargs") Copy;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+opencascade::handle<Geom2d_Geometry>
+") Copy;
+		opencascade::handle<Geom2d_Geometry> Copy();
 
 		/****************** Pnt2d ******************/
 		%feature("compactdefaultargs") Pnt2d;
@@ -1734,6 +1734,35 @@ gp_Ax2d
 *************************/
 class Geom2d_Direction : public Geom2d_Vector {
 	public:
+		/****************** Geom2d_Direction ******************/
+		%feature("compactdefaultargs") Geom2d_Direction;
+		%feature("autodoc", "Creates a unit vector with it 2 cartesian coordinates. //! raised if sqrt( x*x + y*y) <= resolution from gp.
+
+Parameters
+----------
+X: float
+Y: float
+
+Returns
+-------
+None
+") Geom2d_Direction;
+		 Geom2d_Direction(const Standard_Real X, const Standard_Real Y);
+
+		/****************** Geom2d_Direction ******************/
+		%feature("compactdefaultargs") Geom2d_Direction;
+		%feature("autodoc", "Creates a persistent copy of <self>.
+
+Parameters
+----------
+V: gp_Dir2d
+
+Returns
+-------
+None
+") Geom2d_Direction;
+		 Geom2d_Direction(const gp_Dir2d & V);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "Creates a new object which is a copy of this unit vector.
@@ -1767,35 +1796,6 @@ Returns
 gp_Dir2d
 ") Dir2d;
 		gp_Dir2d Dir2d();
-
-		/****************** Geom2d_Direction ******************/
-		%feature("compactdefaultargs") Geom2d_Direction;
-		%feature("autodoc", "Creates a unit vector with it 2 cartesian coordinates. //! raised if sqrt( x*x + y*y) <= resolution from gp.
-
-Parameters
-----------
-X: float
-Y: float
-
-Returns
--------
-None
-") Geom2d_Direction;
-		 Geom2d_Direction(const Standard_Real X, const Standard_Real Y);
-
-		/****************** Geom2d_Direction ******************/
-		%feature("compactdefaultargs") Geom2d_Direction;
-		%feature("autodoc", "Creates a persistent copy of <self>.
-
-Parameters
-----------
-V: gp_Dir2d
-
-Returns
--------
-None
-") Geom2d_Direction;
-		 Geom2d_Direction(const gp_Dir2d & V);
 
 		/****************** Magnitude ******************/
 		%feature("compactdefaultargs") Magnitude;
@@ -1904,6 +1904,49 @@ None
 ********************/
 class Geom2d_Line : public Geom2d_Curve {
 	public:
+		/****************** Geom2d_Line ******************/
+		%feature("compactdefaultargs") Geom2d_Line;
+		%feature("autodoc", "Creates a line located in 2d space with the axis placement a. the location of a is the origin of the line.
+
+Parameters
+----------
+A: gp_Ax2d
+
+Returns
+-------
+None
+") Geom2d_Line;
+		 Geom2d_Line(const gp_Ax2d & A);
+
+		/****************** Geom2d_Line ******************/
+		%feature("compactdefaultargs") Geom2d_Line;
+		%feature("autodoc", "Creates a line by conversion of the gp_lin2d line l.
+
+Parameters
+----------
+L: gp_Lin2d
+
+Returns
+-------
+None
+") Geom2d_Line;
+		 Geom2d_Line(const gp_Lin2d & L);
+
+		/****************** Geom2d_Line ******************/
+		%feature("compactdefaultargs") Geom2d_Line;
+		%feature("autodoc", "Constructs a line passing through point p and parallel to vector v (p and v are, respectively, the origin and the unit vector of the positioning axis of the line).
+
+Parameters
+----------
+P: gp_Pnt2d
+V: gp_Dir2d
+
+Returns
+-------
+None
+") Geom2d_Line;
+		 Geom2d_Line(const gp_Pnt2d & P, const gp_Dir2d & V);
+
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
 		%feature("autodoc", "Returns geomabs_cn, which is the global continuity of any line.
@@ -2038,49 +2081,6 @@ Returns
 float
 ") FirstParameter;
 		Standard_Real FirstParameter();
-
-		/****************** Geom2d_Line ******************/
-		%feature("compactdefaultargs") Geom2d_Line;
-		%feature("autodoc", "Creates a line located in 2d space with the axis placement a. the location of a is the origin of the line.
-
-Parameters
-----------
-A: gp_Ax2d
-
-Returns
--------
-None
-") Geom2d_Line;
-		 Geom2d_Line(const gp_Ax2d & A);
-
-		/****************** Geom2d_Line ******************/
-		%feature("compactdefaultargs") Geom2d_Line;
-		%feature("autodoc", "Creates a line by conversion of the gp_lin2d line l.
-
-Parameters
-----------
-L: gp_Lin2d
-
-Returns
--------
-None
-") Geom2d_Line;
-		 Geom2d_Line(const gp_Lin2d & L);
-
-		/****************** Geom2d_Line ******************/
-		%feature("compactdefaultargs") Geom2d_Line;
-		%feature("autodoc", "Constructs a line passing through point p and parallel to vector v (p and v are, respectively, the origin and the unit vector of the positioning axis of the line).
-
-Parameters
-----------
-P: gp_Pnt2d
-V: gp_Dir2d
-
-Returns
--------
-None
-") Geom2d_Line;
-		 Geom2d_Line(const gp_Pnt2d & P, const gp_Dir2d & V);
 
 		/****************** IsCN ******************/
 		%feature("compactdefaultargs") IsCN;
@@ -2295,6 +2295,23 @@ float
 ***************************/
 class Geom2d_OffsetCurve : public Geom2d_Curve {
 	public:
+		/****************** Geom2d_OffsetCurve ******************/
+		%feature("compactdefaultargs") Geom2d_OffsetCurve;
+		%feature("autodoc", "Constructs a curve offset from the basis curve c, where offset is the distance between the offset curve and the basis curve at any point. a point on the offset curve is built by measuring the offset value along a normal vector at a point on c. this normal vector is obtained by rotating the vector tangential to c at 90 degrees in the anti-trigonometric sense. the side of c on which the offset value is measured is indicated by this normal vector if offset is positive, or in the inverse sense if offset is negative. if isnotcheckc0 = true checking if basis curve has c0-continuity is not made. warnings : in this package the entities are not shared. the offsetcurve is built with a copy of the curve c. so when c is modified the offsetcurve is not modified warning! if isnotcheckc0 = false, constructionerror raised if the basis curve c is not at least c1. no check is done to know if ||v^z|| != 0.0 at any point.
+
+Parameters
+----------
+C: Geom2d_Curve
+Offset: float
+isNotCheckC0: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Geom2d_OffsetCurve;
+		 Geom2d_OffsetCurve(const opencascade::handle<Geom2d_Curve> & C, const Standard_Real Offset, const Standard_Boolean isNotCheckC0 = Standard_False);
+
 		/****************** BasisCurve ******************/
 		%feature("compactdefaultargs") BasisCurve;
 		%feature("autodoc", "Returns the basis curve of this offset curve. the basis curve can be an offset curve.
@@ -2415,23 +2432,6 @@ Returns
 float
 ") FirstParameter;
 		Standard_Real FirstParameter();
-
-		/****************** Geom2d_OffsetCurve ******************/
-		%feature("compactdefaultargs") Geom2d_OffsetCurve;
-		%feature("autodoc", "Constructs a curve offset from the basis curve c, where offset is the distance between the offset curve and the basis curve at any point. a point on the offset curve is built by measuring the offset value along a normal vector at a point on c. this normal vector is obtained by rotating the vector tangential to c at 90 degrees in the anti-trigonometric sense. the side of c on which the offset value is measured is indicated by this normal vector if offset is positive, or in the inverse sense if offset is negative. if isnotcheckc0 = true checking if basis curve has c0-continuity is not made. warnings : in this package the entities are not shared. the offsetcurve is built with a copy of the curve c. so when c is modified the offsetcurve is not modified warning! if isnotcheckc0 = false, constructionerror raised if the basis curve c is not at least c1. no check is done to know if ||v^z|| != 0.0 at any point.
-
-Parameters
-----------
-C: Geom2d_Curve
-Offset: float
-isNotCheckC0: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Geom2d_OffsetCurve;
-		 Geom2d_OffsetCurve(const opencascade::handle<Geom2d_Curve> & C, const Standard_Real Offset, const Standard_Boolean isNotCheckC0 = Standard_False);
 
 		/****************** GetBasisCurveContinuity ******************/
 		%feature("compactdefaultargs") GetBasisCurveContinuity;
@@ -2620,6 +2620,50 @@ float
 ***********************************/
 class Geom2d_VectorWithMagnitude : public Geom2d_Vector {
 	public:
+		/****************** Geom2d_VectorWithMagnitude ******************/
+		%feature("compactdefaultargs") Geom2d_VectorWithMagnitude;
+		%feature("autodoc", "Creates a persistent copy of v.
+
+Parameters
+----------
+V: gp_Vec2d
+
+Returns
+-------
+None
+") Geom2d_VectorWithMagnitude;
+		 Geom2d_VectorWithMagnitude(const gp_Vec2d & V);
+
+		/****************** Geom2d_VectorWithMagnitude ******************/
+		%feature("compactdefaultargs") Geom2d_VectorWithMagnitude;
+		%feature("autodoc", "Creates a vector with two cartesian coordinates.
+
+Parameters
+----------
+X: float
+Y: float
+
+Returns
+-------
+None
+") Geom2d_VectorWithMagnitude;
+		 Geom2d_VectorWithMagnitude(const Standard_Real X, const Standard_Real Y);
+
+		/****************** Geom2d_VectorWithMagnitude ******************/
+		%feature("compactdefaultargs") Geom2d_VectorWithMagnitude;
+		%feature("autodoc", "Creates a vector from the point p1 to the point p2. the magnitude of the vector is the distance between p1 and p2.
+
+Parameters
+----------
+P1: gp_Pnt2d
+P2: gp_Pnt2d
+
+Returns
+-------
+None
+") Geom2d_VectorWithMagnitude;
+		 Geom2d_VectorWithMagnitude(const gp_Pnt2d & P1, const gp_Pnt2d & P2);
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Adds the vector other to <self>.
@@ -2699,50 +2743,6 @@ Returns
 opencascade::handle<Geom2d_VectorWithMagnitude>
 ") Divided;
 		opencascade::handle<Geom2d_VectorWithMagnitude> Divided(const Standard_Real Scalar);
-
-		/****************** Geom2d_VectorWithMagnitude ******************/
-		%feature("compactdefaultargs") Geom2d_VectorWithMagnitude;
-		%feature("autodoc", "Creates a persistent copy of v.
-
-Parameters
-----------
-V: gp_Vec2d
-
-Returns
--------
-None
-") Geom2d_VectorWithMagnitude;
-		 Geom2d_VectorWithMagnitude(const gp_Vec2d & V);
-
-		/****************** Geom2d_VectorWithMagnitude ******************/
-		%feature("compactdefaultargs") Geom2d_VectorWithMagnitude;
-		%feature("autodoc", "Creates a vector with two cartesian coordinates.
-
-Parameters
-----------
-X: float
-Y: float
-
-Returns
--------
-None
-") Geom2d_VectorWithMagnitude;
-		 Geom2d_VectorWithMagnitude(const Standard_Real X, const Standard_Real Y);
-
-		/****************** Geom2d_VectorWithMagnitude ******************/
-		%feature("compactdefaultargs") Geom2d_VectorWithMagnitude;
-		%feature("autodoc", "Creates a vector from the point p1 to the point p2. the magnitude of the vector is the distance between p1 and p2.
-
-Parameters
-----------
-P1: gp_Pnt2d
-P2: gp_Pnt2d
-
-Returns
--------
-None
-") Geom2d_VectorWithMagnitude;
-		 Geom2d_VectorWithMagnitude(const gp_Pnt2d & P1, const gp_Pnt2d & P2);
 
 		/****************** Magnitude ******************/
 		%feature("compactdefaultargs") Magnitude;
@@ -3013,6 +3013,45 @@ opencascade::handle<Geom2d_VectorWithMagnitude>
 ****************************/
 class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 	public:
+		/****************** Geom2d_BSplineCurve ******************/
+		%feature("compactdefaultargs") Geom2d_BSplineCurve;
+		%feature("autodoc", "Creates a non-rational b_spline curve on the basis <knots, multiplicities> of degree <degree>. the following conditions must be verified. 0 < degree <= maxdegree. //! knots.length() == mults.length() >= 2 //! knots(i) < knots(i+1) (knots are increasing) //! 1 <= mults(i) <= degree //! on a non periodic curve the first and last multiplicities may be degree+1 (this is even recommanded if you want the curve to start and finish on the first and last pole). //! on a periodic curve the first and the last multicities must be the same. //! on non-periodic curves //! poles.length() == sum(mults(i)) - degree - 1 >= 2 //! on periodic curves //! poles.length() == sum(mults(i)) except the first or last.
+
+Parameters
+----------
+Poles: TColgp_Array1OfPnt2d
+Knots: TColStd_Array1OfReal
+Multiplicities: TColStd_Array1OfInteger
+Degree: int
+Periodic: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Geom2d_BSplineCurve;
+		 Geom2d_BSplineCurve(const TColgp_Array1OfPnt2d & Poles, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Multiplicities, const Standard_Integer Degree, const Standard_Boolean Periodic = Standard_False);
+
+		/****************** Geom2d_BSplineCurve ******************/
+		%feature("compactdefaultargs") Geom2d_BSplineCurve;
+		%feature("autodoc", "Creates a rational b_spline curve on the basis <knots, multiplicities> of degree <degree>. the following conditions must be verified. 0 < degree <= maxdegree. //! knots.length() == mults.length() >= 2 //! knots(i) < knots(i+1) (knots are increasing) //! 1 <= mults(i) <= degree //! on a non periodic curve the first and last multiplicities may be degree+1 (this is even recommanded if you want the curve to start and finish on the first and last pole). //! on a periodic curve the first and the last multicities must be the same. //! on non-periodic curves //! poles.length() == sum(mults(i)) - degree - 1 >= 2 //! on periodic curves //! poles.length() == sum(mults(i)) except the first or last.
+
+Parameters
+----------
+Poles: TColgp_Array1OfPnt2d
+Weights: TColStd_Array1OfReal
+Knots: TColStd_Array1OfReal
+Multiplicities: TColStd_Array1OfInteger
+Degree: int
+Periodic: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") Geom2d_BSplineCurve;
+		 Geom2d_BSplineCurve(const TColgp_Array1OfPnt2d & Poles, const TColStd_Array1OfReal & Weights, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Multiplicities, const Standard_Integer Degree, const Standard_Boolean Periodic = Standard_False);
+
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
 		%feature("autodoc", "Returns the global continuity of the curve : c0 : only geometric continuity, c1 : continuity of the first derivative all along the curve, c2 : continuity of the second derivative all along the curve, c3 : continuity of the third derivative all along the curve, cn : the order of continuity is infinite. for a b-spline curve of degree d if a knot ui has a multiplicity p the b-spline curve is only cd-p continuous at ui. so the global continuity of the curve can't be greater than cd-p where p is the maximum multiplicity of the interior knots. in the interior of a knot span the curve is infinitely continuously differentiable.
@@ -3153,45 +3192,6 @@ Returns
 int
 ") FirstUKnotIndex;
 		Standard_Integer FirstUKnotIndex();
-
-		/****************** Geom2d_BSplineCurve ******************/
-		%feature("compactdefaultargs") Geom2d_BSplineCurve;
-		%feature("autodoc", "Creates a non-rational b_spline curve on the basis <knots, multiplicities> of degree <degree>. the following conditions must be verified. 0 < degree <= maxdegree. //! knots.length() == mults.length() >= 2 //! knots(i) < knots(i+1) (knots are increasing) //! 1 <= mults(i) <= degree //! on a non periodic curve the first and last multiplicities may be degree+1 (this is even recommanded if you want the curve to start and finish on the first and last pole). //! on a periodic curve the first and the last multicities must be the same. //! on non-periodic curves //! poles.length() == sum(mults(i)) - degree - 1 >= 2 //! on periodic curves //! poles.length() == sum(mults(i)) except the first or last.
-
-Parameters
-----------
-Poles: TColgp_Array1OfPnt2d
-Knots: TColStd_Array1OfReal
-Multiplicities: TColStd_Array1OfInteger
-Degree: int
-Periodic: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Geom2d_BSplineCurve;
-		 Geom2d_BSplineCurve(const TColgp_Array1OfPnt2d & Poles, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Multiplicities, const Standard_Integer Degree, const Standard_Boolean Periodic = Standard_False);
-
-		/****************** Geom2d_BSplineCurve ******************/
-		%feature("compactdefaultargs") Geom2d_BSplineCurve;
-		%feature("autodoc", "Creates a rational b_spline curve on the basis <knots, multiplicities> of degree <degree>. the following conditions must be verified. 0 < degree <= maxdegree. //! knots.length() == mults.length() >= 2 //! knots(i) < knots(i+1) (knots are increasing) //! 1 <= mults(i) <= degree //! on a non periodic curve the first and last multiplicities may be degree+1 (this is even recommanded if you want the curve to start and finish on the first and last pole). //! on a periodic curve the first and the last multicities must be the same. //! on non-periodic curves //! poles.length() == sum(mults(i)) - degree - 1 >= 2 //! on periodic curves //! poles.length() == sum(mults(i)) except the first or last.
-
-Parameters
-----------
-Poles: TColgp_Array1OfPnt2d
-Weights: TColStd_Array1OfReal
-Knots: TColStd_Array1OfReal
-Multiplicities: TColStd_Array1OfInteger
-Degree: int
-Periodic: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") Geom2d_BSplineCurve;
-		 Geom2d_BSplineCurve(const TColgp_Array1OfPnt2d & Poles, const TColStd_Array1OfReal & Weights, const TColStd_Array1OfReal & Knots, const TColStd_Array1OfInteger & Multiplicities, const Standard_Integer Degree, const Standard_Boolean Periodic = Standard_False);
 
 		/****************** IncreaseDegree ******************/
 		%feature("compactdefaultargs") IncreaseDegree;
@@ -4051,6 +4051,35 @@ TColStd_Array1OfReal *
 ***************************/
 class Geom2d_BezierCurve : public Geom2d_BoundedCurve {
 	public:
+		/****************** Geom2d_BezierCurve ******************/
+		%feature("compactdefaultargs") Geom2d_BezierCurve;
+		%feature("autodoc", "Creates a non rational bezier curve with a set of poles : curvepoles. the weights are defaulted to all being 1. raises constructionerror if the number of poles is greater than maxdegree + 1 or lower than 2.
+
+Parameters
+----------
+CurvePoles: TColgp_Array1OfPnt2d
+
+Returns
+-------
+None
+") Geom2d_BezierCurve;
+		 Geom2d_BezierCurve(const TColgp_Array1OfPnt2d & CurvePoles);
+
+		/****************** Geom2d_BezierCurve ******************/
+		%feature("compactdefaultargs") Geom2d_BezierCurve;
+		%feature("autodoc", "Creates a rational bezier curve with the set of poles curvepoles and the set of weights poleweights . if all the weights are identical the curve is considered as non rational. raises constructionerror if the number of poles is greater than maxdegree + 1 or lower than 2 or curvepoles and curveweights have not the same length or one weight value is lower or equal to resolution from package gp.
+
+Parameters
+----------
+CurvePoles: TColgp_Array1OfPnt2d
+PoleWeights: TColStd_Array1OfReal
+
+Returns
+-------
+None
+") Geom2d_BezierCurve;
+		 Geom2d_BezierCurve(const TColgp_Array1OfPnt2d & CurvePoles, const TColStd_Array1OfReal & PoleWeights);
+
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
 		%feature("autodoc", "Returns geomabs_cn, which is the continuity of any bezier curve.
@@ -4181,35 +4210,6 @@ Returns
 float
 ") FirstParameter;
 		Standard_Real FirstParameter();
-
-		/****************** Geom2d_BezierCurve ******************/
-		%feature("compactdefaultargs") Geom2d_BezierCurve;
-		%feature("autodoc", "Creates a non rational bezier curve with a set of poles : curvepoles. the weights are defaulted to all being 1. raises constructionerror if the number of poles is greater than maxdegree + 1 or lower than 2.
-
-Parameters
-----------
-CurvePoles: TColgp_Array1OfPnt2d
-
-Returns
--------
-None
-") Geom2d_BezierCurve;
-		 Geom2d_BezierCurve(const TColgp_Array1OfPnt2d & CurvePoles);
-
-		/****************** Geom2d_BezierCurve ******************/
-		%feature("compactdefaultargs") Geom2d_BezierCurve;
-		%feature("autodoc", "Creates a rational bezier curve with the set of poles curvepoles and the set of weights poleweights . if all the weights are identical the curve is considered as non rational. raises constructionerror if the number of poles is greater than maxdegree + 1 or lower than 2 or curvepoles and curveweights have not the same length or one weight value is lower or equal to resolution from package gp.
-
-Parameters
-----------
-CurvePoles: TColgp_Array1OfPnt2d
-PoleWeights: TColStd_Array1OfReal
-
-Returns
--------
-None
-") Geom2d_BezierCurve;
-		 Geom2d_BezierCurve(const TColgp_Array1OfPnt2d & CurvePoles, const TColStd_Array1OfReal & PoleWeights);
 
 		/****************** Increase ******************/
 		%feature("compactdefaultargs") Increase;
@@ -4563,6 +4563,52 @@ TColStd_Array1OfReal *
 **********************/
 class Geom2d_Circle : public Geom2d_Conic {
 	public:
+		/****************** Geom2d_Circle ******************/
+		%feature("compactdefaultargs") Geom2d_Circle;
+		%feature("autodoc", "Constructs a circle by conversion of the gp_circ2d circle c.
+
+Parameters
+----------
+C: gp_Circ2d
+
+Returns
+-------
+None
+") Geom2d_Circle;
+		 Geom2d_Circle(const gp_Circ2d & C);
+
+		/****************** Geom2d_Circle ******************/
+		%feature("compactdefaultargs") Geom2d_Circle;
+		%feature("autodoc", "Constructs a circle of radius radius, whose center is the origin of axis a; a is the 'x axis' of the local coordinate system of the circle; this coordinate system is direct if sense is true (default value) or indirect if sense is false. note: it is possible to create a circle where radius is equal to 0.0. exceptions standard_constructionerror if radius is negative.
+
+Parameters
+----------
+A: gp_Ax2d
+Radius: float
+Sense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") Geom2d_Circle;
+		 Geom2d_Circle(const gp_Ax2d & A, const Standard_Real Radius, const Standard_Boolean Sense = Standard_True);
+
+		/****************** Geom2d_Circle ******************/
+		%feature("compactdefaultargs") Geom2d_Circle;
+		%feature("autodoc", "Constructs a circle of radius radius, where the coordinate system a locates the circle and defines its orientation in the plane such that: - the center of the circle is the origin of a, - the orientation (direct or indirect) of a gives the orientation of the circle.
+
+Parameters
+----------
+A: gp_Ax22d
+Radius: float
+
+Returns
+-------
+None
+") Geom2d_Circle;
+		 Geom2d_Circle(const gp_Ax22d & A, const Standard_Real Radius);
+
 		/****************** Circ2d ******************/
 		%feature("compactdefaultargs") Circ2d;
 		%feature("autodoc", "Returns the non persistent circle from gp with the same geometric properties as <self>.
@@ -4684,52 +4730,6 @@ float
 ") FirstParameter;
 		Standard_Real FirstParameter();
 
-		/****************** Geom2d_Circle ******************/
-		%feature("compactdefaultargs") Geom2d_Circle;
-		%feature("autodoc", "Constructs a circle by conversion of the gp_circ2d circle c.
-
-Parameters
-----------
-C: gp_Circ2d
-
-Returns
--------
-None
-") Geom2d_Circle;
-		 Geom2d_Circle(const gp_Circ2d & C);
-
-		/****************** Geom2d_Circle ******************/
-		%feature("compactdefaultargs") Geom2d_Circle;
-		%feature("autodoc", "Constructs a circle of radius radius, whose center is the origin of axis a; a is the 'x axis' of the local coordinate system of the circle; this coordinate system is direct if sense is true (default value) or indirect if sense is false. note: it is possible to create a circle where radius is equal to 0.0. exceptions standard_constructionerror if radius is negative.
-
-Parameters
-----------
-A: gp_Ax2d
-Radius: float
-Sense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Geom2d_Circle;
-		 Geom2d_Circle(const gp_Ax2d & A, const Standard_Real Radius, const Standard_Boolean Sense = Standard_True);
-
-		/****************** Geom2d_Circle ******************/
-		%feature("compactdefaultargs") Geom2d_Circle;
-		%feature("autodoc", "Constructs a circle of radius radius, where the coordinate system a locates the circle and defines its orientation in the plane such that: - the center of the circle is the origin of a, - the orientation (direct or indirect) of a gives the orientation of the circle.
-
-Parameters
-----------
-A: gp_Ax22d
-Radius: float
-
-Returns
--------
-None
-") Geom2d_Circle;
-		 Geom2d_Circle(const gp_Ax22d & A, const Standard_Real Radius);
-
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
 		%feature("autodoc", "Returns true.
@@ -4842,6 +4842,54 @@ None
 ***********************/
 class Geom2d_Ellipse : public Geom2d_Conic {
 	public:
+		/****************** Geom2d_Ellipse ******************/
+		%feature("compactdefaultargs") Geom2d_Ellipse;
+		%feature("autodoc", "Creates an ellipse by conversion of the gp_elips2d ellipse e.
+
+Parameters
+----------
+E: gp_Elips2d
+
+Returns
+-------
+None
+") Geom2d_Ellipse;
+		 Geom2d_Ellipse(const gp_Elips2d & E);
+
+		/****************** Geom2d_Ellipse ******************/
+		%feature("compactdefaultargs") Geom2d_Ellipse;
+		%feature("autodoc", "Creates an ellipse defined by its major and minor radii, majorradius and minorradius, and positioned in the plane by its major axis majoraxis; the center of the ellipse is the origin of majoraxis and the unit vector of majoraxis is the 'x direction' of the local coordinate system of the ellipse; this coordinate system is direct if sense is true (default value) or indirect if sense is false. warnings : it is not forbidden to create an ellipse with majorradius = minorradius. exceptions standard_constructionerror if: - majorradius is less than minorradius, or - minorradius is less than 0.
+
+Parameters
+----------
+MajorAxis: gp_Ax2d
+MajorRadius: float
+MinorRadius: float
+Sense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") Geom2d_Ellipse;
+		 Geom2d_Ellipse(const gp_Ax2d & MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense = Standard_True);
+
+		/****************** Geom2d_Ellipse ******************/
+		%feature("compactdefaultargs") Geom2d_Ellipse;
+		%feature("autodoc", "Creates an ellipse defined by its major and minor radii, majorradius and minorradius, where the coordinate system axis locates the ellipse and defines its orientation in the plane such that: - the center of the ellipse is the origin of axis, - the 'x direction' of axis defines the major axis of the ellipse, - the 'y direction' of axis defines the minor axis of the ellipse, - the orientation of axis (direct or indirect) gives the orientation of the ellipse. warnings : it is not forbidden to create an ellipse with majorradius = minorradius. exceptions standard_constructionerror if: - majorradius is less than minorradius, or - minorradius is less than 0.
+
+Parameters
+----------
+Axis: gp_Ax22d
+MajorRadius: float
+MinorRadius: float
+
+Returns
+-------
+None
+") Geom2d_Ellipse;
+		 Geom2d_Ellipse(const gp_Ax22d & Axis, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "Creates a new object which is a copy of this ellipse.
@@ -5013,54 +5061,6 @@ gp_Pnt2d
 ") Focus2;
 		gp_Pnt2d Focus2();
 
-		/****************** Geom2d_Ellipse ******************/
-		%feature("compactdefaultargs") Geom2d_Ellipse;
-		%feature("autodoc", "Creates an ellipse by conversion of the gp_elips2d ellipse e.
-
-Parameters
-----------
-E: gp_Elips2d
-
-Returns
--------
-None
-") Geom2d_Ellipse;
-		 Geom2d_Ellipse(const gp_Elips2d & E);
-
-		/****************** Geom2d_Ellipse ******************/
-		%feature("compactdefaultargs") Geom2d_Ellipse;
-		%feature("autodoc", "Creates an ellipse defined by its major and minor radii, majorradius and minorradius, and positioned in the plane by its major axis majoraxis; the center of the ellipse is the origin of majoraxis and the unit vector of majoraxis is the 'x direction' of the local coordinate system of the ellipse; this coordinate system is direct if sense is true (default value) or indirect if sense is false. warnings : it is not forbidden to create an ellipse with majorradius = minorradius. exceptions standard_constructionerror if: - majorradius is less than minorradius, or - minorradius is less than 0.
-
-Parameters
-----------
-MajorAxis: gp_Ax2d
-MajorRadius: float
-MinorRadius: float
-Sense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Geom2d_Ellipse;
-		 Geom2d_Ellipse(const gp_Ax2d & MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense = Standard_True);
-
-		/****************** Geom2d_Ellipse ******************/
-		%feature("compactdefaultargs") Geom2d_Ellipse;
-		%feature("autodoc", "Creates an ellipse defined by its major and minor radii, majorradius and minorradius, where the coordinate system axis locates the ellipse and defines its orientation in the plane such that: - the center of the ellipse is the origin of axis, - the 'x direction' of axis defines the major axis of the ellipse, - the 'y direction' of axis defines the minor axis of the ellipse, - the orientation of axis (direct or indirect) gives the orientation of the ellipse. warnings : it is not forbidden to create an ellipse with majorradius = minorradius. exceptions standard_constructionerror if: - majorradius is less than minorradius, or - minorradius is less than 0.
-
-Parameters
-----------
-Axis: gp_Ax22d
-MajorRadius: float
-MinorRadius: float
-
-Returns
--------
-None
-") Geom2d_Ellipse;
-		 Geom2d_Ellipse(const gp_Ax22d & Axis, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
 		%feature("autodoc", "Return true.
@@ -5207,6 +5207,54 @@ None
 *************************/
 class Geom2d_Hyperbola : public Geom2d_Conic {
 	public:
+		/****************** Geom2d_Hyperbola ******************/
+		%feature("compactdefaultargs") Geom2d_Hyperbola;
+		%feature("autodoc", "Creates an hyperbola from a non persistent one from package gp.
+
+Parameters
+----------
+H: gp_Hypr2d
+
+Returns
+-------
+None
+") Geom2d_Hyperbola;
+		 Geom2d_Hyperbola(const gp_Hypr2d & H);
+
+		/****************** Geom2d_Hyperbola ******************/
+		%feature("compactdefaultargs") Geom2d_Hyperbola;
+		%feature("autodoc", "Majoraxis is the 'xaxis' of the hyperbola. the yaxis is in the direct sense if 'sense' is true; the major radius of the hyperbola is on this 'xaxis' and the minor radius is on the 'yaxis' of the hyperbola. raised if majorradius < 0.0 or if minorradius < 0.0.
+
+Parameters
+----------
+MajorAxis: gp_Ax2d
+MajorRadius: float
+MinorRadius: float
+Sense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") Geom2d_Hyperbola;
+		 Geom2d_Hyperbola(const gp_Ax2d & MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense = Standard_True);
+
+		/****************** Geom2d_Hyperbola ******************/
+		%feature("compactdefaultargs") Geom2d_Hyperbola;
+		%feature("autodoc", "The xdirection of 'axis' is the 'xaxis' of the hyperbola and the ydirection of 'axis' is the 'yaxis'. the major radius of the hyperbola is on this 'xaxis' and the minor radius is on the 'yaxis' of the hyperbola. raised if majorradius < 0.0 or if minorradius < 0.0.
+
+Parameters
+----------
+Axis: gp_Ax22d
+MajorRadius: float
+MinorRadius: float
+
+Returns
+-------
+None
+") Geom2d_Hyperbola;
+		 Geom2d_Hyperbola(const gp_Ax22d & Axis, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+
 		/****************** Asymptote1 ******************/
 		%feature("compactdefaultargs") Asymptote1;
 		%feature("autodoc", "In the local coordinate system of the hyperbola the equation of the hyperbola is (x*x)/(a*a) - (y*y)/(b*b) = 1.0 and the equation of the first asymptote is y = (b/a)*x where a is the major radius of the hyperbola and b is the minor radius of the hyperbola. raised if majorradius = 0.0.
@@ -5408,54 +5456,6 @@ gp_Pnt2d
 ") Focus2;
 		gp_Pnt2d Focus2();
 
-		/****************** Geom2d_Hyperbola ******************/
-		%feature("compactdefaultargs") Geom2d_Hyperbola;
-		%feature("autodoc", "Creates an hyperbola from a non persistent one from package gp.
-
-Parameters
-----------
-H: gp_Hypr2d
-
-Returns
--------
-None
-") Geom2d_Hyperbola;
-		 Geom2d_Hyperbola(const gp_Hypr2d & H);
-
-		/****************** Geom2d_Hyperbola ******************/
-		%feature("compactdefaultargs") Geom2d_Hyperbola;
-		%feature("autodoc", "Majoraxis is the 'xaxis' of the hyperbola. the yaxis is in the direct sense if 'sense' is true; the major radius of the hyperbola is on this 'xaxis' and the minor radius is on the 'yaxis' of the hyperbola. raised if majorradius < 0.0 or if minorradius < 0.0.
-
-Parameters
-----------
-MajorAxis: gp_Ax2d
-MajorRadius: float
-MinorRadius: float
-Sense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Geom2d_Hyperbola;
-		 Geom2d_Hyperbola(const gp_Ax2d & MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense = Standard_True);
-
-		/****************** Geom2d_Hyperbola ******************/
-		%feature("compactdefaultargs") Geom2d_Hyperbola;
-		%feature("autodoc", "The xdirection of 'axis' is the 'xaxis' of the hyperbola and the ydirection of 'axis' is the 'yaxis'. the major radius of the hyperbola is on this 'xaxis' and the minor radius is on the 'yaxis' of the hyperbola. raised if majorradius < 0.0 or if minorradius < 0.0.
-
-Parameters
-----------
-Axis: gp_Ax22d
-MajorRadius: float
-MinorRadius: float
-
-Returns
--------
-None
-") Geom2d_Hyperbola;
-		 Geom2d_Hyperbola(const gp_Ax22d & Axis, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-
 		/****************** Hypr2d ******************/
 		%feature("compactdefaultargs") Hypr2d;
 		%feature("autodoc", "Converts this hyperbola into a gp_hypr2d one.
@@ -5622,6 +5622,67 @@ None
 ************************/
 class Geom2d_Parabola : public Geom2d_Conic {
 	public:
+		/****************** Geom2d_Parabola ******************/
+		%feature("compactdefaultargs") Geom2d_Parabola;
+		%feature("autodoc", "Creates a parabola from a non persistent one.
+
+Parameters
+----------
+Prb: gp_Parab2d
+
+Returns
+-------
+None
+") Geom2d_Parabola;
+		 Geom2d_Parabola(const gp_Parab2d & Prb);
+
+		/****************** Geom2d_Parabola ******************/
+		%feature("compactdefaultargs") Geom2d_Parabola;
+		%feature("autodoc", "Creates a parabola with its 'mirroraxis' and it's focal length 'focal'. mirroraxis is the axis of symmetry of the curve, it is the 'xaxis'. the 'yaxis' is parallel to the directrix of the parabola and is in the direct sense if sense is true. the 'location' point of 'mirroraxis' is the vertex of the parabola raised if focal < 0.0.
+
+Parameters
+----------
+MirrorAxis: gp_Ax2d
+Focal: float
+Sense: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") Geom2d_Parabola;
+		 Geom2d_Parabola(const gp_Ax2d & MirrorAxis, const Standard_Real Focal, const Standard_Boolean Sense = Standard_True);
+
+		/****************** Geom2d_Parabola ******************/
+		%feature("compactdefaultargs") Geom2d_Parabola;
+		%feature("autodoc", "Creates a parabola with its axis and it's focal length 'focal'. the xdirection of axis is the axis of symmetry of the curve, it is the 'xaxis'. the 'yaxis' is parallel to the directrix of the parabola. the 'location' point of 'axis' is the vertex of the parabola. raised if focal < 0.0.
+
+Parameters
+----------
+Axis: gp_Ax22d
+Focal: float
+
+Returns
+-------
+None
+") Geom2d_Parabola;
+		 Geom2d_Parabola(const gp_Ax22d & Axis, const Standard_Real Focal);
+
+		/****************** Geom2d_Parabola ******************/
+		%feature("compactdefaultargs") Geom2d_Parabola;
+		%feature("autodoc", "D is the directrix of the parabola and f the focus point. the symmetry axis 'xaxis' of the parabola is normal to the directrix and pass through the focus point f, but its 'location' point is the vertex of the parabola. the 'yaxis' of the parabola is parallel to d and its 'location' point is the vertex of the parabola.
+
+Parameters
+----------
+D: gp_Ax2d
+F: gp_Pnt2d
+
+Returns
+-------
+None
+") Geom2d_Parabola;
+		 Geom2d_Parabola(const gp_Ax2d & D, const gp_Pnt2d & F);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "Creates a new object, which is a copy of this parabola.
@@ -5762,67 +5823,6 @@ Returns
 gp_Pnt2d
 ") Focus;
 		gp_Pnt2d Focus();
-
-		/****************** Geom2d_Parabola ******************/
-		%feature("compactdefaultargs") Geom2d_Parabola;
-		%feature("autodoc", "Creates a parabola from a non persistent one.
-
-Parameters
-----------
-Prb: gp_Parab2d
-
-Returns
--------
-None
-") Geom2d_Parabola;
-		 Geom2d_Parabola(const gp_Parab2d & Prb);
-
-		/****************** Geom2d_Parabola ******************/
-		%feature("compactdefaultargs") Geom2d_Parabola;
-		%feature("autodoc", "Creates a parabola with its 'mirroraxis' and it's focal length 'focal'. mirroraxis is the axis of symmetry of the curve, it is the 'xaxis'. the 'yaxis' is parallel to the directrix of the parabola and is in the direct sense if sense is true. the 'location' point of 'mirroraxis' is the vertex of the parabola raised if focal < 0.0.
-
-Parameters
-----------
-MirrorAxis: gp_Ax2d
-Focal: float
-Sense: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Geom2d_Parabola;
-		 Geom2d_Parabola(const gp_Ax2d & MirrorAxis, const Standard_Real Focal, const Standard_Boolean Sense = Standard_True);
-
-		/****************** Geom2d_Parabola ******************/
-		%feature("compactdefaultargs") Geom2d_Parabola;
-		%feature("autodoc", "Creates a parabola with its axis and it's focal length 'focal'. the xdirection of axis is the axis of symmetry of the curve, it is the 'xaxis'. the 'yaxis' is parallel to the directrix of the parabola. the 'location' point of 'axis' is the vertex of the parabola. raised if focal < 0.0.
-
-Parameters
-----------
-Axis: gp_Ax22d
-Focal: float
-
-Returns
--------
-None
-") Geom2d_Parabola;
-		 Geom2d_Parabola(const gp_Ax22d & Axis, const Standard_Real Focal);
-
-		/****************** Geom2d_Parabola ******************/
-		%feature("compactdefaultargs") Geom2d_Parabola;
-		%feature("autodoc", "D is the directrix of the parabola and f the focus point. the symmetry axis 'xaxis' of the parabola is normal to the directrix and pass through the focus point f, but its 'location' point is the vertex of the parabola. the 'yaxis' of the parabola is parallel to d and its 'location' point is the vertex of the parabola.
-
-Parameters
-----------
-D: gp_Ax2d
-F: gp_Pnt2d
-
-Returns
--------
-None
-") Geom2d_Parabola;
-		 Geom2d_Parabola(const gp_Ax2d & D, const gp_Pnt2d & F);
 
 		/****************** IsClosed ******************/
 		%feature("compactdefaultargs") IsClosed;
@@ -5975,6 +5975,26 @@ float
 ****************************/
 class Geom2d_TrimmedCurve : public Geom2d_BoundedCurve {
 	public:
+		/****************** Geom2d_TrimmedCurve ******************/
+		%feature("compactdefaultargs") Geom2d_TrimmedCurve;
+		%feature("autodoc", "Creates a trimmed curve from the basis curve c limited between u1 and u2. //! . u1 can be greater or lower than u2. . the returned curve is oriented from u1 to u2. . if the basis curve c is periodic there is an ambiguity because two parts are available. in this case by default the trimmed curve has the same orientation as the basis curve (sense = true). if sense = false then the orientation of the trimmed curve is opposite to the orientation of the basis curve c. if the curve is closed but not periodic it is not possible to keep the part of the curve including the junction point (except if the junction point is at the beginning or at the end of the trimmed curve) because you could lose the fundamental characteristics of the basis curve which are used for example to compute the derivatives of the trimmed curve. so for a closed curve the rules are the same as for a open curve. warnings : in this package the entities are not shared. the trimmedcurve is built with a copy of the curve c. so when c is modified the trimmedcurve is not modified warnings : if <c> is periodic and <theadjustperiodic> is true, parametrics bounds of the trimmedcurve, can be different to [<u1>;<u2>}, if <u1> or <u2> are not in the principal period. include : for more explanation see the scheme given with this class. raises constructionerror the c is not periodic and u1 or u2 are out of the bounds of c. raised if u1 = u2.
+
+Parameters
+----------
+C: Geom2d_Curve
+U1: float
+U2: float
+Sense: bool,optional
+	default value is Standard_True
+theAdjustPeriodic: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") Geom2d_TrimmedCurve;
+		 Geom2d_TrimmedCurve(const opencascade::handle<Geom2d_Curve> & C, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean Sense = Standard_True, const Standard_Boolean theAdjustPeriodic = Standard_True);
+
 		/****************** BasisCurve ******************/
 		%feature("compactdefaultargs") BasisCurve;
 		%feature("autodoc", "Returns the basis curve. warning this function does not return a constant reference. consequently, any modification of the returned value directly modifies the trimmed curve.
@@ -6105,26 +6125,6 @@ Returns
 float
 ") FirstParameter;
 		Standard_Real FirstParameter();
-
-		/****************** Geom2d_TrimmedCurve ******************/
-		%feature("compactdefaultargs") Geom2d_TrimmedCurve;
-		%feature("autodoc", "Creates a trimmed curve from the basis curve c limited between u1 and u2. //! . u1 can be greater or lower than u2. . the returned curve is oriented from u1 to u2. . if the basis curve c is periodic there is an ambiguity because two parts are available. in this case by default the trimmed curve has the same orientation as the basis curve (sense = true). if sense = false then the orientation of the trimmed curve is opposite to the orientation of the basis curve c. if the curve is closed but not periodic it is not possible to keep the part of the curve including the junction point (except if the junction point is at the beginning or at the end of the trimmed curve) because you could lose the fundamental characteristics of the basis curve which are used for example to compute the derivatives of the trimmed curve. so for a closed curve the rules are the same as for a open curve. warnings : in this package the entities are not shared. the trimmedcurve is built with a copy of the curve c. so when c is modified the trimmedcurve is not modified warnings : if <c> is periodic and <theadjustperiodic> is true, parametrics bounds of the trimmedcurve, can be different to [<u1>;<u2>}, if <u1> or <u2> are not in the principal period. include : for more explanation see the scheme given with this class. raises constructionerror the c is not periodic and u1 or u2 are out of the bounds of c. raised if u1 = u2.
-
-Parameters
-----------
-C: Geom2d_Curve
-U1: float
-U2: float
-Sense: bool,optional
-	default value is Standard_True
-theAdjustPeriodic: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") Geom2d_TrimmedCurve;
-		 Geom2d_TrimmedCurve(const opencascade::handle<Geom2d_Curve> & C, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean Sense = Standard_True, const Standard_Boolean theAdjustPeriodic = Standard_True);
 
 		/****************** IsCN ******************/
 		%feature("compactdefaultargs") IsCN;

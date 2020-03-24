@@ -123,6 +123,16 @@ None
 *****************************/
 class GeomTools_Curve2dSet {
 	public:
+		/****************** GeomTools_Curve2dSet ******************/
+		%feature("compactdefaultargs") GeomTools_Curve2dSet;
+		%feature("autodoc", "Returns an empty set of curves.
+
+Returns
+-------
+None
+") GeomTools_Curve2dSet;
+		 GeomTools_Curve2dSet();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Incorporate a new curve in the set and returns its index.
@@ -169,16 +179,6 @@ opencascade::handle<Geom2d_Curve>
             self->Dump(s);
             return s.str();}
         };
-		/****************** GeomTools_Curve2dSet ******************/
-		%feature("compactdefaultargs") GeomTools_Curve2dSet;
-		%feature("autodoc", "Returns an empty set of curves.
-
-Returns
--------
-None
-") GeomTools_Curve2dSet;
-		 GeomTools_Curve2dSet();
-
 		/****************** GetProgress ******************/
 		%feature("compactdefaultargs") GetProgress;
 		%feature("autodoc", "No available documentation.
@@ -253,6 +253,16 @@ None
 ***************************/
 class GeomTools_CurveSet {
 	public:
+		/****************** GeomTools_CurveSet ******************/
+		%feature("compactdefaultargs") GeomTools_CurveSet;
+		%feature("autodoc", "Returns an empty set of curves.
+
+Returns
+-------
+None
+") GeomTools_CurveSet;
+		 GeomTools_CurveSet();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Incorporate a new curve in the set and returns its index.
@@ -299,16 +309,6 @@ opencascade::handle<Geom_Curve>
             self->Dump(s);
             return s.str();}
         };
-		/****************** GeomTools_CurveSet ******************/
-		%feature("compactdefaultargs") GeomTools_CurveSet;
-		%feature("autodoc", "Returns an empty set of curves.
-
-Returns
--------
-None
-") GeomTools_CurveSet;
-		 GeomTools_CurveSet();
-
 		/****************** GetProgress ******************/
 		%feature("compactdefaultargs") GetProgress;
 		%feature("autodoc", "No available documentation.
@@ -383,6 +383,16 @@ None
 *****************************/
 class GeomTools_SurfaceSet {
 	public:
+		/****************** GeomTools_SurfaceSet ******************/
+		%feature("compactdefaultargs") GeomTools_SurfaceSet;
+		%feature("autodoc", "Returns an empty set of surfaces.
+
+Returns
+-------
+None
+") GeomTools_SurfaceSet;
+		 GeomTools_SurfaceSet();
+
 		/****************** Add ******************/
 		%feature("compactdefaultargs") Add;
 		%feature("autodoc", "Incorporate a new surface in the set and returns its index.
@@ -415,16 +425,6 @@ None
             self->Dump(s);
             return s.str();}
         };
-		/****************** GeomTools_SurfaceSet ******************/
-		%feature("compactdefaultargs") GeomTools_SurfaceSet;
-		%feature("autodoc", "Returns an empty set of surfaces.
-
-Returns
--------
-None
-") GeomTools_SurfaceSet;
-		 GeomTools_SurfaceSet();
-
 		/****************** GetProgress ******************/
 		%feature("compactdefaultargs") GetProgress;
 		%feature("autodoc", "No available documentation.

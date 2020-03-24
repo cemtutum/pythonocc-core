@@ -97,13 +97,13 @@ class IntCurveSurface_TransitionOnCurve:
 /* end handles declaration */
 
 /* templates */
-%template(IntCurveSurface_SequenceOfSeg) NCollection_Sequence<IntCurveSurface_IntersectionSegment>;
 %template(IntCurveSurface_SequenceOfPnt) NCollection_Sequence<IntCurveSurface_IntersectionPoint>;
+%template(IntCurveSurface_SequenceOfSeg) NCollection_Sequence<IntCurveSurface_IntersectionSegment>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<IntCurveSurface_IntersectionSegment> IntCurveSurface_SequenceOfSeg;
 typedef NCollection_Sequence<IntCurveSurface_IntersectionPoint> IntCurveSurface_SequenceOfPnt;
+typedef NCollection_Sequence<IntCurveSurface_IntersectionSegment> IntCurveSurface_SequenceOfSeg;
 /* end typedefs declaration */
 
 /*************************************
@@ -205,16 +205,6 @@ IntCurveSurface_IntersectionSegment
 ******************************************/
 class IntCurveSurface_IntersectionPoint {
 	public:
-		/****************** Dump ******************/
-		%feature("compactdefaultargs") Dump;
-		%feature("autodoc", "Dump all the fields.
-
-Returns
--------
-None
-") Dump;
-		void Dump();
-
 		/****************** IntCurveSurface_IntersectionPoint ******************/
 		%feature("compactdefaultargs") IntCurveSurface_IntersectionPoint;
 		%feature("autodoc", "Empty constructor.
@@ -242,6 +232,16 @@ Returns
 None
 ") IntCurveSurface_IntersectionPoint;
 		 IntCurveSurface_IntersectionPoint(const gp_Pnt & P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
+
+		/****************** Dump ******************/
+		%feature("compactdefaultargs") Dump;
+		%feature("autodoc", "Dump all the fields.
+
+Returns
+-------
+None
+") Dump;
+		void Dump();
 
 		/****************** Pnt ******************/
 		%feature("compactdefaultargs") Pnt;
@@ -343,6 +343,31 @@ float
 ********************************************/
 class IntCurveSurface_IntersectionSegment {
 	public:
+		/****************** IntCurveSurface_IntersectionSegment ******************/
+		%feature("compactdefaultargs") IntCurveSurface_IntersectionSegment;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") IntCurveSurface_IntersectionSegment;
+		 IntCurveSurface_IntersectionSegment();
+
+		/****************** IntCurveSurface_IntersectionSegment ******************/
+		%feature("compactdefaultargs") IntCurveSurface_IntersectionSegment;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P1: IntCurveSurface_IntersectionPoint
+P2: IntCurveSurface_IntersectionPoint
+
+Returns
+-------
+None
+") IntCurveSurface_IntersectionSegment;
+		 IntCurveSurface_IntersectionSegment(const IntCurveSurface_IntersectionPoint & P1, const IntCurveSurface_IntersectionPoint & P2);
+
 		/****************** Dump ******************/
 		%feature("compactdefaultargs") Dump;
 		%feature("autodoc", "No available documentation.
@@ -376,31 +401,6 @@ Returns
 IntCurveSurface_IntersectionPoint
 ") FirstPoint;
 		const IntCurveSurface_IntersectionPoint & FirstPoint();
-
-		/****************** IntCurveSurface_IntersectionSegment ******************/
-		%feature("compactdefaultargs") IntCurveSurface_IntersectionSegment;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") IntCurveSurface_IntersectionSegment;
-		 IntCurveSurface_IntersectionSegment();
-
-		/****************** IntCurveSurface_IntersectionSegment ******************/
-		%feature("compactdefaultargs") IntCurveSurface_IntersectionSegment;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-P1: IntCurveSurface_IntersectionPoint
-P2: IntCurveSurface_IntersectionPoint
-
-Returns
--------
-None
-") IntCurveSurface_IntersectionSegment;
-		 IntCurveSurface_IntersectionSegment(const IntCurveSurface_IntersectionPoint & P1, const IntCurveSurface_IntersectionPoint & P2);
 
 		/****************** SecondPoint ******************/
 		%feature("compactdefaultargs") SecondPoint;
@@ -470,6 +470,21 @@ None
 **********************************************/
 class IntCurveSurface_TheCSFunctionOfHInter : public math_FunctionSetWithDerivatives {
 	public:
+		/****************** IntCurveSurface_TheCSFunctionOfHInter ******************/
+		%feature("compactdefaultargs") IntCurveSurface_TheCSFunctionOfHInter;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
+") IntCurveSurface_TheCSFunctionOfHInter;
+		 IntCurveSurface_TheCSFunctionOfHInter(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C);
+
 		/****************** AuxillarCurve ******************/
 		%feature("compactdefaultargs") AuxillarCurve;
 		%feature("autodoc", "No available documentation.
@@ -504,21 +519,6 @@ Returns
 bool
 ") Derivatives;
 		Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
-
-		/****************** IntCurveSurface_TheCSFunctionOfHInter ******************/
-		%feature("compactdefaultargs") IntCurveSurface_TheCSFunctionOfHInter;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: Adaptor3d_HSurface
-C: Adaptor3d_HCurve
-
-Returns
--------
-None
-") IntCurveSurface_TheCSFunctionOfHInter;
-		 IntCurveSurface_TheCSFunctionOfHInter(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C);
 
 		/****************** NbEquations ******************/
 		%feature("compactdefaultargs") NbEquations;
@@ -605,16 +605,6 @@ bool
 ***************************************/
 class IntCurveSurface_TheExactHInter {
 	public:
-		/****************** Function ******************/
-		%feature("compactdefaultargs") Function;
-		%feature("autodoc", "Return the math function which is used to compute the intersection.
-
-Returns
--------
-IntCurveSurface_TheCSFunctionOfHInter
-") Function;
-		IntCurveSurface_TheCSFunctionOfHInter & Function();
-
 		/****************** IntCurveSurface_TheExactHInter ******************/
 		%feature("compactdefaultargs") IntCurveSurface_TheExactHInter;
 		%feature("autodoc", "Compute the solution point with the close point margincoef is the coefficient for extension of uv bounds. ex., ufirst -= margincoef*(ulast-ufirst).
@@ -649,6 +639,16 @@ Returns
 None
 ") IntCurveSurface_TheExactHInter;
 		 IntCurveSurface_TheExactHInter(const IntCurveSurface_TheCSFunctionOfHInter & F, const Standard_Real TolTangency);
+
+		/****************** Function ******************/
+		%feature("compactdefaultargs") Function;
+		%feature("autodoc", "Return the math function which is used to compute the intersection.
+
+Returns
+-------
+IntCurveSurface_TheCSFunctionOfHInter
+") Function;
+		IntCurveSurface_TheCSFunctionOfHInter & Function();
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -1375,6 +1375,53 @@ None
 *******************************************/
 class IntCurveSurface_ThePolygonOfHInter {
 	public:
+		/****************** IntCurveSurface_ThePolygonOfHInter ******************/
+		%feature("compactdefaultargs") IntCurveSurface_ThePolygonOfHInter;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Curve: Adaptor3d_HCurve
+NbPnt: int
+
+Returns
+-------
+None
+") IntCurveSurface_ThePolygonOfHInter;
+		 IntCurveSurface_ThePolygonOfHInter(const opencascade::handle<Adaptor3d_HCurve> & Curve, const Standard_Integer NbPnt);
+
+		/****************** IntCurveSurface_ThePolygonOfHInter ******************/
+		%feature("compactdefaultargs") IntCurveSurface_ThePolygonOfHInter;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Curve: Adaptor3d_HCurve
+U1: float
+U2: float
+NbPnt: int
+
+Returns
+-------
+None
+") IntCurveSurface_ThePolygonOfHInter;
+		 IntCurveSurface_ThePolygonOfHInter(const opencascade::handle<Adaptor3d_HCurve> & Curve, const Standard_Real U1, const Standard_Real U2, const Standard_Integer NbPnt);
+
+		/****************** IntCurveSurface_ThePolygonOfHInter ******************/
+		%feature("compactdefaultargs") IntCurveSurface_ThePolygonOfHInter;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Curve: Adaptor3d_HCurve
+Upars: TColStd_Array1OfReal
+
+Returns
+-------
+None
+") IntCurveSurface_ThePolygonOfHInter;
+		 IntCurveSurface_ThePolygonOfHInter(const opencascade::handle<Adaptor3d_HCurve> & Curve, const TColStd_Array1OfReal & Upars);
+
 		/****************** ApproxParamOnCurve ******************/
 		%feature("compactdefaultargs") ApproxParamOnCurve;
 		%feature("autodoc", "Give an approximation of the parameter on the curve according to the discretization of the curve.
@@ -1481,53 +1528,6 @@ Returns
 float
 ") InfParameter;
 		Standard_Real InfParameter();
-
-		/****************** IntCurveSurface_ThePolygonOfHInter ******************/
-		%feature("compactdefaultargs") IntCurveSurface_ThePolygonOfHInter;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Curve: Adaptor3d_HCurve
-NbPnt: int
-
-Returns
--------
-None
-") IntCurveSurface_ThePolygonOfHInter;
-		 IntCurveSurface_ThePolygonOfHInter(const opencascade::handle<Adaptor3d_HCurve> & Curve, const Standard_Integer NbPnt);
-
-		/****************** IntCurveSurface_ThePolygonOfHInter ******************/
-		%feature("compactdefaultargs") IntCurveSurface_ThePolygonOfHInter;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Curve: Adaptor3d_HCurve
-U1: float
-U2: float
-NbPnt: int
-
-Returns
--------
-None
-") IntCurveSurface_ThePolygonOfHInter;
-		 IntCurveSurface_ThePolygonOfHInter(const opencascade::handle<Adaptor3d_HCurve> & Curve, const Standard_Real U1, const Standard_Real U2, const Standard_Integer NbPnt);
-
-		/****************** IntCurveSurface_ThePolygonOfHInter ******************/
-		%feature("compactdefaultargs") IntCurveSurface_ThePolygonOfHInter;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Curve: Adaptor3d_HCurve
-Upars: TColStd_Array1OfReal
-
-Returns
--------
-None
-") IntCurveSurface_ThePolygonOfHInter;
-		 IntCurveSurface_ThePolygonOfHInter(const opencascade::handle<Adaptor3d_HCurve> & Curve, const TColStd_Array1OfReal & Upars);
 
 		/****************** NbSegments ******************/
 		%feature("compactdefaultargs") NbSegments;
@@ -1949,21 +1949,6 @@ float
 ****************************************************************/
 class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_FunctionWithDerivative {
 	public:
-		/****************** Derivative ******************/
-		%feature("compactdefaultargs") Derivative;
-		%feature("autodoc", "Computes the derivative of the previous function at parameter param. derivative always returns true.
-
-Parameters
-----------
-Param: float
-D: float
-
-Returns
--------
-bool
-") Derivative;
-		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-
 		/****************** IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter ******************/
 		%feature("compactdefaultargs") IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter;
 		%feature("autodoc", "Create the function.
@@ -1978,6 +1963,21 @@ Returns
 None
 ") IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter;
 		 IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter(const IntSurf_Quadric & Q, const opencascade::handle<Adaptor3d_HCurve> & C);
+
+		/****************** Derivative ******************/
+		%feature("compactdefaultargs") Derivative;
+		%feature("autodoc", "Computes the derivative of the previous function at parameter param. derivative always returns true.
+
+Parameters
+----------
+Param: float
+D: float
+
+Returns
+-------
+bool
+") Derivative;
+		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;

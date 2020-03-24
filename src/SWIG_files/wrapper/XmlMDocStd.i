@@ -115,6 +115,20 @@ None
 *******************************/
 class XmlMDocStd_XLinkDriver : public XmlMDF_ADriver {
 	public:
+		/****************** XmlMDocStd_XLinkDriver ******************/
+		%feature("compactdefaultargs") XmlMDocStd_XLinkDriver;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theMessageDriver: Message_Messenger
+
+Returns
+-------
+None
+") XmlMDocStd_XLinkDriver;
+		 XmlMDocStd_XLinkDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
+
 		/****************** NewEmpty ******************/
 		%feature("compactdefaultargs") NewEmpty;
 		%feature("autodoc", "No available documentation.
@@ -156,20 +170,6 @@ Returns
 None
 ") Paste;
 		void Paste(const opencascade::handle<TDF_Attribute> & Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable);
-
-		/****************** XmlMDocStd_XLinkDriver ******************/
-		%feature("compactdefaultargs") XmlMDocStd_XLinkDriver;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theMessageDriver: Message_Messenger
-
-Returns
--------
-None
-") XmlMDocStd_XLinkDriver;
-		 XmlMDocStd_XLinkDriver(const opencascade::handle<Message_Messenger> & theMessageDriver);
 
 };
 

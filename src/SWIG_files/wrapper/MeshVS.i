@@ -296,8 +296,6 @@ class MeshVS_DrawerAttribute:
 /* end handles declaration */
 
 /* templates */
-%template(MeshVS_PolyhedronVerts) NCollection_List<opencascade::handle<TColgp_HArray1OfPnt>>;
-%template(MeshVS_PolyhedronVertsIter) NCollection_TListIterator<MeshVS_PolyhedronVerts>;
 %template(MeshVS_Array1OfSequenceOfInteger) NCollection_Array1<TColStd_SequenceOfInteger>;
 
 %extend NCollection_Array1<TColStd_SequenceOfInteger> {
@@ -333,34 +331,7 @@ class MeshVS_DrawerAttribute:
     __next__ = next
     }
 };
-%template(MeshVS_MapOfTwoNodes) NCollection_Map<MeshVS_TwoNodes,MeshVS_TwoNodesHasher>;
-%template(MeshVS_DataMapOfIntegerBoolean) NCollection_DataMap<Standard_Integer,Standard_Boolean,TColStd_MapIntegerHasher>;
-
-%extend NCollection_DataMap<Standard_Integer,Standard_Boolean,TColStd_MapIntegerHasher> {
-    PyObject* Keys() {
-        PyObject *l=PyList_New(0);
-        for (MeshVS_DataMapOfIntegerBoolean::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
-          PyObject *o = PyLong_FromLong(anIt1.Key());
-          PyList_Append(l, o);
-          Py_DECREF(o);
-        }
-    return l;
-    }
-};
-%template(MeshVS_DataMapOfTwoColorsMapOfInteger) NCollection_DataMap<MeshVS_TwoColors,TColStd_MapOfInteger,MeshVS_TwoColorsHasher>;
-%template(MeshVS_DataMapOfIntegerMeshEntityOwner) NCollection_DataMap<Standard_Integer,opencascade::handle<MeshVS_MeshEntityOwner>,TColStd_MapIntegerHasher>;
-
-%extend NCollection_DataMap<Standard_Integer,opencascade::handle<MeshVS_MeshEntityOwner>,TColStd_MapIntegerHasher> {
-    PyObject* Keys() {
-        PyObject *l=PyList_New(0);
-        for (MeshVS_DataMapOfIntegerMeshEntityOwner::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
-          PyObject *o = PyLong_FromLong(anIt1.Key());
-          PyList_Append(l, o);
-          Py_DECREF(o);
-        }
-    return l;
-    }
-};
+%template(MeshVS_DataMapOfColorMapOfInteger) NCollection_DataMap<Quantity_Color,TColStd_MapOfInteger,Quantity_ColorHasher>;
 %template(MeshVS_DataMapOfHArray1OfSequenceOfInteger) NCollection_DataMap<Standard_Integer,opencascade::handle<MeshVS_HArray1OfSequenceOfInteger>,TColStd_MapIntegerHasher>;
 
 %extend NCollection_DataMap<Standard_Integer,opencascade::handle<MeshVS_HArray1OfSequenceOfInteger>,TColStd_MapIntegerHasher> {
@@ -374,14 +345,64 @@ class MeshVS_DrawerAttribute:
     return l;
     }
 };
-%template(MeshVS_TwoNodesHasher) NCollection_DefaultHasher<MeshVS_TwoNodes>;
-%template(MeshVS_SequenceOfPrsBuilder) NCollection_Sequence<opencascade::handle<MeshVS_PrsBuilder>>;
+%template(MeshVS_DataMapOfIntegerAsciiString) NCollection_DataMap<Standard_Integer,TCollection_AsciiString,TColStd_MapIntegerHasher>;
+
+%extend NCollection_DataMap<Standard_Integer,TCollection_AsciiString,TColStd_MapIntegerHasher> {
+    PyObject* Keys() {
+        PyObject *l=PyList_New(0);
+        for (MeshVS_DataMapOfIntegerAsciiString::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
+          PyObject *o = PyLong_FromLong(anIt1.Key());
+          PyList_Append(l, o);
+          Py_DECREF(o);
+        }
+    return l;
+    }
+};
+%template(MeshVS_DataMapOfIntegerBoolean) NCollection_DataMap<Standard_Integer,Standard_Boolean,TColStd_MapIntegerHasher>;
+
+%extend NCollection_DataMap<Standard_Integer,Standard_Boolean,TColStd_MapIntegerHasher> {
+    PyObject* Keys() {
+        PyObject *l=PyList_New(0);
+        for (MeshVS_DataMapOfIntegerBoolean::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
+          PyObject *o = PyLong_FromLong(anIt1.Key());
+          PyList_Append(l, o);
+          Py_DECREF(o);
+        }
+    return l;
+    }
+};
 %template(MeshVS_DataMapOfIntegerColor) NCollection_DataMap<Standard_Integer,Quantity_Color,TColStd_MapIntegerHasher>;
 
 %extend NCollection_DataMap<Standard_Integer,Quantity_Color,TColStd_MapIntegerHasher> {
     PyObject* Keys() {
         PyObject *l=PyList_New(0);
         for (MeshVS_DataMapOfIntegerColor::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
+          PyObject *o = PyLong_FromLong(anIt1.Key());
+          PyList_Append(l, o);
+          Py_DECREF(o);
+        }
+    return l;
+    }
+};
+%template(MeshVS_DataMapOfIntegerMaterial) NCollection_DataMap<Standard_Integer,Graphic3d_MaterialAspect,TColStd_MapIntegerHasher>;
+
+%extend NCollection_DataMap<Standard_Integer,Graphic3d_MaterialAspect,TColStd_MapIntegerHasher> {
+    PyObject* Keys() {
+        PyObject *l=PyList_New(0);
+        for (MeshVS_DataMapOfIntegerMaterial::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
+          PyObject *o = PyLong_FromLong(anIt1.Key());
+          PyList_Append(l, o);
+          Py_DECREF(o);
+        }
+    return l;
+    }
+};
+%template(MeshVS_DataMapOfIntegerMeshEntityOwner) NCollection_DataMap<Standard_Integer,opencascade::handle<MeshVS_MeshEntityOwner>,TColStd_MapIntegerHasher>;
+
+%extend NCollection_DataMap<Standard_Integer,opencascade::handle<MeshVS_MeshEntityOwner>,TColStd_MapIntegerHasher> {
+    PyObject* Keys() {
+        PyObject *l=PyList_New(0);
+        for (MeshVS_DataMapOfIntegerMeshEntityOwner::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
           PyObject *o = PyLong_FromLong(anIt1.Key());
           PyList_Append(l, o);
           Py_DECREF(o);
@@ -428,72 +449,51 @@ class MeshVS_DrawerAttribute:
     return l;
     }
 };
-%template(MeshVS_DataMapOfIntegerAsciiString) NCollection_DataMap<Standard_Integer,TCollection_AsciiString,TColStd_MapIntegerHasher>;
-
-%extend NCollection_DataMap<Standard_Integer,TCollection_AsciiString,TColStd_MapIntegerHasher> {
-    PyObject* Keys() {
-        PyObject *l=PyList_New(0);
-        for (MeshVS_DataMapOfIntegerAsciiString::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
-          PyObject *o = PyLong_FromLong(anIt1.Key());
-          PyList_Append(l, o);
-          Py_DECREF(o);
-        }
-    return l;
-    }
-};
+%template(MeshVS_DataMapOfTwoColorsMapOfInteger) NCollection_DataMap<MeshVS_TwoColors,TColStd_MapOfInteger,MeshVS_TwoColorsHasher>;
+%template(MeshVS_MapOfTwoNodes) NCollection_Map<MeshVS_TwoNodes,MeshVS_TwoNodesHasher>;
+%template(MeshVS_PolyhedronVerts) NCollection_List<opencascade::handle<TColgp_HArray1OfPnt>>;
+%template(MeshVS_PolyhedronVertsIter) NCollection_TListIterator<MeshVS_PolyhedronVerts>;
+%template(MeshVS_SequenceOfPrsBuilder) NCollection_Sequence<opencascade::handle<MeshVS_PrsBuilder>>;
 %template(MeshVS_TwoColorsHasher) NCollection_DefaultHasher<MeshVS_TwoColors>;
-%template(MeshVS_DataMapOfColorMapOfInteger) NCollection_DataMap<Quantity_Color,TColStd_MapOfInteger,Quantity_ColorHasher>;
-%template(MeshVS_DataMapOfIntegerMaterial) NCollection_DataMap<Standard_Integer,Graphic3d_MaterialAspect,TColStd_MapIntegerHasher>;
-
-%extend NCollection_DataMap<Standard_Integer,Graphic3d_MaterialAspect,TColStd_MapIntegerHasher> {
-    PyObject* Keys() {
-        PyObject *l=PyList_New(0);
-        for (MeshVS_DataMapOfIntegerMaterial::Iterator anIt1(*self); anIt1.More(); anIt1.Next()) {
-          PyObject *o = PyLong_FromLong(anIt1.Key());
-          PyList_Append(l, o);
-          Py_DECREF(o);
-        }
-    return l;
-    }
-};
+%template(MeshVS_TwoNodesHasher) NCollection_DefaultHasher<MeshVS_TwoNodes>;
 /* end templates declaration */
 
 /* typedefs */
+typedef NCollection_Array1<TColStd_SequenceOfInteger> MeshVS_Array1OfSequenceOfInteger;
+typedef Standard_Integer MeshVS_BuilderPriority;
+typedef Quantity_ColorHasher MeshVS_ColorHasher;
+typedef NCollection_DataMap<Quantity_Color, TColStd_MapOfInteger, Quantity_ColorHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger;
+typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MeshVS_HArray1OfSequenceOfInteger>, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger;
+typedef NCollection_DataMap<Standard_Integer, TCollection_AsciiString, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString;
+typedef NCollection_DataMap<Standard_Integer, Standard_Boolean, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean;
+typedef NCollection_DataMap<Standard_Integer, Quantity_Color, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerColor;
+typedef NCollection_DataMap<Standard_Integer, Graphic3d_MaterialAspect, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial;
+typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MeshVS_MeshEntityOwner>, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner;
+typedef NCollection_DataMap<Standard_Integer, opencascade::handle<SelectMgr_EntityOwner>, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerOwner;
+typedef NCollection_DataMap<Standard_Integer, MeshVS_TwoColors, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors;
+typedef NCollection_DataMap<Standard_Integer, gp_Vec, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerVector;
+typedef NCollection_DataMap<MeshVS_TwoColors, TColStd_MapOfInteger, MeshVS_TwoColorsHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger;
+typedef NCollection_DataMap<Quantity_Color, TColStd_MapOfInteger, Quantity_ColorHasher> MeshVS_DataMapOfColorMapOfInteger;
+typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MeshVS_HArray1OfSequenceOfInteger>, TColStd_MapIntegerHasher> MeshVS_DataMapOfHArray1OfSequenceOfInteger;
+typedef NCollection_DataMap<Standard_Integer, TCollection_AsciiString, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerAsciiString;
+typedef NCollection_DataMap<Standard_Integer, Standard_Boolean, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerBoolean;
+typedef NCollection_DataMap<Standard_Integer, Quantity_Color, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerColor;
+typedef NCollection_DataMap<Standard_Integer, Graphic3d_MaterialAspect, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerMaterial;
+typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MeshVS_MeshEntityOwner>, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerMeshEntityOwner;
+typedef NCollection_DataMap<Standard_Integer, opencascade::handle<SelectMgr_EntityOwner>, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerOwner;
+typedef NCollection_DataMap<Standard_Integer, MeshVS_TwoColors, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerTwoColors;
+typedef NCollection_DataMap<Standard_Integer, gp_Vec, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerVector;
+typedef NCollection_DataMap<MeshVS_TwoColors, TColStd_MapOfInteger, MeshVS_TwoColorsHasher> MeshVS_DataMapOfTwoColorsMapOfInteger;
+typedef Standard_Integer MeshVS_DisplayModeFlags;
+typedef NCollection_Map<MeshVS_TwoNodes, MeshVS_TwoNodesHasher>::Iterator MeshVS_MapIteratorOfMapOfTwoNodes;
+typedef NCollection_Map<MeshVS_TwoNodes, MeshVS_TwoNodesHasher> MeshVS_MapOfTwoNodes;
+typedef MeshVS_Mesh * MeshVS_MeshPtr;
+typedef std::pair<Standard_Integer, Standard_Integer> MeshVS_NodePair;
 typedef NCollection_List<opencascade::handle<TColgp_HArray1OfPnt>> MeshVS_PolyhedronVerts;
 typedef NCollection_List<opencascade::handle<TColgp_HArray1OfPnt>>::Iterator MeshVS_PolyhedronVertsIter;
-typedef NCollection_Array1<TColStd_SequenceOfInteger> MeshVS_Array1OfSequenceOfInteger;
-typedef NCollection_Map<MeshVS_TwoNodes, MeshVS_TwoNodesHasher> MeshVS_MapOfTwoNodes;
-typedef NCollection_Map<MeshVS_TwoNodes, MeshVS_TwoNodesHasher>::Iterator MeshVS_MapIteratorOfMapOfTwoNodes;
-typedef NCollection_DataMap<Standard_Integer, Standard_Boolean, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerBoolean;
-typedef NCollection_DataMap<Standard_Integer, Standard_Boolean, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean;
-typedef NCollection_DataMap<MeshVS_TwoColors, TColStd_MapOfInteger, MeshVS_TwoColorsHasher> MeshVS_DataMapOfTwoColorsMapOfInteger;
-typedef NCollection_DataMap<MeshVS_TwoColors, TColStd_MapOfInteger, MeshVS_TwoColorsHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger;
-typedef Standard_Integer MeshVS_BuilderPriority;
-typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MeshVS_MeshEntityOwner>, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerMeshEntityOwner;
-typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MeshVS_MeshEntityOwner>, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner;
-typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MeshVS_HArray1OfSequenceOfInteger>, TColStd_MapIntegerHasher> MeshVS_DataMapOfHArray1OfSequenceOfInteger;
-typedef NCollection_DataMap<Standard_Integer, opencascade::handle<MeshVS_HArray1OfSequenceOfInteger>, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger;
-typedef NCollection_DefaultHasher<MeshVS_TwoNodes> MeshVS_TwoNodesHasher;
 typedef NCollection_Sequence<opencascade::handle<MeshVS_PrsBuilder>> MeshVS_SequenceOfPrsBuilder;
-typedef NCollection_DataMap<Standard_Integer, Quantity_Color, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerColor;
-typedef NCollection_DataMap<Standard_Integer, Quantity_Color, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerColor;
-typedef NCollection_DataMap<Standard_Integer, opencascade::handle<SelectMgr_EntityOwner>, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerOwner;
-typedef NCollection_DataMap<Standard_Integer, opencascade::handle<SelectMgr_EntityOwner>, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerOwner;
-typedef MeshVS_Mesh * MeshVS_MeshPtr;
-typedef NCollection_DataMap<Standard_Integer, MeshVS_TwoColors, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerTwoColors;
-typedef NCollection_DataMap<Standard_Integer, MeshVS_TwoColors, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors;
-typedef Quantity_ColorHasher MeshVS_ColorHasher;
-typedef NCollection_DataMap<Standard_Integer, gp_Vec, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerVector;
-typedef NCollection_DataMap<Standard_Integer, gp_Vec, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerVector;
-typedef std::pair<Standard_Integer, Standard_Integer> MeshVS_NodePair;
-typedef Standard_Integer MeshVS_DisplayModeFlags;
-typedef NCollection_DataMap<Standard_Integer, TCollection_AsciiString, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerAsciiString;
-typedef NCollection_DataMap<Standard_Integer, TCollection_AsciiString, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString;
 typedef NCollection_DefaultHasher<MeshVS_TwoColors> MeshVS_TwoColorsHasher;
-typedef NCollection_DataMap<Quantity_Color, TColStd_MapOfInteger, Quantity_ColorHasher> MeshVS_DataMapOfColorMapOfInteger;
-typedef NCollection_DataMap<Quantity_Color, TColStd_MapOfInteger, Quantity_ColorHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger;
-typedef NCollection_DataMap<Standard_Integer, Graphic3d_MaterialAspect, TColStd_MapIntegerHasher> MeshVS_DataMapOfIntegerMaterial;
-typedef NCollection_DataMap<Standard_Integer, Graphic3d_MaterialAspect, TColStd_MapIntegerHasher>::Iterator MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial;
+typedef NCollection_DefaultHasher<MeshVS_TwoNodes> MeshVS_TwoNodesHasher;
 /* end typedefs declaration */
 
 /**********************
@@ -529,6 +529,22 @@ None
 *************************************/
 class MeshVS_CommonSensitiveEntity : public Select3D_SensitiveSet {
 	public:
+		/****************** MeshVS_CommonSensitiveEntity ******************/
+		%feature("compactdefaultargs") MeshVS_CommonSensitiveEntity;
+		%feature("autodoc", "Default constructor.
+
+Parameters
+----------
+theOwner: SelectMgr_EntityOwner
+theParentMesh: MeshVS_Mesh
+theSelMethod: MeshVS_MeshSelectionMethod
+
+Returns
+-------
+None
+") MeshVS_CommonSensitiveEntity;
+		 MeshVS_CommonSensitiveEntity(const opencascade::handle<SelectMgr_EntityOwner> & theOwner, const opencascade::handle<MeshVS_Mesh> & theParentMesh, const MeshVS_MeshSelectionMethod theSelMethod);
+
 		/****************** BoundingBox ******************/
 		%feature("compactdefaultargs") BoundingBox;
 		%feature("autodoc", "Returns bounding box of the triangulation. if location transformation is set, it will be applied.
@@ -587,22 +603,6 @@ Returns
 opencascade::handle<Select3D_SensitiveEntity>
 ") GetConnected;
 		virtual opencascade::handle<Select3D_SensitiveEntity> GetConnected();
-
-		/****************** MeshVS_CommonSensitiveEntity ******************/
-		%feature("compactdefaultargs") MeshVS_CommonSensitiveEntity;
-		%feature("autodoc", "Default constructor.
-
-Parameters
-----------
-theOwner: SelectMgr_EntityOwner
-theParentMesh: MeshVS_Mesh
-theSelMethod: MeshVS_MeshSelectionMethod
-
-Returns
--------
-None
-") MeshVS_CommonSensitiveEntity;
-		 MeshVS_CommonSensitiveEntity(const opencascade::handle<SelectMgr_EntityOwner> & theOwner, const opencascade::handle<MeshVS_Mesh> & theParentMesh, const MeshVS_MeshSelectionMethod theSelMethod);
 
 		/****************** NbSubElements ******************/
 		%feature("compactdefaultargs") NbSubElements;
@@ -1260,6 +1260,20 @@ None
 ************************************/
 class MeshVS_DummySensitiveEntity : public Select3D_SensitiveEntity {
 	public:
+		/****************** MeshVS_DummySensitiveEntity ******************/
+		%feature("compactdefaultargs") MeshVS_DummySensitiveEntity;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theOwnerId: SelectMgr_EntityOwner
+
+Returns
+-------
+None
+") MeshVS_DummySensitiveEntity;
+		 MeshVS_DummySensitiveEntity(const opencascade::handle<SelectMgr_EntityOwner> & theOwnerId);
+
 		/****************** BVH ******************/
 		%feature("compactdefaultargs") BVH;
 		%feature("autodoc", "No available documentation.
@@ -1335,20 +1349,6 @@ bool
 ") Matches;
 		virtual Standard_Boolean Matches(SelectBasics_SelectingVolumeManager & theMgr, SelectBasics_PickResult & thePickResult);
 
-		/****************** MeshVS_DummySensitiveEntity ******************/
-		%feature("compactdefaultargs") MeshVS_DummySensitiveEntity;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theOwnerId: SelectMgr_EntityOwner
-
-Returns
--------
-None
-") MeshVS_DummySensitiveEntity;
-		 MeshVS_DummySensitiveEntity(const opencascade::handle<SelectMgr_EntityOwner> & theOwnerId);
-
 		/****************** NbSubElements ******************/
 		%feature("compactdefaultargs") NbSubElements;
 		%feature("autodoc", "No available documentation.
@@ -1375,6 +1375,21 @@ int
 ********************/
 class MeshVS_Mesh : public AIS_InteractiveObject {
 	public:
+		/****************** MeshVS_Mesh ******************/
+		%feature("compactdefaultargs") MeshVS_Mesh;
+		%feature("autodoc", "Constructor. theisallowoverlapped is standard_true, if it is allowed to draw edges overlapped with beams its value is stored in drawer.
+
+Parameters
+----------
+theIsAllowOverlapped: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") MeshVS_Mesh;
+		 MeshVS_Mesh(const Standard_Boolean theIsAllowOverlapped = Standard_False);
+
 		/****************** AcceptDisplayMode ******************/
 		%feature("compactdefaultargs") AcceptDisplayMode;
 		%feature("autodoc", "Returns true for supported display modes basing on a list of defined builders.
@@ -1693,21 +1708,6 @@ bool
 ") IsWholeMeshOwner;
 		virtual Standard_Boolean IsWholeMeshOwner(const opencascade::handle<SelectMgr_EntityOwner> & theOwner);
 
-		/****************** MeshVS_Mesh ******************/
-		%feature("compactdefaultargs") MeshVS_Mesh;
-		%feature("autodoc", "Constructor. theisallowoverlapped is standard_true, if it is allowed to draw edges overlapped with beams its value is stored in drawer.
-
-Parameters
-----------
-theIsAllowOverlapped: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") MeshVS_Mesh;
-		 MeshVS_Mesh(const Standard_Boolean theIsAllowOverlapped = Standard_False);
-
 		/****************** RemoveBuilder ******************/
 		%feature("compactdefaultargs") RemoveBuilder;
 		%feature("autodoc", "Removes builder from sequence. if it is hilighter, hilighter will be null ( don't remember to set it to other after!!! ).
@@ -1888,6 +1888,27 @@ None
 *******************************/
 class MeshVS_MeshEntityOwner : public SelectMgr_EntityOwner {
 	public:
+		/****************** MeshVS_MeshEntityOwner ******************/
+		%feature("compactdefaultargs") MeshVS_MeshEntityOwner;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SelObj: SelectMgr_SOPtr
+ID: int
+MeshEntity: Standard_Address
+Type: MeshVS_EntityType
+Priority: int,optional
+	default value is 0
+IsGroup: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") MeshVS_MeshEntityOwner;
+		 MeshVS_MeshEntityOwner(const SelectMgr_SOPtr & SelObj, const Standard_Integer ID, const Standard_Address MeshEntity, const MeshVS_EntityType & Type, const Standard_Integer Priority = 0, const Standard_Boolean IsGroup = Standard_False);
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "No available documentation.
@@ -1957,27 +1978,6 @@ bool
 ") IsHilighted;
 		virtual Standard_Boolean IsHilighted(const opencascade::handle<PrsMgr_PresentationManager> & PM, const Standard_Integer Mode = 0);
 
-		/****************** MeshVS_MeshEntityOwner ******************/
-		%feature("compactdefaultargs") MeshVS_MeshEntityOwner;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-SelObj: SelectMgr_SOPtr
-ID: int
-MeshEntity: Standard_Address
-Type: MeshVS_EntityType
-Priority: int,optional
-	default value is 0
-IsGroup: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") MeshVS_MeshEntityOwner;
-		 MeshVS_MeshEntityOwner(const SelectMgr_SOPtr & SelObj, const Standard_Integer ID, const Standard_Address MeshEntity, const MeshVS_EntityType & Type, const Standard_Integer Priority = 0, const Standard_Boolean IsGroup = Standard_False);
-
 		/****************** Owner ******************/
 		%feature("compactdefaultargs") Owner;
 		%feature("autodoc", "Returns an address of element or node data structure.
@@ -2030,6 +2030,23 @@ None
 *************************/
 class MeshVS_MeshOwner : public SelectMgr_EntityOwner {
 	public:
+		/****************** MeshVS_MeshOwner ******************/
+		%feature("compactdefaultargs") MeshVS_MeshOwner;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theSelObj: SelectMgr_SOPtr
+theDS: MeshVS_DataSource
+thePriority: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") MeshVS_MeshOwner;
+		 MeshVS_MeshOwner(const SelectMgr_SOPtr & theSelObj, const opencascade::handle<MeshVS_DataSource> & theDS, const Standard_Integer thePriority = 0);
+
 		/****************** AddSelectedEntities ******************/
 		%feature("compactdefaultargs") AddSelectedEntities;
 		%feature("autodoc", "Saves ids of selected mesh entities.
@@ -2131,23 +2148,6 @@ Returns
 bool
 ") IsForcedHilight;
 		virtual Standard_Boolean IsForcedHilight();
-
-		/****************** MeshVS_MeshOwner ******************/
-		%feature("compactdefaultargs") MeshVS_MeshOwner;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theSelObj: SelectMgr_SOPtr
-theDS: MeshVS_DataSource
-thePriority: int,optional
-	default value is 0
-
-Returns
--------
-None
-") MeshVS_MeshOwner;
-		 MeshVS_MeshOwner(const SelectMgr_SOPtr & theSelObj, const opencascade::handle<MeshVS_DataSource> & theDS, const Standard_Integer thePriority = 0);
 
 		/****************** SetDetectedEntities ******************/
 		%feature("compactdefaultargs") SetDetectedEntities;
@@ -2436,6 +2436,22 @@ None
 *****************************/
 class MeshVS_SensitiveMesh : public Select3D_SensitiveEntity {
 	public:
+		/****************** MeshVS_SensitiveMesh ******************/
+		%feature("compactdefaultargs") MeshVS_SensitiveMesh;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theOwner: SelectMgr_EntityOwner
+theMode: int,optional
+	default value is 0
+
+Returns
+-------
+None
+") MeshVS_SensitiveMesh;
+		 MeshVS_SensitiveMesh(const opencascade::handle<SelectMgr_EntityOwner> & theOwner, const Standard_Integer theMode = 0);
+
 		/****************** BoundingBox ******************/
 		%feature("compactdefaultargs") BoundingBox;
 		%feature("autodoc", "Returns bounding box of mesh.
@@ -2491,22 +2507,6 @@ bool
 ") Matches;
 		virtual Standard_Boolean Matches(SelectBasics_SelectingVolumeManager & theMgr, SelectBasics_PickResult & thePickResult);
 
-		/****************** MeshVS_SensitiveMesh ******************/
-		%feature("compactdefaultargs") MeshVS_SensitiveMesh;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theOwner: SelectMgr_EntityOwner
-theMode: int,optional
-	default value is 0
-
-Returns
--------
-None
-") MeshVS_SensitiveMesh;
-		 MeshVS_SensitiveMesh(const opencascade::handle<SelectMgr_EntityOwner> & theOwner, const Standard_Integer theMode = 0);
-
 		/****************** NbSubElements ******************/
 		%feature("compactdefaultargs") NbSubElements;
 		%feature("autodoc", "Returns the amount of mesh nodes.
@@ -2533,6 +2533,22 @@ int
 ***********************************/
 class MeshVS_SensitivePolyhedron : public Select3D_SensitiveEntity {
 	public:
+		/****************** MeshVS_SensitivePolyhedron ******************/
+		%feature("compactdefaultargs") MeshVS_SensitivePolyhedron;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theOwner: SelectMgr_EntityOwner
+theNodes: TColgp_Array1OfPnt
+theTopo: MeshVS_HArray1OfSequenceOfInteger
+
+Returns
+-------
+None
+") MeshVS_SensitivePolyhedron;
+		 MeshVS_SensitivePolyhedron(const opencascade::handle<SelectMgr_EntityOwner> & theOwner, const TColgp_Array1OfPnt & theNodes, const opencascade::handle<MeshVS_HArray1OfSequenceOfInteger> & theTopo);
+
 		/****************** BoundingBox ******************/
 		%feature("compactdefaultargs") BoundingBox;
 		%feature("autodoc", "No available documentation.
@@ -2578,22 +2594,6 @@ bool
 ") Matches;
 		virtual Standard_Boolean Matches(SelectBasics_SelectingVolumeManager & theMgr, SelectBasics_PickResult & thePickResult);
 
-		/****************** MeshVS_SensitivePolyhedron ******************/
-		%feature("compactdefaultargs") MeshVS_SensitivePolyhedron;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theOwner: SelectMgr_EntityOwner
-theNodes: TColgp_Array1OfPnt
-theTopo: MeshVS_HArray1OfSequenceOfInteger
-
-Returns
--------
-None
-") MeshVS_SensitivePolyhedron;
-		 MeshVS_SensitivePolyhedron(const opencascade::handle<SelectMgr_EntityOwner> & theOwner, const TColgp_Array1OfPnt & theNodes, const opencascade::handle<MeshVS_HArray1OfSequenceOfInteger> & theTopo);
-
 		/****************** NbSubElements ******************/
 		%feature("compactdefaultargs") NbSubElements;
 		%feature("autodoc", "Returns the amount of nodes of polyhedron.
@@ -2620,6 +2620,39 @@ int
 *****************************/
 class MeshVS_SensitiveQuad : public Select3D_SensitiveEntity {
 	public:
+		/****************** MeshVS_SensitiveQuad ******************/
+		%feature("compactdefaultargs") MeshVS_SensitiveQuad;
+		%feature("autodoc", "Creates a new instance and initializes quadrangle vertices with the given points.
+
+Parameters
+----------
+theOwner: SelectMgr_EntityOwner
+theQuadVerts: TColgp_Array1OfPnt
+
+Returns
+-------
+None
+") MeshVS_SensitiveQuad;
+		 MeshVS_SensitiveQuad(const opencascade::handle<SelectMgr_EntityOwner> & theOwner, const TColgp_Array1OfPnt & theQuadVerts);
+
+		/****************** MeshVS_SensitiveQuad ******************/
+		%feature("compactdefaultargs") MeshVS_SensitiveQuad;
+		%feature("autodoc", "Creates a new instance and initializes quadrangle vertices with the given points.
+
+Parameters
+----------
+theOwner: SelectMgr_EntityOwner
+thePnt1: gp_Pnt
+thePnt2: gp_Pnt
+thePnt3: gp_Pnt
+thePnt4: gp_Pnt
+
+Returns
+-------
+None
+") MeshVS_SensitiveQuad;
+		 MeshVS_SensitiveQuad(const opencascade::handle<SelectMgr_EntityOwner> & theOwner, const gp_Pnt & thePnt1, const gp_Pnt & thePnt2, const gp_Pnt & thePnt3, const gp_Pnt & thePnt4);
+
 		/****************** BoundingBox ******************/
 		%feature("compactdefaultargs") BoundingBox;
 		%feature("autodoc", "Returns coordinates of the box.
@@ -2664,39 +2697,6 @@ Returns
 bool
 ") Matches;
 		virtual Standard_Boolean Matches(SelectBasics_SelectingVolumeManager & theMgr, SelectBasics_PickResult & thePickResult);
-
-		/****************** MeshVS_SensitiveQuad ******************/
-		%feature("compactdefaultargs") MeshVS_SensitiveQuad;
-		%feature("autodoc", "Creates a new instance and initializes quadrangle vertices with the given points.
-
-Parameters
-----------
-theOwner: SelectMgr_EntityOwner
-theQuadVerts: TColgp_Array1OfPnt
-
-Returns
--------
-None
-") MeshVS_SensitiveQuad;
-		 MeshVS_SensitiveQuad(const opencascade::handle<SelectMgr_EntityOwner> & theOwner, const TColgp_Array1OfPnt & theQuadVerts);
-
-		/****************** MeshVS_SensitiveQuad ******************/
-		%feature("compactdefaultargs") MeshVS_SensitiveQuad;
-		%feature("autodoc", "Creates a new instance and initializes quadrangle vertices with the given points.
-
-Parameters
-----------
-theOwner: SelectMgr_EntityOwner
-thePnt1: gp_Pnt
-thePnt2: gp_Pnt
-thePnt3: gp_Pnt
-thePnt4: gp_Pnt
-
-Returns
--------
-None
-") MeshVS_SensitiveQuad;
-		 MeshVS_SensitiveQuad(const opencascade::handle<SelectMgr_EntityOwner> & theOwner, const gp_Pnt & thePnt1, const gp_Pnt & thePnt2, const gp_Pnt & thePnt3, const gp_Pnt & thePnt4);
 
 		/****************** NbSubElements ******************/
 		%feature("compactdefaultargs") NbSubElements;
@@ -3051,6 +3051,21 @@ opencascade::handle<MeshVS_HArray1OfSequenceOfInteger>
 **********************************/
 class MeshVS_DeformedDataSource : public MeshVS_DataSource {
 	public:
+		/****************** MeshVS_DeformedDataSource ******************/
+		%feature("compactdefaultargs") MeshVS_DeformedDataSource;
+		%feature("autodoc", "Constructor thenondeformds is canonical non-deformed data source, by which we are able to calculate deformed mesh geometry themagnify is coefficient of displacement magnify.
+
+Parameters
+----------
+theNonDeformDS: MeshVS_DataSource
+theMagnify: float
+
+Returns
+-------
+None
+") MeshVS_DeformedDataSource;
+		 MeshVS_DeformedDataSource(const opencascade::handle<MeshVS_DataSource> & theNonDeformDS, const Standard_Real theMagnify);
+
 		/****************** Get3DGeom ******************/
 		%feature("compactdefaultargs") Get3DGeom;
 		%feature("autodoc", "No available documentation.
@@ -3197,21 +3212,6 @@ MeshVS_DataMapOfIntegerVector
 ") GetVectors;
 		const MeshVS_DataMapOfIntegerVector & GetVectors();
 
-		/****************** MeshVS_DeformedDataSource ******************/
-		%feature("compactdefaultargs") MeshVS_DeformedDataSource;
-		%feature("autodoc", "Constructor thenondeformds is canonical non-deformed data source, by which we are able to calculate deformed mesh geometry themagnify is coefficient of displacement magnify.
-
-Parameters
-----------
-theNonDeformDS: MeshVS_DataSource
-theMagnify: float
-
-Returns
--------
-None
-") MeshVS_DeformedDataSource;
-		 MeshVS_DeformedDataSource(const opencascade::handle<MeshVS_DataSource> & theNonDeformDS, const Standard_Real theMagnify);
-
 		/****************** SetMagnify ******************/
 		%feature("compactdefaultargs") SetMagnify;
 		%feature("autodoc", "No available documentation.
@@ -3285,6 +3285,28 @@ None
 ****************************************/
 class MeshVS_ElementalColorPrsBuilder : public MeshVS_PrsBuilder {
 	public:
+		/****************** MeshVS_ElementalColorPrsBuilder ******************/
+		%feature("compactdefaultargs") MeshVS_ElementalColorPrsBuilder;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+Parent: MeshVS_Mesh
+Flags: int,optional
+	default value is MeshVS_DMF_ElementalColorDataPrs
+DS: MeshVS_DataSource,optional
+	default value is 0
+Id: int,optional
+	default value is -1
+Priority: int,optional
+	default value is MeshVS_BP_ElemColor
+
+Returns
+-------
+None
+") MeshVS_ElementalColorPrsBuilder;
+		 MeshVS_ElementalColorPrsBuilder(const opencascade::handle<MeshVS_Mesh> & Parent, int Flags = MeshVS_DMF_ElementalColorDataPrs, const opencascade::handle<MeshVS_DataSource> & DS = 0, const Standard_Integer Id = -1, int Priority = MeshVS_BP_ElemColor);
+
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Builds presentation of elements with assigned colors.
@@ -3389,28 +3411,6 @@ bool
 ") HasColors2;
 		Standard_Boolean HasColors2();
 
-		/****************** MeshVS_ElementalColorPrsBuilder ******************/
-		%feature("compactdefaultargs") MeshVS_ElementalColorPrsBuilder;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-Parent: MeshVS_Mesh
-Flags: int,optional
-	default value is MeshVS_DMF_ElementalColorDataPrs
-DS: MeshVS_DataSource,optional
-	default value is 0
-Id: int,optional
-	default value is -1
-Priority: int,optional
-	default value is MeshVS_BP_ElemColor
-
-Returns
--------
-None
-") MeshVS_ElementalColorPrsBuilder;
-		 MeshVS_ElementalColorPrsBuilder(const opencascade::handle<MeshVS_Mesh> & Parent, int Flags = MeshVS_DMF_ElementalColorDataPrs, const opencascade::handle<MeshVS_DataSource> & DS = 0, const Standard_Integer Id = -1, int Priority = MeshVS_BP_ElemColor);
-
 		/****************** SetColor1 ******************/
 		%feature("compactdefaultargs") SetColor1;
 		%feature("autodoc", "Sets color assigned with element number id.
@@ -3501,6 +3501,28 @@ None
 ******************************/
 class MeshVS_MeshPrsBuilder : public MeshVS_PrsBuilder {
 	public:
+		/****************** MeshVS_MeshPrsBuilder ******************/
+		%feature("compactdefaultargs") MeshVS_MeshPrsBuilder;
+		%feature("autodoc", "Creates builder with certain display mode flags, data source, id and priority.
+
+Parameters
+----------
+Parent: MeshVS_Mesh
+Flags: int,optional
+	default value is MeshVS_DMF_OCCMask
+DS: MeshVS_DataSource,optional
+	default value is 0
+Id: int,optional
+	default value is -1
+Priority: int,optional
+	default value is MeshVS_BP_Mesh
+
+Returns
+-------
+None
+") MeshVS_MeshPrsBuilder;
+		 MeshVS_MeshPrsBuilder(const opencascade::handle<MeshVS_Mesh> & Parent, int Flags = MeshVS_DMF_OCCMask, const opencascade::handle<MeshVS_DataSource> & DS = 0, const Standard_Integer Id = -1, int Priority = MeshVS_BP_Mesh);
+
 		/****************** AddVolumePrs ******************/
 		%feature("compactdefaultargs") AddVolumePrs;
 		%feature("autodoc", "Add to array polygons or polylines representing volume.
@@ -3609,28 +3631,6 @@ None
 ") HowManyPrimitives;
 		static void HowManyPrimitives(const opencascade::handle<MeshVS_HArray1OfSequenceOfInteger> & Topo, const Standard_Boolean AsPolygons, const Standard_Boolean IsSelect, const Standard_Integer NbNodes, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
-		/****************** MeshVS_MeshPrsBuilder ******************/
-		%feature("compactdefaultargs") MeshVS_MeshPrsBuilder;
-		%feature("autodoc", "Creates builder with certain display mode flags, data source, id and priority.
-
-Parameters
-----------
-Parent: MeshVS_Mesh
-Flags: int,optional
-	default value is MeshVS_DMF_OCCMask
-DS: MeshVS_DataSource,optional
-	default value is 0
-Id: int,optional
-	default value is -1
-Priority: int,optional
-	default value is MeshVS_BP_Mesh
-
-Returns
--------
-None
-") MeshVS_MeshPrsBuilder;
-		 MeshVS_MeshPrsBuilder(const opencascade::handle<MeshVS_Mesh> & Parent, int Flags = MeshVS_DMF_OCCMask, const opencascade::handle<MeshVS_DataSource> & DS = 0, const Standard_Integer Id = -1, int Priority = MeshVS_BP_Mesh);
-
 };
 
 
@@ -3647,6 +3647,28 @@ None
 ************************************/
 class MeshVS_NodalColorPrsBuilder : public MeshVS_PrsBuilder {
 	public:
+		/****************** MeshVS_NodalColorPrsBuilder ******************/
+		%feature("compactdefaultargs") MeshVS_NodalColorPrsBuilder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Parent: MeshVS_Mesh
+Flags: int,optional
+	default value is MeshVS_DMF_NodalColorDataPrs
+DS: MeshVS_DataSource,optional
+	default value is 0
+Id: int,optional
+	default value is -1
+Priority: int,optional
+	default value is MeshVS_BP_NodalColor
+
+Returns
+-------
+None
+") MeshVS_NodalColorPrsBuilder;
+		 MeshVS_NodalColorPrsBuilder(const opencascade::handle<MeshVS_Mesh> & Parent, int Flags = MeshVS_DMF_NodalColorDataPrs, const opencascade::handle<MeshVS_DataSource> & DS = 0, const Standard_Integer Id = -1, int Priority = MeshVS_BP_NodalColor);
+
 		/****************** AddVolumePrs ******************/
 		%feature("compactdefaultargs") AddVolumePrs;
 		%feature("autodoc", "Add to array polygons or polylines representing volume.
@@ -3775,28 +3797,6 @@ bool
 ") IsUseTexture;
 		Standard_Boolean IsUseTexture();
 
-		/****************** MeshVS_NodalColorPrsBuilder ******************/
-		%feature("compactdefaultargs") MeshVS_NodalColorPrsBuilder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Parent: MeshVS_Mesh
-Flags: int,optional
-	default value is MeshVS_DMF_NodalColorDataPrs
-DS: MeshVS_DataSource,optional
-	default value is 0
-Id: int,optional
-	default value is -1
-Priority: int,optional
-	default value is MeshVS_BP_NodalColor
-
-Returns
--------
-None
-") MeshVS_NodalColorPrsBuilder;
-		 MeshVS_NodalColorPrsBuilder(const opencascade::handle<MeshVS_Mesh> & Parent, int Flags = MeshVS_DMF_NodalColorDataPrs, const opencascade::handle<MeshVS_DataSource> & DS = 0, const Standard_Integer Id = -1, int Priority = MeshVS_BP_NodalColor);
-
 		/****************** SetColor ******************/
 		%feature("compactdefaultargs") SetColor;
 		%feature("autodoc", "Sets color assigned to single node.
@@ -3913,6 +3913,30 @@ None
 ******************************/
 class MeshVS_TextPrsBuilder : public MeshVS_PrsBuilder {
 	public:
+		/****************** MeshVS_TextPrsBuilder ******************/
+		%feature("compactdefaultargs") MeshVS_TextPrsBuilder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Parent: MeshVS_Mesh
+Height: float
+Color: Quantity_Color
+Flags: int,optional
+	default value is MeshVS_DMF_TextDataPrs
+DS: MeshVS_DataSource,optional
+	default value is 0
+Id: int,optional
+	default value is -1
+Priority: int,optional
+	default value is MeshVS_BP_Text
+
+Returns
+-------
+None
+") MeshVS_TextPrsBuilder;
+		 MeshVS_TextPrsBuilder(const opencascade::handle<MeshVS_Mesh> & Parent, const Standard_Real Height, const Quantity_Color & Color, int Flags = MeshVS_DMF_TextDataPrs, const opencascade::handle<MeshVS_DataSource> & DS = 0, const Standard_Integer Id = -1, int Priority = MeshVS_BP_Text);
+
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Builds presentation of text data.
@@ -3975,30 +3999,6 @@ bool
 ") HasTexts;
 		Standard_Boolean HasTexts(const Standard_Boolean IsElement);
 
-		/****************** MeshVS_TextPrsBuilder ******************/
-		%feature("compactdefaultargs") MeshVS_TextPrsBuilder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Parent: MeshVS_Mesh
-Height: float
-Color: Quantity_Color
-Flags: int,optional
-	default value is MeshVS_DMF_TextDataPrs
-DS: MeshVS_DataSource,optional
-	default value is 0
-Id: int,optional
-	default value is -1
-Priority: int,optional
-	default value is MeshVS_BP_Text
-
-Returns
--------
-None
-") MeshVS_TextPrsBuilder;
-		 MeshVS_TextPrsBuilder(const opencascade::handle<MeshVS_Mesh> & Parent, const Standard_Real Height, const Quantity_Color & Color, int Flags = MeshVS_DMF_TextDataPrs, const opencascade::handle<MeshVS_DataSource> & DS = 0, const Standard_Integer Id = -1, int Priority = MeshVS_BP_Text);
-
 		/****************** SetText ******************/
 		%feature("compactdefaultargs") SetText;
 		%feature("autodoc", "Sets text assigned with single node or element.
@@ -4046,6 +4046,32 @@ None
 ********************************/
 class MeshVS_VectorPrsBuilder : public MeshVS_PrsBuilder {
 	public:
+		/****************** MeshVS_VectorPrsBuilder ******************/
+		%feature("compactdefaultargs") MeshVS_VectorPrsBuilder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Parent: MeshVS_Mesh
+MaxLength: float
+VectorColor: Quantity_Color
+Flags: int,optional
+	default value is MeshVS_DMF_VectorDataPrs
+DS: MeshVS_DataSource,optional
+	default value is 0
+Id: int,optional
+	default value is -1
+Priority: int,optional
+	default value is MeshVS_BP_Vector
+IsSimplePrs: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") MeshVS_VectorPrsBuilder;
+		 MeshVS_VectorPrsBuilder(const opencascade::handle<MeshVS_Mesh> & Parent, const Standard_Real MaxLength, const Quantity_Color & VectorColor, int Flags = MeshVS_DMF_VectorDataPrs, const opencascade::handle<MeshVS_DataSource> & DS = 0, const Standard_Integer Id = -1, int Priority = MeshVS_BP_Vector, const Standard_Boolean IsSimplePrs = Standard_False);
+
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Builds vector data presentation.
@@ -4143,32 +4169,6 @@ Returns
 bool
 ") HasVectors;
 		Standard_Boolean HasVectors(const Standard_Boolean IsElement);
-
-		/****************** MeshVS_VectorPrsBuilder ******************/
-		%feature("compactdefaultargs") MeshVS_VectorPrsBuilder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Parent: MeshVS_Mesh
-MaxLength: float
-VectorColor: Quantity_Color
-Flags: int,optional
-	default value is MeshVS_DMF_VectorDataPrs
-DS: MeshVS_DataSource,optional
-	default value is 0
-Id: int,optional
-	default value is -1
-Priority: int,optional
-	default value is MeshVS_BP_Vector
-IsSimplePrs: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") MeshVS_VectorPrsBuilder;
-		 MeshVS_VectorPrsBuilder(const opencascade::handle<MeshVS_Mesh> & Parent, const Standard_Real MaxLength, const Quantity_Color & VectorColor, int Flags = MeshVS_DMF_VectorDataPrs, const opencascade::handle<MeshVS_DataSource> & DS = 0, const Standard_Integer Id = -1, int Priority = MeshVS_BP_Vector, const Standard_Boolean IsSimplePrs = Standard_False);
 
 		/****************** SetSimplePrsMode ******************/
 		%feature("compactdefaultargs") SetSimplePrsMode;

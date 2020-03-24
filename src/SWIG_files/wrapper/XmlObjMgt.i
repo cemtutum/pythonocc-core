@@ -78,9 +78,9 @@ from OCC.Core.Exception import *
 /* end templates declaration */
 
 /* typedefs */
-typedef LDOM_Element XmlObjMgt_Element;
 typedef LDOMString XmlObjMgt_DOMString;
 typedef LDOM_Document XmlObjMgt_Document;
+typedef LDOM_Element XmlObjMgt_Element;
 /* end typedefs declaration */
 
 /******************
@@ -294,6 +294,36 @@ None
 *************************/
 class XmlObjMgt_Array1 {
 	public:
+		/****************** XmlObjMgt_Array1 ******************/
+		%feature("compactdefaultargs") XmlObjMgt_Array1;
+		%feature("autodoc", "Create an array of lower bound <low> and upper bound <up>. range error is raised when <up> is less than <low>.
+
+Parameters
+----------
+Low: int
+Up: int
+
+Returns
+-------
+None
+") XmlObjMgt_Array1;
+		 XmlObjMgt_Array1(const Standard_Integer Low, const Standard_Integer Up);
+
+		/****************** XmlObjMgt_Array1 ******************/
+		%feature("compactdefaultargs") XmlObjMgt_Array1;
+		%feature("autodoc", "For restoration from dom_element which is child of theparent: <theparent ...> <thename ...>.
+
+Parameters
+----------
+theParent: XmlObjMgt_Element
+theName: XmlObjMgt_DOMString
+
+Returns
+-------
+None
+") XmlObjMgt_Array1;
+		 XmlObjMgt_Array1(const XmlObjMgt_Element & theParent, const XmlObjMgt_DOMString & theName);
+
 		/****************** CreateArrayElement ******************/
 		%feature("compactdefaultargs") CreateArrayElement;
 		%feature("autodoc", "Create dom_element representing the array, under 'theparent'.
@@ -377,36 +407,6 @@ Returns
 XmlObjMgt_Element
 ") Value;
 		XmlObjMgt_Element Value(const Standard_Integer Index);
-
-		/****************** XmlObjMgt_Array1 ******************/
-		%feature("compactdefaultargs") XmlObjMgt_Array1;
-		%feature("autodoc", "Create an array of lower bound <low> and upper bound <up>. range error is raised when <up> is less than <low>.
-
-Parameters
-----------
-Low: int
-Up: int
-
-Returns
--------
-None
-") XmlObjMgt_Array1;
-		 XmlObjMgt_Array1(const Standard_Integer Low, const Standard_Integer Up);
-
-		/****************** XmlObjMgt_Array1 ******************/
-		%feature("compactdefaultargs") XmlObjMgt_Array1;
-		%feature("autodoc", "For restoration from dom_element which is child of theparent: <theparent ...> <thename ...>.
-
-Parameters
-----------
-theParent: XmlObjMgt_Element
-theName: XmlObjMgt_DOMString
-
-Returns
--------
-None
-") XmlObjMgt_Array1;
-		 XmlObjMgt_Array1(const XmlObjMgt_Element & theParent, const XmlObjMgt_DOMString & theName);
 
 };
 
@@ -523,6 +523,45 @@ bool
 *****************************/
 class XmlObjMgt_Persistent {
 	public:
+		/****************** XmlObjMgt_Persistent ******************/
+		%feature("compactdefaultargs") XmlObjMgt_Persistent;
+		%feature("autodoc", "Empty constructor.
+
+Returns
+-------
+None
+") XmlObjMgt_Persistent;
+		 XmlObjMgt_Persistent();
+
+		/****************** XmlObjMgt_Persistent ******************/
+		%feature("compactdefaultargs") XmlObjMgt_Persistent;
+		%feature("autodoc", "Constructor.
+
+Parameters
+----------
+theElement: XmlObjMgt_Element
+
+Returns
+-------
+None
+") XmlObjMgt_Persistent;
+		 XmlObjMgt_Persistent(const XmlObjMgt_Element & theElement);
+
+		/****************** XmlObjMgt_Persistent ******************/
+		%feature("compactdefaultargs") XmlObjMgt_Persistent;
+		%feature("autodoc", "Constructor from sub-element of element referenced by theref.
+
+Parameters
+----------
+theElement: XmlObjMgt_Element
+theRef: XmlObjMgt_DOMString
+
+Returns
+-------
+None
+") XmlObjMgt_Persistent;
+		 XmlObjMgt_Persistent(const XmlObjMgt_Element & theElement, const XmlObjMgt_DOMString & theRef);
+
 		/****************** CreateElement ******************/
 		%feature("compactdefaultargs") CreateElement;
 		%feature("autodoc", "Myelement := <thetype id='theid'/>.
@@ -582,45 +621,6 @@ Returns
 None
 ") SetId;
 		void SetId(const Standard_Integer theId);
-
-		/****************** XmlObjMgt_Persistent ******************/
-		%feature("compactdefaultargs") XmlObjMgt_Persistent;
-		%feature("autodoc", "Empty constructor.
-
-Returns
--------
-None
-") XmlObjMgt_Persistent;
-		 XmlObjMgt_Persistent();
-
-		/****************** XmlObjMgt_Persistent ******************/
-		%feature("compactdefaultargs") XmlObjMgt_Persistent;
-		%feature("autodoc", "Constructor.
-
-Parameters
-----------
-theElement: XmlObjMgt_Element
-
-Returns
--------
-None
-") XmlObjMgt_Persistent;
-		 XmlObjMgt_Persistent(const XmlObjMgt_Element & theElement);
-
-		/****************** XmlObjMgt_Persistent ******************/
-		%feature("compactdefaultargs") XmlObjMgt_Persistent;
-		%feature("autodoc", "Constructor from sub-element of element referenced by theref.
-
-Parameters
-----------
-theElement: XmlObjMgt_Element
-theRef: XmlObjMgt_DOMString
-
-Returns
--------
-None
-") XmlObjMgt_Persistent;
-		 XmlObjMgt_Persistent(const XmlObjMgt_Element & theElement, const XmlObjMgt_DOMString & theRef);
 
 };
 

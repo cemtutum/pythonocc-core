@@ -710,18 +710,18 @@ class Aspect_InteriorStyle:
 /* end templates declaration */
 
 /* typedefs */
+typedef void * Aspect_Display;
 typedef unsigned long Aspect_Drawable;
-typedef unsigned int Aspect_VKey;
+typedef void * Aspect_FBConfig;
+typedef unsigned long Aspect_Handle;
+typedef void * Aspect_RenderingContext;
 typedef NCollection_Sequence<Quantity_Color> Aspect_SequenceOfColor;
 typedef NCollection_IndexedDataMap<Standard_Size, Aspect_Touch> Aspect_TouchMap;
-typedef void * Aspect_RenderingContext;
-typedef void * Aspect_Display;
-typedef void * HANDLE;
-typedef unsigned long Aspect_Handle;
-typedef struct __GLXFBConfigRec * GLXFBConfig;
-typedef void * Aspect_FBConfig;
+typedef unsigned int Aspect_VKey;
 typedef unsigned int Aspect_VKeyFlags;
 typedef unsigned int Aspect_VKeyMouse;
+typedef struct __GLXFBConfigRec * GLXFBConfig;
+typedef void * HANDLE;
 /* end typedefs declaration */
 
 /**************************

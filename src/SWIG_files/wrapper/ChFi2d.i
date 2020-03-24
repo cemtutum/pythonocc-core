@@ -244,6 +244,30 @@ TopoDS_Edge
 ***********************/
 class ChFi2d_Builder {
 	public:
+		/****************** ChFi2d_Builder ******************/
+		%feature("compactdefaultargs") ChFi2d_Builder;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") ChFi2d_Builder;
+		 ChFi2d_Builder();
+
+		/****************** ChFi2d_Builder ******************/
+		%feature("compactdefaultargs") ChFi2d_Builder;
+		%feature("autodoc", "The face <f> can be build on a closed or an open wire.
+
+Parameters
+----------
+F: TopoDS_Face
+
+Returns
+-------
+None
+") ChFi2d_Builder;
+		 ChFi2d_Builder(const TopoDS_Face & F);
+
 		/****************** AddChamfer ******************/
 		%feature("compactdefaultargs") AddChamfer;
 		%feature("autodoc", "Add a chamfer on the wire between the two edges connected <e1> and <e2>. <addchamfer> returns the chamfer edge. this edge has sense only if the status <status> is <isdone>.
@@ -306,30 +330,6 @@ Returns
 TopoDS_Edge
 ") BasisEdge;
 		const TopoDS_Edge BasisEdge(const TopoDS_Edge & E);
-
-		/****************** ChFi2d_Builder ******************/
-		%feature("compactdefaultargs") ChFi2d_Builder;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") ChFi2d_Builder;
-		 ChFi2d_Builder();
-
-		/****************** ChFi2d_Builder ******************/
-		%feature("compactdefaultargs") ChFi2d_Builder;
-		%feature("autodoc", "The face <f> can be build on a closed or an open wire.
-
-Parameters
-----------
-F: TopoDS_Face
-
-Returns
--------
-None
-") ChFi2d_Builder;
-		 ChFi2d_Builder(const TopoDS_Face & F);
 
 		/****************** ChamferEdges ******************/
 		%feature("compactdefaultargs") ChamferEdges;

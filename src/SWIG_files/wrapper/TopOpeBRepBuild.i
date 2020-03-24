@@ -112,31 +112,31 @@ class TopOpeBRepBuild_LoopEnum:
 /* templates */
 %template(TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape) NCollection_DataMap<TopoDS_Shape,TopOpeBRepBuild_ListOfShapeListOfShape,TopTools_ShapeMapHasher>;
 %template(TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo) NCollection_IndexedDataMap<TopoDS_Shape,TopOpeBRepBuild_VertexInfo,TopTools_ShapeMapHasher>;
-%template(TopOpeBRepBuild_ListOfPave) NCollection_List<opencascade::handle<TopOpeBRepBuild_Pave>>;
-%template(TopOpeBRepBuild_ListIteratorOfListOfPave) NCollection_TListIterator<opencascade::handle<TopOpeBRepBuild_Pave>>;
-%template(TopOpeBRepBuild_ListOfShapeListOfShape) NCollection_List<TopOpeBRepBuild_ShapeListOfShape>;
-%template(TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape) NCollection_TListIterator<TopOpeBRepBuild_ShapeListOfShape>;
-%template(TopOpeBRepBuild_ListOfLoop) NCollection_List<opencascade::handle<TopOpeBRepBuild_Loop>>;
-%template(TopOpeBRepBuild_ListIteratorOfListOfLoop) NCollection_TListIterator<opencascade::handle<TopOpeBRepBuild_Loop>>;
-%template(TopOpeBRepBuild_ListOfListOfLoop) NCollection_List<TopOpeBRepBuild_ListOfLoop>;
 %template(TopOpeBRepBuild_ListIteratorOfListOfListOfLoop) NCollection_TListIterator<TopOpeBRepBuild_ListOfLoop>;
+%template(TopOpeBRepBuild_ListIteratorOfListOfLoop) NCollection_TListIterator<opencascade::handle<TopOpeBRepBuild_Loop>>;
+%template(TopOpeBRepBuild_ListIteratorOfListOfPave) NCollection_TListIterator<opencascade::handle<TopOpeBRepBuild_Pave>>;
+%template(TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape) NCollection_TListIterator<TopOpeBRepBuild_ShapeListOfShape>;
+%template(TopOpeBRepBuild_ListOfListOfLoop) NCollection_List<TopOpeBRepBuild_ListOfLoop>;
+%template(TopOpeBRepBuild_ListOfLoop) NCollection_List<opencascade::handle<TopOpeBRepBuild_Loop>>;
+%template(TopOpeBRepBuild_ListOfPave) NCollection_List<opencascade::handle<TopOpeBRepBuild_Pave>>;
+%template(TopOpeBRepBuild_ListOfShapeListOfShape) NCollection_List<TopOpeBRepBuild_ShapeListOfShape>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepBuild_ListOfShapeListOfShape, TopTools_ShapeMapHasher> TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape;
 typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepBuild_ListOfShapeListOfShape, TopTools_ShapeMapHasher>::Iterator TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape;
-typedef TopOpeBRepBuild_Builder * TopOpeBRepBuild_PBuilder;
+typedef NCollection_DataMap<TopoDS_Shape, TopOpeBRepBuild_ListOfShapeListOfShape, TopTools_ShapeMapHasher> TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape;
 typedef NCollection_IndexedDataMap<TopoDS_Shape, TopOpeBRepBuild_VertexInfo, TopTools_ShapeMapHasher> TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo;
-typedef NCollection_List<opencascade::handle<TopOpeBRepBuild_Pave>> TopOpeBRepBuild_ListOfPave;
-typedef NCollection_List<opencascade::handle<TopOpeBRepBuild_Pave>>::Iterator TopOpeBRepBuild_ListIteratorOfListOfPave;
-typedef NCollection_List<TopOpeBRepBuild_ShapeListOfShape> TopOpeBRepBuild_ListOfShapeListOfShape;
-typedef NCollection_List<TopOpeBRepBuild_ShapeListOfShape>::Iterator TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape;
-typedef TopOpeBRepBuild_GTopo * TopOpeBRepBuild_PGTopo;
-typedef NCollection_List<opencascade::handle<TopOpeBRepBuild_Loop>> TopOpeBRepBuild_ListOfLoop;
-typedef NCollection_List<opencascade::handle<TopOpeBRepBuild_Loop>>::Iterator TopOpeBRepBuild_ListIteratorOfListOfLoop;
-typedef TopOpeBRepBuild_WireEdgeSet * TopOpeBRepBuild_PWireEdgeSet;
-typedef NCollection_List<TopOpeBRepBuild_ListOfLoop> TopOpeBRepBuild_ListOfListOfLoop;
 typedef NCollection_List<TopOpeBRepBuild_ListOfLoop>::Iterator TopOpeBRepBuild_ListIteratorOfListOfListOfLoop;
+typedef NCollection_List<opencascade::handle<TopOpeBRepBuild_Loop>>::Iterator TopOpeBRepBuild_ListIteratorOfListOfLoop;
+typedef NCollection_List<opencascade::handle<TopOpeBRepBuild_Pave>>::Iterator TopOpeBRepBuild_ListIteratorOfListOfPave;
+typedef NCollection_List<TopOpeBRepBuild_ShapeListOfShape>::Iterator TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape;
+typedef NCollection_List<TopOpeBRepBuild_ListOfLoop> TopOpeBRepBuild_ListOfListOfLoop;
+typedef NCollection_List<opencascade::handle<TopOpeBRepBuild_Loop>> TopOpeBRepBuild_ListOfLoop;
+typedef NCollection_List<opencascade::handle<TopOpeBRepBuild_Pave>> TopOpeBRepBuild_ListOfPave;
+typedef NCollection_List<TopOpeBRepBuild_ShapeListOfShape> TopOpeBRepBuild_ListOfShapeListOfShape;
+typedef TopOpeBRepBuild_Builder * TopOpeBRepBuild_PBuilder;
+typedef TopOpeBRepBuild_GTopo * TopOpeBRepBuild_PGTopo;
+typedef TopOpeBRepBuild_WireEdgeSet * TopOpeBRepBuild_PWireEdgeSet;
 /* end typedefs declaration */
 
 /************************************
@@ -144,6 +144,33 @@ typedef NCollection_List<TopOpeBRepBuild_ListOfLoop>::Iterator TopOpeBRepBuild_L
 ************************************/
 class TopOpeBRepBuild_AreaBuilder {
 	public:
+		/****************** TopOpeBRepBuild_AreaBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_AreaBuilder;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_AreaBuilder;
+		 TopOpeBRepBuild_AreaBuilder();
+
+		/****************** TopOpeBRepBuild_AreaBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_AreaBuilder;
+		%feature("autodoc", "Creates a areabuilder to build the areas on the shapes described by <ls> using the classifier <lc>.
+
+Parameters
+----------
+LS: TopOpeBRepBuild_LoopSet
+LC: TopOpeBRepBuild_LoopClassifier
+ForceClass: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") TopOpeBRepBuild_AreaBuilder;
+		 TopOpeBRepBuild_AreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
+
 		/****************** ADD_LISTOFLoop_TO_LISTOFLoop ******************/
 		%feature("compactdefaultargs") ADD_LISTOFLoop_TO_LISTOFLoop;
 		%feature("autodoc", "No available documentation.
@@ -286,33 +313,6 @@ None
 ") REM_Loop_FROM_LISTOFLoop;
 		virtual void REM_Loop_FROM_LISTOFLoop(TopOpeBRepBuild_ListIteratorOfListOfLoop & ITLOL, TopOpeBRepBuild_ListOfLoop & LOL, const Standard_Address s = NULL);
 
-		/****************** TopOpeBRepBuild_AreaBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_AreaBuilder;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_AreaBuilder;
-		 TopOpeBRepBuild_AreaBuilder();
-
-		/****************** TopOpeBRepBuild_AreaBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_AreaBuilder;
-		%feature("autodoc", "Creates a areabuilder to build the areas on the shapes described by <ls> using the classifier <lc>.
-
-Parameters
-----------
-LS: TopOpeBRepBuild_LoopSet
-LC: TopOpeBRepBuild_LoopClassifier
-ForceClass: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") TopOpeBRepBuild_AreaBuilder;
-		 TopOpeBRepBuild_AreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
-
 };
 
 
@@ -327,6 +327,30 @@ None
 *************************************/
 class TopOpeBRepBuild_BlockBuilder {
 	public:
+		/****************** TopOpeBRepBuild_BlockBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_BlockBuilder;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_BlockBuilder;
+		 TopOpeBRepBuild_BlockBuilder();
+
+		/****************** TopOpeBRepBuild_BlockBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_BlockBuilder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+SS: TopOpeBRepBuild_ShapeSet
+
+Returns
+-------
+None
+") TopOpeBRepBuild_BlockBuilder;
+		 TopOpeBRepBuild_BlockBuilder(TopOpeBRepBuild_ShapeSet & SS);
+
 		/****************** AddElement ******************/
 		%feature("compactdefaultargs") AddElement;
 		%feature("autodoc", "No available documentation.
@@ -505,30 +529,6 @@ None
 ") SetValid;
 		void SetValid(const Standard_Integer I, const Standard_Boolean isvalid);
 
-		/****************** TopOpeBRepBuild_BlockBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_BlockBuilder;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_BlockBuilder;
-		 TopOpeBRepBuild_BlockBuilder();
-
-		/****************** TopOpeBRepBuild_BlockBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_BlockBuilder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-SS: TopOpeBRepBuild_ShapeSet
-
-Returns
--------
-None
-") TopOpeBRepBuild_BlockBuilder;
-		 TopOpeBRepBuild_BlockBuilder(TopOpeBRepBuild_ShapeSet & SS);
-
 };
 
 
@@ -543,6 +543,31 @@ None
 **************************************/
 class TopOpeBRepBuild_BlockIterator {
 	public:
+		/****************** TopOpeBRepBuild_BlockIterator ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_BlockIterator;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_BlockIterator;
+		 TopOpeBRepBuild_BlockIterator();
+
+		/****************** TopOpeBRepBuild_BlockIterator ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_BlockIterator;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Lower: int
+Upper: int
+
+Returns
+-------
+None
+") TopOpeBRepBuild_BlockIterator;
+		 TopOpeBRepBuild_BlockIterator(const Standard_Integer Lower, const Standard_Integer Upper);
+
 		/****************** Extent ******************/
 		%feature("compactdefaultargs") Extent;
 		%feature("autodoc", "No available documentation.
@@ -583,31 +608,6 @@ None
 ") Next;
 		void Next();
 
-		/****************** TopOpeBRepBuild_BlockIterator ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_BlockIterator;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_BlockIterator;
-		 TopOpeBRepBuild_BlockIterator();
-
-		/****************** TopOpeBRepBuild_BlockIterator ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_BlockIterator;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Lower: int
-Upper: int
-
-Returns
--------
-None
-") TopOpeBRepBuild_BlockIterator;
-		 TopOpeBRepBuild_BlockIterator(const Standard_Integer Lower, const Standard_Integer Upper);
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -632,6 +632,20 @@ int
 ********************************/
 class TopOpeBRepBuild_Builder {
 	public:
+		/****************** TopOpeBRepBuild_Builder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_Builder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+BT: TopOpeBRepDS_BuildTool
+
+Returns
+-------
+None
+") TopOpeBRepBuild_Builder;
+		 TopOpeBRepBuild_Builder(const TopOpeBRepDS_BuildTool & BT);
+
 		/****************** AddONPatchesSFS ******************/
 		%feature("compactdefaultargs") AddONPatchesSFS;
 		%feature("autodoc", "No available documentation.
@@ -3340,20 +3354,6 @@ TCollection_AsciiString
 ") StringState;
 		static TCollection_AsciiString StringState(const TopAbs_State S);
 
-		/****************** TopOpeBRepBuild_Builder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_Builder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-BT: TopOpeBRepDS_BuildTool
-
-Returns
--------
-None
-") TopOpeBRepBuild_Builder;
-		 TopOpeBRepBuild_Builder(const TopOpeBRepDS_BuildTool & BT);
-
 		/****************** TopType ******************/
 		%feature("compactdefaultargs") TopType;
 		%feature("autodoc", "No available documentation.
@@ -3382,6 +3382,34 @@ TopAbs_ShapeEnum
 **********************************/
 class TopOpeBRepBuild_BuilderON {
 	public:
+		/****************** TopOpeBRepBuild_BuilderON ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_BuilderON;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_BuilderON;
+		 TopOpeBRepBuild_BuilderON();
+
+		/****************** TopOpeBRepBuild_BuilderON ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_BuilderON;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+PB: TopOpeBRepBuild_PBuilder
+F: TopoDS_Shape
+PG: TopOpeBRepBuild_PGTopo
+PLSclass: TopOpeBRepTool_Plos
+PWES: TopOpeBRepBuild_PWireEdgeSet
+
+Returns
+-------
+None
+") TopOpeBRepBuild_BuilderON;
+		 TopOpeBRepBuild_BuilderON(const TopOpeBRepBuild_PBuilder & PB, const TopoDS_Shape & F, const TopOpeBRepBuild_PGTopo & PG, const TopOpeBRepTool_Plos & PLSclass, const TopOpeBRepBuild_PWireEdgeSet & PWES);
+
 		/****************** GFillONCheckI ******************/
 		%feature("compactdefaultargs") GFillONCheckI;
 		%feature("autodoc", "No available documentation.
@@ -3476,34 +3504,6 @@ None
 ") Perform2d;
 		void Perform2d(const TopOpeBRepBuild_PBuilder & PB, const TopoDS_Shape & F, const TopOpeBRepBuild_PGTopo & PG, const TopOpeBRepTool_Plos & PLSclass, const TopOpeBRepBuild_PWireEdgeSet & PWES);
 
-		/****************** TopOpeBRepBuild_BuilderON ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_BuilderON;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_BuilderON;
-		 TopOpeBRepBuild_BuilderON();
-
-		/****************** TopOpeBRepBuild_BuilderON ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_BuilderON;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-PB: TopOpeBRepBuild_PBuilder
-F: TopoDS_Shape
-PG: TopOpeBRepBuild_PGTopo
-PLSclass: TopOpeBRepTool_Plos
-PWES: TopOpeBRepBuild_PWireEdgeSet
-
-Returns
--------
-None
-") TopOpeBRepBuild_BuilderON;
-		 TopOpeBRepBuild_BuilderON(const TopOpeBRepBuild_PBuilder & PB, const TopoDS_Shape & F, const TopOpeBRepBuild_PGTopo & PG, const TopOpeBRepTool_Plos & PLSclass, const TopOpeBRepBuild_PWireEdgeSet & PWES);
-
 };
 
 
@@ -3518,6 +3518,32 @@ None
 **************************************/
 class TopOpeBRepBuild_CorrectFace2d {
 	public:
+		/****************** TopOpeBRepBuild_CorrectFace2d ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_CorrectFace2d;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_CorrectFace2d;
+		 TopOpeBRepBuild_CorrectFace2d();
+
+		/****************** TopOpeBRepBuild_CorrectFace2d ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_CorrectFace2d;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+aFace: TopoDS_Face
+anAvoidMap: TopTools_IndexedMapOfOrientedShape
+aMap: TopTools_IndexedDataMapOfShapeShape
+
+Returns
+-------
+None
+") TopOpeBRepBuild_CorrectFace2d;
+		 TopOpeBRepBuild_CorrectFace2d(const TopoDS_Face & aFace, const TopTools_IndexedMapOfOrientedShape & anAvoidMap, TopTools_IndexedDataMapOfShapeShape & aMap);
+
 		/****************** CheckList ******************/
 		%feature("compactdefaultargs") CheckList;
 		%feature("autodoc", "No available documentation.
@@ -3624,32 +3650,6 @@ None
 ") SetMapOfTrans2dInfo;
 		void SetMapOfTrans2dInfo(TopTools_IndexedDataMapOfShapeShape & aMap);
 
-		/****************** TopOpeBRepBuild_CorrectFace2d ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_CorrectFace2d;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_CorrectFace2d;
-		 TopOpeBRepBuild_CorrectFace2d();
-
-		/****************** TopOpeBRepBuild_CorrectFace2d ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_CorrectFace2d;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-aFace: TopoDS_Face
-anAvoidMap: TopTools_IndexedMapOfOrientedShape
-aMap: TopTools_IndexedDataMapOfShapeShape
-
-Returns
--------
-None
-") TopOpeBRepBuild_CorrectFace2d;
-		 TopOpeBRepBuild_CorrectFace2d(const TopoDS_Face & aFace, const TopTools_IndexedMapOfOrientedShape & anAvoidMap, TopTools_IndexedDataMapOfShapeShape & aMap);
-
 };
 
 
@@ -3664,6 +3664,33 @@ None
 ************************************/
 class TopOpeBRepBuild_FaceBuilder {
 	public:
+		/****************** TopOpeBRepBuild_FaceBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_FaceBuilder;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_FaceBuilder;
+		 TopOpeBRepBuild_FaceBuilder();
+
+		/****************** TopOpeBRepBuild_FaceBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_FaceBuilder;
+		%feature("autodoc", "Create a facebuilder to build the faces on the shapes (wires, blocks of edge) described by <ls>.
+
+Parameters
+----------
+ES: TopOpeBRepBuild_WireEdgeSet
+F: TopoDS_Shape
+ForceClass: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") TopOpeBRepBuild_FaceBuilder;
+		 TopOpeBRepBuild_FaceBuilder(TopOpeBRepBuild_WireEdgeSet & ES, const TopoDS_Shape & F, const Standard_Boolean ForceClass = Standard_False);
+
 		/****************** AddEdgeWire ******************/
 		%feature("compactdefaultargs") AddEdgeWire;
 		%feature("autodoc", "No available documentation.
@@ -3893,33 +3920,6 @@ TopoDS_Shape
 ") OldWire;
 		const TopoDS_Shape OldWire();
 
-		/****************** TopOpeBRepBuild_FaceBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_FaceBuilder;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_FaceBuilder;
-		 TopOpeBRepBuild_FaceBuilder();
-
-		/****************** TopOpeBRepBuild_FaceBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_FaceBuilder;
-		%feature("autodoc", "Create a facebuilder to build the faces on the shapes (wires, blocks of edge) described by <ls>.
-
-Parameters
-----------
-ES: TopOpeBRepBuild_WireEdgeSet
-F: TopoDS_Shape
-ForceClass: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") TopOpeBRepBuild_FaceBuilder;
-		 TopOpeBRepBuild_FaceBuilder(TopOpeBRepBuild_WireEdgeSet & ES, const TopoDS_Shape & F, const Standard_Boolean ForceClass = Standard_False);
-
 };
 
 
@@ -3934,6 +3934,32 @@ None
 *********************************/
 class TopOpeBRepBuild_FuseFace {
 	public:
+		/****************** TopOpeBRepBuild_FuseFace ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_FuseFace;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_FuseFace;
+		 TopOpeBRepBuild_FuseFace();
+
+		/****************** TopOpeBRepBuild_FuseFace ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_FuseFace;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+LIF: TopTools_ListOfShape
+LRF: TopTools_ListOfShape
+CXM: int
+
+Returns
+-------
+None
+") TopOpeBRepBuild_FuseFace;
+		 TopOpeBRepBuild_FuseFace(const TopTools_ListOfShape & LIF, const TopTools_ListOfShape & LRF, const Standard_Integer CXM);
+
 		/****************** ClearEdge ******************/
 		%feature("compactdefaultargs") ClearEdge;
 		%feature("autodoc", "No available documentation.
@@ -4080,32 +4106,6 @@ None
 ") PerformFace;
 		void PerformFace();
 
-		/****************** TopOpeBRepBuild_FuseFace ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_FuseFace;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_FuseFace;
-		 TopOpeBRepBuild_FuseFace();
-
-		/****************** TopOpeBRepBuild_FuseFace ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_FuseFace;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-LIF: TopTools_ListOfShape
-LRF: TopTools_ListOfShape
-CXM: int
-
-Returns
--------
-None
-") TopOpeBRepBuild_FuseFace;
-		 TopOpeBRepBuild_FuseFace(const TopTools_ListOfShape & LIF, const TopTools_ListOfShape & LRF, const Standard_Integer CXM);
-
 };
 
 
@@ -4120,6 +4120,30 @@ None
 ******************************/
 class TopOpeBRepBuild_GIter {
 	public:
+		/****************** TopOpeBRepBuild_GIter ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_GIter;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_GIter;
+		 TopOpeBRepBuild_GIter();
+
+		/****************** TopOpeBRepBuild_GIter ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_GIter;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+G: TopOpeBRepBuild_GTopo
+
+Returns
+-------
+None
+") TopOpeBRepBuild_GIter;
+		 TopOpeBRepBuild_GIter(const TopOpeBRepBuild_GTopo & G);
+
 		/****************** Current ******************/
 		%feature("compactdefaultargs") Current;
 		%feature("autodoc", "No available documentation.
@@ -4186,30 +4210,6 @@ Returns
 None
 ") Next;
 		void Next();
-
-		/****************** TopOpeBRepBuild_GIter ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_GIter;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_GIter;
-		 TopOpeBRepBuild_GIter();
-
-		/****************** TopOpeBRepBuild_GIter ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_GIter;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-G: TopOpeBRepBuild_GTopo
-
-Returns
--------
-None
-") TopOpeBRepBuild_GIter;
-		 TopOpeBRepBuild_GIter(const TopOpeBRepBuild_GTopo & G);
 
 };
 
@@ -4382,6 +4382,42 @@ TopOpeBRepBuild_GTopo
 ******************************/
 class TopOpeBRepBuild_GTopo {
 	public:
+		/****************** TopOpeBRepBuild_GTopo ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_GTopo;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_GTopo;
+		 TopOpeBRepBuild_GTopo();
+
+		/****************** TopOpeBRepBuild_GTopo ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_GTopo;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+II: bool
+IN: bool
+IO: bool
+NI: bool
+NN: bool
+NO: bool
+OI: bool
+ON: bool
+OO: bool
+t1: TopAbs_ShapeEnum
+t2: TopAbs_ShapeEnum
+C1: TopOpeBRepDS_Config
+C2: TopOpeBRepDS_Config
+
+Returns
+-------
+None
+") TopOpeBRepBuild_GTopo;
+		 TopOpeBRepBuild_GTopo(const Standard_Boolean II, const Standard_Boolean IN, const Standard_Boolean IO, const Standard_Boolean NI, const Standard_Boolean NN, const Standard_Boolean NO, const Standard_Boolean OI, const Standard_Boolean ON, const Standard_Boolean OO, const TopAbs_ShapeEnum t1, const TopAbs_ShapeEnum t2, const TopOpeBRepDS_Config C1, const TopOpeBRepDS_Config C2);
+
 		/****************** ChangeConfig ******************/
 		%feature("compactdefaultargs") ChangeConfig;
 		%feature("autodoc", "No available documentation.
@@ -4617,42 +4653,6 @@ None
 ") StatesON;
 		void StatesON(TopAbs_State & s1, TopAbs_State & s2);
 
-		/****************** TopOpeBRepBuild_GTopo ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_GTopo;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_GTopo;
-		 TopOpeBRepBuild_GTopo();
-
-		/****************** TopOpeBRepBuild_GTopo ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_GTopo;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-II: bool
-IN: bool
-IO: bool
-NI: bool
-NN: bool
-NO: bool
-OI: bool
-ON: bool
-OO: bool
-t1: TopAbs_ShapeEnum
-t2: TopAbs_ShapeEnum
-C1: TopOpeBRepDS_Config
-C2: TopOpeBRepDS_Config
-
-Returns
--------
-None
-") TopOpeBRepBuild_GTopo;
-		 TopOpeBRepBuild_GTopo(const Standard_Boolean II, const Standard_Boolean IN, const Standard_Boolean IO, const Standard_Boolean NI, const Standard_Boolean NN, const Standard_Boolean NO, const Standard_Boolean OI, const Standard_Boolean ON, const Standard_Boolean OO, const TopAbs_ShapeEnum t1, const TopAbs_ShapeEnum t2, const TopOpeBRepDS_Config C1, const TopOpeBRepDS_Config C2);
-
 		/****************** Type ******************/
 		%feature("compactdefaultargs") Type;
 		%feature("autodoc", "No available documentation.
@@ -4726,6 +4726,20 @@ bool
 *********************************/
 class TopOpeBRepBuild_HBuilder : public Standard_Transient {
 	public:
+		/****************** TopOpeBRepBuild_HBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_HBuilder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+BT: TopOpeBRepDS_BuildTool
+
+Returns
+-------
+None
+") TopOpeBRepBuild_HBuilder;
+		 TopOpeBRepBuild_HBuilder(const TopOpeBRepDS_BuildTool & BT);
+
 		/****************** BuildTool ******************/
 		%feature("compactdefaultargs") BuildTool;
 		%feature("autodoc", "No available documentation.
@@ -5174,20 +5188,6 @@ TopTools_ListOfShape
 ") Splits;
 		const TopTools_ListOfShape & Splits(const TopoDS_Shape & S, const TopAbs_State ToBuild);
 
-		/****************** TopOpeBRepBuild_HBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_HBuilder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-BT: TopOpeBRepDS_BuildTool
-
-Returns
--------
-None
-") TopOpeBRepBuild_HBuilder;
-		 TopOpeBRepBuild_HBuilder(const TopOpeBRepDS_BuildTool & BT);
-
 };
 
 
@@ -5204,6 +5204,34 @@ None
 *****************************/
 class TopOpeBRepBuild_Loop : public Standard_Transient {
 	public:
+		/****************** TopOpeBRepBuild_Loop ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_Loop;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") TopOpeBRepBuild_Loop;
+		 TopOpeBRepBuild_Loop(const TopoDS_Shape & S);
+
+		/****************** TopOpeBRepBuild_Loop ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_Loop;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+BI: TopOpeBRepBuild_BlockIterator
+
+Returns
+-------
+None
+") TopOpeBRepBuild_Loop;
+		 TopOpeBRepBuild_Loop(const TopOpeBRepBuild_BlockIterator & BI);
+
 		/****************** BlockIterator ******************/
 		%feature("compactdefaultargs") BlockIterator;
 		%feature("autodoc", "No available documentation.
@@ -5243,34 +5271,6 @@ Returns
 TopoDS_Shape
 ") Shape;
 		virtual const TopoDS_Shape Shape();
-
-		/****************** TopOpeBRepBuild_Loop ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_Loop;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") TopOpeBRepBuild_Loop;
-		 TopOpeBRepBuild_Loop(const TopoDS_Shape & S);
-
-		/****************** TopOpeBRepBuild_Loop ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_Loop;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-BI: TopOpeBRepBuild_BlockIterator
-
-Returns
--------
-None
-") TopOpeBRepBuild_Loop;
-		 TopOpeBRepBuild_Loop(const TopOpeBRepBuild_BlockIterator & BI);
 
 };
 
@@ -5318,6 +5318,16 @@ TopAbs_State
 ********************************/
 class TopOpeBRepBuild_LoopSet {
 	public:
+		/****************** TopOpeBRepBuild_LoopSet ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_LoopSet;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_LoopSet;
+		 TopOpeBRepBuild_LoopSet();
+
 		/****************** ChangeListOfLoop ******************/
 		%feature("compactdefaultargs") ChangeListOfLoop;
 		%feature("autodoc", "No available documentation.
@@ -5368,16 +5378,6 @@ None
 ") NextLoop;
 		virtual void NextLoop();
 
-		/****************** TopOpeBRepBuild_LoopSet ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_LoopSet;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_LoopSet;
-		 TopOpeBRepBuild_LoopSet();
-
 };
 
 
@@ -5392,6 +5392,45 @@ None
 *****************************************/
 class TopOpeBRepBuild_ShapeListOfShape {
 	public:
+		/****************** TopOpeBRepBuild_ShapeListOfShape ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_ShapeListOfShape;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_ShapeListOfShape;
+		 TopOpeBRepBuild_ShapeListOfShape();
+
+		/****************** TopOpeBRepBuild_ShapeListOfShape ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_ShapeListOfShape;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+
+Returns
+-------
+None
+") TopOpeBRepBuild_ShapeListOfShape;
+		 TopOpeBRepBuild_ShapeListOfShape(const TopoDS_Shape & S);
+
+		/****************** TopOpeBRepBuild_ShapeListOfShape ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_ShapeListOfShape;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: TopoDS_Shape
+L: TopTools_ListOfShape
+
+Returns
+-------
+None
+") TopOpeBRepBuild_ShapeListOfShape;
+		 TopOpeBRepBuild_ShapeListOfShape(const TopoDS_Shape & S, const TopTools_ListOfShape & L);
+
 		/****************** ChangeList ******************/
 		%feature("compactdefaultargs") ChangeList;
 		%feature("autodoc", "No available documentation.
@@ -5432,45 +5471,6 @@ TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape();
 
-		/****************** TopOpeBRepBuild_ShapeListOfShape ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_ShapeListOfShape;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_ShapeListOfShape;
-		 TopOpeBRepBuild_ShapeListOfShape();
-
-		/****************** TopOpeBRepBuild_ShapeListOfShape ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_ShapeListOfShape;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-
-Returns
--------
-None
-") TopOpeBRepBuild_ShapeListOfShape;
-		 TopOpeBRepBuild_ShapeListOfShape(const TopoDS_Shape & S);
-
-		/****************** TopOpeBRepBuild_ShapeListOfShape ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_ShapeListOfShape;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: TopoDS_Shape
-L: TopTools_ListOfShape
-
-Returns
--------
-None
-") TopOpeBRepBuild_ShapeListOfShape;
-		 TopOpeBRepBuild_ShapeListOfShape(const TopoDS_Shape & S, const TopTools_ListOfShape & L);
-
 };
 
 
@@ -5485,6 +5485,22 @@ None
 *********************************/
 class TopOpeBRepBuild_ShapeSet {
 	public:
+		/****************** TopOpeBRepBuild_ShapeSet ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_ShapeSet;
+		%feature("autodoc", "Creates a shapeset in order to build shapes connected by <subshapetype> shapes. <checkshape>:check (or not) the shapes, startelements, elements added.
+
+Parameters
+----------
+SubShapeType: TopAbs_ShapeEnum
+checkshape: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") TopOpeBRepBuild_ShapeSet;
+		 TopOpeBRepBuild_ShapeSet(const TopAbs_ShapeEnum SubShapeType, const Standard_Boolean checkshape = Standard_True);
+
 		/****************** AddElement ******************/
 		%feature("compactdefaultargs") AddElement;
 		%feature("autodoc", "For each subshape se of s of type mysubshapetype - add subshapes of s to the map of subshapes (mysubshapemap) - add s to the list of shape incident to subshapes of s.
@@ -5890,22 +5906,6 @@ TopTools_ListOfShape
 ") StartElements;
 		const TopTools_ListOfShape & StartElements();
 
-		/****************** TopOpeBRepBuild_ShapeSet ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_ShapeSet;
-		%feature("autodoc", "Creates a shapeset in order to build shapes connected by <subshapetype> shapes. <checkshape>:check (or not) the shapes, startelements, elements added.
-
-Parameters
-----------
-SubShapeType: TopAbs_ShapeEnum
-checkshape: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") TopOpeBRepBuild_ShapeSet;
-		 TopOpeBRepBuild_ShapeSet(const TopAbs_ShapeEnum SubShapeType, const Standard_Boolean checkshape = Standard_True);
-
 };
 
 
@@ -5920,6 +5920,16 @@ None
 *************************************/
 class TopOpeBRepBuild_ShellToSolid {
 	public:
+		/****************** TopOpeBRepBuild_ShellToSolid ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_ShellToSolid;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_ShellToSolid;
+		 TopOpeBRepBuild_ShellToSolid();
+
 		/****************** AddShell ******************/
 		%feature("compactdefaultargs") AddShell;
 		%feature("autodoc", "No available documentation.
@@ -5959,16 +5969,6 @@ None
 ") MakeSolids;
 		void MakeSolids(const TopoDS_Solid & So, TopTools_ListOfShape & LSo);
 
-		/****************** TopOpeBRepBuild_ShellToSolid ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_ShellToSolid;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_ShellToSolid;
-		 TopOpeBRepBuild_ShellToSolid();
-
 };
 
 
@@ -5983,6 +5983,32 @@ None
 *************************************/
 class TopOpeBRepBuild_SolidBuilder {
 	public:
+		/****************** TopOpeBRepBuild_SolidBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_SolidBuilder;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_SolidBuilder;
+		 TopOpeBRepBuild_SolidBuilder();
+
+		/****************** TopOpeBRepBuild_SolidBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_SolidBuilder;
+		%feature("autodoc", "Create a solidbuilder to build the areas on the shapes (shells, blocks of faces) described by <ls>.
+
+Parameters
+----------
+FS: TopOpeBRepBuild_ShellFaceSet
+ForceClass: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") TopOpeBRepBuild_SolidBuilder;
+		 TopOpeBRepBuild_SolidBuilder(TopOpeBRepBuild_ShellFaceSet & FS, const Standard_Boolean ForceClass = Standard_False);
+
 		/****************** Face ******************/
 		%feature("compactdefaultargs") Face;
 		%feature("autodoc", "Returns current new face of current new shell.
@@ -6117,32 +6143,6 @@ Returns
 TopoDS_Shape
 ") OldShell;
 		const TopoDS_Shape OldShell();
-
-		/****************** TopOpeBRepBuild_SolidBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_SolidBuilder;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_SolidBuilder;
-		 TopOpeBRepBuild_SolidBuilder();
-
-		/****************** TopOpeBRepBuild_SolidBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_SolidBuilder;
-		%feature("autodoc", "Create a solidbuilder to build the areas on the shapes (shells, blocks of faces) described by <ls>.
-
-Parameters
-----------
-FS: TopOpeBRepBuild_ShellFaceSet
-ForceClass: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") TopOpeBRepBuild_SolidBuilder;
-		 TopOpeBRepBuild_SolidBuilder(TopOpeBRepBuild_ShellFaceSet & FS, const Standard_Boolean ForceClass = Standard_False);
 
 };
 
@@ -6591,6 +6591,16 @@ None
 ***********************************/
 class TopOpeBRepBuild_VertexInfo {
 	public:
+		/****************** TopOpeBRepBuild_VertexInfo ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_VertexInfo;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_VertexInfo;
+		 TopOpeBRepBuild_VertexInfo();
+
 		/****************** AddIn ******************/
 		%feature("compactdefaultargs") AddIn;
 		%feature("autodoc", "No available documentation.
@@ -6789,16 +6799,6 @@ bool
 ") Smart;
 		Standard_Boolean Smart();
 
-		/****************** TopOpeBRepBuild_VertexInfo ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_VertexInfo;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_VertexInfo;
-		 TopOpeBRepBuild_VertexInfo();
-
 		/****************** Vertex ******************/
 		%feature("compactdefaultargs") Vertex;
 		%feature("autodoc", "No available documentation.
@@ -6823,6 +6823,16 @@ TopoDS_Vertex
 ***********************************/
 class TopOpeBRepBuild_WireToFace {
 	public:
+		/****************** TopOpeBRepBuild_WireToFace ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_WireToFace;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_WireToFace;
+		 TopOpeBRepBuild_WireToFace();
+
 		/****************** AddWire ******************/
 		%feature("compactdefaultargs") AddWire;
 		%feature("autodoc", "No available documentation.
@@ -6862,16 +6872,6 @@ None
 ") MakeFaces;
 		void MakeFaces(const TopoDS_Face & F, TopTools_ListOfShape & LF);
 
-		/****************** TopOpeBRepBuild_WireToFace ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_WireToFace;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_WireToFace;
-		 TopOpeBRepBuild_WireToFace();
-
 };
 
 
@@ -6886,6 +6886,33 @@ None
 **************************************/
 class TopOpeBRepBuild_Area1dBuilder : public TopOpeBRepBuild_AreaBuilder {
 	public:
+		/****************** TopOpeBRepBuild_Area1dBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_Area1dBuilder;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_Area1dBuilder;
+		 TopOpeBRepBuild_Area1dBuilder();
+
+		/****************** TopOpeBRepBuild_Area1dBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_Area1dBuilder;
+		%feature("autodoc", "Creates a area1dbuilder to find the areas of the shapes described by <ls> using the classifier <lc>.
+
+Parameters
+----------
+LS: TopOpeBRepBuild_PaveSet
+LC: TopOpeBRepBuild_PaveClassifier
+ForceClass: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") TopOpeBRepBuild_Area1dBuilder;
+		 TopOpeBRepBuild_Area1dBuilder(TopOpeBRepBuild_PaveSet & LS, TopOpeBRepBuild_PaveClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
+
 		/****************** ADD_LISTOFLoop_TO_LISTOFLoop ******************/
 		%feature("compactdefaultargs") ADD_LISTOFLoop_TO_LISTOFLoop;
 		%feature("autodoc", "No available documentation.
@@ -6972,33 +6999,6 @@ None
 ") REM_Loop_FROM_LISTOFLoop;
 		virtual void REM_Loop_FROM_LISTOFLoop(TopOpeBRepBuild_ListIteratorOfListOfLoop & ITLOL, TopOpeBRepBuild_ListOfLoop & LOL, const Standard_Address s = NULL);
 
-		/****************** TopOpeBRepBuild_Area1dBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_Area1dBuilder;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_Area1dBuilder;
-		 TopOpeBRepBuild_Area1dBuilder();
-
-		/****************** TopOpeBRepBuild_Area1dBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_Area1dBuilder;
-		%feature("autodoc", "Creates a area1dbuilder to find the areas of the shapes described by <ls> using the classifier <lc>.
-
-Parameters
-----------
-LS: TopOpeBRepBuild_PaveSet
-LC: TopOpeBRepBuild_PaveClassifier
-ForceClass: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") TopOpeBRepBuild_Area1dBuilder;
-		 TopOpeBRepBuild_Area1dBuilder(TopOpeBRepBuild_PaveSet & LS, TopOpeBRepBuild_PaveClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
-
 };
 
 
@@ -7013,23 +7013,6 @@ None
 **************************************/
 class TopOpeBRepBuild_Area2dBuilder : public TopOpeBRepBuild_AreaBuilder {
 	public:
-		/****************** InitAreaBuilder ******************/
-		%feature("compactdefaultargs") InitAreaBuilder;
-		%feature("autodoc", "Sets a area1dbuilder to find the areas of the shapes described by <ls> using the classifier <lc>.
-
-Parameters
-----------
-LS: TopOpeBRepBuild_LoopSet
-LC: TopOpeBRepBuild_LoopClassifier
-ForceClass: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") InitAreaBuilder;
-		virtual void InitAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
-
 		/****************** TopOpeBRepBuild_Area2dBuilder ******************/
 		%feature("compactdefaultargs") TopOpeBRepBuild_Area2dBuilder;
 		%feature("autodoc", "No available documentation.
@@ -7057,20 +7040,6 @@ None
 ") TopOpeBRepBuild_Area2dBuilder;
 		 TopOpeBRepBuild_Area2dBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
 
-};
-
-
-%extend TopOpeBRepBuild_Area2dBuilder {
-	%pythoncode {
-	__repr__ = _dumps_object
-	}
-};
-
-/**************************************
-* class TopOpeBRepBuild_Area3dBuilder *
-**************************************/
-class TopOpeBRepBuild_Area3dBuilder : public TopOpeBRepBuild_AreaBuilder {
-	public:
 		/****************** InitAreaBuilder ******************/
 		%feature("compactdefaultargs") InitAreaBuilder;
 		%feature("autodoc", "Sets a area1dbuilder to find the areas of the shapes described by <ls> using the classifier <lc>.
@@ -7088,6 +7057,20 @@ None
 ") InitAreaBuilder;
 		virtual void InitAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
 
+};
+
+
+%extend TopOpeBRepBuild_Area2dBuilder {
+	%pythoncode {
+	__repr__ = _dumps_object
+	}
+};
+
+/**************************************
+* class TopOpeBRepBuild_Area3dBuilder *
+**************************************/
+class TopOpeBRepBuild_Area3dBuilder : public TopOpeBRepBuild_AreaBuilder {
+	public:
 		/****************** TopOpeBRepBuild_Area3dBuilder ******************/
 		%feature("compactdefaultargs") TopOpeBRepBuild_Area3dBuilder;
 		%feature("autodoc", "No available documentation.
@@ -7115,6 +7098,23 @@ None
 ") TopOpeBRepBuild_Area3dBuilder;
 		 TopOpeBRepBuild_Area3dBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
 
+		/****************** InitAreaBuilder ******************/
+		%feature("compactdefaultargs") InitAreaBuilder;
+		%feature("autodoc", "Sets a area1dbuilder to find the areas of the shapes described by <ls> using the classifier <lc>.
+
+Parameters
+----------
+LS: TopOpeBRepBuild_LoopSet
+LC: TopOpeBRepBuild_LoopClassifier
+ForceClass: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") InitAreaBuilder;
+		virtual void InitAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
+
 };
 
 
@@ -7129,6 +7129,20 @@ None
 *********************************/
 class TopOpeBRepBuild_Builder1 : public TopOpeBRepBuild_Builder {
 	public:
+		/****************** TopOpeBRepBuild_Builder1 ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_Builder1;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+BT: TopOpeBRepDS_BuildTool
+
+Returns
+-------
+None
+") TopOpeBRepBuild_Builder1;
+		 TopOpeBRepBuild_Builder1(const TopOpeBRepDS_BuildTool & BT);
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "Removes all splits and merges already performed. does not clear the handled ds (except shapewithstatesmaps).
@@ -7449,20 +7463,6 @@ int
 ") PerformPieceOn2D;
 		Standard_Integer PerformPieceOn2D(const TopoDS_Shape & aPieceObj, const TopoDS_Shape & aFaceObj, const TopoDS_Shape & aEdgeObj, TopTools_ListOfShape & aListOfPieces, TopTools_ListOfShape & aListOfFaces, TopTools_ListOfShape & aListOfPiecesOut2d);
 
-		/****************** TopOpeBRepBuild_Builder1 ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_Builder1;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-BT: TopOpeBRepDS_BuildTool
-
-Returns
--------
-None
-") TopOpeBRepBuild_Builder1;
-		 TopOpeBRepBuild_Builder1(const TopOpeBRepDS_BuildTool & BT);
-
 		/****************** TwoPiecesON ******************/
 		%feature("compactdefaultargs") TwoPiecesON;
 		%feature("autodoc", "No available documentation.
@@ -7610,6 +7610,22 @@ TopAbs_State
 *****************************/
 class TopOpeBRepBuild_Pave : public TopOpeBRepBuild_Loop {
 	public:
+		/****************** TopOpeBRepBuild_Pave ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_Pave;
+		%feature("autodoc", "V = vertex, p = parameter of vertex <v> bound = true if <v> is an old vertex bound = false if <v> is a new vertex.
+
+Parameters
+----------
+V: TopoDS_Shape
+P: float
+bound: bool
+
+Returns
+-------
+None
+") TopOpeBRepBuild_Pave;
+		 TopOpeBRepBuild_Pave(const TopoDS_Shape & V, const Standard_Real P, const Standard_Boolean bound);
+
 		/****************** ChangeVertex ******************/
 		%feature("compactdefaultargs") ChangeVertex;
 		%feature("autodoc", "No available documentation.
@@ -7732,22 +7748,6 @@ TopoDS_Shape
 ") Shape;
 		virtual const TopoDS_Shape Shape();
 
-		/****************** TopOpeBRepBuild_Pave ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_Pave;
-		%feature("autodoc", "V = vertex, p = parameter of vertex <v> bound = true if <v> is an old vertex bound = false if <v> is a new vertex.
-
-Parameters
-----------
-V: TopoDS_Shape
-P: float
-bound: bool
-
-Returns
--------
-None
-") TopOpeBRepBuild_Pave;
-		 TopOpeBRepBuild_Pave(const TopoDS_Shape & V, const Standard_Real P, const Standard_Boolean bound);
-
 		/****************** Vertex ******************/
 		%feature("compactdefaultargs") Vertex;
 		%feature("autodoc", "No available documentation.
@@ -7774,6 +7774,20 @@ TopoDS_Shape
 ***************************************/
 class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
 	public:
+		/****************** TopOpeBRepBuild_PaveClassifier ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_PaveClassifier;
+		%feature("autodoc", "Create a pave classifier to compare vertices on edge <e>.
+
+Parameters
+----------
+E: TopoDS_Shape
+
+Returns
+-------
+None
+") TopOpeBRepBuild_PaveClassifier;
+		 TopOpeBRepBuild_PaveClassifier(const TopoDS_Shape & E);
+
 		/****************** AdjustCase ******************/
 		%feature("compactdefaultargs") AdjustCase;
 		%feature("autodoc", "No available documentation.
@@ -7836,20 +7850,6 @@ None
 ") SetFirstParameter;
 		void SetFirstParameter(const Standard_Real P);
 
-		/****************** TopOpeBRepBuild_PaveClassifier ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_PaveClassifier;
-		%feature("autodoc", "Create a pave classifier to compare vertices on edge <e>.
-
-Parameters
-----------
-E: TopoDS_Shape
-
-Returns
--------
-None
-") TopOpeBRepBuild_PaveClassifier;
-		 TopOpeBRepBuild_PaveClassifier(const TopoDS_Shape & E);
-
 };
 
 
@@ -7864,6 +7864,20 @@ None
 ********************************/
 class TopOpeBRepBuild_PaveSet : public TopOpeBRepBuild_LoopSet {
 	public:
+		/****************** TopOpeBRepBuild_PaveSet ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_PaveSet;
+		%feature("autodoc", "Create a pave set on edge <e>. it contains <e> vertices.
+
+Parameters
+----------
+E: TopoDS_Shape
+
+Returns
+-------
+None
+") TopOpeBRepBuild_PaveSet;
+		 TopOpeBRepBuild_PaveSet(const TopoDS_Shape & E);
+
 		/****************** Append ******************/
 		%feature("compactdefaultargs") Append;
 		%feature("autodoc", "Add <pv> in the pave set.
@@ -7987,20 +8001,6 @@ None
 ") SortPave;
 		static void SortPave(const TopOpeBRepBuild_ListOfPave & Lin, TopOpeBRepBuild_ListOfPave & Lout);
 
-		/****************** TopOpeBRepBuild_PaveSet ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_PaveSet;
-		%feature("autodoc", "Create a pave set on edge <e>. it contains <e> vertices.
-
-Parameters
-----------
-E: TopoDS_Shape
-
-Returns
--------
-None
-") TopOpeBRepBuild_PaveSet;
-		 TopOpeBRepBuild_PaveSet(const TopoDS_Shape & E);
-
 };
 
 
@@ -8015,6 +8015,32 @@ None
 *************************************/
 class TopOpeBRepBuild_ShellFaceSet : public TopOpeBRepBuild_ShapeSet {
 	public:
+		/****************** TopOpeBRepBuild_ShellFaceSet ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_ShellFaceSet;
+		%feature("autodoc", "Creates a shellfaceset to build blocks of faces connected by edges.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_ShellFaceSet;
+		 TopOpeBRepBuild_ShellFaceSet();
+
+		/****************** TopOpeBRepBuild_ShellFaceSet ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_ShellFaceSet;
+		%feature("autodoc", "Creates a shellfaceset to build blocks of faces connected by edges.
+
+Parameters
+----------
+S: TopoDS_Shape
+Addr: Standard_Address,optional
+	default value is NULL
+
+Returns
+-------
+None
+") TopOpeBRepBuild_ShellFaceSet;
+		 TopOpeBRepBuild_ShellFaceSet(const TopoDS_Shape & S, const Standard_Address Addr = NULL);
+
 		/****************** AddElement ******************/
 		%feature("compactdefaultargs") AddElement;
 		%feature("autodoc", "No available documentation.
@@ -8149,32 +8175,6 @@ TopoDS_Solid
 ") Solid;
 		const TopoDS_Solid Solid();
 
-		/****************** TopOpeBRepBuild_ShellFaceSet ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_ShellFaceSet;
-		%feature("autodoc", "Creates a shellfaceset to build blocks of faces connected by edges.
-
-Returns
--------
-None
-") TopOpeBRepBuild_ShellFaceSet;
-		 TopOpeBRepBuild_ShellFaceSet();
-
-		/****************** TopOpeBRepBuild_ShellFaceSet ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_ShellFaceSet;
-		%feature("autodoc", "Creates a shellfaceset to build blocks of faces connected by edges.
-
-Parameters
-----------
-S: TopoDS_Shape
-Addr: Standard_Address,optional
-	default value is NULL
-
-Returns
--------
-None
-") TopOpeBRepBuild_ShellFaceSet;
-		 TopOpeBRepBuild_ShellFaceSet(const TopoDS_Shape & S, const Standard_Address Addr = NULL);
-
 };
 
 
@@ -8189,6 +8189,22 @@ None
 ************************************/
 class TopOpeBRepBuild_WireEdgeSet : public TopOpeBRepBuild_ShapeSet {
 	public:
+		/****************** TopOpeBRepBuild_WireEdgeSet ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_WireEdgeSet;
+		%feature("autodoc", "Creates a wireedgeset to build edges connected by vertices on face f. edges of the wireedgeset must have a representation on surface of face f.
+
+Parameters
+----------
+F: TopoDS_Shape
+Addr: Standard_Address,optional
+	default value is NULL
+
+Returns
+-------
+None
+") TopOpeBRepBuild_WireEdgeSet;
+		 TopOpeBRepBuild_WireEdgeSet(const TopoDS_Shape & F, const Standard_Address Addr = NULL);
+
 		/****************** AddElement ******************/
 		%feature("compactdefaultargs") AddElement;
 		%feature("autodoc", "No available documentation.
@@ -8379,22 +8395,6 @@ TCollection_AsciiString
 ") SNameori;
 		virtual TCollection_AsciiString SNameori(const TopTools_ListOfShape & S, const TCollection_AsciiString & sb = "", const TCollection_AsciiString & sa = "");
 
-		/****************** TopOpeBRepBuild_WireEdgeSet ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_WireEdgeSet;
-		%feature("autodoc", "Creates a wireedgeset to build edges connected by vertices on face f. edges of the wireedgeset must have a representation on surface of face f.
-
-Parameters
-----------
-F: TopoDS_Shape
-Addr: Standard_Address,optional
-	default value is NULL
-
-Returns
--------
-None
-") TopOpeBRepBuild_WireEdgeSet;
-		 TopOpeBRepBuild_WireEdgeSet(const TopoDS_Shape & F, const Standard_Address Addr = NULL);
-
 };
 
 
@@ -8409,6 +8409,33 @@ None
 ************************************/
 class TopOpeBRepBuild_EdgeBuilder : public TopOpeBRepBuild_Area1dBuilder {
 	public:
+		/****************** TopOpeBRepBuild_EdgeBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_EdgeBuilder;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRepBuild_EdgeBuilder;
+		 TopOpeBRepBuild_EdgeBuilder();
+
+		/****************** TopOpeBRepBuild_EdgeBuilder ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_EdgeBuilder;
+		%feature("autodoc", "Creates a edgebuilder to find the areas of the shapes described by <ls> using the classifier <lc>.
+
+Parameters
+----------
+LS: TopOpeBRepBuild_PaveSet
+LC: TopOpeBRepBuild_PaveClassifier
+ForceClass: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") TopOpeBRepBuild_EdgeBuilder;
+		 TopOpeBRepBuild_EdgeBuilder(TopOpeBRepBuild_PaveSet & LS, TopOpeBRepBuild_PaveClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
+
 		/****************** InitEdge ******************/
 		%feature("compactdefaultargs") InitEdge;
 		%feature("autodoc", "No available documentation.
@@ -8496,33 +8523,6 @@ float
 ") Parameter;
 		Standard_Real Parameter();
 
-		/****************** TopOpeBRepBuild_EdgeBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_EdgeBuilder;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRepBuild_EdgeBuilder;
-		 TopOpeBRepBuild_EdgeBuilder();
-
-		/****************** TopOpeBRepBuild_EdgeBuilder ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_EdgeBuilder;
-		%feature("autodoc", "Creates a edgebuilder to find the areas of the shapes described by <ls> using the classifier <lc>.
-
-Parameters
-----------
-LS: TopOpeBRepBuild_PaveSet
-LC: TopOpeBRepBuild_PaveClassifier
-ForceClass: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") TopOpeBRepBuild_EdgeBuilder;
-		 TopOpeBRepBuild_EdgeBuilder(TopOpeBRepBuild_PaveSet & LS, TopOpeBRepBuild_PaveClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
-
 		/****************** Vertex ******************/
 		%feature("compactdefaultargs") Vertex;
 		%feature("autodoc", "No available documentation.
@@ -8547,23 +8547,6 @@ TopoDS_Shape
 ****************************************/
 class TopOpeBRepBuild_FaceAreaBuilder : public TopOpeBRepBuild_Area2dBuilder {
 	public:
-		/****************** InitFaceAreaBuilder ******************/
-		%feature("compactdefaultargs") InitFaceAreaBuilder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-LS: TopOpeBRepBuild_LoopSet
-LC: TopOpeBRepBuild_LoopClassifier
-ForceClass: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") InitFaceAreaBuilder;
-		void InitFaceAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
-
 		/****************** TopOpeBRepBuild_FaceAreaBuilder ******************/
 		%feature("compactdefaultargs") TopOpeBRepBuild_FaceAreaBuilder;
 		%feature("autodoc", "No available documentation.
@@ -8591,6 +8574,23 @@ None
 ") TopOpeBRepBuild_FaceAreaBuilder;
 		 TopOpeBRepBuild_FaceAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
 
+		/****************** InitFaceAreaBuilder ******************/
+		%feature("compactdefaultargs") InitFaceAreaBuilder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+LS: TopOpeBRepBuild_LoopSet
+LC: TopOpeBRepBuild_LoopClassifier
+ForceClass: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") InitFaceAreaBuilder;
+		void InitFaceAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
+
 };
 
 
@@ -8605,6 +8605,20 @@ None
 ********************************************/
 class TopOpeBRepBuild_ShellFaceClassifier : public TopOpeBRepBuild_CompositeClassifier {
 	public:
+		/****************** TopOpeBRepBuild_ShellFaceClassifier ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_ShellFaceClassifier;
+		%feature("autodoc", "Creates a classifier in 3d space, to compare : a face with a set of faces a shell with a set of faces a shell with a shell.
+
+Parameters
+----------
+BB: TopOpeBRepBuild_BlockBuilder
+
+Returns
+-------
+None
+") TopOpeBRepBuild_ShellFaceClassifier;
+		 TopOpeBRepBuild_ShellFaceClassifier(const TopOpeBRepBuild_BlockBuilder & BB);
+
 		/****************** Clear ******************/
 		%feature("compactdefaultargs") Clear;
 		%feature("autodoc", "No available documentation.
@@ -8697,20 +8711,6 @@ TopAbs_State
 ") State;
 		TopAbs_State State();
 
-		/****************** TopOpeBRepBuild_ShellFaceClassifier ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_ShellFaceClassifier;
-		%feature("autodoc", "Creates a classifier in 3d space, to compare : a face with a set of faces a shell with a set of faces a shell with a shell.
-
-Parameters
-----------
-BB: TopOpeBRepBuild_BlockBuilder
-
-Returns
--------
-None
-") TopOpeBRepBuild_ShellFaceClassifier;
-		 TopOpeBRepBuild_ShellFaceClassifier(const TopOpeBRepBuild_BlockBuilder & BB);
-
 };
 
 
@@ -8725,23 +8725,6 @@ None
 *****************************************/
 class TopOpeBRepBuild_SolidAreaBuilder : public TopOpeBRepBuild_Area3dBuilder {
 	public:
-		/****************** InitSolidAreaBuilder ******************/
-		%feature("compactdefaultargs") InitSolidAreaBuilder;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-LS: TopOpeBRepBuild_LoopSet
-LC: TopOpeBRepBuild_LoopClassifier
-ForceClass: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") InitSolidAreaBuilder;
-		void InitSolidAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
-
 		/****************** TopOpeBRepBuild_SolidAreaBuilder ******************/
 		%feature("compactdefaultargs") TopOpeBRepBuild_SolidAreaBuilder;
 		%feature("autodoc", "No available documentation.
@@ -8769,6 +8752,23 @@ None
 ") TopOpeBRepBuild_SolidAreaBuilder;
 		 TopOpeBRepBuild_SolidAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
 
+		/****************** InitSolidAreaBuilder ******************/
+		%feature("compactdefaultargs") InitSolidAreaBuilder;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+LS: TopOpeBRepBuild_LoopSet
+LC: TopOpeBRepBuild_LoopClassifier
+ForceClass: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") InitSolidAreaBuilder;
+		void InitSolidAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass = Standard_False);
+
 };
 
 
@@ -8783,6 +8783,21 @@ None
 *******************************************/
 class TopOpeBRepBuild_WireEdgeClassifier : public TopOpeBRepBuild_CompositeClassifier {
 	public:
+		/****************** TopOpeBRepBuild_WireEdgeClassifier ******************/
+		%feature("compactdefaultargs") TopOpeBRepBuild_WireEdgeClassifier;
+		%feature("autodoc", "Creates a classifier on edge <f>. used to compare edges and wires on the edge <f>.
+
+Parameters
+----------
+F: TopoDS_Shape
+BB: TopOpeBRepBuild_BlockBuilder
+
+Returns
+-------
+None
+") TopOpeBRepBuild_WireEdgeClassifier;
+		 TopOpeBRepBuild_WireEdgeClassifier(const TopoDS_Shape & F, const TopOpeBRepBuild_BlockBuilder & BB);
+
 		/****************** Compare ******************/
 		%feature("compactdefaultargs") Compare;
 		%feature("autodoc", "No available documentation.
@@ -8893,21 +8908,6 @@ Returns
 TopAbs_State
 ") State;
 		TopAbs_State State();
-
-		/****************** TopOpeBRepBuild_WireEdgeClassifier ******************/
-		%feature("compactdefaultargs") TopOpeBRepBuild_WireEdgeClassifier;
-		%feature("autodoc", "Creates a classifier on edge <f>. used to compare edges and wires on the edge <f>.
-
-Parameters
-----------
-F: TopoDS_Shape
-BB: TopOpeBRepBuild_BlockBuilder
-
-Returns
--------
-None
-") TopOpeBRepBuild_WireEdgeClassifier;
-		 TopOpeBRepBuild_WireEdgeClassifier(const TopoDS_Shape & F, const TopOpeBRepBuild_BlockBuilder & BB);
 
 };
 

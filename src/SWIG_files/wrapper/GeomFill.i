@@ -185,7 +185,6 @@ class GeomFill_PipeError:
 /* end handles declaration */
 
 /* templates */
-%template(GeomFill_SequenceOfTrsf) NCollection_Sequence<gp_Trsf>;
 %template(GeomFill_Array1OfLocationLaw) NCollection_Array1<opencascade::handle<GeomFill_LocationLaw>>;
 
 %extend NCollection_Array1<opencascade::handle<GeomFill_LocationLaw>> {
@@ -257,13 +256,14 @@ class GeomFill_PipeError:
     }
 };
 %template(GeomFill_SequenceOfAx2) NCollection_Sequence<gp_Ax2>;
+%template(GeomFill_SequenceOfTrsf) NCollection_Sequence<gp_Trsf>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Sequence<gp_Trsf> GeomFill_SequenceOfTrsf;
 typedef NCollection_Array1<opencascade::handle<GeomFill_LocationLaw>> GeomFill_Array1OfLocationLaw;
 typedef NCollection_Array1<opencascade::handle<GeomFill_SectionLaw>> GeomFill_Array1OfSectionLaw;
 typedef NCollection_Sequence<gp_Ax2> GeomFill_SequenceOfAx2;
+typedef NCollection_Sequence<gp_Trsf> GeomFill_SequenceOfTrsf;
 /* end typedefs declaration */
 
 /*****************
@@ -480,6 +480,36 @@ opencascade::handle<Geom_Surface>
 *************************/
 class GeomFill_AppSurf : public AppBlend_Approx {
 	public:
+		/****************** GeomFill_AppSurf ******************/
+		%feature("compactdefaultargs") GeomFill_AppSurf;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomFill_AppSurf;
+		 GeomFill_AppSurf();
+
+		/****************** GeomFill_AppSurf ******************/
+		%feature("compactdefaultargs") GeomFill_AppSurf;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Degmin: int
+Degmax: int
+Tol3d: float
+Tol2d: float
+NbIt: int
+KnownParameters: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") GeomFill_AppSurf;
+		 GeomFill_AppSurf(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters = Standard_False);
+
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
 		%feature("autodoc", "Returns the continuity used in the approximation.
@@ -582,36 +612,6 @@ Returns
 None
 ") Curves2dShape;
 		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-
-		/****************** GeomFill_AppSurf ******************/
-		%feature("compactdefaultargs") GeomFill_AppSurf;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomFill_AppSurf;
-		 GeomFill_AppSurf();
-
-		/****************** GeomFill_AppSurf ******************/
-		%feature("compactdefaultargs") GeomFill_AppSurf;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Degmin: int
-Degmax: int
-Tol3d: float
-Tol2d: float
-NbIt: int
-KnownParameters: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") GeomFill_AppSurf;
-		 GeomFill_AppSurf(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters = Standard_False);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -916,6 +916,36 @@ int
 **************************/
 class GeomFill_AppSweep : public AppBlend_Approx {
 	public:
+		/****************** GeomFill_AppSweep ******************/
+		%feature("compactdefaultargs") GeomFill_AppSweep;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomFill_AppSweep;
+		 GeomFill_AppSweep();
+
+		/****************** GeomFill_AppSweep ******************/
+		%feature("compactdefaultargs") GeomFill_AppSweep;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Degmin: int
+Degmax: int
+Tol3d: float
+Tol2d: float
+NbIt: int
+KnownParameters: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") GeomFill_AppSweep;
+		 GeomFill_AppSweep(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters = Standard_False);
+
 		/****************** Continuity ******************/
 		%feature("compactdefaultargs") Continuity;
 		%feature("autodoc", "Returns the continuity used in the approximation.
@@ -1018,36 +1048,6 @@ Returns
 None
 ") Curves2dShape;
 		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-
-		/****************** GeomFill_AppSweep ******************/
-		%feature("compactdefaultargs") GeomFill_AppSweep;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomFill_AppSweep;
-		 GeomFill_AppSweep();
-
-		/****************** GeomFill_AppSweep ******************/
-		%feature("compactdefaultargs") GeomFill_AppSweep;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Degmin: int
-Degmax: int
-Tol3d: float
-Tol2d: float
-NbIt: int
-KnownParameters: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") GeomFill_AppSweep;
-		 GeomFill_AppSweep(const Standard_Integer Degmin, const Standard_Integer Degmax, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIt, const Standard_Boolean KnownParameters = Standard_False);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -1819,6 +1819,25 @@ gp_Pnt
 ***********************************/
 class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 	public:
+		/****************** GeomFill_CircularBlendFunc ******************/
+		%feature("compactdefaultargs") GeomFill_CircularBlendFunc;
+		%feature("autodoc", "Create a blend with a constant radius with 2 guide-line. <fshape> sets the type of fillet surface. the -- default value is convert_tgtthetaover2 (classical -- nurbs -- representation of circles). chfi3d_quasiangular -- corresponds to a nurbs representation of circles -- which parameterisation matches the circle one. -- chfi3d_polynomial corresponds to a polynomial -- representation of circles.
+
+Parameters
+----------
+Path: Adaptor3d_HCurve
+Curve1: Adaptor3d_HCurve
+Curve2: Adaptor3d_HCurve
+Radius: float
+Polynomial: bool,optional
+	default value is Standard_False
+
+Returns
+-------
+None
+") GeomFill_CircularBlendFunc;
+		 GeomFill_CircularBlendFunc(const opencascade::handle<Adaptor3d_HCurve> & Path, const opencascade::handle<Adaptor3d_HCurve> & Curve1, const opencascade::handle<Adaptor3d_HCurve> & Curve2, const Standard_Real Radius, const Standard_Boolean Polynomial = Standard_False);
+
 		/****************** BarycentreOfSurf ******************/
 		%feature("compactdefaultargs") BarycentreOfSurf;
 		%feature("autodoc", "Get the barycentre of surface. an very poor estimation is sufficent. this information is usefull to perform well conditionned rational approximation.
@@ -1894,25 +1913,6 @@ Returns
 bool
 ") D2;
 		virtual Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-
-		/****************** GeomFill_CircularBlendFunc ******************/
-		%feature("compactdefaultargs") GeomFill_CircularBlendFunc;
-		%feature("autodoc", "Create a blend with a constant radius with 2 guide-line. <fshape> sets the type of fillet surface. the -- default value is convert_tgtthetaover2 (classical -- nurbs -- representation of circles). chfi3d_quasiangular -- corresponds to a nurbs representation of circles -- which parameterisation matches the circle one. -- chfi3d_polynomial corresponds to a polynomial -- representation of circles.
-
-Parameters
-----------
-Path: Adaptor3d_HCurve
-Curve1: Adaptor3d_HCurve
-Curve2: Adaptor3d_HCurve
-Radius: float
-Polynomial: bool,optional
-	default value is Standard_False
-
-Returns
--------
-None
-") GeomFill_CircularBlendFunc;
-		 GeomFill_CircularBlendFunc(const opencascade::handle<Adaptor3d_HCurve> & Path, const opencascade::handle<Adaptor3d_HCurve> & Curve1, const opencascade::handle<Adaptor3d_HCurve> & Curve2, const Standard_Real Radius, const Standard_Boolean Polynomial = Standard_False);
 
 		/****************** GetMinimalWeight ******************/
 		%feature("compactdefaultargs") GetMinimalWeight;
@@ -2094,6 +2094,21 @@ None
 ************************************/
 class GeomFill_ConstrainedFilling {
 	public:
+		/****************** GeomFill_ConstrainedFilling ******************/
+		%feature("compactdefaultargs") GeomFill_ConstrainedFilling;
+		%feature("autodoc", "Constructs an empty framework for filling a surface from boundaries. the boundaries of the surface will be defined, and the surface will be built by using the function init. the surface will respect the following constraints: - its degree will not be greater than maxdeg - the maximum number of segments maxseg which bspline surfaces can have.
+
+Parameters
+----------
+MaxDeg: int
+MaxSeg: int
+
+Returns
+-------
+None
+") GeomFill_ConstrainedFilling;
+		 GeomFill_ConstrainedFilling(const Standard_Integer MaxDeg, const Standard_Integer MaxSeg);
+
 		/****************** Boundary ******************/
 		%feature("compactdefaultargs") Boundary;
 		%feature("autodoc", "Returns the bound of index i after sort.
@@ -2179,21 +2194,6 @@ Returns
 int
 ") Eval;
 		Standard_Integer Eval(const Standard_Real W, const Standard_Integer Ord, Standard_Real &OutValue);
-
-		/****************** GeomFill_ConstrainedFilling ******************/
-		%feature("compactdefaultargs") GeomFill_ConstrainedFilling;
-		%feature("autodoc", "Constructs an empty framework for filling a surface from boundaries. the boundaries of the surface will be defined, and the surface will be built by using the function init. the surface will respect the following constraints: - its degree will not be greater than maxdeg - the maximum number of segments maxseg which bspline surfaces can have.
-
-Parameters
-----------
-MaxDeg: int
-MaxSeg: int
-
-Returns
--------
-None
-") GeomFill_ConstrainedFilling;
-		 GeomFill_ConstrainedFilling(const Standard_Integer MaxDeg, const Standard_Integer MaxSeg);
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -2281,6 +2281,23 @@ opencascade::handle<Geom_BSplineSurface>
 *******************************/
 class GeomFill_CoonsAlgPatch : public Standard_Transient {
 	public:
+		/****************** GeomFill_CoonsAlgPatch ******************/
+		%feature("compactdefaultargs") GeomFill_CoonsAlgPatch;
+		%feature("autodoc", "Constructs the algorithmic patch. by default the constructed blending functions are linear. warning: no control is done on the bounds. b1/b3 and b2/b4 must be same range and well oriented.
+
+Parameters
+----------
+B1: GeomFill_Boundary
+B2: GeomFill_Boundary
+B3: GeomFill_Boundary
+B4: GeomFill_Boundary
+
+Returns
+-------
+None
+") GeomFill_CoonsAlgPatch;
+		 GeomFill_CoonsAlgPatch(const opencascade::handle<GeomFill_Boundary> & B1, const opencascade::handle<GeomFill_Boundary> & B2, const opencascade::handle<GeomFill_Boundary> & B3, const opencascade::handle<GeomFill_Boundary> & B4);
+
 		/****************** Bound ******************/
 		%feature("compactdefaultargs") Bound;
 		%feature("autodoc", "No available documentation.
@@ -2383,23 +2400,6 @@ opencascade::handle<Law_Function>
 ") Func;
 		const opencascade::handle<Law_Function> & Func(const Standard_Integer I);
 
-		/****************** GeomFill_CoonsAlgPatch ******************/
-		%feature("compactdefaultargs") GeomFill_CoonsAlgPatch;
-		%feature("autodoc", "Constructs the algorithmic patch. by default the constructed blending functions are linear. warning: no control is done on the bounds. b1/b3 and b2/b4 must be same range and well oriented.
-
-Parameters
-----------
-B1: GeomFill_Boundary
-B2: GeomFill_Boundary
-B3: GeomFill_Boundary
-B4: GeomFill_Boundary
-
-Returns
--------
-None
-") GeomFill_CoonsAlgPatch;
-		 GeomFill_CoonsAlgPatch(const opencascade::handle<GeomFill_Boundary> & B1, const opencascade::handle<GeomFill_Boundary> & B2, const opencascade::handle<GeomFill_Boundary> & B3, const opencascade::handle<GeomFill_Boundary> & B4);
-
 		/****************** SetFunc ******************/
 		%feature("compactdefaultargs") SetFunc;
 		%feature("autodoc", "Set the blending functions.
@@ -2446,6 +2446,16 @@ gp_Pnt
 *****************************/
 class GeomFill_CornerState {
 	public:
+		/****************** GeomFill_CornerState ******************/
+		%feature("compactdefaultargs") GeomFill_CornerState;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomFill_CornerState;
+		 GeomFill_CornerState();
+
 		/****************** Constraint ******************/
 		%feature("compactdefaultargs") Constraint;
 		%feature("autodoc", "No available documentation.
@@ -2493,16 +2503,6 @@ Returns
 None
 ") Gap;
 		void Gap(const Standard_Real G);
-
-		/****************** GeomFill_CornerState ******************/
-		%feature("compactdefaultargs") GeomFill_CornerState;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomFill_CornerState;
-		 GeomFill_CornerState();
 
 		/****************** HasConstraint ******************/
 		%feature("compactdefaultargs") HasConstraint;
@@ -2672,6 +2672,21 @@ bool
 *******************************/
 class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
 	public:
+		/****************** GeomFill_FunctionDraft ******************/
+		%feature("compactdefaultargs") GeomFill_FunctionDraft;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: Adaptor3d_HSurface
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
+") GeomFill_FunctionDraft;
+		 GeomFill_FunctionDraft(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C);
+
 		/****************** Deriv2T ******************/
 		%feature("compactdefaultargs") Deriv2T;
 		%feature("autodoc", "Returns the values <f> of the t2 derivatives for the parameter param .
@@ -2756,21 +2771,6 @@ bool
 ") Derivatives;
 		virtual Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
 
-		/****************** GeomFill_FunctionDraft ******************/
-		%feature("compactdefaultargs") GeomFill_FunctionDraft;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: Adaptor3d_HSurface
-C: Adaptor3d_HCurve
-
-Returns
--------
-None
-") GeomFill_FunctionDraft;
-		 GeomFill_FunctionDraft(const opencascade::handle<Adaptor3d_HSurface> & S, const opencascade::handle<Adaptor3d_HCurve> & C);
-
 		/****************** NbEquations ******************/
 		%feature("compactdefaultargs") NbEquations;
 		%feature("autodoc", "Returns the number of equations of the function.
@@ -2836,6 +2836,23 @@ bool
 *******************************/
 class GeomFill_FunctionGuide : public math_FunctionSetWithDerivatives {
 	public:
+		/****************** GeomFill_FunctionGuide ******************/
+		%feature("compactdefaultargs") GeomFill_FunctionGuide;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+S: GeomFill_SectionLaw
+Guide: Adaptor3d_HCurve
+ParamOnLaw: float,optional
+	default value is 0.0
+
+Returns
+-------
+None
+") GeomFill_FunctionGuide;
+		 GeomFill_FunctionGuide(const opencascade::handle<GeomFill_SectionLaw> & S, const opencascade::handle<Adaptor3d_HCurve> & Guide, const Standard_Real ParamOnLaw = 0.0);
+
 		/****************** DerivT ******************/
 		%feature("compactdefaultargs") DerivT;
 		%feature("autodoc", "Returns the values <f> of the t derivatives for the parameter param .
@@ -2867,23 +2884,6 @@ Returns
 bool
 ") Derivatives;
 		virtual Standard_Boolean Derivatives(const math_Vector & X, math_Matrix & D);
-
-		/****************** GeomFill_FunctionGuide ******************/
-		%feature("compactdefaultargs") GeomFill_FunctionGuide;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-S: GeomFill_SectionLaw
-Guide: Adaptor3d_HCurve
-ParamOnLaw: float,optional
-	default value is 0.0
-
-Returns
--------
-None
-") GeomFill_FunctionGuide;
-		 GeomFill_FunctionGuide(const opencascade::handle<GeomFill_SectionLaw> & S, const opencascade::handle<Adaptor3d_HCurve> & Guide, const Standard_Real ParamOnLaw = 0.0);
 
 		/****************** NbEquations ******************/
 		%feature("compactdefaultargs") NbEquations;
@@ -3035,6 +3035,20 @@ int
 *****************************/
 class GeomFill_LocFunction {
 	public:
+		/****************** GeomFill_LocFunction ******************/
+		%feature("compactdefaultargs") GeomFill_LocFunction;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Law: GeomFill_LocationLaw
+
+Returns
+-------
+None
+") GeomFill_LocFunction;
+		 GeomFill_LocFunction(const opencascade::handle<GeomFill_LocationLaw> & Law);
+
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Compute the section for v = param.
@@ -3101,20 +3115,6 @@ Returns
 None
 ") DN;
 		void DN(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, const Standard_Integer Order, Standard_Real &OutValue, Standard_Integer &OutValue);
-
-		/****************** GeomFill_LocFunction ******************/
-		%feature("compactdefaultargs") GeomFill_LocFunction;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Law: GeomFill_LocationLaw
-
-Returns
--------
-None
-") GeomFill_LocFunction;
-		 GeomFill_LocFunction(const opencascade::handle<GeomFill_LocationLaw> & Law);
 
 };
 
@@ -3494,50 +3494,6 @@ int
 **********************/
 class GeomFill_Pipe {
 	public:
-		/****************** ErrorOnSurf ******************/
-		%feature("compactdefaultargs") ErrorOnSurf;
-		%feature("autodoc", "Returns the approximation's error. if the surface is plane, cylinder ... this error can be 0.
-
-Returns
--------
-float
-") ErrorOnSurf;
-		Standard_Real ErrorOnSurf();
-
-		/****************** ExchangeUV ******************/
-		%feature("compactdefaultargs") ExchangeUV;
-		%feature("autodoc", "The u parametric direction of the surface constructed by this algorithm usually corresponds to the evolution along the path and the v parametric direction corresponds to the evolution along the section(s). however, this rule is not respected when constructing certain specific geom surfaces (typically cylindrical surfaces, surfaces of revolution, etc.) for which the parameterization is inversed. the exchangeuv function checks for this, and returns true in all these specific cases. warning do not use this function before the surface is built.
-
-Returns
--------
-bool
-") ExchangeUV;
-		Standard_Boolean ExchangeUV();
-
-		/****************** GenerateParticularCase ******************/
-		%feature("compactdefaultargs") GenerateParticularCase;
-		%feature("autodoc", "Sets a flag to try to create as many planes, cylinder,... as possible. default value is <standard_false>.
-
-Parameters
-----------
-B: bool
-
-Returns
--------
-None
-") GenerateParticularCase;
-		void GenerateParticularCase(const Standard_Boolean B);
-
-		/****************** GenerateParticularCase ******************/
-		%feature("compactdefaultargs") GenerateParticularCase;
-		%feature("autodoc", "Returns the flag.
-
-Returns
--------
-bool
-") GenerateParticularCase;
-		Standard_Boolean GenerateParticularCase();
-
 		/****************** GeomFill_Pipe ******************/
 		%feature("compactdefaultargs") GeomFill_Pipe;
 		%feature("autodoc", "Constructs an empty algorithm for building pipes. use the function init to initialize it.
@@ -3694,6 +3650,50 @@ Returns
 None
 ") GeomFill_Pipe;
 		 GeomFill_Pipe(const opencascade::handle<Geom_Curve> & Path, const opencascade::handle<Adaptor3d_HCurve> & Guide, const opencascade::handle<Geom_Curve> & FirstSect, const Standard_Boolean ByACR, const Standard_Boolean rotat);
+
+		/****************** ErrorOnSurf ******************/
+		%feature("compactdefaultargs") ErrorOnSurf;
+		%feature("autodoc", "Returns the approximation's error. if the surface is plane, cylinder ... this error can be 0.
+
+Returns
+-------
+float
+") ErrorOnSurf;
+		Standard_Real ErrorOnSurf();
+
+		/****************** ExchangeUV ******************/
+		%feature("compactdefaultargs") ExchangeUV;
+		%feature("autodoc", "The u parametric direction of the surface constructed by this algorithm usually corresponds to the evolution along the path and the v parametric direction corresponds to the evolution along the section(s). however, this rule is not respected when constructing certain specific geom surfaces (typically cylindrical surfaces, surfaces of revolution, etc.) for which the parameterization is inversed. the exchangeuv function checks for this, and returns true in all these specific cases. warning do not use this function before the surface is built.
+
+Returns
+-------
+bool
+") ExchangeUV;
+		Standard_Boolean ExchangeUV();
+
+		/****************** GenerateParticularCase ******************/
+		%feature("compactdefaultargs") GenerateParticularCase;
+		%feature("autodoc", "Sets a flag to try to create as many planes, cylinder,... as possible. default value is <standard_false>.
+
+Parameters
+----------
+B: bool
+
+Returns
+-------
+None
+") GenerateParticularCase;
+		void GenerateParticularCase(const Standard_Boolean B);
+
+		/****************** GenerateParticularCase ******************/
+		%feature("compactdefaultargs") GenerateParticularCase;
+		%feature("autodoc", "Returns the flag.
+
+Returns
+-------
+bool
+") GenerateParticularCase;
+		Standard_Boolean GenerateParticularCase();
 
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
@@ -3897,6 +3897,22 @@ opencascade::handle<Geom_Surface>
 **************************/
 class GeomFill_PlanFunc : public math_FunctionWithDerivative {
 	public:
+		/****************** GeomFill_PlanFunc ******************/
+		%feature("compactdefaultargs") GeomFill_PlanFunc;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+P: gp_Pnt
+V: gp_Vec
+C: Adaptor3d_HCurve
+
+Returns
+-------
+None
+") GeomFill_PlanFunc;
+		 GeomFill_PlanFunc(const gp_Pnt & P, const gp_Vec & V, const opencascade::handle<Adaptor3d_HCurve> & C);
+
 		/****************** D2 ******************/
 		%feature("compactdefaultargs") D2;
 		%feature("autodoc", "No available documentation.
@@ -3966,22 +3982,6 @@ Returns
 bool
 ") Derivative;
 		virtual Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-
-		/****************** GeomFill_PlanFunc ******************/
-		%feature("compactdefaultargs") GeomFill_PlanFunc;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-P: gp_Pnt
-V: gp_Vec
-C: Adaptor3d_HCurve
-
-Returns
--------
-None
-") GeomFill_PlanFunc;
-		 GeomFill_PlanFunc(const gp_Pnt & P, const gp_Vec & V, const opencascade::handle<Adaptor3d_HCurve> & C);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -4141,6 +4141,16 @@ None
 **************************/
 class GeomFill_Profiler {
 	public:
+		/****************** GeomFill_Profiler ******************/
+		%feature("compactdefaultargs") GeomFill_Profiler;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomFill_Profiler;
+		 GeomFill_Profiler();
+
 		/****************** AddCurve ******************/
 		%feature("compactdefaultargs") AddCurve;
 		%feature("autodoc", "No available documentation.
@@ -4178,16 +4188,6 @@ Returns
 int
 ") Degree;
 		Standard_Integer Degree();
-
-		/****************** GeomFill_Profiler ******************/
-		%feature("compactdefaultargs") GeomFill_Profiler;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomFill_Profiler;
-		 GeomFill_Profiler();
 
 		/****************** IsPeriodic ******************/
 		%feature("compactdefaultargs") IsPeriodic;
@@ -4758,6 +4758,21 @@ None
 **********************************/
 class GeomFill_SectionPlacement {
 	public:
+		/****************** GeomFill_SectionPlacement ******************/
+		%feature("compactdefaultargs") GeomFill_SectionPlacement;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+L: GeomFill_LocationLaw
+Section: Geom_Geometry
+
+Returns
+-------
+None
+") GeomFill_SectionPlacement;
+		 GeomFill_SectionPlacement(const opencascade::handle<GeomFill_LocationLaw> & L, const opencascade::handle<Geom_Geometry> & Section);
+
 		/****************** Angle ******************/
 		%feature("compactdefaultargs") Angle;
 		%feature("autodoc", "No available documentation.
@@ -4777,21 +4792,6 @@ Returns
 float
 ") Distance;
 		Standard_Real Distance();
-
-		/****************** GeomFill_SectionPlacement ******************/
-		%feature("compactdefaultargs") GeomFill_SectionPlacement;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-L: GeomFill_LocationLaw
-Section: Geom_Geometry
-
-Returns
--------
-None
-") GeomFill_SectionPlacement;
-		 GeomFill_SectionPlacement(const opencascade::handle<GeomFill_LocationLaw> & L, const opencascade::handle<Geom_Geometry> & Section);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -4939,6 +4939,20 @@ gp_Trsf
 ***************************/
 class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 	public:
+		/****************** GeomFill_SnglrFunc ******************/
+		%feature("compactdefaultargs") GeomFill_SnglrFunc;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+HC: Adaptor3d_HCurve
+
+Returns
+-------
+None
+") GeomFill_SnglrFunc;
+		 GeomFill_SnglrFunc(const opencascade::handle<Adaptor3d_HCurve> & HC);
+
 		/****************** D0 ******************/
 		%feature("compactdefaultargs") D0;
 		%feature("autodoc", "Computes the point of parameter u on the curve.
@@ -5029,20 +5043,6 @@ Returns
 float
 ") FirstParameter;
 		Standard_Real FirstParameter();
-
-		/****************** GeomFill_SnglrFunc ******************/
-		%feature("compactdefaultargs") GeomFill_SnglrFunc;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-HC: Adaptor3d_HCurve
-
-Returns
--------
-None
-") GeomFill_SnglrFunc;
-		 GeomFill_SnglrFunc(const opencascade::handle<Adaptor3d_HCurve> & HC);
 
 		/****************** GetType ******************/
 		%feature("compactdefaultargs") GetType;
@@ -5169,6 +5169,22 @@ gp_Pnt
 ***********************/
 class GeomFill_Sweep {
 	public:
+		/****************** GeomFill_Sweep ******************/
+		%feature("compactdefaultargs") GeomFill_Sweep;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Location: GeomFill_LocationLaw
+WithKpart: bool,optional
+	default value is Standard_True
+
+Returns
+-------
+None
+") GeomFill_Sweep;
+		 GeomFill_Sweep(const opencascade::handle<GeomFill_LocationLaw> & Location, const Standard_Boolean WithKpart = Standard_True);
+
 		/****************** Build ******************/
 		%feature("compactdefaultargs") Build;
 		%feature("autodoc", "Build the sweeep surface approxstyle defines approximation strategy - geomfill_section : the composed function : location x section is directly approximed. - geomfill_location : the location law is approximed, and the sweepsurface is build algebric composition of approximed location law and section law this option is ok, if section.surface() methode is effective. continuity : the continuity in v waiting on the surface degmax : the maximum degree in v requiered on the surface segmax : the maximum number of span in v requiered on the surface //! raise if domain are infinite or profile not setted.
@@ -5242,22 +5258,6 @@ Returns
 bool
 ") ExchangeUV;
 		Standard_Boolean ExchangeUV();
-
-		/****************** GeomFill_Sweep ******************/
-		%feature("compactdefaultargs") GeomFill_Sweep;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Location: GeomFill_LocationLaw
-WithKpart: bool,optional
-	default value is Standard_True
-
-Returns
--------
-None
-") GeomFill_Sweep;
-		 GeomFill_Sweep(const opencascade::handle<GeomFill_LocationLaw> & Location, const Standard_Boolean WithKpart = Standard_True);
 
 		/****************** IsDone ******************/
 		%feature("compactdefaultargs") IsDone;
@@ -5402,6 +5402,24 @@ bool
 *******************************/
 class GeomFill_SweepFunction : public Approx_SweepFunction {
 	public:
+		/****************** GeomFill_SweepFunction ******************/
+		%feature("compactdefaultargs") GeomFill_SweepFunction;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Section: GeomFill_SectionLaw
+Location: GeomFill_LocationLaw
+FirstParameter: float
+FirstParameterOnS: float
+RatioParameterOnS: float
+
+Returns
+-------
+None
+") GeomFill_SweepFunction;
+		 GeomFill_SweepFunction(const opencascade::handle<GeomFill_SectionLaw> & Section, const opencascade::handle<GeomFill_LocationLaw> & Location, const Standard_Real FirstParameter, const Standard_Real FirstParameterOnS, const Standard_Real RatioParameterOnS);
+
 		/****************** BarycentreOfSurf ******************/
 		%feature("compactdefaultargs") BarycentreOfSurf;
 		%feature("autodoc", "Get the barycentre of surface. an very poor estimation is sufficent. this information is usefull to perform well conditionned rational approximation. warning: used only if <self> isrational.
@@ -5477,24 +5495,6 @@ Returns
 bool
 ") D2;
 		virtual Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-
-		/****************** GeomFill_SweepFunction ******************/
-		%feature("compactdefaultargs") GeomFill_SweepFunction;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Section: GeomFill_SectionLaw
-Location: GeomFill_LocationLaw
-FirstParameter: float
-FirstParameterOnS: float
-RatioParameterOnS: float
-
-Returns
--------
-None
-") GeomFill_SweepFunction;
-		 GeomFill_SweepFunction(const opencascade::handle<GeomFill_SectionLaw> & Section, const opencascade::handle<GeomFill_LocationLaw> & Location, const Standard_Real FirstParameter, const Standard_Real FirstParameterOnS, const Standard_Real RatioParameterOnS);
 
 		/****************** GetMinimalWeight ******************/
 		%feature("compactdefaultargs") GetMinimalWeight;
@@ -5696,19 +5696,6 @@ None
 ************************/
 class GeomFill_Tensor {
 	public:
-
-        %feature("autodoc","1");
-        %extend {
-            Standard_Real GetChangeValue(const Standard_Integer Row,const Standard_Integer Col,const Standard_Integer Mat) {
-            return (Standard_Real) $self->ChangeValue(Row,Col,Mat);
-            }
-        };
-        %feature("autodoc","1");
-        %extend {
-            void SetChangeValue(const Standard_Integer Row,const Standard_Integer Col,const Standard_Integer Mat,Standard_Real value) {
-            $self->ChangeValue(Row,Col,Mat)=value;
-            }
-        };
 		/****************** GeomFill_Tensor ******************/
 		%feature("compactdefaultargs") GeomFill_Tensor;
 		%feature("autodoc", "No available documentation.
@@ -5725,6 +5712,19 @@ None
 ") GeomFill_Tensor;
 		 GeomFill_Tensor(const Standard_Integer NbRow, const Standard_Integer NbCol, const Standard_Integer NbMat);
 
+
+        %feature("autodoc","1");
+        %extend {
+            Standard_Real GetChangeValue(const Standard_Integer Row,const Standard_Integer Col,const Standard_Integer Mat) {
+            return (Standard_Real) $self->ChangeValue(Row,Col,Mat);
+            }
+        };
+        %feature("autodoc","1");
+        %extend {
+            void SetChangeValue(const Standard_Integer Row,const Standard_Integer Col,const Standard_Integer Mat,Standard_Real value) {
+            $self->ChangeValue(Row,Col,Mat)=value;
+            }
+        };
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "Initialize all the elements of a tensor to initialvalue.
@@ -6075,6 +6075,22 @@ None
 *******************************/
 class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 	public:
+		/****************** GeomFill_BoundWithSurf ******************/
+		%feature("compactdefaultargs") GeomFill_BoundWithSurf;
+		%feature("autodoc", "Constructs a boundary object defined by the 3d curve curveonsurf. the surface to be filled along this boundary will be in the tolerance range defined by tol3d. what's more, at each point of curveonsurf, the angle between the normal to the surface to be filled along this boundary, and the normal to the surface on which curveonsurf lies, must not be greater than tolang. this object is to be used as a boundary for a geomfill_constrainedfilling framework. warning curveonsurf is an adapted curve, that is, an object which is an interface between: - the services provided by a curve lying on a surface from the package geom - and those required of the curve by the computation algorithm which uses it. the adapted curve is created in the following way: opencascade::handle<geom_surface> mysurface = ... ; opencascade::handle<geom2d_curve> myparamcurve = ... ; // where myparamcurve is a 2d curve in the parametric space of the surface mysurface opencascade::handle<geomadaptor_hsurface> surface = new geomadaptor_hsurface(mysurface); opencascade::handle<geom2dadaptor_hcurve> paramcurve = new geom2dadaptor_hcurve(myparamcurve); curveonsurf = adaptor3d_curveonsurface(paramcurve,surface); the boundary is then constructed with the curveonsurf object: standard_real tol = ... ; standard_real tolang = ... ; myboundary = geomfill_boundwithsurf ( curveonsurf, tol, tolang );.
+
+Parameters
+----------
+CurveOnSurf: Adaptor3d_CurveOnSurface
+Tol3d: float
+Tolang: float
+
+Returns
+-------
+None
+") GeomFill_BoundWithSurf;
+		 GeomFill_BoundWithSurf(const Adaptor3d_CurveOnSurface & CurveOnSurf, const Standard_Real Tol3d, const Standard_Real Tolang);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "No available documentation.
@@ -6121,22 +6137,6 @@ Returns
 None
 ") D1Norm;
 		virtual void D1Norm(const Standard_Real U, gp_Vec & N, gp_Vec & DN);
-
-		/****************** GeomFill_BoundWithSurf ******************/
-		%feature("compactdefaultargs") GeomFill_BoundWithSurf;
-		%feature("autodoc", "Constructs a boundary object defined by the 3d curve curveonsurf. the surface to be filled along this boundary will be in the tolerance range defined by tol3d. what's more, at each point of curveonsurf, the angle between the normal to the surface to be filled along this boundary, and the normal to the surface on which curveonsurf lies, must not be greater than tolang. this object is to be used as a boundary for a geomfill_constrainedfilling framework. warning curveonsurf is an adapted curve, that is, an object which is an interface between: - the services provided by a curve lying on a surface from the package geom - and those required of the curve by the computation algorithm which uses it. the adapted curve is created in the following way: opencascade::handle<geom_surface> mysurface = ... ; opencascade::handle<geom2d_curve> myparamcurve = ... ; // where myparamcurve is a 2d curve in the parametric space of the surface mysurface opencascade::handle<geomadaptor_hsurface> surface = new geomadaptor_hsurface(mysurface); opencascade::handle<geom2dadaptor_hcurve> paramcurve = new geom2dadaptor_hcurve(myparamcurve); curveonsurf = adaptor3d_curveonsurface(paramcurve,surface); the boundary is then constructed with the curveonsurf object: standard_real tol = ... ; standard_real tolang = ... ; myboundary = geomfill_boundwithsurf ( curveonsurf, tol, tolang );.
-
-Parameters
-----------
-CurveOnSurf: Adaptor3d_CurveOnSurface
-Tol3d: float
-Tolang: float
-
-Returns
--------
-None
-") GeomFill_BoundWithSurf;
-		 GeomFill_BoundWithSurf(const Adaptor3d_CurveOnSurface & CurveOnSurf, const Standard_Real Tol3d, const Standard_Real Tolang);
 
 		/****************** HasNormals ******************/
 		%feature("compactdefaultargs") HasNormals;
@@ -6222,6 +6222,20 @@ gp_Pnt
 **********************************/
 class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
 	public:
+		/****************** GeomFill_ConstantBiNormal ******************/
+		%feature("compactdefaultargs") GeomFill_ConstantBiNormal;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+BiNormal: gp_Dir
+
+Returns
+-------
+None
+") GeomFill_ConstantBiNormal;
+		 GeomFill_ConstantBiNormal(const gp_Dir & BiNormal);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "No available documentation.
@@ -6291,20 +6305,6 @@ Returns
 bool
 ") D2;
 		virtual Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-
-		/****************** GeomFill_ConstantBiNormal ******************/
-		%feature("compactdefaultargs") GeomFill_ConstantBiNormal;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-BiNormal: gp_Dir
-
-Returns
--------
-None
-") GeomFill_ConstantBiNormal;
-		 GeomFill_ConstantBiNormal(const gp_Dir & BiNormal);
 
 		/****************** GetAverageLaw ******************/
 		%feature("compactdefaultargs") GetAverageLaw;
@@ -6501,6 +6501,30 @@ None
 *********************************/
 class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 	public:
+		/****************** GeomFill_CorrectedFrenet ******************/
+		%feature("compactdefaultargs") GeomFill_CorrectedFrenet;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomFill_CorrectedFrenet;
+		 GeomFill_CorrectedFrenet();
+
+		/****************** GeomFill_CorrectedFrenet ******************/
+		%feature("compactdefaultargs") GeomFill_CorrectedFrenet;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+ForEvaluation: bool
+
+Returns
+-------
+None
+") GeomFill_CorrectedFrenet;
+		 GeomFill_CorrectedFrenet(const Standard_Boolean ForEvaluation);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "No available documentation.
@@ -6580,30 +6604,6 @@ Returns
 GeomFill_Trihedron
 ") EvaluateBestMode;
 		GeomFill_Trihedron EvaluateBestMode();
-
-		/****************** GeomFill_CorrectedFrenet ******************/
-		%feature("compactdefaultargs") GeomFill_CorrectedFrenet;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomFill_CorrectedFrenet;
-		 GeomFill_CorrectedFrenet();
-
-		/****************** GeomFill_CorrectedFrenet ******************/
-		%feature("compactdefaultargs") GeomFill_CorrectedFrenet;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-ForEvaluation: bool
-
-Returns
--------
-None
-") GeomFill_CorrectedFrenet;
-		 GeomFill_CorrectedFrenet(const Standard_Boolean ForEvaluation);
 
 		/****************** GetAverageLaw ******************/
 		%feature("compactdefaultargs") GetAverageLaw;
@@ -6715,6 +6715,20 @@ None
 ***********************************/
 class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
 	public:
+		/****************** GeomFill_CurveAndTrihedron ******************/
+		%feature("compactdefaultargs") GeomFill_CurveAndTrihedron;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Trihedron: GeomFill_TrihedronLaw
+
+Returns
+-------
+None
+") GeomFill_CurveAndTrihedron;
+		 GeomFill_CurveAndTrihedron(const opencascade::handle<GeomFill_TrihedronLaw> & Trihedron);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "No available documentation.
@@ -6800,20 +6814,6 @@ Returns
 bool
 ") D2;
 		virtual Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, gp_Mat & D2M, gp_Vec & D2V, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
-
-		/****************** GeomFill_CurveAndTrihedron ******************/
-		%feature("compactdefaultargs") GeomFill_CurveAndTrihedron;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Trihedron: GeomFill_TrihedronLaw
-
-Returns
--------
-None
-") GeomFill_CurveAndTrihedron;
-		 GeomFill_CurveAndTrihedron(const opencascade::handle<GeomFill_TrihedronLaw> & Trihedron);
 
 		/****************** GetAverageLaw ******************/
 		%feature("compactdefaultargs") GetAverageLaw;
@@ -7174,6 +7174,16 @@ None
 *************************/
 class GeomFill_Darboux : public GeomFill_TrihedronLaw {
 	public:
+		/****************** GeomFill_Darboux ******************/
+		%feature("compactdefaultargs") GeomFill_Darboux;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomFill_Darboux;
+		 GeomFill_Darboux();
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "No available documentation.
@@ -7243,16 +7253,6 @@ Returns
 bool
 ") D2;
 		virtual Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-
-		/****************** GeomFill_Darboux ******************/
-		%feature("compactdefaultargs") GeomFill_Darboux;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomFill_Darboux;
-		 GeomFill_Darboux();
 
 		/****************** GetAverageLaw ******************/
 		%feature("compactdefaultargs") GetAverageLaw;
@@ -7335,6 +7335,24 @@ int
 **********************************/
 class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 	public:
+		/****************** GeomFill_DegeneratedBound ******************/
+		%feature("compactdefaultargs") GeomFill_DegeneratedBound;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Point: gp_Pnt
+First: float
+Last: float
+Tol3d: float
+Tolang: float
+
+Returns
+-------
+None
+") GeomFill_DegeneratedBound;
+		 GeomFill_DegeneratedBound(const gp_Pnt & Point, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const Standard_Real Tolang);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "No available documentation.
@@ -7365,24 +7383,6 @@ Returns
 None
 ") D1;
 		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V);
-
-		/****************** GeomFill_DegeneratedBound ******************/
-		%feature("compactdefaultargs") GeomFill_DegeneratedBound;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Point: gp_Pnt
-First: float
-Last: float
-Tol3d: float
-Tolang: float
-
-Returns
--------
-None
-") GeomFill_DegeneratedBound;
-		 GeomFill_DegeneratedBound(const gp_Pnt & Point, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const Standard_Real Tolang);
 
 		/****************** IsDegenerated ******************/
 		%feature("compactdefaultargs") IsDegenerated;
@@ -7444,6 +7444,16 @@ gp_Pnt
 ***********************************/
 class GeomFill_DiscreteTrihedron : public GeomFill_TrihedronLaw {
 	public:
+		/****************** GeomFill_DiscreteTrihedron ******************/
+		%feature("compactdefaultargs") GeomFill_DiscreteTrihedron;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomFill_DiscreteTrihedron;
+		 GeomFill_DiscreteTrihedron();
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "No available documentation.
@@ -7513,16 +7523,6 @@ Returns
 bool
 ") D2;
 		virtual Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-
-		/****************** GeomFill_DiscreteTrihedron ******************/
-		%feature("compactdefaultargs") GeomFill_DiscreteTrihedron;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomFill_DiscreteTrihedron;
-		 GeomFill_DiscreteTrihedron();
 
 		/****************** GetAverageLaw ******************/
 		%feature("compactdefaultargs") GetAverageLaw;
@@ -7629,6 +7629,21 @@ None
 ********************************/
 class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 	public:
+		/****************** GeomFill_DraftTrihedron ******************/
+		%feature("compactdefaultargs") GeomFill_DraftTrihedron;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+BiNormal: gp_Vec
+Angle: float
+
+Returns
+-------
+None
+") GeomFill_DraftTrihedron;
+		 GeomFill_DraftTrihedron(const gp_Vec & BiNormal, const Standard_Real Angle);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "No available documentation.
@@ -7698,21 +7713,6 @@ Returns
 bool
 ") D2;
 		virtual Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-
-		/****************** GeomFill_DraftTrihedron ******************/
-		%feature("compactdefaultargs") GeomFill_DraftTrihedron;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-BiNormal: gp_Vec
-Angle: float
-
-Returns
--------
-None
-") GeomFill_DraftTrihedron;
-		 GeomFill_DraftTrihedron(const gp_Vec & BiNormal, const Standard_Real Angle);
 
 		/****************** GetAverageLaw ******************/
 		%feature("compactdefaultargs") GetAverageLaw;
@@ -7809,6 +7809,21 @@ None
 ********************************/
 class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 	public:
+		/****************** GeomFill_EvolvedSection ******************/
+		%feature("compactdefaultargs") GeomFill_EvolvedSection;
+		%feature("autodoc", "Make an sectionlaw with a curve and a real law.
+
+Parameters
+----------
+C: Geom_Curve
+L: Law_Function
+
+Returns
+-------
+None
+") GeomFill_EvolvedSection;
+		 GeomFill_EvolvedSection(const opencascade::handle<Geom_Curve> & C, const opencascade::handle<Law_Function> & L);
+
 		/****************** BSplineSurface ******************/
 		%feature("compactdefaultargs") BSplineSurface;
 		%feature("autodoc", "Give if possible an bspline surface, like iso-v are the section. if it is not possible this methode have to get an null surface. is it the default implementation.
@@ -7892,21 +7907,6 @@ Returns
 bool
 ") D2;
 		virtual Standard_Boolean D2(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-
-		/****************** GeomFill_EvolvedSection ******************/
-		%feature("compactdefaultargs") GeomFill_EvolvedSection;
-		%feature("autodoc", "Make an sectionlaw with a curve and a real law.
-
-Parameters
-----------
-C: Geom_Curve
-L: Law_Function
-
-Returns
--------
-None
-") GeomFill_EvolvedSection;
-		 GeomFill_EvolvedSection(const opencascade::handle<Geom_Curve> & C, const opencascade::handle<Law_Function> & L);
 
 		/****************** GetDomain ******************/
 		%feature("compactdefaultargs") GetDomain;
@@ -8127,6 +8127,21 @@ None
 ***********************/
 class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 	public:
+		/****************** GeomFill_Fixed ******************/
+		%feature("compactdefaultargs") GeomFill_Fixed;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Tangent: gp_Vec
+Normal: gp_Vec
+
+Returns
+-------
+None
+") GeomFill_Fixed;
+		 GeomFill_Fixed(const gp_Vec & Tangent, const gp_Vec & Normal);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "No available documentation.
@@ -8196,21 +8211,6 @@ Returns
 bool
 ") D2;
 		virtual Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-
-		/****************** GeomFill_Fixed ******************/
-		%feature("compactdefaultargs") GeomFill_Fixed;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Tangent: gp_Vec
-Normal: gp_Vec
-
-Returns
--------
-None
-") GeomFill_Fixed;
-		 GeomFill_Fixed(const gp_Vec & Tangent, const gp_Vec & Normal);
 
 		/****************** GetAverageLaw ******************/
 		%feature("compactdefaultargs") GetAverageLaw;
@@ -8283,6 +8283,16 @@ int
 ************************/
 class GeomFill_Frenet : public GeomFill_TrihedronLaw {
 	public:
+		/****************** GeomFill_Frenet ******************/
+		%feature("compactdefaultargs") GeomFill_Frenet;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") GeomFill_Frenet;
+		 GeomFill_Frenet();
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "No available documentation.
@@ -8352,16 +8362,6 @@ Returns
 bool
 ") D2;
 		virtual Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-
-		/****************** GeomFill_Frenet ******************/
-		%feature("compactdefaultargs") GeomFill_Frenet;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") GeomFill_Frenet;
-		 GeomFill_Frenet();
 
 		/****************** GetAverageLaw ******************/
 		%feature("compactdefaultargs") GetAverageLaw;
@@ -8516,6 +8516,21 @@ opencascade::handle<Geom_Surface>
 *******************************/
 class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 	public:
+		/****************** GeomFill_LocationDraft ******************/
+		%feature("compactdefaultargs") GeomFill_LocationDraft;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Direction: gp_Dir
+Angle: float
+
+Returns
+-------
+None
+") GeomFill_LocationDraft;
+		 GeomFill_LocationDraft(const gp_Dir & Direction, const Standard_Real Angle);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "No available documentation.
@@ -8611,21 +8626,6 @@ Returns
 gp_Dir
 ") Direction;
 		gp_Dir Direction();
-
-		/****************** GeomFill_LocationDraft ******************/
-		%feature("compactdefaultargs") GeomFill_LocationDraft;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Direction: gp_Dir
-Angle: float
-
-Returns
--------
-None
-") GeomFill_LocationDraft;
-		 GeomFill_LocationDraft(const gp_Dir & Direction, const Standard_Real Angle);
 
 		/****************** GetAverageLaw ******************/
 		%feature("compactdefaultargs") GetAverageLaw;
@@ -8907,6 +8907,20 @@ int
 *******************************/
 class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 	public:
+		/****************** GeomFill_LocationGuide ******************/
+		%feature("compactdefaultargs") GeomFill_LocationGuide;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+Triedre: GeomFill_TrihedronWithGuide
+
+Returns
+-------
+None
+") GeomFill_LocationGuide;
+		 GeomFill_LocationGuide(const opencascade::handle<GeomFill_TrihedronWithGuide> & Triedre);
+
 		/****************** ComputeAutomaticLaw ******************/
 		%feature("compactdefaultargs") ComputeAutomaticLaw;
 		%feature("autodoc", "No available documentation.
@@ -9026,20 +9040,6 @@ Returns
 GeomFill_PipeError
 ") ErrorStatus;
 		virtual GeomFill_PipeError ErrorStatus();
-
-		/****************** GeomFill_LocationGuide ******************/
-		%feature("compactdefaultargs") GeomFill_LocationGuide;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-Triedre: GeomFill_TrihedronWithGuide
-
-Returns
--------
-None
-") GeomFill_LocationGuide;
-		 GeomFill_LocationGuide(const opencascade::handle<GeomFill_TrihedronWithGuide> & Triedre);
 
 		/****************** GetAverageLaw ******************/
 		%feature("compactdefaultargs") GetAverageLaw;
@@ -9489,6 +9489,22 @@ None
 *****************************/
 class GeomFill_SimpleBound : public GeomFill_Boundary {
 	public:
+		/****************** GeomFill_SimpleBound ******************/
+		%feature("compactdefaultargs") GeomFill_SimpleBound;
+		%feature("autodoc", "Constructs the boundary object defined by the 3d curve. the surface to be built along this boundary will be in the tolerance range defined by tol3d. this object is to be used as a boundary for a geomfill_constrainedfilling framework. dummy is initialized but has no function in this class. warning curve is an adapted curve, that is, an object which is an interface between: - the services provided by a 3d curve from the package geom - and those required of the curve by the computation algorithm which uses it. the adapted curve is created in one of the following ways: - first sequence: opencascade::handle<geom_curve> mycurve = ... ; opencascade::handle<geomadaptor_hcurve> curve = new geomadaptor_hcurve(mycurve); - second sequence: // step 1 opencascade::handle<geom_curve> mycurve = ... ; geomadaptor_curve crv (mycurve); // step 2 opencascade::handle<geomadaptor_hcurve> curve = new geomadaptor_hcurve(crv); you use the second part of this sequence if you already have the adapted curve crv. the boundary is then constructed with the curve object: standard_real tol = ... ; standard_real dummy = 0. ; myboundary = geomfill_simplebound (curve,tol,dummy);.
+
+Parameters
+----------
+Curve: Adaptor3d_HCurve
+Tol3d: float
+Tolang: float
+
+Returns
+-------
+None
+") GeomFill_SimpleBound;
+		 GeomFill_SimpleBound(const opencascade::handle<Adaptor3d_HCurve> & Curve, const Standard_Real Tol3d, const Standard_Real Tolang);
+
 		/****************** Bounds ******************/
 		%feature("compactdefaultargs") Bounds;
 		%feature("autodoc", "No available documentation.
@@ -9519,22 +9535,6 @@ Returns
 None
 ") D1;
 		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V);
-
-		/****************** GeomFill_SimpleBound ******************/
-		%feature("compactdefaultargs") GeomFill_SimpleBound;
-		%feature("autodoc", "Constructs the boundary object defined by the 3d curve. the surface to be built along this boundary will be in the tolerance range defined by tol3d. this object is to be used as a boundary for a geomfill_constrainedfilling framework. dummy is initialized but has no function in this class. warning curve is an adapted curve, that is, an object which is an interface between: - the services provided by a 3d curve from the package geom - and those required of the curve by the computation algorithm which uses it. the adapted curve is created in one of the following ways: - first sequence: opencascade::handle<geom_curve> mycurve = ... ; opencascade::handle<geomadaptor_hcurve> curve = new geomadaptor_hcurve(mycurve); - second sequence: // step 1 opencascade::handle<geom_curve> mycurve = ... ; geomadaptor_curve crv (mycurve); // step 2 opencascade::handle<geomadaptor_hcurve> curve = new geomadaptor_hcurve(crv); you use the second part of this sequence if you already have the adapted curve crv. the boundary is then constructed with the curve object: standard_real tol = ... ; standard_real dummy = 0. ; myboundary = geomfill_simplebound (curve,tol,dummy);.
-
-Parameters
-----------
-Curve: Adaptor3d_HCurve
-Tol3d: float
-Tolang: float
-
-Returns
--------
-None
-") GeomFill_SimpleBound;
-		 GeomFill_SimpleBound(const opencascade::handle<Adaptor3d_HCurve> & Curve, const Standard_Real Tol3d, const Standard_Real Tolang);
 
 		/****************** IsDegenerated ******************/
 		%feature("compactdefaultargs") IsDegenerated;
@@ -9696,6 +9696,21 @@ None
 ****************************/
 class GeomFill_TgtOnCoons : public GeomFill_TgtField {
 	public:
+		/****************** GeomFill_TgtOnCoons ******************/
+		%feature("compactdefaultargs") GeomFill_TgtOnCoons;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+K: GeomFill_CoonsAlgPatch
+I: int
+
+Returns
+-------
+None
+") GeomFill_TgtOnCoons;
+		 GeomFill_TgtOnCoons(const opencascade::handle<GeomFill_CoonsAlgPatch> & K, const Standard_Integer I);
+
 		/****************** D1 ******************/
 		%feature("compactdefaultargs") D1;
 		%feature("autodoc", "Computes the derivative of the field of tangency at parameter w.
@@ -9725,21 +9740,6 @@ Returns
 None
 ") D1;
 		void D1(const Standard_Real W, gp_Vec & T, gp_Vec & DT);
-
-		/****************** GeomFill_TgtOnCoons ******************/
-		%feature("compactdefaultargs") GeomFill_TgtOnCoons;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-K: GeomFill_CoonsAlgPatch
-I: int
-
-Returns
--------
-None
-") GeomFill_TgtOnCoons;
-		 GeomFill_TgtOnCoons(const opencascade::handle<GeomFill_CoonsAlgPatch> & K, const Standard_Integer I);
 
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
@@ -9823,6 +9823,24 @@ None
 ********************************/
 class GeomFill_UniformSection : public GeomFill_SectionLaw {
 	public:
+		/****************** GeomFill_UniformSection ******************/
+		%feature("compactdefaultargs") GeomFill_UniformSection;
+		%feature("autodoc", "Make an constant law with c. [first, last] define law definition domain.
+
+Parameters
+----------
+C: Geom_Curve
+FirstParameter: float,optional
+	default value is 0.0
+LastParameter: float,optional
+	default value is 1.0
+
+Returns
+-------
+None
+") GeomFill_UniformSection;
+		 GeomFill_UniformSection(const opencascade::handle<Geom_Curve> & C, const Standard_Real FirstParameter = 0.0, const Standard_Real LastParameter = 1.0);
+
 		/****************** BSplineSurface ******************/
 		%feature("compactdefaultargs") BSplineSurface;
 		%feature("autodoc", "Give if possible an bspline surface, like iso-v are the section. if it is not possible this methode have to get an null surface. is it the default implementation.
@@ -9906,24 +9924,6 @@ Returns
 bool
 ") D2;
 		virtual Standard_Boolean D2(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-
-		/****************** GeomFill_UniformSection ******************/
-		%feature("compactdefaultargs") GeomFill_UniformSection;
-		%feature("autodoc", "Make an constant law with c. [first, last] define law definition domain.
-
-Parameters
-----------
-C: Geom_Curve
-FirstParameter: float,optional
-	default value is 0.0
-LastParameter: float,optional
-	default value is 1.0
-
-Returns
--------
-None
-") GeomFill_UniformSection;
-		 GeomFill_UniformSection(const opencascade::handle<Geom_Curve> & C, const Standard_Real FirstParameter = 0.0, const Standard_Real LastParameter = 1.0);
 
 		/****************** GetDomain ******************/
 		%feature("compactdefaultargs") GetDomain;
@@ -10144,6 +10144,20 @@ None
 **********************************/
 class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
 	public:
+		/****************** GeomFill_GuideTrihedronAC ******************/
+		%feature("compactdefaultargs") GeomFill_GuideTrihedronAC;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+guide: Adaptor3d_HCurve
+
+Returns
+-------
+None
+") GeomFill_GuideTrihedronAC;
+		 GeomFill_GuideTrihedronAC(const opencascade::handle<Adaptor3d_HCurve> & guide);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "No available documentation.
@@ -10213,20 +10227,6 @@ Returns
 bool
 ") D2;
 		virtual Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-
-		/****************** GeomFill_GuideTrihedronAC ******************/
-		%feature("compactdefaultargs") GeomFill_GuideTrihedronAC;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-guide: Adaptor3d_HCurve
-
-Returns
--------
-None
-") GeomFill_GuideTrihedronAC;
-		 GeomFill_GuideTrihedronAC(const opencascade::handle<Adaptor3d_HCurve> & guide);
 
 		/****************** GetAverageLaw ******************/
 		%feature("compactdefaultargs") GetAverageLaw;
@@ -10363,6 +10363,20 @@ None
 ************************************/
 class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
 	public:
+		/****************** GeomFill_GuideTrihedronPlan ******************/
+		%feature("compactdefaultargs") GeomFill_GuideTrihedronPlan;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+theGuide: Adaptor3d_HCurve
+
+Returns
+-------
+None
+") GeomFill_GuideTrihedronPlan;
+		 GeomFill_GuideTrihedronPlan(const opencascade::handle<Adaptor3d_HCurve> & theGuide);
+
 		/****************** Copy ******************/
 		%feature("compactdefaultargs") Copy;
 		%feature("autodoc", "No available documentation.
@@ -10442,20 +10456,6 @@ Returns
 GeomFill_PipeError
 ") ErrorStatus;
 		virtual GeomFill_PipeError ErrorStatus();
-
-		/****************** GeomFill_GuideTrihedronPlan ******************/
-		%feature("compactdefaultargs") GeomFill_GuideTrihedronPlan;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-theGuide: Adaptor3d_HCurve
-
-Returns
--------
-None
-") GeomFill_GuideTrihedronPlan;
-		 GeomFill_GuideTrihedronPlan(const opencascade::handle<Adaptor3d_HCurve> & theGuide);
 
 		/****************** GetAverageLaw ******************/
 		%feature("compactdefaultargs") GetAverageLaw;

@@ -43,8 +43,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topopebrep.html"
 #include<NCollection_module.hxx>
 #include<BRepTopAdaptor_module.hxx>
 #include<IntRes2d_module.hxx>
-#include<IntPatch_module.hxx>
 #include<IntSurf_module.hxx>
+#include<IntPatch_module.hxx>
 #include<TopOpeBRepDS_module.hxx>
 #include<TopoDS_module.hxx>
 #include<TopOpeBRepTool_module.hxx>
@@ -81,8 +81,8 @@ https://www.opencascade.com/doc/occt-7.4.0/refman/html/package_topopebrep.html"
 %import NCollection.i
 %import BRepTopAdaptor.i
 %import IntRes2d.i
-%import IntPatch.i
 %import IntSurf.i
+%import IntPatch.i
 %import TopOpeBRepDS.i
 %import TopoDS.i
 %import TopOpeBRepTool.i
@@ -155,8 +155,6 @@ class TopOpeBRep_TypeLineCurve:
 /* end handles declaration */
 
 /* templates */
-%template(TopOpeBRep_DataMapOfTopolTool) NCollection_DataMap<TopoDS_Shape,opencascade::handle<BRepTopAdaptor_TopolTool>,TopTools_ShapeMapHasher>;
-%template(TopOpeBRep_SequenceOfPoint2d) NCollection_Sequence<TopOpeBRep_Point2d>;
 %template(TopOpeBRep_Array1OfLineInter) NCollection_Array1<TopOpeBRep_LineInter>;
 
 %extend NCollection_Array1<TopOpeBRep_LineInter> {
@@ -192,8 +190,6 @@ class TopOpeBRep_TypeLineCurve:
     __next__ = next
     }
 };
-%template(TopOpeBRep_ListOfBipoint) NCollection_List<TopOpeBRep_Bipoint>;
-%template(TopOpeBRep_ListIteratorOfListOfBipoint) NCollection_TListIterator<TopOpeBRep_Bipoint>;
 %template(TopOpeBRep_Array1OfVPointInter) NCollection_Array1<TopOpeBRep_VPointInter>;
 
 %extend NCollection_Array1<TopOpeBRep_VPointInter> {
@@ -229,23 +225,27 @@ class TopOpeBRep_TypeLineCurve:
     __next__ = next
     }
 };
+%template(TopOpeBRep_DataMapOfTopolTool) NCollection_DataMap<TopoDS_Shape,opencascade::handle<BRepTopAdaptor_TopolTool>,TopTools_ShapeMapHasher>;
+%template(TopOpeBRep_ListIteratorOfListOfBipoint) NCollection_TListIterator<TopOpeBRep_Bipoint>;
+%template(TopOpeBRep_ListOfBipoint) NCollection_List<TopOpeBRep_Bipoint>;
+%template(TopOpeBRep_SequenceOfPoint2d) NCollection_Sequence<TopOpeBRep_Point2d>;
 /* end templates declaration */
 
 /* typedefs */
-typedef TopOpeBRep_FacesIntersector * TopOpeBRep_PFacesIntersector;
-typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<BRepTopAdaptor_TopolTool>, TopTools_ShapeMapHasher> TopOpeBRep_DataMapOfTopolTool;
-typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<BRepTopAdaptor_TopolTool>, TopTools_ShapeMapHasher>::Iterator TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool;
-typedef NCollection_Sequence<TopOpeBRep_Point2d> TopOpeBRep_SequenceOfPoint2d;
-typedef TopOpeBRep_FacesFiller * TopOpeBRep_PFacesFiller;
-typedef TopOpeBRep_LineInter * TopOpeBRep_PLineInter;
 typedef NCollection_Array1<TopOpeBRep_LineInter> TopOpeBRep_Array1OfLineInter;
-typedef NCollection_List<TopOpeBRep_Bipoint> TopOpeBRep_ListOfBipoint;
-typedef NCollection_List<TopOpeBRep_Bipoint>::Iterator TopOpeBRep_ListIteratorOfListOfBipoint;
-typedef IntRes2d_IntersectionPoint * TopOpeBRep_PIntRes2d_IntersectionPoint;
-typedef IntPatch_Point * TopOpeBRep_PThePointOfIntersection;
-typedef TopOpeBRep_EdgesIntersector * TopOpeBRep_PEdgesIntersector;
-typedef IntSurf_PntOn2S * TopOpeBRep_PPntOn2S;
 typedef NCollection_Array1<TopOpeBRep_VPointInter> TopOpeBRep_Array1OfVPointInter;
+typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<BRepTopAdaptor_TopolTool>, TopTools_ShapeMapHasher>::Iterator TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool;
+typedef NCollection_DataMap<TopoDS_Shape, opencascade::handle<BRepTopAdaptor_TopolTool>, TopTools_ShapeMapHasher> TopOpeBRep_DataMapOfTopolTool;
+typedef NCollection_List<TopOpeBRep_Bipoint>::Iterator TopOpeBRep_ListIteratorOfListOfBipoint;
+typedef NCollection_List<TopOpeBRep_Bipoint> TopOpeBRep_ListOfBipoint;
+typedef TopOpeBRep_EdgesIntersector * TopOpeBRep_PEdgesIntersector;
+typedef TopOpeBRep_FacesFiller * TopOpeBRep_PFacesFiller;
+typedef TopOpeBRep_FacesIntersector * TopOpeBRep_PFacesIntersector;
+typedef IntRes2d_IntersectionPoint * TopOpeBRep_PIntRes2d_IntersectionPoint;
+typedef TopOpeBRep_LineInter * TopOpeBRep_PLineInter;
+typedef IntSurf_PntOn2S * TopOpeBRep_PPntOn2S;
+typedef IntPatch_Point * TopOpeBRep_PThePointOfIntersection;
+typedef NCollection_Sequence<TopOpeBRep_Point2d> TopOpeBRep_SequenceOfPoint2d;
 /* end typedefs declaration */
 
 /*******************
@@ -268,26 +268,6 @@ class TopOpeBRep {
 ***************************/
 class TopOpeBRep_Bipoint {
 	public:
-		/****************** I1 ******************/
-		%feature("compactdefaultargs") I1;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-int
-") I1;
-		Standard_Integer I1();
-
-		/****************** I2 ******************/
-		%feature("compactdefaultargs") I2;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-int
-") I2;
-		Standard_Integer I2();
-
 		/****************** TopOpeBRep_Bipoint ******************/
 		%feature("compactdefaultargs") TopOpeBRep_Bipoint;
 		%feature("autodoc", "No available documentation.
@@ -313,6 +293,26 @@ None
 ") TopOpeBRep_Bipoint;
 		 TopOpeBRep_Bipoint(const Standard_Integer I1, const Standard_Integer I2);
 
+		/****************** I1 ******************/
+		%feature("compactdefaultargs") I1;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") I1;
+		Standard_Integer I1();
+
+		/****************** I2 ******************/
+		%feature("compactdefaultargs") I2;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+int
+") I2;
+		Standard_Integer I2();
+
 };
 
 
@@ -327,6 +327,16 @@ None
 ****************************/
 class TopOpeBRep_DSFiller {
 	public:
+		/****************** TopOpeBRep_DSFiller ******************/
+		%feature("compactdefaultargs") TopOpeBRep_DSFiller;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_DSFiller;
+		 TopOpeBRep_DSFiller();
+
 		/****************** ChangeEdgesFiller ******************/
 		%feature("compactdefaultargs") ChangeEdgesFiller;
 		%feature("autodoc", "No available documentation.
@@ -615,16 +625,6 @@ None
 ") RemoveUnsharedGeometry;
 		void RemoveUnsharedGeometry(const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
 
-		/****************** TopOpeBRep_DSFiller ******************/
-		%feature("compactdefaultargs") TopOpeBRep_DSFiller;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_DSFiller;
-		 TopOpeBRep_DSFiller();
-
 };
 
 
@@ -639,6 +639,16 @@ None
 *******************************/
 class TopOpeBRep_EdgesFiller {
 	public:
+		/****************** TopOpeBRep_EdgesFiller ******************/
+		%feature("compactdefaultargs") TopOpeBRep_EdgesFiller;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_EdgesFiller;
+		 TopOpeBRep_EdgesFiller();
+
 		/****************** Face ******************/
 		%feature("compactdefaultargs") Face;
 		%feature("autodoc", "No available documentation.
@@ -685,16 +695,6 @@ None
 ") Insert;
 		void Insert(const TopoDS_Shape & E1, const TopoDS_Shape & E2, TopOpeBRep_EdgesIntersector & EI, const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
 
-		/****************** TopOpeBRep_EdgesFiller ******************/
-		%feature("compactdefaultargs") TopOpeBRep_EdgesFiller;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_EdgesFiller;
-		 TopOpeBRep_EdgesFiller();
-
 };
 
 
@@ -709,6 +709,16 @@ None
 ************************************/
 class TopOpeBRep_EdgesIntersector {
 	public:
+		/****************** TopOpeBRep_EdgesIntersector ******************/
+		%feature("compactdefaultargs") TopOpeBRep_EdgesIntersector;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_EdgesIntersector;
+		 TopOpeBRep_EdgesIntersector();
+
 		/****************** Curve ******************/
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "No available documentation.
@@ -1061,16 +1071,6 @@ None
 ") Tolerances;
 		void Tolerances(Standard_Real &OutValue, Standard_Real &OutValue);
 
-		/****************** TopOpeBRep_EdgesIntersector ******************/
-		%feature("compactdefaultargs") TopOpeBRep_EdgesIntersector;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_EdgesIntersector;
-		 TopOpeBRep_EdgesIntersector();
-
 };
 
 
@@ -1089,6 +1089,20 @@ None
 ****************************/
 class TopOpeBRep_FFDumper : public Standard_Transient {
 	public:
+		/****************** TopOpeBRep_FFDumper ******************/
+		%feature("compactdefaultargs") TopOpeBRep_FFDumper;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+PFF: TopOpeBRep_PFacesFiller
+
+Returns
+-------
+None
+") TopOpeBRep_FFDumper;
+		 TopOpeBRep_FFDumper(const TopOpeBRep_PFacesFiller & PFF);
+
 		/****************** DumpDSP ******************/
 		%feature("compactdefaultargs") DumpDSP;
 		%feature("autodoc", "No available documentation.
@@ -1202,20 +1216,6 @@ TopOpeBRep_PFacesFiller
 ") PFacesFillerDummy;
 		TopOpeBRep_PFacesFiller PFacesFillerDummy();
 
-		/****************** TopOpeBRep_FFDumper ******************/
-		%feature("compactdefaultargs") TopOpeBRep_FFDumper;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-PFF: TopOpeBRep_PFacesFiller
-
-Returns
--------
-None
-") TopOpeBRep_FFDumper;
-		 TopOpeBRep_FFDumper(const TopOpeBRep_PFacesFiller & PFF);
-
 };
 
 
@@ -1327,6 +1327,16 @@ TopOpeBRepDS_Transition
 **********************************/
 class TopOpeBRep_FaceEdgeFiller {
 	public:
+		/****************** TopOpeBRep_FaceEdgeFiller ******************/
+		%feature("compactdefaultargs") TopOpeBRep_FaceEdgeFiller;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_FaceEdgeFiller;
+		 TopOpeBRep_FaceEdgeFiller();
+
 		/****************** Insert ******************/
 		%feature("compactdefaultargs") Insert;
 		%feature("autodoc", "No available documentation.
@@ -1344,16 +1354,6 @@ None
 ") Insert;
 		void Insert(const TopoDS_Shape & F, const TopoDS_Shape & E, TopOpeBRep_FaceEdgeIntersector & FEINT, const opencascade::handle<TopOpeBRepDS_HDataStructure> & HDS);
 
-		/****************** TopOpeBRep_FaceEdgeFiller ******************/
-		%feature("compactdefaultargs") TopOpeBRep_FaceEdgeFiller;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_FaceEdgeFiller;
-		 TopOpeBRep_FaceEdgeFiller();
-
 };
 
 
@@ -1368,6 +1368,16 @@ None
 ***************************************/
 class TopOpeBRep_FaceEdgeIntersector {
 	public:
+		/****************** TopOpeBRep_FaceEdgeIntersector ******************/
+		%feature("compactdefaultargs") TopOpeBRep_FaceEdgeIntersector;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_FaceEdgeIntersector;
+		 TopOpeBRep_FaceEdgeIntersector();
+
 		/****************** ForceTolerance ******************/
 		%feature("compactdefaultargs") ForceTolerance;
 		%feature("autodoc", "Force the tolerance values used by the next perform(s1,s2) call.
@@ -1533,16 +1543,6 @@ float
 ") Tolerance;
 		Standard_Real Tolerance();
 
-		/****************** TopOpeBRep_FaceEdgeIntersector ******************/
-		%feature("compactdefaultargs") TopOpeBRep_FaceEdgeIntersector;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_FaceEdgeIntersector;
-		 TopOpeBRep_FaceEdgeIntersector();
-
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
 		%feature("autodoc", "Index = 1 transition par rapport a la face, en cheminant sur l'arete.
@@ -1596,6 +1596,16 @@ gp_Pnt
 *******************************/
 class TopOpeBRep_FacesFiller {
 	public:
+		/****************** TopOpeBRep_FacesFiller ******************/
+		%feature("compactdefaultargs") TopOpeBRep_FacesFiller;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_FacesFiller;
+		 TopOpeBRep_FacesFiller();
+
 		/****************** AddShapesLine ******************/
 		%feature("compactdefaultargs") AddShapesLine;
 		%feature("autodoc", "Compute 3d curve, pcurves and face/curve interferences for current ndsc. add them to the ds.
@@ -2154,16 +2164,6 @@ None
 ") StoreCurveInterference;
 		void StoreCurveInterference(const opencascade::handle<TopOpeBRepDS_Interference> & I);
 
-		/****************** TopOpeBRep_FacesFiller ******************/
-		%feature("compactdefaultargs") TopOpeBRep_FacesFiller;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_FacesFiller;
-		 TopOpeBRep_FacesFiller();
-
 		/****************** TransvpOK ******************/
 		%feature("compactdefaultargs") TransvpOK;
 		%feature("autodoc", "Computes transition on line for vp<ivp> on edge restriction of <si>. if <isinout> : returns <true> if transition computed is in/out else : returns <true> if transition computed is out/in.
@@ -2285,6 +2285,16 @@ None
 ************************************/
 class TopOpeBRep_FacesIntersector {
 	public:
+		/****************** TopOpeBRep_FacesIntersector ******************/
+		%feature("compactdefaultargs") TopOpeBRep_FacesIntersector;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_FacesIntersector;
+		 TopOpeBRep_FacesIntersector();
+
 		/****************** ChangeLine ******************/
 		%feature("compactdefaultargs") ChangeLine;
 		%feature("autodoc", "No available documentation.
@@ -2519,16 +2529,6 @@ bool
 ") SurfacesSameOriented;
 		Standard_Boolean SurfacesSameOriented();
 
-		/****************** TopOpeBRep_FacesIntersector ******************/
-		%feature("compactdefaultargs") TopOpeBRep_FacesIntersector;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_FacesIntersector;
-		 TopOpeBRep_FacesIntersector();
-
 };
 
 
@@ -2628,6 +2628,16 @@ None
 ****************************/
 class TopOpeBRep_Hctxee2d : public Standard_Transient {
 	public:
+		/****************** TopOpeBRep_Hctxee2d ******************/
+		%feature("compactdefaultargs") TopOpeBRep_Hctxee2d;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_Hctxee2d;
+		 TopOpeBRep_Hctxee2d();
+
 		/****************** Curve ******************/
 		%feature("compactdefaultargs") Curve;
 		%feature("autodoc", "No available documentation.
@@ -2687,16 +2697,6 @@ None
 ") SetEdges;
 		void SetEdges(const TopoDS_Edge & E1, const TopoDS_Edge & E2, const BRepAdaptor_Surface & BAS1, const BRepAdaptor_Surface & BAS2);
 
-		/****************** TopOpeBRep_Hctxee2d ******************/
-		%feature("compactdefaultargs") TopOpeBRep_Hctxee2d;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_Hctxee2d;
-		 TopOpeBRep_Hctxee2d();
-
 };
 
 
@@ -2713,6 +2713,16 @@ None
 ****************************/
 class TopOpeBRep_Hctxff2d : public Standard_Transient {
 	public:
+		/****************** TopOpeBRep_Hctxff2d ******************/
+		%feature("compactdefaultargs") TopOpeBRep_Hctxff2d;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_Hctxff2d;
+		 TopOpeBRep_Hctxff2d();
+
 		/****************** Face ******************/
 		%feature("compactdefaultargs") Face;
 		%feature("autodoc", "No available documentation.
@@ -2845,16 +2855,6 @@ bool
 ") SurfacesSameOriented;
 		Standard_Boolean SurfacesSameOriented();
 
-		/****************** TopOpeBRep_Hctxff2d ******************/
-		%feature("compactdefaultargs") TopOpeBRep_Hctxff2d;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_Hctxff2d;
-		 TopOpeBRep_Hctxff2d();
-
 };
 
 
@@ -2871,6 +2871,16 @@ None
 *****************************/
 class TopOpeBRep_LineInter {
 	public:
+		/****************** TopOpeBRep_LineInter ******************/
+		%feature("compactdefaultargs") TopOpeBRep_LineInter;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_LineInter;
+		 TopOpeBRep_LineInter();
+
 		/****************** Arc ******************/
 		%feature("compactdefaultargs") Arc;
 		%feature("autodoc", "Returns the edge of a restriction line (or a null edge).
@@ -3322,16 +3332,6 @@ IntSurf_Situation
 ") SituationS2;
 		IntSurf_Situation SituationS2();
 
-		/****************** TopOpeBRep_LineInter ******************/
-		%feature("compactdefaultargs") TopOpeBRep_LineInter;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_LineInter;
-		 TopOpeBRep_LineInter();
-
 		/****************** TransitionOnS1 ******************/
 		%feature("compactdefaultargs") TransitionOnS1;
 		%feature("autodoc", "No available documentation.
@@ -3420,6 +3420,16 @@ TopOpeBRep_WPointInter
 ***************************/
 class TopOpeBRep_Point2d {
 	public:
+		/****************** TopOpeBRep_Point2d ******************/
+		%feature("compactdefaultargs") TopOpeBRep_Point2d;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_Point2d;
+		 TopOpeBRep_Point2d();
+
 		/****************** ChangeTransition ******************/
 		%feature("compactdefaultargs") ChangeTransition;
 		%feature("autodoc", "No available documentation.
@@ -3823,16 +3833,6 @@ float
 ") Tolerance;
 		Standard_Real Tolerance();
 
-		/****************** TopOpeBRep_Point2d ******************/
-		%feature("compactdefaultargs") TopOpeBRep_Point2d;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_Point2d;
-		 TopOpeBRep_Point2d();
-
 		/****************** Transition ******************/
 		%feature("compactdefaultargs") Transition;
 		%feature("autodoc", "No available documentation.
@@ -3895,6 +3895,16 @@ TopoDS_Vertex
 ***********************************/
 class TopOpeBRep_PointClassifier {
 	public:
+		/****************** TopOpeBRep_PointClassifier ******************/
+		%feature("compactdefaultargs") TopOpeBRep_PointClassifier;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_PointClassifier;
+		 TopOpeBRep_PointClassifier();
+
 		/****************** Classify ******************/
 		%feature("compactdefaultargs") Classify;
 		%feature("autodoc", "Compute position of point <p> regarding with the face <f>.
@@ -3944,16 +3954,6 @@ Returns
 TopAbs_State
 ") State;
 		TopAbs_State State();
-
-		/****************** TopOpeBRep_PointClassifier ******************/
-		%feature("compactdefaultargs") TopOpeBRep_PointClassifier;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_PointClassifier;
-		 TopOpeBRep_PointClassifier();
 
 };
 
@@ -4054,6 +4054,16 @@ TopOpeBRepDS_Point
 ************************************/
 class TopOpeBRep_ShapeIntersector {
 	public:
+		/****************** TopOpeBRep_ShapeIntersector ******************/
+		%feature("compactdefaultargs") TopOpeBRep_ShapeIntersector;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_ShapeIntersector;
+		 TopOpeBRep_ShapeIntersector();
+
 		/****************** ChangeEdgesIntersector ******************/
 		%feature("compactdefaultargs") ChangeEdgesIntersector;
 		%feature("autodoc", "Return the current intersection of two edges.
@@ -4223,16 +4233,6 @@ TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape(const Standard_Integer Index);
 
-		/****************** TopOpeBRep_ShapeIntersector ******************/
-		%feature("compactdefaultargs") TopOpeBRep_ShapeIntersector;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_ShapeIntersector;
-		 TopOpeBRep_ShapeIntersector();
-
 };
 
 
@@ -4247,6 +4247,16 @@ None
 **************************************/
 class TopOpeBRep_ShapeIntersector2d {
 	public:
+		/****************** TopOpeBRep_ShapeIntersector2d ******************/
+		%feature("compactdefaultargs") TopOpeBRep_ShapeIntersector2d;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_ShapeIntersector2d;
+		 TopOpeBRep_ShapeIntersector2d();
+
 		/****************** ChangeEdgesIntersector ******************/
 		%feature("compactdefaultargs") ChangeEdgesIntersector;
 		%feature("autodoc", "Return the current intersection of two edges.
@@ -4348,16 +4358,6 @@ TopoDS_Shape
 ") Shape;
 		const TopoDS_Shape Shape(const Standard_Integer Index);
 
-		/****************** TopOpeBRep_ShapeIntersector2d ******************/
-		%feature("compactdefaultargs") TopOpeBRep_ShapeIntersector2d;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_ShapeIntersector2d;
-		 TopOpeBRep_ShapeIntersector2d();
-
 };
 
 
@@ -4372,6 +4372,16 @@ None
 ********************************/
 class TopOpeBRep_ShapeScanner {
 	public:
+		/****************** TopOpeBRep_ShapeScanner ******************/
+		%feature("compactdefaultargs") TopOpeBRep_ShapeScanner;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_ShapeScanner;
+		 TopOpeBRep_ShapeScanner();
+
 		/****************** AddBoxesMakeCOB ******************/
 		%feature("compactdefaultargs") AddBoxesMakeCOB;
 		%feature("autodoc", "No available documentation.
@@ -4495,16 +4505,6 @@ None
 ") Next;
 		void Next();
 
-		/****************** TopOpeBRep_ShapeScanner ******************/
-		%feature("compactdefaultargs") TopOpeBRep_ShapeScanner;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_ShapeScanner;
-		 TopOpeBRep_ShapeScanner();
-
 };
 
 
@@ -4519,6 +4519,16 @@ None
 *******************************/
 class TopOpeBRep_VPointInter {
 	public:
+		/****************** TopOpeBRep_VPointInter ******************/
+		%feature("compactdefaultargs") TopOpeBRep_VPointInter;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_VPointInter;
+		 TopOpeBRep_VPointInter();
+
 		/****************** ArcOnS1 ******************/
 		%feature("compactdefaultargs") ArcOnS1;
 		%feature("autodoc", "No available documentation.
@@ -4953,16 +4963,6 @@ float
 ") Tolerance;
 		Standard_Real Tolerance();
 
-		/****************** TopOpeBRep_VPointInter ******************/
-		%feature("compactdefaultargs") TopOpeBRep_VPointInter;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_VPointInter;
-		 TopOpeBRep_VPointInter();
-
 		/****************** TransitionLineArc1 ******************/
 		%feature("compactdefaultargs") TransitionLineArc1;
 		%feature("autodoc", "No available documentation.
@@ -5071,6 +5071,16 @@ TopoDS_Shape
 *****************************************/
 class TopOpeBRep_VPointInterClassifier {
 	public:
+		/****************** TopOpeBRep_VPointInterClassifier ******************/
+		%feature("compactdefaultargs") TopOpeBRep_VPointInterClassifier;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_VPointInterClassifier;
+		 TopOpeBRep_VPointInterClassifier();
+
 		/****************** Edge ******************/
 		%feature("compactdefaultargs") Edge;
 		%feature("autodoc", "Returns the edge containing the vpoint <vp> used in the last vpointposition() call. edge is defined if the state previously computed is on, else edge is a null shape.
@@ -5090,16 +5100,6 @@ Returns
 float
 ") EdgeParameter;
 		Standard_Real EdgeParameter();
-
-		/****************** TopOpeBRep_VPointInterClassifier ******************/
-		%feature("compactdefaultargs") TopOpeBRep_VPointInterClassifier;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_VPointInterClassifier;
-		 TopOpeBRep_VPointInterClassifier();
 
 		/****************** VPointPosition ******************/
 		%feature("compactdefaultargs") VPointPosition;
@@ -5134,6 +5134,30 @@ TopAbs_State
 ***************************************/
 class TopOpeBRep_VPointInterIterator {
 	public:
+		/****************** TopOpeBRep_VPointInterIterator ******************/
+		%feature("compactdefaultargs") TopOpeBRep_VPointInterIterator;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_VPointInterIterator;
+		 TopOpeBRep_VPointInterIterator();
+
+		/****************** TopOpeBRep_VPointInterIterator ******************/
+		%feature("compactdefaultargs") TopOpeBRep_VPointInterIterator;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+LI: TopOpeBRep_LineInter
+
+Returns
+-------
+None
+") TopOpeBRep_VPointInterIterator;
+		 TopOpeBRep_VPointInterIterator(const TopOpeBRep_LineInter & LI);
+
 		/****************** ChangeCurrentVP ******************/
 		%feature("compactdefaultargs") ChangeCurrentVP;
 		%feature("autodoc", "No available documentation.
@@ -5220,30 +5244,6 @@ TopOpeBRep_PLineInter
 ") PLineInterDummy;
 		TopOpeBRep_PLineInter PLineInterDummy();
 
-		/****************** TopOpeBRep_VPointInterIterator ******************/
-		%feature("compactdefaultargs") TopOpeBRep_VPointInterIterator;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_VPointInterIterator;
-		 TopOpeBRep_VPointInterIterator();
-
-		/****************** TopOpeBRep_VPointInterIterator ******************/
-		%feature("compactdefaultargs") TopOpeBRep_VPointInterIterator;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-LI: TopOpeBRep_LineInter
-
-Returns
--------
-None
-") TopOpeBRep_VPointInterIterator;
-		 TopOpeBRep_VPointInterIterator(const TopOpeBRep_LineInter & LI);
-
 };
 
 
@@ -5258,6 +5258,16 @@ None
 *******************************/
 class TopOpeBRep_WPointInter {
 	public:
+		/****************** TopOpeBRep_WPointInter ******************/
+		%feature("compactdefaultargs") TopOpeBRep_WPointInter;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_WPointInter;
+		 TopOpeBRep_WPointInter();
+
 		/****************** PPntOn2SDummy ******************/
 		%feature("compactdefaultargs") PPntOn2SDummy;
 		%feature("autodoc", "No available documentation.
@@ -5329,16 +5339,6 @@ None
 ") Set;
 		void Set(const IntSurf_PntOn2S & P);
 
-		/****************** TopOpeBRep_WPointInter ******************/
-		%feature("compactdefaultargs") TopOpeBRep_WPointInter;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_WPointInter;
-		 TopOpeBRep_WPointInter();
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -5383,6 +5383,30 @@ gp_Pnt2d
 ***************************************/
 class TopOpeBRep_WPointInterIterator {
 	public:
+		/****************** TopOpeBRep_WPointInterIterator ******************/
+		%feature("compactdefaultargs") TopOpeBRep_WPointInterIterator;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") TopOpeBRep_WPointInterIterator;
+		 TopOpeBRep_WPointInterIterator();
+
+		/****************** TopOpeBRep_WPointInterIterator ******************/
+		%feature("compactdefaultargs") TopOpeBRep_WPointInterIterator;
+		%feature("autodoc", "No available documentation.
+
+Parameters
+----------
+LI: TopOpeBRep_LineInter
+
+Returns
+-------
+None
+") TopOpeBRep_WPointInterIterator;
+		 TopOpeBRep_WPointInterIterator(const TopOpeBRep_LineInter & LI);
+
 		/****************** CurrentWP ******************/
 		%feature("compactdefaultargs") CurrentWP;
 		%feature("autodoc", "No available documentation.
@@ -5446,30 +5470,6 @@ Returns
 TopOpeBRep_PLineInter
 ") PLineInterDummy;
 		TopOpeBRep_PLineInter PLineInterDummy();
-
-		/****************** TopOpeBRep_WPointInterIterator ******************/
-		%feature("compactdefaultargs") TopOpeBRep_WPointInterIterator;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") TopOpeBRep_WPointInterIterator;
-		 TopOpeBRep_WPointInterIterator();
-
-		/****************** TopOpeBRep_WPointInterIterator ******************/
-		%feature("compactdefaultargs") TopOpeBRep_WPointInterIterator;
-		%feature("autodoc", "No available documentation.
-
-Parameters
-----------
-LI: TopOpeBRep_LineInter
-
-Returns
--------
-None
-") TopOpeBRep_WPointInterIterator;
-		 TopOpeBRep_WPointInterIterator(const TopOpeBRep_LineInter & LI);
 
 };
 

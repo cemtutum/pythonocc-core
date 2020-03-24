@@ -244,324 +244,9 @@ class StepVisual_MarkerType:
 /* end handles declaration */
 
 /* templates */
-%template(StepVisual_Array1OfTessellatedItem) NCollection_Array1<opencascade::handle<StepVisual_TessellatedItem>>;
-
-%extend NCollection_Array1<opencascade::handle<StepVisual_TessellatedItem>> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepVisual_Array1OfLayeredItem) NCollection_Array1<StepVisual_LayeredItem>;
-
-%extend NCollection_Array1<StepVisual_LayeredItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
 %template(StepVisual_Array1OfAnnotationPlaneElement) NCollection_Array1<StepVisual_AnnotationPlaneElement>;
 
 %extend NCollection_Array1<StepVisual_AnnotationPlaneElement> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepVisual_Array1OfPresentationStyleAssignment) NCollection_Array1<opencascade::handle<StepVisual_PresentationStyleAssignment>>;
-
-%extend NCollection_Array1<opencascade::handle<StepVisual_PresentationStyleAssignment>> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepVisual_Array1OfSurfaceStyleElementSelect) NCollection_Array1<StepVisual_SurfaceStyleElementSelect>;
-
-%extend NCollection_Array1<StepVisual_SurfaceStyleElementSelect> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepVisual_Array1OfInvisibleItem) NCollection_Array1<StepVisual_InvisibleItem>;
-
-%extend NCollection_Array1<StepVisual_InvisibleItem> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepVisual_Array1OfCameraModelD3MultiClippingInterectionSelect) NCollection_Array1<StepVisual_CameraModelD3MultiClippingInterectionSelect>;
-
-%extend NCollection_Array1<StepVisual_CameraModelD3MultiClippingInterectionSelect> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepVisual_Array1OfTextOrCharacter) NCollection_Array1<StepVisual_TextOrCharacter>;
-
-%extend NCollection_Array1<StepVisual_TextOrCharacter> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepVisual_Array1OfCameraModelD3MultiClippingUnionSelect) NCollection_Array1<StepVisual_CameraModelD3MultiClippingUnionSelect>;
-
-%extend NCollection_Array1<StepVisual_CameraModelD3MultiClippingUnionSelect> {
-    %pythoncode {
-    def __getitem__(self, index):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            return self.Value(index + self.Lower())
-
-    def __setitem__(self, index, value):
-        if index + self.Lower() > self.Upper():
-            raise IndexError("index out of range")
-        else:
-            self.SetValue(index + self.Lower(), value)
-
-    def __len__(self):
-        return self.Length()
-
-    def __iter__(self):
-        self.low = self.Lower()
-        self.up = self.Upper()
-        self.current = self.Lower() - 1
-        return self
-
-    def next(self):
-        if self.current >= self.Upper():
-            raise StopIteration
-        else:
-            self.current += 1
-        return self.Value(self.current)
-
-    __next__ = next
-    }
-};
-%template(StepVisual_Array1OfPresentationStyleSelect) NCollection_Array1<StepVisual_PresentationStyleSelect>;
-
-%extend NCollection_Array1<StepVisual_PresentationStyleSelect> {
     %pythoncode {
     def __getitem__(self, index):
         if index + self.Lower() > self.Upper():
@@ -629,6 +314,76 @@ class StepVisual_MarkerType:
     __next__ = next
     }
 };
+%template(StepVisual_Array1OfCameraModelD3MultiClippingInterectionSelect) NCollection_Array1<StepVisual_CameraModelD3MultiClippingInterectionSelect>;
+
+%extend NCollection_Array1<StepVisual_CameraModelD3MultiClippingInterectionSelect> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepVisual_Array1OfCameraModelD3MultiClippingUnionSelect) NCollection_Array1<StepVisual_CameraModelD3MultiClippingUnionSelect>;
+
+%extend NCollection_Array1<StepVisual_CameraModelD3MultiClippingUnionSelect> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
 %template(StepVisual_Array1OfCurveStyleFontPattern) NCollection_Array1<opencascade::handle<StepVisual_CurveStyleFontPattern>>;
 
 %extend NCollection_Array1<opencascade::handle<StepVisual_CurveStyleFontPattern>> {
@@ -664,7 +419,6 @@ class StepVisual_MarkerType:
     __next__ = next
     }
 };
-%template(StepVisual_VectorOfHSequenceOfInteger) NCollection_Vector<opencascade::handle<TColStd_HSequenceOfInteger>>;
 %template(StepVisual_Array1OfDirectionCountSelect) NCollection_Array1<StepVisual_DirectionCountSelect>;
 
 %extend NCollection_Array1<StepVisual_DirectionCountSelect> {
@@ -770,6 +524,146 @@ class StepVisual_MarkerType:
     __next__ = next
     }
 };
+%template(StepVisual_Array1OfInvisibleItem) NCollection_Array1<StepVisual_InvisibleItem>;
+
+%extend NCollection_Array1<StepVisual_InvisibleItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepVisual_Array1OfLayeredItem) NCollection_Array1<StepVisual_LayeredItem>;
+
+%extend NCollection_Array1<StepVisual_LayeredItem> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepVisual_Array1OfPresentationStyleAssignment) NCollection_Array1<opencascade::handle<StepVisual_PresentationStyleAssignment>>;
+
+%extend NCollection_Array1<opencascade::handle<StepVisual_PresentationStyleAssignment>> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepVisual_Array1OfPresentationStyleSelect) NCollection_Array1<StepVisual_PresentationStyleSelect>;
+
+%extend NCollection_Array1<StepVisual_PresentationStyleSelect> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
 %template(StepVisual_Array1OfStyleContextSelect) NCollection_Array1<StepVisual_StyleContextSelect>;
 
 %extend NCollection_Array1<StepVisual_StyleContextSelect> {
@@ -805,26 +699,132 @@ class StepVisual_MarkerType:
     __next__ = next
     }
 };
+%template(StepVisual_Array1OfSurfaceStyleElementSelect) NCollection_Array1<StepVisual_SurfaceStyleElementSelect>;
+
+%extend NCollection_Array1<StepVisual_SurfaceStyleElementSelect> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepVisual_Array1OfTessellatedItem) NCollection_Array1<opencascade::handle<StepVisual_TessellatedItem>>;
+
+%extend NCollection_Array1<opencascade::handle<StepVisual_TessellatedItem>> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepVisual_Array1OfTextOrCharacter) NCollection_Array1<StepVisual_TextOrCharacter>;
+
+%extend NCollection_Array1<StepVisual_TextOrCharacter> {
+    %pythoncode {
+    def __getitem__(self, index):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            return self.Value(index + self.Lower())
+
+    def __setitem__(self, index, value):
+        if index + self.Lower() > self.Upper():
+            raise IndexError("index out of range")
+        else:
+            self.SetValue(index + self.Lower(), value)
+
+    def __len__(self):
+        return self.Length()
+
+    def __iter__(self):
+        self.low = self.Lower()
+        self.up = self.Upper()
+        self.current = self.Lower() - 1
+        return self
+
+    def next(self):
+        if self.current >= self.Upper():
+            raise StopIteration
+        else:
+            self.current += 1
+        return self.Value(self.current)
+
+    __next__ = next
+    }
+};
+%template(StepVisual_VectorOfHSequenceOfInteger) NCollection_Vector<opencascade::handle<TColStd_HSequenceOfInteger>>;
 /* end templates declaration */
 
 /* typedefs */
-typedef NCollection_Array1<opencascade::handle<StepVisual_TessellatedItem>> StepVisual_Array1OfTessellatedItem;
-typedef NCollection_Array1<StepVisual_LayeredItem> StepVisual_Array1OfLayeredItem;
 typedef NCollection_Array1<StepVisual_AnnotationPlaneElement> StepVisual_Array1OfAnnotationPlaneElement;
-typedef NCollection_Array1<opencascade::handle<StepVisual_PresentationStyleAssignment>> StepVisual_Array1OfPresentationStyleAssignment;
-typedef NCollection_Array1<StepVisual_SurfaceStyleElementSelect> StepVisual_Array1OfSurfaceStyleElementSelect;
-typedef NCollection_Array1<StepVisual_InvisibleItem> StepVisual_Array1OfInvisibleItem;
-typedef NCollection_Array1<StepVisual_CameraModelD3MultiClippingInterectionSelect> StepVisual_Array1OfCameraModelD3MultiClippingInterectionSelect;
-typedef NCollection_Array1<StepVisual_TextOrCharacter> StepVisual_Array1OfTextOrCharacter;
-typedef NCollection_Array1<StepVisual_CameraModelD3MultiClippingUnionSelect> StepVisual_Array1OfCameraModelD3MultiClippingUnionSelect;
-typedef NCollection_Array1<StepVisual_PresentationStyleSelect> StepVisual_Array1OfPresentationStyleSelect;
 typedef NCollection_Array1<StepVisual_BoxCharacteristicSelect> StepVisual_Array1OfBoxCharacteristicSelect;
+typedef NCollection_Array1<StepVisual_CameraModelD3MultiClippingInterectionSelect> StepVisual_Array1OfCameraModelD3MultiClippingInterectionSelect;
+typedef NCollection_Array1<StepVisual_CameraModelD3MultiClippingUnionSelect> StepVisual_Array1OfCameraModelD3MultiClippingUnionSelect;
 typedef NCollection_Array1<opencascade::handle<StepVisual_CurveStyleFontPattern>> StepVisual_Array1OfCurveStyleFontPattern;
-typedef NCollection_Vector<opencascade::handle<TColStd_HSequenceOfInteger>> StepVisual_VectorOfHSequenceOfInteger;
 typedef NCollection_Array1<StepVisual_DirectionCountSelect> StepVisual_Array1OfDirectionCountSelect;
 typedef NCollection_Array1<StepVisual_DraughtingCalloutElement> StepVisual_Array1OfDraughtingCalloutElement;
 typedef NCollection_Array1<StepVisual_FillStyleSelect> StepVisual_Array1OfFillStyleSelect;
+typedef NCollection_Array1<StepVisual_InvisibleItem> StepVisual_Array1OfInvisibleItem;
+typedef NCollection_Array1<StepVisual_LayeredItem> StepVisual_Array1OfLayeredItem;
+typedef NCollection_Array1<opencascade::handle<StepVisual_PresentationStyleAssignment>> StepVisual_Array1OfPresentationStyleAssignment;
+typedef NCollection_Array1<StepVisual_PresentationStyleSelect> StepVisual_Array1OfPresentationStyleSelect;
 typedef NCollection_Array1<StepVisual_StyleContextSelect> StepVisual_Array1OfStyleContextSelect;
+typedef NCollection_Array1<StepVisual_SurfaceStyleElementSelect> StepVisual_Array1OfSurfaceStyleElementSelect;
+typedef NCollection_Array1<opencascade::handle<StepVisual_TessellatedItem>> StepVisual_Array1OfTessellatedItem;
+typedef NCollection_Array1<StepVisual_TextOrCharacter> StepVisual_Array1OfTextOrCharacter;
+typedef NCollection_Vector<opencascade::handle<TColStd_HSequenceOfInteger>> StepVisual_VectorOfHSequenceOfInteger;
 /* end typedefs declaration */
 
 /**************************************
@@ -858,6 +858,16 @@ None
 ******************************************/
 class StepVisual_AnnotationPlaneElement : public StepData_SelectType {
 	public:
+		/****************** StepVisual_AnnotationPlaneElement ******************/
+		%feature("compactdefaultargs") StepVisual_AnnotationPlaneElement;
+		%feature("autodoc", "Returns a annotationplaneelement select type.
+
+Returns
+-------
+None
+") StepVisual_AnnotationPlaneElement;
+		 StepVisual_AnnotationPlaneElement();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a idattributeselect kind entity that is : 1 -> draughtingcallout 2 -> styleditem 0 else.
@@ -881,16 +891,6 @@ Returns
 opencascade::handle<StepVisual_DraughtingCallout>
 ") DraughtingCallout;
 		opencascade::handle<StepVisual_DraughtingCallout> DraughtingCallout();
-
-		/****************** StepVisual_AnnotationPlaneElement ******************/
-		%feature("compactdefaultargs") StepVisual_AnnotationPlaneElement;
-		%feature("autodoc", "Returns a annotationplaneelement select type.
-
-Returns
--------
-None
-") StepVisual_AnnotationPlaneElement;
-		 StepVisual_AnnotationPlaneElement();
 
 		/****************** StyledItem ******************/
 		%feature("compactdefaultargs") StyledItem;
@@ -942,6 +942,16 @@ None
 *****************************/
 class StepVisual_AreaInSet : public Standard_Transient {
 	public:
+		/****************** StepVisual_AreaInSet ******************/
+		%feature("compactdefaultargs") StepVisual_AreaInSet;
+		%feature("autodoc", "Returns a areainset.
+
+Returns
+-------
+None
+") StepVisual_AreaInSet;
+		 StepVisual_AreaInSet();
+
 		/****************** Area ******************/
 		%feature("compactdefaultargs") Area;
 		%feature("autodoc", "No available documentation.
@@ -1005,16 +1015,6 @@ None
 ") SetInSet;
 		void SetInSet(const opencascade::handle<StepVisual_PresentationSet> & aInSet);
 
-		/****************** StepVisual_AreaInSet ******************/
-		%feature("compactdefaultargs") StepVisual_AreaInSet;
-		%feature("autodoc", "Returns a areainset.
-
-Returns
--------
-None
-") StepVisual_AreaInSet;
-		 StepVisual_AreaInSet();
-
 };
 
 
@@ -1031,6 +1031,16 @@ None
 ******************************/
 class StepVisual_AreaOrView : public StepData_SelectType {
 	public:
+		/****************** StepVisual_AreaOrView ******************/
+		%feature("compactdefaultargs") StepVisual_AreaOrView;
+		%feature("autodoc", "Returns a areaorview selecttype.
+
+Returns
+-------
+None
+") StepVisual_AreaOrView;
+		 StepVisual_AreaOrView();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a areaorview kind entity that is : 1 -> presentationarea 2 -> presentationview 0 else.
@@ -1065,16 +1075,6 @@ opencascade::handle<StepVisual_PresentationView>
 ") PresentationView;
 		opencascade::handle<StepVisual_PresentationView> PresentationView();
 
-		/****************** StepVisual_AreaOrView ******************/
-		%feature("compactdefaultargs") StepVisual_AreaOrView;
-		%feature("autodoc", "Returns a areaorview selecttype.
-
-Returns
--------
-None
-") StepVisual_AreaOrView;
-		 StepVisual_AreaOrView();
-
 };
 
 
@@ -1089,6 +1089,16 @@ None
 *******************************************/
 class StepVisual_BoxCharacteristicSelect {
 	public:
+		/****************** StepVisual_BoxCharacteristicSelect ******************/
+		%feature("compactdefaultargs") StepVisual_BoxCharacteristicSelect;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepVisual_BoxCharacteristicSelect;
+		 StepVisual_BoxCharacteristicSelect();
+
 		/****************** RealValue ******************/
 		%feature("compactdefaultargs") RealValue;
 		%feature("autodoc", "No available documentation.
@@ -1126,16 +1136,6 @@ Returns
 None
 ") SetTypeOfContent;
 		void SetTypeOfContent(const Standard_Integer aType);
-
-		/****************** StepVisual_BoxCharacteristicSelect ******************/
-		%feature("compactdefaultargs") StepVisual_BoxCharacteristicSelect;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepVisual_BoxCharacteristicSelect;
-		 StepVisual_BoxCharacteristicSelect();
 
 		/****************** TypeOfContent ******************/
 		%feature("compactdefaultargs") TypeOfContent;
@@ -1213,6 +1213,16 @@ None
 ***************************************************************/
 class StepVisual_CameraModelD3MultiClippingInterectionSelect : public StepData_SelectType {
 	public:
+		/****************** StepVisual_CameraModelD3MultiClippingInterectionSelect ******************/
+		%feature("compactdefaultargs") StepVisual_CameraModelD3MultiClippingInterectionSelect;
+		%feature("autodoc", "Returns a cameramodeld3multiclippinginterectionselect select type.
+
+Returns
+-------
+None
+") StepVisual_CameraModelD3MultiClippingInterectionSelect;
+		 StepVisual_CameraModelD3MultiClippingInterectionSelect();
+
 		/****************** CameraModelD3MultiClippingUnion ******************/
 		%feature("compactdefaultargs") CameraModelD3MultiClippingUnion;
 		%feature("autodoc", "Returns value as a cameramodeld3multiclippingunion (null if another type).
@@ -1247,16 +1257,6 @@ opencascade::handle<StepGeom_Plane>
 ") Plane;
 		opencascade::handle<StepGeom_Plane> Plane();
 
-		/****************** StepVisual_CameraModelD3MultiClippingInterectionSelect ******************/
-		%feature("compactdefaultargs") StepVisual_CameraModelD3MultiClippingInterectionSelect;
-		%feature("autodoc", "Returns a cameramodeld3multiclippinginterectionselect select type.
-
-Returns
--------
-None
-") StepVisual_CameraModelD3MultiClippingInterectionSelect;
-		 StepVisual_CameraModelD3MultiClippingInterectionSelect();
-
 };
 
 
@@ -1271,6 +1271,16 @@ None
 **********************************************************/
 class StepVisual_CameraModelD3MultiClippingIntersection : public StepGeom_GeometricRepresentationItem {
 	public:
+		/****************** StepVisual_CameraModelD3MultiClippingIntersection ******************/
+		%feature("compactdefaultargs") StepVisual_CameraModelD3MultiClippingIntersection;
+		%feature("autodoc", "Returns a stepvisual_cameramodeld3multiclippingintersection.
+
+Returns
+-------
+None
+") StepVisual_CameraModelD3MultiClippingIntersection;
+		 StepVisual_CameraModelD3MultiClippingIntersection();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -1310,16 +1320,6 @@ opencascade::handle<StepVisual_HArray1OfCameraModelD3MultiClippingInterectionSel
 ") ShapeClipping;
 		const opencascade::handle<StepVisual_HArray1OfCameraModelD3MultiClippingInterectionSelect> ShapeClipping();
 
-		/****************** StepVisual_CameraModelD3MultiClippingIntersection ******************/
-		%feature("compactdefaultargs") StepVisual_CameraModelD3MultiClippingIntersection;
-		%feature("autodoc", "Returns a stepvisual_cameramodeld3multiclippingintersection.
-
-Returns
--------
-None
-") StepVisual_CameraModelD3MultiClippingIntersection;
-		 StepVisual_CameraModelD3MultiClippingIntersection();
-
 };
 
 
@@ -1336,6 +1336,16 @@ None
 ***************************************************/
 class StepVisual_CameraModelD3MultiClippingUnion : public StepGeom_GeometricRepresentationItem {
 	public:
+		/****************** StepVisual_CameraModelD3MultiClippingUnion ******************/
+		%feature("compactdefaultargs") StepVisual_CameraModelD3MultiClippingUnion;
+		%feature("autodoc", "Returns a stepvisual_cameramodeld3multiclippingunion.
+
+Returns
+-------
+None
+") StepVisual_CameraModelD3MultiClippingUnion;
+		 StepVisual_CameraModelD3MultiClippingUnion();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -1375,16 +1385,6 @@ opencascade::handle<StepVisual_HArray1OfCameraModelD3MultiClippingUnionSelect>
 ") ShapeClipping;
 		const opencascade::handle<StepVisual_HArray1OfCameraModelD3MultiClippingUnionSelect> ShapeClipping();
 
-		/****************** StepVisual_CameraModelD3MultiClippingUnion ******************/
-		%feature("compactdefaultargs") StepVisual_CameraModelD3MultiClippingUnion;
-		%feature("autodoc", "Returns a stepvisual_cameramodeld3multiclippingunion.
-
-Returns
--------
-None
-") StepVisual_CameraModelD3MultiClippingUnion;
-		 StepVisual_CameraModelD3MultiClippingUnion();
-
 };
 
 
@@ -1401,6 +1401,16 @@ None
 *********************************************************/
 class StepVisual_CameraModelD3MultiClippingUnionSelect : public StepData_SelectType {
 	public:
+		/****************** StepVisual_CameraModelD3MultiClippingUnionSelect ******************/
+		%feature("compactdefaultargs") StepVisual_CameraModelD3MultiClippingUnionSelect;
+		%feature("autodoc", "Returns a cameramodeld3multiclippingunionselect select type.
+
+Returns
+-------
+None
+") StepVisual_CameraModelD3MultiClippingUnionSelect;
+		 StepVisual_CameraModelD3MultiClippingUnionSelect();
+
 		/****************** CameraModelD3MultiClippingIntersection ******************/
 		%feature("compactdefaultargs") CameraModelD3MultiClippingIntersection;
 		%feature("autodoc", "Returns value as a cameramodeld3multiclippingintersection (null if another type).
@@ -1434,16 +1444,6 @@ Returns
 opencascade::handle<StepGeom_Plane>
 ") Plane;
 		opencascade::handle<StepGeom_Plane> Plane();
-
-		/****************** StepVisual_CameraModelD3MultiClippingUnionSelect ******************/
-		%feature("compactdefaultargs") StepVisual_CameraModelD3MultiClippingUnionSelect;
-		%feature("autodoc", "Returns a cameramodeld3multiclippingunionselect select type.
-
-Returns
--------
-None
-") StepVisual_CameraModelD3MultiClippingUnionSelect;
-		 StepVisual_CameraModelD3MultiClippingUnionSelect();
 
 };
 
@@ -1511,6 +1511,16 @@ None
 *********************************/
 class StepVisual_CompositeText : public StepGeom_GeometricRepresentationItem {
 	public:
+		/****************** StepVisual_CompositeText ******************/
+		%feature("compactdefaultargs") StepVisual_CompositeText;
+		%feature("autodoc", "Returns a compositetext.
+
+Returns
+-------
+None
+") StepVisual_CompositeText;
+		 StepVisual_CompositeText();
+
 		/****************** CollectedText ******************/
 		%feature("compactdefaultargs") CollectedText;
 		%feature("autodoc", "No available documentation.
@@ -1574,16 +1584,6 @@ None
 ") SetCollectedText;
 		void SetCollectedText(const opencascade::handle<StepVisual_HArray1OfTextOrCharacter> & aCollectedText);
 
-		/****************** StepVisual_CompositeText ******************/
-		%feature("compactdefaultargs") StepVisual_CompositeText;
-		%feature("autodoc", "Returns a compositetext.
-
-Returns
--------
-None
-") StepVisual_CompositeText;
-		 StepVisual_CompositeText();
-
 };
 
 
@@ -1600,6 +1600,16 @@ None
 ******************************/
 class StepVisual_CurveStyle : public Standard_Transient {
 	public:
+		/****************** StepVisual_CurveStyle ******************/
+		%feature("compactdefaultargs") StepVisual_CurveStyle;
+		%feature("autodoc", "Returns a curvestyle.
+
+Returns
+-------
+None
+") StepVisual_CurveStyle;
+		 StepVisual_CurveStyle();
+
 		/****************** CurveColour ******************/
 		%feature("compactdefaultargs") CurveColour;
 		%feature("autodoc", "No available documentation.
@@ -1713,16 +1723,6 @@ None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & aName);
 
-		/****************** StepVisual_CurveStyle ******************/
-		%feature("compactdefaultargs") StepVisual_CurveStyle;
-		%feature("autodoc", "Returns a curvestyle.
-
-Returns
--------
-None
-") StepVisual_CurveStyle;
-		 StepVisual_CurveStyle();
-
 };
 
 
@@ -1739,6 +1739,16 @@ None
 **********************************/
 class StepVisual_CurveStyleFont : public Standard_Transient {
 	public:
+		/****************** StepVisual_CurveStyleFont ******************/
+		%feature("compactdefaultargs") StepVisual_CurveStyleFont;
+		%feature("autodoc", "Returns a curvestylefont.
+
+Returns
+-------
+None
+") StepVisual_CurveStyleFont;
+		 StepVisual_CurveStyleFont();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -1826,16 +1836,6 @@ None
 ") SetPatternList;
 		void SetPatternList(const opencascade::handle<StepVisual_HArray1OfCurveStyleFontPattern> & aPatternList);
 
-		/****************** StepVisual_CurveStyleFont ******************/
-		%feature("compactdefaultargs") StepVisual_CurveStyleFont;
-		%feature("autodoc", "Returns a curvestylefont.
-
-Returns
--------
-None
-") StepVisual_CurveStyleFont;
-		 StepVisual_CurveStyleFont();
-
 };
 
 
@@ -1852,6 +1852,16 @@ None
 *****************************************/
 class StepVisual_CurveStyleFontPattern : public Standard_Transient {
 	public:
+		/****************** StepVisual_CurveStyleFontPattern ******************/
+		%feature("compactdefaultargs") StepVisual_CurveStyleFontPattern;
+		%feature("autodoc", "Returns a curvestylefontpattern.
+
+Returns
+-------
+None
+") StepVisual_CurveStyleFontPattern;
+		 StepVisual_CurveStyleFontPattern();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -1905,16 +1915,6 @@ None
 ") SetVisibleSegmentLength;
 		void SetVisibleSegmentLength(const Standard_Real aVisibleSegmentLength);
 
-		/****************** StepVisual_CurveStyleFontPattern ******************/
-		%feature("compactdefaultargs") StepVisual_CurveStyleFontPattern;
-		%feature("autodoc", "Returns a curvestylefontpattern.
-
-Returns
--------
-None
-") StepVisual_CurveStyleFontPattern;
-		 StepVisual_CurveStyleFontPattern();
-
 		/****************** VisibleSegmentLength ******************/
 		%feature("compactdefaultargs") VisibleSegmentLength;
 		%feature("autodoc", "No available documentation.
@@ -1941,6 +1941,16 @@ float
 ****************************************/
 class StepVisual_CurveStyleFontSelect : public StepData_SelectType {
 	public:
+		/****************** StepVisual_CurveStyleFontSelect ******************/
+		%feature("compactdefaultargs") StepVisual_CurveStyleFontSelect;
+		%feature("autodoc", "Returns a curvestylefontselect selecttype.
+
+Returns
+-------
+None
+") StepVisual_CurveStyleFontSelect;
+		 StepVisual_CurveStyleFontSelect();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a curvestylefontselect kind entity that is : 1 -> curvestylefont 2 -> predefinedcurvefont 3 -> externallydefinedcurvefont 0 else.
@@ -1985,16 +1995,6 @@ opencascade::handle<StepVisual_PreDefinedCurveFont>
 ") PreDefinedCurveFont;
 		opencascade::handle<StepVisual_PreDefinedCurveFont> PreDefinedCurveFont();
 
-		/****************** StepVisual_CurveStyleFontSelect ******************/
-		%feature("compactdefaultargs") StepVisual_CurveStyleFontSelect;
-		%feature("autodoc", "Returns a curvestylefontselect selecttype.
-
-Returns
--------
-None
-") StepVisual_CurveStyleFontSelect;
-		 StepVisual_CurveStyleFontSelect();
-
 };
 
 
@@ -2009,6 +2009,16 @@ None
 ****************************************/
 class StepVisual_DirectionCountSelect {
 	public:
+		/****************** StepVisual_DirectionCountSelect ******************/
+		%feature("compactdefaultargs") StepVisual_DirectionCountSelect;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepVisual_DirectionCountSelect;
+		 StepVisual_DirectionCountSelect();
+
 		/****************** SetTypeOfContent ******************/
 		%feature("compactdefaultargs") SetTypeOfContent;
 		%feature("autodoc", "No available documentation.
@@ -2050,16 +2060,6 @@ Returns
 None
 ") SetVDirectionCount;
 		void SetVDirectionCount(const Standard_Integer aUDirectionCount);
-
-		/****************** StepVisual_DirectionCountSelect ******************/
-		%feature("compactdefaultargs") StepVisual_DirectionCountSelect;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepVisual_DirectionCountSelect;
-		 StepVisual_DirectionCountSelect();
 
 		/****************** TypeOfContent ******************/
 		%feature("compactdefaultargs") TypeOfContent;
@@ -2105,6 +2105,16 @@ int
 *************************************/
 class StepVisual_DraughtingCallout : public StepGeom_GeometricRepresentationItem {
 	public:
+		/****************** StepVisual_DraughtingCallout ******************/
+		%feature("compactdefaultargs") StepVisual_DraughtingCallout;
+		%feature("autodoc", "Returns a draughtingcallout.
+
+Returns
+-------
+None
+") StepVisual_DraughtingCallout;
+		 StepVisual_DraughtingCallout();
+
 		/****************** Contents ******************/
 		%feature("compactdefaultargs") Contents;
 		%feature("autodoc", "Returns field contents.
@@ -2183,16 +2193,6 @@ None
 ") SetContentsValue;
 		void SetContentsValue(const Standard_Integer theNum, const StepVisual_DraughtingCalloutElement & theItem);
 
-		/****************** StepVisual_DraughtingCallout ******************/
-		%feature("compactdefaultargs") StepVisual_DraughtingCallout;
-		%feature("autodoc", "Returns a draughtingcallout.
-
-Returns
--------
-None
-") StepVisual_DraughtingCallout;
-		 StepVisual_DraughtingCallout();
-
 };
 
 
@@ -2209,6 +2209,16 @@ None
 ********************************************/
 class StepVisual_DraughtingCalloutElement : public StepData_SelectType {
 	public:
+		/****************** StepVisual_DraughtingCalloutElement ******************/
+		%feature("compactdefaultargs") StepVisual_DraughtingCalloutElement;
+		%feature("autodoc", "Returns a draughtingcalloutelement select type.
+
+Returns
+-------
+None
+") StepVisual_DraughtingCalloutElement;
+		 StepVisual_DraughtingCalloutElement();
+
 		/****************** AnnotationCurveOccurrence ******************/
 		%feature("compactdefaultargs") AnnotationCurveOccurrence;
 		%feature("autodoc", "Returns value as a annotationcurveoccurrence (null if another type).
@@ -2252,16 +2262,6 @@ Returns
 int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
-
-		/****************** StepVisual_DraughtingCalloutElement ******************/
-		%feature("compactdefaultargs") StepVisual_DraughtingCalloutElement;
-		%feature("autodoc", "Returns a draughtingcalloutelement select type.
-
-Returns
--------
-None
-") StepVisual_DraughtingCalloutElement;
-		 StepVisual_DraughtingCalloutElement();
 
 		/****************** TessellatedAnnotationOccurrence ******************/
 		%feature("compactdefaultargs") TessellatedAnnotationOccurrence;
@@ -2365,6 +2365,16 @@ None
 *********************************/
 class StepVisual_FillAreaStyle : public Standard_Transient {
 	public:
+		/****************** StepVisual_FillAreaStyle ******************/
+		%feature("compactdefaultargs") StepVisual_FillAreaStyle;
+		%feature("autodoc", "Returns a fillareastyle.
+
+Returns
+-------
+None
+") StepVisual_FillAreaStyle;
+		 StepVisual_FillAreaStyle();
+
 		/****************** FillStyles ******************/
 		%feature("compactdefaultargs") FillStyles;
 		%feature("autodoc", "No available documentation.
@@ -2452,16 +2462,6 @@ None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & aName);
 
-		/****************** StepVisual_FillAreaStyle ******************/
-		%feature("compactdefaultargs") StepVisual_FillAreaStyle;
-		%feature("autodoc", "Returns a fillareastyle.
-
-Returns
--------
-None
-") StepVisual_FillAreaStyle;
-		 StepVisual_FillAreaStyle();
-
 };
 
 
@@ -2478,6 +2478,16 @@ None
 ***************************************/
 class StepVisual_FillAreaStyleColour : public Standard_Transient {
 	public:
+		/****************** StepVisual_FillAreaStyleColour ******************/
+		%feature("compactdefaultargs") StepVisual_FillAreaStyleColour;
+		%feature("autodoc", "Returns a fillareastylecolour.
+
+Returns
+-------
+None
+") StepVisual_FillAreaStyleColour;
+		 StepVisual_FillAreaStyleColour();
+
 		/****************** FillColour ******************/
 		%feature("compactdefaultargs") FillColour;
 		%feature("autodoc", "No available documentation.
@@ -2541,16 +2551,6 @@ None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & aName);
 
-		/****************** StepVisual_FillAreaStyleColour ******************/
-		%feature("compactdefaultargs") StepVisual_FillAreaStyleColour;
-		%feature("autodoc", "Returns a fillareastylecolour.
-
-Returns
--------
-None
-") StepVisual_FillAreaStyleColour;
-		 StepVisual_FillAreaStyleColour();
-
 };
 
 
@@ -2567,6 +2567,16 @@ None
 ***********************************/
 class StepVisual_FillStyleSelect : public StepData_SelectType {
 	public:
+		/****************** StepVisual_FillStyleSelect ******************/
+		%feature("compactdefaultargs") StepVisual_FillStyleSelect;
+		%feature("autodoc", "Returns a fillstyleselect selecttype.
+
+Returns
+-------
+None
+") StepVisual_FillStyleSelect;
+		 StepVisual_FillStyleSelect();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a fillstyleselect kind entity that is : 1 -> fillareastylecolour 2 -> externallydefinedtilestyle 3 -> fillareastyletiles 4 -> externallydefinedhatchstyle 5 -> fillareastylehatching 0 else.
@@ -2591,16 +2601,6 @@ opencascade::handle<StepVisual_FillAreaStyleColour>
 ") FillAreaStyleColour;
 		opencascade::handle<StepVisual_FillAreaStyleColour> FillAreaStyleColour();
 
-		/****************** StepVisual_FillStyleSelect ******************/
-		%feature("compactdefaultargs") StepVisual_FillStyleSelect;
-		%feature("autodoc", "Returns a fillstyleselect selecttype.
-
-Returns
--------
-None
-") StepVisual_FillStyleSelect;
-		 StepVisual_FillStyleSelect();
-
 };
 
 
@@ -2615,6 +2615,16 @@ None
 ******************************/
 class StepVisual_FontSelect : public StepData_SelectType {
 	public:
+		/****************** StepVisual_FontSelect ******************/
+		%feature("compactdefaultargs") StepVisual_FontSelect;
+		%feature("autodoc", "Returns a fontselect selecttype.
+
+Returns
+-------
+None
+") StepVisual_FontSelect;
+		 StepVisual_FontSelect();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a fontselect kind entity that is : 1 -> predefinedtextfont 2 -> externallydefinedtextfont 0 else.
@@ -2649,16 +2659,6 @@ opencascade::handle<StepVisual_PreDefinedTextFont>
 ") PreDefinedTextFont;
 		opencascade::handle<StepVisual_PreDefinedTextFont> PreDefinedTextFont();
 
-		/****************** StepVisual_FontSelect ******************/
-		%feature("compactdefaultargs") StepVisual_FontSelect;
-		%feature("autodoc", "Returns a fontselect selecttype.
-
-Returns
--------
-None
-") StepVisual_FontSelect;
-		 StepVisual_FontSelect();
-
 };
 
 
@@ -2673,6 +2673,16 @@ None
 ********************************/
 class StepVisual_Invisibility : public Standard_Transient {
 	public:
+		/****************** StepVisual_Invisibility ******************/
+		%feature("compactdefaultargs") StepVisual_Invisibility;
+		%feature("autodoc", "Returns a invisibility.
+
+Returns
+-------
+None
+") StepVisual_Invisibility;
+		 StepVisual_Invisibility();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -2735,16 +2745,6 @@ None
 ") SetInvisibleItems;
 		void SetInvisibleItems(const opencascade::handle<StepVisual_HArray1OfInvisibleItem> & aInvisibleItems);
 
-		/****************** StepVisual_Invisibility ******************/
-		%feature("compactdefaultargs") StepVisual_Invisibility;
-		%feature("autodoc", "Returns a invisibility.
-
-Returns
--------
-None
-") StepVisual_Invisibility;
-		 StepVisual_Invisibility();
-
 };
 
 
@@ -2761,6 +2761,16 @@ None
 ***************************************/
 class StepVisual_InvisibilityContext : public StepData_SelectType {
 	public:
+		/****************** StepVisual_InvisibilityContext ******************/
+		%feature("compactdefaultargs") StepVisual_InvisibilityContext;
+		%feature("autodoc", "Returns a invisibilitycontext selecttype.
+
+Returns
+-------
+None
+") StepVisual_InvisibilityContext;
+		 StepVisual_InvisibilityContext();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a invisibilitycontext kind entity that is : 1 -> presentationrepresentation 2 -> presentationset 2 -> draughtingmodel 0 else.
@@ -2805,16 +2815,6 @@ opencascade::handle<StepVisual_PresentationSet>
 ") PresentationSet;
 		opencascade::handle<StepVisual_PresentationSet> PresentationSet();
 
-		/****************** StepVisual_InvisibilityContext ******************/
-		%feature("compactdefaultargs") StepVisual_InvisibilityContext;
-		%feature("autodoc", "Returns a invisibilitycontext selecttype.
-
-Returns
--------
-None
-") StepVisual_InvisibilityContext;
-		 StepVisual_InvisibilityContext();
-
 };
 
 
@@ -2829,6 +2829,16 @@ None
 *********************************/
 class StepVisual_InvisibleItem : public StepData_SelectType {
 	public:
+		/****************** StepVisual_InvisibleItem ******************/
+		%feature("compactdefaultargs") StepVisual_InvisibleItem;
+		%feature("autodoc", "Returns a invisibleitem selecttype.
+
+Returns
+-------
+None
+") StepVisual_InvisibleItem;
+		 StepVisual_InvisibleItem();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a invisibleitem kind entity that is : 1 -> styleditem 2 -> presentationlayerassignment 3 -> presentationrepresentation 0 else.
@@ -2863,16 +2873,6 @@ opencascade::handle<StepVisual_PresentationRepresentation>
 ") PresentationRepresentation;
 		opencascade::handle<StepVisual_PresentationRepresentation> PresentationRepresentation();
 
-		/****************** StepVisual_InvisibleItem ******************/
-		%feature("compactdefaultargs") StepVisual_InvisibleItem;
-		%feature("autodoc", "Returns a invisibleitem selecttype.
-
-Returns
--------
-None
-") StepVisual_InvisibleItem;
-		 StepVisual_InvisibleItem();
-
 		/****************** StyledItem ******************/
 		%feature("compactdefaultargs") StyledItem;
 		%feature("autodoc", "Returns value as a styleditem (null if another type).
@@ -2897,6 +2897,16 @@ opencascade::handle<StepVisual_StyledItem>
 *******************************/
 class StepVisual_LayeredItem : public StepData_SelectType {
 	public:
+		/****************** StepVisual_LayeredItem ******************/
+		%feature("compactdefaultargs") StepVisual_LayeredItem;
+		%feature("autodoc", "Returns a layereditem selecttype.
+
+Returns
+-------
+None
+") StepVisual_LayeredItem;
+		 StepVisual_LayeredItem();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a layereditem kind entity that is : 1 -> presentationrepresentation 2 -> representationitem 0 else.
@@ -2931,16 +2941,6 @@ opencascade::handle<StepRepr_RepresentationItem>
 ") RepresentationItem;
 		opencascade::handle<StepRepr_RepresentationItem> RepresentationItem();
 
-		/****************** StepVisual_LayeredItem ******************/
-		%feature("compactdefaultargs") StepVisual_LayeredItem;
-		%feature("autodoc", "Returns a layereditem selecttype.
-
-Returns
--------
-None
-") StepVisual_LayeredItem;
-		 StepVisual_LayeredItem();
-
 };
 
 
@@ -2955,6 +2955,16 @@ None
 ********************************/
 class StepVisual_MarkerMember : public StepData_SelectInt {
 	public:
+		/****************** StepVisual_MarkerMember ******************/
+		%feature("compactdefaultargs") StepVisual_MarkerMember;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepVisual_MarkerMember;
+		 StepVisual_MarkerMember();
+
 		/****************** EnumText ******************/
 		%feature("compactdefaultargs") EnumText;
 		%feature("autodoc", "No available documentation.
@@ -3028,16 +3038,6 @@ None
 ") SetValue;
 		void SetValue(const StepVisual_MarkerType val);
 
-		/****************** StepVisual_MarkerMember ******************/
-		%feature("compactdefaultargs") StepVisual_MarkerMember;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepVisual_MarkerMember;
-		 StepVisual_MarkerMember();
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -3064,6 +3064,16 @@ StepVisual_MarkerType
 ********************************/
 class StepVisual_MarkerSelect : public StepData_SelectType {
 	public:
+		/****************** StepVisual_MarkerSelect ******************/
+		%feature("compactdefaultargs") StepVisual_MarkerSelect;
+		%feature("autodoc", "Returns a markerselect selecttype.
+
+Returns
+-------
+None
+") StepVisual_MarkerSelect;
+		 StepVisual_MarkerSelect();
+
 		/****************** CaseMem ******************/
 		%feature("compactdefaultargs") CaseMem;
 		%feature("autodoc", "Returns 1 for a selectmember enum, named marker_type.
@@ -3112,16 +3122,6 @@ opencascade::handle<StepData_SelectMember>
 ") NewMember;
 		virtual opencascade::handle<StepData_SelectMember> NewMember();
 
-		/****************** StepVisual_MarkerSelect ******************/
-		%feature("compactdefaultargs") StepVisual_MarkerSelect;
-		%feature("autodoc", "Returns a markerselect selecttype.
-
-Returns
--------
-None
-") StepVisual_MarkerSelect;
-		 StepVisual_MarkerSelect();
-
 };
 
 
@@ -3136,6 +3136,16 @@ None
 ***********************************/
 class StepVisual_NullStyleMember : public StepData_SelectInt {
 	public:
+		/****************** StepVisual_NullStyleMember ******************/
+		%feature("compactdefaultargs") StepVisual_NullStyleMember;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepVisual_NullStyleMember;
+		 StepVisual_NullStyleMember();
+
 		/****************** EnumText ******************/
 		%feature("compactdefaultargs") EnumText;
 		%feature("autodoc", "No available documentation.
@@ -3219,16 +3229,6 @@ None
 ") SetValue;
 		void SetValue(const StepVisual_NullStyle theValue);
 
-		/****************** StepVisual_NullStyleMember ******************/
-		%feature("compactdefaultargs") StepVisual_NullStyleMember;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepVisual_NullStyleMember;
-		 StepVisual_NullStyleMember();
-
 		/****************** Value ******************/
 		%feature("compactdefaultargs") Value;
 		%feature("autodoc", "No available documentation.
@@ -3255,6 +3255,16 @@ StepVisual_NullStyle
 ********************************/
 class StepVisual_PlanarExtent : public StepGeom_GeometricRepresentationItem {
 	public:
+		/****************** StepVisual_PlanarExtent ******************/
+		%feature("compactdefaultargs") StepVisual_PlanarExtent;
+		%feature("autodoc", "Returns a planarextent.
+
+Returns
+-------
+None
+") StepVisual_PlanarExtent;
+		 StepVisual_PlanarExtent();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3319,16 +3329,6 @@ float
 ") SizeInY;
 		Standard_Real SizeInY();
 
-		/****************** StepVisual_PlanarExtent ******************/
-		%feature("compactdefaultargs") StepVisual_PlanarExtent;
-		%feature("autodoc", "Returns a planarextent.
-
-Returns
--------
-None
-") StepVisual_PlanarExtent;
-		 StepVisual_PlanarExtent();
-
 };
 
 
@@ -3345,6 +3345,16 @@ None
 ******************************/
 class StepVisual_PointStyle : public Standard_Transient {
 	public:
+		/****************** StepVisual_PointStyle ******************/
+		%feature("compactdefaultargs") StepVisual_PointStyle;
+		%feature("autodoc", "Returns a pointstyle.
+
+Returns
+-------
+None
+") StepVisual_PointStyle;
+		 StepVisual_PointStyle();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3458,16 +3468,6 @@ None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & aName);
 
-		/****************** StepVisual_PointStyle ******************/
-		%feature("compactdefaultargs") StepVisual_PointStyle;
-		%feature("autodoc", "Returns a pointstyle.
-
-Returns
--------
-None
-") StepVisual_PointStyle;
-		 StepVisual_PointStyle();
-
 };
 
 
@@ -3484,6 +3484,16 @@ None
 **********************************/
 class StepVisual_PreDefinedItem : public Standard_Transient {
 	public:
+		/****************** StepVisual_PreDefinedItem ******************/
+		%feature("compactdefaultargs") StepVisual_PreDefinedItem;
+		%feature("autodoc", "Returns a predefineditem.
+
+Returns
+-------
+None
+") StepVisual_PreDefinedItem;
+		 StepVisual_PreDefinedItem();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3522,16 +3532,6 @@ None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & aName);
 
-		/****************** StepVisual_PreDefinedItem ******************/
-		%feature("compactdefaultargs") StepVisual_PreDefinedItem;
-		%feature("autodoc", "Returns a predefineditem.
-
-Returns
--------
-None
-") StepVisual_PreDefinedItem;
-		 StepVisual_PreDefinedItem();
-
 };
 
 
@@ -3548,6 +3548,16 @@ None
 ***********************************************/
 class StepVisual_PresentationLayerAssignment : public Standard_Transient {
 	public:
+		/****************** StepVisual_PresentationLayerAssignment ******************/
+		%feature("compactdefaultargs") StepVisual_PresentationLayerAssignment;
+		%feature("autodoc", "Returns a presentationlayerassignment.
+
+Returns
+-------
+None
+") StepVisual_PresentationLayerAssignment;
+		 StepVisual_PresentationLayerAssignment();
+
 		/****************** AssignedItems ******************/
 		%feature("compactdefaultargs") AssignedItems;
 		%feature("autodoc", "No available documentation.
@@ -3660,16 +3670,6 @@ None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & aName);
 
-		/****************** StepVisual_PresentationLayerAssignment ******************/
-		%feature("compactdefaultargs") StepVisual_PresentationLayerAssignment;
-		%feature("autodoc", "Returns a presentationlayerassignment.
-
-Returns
--------
-None
-") StepVisual_PresentationLayerAssignment;
-		 StepVisual_PresentationLayerAssignment();
-
 };
 
 
@@ -3686,6 +3686,16 @@ None
 ******************************************/
 class StepVisual_PresentationLayerUsage : public Standard_Transient {
 	public:
+		/****************** StepVisual_PresentationLayerUsage ******************/
+		%feature("compactdefaultargs") StepVisual_PresentationLayerUsage;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepVisual_PresentationLayerUsage;
+		 StepVisual_PresentationLayerUsage();
+
 		/****************** Assignment ******************/
 		%feature("compactdefaultargs") Assignment;
 		%feature("autodoc", "No available documentation.
@@ -3749,16 +3759,6 @@ None
 ") SetPresentation;
 		void SetPresentation(const opencascade::handle<StepVisual_PresentationRepresentation> & aPresentation);
 
-		/****************** StepVisual_PresentationLayerUsage ******************/
-		%feature("compactdefaultargs") StepVisual_PresentationLayerUsage;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepVisual_PresentationLayerUsage;
-		 StepVisual_PresentationLayerUsage();
-
 };
 
 
@@ -3801,6 +3801,16 @@ None
 ****************************************************/
 class StepVisual_PresentationRepresentationSelect : public StepData_SelectType {
 	public:
+		/****************** StepVisual_PresentationRepresentationSelect ******************/
+		%feature("compactdefaultargs") StepVisual_PresentationRepresentationSelect;
+		%feature("autodoc", "Returns a presentationrepresentationselect selecttype.
+
+Returns
+-------
+None
+") StepVisual_PresentationRepresentationSelect;
+		 StepVisual_PresentationRepresentationSelect();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a presentationrepresentationselect kind entity that is : 1 -> presentationrepresentation 2 -> presentationset 0 else.
@@ -3834,16 +3844,6 @@ Returns
 opencascade::handle<StepVisual_PresentationSet>
 ") PresentationSet;
 		opencascade::handle<StepVisual_PresentationSet> PresentationSet();
-
-		/****************** StepVisual_PresentationRepresentationSelect ******************/
-		%feature("compactdefaultargs") StepVisual_PresentationRepresentationSelect;
-		%feature("autodoc", "Returns a presentationrepresentationselect selecttype.
-
-Returns
--------
-None
-") StepVisual_PresentationRepresentationSelect;
-		 StepVisual_PresentationRepresentationSelect();
 
 };
 
@@ -3885,6 +3885,16 @@ None
 ************************************/
 class StepVisual_PresentationSize : public Standard_Transient {
 	public:
+		/****************** StepVisual_PresentationSize ******************/
+		%feature("compactdefaultargs") StepVisual_PresentationSize;
+		%feature("autodoc", "Returns a presentationsize.
+
+Returns
+-------
+None
+") StepVisual_PresentationSize;
+		 StepVisual_PresentationSize();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -3938,16 +3948,6 @@ opencascade::handle<StepVisual_PlanarBox>
 ") Size;
 		opencascade::handle<StepVisual_PlanarBox> Size();
 
-		/****************** StepVisual_PresentationSize ******************/
-		%feature("compactdefaultargs") StepVisual_PresentationSize;
-		%feature("autodoc", "Returns a presentationsize.
-
-Returns
--------
-None
-") StepVisual_PresentationSize;
-		 StepVisual_PresentationSize();
-
 		/****************** Unit ******************/
 		%feature("compactdefaultargs") Unit;
 		%feature("autodoc", "No available documentation.
@@ -3974,6 +3974,16 @@ StepVisual_PresentationSizeAssignmentSelect
 ****************************************************/
 class StepVisual_PresentationSizeAssignmentSelect : public StepData_SelectType {
 	public:
+		/****************** StepVisual_PresentationSizeAssignmentSelect ******************/
+		%feature("compactdefaultargs") StepVisual_PresentationSizeAssignmentSelect;
+		%feature("autodoc", "Returns a presentationsizeassignmentselect selecttype.
+
+Returns
+-------
+None
+") StepVisual_PresentationSizeAssignmentSelect;
+		 StepVisual_PresentationSizeAssignmentSelect();
+
 		/****************** AreaInSet ******************/
 		%feature("compactdefaultargs") AreaInSet;
 		%feature("autodoc", "Returns value as a areainset (null if another type).
@@ -4018,16 +4028,6 @@ opencascade::handle<StepVisual_PresentationView>
 ") PresentationView;
 		opencascade::handle<StepVisual_PresentationView> PresentationView();
 
-		/****************** StepVisual_PresentationSizeAssignmentSelect ******************/
-		%feature("compactdefaultargs") StepVisual_PresentationSizeAssignmentSelect;
-		%feature("autodoc", "Returns a presentationsizeassignmentselect selecttype.
-
-Returns
--------
-None
-") StepVisual_PresentationSizeAssignmentSelect;
-		 StepVisual_PresentationSizeAssignmentSelect();
-
 };
 
 
@@ -4042,6 +4042,16 @@ None
 ***********************************************/
 class StepVisual_PresentationStyleAssignment : public Standard_Transient {
 	public:
+		/****************** StepVisual_PresentationStyleAssignment ******************/
+		%feature("compactdefaultargs") StepVisual_PresentationStyleAssignment;
+		%feature("autodoc", "Returns a presentationstyleassignment.
+
+Returns
+-------
+None
+") StepVisual_PresentationStyleAssignment;
+		 StepVisual_PresentationStyleAssignment();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -4079,16 +4089,6 @@ Returns
 None
 ") SetStyles;
 		void SetStyles(const opencascade::handle<StepVisual_HArray1OfPresentationStyleSelect> & aStyles);
-
-		/****************** StepVisual_PresentationStyleAssignment ******************/
-		%feature("compactdefaultargs") StepVisual_PresentationStyleAssignment;
-		%feature("autodoc", "Returns a presentationstyleassignment.
-
-Returns
--------
-None
-") StepVisual_PresentationStyleAssignment;
-		 StepVisual_PresentationStyleAssignment();
 
 		/****************** Styles ******************/
 		%feature("compactdefaultargs") Styles;
@@ -4130,6 +4130,16 @@ StepVisual_PresentationStyleSelect
 *******************************************/
 class StepVisual_PresentationStyleSelect : public StepData_SelectType {
 	public:
+		/****************** StepVisual_PresentationStyleSelect ******************/
+		%feature("compactdefaultargs") StepVisual_PresentationStyleSelect;
+		%feature("autodoc", "Returns a presentationstyleselect selecttype.
+
+Returns
+-------
+None
+") StepVisual_PresentationStyleSelect;
+		 StepVisual_PresentationStyleSelect();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a presentationstyleselect kind entity that is : 1 -> pointstyle 2 -> curvestyle 3 -> surfacestyleusage 4 -> symbolstyle 5 -> fillareastyle 6 -> textstyle 7 -> nullstyle 0 else.
@@ -4174,16 +4184,6 @@ opencascade::handle<StepVisual_PointStyle>
 ") PointStyle;
 		opencascade::handle<StepVisual_PointStyle> PointStyle();
 
-		/****************** StepVisual_PresentationStyleSelect ******************/
-		%feature("compactdefaultargs") StepVisual_PresentationStyleSelect;
-		%feature("autodoc", "Returns a presentationstyleselect selecttype.
-
-Returns
--------
-None
-") StepVisual_PresentationStyleSelect;
-		 StepVisual_PresentationStyleSelect();
-
 		/****************** SurfaceStyleUsage ******************/
 		%feature("compactdefaultargs") SurfaceStyleUsage;
 		%feature("autodoc", "Returns value as a surfacestyleusage (null if another type).
@@ -4224,6 +4224,16 @@ class StepVisual_PresentedItem : public Standard_Transient {
 ***********************************************/
 class StepVisual_PresentedItemRepresentation : public Standard_Transient {
 	public:
+		/****************** StepVisual_PresentedItemRepresentation ******************/
+		%feature("compactdefaultargs") StepVisual_PresentedItemRepresentation;
+		%feature("autodoc", "No available documentation.
+
+Returns
+-------
+None
+") StepVisual_PresentedItemRepresentation;
+		 StepVisual_PresentedItemRepresentation();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -4287,16 +4297,6 @@ None
 ") SetPresentation;
 		void SetPresentation(const StepVisual_PresentationRepresentationSelect & aPresentation);
 
-		/****************** StepVisual_PresentedItemRepresentation ******************/
-		%feature("compactdefaultargs") StepVisual_PresentedItemRepresentation;
-		%feature("autodoc", "No available documentation.
-
-Returns
--------
-None
-") StepVisual_PresentedItemRepresentation;
-		 StepVisual_PresentedItemRepresentation();
-
 };
 
 
@@ -4313,6 +4313,16 @@ None
 **************************************/
 class StepVisual_StyleContextSelect : public StepData_SelectType {
 	public:
+		/****************** StepVisual_StyleContextSelect ******************/
+		%feature("compactdefaultargs") StepVisual_StyleContextSelect;
+		%feature("autodoc", "Returns a stylecontextselect selecttype.
+
+Returns
+-------
+None
+") StepVisual_StyleContextSelect;
+		 StepVisual_StyleContextSelect();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a stylecontextselect kind entity that is : 1 -> representation 2 -> representationitem 3 -> presentationset 0 else.
@@ -4357,16 +4367,6 @@ opencascade::handle<StepRepr_RepresentationItem>
 ") RepresentationItem;
 		opencascade::handle<StepRepr_RepresentationItem> RepresentationItem();
 
-		/****************** StepVisual_StyleContextSelect ******************/
-		%feature("compactdefaultargs") StepVisual_StyleContextSelect;
-		%feature("autodoc", "Returns a stylecontextselect selecttype.
-
-Returns
--------
-None
-") StepVisual_StyleContextSelect;
-		 StepVisual_StyleContextSelect();
-
 };
 
 
@@ -4381,6 +4381,16 @@ None
 ******************************/
 class StepVisual_StyledItem : public StepRepr_RepresentationItem {
 	public:
+		/****************** StepVisual_StyledItem ******************/
+		%feature("compactdefaultargs") StepVisual_StyledItem;
+		%feature("autodoc", "Returns a styleditem.
+
+Returns
+-------
+None
+") StepVisual_StyledItem;
+		 StepVisual_StyledItem();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -4469,16 +4479,6 @@ None
 ") SetStyles;
 		void SetStyles(const opencascade::handle<StepVisual_HArray1OfPresentationStyleAssignment> & aStyles);
 
-		/****************** StepVisual_StyledItem ******************/
-		%feature("compactdefaultargs") StepVisual_StyledItem;
-		%feature("autodoc", "Returns a styleditem.
-
-Returns
--------
-None
-") StepVisual_StyledItem;
-		 StepVisual_StyledItem();
-
 		/****************** Styles ******************/
 		%feature("compactdefaultargs") Styles;
 		%feature("autodoc", "No available documentation.
@@ -4519,6 +4519,16 @@ opencascade::handle<StepVisual_PresentationStyleAssignment>
 ************************************/
 class StepVisual_StyledItemTarget : public StepData_SelectType {
 	public:
+		/****************** StepVisual_StyledItemTarget ******************/
+		%feature("compactdefaultargs") StepVisual_StyledItemTarget;
+		%feature("autodoc", "Returns a styleditemtarget select type.
+
+Returns
+-------
+None
+") StepVisual_StyledItemTarget;
+		 StepVisual_StyledItemTarget();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a styleditemtarget kind entity that is : 1 -> geometricrepresentationitem 2 -> mappeditem 3 -> representation 4 -> topologicalrepresentationitem 0 else.
@@ -4563,16 +4573,6 @@ opencascade::handle<StepRepr_Representation>
 ") Representation;
 		opencascade::handle<StepRepr_Representation> Representation();
 
-		/****************** StepVisual_StyledItemTarget ******************/
-		%feature("compactdefaultargs") StepVisual_StyledItemTarget;
-		%feature("autodoc", "Returns a styleditemtarget select type.
-
-Returns
--------
-None
-") StepVisual_StyledItemTarget;
-		 StepVisual_StyledItemTarget();
-
 		/****************** TopologicalRepresentationItem ******************/
 		%feature("compactdefaultargs") TopologicalRepresentationItem;
 		%feature("autodoc", "Returns value as a topologicalrepresentationitem (null if another type).
@@ -4597,6 +4597,16 @@ opencascade::handle<StepShape_TopologicalRepresentationItem>
 ************************************/
 class StepVisual_SurfaceSideStyle : public Standard_Transient {
 	public:
+		/****************** StepVisual_SurfaceSideStyle ******************/
+		%feature("compactdefaultargs") StepVisual_SurfaceSideStyle;
+		%feature("autodoc", "Returns a surfacesidestyle.
+
+Returns
+-------
+None
+") StepVisual_SurfaceSideStyle;
+		 StepVisual_SurfaceSideStyle();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -4660,16 +4670,6 @@ None
 ") SetStyles;
 		void SetStyles(const opencascade::handle<StepVisual_HArray1OfSurfaceStyleElementSelect> & aStyles);
 
-		/****************** StepVisual_SurfaceSideStyle ******************/
-		%feature("compactdefaultargs") StepVisual_SurfaceSideStyle;
-		%feature("autodoc", "Returns a surfacesidestyle.
-
-Returns
--------
-None
-") StepVisual_SurfaceSideStyle;
-		 StepVisual_SurfaceSideStyle();
-
 		/****************** Styles ******************/
 		%feature("compactdefaultargs") Styles;
 		%feature("autodoc", "No available documentation.
@@ -4710,6 +4710,16 @@ StepVisual_SurfaceStyleElementSelect
 ****************************************/
 class StepVisual_SurfaceStyleBoundary : public Standard_Transient {
 	public:
+		/****************** StepVisual_SurfaceStyleBoundary ******************/
+		%feature("compactdefaultargs") StepVisual_SurfaceStyleBoundary;
+		%feature("autodoc", "Returns a surfacestyleboundary.
+
+Returns
+-------
+None
+") StepVisual_SurfaceStyleBoundary;
+		 StepVisual_SurfaceStyleBoundary();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -4738,16 +4748,6 @@ None
 ") SetStyleOfBoundary;
 		void SetStyleOfBoundary(const opencascade::handle<StepVisual_CurveStyle> & aStyleOfBoundary);
 
-		/****************** StepVisual_SurfaceStyleBoundary ******************/
-		%feature("compactdefaultargs") StepVisual_SurfaceStyleBoundary;
-		%feature("autodoc", "Returns a surfacestyleboundary.
-
-Returns
--------
-None
-") StepVisual_SurfaceStyleBoundary;
-		 StepVisual_SurfaceStyleBoundary();
-
 		/****************** StyleOfBoundary ******************/
 		%feature("compactdefaultargs") StyleOfBoundary;
 		%feature("autodoc", "No available documentation.
@@ -4774,6 +4774,16 @@ opencascade::handle<StepVisual_CurveStyle>
 *******************************************/
 class StepVisual_SurfaceStyleControlGrid : public Standard_Transient {
 	public:
+		/****************** StepVisual_SurfaceStyleControlGrid ******************/
+		%feature("compactdefaultargs") StepVisual_SurfaceStyleControlGrid;
+		%feature("autodoc", "Returns a surfacestylecontrolgrid.
+
+Returns
+-------
+None
+") StepVisual_SurfaceStyleControlGrid;
+		 StepVisual_SurfaceStyleControlGrid();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -4802,16 +4812,6 @@ None
 ") SetStyleOfControlGrid;
 		void SetStyleOfControlGrid(const opencascade::handle<StepVisual_CurveStyle> & aStyleOfControlGrid);
 
-		/****************** StepVisual_SurfaceStyleControlGrid ******************/
-		%feature("compactdefaultargs") StepVisual_SurfaceStyleControlGrid;
-		%feature("autodoc", "Returns a surfacestylecontrolgrid.
-
-Returns
--------
-None
-") StepVisual_SurfaceStyleControlGrid;
-		 StepVisual_SurfaceStyleControlGrid();
-
 		/****************** StyleOfControlGrid ******************/
 		%feature("compactdefaultargs") StyleOfControlGrid;
 		%feature("autodoc", "No available documentation.
@@ -4838,6 +4838,16 @@ opencascade::handle<StepVisual_CurveStyle>
 *********************************************/
 class StepVisual_SurfaceStyleElementSelect : public StepData_SelectType {
 	public:
+		/****************** StepVisual_SurfaceStyleElementSelect ******************/
+		%feature("compactdefaultargs") StepVisual_SurfaceStyleElementSelect;
+		%feature("autodoc", "Returns a surfacestyleelementselect selecttype.
+
+Returns
+-------
+None
+") StepVisual_SurfaceStyleElementSelect;
+		 StepVisual_SurfaceStyleElementSelect();
+
 		/****************** CaseNum ******************/
 		%feature("compactdefaultargs") CaseNum;
 		%feature("autodoc", "Recognizes a surfacestyleelementselect kind entity that is : 1 -> surfacestylefillarea 2 -> surfacestyleboundary 3 -> surfacestyleparameterline 4 -> surfacestylesilhouette 5 -> surfacestylesegmentationcurve 6 -> surfacestylecontrolgrid 0 else.
@@ -4851,16 +4861,6 @@ Returns
 int
 ") CaseNum;
 		Standard_Integer CaseNum(const opencascade::handle<Standard_Transient> & ent);
-
-		/****************** StepVisual_SurfaceStyleElementSelect ******************/
-		%feature("compactdefaultargs") StepVisual_SurfaceStyleElementSelect;
-		%feature("autodoc", "Returns a surfacestyleelementselect selecttype.
-
-Returns
--------
-None
-") StepVisual_SurfaceStyleElementSelect;
-		 StepVisual_SurfaceStyleElementSelect();
 
 		/****************** SurfaceStyleBoundary ******************/
 		%feature("compactdefaultargs") SurfaceStyleBoundary;
@@ -4906,6 +4906,16 @@ opencascade::handle<StepVisual_SurfaceStyleParameterLine>
 ****************************************/
 class StepVisual_SurfaceStyleFillArea : public Standard_Transient {
 	public:
+		/****************** StepVisual_SurfaceStyleFillArea ******************/
+		%feature("compactdefaultargs") StepVisual_SurfaceStyleFillArea;
+		%feature("autodoc", "Returns a surfacestylefillarea.
+
+Returns
+-------
+None
+") StepVisual_SurfaceStyleFillArea;
+		 StepVisual_SurfaceStyleFillArea();
+
 		/****************** FillArea ******************/
 		%feature("compactdefaultargs") FillArea;
 		%feature("autodoc", "No available documentation.
@@ -4944,16 +4954,6 @@ None
 ") SetFillArea;
 		void SetFillArea(const opencascade::handle<StepVisual_FillAreaStyle> & aFillArea);
 
-		/****************** StepVisual_SurfaceStyleFillArea ******************/
-		%feature("compactdefaultargs") StepVisual_SurfaceStyleFillArea;
-		%feature("autodoc", "Returns a surfacestylefillarea.
-
-Returns
--------
-None
-") StepVisual_SurfaceStyleFillArea;
-		 StepVisual_SurfaceStyleFillArea();
-
 };
 
 
@@ -4970,6 +4970,16 @@ None
 *********************************************/
 class StepVisual_SurfaceStyleParameterLine : public Standard_Transient {
 	public:
+		/****************** StepVisual_SurfaceStyleParameterLine ******************/
+		%feature("compactdefaultargs") StepVisual_SurfaceStyleParameterLine;
+		%feature("autodoc", "Returns a surfacestyleparameterline.
+
+Returns
+-------
+None
+") StepVisual_SurfaceStyleParameterLine;
+		 StepVisual_SurfaceStyleParameterLine();
+
 		/****************** DirectionCounts ******************/
 		%feature("compactdefaultargs") DirectionCounts;
 		%feature("autodoc", "No available documentation.
@@ -5047,16 +5057,6 @@ None
 ") SetStyleOfParameterLines;
 		void SetStyleOfParameterLines(const opencascade::handle<StepVisual_CurveStyle> & aStyleOfParameterLines);
 
-		/****************** StepVisual_SurfaceStyleParameterLine ******************/
-		%feature("compactdefaultargs") StepVisual_SurfaceStyleParameterLine;
-		%feature("autodoc", "Returns a surfacestyleparameterline.
-
-Returns
--------
-None
-") StepVisual_SurfaceStyleParameterLine;
-		 StepVisual_SurfaceStyleParameterLine();
-
 		/****************** StyleOfParameterLines ******************/
 		%feature("compactdefaultargs") StyleOfParameterLines;
 		%feature("autodoc", "No available documentation.
@@ -5083,6 +5083,16 @@ opencascade::handle<StepVisual_CurveStyle>
 *************************************************/
 class StepVisual_SurfaceStyleSegmentationCurve : public Standard_Transient {
 	public:
+		/****************** StepVisual_SurfaceStyleSegmentationCurve ******************/
+		%feature("compactdefaultargs") StepVisual_SurfaceStyleSegmentationCurve;
+		%feature("autodoc", "Returns a surfacestylesegmentationcurve.
+
+Returns
+-------
+None
+") StepVisual_SurfaceStyleSegmentationCurve;
+		 StepVisual_SurfaceStyleSegmentationCurve();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -5111,16 +5121,6 @@ None
 ") SetStyleOfSegmentationCurve;
 		void SetStyleOfSegmentationCurve(const opencascade::handle<StepVisual_CurveStyle> & aStyleOfSegmentationCurve);
 
-		/****************** StepVisual_SurfaceStyleSegmentationCurve ******************/
-		%feature("compactdefaultargs") StepVisual_SurfaceStyleSegmentationCurve;
-		%feature("autodoc", "Returns a surfacestylesegmentationcurve.
-
-Returns
--------
-None
-") StepVisual_SurfaceStyleSegmentationCurve;
-		 StepVisual_SurfaceStyleSegmentationCurve();
-
 		/****************** StyleOfSegmentationCurve ******************/
 		%feature("compactdefaultargs") StyleOfSegmentationCurve;
 		%feature("autodoc", "No available documentation.
@@ -5147,6 +5147,16 @@ opencascade::handle<StepVisual_CurveStyle>
 ******************************************/
 class StepVisual_SurfaceStyleSilhouette : public Standard_Transient {
 	public:
+		/****************** StepVisual_SurfaceStyleSilhouette ******************/
+		%feature("compactdefaultargs") StepVisual_SurfaceStyleSilhouette;
+		%feature("autodoc", "Returns a surfacestylesilhouette.
+
+Returns
+-------
+None
+") StepVisual_SurfaceStyleSilhouette;
+		 StepVisual_SurfaceStyleSilhouette();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -5175,16 +5185,6 @@ None
 ") SetStyleOfSilhouette;
 		void SetStyleOfSilhouette(const opencascade::handle<StepVisual_CurveStyle> & aStyleOfSilhouette);
 
-		/****************** StepVisual_SurfaceStyleSilhouette ******************/
-		%feature("compactdefaultargs") StepVisual_SurfaceStyleSilhouette;
-		%feature("autodoc", "Returns a surfacestylesilhouette.
-
-Returns
--------
-None
-") StepVisual_SurfaceStyleSilhouette;
-		 StepVisual_SurfaceStyleSilhouette();
-
 		/****************** StyleOfSilhouette ******************/
 		%feature("compactdefaultargs") StyleOfSilhouette;
 		%feature("autodoc", "No available documentation.
@@ -5211,6 +5211,16 @@ opencascade::handle<StepVisual_CurveStyle>
 *************************************/
 class StepVisual_SurfaceStyleUsage : public Standard_Transient {
 	public:
+		/****************** StepVisual_SurfaceStyleUsage ******************/
+		%feature("compactdefaultargs") StepVisual_SurfaceStyleUsage;
+		%feature("autodoc", "Returns a surfacestyleusage.
+
+Returns
+-------
+None
+") StepVisual_SurfaceStyleUsage;
+		 StepVisual_SurfaceStyleUsage();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -5263,16 +5273,6 @@ Returns
 StepVisual_SurfaceSide
 ") Side;
 		StepVisual_SurfaceSide Side();
-
-		/****************** StepVisual_SurfaceStyleUsage ******************/
-		%feature("compactdefaultargs") StepVisual_SurfaceStyleUsage;
-		%feature("autodoc", "Returns a surfacestyleusage.
-
-Returns
--------
-None
-") StepVisual_SurfaceStyleUsage;
-		 StepVisual_SurfaceStyleUsage();
 
 		/****************** Style ******************/
 		%feature("compactdefaultargs") Style;
@@ -5378,6 +5378,16 @@ None
 *******************************/
 class StepVisual_TextLiteral : public StepGeom_GeometricRepresentationItem {
 	public:
+		/****************** StepVisual_TextLiteral ******************/
+		%feature("compactdefaultargs") StepVisual_TextLiteral;
+		%feature("autodoc", "Returns a textliteral.
+
+Returns
+-------
+None
+") StepVisual_TextLiteral;
+		 StepVisual_TextLiteral();
+
 		/****************** Alignment ******************/
 		%feature("compactdefaultargs") Alignment;
 		%feature("autodoc", "No available documentation.
@@ -5517,16 +5527,6 @@ None
 ") SetPlacement;
 		void SetPlacement(const StepGeom_Axis2Placement & aPlacement);
 
-		/****************** StepVisual_TextLiteral ******************/
-		%feature("compactdefaultargs") StepVisual_TextLiteral;
-		%feature("autodoc", "Returns a textliteral.
-
-Returns
--------
-None
-") StepVisual_TextLiteral;
-		 StepVisual_TextLiteral();
-
 };
 
 
@@ -5543,6 +5543,16 @@ None
 ***********************************/
 class StepVisual_TextOrCharacter : public StepData_SelectType {
 	public:
+		/****************** StepVisual_TextOrCharacter ******************/
+		%feature("compactdefaultargs") StepVisual_TextOrCharacter;
+		%feature("autodoc", "Returns a textorcharacter selecttype.
+
+Returns
+-------
+None
+") StepVisual_TextOrCharacter;
+		 StepVisual_TextOrCharacter();
+
 		/****************** AnnotationText ******************/
 		%feature("compactdefaultargs") AnnotationText;
 		%feature("autodoc", "Returns value as a annotationtext (null if another type).
@@ -5577,16 +5587,6 @@ opencascade::handle<StepVisual_CompositeText>
 ") CompositeText;
 		opencascade::handle<StepVisual_CompositeText> CompositeText();
 
-		/****************** StepVisual_TextOrCharacter ******************/
-		%feature("compactdefaultargs") StepVisual_TextOrCharacter;
-		%feature("autodoc", "Returns a textorcharacter selecttype.
-
-Returns
--------
-None
-") StepVisual_TextOrCharacter;
-		 StepVisual_TextOrCharacter();
-
 		/****************** TextLiteral ******************/
 		%feature("compactdefaultargs") TextLiteral;
 		%feature("autodoc", "Returns value as a textliteral (null if another type).
@@ -5611,6 +5611,16 @@ opencascade::handle<StepVisual_TextLiteral>
 *****************************/
 class StepVisual_TextStyle : public Standard_Transient {
 	public:
+		/****************** StepVisual_TextStyle ******************/
+		%feature("compactdefaultargs") StepVisual_TextStyle;
+		%feature("autodoc", "Returns a textstyle.
+
+Returns
+-------
+None
+") StepVisual_TextStyle;
+		 StepVisual_TextStyle();
+
 		/****************** CharacterAppearance ******************/
 		%feature("compactdefaultargs") CharacterAppearance;
 		%feature("autodoc", "No available documentation.
@@ -5674,16 +5684,6 @@ None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & aName);
 
-		/****************** StepVisual_TextStyle ******************/
-		%feature("compactdefaultargs") StepVisual_TextStyle;
-		%feature("autodoc", "Returns a textstyle.
-
-Returns
--------
-None
-") StepVisual_TextStyle;
-		 StepVisual_TextStyle();
-
 };
 
 
@@ -5700,6 +5700,16 @@ None
 *******************************************/
 class StepVisual_TextStyleForDefinedFont : public Standard_Transient {
 	public:
+		/****************** StepVisual_TextStyleForDefinedFont ******************/
+		%feature("compactdefaultargs") StepVisual_TextStyleForDefinedFont;
+		%feature("autodoc", "Returns a textstylefordefinedfont.
+
+Returns
+-------
+None
+") StepVisual_TextStyleForDefinedFont;
+		 StepVisual_TextStyleForDefinedFont();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -5728,16 +5738,6 @@ None
 ") SetTextColour;
 		void SetTextColour(const opencascade::handle<StepVisual_Colour> & aTextColour);
 
-		/****************** StepVisual_TextStyleForDefinedFont ******************/
-		%feature("compactdefaultargs") StepVisual_TextStyleForDefinedFont;
-		%feature("autodoc", "Returns a textstylefordefinedfont.
-
-Returns
--------
-None
-") StepVisual_TextStyleForDefinedFont;
-		 StepVisual_TextStyleForDefinedFont();
-
 		/****************** TextColour ******************/
 		%feature("compactdefaultargs") TextColour;
 		%feature("autodoc", "No available documentation.
@@ -5764,6 +5764,16 @@ opencascade::handle<StepVisual_Colour>
 ******************************/
 class StepVisual_ViewVolume : public Standard_Transient {
 	public:
+		/****************** StepVisual_ViewVolume ******************/
+		%feature("compactdefaultargs") StepVisual_ViewVolume;
+		%feature("autodoc", "Returns a viewvolume.
+
+Returns
+-------
+None
+") StepVisual_ViewVolume;
+		 StepVisual_ViewVolume();
+
 		/****************** BackPlaneClipping ******************/
 		%feature("compactdefaultargs") BackPlaneClipping;
 		%feature("autodoc", "No available documentation.
@@ -5972,16 +5982,6 @@ None
 ") SetViewWindow;
 		void SetViewWindow(const opencascade::handle<StepVisual_PlanarBox> & aViewWindow);
 
-		/****************** StepVisual_ViewVolume ******************/
-		%feature("compactdefaultargs") StepVisual_ViewVolume;
-		%feature("autodoc", "Returns a viewvolume.
-
-Returns
--------
-None
-") StepVisual_ViewVolume;
-		 StepVisual_ViewVolume();
-
 		/****************** ViewPlaneDistance ******************/
 		%feature("compactdefaultargs") ViewPlaneDistance;
 		%feature("autodoc", "No available documentation.
@@ -6054,6 +6054,16 @@ None
 ************************************/
 class StepVisual_BackgroundColour : public StepVisual_Colour {
 	public:
+		/****************** StepVisual_BackgroundColour ******************/
+		%feature("compactdefaultargs") StepVisual_BackgroundColour;
+		%feature("autodoc", "Returns a backgroundcolour.
+
+Returns
+-------
+None
+") StepVisual_BackgroundColour;
+		 StepVisual_BackgroundColour();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -6091,16 +6101,6 @@ Returns
 None
 ") SetPresentation;
 		void SetPresentation(const StepVisual_AreaOrView & aPresentation);
-
-		/****************** StepVisual_BackgroundColour ******************/
-		%feature("compactdefaultargs") StepVisual_BackgroundColour;
-		%feature("autodoc", "Returns a backgroundcolour.
-
-Returns
--------
-None
-") StepVisual_BackgroundColour;
-		 StepVisual_BackgroundColour();
 
 };
 
@@ -6170,6 +6170,16 @@ None
 *********************************/
 class StepVisual_CameraModelD2 : public StepVisual_CameraModel {
 	public:
+		/****************** StepVisual_CameraModelD2 ******************/
+		%feature("compactdefaultargs") StepVisual_CameraModelD2;
+		%feature("autodoc", "Returns a cameramodeld2.
+
+Returns
+-------
+None
+") StepVisual_CameraModelD2;
+		 StepVisual_CameraModelD2();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -6214,16 +6224,6 @@ None
 ") SetViewWindowClipping;
 		void SetViewWindowClipping(const Standard_Boolean aViewWindowClipping);
 
-		/****************** StepVisual_CameraModelD2 ******************/
-		%feature("compactdefaultargs") StepVisual_CameraModelD2;
-		%feature("autodoc", "Returns a cameramodeld2.
-
-Returns
--------
-None
-") StepVisual_CameraModelD2;
-		 StepVisual_CameraModelD2();
-
 		/****************** ViewWindow ******************/
 		%feature("compactdefaultargs") ViewWindow;
 		%feature("autodoc", "No available documentation.
@@ -6260,6 +6260,16 @@ bool
 *********************************/
 class StepVisual_CameraModelD3 : public StepVisual_CameraModel {
 	public:
+		/****************** StepVisual_CameraModelD3 ******************/
+		%feature("compactdefaultargs") StepVisual_CameraModelD3;
+		%feature("autodoc", "Returns a cameramodeld3.
+
+Returns
+-------
+None
+") StepVisual_CameraModelD3;
+		 StepVisual_CameraModelD3();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -6314,16 +6324,6 @@ None
 ") SetViewReferenceSystem;
 		void SetViewReferenceSystem(const opencascade::handle<StepGeom_Axis2Placement3d> & aViewReferenceSystem);
 
-		/****************** StepVisual_CameraModelD3 ******************/
-		%feature("compactdefaultargs") StepVisual_CameraModelD3;
-		%feature("autodoc", "Returns a cameramodeld3.
-
-Returns
--------
-None
-") StepVisual_CameraModelD3;
-		 StepVisual_CameraModelD3();
-
 		/****************** ViewReferenceSystem ******************/
 		%feature("compactdefaultargs") ViewReferenceSystem;
 		%feature("autodoc", "No available documentation.
@@ -6376,6 +6376,16 @@ None
 ***************************************/
 class StepVisual_ColourSpecification : public StepVisual_Colour {
 	public:
+		/****************** StepVisual_ColourSpecification ******************/
+		%feature("compactdefaultargs") StepVisual_ColourSpecification;
+		%feature("autodoc", "Returns a colourspecification.
+
+Returns
+-------
+None
+") StepVisual_ColourSpecification;
+		 StepVisual_ColourSpecification();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -6414,16 +6424,6 @@ None
 ") SetName;
 		void SetName(const opencascade::handle<TCollection_HAsciiString> & aName);
 
-		/****************** StepVisual_ColourSpecification ******************/
-		%feature("compactdefaultargs") StepVisual_ColourSpecification;
-		%feature("autodoc", "Returns a colourspecification.
-
-Returns
--------
-None
-") StepVisual_ColourSpecification;
-		 StepVisual_ColourSpecification();
-
 };
 
 
@@ -6440,6 +6440,16 @@ None
 *******************************************/
 class StepVisual_CompositeTextWithExtent : public StepVisual_CompositeText {
 	public:
+		/****************** StepVisual_CompositeTextWithExtent ******************/
+		%feature("compactdefaultargs") StepVisual_CompositeTextWithExtent;
+		%feature("autodoc", "Returns a compositetextwithextent.
+
+Returns
+-------
+None
+") StepVisual_CompositeTextWithExtent;
+		 StepVisual_CompositeTextWithExtent();
+
 		/****************** Extent ******************/
 		%feature("compactdefaultargs") Extent;
 		%feature("autodoc", "No available documentation.
@@ -6480,16 +6490,6 @@ None
 ") SetExtent;
 		void SetExtent(const opencascade::handle<StepVisual_PlanarExtent> & aExtent);
 
-		/****************** StepVisual_CompositeTextWithExtent ******************/
-		%feature("compactdefaultargs") StepVisual_CompositeTextWithExtent;
-		%feature("autodoc", "Returns a compositetextwithextent.
-
-Returns
--------
-None
-") StepVisual_CompositeTextWithExtent;
-		 StepVisual_CompositeTextWithExtent();
-
 };
 
 
@@ -6506,6 +6506,16 @@ None
 ************************************************/
 class StepVisual_ContextDependentInvisibility : public StepVisual_Invisibility {
 	public:
+		/****************** StepVisual_ContextDependentInvisibility ******************/
+		%feature("compactdefaultargs") StepVisual_ContextDependentInvisibility;
+		%feature("autodoc", "Returns a contextdependentinvisibility.
+
+Returns
+-------
+None
+") StepVisual_ContextDependentInvisibility;
+		 StepVisual_ContextDependentInvisibility();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -6545,16 +6555,6 @@ None
 ") SetPresentationContext;
 		void SetPresentationContext(const StepVisual_InvisibilityContext & aPresentationContext);
 
-		/****************** StepVisual_ContextDependentInvisibility ******************/
-		%feature("compactdefaultargs") StepVisual_ContextDependentInvisibility;
-		%feature("autodoc", "Returns a contextdependentinvisibility.
-
-Returns
--------
-None
-") StepVisual_ContextDependentInvisibility;
-		 StepVisual_ContextDependentInvisibility();
-
 };
 
 
@@ -6571,6 +6571,16 @@ None
 ***********************************/
 class StepVisual_CoordinatesList : public StepVisual_TessellatedItem {
 	public:
+		/****************** StepVisual_CoordinatesList ******************/
+		%feature("compactdefaultargs") StepVisual_CoordinatesList;
+		%feature("autodoc", "Returns a coordinate list.
+
+Returns
+-------
+None
+") StepVisual_CoordinatesList;
+		 StepVisual_CoordinatesList();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -6595,16 +6605,6 @@ Returns
 opencascade::handle<TColgp_HArray1OfXYZ>
 ") Points;
 		opencascade::handle<TColgp_HArray1OfXYZ> Points();
-
-		/****************** StepVisual_CoordinatesList ******************/
-		%feature("compactdefaultargs") StepVisual_CoordinatesList;
-		%feature("autodoc", "Returns a coordinate list.
-
-Returns
--------
-None
-") StepVisual_CoordinatesList;
-		 StepVisual_CoordinatesList();
 
 };
 
@@ -6648,6 +6648,16 @@ None
 ****************************************/
 class StepVisual_OverRidingStyledItem : public StepVisual_StyledItem {
 	public:
+		/****************** StepVisual_OverRidingStyledItem ******************/
+		%feature("compactdefaultargs") StepVisual_OverRidingStyledItem;
+		%feature("autodoc", "Returns a overridingstyleditem.
+
+Returns
+-------
+None
+") StepVisual_OverRidingStyledItem;
+		 StepVisual_OverRidingStyledItem();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -6689,16 +6699,6 @@ None
 ") SetOverRiddenStyle;
 		void SetOverRiddenStyle(const opencascade::handle<StepVisual_StyledItem> & aOverRiddenStyle);
 
-		/****************** StepVisual_OverRidingStyledItem ******************/
-		%feature("compactdefaultargs") StepVisual_OverRidingStyledItem;
-		%feature("autodoc", "Returns a overridingstyleditem.
-
-Returns
--------
-None
-") StepVisual_OverRidingStyledItem;
-		 StepVisual_OverRidingStyledItem();
-
 };
 
 
@@ -6715,6 +6715,16 @@ None
 *****************************/
 class StepVisual_PlanarBox : public StepVisual_PlanarExtent {
 	public:
+		/****************** StepVisual_PlanarBox ******************/
+		%feature("compactdefaultargs") StepVisual_PlanarBox;
+		%feature("autodoc", "Returns a planarbox.
+
+Returns
+-------
+None
+") StepVisual_PlanarBox;
+		 StepVisual_PlanarBox();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -6756,16 +6766,6 @@ None
 ") SetPlacement;
 		void SetPlacement(const StepGeom_Axis2Placement & aPlacement);
 
-		/****************** StepVisual_PlanarBox ******************/
-		%feature("compactdefaultargs") StepVisual_PlanarBox;
-		%feature("autodoc", "Returns a planarbox.
-
-Returns
--------
-None
-") StepVisual_PlanarBox;
-		 StepVisual_PlanarBox();
-
 };
 
 
@@ -6782,6 +6782,16 @@ None
 ************************************/
 class StepVisual_PreDefinedColour : public StepVisual_Colour {
 	public:
+		/****************** StepVisual_PreDefinedColour ******************/
+		%feature("compactdefaultargs") StepVisual_PreDefinedColour;
+		%feature("autodoc", "Returns a predefinedcolour.
+
+Returns
+-------
+None
+") StepVisual_PreDefinedColour;
+		 StepVisual_PreDefinedColour();
+
 		/****************** GetPreDefinedItem ******************/
 		%feature("compactdefaultargs") GetPreDefinedItem;
 		%feature("autodoc", "Return a pre_defined_item part.
@@ -6805,16 +6815,6 @@ Returns
 None
 ") SetPreDefinedItem;
 		void SetPreDefinedItem(const opencascade::handle<StepVisual_PreDefinedItem> & item);
-
-		/****************** StepVisual_PreDefinedColour ******************/
-		%feature("compactdefaultargs") StepVisual_PreDefinedColour;
-		%feature("autodoc", "Returns a predefinedcolour.
-
-Returns
--------
-None
-") StepVisual_PreDefinedColour;
-		 StepVisual_PreDefinedColour();
 
 };
 
@@ -6910,6 +6910,16 @@ None
 **********************************************/
 class StepVisual_PresentationStyleByContext : public StepVisual_PresentationStyleAssignment {
 	public:
+		/****************** StepVisual_PresentationStyleByContext ******************/
+		%feature("compactdefaultargs") StepVisual_PresentationStyleByContext;
+		%feature("autodoc", "Returns a presentationstylebycontext.
+
+Returns
+-------
+None
+") StepVisual_PresentationStyleByContext;
+		 StepVisual_PresentationStyleByContext();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -6938,16 +6948,6 @@ Returns
 None
 ") SetStyleContext;
 		void SetStyleContext(const StepVisual_StyleContextSelect & aStyleContext);
-
-		/****************** StepVisual_PresentationStyleByContext ******************/
-		%feature("compactdefaultargs") StepVisual_PresentationStyleByContext;
-		%feature("autodoc", "Returns a presentationstylebycontext.
-
-Returns
--------
-None
-") StepVisual_PresentationStyleByContext;
-		 StepVisual_PresentationStyleByContext();
 
 		/****************** StyleContext ******************/
 		%feature("compactdefaultargs") StyleContext;
@@ -7027,6 +7027,16 @@ None
 ***************************************/
 class StepVisual_TessellatedCurveSet : public StepVisual_TessellatedItem {
 	public:
+		/****************** StepVisual_TessellatedCurveSet ******************/
+		%feature("compactdefaultargs") StepVisual_TessellatedCurveSet;
+		%feature("autodoc", "Returns a draughtingcalloutelement select type.
+
+Returns
+-------
+None
+") StepVisual_TessellatedCurveSet;
+		 StepVisual_TessellatedCurveSet();
+
 		/****************** CoordList ******************/
 		%feature("compactdefaultargs") CoordList;
 		%feature("autodoc", "No available documentation.
@@ -7063,16 +7073,6 @@ None
 ") Init;
 		void Init(const opencascade::handle<TCollection_HAsciiString> & theName, const opencascade::handle<StepVisual_CoordinatesList> & theCoordList, const NCollection_Handle<StepVisual_VectorOfHSequenceOfInteger> & theCurves);
 
-		/****************** StepVisual_TessellatedCurveSet ******************/
-		%feature("compactdefaultargs") StepVisual_TessellatedCurveSet;
-		%feature("autodoc", "Returns a draughtingcalloutelement select type.
-
-Returns
--------
-None
-") StepVisual_TessellatedCurveSet;
-		 StepVisual_TessellatedCurveSet();
-
 };
 
 
@@ -7089,6 +7089,16 @@ None
 *******************************************/
 class StepVisual_TessellatedGeometricSet : public StepVisual_TessellatedItem {
 	public:
+		/****************** StepVisual_TessellatedGeometricSet ******************/
+		%feature("compactdefaultargs") StepVisual_TessellatedGeometricSet;
+		%feature("autodoc", "Returns a draughtingcalloutelement select type.
+
+Returns
+-------
+None
+") StepVisual_TessellatedGeometricSet;
+		 StepVisual_TessellatedGeometricSet();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -7114,16 +7124,6 @@ NCollection_Handle<StepVisual_Array1OfTessellatedItem >
 ") Items;
 		NCollection_Handle<StepVisual_Array1OfTessellatedItem > Items();
 
-		/****************** StepVisual_TessellatedGeometricSet ******************/
-		%feature("compactdefaultargs") StepVisual_TessellatedGeometricSet;
-		%feature("autodoc", "Returns a draughtingcalloutelement select type.
-
-Returns
--------
-None
-") StepVisual_TessellatedGeometricSet;
-		 StepVisual_TessellatedGeometricSet();
-
 };
 
 
@@ -7140,6 +7140,16 @@ None
 ***************************************************/
 class StepVisual_TextStyleWithBoxCharacteristics : public StepVisual_TextStyle {
 	public:
+		/****************** StepVisual_TextStyleWithBoxCharacteristics ******************/
+		%feature("compactdefaultargs") StepVisual_TextStyleWithBoxCharacteristics;
+		%feature("autodoc", "Returns a textstylewithboxcharacteristics.
+
+Returns
+-------
+None
+") StepVisual_TextStyleWithBoxCharacteristics;
+		 StepVisual_TextStyleWithBoxCharacteristics();
+
 		/****************** Characteristics ******************/
 		%feature("compactdefaultargs") Characteristics;
 		%feature("autodoc", "No available documentation.
@@ -7204,16 +7214,6 @@ None
 ") SetCharacteristics;
 		void SetCharacteristics(const opencascade::handle<StepVisual_HArray1OfBoxCharacteristicSelect> & aCharacteristics);
 
-		/****************** StepVisual_TextStyleWithBoxCharacteristics ******************/
-		%feature("compactdefaultargs") StepVisual_TextStyleWithBoxCharacteristics;
-		%feature("autodoc", "Returns a textstylewithboxcharacteristics.
-
-Returns
--------
-None
-") StepVisual_TextStyleWithBoxCharacteristics;
-		 StepVisual_TextStyleWithBoxCharacteristics();
-
 };
 
 
@@ -7256,6 +7256,16 @@ None
 ************************************************/
 class StepVisual_AnnotationFillAreaOccurrence : public StepVisual_AnnotationOccurrence {
 	public:
+		/****************** StepVisual_AnnotationFillAreaOccurrence ******************/
+		%feature("compactdefaultargs") StepVisual_AnnotationFillAreaOccurrence;
+		%feature("autodoc", "Returns a annotationfillareaoccurrence.
+
+Returns
+-------
+None
+") StepVisual_AnnotationFillAreaOccurrence;
+		 StepVisual_AnnotationFillAreaOccurrence();
+
 		/****************** FillStyleTarget ******************/
 		%feature("compactdefaultargs") FillStyleTarget;
 		%feature("autodoc", "Returns field fill_style_target.
@@ -7297,16 +7307,6 @@ None
 ") SetFillStyleTarget;
 		void SetFillStyleTarget(const opencascade::handle<StepGeom_GeometricRepresentationItem> & theTarget);
 
-		/****************** StepVisual_AnnotationFillAreaOccurrence ******************/
-		%feature("compactdefaultargs") StepVisual_AnnotationFillAreaOccurrence;
-		%feature("autodoc", "Returns a annotationfillareaoccurrence.
-
-Returns
--------
-None
-") StepVisual_AnnotationFillAreaOccurrence;
-		 StepVisual_AnnotationFillAreaOccurrence();
-
 };
 
 
@@ -7323,6 +7323,16 @@ None
 ***********************************/
 class StepVisual_AnnotationPlane : public StepVisual_AnnotationOccurrence {
 	public:
+		/****************** StepVisual_AnnotationPlane ******************/
+		%feature("compactdefaultargs") StepVisual_AnnotationPlane;
+		%feature("autodoc", "Returns a annotationplane.
+
+Returns
+-------
+None
+") StepVisual_AnnotationPlane;
+		 StepVisual_AnnotationPlane();
+
 		/****************** Elements ******************/
 		%feature("compactdefaultargs") Elements;
 		%feature("autodoc", "Returns field elements.
@@ -7403,16 +7413,6 @@ None
 ") SetElementsValue;
 		void SetElementsValue(const Standard_Integer theNum, const StepVisual_AnnotationPlaneElement & theItem);
 
-		/****************** StepVisual_AnnotationPlane ******************/
-		%feature("compactdefaultargs") StepVisual_AnnotationPlane;
-		%feature("autodoc", "Returns a annotationplane.
-
-Returns
--------
-None
-") StepVisual_AnnotationPlane;
-		 StepVisual_AnnotationPlane();
-
 };
 
 
@@ -7455,6 +7455,16 @@ None
 **********************************************/
 class StepVisual_CameraModelD3MultiClipping : public StepVisual_CameraModelD3 {
 	public:
+		/****************** StepVisual_CameraModelD3MultiClipping ******************/
+		%feature("compactdefaultargs") StepVisual_CameraModelD3MultiClipping;
+		%feature("autodoc", "Returns a cameramodeld3multiclipping.
+
+Returns
+-------
+None
+") StepVisual_CameraModelD3MultiClipping;
+		 StepVisual_CameraModelD3MultiClipping();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -7496,16 +7506,6 @@ opencascade::handle<StepVisual_HArray1OfCameraModelD3MultiClippingInterectionSel
 ") ShapeClipping;
 		const opencascade::handle<StepVisual_HArray1OfCameraModelD3MultiClippingInterectionSelect> ShapeClipping();
 
-		/****************** StepVisual_CameraModelD3MultiClipping ******************/
-		%feature("compactdefaultargs") StepVisual_CameraModelD3MultiClipping;
-		%feature("autodoc", "Returns a cameramodeld3multiclipping.
-
-Returns
--------
-None
-") StepVisual_CameraModelD3MultiClipping;
-		 StepVisual_CameraModelD3MultiClipping();
-
 };
 
 
@@ -7522,6 +7522,16 @@ None
 *****************************/
 class StepVisual_ColourRgb : public StepVisual_ColourSpecification {
 	public:
+		/****************** StepVisual_ColourRgb ******************/
+		%feature("compactdefaultargs") StepVisual_ColourRgb;
+		%feature("autodoc", "Returns a colourrgb.
+
+Returns
+-------
+None
+") StepVisual_ColourRgb;
+		 StepVisual_ColourRgb();
+
 		/****************** Blue ******************/
 		%feature("compactdefaultargs") Blue;
 		%feature("autodoc", "No available documentation.
@@ -7611,16 +7621,6 @@ None
 ") SetRed;
 		void SetRed(const Standard_Real aRed);
 
-		/****************** StepVisual_ColourRgb ******************/
-		%feature("compactdefaultargs") StepVisual_ColourRgb;
-		%feature("autodoc", "Returns a colourrgb.
-
-Returns
--------
-None
-") StepVisual_ColourRgb;
-		 StepVisual_ColourRgb();
-
 };
 
 
@@ -7637,6 +7637,16 @@ None
 ********************************************************/
 class StepVisual_ContextDependentOverRidingStyledItem : public StepVisual_OverRidingStyledItem {
 	public:
+		/****************** StepVisual_ContextDependentOverRidingStyledItem ******************/
+		%feature("compactdefaultargs") StepVisual_ContextDependentOverRidingStyledItem;
+		%feature("autodoc", "Returns a contextdependentoverridingstyleditem.
+
+Returns
+-------
+None
+") StepVisual_ContextDependentOverRidingStyledItem;
+		 StepVisual_ContextDependentOverRidingStyledItem();
+
 		/****************** Init ******************/
 		%feature("compactdefaultargs") Init;
 		%feature("autodoc", "No available documentation.
@@ -7678,16 +7688,6 @@ Returns
 None
 ") SetStyleContext;
 		void SetStyleContext(const opencascade::handle<StepVisual_HArray1OfStyleContextSelect> & aStyleContext);
-
-		/****************** StepVisual_ContextDependentOverRidingStyledItem ******************/
-		%feature("compactdefaultargs") StepVisual_ContextDependentOverRidingStyledItem;
-		%feature("autodoc", "Returns a contextdependentoverridingstyleditem.
-
-Returns
--------
-None
-") StepVisual_ContextDependentOverRidingStyledItem;
-		 StepVisual_ContextDependentOverRidingStyledItem();
 
 		/****************** StyleContext ******************/
 		%feature("compactdefaultargs") StyleContext;
