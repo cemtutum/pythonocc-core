@@ -1,6 +1,3 @@
-#ifndef MAT_HXX
-#define MAT_HXX
-
 /*
 Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
@@ -18,6 +15,9 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
+#ifndef MAT_HXX
+#define MAT_HXX
+
 
 #include<MAT_Arc.hxx>
 #include<MAT_BasicElt.hxx>

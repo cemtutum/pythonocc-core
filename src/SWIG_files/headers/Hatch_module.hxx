@@ -1,6 +1,3 @@
-#ifndef HATCH_HXX
-#define HATCH_HXX
-
 /*
 Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
@@ -18,6 +15,9 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
+#ifndef HATCH_HXX
+#define HATCH_HXX
+
 
 #include<Hatch_Hatcher.hxx>
 #include<Hatch_Line.hxx>

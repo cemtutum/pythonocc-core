@@ -1,6 +1,3 @@
-#ifndef GCCANA_HXX
-#define GCCANA_HXX
-
 /*
 Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
@@ -18,6 +15,9 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
+#ifndef GCCANA_HXX
+#define GCCANA_HXX
+
 
 #include<GccAna_Circ2d2TanOn.hxx>
 #include<GccAna_Circ2d2TanRad.hxx>

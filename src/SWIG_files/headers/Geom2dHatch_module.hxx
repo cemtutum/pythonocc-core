@@ -1,6 +1,3 @@
-#ifndef GEOM2DHATCH_HXX
-#define GEOM2DHATCH_HXX
-
 /*
 Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
@@ -18,6 +15,9 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
+#ifndef GEOM2DHATCH_HXX
+#define GEOM2DHATCH_HXX
+
 
 #include<Geom2dHatch_Classifier.hxx>
 #include<Geom2dHatch_DataMapIteratorOfHatchings.hxx>

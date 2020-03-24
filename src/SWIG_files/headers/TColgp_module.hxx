@@ -1,6 +1,3 @@
-#ifndef TCOLGP_HXX
-#define TCOLGP_HXX
-
 /*
 Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
@@ -18,6 +15,9 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
+#ifndef TCOLGP_HXX
+#define TCOLGP_HXX
+
 
 #include<TColgp_Array1OfCirc2d.hxx>
 #include<TColgp_Array1OfDir.hxx>

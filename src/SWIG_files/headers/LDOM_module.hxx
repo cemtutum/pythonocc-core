@@ -1,6 +1,3 @@
-#ifndef LDOM_HXX
-#define LDOM_HXX
-
 /*
 Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
@@ -18,6 +15,9 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
+#ifndef LDOM_HXX
+#define LDOM_HXX
+
 
 #include<LDOM_Attr.hxx>
 #include<LDOM_BasicAttribute.hxx>

@@ -1,6 +1,3 @@
-#ifndef TCOLSTD_HXX
-#define TCOLSTD_HXX
-
 /*
 Copyright 2008-2020 Thomas Paviot (tpaviot@gmail.com)
 
@@ -18,6 +15,9 @@ GNU Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
+#ifndef TCOLSTD_HXX
+#define TCOLSTD_HXX
+
 
 #include<TColStd_Array1OfAsciiString.hxx>
 #include<TColStd_Array1OfBoolean.hxx>
