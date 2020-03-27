@@ -5,7 +5,6 @@ from OCC.Core.Standard import *
 from OCC.Core.NCollection import *
 from OCC.Core.TCollection import *
 
-) = NewType(')', Standard_Address ( OSD_ThreadFunction ) ( Standard_Address data)
 OSD_PThread = NewType('OSD_PThread', pthread_t)
 
 class OSD_LockType:

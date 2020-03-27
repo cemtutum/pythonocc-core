@@ -8,7 +8,6 @@ from OCC.Core.Adaptor2d import *
 from OCC.Core.math import *
 from OCC.Core.gp import *
 
-) = NewType(')', Standard_Real ( CPnts_RealFunction ) ( const Standard_Real, const Standard_Address)
 
 class CPnts_AbscissaPoint:
 	def __init__(self) -> None: ...
