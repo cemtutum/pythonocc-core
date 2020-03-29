@@ -1,4 +1,4 @@
-from typing import NewType, Optional
+from typing import NewType, Optional, Tuple
 
 from OCC.Core.TPrsStd import *
 from OCC.Core.Standard import *
@@ -53,7 +53,7 @@ class TPrsStd_ConstraintTools:
 	@staticmethod
 	def ComputeTangent(self, aConst: TDataXtd_Constraint, anAIS: AIS_InteractiveObject) -> None: ...
 	@staticmethod
-	def ComputeTextAndValue(self, aConst: TDataXtd_Constraint, aValue: float, aText: TCollection_ExtendedString, anIsAngle: bool) -> None: ...
+	def ComputeTextAndValue(self, aConst: TDataXtd_Constraint, aText: TCollection_ExtendedString, anIsAngle: bool) -> float: ...
 	@staticmethod
 	def UpdateOnlyValue(self, aConst: TDataXtd_Constraint, anAIS: AIS_InteractiveObject) -> None: ...
 

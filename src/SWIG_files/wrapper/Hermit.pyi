@@ -1,4 +1,4 @@
-from typing import NewType, Optional
+from typing import NewType, Optional, Tuple
 
 from OCC.Core.Hermit import *
 from OCC.Core.Standard import *
@@ -13,4 +13,4 @@ class Hermit:
 	@staticmethod
 	def Solution(self, BS: Geom2d_BSplineCurve, TolPoles: Optional[float], TolKnots: Optional[float]) -> Geom2d_BSplineCurve: ...
 	@staticmethod
-	def Solutionbis(self, BS: Geom_BSplineCurve, Knotmin: float, Knotmax: float, TolPoles: Optional[float], TolKnots: Optional[float]) -> None: ...
+	def Solutionbis(self, BS: Geom_BSplineCurve, TolPoles: Optional[float], TolKnots: Optional[float]) -> Tuple[float, float]: ...

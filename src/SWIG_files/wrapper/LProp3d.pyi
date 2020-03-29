@@ -1,4 +1,4 @@
-from typing import NewType, Optional
+from typing import NewType, Optional, Tuple
 
 from OCC.Core.LProp3d import *
 from OCC.Core.Standard import *
@@ -67,7 +67,7 @@ class LProp3d_SLProps:
 
 class LProp3d_SurfaceTool:
 	@staticmethod
-	def Bounds(self, S: Adaptor3d_HSurface, U1: float, V1: float, U2: float, V2: float) -> None: ...
+	def Bounds(self, S: Adaptor3d_HSurface) -> Tuple[float, float, float, float]: ...
 	@staticmethod
 	def Continuity(self, S: Adaptor3d_HSurface) -> int: ...
 	@staticmethod

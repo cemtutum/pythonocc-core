@@ -1,4 +1,4 @@
-from typing import NewType, Optional
+from typing import NewType, Optional, Tuple
 
 from OCC.Core.StepAP242 import *
 from OCC.Core.Standard import *

@@ -1,4 +1,4 @@
-from typing import NewType, Optional
+from typing import NewType, Optional, Tuple
 
 from OCC.Core.BRepLProp import *
 from OCC.Core.Standard import *
@@ -74,7 +74,7 @@ class BRepLProp_SLProps:
 
 class BRepLProp_SurfaceTool:
 	@staticmethod
-	def Bounds(self, S: BRepAdaptor_Surface, U1: float, V1: float, U2: float, V2: float) -> None: ...
+	def Bounds(self, S: BRepAdaptor_Surface) -> Tuple[float, float, float, float]: ...
 	@staticmethod
 	def Continuity(self, S: BRepAdaptor_Surface) -> int: ...
 	@staticmethod

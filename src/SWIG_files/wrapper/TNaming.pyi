@@ -1,4 +1,4 @@
-from typing import NewType, Optional
+from typing import NewType, Optional, Tuple
 
 from OCC.Core.TNaming import *
 from OCC.Core.Standard import *
@@ -321,7 +321,7 @@ class TNaming_Tool:
 	@staticmethod
 	def InitialShape(self, aShape: TopoDS_Shape, anAcces: TDF_Label, Labels: TDF_LabelList) -> TopoDS_Shape: ...
 	@staticmethod
-	def Label(self, access: TDF_Label, aShape: TopoDS_Shape, TransDef: int) -> TDF_Label: ...
+	def Label(self, access: TDF_Label, aShape: TopoDS_Shape) -> Tuple[TDF_Label, int]: ...
 	@staticmethod
 	def NamedShape(self, aShape: TopoDS_Shape, anAcces: TDF_Label) -> TNaming_NamedShape: ...
 	@staticmethod

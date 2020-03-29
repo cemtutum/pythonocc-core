@@ -1,4 +1,4 @@
-from typing import NewType, Optional
+from typing import NewType, Optional, Tuple
 
 from OCC.Core.IMeshTools import *
 from OCC.Core.Standard import *
@@ -34,7 +34,7 @@ class IMeshTools_Context(IMeshData_Shape):
 
 class IMeshTools_CurveTessellator(Standard_Transient):
 	def PointsNb(self) -> int: ...
-	def Value(self, theIndex: int, thePoint: gp_Pnt, theParameter: float) -> bool: ...
+	def Value(self, theIndex: int, thePoint: gp_Pnt) -> Tuple[bool, float]: ...
 
 class IMeshTools_MeshAlgo(Standard_Transient):
 	pass

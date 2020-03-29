@@ -1,4 +1,4 @@
-from typing import NewType, Optional
+from typing import NewType, Optional, Tuple
 
 from OCC.Core.IntImpParGen import *
 from OCC.Core.Standard import *
@@ -15,4 +15,4 @@ class IntImpParGen:
 	@staticmethod
 	def DetermineTransition(self, Pos1: IntRes2d_Position, Tan1: gp_Vec2d, Trans1: IntRes2d_Transition, Pos2: IntRes2d_Position, Tan2: gp_Vec2d, Trans2: IntRes2d_Transition, Tol: float) -> bool: ...
 	@staticmethod
-	def NormalizeOnDomain(self, Par1: float, Dom1: IntRes2d_Domain) -> float: ...
+	def NormalizeOnDomain(self, Dom1: IntRes2d_Domain) -> Tuple[float, float]: ...

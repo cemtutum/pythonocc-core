@@ -1,4 +1,4 @@
-from typing import NewType, Optional
+from typing import NewType, Optional, Tuple
 
 from OCC.Core.StepToTopoDS import *
 from OCC.Core.Standard import *
@@ -86,7 +86,7 @@ class StepToTopoDS_GeometricTool:
 	@staticmethod
 	def PCurve(self, SC: StepGeom_SurfaceCurve, S: StepGeom_Surface, PC: StepGeom_Pcurve, last: Optional[int]) -> int: ...
 	@staticmethod
-	def UpdateParam3d(self, C: Geom_Curve, w1: float, w2: float, preci: float) -> bool: ...
+	def UpdateParam3d(self, C: Geom_Curve, preci: float) -> Tuple[bool, float, float]: ...
 
 class StepToTopoDS_NMTool:
 	def __init__(self) -> None: ...

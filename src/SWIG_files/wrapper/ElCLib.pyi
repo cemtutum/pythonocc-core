@@ -1,4 +1,4 @@
-from typing import NewType, Optional
+from typing import NewType, Optional, Tuple
 
 from OCC.Core.ElCLib import *
 from OCC.Core.Standard import *
@@ -8,7 +8,7 @@ from OCC.Core.gp import *
 
 class ElCLib:
 	@staticmethod
-	def AdjustPeriodic(self, UFirst: float, ULast: float, Precision: float, U1: float, U2: float) -> None: ...
+	def AdjustPeriodic(self, UFirst: float, ULast: float, Precision: float) -> Tuple[float, float]: ...
 	@staticmethod
 	def CircleD1(self, U: float, Pos: gp_Ax2, Radius: float, P: gp_Pnt, V1: gp_Vec) -> None: ...
 	@staticmethod

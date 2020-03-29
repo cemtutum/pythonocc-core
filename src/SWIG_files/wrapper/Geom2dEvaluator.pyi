@@ -1,4 +1,4 @@
-from typing import NewType, Optional
+from typing import NewType, Optional, Tuple
 
 from OCC.Core.Geom2dEvaluator import *
 from OCC.Core.Standard import *

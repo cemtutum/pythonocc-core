@@ -1,4 +1,4 @@
-from typing import NewType, Optional
+from typing import NewType, Optional, Tuple
 
 from OCC.Core.STEPCAFControl import *
 from OCC.Core.Standard import *
@@ -57,7 +57,7 @@ class STEPCAFControl_GDTProperty:
 	@staticmethod
 	def GetDatumTargetType(self, theDescription: TCollection_HAsciiString, theType: XCAFDimTolObjects_DatumTargetType) -> bool: ...
 	@staticmethod
-	def GetDimClassOfTolerance(self, theLAF: StepShape_LimitsAndFits, theHolle: bool, theFV: XCAFDimTolObjects_DimensionFormVariance, theG: XCAFDimTolObjects_DimensionGrade) -> None: ...
+	def GetDimClassOfTolerance(self, theLAF: StepShape_LimitsAndFits, theFV: XCAFDimTolObjects_DimensionFormVariance, theG: XCAFDimTolObjects_DimensionGrade) -> bool: ...
 	@staticmethod
 	def GetDimModifierName(self, theModifier: XCAFDimTolObjects_DimensionModif) -> TCollection_HAsciiString: ...
 	@staticmethod
